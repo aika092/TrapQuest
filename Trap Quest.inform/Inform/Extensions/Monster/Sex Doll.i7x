@@ -118,13 +118,6 @@ To set up (M - a sex doll):
 To decide which number is the starting difficulty of (M - a sex doll):
 	decide on 3.
 
-[This is the spawn initial sex doll rule:
-	if debugmode > 1, say "Now summoning doll.";
-	if the number of alive sex dolls is 0:
-		let M be a random sex doll;
-		summon M in the dungeon.
-The spawn initial sex doll rule is listed in the setting up dungeon monsters rules.]
-
 To decide which number is the girth of (M - a sex doll):
 	decide on 3.
 
@@ -235,7 +228,7 @@ To compute missile attack of (M - an airfilled-sex-doll):
 To compute missile attack of (M - a creamfilled-sex-doll):
 	if the accuracy roll of M >= the dexterity of the player:
 		let B be the painful-part of M;
-		say "[BigNameDesc of M] shoots [semen] out of its [DickDesc of M], hitting you [TargetName of B]! A faint feeling of warmth sprads out from the point of 'impact' as the doll slightly deflates.";
+		say "[BigNameDesc of M] shoots [semen] out of its [DickDesc of M], hitting you [TargetName of B]! A faint feeling of warmth spreads out from the point of 'impact' as the doll slightly deflates.";
 		stimulate B from M;
 		if bukkake fetish is 1, squirt semen on B by 1;
 		now M is not doll-charged;
@@ -261,7 +254,7 @@ To compute unique climax of (M - a sex doll) in (F - asshole):
 	otherwise if M is airfilled-sex-doll:
 		compute FluidFill of M;
 	otherwise:
-		say "[one of]After one final thrust, you feel [NameDesc of M] begin to deflate, its warm, sticky contents shooting out inside of you. [or]With one final thrust, [NameDesc of M] begins to deflate, hissing quietly as it evacuates its warm, sticky contents directly into your [asshole]. [or][BigNameDesc of M] begins to deflate, hissing quietly as its warm sticky contents shoot up inside of you. [or][BigNameDesc of M] stops after one final thrust, deflating as it floods your belly with its sticky white contents. [at random][one of][if the bimbo of the player < 7][line break][first custom style]Oh God, I think that was cum. All of it went inside me...[otherwise if the bimbo of the player < 12][line break][variable custom style]I think that was cum. There[']s so much of it inside me...[otherwise][line break][second custom style]That was cum! Mmm, there's so much of it inside me...[end if][or][if the bimbo of the player < 7][first custom style]Ugh... I[']m so full...[otherwise if the bimbo of the player < 12][variable custom style]I[']m so full...[otherwise][second custom style]There[']s so much.~[end if][or][if the bimbo of the player < 7][first custom style]Not again...[otherwise if the bimbo of the player < 12][variable custom style]There's always a lot...[otherwise][second custom style]I think there's even more than last time![end if][stopping][roman type][line break]The sex doll disappears into nothingness.";
+		say "[one of]After one final thrust, you feel [NameDesc of M] begin to deflate, its warm, sticky contents shooting out inside of you. [or]With one final thrust, [NameDesc of M] begins to deflate, hissing quietly as it evacuates its warm, sticky contents directly into your [asshole]. [or][BigNameDesc of M] begins to deflate, hissing quietly as its warm sticky contents shoot up inside of you. [or][BigNameDesc of M] stops after one final thrust, deflating as it floods your belly with its sticky white contents. [at random][one of][if the bimbo of the player < 7][line break][first custom style]Oh God, I think that was cum. All of it went inside me...[otherwise if the bimbo of the player < 12][line break][variable custom style]I think that was cum. There's so much of it inside me...[otherwise][line break][second custom style]That was cum! Mmm, there's so much of it inside me...[end if][or][if the bimbo of the player < 7][first custom style]Ugh... I'm so full...[otherwise if the bimbo of the player < 12][variable custom style]I'm so full...[otherwise][second custom style]There's so much.~[end if][or][if the bimbo of the player < 7][first custom style]Not again...[otherwise if the bimbo of the player < 12][variable custom style]There's always a lot...[otherwise][second custom style]I think there's even more than last time![end if][stopping][roman type][line break]The sex doll disappears into nothingness.";
 		cutshow figure of sexdoll cutscene 1 for M;
 		assfill 12;
 	destroy M.
@@ -281,7 +274,7 @@ To compute unique climax of (M - a sex doll) in (F - vagina):
 	if M is airfilled-sex-doll:
 		compute FluidFill of M;
 	otherwise:
-		say "[one of]After one final thrust, you feel [NameDesc of M] begin to deflate, its warm, sticky contents shooting out inside of you.[or]With one final thrust, [NameDesc of M] begins to deflate, hissing quietly as it evacuates its warm, sticky contents directly into your [vagina].[or][BigNameDesc of M] begins to deflate, hissing quietly as its warm sticky contents shoot up inside of you.[or][BigNameDesc of M] stops after one final thrust, deflating as it floods your [vagina] with its sticky white contents.[at random] [one of][if the bimbo of the player < 7][line break][first custom style]Oh God, I think that was cum. All of it went inside me...[otherwise if the bimbo of the player < 12][line break][variable custom style]I think that was cum. There[']s so much of it inside me...[otherwise][line break][second custom style]That was cum! Mmm, there so much of it inside me...[end if][or][if the bimbo of the player < 7][first custom style]Ugh... I[']m so full...[otherwise if the bimbo of the player < 12][variable custom style]I[']m so full...[otherwise][second custom style]There[']s so much.~[end if][or][if the bimbo of the player < 7][first custom style]Not again...[otherwise if the bimbo of the player < 12][variable custom style]There's always a lot...[otherwise][second custom style]I think there's even more than last time![end if][stopping][roman type][line break]The sex doll disappears into nothingness.";
+		say "[one of]After one final thrust, you feel [NameDesc of M] begin to deflate, its warm, sticky contents shooting out inside of you.[or]With one final thrust, [NameDesc of M] begins to deflate, hissing quietly as it evacuates its warm, sticky contents directly into your [vagina].[or][BigNameDesc of M] begins to deflate, hissing quietly as its warm sticky contents shoot up inside of you.[or][BigNameDesc of M] stops after one final thrust, deflating as it floods your [vagina] with its sticky white contents.[at random] [one of][if the bimbo of the player < 7][line break][first custom style]Oh God, I think that was cum. All of it went inside me...[otherwise if the bimbo of the player < 12][line break][variable custom style]I think that was cum. There's so much of it inside me...[otherwise][line break][second custom style]That was cum! Mmm, there so much of it inside me...[end if][or][if the bimbo of the player < 7][first custom style]Ugh... I'm so full...[otherwise if the bimbo of the player < 12][variable custom style]I'm so full...[otherwise][second custom style]There's so much.~[end if][or][if the bimbo of the player < 7][first custom style]Not again...[otherwise if the bimbo of the player < 12][variable custom style]There's always a lot...[otherwise][second custom style]I think there's even more than last time![end if][stopping][roman type][line break]The sex doll disappears into nothingness.";
 		cutshow figure of sexdoll cutscene 1 for M;
 		PussyFill 12;
 	destroy M.

@@ -10,6 +10,9 @@ To decide which figure-name is the examine-image of (C - feeding bowls):
 
 BowlFeeding is an action applying to one thing.
 
+Before TQEating feeding bowls:
+	try bowlfeeding the noun instead.
+
 Check TQEating feeding bowls:
 	try bowlfeeding the noun instead.
 

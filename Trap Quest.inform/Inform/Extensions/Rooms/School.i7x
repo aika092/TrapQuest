@@ -304,7 +304,9 @@ To compute dungeon test of (M - a monster):
 	execute a random eligible dungeon-test.
 
 dungeon-food-test is a dungeon-test.
-Definition: dungeon-food-test is eligible if the player is not overly full and face is not actually occupied.
+Definition: dungeon-food-test is eligible:
+	if the player is not overly full and face is not actually occupied, decide yes;
+	decide no.
 To execute (T - dungeon-food-test):
 	let M be dungeon-test-monster;
 	say "[speech style of M]'Here's your food, little slave.'[roman type][line break][BigNameDesc of M] drops a dog bowl in front of you! It's filled with mushy peas[if watersports fetish is 1] drowned in [urine][otherwise if diaper quest is 0] drowned in [semen][end if]. Do you [if the player is upright]get down on your knees and [end if]eat it? ";
@@ -336,7 +338,9 @@ To execute (T - dungeon-degradation-test):
 		say "[big he of M] frowns at your silence.[line break][speech style of M]'Disappointing. Clearly your stay hasn't been long enough yet.'[roman type][line break]".
 
 dungeon-oral-test is a dungeon-test.
-Definition: dungeon-oral-test is eligible if diaper quest is 0 and face is not actually occupied.
+Definition: dungeon-oral-test is eligible:
+	if diaper quest is 0 and face is not actually occupied, decide yes;
+	decide no.
 To execute (T - dungeon-oral-test):
 	let M be dungeon-test-monster;
 	if M is male:
@@ -351,7 +355,9 @@ To execute (T - dungeon-oral-test):
 		say "[big he of M] growls at your lack of compliance.[line break][speech style of M]'You'd really rather stay here even longer? Fine by me.'[roman type][line break]".
 
 dungeon-bottle-test is a dungeon-test.
-Definition: dungeon-bottle-test is eligible if diaper quest is 1 and face is not actually occupied and the player is not overly full.
+Definition: dungeon-bottle-test is eligible:
+	if diaper quest is 1 and face is not actually occupied and the player is not overly full, decide yes;
+	decide no.
 To execute (T - dungeon-bottle-test):
 	let M be dungeon-test-monster;
 	say "[big he of M] holds a baby's bottle in front of you face, trying to coax the nipple into your mouth.[line break][speech style of M]'Time for your drinkies, baby!'[roman type][line break]Do you drink from the bottle? ";
@@ -387,7 +393,7 @@ To compute dungeon princess diaper challenge of (M - a monster):
 	say DungeonPrincessDiaperDeclarationFlav of M.
 
 To say DungeonPrincessDiaperDeclarationFlav of (M - a monster):
-	say "With a snap of [NameDesc of M][']s fingers, [NameDesc of ex-princess] is now wearing a massive white diaper with a colourful alien pattern, and a sheer pink nightie. Thick deep pink baby mittens and booties complete [his of ex-princess] new outfit. You watch with [horror the bimbo of the player] as [NameDesc of M] then presses [his of M] hands to [NameDesc of ex-princess][']s scalp, and [NameDesc of ex-princess][']s eyes roll into the back of [his of ex-princess] head.[line break][speech style of ex-princess]'What? No... please, don't make me do that... no, anything but that...!'[roman type][line break][BigNameDesc of M] laughs maliciously, as the front of [NameDesc of ex-princess][']s diaper visibly yellows, and [he of ex-princess] flushes red with what you assume is shame. But it quickly becomes clear that it's not just embarrassment - [his of ex-princess] tongue lolls out of [his of ex-princess] mouth and [he of ex-princess] involuntarily moves one mittened hand to the front of [his of ex-princess] diaper and the other to [his of ex-princess] right breast. Both start rubbing fervently, as [he of ex-princess] emits a loud erotic cry.[line break][speech style of M]'Let me explain to [NameBimbo] what just happened. [if M is headmistress]I have[otherwise]The [ShortDesc of headmistress][end if] has decided that the princess just being a diaper pail was too kind. The bitch is now fully incontinent, and from now on, whenever [he of ex-princess] soils [himself of ex-princess], [he of ex-princess] will be overcome with an incredibly powerful state of arousal.'[roman type][line break]";
+	say "With a snap of [NameDesc of M][']s fingers, [NameDesc of ex-princess] is now wearing a massive white diaper with a colourful alien pattern, and a sheer pink nightie. Thick deep pink baby mittens and booties complete [his of ex-princess] new outfit. You watch with [horror the bimbo of the player] as [NameDesc of M] then presses [his of M] hands to [NameDesc of ex-princess][']s scalp, and [NameDesc of ex-princess][']s eyes roll into the back of [his of ex-princess] head.[line break][speech style of ex-princess]'What? No... please, don't make me do that... no, anything but that...!'[roman type][line break][BigNameDesc of M] laughs maliciously, as the front of [NameDesc of ex-princess][']s diaper visibly yellows, and [he of ex-princess] flushes red with what you assume is shame. But it quickly becomes clear that it's not just embarrassment - [his of ex-princess] tongue lolls out of [his of ex-princess] mouth and [he of ex-princess] involuntarily moves one mittened hand to the front of [his of ex-princess] diaper and the other to [his of ex-princess] right breast. Both start rubbing fervently, as [he of ex-princess] emits a loud erotic cry.[line break][speech style of M]'Let me explain to [NameBimbo] what just happened. [if M is headmistress]I have[otherwise]The [ShortDesc of headmistress][end if] has decided that the princess just being a diaper pail was too kind. The bitch is now [one of]fully[or]hopelessly[or]utterly[or]totally[or]completely[at random] incontinent, and from now on, whenever [he of ex-princess] soils [himself of ex-princess], [he of ex-princess] will be overcome with an incredibly powerful state of arousal.'[roman type][line break]";
 	say "[BigNameDesc of M] pauses to chuckle.[line break][speech style of M]'That's not all. Whenever [he of ex-princess] sees someone in a used diaper, [he of ex-princess] will be completely unable to stop [himself of ex-princess] from smushing [his of ex-princess] face into it, until the wearer walks away. Of course... you can't walk away right now, can you?'[line break][roman type][BigNameDesc of M] turns to fully face you, and then presses [his of M] hands to your belly. For a moment, a low humming sound can be heard.[line break][speech style of M]'As for your punishment for this jailbreak attempt, [NameBimbo]... well, we're going to leave you with Fannie Facerub for a while. Oh, and your belly has been enchanted with a cheeky little spell, to make your [if diaper messing < 4]bladder[otherwise]bowels[end if] go into overdrive for a little while. So, enjoy trying to hold on until I return.'".
 
 An all time based rule (this is the school dungeon diaper balance rule):

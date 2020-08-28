@@ -20,7 +20,9 @@ To say ShortDesc of (C - a cultist robe):
 To compute SelfExamineDesc of (C - a cultist robe):
 	say "A sheer black robe loosely fits you.".
 
-Definition: a cultist robe is transformation-protected if the class of the player is cultist.
+Definition: a cultist robe is transformation-protected:
+	if the class of the player is cultist, decide yes;
+	decide no.
 Definition: a cultist robe is black themed: decide yes.
 Definition: a cultist robe is slitted: decide yes.
 Definition: a cultist robe is potentially erection concealing: decide yes. [non-tight skirts conceal erections]

@@ -1,38 +1,13 @@
 Region Building by Rooms begins here.
 
-[!<targetFloor:Room>*
-
-REQUIRES COMMENTING
-
-*!]
 target-floor is a room that varies. [This room just needs to be within the region we intend to piece together.]
 
-[!<targetPuzzlePiece:Room>*
-
-REQUIRES COMMENTING
-
-*!]
 target-puzzle-piece is a room that varies. [This is the room we are currently hoping to add a piece onto.]
 
-[!<chosenPuzzleDirection:Object>*
-
-REQUIRES COMMENTING
-
-*!]
 chosen-puzzle-direction is an object that varies.
 
-[!<closingForbidden:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 closing-forbidden is a number that varies.
 
-[!<Room>@<IsPuzzlePiece>+
-
-REQUIRES COMMENTING
-
-+@!]
 Definition: a room (called R) is puzzle piece:
 	if target-floor is in the Dungeon and R is a labyrinth room, decide yes;
 	if target-floor is in the Woods and R is jungle room, decide yes;
@@ -40,11 +15,6 @@ Definition: a room (called R) is puzzle piece:
 	if target-floor is in the Mansion and R is haunted room, decide yes;
 	decide no.
 
-[!<Room>@<IsSolvable>+
-
-REQUIRES COMMENTING
-
-+@!]
 Definition: a room (called R) is solvable:
 	if R is not placed, decide no;
 	if R is not puzzle piece, decide no;
@@ -52,39 +22,14 @@ Definition: a room (called R) is solvable:
 	if there is an empty puzzle socket direction, decide yes;
 	decide no.
 
-[!<dungeonPuzzleRestrictionsRules:Rulebook>*
-
-REQUIRES COMMENTING
-
-*!]
 The dungeon puzzle restrictions rules is a rulebook.
 
-[!<woodsPuzzleRestrictionsRules:Rulebook>*
-
-REQUIRES COMMENTING
-
-*!]
 The woods puzzle restrictions rules is a rulebook.
 
-[!<hotelPuzzleRestrictionsRules:Rulebook>*
-
-REQUIRES COMMENTING
-
-*!]
 The hotel puzzle restrictions rules is a rulebook.
 
-[!<mansionPuzzleRestrictionsRules:Rulebook>*
-
-REQUIRES COMMENTING
-
-*!]
 The mansion puzzle restrictions rules is a rulebook.
 
-[!<Room>@<IsAllowed>+
-
-REQUIRES COMMENTING
-
-+@!]
 Definition: a room (called R) is allowed:
 	follow the puzzle-restrictions of R;
 	if the rule failed, decide no;
@@ -108,50 +53,25 @@ Definition: a room (called R) is allowed:
 		if the rule failed, decide no;]
 	decide yes.
 
-[!<DecideWhichRuleIsThePuzzleRestrictionOfRoom>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which rule is the puzzle-restrictions of (R - a room):
 	decide on the standard puzzle restrictions rule.
 
-[!<TheStandardPuzzleRestrictionsRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the standard puzzle restrictions rule:
 	repeat with D running through compass vectorial directions:
 		let test-position be the vector sum of Door Finder and the vector of D;
 		if the room at test-position is not Solid Rock:
 			if the first forbidden direction of the room at test-position is the opposite of D or the second forbidden direction of the room at test-position is the opposite of D, rule fails.
 
-[!<TheNoRoomToTheRightOfHotelEntranceRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the no room to the right of hotel entrance rule:
 	let test-position be the vector sum of Door Finder and the vector of west;
 	if the room at test-position is Hotel01, rule fails.
 
 The no room to the right of hotel entrance rule is listed in the hotel puzzle restrictions rules.
 
-[!<Room>@<IsActuallySolvable>+
-
-REQUIRES COMMENTING
-
-+@!]
 Definition: a room (called R) is actually solvable:
 	if R is not solvable, decide no;
 	[If we have gotten past that line, then Neighbour Finder will already be the room we want to look at. Otherwise we would need to set it here.]
 
-[!<SolveThePuzzle>+
-
-REQUIRES COMMENTING
-
-+!]
 To solve the puzzle:
 	now Terra Incognita is open;
 	repeat with R running through puzzle piece rooms:
@@ -230,11 +150,6 @@ To flip the table around (X - a room):
 	repeat with R running through puzzle piece rooms:
 		make all directions possible for R;
 
-[!<FlipTheTableAroundLabyrinthRoom>+
-
-REQUIRES COMMENTING
-
-+!]
 To flip the table around (X - a labyrinth room):
 	repeat with R running through puzzle piece placed rooms:
 		unless R is Dungeon10 or R is Dungeon11 or R is Dungeon12 or R is Dungeon32:
@@ -281,138 +196,58 @@ If down to just closing pieces, reset these flags (it might have only been impos
 If certain "mandatory" tiles are not placed, reshuffle and start again.
 ]
 
-[!<Room>@<northImpossible:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 A room has a number called north-impossible.
 
-[!<Room>@<southImpossible:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 A room has a number called south-impossible.
 
-[!<Room>@<westImpossible:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 A room has a number called west-impossible.
 
-[!<Room>@<eastImpossible:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 A room has a number called east-impossible.
 
-[!<FlagDirectionAsImpossible>+
-
-REQUIRES COMMENTING
-
-+!]
 To flag (D - a direction) as impossible:
 	do nothing.
 
-[!<FlagEastAsImpossible>+
-
-REQUIRES COMMENTING
-
-+!]
 To flag (D - east) as impossible:
 	now the east-impossible of target-puzzle-piece is 1.
 
-[!<FlagWestAsImpossible>+
-
-REQUIRES COMMENTING
-
-+!]
 To flag (D - west) as impossible:
 	now the west-impossible of target-puzzle-piece is 1.
 
-[!<FlagNorthAsImpossible>+
-
-REQUIRES COMMENTING
-
-+!]
 To flag (D - north) as impossible:
 	now the north-impossible of target-puzzle-piece is 1.
 
-[!<FlagSouthAsImpossible>+
-
-REQUIRES COMMENTING
-
-+!]
 To flag (D - south) as impossible:
 	now the south-impossible of target-puzzle-piece is 1.
 
-[!<MakeAllDirectionsPossibleForRoom>+
-
-REQUIRES COMMENTING
-
-+!]
 To make all directions possible for (R - a room):
 	now the east-impossible of target-puzzle-piece is 0;
 	now the west-impossible of target-puzzle-piece is 0;
 	now the north-impossible of target-puzzle-piece is 0;
 	now the south-impossible of target-puzzle-piece is 0.
 
-[!<DirectionIsEmptyPuzzleSocket>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a direction is empty puzzle socket: decide no.
 
-[!<WestIsEmptyPuzzleSocket>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: west (called D) is empty puzzle socket:
 	if the west-impossible of Neighbour Finder is 1, decide no;
 	if W part of the shape of Neighbour Finder is 1 and D is not N-viable, decide yes; [If it is N-viable that means there's already a room there.]
 	decide no.
 
-[!<EastIsEmptyPuzzleSocket>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: east (called D) is empty puzzle socket:
 	if the east-impossible of Neighbour Finder is 1, decide no;
 	if E part of the shape of Neighbour Finder is 1 and D is not N-viable, decide yes;
 	decide no.
 
-[!<NorthIsEmptyPuzzleSocket>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: north (called D) is empty puzzle socket:
 	if the north-impossible of Neighbour Finder is 1, decide no;
 	if N part of the shape of Neighbour Finder is 1 and D is not N-viable, decide yes;
 	decide no.
 
-[!<SouthIsEmptyPuzzleSocket>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: south (called D) is empty puzzle socket:
 	if the south-impossible of Neighbour Finder is 1, decide no;
 	if S part of the shape of Neighbour Finder is 1 and D is not N-viable, decide yes;
 	decide no.
 
 [Is this our final current room with an opening in the specified direction?]
-[!<DirectionIsTheFinalOne>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a direction (called D) is the-final-one:
 	let N be Neighbour Finder;
 	repeat with R running through placed puzzle piece rooms:
@@ -421,20 +256,10 @@ Definition: a direction (called D) is the-final-one:
 	decide yes.
 
 [Does it only have one entrance/exit?]
-[!<Room>@<IsClosingTile>+
-
-REQUIRES COMMENTING
-
-+@!]
 Definition: a room (called R) is closing tile:
 	if N part of the shape of R + E part of the shape of R + W part of the shape of R + S part of the shape of R is 1, decide yes;
 	decide no.
 
-[!<Room>@<IsMostlyReady>+
-
-REQUIRES COMMENTING
-
-+@!]
 Definition: a room (called R) is mostly ready:
 	if R is placed or R is not puzzle piece, decide no;
 	if R is closing tile and closing-forbidden is 1 and R is not mandatory, decide no;
@@ -445,11 +270,6 @@ Definition: a room (called R) is mostly ready:
 	if R is allowed, decide yes;
 	decide no.
 
-[!<Room>@<IsFullyReady>+
-
-REQUIRES COMMENTING
-
-+@!]
 Definition: a room (called R) is fully ready:
 	if R is not mostly ready, decide no;
 	[Do all doors line up perfectly?]
@@ -457,51 +277,26 @@ Definition: a room (called R) is fully ready:
 	decide no.
 
 [Notably more computationally time consuming than empty puzzle socket, we check if there are any rooms left that are actually eligible to go here.]
-[!<DirectionIsSolvablePuzzleSocket>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a direction is solvable puzzle socket: decide no.
 
-[!<WestIsSolvablePuzzleSocket>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: west (called D) is solvable puzzle socket:
 	if D is not empty puzzle socket, decide no;
 	repeat with R running through unplaced puzzle piece rooms:
 		if E part of the shape of R is 1, decide yes; [This is the opposite direction since if we are looking for a room to the west, we care about its east side door.]
 	decide no.
 
-[!<EastIsSolvablePuzzleSocket>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: east (called D) is solvable puzzle socket:
 	if D is not empty puzzle socket, decide no;
 	repeat with R running through unplaced puzzle piece rooms:
 		if W part of the shape of R is 1, decide yes;
 	decide no.
 
-[!<NorthIsSolvablePuzzleSocket>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: north (called D) is solvable puzzle socket:
 	if D is not empty puzzle socket, decide no;
 	repeat with R running through unplaced puzzle piece rooms:
 		if S part of the shape of R is 1, decide yes;
 	decide no.
 
-[!<SouthIsSolvablePuzzleSocket>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: south (called D) is solvable puzzle socket:
 	if D is not empty puzzle socket, decide no;
 	repeat with R running through unplaced puzzle piece rooms:
@@ -509,18 +304,8 @@ Definition: south (called D) is solvable puzzle socket:
 	decide no.
 
 [Even more computationally time consuming, we check if the rooms that this new room will touch have doors in the right places.]
-[!<DirectionIsFullySolvablePuzzleSocket>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a direction is fully solvable puzzle socket: decide no.
 
-[!<WestIsFullySolvablePuzzleSocket>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: west (called D) is fully solvable puzzle socket:
 	if D is not empty puzzle socket, decide no;
 	repeat with R running through unplaced puzzle piece rooms:

@@ -1,6 +1,6 @@
 Microshorts by Knickers begins here.
 
-microshorts are a kind of knickers. microshorts are usually lycra. The armour of microshorts is 3. Understand "micro", "shorts" as microshorts. The soak-limit of microshorts is 6. The text-shortcut of microshorts is "ms". Understand "microshorts" as microshorts.
+microshorts are a kind of knickers. microshorts are usually lycra. The armour of microshorts is 3. Understand "micro", "shorts" as microshorts. The text-shortcut of microshorts is "ms". Understand "microshorts" as microshorts.
 
 Definition: a microshorts is displacable: decide yes.
 Definition: a microshorts is rippable: decide yes.

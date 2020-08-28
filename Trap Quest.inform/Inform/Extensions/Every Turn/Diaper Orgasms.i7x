@@ -1,31 +1,16 @@
 Diaper Orgasms by Every Turn begins here.
 
-[!<ReportGoing>+
-
-REQUIRES COMMENTING
-
-+!]
 Report going:
 	if diaper lover >= 1, compute spontaneous cumbustion.
 
-[!<DecideWhichNumberIsTheDiaperPrematureOrgasmChanceOfThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the diaper premature orgasm chance of the player:
 	if the diaper addiction of the player < 10, decide on 0;
 	if the player is not a pervert, decide on 0;
 	decide on (the diaper addiction of the player / 5) + (the sex addiction of the player / 5) + (the arousal of the player / 1500).
 
-[!<ComputeSpontaneousCombustion>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute spontaneous cumbustion: [TODO: Make different levels of mess/urine soak/diaper addiction change probability]
 	let R be a random number from 1 to 100;
-	if the player is diaper focused and the number of worn chastity cages is 0: [This also checks that the player is properly diapered]
+	if the player is diaper focused and the number of worn chastity bond is 0: [This also checks that the player is properly diapered]
 		let D be a random worn diaper;
 		if the player is able to orgasm and the diaper premature orgasm chance of the player > a random number between 5 and 8:
 			if R < 6 and the known-urine-soak of D >= 6 and the perceived-mess of D > 0 and the diaper addiction of the player > 14:

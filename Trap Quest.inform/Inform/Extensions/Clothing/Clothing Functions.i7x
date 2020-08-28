@@ -1,18 +1,8 @@
 Clothing Functions by Clothing begins here.
 
-[!<ComputeShortDescOfClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute SelfExamineDesc of (C - a clothing):
 	say "You are wearing a [ShortDesc of C]. ". [Hopefully, this will never happen, as each piece of clothing will have a description, but it needs to be here just in case.]
 
-[!<SayShortDescOfClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To say ShortDesc of (C - a clothing):
 	say "[C]". [Similarly, hopefully this will never happen, as each piece of clothing will have a description, but it needs to be here just in case.]
 
@@ -62,11 +52,6 @@ To decide which number is the hindrance of (Y - yourself):
 To restock (C - a clothing):
 	say "Error - the game tried to restock an item of clothing but there was no specific function to call. Please report the bug to Aika.".
 
-[!<DamageClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To damage (K - clothing):
 	let D be 0;
 	unless K is possession and a random number between 1 and 7 < 4, increase D by 1;
@@ -74,11 +59,6 @@ To damage (K - clothing):
 	increase the damage of K by D;
 	if D > 0 and debuginfo > 0, say "[input-style][ShortDesc of K] damage [damage of K - 1] -> [damage of K][roman type][line break]".
 
-[!<RepairClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To repair (C - clothing):
 	replace C;
 	now C is top-intact;
@@ -157,20 +137,10 @@ To ZipUp (C - clothing):
 		now C is crotch-zipped;
 		force clothing-focus redraw. [Forces redraw of clothing inventory window]
 
-[!<RipClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To rip (C - a clothing):
 	ZipDown C;
 	if C is rippable and (C is crotch-intact or C is crotch-skirted), now C is crotch-ripped.
 
-[!<DelayedImprintDestroy>+
-
-REQUIRES COMMENTING
-
-+!]
 To delayed imprint destroy (C - a clothing):
 	now C is in soon-to-imprint.
 

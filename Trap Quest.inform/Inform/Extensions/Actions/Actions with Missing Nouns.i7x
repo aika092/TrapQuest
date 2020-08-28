@@ -2,11 +2,6 @@ Actions with Missing Nouns by Actions begins here.
 
 AutoSlapping is an action applying to nothing.
 
-[!<CheckAutoSlapping>+
-
-REQUIRES COMMENTING
-
-+!]
 Check AutoSlapping:
 	if the number of dangerous monsters in the location of the player is 1:
 		let M be a random dangerous monster in the location of the player;
@@ -19,11 +14,6 @@ Understand "hit", "slap", "punch", "slash", "slash at", "swipe", "swipe at", "sc
 
 AutoKneeing is an action applying to nothing.
 
-[!<CheckAutoKneeling>+
-
-REQUIRES COMMENTING
-
-+!]
 Check AutoKneeing:
 	if the number of dangerous monsters in the location of the player is 1:
 		let M be a random dangerous monster in the location of the player;
@@ -36,11 +26,6 @@ Understand "knee", "kn" as AutoKneeing.
 
 AutoKicking is an action applying to nothing.
 
-[!<CheckAutoKicking>+
-
-REQUIRES COMMENTING
-
-+!]
 Check AutoKicking:
 	if the number of dangerous monsters in the location of the player is 1:
 		let M be a random dangerous monster in the location of the player;
@@ -53,11 +38,6 @@ Understand "kick", "ki" as AutoKicking.
 
 AutoDrinking is an action applying to nothing.
 
-[!<CheckAutoDrinking>+
-
-REQUIRES COMMENTING
-
-+!]
 Check AutoDrinking:
 	repeat with B running through autodrinkable bottles:
 		say "(the [printed name of B])";
@@ -65,11 +45,6 @@ Check AutoDrinking:
 	say "[if there is a held bottle]Drink what?[otherwise]But you're not holding any drinks?[end if]" instead.
 Understand "drink", "dr" as AutoDrinking.
 
-[!<BottleIsAutodrinkable>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a bottle (called B) is autodrinkable:
 	if the doses of B is 0, decide no;
 	if B is held or B is in the location of the player, decide yes;
@@ -78,11 +53,6 @@ Definition: a bottle (called B) is autodrinkable:
 
 AutoTaking is an action applying to nothing.
 
-[!<CheckAutoTaking>+
-
-REQUIRES COMMENTING
-
-+!]
 Check AutoTaking:
 	repeat with B running through autotakable things:
 		say "(the [printed name of B])";
@@ -90,11 +60,6 @@ Check AutoTaking:
 	say "Take what?" instead.
 Understand "take", "ta", "t" as AutoTaking.
 
-[!<ThingIsAutotakeable>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a thing (called B) is autotakable:
 	if B is not portable, decide no;
 	if B is held, decide no;
@@ -105,11 +70,6 @@ Definition: a thing (called B) is autotakable:
 
 AutoWearing is an action applying to nothing.
 
-[!<CheckAutoWearing>+
-
-REQUIRES COMMENTING
-
-+!]
 Check AutoWearing:
 	repeat with C running through open containers in the location of the player:
 		repeat with B running through clothing in C:
@@ -125,11 +85,6 @@ Understand "wear", "we" as AutoTaking.
 
 AutoOpening is an action applying to nothing.
 
-[!<CheckAutoOpening>+
-
-REQUIRES COMMENTING
-
-+!]
 Check AutoOpening:
 	repeat with C running through closed containers in the location of the player:
 		unless C is pink wardrobe:
@@ -152,11 +107,6 @@ Understand "greet", "say hello", "say hi", "talk", "speak", "say", "converse" as
 
 AutoDipping is an action applying to one thing.
 
-[!<CheckAutoDipping>+
-
-REQUIRES COMMENTING
-
-+!]
 Check AutoDipping:
 	if the noun is not vessel, say "You need to choose a drinking vessel.";
 	repeat with C running through dispensers in the location of the player:
@@ -167,11 +117,6 @@ Understand "dip [something]", "fill [something]" as AutoDipping.
 
 AutoGlueWiping is an action applying to one thing.
 
-[!<CheckAutoGlueWiping>+
-
-REQUIRES COMMENTING
-
-+!]
 Check AutoGlueWiping:
 	let C be a random carried unglued clothing;
 	if C is clothing and the player is glue stuck and the noun is glue, try GlueRubbing the noun on C instead;

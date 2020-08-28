@@ -13,11 +13,6 @@ A bukkake trap door is a kind of trap. There are 3 click bukkake trap doors.
 To say ExamineDesc of (C - a bukkake trap door):
 	say "A trap door that housed gallons of [semen] above it, [one of]waiting to cover some poor adventurer.[or]ready to shower an unsuspecting traveller.[or]that must have taken hundreds if not thousands of men to fill up. Or maybe one very impressive creature...[as decreasingly likely outcomes]".
 
-[!<TheSpawnInitialDungeonBukkakeTrapsRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the spawn initial dungeon bukkake traps rule:
 	let R be a random click untrapped trappable placed labyrinth room;
 	let T be a random off-stage bukkake hose;
@@ -28,11 +23,6 @@ This is the spawn initial dungeon bukkake traps rule:
 		deploy T in R.
 The spawn initial dungeon bukkake traps rule is listed in the set up dungeon traps rules.
 
-[!<TheSpawnInitialWoodsBukkakeTrapsRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the spawn initial woods bukkake traps rule:
 	if bukkake fetish > 0 and christmas content is 0:
 		let R be a random click untrapped trappable placed jungle room;
@@ -40,11 +30,6 @@ This is the spawn initial woods bukkake traps rule:
 		unless there is a bukkake hose in R, deploy T in R.
 The spawn initial woods bukkake traps rule is listed in the set up woods traps rules.
 
-[!<TheSpawnInitialHotelBukkakeTrapsRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the spawn initial hotel bukkake traps rule:
 	if christmas content is 0:
 		let R be a random click untrapped trappable placed modern room;
@@ -52,11 +37,6 @@ This is the spawn initial hotel bukkake traps rule:
 		unless there is a bukkake hose in R, deploy T in R.
 The spawn initial hotel bukkake traps rule is listed in the set up hotel traps rules.
 
-[!<TheSpawnInitialMansionBukkakeTrapsRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the spawn initial mansion bukkake traps rule:
 	if bukkake fetish > 0 and christmas content is 0:
 		let R be a random trappable click untrapped placed haunted room;
@@ -86,11 +66,6 @@ A bukkake hose is a kind of trap. There are 10 click bukkake hoses.
 To say ExamineDesc of (C - a bukkake hose):
 	say "A hose that was hidden inside a container, waiting to cover someone in [if bukkake fetish is 1][semen] or [end if]water.".
 
-[!<BukkakeTrapDoor>@<Trigger>+
-
-REQUIRES COMMENTING
-
-+@!]
 To trigger (Y - a bukkake trap door):
 	now the reset-timer of Y is 250;
 	now Y is not untriggered;
@@ -120,11 +95,6 @@ To trigger (Y - a bukkake trap door):
 	repeat with M running through reactive monsters:
 		say BukkakeDoorTrapReactFlav of M.
 
-[!<BukkakeHose>@<Trigger>+
-
-REQUIRES COMMENTING
-
-+@!]
 To trigger (Y - a bukkake hose):
 	now the reset-timer of Y is 250;
 	now Y is not untriggered;

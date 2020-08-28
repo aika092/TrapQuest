@@ -10,11 +10,6 @@ Report kicking:
 Report zapping it with:
 	now latestCombatFocus is the second noun.
 
-[!<CheckAttacking>+
-
-REQUIRES COMMENTING
-
-+!]
 Check attacking:
 	if the noun is vine boss and the player is vine stuck, try pulling a random vines wrangling a body part instead;
 	if the noun is pedestal:

@@ -76,7 +76,7 @@ To compute class outfit of (H - runic headband):
 				repeat with O running through worn exclusive corsets:
 					say "Your [O] [wardrobeVanishes of O]!";
 					now O is in pink wardrobe;
-				repeat with O running through worn skirted clothing:
+				repeat with O running through worn skirt clashing clothing:
 					say "Your [O] [wardrobeVanishes of O]!";
 					now O is in pink wardrobe;
 			now priestess-summoned is 1;
@@ -88,7 +88,7 @@ To compute class outfit of (H - runic headband):
 			say "[bold type]Your runic headband gently hums as a [cleavage-window-priestess-outfit] [bold type]appears on you![roman type][line break]";
 			summon cleavage-window-priestess-outfit;
 		otherwise if heart-pussy-skirt is off-stage and heart-pussy-hobble-skirt is not worn and (cleavage-window-priestess-outfit is worn or heart-pussy-skirt is actually summonable):
-			repeat with O running through worn skirted clothing:
+			repeat with O running through worn skirt clashing clothing:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
 			say "[bold type]Your runic headband gently hums as a [heart-pussy-skirt] [bold type]appears on you![roman type][line break]";
@@ -199,7 +199,7 @@ To compute persistent reward of (Q - priestess-vaginal-service-quest) on (C - a 
 To compute virginity-loss of (C - runic headband):
 	if diaper quest is 0 and the quest of C is priestess-service-quest and the player is female:
 		now C is not purity;
-		say "[if C is not cursed]Your [ShortDesc of C] shudders as a curse falls upon it. [end if]A voice rebounds in your head.[line break][second custom style]'[GoddessAddress] you have sinned! Your quest will have to be... reassigned. Once a sinner, always a sinner, as they say. From now on, you must use that sinful [cunt] of yours for your service. But beware, if you [if pregnancy fetish > 0]fall pregnant[otherwise]fill your sacred womb with too much seed[end if], you will not be forgiven, and the price will be dear. Present your ritual beads or headband with [']evidence['] of your service to my altar when your deeds are complete.'[roman type][line break]";
+		say "[if C is not cursed]Your [ShortDesc of C] shudders as a curse falls upon it. [end if]A voice reverberates in your head.[line break][second custom style]'[GoddessAddress] you have sinned! Your quest will have to be... reassigned. Once a sinner, always a sinner, as they say. From now on, you must use that sinful [cunt] of yours for your service. But beware, if you [if pregnancy fetish > 0]fall pregnant[otherwise]fill your sacred womb with too much seed[end if], you will not be forgiven, and the price will be dear. Present your ritual beads or headband with [']evidence['] of your service to my altar when your deeds are complete.'[roman type][line break]";
 		now C is cursed;
 		now the quest of C is priestess-vaginal-service-quest;
 		repeat with O running through worn trousers:
@@ -216,7 +216,7 @@ To compute virginity-loss of (C - runic headband):
 			transform PO into cameltoe-priestess-outfit;
 			now cameltoe-priestess-outfit is crotch-displaced;
 		otherwise:
-			repeat with O running through worn skirted clothing:
+			repeat with O running through worn skirt clashing clothing:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
 			repeat with O running through worn dresses:
@@ -257,9 +257,9 @@ An all later time based rule (this is the sinful priestess punishment rule):
 		if pregnancy fetish is 1:
 			if the pregnancy of the player > 0:
 				now priestessPunish is 1;
-				say "A voice rebounds in your head.[line break][second custom style]'[GoddessAddress] you have allowed your womb to become defiled with unsacred seed, and have begun to carry life inside you! ";
+				say "A voice echoes in your head.[line break][second custom style]'[GoddessAddress] you have allowed your womb to become defiled with unsacred seed, and have begun to carry life inside you! ";
 		otherwise if the womb volume of vagina > 2:
-			say "A voice rebounds in your head.[line break][second custom style]'[GoddessAddress] you have allowed your womb to become defiled with disgraceful amounts of unsacred seed! ";
+			say "A voice reverberates in your head.[line break][second custom style]'[GoddessAddress] you have allowed your womb to become defiled with disgraceful amounts of unsacred seed! ";
 			now priestessPunish is 1;
 		if priestessPunish is 1:
 			say "This is unforgivable. You have broken my trust and failed me. Fine. I release you from your charge, and leave you to the demons. Perhaps the Other Side will have more use for a whore such as you.'[roman type][line break]";
@@ -274,7 +274,7 @@ An all later time based rule (this is the sinful priestess punishment rule):
 			if C is cameltoe-priestess-outfit or C is exposing-priestess-outfit:
 				say "[bold type][BigNameDesc of C] [bold type]reacts to the [semen] that's entered your womb![roman type][line break]";
 				transform C into cleavage-window-priestess-outfit;
-				repeat with O running through worn skirted clothing:
+				repeat with O running through worn skirt clashing clothing:
 					say "Your [O] [wardrobeVanishes of O]!";
 					now O is in pink wardrobe;
 				summon heart-pussy-skirt;

@@ -2,7 +2,9 @@ Royal Dress by Dresses begins here.
 
 royal dress is a kind of overdress. A royal dress is usually unique. A royal dress is usually silk. A royal dress is usually only arm covering.
 
-Definition: a royal dress is class-transformation-protected if the class of the player is princess.
+Definition: a royal dress is class-transformation-protected:
+	if the class of the player is princess, decide yes;
+	decide no.
 
 The printed name of royal dress is usually "[clothing-title-before]royal dress[clothing-title-after]". The text-shortcut of royal dress is "rd".
 
@@ -45,7 +47,7 @@ To decide which number is the initial outrage of (C - a ballgown royal dress):
 
 Part 2 - Lolita Royal Dress
 
-A lolita royal dress is a kind of royal dress. There is 1 lolita royal dress. A lolita royal dress is fully covering. A lolita royal dress is not-top-displacable. The soak-limit of a lolita royal dress is usually 35. The text-shortcut of lolita royal dress is "rd2".
+A lolita royal dress is a kind of royal dress. There is 1 lolita royal dress. A lolita royal dress is fully covering. A lolita royal dress is not-top-displacable. The text-shortcut of lolita royal dress is "rd2".
 
 To decide which figure-name is clothing-image of (C - a lolita royal dress):
 	decide on figure of royal dress 2.
@@ -63,7 +65,7 @@ To decide which number is the initial cringe of (C - a lolita royal dress):
 
 Part 3 - Baby Royal Dress
 
-A baby royal dress is a kind of royal dress. There is 1 baby royal dress. A baby royal dress is not-top-displacable. The soak-limit of a baby royal dress is usually 35. A baby royal dress is super-short. A baby royal dress is bed wetting. The text-shortcut of baby royal dress is "rd3". A baby royal dress is usually diaper-addiction-influencing.
+A baby royal dress is a kind of royal dress. There is 1 baby royal dress. A baby royal dress is not-top-displacable. A baby royal dress is super-short. A baby royal dress is bed wetting. The text-shortcut of baby royal dress is "rd3". A baby royal dress is usually diaper-addiction-influencing.
 
 To decide which figure-name is clothing-image of (C - a baby royal dress):
 	decide on figure of royal dress 3.
@@ -81,7 +83,9 @@ To decide which number is the initial cringe of (C - a baby royal dress):
 To say ShortDesc of (O - a baby royal dress):
 	say "pink princess pattern baby dress";
 
-Definition: a baby royal dress is fetish appropriate if the player is diapered.
+Definition: a baby royal dress is fetish appropriate:
+	if the player is diapered, decide yes;
+	decide no.
 Definition: a baby royal dress is baby themed: decide yes.
 Definition: a baby royal dress is bow themed: decide yes.
 

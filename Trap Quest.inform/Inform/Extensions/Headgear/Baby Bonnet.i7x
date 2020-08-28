@@ -16,7 +16,9 @@ Definition: a baby bonnet is condom pinnable: decide yes.
 
 Part - Class Outfit
 
-Definition: a baby bonnet is removal-blocking if wearing-target is onesie or wearing-target is mittens or wearing-target is baby booties. [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
+Definition: a baby bonnet is removal-blocking:
+	if wearing-target is onesie or wearing-target is mittens or wearing-target is baby booties, decide yes;
+	decide no. [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
 
 baby-summoned is a number that varies.
 To compute unique recycling of (C - a baby bonnet):
@@ -82,7 +84,9 @@ Part - Variations
 
 victorian-baby-bonnet is a baby bonnet. The text-shortcut of victorian-baby-bonnet is "vbon".
 
-Definition: victorian-baby-bonnet is roleplay if diaper lover >= 1.
+Definition: victorian-baby-bonnet is roleplay:
+	if diaper lover >= 1, decide yes;
+	decide no.
 
 Figure of victorian baby bonnet is the file "Items/Accessories/Head/babybonnet1.png".
 

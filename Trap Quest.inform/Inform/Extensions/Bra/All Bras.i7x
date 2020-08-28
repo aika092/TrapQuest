@@ -47,9 +47,6 @@ To decide which figure-name is the clothing-image of (B - a wonder bra):
 To say ClothingDesc of (C - a wonder bra):
 	say "A padded black [printed name of C], which both supports the boobs and pushes them up and together to enhance their cleavage.".
 
-To decide what number is the original price of (C - a wonder bra):
-	decide on 2.
-
 To decide which number is the initial outrage of (C - a wonder bra):
 	decide on 3.
 
@@ -128,7 +125,9 @@ To decide which object is the unique-upgrade-target of (C - a beige exercise bra
 To decide which object is the unique-upgrade-target of (C - a greyish exercise bra):
 	decide on a random off-stage sexy exercise bra.
 
-Definition: a greyish exercise bra is IcarusScienceAppropriate if it is actually summonable.
+Definition: a greyish exercise bra is IcarusScienceAppropriate:
+	if it is actually summonable, decide yes;
+	decide no.
 
 A fetish bra is a kind of bra. Figure of fetish bra is the file "Items/Clothes/Upper/Bras/latexbra1.png". A fetish bra is usually normally-nipple-exposing. A fetish bra is usually sheer. A fetish bra is high cut. A fetish bra is usually latex. A fetish bra is usually transformation-rare.
 
@@ -149,15 +148,12 @@ To decide which figure-name is clothing-image of (C - a fetish bra):
 	decide on figure of fetish bra.
 
 To say ClothingDesc of (C - a fetish bra):
-	say "A transparent latex [printed name of C], which clings tightly to the flesh, and has holes for the nipples, leaving them completely exposed.[if lactation fetish is 1][one of][or][or][or][line break]Lactating [milk] could potentially escape the bra, but probably only if you were on your hands and knees.[as decreasingly likely outcomes][end if]";
-
-To decide which number is the original price of (C - a fetish bra):
-	decide on 1.
+	say "A transparent latex [printed name of C], which clings tightly to the flesh, and has holes for the nipples, leaving them completely exposed.[if lactation fetish is 1][one of][or][or][or][line break]Lactating [milk] could potentially escape the bra, but probably only if you were on your hands and knees.[as decreasingly likely outcomes][end if]".
 
 To decide which number is the initial outrage of (C - a fetish bra):
 	decide on 9.
 
-A maternity bra is a kind of bra. Figure of maternity bra is the file "Items/Clothes/Upper/Bras/maternitybra1.png". The soak-limit of a maternity bra is usually 15.
+A maternity bra is a kind of bra. Figure of maternity bra is the file "Items/Clothes/Upper/Bras/maternitybra1.png".
 
 There is 1 maternity bra. The text-shortcut of maternity bra is "mbr".
 
@@ -165,7 +161,7 @@ The min size of a maternity bra is usually 7. The max size of a maternity bra is
 
 A maternity bra is usually milking flappable.
 
-Definition: an maternity bra is pregnancy related: decide yes.
+Definition: an maternity bra is pregnancy themed: decide yes.
 
 To say ShortDesc of (B - a maternity bra):
 	say "maternity bra".
@@ -204,9 +200,6 @@ To decide which figure-name is clothing-image of (C - a cupless bra):
 To say ClothingDesc of (C - a cupless bra):
 	say "This black bra only has an underbust section, with some frills. It has no cups at all and completely exposes the entirety of [if C is worn]your [BreastDesc].[otherwise]the wearer's breasts.[end if]";
 
-To decide what number is the original price of (C - a cupless bra):
-	decide on 1.
-
 To decide which number is the initial outrage of (C - a cupless bra):
 	decide on 6.
 
@@ -224,7 +217,7 @@ Definition: a cupless bra is black themed: decide yes.
 To decide which number is the bartering value of (T - a cupless bra) for (M - a gladiator):
 	decide on 4.
 
-A ribbon bra is a kind of bra. Figure of ribbon bra is the file "Items/Clothes/Upper/Bras/ribbonbra1.png". A ribbon bra is usually normally-nipple-exposing. A ribbon bra is ridiculously low cut. A ribbon bra is usually optional-top-displacable. The soak-limit of a ribbon bra is usually 9. A ribbon bra is usually transformation-rare.
+A ribbon bra is a kind of bra. Figure of ribbon bra is the file "Items/Clothes/Upper/Bras/ribbonbra1.png". A ribbon bra is usually normally-nipple-exposing. A ribbon bra is ridiculously low cut. A ribbon bra is usually optional-top-displacable. A ribbon bra is usually transformation-rare.
 
 There is 1 ribbon bra. The text-shortcut of ribbon bra is "rib".
 
@@ -258,9 +251,6 @@ To decide which figure-name is clothing-image of (C - a ribbon bra):
 To say ClothingDesc of (C - a ribbon bra):
 	say "This bra provides little support, and since the cups are simply two black ribbons across the nipples, reveals a lot of flesh, including the nipples themselves which are framed by a metal ring. [if lactation fetish is 1]However because of its design in this way, it doesn't get soaked by lactating nipples.[otherwise]You're not really sure what the benefit is to wearing this kind of bra.[end if]";
 
-To decide which number is the original price of (C - a ribbon bra):
-	decide on 1.
-
 To decide which number is the initial outrage of (C - a ribbon bra):
 	decide on 6.
 
@@ -273,7 +263,7 @@ Definition: a ribbon bra is red themed: decide yes.
 
 A spike bra is a kind of bra. Figure of spike bra 1 is the file "Items/Clothes/Upper/Bras/spikebra1.png". Figure of spike bra 2 is the file "Items/Clothes/Upper/Bras/spikebra2.png". A spike bra is usually spikey. The min size of a spike bra is usually 2. The max size of a spike bra is usually 15. The support of a spike bra is usually 3. A spike bra is very low cut. A spike bra is usually pvc.
 
-A pink spike bra is a kind of spike bra. A pink spike bra is usually cotton. The soak-limit of a pink spike bra is usually 18.
+A pink spike bra is a kind of spike bra. A pink spike bra is usually cotton.
 
 There is 1 unique spike bra. There is 1 unique pink spike bra. The text-shortcut of spike bra is "spb".
 
@@ -372,7 +362,7 @@ To decide which number is the bartering value of (T - a spike bra) for (M - a gl
 
 A flimsy bra is a kind of bra. Figure of sheer bra is the file "Items/Clothes/Upper/Bras/sheerbra1.png". Understand "sheer" as flimsy bra.
 
-[The printed name of the bra is sheer bra hence the shortcut. Since sheer is already a keyword the game wouldn't let me create an object called the sheer bra hence why it's object identifier is flimsy bra. A player in-game will never see the word "flimsy".]
+[The printed name of the bra is sheer bra hence the shortcut. Since sheer is already a keyword the game wouldn't let me create an object called the sheer bra hence why its object identifier is flimsy bra. A player in-game will never see the word "flimsy".]
 There is 1 flimsy bra. The text-shortcut of flimsy bra is "shb".
 
 The min size of a flimsy bra is usually 2. The max size of a flimsy bra is usually 15. The support of a flimsy bra is usually 2. A flimsy bra is transformation-rare. A flimsy bra is sheer. A flimsy bra is erect-nipple-exposing.
@@ -395,9 +385,6 @@ To decide which number is the initial outrage of (C - a flimsy bra):
 To decide which number is the initial cringe of (C - a flimsy bra):
 	decide on 4.
 
-To decide what number is the original price of (C - a flimsy bra):
-	decide on 2.
-
 Definition: a flimsy bra is sissifying: decide yes.
 
 To decide which object is the unique-upgrade-target of (C - a flimsy bra):
@@ -405,7 +392,7 @@ To decide which object is the unique-upgrade-target of (C - a flimsy bra):
 	if (a random number between 1 and 2 is 1 and there is an off-stage fetish bra) or the number of off-stage ribbon bra is 0, decide on a random off-stage fetish bra;
 	decide on a random off-stage ribbon bra.
 
-A pasties is a kind of bra. The support of a pasties is usually 0. A pasties is usually latex. A pasties is usually ridiculously low cut. The min size of a pasties is 20. The max size of a pasties is 20. A pasties is usually transformation-rare. Understand "stickers", "caps", "nipple" as pasties. The text-shortcut of a pasties is "psts".
+A pasties is a kind of bra. The support of a pasties is usually 0. A pasties is usually latex. A pasties is usually ridiculously low cut. The min size of a pasties is 20. The max size of a pasties is 20. A pasties is usually transformation-rare. Understand "stickers", "caps", "nipple" as pasties. The text-shortcut of a pasties is "psts". A pasties is not-top-displacable.
 
 To say ShortDesc of (B - a pasties):
 	say "nipple pasties".
@@ -527,8 +514,12 @@ To say MediumDesc of (B - tongue-bra):
 Definition: tongue-bra is demonic: decide yes.
 Definition: tongue-bra is tongued: decide yes.
 Definition: tongue-bra is transformation-protected: decide yes.
-Definition: tongue-bra is white themed if tonguesBlack is false.
-Definition: tongue-bra is black themed if tonguesBlack is true.
+Definition: tongue-bra is white themed:
+	if tonguesBlack is false, decide yes;
+	decide no.
+Definition: tongue-bra is black themed:
+	if tonguesBlack is true, decide yes;
+	decide no.
 
 To decide which number is the initial outrage of (C - tongue-bra):
 	if C is tonguing, decide on 17;
@@ -547,7 +538,9 @@ To say ClothingDesc of (C - a trainee bra):
 Definition: a trainee bra is grey themed: decide yes.
 Definition: a trainee bra is transformation-protected: decide yes.
 Definition: a trainee bra is whore themed: decide yes.
-Definition: a trainee bra is removable if it is not magnetised.
+Definition: a trainee bra is removable:
+	if it is not magnetised, decide yes;
+	decide no.
 
 A trainee bra is usually latex. The support of a trainee bra is usually -10. The min size of trainee bra is usually 20. The max size of trainee bra is usually 20. A trainee bra is usually top-exclusive.
 
@@ -561,7 +554,7 @@ trainee bra removability rules is a rulebook. The removability rules of trainee 
 
 This is the magnetised trainee bra can't be removed rule:
 	if the wearing-target is magnetised:
-		if summoning is 0 and autoremove is false, say "The magnetic latches keep the [printed name of wearing-target] all but immobile. You[']ll need to find a way to deactivate it if you want to get it off.";
+		if summoning is 0 and autoremove is false, say "The magnetic latches keep the [printed name of wearing-target] all but immobile. You'll need to find a way to deactivate it if you want to get it off.";
 		rule fails.
 The magnetised trainee bra can't be removed rule is listed in the trainee bra removability rules.
 
@@ -597,7 +590,7 @@ To compute periodic effect of (C - a trainee bra):[remember that training-progre
 				destroy C;
 				ProgressUp senior robobellboy.
 
-acolyte-chestpiece is a cupless bra. The text-shortcut of acolyte-chestpiece is "actp". acolyte-chestpiece is metal. The soak-limit of acolyte-chestpiece is 0. Understand "gold", "golden", "acolyte", "acolyte's", "chestpiece" as acolyte-chestpiece. acolyte-chestpiece is unique. acolyte-chestpiece is top-exclusive. The printed name of acolyte-chestpiece is "[clothing-title-before]acolyte's chestpiece[clothing-title-after]". acolyte-chestpiece has a number called charge. The charge of acolyte-chestpiece is usually 0.
+acolyte-chestpiece is a cupless bra. The text-shortcut of acolyte-chestpiece is "actp". acolyte-chestpiece is metal. Understand "gold", "golden", "acolyte", "acolyte's", "chestpiece" as acolyte-chestpiece. acolyte-chestpiece is unique. acolyte-chestpiece is top-exclusive. The printed name of acolyte-chestpiece is "[clothing-title-before]acolyte's chestpiece[clothing-title-after]". acolyte-chestpiece has a number called charge. The charge of acolyte-chestpiece is usually 0.
 
 Definition: acolyte-chestpiece is blessable: decide no.
 Definition: acolyte-chestpiece is demonic: decide yes.

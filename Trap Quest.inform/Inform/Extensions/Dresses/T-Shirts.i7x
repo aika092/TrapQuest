@@ -152,9 +152,13 @@ To decide which number is the initial outrage of (C - an I love my wet nappies T
 To decide which number is the initial cringe of (C - an I love my wet nappies T-shirt):
 	decide on 7.
 
-Definition: an I love my wet nappies T-shirt is transformation-protected if it is cursed and there is a worn diaper.
+Definition: an I love my wet nappies T-shirt is transformation-protected:
+	if it is cursed and there is a worn diaper, decide yes;
+	decide no.
 
-Definition: an I love my wet nappies T-shirt is fetish appropriate if diaper lover > 0.
+Definition: an I love my wet nappies T-shirt is fetish appropriate:
+	if diaper lover > 0, decide yes;
+	decide no.
 Definition: an I love my wet nappies T-shirt is baby themed: decide yes.
 Definition: an I love my wet nappies T-shirt is white themed: decide yes.
 Definition: an I love my wet nappies T-shirt is pin themed: decide yes. [Is it something related to safety pins?]
@@ -207,7 +211,7 @@ To say MediumDesc of (C - a birth control for sissies T-shirt):
 To decide which number is the initial outrage of (C - a birth control for sissies T-shirt):
 	decide on 5.
 
-Definition: a birth control for sissies T-shirt is pregnancy related: decide yes.
+Definition: a birth control for sissies T-shirt is pregnancy themed: decide yes.
 Definition: a birth control for sissies T-shirt is black themed: decide yes.
 
 To decide which number is the vaginal-sex-addiction-influence of (C - a birth control for sissies T-shirt):
@@ -241,7 +245,9 @@ To decide which number is the delicateness-influence of (C - sissy-T-shirt):
 
 Definition: sissy-T-shirt is sissifying: decide yes.
 Definition: sissy-T-shirt is white themed: decide yes.
-Definition: sissy-T-shirt is fetish appropriate if diaper lover > 0 and the player is gendered male.
+Definition: sissy-T-shirt is fetish appropriate:
+	if diaper lover > 0 and the player is gendered male, decide yes;
+	decide no.
 
 To decide which object is the unique-upgrade-target of (C - sissy-T-shirt):
 	decide on a random off-stage sissy faggot T-shirt.
@@ -268,7 +274,7 @@ To say MediumDesc of (C - an I'm knocked up T-shirt):
 To decide which number is the initial outrage of (C - an I'm knocked up T-shirt):
 	decide on 4.
 
-Definition: an I'm knocked up T-shirt is pregnancy related: decide yes.
+Definition: an I'm knocked up T-shirt is pregnancy themed: decide yes.
 Definition: an I'm knocked up T-shirt is pink themed: decide yes.
 
 To decide which number is the vaginal-sex-addiction-influence of (C - an I'm knocked up T-shirt):
@@ -340,7 +346,9 @@ To decide which number is the initial cringe of (C - a high maintenance T-shirt)
 
 Definition: a high maintenance T-shirt is dog themed: decide yes.
 Definition: a high maintenance T-shirt is white themed: decide yes.
-Definition: a high maintenance T-shirt is fetish appropriate if diaper lover > 0.
+Definition: a high maintenance T-shirt is fetish appropriate:
+	if diaper lover > 0, decide yes;
+	decide no.
 
 Part 11 - Dear Santa T-shirt
 
@@ -431,7 +439,9 @@ To decide which number is the delicateness-influence of (C - a sissy faggot T-sh
 
 Definition: a sissy faggot T-shirt is sissifying: decide yes.
 Definition: a sissy faggot T-shirt is white themed: decide yes.
-Definition: a sissy faggot T-shirt is fetish appropriate if the player is gendered male and diaper quest is 0.
+Definition: a sissy faggot T-shirt is fetish appropriate:
+	if the player is gendered male and diaper quest is 0, decide yes;
+	decide no.
 
 To decide which number is the initial outrage of (C - a sissy faggot T-shirt):
 	decide on 11.

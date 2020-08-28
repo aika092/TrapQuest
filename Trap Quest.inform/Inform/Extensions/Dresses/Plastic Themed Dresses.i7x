@@ -7,11 +7,20 @@ Definition: a silicone dress is pink themed: decide yes.
 To decide which number is the initial outrage of (C - a silicone dress):
 	decide on 5.
 
-Definition: a silicone dress is upgradable if the player is not top heavy.
-Definition: a silicone dress is transformation-protected if it is not upgradable.
+Definition: a silicone dress is upgradable:
+	if the player is not top heavy, decide yes;
+	decide no.
+Definition: a silicone dress is transformation-protected:
+	if it is not upgradable, decide yes;
+	decide no.
 Definition: a silicone dress is disintegration-protected: decide yes.
-Definition: a silicone dress is loop-safe-upgradable: decide yes.
+Definition: a silicone dress is loop-safe-upgradable:
+	if it is upgradable, decide yes;
+	decide no.
 Definition: a silicone dress is transformation-theme-blockable: decide no. [It doesn't care about the theme it shares with other items.]
+
+To decide which number is the transformability of (C - a silicone dress):
+	decide on 12.
 
 To decide which object is the unique-upgrade-target of (C - a silicone dress):
 	decide on C.
@@ -37,7 +46,7 @@ To compute periodic effect of (R - a silicone dress):
 			say "You feel your ass implants slightly increase in size.";
 			AssImplantsUp 1 + extreme proportions fetish.
 
-plastic-is-fantastic dress is a silicone dress. plastic-is-fantastic dress is low cut.  Understand "plastic", "plastic is", "fantastic", "pink", "rubber", "dress" as plastic-is-fantastic dress.
+plastic-is-fantastic dress is a silicone dress. plastic-is-fantastic dress is low cut. Understand "plastic", "plastic is", "fantastic", "pink", "rubber", "dress" as plastic-is-fantastic dress.
 
 The printed name of plastic-is-fantastic dress is "[clothing-title-before]pink rubber 'PLASTIC IS FANTASTIC' dress[clothing-title-after]". The text-shortcut of plastic-is-fantastic dress is "pifd".
 
@@ -52,7 +61,7 @@ To say ClothingDesc of (C - plastic-is-fantastic dress):
 To say MediumDesc of (C - plastic-is-fantastic dress):
 	say "'PLASTIC IS FANTASTIC' minidress".
 
-daddy issues dress is a silicone dress. daddy issues dress is high cut.  Understand "daddy", "issues", "pink", "rubber", "dress" as daddy issues dress.
+daddy issues dress is a silicone dress. daddy issues dress is high cut. Understand "daddy", "issues", "pink", "rubber", "dress" as daddy issues dress.
 
 The printed name of daddy issues dress is "[clothing-title-before]pink rubber 'Daddy Issues' dress[clothing-title-after]". The text-shortcut of daddy issues dress is "ddid".
 

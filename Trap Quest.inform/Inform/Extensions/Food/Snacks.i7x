@@ -31,7 +31,7 @@ Carry out TQeating apple:
 	IntUp 1.
 
 Report TQeating apple:
-	say "You [if the fat-weight of the player > 20]greedily bite off large chunks of the apple, swallowing each whole. [otherwise]take bites out of the apple, until you have eaten nearly all of the juicy fruit. [end if]You feel smarter! You discard the core.".
+	say "You [if the fat-weight of the player > 20]greedily bite off large chunks of the apple, swallowing each whole. [otherwise]take bites out of the apple, until you have eaten nearly all of the juicy fruit. [end if]You feel [smarter]! You discard the core.".
 
 To compute (M - a robochef) cooking (I - apple):
 	let D be a random off-stage gelatin;

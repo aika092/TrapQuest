@@ -1,10 +1,5 @@
 Soreness by Player Description begins here.
 
-[!<SaySorenessdesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say SorenessDesc:
 	if the body soreness of the player is 2, say "Your knees feel a little grazed. ";
 	if the body soreness of the player is 3, say "Your leg muscles feel a bit tired. ";
@@ -16,11 +11,6 @@ To say SorenessDesc:
 	if the body soreness of the player is 9, say "You feel like you've taken quite a beating! ";
 	if the body soreness of the player is 10, say "Your body is covered in bruises, you can barely move your legs let alone stand. ".
 
-[!<SayInternalsDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say InternalsDesc:
 	unless the latex-transformation of the player >= 6 or the player is barbie:
 		if the player is extremely horny:
@@ -34,11 +24,6 @@ To say InternalsDesc:
 		if the thirst of the player > 3:
 			say "You feel weakened by your crippling need for a drink of water! ".
 
-[!<SayPussyAssFlav>+
-
-REQUIRES COMMENTING
-
-+!]
 [To say PussyAssFlav:
 	let S be the soreness of asshole + the soreness of vagina;
 	if S < 5, say "";

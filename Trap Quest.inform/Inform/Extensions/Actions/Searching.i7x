@@ -1,10 +1,5 @@
 Searching by Actions begins here.
 
-[!<CheckSearchingAContainer>+
-
-REQUIRES COMMENTING
-
-+!]
 Check searching a container:
 	if the noun is open, say "Why would you search an open container?" instead;
 	if the player is not able to manually use their hands, do nothing instead;
@@ -19,35 +14,15 @@ Check searching a container:
 	if the prevsearch of the noun is 0, First Time Search the noun instead;
 	otherwise Second Time Search the noun instead.
 
-[!<CheckExaminingAContainer>+
-
-REQUIRES COMMENTING
-
-+!]
 Check examining a container:
 	if the noun is treasure chest and the bimbo of the player > 12 and the largeness of breasts > 6, say "[second custom style]Wow, I do have big tits![roman type][line break]" instead.
 
-[!<CheckSearchingAContainer>+
-
-REQUIRES COMMENTING
-
-+!]
 Check searching a container:
 	if the noun is treasure chest and the bimbo of the player > 16 and the largeness of breasts > 6, say "[second custom style]I wonder if I've lost anything down my cleavage![roman type][line break]" instead.
 
-[!<ReportExaminingAContainer>+
-
-REQUIRES COMMENTING
-
-+!]
 Report examining a container:
 	if autosearch is 1 and the noun is closed and the noun is not pedestal, try searching the noun.
 
-[!<FirstTimeSearchContainer>+
-
-REQUIRES COMMENTING
-
-+!]
 To First Time Search (X - a container):
 	allocate 6 seconds;
 	let R be a random number from 0 to 25;
@@ -86,11 +61,6 @@ To First Time Search (X - a container):
 	if the prevsearch of X is 4 and a random number between 1 and 5 is 1, HairBlondeDown 1;
 	if the prevsearch of X is 2 and a random number between 1 and 5 is 1, HairBlondeDown 1.
 
-[!<SecondTimeSearchContainer>+
-
-REQUIRES COMMENTING
-
-+!]
 To Second Time Search (X - a container):
 	if there is a worn stethoscope:
 		if the prevsearch of X > 1:
@@ -136,11 +106,6 @@ To Second Time Search (X - a container):
 
 Understand "investigate [something]", "inspect [something]" as searching.
 
-[!<RuleForSupplyingMissingNounsWhileSearching>+
-
-REQUIRES COMMENTING
-
-+!]
 Rule for supplying a missing noun while searching:
 	repeat with X running through containers in the location of the player:
 		now the noun is X.

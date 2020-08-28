@@ -68,7 +68,7 @@ Carry Out HorsePressing:
 					increase slice-count by 1;
 		if the slice-count is 0, say "If there was any clothing covering your hips, it would probably have been destroyed.";
 	otherwise if B is horse-hair:
-		say "You let out an involuntary horse whinny. [line break][variable custom style]Well that was weird...[roman type][line break]";
+		say "You let out an involuntary horse whinny.[line break][variable custom style]Well that was weird...[roman type][line break]";
 		HairUp 4;
 	otherwise if B is horse-disable or R is 0:
 		now the noun is not penetrating vagina;
@@ -80,18 +80,8 @@ Understand "press [something]", "push button on [something]", "press button on [
 
 The horse-vibrations, the horse-alarm, the horse-disable, the horse-cuffs, the horse-blade and the horse-hair are things.
 
-[!<listOfPossibleHorseEffects:ListOfThings>*
-
-REQUIRES COMMENTING
-
-*!]
 The list of possible horse effects is a list of things that varies.
 
-[!<listOfCurrentHorseEffects:ListOfThings>*
-
-REQUIRES COMMENTING
-
-*!]
 The list of current horse effects is a list of things that varies.
 
 This is the spawn initial woods painted horse traps rule:
@@ -106,7 +96,7 @@ To trigger (Y - a painted horse):
 	now the reset-timer of Y is 90000; [Doesn't reset]
 	now Y is not untriggered;
 	now Y is revealed;
-	say "A giant triangular block of wood with a horse head at the front shoots out from the ground beneath you, [if the player is prone]forcing you upright and [end if]pulling you up until your feet aren't touching the floor. All of your weight is forced onto the top corner of this wooden 'horse' and more specifically onto your [if the player is female][vagina] and [end if][asshole]. [if the latex-transformation of the player > 3]Your rubbery crotch is unaffected by the weight on it. [otherwise if the player is diapered]The padding of your diaper is helping a bit but the pain is still unmanageable. [otherwise if the weight of the player < 5]Your light weight is helping at bit but the pain is still unmanageable. [otherwise if the weight of the player > 15]Your weight is making it even worse! [end if]You're going to quickly get more sore and if you stay on here for too long, you'll definitely faint! [one of]Looking forward, you notice that[or]Once again you can see that[stopping] there are five buttons embedded into the top of the head of the horse. [one of]Maybe one of them will let you down?[or]One of them should let you down.[stopping]";
+	say "A giant triangular block of wood with a horse head at the front shoots out from the ground beneath you, [if the player is prone]forcing you upright and [end if]pulling you up until your feet aren't touching the floor. All of your weight is forced onto the top corner of this wooden 'horse' and more specifically onto your [if the player is possessing a vagina][vagina] and [end if][asshole]. [if the latex-transformation of the player > 3]Your rubbery crotch is unaffected by the weight on it. [otherwise if the player is diapered]The padding of your diaper is helping a bit but the pain is still unmanageable. [otherwise if the weight of the player < 5]Your light weight is helping at bit but the pain is still unmanageable. [otherwise if the weight of the player > 15]Your weight is making it even worse! [end if]You're going to quickly get more sore and if you stay on here for too long, you'll definitely faint! [one of]Looking forward, you notice that[or]Once again you can see that[stopping] there are five buttons embedded into the top of the head of the horse. [one of]Maybe one of them will let you down?[or]One of them should let you down.[stopping]";
 	now the stance of the player is 0;
 	now Y is penetrating asshole;
 	if the player is possessing a vagina, now Y is penetrating vagina;
@@ -145,7 +135,7 @@ To compute horse pain:
 	PainUp 1.
 
 [To compute horse fainting:
-	if the soreness of asshole is 10 and the player is male and a random number between 1 and 4 is 1 and the delicateness of the player > 15:
+	if the soreness of asshole is 10 and the player is not possessing a vagina and a random number between 1 and 4 is 1 and the delicateness of the player > 15:
 		say "You can't take the pressure on your crotch any more! You pass out.";
 		now the delayed fainting is 1;
 		now the fainting reason of the player is 20;
@@ -184,7 +174,7 @@ To trigger (Y - a wild horse):
 	now the reset-timer of Y is 500;
 	now Y is not untriggered;
 	now Y is revealed;
-	say "A giant triangular block of wood with a horse head at the front shoots out from the ground beneath you, [if the player is prone]forcing you upright and [end if]pulling you up until your feet aren[']t touching the floor. All of your weight is forced onto the top corner of this wooden 'horse' and more specifically onto your [if the player is possessing a vagina][vagina] and [end if][asshole]. You hear a pre-recorded whinny as the horse begins to 'gallop' through the clearing, each movement rubbing small grooves in the wood up against your crotch. [if the latex-transformation of the player > 3]Your rubbery crotch is unaffected by the weight on it. [otherwise if the player is diapered]The padding of your diaper is helping at bit but the pain is still unmanageable. [otherwise if the weight of the player < 5]Your light weight is helping at bit but the pain is still unmanageable. [otherwise if the weight of the player > 15]Your weight is making it even worse! [end if]You look at the plastic cord around its neck. Looks like you're going to have to tame this wild horse!";
+	say "A giant triangular block of wood with a horse head at the front shoots out from the ground beneath you, [if the player is prone]forcing you upright and [end if]pulling you up until your feet aren't touching the floor. All of your weight is forced onto the top corner of this wooden 'horse' and more specifically onto your [if the player is possessing a vagina][vagina] and [end if][asshole]. You hear a pre-recorded whinny as the horse begins to 'gallop' through the clearing, each movement rubbing small grooves in the wood up against your crotch. [if the latex-transformation of the player > 3]Your rubbery crotch is unaffected by the weight on it. [otherwise if the player is diapered]The padding of your diaper is helping at bit but the pain is still unmanageable. [otherwise if the weight of the player < 5]Your light weight is helping at bit but the pain is still unmanageable. [otherwise if the weight of the player > 15]Your weight is making it even worse! [end if]You look at the plastic cord around its neck. Looks like you're going to have to tame this wild horse!";
 	now the stance of the player is 0;
 	now Y is penetrating asshole;
 	if the player is possessing a vagina, now Y is penetrating vagina;
@@ -209,7 +199,7 @@ To compute horse effect of (T - a wild horse):
 			SemenPuddleUp 3;
 			AssFill a random number between 3 and 5;
 		otherwise:
-			say "The horse comes to a sudden halt, tipping forward with incredible speed and power. You are flung off the horse like a cow[boy of the player] on a bucking bronco and are sent rolling into a tree. [line break][variable custom style]Aaaah! Ouch.[roman type][line break]";
+			say "The horse comes to a sudden halt, tipping forward with incredible speed and power. You are flung off the horse like a cow[boy of the player] on a bucking bronco and are sent rolling into a tree.[line break][variable custom style]Aaaah! Ouch.[roman type][line break]";
 			FatigueUp W;
 			bodyruin W / 2;[TODO: light players go flying]
 		try kneeling;
@@ -217,30 +207,15 @@ To compute horse effect of (T - a wild horse):
 		compute horse pain;
 	decrease the TrapNo of T by 1.
 
-[!<CheckPullingWildHorse>+
-
-REQUIRES COMMENTING
-
-+!]
 Check pulling wild horse:
 	try horsePulling the noun instead.
 
 HorsePulling is an action applying to one thing.
 
-[!<CheckHorsePulling>+
-
-REQUIRES COMMENTING
-
-+!]
 Check horsePulling:
-	unless the noun is wild horse, say "There[']s nothing to pull." instead;
-	unless the player is horse stuck, say "But you aren[']t on it?" instead;
+	unless the noun is wild horse, say "There's nothing to pull." instead;
+	unless the player is horse stuck, say "But you aren't on it?" instead;
 
-[!<CarryOutHorsePulling>+
-
-REQUIRES COMMENTING
-
-+!]
 Carry Out horsePulling:
 	allocate 3 seconds;
 	let A be a random number between 5 and the strength of the player;
@@ -250,6 +225,6 @@ Carry Out horsePulling:
 		now the noun is not penetrating asshole;
 		now the noun is triggered;
 	otherwise:
-		say "You pull hard on the bit, but the horse doesn[']t leave its path, the pre-recorded galloping sound continuing to play as it rounds the clearing.".
+		say "You pull hard on the bit, but the horse doesn't leave its path, the pre-recorded galloping sound continuing to play as it rounds the clearing.".
 
 Wooden Horse Traps ends here.

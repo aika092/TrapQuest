@@ -3,8 +3,12 @@ Magic State by Clothing begins here.
 Understand the magic-type property as describing a clothing when the item described is identified.
 A clothing has a curse-ID. A clothing is usually unsure.
 A clothing has a magic-curse. Understand the magic-curse property as describing a clothing when item described is sure. Clothing is usually bland.
-Definition: a clothing is uncursed if it is not cursed.
-Definition: a clothing is unblessed if it is not blessed.
+Definition: a clothing is uncursed:
+	if it is not cursed, decide yes;
+	decide no.
+Definition: a clothing is unblessed:
+	if it is not blessed, decide yes;
+	decide no.
 
 Definition: a clothing is alwaysIdentified: [Should never be considered to possibly have a magic state]
 	if it is alwaysSure, decide yes;
@@ -14,7 +18,9 @@ Definition: a clothing is alwaysSure: [Should never be considered to possibly be
 	decide yes.
 
 Definition: a thing is cursable: decide no.
-Definition: a bottle is cursable if it is held.
+Definition: a bottle is cursable:
+	if it is held, decide yes;
+	decide no.
 Definition: a clothing is cursable: decide yes.
 
 Definition: a thing (called T) is actually cursable:
@@ -44,7 +50,9 @@ Determines whether or not a thing, "T" can be blessed
 +!]
 Definition: a thing is blessable: decide no.
 
-Definition: a clothing is blessable if it is not blessed and it is potentially blessable.
+Definition: a clothing is blessable:
+	if it is not blessed and it is potentially blessable, decide yes;
+	decide no.
 
 Definition: a clothing (called T) is potentially blessable:
 	if T is not cursed and T is not cursable, decide no; [If an item somehow incorrectly becomes cursed, we still want to make it blessable rather than break the game]
@@ -52,9 +60,13 @@ Definition: a clothing (called T) is potentially blessable:
 		if T is worn by the player or T is carried by the player, decide yes;
 	decide no.
 
-Definition: a bottle is blessable if it is held and it is not blessed.
+Definition: a bottle is blessable:
+	if it is held and it is not blessed, decide yes;
+	decide no.
 
-Definition: an alchemy product is blessable if it is carried and it is not blessed.
+Definition: an alchemy product is blessable:
+	if it is carried and it is not blessed, decide yes;
+	decide no.
 
 To blandify (C - a clothing):
 	only destroy C; [resets it but also sets it up with random magic state, so we need to do the below]

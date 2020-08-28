@@ -15,7 +15,9 @@ To compute monstermotion of (M - a staff member):
 	otherwise if a random number between 1 and 4 is 1 or (the player is at least partially immobile and (a random number between 1 and 2 is 1 or there is a teacher in the location of M)):
 		compute room leaving of M.
 
-Definition: a staff member is messy if it is diaper-enslaved and diaper messing >= 6.
+Definition: a staff member is messy:
+	if it is diaper-enslaved and diaper messing >= 6, decide yes;
+	decide no.
 
 To say FullMonsterDesc of (M - a staff member):
 	say ImageDesc of M;
@@ -342,13 +344,25 @@ Definition: a lesson (called L) is correctly-situated:
 	decide no.
 
 Definition: a teacher is correctly-ranked: decide no.
-Definition: a sapphire-teacher is correctly-ranked if armband is sapphire.
-Definition: an emerald-teacher is correctly-ranked if armband is emerald.
-Definition: a ruby-teacher is correctly-ranked if armband is ruby.
-Definition: a pink-diamond-teacher is correctly-ranked if armband is pink diamond.
-Definition: a diamond-teacher is correctly-ranked if armband is pure diamond.
+Definition: a sapphire-teacher is correctly-ranked:
+	if armband is sapphire, decide yes;
+	decide no.
+Definition: an emerald-teacher is correctly-ranked:
+	if armband is emerald, decide yes;
+	decide no.
+Definition: a ruby-teacher is correctly-ranked:
+	if armband is ruby, decide yes;
+	decide no.
+Definition: a pink-diamond-teacher is correctly-ranked:
+	if armband is pink diamond, decide yes;
+	decide no.
+Definition: a diamond-teacher is correctly-ranked:
+	if armband is pure diamond, decide yes;
+	decide no.
 
-Definition: a lesson is correctly-ranked if the lesson-teacher of it is correctly-ranked.
+Definition: a lesson is correctly-ranked:
+	if the lesson-teacher of it is correctly-ranked, decide yes;
+	decide no.
 
 Definition: a lesson is lesson-appropriate: decide yes.
 
@@ -423,7 +437,9 @@ Part - Assembly
 
 An assembly is a kind of object.
 An assembly has a number called assemblyTime.
-Definition: an assembly is active if the assemblyTime of it > 0.
+Definition: an assembly is active:
+	if the assemblyTime of it > 0, decide yes;
+	decide no.
 To decide which monster is the assemblyAnnouncer of (A - an assembly):
 	decide on headmistress.
 Definition: an assembly is eligible: decide no.
@@ -483,7 +499,9 @@ To conclude (A - an assembly):
 	now the assemblyTime of A is 0.
 
 soiled-diaper-assembly is an assembly.
-Definition: soiled-diaper-assembly is eligible if there is a soiled-diaper in the School.
+Definition: soiled-diaper-assembly is eligible:
+	if there is a soiled-diaper in the School, decide yes;
+	decide no.
 To say AssemblyStartFlav of (A - soiled-diaper-assembly):
 	repeat with SD running through soiled-diaper:
 		if SD is in the school, now SD is in the location of the player;
@@ -502,7 +520,9 @@ To execute (A - soiled-diaper-assembly):
 	if the assemblyTime of A is 1, say "[speech style of M]'Okay, that's enough. And [NameBimbo], make sure you take your disgusting mess with you this time.'[roman type][line break]With that instruction from [NameDesc of M], the assembly appears to be over.".
 
 egg-assembly is an assembly.
-Definition: egg-assembly is eligible if there is an egg in the School and asshole is not actually occupied.
+Definition: egg-assembly is eligible:
+	if there is an egg in the School and asshole is not actually occupied, decide yes;
+	decide no.
 To say AssemblyStartFlav of (A - egg-assembly):
 	repeat with SD running through eggs:
 		if SD is in the school, now SD is in the location of the player;
@@ -550,6 +570,7 @@ Check replacing when egg-assembly is active:
 	say "This doesn't seem like a sensible time to antagonise [NameDesc of headmistress] by doing that." instead.
 
 student-furious-assembly is an assembly.
+most-recent-furious is an object that varies.
 Definition: student-furious-assembly is eligible:
 	if headmistress is alive and headmistress is undefeated:
 		repeat with ST running through alive students:
@@ -563,14 +584,37 @@ To say AssemblyStartFlav of (A - student-furious-assembly):
 	repeat with STT running through alive students:
 		if the favour of STT < the aggro limit of STT - 6, now ST is STT;
 	say "As you stumble through the warp portal, you find yourself in the assembly hall. A lot of the other students are already here, and [ST] is at the front, talking to [NameDesc of M] with a furious look on [his of ST] face.";
-	now ST is unleashed. [This is how we flag to the execute function which student we decided on.]
+	now most-recent-furious is ST.
 
 To execute (A - student-furious-assembly):
 	let M be headmistress;
-	let ST be a random alive unleashed student;
-	say "[BigNameDesc of ST] spits on the ground when [he of ST] sees you.[line break][speech style of ST]'There [he of the player] is. I'm sorry but I just can't take it any more. Every moment of my time here, [NameBimbo] has been trying to make my life miserable. I can't be around [him of the player] any more. If [he of the player] stays, I walk.'[roman type][line break][BigNameDesc of M] has an equally furious frown, and looks from [NameDesc of ST] to you, then back to [him of ST].[line break][speech style of M]'[NameBimbo] is clearly guilty of disturbing the peace in my school. This is a severe crime, on par with inciting a rebellion. I will punish [him of the player] dearly, with a nice long stay in my dungeons.'[roman type][line break]With a snap of [his of M] fingers, you are on your knees and somehow unable to move! You try to protest but you find yourself unable to make any noise![line break][speech style of M]'As for you, [student-name of ST], don't think I have been blind. I am aware of your part in this rivalry; you are not guilt-free. You can have your wish - you are henceforth expelled from this school. For your crimes, I place this curse on you. It shall be active whenever you are within ten miles of my school.'[roman type][line break]With another snap of [his of M] fingers, you watch [NameDesc of ST][']s belly bulge to an insanely huge size! As you watch, [if diaper quest is 1 and diaper messing < 3]a fountain of [urine] spurts from [his of ST] crotch, soiling [his of ST] clothes and quickly leaking to the floor. The [urine] keeps going until [his of ST] belly has completely deflated[otherwise if diaper quest is 1]an insane amount of poop starts to slither its way out of [his of ST] backdoor and into [his of ST] underwear. The giant mess just keeps and keeps coming, blarting and spurting until [his of ST] belly has returned to a normal size[otherwise]fountains of [semen] spurts from [his of ST] mouth and asshole, soiling [his of ST] clothes and quickly leaking to the floor. The [semen] keeps going until [his of ST] belly has completely deflated[end if]! Then in the next instant, [his of ST] belly explodes out to maximum size and it all starts again![line break][speech style of M]'I would find a way to leave my zone of influence, and quickly.'[roman type][line break][BigNameDesc of ST] shrieks, gags, and then waddles from the room as fast as [his of ST] wobbling legs can carry [him of ST], [his of ST] belly emptying and refilling itself repeatedly as [he of ST] does! Once [he of ST] has cleared the room, all eyes return to you.";
+	let ST be most-recent-furious;
+	say "[BigNameDesc of ST] spits on the ground when [he of ST] sees you.[line break][speech style of ST]'There [he of the player] is. I'm sorry but I just can't take it any more. Every moment of my time here, [NameBimbo] has been trying to make my life miserable. I can't be around [him of the player] any more. If [he of the player] stays, I walk.'[roman type][line break][BigNameDesc of M] has an equally furious frown, and looks from [NameDesc of ST] to you, then back to [him of ST].[line break][speech style of M]'[NameBimbo] is clearly guilty of disturbing the peace in my school. This is a severe crime, on par with inciting a rebellion. I will punish [him of the player] dearly, with a nice long stay in my dungeons.'[roman type][line break]With a snap of [his of M] fingers, you are on your knees and somehow unable to move! You try to protest but you find yourself unable to make any noise![line break][speech style of M]'As for you, [student-name of ST], don't think I have been blind. I am aware of your part in this rivalry; you are not guilt-free. You can have your wish - you are henceforth expelled from this school. ";
+	if diaper quest is 1 or gloryhole is off-stage, say "For your crimes, I place this curse on you. It shall be active whenever you are within ten miles of my school.'[roman type][line break]With another snap of [his of M] fingers, you watch [NameDesc of ST][']s belly bulge to an insanely huge size! As you watch, [if diaper quest is 1 and diaper messing < 3]a fountain of [urine] spurts from [his of ST] crotch, soiling [his of ST] clothes and quickly leaking to the floor. The [urine] keeps going until [his of ST] belly has completely deflated[otherwise if diaper quest is 1]an insane amount of poop starts to slither its way out of [his of ST] backdoor and into [his of ST] underwear. The giant mess just keeps and keeps coming, blarting and spurting until [his of ST] belly has returned to a normal size[otherwise]fountains of [semen] spurts from [his of ST] mouth and asshole, soiling [his of ST] clothes and quickly leaking to the floor. The [semen] keeps going until [his of ST] belly has completely deflated[end if]! Then in the next instant, [his of ST] belly explodes out to maximum size and it all starts again![line break][speech style of M]'I would find a way to leave my zone of influence, and quickly.'[roman type][line break][BigNameDesc of ST] shrieks, gags, and then waddles from the room as fast as [his of ST] wobbling legs can carry [him of ST], [his of ST] belly emptying and refilling itself repeatedly as [he of ST] does!";
+	otherwise say "Go, leave now.'[roman type][line break][BigNameDesc of ST] looks panicked for a moment, like [he of ST] is expecting further retribution from [NameDesc of headmistress], but nothing comes.[line break][speech style of ST]'I'm just... free to leave? Okay...'[roman type][line break][BigNameDesc of ST] very slowly inches out of the room, as if with every step [he of ST] is entirely sure that [NameDesc of headmistress] is going to change [his of headmistress] mind and do something horrible to [him of ST] the moment [his of ST] foot touches the floor. But nothing happens.";
+	say "Once [he of ST] has cleared the room, all eyes return to you.";
 	destroy ST;
 	compute headmistress dungeon locking.
+
+new-fuckhole-assembly is an assembly.
+Definition: new-fuckhole-assembly is eligible:
+	if headmistress is alive and headmistress is undefeated and most-recent-furious is a student and gloryhole is on-stage and the player is possessing a penis and the player is an august 2020 top donator, decide yes;
+	decide no.
+
+To say AssemblyStartFlav of (A - new-fuckhole-assembly):
+	say "As you stumble through the warp portal, you find yourself in the assembly hall. The other students are already here. [BigNameDesc of headmistress] addresses the crowd.".
+
+To execute (A - new-fuckhole-assembly):
+	now school-fuckhole is in the location of gloryhole;
+	now the fuckhole-person of school-fuckhole is most-recent-furious;
+	destroy gloryhole;
+	now the fuckhole-rule of school-fuckhole is a random number between 1 and 5;
+	if bukkake fetish is 1 and (the fuckhole-rule of school-fuckhole is 2 or the fuckhole-rule of school-fuckhole is 3), now the fuckhole-rule of school-fuckhole is 0;
+	if the fuckhole-rule of school-fuckhole is 2:
+		let B be a random off-stage fetish appropriate fluid vulnerable bra;
+		if B is nothing, now B is random fetish appropriate fluid vulnerable bra;
+		now B is in the location of school-fuckhole;
+	say "[speech style of headmistress]'I've... ah... recently... [']acquired['] a new fuckhole. It shall be replacing the gloryholes in the changing rooms. You must only use it once per visit to the school. Anyone caught breaking the usage rules will be punished.'[roman type][line break][big he of headmistress] thinks for a moment, and then says[line break][speech style of headmistress][FuckholeRuleDesc][roman type][line break]".
 
 Part - Detention
 
@@ -636,7 +680,7 @@ To say LateDetention of (M - a staff member):
 	say "[BigNameDesc of M] stares at you. It looks like [he of M] has been waiting for you.[line break][speech style of M]'YOU'RE LATE! Class is already over! It's detention for you, young Miss. Come with me now!'[roman type][line break]".
 
 To say GenericDetention of (M - a staff member):
-	say "[BigNameDesc of M] looks furious.[line break][speech style of M]'It[']s DETENTION for you, young Miss. Come with me now!'[roman type][line break]".
+	say "[BigNameDesc of M] looks furious.[line break][speech style of M]'It's DETENTION for you, young Miss. Come with me now!'[roman type][line break]".
 
 dq-staff-detention is a diaper punishment. the priority of dq-staff-detention is 5.
 
@@ -756,7 +800,7 @@ To say detention chair tease response of (M - a monster):
 This is the detention orgasm announcement rule:
 	if detention chair is grabbing the player and the player is able to speak:
 		if the player is feeling submissive or the fatigue of the player > 350:
-			say "You hear the camera in the corner focusing on you, and loudly blurt out the truth. [line break][variable custom style]'[one of]I CAME FROM BEING IN DETENTION!'[or]MY DETENTION PUNISHMENT JUST MADE ME CUM!'[or]ANYONE WHO CAN SEE ME SHOULD KNOW I JUST CAME FROM BEING IN DETENTION!'[in random order][roman type][line break]";
+			say "You hear the camera in the corner focusing on you, and loudly blurt out the truth.[line break][variable custom style]'[one of]I CAME FROM BEING IN DETENTION!'[or]MY DETENTION PUNISHMENT JUST MADE ME CUM!'[or]ANYONE WHO CAN SEE ME SHOULD KNOW I JUST CAME FROM BEING IN DETENTION!'[in random order][roman type][line break]";
 			repeat with M running through reactive monsters:
 				say detention orgasm reaction of M;
 				humiliate 45;
@@ -781,11 +825,11 @@ This is the detention orgasm announcement rule:
 The detention orgasm announcement rule is listed last in the orgasm resolution rules.
 
 To say detention orgasm reaction of (M - a monster):
-	say "[speech style of M]'[one of]Wow, so you're really enjoying your punishment THAT much?'[or]What kind of desperate slut actually has an orgasm from something like that?'[or]Is that why you earned yourself a detention? So everyone could watch you cum?'[or]So, you got in trouble on purpose then?'[or]I hope I don[']t get detention after you.'[in random order][roman type][line break][BigNameDesc of M] can't help but watch you.";
+	say "[speech style of M]'[one of]Wow, so you're really enjoying your punishment THAT much?'[or]What kind of desperate slut actually has an orgasm from something like that?'[or]Is that why you earned yourself a detention? So everyone could watch you cum?'[or]So, you got in trouble on purpose then?'[or]I hope I don't get detention after you.'[in random order][roman type][line break][BigNameDesc of M] can't help but watch you.";
 	FavourDown M.
 
 To say detention orgasm reaction of (M - a teacher):
-	say "[speech style of M]'[one of]If you enjoy the punishment that much, maybe you should be the one to clean the floor when you[']re done.'[or]Pathetic. That wand isn't even on the highest setting.'[or]Honestly, you haven[']t even been in the chair that long.'[in random order][roman type][line break][BigNameDesc of M] rolls [his of M] eyes as [he of M] watches you.".
+	say "[speech style of M]'[one of]If you enjoy the punishment that much, maybe you should be the one to clean the floor when you're done.'[or]Pathetic. That wand isn't even on the highest setting.'[or]Honestly, you haven't even been in the chair that long.'[in random order][roman type][line break][BigNameDesc of M] rolls [his of M] eyes as [he of M] watches you.".
 
 [
 More detention ideas:
@@ -809,10 +853,8 @@ To compute remedial detention of (M - a staff member):
 	now detention-turns is 8;
 	drag to School13 by M;
 	say "[speech style of M]'[if the health of M < the maxhealth of M]Clearly you need extra curriculum if you believe you have the time to be aggressive with teachers[otherwise]If you can't get to class on time then you'll have to catch up the hard way[end if]. Sit.'[roman type][line break][big he of M] points to the chair in the centre of the room.";
-	[if diaper quest is 0 or the number of worn diapers is 0, compute TQChairSetup of M;[in TQ underwear is always removed]
-	otherwise compute DQChairSetup of M;]
 	say "[if the delicateness of the player > 10]You crawl over to the [detention chair] and pull yourself into it[otherwise if the delicateness of the player > 4][BigNameDesc of M] drags you over to the [detention chair] and waits as you obediently pull yourself into it[otherwise][BigNameDesc of M] drags you over to the [detention chair], cruelly pinching your ear until you pull yourself into it[end if]. [big he of M] quickly straps you in place as a giant screen slowly lowers from the ceiling.[line break][speech style of M]'[one of]This is an advanced class, for YOUR benefit. Pay attention.[or]Pay attention this time.'[stopping][roman type][line break][big he of M] slides a pair of headphones into place over your ears, quickly leaving the room as the screen flickers to life and a [one of]syncopated[or]familiar[stopping] rhythm begins playing.";
-	if diaper quest is 0, say "A large, well-lit room fades onto the screen, and the music's volume slowly rises as a gorgeous [if tg fetish > 0]transsexual [end if]pornstar struts in from out of frame, wearing a form-fitting latex dress. [line break][first custom style]'Welcome to my classroom, students. Shut off your minds and let your bodies pay attention, girls.'[roman type][line break]The pulsing, rhythmic effect of the music creates a hypnotic swirling effect that burns itself into your vision, and you suddenly realise how [if the player is possessing a penis]hard[otherwise if the player is possessing a vagina]wet[otherwise]horny[end if] you've gotten as the screen fades to black and 'Chapter 1' appears in the centre of the frame. You have no choice but to fight off the hypnosis until you're released!";
+	if diaper quest is 0, say "A large, well-lit room fades onto the screen, and the music's volume slowly rises as a gorgeous [if tg fetish > 0]transsexual [end if]pornstar struts in from out of frame, wearing a form-fitting latex dress.[line break][first custom style]'Welcome to my classroom, students. Shut off your minds and let your bodies pay attention, girls.'[roman type][line break]The pulsing, rhythmic effect of the music creates a hypnotic swirling effect that burns itself into your vision, and you suddenly realise how [if the player is possessing a penis]hard[otherwise if the player is possessing a vagina]wet[otherwise]horny[end if] you've gotten as the screen fades to black and 'Chapter 1' appears in the centre of the frame. You have no choice but to fight off the hypnosis until you're released!";
 	otherwise say "PLACEHOLDER";
 	compute mandatory room leaving of M;
 	now M is in Holding Pen;
@@ -823,8 +865,7 @@ To compute remedial detention of (M - a staff member):
 To compute rem chair detention:
 	if detention chair is grabbing the player:
 		if detention-turns > 0:
-			let C be a random number between 2 and 40;
-			let N be a random number between the sex addiction of the player and (the intelligence of the player * -1);
+			let N be a random number between (the intelligence of the player * -1) and 10;
 			say RemHypnoContent;
 			if N < -9:
 				say "The music thumps relentlessly as you [if the sex addiction of the player < 5]do your best to ignore[otherwise]space out through[end if] the rest of the chapter, heart pounding as you [if the sex addiction of the player < 5]try not to watch[otherwise]watch[end if] the graphic sex on the screen.";
@@ -842,7 +883,7 @@ To compute rem chair detention:
 			otherwise:
 				say "The music washes over you as [if the intelligence of the player > 10]you attentively take in[otherwise]your mind absorbs[end if] the rest of the chapter, feeling everything the professor's interns are doing to her body.";
 				humiliate SLIGHT-HUMILIATION + TRIVIAL-HUMILIATION;
-				if a random number between 1 and 4 is 1, RandomAddictUp 1;
+				RandomAddictUp 1;
 				Arouse 300;
 				FatigueUp 10;
 		otherwise:
@@ -852,7 +893,7 @@ To compute rem chair detention:
 				otherwise now M is a random alive undefeated staff member;
 			if M is staff member:
 				now M is in the location of the player;
-				say "The camera pans over the professor's body, zooming in [if bukkake fetish is 1]on the cum plastered all over her face[otherwise if diaper quest is 0]on her gaping holes[otherwise]PLACEHOLDER[end if] as the hypnotic pattern finally fades and the syncopated rhythm winds down. [line break][first custom style]'That's all for today ladies. Study hard!'[roman type][line break]The screen flickers off, and a few moments pass before [NameDesc of M] re-enters the room and frees you from your bindings.";
+				say "The camera pans over the professor's body, zooming in [if bukkake fetish is 1]on the cum plastered all over her face[otherwise if diaper quest is 0]on her gaping holes[otherwise]PLACEHOLDER[end if] as the hypnotic pattern finally fades and the syncopated rhythm winds down.[line break][first custom style]'That's all for today ladies. Study hard!'[roman type][line break]The screen flickers off, and a few moments pass before [NameDesc of M] re-enters the room and frees you from your bindings.";
 				distract M;
 				compute room leaving of M;
 				regionally place M;
@@ -863,7 +904,7 @@ To compute rem chair detention:
 			now detention chair is not grabbing the player.
 
 To say RemHypnoContent:
-	if diaper quest is 0, say "[one of]The camera pans over the professor's body as she's being spit-roasted by two of her interns. [line break][first custom style]'Mnaa mun humnd mnurphrmr.'[roman type][line break][or]The camera zooms in on the professor's asshole as three of her interns pound her at once.[line break][first custom style]'Your sphincter is a muscle, ladies. Always be tight for your man, but never too tight for more!'[roman type][line break][or]The camera zooms in on the professor's face, following the lines of spit ruining her makeup as her interns take turns fucking her face.[line break][first custom style]'Glk! Glk! Glk! Glk!'[roman type][line break][or]The camera zooms in as the professor's interns take turns smacking her in the face. She grins straight into the camera as her hands deftly pump their cocks.[line break][first custom style]'You're always happy to be used, ladies. Only frown because it's over.'[roman type][line break][or]The camera pans slowly as the professor rides one of her interns, zooming in [if tg fetish > 0]on her hand as she rapidly pumps her own cock[otherwise]on her hand as she plays with her clit[end if].[line break][first custom style]'Only pleasure during his pleasure, ladies.'[roman type][line break][in random order]";
+	if diaper quest is 0, say "[one of]The camera pans over the professor's body as she's being spit-roasted by two of her interns.[line break][first custom style]'Mnaa mun humnd mnurphrmr.'[roman type][line break][or]The camera zooms in on the professor's asshole as three of her interns pound her at once.[line break][first custom style]'Your sphincter is a muscle, ladies. Always be tight for your man, but never too tight for more!'[roman type][line break][or]The camera zooms in on the professor's face, following the lines of spit ruining her makeup as her interns take turns fucking her face.[line break][first custom style]'Glk! Glk! Glk! Glk!'[roman type][line break][or]The camera zooms in as the professor's interns take turns smacking her in the face. She grins straight into the camera as her hands deftly pump their cocks.[line break][first custom style]'You're always happy to be used, ladies. Only frown because it's over.'[roman type][line break][or]The camera pans slowly as the professor rides one of her interns, zooming in [if tg fetish > 0]on her hand as she rapidly pumps her own cock[otherwise]on her hand as she plays with her clit[end if].[line break][first custom style]'Only pleasure during his pleasure, ladies.'[roman type][line break][in random order]";
 	otherwise say "PLACEHOLDER".
 
 Staff Framework ends here.

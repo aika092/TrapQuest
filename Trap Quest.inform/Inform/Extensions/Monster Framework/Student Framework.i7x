@@ -185,11 +185,20 @@ To decide which number is the vindictiveness of (M - a student): [Angry students
 	if M is unfriendly, now F is the aggro limit of M - the favour of M;
 	decide on the unique vindictiveness of M + F.
 
+A student has a number called student-diaper-state.
+[
+1: Double diapered
+2+: Messy
+]
+Definition: a student is messy:
+	if diaper quest is 1 and the student-diaper-state of it >= 2 and diaper messing >= 3, decide yes;
+	decide no.
+
 Part - Motion
 
 To compute monstermotion of (M - a student):
 	if playerRegion is not school:
-		say "BUG: [BigNameDesc of M] has followed the player out of the school. Please report along with a description of what recently happened. Region: [playerRegion]; Location: [location of M]; Player location: [location of the player].";
+		say "BUG: [BigNameDesc of M] has followed the player out of the school. Please report along with a detailed description of your what happened in most recent visit to the school. Region: [playerRegion]; Location: [location of M]; Player location: [location of the player].";
 		now M is in School01;
 	otherwise if M is in a predicament room:
 		do nothing;
@@ -295,27 +304,27 @@ To compute appearance assessment of (M - a student):
 	if diaper quest is 1 and the saved cringe appearance of the player >= the saved appearance of the player:
 		if there is currently at least partially visible messed knickers:
 			say MessyBabAppearanceAssessment of M;
-			FavourDown M by 2;
+			if M is normally acquaintance, FavourDown M by 2;
 			distract M;
 		otherwise if the saved cringe appearance of the player - 4 > the cringe tolerance of M:
 			say FarGoneBabAppearanceAssessment of M;
-			FavourDown M by 2;
+			if M is normally acquaintance, FavourDown M by 2;
 			distract M;
 		otherwise if the saved cringe appearance of the player > the cringe tolerance of M:
 			say BabAppearanceAssessment of M;
-			FavourDown M;
+			if M is normally acquaintance, FavourDown M;
 			if M is unfriendly, distract M;
 		otherwise if the player is top-wardrobe-malfunctioning:
 			compute dq nip slip reaction of M;
 	otherwise:
 		if the saved appearance of the player - 4 > the outrage tolerance of M:
 			say FarGoneAppearanceAssessment of M;
-			FavourDown M by 2;
+			if M is normally acquaintance, FavourDown M by 2;
 			distract M;
 		otherwise if the saved appearance of the player > the outrage tolerance of M:
 			if M is nasty student and diaper quest is 0, compute grope of M;
 			otherwise say LewdAppearanceAssessment of M;
-			FavourDown M;
+			if M is normally acquaintance, FavourDown M;
 			if M is unfriendly, distract M;
 		otherwise if the player is top-wardrobe-malfunctioning:
 			compute tq nip slip reaction of M;
@@ -347,7 +356,7 @@ To say AssholeGropeFlav of (M - a nasty student):
 	say "[speech style of M]'[one of]Surprise, [bitch][or]Look alive, slut[in random order]!'[roman type][line break]".
 
 To say AssholeGropeFlav of (M - a tryhard student):
-	say "[speech style of M]'[one of]Teacher said that this is how I should try to great people from now on. [or][stopping]Hello.'[roman type][line break]".
+	say "[speech style of M]'[one of]Teacher said that this is how I should try to greet people from now on. [or][stopping]Hello.'[roman type][line break]".
 
 To say VaginaGropeFlav of (M - a nasty student):
 	say "[speech style of M]'If you act like a cumdumpster, I'm going to treat you like a cumdumpster!'[roman type][line break]".
@@ -393,6 +402,14 @@ To say SatisfiedFlav of (M - a student):
 To say SatisfiedFlav of (M - a nasty student):
 	if M is in the location of the player and M is not dying, say "[BigNameDesc of M] seems satisfied, and loses interest.[line break][speech style of M]'What a [one of]wimp[or]loser[or][if the player is gendered male]faggot[otherwise]pathetic little girl[end if][in random order].'[roman type][line break]".
 
+To FavourUp (M - a student) by (N - a number):
+	RespectUp M by N.
+
+To RespectUp (M - a student) by (N - a number): [This is the same mechanically as favour but with different flavour]
+	if N > 0 and M is alive:
+		increase the favour of M by N;
+		say "You can tell that [BigNameDesc of M] [one of]is impressed with you[or]has [if M is not acquaintance]regained some[otherwise]gained[end if] respect for you[or]is happy with what [he of M] sees[or]approves[in random order].".
+
 To FavourDown (M - a student) by (N - a number):
 	RespectDown M by N.
 
@@ -402,6 +419,14 @@ To RespectDown (M - a student) by (N - a number): [This is the same mechanically
 	if N > 0 and M is alive:
 		decrease the favour of M by N;
 		say "You can tell that [BigNameDesc of M] [if M is friendly][one of]is unimpressed with you[or]has lost respect for you[or]is disgusted by what [he of M] sees[in random order][otherwise][one of]is utterly appalled by what [he of M] sees[or]has lost all respect for you[or]is deeply disgusted by you[in random order][end if].".
+
+To HappinessUp (M - a student):
+	HappinessUp M by 1.
+
+To HappinessUp (M - a student) by (N - a number): [This is the same mechanically as favour but with different flavour]
+	if N > 0 and M is alive:
+		decrease the favour of M by N;
+		say "You can tell that [BigNameDesc of M] is [if M is not acquaintance][one of]relieved[or]trying to hide a smile[in random order][otherwise][one of]smiling about that[or]pleased by that[or]happy with you[in random order][end if].".
 
 To HappinessDown (M - a student):
 	HappinessDown M by 1.
@@ -462,7 +487,9 @@ To compute punishment of (P - dq-student-flee):
 	now the scared of current-monster is 100;
 	compute fleeing of current-monster.
 
-Definition: dq-student-flee is appropriate if current-monster is student and armband is not worn.
+Definition: dq-student-flee is appropriate:
+	if current-monster is student and armband is not worn, decide yes;
+	decide no.
 
 The student priority attack rules is a rulebook. The priority attack rules of a student is usually the student priority attack rules.
 
@@ -565,7 +592,9 @@ This is the bullying rule:
 The unique punishment rule of a student is usually the bullying rule.
 
 student-bully-food-hall is a diaper punishment. The priority of student-bully-food-hall is 5.
-Definition: student-bully-food-hall is appropriate if current-monster is student and the player is in School17.
+Definition: student-bully-food-hall is appropriate:
+	if current-monster is student and the player is in School17, decide yes;
+	decide no.
 To compute punishment of (P - student-bully-food-hall):
 	compute food hall bullying of current-monster.
 
@@ -582,15 +611,9 @@ To compute punishment of (P - student-bully-swimming-pool):
 	compute crowd jeering of current-monster;
 	if diaper quest is 0:
 		compute TQ swimmingpool swimming at 4 with 1;
-		[compute showering swimming-pool;]
 	otherwise:
 		compute DQ swimmingpool swimming at 4 with 1;
-		[now tracked-semen is 0;
-		Wash Salves;
-		compute showering;
-		now another-turn-flavour is the substituted form of "You slowly clamber out of the pool.";
-		now another-turn is 1;]
-	compute crowd boredom of current-monster;
+	compute crowd satisfaction of current-monster;
 	satisfy current-monster.
 
 Check going when the player is in School20:
@@ -686,7 +709,9 @@ To compute swirlie of (M - a monster):
 		satisfy M.
 
 student-bully is a diaper punishment. The priority of student-bully is 1.
-Definition: student-bully is appropriate if current-monster is student.
+Definition: student-bully is appropriate:
+	if current-monster is student, decide yes;
+	decide no.
 To compute punishment of (P - student-bully):
 	compute angry punishment of current-monster;
 	satisfy current-monster.
@@ -746,6 +771,7 @@ To compute tq bullying of (M - a student):
 			summon P;
 		ruin asshole times 2;
 	otherwise if R <= 2 and watersports fetish is 1:
+		say "[BigNameDesc of M] [if M is female]pulls apart [his of M] pussy lips[otherwise]holds [his of M] [DickDesc of M] steady[end if], and a moment later a jet of [urine] is heading straight for your face.";
 		FacePiss from M;
 	otherwise if R <= 2:
 		compute angry punishment of M;
@@ -875,6 +901,9 @@ To say DismissalResponseBursting of (M - a student):
 	otherwise:
 		say "[speech style of M]'[if M is interested]Uh-oh, [NameBimbo][']s gonna wet [himself of the player]! Come and see[otherwise]Don't let the teachers catch you having an accident[end if]!'[roman type][line break]".
 
+To uniquely destroy (M - a student):
+	now most-recent-furious is M.
+
 [This is the object used for the team predicament where the student is bound behind the player]
 
 quiz-partner is a clothing. quiz-partner is unique. quiz-partner has a person called the bound-target.
@@ -893,7 +922,7 @@ To say ClothingDesc of (C - quiz-partner):
 	let ST be the bound-target of C;
 	if ST is a student:
 		if diaper quest is 0, say "[BigNameDesc of ST] has [his of ST] tongue piercing tightly attached to your [if the player is male]testicle cuffs[otherwise]clit piercing[end if]. This means that you can't stand up and [he of ST] has to follow you around wherever you go.";
-		otherwise say "[BigNameDesc of ST] has [his of ST] collar connected to your ankles with tight rope that flows through D-rings in your thigh binds, which means [his of ST] face is pressed into the seat of your diaper with every crawling movement you take.".
+		otherwise say "[BigNameDesc of ST] has [his of ST] collar connected to your ankles with a short length of rope that runs through D-rings in your thigh bindings, which means [his of ST] face presses into the seat of your diaper with every crawling movement you make.".
 
 To say MuchTooHumiliatingFlav of (C - quiz-partner):
 	say "I can't let myself be seen like this!".
@@ -933,8 +962,8 @@ Check standing when quiz-partner is worn:
 
 To compute quiz partner messing:
 	let ST be the bound-target of quiz-partner;
-	if diaper messing < 7 or (rectum >= 30 and asshole is not actually occupied), say "You emit a pained whine as your floodgates open, and you begin depositing what feels like a gallon of [if diaper messing >= 7]spicy curry aftermath[otherwise][urine][end if] on top of [NameDesc of ST][']s face.[line break][speech style of ST]'Nooo you Bit-GLMPH!'[roman type][line break][big his of ST] exclamation is cut off by the seat of your diaper expanding and engulfing [his of ST] face, forcing [him of ST] to desperately breathe what oxygen [he of ST] can through the soiled fabric.[line break][variable custom style]'I'm sorry [student-name of ST], I'm so sorry!'[roman type][line break]You beg [NameDesc of ST] for forgiveness as you [if rectum >= 30 and asshole is not actually occupied]loudly fill your padding right on top of[otherwise]continue to add to the soggy padding that is covering[end if] [his of ST] eyes, nose and mouth.";
-	otherwise say "You emit a pained whine as you deposit several more chunks of mess on top of [NameDesc of ST][']s face. [big he of ST] wails through the disgusting soiled padding still engulfing [his of ST] face, still only able to breathe what oxygen [he of ST] can get through the fouled fabric.[line break][variable custom style]'I'm really really sorry!'[roman type][line break]You continue to profusely apologise as you empty your bowels directly on top of of [his of ST] nostrils and face.";
+	if diaper messing < 7 or (rectum >= 30 and asshole is not actually occupied), say "You emit a pained whine as your floodgates open, and you begin depositing what feels like a gallon of [if diaper messing >= 7]spicy curry aftermath[otherwise][urine][end if] on top of [NameDesc of ST][']s face.[line break][speech style of ST]'Nooo you Bit-GLMPH!'[roman type][line break][big his of ST] exclamation is cut off by the seat of your diaper expanding and engulfing [his of ST] face, forcing [him of ST] to desperately breathe what oxygen [he of ST] can through the soiled fabric.[line break][variable custom style]'I'm sorry [student-name of ST], I'm so sorry!'[roman type][line break]You beg [NameDesc of ST] for forgiveness as you [if rectum >= 30 and asshole is not actually occupied]loudly fill your padding right on top of[otherwise]continue to add to the soggy padding covering[end if] [his of ST] eyes, nose and mouth.";
+	otherwise say "You emit a pained whine as you deposit several more chunks of mess on top of [NameDesc of ST][']s face. [big he of ST] wails through the disgusting soiled padding still engulfing [his of ST] face, still only able to breathe what oxygen [he of ST] can get through the fouled fabric.[line break][variable custom style]'I'm really really sorry!'[roman type][line break]You continue to profusely apologise as you empty your bowels directly on top of [his of ST] nostrils and face.";
 	let D be a random worn diaper;
 	if rectum >= 30 and asshole is not actually occupied:
 		MessUp D by 30;

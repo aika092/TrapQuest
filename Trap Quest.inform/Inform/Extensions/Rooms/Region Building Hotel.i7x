@@ -1,10 +1,5 @@
 Region Building Hotel by Rooms begins here.
 
-[!<SetUpTheHotel>+
-
-REQUIRES COMMENTING
-
-+!]
 To Set Up The Hotel:
 	if loading scenes is 1:
 		clear the screen;
@@ -73,11 +68,6 @@ To Set Up The Hotel:
 	if debugmode is 0 and loading scenes is 1, clear the screen;
 	progress quest of new-region-quest.
 
-[!<ScrambleHotel>+
-
-REQUIRES COMMENTING
-
-+!]
 To Scramble Hotel:
 	if diaper quest is 1:
 		let E be the easting part of the grid position of Stairwell01;

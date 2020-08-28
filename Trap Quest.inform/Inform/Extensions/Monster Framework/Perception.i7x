@@ -62,7 +62,7 @@ To check perception of (M - a monster):
 					if topless temporary fetish > 0 and breasts is lewdly exposed:
 						decrease topless temporary fetish by 1;
 						if topless temporary fetish is 0, say "[bold type]Your brain finally seems satisfied that you've exposed your breasts to enough people. You will no longer lose intelligence from concealing your nipples.[roman type][line break]";
-						otherwise say "You [one of]can tell that you have made progress towards removing the curse that makes you desparate to keep your breasts exposed[or]have made more progress towards removing your topless fetish curse[cycling].";
+						otherwise say "You [one of]can tell that you have made progress towards removing the curse that makes you desperate to keep your breasts exposed[or]have made more progress towards removing your topless fetish curse[cycling].";
 				if the times-met of M < 0, now the times-met of M is 0;
 				increase the times-met of M by 1;
 				if M is friendly human monster and breasts is exposed:
@@ -161,9 +161,13 @@ Definition: a monster (called M) is aware: [Can it notice the player on its own?
 	if M is in the location of the player, decide yes;
 	decide no.
 
-Definition: a person is reactive if it is in the location of the player. [Can it react to things it sees the player do?]
+Definition: a person is reactive:
+	if it is in the location of the player, decide yes;
+	decide no. [Can it react to things it sees the player do?]
 Definition: yourself is reactive: decide no.
-Definition: a monster is reactive if it is awake and it is intelligent and it is undefeated and it is in the location of the player and (it is interested or the player is not stealthy). [Can it react to things it sees the player do?]
+Definition: a monster is reactive:
+	if it is awake and it is intelligent and it is undefeated and the player is not in a predicament room and it is in the location of the player and (it is interested or the player is not stealthy), decide yes;
+	decide no. [Can it react to things it sees the player do?]
 
 To decide which number is the aggro limit of (M - a monster): [The number at which they turn unfriendly]
 	decide on 10.
@@ -215,8 +219,8 @@ A monster has a number called previous-babification.
 
 To compute sudden objectification of (M - a monster):
 	if M is intelligent:
-		if M is raunchy, say "Something seems to change in the way [NameDesc of M] is looking at you. [line break][speech style of M]'[if M is penetrating a body part]Yeah [slut], take it!'[otherwise if the player is monster fucked]You're going to just do that without asking me to join in?!'[otherwise]We should fuck.'[end if][roman type][line break]";
-		otherwise say "Something seems to change in the way [NameDesc of M] is looking at you. [line break][speech style of M]'Hmm, I've changed my mind...'[roman type][line break]";
+		if M is raunchy, say "Something seems to change in the way [NameDesc of M] is looking at you.[line break][speech style of M]'[if M is penetrating a body part]Yeah [slut], take it!'[otherwise if the player is monster fucked]You're going to just do that without asking me to join in?!'[otherwise]We should fuck.'[end if][roman type][line break]";
+		otherwise say "Something seems to change in the way [NameDesc of M] is looking at you.[line break][speech style of M]'Hmm, I've changed my mind...'[roman type][line break]";
 	otherwise:
 		say "[one of][BigNameDesc of M] suddenly turns hostile[or]Something changes in the way [NameDesc of M] is looking at you, and you get the feeling [he of M]'s become hostile[at random]!".
 
@@ -257,7 +261,7 @@ To decide which number is the outrage tolerance of (M - a monster):
 
 To compute sudden babification of (M - a monster):
 	if M is intelligent:
-		say "Something seems to change in the way [NameDesc of M] is looking at you. [line break][speech style of M]'Aww, you really do look just like a little baby now... I think it's time for me to treat you like one, don't you?'[roman type][line break]";
+		say "Something seems to change in the way [NameDesc of M] is looking at you.[line break][speech style of M]'Aww, you really do look just like a little baby now... I think it's time for me to treat you like one, don't you?'[roman type][line break]";
 	otherwise:
 		say "[BigNameDesc of M] suddenly turns hostile!".
 
@@ -359,9 +363,7 @@ Handles a monster's reaction when they are disapproving of the player's appearan
 +!]
 To compute disapproval of (M - a monster):
 	say DisapprovalFlav of M;
-	FavourDown M;
-	if M is interested and M is unfriendly:
-		say BecomesAggressive of M.
+	FavourDown M with consequences.
 
 [!<ComputeCringeDisapprovalOfMonster>+
 
@@ -372,9 +374,7 @@ Handles a monster's reaction when they are disapproving of the player's appearan
 +!]
 To compute cringe disapproval of (M - a monster):
 	say CringeDisapprovalFlav of M;
-	FavourDown M;
-	if M is unfriendly and M is interested:
-		say BecomesAggressive of M.
+	FavourDown M with consequences.
 
 [!<SayDisapprovalFlavOfMonster>+
 
@@ -495,25 +495,10 @@ To FavourDown (M - a monster) by (N - a number):
 
 Part 2 - Reflection
 
-[!<shockedMonsters:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 shocked-monsters is a number that varies. [The number of monsters that have noticed the player right now, if the player is humiliated]
 
-[!<arousedMonsters:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 aroused-monsters is a number that varies. [The number of monsters that have noticed the player right now, if the player is aroused]
 
-[!<NumberIsTooHumiliating>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a number (called N) is too humiliating:
 	if N * 2000 > the humiliation of the player + 6000, decide yes;
 	decide no.

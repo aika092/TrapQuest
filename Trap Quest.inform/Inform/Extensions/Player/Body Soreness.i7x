@@ -1,17 +1,7 @@
 Body Soreness by Player begins here.
 
-[!<Player>@<bodySoreness:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 The player has a number called body soreness. The body soreness of the player is usually 0. [Min 0 Max 10]
 
-[!<BodyRuinX>+
-
-REQUIRES COMMENTING
-
-+!]
 To bodyruin (X - a number):
 	if the latex-transformation of the player > 5:
 		now X is 0;
@@ -26,11 +16,6 @@ To bodyruin (X - a number):
 		if the body soreness of the player < 10:
 			increase the body soreness of the player by 1.
 
-[!<BodyHealX>+
-
-REQUIRES COMMENTING
-
-+!]
 To bodyheal (X - a number):
 	while X > 0:
 		decrease X by 1;

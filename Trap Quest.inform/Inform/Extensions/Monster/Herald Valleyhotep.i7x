@@ -9,7 +9,7 @@ Understand "Valleyhotep", "herald" as herald. The text-shortcut of herald is "vh
 To say Azathot:
 	say "[if diaper quest is 0]Azathot[otherwise]Nannythoth[end if]".
 
-Figure of herald is the file "NPCs/Mansion/herald1.png".
+Figure of herald is the file "NPCs/Mansion/herald1.jpg".
 
 To decide which figure-name is the monster-image of (M - herald):
 	decide on figure of herald.
@@ -30,14 +30,14 @@ To say BigFuckerDesc of (M - herald):
 	say "Valleyhotep".
 
 To say MonsterDesc of (M - herald):
-	say "This mass of pink smoke and crackling lightning has taken the shape of a [if lady fetish is 2]bubble-bootied [man of M][otherwise]voluptuous [man of M][end if]. While its face has no features, you feel like a thousand eyes are peering into your soul in its presence.";
+	say "This mass of pink and purple smoke and crackling lightning has taken the shape of a [if lady fetish is 2]bubble-bootied [man of M][otherwise]voluptuous [man of M][end if] which appears to be made out of energy and silicone. [big he of M] stands at least ten feet tall. [big his of M] face has no features except glowing pink eyes and mouth, you feel like a thousand eyes are peering into your soul in [his of M] presence. A large prehensile tail whips around behind [him of M], searching for orifices to penetrate.";
 
 To set up (M - herald):
 	now the monstersetup of M is 1;
 	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M.
 
-To decide which number is the starting difficulty of (M - centaur):
+To decide which number is the starting difficulty of (M - herald):
 	decide on 15.
 
 To say speech style of (M - herald):
@@ -85,7 +85,7 @@ This is the herald's blessing attack rule:
 	Bustup 1;
 	HipUp 1;
 	SilentlyDelicateUp 1;
-	Intdown 1;
+	IntDown 1;
 	HairUp 1;
 	HairRedUp 1;
 	HairBrightUp 1;
@@ -111,7 +111,7 @@ To compute punishment of (P - herald-blessing):
 			say "You feel your mind twisting and warping, becoming more naturally subservient, perverted and simple.";
 			SexAddictUp 1;
 			SilentlyDelicateUp 1;
-			Intdown 1;
+			IntDown 1;
 	otherwise:
 		say "[speech style of M]'In the new world order, all humans will be fully potty untrained, to remind them of their submission. I will start with you.'[roman type][line break]The next thing you know, you can't feel your bladder[if diaper messing >= 3] or bowels[end if].";
 		increase incontinence by 100;
@@ -137,7 +137,7 @@ To say DamageReaction (N - a number) of (M - herald):
 Definition: herald is automatically banishable: decide yes.
 
 To say BanishFleeFlav of (M - herald):
-	say "[BigNameDesc of M][']s corporeal form begins to fliker and fade![line break][speech style of M]'What the [if diaper quest is 1]shit[otherwise]dick[end if]? I guess you win this time... [first custom style]BUT NEXT TIME, YOU AND THIS WORLD WILL FALL BEFORE THE MIGHT OF THE OLD ONES...'[roman type][line break]";
+	say "[BigNameDesc of M][']s corporeal form begins to flicker and fade![line break][speech style of M]'What the [if diaper quest is 1]shit[otherwise]dick[end if]? I guess you win this time... [first custom style]BUT NEXT TIME, YOU AND THIS WORLD WILL FALL BEFORE THE MIGHT OF THE OLD ONES...'[roman type][line break]";
 	now M is bossdefeated.
 
 To loot (M - herald):
@@ -197,7 +197,7 @@ To say AdviceAnswer of (M - herald):
 	compute herald's gift.
 
 To compute teaching of (M - herald):
-	say "[speech style of M]'Teach you something? What a strange request... Like, fine. Gaze into me, if you dare...'[roman type][line break]For a terrible moment [his of M] skin shifts into an infinite field of swirling patterns that assaults your mind and self! You feel smarter, but also like your sanity has slipped away!";
+	say "[speech style of M]'Teach you something? What a strange request... Like, fine. Gaze into me, if you dare...'[roman type][line break]For a terrible moment [his of M] skin shifts into an infinite field of swirling patterns that assaults your mind and self! You feel [smarter], but also like your sanity has slipped away!";
 	IntUp 1;
 	humiliate 500;
 	reset skill cooldown.
@@ -214,7 +214,7 @@ To compute herald's gift:
 		now S is in the location of the player;
 	otherwise if the quest-status of herald is 2:
 		say "[speech style of herald]Well if it isn't my favourite minion! You did, like, super good sending me that lady, and I want to thank you for it! I know! [big he of woman-player] had, like, a lot of silly smarts left in [his of herald] brains! Since you work for me it's okay for now if you have some of the leftovers.[roman type][line break]";
-		Intup 2;
+		IntUp 2;
 		now the quest-status of herald is 3;
 	otherwise if the gifted of herald is 0:
 		say "[speech style of herald]'So do you want a blessing or not?'[roman type][line break]";
@@ -223,24 +223,24 @@ To compute herald's gift:
 			let R be a random number between 1 and 4;
 			if R is 1:
 				say "You feel stronger, faster, better!";
-				Strengthup 2;
-				Dexup 2;
-				Intup 2;
+				StrengthUp 2;
+				DexUp 2;
+				IntUp 2;
 			if R is 2:
 				say "You feel so much quicker!";
-				Strengthup 1;
-				Dexup 3;
-				Intup 1;
+				StrengthUp 1;
+				DexUp 3;
+				IntUp 1;
 			if R is 3:
 				say "You feel much stronger!";
-				Strengthup 3;
-				Dexup 1;
-				Intup 1;
+				StrengthUp 3;
+				DexUp 1;
+				IntUp 1;
 			if R is 4:
-				say "You feel much smarter!";
-				Strengthup 1;
-				Dexup 1;
-				Intup 3;
+				say "You feel much [smarter]!";
+				StrengthUp 1;
+				DexUp 1;
+				IntUp 3;
 			now R is a random number between 1 and 4;
 			if R is 1:
 				say "You feel a sudden rush of heat!";

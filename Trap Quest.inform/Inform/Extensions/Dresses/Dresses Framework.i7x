@@ -1,11 +1,65 @@
 Dresses Framework by Dresses begins here.
 
 A dress is a kind of clothing.
-Definition: a dress is same-type if theme-share-target is dress.
+Definition: a dress is same-type:
+	if theme-share-target is dress, decide yes;
+	decide no.
+To decide which number is the knee-modifier of (C - a dress):
+	if C is leg covering, decide on 1;
+	decide on 0.
+To decide which number is the default-soak-limit of (C - a dress):
+	let X be 2;
+	if C is breast covering:
+		let B be 1;
+		if C is fully covering:
+			increase B by 6;
+		otherwise if C is high cut:
+			increase B by 5;
+		otherwise if C is average cut:
+			increase B by 4;
+		otherwise if C is low cut:
+			increase B by 3;
+		otherwise if C is very low cut:
+			increase B by 2;
+		otherwise if C is ridiculously low cut:
+			increase B by 1;
+		if C is not potentially-top-layer-concealing:
+			if C is potentially-partially-top-layer-concealing, now B is B / 2;
+			otherwise now B is B / 3;
+		if B < 1, now B is 1;
+		increase X by B;
+	if C is belly covering:
+		let B be 4;
+		if C is not potentially-mid-layer-concealing:
+			if C is potentially-partially-mid-layer-concealing, now B is B / 2;
+			otherwise now B is B / 3;
+		if B < 1, now B is 1;
+		increase X by B;
+	if C is crotch covering:
+		let B be 2 + the penis-capacity of C;
+		if C is not potentially-bottom-layer-concealing:
+			if C is potentially-partially-bottom-layer-concealing, now B is B / 2;
+			otherwise now B is B / 3;
+		if B < 1, now B is 1;
+		increase X by B;
+	if C is super-short:
+		increase X by 3;
+	otherwise if C is short:
+		increase X by 5;
+	otherwise if C is knee-length:
+		increase X by 8;
+	otherwise if C is hobble-skirted:
+		increase X by 12;
+	decide on X.
+
 An underdress is a kind of dress.
-Definition: an underdress is same-type if theme-share-target is underdress.
+Definition: an underdress is same-type:
+	if theme-share-target is underdress, decide yes;
+	decide no.
 An overdress is a kind of dress.
-Definition: an overdress is same-type if theme-share-target is overdress and (it is unskirted or the number of worn skirts is 0). [Unskirted items will skip skirted dresses if there is a worn skirt.]
+Definition: an overdress is same-type:
+	if theme-share-target is overdress and (it is unskirted or the number of worn skirts is 0), decide yes;
+	decide no. [Unskirted items will skip skirted dresses if there is a worn skirt]
 
 Definition: a dress is rippable:
 	if it is crotch covering and it is total protection and it is not ass plugging and it is not vagina plugging, decide yes;
@@ -39,7 +93,7 @@ To say ShortDesc of (C - a dress):
 
 Part 1 - Underdresses
 
-An underdress is usually knee-length. An underdress is usually average cut. An underdress is usually normally-nipple-covering. An underdress is usually belly covering. The armour of an underdress is usually 4. An underdress is usually top-displacable. The soak-limit of an underdress is usually 26.
+An underdress is usually knee-length. An underdress is usually average cut. An underdress is usually normally-nipple-covering. An underdress is usually belly covering. The armour of an underdress is usually 4. An underdress is usually top-displacable.
 
 Definition: an underdress is displacable: decide yes.
 
@@ -76,7 +130,7 @@ The skirt underdress clash rule is listed in the skirt wearability rules.
 
 Part 2 - Overdresses
 
-An overdress is usually knee-length. An overdress is usually average cut. An overdress is usually normally-nipple-covering. An overdress is usually belly covering. The armour of an overdress is usually 5. An overdress is usually top-displacable. The soak-limit of an overdress is usually 26.
+An overdress is usually knee-length. An overdress is usually average cut. An overdress is usually normally-nipple-covering. An overdress is usually belly covering. The armour of an overdress is usually 5. An overdress is usually top-displacable.
 
 To uniquely set up (C - an overdress):
 	repair C.

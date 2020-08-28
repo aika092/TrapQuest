@@ -107,11 +107,6 @@ Green text
 To say newbie style:
 	(- glk_set_style(style_BlockQuote); -)
 
-[!<tableOfUserStyles:Table>*
-
-REQUIRES COMMENTING
-
-*!]
 Table of User Styles (continued)
 style name	background colour	justification	italic	indentation	first line indentation	fixed width	colour
 special-style-2	--	left-right-justified	true	15	-4	false	"#ff00ff" [magenta]

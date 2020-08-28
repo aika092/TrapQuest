@@ -2,27 +2,12 @@ Semen Addiction by Player begins here.
 
 Part 1 - Calculate Semen Addiction
 
-[!<DecideWhichNumberIsTheSemenAddictionOfThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the semen addiction of the player:
 	decide on previous-semen-addiction.
 
-[!<DecideWhichNumberIsTheSemenAddictionInfluenceOfWearThing>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the semen-addiction-influence of (C - a wearthing):
 	decide on 0.
 
-[!<DecideWhichNumberIsTheSemenAddictionInfluenceOfClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the semen-addiction-influence of (C - a clothing):
 	if C is semen-addiction-influencing:
 		let S be 0;
@@ -30,11 +15,6 @@ To decide which number is the semen-addiction-influence of (C - a clothing):
 		decide on S;
 	decide on 0.
 
-[!<DecideWhichNumberIsTheCalculatedSemenAddictionOfThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the calculated semen addiction of the player:
 	let S be the raw semen addiction of the player;
 	repeat with C running through worn wearthings:
@@ -50,29 +30,14 @@ To decide which number is the calculated semen addiction of the player:
 
 Part 2 - Modify Semen Addiction
 
-[!<Player>@<rawSemenAddiction:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 The player has a number called raw semen addiction. The raw semen addiction of the player is usually 1. [Min 1 Max 20]
 
-[!<highestSemenAddiction:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 highest semen addiction is a number that varies.
 
 creampieAddictCountdown is a number that varies.
 An all later time based rule (this is the creampie addict countdown rule):
 	if creampieAddictCountdown > 0, decrease creampieAddictCountdown by 1.
 
-[!<SemenAddictUpX>+
-
-REQUIRES COMMENTING
-
-+!]
 To SemenAddictUp (X - a number):
 	let K be 0;
 	if the latex-transformation of the player > 4 or diaper quest is 1:
@@ -94,29 +59,14 @@ To SemenAddictUp (X - a number):
 				if the trophy-mode of condom-trophy > 0 and there is a live thing penetrating a fuckhole and the raw semen addiction of the player < 20, increase the raw semen addiction of the player by 1;
 	if there is a live thing penetrating a fuckhole and creampieAddictCountdown <= 0, now creampieAddictCountdown is 2.
 
-[!<SemenAddictDownX>+
-
-REQUIRES COMMENTING
-
-+!]
 To SemenAddictDown (X - a number):
 	while X > 0:
 		decrease X by 1;
 		[if the raw semen taste addiction of the player >= the raw semen addiction of the player, SemenTasteAddictDown 1;]
 		if the raw semen addiction of the player > 1, decrease the raw semen addiction of the player by 1.
 
-[!<semenEncountered:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 semen-encountered is a number that varies.
 
-[!<SaySemenEncounterFlav>+
-
-REQUIRES COMMENTING
-
-+!]
 To say SemenEncounterFlav:
 	if highest semen addiction < the semen addiction of the player:
 		if the semen addiction of the player is 1, say "[first custom style][if the semen coating of face > 0 or the semen coating of breasts > 0 or the semen coating of belly > 0 or the semen coating of thighs > 0]I need to wipe this gross stuff off me RIGHT NOW![otherwise]Ugh, my insides feel all weird and slimy. How disgusting. I've GOT to avoid that happening again.[end if][roman type][line break]";

@@ -2,8 +2,12 @@ Cow Ears by Headgear begins here.
 
 cow-ears is a headgear. Figure of cow ears is the file "Items/Accessories/Head/cowears1.png". Figure of cow ears full is the file "Items/Accessories/Head/cowears2.png". Understand "pair", "pair of", "cow", "ears" as cow-ears. cow-ears is hair growing. cow-ears is milk-taste-addiction-influencing.
 
-Definition: cow-ears is roleplay if lactation fetish is 1.
-Definition: cow-ears is IcarusScienceAppropriate if it is actually summonable and lactation fetish is 1.
+Definition: cow-ears is roleplay:
+	if lactation fetish is 1, decide yes;
+	decide no.
+Definition: cow-ears is IcarusScienceAppropriate:
+	if it is actually summonable and lactation fetish is 1, decide yes;
+	decide no.
 
 cow-ears has a number called temporary-milked-bonus.
 
@@ -49,7 +53,7 @@ To compute unique recycling of (C - cow-ears):
 	now cow-summoned is 0.
 
 To compute class outfit of (H - cow-ears):
-	let B be a random off-stage cow print bikini top;
+	let B be a random cow print bikini top;
 	let Q be a random off-stage cow print milking basque;
 	let G be a random off-stage cow pattern boots;
 	let P be a random off-stage cow piercing;
@@ -65,7 +69,7 @@ To compute class outfit of (H - cow-ears):
 		now cow-summoned is 1;
 		now basque-summoned is 1;
 		now the quest of H is milk-serve-quest;
-	otherwise if B is actually summonable or (B is bra and cow-summoned is 0):
+	otherwise if B is actually summonable or (B is bra and (cow-summoned is 0 or the lactation rate of the player < 1)):
 		if cow-summoned is 0:
 			repeat with O running through worn breast covering clothing:
 				if B is bra or B is totally-exclusive or B is bottom-exclusive:
@@ -154,6 +158,6 @@ To say ClothingDesc of (H - cow-horns):
 	say "A pair of stubby cow horns poking out of your forehead. [unless H is removable]They seem to be real![otherwise]Luckily they're only attached to a headband.[end if]".
 
 To compute SelfExamineDesc of (H - cow-horns):
-	say "You [unless H is removable]have a pair of horns protruding from your head.[otherwise]are wearing a headband with a pair of horns.".
+	say "You [unless H is removable]have a pair of horns protruding from your head.[otherwise]are wearing a headband with a pair of horns.[end if]".
 
 Cow Ears ends here.

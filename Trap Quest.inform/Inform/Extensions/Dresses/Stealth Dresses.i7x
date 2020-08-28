@@ -12,7 +12,9 @@ To decide which number is the stealth-influence of (C - illusory kimono):
 	if the class of the player is vixen, decide on 3 + the magic-modifier of C;
 	decide on 0.
 
-Definition: illusory kimono is class-transformation-protected if the class of the player is vixen.
+Definition: illusory kimono is class-transformation-protected:
+	if the class of the player is vixen, decide yes;
+	decide no.
 Definition: illusory kimono is potentially erection concealing: decide yes. [non-tight skirts conceal erections]
 
 To say ShortDesc of (C - illusory kimono):
@@ -24,7 +26,7 @@ To decide which figure-name is clothing-image of (C - illusory kimono):
 Figure of kimono is the file "Items/Clothes/Upper/Special/kimono1.png".
 
 To say ClothingDesc of (C - illusory kimono):
-	say "A beautiful flower-patterned kimono, it shimmers in the light. It weighs so little, if you didn't know any better you would say it didn't exist at all. You get the feeling that a skilled wearer could move about very quietly and subtley in this magical garment.".
+	say "A beautiful flower-patterned kimono, it shimmers in the light. It weighs so little, if you didn't know any better you would say it didn't exist at all. You get the feeling that a skilled wearer could move about very quietly and subtly in this magical garment.".
 
 To compute SelfExamineDesc of (C - illusory kimono):
 	say "You are wearing a shimmering kimono. While it covers you completely, somehow it feels extremely immodest, as though you're actually naked.".
@@ -37,13 +39,15 @@ The printed name of commando outfit is "[clothing-title-before]commando outfit[c
 To decide which figure-name is clothing-image of (C - commando outfit):
 	decide on figure of commando outfit.
 
-Definition: commando outfit is fetish appropriate if diaper quest is 0.
+Definition: commando outfit is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 Definition: commando outfit is green themed: decide yes.
 
 Figure of commando outfit is the file "Items/Clothes/Upper/Special/commando1.png".
 
 To decide which number is the stealth-influence of (C - commando outfit):
-	if playerRegion is woods, decide on 3;
+	if playerRegion is woods or the player is in a park room, decide on 3;
 	decide on 0.
 
 To say ShortDesc of (C - commando outfit):

@@ -1,17 +1,7 @@
 Begging for Mercy by Actions begins here.
 
-[!<begging:Action>*
-
-REQUIRES COMMENTING
-
-*!]
 Begging is an action applying to nothing.
 
-[!<CheckBegging>+
-
-REQUIRES COMMENTING
-
-+!]
 Check begging:
 	if the mercyskill of the player is 0 and the class of the player is not cheerleader and the player is not a sissy, say "You don't know this ability. Try [bold type]submit[roman type]ting for now." instead;
 	if the player is not monster fucked and the number of monsters grabbing the player is 0:
@@ -21,7 +11,7 @@ Check begging:
 	unless the player is able to speak:
 		if the player is gagged:
 			allocate 6 seconds;
-			say "You try to beg for mercy, but all that comes out around your [ShortDesc of random thing filling face] is [line break][variable custom style]'Mm mm mmm mmmmph!'[roman type][line break]";
+			say "You try to beg for mercy, but all that comes out around your [ShortDesc of random thing filling face] is[line break][variable custom style]'Mm mm mmm mmmmph!'[roman type][line break]";
 		otherwise if there is a live thing penetrating face:
 			let M be a random live thing penetrating face;
 			if M is a male intelligent monster:
@@ -36,11 +26,6 @@ Check begging:
 		now the player-reaction of the player is submitting instead;
 	if the player is not able to speak, say "You can't speak right now!" instead.
 
-[!<CarryOutBegging>+
-
-REQUIRES COMMENTING
-
-+!]
 Carry out begging:
 	let X be 0;
 	allocate 6 seconds;
@@ -56,11 +41,6 @@ Carry out begging:
 		if M is penetrating a body part or M is grabbing the player, say MercyReaction of M.
 Understand "beg", "beg for mercy", "beg mercy", "mercy", "pls", "grovel", "cry", "ny", "yn", "ty" as begging.
 
-[!<SayMercyAskOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To say MercyAsk of (N - a monster):
 	if N is penetrating a fuckhole:
 		if N is male and the rounds of sex left of N is 0 and N is unwrapped:
@@ -70,11 +50,6 @@ To say MercyAsk of (N - a monster):
 	otherwise:
 		say "[variable custom style]'Please don't hurt me!'[roman type][line break]".
 
-[!<SayMercyReactionOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To say MercyReaction of (M - a monster):
 	if M is unintelligent, say "It doesn't look like [NameDesc of M] understands you.".
 

@@ -25,10 +25,6 @@ To say ShortDesc of (C - a monokini):
 To decide which number is the initial outrage of (C - a monokini):
 	decide on 3.
 
-To decide which number is the original price of (C - a monokini):
-	if C is total protection, decide on 5;
-	decide on 1.
-
 This is the remove inappropriate swimwear rule:
 	repeat with B running through monokini:
 		if the initial cringe of B is 0, now B is in Holding Pen.
@@ -38,7 +34,7 @@ Chapter - Slutty Monokinis
 
 [There are a few different types of monokini, really just for transformation sequence handling.]
 
-A string monokini is a kind of monokini. The armour of string monokini is usually 2. The soak-limit of a string monokini is usually 5. A string monokini is normally-nipple-exposing. A string monokini is belly exposing. A string monokini is usually fully exposing. A string monokini is transformation-rare.
+A string monokini is a kind of monokini. The armour of string monokini is usually 2. A string monokini is normally-nipple-exposing. A string monokini is belly exposing. A string monokini is usually fully exposing. A string monokini is transformation-rare.
 To decide which object is the unique-upgrade-target of (C - a string monokini):
 	[if tutorial is 1, decide on nothing;]
 	decide on a random off-stage transformation-eligible colour-sharing slut monokini.
@@ -72,9 +68,5 @@ To say ShortDesc of (C - a string monokini):
 
 To decide which number is the initial outrage of (C - a string monokini):
 	decide on 9.
-
-To decide which number is the original price of (C - a string monokini):
-	if C is total protection, decide on 3;
-	decide on 1.
 
 Swimsuit Framework ends here.

@@ -1,7 +1,7 @@
 Real Life Patron by Monster begins here.
 
 [
-Slight retcon: The player's friends have an understanding that they are being called from within the VR game, but they may or may not know the /nature/ of that game.
+Slight ret con: The player's friends have an understanding that they are being called from within the VR game, but they may or may not know the /nature/ of that game.
 
 essentially, they originally think they're here to observe your "testing", but really Nintendolls is just marketing their newest whore.
 ]
@@ -24,7 +24,9 @@ Definition: a real-life patron (called P) is generic-appropriate:
 	otherwise:
 		decide no.
 
-Definition: a real-life patron is uniquely unfriendly if it is friend-shocked.
+Definition: a real-life patron is uniquely unfriendly:
+	if it is friend-shocked, decide yes;
+	decide no.
 
 To say NameDesc of (C - a real-life patron):
 	say "[input-style][MediumDesc of C][roman type]".
@@ -91,14 +93,14 @@ To say GenericSituationReaction of (M - a real-life patron):
 	let B be the friend-old-name of M;
 	say "[speech style of M]'[if P < 6 and S < 6]Wow, [B], it really is you. [otherwise if S > P or the times-called of M > 0]Hello, [B]. [otherwise][B]?! Is that really you?! [end if][run paragraph on]";
 	if P > CA and P < 3:
-		if S >= 3, say "...You're definitely looking more presentable than you did earlier. ";
+		if S >= 3, say "... You're definitely looking more presentable than you did earlier. ";
 		otherwise say "[one of]So this is the cutting edge VR game you were bragging about? [or]I still can't believe you're calling me from inside a game. [stopping] ";
 	otherwise if the player is naked and P < 10 and CA < 10:
 		if M is real-seenNaked, say "Why are you naked?! ";
-		otherwise say "...You're naked again. ";
+		otherwise say "... You're naked again. ";
 	otherwise if P > CA and P < 6 and the player is male and the largeness of breasts < 4:
-		if S < 3, say "...are you trying to tell me something with that outfit? ";
-		otherwise say "...is this how you're going to dress from now on? ";
+		if S < 3, say "... are you trying to tell me something with that outfit? ";
+		otherwise say "... is this how you're going to dress from now on? ";
 	otherwise if CA >= P and CA < 6:
 		if S < 3, say "Is that what you wear when I'm not around? (What a weirdo...) ";
 		otherwise say "So that really is what you like to wear. (Weirdo...) ";
@@ -112,14 +114,17 @@ To say GenericSituationReaction of (M - a real-life patron):
 		if S < 9, say "You look like a whore. ";
 		otherwise say "So you're still dressing like a whore. ";
 	otherwise if CA >= P and CA < 12:
-		if S < 9, say "...Is there a reason you look like so DISGUSTING?";
-		otherwise say "This isn't a game at all to you, is it? It's just your fantasy. ";
+		if S < 9, say "... Is there a reason you look so DISGUSTING?";
+		otherwise say "This isn't a game to you, is it? It's just your fantasy. ";
 	otherwise if P > CA and P < 12:
-		if S < 9, say "...Is there a reason you look like a PORN STAR? [if the player is naked]I mean, you're naked. [otherwise]You might as well be naked. [end if]";
+		if S < 9, say "... Is there a reason you look like a PORN STAR? [if the player is naked]I mean, you're naked. [otherwise]You might as well be naked. [end if]";
 		otherwise say "This isn't a game at all, is it? You're probably just calling me from an adult film set right now. ";
 	otherwise:
 		if S < 16, say "This can't be real! There's no way that's actually you! ";
-		otherwise say "...No matter what kind of game this is, no self-respecting person would ever let anyone see them in such a state. I hope you know that. ".
+		otherwise say "... No matter what kind of game this is, no self-respecting person would ever let anyone see them in such a state. I hope you know that. ";
+	[###Selkie: what about adding some comment about their physical attributes too?]
+	say "Wow, your [BreastDesc] look different to what I remember. Goes well with your [AssDesc].[if size of the penis < 4] But dude, why does your front look so flat?[otherwise if size of the penis < 6] And did you make them shrink your dick, too? That's sick![otherwise if size of the penis > 8] And have you stuffed your crotch, or are you playing this game so you can pretend your dick is bigger?[end if]".
+
 
 [Allows the player's friends to react to specific situations like "covered in semen", stuff like that.]
 To say FriendReaction of (M - a real-life patron) to (A - a humiliating situation):
@@ -167,7 +172,7 @@ To compute (M - a real-life patron) protecting against (X - a monster):
 		say FightObserve of M with X.
 
 To say BaseObservationFlav of (M - a real-life patron):
-	say "[MediumDesc of M] continues to watch [one of]the action[or]you[purely at random][if M is unfriendly][one of], [his of M] hand moving just offscreen.[or].[or], clearly playing with [himself of M] offscreen.[or].[then at random][otherwise][one of], mouth wide open.[or].[or]in total disbelief.[or].[then at random][end if][line break]";
+	say "[MediumDesc of M] continues to watch [one of]the action[or]you[purely at random][if M is unfriendly][one of], [his of M] hand moving just off-screen.[or].[or], clearly playing with [himself of M] off-screen.[or].[then at random][otherwise][one of], mouth wide open.[or].[or]in total disbelief.[or].[then at random][end if][line break]";
 
 [Each turn spent fighting, this will display]
 To say FightObserve of (M - a real-life patron) with (N - a monster):
@@ -191,9 +196,9 @@ To say SingleWaitingFlavTQ of (M - a real-life patron):
 	if the times-submitted of M is 0:
 		say "[one of]You stare up at [NameDesc of M], still in shock. [or]You sigh, having lost any real hope of negotiation being successful. [stopping][line break][variable custom style]'This has to be a misunderstanding...'[roman type][line break][line break]Unsurprisingly, [he of M] completely ignores you.";
 	otherwise if the sex addiction of the player < 12:
-		say "You stare at [NameDesc of M] nervously. [line break][variable custom style]'[one of]This has to be some kind of mistake. You wouldn't actually do this to me...'[or]This is all a misunderstanding...My reputation is going to be ruined.'[or]You actually paid to have sex with me...'[or]You're actually going to do this. This isn't just a joke....'[in random order][roman type][line break]";
+		say "You stare at [NameDesc of M] nervously.[line break][variable custom style]'[one of]This has to be some kind of mistake. You wouldn't actually do this to me...'[or]This is all a misunderstanding... My reputation is going to be ruined.'[or]You actually paid to have sex with me...'[or]You're actually going to do this. This isn't just a joke....'[in random order][roman type][line break]";
 	otherwise:
-		say "You look up at [NameDesc of M] and smile gently. [line break][variable custom style]'[one of]If its you, I'd like to do it for free, but you know how it is.'[or]Go ahead and just treat me like a cheap whore. We're friends, it's OK.'[or]Since we're friends, I'll do whatever you want.'[or]Don't worry, I'll make sure you enjoy this. That's what friends are for.'[in random order][roman type][line break]".
+		say "You look up at [NameDesc of M] and smile gently.[line break][variable custom style]'[one of]If it's you, I'd like to do it for free, but you know how it is.'[or]Go ahead and just treat me like a cheap whore. We're friends, it's OK.'[or]Since we're friends, I'll do whatever you want.'[or]Don't worry, I'll make sure you enjoy this. That's what friends are for.'[in random order][roman type][line break]".
 
 Section - Platonic Friend
 
@@ -217,7 +222,7 @@ To say LongDickDesc of (M - platonic-friend):
 To say FightObserve of (M - platonic-friend) with (N - a monster):
 	let name be the friend-old-name of M;
 	if the player is prone:
-		say "[speech style of M]'[one of]Stand up and fight back, you pathetic whore!'[or]What do you think you're doing down there? Get up!'[or][name]...you better not be about to do what I think you are...'[at random][roman type][line break][moderateHumiliateReflect]".
+		say "[speech style of M]'[one of]Stand up and fight back, you pathetic whore!'[or]What do you think you're doing down there? Get up!'[or][name]... you better not be about to do what I think you are...'[at random][roman type][line break][moderateHumiliateReflect]".
 
 To say SexObserve of (M - platonic-friend) with (N - a monster):
 	let B be the friend-old-name of M;
@@ -305,11 +310,11 @@ To compute HangUpDisgraced of (C - a video-monitor) with (M - nemesis-friend):
 		now the timestamp entry is 0;[by setting these to 0, the 'views' will be set to 1, which means there's no tracked views and the reputation damage is flat severity]
 
 To compute HangUpUndisgraced of (C - a video-monitor) with (M - nemesis-friend):
-	say "[second custom style]'[one of]That was a little...boring. I thought you were going to do something really gross and slutty. What a waste of time.'[or]Really, nothing again? I was so sure you were a whore deep down...'[or]I know you're whoring it up in there. I'll catch you eventually.'[at random][roman type][line break][MediumDesc of M] hangs up the call, and the [MediumDesc of C] turns off.".
+	say "[second custom style]'[one of]That was a little... boring. I thought you were going to do something really gross and slutty. What a waste of time.'[or]Really, nothing again? I was so sure you were a whore deep down...'[or]I know you're whoring it up in there. I'll catch you eventually.'[at random][roman type][line break][MediumDesc of M] hangs up the call, and the [MediumDesc of C] turns off.".
 
 To compute appearance assessment of (M - nemesis-friend):
 	say NewNameReact of M;
-	say "[line break][variable custom style]'[one of][MediumDesc of M]?! What are YOU doing here?'[roman type][line break][speech style of M]'I payed a ton of money to come into the game and fuck you. Isn't that great, [NameBimbo]? By the way, I hope you don't mind if I don't use protection.'[roman type][line break][or]I hate you so much, [MediumDesc of M]...'[roman type][line break][speech style of M]'Why should I care what a whore thinks?'[roman type][line break][stopping]".
+	say "[line break][variable custom style]'[one of][MediumDesc of M]?! What are YOU doing here?'[roman type][line break][speech style of M]'I paid a ton of money to come into the game and fuck you. Isn't that great, [NameBimbo]? By the way, I hope you don't mind if I don't use protection.'[roman type][line break][or]I hate you so much, [MediumDesc of M]...'[roman type][line break][speech style of M]'Why should I care what a whore thinks?'[roman type][line break][stopping]".
 
 To say PrepTaunt of (M - nemesis-friend) in (F - asshole):
 	say "[speech style of M]'Bite the pillow, [NameBimbo], I have some resentment I want to work out here.'[roman type][line break]".
@@ -345,18 +350,18 @@ To say LongDickDesc of (M - distant-friend):
 To say FightObserve of (M - distant-friend) with (N - a monster):
 	let B be the friend-old-name of M;
 	if the player is prone:
-		if M is unfriendly, say "[speech style of M]'[one of]Yes, give up! I want to see what happens next!'[or]I really wish there were more viewing angles...'[or]Yes, [B], stick your ass out just like that!'[at random][roman type][line break][moderateHumiliateReflect]";
-		otherwise say "[speech style of M]'[one of][B], aren't you going to fight?'[or]Are you giving up? That was fast...'[or][B], don't tell me you're actualy going to let [NameDesc of N] do what [he of N] wants...'[at random][roman type][line break][moderateHumiliateReflect]".
+		if M is unfriendly, say "[speech style of M]'[one of]Yes, give up! I want to see what happens next!'[or]I really wish there were more viewing angles...'[or]Yes, [B], stick your [AssDesc] out just like that!'[at random][roman type][line break][moderateHumiliateReflect]";
+		otherwise say "[speech style of M]'[one of][B], aren't you going to fight?'[or]Are you giving up? That was fast...'[or][B], don't tell me you're actually going to let [NameDesc of N] do what [he of N] wants...'[at random][roman type][line break][moderateHumiliateReflect]".
 
 To say SexObserve of (M - distant-friend) with (N - a monster):
 	let B be the friend-old-name of M;
 	if M is unfriendly, say "[first custom style]'[one of]You love it when I watch you, don't you?'[or][B], you're such a dirty whore...'[or]This is so fucking hot...'[or]I think I love this game...'[or]Thank you for the show...'[then at random][roman type][line break][strongHumiliateReflect]";
-	otherwise say "[first custom style]'[one of]I can't believe you're actually having sex right in front of me.'[or]Um, isn't [NameDesc of M] a complete stranger?'[or]I had no clue this is what you were really like.'[or]You want me to see this, don't you. You like this.'[or]Its still so hard to believe you're really [OriginalNameBimbo].'[then at random][if the player is not disgraced and the player is able to speak][line break][variable custom style]'[one of]It's not what it looks like!'[or]Please look away!'[or]I don't normally do this!'[or]This isn't real, I'm telling you!'[in random order][end if][roman type][line break][strongHumiliateReflect]".
+	otherwise say "[first custom style]'[one of]I can't believe you're actually having sex right in front of me.'[or]Um, isn't [NameDesc of M] a complete stranger?'[or]I had no clue this is what you were really like.'[or]You want me to see this, don't you. You like this.'[or]It's still so hard to believe you're really [OriginalNameBimbo].'[then at random][if the player is not disgraced and the player is able to speak][line break][variable custom style]'[one of]It's not what it looks like!'[or]Please look away!'[or]I don't normally do this!'[or]This isn't real, I'm telling you!'[in random order][end if][roman type][line break][strongHumiliateReflect]".
 
 To compute HangUpDisgraced of (C - a video-monitor) with (M - distant-friend):
 	let B be the friend-old-name of M;
 	if M is not friend-shocked:
-		say "[speech style of M]'That was pretty...intense, but it can be our secret, [B]. Just between us.'[roman type][line break][MediumDesc of M] hangs up the call, and the [MediumDesc of C] turns off.";
+		say "[speech style of M]'That was pretty... intense, but it can be our secret, [B]. Just between us.'[roman type][line break][MediumDesc of M] hangs up the call, and the [MediumDesc of C] turns off.";
 	otherwise:
 		say "[speech style of M]'[one of]I can't wait to see what everyone else thinks of this...'[or]Everyone really liked the last video, [B]. So, I think I'll share this one too.'[stopping][roman type][line break][strongHumiliateReflect][MediumDesc of M] hangs up the call, and the [MediumDesc of C] turns off.";
 		choose a blank row in Table of Published Disgraces;
@@ -375,10 +380,10 @@ To compute HangUpUndisgraced of (C - a video-monitor) with (M - distant-friend):
 
 To compute appearance assessment of (M - distant-friend):
 	say NewNameReact of M;
-	say "[line break][variable custom style]'[one of][MediumDesc of M]?! What are YOU doing here?'[roman type][line break][speech style of M]'Watching you have sex with all those strangers really made me lose respect for you, but it also made me realise how much I've always wanted to fuck you. So, I payed a lot of money to come into the game and take my turn!'[roman type][line break][or][MediumDesc of M], you've got it-[roman type][line break][speech style of M]'Shut up, [NameBimbo], we both know you want this.'[roman type][line break][stopping]".
+	say "[line break][variable custom style]'[one of][MediumDesc of M]?! What are YOU doing here?'[roman type][line break][speech style of M]'Watching you have sex with all those strangers really made me lose respect for you, but it also made me realise how much I've always wanted to fuck you. So, I paid a lot of money to come into the game and take my turn!'[roman type][line break][or][MediumDesc of M], you've got it-[roman type][line break][speech style of M]'Shut up, [NameBimbo], we both know you want this.'[roman type][line break][stopping]".
 
 To say PrepTaunt of (M - distant-friend) in (F - asshole):
-	say "[speech style of M]'I'm going to try out your ass.'[roman type][line break]".
+	say "[speech style of M]'I'm going to try out your [AssDesc].'[roman type][line break]".
 
 To say PrepTaunt of (M - distant-friend) in (F - vagina):
 	say "[speech style of M]'[if the player is able to get pregnant]I really wish I could get you pregnant.'[otherwise]I can't believe I'm about to fuck [NameBimbo]!'[end if][roman type][line break]".
@@ -417,14 +422,14 @@ To say FightObserve of (M - fancied-friend) with (N - a monster):
 To say SexObserve of (M - fancied-friend) with (N - a monster):
 	let B be the friend-old-name of M;
 	if M is unfriendly, say "[first custom style]'[one of]Aren't you ashamed?'[or]I can't believe I ever respected you.'[or]You're disgusting, [B].'[or]The fact that I'm watching adds to the thrill, doesn't it.'[or]You can't be satisfied if you don't have an audience, right, [B]?'[then at random][roman type][line break][strongHumiliateReflect]";
-	otherwise say "[first custom style]'[one of]So, what sort of stuff do you do when I'm NOT watching?'[or]Just so we're clear on this, [NameDesc of N] is a stranger, right?'[or][big please] tell me you aren't actually doing this.'[or]So this is what you like?'[then at random][if the player is not disgraced and the player is able to speak][line break][variable custom style]'[one of]It's not what it looks like!'[or]Please look away!'[or]I don't normally do this!'[or]This isn't real, I'm telling you!'[in random order][end if][roman type][line break][strongHumiliateReflect]".
+	otherwise say "[first custom style]'[one of]So, what sort of stuff do you do when I'm NOT watching?'[or]Just so we're clear on this, [NameDesc of N] is a stranger, right?'[or][big please] tell me you aren't actually doing this.'[or]So this is what you really like?'[then at random][if the player is not disgraced and the player is able to speak][line break][variable custom style]'[one of]It's not what it looks like!'[or]Please look away!'[or]I don't normally do this!'[or]This isn't real, I'm telling you!'[in random order][end if][roman type][line break][strongHumiliateReflect]".
 
 To compute HangUpDisgraced of (C - a video-monitor) with (M - fancied-friend):
 	let B be the friend-old-name of M;
 	if M is not friend-shocked:
 		say "[speech style of M]'Who knew you were such a tart? I certainly didn't.'[roman type][line break][MediumDesc of M] hangs up the call, and the [MediumDesc of C] turns off.";
 	otherwise:
-		say "[speech style of M]'[one of]OK, [B], if you're going to act like such a disgrace, I might as well share this with everyone.'[or]I'm going to share this video too.'[stopping][roman type][line break][strongHumiliateReflect][MediumDesc of M] hangs up the call, and the [MediumDesc of C] turns off.";
+		say "[speech style of M]'[one of]OK, [B], if you're going to act like such a disgrace, I might as well share this with everyone.'[or]You obviously want me to share this, I know.[or]I'm going to share this video too.'[stopping][roman type][line break][strongHumiliateReflect][MediumDesc of M] hangs up the call, and the [MediumDesc of C] turns off.";
 		choose a blank row in Table of Published Disgraces;
 		now the content entry is the substituted form of "a screenshot of you in a video call, [the video-event of C],";
 		now the published entry is the substituted form of "posted to your wall on facepage.com by [MediumDesc of M], accompanied by the comment 'WTF, [OriginalNameBimbo]!'";
@@ -450,9 +455,9 @@ To say PrepTaunt of (M - fancied-friend) in (F - vagina):
 	say "[speech style of M]'I expect to get my money's worth here.'[roman type][line break]".
 
 To say AnalVirginityTaunt of (M - fancied-friend):
-	say "[speech style of M]'Don't lie to me, [NameBimbo]. You've alway wanted to try this.'[roman type][line break]".
+	say "[speech style of M]'Don't lie to me, [NameBimbo]. You've always wanted to try this.'[roman type][line break]".
 
 To say VaginalVirginityTaunt of (M - fancied-friend):
-	say "[speech style of M]'Its hard to believe you were still a virgin. I mean, you've acted like such a whore.'[roman type][line break]".
+	say "[speech style of M]'It's hard to believe you were still a virgin. I mean, you've acted like such a whore.'[roman type][line break]".
 
 Real Life Patron ends here.

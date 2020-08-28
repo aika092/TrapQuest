@@ -20,7 +20,7 @@ To decide which number is the girth of (V - a vine):
 	decide on 2 * (1 + the TrapNo of V).
 
 To decide which figure-name is the examine-image of (C - a vine):
-	if diaper quest is 0 and the player is female:
+	if diaper quest is 0 and the player is possessing a vagina:
 		if C is penetrating asshole, decide on figure of vines cutscene 5;
 		if C is penetrating vagina:
 			if the TrapNo of C > 0, cutshow figure of vines cutscene 7;
@@ -58,11 +58,13 @@ Definition: yourself is vine stuck:
 Returns yes if the player is being fucked by one or more vines.
 
 +!]
-Definition: yourself is vine fucked if there is a vine penetrating a body part.
+Definition: yourself is vine fucked:
+	if there is a vine penetrating a body part, decide yes;
+	decide no.
 
 [!<VineIsAgressive>+
 
-REQUIRES COMMENTING
+Are the vines currently actively trying to fuck the player
 
 +!]
 Definition: a vine (called V) is aggressive:
@@ -70,7 +72,8 @@ Definition: a vine (called V) is aggressive:
 	if the TrapNo of V < 0 or V is not in the location of the player, decide no;
 	if vine boss is off-stage, decide no;
 	if busy is 1, decide no;
-	if the player is monster fucked or the player is trap stuck or (the player is monster stuck and diaper quest is 1), decide no;
+	if kraken bell is worn, decide no;
+	if the player is monster fucked or the player is trap stuck or the player is vine stuck or (the player is monster stuck and diaper quest is 1), decide no;
 	if diaper quest is 1:
 		if the player is in WoodsBoss01:
 			if the player is prone and there is a worn diaper, decide yes;
@@ -81,11 +84,6 @@ Definition: a vine (called V) is aggressive:
 	if asshole is actually occupied and (the player is not possessing a vagina or vagina is actually occupied), decide no;
 	decide yes.
 
-[!<ComputeVinesStanding>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute vines standing:
 	repeat with V running through aggressive vines:
 		if playerRegion is Woods or the player is in WoodsBoss01:
@@ -113,11 +111,6 @@ To compute vines standing:
 				say "[one of]A living vine tries to grab your [if there are worn heels]heels[otherwise]feet[end if]. You manage to avoid it grabbing you![or]Living vines burst out of the soil, grasping for your ankles. Thanks to your good reflexes, you successfully keep them from grabbing you for now.[or]A single vine slowly rises out of the soil, swaying [if the raw sex addiction of the player > 6]hypnotically[otherwise]menacingly[end if], sticky white fluids oozing from its shiny, bulbous tip. You feel the soil moving beneath you and jump back before more can grab you. Still free for now.[or]Several vines rise out of the soil and pounce for your ankles. You [if the dexterity of the player > 13]easily [end if]dodge each one thanks to your [if the dexterity of the player > 15]catlike [end if]reflexes, safe for the time being.[in random order]";
 				FatigueUp 10.
 
-[!<ComputeVinesKneeling>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute vines kneeling:
 	repeat with V running through aggressive vines:
 		if playerRegion is Woods or the player is in WoodsBoss01:
@@ -143,21 +136,11 @@ To compute vines kneeling:
 				now V is wrangling arms;
 			otherwise:
 				say "[one of]Vines shoot out of the ground and attempt to wrap around your wrists and ankles. You manage to avoid being grappled for now![or]Several vines rise out of the soil, closing in on you slowly. You bat away each one. Looks like you've avoided a grapple for now.[or]Vines shoot out of the soil with whip-like quickness! But thanks to your good reflexes you jump out of the way just in time. You're safe for now.[or]Living vines burst out of the soil, fumbling to grab your wrists. You're much too fast for them to catch you. For now.[in random order]";
-				if the player is female, cutshow figure of vines cutscene 1 for V;
+				if the player is possessing a vagina, cutshow figure of vines cutscene 1 for V;
 
-[!<ReportKneelingWhenThereIsAVineGrabbingThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 Report kneeling when there is a vine wrangling a body part:
 	say "[one of]Vines wrap around your wrists as soon as they hit the ground.[or]Your wrists are immediately pinned to the ground.[or]Vines immediately pin your hands to the ground.[or]Vines wrap around your wrists and pin them to the ground.[or]Unsurprisingly, vines immediately grab your wrists and pin them to the ground.[in random order]".
 
-[!<ComputeVinePenetrating>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute (V - a vine) penetrating:
 	if diaper quest is 1:
 		if diaper messing >= 3 and the number of worn wet diapers is 0 and the number of worn messed diapers is 0 and the player is not in WoodsBoss01 and the TrapNo of V < 1, compute vine laxative torture of V;
@@ -250,11 +233,6 @@ To compute (V - a vine) penetrating (F - vagina):
 		if the vine-condoms of NV <= 0, say VaginaPenetrationFlav of NV;
 		ruin vagina.
 
-[!<ComputeVineAttackingClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute (V - a vine) attacking (K - a clothing):
 	if K is rippable:
 		say "A large vine [one of]comes up from within the ground right under your butt, and starts[or]is[stopping] trying to force its way through your [ShortDesc of K]!";
@@ -271,19 +249,9 @@ To compute (V - a vine) attacking (K - a clothing):
 		say "The vine [one of]grabs[or]wiggles into[cycling] your [ShortDesc of K] and [one of]rips[or]powerfully tears[cycling] it off!";
 		destroy K;
 
-[!<SayAssholePenetrationFlavOfVine>+
-
-REQUIRES COMMENTING
-
-+!]
 To say AssholePenetrationFlav of (V - a vine):
 	say "[one of]The vines holding your legs spread your [asshole] as another shoots out of the ground and begins fucking you at full force! [or]A vine shoots out of the ground between your feet and into your [asshole]. It begins fucking you at full force! [or]A single vine shoots out of the ground beneath your feet and into your [asshole]. It begins to fuck you at full force! [or]The vines [if the raw sex addiction of the player < 5]pry[otherwise]spread[end if] your thighs apart as an unseen vine beneath you shoves itself into your [asshole]. It begins fucking you at full force! [in random order]Owww!";
 
-[!<SayVaginaPenetrationFlavOfVine>+
-
-REQUIRES COMMENTING
-
-+!]
 To say VaginaPenetrationFlav of (V - a vine):
 	say "[one of]The vines holding your legs keep your [vagina] wide open as another shoots out of the ground and begins fucking you at full force! [or]A vine shoots out of the ground between your feet and into your [vagina]. It begins fucking you at full force! [or]A single vine shoots out of the ground beneath your feet and into your [vagina]. It begins to fuck you at full force! [or]The vines [if the raw sex addiction of the player < 5]pry[otherwise]spread[end if] your legs apart as an unseen vine beneath you shoves itself into your [vagina]. It begins fucking you at full force! [in random order]Oof!";
 
@@ -365,7 +333,7 @@ To compute vineNut of (V - a vine):
 				compute sudden pregnancy;
 			otherwise if there is a fairy in the location of the player:
 				cutshow figure of fairy cutscene 20 for V;
-			if F is monster and the pregnancy of the player is 1, say "[line break][speech style of F]'[one of]Pay me back whenever you want, honey!'[or]Don[']t you feel so much better now?'[or]Fairies help fairies!'[or]You[']re welcoooome!'[in random order][roman type][line break]";
+			if F is monster and the pregnancy of the player is 1, say "[line break][speech style of F]'[one of]Pay me back whenever you want, honey!'[or]Don't you feel so much better now?'[or]Fairies help fairies!'[or]You're welcoooome!'[in random order][roman type][line break]";
 			if F is monster:
 				bore F for 120 seconds;
 		FuckCount;
@@ -456,19 +424,9 @@ To say SexSubmissionFlav of (T - a vine):
 
 Part - Escaping from Vines
 
-[!<CheckPullingVineBoss>+
-
-REQUIRES COMMENTING
-
-+!]
 Check pulling vine boss:
 	if the player is vine stuck, try pulling a random vines wrangling a body part instead;
 
-[!<CheckPullingVines>+
-
-REQUIRES COMMENTING
-
-+!]
 Check pulling vines:
 	if there is a fairy-witch grabbing the player, say "They're too strong. It's like the fairy is empowering them!" instead;[This a grab situation, not a wrangled situation, so you can't resist.]
 	if the noun is not wrangling a body part:
@@ -487,11 +445,6 @@ Check pulling vines:
 			say "Your [variable random fuckhole penetrated by the noun] is so sore that you are paralysed for a moment by the intense feelings!" instead;
 	VinePull instead.
 
-[!<VinePull>+
-
-REQUIRES COMMENTING
-
-+!]
 To VinePull:
 	let S be the dexterity of the player;
 	let X be a random number between square root of S and S;
@@ -524,11 +477,6 @@ To VinePull:
 		now the vine-condoms of the noun is 0;
 	allocate 6 seconds.
 
-[!<CheckAttackingVines>+
-
-REQUIRES COMMENTING
-
-+!]
 Check attacking vines:
 	try pulling the noun instead.
 

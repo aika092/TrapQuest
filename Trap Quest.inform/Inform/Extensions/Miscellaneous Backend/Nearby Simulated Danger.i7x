@@ -1,10 +1,5 @@
 Nearby Simulated Danger by Miscellaneous Backend begins here.
 
-[!<AThingIsNearby>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a thing (called M) is nearby:
 	if M is monster:
 		if M is not alive or M is pacified, decide no;
@@ -14,11 +9,6 @@ Definition: a thing (called M) is nearby:
 		if the room D from the location of the player is L, decide yes;
 	decide no.
 
-[!<ARoomIsNearby>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a room (called R) is nearby:
 	repeat with M running through nearby monsters:
 		decide yes;
@@ -29,32 +19,17 @@ Definition: a room (called R) is within vision:
 	if R is neighbour finder or R is next door, decide yes;
 	decide no.
 
-[!<ARoomIsNextDoor>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a room (called R) is next door:
 	repeat with D running through N-viable directions:
 		if the room D from the location of the player is R, decide yes;
 	decide no.
 
-[!<DecideWhichDirectionIsTheNearbyDirectionOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which direction is the nearby-direction of (M - a monster):
 	let L be the location of M;
 	now neighbour finder is the location of the player;
 	repeat with D running through N-viable directions:
 		if the room D from the location of the player is L, decide on D.
 
-[!<ADirectionIsNearby>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a direction (called D) is nearby:
 	repeat with M running through nearby monsters:
 		if the nearby-direction of M is D, decide yes;
@@ -76,9 +51,13 @@ Definition: a monster (called M) is dangerous:
 Fighting the player or already fucking the player.
 
 +!]
-Definition: a monster is combative if it is in the location of the player and it is dangerous.
+Definition: a monster is combative:
+	if it is in the location of the player and it is dangerous, decide yes;
+	decide no.
 
-Definition: yourself is in danger if there is a combative monster.
+Definition: yourself is in danger:
+	if there is a combative monster, decide yes;
+	decide no.
 
 [!<TheDangerBlocksMasturbationRule>+
 
@@ -96,7 +75,9 @@ The danger blocks masturbation rule is listed last in the global masturbation re
 REMEMBER YOU FUCKWAD, WHEN STORING A REGION IN A VARIABLE AS OPPOSED TO EXPLICITLY NAMING IT YOU MUST USE THE "regionally in" CONDITION RATHER THAN JUST "in" OR EVERYTHING BREAKS AND YOU WASTE HOURS TRYING TO DEBUG WTF IS GOING ON
 
 +!]
-Definition: a thing is regional if it is regionally in playerRegion.
+Definition: a thing is regional:
+	if it is regionally in playerRegion, decide yes;
+	decide no.
 
 playerRegion is a region that varies. playerRegion is Dungeon.
 noRegion is a region.
@@ -107,9 +88,15 @@ To decide which region is the currentRegion of (T - a thing):
 Definition: a region is loaded:	decide no.
 Definition: Dungeon is loaded: decide yes.
 Definition: School is loaded: decide yes.
-Definition: Woods is loaded if Woods01 is placed.
-Definition: Hotel is loaded if Hotel01 is placed.
-Definition: Mansion is loaded if Mansion01 is placed.
+Definition: Woods is loaded:
+	if Woods01 is placed, decide yes;
+	decide no.
+Definition: Hotel is loaded:
+	if Hotel01 is placed, decide yes;
+	decide no.
+Definition: Mansion is loaded:
+	if Mansion01 is placed, decide yes;
+	decide no.
 Definition: a thing (called T) is loaded:
 	if the currentRegion of T is loaded, decide yes;
 	decide no.

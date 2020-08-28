@@ -2,7 +2,9 @@ Cheerleader Outfit by Dresses begins here.
 
 A cheerleader outfit is a kind of overdress. A cheerleader outfit is usually unique. A cheerleader outfit is usually short. Understand "cheer", "leader" as cheerleader outfit.
 
-Definition: a cheerleader outfit is class-transformation-protected if the class of the player is cheerleader.
+Definition: a cheerleader outfit is class-transformation-protected:
+	if the class of the player is cheerleader, decide yes;
+	decide no.
 
 To say ShortDesc of (C - a cheerleader outfit):
 	say "cheerleader outfit".
@@ -66,8 +68,12 @@ To decide which figure-name is clothing-image of (C - a supershort cheerleader o
 	if diaper quest is 1, decide on figure of dq supershort cheerleader outfit;
 	decide on figure of supershort cheerleader outfit.
 
-Definition: a supershort cheerleader outfit is blue themed if diaper quest is 0.
-Definition: a supershort cheerleader outfit is white themed if diaper quest is 1.
+Definition: a supershort cheerleader outfit is blue themed:
+	if diaper quest is 0, decide yes;
+	decide no.
+Definition: a supershort cheerleader outfit is white themed:
+	if diaper quest is 1, decide yes;
+	decide no.
 
 To say ClothingDesc of (C - a supershort cheerleader outfit):
 	if diaper quest is 1, say "This white cheerleader one-piece dress covers very little skin.";

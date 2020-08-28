@@ -1,28 +1,13 @@
 Masturbating by Actions begins here.
 
-[!<ThingIsBarbie>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a thing is barbie:
 	if the player is not possessing a penis and the player is not possessing a vagina, decide yes;
 	decide no.
 
-[!<ThingIsHerm>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a thing is herm:
 	if the player is possessing a penis and the player is possessing a vagina, decide yes;
 	decide no.
 
-[!<YourselfIsAbleToWank>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: yourself is able to wank:
 	[This is about whether the player can masturbate through their underwear]
 	if there is cursed pussy covering blocking wanking clothing, decide no;
@@ -39,21 +24,11 @@ Definition: yourself is anal flexible:
 	if the dexterity of the player >= 15, decide yes;
 	decide no.
 
-[!<ClothingIsBlockningWanking>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a clothing (called K) is blocking wanking:
 	if K is chastity cage, decide no; [the chastity cage is somehow being counted as pussy covering]
 	if K are cotton or K are nylon or K are mesh or K are silk or K are satin, decide no;
 	decide yes.
 
-[!<masturbationRestrictionRules:Rulebook>*
-
-REQUIRES COMMENTING
-
-+!]
 The global masturbation restriction rules is a rulebook.
 The penis masturbation restriction rules is a rulebook.
 The vaginal masturbation restriction rules is a rulebook.
@@ -107,22 +82,12 @@ Definition: yourself is able to anally masturbate:
 	if the rule failed, decide no;
 	decide yes.
 
-[!<TheSexDollCannotWankRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the sex doll can't wank rule:
 	if the latex-transformation of the player > 3:
 		if auto is 0, say "You are completely numb down there, so masturbating would do nothing.";
 		rule fails.
 The sex doll can't wank rule is listed last in the global masturbation restriction rules.
 
-[!<TheTooSluttyToWankRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the too slutty to wank rule:
 	if auto is 0 and the number of monsters penetrating a body part is 0:
 		if (the anal sex addiction of the player > 13 or the vaginal sex addiction of the player > 13) and the player is not very horny:
@@ -136,25 +101,15 @@ This is the too slutty to wank rule:
 			rule fails.
 The too slutty to wank rule is listed last in the global masturbation restriction rules.
 
-[!<TheLackOfPenisBlocksMasturbationRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the lack of penis blocks masturbation rule:
 	if the player is not possessing a penis:
-		now failed-masturbation-reason is the substituted form of "You can't masturbate if you don't have genitalia!";
+		if the player is not possessing a vagina, now failed-masturbation-reason is the substituted form of "You can't masturbate if you don't have genitalia!"; [Sometimes flavour will get messed up if we don't gate this.]
 		rule fails.
 The lack of penis blocks masturbation rule is listed first in the penis masturbation restriction rules.
 
-[!<TheLackOfVaginaBlocksMasturbationRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the lack of vagina blocks masturbation rule:
 	if the player is not possessing a vagina:
-		now failed-masturbation-reason is the substituted form of "You can't masturbate if you don't have genitalia!";
+		if the player is not possessing a penis, now failed-masturbation-reason is the substituted form of "You can't masturbate if you don't have genitalia!"; [Sometimes flavour will get messed up if we don't gate this.]
 		rule fails.
 The lack of vagina blocks masturbation rule is listed first in the vaginal masturbation restriction rules.
 
@@ -165,10 +120,17 @@ Prevents masturbation.
 +!]
 This is the chastity cage blocks masturbation rule:
 	if there is a worn chastity cage:
-		now failed-masturbation-reason is the substituted form of "You can't get at your genitalia through your chastity cage!";
+		now failed-masturbation-reason is the substituted form of "You can't get at your [player-penis] through your cage!";
 		rule fails.
 The chastity cage blocks masturbation rule is listed last in the penis masturbation restriction rules.
-The chastity cage blocks masturbation rule is listed last in the vaginal masturbation restriction rules.
+
+
+This is the chastity belt blocks masturbation rule:
+	if chastity-belt is worn:
+		now failed-masturbation-reason is the substituted form of "You can't get at your genitals through your chastity belt!";
+		rule fails.
+The chastity belt blocks masturbation rule is listed last in the penis masturbation restriction rules.
+The chastity belt blocks masturbation rule is listed last in the vaginal masturbation restriction rules.
 
 [!<TheResearchRestrictionBlocksMasturbationRule>+
 
@@ -214,11 +176,6 @@ This is the already wanking rule:
 		rule fails.
 The already wanking rule is listed first in the global masturbation restriction rules.
 
-[!<TheEmbarrassingMasturbationRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the embarrassing masturbation rule:
 	let M be a random monster in the location of the player;
 	if there is a dangerous monster in the location of the player and M is not a dangerous monster, now M is a random dangerous monster in the location of the player;
@@ -247,11 +204,6 @@ This is the embarrassing masturbation rule:
 					rule fails.
 The embarrassing masturbation rule is listed last in the global masturbation restriction rules.
 
-[!<TheClothingBlocksMasturbationRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the clothing blocks masturbation rule:
 	if the player is not able to wank:
 		now failed-masturbation-reason is the substituted form of "Your [printed name of random cursed pussy covering blocking wanking clothing] won't budge! That item is simply not soft and thin enough for you to [masturbate] through!";
@@ -306,11 +258,6 @@ To decide which number is wanking:
 	if the continue masturbation rule is listed in the another-turn-rules, decide on 1;
 	decide on 0.
 
-[!<SayTooSluttyToWank>+
-
-REQUIRES COMMENTING
-
-+!]
 To say TooSluttyToWank:
 	say "[second custom style]Why would I do that myself when there are all these naughty boys around for me to fuck?[roman type][line break]".
 
@@ -339,7 +286,7 @@ To say PlayerFantasy:
 	otherwise if the bimbo of the player < 4 and the player is gendered male and wanktype is not ASS-WANK:[dominating women]
 		say "[one of]steamy sex with your [RelationDesc of Fn], [MediumDesc of Fn][or]letting a team of super hot cheerleaders take turns sucking your dick[or]having a threesome with a couple of [if extreme proportions fetish is 1]stacked as hell bitches[otherwise]super fine bitches[end if][or][if the analvirgin of the player is 1]anally[otherwise]revenge[end if] fucking [if the intelligence of the player > 5]the slutty sisters[otherwise]the sexy bitches[end if] who put you in here[or]sexy [men of dominatrix] with big [if lady fetish is 2]asses[otherwise]breasts[end if] and an interest in sitting on your cock[in random order]";
 	otherwise if the bimbo of the player < 4 and wanktype is not ASS-WANK:[dominating/humiliating men, equal sex with women]
-		say "[one of]life as a powerful business woman, with a cute secretary that[']s always there when you feel like having an orgasm[or]having steamy sex with your [RelationDesc of Fn] on [his of Fn] boyfriend's bed[or]forcing the bitches who put you in here to pleasure you as you redesign their wardrobe from scratch[or]forcing your [RelationDesc of Nn] to hang up a picture of [himself of Nn] in a dress in [his of Nn] office[or]sex with a cute [boy of shopkeeper] that always respects your boundaries and has the sense to be gone when you're not horny anymore[or]a whirlwind romance with your [RelationDesc of Nn] wife[in random order]";
+		say "[one of]life as a powerful business woman, with a cute secretary that's always there when you feel like having an orgasm[or]having steamy sex with your [RelationDesc of Fn] on [his of Fn] boyfriend's bed[or]forcing the bitches who put you in here to pleasure you as you redesign their wardrobe from scratch[or]forcing your [RelationDesc of Nn] to hang up a picture of [himself of Nn] in a dress in [his of Nn] office[or]sex with a cute [boy of shopkeeper] that always respects your boundaries and has the sense to be gone when you're not horny anymore[or]a whirlwind romance with your [RelationDesc of Nn] wife[in random order]";
 	otherwise if the bimbo of the player < 8 and the player is gendered male:[Being dominated by women, or the player isn't dominated but there's emphasis on penises]
 		say "[one of]sexy [men of dominatrix] getting fucked by long, hard cocks[or]being pinned underneath a strongly muscled [if futanari fetish is 1]futa[otherwise]woman[end if] as she plows you with her big hard [if futanari fetish is 0]strapon[otherwise]cock[end if][or]having a threesome with a girl and her strong, muscular boyfriend[or]serving a gorgeous [man of dominatrix] as [he of dominatrix] locks you into chastity[in random order]";
 	otherwise if the bimbo of the player < 8:[being dominated by women, men taking passive/equal role]
@@ -444,7 +391,7 @@ Check masturbating:
 		otherwise:
 			now wanktype is ASS-WANK;
 	if auto is 0:
-		if (the wanktime of the player > 100 or lock-it tattoo is worn) and the number of worn diapers is 0 and the number of on-stage chastity cages is 0:
+		if (the wanktime of the player > 100 or lock-it tattoo is worn) and the number of worn diapers is 0 and the number of on-stage chastity bonds is 0:
 			say "You hesitate, having a sneaking suspicion that [masturbating][if diaper quest is 1] while not wearing a diaper[end if] [if the wanktime of the player > 100]so soon after a previous orgasm [end if]has a [italic type]chance[roman type] of the girls running the game punishing you for it. Do you want to go ahead and risk it? ";
 			unless the player is in agreement, say "You decide against it." instead;
 		if the player is pee protected and the player is possessing a penis:
@@ -455,7 +402,7 @@ Check masturbating:
 			unless the player is bimbo consenting:
 				say "You decide against it.";
 				now wanktype is NO-WANK instead;
-		otherwise if the buttskill of the player is 1: [if wanktype is already ASS-WANK, then its the only way the player can masturbate]
+		otherwise if the buttskill of the player is 1: [if wanktype is already ASS-WANK, then it's the only way the player can masturbate]
 			say "Use your ass to masturbate? [if the player is not anal flexible and the player is upright]You'll have to get on your knees first.[end if]";
 			if the player is bimbo consenting:
 				if the player is not anal flexible and the player is upright:
@@ -479,7 +426,7 @@ Check masturbating:
 				otherwise:
 					allocate 2 seconds instead;
 			otherwise:
-				say "Your [ShortDesc of penis] remains completely soft, but its not like that's going to stop you.".
+				say "Your [ShortDesc of penis] remains completely soft, but it's not like that's going to stop you.".
 
 Carry out masturbating:
 	allocate arm use;
@@ -561,7 +508,7 @@ This is the continue masturbation rule:
 	if there is a thing grabbing the player or came-while-wanking is 1 or (wanktype is ASS-WANK and there is a live thing penetrating asshole), now N is -1; [masturbation interrupted]
 	if there is a live thing penetrating penis:
 		if wanktype is HERM-WANK, now wanktype is VAG-WANK;
-		if wanktype is COCK-WANK, now N is -1;[Herms will continue, but if its penis-only, you're interrupted.]
+		if wanktype is COCK-WANK, now N is -1;[Herms will continue, but if it's penis-only, you're interrupted.]
 	if N is 1:
 		if the player is masturbation-climaxing, now N is 0; [orgasm achieved]
 	if N is 1 and dangerwank is 0 and the player is in danger:
@@ -624,14 +571,15 @@ This is the masturbation climax rule:
 			increase vaginal-orgasms by 1;
 	if a random number between 1 and the sex addiction of the player < 6, SexAddictUp 1;
 	orgasm; [handle anything that needs to happen for an orgasm]
-	if (the wanktime of the player > 100 or lock-it tattoo is worn) and the number of on-stage chastity cages is 0 and the number of worn diapers is 0:[Put the player in chastity if necessary]
-		let C be a random off-stage chastity cage;
-		if C is actually summonable:
+	if (the wanktime of the player > 100 or lock-it tattoo is worn) and the number of on-stage chastity bonds is 0 and the number of worn diapers is 0:[Put the player in chastity if necessary]
+		let C be a random off-stage chastity bond;
+		if C is actually summonable:[This should handle "penis cage" + no penis situations on its own.]
 			if the player is getting unlucky:
-				say "As you pull your hand away from your crotch, you feel a tightness around your loins. You look down and see that a chastity cage has appeared around your [if the player is male][ShortDesc of penis][otherwise][vagina][end if]! [if the bimbo of the player < 10]Even worse, the[otherwise]The[end if] cage only stops anything from touching your crotch, your [asshole] remains completely unprotected![line break][GotUnluckyFlav]";
+				say "As you pull your hand away from your crotch, you feel a tightness around your loins. You look down and see that a [Shortdesc of C] has appeared around your [if C is chastity cage][ShortDesc of penis][otherwise]crotch[end if]! [if the bimbo of the player < 10]Even worse, it[otherwise]It[end if] only stops anything from touching your [if C is chastity-belt]genitals[otherwise]dick[end if], so your [asshole] remains completely unprotected![line break][GotUnluckyFlav]";
 				summon C cursed with quest;
 				say "[variable custom style]What is the game saying? That I'm too eager to play with myself? How frustrating...![roman type][line break]";
 	now the wanktime of the player is 500;
+	if masturbation-object is a magic themed thing, MagicPowerRefresh 4;
 	compute climax effect of masturbation-object. [if the player used a sex toy to masturbate, handle any of its special effects]
 
 [!<TheMasturbationEndedRule>+
@@ -660,8 +608,9 @@ Displays the flavor for the player masturbating and immediately reaching a clima
 To say InstantMasturbationFlav of (O - an object) with (M - a thing) in (C - an object):[We're only doing an introduction here, the rest is handled by the climaxmasturbationflav function; sex addiction here should be raw sex addiction]
 	let A be the raw sex addiction of the player;
 	let R be a random number between 1 and 3;
+	if C is chastity cage, now C is nothing;
 	if O is insertable object:[In this case, we don't need to account for M being in the way]
-		say "[one of]You [if wanktype is HERM-WANK]neglect your [ShortDesc of penis] and [end if]eagerly begin to fuck yourself with the [printed name of O], [if M is a live thing]focusing all your thoughts on [NameDesc of M][otherwise]fantasising about [PlayerFantasy][end if]. [if A < 5]It's almost embarrassing how much it turns you on[otherwise if A < 10]It's a little surprising how much it turns you on[otherwise]It makes you uncontrollably turned on[end if], and as the heat of new arousal lights up your body, you realise you're already about to cum.[or]You slide the [printed name of O] into your [vagina],[if wanktype is HERM-WANK] and play with your [ShortDesc of penis] as you[otherwise] and[end if] begin to vigorously fuck yourself to [if M is a live thing]the feeling of [NameDesc of M][otherwise]the thought of [PlayerFantasy][end if]. Nothing more than a moment passes, [if A < 5]and you are immediately ashamed to[otherwise if A < 10]and you tell yourself you should be ashamed to[otherwise]and you feel your muscles tightening in anticipation as you[end if] realise that you're about to cum.[or]You sink the [printed name of O] into your [vagina][if wanktype is HERM-WANK], wrapping your hand around your [Shortdesc of penis] as you[otherwise] and[end if] begin fucking yourself with abandon. [if A < 5 and M is a live thing]It feels wrong, but you focus on [NameDesc of M][otherwise if M is a live thing]You focus as much as you can on [NameDesc of M][otherwise]A fantasy of [PlayerFantasy] enters your thoughts[end if], and just like that, you realise you're already going to cum.[in random order]";
+		say "[one of]You [if wanktype is HERM-WANK]neglect your [ShortDesc of penis] and [end if]eagerly begin to fuck yourself with the [printed name of O], [if M is a live thing]focusing all your thoughts on [NameDesc of M][otherwise]fantasising about [PlayerFantasy][end if]. [if A < 5]It's almost embarrassing how much it turns you on[otherwise if A < 10]It's a little surprising how much it turns you on[otherwise]It makes you uncontrollably turned on[end if], and as the heat of new arousal lights up your body, you realise you're already about to cum.[or]You slide the [printed name of O] into your [vagina],[if wanktype is HERM-WANK] and play with your [ShortDesc of penis] as you[otherwise] and[end if] begin to vigorously fuck yourself to [if M is a live thing]the feeling of [NameDesc of M][otherwise]the thought of [PlayerFantasy][end if]. Nothing more than a moment passes, [if A < 5]and you are immediately ashamed to[otherwise if A < 10]and you tell yourself you should be ashamed to[otherwise]and you feel your muscles tightening in anticipation as you[end if] realise that you're about to cum.[or]You sink the [printed name of O] into your [vagina][if wanktype is HERM-WANK], wrapping your hand around your [ShortDesc of penis] as you[otherwise] and[end if] begin fucking yourself with abandon. [if A < 5 and M is a live thing]It feels wrong, but you focus on [NameDesc of M][otherwise if M is a live thing]You focus as much as you can on [NameDesc of M][otherwise]A fantasy of [PlayerFantasy] enters your thoughts[end if], and just like that, you realise you're already going to cum.[in random order]";
 	otherwise if O is vibe-wand:
 		say "[one of]You turn on the [ShortDesc of O] and grind [if wanktype is HERM-WANK]both sets of genitals against it[otherwise if wanktype is COCK-WANK]your [ShortDesc of penis] against it[otherwise]grind it against your clit[end if], [if M is a live thing]focusing all your thoughts on [NameDesc of M][otherwise]fantasising about [PlayerFantasy][end if]. [if A < 5]It's almost embarrassing how much it turns you on[otherwise if A < 10]It's a little surprising how much it turns you on[otherwise]It makes you uncontrollably turned on[end if], and as the pleasure rapidly builds upon itself, you realise you're already about to cum.[or]You turn on the [ShortDesc of O] and begin to stimulate your [if wanktype is HERM-WANK][ShortDesc of penis] and clit[otherwise if wanktype is COCK-WANK][ShortDesc of penis][otherwise]clit[end if][if C is clothing] through your [ShortDesc of C][end if], closing your eyes as you [if M is a live thing]focus on [NameDesc of M][otherwise]fantasise about [PlayerFantasy][end if]. Nothing more than a moment passes, [if A < 5]and you are immediately ashamed to[otherwise if A < 10]and you tell yourself you should be ashamed to[otherwise]and you feel your muscles tightening in anticipation as you[end if] realise that you're already going to cum.[or]You switch on [ShortDesc of O] and roll the vibrating end [if wanktype is HERM-WANK]down your [ShortDesc of penis] and over your clit[otherwise if wanktype is COCK-WANK]around the head of your [ShortDesc of penis][otherwise]around and around your clit[end if]. The [if C is clothing]sensation of being stimulated through your [ShortDesc of C][otherwise]strong stimulation[end if] combines with [if M is a live thing]the reality of what you're allowing [NameDesc of M] to do with you[otherwise]your fantasy of [PlayerFantasy][end if] and just like that, you realise you're already going to cum.[in random order]";
 	otherwise if C is clothing:[If C is clothing, we know M isn't in the way. Also, O isn't a thing beyond this point]
@@ -684,6 +633,7 @@ Displays the flavor for the player masturbating and immediately reaching a clima
 To say InstantAnalMasturbationFlav of (O - an object) with (M - a thing) in (C - an object):
 	let A be the anal sex addiction of the player;
 	let R be a random number between 1 and 3;
+	if C is chastity cage, now C is nothing;
 	if R is 1:
 		say "You [if O is insertable object]ease the [printed name of O] into your [asshole][otherwise]ease your fingers into your [asshole][end if], [if A < 5]cheeks burning with shame[otherwise if A < 10]panting with excitement[otherwise]cooing with unabashed excitement[end if] as you begin to fuck yourself to the [if M is a live thing]the feeling of [NameDesc of M][otherwise]thought of [PlayerFantasy][end if]. Nothing more than a moment passes, [if A < 5]and you are immediately ashamed to[otherwise if A < 10]and you tell yourself you should be ashamed to[otherwise]and you feel your muscles tightening in anticipation as you[end if] realise that you're about to cum.";
 	otherwise if R is 2:
@@ -702,14 +652,15 @@ Displays the flavor for the player beginning a masturbation session.
 +!]
 To say StartMasturbationFlav of (O - an object) with (M - a thing) in (C - an object):
 	let R be a random number from 1 to 3;
+	if C is chastity cage, now C is nothing;
 	if auto < 2:
 		if wanktype is HERM-WANK:
 			if vagina is actually occupied:
 				say "You [if O is vibe-wand]switch on the [ShortDesc of O] and gingerly hold it against[otherwise]start rubbing[end if] your [if penis is penis-erect][ShortDesc of penis], using your other hand to play with your clit[otherwise]clit, allowing your [ShortDesc of penis] to grow good and hard[end if] as [if there is a live thing penetrating vagina]the [random live thing penetrating vagina] continues to pump away[otherwise]your pussy muscles clench around the [random thing penetrating vagina][end if].";
 			otherwise if O is vibe-wand:
-				say "You switch on the [ShortDesc of O][if penis is penis-erect] and begin to alternate between holding it against your hard [ShortDesc of penis] and needy clit.[otherwise], holding the vibrating end against your clit as your [ShortDesc of penis] slowly grows stiff and hard.[end if]";
+				say "You switch on the [ShortDesc of O][if penis is penis-erect] and begin to alternate between holding it against your hard [ShortDesc of penis] and needy clit.[otherwise], [one of]holding[or]tapping[or]bumping[or]sliding[or]pressing[at random] the vibrating end against your clit as your [ShortDesc of penis] slowly grows stiff and hard.[end if]";
 			otherwise if C is clothing:
-				say "You press your fingers to your [ShortDesc of penis], using your other hand to delicately stimulate your [vagina] through your [ShortDesc of C]. It [if penis is penis-erect]helps that you're already[otherwise]doesn[']t take long before you're[end if] hard, and soon you are using the [clothing-material of C] as an additional tool for pleasuring yourself.";
+				say "You press your fingers to your [ShortDesc of penis], using your other hand to delicately stimulate your [vagina] through your [ShortDesc of C]. It [if penis is penis-erect]helps that you're already[otherwise]doesn't take long before you're[end if] hard, and soon you are using the [clothing-material of C] as an additional tool for pleasuring yourself.";
 			otherwise if O is insertable object:
 				say "You ease the [ShortDesc of O] into your [vagina], [if penis is penis-erect]eagerly stroking your hard[otherwise]playing with your hardening[end if] [ShortDesc of penis] as you begin to fuck yourself";
 			otherwise:
@@ -721,12 +672,12 @@ To say StartMasturbationFlav of (O - an object) with (M - a thing) in (C - an ob
 			if O is vibe-wand:
 				say "You switch on the [ShortDesc of O] and hold the vibrating end [if penis is penis-erect]under the head of your rock-hard [ShortDesc of penis][otherwise]against your [ShortDesc of penis], slowly rolling it back and forth as you feel yourself growing stiff and hard.[end if]";
 			otherwise if C is clothing:
-				say "[one of]You grab your [ShortDesc of penis] through your [ShortDesc of C], rubbing your palm up and down as [if penis is penis-erect]play with your erection through the [clothing-material of C].[otherwise]you feel yourself growing stiff and hard.[end if][or]You grab the bulge in your [ShortDesc of C], gently teasing it back and forth as your [ShortDesc of penis] grows [if penis is penis-erect]even harder.[otherwise if the size of penis > 5]big and hard.[otherwise]hard.[end if][or]You press your fingers to your [ShortDesc of penis], delicately stimulating it through your [ShortDesc of C]. It [if penis is penis-erect]helps that you're already[otherwise]doesn[']t take long to get[end if] hard, and soon you are using the [clothing-material of C] as an additional tool for pleasuring yourself.[in random order]";
+				say "[one of]You grab your [ShortDesc of penis] through your [ShortDesc of C], rubbing your palm up and down as [if penis is penis-erect]play with your erection through the [clothing-material of C].[otherwise]you feel yourself growing stiff and hard.[end if][or]You grab the bulge in your [ShortDesc of C], gently teasing it back and forth as your [ShortDesc of penis] grows [if penis is penis-erect]even harder.[otherwise if the size of penis > 5]big and hard.[otherwise]hard.[end if][or]You press your fingers to your [ShortDesc of penis], delicately stimulating it through your [ShortDesc of C]. It [if penis is penis-erect]helps that you're already[otherwise]doesn't take long to get[end if] hard, and soon you are using the [clothing-material of C] as an additional tool for pleasuring yourself.[in random order]";
 			otherwise:
 				if penis is penis-erect:
 					say "You [one of]grab your erect[or]wrap your hands around your hard[or]grasp your stiff[in random order] [ShortDesc of penis] and begin to stroke.";
 				otherwise:
-					say "[one of]You wrap your fingers around your [ShortDesc of penis], which [if the size of penis > 7]slowly stiffens as you begin to stroke[otherwise if the size of penis > 4]quickly stiffens as you begin to stroke[otherwise if the size of penis > 1]stiffens within only a couple strokes[otherwise]which is hard instantly, although it's so small you can only start 'stroking' if you're holding it with just your forefinger and thumb[end if].[or]You grab your [if the size of penis < 3][ShortDesc of penis][otherwise if the size of penis is 7 or the size of penis is 6][ShortDesc of penis][otherwise]penis[end if], eagerly stroking it [if the size of penis > 7]as it slowly grows into a [ShortDesc of penis][otherwise if the size of penis > 5]as it grows stiff and hard[otherwise if the size of penis > 2]as it hardens into a [ShortDesc of penis][otherwise]with your thumb and forefinger[end if].[or]You eagerly begin stroking your [Shortdesc of penis], which hardens in anticipation of what comes next.[in random order]";
+					say "[one of]You wrap your fingers around your [ShortDesc of penis], which [if the size of penis > 7]slowly stiffens as you begin to stroke[otherwise if the size of penis > 4]quickly stiffens as you begin to stroke[otherwise if the size of penis > 1]stiffens within only a couple strokes[otherwise]which is hard instantly, although it's so small you can only start 'stroking' if you're holding it with just your forefinger and thumb[end if].[or]You grab your [if the size of penis < 3][ShortDesc of penis][otherwise if the size of penis is 7 or the size of penis is 6][ShortDesc of penis][otherwise]penis[end if], eagerly stroking it [if the size of penis > 7]as it slowly grows into a [ShortDesc of penis][otherwise if the size of penis > 5]as it grows stiff and hard[otherwise if the size of penis > 2]as it hardens into a [ShortDesc of penis][otherwise]with your thumb and forefinger[end if].[or]You eagerly begin stroking your [ShortDesc of penis], which hardens in anticipation of what comes next.[in random order]";
 		otherwise:
 			if O is insertable object:
 				say "[one of]You [if the player is not horny]sigh softly[otherwise if the player is horny]moan quietly[otherwise]shudder with pleasure[end if] as you slide the [ShortDesc of O] into your [vagina] and begin to fuck yourself.[or]You ease the [ShortDesc of O] into your [vagina], eagerly rubbing your clit as you start to fuck yourself with the toy.[or]You reach between your legs, gently spreading your outer lips as you sink the [ShortDesc of O] into your [vagina], and begin to work it in and out.[in random order]";
@@ -737,7 +688,7 @@ To say StartMasturbationFlav of (O - an object) with (M - a thing) in (C - an ob
 			otherwise if C is clothing:
 				say "[one of]You paw at yourself through your [ShortDesc of C], shivering as the [clothing-material of C] rubs up against your sensitive outer [vagina].[or]You slowly rub yourself through the fabric of your [ShortDesc of C], which dampens slightly with [if the semen volume of vagina > 0]a bit of [semen] trapped in your [vagina][otherwise]feminine juices[end if].[or]You start rubbing your clit through your [ShortDesc of C], which dampens the sensation somewhat, but adds an interesting new one to compensate.[in random order]";
 			otherwise:
-				say "[one of]You sink your fingers into your [vagina], [if the player is not horny]sighing softly[otherwise if the player is horny]moaning quietly[otherwise]shuddering with pleasure[end if] as you gently push them in and out.[or]You reach between your legs, parting your [if the semen coating of thighs > 0]slimy, [semen] glazed labia lips[otherwise]delicate labia lips[end if] with your fingers, [if the player is not horny]sighing softly[otherwise if the player is horny]moaning quietly[otherwise]shuddering with pleasure[end if] as they sink into your [vagina].[or]You allow your fingers to dip into your [vagina], trying to figure out [if the raw sex addiction of the player < 5]what possible motivation you could have for acting like this.[otherwise]why you didn[']t try this way sooner![end if][in random order]";
+				say "[one of]You sink your fingers into your [vagina], [if the player is not horny]sighing softly[otherwise if the player is horny]moaning quietly[otherwise]shuddering with pleasure[end if] as you gently push them in and out.[or]You reach between your legs, parting your [if the semen coating of thighs > 0]slimy, [semen] glazed labia lips[otherwise]delicate labia lips[end if] with your fingers, [if the player is not horny]sighing softly[otherwise if the player is horny]moaning quietly[otherwise]shuddering with pleasure[end if] as they sink into your [vagina].[or]You allow your fingers to dip into your [vagina], trying to figure out [if the raw sex addiction of the player < 5]what possible motivation you could have for acting like this.[otherwise]why you didn't try this way sooner![end if][in random order]";
 	if wanktype is not VAG-WANK and penis is not penis-erect, now penis is penis-erect.
 
 [!<SayStartAnalMasturbationFlavOfObjectWithThingInObject>+
@@ -799,6 +750,7 @@ Displays the flavor for the player climaxing from anal masturbation.
 To say ClimaxAnalMasturbationFlav of (O - an object) with (M - a thing) in (C - an object):
 	let F be a random live thing penetrating face;
 	let X be a random live thing penetrating a fuckhole;
+	if C is chastity cage, now C is nothing;
 	if the player is male:[ejaculation is handled by the orgasm function]
 		if O is insertable object:
 			say "You [if F is a live thing]moan through [NameDesc of F][otherwise if the anal sex addiction of the player < 5]grit your teeth, grunting[otherwise if the anal sex addiction of the player < 10]purse your lips, moaning[otherwise]can't help but form your lips into a large, circular 'O', cooing[end if] with pleasure as the feeling of hard [if O is golden phallus]gold[otherwise]plastic[end if] [one of]punching your prostate[or]ramming your sensitive prostate[or]grinding against your prostate[at random] [if the player is very horny]finally [end if]pushes you over the edge. You feel your anal muscles rapidly tensing and relaxing, intensifying the feeling of the [printed name of O] inside you as waves of pleasure ripple through your body.";
@@ -823,6 +775,7 @@ Displays the flavor for an ongoing masturbation session.
 +!]
 To say OngoingMasturbationFlav of (O - an object) with (N - a thing) in (C - an object):
 	let M be N;
+	if C is chastity cage, now C is nothing;
 	if wanktype is not VAG-WANK:[TODO: update for herm]
 		if O is vibe-wand:
 			say "[one of]You shudder with pleasure as your [printed name of O] vibrates against your [player-penis], [if M is a live thing]focusing all your thoughts on [NameDesc of M][otherwise]fantasising about [PlayerFantasy][end if].[or]You half register the sticky wetness of your precum as you use your [printed name of O] to smear it up and down your shaft, [if M is a live thing]totally absorbed in pleasuring [NameDesc of M] even more[otherwise]too enthralled by the thought of [PlayerFantasy][end if].[or]The [printed name of O] provides a unique sensation as you [if the size of penis < 3]tenderly[otherwise if the humiliation of the player < HUMILIATION-MODEST + 4000]abashedly[otherwise]eagerly[end if] rub it against your [player-penis], [if M is a live thing]allowing [NameDesc of M] to use you[otherwise]fantasising about [PlayerFantasy][end if].[or]You continue to stimulate your [player-penis] with your [printed name of O], [if the bimbo of the player < 8]trying to ignore[otherwise]relishing in[end if] its unmistakable sex toy hum as you [if M is a live thing]close your eyes and focus on how [NameDesc of M] feels[otherwise]fantasise about [PlayerFantasy][end if].[or]You lose yourself to pleasure, [if the bimbo of the player < 4]grunting[otherwise if the bimbo of the player < 8]groaning[otherwise if the bimbo of the player < 12]moaning[otherwise if the bimbo of the player < 15]cooing[otherwise]shamelessly moaning[end if] as you vigorously rub the [printed name of O] against your [player-penis].[or]You use your [printed name of O] to pin your [player-penis] against your body, precum rolling off your shaft as you [if M is a live thing]use your body to pleasure both yourself and [NameDesc of M][otherwise]fantasise about [PlayerFantasy][end if].[at random]";
@@ -865,12 +818,15 @@ To say OngoingMasturbationFlav of (O - an object) with (N - a thing) in (C - an 
 				say "[one of]You fantasise about [PlayerFantasy]. Quiet shlicking noises can be heard as you work your fingers in and out of your [if the semen volume of vagina > 0]cum-sodden[otherwise if the raw sex addiction of the player < 10]shamefully wet[otherwise]desperately wet[end if] [vagina].[or]You rapidly rub your clit, allowing your fingers to slip into your [vagina] as your mind turns to thoughts of [PlayerFantasy].[or]You eagerly diddle your clit and [if P is clothing]rub your [BreastDesc] through your [printed name of P][otherwise]tweak your nipples[end if], allowing your back to rest up against a nearby [if playerRegion is Woods]tree[otherwise]wall[end if] as you fantasise about [PlayerFantasy].[or]You fuck yourself with your own fingers, [if the bimbo of the player < 5]shuddering[otherwise if the bimbo of the player < 12]trembling[otherwise]rolling your eyes back[end if][if the semen volume of vagina < 1] at how inexorably pleasurable Nintendolls managed to make it feel[otherwise if the semen volume of vagina < 4] at the feeling of the slimy [semen] trapped in your [vagina][otherwise] as thick, creamy [semen] coats your fingers and rolls down your arm.[end if][or]You continue your passionate shlicking session, [if the bimbo of the player < 7]trying and failing to stifle your shameful moans[otherwise if the bimbo of the player < 13]half-heartedly trying to stifle your passionate moans[otherwise]allowing shameless, wanton moans to stream out of your mouth[end if] as you fantasise about [PlayerFantasy].[at random]".
 
 To say CummingInPantiesFantasy of (C - a clothing):
+	if C is chastity cage, now C is nothing;
 	say "You tremble with pleasure as you grope yourself through your [ShortDesc of C], which somehow intensifies the sensation of your own touch. Impending orgasm looms in your thoughts, which are increasingly muddied with ideas of how [if the semen addiction of the player < 5]disgusting[otherwise if the semen addiction of the player < 10]strange[otherwise if the semen addiction of the player < 15]exciting[otherwise]fucking hot[end if] it will feel to walk around with a [if the semen addiction of the player < 8]clammy[otherwise]warm[end if] load of [semen] against your [player-penis].".
 
 To say CooingMasturbation of (C - a clothing):
+	if C is chastity cage, now C is nothing;
 	say "You continue passionately stroking your [player-penis] through your [ShortDesc of C], knowing from the dark spot near the waist band that the slightest glance from anyone around you would tell them how much you're enjoying yourself.".
 
 To say DirtyThoughtsMasturbation of (C - a clothing):
+	if C is chastity cage, now C is nothing;
 	say "[unless the player is monster fucked]You fantasise about [PlayerFantasy]. Your surroundings fall away as you focus in on your dirty [otherwise]Your surroundings fall away as you lose yourself in increasingly submissive [end if]thoughts, feeling an increasing frustration at the way the [ShortDesc of C] is preventing you from touching your [player-penis] in the way you want.".
 
 [!<SayOngoingAnalMasturbationFlavOfObjectWithThingInObject>+

@@ -5,14 +5,10 @@ Understand "diaper" as diaper.
 Definition: a diaper is baby themed: decide yes.
 Definition: a training pants is baby themed: decide yes.
 
-To decide which number is the original price of (C - a diaper):
-	decide on the soak-limit of C / 10.
-
 Chapter 1 Massive Diaper
 
 massive diaper is a kind of disposable diaper. Understand "massive" as massive diaper.
 The DQFigure of massive diaper is DQMoosive.
-The soak-limit of massive diaper is 55.
 To say ShortDesc of (K - a massive diaper):
 	say "massive diaper".
 Definition: a massive diaper is eligible: decide no. [Never selected randomly]
@@ -62,7 +58,6 @@ Chapter 2 Giant Diaper
 
 giant diaper is a kind of pullup diaper. A giant diaper is womanly. [because of the frills] Understand "giant" as giant diaper.
 The DQFigure of giant diaper is DQGiant.
-The soak-limit of giant diaper is 30.
 To say ShortDesc of (K - a giant diaper):
 	say "giant diaper".
 To decide which number is the unique outrage of (C - a giant diaper):
@@ -115,7 +110,7 @@ To say MediumDesc of (K - demon-diaper):
 
 Figure of demon diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper2d.png".
 
-The soak-limit of demon-diaper is 60.
+To decide which number is the default-soak-limit of (C - demon-diaper): decide on 60.
 
 To decide which number is the unique outrage of (C - demon-diaper):
 	decide on -5.
@@ -136,7 +131,6 @@ Definition: demon-diaper is pink themed: decide yes.
 Chapter 3 Waddle Diaper
 
 waddle diaper is a kind of pullup diaper. A waddle diaper is pvc. The armour of a waddle diaper is 25. A waddle diaper is zippable. A waddle diaper is totally-exclusive. A waddle diaper is transformation-rare. A waddle diaper is womanly.
-The soak-limit of a waddle diaper is 48.
 The DQFigure of waddle diaper is DQWaddle.
 Understand "waddle" as waddle diaper.
 To decide which number is the weight of (C - a waddle diaper):
@@ -174,7 +168,9 @@ To compute unique periodic effect of (D - a waddle diaper):
 		clean D;
 		now the water-soak of D is 0.
 
-Definition: a waddle diaper is transformation-protected if it is cursed.
+Definition: a waddle diaper is transformation-protected:
+	if it is cursed, decide yes;
+	decide no.
 To potentially transform (C - a waddle diaper):
 	curse C.
 
@@ -216,7 +212,6 @@ Chapter 4 Velcro Diaper
 
 velcro diaper is a kind of disposable diaper. Understand "velcro" as velcro diaper.
 The DQFigure of velcro diaper is DQvelcro.
-The soak-limit of velcro diaper is 25.
 To say ShortDesc of (K - a velcro diaper):
 	say "Velcro diaper".
 
@@ -260,7 +255,6 @@ Chapter 5 Button Diaper
 
 button diaper is a kind of disposable diaper. Understand "button" as button diaper. A button diaper is unique.
 The DQFigure of button diaper is DQBunny.
-The soak-limit of button diaper is 20.
 To say ShortDesc of (K - a button diaper):
 	say "button diaper".
 
@@ -309,7 +303,7 @@ Chapter 6 Cloth Diaper
 
 cloth diaper is a kind of disposable diaper. Understand "cloth" as cloth diaper.
 The DQFigure of cloth diaper is DQCloth.
-The soak-limit of cloth diaper is 12.
+To decide which number is the default-soak-limit of (C - a cloth diaper): decide on 12.
 To say ShortDesc of (K - a cloth diaper):
 	say "cloth diaper".
 
@@ -350,7 +344,6 @@ Chapter 7 Huge Diaper
 
 huge diaper is a kind of disposable diaper. Understand "huge" as huge diaper.
 The DQFigure of huge diaper is DQHuge.
-The soak-limit of huge diaper is 25.
 To say ShortDesc of (K - a huge diaper):
 	say "huge diaper".
 
@@ -394,7 +387,6 @@ Chapter 8 Large Diaper
 
 largish diaper is a kind of disposable diaper. Understand "large" as largish diaper.
 The DQFigure of largish diaper is DQLarge.
-The soak-limit of largish diaper is 21.
 To say ShortDesc of (K - a largish diaper):
 	say "largish diaper".
 
@@ -435,7 +427,6 @@ Chapter 9 Medium Diaper
 
 medium diaper is a kind of disposable diaper. Understand "medium" as medium diaper.
 The DQFigure of medium diaper is DQMedium.
-The soak-limit of medium diaper is 17.
 To say ShortDesc of (K - a medium diaper):
 	say "medium diaper".
 
@@ -481,7 +472,6 @@ Chapter 10 Small Diaper
 
 small diaper is a kind of disposable diaper. Understand "small" as small diaper.
 The DQFigure of small diaper is DQsmall.
-The soak-limit of small diaper is 13.
 To say ShortDesc of (K - a small diaper):
 	say "small diaper".
 
@@ -525,6 +515,9 @@ Chapter 11 Training Pants
 
 A training pants is a kind of knickers. There is 1 unique training pants. The printed name of training pants is usually "[clothing-title-before]pair of [if the urine-soak of item described > 0 or the bimbo of the player > 4]training pants[otherwise]padded underwear[end if][clothing-title-after]". Understand "padded", "underwear", "pair", "pair of" as training pants. The text-shortcut of training pants is "pa". The armour of a training pants is usually 11.
 
+To decide which number is the default-soak-limit of (C - a training pants):
+	decide on the penis-capacity of C * 2.
+
 To decide which figure-name is clothing-image of (C - a training pants):
 	decide on figure of training pants.
 
@@ -538,8 +531,6 @@ Figure of training pants is the file "Items/Clothes/Lower/Underwear/Diapers/Trai
 Figure of sexy training pants is the file "Items/Clothes/Lower/Underwear/Diapers/TrainingPants/trainingpants2.png".
 The DQFigure of training pants is usually DQTrainingPants.
 
-The soak-limit of a training pants is usually 18.
-
 To decide which number is the initial outrage of (D - a training pants):
 	decide on 6.
 
@@ -549,11 +540,13 @@ To decide which number is the initial cringe of (D - a training pants):
 To decide which number is the fluid cringe of (C - a training pants):
 	decide on (the semen-soak of C / 2) + (the urine-soak of C / 2) + (the milk-soak of C / 2).
 
-Definition: a training pants is fetish appropriate if diaper lover > 0.
+Definition: a training pants is fetish appropriate:
+	if diaper lover > 0, decide yes;
+	decide no.
 Definition: a training pants is purple themed: decide yes.
 
 sexy training pants is a kind of training pants. The printed name of sexy training pants is usually "[clothing-title-before]pair of sexy [if the urine-soak of item described > 0 or the bimbo of the player > 4]training pants[otherwise]padded underwear[end if][clothing-title-after]". There is 1 unique sexy training pants.
-The soak-limit of a sexy training pants is usually 14. The text-shortcut of sexy training pants is "sxt".
+The text-shortcut of sexy training pants is "sxt".
 
 To decide which number is the initial outrage of (D - a sexy training pants):
 	decide on 7.
@@ -568,7 +561,7 @@ Definition: a training pants is transformation-protected: decide yes.
 
 Chapter 25 Latex Diaper
 
-a rubber diaper is a kind of pullup diaper. There is 1 rubber diaper. rubber diaper is totally-exclusive. The text-shortcut of rubber diaper is "rubd". The soak-limit of rubber diaper is usually 24. rubber diaper is latex.
+a rubber diaper is a kind of pullup diaper. There is 1 rubber diaper. rubber diaper is totally-exclusive. The text-shortcut of rubber diaper is "rubd". rubber diaper is latex.
 
 Definition: a rubber diaper is yellow themed: decide yes.
 Definition: a rubber diaper is pink themed: decide yes.
@@ -589,7 +582,7 @@ The DQFigure of rubber diaper is usually DQRubber.
 
 Chapter 26 Ghost Diaper
 
-ghost-diaper is a disposable diaper. ghost-diaper is top-exclusive. ghost-diaper is unique. Understand "ghost", "diaper" as ghost-diaper. The text-shortcut of ghost-diaper is "gstd". The soak-limit of ghost-diaper is 24.
+ghost-diaper is a disposable diaper. ghost-diaper is top-exclusive. ghost-diaper is unique. Understand "ghost", "diaper" as ghost-diaper. The text-shortcut of ghost-diaper is "gstd".
 
 To decide which figure-name is clothing-image of (C - ghost-diaper):
 	decide on figure of ghost 6.
@@ -602,7 +595,9 @@ To say selfexamineuniquetitle of (K - ghost-diaper):
 To say ShortDesc of (K - ghost-diaper):
 	say "ghost diaper".
 
-Definition: ghost-diaper is removal-blocking if wearing-target is ghost-diaper. [It prevents itself from being removed]
+Definition: ghost-diaper is removal-blocking:
+	if wearing-target is ghost-diaper, decide yes;
+	decide no. [It prevents itself from being removed]
 
 To compute unique periodic effect of (C - ghost-diaper):
 	if the total-soak of C >= the soak-limit of C:

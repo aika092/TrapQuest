@@ -48,6 +48,8 @@ To decide which object is the unique-upgrade-target of (C - a cow print bikini t
 To compute (C - a cow print bikini top) unique inheriting from (D - a clothing):
 	now C is milk production.
 
-Definition: a cow print bikini top is transformation-protected if the class of the player is cowgirl.
+Definition: a cow print bikini top is transformation-protected:
+	if the class of the player is cowgirl, decide yes;
+	decide no.
 
 Cow Print Bikini Top ends here.

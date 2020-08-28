@@ -47,100 +47,40 @@ To decide which number is the overload of (C - an accessory):
 	if the number of in-play plentiful accessories > 4, decide on 999;
 	decide on 1 + (the number of in-play plentiful accessories / 2).
 
-[!<treasureNecessity:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 treasure-necessity is a number that varies.
 
-[!<maxOverload:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 max-overload is a number that varies. max-overload is 2.
 
-[!<AThingIsNecessary>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a thing (called C) is necessary:
 	if the overload of C < treasure-necessity, decide yes;
 	decide no.
 
-[!<AThingIsInPlay>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a thing (called C) is in-play:
 	if C is off-stage, decide no;
 	if C is in Standard Item Pen, decide no;
 	if C is in Holding Pen, decide no;
 	decide yes.
 
-[!<AddTreasureToThing>+
-
-REQUIRES COMMENTING
-
-+!]
 To add treasure to (X - a thing):
 	if tutorial is 1, compute tutorial treasure to X;
 	otherwise compute generic treasure to X.
 
-[!<RestockThing>+
-
-REQUIRES COMMENTING
-
-+!]
 To restock (C - a thing):
 	do nothing. [Default function, should never be used.]
 
 The setup starting items rules is a rulebook. [This rulebook sets up all items that the Item Pen starts with.]
 
-[!<AContainerIsRich>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a container is rich: decide no.
 
-[!<ATreasureChestIsRich>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a treasure chest is rich: decide yes.
 
-[!<ASafeIsRich>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a safe is rich: decide yes.
 
-[!<AnOrnateTrunkIsRich>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: an ornate trunk is rich: decide yes.
 
-[!<snacksFound:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 snacks-found is a number that varies.
 last-turn-nothing is a number that varies.
 
-[!<ComputeGenericTreasureToThing>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute generic treasure to (X - a thing):
 	let chest-luck be 0;
 	if lucky you tattoo is worn, now chest-luck is 50;
@@ -269,11 +209,6 @@ To compute generic treasure to (X - a thing):
 
 autotake-target is a thing that varies.
 
-[!<ComputeAutotakingAThing>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute autotaking (I - a thing):
 	if another-turn is 0 and another-turn-action is the no-stored-action rule and autotake >= 1 and I is in-play and I is not held and ((I is not food and I is not bottle and I is not plentiful accessory) or autotake is 2) and I is not known-cursed-potion and there is a worn bag of holding and the player is able to use their hands and the player is not in danger:
 		if the player is wrist bound and there is a worn heels and the player is upright:
@@ -301,20 +236,10 @@ This is the autotaking continues rule:
 					otherwise say "You are now carrying the [ShortDesc of I].";
 				now another-turn is 1.
 
-[!<ReportOpeningAContainer>+
-
-REQUIRES COMMENTING
-
-+!]
 Report opening a container:
 	repeat with I running through clothing in the noun:
 		if I is clothing and the bimbo of the player > 10, compute automatic wearing of I.
 
-[!<SayDiscoveryOfThing>+
-
-REQUIRES COMMENTING
-
-+!]
 To say Discovery of (I - a thing):
 	say "You find a [ShortDesc of I] inside![line break][variable custom style][DiscoveryFlav of I][roman type][line break]";
 	if newbie tips is 1:
@@ -337,43 +262,18 @@ To say Discovery of (I - a thing):
 		say "Looking at this item, you remember the shopkeeper's hints! Studying it closely, you realise you're definitely right in your suspicions. You have identified that the [ShortDesc of I] is cursed!";
 		now I is sure.
 
-[!<SayDiscoveryFlavOfThing>+
-
-REQUIRES COMMENTING
-
-+!]
 To say DiscoveryFlav of (I - a thing):
 	say "[if the number of worn clothing is 0 and I is clothing and the bimbo of the player < 5 and earnings > starting-earnings - 2500][one of]Not what I was expecting.[or]And there I was hoping for a sword.[or]I'm confused, why would I want to take this?[in random order][otherwise if I is plentiful accessory]Great! This looks valuable.[otherwise if the outrage of I < 6 and I is clothing and the bimbo of the player < 5 and the player is gendered male and I is not manly]Too girly.[otherwise if diaper quest is 1 and I is clothing and the bimbo of the player < 5 and calculated-cringe-level > the outrage of I and the cringe of I < 3]Well it's better than the childish stuff...[otherwise if the outrage of I < 6 and I is clothing and the bimbo of the player < 5]Not really my style.[otherwise if the outrage of I * 2000 > the humiliation of the player + 4000]How distasteful.[otherwise if the outrage of I * 2000 > the humiliation of the player + 2000]How outrageous![otherwise if the outrage of I * 2000 > the humiliation of the player]How peculiar.[otherwise if the outrage of I * 2000 > the humiliation of the player - 2000 or the bimbo of the player < 5]Interesting...[otherwise if the outrage of I * 2000 > the humiliation of the player - 5000 or the bimbo of the player < 8]This might be useful![otherwise if the bimbo of the player < 12]Ooh, how intriguing![otherwise]Yay, how exciting![end if]".
 
-[!<SayDiscoveryFlavOfCan>+
-
-REQUIRES COMMENTING
-
-+!]
 To say DiscoveryFlav of (I - a can):
 	say "[if I is known-cursed-potion]Well, I'm glad I know not to drink this.[otherwise if I is known-good-potion]Sweet![otherwise]Maybe it's worth drinking?[end if]".
 
-[!<SayDiscoveryFlavOfFood>+
-
-REQUIRES COMMENTING
-
-+!]
 To say DiscoveryFlav of (I - food):
 	say "[if I is candy and the body soreness of the player < 4 and the player is not hungry]Maybe it's worth saving for later?[otherwise if I is food]Maybe it's worth eating?[end if]".
 
-[!<SayDiscoveryFlavOfDiaper>+
-
-REQUIRES COMMENTING
-
-+!]
 To say DiscoveryFlav of (I - diaper):
 	say "[if earnings > starting-earnings - 100 and diaper quest is 0]I don't get it, why would I need this?![otherwise if the bimbo of the player < 6 and there is a held diaper]Ugh, yuck. Am I really going to need this many?![otherwise if the bimbo of the player < 6]Ugh, yuck. Am I really going to need this?[otherwise if the bimbo of the player < 11 and I is actually summonable]I guess I'd better wear this.[otherwise if the bimbo of the player < 11]I guess I'd better take this with me.[otherwise if the number of held diapers is 0]Phew! I was hoping to find one soon.[otherwise if the number of carried diapers is 0]Thank goodness, I was running low![otherwise if the bimbo of the player < 15]It's good to have a decent supply![otherwise]Ooh, this one will look perfect on me![end if]".
 
-[!<ComputeAutomaticWearingOfClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute automatic wearing of (C - a clothing):
 	let R be a random number between 12 and 18;
 	if C is not almost too much and C is not too boring and the outrage of C is not too humiliating and R < the bimbo of the player:
@@ -385,11 +285,6 @@ To compute automatic wearing of (C - a clothing):
 			try wearing C;
 		now autowear is false.
 
-[!<ComputeAutomaticEatingOfThing>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute automatic eating of (I - a thing):
 	say "You find a [printed name of I] inside! You can't control yourself, you [if the player is hungry]are too hungry[otherwise]suddenly feel extremely hungry and you just know it's going to taste so yummy[end if]!";
 	now I is carried by the player;

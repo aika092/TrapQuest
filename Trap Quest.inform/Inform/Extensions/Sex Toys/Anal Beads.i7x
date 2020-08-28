@@ -221,11 +221,6 @@ To finish possession of (T - an anal beads) in (O - an orifice):
 	now the notch-taken of T is the notches of T;
 	now T is worn by the player.
 
-To decide which number is the original price of (C - an anal beads):
-	let N be 5 - the notches of C / 2;
-	if N < 1, decide on 1;
-	decide on N.
-
 [Haunted beads: locked at ass openness + 1. Beads only come out if pulled by npc or if repeatedly blessed.]
 
 ritual-beads is an anal beads. ritual-beads is unique. ritual-beads is purity. The printed name of ritual-beads is usually "[clothing-title-before][PlugSize size of item described] ritual beads[clothing-title-after]". The text-shortcut of ritual-beads is "rtb". The notches of ritual-beads is 3. Understand "ritual", "ritual beads" as ritual-beads.

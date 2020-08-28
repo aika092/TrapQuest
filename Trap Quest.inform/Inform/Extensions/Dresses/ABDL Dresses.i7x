@@ -4,7 +4,9 @@ Part - Baby Reins
 
 A baby-reins is a kind of overdress. A baby-reins is unique. A baby-reins is usually low cut. A baby-reins is usually leather. A baby-reins is usually crotch-exposing. A baby-reins is usually belly exposing. A baby-reins is usually unskirted. A baby-reins is usually top-exclusive. Understand "baby reins", "reins" as baby-reins.
 
-Definition: a baby-reins is fetish appropriate if diaper lover > 0.
+Definition: a baby-reins is fetish appropriate:
+	if diaper lover > 0, decide yes;
+	decide no.
 Definition: a baby-reins is transformation-protected: decide yes.
 [Definition: a baby-party-reins is end of transformation chain: decide yes.]
 Definition: a baby-reins is baby themed: decide yes.
@@ -42,9 +44,15 @@ To decide which number is the initial cringe of (C - a baby-dress):
 	if C is super-short, decide on 11;
 	decide on 5.
 
-Definition: a baby-dress is fetish appropriate if diaper lover > 0.
-Definition: a baby-dress is sissifying if it is fetish appropriate.
-Definition: a baby-dress is disintegration-protected if the player is an adult baby.
+Definition: a baby-dress is fetish appropriate:
+	if diaper lover > 0, decide yes;
+	decide no.
+Definition: a baby-dress is sissifying:
+	if it is fetish appropriate, decide yes;
+	decide no.
+Definition: a baby-dress is disintegration-protected:
+	if the player is an adult baby, decide yes;
+	decide no.
 Definition: a baby-party-dress is end of transformation chain: decide yes.
 Definition: a baby-dress is baby themed: decide yes.
 

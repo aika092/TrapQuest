@@ -34,27 +34,6 @@ Definition: a white rubber giant bow dress is white themed: decide yes.
 Definition: a white rubber giant bow dress is bow themed: decide yes.
 Definition: a white rubber giant bow dress is potentially erection concealing: decide yes. [non-tight skirts conceal erections]
 
-Part 2 - Metallic Purple Rubber Dress
-
-A metallic purple rubber dress is a kind of rubber dress. There is 1 metallic purple rubber dress. A metallic purple rubber dress is neck covering. The text-shortcut of metallic purple rubber dress is "mpld". The printed name of metallic purple rubber dress is usually "[clothing-title-before]metallic purple latex dress[clothing-title-after]".
-
-Figure of metallic purple rubber dress is the file "Items/Clothes/Upper/Latex/rubberdress3.png".
-
-To decide which figure-name is clothing-image of (C - a metallic purple rubber dress):
-	decide on figure of metallic purple rubber dress.
-
-To say ClothingDesc of (C - a metallic purple rubber dress):
-	say "This metallic purple dress is made completely of latex. Its high collar means that there's no revealing neckline but there are gaps at the sides, allowing any sideways-on viewers to get an eyeful of side-boob.".
-
-To say ShortDesc of (C - a metallic purple rubber dress):
-	say "purple latex dress".
-To say MediumDesc of (C - a metallic purple rubber dress):
-	say "metallic purple latex dress".
-
-To decide which number is the initial outrage of (C - a metallic purple rubber dress):
-	decide on 3.
-
-Definition: a metallic purple rubber dress is purple themed: decide yes.
 
 Part 3 - Superheroine Fetish Dress
 

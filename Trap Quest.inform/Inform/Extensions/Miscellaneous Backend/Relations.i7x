@@ -10,6 +10,9 @@ The verb to grab (he grabs, they grab, he grabbed, it is grabbed, he is grabbing
 [Monsters can sometimes "grab" the player's body parts, but not completely immobilise them. This is an incomplete form of the grabbing relation.]
 Wrangling relates various things to various body parts.
 The verb to wrangle (he wrangles, they wrangle, he wrangled, it is wrangled, he is wrangling) implies the wrangling relation.
+Definition: a body part is currently-wrangled:
+	if there is a thing wrangling it, decide yes;
+	decide no.
 
 [Monsters and sometimes objects can penetrate the player's body parts. Once a monster is penetrating a body part, the player is generally in a defeat state and must wait for the monster to finish. Body parts can usually only be penetrated by one thing at a time.]
 Filling relates various things to various body parts.

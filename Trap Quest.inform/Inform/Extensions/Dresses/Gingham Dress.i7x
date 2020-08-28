@@ -3,7 +3,9 @@ Gingham Dress by Dresses begins here.
 A gingham dress is a kind of overdress. A gingham dress is usually transformation-rare. A gingham dress is usually not-top-displacable. A gingham dress is usually intelligence-influencing.
 
 Definition: a gingham dress is schoolgirl-enabling: decide yes.
-Definition: a gingham dress is class-transformation-protected if the class of the player is schoolgirl.
+Definition: a gingham dress is class-transformation-protected:
+	if the class of the player is schoolgirl, decide yes;
+	decide no.
 Definition: a gingham dress is baby themed: decide yes.
 
 Part 1 - Gingham Schoolgirl Outfit
@@ -37,7 +39,9 @@ To decide which object is the unique-upgrade-target of (C - a gingham schoolgirl
 	decide on a random off-stage super short gingham dress.
 
 Definition: a gingham schoolgirl outfit is purple themed: decide yes.
-Definition: a gingham schoolgirl outfit is fetish appropriate if diaper lover > 0.
+Definition: a gingham schoolgirl outfit is fetish appropriate:
+	if diaper lover > 0, decide yes;
+	decide no.
 
 Part 2 - Super Short Gingham Dress
 

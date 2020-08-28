@@ -19,7 +19,9 @@ To compute punishment of (P - a diaper punishment):
 
 Definition: a diaper punishment is appropriate: decide no.
 
-Definition: a diaper punishment is prioritised if the priority of it is current-priority.
+Definition: a diaper punishment is prioritised:
+	if the priority of it is current-priority, decide yes;
+	decide no.
 
 To choose a diaper punishment:
 	now chosen diaper punishment is punishment-not-found;
@@ -72,7 +74,9 @@ Definition: a monster (called M) is willing to change diapers:
 	if M is willing to double diapers and M is eager to double diapers, decide yes; [This means that NPCs such as the demoness who usually don't change diapers, will enter the function to do so if it is known that they'll instead go for the double diaper option.]
 	decide no.
 
-Definition: diaper-change is appropriate if current-monster is willing to change diapers and current-monster is eager to change diapers.
+Definition: diaper-change is appropriate:
+	if current-monster is willing to change diapers and current-monster is eager to change diapers, decide yes;
+	decide no.
 
 To compute punishment of (P - diaper-change):
 	compute diaper change of current-monster.
@@ -104,7 +108,9 @@ Definition: a monster (called M) is willing to donate diapers:
 	if M is willing to change diapers, decide yes;
 	decide no.
 
-Definition: diaper-donate is appropriate if current-monster is willing to donate diapers and current-monster is eager to donate diapers.
+Definition: diaper-donate is appropriate:
+	if current-monster is willing to donate diapers and current-monster is eager to donate diapers, decide yes;
+	decide no.
 
 To compute punishment of (P - diaper-donate):
 	compute diaper change of current-monster.
@@ -125,7 +131,9 @@ Definition: a monster (called M) is eager to spank:
 
 Definition: a monster is willing to spank: decide no.
 
-Definition: spanking-session is appropriate if current-monster is willing to spank and current-monster is eager to spank.
+Definition: spanking-session is appropriate:
+	if current-monster is willing to spank and current-monster is eager to spank, decide yes;
+	decide no.
 
 To compute punishment of (P - spanking-session):
 	compute spanking of current-monster.
@@ -145,7 +153,8 @@ Definition: a monster (called M) is eager to masturbate:
  Definition: a monster (called M) is able to carry out masturbation:
 	repeat with N running through monsters grabbing the player:
 		if N is not M, decide no;
-	if there is a worn chastity cage, decide no;
+	if there is a worn chastity-belt, decide no;
+	if there is a worn chastity cage and the player is not possessing a vagina, decide no;
 	if (the player is not a bit horny and M is only willing to masturbate horny players) or refractoryperiod > 0, decide no;
 	decide yes.
 
@@ -223,7 +232,9 @@ Definition: a monster (called M) is eager to confiscate:
 	if M is able to confiscate, decide yes;
 	decide no.
 
-Definition: a monster is able to confiscate if there is confiscatable clothing.
+Definition: a monster is able to confiscate:
+	if there is confiscatable clothing, decide yes;
+	decide no.
 
 Definition: a clothing (called C) is confiscatable:
 	if C is not worn or C is cursed or C is locked or C is unremovable or C is not stealable or C is not currently visible or the unworn cringe of C > 0, decide no;
@@ -247,7 +258,9 @@ Definition: a monster (called M) is eager to donate babywear:
 	if M is able to donate babywear, decide yes;
 	decide no.
 
-Definition: a monster is able to donate babywear if there is babywearable clothing.
+Definition: a monster is able to donate babywear:
+	if there is babywearable clothing, decide yes;
+	decide no.
 
 Definition: a clothing (called C) is babywearable:
 	if C is on-stage or C is not babywear, decide no;
@@ -256,7 +269,9 @@ Definition: a clothing (called C) is babywearable:
 	if C is actually summonable, decide yes;
 	decide no.
 
-Definition: a monster is willing to donate babywear if it is willing to confiscate.
+Definition: a monster is willing to donate babywear:
+	if it is willing to confiscate, decide yes;
+	decide no.
 
 Definition: donate babywear (called P) is appropriate:
 	if current-monster is willing to donate babywear and current-monster is eager to donate babywear, decide yes;
@@ -282,7 +297,9 @@ Definition: a monster (called M) is able to punish untidiness:
 [When setting this to 'decide yes', make sure that the NPC doesn't have a custom "uniquely unfriendly" function that needs to have related stuff added. And probably make sure that their perception functions have been updated to make it clear why they're unfriendly.]
 Definition: a monster is willing to punish untidiness: decide no.
 
-Definition: untidy-session is appropriate if current-monster is willing to punish untidiness and current-monster is eager to punish untidiness.
+Definition: untidy-session is appropriate:
+	if current-monster is willing to punish untidiness and current-monster is eager to punish untidiness, decide yes;
+	decide no.
 
 To compute punishment of (P - untidy-session):
 	compute untidiness punishment of current-monster.

@@ -1,18 +1,24 @@
 Pacifiers by Bondage begins here.
 
 A pacifier is a kind of ballgag. The text-shortcut of pacifier is "pac".
-Definition: a pacifier is same-type if theme-share-target is ballgag.
+Definition: a pacifier is same-type:
+	if theme-share-target is ballgag, decide yes;
+	decide no.
 A pacifier has a number called stolen-intelligence.
 Definition: a pacifier is curse-sticky: decide no.
 Definition: a pacifier is fetish appropriate: decide yes.
 Definition: a pacifier is discovered varied: decide no.
-Definition: a baby pacifier is fetish appropriate if diaper lover > 0.
+Definition: a baby pacifier is fetish appropriate:
+	if diaper lover > 0, decide yes;
+	decide no.
 
 Definition: a baby pacifier is baby themed: [Is it something that only an adult baby fetishist would have?]
 	decide yes.
 
 A cock pacifier is a kind of pacifier. There is 1 unique cock pacifier. The printed name of cock pacifier is "[clothing-title-before]cock pacifier[clothing-title-after]". The text-shortcut of cock pacifier is "cpc".
-Definition: a cock pacifier is fetish appropriate if diaper quest is 0.
+Definition: a cock pacifier is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 Definition: a cock pacifier is drink themed: decide yes.
 Definition: a cock pacifier is oral sex themed: decide yes.
 Definition: a cock pacifier is penis themed: decide yes.
@@ -31,7 +37,9 @@ Definition: a sparkly princess pacifier is gem themed: decide yes.
 Definition: a sparkly princess pacifier is pink themed: decide yes.
 A ghost pacifier is a kind of baby pacifier. There is 1 ghost pacifier. The printed name of ghost pacifier is "[clothing-title-before]ghost pacifier[clothing-title-after]". The text-shortcut of ghost pacifier is "gpa".
 Definition: a ghost pacifier is orange themed: decide yes.
-Definition: a ghost pacifier is transformation-protected if the class of the player is trick-or-treater.
+Definition: a ghost pacifier is transformation-protected:
+	if the class of the player is trick-or-treater, decide yes;
+	decide no.
 
 To say ShortDesc of (P - a pacifier):
 	say "pacifier".

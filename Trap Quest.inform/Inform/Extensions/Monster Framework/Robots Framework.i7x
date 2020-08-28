@@ -20,12 +20,11 @@ To compute (S - a striped top) damaging (M - a robot):
 	say "[BigNameDesc of M] completely ignores the spikes on your [printed name of S]! [big he of M] must be immune.".
 
 To compute kneeling reaction of (M - a robot):
-	say "[BigNameDesc of M] watches you, with [his of M] fixed emotionless expression and red eyes.[if the bimbo of the player < 12]You shudder with shame.[end if]";
-	humiliate 75.
+	say "[BigNameDesc of M] watches you, with [his of M] fixed emotionless expression and red eyes[if the player is not shameless]. You lower your eyes with shame[end if].";
+	moderateHumiliate.
 
 To compute DQ kneeling reaction of (M - a robot):
-	say "[BigNameDesc of M] watches you, with [his of M] fixed emotionless expression and red eyes.[if the bimbo of the player < 12]You shudder with shame.[end if]";
-	humiliate MODERATE-HUMILIATION + SLIGHT-HUMILIATION.
+	compute kneeling reaction of M.
 
 To compute lead holding of (M - a robot):
 	do nothing.
@@ -37,17 +36,17 @@ To compute friendly boredom of (M - a robot):
 Definition: a robot is virginity taking: decide no.
 
 To IdentifiablePosterReaction of (M - a robot):
-	say "[BigNameDesc of M] looks at the banner, and then at you. [line break][first custom style]'SLUT IDENTIFIED. MOCKING ROUTINE INITIATED. HA HA HA.'[roman type][line break]";
+	say "[BigNameDesc of M] looks at the banner, and then at you.[line break][first custom style]'SLUT IDENTIFIED. MOCKING ROUTINE INITIATED. HA HA HA.'[roman type][line break]";
 	say "You turn bright red with shame.";
 	humiliate the lewdness of a random poster in the location of the player * 2.
 
 To UnidentifiablePosterReaction of (M - a robot):
-	say "[BigNameDesc of M] looks at the banner. [line break][first custom style]'SLUT UNIDENTIFIABLE. UNFORTUNATE, SINCE [caps he of the player] IS CLEARLY IN NEED OF FURTHER PUBLIC SHAMING.'[roman type][line break]";
+	say "[BigNameDesc of M] looks at the banner.[line break][first custom style]'SLUT UNIDENTIFIABLE. UNFORTUNATE, SINCE [caps he of the player] IS CLEARLY IN NEED OF FURTHER PUBLIC SHAMING.'[roman type][line break]";
 	say "You turn slightly red but don't say a word.";
 	humiliate the lewdness of a random poster in the location of the player / 2.
 
 To compute BabyChairReaction of (M - a robot):
-	say "[BigNameDesc of M] looks at you. [line break][speech style of M]'[one of]GOOD BABY. [caps please] CONTINUE TO EXHIBIT OPTIMAL BEHAVIOUR.'[or]YOUR ACHIEVEMENTS HAVE BEEN RECOGNISED AND RECORDED. CONGRATULATIONS.'[or]YOU ARE AN EXEMPLARY MODEL FOR ALL OUR OTHER BABIES. I WILL SPREAD THE NEWS OF YOUR DEEDS.'[in random order][roman type][line break]";
+	say "[BigNameDesc of M] looks at you.[line break][speech style of M]'[one of]GOOD BABY. [caps please] CONTINUE TO EXHIBIT OPTIMAL BEHAVIOUR.'[or]YOUR ACHIEVEMENTS HAVE BEEN RECOGNISED AND RECORDED. CONGRATULATIONS.'[or]YOU ARE AN EXEMPLARY MODEL FOR ALL OUR OTHER BABIES. I WILL SPREAD THE NEWS OF YOUR DEEDS.'[in random order][roman type][line break]";
 	slightHumiliate.
 
 This is the robot politely lets you finish rule:
@@ -96,10 +95,10 @@ Definition: a robot is ally: decide no.
 Definition: a robot is guardian: decide no.
 
 To compute sudden objectification of (M - a robot):
-	say "[BigNameDesc of M][']s eyes turn red. [line break][speech style of M]'APPEARANCE THRESHOLD REACHED. LOADING OBJECTIFICATION PROTOCOL...'[roman type][line break]".
+	say "[BigNameDesc of M][']s eyes turn red.[line break][speech style of M]'APPEARANCE THRESHOLD REACHED. LOADING OBJECTIFICATION PROTOCOL...'[roman type][line break]".
 
 To compute sudden babification of (M - a robot):
-	say "[BigNameDesc of M][']s eyes turn red. [line break][speech style of M]'APPEARANCE THRESHOLD REACHED. LOADING BABY SLAVE TRAINING PROTOCOL...'[roman type][line break]".
+	say "[BigNameDesc of M][']s eyes turn red.[line break][speech style of M]'APPEARANCE THRESHOLD REACHED. LOADING BABY SLAVE TRAINING PROTOCOL...'[roman type][line break]".
 
 To decide which number is the bimbo tolerance of (M - a robot):
 	decide on 21.
@@ -155,7 +154,7 @@ To say EnemaPlugAfterFlav of (M - a robot):
 	say "[speech style of M]'BONUS ROUTINE SUCCESSFUL. VOLUNTARY ENEMA EXPULSION NO LONGER POSSIBLE. INVOLUNTARY POTTY EPISODE INEVITABLE.'[roman type][line break]".
 
 To say EnemaFloorReactionFlav of (M - a robot):
-	say "[BigNameDesc of M] stares at you. [line break][speech style of M]'ANAL EXPULSION DETECTED. [one of]SUBJECT SHOULD BE EXTREMELY ASHAMED[or]HUMILIATION AUDIO TRACK LOADED. HA HA HA[or]SAVING RECORDING TO CLOUD... SAVING... SAVING... UPLOAD COMPLETE: PUBLICATION TO INTERNET SUCCESSFUL. ENJOY YOUR HUMILIATION[in random order][if M is unfriendly and diaper quest is 1]. ADDITIONAL PUNISHMENT ROUTINE LOADING[end if].'[roman type][line break][if the humiliation of the player < 25000][one of]You turn a bright shade of red[or]You blush brightly with shame[or]You shiver with self-consciousness[or]You turn red-faced with shame[in random order].[end if]".
+	say "[BigNameDesc of M] stares at you.[line break][speech style of M]'ANAL EXPULSION DETECTED. [one of]SUBJECT SHOULD BE EXTREMELY ASHAMED[or]HUMILIATION AUDIO TRACK LOADED. HA HA HA[or]SAVING RECORDING TO CLOUD... SAVING... SAVING... UPLOAD COMPLETE: PUBLICATION TO INTERNET SUCCESSFUL. ENJOY YOUR HUMILIATION[in random order][if M is unfriendly and diaper quest is 1]. ADDITIONAL PUNISHMENT ROUTINE LOADING[end if].'[roman type][line break][if the humiliation of the player < 25000][one of]You turn a bright shade of red[or]You blush brightly with shame[or]You shiver with self-consciousness[or]You turn red-faced with shame[in random order].[end if]".
 
 To say SubmissionFlav of (M - a robot):
 	say "[BigNameDesc of M] stares at you silently before moving closer. ".

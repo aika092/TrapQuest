@@ -2,7 +2,9 @@ Wrist Bondage by Bondage begins here.
 
 A wrist bond is a kind of bondage. Understand "cuffs" as wrist bond. A wrist bond is usually wrist-bound-in-front. A wrist bond is usually transformation-rare.
 
-Definition: a wrist bond is same-type if theme-share-target is wrist bond.
+Definition: a wrist bond is same-type:
+	if theme-share-target is wrist bond, decide yes;
+	decide no.
 
 To say ClothingDesc of (W - a wrist bond):
 	say "[WristBondDesc][if W is not wrist locked and W is worn]They are currently not binding your wrists together. [otherwise if W is wrist-bound-in-front and W is worn]They are binding your wrists in front of you. [otherwise if W is worn]They are binding your wrists behind you. [end if]".

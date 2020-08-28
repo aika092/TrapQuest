@@ -1,10 +1,5 @@
 ASCII Map by Miscellaneous Frontend begins here.
 
-[!<MapDraw>+
-
-REQUIRES COMMENTING
-
-+!]
 To MapDraw:
 	if map images > 0:
 		display entire map;
@@ -108,11 +103,6 @@ To MapDraw:
 			now G is the map sum of G and <0,0,24>;
 		say "[variable letter spacing]".
 
-[!<DecideWhichSpatialCoordinateIsTheMapSumOfTwoCoordinates>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which spatial coordinate is the map sum of (V1 - a spatial coordinate) and (V2 - a spatial coordinate):
 	let L be the maze level part of V1 plus the maze level part of V2;
 	let L be the remainder after dividing L by 25;
@@ -123,11 +113,6 @@ To decide which spatial coordinate is the map sum of (V1 - a spatial coordinate)
 	let the sum be the spatial coordinate with maze level part L easting part E northing part N;
 	decide on the sum.
 
-[!<DecideIfSomethingIsInDirection>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide if there is something to the (D - a direction):
 	now neighbour finder is tile finder;
 	if D is N-viable, decide yes;

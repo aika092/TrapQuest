@@ -21,9 +21,6 @@ To say ShortDesc of (C - a fetish dress):
 To decide which number is the initial outrage of (C - a fetish dress):
 	decide on 6.
 
-To decide which number is the original price of (C - a fetish dress):
-	decide on 10.
-
 To decide which number is the dexterity-influence of (C - a fetish dress):
 	let D be 0;
 	if C is not cursed: [When not cursed, this increases dexterity by the number of all latex items.]
@@ -198,7 +195,9 @@ To decide which number is the strength-influence of (O - a black fetish hobble d
 	let S be the magic-modifier of O;
 	decide on S.
 
-Definition: a black fetish hobble dress is transformation-protected if the class of the player is maid.
+Definition: a black fetish hobble dress is transformation-protected:
+	if the class of the player is maid, decide yes;
+	decide no.
 
 To say TransformReaction of (C - a black fetish hobble dress):
 	if the outrage of C is too humiliating:
@@ -294,7 +293,9 @@ fetish baby dress is a fetish dress. fetish baby dress is short. A fetish baby d
 
 The printed name of fetish baby dress is usually "[clothing-title-before]latex fetish [if diaper lover > 0]baby [end if]dress[clothing-title-after]".
 
-Definition: fetish baby dress is fetish appropriate if diaper lover > 0.
+Definition: fetish baby dress is fetish appropriate:
+	if diaper lover > 0, decide yes;
+	decide no.
 
 Figure of fetish baby dress is the file "Items/Clothes/Upper/Latex/latexbabydress1.png".
 
@@ -313,6 +314,8 @@ To decide which number is the initial cringe of (C - a fetish baby dress):
 Definition: a fetish baby dress is baby themed: decide yes.
 Definition: a fetish baby dress is white themed: decide yes.
 Definition: a fetish baby dress is bow themed: decide yes.
-Definition: a fetish baby dress is transformation-protected if the class of the player is latex clown.
+Definition: a fetish baby dress is transformation-protected:
+	if the class of the player is latex clown, decide yes;
+	decide no.
 
 Fetish Dress ends here.

@@ -46,8 +46,14 @@ To decide which object is the potential-upgrade-target of (C - a platform heels)
 	if the heel-height of C >= 6 and C is plentiful, decide on a random off-stage tall platform heels;
 	decide on nothing.
 
-Definition: a platform heels is disintegration-protected if the class of the player is silicone queen.
-Definition: a platform heels is red themed if it is pvc.
-Definition: a platform heels is black themed if it is not pvc.
+Definition: a platform heels is disintegration-protected:
+	if the class of the player is silicone queen, decide yes;
+	decide no.
+Definition: a platform heels is red themed:
+	if it is pvc, decide yes;
+	decide no.
+Definition: a platform heels is black themed:
+	if it is not pvc, decide yes;
+	decide no.
 
 Platform Heels ends here.

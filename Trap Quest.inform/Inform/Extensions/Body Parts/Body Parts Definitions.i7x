@@ -20,7 +20,9 @@ a body part can be stuck.
 Is the player unable to move because a body part is stuck?
 
 +!]
-Definition: yourself is body stuck if there is a stuck body part.
+Definition: yourself is body stuck:
+	if there is a stuck body part, decide yes;
+	decide no.
 
 To say NameDesc of (B - a body part):
 	say "your [ShortDesc of B]".
@@ -63,11 +65,6 @@ REQUIRES COMMENTING
 @!]
 a fuckhole is a kind of orifice. [Crotch orifices are called fuckholes, obviously]
 
-[!<Fuckhole>@<soreness:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 a fuckhole has a number called soreness.
 
 [!<Fuckhole>@<tolerated:Integer>*
@@ -77,39 +74,14 @@ This value is a running counter of how much punishment a fuckhole has recently t
 *@!]
 a fuckhole has a number called tolerated.
 
-[!<Fuckhole>@<openness:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 a fuckhole has a number called openness.
 
-[!<Fuckhole>@<realOpenness:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 a fuckhole has a number called real openness.
 
-[!<Fuckhole>@<previousSoreness:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 a fuckhole has a number called previous soreness.
 
-[!<Fuckhole>@<previousOpenness:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 a fuckhole has a number called previous openness.
 
-[!<Fuckhole>@<buildup:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 a fuckhole has a number called buildup.
 
 To decide which number is the insertableGirthAcceptance of (F - a fuckhole):
@@ -124,22 +96,14 @@ To fill (F - a fuckhole) times (X - a number):
 	if F is asshole, AssFill X;
 	otherwise PussyFill X.
 
-[!<WhichNumberIsTheSemenVolumeOfFuckhole>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the semen-volume of (F - a fuckhole):
 	if F is vagina, decide on the total semen volume of vagina;
 	if F is asshole, decide on the semen volume of belly;
 	decide on 0.
 
-[!<FuckholeIsLewdlyExposed>+
-
-REQUIRES COMMENTING
-
-+!]
-Definition: a fuckhole is lewdly exposed if it is exposed.
+Definition: a fuckhole is lewdly exposed:
+	if it is exposed, decide yes;
+	decide no.
 
 To decide which number is the lewdly exposed outrage of (F - a fuckhole):
 	let O be 15;
@@ -148,11 +112,6 @@ To decide which number is the lewdly exposed outrage of (F - a fuckhole):
 	increase O by the openness of F / 5;
 	decide on O.
 
-[!<FuckholeIsAtLeastPartiallyLewdlyExposed>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a fuckhole (called F) is at least partially lewdly exposed:
 	if F is at least partially exposed, decide yes; [Plugs are not usable as modesty items]
 	[if F is exposed and F is not actually occupied, decide yes; [Plugs are actually usable as modesty items]]
@@ -213,19 +172,9 @@ To ruin (F - a fuckhole) times (X - a number):
 		if the previous soreness of F < 10 and the soreness of F is 10 and delayed fainting is 0, say RuinedFlav of F;
 		now the previous soreness of F is the soreness of F.
 
-[!<SayRuinedFlavOfFuckhole>+
-
-REQUIRES COMMENTING
-
-+!]
 To say RuinedFlav of (F - a fuckhole):
 	say "[bold type]Your [variable F] is completely and utterly ruined. You won't be able to think straight until it has healed at least a bit.[roman type][line break][one of][if sex fainting is 0][otherwise if there is a live thing penetrating F]If [FuckerDesc of random live thing penetrating F] keeps fucking you much longer, you'll be at risk of fainting.[otherwise]If anyone was to try and fuck your [variable F] now, you might faint.[end if][or][stopping][roman type][line break]".
 
-[!<CheckSorenessFaintingOfFuckhole>+
-
-REQUIRES COMMENTING
-
-+!]
 To check soreness fainting of (F - a fuckhole):
 	let M be a random monster penetrating F;
 	if (sex fainting is 1 or there is a futanari slutty sister penetrating F) and there is an embodied thing penetrating F:
@@ -257,24 +206,14 @@ To check soreness fainting of (F - a fuckhole):
 An all later time based rule (this is the sore sex hurts rule):
 	if sex-hurt-balance > 0 and sex-hurt-balance < 5, now sex-hurt-balance is 5.
 
-[!<sexHurtBalance:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 sex-hurt-balance is a number that varies.
 
-[!<PotentiallyDespairAboutFuckholeSex>+
-
-REQUIRES COMMENTING
-
-+!]
 To potentially despair about (F - a fuckhole) sex:
-	if the raw sex addiction of the player > the raw delicateness of the player:
-		say "[one of]Your addiction to sex slightly decreases.[or]Your mind associates sex with pain, slightly reducing your opinion of it.[in random order] ";
-		SilentlySexAddictDown 1;
+	if there is a live thing penetrating F:
 		if F is asshole and the raw anal sex addiction of the player * 2 > the raw delicateness of the player, AnalSexAddictDown 1;
-		if F is vagina and the raw vaginal sex addiction of the player * 2 > the raw delicateness of the player, VaginalSexAddictDown 1.
+		if F is vagina and the raw vaginal sex addiction of the player * 2 > the raw delicateness of the player, VaginalSexAddictDown 1;
+	otherwise if the raw sex addiction of the player > the raw delicateness of the player:
+		SexAddictDown 1.
 
 [!<HealFuckholeX>+
 
@@ -297,18 +236,8 @@ To heal (F - a fuckhole) times (X - a number):
 
 [A body part has a rule called weight-rule. body-part-weight is a number that varies. The weight-rule of body part is usually the default weight rule.]
 
-[!<BodyPart>@<semenCoating:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 a body part has a number called semen coating.
 
-[!<BodyPart>@<urineCoating:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 a body part has a number called urine coating.
 
 [!<DecideWhichNumberIsTheDesireOfBodyPart>+
@@ -333,57 +262,33 @@ How much do others want to grope this body part after noticing the player?
 *@!]
 a body part has a number called gropability.
 
-[!<DecideWhichNumberIsTheWeightOfAThing>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the weight of (T - a thing):
 	decide on 0.
 
-Definition: A body part is glazed if the semen coating of it > 0.
-Definition: A body part is overglazed if it is glazed.
-Definition: hair is overglazed if the semen coating of it > 1.
+Definition: A body part is glazed:
+	if the semen coating of it > 0, decide yes;
+	decide no.
+Definition: A body part is overglazed:
+	if it is glazed, decide yes;
+	decide no.
+Definition: hair is overglazed:
+	if the semen coating of it > 1, decide yes;
+	decide no.
 
-[!<DecideWhichNumberIsTheWeightOfBodyPart>+
-
-REQUIRES COMMENTING
-
-+!]
 [To decide which number is the weight of (B - a body part):
 	follow the weight-rule of B;
 	decide on body-part-weight.]
 
-[!<SayShortDescOfBodyPart>+
-
-REQUIRES COMMENTING
-
-+!]
 To say ShortDesc of (B - a body part):
 	say "[printed name of B]".
 
-[!<SayTotalDescOfBodyPart>+
-
-REQUIRES COMMENTING
-
-+!]
 To say TotalDesc of (B - a body part):
 	say "you have [ShortDesc of B].".
 
-[!<BodyPartIsHeavy>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a body part (called F) is heavy:
 	if the weight of F >= 10, decide yes;
 	decide no.
 
-[!<SayHeavyThings>+
-
-REQUIRES COMMENTING
-
-+!]
 To say HeavyThings:
 	let N be the number of heavy body parts;
 	if N > 0:
@@ -397,13 +302,10 @@ To say HeavyThings:
 
 Definition: a body part is lewdly exposed: decide no.
 
-Definition: a body part is currently visible if it is exposed.
+Definition: a body part is currently visible:
+	if it is exposed, decide yes;
+	decide no.
 
-[!<BodyPartIsAtLeastPartiallyLewdlyExposed>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a body part is at least partially lewdly exposed: decide no.
 
 To decide which object is the at least partial concealer of (C - a body part):
@@ -412,8 +314,12 @@ To decide which object is the at least partial concealer of (C - a body part):
 To decide which object is the concealer of (C - a body part):
 	decide on nothing.
 
-Definition: a body part is exposed if the at least partial concealer of it is nothing.
-Definition: a body part is at least partially exposed if the concealer of it is nothing.
+Definition: a body part is exposed:
+	if the at least partial concealer of it is nothing, decide yes;
+	decide no.
+Definition: a body part is at least partially exposed:
+	if the concealer of it is nothing, decide yes;
+	decide no.
 
 To decide which number is the lewdly exposed outrage of (B - a body part):
 	decide on 0. [not humiliating by default]
@@ -477,7 +383,9 @@ Definition: a body part (called B) is fake occupied:
 Actually has something in it.
 
 +!]
-Definition: a body part is actually occupied if there is a thing penetrating it.
+Definition: a body part is actually occupied:
+	if there is a thing penetrating it, decide yes;
+	decide no.
 
 [!<YourselfIsExposed>+
 
@@ -502,7 +410,9 @@ Definition: yourself is completely exposed:
 Used by some NPCs to decide if they thing that the player is inappropriately dressed. Are nipples showing?
 
 +!]
-Definition: yourself is nipples exposed if the number of worn nipple covering clothing is 0.
+Definition: yourself is nipples exposed:
+	if the number of worn nipple covering clothing is 0, decide yes;
+	decide no.
 
 [!<YourselfIsCrotchCovered>+
 

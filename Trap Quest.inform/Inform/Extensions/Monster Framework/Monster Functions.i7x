@@ -1,34 +1,14 @@
 Monster Functions by Monster Framework begins here.
 
-[!<DeinterestMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To deinterest (M - a monster):
 	bore M for 0 seconds.
 
-[!<DistractMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To distract (M - a monster):
 	bore M for 50 seconds.
 
-[!<BoreMonster>+
-
-REQUIRES COMMENTING
-
-!]
 To bore (M - a monster):
 	bore M for 500 seconds.
 
-[!<BoreMonsterForNSeconds>+
-
-REQUIRES COMMENTING
-
-+!]
 To bore (M - a monster) for (N - a number) seconds:
 	dislodge M;
 	compute common boredom of M for N seconds;
@@ -42,6 +22,7 @@ To compute common boredom of (M - a monster) for (N - a number) seconds:
 	now the objectification of M is 0;
 	now the babification of M is 0;
 	now the friendly boredom of M is 0;
+	now the last-tripped of M is 0;
 	if debugmode > 1, say "Deinteresting [ShortDesc of M]. Latest appearance seen is [latest-appearance of M]. Refreshing...";
 	now the latest-appearance of M is the appearance of the player;
 	if debugmode > 1, say "Latest appearance seen is now [latest-appearance of M].";
@@ -53,19 +34,9 @@ To compute common boredom of (M - a monster) for (N - a number) seconds:
 		decrease the charge of the dungeon altar by a random number between 1 and 50;
 		if the charge of hotel altar > 0, decrease the charge of hotel altar by a random number between 1 and 50;
 
-[!<SatisfyMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To satisfy (M - a monster):
 	satisfy M for 500 seconds.
 
-[!<SatisfyMonsterForNSeconds>+
-
-REQUIRES COMMENTING
-
-+!]
 To satisfy (M - a monster) for (N - a number) seconds:
 	if M is interested:
 		bore M for N seconds;
@@ -76,11 +47,6 @@ To satisfy (M - a monster) for (N - a number) seconds:
 	otherwise:
 		bore M for N seconds. [We still want to dislodge etc. even if they weren't interested for some reason.]
 
-[!<SaySatisfiedFlavOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To say SatisfiedFlav of (M - a monster):
 	if M is in the location of the player and M is not dying:
 		let U be 0;

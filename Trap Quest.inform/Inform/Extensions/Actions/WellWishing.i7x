@@ -2,11 +2,6 @@ WellWishing by Actions begins here.
 
 WellWishing is an action applying to one thing.
 
-[!<CheckWellWishing>+
-
-REQUIRES COMMENTING
-
-+!]
 Check WellWishing:
 	unless the location of the player is Woods27, say "You'd probably need a wishing well to do that." instead;
 	if the noun is bottle:
@@ -18,18 +13,8 @@ Check WellWishing:
 		say "It probably makes more sense to use something like jewellery." instead;]
 	if the player is in danger, say "You can't do that in the middle of a fight!" instead.
 
-[!<wellWishes:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 wellwishes is a number that varies.
 
-[!<WellWishing>+
-
-REQUIRES COMMENTING
-
-+!]
 Carry out WellWishing:
 	let B be 0;
 	let P be 0;
@@ -128,21 +113,11 @@ Carry out WellWishing:
 		otherwise say "[first custom style]Wish... denied.[roman type]";[possible punishment of fairy spawn or vine summon in the future?]
 	unless the noun is vessel, only destroy the noun.
 
-[!<ReportWellWishing>+
-
-REQUIRES COMMENTING
-
-+!]
 Report WellWishing:
 	allocate 6 seconds.
 
 Understand "drop [something] into well", "wish with [something]", "wish [something]" as WellWishing.
 
-[!<ComputeBadWishing>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute BadWishing:
 	say "[first custom style]Your wish... offends me.[roman type][line break]";
 	let C be most-transformable-clothing;

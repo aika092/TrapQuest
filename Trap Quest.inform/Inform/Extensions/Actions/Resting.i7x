@@ -1,17 +1,7 @@
 Resting by Actions begins here.
 
-[!<resting:Action>*
-
-REQUIRES COMMENTING
-
-*!]
 Resting is an action applying to nothing.
 
-[!<CheckResting>+
-
-REQUIRES COMMENTING
-
-+!]
 Check resting:
 	if the player is monster fucked, try resisting instead;
 	if the player is immobile, say "Aren't you a bit busy?" instead;
@@ -20,11 +10,6 @@ Check resting:
 	say "Stay still until you feel completely refreshed? ";
 	unless the player is in agreement, say "You change your mind." instead.
 
-[!<CarryOutResting>+
-
-REQUIRES COMMENTING
-
-+!]
 Carry out resting:
 	if the player is upright, try kneeling;
 	now the alert of the player is 0;

@@ -143,7 +143,9 @@ To decide which number is the weight of (XXX - belly):
 	if the latex-transformation of the player > 5 and B > 0, now B is 0;
 	decide on B.
 
-Definition: belly is heavy if the weight of belly >= 18.
+Definition: belly is heavy:
+	if the weight of belly >= 18, decide yes;
+	decide no.
 
 Definition: belly is exposed:
 	if there is a worn actually dense belly covering clothing, decide no;
@@ -165,11 +167,6 @@ To say TotalDesc of belly:
 	say "you have a [BellyDesc][if the semen coating of belly > 7] which is plastered in [semen]. [otherwise if the semen coating of belly > 4] which is covered in [semen]. [otherwise if the semen coating of belly > 0] which has a splattering of [semen] on it. [otherwise]. [end if][BellyContents][BellyWeight][StomachContents]";
 	if there is a worn corset, compute SelfExamineDesc of a random worn corset.
 
-[!<SayBellydesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say BellyDesc:
 	let X be the largeness of belly;
 	if weight gain fetish is 1 and belly egg count < 3 and total squirtable fill of belly < the flesh volume of belly + 2 and X < 7 and flesh volume of belly > 2:
@@ -192,11 +189,6 @@ To say BellyDesc:
 		if X is 12, say "[if pregnancy fetish is 1]pregnant with twins looking[otherwise]cartoonish looking[end if], overly stretched belly";
 		if X is 13, say "[if pregnancy fetish is 1]pregnant with octuplets looking[otherwise]cartoonish looking[end if], impossibly huge belly";
 
-[!<SayBellyContents>+
-
-REQUIRES COMMENTING
-
-+!]
 To say BellyContents:
 	if the flesh volume of belly > 0, say "It has a [if the flesh volume of belly > 6]large[otherwise if the flesh volume of belly > 3]medium[otherwise]small[end if] amount of fat. ";
 	if the semen volume of belly > 0, say "It is currently [if the semen addiction of the player < 9]a reluctant [otherwise if the semen addiction of the player > 14]a welcoming [end if]home to a [if the semen volume of belly > 20]ridiculously huge[otherwise if the semen volume of belly > 15]huge[otherwise if the semen volume of belly > 10]large[otherwise if the semen volume of belly > 5]decent[otherwise]small[end if] amount of [semen]. ";
@@ -254,11 +246,6 @@ To say eggsOnly (S - a number) with (M - a number) and (L - a number):
 	if S + M + L < 5, say "eggs";
 	otherwise say "a mass of eggs";
 
-[!<SayBellyWeight>+
-
-REQUIRES COMMENTING
-
-+!]
 To say BellyWeight:
 	if the weight of belly < -6:
 		say "It weighs significantly less than air and is trying to pull you up off the ground.";
@@ -277,11 +264,6 @@ To say BellyWeight:
 	otherwise:
 		say "It is heavier than the rest of your body combined and means you can literally only take a few steps before you buckle with exhaustion.".
 
-[!<SayStomachContents>+
-
-REQUIRES COMMENTING
-
-+!]
 To say StomachContents:
 	say "Your stomach [if the stomach of the player <= 2]is quite empty[otherwise if the stomach-water of the player < 2]is quite empty because you haven't drunk anything recently[otherwise if the stomach-water of the player < 4]is a little bit full[otherwise if the stomach-water of the player < 6]is quite full of things you have recently drunk[otherwise]is very full of things you have recently drunk[end if]. ";
 	if the stomach-semen of the player > 0, say "It is currently [if the stomach-semen of the player > 6]almost completely full of[otherwise if the stomach-semen of the player > 4]quite full of[otherwise if the stomach-semen of the player > 2]digesting a decent amount of[otherwise]digesting a small amount of[end if] [semen]. ";
@@ -289,30 +271,15 @@ To say StomachContents:
 	if the stomach-urine of the player > 0, say "It is currently [if the stomach-urine of the player > 6]almost completely full of[otherwise if the stomach-urine of the player > 4]quite full of[otherwise if the stomach-urine of the player > 2]digesting a decent amount of[otherwise]digesting a small amount of[end if] [urine]. ";
 	if the stomach-food of the player > 0, say "It is currently [if the stomach-food of the player > 6]almost completely full of[otherwise if the stomach-food of the player > 4]quite full of[otherwise if the stomach-food of the player > 2]digesting a decent amount of[otherwise]digesting a small amount of[end if] food. ".
 
-[!<SayPermanentBelly>+
-
-REQUIRES COMMENTING
-
-+!]
 To say PermanentBelly:
 	say "[if the total squirtable fill of belly is 0] permanent[end if]".
 
 Part 3 - Modify Belly Stats
 
-[!<DecideWhichNumberIsBellyLimit>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is belly limit:
 	if the player is female, decide on 20;
 	decide on 30.
 
-[!<DecideWhichNumberIsBellyLiquidTypes>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is belly liquid types:
 	let X be 0;
 	if the semen volume of belly > 0, increase X by 1;
@@ -332,11 +299,6 @@ To empty belly liquids:
 	now the urine volume of belly is 0;
 	now the milk volume of belly is 0.
 
-[!<DecideWhichNumberIsBellyEggCount>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is belly egg count:
 	let X be 0;
 	increase X by the small egg count of belly;
@@ -346,11 +308,6 @@ To decide which number is belly egg count:
 
 Chapter 1 - Fat
 
-[!<FatBellyUpX>+
-
-REQUIRES COMMENTING
-
-+!]
 To FatBellyUp (X - a number):
 	while X > 0 and weight gain fetish is 1:
 		if the flesh volume of belly < 10 and the number of restricting salve covering belly is 0, increase the flesh volume of belly by 1;
@@ -360,11 +317,6 @@ To FatBellyUp (X - a number):
 			cutshow figure of body reaction 13 for belly;
 		if newbie tips is 1 and the flesh volume of belly > 3, say "[one of][newbie style]Newbie tip: Your belly getting a bit fat! That's making you heavier and therefore you'll tire out faster. However, it is fully reversible! Lots of things exercise fat away from your belly, including fighting enemies and drinking milk.[roman type][line break][or][stopping]".
 
-[!<FatBellyDownX>+
-
-REQUIRES COMMENTING
-
-+!]
 To FatBellyDown (X - a number):
 	if heavyweight tattoo is worn and a random number between 0 and X > 0, decrease X by 1;
 	while X > 0:
@@ -373,11 +325,6 @@ To FatBellyDown (X - a number):
 
 Chapter 2 - Overflow
 
-[!<Overflow>+
-
-REQUIRES COMMENTING
-
-+!]
 To Overflow:
 	if currently-squirting is 0 and the player is able to expel and belly liquid types + belly egg count > 0 and the total squirtable fill of belly > belly limit and the latex-transformation of the player <= 4:
 		AssSquirt;
@@ -474,11 +421,6 @@ assfilled is a number that varies.
 [To SeedFill (F - asshole) times (X - a number):
 	AssFill X.]
 
-[!<AssFillX
-
-REQUIRES COMMENTING
-
-+!]
 To Assfill (X - a number):
 	let L be a random worn lipstick collar;
 	if L is clothing, increase X by 1;
@@ -517,22 +459,12 @@ To Assfill (X - a number):
 To Assfill (X - a number) with (L - semen):
 	Assfill X.
 
-[!<AssFillXSmallEggs>+
-
-REQUIRES COMMENTING
-
-+!]
 To assfill (X - a number) small eggs:
 	while X > 0:
 		decrease X by 1;
 		increase the small egg count of belly by 1;
 	overflow;
 
-[!<AssFillXMediumEggs>+
-
-REQUIRES COMMENTING
-
-+!]
 To assfill (X - a number) medium eggs:
 	while X > 0:
 		decrease X by 1;
@@ -542,22 +474,12 @@ To assfill (X - a number) medium eggs:
 		say "You sense that your [ShortDesc of carrot daggers] have become more powerful!";
 	overflow;
 
-[!<AssFillXLargeEggs>+
-
-REQUIRES COMMENTING
-
-+!]
 To assfill (X - a number) large eggs:
 	while X > 0:
 		decrease X by 1;
 		increase the large egg count of belly by 1;
 	overflow;
 
-[!<AssFillXUrine>+
-
-REQUIRES COMMENTING
-
-+!]
 To Assfill (X - a number) urine:
 	while X > 0:
 		decrease X by 1;
@@ -567,11 +489,6 @@ To Assfill (X - a number) urine:
 To Assfill (X - a number) with (L - urine):
 	Assfill X urine.
 
-[!<AssFillXMilk>+
-
-REQUIRES COMMENTING
-
-+!]
 To Assfill (X - a number) milk:
 	while X > 0:
 		decrease X by 1;
@@ -581,22 +498,12 @@ To Assfill (X - a number) milk:
 To Assfill (X - a number) with (L - milk):
 	Assfill X milk.
 
-[!<AssFillXAir>+
-
-REQUIRES COMMENTING
-
-+!]
 To Assfill (X - a number) air:
 	if the number of worn research airhancers > 0, increase X by 1;
 	while X > 0:
 		decrease X by 1;
 		if the air volume of belly < 50, increase the air volume of belly by 1.
 
-[!<AssFillXWater>+
-
-REQUIRES COMMENTING
-
-+!]
 To Assfill (X - a number) water:
 	while X > 0:
 		decrease X by 1;
@@ -609,74 +516,24 @@ To Assfill (X - a number) with (L - water):
 Chapter 4 - Enema / Creampie Squirting
 
 [These count values are the totals of how many of each element are going to come out. They're here because the function had hit the maximum number of temporary variables]
-[!<smallEggCount:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 small-egg-count is a number that varies.
 
-[!<mediumEggCount:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 medium-egg-count is a number that varies.
 
-[!<largeEggCount:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 large-egg-count is a number that varies.
 
-[!<milkCount:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 milk-count is a number that varies.
 
-[!<urineCount:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 urine-count is a number that varies.
 
-[!<airCount:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 air-count is a number that varies.
 
-[!<semenCount:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 semen-count is a number that varies.
 
-[!<waterCount:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 water-count is a number that varies.
 
-[!<currentlySquirting:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 currently-squirting is a number that varies.
 
-[!<AssSquirt>+
-
-REQUIRES COMMENTING
-
-+!]
 To AssSquirt:
 	[This makes sure that the game doesn't start counting down to another expulsion whilst one is still happening]
 	reset all monster reactions;
@@ -1094,21 +951,11 @@ To AssSquirt:
 	now currently-squirting is 0;
 	if the semen volume of belly is 0, cancel father material of asshole.
 
-[!<EggBeginsFlav>+
-
-REQUIRES COMMENTING
-
-+!]
 To say EggBeginsFlav:
 	say "You shudder [if the humiliation of the player < HUMILIATION-PROUD + 4000]in shame[otherwise if the bimbo of the player < HUMILIATION-DISGRACED + 3000]in a mixture of arousal and shame[otherwise]with pure arousal[end if] as ".
 
-[!<LayXSmallEggs>+
-
-REQUIRES COMMENTING
-
-+!]
 To lay (X - a number) small eggs:
-	if X < 10, say "[if X is 1]one[otherwise]one, then another[end if][if X > 2], then a third[end if][if X > 3], then a fourth [line break][variable custom style](woah!)[roman type][line break][end if][if X > 4], then a fifth[end if][if X > 5], then a sixth [line break][variable custom style](how many?!)[roman type][line break][end if][if X > 6], then a seventh[end if][if X > 7], then an eighth [line break][variable custom style](holy shit...)[roman type][line break][end if][if X > 8], then a ninth[end if] [MediumDesc of a random small egg] slowly emerges from your ever loosening [asshole], making a quiet 'plop' sound as [if X is 1]it[otherwise]each[end if] comes out.";
+	if X < 10, say "[if X is 1]one[otherwise]one, then another[end if][if X > 2], then a third[end if][if X > 3], then a fourth[line break][variable custom style](woah!)[roman type][line break][end if][if X > 4], then a fifth[end if][if X > 5], then a sixth[line break][variable custom style](how many?!)[roman type][line break][end if][if X > 6], then a seventh[end if][if X > 7], then an eighth[line break][variable custom style](holy shit...)[roman type][line break][end if][if X > 8], then a ninth[end if] [MediumDesc of a random small egg] slowly emerges from your ever loosening [asshole], making a quiet 'plop' sound as [if X is 1]it[otherwise]each[end if] comes out.";
 	otherwise say "smallish [ShortDesc of a random small egg]s one by one plop from your [asshole]. By the time it's finished, [X] have popped out.";
 	if X > 2 and the latex-transformation of the player < 3:
 		say "The movement of each one forcefully stimulates the inside of your ass, which feels incredible but also makes you quite sore.";
@@ -1140,13 +987,8 @@ To lay (X - a number) small eggs:
 		otherwise:
 			appropriate-cutscene-display figure of egg laying 2.
 
-[!<LayXMediumEggs>+
-
-REQUIRES COMMENTING
-
-+!]
 To lay (X - a number) medium eggs:
-	if X < 10, say "[if X is 1]one[otherwise]one, then another[end if][if X > 2], then a third [variable custom style](owww!)[roman type][end if][if X > 3], then a fourth[end if][if X > 4], then a fifth[end if][if X > 5], then a sixth [line break][variable custom style](my poor [asshole] can't survive much more of this...)[roman type][line break][end if][if X > 6], then a seventh[end if][if X > 7], then an eighth [line break][variable custom style](there's no way this was all inside me...)[roman type][line break][end if][if X > 8], then a ninth[end if] full sized egg slowly emerges from your ever loosening [asshole], making a quiet 'plop' sound as [if X is 1]it[otherwise]each[end if] comes out.";
+	if X < 10, say "[if X is 1]one[otherwise]one, then another[end if][if X > 2], then a third [variable custom style](owww!)[roman type][end if][if X > 3], then a fourth[end if][if X > 4], then a fifth[end if][if X > 5], then a sixth[line break][variable custom style](my poor [asshole] can't survive much more of this...)[roman type][line break][end if][if X > 6], then a seventh[end if][if X > 7], then an eighth[line break][variable custom style](there's no way this was all inside me...)[roman type][line break][end if][if X > 8], then a ninth[end if] full sized egg slowly emerges from your ever loosening [asshole], making a quiet 'plop' sound as [if X is 1]it[otherwise]each[end if] comes out.";
 	otherwise say "Full sized chicken-like eggs one by one force their way from your [asshole]. There are so many that you quickly lose count, it's at least ten but you really have no idea.";
 	if X > 1 and the latex-transformation of the player < 3:
 		say "The eggs are much too big to be passed comfortably, and the ordeal inevitably stimulates your ass just as much as a good rough fucking would.";
@@ -1181,11 +1023,6 @@ To lay (X - a number) medium eggs:
 		curse carrot daggers;
 		say "You sense that your [ShortDesc of carrot daggers] [if carrot daggers is cursed]are now stuck to your hands[otherwise]have lost their sharp tips[end if]!".
 
-[!<LayXLargeEggs>+
-
-REQUIRES COMMENTING
-
-+!]
 To lay (X - a number) large eggs:
 	say "the largest egg you've ever seen exits your [asshole] at an excruciatingly slow speed, keeping your [asshole] stretched for several seconds as it eases its way out. It's as wide as your forearm.";
 	appropriate-cutscene-display figure of egg laying 7;
@@ -1216,11 +1053,6 @@ To lay (X - a number) large eggs:
 			now S is laid;
 			if a random number between 1 and 4 is 1, now the hatching of S is 1.
 
-[!<EggRipClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To Egg Rip (C - a clothing):
 	if C is knickers:
 		if C is displacable:
@@ -1240,11 +1072,6 @@ To Egg Rip (C - a clothing):
 		say "The force with which the egg shoots out makes it go straight through your [printed name of C], ruining them. [bold type]Your clothing has been destroyed![roman type][line break]";
 		destroy C.
 
-[!<ComputeSquirtDeclarationsIntoClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute squirt declarations into (C - a clothing):
 	if there is an intelligent awake monster in the location of the player and the player is able to speak:
 		let M be a random intelligent awake monster in the location of the player;
@@ -1256,172 +1083,67 @@ To compute squirt declarations into (C - a clothing):
 			say "[enema floor declaration of M]".
 
 A person can be reacted-already. [This is used in ass squirting function which occurs over several turns to track which NPCs have already reacted to this particular episode]
-[!<ResetAllMonsterReactions>+
-
-REQUIRES COMMENTING
-
-+!]
 To reset all monster reactions:
 	repeat with M running through reacted-already people:
 		now M is not reacted-already.
 
-[!<SayEnemaFloorDeclarationOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To say enema floor declaration of (M - a monster):
 	say "[variable custom style]'[if voluntarySquatting is 1 and the humiliation of the player < HUMILIATION-MODEST + 4000][purposeful shameful enema floor declaration of M][otherwise if the humiliation of the player < HUMILIATION-MODEST + 4000][shameful enema floor declaration of M][otherwise if voluntarySquatting is 1 and humiliation of the player < HUMILIATION-SHAMELESS - 2000][purposeful apathetic enema floor declaration of M][otherwise if the humiliation of the player < HUMILIATION-SHAMELESS - 2000][apathetic enema floor declaration of M][otherwise if voluntarySquatting is 1][purposeful shameless enema floor declaration of M][otherwise][shameless enema floor declaration of M][end if][roman type][line break]".
 
-[!<SayPurposefulShamefulEnemaFloorDeclarationOfmonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To say purposeful shameful enema floor declaration of (M - a monster):
 	say "[one of]Please don't watch...'[or]I'm sorry, please forgive me, I couldn't find a toilet in time...'[or]Please look away, I don't usually do this in front of people...'[in random order]".
 
-[!<SayShamefulEnemaFloorDeclarationOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To say shameful enema floor declaration of (M - a monster):
 	say "[one of]Oh no, quickly, look away, please!'[or]Oh no, I can't make it to the toilet in time... please don't watch!'[or]Oh no, not here, please not right in front of [him of M]! I'm so sorry...'[in random order]".
 
-[!<SayPurposefulApatheticEnemaFloorDeclarationOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To say purposeful apathetic enema floor declaration of (M - a monster):
 	say "[one of]You can watch if you really want, I guess...'[or]You should look away unless you enjoy watching this sort of thing.'[or]Don't judge me, okay, I just can't be bothered to find a toilet.'[in random order]".
 
-[!<SayApatheticEnemaFloorDeclarationOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To say apathetic enema floor declaration of (M - a monster):
 	say "[one of]Oops, haha, that's pretty bad timing, but I can't stop it now.'[or]Awkward... No this isn't on purpose, I promise.'[or]I'm not enjoying the fact you're watching me, you know.'[in random order]".
 
-[!<SayPurposefulShamelessEnemaFloorDeclarationOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To say purposeful shameless enema floor declaration of (M - a monster):
 	say "[one of]Please watch me disgrace myself!'[or]Don't look away! I want you to watch as I squirt it all out!'[or]Are you going to punish me for messing up the floor?'[in random order]".
 
-[!<SayShamelessEnemaFloorDeclarationOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To say shameless enema floor declaration of (M - a monster):
 	say "[one of]It's all coming out! It's all coming out of my [asshole]!'[or]Omigod it's coming out! It's all coming out! Please watch my [asshole] as I disgrace myself!'[in random order]".
 
-[!<SayEnemaDeclarationOfMonsterIntoClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To say enema declaration of (M - a monster) into (C - a clothing):
 	say "[variable custom style]'[if voluntarySquatting is 1 and the humiliation of the player < HUMILIATION-MODEST + 4000][purposeful shameful enema declaration of M into C][otherwise if the humiliation of the player < HUMILIATION-MODEST + 4000][shameful enema declaration of M into C][otherwise if voluntarySquatting is 1 and the humiliation of the player < HUMILIATION-SHAMELESS - 2000][purposeful apathetic enema declaration of M into C][otherwise if the humiliation of the player < HUMILIATION-SHAMELESS - 2000][apathetic enema declaration of M into C][otherwise if voluntarySquatting is 1][purposeful shameless enema declaration of M into C][otherwise][shameless enema declaration of M into C][end if][roman type][line break]".
 
-[!<SayPurposefulShamefulEnemaDeclarationOfMonsterIntoClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To say purposeful shameful enema declaration of (M - a monster) into (C - a clothing):
 	say "[one of]It's... it's not what it looks like... Oh okay yes it is, but please don't look!'[or]I'm sorry, please forgive me, I couldn't find a private place in time...'[or]Oh god, how gross. I'm not enjoying this, you know...'[in random order]".
 
-[!<SayShamefulEnemaDeclarationOfMonsterIntoClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To say shameful enema declaration of (M - a monster) into (C - a clothing):
 	say "[one of]Oh crap, not in my clothes! Not now, in front of [him of M]!'[or]Oh no, I can't [if C is cursed]take these stupid clothes off[otherwise]make it to the toilet in time[end if]... please don't watch!'[or]Oh no, not here, please not right in front of [him of M]!'[in random order]".
 
-[!<SayPurposefulApatheticEnemaDeclarationOfMonsterIntoClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To say purposeful apathetic enema declaration of (M - a monster) into (C - a clothing):
 	say "[one of]You can watch if you really want, I guess...'[or]You should look away unless you enjoy watching this sort of thing.'[or]Don't judge me, okay, I just can't [if C is cursed]actually take off these clothes right now[otherwise]be bothered to find a toilet[end if].'[in random order]".
 
-[!<SayApatheticEnemaDeclarationOfMonsterIntoClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To say apathetic enema declaration of (M - a monster) into (C - a clothing):
 	say "[one of]Oops, haha, that's pretty bad timing, but I can't stop it now.'[or]Awkward... No this isn't on purpose, I promise.'[or]I'm not enjoying the fact you're watching me, you know.'[in random order]".
 
-[!<SayPurposefulShamelessEnemaDeclarationOfMonsterIntoClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To say purposeful shameless enema declaration of (M - a monster) into (C - a clothing):
 	say "[one of]Please watch me soil my clothes!'[or]Don't look away! I want you to watch as I squirt it all into my clothes!'[or]Are you enjoying watching me defile my own clothes? Teehee...'[in random order]".
 
-[!<SayShamelessEnemaDeclarationOfMonsterIntoClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To say shameless enema declaration of (M - a monster) into (C - a clothing):
 	say "[one of]It's all coming out! It's all coming out of my [asshole]!'[or]Omigod it's coming out! It's all coming out! Please watch my butt as I defile my clothes!'[in random order]".
 
-[!<SayPurposefulShamefulEnemaDeclarationOfMonsterIntoDiaper>+
-
-REQUIRES COMMENTING
-
-+!]
 To say purposeful shameful enema declaration of (M - a monster) into (C - a diaper):
 	say "[one of]It's... it's not what it sounds like... Oh okay yes it is, but please don't look!'[or]Those sounds aren't what you think they are! I promise!'[or]Oh no, I can't make it to the toilet in time... please don't judge me!'[or]Oh god, how gross. Why aren't you looking away?'[in random order]".
 
-[!<SayShamefulEnemaDeclarationOfMonsterIntoDiaper>+
-
-REQUIRES COMMENTING
-
-+!]
 To say shameful enema declaration of (M - a monster) into (C - a diaper):
 	say "[one of]Oh crap, not in my diaper! I wanted to make it to the toilet!'[or]Oh no, not here please don't tell me you can hear that!'[or]Oops... that wasn't supposed to happen in front of you...'[in random order]".
 
-[!<SayPurposefulApatheticEnemaDeclarationOfMonsterIntoDiaper>+
-
-REQUIRES COMMENTING
-
-+!]
 To say purposeful apathetic enema declaration of (M - a monster) into (C - a diaper):
 	say "[one of]Ugh, I'm just using my diaper [if diaper quest is 1]like I'm told[otherwise]for its intended purpose[end if], it's not a big deal.'[or]You should leave unless you enjoy witnessing this sort of thing.'[or]Don't judge me okay, I just can't [if C is cursed]actually take off this diaper right now[otherwise]be bothered to find a toilet[end if].'[in random order]".
 
-[!<SayPurposefulShamelessEnemaDeclarationOfMonsterIntoDiaper>+
-
-REQUIRES COMMENTING
-
-+!]
 To say purposeful shameless enema declaration of (M - a monster) into (C - a diaper):
 	say "[one of]Please watch me squirt [if diaper quest is 1]my enema[otherwise]stuff from my [asshole][end if] into my diaper!'[or]Don't look away! I want you to watch as I squirt [if diaper quest is 1]my enema[otherwise]stuff from my [asshole][end if] all into my diaper!'[or]Are you enjoying watching me use my diaper as a toilet for my [asshole]?'[in random order]".
 
-[!<SayShamelessEnemaDeclarationOfMonsterIntoDiaper>+
-
-REQUIRES COMMENTING
-
-+!]
 To say shameless enema declaration of (M - a monster) into (C - a diaper):
 	say "[one of]It's all coming out! It's all coming out of my [asshole] into my diaper!'[or]Omigod it's coming out! It's all coming out! Please watch my diaper as I fill it from my [asshole]!'[in random order]".
 
-[!<ComputeEnemaReactions>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute enema reactions:
 	let C be nothing;
 	if the player is ass protected, now C is a random bottom level ass protection clothing worn by the player;
@@ -1437,11 +1159,6 @@ To compute enema reactions:
 				compute enema floor reaction of M;
 			now M is reacted-already.
 
-[!<ComputeEnemaFloorReactionOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute enema floor reaction of (M - a person):
 	humiliate 200;
 	if voluntarySquatting is 1, humiliate 500;
@@ -1451,19 +1168,9 @@ To compute enema floor reaction of (M - a person):
 			say "[BigNameDesc of M] turns to leave you alone.";
 			distract M.
 
-[!<SayEnemaFloorReactionFlavOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To say EnemaFloorReactionFlav of (M - a person):
 	if M is intelligent, say "[BigNameDesc of M] [if M is interested]seems unimpressed[otherwise]turns to look at you[end if].[line break][speech style of M]'Disgusting[if M is unfriendly monster and diaper quest is 1]. You need further punishment[end if].'[roman type][line break][if the humiliation of the player < HUMILIATION-DISGRACED + 1000][one of]You turn a bright shade of red[or]You blush brightly with shame[or]You shiver with self-consciousness[or]You turn red-faced with shame[in random order].[end if]".
 
-[!<ComputeEnemaReactionOfMonsterIntoClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute enema reaction of (M - a person) into (C - a clothing):
 	compute enema floor reaction of M.
 

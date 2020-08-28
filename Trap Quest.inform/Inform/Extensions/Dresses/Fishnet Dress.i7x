@@ -1,6 +1,6 @@
 Fishnet Dress by Dresses begins here.
 
-A fishnet dress is a kind of overdress. A fishnet dress is usually unskirted. A fishnet dress is usually normally-nipple-exposing. A fishnet dress is usually mesh. A fishnet dress is usually see-through. A fishnet dress is usually transformation-rare. There is 1 fishnet dress. A fishnet dress is usually ridiculously low cut. The soak-limit of a fishnet dress is usually 10. A fishnet dress is usually semen-addiction-influencing.
+A fishnet dress is a kind of overdress. A fishnet dress is usually unskirted. A fishnet dress is usually normally-nipple-exposing. A fishnet dress is usually mesh. A fishnet dress is usually see-through. A fishnet dress is usually transformation-rare. There is 1 fishnet dress. A fishnet dress is usually ridiculously low cut. A fishnet dress is usually semen-addiction-influencing.
 
 The printed name of fishnet dress is usually "[clothing-title-before]fishnet dress[clothing-title-after]". The text-shortcut of fishnet dress is "fd". Understand "fish", "net" as fishnet dress.
 
@@ -22,9 +22,6 @@ Figure of Fishnet Dress is the file "Items/Clothes/Upper/Exposing/Fishnet/fishne
 
 To decide which number is the initial outrage of (C - a fishnet dress):
 	decide on 7.
-
-To decide which number is the original price of (C - a fishnet dress):
-	decide on 5.
 
 To decide which number is the leniency-addition of (C - a fishnet dress):
 	let F be 2;

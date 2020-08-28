@@ -34,13 +34,6 @@ To set up (M - a robobutler):
 To decide which number is the starting difficulty of (M - robobutler):
 	decide on 7.
 
-[This is the spawn initial robobutler rule:
-	if the number of alive robobutlers is 0:
-		let M be a random robobutler;
-		if debugmode > 0, say "Summoning butler in hotel.";
-		summon M in the hotel.
-The spawn initial robobutler rule is listed in the setting up hotel monsters rules.]
-
 To say speech style of (M - a robobutler):
 	say first custom style.
 
@@ -48,9 +41,9 @@ Part 1 - Misc Flavour
 
 To say SummoningFlav of (M - a robobutler):
 	if M is in the location of the player:
-		say "The teleporter emits a definitive sounding hum, and light fills the room as a tall, spindly robot materialises on the pad. [line break][first custom style]'CAN I HELP YOU SIR?'[roman type][line break]";
+		say "The teleporter emits a definitive sounding hum, and light fills the room as a tall, spindly robot materialises on the pad.[line break][first custom style]'CAN I HELP YOU SIR?'[roman type][line break]";
 	otherwise:
-		say "You hear the sound of a robotic voice coming from elsewhere in the hotel. [line break][first custom style]'CAN I HELP YOU SIR?'[roman type][line break]".
+		say "You hear the sound of a robotic voice coming from elsewhere in the hotel.[line break][first custom style]'CAN I HELP YOU SIR?'[roman type][line break]".
 
 To say LeftoverDesc (N - 118):
 	say "There is a pile of mangled nuts and bolts here that used to be a fully functional robobutler.[line break]".
@@ -69,9 +62,9 @@ To compute perception of (M - a robobutler):
 		otherwise if a random number between 0 and watersports fetish is 1:
 			serve urine from M;
 		otherwise:
-			say "[big he of M] glides towards you, bowing deeply as [he of M] addresses you in a monotone. [line break][speech style of M]'GREETINGS. I AM [if M is polite robobutler]SERVICE UNIT 1.57[otherwise]ASSISTOTRON 38[end if]. ARE YOU ENJOYING YOUR HOTEL STAY?'[roman type][line break][if M is buddy][line break][otherwise]One of [his of M] 'hands' is politely placed upturned towards you, as if [he of M] is subtly asking for a tip.[end if]";
+			say "[big he of M] glides towards you, bowing deeply as [he of M] addresses you in a monotone.[line break][speech style of M]'GREETINGS. I AM [if M is polite robobutler]SERVICE UNIT 1.57[otherwise]ASSISTOTRON 38[end if]. ARE YOU ENJOYING YOUR HOTEL STAY?'[roman type][line break][if M is buddy][line break][otherwise]One of [his of M] 'hands' is politely placed upturned towards you, as if [he of M] is subtly asking for a tip.[end if]";
 	otherwise if (vagina is exposed and the semen volume of vagina > 0 and the number of things penetrating vagina is 0) or (asshole is exposed and belly liquid types > 0 and the number of things penetrating asshole is 0) :
-		say "[big his of M] eyes turn red and [he of M] spins towards you. [line break][speech style of M]'LEAKAGE DETECTED. EMERGENCY PLUGGING PROGRAM ENGAGED.'[roman type][line break]";
+		say "[big his of M] eyes turn red and [he of M] spins towards you.[line break][speech style of M]'LEAKAGE DETECTED. EMERGENCY PLUGGING PROGRAM ENGAGED.'[roman type][line break]";
 		now the planned-punishment of M is 3;
 		anger M;
 	otherwise if there is a worn catsuits or the class of the player is vixen:
@@ -79,15 +72,15 @@ To compute perception of (M - a robobutler):
 		now the planned-punishment of M is 4;
 		anger M;
 	otherwise if the lips of face * 5 <= the bimbo of the player and artificial enhancements fetish is 1 and the lips of face < 3:[this in particular is artificial enhancements only]
-		say "[big his of M] eyes turn red and [he of M] spins towards you. [line break][speech style of M]'COLLAGEN DEFICIENCY DETECTED. TISSUE STIMULATION PROGRAM INITIATED.'[roman type][line break]";
+		say "[big his of M] eyes turn red and [he of M] spins towards you.[line break][speech style of M]'COLLAGEN DEFICIENCY DETECTED. TISSUE STIMULATION PROGRAM INITIATED.'[roman type][line break]";
 		anger M;
 		now the planned-punishment of M is 2;
 	otherwise if the player is hungry and the player is able to eat:
-		say "[big his of M] eyes turn red and [he of M] spins towards you. [line break][first custom style]'EMPTY STOMACH DETECTED. COMPULSORY FEEDING PROGRAM INITIATED.'[roman type][line break]";
+		say "[big his of M] eyes turn red and [he of M] spins towards you.[line break][first custom style]'EMPTY STOMACH DETECTED. COMPULSORY FEEDING PROGRAM INITIATED.'[roman type][line break]";
 		anger M;
 		now the planned-punishment of M is 1;
 	otherwise:
-		say "[big he of M] glides towards you, bowing deeply as [he of M] addresses you in a monotone. [line break][first custom style]'IT IS CUSTOMARY TO TIP THE SERVICE STAFF, MA[']AM.'[roman type][line break]One of [his of M] 'hands' is unsubtly placed upturned towards you.";
+		say "[big he of M] glides towards you, bowing deeply as [he of M] addresses you in a monotone.[line break][first custom style]'IT IS CUSTOMARY TO TIP THE SERVICE STAFF, MA[']AM.'[roman type][line break]One of [his of M] 'hands' is unsubtly placed upturned towards you.";
 		now the planned-punishment of M is 0;
 		calm M.
 
@@ -151,19 +144,19 @@ To compute (M - a robobutler) cuffing:
 	let A be a random off-stage pair of anklecuffs;
 	let B be a random off-stage fetish appropriate gag;
 	if W is actually summonable:
-		say "[BigNameDesc of M] pulls out a [printed name of W] and locks them onto your wrists. [line break][speech style of M]CRIME JUSTICE COMPLETE.[roman type][line break]";
+		say "[BigNameDesc of M] pulls out a [printed name of W] and locks them onto your wrists.[line break][speech style of M]CRIME JUSTICE COMPLETE.[roman type][line break]";
 		summon W locked;
 	otherwise if A is actually summonable:
-		say "[BigNameDesc of M] pulls out a [printed name of A] and locks them onto your ankles. [line break][speech style of M]CRIME TERMINATED.[roman type][line break]";
+		say "[BigNameDesc of M] pulls out a [printed name of A] and locks them onto your ankles.[line break][speech style of M]CRIME TERMINATED.[roman type][line break]";
 		summon A locked;
 	otherwise if B is actually summonable:
-		say "[BigNameDesc of M] pulls out a [printed name of B] and forces it into your mouth. [line break][speech style of M]TRIAL COMPLETE.[roman type][line break]";
+		say "[BigNameDesc of M] pulls out a [printed name of B] and forces it into your mouth.[line break][speech style of M]TRIAL COMPLETE.[roman type][line break]";
 		summon B locked;
 	otherwise:
 		repeat with C running through worn bondage:
 			if C is unlocked, now C is locked;
 			increase the sentence of prison guard by 1;
-		say "[BigNameDesc of M][']s eyes flash blue and red for a moment. [line break][speech style of M]TRIAL COMPLETE.[roman type][line break]".
+		say "[BigNameDesc of M][']s eyes flash blue and red for a moment.[line break][speech style of M]TRIAL COMPLETE.[roman type][line break]".
 
 The unique punishment rule of a robobutler is usually the robobutler punishment rule.
 This is the robobutler punishment rule:
@@ -283,7 +276,7 @@ To say RepeatResponse of (M - a robobutler):
 		say "[BigNameDesc of M] ignores you.";
 
 To say robogreeting:
-	say "[if the class of the player is maid]SERVANT[otherwise if the player is female or the bimbo of the player > 9]MISS[otherwise]SIR[end if]".
+	say "[if the class of the player is maid]SERVANT[otherwise if the player is gendered female or the bimbo of the player > 9]MISS[otherwise]SIR[end if]".
 
 Section 2 - Questioning
 
@@ -297,7 +290,7 @@ To compute answer of (M - a robobutler):
 		otherwise:
 			say "[first custom style]'I HELP WELL-TIPPING CUSTOMERS, [robogreeting].'[roman type][line break]";
 	otherwise if C is clothing:
-		say "[BigNameDesc of M] points at your [printed name of C]. [line break][first custom style]'THIS ITEM IS [if C is cursed]CURSED[otherwise if C is blessed]BLESSED[otherwise]UNCURSED[end if].'[roman type][line break]";
+		say "[BigNameDesc of M] points at your [printed name of C].[line break][first custom style]'THIS ITEM IS [if C is cursed]CURSED[otherwise if C is blessed]BLESSED[otherwise]UNCURSED[end if].'[roman type][line break]";
 		now C is sure;
 		FavourDown M by 2;
 		if M is not buddy:

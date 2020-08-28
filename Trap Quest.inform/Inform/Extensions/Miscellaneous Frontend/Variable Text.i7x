@@ -1,10 +1,5 @@
 Variable Text by Miscellaneous Frontend begins here.
 
-[!<SayVariableCustomStyle>+
-
-REQUIRES COMMENTING
-
-+!]
 To say variable custom style:
 	if a random number from 7 to 12 > the bimbo of the player, say first custom style;
 	otherwise say second custom style.
@@ -17,11 +12,6 @@ This is the variable text that controls whether hypnosis is triggered
 
 hypno-trigger is a text that varies.
 
-[!<SayFeet>+
-
-REQUIRES COMMENTING
-
-+!]
 To say feet:
 	say "[if there are worn boots]boots[otherwise if there are worn heels]heels[otherwise if there are worn shoes]shoes[otherwise]feet[end if]".
 
@@ -64,7 +54,7 @@ To say mistress:
 If the player is impressed with the NPC (unknown gender)
 
 +!]
-To say stud/master/mistress of (M - a person):
+To say stud of (M - a person):
 	if M is presenting as female, say mistress;
 	otherwise say stud.
 
@@ -88,34 +78,21 @@ To say stud-worm of (M - a monster):
 	if M is unimpressive and M is unintimidating and the player is feeling dominant, say worm of M;
 	otherwise say stud of M.
 
-Definition: a monster is unintimidating rather than intimidating if the difficulty of it < the strength of the player / 2. [Does the monster look too scary to insult?]
+Definition: a monster is unintimidating rather than intimidating:
+	if the difficulty of it < the strength of the player / 2, decide yes;
+	decide no. [Does the monster look too scary to insult?]
 
 Definition: a monster (called M) is impressive rather than unimpressive: [Does the monster look like a good lay?]
 	if M is dark skinned and interracial fetish is 1, decide yes;
 	if the girth of M > 10 - highest body part sex addiction, decide yes; [The more the player loves dick, the smaller dick they are satisfied by]
 	decide no.
 
-[!<SayBabe>+
-
-REQUIRES COMMENTING
-
-+!]
 To say babe:
 	say "[one of]babe[or]hottie[or]honey[or]sexy girl[as decreasingly likely outcomes]"
 
-[!<SayWhore>+
-
-REQUIRES COMMENTING
-
-+!]
 To say whore:
 	say "[one of]whore[or]harlot[or]hussie[or]tart[as decreasingly likely outcomes]".
 
-[!<SaySlut>+
-
-REQUIRES COMMENTING
-
-+!]
 To say slut:
 	say "[one of]slut[or]skank[or]slag[as decreasingly likely outcomes]".
 
@@ -131,11 +108,6 @@ To say sissy slut:
 	otherwise:
 		say slut.
 
-[!<SayBitch>+
-
-REQUIRES COMMENTING
-
-+!]
 To say bitch:
 	if diaper quest is 1, say "[if the diaper addiction of the player < 8]meanie[otherwise if the diaper addiction of the player < 14]dumbo[otherwise]stupid-head[end if]";
 	otherwise say "[one of]bitch[or][cunt][as decreasingly likely outcomes]".
@@ -149,11 +121,6 @@ To say fucker of (M - a monster):
 	if M is female or a random number between 1 and 2 <= lady fetish, say "[one of]bitch[or]idiot[as decreasingly likely outcomes]";
 	otherwise say "[one of]asshole[or]motherfucker[or]jackass[or]bastard[or]fucker[as decreasingly likely outcomes]".
 
-[!<SayBeautiful>+
-
-REQUIRES COMMENTING
-
-+!]
 To say beautiful:
 	say "[one of]rockin['][or]stylingbitchin['][or]beautiful[or]amazing[or]fucking hot[or]fucking sexy[at random]".
 
@@ -163,8 +130,11 @@ Whatever is the player's current sex organ (i.e. no including asshole)
 
 +!]
 To say genitals:
-	if the player is female, say vagina;
-	if the player is male:
+	if the player is possessing a penis and the player is possessing a vagina:
+		say "[player-penis] and [vagina]";
+	otherwise if the player is possessing a vagina:
+		say vagina;
+	otherwise:
 		if the player is not possessing a penis:
 			say ShortDesc of penis;
 		otherwise if the size of penis > 5:
@@ -180,37 +150,17 @@ To say real-genitals:
 		otherwise:
 			say sissy-penis.
 
-[!<SayPlayerCrotch>+
-
-REQUIRES COMMENTING
-
-+!]
 To say player-crotch:
 	if the player is barbie, say "[asshole]";
 	otherwise say "[if the player is female][vagina][otherwise if the size of penis > 5][manly-penis][otherwise][sissy-penis][end if] and [asshole]".
 
-[!<SayFuckholes>+
-
-REQUIRES COMMENTING
-
-+!]
 To say fuckholes:
 	say "[if the player is possessing a vagina][vagina] and [end if][asshole]".
 
-[!<SayLoad>+
-
-REQUIRES COMMENTING
-
-+!]
 To say load:
 	let A be the semen load of the player;
 	say "[if A < 3][one of]tiny[or]watery[or]small[purely at random] load[otherwise if A < 6][one of]hot[or]warm[or]average[at random] load[otherwise if A < 9][one of]thick[or]creamy[or]big[or]fat[purely at random] load[otherwise if A < 11][one of]huge[or]massive[or]ultra thick[purely at random] load[otherwise][one of]inhuman[or]insane[or]ridiculous[purely at random] load[end if]";
 
-[!<SayVariableBodyPart>+
-
-REQUIRES COMMENTING
-
-+!]
 To say variable (P - a body part):
 	if P is asshole:
 		say "[asshole]";
@@ -221,19 +171,9 @@ To say variable (P - a body part):
 	otherwise:
 		say "[ShortDesc of P]".
 
-[!<SayPlayerPenis>+
-
-REQUIRES COMMENTING
-
-+!]
 To say player-penis:
 	say "[if the size of penis < 5][sissy-penis][otherwise][manly-penis][end if]".
 
-[!<SaySissyPenis>+
-
-REQUIRES COMMENTING
-
-+!]
 To say sissy-penis:
 	if the player is barbie:
 		say "[one of]smooth groin[or]sexless mound[or]smooth stretch of skin[at random]"; [I avoided using doll-like here so we can further qualify this with "doll-like", elsewhere]
@@ -242,22 +182,12 @@ To say sissy-penis:
 	otherwise:
 		say "[one of]prick[or]willy[or]pecker[or]clitty[or]noodle[or]dickie[or]winky[or]weeny[as decreasingly likely outcomes]".
 
-[!<SayManlyPenis>+
-
-REQUIRES COMMENTING
-
-+!]
 To say manly-penis:
 	if the class of the player is santa's little helper:
 		say "candy cane";
 	otherwise:
 		say "[one of]cock[or]dick[cycling]".
 
-[!<SayVagina>+
-
-REQUIRES COMMENTING
-
-+!]
 To say vagina:
 	if the raw intelligence of the player < 5 and diaper lover >= 1:
 		say "[one of]pussy[or]cherry[or]kitty[or]no-no[or]muffin[as decreasingly likely outcomes]";
@@ -268,11 +198,6 @@ To say vagina:
 	otherwise:
 		say "[one of]cunt[or]snatch[or]pussy[or]cunt[or]main cum dump[or][if pregnancy fetish is 1]baby maker[otherwise]main fuckhole[end if][or]pussy[or]clunge[as decreasingly likely outcomes]".
 
-[!<SayAsshole>+
-
-REQUIRES COMMENTING
-
-+!]
 To say asshole:
 	if the player is gendered male:
 		if the raw intelligence of the player < 5 and diaper lover >= 1:
@@ -293,11 +218,6 @@ To say asshole:
 		otherwise:
 			say "[one of]asshole[or]butthole[or]rear fuckhole[or]rear cum dump[as decreasingly likely outcomes]".
 
-[!<SayButtcheeks>+
-
-REQUIRES COMMENTING
-
-+!]
 To say buttcheeks:
 	if the delicateness of the player < a random number between 2 and 6:
 		say "[one of]backside[or]derriere[or]posteriors[or]hindquarters[as decreasingly likely outcomes]";
@@ -308,19 +228,9 @@ To say buttcheeks:
 	otherwise:
 		say "[one of]bum[or]bum-bum[or]tooshie[as decreasingly likely outcomes]".
 
-[!<SaySemenAdjective>+
-
-REQUIRES COMMENTING
-
-+!]
 To say semen-adjective:
 	if the semen addiction of the player + 3 <= the semen taste addiction of the player and the semen addiction of the player - 3 >= the semen taste addiction of the player, say "[if the semen taste addiction of the player < 3]appalling [otherwise if the semen taste addiction of the player < 5]disgusting [otherwise if the semen taste addiction of the player < 8]unpleasant [otherwise if the semen taste addiction of the player < 10]strange [otherwise if the semen taste addiction of the player < 13]strangely pleasant [otherwise if the semen taste addiction of the player < 17][one of]delicious[or]tasty[at random] [otherwise][one of]heavenly[or]yummy[at random] [end if]". [if the semen addictions are too far apart this may not make sense]
 
-[!<SaySemen>+
-
-REQUIRES COMMENTING
-
-+!]
 To say semen:
 	if the class of the player is santa's little helper:
 		say "eggnog";
@@ -331,19 +241,9 @@ To say semen:
 	otherwise:
 		say "[if a random number between the semen addiction of the player and 20 > 19][semen-adjective][end if][one of]cum[or][if pregnancy fetish is 1]baby batter[otherwise]man juice[end if][or][if pregnancy fetish is 1]baby gravy[otherwise]man milk[end if][or]dick juice[or]happy batter[or]cock snot[as decreasingly likely outcomes]".
 
-[!<SayTastedSemen>+
-
-REQUIRES COMMENTING
-
-+!]
 To say tasted-semen:
 	say "[semen-adjective] [semen]".
 
-[!<SayUrine>+
-
-REQUIRES COMMENTING
-
-+!]
 To say urine:
 	if the class of the player is santa's little helper:
 		say "hot buttered rum";
@@ -356,27 +256,20 @@ To say urine:
 	otherwise:
 		say "[one of][or]yummy [or]tasty [or][or]delicious [or][or]my favourite drink, [as decreasingly likely outcomes]piss".
 
-[!<SayUrinate>+
-
-REQUIRES COMMENTING
-
-+!]
 To say urinate:
 	say "[one of][if the bimbo of the player < 5]urinate[otherwise]wee[end if][or]pee[or]piss[purely at random]".
 
 To say harden:
 	say "[one of]harden[or]stiffen[or]grow[at random]".
 
-[!<SayMilk>+
-
-REQUIRES COMMENTING
-
-+!]
 To say milk:
 	if the class of the player is santa's little helper:
 		say "brandy butter";
 	otherwise:
 		say "[if a random number between 10 and 20 < the milk taste addiction of the player][one of]tasty[or]yummy[purely at random] [end if][if diaper lover >= 1][one of]milk[or]breast milk[or]momma's milk[or]boob juice[as decreasingly likely outcomes][otherwise if lactation fetish is 1 and a random number between 1 and the bimbo of the player > 8][one of]cow juice[or]udder milk[or]breast milk[at random][otherwise]milk[end if]".
+
+To say smarter:
+	say "[if the intelligence of the player < 6][one of]smarterer[or]better at thinking and stuff[as decreasingly likely outcomes][otherwise][one of]smarter[or]more brainy[as decreasingly likely outcomes][end if]".
 
 To decide which text is man of (M - a thing):
 	decide on "[if M is live]being[otherwise]thing[end if]".
@@ -402,6 +295,7 @@ To decide which text is big men of (M - a thing):
 To decide which text is caps men of (M - a thing):
 	decide on men of M in upper case.
 
+[Used to refer to npcs, not the player]
 To decide which text is sissy-girl:
 	decide on "[if lady fetish is 2]sissy[otherwise]girl[end if]".
 
@@ -512,11 +406,6 @@ To say ChestDesc of (M - a monster):
 To say cockhead of (M - a monster):
 	say "[one of]cockhead[or]tip[or]bellend[or]dicktip[in random order]".
 
-[!<SayDaddyOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To say daddy of (M - a monster):
 	if the class of the player is santa's little helper and M is male:
 		say "Santa";
@@ -549,33 +438,18 @@ To say caps royal-subject of (M - a monster):
 	otherwise:
 		say "SUBJECT".
 
-[!<SayHoneyOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To say honey of (M - a person):
 	if the class of the player is santa's little helper:
 		say "snowflake";
 	otherwise:
 		say "[one of]honey[or]dear[or]sunshine[or]darling[or]cutie[or]cupcake[or]sweetums[or]sweetheart[or]snowflake[at random]".
 
-[!<SayChildOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To say child of (M - a monster):
 	if the class of the player is santa's little helper:
 		say "little elf";
 	otherwise:
 		say "[one of]little one[or]child[or]young one[at random]".
 
-[!<SayBabyTitleOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To say baby title of (M - a monster):
 	if the class of the player is santa's little helper:
 		say "[one of]our little padded prancer[or]the little baby elf[at random]";
@@ -587,11 +461,6 @@ To say baby title of (M - a monster):
 To say slut school:
 	say "[if diaper quest is 1]Attitude[otherwise]Slut[end if] School".
 
-[!<SayMuffledSounds>+
-
-REQUIRES COMMENTING
-
-+!]
 To say muffled sounds:
 	if the player is able to make sounds:
 		if there is a thing penetrating face or the player is gagged:
@@ -599,11 +468,6 @@ To say muffled sounds:
 		otherwise:
 			say open mouth sounds.
 
-[!<SayOpenMouthSounds>+
-
-REQUIRES COMMENTING
-
-+!]
 To say open mouth sounds:
 	if there is a live thing penetrating a fuckhole:
 		say "'[if the relevant sex addiction of the player < 8 or 5 - (the delicateness of the player / 4) < fuckhole pain][one of]EEEEH!!!'[or]OOOOOHH!!!'[or]UH-UH! UH-UH!'[or]AAAAAAGH!'[at random][otherwise if the relevant sex addiction of the player < 13][one of]Uuf! Uuf! Uuf...'[or]Aaaah...'[or]Ah!'[or]Aaah?'[at random][otherwise][one of]Ooh.'[or]Oooooh...'[or]Ah...'[or]Ooooh!'[or]Eeee!'[at random][end if]";
@@ -612,11 +476,6 @@ To say open mouth sounds:
 	otherwise:
 		say "'[one of]Ooh?'[or]Aah?'[or]Uh huh?'[at random]".
 
-[!<SayGagSounds>+
-
-REQUIRES COMMENTING
-
-+!]
 To say gag sounds:
 	if there is a live thing penetrating face:
 		say "'[one of]Hck hck hck hck...'[or]Ack ack ack ack!'[or]Nng...'[or]Nnk! Nnk nnk nnk...'[at random]";
@@ -631,11 +490,6 @@ To say gag sounds:
 	otherwise:
 		say "'[one of]Mmmmph?'[or]Mmmmm?'[or]Mmph Uck Nnn Mmm?'[at random]".
 
-[!<SayEnema>+
-
-REQUIRES COMMENTING
-
-+!]
 To say enema: [must be singular e.g. "creampie", not plural e.g. "creampies"]
 	if the water volume of belly is the total squirtable fill of belly:
 		say "enema";
@@ -661,19 +515,9 @@ To say liquidMix:
 	otherwise:
 		say "thick white [semen]".
 
-[!<SayCascade>+
-
-REQUIRES COMMENTING
-
-+!]
 To say cascade:
 	say "[one of]cascade[or]deluge[or]fountain[or]gush[at random]".
 
-[!<SayFlow>+
-
-REQUIRES COMMENTING
-
-+!]
 To say flow:
 	say "[one of]flow[or]stream[as decreasingly likely outcomes]".
 

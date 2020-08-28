@@ -9,7 +9,7 @@ REQUIRES COMMENTING
 @inherits <Fuckhole>
 
 @!]
-vagina is a fuckhole. vagina is everywhere. Understand "pussy", "fuckhole", "cunt", "fanny", "snatch", "muffin", "cum dump" as vagina. Understand "womb", "vulva", "cherry", "kitty", "slit", "clunge", "honey pot", "baby maker" as vagina when the player is female. The text-shortcut of vagina is "vagina".
+vagina is a fuckhole. vagina is everywhere. Understand "pussy", "fuckhole", "cunt", "fanny", "snatch", "muffin", "cum dump" as vagina. Understand "womb", "vulva", "cherry", "kitty", "slit", "clunge", "honey pot", "baby maker" as vagina when the player is possessing a vagina. The text-shortcut of vagina is "vagina".
 
 To say FullExamineDesc of (B - vagina):
 	say "[if the player is female][ImageDesc of vagina][TotalDesc of vagina][VaginaModesty][otherwise if the bimbo of the player > 6][description of asshole][otherwise]You don't have a vagina.[end if]".
@@ -74,19 +74,9 @@ Definition: a clothing (called C) is potentially at least partially vagina cover
 	if (C is crotch-ripped or C is crotch-unzipped) and C is crotch-in-place, decide yes;
 	decide no.
 
-[!<vaginaPresentableRules:Rulebook>*
-
-REQUIRES COMMENTING
-
-*!]
 the vagina presentable rules is a rulebook.
 the presentable rules of vagina is usually the vagina presentable rules.
 
-[!<TheVaginaProtectedRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the vagina protected rule:
 	repeat with O running through pussy covering clothing:
 		unless (O is displacable and O is not glued) or O is zippable or O is usually autoremovable:
@@ -94,65 +84,35 @@ This is the vagina protected rule:
 			rule fails.
 The vagina protected rule is listed in the vagina presentable rules.
 
-[!<TheVaginaOccupiedRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the vagina occupied rule:
 	if vagina is actually occupied:
 		if auto is 0, say "Your vagina is a bit full already, don't you think?";
 		rule fails.
 The vagina occupied rule is listed in the vagina presentable rules.
 
-[!<TheVaginaDoesNotExistRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the vagina doesn't exist rule:
 	if the player is not possessing a vagina:
 		if auto is 0, say "You don't have a vagina.";
 		rule fails.
 The vagina doesn't exist rule is listed in the vagina presentable rules.
 
-[!<TheVirginityIsImportantRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the virginity is important rule:
 	if flower hairclip is worn and there is a virginity taking monster in the location of the player:
 		if auto is 0, say "[variable custom style]No way. My virginity is way too important to me.[roman type][line break]";
 		rule fails.
 The virginity is important rule is listed in the vagina presentable rules.
 
-[!<TheTooMuchDignityToPresentVaginaRule>+
-
-REQUIRES COMMENTING
-
-+!]
 [This is the too much dignity to present vagina rule:
 	if the humiliation of the player < HUMILIATION-PROUD + 2000 and the player is not horny and debugmode < 1:
 		if auto is 0, say "You have too much self respect to do that!";
 		rule fails.
 The too much dignity to present vagina rule is listed in the vagina presentable rules.]
 
-[!<ThePlayerHatesVaginalSexRule>+
-
-REQUIRES COMMENTING
-
-+!]
 [This is the player hates vaginal sex rule:
 	if the vaginal sex addiction of the player + 2 < the soreness of vagina and the player is not horny and debugmode < 1:
 		if auto is 0, say "You don't like vaginal sex enough to ask for it while you are already feeling so [if the soreness of vagina < 5]raw[otherwise]sore[end if]!";
 		rule fails.
 The player hates vaginal sex rule is listed in the vagina presentable rules.]
-[!<TheMonsterDoesNotdoVaginalRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the monster doesn't do vaginal rule:
 	if auto > 0 and ((presenting-receiver is monster and presenting-receiver is not willing to do vaginal) or the number of willing to do vaginal monsters in the location of the player is 0), rule fails.
 The monster doesn't do vaginal rule is listed in the vagina presentable rules.
@@ -165,22 +125,12 @@ How much does the player want this body part to be used?
 To decide which number is the desire of (B - vagina):
 	decide on the vaginal sex addiction of the player.
 
-[!<PlayerIsPossessingVagina>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: yourself is possessing a vagina:
 	if the openness of vagina > -1, decide yes;
 	decide no.
 
 Part 2 - Description
 
-[!<SayShortDescOfVagina>+
-
-REQUIRES COMMENTING
-
-+!]
 To say ShortDesc of vagina:
 	if the player is female:
 		if diaper quest is 0:
@@ -204,11 +154,6 @@ Less brief details (size, exposure, semen)
 To say MediumDesc of (V - vagina):
 	say "[if vagina is lewdly exposed]fully exposed [otherwise if vagina is at least partially lewdly exposed]slightly visible [otherwise if vagina is not exposed]concealed [end if][if the openness of vagina > 4 and diaper quest is 0][PussyGape openness of vagina] [end if][if the semen volume of vagina > 0]cum leaking [end if]pussy".
 
-[!<SayPussyGapeNumber>+
-
-REQUIRES COMMENTING
-
-+!]
 To say PussyGape (N - a number):
 	if N < 2, say "virgin[if the vaginalvirgin of the player is 0]-like[end if]";
 	if N is 2, say "very tight";
@@ -221,11 +166,6 @@ To say PussyGape (N - a number):
 	if N is 9, say "gaping wide";
 	if N is 10, say "impossibly stretched".
 
-[!<SayTotalDescOfVagina>+
-
-REQUIRES COMMENTING
-
-+!]
 To say TotalDesc of vagina:
 	if the player is female:
 		if the openness of vagina < 2, say "Your virgin[if the vaginalvirgin of the player is 0]-like[end if] [vagina] ";
@@ -261,11 +201,6 @@ To say TotalDesc of vagina:
 			otherwise say "[if the womb volume of vagina > 3]A huge amount of[otherwise]Some[end if] [semen] has made it into your [if pregnancy fetish is 1 and the pregnancy of the player is 0]fertile [end if]womb. ";
 		if there is a lubricant covering vagina, say "It is dripping with slippery [lubricant]. ".
 
-[!<SayVaginaModesty>+
-
-REQUIRES COMMENTING
-
-+!]
 To say VaginaModesty:
 	if vagina is lewdly exposed:
 		if there is a pussy covering clothing:
@@ -288,11 +223,6 @@ Part 3 - Modify Vagina Stats
 
 Chapter 1 - Gape
 
-[!<GapeVaginaTimesNumber>+
-
-REQUIRES COMMENTING
-
-+!]
 To gape (A - vagina) times (X - a number):
 	now the previous openness of vagina is the openness of vagina;
 	while X > 0:
@@ -313,11 +243,6 @@ To gape (A - vagina) times (X - a number):
 			increase the openness of vagina by 1;
 			now ruined is 2.
 
-[!<PussyCloseNumber>+
-
-REQUIRES COMMENTING
-
-+!]
 To PussyClose (X - a number):
 	now the previous openness of vagina is the openness of vagina;
 	if the latex-transformation of the player > 2, now X is 0;
@@ -414,9 +339,15 @@ To PussyFill (X - a number):
 	if M is a thing, progress quest of vaginal-creampie-quest from M;
 	if there is a worn tethering lipstick collar, end tethering.
 
-Definition: vagina is accepting womb semen if the womb volume of vagina < 5 and the pregnancy of the player is 0. [If the womb is full or carrying a child then it can't get more semen in it via the old fashioned way]
-Definition: vagina is accepting womb eggs if the pregnancy of the player is 0 or the pregnancy of the player is 3.
-Definition: yourself is able to get pregnant if pregnancy fetish is 1 and the pregnancy of the player is 0 and the player is not in a predicament room.
+Definition: vagina is accepting womb semen:
+	if the womb volume of vagina < 5 and the pregnancy of the player is 0, decide yes;
+	decide no. [If the womb is full or carrying a child then it can't get more semen in it via the old fashioned way]
+Definition: vagina is accepting womb eggs:
+	if the pregnancy of the player is 0 or the pregnancy of the player is 3, decide yes;
+	decide no.
+Definition: yourself is able to get pregnant:
+	if pregnancy fetish is 1 and the pregnancy of the player is 0 and the player is not in a predicament room, decide yes;
+	decide no.
 
 [!<WombFillX>+
 
@@ -430,8 +361,8 @@ To WombFill (X - a number):
 			increase the womb volume of vagina by 1;
 			compute father material of vagina;
 			if the class of the player is faerie and the pregnancy of the player is 0:
-				MagicPowerUp 1;
 				say "[one of]Powerful[or]More[stopping] magic courses up through your [vagina] to the rest of your body!";
+				MagicPowerUp 1;
 			if there is an infernal monster penetrating vagina or there is a demonic thing penetrating vagina:
 				if the class of the player is priestess:
 					say "You feel yourself being weakened as [semen] enters your womb!";
@@ -458,11 +389,6 @@ To check sudden pregnancy:
 
 forcedFertility is initially false.
 
-[!<ComputeSuddenPregnancy>+
-
-REQUIRES COMMENTING
-
-+1]
 To compute sudden pregnancy:
 	if the pregnancy of the player is 0:
 		let M be a random family thing penetrating vagina;[Whatever just jizzed in the player should already by inseminating vagina thanks to the fact that we just computed the father material of vagina above]
@@ -487,51 +413,26 @@ To say SuddenPregTitle of (M - a thing):
 To say SuddenPregFlav of (M - a thing):
 	say "Suddenly[one of] and impossibly,[or][stopping] your belly bulges out to a [if the semen volume of vagina is 50]gigantic[otherwise]huge[end if] size! [one of][unless the father is the throne]You instinctively know that the [SuddenPregTitle of the father] has just made you pregnant.[end if][line break][variable custom style][if the semen addiction of the player < 7]Oh COME ON! You're seriously telling me that[otherwise]So[end if] this is how pregnancy works in this game?[or]You are once again instantly brought to full term pregnancy.[line break][variable custom style][if the semen addiction of the player > 14]Yippee![otherwise]Oof! So heavy...[end if][stopping][roman type][line break]".
 
-[!<PussyEmptyX>+
-
-REQUIRES COMMENTING
-
-+!]
 To PussyEmpty (X - a number):
 	while X > 0:
 		decrease X by 1;
 		if the semen volume of vagina > 0, decrease the semen volume of vagina by 1;
 	[cancel father material of vagina.][Should really only happen if we use the WombEmpty function]
 
-[!<PussySquirtX>+
-
-REQUIRES COMMENTING
-
-+!]
 To PussySquirt (X - a number):
 	PussyEmpty X;
 	leak vagina semen X.
 
-[!<WombSquirtX>+
-
-REQUIRES COMMENTING
-
-+!]
 To WombEmpty (X - a number):
 	while X > 0:
 		decrease X by 1;
 		if the womb volume of vagina > 0, decrease the womb volume of vagina by 1;
 	if the womb volume of vagina is 0, cancel father material of vagina. [If the womb is empty, we forget the list of things that have jizzed inside it]
 
-[!<WombSquirtX>+
-
-REQUIRES COMMENTING
-
-+!]
 To WombSquirt (X - a number):
 	WombEmpty X;
 	leak vagina semen X.
 
-[!<LeakVaginaSemen>+
-
-REQUIRES COMMENTING
-
-+!]
 To leak vagina semen (X - a number):
 	let K be a random bottom level pee protection clothing worn by the player;
 	if K is clothing and bukkake fetish is 1:
@@ -541,69 +442,34 @@ To leak vagina semen (X - a number):
 	otherwise:
 		CumThighsUp X.
 
-[!<ComputeFatherMaterialOfThing>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute father material of (T - a thing):
 	do nothing.
 
-[!<ComputeFatherMaterialOfVagina>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute father material of (F - a body part):
 	repeat with M running through father material things penetrating F:
 		now M is inseminating F.
 
-[!<ComputeFatherMaterialOfVagina>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute father material of (F - vagina):
 	if the pregnancy of the player is 0: [Once pregnant you don't get any more potential fathers!]
 		repeat with M running through father material things penetrating F:
 			now M is inseminating F.
 
-[!<ComputeFatherMaterialOfThingIntoThing>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute father material of (F - a thing) into (T - a thing):
 	if the pregnancy of the player is 0 or T is not vagina: [Just in case]
 		repeat with M running through things inseminating F:
 			now M is inseminating T.
 
-[!<ComputeFatherMaterialOfThingIntoVagina>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute father material of (F - a thing) into (T - vagina):
 	if the pregnancy of the player is 0: [Once pregnant you don't get any more potential fathers!]
 		repeat with M running through things inseminating F:
 			now M is inseminating T.
 
-[!<CancelFatherMaterial>+
-
-REQUIRES COMMENTING
-
-+!]
 To cancel father material:
 	repeat with F running through body parts:
 		cancel father material of F;
 	repeat with F running through off-stage vessels:
 		cancel father material of F.
 
-[!<CancelFatherMaterialOfThing>+
-
-REQUIRES COMMENTING
-
-+!]
 To cancel father material of (T - a thing):
 	repeat with M running through things inseminating T:
 		now M is not inseminating T.

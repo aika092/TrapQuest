@@ -1,10 +1,5 @@
 Kneeing by Actions begins here.
 
-[!<DecideWhichNumberIsTheKneeDamageOfPerson>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the knee damage of (P - a person):
 	if backgroundCombatCalculation is false and damage-explained <= 1, decide on saved-knee-damage;
 	if damage-explained > 1, say "[input-style]Base knee damage calculation: [bracket]3 (base damage) ";
@@ -42,11 +37,6 @@ permanent-knee-bonus is a number that varies.
 
 Kneeing is an action applying to one thing.
 
-[!<CheckKneeing>+
-
-REQUIRES COMMENTING
-
-+!]
 Check kneeing:
 	if the noun is container, try MimicInvestigating the noun instead;
 	if the noun is lake monster, say "You can't reach it from here." instead;
@@ -58,11 +48,6 @@ Check kneeing:
 	if the player is not able to knee, do nothing instead;
 	if the noun is too intimidating, compute surrender to the noun instead.
 
-[!<CarryOutKneeing>+
-
-REQUIRES COMMENTING
-
-+!]
 Carry out kneeing:
 	allocate 6 seconds;
 	now attack-type is 2;

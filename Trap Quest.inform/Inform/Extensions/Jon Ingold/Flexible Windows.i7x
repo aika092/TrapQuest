@@ -37,8 +37,12 @@ A g-window type is a kind of value.
 The g-window types are g-text-buffer, g-text-grid and g-graphics.
 The specification of a g-window type is "Glk windows are one of these three types."
 A g-window has a g-window type called type.
-Definition: a g-window is graphical rather than textual if the type of it is g-graphics.
-Definition: a g-window is buffering rather than non-buffering if the type of it is g-text-buffer.
+Definition: a g-window is graphical rather than textual:
+	if the type of it is g-graphics, decide yes;
+	decide no.
+Definition: a g-window is buffering rather than non-buffering:
+	if the type of it is g-text-buffer, decide yes;
+	decide no.
 
 A graphics g-window is a kind of g-window.
 The type of a graphics g-window is g-graphics.
@@ -51,7 +55,9 @@ A g-window position is a kind of value.
 The g-window positions are g-placenull, g-placeleft, g-placeright, g-placeabove and g-placebelow.
 The specification of a g-window position is "Specifies which direction a window will be split off from its parent window."
 A g-window has a g-window position called position.
-Definition: a g-window is vertically positioned rather than horizontally positioned if the position of it is at least g-placeabove.
+Definition: a g-window is vertically positioned rather than horizontally positioned:
+	if the position of it is at least g-placeabove, decide yes;
+	decide no.
 
 A g-window scale method is a kind of value.
 The g-window scale methods are g-proportional, g-fixed-size and g-using-minimum.
@@ -216,9 +222,13 @@ Section - Calibrating windows - unindexed
 
 A g-window can be currently being processed.
 
-Definition: a g-window is paternal rather than childless if it spawns a g-present g-window.
+Definition: a g-window is paternal rather than childless:
+	if it spawns a g-present g-window, decide yes;
+	decide no.
 
-Definition: a g-window is a next-step if it is the main window or it is spawned by something g-present.
+Definition: a g-window is a next-step:
+	if it is the main window or it is spawned by something g-present, decide yes;
+	decide no.
 
 To calibrate windows:
 	[ Close windows that shouldn't be open and then open windows that shouldn't be closed ]

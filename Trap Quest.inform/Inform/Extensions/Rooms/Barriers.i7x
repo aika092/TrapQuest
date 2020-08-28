@@ -9,21 +9,11 @@ REQUIRES COMMENTING
 @!]
 A barrier is a kind of thing. A barrier is not portable. Understand "barrier" as barrier.
 
-[!<CheckGoingWhenThereIsABarrierInTheLocationOfThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 Check going when there is a barrier in the location of the player:
 	follow the barriers raising rule;
 	let B be a random barrier in the location of the player;
 	if B is barrier, say "You can't go that way, there is a [B] blocking the exit!" instead.
 
-[!<TheBarriersRaisingRule>+
-
-REQUIRES COMMENTING
-
-+!]
 An all later time based rule (this is the barriers raising rule):
 	repeat with B running through on-stage barriers:
 		compute raising of B.
@@ -46,11 +36,6 @@ REQUIRES COMMENTING
 @!]
 A modesty shutter is a kind of barrier. There is 1 modesty shutter.
 
-[!<ComputeRaisingOfModestyShutter>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute raising of (B - a modesty shutter):
 	if (the number of patrons in the location of B is 0 and dominatrix is not in the location of the player) or the player is not in the location of B:
 		now neighbour finder is the location of B;

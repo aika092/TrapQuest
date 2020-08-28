@@ -133,7 +133,7 @@ To HoleWait:
 		calm M;
 		distract M;
 		now the boredom of M is 30;
-		say "A little while later you feel someone gripping you by your hips! [line break][variable custom style]Are they going to help pull me out?[roman type][line break]You are pleased to find that indeed they are![line break][first custom style]'[caps please] REMAIN CALM, YOU ARE BEING RESCUED.'[roman type][line break]You are powerfully yet carefully extracted from your embarrassing prison.";
+		say "A little while later you feel someone gripping you by your hips![line break][variable custom style]Are they going to help pull me out?[roman type][line break]You are pleased to find that indeed they are![line break][first custom style]'[caps please] REMAIN CALM, YOU ARE BEING RESCUED.'[roman type][line break]You are powerfully yet carefully extracted from your embarrassing prison.";
 		now the player is in the source-room of the location of the player;
 		say "You look around and see [NameDesc of M], having already lost interest with you after rescuing you, is busying itself with other things.";
 		refresh the map-window;
@@ -165,7 +165,7 @@ Definition: hole-spank is appropriate: decide yes.
 
 To compute punishment of (P - hole-spank):
 	now the priority of P is 1;
-	say "Suddenly you feel a hand groping your butt! [line break][variable custom style][if the delicateness of the player < 8]What the fuck, let go of me! [otherwise]Who's this? [end if][roman type][line break]All of a sudden the anonymous hand pulls back, and comes down hard with a spank! Two, three, four, five, six! Your rear is assaulted by a series of blows.";
+	say "Suddenly you feel a hand groping your butt![line break][variable custom style][if the delicateness of the player < 8]What the fuck, let go of me! [otherwise]Who's this? [end if][roman type][line break]All of a sudden the anonymous hand pulls back, and comes down hard with a spank! Two, three, four, five, six! Your rear is assaulted by a series of blows.";
 	if the latex-transformation of the player > 5:
 		say "You hardly feel anything thanks to your rubbery butt cheeks.";
 	otherwise:
@@ -235,7 +235,7 @@ To compute punishment of (P - hole-wank):
 			increase wank-attempts by 1;
 			compute extra turn;
 		if refractoryperiod > 0, say "The anonymous hand's owner is clearly satisfied with that as you feel it let go, lovingly pat your bottom a couple of times for good measure, and then leave you alone.";
-		otherwise say "The anonymous hand's owner decides to leave you unsatisfied. [line break][variable custom style][if the humiliation of the player >= 40000]Denied release again, just like I always deserve.[otherwise if the player is not a pervert]I don't even know if I'm glad or not that I didn't cum...[otherwise]Nnng... so close... please come back...[end if][roman type][line break]".
+		otherwise say "The anonymous hand's owner decides to leave you unsatisfied.[line break][variable custom style][if the humiliation of the player >= 40000]Denied release again, just like I always deserve.[otherwise if the player is not a pervert]I don't even know if I'm glad or not that I didn't cum...[otherwise]Nnng... so close... please come back...[end if][roman type][line break]".
 
 hole-strip is hole-in-wall punishment.
 Definition: hole-strip (called P) is appropriate:
@@ -264,7 +264,7 @@ Definition: hole-enema (called P) is appropriate:
 
 To compute punishment of (P - hole-enema):
 	now the priority of P is 1;
-	say "All of a sudden you feel a hand on your butt! [line break][variable custom style]Uh-oh, what now?[roman type][line break]";
+	say "All of a sudden you feel a hand on your butt![line break][variable custom style]Uh-oh, what now?[roman type][line break]";
 	let C be a random worn top level ass protection clothing;
 	while C is clothing:
 		if C is displacable:
@@ -295,7 +295,7 @@ Definition: hole-tattoo (called P) is appropriate:
 To compute punishment of (P - hole-tattoo):
 	now the priority of P is 1;
 	summon princess-tattoo;
-	say "All of a sudden you hear a low electric buzzing! [line break][variable custom style]That can't be good. [roman type][line break]Suddenly a sharp pain hits your lower back!";
+	say "All of a sudden you hear a low electric buzzing![line break][variable custom style]That can't be good. [roman type][line break]Suddenly a sharp pain hits your lower back!";
 	PainUp 1;
 	say "You [if the delicateness of the player < 9]begrudgingly [end if]hold perfectly still as the stranger gives you a tramp stamp tattoo! When it is complete, you can feel the magic inside the ink come alive. Not only can you feel that it is affecting your body and mind, but even though you can't physically see the tattoo you can see a picture of it clearly in your inner mind.";
 	try examining princess-tattoo.
@@ -303,7 +303,7 @@ To compute punishment of (P - hole-tattoo):
 hole-piercing is hole-in-wall punishment.
 Definition: hole-piercing (called P) is appropriate:
 	if diaper quest is 1, decide no;
-	if the player is male, decide no;
+	if the player is not possessing a vagina, decide no;
 	if the player is pussy protected, decide no;
 	if clitoris piercing is worn and clitoris lead is worn, decide no;
 	decide yes.
@@ -311,9 +311,9 @@ Definition: hole-piercing (called P) is appropriate:
 To compute punishment of (P - hole-piercing):
 	now the priority of P is 1;
 	let C be normal clit piercing;
-	say "You feel cold smooth fingers grab hold of your [if C is worn][ShortDesc of C][otherwise]clit[end if]! [line break][variable custom style]Eek![roman type][line break]";
+	say "You feel cold smooth fingers grab hold of your [if C is worn][ShortDesc of C][otherwise]clit[end if]![line break][variable custom style]Eek![roman type][line break]";
 	if there is a worn clitoris piercing, now C is clitoris lead;
-	summon C cursed;
+	summon C cursed with persistent quest;
 	say "Suddenly, a hot burning sensation!";
 	PainUp 2;
 	say "You can't help but scream in pain as [if C is clitoris lead]it is heated up and a [ShortDesc of C] is attached to it[otherwise]your clitoris is pierced with a burning hot needle and a [ShortDesc of C] is slotted inside[end if].[line break][variable custom style][if the bimbo of the player < 12]This is not good.[otherwise]Uh-oh, I think I might be in a bit of a pickle here! *giggle*[end if][roman type][line break]";
@@ -343,7 +343,9 @@ To compute punishment of (P - hole-plug):
 		say FullExamineDesc of C.
 
 hole-gatling-fuck is hole-in-wall punishment.
-Definition: hole-gatling-fuck is appropriate if diaper quest is 0 and the player is not diaper focused.
+Definition: hole-gatling-fuck is appropriate:
+	if diaper quest is 0 and the player is not diaper focused and hole-in-wall-turns > 7, decide yes;
+	decide no.
 hole-in-wall has a number called gatling-girth.
 To decide which number is the girth of (H - hole-in-wall):
 	decide on gatling-girth of H.
@@ -354,7 +356,7 @@ To compute punishment of (P - hole-gatling-fuck):
 	choose a sex method;
 	if targeted-body-part is vagina, now F is vagina;
 	if F is asshole and the player is possessing a vagina and pregnancy fetish is 1 and a random number between 1 and 2 is 1, now F is vagina; [more chance to be vaginal if you like pregnancy]
-	say "A large amount of noise begins to grow from behind you, and soon you can hear the indistinct chatter of a huge group of men. Then out of nowhere, you feel someone gripping you by the hips! [line break][variable custom style]Are they going to help pull me out?[roman type][line break]";
+	say "A large amount of noise begins to grow from behind you, and soon you can hear the indistinct chatter of a huge group of men. Then out of nowhere, you feel someone gripping you by the hips![line break][variable custom style]Are they going to help pull me out?[roman type][line break]";
 	let C be a random worn top level protection clothing;
 	if F is asshole, now C is a random worn top level ass protection clothing;
 	say "Your question is answered as the hands begin to [if C is clothing]pull at your clothing[otherwise]find their way towards your [variable F][end if].[line break][variable custom style]No, he's going to fuck me![roman type][line break]";

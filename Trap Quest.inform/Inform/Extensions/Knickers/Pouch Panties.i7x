@@ -1,6 +1,6 @@
 Pouch Panties by Knickers begins here.
 
-pouch-panties is a knickers. pouch-panties is unique. The armour of pouch-panties is 6. The printed name of pouch-panties is "[clothing-title-before]pouch panties[clothing-title-after]". The soak-limit of pouch-panties is 9. The text-shortcut of pouch-panties is "pou". pouch-panties is crotch-assless. Understand "pouch", "panties" as pouch-panties.
+pouch-panties is a knickers. pouch-panties is unique. The armour of pouch-panties is 6. The printed name of pouch-panties is "[clothing-title-before]pouch panties[clothing-title-after]". The text-shortcut of pouch-panties is "pou". pouch-panties is crotch-assless. Understand "pouch", "panties" as pouch-panties.
 
 Definition: pouch-panties is displacable: decide yes.
 Definition: pouch-panties is black themed: decide yes.

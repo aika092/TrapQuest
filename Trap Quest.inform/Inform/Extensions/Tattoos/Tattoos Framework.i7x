@@ -41,7 +41,8 @@ When play begins: [This will help with debugging as we will be able to tell the 
 		TattooNameAssign T.
 
 To say ExamineDesc of (T - a tattoo):
-	say tattoo-desc of T.
+	say tattoo-desc of T;
+	if the anal sensitivity influence of T > 0, say "You can sense that it is [if the anal sensitivity influence of T > 1]significantly [end if]magically enhancing the pleasure you receive from your [asshole].".
 
 To say tattoo-desc of (T - a tattoo):
 	say "This is a [ShortDesc of T]".

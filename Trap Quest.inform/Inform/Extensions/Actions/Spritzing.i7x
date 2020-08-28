@@ -19,8 +19,8 @@ Check spritzing it with:
 		allocate 2 seconds;
 		say "You pull the trigger, but nothing comes out. It's out of juice!" instead.[The player can carry around a maximum of 5 charges, but it can be used 3 more times before it's completely out of juice.]
 Carry out spritzing it with:
-	if the second noun is spray, say "You aim the spray nozzle at [NameDesc of the noun] and pull the trigger. [line break][BigNameDesc of the noun] sparkles as you blast it with lemon-scented liquid. The grime disappears just like magic!";
-	otherwise say "You put the washcloth on the [NameDesc of the noun] and begin rubbing it in tiny semicircles. [line break]The [printed name of the second noun] sparkles as it absorbs every speck of dirt it comes into contact with. The grime disappears just like magic!";
+	if the second noun is spray, say "You aim the spray nozzle at [NameDesc of the noun] and pull the trigger.[line break][BigNameDesc of the noun] sparkles as you blast it with lemon-scented liquid. The grime disappears just like magic!";
+	otherwise say "You put the washcloth on the [NameDesc of the noun] and begin rubbing it in tiny semicircles.[line break]The [printed name of the second noun] sparkles as it absorbs every speck of dirt it comes into contact with. The grime disappears just like magic!";
 	clean the noun;
 	if the charge of the second noun > 0, decrease the charge of the second noun by 1;
 	otherwise decrease the work ethic of the second noun by 100;

@@ -53,8 +53,12 @@ To decide which figure-name is the clothing-image of (C - pink sissy bow):
 To decide which number is the initial cringe of (C - pink sissy bow):
 	decide on 3.
 
-Definition: pink sissy bow is transformation-protected if diaper lover <= 0.
-Definition: pink sissy bow is roleplay if the player is male.
+Definition: pink sissy bow is transformation-protected:
+	if diaper lover <= 0, decide yes;
+	decide no.
+Definition: pink sissy bow is roleplay:
+	if the player is male, decide yes;
+	decide no.
 
 To say ClothingDesc of (H - pink sissy bow):
 	say "A huge pink sissy bow on a hairclip. [if H is worn]It makes you feel[otherwise]It looks[end if] very feminine.".
@@ -86,7 +90,9 @@ To say ClothingDesc of (H - baby sissy bow):
 To say ShortDesc of (H - baby sissy bow):
 	say "blue baby sissy bow".
 
-Definition: baby sissy bow is fetish appropriate if diaper lover > 0.
+Definition: baby sissy bow is fetish appropriate:
+	if diaper lover > 0, decide yes;
+	decide no.
 Definition: baby sissy bow is blue themed: decide yes.
 
 Sissy Bow ends here.

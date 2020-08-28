@@ -1,17 +1,7 @@
 Paying by Actions begins here.
 
-[!<paying:Action>*
-
-REQUIRES COMMENTING
-
-*!]
 Paying is an action applying to nothing.
 
-[!<CheckPaying>+
-
-REQUIRES COMMENTING
-
-+!]
 Check paying:
 	if the player is not in Dungeon41, say "You can only pay in the shop.";
 	let X be 0;
@@ -29,11 +19,6 @@ Check paying:
 		allocate 2 seconds;
 		say "[speech style of shopkeeper]'What's mine is yours!'[roman type][line break]" instead.
 
-[!<CarryOutPaying>+
-
-REQUIRES COMMENTING
-
-+!]
 Carry out paying:
 	let Z be a random off-stage clothing;
 	repeat with C running through held store things:
@@ -63,11 +48,6 @@ Carry out paying:
 		force inventory-focus redraw. [Forces redraw of inventory window]
 Understand "pay", "buy", "sell", "exchange", "purchase", "transact", "pay shopkeeper" as paying.
 
-[!<ReportTakingStoreClothingWhileThePlayerIsInDungeon41AndDungeon41IsGuardedAndARandomShopkeeperIsNotMatingThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 Report taking store thing while the player is in Dungeon41 and Dungeon41 is guarded and shopkeeper is not mating and shopkeeper is interested and shopkeeper is friendly:
 	let P be the price of the noun;
 	if the total wealth of the player < P:
@@ -94,11 +74,6 @@ Report taking store thing while the player is in Dungeon41 and Dungeon41 is guar
 				decrease E by 1;
 			try paying.
 
-[!<DecideWhichNumberIsTheTotalValueOfJewellery>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the total value of (jewellery - list of objects):
 	let N be 0;
 	repeat with J running through jewellery:

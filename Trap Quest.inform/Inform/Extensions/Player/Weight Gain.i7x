@@ -2,21 +2,11 @@ Weight Gain by Player begins here.
 
 Part 1 - Calculate Weight Stats
 
-[!<DecideWhichNumberIsTheFatWeightOfThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the fat-weight of the player:
 	let F be the flesh volume of thighs + the flesh volume of arms + the flesh volume of hips + the flesh volume of belly;
 	if F > 0, decide on F;
 	decide on 0.
 
-[!<DecideWhichNumberIsTheWeightOfThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the weight of the player:
 	let B be 0;
 	repeat with P running through body parts:
@@ -27,11 +17,6 @@ To decide which number is the weight of the player:
 	if the latex-transformation of the player > 6 and B > 0, now B is 0; [THIS SHOULD NOT BE NECESSARY, but at the moment it is here as a failsafe.]
 	decide on B.
 
-[!<DecideWhichNumberIsTheRelievedHeavinessOfThing>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the relieved heaviness of (H - a thing):
 	if H is currently-in-bag, decide on 0;
 	decide on the heaviness of H.
@@ -50,20 +35,10 @@ weightSaved is a number that varies.
 savedInventoryWeight is a number that varies.
 savedWornWeight is a number that varies.
 
-[!<DecideWhcihNumberIsInventoryWeight>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is inventory weight:
 	if weightSaved is 0, update weight;
 	decide on savedInventoryWeight.
 
-[!<DecideWhichNumberIsWornWeight>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is worn weight:
 	if weightSaved is 0, update weight;
 	decide on savedWornWeight.
@@ -106,7 +81,9 @@ Base calculation on how much items are weighing the player down.
 To decide which number is item weight:
 	decide on ((inventory weight + worn weight) * 10) / (10 + (background-sporty * 2)).
 
-Definition: yourself is overburdened if item weight > 6.
+Definition: yourself is overburdened:
+	if item weight > 6, decide yes;
+	decide no.
 
 An all later time based rule (this is the reset overburdened rule):
 	now weightSaved is 0.
@@ -128,11 +105,6 @@ Report taking off something:
 
 Part 2 - Manage Fat Stats
 
-[!<CarryOutGoing>+
-
-REQUIRES COMMENTING
-
-+!]
 Carry out going:
 	if the player is upright:
 		compute upright fatigue gain;
@@ -184,18 +156,8 @@ An all time based rule (this is the training rule):
 
 Part 3 - Modify Fat Stats
 
-[!<Player>@<fatBurning:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 The player has a number called fat-burning. The fat-burning of the player is usually 0.
 
-[!<FatUpX>+
-
-REQUIRES COMMENTING
-
-+!]
 To FatUp (X - a number):
 	if weight gain fetish is 1:
 		if the latex-transformation of the player > 3, now X is 0;
@@ -213,11 +175,6 @@ To FatUp (X - a number):
 		otherwise if the fat-weight of the player > 11:
 			say "[one of][line break][variable custom style]I've started to put on the pounds, haven't I...[roman type][line break][FatCutscene 1][or][stopping]".
 
-[!<FatDownX>+
-
-REQUIRES COMMENTING
-
-+!]
 To FatDown (X - a number):
 	if heavyweight tattoo is worn and a random number between 0 and X > 0, decrease X by 1;
 	while X > 0:
@@ -227,21 +184,11 @@ To FatDown (X - a number):
 		FatAssDown 1;
 		decrease X by 1.
 
-[!<FatCutsceneNumber>+
-
-REQUIRES COMMENTING
-
-+!]
 To say FatCutscene (N - a number):
 	if N is 1, appropriate-cutscene-display figure of fat growth 1;
 	if N is 2, appropriate-cutscene-display figure of fat growth 2;
 	if N is 3, appropriate-cutscene-display figure of fat growth 3.
 
-[!<ComputeFatBurningReset>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute fat burning reset:
 	say "You feel that by resting here, all the recent exercise you have done has gone to waste.";
 	now the fat-burning of the player is 0;
@@ -250,11 +197,6 @@ To compute fat burning reset:
 
 Part 4 - Describe Fat Stats
 
-[!<SayInventoryWeightDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say InventoryWeightDesc:
 	say "[if inventory weight > 20]You are carrying much too many items and this is forcing you to rest on your knees extremely frequently.[otherwise if inventory weight > 16]You are carrying a large number of items that weigh you down a huge amount.[otherwise if inventory weight > 12]You are weighed down a large amount by the items you are carrying.[otherwise if inventory weight > 8]You are weighed down a significant amount by the items you are carrying.[otherwise if inventory weight > 4]The items you are carrying are weighing you down a bit.[otherwise if inventory weight > 0]The items you are carrying hardly weigh anything at all.[otherwise][line break][end if]".
 

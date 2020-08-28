@@ -362,7 +362,9 @@ chess-lesson has a number called chess-refused.
 chess-lesson has a number called student-latest-percent.
 chess-lesson has a number called player-latest-percent.
 
-Definition: chess-lesson is lesson-appropriate if the chess-victor of it is 0 and the chess-refused of it is 0.
+Definition: chess-lesson is lesson-appropriate:
+	if the chess-victor of it is 0 and the chess-refused of it is 0, decide yes;
+	decide no.
 
 Figure of chess table is the file "Env/School/chesstable1.png".
 
@@ -385,7 +387,10 @@ To compute teaching of (L - chess-lesson):
 	if ST is nothing, now ST is a random student in the location of the player;
 	say "After a couple of moments [NameDesc of ST] stands to [his of ST] feet, audibly gulping but with a serious and determined expression on [his of ST] face. But nobody else seems willing to join [him of ST]. It looks like this 'high-stakes speed chess' game is only going to happen if you volunteer to be [NameDesc of ST][']s opponent. Do you take up the challenge? ";
 	if the player is bimbo consenting:
-		say "You stand up. [BigNameDesc of M] smiles warmly.[line break][speech style of M]'Oh, well volunteered! The headmistress will be so [please]d. You'll both need one of these, and I'm afraid you're not allowed any other clothing.'[roman type][line break]";
+		say "You stand up.";
+		repeat with FST running through students in the location of the player:
+			unless ST is FST, FavourUp FST;
+		say "[BigNameDesc of M] smiles warmly.[line break][speech style of M]'Oh, well volunteered! The headmistress will be so [please]d. You'll both need one of these, and I'm afraid you're not allowed any other clothing.'[roman type][line break]";
 		repeat with C running through worn stealable clothing:
 			unless C is plentiful accessory:
 				say "[BigNameDesc of M] confiscates your [ShortDesc of C]!";
@@ -1082,6 +1087,8 @@ To compute teaching of (L - enema-race-lesson):
 		now the fatigue of the player is 0; [Needed for balance]
 	otherwise:
 		say "You hesitate and hang back as [NameDesc of S1] and [NameDesc of S2] step forward. You'll have to just watch for today.";
+		repeat with ST running through innocent students in the location of the player:
+			unless ST is S1 or ST is S2, FavourUp ST;
 	say "[if S1 is the player]You[otherwise][NameDesc of S1][end if] and [NameDesc of S2] are given very bulky white diapers to wear giving [if S1 is the player]you[otherwise]them[end if] each a bit of a waddle. Not really the ideal type of clothing for sprinting. [if S1 is the player]You[otherwise]They[end if] are both made to bend over and enema kits are used to slowly but surely fill [if S1 is the player]your[otherwise]their[end if] bellies. [if S1 is the player]Your[otherwise]Their[end if] bellies start to visibly expand until [if S1 is the player]you[otherwise]they[end if] both look nine months pregnant.";
 	say "[one of]While the enemas are going in, [NameDesc of M] gives a briefing.[line break][speech style of M]'The rules are simple. You both keep running until you BOTH have expelled your enemas. The race ends 15 seconds after that and whoever is in front wins.'[roman type][line break][or][stopping][if S1 is the player]You[otherwise][NameDesc of S1][end if] and [NameDesc of S2] are led to the starting line and then with a bang the race begins.";
 	now bigGameLoop is 2; [tells the game not to refresh any windows]
@@ -1254,7 +1261,9 @@ Part - Dodgeball
 
 dodgeball-lesson is a lesson. The lesson-teacher of dodgeball-lesson is teacher-brooke.
 
-Definition: dodgeball-lesson is lesson-appropriate if diaper messing >= 3.
+Definition: dodgeball-lesson is lesson-appropriate:
+	if diaper messing >= 3, decide yes;
+	decide no.
 
 To compute teaching of (L - dodgeball-lesson):
 	allocate 30 seconds;
@@ -1414,7 +1423,7 @@ To compute teaching of (L - dodgeball-lesson):
 					otherwise now currentBallHolder is entry EN in LS2;
 					say "[NameDesc of ST] gives the ball to [YouDesc of currentBallHolder] before [he of ST] [one of]shuffles awkwardly[or]slowly waddles[purely at random] off the court[one of], blushing furiously[or] in shame[purely at random].";
 					now bodyTarget is thighs; [Player won't retaliate if it's a different player]
-				if yourself is not listed in LS1, say "Watching [NameDesc of ST] leave the court and join you[one of], [his of ST] face filled with shame, just makes you realise that you couldn't even manage to stay in the game as long as [him of ST], and have had to stand on the sidelines in a hypermessed diaper for even longer than [him of ST][or] once again makes you reflect on how [he of ST] lasted longer than you[stopping]. [moderateHumiliateReflect]";
+				if yourself is not listed in LS1, say "Watching [NameDesc of ST] leave the court and join you[one of], [his of ST] face filled with shame, just makes you realise that you couldn't even manage to stay in the game as long as [him of ST], and have had to stand on the sidelines in a hyper-messed diaper for even longer than [him of ST][or] once again makes you reflect on how [he of ST] lasted longer than you[stopping]. [moderateHumiliateReflect]";
 				remove ST from LST;
 		let playerMessNow be 0;
 		if rectum is 50:
@@ -1467,6 +1476,7 @@ To compute teaching of (L - dodgeball-lesson):
 	repeat with ST running through LST:
 		if ST is student[ and the lessonInt1 of ST < 2]:
 			say "[big he of M] [one of]point at[or]addresses[or]turns to[at random] [NameDesc of ST].[line break][speech style of M]'Congratulations [student-name of ST], you did a great job today.'[roman type][line break]";
+			if ST is listed in LS1, FavourUp ST by 2;
 			if ST is promotable:
 				promote ST;
 			otherwise:
@@ -1554,7 +1564,9 @@ To compute teaching of (M - teacher-kaylee):
 ultimate-lesson is a lesson. The lesson-teacher of ultimate-lesson is teacher-kaylee.
 
 An ultimate-lesson-object is a kind of object. An ultimate-lesson-object has a number called implant.
-Definition: an ultimate-lesson-object is eligible if the implant of it is 0.
+Definition: an ultimate-lesson-object is eligible:
+	if the implant of it is 0, decide yes;
+	decide no.
 To execute (E - an ultimate-lesson-object):
 	say "BUG - lesson object with no function.".
 
@@ -1611,7 +1623,9 @@ A magic consequences rule (this is the ultimate-lesson magic consequence rule):
 			increase suppository by 1.
 
 ultimate-lesson-mess is an ultimate-lesson-object.
-Definition: ultimate-lesson-mess is eligible if the implant of it is 0 and diaper messing >= 3.
+Definition: ultimate-lesson-mess is eligible:
+	if the implant of it is 0 and diaper messing >= 3, decide yes;
+	decide no.
 To execute (E - ultimate-lesson-mess):
 	say "[second custom style]When my body tells me to go poo, I should do as I'm told and do a number two![roman type][line break]A large circular white rune approaches your bottom and begins to phase inside you...".
 

@@ -78,8 +78,12 @@ To decide which figure-name is the monster-image of (M - goth mannequin):
 	decide on figure of goth mannequin.
 To say MediumDesc of (M - goth mannequin):
 	say "goth mannequin".
-Definition: goth mannequin is woods dwelling if doomed >= 5.
-Definition: goth mannequin is mansions dwelling if doomed > 2.
+Definition: goth mannequin is woods dwelling:
+	if doomed >= 5, decide yes;
+	decide no.
+Definition: goth mannequin is mansions dwelling:
+	if doomed > 2, decide yes;
+	decide no.
 
 To say mannequin-model of (M - mannequin):
 	if lady fetish is 2, say "male";
@@ -125,13 +129,7 @@ To set up (M - a mannequin):
 	now the health of M is the maxhealth of M.
 
 To decide which number is the starting difficulty of (M - mannequin):
-	decide on 5.
-
-[This is the spawn initial mannequin rule:
-	if the number of alive mannequins is 0:
-		let M be a random mannequin;
-		summon M in the woods.
-The spawn initial mannequin rule is listed in the setting up woods monsters rules.]
+	decide on 6.
 
 To DifficultyUp (M - a mannequin) by (X - a number):
 	while X > 0:
@@ -248,13 +246,13 @@ To compute anal sex of (M - a mannequin):
 	otherwise:
 		say "[if the player is sexed male][BigNameDesc of M] [one of]keeps expertly stroking your prostate[or]keeps skilfully prodding your prostate[or]firmly rubs your prostate[or]relentlessly prodding your prostate with expert movements of [his of M] fingers[at random][otherwise][BigNameDesc of M] keeps [one of]expertly pressing on your G-spot through your [asshole][or]pressing that same spot inside your hole, always with that perfectly maddening amount of force[or]rubbing your G-spot through your [asshole], endlessly repeating [his of M] perfect movements[at random][end if][run paragraph on]";
 	[How she's interacting with your crotch.]
-	if there is a worn chastity cage:
+	if chastity-belt is worn or (there is a worn chastity cage and the player is not possessing a vagina):
 		say ", as if milking an orgasm out of you!";
-	otherwise if the player is female:
-		say " as [he of M] [if there is pussy covering clothing]rubs your clit[otherwise][one of]strokes[or]teases[at random] your clit[end if], as if milking an orgasm out of you!";
 	otherwise if the player is possessing a penis:
 		say " as [he of M] [unless there is pussy covering clothing and the size of penis > 2][one of]pumps[or]strokes[or]jerks off[at random] your [ShortDesc of penis][otherwise]massages your [ShortDesc of penis][end if], [if the size of penis < 3]as if it was a clitoris![otherwise]as if milking you![end if]";
-	otherwise:
+	otherwise if the player is possessing a vagina:
+		say " as [he of M] [if there is pussy covering clothing]rubs your clit[otherwise][one of]strokes[or]teases[at random] your clit[end if], as if milking an orgasm out of you!";
+	otherwise: [failsafe]
 		say ", as if milking an orgasm out of you!";
 	increase the sex-length of M by 1.
 
@@ -340,10 +338,12 @@ To compute (M - a mannequin) entering anally:
 		say "[BigNameDesc of M] pushes a [printed name of P] into your [asshole], [if the player is not possessing a penis]angling it toward [himself of M] as [he of M] begins pumping it in and out of your hole[otherwise]angling it against your prostate with pinpoint accuracy as [he of M] begins pumping it in and out of your hole[end if].";
 	otherwise:
 		say "[BigNameDesc of M] inserts two fingers into your [asshole], and starts stroking in a come hither motion.";
-	if the player is female:
-		say "[unless there is a worn chastity cage or the player is pussy protected]With [his of M] other hand [he of M] starts expertly pinching and rubbing your clitoris. [end if][big he of M]'s trying to force an orgasm out of you!";
+	if there is a worn chastity-belt:
+		say "[big he of M] holds you still with [his of M] other hand. It's like [he of M]'s trying to force an anal orgasm out of you!";
 	otherwise if the player is possessing a penis:
 		say "[big he of M] [if there is a worn chastity cage]grasps your testicles with [his of M] other hand, delicately massaging them as [his of M] faux-knuckles bump against your cage. [otherwise if the size of penis > 3]grabs your [ShortDesc of penis] with [his of M] other hand and skilfully begins stroking away. [otherwise]delicately teasing your [ShortDesc of penis] with [his of M] fingertips. [end if][big he of M]'s trying to force an orgasm out of you!";
+	otherwise if the player is possessing a vagina:
+		say "[unless the player is pussy protected]With [his of M] other hand [he of M] starts expertly pinching and rubbing your clitoris. [end if][big he of M]'s trying to force an orgasm out of you!";
 	otherwise:
 		say "[big he of M] holds you still with [his of M] other hand. It's like [he of M]'s trying to force an anal orgasm out of you!";
 	cutshow figure of mannequin cutscene 3 for M;
@@ -356,7 +356,7 @@ This is the mannequin forces orgasm through diaper rule:
 		let D be a random worn diaper;
 		while the coverer of D is clothing:
 			now D is the coverer of D;
-		say "[BigNameDesc of M] seems to detect that you are very aroused. Staring directly into your eyes with [his of M] blank expression, [he of M] presses a hand to the front of your [D] and pushes firmly. [big his of M] hand begins to vibrate, and within seconds has reached an intensely strong force[if there is a worn chastity cage]! The pulses flow straight through your [random worn chastity cage] and into your [genitals][end if]! [line break][variable custom style]Unfff... it's too strong! I'm gonna...[roman type][line break]Your eyes roll into the back of your head and you start shaking.";
+		say "[BigNameDesc of M] seems to detect that you are very aroused. Staring directly into your eyes with [his of M] blank expression, [he of M] presses a hand to the front of your [D] and pushes firmly. [big his of M] hand begins to vibrate, and within seconds has reached an intensely strong force[if there is a worn chastity bond]! The pulses flow straight through your [random worn chastity bond] and into your [genitals][end if]![line break][variable custom style]Unfff... it's too strong! I'm gonna...[roman type][line break]Your eyes roll into the back of your head and you start shaking.";
 		orgasm;
 		SexAddictUp 1;
 		say "[BigNameDesc of M] cocks [his of M] creepy head to one side, silently pulls [his of M] hand away and then leaves you alone to recover[if the player is male and the bimbo of the player < 6]I can't believe I just came into my diaper...[end if].[roman type][line break]";

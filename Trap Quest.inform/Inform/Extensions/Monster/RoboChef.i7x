@@ -30,13 +30,6 @@ To set up (M - a robochef):
 To decide which number is the starting difficulty of (M - robochef):
 	decide on 8.
 
-[This is the spawn initial robochef rule:
-	if the number of alive robochefs is 0:
-		let M be a random robochef;
-		if debugmode > 0, say "Summoning chef in hotel.";
-		summon M in the hotel.
-The spawn initial robochef rule is listed in the setting up hotel monsters rules.]
-
 To decide which number is the girth of (M - a robochef):
 	decide on 4.
 
@@ -51,9 +44,9 @@ Part 1 - Misc Flavour
 To say SummoningFlav of (M - a robochef):
 	if M is in the location of the player:
 		let P be a random patron;
-		say "The teleporter emits a definitive sounding hum, and light fills the room as a large, [if lady fetish is 1]vase[otherwise]barrel[end if] shaped robot materialises on the pad. [line break][first custom style]'CULINARY WORK SEQUENCE COMMENCING.'[roman type][line break]";
+		say "The teleporter emits a definitive sounding hum, and light fills the room as a large, [if lady fetish is 1]vase[otherwise]barrel[end if] shaped robot materialises on the pad.[line break][first custom style]'CULINARY WORK SEQUENCE COMMENCING.'[roman type][line break]";
 	otherwise:
-		say "You hear the sound of a robotic voice coming from elsewhere in the hotel. [line break][first custom style]'CULINARY WORK SEQUENCE COMMENCING.'[roman type][line break]".
+		say "You hear the sound of a robotic voice coming from elsewhere in the hotel.[line break][first custom style]'CULINARY WORK SEQUENCE COMMENCING.'[roman type][line break]".
 
 To say LeftoverDesc (N - 119):
 	say "There is a pile of mangled nuts and bolts here that used to be a fully functional robochef.[line break]".
@@ -105,12 +98,12 @@ To compute disapproval of (M - a robochef):
 To compute perception of (M - a robochef):
 	say "[BigNameDesc of M] notices you!";
 	if the number of plentiful accessories carried by M > 0:
-		say "[big his of M] eyes flash yellow. [line break][first custom style]HELLO, CUSTOMER. YOU STILL HAVE FUNDS REMAINING IN YOUR ACCOUNT.[roman type][line break]";
+		say "[big his of M] eyes flash yellow.[line break][first custom style]HELLO, CUSTOMER. YOU STILL HAVE FUNDS REMAINING IN YOUR ACCOUNT.[roman type][line break]";
 	otherwise if the class of the player is maid:
 		say "[big he of M] seems to recognise you as a member of staff and leaves you alone.";
 		bore M for 450 seconds;
 	otherwise if asshole is lewdly exposed:
-		say "[big his of M] eyes turn red. [line break][first custom style]'[one of]VALID INJECTION ORIFICE FOUND[or]STATUS OF COOK.ASSISTANT: FOUND[or]IDENTIFIED COOKING ASSISTANT[at random]. COMPULSORY SOUP BREWING PROGRAM INITIATED.'[roman type][line break]";
+		say "[big his of M] eyes turn red.[line break][first custom style]'[one of]VALID INJECTION ORIFICE FOUND[or]STATUS OF COOK.ASSISTANT: FOUND[or]IDENTIFIED COOKING ASSISTANT[at random]. COMPULSORY SOUP BREWING PROGRAM INITIATED.'[roman type][line break]";
 		anger M;
 	otherwise if M is in Hotel19:
 		say "[big he of M] seems to be eyeing you closely, but doesn't make an aggressive move.";
@@ -122,10 +115,10 @@ To compute perception of (M - a robochef):
 To compute DQ perception of (M - a robochef):
 	say "[BigNameDesc of M] notices you!";
 	if the number of worn diapers is 0 and (the player is full or bladder-bursting-level >= 0 or the water volume of belly > 0):
-		say "[big his of M] eyes turn red. [line break][first custom style]'IMMINENT TOILET ACCIDENT DETECTED. HYGIENE SAFETY ASSESSMENT: UNACCEPTABLE. TOILET ACCIDENT AVERSION PROGRAM INITIATED.'[roman type][line break]";
+		say "[big his of M] eyes turn red.[line break][first custom style]'IMMINENT TOILET ACCIDENT DETECTED. HYGIENE SAFETY ASSESSMENT: UNACCEPTABLE. TOILET ACCIDENT AVERSION PROGRAM INITIATED.'[roman type][line break]";
 		anger M;
 	otherwise if the player is hungry:
-		say "[big his of M] eyes turn red. [line break][first custom style]'HUNGRY [if the class of the player is maid]EMPLOYEE[otherwise]GUEST[end if] DETECTED. COMPULSORY FEEDING PROGRAM INITIATED.'[roman type][line break]";
+		say "[big his of M] eyes turn red.[line break][first custom style]'HUNGRY [if the class of the player is maid]EMPLOYEE[otherwise]GUEST[end if] DETECTED. COMPULSORY FEEDING PROGRAM INITIATED.'[roman type][line break]";
 		anger M;
 	otherwise if the class of the player is maid:
 		say "[big he of M] seems to recognise you as a member of staff and leaves you alone.";
@@ -174,7 +167,7 @@ To decide which number is the condom resistance of (M - a robochef):
 	decide on 0.
 
 To say CondomRejectFlav of (M - a robochef):
-	say "[speech style of M]ERROR, BAG LUNCH DOT BATCH IS UNAVAILABLE. GOTO TEN. RESUMING SOUP BREWING PROGRAM.[roman type] Looks like [he of M] couldn[']t handle your request...".
+	say "[speech style of M]ERROR, BAG LUNCH DOT BATCH IS UNAVAILABLE. GOTO TEN. RESUMING SOUP BREWING PROGRAM.[roman type] Looks like [he of M] couldn't handle your request...".
 
 To compute unique climax of (M - a robochef) in (F - asshole):
 	if M is wrapped:
@@ -184,7 +177,7 @@ To compute unique climax of (M - a robochef) in (F - asshole):
 		AssFill 6 - ((watersports fetish * 2) + (lactation fetish * 2));
 		if watersports fetish is 1, AssFill 2 Urine;
 		if lactation fetish is 1, AssFill 2 Milk;
-		say "[BigNameDesc of M] pulls out. [line break][first custom style]'SOUP INGREDIENT[if lactation fetish + watersports fetish > 0]S[end if] INSERTED. BREWING IN PROGRESS. ENJOY YOUR MEAL.'[roman type][line break][big he of M] turns away from you and leaves you alone.";
+		say "[BigNameDesc of M] pulls out.[line break][first custom style]'SOUP INGREDIENT[if lactation fetish + watersports fetish > 0]S[end if] INSERTED. BREWING IN PROGRESS. ENJOY YOUR MEAL.'[roman type][line break][big he of M] turns away from you and leaves you alone.";
 		say "[variable custom style][one of][if the bimbo of the player < 8]This is hardly what I'd call [']brewing[']![otherwise if the bimbo of the player < 14][big he of M]'s using my butthole for brewing?![otherwise]I can't wait until it's finished brewing! Yum![end if][or][if the bimbo of the player < 8]How did I let this happen again![otherwise if the bimbo of the player < 14]My belly has gotten a lot of use as a cum-dumpster this game![otherwise]That felt good...[end if][stopping][roman type][line break]";
 	FavourUp M;
 	bore M.
@@ -231,7 +224,7 @@ To say ForcefeedAfterFlav of (M - a robochef):
 	say "[speech style of M]'[one of][caps please] RETURN ONCE [if diaper messing >= 3]YOUR FOOD HAS TAKEN ITS NATURAL COURSE[otherwise]YOU ARE EMPTY AGAIN[end if] FOR A REFILL.'[or]SUBJECT SUFFICIENTLY SATIATED[if diaper messing >= 4]. WARNING: DIAPER RECOMMENDED TO AVOID POTTY FAILURE[end if].'[in random order][roman type][line break].".
 
 To say DQFeedingResistReactionFlav of (M - a robochef):
-	say "[speech style of M]'[one of]DISREGARDING RESISTANCE, SUBJECT NOT FILLED TO PROPER SUSTENANCE PERAMETERS!'[or]STRUGGLING DETECTED. INCREASING FEEDING SPEED.'[or]I AM PROGRAMMED TO FIND YOUR STRUGGLING... CUTE. AWWW.'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]DISREGARDING RESISTANCE, SUBJECT NOT FILLED TO PROPER SUSTENANCE PARAMETERS!'[or]STRUGGLING DETECTED. INCREASING FEEDING SPEED.'[or]I AM PROGRAMMED TO FIND YOUR STRUGGLING... CUTE. AWWW.'[in random order][roman type][line break]".
 
 Part 5 - Conversation
 

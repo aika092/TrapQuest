@@ -11,11 +11,6 @@ A makeup pad is a kind of trap. There are 12 click makeup pads.
 To say ExamineDesc of (C - a makeup pad):
 	say "A cotton pad on the end of a wooden pole, set up on a catapult style mechanism.".
 
-[!<TheSpawnInitialDungeonMakeUpTrapsRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the spawn initial dungeon makeup traps rule:
 	repeat with N running from 1 to 2:
 		let R be a random click untrapped trappable placed labyrinth room;
@@ -23,11 +18,6 @@ This is the spawn initial dungeon makeup traps rule:
 		unless there is a makeup pad in R, deploy T in R.
 The spawn initial dungeon makeup traps rule is listed in the set up dungeon traps rules.
 
-[!<TheSpawnInitialWoodsMakeUpTrapsRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the spawn initial woods makeup traps rule:
 	repeat with N running from 1 to 2:
 		let R be a random click untrapped trappable placed jungle room;
@@ -35,22 +25,12 @@ This is the spawn initial woods makeup traps rule:
 		unless there is a makeup pad in R, deploy T in R.
 The spawn initial woods makeup traps rule is listed in the set up woods traps rules.
 
-[!<TheSpawnInitialHotelMakeUpTrapsRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the spawn initial hotel makeup traps rule:
 	let R be a random click untrapped trappable placed modern room;
 	let T be a random off-stage makeup pad;
 	unless there is a makeup pad in R, deploy T in R.
 The spawn initial hotel makeup traps rule is listed in the set up hotel traps rules.
 
-[!<MakeUpPad>@<Trigger>+
-
-REQUIRES COMMENTING
-
-+@!]
 To trigger (Y - a makeup pad):
 	now the reset-timer of Y is 250;
 	now Y is not untriggered;

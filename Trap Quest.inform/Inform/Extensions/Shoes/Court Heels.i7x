@@ -4,7 +4,9 @@ A court heels is a kind of stiletto heels. The printed name of court heels is us
 
 There is 1 satin court heels. There is 1 leather court heels. There is 1 pvc court heels. There is 1 glass court heels. There is 1 latex court heels.
 
-Definition: a court heels is fetish appropriate if diaper quest is 0 or it is not latex.
+Definition: a court heels is fetish appropriate:
+	if diaper quest is 0 or it is not latex, decide yes;
+	decide no.
 
 To decide which figure-name is the clothing-image of (H - a court heels):
 	if H is glass, decide on figure of glass court heels;
@@ -22,9 +24,15 @@ Figure of latex court heels is the file "Items/Clothes/Lower/Feet/Heels/Court/co
 To decide which number is the unique outrage of (C - a court heels):
 	decide on -1.
 
-Definition: a court heels is pink themed if it is pvc.
-Definition: a court heels is red themed if it is leather.
-Definition: a court heels is black themed if it is satin or it is latex.
+Definition: a court heels is pink themed:
+	if it is pvc, decide yes;
+	decide no.
+Definition: a court heels is red themed:
+	if it is leather, decide yes;
+	decide no.
+Definition: a court heels is black themed:
+	if it is satin or it is latex, decide yes;
+	decide no.
 
 To say UniqueShortDesc of (C - a court heels):
 	say "court heels".

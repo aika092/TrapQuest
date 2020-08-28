@@ -1,6 +1,6 @@
 Mansion Statue by Objects begins here.
 
-MansionScenery01 is a thing. MansionScenery01 is in Mansion36. MansionScenery01 is not portable. Understand "statue", "womman", "statue's", "back", "butt", "leg", "legs" as MansionScenery01. Figure of MansionScenery01 is the file "Env/Mansion/statue1.jpg".
+MansionScenery01 is a thing. MansionScenery01 is in Mansion36. MansionScenery01 is not portable. Understand "statue", "woman", "statue's", "back", "butt", "leg", "legs" as MansionScenery01. Figure of MansionScenery01 is the file "Env/Mansion/statue1.jpg".
 The printed name of MansionScenery01 is "[TQlink of item described]statue[TQxlink of item described][shortcut-desc][verb-desc of item described]".
 MansionScenery01 has a number called charge.
 The text-shortcut of MansionScenery01 is "sta".
@@ -20,8 +20,14 @@ Check touching MansionScenery01:
 		allocate 2 seconds;
 		say "Nothing happens. Maybe the magic needs to recharge." instead;
 	if the player's command includes "back":
-		say "As your hand touches the statue's back, magic energy ripples through your fingers and into your heart. Wow, you feel more magical!";
+		say "As your hand touches the statue's back, magic energy ripples through your fingers and into your heart.";
 		MagicPowerUp 1;
+		MagicPowerRefresh 10;
+		let S be a random uncastable fetish appropriate magic-spell;
+		if S is magic-spell and the player is getting lucky:
+			say "[bold type]New arcane knowledge appears in your mind! You've learned a new spell![NewbieSpellFlav]";
+			compute learning of S;
+			say GotLuckyFlav;
 		now the charge of the noun is 450;
 		allocate 2 seconds instead;
 	otherwise if the player's command includes "butt":

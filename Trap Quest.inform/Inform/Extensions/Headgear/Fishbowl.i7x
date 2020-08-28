@@ -22,7 +22,9 @@ To say ShortDesc of (H - fishbowl-hat):
 	say "fishbowl".
 
 Definition: fishbowl-hat is semen themed: decide yes.
-Definition: fishbowl-hat is whore themed if it is not betrayal.
+Definition: fishbowl-hat is whore themed:
+	if it is not betrayal, decide yes;
+	decide no.
 
 To decide which number is the initial outrage of (C - fishbowl-hat):
 	if C is betrayal, decide on 11;
@@ -34,7 +36,7 @@ To decide which figure-name is the clothing-image of (C - fishbowl-hat):
 	decide on figure of upside down fishbowl.
 
 To say ClothingDesc of (H - fishbowl-hat):
-	say "This glass bowl [if H is worn]sits upside down on your head. It [end if]still has the dregs of the [if the fill-colour of fishbowl is murky][urine] and [end if][semen] that was collected during your gangbang session with [NameDesc of woman-player][if H is betrayal]. It has the words 'WHORE TRAITOR' written in red sharpie across the front, to let everyone know you have no honour even amongst your own kind[end if].".
+	say "This glass bowl [if H is worn]sits upside down on your head. It [end if]still has the dregs of the [if the fill-colour of fishbowl is murky][urine] and [end if][semen] that was collected during your gangbang session with [NameDesc of woman-player][if H is betrayal]. It has the words 'WHORE TRAITOR' written in red Sharpie across the front, to let everyone know you have no honour even amongst your own kind[end if].".
 
 To compute SelfExamineDesc of (H - fishbowl-hat):
 	say "You are wearing a glass bowl [if H is betrayal]that reads 'WHORE TRAITOR' [end if]on top of your [ShortDesc of hair]. ".

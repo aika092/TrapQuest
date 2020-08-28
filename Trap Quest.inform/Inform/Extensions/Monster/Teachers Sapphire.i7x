@@ -64,12 +64,12 @@ To compute teaching of (L - heel-lesson):[TODO - deal with edge case where there
 		say "[BigNameDesc of ST] [if R < -1]manages to walk perfectly, [one of]and even adds in a cheeky skip! [or]adding a cheeky curtsey at the end. [purely at random][otherwise if R <= 0][one of]struts around almost as well as miss [teacher-name of M][or]seems to have no problems learning and perfecting the walk[purely at random]. [otherwise if R is 1]wobbles [one of]as [he of ST] tries to practise the steps[or]once or twice[or]only a little as [he of ST] tries [his of ST] best to copy [teacher-name of M][in random order]. [otherwise if R is 2][one of]wobbles dangerously and very nearly falls over[or]has to frantically wave [his of ST] arms to steady [himself of ST] as [he of ST] almost topples over[in random order]! [otherwise if R is 3][one of]slips and falls onto [his of ST] bum! Ouch[or]suddenly stumbles and has to grab a desk to avoid falling over[in random order]! [otherwise]can hardly move! [big he of ST] tries to take a single step forward and immediately slips up, clattering to the ground. [end if]";
 	say "[if X <= 0 and the heel skill of the player > 5]You show up the entire room by not only perfectly strutting around but also adding in some 360 degree twirls and ballet-like prances into the air. The other faces in the room are a mix of awe, envy and fury. [otherwise if X <= 0]You manage to do very well yourself. You make it around the room with an almost faultless performance, placing one foot precisely in front of the other each time, with no noticeable wobbles. You feel proud! [otherwise if X is 1]You manage to do pretty well yourself. You make it around the room with only one or two minor wobbles. [otherwise if X is 2]You make it around the room successfully but not without several definitely noticeable wobbles as you do. During your worst wobble you could swear you hear one of the other students snicker from behind you. [otherwise if X is 3]It's a very wobbly journey but it does seem like you might make it all the way around the room without falling over. But then tragedy strikes! It's like a rug is pulled out from underneath you as you suddenly go toppling to the ground and land on your [buttcheeks] with a thud. An array of chuckles from several of the other students greets your ears. [otherwise if X is 4]You only make it forward a few steps before you trip over yourself and clatter to the ground, landing on your [buttcheeks] with a thud. Nearly all the other students giggle as they witness your pathetic attempt.[otherwise]You try to put one foot exactly in front of the other just like miss [teacher-name of M] but as soon as you do you instantly lose your balance and end up on your [buttcheeks]! The whole class points and laughs at your abject failure. [end if]";
 	HeelUp 1;
-	say "[BigNameDesc of M] calls for quiet. [line break][speech style of M]'Okay, that's enough practise for today. Now we will have a little competition between two of you, to see who's surest on their heels, and then the loser will get a little... forfeit. So, I need two daring volunteers from among you all. Who's up for it?'[roman type][line break]";
+	say "[BigNameDesc of M] calls for quiet.[line break][speech style of M]'Okay, that's enough practise for today. Now we will have a little competition between two of you, to see who's surest on their heels, and then the loser will get a little... forfeit. So, I need two daring volunteers from among you all. Who's up for it?'[roman type][line break]";
 	let ST be a random student in the location of the player;
 	say "[BigNameDesc of ST] stands up quickly.[line break][speech style of ST]'I'll do it!'[roman type][line break]It looks like you could choose to be the second challenger, if you wish. Do you want to volunteer? ";
 	if the player is bimbo consenting:
 		let R be (a random number between 1 and 5) - the heel-skill of ST;
-		say "You stand up and raise your hand [if the delicateness of the player > 11]nervously[otherwise if the delicateness of the player < 5]confidently[end if]. You feel several stares boring into the back of your head, but you keep your own gaze fixed firmly on the teacher. [big he of M] nods and smiles. [line break][speech style of M]'[one of]Fine, let's see what you've got[or]Let's hope you do better this time[stopping].'[roman type][line break]You are both taken to one end of the front of the room and then spun round several times until you are quite dizzy. You can hardly see straight, never mind walk! And yet you are quickly given a command to go! The girl who makes it the furthest across the room wins. You see that [NameDesc of ST] has already taken [his of ST] first awkward step and so you quickly try to do the same. You feel so off-balance! And yet you must win. You take another step. [if X > 1 and X > R]THUMP. That's it, you're already flat on your butt! It's over! You hear a few sniggers from other students. [line break][variable custom style]Why did I think this was a good idea?![otherwise if X > R]Step. Wobble. Step. Wobble. [BigNameDesc of ST] is increasing [his of ST] lead! You try to go faster and stagger even more, almost toppling over completely. In the end you are forced to watch as you are beaten by a good couple of feet to the other end of the room. [variable custom style]Darn![otherwise]Step. Wobble. Step. Wobble. [BigNameDesc of ST] is getting further ahead of you! You focus as hard as you can and speed up. You catch [him of ST] up! Stumbling the last few feet, you half lean and half collapse onto the end wall moments before [BigNameDesc of ST].[line break][variable custom style]I've won![end if][roman type][line break]";
+		say "You stand up and raise your hand [if the delicateness of the player > 11]nervously[otherwise if the delicateness of the player < 5]confidently[end if]. You feel several stares boring into the back of your head, but you keep your own gaze fixed firmly on the teacher. [big he of M] nods and smiles.[line break][speech style of M]'[one of]Fine, let's see what you've got[or]Let's hope you do better this time[stopping].'[roman type][line break]You are both taken to one end of the front of the room and then spun round several times until you are quite dizzy. You can hardly see straight, never mind walk! And yet you are quickly given a command to go! The girl who makes it the furthest across the room wins. You see that [NameDesc of ST] has already taken [his of ST] first awkward step and so you quickly try to do the same. You feel so off-balance! And yet you must win. You take another step. [if X > 1 and X > R]THUMP. That's it, you're already flat on your butt! It's over! You hear a few sniggers from other students.[line break][variable custom style]Why did I think this was a good idea?![otherwise if X > R]Step. Wobble. Step. Wobble. [BigNameDesc of ST] is increasing [his of ST] lead! You try to go faster and stagger even more, almost toppling over completely. In the end you are forced to watch as you are beaten by a good couple of feet to the other end of the room. [variable custom style]Darn![otherwise]Step. Wobble. Step. Wobble. [BigNameDesc of ST] is getting further ahead of you! You focus as hard as you can and speed up. You catch [him of ST] up! Stumbling the last few feet, you half lean and half collapse onto the end wall moments before [BigNameDesc of ST].[line break][variable custom style]I've won![end if][roman type][line break]";
 		if X > R:
 			say "As [NameDesc of ST] whoops and celebrates, one of [NameDesc of M][']s heeled feet lightly presses down on your back, letting you know you're not allowed to stand back up. You keep your head bowed in shame and it's only a few moments before something hard smacks into your butt with a loud THWACK!";
 			PainUp 1;
@@ -102,7 +102,9 @@ To compute teaching of (L - heel-lesson):[TODO - deal with edge case where there
 
 roulette-lesson is a lesson. The lesson-teacher of roulette-lesson is teacher-serenity.
 
-Definition: roulette-lesson is lesson-appropriate if (alcohol fetish is 1 or lactation fetish is 1 or diaper quest is 1) and the player is able to drink.
+Definition: roulette-lesson is lesson-appropriate:
+	if (alcohol fetish is 1 or lactation fetish is 1 or diaper quest is 1) and the player is able to drink, decide yes;
+	decide no.
 
 Figure of roulette is the file "Special/Cutscene/cutscene-serenity-roulette1.jpg".
 
@@ -201,8 +203,11 @@ To compute teaching of (L - roulette-lesson):
 					StomachUp 1;
 			otherwise:
 				remove yourself from LST;
-				repeat with TST running through tryhard students in the location of the player:
-					if TST is not listed in LST, FavourDown TST; [tryhard students that are watching are unimpressed with your lack of dedication]
+				repeat with TST running through students in the location of the player:
+					if TST is listed in LST:
+						HappinessUp TST;
+					otherwise if TST is tryhard student:
+						FavourDown TST; [tryhard students that are watching are unimpressed with your lack of dedication]
 		otherwise:
 			let STD be the dedication of P;
 			let CDRisk be 3 - the number of entries in LS;
@@ -213,7 +218,9 @@ To compute teaching of (L - roulette-lesson):
 					if yourself is listed in LST:
 						HappinessDown P by 2;
 						repeat with TST running through unfriendly students in the location of the player:
-							if TST is not P, HappinessDown TST; [unfriendly students that are watching are upset that you didn't get punk'd]
+							if TST is not P:
+								HappinessDown TST;
+								say "Clearly [he of TST] was hoping that you'd be the one who lost.";
 				otherwise if entry CD in LD matches the text "alcohol":
 					say "[big he of P] chokes and splutters and shakes [his of P] head rapidly to recover. That must have been vodka!";
 				otherwise if entry CD in LD matches the text "milk":
@@ -287,7 +294,7 @@ To compute teaching of (M - teacher-angela):
 	say "[speech style of M]'Is zat zupposed to be zome kind of joke?'[roman type][line break]".
 
 To say EnslavedDominationFlav of (M - teacher-angela):
-	say "You snap your finges in front of [NameDesc of M][']s face. [big he of M] doesn't even seem to register you at all. It seems like nobody's home.".
+	say "You snap your fingers in front of [NameDesc of M][']s face. [big he of M] doesn't even seem to register you at all. It seems like nobody's home.".
 To decide which number is the EnslavedDominationThreshold of (M - teacher-angela):
 	decide on 15.
 
@@ -352,7 +359,10 @@ To compute teaching of (L - make-up-lesson):
 			now the armband-print of armband is "bold beauty";
 			say ClothingDesc of armband;
 			repeat with STTH running through students in the location of the player:
-				if the lessonInt1 of STTH >= the make-up of face, HappinessDown STTH;
+				if the lessonInt1 of STTH >= the make-up of face:
+					HappinessDown STTH;
+				otherwise if STTH is ditzy student:
+					FavourUp STTH;
 			update students; [an important line which makes boring old students disappear and new cool ones appear]
 		let MP be a random off-stage make up kit;
 		if MP is a thing:

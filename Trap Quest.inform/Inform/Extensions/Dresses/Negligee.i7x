@@ -60,11 +60,11 @@ Part 3 - Floral Negligee
 
 floral negligee is an underdress. floral negligee is crotch-intact. floral negligee is bottom-exclusive. floral negligee is unskirted. floral negligee is silk. floral negligee is optional-top-displacable. floral negligee is low cut. The armour of floral negligee is 3. The text-shortcut of floral negligee is "fng".
 
-To decide which number is the original price of (C - floral negligee):
-	decide on 3.
 To decide which number is the initial outrage of (C - floral negligee):
 	decide on 3.
-Definition: floral negligee is fetish appropriate if diaper quest is 0.
+Definition: floral negligee is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 
 The printed name of floral negligee is "[clothing-title-before]floral negligee[clothing-title-after]".
 

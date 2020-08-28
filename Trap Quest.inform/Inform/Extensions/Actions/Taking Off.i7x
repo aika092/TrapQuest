@@ -13,28 +13,22 @@ Check taking off worn arm covering clothing:
 Check taking off worn leg covering clothing:
 	if the player is ankle bound, say "You won't be able to successfully get this off whilst your ankles are bound..." instead.
 
-Definition: a clothing (called C) is curse-sticky: [If it's cursed, it can't be taken off]
-	decide yes.
+Definition: a clothing is curse-sticky: decide yes. [If it's cursed, it can't be taken off]
 
-Check taking off something:
-	if the noun is cursed and the noun is worn and the class of the player is not cultist and the noun is curse-sticky:
-		now the noun is sure;
-		say "It refuses to budge!" instead;
-	if the noun is locked clothing and the noun is worn, say "It's locked!" instead;
-	if the latex-transformation of the player is 8 and the noun is not wrist bond and the noun is not ankle bond, say "You don't have the manual dexterity to do that!" instead;
-	if the noun is glued:
-		try tearing off the noun;
-		if the noun is glued:
-			do nothing instead;
-	unless the noun is shoes and the player is dildo stuck:
-		if the player is immobile, say "You're a bit tied up at the moment." instead.
+Check taking off clothing:
+	if the noun is glued, try tearing off the noun instead;
+	now summoning is 0;
+	unless the noun is actually removable, do nothing instead.
 
 Carry out taking off something:
 	dislodge the noun.
 
-Report taking off clothing:
+Carry out taking off clothing:
 	allocate arm use;
 	allocate 6 seconds;
+	if another-turn is 0 and the noun is difficult to remove:
+		now another-turn is 1;
+		now another-turn-flavour is the substituted form of "It takes a long time to finish taking [NameDesc of the noun] off.";
 	if forgetful airhead is 1:
 		unless the noun is alwaysIdentified clothing, now the noun is unidentified;
 		unless the noun is alwaysSure clothing, now the noun is unsure;
@@ -51,6 +45,6 @@ Report taking off clothing:
 			humiliate 125;
 	if the noun is scrunchie:
 		if the player is ponytailed, say "You remove one scrunchie, and the rest of your hair appears magically inside the other in a perfect ponytail!";
-		otherwise say "Your hair falls into its natural position.";
+		otherwise say "Your hair falls into its natural position.".
 
 Taking Off ends here.

@@ -152,8 +152,8 @@ To say MovementBlock of (M - receptionist):
 	say "[BigNameDesc of M] moves into the doorway, completely blocking your path![line break][speech style of M]'No [honey of M], you're not allowed [if the noun is north]into the school[otherwise]to just skip classes[end if] [if armband is worn and playerRegion is School]with that attitude[otherwise if armband is worn]without consequences for your actions[otherwise]without an armband[end if][if the class of the player is princess]. Don't expect to get special treatment just because you're a princess[otherwise if the class of the player is maid]. I do not care what mess you're trying to clean up[otherwise if the class of the player is schoolgirl]. If you got away with this sort of thing at your old school, you're in for a rude awakening here[otherwise if the class of the player is cheerleader]. Don't worry, I'm sure someone like you can catch up in no time[otherwise if the player is a hooker in training]. I already know you're eager to learn, but that doesn't mean you don't have to follow the same rules as everyone else[end if].'[roman type][line break]";
 
 To compute (M - a monster) stomping (N - receptionist):
-	if M is in the location of the player, say "Before [he of N] can react, [NameDesc of N] has been pinned to the wall by [NameDesc of M], and [his of M] [manly-penis] slid into [his of N] asshole. [big he of N] shrieks [line break][speech style of N]'I don't get paid enough for this!'[roman type][line break]but this turns into an undecipherable wail as [he of M] starts cumming. [big his of N] belly stretches to contain all the [semen]. After [he of N] is full, [he of M] tosses [him of N] to the ground, where [he of N] promptly faints.";
-	otherwise say "You hear a [man of N] screech [line break][speech style of N]'I don't get paid enough for this!'[roman type][line break][if N is nearby]nearby, [otherwise]somewhere in the dungeon, [end if] followed by a wail of shame.";
+	if M is in the location of the player, say "Before [he of N] can react, [NameDesc of N] has been pinned to the wall by [NameDesc of M], and [his of M] [manly-penis] slid into [his of N] asshole. [big he of N] shrieks[line break][speech style of N]'I don't get paid enough for this!'[roman type][line break]but this turns into an undecipherable wail as [he of M] starts cumming. [big his of N] belly stretches to contain all the [semen]. After [he of N] is full, [he of M] tosses [him of N] to the ground, where [he of N] promptly faints.";
+	otherwise say "You hear a [man of N] screech[line break][speech style of N]'I don't get paid enough for this!'[roman type][line break][if N is nearby]nearby, [otherwise]somewhere in the dungeon, [end if] followed by a wail of shame.";
 	destroy N;
 	let L be a random off-stage leftover;
 	now L is in the location of M;
@@ -164,7 +164,9 @@ To say LeftoverDesc (N - 129):
 
 receptionist-armband is a diaper punishment. The priority of receptionist-armband is 5.
 
-Definition: receptionist-armband is appropriate if current-monster is receptionist and current-monster is in the school and armband is not worn.
+Definition: receptionist-armband is appropriate:
+	if current-monster is receptionist and current-monster is in the school and armband is not worn, decide yes;
+	decide no.
 
 To compute punishment of (P - receptionist-armband):
 	compute receptionist forcing armband.
@@ -174,7 +176,7 @@ The receptionist unique punishment rules is a rulebook. The unique punishment ru
 [The staff detention rule is listed first in the receptionist unique punishment rules.]
 
 To say GenericDetention of (M - receptionist):
-	say "[BigNameDesc of M] looks disappointed.[line break][speech style of M]'[one of]I[']m sorry if you don[']t like me very much[or]I[']d rather we got along[or]I[']m sorry you feel that way[at random], but you just earned yourself a detention for that, young miss. Come with me.'[roman type][line break]";
+	say "[BigNameDesc of M] looks disappointed.[line break][speech style of M]'[one of]I'm sorry if you don't like me very much[or]I'd rather we got along[or]I'm sorry you feel that way[at random], but you just earned yourself a detention for that, young miss. Come with me.'[roman type][line break]";
 	now M is unconcerned.
 
 This is the receptionist forces armband rule:

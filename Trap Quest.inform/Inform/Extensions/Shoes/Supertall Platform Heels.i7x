@@ -27,9 +27,15 @@ To uniquely set up (C - a tall platform heels):
 	otherwise now the heel-height of C is 10.
 
 Definition: a tall platform heels is black themed: decide no.
-Definition: a tall platform heels is pink themed if the heel-height of it is 9.
-Definition: a tall platform heels is white themed if it is pink themed.
-Definition: a tall platform heels is red themed if the heel-height of it > 9.
+Definition: a tall platform heels is pink themed:
+	if the heel-height of it is 9, decide yes;
+	decide no.
+Definition: a tall platform heels is white themed:
+	if it is pink themed, decide yes;
+	decide no.
+Definition: a tall platform heels is red themed:
+	if the heel-height of it > 9, decide yes;
+	decide no.
 Definition: a tall platform heels is end of transformation chain: decide yes. [It's the end of the transformation chain. This will make some things avoid bothering to attempt to transform it.]
 
 Definition: a tall platform heels (called C) is IcarusScienceAppropriate:
@@ -74,8 +80,12 @@ To say MediumDesc of (C - tongue-heels):
 Definition: tongue-heels is demonic: decide yes.
 Definition: tongue-heels is tongued: decide yes.
 Definition: tongue-heels is transformation-protected: decide yes.
-Definition: tongue-heels is white themed if tonguesBlack is false.
-Definition: tongue-heels is black themed if tonguesBlack is true.
+Definition: tongue-heels is white themed:
+	if tonguesBlack is false, decide yes;
+	decide no.
+Definition: tongue-heels is black themed:
+	if tonguesBlack is true, decide yes;
+	decide no.
 
 To decide which number is the unique outrage of (C - tongue-heels):
 	if C is tonguing, decide on 6;

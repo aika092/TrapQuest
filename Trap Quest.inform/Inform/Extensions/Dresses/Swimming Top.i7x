@@ -21,9 +21,6 @@ To decide which number is the initial outrage of (C - a swimming top):
 	if the largeness of breasts < 6, decide on the largeness of breasts;
 	decide on 6.
 
-To decide which number is the original price of (C - a swimming top):
-	decide on 6.
-
 Definition: a swimming top is blue themed: decide yes.
 
 To decide which object is the unique-upgrade-target of (C - a swimming top):

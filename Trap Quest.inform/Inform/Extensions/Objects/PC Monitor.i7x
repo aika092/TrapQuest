@@ -134,7 +134,7 @@ To compute ongoingCall of (C - a video-monitor):
 	if the number of dangerous monsters in the location of the player > 0:
 		if C is recording-disgrace and the video-event of C is "doing nothing special", compute disgraceful event of C;
 		compute M protecting against a random dangerous monster in the location of the player;
-	otherwise:[if there are no dangerous monsters around, its time to end the call]
+	otherwise:[if there are no dangerous monsters around, it's time to end the call]
 		if C is not recording-disgrace:[if no disgraceful event happened, we need to make sure there's no recording.]
 			now the video-event of C is "doing nothing special";
 		otherwise if the video-event of C is "doing nothing special":[if something did happen, but we don't have a recording yet, we need to make one]
@@ -297,7 +297,7 @@ A later time based rule:
 To beginCall of (C - pc-monitor):
 	let M be the video-caller of C;
 	now the currentlyOn of C is 1;
-	say "[bold type]Suddenly, you hear the sound of your computer making a video call. [roman type]You look up with a start and see that yes indeed, your PC monitor is now wide awake, and with that green calling symbol over a blue background. Moments later, the video call is answered, and [if M is slutty sister]the face of one of the slutty sisters who put you in this game, along with the faces of several unfamiliar people in suits. [otherwise][FriendStatus of M][end if][NewAppearanceReaction of M][NewCircumstanceReaction of M][FriendRespond to M]".
+	say "[bold type]Suddenly, you hear the sound of your computer making a video call. [roman type]You look up with a start and see that yes indeed, your PC monitor is now wide awake, and with that green calling symbol over a blue background. Moments later, the video call is answered, and [if M is slutty sister]the face of one of the slutty sisters who put you in this game, along with several unfamiliar people in suits appear. [otherwise][FriendStatus of M][end if][NewAppearanceReaction of M][NewCircumstanceReaction of M][FriendRespond to M]".
 
 [There is a pc-monitor in Mansion02. ]
 
@@ -334,7 +334,7 @@ Escaping the cell is possible by expending a key or using a teleport
 
 To beginCall of (C - crystal-monitor):
 	let M be the video-caller of C;
-	say "[bold type]Suddenly, you hear the sound of a video call coming from the magical computer. [roman type]You look over at the monitor, and see the flickering image on the screen has changed to a green calling symbol over a blue background. Moments later, the video call is answered, and [if M is slutty sister]the face of one of the slutty sisters who put you in this game, along with the faces of several unfamiliar people in suits. [otherwise][FriendStatus of M][end if][NewAppearanceReaction of M][NewCircumstanceReaction of M][FriendRespond to M]".
+	say "[bold type]Suddenly, you hear the sound of a video call coming from the magical computer. [roman type]You look over at the monitor, and see the flickering image on the screen has changed to a green calling symbol over a blue background. Moments later, the video call is answered, and [if M is slutty sister]the face of one of the slutty sisters who put you in this game, along with several unfamiliar people in suits appear. [otherwise][FriendStatus of M][end if][NewAppearanceReaction of M][NewCircumstanceReaction of M][FriendRespond to M]".
 
 Section - Security screens
 

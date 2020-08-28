@@ -1,10 +1,5 @@
 Fetish Options by Fetish Settings begins here.
 
-[!<tableOfFetishOptions:Table>*
-
-REQUIRES COMMENTING
-
-*!]
 Table of Fetish Options
 title	subtable	description	toggle
 "[roman type]Previous Menu (shortcut: press Q)"	--	--	quit rule
@@ -23,17 +18,12 @@ title	subtable	description	toggle
 "Big Black Cocks - 2 points ([if choice in row 45 of the Table of Player Options is -1]never[otherwise if choice in row 45 of the Table of Player Options is 0]not now[otherwise if choice in row 45 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	interracial fetish toggle rule
 "Mythical Creatures (this enables sex with fantasy creatures e.g. minotaurs, there are no real-life animals) - [mythical creature points] points ([if choice in row 48 of the Table of Player Options is -1]never[otherwise if choice in row 48 of the Table of Player Options is 0]not now[otherwise if choice in row 48 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	mythical creature fetish toggle rule
 "Tentacle Monsters Everywhere (this causes tentacle monsters to spawn in all regions until you purify the spawners) - 6 points ([if choice in row 61 of the Table of Player Options is -1]never[otherwise if choice in row 61 of the Table of Player Options is 0]not now[otherwise if choice in row 61 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	tentacle fetish toggle rule
-"Ass to Mouth Content - [if a2m fetish is 0][italic type]miminal (only can happen if you do it on purpose)[otherwise if a2m fetish is 1]normal (anilingus & oral after anal sex)[otherwise][bold type]all (drinking and eating edible things that have been up a butt; don't worry no scat)[end if] [if the remainder after dividing choice in row 83 of the Table of Player Options by 2 is 0]always[otherwise]but can be randomised[end if] - [a2m fetish * 2] points[roman type]"	--	--	a2m fetish toggle rule
+"Ass to Mouth Content - [if a2m fetish is 0][italic type]minimal (only can happen if you do it on purpose)[otherwise if a2m fetish is 1]normal (anilingus & oral after anal sex)[otherwise][bold type]all (drinking and eating edible things that have been up a butt; don't worry no scat)[end if] [if the remainder after dividing choice in row 83 of the Table of Player Options by 2 is 0]always[otherwise]but can be randomised[end if] - [a2m fetish * 2] points[roman type]"	--	--	a2m fetish toggle rule
 "NPC gender preference (changes the description of some NPCs - but most alternate images don't exist yet!): ([if lady fetish is 0]No preference[otherwise if lady fetish is 1]Feminine NPCs only[otherwise]Masculine NPCs only[end if] [if the remainder after dividing choice in row 70 of the Table of Player Options by 2 is 0]never randomise[otherwise]for now, but can be randomised[end if] - [if the player is a top donator]free[otherwise]alpha testers only for now[end if])"	--	--	lady fetish toggle rule
 "Alcohol - 2 points ([if the player is not the donator]beta testers only for now![otherwise if choice in row 69 of the Table of Player Options is -1]never[otherwise if choice in row 69 of the Table of Player Options is 0]not now[otherwise if choice in row 69 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	alcohol fetish toggle rule
 "Male-To-Female Sex Change - 2 points ([if choice in row 10 of the Table of Player Options is -1]never[otherwise if choice in row 10 of the Table of Player Options is 0]not now[otherwise if choice in row 10 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	TG fetish toggle rule
 [DO NOT PUT ANY FETISHES BELOW THE TG FETISH ROW - they will not appear for female characters. But them above this row instead.]
 
-[!<tableOfDiaperFetishOptions:Table>*
-
-REQUIRES COMMENTING
-
-*!]
 Table of Diaper Fetish Options
 title	subtable	description	toggle
 "[roman type]Confirm Choices (shortcut: press Q)"	--	--	quit rule

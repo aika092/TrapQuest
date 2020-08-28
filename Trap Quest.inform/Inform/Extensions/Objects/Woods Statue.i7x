@@ -30,7 +30,7 @@ Check touching WoodsScenery02:
 			StrengthUp 1;
 		otherwise if woodsMagicHunger is false and the magic-power of the player > 0:
 			now woodsMagicHunger is true;
-			say "As your hand touches the statue's, a jolt of dark magic mixes with the magic running through your veins. You can feel that from now on, [bold type]whenever you use magic, you'll become more hungry.[line break][variable custom style]Uh-oh. It's going to be more difficult to use magic from now on...[roman type][line break]";
+			say "As your hand touches the statue's, a jolt of dark magic mixes with that running through your veins. You can feel that from now on, [bold type]whenever you use magic, you'll become more hungry.[line break][variable custom style]Uh-oh. It's going to be more difficult to use magic from now on...[roman type][line break]";
 		otherwise:
 			say "As your hand touches the statue's, a jolt of electricity shocks your fingers! You recoil in pain. ";
 			PainUp 1;
@@ -38,7 +38,7 @@ Check touching WoodsScenery02:
 		allocate 2 seconds instead;
 	otherwise if the player's command includes "head":
 		if the player is deserving of more intelligence:
-			say "As your hand touches the statue's head, magic energy ripples through your fingers. You feel smarter!";
+			say "As your hand touches the statue's head, magic energy ripples through your fingers. You feel [smarter]!";
 			IntUp 1;
 		otherwise if diaper quest is 1:
 			say "As your hand touches the statue's head, your vision suddenly blurs! A moment later, you find yourself looking out from the statue's eyes. You are now perched in an unchanging squatting position and can both feel and hear the warm water as it flows from your [genitals]. You relax as you grow accustomed to your new position, enjoying the feeling of the unending urination running through you and watering the ground below. You feel so peaceful, so serene.";

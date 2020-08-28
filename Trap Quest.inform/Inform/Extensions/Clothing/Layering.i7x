@@ -9,8 +9,12 @@ Does this item prevent clothing that goes underneath being worn and taken off? A
 +!]
 Definition: a clothing is layer-blocking: decide yes.
 
-Definition: a clothing is top layer if it is breast covering.
-Definition: a clothing is top-layer-blocking if it is layer-blocking and it is top layer.
+Definition: a clothing is top layer:
+	if it is breast covering, decide yes;
+	decide no.
+Definition: a clothing is top-layer-blocking:
+	if it is layer-blocking and it is top layer, decide yes;
+	decide no.
 
 To decide which number is max-top-layer:
 	let X be 0;
@@ -25,8 +29,12 @@ Definition: a clothing (called C) is top-layer-highlighted:
 	if the top-layer of C is current-layer, decide yes;
 	decide no.
 
-Definition: a clothing is mid layer if it is belly covering.
-Definition: a clothing is mid-layer-blocking if it is layer-blocking and it is mid layer.
+Definition: a clothing is mid layer:
+	if it is belly covering, decide yes;
+	decide no.
+Definition: a clothing is mid-layer-blocking:
+	if it is layer-blocking and it is mid layer, decide yes;
+	decide no.
 
 To decide which number is max-mid-layer:
 	let X be 0;
@@ -40,9 +48,13 @@ Definition: a clothing (called C) is mid-layer-highlighted:
 	if the mid-layer of C is current-layer, decide yes;
 	decide no.
 
-Definition: a clothing is bottom layer if it is crotch covering.
-Definition: a chastity cage is bottom layer: decide yes.
-Definition: a clothing is bottom-layer-blocking if it is layer-blocking and it is bottom layer.
+Definition: a clothing is bottom layer:
+	if it is crotch covering, decide yes;
+	decide no.
+Definition: a chastity bond is bottom layer: decide yes.
+Definition: a clothing is bottom-layer-blocking:
+	if it is layer-blocking and it is bottom layer, decide yes;
+	decide no.
 
 To decide which number is max-bottom-layer:
 	let X be 0;
@@ -64,9 +76,9 @@ To layer (C - a clothing) correctly on top:
 	if C is breast covering, now the top-layer of C is max-top-layer + 1;
 	if C is belly covering, now the mid-layer of C is max-mid-layer + 1;
 	if C is crotch covering, now the bottom-layer of C is max-bottom-layer + 1;
-	if C is chastity cage, now the bottom-layer of C is 1;
+	if C is chastity bond, now the bottom-layer of C is 1;
 	if C is crotch-tie-up:
-		now the bottom-layer of C is 1 + the number of worn chastity cages;
+		now the bottom-layer of C is 1 + the number of worn chastity bond;
 		repeat with O running through worn crotch covering clothing:
 			increase the bottom-layer of O by 1.
 
@@ -230,7 +242,7 @@ To check that (C - a clothing) usually goes under (D - a clothing): [I tried mak
 To check that (C - a clothing) usually goes under (D - a skirt): [This will only be crotch covering skirts, which nothing goes on top of]
 	rule succeeds.
 
-To check that (C - a chastity cage) usually goes under (D - a clothing):
+To check that (C - a chastity bond) usually goes under (D - a clothing):
 	rule succeeds.
 
 To check that (C - a knickers) usually goes under (D - a trousers):

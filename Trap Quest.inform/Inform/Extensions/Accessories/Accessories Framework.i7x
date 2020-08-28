@@ -1,12 +1,15 @@
 Accessories Framework by Accessories begins here.
 
-An accessory is a kind of clothing. Understand "accessories" as the plural of accessory. An accessory is usually metal. An accessory is usually manly. The soak-limit of an accessory is usually 3.
+An accessory is a kind of clothing. Understand "accessories" as the plural of accessory. An accessory is usually metal. An accessory is usually manly.
+To decide which number is the default-soak-limit of (C - an accessory): decide on 3.
 
 An accessory can be sapphire, emerald, ruby, pink diamond, pure diamond, solid gold (this is the accessory-colour property). Understand the accessory-colour property as describing an accessory when the item described is plentiful. Understand "solid", "gold" as the accessory when the item described is solid gold. Understand "pure", "diamond" as the accessory when the item described is pure diamond. Understand "pink", "diamond" as the accessory when the item described is pink diamond.
 
 Definition: an accessory is too boring: decide no.
 Definition: an accessory is magic-enhanceable: decide no.
-Definition: an accessory is cursable if it is not plentiful.
+Definition: an accessory is cursable:
+	if it is not plentiful, decide yes;
+	decide no.
 
 To decide which number is the initial outrage of (C - an accessory):
 	let X be 1;
@@ -50,18 +53,15 @@ To say ClothingDesc of (A - an accessory):
 	otherwise:
 		say "You don't know where this is coming from, but something in your head suggests this is probably worth... [price of A]. Whatever that means.".
 
-Definition: an accessory is stealable if it is plentiful.
+Definition: an accessory is stealable:
+	if it is plentiful, decide yes;
+	decide no.
 
 Definition: an accessory is transformation-protected: decide yes.
 
 To say ShortDesc of (C - an accessory):
 	say "accessory".
 
-[!<SetShortcutOfAccessory>+
-
-REQUIRES COMMENTING
-
-+!]
 To set shortcut of (A - an accessory):
 	now the text-shortcut of A is "[metal-shortcut of A][jewellery-shortcut of A]".
 
@@ -76,11 +76,6 @@ An all later time based rule:
 	repeat with A running through worn plentiful accessory:
 		check shortcut of A.
 
-[!<DecideWhichIndexedTextIsMetalShortcutOfAccessory>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which indexed text is metal-shortcut of (A - an accessory):
 	if A is emerald, decide on "e";
 	if A is ruby, decide on "r";
@@ -89,11 +84,6 @@ To decide which indexed text is metal-shortcut of (A - an accessory):
 	if A is pure diamond, decide on "d";
 	decide on "s".
 
-[!<DecideWhichIndexedTextIsJewelleryShortcutOfAccessory>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which indexed text is jewellery-shortcut of (A - an accessory):
 	if A is necklace, decide on "n";
 	if A is bracelet, decide on "b";

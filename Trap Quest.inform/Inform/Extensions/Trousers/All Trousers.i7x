@@ -2,7 +2,9 @@ All Trousers by Trousers begins here.
 
 A baby bloomers is a kind of trousers.
 
-Definition: a baby bloomers is fetish appropriate if diaper quest is 1.
+Definition: a baby bloomers is fetish appropriate:
+	if diaper quest is 1, decide yes;
+	decide no.
 
 Definition: a baby bloomers is baby themed: decide yes.
 Definition: a baby bloomers is unskirted themed: decide no.
@@ -26,7 +28,7 @@ To decide which figure-name is clothing-image of (H - a pink bloomers):
 
 Definition: a pink bloomers is babywear: decide yes. [NPCs can put this on the player]
 
-buttockless pants is a kind of trousers. A buttockless pants is usually butt-windowed. A buttockless pants is manly. The armour of buttockless pants is 10. The printed name of buttockless pants is usually "[clothing-title-before][clothing-material of item described] buttockless pants[clothing-title-after]". The text-shortcut of buttockless pants is "bp". Figure of yellow buttockless pants is the file "Items/Clothes/Lower/Pants/Buttockless/buttocklesspants1.png". Figure of blue buttockless pants is the file "Items/Clothes/Lower/Pants/Buttockless/buttocklesspants2.png". The soak-limit of buttockless pants is usually 17.
+buttockless pants is a kind of trousers. A buttockless pants is usually butt-windowed. A buttockless pants is manly. The armour of buttockless pants is 10. The printed name of buttockless pants is usually "[clothing-title-before][clothing-material of item described] buttockless pants[clothing-title-after]". The text-shortcut of buttockless pants is "bp". Figure of yellow buttockless pants is the file "Items/Clothes/Lower/Pants/Buttockless/buttocklesspants1.png". Figure of blue buttockless pants is the file "Items/Clothes/Lower/Pants/Buttockless/buttocklesspants2.png".
 
 To say ShortDesc of (Y - a buttockless pants):
 	say "pair of buttockless pants".
@@ -97,7 +99,7 @@ Figure of tight exercise shorts is the file "Items/Clothes/Lower/Pants/exercises
 To decide which figure-name is clothing-image of (H - grey-exercise-shorts):
 	decide on figure of tight exercise shorts.
 To say UniqueClothingDesc of (Y - grey-exercise-shorts):
-	say "A pair of tight grey exercise shorts that's a size too small for you. It [if Y is worn]rides[otherwise]will ride[end if] very low on your hips, exposing the top of your butt crack.".
+	say "A pair of tight grey exercise shorts a size too small for you. It [if Y is worn]rides[otherwise]will ride[end if] very low on your hips, exposing the top of your butt crack.".
 To say MediumDesc of (Y - grey-exercise-shorts):
 	say "pair of tight grey exercise shorts".
 Definition: grey-exercise-shorts is grey themed: decide yes.
@@ -108,7 +110,7 @@ To decide which number is the initial outrage of (C - grey-exercise-shorts):
 To decide which number is the defaultDiaperHidingLength of (C - grey-exercise-shorts):
 	decide on 0. [Can only hide normal underwear]
 
-jeans is a kind of trousers. A jeans is usually manly. There is 1 zippable denim jeans. The armour of jeans is 10. The printed name of jeans is usually "[clothing-title-before][clothing-material of item described] jeans[clothing-title-after]". The text-shortcut of jeans is "je". Figure of jeans is the file "Items/Clothes/Lower/Pants/Jeans/jeans1.png". Figure of jeans ripped is the file "Items/Clothes/Lower/Pants/Jeans/jeans2.png". The soak-limit of jeans is usually 22.
+jeans is a kind of trousers. A jeans is usually manly. There is 1 zippable denim jeans. The armour of jeans is 10. The printed name of jeans is usually "[clothing-title-before][clothing-material of item described] jeans[clothing-title-after]". The text-shortcut of jeans is "je". Figure of jeans is the file "Items/Clothes/Lower/Pants/Jeans/jeans1.png". Figure of jeans ripped is the file "Items/Clothes/Lower/Pants/Jeans/jeans2.png".
 
 Definition: a jeans is blue themed: decide yes.
 
@@ -171,15 +173,17 @@ Definition: dark-leggings is brown themed: decide yes.
 To decide which figure-name is clothing-image of (H - dark-leggings):
 	decide on figure of dark leggings.
 To say UniqueClothingDesc of (B - dark-leggings):
-	say "A pair of brown nylon leggings.".
+	say "A pair of brown nylon leggings that sit very low on the hips, exposing [if B is worn]your[otherwise]the wearer's[end if] waist.".
 To say ShortDesc of (Y - dark-leggings):
 	say "leggings".
 To say MediumDesc of (Y - dark-leggings):
 	say "pair of brown nylon leggings".
 To decide which number is the initial outrage of (B - dark-leggings):
-	decide on 1.
+	decide on 2.
 To decide which number is the initial cringe of (B - dark-leggings):
 	decide on 1.
+Definition: dark-leggings is layer-concealing: decide no.
+Definition: dark-leggings is partially-layer-concealing: decide yes.
 
 To decide which object is the unique-upgrade-target of (C - a leggings):
 	if C is dark-leggings and light-leggings is off-stage, decide on light-leggings;
@@ -202,7 +206,9 @@ To say ShortDesc of (Y - a teddy bear pantyhose):
 To decide which number is the initial cringe of (B - a teddy bear pantyhose):
 	decide on 10.
 
-Definition: a teddy bear pantyhose is fetish appropriate if diaper lover > 0.
+Definition: a teddy bear pantyhose is fetish appropriate:
+	if diaper lover > 0, decide yes;
+	decide no.
 
 Definition: a teddy bear pantyhose is end of transformation chain: decide yes.
 
@@ -235,7 +241,9 @@ To compute periodic effect of (C - a yoga pants):
 			say "You feel a pulse of warmth from your [ShortDesc of C] as your hips widen. You sense it's not happy you're wearing underwear at the same time...";
 			HipUp 1.
 
-Definition: a yoga pants is strut enabling if it is blessed.
+Definition: a yoga pants is strut enabling:
+	if it is blessed, decide yes;
+	decide no.
 
 To decide which object is the unique-upgrade-target of (C - a yoga pants):
 	if diaper lover > 0, decide on a random off-stage kitty cat pyjama bottoms;

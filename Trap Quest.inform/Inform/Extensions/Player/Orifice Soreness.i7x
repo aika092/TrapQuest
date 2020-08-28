@@ -1,47 +1,22 @@
 Orifice Soreness by Player begins here.
 
-[!<ruined:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 Ruined is a number that varies. Ruined is usually 0. [Used to check if the orifice soreness was just increased.]
 
-[!<DecideWhichNumberIsTheLargestGirthInsideFuckhole>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the largest girth inside (F - a fuckhole):
 	let G be 0;
 	repeat with M running through things penetrating F: [Find the biggest thing in the orifice]
 		if G < the girth of M, now G is the girth of M;
 	decide on G.
 
-[!<DecideWhichNumberIsTheSpreadingOfFuckhole>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the spreading of (F - a fuckhole):
 	let T be the openness of F;
 	if F is asshole and gape-gloves is worn, increase T by 2;
 	decrease T by the largest girth inside F;
 	decide on T.
 
-[!<DecideWhichNumberIsTheSorenessInfluenceOfthing>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the soreness-influence of (C - a wearthing):
 	decide on 0.
 
-[!<DecideWhichNumberIsTheToleranceOfFuckhole>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the tolerance of (F - a fuckhole):
 	let T be the spreading of F;
 	[decrease T by the sensitivity of F;]
@@ -183,11 +158,6 @@ To say FuckerDesc of (T - a thing): [Sometimes we want to say something else oth
 To say BigFuckerDesc of (T - a thing): [Sometimes we want to say something else other than its name, e.g. the hole in wall.]
 	say "The [ShortDesc of T]".
 
-[!<CommunicateStrugglingOfFuckhole>+
-
-REQUIRES COMMENTING
-
-+!]
 To communicate struggling of (F - a fuckhole):
 	let T be a random thing penetrating F;
 	if T is not nothing:
@@ -201,11 +171,6 @@ To communicate struggling of (F - a fuckhole):
 				if the girth of T > the openness of F, say "! Your [one of]poor hole[or][variable F][stopping] [one of]has to stretch painfully wide[or]is stretched to uncomfortable levels[or]widens unnaturally[at random] to accommodate the [if the girth of T > 8]ridiculously massive[otherwise if the girth of T > 6]massive[otherwise if the girth of T > 4]huge[otherwise]large[end if] girth";
 				say ".".
 
-[!<RuinRollFuckhole>+
-
-REQUIRES COMMENTING
-
-+!]
 To RuinRoll (F - a fuckhole):
 	let T be a random thing penetrating F;
 	if diaper quest is 0:
@@ -217,7 +182,7 @@ To RuinRoll (F - a fuckhole):
 		if debuginfo > 0, say "[input-style]Soreness increase roll: d10 ([R]) | ([X].5) [F] tolerance[roman type][line break]";
 		decrease X by R;
 		if X < 0 and the soreness of F < 10, increase the soreness of F by 1; [Increase soreness if RNG dictates]
-		if the vaginalvirgin of the player is 1 and there is a live virginity taking thing penetrating F and the player is female and F is vagina: [We must always allow the player to lose their virginity this way even if they are gaped & even if they succeeded the avoid soreness roll]
+		if the vaginalvirgin of the player is 1 and there is a live virginity taking thing penetrating F and the player is possessing a vagina and F is vagina: [We must always allow the player to lose their virginity this way even if they are gaped & even if they succeeded the avoid soreness roll]
 			gape F times 1;
 		otherwise if the analvirgin of the player is 1 and there is a live virginity taking thing penetrating F and F is asshole:
 			gape F times 1;

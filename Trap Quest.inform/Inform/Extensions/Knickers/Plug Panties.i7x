@@ -62,7 +62,7 @@ To compute periodic effect of (P - a vibrating plug panties):
 		otherwise:
 			say "[if P is cursed]The ass plug of your [printed name of P] is vibrating! [end if]Your [asshole] spasms. Wearing [if P is cursed]it is very quickly[otherwise]the [printed name of P] is slowly[end if] making you sore!";
 			ruin asshole;
-		if the player is female:
+		if the player is possessing a vagina:
 			if the soreness of vagina is 10:
 				say "Your [vagina] spasms. It's so sensitive, the [printed name of P] are making you go crazy with a mixture lust and frustration!";
 				stimulate vagina from P;
@@ -102,15 +102,15 @@ WC plug panties is a kind of plug panties.
 There is 1 ass plugging vagina plugging latex unique WC plug panties. The armour of WC plug panties is 12. The printed name of WC plug panties is usually "[clothing-title-before]pair of [clothing-material of item described] plug panties[clothing-title-after]". The printed plural name of WC plug panties is usually "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pairs of [clothing-material of item described] plug panties[clothing-title-after]". The text-shortcut of WC plug panties is "plp".
 
 To decide which figure-name is clothing-image of (C - a WC plug panties):
-	if the player is male, decide on figure of male WC plug panties;
+	if the player is not possessing a vagina, decide on figure of male WC plug panties;
 	otherwise decide on figure of female WC plug panties.
 
 To say ClothingDesc of (P - a WC plug panties):
-	say "[if the player is female]These white latex panties have inbuilt anal and vaginal plugs that would prevent anything escaping[otherwise]These white latex panties have an in-built anal plug that would prevent anything escaping[end if]. The latex material looks very tough.".
+	say "[if the player is possessing a vagina]These white latex panties have inbuilt anal and vaginal plugs that would prevent anything escaping[otherwise]These white latex panties have an in-built anal plug that would prevent anything escaping[end if]. The latex material looks very tough.".
 
 To compute SelfExamineDesc of (K - a WC plug panties):
 	say "A pair of white latex plug panties covers your [ShortDesc of hips]. ";
-	say "The in-built plugs keep your [if the player is female][vagina] and [end if][asshole] open and [if the soreness of asshole > 6 or the soreness of vagina > 6]sore[otherwise]stimulated[end if][if the semen volume of belly > 0], and prevent any [semen] from escaping your [asshole][end if].".
+	say "The in-built plugs keep your [if the player is possessing a vagina][vagina] and [end if][asshole] open and [if the soreness of asshole > 6 or the soreness of vagina > 6]sore[otherwise]stimulated[end if][if the semen volume of belly > 0], and prevent any [semen] from escaping your [asshole][end if].".
 
 To set up influence of (C - a WC plug panties):
 	now C is sex-addiction-influencing.

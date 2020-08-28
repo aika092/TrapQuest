@@ -8,7 +8,9 @@ To say ShortDesc of (S - a sword):
 To say ClothingDesc of (S - a sword):
 	say "A metal blade, perfect for cutting things.".
 
-Definition: a sword is fetish appropriate if diaper quest is 0.
+Definition: a sword is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 
 Definition: a sword is immune to change: decide yes.
 
@@ -16,7 +18,11 @@ Check pulling a sword:
 	try taking the noun instead.
 
 Check taking a sword:
-	if there is a worn hand ready clothing, say "You try, but the hilt resists your touch. Maybe you need an open hand?" instead.
+	if there is a worn hand ready clothing, say "You try to pick up [NameDesc of the noun], but the hilt resists your touch. Maybe you need an open hand?" instead.
+
+Report taking off a sword:
+	say "As you have no way to safely hold [NameDesc of the noun], you are forced to drop it to the ground.";
+	try dropping the noun.
 
 To decide which number is the bartering value of (S - a sword) for (M - a gladiator):
 	if S is dildo sword, decide on 0;
@@ -31,7 +37,7 @@ To compute offer reward of (M - a gladiator) for (T - a sword):
 		now S is blessed;
 		now S is confidence;
 		now S is dexterity-influencing;
-		say "[speech style of M]'A find such as this deserves a substantial reward. Go to the [location of S], and check the top shelf, hidden right at the back left hand side. There you will find an enchanced skirt that will protect you on your travels.'[roman type][line break]";
+		say "[speech style of M]'A find such as this deserves a substantial reward. Go to the [location of S], and check the top shelf, hidden right at the back left hand side. There you will find an enchanted skirt that will protect you on your travels.'[roman type][line break]";
 	otherwise:
 		FavourUp M by (1 + the bartering value of T for M) / 2.
 
@@ -94,10 +100,16 @@ To decide which figure-name is clothing-image of (C - sword-of-purity):
 To decide which number is the initial outrage of (C - sword-of-purity):
 	decide on 0.
 Definition: sword-of-purity is grey themed: decide yes.
-Definition: sword-of-purity is fetish appropriate if diaper quest is 0.
+Definition: sword-of-purity is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 
-Definition: sword-of-purity is destiny-appropriate if the class of the player is not succubus and ((the player is female and the vaginalvirgin of the player is 1) or (the player is male and fast tg >= 3)).
-Definition: sword-of-purity is destiny-prioritised if the player is female and (background-pure is 1 or flower hairclip is worn or the class of the player is virgin warrior) and the vaginalvirgin of the player is 1 and the class of the player is not succubus.
+Definition: sword-of-purity is destiny-appropriate:
+	if the class of the player is not succubus and ((the player is female and the vaginalvirgin of the player is 1) or (the player is male and fast tg >= 3)), decide yes;
+	decide no.
+Definition: sword-of-purity is destiny-prioritised:
+	if the player is female and (background-pure is 1 or flower hairclip is worn or the class of the player is virgin warrior) and the vaginalvirgin of the player is 1 and the class of the player is not succubus, decide yes;
+	decide no.
 
 [!<TheSwordOfPurityPussySlutRule>+
 
@@ -110,11 +122,14 @@ The sword-of-purity pussy slut rule is listed in the pussy slut eligibility rule
 
 To decide which number is the damage improvement of (W - sword-of-purity):
 	let X be the number of at least partially exposed body parts - 5; [for a maximum of +4 (or +5 for a futa)]
+	if there is a worn warrior chestpiece and breasts is not at least partially exposed, increase X by 1; [close enough]
+	if gown-of-purity is worn, increase X by 2;
+	if there is a worn tiara, increase X by 1;
 	increase X by the magic-modifier of W;
 	decide on X.
 
 To decide which number is the vaginal-sex-addiction-influence of (W - sword-of-purity):
-	decide on 3.
+	decide on 2.
 
 To compute attack of (W - sword-of-purity) at (M - a monster):
 	say "[if the damage improvement of W <= 1][one of]You slash at [NameDesc of M] with your [ShortDesc of W].[or]You scratch [NameDesc of M] with the tip of your [ShortDesc of W].[at random][otherwise][one of]You can hear a holy orchestra in the background as you fiercely slash at [NameDesc of M] with your [ShortDesc of W].[or]You leave a trail of golden light as you slice [NameDesc of M] with your [ShortDesc of W].[at random][end if]".
@@ -147,13 +162,13 @@ To compute sword destiny of (S - sword-of-purity):
 	otherwise if diaper focus is 1 and the player is diapered and the noun is in Woods26:
 		let R be a random rattle;
 		summon R cursed;
-		say "As you pull the sword free, it turns into a [ShortDesc of R], stuck to your hand! [line break][variable custom style][if the bimbo of the player < 7]You can't be serious...[otherwise if the bimbo of the player < 14]Hmm, this actually feels like it could so some real damage![otherwise]Ooh, this is much more appropriate for a diapered baby like me![end if][roman type][line break]";
+		say "As you pull the sword free, it turns into a [ShortDesc of R], stuck to your hand![line break][variable custom style][if the bimbo of the player < 7]You can't be serious...[otherwise if the bimbo of the player < 14]Hmm, this actually feels like it could so some real damage![otherwise]Ooh, this is much more appropriate for a diapered baby like me![end if][roman type][line break]";
 		only destroy the noun instead;
 		do nothing instead;
 	otherwise if the vaginalvirgin of the player is 0 and the player is female:
 		let R be a random dildo sword;
 		summon R cursed;
-		say "As your hands close around the hilt, it turns into a [ShortDesc of R], which sticks to your hand! [line break][variable custom style][if the bimbo of the player < 7]You can't be serious...[otherwise if the bimbo of the player < 14]Hmm, there must be a way to give this some power...[otherwise]Ooh, I can't wait to shove this massive thing inside my greedy cunt![end if][roman type][line break]";
+		say "As your hands close around the hilt, it turns into a [ShortDesc of R], which sticks to your hand![line break][variable custom style][if the bimbo of the player < 7]You can't be serious...[otherwise if the bimbo of the player < 14]Hmm, there must be a way to give this some power...[otherwise]Ooh, I can't wait to shove this massive thing inside my greedy cunt![end if][roman type][line break]";
 		only destroy the noun instead;
 		do nothing instead;
 	otherwise if flower hairclip is not actually summonable and flower hairclip is not worn:
@@ -190,7 +205,9 @@ dildo sword is a sword. dildo sword is unique. dildo sword is plastic. dildo swo
 The printed name of dildo sword is "[clothing-title-before]dildo sword[clothing-title-after]".
 
 Definition: dildo sword is penis themed: decide yes.
-Definition: dildo sword is fetish appropriate if diaper quest is 0.
+Definition: dildo sword is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 
 Figure of dildo sword is the file "Items/Accessories/Equippables/sword2.png".
 
@@ -272,10 +289,16 @@ gladiator-sword is a sword. gladiator-sword is unique. gladiator-sword has a num
 
 The printed name of gladiator-sword is "[clothing-title-before]blade of womanhood[clothing-title-after]". The text-shortcut of gladiator-sword is "blw". Understand "blade", "of womanhood", "womanhood" as gladiator-sword.
 
-Definition: gladiator-sword is fetish appropriate if max breast size > 9 and the largeness of breasts > 4.
+Definition: gladiator-sword is fetish appropriate:
+	if max breast size > 9 and the largeness of breasts > 4, decide yes;
+	decide no.
 
-Definition: gladiator-sword is destiny-appropriate if breasts is lewdly exposed.
-Definition: gladiator-sword is destiny-prioritised if gladiatorcurse < 0.
+Definition: gladiator-sword is destiny-appropriate:
+	if breasts is lewdly exposed, decide yes;
+	decide no.
+Definition: gladiator-sword is destiny-prioritised:
+	if gladiatorcurse < 0, decide yes;
+	decide no.
 
 Figure of gladiator-sword is the file "Items/Accessories/Equippables/sword4.png".
 
@@ -296,7 +319,9 @@ To say ShortDesc of (S - gladiator-sword):
 To say MediumDesc of (S - gladiator-sword):
 	say "giant dull-edged sword".
 
-Definition: gladiator-sword (called C) is removable if the burden of C + 10 <= the strength of the player.
+Definition: gladiator-sword (called C) is removable:
+	if the burden of C + 10 <= the strength of the player, decide yes;
+	decide no.
 
 To compute attack effect of (C - gladiator-sword):[The gladiator-sword becomes lighter the more you use it in combat. Don't be cowardly!]
 	if attack-type is 1, BurdenDown C by 1.
@@ -341,12 +366,18 @@ Section 4 - Demon Broadsword
 
 demon broadsword is a sword. demon broadsword has a number called arousal. demon broadsword can be dildoed. demon broadsword is not dildoed. demon broadsword has a number called dildo girth. The dildo girth of demon broadsword is 5.
 
-The printed name of demon broadsword is "[clothing-title-before][if the item described is dildoed]Demon Lord[']s 'Broadsword'[otherwise]Demon Lord's Living Broadsword[ArousalDesc of item described][end if][clothing-title-after]". The text-shortcut of demon broadsword is "dlb". Understand "lord's", "lords", "living", "broad", "lord" as demon broadsword.
+The printed name of demon broadsword is "[clothing-title-before][if the item described is dildoed]Demon Lord's 'Broadsword'[otherwise]Demon Lord's Living Broadsword[ArousalDesc of item described][end if][clothing-title-after]". The text-shortcut of demon broadsword is "dlb". Understand "lord's", "lords", "living", "broad", "lord" as demon broadsword.
 
-Definition: demon broadsword is destiny-appropriate if the player is feeling dominant.
-Definition: demon broadsword is destiny-prioritised if demon lord is alive or demon lord is bossdefeated.
+Definition: demon broadsword is destiny-appropriate:
+	if the player is feeling dominant, decide yes;
+	decide no.
+Definition: demon broadsword is destiny-prioritised:
+	if demon lord is alive or demon lord is bossdefeated, decide yes;
+	decide no.
 Definition: demon broadsword is live: decide yes.
-Definition: demon broadsword is fetish appropriate if diaper quest is 0.
+Definition: demon broadsword is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 
 Figure of demon broadsword is the file "Items/Accessories/Equippables/sword5.png".
 
@@ -371,8 +402,12 @@ To say ShortDesc of (S - demon broadsword):
 
 Definition: demon broadsword is demonic: decide yes.
 Definition: demon broadsword is red themed: decide yes.
-Definition: demon broadsword is gem themed if it is not dildoed.
-Definition: demon broadsword is penis themed if it is dildoed.
+Definition: demon broadsword is gem themed:
+	if it is not dildoed, decide yes;
+	decide no.
+Definition: demon broadsword is penis themed:
+	if it is dildoed, decide yes;
+	decide no.
 
 To say ArousalDesc of (S - demon broadsword):
 	if the arousal of S > 5:
@@ -491,9 +526,15 @@ Section 5 - Giant Rattle
 rattle is an equippable. rattle is slap ready. rattle is plastic.
 
 Definition: rattle is immune to change: decide yes.
-Definition: rattle is fetish appropriate if diaper lover > 0.
-Definition: rattle is destiny-prioritised if the incontinence of the player > 3.
-Definition: rattle is destiny-appropriate if the player is diapered.
+Definition: rattle is fetish appropriate:
+	if diaper lover > 0, decide yes;
+	decide no.
+Definition: rattle is destiny-prioritised:
+	if the incontinence of the player > 3, decide yes;
+	decide no.
+Definition: rattle is destiny-appropriate:
+	if the player is diapered, decide yes;
+	decide no.
 
 Definition: rattle is baby themed: decide yes.
 Definition: rattle is yellow themed: decide yes.
@@ -537,11 +578,11 @@ To compute sword destiny of (C - rattle):
 	now C is cursed;
 	say "As soon as it's removed, it transforms into a [C]!";
 	try examining C;
-	say "Your grip tightens involuntarily as your fingers close around the handle. [line break][variable custom style]I guess the decision's been made for me then, it's my weapon of choice for now...[roman type][line break]".
+	say "Your grip tightens involuntarily as your fingers close around the handle.[line break][variable custom style]I guess the decision's been made for me then, it's my weapon of choice for now...[roman type][line break]".
 
 Report taking rattle:
 	try wearing the noun;
-	if the noun is cursed and the noun is worn, say "Your grip tightens involuntarily as your fingers close around the handle. [line break][variable custom style]I guess the decision's been made for me then, it's my weapon of choice for now...[roman type][line break]".
+	if the noun is cursed and the noun is worn, say "Your grip tightens involuntarily as your fingers close around the handle.[line break][variable custom style]I guess the decision's been made for me then, it's my weapon of choice for now...[roman type][line break]".
 
 Section 6 - Sissy Slut's Longsword
 
@@ -556,8 +597,12 @@ To decide which figure-name is clothing-image of (C - sissy-sword):
 	decide on figure of sissy-sword.
 
 Definition: sissy-sword is sissifying: decide yes.
-Definition: sissy-sword is destiny-prioritised if the player is a sissy.
-Definition: sissy-sword is destiny-appropriate if the player is gendered male and fast tg < 3.
+Definition: sissy-sword is destiny-prioritised:
+	if the player is a sissy, decide yes;
+	decide no.
+Definition: sissy-sword is destiny-appropriate:
+	if the player is gendered male and fast tg < 3, decide yes;
+	decide no.
 
 To compute sword destiny of (S - sissy-sword):
 	say "You excitedly pull up on your new longsword, only to find that it's not quite as [']long['] as you were hoping for.";
@@ -578,11 +623,11 @@ To compute periodical effect of (S - sissy-sword):
 		otherwise say "The [ShortDesc of S] cools off completely.".
 
 To say ClothingDesc of (S - a sissy-sword):[I always use pink, so I described it as blue. It can always be changed]
-	let C be the number of worn chastity cages + the number of worn clothing penetrating asshole;
+	let C be the number of worn chastity bond + the number of worn clothing penetrating asshole;
 	say "A sword that's really more of a dagger. The blade is four inches long, with [if the charge of S > 50]a powder blue[otherwise if the charge of S > 25]a light blue[otherwise if C <= 0]an angry red[otherwise]a dark, crystalline blue[end if] gemstone set into the hilt, which is [if the charge of S > 50]rather warm[otherwise if the charge of S > 0]slightly warm[otherwise]strangely cool[end if] to the touch. [unless C > 0]For some reason, it seems like it doesn't accept you.[line break][variable custom style]For some reason, I can sense that it wants me to either wear a chastity cage or... *gulp*... something in my butt...[roman type][line break][end if]".
 
 To decide which number is the damage improvement of (W - sissy-sword):
-	let X be the number of worn chastity cages + the number of worn ass plugging clothing;
+	let X be the number of worn chastity bond + the number of worn ass plugging clothing;
 	if X is 0, decide on -3;
 	increase X by the magic-modifier of W;
 	if the player is a sissy, increase X by 1;
@@ -599,7 +644,7 @@ This is the sissy-swords butt slut rule:
 The sissy-swords butt slut rule is listed in the butt slut eligibility rules.
 
 This is the sissy-swords resolution rule:
-	if sissy-sword is worn and the player is male and (there is a worn chastity cage or asshole is actually occupied):
+	if sissy-sword is worn and the player is male and (there is a worn chastity bond or asshole is actually occupied):
 		say "Your [ShortDesc of sissy-sword] emits a burst of warmth as the gemstone in the hilt turns a shade of bright blue.";
 		increase the charge of sissy-sword by a random number between 60 and 70.
 The sissy-swords resolution rule is listed in the orgasm resolution rules.

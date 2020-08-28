@@ -12,7 +12,7 @@ To decide which figure-name is the clothing-image of (C - a trainee thigh highs)
 	decide on figure of trainee thigh highs.
 
 To say ClothingDesc of (C - a trainee thigh highs):
-	say "These silicon socks fit perfectly to the contours of your legs, metal accents giving the socks a futuristic high-tech appearance[if C is worn]. Your ankle is held up by a metal stiletto, and the way it pinches your thigh makes your butt look big[end if].".
+	say "These silicone socks fit perfectly to the contours of your legs, metal accents giving the socks a futuristic high-tech appearance[if C is worn]. Your ankle is held up by a metal stiletto, and the way it pinches your thigh makes your butt look big[end if].".
 
 To say UniqueShortDesc of (C - a trainee thigh highs):
 	say "trainee thigh high socks".
@@ -21,10 +21,12 @@ To decide which number is the perceived-bimbo-influence of (C - a trainee thigh 
 	decide on 1.
 Definition: a trainee thigh highs is transformation-protected: decide yes.
 Definition: a trainee thigh highs is whore themed: decide yes.
-Definition: a trainee thigh highs is removable if it is not magnetised.
+Definition: a trainee thigh highs is removable:
+	if it is not magnetised, decide yes;
+	decide no.
 
 Check taking off trainee thigh highs:
-	if the noun is magnetised, say "The edges of your [printed name of the noun] are all but immobile. You[']ll need to find some way of loosening them before you can try getting them off." instead.[TODO: first person with intelligence variance.]
+	if the noun is magnetised, say "The edges of your [printed name of the noun] are all but immobile. You'll need to find some way of loosening them before you can try getting them off." instead.[TODO: first person with intelligence variance.]
 
 Report wearing trainee thigh highs:
 	say "The rim of the socks snap decisively when you finish pulling it on, and you realise you're going to have a lot of trouble getting it off.";

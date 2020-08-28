@@ -20,7 +20,33 @@ To say MediumDesc of (M - deep one):
 	say "deep one".
 
 To say MonsterDesc of (M - deep one):
-	say "The creature before you resembles nothing so much as a horrible cross between fish, frog, and [man of M]. [big his of M] grey-blue skin is moist and lightly covered in scales, and [he of M] reeks of the sea. In spite of [his of M] hunched gait, you can tell [he of M] is quite tall and terribly strong. [if diaper quest is 0][big his of M] size extends to more than just height, the most human part of the creature is the huge, throbbing [DickDesc of M] between [his of M] legs. [end if][he of M] has the air of human-level intelligence.".
+	say "The creature before you resembles nothing so much as a horrible cross between fish, frog, and [man of M]. [big his of M] grey-blue skin is moist and lightly covered in scales, and [he of M] reeks of the sea. In spite of [his of M] hunched gait, you can tell [he of M] is quite tall and terribly strong. [if diaper quest is 0][big his of M] size extends to more than just height, the most human part of the creature is the huge, throbbing [DickDesc of M] between [his of M] legs. [end if][big he of M] has the air of human-level intelligence.".
+
+To say MonsterComment of (M - deep one):
+	if diaper quest is 0:
+		if the player is pheromonal:
+			if the bimbo of the player < 7:
+				say "[first custom style][big he of M] stinks so bad I can actually taste it. All the way in the back of my throat, too. That must be why being around [him of M] makes me feel so odd.";
+			otherwise if the bimbo of the player < 12:
+				say "[variable custom style][big he of M] smells so strong I can actually taste it. All the way in the back of my throat. And my belly, too. Especially there...";
+			otherwise:
+				say "[second custom style][big he of M] smells so good I can taste it! I can feel it, too. Especially between my legs...";
+		otherwise if M is unfriendly:
+			if the bimbo of the player < 7:
+				if the player is gendered male, say "[first custom style]I guess even freaky fish monsters can get pissed off.";
+				otherwise say "[first custom style]I never should have angered this creature!";
+			otherwise if the bimbo of the player < 12:
+				say "[variable custom style]Its even smart enough to get angry at me! Maybe I'm in the wrong here...";
+			otherwise:
+				say "[second custom style][big his of M] [DickDesc of M] throbs even harder when [he of M]'s mad.";
+		otherwise if the bimbo of the player < 7:
+			if the player is gendered male, say "[first custom style][one of]I prefer my fish people with sea shells on their tits.[or]So is this thing like a bodyguard or something?[in random order]";
+			otherwise say "[first custom style][one of]I get the feeling that it will simply show up again if I send it away.[or]Why is it protecting those cultists?[in random order]";
+		otherwise if the bimbo of the player < 12:
+			say "[variable custom style][one of]We may be different species, but [his of M] body is in suprisingly good shape, isn't it.[or][big he of M]'s relentless when it comes to protecting those cultists. They must feel really safe.[in random order]";
+		otherwise:
+			say "[second custom style][one of]Who cares if we aren't the same species? [big he of M]'s sexy![or]I wonder if those cultists keep [him of M] satisfied.[in random order]";
+		say "[roman type][line break]".
 
 To set up (M - deep one):
 	reset M;
@@ -101,7 +127,7 @@ To decide if (M - deep one) is willing to creampie (F - asshole):
 To say CreampieFlav of (M - deep one) in (F - a fuckhole):
 	say "[one of][BigNameDesc of M] makes a deep, guttural noise, slamming [his of M] [DickDesc of M] home as [he of M] fills your [variable F] with [semen]![or]A deep, guttural noise comes from [NameDesc of M][']s throat as [he of M] ejaculates deep inside your [variable F].[or]You hear a deep, guttural noise from behind you as [NameDesc of M] ejaculates, filling your [variable F] with [semen].[or][BigNameDesc of M] tightens [his of M] grip, emitting a deep, guttural noise as [his of M] [semen] explodes into your [variable F]![at random] [run paragraph on]";
 	if the pregnancy of the player is 1 and the father is not deep one:
-		if (the father is musky and a random number between 1 and 6 is 1) or (the father is not musky and a random number between 1 and 3 is 1):
+		if (the father is musky and a random number between 1 and 6 is 1) or (the father is not musky and a random number between 1 and 3 is 1): [musky npcs have tougher pregnancies, or something]
 			say "An odd tingling feeling spreads through your belly, and you sense [PregGrowth of the father] inside of you transforming into...something else.";
 			now the father is deep one;
 		otherwise:
@@ -164,6 +190,7 @@ To compute domination interference of (M - a deep one) for (N - a monster):
 	if N is acolyte:
 		say "[BigNameDesc of M] gets between you and [NameDesc of N]! Looks like you're going to have to deal with [him of M] first!";
 		now player-fucking is DOMINANT-FAILURE;
+		anger M;
 	otherwise if M is interested:
 		say "[BigNameDesc of M] pauses, waiting to see what happens next.".
 

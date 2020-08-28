@@ -2,7 +2,9 @@ Schoolgirl Outfit by Dresses begins here.
 
 A schoolgirl outfit is a kind of overdress. A schoolgirl outfit is usually unique. A schoolgirl outfit is usually neck covering. A schoolgirl outfit is usually short. A schoolgirl outfit is usually belly exposing. A schoolgirl outfit is usually not-top-displacable. A schoolgirl outfit is usually intelligence-influencing.
 
-Definition: a schoolgirl outfit is class-transformation-protected if the class of the player is schoolgirl.
+Definition: a schoolgirl outfit is class-transformation-protected:
+	if the class of the player is schoolgirl, decide yes;
+	decide no.
 
 To compute SelfExamineDesc of (C - a schoolgirl outfit):
 	say "You are wearing a [MediumDesc of C]. ";

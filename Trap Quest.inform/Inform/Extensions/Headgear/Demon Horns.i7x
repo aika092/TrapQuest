@@ -46,7 +46,9 @@ Definition: demon horns (called C) is removal-blocking: [Some items (mainly head
 	if wearing-target is blazing dress or wearing-target is dildo heels, decide yes;
 	decide no.
 
-Definition: demon horns is removable if the player is not soulless.
+Definition: demon horns is removable:
+	if the player is not soulless, decide yes;
+	decide no.
 
 demon-summoned is a number that varies.
 To compute unique recycling of (C - demon horns):

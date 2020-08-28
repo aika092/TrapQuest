@@ -42,7 +42,7 @@ To compute periodic effect of (P - a throbbing-tentacle):
 	if the toy-charge of P > 30:
 		now the toy-charge of P is 0;
 		if the player is able to get horny:
-			say "The tentacle inside you once again pushes itself to its limits and begins to vibrate. [line break][first custom style]'I will reward you once again, [whore].'[roman type][line break]What little mind you have left is quickly blown aside by the sensations coming from the tentacle! [line break][first custom style]'Come, [slut]. Now.'[roman type][line break]You find yourself gleefully obeying!";
+			say "The tentacle inside you once again pushes itself to its limits and begins to vibrate.[line break][first custom style]'I will reward you once again, [whore].'[roman type][line break]What little mind you have left is quickly blown aside by the sensations coming from the tentacle![line break][first custom style]'Come, [slut]. Now.'[roman type][line break]You find yourself gleefully obeying!";
 			if the player is not possessing a vagina:
 				anally orgasm shamefully;
 			otherwise:

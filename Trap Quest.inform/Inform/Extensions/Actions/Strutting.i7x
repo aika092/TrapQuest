@@ -1,34 +1,14 @@
 Strutting by Actions begins here.
 
-[!<ClothingIsStrutEnabling>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a clothing is strut enabling: decide no.
 
-[!<ReportTakingOffStrutEnablingClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 Report taking off strut enabling clothing:
 	if the strut of the player is 1 and the strutskill of the player is 0 and the number of worn strut enabling clothing is 0:
 		say "You feel some confidence leave you as you take the [noun] off. You think that you'd just trip endlessly if you keep strutting, so you stop.";
 		now the strut of the player is 0.
 
-[!<strutting:Action>*
-
-REQUIRES COMMENTING
-
-*!]
 Strutting is an action applying to nothing.
 
-[!<CheckStrutting>+
-
-REQUIRES COMMENTING
-
-+!]
 Check strutting:
 	if the strut of the player is 0:
 		if the strutskill of the player is 0 and the number of worn strut enabling clothing is 0, say "You don't know this ability." instead;
@@ -46,11 +26,6 @@ Check strutting:
 			if there is a worn blessed yoga pants, say "You'd think strutting would be impossible with your [ShortDesc of hips], but you manage just fine.";
 			otherwise say "Your [ShortDesc of hips] are too large to allow you to strut properly." instead.
 
-[!<CarryOutStrutting>+
-
-REQUIRES COMMENTING
-
-+!]
 Carry out strutting:
 	if the strut of the player is 0:
 		now the strut of the player is 1;

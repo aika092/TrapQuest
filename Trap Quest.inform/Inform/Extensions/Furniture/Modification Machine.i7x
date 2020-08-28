@@ -44,7 +44,7 @@ To compute furniture resting on (F - modification machine):
 			say "You feel as if your reflexes have been heightened!";
 			DexUp 1;
 		otherwise:
-			say "You feel smarter!";
+			say "You feel [smarter]!";
 			IntUp 1;
 	otherwise if artificial enhancements fetish is 1 and M is module and a random number between artificial-fetish and 2 is 2:
 		say "A recording begins to play a tinny female voice as you settle into the chair.[line break][second custom style]'Hello TESTER [NameBimbo]! You have been selected to take part in a fantastic new trial to examine the engineering feasibility of an exciting new product line by R&D! Please remain perfectly still...'[roman type][line break]";
@@ -120,7 +120,7 @@ To compute (M - a modification machine) stretching (F - a fuckhole):
 To compute (M - a modification machine) babifying:
 	if diaper messing >= 4 and a random number between 1 and 2 is 1 and the number of ass covering unremovable clothing is 0:
 		compute M removing all protection from asshole;
-		say "A robotic arm pushes a small rubber pellet into your [asshole]. [line break][variable custom style]Was that a[one of][or]nother[stopping] suppository?![roman type][line break]";
+		say "A robotic arm pushes a small rubber pellet into your [asshole].[line break][variable custom style]Was that a[one of][or]nother[stopping] suppository?![roman type][line break]";
 		increase suppository by 7;
 		if the player is feeling full, say "As if to answer your question, your stomach begins to grown and churn.";
 	otherwise if the total fill of belly is 0 and a random number between 1 and 2 is 1:

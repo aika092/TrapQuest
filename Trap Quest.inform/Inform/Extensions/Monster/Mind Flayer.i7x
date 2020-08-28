@@ -2,7 +2,7 @@ Mind Flayer by Monster begins here.
 
 mind flayer is a monster. mind flayer is neuter. Understand "mindflayer" as mind flayer.
 
-mind flayer has a number called feeding. The feeding of mind flayer is 0.
+mind flayer has a number called feeding. mind flayer has a number called alreadyspawned. mind flayer has a number called domination.
 
 Definition: mind flayer is willing to do oral: decide yes.
 
@@ -45,33 +45,64 @@ To set up (M - mind flayer):
 	anger M.
 
 To decide which number is the starting difficulty of (M - mind flayer):
-	decide on 13.
+	decide on 15.
+
+To check mindflayerquest:
+	if alreadyspawned of mind flayer is 0 and diaper quest is 0:
+		set up mind flayer;
+		if playerRegion is Woods:
+			summon mind flayer in the woods;
+		otherwise if playerRegion is Mansion:
+			summon mind flayer in the mansion;
+		otherwise if playerRegion is Hotel:
+			summon mind flayer in the hotel;
+		otherwise:
+			summon mind flayer in the dungeon.
+
+This is the mindflayer quest of mind flayer list rule:
+	if alreadyspawned of mind flayer is 1 and mind flayer is not permanently banished:
+		say "Mind Flayer: You have been asked to kill a bugged-out monster.".
+The mindflayer quest of mind flayer list rule is listed in the quest listing rules.
 
 hastur is an action applying to nothing.
 Carry out hastur:
-	if mindflayer spawned is 0 and the player is a top donator:
-		set up mind flayer;
-		now mindflayer spawned is 1;
-		say "You get an ominous feeling inside you suddenly. You probably shouldn[']t have said that!";
-		if playerRegion is Woods:
-			now mind flayer is in a random placed dodgy room;
-			while mind flayer is nearby or mind flayer is in the location of the player or the location of mind flayer is an unplaced room:
-				now mind flayer is in a random placed dodgy room;
-		otherwise if playerRegion is Hotel:
-			now mind flayer is in a random placed modern room;
-			while mind flayer is nearby or mind flayer is in the location of the player or the location of mind flayer is an unplaced room:
-				now mind flayer is in a random placed modern room;
-		otherwise if playerRegion is Mansion:
-			now mind flayer is in a random placed haunted room;
-			while mind flayer is nearby or mind flayer is in the location of the player or the location of mind flayer is an unplaced room:
-				now mind flayer is in a random placed haunted room;
-		otherwise if playerRegion is Dungeon:
-			now mind flayer is in a random placed sandy room;
-			while mind flayer is nearby or mind flayer is in the location of the player or the location of mind flayer is an unplaced room:
-				now mind flayer is in a random placed sandy room;
+	if the player is a top donator:
+		check mindflayerquest;
 	otherwise:
-		say "That probably wasn[']t a good idea, but luckily nothing seems to have come from it.".
+		say "That probably wasn't a good idea, but luckily nothing seems to have come from it.".
 Understand "hastur" as hastur.
+
+A later time based rule (this is the mindflayer quest of mind flayer rule):
+	if alreadyspawned of mind flayer is 0 and mind flayer is alive:
+		say "You hear a very quiet muttering from just behind your ear, even though nobody is there.[line break][second custom style]'Did [he of the player] just... [big he of the player][']s not supposed to be able to do that! Quick, do something! I don't know, send in the flayer! Screw protocol, just do it!'[roman type][line break]You then hear a strange tapping sound, and suddenly a much louder voice rings out as though from a PA system![line break][second custom style]'Testing, testing. Is this thing on? Hello, testers! It appears a monster from a not-yet-implemented area has inadvertently been introduced into the live test area. We're not really sure how this happened, but this does highlight the importance of your job as testers. We don't seem to be able to despawn it ourselves, if one of you could be a dear and destroy it so we can analyse its data we would really appreciate it.[roman type][line break]";
+		now alreadyspawned of mind flayer is 1;
+	if alreadyspawned of mind flayer is 1 and mind flayer is permanently banished:
+		say "The PA system comes alive again.[line break][second custom style]'Oh wonderful. Nintendolls thanks you for your contribution to the completion of this testing phase! The standard bug bounty has been credited to your winnings, how lucky for you! Oh, and if it dropped anything feel free to keep it, it's an item from later in the game so it's probably pretty powerful.'[roman type][line break]";
+		now alreadyspawned of mind flayer is 2.
+
+A time based rule (this is the mindflayer domination rule):
+	if the domination of mind flayer > 0:[Revised Mind Flayer Domination Attack, starts by checking for domination at all]
+		if domination-time - (a random number between the domination of mind flayer and 40) < 0:
+			decrease the domination of mind flayer by 1;
+			now domination-time is 30;
+			if (a random number between 1 and 3 < 3) and (the arousal of the player < maximum arousal / 2):
+				say "Swirling images of sex begin to fill your mind, and you hear a voice in your head![line break][first custom style]'Your holes burn to be filled.'[roman type][line break]You are so aroused you could burst!";
+				now the arousal of the player is maximum arousal;
+			otherwise if the location of the player is smoky and the largeness of breasts < max breast size:
+				say "You see images of yourself with incredible breasts, and you hear a voice in your head![line break][first custom style]'Breathe deep and become the [whore] you know yourself to be.'[roman type][line break]You fall to your knees!";
+				try silently kneeling;
+			otherwise if (a random number between 1 and 3 < 3) and (the raw oral sex addiction of the player < 10):
+				say "Images of erect penises fill your mind, and you hear a voice in your head![line break][first custom style]'You hunger to taste the prize inside of us.'[roman type][line break]";
+				OralSexAddictUp 1;
+			otherwise if (a random number between 1 and 2 < 3)	and (the humiliation of the player < 40000):
+				say "You see images of yourself mindlessly complying as men use every part of your body, and you hear a voice in your head![line break][first custom style]'A man chooses, an object obeys.'[roman type][line break]You feel less and less like a person!";
+				humiliate 400;
+			otherwise:
+				say "Images of erect penises fill your mind, and you hear a voice in your head![line break][first custom style]'Put us in you and revel in serving us.'[roman type][line break]You feel a sudden strange longing to fill your holes with [manly-penis]!";
+				OrificeAddictUp 1;
+		otherwise:
+			decrease domination-time by 1.
+
 
 Part 1 - Perception
 
@@ -108,13 +139,13 @@ To say MouthPenetrationFlav of (M - mind flayer):
 
 To compute facial sex of (M - mind flayer):
 	if the raw intelligence of the player > 4:
-		say "The creature[']s tentacles continue to suck on your head! You feel terribly light-headed but euphoric at the same time!";
-		Intdown 1;
+		say "The creature's tentacles continue to suck on your head! You feel terribly light-headed but euphoric at the same time!";
+		IntDown 1;
 		stimulate face from M;
 		cutshow figure of mindflayer cutscene 3 for M;
 	otherwise if the raw intelligence of the player is 4:
 		say "With a final squelching sound not unlike a straw struggling to pull the last drops of liquid from a cup, you feel the suction on your head come to a climax. The euphoria becomes so strong that so do you!";
-		Intdown 2;
+		IntDown 2;
 		cutshow figure of mindflayer cutscene 4 for M;
 		if the player is able to get horny:
 			if the player is female:
@@ -124,7 +155,7 @@ To compute facial sex of (M - mind flayer):
 				punish shameful male orgasm;
 		now the sex-length of M is 0;
 	otherwise:
-		say "The creature[']s gaze fills what little mind you have, and you feel yourself go blank!";
+		say "The creature's gaze fills what little mind you have, and you feel yourself go blank!";
 	decrease the sex-length of M by 1.
 
 To set up sex length of (M - mind flayer) in (B - face):
@@ -148,10 +179,9 @@ To compute facial climax of (M - mind flayer):
 			say "As it pulls away, the word 'EMPTY' suddenly appears on your forehead!";
 			summon empty-mind tattoo;
 	otherwise:
-		say "You aren[']t quite sure what happened while you were blacked out [if the bimbo of the player > 8]but you are quite concerned![otherwise].[end if]The creature, seemingly satisfied, haughtily walks away.";
-		increase the domination of the player by 4;
-		if the domination of the player > 40: [cap at an arbitrarily high number that we should never reach just to avoid a potential issue]
-			now the domination of the player is 40;
+		say "You aren't quite sure what happened while you were blacked out [if the bimbo of the player > 8]but you are quite concerned![otherwise].[end if]The creature, seemingly satisfied, haughtily walks away.";
+		increase the domination of mind flayer by 4;
+		if the domination of mind flayer > 40, now the domination of mind flayer is 40; [cap at an arbitrarily high number that we should never reach just to avoid a potential issue]
 		bore M.
 
 Section 1 - Attack

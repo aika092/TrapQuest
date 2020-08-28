@@ -1,6 +1,6 @@
 Cutoffs by Knickers begins here.
 
-cutoffs is a kind of knickers. cutoffs is usually denim. cutoffs is usually totally-exclusive. The armour of cutoffs is 7. Understand "pair", "of" as cutoffs. The soak-limit of cutoffs is usually 12.
+cutoffs is a kind of knickers. cutoffs is usually denim. cutoffs is usually totally-exclusive. The armour of cutoffs is 7. Understand "pair", "of" as cutoffs.
 
 Definition: a cutoffs is blue themed: decide yes.
 Definition: a cutoffs is rippable: decide yes.
@@ -64,7 +64,9 @@ Definition: heart window cutoffs is heart themed: decide yes.
 
 predicament-painted-cutoffs is a knickers. predicament-painted-cutoffs is unique. predicament-painted-cutoffs is crotch-exposing. The armour of predicament-painted-cutoffs is 1. The printed name of predicament-painted-cutoffs is "[clothing-title-before]painted cutoffs[clothing-title-after]". The text-shortcut of predicament-painted-cutoffs is "pcf". Understand "painted", "cutoffs" as predicament-painted-cutoffs.
 
-Definition: predicament-painted-cutoffs is hand-blocked if current-predicament is vibe-photo-predicament or (realisticArms is 1 and entry 1 in the armUses of arms is painted-vibrator-hands and entry 2 in the armUses of arms is painted-vibrator-hands).
+Definition: predicament-painted-cutoffs is hand-blocked:
+	if current-predicament is vibe-photo-predicament or (realisticArms is 1 and entry 1 in the armUses of arms is painted-vibrator-hands and entry 2 in the armUses of arms is painted-vibrator-hands), decide yes;
+	decide no.
 
 Figure of predicament-painted-cutoffs is the file "Items/Clothes/Lower/Pants/paintedcutoffs1.jpg".
 Figure of full-painted-cutoffs is the file "Items/Clothes/Lower/Pants/paintedcutoffs2.jpg".
@@ -74,7 +76,7 @@ To decide which figure-name is clothing-image of (H - predicament-painted-cutoff
 	decide on figure of predicament-painted-cutoffs.
 
 To say UniqueClothingDesc of (Y - predicament-painted-cutoffs):
-	say "Blue and white paint has been applied to your loins in a way that would make it look like you're wearing denim cutoffs[if current-predicament is vibe-photo-predicament]! Hopefully it's convincing enough that people won't notice...[otherwise], but there are two hand-prints missing! In order to make it look convincing, you need to hold your hands (which also have blue paint on them) in the exact correct position, which makes it look like you have your hands in your pockets. This will put the tips of your thumbs right on top of your clit. To decide where to put your arms, you need to use the command [bold type]adjust arms[roman type][end if].".
+	say "Blue and white paint has been applied to your loins in a way that would make it look like you're wearing denim cutoffs[if current-predicament is vibe-photo-predicament]! Hopefully it's convincing enough that people won't notice...[otherwise], but there are two hand-prints missing! In order to make it look convincing, you need to hold your hands (which also have blue paint on them) in the exact correct position, which makes it look like you have your hands in your pockets. This will put the tips of your thumbs right on top of your clit. To decide where to put your arms, you need to use the command [bold type]adjust arms[roman type].[end if]".
 
 To say ShortDesc of (Y - predicament-painted-cutoffs):
 	say "painted-on cutoffs".
@@ -83,10 +85,22 @@ Definition: predicament-painted-cutoffs is blue themed: decide yes.
 Definition: predicament-painted-cutoffs is transformation-protected: decide yes.
 Definition: predicament-painted-cutoffs is removable: decide no.
 Definition: predicament-painted-cutoffs is discovered varied: decide no.
-Definition: predicament-painted-cutoffs is potentially at least partially asshole covering if it is hand-blocked.
-Definition: predicament-painted-cutoffs is potentially asshole covering if it is hand-blocked.
-Definition: predicament-painted-cutoffs is potentially at least partially vagina covering if it is hand-blocked.
-Definition: predicament-painted-cutoffs is potentially vagina covering if it is hand-blocked.
+Definition: predicament-painted-cutoffs is potentially at least partially asshole covering:
+	if current-predicament is vibe-photo-predicament, decide no;
+	if it is hand-blocked, decide yes;
+	decide no.
+Definition: predicament-painted-cutoffs is potentially asshole covering:
+	if current-predicament is vibe-photo-predicament, decide yes;
+	if it is hand-blocked, decide yes;
+	decide no.
+Definition: predicament-painted-cutoffs is potentially at least partially vagina covering:
+	if current-predicament is vibe-photo-predicament, decide no;
+	if it is hand-blocked, decide yes;
+	decide no.
+Definition: predicament-painted-cutoffs is potentially vagina covering:
+	if current-predicament is vibe-photo-predicament, decide yes;
+	if it is hand-blocked, decide yes;
+	decide no.
 
 To say unique-verb-desc of (T - predicament-painted-cutoffs):
 	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say "[if realisticArms is 1 and current-predicament is not vibe-photo-predicament] [link][bracket]arms[close bracket][as]adjust arms[end link][end if]".

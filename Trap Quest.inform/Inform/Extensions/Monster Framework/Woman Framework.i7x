@@ -4,7 +4,9 @@ woman-player is a monster.
 
 woman-player is intelligent. woman-player has a number called delayed sluttification. woman-player can be stranger or introduced. woman-player is stranger. The leftover-type of woman-player is 131. woman-player can be angered. the favour of woman-player is 10. woman-player can be truly-female or truly-male. woman-player is truly-female.
 
-Definition: woman-player is normally ally if the favour of it >= 10.
+Definition: woman-player is normally ally:
+	if the favour of it >= 10, decide yes;
+	decide no.
 
 Definition: woman-player is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 
@@ -51,7 +53,9 @@ To set up (M - woman-player):
 To decide which number is the difficulty of (M - woman-player):
 	decide on the raw difficulty of M + game difficulty - (woman-bimbo of M * 2).
 
-Definition: woman-player is unfriendly rather than friendly if it is angered and it is not pacified.
+Definition: woman-player is unfriendly rather than friendly:
+	if it is angered and it is not pacified, decide yes;
+	decide no.
 Definition: woman-player is uniquely unfriendly: decide no.
 Definition: woman-player is objectifying the player: decide no.
 Definition: woman-player is babifying the player: decide no.
@@ -152,8 +156,12 @@ Definition: woman-player is redeploy appropriate:
 	if it is not angered and it is summon-available and it is introduced and (it is off-stage or (the woman-status of it < 10 and it is not in the location of the player and it is not nearby)):
 		if the number of interested regional monsters is 0, decide yes;
 	decide no.
-Definition: woman-player is deploy appropriate if it is off-stage and it is not angered and it is summon-available and it is introduced.
-Definition: woman-player is angry deploy appropriate if it is off-stage and it is summon-available and it is introduced.
+Definition: woman-player is deploy appropriate:
+	if it is off-stage and it is not angered and it is summon-available and it is introduced, decide yes;
+	decide no.
+Definition: woman-player is angry deploy appropriate:
+	if it is off-stage and it is summon-available and it is introduced, decide yes;
+	decide no.
 
 To deploy (M - woman-player) with woman-status (V - a number):
 	now the woman-status of M is V;
@@ -353,7 +361,7 @@ To say AllyDamageFlav of (M - woman-player) on (X - a monster):
 	say "[one of][line break][second custom style]'Let's do this!'[roman type][line break][or][line break][second custom style]'Take this!'[roman type][line break][stopping][line break][BigNameDesc of M] knees [NameDesc of X] with all [his of M] strength.".
 
 To say AllyInstigated of (X - a monster):
-	if X is intelligent, say "[BigNameDesc of X] looks really pissed off now! [line break][variable custom style][if the bimbo of the player < 5]That wasn't the plan... wait why is [he of X] looking at ME angrily?![roman type][line break][otherwise if the player is able to speak]'I'm sorry, that wasn't my fault!'[roman type][line break][BigNameDesc of X] doesn't seem to care what you say, and seems mainly angry with you![otherwise]Uh-oh... why do I get the feeling I'm going to be the one in trouble here?[roman type][line break][end if]".
+	if X is intelligent, say "[BigNameDesc of X] looks really pissed off now![line break][variable custom style][if the bimbo of the player < 5]That wasn't the plan... wait why is [he of X] looking at ME angrily?![roman type][line break][otherwise if the player is able to speak]'I'm sorry, that wasn't my fault!'[roman type][line break][BigNameDesc of X] doesn't seem to care what you say, and seems mainly angry with you![otherwise]Uh-oh... why do I get the feeling I'm going to be the one in trouble here?[roman type][line break][end if]".
 
 The unique punishment rule of woman-player is the woman unique punishment rule.
 
@@ -432,7 +440,9 @@ To compute gagged response of (M - woman-player):
 To compute correct perception of (M - woman-player):
 	do nothing.
 
-Definition: woman-player is dismissable if the woman-status of it < 80.
+Definition: woman-player is dismissable:
+	if the woman-status of it < 80, decide yes;
+	decide no.
 
 To say undismissable of (M - woman-player):
 	say "[BigNameDesc of M] seems [if the woman-status of M is 80]a bit confused[otherwise]to choose to ignore that[end if].".

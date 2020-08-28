@@ -29,6 +29,7 @@ To Set Up Monsters:
 To set up (M - a monster):
 	reset M;
 	now the monstersetup of M is 1;
+	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M. [Default set up for a monster with no specific defined setup]
 
 [!<ComputeMonsterSetUpFix>+

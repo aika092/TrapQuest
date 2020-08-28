@@ -75,16 +75,16 @@ To say MovementBlock of (M - nurse):
 	say "[BigNameDesc of M] stands into the doorway, completely blocking your path![line break][speech style of M]'No dear, you're not allowed back there unless you need to use the bed.'[roman type][line break]";
 
 To say DamageReactHealthy of (M - nurse):
-	say "[BigNameDesc of M] easily takes the hit! [line break][speech style of M]'[one of]Ooh!'[or]Oof!'[at random][roman type][line break]".
+	say "[BigNameDesc of M] easily takes the hit![line break][speech style of M]'[one of]Ooh!'[or]Oof!'[at random][roman type][line break]".
 
 To say DamageReactDamaged of (M - nurse):
-	say "[BigNameDesc of M] flinches, taking the hit! [line break][speech style of M]'[one of]Ow!'[or]Oof!'[at random][roman type][line break]".
+	say "[BigNameDesc of M] flinches, taking the hit![line break][speech style of M]'[one of]Ow!'[or]Oof!'[at random][roman type][line break]".
 
 To say DamageReactTired of (M - nurse):
-	say "[BigNameDesc of M] takes the hit, staggering! [line break][speech style of M]'[one of]Ouch!'[or]Ow!'[at random][roman type][line break]".
+	say "[BigNameDesc of M] takes the hit, staggering![line break][speech style of M]'[one of]Ouch!'[or]Ow!'[at random][roman type][line break]".
 
 To say DamageReactWeak of (M - nurse):
-	say "[BigNameDesc of M] takes the hit, fighting to maintain [his of M] balance! [line break][speech style of M]'[one of]Ooh!'[or]Ouch!'[at random][roman type][line break]".
+	say "[BigNameDesc of M] takes the hit, fighting to maintain [his of M] balance![line break][speech style of M]'[one of]Ooh!'[or]Ouch!'[at random][roman type][line break]".
 
 To say StrikingFlav of (M - a nurse) on (B - a body part):
 	say "[BigNameDesc of M] grabs you by the wrist and pulls your arm toward [him of M] with seemingly impossible strength!".
@@ -145,7 +145,7 @@ To say FirstResponse of (M - a nurse):
 
 To say RepeatResponse of (M - a nurse):
 	let E be the extra lives of the player;
-	say "[speech style of M]'Good [if E is 1]morning[otherwise if E is 2]evening[otherwise if E is 3]afternoon[end if]. [if the player is tired or the body soreness of the player > 0]I[']ll have you feeling better in no time, don[']t you worry[otherwise]I hope you[']re feeling alright, sweetie[end if].'[roman type][line break]".
+	say "[speech style of M]'Good [if E is 1]morning[otherwise if E is 2]evening[otherwise if E is 3]afternoon[end if]. [if the player is tired or the body soreness of the player > 0]I'll have you feeling better in no time, don't you worry[otherwise]I hope you're feeling alright, sweetie[end if].'[roman type][line break]".
 
 To say WhoQuestion of (M - a nurse):
 	say "[variable custom style]'Who are you?'[roman type][line break]".
@@ -195,8 +195,8 @@ To say MouthPenetrationFlav of (M - nurse):
 
 To compute facial sex of (M - a nurse):
 	decrease the sex-length of M by 1;
-	if lady fetish is 2, say "[BigNameDesc of M] holds your head in place, panting as [he of M] grinds [his of M] ass against you. [line break][speech style of M]'Ooh yes, this won't take long...'[roman type][line break]";
-	otherwise say "[BigNameDesc of M] grinds [his of M] cunt over your nose and mouth, coating them in [his of M] juices. [line break][speech style of M]'Ooh yes, this won't take long...'[roman type][line break]";
+	if lady fetish is 2, say "[BigNameDesc of M] holds your head in place, panting as [he of M] grinds [his of M] ass against you.[line break][speech style of M]'Ooh yes, this won't take long...'[roman type][line break]";
+	otherwise say "[BigNameDesc of M] grinds [his of M] cunt over your nose and mouth, coating them in [his of M] juices.[line break][speech style of M]'Ooh yes, this won't take long...'[roman type][line break]";
 	if med bay bed is grabbing the player:
 		if another-turn-flavour is "", now another-turn-flavour is "You're still strapped to the chair and [FuckerDesc of nurse] is still sitting on your face.";
 		now another-turn is 1.
@@ -206,7 +206,7 @@ To compute facial climax of (M - nurse):
 	LickCount;
 	if lady fetish is 2, say "[BigNameDesc of M] grunts and shudders, a strong orgasm washing over [him of M]. Several droplets of clear precum hit your face as [his of M] [sissy-penis] desperately strains against its cage. You feel [if the oral sex addiction of the player > 6]even more eager to perform oral sex in the future[otherwise]somewhat more comfortable with the act of performing oral sex[end if].";
 	otherwise say "[BigNameDesc of M] grunts as [he of M] shudders, a strong orgasm washing over [him of M]. Your mouth and face soon feel even wetter than before as [his of M] girlcum joins [his of M] other juices on your face. You feel [if the oral sex addiction of the player > 6]even more eager to perform oral sex in the future[otherwise]somewhat more comfortable with the act of performing oral sex[end if].";
-	SilentlyOralSexAddictUp;
+	SilentlyOralSexAddictUp 1;
 	say "[BigNameDesc of M] takes a few moments to recover and then plucks [his of M] [HoleDesc of M] from your mouth and nose, allowing you to breathe[if med bay bed is grabbing the player]. [big he of M] unbuckles the straps holding you down and allows you to leave[end if].";
 	dislodge med bay bed;
 	orgasm satisfy M;

@@ -219,7 +219,7 @@ To compute BimboSeduced of (M - a monster):
 		add the core seduction rule to another-turn-rules;
 		say "Completely out of your own control, you find yourself grinding your [AssDesc] up against [NameDesc of M][']s crotch. Suddenly, your control over your own body returns to you, but it's clear that [NameDesc of M] wants more...";
 	otherwise:
-		say "Something seems to suddenly switch in [NameDesc of M][']s head and [his of M] [if M is friendly]friendly[otherwise]idle[end if] smile changes into a devilish grin. Uh-oh... [line break][variable custom style]Was it something I said?![roman type][line break]";
+		say "Something seems to suddenly switch in [NameDesc of M][']s head and [his of M] [if M is friendly]friendly[otherwise]idle[end if] smile changes into a devilish grin. Uh-oh...[line break][variable custom style]Was it something I said?![roman type][line break]";
 		anger M;
 		now the boredom of M is 0.
 
@@ -392,7 +392,7 @@ To say FriendlyPartnerGreeting to (M - a monster):
 Displayed when the player greets a monster whilst having rough sex with another monster. Either asks the first monster for assistance, or asks the first monster to join in.
 
 @param <Monster>:<M> The monster being greeted
-@param <Monster>:<M> The monster currently having rough sex with the player
+@param <Monster>:<N> The monster currently having rough sex with the player
 
 +!]
 To say HelpGreeting to (M - a monster) with (N - a monster):
@@ -416,7 +416,7 @@ To say HelpGreeting to (M - a monster) with (N - a monster):
 Displayed after a masochistic player greets a monster whilst having rough sex with another monster. Invites the first monster to join in the sex.
 
 @param <Monster>:<M> The monster being greeted
-@param <Monster>:<M> The monster currently having rough sex with the player
+@param <Monster>:<N> The monster currently having rough sex with the player
 
 +!]
 To say InvitationResponse of (M - a monster) with (N - a monster):
@@ -433,7 +433,7 @@ To say InvitationResponse of (M - a monster) with (N - a monster):
 Displayed after the player invites a monster to join sex with another monster, and the first monster accepts.
 
 @param <Monster>:<M> The monster being greeted
-@param <Monster>:<M> The monster currently having rough sex with the player
+@param <Monster>:<N> The monster currently having rough sex with the player
 
 +!]
 To say InvitationAccepted of (M - a monster) with (N - a monster):
@@ -444,7 +444,7 @@ To say InvitationAccepted of (M - a monster) with (N - a monster):
 Displayed after the player invites a monster to join sex with another monster, and the first monster refuses.
 
 @param <Monster>:<M> The monster being greeted
-@param <Monster>:<M> The monster currently having rough sex with the player
+@param <Monster>:<N> The monster currently having rough sex with the player
 
 +!]
 To say InvitationRejected of (M - a monster) with (N - a monster):
@@ -455,7 +455,7 @@ To say InvitationRejected of (M - a monster) with (N - a monster):
 Displayed after the player asks a monster for assistance whilst having rough sex with another monster.
 
 @param <Monster>:<M> The monster being greeted
-@param <Monster>:<M> The monster currently having rough sex with the player
+@param <Monster>:<N> The monster currently having rough sex with the player
 
 +!]
 To say AssistanceResponse of (M - a monster) with (N - a monster):[TODO: monsters can "join" sex on your side or give you something to make it easier]
@@ -466,7 +466,7 @@ To say AssistanceResponse of (M - a monster) with (N - a monster):[TODO: monster
 Displayed after the player asks a monster for assistance whilst having rough sex with another monster, and the first monster refuses.
 
 @param <Monster>:<M> The monster being greeted
-@param <Monster>:<M> The monster currently having rough sex with the player
+@param <Monster>:<N> The monster currently having rough sex with the player
 
 +!]
 To say AssistanceRejected of (M - a monster) with (N - a monster):
@@ -481,7 +481,7 @@ To say AssistanceRejected of (M - a monster) with (N - a monster):
 Displayed when the player greets a monster whilst having gentle sex with another monster
 
 @param <Monster>:<M> The monster being greeted
-@param <Monster>:<M> The monster currently having sex with the player
+@param <Monster>:<N> The monster currently having sex with the player
 
 +!]
 To say AttentionGreeting to (M - a monster) with (N - a monster):
@@ -498,7 +498,7 @@ To say AttentionGreeting to (M - a monster) with (N - a monster):
 Displayed after the player greets a monster whilst having gentle sex with another monster. The monster will respond differently depending on how annoyed they are.
 
 @param <Monster>:<M> The monster being greeted
-@param <Monster>:<M> The monster currently having sex with the player
+@param <Monster>:<N> The monster currently having sex with the player
 
 +!]
 To say AttentionResponse of (M - a monster) with (N - a monster):
@@ -513,7 +513,7 @@ To say AttentionResponse of (M - a monster) with (N - a monster):
 Displayed when the player greets a monster whilst having gentle sex with another monster, and the first monster becomes aggressive.
 
 @param <Monster>:<M> The monster being greeted
-@param <Monster>:<M> The monster currently having sex with the player
+@param <Monster>:<N> The monster currently having sex with the player
 
 +!]
 To say AttentionExceeded of (M - a monster) with (N - a monster):
@@ -525,7 +525,7 @@ To say AttentionExceeded of (M - a monster) with (N - a monster):
 Displayed when the player greets a monster whilst having gentle sex with another monster, and the first monster does not become aggressive.
 
 @param <Monster>:<M> The monster being greeted
-@param <Monster>:<M> The monster currently having sex with the player
+@param <Monster>:<N> The monster currently having sex with the player
 
 +!]
 To say AttentionAccepted of (M - a monster) with (N - a monster):
@@ -549,8 +549,8 @@ To say UnfriendlyGreeting to (M - a monster):
 		otherwise if the player is feeling submissive:
 			say "'[one of]Don't hit me!'[or]Don't hurt me!'[or]Please, you don't have to hit me!'[or]Please, I bruise easily!'[or]I'm sorry! Don't hit me!'[in random order]";
 		otherwise if the player is feeling dominant:
-			if the player is gendered male, say "'[one of]Are you sure you want this fight, man?'[or]I'll kick your ass, man!'[or]I don[']t think you want to fight me dude.'[in random order]";
-			otherwise say "'[one of]Leave me alone, I have my rights!'[or][if M is not male]Fucking bitch,[otherwise]Fucking ape,[end if] leave me alone!'[or]Hit me again and you[']ll hear from my lawyer.'[in random order]";
+			if the player is gendered male, say "'[one of]Are you sure you want this fight, man?'[or]I'll kick your ass, man!'[or]I don't think you want to fight me dude.'[in random order]";
+			otherwise say "'[one of]Leave me alone, I have my rights!'[or][if M is not male]Fucking bitch,[otherwise]Fucking ape,[end if] leave me alone!'[or]Hit me again and you'll hear from my lawyer.'[in random order]";
 		otherwise:
 			if the player is gendered male, say "'[one of]Damn, what the fuck did I do to piss you off?'[or]Come on man, we don't have to fight!'[or]Fighting is so uncool!'[in random order]";
 			otherwise say "'[one of]Stop hitting me, jerk!'[or]If you hit me again I'm going to hit back.[or]We don't have to fight! Think about this!'[or]Why do we have to fight? This is ridiculous!'[in random order]".
@@ -869,7 +869,7 @@ Displayed when the player greets a monster for the first time, and there are no 
 +!]
 To say DefaultFirstGreeting to (M - a monster):
 	if bimbo of the player < 4:
-		if the player is female:
+		if the player is gendered female:
 			if M is neuter or M is male:
 				say "'[one of]Hello.'[or]Hello, my name is [NameBimbo].'[or]Hello. I have something I want to ask you.'[at random]";
 			otherwise:
@@ -882,7 +882,7 @@ To say DefaultFirstGreeting to (M - a monster):
 			otherwise:
 				say "'[one of]Hey baby! What's going on?'[or]Sup girl? I'm [NameBimbo].'[or]Hey. What's up baby?'[at random]";
 	otherwise if bimbo of the player < 7:
-		if the player is female:
+		if the player is gendered female:
 			if M is neuter or M is male:
 				say "'[one of]Hi. What's your name?'[or]Hello, I'm [NameBimbo].'[or]Hi! Do you have time to talk?'[at random]";
 			otherwise:
@@ -939,7 +939,7 @@ Displays when the player greets a monster they have already met, and there are n
 +!]
 To say DefaultGreeting to (M - a monster):
 	if bimbo of the player < 4:
-		if the player is female:
+		if the player is gendered female:
 			if M is neuter or M is male:
 				say "'[one of]Hello. Again[or]Oh. You again[or]Hello[at random].'";
 			otherwise:
@@ -952,7 +952,7 @@ To say DefaultGreeting to (M - a monster):
 			otherwise:
 				say "'[one of]Hey baby! What's going on[or]Yo yo! Feeling lonely, baby[or]Hey, what's up baby[at random]?'";
 	otherwise if bimbo of the player < 7:
-		if the player is female:
+		if the player is gendered female:
 			if M is neuter or M is male:
 				say "'[one of]Hey there[or]Hello[or]Hi[at random]!'";
 			otherwise:
@@ -1228,7 +1228,9 @@ Chapter 5 Dismissal
 
 dismissalConvincingPower is a number that varies.
 
-Definition: a monster is dismissable if it is unleashed or it is unconcerned. [Some NPCs can't be told to leave even when they're friendly, like the shopkeeper and witch.]
+Definition: a monster is dismissable:
+	if it is unleashed or it is unconcerned, decide yes;
+	decide no. [Some NPCs can't be told to leave even when they're friendly, like the shopkeeper and witch]
 
 To say undismissable of (M - a monster):
 	say "[BigNameDesc of M] raises an eyebrow.[line break][speech style of M]'[one of]I'm staying right here. You are free to leave my presence whenever you want...'[or]As if I'd pay attention to you, [NameBimbo].'[or]Don't try to give me orders!'[or]Why on Earth do you think I'd take orders from someone like you?'[in random order][roman type][line break]".
@@ -1280,7 +1282,8 @@ To say DismissalRequest of (M - a monster):
 	if M is robot or M is hellhound:
 		say "'I don't suppose you'll leave me alone if I ask you to?'";
 	otherwise if M is unfriendly:
-		say "'Fuck off!'";
+		if the class of the player is princess, say DismissalDemandRoyal of M;
+		otherwise say DismissalDemandDefault of M;
 	otherwise if the class of the player is princess:
 		now dismissalConvincingPower is the DismissalPowerRoyal of M;
 		say DismissalRequestRoyal of M;
@@ -1312,6 +1315,12 @@ To say DismissalRequest of (M - a monster):
 To decide which number is the DismissalPowerRoyal of (M - a monster):
 	decide on 1.
 
+To say DismissalDemandDefault of (M - a monster):
+	say "'Fuck off!'";
+
+To say DismissalDemandRoyal of (M - a monster):
+	say "Enough of this! Begone, peasant!";
+
 To say DismissalRequestRoyal of (M - a monster):
 	say "'[if M is royal guard]Sir[otherwise]Citizen[end if], you are dismissed.'".
 
@@ -1326,8 +1335,8 @@ To decide which number is the DismissalPowerToilet of (M - a monster):
 	decide on 2.
 
 To say DismissalRequestToilet of (M - a monster):
-	if diaper quest is 0, say "'[if the player is feeling dominant]Give me some privacy in here, [fucker of M]!'[otherwise if the player is feeling submissive]Please [master of M], would I be allowed to erm, you know, in private?'[otherwise if the player is a pervert]I'm about to relieve myself, hun. So unless that turns you on, perhaps you should probably look the other way?'[otherwise]Um, are you a pervert or something? Do you always watch people when they're trying to relieve themselves?'[end if]";
-	otherwise say "'[if the diaper-duration of M > 0]Could you PLEASE just leave me alone in this room for a minute? I want to do... something.'[otherwise if the player is feeling dominant]Give me some privacy in here, [fucker of M]!'[otherwise if the player is feeling submissive]Please [master of M], would I be allowed to go potty in private?'[otherwise if the player is a pervert]I'm about to relieve myself, hun. So unless that turns you on, perhaps you should probably look the other way?'[otherwise]Um, are you a pervert or something? Do you always watch people when they're trying to relieve themselves?'[end if]".
+	if diaper quest is 0, say "'[if the player is feeling dominant]Give me some privacy in here, [fucker of M]!'[otherwise if the player is feeling submissive]Please [stud of M], would I be allowed to erm, you know, in private?'[otherwise if the player is a pervert]I'm about to relieve myself, hun. So unless that turns you on, perhaps you should probably look the other way?'[otherwise]Um, are you a pervert or something? Do you always watch people when they're trying to relieve themselves?'[end if]";
+	otherwise say "'[if the diaper-duration of M > 0]Could you PLEASE just leave me alone in this room for a minute? I want to do... something.'[otherwise if the player is feeling dominant]Give me some privacy in here, [fucker of M]!'[otherwise if the player is feeling submissive]Please [stud of M], would I be allowed to go potty in private?'[otherwise if the player is a pervert]I'm about to relieve myself, hun. So unless that turns you on, perhaps you should probably look the other way?'[otherwise]Um, are you a pervert or something? Do you always watch people when they're trying to relieve themselves?'[end if]".
 
 To decide which number is the DismissalPowerBursting of (M - a monster):
 	if diaper quest is 1, decide on -1;
@@ -1348,7 +1357,7 @@ To say DismissalRequestHorny of (M - a monster):
 	if the player is a nympho:
 		say "'Look honey, I'm so fucking horny I'm about to [if the size of penis > 2]jack[otherwise]jill[end if] myself raw, are you sure you want to be around for that?'";
 	otherwise if the player is feeling submissive:
-		say "'Please [master of M], can I have permission to make myself cum? And erm, [if the player is disgraced]do you have to watch[otherwise]would you mind looking the other way[end if]?'";
+		say "'Please [stud of M], can I have permission to make myself cum? And erm, [if the player is disgraced]do you have to watch[otherwise]would you mind looking the other way[end if]?'";
 	otherwise:
 		say "'I need to see to some... needs... Would you please kindly [if the player is feeling dominant]fuck off and come back later[otherwise]allow me the decency of some privacy[end if]?'".
 
@@ -1370,7 +1379,7 @@ To say DismissalRequestStalker of (M - a monster):
 	if the player is a nympho:
 		say "'Aren't there other sluts around here you need to spend some time stalking? Or is it just me?'";
 	otherwise if the player is feeling submissive:
-		say "'Thank you [master of M] for following me around and making sure that I [if diaper quest is 1]follow the rules[otherwise]don't get up to mischief[end if], but do you have to do it forever?'";
+		say "'Thank you [literalMistress of M] for following me around and making sure that I [if diaper quest is 1]follow the rules[otherwise]don't get up to mischief[end if], but do you have to do it forever?'";
 	otherwise:
 		say "'[if the player is feeling dominant]Could you fuck off? You're beginning to feel like a stalker.'[otherwise]Don't you ever get bored of following me around?'[end if]".
 
@@ -1379,7 +1388,7 @@ To decide which number is the DismissalPowerDefault of (M - a monster):
 
 To say DismissalRequestDefault of (M - a monster):
 	if the player is feeling submissive:
-		say "'[one of]Am I dismissed[or]Am I free to go[or]Please may I have some alone time[in random order], [master of M]?'";
+		say "'[one of]Am I dismissed[or]Am I free to go[or]Please may I have some alone time[in random order], [stud of M]?'";
 	otherwise if the player is a nympho and diaper quest is 0:
 		say "'Sorry hun, I've got stuff to fuck, can we continue this later?'";
 	otherwise if the player is feeling dominant and M is not buddy:
@@ -1491,7 +1500,9 @@ To say DefeatedDismissal of (M - a monster):
 
 Chapter - Fluff Questions
 
-Definition: a monster is fluff-question-appropriate if it is undefeated and it is intelligent and it is interested and it is friendly. [Can they be asked fluff questions?]
+Definition: a monster is fluff-question-appropriate:
+	if it is undefeated and it is intelligent and it is interested and it is friendly, decide yes;
+	decide no. [Can they be asked fluff questions?]
 
 talk-mute-question is a talk-object.
 

@@ -2,7 +2,9 @@ Latex Dungarees by Dresses begins here.
 
 a rubber dungarees is a kind of overdress. a rubber dungarees is crotch-intact. a rubber dungarees is arm exposing. a rubber dungarees is manly. a rubber dungarees is unskirted. a rubber dungarees is latex. a rubber dungarees is transformation-rare.
 
-Definition: a rubber dungarees is fetish appropriate if diaper lover > 0.
+Definition: a rubber dungarees is fetish appropriate:
+	if diaper lover > 0, decide yes;
+	decide no.
 Definition: a rubber dungarees is babywear: decide yes.
 Definition: a rubber dungarees is sissifying: decide yes.
 

@@ -34,7 +34,9 @@ To say MediumDesc of (C - a pocketwipes):
 
 To restock (C - a pocketwipes):
 	let B be a random off-stage pocketwipes;
-	if B is pocketwipes, now B is in Standard Item Pen.
+	if B is pocketwipes:
+		destroy B;
+		now B is in Standard Item Pen.
 
 A game universe initialisation rule:
 	let K be 1;

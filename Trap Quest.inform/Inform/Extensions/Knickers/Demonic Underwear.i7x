@@ -30,8 +30,12 @@ Definition: tongue-panties is displacable: decide yes.
 Definition: tongue-panties is demonic: decide yes.
 Definition: tongue-panties is tongued: decide yes.
 Definition: tongue-panties is transformation-protected: decide yes.
-Definition: tongue-panties is white themed if tonguesBlack is false.
-Definition: tongue-panties is black themed if tonguesBlack is true.
+Definition: tongue-panties is white themed:
+	if tonguesBlack is false, decide yes;
+	decide no.
+Definition: tongue-panties is black themed:
+	if tonguesBlack is true, decide yes;
+	decide no.
 
 To decide which number is the unique outrage of (C - tongue-panties):
 	if C is tonguing, decide on 14;
@@ -43,7 +47,7 @@ To compute periodic effect of (C - tongue-panties):
 		displace C.
 
 [The codpiece can be obtained in a couple ways. Sometimes crafting, sometimes as a reward from monsters.]
-Demon codpiece is a strapon-panties. Demon codpiece is unique. The armour of demon codpiece is 10. The printed name of demon codpiece is "[clothing-title-before]demon lord's codpiece[clothing-title-after]". The soak-limit of demon codpiece is 6. The text-shortcut of demon codpiece is "dlj". demon codpiece is crotch-assless.[ demon codpiece is leather. demon codpiece is totally-exclusive.] Understand "lord", "lords", "lord's", "cod", "piece" as demon codpiece. demon codpiece has a number called charge. The charge of demon codpiece is 1.
+Demon codpiece is a strapon-panties. Demon codpiece is unique. The armour of demon codpiece is 10. The printed name of demon codpiece is "[clothing-title-before]demon lord's codpiece[clothing-title-after]". The text-shortcut of demon codpiece is "dlj". demon codpiece is crotch-assless.[ demon codpiece is leather. demon codpiece is totally-exclusive.] Understand "lord", "lords", "lord's", "cod", "piece" as demon codpiece. demon codpiece has a number called charge. The charge of demon codpiece is 1.
 
 Figure of demon codpiece is the file "Items/Clothes/Lower/Underwear/Special/codpiece1.png".
 
@@ -59,7 +63,7 @@ To say selfexamineuniquetitle of (K - demon codpiece):
 	say "leather codpiece".
 
 To say ClothingDesc of (K - demon codpiece):
-	say "A leather belt with a red pouch designed to keep [if the player is possessing a penis]your[otherwise]the wearer's[end if] genitals in place. It doesn[']t do anything to protect [if K is not worn]the wearer's[otherwise]your[end if] [asshole], but a large pentagonal gem on the front prevents anything else from being worn on top of it. [if the number of wenchy monsters in the location of the player > 0 or the dominance of the player < -1]It catches the light strangely, and when you look at it for too long you almost feel like it's taunting you.[otherwise]It appears to be inert, but a weird feeling in your gut tells you that isn't true.[end if]".
+	say "A leather belt with a red pouch designed to keep [if the player is possessing a penis]your[otherwise]the wearer's[end if] genitals in place. It doesn't do anything to protect [if K is not worn]the wearer's[otherwise]your[end if] [asshole], but a large pentagonal gem on the front prevents anything else from being worn on top of it. [if the number of wenchy monsters in the location of the player > 0 or the dominance of the player < -1]It catches the light strangely, and when you look at it for too long you almost feel like it's taunting you.[otherwise]It appears to be inert, but a weird feeling in your gut tells you that isn't true.[end if]".
 
 To say CodTightenFlav of (K - demon codpiece):
 	say "The [printed name of demon codpiece] seems to sense the possibility of sex, and the leather tightens as its gem transforms into a [PenisFlavour of demon codpiece].[line break]".
@@ -155,7 +159,6 @@ This is the demon junk punishment rule:
 			otherwise:
 				VaginalSexAddictUp 5;
 				Arouse 5000;
-				say "You feel a sudden desperate need to jam a giant cock into your pussy!";
 		let M be a random alive mechanic;
 		if M is monster:
 			XavierUp M by 2;
@@ -163,7 +166,7 @@ This is the demon junk punishment rule:
 		IntDown 2;
 		say "A fog settles over your mind, permanently impairing your ability to think about... just about anything, really.".
 
-acolyte-undergarment is a crotchless-panties. acolyte-undergarment is unique. The text-shortcut of acolyte-undergarment is "audg". acolyte-undergarment is metal. The soak-limit of acolyte-undergarment is 0. Understand "gold", "golden", "undergarment", "acolyte", "acolyte's" as acolyte-undergarment. acolyte-undergarment has a number called charge. The charge of acolyte-undergarment is usually 0. acolyte-undergarment is top-exclusive. The printed name of acolyte-undergarment is "[clothing-title-before]acolyte's undergarment[clothing-title-after]".
+acolyte-undergarment is a crotchless-panties. acolyte-undergarment is unique. The text-shortcut of acolyte-undergarment is "audg". acolyte-undergarment is metal. Understand "gold", "golden", "undergarment", "acolyte", "acolyte's" as acolyte-undergarment. acolyte-undergarment has a number called charge. The charge of acolyte-undergarment is usually 0. acolyte-undergarment is top-exclusive. The printed name of acolyte-undergarment is "[clothing-title-before]acolyte's undergarment[clothing-title-after]".
 
 Figure of acolyte undergarment is the file "Items/Clothes/Lower/Underwear/Skimpy/Crotchless/crotchless7.jpg".
 

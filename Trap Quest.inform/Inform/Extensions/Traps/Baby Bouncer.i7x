@@ -13,7 +13,9 @@ A baby bouncer has a number called bounces.
 Returns yes if the player is stuck in a baby bouncer.
 
 +!]
-Definition: yourself is bouncer stuck if there is a baby bouncer grabbing the player.
+Definition: yourself is bouncer stuck:
+	if there is a baby bouncer grabbing the player, decide yes;
+	decide no.
 
 To decide which figure-name is the examine-image of (C - a baby bouncer):
 	if C is not grabbing the player, decide on figure of empty baby bouncer;
@@ -71,7 +73,7 @@ To trigger (Y - a baby bouncer):
 
 To say SexSubmissionFlav of (Y - a baby bouncer):
 	increase the bounces of Y by 1;
-	say "You keep still and wait for something to happen. The trap [one of]responds by bouncing[or]once again bounces[stopping] you gently on the spot. [if the bounces of Y < 3]You feel a bit silly, but you resist being made to feel more submissve for now[otherwise]The gentle treatment of the contraption finally gets to you, [one of]making you feel more docile[or]suppressing your desire for rebellion[or]and you start to feel like a little child[in random order][end if].";
+	say "You keep still and wait for something to happen. The trap [one of]responds by bouncing[or]once again bounces[stopping] you gently on the spot. [if the bounces of Y < 3]You feel a bit silly, but you resist being made to feel more submissive for now[otherwise]The gentle treatment of the contraption finally gets to you, [one of]making you feel more docile[or]suppressing your desire for rebellion[or]and you start to feel like a little child[in random order][end if].";
 	if the bounces of Y > 2, SilentlyDelicateUp 1;
 	humiliate 200 + (the number of worn diapers * 300) + (the number of worn perceived messed knickers * 600);
 	now the willingbounce of Y is 0;
@@ -102,11 +104,6 @@ To check bounce release of (Y - a baby bouncer):
 		now Y is expired;
 		now the bounces of Y is 0.
 
-[!<JumpFromTheBabyBouncer>+
-
-REQUIRES COMMENTING
-
-+!]
 To Jump From The Baby Bouncer:
 	allocate 6 seconds;
 	compute upright fatigue gain;

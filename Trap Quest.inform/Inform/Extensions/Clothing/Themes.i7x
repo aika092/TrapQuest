@@ -68,16 +68,6 @@ The dexterity theme rules is a rulebook.
 The intelligence theme rules is a rulebook.
 The sex addiction theme rules is a rulebook.
 
-[To decide which number is strength-theme-bonus:
-	now tempThemeBonus is 0;
-	follow the strength theme rules;
-	decide on tempThemeBonus.]
-
-[To decide which number is sex-addiction-theme-bonus:
-	now tempThemeBonus is 0;
-	follow the sex addiction theme rules;
-	decide on tempThemeBonus.]
-
 To decide which number is material-sharers:
 	let N be 0;
 	if theme-target is clothing:
@@ -100,13 +90,13 @@ A theme sharing rule (this is the material matching rule):
 		if the clothing-material of theme-target is the clothing-material of theme-share-target, rule succeeds.
 The material matching rule is listed in the interesting theme sharing rules.
 
-Definition: an object is pregnancy related: decide no.
+Definition: an object is pregnancy themed: decide no.
 A theme blocking rule:
-	if theme-target is pregnancy related and the number of currently at least partially visible pregnancy related wearthings > 1:
-		add "pregnancy related" to interesting-themes-shared-list;
-		if the upgrade-target of theme-target is not pregnancy related, increase interesting-themes-shared by 1.
+	if theme-target is pregnancy themed and the number of currently at least partially visible pregnancy themed wearthings > 1:
+		add "pregnancy themed" to interesting-themes-shared-list;
+		if the upgrade-target of theme-target is not pregnancy themed, increase interesting-themes-shared by 1.
 A theme sharing rule (this is the pregnancy matching rule):
-	if theme-target is pregnancy related and theme-share-target is pregnancy related, rule succeeds.
+	if theme-target is pregnancy themed and theme-share-target is pregnancy themed, rule succeeds.
 The pregnancy matching rule is listed in the interesting theme sharing rules.
 Definition: an object is ballet related: decide no.
 A theme blocking rule:
@@ -305,7 +295,9 @@ A theme blocking rule:
 A theme sharing rule (this is the pink matching rule):
 	if theme-target is pink themed and theme-share-target is pink themed, rule succeeds.
 The pink matching rule is listed in the colour sharing rules.
-Definition: an object is black-and-white themed if it is white themed and it is black themed.
+Definition: an object is black-and-white themed:
+	if it is white themed and it is black themed, decide yes;
+	decide no.
 A theme blocking rule:
 	if theme-target is black-and-white themed and the number of currently at least partially visible black-and-white themed clothing > 1:
 		add "black & white" to colour-themes-shared-list;
@@ -313,22 +305,6 @@ A theme blocking rule:
 A theme sharing rule (this is the black-and-white matching rule):
 	if theme-target is black-and-white themed and theme-share-target is black-and-white themed, rule succeeds.
 The black-and-white matching rule is listed in the colour sharing rules.
-Definition: an object is white themed: decide no.
-A theme blocking rule:
-	if theme-target is white themed and the number of currently at least partially visible white themed clothing > 3:
-		add "white" to colour-themes-shared-list;
-		if the upgrade-target of theme-target is not white themed, increase colour-themes-shared by 1.
-A theme sharing rule (this is the white matching rule):
-	if theme-target is white themed and theme-share-target is white themed, rule succeeds.
-The white matching rule is listed in the colour sharing rules.
-Definition: an object is black themed: decide no.
-A theme blocking rule:
-	if theme-target is black themed and the number of currently at least partially visible black themed clothing > 3:
-		add "black" to colour-themes-shared-list;
-		if the upgrade-target of theme-target is not black themed, increase colour-themes-shared by 1.
-A theme sharing rule (this is the black matching rule):
-	if theme-target is black themed and theme-share-target is black themed, rule succeeds.
-The black matching rule is listed in the colour sharing rules.
 Definition: an object is purple themed: decide no.
 A theme blocking rule:
 	if theme-target is purple themed and the number of currently at least partially visible purple themed clothing > 2:
@@ -404,7 +380,9 @@ A theme sharing rule (this is the dinosaur matching rule):
 The dinosaur matching rule is listed in the interesting theme sharing rules.
 
 Definition: an object is babywear: decide no. [Is it something that an NPC might put on a player to make them look more like a baby?]
-Definition: an object is baby themed if it is babywear. [Is it something that only an adult baby fetishist would have?]
+Definition: an object is baby themed:
+	if it is babywear, decide yes;
+	decide no. [Is it something that only an adult baby fetishist would have?]
 A theme blocking rule:
 	if diaper quest is 0 and theme-target is baby themed and the number of currently at least partially visible baby themed wearthings > 2:
 		add "baby themed" to interesting-themes-shared-list;
@@ -632,7 +610,9 @@ A dexterity theme rule:
 
 Section - Yellow
 
-Definition: an object is yellow themed if it is leopard themed.
+Definition: an object is yellow themed:
+	if it is leopard themed, decide yes;
+	decide no.
 
 A theme blocking rule:
 	if theme-target is yellow themed and the number of currently at least partially visible yellow themed wearthings > 2:
@@ -723,9 +703,14 @@ A sex addiction theme rule:
 Section - Unskirted Themed
 
 Definition: a thing is unskirted themed: decide no. [Is it something that should not be worn at the same time as a skirt?]
+Definition: a clothing is skirt clashing:
+	if it is unskirted themed or it is skirted, decide yes;
+	decide no. [Things that need to disappear when a skirt is summoned]
 
 Definition: a trousers is unskirted themed: decide yes.
-Definition: a dress is unskirted themed if it is not no-crotch and it is not skirted.
+Definition: a dress is unskirted themed:
+	if it is not no-crotch and it is not skirted, decide yes;
+	decide no.
 
 A theme description rule:
 	if theme-target is unskirted themed, say "[if theme-target is worn and there is worn skirted clothing]It is[otherwise][bold type]It would be[end if] very unfashionable to wear this at the same time as a skirt.[roman type][line break]".
@@ -877,7 +862,9 @@ A theme effect description rule:
 Section - Magic Themed
 
 Definition: an object is magic themed: decide no. [Is it something that implies magic?]
-Definition: a thing is magic themed if it is zappable. [It can be used to cast a magic spell.]
+Definition: a thing is magic themed:
+	if it is zappable, decide yes;
+	decide no. [It can be used to cast a magic spell]
 A theme blocking rule:
 	if theme-target is magic themed and the number of currently at least partially visible magic themed wearthings > 1:
 		add "magic themed" to interesting-themes-shared-list;
@@ -898,5 +885,49 @@ A theme effect description rule:
 	if theme-target is magic themed and theme-target is worn:
 		let MTB be magic theme bonus;
 		if MTB > 0, say "As a reward for wearing [if MTB is 1]two[otherwise]several[end if] magical items, you can feel that your spells are more powerful! ".
+
+Section - White Themed
+
+Definition: an object is white themed: decide no.
+A theme blocking rule:
+	if theme-target is white themed and the number of currently at least partially visible white themed wearthing > 3:
+		add "white" to colour-themes-shared-list;
+		if the upgrade-target of theme-target is not white themed, increase colour-themes-shared by 1.
+A theme sharing rule (this is the white matching rule):
+	if theme-target is white themed and theme-share-target is white themed, rule succeeds.
+The white matching rule is listed in the colour sharing rules.
+[Player gets higher strength for each white thing worn after the third.]
+To decide which number is white theme bonus:
+	let N be the number of worn white themed wearthings;
+	if N > 3, decide on N - 3;
+	decide on 0.
+A theme effect description rule:
+	if theme-target is white themed and theme-target is worn:
+		let WTB be white theme bonus;
+		if WTB > 0, say "As a reward for wearing several white items, you feel [if WTB > 1]much [end if]stronger! ".
+A strength theme rule:
+	increase tempThemeBonus by white theme bonus.
+
+Section - White Themed
+
+Definition: an object is black themed: decide no.
+A theme blocking rule:
+	if theme-target is black themed and the number of currently at least partially visible black themed wearthing > 3:
+		add "black" to colour-themes-shared-list;
+		if the upgrade-target of theme-target is not black themed, increase colour-themes-shared by 1.
+A theme sharing rule (this is the black matching rule):
+	if theme-target is black themed and theme-share-target is black themed, rule succeeds.
+The black matching rule is listed in the colour sharing rules.
+[Player gets higher dexterity for each black thing worn after the third.]
+To decide which number is black theme bonus:
+	let N be the number of currently at least partially visible black themed wearthings;
+	if N > 3, decide on N - 3;
+	decide on 0.
+A theme effect description rule:
+	if theme-target is black themed and theme-target is worn:
+		let BTB be black theme bonus;
+		if BTB > 0, say "As a reward for wearing several black items, you feel [if BTB > 1]much [end if]more agile! ".
+A dexterity theme rule:
+	increase tempThemeBonus by black theme bonus.
 
 Themes ends here.

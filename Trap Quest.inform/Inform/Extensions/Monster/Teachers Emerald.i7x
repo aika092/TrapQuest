@@ -100,6 +100,8 @@ To compute teaching of (L - pain-lesson):
 			allocate 80 seconds;
 		otherwise:
 			say "[if the player is feeling dominant]There's no way you're going to [']mark yourself as a submissive[']! You fold you arms and audibly huff. The other students seem to be influenced by you and in the end, nobody volunteers at all[otherwise]You look around but nobody is making any move to go forward, and you don't have the bravery to go through it alone[end if]. [BigNameDesc of M] frowns.[line break][speech style of M]'You do realise, by all being complete wusses that you've essentially proven my point? Bah. Well, we'll try again next time, and see if any of you have grown some kahunas. Now get out of my sight.'[roman type][line break]";
+			repeat with ST running through innocent students in the location of the player:
+				FavourUp ST;
 			allocate 12 seconds;
 	otherwise if there is a worn clitoris piercing and clitoris lead is not worn and the number of cursed pussy covering clothing <= the number of cursed displacable pussy covering clothing and lady fetish < 2:
 		say "Well, let's try reminding them of the symbol of submission they've got permanently welded in between their thighs, hmm?'[roman type][line break]You shiver as you clench your thighs together, almost instinctively protecting your [ShortDesc of random worn clitoris piercing] from [him of M].[line break][speech style of M]'Today we're going to have a little competition, and the winner will get promoted. I need two volunteers, each with a pierced clit.'[roman type][line break]Do you volunteer? ";
@@ -150,6 +152,7 @@ To compute teaching of (L - pain-lesson):
 			otherwise:
 				say "As you take the step back and the pain disappears, you feel relief wash over you. Sweat drips down your face and you are breathing heavily. [BigNameDesc of M] claps [his of M] hands.[line break][speech style of M]'Well done [student-name of ST]. Yes, you've definitely earned a promotion.'[roman type][line break]";
 				promote ST;
+				HappinessUp ST;
 				say "[speech style of M]'As for you [NameBimbo], you're going to regret your lack of dedication.'[roman type][line break][BigNameDesc of M] snaps [his of M] fingers and the chain falls from [NameDesc of ST][']s clit piercing but remains sealed to yours. You give it a tug but it won't come off - it's clearly permanently fixed on! Your clit throbs with renewed sensitivity, and you immediately can tell that if anyone was to grab hold of this chain, there'd just be no way you'd be able to fight back any more, or refuse their commands at all.";
 				summon clitoris lead;
 				say "[variable custom style]And I'm going to be wearing this forever?![roman type][line break][BigNameDesc of M] chuckles.[line break][speech style of M]'Well that's two girls who are much closer to being a proper submissive. A job well done if I say so myself. To be honest, that's all I can teach you now, I'll allow you to progress.'[roman type][line break]";
@@ -266,6 +269,12 @@ To compute teaching of (L - toy-lesson):
 					if CP is yourself:
 						say "Input not understood. Please enter a number that corresponds to one of the toys.";
 						now CP is nothing;
+				let choseBiggest be 1;
+				repeat with P running through LP:
+					if size of P > the size of CP, now choseBiggest is 0;
+				if choseBiggest is 1:
+					repeat with STX running through students in the location of the player:
+						FavourUp STX;
 				if delayed fainting is 1:
 					do nothing;
 				otherwise if the size of CP > the insertableGirthAcceptance of asshole:
@@ -428,7 +437,7 @@ To say EnslavedDominationFlav of (M - teacher-bianca):
 			check virginity with M;
 			say "As you pull out your [semen] drips out of [him of M] and down [his of M] thigh in thick globules. ";
 		otherwise:
-			say "try to push your [player-penis] into [his of M] fully exposed cunt. However you are dismayed to find that you can't seem to get hard right now. Instead you settle for teasing [him of M] by hooking two fingers inside [his of M] pussy and shaking them around until several thick globules of [semen] are loosened and begin to drip down [his of M] thigh. ";
+			say "try to push your [player-penis] into [his of M] fully exposed cunt. However you are dismayed to find you can't seem to get hard right now. Instead you settle for teasing [him of M] by hooking two fingers inside [his of M] pussy and shaking them around until several thick globules of [semen] are loosened and begin to drip down [his of M] thigh. ";
 	otherwise:
 		say "You hook two fingers inside [his of M] pussy and shake them around until several thick globules of [semen] are loosened and begin to drip down [his of M] thigh. ";
 		now the sleep of M is 120;

@@ -1,10 +1,5 @@
 Bimbo by Player Description begins here.
 
-[!<SayBimboDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say BimboDesc:
 	if the bimbo of the player is 1, say "You can't wait to leave this game!";
 	if the bimbo of the player is 2, say "With gritted teeth you continue to explore.";

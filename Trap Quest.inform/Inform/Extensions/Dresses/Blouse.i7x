@@ -57,9 +57,6 @@ To say ShortDesc of (C - white-bodice):
 To decide which number is the initial outrage of (C - a bodice):
 	decide on 0.
 
-To decide which number is the original price of (C - a bodice):
-	decide on 8.
-
 To decide which number is the humiliation-influence of (O - a bodice):
 	let B be 1;
 	increase B by the magic-modifier of O;

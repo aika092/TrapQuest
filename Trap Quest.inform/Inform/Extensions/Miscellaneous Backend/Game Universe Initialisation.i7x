@@ -21,9 +21,11 @@ To Start The Machine:
 		follow the setting up mansion monsters rules;
 		repeat with M running through alive nonexistent monsters:
 			set up M;
+		wait until animations are over;
 		now the player is in Mansion01;
 		now playerRegion is Mansion;
 	otherwise:
+		wait until animations are over;
 		now the player is in Dungeon12;
 	resolve graphics windows mayhem;
 	fix window overhang;
@@ -306,7 +308,7 @@ To initialise bondage prisoner:
 	if R is 2:
 		now A is a random off-stage pair of handcuffs;
 		now A is wrist-bound-in-front;
-	let C be a random off-stage chastity cage;
+	let C be a random off-stage actually summonable chastity bond;
 	let G be a random off-stage small ballgag;
 	let S be a random off-stage slave collar;
 	let D be a random off-stage eligible plentiful diaper;
@@ -327,9 +329,15 @@ To initialise bondage protection:
 	repeat with C running through off-stage bondage:
 		now C is in holding pen.
 
-Definition: a clothing is pinkWardrobeAppropriate if it is basic loot and the unworn outrage of it <= 3 + the notManlyFactor of it and (diaper quest is 0 or the unworn cringe of it <= 3 + the notManlyFactor of it).
-Definition: a bra is pinkWardrobeAppropriate if it is fetish appropriate and it is not in pink wardrobe and it is not unique and (the player is male or the min size of it <= the largeness of breasts) and the max size of it >= the largeness of breasts + 2 and it is actually dense and it is not product and the support of it > 0 and the unworn outrage of it <= 3 + the notManlyFactor of it and (diaper quest is 0 or the unworn cringe of it <= 4 + the notManlyFactor of it). [We allow rare bras]
-Definition: a knickers is pinkWardrobeAppropriate if it is basic loot and the unworn outrage of it <= 6 + the notManlyFactor of it and (diaper quest is 0 or the unworn cringe of it <= 3 + the notManlyFactor of it).
+Definition: a clothing is pinkWardrobeAppropriate:
+	if it is basic loot and the unworn outrage of it <= 3 + the notManlyFactor of it and (diaper quest is 0 or the unworn cringe of it <= 3 + the notManlyFactor of it), decide yes;
+	decide no.
+Definition: a bra is pinkWardrobeAppropriate:
+	if it is fetish appropriate and it is not in pink wardrobe and it is not unique and (the player is male or the min size of it <= the largeness of breasts) and the max size of it >= the largeness of breasts + 2 and it is actually dense and it is not product and the support of it > 0 and the unworn outrage of it <= 3 + the notManlyFactor of it and (diaper quest is 0 or the unworn cringe of it <= 4 + the notManlyFactor of it), decide yes;
+	decide no. [We allow rare bras]
+Definition: a knickers is pinkWardrobeAppropriate:
+	if it is basic loot and the unworn outrage of it <= 6 + the notManlyFactor of it and (diaper quest is 0 or the unworn cringe of it <= 3 + the notManlyFactor of it), decide yes;
+	decide no.
 
 [!<InitialiseWardrobe>+
 
@@ -382,6 +390,25 @@ To initialise wardrobe:
 	now D is a random off-stage ring;
 	now D is emerald;
 	set shortcut of D;
+	if background-rich is 1:
+		let D be a random off-stage ring;
+		now D is sapphire;
+		set shortcut of D;
+		now D is in pink wardrobe;
+		now D is a random off-stage ring;
+		now D is sapphire;
+		set shortcut of D;
+		let D be a random off-stage bracelet;
+		now D is sapphire;
+		set shortcut of D;
+		now D is in pink wardrobe;
+		now D is a random off-stage bracelet;
+		now D is sapphire;
+		set shortcut of D;
+		now D is in pink wardrobe;
+		now D is a random off-stage necklace;
+		now D is sapphire;
+		set shortcut of D;
 	now D is in pink wardrobe;
 	if the player is the donator, now combat visor is in pink wardrobe;
 	if combatvisor is 1, now combat visor is worn by the player;
@@ -394,11 +421,6 @@ To compute starting headgear:
 	now H is in pink wardrobe;
 	now H is cursed.
 
-[!<ScrambleItems>+
-
-REQUIRES COMMENTING
-
-+!]
 To Scramble Items:
 	Set Up Clothing;
 	Set Up Collectibles;

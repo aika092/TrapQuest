@@ -1,10 +1,5 @@
 Appearance by Player begins here.
 
-[!<DecideWhichNumberIsThePerceivedBimboInfluenceOfThing>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the perceived-bimbo-influence of (C - a thing):
 	decide on 0.
 
@@ -15,11 +10,6 @@ To explain appearance:
 	let A be the appearance of the player;
 	now appearance-explained is 0.
 
-[!<DecideWhichNumberIsTheAppearanceOfThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the appearance of the player: [Update values first. Forces a new line if triggered in the middle of a sentence; consider just using saved appearance and fingers crossed it's not horribly inaccurate.]
 	potentially update appearance and cringe levels;
 	decide on the saved appearance of the player.
@@ -38,11 +28,6 @@ To decide which number is the saved appearance of the player: [When an NPC looks
 	if A > 20, decide on 20;
 	decide on A.
 
-[!<DecideWhichNumberIsCumulativeOutrageLevel>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is cumulative-outrage-level:
 	let A be calculated-appearance-outrage-level; [Outrage of the lewdest worn thing / exposed body part]
 	let A2 be A / 2; [Half outrage of lewdest thing, i.e. total outrage if this is the only lewd thing]

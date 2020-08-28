@@ -9,7 +9,6 @@ To check attack of (M - a monster):
 			compute correct delay of M;
 		otherwise if the paralyse-status of M > 0:
 			now the last-interaction of M is 1;
-			decrease the paralyse-status of M by 1;
 			compute paralysis of M;
 		otherwise:
 			compute attack of M.
@@ -33,9 +32,7 @@ To compute attack of (M - a monster):
 		let N be the maxhealth of M / 10;
 		if N < 1, now N is 1;
 		decrease health of M by N;
-		if health of M < 1:
-			now health of M is 1;
-		decrease the poison-status of M by 1;
+		if health of M < 1, now health of M is 1;
 	follow the monster attack rules.
 
 The monster attack rules is a rulebook.
@@ -300,7 +297,9 @@ To compute default facial climax for (M - a monster):
 		if M is interested, orgasm satisfy M;[dislodges him automatically]
 		otherwise orgasm dislodge M.
 
-Definition: a monster is willing to tongue creampie if the favour of it > a random number between 0 and (the aggro limit of it + 5). [Cums on the player's tongue instead of down their throat]
+Definition: a monster is willing to tongue creampie:
+	if the favour of it > a random number between 0 and (the aggro limit of it + 5), decide yes;
+	decide no. [Cums on the player's tongue instead of down their throat]
 
 [!<ComputeClimaxOfMonsterInFuckhole>+
 
@@ -386,15 +385,20 @@ To compute cleavage climax of (M - a monster):
 	TimesSubmittedUp M by 1;
 	if M is male:
 		say CleavageClimaxFlav of M;
+		get cleavage climax image of M;
 		CumTitsUp the semen load of M;
 	if M is interested, orgasm satisfy M;
 	otherwise orgasm dislodge M.
+
+To get cleavage climax image of (M - a monster):
+	do nothing.
 
 This is the default erection climax rule:
 	if current-monster is penetrating penis:
 		compute erection climax of current-monster.
 The default erection climax rule is listed in the default end-of-sex rules.
 
+[This is M's orgasm, not necessarily the player's]
 To compute erection climax of (M - a monster):
 	PenisObedienceUp 1;
 	TimesSubmittedUp M by 1;
@@ -524,6 +528,13 @@ To compute erection sex of (M - a monster):
 		decrease the sex-length of M by 1;
 		stimulate penis from M;
 		say "[one of][M sex reaction][or][cycling]".
+
+To compute post climax effect of (M - a monster) in (B - penis):[Note that this is not necessarily a "climax", just the end of the sex]
+	FuckGet.
+
+To compute virginity loss with (M - a monster) on (B - penis):
+	if M is penis-virginity taking:
+		check realtime virginity with M.
 
 Chapter 2 Priority Attack
 
@@ -723,7 +734,7 @@ Definition: an object is an actual target: decide no.
 Definition: a body part (called B) is a reasonable target:
 	[If you want the monster to ignore buttslut and/or be able to take out plugs, you'll need to define the correct functions for your monster.]
 	if B is not a potential target, decide no; [First we check, is it a potential target? (see above)]
-	if debugmode > 1, say "[Shortdesc of B] is a potential target...[line break]";
+	if debugmode > 1, say "[ShortDesc of B] is a potential target...[line break]";
 	if B is occupied and B is not usable without penetration: [If it's usable without penetration e.g. the mannequin applying makeup, then we will always decide yes even if the player is gagged!]
 		if B is fake occupied and current-monster is not concealment immune, decide no; [The NPC has been tricked by magic, it cannot perceive this orifice!]
 		if B is actually occupied:
@@ -752,6 +763,7 @@ Definition: a body part (called B) is an actual target:
 
 Definition: a belly (called B) is an actual target: [We can always piss on a face unless it's being fucked.]
 	if the blue-balls of current-monster > a random number between 0 and 9, decide no; [This NPC wants to orgasm!]
+	if current-monster is wrapped, decide no; [can't piss through a condom!]
 	if B is a reasonable target and the number of monsters filling face is 0, decide yes;
 	[if debugmode > 0, say "[ShortDesc of B] is not an actual target...[line break]";]
 	decide no.
@@ -1058,8 +1070,8 @@ To compute (M - a monster) entering (F - vagina):
 		set up sex length of M in vagina;
 		if (M is friendly-fucking or presented-orifice is vagina) and M is intelligent, say FriendlyVaginaPenetrationFlav of M;
 		otherwise say VaginaPenetrationFlav of M; [If you just want to change the text, replace the Flav function. Otherwise replace the entire compute function.]
-		compute unique penetration effect of M in vagina;
 		now M is penetrating vagina;
+		compute unique penetration effect of M in vagina;
 		ruin vagina;
 		get vaginal penetration image for M;
 		say GangAnnounce;
@@ -1140,7 +1152,7 @@ This is the monster attacking penis covering clothing rule:
 The monster attacking penis covering clothing rule is listed last in the monster penis insertion rules.
 
 This is the monster unlocks annoying cages rule:
-	let C be a random worn chastity cage;
+	let C be a random worn chastity bond;
 	if C is clothing:
 		compute current-monster removing C;
 		rule succeeds.
@@ -1157,8 +1169,8 @@ To get penis penetration image for (M - a monster):
 To compute (M - a monster) demanding erection:
 	if penis is not penis-erect, say ErectionDemand of M;
 	if penis is erect-on-request or penis is penis-erect:
-		if penis is not penis-erect, now penis is penis-erect;
 		compute M mounting erection;
+		if penis is not penis-erect, now penis is penis-erect;
 	otherwise:
 		compute unerect taunting of M.
 
@@ -1168,6 +1180,7 @@ To compute (M - a monster) mounting erection:
 		if (M is friendly-fucking or presented-orifice is penis) and M is intelligent, say FriendlyErectionPenetrationFlav of M;
 		otherwise say ErectionPenetrationFlav of M;
 		now M is penetrating penis;
+		compute virginity loss with M on penis;
 		compute unique penetration effect of M in penis;
 		get penis penetration image for M;
 		say GangAnnounce;
@@ -1276,7 +1289,7 @@ Determines the accuracy of a monster's action, usually a damaging attack
 +!]
 To decide which number is the accuracy roll of (M - a monster):
 	let D be the difficulty of M + (a random number between 1 and 6) + (a random number between 1 and 6);
-	if D > the difficulty of M + 7, now D is 9999; [This check means that the right hand side of the normal distribution roll always is a successful hit. i.e. 50% of the time, the monster will hit automatically]
+	if D >= the difficulty of M + 6, now D is 9999; [This check means that the right hand side of the normal distribution roll always is a successful hit. i.e. 50% of the time, the monster will hit automatically]
 	if the blind-status of M > 0, now D is (the difficulty of M + (a random number between 0 and 6) + (a random number between 0 and 6)) / 2; [If the monster is blinded then we ignore the 50% minimum hit chance and also nerf accuracy massively]
 	if debugmode is 1, say "Player [dexterity of the player] | [D].5 [ShortDesc of M][line break]";
 	decide on D.
@@ -1297,7 +1310,9 @@ To decide which number is the strength roll of (M - a monster):
 
 A monster has a number called last-tripped.
 
-Definition: a monster is a tripper if it is intelligent.
+Definition: a monster is a tripper:
+	if it is intelligent, decide yes;
+	decide no.
 
 [!<ToSayTripChanceFlavOfMonster>
 
@@ -1307,16 +1322,25 @@ Displays a hint that tells the player how likely a monster is to try to trip the
 
 +!]
 To say TripChanceFlav of (M - a monster):
-	if the last-tripped of M > 4:
-		say "[BigNameDesc of M] [one of]is blatantly staring at your [feet][or]looks down at your [feet][or][if M is human]bends [his of M] knees[otherwise]aims for your knees[end if][in random order]! [big he of M] is clearly going to try and trip you soon.";
-	otherwise if the last-tripped of M > 2:
-		say "[BigNameDesc of M] [one of]glances at your [feet][or]seems to be almost purposefully not looking at your [feet][or]eyes your knees[in random order]. There's a chance [he of M] is planning to trip you up.[if newbie tips is 1 and tutorial is 0][one of][newbie style]This would be a good time to stick to slapping until the NPC makes [his of M] trip attack.[roman type][line break][or][stopping][end if]".
-
-Definition: a jismbodied ghost is a tripper: decide yes.
+	if the trip frequency of M > 2:
+		say "[bold type][BigNameDesc of M] [bold type][one of]glances at your [feet][or]seems to be almost purposefully not looking at your [feet][or]eyes your knees[in random order]. There's a chance [he of M] is planning to trip you up next.[roman type][line break]";
+	otherwise:
+		say "[bold type][BigNameDesc of M] [bold type][one of]is blatantly staring at your [feet][or]looks down at your [feet][or][if M is human]bends [his of M] knees[otherwise]aims for your knees[end if][in random order]! [big he of M] is clearly considering trying to trip you next.[roman type][line break]";
+	if newbie tips is 1 and tutorial is 0, say "[one of][newbie style]There is a CHANCE that the [ShortDesc of M] will attempt to trip you next turn. If [he of M] succeeds, [he of M] will be able to immediately transition into [his of M] punishment routine. This would be a good turn to choose a slap attack. Kicking is the least safe option.[roman type][line break][or][stopping]";
+	now M is trip-warned.
 
 This is the choice of attack rule:
 	compute attack choice of current-monster.
 The choice of attack rule is listed last in the default monster attack rules.
+
+To decide which number is the trip threshold of (M - a monster):
+	decide on 4. [The higher this is, the less often they consider tripping next turn]
+To decide which number is the raw trip frequency of (M - a monster):
+	decide on 4. [The higher this is, the less often they actually choose to trip after considering it]
+To decide which number is the trip frequency of (M - a monster):
+	let TC be the raw trip frequency of M;
+	if TC > 2 and the trophy-mode of trip-trophy is 1 and there is worn heels, now TC is (TC + 1) / 2;
+	decide on TC.
 
 [!<ToComputeAttackChoiceOfMonster>
 
@@ -1326,18 +1350,19 @@ Determines whether a monster will try to trip or attack the player this turn, or
 
 +!]
 To compute attack choice of (M - a monster):
-	let TC be 10;
-	if the trophy-mode of trip-trophy is 1 and there is worn heels, now TC is 5;
-	if M is a tripper and the last-tripped of M > a random number between 1 and TC or (tutorial is 1 and the last-tripped of M is 2):
+	let TC be the trip frequency of M;
+	if M is a tripper and the last-tripped of M >= the trip threshold of M:
 		now the last-tripped of M is 0;
+		if a random number between 1 and TC is 1 or (tutorial is 1 and the last-tripped of M is 2), now TC is 0;
+	if TC <= 0:
 		compute tripping attack of M;
 	otherwise:
-		increase the last-tripped of M by 1;
 		compute damaging attack of M;
-		if the player is upright and M is a tripper and M is intelligent, say TripChanceFlav of M;
-	if the blind-status of M > 0:
-		decrease the blind-status of M by 1;
-		if the blind-status of M is 0, say "[BigNameDesc of M] is no longer blind!".
+		if M is a tripper and the player is upright:
+			increase the last-tripped of M by a random number between 1 and the trip threshold of M;
+			let R be a random number between -3 and the intelligence of the player;
+			if debuginfo > 1, say "[input-style]Tripping warning check: Intellgience roll RNG(-3~[the intelligence of the player]) = [if the last-tripped of M < the trip threshold of M or R < 0]???[otherwise][R][end if] | (0.5) difficulty[roman type][line break]";
+			if R > 0 and the last-tripped of M >= the trip threshold of M, say TripChanceFlav of M.
 
 [!<ToComputeTrippingAttackOfMonster>
 
@@ -1349,7 +1374,6 @@ Handles a monster attempting to make the player trip.
 To compute tripping attack of (M - a monster):
 	say MonsterTripAnnounceFlav of M;
 	let D be the tripping roll of M;
-	if debugmode is 1, say "Player [dexterity of the player] | [D].5 Monster[line break]";
 	if (D >= the dexterity of the player and the blind-status of M is not 1) or tutorial is 1:
 		say MonsterTrippedFlav of M;
 		try kneeling;

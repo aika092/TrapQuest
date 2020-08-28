@@ -7,6 +7,8 @@ Definition: a halloween headgear is roleplay: decide no.
 To set up influence of (C - a halloween headgear):
 	set up sex-based influence of C.
 
+[The halloween headgears are used in a couple of the predicaments in the predicament world. There's one room there where the player can go either down or up, so this function is probably intended for that.
+It seems like having a halloween headgear on will prevent you from leaving or entering a region. Again, that's probably intended.]
 Check going down when there is a worn halloween headgear:
 	unless the player is in a predicament room, say "Your [random worn headgear] is somehow preventing you from leaving while you're a [']trick or treater[']!" instead.
 
@@ -74,7 +76,7 @@ To decide which figure-name is the clothing-image of (C - rubber nun cowl):
 	decide on figure of rubber nun cowl.
 
 To say ClothingDesc of (H - rubber nun cowl):
-	say "This black and white cowl would look rather normal and modest if it wasn't for the fact it is make out of shiny, fetishy latex.".
+	say "This black and white cowl would look rather normal and modest if it weren't for the fact it's made of shiny, fetishy latex.".
 
 To say ShortDesc of (H - rubber nun cowl):
 	say "nun cowl".
@@ -86,7 +88,9 @@ To compute SelfExamineDesc of (H - rubber nun cowl):
 
 Definition: rubber nun cowl is black themed: decide yes.
 Definition: rubber nun cowl is white themed: decide yes.
-Definition: rubber nun cowl is fetish appropriate if diaper quest is 0.
+Definition: rubber nun cowl is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 
 To decide which number is the initial outrage of (C - rubber nun cowl):
 	decide on 3.
@@ -134,7 +138,9 @@ To compute SelfExamineDesc of (H - witch's hat):
 
 Definition: witch's hat is black themed: decide yes.
 Definition: witch's hat is magic themed: decide yes.
-Definition: witch's hat is fetish appropriate if diaper quest is 0.
+Definition: witch's hat is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 
 To decide which number is the initial outrage of (C - witch's hat):
 	decide on 2.
@@ -182,7 +188,9 @@ To compute SelfExamineDesc of (H - doll hairbow):
 	say "You are wearing an orange hairbow in your [ShortDesc of hair]. ".
 
 Definition: doll hairbow is orange themed: decide yes.
-Definition: doll hairbow is fetish appropriate if diaper quest is 1.
+Definition: doll hairbow is fetish appropriate:
+	if diaper quest is 1, decide yes;
+	decide no.
 
 To decide which number is the initial cringe of (C - doll hairbow):
 	decide on 3.

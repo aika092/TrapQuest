@@ -364,27 +364,17 @@ To compute instant change appearance of (M - matron):
 	now M is in the location of the player;
 	now M is interested;
 	if M is friendly, anger M; [This just helps the correct inline hyperlinks turn up]
-	say "Just as you finish [if the diaper addiction of the player < 9]one of the most humiliating experiences of your life[otherwise if the diaper addiction of the player < 15]your potty pants session[otherwise]you're incredibly fun potty pants session[end if], [NameDesc of M] suddenly arrives, adding to your shame. [big he of M] [if M is changing the player]continues to hold [his of M] hand pressed against your rear, making sure you realise that [he of M] is a full witness to your shame[otherwise]instantly notices your sagging incontinence aid, and before you can move a muscle [he of M] is standing over you, one hand pressed firmly against the warm posterior of your padding[end if]. [line break][speech style of M]'[one of]Uh-oh, what do we have here?! How have you managed this, you naughty baby! Only the most pathetic of babies can't control their number twos! [or]Again?! You're so lucky I'm always here when you need me, really now. If you can't control your bottom you're going to have to be in nappies for a long, long time. [stopping][if rectum > 6][one of]And how in the heavens is there so much?! How long has it been since you last went potty?! [or][stopping][end if]Let's get you [if the player is not in Hotel22]back to the nursery and [end if]changed[one of] into something less stinky[or][stopping].'[roman type][line break]";
+	say "Just as you finish [if the diaper addiction of the player < 9]one of the most humiliating experiences of your life[otherwise if the diaper addiction of the player < 15]your potty pants session[otherwise]you're incredibly fun potty pants session[end if], [NameDesc of M] suddenly arrives, adding to your shame. [big he of M] [if M is changing the player]continues to hold [his of M] hand pressed against your rear, making sure you realise that [he of M] is a full witness to your shame[otherwise]instantly notices your sagging incontinence aid, and before you can move a muscle [he of M] is standing over you, one hand pressed firmly against the warm posterior of your padding[end if].[line break][speech style of M]'[one of]Uh-oh, what do we have here?! How have you managed this, you naughty baby! Only the most pathetic of babies can't control their number twos! [or]Again?! You're so lucky I'm always here when you need me, really now. If you can't control your bottom you're going to have to be in nappies for a long, long time. [stopping][if rectum > 6][one of]And how in the heavens is there so much?! How long has it been since you last went potty?! [or][stopping][end if]Let's get you [if the player is not in Hotel22]back to the nursery and [end if]changed[one of] into something less stinky[or][stopping].'[roman type][line break]";
 	if the player is not in Hotel22:
 		say "[line break][bold type][BigNameDesc of M] [bold type]lifts you into the air and [if playerRegion is Hotel]without a word swiftly carries you all the way to[otherwise]snaps [his of M] fingers, and after a brief moment of feeling like you are flying, suddenly you are back in[end if] the Nursery![roman type][line break]";
 		drag to Hotel22 by M;
 
-[!<SayDiaperMessDeclarationOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To say diaper mess declaration of (M2 - a monster):
 	say "[variable custom style]'[if the humiliation of the player < 15000]Noooo! Don't watch!'[otherwise if the diaper addiction of the player > 15]Ooh [daddy of M2], I think I'm gonna need a change...'[otherwise if the humiliation of the player > 31000]Please watch me and laugh at me as I [one of]mess my stinky bottom[or]do a poopy in my pants[or]go number two[at random]!'[otherwise if the diaper addiction of the player < 8]Fuck fuck fuck, I can't believe this[one of][or] is happening again[stopping]. Please don't look!'[otherwise][one of]That was... bad timing...'[or]Uh-oh, it happened again...'[stopping][end if][roman type][line break]".
 
-[!<ComputeDiaperMessReactionOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute diaper mess reaction of (M - a person):
 	if diaper quest is 1 and M is monster:
-		say "[BigNameDesc of M] looks at you with [one of]a smug expression[or]a judging expression[or]a caring expression[or]a mildly disgusted sneer[or]a smirk[in random order]. [line break][speech style of M]'[one of]Pathetic.'[or]It's not polite to do that in front of people, you disgusting baby. Or can you not control yourself?'[or][if voluntarySquatting is 1]Pooping yourself on purpose in front of me? You really are a naughty little baby aren't you?'[otherwise]If you can't control your bum-bum then you're just a stinky little baby who doesn't deserve any respect.'[end if][or]It looks like you definitely need to be kept in diapers.'[or]Good. Your potty untraining seems to be going well.'[or]I can't believe you'd do that right in front of me!'[in random order][roman type][line break]";
+		say "[BigNameDesc of M] looks at you with [one of]a smug expression[or]a judging expression[or]a caring expression[or]a mildly disgusted sneer[or]a smirk[in random order].[line break][speech style of M]'[one of]Pathetic.'[or]It's not polite to do that in front of people, you disgusting baby. Or can you not control yourself?'[or][if voluntarySquatting is 1]Pooping yourself on purpose in front of me? You really are a naughty little baby aren't you?'[otherwise]If you can't control your bum-bum then you're just a stinky little baby who doesn't deserve any respect.'[end if][or]It looks like you definitely need to be kept in diapers.'[or]Good. Your potty untraining seems to be going well.'[or]I can't believe you'd do that right in front of me!'[in random order][roman type][line break]";
 		humiliate 400;
 		if voluntarySquatting is 1, humiliate 500;
 		unless M is staff member:
@@ -394,7 +384,7 @@ To compute diaper mess reaction of (M - a person):
 			FavourDown M by 4;
 			if M is unfriendly and previous-friendly is 1, say BecomesAggressive of M;
 	otherwise:
-		say "[BigNameDesc of M] looks at you with [one of]disgust[or]shock[or]horror[or]disbelief[or]distress in [his of M] eyes[or]a wide open mouth[as decreasingly likely outcomes]. [line break][speech style of M]'[one of]Holy shit, you can't be serious... You're fucked up in the head.'[or][big please] [please] [caps please] tell me you did not just crap yourself in front of me?!'[or]What the fuck are you doing?! Yuck, stop!!!'[or]What in the world?! Can you not control your own body?! How disgusting.'[or]You're sick, you know that?'[or]This can't be real. Gross!'[in random order][roman type][line break]";
+		say "[BigNameDesc of M] looks at you with [one of]disgust[or]shock[or]horror[or]disbelief[or]distress in [his of M] eyes[or]a wide open mouth[as decreasingly likely outcomes].[line break][speech style of M]'[one of]Holy shit, you can't be serious... You're fucked up in the head.'[or][big please] [please] [caps please] tell me you did not just crap yourself in front of me?!'[or]What the fuck are you doing?! Yuck, stop!!!'[or]What in the world?! Can you not control your own body?! How disgusting.'[or]You're sick, you know that?'[or]This can't be real. Gross!'[in random order][roman type][line break]";
 		humiliate 400;
 		if voluntarySquatting is 1, humiliate 500;
 		if M is monster and (M is friendly or M is uninterested):
@@ -402,11 +392,6 @@ To compute diaper mess reaction of (M - a person):
 			bore M;
 			compute mandatory room leaving of M.
 
-[!<messing:Action>*
-
-REQUIRES COMMENTING
-
-*!]
 Messing is an action applying to nothing.
 Understand "poo", "poop", "crap", "shit", "mess" as messing.
 
@@ -442,29 +427,14 @@ Check messing:
 		allocate 6 seconds;
 		say "You [if the player is upright and the player is shameless]squat like a shameless toddler and [otherwise if the player is upright and the player is ashamed]blush as you squat down and [otherwise]squat a little bit as discreetly as you can and [end if]push. But [one of]it was all for nothing - [or][stopping]nothing comes out!" instead.
 
-[!<CarryOutMessing>+
-
-REQUIRES COMMENTING
-
-+!]
 Carry out messing:
 	now voluntarySquatting is 1;
 	allocate 6 seconds;
 	compute messing.
 
-[!<targetMessing:Action>*
-
-REQUIRES COMMENTING
-
-*!]
 TargetMessing is an action applying to one thing.
 Understand "poo in [something]", "poop in [something]", "crap in [something]", "shit in [something]", "mess in [something]", "mess [something]", "soil [something]" as TargetMessing.
 
-[!<CheckTargetMessing>+
-
-REQUIRES COMMENTING
-
-+!]
 Check TargetMessing:
 	try messing instead.
 

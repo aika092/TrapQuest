@@ -16,11 +16,6 @@ Legacy room that was used to try and avoid the weird crash when trying to load f
 Loading is a room. "Type '[bold type]restore[roman type]' to load your save file.".
 Definition: Loading is nonstandard: decide yes.
 
-[!<capsule:Room>*
-
-REQUIRES COMMENTING
-
-*!]
 Capsule is a room. The printed name of Capsule is "Virtual Reality Machine".
 Definition: Capsule is nonstandard: decide yes.
 "A small metal chamber with nothing but a big red button.[TutorialCapsule]".
@@ -28,36 +23,16 @@ Definition: Capsule is nonstandard: decide yes.
 To say unique-verb-desc of (T - a big red button):
 	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say " [link][bracket]push[close bracket][as]push [text-shortcut of T][end link]".
 
-[!<bigRedButton:Item>*
-
-REQUIRES COMMENTING
-
-*!]
 In Capsule is a big red button. The big red button is not portable. The printed name of big red button is "[TQlink of item described]big red button[TQxlink of item described][verb-desc of item described]". The text-shortcut of big red button is "brb".
 To say ExamineDesc of (C - big red button):
 	say "It says 'Power On' above this button. I guess there's only one thing to do...".
 
-[*<CheckPushingWhenPlayerIsInCapsule>+
-
-REQUIRES COMMENTING
-
-+!]
 Check pushing when the player is in capsule:
 	unless the noun is big red button, try pushing the big red button instead.
 
-[!<CheckTouchingWhenPlayerIsInCapsule>+
-
-REQUIRES COMMENTING
-
-+!]
 Check touching when the player is in capsule:
 	unless the noun is big red button, try pushing the big red button instead.
 
-[!<ReportPushingTheBigRedButton>+
-
-REQUIRES COMMENTING
-
-+!]
 Report pushing the big red button:
 	say "You steel yourself and push the button. A quiet buzzing grows louder and louder. You feel your body sucked through an invisible hole in the fabric of space. Pink walls rush from nowhere to appear around you!";
 	if quick start > 1, clear the screen;
@@ -87,11 +62,6 @@ Anything in here will be able to appear in the next christmas gift
 *!]
 Christmas Item Pen is a room.
 
-[!<soonToImprint:Room>*
-
-REQUIRES COMMENTING
-
-*!]
 soon-to-imprint is a room.
 
 [!<linkedRoom:Room>*

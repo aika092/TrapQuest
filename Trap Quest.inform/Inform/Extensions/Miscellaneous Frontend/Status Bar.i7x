@@ -1,10 +1,5 @@
 Status Bar by Miscellaneous Frontend begins here.
 
-[!<RuleForConstructingTheStatusLine>+
-
-REQUIRES COMMENTING
-
-+!]
 Rule for constructing the status line:
 	if the player is virtual or the player is in an introductory room:
 		if choice in row 19 of Table of Settings is 2:
@@ -48,10 +43,10 @@ To say MainStatsBar:
 	say "STR: [VagueStrength] DEX: [VagueDex] INT: [VagueInt]".
 
 To say HighResBarSecondRow:
-	say "STATUS: [VagueInternalFeeling]   [TQDQ Appearance] [VagueDignity]   SLAP: [saved-printed-slap-damage] KNEE: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks][if the magic-power of the player > 0] MAGIC: [magic-power of the player][end if][if the class of the player is succubus] SOULS: [souls of the player][end if]".
+	say "STATUS: [VagueInternalFeeling]   [TQDQ Appearance] [VagueDignity]   SLAP: [saved-printed-slap-damage] KNEE: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks][if the total magic power of the player > 0] MAGIC: [magic power of the player] / [total magic power of the player][end if][if the class of the player is succubus] SOULS: [souls of the player][end if]".
 
 To say MinimalBarSecondRow:
-	say "[MainStatsBar] SLAP: [saved-printed-slap-damage] KNEE: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks][if the magic-power of the player > 0] MAGIC: [magic-power of the player][end if][if the class of the player is succubus] SOULS: [souls of the player][end if]".
+	say "[MainStatsBar] SLAP: [saved-printed-slap-damage] KNEE: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks][if the total magic power of the player > 0] MAGIC: [magic power of the player] / [total magic power of the player][end if][if the class of the player is succubus] SOULS: [souls of the player][end if]".
 
 To say HighResBarThirdRow:
 	say "[if diaper quest is 0]TITS: [VagueBreast] BELLY: [VagueBelly][otherwise]STOMACH: [VagueStomach][end if] [if diaper quest is 1 and there is a worn diaper]DIAPER: [VagueDiaper][otherwise if diaper quest is 1 and there is a worn knickers]UNDIES: [VagueDiaper][otherwise if diaper quest is 0]HIPS: [VagueHips][end if]".
@@ -75,7 +70,7 @@ To say LowResStatus:
 	say "STATUS: [VagueInternalFeeling]   HEALTH: [VagueExternalFeeling]".
 
 To say LowResCombat:
-	say "SLAP POWER: [saved-printed-slap-damage] KNEE POWER: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK POWER: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks][if the magic-power of the player > 0] MAGIC: [magic-power of the player][end if][if the class of the player is succubus] SOULS: [souls of the player][end if]".
+	say "SLAP POWER: [saved-printed-slap-damage] KNEE POWER: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK POWER: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks][if the total magic power of the player > 0] MAGIC: [magic power of the player] / [total magic power of the player][end if][if the class of the player is succubus] SOULS: [souls of the player][end if]".
 
 Part - Debug Res Status Bars
 
@@ -109,19 +104,9 @@ To say ZapAttacks:
 
 Part - Rose
 
-[!<SayRoseDirection>+
-
-REQUIRES COMMENTING
-
-+!]
 To say rose (way - a direction):
 	If the way is viable, say "[way abbreviation]"; otherwise say " [if the way is west] [end if]";
 
-[!<SayDirectionAbbreviation>+
-
-REQUIRES COMMENTING
-
-+!]
 To say (way - a direction) abbreviation:
 	If way is north, say " N ";
 	If way is west, say " W";
@@ -143,11 +128,6 @@ To say bottom rose:
 
 Part - Status Descriptions
 
-[!<SayVagueStrength>+
-
-REQUIRES COMMENTING
-
-+!]
 To say VagueStrength:
 	if saved-flat-strength < 5:
 		say "Weakling ";
@@ -167,11 +147,6 @@ To say VagueStrength:
 		otherwise:
 			say "[if diaper quest is 1]BABY[otherwise]BIMBO[end if] SMASH".
 
-[!<SayVagueDex>+
-
-REQUIRES COMMENTING
-
-+!]
 To say VagueDex:
 	if saved-flat-dexterity < 5:
 		say "Stiff	 ";
@@ -188,11 +163,6 @@ To say VagueDex:
 	otherwise:
 		say "Samus Aran".
 
-[!<SayVagueInt>+
-
-REQUIRES COMMENTING
-
-+!]
 To say VagueInt:
 	if the bimbo of the player is 20:
 		say "Braindead ";
@@ -217,11 +187,6 @@ To say VagueInt:
 	otherwise:
 		say "Deep Thought".
 
-[!<SayVagueDignity>+
-
-REQUIRES COMMENTING
-
-+!]
 To say VagueDignity:
 	let H be the humiliation of the player;
 	say "DECENCY: ";
@@ -256,11 +221,6 @@ To say VagueDignity:
 	otherwise:
 		say "Fully Broken";
 
-[!<SayVagueHumiliation>+
-
-REQUIRES COMMENTING
-
-+!]
 To say VagueHumiliation:
 	let B be the saved appearance of the player;
 	if the player-class is not succubus:
@@ -290,11 +250,6 @@ To say VagueHumiliation:
 		otherwise:
 			say "Possessed".
 
-[!<SayVagueAppearance>+
-
-REQUIRES COMMENTING
-
-+!]
 To say VagueAppearance:
 	let B be the saved appearance of the player;
 	if the class of the player is succubus:
@@ -330,11 +285,6 @@ To say VagueAppearance:
 	if B > 2 and O > 2:
 		say "([caused by B] [MediumAppearanceDesc of appearance-outrage-target][if debuginfo > 0] [bracket][O]/20[close bracket][end if])".
 
-[!<SayVagueCringeHumiliation>+
-
-REQUIRES COMMENTING
-
-+!]
 To say VagueCringeHumiliation:
 	let B be the saved cringe appearance of the player;
 	if the player is proud:
@@ -350,11 +300,6 @@ To say VagueCringeHumiliation:
 	otherwise:
 		say "Completely Content".
 
-[!<SayVagueCringeAppearance>+
-
-REQUIRES COMMENTING
-
-+!]
 To say VagueCringeAppearance:
 	let B be the saved cringe appearance of the player;
 	if B <= 3:
@@ -383,11 +328,6 @@ To say VagueCringeAppearance:
 	if B > 2 and appearance-cringe-level > 2:
 		say "([caused by B] [if appearance-cringe-target is body part and appearance-cringe-target is not face and appearance-cringe-target is not hair]nudity[otherwise][MediumAppearanceDesc of appearance-cringe-target][end if][if appearance-cringe-target is body part and appearance-cringe-target is not face and appearance-cringe-target is not hair and cringe-target is clothing] & [MediumAppearanceDesc of cringe-target][end if][if debuginfo > 0] [bracket][appearance-cringe-level]/20[close bracket][end if])".
 
-[!<SayVagueAddiction>+
-
-REQUIRES COMMENTING
-
-+!]
 To say VagueAddiction:
 	if the sex addiction of the player < 4:
 		if the player is gendered male, say "Straight";
@@ -408,11 +348,6 @@ To say VagueAddiction:
 	otherwise:
 		say "One Track Mind".
 
-[!<SayVagueDiaperAddiction>+
-
-REQUIRES COMMENTING
-
-+!]
 To say VagueDiaperAddiction:
 	if the diaper addiction of the player < 3:
 		say "Disgusted";
@@ -435,11 +370,6 @@ To say VagueDiaperAddiction:
 	otherwise:
 		say "Devoted".
 
-[!<SayVagueDelicateness>+
-
-REQUIRES COMMENTING
-
-+!]
 To say VagueDelicateness:
 	if the delicateness of the player < 4:
 		say "[if the bimbo of the player < 5]Strong Willed[otherwise]Brave[end if]";
@@ -460,11 +390,6 @@ To say VagueDelicateness:
 	otherwise:
 		say "Obedient".
 
-[!<SayVagueBreast>+
-
-REQUIRES COMMENTING
-
-+!]
 To say VagueBreast:
 	if the largeness of breasts < 3:
 		say "Flat	 ";
@@ -483,11 +408,6 @@ To say VagueBreast:
 	otherwise:
 		say "Unreal   ".
 
-[!<SayVagueBelly>+
-
-REQUIRES COMMENTING
-
-+!]
 To say VagueBelly:
 	if the largeness of belly < 4:
 		say "Flat	";
@@ -500,11 +420,6 @@ To say VagueBelly:
 	otherwise:
 		say "Absurd ".
 
-[!<SayVagueHips>+
-
-REQUIRES COMMENTING
-
-+!]
 To say VagueHips:
 	if the thickness of hips < 4:
 		say "Slim	 ";
@@ -517,11 +432,6 @@ To say VagueHips:
 	otherwise:
 		say "Unnatural".
 
-[!<SayVagueDiaper>+
-
-REQUIRES COMMENTING
-
-+!]
 To say VagueDiaper:
 	let D be a random worn knickers;
 	if D is perceived messed, say "Messy[if the total-soak of D > 0] & [end if]";
@@ -534,36 +444,16 @@ To say VagueDiaper:
 	otherwise if D is not perceived messed:
 		say "[if D is diaper]Clean[otherwise]Dry[end if]".
 
-[!<SayVagueInternalFeeling>+
-
-REQUIRES COMMENTING
-
-+!]
 To say VagueInternalFeeling:
 	say "[VagueInternals]";
 
-[!<SayVagueExternalFeeling>+
-
-REQUIRES COMMENTING
-
-+!]
 To say VagueExternalFeeling:
 	say "[VagueSoreness]".
 
-[!<DecideWhichNumberIsTheOrificeSorenessOfThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the orifice soreness of the player:
 	if the player is not possessing a vagina or the soreness of asshole >= the soreness of vagina, decide on the soreness of asshole;
 	otherwise decide on the soreness of vagina.
 
-[!<SayVagueSoreness>+
-
-REQUIRES COMMENTING
-
-+!]
 To say VagueSoreness:
 	let fine be 1;
 	if the player is tired:
@@ -616,11 +506,6 @@ To say VagueSoreness:
 			now fine is 0;
 	if fine is 1, say "Fine".
 
-[!<SayVagueStomach>+
-
-REQUIRES COMMENTING
-
-+!]
 To say VagueStomach:
 	let fine be 1;
 	let but be 0;
@@ -656,11 +541,6 @@ To say VagueStomach:
 		now fine is 0;
 	if fine is 1, say "Fine".
 
-[!<SayVagueInternals>+
-
-REQUIRES COMMENTING
-
-+!]
 To say VagueInternals:
 	let fine be 1;
 	let A be alcohol-level;
@@ -747,11 +627,6 @@ To say VagueInternals:
 
 The constructing status line while displaying rule is not listed in any rulebook.
 
-[!<RuleForConstructingTheStatusLineWhileDisplaying>+
-
-REQUIRES COMMENTING
-
-+!]
 Rule for constructing the status line while displaying:
 	if the current menu is Table of Disclaimer:
 		fill status bar with Table of Disclaimer Body;
@@ -787,51 +662,26 @@ Rule for constructing the status line while displaying:
 		otherwise fill status bar with Table of Shallow Menu Status;
 	rule succeeds.
 
-[!<tableOfGameSettingsStatus:Table>*
-
-REQUIRES COMMENTING
-
-*!]
 Table of Game Settings Status
 left	central	right
 ""	"Game Settings"	""
 
-[!<tableOfNameOptionsStatus:Table>*
-
-REQUIRES COMMENTING
-
-*!]
 Table of Name Options Status
 left	central	right
 ""	"Choose Your Name"	""
 
-[!<tableOfGenderOptions:Table>*
-
-REQUIRES COMMENTING
-
-*!]
 Table of Gender Options Status
 left	central	right
 "CHOOSE YOUR CHARACTER'S SEX"	""	""
 ""	""	""
 "Men can [if diaper quest is 1]have their penis shrink[otherwise]still get a very womanly body[end if], but they will not get a vagina without TG fetish enabled."	""	""
 
-[!<tableOfFetishMenuStatus:Table>*
-
-REQUIRES COMMENTING
-
-*!]
 Table of Fetish Menu Status
 left	central	right
 "Choose your difficulty points."	""	""
 "You will spend these points on benefits on the next page."	""	""
 "You will currently get [positive points count] points to spend on the next page."	""	""
 
-[!<tableOfBenefitOptionsStatus:Table>*
-
-REQUIRES COMMENTING
-
-*!]
 Table of Benefit Options Status
 left	central	right
 "Choose how to spend your points."	""	""
@@ -839,22 +689,12 @@ left	central	right
 
 Part - Other Status Bars
 
-[!<tableOfEmptyStatus:Table>*
-
-REQUIRES COMMENTING
-
-*!]
 Table of Empty Status
 left	central	right
 ""	""	""
 ""	"*****[if diaper quest is 1]DIAPER[otherwise]TRAP[end if] QUEST*****"	""
 ""	""	""
 
-[!<tableOfPregnancyChoiceStatus:Table>*
-
-REQUIRES COMMENTING
-
-*!]
 Table of Pregnancy Choice Status
 left	central	right
 ""	""	""
@@ -873,44 +713,24 @@ left	central	right
 ""	"How would you like the game to handle your sex change?"	""
 ""	""	""
 
-[!<tableOfDiaperChoiceStatus:Table>*
-
-REQUIRES COMMENTING
-
-*!]
 Table of Diaper Choice Status
 left	central	right
 ""	""	""
 ""	"Enable or disable certain diaper content?"	""
 ""	""	""
 
-[!<tableOfDiaperFocusStatus:Table>*
-
-REQUIRES COMMENTING
-
-*!]
 Table of Diaper Focus Status
 left	central	right
 ""	""	""
 ""	"Make diapers the main focus of the game?"	""
 ""	""	""
 
-[!<tableOfToiletAllowanceStatus:Table>*
-
-REQUIRES COMMENTING
-
-*!]
 Table of Toilet Allowance Status
 left	central	right
 ""	""	""
 ""	"Enable the player to pull the diaper to one side when in a room with a toilet?"	""
 ""	""	""
 
-[!<tableOfRandomSettingsStatus:Table>*
-
-REQUIRES COMMENTING
-
-*!]
 Table of Random Settings Status
 left	central	right
 ""	""	""

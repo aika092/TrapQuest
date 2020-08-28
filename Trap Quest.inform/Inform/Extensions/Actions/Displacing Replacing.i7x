@@ -114,7 +114,7 @@ Check replacing:
 			say "You can't because [NameDesc of T] is in your [random fuckhole penetrated by T]!" instead;
 		repeat with C running through worn clothing:
 			if C is top level protection and the bottom-layer of C > the bottom-layer of the noun, say "You would need to displace or remove your [printed name of C] first." instead;
-			if the noun is not C and C is crotch covering and (C is top-exclusive or C is totally-exclusive) and the bottom-layer of C < the bottom-layer of the noun, say "You can't put that back in place while you are wearing the [C]!" instead; [For example, trying to replace jeans over a waddle diaper]
+			if the noun is not C and C is crotch covering and (C is top-exclusive or C is totally-exclusive) and the bottom-layer of C < the bottom-layer of the noun, say "You can't put that back in place while you are wearing the [C], because the [ShortDesc of C] is [bold type]top level[roman type] and refuses to let anything sit above it!" instead; [For example, trying to replace jeans over a waddle diaper]
 			if the noun is unskirted and (C is cursed clitoris piercing or C is cursed clitoris lead), say "The curse of your [C] is somehow preventing you from doing this!" instead;
 	repeat with M running through combative monsters:
 		say "[BigNameDesc of M] gets in the way and stops you from fixing the position of [NameDesc of the noun]." instead.

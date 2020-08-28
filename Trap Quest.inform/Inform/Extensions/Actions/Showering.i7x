@@ -167,7 +167,7 @@ To soak clothing in water body:
 			increase tracked-semen by 4;
 			PussyEmpty 2;
 		if W > 0:
-			increase tracked-semen by 6;[because its steeped in your pheromones or something. I don't know, whatever.]
+			increase tracked-semen by 6;[because it's steeped in your pheromones or something. I don't know, whatever.]
 			WombEmpty 2;
 	if face is temporarily made up:
 		say "The water washes all the make up from your face.";
@@ -217,7 +217,7 @@ To decide which number is the swimming challenge of the player:
 	if acolyte-chestpiece is worn, increase W by 40;[You really don't want to swim in this]
 	decide on W.
 
-[Used to determine what the player finds when diving. L is the players "location" in the waterbody. If not needed, just leave as 0]
+[Used to determine what the player finds when diving. L is the players "location" in the water body. If not needed, just leave as 0]
 To compute treasure diving in (WB - a thing) at (L - a number):
 	do nothing.
 
@@ -253,7 +253,7 @@ To compute difficult swimming check in (WB - a thing):
 
 To compute swimming fatigue check in (WB - a thing):
 	if the fatigue of the player >= the buckle threshold of the player:[You're too tired, and you faint.]
-		say "You're too tired, and strength leaves your limbs as you slowly sink beneath the water. You pass out.";
+		say "You're too tired, and strength leaves your limbs as you slowly sink beneath the surface. You pass out.";
 		now delayed fainting is 1;
 		now the fainting reason of the player is 23;
 	otherwise:
@@ -264,7 +264,7 @@ To describe swimming fatigue:
 	let V be the very tired threshold of the player;
 	let T be the tired threshold of the player;
 	if the fatigue of the player >= B:
-		say "You have no more energy to swim, and it's starting to take a lot of effort to keep your head above water. You have to get out soon!";
+		say "You have no more energy to swim, and it's starting to take a lot of effort to keep your head above the surface. You have to get out soon!";
 	otherwise if the fatigue of the player >= V:
 		say "You're almost out of energy, and keeping afloat is starting to take a lot of work. You should get out soon.";
 	otherwise if the fatigue of the player >= T:

@@ -3,7 +3,9 @@ Maid Headdress by Headgear begins here.
 A maid headdress is a kind of headgear. A maid headdress is usually brightness-negative. A maid headdress is usually hair growing. A maid headdress is womanly. The text-shortcut of maid headdress is "mhd". A maid headdress is usually strength-influencing. A maid headdress is usually roleplay.
 
 Definition: a maid headdress is white themed: decide yes.
-Definition: a maid headdress is disintegration-protected if the class of the player is maid.
+Definition: a maid headdress is disintegration-protected:
+	if the class of the player is maid, decide yes;
+	decide no.
 
 To compute SelfExamineDesc of (H - maid headdress):
 	let X be the largeness of hair;
@@ -35,7 +37,7 @@ Report going:
 						say "[bold type]You feel a headband with cat ears materialise on your head.[roman type] [if the bimbo of the player < 13][line break][first custom style]I think the game is trying to tell me something about how much I'm crawling around this place...[otherwise][line break][second custom style]Teehee, I guess I have been on all fours for ages, like a naughty pussycat...[end if][roman type][line break]";
 					summon M cursed;
 				otherwise if R1 < the crawl count of the player or R2 < the crawl count of the player:
-					say "With all the time you[']ve been spending crawling along the ground, you're beginning to think this place really needs a good cleaning...[line break]";
+					say "With all the time you've been spending crawling along the ground, you're beginning to think this place really needs a good cleaning...[line break]";
 			if the crawl count of the player >= 12, progress quest of crawling-quest;
 			if the class of the player is princess and the number of monsters in the location of the player > 0, humiliate 10;
 			if the semen-puddle of the location of the player > 3 and bukkake fetish is 1:
@@ -52,7 +54,9 @@ Report going:
 
 Chapter - Class Outfit
 
-Definition: a maid headdress is removal-blocking if wearing-target is maid outfit or wearing-target is magical-maid-outfit or wearing-target is cafe maid stockings. [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
+Definition: a maid headdress is removal-blocking:
+	if wearing-target is maid outfit or wearing-target is magical-maid-outfit or wearing-target is cafe maid stockings, decide yes;
+	decide no. [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
 
 To decide which thing is chosen-maid-outfit:
 	if (diaper quest is 1 or cafe maid headdress is worn) and a random off-stage maid waitress outfit is actually summonable:
@@ -74,7 +78,7 @@ To compute unique recycling of (C - a maid headdress):
 	now maid-summoned is 0.
 
 To compute class outfit of (H - a maid headdress):
-	let C be a random off-stage chastity cage;
+	let C be a random off-stage actually summonable chastity bond;
 	let M be chosen-maid-outfit;
 	let S be a random off-stage cafe maid stockings;
 	if M is actually summonable or (maid-summoned is 0 and the number of worn maid outfit is 0 and magical-maid-outfit is not worn):
@@ -85,13 +89,13 @@ To compute class outfit of (H - a maid headdress):
 			repeat with O running through worn exclusive corsets:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
-			repeat with O running through worn skirted clothing:
+			repeat with O running through worn skirt clashing clothing:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
 			repeat with O running through worn exclusive bras:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
-		if maid-summoned is 0, now M is chosen-maid-outfit; [Now that we've actually removed the previous offending garments, let's check again]
+			now M is chosen-maid-outfit; [Now that we've actually removed the previous offending garments, let's check again]
 		if M is crotch covering:
 			repeat with O running through worn knickers:
 				unless O is diaper:
@@ -108,7 +112,7 @@ To compute class outfit of (H - a maid headdress):
 		now the raw-magic-modifier of S is -1;
 		increase the raw-magic-modifier of S by the crawl count of the player / 7;
 	otherwise if there is a worn maid outfit and C is actually summonable and the player is extremely horny:
-		say "[bold type]You suddenly feel a tightness around your loins. You [if there are worn knickers]can feel[otherwise]look down and see[end if] that a chastity cage has appeared around your [if the player is male][ShortDesc of penis][otherwise][vagina][end if]![roman type] [if the bimbo of the player < 10]Even worse, the[otherwise]The[end if] cage only stops anything from touching your crotch, your [asshole] remains completely unprotected!";
+		say "[bold type]You suddenly feel a tightness around your loins. You [if there are worn knickers]can feel[otherwise]look down and see[end if] that a [Shortdesc of C] has appeared around your [if C is chastity cage][ShortDesc of penis][otherwise]crotch[end if]! [if the bimbo of the player < 10]Even worse, it[otherwise]It[end if] only stops anything from touching your [if C is chastity-belt]genitals[otherwise]dick[end if], so your [asshole] remains completely unprotected!";
 		summon C locked;
 		say "[variable custom style]I'm a horny maid locked in chastity! But I need to cum so badly...[roman type][line break]".
 

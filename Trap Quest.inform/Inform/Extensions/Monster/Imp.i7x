@@ -2,9 +2,13 @@ Imp by Monster begins here.
 
 An imp is a kind of monster. An imp is male.
 
-Definition: an imp is willing to urinate if it is unfriendly.
+Definition: an imp is willing to urinate:
+	if it is unfriendly, decide yes;
+	decide no.
 
-Definition: an imp is father material if the player is the donator.
+Definition: an imp is father material:
+	if the player is the donator, decide yes;
+	decide no.
 
 Definition: an imp is raunchy: decide yes.
 
@@ -55,6 +59,34 @@ To say MonsterDesc of (M - an imp):
 	otherwise:
 		say "A tiny, red-skinned [man of M] dressed in rags. [unless M is unfriendly]You get the feeling that [he of M] could turn on you at any time[otherwise][big he of M] hasn't been very loyal to you[end if]...".
 
+To say MonsterComment of (M - an imp):
+	let U be 0;
+	if M is unfriendly, now U is 1;
+	if diaper quest is 1:
+		if U is 1, say "[variable custom style][big he of M] turned on me! Meanie!";
+		otherwise say "[variable custom style][one of][big he of M] better not attack me...[or][big he of M] has a mean face.[at random]";
+	otherwise if the class of the player is worshipper:
+		if the bimbo of the player < 7:
+			if U is 1, say "[variable custom style][one of]Even though [he of M]'s weak, I still can't fight [him of M]...[or][if M is not penetrating a body part]My only chance is to get someone else to fight [him of M] for me... [otherwise]Even if its lowest of the low, I still get turned into a cocksleeve...[end if][or]If I can't run away, and I can't fight, then [if M is penetrating a body part]I guess this outcome was obvious[otherwise]what CAN I do?[end if][in random order]";
+			otherwise say "[variable custom style][one of]I'm... even lower than [him of M]?[or]I want to say [he of M] works for me, but... its the other way around, isn't it?[or]I can't really get away from [him of M], and I can't fight [him of M], so... I guess I know what happens when [he of M] turns on me.[in random order]";
+		otherwise if the bimbo of the player < 12:
+			if U is 1, say "[variable custom style][one of][big he of M] totally betrayed me, so... why is it fun?[or][if M is not penetrating a body part][big he of M] might go away if I get someone else to fight [him of M] for me, but why doesn't that sound good?[otherwise][big he of M]'ll be satisfied after this![end if][or]I can't run and I can't fight, so I might as well do whatever [he of M] wants.[in random order]";
+			otherwise say "[variable custom style][one of]Even if [he of M]'s weak, [he of M]'s still a mighty demon. I'm below [him of M] no matter what I do.[or][big he of M] may be guarding me because [he of M] wants to fuck me, but at least I have protection, right?[or][big he of M] follows me everywhere. I'm so safe from everyone else! Watch out everyone who isn't [him of M]![in random order]";
+		otherwise:
+			if U is 1, say "[variable custom style][one of][big he of M] only turned on me so I could win [him of M] back![or][if M is not penetrating a body part]I should hurry up and satisfy [him of M] already. [big he of M] deserves it, after all [he of M]'s done for me.[otherwise][big he of M]'s going to be so happy after [he of M] busts this nut![end if][or]Even if I could run, I still wouldn't.[in random order]";
+			otherwise say "[variable custom style][one of][big he of M] may look weak, but that's because all [his of M] strength is below the waist. I should get below [his of M] waist too![or]A good bodyguard has your back. A perfect bodyguard has your butt. Thank you![or][big he of M] follows me everywhere because he needs me. For sex.[in random order]";
+	otherwise if the class of the player is priestess:
+		if M is player-brood, say "An angry voice sounds in your head.[first custom style]Disgraced Sister, [one of]you may not feel familial love toward such a being. Drive it away at once![or]you have brought this vile creature into being. It is your responsibility.[or]you must not succumb to such a being. You must escape before you are defiled again![in random order]";
+		otherwise  say "An panicked voice sounds in your head.[first custom style]Lost Sister, [one of]your holy power is useless against such a being! Drive it away!'[or][if M is penetrating a body part]you may not submit to this vile existence! Resist, sister! You must resist!'[otherwise if U is 1]that is a vile, corrupted existence. You must not let it defile you!'[otherwise]that is a vile, corrupted existence. You must never trust it.'[end if][or]you have become ensnarled in a web of darkness. You must seek help!'[in random order]";
+	otherwise if the bimbo of the player < 7:
+		if the player is gendered male, say "[first custom style][one of][if U is 1][big he of M]'s looking at me like I look at chicks![otherwise][big he of M] looks weak, but that's better than nothing.[end if][or][big he of M] [if U is 1]probably can't keep dodging forever.[otherwise]seems a little scummy, but who doesn't?[end if][or]How do I get rid of this [if M is presenting as male]guy[otherwise]chick[end if]?[in random order]";
+		otherwise say "[first custom style][one of][if U is 1]Stop looking at me like that, you BRUTE![otherwise]What's [he of M] planning?[end if][or][if U is 1]Why am I surprised it betrayed me?[otherwise]I can smell the entitlement from here. News flash: I won't be fucking you.[end if][or]Stop following me![in random order]";
+	otherwise if the bimbo of the player < 12:
+		say "[variable custom style][one of]That lecherous look in [his of M] eye is kind of... exciting.[or]Well, on the bright side [he of M]'ll probably stay on my side if I [if U is 1]satisfy [him of M].[otherwise]keep [him of M] entertained.[end if][or][big he of M] folllows me EVERYWHERE.[or]What's [he of M] thinking[in random order]";
+	otherwise:
+		say "[second custom style][one of]I love that terrible look in [his of M] eye. [if U is 1]Pin me down[otherwise]Attack me[end if] already, sexy![or]Its fine if [he of M]turns on me. I just need to satisfy [him of M], and then we'll be friends again![or][big he of M] follows me everywhere. So romantic....[or]What's [he of M] thinking[in random order]";
+	say "[roman type][line break]".
+
 To set up (M - an imp):
 	reset M;
 	now the monstersetup of M is 1;
@@ -69,6 +101,7 @@ To decide which number is the starting difficulty of (M - an imp):
 
 To compute birth set up of (M - an imp):
 	set up M;
+	now M is player-brood;
 	now M is in the location of the player.
 
 To compute reward (N - a number) set up of (M - an imp):
@@ -115,7 +148,7 @@ To decide which number is the seek roll of (M - an imp):
 
 A later time based rule (this is the imps follow the player rule): [after compute monsters]
 	repeat with M running through on-stage imps:
-		if M is not in the location of the player and the location of the player is not bossed:[The imps always follow you, no matter where you go. Unless its a boss room.]
+		if M is not in the location of the player and the location of the player is not bossed:[The imps always follow you, no matter where you go. Unless it's a boss room.]
 			now M is in the location of the player;
 			say "A portal appears, and [NameDesc of M] hops out!";
 			if M is not interested, compute perception of M.
@@ -189,8 +222,9 @@ To compute refractoryReset of (M - an imp): [Usually this is only used for intel
 To compute periodic recovery of (M - an imp):
 	let R be a random number between 1 and the imp-rudeness of M;
 	decrease the refractory-period of M by R;
+	let P be the refractory-period of M;
 	if M is in the location of the player:[really only matters in the school and in the extra credit zone]
-		if the refractory-period of M < 200 and R + the refractory-period of M >= 200:
+		if P < 200 and R + P >= 200: [If the current refractory period just dropped below 200, run this code]
 			say "[BigNameDesc of M] glances at you, snickering. Looks like [he of M][']s getting bored...";
 		otherwise if the refractory-period of M < 100 and R + the refractory-period of M >= 100:
 			say "[BigNameDesc of M] makes an obscene gesture at you.[big he of M] seems like [he of M] really needs a way to entertain [himself of M]...";
@@ -251,7 +285,9 @@ To decide if (M - an imp) is willing to creampie (F - vagina):
 
 Section 2 - Damage
 
-Definition: an imp is damageable if the imp-rudeness of it >= the difficulty of it.
+Definition: an imp is damageable:
+	if the imp-rudeness of it >= the difficulty of it, decide yes;
+	decide no.
 
 To say damage-flavour of (N - a number) on (M - an imp):
 	if N is 0:

@@ -59,7 +59,7 @@ Check entering furniture:
 	if the noun is lecture chair:
 		if the charge of the noun > 0 or timeBombTime > 0:
 			allocate 6 seconds;
-			say "It seems like it isn[']t time for a lecture right now." instead;
+			say "It seems like it isn't time for a lecture right now." instead;
 	compute furniture resting on the noun;
 	do nothing instead.
 

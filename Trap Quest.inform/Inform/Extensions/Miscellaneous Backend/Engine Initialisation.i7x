@@ -168,8 +168,18 @@ To fill in legacy table blanks:
 	unless there is a choice in row 51 of the Table of Player Options, now choice in row 51 of Table of Player Options is 0;
 	unless there is a choice in row 52 of the Table of Player Options, now choice in row 52 of Table of Player Options is 0;
 	unless there is a choice in row 53 of the Table of Player Options, now choice in row 53 of Table of Player Options is 0;
+	[fix old background options]
+	if choice in row 53 of the Table of Player Options is 1:
+		now choice in row 53 of the Table of Player Options is 0;
+		now choice in row 52 of the Table of Player Options is 2;
 	unless there is a choice in row 54 of the Table of Player Options, now choice in row 54 of Table of Player Options is 0;
+	if choice in row 54 of the Table of Player Options is 1:
+		now choice in row 54 of the Table of Player Options is 0;
+		now choice in row 52 of the Table of Player Options is 3;
 	unless there is a choice in row 55 of the Table of Player Options, now choice in row 55 of Table of Player Options is 0;
+	if choice in row 55 of the Table of Player Options is 1:
+		now choice in row 55 of the Table of Player Options is 0;
+		now choice in row 52 of the Table of Player Options is 4;
 	unless there is a choice in row 56 of the Table of Player Options, now choice in row 56 of Table of Player Options is 0;
 	unless there is a choice in row 57 of the Table of Player Options, now choice in row 57 of Table of Player Options is 0;
 	unless there is a choice in row 58 of the Table of Player Options, now choice in row 58 of Table of Player Options is 0;
@@ -274,7 +284,7 @@ To retrieve name:
 	if diaper quest is 1:
 		if the player is gendered male, now the current menu is the Table of Male Name Diaper Quest Options;
 		otherwise now the current menu is the Table of Female Name Diaper Quest Options;
-	if the player is male:
+	if diaper quest is 0 and the player is male:
 		choose the row with a toggle of pure background toggle rule in the Table of Background Options;
 		blank out the whole row;
 	if tutorial is 1:

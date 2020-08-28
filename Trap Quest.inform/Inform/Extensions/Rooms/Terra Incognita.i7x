@@ -19,11 +19,6 @@ REQUIRES COMMENTING - may also require a new comment style for relational rules
 Egress relates a room (called the place) to a direction (called that way) when the room that way from the place is a room.
 The verb to exit (it exits) implies the egress relation.
 
-[!<PositionNewRoomAtGridRef>+
-
-REQUIRES COMMENTING
-
-+!]
 To position (new room - a room) at (grid ref - a spatial coordinate):
 	now the grid position of the new room is the grid ref;
 	if debugmode is 1, say "[line break]Grid position of [new room] is now [grid position of new room][line break]";
@@ -45,49 +40,23 @@ To position (new room - a room) at (grid ref - a spatial coordinate):
 
 [Terra Incognita is said to be "open" if there are still maze rooms left to discover, and "closed" if they have all been played, so that the maze is exhausted.]
 
-[!<TerraIncognita>@<IsOpen>+
-
-REQUIRES COMMENTING
-
-+@!]
 Terra Incognita can be open or closed. Terra Incognita is open.
 
-[!<Room>@<IsAcceptable>+
+Definition: A room is acceptable:
+	if it is unplaced, decide yes;
+	decide no. [and its minimum level = the current maze level]
 
-REQUIRES COMMENTING
+Definition: A room is actually acceptable:
+	if it is acceptable and it is open and ready, decide yes;
+	decide no.
 
-+@!]
-Definition: A room is acceptable if it is unplaced. [and its minimum level = the current maze level]
-
-[!<Room>@<IsActuallyAcceptable>+
-
-REQUIRES COMMENTING
-
-+@!]
-Definition: A room is actually acceptable if it is acceptable and it is open and ready.
-
-[!<doorFinder:SpatialCoordinate>*
-
-REQUIRES COMMENTING
-
-*!]
 Door Finder is a spatial coordinate that varies.
 
-[!<DirectionIsDesired>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: A direction (called D) is desired:
 	if D is empty puzzle socket, decide yes;
 	decide no.
 
 [Here we look at a spatial coordinate and we look at the rooms around it. And if our new room we want to put in the spatial coordinate wants doors in certain other directions, we check that rooms already there are happy with that.]
-[!<Room>@<IsOpenAndReady>+
-
-REQUIRES COMMENTING
-
-+@!]
 Definition: A room (called R) is open and ready:
 	let NR be the room at the vector sum of Door Finder and the vector of north;
 	let ER be the room at the vector sum of Door Finder and the vector of east;

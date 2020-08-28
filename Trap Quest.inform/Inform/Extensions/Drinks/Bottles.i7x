@@ -19,7 +19,9 @@ How many gulps of liquid are in it right now? A gulp of liquid is about 2 units 
 *@!]
 A bottle has a number called doses.
 
-Definition: a bottle is empty rather than non-empty if the doses of it <= 0.
+Definition: a bottle is empty rather than non-empty:
+	if the doses of it <= 0, decide yes;
+	decide no.
 
 [!<Bottle>@<maxDoses:Integer>*
 

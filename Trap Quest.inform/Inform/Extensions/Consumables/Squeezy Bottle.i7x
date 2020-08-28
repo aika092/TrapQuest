@@ -10,7 +10,7 @@ To decide which figure-name is the examine-image of (C - squeezy-bottle):
 Definition: squeezy-bottle is drink themed: decide yes.
 
 To say ExamineDesc of (B - squeezy-bottle):
-	say "A large bottle with one of those lids where you have to squeeze the bottle to get the liquid to come out. A label on the side says 'THE MANAGEMENT ARE NOT RESPONSIBLE FOR ANY SIDE EFFECTS THAT MAY OCCUR FROM DRINKING FROM THIS EXPERIMENTAL DEVICE'. [line break][variable custom style][if the bimbo of the player > 13]Sounds fair enough to me![otherwise]Sounds about right.[end if][roman type][line break]".
+	say "A large bottle with one of those lids where you have to squeeze the bottle to get the liquid to come out. A label on the side says 'THE MANAGEMENT ARE NOT RESPONSIBLE FOR ANY SIDE EFFECTS THAT MAY OCCUR FROM DRINKING FROM THIS EXPERIMENTAL DEVICE'.[line break][variable custom style][if the bimbo of the player > 13]Sounds fair enough to me![otherwise]Sounds about right.[end if][roman type][line break]".
 
 Definition: squeezy-bottle is immune to change: decide yes.
 

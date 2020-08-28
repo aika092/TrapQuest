@@ -76,11 +76,6 @@ To decide which number is appearance-cringe-level:
 			now appearance-cringe-target is C;
 	decide on O.
 
-[!<DecideWhichNumberIsCumulativeCringeLevel>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is cumulative-cringe-level:
 	let A be calculated-cringe-level; [Outrage of the lewdest worn thing / exposed body part]
 	let A2 be A / 2;

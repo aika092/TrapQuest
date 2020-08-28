@@ -2,11 +2,13 @@ Laurel Wreath by Headgear begins here.
 
 laurel wreath is a headgear. laurel wreath is biological. Figure of laurel wreath is the file "Items/Accessories/Head/laurelwreath1.png". laurel wreath is blondeness-positive. laurel wreath is brightness-positive. laurel wreath is redness-positive. laurel wreath is hair growing. laurel wreath is vaginal-sex-addiction-influencing.
 
-Definition: laurel wreath is roleplay if pregnancy fetish is 1 and the player is originally female.
+Definition: laurel wreath is roleplay:
+	if pregnancy fetish is 1 and the player is originally female, decide yes;
+	decide no.
 
 Definition: laurel wreath is fluid immune: decide yes.
 
-Definition: laurel wreath is pregnancy related: decide yes.
+Definition: laurel wreath is pregnancy themed: decide yes.
 Definition: laurel wreath is brown themed: decide yes.
 
 The printed name of laurel wreath is "[clothing-title-before]laurel wreath[clothing-title-after]". The text-shortcut of laurel wreath is "lw".
@@ -46,7 +48,7 @@ To compute class outfit of (H - laurel wreath):
 			repeat with O running through worn exclusive corsets:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
-			repeat with O running through worn skirted clothing:
+			repeat with O running through worn skirt clashing clothing:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
 		say "[bold type]Your [printed name of H] [bold type]barely noticeably shakes, and then a white tunic materialises around you.[roman type][line break]You feel... divine!";

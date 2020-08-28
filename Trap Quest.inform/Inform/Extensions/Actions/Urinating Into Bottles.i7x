@@ -1,17 +1,7 @@
 Urinating Into Bottles by Actions begins here.
 
-[!<peeBottling:Action>*
-
-REQUIRES COMMENTING
-
-*!]
 PeeBottling is an action applying to one thing.
 
-[!<CheckPeeBottling>+
-
-REQUIRES COMMENTING
-
-+!]
 Check PeeBottling:[TODO: compatible with parched pedestal]
 	if the bladder of the player < 4, say "You don't feel the need." instead;
 	if the player is immobile or the player is in danger, say "You're a bit busy right now!" instead;
@@ -44,11 +34,6 @@ Check PeeBottling:[TODO: compatible with parched pedestal]
 	otherwise:
 		say "How would you pee into that?" instead.
 
-[!<CarryOutPeeBottling>+
-
-REQUIRES COMMENTING
-
-+!]
 pee-bottling is a number that varies.
 Carry out PeeBottling:
 	if the noun is vessel:

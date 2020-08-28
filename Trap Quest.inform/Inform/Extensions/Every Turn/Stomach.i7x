@@ -17,34 +17,14 @@ To decide which number is cold milky limit:
 To decide which number is cold milky addiction limit:
 	decide on 35. [multiple of milk taste addiction until addiction fades away]
 
-[!<lastBegged:Thing>*
-
-REQUIRES COMMENTING
-
-*!]
 last-begged is a thing that varies. last-begged is the throne.
 
-[!<lastBeggedTime:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 last-begged-time is a number that varies.
 
-[!<DecideWhichNumberIsTheThirstOfThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the thirst of the player:
 	if chess table is grabbing the player or the player is in a predicament room, decide on 0;
 	decide on 5 - the stomach-liquid of the player.
 
-[!<YourselfIsThirsty>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: yourself is thirsty:
 	if the thirst of the player > 2 and the latex-transformation of the player < 5, decide yes;
 	decide no.
@@ -96,22 +76,14 @@ To decide which number is bladder-period:
 	if digestion-timer <= 0, now T is T * 2; [256]
 	decide on T.
 
-Definition: a wearthing is respiration-enhancing if it is respiration clothing. [Done so that we can include tattoos]
+Definition: a wearthing is respiration-enhancing:
+	if it is respiration clothing, decide yes;
+	decide no. [Done so that we can include tattoos]
 
-[!<DecideWhichNumberIsFoodPeriod>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is food-period:
 	decide on stomach-period.
 	[decide on stomach-period * (2 - diaper quest).] [Food is digested faster in diaper quest]
 
-[!<ComputeStomachWithEarningsAndSeconds>+
-
-REQUIRES COMMENTING
-
-+!]
 An all time based rule (this is the compute stomach rule):
 	if the player is not in Predicament20 and the player is not in Predicament19 and the player is not in Toilet01 and the player is not in Toilet02: [The Safe Rooms of the predicament world should not let you stall out your bodily functions]
 		compute corset strain;
@@ -185,7 +157,7 @@ To compute bladder growth:
 		if resting-wetter > 0 and B < resting-wetter, now B is resting-wetter; [bed wetters always have a high chance of wetting while resting]
 		let R be (a random number between bladder-difficulty and B) + (a random number between bladder-difficulty and B);
 		if debuginfo > 1, say "[input-style]Automatic wetting check: [if resting-wetter > 0 and B is resting-wetter]magic bed wetting effect ([resting-wetter])[otherwise]bladder ([bladder of the player]) - continence rating ([I]) = [B][end if] ---> RNG([bladder-difficulty] ~ [B]) + RNG([bladder-difficulty] ~ [B]) = [R] | positive number[roman type][line break]";
-		if R > 0:
+		if R > 0 and the bladder of the player > 0:
 			now delayed urination is 1;
 		otherwise if the player is bursting and (R is 0 or the remainder after dividing time-earnings by 120 < time-seconds): [Once every now and then we reward the player for holding it while it's risky]
 			progress quest of bursting-quest;
@@ -196,25 +168,10 @@ To compute bladder growth:
 		bladderup 1 + xavier-belt-link;
 		decrease the delayed bladder of the player by 1.
 
-[!<playerHunger:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 player-hunger is a number that varies.
 
-[!<hungerFlavSaid:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 hunger-flav-said is a number that varies.
 
-[!<ComputeFood>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute food:
 	if the player is hungry:
 		if (player-hunger > a random number between 0 and 3 and the raw strength of the player > the starting strength of the player) or player-hunger > 3:
@@ -235,18 +192,10 @@ To compute food:
 		if the player is hungry and hunger-flav-said is 0, say "[bold type]You are beginning to feel quite hungry[if there is a worn cursed ballgag].[roman type] Your [random worn ballgag] loosens slightly, as if it's temporarily allowing you to eat around it.[otherwise].[roman type][line break][end if]";
 	now hunger-flav-said is 1.
 
-[!<ThingIsDiapered>+
+Definition: yourself is diapered:
+	if there is a worn diaper, decide yes;
+	decide no.
 
-REQUIRES COMMENTING
-
-+!]
-Definition: yourself is diapered if there is a worn diaper.
-
-[!<ThingIsUrineAverse>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: yourself is urine averse:
 	if the player is an adult baby or the player is broken, decide no;
 	if watersports fetish is 1:
@@ -255,49 +204,24 @@ Definition: yourself is urine averse:
 		decide yes;
 	decide no.
 
-[!<ClothingIsUrineSoaked>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a clothing (called C) is urine soaked:
 	if the urine-soak of C > 0 and the total-soak of C >= the soak-limit of C, decide yes;
 	decide no.
 
-[!<ThingIsUpsetAboutUrine>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: yourself is upset about urine:
 	if the player is urine averse:
 		repeat with C running through worn urine soaked clothing:
 			if the known-urine-soak of C > 0, decide yes;
 	decide no.
 
-[!<ThingIsDiaperKicking>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: yourself is diaper kicking:
 	let D be a random worn diaper;
 	if D is diaper:
 		if the diaper addiction of the player < 6 and the total-soak of D >= the diaper addiction of the player, decide yes;
 	decide no.
 
-[!<previousHorny:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 previous-horny is a number that varies.
 
-[!<DecideWhichNumberIsHungerMechanics>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is hunger mechanics:
 	decide on 1;
 	if diaper messing >= 3 or active hunger mechanics is 1, decide on 1;
@@ -305,11 +229,6 @@ To decide which number is hunger mechanics:
 
 DQMessingHunger is initially false.
 
-[!<decideWhichNumberIsActiveHungerMechanics>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is active hunger mechanics:
 	if the latex-transformation of the player > 4, decide on 0;
 	if DQMessingHunger is true or digestion-timer > 0, decide on 1;
@@ -334,21 +253,11 @@ To DigestionTimerUp (N - a number):
 		otherwise if the player is nearly hungry:
 			say "You suddenly feel a bit hungry.".
 
-[!<YourselfIsHungry>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: yourself is hungry:
 	if chess table is grabbing the player or the player is in a predicament room, decide no;
 	if the stomach-food of the player is 0 and active hunger mechanics is 1, decide yes;
 	decide no.
 
-[!<YourselfIsNearlyHungry>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: yourself is nearly hungry:
 	if chess table is grabbing the player, decide no;
 	if the stomach-food of the player is 1 and active hunger mechanics is 1, decide yes;

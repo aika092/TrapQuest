@@ -11,11 +11,6 @@ REQUIRES COMMENTING
 @!]
 Solid Rock is a room.
 
-[!<MakeAllLabyrinthExitsLeadToSolidRock>+
-
-REQUIRES COMMENTING
-
-+!]
 To make all labyrinth exits lead to Solid Rock:
 	repeat with blank room running through labyrinth rooms:
 		let Sh be the shape of the blank room;
@@ -33,11 +28,6 @@ To make all labyrinth exits lead to Solid Rock:
 			change the west exit of blank room to Solid Rock;
 			if debugmode is 1, say "[line break]changing the west exit of [blank room] to Solid Rock[line break]".
 
-[!<MakeAllJungleExitsLeadToSolidRock>+
-
-REQUIRES COMMENTING
-
-+!]
 To make all jungle exits lead to Solid Rock:
 	repeat with blank room running through jungle rooms:
 		let Sh be the shape of the blank room;
@@ -55,11 +45,6 @@ To make all jungle exits lead to Solid Rock:
 			change the west exit of blank room to Solid Rock;
 			if debugmode is 1, say "[line break]changing the west exit of [blank room] to Solid Rock[line break]".
 
-[!<MakeAllModernExitsLeadToSolidRock>+
-
-REQUIRES COMMENTING
-
-+!]
 To make all modern exits lead to Solid Rock:
 	repeat with blank room running through modern rooms:
 		let Sh be the shape of the blank room;
@@ -77,11 +62,6 @@ To make all modern exits lead to Solid Rock:
 			change the west exit of blank room to Solid Rock;
 			if debugmode is 1, say "[line break]changing the west exit of [blank room] to Solid Rock[line break]".
 
-[!<MakeAllHauntedExitsLeadToSolidRock>+
-
-REQUIRES COMMENTING
-
-+!]
 To make all haunted exits lead to Solid Rock:
 	repeat with blank room running through haunted rooms:
 		let Sh be the shape of the blank room;
@@ -99,11 +79,6 @@ To make all haunted exits lead to Solid Rock:
 			change the west exit of blank room to Solid Rock;
 			if debugmode is 1, say "[line break]changing the west exit of [blank room] to Solid Rock[line break]".
 
-[!<DecideWhichRoomIsRoomAtGridRef>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which room is the room at (grid ref - a spatial coordinate):
 	if grid ref is <0,0,0>, decide on Solid Rock;
 	if the player is in Toilet01 and the grid position of Toilet01 is grid ref, decide on Toilet01;
@@ -122,11 +97,6 @@ To decide which room is the room at (grid ref - a spatial coordinate):
 		if the grid position of M is grid ref, decide on M;
 	decide on Solid Rock.
 
-[!<CheckGoingToSolidRock>+
-
-REQUIRES COMMENTING
-
-+!]
 [Check going to Solid Rock:
 	if the noun is down, try foodlisting instead;
 	let W be a random warp portal in the location of the player;

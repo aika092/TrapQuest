@@ -41,6 +41,8 @@ To say BlessBlandFlav of (B - a kitty claws):
 
 Definition: a kitty claws is cat themed: decide yes.
 Definition: a kitty claws is black themed: decide yes.
-Definition: a kitty claws is pink themed if it is cursed.
+Definition: a kitty claws is pink themed:
+	if it is cursed, decide yes;
+	decide no.
 
 Kitty Claws ends here.

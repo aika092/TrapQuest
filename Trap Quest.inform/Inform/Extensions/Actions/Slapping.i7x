@@ -1,17 +1,7 @@
 Slapping by Actions begins here.
 
-[!<punch:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 punch is a number that varies.
 
-[!<DecideWhichNumberIsTheSlapDamageOfPerson>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the slap damage of (P - a person):
 	if backgroundCombatCalculation is false and damage-explained <= 1, decide on saved-slap-damage;
 	if damage-explained > 1, say "[input-style]Base slap damage calculation: [bracket]1 (base damage) ";

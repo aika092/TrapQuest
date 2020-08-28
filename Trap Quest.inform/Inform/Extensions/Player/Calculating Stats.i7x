@@ -81,7 +81,7 @@ To decide which number is the flat strength of the player:
 	decide on S.
 
 To decide which number is the starting strength of the player:
-	decide on 7 + bonus strength + background-sporty.
+	decide on 7 + bonus strength + background-sporty - background-magic.
 
 Part 2 - Modify Strength
 
@@ -189,12 +189,12 @@ Definition: yourself is deserving of more dexterity:
 	if R > D, decide yes;
 	decide no.
 
-To Dexup (X - a number):
+To DexUp (X - a number):
 	while X > 0:
 		decrease X by 1;
 		if the raw dexterity of the player < 30, increase the raw dexterity of the player by 1.
 
-To Dexdown (X - a number):
+To DexDown (X - a number):
 	while X > 0:
 		decrease X by 1;
 		if the raw dexterity of the player > 1, decrease the raw dexterity of the player by 1.
@@ -246,7 +246,7 @@ To decide which number is the flat intelligence of the player:
 	decide on I.
 
 To decide which number is the starting intelligence of the player:
-	decide on 7 + bonus intelligence + background-nurse - background-sporty.
+	decide on 7 + bonus intelligence + background-magic + background-nurse - background-sporty.
 
 Part 2 - Modify Intelligence
 
@@ -261,7 +261,7 @@ Definition: yourself is deserving of more intelligence:
 	if R > S, decide yes;
 	decide no.
 
-To Intup (X - a number):
+To IntUp (X - a number):
 	now the old intelligence of the player is saved-flat-intelligence;
 	if the latex-transformation of the player > 6:
 		now X is 0;
@@ -272,7 +272,7 @@ To Intup (X - a number):
 			if the class of the player is schoolgirl and the raw intelligence of the player < 15, increase the raw intelligence of the player by 1;[Dumb schoolgirls can double dip on intelligence gains.]
 		if throbbing-tentacle is worn, compute intDrain of severed-tentacle.[once the tentacle wins, you can no longer gain intelligence]
 
-To Intdown (X - a number):
+To IntDown (X - a number):
 	now the old intelligence of the player is saved-flat-intelligence;
 	if X > 0, increase drain-duration by X;
 	while X > 0:
@@ -400,11 +400,6 @@ To update saved stats:
 	if saved-printed-kick-damage < 0, now saved-printed-kick-damage is 0;
 	now backgroundCombatCalculation is false.
 
-[!<DecideWhichNumberIsFetishBonusOfThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is fetish-bonus of the player:
 	if tattoo-fetish is 1:
 		decide on (1 + the number of worn tattoos) / 3;

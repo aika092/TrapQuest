@@ -17,9 +17,38 @@ Definition: chess piece is immune to change: decide yes.
 To say ShortDesc of (C - chess piece):
 	say "chess piece".
 
+Part - Ectoplasm
+
+[Ectoplasm can be applied to clothing or (maybe) applied to implants with artificial enhancements enabled.]
+
+An ectoplasm is a kind of collectible. The printed name of ectoplasm is "[TQlink of item described]wad of slime[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of ectoplasm is "ect". There are 5 ectoplasms. Understand "ecto", "plasm", "slime", "ectoplasm", "wad" as ectoplasm.
+
+Figure of ectoplasm is the file "Items/Collectibles/ectoplasm1.jpg".
+To decide which figure-name is the examine-image of (E - an ectoplasm):
+	decide on figure of ectoplasm.
+
+To say ExamineDesc of (B - an ectoplasm):
+	say "A faintly glowing wad of slimy ectoplasm.".
+
+To decide which number is the crafting key of (C - an ectoplasm):
+	decide on 38.
+To decide which number is the bartering value of (T - an ectoplasm) for (M - a witch):
+	decide on 3.
+
+To decide which number is the bartering value of (T - an ectoplasm) for (M - an aeromancer):
+	decide on 5.
+
+To decide which number is the bartering value of (T - an ectoplasm) for (M - a fairy):
+	decide on 2.
+
+To oil (C - a clothing) with (S - an ectoplasm):
+	say "It seems more resilient, but... in a bad way?";
+	destroy S;
+	now the magic-type of C is possession.
+
 Part - Infernal Gem
 
-infernal gem is a collectible. The printed name of infernal gem is "[TQlink of item described]infernal gem[shortcut-desc][TQxlink of item described][verb-desc of item described]". Figure of infernal gem is the file "Items/Collectibles/gem1.png".
+infernal gem is a collectible. The printed name of infernal gem is "[TQlink of item described]infernal gem[shortcut-desc][TQxlink of item described][verb-desc of item described]". Figure of infernal gem is the file "Items/Collectibles/gem1.jpg".
 
 To decide which figure-name is the examine-image of (C - infernal gem):
 	decide on figure of infernal gem.
@@ -52,16 +81,17 @@ To say MonsterTakeFlav of (M - a mechanic) for (T - infernal gem):
 
 To say OfferThanksFlav of (M - a mechanic) for (T - infernal gem):
 	if the xavier-power of M < 3:
-		say "[speech style of M]'[one of]Phew! I feel great![or]WOOO! Fuck yeah![at random] I won't forget this!'[roman type][line break]";
+		say "[speech style of M]'[one of]Phew! I feel great! [or]WOOO! Fuck yeah! [at random]I won't forget this!'[roman type][line break]";
 	otherwise if the xavier-power of M < 4:
 		say "[speech style of M]'Yeah! I feel POWERFUL now! Hahaha! In fact, I'm actually feeling generous!'[roman type]";
 	otherwise:
-		say "[BigNameDesc of M] crushes the [T] into a sparkling powder and knocks it back. [line break][speech style of M]Yeah... YEAH! I can feel it now! The POWER running through my veins! Yes! Behold my true form, unleashed again upon this MORTAL PLANE!'[roman type][line break]".
+		say "[BigNameDesc of M] crushes the [T] into a sparkling powder and knocks it back.[line break][speech style of M]Yeah... YEAH! I can feel it now! The POWER running through my veins! Yes! Behold my true form, unleashed again upon this MORTAL PLANE!'[roman type][line break]".
 
 To compute resolution of (M - a mechanic) taking (T - infernal gem):
 	if M is unfriendly, FavourUp M by the bartering value of T for M;
 	otherwise FavourUp M by (the bartering value of T for M) / 2;
 	say OfferThanksFlav of M for T;
+	say MonsterTakeFlav of M to T;
 	XavierUp M by 1;
 	compute offer reward of M for T;
 	bore M.
@@ -174,13 +204,13 @@ Definition: pink-hair is pink themed: decide yes.
 Part - Poker Cards
 
 pack of playing cards is a collectible. pack of playing cards is in Dungeon07. The printed name of pack of playing cards is "[TQlink of item described]pack of playing cards[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of pack of playing cards is "pc".
-Figure of playing cards is the file "Items/Collectibles/playingcards1.png".
+Figure of playing cards is the file "Items/Collectibles/playingcards1.jpg".
 
 To decide which figure-name is the examine-image of (C - pack of playing cards):
 	decide on figure of playing cards.
 
 To say ExamineDesc of (P - a pack of playing cards):
-	say "[if P is not held and P is in Dungeon07]A pack of playing cards is spread across the table, ready for a game to be played. Each of the cards has a photo of a naked woman on it[otherwise if born to lose tattoo is worn]The pack of nude lady playing cards you took from the poker table. Half of them are missing, but you notice that the queen of hearts is still there[otherwise]The pack of nude lady playing cards you took from the poker table[end if].".
+	say "[if P is not held and P is in Dungeon07]A pack of playing cards sitting on the table, ready for a game to be played. Each of the cards has a different cartoon face on it[otherwise if born to lose tattoo is worn]The pack of playing cards you took from the poker table. Half of them are missing, but you notice that the queen of hearts is still there[otherwise]The pack of playing cards you took from the poker table. Each of the cards has a different cartoon face on it[end if].".
 
 To decide which number is the outrage of (C - pack of playing cards):
 	decide on 5.
@@ -201,7 +231,7 @@ Report taking pack of playing cards when the player is in Dungeon07:
 To compute poker table hypno:
 	if diaper quest is 0 and hypno-trigger-pussy is 0 and (the player is possessing a vagina or tg fetish > 0):
 		now hypno-trigger-pussy is 1;
-		say "Your eyes continuously drawn to the drawings of the lewdly exposed vaginas that circle the table. As your gaze shifts around the table, the pussies flick in and out of your peripheral vision. You feel almost entranced by the way they're so... daringly on display, open and inviting! The words 'pussy' and 'cunt' consume your inner thoughts...".
+		say "Your eyes continuously drawn to the drawings of the lewdly exposed vaginas that circle the table. As your gaze shifts around the table, the pussies flick in and out of your peripheral vision. You feel almost entranced by the way they're so... daringly on display, open and inviting! The words [second custom style]'pussy'[roman type] and [second custom style]'cunt'[roman type] consume your inner thoughts...".
 
 Section - Poker Table
 
@@ -245,12 +275,12 @@ Definition: royal sigil is grey themed: decide yes.
 
 Part - Soul Gem
 
-soul gem is a collectible. The printed name of soul gem is "[TQlink of item described]soul gem[shortcut-desc][TQxlink of item described][verb-desc of item described]". Figure of soul gem is the file "Items/Collectibles/gem1.png".
+soul gem is a collectible. The printed name of soul gem is "[TQlink of item described]soul gem[shortcut-desc][TQxlink of item described][verb-desc of item described]". [Figure of soul gem is the file "Items/Collectibles/gem1.png".]
 
 Definition: soul gem is demonic: decide yes.
 
 To decide which figure-name is the examine-image of (C - soul gem):
-	decide on figure of soul gem.
+	decide on figure of infernal gem.
 
 To say ExamineDesc of (B - soul gem):
 	say "A glittering blue gem containing a soul. Perhaps you could take it to someone well versed in magic?".
@@ -275,15 +305,16 @@ To say MonsterTakeFlav of (M - a mechanic) for (T - soul gem):
 
 To say OfferThanksFlav of (M - a mechanic) for (T - soul gem):
 	if the xavier-power of M < 3:
-		say "[speech style of M]'[one of]Phew! I feel great![or]WOOO! Fuck yeah![at random] I won[']t forget this!'[roman type][line break]";
+		say "[speech style of M]'[one of]Phew! I feel great! [or]WOOO! Fuck yeah! [at random]I won't forget this!'[roman type][line break]";
 	otherwise if the xavier-power of M < 4:
-		say "[speech style of M]'Yeah! I feel POWERFUL now! Hahaha! In fact, I[']m actually feeling generous!'[roman type]";
+		say "[speech style of M]'Yeah! I feel POWERFUL now! Hahaha! In fact, I'm actually feeling generous!'[roman type]";
 	otherwise:
-		say "[BigNameDesc of M] crushes the [T] into a sparkling powder and knocks it back. [line break][speech style of M]Yeah... YEAH! I can feel it now! The POWER running through my veins! Yes! Behold my true form, unleashed again upon this MORTAL PLANE!'[roman type][line break]".
+		say "[BigNameDesc of M] crushes the [T] into a sparkling powder and knocks it back.[line break][speech style of M]Yeah... YEAH! I can feel it now! The POWER running through my veins! Yes! Behold my true form, unleashed again upon this MORTAL PLANE!'[roman type][line break]".
 
 To compute resolution of (M - a mechanic) taking (T - soul gem):
 	FavourUp M by (the bartering value of T for M) / 2;
 	say OfferThanksFlav of M for T;
+	say MonsterTakeFlav of M to T;
 	XavierUp M by 3;
 	compute offer reward of M for T;
 	bore M.

@@ -66,10 +66,10 @@ Definition: A strapon-dildo (called P) is dildo-usage:
 	decide yes.
 
 To say PenisSoften of (K - a strapon-dildo):
-	say "The Nintendolls pouch shifts itself up on your body, completely covering your shaft. A silicon penis materialises out of it in a rush of 1's and 0's, and you feel a slight jolt as it replaces all the sensations from your [player-penis] with its own.".
+	say "The Nintendolls pouch shifts itself up on your body, completely covering your shaft. A silicone penis materialises out of it in a rush of 1s and 0s, and you feel a slight jolt as it replaces all the sensations from your [player-penis] with its own.".
 
 To say PenisHarden of (K - a strapon-dildo):
-	say "The silicon dildo disappears in a rush of 1's and 0's as your [player-penis] pops out of the pouch, and you feel a slight jolt as the sensation returns to normal.".
+	say "The silicone dildo disappears in a rush of 1s and 0s as your [player-penis] pops out of the pouch, and you feel a slight jolt as the sensation returns to normal.".
 
 To say ShortPenisFlav of (K - a strapon-dildo):[used any time you use "player-penis"]
 	if K is dildo-usage:
@@ -86,9 +86,9 @@ To say UniqueClothingDesc of (K - strapon-dildo):
 	if K is not dildo-usage:
 		say "A leather pouch with the Nintendolls logo printed along the front, along with a large number '[strap-length of K].' [if K is worn]It cradles your [ShortBallsDesc], gently stimulating them with the tiny nodes covering its inner surface.[otherwise]The inside of it is covered in tiny silver nodes.[end if]";
 	otherwise if the player is male:
-		say "A leather pouch with a [PenisSizeFlav the strap-length of K] silicon dildo mounted on the front. [if K is worn]Tiny metal nodes are passing a gentle current into your [ShortDesc of penis], transmitting sensation from the fake penis and forcing your real one to remain completely soft[otherwise]The inside of it is covered in tiny silver nodes[end if].";
+		say "A leather pouch with a [PenisSizeFlav the strap-length of K] silicone dildo mounted on the front. [if K is worn]Tiny metal nodes are passing a gentle current into your [ShortDesc of penis], transmitting sensation from the fake penis and forcing your real one to remain completely soft[otherwise]The inside of it is covered in tiny silver nodes[end if].";
 	otherwise:
-		say "A [PenisSizeFlav the strap-length of K] silicon dildo mounted onto a small patch of leather. [if K is worn]Tiny metal nodes are passing a gentle current into your [vagina], transmitting all the sensation from the dildo to you[otherwise]The inner surface is covered in tiny metal nodes[end if].".
+		say "A [PenisSizeFlav the strap-length of K] silicone dildo mounted onto a small patch of leather. [if K is worn]Tiny metal nodes are passing a gentle current into your [vagina], transmitting all the sensation from the dildo to you[otherwise]The inner surface is covered in tiny metal nodes[end if].".
 
 Chapter 2 - Equine Strapon
 
@@ -207,7 +207,7 @@ To say UniqueClothingDesc of (K - gem-strapon):
 
 Chapter 4 - Ghost Strapon
 
-Ghost-strapon is a strapon-panties. The text-shortcut of ghost-strapon is "ghpd". ghost-strapon is totally-exclusive. Ghost-strapon is unique. The printed name of ghost-strapon is "[clothing-title-before][if the item described is worn and the size of penis >= the strap-length of the item described][PenisSizeFlav sexual-penis-length] [end if][ShortDesc of item described][clothing-title-after]". The armour of ghost-strapon is 1. Understand "pair", "pair of", "crotchless", "panties", "goth", "ghost", "ghostly" as ghost-strapon. The soak-limit of ghost-strapon is usually 3. Ghost-strapon is crotch-exposing. Ghost-strapon is satin.
+Ghost-strapon is a strapon-panties. The text-shortcut of ghost-strapon is "ghpd". ghost-strapon is totally-exclusive. Ghost-strapon is unique. The printed name of ghost-strapon is "[clothing-title-before][if the item described is worn and the size of penis >= the strap-length of the item described][PenisSizeFlav sexual-penis-length] [end if][ShortDesc of item described][clothing-title-after]". The armour of ghost-strapon is 1. Understand "pair", "pair of", "crotchless", "panties", "goth", "ghost", "ghostly" as ghost-strapon. Ghost-strapon is crotch-exposing. Ghost-strapon is satin.
 
 Figure of ghost-strapon is the file "Items/Accessories/Toys/strapon4.jpg".
 To decide which figure-name is the examine-image of (H - ghost-strapon):

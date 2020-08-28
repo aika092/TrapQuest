@@ -9,13 +9,10 @@ REQUIRES COMMENTING
 @!]
 A dispenser is a kind of thing. A dispenser is not portable.
 
-[!<Dispenser>@<doses:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 A dispenser has a number called doses.
-Definition: a dispenser is empty rather than non-empty if the doses of it <= 0.
+Definition: a dispenser is empty rather than non-empty:
+	if the doses of it <= 0, decide yes;
+	decide no.
 
 To DoseDown (B - a dispenser):
 	DoseDown B by 1.
@@ -35,18 +32,8 @@ To DoseEmpty (B - a dispenser):
 		now the doses of B is 0;
 		force inventory-focus redraw. [Force inventory window redraw]
 
-[!<Dispenser>@<fillColour:DrinkColourEnums>*
-
-REQUIRES COMMENTING
-
-*@!]
 A dispenser has a drink-colour called the fill-colour. Understand "potion" as dispenser when the doses of the item described > 0.
 
-[!<Dispenser>@<WhichNumberIsTheFillType>+
-
-REQUIRES COMMENTING
-
-+@!]
 To decide which number is the fill-type of (D - a dispenser):
 	let X be Magic corresponding to a appearance of fill-colour of D in the Table of Drinks;
 	decide on X.

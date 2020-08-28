@@ -1,6 +1,10 @@
 G-Strings by Knickers begins here.
 
-A g-string is a kind of undies. The soak-limit of a g-string is usually 3. The text-shortcut of g-string is "gs". A g-string is usually crotch-assless. A g-string is usually transformation-rare. Understand "g-string" as a g-string.
+A g-string is a kind of undies. The text-shortcut of g-string is "gs". A g-string is usually crotch-assless. A g-string is usually transformation-rare. Understand "g-string" as a g-string.
+
+Definition: a g-string is potentially at least partially asshole covering:
+	if it is not see-through, decide yes;
+	decide no. [It doesn't protect the asshole but it does partially conceal it]
 
 The printed name of g-string is "[clothing-title-before][selfexamineuniquetitle of item described][clothing-title-after]".
 
@@ -59,6 +63,9 @@ To say selfexamineuniquetitle of (G - white-g-string):
 To say UniqueClothingDesc of (G - white-g-string):
 	say "A micro sized white g-string, that would be used for minimising tan lines when sunbathing. The tight sheer fabric gives you a cameltoe and leaves your [genitals] partially visible.".
 Definition: white-g-string is white themed: decide yes.
+Definition: white-g-string is class-transformation-protected:
+	if the class of the player is virgin warrior, decide yes;
+	decide no.
 
 pink-g-string is a g-string. The text-shortcut of pink-g-string is "pgs". Understand "pink" as pink-g-string.
 To say selfexamineuniquetitle of (G - pink-g-string):

@@ -10,7 +10,7 @@ To decide which figure-name is the clothing-image of (W - a nintendolls-wand):
 Definition: nintendolls-wand is pink themed: decide yes.
 
 To decide which number is the original price of (C - nintendolls-wand):
-	decide on 12.
+	decide on 6.
 
 To say ShortDesc of (W - nintendolls-wand):
 	say "nintendolls wand".

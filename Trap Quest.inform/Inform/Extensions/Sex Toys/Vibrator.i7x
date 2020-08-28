@@ -55,6 +55,9 @@ To say ClothingDesc of (C - purple-vibrator):
 	say "A purple dildo [if C is cursed and the curse-ID of C is sure]made of cheap plastic. It has large ridges for maximum stimulation[otherwise]made of cheap plastic[end if][if C is worn]. Its vibrations are slowly driving you insane![otherwise].[end if]".
 
 remote-controlled-vibrator is a vibrator. remote-controlled-vibrator is unique.
+To decide which number is the stimulation of (T - remote-controlled-vibrator) on (F - a body part):
+	if current-predicament is team-girlfriends-predicament, decide on 8;
+	decide on 3.
 Figure of remote controlled vibrator 1 is the file "Items/Accessories/Toys/vibrator2.jpg".
 Figure of remote controlled vibrator 2 is the file "Items/Accessories/Toys/vibrator3.jpg".
 To decide which figure-name is clothing-image of (C - remote-controlled-vibrator):
@@ -100,7 +103,7 @@ To compute periodic effect of (P - remote-controlled-vibrator):
 						stimulate penis from P;
 					otherwise:
 						if diaper quest is 0, say "[one of]Your [ShortDesc of P] is stimulating the deepest parts of your [vagina]! Every moment it stays inside of you is making you more sore![or]Your [ShortDesc of P] ruins your [vagina] with its powerful buzzing![or]Your [ShortDesc of P] is making you sore with its powerful vibrations.[cycling]";
-						otherwise say "[one of]Your [ShortDesc of P] is powerfully stimulating the deepest parts of your [vagina]! Every moment it stays inside of you is making you more aroused![or]Your [ShortDesc of P] powerfully buzzez away inside your [vagina]![or]Your [ShortDesc of P] is vibrating strongly inside your [vagina].[cycling]";
+						otherwise say "[one of]Your [ShortDesc of P] is powerfully stimulating the deepest parts of your [vagina]! Every moment it stays inside of you is making you more aroused![or]Your [ShortDesc of P] powerfully buzzes away inside your [vagina]![or]Your [ShortDesc of P] is vibrating strongly inside your [vagina].[cycling]";
 						ruin vagina;
 					if the player is not in a predicament room, increase the toy-charge of P by 1;
 				otherwise:

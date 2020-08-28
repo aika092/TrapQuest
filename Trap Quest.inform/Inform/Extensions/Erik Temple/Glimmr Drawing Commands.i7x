@@ -1369,7 +1369,7 @@ Note that all graphics operations will be slower within the Inform IDE than in a
 
 Chapter: Including Glimmr Drawing Commands in a project
 
-Inform remains fairly unsophisticated in its mechanisms for organizing included extensions. When we are dealing with a complex system of modular extensions such as Glimmr, it is very easy to trip it up. The result is usually a list of unhelpful errors. For this reason, each Glimmr extension includes a section--such as this one--about how to include it, particularly in relation to other extensions.
+Inform remains fairly unsophisticated in its mechanisms for organising included extensions. When we are dealing with a complex system of modular extensions such as Glimmr, it is very easy to trip it up. The result is usually a list of unhelpful errors. For this reason, each Glimmr extension includes a section--such as this one--about how to include it, particularly in relation to other extensions.
 
 When including Glimmr Drawing Commands, it is not necessary to include Flexible Windows or Fixed Point Maths. GDC will do that.
 

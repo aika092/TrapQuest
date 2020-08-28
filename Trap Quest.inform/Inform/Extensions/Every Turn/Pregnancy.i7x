@@ -1,29 +1,14 @@
 Pregnancy by Every Turn begins here.
 
-[!<father:Thing>*
-
-REQUIRES COMMENTING
-
-*!]
 The father is a thing that varies. The father is the throne.
 
 Definition: a thing is father material: decide no.
 
-[!<ThingIsFamily>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a thing (called M) is family:
 	if M is inseminating vagina and M is father material and inhuman pregnancy is 2:
 		decide yes;
 	decide no.
 
-[!<ElderAltarIsFamily>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: an elder altar (called M) is family:
 	if M is inseminating vagina and M is father material:
 		if inhuman pregnancy is 0:
@@ -31,21 +16,11 @@ Definition: an elder altar (called M) is family:
 		decide yes;
 	decide no.
 
-[!<CreampiePoleTrapIsFamily>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a creampie pole trap (called M) is family:
 	if M is inseminating vagina and M is father material:
 		decide yes;
 	decide no.
 
-[!<MonsterIsFamily>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a monster (called M) is family:
 	if M is inseminating vagina and M is father material:
 		if inhuman pregnancy is 0:
@@ -56,19 +31,9 @@ Definition: a monster (called M) is family:
 			decide yes;
 	decide no.
 
-[!<MonsterIsHuman>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a monster is human: decide no.
 Definition: a monster is infernal: decide no.
 
-[!<MinotaurIsFamily>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a minotaur (called M) is family:
 	if M is inseminating vagina and M is father material:
 		if inhuman pregnancy is 0:
@@ -76,45 +41,20 @@ Definition: a minotaur (called M) is family:
 		decide yes;
 	decide no.
 
-[!<PrintFatherlyThing>+
-
-REQUIRES COMMENTING
-
-+!]
 To print fatherly things:
 	say "List of family things: [list of family things].";
 	unless the father is the throne, say "Current selected father: [the father].".
 
-[!<familyPrinting:Action>*
-
-REQUIRES COMMENTING
-
-*!]
 Family Printing is an action applying to nothing.
 
-[!<CheckFamilyPrinting>+
-
-REQUIRES COMMENTING
-
-+!]
 [Check Family Printing:
 	if debugmode < 2, say "Debug mode not enabled." instead.]
 
-[!<CarryOutFamilyPrinting>+
-
-REQUIRES COMMENTING
-
-+!]
 Carry out Family Printing:
 	print fatherly things.
 Understand "who's the daddy" as Family Printing.
 
 [NB the priority order for fatherhood. What can I say, some stuff has stronger sperm.]
-[!<DecideWhichThingIsTheNewFather>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which thing is the new father:
 	if there is a family tentacle monster, decide on a random family tentacle monster;
 	if there is a family elder altar, decide on a random family elder altar;
@@ -127,44 +67,19 @@ To decide which thing is the new father:
 	decide on the throne.
 
 [This phrase is used elsewhere so we encapsulate it in a function to make sure the text substitution behaves correctly.]
-[!<SayPregGrowth>+
-
-REQUIRES COMMENTING
-
-+!]
 To say PregGrowth:
 	let P be a random thing inseminating vagina;
 	say "You feel your belly swell even further as [if the father is not the throne][PregGrowth of the father][otherwise if the number of things inseminating vagina is 1][PregGrowth of P][otherwise]whatever is[end if] inside your womb [one of]starts to grow![or]continues to grow![if the womb volume of vagina is 38 and the number of things inseminating vagina > 1][line break][variable custom style]This definitely isn't a human baby I'm carrying, is it...[roman type][line break][end if][stopping]".
 
-[!<SayPregGrowthOfThing>+
-
-REQUIRES COMMENTING
-
-+!]
 To say PregGrowth of (T - a thing):
 	say "whatever is".
 
-[!<SayChild>+
-
-REQUIRES COMMENTING
-
-+!]
 To say child:
 	say "[one of]child[or]baby[or]child[or]baby[or]offspring[or]heir[or]brood[or]get[or]spawn[as decreasingly likely outcomes]".
 
-[!<successfulPregnancy:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 Successful-Pregnancy is a number that varies.
 Successful-Pregnancy is 1. [Used to track whether labour was delayed]
 
-[!<slowPregnancyTracker:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 slow-pregnancy-tracker is a number that varies.
 
 To decide which number is maximum-pregnancy-delay: [maximum number of turns before moving forward]
@@ -235,7 +150,7 @@ To compute pregnancy:
 					say "A maternity bra materialises over your breasts!";
 					compute summoned quest of M;
 				otherwise if the class of the player is fertility goddess and a random number between 1 and 20 is 1:
-					if there is a worn cursed pregnancy related clothing and the player is not bottom heavy:
+					if there is a worn cursed pregnancy themed clothing and the player is not bottom heavy:
 						say "You feel your hips widen in order to prepare for your inevitable labour!";
 						HipUp 1;
 		if the womb volume of vagina is 30: [Pregnancy has reached full term just now! Here we choose the father and check for and trigger super-pregnancies]
@@ -263,7 +178,7 @@ To compute pregnancy:
 						cutshow figure of giant pregnancy for belly;
 			otherwise:
 				if the remainder after dividing the womb volume of vagina by 5 is 0, compute pregnancy annoyance;
-	otherwise if maximum-pregnancy-delay-tracker >= maximum-birth-delay and the player is not immobile and the player is not flying and the pregnancy of the player is 1 and the number of worn chastity cages is 0:
+	otherwise if maximum-pregnancy-delay-tracker >= maximum-birth-delay and the player is not immobile and the player is not flying and the pregnancy of the player is 1 and chastity-belt is not worn:
 		now maximum-pregnancy-delay-tracker is 0;
 		increase slow-pregnancy-tracker by 1;
 		if debuginfo > 1, say "[line break][input-style]Birth progress: Full Term Time ([slow-pregnancy-tracker]) | ([slow birth rate].5) Birth Ready Threshold[roman type][line break]";
@@ -308,22 +223,12 @@ To compute pregnancy clothing displacement:
 		otherwise:
 			say "You instinctively pull your [ShortDesc of P] far enough off of you to get it out of the way of your [vagina].".
 
-[!<SayPregFlav>+
-
-REQUIRES COMMENTING
-
-+!]
 To say PregFlav:
 	say "[bold type][if the player is upright]You fall to your knees as your[otherwise]Your[end if] cervix starts dilating furiously.[roman type] [if the bimbo of the player < 13][line break][first custom style][one of]It's going to come out, I can't stop it![or]Not now, not again...[stopping][otherwise][line break][second custom style][one of]I'm going to be a mother![or]I wonder how many kids I'm going to end up with?[or]I just keep popping them out, don't I?[or]I just love being bred![stopping][end if][roman type][line break]";
 
-[!<SayDefaultBirthScene>+
-
-REQUIRES COMMENTING
-
-+!]
 To say DefaultBirthScene:
 	compute pregnancy clothing displacement;
-	say "[PregFlav]You feel yourself start to give birth. You feel a burning desire for the father of the child to appear, but nobody does, and without the father there to assist with the delivery you feel yourself begin to pass out due to the pain. In your groggy state you think you see some cherubic angels appear and begin to take the baby up into the heavens. [line break][second custom style]'Don't worry [TitleBimbo], we'll take care of this one for you. Good luck on your quest!'[roman type][line break]When you properly regain your senses, there are no babies, no cherubs, just you on the floor with a rapidly deflating belly and your vaginal juices sprayed across the ground below your crotch.[if the pregnancy rate of the player is 1][line break]Deep down, you can feel your womb crying out to begin the process all over again.[end if]";
+	say "[PregFlav]You feel yourself start to give birth. You feel a burning desire for the father of the child to appear, but nobody does, and without the father there to assist with the delivery you feel yourself begin to pass out due to the pain. In your groggy state you think you see some cherubic angels appear and begin to take the baby up into the heavens.[line break][second custom style]'Don't worry [TitleBimbo], we'll take care of this one for you. Good luck on your quest!'[roman type][line break]When you properly regain your senses, there are no babies, no cherubs, just you on the floor with a rapidly deflating belly and your vaginal juices sprayed across the ground below your crotch.[if the pregnancy rate of the player is 1][line break]Deep down, you can feel your womb crying out to begin the process all over again.[end if]";
 	if the pregnancy rate of the player < 2, increase the pregnancy rate of the player by 1.
 
 To compute tentacle birth:
@@ -371,11 +276,6 @@ To compute infernal birth:
 			let N be a random off-stage imp;
 			if N is a monster, compute birth set up of N.
 
-[!<ComputeGodBirth>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute god birth:
 	compute pregnancy clothing displacement;
 	say "[PregFlav]As you feel yourself start to give birth, suddenly a group of veiled women appear from nowhere to surround you! Suddenly, a [cascade] of milky slime begins to issue forth from you, pooling at your knees. The women begin to chant ominously as the slime continues to pour out of you, and you already see it swirling and flowing as if alive. As the flow finally stops, one of the women approaches with a large bowl, which the slime flows up into. They then vanish back into the shadows.";
@@ -385,11 +285,6 @@ To compute god birth:
 		say "Your vision slightly dims as a black silk veil appears over your face. Somehow you feel comforted, as though you no longer need to be an individual any more.";
 
 contractionTracker is a number that varies.
-[!<DelayLabour>+
-
-REQUIRES COMMENTING
-
-+!]
 To Delay Labour:
 	if the class of the player is fertility goddess:
 		say "A sudden contraction sends a small, manageable amount of pain shooting from your womb to the rest of your body.[line break][if the semen addiction of the player < 7 and the father is alive monster and the father is not regional alive monster][one of][line break][first custom style]Okay, by staying away from [the father] I can prevent myself from having to give birth again...[or][stopping][otherwise if the semen addiction of the player < 7][one of][first custom style]Okay, by keeping my [vagina] covered I think can prevent myself from having to give birth again...[or][stopping][otherwise][one of][line break][second custom style]I just love being massive and pregnant, why would I want to give birth and have to start the process all over again?[or][stopping][end if][roman type][line break]";
@@ -406,19 +301,9 @@ To Delay Labour:
 To say NonAliveFatherBirthFlav of (M - a thing):
 	say "You should probably make sure the exit to your vagina is clear!".
 
-[!<SayPregnancyBugFlav>+
-
-REQUIRES COMMENTING
-
-+!]
 To say PregnancyBugFlav:
 	say "In some weird twist of this virtual game, you can literally feel the moment where someone up high decides you don't deserve a pregnancy, presses a button, and all the body mass inside you turns into liquid! Your poor womb is now just completely over-full of [semen]! It all comes gushing out in a torrent, coating your thighs and the ground.".
 
-[!<CheckForExtremePregnancies>+
-
-REQUIRES COMMENTING
-
-+!]
 To check for extreme pregnancies:
 	if extreme proportions fetish is 1 and inhuman pregnancy > 0 and the father is not the throne: [Super-pregnancies are go]
 		if the father is a minotaur or the father is vines or the father is lake monster or the father is living belt of sturdiness or the father is hellhound or the father is demon lord or the father is facehugger or the father is elder altar:

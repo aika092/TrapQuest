@@ -7,37 +7,19 @@ The print standard inventory rule is not listed in the carry out taking inventor
 Check taking inventory:
 	if the player is in capsule, say "You're just wearing the clothes you arrived in." instead.
 
-[!<CarryOutTakingInventory>+
-
-REQUIRES COMMENTING
-
-+!]
 Carry out taking inventory:
 	if there are held things, try ItemListing.
 
 A thing can be catalogued.
 
-[!<Thing>@<isCatalogued:Boolean>*
+Definition: a thing is uncatalogued:
+	if it is not catalogued, decide yes;
+	decide no.
 
-REQUIRES COMMENTING
-
-*@!]
-Definition: a thing is uncatalogued if it is not catalogued.
-
-[!<ResetEntireCatalogue>+
-
-REQUIRES COMMENTING
-
-+!]
 To reset entire catalogue:
 	repeat with T running through held catalogued things: [Only held ones because we use catalogued for a couple of other minor tracking situations]
 		now T is not catalogued.
 
-[!<itemListing:Action>*
-
-REQUIRES COMMENTING
-
-*!]
 ItemListing is an action applying to nothing. Understand "items", "list items", "list inventory" as ItemListing.
 inventory-busy is a number that varies.
 inventory-window-busy is a number that varies.
@@ -120,11 +102,6 @@ Carry Out ItemListing:
 
 ClothingListing is an action applying to nothing. Understand "clothing", "list clothing", "clothes", "list clothes", "c" as ClothingListing.
 
-[!<CarryOutClothingListing>+
-
-REQUIRES COMMENTING
-
-+!]
 Carry Out ClothingListing:
 	reset entire catalogue;
 	now inventory-busy is 1;
@@ -152,11 +129,6 @@ Carry Out ClothingListing:
 
 JewelleryListing is an action applying to nothing. Understand "accessories", "list accessories", "jewels", "list jewels", "jewellery", "list jewellery", "j" as JewelleryListing.
 
-[!<CarryOutJewelleryListing>+
-
-REQUIRES COMMENTING
-
-+!]
 Carry Out JewelleryListing:
 	reset entire catalogue;
 	now inventory-busy is 1;
@@ -180,11 +152,6 @@ Carry Out JewelleryListing:
 
 FoodListing is an action applying to nothing. Understand "edibles", "list edibles", "food", "list food", "drinks", "list drinks", "list cans", "vessels", "list vessels", "f" as FoodListing.
 
-[!<CarryOutFoodListing>+
-
-REQUIRES COMMENTING
-
-+!]
 Carry Out FoodListing:
 	reset entire catalogue;
 	now inventory-busy is 1;
@@ -205,11 +172,6 @@ Carry Out FoodListing:
 
 LootListing is an action applying to nothing. Understand "loot", "list loot", "collectibles", "list collectibles", "items", "list items" as LootListing.
 
-[!<CarryOutLootListing>+
-
-REQUIRES COMMENTING
-
-+!]
 Carry Out LootListing:
 	reset entire catalogue;
 	now inventory-busy is 1;
@@ -245,11 +207,6 @@ To say MassCollectiblesList:
 
 TattooListing is an action applying to nothing. Understand "tattoo", "list tattoo", "tats", "list tats", "tattoos", "list tattoos" as TattooListing.
 
-[!<CarryOutTattooListing>+
-
-REQUIRES COMMENTING
-
-+!]
 Carry Out TattooListing:
 	now inventory-busy is 1;
 	repeat with T running through worn tattoos:

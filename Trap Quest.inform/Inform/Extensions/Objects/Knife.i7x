@@ -29,7 +29,8 @@ Check knifing:
 	if the second noun is not knife and (the second noun is not sword or the second noun is not metal) and the second noun is not midnight tanto, say "How would you cut anything with that?" instead;
 	if the second noun is knife:
 		if the noun is monster, say "Since it's on such a short chain, you really doubt that would work." instead;
-		if the player is not able to manually use manual dexterity and the class of the player is not santa's little helper, do nothing instead;
+		if the class of the player is not santa's little helper:
+			if the player is not able to manually use manual dexterity, do nothing instead;
 	otherwise:
 		if the noun is monster, try slapping the noun instead;
 		if the noun is ass hook and the player is wrist bound in front, say "You can't do that when your wrists are bound together in front of you!" instead;
@@ -75,7 +76,7 @@ Carry out knifing:
 				now V is not grabbing the player;
 			otherwise:
 				if the player is vine-cursed and a random number between 3 and the dexterity of the player < 3: [Selkie: Changed back to < 3. Can only fail if Dex is 1 or 2]
-					say "You bend down to try and free your ankles, but while you[']re looking for a clean cut, several vines lash out and grab you by the wrists, slamming you down onto all fours!";
+					say "You bend down to try and free your ankles, but while you're looking for a clean cut, several vines lash out and grab you by the wrists, slamming you down onto all fours!";
 					now the stance of the player is 1;
 				otherwise:
 					say "You try, but you can't bend over enough to find a place for a clean cut! Maybe you should keep trying?";

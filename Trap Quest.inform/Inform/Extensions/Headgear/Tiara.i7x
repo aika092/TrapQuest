@@ -26,7 +26,15 @@ Chapter - Class Outfit
 
 Definition: a tiara (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
 	if wearing-target is not C and wearing-target is royalty themed, decide yes;
+	if the quest of C is virginity-retention-quest and wearing-target is purity, decide yes;
 	decide no.
+
+To compute virginity-loss of (C - a tiara):
+	if the quest of C is virginity-retention-quest:
+		say "In an instant, false memories of being captured and sold into slavery fill your mind. Looking down at yourself again, you realise they are more real than you could have imagined: you are now wearing the bondage that matches your memory: the bondage of a captured warrior princess repurposed as a sex slave for a cruel noble from the conquering nation.";
+		summon slave-garb locked.
+
+
 
 tiara-summoned is a number that varies.
 To compute unique recycling of (C - a tiara):
@@ -44,7 +52,7 @@ To compute class outfit of (H - a tiara):
 			repeat with O running through worn exclusive corsets:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
-			repeat with O running through worn skirted clothing:
+			repeat with O running through worn skirt clashing clothing:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
 		say "[bold type]Your tiara shines brightly, and a [if R is baby royal dress]childish[otherwise]silky[end if] pink dress materialises around you.[roman type][line break]";

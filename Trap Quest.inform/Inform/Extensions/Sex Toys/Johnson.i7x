@@ -5,10 +5,18 @@ Johnson by Sex Toys begins here.
 A johnson is a kind of dong. The printed name of a johnson is usually "[clothing-title-before][DongSize of the item described] [DongColour of the item described] dildo[clothing-title-after]". The text-shortcut of johnson is "dl". Understand "johnson" as johnson.
 
 Definition: a johnson is penis themed: decide yes.
-Definition: a johnson is blue themed if it is refreshment.
-[Definition: a johnson is green themed if it is rejuvenation or it is endurance.]
-Definition: a johnson is white themed if it is suppression or it is bed wetting.
-Definition: a johnson is red themed if it is dominance or it is temptation.
+Definition: a johnson is blue themed:
+	if it is refreshment, decide yes;
+	decide no.
+[Definition: a johnson is green themed:
+	if it is rejuvenation or it is endurance, decide yes;
+	decide no.]
+Definition: a johnson is white themed:
+	if it is suppression or it is bed wetting, decide yes;
+	decide no.
+Definition: a johnson is red themed:
+	if it is dominance or it is temptation, decide yes;
+	decide no.
 
 Figure of johnson 1 is the file "Items/Accessories/Toys/johnson1.png".
 Figure of johnson 2 is the file "Items/Accessories/Toys/johnson2.png".

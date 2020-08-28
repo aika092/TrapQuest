@@ -1,21 +1,11 @@
 Deploying by Rooms begins here.
 
-[!<DeployObjectInRoom>+
-
-REQUIRES COMMENTING
-
-+!]
 To deploy (O - an object) in (G - a room):
 	do nothing.
 
 To deploy (T - a trap) in (O - an object):
 	if debugmode > 0, say "ERROR: There was not enough room to find a place to deploy [T].".
 
-[!<DeployTrapInRoom>+
-
-REQUIRES COMMENTING
-
-+!]
 To deploy (T - a trap) in (G - a room):
 	now T is in G;
 	let R be a random number between 1 and 4;
@@ -32,30 +22,15 @@ To deploy (T - a trap) in (G - a room):
 	if T is wire or T is pressure, choose direction of T;
 	if debugmode is 1, say "Deploying a [printed name of T] in [printed name of G].".
 
-[!<DeployVineInRoom>+
-
-REQUIRES COMMENTING
-
-+!]
 To deploy (T - a vine) in (G - a room):
 	now T is in G;
 	if debugmode is 1, say "Deploying a [printed name of T] in [printed name of G].";
 
-[!<ChooseDirectionOfTrap>+
-
-REQUIRES COMMENTING
-
-+!]
 To choose direction of (T - a trap):
 	now neighbour finder is the location of T;
 	now the trap-direction of T is a random N-viable direction;
 	if debugmode is 1, say "Direction [trap-direction of T] chosen.".
 
-[!<DeployTankInRoom>+
-
-REQUIRES COMMENTING
-
-+!]
 To deploy tank in (G - a room):
 	if debugmode is 1, say "Deploying a tank in [printed name of G][paragraph break]";
 	let R be a random number between 1 and 3 - unlucky;
@@ -66,11 +41,6 @@ To deploy tank in (G - a room):
 	SetDose T to (a random number from 2 + bonus liquid to 8);
 	now T is in G.
 
-[!<DeployBucketInRoom>+
-
-REQUIRES COMMENTING
-
-+!]
 To deploy bucket in (G - a room):
 	if debugmode is 1, say "Deploying a bucket in [printed name of G][paragraph break]";
 	if diaper quest is 0 and the number of on-stage iron-maidens is 0:
@@ -81,11 +51,6 @@ To deploy bucket in (G - a room):
 	SetDose T to (a random number from 2 + bonus liquid to 8);
 	now T is in G.
 
-[!<DeployMinibarInRoom>+
-
-REQUIRES COMMENTING
-
-+!]
 To deploy minibar in (G - a room):
 	if debugmode is 1, say "Deploying a minibar in [printed name of G][paragraph break]";
 	let T be a random minibar in Holding Pen;

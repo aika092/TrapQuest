@@ -19,7 +19,9 @@ To compute SelfExamineDesc of (H - glittering rose):
 	let X be the largeness of hair;
 	say "A cream coloured rose rests in your [ShortDesc of hair]. ".
 
-Definition: glittering rose is roleplay if the player is possessing a vagina and pregnancy fetish is 1.
+Definition: glittering rose is roleplay:
+	if the player is possessing a vagina and pregnancy fetish is 1, decide yes;
+	decide no.
 
 Definition: glittering rose is flower themed: decide yes.
 Definition: glittering rose is white themed: decide yes.
@@ -38,7 +40,9 @@ To decide which number is the dexterity-influence of (C - glittering rose):
 
 Chapter - Class Outfit
 
-Definition: glittering rose is removal-blocking if wearing-target is butterfly wings.
+Definition: glittering rose is removal-blocking:
+	if wearing-target is butterfly wings, decide yes;
+	decide no.
 
 fairy-summoned is a number that varies.
 

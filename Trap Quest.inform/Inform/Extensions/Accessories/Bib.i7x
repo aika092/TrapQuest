@@ -1,6 +1,6 @@
 Bib by Accessories begins here.
 
-A bib is a kind of clothing. A pink purple bib is a kind of bib. There is 1 unique cotton pink purple bib. Printed name of pink purple bib is "[clothing-title-before]pink and purple bib[clothing-title-after]". Understand "pink and purple" as pink purple bib. The text-shortcut of bib is "bib". The soak-limit of a bib is usually 15.
+A bib is a kind of clothing. A pink purple bib is a kind of bib. There is 1 unique cotton pink purple bib. Printed name of pink purple bib is "[clothing-title-before]pink and purple bib[clothing-title-after]". Understand "pink and purple" as pink purple bib. The text-shortcut of bib is "bib".
 
 Figure of pink bib is the file "Items/Accessories/Neck/bib1.png".
 

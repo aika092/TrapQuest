@@ -2,10 +2,12 @@ Fertility Goddess Outfit by Dresses begins here.
 
 A fertility outfit is a kind of overdress. A fertility outfit is usually unique. A fertility outfit is usually vaginal-sex-addiction-influencing.
 
-Definition: a fertility outfit is pregnancy related: decide yes.
+Definition: a fertility outfit is pregnancy themed: decide yes.
 Definition: a fertility outfit is magic themed: decide yes.
 
-Definition: a fertility outfit is class-transformation-protected if the class of the player is fertility goddess.
+Definition: a fertility outfit is class-transformation-protected:
+	if the class of the player is fertility goddess, decide yes;
+	decide no.
 
 To decide which number is the intelligence-influence of (C - a fertility outfit):
 	decide on childValue times 3.

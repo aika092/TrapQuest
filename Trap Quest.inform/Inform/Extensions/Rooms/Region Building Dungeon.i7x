@@ -1,11 +1,7 @@
 Region Building Dungeon by Rooms begins here.
 
-[!<SetUpTheDungeon>+
-
-REQUIRES COMMENTING
-
-+!]
 To Set Up The Dungeon:
+	say "Now loading the dungeon region!";
 	if loading scenes is 1:
 		clear the screen;
 		if images visible is 1:
@@ -18,9 +14,12 @@ To Set Up The Dungeon:
 					display figure of dungeon loading;
 			otherwise:
 				display figure of dq dungeon loading;
-		say "Now loading the dungeon region!";
-		render buffered stuff;
-	if debugmode is 1, say "[bold type]SETTING UP DUNGEON NOW[roman type][paragraph break]";
+		let T be a random loading animation track;
+		if animationsEnabled is 1 and T is an animation track:
+			commence animation of T;
+			wait until loading animation pauses;
+		otherwise:
+			render buffered stuff;
 	while the number of unplaced rooms in The Dungeon > 5:
 		Scramble Dungeon;
 		if the number of unplaced rooms in The Dungeon > 5 or Stairwell01 is unplaced or Dungeon28 is unplaced or Dungeon41 is unplaced:
@@ -87,11 +86,6 @@ To Set Up The Dungeon:
 	now DogPetName is the substituted form of "[PossiblePetName]";
 	if debugmode is 0 and loading scenes is 1, clear the screen.
 
-[!<ScrambleDungeon>+
-
-REQUIRES COMMENTING
-
-+!]
 To Scramble Dungeon:
 	now target-floor is Dungeon12;
 	solve the puzzle;

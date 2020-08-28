@@ -1,17 +1,7 @@
 Addictions by Player Description begins here.
 
-[!<addictionListingRules:Rulebook>*
-
-REQUIRES COMMENTING
-
-*!]
 The addiction listing rules is a rulebook.
 
-[!<addictionListing:Action>*
-
-REQUIRES COMMENTING
-
-*!]
 Addiction Listing is an action applying to nothing.
 
 [!<CarryOutAddictionListing>+
@@ -71,9 +61,13 @@ Definition: yourself is a masochist: [Does the player prefer taking a submissive
 	if the player is feeling submissive and the player is a pervert, decide yes;
 	decide no.
 
-Definition: a body part is unconditioned rather than conditioned if the desire of it < 6. [Is body part relatively untouched and not used to this new world?]
+Definition: a body part is unconditioned rather than conditioned:
+	if the desire of it < 6, decide yes;
+	decide no. [Is body part relatively untouched and not used to this new world?]
 
-Definition: yourself is conditioned rather than unconditioned if there is a conditioned body part. [Is the player's body relatively untouched and not used to this new world?]
+Definition: yourself is conditioned rather than unconditioned:
+	if there is a conditioned body part, decide yes;
+	decide no. [Is the player's body relatively untouched and not used to this new world?]
 
 [!<TheSexAddictionDescriptionRule>+
 
@@ -142,9 +136,14 @@ We explain how much the player likes performing tittyfucks.
 
 +!]
 This is the titfuck addiction description rule:
-	if the titfuck addiction of the player > 1 and the largeness of breasts >= 5:
-		say "[if the titfuck addiction of the player <= 2]You gain no personal pleasure from having a [manly-penis] in between your breasts[otherwise if the titfuck addiction of the player <= 3]You find there is little pleasure for you in relieving [manly-penis]s with your tits[otherwise if the titfuck addiction of the player <= 5 and the anal sex addiction of the player <= 5 and the vaginal sex addiction of the player <= 5]You don't mind giving titjobs. It's often better than the alternatives, and it feels surprisingly pleasant on your skin[otherwise if the titfuck addiction of the player <= 5]You don't mind giving titjobs, but you usually find other types of sex more fun[otherwise if the titfuck addiction of the player <= 7]You love pleasuring men with your boobs! It just feels so great thanks to your extra-sensitive skin[otherwise if the titfuck addiction of the player <= 9]Having a cock pumping in and out of your cleavage is a great pleasure; your breasts are becoming like another sex organ[otherwise]Whenever your cleavage is empty, your titty flesh aches to feel another phallic object thrusting in and out of its voluptuous fold[end if].";
-		if debuginfo > 0, say "[input-style](Titfuck addiction [titfuck addiction of the player] / 10)[roman type][line break]".
+	if the largeness of breasts >= 5:
+		let SB be the sensitivity of breasts;
+		if the titfuck addiction of the player > 1:
+			say "[if the titfuck addiction of the player <= 2]You find the thought of having a [manly-penis] in between your breasts rather repulsive[otherwise if the titfuck addiction of the player <= 3]You find the idea of letting [men of shopkeeper] fuck your breasts distasteful[otherwise if the titfuck addiction of the player <= 5 and the anal sex addiction of the player <= 5 and the vaginal sex addiction of the player <= 5]You don't mind giving titjobs. It's often better than the alternatives[otherwise if the titfuck addiction of the player <= 5]You don't mind giving titjobs, but you usually find other types of sex more fun[otherwise if the titfuck addiction of the player <= 7]You love pleasuring [men of shopkeeper] with your boobs! It's just so sexy and convenient[otherwise if the titfuck addiction of the player <= 9]You get really turned on by your breasts being used as fuckpillows for some [man of shopkeeper] to sandwich [his of shopkeeper] thick meat between[otherwise]Whenever your cleavage is empty, you ache to feel another phallic object thrusting in and out of its voluptuous fold[end if].";
+			if debuginfo > 0, say "[input-style](Titfuck addiction [titfuck addiction of the player] / 10)[roman type][line break]";
+		if SB > 1:
+			say "[if SB <= 2]You gain no personal pleasure from having a [manly-penis] in between your breasts[otherwise if SB <= 3]You find there is little pleasure for you in relieving [manly-penis]s with your tits[otherwise if SB <= 5]Pleasuring [manly-penis]s with your breasts feels surprisingly pleasant on your skin[otherwise if SB <= 7]Giving titjobs feels great thanks to your extra-sensitive skin[otherwise if SB <= 10]Having a [manly-penis] pumping in and out of your cleavage is a great pleasure; your breasts are becoming like another sex organ[otherwise]Your super-sensitive breasts tingle with pleasure whenever something rubs against them[end if].";
+			if debuginfo > 0, say "[input-style](Breasts sensitivity [SB])[roman type][line break]".
 The titfuck addiction description rule is listed in the addiction listing rules.
 
 [!<TheVaginalSexAddictionDescriptionRule>+
@@ -365,15 +364,15 @@ This is the public disgrace description rule:
 	let PD be the public disgrace of the player;
 	if PD > 0:
 		if PD < 20:
-			say "There's likely a small amount of embarrassing footage of you on the Internet, but nothing that's too bad or too widespread.";
+			say "There's likely a small amount of embarrassing footage of you on the Internet, but nothing too bad or too widespread.";
 		otherwise if PD < 500:
-			say "There's footage of you on the Internet, and it's likely pretty devastating. Who knows exactly how many people have seen your shame, but it's quite possible that somebody will recognise you soon, and if you can't find a way to find it and get it taken down soon, you'll likely never be able to live it down.";
+			say "There's footage of you on the Internet, and it's likely pretty devastating. Who knows exactly how many people have seen your shame? It's quite possible that somebody will recognise you. If you can't find a way to find it and get it taken down soon, you'll likely never be able to live it down.";
 		otherwise if PD < 2000:
-			say "There's certainly some pretty damning explicit footage of you on the Internet. It seems quite likely that someone will have recognised you by now, and if they decide to share it further, you'll never be able to live it down.";
+			say "There's certainly some pretty damning explicit footage of you on the Internet. It seems quite likely that someone will have recognised you by now. If they decide to share it further you'll never be able to live it down.";
 		otherwise if PD < 5000:
-			say "Footage of you exists across the Internet of you in extremely shameful situations, with you likely easily identifiable in most if not all of it. Irreperable damage has been done to your reputation - you'll be the laughing stock of your hometown from now until the end of time, and if you can't somehow find a way to do some damage control and get it all taken down, you'll probably never be able to get a proper job again.";
+			say "Footage of you in extremely shameful situations exists across the Internet, probably with you easily identifiable in most if not all of it. Irreparable damage has been done to your reputation - you'll be the laughing stock of your home town from now until the end of time. Unless you can somehow find a way to do some damage control and get it all taken down, you'll probably never be able to get a proper job again.";
 		otherwise:
-			say "You are acutely aware that by now you are likely infamous on the Internet. Everyone knows your name, age, where you come from, and [if diaper quest is 1]they all believe that you're some attention seeking, exhibitionist, humiliation craving, diaper loving pervert[otherwise]what the inside of your [asshole] looks like[end if]. You know what you'll see the next time you check your Twitter profile: hundreds of thousands if not millions of new followers, and countless mentions discussing how brave and/or disgusting you are, and endless unsolicited explicit DMs. You'll never get a real job again, but perhaps you could now make a living selling certain 'premium snapchat' services to discerning degenerates...[line break][variable custom style][if the player is shameless]So much attention... all for me... how humiliating! It makes me horny just thinking about it[otherwise if the player is modest]No... I couldn't! I couldn't ever bring myself to put even more of myself out there...![otherwise]Could I really bring myself to become a camgirl? Debasing myself perverted men around the world... Surely not...?[end if][roman type][line break]";
+			say "You are acutely aware that by now you are likely infamous on the Internet. Everyone knows your name, age, where you come from, and [if diaper quest is 1]they all believe you're some attention seeking, exhibitionist, humiliation craving, diaper loving pervert[otherwise]what the inside of your [asshole] looks like[end if]. You know what you'll see the next time you check your Twitter profile: hundreds of thousands if not millions of new followers, and countless mentions discussing how brave and/or disgusting you are, not to mention endless unsolicited explicit DMs. You'll never get a real job again, but perhaps you could now make a living selling certain 'premium snapchat' services to discerning degenerates...[line break][variable custom style][if the player is shameless]So much attention... all for me... how humiliating! It makes me horny just thinking about it[otherwise if the player is modest]No... I couldn't! I couldn't ever bring myself to put even more of myself out there...![otherwise]Could I really bring myself to become a camgirl? Debasing myself perverted men around the world... Surely not...?[end if][roman type][line break]";
 		if debuginfo > 0, say "[input-style](Public Disgrace: [PD] / 5000)[roman type][line break]".
 The public disgrace description rule is listed in the addiction listing rules.
 

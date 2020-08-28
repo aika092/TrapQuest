@@ -49,10 +49,17 @@ Report examining a trophy:
 
 bbc-trophy is a trophy. The printed name of bbc-trophy is "[TQlink of item described]big black cock trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of bbc-trophy is "bbct". Understand "big", "black", "black cock" as bbc-trophy.
 
-To say ExamineDesc of (T - bbc-trophy):
-	say "This heavy metal trophy depicts a huge thick black [manly-penis] coiled around a much smaller limp white [sissy-penis]. It is surrounded by a mystical [if the trophy-mode of T is 1]green glow, and you can feel that it is actively enhancing black virility whilst dampening white virility[otherwise]red glow, which allows you to sense that its powers of enhancing black virility whilst dampening white virility are currently inactive[end if].".
+Figure of bbc trophy is the file "Env/School/trophy2.png".
 
-Definition: bbc-trophy is fetish appropriate if interracial fetish is 1.
+To decide which figure-name is the examine-image of (C - bbc-trophy):
+	decide on figure of bbc trophy.
+
+To say ExamineDesc of (T - bbc-trophy):
+	say "This heavy metal trophy depicts a huge thick black [manly-penis] with a much smaller, limp white [sissy-penis] coiled around its base, dribbling its premature ejaculation. It is surrounded by a mystical [if the trophy-mode of T is 1]green glow, and you can feel that it is actively enhancing black virility whilst dampening white virility[otherwise]red glow, which allows you to sense that its powers of enhancing black virility whilst dampening white virility are currently inactive[end if].".
+
+Definition: bbc-trophy is fetish appropriate:
+	if interracial fetish is 1, decide yes;
+	decide no.
 
 Carry out TrophySwitching bbc-trophy:
 	say "You rub the trophy[if the player is wrist bound behind] with your nose[end if]. ";
@@ -72,12 +79,12 @@ Carry out TrophySwitching pain-trophy:
 	say "You rub the trophy[if the player is wrist bound behind] with your nose[end if]. ";
 	if the trophy-mode of pain-trophy is 0:
 		if the raw sex addiction of the player >= 20:
-			say "The trophy's glow doesn't change from red. Perhaps this means that you can't become more perverted than you already are, so you can no longer enable this magical effect.";
+			say "The trophy's glow doesn't change from red. Perhaps this means you can't become more perverted than you already are, so you can no longer enable this magical effect.";
 		otherwise:
-			say "The trophy's glow changes from red to green. You can tell that from now on, [bold type]experiencing pain will feel weirdly pleasurable and make you more perverted rather than more submissive.[roman type][line break]";
+			say "The trophy's glow changes from red to green. You can tell that from now on, [bold type]experiencing pain will feel [one of]weirdly[or]strangely[or]oddly[or]oddly[or]kind of[or]amusingly[or]intriguingly[or]appealingly[or]cutely[or]nicely[or]deliciously[or]delightfully[stopping] pleasurable and make you more perverted rather than more submissive.[roman type][line break]";
 			now the trophy-mode of pain-trophy is 1;
 	otherwise:
-		say "The trophy's glow changes from green to red. You can tell that [bold type]your experience of pain has returned to normal, and exposure to it will gradually make you more submissive.[roman type][line break]";
+		say "The trophy's glow changes from green to red. You can tell that [bold type]your experience of pain has returned to normal, and wonder whether exposure to it will gradually make you more submissive.[roman type][line break]";
 		now the trophy-mode of pain-trophy is 0.
 
 expel-trophy is a trophy. The printed name of expel-trophy is "[TQlink of item described]sphincter trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of expel-trophy is "spht". Understand "sphincter" as expel-trophy.
@@ -85,15 +92,17 @@ expel-trophy is a trophy. The printed name of expel-trophy is "[TQlink of item d
 To say ExamineDesc of (T - expel-trophy):
 	say "This trophy is in the shape of a tight butthole. It is surrounded by a mystical [if the trophy-mode of T is 1]green glow, and you can feel that expelling things from your butthole now happens automatically, and never happens when you're plugged, and it no longer hurts to hold things in[otherwise]red glow, which allows you to sense that you can control when you release liquid from your butthole, but holding it is painful over time[end if].".
 
-Definition: expel-trophy is fetish appropriate if diaper quest is 0.
+Definition: expel-trophy is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 
 Carry out TrophySwitching expel-trophy:
 	say "You rub the trophy[if the player is wrist bound behind] with your nose[end if]. ";
 	if the trophy-mode of expel-trophy is 0:
-		say "The trophy's glow changes from red to green. You can tell that from now on, [bold type]expelling things from your butthole now happens automatically, and never happens when you're plugged, and it no longer hurts to hold things in.[roman type][line break]";
+		say "The trophy's glow changes from red to green. You can tell that from now on, [bold type]expelling things from your butthole will now happen automatically, though never when you're plugged, and it will no longer hurt to hold things in.[roman type][line break]";
 		now the trophy-mode of expel-trophy is 1;
 	otherwise:
-		say "The trophy's glow changes from green to red. You can tell that [bold type]you can now once again control when you release liquid from your butthole, but holding it is painful over time.[roman type][line break]";
+		say "The trophy's glow changes from green to red. You can tell that [bold type]you can now once again control when you release liquid from your butthole, but holding it will be painful over time.[roman type][line break]";
 		now the trophy-mode of expel-trophy is 0.
 
 bust-trophy is a trophy. The printed name of bust-trophy is "[TQlink of item described]bust trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of bust-trophy is "bstt". Understand "bust" as bust-trophy.
@@ -101,12 +110,14 @@ bust-trophy is a trophy. The printed name of bust-trophy is "[TQlink of item des
 To say ExamineDesc of (T - bust-trophy):
 	say "This trophy is in the shape of a large round pair of breasts. It is surrounded by a mystical [if the trophy-mode of T is 1]green glow, and you can feel that your breasts are more sensitive, but less provocative[otherwise]red glow, which allows you to sense that its magical powers to make your breasts more sensitive but less provocative is currently inactive[end if].".
 
-Definition: bust-trophy is fetish appropriate if diaper quest is 0 and the largeness of breasts > 5.
+Definition: bust-trophy is fetish appropriate:
+	if diaper quest is 0 and the largeness of breasts > 5, decide yes;
+	decide no.
 
 Carry out TrophySwitching bust-trophy:
 	say "You rub the trophy[if the player is wrist bound behind] with your nose[end if]. ";
 	if the trophy-mode of bust-trophy is 0:
-		say "The trophy's glow changes from red to green. You can tell that from now on, [bold type]others will consider your naked breasts or cleavage less offensive, but they feel more sensitive.[roman type][line break]";
+		say "The trophy's glow changes from red to green. You can tell that from now on, [bold type]your breasts will feel more sensitive, but others will consider your cleavage or naked breasts less offensive.[roman type][line break]";
 		now the trophy-mode of bust-trophy is 1;
 	otherwise:
 		say "The trophy's glow changes from green to red. You can tell that [bold type]your breast sensitivity and outrageousness has returned to normal.[roman type][line break]";
@@ -128,7 +139,9 @@ Carry out TrophySwitching trip-trophy:
 
 condom-trophy is a trophy. The printed name of condom-trophy is "[TQlink of item described]condom trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of condom-trophy is "cdmt". Understand "condom" as condom-trophy.
 
-Definition: condom-trophy is fetish appropriate if diaper quest is 0.
+Definition: condom-trophy is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 
 To say ExamineDesc of (T - condom-trophy):
 	say "This trophy is in the shape of a realistic erect penis protected by a condom. It is surrounded by a mystical [if the trophy-mode of T is 1]green glow, and you can feel that people are much more likely to be willing to wear a condom, and your brain and body will much more quickly become addicted to creampies if you receive any[otherwise]red glow, which allows you to sense that its magical powers to make condoms more reliable and creampies more addictive are inactive[end if].".
@@ -144,10 +157,12 @@ Carry out TrophySwitching condom-trophy:
 
 ejaculate-trophy is a trophy. The printed name of ejaculate-trophy is "[TQlink of item described]semen trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of ejaculate-trophy is "smnt". Understand "semen" as ejaculate-trophy.
 
-Definition: ejaculate-trophy is fetish appropriate if ((the player is female or TG fetish > 0) and pregnancy fetish is 1) or bukkake fetish is 1.
+Definition: ejaculate-trophy is fetish appropriate:
+	if ((the player is female or TG fetish > 0) and pregnancy fetish is 1) or bukkake fetish is 1, decide yes;
+	decide no.
 
 To say ExamineDesc of (T - ejaculate-trophy):
-	say "This trophy is in the shape of a realistic erect penis in the middle of ejaculating a veritable fountain of semen. It is surrounded by a mystical [if the trophy-mode of T is 1]green glow, and you can feel that drinking [semen] is no longer addictive, but also everyone in this world now ejaculates huge amounts of [semen][otherwise]red glow, which allows you to sense that its magical powers to make ejaculations much more voluminous and creampies less addictive are inactive[end if].".
+	say "This trophy is in the shape of a realistic erect penis in the middle of ejaculating a veritable fountain of semen. It is surrounded by a mystical [if the trophy-mode of T is 1]green glow. You can feel that drinking [semen] is no longer addictive, but also everyone in this world now ejaculates huge amounts of [semen][otherwise]red glow, which allows you to sense that its magical powers to make ejaculations much more voluminous and [semen] less addictive are inactive[end if].".
 
 Carry out TrophySwitching ejaculate-trophy:
 	say "You rub the trophy[if the player is wrist bound behind] with your nose[end if]. ";
@@ -160,7 +175,9 @@ Carry out TrophySwitching ejaculate-trophy:
 
 diaper-trophy is a trophy. The printed name of diaper-trophy is "[TQlink of item described]diaper trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of diaper-trophy is "dipt". Understand "diaper" as diaper-trophy.
 
-Definition: diaper-trophy is fetish appropriate if diaper quest is 1.
+Definition: diaper-trophy is fetish appropriate:
+	if diaper quest is 1, decide yes;
+	decide no.
 
 To say ExamineDesc of (T - diaper-trophy):
 	say "This trophy is in the shape of a ballerina, clearly with thick padding underneath her leotard. It is surrounded by a mystical [if the trophy-mode of T is 1]green glow, and you can feel that people no longer consider [bold type]the shape of a diaper being visible through other clothing[roman type] outrageous, but also people who have instructed you to stay in diapers will never give you permission to stop wearing them[otherwise]red glow, which allows you to sense that its magical powers to make the shape of a diaper being visible through other clothing not embarrassing, and to make people never give you permission to stop wearing diapers, are inactive[end if].".
@@ -171,15 +188,15 @@ Carry out TrophySwitching diaper-trophy:
 		say "The trophy's glow changes from red to green. You can tell that from now on, [bold type]people will no longer consider the shape of a diaper being visible through other clothing outrageous, but also people who have instructed you to stay in diapers will never give you permission to stop wearing them.[roman type][line break]";
 		now the trophy-mode of diaper-trophy is 1;
 	otherwise:
-		say "The trophy's glow changes from green to red. You can tell that [bold type]people will once again consider the shape of a diaper being visible through other clothing to be childish, and also people who have instructed you to stay in diapers will once again give you permission to stop wearing them after finding that you have managed to stay dry enough times when they check you.[roman type][line break]";
+		say "The trophy's glow changes from green to red. You can tell that [bold type]people will once again consider the shape of a diaper being visible through other clothing to be childish, and also people who have instructed you to stay in diapers will once again give you permission to stop wearing them after finding you have managed to stay dry enough times when they check you.[roman type][line break]";
 		now the trophy-mode of diaper-trophy is 0.
 
 magic-trophy is a trophy. The printed name of magic-trophy is "[TQlink of item described]magic wand trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of magic-trophy is "mgwt". Understand "magic", "wand" as magic-trophy.
 
 To say ExamineDesc of (T - magic-trophy):
 	say "This trophy is in the shape of a vibrating magic wand. It is surrounded by a mystical ";
-	if the trophy-mode of T is 1, say "green glow, and you can feel that casting magic spells doesn't deplete your magic power, but also every time you cast a spell, your [if egg laying fetish is 1]womb[otherwise]belly[end if] will be filled with [if egg laying fetish is 1]eggs[otherwise if watersports fetish is 1][urine][otherwise if diaper quest is 1]water[otherwise][semen][end if]!";
-	otherwise say "red glow, which allows you to sense that its magical powers to make magic spells not cost magic power but summon stuff inside your belly are inactive.".
+	if the trophy-mode of T is 1, say "green glow, and you can feel that casting magic spells depletes your magic power much more slowly, but also every time you cast a spell, your [if egg laying fetish is 1]womb[otherwise]belly[end if] will be filled with [if egg laying fetish is 1]eggs[otherwise if watersports fetish is 1][urine][otherwise if diaper quest is 1]water[otherwise][semen][end if]!";
+	otherwise say "red glow, which allows you to sense that its magical powers to make magic spells cost less magic power but summon stuff inside your belly are inactive.".
 A magic consequences rule (this is the trophy magic consequence rule):
 	if the trophy-mode of magic-trophy is 1:
 		if egg laying fetish is 1 and (the pregnancy of the player <= 0 or the pregnancy of the player is 3):
@@ -203,7 +220,7 @@ A magic consequences rule (this is the trophy magic consequence rule):
 Carry out TrophySwitching magic-trophy:
 	say "You rub the trophy[if the player is wrist bound behind] with your nose[end if]. ";
 	if the trophy-mode of magic-trophy is 0:
-		say "The trophy's glow changes from red to green. You can tell that from now on, [bold type]casting magic spells doesn't deplete your magic power, but also every time you cast a spell, your belly will be filled with [if egg laying fetish is 1]eggs[otherwise if watersports fetish is 1][urine][otherwise if diaper quest is 1]water[otherwise][semen][end if].[roman type][line break]";
+		say "The trophy's glow changes from red to green. You can tell that from now on, [bold type]casting magic spells depletes less of your magic power, but also every time you cast a spell, your belly will be filled with [if egg laying fetish is 1]eggs[otherwise if watersports fetish is 1][urine][otherwise if diaper quest is 1]water[otherwise][semen][end if].[roman type][line break]";
 		now the trophy-mode of magic-trophy is 1;
 	otherwise:
 		say "The trophy's glow changes from green to red. You can tell that [bold type]you once again will need to spend magic power to cast spells, but the trophy will not summon things into your belly each time you do.[roman type][line break]";

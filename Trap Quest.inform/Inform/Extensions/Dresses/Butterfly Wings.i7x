@@ -28,7 +28,9 @@ This is the carefree fairy rule:
 		rule fails.
 The carefree fairy rule is listed in the knickers wearability rules.
 
-Definition: butterfly wings is class-transformation-protected if the class of the player is faerie.
+Definition: butterfly wings is class-transformation-protected:
+	if the class of the player is faerie, decide yes;
+	decide no.
 
 Definition: butterfly wings is flower themed: decide yes.
 Definition: butterfly wings is butterfly themed: decide yes.

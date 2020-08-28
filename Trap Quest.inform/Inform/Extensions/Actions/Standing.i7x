@@ -26,30 +26,15 @@ This is the stuck stuff prevents standing rule:
 		rule fails.
 The stuck stuff prevents standing rule is listed in the ability to stand rules.
 
-[!<DecideWhichNumberIsTheStandingStrengthOfThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the standing strength of the player:
 	[This is what the player uses to try and stand up. It is the strength of the player times 13, scaled down by body soreness 10% each time.]
 	decide on ((the strength of the player * 13) * (10 - the body soreness of the player)) / 10. [If you change this you need to change the debuginfo output in the main function below]
 
-[!<DecideWhichNumberIsTheStandingCapabilityOfThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the standing capability of the player: [If you change this you need to change the debuginfo output in the main function below]
 	if water-fountain is penetrating asshole, decide on 100; [always success]
 	if the player is tired, decide on the standing strength of the player - the fatigue of the player;
 	otherwise decide on the standing strength of the player.
 
-[!<DecideWhichNumberIsTheStandingChallengeOfThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the standing challenge of the player: [If you change this you need to change the debuginfo output in the main function below]
 	[This is what makes it more difficult for the player to stand up.]
 	let W be the weight of the player;
@@ -59,26 +44,11 @@ To decide which number is the standing challenge of the player: [If you change t
 	if the player is wrist bound behind, increase W by 7;
 	decide on W.
 
-[!<SayStandSubduedFlavOfClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To say StandSubduedFlav of (C - a clothing):
 	say "You can't move freely whilst your [ShortDesc of C] is in the hands of a malicious enemy!".
 
-[!<standing:Action>*
-
-REQUIRES COMMENTING
-
-*!]
 Standing is an action applying to nothing.
 
-[!<CheckStanding>+
-
-REQUIRES COMMENTING
-
-+!]
 Check standing:
 	if resting is 1, do nothing instead;
 	if the player is in Start, say "How did you even get this message to show up? Well played. Email aika for a prize. (NB: the prize is penis)" instead;
@@ -165,11 +135,6 @@ Check standing:
 	otherwise:
 		say "Your [HeavyThings] are just too huge. There is just no way you are ever going to manage to stand up in your current state. You feel hopeless. [bold type]The only way you are going to be able to stand again is if you lose some weight. [roman type]If you can't, you might as well [bold type]faint[roman type]." instead.
 
-[!<CarryOutStanding>+
-
-REQUIRES COMMENTING
-
-+!]
 Carry out standing:
 	allocate dual arm use;
 	allocate 5 seconds;
@@ -177,11 +142,6 @@ Carry out standing:
 	now fatimod is 1;
 	now stance of the player is 0.
 
-[!<ReportStanding>+
-
-REQUIRES COMMENTING
-
-+!]
 Report standing:
 	say "You get off your knees successfully. [bold type]You are now standing.[roman type]".
 Understand "arise", "get up", "unkneel", "lift me", "st" as standing.

@@ -1,8 +1,10 @@
 Magical Dress by Dresses begins here.
 
-A magical dress is a kind of overdress. A magical dress is usually unique. A magical dress is usually silk. A magical dress is usually only arm covering. A magical dress is not-top-displacable. The soak-limit of a magical dress is usually 35. The text-shortcut of magical dress is "mgd". [A magical dress is usually strength-influencing.]
+A magical dress is a kind of overdress. A magical dress is usually unique. A magical dress is usually silk. A magical dress is usually only arm covering. A magical dress is not-top-displacable. The text-shortcut of magical dress is "mgd". [A magical dress is usually strength-influencing.]
 
-Definition: a magical dress is class-transformation-protected if the class of the player is magical girl.
+Definition: a magical dress is class-transformation-protected:
+	if the class of the player is magical girl, decide yes;
+	decide no.
 
 To decide which number is the strength-influence of (O - a magical dress):
 	let M be the magic power of the player;
@@ -104,5 +106,37 @@ To compute periodic effect of (O - magical-maid-outfit):
 			otherwise:
 				now the saved-item of O is in pink wardrobe;
 			now the saved-item of O is nothing.
+
+anime superheroine top is a magical dress. anime superheroine top is pvc. anime superheroine top is neck covering. anime superheroine top is belly exposing. anime superheroine top is unskirted. anime superheroine top is top-exclusive. anime superheroine top is low cut. anime superheroine top is not-top-displacable. anime superheroine top is erect-nipple-exposing. The text-shortcut of anime superheroine top is "aso".
+
+The printed name of anime superheroine top is "[clothing-title-before]anime superheroine top[clothing-title-after]".
+
+Figure of anime heroine top is the file "Items/Clothes/Upper/Special/Hero/animeheroine1.png".
+
+To decide which number is the initial cringe of (C - anime superheroine top):
+	decide on 3.
+
+To decide which figure-name is clothing-image of (C - anime superheroine top):
+	decide on figure of anime heroine top.
+
+To say ClothingDesc of (C - anime superheroine top):
+	say "This red PVC top has a large heart cut out at the chest, in order to expose a lot of cleavage. It is styled in an anime fashion. [if saved-flat-intelligence > 9]You realise that the cleavage window is probably the secret to its magic power. [end if][if saved-flat-intelligence > 15]The larger your breasts, the more strength this will give you.[end if]".
+
+To decide which number is the strength-influence of (C - anime superheroine top):
+	let S be -1;
+	increase S by the magic-modifier of C;
+	increase S by the largeness of breasts / 3;
+	decide on S.
+
+To say ShortDesc of (C - anime superheroine top):
+	say "cosplay top".
+To say MediumDesc of (C - anime superheroine top):
+	say "PVC anime style cosplay outfit".
+
+Definition: anime superheroine top is heart themed: decide yes.
+Definition: anime superheroine top is pink themed: decide yes.
+Definition: anime superheroine top is boob themed: decide yes.
+Definition: anime superheroine top is disintegration-protected: decide yes.
+Definition: anime superheroine top is displacable: decide no.
 
 Magical Dress ends here.

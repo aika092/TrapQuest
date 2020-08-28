@@ -9,7 +9,13 @@ We reduce the player's humiliation by the number of seconds, and then we check i
 An all later time based rule (this is the reflection rule):
 	let N be 239; [The number of seconds between each reflection]
 	if the remainder after dividing time-earnings by N < time-seconds and the player is not a nympho:
+		if lagdebug is true:
+			say "Humiliating reflection.";
+			wait 200 ms before continuing;
 		say HumiliationFlav;
+		if lagdebug is true:
+			say "Finished humiliating reflection.";
+			wait 200 ms before continuing;
 	otherwise if the number of interested monsters in the location of the player is 0 and the player is not immobile:
 		say StatsChangedFlav;
 	if the strut of the player is 1 and the player is upright and the player is not immobile and there is a worn heels and the player-class is not succubus:
@@ -120,7 +126,7 @@ To reflect on (A - outrageous-heels):
 	if the player-class is not succubus:
 		say "You [one of]wobble unsteadily on your[or]can't believe you're strutting around in[or]are constantly aware of the clickety clack sound coming from you strutting around in these[in random order] ridiculous heels. How embarrassing is this!";
 	otherwise:
-		say "A voice inside you quietly tells you how demeaning it is that you aren[']t wearing proper heels!".
+		say "A voice inside you quietly tells you how demeaning it is that you aren't wearing proper heels!".
 
 outrageous-bra is a humiliating situation.
 Definition: outrageous-bra (called A) is applicable:

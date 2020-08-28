@@ -1,6 +1,10 @@
 Diaper Framework by Knickers begins here.
 
-diaper is a kind of knickers. The armour of diaper is 11. The soak-limit of diaper is usually 20. a diaper is usually manly. a knickers has a number called mess. a knickers has a number called foreign-mess. The text-shortcut of diaper is "dp".
+diaper is a kind of knickers. The armour of diaper is 11. a diaper is usually manly. a knickers has a number called mess. a knickers has a number called foreign-mess. The text-shortcut of diaper is "dp".
+
+To decide which number is the default-soak-limit of (C - a diaper):
+	decide on (the DQBulk of C + 2) * 4.
+Definition: a diaper is external fluid immune: decide yes.
 
 The printed name of a diaper is "[clothing-title-before][selfexamineuniquetitle of item described][clothing-title-after]".
 
@@ -208,7 +212,7 @@ To say ExamineDesc of (C - a diaper):
 		say "A large tear at the crotch means that your orifices are left unguarded, and urinating will inevitably still cause you to make a mess.".
 
 To decide which number is the original price of (C - a diaper):
-	decide on 3.
+	decide on 1.
 
 To decide which number is the heaviness of (D - a diaper):
 	decide on the weight of D + 1.
@@ -285,7 +289,9 @@ To compute unique periodic effect of (D - a diaper):
 
 Definition: a diaper is basic loot: decide no. [a diaper never spawns from selecting a random basic loot knickers. #MG Seems redundant with the default]
 
-Definition: a diaper is fetish appropriate if diaper lover >= 1.
+Definition: a diaper is fetish appropriate:
+	if diaper lover >= 1, decide yes;
+	decide no.
 
 To decide which number is the weight of (D - a knickers):
 	let X be the DQBulk of D;
@@ -348,7 +354,9 @@ Check taking off a worn messed knickers:
 	if the noun is perceived unmessed, compute state check of the noun;
 	say "[variable custom style]There's no way I'm touching that until I've found [if the bimbo of the player < 13]a way to change and clean myself[otherwise]someone to change me[end if].[roman type][line break]" instead.
 
-Definition: a knickers is removable if it is not messed.
+Definition: a knickers is removable:
+	if it is not messed, decide yes;
+	decide no.
 
 To say MonsterOfferRejectFlav of (M - an intelligent monster) to (T - a diaper):
 	say "[speech style of M]'Do I look like I have problems controlling my bladder?!'[roman type][line break]".
@@ -382,11 +390,7 @@ To decide which object is the potential-upgrade-target of (C - a diaper):
 	decide on Z.
 
 Check taking off worn diaper:
-	if there is a worn I love my wet nappies T-shirt and the urine-soak of the noun is not 0 and the total-soak of the noun < (the soak-limit of the noun / 2) and the noun is total protection, say "Your [printed name of random worn I love my wet nappies T-shirt] is somehow magically preventing you from removing the [noun]!" instead;
-	if the noun is glued:
-		try tearing off the noun;
-		if the noun is glued:
-			do nothing instead.
+	if there is a worn I love my wet nappies T-shirt and the urine-soak of the noun is not 0 and the total-soak of the noun < (the soak-limit of the noun / 2) and the noun is total protection, say "Your [printed name of random worn I love my wet nappies T-shirt] is somehow magically preventing you from removing the [noun]!" instead.
 
 Part - Diaper Functions
 
@@ -414,6 +418,10 @@ Part - Stack of Diapers
 diaper-stack is a diaper. diaper-stack is unique. The text-shortcut of diaper-stack is "dstk". Understand "diaper", "double", "triple", "quadruple" as diaper-stack.
 The printed name of diaper-stack is usually "[clothing-title-before][selfexamineuniquetitle of item described][clothing-title-after]".
 
+diaper-stack has a number called raw-soak-limit.
+To decide which number is the default-soak-limit of (C - diaper-stack):
+	decide on the raw-soak-limit of C.
+
 The list of stacked diapers is a list of clothing that varies.
 
 Definition: diaper-stack is transformation-protected: decide yes.
@@ -433,7 +441,9 @@ To diaperStackStart with (C - a clothing):
 		otherwise:
 			say "BUG - attempted to start a diaper stack with [C] but there was none already worn!";
 
-Definition: a knickers is DQBulkier rather than DQLessBulky if the DQBulk of it >= the DQBulk of the player.
+Definition: a knickers is DQBulkier rather than DQLessBulky:
+	if the DQBulk of it >= the DQBulk of the player, decide yes;
+	decide no.
 
 Check wearing diaper when there is a worn diaper:
 	if the noun is worn, say "You're already wearing that!" instead;
@@ -674,7 +684,7 @@ To update diaper stack:
 		now the mess of diaper-stack is 0;
 		now the foreign-mess of diaper-stack is 0;
 		now the perceived-mess of diaper-stack is 0;
-		now the soak-limit of diaper-stack is 0;
+		now the raw-soak-limit of diaper-stack is 0;
 		now the urine-soak of diaper-stack is 0;
 		now the perceived-urine-soak of diaper-stack is 0;
 		now the milk-soak of diaper-stack is 0;
@@ -695,7 +705,7 @@ To update diaper stack:
 			increase the perceived-semen-soak of diaper-stack by the perceived-semen-soak of C;
 			increase the water-soak of diaper-stack by the water-soak of C;
 			increase the perceived-water-soak of diaper-stack by the perceived-water-soak of C;
-			increase the soak-limit of diaper-stack by the soak-limit of C;
+			increase the raw-soak-limit of diaper-stack by the soak-limit of C;
 		let C be entry N in the list of stacked diapers;
 		[stats the diaper stack takes from the outside diaper which aren't already in transformation inheritance go here]
 		now the armour of diaper-stack is the armour of C;

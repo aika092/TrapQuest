@@ -2,7 +2,7 @@ Heavy Club by Equippables begins here.
 
 [Heavy club is the equippable item for the barbarian class]
 
-heavy-club is an equippable. heavy-club is slap ready. heavy-club is biological. heavy-club is unique. Understand "heavy club", "heavy", "club", "giant", "wooden" as heavy-club. The text-shortcut of heavy-club is "hek". heavy-club has a number called charge-status. The charge-status of heavy-club is 0.
+heavy-club is an equippable. heavy-club is slap ready. heavy-club is biological. Understand "heavy club", "heavy", "club", "giant", "wooden" as heavy-club. The text-shortcut of heavy-club is "hek". heavy-club has a number called charge-status. The charge-status of heavy-club is 0.
 
 Figure of heavy-club is the file "Items/Accessories/Equippables/heavyclub1.png".
 To decide which figure-name is the clothing-image of (W - heavy-club):
@@ -60,5 +60,49 @@ To compute periodic effect of (G - heavy-club):
 		if the charge-status of G < 1, say "[bold type]Your [printed name of G] begins to glow strongly[roman type]";
 		if the charge-status of G < 1, say "[bold type]Your [printed name of G] begins to glow even brighter[roman type]";
 		now the charge-status of G is 2.
+
+
+kraken bell is an equippable. kraken bell is slap ready. kraken bell is metal. kraken bell is unique. The printed name of kraken bell is "[TQlink of item described]kraken bell[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of kraken bell is "kbe".
+
+Figure of kraken bell is the file "Items/Accessories/Equippables/bell1.jpg".
+
+To decide which figure-name is the examine-image of (B - kraken bell):
+	decide on figure of kraken bell.
+
+To say ExamineDesc of (C - kraken bell):
+	say "An old metal bell, green with rust as if it has lived at the bottom of a lake for millenia. In place of a conventional ringer, there is a metal tentacle. Some dark magic seems to emanate from it. Its power currently feels [if the damage improvement of C < 0]very weak[otherwise if the damage improvement of C is 0]weak[otherwise if the damage improvement of C < 3]slightly strong[otherwise if the damage improvement of C is 3]very strong[otherwise]exceptionally strong[end if][if C is worn]. You feel more safe from tentacles[end if].".
+
+To compute attack of (W - kraken bell) at (M - a monster):
+	say "The club makes a powerful thud as it hits [NameDesc of M], followed by a heavy metal clang[one of] that continues to echo for longer than seems natural[or][stopping].".
+
+Report taking kraken bell:
+	commence doom.
+
+To say ShortDesc of (C - kraken bell):
+	say "bell".
+
+Definition: kraken bell is immune to change: decide yes.
+Definition: kraken bell is bell themed: decide yes.
+
+To decide which number is the bartering value of (T - kraken bell) for (M - deep one):
+	decide on 2.
+To say MonsterOfferAcceptFlav of (M - deep one) to (T - kraken bell):
+	say "[BigNameDesc of M] seems to like the sound it makes, and turns [his of M] attention fully onto [his of M] new toy.".
+To decide which number is the bartering value of (T - kraken bell) for (M - an acolyte):
+	decide on 5.
+To say MonsterOfferAcceptFlav of (M - an acolyte) to (T - kraken bell):
+	say "[speech style of M]'We shall use it to rouse the Great Ones from their slumber!'[roman type][line break]".
+To say MonsterOfferRejectFlav of (M - herald) to (T - kraken bell):
+	say "[speech style of M]'Thank you for the offer, but this is no longer necessary.'[roman type][line break]".
+
+To compute attack effect of (W - kraken bell):
+	if attack-type is 1:
+		if doom counter > 0:
+			increase doom counter by 25;
+		otherwise:
+			commence doom.
+
+To decide which number is the damage improvement of (W - kraken bell):
+	decide on the magic-modifier of W + ((doomed - 1) / 2).
 
 Heavy Club ends here.

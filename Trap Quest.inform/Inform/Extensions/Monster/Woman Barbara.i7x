@@ -504,7 +504,7 @@ Check searching woman-player when the woman-status of woman-player is 93 and the
 		otherwise:
 			say "You've done it! You've freed both of [NameDesc of woman-player][']s ankles! When the pink dildo next exits [his of woman-player] asshole, [he of woman-player] rolls to the side and out of the thrusting path.[line break][speech style of woman-player]'I'm free! I'm free! Thank you so much [NameBimbo], I owe you my sanity! I wish I had something to give you, but...'[roman type][line break][NameDesc of woman-player] shrugs as best as [he of woman-player] can what with [his of woman-player] hands still glued to [his of woman-player] buttcheeks, to emphasise the point that [he of woman-player] doesn't have anything of value right now.[line break][speech style of woman-player]'I've got to go sort out this glue, I think. Wish me luck.'[roman type][line break][NameDesc of woman-player] waddles from the room, looking very ridiculous with [his of woman-player] hands stuck to [his of woman-player] backside, still keeping [his of woman-player] asshole slightly open and in open view.";
 			FavourUp woman-player by 3;
-			say "Thanks to solving the situation, you now feel much smarter!";
+			say "Thanks to solving the situation, you now feel much [smarter]!";
 			IntUp 3;
 			if the woman-bimbo of woman-player is 2:
 				say "[bold type]You spot [NameDesc of woman-player][']s pistol left in the corner of the room!";
@@ -567,7 +567,7 @@ To check woman toilet:
 		if the human-toilet-scene of woman-player is 0 and the woman-bimbo of woman-player >= (a random number between 2 and 5) and the woman-status of woman-player < 10 and woman-player is redeploy appropriate:
 			say "A groaning, gurgling noise from below you makes you notice that the [man of woman-player] below you looks different from usual.";
 			cutshow figure of barbara cutscene 4 for toilet;
-			say "Looking [if the player is female]between your legs [end if]into the toilet bowl you realise you recognise the ring-gagged face at the bottom - it's [NameDesc of woman-player]! [big he of woman-player] looks up at you with imploring puppy-dog eyes.[line break][speech style of woman-player]'Wease eh ee ow! Weeeease! Ha hay-hron hah heh hee!'[roman type][line break]You think you understand what [he of woman-player][']s saying? There's a key that can be used to release [him of woman-player], but it's currently in the possession of a hotel patron. Perhaps if you spend enough time in the hotel, you'll be able to encounter [him of a random patron] and agree to pay some kind of... [']ransom[']. Until then there's nothing you can do about the fact that [NameDesc of woman-player] is the new hotel toilet. It's up to you how many more times you use [his of woman-player] mouth as your waste disposal unit. You doubt it'll be very good for [his of woman-player] sanity, but it might help you feel more dominant.";
+			say "Looking [if the player is not possessing a penis]between your legs [end if]into the toilet bowl you realise you recognise the ring-gagged face at the bottom - it's [NameDesc of woman-player]! [big he of woman-player] looks up at you with imploring puppy-dog eyes.[line break][speech style of woman-player]'Wease eh ee ow! Weeeease! Ha hay-hron hah heh hee!'[roman type][line break]You think you understand what [he of woman-player][']s saying? There's a key that can be used to release [him of woman-player], but it's currently in the possession of a hotel patron. Perhaps if you spend enough time in the hotel, you'll be able to encounter [him of a random patron] and agree to pay some kind of... [']ransom[']. Until then there's nothing you can do about the fact that [NameDesc of woman-player] is the new hotel toilet. It's up to you how many more times you use [his of woman-player] mouth as your waste disposal unit. You doubt it'll be very good for [his of woman-player] sanity, but it might help you feel more dominant.";
 			now the human-toilet-scene of woman-player is 2;
 			now woman-player is permanently banished;
 			womanSluttify;
@@ -816,7 +816,7 @@ To say WomanStoolFuckClimaxFlav of (M - a monster):
 
 To compute PlayerWomanStoolFuck:
 	if the latex-transformation of the player >= 6:
-		say "You wouldn't feel anything from it, so you don[']t see the point.";
+		say "You wouldn't feel anything from it, so you don't see the point.";
 		stop the action;
 	let PF be vagina;
 	let S be a random worn strapon-panties;
@@ -1012,10 +1012,10 @@ To compute (M - woman-player) protecting against (X - a monster):
 		do nothing;[Barbara was spawned to get fucked, not fight.]
 	otherwise if the player is monster fucked:
 		if the woman-bimbo of M > 4:
-			say "[BigNameDesc of M] giggles. [line break][speech style of M]'Have fun, I won't get in your way!'[roman type][line break]";
+			say "[BigNameDesc of M] giggles.[line break][speech style of M]'Have fun, I won't get in your way!'[roman type][line break]";
 			deinterest M;
 		otherwise:
-			say "[BigNameDesc of M] sobs. [line break][speech style of M]'I'm so sorry, I couldn't stop [him of X]!'[roman type][line break][big he of M] runs off.";
+			say "[BigNameDesc of M] sobs.[line break][speech style of M]'I'm so sorry, I couldn't stop [him of X]!'[roman type][line break][big he of M] runs off.";
 			deinterest M;
 			womanSluttify;
 			Vanish M;
@@ -1133,7 +1133,7 @@ To compute basic greeting to (M - woman-player):
 	otherwise if the woman-status of M is 80:
 		say "[speech style of M]'MMMMPH!'[roman type][line break]";
 	otherwise if M is angered:
-		say "[speech style of M]'Why yes I would like to [if the woman-bimbo of the player < 5]fight[otherwise]fuck[end if].'[roman type][line break]";
+		say "[speech style of M]'Why yes I would like to [if the woman-bimbo of the M < 5]fight[otherwise]fuck[end if].'[roman type][line break]";
 	otherwise if the woman-status of M is 0:
 		if M is interested:
 			say "[speech style of M]'I hate being alone in these woods...'[roman type][line break]";
@@ -1141,7 +1141,7 @@ To compute basic greeting to (M - woman-player):
 			if the woman-bimbo of M < 3:
 				say "[speech style of M]'Hi again. Glad to see you're still coping[if the woman-old-bimbo of M is not the woman-bimbo of M]. My name is [current-name of M] now, by the way.'[otherwise].'[end if][roman type][line break]";
 			otherwise if the woman-bimbo of M < 5:
-				say "[big he of M] grins at you. [line break][speech style of M]'[if the woman-old-bimbo of M is not the woman-bimbo of M]That's not my name, it's [current-name of M]!'[otherwise]Heya sweetums.'[end if][roman type][line break]";
+				say "[big he of M] grins at you.[line break][speech style of M]'[if the woman-old-bimbo of M is not the woman-bimbo of M]That's not my name, it's [current-name of M]!'[otherwise]Heya sweetums.'[end if][roman type][line break]";
 			otherwise:
 				say "[speech style of M]'*giggle*. [if the woman-old-bimbo of M is not the woman-bimbo of M]That's not my name, my new super sexy name is [current-name of M]!'[otherwise]Look who it is! Did you always look so fucking hot? I'm jealous!'[end if][roman type][line break]";
 	otherwise if the woman-status of M is 1:
@@ -1151,7 +1151,7 @@ To compute basic greeting to (M - woman-player):
 			if the woman-bimbo of M < 3:
 				say "[speech style of M]'Hi again. Glad to see you're still coping[if the woman-old-bimbo of M is not the woman-bimbo of M]. My name is [current-name of M] now, by the way[end if].'[roman type][line break]";
 			otherwise if the woman-bimbo of M < 5:
-				say "[big he of M] grins at you. [line break][speech style of M]'[if the woman-old-bimbo of M is not the woman-bimbo of M]That's not my name, it's [current-name of M]!'[otherwise]Heya sweetums.'[end if][roman type][line break]";
+				say "[big he of M] grins at you.[line break][speech style of M]'[if the woman-old-bimbo of M is not the woman-bimbo of M]That's not my name, it's [current-name of M]!'[otherwise]Heya sweetums.'[end if][roman type][line break]";
 			otherwise:
 				say "[speech style of M]'*giggle*. [if the woman-old-bimbo of M is not the woman-bimbo of M]That's not my name, my new super sexy name is [current-name of M]!'[otherwise]Look who it is! Did you always look so fucking hot? I'm jealous!'[end if][roman type][line break]";
 	otherwise if the woman-status of M is 2 or the woman-status of M is 7:
@@ -1168,7 +1168,7 @@ To compute basic greeting to (M - woman-player):
 			if the woman-bimbo of M < 3:
 				say "[speech style of M]'Hi again. Glad to see you're still coping[if the woman-old-bimbo of M is not the woman-bimbo of M]. My name is [current-name of M] now, by the way[end if].'[roman type][line break]";
 			otherwise if the woman-bimbo of M < 5:
-				say "[big he of M] grins at you. [line break][speech style of M]'[if the woman-old-bimbo of M is not the woman-bimbo of M]That's not my name, it's [current-name of M]!'[otherwise]Heya sweetums.'[end if][roman type][line break]";
+				say "[big he of M] grins at you.[line break][speech style of M]'[if the woman-old-bimbo of M is not the woman-bimbo of M]That's not my name, it's [current-name of M]!'[otherwise]Heya sweetums.'[end if][roman type][line break]";
 			otherwise:
 				say "[speech style of M]'*giggle*. [if the woman-old-bimbo of M is not the woman-bimbo of M]That's not my name, my new super sexy name is [current-name of M]!'[otherwise]Look who it is! Did you always look so fucking hot? I'm jealous!'[end if][roman type][line break]";
 	otherwise if the woman-status of M is 3:
@@ -1183,7 +1183,7 @@ To compute basic greeting to (M - woman-player):
 			if the woman-bimbo of M < 3:
 				say "[speech style of M]'Hi again. Glad to see you're still coping[if the woman-old-bimbo of M is not the woman-bimbo of M]. My name is [current-name of M] now, by the way.'[otherwise].'[end if][roman type][line break]";
 			otherwise if the woman-bimbo of M < 5:
-				say "[big he of M] grins at you. [line break][speech style of M]'[if the woman-old-bimbo of M is not the woman-bimbo of M]That's not my name, it's [current-name of M]!'[otherwise]Heya sweetums.'[end if][roman type][line break]";
+				say "[big he of M] grins at you.[line break][speech style of M]'[if the woman-old-bimbo of M is not the woman-bimbo of M]That's not my name, it's [current-name of M]!'[otherwise]Heya sweetums.'[end if][roman type][line break]";
 			otherwise:
 				say "[speech style of M]'*giggle*. [if the woman-old-bimbo of M is not the woman-bimbo of M]That's not my name, my new super sexy name is [current-name of M]!'[otherwise]Look who it is! Did you always look so fucking hot? I'm jealous!'[end if][roman type][line break]";
 	otherwise if the woman-status of M is 4:
@@ -1193,7 +1193,7 @@ To compute basic greeting to (M - woman-player):
 			if the woman-bimbo of M < 3:
 				say "[speech style of M]'Hi again. Glad to see you've made it this far[if the woman-old-bimbo of M is not the woman-bimbo of M]. My name is [current-name of M] now, by the way[end if].'[roman type][line break]";
 			otherwise if the woman-bimbo of M < 5:
-				say "[big he of M] beams at you. [line break][speech style of M]'[if the woman-old-bimbo of M is not the woman-bimbo of M]That's not my name, it's [current-name of M]!'[otherwise]Hey there, honey.'[end if][roman type][line break]";
+				say "[big he of M] beams at you.[line break][speech style of M]'[if the woman-old-bimbo of M is not the woman-bimbo of M]That's not my name, it's [current-name of M]!'[otherwise]Hey there, honey.'[end if][roman type][line break]";
 			otherwise:
 				say "[speech style of M]'*giggle*. [if the woman-old-bimbo of M is not the woman-bimbo of M]I'm not called that any more, my name is obviously [current-name of M]!'[otherwise]Look who it is! Aren't you just LOVING this fetish hotel?'[end if][roman type][line break]";
 	otherwise if the woman-status of M is 5:

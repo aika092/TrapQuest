@@ -1,8 +1,10 @@
 All Skirts by Skirts begins here.
 
-A skirt is a kind of clothing. A skirt is usually knee-length. Understand "skirt" as skirt. The soak-limit of a skirt is usually 16.
+A skirt is a kind of clothing. A skirt is usually knee-length. Understand "skirt" as skirt.
 
-Definition: a skirt is same-type if theme-share-target is skirt.
+Definition: a skirt is same-type:
+	if theme-share-target is skirt, decide yes;
+	decide no.
 
 A miniskirt is a kind of skirt. A miniskirt is usually short.
 Definition: a miniskirt is potentially erection concealing: decide yes. [non-tight skirts conceal erections]
@@ -39,7 +41,9 @@ To set up influence of (C - a skirt):
 Report examining skirts:
 	if newbie tips is 1, say "[one of][newbie style]Skirts [if the noun is super-short or the noun is unskirted](but not this one!) [end if]can sometimes help with your modesty.[roman type][line break][or][stopping]".
 
-Definition: a skirt is displacable if it is short or longer.
+Definition: a skirt is displacable:
+	if it is short or longer, decide yes;
+	decide no.
 
 This is the remove inappropriate skirts rule:
 	repeat with B running through microskirts:
@@ -83,11 +87,20 @@ To decide which number is the skirtLength of (C - a clothing):
 	if C is short, decide on 1;
 	[if C is knee-length, decide on 7;]
 	decide on 8.
+To decide which number is the default-soak-limit of (C - a skirt):
+	if C is super-short:
+		decide on 4;
+	otherwise if C is short:
+		decide on 6;
+	otherwise if C is knee-length:
+		decide on 10;
+	otherwise:
+		decide on 15.
 
 Chapter - Wearability
 
-Check wearing gown of purity:
-	if the vaginalvirgin of the player is 0, say "The latches of the belt refuse to close! It's almost as if the 'gown' is refusing to let you wear it..." instead;
+Check wearing gown-of-purity:
+	if the vaginalvirgin of the player is 0, say "The latches of the belt refuse to close! It's almost as if the 'gown' is refusing to let you wear it..." instead.
 
 skirt wearability rules is a rulebook. The wearability rules of skirt is usually skirt wearability rules.
 
@@ -231,37 +244,42 @@ To set up influence of (C - full zip skirt):
 To decide which number is the adult-influence of (C - full zip skirt):
 	decide on 1.
 
-A gown of purity is a kind of skirt. Figure of Gown of Purity is the file "Items/Clothes/Lower/Skirts/gown1.png". A gown of purity is usually see-through. A gown of purity is usually purity. There is 1 unique silk cursed gown of purity. The printed name of gown of purity is usually "[clothing-title-before]gown of purity[clothing-title-after]". The text-shortcut of gown of purity is "gop".
+gown-of-purity is a skirt. Figure of Gown of Purity is the file "Items/Clothes/Lower/Skirts/gown1.png". gown-of-purity is purity. gown-of-purity is silk. gown-of-purity is unique. The printed name of gown-of-purity is "[clothing-title-before]gown of purity[clothing-title-after]". The text-shortcut of gown of purity is "gop". Understand "gown", "gown of", "purity" as gown-of-purity.
 
-To decide which figure-name is clothing-image of (C - a gown of purity):
+To decide which figure-name is clothing-image of (C - gown-of-purity):
 	decide on figure of gown of purity.
 
-To say ClothingDesc of (C - a gown of purity):
-	say "Calling this item of clothing a gown is a bit of a misnomer, since it does not cover one's torso. Instead the fabric of the gown hangs down at the sides, from an ornate belt, providing modesty for your legs from anyone looking at you from the side, but not the front or back. The fabric is a brilliant white which shines with an almost impossible brightness, as if it had its own light source. In this way it seems to represent an unlikely harmony of purity and exhibitionism.".
+To say ClothingDesc of (C - gown-of-purity):
+	say "Calling this item of clothing a gown is a bit of a misnomer, since it does not cover one's torso. Instead the fabric of the gown hangs down from an ornate belt, providing modesty for your legs from anyone looking at you from the side or back, but not the front. The fabric is a brilliant white which shines with an almost impossible brightness, as if it had its own light source. In this way it seems to represent an unlikely harmony of purity and exhibitionism[if sword-of-purity is worn]. [bold type]You can feel its power resonating with your [sword-of-purity], significantly increasing its power[roman type][end if].".
 
-To compute SelfExamineDesc of (Y - a gown of purity):
+To compute SelfExamineDesc of (Y - gown-of-purity):
 	say "Pure white fabric flows down the sides of your legs from a belt, concealing nothing useful at all. ".
 
-To say ShortDesc of (Y - a gown of purity):
+To say ShortDesc of (Y - gown-of-purity):
+	say "belt".
+To say MediumDesc of (Y - gown-of-purity):
 	say "bright white flowing belt".
 
-To compute virginity-loss of (H - gown of purity):
+To compute virginity-loss of (H - gown-of-purity):
 	say "As the [H] falls from your [ShortDesc of hips], you feel [if the virgin bonus of the player < 0]some more of [end if]your determination ripped from you.";
 	decrease the virgin bonus of the player by 1;
 	now H is in the location of the player.
 
-To decide which number is the humiliation-influence of (O - a gown of purity):
+To decide which number is the humiliation-influence of (O - gown-of-purity):
 	let B be 1;
 	increase B by the magic-modifier of O;
 	decide on B.
 
-Definition: a gown of purity is transformation-protected: decide yes.
-Definition: a gown of purity is white themed: decide yes.
+Definition: gown-of-purity is transformation-protected: decide yes.
+Definition: gown-of-purity is white themed: decide yes.
+Definition: gown-of-purity is layer-concealing: decide no.
+Definition: gown-of-purity is potentially vagina covering: decide no.
+Definition: gown-of-purity is potentially at least partially vagina covering: decide no.
 
-To decide which number is the initial outrage of (C - a gown of purity):
-	decide on 4.
+To decide which number is the initial outrage of (C - gown-of-purity):
+	decide on 2.
 
-Definition: a gown of purity is slitted: decide yes.
+Definition: gown-of-purity is slitted: decide yes.
 
 black-rubber-hobble-skirt is a skirt. Printed name of black-rubber-hobble-skirt is "[clothing-title-before]tight black latex skirt[clothing-title-after]". The text-shortcut of black-rubber-hobble-skirt is "tbls". black-rubber-hobble-skirt is latex. black-rubber-hobble-skirt is hobble-skirted. black-rubber-hobble-skirt is crotch-skirted. The armour of black-rubber-hobble-skirt is 10. Understand "tight" as black-rubber-hobble-skirt.
 
@@ -368,7 +386,7 @@ To say ShortDesc of (Y - a pink rubber miniskirt):
 Definition: a pink rubber miniskirt is pink themed: decide yes.
 Definition: a pink rubber miniskirt is black themed: decide no.
 
-A microskirt is a kind of skirt. A microskirt is usually super-short. The soak-limit of microskirt is usually 10. A microskirt is usually transformation-rare.
+A microskirt is a kind of skirt. A microskirt is usually super-short. A microskirt is usually transformation-rare.
 
 Understand "micro" or "skirt" as the microskirt.
 
@@ -377,7 +395,9 @@ Definition: a red microskirt is red themed: decide yes.
 A white microskirt is a kind of microskirt. There is 1 latex white microskirt. Printed name of white microskirt is "[clothing-title-before]white latex microskirt[clothing-title-after]". Figure of white microskirt is the file "Items/Clothes/Lower/Skirts/Micro/microskirt5.png". The text-shortcut of white microskirt is "wms".
 Definition: a white microskirt is white themed: decide yes.
 A tartan microskirt is a kind of microskirt. There is 1 tartan microskirt. Printed name of tartan microskirt is "[clothing-title-before]tartan microskirt[clothing-title-after]". The text-shortcut of tartan microskirt is "tms". Figure of tartan microskirt is the file "Items/Clothes/Lower/Skirts/Micro/microskirt2.png".
-Definition: a tartan microskirt is transformation-protected if the class of the player is schoolgirl.
+Definition: a tartan microskirt is transformation-protected:
+	if the class of the player is schoolgirl, decide yes;
+	decide no.
 Definition: a tartan microskirt is tartan themed: decide yes.
 Definition: a tartan microskirt is brown themed: decide yes.
 A pink microskirt is a kind of microskirt. There is 1 pink microskirt. Printed name of pink microskirt is "[clothing-title-before]pink microskirt[clothing-title-after]". The text-shortcut of pink microskirt is "pms". Figure of pink microskirt is the file "Items/Clothes/Lower/Skirts/Micro/microskirt3.png".
@@ -462,13 +482,17 @@ To say ClothingDesc of (C - a tartan miniskirt):
 To decide which number is the initial outrage of (C - a miniskirt):
 	decide on 2.
 
-Definition: a tartan miniskirt is class-transformation-protected if the class of the player is schoolgirl.
+Definition: a tartan miniskirt is class-transformation-protected:
+	if the class of the player is schoolgirl, decide yes;
+	decide no.
 
 To decide which object is the unique-upgrade-target of (C - a tartan miniskirt):
 	decide on a random off-stage tartan microskirt.
 
 Definition: a tartan miniskirt is tartan themed: decide yes.
 Definition: a tartan miniskirt is orange themed: decide yes.
+Definition: a tartan miniskirt is layer-concealing: decide no.
+Definition: a tartan miniskirt is partially-layer-concealing: decide yes.
 
 A naughty skirt is a kind of skirt. A naughty skirt is usually leather. A naughty skirt is transformation-rare. A naughty skirt is usually butt-windowed.
 
@@ -548,7 +572,9 @@ To uniquely set up (C - a punishment skirt):
 To decide which object is the unique-upgrade-target of (C - a punishment skirt):
 	if the number of worn overdress is 0 and diaper quest is 0, decide on a random off-stage hobble-skirted fetish dress.
 
-Definition: a punishment skirt is end of transformation chain if the unique-upgrade-target of it is nothing.
+Definition: a punishment skirt is end of transformation chain:
+	if the unique-upgrade-target of it is nothing, decide yes;
+	decide no.
 
 Definition: a punishment skirt is displacable: decide no.
 Definition: a punishment skirt is black themed: decide yes.
@@ -577,17 +603,6 @@ Definition: a sequins belt is gem themed: decide yes.
 
 To set up influence of (C - a sequins belt):
 	set up stat-based influence of C.
-
-To decide which object is the unique-upgrade-target of (C - a sequins belt):
-	let S be a random off-stage sequins outfit;
-	if the number of worn overdress + the number of worn bottom-exclusive corsets + the number of worn bottom-exclusive bras + the number of worn bottom-exclusive knickers is 0, decide on S;
-	decide on a random off-stage sequins dress.
-
-To transform (D - a sequins belt) into (C - a sequins outfit):
-	say "[bold type]Your [D] [bold type]transforms into ";
-	silently transform D into C;
-	say "a [C] [bold type]in front of your eyes![roman type] ";
-	say "[TransformReaction of C]".
 
 skirt-tray-vibrator is a skirt. skirt-tray-vibrator is unique. skirt-tray-vibrator is sure. skirt-tray-vibrator is identified.
 
@@ -707,10 +722,20 @@ To say MediumDesc of (C - open-front-skirt):
 To say ClothingDesc of (C - open-front-skirt):
 	say "This denim skirt has a large chunk missing from the front. The only way to cover it up would be to push the front of your body into another person's...".
 
-Definition: open-front-skirt is layer-concealing if girlfriend-partner is snogged.
-Definition: open-front-skirt is skirt-covering-crotch if girlfriend-partner is snogged.
-Definition: open-front-skirt is potentially penis covering if girlfriend-partner is snogged.
-Definition: open-front-skirt is potentially at least partially penis concealing if girlfriend-partner is snogged.
-Definition: open-front-skirt is potentially erection concealing if girlfriend-partner is snogged.
+Definition: open-front-skirt is layer-concealing:
+	if girlfriend-partner is snogged, decide yes;
+	decide no.
+Definition: open-front-skirt is skirt-covering-crotch:
+	if girlfriend-partner is snogged, decide yes;
+	decide no.
+Definition: open-front-skirt is potentially penis covering:
+	if girlfriend-partner is snogged, decide yes;
+	decide no.
+Definition: open-front-skirt is potentially at least partially penis concealing:
+	if girlfriend-partner is snogged, decide yes;
+	decide no.
+Definition: open-front-skirt is potentially erection concealing:
+	if girlfriend-partner is snogged, decide yes;
+	decide no.
 
 All Skirts ends here.

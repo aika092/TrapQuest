@@ -87,9 +87,13 @@ output	current rank
 an object	a number
 with 60 blank rows.
 
-Definition: a thing is mentionable if it is marked for listing and it is unmentioned. Definition: a thing is unmentionable if it is not mentionable.
+Definition: a thing is mentionable if it is marked for listing and it is unmentioned. Definition: a thing is unmentionable:
+	if it is not mentionable, decide yes;
+	decide no.
 
-Definition: a thing is descriptively dull if the description-rank of it is lowest-rank.
+Definition: a thing is descriptively dull:
+	if the description-rank of it is lowest-rank, decide yes;
+	decide no.
 
 [This portion makes sure that items that are listed together in groups get properly flagged 'mentioned':]
 
@@ -196,7 +200,9 @@ Section: Sorting
 
 or to prefer items with initial appearance properties:
 
-	Definition: a thing is initially-described if it provides the property initial appearance.
+	Definition: a thing is initially-described:
+	if it provides the property initial appearance, decide yes;
+	decide no.
 
 	A ranking rule for an initially-described thing (called special-target):
 		increase description-rank of the special-target by 5.

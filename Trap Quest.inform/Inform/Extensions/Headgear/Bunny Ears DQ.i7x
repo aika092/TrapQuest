@@ -100,7 +100,7 @@ To compute class outfit of (H - a bunny hat):
 			repeat with O running through worn exclusive corsets:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
-			repeat with O running through worn skirted clothing:
+			repeat with O running through worn skirt clashing clothing:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
 			repeat with O running through worn trousers:
@@ -187,7 +187,7 @@ To compute class outfit of (H - bunny glasses):
 			repeat with O running through worn exclusive corsets:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
-			repeat with O running through worn skirted clothing:
+			repeat with O running through worn skirt clashing clothing:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
 		say "[bold type]You feel your bunny hat twitch as if the ears were real, and then a [ShortDesc of B] appears on you![roman type][line break]";

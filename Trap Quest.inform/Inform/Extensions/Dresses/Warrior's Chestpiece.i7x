@@ -2,7 +2,9 @@ Warrior's Chestpiece by Dresses begins here.
 
 A warrior chestpiece is a kind of overdress. A warrior chestpiece is usually metal. A warrior chestpiece is usually unique. A warrior chestpiece is usually totally-exclusive. A warrior chestpiece is usually unskirted. A warrior chestpiece is usually belly exposing. A warrior chestpiece is usually purity. A warrior chestpiece is usually not-top-displacable. Understand "warrior's" as warrior chestpiece.
 
-Definition: a warrior chestpiece is class-transformation-protected if the class of the player is virgin warrior.
+Definition: a warrior chestpiece is class-transformation-protected:
+	if the class of the player is virgin warrior, decide yes;
+	decide no.
 
 Check wearing warrior chestpiece:
 	if the vaginalvirgin of the player is 0, say "The latches refuse to close! It's almost as if the chestpiece is refusing to let you wear it..." instead.
@@ -56,14 +58,17 @@ To say ClothingDesc of (O - an ornate warrior chestpiece):
 Definition: an ornate warrior chestpiece is heart themed: decide yes.
 
 To decide which number is the initial outrage of (C - an ornate warrior chestpiece):
-	decide on 8.
+	decide on 5.
 
 Definition: an ornate warrior chestpiece is grey themed: decide yes.
 Definition: an ornate warrior chestpiece is gem themed: decide yes.
 
+To decide which object is the unique-upgrade-target of (C - an ornate warrior chestpiece):
+	decide on a random off-stage leaf pattern warrior chestpiece.
+
 Part 2 - Leaf Pattern Warrior Chestpiece
 
-A leaf pattern warrior chestpiece is a kind of holy warrior chestpiece. A leaf pattern warrior chestpiece is usually high cut. A leaf pattern warrior chestpiece is usually belly covering.
+A leaf pattern warrior chestpiece is a kind of holy warrior chestpiece. A leaf pattern warrior chestpiece is very low cut. A leaf pattern warrior chestpiece is normally-partially-nipple-covering. A leaf pattern warrior chestpiece is belly covering.
 
 The printed name of leaf pattern warrior chestpiece is usually "[clothing-title-before]leaf pattern warrior's chestpiece[clothing-title-after]". The text-shortcut of leaf pattern warrior chestpiece is "lpwc".
 
@@ -75,16 +80,19 @@ To decide which figure-name is clothing-image of (C - a leaf pattern warrior che
 	decide on figure of leaf pattern warrior chestpiece.
 
 To say ClothingDesc of (O - a leaf pattern warrior chestpiece):
-	say "This metal piece of 'armour' hangs from your neck, providing protection to your chest and belly. The leafy pattern around the belly makes it look quite provocative. It is very heavy.".
+	say "This metal piece of 'armour' hangs from your neck, providing protection to your chest and belly, and the tiniest bit of protection to your [genitals]. The leafy pattern around the belly makes it look quite provocative, and some of your areolae is left exposed. It is very heavy.".
+
+Definition: a leaf pattern warrior chestpiece is layer-concealing: decide no.
+Definition: a leaf pattern warrior chestpiece is partially-layer-concealing: decide yes.
+Definition: a leaf pattern warrior chestpiece is potentially at least partially vagina covering:
+	if the player is upright, decide yes;
+	decide no. [Partially covers vagina]
 
 To decide which number is the initial outrage of (C - a leaf pattern warrior chestpiece):
 	decide on 5.
 
 To decide which number is the heaviness of (C - a leaf pattern warrior chestpiece):
 	decide on 6.
-
-To decide which object is the unique-upgrade-target of (C - a leaf pattern warrior chestpiece):
-	decide on a random off-stage ornate warrior chestpiece.
 
 Definition: a leaf pattern warrior chestpiece is grey themed: decide yes.
 Definition: a leaf pattern warrior chestpiece is flower themed: decide yes.
@@ -112,6 +120,7 @@ To decide which number is the heaviness of (C - a reinforced warrior chestpiece)
 	decide on 5.
 
 To decide which object is the unique-upgrade-target of (C - a reinforced warrior chestpiece):
+	if the number of worn neck covering clothing is 0, decide on a random off-stage ornate warrior chestpiece;
 	decide on a random off-stage leaf pattern warrior chestpiece.
 
 Definition: a reinforced warrior chestpiece is grey themed: decide yes.
@@ -190,7 +199,9 @@ To say ClothingDesc of (C - a golden warrior priestess outfit):
 To decide which number is the initial outrage of (C - a golden warrior priestess outfit):
 	decide on 5.
 
-Definition: a golden warrior priestess outfit is class-transformation-protected if the class of the player is virgin warrior or the class of the player is priestess.
+Definition: a golden warrior priestess outfit is class-transformation-protected:
+	if the class of the player is virgin warrior or the class of the player is priestess, decide yes;
+	decide no.
 
 To compute virginity-loss of (H - a golden warrior priestess outfit):
 	say "As the [H] shatters into fragments, in a single instant you experience the lives of every single one of your clan's descendants. This scene is probably more extreme than most things in this game, do you want to read it? ";
@@ -230,7 +241,9 @@ To say ShortDesc of (C - virgin magical girl outfit):
 To decide which number is the initial outrage of (C - virgin magical girl outfit):
 	decide on 6.
 
-Definition: virgin magical girl outfit is class-transformation-protected if the class of the player is virgin warrior or the class of the player is magical girl.
+Definition: virgin magical girl outfit is class-transformation-protected:
+	if the class of the player is virgin warrior or the class of the player is magical girl, decide yes;
+	decide no.
 
 Definition: virgin magical girl outfit is slitted: decide yes.
 Definition: virgin magical girl outfit is gem themed: decide yes.

@@ -1,51 +1,23 @@
 Puddles by Rooms begins here.
 
-[!<Room>@<semenPuddle:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 A room has a number called semen-puddle. The semen-puddle of a room is usually 0.
 
-[!<Room>@<urinePuddle:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 A room has a number called urine-puddle. The urine-puddle of a room is usually 0.
 
-[!<Room>@<milkPuddle:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 A room has a number called milk-puddle. The milk-puddle of a room is usually 0.
 
-[!<Room>@<sprinklePuddle:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 A room has a number called sprinkle-puddle. The sprinkle-puddle of a room is usually 0.
 
-[!<Room>@<slimePuddle:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 A room has a number called slime-puddle. The slime-puddle of a room is usually 0.
 A room can be glue-puddled. A room is usually not glue-puddled.
-Definition: A room is glue-puddled if a glue is in it. [One approach might be to let the glue-puddle be a number, and use that to represent how sticky it is; but since the stickiness of the player is already being used to do that, I *think* it makes sense to use that instead.]
+Definition: A room is glue-puddled:
+	if a glue is in it, decide yes;
+	decide no. [One approach might be to let the glue-puddle be a number, and use that to represent how sticky it is; but since the stickiness of the player is already being used to do that, I *think* it makes sense to use that instead]
 
 Understand "puddle", "pool", "liquid", "mess", "juice" as a room[ when the semen-puddle of the room + the milk-puddle of the room + the urine-puddle of the room > 0].
 
 Book 1 Puddles
 
-[!<DecideWhichNumberIsTheSlipperinessOfRoom>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the slipperiness of (R - a room):
 	Let X be semen-puddle of R + urine-puddle of R + milk-puddle of R + sprinkle-puddle of R;
 	[if R is in the mansion, ]increase X by the slime-puddle of R;
@@ -72,11 +44,6 @@ To PuddleUp (L - milk) by (X - a number) in (R - a room):
 To PuddleUp (L - water) by (X - a number) in (R - a room):
 	do nothing.
 
-[!<SemenPuddleUp>+
-
-REQUIRES COMMENTING
-
-+!]
 To SemenPuddleUp (X - a number):
 	if X > 0, SemenPuddleUp X in the location of the player.
 
@@ -92,11 +59,6 @@ To SemenPuddleUp (X - a number) in (R - HoleInWall):
 To SemenPuddleUp (X - a number) in (R - DiaperPail):
 	increase the semen-puddle of the location of most-recent-pail by X.
 
-[!<UrinePuddleUp>+
-
-REQUIRES COMMENTING
-
-+!]
 To UrinePuddleUp (X - a number):
 	if X > 0, UrinePuddleUp X in the location of the player.
 
@@ -147,11 +109,6 @@ A time based rule (this is the puddles disappearing rule):
 			if R is Woods30, ChargeUp giant-statue by 5;
 			ChargeUp giant-statue by 2.
 
-[!<TheStickyDecayRule>+
-
-REQUIRES COMMENTING
-
-+!]
 An all time based rule (this is the sticky decay rule):
 	let WasGlued be 0;
 	if the stickiness of the player > 0:
@@ -177,11 +134,6 @@ Figure of puddle 3 is the file "Env/MultiFloor/puddle3.png".
 Figure of puddle 4 is the file "Env/MultiFloor/puddle4.png".
 Figure of puddle 5 is the file "Env/MultiFloor/puddle5.png".
 
-[!<SayPuddleDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say PuddleDesc:
 	repeat with S running through revealed sprinkle traps in the location of the player:
 		if S is expired, say "Inactive sprinklers hangs from the ceiling. There is a fine layer of [SprinkleLiquid of S] on the floor here. ";

@@ -2,19 +2,9 @@ Diaper Addiction by Player begins here.
 
 Part 1 - Calculate Diaper Addiction
 
-[!<DecideWhichNumberIsTheDiaperAddictionInfluenceOfWearThing>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the diaper-addiction-influence of (C - a wearthing):
 	decide on 0.
 
-[!<DecideWhichNumberIsTheDiaperAddictionInfluenceOfClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the diaper-addiction-influence of (C - a clothing):
 	if C is diaper-addiction-influencing:
 		let S be 0;
@@ -22,11 +12,6 @@ To decide which number is the diaper-addiction-influence of (C - a clothing):
 		decide on S;
 	decide on 0.
 
-[!<DecideWhichNumberIsTheDiaperAddictionOfThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the diaper addiction of the player: [How much do they enjoy using diapers?]
 	let B be the raw diaper addiction of the player;
 	repeat with C running through worn wearthings:
@@ -37,18 +22,8 @@ To decide which number is the diaper addiction of the player: [How much do they 
 
 Part 2 - Modify Diaper Addiction
 
-[!<Player>@<rawDiaperAddiction:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 The player has a number called raw diaper addiction. The raw diaper addiction of the player is usually 1. [Min 1 Max 20]
 
-[!<DiaperAddictUpX>+
-
-REQUIRES COMMENTING
-
-+!]
 To DiaperAddictUp (X - a number):
 	let S be the raw diaper addiction of the player;
 	SilentlyDiaperAddictUp X;

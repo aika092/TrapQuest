@@ -73,19 +73,9 @@ Definition: a clothing (called C) is potentially at least partially asshole cove
 	if C is skirt-covering-crotch or C is total protection, decide yes;
 	decide no.
 
-[!<assholePresentableRules:Rulebook>+
-
-REQUIRES COMMENTING
-
-+!]
 the asshole presentable rules is a rulebook.
 the presentable rules of asshole is usually the asshole presentable rules.
 
-[!<TheAssholeProtectedRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the asshole protected rule:
 	repeat with O running through ass covering clothing:
 		unless (O is displacable and O is not glued) or O is zippable or O is usually autoremovable:
@@ -93,44 +83,24 @@ This is the asshole protected rule:
 			rule fails.
 The asshole protected rule is listed in the asshole presentable rules.
 
-[!<TheAssholeOccupiedRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the asshole occupied rule:
 	if asshole is actually occupied:
 		if auto is 0, say "Your asshole is a bit full already, don't you think?";
 		rule fails.
 The asshole occupied rule is listed in the asshole presentable rules.
 
-[!<TheTooMuchDignityToPresentAssholeRule>+
-
-REQUIRES COMMENTING
-
-+!]
 [This is the too much dignity to present asshole rule:
 	if the humiliation of the player < HUMILIATION-PROUD + 2000 and the player is not horny and the virgin bonus of the player <= 0 and just the tip tattoo is not worn and debugmode < 1:
 		if auto is 0, say "You have too much self respect to do that!";
 		rule fails.
 The too much dignity to present asshole rule is listed in the asshole presentable rules.]
 
-[!<ThePlayerHatesAnalSexRule>+
-
-REQUIRES COMMENTING
-
-+!]
 [This is the player hates anal sex rule:
 	if the anal sex addiction of the player + 2 < the soreness of asshole and the player is not horny and flower hairclip is not worn and just the tip tattoo is not worn and debugmode < 1:
 		if auto is 0, say "You don't like anal sex enough to ask for it while you are already feeling so [if the soreness of asshole < 5]raw[otherwise]sore[end if]!";
 		rule fails.
 The player hates anal sex rule is listed in the asshole presentable rules.]
 
-[!<TheMonsterDoesNotdoAnalRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the monster doesn't do anal rule:
 	if auto > 0 and ((presenting-receiver is monster and presenting-receiver is not willing to do anal) or the number of willing to do anal monsters in the location of the player is 0), rule fails.
 The monster doesn't do anal rule is listed in the asshole presentable rules.
@@ -145,11 +115,6 @@ To decide which number is the desire of (B - asshole):
 
 Part 2 - Description
 
-[!<SayShortDescOfAsshole>+
-
-REQUIRES COMMENTING
-
-+!]
 To say ShortDesc of asshole:
 	if diaper quest is 0:
 		say "[AssGape openness of asshole]";
@@ -172,11 +137,6 @@ Less brief details (size, exposure, semen)
 To say MediumDesc of (A - asshole):
 	say "[if asshole is lewdly exposed]fully exposed [otherwise if asshole is at least partially lewdly exposed]slightly visible [otherwise if asshole is not exposed]concealed [end if][if the openness of asshole > 4 and diaper quest is 0][AssGape openness of asshole] [end if][if the semen volume of belly > 0]creampied [end if]asshole".
 
-[!<SayAssGapeN>+
-
-REQUIRES COMMENTING
-
-+!]
 To say AssGape (N - a number):
 	if N < 2, say "completely tight";
 	if N is 2, say "reasonably tight";
@@ -189,11 +149,6 @@ To say AssGape (N - a number):
 	if N is 9, say "gaping wide";
 	if N is 10, say "impossibly stretched".
 
-[!<SayTotalDescOfAsshole>+
-
-REQUIRES COMMENTING
-
-+!]
 To say TotalDesc of asshole:
 	if the openness of asshole < 2, say "Your completely tight [asshole] ";
 	if the openness of asshole is 2, say "Your reasonably tight [asshole] ";
@@ -221,11 +176,6 @@ To say TotalDesc of asshole:
 		say "feels numb. ";
 	if there is a lubricant covering asshole, say "It is dripping with slippery [lubricant]. ".
 
-[!<SayAssholeModesty>+
-
-REQUIRES COMMENTING
-
-+!]
 To say AssholeModesty:
 	if asshole is lewdly exposed:
 		if there is an ass covering clothing:
@@ -242,21 +192,11 @@ To say AssholeModesty:
 		otherwise:
 			say "It is currently the [if the girth of P > the openness of asshole]snug [end if]home of [FuckerDesc of P].".
 
-[!<SayRealGapeDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say RealGapeDesc:
-	say "Your asshole is [AssGape real openness of asshole][if the player is female] and your pussy is [PussyGape real openness of vagina]".
+	say "Your asshole is [AssGape real openness of asshole][if the player is possessing a vagina] and your pussy is [PussyGape real openness of vagina]".
 
 Part 3 - Modify Asshole Stats
 
-[!<GapeAssholeTimesNumber>+
-
-REQUIRES COMMENTING
-
-+!]
 To gape (A - asshole) times (X - a number):
 	now the previous openness of asshole is the openness of asshole;
 	while X > 0:
@@ -283,7 +223,7 @@ To gape (A - asshole) times (X - a number):
 				say "[if the bimbo of the player < 10][line break][variable custom style][one of]How it is even possible? My asshole is permanently stretched wider than my fist![or]I can't believe it is even possible to be gaped so wide![stopping][otherwise][line break][second custom style][line break][one of]My [asshole] is gaping wide, I'm so proud![or]I just love the feeling of having a permanently gaping wide [asshole]![stopping][end if][roman type][line break]";
 			increase the openness of asshole by 1;
 			now ruined is 2;
-	if the player is female and the openness of asshole > the openness of vagina + 5 and there is a worn tattoo and a random number between 1 and 10 is 1 and asshole-cupid tattoo is drawable:
+	if the player is possessing a vagina and the openness of asshole > the openness of vagina + 5 and there is a worn tattoo and a random number between 1 and 10 is 1 and asshole-cupid tattoo is drawable:
 		summon asshole-cupid tattoo;
 		say "Your skin stings with pain as a Cupid tattoo is suddenly burned onto your butt, pointing at your [asshole]![line break][variable custom style][if the player is not a pervert]No no, I'm not a butt slut![otherwise if the anal sex addiction of the player < 7]It's saying I prefer anal sex to normal sex?[otherwise]Ooh yes that's right, anal sex is the best sex![end if][roman type][line break]";
 	if transGender is 1, now virgincursed is 0;
@@ -293,16 +233,11 @@ To gape (A - asshole) times (X - a number):
 			PenisDown 1;
 			say "Something tells you that until you have real, dominant sex, you are going to keep being punished by the game, spiralling towards a fucktoy plaything for the monsters of this world...";
 		otherwise:[i thought it was weird you would sometimes not a message like this on losing your anal virginity first, so I wrote this to clarify things.]
-			say "[bold type]You realise you've been fucked before you fucked anyone else, and [if the bimbo of the player < 10]surprisingly[otherwise]unsurprisingly[end if], you already feel yourself accepting it. [line break][variable custom style]'Anal is probably way better anyway. Who cares?'[roman type][line break]";
+			say "[bold type]You realise you've been fucked before you fucked anyone else, and [if the bimbo of the player < 10]surprisingly[otherwise]unsurprisingly[end if], you already feel yourself accepting it.[line break][variable custom style]'Anal is probably way better anyway. Who cares?'[roman type][line break]";
 			PenisDown 1;
 		now virgincursed is 1.
 
-[!<AssClose>+
-
-REQUIRES COMMENTING
-
-+!]
-To Assclose (X - a number):
+To AssClose (X - a number):
 	now the previous openness of asshole is the openness of asshole;
 	if the latex-transformation of the player > 2, now X is 0;
 	while X > 0:

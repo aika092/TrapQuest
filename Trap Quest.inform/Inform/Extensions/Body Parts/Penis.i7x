@@ -67,14 +67,39 @@ To say sexual-player-penis:
 	otherwise:
 		say player-penis.
 
-Definition: penis is tiny if the player is possessing a penis and the size of penis < 4.
+Definition: penis is tiny:
+	if the player is possessing a penis and the size of penis < 4, decide yes;
+	decide no.
+
+[!<DecideWhichNumberIsMinPenisSize>+
+
+Outputs the player's minimum penis size
+
+@returns <Number> The smallest size penis the player can have during the playthrough, aside from being female
+
++!]
+To decide which number is min penis size:
+	if min penis size points is 0, decide on diaper quest;
+	decide on min penis size points + diaper quest + micro-choice.
+
+Definition: yourself is possessing a penis:
+	if the size of penis > 0, decide yes;
+	decide no.
+
+Definition: yourself is really possessing a penis:
+	if the real size of penis > 0, decide yes;
+	decide no.
+
+Section 1 - Exposure
 
 [!<PenisIsLewdlyExposed>+
 
 Determines whether the player's penis is exposed in a provocative way.
 
 +!]
-Definition: penis is lewdly exposed if penis is exposed.
+Definition: penis is lewdly exposed:
+	if penis is exposed, decide yes;
+	decide no.
 
 To decide which number is the lewdly exposed outrage of (P - penis):
 	decide on 11 - (the size of penis / 2). [allows us to easily tweak this number]
@@ -84,7 +109,9 @@ To decide which number is the lewdly exposed outrage of (P - penis):
 Determines whether the player's penis is partially exposed in a provocative way.
 
 +!]
-Definition: penis is at least partially lewdly exposed if penis is at least partially exposed.
+Definition: penis is at least partially lewdly exposed:
+	if penis is at least partially exposed, decide yes;
+	decide no.
 
 To decide which number is the at least partially lewdly exposed outrage of (P - penis):
 	decide on 8 - (the size of penis / 2). [allows us to easily tweak this number]
@@ -131,8 +158,12 @@ Definition: a clothing (called C) is potentially erection concealing:
 	decide no.
 Definition: a diaper is potentially erection concealing: decide yes.
 
-Definition: a clothing is potentially penis concealing if it is actually dense and it is potentially penis covering and (penis is not penis-erect or the size of penis < 3 or it is potentially erection concealing).
-Definition: a clothing is potentially at least partially penis concealing if it is not see-through and it is potentially penis covering.
+Definition: a clothing is potentially penis concealing:
+	if it is actually dense and it is potentially penis covering and (penis is not penis-erect or the size of penis < 3 or it is potentially erection concealing), decide yes;
+	decide no.
+Definition: a clothing is potentially at least partially penis concealing:
+	if it is not see-through and it is potentially penis covering, decide yes;
+	decide no.
 
 [!<DecideWhichObjectIsTheConcealerOfPenis>+
 
@@ -167,35 +198,6 @@ To decide which object is the at least partial concealer of (P - penis):
 			if the bottom-layer of D > the bottom-layer of C, now this-one is 0;
 		if this-one is 1, decide on C;
 	decide on nothing.
-
-[!<DecideWhichNumberIsMinPenisSize>+
-
-Outputs the player's minimum penis size
-
-@returns <Number> The smallest size penis the player can have during the playthrough, aside from being female
-
-+!]
-To decide which number is min penis size:
-	if min penis size points is 0, decide on diaper quest;
-	decide on min penis size points + diaper quest + micro-choice.
-
-[!<PlayerIsPossessingPenis>
-
-REQUIRES COMMENTING
-
-+!]
-Definition: yourself is possessing a penis:
-	if the size of penis > 0, decide yes;
-	decide no.
-
-[!<PlayerIsReallyPossessingPenis>
-
-REQUIRES COMMENTING
-
-+!]
-Definition: yourself is really possessing a penis:
-	if the real size of penis > 0, decide yes;
-	decide no.
 
 Section 2 - Erections
 
@@ -234,6 +236,7 @@ Definition: penis is able to get erect:
 	if the player is not possessing a penis, decide no;
 	if penis is penis-erect, decide yes;
 	if there is a worn chastity cage, decide no;
+	if broken-clitty tattoo is worn, decide no;
 	if there is a worn restricting research airhancer, decide no;
 	if refractoryperiod > 0, decide no;[except in special circumstances, you can't get hard immediately after an orgasm]
 	decide yes.
@@ -246,9 +249,9 @@ Definition: penis is erect-at-will:
 	if the player is a bit horny, increase A by 1;[You get erect easier if you are horny]
 	if the player is horny, increase A by 1;
 	if the player is very horny, increase A by 1;
-	increase A by the size of penis;[if you're bigger, its easier to get erect]
+	increase A by the size of penis;[if you're bigger, it's easier to get erect]
 	let D be 0;
-	if the wanktime of the player > 100, decrease D by the wanktime of the player / 5;[if you came recently, its harder to get an erection]
+	[###Selkie: Deleted by someone else? if the wanktime of the player > 100, decrease D by the wanktime of the player / 5;[if you came recently, it's harder to get an erection]]
 	decrease D by the penis-obedience of penis;[if you haven't been told to get an erection, it may be harder]
 	decrease D by the anal sex addiction of the player / 2;[your addiction to anal sex also interferes with your erections]
 	let R be a random number between A and D;
@@ -266,11 +269,27 @@ Definition: penis is erect-on-request:
 	increase A by the size of penis;
 	increase A by the penis-obedience of penis - 1;[now that the player is being asked to get hard, obedience contributes rather than hinders]
 	let D be 0;
-	if the wanktime of the player > 100, decrease D by the wanktime of the player / 5;
 	decrease D by the anal sex addiction of the player / 2;
 	let R be a random number between A and D;
 	if R < -1, decide no;
 	decide yes.
+
+[Sometimes NPC's will test the player to see if they get an erection, and punish them if it happens.]
+Definition: penis is flaccid-under-pressure:
+	if penis is penis-erect, decide no;
+	if penis is not able to get erect, decide yes;
+	if the player is extremely horny, decide yes;
+	if the penis-obedience of penis is 10, decide yes;
+	let A be 1;
+	if the player is horny, increase A by 1;
+	if the player is very horny, increase A by 1;
+	increase A by the size of penis;
+	let D be 0;
+	decrease D by the anal sex addiction of the player / 2;
+	decrease D by the penis-obedience of penis;
+	let R be a random number between A and D;
+	if R < -1, decide yes;[results are flipped, since this check is about staying flaccid, not getting hard.]
+	decide no.
 
 [Whenever the player gains arousal for the turn, they have a chance of getting an erection]
 To compute sudden erection chance (X - a number):
@@ -302,7 +321,9 @@ To compute sudden erection chance (X - a number):
 					say "[line break]Your [ShortDesc of penis] [harden]s into a very embarrassing, albeit subtle, erection.";
 			otherwise if penis is at least partially exposed:
 				if S2 is clothing:
-					if S2 is potentially erection concealing:
+					if S2 is metal:
+						say "Your [ShortDesc of penis] [harden]s into an erection, which presses against the inside of your [ShortDesc of S2].";
+					otherwise if S2 is potentially erection concealing:
 						say "Your [ShortDesc of penis] [harden]s into an erection, which is thankfully not very obvious thanks to your [ShortDesc of S2].";
 					otherwise:
 						say "Your [ShortDesc of penis] [harden]s into an erection, which forms a very obvious tent under your [ShortDesc of S2].";
@@ -330,13 +351,52 @@ To compute erection decay:
 	say "[line break][bold type]Your [ShortDesc of penis] softens.[roman type][line break]";
 	now penis is not penis-erect.
 
+Section 3 - Presenting
+
+the penis presentable rules is a rulebook.
+the presentable rules of penis is usually the penis presentable rules.
+
+This is the penis protected rule:
+	repeat with O running through pussy covering clothing:
+		unless (O is displacable and O is not glued) or O is zippable or O is usually autoremovable:
+			if auto is 0, say "Your [O] is preventing you from getting your [player-penis] on display.";
+			rule fails.
+The penis protected rule is listed in the penis presentable rules.
+
+This is the penis occupied rule:
+	if penis is actually occupied:
+		if auto is 0, say "Your penis is a bit busy already, don't you think?";
+		rule fails.
+The penis occupied rule is listed in the penis presentable rules.
+
+This is the penis doesn't exist rule:
+	if the player is not possessing a penis:
+		if auto is 0, say "You don't have a penis.";
+		rule fails.
+The penis doesn't exist rule is listed in the penis presentable rules.
+
+[When the donator lock comes off, this rule must be removed]
+This is the penis in beta rule:
+	if the player is not the donator:
+		if auto is 0, say "This feature is currently in beta. Wait until it comes out!s";
+		rule fails.
+The penis in beta rule is listed in the penis presentable rules.
+
+This is the monster doesn't do penetration rule:
+	if auto > 0 and ((presenting-receiver is monster and presenting-receiver is not willing to charm snakes) or the number of willing to charm snakes monsters in the location of the player is 0), rule fails.
+The monster doesn't do penetration rule is listed in the penis presentable rules.
+
+To decide which number is the desire of (B - penis):
+	let D be 0;
+	if the player is gendered male:
+		increase D by 5;
+		decrease D by anal-orgasms / 2;
+	if penis is penis-erect, increase D by 3;
+	increase D by the penis-obedience of penis;
+	decide on D.
+
 Part 2 - Description
 
-[!<SayShortDescOfPenis>+
-
-REQUIRES COMMENTING
-
-+!]
 To say ShortDesc of (P - penis):
 	say PenisFlavour (the size of penis).
 
@@ -358,27 +418,12 @@ Less brief details (size, exposure)
 To say MediumDesc of (P - penis):
 	say "[if penis is lewdly exposed]fully exposed [otherwise if penis is at least partially lewdly exposed]slightly visible [otherwise if penis is not exposed]concealed [end if][ShortDesc of penis]".
 
-[!<SayRealDescOfPenis>+
-
-REQUIRES COMMENTING
-
-+!]
 To say RealDesc of penis:
 	say "[PenisFlavour the real size of penis]".
 
-[!<SayRealPenisDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say RealPenisDesc:
 	say RealDesc of penis.
 
-[!<SayPenisFlavourNumber>+
-
-REQUIRES COMMENTING
-
-+!]
 To say PenisFlavour (N - a number):
 	if N is 0:
 		say "Barbie doll style lack of genitalia";
@@ -386,11 +431,6 @@ To say PenisFlavour (N - a number):
 		if N is 1, say "[PenisSizeFlav N], [PenisShaftFlav N]";
 		otherwise say "[PenisSizeFlav N] [PenisShaftFlav N]".
 
-[!<SayPenisSizeFlavNumber>+
-
-REQUIRES COMMENTING
-
-+!]
 To say PenisSizeFlav (N - a number):
 	if N is 1, say "less than 1 inch";
 	if N is 2, say "1 inch";
@@ -401,15 +441,10 @@ To say PenisSizeFlav (N - a number):
 	if N is 7, say "above average 7 inch";
 	if N is 8, say "large 8 inch";
 	if N is 9, say "giant 10 inch";
-	if N is 10, say "huge 12 inch";[natural max]
+	if N is 10, say "huge 12 inch";[natural max. beyond here is strapon territory]
 	if N is 11, say "massive 15 inch";
 	if N > 11, say "ridiculously huge 20 inch".
 
-[!<SayPenisShaftFlavNumber>+
-
-REQUIRES COMMENTING
-
-+!]
 To say PenisShaftFlav (N - a number):
 	if N is 1, say "clitoris-like pee pee";
 	if N is 2, say "micropenis";
@@ -422,11 +457,6 @@ To say PenisShaftFlav (N - a number):
 	if N is 9, say "tool";[10]
 	if N > 9, say "monster".[12, 15, 20. 12 is natural max]
 
-[!<SaySexShaft>+
-
-REQUIRES COMMENTING
-
-+!]
 To say SexShaft:
 	let S be a random worn strapon-panties;
 	if S is clothing:
@@ -434,14 +464,9 @@ To say SexShaft:
 	otherwise:
 		say "shaft".
 
-[!<SayTotalDescOfPenis>+
-
-REQUIRES COMMENTING
-
-+!]
 To say TotalDesc of penis:
 	if the player is possessing a penis:
-		if there is worn chastity cage:
+		if there is a worn chastity cage:
 			say "Your [ShortDesc of penis] and [ShortBallsDesc] are kept soft and locked away inside a chastity cage. ";
 		otherwise if there is pussy covering clothing:
 			say "You have a[if penis is penis-erect]n erect[end if] [ShortDesc of penis] and [ShortBallsDesc]. ";
@@ -451,11 +476,6 @@ To say TotalDesc of penis:
 	otherwise if the player is male:
 		say "A doll-like flat mound exists where your penis used to be[if watersports mechanics is 1]. There's just a tiny hole to allow you to pee[end if].".
 
-[!<SayShortBallsDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say ShortBallsDesc:
 	if the size of penis < 3:
 		say "internal testicles";
@@ -466,11 +486,6 @@ To say ShortBallsDesc:
 	otherwise:
 		say "heavy, full balls".
 
-[!<SayPenisModesty>+
-
-REQUIRES COMMENTING
-
-+!]
 To say PenisModesty:
 	if penis is at least partially exposed:
 		let W be the at least partial concealer of penis;
@@ -494,6 +509,9 @@ To PenisUp (X - a number):
 		now X is 0;
 	if bitch tattoo is worn, now X is X / 2;
 	if fast tg is 3, now X is 0;
+	if metal-cage is worn:
+		now X is 0;
+		say "Your [ShortDesc of metal-cage] is preventing your [player-penis] from getting any larger!";
 	if X > 0:
 		if the size of penis >= 10:
 			say "Your monster of a [manly-penis] can't seem to grow any larger! You feel like a stud!";

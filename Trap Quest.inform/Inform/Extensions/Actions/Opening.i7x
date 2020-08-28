@@ -2,20 +2,10 @@ Opening by Actions begins here.
 
 Understand "op [something]" as opening.
 
-[!<autoOpen:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 autoopen is a number that varies.
 
 Does the player mean opening a container: it is very likely.
 
-[!<CheckOpeningAContainer>+
-
-REQUIRES COMMENTING
-
-+!]
 Check opening a container:
 	if the noun is open, say "But it's already open?" instead;
 	if the player is not able to manually use their hands, do nothing instead;
@@ -36,7 +26,7 @@ Check opening a container:
 			say "You decide against it." instead;
 	if the prevsearch of the noun is 0 and the noun is not pink wardrobe and the bimbo of the player <= 12 and autosearch is 1 and the player is upright and autoopen is 0 and the player is able to use manual dexterity and the player is not blinded and tutorial is 0:
 		if the delicateness of the player > 1:
-			say "You search the [ShortDesc of noun] for traps first[one of][if the bimbo of the player < 10]. [line break][variable custom style]This game is mental. I need to be careful.[roman type][line break][otherwise].[end if][or].[stopping]";
+			say "You search the [ShortDesc of noun] for traps first[one of][if the bimbo of the player < 10].[line break][variable custom style]This game is mental. I need to be careful.[roman type][line break][otherwise].[end if][or].[stopping]";
 			try searching the noun;
 			if the prevsearch of the noun is 2 or the prevsearch of the noun is 4:
 				do nothing instead;
@@ -49,21 +39,11 @@ Check opening a container:
 			say "[one of][line break][variable custom style]Searching for traps sounds like a waste of time. What's the worst they could do?[roman type][line break][or][stopping]";
 	now autoopen is 0.
 
-[!<CarryOutOpeningAContainer>+
-
-REQUIRES COMMENTING
-
-+!]
 Carry out opening a container:
 	allocate arm use to the noun;
 	allocate 2 seconds;
 	decrease the charge of the dungeon altar by a random number between 1 and 30.
 
-[!<ReportOpeningAContainer>+
-
-REQUIRES COMMENTING
-
-+!]
 Report opening a container:
 	if the noun is pink wardrobe:
 		add treasure to the noun;
@@ -85,11 +65,6 @@ Report opening a container:
 The reveal any newly visible interior rule is not listed in the report opening rulebook.
 The standard report opening rule is not listed in the report opening rulebook.
 
-[!<CheckClosingAContainer>+
-
-REQUIRES COMMENTING
-
-+!]
 Check closing a container:
 	if the noun is open, say "You don't see the point." instead.
 

@@ -1,6 +1,26 @@
 Bra Framework by Bra begins here.
 
-A bra is a kind of clothing. bras have a number called support. The support of a bra is usually 1. bras have a number called size. bras have a number called min size. The min size of a bra is usually 2. bras have a number called max size. The max size of a bra is usually 15. A bra is usually top-displacable. The soak-limit of a bra is usually 10.
+A bra is a kind of clothing. bras have a number called support. The support of a bra is usually 1. bras have a number called size. bras have a number called min size. The min size of a bra is usually 2. bras have a number called max size. The max size of a bra is usually 15. A bra is usually top-displacable.
+
+To decide which number is the default-soak-limit of (C - a bra):
+	let B be 2;
+	if C is fully covering:
+		increase B by 6;
+	otherwise if C is high cut:
+		increase B by 5;
+	otherwise if C is average cut:
+		increase B by 4;
+	otherwise if C is low cut:
+		increase B by 3;
+	otherwise if C is very low cut:
+		increase B by 2;
+	otherwise if C is ridiculously low cut:
+		increase B by 1;
+	if C is not potentially-top-layer-concealing:
+		if C is potentially-partially-top-layer-concealing, now B is B / 2;
+		otherwise now B is B / 3;
+	if B < 1, now B is 1;
+	decide on B.
 
 To decide which number is the current support of (B - a bra):
 	let S be 0;
@@ -11,9 +31,13 @@ To decide which number is the current support of (B - a bra):
 
 A bra is usually rare.
 
-Definition: a bra is same-type if theme-share-target is bra and theme-share-target is not bikini top.
+Definition: a bra is same-type:
+	if theme-share-target is bra and theme-share-target is not bikini top, decide yes;
+	decide no.
 
-Definition: a bra is ingredient if it is not product.
+Definition: a bra is ingredient:
+	if it is not product, decide yes;
+	decide no.
 
 To decide which number is the crafting key of (B - a bra):
 	decide on 26.
@@ -71,9 +95,6 @@ To decide which object is the unique-upgrade-target of (C - a bra):
 	if diaper quest is 0 and there is a worn demonic wearthing and tongue-bra is off-stage, decide on tongue-bra;
 	if diaper quest is 1, decide on a random off-stage training bra;
 	decide on nothing.
-
-To decide what number is the original price of (C - a bra):
-	decide on 3.
 
 To Set Up Bras:
 	repeat with B running through bras:
@@ -265,15 +286,17 @@ To BraGrow (B - a bra): [Checks if the bra is cursed and if so it tries to grow 
 				if the flesh volume of breasts <= FB or the largeness of breasts > LB, now keep-going is 0;
 				otherwise now FB is the flesh volume of breasts.
 
-A bikini top is a kind of bra. A bikini top is usually nylon. A bikini top is usually optional-top-displacable. The soak-limit of a bikini top is 6. A bikini top is usually plentiful. A bikini top is usually low cut. A bikini top is usually erect-nipple-exposing. Understand "bikini", "top" as bikini top.
+A bikini top is a kind of bra. A bikini top is usually nylon. A bikini top is usually optional-top-displacable. A bikini top is usually plentiful. A bikini top is usually low cut. A bikini top is usually erect-nipple-exposing. Understand "bikini", "top" as bikini top.
 
 The text-shortcut of bikini top is "bt".
 
-Definition: a bikini top is same-type if theme-share-target is bikini top or (theme-share-target is bra and there is worn bikini bottoms).
+Definition: a bikini top is same-type:
+	if theme-share-target is bikini top or (theme-share-target is bra and there is worn bikini bottoms), decide yes;
+	decide no.
 
 The min size of a bikini top is usually 2. The max size of a bikini top is usually 15. The support of a bikini top is usually 1.
 
-A string bikini top is a kind of bikini top. The soak-limit of a string bikini top is 2. The min size of a string bikini top is usually 20. The max size of a string bikini top is usually 20. A string bikini top is usually ridiculously low cut. A string bikini top is usually transformation-rare. [Essentially a string bikini top comes in one size fits all]
+A string bikini top is a kind of bikini top. The min size of a string bikini top is usually 20. The max size of a string bikini top is usually 20. A string bikini top is usually ridiculously low cut. A string bikini top is usually transformation-rare. [Essentially a string bikini top comes in one size fits all]
 
 Definition: a string bikini top is uncovered themed: decide yes.
 Definition: a string bikini top is swimming themed: decide yes.

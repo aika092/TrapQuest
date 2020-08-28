@@ -19,7 +19,9 @@ To say FuckerDesc of (M - Icarus):
 To say BigFuckerDesc of (M - Icarus):
 	say "Icarus".
 
-Definition: Icarus is dungeon dwelling if diaper quest is 0.
+Definition: Icarus is dungeon dwelling:
+	if diaper quest is 0, decide yes;
+	decide no.
 
 Figure of Icarus 1 is the file "NPCs/MultiFloor/Icarus1.png".
 Figure of Icarus 2 is the file "NPCs/MultiFloor/Icarus2.jpg".
@@ -118,7 +120,7 @@ To say BecomesAggressive of (M - Icarus):
 	say "You watch [him of M] spread [his of M] wings to their full span![line break][speech style of M]'[one of]Okay, let's have a quick shag, then I'll get back to work...'[or]Time to have a quick sex break, I think!'[in random order][roman type][line break]Looks like [his of M] intentions have become less than pure...".
 
 To compute sudden objectification of (M - Icarus):
-	say "Something seems to change in the way [NameDesc of M] is looking at you. [line break][speech style of M]'[one of]I can probably get away with a quick bang before the boss notices[or]Well now you just look too hot to leave alone[or]Damn, you look ready for fucking, don't you? Even if I get disciplined for this, I think it'll be worth it[in random order]...'[roman type][line break]".
+	say "Something seems to change in the way [NameDesc of M] is looking at you.[line break][speech style of M]'[one of]I can probably get away with a quick bang before the boss notices[or]Well now you just look too hot to leave alone[or]Damn, you look ready for fucking, don't you? Even if I get disciplined for this, I think it'll be worth it[in random order]...'[roman type][line break]".
 
 To compute appearance assessment of (M - Icarus):
 	if M is outrage disapproving:
@@ -250,7 +252,9 @@ chain-collar is a submissive collar. chain-collar is unique. chain-collar is lea
 
 Definition: chain-collar is grey themed: decide yes.
 Definition: chain-collar is black themed: decide yes.
-Definition: chain-collar is IcarusScienceAppropriate if it is actually summonable.
+Definition: chain-collar is IcarusScienceAppropriate:
+	if it is actually summonable, decide yes;
+	decide no.
 
 Figure of chain collar is the file "Items/Accessories/Neck/collar5.jpg".
 Figure of chain collar full is the file "Items/Accessories/Neck/collar6.jpg".
@@ -271,7 +275,9 @@ To decide which number is the initial outrage of (C - chain-collar):
 
 leather-jacket is a jacket. leather-jacket is not-exclusive. leather-jacket is leather. leather-jacket is only arm covering. leather-jacket is ridiculously low cut. leather-jacket is belly exposing.
 The printed name of leather-jacket is "[clothing-title-before]leather jacket[clothing-title-after]". The text-shortcut of leather-jacket is "lja". Understand "jacket" as leather-jacket.
-Definition: leather-jacket is IcarusScienceAppropriate if it is actually summonable.
+Definition: leather-jacket is IcarusScienceAppropriate:
+	if it is actually summonable, decide yes;
+	decide no.
 
 Figure of leather-jacket is the file "Items/Clothes/Upper/TubeTops/leatherjacket1.png".
 Figure of leather-jacket-full is the file "Items/Clothes/Upper/TubeTops/leatherjacket2.png".
@@ -284,13 +290,17 @@ To decide which figure-name is icarus-clothing-image of (C - leather-jacket):
 To say ClothingDesc of (C - leather-jacket):
 	say "A thin black leather jacket that doesn't have enough fabric to be able to button up at your front. In fact it's more of a half-jacket, that barely covers your nipples and exposes your middle.[if C is worn and the number of worn breast covering clothing is 1][line break]Your nipples are so close to being visible that parts of your areolae are visible.[end if]".
 
-Definition: a pink rubber shirt is IcarusScienceAppropriate if it is actually summonable.
+Definition: a pink rubber shirt is IcarusScienceAppropriate:
+	if it is actually summonable, decide yes;
+	decide no.
 Figure of pink rubber shirt full is the file "Items/Clothes/Upper/Latex/latexshirt1b.jpg".
 To decide which figure-name is icarus-clothing-image of (C - a pink rubber shirt):
 	decide on figure of pink rubber shirt full.
 
 icarus-butt is a wearthing.
-Definition: icarus-butt is IcarusScienceAppropriate if the total weighty volume of hips >= 8 and the total volume of hips < 16 and max ass size >= 16.
+Definition: icarus-butt is IcarusScienceAppropriate:
+	if the total weighty volume of hips >= 8 and the total volume of hips < 16 and max ass size >= 16, decide yes;
+	decide no.
 Figure of icarus-butt is the file "Special/Cutscene/cutscene-icarus-ball1.jpg".
 To compute IcarusSummon of (C - icarus-butt):
 	say "A volleyball appears behind you, hovering above your butt. It begins bouncing against your [AssDesc], and each time it does, your cheeks swell in size a bit. They don't stop until your buttcheeks are so stupidly big that the volleyball can now balance perfectly still on top of your giant ass cheeks!";
@@ -300,14 +310,18 @@ To compute IcarusSummon of (C - icarus-butt):
 	say "The volleyball then vanishes.".
 
 icarus-hips is a wearthing.
-Definition: icarus-hips is IcarusScienceAppropriate if the thickness of hips < max hip size and the thickness of hips <= 6 + the flesh volume of thighs and the thickness of hips > 3 + the flesh volume of thighs.
+Definition: icarus-hips is IcarusScienceAppropriate:
+	if the thickness of hips < max hip size and the thickness of hips <= 6 + the flesh volume of thighs and the thickness of hips > 3 + the flesh volume of thighs, decide yes;
+	decide no.
 To compute IcarusSummon of (C - icarus-hips):
 	say "[BigNameDesc of Icarus] pulls [his of Icarus] hands apart slowly, and you can feel your hips try to widen at the same time!";
 	HipUp 3;
 	say ThighGapFlav.
 
 icarus-lips is a wearthing.
-Definition: icarus-lips is IcarusScienceAppropriate if the lips of face < 2.
+Definition: icarus-lips is IcarusScienceAppropriate:
+	if the lips of face < 2, decide yes;
+	decide no.
 Figure of icarus-lips is the file "Special/Cutscene/cutscene-icarus-lips1.jpg".
 To compute IcarusSummon of (C - icarus-lips):
 	say "[BigNameDesc of Icarus] blows glitter from [his of Icarus] palms onto your face. You feel your lips begin to swell!";
@@ -317,7 +331,9 @@ To compute IcarusSummon of (C - icarus-lips):
 	say TotalDesc of face.
 
 icarus-hair is a wearthing.
-Definition: icarus-hair is IcarusScienceAppropriate if the largeness of hair < 9 and frozen hair is 0.
+Definition: icarus-hair is IcarusScienceAppropriate:
+	if the largeness of hair < 9 and frozen hair is 0, decide yes;
+	decide no.
 Figure of icarus-hair is the file "Special/Cutscene/cutscene-icarus-hair1.jpg".
 To compute IcarusSummon of (C - icarus-hair):
 	say "[BigNameDesc of Icarus] blows glitter from [his of Icarus] palms onto your hair. ";
@@ -334,7 +350,9 @@ To compute IcarusSummon of (C - icarus-hair):
 	say TotalDesc of hair.
 
 icarus-belly is a wearthing.
-Definition: icarus-belly is IcarusScienceAppropriate if the pregnancy of the player is 0 and (inflation fetish is 1 or (pregnancy fetish is 1 and the player is female)).
+Definition: icarus-belly is IcarusScienceAppropriate:
+	if the pregnancy of the player is 0 and (inflation fetish is 1 or (pregnancy fetish is 1 and the player is female)), decide yes;
+	decide no.
 Figure of icarus-belly is the file "Special/Cutscene/cutscene-icarus-belly1.jpg".
 To compute IcarusSummon of (C - icarus-belly):
 	say "[BigNameDesc of Icarus] forms [his of Icarus] hands into a ball and slowly pulls them apart. Your belly expands at the same time as [his of Icarus] hands!";
@@ -352,7 +370,9 @@ To compute IcarusSummon of (C - icarus-belly):
 icarus-pasties is a pasties. icarus-pasties is unique. icarus-pasties is sheer. The text-shortcut of icarus-pasties is "psti".
 Figure of icarus-pasties is the file "Items/Clothes/Upper/Bras/pasties2a.jpg".
 Figure of icarus-pasties full is the file "Items/Clothes/Upper/Bras/pasties2b.jpg".
-Definition: icarus-pasties is IcarusScienceAppropriate if it is actually summonable.
+Definition: icarus-pasties is IcarusScienceAppropriate:
+	if it is actually summonable, decide yes;
+	decide no.
 To decide which figure-name is clothing-image of (C - icarus-pasties):
 	decide on figure of icarus-pasties.
 To decide which figure-name is icarus-clothing-image of (C - icarus-pasties):
@@ -367,7 +387,7 @@ To say SexSubmissionFlav of (M - Icarus):
 	if the player is feeling submissive:
 		say "[one of]You allow [NameDesc of M] to violate you as much as [he of M] likes. [big he of M][']s in charge![or]You wrap your legs around [NameDesc of M][']s midriff, latching on and pushing [him of M] as deep as [he of M] can go.[or]You hold yourself as still as possible to help [NameDesc of M] use you as [he of M] likes.[in random order]";
 	otherwise:
-		say "[one of]Recognising how much it will hurt if you fall, you do your best not to resist and hope [NameDesc of M] will get bored soon.[or]As humiliating as it is to let [him of M] have [his of M] way, it[']s not like you can do much about it anyway.[or]You try your best not to break [NameDesc of M][']s concentration. [if F is fuckhole and the openness of F < 6]It hurts, but it would hurt more if [he of M] dropped you.[otherwise]It would hurt if [he of M] dropped you.[end if][or]You submit to being used as a plaything.[in random order]".
+		say "[one of]Recognising how much it will hurt if you fall, you do your best not to resist and hope [NameDesc of M] will get bored soon.[or]As humiliating as it is to let [him of M] have [his of M] way, it's not like you can do much about it anyway.[or]You try your best not to break [NameDesc of M][']s concentration. [if F is fuckhole and the openness of F < 6]It hurts, but it would hurt more if [he of M] dropped you.[otherwise]It would hurt if [he of M] dropped you.[end if][or]You submit to being used as a plaything.[in random order]".
 
 To say SexResistFlav of (M - Icarus):
 	say "[one of]You hopelessly flail from your position in mid-air, doing everything you can to resist the invasion.[or]Since you're several feet off the ground, you have no real way of resisting, but you still try![or]You make breaststroke swimming motions with your hands in mid-air, trying something, anything to pull yourself away from [NameDesc of M]![or]You flail around and make as much noise as you can, but no matter how much you try, you can't break [NameDesc of M][']s concentration.[in random order]".
@@ -441,18 +461,8 @@ To say FriendlySexReleaseRefusalSpeech of (M - Icarus):
 	let F be a random fuckhole penetrated by M;
 	say "[speech style of M]'[one of]I can't stop now, I'll get blue balls!'[or]Sorry, it's not me, it's the will of the universe!'[in random order][roman type][line break]".
 
-To compute tripping attack of (M - Icarus):
-	say "A particularly strong flap of [NameDesc of M][']s wings sends a powerful gust of wind towards you, threatening to trip you up and throw you to the ground!";
-	let D be the tripping roll of M;
-	if D >= the dexterity of the player and M is not-blinded:
-		say "[MonsterTrippedFlav of M]";
-		try kneeling;
-		if the player is prone, check attack of M;
-	otherwise:
-		say "[MonsterFailedTripFlav of M]";
-		if the blind-status of M > 0:
-			decrease the blind-status of M by 1;
-			if the blind-status of M is 0, say "[BigNameDesc of M] is no longer blind!".
+To say MonsterTripAnnounceFlav of (M - Icarus):
+	say "A particularly strong flap of [NameDesc of M][']s wings sends a powerful gust of wind towards you, threatening to trip you up and throw you to the ground!".
 
 To say MonsterTrippedFlav of (M - Icarus):
 	say "You flail wildly [if the player is ankle bound]but you can't move your legs far enough apart to maintain your balance. You[otherwise]and[end if] fall to the ground!".
@@ -567,7 +577,9 @@ To compute unfriendly drink of (M - Icarus):
 
 Section 4 - Food Requesting
 
-Definition: Icarus is willing to give snacks if christmas content is 1.
+Definition: Icarus is willing to give snacks:
+	if christmas content is 1, decide yes;
+	decide no.
 
 To say FriendlyFoodAgreeFlav of (M - Icarus):
 	say "[speech style of M]'Why not. It is Christmas, after all!'[roman type]".

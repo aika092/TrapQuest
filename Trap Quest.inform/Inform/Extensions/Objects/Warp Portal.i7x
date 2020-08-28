@@ -43,14 +43,6 @@ Report going south when the player is in School01:
 	if the number of students in School01 is 0 and ST is student:
 		try ST going south.
 
-[To say DestinationDesc of (T - a warp portal):
-	if T is regionally in school and the destination of T is school:
-		say "The warp portal will now take you to[one of]... the 'Extra Credit' zone? What's that?! Text underneath reads [bold type]'Removes all cursed clothing and earns participating students a [']trophy['].'[if newbie tips is 1][line break][newbie style]Newbie tip: The Extra Credit zone puts you in a predicament where you lose a lot of dignity and 'real world reputation' (the latter of which is only relevant for epilogues). Cursed clothing (except headgear) will be removed but will cost you 1 strength if you don't put it back on after you complete the task. You will earn one 'trophy' which gives you the option to tweak a rule of the game universe and also gives you a permanent +1 to luck rolls. Finally, each time you go into the predicament zone, one of each type of crafting token will be lying on the floor somewhere in the region. So if you happen to stumble across any, you can nab yourself that extra bonus. Or if you're brave, you could even go searching for them...[end if][roman type][line break][or] the 'extra credit' zone again, where you can free yourself from cursed clothing and earn a trophy.[stopping]";
-	otherwise if T is next-portal-forbidden:
-		say "The warp portal won't currently be able to take you anywhere - it's glitching wildly!";
-	otherwise if T is not regionally in the destination of T:
-		say "The warp portal will currently take you to the [destination of T].".]
-
 To say unique-verb-desc of (T - a warp portal):
 	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say " [link][bracket]enter[close bracket][as]enter [text-shortcut of T][end link] [link][bracket]switch[close bracket][as]pull lever[end link]".
 
@@ -86,18 +78,22 @@ predicamentJustDone is initially false. [We only want one 'extra credit' predica
 predicamentSavedMakeUp is a number that varies.
 
 To set up predicament status:
+	let LC be a list of things;
+	repeat with C running through worn clothing:
+		now wearing-target is C;
+		if there is worn removal-blocking clothing, add C to LC; [should be sent to predicament-pen so that it is reunited afterwards]
 	repeat with C running through held things:
 		if C is clothing and (C is worn or C is not diaper): [held used diapers don't get refreshed]
 			fully clean C;
 		if C is worn:
-			if C is clothing and C is removable and C is not headgear and C is not combat visor and C is not armband:
+			if C is clothing and C is removable and C is not headgear and C is not combat visor and C is not armband and C is not listed in LC:
 				dislodge C;
 				if C is cursed and the raw strength of the player > 1:
 					say "[bold type]As your [ShortDesc of C] is removed, you feel the curse steal some [one of]of your strength! You probably can only recover the strength by wearing it again after you get it back...[or]more of your strength.[stopping][roman type][line break]";
 					increase the stolen-strength of C by 1;
 					decrease the raw strength of the player by 1;
 				now C is in Predicament20;
-			otherwise if tough-shit is 0 and C is not armband and C is not combat visor:
+			otherwise if C is listed in LC or (tough-shit is 0 and C is not armband and C is not combat visor):
 				now C is in Predicament-Pen;
 				add C to predicamentPenList;
 			otherwise:
@@ -145,6 +141,9 @@ To teleport via (W - a warp portal):
 			if ST is student, now team-predicament-partner is ST;
 		now predicamentsAvailable is the number of appropriate eligible predicaments;
 		now team-predicament-partner is nothing;
+		now the recently-used of school-fuckhole is 0;
+		repeat with ST running through alive students:
+			now the student-diaper-state of ST is 0;
 	reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 	if W is not in the Dungeon:
 		set next numerical response to "go to the Dungeon";
@@ -188,36 +187,34 @@ To teleport via (W - a warp portal):
 						say "[bold type]Just as you begin to step into the warp portal, [NameDesc of M] [bold type]appears and yanks on a nearby lever! [roman type][big he of M] grins a mischievous, vindictive grin and waves goodbye as the destination changes to the 'extra credit zone'!";
 						satisfy M;
 						now the destination of W is school;
-		if the destination of W is dungeon:
-			if armband is not sapphire and armband is not emerald and armband is worn:
-				if Hotel40 is not discovered:
-					if Woods01 is unplaced:
-						Set Up The Woods;
-						follow the setting up woods monsters rules;
-						repeat with M running through alive nonexistent monsters:
-							set up M;
-					if Hotel01 is unplaced:
-						Set Up The Hotel;
-						follow the setting up hotel monsters rules;
-						repeat with M running through alive nonexistent monsters:
-							set up M;
-					now the destination of W is hotel;
-					say "[bold type]The warp portal appears to shudder and glitch as you step into it. It's sending you to somewhere you didn't ask to go! Uh-oh...[roman type][line break]";
-					now NPF is 1;
-				otherwise if armband is not ruby and Mansion32 is not discovered:
-					if Woods01 is unplaced:
-						Set Up The Woods;
-						follow the setting up woods monsters rules;
-						repeat with M running through alive nonexistent monsters:
-							set up M;
-					if Mansion01 is unplaced:
-						Set Up The Mansion;
-						follow the setting up mansion monsters rules;
-						repeat with M running through alive nonexistent monsters:
-							set up M;
-					now the destination of W is mansion;
-					say "[bold type]The warp portal appears to shudder and glitch as you step into it. It's sending you to somewhere you didn't ask to go! Uh-oh...[roman type][line break]";
-					now NPF is 1;
+		if the destination of W is dungeon and armband is not sapphire and armband is not emerald and armband is worn and Mansion32 is not discovered:
+			if Woods01 is unplaced:
+				Set Up The Woods;
+				follow the setting up woods monsters rules;
+				repeat with M running through alive nonexistent monsters:
+					set up M;
+			if Mansion01 is unplaced:
+				Set Up The Mansion;
+				follow the setting up mansion monsters rules;
+				repeat with M running through alive nonexistent monsters:
+					set up M;
+			now the destination of W is mansion;
+			say "[bold type]The warp portal appears to shudder and glitch as you step into it. It's sending you to somewhere you didn't ask to go! Uh-oh...[roman type][line break]";
+			now NPF is 1;
+		otherwise if (the destination of W is dungeon or the destination of W is hotel) and armband is worn and armband is not sapphire and armband is not emerald and armband is not ruby and Hotel40 is not discovered:
+			if Woods01 is unplaced:
+				Set Up The Woods;
+				follow the setting up woods monsters rules;
+				repeat with M running through alive nonexistent monsters:
+					set up M;
+			if Hotel01 is unplaced:
+				Set Up The Hotel;
+				follow the setting up hotel monsters rules;
+				repeat with M running through alive nonexistent monsters:
+					set up M;
+			now the destination of W is hotel;
+			say "[bold type]The warp portal appears to shudder and glitch as you step into it. It's sending you to somewhere you didn't ask to go! Uh-oh...[roman type][line break]";
+			now NPF is 1;
 	repeat with P running through warp portals:
 		now P is not next-portal-forbidden;
 		if P is regionally in the destination of W, now D is P;

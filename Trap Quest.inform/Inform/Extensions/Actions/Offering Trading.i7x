@@ -95,7 +95,7 @@ To say MonsterCriminalOfferRejectFlav of (M - a monster) to (T - a thing):
 To say MonsterOfferAcceptFlav of (M - a monster) to (T - a thing):
 	if M is intelligent:
 		if M is unfriendly:
-			say "[BigNameDesc of M] smiles. [line break][speech style of M]'[if the bartering value of T for M + the favour of M > the aggro limit of M + 4]Wow, really? Thanks a lot! Maybe I've made a mistake judging you. You're alright.'[otherwise if the bartering value of T for M + the favour of M > the aggro limit of M]Heh, I can't turn down an offer like that. Thanks a bunch. We're cool now.'[otherwise]Fair enough, have it your way. I'll leave you alone... this time.'[end if][roman type][line break]";
+			say "[BigNameDesc of M] smiles.[line break][speech style of M]'[if the bartering value of T for M + the favour of M > the aggro limit of M + 4]Wow, really? Thanks a lot! Maybe I've made a mistake judging you. You're alright.'[otherwise if the bartering value of T for M + the favour of M > the aggro limit of M]Heh, I can't turn down an offer like that. Thanks a bunch. We're cool now.'[otherwise]Fair enough, have it your way. I'll leave you alone... this time.'[end if][roman type][line break]";
 		otherwise:
 			say "[BigNameDesc of M] seems elated.[line break][speech style of M]'Wow, thank you so much! How generous of you.'[roman type][line break]";
 	otherwise:
@@ -108,7 +108,8 @@ To compute resolution of (M - a monster) taking (T - a thing):
 	if M is intelligent and M is unfriendly:
 		say MonsterTakeFlav of M to T;
 		satisfy M;
-		FavourUp M by (1 + the bartering value of T for M) / 2;
+		let BV be the bartering value of T for M;
+		FavourUp M by ((1 + BV) / 2);
 		progress quest of christmas-quest;
 	otherwise if M is intelligent:
 		say OfferThanksFlav of M for T;
@@ -124,10 +125,12 @@ To compute final resolution of (M - a monster) taking (T - a thing):
 	only destroy T.
 
 To say OfferThanksFlav of (M - a monster) for (T - a thing):
-	say "[speech style of M]'Thanks a lot for this!'[roman type][line break]".
+	if the bartering value of T for M > 2, say "[speech style of M]'Thanks a lot for this!'[roman type][line break]".
 
 To compute offer reward of (M - a monster) for (T - a thing): [The NPC doesn't give anything in return by default.]
-	if M is intelligent, FavourUp M by (1 + the bartering value of T for M) / 2;
+	if M is intelligent:
+		let BV be the bartering value of T for M;
+		FavourUp M by ((1 + BV) / 2);
 	let X be nothing;
 	if M is buddy:
 		sort the tradableItems of M in random order;

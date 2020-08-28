@@ -132,7 +132,7 @@ To decide which figure-name is the examine-image of (C - a cage trap):
 	decide on figure of cage trap.
 
 To say ExamineDesc of (C - a cage trap):
-	say "A small cuboid metal cage with wide strong metal bars that fell down around you[if C is grabbing the player]. It seems like you should be able to just squeeze your way out between two bars, unless you've got something too thick to get through...[otherwise].[end if]".
+	say "A small cubical metal cage with wide strong metal bars that fell down around you[if C is grabbing the player]. It seems like you should be able to just squeeze your way out between two bars, unless you've got something too thick to get through...[otherwise].[end if]".
 
 To trigger (Y - a cage trap):
 	if the player is not in danger:
@@ -152,7 +152,7 @@ To compute reset cooldown of (T - a cage trap):
 		now T is not expired;
 		now T is unrevealed;
 		if T is in the location of the player:
-			say "[bold type]There is a sound of a rope creaking as the cage resets, rising back into the tree[if the player is not clothing stuck and the player is not body stuck], freeing you[end if].[roman type][line break]";
+			say "[bold type]There's the sound of a rope creaking as the cage resets, rising back into the tree[if the player is not clothing stuck and the player is not body stuck], freeing you[end if].[roman type][line break]";
 			if T is triggered:
 				repeat with C running through stuck clothing:
 					now C is not stuck;

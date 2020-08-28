@@ -1,10 +1,5 @@
 Sex Addiction by Player Description begins here.
 
-[!<SaySexAddictionDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say SexAddictionDesc:
 	if the sex addiction of the player < 4:
 		if the bimbo of the player < 4, say "[if the player is gendered male]You're the type of guy who likes fucking sluts, not getting fucked like a slut.[otherwise]You are not very comfortable sexually, and many would call you a prude.[end if]";

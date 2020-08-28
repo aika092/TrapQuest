@@ -1,10 +1,5 @@
 Resisting by Actions begins here.
 
-[!<MonsterIsFuckingDaddysHole>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a monster (called M) is fucking daddy's hole:
 	unless daddy's cock only tattoo is worn, decide no;
 	unless there is a mating monster, decide no;
@@ -18,26 +13,11 @@ Definition: a monster (called M) is wrong race fucking:
 	if once-you-go-black tattoo is worn and M is human and M is not dark skinned, decide yes;
 	decide no.
 
-[!<SayMaintainYourDignity>+
-
-REQUIRES COMMENTING
-
-+!]
 To say maintain your dignity:
 	say "[one of]maintain[or]retain[as decreasingly likely outcomes] [if the humiliation of the player < 17500]your[otherwise if the humiliation of the player < 30000]some[otherwise]whatever is left of your[end if] [one of]dignity[or]pride[or]self-esteem[as decreasingly likely outcomes]";
 
-[!<friendlyConfirmation:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 friendly-confirmation is a number that varies.
 
-[!<DecideWhichNumberIsFuckholePain>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is fuckhole pain:
 	let P be 0;
 	if there is a live thing penetrating asshole:
@@ -48,43 +28,26 @@ To decide which number is fuckhole pain:
 		if the soreness of vagina > a random number between 1 and 10, increase P by 1;
 	decide on P.
 
-[!<SayResistSubduedFlavOfClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To say ResistSubduedFlav of (C - a clothing):
 	say "You don't dare resist whilst your [ShortDesc of C] is in the hands of a malicious enemy!".
 
-[!<forcedSubmit:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 forced submit is a number that varies. forced submit is usually 0.
 
-[!<resisting:Action>*
-
-REQUIRES COMMENTING
-
-*!]
 Resisting is an action applying to nothing.
 
-[!<CheckResisting>+
-
-REQUIRES COMMENTING
-
-+!]
 Check resisting:
 	now forced submit is 0;
-	if the number of live things penetrating a body part + the number of things grabbing the player + the number of things wrangling a body part is 0, say "You are not being held in place, so there is nothing to resist against!" instead;
+	let PEN be the number of live things penetrating a body part;
+	let GRB be the number of things grabbing the player;
+	let WRN be the number of things wrangling a body part;
+	if PEN + GRB + WRN is 0, say "You are not being held in place, so there is nothing to resist against!" instead;
 	let P be fuckhole pain;
 	let M be a random monster penetrating an orifice;
 	if vampiress is penetrating an orifice, now M is vampiress;[she always gets resisted first, since she has mind control stuff to talk about]
 	if there is a fucking daddy's hole monster:
-		say "[one of][if the player is able to speak]You find yourself resisting the act. [line break][variable custom style]'That's not your hole!'[roman type][line break][otherwise]You have a deep down, uncontrollable feeling that the person doesn't deserve to enjoy your body.[end if][or][stopping]";
+		say "[one of][if the player is able to speak]You find yourself resisting the act.[line break][variable custom style]'That's not your hole!'[roman type][line break][otherwise]You have a deep down, uncontrollable feeling that the person doesn't deserve to enjoy your body.[end if][or][stopping]";
 	otherwise if there is a wrong race fucking monster:
-		say "[one of][if the player is able to speak]You find yourself resisting the act. [line break][variable custom style]'I only serve black [manly-penis]!'[roman type][line break][otherwise]You have a deep down, uncontrollable feeling that the person doesn't deserve to enjoy your body.[end if][or][stopping]";
+		say "[one of][if the player is able to speak]You find yourself resisting the act.[line break][variable custom style]'I only serve black [manly-penis]!'[roman type][line break][otherwise]You have a deep down, uncontrollable feeling that the person doesn't deserve to enjoy your body.[end if][or][stopping]";
 	otherwise if the latex-transformation of the player > 2 and there is a live thing penetrating a fuckhole:
 		say "Your gaping [if the player is not possessing a vagina][asshole] makes[otherwise]orifices make[end if] it impossible to resist!";
 		now forced submit is 1;[This tells the submission function not to display any flavour text.]
@@ -95,7 +58,7 @@ Check resisting:
 		try submitting instead;
 	otherwise if there is a baby bouncer grabbing the player and the player is upset about sitting in mess:
 		say "You can't bring yourself to do that while sitting in your own mess!" instead;
-	otherwise if the humiliation of the player >= 40000:
+	otherwise if the player is broken and PEN + GRB > 0:
 		say "[one of][line break][bold type]As you are a fully broken in sex object, you no longer even consider resisting an option. From now on, this verb will automatically submit instead.[roman type][line break][or][stopping]";
 		try submitting instead;
 	otherwise if there is a live thing penetrating asshole and gape-gloves is worn and gape-gloves is wrist-bound-behind:
@@ -145,20 +108,10 @@ Check resisting:
 		if the player is consenting, now friendly-confirmation is 1;
 		otherwise say "Action cancelled." instead.
 
-[!<CarryOutResisting>+
-
-REQUIRES COMMENTING
-
-+!]
 Carry out resisting:
 	now the player-reaction of the player is resisting;
 	allocate 6 seconds.
 
-[!<resistTarget:Object>*
-
-REQUIRES COMMENTING
-
-*!]
 resist-target is an object that varies.
 
 [!<ReportResisting>+
@@ -273,65 +226,30 @@ To say DefaultResistFlav of (T - a thing):
 To say DefaultResistReactionFlav of (T - a thing):
 	say "". [Can be customised for specific NPCs]
 
-[!<ComputeSexResistPunishmentOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute sex resist punishment of (M - a monster):
 	now resist-target is M;
 	choose a sex resist punishment.
 
 Understand "resist", "fight back", "escape", "run", "fight", "nono", "noway", "nn" as resisting.
 
-[!<SayForcedSubmitFlav>+
-
-REQUIRES COMMENTING
-
-+!]
 To say ForcedSubmitFlav:
 	say "You can't bring yourself to resist!".
 
-[!<SayPainResRefusalFlavOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To say PainResRefusalFlav of (M - a monster):
-	say "[one of]It hurts too much! You know resisting will only make it worse, so you focus on making it hurt as little as possible![or]You can[']t endure any more pain! There[']s no way you[']re going to make it worse by resisting![or]Resisting will only make it hurt more! You can[']t bring yourself to do anything but sit there and take it![at random]".
+	say "[one of]It hurts too much! You know resisting will only make it worse, so you focus on making it hurt as little as possible![or]You can't endure any more pain! There's no way you're going to make it worse by resisting![or]Resisting will only make it hurt more! You can't bring yourself to do anything but sit there and take it![at random]".
 
-[!<SayDelicateResRefusalFlavOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To say DelicateResRefusalFlav of (M - a monster):
-	say "[one of]You lie there and take it anyway - you're too afraid of what [he of M] might do if you don't play along.[or]You decide you're safer if you just do whatever [he of M] has in mind, no matter how degrading.[or]You[']re too afraid of what could happen if you put up a fight! There[']s no way you're doing anything but taking everything [he of M] wants to give you![or]You wouldn't dare resist now, not when [he of M] has you right where [he of M] wants you! You sit there and take it like the [if the player is gendered male]sissy bitch[otherwise]scaredy-cat[end if] you are![at random]".
+	say "[one of]You lie there and take it anyway - you're too afraid of what [he of M] might do if you don't play along.[or]You decide you're safer if you just do whatever [he of M] has in mind, no matter how degrading.[or]You're too afraid of what could happen if you put up a fight! There's no way you're doing anything but taking everything [he of M] wants to give you![or]You wouldn't dare resist now, not when [he of M] has you right where [he of M] wants you! You sit there and take it like the [if the player is gendered male]sissy bitch[otherwise]scaredy-cat[end if] you are![at random]".
 
-[!<SayOralAddResRefusalFlavOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To say OralAddResRefusalFlav of (M - a monster):
 	say "[one of]You try to resist, but in the end you can't stop yourself from polishing [his of M] [manly-penis] like the cum-hungry slut you are.[or]Your brain wants to resist, but your body doesn't. You submissively pleasure [NameDesc of M], desperate for your next semen fix.[or][if the player is feeling dominant]It's incredibly degrading, but you can't bring yourself to resist. Not when there's a [manly-penis] in your mouth just waiting to feed you a helping of delicious [semen].[otherwise]You can't bring yourself to resist knowing there could be a mouthful of tasty [semen] in this for you.[end if][or][if the player is not a pervert and the player is gendered female]You know it's something only a complete harlot would do, but you just can't pass up a mouthful of tasty [semen].[otherwise if the player is not a pervert]You know it's a little gay, but you just can't pass up a mouthful of tasty [semen].[otherwise]You can't help suckling [NameDesc of M][']s [manly-penis] for all it's worth. You might get to drink [semen] afterwards![end if][in random order]".
 
-[!<SayOralSlutResRefusalFlavOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To say OralSlutResRefusalFlav of (M - a monster):
 	if M is male, say "[one of][if the oral sex addiction of the player < 6]No matter how hard you try, you can't keep yourself from desperately suckling [his of M] [manly-penis].[otherwise]Why would you do something like that? Sucking [manly-penis]s is FUN![end if][or][if the oral sex addiction of the player < 6]You hate yourself for it, but you can't help suckling [his of M] [manly-penis] for all it's worth.[otherwise]You just can't bring yourself to resist. Not when there's such a big, yummy [manly-penis] in your mouth.[end if][in random order]";
 	otherwise say "You just can't bring yourself to resist; you love oral sex so much!".
 
-[!<SayThirstResRefusalFlavOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To say ThirstResRefusalFlav of (M - a monster):
-	say "[one of]You want to resist, you really do, but you're just so thirsty...[or]You tell yourself to resist, but your body needs something to drink, and it knows where to get it from.[or]You can[']t stop now. Now when you're so close to something that can wet your throat...[or]You can[']t bring yourself to resist [NameDesc of M] knowing that [his of M] balls are so full of something to drink.[or][if the player is feeling dominant]You try to stop, but in the end your[otherwise]Your[end if] thirst wins out and you obediently pleasure [him of M] like the slut you are.[at random]".
+	say "[one of]You want to resist, you really do, but you're just so thirsty...[or]You tell yourself to resist, but your body needs something to drink, and it knows where to get it from.[or]You can't stop now. Now when you're so close to something that can wet your throat...[or]You can't bring yourself to resist [NameDesc of M] knowing that [his of M] balls are so full of something to drink.[or][if the player is feeling dominant]You try to stop, but in the end your[otherwise]Your[end if] thirst wins out and you obediently pleasure [him of M] like the slut you are.[at random]".
 
 Part - Resist Punishments
 
@@ -344,63 +262,23 @@ REQUIRES COMMENTING
 @!]
 A sex resist punishment is a kind of object.
 
-[!<SexResistPunishment>@<priority:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 A sex resist punishment has a number called priority.
 
-[!<currentPriority>*
-
-REQUIRES COMMENTING
-
-*!]
 current-priority is a number that varies.
 
-[!<chosenSexResistPunishment:SexResistPunishment>*
-
-REQUIRES COMMENTING
-
-*!]
 chosen sex resist punishment is a sex resist punishment that varies.
 
-[!<resistPunishmentNotFound:SexResistPunishment>*
-
-REQUIRES COMMENTING
-
-*!]
 resist-punishment-not-found is a sex resist punishment.
 
-[!<ComputePunishmentOfSexResistPunishment>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute punishment of (P - a sex resist punishment):
 	say "BUG - the sex resist punishment '[P]' has no execution function!".
 
-[!<SexResistPunishmentIsAppropriate>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a sex resist punishment is appropriate: decide no.
 
-[!<SexResistPunishmentIsPrioritised>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a sex resist punishment (called P) is prioritised:
 	if the priority of P is current-priority, decide yes;
 	decide no.
 
-[!<ChooseASexResistPunishment>+
-
-REQUIRES COMMENTING
-
-+!]
 To choose a sex resist punishment:
 	now chosen sex resist punishment is resist-punishment-not-found;
 	now current-priority is 3;
@@ -410,45 +288,20 @@ To choose a sex resist punishment:
 		decrease current-priority by 1;
 	unless chosen sex resist punishment is resist-punishment-not-found, compute punishment of chosen sex resist punishment.
 
-[!<slapPunishment:SexResistPunishment>*
-
-REQUIRES COMMENTING
-
-*!]
 slap-punishment is a sex resist punishment. The priority of slap-punishment is 1.
 
-[!<MonsterIseagerToSlap>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a monster (called M) is eager to slap:
 	if M is intelligent and a random number between 1 and 5 is 1, decide yes;
 	decide no.
 
-[!<SlapPunishmentIsAppropriate>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: slap-punishment (called P) is appropriate:
 	if resist-target is spanking the player, decide no;
 	if resist-target is eager to slap, decide yes;
 	decide no.
 
-[!<ComputePunishmentOfSlapPunishment>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute punishment of (P - slap-punishment):
 	compute sex resist slap of resist-target.
 
-[!<SexResistSlapOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute sex resist slap of (M - a monster):
 	say SexResistSlapFlav of M;
 	PainUp 1.
@@ -456,44 +309,19 @@ To compute sex resist slap of (M - a monster):
 To say SexResistSlapFlav of (M - a monster):
 	say "[BigNameDesc of M] [if M is intelligent][one of]cackles[or]laughs deeply[or]chuckles[or]snorts[at random] at your [one of]fruitless display[or]vain efforts[or]pointless attempts[or]futile resistance[at random][otherwise]looks at you blankly[end if] before [if M is male and M is penetrating face]slapping you harshly on the cheek[otherwise if M is male and M is penetrating breasts]painfully slapping your [BreastDesc][otherwise]roughly spanking your [buttcheeks][end if] [one of]to get you to behave[or]in order to keep you under control[or]as punishment[or]to discourage further disobedience[at random].".
 
-[!<angerPunishment:SexResistPunishment>*
-
-REQUIRES COMMENTING
-
-*!]
 anger-punishment is a sex resist punishment. The priority of anger-punishment is 1.
 
-[!<MonsterIsEagerToGetAngry>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a monster (called M) is eager to get angry:
 	if M is intelligent and a random number between 1 and 3 is 1, decide yes;
 	decide no.
 
-[!<AngerPunishmentIsAppropriate>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: anger-punishment (called P) is appropriate:
 	if resist-target is eager to get angry, decide yes;
 	decide no.
 
-[!<ComputePunishmentOfAngerPunishment>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute punishment of (P - anger-punishment):
 	compute sex resist anger of resist-target.
 
-[!<ComputeSexResistAngerOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute sex resist anger of (M - a monster):
 	if diaper quest is 1 and M is intelligent:
 		say DQResistChastise of M;

@@ -23,8 +23,12 @@ Check browsing:
 			say "You'll need to be holding that if you want to be able to read it." instead;
 	allocate 6 seconds.
 
-Definition: a pocketbook is fetish appropriate if diaper quest is 0.
-Definition: a pocketbook is ingredient if it is not product.
+Definition: a pocketbook is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
+Definition: a pocketbook is ingredient:
+	if it is not product, decide yes;
+	decide no.
 Definition: a pocketbook is brown themed: decide yes.
 Definition: a pocketbook is book themed: decide yes.
 
@@ -91,7 +95,7 @@ Section 2 - Book of Do Overs
 A book of regrets is a kind of pocketbook. There is 1 book of regrets. The text-shortcut of book of regrets is "bdo". Understand "do over", "doover", "do-over", "do overs", "do-overs", "overs", "my top 100", "top 100", "100" as book of regrets.
 
 To say ClothingDesc of (C - a book of regrets):
-	say "A small white pocket book [if diaper lover >= 1]with a picture of a confused looking woman in a diaper on the cover. Another woman is standing over her, sternly brandishing a dirty pair of undies.[otherwise if bukkake fetish is 1]with a picture of a naked woman surrounded by men on the cover. She's mid shrug, and there's a strangely wistful look on her face, which is absolutely plastered with [semen].[otherwise]with a picture of an anxious looking maid on the cover. A broken vase is on the floor in front of her, and behind her you can see her stern faced employer, holding a coiled up rope.[end if] 'Me and my Top 100 Do-overs, by [NameBimbo]' is superimposed over her forehead in big, red capital letters. [line break][variable custom style][one of]Is that my name? But [or][stopping]I didn't write this![roman type][line break]".
+	say "A small white pocket book [if diaper lover >= 1]with a picture of a confused looking woman in a diaper on the cover. Another woman is standing over her, sternly brandishing a dirty pair of undies.[otherwise if bukkake fetish is 1]with a picture of a naked woman surrounded by men on the cover. She's mid shrug, and there's a strangely wistful look on her face, which is absolutely plastered with [semen].[otherwise]with a picture of an anxious looking maid on the cover. A broken vase is on the floor in front of her, and behind her you can see her stern faced employer, holding a coiled up rope.[end if] 'Me and my Top 100 Do-overs, by [NameBimbo]' is superimposed over her forehead in big, red capital letters.[line break][variable custom style][one of]Is that my name? But [or][stopping]I didn't write this![roman type][line break]".
 
 To say ShortDesc of (C - a book of regrets):
 	say "book of do-overs".
@@ -141,7 +145,7 @@ Carry out browsing book of regrets:[TODO: player says something like "I didn't w
 		PussyClose 5;
 		if the noun is blessed and a random number between 1 and 3 is 1, decrease P by 2;
 		ruin vagina times (the previous openness of vagina - the openness of vagina + P + 5);
-	otherwise if R is 1 and the analvirgin of the player is 0 and the player is male and the openness of asshole > 5:
+	otherwise if R is 1 and the analvirgin of the player is 0 and the player is not possessing a vagina and the openness of asshole > 5:
 		say "'[one of]Ever since that first time, all I can think about is getting my prostate pounded by that huge [manly-penis]! Now, that's the only way I get any satisfaction at all! It's not my fault my hot fuckhole makes such a great cumdump[or]I still get tingles in my [asshole] whenever I think about my first time. I'd sit on anyone's hard cock and bounce on it until they came if I could just get a second chance! It's only fair I should get to choose who breeds my nasty fuckhole[or]It seems like every time I meet a real [man of shopkeeper], [he of shopkeeper] decides the best place for [his of shopkeeper] [manly-penis] is up my [sissy] ass! I know you can't get your virginity back, but my slutty boy hole is getting tired of all these thick creamy loads[at random]! I want a do-over.' You cringe at what's written on the page, partly because of the [if the bimbo of the player > 14]prudish[end if]wording, but also because it captures how you've always felt on the inside ever since your first time getting fucked that way. The words light up as the book emits a wave of energy, erasing themselves from the page as your [asshole] suddenly and very painfully begins tightening up.";
 		AssClose 5;
 		if the noun is blessed and a random number between 1 and 3 is 1, decrease P by 2;
@@ -206,29 +210,29 @@ Carry out browsing book of anal:[If books are never made easier to get, this pro
 	say "You thumb through the book, which is full of incredibly graphic depictions of [one of]the eponymous Brandi[or]'Brandi'[or]a woman named Brandi[at random] engaged in anal sex.";
 	let R be a random number between 1 and 7;
 	if the player is horny and R >= 4 and the player is able to automatically masturbate:[TODO: automatic ass wank]
-		say " [line break][variable custom style][if the bimbo of the player < 8 and the player is male]Nothing wrong with a quick wank...[otherwise if the bimbo of the player < 8]I-I can't believe I'm about to do this...[otherwise if the analvirgin of the player is 1]T-that was... H-he came right when... and... and... I have to get off. I have to get off RIGHT now.[otherwise if the bimbo of the player < 13]I can't help myself...[otherwise]Ugh, now I HAVE to masturbate! Maybe someone will find me and take over...[end if][roman type][line break]";
+		say "[line break][variable custom style][if the bimbo of the player < 8 and the player is male]Nothing wrong with a quick wank...[otherwise if the bimbo of the player < 8]I-I can't believe I'm about to do this...[otherwise if the analvirgin of the player is 1]T-that was... H-he came right when... and... and... I have to get off. I have to get off RIGHT now.[otherwise if the bimbo of the player < 13]I can't help myself...[otherwise]Ugh, now I HAVE to masturbate! Maybe someone will find me and take over...[end if][roman type][line break]";
 		now auto is 1;
 		try masturbating;
 		now auto is 0;
 	otherwise if R < 4:
 		if R is 1:
-			say " You come to a page depicting a montage of Brandi getting pounded by at least 10 different cocks (and one very large dildo), captioned: [line break][second custom style]'Learn how I can handle 43 ass-fuckings in a row using this one weird tip! Lube companies will HATE you!'[roman type][line break]";
+			say " You come to a page depicting a montage of Brandi getting pounded by at least 10 different cocks (and one very large dildo), captioned:[line break][second custom style]'Learn how I can handle 43 ass-fuckings in a row using this one weird tip! Lube companies will HATE you!'[roman type][line break]";
 			say " The 'tip' is surprisingly detailed and hard to remember, but something about keeping the book in your hand is helping you remember what [bold type]you've learned about resisting soreness.[roman type]";
 			now the noun is tolerance;
 			arouse 300;
 		if R is 2:
-			say " You flip through the book until you encounter a page showing Brandi [']sitting['] on top of a male client. A long line of customers extends out behind her, covered up by some text. [line break][second custom style]'I dealt with SO many ungrateful boy-toys when I was getting into the business, I realised it just wasn't enough fun to destroy my asshole! Like everyone, I tried glitter first, but when that didn't work I came up with my very own technique that keeps [']em waiting and satisfied at the same time!'[roman type][line break]";
+			say " You flip through the book until you encounter a page showing Brandi [']sitting['] on top of a male client. A long line of customers extends out behind her, covered up by some text.[line break][second custom style]'I dealt with SO many ungrateful boy-toys when I was getting into the business, I realised it just wasn't enough fun to destroy my asshole! Like everyone, I tried glitter first, but when that didn't work I came up with my very own technique that keeps [']em waiting and satisfied at the same time!'[roman type][line break]";
 			say " The next page contains a surprising amount of text, and it's a bit hard to remember, but keeping this book in your hand to remind you makes you feel like [bold type]people will start treat you better after anal sex.[roman type]";
 			now the noun is enhancing;
 			arouse 300;
 		if R is 3:
-			say " You come to a page with Brandi bent over a table, smirking over her shoulder. There's a lot of text on the page, but somehow all you can think about is what it would be like to kneel down behind her and stick your tongue in her [asshole]. Eventually you manage to tear your eyes away, but the image stays firmly in the back of your mind as you read her tip. [line break][second custom style]'Some boys think they're too good for the backdoor, but that's no reason to let a big horny cock go to waste! It's as easy as visualising your cumdump as the most fun place for anybody to be! Keep that image in your head and people will be lining up for a turn in your ass!'[roman type][line break]";
+			say " You come to a page with Brandi bent over a table, smirking over her shoulder. There's a lot of text on the page, but somehow all you can think about is what it would be like to kneel down behind her and stick your tongue in her [asshole]. Eventually you manage to tear your eyes away, but the image stays firmly in the back of your mind as you read her tip.[line break][second custom style]'Some boys think they're too good for the backdoor, but that's no reason to let a big horny cock go to waste! It's as easy as visualising your cumdump as the most fun place for anybody to be! Keep that image in your head and people will be lining up for a turn in your ass!'[roman type][line break]";
 			say "[bold type]As long as you have this book to keep that image fresh in your mind, your [asshole] will seem like a much better place to fuck![roman type]";
 			now the noun is provoking;
 			arouse 300;
 	otherwise:
 		if R is 6 and the sex addiction of the player < 12:[increase delicateness at low sex addiction]
-			say " [line break][variable custom style][one of]That looks like it hurts. Will that happen to me?[or]I can't imagine how it would feel to take two [if the player is not possessing a vagina]at the same time[otherwise]in there at the same time[end if]. I know I couldn't stand it...[or]I don't ever want to take anything that big. I'd just cry if anyone made me do that...[or]She can't really enjoy that, can she? I know I couldn't, that's way too big...[or]He didn't even clean it first! I don't want anything to do with that![at random][roman type][line break][run paragraph on]";
+			say "[line break][variable custom style][one of]That looks like it hurts. Will that happen to me?[or]I can't imagine how it would feel to take two [if the player is not possessing a vagina]at the same time[otherwise]in there at the same time[end if]. I know I couldn't stand it...[or]I don't ever want to take anything that big. I'd just cry if anyone made me do that...[or]She can't really enjoy that, can she? I know I couldn't, that's way too big...[or]He didn't even clean it first! I don't want anything to do with that![at random][roman type][line break][run paragraph on]";
 			DelicateUp 1;
 		otherwise if R is 7 and the anal sex addiction of the player < 10:
 			say " [if the anal sex addiction of the player < 3 and the player is male][line break][first custom style][one of]That actually looks pretty good for the one on the bottom...[or]Some of these shots make the guy look good too. Must be the angle or something.[at random][otherwise if the anal sex addiction of the player < 5][first custom style][one of]I guess it isn't all bad. I could see how some people might like it.[or]Not that I'd ever willingly let someone to that to me, but if I had to, that's the position I would pick.[at random][otherwise if the analvirgin of the player is 1][line break][variable custom style][one of]That actually seems like it would feel pretty good...[or]Is that really what anal is like? Wow...[or]I guess I can see why she would write a book about anal. It looks like she's having so much fun...[or]So that's why it feels better if he doesn't pull out. I'm learning so much...[or]Wow... it looks like she's really enjoying that.[at random][otherwise if the anal sex addiction of the player < 7][variable custom style][one of]I guess if he does it like that it would feel pretty great.[or]That did feel pretty good when it happened to me...[or]I guess it really did feel that good. I kind of want to do it even more now.[at random][otherwise][line break][second custom style][one of]I wish someone would fuck me like that...[or]It's great to read about someone getting enthusiastic about getting pounded![or]These dicks are so big... where did she find these guys? I want to meet them![at random][end if][roman type][line break]";
@@ -245,7 +249,9 @@ A notebook is a kind of pocketbook. There is 1 notebook. A notebook is usually u
 
 A study-buddy is a thing that varies. study-buddy is the throne.
 
-Definition: a notebook is fetish appropriate if diaper quest is 0.
+Definition: a notebook is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 
 To say ClothingDesc of (W - a notebook):
 	let X be the number of notebook-studied monsters;
@@ -289,7 +295,7 @@ To compute studying (N - a number) of (M - a monster):
 	otherwise:[kill]
 		if M is notebook-studied:
 			if a random number between -2 and 4 > C:
-				say "The [printed name of G] shivers, and you feel a rush of information moving up your body, straight toward your brain. You feel smarter!";
+				say "The [printed name of G] shivers, and you feel a rush of information moving up your body, straight toward your brain. You feel [smarter]!";
 				IntUp 1;
 			otherwise:
 				repeat with X running through monsters in the location of the player:

@@ -31,67 +31,27 @@ To BackgroundRender (T - candy machine) at (X1 - a number) by (Y1 - a number) wi
 	draw a rectangle button-colour of T in the current focus window at X1 by Y1 with size DX by DY.
 ]
 
-[!<CandyMachine>@<recentUses:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 A candy machine has a number called recent uses.
 
-[!<CandyMachine>@<combo:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 A candy machine has a number called combo.
 
-[!<starterPackGiven:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 starting-pack-given is a number that varies.
 
-[!<DecideWhichNumberIsMaxCandy>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is max-candy:
 	if the class of the player is trick-or-treater, decide on 0;
 	decide on 3.
 
-[!<SayCandyMachineDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say ExamineDesc of (C - candy machine):
 	say "A large modern vending machine with a picture of a candy in its wrapper on the front. There is a big light-up button on the front. It is currently [if the number of on-stage candy >= max-candy]off[otherwise if the recent uses of item described is 0]green[otherwise if the recent uses of item described is -1]gold[otherwise]red[end if].".
 
-[!<CandyMachine>@<IsComboReady>+
-
-REQUIRES COMMENTING
-
-+@!]
 Definition: a candy machine (called C) is combo-ready:
 	if the combo of C is 1, decide yes;
 	decide no.
 
-[!<CandyMachine>@<IsComboInactive>+
-
-REQUIRES COMMENTING
-
-+@!]
 Definition: a candy machine (called C) is combo-inactive:
 	if the combo of C is 0, decide yes;
 	decide no.
 
-[!<ProgressCandyMachinesFromCandyMachine>+
-
-REQUIRES COMMENTING
-
-+!]
 To progress candy machines from (M - a candy machine):
 	repeat with C running through candy machines:
 		if the recent uses of C > 0 and C is not M:
@@ -106,51 +66,21 @@ To progress candy machines from (M - a candy machine):
 			repeat with C running through candy machines:
 				now the combo of C is 0.
 
-[!<CheckTakingCandyMachine>+
-
-REQUIRES COMMENTING
-
-+!]
 Check taking candy machine:
 	try CandyObtaining the noun instead.
 
-[!<candyObtaining:Action>*
-
-REQUIRES COMMENTING
-
-*!]
 CandyObtaining is an action applying to one thing.
 
-[!<CheckCandyObtaining>+
-
-REQUIRES COMMENTING
-
-+!]
 Check CandyObtaining:
 	if the noun is not candy machine, say "This verb is used for operating vending machines." instead;
 	if the player is immobile or there is a thing wrangling a body part, say "Aren't you a bit busy?" instead.
 
-[!<CheckDrinkingCandyMachine>+
-
-REQUIRES COMMENTING
-
-+!]
 Check drinking candy machine:
 	try CandyObtaining the noun instead.
 
-[!<CheckPushingCandyMachine>+
-
-REQUIRES COMMENTING
-
-+!]
 Check pushing candy machine:
 	try CandyObtaining the noun instead.
 
-[!<CarryOutCandyObtaining>+
-
-REQUIRES COMMENTING
-
-+!]
 Carry out CandyObtaining:
 	say "You press the button[if the player is wrist bound behind] with your nose[end if]. ";
 	allocate 3 seconds;
@@ -193,19 +123,9 @@ Carry out CandyObtaining:
 		increase the combo of the noun by 1;
 		progress candy machines from the noun.
 
-[!<ReportTQEatingCandy>+
-
-REQUIRES COMMENTING
-
-+!]
 Report TQeating candy:
 	if there is a candy machine in the location of the player and the number of on-stage candy is max-candy - 1, say "The candy machine's light turns back on.".
 
-[!<ReportGoingEastWhenThePlayerIsInDungeon32>+
-
-REQUIRES COMMENTING
-
-+!]
 Report going east when the player is in Dungeon32:
 	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Candy machines are your primary source of food. You'll only be able to have a maximum of three at any time so you'll need to periodically eat some and then come back to machines for more. There's one in each region of the game. After you use a candy machine its light will turn red, and it'll only give you worse candy until you use a different candy machine in other regions. This means that you'll need to keep moving between regions to get the best candy. If you use all the candy machines except one in a row, the final one will turn golden and give you an extra special candy when you use it! It's strongly recommended for you to use this one now, as it'll give you your 'starting pack' of three candies. You can either eat some immediately or wait until you actually get hungry.[roman type][line break][or][stopping]".
 

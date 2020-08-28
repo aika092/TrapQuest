@@ -3,7 +3,9 @@ Removability by Clothing begins here.
 Definition: a thing is removable: decide yes.
 Definition: a tattoo is removable: decide no.
 
-Definition: a thing is unremovable if it is not removable.
+Definition: a thing is unremovable:
+	if it is not removable, decide yes;
+	decide no.
 
 [!<ThingIsStealable>+
 
@@ -24,7 +26,9 @@ Definition: a thing (called C) is stealable: [Some clothing can never be stolen 
 	if C is worn:
 		if C is not actually strippable, decide no; [This checks if it can be removed by NPCs without destroying it]
 	decide yes.
-Definition: a thing is unstealable if it is not stealable.
+Definition: a thing is unstealable:
+	if it is not stealable, decide yes;
+	decide no.
 
 [!<ThingIsDestructible>+
 
@@ -38,7 +42,9 @@ This definition determines whether or not an item can be conventionally "destroy
 Definition: a thing (called C) is destructible:
 	if C is metal, decide no;
 	decide yes.
-Definition: a thing is indestructible if it is not destructible.
+Definition: a thing is indestructible:
+	if it is not destructible, decide yes;
+	decide no.
 
 [!<ThingIsTearable>+
 
@@ -106,6 +112,12 @@ This is the not wearing rule:
 		rule fails.
 The not wearing rule is listed in the global removability rules.
 
+This is the sex doll struggles rule:
+	if the latex-transformation of the player is 8 and summoning is 0 and wearing-target is not wrist bond and wearing-target is not ankle bond:
+		if autoremove is false, say "You don't have the manual dexterity to do that!";
+		rule fails.
+The sex doll struggles rule is listed in the global removability rules.
+
 This is the unremovable rule:
 	if wearing-target is unremovable and wipeChecking is false:
 		if summoning is 0 and autoremove is false, say "You can't find any way to take it off!";
@@ -113,16 +125,28 @@ This is the unremovable rule:
 The unremovable rule is listed in the global removability rules.
 
 This is the cursed unremovable rule:
-	if wearing-target is cursed clothing and summoning is 0 and the class of the player is not cultist:
+	if wearing-target is cursed curse-sticky clothing and summoning is 0 and the class of the player is not cultist and (wearing-target is headgear or the player is not in Predicament20):
 		if autoremove is false, say "It won't budge! It's magically forcing you to keep [if wearing-target is equippable]wielding[otherwise]wearing[end if] it.";
 		rule fails.
 The cursed unremovable rule is listed in the global removability rules.
+
+Carry out taking off cursed clothing:
+	if the player is in Predicament20 and the class of the player is not cultist and the raw strength of the player > 1:
+		say "As you take off [NameDesc of the noun], it takes some of your strength with it, as if to make sure that you want to put it back on as soon as you're finished rearranging your outfit.";
+		increase the stolen-strength of the noun by 1;
+		decrease the raw strength of the player by 1.
 
 This is the locked unremovable rule:
 	if wearing-target is locked clothing:
 		if autoremove is false and summoning is 0, say "It's locked on! You'll need to find someone with a key.";
 		rule fails.
 The locked unremovable rule is listed in the global removability rules.
+
+This is the immobile unremovable rule:
+	if summoning is 0 and the player is immobile and (the wearing-target is not shoes or the player is not dildo stuck):
+		if autoremove is false, say "You're a bit tied up at the moment!";
+		rule fails.
+The immobile unremovable rule is listed in the global removability rules.
 
 This is the people won't automatically remove glue rule:
 	if wearing-target is glued clothing and (summoning is 1 or autoremove is true), rule fails.
@@ -169,9 +193,5 @@ This is the bottom layer removal rule:
 				if summoning is 0 and autoremove is false, say "You can't remove that without first removing your [printed name of A]!";
 				if autolayerremove is false, rule fails.
 The bottom layer removal rule is listed in the global removability rules.
-
-Check taking off clothing:
-	now summoning is 0;
-	unless the noun is actually removable, do nothing instead.
 
 Removability ends here.

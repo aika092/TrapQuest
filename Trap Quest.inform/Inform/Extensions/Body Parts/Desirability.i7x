@@ -1,56 +1,21 @@
 Desirability by Body Parts begins here.
 
-[!<blowjobSlut:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 blowjob-slut is a number that varies.
 
-[!<pussySlut>*
-
-REQUIRES COMMENTING
-
-*!]
 pussy-slut is a number that varies.
 
-[!<buttSlut:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 butt-slut is a number that varies.
 
-[!<titSlut:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 tit-slut is a number that varies.
 
-[!<targetedBodyPart:Object>*
-
-REQUIRES COMMENTING
-
-*!]
 targeted-body-part is an object that varies.
 
-[!<DecideWhichNumberIsTotalDesirability>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is total desirability:
 	let N be 0;
 	repeat with B running through actual target body parts:
 		unless B is presented-orifice and the number of actual target body parts > 1, increase N by the desirability of B;
 	decide on N.
 
-[!<ChooseASexMethod>+
-
-REQUIRES COMMENTING
-
-+!]
 To choose a sex method:
 	now targeted-body-part is nothing;
 	if current-monster is butt slut immune:
@@ -64,21 +29,11 @@ To choose a sex method:
 					now targeted-body-part is B;
 					break.
 
-[!<BodyPartIsMostDesirable>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a body part (called B) is most desirable:
 	repeat with P running through body parts:
 		if B is not P and the desirability of P >= the desirability of B, decide no;
 	decide yes.
 
-[!<TheDeterminingDesirabilityRule>+
-
-REQUIRES COMMENTING
-
-+!]
 An all time based rule (this is the determining desirability rule):
 	if diaper quest is 0:
 		now the desirability of face is 5 + the number of worn oral sex themed wearthings;
@@ -380,7 +335,7 @@ To compute seduction grope of (M - a monster):
 		if refractoryperiod > RF, compute grope orgasm reaction of M.
 
 To say BreastsGropeFlav of (M - a person):
-	if M is not unintelligent monster, say "[speech style of M]'[one of]My my my, what a lovely pair!'[or]These funbags are just begging to be played with!'[or]Do you really expect people to just leave these alone when you wlak around looking like this?'[or]Wow, today is my lucky day!'[or]Whoops, my hands must have slipped...'[or]Honk honk!'[in random order][roman type][line break]".
+	if M is not unintelligent monster, say "[speech style of M]'[one of]My my my, what a lovely pair!'[or]These funbags are just begging to be played with!'[or]Do you really expect people to just leave these alone when you walk around looking like this?'[or]Wow, today is my lucky day!'[or]Whoops, my hands must have slipped...'[or]Honk honk!'[in random order][roman type][line break]".
 To compute breasts grope of (M - a person):
 	say "[BigNameDesc of M] [one of]roughly[or]lewdly[or]eagerly[in random order] [one of]grabs[or]molests[or]gropes[or]squeezes[in random order] your [ShortDesc of breasts] with both hands[unless there is worn rigid actually nipple covering clothing], making sure to tweak your nipples hard[end if]!".
 
@@ -408,7 +363,7 @@ To compute asshole grope of (M - a person):
 		force immediate inventory-focus redraw.
 
 To say VaginaGropeFlav of (M - a person):
-	if M is not unintelligent monster, say "[speech style of M]'[if vagina is lewdly exposed][one of]Your [cunt] is on display[or]You're showing me your [pussy][in random order][one of], eh? Is that an invitation?'[or]. Most people would take that to mean you want to fuck...'[or], [slut].'[or]...'[or]. Disgraceful!'[in random order][otherwise if vagina is at least partially lewdly exposed][one of]My my, what can I spy between those thighs of yours?'[or]Is this really your [pussy] I can see the outline of down here?'[or]Did I just catch a glimpse of your [pussy]?'[in random order][otherwise][one of]Your [pussy] is calling to me, [slut]...'[or]Are you wet down there? I bet you're wet down there.'[or]When you walk around looking like that, you're asking for this.'[in random order][end if][roman type][line break]".
+	if M is not unintelligent monster, say "[speech style of M]'[if vagina is lewdly exposed][one of]Your [cunt] is on display[or]You're showing me your [pussy][in random order][one of], eh? Is that an invitation?'[or]. Most people would take that to mean you want to fuck...'[or], [slut].'[or]...'[or]. Disgraceful!'[in random order][otherwise if vagina is at least partially lewdly exposed][one of]My my, what can I spy, between a pair of saucy thighs?'[or]Is this really your [pussy] I can see the outline of down here?'[or]Did I just catch a glimpse of your [pussy]?'[in random order][otherwise][one of]Your [pussy] is calling to me, [slut]...'[or]Are you wet down there? I bet you're wet down there.'[or]When you walk around looking like that, you're asking for this.'[in random order][end if][roman type][line break]".
 To compute vagina grope of (M - a person):
 	let C be a random top level protection clothing;
 	let S be a random worn skirted crotch-in-place clothing;
@@ -479,13 +434,13 @@ To compute grope reaction of (M - a person):
 		say "You can't help but shiver.";
 	otherwise if the player is a nympho:
 		say "You shiver with arousal.";
-		if the player is able to speak, say "[second custom style]'[if the player is feeling submissive][one of]Thank you for giving my slutty body your attention, [master of M].'[or]Thank you [master of M]. Please feel free to fuck me whenever you want.'[or]Aah~! This disgusting whore is thankful for any and all attention!'[or]Oh thank you [master of M]! I don't deserve such gentle treatment...'[in random order][otherwise if the player is not feeling dominant][one of]Oh is that it? I kind of thought you were going to fuck me...'[or]Oh my~! You know just how to touch me, [stud of M]!'[or]Oooh, is that your idea of foreplay, [stud of M]?'[or]Well aren't you quite the charmer!'[in random order][otherwise][one of]Is that a challenge? Don't expect me to go easy on you!'[or]Oh [stud of M], if we fuck, I'll be the one on top.'[or]Careful now, if you get me too worked up, you'll be the one that regrets it...'[in random order][end if][roman type][line break]";
+		if the player is able to speak, say "[second custom style]'[if the player is feeling submissive][one of]Thank you for giving my slutty body your attention, [stud of M].'[or]Thank you [stud of M]. Please feel free to fuck me whenever you want.'[or]Aah~! This disgusting whore is thankful for any and all attention!'[or]Oh thank you [stud of M]! I don't deserve such gentle treatment...'[in random order][otherwise if the player is not feeling dominant][one of]Oh is that it? I kind of thought you were going to fuck me...'[or]Oh my~! You know just how to touch me, [stud of M]!'[or]Oooh, is that your idea of foreplay, [stud of M]?'[or]Well aren't you quite the charmer!'[in random order][otherwise][one of]Is that a challenge? Don't expect me to go easy on you!'[or]Oh [stud of M], if we fuck, I'll be the one on top.'[or]Careful now, if you get me too worked up, you'll be the one that regrets it...'[in random order][end if][roman type][line break]";
 	otherwise if the player is a pervert:
 		say "[one of]You try to ignore the arousal that [his of M] touch has sent to your [genitals][or]You can't help but shiver with arousal[or]Your heart flutters[or]Your breath quickens[in random order].";
 		if the player is able to speak, say "[variable custom style]'[if the player is feeling submissive][one of]T-thank you, I think...'[or]Aah~! Please be gentle with me...'[or]Haaaah~!'[or]Eek! That feels... Ooh...'[or]Eep! You surprised me!'[in random order][otherwise if the player is not feeling dominant][one of]Eep! What happened to asking someone first?!'[or]Oh my! How crude!'[or]Aah~! Well, I guess it's better than you trying to fuck me...'[or]Eek! Is this your crude attempt at flirting?!'[in random order][otherwise][one of]H-Hey! Don't touch what isn't yours, unless you want a fight.'[or]Careful [stud of M]. I might decide to do the same to you, or worse.'[or]Oi! Do I look like the kind of [man of the player] who is going to just bend over for the first [stud of M] who touches me there?!'[in random order][end if][roman type][line break]";
 	otherwise:
 		say "[if the player is feeling submissive]You squeal with indignation[otherwise if the player is not feeling dominant]You snarl with anger[otherwise if the player is not able to use their hands]You shake with anger[otherwise]You smack [his of M] hand away[end if].";
-		if the player is able to speak, say "[if the player is feeling submissive][variable custom style]'[one of]T-that's much too forward...'[or]Nooo, please don't touch me there, [master of M]!'[or]Haaaah~! Please, I'm not that kind of [boy of the player]...'[or]Eek! That feels wrong!'[or]Eep! You can't just do that to people with no warning!'[in random order][otherwise if the player is not feeling dominant][variable custom style]'[one of]Is that really how people treat each other around here?!'[or]H-hey! You can't just grope people like that!'[or]What the hell was that?!'[or]Hey, get off me!'[in random order][otherwise][variable custom style]'[one of]What the fuck! Did I say you could touch me?!'[or]Hey! No touching, motherfucker!'[or]What the fuck do you think you're doing?!'[or]Get the fuck away from me, creep!'[or]Hey! Keep your hands to yourself, you fucking pervert!'[or]What the fuck! Are you looking for a fight?!'[or]Don't fucking touch me! Step the fuck back before I cave in your skull.'[in random order][end if][roman type][line break]".
+		if the player is able to speak, say "[if the player is feeling submissive][variable custom style]'[one of]T-that's much too forward...'[or]Nooo, please don't touch me there, [stud of M]!'[or]Haaaah~! Please, I'm not that kind of [boy of the player]...'[or]Eek! That feels wrong!'[or]Eep! You can't just do that to people with no warning!'[in random order][otherwise if the player is not feeling dominant][variable custom style]'[one of]Is that really how people treat each other around here?!'[or]H-hey! You can't just grope people like that!'[or]What the hell was that?!'[or]Hey, get off me!'[in random order][otherwise][variable custom style]'[one of]What the fuck! Did I say you could touch me?!'[or]Hey! No touching, motherfucker!'[or]What the fuck do you think you're doing?!'[or]Get the fuck away from me, creep!'[or]Hey! Keep your hands to yourself, you fucking pervert!'[or]What the fuck! Are you looking for a fight?!'[or]Don't fucking touch me! Step the fuck back before I cave in your skull.'[in random order][end if][roman type][line break]".
 
 To compute grope orgasm reaction of (M - a person):
 	say "You shiver with [if the player is disgraced]arousal[otherwise]shame[end if].";
@@ -706,10 +661,13 @@ To compute seduction choice of (M - a monster):
 	otherwise if MCQ matches the text "suggest":
 		now auto is 2; [no flavour output for being told you're not able, but yes flavour output when actually doing it]
 		let PB be the list of actually presentable body parts;
-		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
-		repeat with B running through PB:
-			set next numerical response to "[if B is asshole]anal[otherwise if B is vagina]vaginal[otherwise if B is penis]your penis[otherwise if B is breasts]titfuck[otherwise if B is face]blowjob[otherwise]GLITCH[end if]";
-		compute multiple choice question;
+		if the number of entries in PB > 1:
+			reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+			repeat with B running through PB:
+				set next numerical response to "[if B is asshole]anal[otherwise if B is vagina]vaginal[otherwise if B is penis]your penis[otherwise if B is breasts]titfuck[otherwise if B is face]blowjob[otherwise]GLITCH[end if]";
+			compute multiple choice question;
+		otherwise:
+			now player-numerical-response is 1;
 		let B be entry player-numerical-response of PB;
 		try direct-presenting B to M;
 		now auto is 0;
@@ -842,7 +800,7 @@ To compute SeductionMasturbate of (M - a monster):
 		increase the blue-balls of M by 2;
 	let R be a random number between 0 and 2;
 	if the player is upright:
-		say "Your upright position makes this act a bit more awkward and fumbly.";
+		say "Your upright position makes this act a bit more awkward and fumbling.";
 		now R is a random number between 0 and 4;
 	if a random number between 1 and the sex-length of M > a random number between 0 and 2, compute StrongSexProgress of M;
 	otherwise compute StrongSexFalter of M.

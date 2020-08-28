@@ -1,10 +1,5 @@
 Fatigue by Player begins here.
 
-[!<Player>@<fatigue:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 The player has a number called fatigue.
 
 [!<Player>@<fatiMod:Integer>*
@@ -33,35 +28,15 @@ Definition: yourself is prone:
 	if the stance of it is 1, decide yes;
 	decide no.
 
-[!<resting:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 Resting is a number that varies. Resting is 0. [Used to prevent fainting during the while loop of resting.]
 
-[!<busy:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 Busy is a number that varies. Busy is 0.
 
-[!<FatigueUpX>+
-
-REQUIRES COMMENTING
-
-+!]
 To FatigueUp (X - a number):
 	if X > 0, now fatimod is 0;[Gaining fatigue resets the bonus you get for resting several turns in a row]
 	increase the fatigue of the player by X;
 	if the fatigue of the player > the buckle threshold of the player, now the fatigue of the player is the buckle threshold of the player.
 
-[!<FatigueDownX>+
-
-REQUIRES COMMENTING
-
-+!]
 To FatigueDown (X - a number):
 	decrease the fatigue of the player by X;
 	if the fatigue of the player < 0, now the fatigue of the player is 0.

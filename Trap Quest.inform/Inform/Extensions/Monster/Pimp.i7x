@@ -47,12 +47,12 @@ To set up (M - pimp):
 	if pimp-dead is true:
 		remove M from play;
 	otherwise:
+		if the monstersetup of M is 0, now the raw difficulty of M is the starting difficulty of M;
 		now the monstersetup of M is 1;
-		now the raw difficulty of M is the starting difficulty of M;
 		now the health of M is the maxhealth of M.
 
 To decide which number is the starting difficulty of (M - pimp):
-	decide on 10.
+	decide on 11.
 
 To say PregGrowth of (M - pimp):
 	say "your pimp's [child]".
@@ -60,7 +60,7 @@ To say PregGrowth of (M - pimp):
 To compute labour to (M - pimp):
 	if M is regional and M is alive:
 		compute pregnancy clothing displacement;
-		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue! [big he of M][end if] kneels down on one knee and delivers the human mixed race baby, which immediately starts crying loudly. [big he of M] takes it into [his of M] arms with an unconcealed look of annoyance. [line break][first custom style]'Geez, thanks a lot! Now I have to manage a brothel AND raise [one of]a[or]yet another[stopping] fucking kid.'[roman type][line break]Without giving you a chance to react, never mind reply, [he of M] leaves you to recover from your ordeal.";
+		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue! [big he of M][end if] kneels down on one knee and delivers the human mixed race baby, which immediately starts crying loudly. [big he of M] takes it into [his of M] arms with an unconcealed look of annoyance.[line break][speech style of M]'Geez, thanks a lot! Now I have to manage a brothel AND raise [one of]a[or]yet another[stopping] fucking kid.'[roman type][line break]Without giving you a chance to react, never mind reply, [he of M] leaves you to recover from your ordeal.";
 		if the father is in the location of the player:
 			say "For some reason, you are filled with a sense of deep fulfilment. You feel great!";
 			StrengthUp 1;
@@ -97,20 +97,20 @@ To compute perception of (M - pimp):
 	anger M;
 	if the times-met of M is 0:
 		if the class of the player is princess:
-			say "[first custom style]'Listen up, princess. I don't work for you anymore. In fact, starting now you're gonna be ";
+			say "[speech style of M]'Listen up, princess. I don't work for you anymore. In fact, starting now you're gonna be ";
 		otherwise:
-			say "[first custom style]'Listen up[if diaper quest is 0], bitch[end if]. Nobody works in Bimbacia without reporting to me first, which means you're ";
+			say "[speech style of M]'Listen up[if diaper quest is 0], bitch[end if]. Nobody works in Bimbacia without reporting to me first, which means you're ";
 		say "one of my [if diaper quest is 1]baby slaves for hire[otherwise]whores[end if]. That means every time you [if diaper quest is 1]let one of these patrons babify you[otherwise]fuck a [Brotha of M][end if], I get a cut. Any single item of jewellery will do. If not, you get the back of my hand. So what's it going to be, [if diaper quest is 1]kiddo[otherwise]slut[end if]?'[roman type][line break]";
 		increase the times-met of M by 1;[just to be sure]
 		now the last-interaction of M is 2;
 	otherwise:
-		say "[first custom style]'Nice work, bitch. Now give me what's mine.'[roman type][line break]";
+		say "[speech style of M]'Nice work, bitch. Now give me what's mine.'[roman type][line break]";
 	make M expectant.
 
 Part 2 - Misc Flavour
 
 To compute kneeling reaction of (M - pimp):
-	say "[BigNameDesc of M] laughs. [line break][first custom style]'[if the health of M >= the maxhealth of M]I guess this one time, you can pay me with your services[otherwise]Surrender means nothing to me. You've crossed me, and now I'm going to make your life a misery[end if].'[roman type][line break]";
+	say "[BigNameDesc of M] laughs.[line break][speech style of M]'[if the health of M >= the maxhealth of M]I guess this one time, you can pay me with your services[otherwise]Surrender means nothing to me. You've crossed me, and now I'm going to make your life a misery[end if].'[roman type][line break][if the player is not shameless]You shiver with shame.[end if]";
 	strongHumiliate.
 
 To say DiaperReaction of (M - pimp):
@@ -142,10 +142,10 @@ This is the pimp convinced rule:
 The monster convinced rule of pimp is usually the pimp convinced rule.
 
 To say PresentRejectionFlav of (M - pimp):
-	say "[BigNameDesc of M] cuts you off before you've finished talking. [line break][speech style of M]'I own you, I'll fuck you wherever I goddamn [please].'[roman type][line break]".
+	say "[BigNameDesc of M] cuts you off before you've finished talking.[line break][speech style of M]'I own you, I'll fuck you wherever I goddamn [please].'[roman type][line break]".
 
 To say SelectionFrustrated of (M - pimp):
-	say "[BigNameDesc of M] laughs, seemingly at [himself of M]. [line break][speech style of M]'For some reason I can't seem to get it up. Fine, I guess you get off lucky. This time. You'd better remember this very rare moment of kindness I'm showing you, whore.'[roman type][line break]";
+	say "[BigNameDesc of M] laughs, seemingly at [himself of M].[line break][speech style of M]'For some reason I can't seem to get it up. Fine, I guess you get off lucky. This time. You'd better remember this very rare moment of kindness I'm showing you, whore.'[roman type][line break]";
 	satisfy M.
 
 To say StrikingSuccessFlav of (M - pimp) on (B - a body part):
@@ -155,7 +155,7 @@ To say StrikingFailureFlav of (M - pimp) on (B - a body part):
 	say "[BigNameDesc of M] tries to whack you [TargetName of B] with [his of M] cane but you manage to get out of the way just in time!".
 
 To say SatisfiedFlav of (M - pimp):
-	say "[BigNameDesc of M] grunts with satisfaction. [line break][speech style of M]'That'll do as payment for now.'[roman type][line break][big he of M] walks away, leaving you to [if the bimbo of the player < 12]contemplate the consequences of your choices[otherwise]bask in the afterglow[end if].".
+	say "[BigNameDesc of M] grunts with satisfaction.[line break][speech style of M]'That'll do as payment for now.'[roman type][line break][big he of M] walks away, leaving you to [if the bimbo of the player < 12]contemplate the consequences of your choices[otherwise]bask in the afterglow[end if].".
 
 To bore (M - pimp) for (N - a number) seconds:
 	now M is not interested;
@@ -226,7 +226,8 @@ To say TaxReturnDismay of (M - pimp):
 	say "[speech style of M]'Hmph. Fine, you can hold onto this for me. But don't worry, I'll have you turning tricks for me like an obedient little slut before the week is out.'[roman type][line break]".
 
 To compute unique banishment of (M - pimp):
-	now pimp-dead is true.
+	now pimp-dead is true;
+	check mindflayerquest.
 
 To standard loot (M - pimp):
 	let X be a random off-stage plentiful bracelet;
@@ -243,16 +244,16 @@ Part 4 - Conversation
 Section 1 - Greeting
 
 To say FirstResponse of (M - pimp): [Should never happen]
-	say "[first custom style]'Hi there.'[roman type][line break]".
+	say "[speech style of M]'Hi there.'[roman type][line break]".
 
 To say RepeatResponse of (M - pimp):
 	if M is unfriendly:
-		say "[first custom style]'This isn't a discussion. Give me my money NOW.'[roman type][line break]";
+		say "[speech style of M]'This isn't a discussion. Give me my money NOW.'[roman type][line break]";
 	otherwise:
-		say "[first custom style]'Hi again.'[roman type][line break]".
+		say "[speech style of M]'Hi again.'[roman type][line break]".
 
 To say SubmissiveResponse of (M - pimp):
-	say "[first custom style]'[one of]That's the spirit, baby!'[or]Keep that up and I might just make you my bottom bitch.'[at random][roman type][line break]".
+	say "[speech style of M]'[one of]That's the spirit, baby!'[or]Keep that up and I might just make you my bottom bitch.'[at random][roman type][line break]".
 
 To say UnAnnoyedResponse of (M - pimp):
 	say "[speech style of M]'[one of]That's right! Earn those dollas![or]Earn that paycheck, bitch!'[or]You're makin BANK tonight!'[at random][roman type]".
@@ -273,12 +274,12 @@ Section 3 - Drink Requesting
 
 To compute friendly drink of (M - pimp): [Should never happen]
 	if M is interested:
-		say "[BigNameDesc of M][']s smile fades slightly. [line break][first custom style]'Sorry, we're not allowed to give out free drinks, it is pretty much the only way the hotel make money after all!'[roman type][line break]";
+		say "[BigNameDesc of M][']s smile fades slightly.[line break][speech style of M]'Sorry, we're not allowed to give out free drinks, it is pretty much the only way the hotel make money after all!'[roman type][line break]";
 	otherwise:
 		say "[BigNameDesc of M] acts as if [he of M] didn't even hear you.".
 
 To compute unfriendly drink of (M - pimp):
-	say "[first custom style]'Do you think you DESERVE a drink? I don't.'[roman type][line break]";
+	say "[speech style of M]'Do you think you DESERVE a drink? I don't.'[roman type][line break]";
 	now M is interested;
 	now the boredom of M is 0.
 
@@ -305,6 +306,6 @@ To compute resolution of (M - pimp) taking (T - a thing):
 		remove M from play. [we don't want to reset him so we don't use the destroy function]
 
 To say MonsterOfferRejectFlav of (M - pimp) to (T - a thing):
-	say "[if M is unfriendly][BigNameDesc of M] smiles.[otherwise][BigNameDesc of M] looks a bit confused.[end if] [line break][speech style of M]'[if T is plentiful accessory and the health of M < the maxhealth of M]It's too late for that, bitch.'[otherwise]Why the hell would I want that?'[end if][roman type][line break]";
+	say "[if M is unfriendly][BigNameDesc of M] smiles.[otherwise][BigNameDesc of M] looks a bit confused.[end if][line break][speech style of M]'[if T is plentiful accessory and the health of M < the maxhealth of M]It's too late for that, bitch.'[otherwise]Why the hell would I want that?'[end if][roman type][line break]";
 
 Pimp ends here.

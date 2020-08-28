@@ -39,7 +39,9 @@ To decide which figure-name is clothing-image of (C - a doctor stethoscope):
 To say ClothingDesc of (C - a doctor stethoscope):
 	say "You can wear this around your neck. If you do, you will be more reliable when searching crates for traps.".
 
-Definition: a doctor stethoscope is transformation-protected if diaper quest is 1.
+Definition: a doctor stethoscope is transformation-protected:
+	if diaper quest is 1, decide yes;
+	decide no.
 Definition: a doctor stethoscope is product: decide yes.
 Definition: a doctor stethoscope is yellow themed: decide yes.
 Definition: a doctor stethoscope is black themed: decide yes.

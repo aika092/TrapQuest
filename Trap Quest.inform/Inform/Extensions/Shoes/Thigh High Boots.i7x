@@ -104,8 +104,7 @@ To decide which figure-name is the clothing-image of (H - black-leather-flat-boo
 	decide on figure of black leather flat boots.
 
 To say ClothingDesc of (H - black-leather-flat-boots):
-	say "This pair of knee-high black leather boots laces up at the front. It has a gothic feel.";
-	say SteadinessDesc of H.
+	say "This pair of knee-high black leather boots laces up at the front. It has a gothic feel.".
 
 To say UniqueShortDesc of (H - black-leather-flat-boots):
 	say "black leather knee high boots".

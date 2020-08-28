@@ -1,7 +1,6 @@
 Armband by Accessories begins here.
 
 armband is an accessory. armband is unique. armband is plastic. armband has an indexed text called armband-title. armband has an indexed text called armband-print. The text-shortcut of armband is "armb".
-armband has a number called stolen-strength.
 
 The printed name of armband is usually "[TQlink of item described][item style][accessory-colour of the item described] armband[clothing-title-after]".
 

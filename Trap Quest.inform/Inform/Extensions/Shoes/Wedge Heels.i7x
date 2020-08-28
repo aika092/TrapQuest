@@ -23,16 +23,19 @@ To decide which number is the kick-bonus of (S - a wedge heels):
 	let X be the heel-height of S;
 	decide on X - 3.
 
-To decide which number is the original price of (C - a wedge heels):
-	decide on the heel-height of C.
-
 To say ClothingDesc of (C - a wedge heels):
 	say "A pair of [heel-height of C] inch wedge [if C is leather]heels made of black leather pattern with a tasteful pink and green floral pattern.[otherwise if C is pvc]boots made of some combination of PVC, other plastics and cardboard. They have a slutty leopard print and open toes.[otherwise if C is satin]heels that are smart and black. Relatively modest compared to most of the clothes you've seen in this game.[end if]";
 	say "[SteadinessDesc of C]".
 
-Definition: a wedge heels is flower themed if it is leather.
-Definition: a wedge heels is leopard themed if it is pvc.
-Definition: a wedge heels is black themed if it is not pvc.
+Definition: a wedge heels is flower themed:
+	if it is leather, decide yes;
+	decide no.
+Definition: a wedge heels is leopard themed:
+	if it is pvc, decide yes;
+	decide no.
+Definition: a wedge heels is black themed:
+	if it is not pvc, decide yes;
+	decide no.
 
 To uniquely set up (C - a wedge heels):
 	if C is pvc, now the text-shortcut of C is "pwh";

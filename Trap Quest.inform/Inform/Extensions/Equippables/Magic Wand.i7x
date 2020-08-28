@@ -6,7 +6,7 @@ To decide which figure-name is clothing-image of (C - a magic wand):
 	decide on figure of magic wand.
 
 To say ClothingDesc of (W - a magic wand):
-	say "A solid gold wand you stole from an aeromancer. Despite being made of metal, it feels almost completely weightless when you hold it in your hand, as if filled with some magic lighter than air gas. There is a switch on the bottom that reads 'Vibrate'. [line break][variable custom style][if the intelligence of the player < 4]Viii... braa... taay. What does that mean?[otherwise if the sex addiction of the player < 7]So it's THAT kind of wand.[otherwise]I know what I'm going to use THAT for! Teehee![end if][roman type][line break]".
+	say "A solid gold wand you stole from an aeromancer. Despite being made of metal, it feels almost completely weightless when you hold it in your hand, as if filled with some magic lighter than air gas. There is a switch on the bottom that reads 'Vibrate'.[line break][variable custom style][if the intelligence of the player < 4]Viii... braa... taay. What does that mean?[otherwise if the sex addiction of the player < 7]So it's THAT kind of wand.[otherwise]I know what I'm going to use THAT for! Teehee![end if][roman type][line break]".
 
 To say ShortDesc of (W - a magic wand):
 	say "solid gold wand".

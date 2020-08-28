@@ -3,7 +3,7 @@ Necktie by Accessories begins here.
 A necktie is a kind of neckwear. Printed name of necktie is "[clothing-title-before]necktie[clothing-title-after]". Understand "tie" as necktie. The text-shortcut of necktie is "nt".
 
 To decide which number is the initial outrage of (C - a necktie):
-	decide on 5.
+	decide on 3.
 
 To decide which number is the initial cringe of (C - a necktie):
 	decide on 3.

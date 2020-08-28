@@ -3,6 +3,7 @@ Facehugger by Monster begins here.
 A facehugger is a kind of monster. facehugger is neuter. The text-shortcut of facehugger is "fhgr".
 
 There are 10 facehuggers.
+facehuggers-fucked is a number that varies.
 
 Definition: a facehugger is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 
@@ -28,6 +29,27 @@ To say MediumDesc of (M - facehugger):
 
 To say MonsterDesc of (M - facehugger):
 	say "This weird insect-like monster is not much bigger than your hand-span. It has several strong legs which allow it to leap really high and then try to latch onto you.".
+
+To say MonsterComment of (M - facehugger):
+	let U be 0;
+	if M is unfriendly, now U is 1;
+	if diaper quest is 0:
+		do nothing;
+	otherwise if facehuggers-fucked > 0:
+		if the bimbo of the player < 7:
+			say "[first custom style][one of]I have to kill it before it catches me![or]Stop trying to breed with me![in random order]";
+		otherwise if the bimbo of the player < 12:
+			say "[variable custom style][one of]It grosses me out, but all it really wants to do is reproduce.[or]Stop trying to breed with me! Or at least be a little gentler when you do it![in random order]";
+		otherwise:
+			say "[second custom style][one of]Hurry up and catch me, you naughty little freakshow![or]I wonder what hole it's going to choose this time...[in random order]";
+	otherwise if the bimbo of the player < 7:
+		if the player is gendered male, say "[first custom style][one of]What the fuck is this thing?![or]It's fast![in random order]";
+		otherwise say "[first custom style][one of]Its moving in such a creepy way![or]What happens if it catches me?![in random order]";
+	otherwise if the bimbo of the player < 12:
+		say "[variable custom style][one of]It moves in such an elegant way...[or]I don't know what it is, but if it catches me... maybe I'll find out?[in random order]";
+	otherwise:
+		say "[second custom style][one of]I really want to find out what happens if it catches me...[or]It definitely knows what it wants.[in random order]";
+	say "[roman type][line break]".
 
 To set up (M - facehugger):
 	reset M;
@@ -106,6 +128,7 @@ To compute action (N - a number) of (M - a facehugger):
 						say "It pumps your stomach full of inhuman [semen]!";
 						StomachSemenUp SL;
 				say "The legs let go of you and the body falls off, motionless and dead.";
+				increase facehuggers-fucked by 1;
 				destroy M.
 
 To compute (M - a monster) stomping (N - a facehugger):

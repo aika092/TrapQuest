@@ -27,7 +27,9 @@ To decide which number is the bartering value of (T - a cumslut collar) for (M -
 To decide which number is the bartering value of (T - a cumslut collar) for (M - a dominatrix):
 	decide on 4.
 
-Definition: a cumslut collar is transformation-protected if the semen taste addiction of the player >= highest body part sex addiction * 2.
+Definition: a cumslut collar is transformation-protected:
+	if the semen taste addiction of the player >= highest body part sex addiction * 2, decide yes;
+	decide no.
 
 To decide which object is the unique-upgrade-target of (C - a cumslut collar):
 	decide on a random off-stage fuckdoll collar.

@@ -39,7 +39,7 @@ Chapter - Class Outfit
 
 Definition: heart hairpin (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
 	if wearing-target is magical dress or wearing-target is magical stockings or wearing-target is heart wand, decide yes;
-	if wearing-target is C and the magic-power of the player > 1 and there is an on-stage tentacle-breeder, decide yes;
+	[if wearing-target is C and the magic-power of the player > 1 and there is an on-stage tentacle-breeder, decide yes;]
 	decide no.
 
 To say RemovalBlocked of (C - heart hairpin):
@@ -64,7 +64,7 @@ To compute class outfit of (H - heart hairpin):
 			repeat with O running through worn exclusive corsets:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
-			repeat with O running through worn skirted clothing:
+			repeat with O running through worn skirt clashing clothing:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
 		say "[bold type]You feel a rush of magic as a [ShortDesc of D] materialises around you.[roman type][line break]";
@@ -75,6 +75,8 @@ To compute class outfit of (H - heart hairpin):
 		summon S uncursed.
 
 wand-summoning is a magic-spell.
+To decide which number is the raw-magic-cost of (S - wand-summoning):
+	decide on 1.
 Definition: wand-summoning is reactive-only: decide no.
 To say MagicSpellEffect of (S - wand-summoning):
 	say "summon a magic wand".
@@ -84,18 +86,12 @@ Report Spellcasting wand-summoning:
 	let H be a random worn headgear;
 	if E is clothing and ((E is vibe-wand or E is cursed or E is unremovable) or (H is clothing and H is removal-blocking)): [class wands can't be replaced by this spell]
 		say "The spell doesn't seem to work while you're holding [NameDesc of E]!";
-	otherwise if the magic power of the player > 0:
+	otherwise:
 		let W be nintendolls-wand;
 		if the class of the player is magical girl, now W is a random heart wand;
 		if the class of the player is "magical schoolgirl", now W is a random notebook;
 		summon W uncursed;
-		say "With a flash of pink, [NameDesc of W] appears in your hand! Wow!";
-		if the player is in danger:
-			say "The flash temporarily blinds the enemies in the room, making them lose a turn!";
-			repeat with M running through combative monsters:
-				now M is stalled;
-	otherwise:
-		say "Nothing happens. Perhaps you need more magical energy first.".
+		say "With a flash of pink, [NameDesc of W] appears in your hand! Wow!".
 
 An all later time based rule (this is the magical girl spell rule):
 	if the class of the player is magical girl and wand-summoning is uncastable and the number of worn zap ready equippable is 0:

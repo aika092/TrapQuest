@@ -22,11 +22,17 @@ To decide which number is the initial outrage of (C - a ballet corset):
 
 Definition: a ballet corset is ballet related: decide yes.
 
-Definition: a ballet corset is strut enabling if there is a worn thigh high ballet boots.
+Definition: a ballet corset is strut enabling:
+	if there is a worn thigh high ballet boots, decide yes;
+	decide no.
 
-Definition: a ballet corset is transformation-protected if there is a worn thigh high ballet boots.
+Definition: a ballet corset is transformation-protected:
+	if there is a worn thigh high ballet boots, decide yes;
+	decide no.
 
-Definition: a ballet corset is IcarusScienceAppropriate if it is actually summonable.
+Definition: a ballet corset is IcarusScienceAppropriate:
+	if it is actually summonable, decide yes;
+	decide no.
 
 To compute periodic effect of (C - a ballet corset):
 	if there is a worn thigh high ballet boots and the strut of the player is 0 and the player is upright:
@@ -104,7 +110,7 @@ To decide which figure-name is clothing-image of (C - a fetish corset):
 	decide on figure of fetish corset.
 
 To say ClothingDesc of (C - a fetish corset):
-	say "[if the outrage of C is too humiliating]An outrageous[otherwise]A [line break][second custom style]lush[roman type][line break][end if] translucent latex underbust corset with an extremely exaggerated shape and rubbery frills at the bottom. This must be designed to be worn exclusively at fetish events.".
+	say "[if the outrage of C is too humiliating]An outrageous[otherwise]A[line break][second custom style]lush[roman type][line break][end if] translucent latex underbust corset with an extremely exaggerated shape and rubbery frills at the bottom. This must be designed to be worn exclusively at fetish events.".
 
 To say ShortDesc of (C - a fetish corset):
 	say "fetish corset".
@@ -229,13 +235,10 @@ To decide which figure-name is clothing-image of (C - a vinyl corset):
 	decide on figure of vinyl corset.
 
 To say ClothingDesc of (C - a vinyl corset):
-	say "[if the outrage of C is too humiliating]An outrageous[otherwise]A [line break][second custom style]gorgeous[roman type][line break][end if] black vinyl fetish underbust corset that clings tightly to the flesh to show off the wearer's curves.".
+	say "[if the outrage of C is too humiliating]An outrageous[otherwise]A[line break][second custom style]gorgeous[roman type][line break][end if] black vinyl fetish underbust corset that clings tightly to the flesh to show off the wearer's curves.".
 
 To say ShortDesc of (C - a vinyl corset):
 	say "vinyl corset".
-
-To decide which number is the original price of (C - a vinyl corset):
-	decide on 3.
 
 Definition: a vinyl corset is black themed: decide yes.
 

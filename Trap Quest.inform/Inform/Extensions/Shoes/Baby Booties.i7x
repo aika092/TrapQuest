@@ -76,7 +76,9 @@ Understand "booties" as baby slippers.
 
 rubber booties is a baby booties. rubber booties is unique. rubber booties is latex.
 
-Definition: a rubber booties is transformation-protected if the class of the player is latex clown.
+Definition: a rubber booties is transformation-protected:
+	if the class of the player is latex clown, decide yes;
+	decide no.
 
 The printed name of rubber booties is "[clothing-title-before]pair of latex baby booties[clothing-title-after]". The text-shortcut of rubber booties is "lbbo".
 
@@ -118,7 +120,9 @@ The trousers latex booties clash rule is listed in the trousers wearability rule
 
 christmas booties is a baby booties. christmas booties is unique.
 
-Definition: a christmas booties is transformation-protected if the class of the player is santa's little helper.
+Definition: a christmas booties is transformation-protected:
+	if the class of the player is santa's little helper, decide yes;
+	decide no.
 
 The printed name of christmas booties is "[clothing-title-before]pair of Christmas baby booties[clothing-title-after]". The text-shortcut of christmas booties is "cbbo".
 
@@ -130,7 +134,9 @@ To decide which figure-name is the clothing-image of (H - a christmas booties):
 Definition: christmas booties is bow themed: decide yes.
 Definition: christmas booties is green themed: decide yes.
 Definition: christmas booties is christmas themed: decide yes.
-Definition: christmas booties is babywear if christmas content is 1. [Is it something that an NPC could put on someone to babify them?]
+Definition: christmas booties is babywear:
+	if christmas content is 1, decide yes;
+	decide no. [Is it something that an NPC could put on someone to babify them?]
 
 To say ClothingDesc of (C - christmas booties):
 	say "A pair of green booties with big red bows.".

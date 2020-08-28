@@ -101,6 +101,21 @@ This is the sex doll can't wear new clothes rule:
 		rule fails.
 The sex doll can't wear new clothes rule is listed in the global wearability rules.
 
+This is the purity for virgins rule:
+	if wearing-target is purity clothing and the vaginalvirgin of the player is 0:
+		if summoning is 0 and autowear is false, say "[BigNameDesc of wearing-target] resists you! Perhaps its aura of purity prevents it being worn by sluts who have shamefully lost their virginity...";
+		rule fails.
+The purity for virgins rule is listed in the global wearability rules.
+
+This is the wear your old clothes rule:
+	if wearing-target is unsure clothing and the player is in Predicament20:
+		if summoning is 0 and autowear is false, say "[BigNameDesc of wearing-target] resists you! It appears that the magic of this room is preventing you from wearing anything unidentified. You'll have to step through the warp portal first.";
+		rule fails.
+The wear your old clothes rule is listed in the global wearability rules.
+
+Report wearing cursed clothing when the player is in Predicament20:
+	if the raw strength of the player > 1, say "You sense that [bold type]as long as you remain in this room[roman type], you will be able to remove this item as if it wasn't cursed, at the temporary cost of your strength.".
+
 This is the assfilled players can't wear ass plugging clothes rule:
 	if asshole is actually occupied and (wearing-target is ass plugging or wearing-target is sex toy):
 		if summoning is 0 and autowear is false, say "You can't wear this with something already in your [asshole]!";
@@ -147,28 +162,25 @@ This is the belly covering clothing can't have an exclusive clash rule:
 					if wearing-target is overdress or (wearing-target is underdress and C is not overdress):
 						if summoning is 0 and autowear is false, say "You can't wear this at the same time as the [C]!";
 						rule fails;
-				otherwise if wearing-target is top-exclusive or C is bottom-exclusive:
-					if wearing-target is underdress or (wearing-target is overdress and C is overdress):
-						if summoning is 0 and autowear is false, say "You can't wear this at the same time as the [C]!";
-						rule fails.
+				if summoning is 1 and (wearing-target is top-exclusive or C is bottom-exclusive):
+					check that wearing-target usually goes under C;
+					if the rule succeeded, rule fails.
 The belly covering clothing can't have an exclusive clash rule is listed in the global wearability rules.		[TODO more specific top exclusive corset rule]
 
 This is the crotch covering clothing can't have an exclusive clash rule:
-	if wearing-target is crotch covering clothing and wearing-target is not chastity cage and (wearing-target is not not-exclusive diaper or summoning is 0): [NPCs can ignore some exclusivity rules when diapering the player]
+	if wearing-target is crotch covering clothing and wearing-target is not chastity bond and (wearing-target is not not-exclusive diaper or summoning is 0): [NPCs can ignore some exclusivity rules when diapering the player]
 		repeat with C running through worn crotch covering clothing:
-			unless C is not-exclusive diaper or C is chastity cage:
+			unless C is not-exclusive diaper or C is chastity bond:
 				if wearing-target is exclusive or C is exclusive:
 					if wearing-target is totally-exclusive or C is totally-exclusive:
 						if summoning is 0 and autowear is false, say "You can't wear this because you are already wearing the [C]!";
 						rule fails;
 					if C is top-exclusive or wearing-target is bottom-exclusive:
-						[if wearing-target is trousers or (wearing-target is overdress and C is not trousers) or (wearing-target is underdress and C is not overdress and C is not trousers) or (wearing-target is diaper cover and C is not overdress and C is not underdress and C is not trousers) or (wearing-target is knickers and C is knickers):]
 						if summoning is 0 and autowear is false, say "You can't wear this at the same time as the [C]!";
 						rule fails;
-					if wearing-target is top-exclusive or C is bottom-exclusive:
-						[if wearing-target is knickers or (wearing-target is diaper cover and C is not knickers) or (wearing-target is underdress and C is not knickers and C is not diaper cover) or (wearing-target is overdress and C is not knickers and C is not diaper cover and C is not underdress) or (wearing-target is trousers and C is trousers):]
-						if summoning is 0 and autowear is false, say "You can't wear this at the same time as the [C]!";
-						rule fails.
+					if summoning is 1 and (wearing-target is top-exclusive or C is bottom-exclusive):
+						check that wearing-target usually goes under C;
+						if the rule succeeded, rule fails.
 The crotch covering clothing can't have an exclusive clash rule is listed in the global wearability rules.
 
 This is the ass protected players can't wear ass plugging clothes rule:

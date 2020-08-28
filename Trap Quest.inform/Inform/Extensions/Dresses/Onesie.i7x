@@ -1,6 +1,6 @@
 Onesie by Dresses begins here.
 
-A onesie is a kind of overdress. A onesie is usually transformation-rare. A onesie is usually crotch-intact. A onesie is usually unskirted. A onesie is fully covering. A onesie is usually only arm covering. A onesie is usually leg covering. A onesie is usually not-top-displacable. The soak-limit of a onesie is usually 30. A onesie has a number called charge.
+A onesie is a kind of overdress. A onesie is usually transformation-rare. A onesie is usually crotch-intact. A onesie is usually unskirted. A onesie is fully covering. A onesie is usually only arm covering. A onesie is usually leg covering. A onesie is usually not-top-displacable. A onesie has a number called charge.
 
 The printed name of onesie is usually "[clothing-title-before]onesie[clothing-title-after]". The text-shortcut of onesie is "one".
 
@@ -23,15 +23,14 @@ To uniquely set up (C - a onesie):
 	repair C;
 	now C is absorption.
 
-To decide what number is the original price of (C - a onesie):
-	decide on 20.
-
 Definition: a onesie is sissifying: decide yes.
 
 To set up influence of (C - a onesie):
 	now C is diaper-addiction-influencing.
 
-Definition: a onesie is fetish appropriate if diaper lover > 0.
+Definition: a onesie is fetish appropriate:
+	if diaper lover > 0, decide yes;
+	decide no.
 Definition: a onesie is baby themed: decide yes.
 
 [!<TheOnesieBlowjobSlutRule>+

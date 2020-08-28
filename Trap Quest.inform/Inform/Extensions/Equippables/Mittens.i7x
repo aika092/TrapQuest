@@ -88,7 +88,9 @@ Definition: christmas mittens is red themed: decide yes.
 Definition: christmas mittens is christmas themed: decide yes.
 
 Definition: a rubber mittens is babywear: decide yes.
-Definition: a rubber mittens is transformation-protected if diaper lover <= 0.
+Definition: a rubber mittens is transformation-protected:
+	if diaper lover <= 0, decide yes;
+	decide no.
 
 To decide which object is the unique-upgrade-target of (C - rubber mittens):
 	if the number of worn latex clothing > 1, decide on a random off-stage inflated rubber mittens;

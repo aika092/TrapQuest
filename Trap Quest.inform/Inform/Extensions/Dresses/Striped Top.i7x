@@ -13,7 +13,7 @@ To decide which figure-name is clothing-image of (C - a striped top):
 	decide on figure of striped top.
 
 To say ClothingDesc of (C - a striped top):
-	say "A fuzzy black and yellow top. It clings tightly to your breasts, so much so that it[']s like a second skin on them! [if total-wasps > 50]Hard and shiny black carapace extends out from under it and seems to be merged with your skin![end if][if total-wasps > 100] A spike extends where each nipple should be, ominously dripping purple fluid.[end if]".
+	say "A fuzzy black and yellow top. It clings tightly to your breasts, so much so that it's like a second skin on them! [if total-wasps > 50]Hard and shiny black carapace extends out from under it and seems to be merged with your skin![end if][if total-wasps > 100] A spike extends where each nipple should be, ominously dripping purple fluid.[end if]".
 
 To say ShortDesc of (C - a striped top):
 	say "striped top".
@@ -24,7 +24,9 @@ Definition: a striped top (called C) is spikey:
 	otherwise:
 		decide no.
 
-Definition: a striped top is class-transformation-protected if the class of the player is broodmother.
+Definition: a striped top is class-transformation-protected:
+	if the class of the player is broodmother, decide yes;
+	decide no.
 Definition: a striped top is yellow themed: decide yes.
 Definition: a striped top is black themed: decide yes.
 

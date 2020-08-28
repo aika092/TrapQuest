@@ -1,8 +1,10 @@
 All Belts by Belts Suspenders begins here.
 
 A belt is a kind of clothing. A belt is unskirted. A belt is manly.
-Definition: a belt is same-type if theme-share-target is belt.
-The soak-limit of a belt is usually 2.
+Definition: a belt is same-type:
+	if theme-share-target is belt, decide yes;
+	decide no.
+To decide which number is the default-soak-limit of (C - a belt): decide on 2.
 
 Chapter - Wearability
 
@@ -170,7 +172,9 @@ living belt of sturdiness has a number called buildup. The buildup of the living
 
 Definition: a living belt of sturdiness is father material: decide yes.
 Definition: a living belt of sturdiness is grey themed: decide yes.
-Definition: a living belt of sturdiness is fetish appropriate if diaper quest is 0.
+Definition: a living belt of sturdiness is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 
 To decide which figure-name is clothing-image of (C - the living belt of sturdiness):
 	if C is penetrating a fuckhole, decide on figure of living belt of sturdiness penetrated;
@@ -214,7 +218,7 @@ To compute periodic effect of (I - living belt of sturdiness):
 	if the player is upright:
 		if the living belt of sturdiness is penetrating a fuckhole:
 			if the buildup of the living belt of sturdiness > 6 and a random number between 1 and (30 - buildup of living belt of sturdiness) < 2 and the player is not unable to orgasm so soon:
-				say "The steady fucking of the strong, rhythmic silver tentacle[if living belt of sturdiness is penetrating vagina and living belt of sturdiness is penetrating asshole]s[end if] of your [printed name of living belt of sturdiness] [one of]finally[or]once again[stopping] becomes too much for you, and your knees wobble and fail as you reach an extremely powerful climax.[line break][if the player is gagged]You scream into your [ShortDesc of random thing penetrating face]. [line break][variable custom style]'MMMMMPHH!!!'[otherwise][variable custom style]'Oooooooh fuuuuuuuuccckk!'[end if][roman type][line break]";
+				say "The steady fucking of the strong, rhythmic silver tentacle[if living belt of sturdiness is penetrating vagina and living belt of sturdiness is penetrating asshole]s[end if] of your [printed name of living belt of sturdiness] [one of]finally[or]once again[stopping] becomes too much for you, and your knees wobble and fail as you reach an extremely powerful climax.[line break][if the player is gagged]You scream into your [ShortDesc of random thing penetrating face].[line break][variable custom style]'MMMMMPHH!!!'[otherwise][variable custom style]'Oooooooh fuuuuuuuuccckk!'[end if][roman type][line break]";
 				if the largeness of belly > 5, appropriate-cutscene-display figure of living belt of sturdiness cutscene 3;
 				otherwise appropriate-cutscene-display figure of living belt of sturdiness cutscene 2;
 				if the living belt of sturdiness is penetrating vagina:
@@ -327,7 +331,7 @@ To say TransformReaction of (C - a sissy-suspenders):
 	otherwise if the humiliation of the player < HUMILIATION-BROKEN:
 		say "[variable custom style]These are so [if the humiliation of the player > HUMILIATION-SHAMELESS - 2000]perfect[otherwise]cute[end if]. I love the silky frills![roman type][line break]".
 
-string-belt is a clothing. [No clashes.] The printed name of string-belt is "[clothing-title-before]string belt[clothing-title-after]". The text-shortcut of string-belt is "stb". string-belt is unique. string-belt is hemp. string-belt is manly. Understand "string", "belt" as string-belt. The soak-limit of string-belt is 1.
+string-belt is a clothing. [No clashes.] The printed name of string-belt is "[clothing-title-before]string belt[clothing-title-after]". The text-shortcut of string-belt is "stb". string-belt is unique. string-belt is hemp. string-belt is manly. Understand "string", "belt" as string-belt.
 
 Figure of string belt 0 is the file "Items/Clothes/Lower/Waist/Belts/stringbelt0.png".
 Figure of string belt 1 is the file "Items/Clothes/Lower/Waist/Belts/stringbelt1.png".

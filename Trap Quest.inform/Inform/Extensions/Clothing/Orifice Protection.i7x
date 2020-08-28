@@ -25,14 +25,18 @@ Definition: a clothing (called C) is pussy protection:
 Does this item cover neither the player's ass nor crotch?
 
 +!]
-Definition: a clothing is no protection if it is not total protection and it is not pussy protection.
+Definition: a clothing is no protection:
+	if it is not total protection and it is not pussy protection, decide yes;
+	decide no.
 
 [!<ClothingIsCrotchExposing>+
 
 Does this item not use the crotch slot?
 
 +!]
-Definition: a clothing is crotch exposing rather than crotch covering if it is no-crotch.
+Definition: a clothing is crotch exposing rather than crotch covering:
+	if it is no-crotch, decide yes;
+	decide no.
 
 [!<ClothingIsAssCovering>+
 
@@ -40,39 +44,49 @@ Is this item currently covering both the player's ass and crotch?
 (We can deduce this because there's no items that protect the player's ass but don't protect the crotch)
 
 +!]
-Definition: a clothing is ass covering if it is worn and it is total protection.
+Definition: a clothing is ass covering:
+	if it is worn and it is total protection, decide yes;
+	decide no.
 
 [!<ClothingIsPotentiallyPussyCovering>+
 
 Is this item able to cover the player's crotch?
 
 +!]
-Definition: a clothing is potentially pussy covering if it is pussy protection or it is total protection.
+Definition: a clothing is potentially pussy covering:
+	if it is pussy protection or it is total protection, decide yes;
+	decide no.
 
 [!<ClothingIsPussyCovering>+
 
 Is this item currently covering the player's crotch?
 
 +!]
-Definition: a clothing is pussy covering if it is worn and it is potentially pussy covering.
+Definition: a clothing is pussy covering:
+	if it is worn and it is potentially pussy covering, decide yes;
+	decide no.
 
 [!<YourselfIsAssProtected>+
 
 Is there currently something covering the player's ass?
 
 +!]
-Definition: yourself is ass protected if there is a top level ass protection clothing.
+Definition: yourself is ass protected:
+	if there is a top level ass protection clothing, decide yes;
+	decide no.
 
 [!<YourselfIsPussyProtected>+
 
 Is there something currently covering the player's crotch?
 
 +!]
-Definition: yourself is pussy protected if there is a top level protection clothing.
+Definition: yourself is pussy protected:
+	if there is a top level protection clothing, decide yes;
+	decide no.
 
 [!<ClothingIsUrinationBlocking>+
 
-Some things like chastity cages can allow urination and ejaculation through freely.
+Some things like chastity bondage can allow urination and ejaculation through freely.
 
 +!]
 Definition: a clothing is urination blocking: decide yes.
@@ -82,14 +96,18 @@ Definition: a clothing is urination blocking: decide yes.
 Is this item currently able to block urination?
 
 +!]
-Definition: a clothing is potentially pee covering if it is potentially pussy covering and it is urination blocking.
+Definition: a clothing is potentially pee covering:
+	if it is potentially pussy covering and it is urination blocking, decide yes;
+	decide no.
 
 [!<ClothingIsPeeCovering>+
 
 Is this item currently blocking urination?
 
 +!]
-Definition: a clothing is pee covering if it is worn and it is potentially pee covering.
+Definition: a clothing is pee covering:
+	if it is worn and it is potentially pee covering, decide yes;
+	decide no.
 
 [!<ClothingIsSoakablePeeCovering>+
 
@@ -160,8 +178,12 @@ Definition: a clothing (called C) is top level breasts protection:
 		if the top-layer of O > the top-layer of C, decide no;
 	decide yes.
 
-Definition: a clothing (called C) is top level titfuck protection: [This cares about whether it prevents titfucks.]
-	if C is not worn or C is not breast covering or C is not top-placed or C is optional-top-displacable or C is fully exposing, decide no;
+Definition: a clothing (called C) is titfuck protection: [This cares about whether it prevents titfucks.]
+	if C is breast covering and C is top-placed and C is not optional-top-displacable and C is not fully exposing, decide yes;
+	decide no.
+
+Definition: a clothing (called C) is top level titfuck protection:
+	if C is not worn or C is not titfuck protection, decide no;
 	repeat with O running through worn breast covering top-placed clothing:
 		if the top-layer of O > the top-layer of C and O is not optional-top-displacable and O is not fully exposing, decide no;
 	decide yes.
@@ -242,11 +264,6 @@ Definition: a thing (called T) is cursed plugged:
 	decide no.
 
 [Sometimes we want to check if the player has things in all their holes. It may be just a case of waiting, or removing an object. We do that here.]
-[!<YourselfIsFullyOccupied>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: yourself is fully occupied:
 	if the player is not possessing a vagina:
 		if asshole is actually occupied, decide yes;
@@ -256,19 +273,9 @@ Definition: yourself is fully occupied:
 
 Part - Defence
 
-[!<DecideWhatNumberIsTheDefenceOfThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide what number is the defence of the player:
 	decide on the vaginal defence of the player.
 
-[!<DecideWhatNumberIsTheAnalDefenceOfThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide what number is the anal defence of the player:
 	let D be 0;
 	increase D by (the total volume of hips / 2);
@@ -278,11 +285,6 @@ To decide what number is the anal defence of the player:
 		increase D by the magic-modifier of K;
 	decide on D.
 
-[!<DecideWhatNumberIsTheVaginalDefenceOfThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide what number is the vaginal defence of the player:
 	let D be 0;
 	increase D by (the total volume of hips / 2);

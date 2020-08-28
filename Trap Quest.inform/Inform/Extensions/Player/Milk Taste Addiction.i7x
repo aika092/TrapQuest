@@ -5,19 +5,9 @@ Part 1 - Calculate Milk Taste Addiction
 milk-drunk is a number that varies. [Used to track how much milk is in the player's digestive system]
 milk-exercise-bonus is a number that varies. [Used to track how much milk has been digested and so should eventually contribute to strength and dex gain]
 
-[!<DecideWhichNumberIsTheMilkTasteAddictionInfluenceOfWearThing>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the milk-taste-addiction-influence of (C - a wearthing):
 	decide on 0.
 
-[!<DecideWhichNumberIsTheMilkTasteAddictionInfluenceOfClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the milk-taste-addiction-influence of (C - a clothing):
 	if C is milk-taste-addiction-influencing:
 		let S be 0;
@@ -25,11 +15,6 @@ To decide which number is the milk-taste-addiction-influence of (C - a clothing)
 		decide on S;
 	decide on 0.
 
-[!<DecideWhichNumberIsTheMilkTasteAddictionOfThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the milk taste addiction of the player:
 	let S be the raw milk taste addiction of the player;
 	repeat with C running through worn wearthings:
@@ -38,11 +23,6 @@ To decide which number is the milk taste addiction of the player:
 	if S < 1, decide on 1;
 	decide on S.
 
-[!<YourselfIsCraving>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: yourself is craving milk:
 	let MTA be the milk taste addiction of the player;
 	if MTA > 13 and cold milky > cold milky limit and cold milky <= MTA * cold milky addiction limit, decide yes;
@@ -55,11 +35,6 @@ Definition: yourself is desperately craving milk:
 
 Part 2 - Modify Milk Taste Addiction
 
-[!<Player>@<rawMilkTasteAddiction:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 The player has a number called raw milk taste addiction. The raw milk taste addiction of the player is usually 1. [Min 1 Max 20]
 
 To MilkTasteAddictUp (X - a number):

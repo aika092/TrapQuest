@@ -81,7 +81,9 @@ To compute resolution of (X - mirror nipple tweak):
 	if times-mirrored is 0, say "You feel the possessing spirit lose control of your body as you finally manage to tear your eyes away from the mirror.".
 
 mirror forced masturbation is a mirror attack.
-Definition: mirror forced masturbation is acceptable if the player is able to automatically masturbate.
+Definition: mirror forced masturbation is acceptable:
+	if the player is able to automatically masturbate, decide yes;
+	decide no.
 Definition: mirror forced masturbation is one-turn: decide no.
 
 To compute resolution of (X - mirror forced masturbation):
@@ -110,14 +112,18 @@ To compute resolution of (X - mirror breast growth):
 	BustUp 4.
 
 mirror hip growth is a mirror attack.
-Definition: mirror hip growth is acceptable if diaper quest is 0 and the thickness of hips < max ass size.
+Definition: mirror hip growth is acceptable:
+	if diaper quest is 0 and the thickness of hips < max ass size, decide yes;
+	decide no.
 
 To compute resolution of (X - mirror hip growth):
 	say "Your reflection winks at you, and then its hands move behind and out of sight, to its [ShortDesc of hips]. You watch as you are forced to lewdly massage your own buttocks, with a cheeky grin stretched across your face. [if the player is able to speak]You even snigger out loud[otherwise]Your face mimes silent laughter[end if] as your hips visibly expand!";
 	HipUp 1.
 
 mirror cum consumption is a mirror attack.
-Definition: mirror cum consumption is acceptable if (the semen coating of face > 0 or the semen coating of breasts > 0 or (the semen volume of vagina > 0 and the player is not pussy protected) or total drinkable condoms > 0) and the player is able to eat.
+Definition: mirror cum consumption is acceptable:
+	if (the semen coating of face > 0 or the semen coating of breasts > 0 or (the semen volume of vagina > 0 and the player is not pussy protected) or total drinkable condoms > 0) and the player is able to eat, decide yes;
+	decide no.
 
 To compute resolution of (X - mirror cum consumption):
 	if (the semen volume of vagina > 0 and the player is not pussy protected) or the semen coating of face > 0 or the semen coating of breasts > 0:
@@ -143,7 +149,9 @@ To compute resolution of (X - mirror cum consumption):
 			compute condom biting of C.
 
 mirror soiling is a mirror attack.
-Definition: mirror soiling is acceptable if diaper quest is 1 or (the bladder of the player > 2 and there is worn knickers) or (rectum > 3 and there is a worn total protection diaper and diaper messing >= 4) or the player is diaper focused or the player is an adult baby.
+Definition: mirror soiling is acceptable:
+	if diaper quest is 1 or (the bladder of the player > 2 and there is worn knickers) or (rectum > 3 and there is a worn total protection diaper and diaper messing >= 4) or the player is diaper focused or the player is an adult baby, decide yes;
+	decide no.
 Definition: mirror soiling is one-turn: decide no.
 
 To compute resolution of (X - mirror soiling):
@@ -189,7 +197,9 @@ To compute resolution of (M - mirror-stuffie):
 	summon C cursed with quest.
 
 mirror-maiden is a mirror attack.
-Definition: mirror-maiden is acceptable if (there is an iron-maiden in the location of the player or there is an off-stage iron-maiden) and (the number of worn messed knickers is 0 or tough-shit is 1).
+Definition: mirror-maiden is acceptable:
+	if (there is an iron-maiden in the location of the player or there is an off-stage iron-maiden) and (the number of worn messed knickers is 0 or tough-shit is 1), decide yes;
+	decide no.
 To compute resolution of (M - mirror-maiden):
 	let Y be a random iron-maiden in the location of the player;
 	if Y is nothing, now Y is a random iron-maiden;

@@ -46,7 +46,7 @@ Carry out plugging something with:
 	unless the second noun is worn:
 		if the second noun is penetrating the noun, now the second noun is worn by the player;
 	if the second noun is cursed:
-		say "As you finish inserting [NameDesc of the second noun], you feel it become[if the second noun is unsure]... stuck?! Uh-oh, it seems that it has a magic curse...[otherwise]stuck as the magic curse takes effect.[end if]";
+		say "As you finish inserting [NameDesc of the second noun], you feel it become[if the second noun is unsure]... stuck?! Uh-oh, it seems like it has a magic curse...[otherwise]stuck as the magic curse takes effect.[end if]";
 	now the second noun is sure;
 	if the second noun is clothing, now the second noun is identified.
 

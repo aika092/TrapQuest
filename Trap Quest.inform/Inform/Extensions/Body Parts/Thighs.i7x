@@ -49,11 +49,6 @@ To say LongDesc of (T - thighs):
 	otherwise:
 		say "thighs".
 
-[!<SayTotalDescOfThighs>+
-
-REQUIRES COMMENTING
-
-+!]
 To say TotalDesc of (T - thighs):
 	if weight gain fetish is 1 or the semen coating of thighs > 0, say "Supporting your body you have [LongDesc of T][if the semen coating of thighs is 0]. [end if]";
 	if the semen coating of thighs > 7:
@@ -66,22 +61,12 @@ To say TotalDesc of (T - thighs):
 
 Part 3 - Modify Thighs Stats
 
-[!<FatThighsUpX>+
-
-REQUIRES COMMENTING
-
-+1]
 To FatThighsUp (X - a number):
 	while X > 0 and weight gain fetish is 1:
 		if the flesh volume of thighs < 10, increase the flesh volume of thighs by 1;
 		decrease X by 1;
 		if newbie tips is 1 and the flesh volume of thighs > 2, say "[one of][newbie style]Newbie tip: Your thighs are getting quite thick! That's making you heavier and therefore you'll tire out faster. However, it is fully reversible! Lots of things exercise fat away from your thighs, including fighting enemies and drinking milk.[roman type][line break][or][stopping]".
 
-[!<FatThighsDownX>+
-
-REQUIRES COMMENTING
-
-+!]
 To FatThighsDown (X - a number):
 	if heavyweight tattoo is worn and a random number between 0 and X > 0, decrease X by 1;
 	while X > 0:

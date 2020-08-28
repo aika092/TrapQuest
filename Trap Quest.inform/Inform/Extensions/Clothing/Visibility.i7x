@@ -1,8 +1,12 @@
 Visibility by Clothing begins here.
 
 Definition: a clothing is layer-concealing: decide yes. [Clothing that is layer-exposing is cut in such a way that a viewer can always see glimpses of the layer underneath. Clothing that is layer-concealing never does this. Clothing that has a special rule should redefine the definition block below. This is about the CUT and SHAPE of the item, and not transparency. Transparency is checked for separately. A see through raincoat would still be layer-concealing.]
-Definition: a clothing is partially-layer-concealing if it is layer-concealing. [If you want to set this to 'YES' to make something partially layer concealing, you should also set the layer-concealing definition above to 'NO'.]
-Definition: a clothing is layer-exposing if it is not partially-layer-concealing.
+Definition: a clothing is partially-layer-concealing:
+	if it is layer-concealing, decide yes;
+	decide no. [If you want to set this to 'YES' to make something partially layer concealing, you should also set the layer-concealing definition above to 'NO']
+Definition: a clothing is layer-exposing:
+	if it is not partially-layer-concealing, decide yes;
+	decide no.
 
 Definition: a clothing (called C) is potentially-top-layer-concealing:
 	if C is potentially-partially-top-layer-concealing and C is layer-concealing, decide yes;
@@ -11,7 +15,7 @@ Definition: a clothing (called C) is top-layer-concealing:
 	if C is worn and C is potentially-top-layer-concealing, decide yes;
 	decide no.
 Definition: a clothing (called C) is potentially-partially-top-layer-concealing:
-	if C is partially-layer-concealing and the top-layer of C > 0 and C is actually nipple covering, decide yes;
+	if C is partially-layer-concealing and C is breast covering and C is actually nipple covering, decide yes;
 	decide no.
 Definition: a clothing (called C) is partially-top-layer-concealing:
 	if C is worn and C is potentially-partially-top-layer-concealing, decide yes;
@@ -24,7 +28,7 @@ Definition: a clothing (called C) is mid-layer-concealing:
 	if C is worn and C is potentially-mid-layer-concealing, decide yes;
 	decide no.
 Definition: a clothing (called C) is potentially-partially-mid-layer-concealing:
-	if C is partially-layer-concealing and the mid-layer of C > 0, decide yes;
+	if C is partially-layer-concealing and C is belly covering, decide yes;
 	decide no.
 Definition: a clothing (called C) is partially-mid-layer-concealing:
 	if C is worn and C is potentially-partially-mid-layer-concealing, decide yes;
@@ -37,7 +41,7 @@ Definition: a clothing (called C) is bottom-layer-concealing:
 	if C is worn and C is potentially-bottom-layer-concealing, decide yes;
 	decide no.
 Definition: a clothing (called C) is potentially-partially-bottom-layer-concealing:
-	if C is partially-layer-concealing and C is not-butt-windowed and ((C is total protection and the bottom-layer of C > 0) or C is skirt-covering-crotch) and C is crotch-normal, decide yes; [crotch-assless clothing doesn't hide what's underneath]
+	if C is partially-layer-concealing and C is not-butt-windowed and (C is total protection or C is skirt-covering-crotch), decide yes; [crotch-assless clothing doesn't hide what's underneath, but both 'total protection' and 'skirt-covering-crotch' already check for this]
 	decide no.
 Definition: a clothing (called C) is partially-bottom-layer-concealing:
 	if C is worn and C is potentially-partially-bottom-layer-concealing, decide yes;
@@ -46,7 +50,9 @@ Definition: a clothing (called C) is partially-bottom-layer-concealing:
 current-clothing is a thing that varies.
 
 [Can NPCs be aware of its existence?]
-Definition: a thing is currently perceivable if it is currently-not-in-bag or it is currently at least partially visible.
+Definition: a thing is currently perceivable:
+	if it is currently-not-in-bag or it is currently at least partially visible, decide yes;
+	decide no.
 
 Definition: a thing is currently visible: decide no.
 
@@ -92,7 +98,7 @@ To decide which object is the mid-coverer of (C - a clothing):
 	decide on nothing.
 
 To decide which object is the bottom-coverer of (C - a clothing):
-	if the bottom-layer of C > 0 or C is chastity cage or C is condom of kings:
+	if the bottom-layer of C > 0 or C is chastity bond or C is condom of kings:
 		repeat with O running through bottom-layer-concealing clothing:
 			if the bottom-layer of O > the bottom-layer of C and O is not mesh:
 				decide on O;

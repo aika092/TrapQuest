@@ -68,7 +68,9 @@ To say ShortDesc of (C - nun-top):
 To say MediumDesc of (C - nun-top):
 	say "slutty nun top".
 
-Definition: nun-top is transformation-protected if the class of the player is trick-or-treater.
+Definition: nun-top is transformation-protected:
+	if the class of the player is trick-or-treater, decide yes;
+	decide no.
 Definition: nun-top is black themed: decide yes.
 Definition: nun-top is white themed: decide yes.
 
@@ -90,7 +92,9 @@ To say ShortDesc of (C - witch's top):
 To say MediumDesc of (C - witch's top):
 	say "slutty witch's top".
 
-Definition: witch's top is transformation-protected if the class of the player is trick-or-treater.
+Definition: witch's top is transformation-protected:
+	if the class of the player is trick-or-treater, decide yes;
+	decide no.
 Definition: witch's top is black themed: decide yes.
 Definition: witch's top is magic themed: decide yes.
 
@@ -100,14 +104,16 @@ To decide which figure-name is clothing-image of (W - witch's trousers):
 	decide on figure of witch's trousers.
 
 To say UniqueClothingDesc of (W - witch's trousers):
-	say "A pair of tight fitting black latex thigh high stockings, connected at the back to a pair of latex briefs with a purple cape descending from [if W is worn]your[otherwise]the wearer's[end if] butt. A latex pentragram sits on one otherwise bare thigh.".
+	say "A pair of tight fitting black latex thigh high stockings, connected at the back to a pair of latex briefs with a purple cape descending from [if W is worn]your[otherwise]the wearer's[end if] butt. A latex pentagram sits on one otherwise bare thigh.".
 
 To say ShortDesc of (Y - witch's trousers):
 	say "pair of witch's stockings".
 To say MediumDesc of (Y - witch's trousers):
 	say "pair of black latex witch's stockings".
 
-Definition: witch's trousers is transformation-protected if the class of the player is trick-or-treater.
+Definition: witch's trousers is transformation-protected:
+	if the class of the player is trick-or-treater, decide yes;
+	decide no.
 Definition: witch's trousers is black themed: decide yes.
 Definition: witch's trousers is magic themed: decide yes.
 
@@ -131,7 +137,9 @@ To say ShortDesc of (C - doll-dress):
 To say MediumDesc of (C - doll-dress):
 	say "rubber doll dress".
 
-Definition: doll-dress is transformation-protected if the class of the player is trick-or-treater.
+Definition: doll-dress is transformation-protected:
+	if the class of the player is trick-or-treater, decide yes;
+	decide no.
 Definition: doll-dress is orange themed: decide yes.
 
 Halloween Dresses ends here.

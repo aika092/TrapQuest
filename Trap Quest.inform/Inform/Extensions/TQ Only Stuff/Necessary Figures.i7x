@@ -48,16 +48,42 @@ Figure of Fairy Cutscene 18 is the file "Special/Cutscene/cutscene-fairy-vines1.
 Figure of Fairy Cutscene 19 is the file "Special/Cutscene/cutscene-fairy-vines2.jpg".
 Figure of Fairy Cutscene 20 is the file "Special/Cutscene/cutscene-fairy-vines3.png".
 
-Figure of ghost 1 is the file "NPCs/Mansion/Ghost/ghost1.png".
-Figure of ghost 2 is the file "NPCs/Mansion/Ghost/ghost2.png".
-Figure of ghost 3 is the file "NPCs/Mansion/Ghost/ghost3.png".
-Figure of ghost 4 is the file "NPCs/Mansion/Ghost/ghost4.png".
-Figure of ghost 5 is the file "NPCs/Mansion/Ghost/ghost8.jpg".
+Figure of ghost 1a is the file "NPCs/Mansion/Ghost/ghost1a.jpg".
+Figure of ghost 1b is the file "NPCs/Mansion/Ghost/ghost1b.jpg".
+Figure of ghost 1c is the file "NPCs/Mansion/Ghost/ghost1c.jpg".
+Figure of ghost 1d is the file "NPCs/Mansion/Ghost/ghost1d.jpg".
+Figure of ghost 1 ectoplasm cutscene is the file "NPCs/Mansion/Ghost/ghost1-cutscene-1.jpg".
+Figure of ghost 1 sex cutscene knickers is the file "NPCs/Mansion/Ghost/ghost1-cutscene-2a.jpg".
+Figure of ghost 1 sex cutscene knickerless is the file "NPCs/Mansion/Ghost/ghost1-cutscene-2b.jpg".
+Figure of ghost 2a is the file "NPCs/Mansion/Ghost/ghost2a.jpg".
+Figure of ghost 2b is the file "NPCs/Mansion/Ghost/ghost2b.jpg".
+Figure of ghost 2c is the file "NPCs/Mansion/Ghost/ghost2c.jpg".
+Figure of ghost 2 ectoplasm cutscene is the file "NPCs/Mansion/Ghost/ghost2-cutscene-1.jpg".
+Figure of ghost 2 creampie cutscene is the file "NPCs/Mansion/Ghost/ghost2-cutscene-2.jpg".
+Figure of ghost 3 is the file "NPCs/Mansion/Ghost/ghost3.jpg".
 
-Figure of Ghost Cutscene 1 is the file "Special/Cutscene/cutscene-ghost-sex1.png". [No undies vaginal]
-Figure of Ghost Cutscene 2 is the file "Special/Cutscene/cutscene-ghost-sex2.png". [Undies vaginal]
-Figure of Ghost Cutscene 3 is the file "Special/Cutscene/cutscene-ghost-sex3.png". [Anal]
-Figure of Ghost Cutscene 4 is the file "Special/Cutscene/cutscene-ghost-climax1.png". [Climax]
+To decide which figure-name is the monster-image of (M - a ghost):
+	decide on figure of ghost 1a.
+To decide which figure-name is the unfriendly-monster-image of (M - a ghost):
+	if M is jismbodied ghost and the player is prone, decide on Figure of ghost 2c;
+	if M is jismbodied ghost or M is ghostly tentacle, decide on the monster-image of M;
+	if the wind-up of M is 1 or the player is prone, decide on Figure of ghost 1d;
+	decide on figure of ghost 1b.
+To decide which figure-name is the friendly-monster-image of (M - a ghost):
+	if M is jismbodied ghost or M is ghostly tentacle, decide on the monster-image of M;
+	decide on figure of ghost 1c.
+To decide which figure-name is the monster-image of (M - jismbodied ghost):
+	if the wind-up of M is 1, decide on Figure of ghost 2b;
+	decide on figure of ghost 2a.
+To decide which figure-name is the monster-image of (M - ghostly tentacle):
+	decide on figure of ghost 3.
+To decide which figure-name is the vaginal-sex-monster-image of (M - a ghost):
+	if there is worn total protection knickers, decide on figure of ghost 1 sex cutscene knickers;
+	otherwise decide on figure of ghost 1 sex cutscene knickerless.
+To decide which figure-name is the anal-sex-monster-image of (M - a ghost):
+	decide on the vaginal-sex-monster-image of M.
+To get creampie image of (M - a ghost) in (F - a fuckhole):
+	cutshow figure of ghost 2 creampie cutscene for M.
 
 Figure of Guard Cutscene 2 is the file "Special/Cutscene/cutscene-guard-sex1.png".
 Figure of Guard Cutscene 3 is the file "Special/Cutscene/cutscene-guard-climax1.png".
@@ -116,6 +142,10 @@ Figure of quiz predicament is the file "Special/Cutscene/cutscene-quiz3.jpg".
 
 Figure of hellhound is the file "NPCs/Mansion/Hound/hound1.png".
 
+Figure of rank 2 candy is the file "NPCs/School/Student/student5b.png".
+Figure of rank 3 candy is the file "NPCs/School/Student/student5d.png".
+[Figure of rank 4 candy is the file "NPCs/School/Student/student5f.png".]
+
 Figure of rank 1 small lips rosie is the file "NPCs/School/Student/student1a.png".
 Figure of rank 1 big lips rosie is the file "NPCs/School/Student/student1aL.png".
 To decide which figure-name is Figure of rank 1 rosie:
@@ -145,6 +175,26 @@ To decide which figure-name is the pacified-image of (M - a wrestler):
 	decide on figure of Missing NPC.
 
 Figure of Xavier Cutscene 2 is the file "Special/Cutscene/cutscene-xavier-fuck1.png".
+
+Part - Clothing
+
+Figure of purple rubber bodysuit is the file "Items/Clothes/Upper/Latex/bodysuit2a.png".
+Figure of purple rubber bodysuit cameltoe is the file "Items/Clothes/Upper/Latex/bodysuit2b.png".
+Figure of purple rubber bodysuit cameltoe belly is the file "Items/Clothes/Upper/Latex/bodysuit2c.png".
+Figure of purple rubber bodysuit cameltoe belly tattoo is the file "Items/Clothes/Upper/Latex/bodysuit2d.png".
+Figure of purple rubber bodysuit cameltoe breasts is the file "Items/Clothes/Upper/Latex/bodysuit2e.png".
+Figure of purple rubber bodysuit cameltoe breasts belly is the file "Items/Clothes/Upper/Latex/bodysuit2f.png".
+Figure of purple rubber bodysuit cameltoe breasts belly tattoo is the file "Items/Clothes/Upper/Latex/bodysuit2g.png".
+
+To decide which figure-name is clothing-image of (C - purple rubber bodysuit):
+	if the top-transform of C > 0:
+		if the bottom-transform of C >= 3, decide on Figure of purple rubber bodysuit cameltoe breasts belly tattoo;
+		if the bottom-transform of C is 2, decide on Figure of purple rubber bodysuit cameltoe breasts belly;
+		decide on Figure of purple rubber bodysuit cameltoe breasts;
+	if the bottom-transform of C >= 3, decide on Figure of purple rubber bodysuit cameltoe belly tattoo;
+	if the bottom-transform of C is 2, decide on Figure of purple rubber bodysuit cameltoe belly;
+	if the bottom-transform of C is 1, decide on Figure of purple rubber bodysuit cameltoe;
+	decide on figure of purple rubber bodysuit.
 
 Part - Other
 
@@ -422,7 +472,7 @@ Figure of Atlas tattoo is the file "Items/Tats/tattoo30.jpg".
 To decide which figure-name is the examine-image of (T - Atlas tattoo):
 	decide on figure of Atlas tattoo.
 
-Figure of bbc-fairy tattoo is the file "Items/Tats/tattoo155.jpg".
+Figure of bbc-fairy tattoo is the file "Items/Tats/tattoo156.jpg".
 To decide which figure-name is the examine-image of (T - bbc-fairy tattoo):
 	decide on figure of bbc-fairy tattoo.
 
@@ -453,6 +503,10 @@ Figure of ultra pink hair tattoo is the file "Items/Tats/tattoo109.jpg".
 To decide which figure-name is the examine-image of (T - bright-hair tattoo):
 	if the redness of hair < 3 or the blondeness of hair < 3 or the brightness of hair < 3, decide on figure of bright hair tattoo;
 	decide on figure of ultra pink hair tattoo.
+
+Figure of broken-clitty tattoo is the file "Items/Tats/tattoo155.jpg".
+To decide which figure-name is the examine-image of (T - broken-clitty tattoo):
+	decide on figure of broken-clitty tattoo.
 
 Figure of butt-slut tattoo is the file "Items/Tats/tattoo8.jpg".
 To decide which figure-name is the examine-image of (T - butt-slut tattoo):
@@ -916,9 +970,9 @@ To decide which figure-name is the examine-image of (T - breasts):
 	if the largeness of breasts < 6, decide on figure of BreastsObject3;
 	if the largeness of breasts < 8, decide on figure of BreastsObject4;
 	if the largeness of breasts < 10, decide on figure of BreastsObject5;
-	if the largeness of breasts < 12, decide on figure of BreastsObject6;
-	if the largeness of breasts < 14, decide on figure of BreastsObject7;
-	if the largeness of breasts < 17, decide on figure of BreastsObject8;
+	if the largeness of breasts < 13, decide on figure of BreastsObject6;
+	if the largeness of breasts < 16, decide on figure of BreastsObject7;
+	if the largeness of breasts < 19, decide on figure of BreastsObject8;
 	decide on figure of BreastsObject9.
 
 Figure of CumHipsButton is the file "CharWins/FocusWin/Hips/cumhips.png".
@@ -1580,5 +1634,184 @@ Figure of PussyExpelAnimation023 is the file "Special/Animations/PussyExpel/fram
 Figure of PussyExpelAnimation024 is the file "Special/Animations/PussyExpel/frame_024.jpg".
 When play begins:
 	fill PussyExpelAnimation from Figure of PussyExpelAnimation016 to 8.
+
+IntroAAnimation is a loading animation track. The pause-frame of IntroAAnimation is 15.
+
+[Figure of PregIntroBanner is the file "Special/Animations/IntroA/IntroBanner.png".
+To decide which figure-name is the bannerImage of (T - IntroAAnimation):
+	decide on Figure of PregIntroBanner.]
+
+Definition: IntroAAnimation is fetish appropriate:
+	if pregnancy fetish is 1, decide yes;
+	decide no.
+
+Figure of IntroA00 is the file "Special/Animations/IntroA/IntroA00.jpg".
+Figure of IntroA01 is the file "Special/Animations/IntroA/IntroA01.jpg".
+Figure of IntroA02 is the file "Special/Animations/IntroA/IntroA02.jpg".
+Figure of IntroA03 is the file "Special/Animations/IntroA/IntroA03.jpg".
+Figure of IntroA04 is the file "Special/Animations/IntroA/IntroA04.jpg".
+Figure of IntroA05 is the file "Special/Animations/IntroA/IntroA05.jpg".
+Figure of IntroA06 is the file "Special/Animations/IntroA/IntroA06.jpg".
+Figure of IntroA07 is the file "Special/Animations/IntroA/IntroA07.jpg".
+Figure of IntroA08 is the file "Special/Animations/IntroA/IntroA08.jpg".
+Figure of IntroA09 is the file "Special/Animations/IntroA/IntroA09.jpg".
+Figure of IntroA10 is the file "Special/Animations/IntroA/IntroA10.jpg".
+Figure of IntroA11 is the file "Special/Animations/IntroA/IntroA11.jpg".
+Figure of IntroA12 is the file "Special/Animations/IntroA/IntroA12.jpg".
+Figure of IntroA13 is the file "Special/Animations/IntroA/IntroA13.jpg".
+Figure of IntroA14 is the file "Special/Animations/IntroA/IntroA14.jpg".
+Figure of IntroA15 is the file "Special/Animations/IntroA/IntroA15.jpg".
+Figure of IntroA16 is the file "Special/Animations/IntroA/IntroA16.jpg".
+Figure of IntroA17 is the file "Special/Animations/IntroA/IntroA17.jpg".
+Figure of IntroA18 is the file "Special/Animations/IntroA/IntroA18.jpg".
+Figure of IntroA19 is the file "Special/Animations/IntroA/IntroA19.jpg".
+Figure of IntroA20 is the file "Special/Animations/IntroA/IntroA20.jpg".
+Figure of IntroA21 is the file "Special/Animations/IntroA/IntroA21.jpg".
+Figure of IntroA22 is the file "Special/Animations/IntroA/IntroA22.jpg".
+Figure of IntroA23 is the file "Special/Animations/IntroA/IntroA23.jpg".
+Figure of IntroA24 is the file "Special/Animations/IntroA/IntroA24.jpg".
+Figure of IntroA25 is the file "Special/Animations/IntroA/IntroA25.jpg".
+Figure of IntroA26 is the file "Special/Animations/IntroA/IntroA26.jpg".
+Figure of IntroA27 is the file "Special/Animations/IntroA/IntroA27.jpg".
+Figure of IntroA28 is the file "Special/Animations/IntroA/IntroA28.jpg".
+Figure of IntroA29 is the file "Special/Animations/IntroA/IntroA29.jpg".
+Figure of IntroA30 is the file "Special/Animations/IntroA/IntroA30.jpg".
+Figure of IntroA31 is the file "Special/Animations/IntroA/IntroA31.jpg".
+Figure of IntroA32 is the file "Special/Animations/IntroA/IntroA32.jpg".
+Figure of IntroA33 is the file "Special/Animations/IntroA/IntroA33.jpg".
+Figure of IntroA34 is the file "Special/Animations/IntroA/IntroA34.jpg".
+Figure of IntroA35 is the file "Special/Animations/IntroA/IntroA35.jpg".
+Figure of IntroA36 is the file "Special/Animations/IntroA/IntroA36.jpg".
+Figure of IntroA37 is the file "Special/Animations/IntroA/IntroA37.jpg".
+Figure of IntroA38 is the file "Special/Animations/IntroA/IntroA38.jpg".
+Figure of IntroA39 is the file "Special/Animations/IntroA/IntroA39.jpg".
+Figure of IntroA40 is the file "Special/Animations/IntroA/IntroA40.jpg".
+Figure of IntroA41 is the file "Special/Animations/IntroA/IntroA41.jpg".
+Figure of IntroA42 is the file "Special/Animations/IntroA/IntroA42.jpg".
+Figure of IntroA43 is the file "Special/Animations/IntroA/IntroA43.jpg".
+Figure of IntroA44 is the file "Special/Animations/IntroA/IntroA44.jpg".
+Figure of IntroA45 is the file "Special/Animations/IntroA/IntroA45.jpg".
+Figure of IntroA46 is the file "Special/Animations/IntroA/IntroA46.jpg".
+Figure of IntroA47 is the file "Special/Animations/IntroA/IntroA47.jpg".
+Figure of IntroA48 is the file "Special/Animations/IntroA/IntroA48.jpg".
+Figure of IntroA49 is the file "Special/Animations/IntroA/IntroA49.jpg".
+Figure of IntroA50 is the file "Special/Animations/IntroA/IntroA50.jpg".
+Figure of IntroA51 is the file "Special/Animations/IntroA/IntroA51.jpg".
+Figure of IntroA52 is the file "Special/Animations/IntroA/IntroA52.jpg".
+Figure of IntroA53 is the file "Special/Animations/IntroA/IntroA53.jpg".
+Figure of IntroA54 is the file "Special/Animations/IntroA/IntroA54.jpg".
+Figure of IntroA55 is the file "Special/Animations/IntroA/IntroA55.jpg".
+To compute unique setup of (T - IntroAAnimation):
+	if the number of entries in the image-reel of T is 0:
+		fill T from Figure of IntroA00 to 14;
+		fill T from Figure of IntroA15 to -14;
+		fill T from Figure of IntroA00 to 14;
+		fill T from Figure of IntroA15 to -14;
+		fill T from Figure of IntroA00 to 55.
+
+
+IntroBAnimation is a loading animation track. The pause-frame of IntroBAnimation is 22.
+
+Figure of IntroB00 is the file "Special/Animations/IntroB/IntroB00.jpg".
+Figure of IntroB01 is the file "Special/Animations/IntroB/IntroB01.jpg".
+Figure of IntroB02 is the file "Special/Animations/IntroB/IntroB02.jpg".
+Figure of IntroB03 is the file "Special/Animations/IntroB/IntroB03.jpg".
+Figure of IntroB04 is the file "Special/Animations/IntroB/IntroB04.jpg".
+Figure of IntroB05 is the file "Special/Animations/IntroB/IntroB05.jpg".
+Figure of IntroB06 is the file "Special/Animations/IntroB/IntroB06.jpg".
+Figure of IntroB07 is the file "Special/Animations/IntroB/IntroB07.jpg".
+Figure of IntroB08 is the file "Special/Animations/IntroB/IntroB08.jpg".
+Figure of IntroB09 is the file "Special/Animations/IntroB/IntroB09.jpg".
+Figure of IntroB10 is the file "Special/Animations/IntroB/IntroB10.jpg".
+Figure of IntroB11 is the file "Special/Animations/IntroB/IntroB11.jpg".
+Figure of IntroB12 is the file "Special/Animations/IntroB/IntroB12.jpg".
+Figure of IntroB13 is the file "Special/Animations/IntroB/IntroB13.jpg".
+Figure of IntroB14 is the file "Special/Animations/IntroB/IntroB14.jpg".
+Figure of IntroB15 is the file "Special/Animations/IntroB/IntroB15.jpg".
+Figure of IntroB16 is the file "Special/Animations/IntroB/IntroB16.jpg".
+Figure of IntroB17 is the file "Special/Animations/IntroB/IntroB17.jpg".
+Figure of IntroB18 is the file "Special/Animations/IntroB/IntroB18.jpg".
+Figure of IntroB19 is the file "Special/Animations/IntroB/IntroB19.jpg".
+Figure of IntroB20 is the file "Special/Animations/IntroB/IntroB20.jpg".
+Figure of IntroB21 is the file "Special/Animations/IntroB/IntroB21.jpg".
+Figure of IntroB22 is the file "Special/Animations/IntroB/IntroB22.jpg".
+Figure of IntroB23 is the file "Special/Animations/IntroB/IntroB23.jpg".
+Figure of IntroB24 is the file "Special/Animations/IntroB/IntroB24.jpg".
+Figure of IntroB25 is the file "Special/Animations/IntroB/IntroB25.jpg".
+Figure of IntroB26 is the file "Special/Animations/IntroB/IntroB26.jpg".
+Figure of IntroB27 is the file "Special/Animations/IntroB/IntroB27.jpg".
+Figure of IntroB28 is the file "Special/Animations/IntroB/IntroB28.jpg".
+Figure of IntroB29 is the file "Special/Animations/IntroB/IntroB29.jpg".
+Figure of IntroB30 is the file "Special/Animations/IntroB/IntroB30.jpg".
+Figure of IntroB31 is the file "Special/Animations/IntroB/IntroB31.jpg".
+Figure of IntroB32 is the file "Special/Animations/IntroB/IntroB32.jpg".
+Figure of IntroB33 is the file "Special/Animations/IntroB/IntroB33.jpg".
+Figure of IntroB34 is the file "Special/Animations/IntroB/IntroB34.jpg".
+Figure of IntroB35 is the file "Special/Animations/IntroB/IntroB35.jpg".
+Figure of IntroB36 is the file "Special/Animations/IntroB/IntroB36.jpg".
+Figure of IntroB37 is the file "Special/Animations/IntroB/IntroB37.jpg".
+To compute unique setup of (T - IntroBAnimation):
+	if the number of entries in the image-reel of T is 0:
+		fill T from Figure of IntroB00 to 14;
+		fill T from Figure of IntroB15 to -14;
+		fill T from Figure of IntroB00 to 14;
+		fill T from Figure of IntroB15 to -14;
+		fill T from Figure of IntroB00 to 37.
+
+
+
+IntroCAnimation is a loading animation track. The pause-frame of IntroCAnimation is 20.
+
+Figure of IntroC00 is the file "Special/Animations/IntroC/IntroC00.jpg".
+Figure of IntroC01 is the file "Special/Animations/IntroC/IntroC01.jpg".
+Figure of IntroC02 is the file "Special/Animations/IntroC/IntroC02.jpg".
+Figure of IntroC03 is the file "Special/Animations/IntroC/IntroC03.jpg".
+Figure of IntroC04 is the file "Special/Animations/IntroC/IntroC04.jpg".
+Figure of IntroC05 is the file "Special/Animations/IntroC/IntroC05.jpg".
+Figure of IntroC06 is the file "Special/Animations/IntroC/IntroC06.jpg".
+Figure of IntroC07 is the file "Special/Animations/IntroC/IntroC07.jpg".
+Figure of IntroC08 is the file "Special/Animations/IntroC/IntroC08.jpg".
+Figure of IntroC09 is the file "Special/Animations/IntroC/IntroC09.jpg".
+Figure of IntroC10 is the file "Special/Animations/IntroC/IntroC10.jpg".
+Figure of IntroC11 is the file "Special/Animations/IntroC/IntroC11.jpg".
+Figure of IntroC12 is the file "Special/Animations/IntroC/IntroC12.jpg".
+Figure of IntroC13 is the file "Special/Animations/IntroC/IntroC13.jpg".
+Figure of IntroC14 is the file "Special/Animations/IntroC/IntroC14.jpg".
+Figure of IntroC15 is the file "Special/Animations/IntroC/IntroC15.jpg".
+Figure of IntroC16 is the file "Special/Animations/IntroC/IntroC16.jpg".
+Figure of IntroC17 is the file "Special/Animations/IntroC/IntroC17.jpg".
+Figure of IntroC18 is the file "Special/Animations/IntroC/IntroC18.jpg".
+Figure of IntroC19 is the file "Special/Animations/IntroC/IntroC19.jpg".
+Figure of IntroC20 is the file "Special/Animations/IntroC/IntroC20.jpg".
+Figure of IntroC21 is the file "Special/Animations/IntroC/IntroC21.jpg".
+Figure of IntroC22 is the file "Special/Animations/IntroC/IntroC22.jpg".
+Figure of IntroC23 is the file "Special/Animations/IntroC/IntroC23.jpg".
+Figure of IntroC24 is the file "Special/Animations/IntroC/IntroC24.jpg".
+Figure of IntroC25 is the file "Special/Animations/IntroC/IntroC25.jpg".
+Figure of IntroC26 is the file "Special/Animations/IntroC/IntroC26.jpg".
+Figure of IntroC27 is the file "Special/Animations/IntroC/IntroC27.jpg".
+Figure of IntroC28 is the file "Special/Animations/IntroC/IntroC28.jpg".
+Figure of IntroC29 is the file "Special/Animations/IntroC/IntroC29.jpg".
+Figure of IntroC30 is the file "Special/Animations/IntroC/IntroC30.jpg".
+Figure of IntroC31 is the file "Special/Animations/IntroC/IntroC31.jpg".
+Figure of IntroC32 is the file "Special/Animations/IntroC/IntroC32.jpg".
+Figure of IntroC33 is the file "Special/Animations/IntroC/IntroC33.jpg".
+Figure of IntroC34 is the file "Special/Animations/IntroC/IntroC34.jpg".
+Figure of IntroC35 is the file "Special/Animations/IntroC/IntroC35.jpg".
+Figure of IntroC36 is the file "Special/Animations/IntroC/IntroC36.jpg".
+Figure of IntroC37 is the file "Special/Animations/IntroC/IntroC37.jpg".
+Figure of IntroC38 is the file "Special/Animations/IntroC/IntroC38.jpg".
+Figure of IntroC39 is the file "Special/Animations/IntroC/IntroC39.jpg".
+Figure of IntroC40 is the file "Special/Animations/IntroC/IntroC40.jpg".
+Figure of IntroC41 is the file "Special/Animations/IntroC/IntroC41.jpg".
+To compute unique setup of (T - IntroCAnimation):
+	if the number of entries in the image-reel of T is 0:
+		fill T from Figure of IntroC00 to 20;
+		fill T from Figure of IntroC20 to -20;
+		fill T from Figure of IntroC00 to 20;
+		fill T from Figure of IntroC20 to -20;
+		fill T from Figure of IntroC00 to 41.
+
+
 
 Necessary Figures ends here.

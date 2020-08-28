@@ -67,8 +67,7 @@ Carry out crafting:
 			let H be a random worn blue scrunchie;
 			if H is clothing:
 				compute class outfit of H;
-				say "Magic surges from [NameDesc of H] to the rest of your body!";
-				MagicPowerUp 1;
+				if playerRegion is not school, MagicPowerUp 1;
 		otherwise:
 			if there is a product-highlighted thing:
 				say "Nothing happens.";

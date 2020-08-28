@@ -5,7 +5,9 @@ An alchemy product is a kind of thing. [We are not going to classify these as 'b
 Definition: an alchemy product is product: decide yes.
 Definition: an alchemy product is magic themed: decide yes.
 
-Definition: an alchemy product is shop-eligible if it is off-stage and it is product and it is fetish appropriate.
+Definition: an alchemy product is shop-eligible:
+	if it is off-stage and it is product and it is fetish appropriate, decide yes;
+	decide no.
 
 An alchemy product has a curse-ID. Understand the curse-ID property as describing an alchemy product. An alchemy product is usually unsure.
 An alchemy product has a magic-curse. Understand the magic-curse property as describing an alchemy product when item described is sure.
@@ -14,7 +16,9 @@ To uniquely destroy (P - an alchemy product):
 	now P is bland;
 	now P is unsure.
 
-Definition: an alchemy product is uncursed if it is not cursed.
+Definition: an alchemy product is uncursed:
+	if it is not cursed, decide yes;
+	decide no.
 
 To say alchemy-title-before:
 	say "[TQlink of item described][if item described is sure and item described is blessed]blessed [otherwise if item described is sure and item described is cursed]cursed [otherwise if item described is sure]uncursed [end if]".
@@ -33,7 +37,7 @@ To decide what number is the original price of (C - an alchemy product):
 	decide on 4.
 
 To say MonsterOfferAcceptFlav of (M - witch) to (T - an alchemy product):
-	say "[BigNameDesc of M] gingerly takes it from you.[line break][speech style of M]'[if T is unsure]You couldn't even be bothered to identify it? Well, I guess I can pawn this off to some unexpecting adventurer in the future. I'll take it[otherwise if T is cursed]Don't you think I have enough cursed [ShortDesc of T]s? No, no, I'll take it, just don't expect me to be over the moon or anything[otherwise if T is blessed]Wow, I haven't seen a blessed one of these in decades! I mean... not that I'm that old! Forget I said anything! Anyway, yes, thank you, I'll definitely take this off of your hands[otherwise]Nice, looks like it's in good condition too. Thanks[end if].'[roman type][line break]";
+	say "[BigNameDesc of M] gingerly takes it from you.[line break][speech style of M]'[if T is unsure]You couldn't even be bothered to identify it? Well, I guess I can pawn this off to some unsuspecting adventurer in the future. I'll take it[otherwise if T is cursed]Don't you think I have enough cursed [ShortDesc of T]s? No, no, I'll take it, just don't expect me to be over the moon or anything[otherwise if T is blessed]Wow, I haven't seen a blessed one of these in decades! I mean... not that I'm that old! Forget I said anything! Anyway, yes, thank you, I'll definitely take this off of your hands[otherwise]Nice, looks like it's in good condition too. Thanks[end if].'[roman type][line break]";
 
 A bomb is a kind of alchemy product. Understand "bomb" as a bomb.
 
@@ -113,8 +117,12 @@ Section 2 - Water Bomb
 
 water-bomb is a bomb. water-bomb has a number called cum-known. The text-shortcut of water-bomb is "wbmb". Understand "water" as water-bomb when the cum-known of water-bomb is 0 and the number of water-body-scenery in the location of the player is 0. Understand "cum" as water-bomb when the cum-known of water-bomb is not 0.
 
-Definition: water-bomb is semen themed if the cum-known of water-bomb is 1.
-Definition: water-bomb is fetish appropriate if bukkake fetish is 1.
+Definition: water-bomb is semen themed:
+	if the cum-known of water-bomb is 1, decide yes;
+	decide no.
+Definition: water-bomb is fetish appropriate:
+	if bukkake fetish is 1, decide yes;
+	decide no.
 Definition: water-bomb is combat-bomb: decide yes.
 
 To say MediumDesc of (B - water-bomb):
@@ -210,7 +218,9 @@ Section 4 - Time Bomb
 timeBombTime is a number that varies.
 time-bomb is a bomb. The text-shortcut of time-bomb is "timb". Understand "time" as time-bomb.
 
-Definition: time-bomb is fetish appropriate if diaper quest is 0.
+Definition: time-bomb is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 
 To say MediumDesc of (B - time-bomb):
 	say "time bomb".
@@ -363,7 +373,9 @@ Section 5 - Nail Bomb
 
 nail-bomb is a bomb. The text-shortcut of nail-bomb is "naib". Understand "nail" as nail-bomb.
 
-Definition: nail-bomb is fetish appropriate if diaper quest is 0.
+Definition: nail-bomb is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 
 To say MediumDesc of (B - nail-bomb):
 	say "nail bomb".
@@ -536,7 +548,9 @@ Section 3 Elixir of Invigoration
 
 invigoration-elixir is an elixir. invigoration-elixir has a number called invigoration-timer. Understand "invigoration" as invigoration-elixir. The text-shortcut of invigoration-elixir is "ei".
 
-Definition: invigoration-elixir is fetish appropriate if diaper quest is 0.
+Definition: invigoration-elixir is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 
 To say MediumDesc of (B - invigoration-elixir):
 	say "elixir of invigoration".
@@ -601,7 +615,7 @@ A time based rule (this is the siphoning elixir decay rule):
 						say "Suddenly you feel your insides behind your crotch twisting and turning and rearranging themselves, and you yelp in surprise as you realise your [vagina] has been replaced by your original [player-penis]!";
 						ReverseSexChange the player;
 					otherwise:
-						say "You feel smarter!";
+						say "You feel [smarter]!";
 						IntUp X / 2;
 				otherwise:
 					say "Your [player-penis] grows!";
@@ -611,7 +625,7 @@ A time based rule (this is the siphoning elixir decay rule):
 			otherwise if siphoning-elixir-charge > 0:
 				let X be siphoning-elixir-charge;
 				if the player is female or the size of penis is 10:
-					say "You feel smarter!";
+					say "You feel [smarter]!";
 					IntUp X / 3;
 				otherwise:
 					say "Your [player-penis] grows!";
@@ -627,7 +641,6 @@ A time based rule (this is the siphoning elixir decay rule):
 					IntDown (X / 2) + 1;
 				say "You feel weaker.";
 				StrengthDown X / 2;
-			say "You feel like your magical power has increased.";
 			MagicPowerUp (X / 2) + 1;[you always get a little bit of power out of it]
 			now siphoning-elixir-charge is 0;
 			now siphoning-elixir-timer is 0.]
@@ -790,7 +803,9 @@ Section 4 Potion of Bull Strength
 
 bull-strength-potion is a potion. The text-shortcut of bull-strength-potion is "pbu". Understand "bull", "strength" as bull-strength-potion.
 
-Definition: bull-strength-potion is fetish appropriate if weight gain fetish is 1 and lactation fetish is 1.
+Definition: bull-strength-potion is fetish appropriate:
+	if weight gain fetish is 1 and lactation fetish is 1, decide yes;
+	decide no.
 
 To say MediumDesc of (B - bull-strength-potion):
 	say "potion of bull strength".
@@ -884,10 +899,10 @@ Carry out quaffing space mead:
 			StrengthUp 1;
 		if the player is deserving of more dexterity:
 			say "For just a moment your limbs twist to an impossible orientation before returning to normal. You feel a bit more limber afterwards.";
-			Dexup 1;
+			DexUp 1;
 		if the player is deserving of more intelligence:
-			say "For an instant your mind opens up to an infinite vista of possibilities, and even after it fades you still feel somewhat smarter.";
-			Intup 1;
+			say "For an instant your mind opens up to an infinite vista of possibilities, and even after it fades you still feel somewhat [smarter].";
+			IntUp 1;
 	if the noun is not blessed:
 		humiliate 500;
 		say "It feels as though a vast emptiness has eaten away at your sense of self.";
@@ -920,6 +935,38 @@ Carry out quaffing luck-potion:
 		say "[bold type]You feel an incredible surge of positivity flow through your veins.[line break][variable custom style]I feel much more lucky![roman type][line break]";
 		if the noun is blessed, increase the raw luck of the player by 5;
 		increase the raw luck of the player by 10.
+
+Section 7 Potion of Magic
+
+magic-potion is a potion. The text-shortcut of magic-potion is "pmg". Understand "magic" as magic-potion.
+
+To decide which number is the alchemy key of (A - magic-potion):
+	decide on 36.
+
+To say MediumDesc of (B - magic-potion):
+	say "potion of magic".
+
+To say ExamineDesc of (B - magic-potion):
+	say "A round clear hip flask filled with a dose of bright glowing murky liquid. The label claims that drinking it will improve and replenish your magic power. ";
+	if B is sure and B is cursed, say "Since it is cursed, drinking it would probably lower your magic power instead. Perhaps you could find some other use for it, for example gifting.";
+	otherwise say "[if B is sure and B is blessed]The blessing will somehow enhance the effect of the potion.[otherwise][line break][end if]".
+
+To BackgroundRender (T - magic-potion) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
+	draw a rectangle TQcolour of murky in the current focus window at X1 by Y1 with size DX by DY.
+
+Carry out quaffing magic-potion:
+	say "You pull out the stopper and down the murky liquid.";
+	if the noun is cursed:
+		say "[bold type]You feel a curse flow through your veins!";
+		MagicPowerDown 1;
+	otherwise:
+		MagicPowerUp 1;
+		MagicPowerRefresh 10;
+		if the noun is blessed:
+			let S be a random uncastable fetish appropriate magic-spell;
+			if S is magic-spell:
+				say "[bold type]New arcane knowledge appears in your mind! You've learned a new spell![NewbieSpellFlav]";
+				compute learning of S.
 
 A powder is a kind of alchemy product. Understand "powder", "powder of" as a powder.
 
@@ -1095,7 +1142,9 @@ A true salve is a kind of alchemy product. Understand "salve", "salve of" as a t
 A true salve is wearable. A true salve is sure.
 Definition: a true salve is product: decide no.
 
-Definition: a salve is fetish appropriate if diaper quest is 0.
+Definition: a salve is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 
 To say ShortDesc of (S - a salve):
 	say "salve".
@@ -1421,7 +1470,7 @@ An all time based rule (this is the acceleration tincture decay rule):
 			now acceleration-timer of acceleration-tincture is 0;
 			if acceleration-bonus of acceleration-tincture > 0:
 				now acceleration-bonus of acceleration-tincture is 0;
-				say "[bold type]Time speeds back up to its normal speed.[roman type][line break]";
+				say "[bold type]Time speeds back up to normal.[roman type][line break]";
 		otherwise:
 			if the pregnancy of the player > 0 and the pregnancy of the player < 3 and the largeness of belly < 10:
 				increase the womb volume of vagina by 1;

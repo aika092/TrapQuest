@@ -1,10 +1,5 @@
 Destroying by Objects begins here.
 
-[!<DislodgeThing>+
-
-REQUIRES COMMENTING
-
-+!]
 To dislodge (C - a thing):
 	compute unique dislodging of C;
 	if C is monster:

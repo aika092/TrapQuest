@@ -1,43 +1,18 @@
 Stomach by Player begins here.
 
-[!<DecideWhichNumberIsTheStomachLiquidOfThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the stomach-liquid of the player:
 	decide on the stomach-water of the player + the stomach-semen of the player + the stomach-milk of the player + the stomach-urine of the player.
 
-[!<DecideWhichNumberIsTheStomachOfThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the stomach of the player:
 	decide on the stomach-liquid of the player + the stomach-food of the player.
 
-[!<DecideWhichNumberIsStomachMax>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is stomach-max:
 	decide on 14.
 
-[!<YourselfIsOverlyFull>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: yourself is overly full:
 	if the stomach of the player > stomach-max, decide yes;
 	decide no.
 
-[!<YourselfIsAlmostTooFull>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: yourself is almost too full:
 	if the stomach of the player is stomach-max or the stomach of the player is stomach-max - 1, decide yes;
 	decide no.
@@ -69,22 +44,12 @@ An all later time based rule (this is the satiated causes bonus strength rule):
 			say "Now that you are not wearing [if diaper messing >= 5]underwear[otherwise]a diaper[end if], your bonus strength from feeling full has disappeared.";
 		now old-fullness-bonus is F.
 
-[!<StomachUpX>+
-
-REQUIRES COMMENTING
-
-+!]
 To StomachUp (X - a number):
 	if the latex-transformation of the player > 4, now X is 0;
 	while X > 0:
 		increase the stomach-water of the player by 1;
 		decrease X by 1.
 
-[!<StomachDownX>+
-
-REQUIRES COMMENTING
-
-+!]
 To StomachDown (X - a number):
 	let S be 0;
 	let U be 0;
@@ -107,11 +72,6 @@ To StomachDown (X - a number):
 	if M > 0, StomachMilkDown M;
 	if cold milky > cold milky limit and the player is not craving milk, MilkTasteAddictDown 1.
 
-[!<StomachFoodUpX>+
-
-REQUIRES COMMENTING
-
-+!]
 To StomachFoodUp (X - a number):
 	if the latex-transformation of the player > 4, now X is 0;
 	while X > 0:
@@ -120,11 +80,6 @@ To StomachFoodUp (X - a number):
 		if xavier-throat-link is 1 and rectum > 0 and diaper messing >= 3, increase rectum by 1 + xavier-belt-link;
 		decrease X by 1.
 
-[!<StomachFoodDownX>+
-
-REQUIRES COMMENTING
-
-+!]
 To StomachFoodDown (X - a number):
 	while X > 0:
 		if the stomach-food of the player > 0:
@@ -134,7 +89,9 @@ To StomachFoodDown (X - a number):
 
 Definition: a thing is facefucker: decide no. [Can it make the player gag]
 Definition: gloryhole is facefucker: decide yes.
-Definition: a monster is facefucker if it is male or it is neuter.
+Definition: a monster is facefucker:
+	if it is male or it is neuter, decide yes;
+	decide no.
 
 To StomachSemenUp (X - a number):
 	let SU be a random number between 0 and 1;

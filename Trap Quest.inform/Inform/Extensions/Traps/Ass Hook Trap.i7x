@@ -14,15 +14,10 @@ To say ExamineDesc of (C - an ass hook):
 
 To decide which figure-name is the examine-image of (C - an ass hook):
 	if C is penetrating asshole:
-		if the player is male, decide on figure of hook cutscene 1;
+		if the player is not possessing a vagina, decide on figure of hook cutscene 1;
 		otherwise decide on figure of hook cutscene 2;
 	decide on figure of ass hook.
 
-[!<TheSpawnInitialDungeonAssHookTrapsRule>+
-
-REQUIRES COMMENTING
-
-+@!]
 This is the spawn initial dungeon asshook traps rule:
 	repeat with N running from 1 to 2:
 		let R be a random [wire untrapped] trappable placed labyrinth room;
@@ -30,50 +25,31 @@ This is the spawn initial dungeon asshook traps rule:
 		unless there is an ass hook in R, deploy T in R.
 The spawn initial dungeon asshook traps rule is listed in the set up dungeon traps rules.
 
-[!<TheSpawnInitialHotelAssHookTrapsRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the spawn initial hotel asshook traps rule:
 	let R be a random [wire untrapped] trappable placed modern room;
 	let T be a random off-stage ass hook;
 	unless there is an ass hook in R, deploy T in R.
 The spawn initial hotel asshook traps rule is listed in the set up hotel traps rules.
 
-[!<TheSpawnInitialMansionAssHookTrapsRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the spawn initial mansion asshook traps rule:
 	let R be a random [wire untrapped] trappable placed haunted room;
 	let T be a random off-stage ass hook;
 	unless there is an ass hook in R, deploy T in R.
 The spawn initial mansion asshook traps rule is listed in the set up mansion traps rules.
 
-[!<AssHook>@<WhichNumberIsTheGirth>+
-
-REQUIRES COMMENTING
-
-+@!]
 To decide which number is the girth of (D - an ass hook):
 	decide on 2.
 
-[!<YourselfIsHookStuck>
+Definition: yourself is anally hook stuck:
+	if there is an ass hook penetrating a fuckhole, decide yes;
+	decide no.
+Definition: yourself is wedgie hook stuck:
+	if there is an ass hook grabbing the player, decide yes;
+	decide no.
+Definition: yourself is hook stuck:
+	if yourself is anally hook stuck or yourself is wedgie hook stuck, decide yes;
+	decide no.
 
-REQUIRES COMMENTING
-
-+!]
-Definition: yourself is anally hook stuck if there is an ass hook penetrating a fuckhole.
-Definition: yourself is wedgie hook stuck if there is an ass hook grabbing the player.
-Definition: yourself is hook stuck if yourself is anally hook stuck or yourself is wedgie hook stuck.
-
-[!<AssHook>@<Trigger>+
-
-REQUIRES COMMENTING
-
-+@!]
 To trigger (Y - an ass hook):
 	now the player-motion of the player is 0;
 	say "[bold type]You feel a rope rise from the ground to in between your legs and then to up behind you somewhere. [roman type]Before you can react, you feel the rope swiftly pulled towards the back of you. You feel a piece of metal at the end of the rope which ";
@@ -139,20 +115,10 @@ Check pulling knickers when the player is wedgie hook stuck:
 	if playerRegion is school, say "That won't work, the hook is fixed in place." instead;
 	HookPull instead.
 
-[!<CheckPullingAnAssHook>+
-
-REQUIRES COMMENTING
-
-+!]
 Check pulling an ass hook:
 	if playerRegion is school, say "That won't work, the hook is fixed in place." instead;
 	HookPull instead.
 
-[!<HookPull>+
-
-REQUIRES COMMENTING
-
-+!]
 To HookPull:
 	let H be the noun;
 	if the player is wedgie hook stuck, now H is a random ass hook grabbing the player;
@@ -180,10 +146,10 @@ To HookPull:
 					if the player is unable to orgasm so soon, now able-to-orgasm is 0;
 					ruin asshole;
 					if able-to-orgasm is 1 and the player is unable to orgasm so soon: [player just came]
-						if the player is male, cutshow figure of hook cutscene 6 for H;
+						if the player is not possessing a vagina, cutshow figure of hook cutscene 6 for H;
 						otherwise cutshow figure of hook cutscene 5 for H;
 					otherwise if (prev-horny is 0 and the player is a bit horny) or (prev-horny is 1 and the player is horny): [player just got aroused]
-						if the player is male, cutshow figure of hook cutscene 3 for H;
+						if the player is not possessing a vagina, cutshow figure of hook cutscene 3 for H;
 						otherwise cutshow figure of hook cutscene 4 for H;
 					repeat with M running through reactive monsters:
 						say AssHookFuckTrapReactFlav of M;
@@ -207,20 +173,10 @@ To HookPull:
 
 Hook fucking is an action applying to one touchable thing.
 
-[!<CheckHookFucking>+
-
-REQUIRES COMMENTING
-
-+!]
 Check hook fucking:
 	if the noun is the throne or the noun is vines, try pulling the noun instead;
 	unless the noun is an ass hook, say "You pull up on it, not really sure what that was meant to achieve..." instead.
 
-[!<CarryOutHookFucking>+
-
-REQUIRES COMMENTING
-
-+!]
 Carry out hook fucking:
 	allocate 3 seconds;
 	ruin asshole;
@@ -236,11 +192,6 @@ Understand "pull up on [something]", "pull [something] up" as hook fucking.
 To say AssHookFuckTrapReactFlav of (M - a monster):
 	say LewdTrapReactFlav of M.
 
-[!<JumpFromTheHook>+
-
-REQUIRES COMMENTING
-
-+!]
 To Jump From The Hook:
 	allocate 6 seconds;
 	compute upright fatigue gain;

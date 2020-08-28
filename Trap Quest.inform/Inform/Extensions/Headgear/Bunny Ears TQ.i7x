@@ -54,7 +54,7 @@ To compute unique periodic effect of (C - bunny waitress ears):
 			now the service-ready of C is 0;
 	otherwise if G is bottle or CG is bottle:
 		if the service-ready of C is 0:
-			say "[bold type]You can feel your bunny ears making you much smarter[one of]![line break][variable custom style]Wow, I feel amazing while carrying around [if G is bottle and CG is bottle]these drinks[otherwise]this drink[end if], just like a good bunny waitress![roman type][line break][or] again![stopping][roman type][line break]";
+			say "[bold type]You can feel your bunny ears making you much [smarter][one of]![line break][variable custom style]Wow, I feel amazing while carrying around [if G is bottle and CG is bottle]these drinks[otherwise]this drink[end if], just like a good bunny waitress![roman type][line break][or] again![stopping][roman type][line break]";
 			now the service-ready of C is 1.
 
 To decide which number is the waitress bartering value of (T - a bottle) for (M - a monster):

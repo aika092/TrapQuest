@@ -78,7 +78,7 @@ Check pulling a pullstring collar:
 				now R is 0;
 				say "'Dumb girls wear diapers because they can't control their pee pee!'[roman type][line break]";
 				increase incontinence by 1;
-				say "[if the player is incontinent]You realise you are now fully incontinent.[otherwise if the diaper addiction of the player < 9]You desperately hope that this doesn't mean you're becoming incontinent.[otherwise]You are weirdly excited by the idea that this might mean you're becoming incontinent.[end if]";
+				say "[if the player is incontinent]You realise you are now [one of]fully[or]hopelessly[or]utterly[or]totally[or]completely[at random] incontinent.[otherwise if the diaper addiction of the player < 9]You desperately hope that this doesn't mean you're becoming incontinent.[otherwise]You are weirdly excited by the idea that this might mean you're becoming incontinent.[end if]";
 			otherwise:
 				increase R by 1;
 		if R is 5:

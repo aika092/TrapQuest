@@ -278,6 +278,7 @@ Carry out TQeating bubblegum:
 	otherwise:
 		say "Magic power surges through your tongue to the rest of your body!";
 		MagicPowerUp 1;
+		MagicPowerRefresh 3;
 	say "You happily swallow what's left of the edible treat.".
 
 To compute (M - a robochef) cooking (I - bubblegum):
@@ -575,7 +576,7 @@ Carry out TQeating strawberry lace:
 		PainUp 1;
 		BodyRuin 3;
 	otherwise:
-		say "find your mind sparkling with brilliance. You feel yourself getting [if strawberry-lace-timer > 0]even [end if]smarter!";
+		say "find your mind sparkling with brilliance. You feel yourself getting [if strawberry-lace-timer > 0]even [end if][smarter]!";
 		increase strawberry-lace-timer by default-candy-duration.
 
 an all time based rule (this is the strawberry lace decay rule):

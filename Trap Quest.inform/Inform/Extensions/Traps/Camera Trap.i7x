@@ -127,8 +127,8 @@ To develop (P - a poster):
 To compute special of (P - a poster):
 	if there is a worn gag:
 		now the old-special of P is a random worn gag;
-	otherwise if there is a worn chastity cage:
-		now the old-special of P is a random worn chastity cage;
+	otherwise if there is a worn chastity bond:
+		now the old-special of P is a random worn chastity bond;
 	otherwise if there is a worn ankle bond:
 		now the old-special of P is a random worn ankle bond;
 	otherwise if there is a worn tattoo:
@@ -169,7 +169,7 @@ An all time based rule (this is the player spots poster rule):
 			say "You yelp in surprise as you enter this room and immediately spot a large poster of a lewd scene on [if playerRegion is Woods]a giant tree[otherwise]a wall[end if]. The image is one of you, taken by a camera trap earlier in the game. ";
 		say "[line break][ShortDesc of P][TitleDesc of P]";
 		say "[if the humiliation of the player < 10000][line break][first custom style][one of]Oh my god! No no no no no! How many people have seen this? I feel so ashamed...[or]Oh no! There's one here too?![or]Oh no! How may of these are there?![or]No no no, not another one! There are pictures of me everywhere![then at random][otherwise if the humiliation of the player < 20000][line break][variable custom style][one of]Oh no! How do I take this down?! How embarrassing![or]Eek! Another one! How awful...[or]Fucking hell, how many pictures of me are there?[then at random][otherwise if the humiliation of the player < 30000][variable custom style][one of]Ooh! What meanie put this up without asking me? I should have at least been asked![or]If I find who put this up they're going to be in big trouble![or]That's so mean! But kind of hot...[or]How do I get myself into these situations! *giggle*[then at random][otherwise if the humiliation of the player < 40000][line break][second custom style]I can't believe how much this is turning me on, to be objectified like that![otherwise][second custom style]I deserved that.[end if][roman type][line break]";
-		if the humiliation of the player < 20000, say "[if playerRegion is Hotel][one of]You jump, trying to reach the banner and pull it down, but it's no use - it's way too high! [line break][first custom style]Noooo![roman type][line break][or][stopping][otherwise][one of]You try to rip the poster off the wall, but it's extremely durable and stuck on with some very impressive adhesive - you can't even damage it! [line break][first custom style]Oh come on![roman type][line break][or][stopping][end if]";
+		if the humiliation of the player < 20000, say "[if playerRegion is Hotel][one of]You jump, trying to reach the banner and pull it down, but it's no use - it's way too high![line break][first custom style]Noooo![roman type][line break][or][stopping][otherwise][one of]You try to rip the poster off the wall, but it's extremely durable and stuck on with some very impressive adhesive - you can't even damage it![line break][first custom style]Oh come on![roman type][line break][or][stopping][end if]";
 		say "[one of]Dare you look closer at your own shameful image?[or][stopping]";
 		humiliate the lewdness of P;
 		now P is spotted.
@@ -187,7 +187,7 @@ An all time based rule (this is the monster spots poster rule):
 				now M is disapproving P.
 
 To IdentifiablePosterReaction of (M - a monster):
-	say "[BigNameDesc of M] looks at you, blinks, then looks back to the poster. [line break][speech style of M]'Wait a second, is this YOU?! Holy shit, [one of]you're a disgrace[or]you're disgusting[or]you're such a slut[or]what a slut[or]you're even more of a massive whore than I guessed[at random].'[roman type][line break]";
+	say "[BigNameDesc of M] looks at you, blinks, then looks back to the poster.[line break][speech style of M]'Wait a second, is this YOU?! Holy shit, [one of]you're a disgrace[or]you're disgusting[or]you're such a slut[or]what a slut[or]you're even more of a massive whore than I guessed[at random].'[roman type][line break]";
 	say "You turn bright red with shame.";
 	humiliate the lewdness of a random poster in the location of the player * 2.
 
@@ -214,7 +214,7 @@ To compute unique variables of (P - an upskirt poster):
 	if the number of worn trousers is 0 and the number of worn skirted clothing > 0, now the upskirt successful of P is 1.
 
 To compute title of (P - an upskirt poster):
-	if the old-special of P is chastity cage and there is a lewdly exposed fuckhole:
+	if the old-special of P is chastity bond and there is a lewdly exposed fuckhole:
 		if P is in the hotel, now the title of P is "CHASTITY SLUT";
 		otherwise now the title of P is "I only cum from my butthole!";
 	otherwise if the old-knickers-mess of P > 0:
@@ -587,7 +587,7 @@ To say ExamineDesc of (C - a wetting poster):
 	otherwise if old-peereaction of C is 3:
 		say "[if old-bimbo of C > 9]You have a naughty, guilty grin on your face[otherwise]You have a disgusted look on your face[end if]. ";
 	otherwise if urination-target of C is a room:
-		say "[if urination-target of C is in the Woods or old-humiliation of C >= 15000]Your facial expression seems to show that you don't really mind pissing on the floor. [line break][variable custom style]Um yeah, this was nothing compared to all the other stuff I've been through! [roman type][line break][otherwise]You are clearly very uncomfortable, paranoid that someone is going to come walking past and witness your shame. [end if]";
+		say "[if urination-target of C is in the Woods or old-humiliation of C >= 15000]Your facial expression seems to show that you don't really mind pissing on the floor.[line break][variable custom style]Um yeah, this was nothing compared to all the other stuff I've been through! [roman type][line break][otherwise]You are clearly very uncomfortable, paranoid that someone is going to come walking past and witness your shame. [end if]";
 	if old-overdress of C is clothing, say "You are wearing a [ShortDesc of old-overdress of C]. ";
 	if old-trousers of C is clothing, say "You are [if old-overdress of C is clothing]also [end if]wearing a [ShortDesc of old-trousers of C]. ";
 	say "[PosterCum of C]";

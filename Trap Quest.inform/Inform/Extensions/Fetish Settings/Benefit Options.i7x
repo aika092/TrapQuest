@@ -1,15 +1,10 @@
 Benefit Options by Fetish Settings begins here.
 
-[!<tableOfBenefitOptions:Table>*
-
-REQUIRES COMMENTING
-
-*!]
 Table of Benefit Options
 title	subtable	description	toggle
 "[roman type]Confirm Choices (shortcut: press Q)"	--	--	quit rule
 "Reset Choices"	--	--	reset rule
-"CHOOSE A BACKGROUND (5 points) [if background-nurse + background-sporty + background-waitress + background-pure <= 0]not [otherwise][bold type][end if]chosen[roman type]"	Table of Background Options	--	--
+"CHOOSE A BACKGROUND (5 points) [if choice in row 52 of the Table of Player Options <= 0]not [otherwise][bold type][end if]chosen[roman type]"	Table of Background Options	--	--
 "CHOOSE A SECRET (7 points) [if tattoo-fetish + piercing-fetish + humiliation-fetish + artificial-fetish <= 0]not [otherwise][bold type][end if]chosen[roman type]"	Table of Secret Options	--	--
 "CHOOSE BODY SHAPE LIMITATIONS"	Table of Body Limit Options	--	--
 "Extra Strength: [bonus strength] ([bonus strength points] points used. [bonus strength cost].)"	--	--	bonus strength rule
@@ -42,7 +37,6 @@ To compute random bonuses:
 The reset rules is a rulebook.
 
 This is the reset rule:
-	follow the empty background rules;
 	follow the empty secret rules;
 	follow the reset rules.
 
@@ -74,22 +68,12 @@ Normal max is 10. We reduce by 3 per rank of max belly size points.
 To decide which number is max belly size:
 	decide on 10 - max belly size modifier.
 
-[!<SayMaxBellySizeDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say MaxBellySizeDesc:
 	if max belly size is 1, say "completely flat";
 	if max belly size is 4, say "curvy";
 	if max belly size is 7, say "full";
 	if max belly size is 10, say "bulging".
 
-[!<SayBonusStrengthCost>+
-
-REQUIRES COMMENTING
-
-+!]
 To say bonus strength cost:
 	if bonus strength < 2:
 		say "Next increase costs 2 points";
@@ -102,11 +86,6 @@ To say bonus strength cost:
 	otherwise:
 		say "You are at maximum bonus strength".
 
-[!<TheBonusStrengthRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the bonus strength rule:
 	if bonus strength < 2:
 		if points count > 1:
@@ -130,11 +109,6 @@ This is the bonus strength reset rule:
 	now choice in row 24 of the Table of Player Options is 0.
 The bonus strength reset rule is listed in the reset rules.
 
-[!<SayBonusDexterityCost>+
-
-REQUIRES COMMENTING
-
-+!]
 To say bonus dexterity cost:
 	if bonus dexterity < 2:
 		say "Next increase costs 2 points";
@@ -147,11 +121,6 @@ To say bonus dexterity cost:
 	otherwise:
 		say "You are at maximum bonus dexterity".
 
-[!<TheBonusDexterityRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the bonus dexterity rule:
 	if bonus dexterity < 2:
 		if points count > 1:
@@ -175,11 +144,6 @@ This is the bonus dexterity reset rule:
 	now choice in row 25 of the Table of Player Options is 0.
 The bonus dexterity reset rule is listed in the reset rules.
 
-[!<SayBonusIntelligenceCost>+
-
-REQUIRES COMMENTING
-
-+!]
 To say bonus intelligence cost:
 	if bonus intelligence < 2:
 		say "Next increase costs 2 points";
@@ -192,11 +156,6 @@ To say bonus intelligence cost:
 	otherwise:
 		say "You are at maximum bonus intelligence".
 
-[!<TheBonusIntelligenceRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the bonus intelligence rule:
 	if bonus intelligence < 2:
 		if points count > 1:
@@ -220,11 +179,6 @@ This is the bonus intelligence reset rule:
 	now choice in row 26 of the Table of Player Options is 0.
 The bonus intelligence reset rule is listed in the reset rules.
 
-[!<TheMindbreakProtectionToggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the mindbreak protection toggle rule:
 	if mindbreak protection is 0 and points count >= 4, now choice in row 35 of the Table of Player Options is 1;
 	otherwise now choice in row 35 of the Table of Player Options is 0.
@@ -233,11 +187,6 @@ This is the mindbreak protection reset rule:
 	now choice in row 35 of the Table of Player Options is 0.
 The mindbreak protection reset rule is listed in the reset rules.
 
-[!<TheSpontaneousTattoosToggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the spontaneous tattoos toggle rule:
 	if spontaneous tattoos is 0, now choice in row 36 of the Table of Player Options is 1;
 	otherwise now choice in row 36 of the Table of Player Options is 0.
@@ -247,11 +196,6 @@ This is the spontaneous tattoos toggle rule:
 	now choice in row 36 of the Table of Player Options is 0.
 The spontaneous tattoos reset rule is listed in the reset rules.]
 
-[!<TheRoleplayFetishToggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the roleplay fetish toggle rule:
 	if roleplay fetish is 0 and points count >= 1, now choice in row 47 of the Table of Player Options is 1;
 	otherwise now choice in row 47 of the Table of Player Options is 0.
@@ -260,11 +204,6 @@ This is the roleplay fetish reset rule:
 	now choice in row 47 of the Table of Player Options is 0.
 The roleplay fetish reset rule is listed in the reset rules.
 
-[!<TheBondageProtectionToggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the bondage protection toggle rule:
 	if bondage protection is 0 and points count >= 4, now choice in row 64 of the Table of Player Options is 1;
 	otherwise now choice in row 64 of the Table of Player Options is 0.

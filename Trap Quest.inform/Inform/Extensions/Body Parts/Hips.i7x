@@ -63,66 +63,30 @@ To decide which number is the unique outrage of (H - hips):
 	if O > 20, decide on 20;
 	decide on O.
 
-Definition: hips is at least partially exposed if the concealer of hips is nothing.
-Definition: hips is exposed if the at least partial concealer of hips is nothing.
+Definition: hips is at least partially exposed:
+	if the concealer of hips is nothing, decide yes;
+	decide no.
+Definition: hips is exposed:
+	if the at least partial concealer of hips is nothing, decide yes;
+	decide no.
 
 To say FullExamineDesc of (B - hips):
 	say "[ImageDesc of hips][TotalDesc of hips]".
 
-[!<Hips>@<thickness:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 Hips has a number called thickness. The thickness of hips is usually 1.
 
-[!<Hips>@<realThickness:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 Hips has a number called real thickness. The real thickness of hips is usually 1.
 
-[!<Hips>@<fleshVolume:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 Hips has a number called flesh volume. The flesh volume of hips is usually 1.
 
-[!<Hips>@<airVolume:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 Hips has a number called air volume. The air volume of hips is usually 0.
 
-[!<Hips>@<siliconeVolume:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 Hips has a number called silicone volume. The silicone volume of hips is usually 0.
 
-[!<Hips>@<previousThickness>*
-
-REQUIRES COMMENTING
-
-*@!]
 Hips has a number called previous thickness. Hips has a number called previous total volume.
 
-[!<Hips>@<fatBurning:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 Hips has a number called fat-burning.
 
-[!<DecideWhichNumberIsMaxAssSizeModifier>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is max ass size modifier:
 	let M be max ass size points;
 	if max ass size points > 0, increase M by 1;
@@ -130,11 +94,6 @@ To decide which number is max ass size modifier:
 	if max ass size points > 2, increase M by 1;
 	decide on M;
 
-[!<DecideWhichNumberIsMaxAssSize>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is max ass size:
 	if there is a restricting salve covering hips, decide on the total volume of hips;
 	if extreme proportions fetish is 1 and the player is not a flatchested trap, decide on 20 - max ass size modifier;
@@ -144,11 +103,6 @@ To decide which number is max hip size:
 	[if there is a restricting salve covering hips, decide on the thickness of hips;
 	decide on 10 - max ass size modifier.]
 
-[!<SayMaxAssSizeDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say MaxAssSizeDesc:
 	let MAS be max ass size;
 	if MAS <= 1:
@@ -208,22 +162,12 @@ To decide which number is min hip size:
 To decide which number is min ass size:
 	decide on 1 + (starting body shape * 2).
 
-[!<ReportTaking>+
-
-REQUIRES COMMENTING
-
-+!]
 Report taking:
 	if weight gain fetish is 1 and the player is upright:
 		FatigueUp 10;
 		increase the fat-burning of hips by 10;
 		compute hip fat burning.
 
-[!<ComputeHipFatBurning>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute hip fat burning:
 	if the flesh volume of hips > 0:
 		let F be (200 - (exercise theme bonus * 40)) - (the flesh volume of hips * 10);
@@ -246,11 +190,6 @@ To decide which number is the total weighty volume of hips:
 	if X > 20, decide on 20;
 	decide on X.
 
-[!<DecideWhichNumberIsTheWeightOfHips>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the weight of (XXX - hips):
 	let H be the flesh volume of hips + the thickness of hips +( silicone volume of hips / 2) - (the air volume of hips * 2);
 	if there is a worn buoyant salve covering hips:
@@ -267,11 +206,6 @@ To decide which number is the weight of (XXX - hips):
 
 Part 2 - Description
 
-[!<SayShortDescOfHips>+
-
-REQUIRES COMMENTING
-
-+!]
 To say ShortDesc of hips:
 	let X be the thickness of hips;
 	if X < 2, say "androgynous hips";
@@ -297,11 +231,6 @@ To say MediumAppearanceDesc of (H - hips):
 	if the strut of the player > 0 and the player is upright, say MediumDesc of H;
 	otherwise say AssDesc.
 
-[!<SayTotalDescOfHips>+
-
-REQUIRES COMMENTING
-
-+!]
 To say TotalDesc of hips:
 	if the thickness of hips > 3 and the total volume of hips > 4:
 		say "Your [if the bimbo of the player > 6]alluring [end if][MediumDesc of hips] stick out behind you[if the bimbo of the player > 8] provocatively[end if]. ";
@@ -315,11 +244,6 @@ To say TotalDesc of hips:
 	otherwise:
 		say "Your buttcheeks are currently completely visible.".
 
-[!<SayAssDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say AssDesc:
 	let A be the total volume of hips;
 	if A < 3, say "tiny flat butt cheeks";
@@ -343,11 +267,6 @@ To say AssDesc:
 	otherwise if A is 20:
 		say "impossibly giant ass cheeks".
 
-[!<SayHipDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say HipDesc:
 	say MediumDesc of hips;
 	if the total volume of hips is 14, say ", each one large larger than a watermelon";
@@ -358,7 +277,7 @@ To say HipDesc:
 		say " [if the player is flying]holding you off the ground[otherwise]trying to pull you up into the air[end if]";
 	otherwise if the total volume of hips is 20:
 		say "[if the player is upright] that make it a huge challenge to even walk at all[end if]";
-	if there is a worn chastity cage and the player is female:
+	if chastity-belt is worn:
 		say " and chastity belt";
 	if there is a worn diaper:
 		let X be the weight of a random diaper worn by the player;
@@ -375,11 +294,6 @@ To say HipDesc:
 		otherwise:
 			say " (which are greatly exaggerated by an incredibly heavy and saturated diaper)".
 
-[!<SayHipWeight>+
-
-REQUIRES COMMENTING
-
-+!]
 To say HipWeight:
 	if the weight of hips < -3:
 		say "Your butt weighs significantly less than air and is trying to pull you up off the ground. ";
@@ -396,11 +310,6 @@ To say HipWeight:
 	otherwise:
 		say "Your butt is impossibly heavy and unwieldy, making each step a very challenging task. ".
 
-[!<SayAssFillDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say AssFillDesc:
 	if the air volume of hips is 0:
 		say "";
@@ -413,11 +322,6 @@ To say AssFillDesc:
 	otherwise:
 		say "It is ballooned with a massive amount of air. ".
 
-[!<SayAssImplantsDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say AssImplantsDesc:
 	if the silicone volume of hips is 0:
 		say "";
@@ -430,19 +334,9 @@ To say AssImplantsDesc:
 	otherwise:
 		say "The vast majority of your ass can be attributed to your ass implants. ";
 
-[!<SayRealDescOfHips>+
-
-REQUIRES COMMENTING
-
-+!]
 To say RealDesc of (XXX - hips): [So that both can be used.]
 	say RealHipDesc.
 
-[!<SayRealHipDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say RealHipDesc:
 	let X be the real thickness of hips;
 	if X < 3, say "androgynous hips";
@@ -462,11 +356,6 @@ Chapter 1 - Thickness
 
 bigHipBalance is a number that varies.
 
-[!<HipUpX>+
-
-REQUIRES COMMENTING
-
-+!]
 To HipUp (X - a number):
 	while X > 0:
 		decrease X by 1;
@@ -505,11 +394,6 @@ To say UniqueThighGapFlav:
 	say "Your hips have now grown so wide they leave you with a feminine gap between your legs, causing you to feel a breeze on your crotch even when your knees are together.";
 	cutshow figure of body reaction 7 for hips.
 
-[!<HipDownX>+
-
-REQUIRES COMMENTING
-
-+!]
 To HipDown (X - a number):
 	if prime USDA tattoo is worn:
 		say "[one of]You feel your [ShortDesc of hips] try to shrink, but your [ShortDesc of prime USDA tattoo] prevents it![or]Once again your [ShortDesc of hips] fail to shrink.[stopping]";
@@ -527,22 +411,12 @@ To HipDown (X - a number):
 
 Chapter 2 - Buttocks
 
-[!<AssSwellX>+
-
-REQUIRES COMMENTING
-
-+!]
 To AssSwell (X - a number):
 	if weight gain fetish is 1:
 		FatAssUp X;
 	otherwise:
 		HipUp X.
 
-[!<AssInflateX>+
-
-REQUIRES COMMENTING
-
-+!]
 To AssInflate (X - a number):
 	if the number of worn research airhancers > 0, increase X by 1;
 	now X is X * 2;
@@ -557,11 +431,6 @@ To AssInflate (X - a number):
 		otherwise if X is 0:
 			say "Your [AssDesc] try to inflate further but have reached their limit!".
 
-[!<AssImplantsUpX>+
-
-REQUIRES COMMENTING
-
-+!]
 To AssImplantsUp (X - a number):
 	let attempt-done be 0;
 	while X > 0:
@@ -578,11 +447,6 @@ To AssImplantsUp (X - a number):
 			say "Your [AssDesc] are just too big, the skin won't stretch any further! Your new [if the silicone volume of hips > 0]and improved [end if]implants shrink under the pressure.";
 			now attempt-done is 2.
 
-[!<AssImplantsDownX>+
-
-REQUIRES COMMENTING
-
-+!]
 To AssImplantsDown (X - a number):
 	while X > 0:
 		if the silicone volume of hips > 0:
@@ -590,11 +454,6 @@ To AssImplantsDown (X - a number):
 
 Chapter 3 - Fat
 
-[!<FatAssUpX>+
-
-REQUIRES COMMENTING
-
-+!]
 To FatAssUp (X - a number):
 	while X > 0:
 		decrease X by 1;
@@ -617,11 +476,6 @@ To FatAssUp (X - a number):
 				try examining prime USDA tattoo;
 	if newbie tips is 1 and the flesh volume of hips > 2, say "[one of][newbie style]Newbie tip: You're starting to pack on the pounds in the butt area! That's making you heavier and therefore you'll tire out faster. However, it is fully reversible! Every turn you 'resist' [if diaper quest is 1]when NPCs are punishing you[otherwise]during sex[end if] will exercise your butt muscles a bit, and help you lose that fat.[roman type][line break][or][stopping]".
 
-[!<FatAssDownX>+
-
-REQUIRES COMMENTING
-
-+!]
 To FatAssDown (X - a number):
 	if prime USDA tattoo is worn:
 		say "[one of]You feel your [AssDesc] try to shrink, but your [ShortDesc of prime USDA tattoo] prevents it![or]Once again your [AssDesc] fail to shrink.[stopping]";

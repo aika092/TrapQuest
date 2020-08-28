@@ -27,7 +27,9 @@ To say ClothingDesc of (O - a milking basque):
 To say ShortDesc of (C - a milking basque):
 	say "white milking basque".
 
-Definition: a milking basque is class-transformation-protected if the class of the player is royal slave.
+Definition: a milking basque is class-transformation-protected:
+	if the class of the player is royal slave, decide yes;
+	decide no.
 
 A white milking basque is a kind of milking basque. The printed name of white milking basque is usually "[clothing-title-before]white basque[clothing-title-after]". The text-shortcut of white milking basque is "wb".
 
@@ -72,8 +74,12 @@ To say ShortDesc of (C - a demonic-milking basque):
 Definition: a demonic-milking basque is tongued: decide yes.
 Definition: a demonic-milking basque is demonic: decide yes.
 Definition: a demonic-milking basque is red themed: decide yes.
-Definition: a demonic-milking basque is white themed if tonguesBlack is false.
-Definition: a demonic-milking basque is black themed if tonguesBlack is true.
+Definition: a demonic-milking basque is white themed:
+	if tonguesBlack is false, decide yes;
+	decide no.
+Definition: a demonic-milking basque is black themed:
+	if tonguesBlack is true, decide yes;
+	decide no.
 
 To decide which number is the initial outrage of (C - demonic-milking basque):
 	if C is tonguing, decide on 18;

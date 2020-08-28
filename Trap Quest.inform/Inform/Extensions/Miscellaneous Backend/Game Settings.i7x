@@ -567,11 +567,6 @@ This is the game difficulty rule:
 		otherwise:
 			now the choice in row 32 of the Table of Settings is 0.
 
-[!<TheUltraUndoToggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 [This is the ultra undo toggle rule:
 	if choice in row 26 of Table of Settings is 0:
 		now choice in row 26 of Table of Settings is 1;
@@ -580,11 +575,6 @@ REQUIRES COMMENTING
 		now choice in row 26 of Table of Settings is 0;
 		if earnings is not starting-earnings, reverse undo weirdness.]
 
-[!<TheCrashDebugRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the crash debug rule:
 	if crashdebug is 0:
 		now crashdebug is 1;
@@ -593,11 +583,6 @@ This is the crash debug rule:
 
 Part - Optional Text Settings
 
-[!<tableOfOptionalTextSettings:Table>*
-
-REQUIRES COMMENTING
-
-*!]
 Table of Optional Text Settings
 title	subtable	description	toggle
 "Previous Menu (Shortcut: Q)"	--	--	quit rule
@@ -613,58 +598,28 @@ title	subtable	description	toggle
 "Schoolteachers can give you new names: [if schoolNames is 0]OFF[otherwise]ON[end if]"	--	--	school names toggle rule
 [ALL EXTRA OPTIONS SHOULD GO ABOVE SCHOOL NAMES ROW, OR NON-DONATORS WON'T SEE THEM.]
 
-[!<TheNewStatusToggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the new status toggle rule:
 	if choice in row 19 of Table of Settings < 3, increase choice in row 19 of Table of Settings by 1;
 	otherwise now choice in row 19 of Table of Settings is 0.
 
-[!<TheNewbieTipsToggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the newbie tips toggle rule:
 	if choice in row 20 of Table of Settings is 0, now choice in row 20 of Table of Settings is 1;
 	otherwise now choice in row 20 of Table of Settings is 0.
 
-[!<TheShortcutsToggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the shortcuts toggle rule:
 	if choice in row 25 of Table of Settings is 0, now choice in row 25 of Table of Settings is 1;
 	otherwise now choice in row 25 of Table of Settings is 0.
 
-[!<TheInlineHyperlinksToggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the inline hyperlinks toggle rule:
 	if choice in row 27 of Table of Settings < 3, increase choice in row 27 of Table of Settings by 1;
 	otherwise now choice in row 27 of Table of Settings is 0.
 
-[!<TheInventoryHyperlinksToggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the inventory hyperlinks toggle rule:
 	if choice in row 28 of Table of Settings < 2, increase choice in row 28 of Table of Settings by 1;
 	otherwise now choice in row 28 of Table of Settings is 0.
 
 Part - Automatic Actions
 
-[!<tableOfAutomaticActionsSettings:Table>*
-
-REQUIRES COMMENTING
-
-*!]
 Table of Automatic Actions Settings
 title	subtable	description	toggle
 "Previous Menu (Shortcut: Q)"	--	--	quit rule
@@ -674,40 +629,20 @@ title	subtable	description	toggle
 "Warn if entering trapped room: [if trap warning is 1]ON[otherwise]OFF[end if]"	--	--	trap warning toggle rule
 "Ask 'are you sure' for common mistakes: [if areYouSure is 1]ON[otherwise]OFF[end if]"	--	--	areYouSure toggle rule
 
-[!<TheAutosearchToggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the autosearch toggle rule:
 	if autosearch is 0, now choice in row 12 of the Table of Settings is 1;
 	otherwise now choice in row 12 of the Table of Settings is 0.
 
-[!<TheAutostandToggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the autostand toggle rule:
 	if autostand is 0, now choice in row 13 of the Table of Settings is 1;
 	otherwise now choice in row 13 of the Table of Settings is 0.
 
-[!<TheAutotakeToggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the autotake toggle rule:
 	if autotake < 2, increase choice in row 31 of the Table of Settings by 1;
 	otherwise now choice in row 31 of the Table of Settings is 0.
 
 Part - GUI Settings
 
-[!<tableOfAutomaticActionsSettings:Table>*
-
-REQUIRES COMMENTING
-
-*!]
 Table of GUI Settings
 title	subtable	description	toggle
 "Previous Menu (Shortcut: Q)"	--	--	quit rule
@@ -723,7 +658,7 @@ title	subtable	description	toggle
 "[if GUI layout is 1]Inline Image Cutscenes[otherwise]Keep all cutscene images in lower display bar[end if]: [if image cutscenes is 0]NO CUTSCENES[otherwise if GUI layout is 0 and image cutscenes is 1]NO[otherwise]YES[end if]"	--	--	image cutscenes toggle rule
 "Animated graphical elements: [if animationsEnabled is 1]ON[otherwise]OFF[end if]"	--	--	animationsEnabled toggle rule
 "Visible humiliating tattoos shown in Location Window [if tattoo vision is 1]ON[otherwise]OFF[end if]"	--	--	tattoo vision toggle rule
-"Dark mode ([if the player is the donator]Compatible with WinGit; you just need to go into Git>Options and invert the colours for the main window manually; the exact brown RGB value is 24,13,1[otherwise]Non-patrons can only toggle graphical windows for now[end if]): [if darkMode is 1]ON[otherwise if darkMode is 2]GRAPHICAL WINDOWS ONLY[otherwise]OFF[end if]"	--	--	darkMode toggle rule
+"Dark mode (Compatible with WinGit; you just need to go into Git>Options and invert the colours for the main window manually; the exact brown RGB value is 24,13,1): [if darkMode is 1]ON[otherwise if darkMode is 2]GRAPHICAL WINDOWS ONLY[otherwise]OFF[end if]"	--	--	darkMode toggle rule
 
 To say InterfaceStyleOptions:
 	if diaper quest is 0, say "Interface Style: [if GUI layout is 1]CLASSIC COCKSUCKER[otherwise if GUI layout is 2]TIGHT TWAT[otherwise]NEWEST NYMPHO[end if]";
@@ -744,11 +679,6 @@ To say focusWindowHeightOptions:
 
 Part - Image Toggle Rules
 
-[!<TheImagesVisibleToggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the images visible toggle rule:
 	if images visible is 0:
 		now the choice in row 2 of the Table of Settings is 1;
@@ -764,42 +694,22 @@ This is the images visible toggle rule:
 		now choice in row 29 of the Table of Settings is 0;
 		now the choice in row 2 of the Table of Settings is 0.
 
-[!<TheSideImagesToggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the side images toggle rule:
 	if choice in row 14 of the Table of Settings is 0, now choice in row 2 of the Table of Settings is 1; [re-enable images]
 	increase choice in row 14 of the Table of Settings by 1;
 	if choice in row 14 of the Table of Settings > 5 or (choice in row 14 of the Table of Settings > 1 and GUI layout is 0), now choice in row 14 of the Table of Settings is 0.
 
-[!<TheMapImagesToggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the map images toggle rule:
 	if map images is 0, now the choice in row 2 of the Table of Settings is 1; [re-enable images]
 	increase choice in row 15 of the Table of Settings by 1;
 	if choice in row 15 of the Table of Settings > 5 or (choice in row 15 of the Table of Settings > 1 and GUI layout is 0), now choice in row 15 of the Table of Settings is 0.
 
-[!<TheHalfSideImagesToggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the inventory-visible toggle rule:
 	if inventory-visible > 0:
 		now choice in row 16 of the Table of Settings is 0;
 	otherwise:
 		increase choice in row 16 of the Table of Settings by 1.
 
-[!<TheFaceImagesVisibleToggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the face images visible toggle rule:
 	if face images visible is 0:
 		now choice in row 4 of the Table of Settings is 1;
@@ -807,11 +717,6 @@ This is the face images visible toggle rule:
 	otherwise:
 		now choice in row 4 of the Table of Settings is 0.
 
-[!<TheBreastImagesVisibleToggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the breast images visible toggle rule:
 	if breast images visible is 0:
 		now choice in row 5 of the Table of Settings is 1;
@@ -819,11 +724,6 @@ This is the breast images visible toggle rule:
 	otherwise:
 		now choice in row 5 of the Table of Settings is 0.
 
-[!<TheBellyImagesVisibleToggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the belly images visible toggle rule:
 	if belly images visible is 0:
 		now choice in row 6 of the Table of Settings is 1;
@@ -831,11 +731,6 @@ This is the belly images visible toggle rule:
 	otherwise:
 		now choice in row 6 of the Table of Settings is 0.
 
-[!<TheHipImagesVisibleToggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the hip images visible toggle rule:
 	if hip images visible < 2:
 		increase choice in row 7 of the Table of Settings by 1;
@@ -844,11 +739,6 @@ This is the hip images visible toggle rule:
 		now choice in row 10 of the Table of Settings is 0;
 		now choice in row 7 of the Table of Settings is 0.
 
-[!<TheStockingsImagesVisibleToggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the stockings images visible toggle rule:
 	if stockings images visible is 0:
 		now choice in row 8 of the Table of Settings is 1;
@@ -856,11 +746,6 @@ This is the stockings images visible toggle rule:
 	otherwise:
 		now choice in row 8 of the Table of Settings is 0.
 
-[!<TheHeelsImagesVisibletoggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the heels images visible toggle rule:
 	if heels images visible is 0:
 		now choice in row 9 of the Table of Settings is 1;
@@ -868,11 +753,6 @@ This is the heels images visible toggle rule:
 	otherwise:
 		now choice in row 9 of the Table of Settings is 0.
 
-[!<TheOrificeImagesVisibleToggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the orifice images visible toggle rule:
 	if orifice images visible is 0:
 		now choice in row 10 of the Table of Settings is 1;
@@ -881,11 +761,6 @@ This is the orifice images visible toggle rule:
 	otherwise:
 		now choice in row 10 of the Table of Settings is 0.
 
-[!<TheFetishImagesVisiibleToggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the fetish images visible toggle rule:
 	if fetish images visible is 0:
 		now choice in row 11 of the Table of Settings is 1;
@@ -893,11 +768,6 @@ This is the fetish images visible toggle rule:
 	otherwise:
 		now choice in row 11 of the Table of Settings is 0.
 
-[!<ThePubicHairImagesVisibleToggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the pubic hair images visible toggle rule:
 	if pubic hair images visible is 0:
 		now choice in row 18 of the Table of Settings is 3;
@@ -905,47 +775,22 @@ This is the pubic hair images visible toggle rule:
 	otherwise:
 		decrease choice in row 18 of the Table of Settings by 1.
 
-[!<TheCharacterLargerToggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the GUI layout toggle rule:
 	if choice in row 21 of Table of Settings < 1, increase choice in row 21 of Table of Settings by 1;
 	otherwise now choice in row 21 of Table of Settings is 0.
 
-[!<TheCharacterStatsTextToggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the character stats text toggle rule:
 	if choice in row 22 of Table of Settings is 0, now choice in row 22 of Table of Settings is 1;
 	otherwise now choice in row 22 of Table of Settings is 0.
 
-[!<TheCharacterStatsToggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the character stats toggle rule:
 	if choice in row 23 of Table of Settings is 0, now choice in row 23 of Table of Settings is 1;
 	otherwise now choice in row 23 of Table of Settings is 0.
 
-[!<TheKeriaxMirrorToggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the keriax mirror toggle rule:
 	if choice in row 24 of Table of Settings > 0, decrease choice in row 24 of Table of Settings by 1;
 	otherwise now choice in row 24 of Table of Settings is 2.
 
-[!<TheImageCutscenesToggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the image cutscenes toggle rule:
 	if choice in row 29 of the Table of Settings is 0 or (GUI layout is 0 and choice in row 29 of Table of Settings < 2), increase choice in row 29 of Table of Settings by 1;
 	otherwise now choice in row 29 of Table of Settings is 0.
@@ -956,29 +801,14 @@ This is the tattoo vision toggle rule:
 	otherwise:
 		now choice in row 30 of the Table of Settings is 0.
 
-[!<TheTransformationCutscenesToggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the transformation cutscenes toggle rule:
 	if choice in row 33 of Table of Settings is 0, increase choice in row 33 of Table of Settings by 1;
 	otherwise now choice in row 33 of Table of Settings is 0.
 
-[!<TheLoadingCutscenesToggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the loading scenes toggle rule:
 	if choice in row 34 of Table of Settings is 0, increase choice in row 34 of Table of Settings by 1;
 	otherwise now choice in row 34 of Table of Settings is 0.
 
-[!<TheTrapWarningToggleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the trap warning toggle rule:
 	if choice in row 35 of Table of Settings is 0, increase choice in row 35 of Table of Settings by 1;
 	otherwise now choice in row 35 of Table of Settings is 0.

@@ -1,10 +1,14 @@
 Crotchless Panties by Knickers begins here.
 
-a crotchless-panties is a kind of knickers. The armour of crotchless-panties is 1. Understand "pair", "pair of", "crotchless", "panties" as crotchless-panties. The soak-limit of a crotchless-panties is usually 3. a crotchless-panties is usually crotch-exposing. A crotchless-panties is usually transformation-rare. a crotchless-panties has a number called walkCharge.
+a crotchless-panties is a kind of knickers. The armour of crotchless-panties is 1. Understand "pair", "pair of", "crotchless", "panties" as crotchless-panties. a crotchless-panties is usually crotch-exposing. A crotchless-panties is usually transformation-rare. a crotchless-panties has a number called walkCharge.
 
-Definition: a crotchless-panties is same-type if theme-share-target is knickers. [All knickers can end up getting transformed into useless crotchless panties!]
+Definition: a crotchless-panties is same-type:
+	if theme-share-target is knickers, decide yes;
+	decide no. [All knickers can end up getting transformed into useless crotchless panties!]
 
-Definition: a crotchless-panties is fetish appropriate if diaper quest is 0.
+Definition: a crotchless-panties is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 
 To compute SelfExamineDesc of (K - a crotchless-panties):
 	say "A pair of crotchless panties does nothing to provide any modesty to your [ShortDesc of hips]. ";
@@ -110,7 +114,9 @@ To say ClothingDesc of (K - cum dump's undergarment):
 To decide which number is the initial outrage of (C - cum dump's undergarment):
 	decide on 14.
 
-Definition: cum dump's undergarment is product if it is fetish appropriate.
+Definition: cum dump's undergarment is product:
+	if it is fetish appropriate, decide yes;
+	decide no.
 
 To decide which number is the alchemy key of (C - cum dump's undergarment):
 	if C is product, decide on 18;

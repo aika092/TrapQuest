@@ -5,11 +5,6 @@ Understand "help" or "hint" or "hints" or "about" or "info" or "settings" or "me
 Report asking for help:
 	write File of Preferences from the Table of Settings.
 
-[!<tableOfBasicHelpOptions:Table>*
-
-REQUIRES COMMENTING
-
-*!]
 Table of Basic Help Options (continued)
 title	subtable	description	toggle
 "Change Settings"	Table of Game Settings	--	--
@@ -31,11 +26,6 @@ The game's own code and art is owned by Lame Games Limited, registered in Englan
 "Contacting the Author"	--	"Feel free to contact me at aika092@gmail.com. Also you can visit my alternative hentai forum at www.ulmf.org."	--
 
 [
-[!<tableOfTrapQuestInstructions:Table>*
-
-REQUIRES COMMENTING
-
-*!]
 Table of trap quest instructions
 title	subtable	description	toggle
 "Aim of the game"	--	"In this early version of the game, the biggest challenge is probably to defeat the minotaur and the vine boss! But the game doesn't actually end, for now."	--
@@ -80,7 +70,7 @@ Blessed vessels will prevent a cursed drink from affecting you negatively (but m
 You can fill your vessels up at liquid dispensers such as tanks.
 
 Some vessels are open topped, these may spill so drink them quickly!"	--
-"Commands"	--	"To move, use [']n['], [']e['], [']s['], [']w['], [']u['] and [']d['] for north, east, south, west, up and down respectively. [line break]Use [']stand['] and [']kneel['] to change your stance. [line break]Use [']wait['] or [']x['] to do nothing and let time pass. [line break]Use [']rest['] to wait until your fatigue returns to 0. Use [']rest on['] to rest on a piece of furniture.
+"Commands"	--	"To move, use [']n['], [']e['], [']s['], [']w['], [']u['] and [']d['] for north, east, south, west, up and down respectively.[line break]Use [']stand['] and [']kneel['] to change your stance.[line break]Use [']wait['] or [']x['] to do nothing and let time pass.[line break]Use [']rest['] to wait until your fatigue returns to 0. Use [']rest on['] to rest on a piece of furniture.
 
 To look at the room around you use [']l['] or [']look['], to examine something with more detail use [']x[']. Use [']x me['] for a description of yourself.
 
@@ -127,11 +117,6 @@ To go towards to the location you have remembered, use [']return[']. You will on
 To refresh the map if it glitches, use [']map[']."	--
 "Fetishes"	--	"[FetishHelp]"	--
 
-[!<SayClothingHelp>+
-
-REQUIRES COMMENTING
-
-+!]
 To say ClothingHelp:
 	say "There are several different kinds of clothing that you can find and wear in Trap Quest. There are some unique items that are not listed here, you can find out what they do by playing the game or checking the wiki!
 
@@ -190,11 +175,6 @@ Clothing may also have a magic modifier, e.g. +2. Such an item will perform bett
 
 Worn items do not count towards your inventory limit.".
 
-[!<SayStatsHelp>+
-
-REQUIRES COMMENTING
-
-+!]
 To say StatsHelp:
 	say "You need to keep some of your physical stats up in this game, to be able to deal with the things that will try and mess with you:
 
@@ -232,18 +212,13 @@ To say StatsHelp:
 
 [bold type]Openness:[roman type] Being penetrated has a chance of making you more loose. The more loose you are the more chance you have to avoid soreness increasing, but get too open and your holes will start craving more cock. You tighten up over time.
 
-[bold type]Bimbo:[roman type] Your bimbo stat is mainly calculated by looking at most of the above: your sex and semen addiction levels, your orifice openness levels, maximum humiliation level, your hair colour, your makeup and your heel skill stat. If your bimbo stat is too high, some friendly monsters may become unfriendly, and even worse, you might not be able to control all your own actions! You can tell how much of a bimbo you are becoming by how frequently both your internal and external voices are displayed in [line break][second custom style]pink[roman type][line break]rather than [line break][first custom style]red[roman type][line break].[paragraph break]";
+[bold type]Bimbo:[roman type] Your bimbo stat is mainly calculated by looking at most of the above: your sex and semen addiction levels, your orifice openness levels, maximum humiliation level, your hair colour, your makeup and your heel skill stat. If your bimbo stat is too high, some friendly monsters may become unfriendly, and even worse, you might not be able to control all your own actions! You can tell how much of a bimbo you are becoming by how frequently both your internal and external voices are displayed in[line break][second custom style]pink[roman type][line break]rather than[line break][first custom style]red[roman type][line break].[paragraph break]";
 	say "[bold type]Fatigue:[roman type] This is how much you've been standing up recently. This goes up much faster if your body is particularly heavy, or if you are wearing tall heels. If it gets too high, you'll crumble to your knees and not be able to stand up for a while. The stronger you are, the longer you can stay on your feet.
 
 [bold type]Orifice Soreness:[roman type] Orifice soreness happens from being penetrated too much. At medium soreness, further action is likely to make you shamefully orgasm, raising humiliation and sex addiction. When your orifices are very sore, that hole receiving further action could make you faint.
 
 [bold type]Body Soreness:[roman type] Body soreness happens from being smacked around by monsters or traps. It lowers the amount of fatigue that you can have until you crumple to your knees. If your body soreness gets maxxed out, you won't be able to stand at all. To heal your body, you have to find a resting implement (furniture). You can also use the princess['] bed, but this is usually accompanied by some kind of punishment.".
 
-[!<SayFetishHelp>+
-
-REQUIRES COMMENTING
-
-+!]
 To say FetishHelp:
 	say "At the game start you have a choice of fetishes. Here you can read about exactly what they do to the game.
 

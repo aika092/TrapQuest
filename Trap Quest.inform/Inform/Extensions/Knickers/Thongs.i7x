@@ -1,6 +1,6 @@
 Thongs by Knickers begins here.
 
-A thong is a kind of undies. The soak-limit of a thong is usually 7. The text-shortcut of thong is "thng". Understand "thong" as a thong.
+A thong is a kind of undies. The text-shortcut of thong is "thng". Understand "thong" as a thong.
 
 To decide which number is the penis-capacity of (K - a thong):
 	decide on 4.
@@ -110,7 +110,9 @@ To decide which number is the anal-sex-addiction-influence of (C - purple-thong)
 	decide on 2.
 To decide which number is the unique outrage of (C - purple-thong):
 	decide on 4.
-Definition: purple-thong is fetish appropriate if diaper quest is 0.
+Definition: purple-thong is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 Definition: purple-thong is penis themed: decide yes.
 Definition: purple-thong is purple themed: decide yes.
 
@@ -122,7 +124,9 @@ To say UniqueClothingDesc of (G - red-thong):
 Understand "sure", "thing", "red" as red-thong.
 To decide which number is the unique outrage of (C - red-thong):
 	decide on 2.
-Definition: red-thong is fetish appropriate if diaper quest is 0.
+Definition: red-thong is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 Definition: red-thong is red themed: decide yes.
 
 black-thong is a thong. The text-shortcut of black-thong is "bth". Understand "black" as black-thong.
@@ -203,7 +207,9 @@ To say selfexamineuniquetitle of (G - light-pink-lace-thong):
 	say "light pink lace 'Bombshell' thong".
 To say UniqueClothingDesc of (G - light-pink-lace-thong):
 	say "This tiny, revealing light pink lace thong has the phrase 'Bombshell' on the waistband, flaunting that the wearer knows they look good and enjoys showing their body off.".
-Definition: light-pink-lace-thong is fetish appropriate if diaper quest is 0.
+Definition: light-pink-lace-thong is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 Understand "bombshell" as light-pink-lace-thong.
 Definition: light-pink-lace-thong is pink themed: decide yes.
 

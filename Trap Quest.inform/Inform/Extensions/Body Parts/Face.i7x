@@ -24,7 +24,9 @@ To decide which number is face-limit:
 	decide on 4.
 
 [Can it be accessed right now with nothing blocking it?]
-Definition: face is undefended if face is not actually occupied.
+Definition: face is undefended:
+	if face is not actually occupied, decide yes;
+	decide no.
 
 the face presentable rules is a rulebook.
 the presentable rules of face is usually the face presentable rules.
@@ -63,7 +65,9 @@ Definition: face is usable without penetration:
 Definition: a monster is requiring facial penetration: decide yes.
 
 [necessary for determining outrage when cumsoaked]
-Definition: face is lewdly exposed if it is exposed.
+Definition: face is lewdly exposed:
+	if it is exposed, decide yes;
+	decide no.
 
 To decide which object is the concealer of (T - face):
 	decide on a random worn actually dense hood.
@@ -116,11 +120,6 @@ To say ShortDesc of (F - face):
 		say " whore-lipped";
 	say " face".
 
-[!<SayMediumDescOfFace>+
-
-REQUIRES COMMENTING
-
-+!]
 To say MediumDesc of (F - face):
 	let A be alcohol-level;
 	if A > 2:
@@ -131,11 +130,6 @@ To say MediumDesc of (F - face):
 		say "tipsy ";
 	say ShortDesc of face.
 
-[!<SayTotalDescOfFace>+
-
-REQUIRES COMMENTING
-
-+!]
 To say TotalDesc of face:
 	say "You have [LipDesc], and ";
 	if the semen coating of face > 7:
@@ -185,11 +179,6 @@ To say MakeUpDesc:
 		otherwise:
 			say "is smothered in overdone make-up, which [one of]gives you an almost doll-like face[or]encourages men to treat you like a slut[or]most men would take as a signal that you're an easy lay[or]is begging for all the [if the bimbo of the player < 12]wrong[otherwise][line break][second custom style]right[roman type][line break][end if] sorts of attention[or]makes you look like a total [whore][purely at random]".
 
-[!<SayLipDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say LipDesc:
 	if diaper quest is 1:
 		say "lips";
@@ -199,20 +188,15 @@ To say LipDesc:
 		if the lips of face is 1:
 			say "[one of]flared[or]full[or][if artificial enhancements fetish is 1]pouting[otherwise]big[end if][or]well-developed[at random]";
 		if the lips of face is 2:[maximum for vanilla players]
-			say "[if artificial enhancements fetish is 1][one of]beestung[or]plush[or]plump[or]fleshy[at random][otherwise][one of]plush[or]dick sucking[or]pouting[at random][end if]";
+			say "[if artificial enhancements fetish is 1][one of]beestung[or]plush[or]plump[or]fleshy[at random][otherwise][one of]plush[or]dick sucking[or]pouting[or]pouty[or]puffy[at random][end if]";
 		if the latex-transformation of the player > 6:
-			say "[one of]plastic[or]upholstered[or]pillowy[or]padded[at random]";[lips are fixed at 3.]
+			say "[one of]plastic[or]upholstered[or]pillowy[or]padded[or]squeaky[or]inflated[or]puffy[at random]";[lips are fixed at 3.]
 		otherwise if the lips of face > 2:
 			say "[one of]swollen[or]oversized[or]huge[or]corpulent[or]augmented[at random] dick sucking";
 		say " lips".
 
 Part 3 - Modify Face Stats
 
-[!<FaceUpX>+
-
-REQUIRES COMMENTING
-
-+!]
 To FaceUp (X - a number):
 	now the previous make-up of face is the make-up of face;
 	while X > 0:
@@ -221,11 +205,6 @@ To FaceUp (X - a number):
 	if the make-up of face > the previous make-up of face, progress quest of make-up-quest;
 	update appearance level.
 
-[!<FaceDownX>+
-
-REQUIRES COMMENTING
-
-+!]
 To FaceDown (X - a number):
 	now the previous make-up of face is the make-up of face;
 	while X > 0:
@@ -234,21 +213,15 @@ To FaceDown (X - a number):
 			decrease the make-up of face by 1;
 	update appearance level.
 
-Definition: face is permanently made up if the class of the player is silicone queen or Permanent MakeUp is 1 or the latex-transformation of the player >= 7.
-Definition: face is temporarily made up if the make-up of face > 0 and face is not permanently made up.
+Definition: face is permanently made up:
+	if the class of the player is silicone queen or Permanent MakeUp is 1 or the latex-transformation of the player >= 7, decide yes;
+	decide no.
+Definition: face is temporarily made up:
+	if the make-up of face > 0 and face is not permanently made up, decide yes;
+	decide no.
 
-[!<permanentMakeUp:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 Permanent MakeUp is a number that varies. Permanent MakeUp is 0.
 
-[!<LipsUpX>+
-
-REQUIRES COMMENTING
-
-+!]
 To LipsUp (X - a number):
 	while X > 0:
 		decrease X by 1;

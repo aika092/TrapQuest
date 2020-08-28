@@ -1,18 +1,8 @@
 Zipping by Actions begins here.
 
-[!<CheckOpeningACrotchZippedClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 Check opening a crotch-zipped clothing:
 	try unzipping the noun instead.
 
-[!<CheckClosingACrotchZippedClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 Check closing a crotch-unzipped clothing:
 	try rezipping the noun instead.
 

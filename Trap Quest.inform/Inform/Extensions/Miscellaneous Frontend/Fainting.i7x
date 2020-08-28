@@ -122,12 +122,11 @@ To Execute Fainting:
 				say "You [one of][or]once again [stopping]find a pink pill inside your clenched fist.";
 				now the pink pill is held by the player;
 			if Newly-tattooed is 1:
-				say "Your lower back feels sore, and when you look you realise you[']ve had the word 'PROPERTY' tattooed on your back! Oh no!";
+				say "Your lower back feels sore, and when you look you realise you've had the word 'PROPERTY' tattooed on your back! Oh no!";
 				now Newly-tattooed is 0;
 			if inhuman pregnancy is 2 and tentacled is 1 and the player is female:
 				now tentacled is 0;
 				now player-breeder is in the location of the player;
-				now the growth of player-breeder is 0;
 				say "You see a suspiciously familiar body wrapped up by tentacles and stuck to the wall. Oh dear...";
 				if magical-maid-outfit is worn:
 					now magical-maid-outfit is in Holding Pen;
@@ -422,11 +421,6 @@ To Recover the Player:
 	now busy is 0;
 	if debugmode > 0, say "Finished recovering player.".
 
-[!<RecoverTraps>+
-
-REQUIRES COMMENTING
-
-+!]
 To Recover Traps:
 	repeat with I running through on-stage traps:
 		if I is the throne:
@@ -440,126 +434,51 @@ To Recover Traps:
 	repeat with B running through on-stage barriers:
 		destroy B.
 
-[!<Player>@<faintingReason:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 The player has a number called fainting reason. The fainting reason of the player is usually 0.
 
-[!<Leftover>@
 
-REQUIRES COMMENTING
-
-@!]
-
-[!<Leftover>@<leftoverType:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 A leftover is a kind of thing.
 A leftover is scenery.
 A leftover has a number called leftover-type.
 The leftover-type of a leftover is usually 0.
 There are 25 leftovers.
 
-[!<BeforeDoingSomethingToALeftover>+
-
-REQUIRES COMMENTING
-
-+!]
 Before doing something to a leftover:
 	print the you can't see message instead.
 
-[!<BeforeDoingSomethingWhenALeftoverIsTheSecondNoun>+
-
-REQUIRES COMMENTING
-
-+!]
 Before doing something when a leftover is the second noun:
 	print the you can't see message instead.
 
 To say ExamineDesc of (L - a leftover):
 	say "[LeftoverDesc the leftover-type of the L]".
 
-[!<SayLeftoverDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say LeftoverDesc (N - a number):
 	say "A dusty outline of your previous body can be seen on the floor here.[line break]";
 
-[!<SayLeftOverDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say LeftoverDesc (N - 3):
 	say "A murky outline of your previous body can be seen on the floor here.[line break]";
 
-[!<SayLeftOverDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say LeftoverDesc (N - 4):
 	say "A dusty outline of a heavily pregnant woman can be seen on the floor here.[line break]";
 
-[!<SayLeftOverDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say LeftoverDesc (N - 9):
 	say "A outline of [semen] shaped like your head and shoulders can be seen on the floor here.[line break]";
 
-[!<SayLeftOverDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say LeftoverDesc (N - 10):
 	say "A dusty outline of your previous body can be seen on the floor here, with large pools of [semen] around the head and crotch areas.[line break]";
 
-[!<SayLeftOverDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say LeftoverDesc (N - 11):
 	say "There is a large puddle of [semen] on the floor in front of the throne.[line break]";
 
-[!<SayLeftOverDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say LeftoverDesc (N - 13):
 	say "Looks like a very messy fight happened here... oh, right.[line break]";
 
-[!<SayLeftOverDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say LeftoverDesc (N - 16):
 	say "There are gallons of [semen] absolutely everywhere down here now - on the floor, on the walls, and even on the ceiling![line break]".
 
-[!<SayLeftOverDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say LeftoverDesc (N - 22):
 	say "[LeftoverDesc 10]".
 
-[!<SayLeftOverDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say LeftoverDesc (N - 100):
 	say "An unidentifiable body is on the ground here.[line break]";
 
@@ -618,7 +537,7 @@ This is what we say if the player has fainted after the first time (and did chan
 
 +!]
 To say TG Fainting Story:
-	say "BZZZZZZZZZzzzzzzzzz...[line break]You once again wake up in the capsule. Something feels off, but you can't tell what. You reach to scratch your balls, and [if the bimbo of the player < 11]freeze in terror[otherwise]squeal with surprise[end if] as you find a vagina there instead. [line break][second custom style]'SURPRISE!!!'[roman type][line break]The girl's voice is overly enthusiastic.[line break][second custom style]'[if the player is female]You got transformed into a girl in the game[otherwise]We finished shrinking down your old pee pee into nothing[end if], so we went ahead and properly turned you into a girl! Well I mean obviously it's artificial, I mean we can't change your DNA, but we *can* give you this, and make sure that you're kept pumped full of girly hormones for the rest of your days with a special implant right where your prostate used to be!'[roman type][line break]You find yourself consumed by curiosity, peeling back the folds of your new pussy and timidly exploring your new sex.[line break][second custom style]'We'll take that to mean you like it! Well that's good because the reversal process is a bit sketchy and VERY expensive so it looks like you might be staying like this for a while longer! Anyway that's all we wanted to say this time really, so we're going to send you back into the game now. What an amazing opportunity, to get to try out your new fuck hole without any risk of repercussions! Well I guess that's not quite true, now I think about it...'[roman type][line break]Her voice slowly fades away.";
+	say "BZZZZZZZZZzzzzzzzzz...[line break]You once again wake up in the capsule. Something feels off, but you can't tell what. You reach to scratch your balls, and [if the bimbo of the player < 11]freeze in terror[otherwise]squeal with surprise[end if] as you find a vagina there instead.[line break][second custom style]'SURPRISE!!!'[roman type][line break]The girl's voice is overly enthusiastic.[line break][second custom style]'[if the player is female]You got transformed into a girl in the game[otherwise]We finished shrinking down your old pee pee into nothing[end if], so we went ahead and properly turned you into a girl! Well I mean obviously it's artificial, I mean we can't change your DNA, but we *can* give you this, and make sure that you're kept pumped full of girly hormones for the rest of your days with a special implant right where your prostate used to be!'[roman type][line break]You find yourself consumed by curiosity, peeling back the folds of your new pussy and timidly exploring your new sex.[line break][second custom style]'We'll take that to mean you like it! Well that's good because the reversal process is a bit sketchy and VERY expensive so it looks like you might be staying like this for a while longer! Anyway that's all we wanted to say this time really, so we're going to send you back into the game now. What an amazing opportunity, to get to try out your new fuck hole without any risk of repercussions! Well I guess that's not quite true, now I think about it...'[roman type][line break]Her voice slowly fades away.";
 
 [!<SayFaintingFlav>+
 
@@ -682,7 +601,7 @@ To say FaintingFlav (N - 20):
 	say "'[one of]Oof, that wooden horse is mean, isn't it? Hopefully you'll be luckier with getting off quickly next time...'[or]Wow, the wooden horse again? You should stop wandering around the Woods like that if you can't take the heat...'[stopping]".
 
 To say FaintingFlav (N - 21):
-	say "'Careful of those cultists; they don[']t appreciate intruders.'".
+	say "'Careful of those cultists; they don't appreciate intruders.'".
 
 To say FaintingFlav (N - 22):
 	say "'It was really fun suffocating you with my face. If you don't want to meet the same end next time then I suggest letting your stomach empty a bit first. Oh, and the more you love cum, the easier it'll be to keep it all down.'".

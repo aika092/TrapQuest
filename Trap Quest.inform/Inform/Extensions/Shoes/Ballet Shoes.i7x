@@ -4,9 +4,6 @@ A ballet shoes is a kind of shoes. A ballet shoes is usually cotton. The transfo
 
 Definition: a ballet shoes is pink themed: decide yes.
 
-To decide which number is the original price of (C - a ballet shoes):
-	decide on 3.
-
 To decide which number is the unique cringe of (C - a ballet shoes):
 	decide on 6.
 
@@ -92,7 +89,9 @@ Figure of thigh high ballet boots is the file "Items/Clothes/Lower/Feet/Ballet/b
 
 There is 1 thigh high ballet boots.
 
-Definition: a thigh high ballet boots is IcarusScienceAppropriate if it is actually summonable.
+Definition: a thigh high ballet boots is IcarusScienceAppropriate:
+	if it is actually summonable, decide yes;
+	decide no.
 
 To say ClothingDesc of (C - a thigh high ballet boots):
 	say "A pair of magic pink latex ballet shoes with criss-cross lacing that goes up to the bottom of your knees[if C is worn] and that force your feet onto tiptoes at all times. However you seem to be brilliant at walking in them! This is probably good practise for walking in real heels in the future[end if].".
@@ -104,6 +103,8 @@ To decide which number is the unique outrage of (C - a thigh high ballet boots):
 To decide which number is the unique cringe of (C - a thigh high ballet boots):
 	decide on 3.
 
-Definition: a thigh high ballet boots is transformation-protected if there is a worn ballet corset.
+Definition: a thigh high ballet boots is transformation-protected:
+	if there is a worn ballet corset, decide yes;
+	decide no.
 
 Ballet Shoes ends here.

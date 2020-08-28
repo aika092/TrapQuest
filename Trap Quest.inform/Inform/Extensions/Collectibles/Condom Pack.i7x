@@ -15,7 +15,9 @@ To say ExamineDesc of (C - condom-pack):
 
 Definition: a thing is condom-providing: decide no.
 
-Definition: condom-pack is condom-providing if it is not condom-trapped.
+Definition: condom-pack is condom-providing:
+	if it is not condom-trapped, decide yes;
+	decide no.
 
 Definition: condom-pack is immune to change: decide yes.
 
@@ -23,7 +25,9 @@ Definition: condom-pack is product: decide yes.
 Definition: condom-pack is semen themed: decide yes.
 Definition: condom-pack is whore themed: decide yes.
 
-Definition: condom-pack is fetish appropriate if diaper quest is 0.
+Definition: condom-pack is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 
 To decide which number is the outrage of (C - condom-pack):
 	decide on 12.
@@ -85,9 +89,13 @@ Definition: a stockings is condom pinnable: decide yes.
 
 Definition: a belt is condom pinnable: decide yes.
 
-Definition: a clothing is condom pinned if the total condoms of it > 0.
+Definition: a clothing is condom pinned:
+	if the total condoms of it > 0, decide yes;
+	decide no.
 
-Definition: a clothing is drinkable condom pinned if the used condoms of it > 0.
+Definition: a clothing is drinkable condom pinned:
+	if the used condoms of it > 0, decide yes;
+	decide no.
 
 To decide which number is the total condoms of (C - a clothing):
 	decide on the used condoms of C + the empty condoms of C.
@@ -117,7 +125,10 @@ Report examining a condom pinned clothing:
 	if the used condoms of the noun >= 20, say "[BigNameDesc of the noun] has an almost countless number of used condoms covering it.";
 	otherwise say "[BigNameDesc of the noun] has [if the used condoms of the noun > 1][used condoms of the noun] large cum-filled condoms pinned to it[otherwise if the used condoms of the noun is 1]a large cum-filled condom pinned to it[end if][if the used condoms of the noun > 0 and the empty condoms of the noun > 0], and [end if][if the empty condoms of the noun > 1][empty condoms of the noun] used condoms pinned to it that have been torn and sucked dry[otherwise if the empty condoms of the noun is 1]one used condom that has been torn and sucked dry pinned to it[end if].".
 
-Definition: a monster is condom-preferring if the class of the player is cumdumpster.
+Definition: a monster is condom-preferring:
+	if the class of the player is cumdumpster, decide yes;
+	if a random number between -3 and (the trophy-mode of condom-trophy * 10) >= 0, decide yes;
+	decide no.
 
 To compute condom request choice of (M - a monster):
 	if M is unwrapped:
@@ -144,7 +155,7 @@ To compute condom request choice of (M - a monster):
 					say CondomForceFailFlav of M.]
 
 Definition: a monster (called M) is convinced to wear a condom:
-	let C be the charisma of the player + (the trophy-mode of condom-trophy * 20);
+	let C be the charisma of the player + (the trophy-mode of condom-trophy * 3);
 	let CR be the condom resistance of M;
 	if the class of the player is fertility goddess, increase CR by 1;
 	let BB be the blue-balls-limit of M - the blue-balls of M;
@@ -166,7 +177,7 @@ Definition: a monster (called M) is forced to wear a condom:
 	decide yes.
 
 To decide which number is the condom resistance of (M - a monster):
-	decide on 0.[Default 100% success]
+	decide on 0. [Default 100% success]
 
 To compute condom filling of (M - a monster):
 	compute default condom filling of M.

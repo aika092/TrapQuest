@@ -119,7 +119,9 @@ Chapter - Deciding whether animation is happening
 
 If the answer to both is yes for any given tick of the timer, then the animation rules will be triggered.]
 
-Definition: An animation track (called the item) is animation-active if the animation-flag of the item is g-active.
+Definition: An animation track (called the item) is animation-active:
+	if the animation-flag of the item is g-active, decide yes;
+	decide no.
 
 To decide whether animation is queued:
 	if there is an animation-active animation track, decide yes.
@@ -245,9 +247,13 @@ Section - Glk events (for use without Glulx Input Loops by Erik Temple)
 
 A g-event is a kind of value. The g-events are timer-event, char-event, line-event, mouse-event, arrange-event, redraw-event, sound-notify-event, and hyperlink-event.
 
-Definition: A g-event is window-independent rather than window-dependent if it is timer-event or it is sound-notify-event or it is arrange-event or it is redraw-event.
+Definition: A g-event is window-independent rather than window-dependent:
+	if it is timer-event or it is sound-notify-event or it is arrange-event or it is redraw-event, decide yes;
+	decide no.
 
-Definition: A g-event is glk-initiated if it is timer-event or it is sound-notify-event or it is arrange-event or it is not redraw-event.
+Definition: A g-event is glk-initiated:
+	if it is timer-event or it is sound-notify-event or it is arrange-event or it is not redraw-event, decide yes;
+	decide no.
 
 To decide which g-event is null-event: (- 0 -)
 
@@ -1331,7 +1337,7 @@ The timer approach to animation makes simple animations fairly easy to write, es
 
 Chapter: Including Glimmr Canvas Animation in a project
 
-Inform remains fairly unsophisticated in its mechanisms for organizing included extensions. When we are dealing with a complex system of modular extensions such as Glimmr, it is very easy to trip it up, and the result is usually a list of unhelpful errors. For this reason, each Glimmr extension includes a section-such as this one-about how to include it, particularly in relation to other extensions.
+Inform remains fairly unsophisticated in its mechanisms for organising included extensions. When we are dealing with a complex system of modular extensions such as Glimmr, it is very easy to trip it up, and the result is usually a list of unhelpful errors. For this reason, each Glimmr extension includes a section-such as this one-about how to include it, particularly in relation to other extensions.
 
 Glimmr Canvas Animation automatically includes Glimmr Canvas-Based Drawing, Glimmr Drawing Commands, Flexible Windows, and their dependencies. You do not need to include any of these extensions explicitly in your story file; GCA will include them automatically (provided they are installed with your copy of Inform, of course).
 
@@ -1425,7 +1431,7 @@ Animation tracks can also do such things as increase or decrease the scaling fac
 
 Section: Basics of animation tracks
 
-In programming terms, an animation track is an Inform 7 object, not too different from the "things" that authors use to build their storyworlds. However, they are not intended to be physical game objects; they are simply convenient containers for storing and organizing information, usually in the form of properties. (Users of Glimmr Canvas-Based Drawing will recognise the same concept in the use of g-elements, which are also objects in the same sense.) Defining an animation track is quite simple. Here we do two at a stroke:
+In programming terms, an animation track is an Inform 7 object, not too different from the "things" that authors use to build their storyworlds. However, they are not intended to be physical game objects; they are simply convenient containers for storing and organising information, usually in the form of properties. (Users of Glimmr Canvas-Based Drawing will recognise the same concept in the use of g-elements, which are also objects in the same sense.) Defining an animation track is quite simple. Here we do two at a stroke:
 
 	The movement track and the walking track are animation tracks.
 
@@ -2583,12 +2589,12 @@ There is only a single animation track, the movement track. We initialise both i
 				if x is selected easing or x is selected secondary easing:
 					say "[bold type][replacement corresponding to a link ID of x in the Table of Glulx Hyperlink Replacement Commands][roman type][line break]";
 				otherwise:
-					say "[link x][replacement corresponding to a link ID of x in the Table of Glulx Hyperlink Replacement Commands][end link] [line break]";
+					say "[link x][replacement corresponding to a link ID of x in the Table of Glulx Hyperlink Replacement Commands][end link][line break]";
 			if x > column-break:
 				if x is selected easing or x is selected secondary easing:
 					say "[bold type][replacement corresponding to a link ID of (x - column-break) in the Table of Glulx Hyperlink Replacement Commands][roman type][line break]";
 				otherwise:
-					say "[link x][replacement corresponding to a link ID of (x - column-break) in the Table of Glulx Hyperlink Replacement Commands][end link] [line break]";
+					say "[link x][replacement corresponding to a link ID of (x - column-break) in the Table of Glulx Hyperlink Replacement Commands][end link][line break]";
 			if x is column-break:
 				display the image corresponding to a link ID of selected easing in the Table of Glulx Hyperlink Replacement Commands;
 		display (the image corresponding to a link ID of (selected secondary easing - column-break) in the Table of Glulx Hyperlink Replacement Commands) in the secondary-window;

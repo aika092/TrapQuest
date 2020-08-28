@@ -44,7 +44,7 @@ Mansion36 is a mandatory creaky haunted room. The printed name of Mansion36 is "
 
 Mansion12 is a haunted room. The semen-puddle of Mansion12 is usually 1. The printed name of Mansion12 is "Pink [one of]Hallway[or]Corridor[or]Passage[sticky random]". "Every surface of this hallway is soft, pink, and a little... shiny. There are no visible lighting fixtures anywhere, yet, your surroundings are illuminated by a [one of]warm[or]dim[sticky random] glow.". The shape of Mansion12 is L4/0-0-0-1-1-0.
 Mansion24 is a haunted room. The printed name of Mansion24 is "Boarded Hallway". "Several of the doorways adjoining this hallway are boarded up, and the walls are carved with ghastly scratches.". The shape of Mansion24 is L4/0-0-1-1-0-0.
-Mansion05 is a haunted room. The printed name of Mansion05 is "[one of]Rear[or]Aft[sticky random] [one of]Hallway[or]Corridor[or]Hall[sticky random]". "A cramped hallway lined with harsh contrast paintings of [if diaper quest is 1]diapered torsos. A hint of the scent of urine can be detected in the air[otherwise]male and female genitalia. The air smells thoroughly of sex[end if], and [one of]you could swear there's actually a bit of [if diaper quest is 1]the liquid[otherwise]cum[end if] leaking out of one of the higher frames.[or]if you didn[']t know any better, which you don[']t, you'd say some of the paintings actually wiggled a bit when you entered the room.[sticky random]". The shape of Mansion05 is L4/0-0-0-1-0-1.
+Mansion05 is a haunted room. The printed name of Mansion05 is "[one of]Rear[or]Aft[sticky random] [one of]Hallway[or]Corridor[or]Hall[sticky random]". "A cramped hallway lined with harsh contrast paintings of [if diaper quest is 1]diapered torsos. A hint of the scent of urine can be detected in the air[otherwise]male and female genitalia. The air smells thoroughly of sex[end if], and [one of]you could swear there's actually a bit of [if diaper quest is 1]the liquid[otherwise]cum[end if] leaking out of one of the higher frames.[or]if you didn't know any better, which you don't, you'd say some of the paintings actually wiggled a bit when you entered the room.[sticky random]". The shape of Mansion05 is L4/0-0-0-1-0-1.
 Mansion20 is a creaky no-roof haunted room. The printed name of Mansion20 is "Garden". "An overgrown area full of exotic flowers, shrubs, and low-hanging tree branches.". The shape of Mansion20 is L4/0-0-0-1-0-1.
 Mansion18 is a haunted room. The printed name of mansion18 is "Clean Hallway". "This hallway's lights are bright, floorboards polished, and its walls practically gleam with the daily attention that must be lavished on them each day. The messiness of the rest of the mansion ends in straight lines along the edges of the hall.".
 Mansion29 is a haunted room. The printed name of Mansion29 is "Slanted Hallway". "The edges of this hallway are warped visibly, giving you the feeling of walking through a fun-house mirror.".
@@ -53,11 +53,6 @@ Mansion10 is a haunted room. The printed name of Mansion10 is "Peeling Hallway".
 Mansion27 is a no-roof haunted room. The printed name of Mansion27 is "Back Walk". "What probably used to be a well kept garden of fun-shaped bushes and trees is now little more than a creepy bramble full of vaguely human shapes.". The shape of Mansion27 is L4/0-0-0-0-1-1.
 Mansion09 is a haunted room. The printed name of Mansion09 is "Dark Hallway". "This hallway has a way of making you feel cramped and claustrophobic.".
 
-[!<mansion:Region>*
-
-REQUIRES COMMENTING
-
-*!]
 The Mansion is a region. Mansion00, Mansion01, Mansion02, Mansion03, Mansion04, Mansion05, Mansion06, Mansion07, Mansion08, Mansion09, Mansion10, Mansion11, Mansion12, Mansion13, Mansion14, Mansion15, Mansion16, Mansion17, Mansion18, Mansion19, Mansion20, Mansion21, Mansion22, Mansion23, Mansion24, Mansion25, Mansion26, Mansion27, Mansion28, Mansion29, Mansion30, Mansion31, Mansion32, Mansion33, Mansion34, Mansion35 and Mansion36 are in The Mansion.
 
 Mansion ends here.

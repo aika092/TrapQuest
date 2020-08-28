@@ -67,7 +67,9 @@ To decide which number is the initial cringe of (C - a scrunchie):
 	if the number of worn scrunchies < 2, decide on 0;
 	decide on 4.
 
-Definition: a scrunchie is transformation-protected if the player is not pigtailed.
+Definition: a scrunchie is transformation-protected:
+	if the player is not pigtailed, decide yes;
+	decide no.
 
 Chapter 1 - Pink Scrunchie
 
@@ -134,7 +136,7 @@ To compute class outfit of (H - a pink scrunchie):
 			repeat with O running through worn exclusive corsets:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
-			repeat with O running through worn skirted clothing:
+			repeat with O running through worn skirt clashing clothing:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
 		say "[bold type]A [ShortDesc of C] appears on you![line break][variable custom style]I'm a cheerleader now?[roman type][line break][if the mercyskill of the player is 0]You suddenly feel like you could get away with anything! It's like the consequences of your actions... just aren't as important as they used to be.[end if]";
@@ -248,7 +250,7 @@ To compute class outfit of (H - a blue scrunchie):
 		let T be a random off-stage tartan miniskirt;
 		if T is actually summonable or (schoolgirl-summoned is 0 and T is miniskirt):
 			if schoolgirl-summoned is 0:
-				repeat with SK running through worn skirted clothing:
+				repeat with SK running through worn skirt clashing clothing:
 					say "Your [ShortDesc of SK] [wardrobeVanishes of SK]!";
 					now SK is in pink wardrobe;
 			say "[bold type]A tight, extremely revealing tartan skirt appears on you![line break][variable custom style][if the player is pigtailed]Pigtails,[otherwise]Ponytailed hair[end if] and a tiny tartan skirt? I think I know where this is going...[roman type][line break]";
@@ -260,7 +262,7 @@ To compute class outfit of (H - a blue scrunchie):
 				repeat with SK running through worn breast covering clothing:
 					say "Your [ShortDesc of SK] [wardrobeVanishes of SK]!";
 					now SK is in pink wardrobe;
-			say "[bold type]A very skimpy tartan tube top shimmers into existence around your [BreastDesc]![line break][variable custom style]I guess that makes me a slutty schoolgirl. [if the bimbo of the player < 8]Sigh... there[']s more, isn[']t there.[otherwise if the bimbo of the player > 12]Teehee! I guess I am being pretty naughty. I hope there[']s more to this outfit...[end if][roman type][line break]";
+			say "[bold type]A very skimpy tartan tube top shimmers into existence around your [BreastDesc]![line break][variable custom style]I guess that makes me a slutty schoolgirl. [if the bimbo of the player < 8]Sigh... there's more, isn't there.[otherwise if the bimbo of the player > 12]Teehee! I guess I am being pretty naughty. I hope there's more to this outfit...[end if][roman type][line break]";
 			summon O uncursed;
 			now O is confidence;
 			if tentacle-quest is appropriate, now the quest of O is tentacle-quest;
@@ -283,7 +285,7 @@ To compute class outfit of (H - a blue scrunchie):
 				repeat with O running through worn exclusive corsets:
 					say "Your [O] [wardrobeVanishes of O]!";
 					now O is in pink wardrobe;
-				repeat with O running through worn skirted clothing:
+				repeat with O running through worn skirt clashing clothing:
 					say "Your [O] [wardrobeVanishes of O]!";
 					now O is in pink wardrobe;
 			now schoolgirl-summoned is 2;
@@ -427,6 +429,9 @@ To decide which object is the unique-upgrade-target of (C - a scrunchie):
 	if inflation fetish is 1, decide on a random off-stage pair of helium balloons;
 	if diaper lover > 0, decide on a random off-stage monkey scrunchie;
 	decide on nothing.
+
+To check upgrade target of (C - scrunchie): [we don't validate that scrunchie upgrade targets are summonable if the scrunchie is removed. it would give a false negative because there's two worn scrunchies]
+	do nothing.
 
 Chapter 6 - Condom Pigtails
 

@@ -25,7 +25,7 @@ To trigger (Y - a slingshot):
 	now the reset-timer of Y is 9999;
 	say "As your feet leave the ground, you hear the 'twang' of a strong elastic band. ";
 	let C be a random off-stage crotch rope;
-	if the player is male, now C is a random off-stage pouch-panties;
+	if the player is not possessing a vagina, now C is a random off-stage pouch-panties;
 	if diaper focus is 1 and diaper lover > 0:
 		now C is a random eligible disposable diaper;
 		if C is DQLessBulky diaper, now C is a random off-stage DQBulkier plentiful disposable diaper;
@@ -33,7 +33,7 @@ To trigger (Y - a slingshot):
 	let D be a random currently uncovered diaper;
 	now autowear is true;
 	if C is actually wearable:
-		say "You yelp in surprise as you feel some kind of underwear fly up your legs and into place at your hips! [if the player is male]You stare inquisitively[otherwise]You pull helplessly[end if] at your new [ShortDesc of C]. You are unsurprised to find that it won't come off.";
+		say "You yelp in surprise as you feel some kind of underwear fly up your legs and into place at your hips! [if the player is not possessing a vagina]You stare inquisitively[otherwise]You pull helplessly[end if] at your new [ShortDesc of C]. You are unsurprised to find that it won't come off.";
 		summon C cursed with quest;
 		repeat with M running through reactive monsters:
 			say SlingshotTrapReactFlav of M;

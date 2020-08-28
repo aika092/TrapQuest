@@ -13,11 +13,6 @@ An all time based rule (this is the compute clothing rule):
 		if playerRegion is school, compute school periodic effect of C;
 		otherwise compute periodic effect of C.
 
-[!<dominationTime:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 domination-time is a number that varies. domination-time is 30.
 
 [!<timeTracking:Integer>*
@@ -34,11 +29,6 @@ temp_int_dam is a number that varies. temp_int_dam is 0.
 
 Part 1 - Main Procedure
 
-[!<ComputePeriodicEffectsWithEarnings>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute periodic effects with earnings (local-earnings - a number) and seconds (local-seconds - a number):
 	[If enough experience has been gained, level up heel skill]
 	if the heel time of the player > minHeelXP and the player is upright, HeelUp 1;
@@ -66,7 +56,7 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 		if the latex-transformation of the player <= 2 and ungape is 0:
 			if the openness of asshole > the real openness of asshole and (the openness of asshole - the real openness of asshole) >= (the openness of vagina - the real openness of vagina) and gape-gloves is not worn:
 				say "Your [asshole] regains a little tightness.";
-				Assclose 1;
+				AssClose 1;
 			otherwise if the openness of vagina > the real openness of vagina:
 				say "Your [vagina] regains a little tightness.";
 				Pussyclose 1;
@@ -133,7 +123,7 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 					otherwise:
 						now M is in Stairwell01;
 					now M is guarding;
-					say "Some speakers come to life, and you hear an announcement! [line break][second custom style]'Hey there, [NameBimbo]! Are you having fun? See, we're looking at the data here and it seems like you're taking this game very seriously. In that case, it shouldn't be a problem if we spawn in a new threat. Don't worry, I'm sure you'll figure things out...'[roman type][line break]";
+					say "Some speakers come to life, and you hear an announcement![line break][second custom style]'Hey there, [NameBimbo]! Are you having fun? See, we're looking at the data here and it seems like you're taking this game very seriously. In that case, it shouldn't be a problem if we spawn in a new threat. Don't worry, I'm sure you'll figure things out...'[roman type][line break]";
 					now time-tracking is 1000;
 				otherwise:
 					decrease time-tracking by X;
@@ -144,13 +134,13 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 			MagicPowerUp 1;
 			if a random number between 1 and 2 > 1:
 				if a random number between 1 and 3 > 2:
-					Intup 1;
+					IntUp 1;
 					say "[bold type]You feel one of the souls you have devoured infusing you with power, and find it easier to focus.[roman type][line break]";
 				otherwise if a random number between 1 and 2 > 1:
-					Dexup 1;
+					DexUp 1;
 					say "[bold type]You feel one of the souls you have devoured infusing you with power, and feel your body becoming more flexible.[roman type][line break]";
 				otherwise:
-					Strengthup 1;
+					StrengthUp 1;
 					say "[bold type]You feel one of the souls you have devoured infusing you with power, and feel yourself becoming stronger.[roman type][line break]";
 			otherwise if there is a worn cursed clothing:
 				say "[bold type]You feel the power of one of your devoured souls flow through your clothing![roman type][line break]";
@@ -312,12 +302,12 @@ A time based rule (this is the dressup rule):
 		if H is crotch covering:
 			if the player is female:
 				if vagina is not actually occupied and (asshole is actually occupied or a random number between 1 and 3 > 1):
-					say "You shriek as a pair [one of]thick, manly[or]thin, feminine[or]dexterous, long-nailed[or][if mythical creature fetish is 1]bestial, clawed[otherwise]fluid, warmth-less[end if][at random] fingers plunge into your [vagina], unnaturally distorting your [ShortDesc of H] as it casts an ominous glow over your inner thighs. Shivers run up your spine as the clammy digits stroke your inner walls, unceremoniously violating you[if the number of monsters in the location of the player > 0] in full view of [NameDesc of a random monster in the location of the player][otherwise] without so much as a second's warning[end if]. You can only claw helplessly at the possessed [clothing-material of H] until it stops, pleasure, humiliation, and raw [if the bimbo of the player < 14]terror[otherwise]exhilaration[end if] bubbling up from your loins at having your clothes treat you [one of]like nothing but a toy to be used[or]like their personal sex guinea pig[or]like nothing but a simple plaything[at random].";
+					say "You shriek as a pair of [one of]thick, manly[or]thin, feminine[or]dexterous, long-nailed[or][if mythical creature fetish is 1]bestial, clawed[otherwise]fluid, warmth-less[end if][at random] fingers plunge into your [vagina], unnaturally distorting your [ShortDesc of H] as it casts an ominous glow over your inner thighs. Shivers run up your spine as the clammy digits stroke your inner walls, unceremoniously violating you[if the number of monsters in the location of the player > 0] in full view of [NameDesc of a random monster in the location of the player][otherwise] without so much as a second's warning[end if]. You can only claw helplessly at the possessed [clothing-material of H] until it stops, pleasure, humiliation, and raw [if the bimbo of the player < 14]terror[otherwise]exhilaration[end if] bubbling up from your loins at having your clothes treat you [one of]as nothing but a toy to be used[or]like their personal sex guinea pig[or]as nothing but a simple plaything[at random].";
 					ruin vagina;
 					now molested is 1;
 			otherwise:
 				if the size of penis > a random number between 3 and 12:
-					say "You yelp as a [one of]rough, manly[or]soft, feminine[or][if mythical creature fetish is 1]bestial, clawed[otherwise]cold, warmth-less[end if][at random] hand wraps itself around your [ShortDesc of penis], unnaturally distorting your [ShortDesc of H] as it casts an ominous glow over your inner thighs. Shivers run up your spine as the clammy fingers firmly pump you from tip to shaft, as if trying to literally feed your junk back into your body. You can only claw helplessly at the possessed [clothing-material of H] until it stops, pleasure, humiliation, and raw [if the bimbo of the player < 14]terror[otherwise]exhilaration[end if] bubbling up from your loins at having your clothes treat you [one of]like nothing but a toy to be used[or]like their personal sex guinea pig[or]like nothing but a simple plaything[at random].";
+					say "You yelp as a [one of]rough, manly[or]soft, feminine[or][if mythical creature fetish is 1]bestial, clawed[otherwise]cold, warmth-less[end if][at random] hand wraps itself around your [ShortDesc of penis], unnaturally distorting your [ShortDesc of H] as it casts an ominous glow over your inner thighs. Shivers run up your spine as the clammy fingers firmly pump you from tip to shaft, as if trying to literally feed your junk back into your body. You can only claw helplessly at the possessed [clothing-material of H] until it stops, pleasure, humiliation, and raw [if the bimbo of the player < 14]terror[otherwise]exhilaration[end if] bubbling up from your loins at having your clothes treat you [one of]as nothing but a toy to be used[or]like their personal sex guinea pig[or]as nothing but a simple plaything[at random].";
 					PenisDown 1;
 					stimulate vagina from H;
 					now molested is 1;
@@ -332,7 +322,7 @@ A time based rule (this is the dressup rule):
 			if H is not chestless and R is 2, let P be breasts;
 			otherwise increase R by 1;
 			unless H is no-crotch and R is 3, let P be hips;
-			say "Your [ShortDesc of H] lights up as unseen hands grab your [ShortDesc of P], distorting the [clothing-material of H] material unnaturally as they mischievously grope the tender skin underneath. [one of]You're being molested by your own clothing![or]You can't help feeling exposed knowing your own clothes can mess with you any time![at random]";
+			say "Your [ShortDesc of H] lights up as unseen hands grab your [ShortDesc of P], distorting the [clothing-material of H] material unnaturally as they mischievously grope the tender skin underneath. [one of]You're being molested by your own clothing![or]You can't help feeling strangely, intimately exposed to your clothes themselves, now you know they can mess with you any time![at random]";
 			if P is breasts, stimulate breasts.
 
 [If the player doesn't properly fit in their clothes, there is a chance of the clothing becoming displaced without input from the player.]
@@ -407,77 +397,6 @@ To compute default reset cooldown of (T - a trap):
 	otherwise:
 		decrease the reset-timer of T by time-seconds.
 
-[!<mindflayerQuest:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
-mindflayer quest is a number that varies. mindflayer quest is 0.
-
-[!<mindflayerSpawned:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
-mindflayer spawned is a number that varies. mindflayer spawned is 0.
-
-[!<Player>@<domination:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
-The player has a number called domination. The domination of the player is usually 0.
-
-A time based rule (this is the mindflayer spawns rule):
-	if mindflayer spawned is 0 and diaper quest is 0 and the remainder after dividing time-earnings by 417 < time-seconds:
-		let M be a random off-stage mind flayer;
-		let R be (a random number between 1 and 5) + (a random number between 2 and 6);
-		if debugmode > 0, say "[input-style]Mindflayer spawn check: intelligence gained ([the raw intelligence of the player - the starting intelligence of the player]) | ([R].5) 2d5+1.5[roman type][line break]";
-		if R < the raw intelligence of the player - the starting intelligence of the player:
-			set up M;
-			now mindflayer spawned is 1;
-			say "You feel a strange pressure in your mind for just a moment[if debugmode > 0] (The mindflayer has just been spawned!)[line break][otherwise]. It feels like something new and terrifying has arrived...[end if]";
-			if playerRegion is Woods:
-				summon M in the woods;
-			otherwise if playerRegion is Mansion:
-				summon M in the mansion;
-			otherwise if playerRegion is Hotel:
-				summon M in the hotel;
-			otherwise:
-				summon M in the dungeon.
-
-A later time based rule (this is the mindflayer quest rule):
-	if mindflayer spawned is 1 and mindflayer quest is 0:
-		say "You hear a strange tapping sound, and suddenly a voice rings out as though from a PA system! [line break][second custom style]'Testing, testing. Is this thing on? Hello, testers! It appears a monster from a not-yet-implemented area has inadvertently been introduced into the live test area. We're not really sure how this happened, but this does highlight the importance of your job as testers. We don't seem to be able to despawn it ourselves, if one of you could be a dear and destroy it so we can analyse its data we would really appreciate it.[roman type][line break]";
-		now mindflayer quest is 1;
-	if mindflayer quest is 1 and mind flayer is off-stage:
-		say "The PA system comes alive again. [line break][second custom style]'Oh wonderful. Nintendolls thanks you for your contribution to the completion of this testing phase! The standard bug bounty has been credited to your winnings, how lucky for you! Oh, and if it dropped anything feel free to keep it, it's an item from later in the game so it's probably pretty powerful.'[roman type][line break]";
-		now mindflayer quest is 2.
-
-A time based rule (this is the mindflayer domination rule):
-	if the domination of the player > 0:[Revised Mind Flayer Domination Attack, starts by checking for domination at all]
-		if domination-time - (a random number between the domination of the player and 40) < 0:
-			decrease the domination of the player by 1;
-			now domination-time is 30;
-			if (a random number between 1 and 3 < 3) and (the arousal of the player < maximum arousal / 2):
-				say "Swirling images of sex begin to fill your mind, and you hear a voice in your head! [line break][first custom style]'Your holes burn to be filled.'[roman type][line break]You are so aroused you could burst!";
-				now the arousal of the player is maximum arousal;
-			otherwise if the location of the player is smoky and the largeness of breasts < max breast size:
-				say "You see images of yourself with incredible breasts, and you hear a voice in your head! [line break][first custom style]'Breathe deep and become the [whore] you know yourself to be.'[roman type][line break]You fall to your knees!";
-				try silently kneeling;
-			otherwise if (a random number between 1 and 3 < 3) and (the raw oral sex addiction of the player < 10):
-				say "Images of erect penises fill your mind, and you hear a voice in your head! [line break][first custom style]'You hunger to taste the prize inside of us.'[roman type][line break]You feel a sudden strange longing to fill your mouth with [manly-penis]!";
-				OralSexAddictUp 1;
-			otherwise if (a random number between 1 and 2 < 3)	and (the humiliation of the player < 40000):
-				say "You see images of yourself mindlessly complying as men use every part of your body, and you hear a voice in your head! [line break][first custom style]'A man chooses, an object obeys.'[roman type][line break]You feel less and less like a person!";
-				humiliate 400;
-			otherwise:
-				say "Images of erect penises fill your mind, and you hear a voice in your head! [line break][first custom style]'Put us in you and revel in serving us.'[roman type][line break]You feel a sudden strange longing to fill your holes with [manly-penis]!";
-				SexAddictUp 1;
-		otherwise:
-			decrease domination-time by 1.
-				[Digesting souls- preliminary version definitely way too strong but it has to be in the game to balance it]
-
 [
 LATEX TRANSFORMATION GUIDELINES:
 
@@ -491,11 +410,6 @@ LATEX TRANSFORMATION GUIDELINES:
 8: Transformation complete, lose fingers, only able to carry one item.
 ]
 
-[!<ComputeLatexTransformation>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute latex transformation:
 	if the latex-transformation of the player > 0 and the latex-transformation of the player < 8:
 		increase the latex-transformation of the player by 1;
@@ -533,6 +447,7 @@ To compute latex transformation:
 			LipsUp 3;
 		if the latex-transformation of the player is 8:
 			say "You feel yourself stop breathing and your heart stop beating, but you realise you no longer need either, you don't have flesh or blood or anything inside you, just tubes and air. Your hands and feet lose their digits and their shape and just turn into rounded ends, as if you were wearing fully rounded mittens. [if the number of things held by the player > 0]You drop everything that you are carrying. It seems unlikely that you'll be able to carry more than one thing carefully in between your two doll stumps now.[end if][line break]You have completely transformed into a latex sex doll.";
+			say "But even though your heart and breathing have stopped, you realise your arousal hasn't changed at all. Your skin feels flushed and delicate, still tingling with pleasure, sensitive to every touch. The shock you feel at that makes you suddenly aware of your widened eyes and your mouth, now gaping open in an O-shaped expression. And then you realise in dismay that you can't change either of those two things!";
 			appropriate-cutscene-display figure of latex curse 3;
 			repeat with H running through things carried by the player:
 				now H is in the location of the player;
@@ -543,11 +458,6 @@ To compute latex transformation:
 					now C is in the location of the player;
 		say "[roman type][line break]".
 
-[!<TheSexDollsHaveNoVoiceRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the sex dolls have no voice rule:
 	if the latex-transformation of the player > 6, rule fails.
 The sex dolls have no voice rule is listed in the player voice rules.

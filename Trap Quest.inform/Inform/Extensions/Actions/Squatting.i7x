@@ -14,18 +14,8 @@ If the humiliation of the player is below this, the player will refuse to expel 
 *!]
 public-squatting-limit is a number that varies. public-squatting-limit is 30000.
 
-[!<squatting:Action>*
-
-REQUIRES COMMENTING
-
-*!]
 Squatting is an action applying to nothing.
 
-[!<CheckSquatting>+
-
-REQUIRES COMMENTING
-
-+!]
 Check squatting:
 	if the trophy-mode of expel-trophy is 1, say "Thanks to the magic power of [NameDesc of expel-trophy], this only happens automatically." instead;
 	if the semen addiction of the player >= 20 and the semen volume of belly > 0, say "[variable custom style]There's no way I'm letting out my precious [semen] until I literally can't hold it in any longer![roman type][line break]" instead;
@@ -55,11 +45,6 @@ Check squatting:
 			compute toilet use instead;
 	if currently-squirting is 1, say "You're already expelling the contents of your belly!" instead.
 
-[!<CarryOutSquatting>+
-
-REQUIRES COMMENTING
-
-+!]
 Carry out squatting:
 	now voluntarySquatting is 1;
 	allocate 6 seconds;

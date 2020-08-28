@@ -1,10 +1,5 @@
 Heel Skill by Player Description begins here.
 
-[!<SayHeelSkillDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say HeelSkillDesc:
 	if the heel skill of the player < 2, say "You are completely new to walking in heels.";
 	if the heel skill of the player is 2, say "You wobble awkwardly when walking in heels of all sizes.";

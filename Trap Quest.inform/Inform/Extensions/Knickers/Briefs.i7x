@@ -1,6 +1,6 @@
 Briefs by Knickers begins here.
 
-A briefs is a kind of undies. Understand "pair", "pair of", "briefs" as briefs. The soak-limit of briefs is 10. The text-shortcut of briefs is "br".
+A briefs is a kind of undies. Understand "pair", "pair of", "briefs" as briefs. The text-shortcut of briefs is "br".
 
 To decide which number is the penis-capacity of (K - a briefs):
 	decide on 6.
@@ -103,8 +103,10 @@ To say selfexamineuniquetitle of (G - white-diagram briefs):
 To say UniqueClothingDesc of (G - white-diagram briefs):
 	say "This modest white pair of briefs has a diagram of the female reproductive system on the front.".
 Understand "ovaries", "reproductive", "system", "white", "diagram" as white-diagram briefs.
-Definition: white-diagram briefs is pregnancy related: decide yes.
-Definition: white-diagram briefs is fetish appropriate if pregnancy fetish > 0.
+Definition: white-diagram briefs is pregnancy themed: decide yes.
+Definition: white-diagram briefs is fetish appropriate:
+	if pregnancy fetish > 0, decide yes;
+	decide no.
 Definition: white-diagram briefs is vagina themed: decide yes.
 Definition: white-diagram briefs is white themed: decide yes.
 To uniquely set up (T - a white-diagram briefs):
@@ -226,9 +228,14 @@ To say selfexamineuniquetitle of (G - blue-cameltoe briefs):
 To say UniqueClothingDesc of (G - blue-cameltoe briefs):
 	say "A pair of low cut pale blue briefs that would give a female wearer a very visible cameltoe.".
 Definition: blue-cameltoe briefs is blue themed: decide yes.
-Definition: blue-cameltoe briefs is potentially vagina covering if the player is not possessing a vagina and it is potentially pussy covering. [On women, this item doesn't fully conceal the vagina]
+Definition: blue-cameltoe briefs is potentially vagina covering:
+	if the player is not possessing a vagina and it is potentially pussy covering, decide yes;
+	decide no. [On women, this item doesn't fully conceal the vagina]
 To decide which number is the penis-capacity of (H - blue-cameltoe briefs):
 	decide on 2.
+To decide which object is the potential-upgrade-target of (H - blue-cameltoe briefs):
+	if the player is possessing a vagina, decide on a random off-stage sheer g-string;
+	decide on nothing.
 
 pink-kitty-briefs is a briefs. pink-kitty-briefs is silk. Understand "frilly", "kitty" as pink-kitty-briefs. The text-shortcut of pink-kitty-briefs is "fkb".
 To say selfexamineuniquetitle of (G - pink-kitty-briefs):

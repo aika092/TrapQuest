@@ -46,13 +46,10 @@ To restock (C - a necklace):
 	let B be a random basic loot necklace;
 	if B is necklace, now B is in Standard Item Pen.
 
-[This is the setup starting necklaces rule:
-	let C be a random necklace;
-	restock C.
-The setup starting necklaces rule is listed in the setup starting items rules.]
-
 A submissive collar is a kind of neckwear. A submissive collar is usually transformation-rare.
-Definition: a submissive collar is same-type if theme-share-target is submissive collar.
+Definition: a submissive collar is same-type:
+	if theme-share-target is submissive collar, decide yes;
+	decide no.
 To decide which number is the initial outrage of (C - a submissive collar):
 	decide on 8.
 

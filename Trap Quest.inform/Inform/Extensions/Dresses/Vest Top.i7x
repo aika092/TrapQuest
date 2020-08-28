@@ -50,7 +50,9 @@ There is 1 my tits would like a drink vest top.
 Definition: a my tits would like a drink vest top is drink themed: decide yes.
 Definition: a my tits would like a drink vest top is boob themed: decide yes.
 Definition: a my tits would like a drink vest top is white themed: decide yes.
-Definition: a my tits would like a drink vest top is fetish appropriate if the player is not a flatchested trap.
+Definition: a my tits would like a drink vest top is fetish appropriate:
+	if the player is not a flatchested trap, decide yes;
+	decide no.
 
 To decide which figure-name is clothing-image of (C - an my tits would like a drink vest top):
 	decide on figure of my tits would like a drink vest top.
@@ -88,10 +90,12 @@ To say MediumDesc of (C - a real cowgirls ride their bulls bareback vest top):
 To decide which number is the initial outrage of (C - a real cowgirls ride their bulls bareback vest top):
 	decide on 5.
 
-Definition: A real cowgirls ride their bulls bareback vest top is pregnancy related: decide yes.
+Definition: A real cowgirls ride their bulls bareback vest top is pregnancy themed: decide yes.
 Definition: A real cowgirls ride their bulls bareback vest top is interracial themed: decide yes.
 Definition: A real cowgirls ride their bulls bareback vest top is white themed: decide yes.
-Definition: A real cowgirls ride their bulls bareback vest top is fetish appropriate if pregnancy fetish is 1.
+Definition: A real cowgirls ride their bulls bareback vest top is fetish appropriate:
+	if pregnancy fetish is 1, decide yes;
+	decide no.
 
 Part 4 - Rubber Vest Top
 

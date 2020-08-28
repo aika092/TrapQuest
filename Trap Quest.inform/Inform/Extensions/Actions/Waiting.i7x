@@ -3,11 +3,6 @@ Waiting by Actions begins here.
 Check waiting when the player is not virtual:
 	say "Nothing happens." instead.
 
-[!<CheckWaiting>+
-
-REQUIRES COMMENTING
-
-+!]
 Check waiting:
 	if the player is flying and last-turn-flight is 1:
 		say "Do you want to keep waiting until you deflate? ";
@@ -45,27 +40,17 @@ Check waiting:
 		otherwise:
 			try submitting instead.
 
-[!<CarryOutWaiting>+
-
-REQUIRES COMMENTING
-
-+!]
 Carry out waiting:
 	allocate 6 seconds;
 	if newbie tips is 1 and the player is prone and the player is not in danger, say "[one of][newbie style]Newbie tip: you can use 'rest' to wait until your fatigue has returned to 0. It will automatically stop if a dangerous enemy comes by. You can also use 'long wait' to wait until something changes.[roman type][line break][or][stopping]".
 
 The standard report waiting rule is not listed in the report waiting rulebook.
 
-[!<ReportWaiting>+
-
-REQUIRES COMMENTING
-
-+!]
 Report waiting:
 	if there is an expectant monster in the location of the player:
 		let M be a random expectant intelligent monster in the location of the player;
 		if M is nothing, now M is a random expectant monster in the location of the player;
-		say "[CorrectWaitingFlav of M]";
+		say CorrectWaitingFlav of M;
 		if there is a worn demon codpiece, follow the demon junk punishment rule;
 	otherwise if the player is in Iron Maiden:
 		say "You stand completely still, helplessly stuck inside [one of]your claustrophobic metal prison[or]the tight sarcophagus[or]your tentacled cage[or]the miniature cell[in random order].";
@@ -74,20 +59,10 @@ Report waiting:
 	otherwise:
 		say "Time passes.".
 
-[!<SayCorrectWaitingFlavOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To say CorrectWaitingFlav of (M - a monster):
 	if diaper quest is 1, say "[DQWaitingFlav of M]";
 	otherwise say "[WaitingFlav of M]".
 
-[!<SayDQWaitingFlavOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To say DQWaitingFlav of (M - a monster):
 	if M is intelligent:
 		if there is worn perceived messed knickers:
@@ -98,11 +73,6 @@ To say DQWaitingFlav of (M - a monster):
 	otherwise:
 		say "You stay still and wait to see how [NameDesc of M] will assault you.".
 
-[!<SayWaitingFlavOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To say WaitingFlav of (M - a monster):
 	say WaitingSpeechFlav of M;
 	say WaitingActionFlav of M.
@@ -152,21 +122,11 @@ To say WaitingActionFlav of (M - a monster):
 	otherwise:
 		say "You stay still and wait to see [if M is willing to shag]how [NameDesc of M] will [one of]play with[or]fuck[or]use[or]dominate[as decreasingly likely outcomes] you[otherwise][one of]what [NameDesc of M] plans to do with you[or]how [NameDesc of M] punishes you[in random order][end if].".
 
-[!<SkyWait>+
-
-REQUIRES COMMENTING
-
-+!]
 To SkyWait:
 	while the player is flying and delayed fainting is 0:
 		allocate 6 seconds;
 		compute extra turn.
 
-[!<DildoWait>+
-
-REQUIRES COMMENTING
-
-+!]
 To DildoWait:
 	let prev-weight be the weight of the player;
 	let prev-dex be the dexterity of the player;
@@ -177,11 +137,6 @@ To DildoWait:
 		if the weight of the player < prev-weight, say "You've lost a bit of weight, you should check if that changes anything!";
 		if the dexterity of the player > prev-dex, say "You've gained back a bit of dexterity, better check if that changes anything!".
 
-[!<HookWait>+
-
-REQUIRES COMMENTING
-
-+!]
 To HookWait:
 	if woman-player is regional and the woman-status of woman-player is 1:
 		allocate 6 seconds;
@@ -194,7 +149,7 @@ To HookWait:
 			now X is not penetrating asshole;
 			now X is unrevealed;
 		otherwise if the woman-bimbo of woman-player < 5:
-			say "[big he of woman-player] grins at you. [line break][second custom style]'Uh-oh, you look like you're having a lot of fun there! Do you need some help?'[roman type][line break][big he of woman-player] pulls at the hook, but slips when [he of woman-player] gets it halfway out. It shoots back into your [asshole], causing you to yelp in pain!";
+			say "[big he of woman-player] grins at you.[line break][second custom style]'Uh-oh, you look like you're having a lot of fun there! Do you need some help?'[roman type][line break][big he of woman-player] pulls at the hook, but slips when [he of woman-player] gets it halfway out. It shoots back into your [asshole], causing you to yelp in pain!";
 			ruin asshole;
 			say "[second custom style]'Oopsie! Let me try that again.'[roman type][line break]This time [he of woman-player] gets it all the way out, but just before you can react and step to the side, [he of woman-player] loses [his of woman-player] grip again! It shoots back in with twice the force of last time!";
 			ruin asshole;
@@ -210,7 +165,7 @@ To HookWait:
 			let N be 4;
 			while delayed fainting is 0 and the player is not unable to orgasm so soon and N > 0:
 				decrease N by 1;
-				say "[BigNameDesc of woman-player] keeps fucking you with the ass hook! [line break][second custom style]'[one of]Are you going to cum from your naughty butthole?'[or]Wee! Isn't this fun?'[or]Why are you screaming? Am I not doing it hard enough for you?'[or]This is what you meant by [']Get me off['], right?'[or]You look so sexy right now![or]I'm getting horny just watching you squirm![in random order][roman type][line break]";
+				say "[BigNameDesc of woman-player] keeps fucking you with the ass hook![line break][second custom style]'[one of]Are you going to cum from your naughty butthole?'[or]Wee! Isn't this fun?'[or]Why are you screaming? Am I not doing it hard enough for you?'[or]This is what you meant by [']Get me off['], right?'[or]You look so sexy right now![or]I'm getting horny just watching you squirm![in random order][roman type][line break]";
 				ruin asshole;
 				allocate 6 seconds;
 				compute extra turn;

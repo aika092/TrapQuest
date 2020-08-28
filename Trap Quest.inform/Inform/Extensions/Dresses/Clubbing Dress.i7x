@@ -11,9 +11,6 @@ To decide which number is the dexterity-influence of (C - a clubbing dress):
 To uniquely set up (C - a clubbing dress):
 	if a random number between 1 and 5 is 1, now C is protection.
 
-To decide which number is the original price of (C - a clubbing dress):
-	decide on 4.
-
 To decide which number is the initial outrage of (C - a clubbing dress):
 	decide on 2.
 
@@ -62,20 +59,20 @@ Definition: a pink clubbing dress is pink themed: decide yes.
 
 Part 2 - Long Pink Dress
 
-A long pink clubbing dress is a kind of clubbing dress. A long pink clubbing dress is usually hobble-skirted. The armour of long pink clubbing dress is usually 8. A long pink clubbing dress is usually crotch-skirted. There is 1 long pink clubbing dress. Figure of long pink clubbing dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress2.png". The text-shortcut of long pink clubbing dress is "lcd".
+pink cocktail dress is a clubbing dress. pink cocktail dress is hobble-skirted. The armour of pink cocktail dress is 8. pink cocktail dress is crotch-skirted. There is 1 pink cocktail dress. Figure of pink cocktail dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress2.png". The text-shortcut of pink cocktail dress is "lpcd". Understand "long" as pink cocktail dress.
 
-To decide which figure-name is clothing-image of (C - a long pink clubbing dress):
-	decide on figure of long pink clubbing dress.
+To decide which figure-name is clothing-image of (C - pink cocktail dress):
+	decide on figure of pink cocktail dress.
 
-The printed name of long pink clubbing dress is usually "[clothing-title-before]long pink clubbing dress[clothing-title-after]".
+The printed name of pink cocktail dress is usually "[clothing-title-before]long pink cocktail dress[clothing-title-after]".
 
-To say ClothingDesc of (C - a long pink clubbing dress):
-	say "This relatively naughty dress would only be worn by the most [if the humiliation of the player < 10000]shameless[otherwise]confident[end if] of [if diaper quest is 1]grown up women[otherwise]girls[end if] on a night out partying.".
+To say ClothingDesc of (C - pink cocktail dress):
+	say "This relatively naughty dress would only be worn to a party by the most [if the player is proud]shameless[otherwise]confident[end if] of [if diaper quest is 1]grown up women[otherwise]girls[end if].".
 
-To say MediumDesc of (C - a long pink clubbing dress):
-	say "saucy long pink clubbing dress".
+To say MediumDesc of (C - pink cocktail dress):
+	say "saucy pink cocktail dress".
 
-Definition: a long pink clubbing dress is pink themed: decide yes.
+Definition: pink cocktail dress is pink themed: decide yes.
 
 Part 3 - Black Clubbing Dress
 
@@ -176,25 +173,25 @@ To decide which number is the initial outrage of (C - a supertiny navy clubbing 
 Definition: a supertiny navy clubbing dress is gem themed: decide yes.
 Definition: a supertiny navy clubbing dress is blue themed: decide yes.
 
-Part 7 - Sexy White Clubbing Dress
+Part 7 - White cocktail dress
 
-A sexy white clubbing dress is a kind of clubbing dress. There is 1 sexy white clubbing dress. A sexy white clubbing dress is usually cotton. A sexy white clubbing dress is usually low cut. A sexy white clubbing dress is usually hobble-skirted. A sexy white clubbing dress is usually crotch-skirted. Figure of sexy white clubbing dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress7.png". The text-shortcut of sexy white clubbing dress is "wcd".
+white cocktail dress is a clubbing dress. white cocktail dress is ridiculously low cut. white cocktail dress is hobble-skirted. white cocktail dress is crotch-skirted. Figure of white cocktail dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress7.png". The text-shortcut of white cocktail dress is "wcd". Understand "and black", "black" as white cocktail dress.
 
-The printed name of sexy white clubbing dress is usually "[clothing-title-before]sexy white clubbing dress[clothing-title-after]".
+The printed name of white cocktail dress is usually "[clothing-title-before]white and black cocktail dress[clothing-title-after]".
 
-To decide which figure-name is clothing-image of (C - a sexy white clubbing dress):
-	decide on figure of sexy white clubbing dress.
+To decide which figure-name is clothing-image of (C - white cocktail dress):
+	decide on figure of white cocktail dress.
 
-To say ClothingDesc of (C - a sexy white clubbing dress):
-	say "This sexy white dress has a low cut chest section and a tight but flattering cut the rest of the way down.".
+To say ClothingDesc of (C - white cocktail dress):
+	say "This sexy white dress has a low cut black cleavage line and a tight but flattering cut the rest of the way down. If you wear this without a bra, you're very likely to suffer a nip slip.".
 
-To say ShortDesc of (C - a sexy white clubbing dress):
+To say ShortDesc of (C - white cocktail dress):
 	say "white clubbing dress".
-To say MediumDesc of (C - a sexy white clubbing dress):
-	say "flattering white clubbing dress".
+To say MediumDesc of (C - white cocktail dress):
+	say "white & black clubbing dress".
 
-Definition: a sexy white clubbing dress is white themed: decide yes.
-Definition: a sexy white clubbing dress is black-and-white themed: decide yes.
+Definition: white cocktail dress is white themed: decide yes.
+Definition: white cocktail dress is black-and-white themed: decide yes.
 
 Part 8 - Exposing Black Clubbing Dress
 
@@ -270,5 +267,27 @@ Definition: a blue slut clubbing dress is blue themed: decide yes.
 
 To decide which number is the initial outrage of (C - a blue slut clubbing dress):
 	decide on 6.
+
+Part 11 - Purple Velvet Cocktail Dress
+
+purple cocktail dress is a clubbing dress. purple cocktail dress is neck covering. purple cocktail dress is velvet. purple cocktail dress is fully covering. The text-shortcut of purple cocktail dress is "pckd". The printed name of purple cocktail dress is usually "[clothing-title-before]purple cocktail dress[clothing-title-after]".
+
+Figure of purple cocktail dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress11.png".
+
+To decide which figure-name is clothing-image of (C - purple cocktail dress):
+	decide on figure of purple cocktail dress.
+
+To say ClothingDesc of (C - purple cocktail dress):
+	say "This body-hugging purple dress is made of pure velvet. Its high collar means that there's no revealing neckline.".
+
+To say ShortDesc of (C - purple cocktail dress):
+	say "purple dress".
+To say MediumDesc of (C - purple cocktail dress):
+	say "purple velvet cocktail dress".
+
+To decide which number is the initial outrage of (C - purple cocktail dress):
+	decide on 2.
+
+Definition: purple cocktail dress is purple themed: decide yes.
 
 Clubbing Dress ends here.

@@ -125,7 +125,7 @@ Report opening a container:
 		say "[newbie style]Your swimsuit was transformed! This happens a lot in this game, and almost always makes the clothing more [if diaper quest is 1]slutty or childish, neither of which will impress NPCs[otherwise]slutty, which makes NPCs more likely to become upset with you[end if]. You'll need to keep lots of backup clothing items so you can try to keep your appearance looking reasonable. Clothing also has other natural uses.[roman type][paragraph break]";
 		let M be a random royal guard in the location of the player;
 		anger M;
-		say "[BigNameDesc of M] seems to be looking at you differently! [line break][first custom style]'That is not appropriate attire for these halls! I have no choice but to punish you in a suitable manner...'[roman type][line break]";
+		say "[BigNameDesc of M] seems to be looking at you differently![line break][first custom style]'That is not appropriate attire for these halls! I have no choice but to punish you in a suitable manner...'[roman type][line break]";
 		compute attack of M;
 		say "[newbie style]Uh-oh, it looks like your [if diaper quest is 1]childish[otherwise]slutty[end if] appearance means the guard wants to fight, and probably [if diaper quest is 1]treat you like a little baby afterwards[otherwise]fuck[end if]! In the real game you lose NPC's 'favour' over time but in this tutorial we've made the guard super-offended straight away so we can explain combat. Let's try and fight back! Since kicking is your strongest attack (you can see this towards the bottom of the status bar at the top of the screen), let's stick with that for now.[roman type][line break]".
 

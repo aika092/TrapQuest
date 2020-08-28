@@ -150,6 +150,9 @@ Carry out wearing clothing:
 	if the noun is ballgag, now the noun is penetrating face; [as opposed to ring gags, which take up the face slot but do not necessarily penetrate face]
 	allocate dual arm use;
 	allocate 6 seconds;
+	if another-turn is 0 and the noun is difficult to don:
+		now another-turn is 1;
+		now another-turn-flavour is the substituted form of "It takes a long time to finish putting [NameDesc of the noun] on.";
 	if the noun is bottom layer, layer the noun correctly; [Cage, knickers and trousers can do some funky stuff like going under skirts]
 	otherwise layer the noun correctly on top;
 	say "[line break]You put on the [ShortDesc of noun].[line break]".

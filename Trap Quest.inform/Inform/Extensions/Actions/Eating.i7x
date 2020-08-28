@@ -4,42 +4,17 @@ The can't eat unless edible rule is not listed in the check eating rulebook.
 The standard eating rule is not listed in the carry out eating rulebook.
 The standard report eating rule is not listed in the report eating rulebook.
 
-[!<tQEating:Action>*
-
-REQUIRES COMMENTING
-
-*!]
 TQeating is an action applying to one thing.
 
-[!<ObjectIsTQEdible>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: an object is TQedible: decide no.
 
-[!<FoodIsTQEdible>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a food is TQedible: decide yes.
 
-[!<CheckEating>+
-
-REQUIRES COMMENTING
-
-+!]
 Check eating:
 	try TQeating the noun instead.
 
 Definition: a thing is blockedByBallgags: decide no.
 
-[!<CheckTQEatingSomething>+
-
-REQUIRES COMMENTING
-
-+!]
 Check TQeating something:
 	if the noun is bottle, try drinking the noun instead;
 	if there is a worn gag and the noun is blockedByBallgags, say "You can't get it past your [random worn gag]!" instead;
@@ -62,11 +37,6 @@ Check TQeating something:
 
 Understand "swallow [something]", "consume [something]", "bite [something]", "unwrap [something]", "mm [something]", "mmm [something]", "yum [something]" as TQeating.
 
-[!<YourselfIsAbleToEat>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: yourself is able to eat:
 	repeat with T running through things penetrating face:
 		if T is not gag, decide no;

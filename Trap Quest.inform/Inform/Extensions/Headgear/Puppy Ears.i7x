@@ -25,7 +25,9 @@ To compute SelfExamineDesc of (H - puppy ears):
 
 Chapter - Class Outfit
 
-Definition: puppy ears is removal-blocking if wearing-target is puppy mittens.
+Definition: puppy ears is removal-blocking:
+	if wearing-target is puppy mittens, decide yes;
+	decide no.
 
 puppy-summoned is a number that varies.
 To compute unique recycling of (C - puppy ears):

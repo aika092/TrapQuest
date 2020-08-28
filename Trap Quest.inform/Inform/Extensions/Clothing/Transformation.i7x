@@ -7,22 +7,25 @@ A game universe initialisation rule:
 	repeat with C running through rare clothing:
 		increase the transform-resistance of C by 1.
 
+To decide which number is the transformability of (C - a clothing):
+	if diaper quest is 1, decide on 21 - the initial cringe of C;
+	decide on 21 - the initial outrage of C.
+
 To decide which object is most-transformable-clothing:
-	let lowest-outrage be 21;
 	let LT be the list of worn upgradable clothing;
 	if the number of entries in LT is 0:
 		let C be a random worn transformation chain transformable clothing;
 		if C is nothing, let C be a random worn transformable clothing;
 		decide on C;
+	let LC be a list of clothing;
 	let X be a random worn clothing;
-	sort LT in random order;
 	repeat with C running through LT:
-		let O be 0;
-		if diaper quest is 0, let O be the initial outrage of C;
-		otherwise let O be the initial cringe of C;
-		if O < lowest-outrage:
-			now lowest-outrage is O;
-			now X is C;
+		repeat with N running from 1 to the transformability of C:
+			add C to LC; [The lower its outrage level, the more entries in LC i.e. the more chance of it being chosen]
+	let E be the number of entries in LC;
+	if E > 0:
+		let R be a random number between 1 and E;
+		now X is entry R in LC;
 	decide on X.
 
 To decide which object is most-transformable-uncovered-clothing:
@@ -31,16 +34,15 @@ To decide which object is most-transformable-uncovered-clothing:
 		let C be a random worn transformation chain currently uncovered transformable clothing;
 		if C is nothing, let C be a random worn currently uncovered transformable clothing;
 		decide on C;
+	let LC be a list of clothing;
 	let X be a random worn clothing;
-	let lowest-outrage be 21;
-	sort LT in random order;
 	repeat with C running through LT:
-		let O be 0;
-		if diaper quest is 0, let O be the initial outrage of C;
-		otherwise let O be the initial cringe of C;
-		if O < lowest-outrage:
-			now lowest-outrage is O;
-			now X is C;
+		repeat with N running from 1 to the transformability of C:
+			add C to LC; [The lower its outrage level, the more entries in LC i.e. the more chance of it being chosen]
+	let E be the number of entries in LC;
+	if E > 0:
+		let R be a random number between 1 and E;
+		now X is entry R in LC;
 	decide on X.
 
 To decide which object is the potential-upgrade-target of (C - a clothing):
@@ -78,7 +80,7 @@ To decide which object is the unique-upgrade-target of (C - a clothing):
 To update upgrade target of (C - a clothing):
 	now the upgrade-target of C is nothing;
 	now the upgrade-target of C is the unique-upgrade-target of C;
-	if C is not class-transformation-protected and the upgrade-target of C is nothing, now the upgrade-target of C is the potential-upgrade-target of C;
+	if the upgrade-target of C is nothing and C is not class-transformation-protected, now the upgrade-target of C is the potential-upgrade-target of C;
 	check upgrade target of C.
 
 To check upgrade target of (C - a clothing):
@@ -99,11 +101,15 @@ Definition: an object is untransformable: decide yes. ['Nothing' is untransforma
 
 Definition: a clothing is transformation-protected: decide no. [Some stuff doesn't get transformed while it is in a certain state.]
 
-Definition: a clothing is disintegration-protected if it is class-transformation-protected. [Some stuff doesn't get transformed while it has nothing to turn into.]
+Definition: a clothing is disintegration-protected:
+	if it is class-transformation-protected, decide yes;
+	decide no. [Some stuff doesn't get transformed while it has nothing to turn into]
 
 Definition: a clothing is class-transformation-protected: decide no. [Some stuff doesn't get transformed while it has no other class relevant items to transform into.]
 
-Definition: a clothing is transformation-theme-blockable if it is not class-transformation-protected. [Some stuff refuses to transform when it shares a theme with other items. Class items will always transform into a more slutty class item though, regardless of theme.]
+Definition: a clothing is transformation-theme-blockable:
+	if it is not class-transformation-protected, decide yes;
+	decide no. [Some stuff refuses to transform when it shares a theme with other items. Class items will always transform into a more slutty class item though, regardless of theme]
 
 Definition: a clothing (called C) is transformation-theme-blocked:
 	if C is not transformation-theme-blockable, decide no;
@@ -134,13 +140,17 @@ Definition: a clothing (called C) is untransformable:
 		if C is not loop-safe-upgradable, decide yes; [Traps will never even bother trying to transform something disintegration-protected that hasn't been able to find a successful transformation target this turn.]
 	decide no.
 
-Definition: a clothing is transformable if it is not untransformable.
+Definition: a clothing is transformable:
+	if it is not untransformable, decide yes;
+	decide no.
 
 Definition: an equippable is transformation-protected: decide yes.
 
 Definition: a thing is end of transformation chain: decide no.
 
-Definition: a thing is transformation chain if it is not end of transformation chain.
+Definition: a thing is transformation chain:
+	if it is not end of transformation chain, decide yes;
+	decide no.
 
 Definition: a clothing (called C) is upgradable:
 	if the upgrade-target of C is clothing:

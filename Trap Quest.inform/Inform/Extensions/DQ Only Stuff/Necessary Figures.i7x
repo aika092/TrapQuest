@@ -14,6 +14,12 @@ Figure of Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator1a.jpg".
 Figure of ghost 5 is the file "NPCs/Mansion/Ghost/ghost5.png".
 Figure of ghost 6 is the file "NPCs/Mansion/Ghost/ghost6.png".
 Figure of ghost 7 is the file "NPCs/Mansion/Ghost/ghost7.png".
+To decide which figure-name is the monster-image of (M - ghostly tentacle):
+	decide on figure of ghost 5.
+To decide which figure-name is the monster-image of (M - a ghost):
+	decide on figure of ghost 6.
+To decide which figure-name is the monster-image of (M - jismbodied ghost):
+	decide on figure of ghost 7.
 
 Figure of Iron Maiden is the file "Env/Mansion/ironmaiden1.jpg".
 Figure of IronMaidenBackground is the file "Map/maiden2.png".
@@ -62,6 +68,16 @@ Figure of Podium Cutscene 1 is the file "Special/Cutscene/cutscene-podium1.png".
 Figure of Podium Cutscene 2 is the file "Special/Cutscene/cutscene-podium2.png".
 
 Figure of quiz predicament is the file "Special/Cutscene/cutscene-quiz2.jpg".
+
+Figure of rank 2 candy is the file "NPCs/School/Student/student5c.png".
+Figure of rank 3 candy dry is the file "NPCs/School/Student/student5e.png".
+Figure of rank 3 candy messy is the file "NPCs/School/Student/student5eM.png".
+Figure of rank 3 candy double diaper is the file "NPCs/School/Student/student5eD.png".
+To decide which figure-name is figure of rank 3 candy:
+	if student-candy is messy, decide on figure of rank 3 candy messy;
+	if the student-diaper-state of student-candy is 1, decide on figure of rank 3 candy double diaper;
+	decide on figure of rank 3 candy dry.
+[Figure of rank 4 candy is the file "NPCs/School/Student/student5eD.png".]
 
 Figure of rank 1 rosie is the file "NPCs/School/Student/student1a.png".
 Figure of rank 2 rosie is the file "NPCs/School/Student/student1c.png".

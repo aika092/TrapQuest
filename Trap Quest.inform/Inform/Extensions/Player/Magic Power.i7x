@@ -1,20 +1,19 @@
 Magic Power by Player begins here.
 
-[!<Player>@<magicPower:Integer>*
-
-Raw magic power
-
-*!]
-The player has a number called magic-power.
+The player has a number called magic-power. [Raw magic power]
+The player has a number called magic-fatigue. [Recent magic drain]
 
 [Magic power as treated by spells and so on.]
-To decide which number is the magic power of the player:
-	if magic-power of the player < 2 and the trophy-mode of magic-trophy is 2, decide on 2;
-	otherwise decide on the magic-power of the player.
+To decide which number is the total magic power of the player:
+	decide on the magic-power of the player + the trophy-mode of magic-trophy.
 
-[Creating functions for magic power management so I can use these to trigger becoming the Magical Girl if you don't have another class when gaining magic power]
+To decide which number is the magic power of the player:
+	let M be the total magic power of the player - the magic-fatigue of the player;
+	if M < 0, decide on 0;
+	decide on M.
 
 To MagicPowerUp (X - a number):
+	let T be the total magic power of the player;
 	while X > 0:
 		decrease X by 1;
 		let B be acolyte-undergarment;
@@ -32,11 +31,14 @@ To MagicPowerUp (X - a number):
 				otherwise:
 					if a random number between 1 and 2 is 1, MagicSteal G;
 					otherwise MagicSteal B;
-		otherwise if the magic-power of the player < 5:
+		otherwise if the magic-power of the player < 20:
 			increase the magic-power of the player by 1;
+			if X is 0:
+				if T is 0, say "[bold type]You feel that you now have the ability to use magic! [one of][if newbie tips is 1]When you use magic, your magic energy will deplete. Several environment objects and game effects will enable you to either partially or fully replenish your magical energy.[end if][line break][variable custom style]Wow!!! What an incredible feeling! I'm magic![or][stopping][roman type][line break]";
+				otherwise say "You feel that your capacity to use magic has [one of]increased[or]improved[or]expanded[in random order].";
 		otherwise if X is 0:
 			if a random number between 1 and 5 is 1 and the player is deserving of more intelligence:
-				say "Your body is so full of magic that the excess fizzles into your brain, making you slightly smarter.";
+				say "Your body is so full of magic that the excess fizzles into your brain, making you slightly [smarter].";
 				IntUp 1;
 			otherwise if a random number between 1 and 5 is 1 and the player is deserving of more dexterity:
 				say "Your body is so full of magic that the excess fizzles into your ligaments, making you more limber.";
@@ -44,41 +46,47 @@ To MagicPowerUp (X - a number):
 			otherwise:
 				say "Your body is so full of magic that the excess fizzles off of you with a pink display of sparkles.".
 
-[###Selkie: might be fun to have a [Smartening] function that would say, depending on intelligence, stuff like "getting smarterer", "getting better at thinking and stuff", "becoming way smarter", "becoming less sluggish", "working more smoothly", "operating more efficiently", "functioning keenly", "sparkling with brilliance".]
 To MagicPowerDown (X - a number):
 	if X > the magic-power of the player, now X is the magic-power of the player;
+	if X > 0, say "You have lost [if X is the magic-power of the player]all[otherwise if X > 1]lots[otherwise]some[end if] of your magic power.";
 	while X > 0:
 		decrease X by 1;
 		decrease the magic-power of the player by 1.
+
+To MagicPowerRefresh (X - a number):
+	let T be the total magic power of the player;
+	if the magic-fatigue of the player > T, now the magic-fatigue of the player is T;
+	let F be the magic-fatigue of the player;
+	decrease the magic-fatigue of the player by X;
+	if the magic-fatigue of the player < 0, now the magic-fatigue of the player is 0;
+	if the magic-fatigue of the player < F, say "[bold type]Your magic power feels [if the magic-fatigue of the player is 0]completely[otherwise if the magic-fatigue of the player < T / 2]mostly[otherwise]slightly[end if] refreshed![roman type][line break]".
 
 [Stuff to do with casting spells goes below.]
 the magic consequences rules is a rulebook.
 
 To decide which number is MagicPowerDamage:
-	let X be (the magic power of the player + 1) / 2;
-	increase X by magic theme bonus;
-	if X > 6, now X is 6;
-	increase X by the intelligence of the player / 4;
+	let X be 3 + magic theme bonus + the intelligence of the player / 4;
 	decide on X.
 
 To compute spell consequences of (Z - a thing):
 	compute MagicDrain of Z;
-	if Z is a magic-spell and the spell-cooldown of the player > 0, compute cooldown penalty of Z;
 	follow the magic consequences rules.
 
 To compute MagicDrain of (Z - a thing):
-	if the magic-power of the player > 0 and the trophy-mode of magic-trophy is 0, MagicPowerDown 1.
+	increase the magic-fatigue of the player by the magic-cost of Z.
 
-To compute cooldown penalty of (S - a magic-spell):
-	let R be a random number between 1 and 2;
-	if R is 1:
-		say "You feel less lucky.";
-		decrease the raw luck of the player by 10;
-	otherwise if R is 2:
-		say "You get a headache, and feel some smarts fading from your head.";
-		IntDown 1.
+To decide which number is the raw-magic-cost of (Z - a thing):
+	decide on 2.
+To decide which number is the magic-cost of (Z - a thing):
+	let M be the raw-magic-cost of Z;
+	if M > 0 and the trophy-mode of magic-trophy is 1:
+		now M is M / 3;
+		if M < 1, now M is 1;
+	decide on M.
 
-Definition: a tentacle monster is a tripper if the class of the player is "magical schoolgirl" or there is a worn heart wand.
+Definition: a tentacle monster is a tripper:
+	if the class of the player is "magical schoolgirl" or there is a worn hand ready equippable, decide yes;
+	decide no.
 
 To say TripChanceFlav of (M - a tentacle monster):
 	do nothing.
@@ -108,9 +116,7 @@ This is the magical girl cums then wins her fight orgasm resolution rule:
 			repeat with M running through monsters in the location of the player:
 				dislodge M;
 			if the player is able to speak, say "[variable custom style]'[if the player is a nympho]That was fun, but I have to beat you up now, sorry[otherwise if the player is a pervert]You've had your fun, but now you'll pay the price for your sins[otherwise]How dare you make me... orgasm... on your... eww! You will pay with your life[end if]!'[roman type][line break]";
-			if H is zap ready:
-				say "You feel your body filled with more magic energy!";
-				MagicPowerUp 1.
+			if H is zap ready, MagicPowerRefresh 100.
 The magical girl cums then wins her fight orgasm resolution rule is listed last in the orgasm resolution rules.
 
 Part - Spells
@@ -120,6 +126,9 @@ A magic-spell has a number called the outrageousness.
 A magic-spell has a text called the incantation. [Understand the incantation property as describing a magic-spell.] [Unnecessary because we also set the text shortcut to this]
 
 Definition: a magic-spell is reactive-only: decide yes. [Does it only work when used in front of someone who's listening?]
+
+To decide which number is the raw-magic-cost of (S - a magic-spell):
+	decide on 6.
 
 Table of Possible Incantations
 phrase (text)	naughtiness (number)
@@ -135,11 +144,11 @@ To compute learning of (S - a magic-spell):
 	now the outrageousness of S is the naughtiness entry;
 	now the incantation of S is the phrase entry;
 	now the text-shortcut of S is the phrase entry;
-	say "You have learned how to [MagicSpellEffect of S]! The magic incantation is 'I [incantation of S]'.[SpelloutrageousnessInfo of S]";
+	say "You have learned how to [MagicSpellEffect of S]! The magic incantation is 'I [incantation of S]'. It requires [magic-cost of S] magic power.[SpelloutrageousnessInfo of S]";
 	blank out the whole row.
 
 To say ExamineDesc of (S - a magic-spell):
-	say "You know how to [MagicSpellEffect of S]! The magic incantation is 'I [incantation of S]'.[SpelloutrageousnessInfo of S]".
+	say "You know how to [MagicSpellEffect of S]! The magic incantation is 'I [incantation of S]'. It requires [magic-cost of S] magic power.[SpelloutrageousnessInfo of S]".
 
 To say SpelloutrageousnessInfo of (S - a magic-spell):
 	if debuginfo > 0, say "[input-style]outrageousness rating: [outrageousness of S]/20[roman type][line break]".
@@ -147,23 +156,18 @@ To say SpelloutrageousnessInfo of (S - a magic-spell):
 To say MagicSpellEffect of (S - a magic-spell):
 	say "ERROR - missing effect description for [S]".
 
-Definition: a magic-spell is uncastable rather than castable if the incantation of it is "".
+Definition: a magic-spell is uncastable rather than castable:
+	if the incantation of it is "", decide yes;
+	decide no.
 Definition: a magic-spell is fetish appropriate: decide yes.
-To decide which number is the cooldown of (S - a magic-spell):
-	decide on a random number between 60 and 120.
-
-The player has a number called spell-cooldown. The spell-cooldown of the player is -100.
-A time based rule (this is the spell cooldown rule):
-	decrease the spell-cooldown of the player by time-seconds.
+Definition: a magic-spell is staller: decide yes. [Does it make all NPCs lose a turn?]
 
 Spellcasting is an action applying to one thing.
 Check Spellcasting:
 	if the noun is uncastable, say "You don't know that spell." instead;
+	if the magic power of the player < the magic-cost of the noun, say "You don't have enough magic power to cast that spell (you need [magic-cost of the noun])." instead;
 	if the player is in a predicament room or the player is in School34, say "It seems like magic doesn't work here..." instead;
-	if the player is not able to trigger manual speech, say "You can't currently speak in order to perform the incantation!" instead;
-	if playerRegion is not school and the spell-cooldown of the player > -30:
-		say "You recently cast a spell. You sense that casting another one this soon could have side-effects. Do you want to do it anyway? ";
-		if the player is not consenting, say "You decide against it." instead.
+	if the player is not able to trigger manual speech, say "You can't currently speak in order to perform the incantation!" instead.
 Carry Out Spellcasting:
 	allocate 3 seconds;
 	say CastFlav of the noun.
@@ -173,7 +177,10 @@ Report Spellcasting:
 		compute spell consequences of the noun;
 		repeat with M running through reactive monsters:
 			if M is in L, compute spell outrageousness reaction of M to the noun;
-		now the spell-cooldown of the player is the cooldown of the noun;
+		if the noun is staller and the player is in danger:
+			say "A magic flash temporarily blinds the enemies in the room, making them lose a turn!";
+			repeat with M running through combative monsters:
+				now M is stalled;
 	otherwise:
 		say "Nothing happens. It would seem that this spell only works when used in front of someone who can listen and understand the words.[one of][line break][variable custom style]The laws of this universe are so stupid!!![roman type][line break][or][stopping]";
 	follow the speech penalties rules.
@@ -225,7 +232,7 @@ A game universe initialisation rule:
 		now the naughtiness entry is 13;
 	if watersports fetish is 1:
 		choose a blank row in the Table of Possible Incantations;
-		now the phrase entry is "am a disgusting piss drinking urinal";
+		now the phrase entry is "am a disgusting piss drinking human urinal";
 		now the naughtiness entry is 14;
 	if interracial fetish is 1:
 		choose a blank row in the Table of Possible Incantations;
@@ -261,7 +268,7 @@ A game universe initialisation rule:
 	if egg laying fetish is 1:
 		choose a blank row in the Table of Possible Incantations;
 		now the phrase entry is "love laying eggs from my butthole";
-		now the naughtiness entry is 10;
+		now the naughtiness entry is 9;
 	if diaper lover > 0:
 		choose a blank row in the Table of Possible Incantations;
 		now the phrase entry is "love my wet nappies";
@@ -302,6 +309,7 @@ Body size / slutty stats reduce
 ]
 
 magic-mapping is a magic-spell.
+Definition: magic-mapping is staller: decide no.
 To say MagicSpellEffect of (S - magic-mapping):
 	say "conjure a mental map of the entire region".
 Report Spellcasting magic-mapping when there is a reactive monster:
@@ -314,6 +322,8 @@ Report Spellcasting magic-mapping when there is a reactive monster:
 		say "Nothing happens. Perhaps you need more magical energy first.".
 
 magic-blinking is a magic-spell.
+To decide which number is the raw-magic-cost of (S - magic-blinking):
+	decide on 4.
 Definition: magic-blinking is reactive-only: decide no.
 To say MagicSpellEffect of (S - magic-blinking):
 	say "blink away to a neighbouring location".
@@ -325,45 +335,40 @@ Report Spellcasting magic-blinking:
 		say "Your body shimmers and tries to disappear, but it can't because you're being held in place!";
 	otherwise if R is Solid Rock:
 		say "Your body shimmers and tries to disappear, but the spell can't find a place to blink to away to!";
-	otherwise if the magic power of the player > 0:
+	otherwise:
 		say "Your body shimmers and then disappears! A split second later, you have reappeared to the [D] in the [R].";
 		repeat with M running through interested monsters in the location of the player:
 			let F be the favour of M;
 			deinterest M;
 			now the favour of M is F; [no favour change]
 			now M is moved; [won't move again this turn]
-		teleport to R;
-	otherwise:
-		say "Nothing happens. Perhaps you need more magical energy first.".
+		teleport to R.
 
 magic-inflating is a magic-spell.
-Definition: magic-inflating is fetish appropriate if inflation fetish is 1.
+Definition: magic-inflating is fetish appropriate:
+	if inflation fetish is 1, decide yes;
+	decide no.
 To say MagicSpellEffect of (S - magic-inflating):
 	say "inflate yourself until you're lighter than air".
 Report Spellcasting magic-inflating when there is a reactive monster:
 	if the weight of the player < -5 or the latex-transformation of the player > 6:
 		say "Nothing happens, as you're already lighter than air!";
-	otherwise if the magic power of the player > 0:
+	otherwise:
 		say "Your breasts, belly and butt explode with size as your body is filled with air!";
 		let N be 0;
 		while N < 100 and the weight of the player > -6:
 			increase N by 1; [infinite loop failsafe]
 			BustInflate 1;
 			if the total fill of belly <= belly limit - 2, Assfill 1 air;
-			AssInflate 1;
-	otherwise:
-		say "Nothing happens. Perhaps you need more magical energy first.".
+			AssInflate 1.
 
 magic-smarts-timer is a number that varies.
 magic-smarting is a magic-spell.
 To say MagicSpellEffect of (S - magic-smarting):
 	say "temporarily boost your intelligence".
 Report Spellcasting magic-smarting when there is a reactive monster:
-	if the magic power of the player > 0:
-		say "The magic rushes to your brain, filling it with keen focus and expanded knowledge!";
-		increase magic-smarts-timer by default-candy-duration;
-	otherwise:
-		say "Nothing happens. Perhaps you need more magical energy first.".
+	say "The magic rushes to your brain, filling it with keen focus and expanded knowledge!";
+	increase magic-smarts-timer by default-candy-duration.
 
 an all time based rule (this is the magic smarts decay rule):
 	if magic-smarts-timer > default-candy-duration:
@@ -381,11 +386,8 @@ magic-speeding is a magic-spell.
 To say MagicSpellEffect of (S - magic-speeding):
 	say "temporarily boost your speed".
 Report Spellcasting magic-speeding when there is a reactive monster:
-	if the magic power of the player > 0:
-		say "The magic rushes to your legs, giving you additional reflexes and speed!";
-		increase magic-speed-timer by default-candy-duration;
-	otherwise:
-		say "Nothing happens. Perhaps you need more magical energy first.".
+	say "The magic rushes to your legs, giving you additional reflexes and speed!";
+	increase magic-speed-timer by default-candy-duration.
 
 an all time based rule (this is the magic speed decay rule):
 	if magic-speed-timer > default-candy-duration:
@@ -403,11 +405,8 @@ magic-strengthing is a magic-spell.
 To say MagicSpellEffect of (S - magic-strengthing):
 	say "temporarily boost your strength".
 Report Spellcasting magic-strengthing when there is a reactive monster:
-	if the magic power of the player > 0:
-		say "The magic rushes to your arms, giving them additional energy and strength!";
-		increase magic-strength-timer by default-candy-duration;
-	otherwise:
-		say "Nothing happens. Perhaps you need more magical energy first.".
+	say "The magic rushes to your arms, giving them additional energy and strength!";
+	increase magic-strength-timer by default-candy-duration.
 
 an all time based rule (this is the magic strength decay rule):
 	if magic-strength-timer > default-candy-duration:
@@ -421,58 +420,53 @@ an all time based rule (this is the magic strength decay rule):
 			now magic-strength-timer is 0.
 
 magic-blind is a magic-spell.
+Definition: magic-blind is staller: decide no.
 To say MagicSpellEffect of (S - magic-blind):
 	say "temporarily blind every enemy in the room".
 Report Spellcasting magic-blind when there is a reactive monster:
-	if the magic power of the player > 0:
-		let blindSuccess be 0;
-		repeat with M running through unfriendly monsters in the location of the player:
-			if the blind-status of M is 0:
-				say "A dark aura surrounds [NameDesc of M][']s eyes. [big he of M][']s temporarily blinded!";
-				now the blind-status of M is 3;
-				now blindSuccess is 1;
-		if blindSuccess is 0, say "Unfortunately it didn't work on [if the number of unfriendly monsters in the location of the player is 1][NameDesc of a random unfriendly monster in the location of the player][otherwise]anyone[end if]!";
-	otherwise:
-		say "Nothing happens. Perhaps you need more magical energy first.".
+	let blindSuccess be 0;
+	repeat with M running through unfriendly monsters in the location of the player:
+		if the blind-status of M is 0:
+			say "A dark aura surrounds [NameDesc of M][']s eyes. [big he of M][']s temporarily blinded!";
+			now the blind-status of M is 3;
+			now blindSuccess is 1;
+	if blindSuccess is 0, say "Unfortunately it didn't work on [if the number of unfriendly monsters in the location of the player is 1][NameDesc of a random unfriendly monster in the location of the player][otherwise]anyone[end if]!".
 
 magic-poison is a magic-spell.
+To decide which number is the raw-magic-cost of (S - magic-poison):
+	decide on 3.
 To say MagicSpellEffect of (S - magic-poison):
 	say "poison every enemy in the room".
 Report Spellcasting magic-poison when there is a reactive monster:
-	if the magic power of the player > 0:
-		let poisonSuccess be 0;
-		repeat with M running through unfriendly monsters in the location of the player:
-			if the poison-status of M is 0:
-				say "A shining purple mist ripples across [NameDesc of M][']s body. [big he of M][']s been poisoned!";
-				now the poison-status of M is 5;
-				now poisonSuccess is 1;
-		if poisonSuccess is 0, say "Unfortunately it didn't work on [if the number of unfriendly monsters in the location of the player is 1][NameDesc of a random unfriendly monster in the location of the player][otherwise]anyone[end if]!";
-	otherwise:
-		say "Nothing happens. Perhaps you need more magical energy first.".
+	let poisonSuccess be 0;
+	repeat with M running through unfriendly monsters in the location of the player:
+		if the poison-status of M is 0:
+			say "A shining purple mist ripples across [NameDesc of M][']s body. [big he of M][']s been poisoned!";
+			now the poison-status of M is 5;
+			now poisonSuccess is 1;
+	if poisonSuccess is 0, say "Unfortunately it didn't work on [if the number of unfriendly monsters in the location of the player is 1][NameDesc of a random unfriendly monster in the location of the player][otherwise]anyone[end if]!".
 
 magic-paralyse is a magic-spell.
+To decide which number is the raw-magic-cost of (S - magic-paralyse):
+	decide on 10.
 To say MagicSpellEffect of (S - magic-paralyse):
 	say "paralyse every enemy in the room".
 Report Spellcasting magic-paralyse when there is a reactive monster:
-	if the magic power of the player > 0:
-		let paralyseSuccess be 0;
-		repeat with M running through unfriendly monsters in the location of the player:
-			if the paralyse-status of M is 0:
-				say "Ropes of golden light wrap around [NameDesc of M][']s body. [big he of M][']s been paralysed!";
-				now the paralyse-status of M is 5;
-				now paralyseSuccess is 1;
-		if paralyseSuccess is 0, say "Unfortunately it didn't work on [if the number of unfriendly monsters in the location of the player is 1][NameDesc of a random unfriendly monster in the location of the player][otherwise]anyone[end if]!";
-	otherwise:
-		say "Nothing happens. Perhaps you need more magical energy first.".
+	let paralyseSuccess be 0;
+	repeat with M running through unfriendly monsters in the location of the player:
+		if the paralyse-status of M is 0:
+			say "Ropes of golden light wrap around [NameDesc of M][']s body. [big he of M][']s been paralysed!";
+			now the paralyse-status of M is 5;
+			now paralyseSuccess is 1;
+	if paralyseSuccess is 0, say "Unfortunately it didn't work on [if the number of unfriendly monsters in the location of the player is 1][NameDesc of a random unfriendly monster in the location of the player][otherwise]anyone[end if]!".
 
 magic-luck is a magic-spell.
+To decide which number is the raw-magic-cost of (S - magic-luck):
+	decide on 9.
 To say MagicSpellEffect of (S - magic-luck):
 	say "temporarily increase your luck".
 Report Spellcasting magic-luck when there is a reactive monster:
-	if the magic power of the player > 0:
-		increase luck-timer of luck-tincture by 30;
-		say "A golden aura begins to shimmer around you.[line break][variable custom style][one of]I feel amazing! Maybe I should look for things that would usually require me to get lucky...[or]I feel lucky![stopping][roman type][line break]";
-	otherwise:
-		say "Nothing happens. Perhaps you need more magical energy first.".
+	increase luck-timer of luck-tincture by 30;
+	say "A golden aura begins to shimmer around you.[line break][variable custom style][one of]I feel amazing! Maybe I should look for things that would usually require me to get lucky...[or]I feel lucky![stopping][roman type][line break]".
 
 Magic Power ends here.

@@ -1,10 +1,5 @@
 Drink Effects by Drinks begins here.
 
-[!<Bottle>@<ComputeCursedDrinking>+
-
-REQUIRES COMMENTING
-
-+@!]
 To compute cursed drinking (X - a bottle):
 	compute default cursed drinking X.
 
@@ -68,18 +63,8 @@ To compute default cursed drinking (X - a bottle):
 		say "Your crotch feels all tingly!";
 		passively stimulate vagina times 3.
 
-[!<overfullQuotient:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 overfull-quotient is a number that varies. overfull-quotient is 8.
 
-[!<Bottle>@<ComputeDrinking>+
-
-REQUIRES COMMENTING
-
-+@!]
 To compute drinking (X - a bottle):
 	if the X is cursed or (the fill-type of X >= lowest-cursed and the fill-type of X <= highest-cursed):
 		if X is blessed:
@@ -124,19 +109,9 @@ To compute drinking (X - a bottle):
 			curse X;
 			if the curse-ID of X is sure, say "You feel the blessing of your [X] expire.".
 
-[!<ComputeDrinkingEffectN>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute drinking effect (N - a number):
 	do nothing.
 
-[!<ComputeDrinkingEffect1>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute drinking effect (N - 1):
 	say "[if the the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a sweet sugary taste. You feel your self-respect returning as you drink it![otherwise]More self-respect restoring potion. Delicious![end if]";
 	dignify 800;
@@ -144,11 +119,6 @@ To compute drinking effect (N - 1):
 
 thickDrinkTick is a number that varies.
 
-[!<ComputeDrinkingEffect2>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute drinking effect (N - 2):
 	say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a thick drink with a dry taste. [otherwise]More thick sanity potion. Excellent! [end if]";
 	if a random number between 1 and 8 < the sex addiction of the player, SexAddictDown 1;
@@ -163,21 +133,11 @@ To compute drinking effect (N - 2):
 		OralSexAddictDown 1;
 		VaginalSexAddictDown 1.
 
-[!<ComputeDrinkingEffect3>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute drinking effect (N - 3):
 	say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, you can definitely taste a hint of caffeine. You feel clear-headed![otherwise if the raw intelligence of the player >= the starting intelligence of the player and the noun is not blessed]It doesn't seem to have any effect.[otherwise]More energy drink. Your eyes widen![end if]";
 	if the raw intelligence of the player < the starting intelligence of the player and the sex addiction of the player < 20, IntUp 1; [Intelligence is difficult to increase once sex addiction hits max]
-	if the noun is blessed, Intup 1.
+	if the noun is blessed, IntUp 1.
 
-[!<ComputeDrinkingEffect4>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute drinking effect (N - 4):
 	if diaper quest is 1, say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a nice smooth drink. [otherwise]Another stabilising drink. Lovely! [end if]";
 	otherwise say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a nice smooth drink. [otherwise]Another weight loss drink. Lovely! [end if]";
@@ -202,30 +162,20 @@ To compute drinking effect (N - 4):
 			HipDown 1;
 			say "You feel thinner!";
 		otherwise if the flesh volume of breasts > the real flesh volume of breasts:
-			Bustdown 3;
+			BustDown 3;
 			say "You feel lighter!";
 		otherwise:
 			say "Your breasts and hips refuse to shrink...";
 	if the noun is blessed:
 		if the thickness of hips > the largeness of breasts, HipDown 1;
-		otherwise Bustdown 1.
+		otherwise BustDown 1.
 
-[!<ComputeDrinkingEffect5>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute drinking effect (N - 5):
 	say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a very heavy drink. You hold your head a bit higher as this drink gives you a boost of confidence![otherwise]Another heavy drink. You feel less submissive![end if]";
 	DelicateDown 1;
 	if the player is possessing a penis and (the noun is blessed or a random number between 1 and 3 is 1):
 		PenisUp 1.
 
-[!<ComputeDrinkingEffect6>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute drinking effect (N - 6):
 	if the Known corresponding to an Magic of N in the Table of Drinks is 0, say "Mmm, tastes like medicine! ";
 	otherwise say "More soothing medicine! ";
@@ -234,11 +184,6 @@ To compute drinking effect (N - 6):
 	heal vagina times 3;
 	if the arousal of the player > 2000, decrease the arousal of the player by 2000.
 
-[!<ComputeDrinkingEffect7>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute drinking effect (N - 7):
 	say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]This drink fizzes and bubbles in your mouth! [otherwise]Another magic bubbly drink![end if]";
 	let C be a random positive-magic-enhanceable in-play clothing;
@@ -258,7 +203,9 @@ Definition: a clothing (called C) is positive-magic-enhanceable:
 	if the raw-magic-modifier of C < 0, decide no;
 	decide yes.
 
-Definition: a clothing is magic-enhanceable if it is cursable.
+Definition: a clothing is magic-enhanceable:
+	if it is cursable, decide yes;
+	decide no.
 
 To compute drinking effect (N - 20):
 	if the Known corresponding to an Magic of N in the Table of Drinks is 0:

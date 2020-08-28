@@ -57,9 +57,6 @@ To decide which number is the adult-influence of (C - a heels):
 To decide which number is the unique outrage of (C - a heels):
 	decide on 0.
 
-To decide which number is the original price of (C - a heels):
-	decide on the heel-height of C + 1.
-
 To decide which number is the kick-bonus of (S - a heels):
 	if S is blessed, decide on the heel-height of S + 1;
 	decide on the heel-height of S.

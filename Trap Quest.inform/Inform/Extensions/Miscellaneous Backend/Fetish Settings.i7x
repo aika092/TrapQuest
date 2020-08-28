@@ -7,18 +7,8 @@ Some things are only 'fetish appropriate' (and therefore allowed in the game) wh
 +!]
 Definition: a thing is fetish appropriate: decide yes.
 
-[!<fileOfPlayerOptions:File>*
-
-REQUIRES COMMENTING
-
-*!]
 The File of Player Options (owned by another project) is called "character".
 
-[!<tableOfPlayerOptions:Table>*
-
-REQUIRES COMMENTING
-
-*!]
 Table of Player Options
 choice
 -1 [Original player-gender]
@@ -55,7 +45,7 @@ choice
 0 [submissive sex addict]
 0 [bonus breast size points]
 0 [trap fetish]
--1 [mindbreak protection]
+0 [mindbreak protection]
 -1 [spontaneous tattoos]
 0 [max belly size points]
 -1 [map reset]
@@ -72,10 +62,10 @@ choice
 0 [slow pregnancy]
 1 [diaper messing]
 -1 [tough-shit]
-0 [background: nurse]
-0 [background: sporty]
-0 [background: waitress]
-0 [background: pure]
+0 [backgrounds]
+0 [UNUSED]
+0 [UNUSED]
+0 [UNUSED]
 0 [secret: tattoos]
 0 [secret: piercings]
 0 [secret: humiliation]
@@ -123,237 +113,86 @@ Which set of names to use.
 To decide which number is the player-name:
 	decide on choice in row 2 of the Table of Player Options.
 
-[!<DecideWhichNumberIsInhumanPregnancy>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is inhuman pregnancy:
 	if diaper quest is 1, decide on 0;
 	decide on choice in row 20 of the Table of Player Options.
 
-[!<DecideWhichNumberIsBonusStrengthPoints>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is bonus strength points:
 	decide on choice in row 21 of the Table of Player Options.
 
-[!<DecideWhichNumberIsBonusDexterityPoints>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is bonus dexterity points:
 	decide on choice in row 22 of the Table of Player Options.
 
-[!<DecideWhichNumberIsBonusIntelligencePoints>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is bonus intelligence points:
 	decide on choice in row 23 of the Table of Player Options.
 
-[!<DecideWhichNumberIsBonusStrength>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is bonus strength:
 	decide on choice in row 24 of the Table of Player Options.
 
-[!<DecideWhichNumberIsBonusDexterity>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is bonus dexterity:
 	decide on choice in row 25 of the Table of Player Options.
 
-[!<DecideWhichNumberIsBonusIntelligence>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is bonus intelligence:
 	decide on choice in row 26 of the Table of Player Options.
 
-[!<DecideWhichNumberIsMaxBreastSizePoints>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is max breast size points:
 	if diaper quest is 1, decide on 0;
 	decide on choice in row 27 of the Table of Player Options.
 
-[!<DecideWhichNumberIsMaxAssSizePoints>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is max ass size points:
 	if diaper quest is 1, decide on 0;
 	decide on choice in row 28 of the Table of Player Options.
 
-[!<DecideWhichNumberIsMinPenisSizePoints>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is min penis size points:
 	if diaper quest is 1, decide on 0;
 	decide on choice in row 29 of the Table of Player Options.
 
-[!<DecideWhichNumberIsMicroChoice>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is micro-choice:
 	if diaper quest is 1, decide on 0;
 	decide on choice in row 30 of the Table of Player Options.
 
-[!<DecideWhichNumberIsCheaterCheck>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is cheater-check:
 	decide on choice in row 31 of the Table of Player Options.
 
-[!<DecideWhichNumberIsTrapFetish>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is trap fetish:
 	if diaper quest is 1 or TG fetish is 0, decide on 0;
 	decide on choice in row 34 of the Table of Player Options.
 
-[!<DecideWhichNumberIsMindbreakProtection>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is mindbreak protection:
 	decide on choice in row 35 of the Table of Player Options.
 
-[!<DecideWhichNumberIsSpontaneousTattoos>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is spontaneous tattoos:
 	if tattoo-fetish is 1, decide on 1;
 	decide on choice in row 36 of the Table of Player Options.
 
-[!<DecideWhichNumberIsMaxBellySizePoints>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is max belly size points:
 	if diaper quest is 1, decide on 0;
 	decide on choice in row 37 of the Table of Player Options.
 
-[!<DecideWhichNumberIsToiletAllowance>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is toilet allowance:
 	decide on choice in row 39 of the Table of Player Options.
 
-[!<DecideWhichNumberIsDiaperFocus>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is diaper focus:
 	if diaper lover is 0, decide on 0;
 	if diaper quest is 1, decide on 1;
 	decide on choice in row 43 of the Table of Player Options.
 
-[!<DecideWhichNumberIsRoleplayFetish>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is roleplay fetish:
 	if diaper quest is 1, decide on 0;
 	decide on choice in row 47 of the Table of Player Options.
 
-[!<DecideWhichNumberIsBackgroundNurse>+
-
-REQUIRES COMMENTING
-
-+!]
-To decide which number is background-nurse:
-	if diaper quest is 1, decide on 0;
-	decide on the choice in row 52 of the Table of Player Options.
-
-[!<DecideWhichNumberIsBackgroundSporty>+
-
-REQUIRES COMMENTING
-
-+!]
-To decide which number is background-sporty:
-	if diaper quest is 1, decide on 0;
-	decide on the choice in row 53 of the Table of Player Options.
-
-[!<DecideWhichNumberIsBackgroundWaitress>+
-
-REQUIRES COMMENTING
-
-+!]
-To decide which number is background-waitress:
-	if diaper quest is 1, decide on 0;
-	decide on the choice in row 54 of the Table of Player Options.
-
-[!<DecideWhichNumberIsBackgroundPure>+
-
-REQUIRES COMMENTING
-
-+!]
-To decide which number is background-pure:
-	if diaper quest is 1, decide on 0;
-	decide on the choice in row 55 of the Table of Player Options.
-
-[!<DecideWhichNumberIsTattooFetish>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is tattoo-fetish:
 	if diaper quest is 1, decide on 0;
 	decide on the choice in row 56 of the Table of Player Options.
 
-[!<DecideWhichNumberIsPiercingFetish>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is piercing-fetish:
 	if diaper quest is 1, decide on 0;
 	decide on the choice in row 57 of the Table of Player Options.
 
-[!<DecideWhichNumberIsHumiliationFetish>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is humiliation-fetish:
 	if diaper quest is 1, decide on 0;
 	decide on the choice in row 58 of the Table of Player Options.
 
-[!<DecideWhichNumberIsArtificialFetish>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is artificial-fetish:
 	if diaper quest is 1, decide on 0;
 	decide on the choice in row 59 of the Table of Player Options.
@@ -431,11 +270,6 @@ To decide which number is a2m fetish points:
 
 Part - Options Menus
 
-[!<tableOfKinkOptions:Table>*
-
-REQUIRES COMMENTING
-
-*!]
 Table of Kink Options
 title	subtable	description	toggle
 "[roman type]Confirm Choices (shortcut: press Q)"	--	--	quit rule
@@ -446,11 +280,6 @@ title	subtable	description	toggle
 
 Part - Points
 
-[!<DecideWhichNumberIsPositivePointsCost>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is positive points count:
 	let X be 0;
 	if diaper quest is 1, increase X by 10;
@@ -492,29 +321,14 @@ To decide which number is positive points count:
 	increase X by a2m fetish * 2;
 	decide on X.
 
-[!<DecideWhichNumberIsDiaperPoints>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is diaper points:
 	if watersports fetish is 1, decide on 5;
 	decide on 3.
 
-[!<DecideWhichNumberIsTrapPoints>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is trap points:
 	if the player is male and tg fetish >= 1, decide on 3;
 	decide on 0.
 
-[!<DecideWhichNumberIsPointsCount>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is points count:
 	let X be positive points count;
 	decrease X by bonus strength points;
@@ -528,10 +342,7 @@ To decide which number is points count:
 	decrease X by mindbreak protection * 4;
 	decrease X by bondage protection * 4;
 	decrease X by incontinence protection * 2;
-	decrease X by the background-nurse * 5;
-	decrease X by 5 * background-sporty;
-	decrease X by 5 * background-waitress;
-	decrease X by 5 * background-pure;
+	if choice in row 52 of the Table of Player Options > 0, decrease X by 5;
 	decrease X by 7 * tattoo-fetish;
 	decrease X by 7 * piercing-fetish;
 	decrease X by 7 * humiliation-fetish;
@@ -545,11 +356,6 @@ To decide which number is points count:
 		if super gag reflex is 2, decrease X by 4;
 	decide on X.
 
-[!<TheRandomiseBonusesRule>+
-
-REQUIRES COMMENTING
-
-+!]
 [This is the randomise bonuses rule:
 	while points count > 0:
 		let R be a random number between 1 and 10;

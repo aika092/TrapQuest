@@ -104,8 +104,6 @@ Definition: a glue is too boring: decide no.
 
 Definition: a glue is stealable: decide no.
 
-Definition: a glue is untransformable: decide yes.
-
 This is the spawn initial dungeon glue traps rule:
 	let R be a random trappable placed click untrapped unfurnished labyrinth room;
 	let T be a random off-stage glue trap;
@@ -132,25 +130,10 @@ The spawn initial hotel glue traps rule is listed in the set up hotel traps rule
 			deploy T in R.
 The spawn initial jungle glue traps rule is listed in the set up woods traps rules.]
 
-[###Aika: I've noticed this is never used. Selkie: I added it in case it would be useful for the wasp, in future. Feel free to delete it. I'm sure it's obvious to you.]
-[To Squirt (str - a number) adhesion (G - a glue):
-	now G is in the location of the player;
-	now the glue-strength of G is str;
-	let R be a random number between 1 and 10;
-	if R <= 4:
-		now the active-colour of G is pinkish;
-	otherwise if R <= 7:
-		now the active-colour of G is yellowish;
-	otherwise if R <= 9:
-		now the active-colour of G is blackish;
-	otherwise:
-		now the active-colour of G is whiteish;
-	now the times-stuck of G is 0;
-	update backdrop positions;
-	check glue tripping.]
-
 Definition: a thing is gluable: decide no.
-Definition: a clothing is gluable if it is not ass plugging and it is not vagina plugging and it is cursable.
+Definition: a clothing is gluable:
+	if it is not ass plugging and it is not vagina plugging and it is cursable, decide yes;
+	decide no.
 Definition: a sex toy is gluable: decide no.
 Definition: a bondage is gluable: decide no.
 
@@ -159,20 +142,7 @@ To trigger (Y - a glue trap):
 	if G is glue:
 		let TG be "[if tough-shit is 1][active-colour of G][otherwise]pinkish[end if]";
 		say "As if sensing your proximity, [if Y is organic]a nearby squishy-looking rock splits down the middle with a wet ripping sound and a [TG] mass explodes from it all over you![otherwise]there's a click and a brief humming sound as a nozzle overhead spins open, instantly spraying a thick mass of sticky [TG] glue at you![end if]";
-		[Aika explained that this is needed because triggered and untriggered were defined in the dim past before understanding the "adjective can be this or that" construction. And each adjective has been used for many different things, so can't easily be changed. Doing both is therefore wise.]
 		if tough-shit is 0, cutshow Figure of Glue Cutscene 1;
-		[let L be the list of worn removable cursable gluable wearthings;
-		let E be the number of entries in L;
-		if E > 0:
-			sort L in random order;
-			now E is E / 3;
-			if E < 1, now E is 1;
-			while E > 0:
-				let C be entry E of L;
-				if C is not glued:
-					say "Your [C] is now stuck to you with glue!";
-					now C is glued;
-				decrease E by 1;]
 		let C be a random worn removable cursable gluable wearthings;
 		if C is clothing and C is not glued clothing:
 			say "Your [C] is now stuck to you with glue!";
@@ -311,7 +281,7 @@ To check glue tripping:
 					if N > GS + BaseDiff + HeelsDiff:
 						say "[one of]Your [ShortHairDesc] dips towards the glue, but knowing how awful that would be, you desperately whip it aside at the last moment![or]Oh no: your [ShortHairDesc] falls forward. You almost strain your neck, wrenching your head back. Whew - that was close![or]Damn this long hair - it almost got stuck in the glue again![at random]";
 					otherwise if N > GS + BaseDiff:
-						say "[one of]Bugger! Your [printed name of H] twists underfoot as you try to get to your feet. [line break][variable custom style]No! I can't let that happen! [roman type][line break]You almost dislocate your hip, wrenching your leg back.[or]Your [printed name of H] almost slips further into the glue.[or]Drat! I would've escaped then, if I was better at wearing high heels![at random]";
+						say "[one of]Bugger! Your [printed name of H] twists underfoot as you try to get to your feet.[line break][variable custom style]No! I can't let that happen! [roman type][line break]You almost dislocate your hip, wrenching your leg back.[or]Your [printed name of H] almost slips further into the glue.[or]Drat! I would've escaped then, if I was better at wearing high heels![at random]";
 					otherwise if N > GS:
 						say "[one of][line break][variable custom style]Dammit! If I'd been on my feet instead of kneeling like a submissive [sissy slut], I would've pulled free then.[roman type][line break][or]You sob, on your knees in the glue.[or][line break][variable custom style]I hate this stupid glue![roman type][line break][at random]";
 					otherwise:
@@ -560,9 +530,9 @@ To compute the mutation effects of (G - a glue):
 					IntDown 1;
 				otherwise:
 					if the size of penis > min penis size:
-						say "The penetrating fumes burn at your crotch, sending a tingle through your groin. You feel your [Shortdesc of penis] tingling... ";
+						say "The penetrating fumes burn at your crotch, sending a tingle through your groin. You feel your [ShortDesc of penis] tingling... ";
 						SilentlyPenisDown 1;
-						say "You [if the size of penis < 2]stare in [one of]dismay[or]shock[or]stunned disbelief[or]horror[at random][otherwise]grimace[end if] at your now [Shortdesc of penis].";
+						say "You [if the size of penis < 2]stare in [one of]dismay[or]shock[or]stunned disbelief[or]horror[at random][otherwise]grimace[end if] at your now [ShortDesc of penis].";
 					otherwise:
 						if plastic-is-fantastic dress is actually summonable:
 							compute GlueMorphingInto of G to plastic-is-fantastic dress;
@@ -839,7 +809,7 @@ To compute glued reaction of (M - a monster):
 			if M is intelligent:
 				say "[one of]You hear [NameDesc of M] muttering something about 'smart-glue'...[or][line break][first custom style]'I do love the way this smart-glue only sticks to players!'[roman type][line break][first custom style]'Mmm, a lovely little piggy stuck in smart-glue!'[roman type][line break][at random]";
 			otherwise:
-				say "[BigNameDesc of M] sees your hampered vulnerability and begins oiling [himself of M] up. [line break][second custom style]Uh-oh, that can't be a good sign![roman type][line break]";
+				say "[BigNameDesc of M] sees your hampered vulnerability and begins oiling [himself of M] up.[line break][second custom style]Uh-oh, that can't be a good sign![roman type][line break]";
 		otherwise if M is friendly and M is interested:
 			say "[one of][BigNameDesc of M] rolls [his of M] eyes before [his of M] expression shifts and become s a little more... calculating, then[or]Once again, [his of M] expression alters, making you shiver, before [he of M][stopping] turns to leave you alone.";
 			distract M;

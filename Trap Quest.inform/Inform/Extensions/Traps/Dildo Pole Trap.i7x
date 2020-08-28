@@ -37,27 +37,12 @@ To say EnvironmentDesc of (T - a dildo trap):
 To say ShortDesc of (T - a dildo trap):
 	say "pole-mounted dildo".
 
-[!<DildoTrap>@<WhichNumberIsTheGirth>+
-
-REQUIRES COMMENTING
-
-+@!]
 To decide which number is the girth of (D - a dildo trap):
 	decide on 3.
 
-[!<DildoTrap>@<CheckTakingOff>+
-
-REQUIRES COMMENTING
-
-+@!]
 Check taking off dildo trap:
 	if the noun is penetrating a fuckhole, say "You can't just remove it with all your weight on it. You're going to have to jump!" instead.
 
-[!<DildoPoleTrap>@<Trigger>+
-
-REQUIRES COMMENTING
-
-+@!]
 To trigger (Y - a dildo pole trap):
 	trigger pole trap Y;
 	if Y is penetrating a fuckhole, compute pole cutscene image of Y.
@@ -73,11 +58,6 @@ To compute orgasm resolution of (R - a dildo trap):
 To compute orgasm retraction of (R - a dildo trap):
 	say "The dildo retracts as your knees buckle, pulling free as you fall to the floor.".
 
-[!<DildoTrap>@<ComputePoleCutsceneImage>+
-
-REQUIRES COMMENTING
-
-+@!]
 To compute pole cutscene image of (Y - a dildo trap):
 	if Y is penetrating asshole:
 		cutshow figure of pole cutscene 3 for Y;
@@ -87,11 +67,6 @@ To compute pole cutscene image of (Y - a dildo trap):
 		cutshow figure of pole cutscene 2 for Y.
 
 [This does the majority of the mechanics for a standard dildo trap entering you.]
-[!<DildoTrap>@<TriggerPoleTrap>+
-
-REQUIRES COMMENTING
-
-+@!]
 To trigger pole trap (Y - a dildo trap):
 	now the player-motion of the player is 0;
 	now the reset-timer of Y is 250;
@@ -133,7 +108,7 @@ To trigger pole trap (Y - a dildo trap):
 				let D be the anal defence of the player;
 				if target-BP is vagina, now D is the vaginal defence of the player;
 				if debuginfo > 0, say "[input-style]Pole penetration check: accuracy roll d8+4 ([A]) | ([D].5) orifice defence[roman type][line break]";
-				if A > D and O is not diaper and O is not chastity cage:
+				if A > D and O is not diaper and O is not chastity-belt:
 					compute Y penetration of O into target-BP;
 				otherwise:
 					if O is diaper:
@@ -362,11 +337,6 @@ A dildo pole trap is a kind of dildo trap. There are 10 dildo pole traps. The pr
 To say ExamineDesc of (C - a dildo pole trap):
 	say "A metal pole with a flesh coloured dildo on the end. [if doll-stuck-num is 0]It rises so high up off the ground that even on tip toes you[otherwise]It, and the bulging flange has lifted you right off the ground so you[end if] [if C is penetrating a body part]can't[otherwise]wouldn't be able to[end if] get it out of your [if C is penetrating vagina][vagina]! [otherwise][asshole]! [end if][if doll-stuck-num is not 0]Tinkling, chiming music plays as you sedately turn, seeming to whisper to you to [bold type]submit[roman type] like an obedient little toy if you want to be released.[otherwise]Maybe if you [bold type]jump[roman type] high enough you can get off it?[end if]".
 
-[!<TheSpawnInitialDildoPoleTrapsRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the spawn initial dildo pole traps rule:
 	repeat with N running from 1 to 4:
 		let R be a random untrapped trappable placed labyrinth room;
@@ -390,11 +360,6 @@ To say ExamineDesc of (C - a drill pole trap):
 To decide which figure-name is the examine-image of (C - a drill pole trap):
 	decide on figure of woods dildo trap.
 
-[!<TheSpawnInitialDrillPoleTrapsRule>+
-
-REQUIRES COMMENTING
-
-+@!]
 This is the spawn initial drill pole traps rule:
 	repeat with N running from 1 to 4:
 		let R be a random untrapped trappable placed jungle room;
@@ -402,22 +367,12 @@ This is the spawn initial drill pole traps rule:
 		unless there is a dildo trap in R, deploy T in R.
 The spawn initial drill pole traps rule is listed in the set up woods traps rules.
 
-[!<DrillPoleTrap>@<Trigger>+
-
-REQUIRES COMMENTING
-
-+@!]
 To trigger (Y - a drill pole trap):
 	trigger pole trap Y;
 	if Y is penetrating a fuckhole:
 		compute pole cutscene image of Y;
 		say "After it shoots in, it starts to spin round, pushing its way deeper. When it is fully inside you, it doesn't stop spinning!".
 
-[!<DrillPoleTrap>@<ComputeOrgasmResolution>+
-
-REQUIRES COMMENTING
-
-+@!]
 To compute orgasm resolution of (R - a drill pole trap):
 	if a random number between 1 and 4 - unlucky < 2:
 		let D be a random off-stage plentiful dong;
@@ -428,11 +383,6 @@ To compute orgasm resolution of (R - a drill pole trap):
 	otherwise:
 		compute orgasm retraction of R.
 
-[!<JumpFromTheDrill>+
-
-REQUIRES COMMENTING
-
-+!]
 To Jump From The Drill:
 	if doll-stuck-num > 0:
 		say "How? Your feet aren't even touching the ground. You [doll-stuck].";
@@ -485,11 +435,6 @@ To decide which figure-name is the examine-image of (C - a creampie pole trap):
 
 Definition: a creampie pole trap is father material: decide yes.
 
-[!<TheSpawnInitialCreampiePoleTrapsRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the spawn initial creampie pole traps rule:
 	repeat with N running from 1 to 2:
 		let R be a random untrapped trappable placed modern room;
@@ -520,11 +465,6 @@ To get creampie cutscene of (Y - a creampie pole trap):
 			cutshow figure of creampie pole cutscene 5 for Y;
 	now the previous-cutscene of Y is R.
 
-[!<CreampiePoleTrap>@<Trigger>+
-
-REQUIRES COMMENTING
-
-+@!]
 To trigger (Y - a creampie pole trap):
 	trigger pole trap Y;
 	if Y is penetrating a fuckhole:
@@ -543,11 +483,6 @@ To trigger (Y - a creampie pole trap):
 			say "The dildo suddenly starts squirting inhuman amounts of warm [semen] from its tip! Your [printed name of X] gets coated.";
 			Cumsoak 6 on X.
 
-[!<CreampiePoleTrap>@<ComputeOrgasmResolution>+
-
-REQUIRES COMMENTING
-
-+@!]
 To compute orgasm resolution of (R - a creampie pole trap):
 	if a random number between 1 and 2 - unlucky < 2:
 		let D be a random off-stage dong;
@@ -574,11 +509,6 @@ To say ExamineDesc of (C - a ghostly dildo pole trap):
 To decide which figure-name is the examine-image of (C - a ghostly dildo pole trap):
 	decide on figure of mansion dildo trap.
 
-[!<TheSpawnInitialGhostlyDildoPoleTrapsRule>+
-
-REQUIRES COMMENTING
-
-+@!]
 This is the spawn initial ghostly dildo pole traps rule:
 	repeat with N running from 1 to 3:
 		let R be a random untrapped trappable placed haunted room;
@@ -586,11 +516,6 @@ This is the spawn initial ghostly dildo pole traps rule:
 		unless there is a dildo trap in R, deploy T in R.
 The spawn initial ghostly dildo pole traps rule is listed in the set up mansion traps rules.
 
-[!<GhostlyDildoPoleTrap>@<Trigger>+
-
-REQUIRES COMMENTING
-
-+@!]
 To trigger (Y - a ghostly dildo pole trap):
 	now the player-motion of the player is 0;
 	now the reset-timer of Y is 250;
@@ -621,11 +546,6 @@ To trigger (Y - a ghostly dildo pole trap):
 	repeat with M running through reactive monsters:
 		say DildoTrapReactFlav of M.
 
-[!<GhostlyDildoPoleTrap>@<ComputeOrgasmResolution>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute orgasm resolution of (R - a ghostly dildo pole trap):
 	if a random number between 1 and 30 - creepiness - (unlucky * 5)< 2:
 		let D be a random off-stage dong;

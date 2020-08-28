@@ -1,10 +1,5 @@
 Player Title by Miscellaneous Frontend begins here.
 
-[!<SayTitleBimbo>+
-
-REQUIRES COMMENTING
-
-+!]
 To say TitleBimbo:
 	if diaper quest is 1:
 		say TitleBaby;
@@ -50,7 +45,7 @@ To say TitleBimbo:
 			say " chubby";
 		otherwise if the thickness of hips > 8:
 			say " [one of][if the flesh volume of hips > 8]huge assed[otherwise]super curvy[end if][or]voluptuous[sticky random]";
-		if there is a worn cursed chastity cage or there is a worn locked chastity cage:
+		if there is a worn cursed chastity bond or there is a worn locked chastity bond:
 			if T is not virgin warrior, say " [if the player is gendered male and the size of penis > 6]emasculated[otherwise][one of]locked away[or]chastised[sticky random][end if]";
 		if the pregnancy of the player is 3:
 			say " incubator";
@@ -176,11 +171,6 @@ To say TitleBimbo:
 		if the player is a piss slut and T is not "toilet":
 			say " urinal".
 
-[!<SayTitleBaby>+
-
-REQUIRES COMMENTING
-
-+!]
 To say TitleBaby:
 	let T be the class of the player;
 	let H be HairColourVagueText;

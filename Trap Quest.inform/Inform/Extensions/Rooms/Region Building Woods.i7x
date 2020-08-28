@@ -1,10 +1,5 @@
 Region Building Woods by Rooms begins here.
 
-[!<SetUpTheWoods>+
-
-REQUIRES COMMENTING
-
-+!]
 To Set Up The Woods:
 	if loading scenes is 1:
 		clear the screen;
@@ -48,11 +43,6 @@ To Set Up The Woods:
 	if debugmode is 0 and loading scenes is 1, clear the screen;
 	progress quest of new-region-quest.
 
-[!<TheSpawnInitialWoodsBucketsRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the spawn initial woods buckets rule:
 	repeat with N running from 1 to 8:
 		let R be a random trappable placed jungle room;
@@ -61,11 +51,6 @@ This is the spawn initial woods buckets rule:
 		deploy bucket in R.
 The spawn initial woods buckets rule is listed in the set up woods traps rules.
 
-[!<ScrambleWoods>+
-
-REQUIRES COMMENTING
-
-+!]
 To Scramble Woods:
 	let E be the easting part of the grid position of Stairwell01;
 	let N be the northing part of the grid position of Stairwell01;

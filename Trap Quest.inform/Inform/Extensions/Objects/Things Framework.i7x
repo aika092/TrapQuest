@@ -8,14 +8,39 @@ A thing can be unowned, store, museum-store, stolen (this is the ownership prope
 
 To say ownership-desc of (T - a thing):
 	if the item described is stolen, say "[roman type] (stolen)";
-	if the item described is store and the location of the player is not Mansion28, say "[roman type] ([if T is in Dungeon41]for sale - [price of item described][otherwise]cleverly stolen - please report bug[end if])".
+	if the item described is store and the location of the player is not Mansion28, say "[roman type] ([if T is in Dungeon41 or the player is in Dungeon41]for sale - [price of item described][otherwise]cleverly stolen - please report bug[end if])".
 
 To decide what number is the original price of (C - a thing):
 	decide on 0.
 
 To decide what number is the price of (C - a thing):
 	let X be the original price of C;
+	if discount > 0, decrease X by 5;
+	if the blue-balls of shopkeeper < 0, decrease X by 1;
 	if X < 1, now X is 1;
+	decide on X.
+
+To decide what number is the original price of (C - a clothing):
+	let X be 3 - ((the initial outrage of C) / 4);
+	if C is layer-concealing and (C is dense or C is sheer-when-wet):
+		if C is potentially-top-layer-concealing:
+			if C is normally-nipple-covering or C is erect-nipple-exposing:
+				increase X by 1;
+				if C is dense, increase X by 1;
+				if C is normally-nipple-covering, increase X by 1;
+				if C is average cut or higher, increase X by 1;
+				if C is fully covering, increase X by 1;
+		if C is potentially-bottom-layer-concealing:
+			increase X by 2;
+			if C is knee-length or C is slitted, increase X by 1;
+		otherwise if C is potentially-partially-bottom-layer-concealing:
+			increase X by 1;
+	otherwise:
+		if C is total protection:
+			increase X by 2;
+		otherwise if C is pussy protection:
+			increase X by 1;
+	if C is rare, increase X by 2;
 	decide on X.
 
 To decide what number is the price of (C - a clothing):
@@ -36,8 +61,7 @@ To decide what number is the price of (C - a clothing):
 		if C is pure diamond, now X is X * 5;
 		if C is solid gold, now X is X * 6;
 	otherwise:
-		decrease X by 2; [balancing attempt]
-		increase X by the magic-modifier of C * 2;
+		increase X by the magic-modifier of C;
 		if C is not blandness, increase X by 1;
 		if discount > 0, decrease X by 5;
 		if the blue-balls of shopkeeper < 0, decrease X by 1;
@@ -110,7 +134,7 @@ To maybe-map-display (C - a thing):
 			if the map-window is g-present:
 				now temporary-map-figure is F;
 				if seconds is 0, display entire map; [This isn't going to happen automatically because time hasn't moved forward. So we prompt it ourselves.]
-				otherwise now map-turn-stall is 1; [If we didn't do this, the temporary-map-figure would be reset before it has a chance to be shown properly, when the time progression is calculated (towards the buttom of "to run the engine once" in Compute Turn.i7x.]
+				otherwise now map-turn-stall is 1; [If we didn't do this, the temporary-map-figure would be reset before it has a chance to be shown properly, when the time progression is calculated (towards the bottom of "to run the engine once" in Compute Turn.i7x.]
 			otherwise:
 				cutshow F for C;
 		otherwise:

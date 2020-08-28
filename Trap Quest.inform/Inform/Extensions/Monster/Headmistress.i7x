@@ -45,8 +45,8 @@ To say MonsterComment of (M - headmistress):
 	say "[variable custom style]It's like I can actually feel raw power coming from [him of M]. [if the bimbo of the player <= 10]I need to be careful[otherwise]I'd better do whatever [he of M] says[end if].[roman type][line break]".
 
 To compute (M - a monster) stomping (N - headmistress):
-	if M is in the location of the player, say "Before [he of N] can react, [NameDesc of N] has been pinned to the wall by [NameDesc of M][if diaper quest is 0], and [his of M] [manly-penis] slid into [his of N] asshole[end if]. [big he of N] shrieks [line break][speech style of N]'That fucking [ShortDesc of ex-princess] had one of these roaming [his of ex-princess] lands?!'[roman type][line break]but this turns into an undecipherable wail as [he of M] starts [if diaper quest is 0]cumming. [big his of N] belly stretches to contain all the [semen]. After [he of N] is full, [he of M] tosses [him of N] to the ground, where [he of N] promptly faints[otherwise]transforming[end if].";
-	otherwise say "You hear a [man of N] screech [line break][speech style of N]'That fucking [ShortDesc of ex-princess] had one of these roaming [his of ex-princess] lands?!'[roman type][line break][if N is nearby]nearby, [otherwise]somewhere in the region, [end if] followed by a wail of shame.";
+	if M is in the location of the player, say "Before [he of N] can react, [NameDesc of N] has been pinned to the wall by [NameDesc of M][if diaper quest is 0], and [his of M] [manly-penis] slid into [his of N] asshole[end if]. [big he of N] shrieks[line break][speech style of N]'That fucking [ShortDesc of ex-princess] had one of these roaming [his of ex-princess] lands?!'[roman type][line break]but this turns into an undecipherable wail as [he of M] starts [if diaper quest is 0]cumming. [big his of N] belly stretches to contain all the [semen]. After [he of N] is full, [he of M] tosses [him of N] to the ground, where [he of N] promptly faints[otherwise]transforming[end if].";
+	otherwise say "You hear a [man of N] screech[line break][speech style of N]'That fucking [ShortDesc of ex-princess] had one of these roaming [his of ex-princess] lands?!'[roman type][line break][if N is nearby]nearby, [otherwise]somewhere in the region, [end if] followed by a wail of shame.";
 	if diaper quest is 1:
 		now N is diaper-enslaved;
 	otherwise:
@@ -114,7 +114,7 @@ To say EnslavedDominationFlav of (M - headmistress):
 		otherwise if the player is possessing a penis:
 			say "Unable to get an erection right now, you settle for using the fact that [NameDesc of M] isn't allowed to keep[his of M] tongue in [his of M] mouth to your advantage. You wipe your flaccid [player-penis] up and down [his of M] lolling tongue, cleaning it up with [his of M] saliva, and making [him of M] whine and retch. It feels good but you soon grow bored and let go of [his of M] hair.";
 		otherwise:
-			say "You use the fact that [NameDesc of M] isn't allowed to keep[his of M] tongue in [his of M] mouth to your advantage. You rup your wet pussy up and down [his of M] lolling tongue, cleaning it up with [his of M] saliva, and making [him of M] whine and retch. ";
+			say "You use the fact that [NameDesc of M] isn't allowed to keep[his of M] tongue in [his of M] mouth to your advantage. You rub your wet pussy up and down [his of M] lolling tongue, cleaning it up with [his of M] saliva, and making [him of M] whine and retch. ";
 			if the player is horny:
 				say "You're able to use [his of M] tongue to bring yourself to a well-earned climax.";
 				orgasm quietly;
@@ -175,7 +175,7 @@ To compute student perception of (M - a headmistress):
 					now armband is ruby;
 					update students;
 					now the armband-print of armband is "natural born submissive";
-		say "[roman type][line break][big he of M] waves a hand in your direction and the your armband slightly transforms! It now reads '[NameBimbo] the [armband-print of armband]' in letters that look like they're made out of [accessory-colour of armband].".
+		say "[roman type][line break][big he of M] waves a hand in your direction and your armband slightly transforms! It now reads '[NameBimbo] the [armband-print of armband]' in letters that look like they're made out of [accessory-colour of armband].".
 
 To say WhoQuestion of (M - a headmistress):
 	say "[variable custom style]'Who are you?'[roman type][line break]".

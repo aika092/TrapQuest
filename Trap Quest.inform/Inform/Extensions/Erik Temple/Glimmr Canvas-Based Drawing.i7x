@@ -67,9 +67,13 @@ Chapter - Display status
 
 A g-element has a g-activity called the display status. The display status of a g-element is usually g-active.
 
-Definition: A g-element (called the item) is display-active if the display status of the item is g-active.
+Definition: A g-element (called the item) is display-active:
+	if the display status of the item is g-active, decide yes;
+	decide no.
 
-Definition: A g-element (called the item) is display-inactive if the display status of the item is g-inactive.
+Definition: A g-element (called the item) is display-inactive:
+	if the display status of the item is g-inactive, decide yes;
+	decide no.
 
 To mark (element - a g-element) for display:
 	now the display status of the element is g-active.
@@ -137,7 +141,9 @@ Chapter - Element properties related to mouse input
 
 A g-element has a g-activity called the graphlink status. The graphlink status of a g-element is usually g-inactive.
 
-Definition: A g-element (called the item) is graphlinked if the graphlink status of the item is g-active.
+Definition: A g-element (called the item) is graphlinked:
+	if the graphlink status of the item is g-active, decide yes;
+	decide no.
 
 A g-element has some text called the linked replacement-command. The linked replacement-command is usually "".
 
@@ -643,7 +649,7 @@ An element display rule for a rectangle primitive (called the rectangle):
 		now the win-x of the rectangle is win-x - end-x;
 		now the win-y of the rectangle is win-y - end-y;]
 	#if utilising Glimmr debugging;
-	say "[>console][CBD]Drawing rectangle primitive [i][rectangle][/i], colour [colour tint of rectangle], in [i][current window][/i] with upper left ([win-x], [win-y]) and lower right ([end-x], [end-y])[if the rectangle is graphlinked]. [line break][CBD]Graphlink corresponding to [i][rectangle][/i] set from ([win-x of rectangle], [win-y of rectangle]) to ([end-x], [end-y]): [quotation mark][linked replacement-command][quotation mark][end if].[<]";
+	say "[>console][CBD]Drawing rectangle primitive [i][rectangle][/i], colour [colour tint of rectangle], in [i][current window][/i] with upper left ([win-x], [win-y]) and lower right ([end-x], [end-y])[if the rectangle is graphlinked].[line break][CBD]Graphlink corresponding to [i][rectangle][/i] set from ([win-x of rectangle], [win-y of rectangle]) to ([end-x], [end-y]): [quotation mark][linked replacement-command][quotation mark][end if].[<]";
 	#end if;
 	rectdraw (colour tint of the rectangle) in (current window) from (win-x) by (win-y) to (end-x) by (end-y);
 	if the rectangle is graphlinked:
@@ -664,7 +670,7 @@ A box primitive has a number called the stroke. The stroke of a box primitive is
 
 An element display rule for a box primitive (called the box):
 	#if utilising Glimmr debugging;
-	say "[>console][CBD]Drawing box primitive [i][box][/i], colour [colour tint of the box], in [i][current window][/i] with upper left ([win-x], [win-y]) and lower right ([end-x], [end-y]), scaled line-weight [stroke] px[if the box is graphlinked]. [line break][CBD]Graphlink corresponding to [i][box][/i] set from ([win-x of box], [win-y of box]) to ([end-x], [end-y]): [quotation mark][linked replacement-command][quotation mark][end if].[<]";
+	say "[>console][CBD]Drawing box primitive [i][box][/i], colour [colour tint of the box], in [i][current window][/i] with upper left ([win-x], [win-y]) and lower right ([end-x], [end-y]), scaled line-weight [stroke] px[if the box is graphlinked].[line break][CBD]Graphlink corresponding to [i][box][/i] set from ([win-x of box], [win-y of box]) to ([end-x], [end-y]): [quotation mark][linked replacement-command][quotation mark][end if].[<]";
 	#end if;
 	boxdraw (colour tint of the box) in (current window) from (win-x) by (win-y) to (end-x) by (end-y) with (stroke);
 	if the box is graphlinked:
@@ -686,7 +692,7 @@ A stroked rectangle primitive has a number called the stroke. The stroke of a st
 
 An element display rule for a stroked rectangle primitive (called the stroked rectangle):
 	#if utilising Glimmr debugging;
-	say "[>console][CBD]Drawing stroked rectangle primitive [i][stroked rectangle][/i], colour [colour tint of the stroked rectangle], in [i][current window][/i] with upper left ([win-x], [win-y]) and lower right ([end-x], [end-y]), scaled line-weight [stroke] px[if the stroked rectangle is graphlinked]. [line break][CBD]Graphlink corresponding to [i][stroked rectangle][/i] set from ([win-x of stroked rectangle], [win-y of stroked rectangle]) to ([end-x], [end-y]): [quotation mark][linked replacement-command][quotation mark][end if].[<]";
+	say "[>console][CBD]Drawing stroked rectangle primitive [i][stroked rectangle][/i], colour [colour tint of the stroked rectangle], in [i][current window][/i] with upper left ([win-x], [win-y]) and lower right ([end-x], [end-y]), scaled line-weight [stroke] px[if the stroked rectangle is graphlinked].[line break][CBD]Graphlink corresponding to [i][stroked rectangle][/i] set from ([win-x of stroked rectangle], [win-y of stroked rectangle]) to ([end-x], [end-y]): [quotation mark][linked replacement-command][quotation mark][end if].[<]";
 	#end if;
 	strectdraw (colour tint of the stroked rectangle) in (current window) from (win-x) by (win-y) to (end-x) by (end-y) with (stroke) stroke of (colour background tint);
 	if the stroked rectangle is graphlinked:
@@ -708,7 +714,7 @@ A line primitive has a number called the stroke. The stroke of a line primitive 
 
 An element display rule for a line primitive (called the line):
 	#if utilising Glimmr debugging;
-	say "[>console][CBD]Drawing line primitive [i][line][/i], colour [colour tint of the line], in [i][current window][/i] from ([win-x], [win-y]) to ([end-x], [end-y]), scaled line-weight [stroke] pixels[if the line is graphlinked]. [line break][CBD]Graphlink corresponding to [i][line][/i] set from ([min win-x or end-x], [min win-y or end-y]) to ([max win-x or end-x], [max win-y or end-y]): [quotation mark][linked replacement-command][quotation mark][end if].[<]";
+	say "[>console][CBD]Drawing line primitive [i][line][/i], colour [colour tint of the line], in [i][current window][/i] from ([win-x], [win-y]) to ([end-x], [end-y]), scaled line-weight [stroke] pixels[if the line is graphlinked].[line break][CBD]Graphlink corresponding to [i][line][/i] set from ([min win-x or end-x], [min win-y or end-y]) to ([max win-x or end-x], [max win-y or end-y]): [quotation mark][linked replacement-command][quotation mark][end if].[<]";
 	#end if;
 	linedraw (colour tint of the line) in (current window) from (win-x) by (win-y) to (end-x) by (end-y) with (stroke);
 	if the line is graphlinked:
@@ -733,7 +739,7 @@ An element display rule for a point primitive (called the point):
 	now end-x of the point is win-x plus stroke;
 	now end-y of the point is win-y plus stroke;
 	#if utilising Glimmr debugging;
-	say "[>console][CBD]Drawing point primitive [i][point][/i], colour [colour tint of point] in [i][current window][/i] with upper left ([win-x], [win-y]) and lower right ([end-x], [end-y]), scaled line-weight [stroke] pixels[if the point is graphlinked]. [line break][CBD]Graphlink corresponding to [i][point][/i] set from ([win-x of point], [win-y of point]) to ([end-x], [end-y]): [quotation mark][linked replacement-command][quotation mark][end if].[<]";
+	say "[>console][CBD]Drawing point primitive [i][point][/i], colour [colour tint of point] in [i][current window][/i] with upper left ([win-x], [win-y]) and lower right ([end-x], [end-y]), scaled line-weight [stroke] pixels[if the point is graphlinked].[line break][CBD]Graphlink corresponding to [i][point][/i] set from ([win-x of point], [win-y of point]) to ([end-x], [end-y]): [quotation mark][linked replacement-command][quotation mark][end if].[<]";
 	#end if;
 	rectdraw (colour tint of the point) in (current window) from (win-x) by (win-y) to (end-x) by (end-y);
 	if the point is graphlinked:
@@ -823,7 +829,7 @@ An element display rule for a monochrome bitmap (called the grid):
 	if the grid is graphlinked:
 		set a graphlink in the current window identified as grid from win-x by win-y to win-x + (bitmap-height * dot-size) by win-y + (bitmap-height * dot-size) as the linked replacement-command of the grid;
 	#if utilising Glimmr debugging;
-	say "[>console][CBD]Drawing monochrome bitmap [i][grid][/i], foreground colour [colour tint of the grid], in [i][current window][/i] with upper left ([win-x of grid], [win-y]) and lower right ([win-x + (number of entries in entry 1 of the bitmap-array of the grid * dot-size)], [win-y + (bitmap-height * dot-size)])[unless background tint of grid is g-PlaceNullCol]; background colour [colour background tint of grid][end if][if grid is graphlinked]. [line break][CBD]Graphlink corresponding to [i][grid][/i] set from ([win-x of grid], [win-y of grid]) to ([win-x + (number of entries in entry 1 of the bitmap-array of the grid * dot-size)], [win-y + (bitmap-height * dot-size)]): [quotation mark][linked replacement-command of grid][quotation mark][end if].[<]";
+	say "[>console][CBD]Drawing monochrome bitmap [i][grid][/i], foreground colour [colour tint of the grid], in [i][current window][/i] with upper left ([win-x of grid], [win-y]) and lower right ([win-x + (number of entries in entry 1 of the bitmap-array of the grid * dot-size)], [win-y + (bitmap-height * dot-size)])[unless background tint of grid is g-PlaceNullCol]; background colour [colour background tint of grid][end if][if grid is graphlinked].[line break][CBD]Graphlink corresponding to [i][grid][/i] set from ([win-x of grid], [win-y of grid]) to ([win-x + (number of entries in entry 1 of the bitmap-array of the grid * dot-size)], [win-y + (bitmap-height * dot-size)]): [quotation mark][linked replacement-command of grid][quotation mark][end if].[<]";
 	#end if.
 
 Section - Polychrome bitmap
@@ -843,7 +849,7 @@ An element display rule for a polychrome bitmap (called the grid):
 	if the grid is graphlinked:
 		set a graphlink in the current window identified as grid from win-x by win-y to win-x + (bitmap-height * dot-size) by win-y + (bitmap-height * dot-size) as the linked replacement-command of the grid;
 	#if utilising Glimmr debugging;
-	say "[>console][CBD]Drawing polychrome bitmap [i][grid][/i] in [i][current window][/i] with upper left ([win-x of grid], [win-y]) and lower right ([win-x + (number of entries in entry 1 of the bitmap-array of the grid * dot-size)], [win-y + (bitmap-height * dot-size)])[unless background tint of grid is g-PlaceNullCol]; background colour [colour background tint of grid][end if][if grid is graphlinked]. [line break][CBD]Graphlink corresponding to [i][grid][/i] set from ([win-x of grid], [win-y of grid]) to ([win-x + (number of entries in entry 1 of the bitmap-array of the grid * dot-size)], [win-y + (bitmap-height * dot-size)]): [quotation mark][linked replacement-command of grid][quotation mark][end if].[<]";
+	say "[>console][CBD]Drawing polychrome bitmap [i][grid][/i] in [i][current window][/i] with upper left ([win-x of grid], [win-y]) and lower right ([win-x + (number of entries in entry 1 of the bitmap-array of the grid * dot-size)], [win-y + (bitmap-height * dot-size)])[unless background tint of grid is g-PlaceNullCol]; background colour [colour background tint of grid][end if][if grid is graphlinked].[line break][CBD]Graphlink corresponding to [i][grid][/i] set from ([win-x of grid], [win-y of grid]) to ([win-x + (number of entries in entry 1 of the bitmap-array of the grid * dot-size)], [win-y + (bitmap-height * dot-size)]): [quotation mark][linked replacement-command of grid][quotation mark][end if].[<]";
 	#end if.
 
 Chapter - Rendered strings
@@ -985,7 +991,7 @@ An element display rule for a bitmap-rendered string (called the stream):
 		now column is column-index;
 		let row be the win-y of the stream;
 	#if utilising Glimmr debugging;
-	say "[>console][CBD]Displaying rendered bitmap string [i][stream][/i], foreground colour [colour foreground-colour], in [i][current window][/i] with upper left ([win-x of stream], [win-y]) and lower right ([column], [row + (font-height of the associated font of the stream * dot-size)])[unless background-colour is g-PlaceNullCol]; background colour [colour background-colour][end if][if stream is graphlinked]. [line break][CBD]Graphlink corresponding to [i][stream][/i] set from ([win-x of stream], [win-y of stream]) to ([column], [row + (font-height of the associated font of the stream * dot-size)]): [quotation mark][linked replacement-command of stream][quotation mark][end if].[<]";
+	say "[>console][CBD]Displaying rendered bitmap string [i][stream][/i], foreground colour [colour foreground-colour], in [i][current window][/i] with upper left ([win-x of stream], [win-y]) and lower right ([column], [row + (font-height of the associated font of the stream * dot-size)])[unless background-colour is g-PlaceNullCol]; background colour [colour background-colour][end if][if stream is graphlinked].[line break][CBD]Graphlink corresponding to [i][stream][/i] set from ([win-x of stream], [win-y of stream]) to ([column], [row + (font-height of the associated font of the stream * dot-size)]): [quotation mark][linked replacement-command of stream][quotation mark][end if].[<]";
 	#end if;
 	if the stream is graphlinked:
 		set a graphlink in the current window identified as the stream from (win-x - dot-size) by (win-y - dot-size) to column by row + (font-height of the associated font of the stream * dot-size) as the linked replacement-command of the stream;
@@ -1084,7 +1090,7 @@ An element display rule for an image-rendered string (called the stream):
 			follow the text-painting animation rules for the stream;]
 		increase column by the advance entry times the calculated scaling factor of the stream to the nearest whole number;
 	#if utilising Glimmr debugging;
-	say "[>console][CBD]Displaying rendered image string [i][stream][/i], foreground colour [colour tint of the stream], in [i][current window][/i] with upper left ([win-x of stream], [win-y]) and lower right ([column + margin], [win-y of the stream + vertical-size + margin])[unless background tint of the stream is g-PlaceNullCol]; background colour [colour background tint of the stream][end if][if stream is graphlinked]. [line break][CBD]Graphlink corresponding to [i][stream][/i] set from ([win-x of stream], [win-y of stream]) to ([column + margin], [win-y of the stream + vertical-size + margin]): [quotation mark][linked replacement-command of stream][quotation mark][end if].[<]";
+	say "[>console][CBD]Displaying rendered image string [i][stream][/i], foreground colour [colour tint of the stream], in [i][current window][/i] with upper left ([win-x of stream], [win-y]) and lower right ([column + margin], [win-y of the stream + vertical-size + margin])[unless background tint of the stream is g-PlaceNullCol]; background colour [colour background tint of the stream][end if][if stream is graphlinked].[line break][CBD]Graphlink corresponding to [i][stream][/i] set from ([win-x of stream], [win-y of stream]) to ([column + margin], [win-y of the stream + vertical-size + margin]): [quotation mark][linked replacement-command of stream][quotation mark][end if].[<]";
 	#end if;
 	if the stream is graphlinked:
 		set a graphlink in the current window identified as the stream from (win-x - margin) by (win-y - margin) to (column + margin) by (win-y of the stream + vertical-size + margin) as the linked replacement-command of the stream.
@@ -1109,7 +1115,9 @@ An image-map has a list of lists of texts called the linked command array. The l
 
 An image-map has a g-activity called tiled graphlink status. The tiled graphlink status of an image-map is g-inactive.
 
-Definition: An image-map (called the item) is tile-graphlinked if the tiled graphlink status of the item is g-active.
+Definition: An image-map (called the item) is tile-graphlinked:
+	if the tiled graphlink status of the item is g-active, decide yes;
+	decide no.
 
 To activate tiled graphlink/graphlinks to/for/of (element - an image-map):
 	now the tiled graphlink status of the element is g-active.
@@ -1560,7 +1568,7 @@ Elements are assigned to a canvas, and they can also be set either active or ina
 
 Chapter: Including Glimmr Canvas-Based Drawing in a project
 
-Inform remains fairly unsophisticated in its mechanisms for organizing included extensions. When we are dealing with a complex system of modular extensions such as Glimmr, it is very easy to trip it up, and the result is usually a list of unhelpful errors. For this reason, each Glimmr extension includes a section--such as this one--about how to include it, particularly in relation to other extensions.
+Inform remains fairly unsophisticated in its mechanisms for organising included extensions. When we are dealing with a complex system of modular extensions such as Glimmr, it is very easy to trip it up, and the result is usually a list of unhelpful errors. For this reason, each Glimmr extension includes a section--such as this one--about how to include it, particularly in relation to other extensions.
 
 GCBD should be included before any font or tileset extensions, e.g.:
 
@@ -2053,7 +2061,7 @@ Since elements are objects, like any other entity of Inform's "thing" kind, we c
 				deactivate item;
 		continue the action.
 
-We could also potentially use other aspects of g-elements--particularly their relationships with one another--as means of organizing their display. I leave users to think about whether this kind of thing might have advantages for them.
+We could also potentially use other aspects of g-elements--particularly their relationships with one another--as means of organising their display. I leave users to think about whether this kind of thing might have advantages for them.
 
 If for some reason we actually want players to be able to see, pick up, and refer to some elements as if they were objects in the game world, we can declare those elements to be "publically-named":
 
@@ -3344,8 +3352,12 @@ From this point on, the code does not differ from the Inform documentation's "Ti
 
 	A card can be sorted or unsorted. A card is usually unsorted.
 
-	Definition: a card is high if its rank is 11 or more.
-	Definition: a card is low if its rank is 4 or less.
+	Definition: a card is high:
+	if the rank of it is 11 or more, decide yes;
+	decide no.
+	Definition: a card is low:
+	if the rank of it is 4 or less, decide yes;
+	decide no.
 
 	A hand-ranking rule (this is the initial sort rule):
 		now every card is unsorted;
@@ -3370,7 +3382,9 @@ From this point on, the code does not differ from the Inform documentation's "Ti
 
 	A card can be quadrupled, tripled, paired or uncombined.
 
-	Test rank is a number that varies. Definition: a card is matching if its rank is the test rank.
+	Test rank is a number that varies. Definition: a card is matching:
+	if the rank of it is the test rank, decide yes;
+	decide no.
 
 	A hand-ranking rule (this is the counting multiples rule):
 		now every card is uncombined;
@@ -3416,8 +3430,12 @@ From this point on, the code does not differ from the Inform documentation's "Ti
 			now the selection is uncombined;
 		if sort-debugging is true, say "-- after multiples movement rule: [list hand]".
 
-	Definition: a card is ace if its rank is 1.
-	Definition: a card is king if its rank is 13.
+	Definition: a card is ace:
+	if the rank of it is 1, decide yes;
+	decide no.
+	Definition: a card is king:
+	if the rank of it is 13, decide yes;
+	decide no.
 
 	A hand-ranking rule (this is the royal-flush rule):
 		if flushness is true and straightness is true and the highest card carried by the player is king and the lowest card carried by the player is ace, royal flush.

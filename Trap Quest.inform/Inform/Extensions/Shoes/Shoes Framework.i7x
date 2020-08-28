@@ -1,6 +1,11 @@
 Shoes Framework by Shoes begins here.
 
-shoes is a kind of clothing. The soak-limit of a shoes is usually 7.
+shoes is a kind of clothing.
+
+Definition: a shoes (called C) is external fluid immune:
+	if C is latex or C is metal or C is glass or C is pvc or C is biological or C is plastic or C is leather, decide yes;
+	decide no.
+To decide which number is the soak-limit of (C - a shoes): decide on 7. [All shoes can have liquid soak into the inside]
 
 Definition: a shoes is hindrance-enabling: decide no. [Is it more likely to fall over when wearing these shoes compared to barefoot?]
 Definition: a shoes is ankle covering: decide yes.
@@ -52,9 +57,6 @@ To decide which number is the unique cringe of (C - a shoes):
 To decide which number is the hindrance-modifier of (C - a clothing):
 	decide on 0.
 
-To decide which number is the original price of (C - a shoes):
-	decide on 2.
-
 Part - Wearability
 
 Definition: a shoes (called C) is too outrageous: [Player will never refuse to wear shoes.]
@@ -96,10 +98,6 @@ Check taking off worn shoes:
 			say "You try and bend over whilst on the dildo to take off your heels but your [BellyDesc] is in the way!" instead;
 		if the largeness of breasts > 15:
 			say "You try and bend over whilst on the dildo to take off your heels but your [BreastDesc] are getting in the way!" instead;
-	if the noun is cursed:
-		say "Try as you might you cannot find a way to pull off your [printed name of the noun]!";
-		if the noun is heels, say "[if the hindrance of the noun > 1]They are killing your ankles and toes![otherwise]The curse is bothersome but at least you've become used to walking in heels.[end if]";
-		now the noun is sure instead; [Crowdsourced from Anya Snowdrifter]
 	otherwise if the noun is glued:
 		try tearing off the noun;
 		if the noun is glued:

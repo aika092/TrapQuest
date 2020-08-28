@@ -22,7 +22,9 @@ Definition: yourself is at least partially monster stuck:
 Is there a monster currently having sex with the player?
 
 +!]
-Definition: yourself is monster fucked if there is a monster penetrating a body part.
+Definition: yourself is monster fucked:
+	if there is a monster penetrating a body part, decide yes;
+	decide no.
 
 Definition: a monster (called M) is successfully blocking: [Do they succeed in a roll to stop the player moving]
 	if M is not blocker, decide no;
@@ -32,5 +34,8 @@ Definition: a monster (called M) is successfully blocking: [Do they succeed in a
 	if debuginfo > 0, say "[input-style][ShortDesc of M][']s movement block check: player movement penalty ([movement reduction of the player]) + block skill d[D] ([R - the movement reduction of the player]) = [R] | ([the dexterity of the player].5) dexterity[roman type][line break]";
 	if R > the dexterity of the player, decide yes;
 	decide no.
+
+To say MovementBlock of (M - a monster):
+	say "[BigNameDesc of M] manages to get in front of you and block your path, slowing down your movement!".
 
 Blocking ends here.

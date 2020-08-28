@@ -27,7 +27,9 @@ To compute hair colour change of (H - flower hairclip):
 
 Chapter - Class Outfit
 
-Definition: flower hairclip is removal-blocking if wearing-target is warrior chestpiece or wearing-target is gown of purity. [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
+Definition: flower hairclip is removal-blocking:
+	if wearing-target is warrior chestpiece or wearing-target is gown-of-purity, decide yes;
+	decide no. [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
 
 warrior-summoned is a number that varies.
 To compute unique recycling of (C - flower hairclip):
@@ -36,7 +38,7 @@ To compute unique recycling of (C - flower hairclip):
 
 To compute class outfit of (H - flower hairclip):
 	let W be a random off-stage reinforced warrior chestpiece;
-	let G be a random off-stage gown of purity;
+	let G be gown-of-purity;
 	if (W is actually summonable or (W is warrior chestpiece and warrior-summoned is 0 and the number of worn warrior chestpiece is 0)) and the largeness of breasts < 18:
 		if warrior-summoned < 2:
 			repeat with O running through worn breast covering clothing:
@@ -50,9 +52,9 @@ To compute class outfit of (H - flower hairclip):
 		now the raw-magic-modifier of W is the virginity-count of virginity-retention-quest;
 		if warrior-summoned is 0, now warrior-summoned is 1;
 		now W is suppression;
-	otherwise if virgin magical girl outfit is not worn and the number of worn golden warrior priestess outfit is 0 and (G is actually summonable or (G is gown of purity and warrior-summoned < 2)):
+	otherwise if virgin magical girl outfit is not worn and the number of worn golden warrior priestess outfit is 0 and (G is actually summonable or (G is gown-of-purity and warrior-summoned < 2)):
 		if warrior-summoned < 2:
-			repeat with O running through worn skirted clothing:
+			repeat with O running through worn skirt clashing clothing:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
 			repeat with O running through worn exclusive corsets:

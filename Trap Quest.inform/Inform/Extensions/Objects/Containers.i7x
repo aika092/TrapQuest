@@ -1,36 +1,18 @@
 Containers by Objects begins here.
 
-[!<Container>@<IsTrapped>+
-
-REQUIRES COMMENTING
-
-+@!]
 A container can be trappable.
 
-[!<Container>@<prevSearch:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 A container has a number called prevsearch. The prevsearch of a container is usually 0.
 
-[!<Container>@<isEmptied:Boolean>*
-
-REQUIRES COMMENTING
-
-*@!]
 Containers can be emptied. A container is usually not emptied.
 
-[!<AContainerIsTrapped>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a container (called C) is trapped rather than untrapped:
 	if the trigger-target of C is a trap, decide yes;
 	decide no.
 
-Definition: A container is immune to change if it is in the location of the player.
+Definition: A container is immune to change:
+	if it is in the location of the player, decide yes;
+	decide no.
 
 To decide which object is the trigger-target of (C - a container):
 	repeat with T running through click traps in the location of C:
@@ -251,11 +233,6 @@ To say ExamineDesc of (C - an ornate trunk):
 To say ShortDesc of (C - an ornate trunk):
 	say "trunk".
 
-[!<AddTreasureToMinibar>+
-
-REQUIRES COMMENTING
-
-+!]
 To add treasure to (X - a minibar):
 	if there is an off-stage can:
 		let flav-said be 0;
@@ -274,7 +251,7 @@ To add treasure to (X - a minibar):
 			compute autotaking Z;
 	otherwise:
 		compute generic treasure to X;
-		say "[variable custom style]'That[']s weird. Maybe it's out of drinks or something?'[roman type]".
+		say "[variable custom style]'That's weird. Maybe it's out of drinks or something?'[roman type]".
 
 [!<Safe>@
 
@@ -316,11 +293,6 @@ To say ExamineDesc of (C - a treasure chest):
 To say ShortDesc of (C - a treasure chest):
 	say "chest".
 
-[!<AddTreasureToTreasureChest>+
-
-REQUIRES COMMENTING
-
-+!]
 To add treasure to (X - a treasure chest):
 	if the location of X is Dungeon12: [Like the stuff in the pink wardrobe but unidentified]
 		let L be a list of clothing;
@@ -374,7 +346,6 @@ To add treasure to (X - a treasure chest):
 				say "[bold type]You find the instructions for casting a magic spell written on the inside of the lid! [roman type]Interesting...[NewbieSpellFlav]";
 				compute learning of S;
 				cutshow figure of recipe for S;
-				say "Magic energy flows through the words and into your body.";
 				MagicPowerUp 1;
 			otherwise:
 				now R is in X;
@@ -395,7 +366,7 @@ Carry out taking museum-store clothing:
 	if the location of the player is mansion28 and there is a worn lipstick collar:
 		let L be a random lipstick collar;
 		now L is tethering;
-		say "The barrier shatters as your hands pull back, and you hear a chilling rattling noise as a brilliant pink chain shoots out of your collar and secures itself to a tiny hook in the floor. [if vampiress is in the location of the player][BigNameDesc of vampiress] grins as the chain pulls taut[otherwise]You hear a sultry voice giggling down the hall as the chain pulls taut[end if].[line break][speech style of vampiress]'It would be a shame if you left without paying, now wouldn[']t it?'[roman type][line break][line break][line break]";
+		say "The barrier shatters as your hands pull back, and you hear a chilling rattling noise as a brilliant pink chain shoots out of your collar and secures itself to a tiny hook in the floor. [if vampiress is in the location of the player][BigNameDesc of vampiress] grins as the chain pulls taut[otherwise]You hear a sultry voice giggling down the hall as the chain pulls taut[end if].[line break][speech style of vampiress]'It would be a shame if you left without paying, now wouldn't it?'[roman type][line break][line break][line break]";
 		unless vampiress is alive:
 			summon vampiress in the mansion;
 			say "[SummoningFlav of vampiress]";
@@ -471,7 +442,7 @@ To add treasure to (X - a pedestal):[This function should happen when the mansio
 		now P is in X;
 		now P is museum-store;
 		now the paid of X is 2;
-	otherwise if there is an off-stage wood-dong and diaper quest is 0:[if this is found in the mansion shop, its ridiculously expensive]
+	otherwise if there is an off-stage wood-dong and diaper quest is 0:[if this is found in the mansion shop, it's ridiculously expensive]
 		let P be a random off-stage wood-dong;
 		now P is in X;
 		now P is museum-store;
@@ -546,7 +517,7 @@ Carry out drinking a pedestal:
 				say "You feel your muscles stiffening[one of][or] further[stopping]...";
 				DexDown 1;
 	otherwise:
-		say "You put your lips around the [pedestal-variant of the noun] [manly-penis], and suck. [one of][if the semen taste addiction of the player < 8][line break][first custom style]I can't believe I'm doing this! Do I really need it open this badly?[roman type][line break]Your thoughts are interrupted by the penis ejaculating [semen] straight down your throat, with quite some force. You cough and splutter![otherwise if the semen taste addiction of the player > 11]The stone penis ejaculates [semen] straight down your throat, with quite some force. [line break][second custom style]Yippee![roman type][line break][otherwise]The penis ejaculates [semen] straight down your throat, with quite some force. [end if][or]You [if the oral sex addiction of the player < 5]wish you could push away the invasive imagination that the stone penis belongs to a real, living man. You scrunch your eyes in dismay[otherwise]pretend the stone penis belongs to a real, living stud, and curl your tongue around it while you suck avidly – after all, no one can see what your tongue is doing, right, so what's the harm in making it extra fun by a little imagining? Your finely-tuned BJ skills warn you, and you pull back to ease it out of your throat so you can taste it properly! You thrill[end if] as you feel it spurt its [semen]. [if the semen taste addiction of the player > 11]Yummy! You swirl it around for a while, savouring the taste properly, before you reluctantly [otherwise]You [end if]swallow it down.[or]You give the penis another blowjob, and once again it ejaculates [semen] into your mouth. You [if the semen taste addiction of the player > 11]greedily [end if]gulp it down.[stopping][line break]";[TODO: vary for oral sex addiction]
+		say "You put your lips around the [pedestal-variant of the noun] [manly-penis], and suck. [one of][if the semen taste addiction of the player < 8][line break][first custom style]I can't believe I'm doing this! Do I really need it open this badly?[roman type][line break]Your thoughts are interrupted by the penis ejaculating [semen] straight down your throat, with quite some force. You cough and splutter![otherwise if the semen taste addiction of the player > 11]The stone penis ejaculates [semen] straight down your throat, with quite some force.[line break][second custom style]Yippee![roman type][line break][otherwise]The penis ejaculates [semen] straight down your throat, with quite some force. [end if][or]You [if the oral sex addiction of the player < 5]wish you could push away the invasive imagination that the stone penis belongs to a real, living man. You scrunch your eyes in dismay[otherwise]pretend the stone penis belongs to a real, living stud, and curl your tongue around it while you suck avidly - after all, no one can see what your tongue is doing, right, so what's the harm in making it extra fun by a little imagining? Your finely-tuned BJ skills warn you, and you pull back to ease it out of your throat so you can taste it properly! You thrill[end if] as you feel it spurt its [semen]. [if the semen taste addiction of the player > 11]Yummy! You swirl it around for a while, savouring the taste properly, before you reluctantly [otherwise]You [end if]swallow it down.[or]You give the penis another blowjob, and once again it ejaculates [semen] into your mouth. You [if the semen taste addiction of the player > 11]greedily [end if]gulp it down.[stopping][line break]";[TODO: vary for oral sex addiction]
 		StomachSemenUp the paid of the noun;
 		get oral creampie image for the noun;
 	now the paid of the noun is 0;
@@ -566,7 +537,10 @@ Carry out pouring bottle into pedestal:
 	if the fill-colour of the noun is murky, now L is murkwater;
 	let N be the doses of the noun;
 	DoseEmpty the noun;
-	compute PedestalFilling the second noun with L by N.
+	compute PedestalFilling the second noun with L by N;
+	if the noun is can:
+		say "You discard the empty can.";
+		destroy the noun.
 
 To compute PedestalFilling (P - a pedestal) with (L - a liquid-object) by (N - a number):
 	let oP be the paid of P;

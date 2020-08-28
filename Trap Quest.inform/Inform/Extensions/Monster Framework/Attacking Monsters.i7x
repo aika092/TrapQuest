@@ -2,11 +2,6 @@ Attacking Monsters by Monster Framework begins here.
 
 The block attacking rule is not listed in the check attacking rulebook.
 
-[!<attackType:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 attack-type is a number that varies. attack-type is usually 0.
 [
 0 - Start of game
@@ -24,11 +19,6 @@ Definition: yourself is blinded:
 
 Part 1 - Ability to attack
 
-[!<autoattack:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 autoattack is a number that varies.
 
 [!<autoslap:Integer>*
@@ -39,39 +29,14 @@ Have we already checked this turn whether the player can do this? And if so, wha
 autoslap is a number that varies. autoslap is 1.
 autozap is a number that varies. autozap is 1.
 
-[!<autoknee:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 autoknee is a number that varies. autoknee is 1.
 
-[!<autokick:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 autokick is a number that varies. autokick is 1.
 
-[!<abilityToSlapRules:Rulebook>*
-
-REQUIRES COMMENTING
-
-*!]
 The ability to slap rules is a rulebook.
 
-[!<abilityToKickRules:Rulebook>*
-
-REQUIRES COMMENTING
-
-*!]
 The ability to knee rules is a rulebook.
 
-[!<abilityToKickRules:Rulebook>*
-
-REQUIRES COMMENTING
-
-*!]
 The ability to kick rules is a rulebook.
 
 [!<YourselfIsAbleToSlap>+
@@ -435,18 +400,8 @@ Definition: a monster (called M) is too intimidating:
 	if R + (the difficulty of M / 4) > 15, decide yes;
 	decide no.
 
-[!<surrendered:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 surrendered is a number that varies.
 
-[!<ComputeSurrenderToMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute surrender to (M - a monster):
 	let N be a random intelligent dangerous monster in the location of the player;
 	say "You consider attacking [NameDesc of M], but then your [if the humiliation of the player >= 40000]desire to be used as an object[otherwise]fear of pain[end if] gets the better of you. You find yourself dropping to your knees. [if N is monster and M is unintelligent][SurrenderFlav of N][otherwise][SurrenderFlav of M][end if]";
@@ -459,11 +414,6 @@ To compute silent surrender to (M - a monster):
 		try kneeling;
 		now auto is 0.
 
-[!<SaySurrenderFlavOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To say SurrenderFlav of (M - a monster):
 	if M is intelligent:
 		if the player is able to speak:
@@ -473,34 +423,14 @@ To say SurrenderFlav of (M - a monster):
 
 Part 4 - Damage Calculation
 
-[!<combatBonus:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 combat bonus is a number that varies.
 
-[!<DecideWhichNumberIsCombatScaling>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is combat scaling:
 	decide on 6. [This number allows for easy balance changes to damage. The higher this number is, the less of an impact strength will have on damage.]
 
-[!<combatBonusRemainder:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 combat bonus remainder is a number that varies.
 
 [Once per turn, we decide what the player's next attack strength will be. This is done so that estimation of average damage in the verb above is consistent.]
-[!<TheCombatBonusRule>+
-
-REQUIRES COMMENTING
-
-+!]
 An all later time based rule (this is the combat bonus rule):
 	let N be saved-flat-strength / combat scaling;
 	let N2 be the remainder after dividing the strength of the player by combat scaling;
@@ -517,27 +447,12 @@ To say combat bonus explanation:
 	if the player is blinded, increase N by 2;
 	say "[if N >= 0]+[end if][N] (strength component) [if combat bonus remainder is 1]+1 (strength component fluctuation) [end if][if the player is breasts blinded]-2 (blinded by breasts) [otherwise if the player is blinded]-2 (blinded by cum) [end if]".
 
-[!<DecideWhichNumberIsTheDamageModifierOfThing>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the damage modifier of (T - a thing): [Check for any bonus or reduced damage they are dealt]
 	decide on 0.
 
-[!<ComputeSlayingBonusOfThing>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute slaying bonus of (T - a thing):
 	do nothing.
 
-[!<ComputeSlayingBonusOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute slaying bonus of (M - a monster):
 	if a random number between 0 and (20 - the delicateness of the player) < the difficulty of M and the delicateness of the player > 1:
 		say "Your self-confidence has grown!";
@@ -599,11 +514,6 @@ To say DamageReactWeak of (M - a monster):
 To say DamageReactSubmissive of (M - a monster):
 	say "[BigNameDesc of M] takes the hit, [his of M] eyes lingering on your crotch as [he of M] fights to maintain [his of M] balance.".
 
-[!<SayDamageFlavourOfNumberOnMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To say damage-flavour of (N - a number) on (M - a monster):
 	if N is 0:
 		say "You're pretty sure that did nothing at all.";
@@ -620,27 +530,12 @@ To say damage-flavour of (N - a number) on (M - a monster):
 	otherwise:
 		say "POW! Your attack is accompanied by a loud sound. An almost impossibly strong [if critical is 1][bold type]critical hit[roman type][otherwise]hit[end if]!";
 
-[!<critical:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 Critical is a number that varies. Critical is 0. [Flag whether the attack counts as a critical]
 
-[!<attackDamage:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 Attack-damage is a number that varies.
 
 damage-explained is a number that varies. [We output debug info]
 
-[!<DamageOnMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To damage (A - a number) on (M - a monster):
 	[Roll for damage - essentially 2dX]
 	now attack-damage is (a random number between 1 and A) + (a random number between 1 and A);

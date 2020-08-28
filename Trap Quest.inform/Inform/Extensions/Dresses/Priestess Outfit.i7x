@@ -2,7 +2,9 @@ Priestess Outfit by Dresses begins here.
 
 A priestess outfit is a kind of overdress. A priestess outfit is usually unique. A priestess outfit is purity. A priestess outfit is usually low cut. A priestess outfit is usually sheer-when-wet. Understand "gown", "white" as priestess outfit.
 
-Definition: a priestess outfit is class-transformation-protected if the class of the player is priestess.
+Definition: a priestess outfit is class-transformation-protected:
+	if the class of the player is priestess, decide yes;
+	decide no.
 
 To compute SelfExamineDesc of (C - a priestess outfit):
 	say "You are wearing a [ShortDesc of C]. ".
@@ -158,7 +160,9 @@ To say ClothingDesc of (C - cameltoe-priestess-outfit):
 To decide which number is the initial outrage of (C - cameltoe-priestess-outfit):
 	decide on 3.
 
-Definition: cameltoe-priestess-outfit is potentially vagina covering if the player is not possessing a vagina and it is potentially pussy covering. [On women, this item doesn't fully conceal the vagina]
+Definition: cameltoe-priestess-outfit is potentially vagina covering:
+	if the player is not possessing a vagina and it is potentially pussy covering, decide yes;
+	decide no. [On women, this item doesn't fully conceal the vagina]
 To decide which number is the penis-capacity of (H - cameltoe-priestess-outfit):
 	decide on 2.
 To decide which object is the unique-upgrade-target of (C - cameltoe-priestess-outfit):
@@ -225,7 +229,9 @@ To say ClothingDesc of (C - heart-pussy-skirt):
 	say "This skirt is just a few short pieces of white cloth dangling over the important bits. Also it doesn't even protect the front - where there should be some white cloth to cover your [genitals], there is instead a large hole in the shape of a heart...".
 
 Definition: heart-pussy-skirt is white themed: decide yes.
-Definition: heart-pussy-skirt is class-transformation-protected if the class of the player is priestess.
+Definition: heart-pussy-skirt is class-transformation-protected:
+	if the class of the player is priestess, decide yes;
+	decide no.
 Definition: heart-pussy-skirt is potentially vagina covering: decide no.
 Definition: heart-pussy-skirt is potentially at least partially vagina covering: decide no.
 
@@ -248,7 +254,9 @@ To say ClothingDesc of (C - heart-pussy-hobble-skirt):
 	say "This skirt is made from two long pieces of white cloth that dangle vertically in front and behind your legs. They are bound to your body at the thighs and ankles to keep them in place and to force you to walk with an awkward hobble. At the front of the front piece of fabric is a large heart-shaped hole which exposes everything.".
 
 Definition: heart-pussy-hobble-skirt is white themed: decide yes.
-Definition: heart-pussy-hobble-skirt is class-transformation-protected if the class of the player is priestess.
+Definition: heart-pussy-hobble-skirt is class-transformation-protected:
+	if the class of the player is priestess, decide yes;
+	decide no.
 Definition: heart-pussy-hobble-skirt is potentially vagina covering: decide no.
 Definition: heart-pussy-hobble-skirt is potentially at least partially vagina covering: decide no.
 

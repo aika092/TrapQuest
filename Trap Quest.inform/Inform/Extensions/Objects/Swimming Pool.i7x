@@ -35,7 +35,7 @@ To compute TQ swimmingpool swimming at (swim-location - a number) with (swim-tur
 			if the location of the player is School22:[Near the diving board]
 				say "Do you want to use the diving board?";
 				if the player consents:[the player enters the pool from deep1, instead of shallow]
-					say "You leap off the diving board, creating a splash as you land inside the pool.";
+					say "You leap off the diving board, creating a splash as you enter the water.";
 					now swim-location is 3;
 					compute cum pool face coating;[Covers your face too]
 				otherwise:
@@ -47,7 +47,7 @@ To compute TQ swimmingpool swimming at (swim-location - a number) with (swim-tur
 			compute cum pool coating;
 		otherwise:
 			let L be swim-location;
-			say "You are 'treading [semen]' [if L is 0]in the shallow end of the pool, with your feet easily touching the bottom.[otherwise if L is 1]near the shallow end of the pool. Your feet just barely touch the bottom[otherwise if L is 2]midway between the deep end and the shallow end. Your feet are a couple inches away from touching the bottom.[otherwise if L is 3]near the deep end of the pool. Your feet are about a meter away from the bottom.[otherwise if L is 4]in the deep end of the pool, with several meters between your feet and the bottom.[end if]";
+			say "You are 'treading [semen]' [if L is 0]in the shallow end of the pool, with your feet easily touching the bottom.[otherwise if L is 1]near the shallow end of the pool. Your feet just barely touch the bottom[otherwise if L is 2]midway between the deep end and the shallow end. Your feet are a couple inches from touching the bottom.[otherwise if L is 3]near the deep end of the pool. Your feet are about a meter from the bottom.[otherwise if L is 4]in the deep end of the pool, with several meters between your feet and the bottom.[end if]";
 		reset multiple choice questions;
 		if swim-location is 0, set next numerical response to "get out";
 		set next numerical response to "swim in place";
@@ -95,7 +95,7 @@ To compute TQ swimmingpool swimming at (swim-location - a number) with (swim-tur
 	allocate 12 + (swim-turns * 3) seconds;
 	display entire map.
 
-[There's basically nothing interesting happening here, so its a good template.]
+[There's basically nothing interesting happening here, so it's a good template.]
 To compute DQ swimmingpool swimming at (swim-location - a number) with (swim-turns - a number):
 	let swimming be 1;
 	let S be swimming-pool;
@@ -113,7 +113,7 @@ To compute DQ swimmingpool swimming at (swim-location - a number) with (swim-tur
 				say "You [if the player is upright]wade[otherwise]crawl[end if] out into the water and begin to swim.";
 				now swim-location is 0;
 		otherwise:
-			say "You are treading water [if swim-location is 0]in the shallow end of the pool, with your feet easily touching the bottom.[otherwise if swim-location is 1]near the shallow end of the pool. Your feet just barely touch the bottom[otherwise if swim-location is 2]midway between the deep end and the shallow end. Your feet are a couple inches away from touching the bottom.[otherwise if swim-location is 3]near the deep end of the pool. Your feet are about a meter away from the bottom.[otherwise if swim-location is 4]in the deep end of the pool, with several meters between your feet and the bottom.[end if]";
+			say "You are treading water [if swim-location is 0]in the shallow end of the pool, with your feet easily touching the bottom.[otherwise if swim-location is 1]near the shallow end of the pool. Your feet just barely touch the bottom[otherwise if swim-location is 2]midway between the deep end and the shallow end. Your feet are a couple inches from touching the bottom.[otherwise if swim-location is 3]near the deep end of the pool. Your feet are about a meter from the bottom.[otherwise if swim-location is 4]in the deep end of the pool, with several meters between your feet and the bottom.[end if]";
 		reset multiple choice questions;
 		if swim-location is 0, set next numerical response to "get out";
 		set next numerical response to "swim in place";
@@ -147,7 +147,7 @@ To compute DQ swimmingpool swimming at (swim-location - a number) with (swim-tur
 					now M is a random alive undefeated teacher;[in the DQ pool a teacher is much likelier to show up.]
 					say "[BigNameDesc of M] walks into the room and sees you in the pool!";
 				if M is monster:
-					say "[speech style of M]'Um, NO! No going in the swimming pool without permission!'[roman type][line break][BigNameDesc of M] drags you out of the pool!";
+					say "[speech style of M]'Um, NO! No use of the swimming pool without permission!'[roman type][line break][BigNameDesc of M] drags you out of the pool!";
 					compute detention of M;
 					now swimming is 0;
 			if swimming is 1:
@@ -206,8 +206,8 @@ To compute treasure diving in (WB - swimming-pool) at (L - a number):
 			otherwise if N < 16:[condom]
 				let S be a random worn condom pinnable clothing;
 				if string-belt is worn, now S is string-belt;
-				if S is clothing and the player is getting unlucky:[Its a condom "leech"]
-					say "Your fingers find something mushy as your fingers hit the bottom, and you take it with you as you swim back to the surface. [bold type]You picked up a used condom... and its moving?![roman type] It flies from your hand and seals itself to your [ShortDesc of S]!";
+				if S is clothing and the player is getting unlucky:[It's a condom "leech"]
+					say "Your fingers find something mushy as your fingers hit the bottom, and you take it with you as you swim back to the surface. [bold type]You picked up a used condom... and it's moving?![roman type] It flies from your hand and seals itself to your [ShortDesc of S]!";
 					increase the used condoms of S by 1;
 				otherwise:
 					say "Your fingers find something mushy as your fingers hit the bottom, and you take it with you as you swim back to the surface. You picked up a used condom! Yuck! You throw it back.";
@@ -217,14 +217,14 @@ To compute treasure diving in (WB - swimming-pool) at (L - a number):
 					say "You feel something hard as your fingers hit the bottom, and you take it with you as you head back to the surface. [bold type]You picked up a bottle of lubricant![roman type]";
 					now U is carried by the player;
 				otherwise:
-					say "You feel something hard as your fingers hit the bottom, but you accidentally brush it out of the way when you go to grab it. You search around for a little while, but eventually you run out of air and return to the surface empty-handed.";
+					say "You feel something hard as your fingers hit the bottom, but you accidentally brush it out of the way when you go to grab it. You search around for a little while, but eventually run out of air and return to the surface empty-handed.";
 			otherwise:[key]
 				let K be skeleton key;
 				if K is off-stage:
-					say "Your fingers come into contact with something key-shaped as they touch the bottom, and you grab it and take it with you as you head back to the surface. [bold type]You found a skeleton key![roman type]";
+					say "Your fingers come into contact with something key-shaped as they touch the bottom. You grab it and head back to the surface. [bold type]You found a skeleton key![roman type]";
 					now K is carried by the player;
 				otherwise:
-					say "Your fingers come into contact with something key-shaped as they touch the bottom, and you grab it and take it with you as you head back to the surface. Unfortunately, the [semen] you're swimming through is just too thick, and you accidentally drop it just as you come up for air.";
+					say "Your fingers come into contact with something key-shaped as they touch the bottom. Grabbing it, you head back to the surface. Unfortunately, the [semen] you're swimming through is just too thick, and it slips through your fingers just as you come up for air.";
 		otherwise:
 			say "[line break]You touch the bottom and return to the surface.".
 

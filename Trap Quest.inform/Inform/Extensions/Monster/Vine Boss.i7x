@@ -26,10 +26,7 @@ To set up (M - vine boss):
 	now the health of M is the maxhealth of M.
 
 To decide which number is the starting difficulty of (M - vine boss):
-	decide on 10.
-
-To decide which number is the maxhealth of (M - vine boss): [More HP than your average difficult 10 enemy]
-	decide on 3 + (the difficulty of M * (30 + game difficulty)) / 3.
+	decide on 14.
 
 Definition: vine boss is concealment immune: decide yes. [Can the monster ignore salves of concealment, butt slut, etc.]
 
@@ -53,7 +50,9 @@ To say MovementBlock of (M - vine boss):
 
 Section 1 - Attack
 
-Definition: vine boss is a tripper if diaper quest is 1.
+Definition: vine boss is a tripper:
+	if diaper quest is 1, decide yes;
+	decide no.
 
 To decide which number is the tripping max of (M - vine boss): [he can trip you no matter what your attack type]
 	let D be the difficulty of M;

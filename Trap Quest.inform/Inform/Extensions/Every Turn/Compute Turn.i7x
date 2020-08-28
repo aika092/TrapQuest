@@ -47,7 +47,7 @@ Every turn:
 
 To allocate (N - a number) seconds:
 	if N > 0:
-		[time is moving foward, so icons should move]
+		[time is moving forward, so icons should move]
 		purge NPC icons;
 		if acceleration-timer of acceleration-tincture > 0, now N is 1; [everything happens fast]
 		if seconds is 0:
@@ -96,9 +96,15 @@ To run the engine:
 map-turn-stall is initially 0. [How many extra turns do we replace the map image with the temporary map image? For when we want to push a cutscene image to the map window but time is moving forward.]
 
 To run the engine once:
+	if lagdebug is true:
+		say "Running engine.";
+		wait 200 ms before continuing;
 	if seconds is 0, allocate 1 seconds; [We are having another turn even if seconds wasn't set!]
 	increase time-turns by 1;
 	Store Previous Sizes;
+	if lagdebug is true:
+		say "Before virtual.";
+		wait 200 ms before continuing;
 	if delayed fainting is 1 and resting is 0:
 		execute fainting;
 	otherwise if the player is virtual:
@@ -107,16 +113,24 @@ To run the engine once:
 		now Neighbour Finder is the location of the player;
 		repeat with D running through N-viable directions:
 			now the room D from Neighbour Finder is seen;
+		if lagdebug is true:
+			say "Computing turn.";
+			wait 200 ms before continuing;
 		compute turn;
+		if lagdebug is true:
+			say "Reviewing turn.";
+			wait 200 ms before continuing;
 		if delayed fainting is 0:
 			follow the compulsory action rules; [things that must happen]
 			unless another-turn is 1, compute instinctive actions;
 			unless another-turn is 1, compute automatic actions; [Automatic actions essentially cause the game to choose what the player enters and then compute turn to happen again. So this must go right at the end, and only happen if another-turn is currently 0!]
 			unless another-turn is 1, compute optional actions; [Optional actions are where the player is given a choice about whether it happens or not. So this must go right at the end, and only happen if another-turn is currently 0!]
 			[unless another-turn is 1, allocate 0 seconds;] [TEST: I don't believe this is needed because it is done in "every turn"]
-	if delayed fainting is 1 and resting is 0:
-		execute fainting;
+	if delayed fainting is 1 and resting is 0, execute fainting;
 	if another-turn is 0: [We only look at this stuff on the last turn before the player has control returned to them]
+		if lagdebug is true:
+			say "Handling images.";
+			wait 200 ms before continuing;
 		unless the player is in a predicament room, check unhandled diaper scene; [if scene messing is chosen, we need to always handle used diapers before handing control back to the player]
 		[Sometimes when time moves forward we need to refresh the map back to normal from unique situations. We can't do this in a time based rulebook because 'display entire map' breaks the rulebook.]
 		if map-turn-stall > 0:
@@ -131,19 +145,9 @@ To run the engine once:
 	update saved stats;
 	fix status bar.
 
-[!<ComputeExtraTurn>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute extra turn:
 	run the engine once.
 
-[!<ComputeCleanup>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute cleanup:
 	repeat with X running through off-stage things penetrating a body part:
 		dislodge X;
@@ -154,11 +158,6 @@ To compute cleanup:
 		if B is not worn and B is penetrating face:
 			now B is not penetrating face.
 
-[!<StorePreviousSizes>+
-
-REQUIRES COMMENTING
-
-+!]
 To store previous sizes:
 	now autozap is 0;
 	now autoslap is 0;
@@ -213,18 +212,8 @@ See timeSeconds above.
 *!]
 time-earnings is a number that varies.
 
-[!<drainDuration:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 drain-duration is a number that varies.
 
-[!<ComputeTurn>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute turn:
 	let local-earnings be earnings; [anything that cares about regular occurrence will need these local values to remain consistent when we compute multiple turns.]
 	let local-seconds be seconds;
@@ -239,13 +228,22 @@ To compute turn:
 		now earnings is 999999;
 	compute MonsterSetUpFix;
 	compute flight; [Flight stuff must go first and last - the concept is it's checking if anything that happened caused the player to start flying.]
+	if lagdebug is true:
+		say "Computing player [if the player is upright]standing[otherwise]kneeling[end if].";
+		wait 200 ms before continuing;
 	if the player is upright, compute player standing;
 	otherwise compute player kneeling;
 	if debugmode > 1, say "BEFORE PERIODIC.[PredicamentPenCheck]";
+	if lagdebug is true:
+		say "Computing periodic effects.";
+		wait 200 ms before continuing;
 	compute periodic effects with earnings local-earnings and seconds local-seconds;
 	if debugmode > 1, say "AFTER PERIODIC.[PredicamentPenCheck]";
 	now time-seconds is local-seconds;
 	now time-earnings is local-earnings;
+	if lagdebug is true:
+		say "Computing time.";
+		wait 200 ms before continuing;
 	if debugmode > 1, say "BEFORE TIME BASED.[PredicamentPenCheck]";
 	if timeBombTime > 0:
 		progress stopped time;
@@ -253,6 +251,9 @@ To compute turn:
 		if playerRegion is not school, follow the time based rulebook;
 		follow the all time based rulebook;
 	if debugmode > 1, say "AFTER TIME BASED.[PredicamentPenCheck]";
+	if lagdebug is true:
+		say "Computing monsters.";
+		wait 200 ms before continuing;
 	if the player is flying or last-turn-flight is 0: [This means, the turn that the player lands monsters don't get to act.]
 		if debugmode > 1, say "BEFORE MONSTERS.[PredicamentPenCheck]";
 		if delayed fainting is 0 and timeBombTime <= 0, compute monsters;
@@ -262,9 +263,15 @@ To compute turn:
 	now time-earnings is local-earnings;
 	repeat with M running through alive dying monsters:
 		finally destroy M;
+	if lagdebug is true:
+		say "Computing later time.";
+		wait 200 ms before continuing;
 	if timeBombTime <= 0:
 		if playerRegion is not school, follow the later time based rulebook;
 		follow the all later time based rulebook;
+	if lagdebug is true:
+		say "Resetting flags.";
+		wait 200 ms before continuing;
 	Reset Flags;
 	if debugmode > 1, say "AFTER FLAGS.[PredicamentPenCheck]";
 	compute flight; [Flight stuff must go last in the compute time order - the concept is it's checking if anything that happened caused the player to start flying.]
@@ -317,48 +324,23 @@ Calculates the very tired threshold of the player based on strength and body sor
 To decide which number is the very tired threshold of (Y - yourself):
 	decide on ((the strength of the player + 5) * 15 * (10 - the body soreness of the player)) / 10.
 
-[!<PersonIsTired>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: yourself (called Y) is tired:
 	if the fatigue of the player >= the tired threshold of the player, decide yes;
 	decide no.
 
-[!<PersonIsVeryTired>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: yourself (called Y) is very tired:
 	if the fatigue of the player >= the very tired threshold of the player, decide yes;
 	decide no.
 
-[!<DecideWhichNumberIsTheFatigueInfluenceOfClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the fatigue-influence of (C - a wearthing):
 	decide on 0.
 
-[!<DecideWhichNumberIsTheFatigueInfluenceOfEnduranceClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the fatigue-influence of (C - an endurance clothing):
 	let F be -1;
 	decrease F by the magic-modifier of C;
 	if C is blessed, decrease F by 1; [an extra 1]
 	decide on F.
 
-[!<ComputePlayerStanding>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute player standing:
 	now resting is 0;
 	if the largeness of belly > 3 or the largeness of breasts > 16 or dungeon chains is worn or black hood is worn or (the ready-for-milking of milking-quest is 1 and the milk volume of breasts > 10)[ or there is worn heels], compute upright fatigue gain; [We only gain fatigue while standing for very big bodies or when wearing heels. Other fatigue gain comes from walking around and kicking.]
@@ -409,9 +391,7 @@ To compute player standing:
 							otherwise if the charge of pink-spraybottle < 4:
 								say "[BigNameDesc of pink-spraybottle] fills up with dark liquid!";
 								now the charge of pink-spraybottle is 4;
-						if the magic-power of the player is 0:
-							say "Some magic energy returns to you!";
-							MagicPowerUp 1;
+						MagicPowerRefresh 6;
 				otherwise if there is a combative monster and the body soreness of the player > 8 and the bladder of the player > 6 and the player is not feeling dominant:
 					now delayed urination is 1;
 					say "Overcome with pain[if the player is not a pervert] and fear[otherwise if the humiliation of the player < 12500] and shame[end if], you involuntarily wet yourself.";
@@ -426,9 +406,9 @@ To compute player standing:
 		otherwise:
 			if the player is drill stuck, compute drill damage;
 			if the player is dildo stuck, compute dildo damage;
-			if the player is vine-cursed or the player is vine stuck or (diaper quest is 0 and (the location of the player is WoodsBoss01 or the class of the player is schoolgirl or the class of the player is magical girl)), compute vines standing; [EXPERIMENTAL]
+			if timeBombTime <= 0 and (the player is vine-cursed or the player is vine stuck or (diaper quest is 0 and (the location of the player is WoodsBoss01 or the class of the player is schoolgirl or the class of the player is magical girl))), compute vines standing; [EXPERIMENTAL]
 			if the player is glue stuck, compute glue escaping;
-	otherwise:
+	otherwise if timeBombTime <= 0:
 		compute vines fucking.
 
 To compute upright fatigue gain:
@@ -445,11 +425,6 @@ To compute upright fatigue gain:
 		FatigueUp W;
 		if debuginfo > 1, say "[the fatigue of the player] | [the buckle threshold of the player][roman type][line break]".
 
-[!<ComputeDildoDamage>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute dildo damage:
 	unless the latex-transformation of the player > 3:
 		repeat with D running through traps penetrating a fuckhole:
@@ -459,11 +434,6 @@ To compute dildo damage:
 				if D is penetrating asshole, ruin asshole;
 				otherwise ruin vagina.
 
-[!<ComputeDrillDamage>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute drill damage:
 	repeat with D running through drill pole traps penetrating a fuckhole:
 		let F be a random fuckhole penetrated by D;
@@ -471,11 +441,6 @@ To compute drill damage:
 		ruin F;
 		stimulate F from D. [extra stimulation and chance of orgasm]
 
-[!<ComputePlayerKneeling>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute player kneeling:
 	if diaper quest is 0 and the location of the player is Dungeon19:
 		if the soreness of asshole > 7:
@@ -492,11 +457,6 @@ To compute player kneeling:
 To decide which number is fatigue bonus:
 	decide on 20.
 
-[!<ComputeFatigueLoss>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute fatigue loss:
 	if the fatigue of the player > fatimod + fatigue bonus:
 		let F be 0;
@@ -510,11 +470,6 @@ To compute fatigue loss:
 		now the fatigue of the player is 0;
 		if the body soreness of the player < 10, say "Your legs feel [if the body soreness of the player is 0]completely rested[otherwise]ready to go[end if].".
 
-[!<ComputePinkSmoke>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute pink smoke:
 	if the location of the player is smoky and the player is not flying and the player is able to breathe and the number of aeromancer penetrating a body part is 0:
 		let R be a random number between 1 and 12;
@@ -541,28 +496,13 @@ To compute pink smoke:
 			say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room. [if the player is a bit horny][line break][otherwise]You feel all tingly inside.[end if]";
 			arouse 1000.
 
-[!<breathingBlockingRules:Rulebook>*
-
-REQUIRES COMMENTING
-
-*!]
 The breathing blocking rules is a rulebook.
 
-[!<PersonIsableToBreathe>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a person (called P) is able to breathe:
 	follow the breathing blocking rules;
 	if the rule succeeded, decide no;
 	decide yes.
 
-[!<ComputeInstinctiveactions>+
-
-REQUIRES COMMENTING
-
-+!]
 To Compute Instinctive Actions:
 	if another-turn is 0, follow the hypno triggers rules;
 	now hypno-trigger is "";
@@ -570,11 +510,6 @@ To Compute Instinctive Actions:
 	if the player is in Dungeon31 and another-turn is 0, compute podium action;
 	if another-turn is 0, Compute Broken Actions.
 
-[!<ComputeCompulsions>+
-
-REQUIRES COMMENTING
-
-+!]
 To Compute Compulsions:
 	now autodrink is 1;
 	let B be a random held actually drinkable bottle;
@@ -584,7 +519,7 @@ To Compute Compulsions:
 		now another-turn is 1;
 	otherwise if there is a carried throbbing-tentacle:
 		let P be a random carried throbbing-tentacle;
-		say "You feel the Master gently throbbing in your hands, so much smarter and more worthy than you. You reverently place him once again in front of your hole. [line break][first custom style]'It is good that you understand your place, slave. I will return now to my place of honour.'[roman type][line break]The Master once again worms its way into your [if the player is not possessing a vagina][asshole][otherwise][vagina][end if]!";
+		say "You feel the Master gently throbbing in your hands, so much smarter and more worthy than you. You reverently place him once again in front of your hole.[line break][first custom style]'It is good that you understand your place, slave. I will return now to my place of honour.'[roman type][line break]The Master once again worms its way into your [if the player is not possessing a vagina][asshole][otherwise][vagina][end if]!";
 		repeat with C running through worn top level protection clothing:
 			destroy C;
 		repeat with D running through worn clothing:
@@ -598,7 +533,7 @@ To Compute Compulsions:
 		now another-turn is 1;
 	otherwise if there is a throbbing-tentacle in the location of the player and the number of interested unfriendly monsters in the location of the player is 0:
 		let P be a random throbbing-tentacle in the location of the player;
-		say "You see the Master sitting, forlorn, on the ground. You find it so hard to think without him inside you, and you gently and reverently pick him up and place him once again in front of your hole. [line break][first custom style]'It is good that you understand your place, slave. I will return now to my place of honour.'[roman type][line break]The Master once again worms its way into your [if the player is not possessing a vagina][asshole][otherwise][vagina][end if]!";
+		say "You see the Master sitting, forlorn, on the ground. You find it so hard to think without him inside you, and you gently and reverently pick him up and place him once again in front of your hole.[line break][first custom style]'It is good that you understand your place, slave. I will return now to my place of honour.'[roman type][line break]The Master once again worms its way into your [if the player is not possessing a vagina][asshole][otherwise][vagina][end if]!";
 		repeat with C running through worn top level protection clothing:
 			destroy C;
 		repeat with D running through worn clothing:
@@ -658,7 +593,7 @@ This is the broken statue suck rule:
 
 This is the broken drink beg rule:
 	let P be the player;
-	repeat with M running through reactive friendly monsters:
+	repeat with M running through interested reactive friendly monsters:
 		if M is not last-begged, now P is M;
 	if P is not the player:
 		allocate 4 seconds;
@@ -672,11 +607,6 @@ This is the too horny masturbation rule:
 	try masturbating;
 	now auto is 0.
 
-[!<ComputeBrokenActions>+
-
-REQUIRES COMMENTING
-
-+!]
 To Compute Broken Actions:
 	if another-turn is 0 and another-turn-action is the no-stored-action rule:
 		if diaper quest is 0 and the player is broken and the player is prone and the player is not immobile and resting is 0 and busy is 0 and there is a willing to shag right now reactive monster:
@@ -879,7 +809,7 @@ A time based rule (this is the first aid cooldown rule):
 	if background-nurse is 1:
 		if FAcooldown > 0:
 			decrease FAcooldown by 1;
-		if FAcooldown is 0 and the number of on-stage bandages is 0:
+		if FAcooldown is 0 and the number of on-stage unowned bandages is 0:
 			say "A new bandage appears in your bag!";
 			let B be a random bandage;
 			now B is held by the player.
@@ -891,18 +821,8 @@ An all later time based rule (this is the pain drain cooldown rule):
 [Any and all flags that only last for one turn should go here.]
 [Also delayed humiliation, since it's the last thing that happens in a round.]
 
-[!<testingVal:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 testing-val is a number that varies.
 
-[!<ResetFlags>+
-
-REQUIRES COMMENTING
-
-+!]
 To Reset Flags:
 	if refractoryperiod > 0:
 		decrease refractoryperiod by 1;
@@ -946,11 +866,6 @@ To Reset Flags:
 	if the rawness of penis > 0 and wanking is 0 and the number of things penetrating penis is 0 and the number of things penetrating vagina is 0:
 		RawDown penis.
 
-[!<SayOtherTips>+
-
-REQUIRES COMMENTING
-
-+!]
 To say other tips:
 	if the player is not immobile and the body soreness of the player > 6 and the player is prone, say "[one of][newbie style]Newbie tip: You're quite sore, so you should look out for furniture to rest on, which will heal you. If you can't find any, you can always rest on the royal bed in the starting room, but this will increase your sex addiction, so it's best used as a last resort.[roman type][line break][or][stopping]";
 	if the player is not immobile and the soreness of asshole > 6 or the soreness of vagina > 6, say "[one of][newbie style]Newbie tip: Your hole is quite sore. It'll slowly go down over time, but you can heal it a bit instantly with lubricant. Also, you can drink from the statue in the statue hall to heal loads instantly, but don't do this too much - every time you do, you'll have to swallow some semen, and too much will make you become addicted.[roman type][line break][or][stopping]";

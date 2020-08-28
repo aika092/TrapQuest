@@ -37,8 +37,12 @@ To say MediumDesc of (H - spiked-tiara):
 	say "demonic tongued tiara".
 
 Definition: spiked-tiara is demonic: decide yes.
-Definition: spiked-tiara is white themed if tonguesBlack is false.
-Definition: spiked-tiara is black themed if tonguesBlack is true.
+Definition: spiked-tiara is white themed:
+	if tonguesBlack is false, decide yes;
+	decide no.
+Definition: spiked-tiara is black themed:
+	if tonguesBlack is true, decide yes;
+	decide no.
 
 To decide which number is the initial outrage of (C - spiked-tiara):
 	if C is tonguing, decide on 14;

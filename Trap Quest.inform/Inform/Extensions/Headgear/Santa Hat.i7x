@@ -24,7 +24,9 @@ To compute christmas socks of (H - a christmas headgear):
 		summon S cursed;
 		now the raw-magic-modifier of S is 2.
 
-Definition: a christmas headgear is removal-blocking if (it is cursed or the quest of it is naughty-quest) and wearing-target is christmas themed.
+Definition: a christmas headgear is removal-blocking:
+	if (it is cursed or the quest of it is naughty-quest) and wearing-target is christmas themed, decide yes;
+	decide no.
 
 Chapter - Quest
 
@@ -120,7 +122,7 @@ To compute class outfit of (H - a red bow headband):
 		repeat with O running through worn exclusive corsets:
 			say "Your [O] [wardrobeVanishes of O]!";
 			now O is in pink wardrobe;
-		repeat with O running through worn skirted clothing:
+		repeat with O running through worn skirt clashing clothing:
 			say "Your [O] [wardrobeVanishes of O]!";
 			now O is in pink wardrobe;
 		if christmas-summoned is 0, now christmas-summoned is 1;
@@ -163,7 +165,7 @@ To compute class outfit of (H - a star headband):
 		repeat with O running through worn exclusive corsets:
 			say "Your [O] [wardrobeVanishes of O]!";
 			now O is in pink wardrobe;
-		repeat with O running through worn skirted clothing:
+		repeat with O running through worn skirt clashing clothing:
 			say "Your [O] [wardrobeVanishes of O]!";
 			now O is in pink wardrobe;
 		if christmas-summoned < 2, now christmas-summoned is 2;

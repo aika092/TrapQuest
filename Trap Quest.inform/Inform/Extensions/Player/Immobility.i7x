@@ -19,7 +19,9 @@ To check immobility:
 Is the player unable to move?
 
 +!]
-Definition: yourself is immobile if player-immobile is true.
+Definition: yourself is immobile:
+	if player-immobile is true, decide yes;
+	decide no.
 Definition: yourself is at least partially immobile:
 	if there is a thing wrangling a body part or the player is immobile, decide yes;
 	decide no.
@@ -40,16 +42,13 @@ The blindfolded immobility rule is listed in the immobility rules.
 	if there is a seduced reactive monster, rule fails.
 The seduction minigame immobility rule is listed in the immobility rules.]
 
-[!<YourselfIsTrapStuck>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: yourself is trap stuck: [A player who is trap stuck will not be fucked by most NPCs]
 	if it is throne stuck, decide yes;
 	if it is bed-stuck, decide yes;
-	if there is a trap penetrating a body part, decide yes;
-	if there is a trap grabbing the player, decide yes;
+	repeat with T running through traps penetrating a body part:
+		unless T is vine, decide yes;
+	repeat with T running through traps grabbing the player:
+		unless T is vine, decide yes;
 	if chess table is grabbing the player, decide yes;
 	if gloryhole is penetrating a body part or gloryhole is grabbing the player, decide yes;
 	decide no.
@@ -73,11 +72,6 @@ Definition: a thing is drill stuck:
 	if there is a drill pole trap penetrating a fuckhole, decide yes;
 	decide no.
 
-[!<YourselfIsDildoStuck>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: yourself is dildo stuck:
 	if there is a dildo trap penetrating a fuckhole, decide yes;
 	decide no.
@@ -110,11 +104,6 @@ Definition: yourself is horse stuck:
 	if the number of wooden horses penetrating a fuckhole > 0, decide yes;
 	decide no.
 
-[!<TheImmobilityBlocksMasturbationRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the immobility blocks masturbation rule:
 	if there is a thing grabbing the player:
 		if auto is 0, say "The [random thing grabbing the player] is preventing you!";
@@ -127,30 +116,15 @@ Definition: yourself is at least partially living stuck:
 
 Part - Subduing
 
-[!<ComputeLeadHoldingOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute lead holding of (M - a monster):
 	let C be a random worn subduing clothing;
 	now M is covering C;
 	say "[SubduedGrabFlav of M on C]";
 	say "[SubduedGrabFlav of C]".
 
-[!<SaySubduedGrabFlavOfMonsterOnClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To say SubduedGrabFlav of (M - a monster) on (C - a clothing):
 	say "[BigNameDesc of M] grabs hold of your [ShortDesc of C]! There's no getting away now...".
 
-[!<SaySubduedGrabFlavOfClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To say SubduedGrabFlav of (C - clothing):
 	say "[variable custom style][if the delicateness of the player < 8]Fuck fuck fuck get off!!![otherwise if the delicateness of the player < 14]Oh dear, they have complete control of me now![otherwise]Uh-oh, caught again![end if][roman type][line break]";
 	if the player is glue stuck, say "[variable custom style]Oh no, this is gonna hurt![roman type][line break]".

@@ -2,11 +2,6 @@ Room Descriptions by Rooms begins here.
 
 Definition: a room is nonstandard: decide no. [A nonstandard room has no doors, traps, etc to describe]
 
-[!<AfterLooking>+
-
-REQUIRES COMMENTING
-
-+!]
 After looking:
 	repeat with L running through leftovers in the location of the player:
 		say "[Description of L]";
@@ -14,11 +9,6 @@ After looking:
 	unless the location of the player is nonstandard, say "[RoomTrapDesc][if inline hyperlinks < 2 and map images is 0][DoorDesc][end if]".
 The can't push what's fixed in place rule is not listed in the check pushing rulebook.
 
-[!<SayRoomTrapDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say RoomTrapDesc:
 	repeat with T running through revealed traps in the location of the player:
 		say EnvironmentDesc of T;
@@ -33,11 +23,6 @@ To say RoomTrapDesc:
 	if the location of the player is garlic, say "[if the location of the player is Mansion23]Something about this room feels less... alive than everywhere else[otherwise if the location of the player is no-roof]There is a glowing crest on the ground here, emanating a gentle aura of calm into your surroundings. The air here doesn't feel quite as heavy as it is everywhere else[otherwise]There is a glowing crest painted onto the floorboards in this room, emanating a pleasant feeling of calm into your surroundings. The air here doesn't feel quite as heavy as it is everywhere else[end if].";
 	say "[RoomMonsterDesc]".
 
-[!<RoomMonsterDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say RoomMonsterDesc:
 	now neighbour finder is the location of the player;
 	if the location of the player is nearby:
@@ -49,11 +34,6 @@ To say RoomMonsterDesc:
 					if the nearby-direction of M is D, say "	[M][line break]";
 				say "[line break]".
 
-[!<SayDoorDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say DoorDesc:
 	Now neighbour finder is the location of the player;
 	let X be the number of N-viable directions;
@@ -81,11 +61,6 @@ To decide which direction is the opposite-direction of (D - a direction):
 	if D is up, decide on down;
 	if D is down, decide on up.
 
-[!<SayHyperDescOfDirection>+
-
-REQUIRES COMMENTING
-
-+!]
 To say hyperdesc of (D - a direction):
 	say "[TQlink][D][TQdlink]".
 
@@ -151,22 +126,12 @@ For printing the locale description (this is the you-can-also-see-modified rule)
 			end the listing nondescript items activity with the domain;
 	continue the activity.
 
-[!<ToSayFullTextOfContainer>+
-
-REQUIRES COMMENTING
-
-+!]
 To say full text of (C - a container):
 	if the number of things in C is 0 or C is closed:
 		say "[C] [if C is closed](closed)[otherwise](empty)[end if]";
 	otherwise:
 		say "[C] (which contains [a list of things in C])".
 
-[!<ToSayFullTextOfPedestal>+
-
-REQUIRES COMMENTING
-
-+!]
 To say full text of (C - a pedestal):
 	say "[C] ";
 	if C is closed, now links-disabled is true; [disables hyperlinks until set to false]

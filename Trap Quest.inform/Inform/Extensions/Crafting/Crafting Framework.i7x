@@ -19,53 +19,23 @@ First, compile and run the game and one in-game, type "omega list me". This will
 Whenever you add shit to the crafting framework, please compile and test with "omega list me". Make sure that the new entry or entries at the bottom of the table look as you expect.
 ]
 
-[!<Thing>@<IsIngredient>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a thing is ingredient: decide no.
 
 [It's important to flag any item that can be used as an ingredient with this flag, or the game may not properly include it. We also need to make sure that it has a unique crafting key. This will probably be 1 higher than whatever the current highest crafting key is.]
-[!<Collectible>@<IsIngredient>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a collectible is ingredient: decide yes.
 
 [Giving each alchemy ingredient a different number (key) is the only way I can work out how to be able to randomise different types into a table.]
-[!<Thing>@<WhichNumberIsTheCraftingKey>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the crafting key of (C - a thing):
 	decide on 0.
 
-[!<DecideWhichNumberIsMaxCraftingKey>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is max crafting key:
 	let K be 0;
 	repeat with A running through ingredient things:
 		if the crafting key of A > K, now K is the crafting key of A;
 	decide on K.
 
-[!<currentCraftingKey:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 current-crafting-key is a number that varies.
 
-[!<Thing>@<IsHighlighted>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a thing (called C) is ingredient-highlighted:
 	if C is ingredient and the crafting key of C is current-crafting-key, decide yes;
 	decide no.
@@ -84,38 +54,18 @@ Definition: a number (called K) is alchemy appropriate: [Can we use this alchemy
 	decide no.
 
 [Lots of spare rows for future ingredients]
-[!<tableOfAlchemy:Table>*
-
-REQUIRES COMMENTING
-
-*!]
 Table of Alchemy
 Ingredient	Product	Recipe
 0	0	0
 with 100 blank rows
 
-[!<SetUpCollectibles>+
-
-REQUIRES COMMENTING
-
-+!]
 To Set Up Collectibles:
 	repeat with N running from 1 to 4:
 		let F be a random off-stage fae mushroom;
 		if F is fae mushroom, now F is in a random jungle room.
 
-[!<specificRecipeRules:Rulebook>*
-
-REQUIRES COMMENTING
-
-*!]
 The specific recipe rules is a rulebook.
 
-[!<SetUpAlchemyTable>+
-
-REQUIRES COMMENTING
-
-+!]
 To set up alchemy table:
 	let MC be max crafting key;
 	let MA be max alchemy key;
@@ -146,11 +96,6 @@ To set up alchemy table:
 			now the Product in row K of the Table of Alchemy is N;
 			now the Recipe in row K of the Table of Alchemy is 1.
 
-[!<NumberIsIngredientAppropriate>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a number (called K) is ingredient appropriate: [Will this ingredient be available in-game?]
 	[Here we can identify that some ingredients will never appear and are therefore inappropriate to put on a recipe.]
 	if the Recipe in row K of the Table of Alchemy is 1, decide no; [We have already assigned this ingredient to a recipe]
@@ -163,45 +108,20 @@ Definition: a number (called K) is ingredient appropriate: [Will this ingredient
 	if K is 18 and diaper quest is 1, decide no; [Minotaur horn]
 	decide yes.
 
-[!<Thing>@<IsProduct>+
-
-REQUIRES COMMENTING
-
-+@!]
 Definition: thing is product: decide no.
 
 [Giving each alchemy product a different number (key) is the only way I can work out how to be able to randomise different types into a table.]
-[!<Thing>@<WhichNumberIsTheAlchemyKey>+
-
-REQUIRES COMMENTING
-
-+@!]
 To decide which number is the alchemy key of (A - a thing):
 	decide on 0.
 
-[!<DecideWhichNumberIsMaxAlchemyKey>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is max alchemy key:
 	let K be 0;
 	repeat with A running through product things:
 		if the alchemy key of A > K, now K is the alchemy key of A;
 	decide on K.
 
-[!<currentAlchemyKey:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 current-alchemy-key is a number that varies.
 
-[!<Thing>@<IsRecipeSpecific>+
-
-REQUIRES COMMENTING
-
-+@!]
 Definition: a thing is recipe specific: decide no. [We flag that the recipe is always the same and never random, to make sure we never try to use this alchemy product as a random cursed outcome (a seasoned player would immediately know it was cursed)]
 
 To display complete alchemy data:

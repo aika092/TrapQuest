@@ -50,11 +50,6 @@ To commence doom:
 		if the number of alive undefeated dungeon dwelling gladiators is 0, now the next-summon of summoning-circle is a random off-stage dungeon dwelling gladiator;
 		now doom counter is 1.
 
-[!<ComputeDoom>+
-
-REQUIRES COMMENTING
-
-+!]
 A later time based rule (this is the compute doom rule):
 	if tough-shit is 1 and doom counter is 0:
 		let R be the room south from Stairwell03;
@@ -202,11 +197,6 @@ A time based rule (this is the doom weather rule):
 			say "[bold type]You have just stepped inside, out of the rain.[roman type][line break]";
 			now latestAnnouncedRaining is 0.
 
-[!<ResolveDoom>+
-
-REQUIRES COMMENTING
-
-+!]
 To Resolve Doom:
 	now doomed is 5;
 	now the Pink Sphere is in Holding Pen;
@@ -215,11 +205,6 @@ To Resolve Doom:
 	now herald is in Mansion23;
 	progress quest of ritual-quest.
 
-[!<ComputeChosenBirth>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute chosen birth:[now that the mindless acolytes are no longer needed to pool their strength, it's time to have some babies!]
 	repeat with A running through alive mindless acolytes:
 		now A is unleashed;
@@ -240,27 +225,23 @@ To compute chosen birth:[now that the mindless acolytes are no longer needed to 
 A time based rule (this is the creepiness rule):
 	compute creepiness.
 
-[!<creepiness:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 creepiness is a number that varies. creepiness is usually 0.
-[!<ComputeCreepiness>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute creepiness: [first implementation of "creeping" of ghosts in non-garlic rooms.]
+	let G be the number of alive ghosts + 1;
 	if the location of the player is garlic or playerRegion is not mansion:
-		if creepiness > 0, decrease creepiness by 10;[The player will have to hide for a couple turns to completely shake off the ghosts, but it shouldn't take too long]
-	otherwise if (creepiness > a random number between 10 and 20) and the number of alive ghosts * 30 < creepiness and there is an off-stage ghost:[player has to be in the mansion for a while before multiple ghosts start messing with them]
-		let M be a random off-stage ghost;[Sometimes this summons the jismbodied ghost, but you have to "kill" it first.]
-		set up M;
-		now M is in the location of the player;
-		say "Something in the air changes, and you look over your shoulder to see a pinprick of light in the doorway, slowly growing into [NameDesc of M].";
-		decrease creepiness by ((6 - game difficulty) * the number of on-stage ghosts) + 30;[it's almost certain you'll see one if something catches you, but it's very unlikely to get more than 2 at a time.]
-	otherwise if the player is not soulless:[The ghosts are attracted to your soul]
+		if creepiness > 0, decrease creepiness by 20; [The player will have to hide for a couple turns to completely shake off the ghosts, but it shouldn't take too long]
+		if creepiness < 0, now creepiness is 0;
+	otherwise if (creepiness > a random number between (G * 30) and (G * 60)) and there is an off-stage ghost: [player has to be in the mansion for a while before multiple ghosts start messing with them]
+		let LM be the list of off-stage ghosts;
+		if ghostly tentacle is listed in LM, remove ghostly tentacle from LM;
+		if the number of entries in LM > 0:
+			sort LM in random order;
+			let M be entry 1 in LM; [Sometimes this summons the jismbodied ghost, but you have to "kill" it first.]
+			set up M;
+			now M is in the location of the player;
+			say "Something in the air changes, and you look over your shoulder to see a pinprick of light in the doorway, slowly growing into [NameDesc of M].";
+			decrease creepiness by ((6 - game difficulty) * the number of on-stage ghosts) + 30; [it's almost certain you'll see one if something catches you, but it's very unlikely to get more than 2 at a time.]
+	otherwise if the player is not soulless: [The ghosts are attracted to your soul]
 		say "[one of][if creepiness > 9]Tension seems to linger in the air around you, and you can't help but feel something will burst out at you at any moment.[end if][or][or][or][if creepiness > 6]You can't shake the feeling that you are being watched.[end if][or][or][cycling]";
 		increase creepiness by 1.
 

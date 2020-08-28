@@ -1,10 +1,5 @@
 Going by Actions begins here.
 
-[!<SayGoingSubduedFlavOfClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To say GoingSubduedFlav of (C - a clothing):
 	say "[StandSubduedFlav of C]".
 
@@ -13,11 +8,6 @@ Check going when the player is at least partially monster stuck:
 		if minotaur is penetrating a body part and minotaur is asleep, try waiting instead;
 	try resisting instead.
 
-[!<CheckGoingWhileThePlayerIsImmobile>+
-
-REQUIRES COMMENTING
-
-+!]
 Check going while the player is immobile:
 	if the player is subdued:
 		say GoingSubduedFlav of a random worn subduing clothing;
@@ -41,84 +31,39 @@ Check going while the player is immobile:
 			say "You're stuck to the [one of]floor[or]ground[at random]! You'll need to [bold type]wait[roman type] a bit longer." instead;
 	say "You're immobile right now!" instead.
 
-[!<CheckGoingWhileTheThroneIsTriggered>+
-
-REQUIRES COMMENTING
-
-+!]
 Check going while the throne is triggered:
 	Dethrone the player instead.
 
-[!<CheckGoingWhileThePlayerIsClothingStuck>+
-
-REQUIRES COMMENTING
-
-+!]
 Check going while the player is clothing stuck:
 	say "You can't because your [random worn stuck clothing] is stuck in place!" instead.
 
-[!<CheckGoingEast>+
-
-REQUIRES COMMENTING
-
-+!]
 Check going east:
 	now the travel-direction of the player is east;
 	now the travel-opposite of the player is west.
 
-[!<CheckGoingNorth>+
-
-REQUIRES COMMENTING
-
-+!]
 Check going north:
 	if the player is in Stairwell03, try going up instead;
 	now the travel-direction of the player is north;
 	now the travel-opposite of the player is south.
 
-[!<CheckGoingWest>+
-
-REQUIRES COMMENTING
-
-+!]
 Check going west:
 	if the player is in Stairwell02, try going up instead;
 	if the location of the player is the room east of Hotel37 and there is an on-stage dominatrix:
-		if the scared of a random on-stage dominatrix > 0, say "A metal shutter is in the way. You[']ll have to wait until it comes back up." instead;
+		if the scared of a random on-stage dominatrix > 0, say "A metal shutter is in the way. You'll have to wait until it comes back up." instead;
 	now the travel-direction of the player is west;
 	now the travel-opposite of the player is east.
 
-[!<CheckGoingSouth>+
-
-REQUIRES COMMENTING
-
-+!]
 Check going south:
 	if the player is in Mansion01, try going down instead;
 	now the travel-direction of the player is south;
 	now the travel-opposite of the player is north;
 
-[!<CheckGoingUp>+
-
-REQUIRES COMMENTING
-
-+!]
 Check going up:
 	if there is a golem in the location of the player, say "You're going to need to deal with this monster!" instead.
 
-[!<CheckGoingDown>+
-
-REQUIRES COMMENTING
-
-+!]
 Check going down:
 	if there is a golem in the location of the player, say "You're going to need to deal with this monster!" instead.
 
-[!<TheHotelSetUpRule>+
-
-REQUIRES COMMENTING
-
-+!]
 Carry out going up (this is the hotel-setup rule):
 	if the player is in Stairwell02:
 		if Hotel01 is unplaced:
@@ -128,11 +73,6 @@ Carry out going up (this is the hotel-setup rule):
 				set up M.
 			[deploy a random off-stage camera trap in the location of HotelBedPatrons;]
 
-[!<TheWoodsSetUpRule>+
-
-REQUIRES COMMENTING
-
-+!]
 Carry out going up (this is the woods-setup rule):
 	if the player is in Stairwell01 and Woods01 is unplaced:
 		Set Up The Woods;
@@ -140,11 +80,6 @@ Carry out going up (this is the woods-setup rule):
 		repeat with M running through alive nonexistent monsters:
 			set up M.
 
-[!<TheMansionSetUpRule>+
-
-REQUIRES COMMENTING
-
-+!]
 Carry out going up (this is the mansion-setup rule):
 	if the player is in Stairwell03 and Mansion00 is unplaced:
 		Set Up The Mansion;
@@ -152,31 +87,14 @@ Carry out going up (this is the mansion-setup rule):
 		repeat with M running through alive nonexistent monsters:
 			set up M.
 
-[!<CheckGoingEastWhileThePlayerIsInHotel01>+
-
-REQUIRES COMMENTING
-
-+!]
 Check going east while the player is in Hotel01:
 	try going down instead.
 
-[!<ReportGoingUp>+
-
-REQUIRES COMMENTING
-
-+!]
 Report going up:
 	if map images > 0, display entire map;
 	repeat with C running through in-play clothing:
 		if C is not immune to change and C is not regional, destroy C.
 
-[The region-setup rule is listed before the monsters-go-next rule in the carry out going rulebook.]
-
-[!<ReportGoingDown>+
-
-REQUIRES COMMENTING
-
-+!]
 Report going down:
 	if map images > 0, display entire map;
 	repeat with C running through in-play clothing:
@@ -184,82 +102,42 @@ Report going down:
 
 Part 1 - Movement Hindrance Definitions
 
-[!<YourselfIsWaddling>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: yourself is waddling:
 	if there is a worn diaper:
 		let D be a random worn diaper;
 		if the weight of D > 2, decide yes;
 	decide no.
 
-[!<YourselfIsCrawling>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: yourself is crawling:
 	if there is a worn diaper:
 		let D be a random worn diaper;
 		if the weight of D > 5, decide yes;
 	decide no.
 
-[!<YourselfIsWobbling>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: yourself is wobbling:
 	repeat with H running through heels worn by the player:
 		if H is not platform heels and H is not wedge heels and the heel-height of H > 3 and the heel skill of the player < 7, decide yes;
 		if heel-height of H > 5 and the heel skill of the player < 7, decide yes;
 
-[!<YourselfIsHobbling>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: yourself is hobbling:
 	if there is worn crotch-displaced trousers, decide yes;
 	if the player is ankle bound, decide yes;
 	if there is a worn crotch-in-place hobble-skirted clothing, decide yes;
 	decide no.
 
-[!<YourselfIsSwaying>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: yourself is swaying:
 	if there is worn blessed yoga pants, decide no;
 	if the weight of hips > 16, decide yes;
 	decide no.
 
-[!<YourselfIsStaggering>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: yourself is staggering:
 	if the largeness of belly > 3, decide yes;
 	decide no.
 
-[!<YourselfIsSquirming>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: yourself is squirming:
 	if there is an insertable object penetrating a fuckhole, decide yes;
 	decide no.
 
-[!<movementReductionFlavSaid:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 movement-reduction-flav-said is initially false. [This gets reset every round in the 'reset flags' function.]
 
 [!<DecideWhichNumberIstheMovementReductionOfThePlayer>+
@@ -294,7 +172,7 @@ To decide which number is the movement reduction of the player:
 				if movement-reduction-flav-said is false:
 					now movement-reduction-flav-said is true;
 					now T is the substituted form of "Having to be careful to try and balance the [if C is 1]last remaining cake[otherwise][C] remaining cakes[end if] on your [MediumDesc of skirt-tray-vibrator] is hindering your ability to move quickly!";
-		if current-predicament is team-girlfriends-predicament and the player is in a predicament room and the player is not in Predicament01 and the player is not in Predicament20 and the defaultLeftTarget of arms is girlfriend-partner:
+		if current-predicament is team-girlfriends-predicament and the player is in a predicament room and the defaultLeftTarget of arms is girlfriend-partner:
 			increase X by 17;
 			if movement-reduction-flav-said is false:
 				now movement-reduction-flav-said is true;
@@ -367,11 +245,6 @@ To decide which number is the movement bonus of the player:
 
 Part 2 - Tripping
 
-[!<DecideWhichNumberIsTheTripHazardOfThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the trip hazard of the player:
 [This is all the things that could make the player trip regardless of whether they are wearing heels (but including heels).]
 	if the living belt of sturdiness is worn and the living belt of sturdiness is not cursed, decide on 0;
@@ -386,29 +259,14 @@ To decide which number is the trip hazard of the player:
 	if X < 0, decide on 0;
 	decide on X.
 
-[!<tripReasonsRules:Rulebook>*
-
-REQUIRES COMMENTING
-
-*!]
 The trip reasons rules is a rulebook.
 
-[!<TheTrippedOverExtremelyLongHairRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the tripped over extremely long hair rule:
 	if the largeness of hair > 14:
 		say "You trip over your extremely long [HairColour] [HairStyle] and end up on your knees instead!";
 		rule succeeds.
 The tripped over extremely long hair rule is listed last in the trip reasons rules.
 
-[!<TheSlippedOnHugePuddleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the slipped on huge puddle rule:
 	if the urine-puddle of the location of the player > 15:
 		say "You slip on the pool of [urine] underneath your feet!";
@@ -421,11 +279,6 @@ This is the slipped on huge puddle rule:
 		rule succeeds.
 The slipped on huge puddle rule is listed last in the trip reasons rules.
 
-[!<TheSlippedOnPuddleRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the slipped on puddle rule:
 	if the urine-puddle of the location of the player > 0:
 		say "You slip on the puddle of [urine] underneath your feet!";
@@ -441,44 +294,24 @@ This is the slipped on puddle rule:
 		rule succeeds.
 The slipped on puddle rule is listed last in the trip reasons rules.
 
-[!<TheTrippedOnStumblingHeelsRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the tripped on stumbling heels rule:
 	if there is a worn stumbling heels:
 		say "Your [printed name of a random worn heels] cause you to lose your footing!";
 		rule succeeds.
 The tripped on stumbling heels rule is listed last in the trip reasons rules.
 
-[!<TheTrippedFromCursedYogaPantsRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the tripped from cursed yoga pants rule:
 	if there is a worn cursed yoga pants:
 		say "Your [printed name of a random worn yoga pants] somehow cause you to lose your footing!";
 		rule succeeds.
 The tripped from cursed yoga pants rule is listed last in the trip reasons rules.
 
-[!<TheTrippedOnHeelsRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the tripped on heels rule:
 	if there is a worn heels:
 		say "Whilst trying to walk around in your [printed name of a random worn heels], you clumsily lose your footing!";
 		rule succeeds.
 The tripped on heels rule is listed last in the trip reasons rules.
 
-[!<TheDefaultTripFlavourRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the default trip flavour rule:
 	say "Whilst trying to walk, you trip and fall to your knees!";
 	rule succeeds.
@@ -487,12 +320,8 @@ The default trip flavour rule is listed last in the trip reasons rules.
 Part 3 - Main Going Function
 
 [This is a long function because the order of considerations is quite important here!]
-[!<CheckGoing>+
-
-REQUIRES COMMENTING
-
-+!]
 Check going:
+	now the player-motion of the player is 1; [Until we decide the player has failed to move, they are assumed to have succeeded at moving]
 	now the location of the player is discovered; [Just in case it didn't become discovered on the way in]
 	[Going is a resisting activity.]
 	if the player is live fucked, try resisting instead;
@@ -532,7 +361,7 @@ Check going:
 	repeat with M running through expectant monsters:
 		now the last-interaction of M is 0; [Naughty player, moving is not submissive! Monsters are not delayed by a going action.]
 	[The player has a chance of involuntarily standing up when super light and moving.]
-	if seconds is 3 or seconds is 6: [only in normal moves, not in double moves]
+	if seconds is 3 or seconds is 6:
 		if the player is prone and the player is zeroG:
 			say "You try to crawl forward but by pushing on the ground with your extremely light body, you inadvertently stand up.";
 			silently try standing;
@@ -599,7 +428,7 @@ Check going:
 				if the largeness of belly < 5:
 					say "You crawl forward on your hands and knees[if the bimbo of the player > 8], your [AssDesc] high in the air and your face close to the ground[end if].";
 				otherwise if the largeness of belly < 8:
-					say "You crawl forward on your hands and knees,[if the bimbo of the player > 8] your [AssDesc] high in the air and your face close to the ground, and[end if] your [BellyDesc] rubbing along the floor.";
+					say "You crawl forward on your hands and knees,[if the bimbo of the player > 8] your [AssDesc] high in the air and your face close to the ground, and[end if] your [BellyDesc] [one of]rubbing[or]bumping[or]slipping[at random] along the floor.";
 				otherwise:
 					say "You crawl forward on your hands and knees, your [BellyDesc] forcing your [AssDesc] high in the air and your face close to the ground.";
 			otherwise:
@@ -607,14 +436,14 @@ Check going:
 					if the largeness of belly < 5:
 						say "You crawl forward on your hands and knees, your [BreastDesc] swaying heavily in front of you[if the bimbo of the player > 8], your [AssDesc] high in the air and your face close to the ground[end if].";
 					otherwise if the largeness of belly < 8:
-						say "You crawl forward on your hands and knees, your [BreastDesc] swaying heavily in front of you,[if the bimbo of the player > 8] your [ShortDesc of hips] high in the air and your face close to the ground, and[end if] your [BellyDesc] rubbing along the floor.";
+						say "You crawl forward on your hands and knees, your [BreastDesc] swaying heavily in front of you,[if the bimbo of the player > 8] your [ShortDesc of hips] high in the air and your face close to the ground, and[end if] your [BellyDesc] [one of]rubbing[or]bumping[or]slipping[at random] along the floor.";
 					otherwise:
-						say "You crawl forward on your hands and knees, your [BellyDesc] forcing your [ShortDesc of hips] high in the air and your [BreastDesc] to drag along the floor.";
+						say "You crawl forward on your hands and knees, your [BellyDesc] forcing your [ShortDesc of hips] high in the air and your [BreastDesc] to [one of]drag[or]scrape[or]slip[or]bump[at random] along the floor.";
 				otherwise:
 					if the largeness of belly < 5:
 						say "You crawl forward on your hands and knees, shovelling your [BreastDesc] along the ground in front of you[if the bimbo of the player > 8], your [ShortDesc of hips] high in the air and your face close to the ground[end if].";
 					otherwise if the largeness of belly < 8:
-						say "You crawl forward on your hands and knees, shovelling your [BreastDesc] along the ground in front of you,[if the bimbo of the player > 8] your [ShortDesc of hips] high in the air, and[end if] your [BellyDesc] rubbing along the floor.";
+						say "You crawl forward on your hands and knees, shovelling your [BreastDesc] along the ground in front of you,[if the bimbo of the player > 8] your [ShortDesc of hips] high in the air, and[end if] your [BellyDesc] [one of]rubbing[or]bumping[or]slipping[at random] along the floor.";
 					otherwise:
 						say "You manage to shovel your [BreastDesc] and [BellyDesc] along the ground and crawl forward.";
 			[otherwise:
@@ -664,13 +493,8 @@ This is the player trips on lever rule:
 			rule succeeds.
 The player trips on lever rule is listed in the clumsiness rules.
 
-[!<TheMonstersGoNextRule>+
-
-REQUIRES COMMENTING
-
-+!]
 Carry Out Going (this is the monsters-go-next rule):
-	if seconds is 3 or seconds is 6: [only in normal moves, not in double moves]
+	if seconds is 3 or seconds is 6:
 		if the player is in a predicament room:
 			repeat with M running through alive bystanders:
 				compute movement of M;
@@ -728,52 +552,6 @@ Definition: yourself is moving slowly:
 	if R <= MT, decide yes;
 	decide no.
 
-[To Delay Crawling:
-	allocate 6 seconds;
-	if the fatigue of the player > the fatigue of the player / 2:
-		if the largeness of belly > 6:
-			say "Your legs are feeling quite weak, and your hands can hardly reach the ground thanks to your [BellyDesc][if the largeness of breasts > 9] and [BreastDesc][end if], which is stopping you from being able to crawl effectively. Try again?";
-		otherwise:
-			if the largeness of belly < 4 and the weight of breasts > 18:
-				say "Your legs are feeling quite weak, and your [BreastDesc] keep your chest pinned to the ground, which is stopping you from being able to crawl effectively. Try again?";
-			otherwise if the largeness of belly < 4 and the largeness of breasts < 7:
-				say "You struggle to find the energy to crawl forward. Try again?";
-			otherwise if the largeness of belly < 4:
-				say "The combination of your fatigue and [BreastDesc] are making it slightly difficult to crawl, try again?";
-			otherwise:
-				say "The combination of your fatigue[if the largeness of breasts >= 7], [BreastDesc][end if] and [BellyDesc] are making it slightly difficult to crawl, try again?";
-	otherwise if the largeness of breasts + the largeness of belly < 10:
-		say "[one of]Your legs are feeling quite weak, so you stay still on your knees while they recover a bit more. Try again?[or]Your arms wobble as you try to crawl, causing you to stop and take a breath. Woah, better try again?[or]The feebleness of your girly arms is making it a bit difficult to even crawl. Try again?[purely at random]";
-	otherwise:
-		if the largeness of belly > 6:
-			say "Your hands can hardly reach the ground thanks to your [BellyDesc][if the largeness of breasts > 9] and [BreastDesc][end if], stopping you from being able to crawl effectively. Try again?";
-		otherwise:
-			if the weight of belly < 12 and the weight of breasts > 18, say "Your [BreastDesc] keep your chest pinned to the ground, and are stopping you from being able to crawl effectively. Try again?";
-			otherwise say "The combination of your [BreastDesc] and [BellyDesc] are making it slightly difficult to crawl, try again?".]
-
-[To Forbid Crawling:
-	if the largeness of belly < 4:
-		say "Your [BreastDesc] are just too big to shovel along the ground. You're going to have to wait until you can stand up again.";
-	otherwise:
-		if the largeness of belly > 7:
-			say "Your [BellyDesc] is so big[if the largeness of breasts > 13] and your [BreastDesc] are so bloated[end if] that you're struggling to get a grip on the ground. You're going to have to wait until your belly deflates or you can manage to stand up again.";
-		otherwise:
-			if the strength of the player < 6, say "Your arm muscles are too weak to help you crawl. You're going to have to wait until you can stand up again.";
-			otherwise say "The combination of your [BreastDesc] and your [BellyDesc] are preventing you from crawling at all. You're going to have to wait until you can stand up again.".]
-
-[!<SayMovementBlockOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
-To say MovementBlock of (M - a monster):
-	say "[BigNameDesc of M] manages to get in front of you and block your path, slowing down your movement!".
-
-[!<CarryOutGoingWhileThePlayerIsInDungeon41AndDungeon41IsGuarded>+
-
-REQUIRES COMMENTING
-
-+!]
 Carry out going while the player is in Dungeon41 and Dungeon41 is guarded:
 	let X be the number of held stolen thing;
 	let flav-said be 0;
@@ -795,11 +573,6 @@ Carry out going while the player is in Dungeon41 and Dungeon41 is guarded:
 
 Part 4 - Trap Triggers
 
-[!<ReportGoing>+
-
-REQUIRES COMMENTING
-
-+!]
 Report going:
 	Do important going resolution.
 
@@ -810,11 +583,6 @@ To do important going resolution:
 	if the location of the player is Dungeon12:
 		remove all interest.
 
-[!<RemoveAllInterest>+
-
-REQUIRES COMMENTING
-
-+!]
 To remove all interest:
 	if the number of interested monsters > 0:
 		say "Safe in [if the class of the player is princess]your[otherwise]the princess['][end if] royal chambers, you feel [one of]the heavy gaze of the monsters of the game lifted from you[or]the monsters of the game lose interest in you[or]like you are no longer being stalked[at random].";
@@ -828,11 +596,6 @@ To remove all interest:
 				if M is in Mansion01:
 					summon M in the Mansion.
 
-[!<ChooseATrapToTrigger>+
-
-REQUIRES COMMENTING
-
-+!]
 To Choose A Trap To Trigger:
 	now the player-motion of the player is 1;
 	if debugmode is 1, say "Detecting if there is a correct facing trap to trigger...[paragraph break]";
@@ -866,21 +629,11 @@ To Choose A Trap To Trigger:
 		if WasUpright is true and the player is prone and the location of the player is glue-puddled:
 			check glue tripping.
 
-[!<YourselfIsWalkingPastAStickyTrap>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: yourself is walking past a sticky trap:
 	repeat with T running through sticky traps in the location of the player:
 		decide yes;
 	decide no.
 
-[!<TestAStickyTrap>+
-
-REQUIRES COMMENTING
-
-+!]
 To Test a Sticky Trap:
 	let D be a random number from 1 to the dexterity of the player;
 	let R be a random number between 5 and 10;
@@ -906,33 +659,18 @@ To Test a Sticky Trap:
 To say StickyTriggerFlav of (T - a trap):
 	say "As your hands hit the ground, you feel a pressure pad depress underneath them! [one of]That can't be good.[or]Oh dear...[or]Not again...[or]Dammit.[stopping]".
 
-[!<YourselfIsWalkingIntoAPressureTrap>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: yourself is walking into a pressure trap:
 	if the player is zeroG or the player is on tiptoes, decide no;
 	repeat with T running through all untriggered pressure traps in the location of the player:
 		if the trap-direction of T is the travel-opposite of the player, decide yes;
 	decide no.
 
-[!<YourselfIsWalkingPastAPressureTrap>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: yourself is walking past a pressure trap:
 	if the player is zeroG or the player is on tiptoes, decide no;
 	repeat with T running through all untriggered pressure traps in the location of the player:
 		if the trap-direction of T is the travel-direction of the player, decide yes;
 	decide no.
 
-[!<TestAPressureTrap>+
-
-REQUIRES COMMENTING
-
-+!]
 To Test A Pressure Trap:
 	let B be the largeness of breasts;
 	if the player is upright:
@@ -956,11 +694,6 @@ To Test A Pressure Trap:
 			say "[bold type]As you crawl your hand touches a stone slab that starts to depress.[roman type] You fail to react in time and trigger a trap![line break]";
 			trigger a pressure trap.
 
-[!<TriggerAPressureTrap>+
-
-REQUIRES COMMENTING
-
-+!]
 To Trigger A Pressure Trap:
 	let N be 0;
 	if the room-entering of the player is 0:
@@ -976,31 +709,16 @@ To Trigger A Pressure Trap:
 				trigger T;
 				now N is 1.
 
-[!<YourselfIsWalkingIntoAWireTrap>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: yourself is walking into a wire trap:
 	repeat with T running through wire traps in the location of the player:
 		if the trap-direction of T is the travel-opposite of the player, decide yes;
 	decide no.
 
-[!<YourselfIsWalkingPastAWireTrap>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: yourself is walking past a wire trap:
 	repeat with T running through wire traps in the location of the player:
 		if the trap-direction of T is the travel-direction of the player, decide yes;
 	decide no.
 
-[!<TestAWireTrap>+
-
-REQUIRES COMMENTING
-
-+!]
 To Test A Wire Trap:
 	let T be a random revealed relevant tripwire trap in the location of the player;
 	if the player is upright:
@@ -1033,11 +751,6 @@ To Test A Wire Trap:
 			trigger a wire trap;
 	if T is nothing, place permanent triggered wire.
 
-[!<TriggerAWireTrap>+
-
-REQUIRES COMMENTING
-
-+!]
 To Trigger A Wire Trap:
 	let T be a random untriggered relevant wire trap in the location of the player;
 	if T is nothing, now T is a random relevant tripwire trap in the location of the player; [Let's try and find a tripwire instead]
@@ -1045,11 +758,6 @@ To Trigger A Wire Trap:
 		now focused-thing is T;
 		trigger T.
 
-[!<PlacePermanentTriggeredWire>+
-
-REQUIRES COMMENTING
-
-+!]
 To Place Permanent Triggered Wire:
 	let W be a random off-stage tripwire trap;
 	unless W is nothing:

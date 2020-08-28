@@ -4,11 +4,6 @@ To decide which number is vagina-semen-frequency:
 	if the player is in a predicament room, decide on 9;
 	decide on 129.
 
-[!<ComputeCumMovements>+
-
-REQUIRES COMMENTING
-
-+!]
 An all time based rule (this is the compute cum movements rule):
 	if the player is not in a predicament room, compute absorption;
 	unless the player is in Dungeon35 or the player is in Woods05:
@@ -20,7 +15,7 @@ An all time based rule (this is the compute cum movements rule):
 		otherwise if R < the semen coating of belly and the semen coating of belly > 0:
 			compute belly cum dribbling;
 		otherwise if R < the semen coating of thighs and the semen coating of thighs > 0:
-			say "Globs of [semen] drip from your [ShortDesc of thighs] onto the ground.[if the semen addiction of the player < 6] [line break][first custom style]Yuck.[roman type][line break][end if]";
+			say "Globs of [semen] drip from your [ShortDesc of thighs] onto the ground.[if the semen addiction of the player < 6][line break][first custom style]Yuck.[roman type][line break][end if]";
 			CumThighsDown 1;
 			SemenPuddleUp 1;
 		if the total fill of belly > 0:
@@ -72,16 +67,11 @@ An all time based rule (this is the compute cum movements rule):
 					if S is 3:
 						say "[one of]Heat flows from your womb up outwards to your hips.[or]You feel a warm feeling in your womb.[or]You feel some pressure lifted from within your womb.[cycling]";
 						WombEmpty 1;
-						Hipup 1;
+						HipUp 1;
 			otherwise if the semen volume of vagina > 0:
 				say "A large glob of [semen] [one of]slowly seeps[or]leaks[purely at random] out of your [vagina] and [if the player is pee protected and bukkake fetish is 1]stains [NameDesc of random worn bottom level pee protection clothing].[otherwise if the player is prone]puddles below you.[otherwise]trickles down your [ShortDesc of thighs].[end if]";
 				PussySquirt 1.
 
-[!<CheckGoddessEligibility>+
-
-REQUIRES COMMENTING
-
-+!]
 To check goddess eligibility:
 	unless the player is in a predicament room:
 		if the vaginalvirgin of the player is 1:
@@ -105,29 +95,14 @@ To check goddess eligibility:
 				say "[bold type]A bunny tail plug materialises inside your [asshole]![roman type][line break]";
 				summon bunny tail plug cursed.
 
-[!<SayConceptionFlav>+
-
-REQUIRES COMMENTING
-
-+!]
 To say ConceptionFlav:
 	say "[one of]You look down, and realise that your belly isn't slowly getting smaller as you'd expect. [if the bimbo of the player < 8][line break][first custom style]Am I pregnant?![otherwise][line break][second custom style]I think I'm pregnant![end if][roman type][line break][or]You feel the tiniest kick coming from inside your belly... [if the bimbo of the player < 8][line break][first custom style]Uh-oh.[otherwise][line break][second custom style]Oopsie, I think I got myself knocked up back there![end if][roman type][line break][purely at random]".
 
-[!<DecideWhichNumberIsBellyStrainBalance>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is belly strain balance: [tweak this number to balance this mechanic]
 	if there is a rejuvenation clothing penetrating asshole, decide on 160;[rejuvenation dildos suck unless they help you handle enemas in some way, but I'm not certain how to implement "enema-helping" on only the rejuvenation clothing, especially when magical enchantments can sometimes change. Maybe it needs to be a definition instead?]
 	[if the player is in a predicament room, decide on 15;]
 	decide on 40.
 
-[!<ComputeEnemaHoldingWithEarningsAndSeconds>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute enema holding:
 	let TS be the total squirtable fill of belly;
 	if TS > 0 and the latex-transformation of the player < 5 and currently-squirting is 0:
@@ -171,22 +146,12 @@ To compute enema holding:
 		reset all enema effects;
 		now the holding strain of belly is 0.
 
-[!<YourselfIsAbleToAutomaticallyExpel>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: yourself is able to automatically expel:
 	if there is a worn crotch-in-place milking basque, decide no;
 	if the player is not able to expel, decide no;
 	if the trophy-mode of expel-trophy is 1 and asshole is actually occupied, decide no;
 	decide yes.
 
-[!<YourselfIsAbleToExpel>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: yourself is able to expel:
 	if asshole is actually occupied:
 		if a random thing penetrating asshole is sex toy, decide yes;
@@ -202,78 +167,33 @@ REQUIRES COMMENTING
 @!]
 An enema-effect is a kind of object.
 
-[!<EnemaEffect>@<incidents:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 An enema-effect has a number called incidents.
 
-[!<DecideWhichNumberIsTheMaxIncidentsOfEnemaEffect>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the max-incidents of (E - an enema-effect):
 	decide on 1.
 
-[!<AnEnemaEffectIsViable>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: an enema-effect (called E) is viable:
 	if the incidents of E < the max-incidents of E, decide yes;
 	decide no.
 
-[!<ResetAllEnemaEffects>+
-
-REQUIRES COMMENTING
-
-+!]
 To reset all enema effects:
 	repeat with E running through enema-effects:
 		now the incidents of E is 0.
 
-[!<ComputeEffectOfEnemaEffect>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute effect of (E - an enema-effect):
 	say "[bold type]";
 	execute E;
 	say "[roman type][line break]";
 	increase the incidents of E by 1.
 
-[!<ExecuteEnemaEffect>+
-
-REQUIRES COMMENTING
-
-+!]
 To execute (E - an enema-effect):
 	say "BUG - the enema effect '[E]' has no coded effect. Please report!".
 
-[!<enemaCramping:EnemaEffect>*
-
-REQUIRES COMMENTING
-
-*!]
 enema-cramping is an enema-effect.
 
-[!<DecideWhichNumberIsTheMaxIncidentsOfEnemaCramping>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the max-incidents of (E - enema-cramping):
 	decide on 1000.
 
-[!<ExcecuteEnemaCramping>+
-
-REQUIRES COMMENTING
-
-+!]
 To execute (E - enema-cramping):
 	say "[one of]The [enema] inside your belly puts huge pressure on your rectum[or]Your rectal muscles spasm as it struggles to hold in your [enema][in random order], ";
 	if the player is upright and the incidents of enema-cramping > 0:
@@ -285,94 +205,39 @@ To execute (E - enema-cramping):
 		say "[one of]causing your fatigue to rise[or]making your knees weak[or]and your arms buckle[in random order] as [one of]your intestines cramp up[or]a huge bolt of pain hits your stomach[or]your tummy groans as it cramps[at random].";
 		if the fatigue of the player < the tired threshold of the player, now the fatigue of the player is the tired threshold of the player.
 
-[!<enemaStatLoss:EnemaEffect>*
-
-REQUIRES COMMENTING
-
-*!]
 enema-stat-loss is an enema-effect.
 
-[!<DecideWhichNumberIsTheMaxIncidentsOfEnemaStatLoss>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the max-incidents of (E - enema-stat-loss):
 	decide on 2.
 
-[!<ExecuteEnemaStatLoss>+
-
-REQUIRES COMMENTING
-
-+!]
 To execute (E - enema-stat-loss):
 	say "The effort of holding your [enema] in weakens the rest of your body. You will be [if the incidents of E > 0]even [end if]slower and weaker until you [italic type]expel[bold type] it out.".
 
-[!<enemaIntLoss:EnemaEffect>*
-
-REQUIRES COMMENTING
-
-*!]
 enema-int-loss is an enema-effect.
 
-[!<DecideWhichNumberIsTheMaxIncidentsOfEnemaIntLoss>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the max-incidents of (E - enema-int-loss):
 	decide on 2.
 
-[!<ExecuteEnemaIntLoss>+
-
-REQUIRES COMMENTING
-
-+!]
 To execute (E - enema-int-loss):
 	say "The uncomfortable nature of your [enema] clouds your mind. You [if the incidents of E > 0]will have an even cloudier mind[otherwise]won't be able to think as clearly[end if] until you [italic type]expel[bold type] it out.".
 
-[!<enemaIncontinence:EnemaEffect>*
-
-REQUIRES COMMENTING
-
-*!]
 enema-incontinence is an enema-effect.
 
-[!<EnemaIncontinenceIsViable>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: enema-incontinence is viable:
 	if diaper lover is 0 or the player is in a predicament room, decide no;
 	if the player is incontinent or incontinence >= the max-incontinence of the player, decide no;
 	if the incidents of enema-incontinence + 2 < the incidents of enema-cramping, decide yes;
 	decide no.
 
-[!<ExecuteEnemaIncontinence>+
-
-REQUIRES COMMENTING
-
-+!]
 To execute (E - enema-incontinence):
 	say "You've been holding onto your [enema] for so long that feel your sphincter weaken[if incontinence > 0] even further[end if]. ";
 	increase incontinence by 1;
 	say "[if the player is not incontinent]You'll now find it even more difficult to hold things in and tell when you need the toilet[otherwise]You can somehow tell that you are now completely incontinent[end if].".
 
-[!<ComputeAbsorption>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute absorption:
 	repeat with C running through worn absorption clothing:
 		compute absorption of C.
 
-[!<ComputeAbsorptionOfClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute absorption of (B - a clothing):
 	if the total-soak of B > 0:
 		let X be 50;

@@ -38,7 +38,7 @@ To set up (M - a robobellboy):
 	now the health of M is the maxhealth of M.
 
 To decide which number is the starting difficulty of (M - robobellboy):
-	decide on 5.
+	decide on 6.
 
 To decide which room is the nearest patron:
 	let D be 100;
@@ -63,9 +63,9 @@ Part 1 - Misc Flavour
 
 To say SummoningFlav of (M - a robobellboy):
 	if M is in the location of the player:
-		say "The teleporter emits a definitive sounding hum, and light fills the room as a small, human-shaped robot materialises on the pad. [line break][first custom style]'ALLOW ME TO HELP YOU WITH THAT.'[roman type][line break]";
+		say "The teleporter emits a definitive sounding hum, and light fills the room as a small, human-shaped robot materialises on the pad.[line break][first custom style]'ALLOW ME TO HELP YOU WITH THAT.'[roman type][line break]";
 	otherwise:
-		say "You hear the sound of a robotic voice coming from elsewhere in the hotel. [line break][first custom style]'ALLOW ME TO HELP YOU WITH THAT.'[roman type][line break]".
+		say "You hear the sound of a robotic voice coming from elsewhere in the hotel.[line break][first custom style]'ALLOW ME TO HELP YOU WITH THAT.'[roman type][line break]".
 
 To say LeftoverDesc (N - 117):
 		say "There is a pile of mangled nuts and bolts here that used to be a fully functional robobellboy.[line break]".
@@ -82,16 +82,16 @@ To compute perception of (M - a robobellboy):
 		say "[first custom style]'SERVANT, YOUR SERVICES ARE REQUIRED.'[roman type][line break]";
 		anger M;
 	otherwise if M is babifying the player:
-		say "[big his of M] eyes turn red. [line break][first custom style][unless the class of the player is succubus]'LITTLE ONE, YOUR CLIENTS ARE WAITING. [caps please] ALLOW ME TO ESCORT YOU.'[otherwise]'THE CREATOR REQUESTS YOUR ASSISTANCE IN FUNDING THIS HOTEL.'[end if][roman type][line break]";
+		say "[big his of M] eyes turn red.[line break][first custom style][unless the class of the player is succubus]'LITTLE ONE, YOUR CLIENTS ARE WAITING. [caps please] ALLOW ME TO ESCORT YOU.'[otherwise]'THE CREATOR REQUESTS YOUR ASSISTANCE IN FUNDING THIS HOTEL.'[end if][roman type][line break]";
 		anger M;
 	otherwise if M is objectifying the player:
 		if the times-submitted of pimp > 0:
-			say "[big his of M] eyes turn red. [line break][speech style of M]'PART-TIME WHORE. [caps please] ALLOW ME TO MAKE USE OF YOUR SERVICES.'[roman type][line break]";
+			say "[big his of M] eyes turn red.[line break][speech style of M]'PART-TIME WHORE. [caps please] ALLOW ME TO MAKE USE OF YOUR SERVICES.'[roman type][line break]";
 		otherwise:
-			say "[big his of M] eyes turn red. [line break][speech style of M][unless the class of the player is succubus]'FREELANCE WHORE. [caps please] ALLOW ME TO MAKE USE OF YOUR SERVICES.'[otherwise]'THE CREATOR REQUESTS YOUR ASSISTANCE IN FUNDING THIS HOTEL.'[end if][roman type][line break]";
+			say "[big his of M] eyes turn red.[line break][speech style of M][unless the class of the player is succubus]'FREELANCE WHORE. [caps please] ALLOW ME TO MAKE USE OF YOUR SERVICES.'[otherwise]'THE CREATOR REQUESTS YOUR ASSISTANCE IN FUNDING THIS HOTEL.'[end if][roman type][line break]";
 		anger M;
 	otherwise if the class of the player is not catgirl and the class of the player is not puppygirl and (the number of worn crotch covering clothing is 0 or the number of worn breast covering clothing is 0):
-		say "[big his of M] eyes turn red. [line break][first custom style][unless the class of the player is succubus]'YOU REQUIRE CLOTHING. ALLOW ME TO ASSIST YOU.'[otherwise]'THE CREATOR CONSIDERS IT IMPROPER FOR [caps his of demon lord] SERVANTS TO BE NUDE. ALLOW ME TO ASSIST YOU.'[end if][roman type][line break]";
+		say "[big his of M] eyes turn red.[line break][first custom style][unless the class of the player is succubus]'YOU REQUIRE CLOTHING. ALLOW ME TO ASSIST YOU.'[otherwise]'THE CREATOR CONSIDERS IT IMPROPER FOR [caps his of demon lord] SERVANTS TO BE NUDE. ALLOW ME TO ASSIST YOU.'[end if][roman type][line break]";
 		cutshow Figure of RoboBellboy Cutscene 1 for M;
 		anger M;
 	otherwise:
@@ -99,7 +99,9 @@ To compute perception of (M - a robobellboy):
 		bore M;
 	if M is interested, now target-room of M is the nearest patron.[for some reason this function has pretty insane hang time on it, so I moved it into a place will it will trigger less frequently]
 
-Definition: a senior robobellboy is objectifying the player if the employee-record of it < 0.
+Definition: a senior robobellboy is objectifying the player:
+	if the employee-record of it < 0, decide yes;
+	decide no.
 
 To compute perception of (M - senior robobellboy):
 	if there is a worn messed knickers:
@@ -109,22 +111,22 @@ To compute perception of (M - senior robobellboy):
 		say "[big he of M] appears to be completely uninterested in you and continues on [his of M] way.";
 		bore M;
 	otherwise if the training-progress of M > 2:
-		say "[big his of M] eyes turn red. [line break][speech style of M]'GOOD GOING TRAINEE. [caps please] KNEEL FOR YOUR TRAINING COMPLETION CEREMONY.'[roman type][line break]";
+		say "[big his of M] eyes turn red.[line break][speech style of M]'GOOD GOING TRAINEE. [caps please] KNEEL FOR YOUR TRAINING COMPLETION CEREMONY.'[roman type][line break]";
 	otherwise if (the player is a trained hooker or the class of the player is succubus) and the refractory-period of mechanic + the refractory-period of demon lord <= 0:
-		say "[big his of M] eyes turn red. [line break][speech style of M]'HELLO EMPLOYEE. SUBMIT IMMEDIATELY FOR PERFORMANCE REVIEW.'[roman type][line break]";
+		say "[big his of M] eyes turn red.[line break][speech style of M]'HELLO EMPLOYEE. SUBMIT IMMEDIATELY FOR PERFORMANCE REVIEW.'[roman type][line break]";
 	otherwise if the class of the player is maid or the player is a hooker in training:
-		say "[big his of M] eyes turn red. [line break][speech style of M]HELLO TRAINEE. [caps please] SUBMIT FOR FURTHER PERFORMANCE OPTIMISATION.'[roman type][line break]";
+		say "[big his of M] eyes turn red.[line break][speech style of M]'HELLO TRAINEE. [caps please] SUBMIT FOR FURTHER PERFORMANCE OPTIMISATION.'[roman type][line break]";
 	otherwise if the class of the player is succubus:
-		say "[big his of M] eyes flicker red, then green. [line break][speech style of M]HELLO HONOURED EMPLOYEE. [caps please] DO NOT HURT ME.[roman type][line break][big he of M] appears to lose interest and continues on [his of M] way.";
+		say "[big his of M] eyes flicker red, then green.[line break][speech style of M]'HELLO HONOURED EMPLOYEE. [caps please] DO NOT HURT ME.'[roman type][line break][big he of M] appears to lose interest and continues on [his of M] way.";
 		bore M;
 	otherwise if M is babifying the player:
-		say "[big his of M] eyes turn red. [line break][speech style of M]'LITTLE ONE, YOUR CLIENTS ARE WAITING. [caps please] ALLOW ME TO ESCORT YOU.'[roman type][line break]";
+		say "[big his of M] eyes turn red.[line break][speech style of M]'LITTLE ONE, YOUR CLIENTS ARE WAITING. [caps please] ALLOW ME TO ESCORT YOU.'[roman type][line break]";
 	otherwise if M is objectifying the player:
-		say "[big his of M] eyes turn red. [line break][speech style of M]'HELLO NEW TRAINEE. SEVERAL COMPLAINTS HAVE BEEN MADE OF YOUR LACKLUSTRE DEDICATION. SUBMIT IMMEDIATELY FOR PERFORMANCE OPTIMISATION.'[roman type][line break]";
+		say "[big his of M] eyes turn red.[line break][speech style of M]'HELLO NEW TRAINEE. SEVERAL COMPLAINTS HAVE BEEN MADE OF YOUR LACKLUSTRE DEDICATION. SUBMIT IMMEDIATELY FOR PERFORMANCE OPTIMISATION.'[roman type][line break]";
 	otherwise if the class of the player is not catgirl and the class of the player is not puppygirl and (the number of worn crotch covering clothing is 0 or the number of worn breast covering clothing is 0):
-		say "[big his of M] eyes turn red. [speech style of M]'ERROR LINE 34, PATRON UNSUITABLE. INITIALISING EJECTION PROTOCOL... ERROR... ERROR... HELLO NEW TRAINEE. [caps please] SUBMIT IMMEDIATELY FOR PERFORMANCE OPTIMISATION.";
+		say "[big his of M] eyes turn red.[line break][speech style of M]'ERROR LINE 34, PATRON UNSUITABLE. INITIALISING EJECTION PROTOCOL... ERROR... ERROR... HELLO NEW TRAINEE. [caps please] SUBMIT IMMEDIATELY FOR PERFORMANCE OPTIMISATION.";
 	otherwise:
-		say "[speech style of M]HELLO TREASURED CUSTOMER. [caps please] ALLOW THE BUTLER TO ASSIST YOU.[roman type][line break][big he of M] appears to lose interest and continues on [his of M] way.";
+		say "[speech style of M]'HELLO TREASURED CUSTOMER. [caps please] ALLOW THE BUTLER TO ASSIST YOU.'[roman type][line break][big he of M] appears to lose interest and continues on [his of M] way.";
 		bore M;
 	if M is interested:
 		anger M;
@@ -181,7 +183,7 @@ To compute trainee forcing of (M - a robobellboy):
 
 To compute maid forcing of (M - a robobellboy):
 	[One day I want to code a unique punishment for maids, once I've thought of a good one.]
-	compute whore forcing of M.[Selkie says: I think it might be fun if the bellboy drags the player through the hotel, forcing them to clean up all the dirty floors with their tongue][Selkie thinks a scene where you're dragged through to polish and clean various parts of the hotel would be fun. It could choose randomly between lovingly cleaning the dildo seat, the modification machine, the hypno screens, the dominatrix's X-frame, the toilets, ... polishing the cocks of the robots, cleaning the portal and then being dragged away before you could use it to escape. Just humiliating scenes. Maybe one where you have to wash a dirty patron, or make the bed or wash the semen-stained sheets from one of the rooms. Let me know if you'd like me to write them. You'd either need to select only rooms visited, or else say they're dragged so quickly from room to room they can't remember the confusing turns that got them to places they hadn't visited.] [Aika: Dragging code automatically works out a path and then flags all the rooms along that path as discovered, so the turns aren't that confusing.]
+	compute whore forcing of M.[Selkie says: I think it might be fun if the bellboy drags the player through the hotel, forcing them to clean up all the dirty floors with their tongue][Selkie thinks a scene where you're dragged through to polish and clean various parts of the hotel would be fun. It could choose randomly between lovingly cleaning the dildo seat, the modification machine, the hypno screens, the dominatrix's X-frame, the toilets, ...polishing the cocks of the robots, cleaning the portal and then being dragged away before you could use it to escape. Just humiliating scenes. Maybe one where you have to wash a dirty patron, or make the bed or wash the semen-stained sheets from one of the rooms. Let me know if you'd like me to write them. You'd either need to select only rooms visited, or else say they're dragged so quickly from room to room they can't remember the confusing turns that got them to places they hadn't visited.] [Aika: Dragging code automatically works out a path and then flags all the rooms along that path as discovered, so the turns aren't that confusing.]
 
 To compute whore forcing of (M - a robobellboy):
 	now the target-room of M is the location of a random on-stage hotel bed;
@@ -262,7 +264,7 @@ To compute knickers forcing of (M - a robobellboy):
 
 To compute failed forcing of (M - a robobellboy):
 	now the whore-intent of M is 1;
-	say "[BigNameDesc of M] seems to pause for a moment, and then seems to change his mind in how to deal with you. [line break][first custom style]'UNABLE TO SELECT SUITABLE FETISH ATTIRE; CLIENT WILL HAVE TO STAY NUDE. [if diaper quest is 1]BABY SLAVE[otherwise]PROSTITUTION[end if] DUTIES PROGRAM ENGAGED.'[roman type][line break]";
+	say "[BigNameDesc of M] seems to pause for a moment, and then seems to change his mind in how to deal with you.[line break][first custom style]'UNABLE TO SELECT SUITABLE FETISH ATTIRE; CLIENT WILL HAVE TO STAY NUDE. [if diaper quest is 1]BABY SLAVE[otherwise]PROSTITUTION[end if] DUTIES PROGRAM ENGAGED.'[roman type][line break]";
 	compute whore forcing of M.
 
 To uniquely destroy (M - a robobellboy): [Are there any special rules we need to follow?]
@@ -333,15 +335,17 @@ Section 1 - Senior Robobellboy
 
 senior robobellboy is a robobellboy. senior robobellboy has a number called training-progress. The training-progress of senior robobellboy is 0. senior robobellboy has a number called employee-record. The employee-record of senior robobellboy is 0. The text-shortcut of senior robobellboy is "srb".
 
+To decide which number is the starting difficulty of (M - senior robobellboy):
+	decide on 8.
+
 To say ShortDesc of (M - senior robobellboy):
 	say "senior RoboBellboy".
-
 To say MediumDesc of (M - senior robobellboy):
 	say "senior RoboBellboy".
 
 To ProgressUp (M - senior robobellboy):
 	if the training-progress of M >= 0, increase the training-progress of M by 1;
-	if the training-progress of M >= 3, say "You hear a computerized voice speaking in your head. [line break][second custom style][if the player is a trained hooker]CONGRATULATIONS ON COMPLETING YOUR IMPROVEMENT PROGRAM, EMPLOYEE. ALWAYS KEEP IMPROVING[otherwise]CONGRATULATIONS, TRAINEE. YOU HAVE COMPLETED [training-progress of M] EMPLOYEE IMPROVEMENT PROGRAMS. [caps please] SEE THE SENIOR ROBOBELLBOY FOR CERTIFICATION[end if].'[roman type][line break]";
+	if the training-progress of M >= 3, say "You hear a computerized voice speaking in your head.[line break][second custom style][if the player is a trained hooker]CONGRATULATIONS ON COMPLETING YOUR IMPROVEMENT PROGRAM, EMPLOYEE. ALWAYS KEEP IMPROVING[otherwise]CONGRATULATIONS, TRAINEE. YOU HAVE COMPLETED [training-progress of M] EMPLOYEE IMPROVEMENT PROGRAMS. [caps please] SEE THE SENIOR ROBOBELLBOY FOR CERTIFICATION[end if].'[roman type][line break]";
 
 To compute unique banishment of (M - senior robobellboy):
 	let L be a random off-stage leftover;
@@ -353,7 +357,7 @@ To compute unique banishment of (M - senior robobellboy):
 To compute trainee forcing of (M - senior robobellboy):
 	if there is a worn free ride tattoo and the training-progress of M is 3, now the training-progress of M is -1;
 	if the training-progress of M > 2:
-		say "[BigNameDesc of M] pauses and [his of M] eyes shift from red to yellow. [line break][speech style of M]ADVANCED TRAINEE DETECTED. ADMINISTERING INSIGNIA OF QUALITY.[roman type][line break][big he of M] seizes you by the wrists, holding you tightly as [his of M] chest compartment opens up.";
+		say "[BigNameDesc of M] pauses and [his of M] eyes shift from red to yellow.[line break][speech style of M]ADVANCED TRAINEE DETECTED. ADMINISTERING INSIGNIA OF QUALITY.[roman type][line break][big he of M] seizes you by the wrists, holding you tightly as [his of M] chest compartment opens up.";
 		if there is a worn tattoo:
 			let T be a random off-stage crotch tattoo;
 			if T is drawable and the concealer of T is nothing:
@@ -365,7 +369,7 @@ To compute trainee forcing of (M - senior robobellboy):
 			otherwise:
 				say "[big he of M] seems to struggle to find an appropriate tattoo template and closes the compartment again silently.";
 		otherwise:
-			say "[big he of M]'s motionless for a second, then [he of M] closes [his of M] chest compartment without releasing you. [line break][speech style of M]'ERROR LINE 35, CANVAS UNSUITABLE... ADMINISTERING FINAL EXAM'[roman type][line break]";
+			say "[big he of M]'s motionless for a second, then [he of M] closes [his of M] chest compartment without releasing you.[line break][speech style of M]'ERROR LINE 35, CANVAS UNSUITABLE... ADMINISTERING FINAL EXAM'[roman type][line break]";
 			compute whore forcing of M;
 		now the training-progress of M is -1;
 		bore M;
@@ -381,17 +385,17 @@ To compute trainee forcing of (M - senior robobellboy):
 To compute headgear forcing of (M - senior robobellboy):
 	if trainee hood is off-stage and trainee hood is actually summonable:
 		summon trainee hood;
-		say "[BigNameDesc of M] opens up [his of M] chest compartment and pulls out a [ShortDesc of trainee hood]. You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces it over your head, where a metal latch snaps closed and emits a short and somehow ominous tone. [line break][first custom style]'APPEARANCE REGIMEN INITIATED. [caps please] WAIT PATIENTLY FOR FURTHER OPTIMISATION.[roman type][line break]";
+		say "[BigNameDesc of M] opens up [his of M] chest compartment and pulls out a [ShortDesc of trainee hood]. You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces it over your head, where a metal latch snaps closed and emits a short and somehow ominous tone.[line break][first custom style]'APPEARANCE REGIMEN INITIATED. [caps please] WAIT PATIENTLY FOR FURTHER OPTIMISATION.[roman type][line break]";
 		FavourUp M;
 	otherwise:
-		say "[BigNameDesc of M] pauses and [his of M] eyes shift from red to green. [line break][first custom style]'CANNOT EXCEED MAXIMUM NUMBER OF ONGOING [']CLASS['] PROGRAMS. GOOD JOB TRAINEE. KEEP UP THE GOOD WORK.'[roman type][line break]";
+		say "[BigNameDesc of M] pauses and [his of M] eyes shift from red to green.[line break][first custom style]'CANNOT EXCEED MAXIMUM NUMBER OF ONGOING [']CLASS['] PROGRAMS. GOOD JOB TRAINEE. KEEP UP THE GOOD WORK.'[roman type][line break]";
 	bore M.
 
 To compute bra forcing of (M - senior robobellboy):
 	let C be a random off-stage trainee bra;
 	if C is clothing and C is actually summonable:
 		summon C;
-		say "[BigNameDesc of M] opens up [his of M] chest compartment and pulls out a [ShortDesc of C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces the item onto your body, where the straps snap together and emit a small tone that worries you. [line break][first custom style]MAMMARY IMPROVEMENT REGIMEN INITIATED. [caps please] WAIT PATIENTLY FOR FURTHER OPTIMISATION.[roman type][line break]";
+		say "[BigNameDesc of M] opens up [his of M] chest compartment and pulls out a [ShortDesc of C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces the item onto your body, where the straps snap together and emit a small tone that worries you.[line break][first custom style]MAMMARY IMPROVEMENT REGIMEN INITIATED. [caps please] WAIT PATIENTLY FOR FURTHER OPTIMISATION.[roman type][line break]";
 		bore M;
 		FavourUp M;
 	otherwise:
@@ -401,7 +405,7 @@ To compute knickers forcing of (M - senior robobellboy):
 	let C be a random off-stage trainee thigh highs;
 	if C is clothing and C is actually summonable:
 		summon C;
-		say "[BigNameDesc of M] opens up [his of M] chest compartment and pulls out a pair of [ShortDesc of C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces them onto your body, where it clings to your skin like glue. [line break][first custom style]'FULL MENTAL REGIMEN INITIATED. [caps please] WAIT PATIENTLY FOR FURTHER OPTIMISATION.'[roman type][line break]";
+		say "[BigNameDesc of M] opens up [his of M] chest compartment and pulls out a pair of [ShortDesc of C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces them onto your body, where it clings to your skin like glue.[line break][first custom style]'FULL MENTAL REGIMEN INITIATED. [caps please] WAIT PATIENTLY FOR FURTHER OPTIMISATION.'[roman type][line break]";
 		bore M;
 		FavourUp M;
 	otherwise:
@@ -414,7 +418,7 @@ To compute whore forcing of (M - senior robobellboy):
 		if D is not in the location of the player:
 			drag to (the location of D) by M;
 		otherwise:
-			say "[speech style of M]'HELLO SIR. I HAVE BROUGHT THIS ONE IN TIME FOR YOUR BI-HOURLY EMPLOYEE REVIEW.'[roman type][line break][BigNameDesc of M] lets go and starts to leave as [if D is mechanic]the [D] turns around with a cocky grin, unzipping [his of D] pants. [line break][speech style of D]'Guess it's my responsibility to take care of this, huh?'[roman type][line break][otherwise]the [D] turns around stroking [his of D] enormous [manly-penis]. [line break][speech style of D]'[one of]EVEN I HAVE RESPONSIBILITIES[or]YOU FAIL! BUT I'M GOING TO FUCK YOU ANYWAY[or]YOU PASS! TIME TO CELEBRATE[at random]! HA HA HA!'[roman type][line break][end if][line break]";
+			say "[speech style of M]'HELLO SIR. I HAVE BROUGHT THIS ONE IN TIME FOR YOUR BI-HOURLY EMPLOYEE REVIEW.'[roman type][line break][BigNameDesc of M] lets go and starts to leave as [if D is mechanic]the [D] turns around with a cocky grin, unzipping [his of D] pants.[line break][speech style of D]'Guess it's my responsibility to take care of this, huh?'[roman type][line break][otherwise]the [D] turns around stroking [his of D] enormous [manly-penis].[line break][speech style of D]'[one of]EVEN I HAVE RESPONSIBILITIES[or]YOU FAIL! BUT I'M GOING TO FUCK YOU ANYWAY[or]YOU PASS! TIME TO CELEBRATE[at random]! HA HA HA!'[roman type][line break][end if][line break]";
 			now D is interested;
 			anger D;
 			bore M;
@@ -433,7 +437,7 @@ To compute whore forcing of (M - senior robobellboy):
 
 To compute failed forcing of (M - senior robobellboy):
 	now the whore-intent of M is 1;
-	say "[BigNameDesc of M] seems to pause for a moment, and then seems to change his mind in how to deal with you. [line break][first custom style]'UNABLE TO UPGRADE PERFORMANCE. PROSTITUTE MAY BE FULLY UPGRADED. PROSTITUTION DUTIES PROGRAM ENGAGED.'[roman type][line break]";
+	say "[BigNameDesc of M] seems to pause for a moment, and then seems to change his mind in how to deal with you.[line break][first custom style]'UNABLE TO UPGRADE PERFORMANCE. PROSTITUTE MAY BE FULLY UPGRADED. PROSTITUTION DUTIES PROGRAM ENGAGED.'[roman type][line break]";
 	compute whore forcing of M.
 
 RoboBellboy ends here.

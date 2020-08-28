@@ -5,11 +5,6 @@ The report rubbing rule is not listed in the report rubbing rulebook.
 
 ragFound is an object that varies.
 
-[!<CheckRubbing>+
-
-REQUIRES COMMENTING
-
-+!]
 Check rubbing:
 	if the noun is body part:
 		compute RagFinding;
@@ -17,32 +12,17 @@ Check rubbing:
 		do nothing instead;
 	unless the noun is magic lamp, say "You should use the [if the noun is glue]phrase 'brush glue with (object)'[otherwise]phrase '(clean/wipe) (body part) with (object/fingers)'[end if] instead." instead.
 
-[!<cleaningItWith:Action>*
-
-REQUIRES COMMENTING
-
-*!]
 Cleaning it with is an action applying to two things.
 
-[!<AThingIsAppropriateForCleaning>+
-
-REQUIRES COMMENTING
-
-+!]
-Definition: a thing (called C) is appropriate for cleaning:
-	if C is not clothing, decide no;
-	if C is condom of kings or C is fluid immune, decide no;
+Definition: a thing is appropriate for cleaning:
+	if it is not clothing, decide no;
+	if it is not fluid vulnerable, decide no;
 	decide yes.
 
 Understand "clean", "clean me", "clean self", "wash", "wash me", "wash self", "wipe", "wipe me", "wipe self" as cleaning it with.
 Understand "clean [something]", "wash [something]", "wipe [something]" as cleaning it with.
 Understand "clean [something] with [something]", "wash [something] with [something]", "wipe [something] with [something]", "wipe [something] into [something]" as cleaning it with.
 
-[!<RuleForSupplyingAMissingNounWhileCleaning>+
-
-REQUIRES COMMENTING
-
-+!]
 Rule for supplying a missing noun while cleaning:
 	if the semen coating of face > 0:
 		now the noun is face;
@@ -57,11 +37,6 @@ Rule for supplying a missing noun while cleaning:
 	otherwise:
 		say "You don't have any body parts that need cleaning.".
 
-[!<RuleForSupplyingAMissingSecondNounWhileCleaning>+
-
-REQUIRES COMMENTING
-
-+!]
 Rule for supplying a missing second noun while cleaning:
 	compute RagFinding;
 	if ragFound is not nothing, now the second noun is ragFound.
@@ -85,11 +60,6 @@ To compute RagFinding:
 	otherwise if RagFound is nothing and the noun is body part:
 		say "You don't appear to have any appropriate items you could clean yourself with.".
 
-[!<CheckCleaningItWith>+
-
-REQUIRES COMMENTING
-
-+!]
 Check cleaning it with:[TODO: wiping into an open vessel]
 	if the player is not able to manually use their hands, do nothing instead;
 	if the player is immobile:
@@ -115,6 +85,7 @@ Check cleaning it with:[TODO: wiping into an open vessel]
 	if the second noun is clothing:
 		if the second noun is pink-spraybottle, say "That can only be used for cleaning puddles and clothing." instead;
 		if the player is flying and the second noun is not held by the player, say "[BigNameDesc of the second noun] is on the ground, and you're not." instead;
+		if the second noun is external fluid immune, say "The outside of that is waterproof, so it wouldn't work very well as a rag." instead;
 		if the second noun is not appropriate for cleaning, say "That's not something you can clean with. Maybe try a piece of clothing actually made out of soft fabric?" instead;
 		if the semen-soak of the second noun + the urine-soak of the second noun + the milk-soak of the second noun >= the soak-limit of the second noun, say "The [printed name of second noun] is too covered in bodily fluids to effectively remove any more from your body." instead;
 		if the second noun is worn and the second noun is not gloves, say "You are currently wearing the [printed name of second noun], so it would be difficult to clean yourself with it." instead;
@@ -135,19 +106,9 @@ Definition: a thing (called T) is acceptableCumRag:
 	if the humiliation of the player > 28000 and the semen addiction of the player > 15 and ((the player is not craving semen and the player is not thirsty and the semen addiction of the player > the semen taste addiction of the player) or T is not arms), decide no;
 	decide yes.
 
-[!<CarryOutCleaningItWith>+
-
-REQUIRES COMMENTING
-
-+!]
 Carry out cleaning it with:
 	2Clean the noun with the second noun;
 
-[!<2CleanBodyPartWithClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To 2Clean (P - a body part) with (C - a clothing):
 	allocate 6 seconds;
 	say "You use [NameDesc of C] to clean as much [semen] from your [P] as possible.[if the semen addiction of the player < 6][line break][first custom style][one of]Gross.[or]Yuck.[or]Disgusting.[or]Well, that's a little bit better at least.[then at random][roman type][line break][end if]";
@@ -164,11 +125,6 @@ To 2Clean (P - a body part) with (C - a clothing):
 	otherwise:
 		say "[BigNameDesc of C] has become completely saturated and there is still [if the semen coating of P > 3]lots of[otherwise]some[end if] [semen] on your [if P is face]face[otherwise][variable P][end if].".
 
-[!<2CleanBodyPartWithPocketwipes>+
-
-REQUIRES COMMENTING
-
-+!]
 To 2Clean (P - a body part) with (C - a pocketwipes):
 	allocate 6 seconds;
 	say "You use [NameDesc of C] to wipe your [P] clean.[if the semen coating of P > 0 and the semen addiction of the player < 6][line break][first custom style][one of]Gross.[or]Yuck.[or]Disgusting.[or]Well, that's a little bit better at least.[then at random][roman type][line break][end if]";
@@ -180,11 +136,6 @@ To 2Clean (P - a body part) with (C - a pocketwipes):
 	if P is hair, now the urine coating of hair is 0;
 	destroy C.
 
-[!<2CleanBodyPartWithLimb>+
-
-REQUIRES COMMENTING
-
-+!]
 To 2Clean (P - a body part) with (C - a limb):
 	allocate 6 seconds;
 	say "You use your fingers to scrape a bit of [semen] from your [P] and eat it.[if the semen taste addiction of the player > 11][line break][second custom style][one of]Mmm, tasty![or]Yummy![or]Yum yum![or]So good![then at random][roman type][line break][end if] ";
@@ -197,11 +148,6 @@ To 2Clean (P - a body part) with (C - a limb):
 	suggest swallowing;
 	if the semen volume of face > 0, SemenTasteAddictUp 1.
 
-[!<ReportCleaningItWithWhenTheSecondNounIsClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 Report cleaning it with when the second noun is clothing:
 	force inventory-focus redraw; [Forces redraw of inventory window]
 	if the second noun is store and Dungeon41 is guarded and shopkeeper is not mating:
@@ -211,11 +157,6 @@ Report cleaning it with when the second noun is clothing:
 			increase the stolen-aware of shopkeeper by 1;
 		compute stealing of the second noun.
 
-[!<CleanClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To clean (C - a clothing):
 	now the urine-soak of C is 0;
 	now the milk-soak of C is 0;

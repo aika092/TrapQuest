@@ -82,8 +82,10 @@ To say selfexamineuniquetitle of (G - white-breed-panties):
 To say UniqueClothingDesc of (G - white-breed-panties):
 	say "This white pair of panties says 'Breed Me' on the [if wonderfuller clothing is 1]front[otherwise]back[end if], to encourage people to try and get [if G is worn]you[otherwise]the wearer[end if] pregnant.".
 Understand "breed me", "white", "breed" as white-breed-panties.
-Definition: white-breed-panties is fetish appropriate if pregnancy fetish > 0.
-Definition: white-breed-panties is pregnancy related: decide yes.
+Definition: white-breed-panties is fetish appropriate:
+	if pregnancy fetish > 0, decide yes;
+	decide no.
+Definition: white-breed-panties is pregnancy themed: decide yes.
 Definition: white-breed-panties is white themed: decide yes.
 To uniquely set up (T - white-breed-panties):
 	now the damage of T is 0;
@@ -162,8 +164,10 @@ To say selfexamineuniquetitle of (G - black-diagram-panties):
 To say UniqueClothingDesc of (G - black-diagram-panties):
 	say "This modest black pair of panties has a diagram of the female reproductive system on the front.".
 Understand "ovaries", "female", "reproductive", "system", "black", "diagram" as black-diagram-panties.
-Definition: black-diagram-panties is fetish appropriate if pregnancy fetish > 0.
-Definition: black-diagram-panties is pregnancy related: decide yes.
+Definition: black-diagram-panties is fetish appropriate:
+	if pregnancy fetish > 0, decide yes;
+	decide no.
+Definition: black-diagram-panties is pregnancy themed: decide yes.
 Definition: black-diagram-panties is vagina themed: decide yes.
 Definition: black-diagram-panties is black themed: decide yes.
 To uniquely set up (T - black-diagram-panties):

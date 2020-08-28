@@ -11,9 +11,15 @@ To decide which number is the initial outrage of (C - a christmas dress):
 To decide which number is the initial cringe of (C - a christmas dress):
 	decide on 8.
 
-Definition: a christmas dress is fetish appropriate if diaper lover > 0.
-Definition: a christmas dress is sissifying if diaper lover > 0.
-Definition: a christmas dress is class-transformation-protected if the class of the player is santa's little helper.
+Definition: a christmas dress is fetish appropriate:
+	if diaper lover > 0, decide yes;
+	decide no.
+Definition: a christmas dress is sissifying:
+	if diaper lover > 0, decide yes;
+	decide no.
+Definition: a christmas dress is class-transformation-protected:
+	if the class of the player is santa's little helper, decide yes;
+	decide no.
 Definition: a christmas dress is end of transformation chain: decide yes.
 
 To set up influence of (C - a christmas dress):

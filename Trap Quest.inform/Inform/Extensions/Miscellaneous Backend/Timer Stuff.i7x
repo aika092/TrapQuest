@@ -30,7 +30,7 @@ Section - Restart the timer after undoing
 
 [The state of the timer is not automatically saved with the game state, so we must start a timer after undoing at the same speed it was running when the game state was saved.]
 
-The immediately undo rule response (E) is "[@ reset the Glulx timer][bracket]Previous turn undone.[close bracket][if the map-window is spawned by the main window and the position of the map-window is g-placeabove][@ reset window setting][@ resolve graphics windows mayhem][@ fix window overhang][end if]".
+The immediately undo rule response (E) is "[@ reset the Glulx timer][bracket]Previous turn undone.[close bracket][if the player is a top donator][@ reset window setting][@ resolve graphics windows mayhem][@ fix window overhang][end if]".
 
 To reset window setting:
 	now previousGUILayout is -1.
@@ -45,9 +45,13 @@ Section - Glk events (for use without Glulx Input Loops by Erik Temple)
 
 A g-event is a kind of value. The g-events are timer-event, char-event, line-event, mouse-event, arrange-event, redraw-event, sound-notify-event, hyperlink-event, and volume-event.
 
-Definition: A g-event is window-independent rather than window-dependent if it is timer-event or it is sound-notify-event or it is arrange-event or it is redraw-event.
+Definition: A g-event is window-independent rather than window-dependent:
+	if it is timer-event or it is sound-notify-event or it is arrange-event or it is redraw-event, decide yes;
+	decide no.
 
-Definition: A g-event is glk-initiated if it is timer-event or it is sound-notify-event or it is arrange-event or it is not redraw-event.
+Definition: A g-event is glk-initiated:
+	if it is timer-event or it is sound-notify-event or it is arrange-event or it is not redraw-event, decide yes;
+	decide no.
 
 To decide which g-event is null-event: (- 0 -)
 
@@ -108,12 +112,18 @@ To decide which figure-name is the resource-image of (N - a number):
 		if the Glulx Resource ID of F is N, decide on F.
 
 To fill (T - an animation track) from (F - a figure-name) to (N - a number):
-	truncate the image-reel of T to 0 entries;
+	[truncate the image-reel of T to 0 entries;]
 	add F to the image-reel of T;
 	let X be the Glulx Resource ID of F;
-	repeat with FX running from 1 to N:
-		increase X by 1;
-		add the resource-image of X to the image-reel of T;
+	if N > 0:
+		repeat with FX running from 1 to N:
+			increase X by 1;
+			add the resource-image of X to the image-reel of T;
+	otherwise if N < 0:
+		now N is N * -1;
+		repeat with FX running from 1 to N:
+			decrease X by 1;
+			add the resource-image of X to the image-reel of T.
 
 An animation track has a number called animX. An animation track has a number called animY. An animation track has a number called animW. An animation track has a number called animH.
 
@@ -154,12 +164,19 @@ To kill all animations:
 		cease animation of T.
 
 To wait until animations are over:
+	now the glulx replacement command is ""; [otherwise if it's already set to 'skip' the animation will immediately end]
 	wait before continuing;
 	if animationsEnabled is 1 or there is a g-animated initial animation track:
 		while there is g-animated animation track:
 			repeat with G running through g-animated animation tracks:
 				now G is g-unpaused;
 			wait before continuing.
+
+To wait until loading animation pauses:
+	now the glulx replacement command is ""; [otherwise if it's already set to 'skip' the animation will immediately end]
+	while there is g-animated g-unpaused loading animation track:
+		wait before continuing;
+	wait before continuing.
 
 To compute TQanimation of (F - a figure-name) in (W - a g-window) at (X1 - a number) by (Y1 - a number) with dimensions (BX - a number) by (BY - a number):
 	let T be the TQAnimTrack of F;
@@ -266,6 +283,8 @@ To compute animation of (T - an animation track):
 				otherwise:
 					now T is not g-reversing;
 					increase the current-frame of T by the animation-speed of T;
+				if T is loading animation track:
+					if the current-frame of T is (the number of entries in the image-reel of T - the pause-frame of T), now T is g-paused;
 			otherwise:
 				increase the frame-tick of T by 1;
 	otherwise:
@@ -283,7 +302,7 @@ To decide which object is the TQAnimTrack of (F - Figure of RaiseSkirtButtonLigh
 To decide which object is the TQAnimTrack of (F - Figure of RaiseSkirtButtonDark):
 	decide on skirtDisplacedAnimation.
 To uniquely set up (T - skirtDisplacedAnimation):
-	now the image-reel of T is { };
+	truncate the image-reel of T to 0 entries;
 	if darkMode is 1, add Figure of AnimatedRaiseSkirtButtonDark to the image-reel of T;
 	otherwise add Figure of AnimatedRaiseSkirtButtonLight to the image-reel of T;
 	add Figure of RaiseSkirtButton to the image-reel of T.
@@ -294,7 +313,7 @@ To decide which object is the TQAnimTrack of (F - Figure of UnzipButtonLight):
 To decide which object is the TQAnimTrack of (F - Figure of UnzipButtonDark):
 	decide on pantsUnzippedAnimation.
 To uniquely set up (T - pantsUnzippedAnimation):
-	now the image-reel of T is { };
+	truncate the image-reel of T to 0 entries;
 	add Figure of UnzipButton to the image-reel of T;
 	add Figure of ZipButton to the image-reel of T.
 
@@ -304,7 +323,7 @@ To decide which object is the TQAnimTrack of (F - Figure of DisplaceButtonLight)
 To decide which object is the TQAnimTrack of (F - Figure of DisplaceButtonDark):
 	decide on pantsDisplacedAnimation.
 To uniquely set up (T - pantsDisplacedAnimation):
-	now the image-reel of T is { };
+	truncate the image-reel of T to 0 entries;
 	add Figure of DisplaceButton to the image-reel of T;
 	add Figure of ReplaceButton to the image-reel of T.
 
@@ -318,7 +337,7 @@ To decide which object is the TQAnimTrack of (F - Figure of AlarmIconLight):
 To decide which object is the TQAnimTrack of (F - Figure of AlarmIconDark):
 	decide on alarmAnimation.
 To uniquely set up (T - alarmAnimation):
-	now the image-reel of T is { };
+	truncate the image-reel of T to 0 entries;
 	if darkMode is 1, add Figure of AnimatedAlarmIconDark2 to the image-reel of T;
 	otherwise add Figure of AnimatedAlarmIconLight2 to the image-reel of T;
 	add Figure of AlarmIcon to the image-reel of T;
@@ -503,5 +522,52 @@ To commence animation of (T - an epilogue animation track):
 
 To decide which number is the frameSlowness of (T - an epilogue animation track):
 	decide on 1.
+
+
+A loading animation track is a kind of solo animation track. A loading animation track has a number called the pause-frame. [how many frames from the final frame do we pause]
+
+Figure of DefaultIntroBanner is the file "Special/Animations/IntroB/IntroBanner.png".
+
+Definition: a loading animation track is fetish appropriate: decide yes.
+
+To decide which figure-name is the bannerImage of (T - a loading animation track):
+	decide on Figure of DefaultIntroBanner.
+
+To commence animation of (T - a loading animation track):
+	compute unique setup of T;
+	now the current-frame of T is 1;
+	now the frame-tick of T is 1;
+	now the target-window of T is the map-window;
+	let F be entry 1 of the image-reel of T;
+	now the position of the map-window is g-placeabove;
+	now the measurement of the map-window is 99;
+	open the map-window;
+	let mapH be the height of the map-window;
+	let mapW be the width of the map-window;
+	now the animW of T is the pixel-width of F;
+	now the animH of T is the pixel-height of F;
+	now the animX of T is (mapW - the animW of T) / 2;
+	now the animY of T is (mapH - the animH of T) / 2;
+	let bannerW be the pixel-height of bannerImage of T;
+	let bannerH be the pixel-height of bannerImage of T;
+	let bannerXdiff be bannerW - the animW of T;
+	let bannerYdiff be bannerH - the animH of T;
+	let bannerX be the animX of T - (bannerXdiff / 2);
+	let bannerY be the animY of T - (bannerYdiff / 2);
+	draw a rectangle lightModeWhite in the map-window at 0 by 0 with size (mapW + 1) by (mapH + 1);
+	set a graphlink in the map-window identified as hyperobject from 0 by 0 to mapW by mapH as "skip", ignoring redundant links;
+	draw the image bannerImage of T in the map-window at bannerX by bannerY with dimensions bannerW by bannerH;
+	now T is g-unpaused;
+	now T is g-animated.
+
+To decide which number is the frameSlowness of (T - a loading animation track):
+	decide on 1.
+
+To cease animation of (T - a loading animation track):
+	now T is g-unpaused;
+	now T is not g-animated;
+	close the map-window;
+	now the position of the map-window is g-placeleft;
+	now the measurement of the map-window is 40.
 
 Timer Stuff ends here.

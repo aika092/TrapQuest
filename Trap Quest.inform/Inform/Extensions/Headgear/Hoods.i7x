@@ -56,7 +56,9 @@ Definition: black hood is black themed: decide yes.
 To decide which number is the alchemy key of (C - black hood):
 	decide on 20.
 
-Definition: black hood is fetish appropriate if diaper quest is 0.
+Definition: black hood is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 
 To compute recipe specific cursing of (T - a headgear):
 	now T is cursed; [As it is headgear, it needs to always be cursed upon creation. So instead the punishment for it being the wrong recipe is that it gets the 'stumbling' attribute]
@@ -166,7 +168,9 @@ To say ShortDesc of (H - WC hood):
 To set up influence of (C - WC hood):
 	now C is oral-sex-addiction-influencing. [Don't want it to be urine taste addiction influencing because if it was, it would probably help reduce urine addiction which is counter-intuitive.]
 
-Definition: WC hood is roleplay if watersports fetish is 1.
+Definition: WC hood is roleplay:
+	if watersports fetish is 1, decide yes;
+	decide no.
 Definition: WC hood is white themed: decide yes.
 
 Chapter - Class Outfit
@@ -198,7 +202,7 @@ To compute class outfit of (H - WC hood):
 			repeat with O running through worn skirted clothing:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
-			repeat with O running through worn bras:
+			repeat with O running through worn breast covering clothing:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
 		say "[bold type]Your hood pulses once, and then a white catsuit materialises over your body![line break][variable custom style][if the player is not disgraced]Holy crap, is this icon on the front what I think it is?![otherwise]Oh, I get what this icon on the front means. I'm a human toilet now![end if][roman type][line break]";
@@ -275,7 +279,9 @@ To say ClothingDesc of (H - clown mask):
 To say ShortDesc of (H - clown mask):
 	say "latex clown mask".
 
-Definition: clown mask is roleplay if diaper quest is 1.
+Definition: clown mask is roleplay:
+	if diaper quest is 1, decide yes;
+	decide no.
 Definition: clown mask is white themed: decide yes.
 
 To decide which number is the initial cringe of (C - clown mask):
@@ -387,7 +393,9 @@ To say ClothingDesc of (H - trainee hood):
 To decide which number is the perceived-bimbo-influence of (C - trainee hood):
 	decide on 2.
 Definition: a trainee hood is whore themed: decide yes.
-Definition: a trainee hood is removable if it is not magnetised.
+Definition: a trainee hood is removable:
+	if it is not magnetised, decide yes;
+	decide no.
 
 trainee hood removability rules is a rulebook. The removability rules of trainee hood is trainee hood removability rules.
 

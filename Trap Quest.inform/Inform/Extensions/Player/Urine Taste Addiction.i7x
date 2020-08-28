@@ -2,19 +2,9 @@ Urine Taste Addiction by Player begins here.
 
 Part 1 - Calculate Urine Taste Addiction
 
-[!<DecideWhichNumberIsTheUrineTasteAddictionInfluenceOfWearthing>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the urine-taste-addiction-influence of (C - a wearthing):
 	decide on 0.
 
-[!<DecideWhichNumberIsTheUrineTasteAddictionInfluenceOfClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the urine-taste-addiction-influence of (C - a clothing):
 	if C is urine-taste-addiction-influencing:
 		let S be 0;
@@ -22,11 +12,6 @@ To decide which number is the urine-taste-addiction-influence of (C - a clothing
 		decide on S;
 	decide on 0.
 
-[!<DecideWhichNumberIsTheUrineTasteAddictionOfThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the urine taste addiction of the player:
 	let S be the raw urine taste addiction of the player;
 	repeat with C running through worn wearthings:
@@ -37,11 +22,6 @@ To decide which number is the urine taste addiction of the player:
 
 Part 2 - Modify Urine Taste Addiction
 
-[!<Player>@<rawUrineTasteAddiction:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 The player has a number called raw urine taste addiction. The raw urine taste addiction of the player is usually 1. [Min 1 Max 20]
 
 To UrineTasteAddictUp (X - a number):

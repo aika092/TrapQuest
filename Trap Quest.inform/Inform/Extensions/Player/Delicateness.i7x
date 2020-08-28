@@ -2,19 +2,9 @@ Delicateness by Player begins here.
 
 Part 1 - Calculate Delicateness
 
-[!<DecideWhichNumberIsTheDelicatenessInfluenceOfWearThing>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the delicateness-influence of (C - a wearthing):
 	decide on 0.
 
-[!<DecideWhichNumberIsTheDelicatenessInfluenceOfClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the delicateness-influence of (C - a clothing):
 	if C is delicateness-influencing:
 		let S be 0;
@@ -27,11 +17,6 @@ To decide which number is the delicateness-influence of (C - a dominance clothin
 	increase S by the magic-modifier of C;
 	decide on (S * -1).
 
-[!<DecideWhichNumberIsTheDelicatenessOfThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the delicateness of the player:
 	if the class of the player is living sex doll, decide on 1;
 	if the humiliation of the player >= 40000, decide on 20;
@@ -50,18 +35,8 @@ To decide which number is the delicateness of the player:
 
 Part 2 - Modify Delicateness
 
-[!<Player>@<rawDelicateness:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 The player has a number called raw delicateness. The raw delicateness of the player is usually 1. [Min 1 Max 20]
 
-[!<highestDelicateness:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 highest delicateness is a number that varies. highest delicateness is 0.
 
 [!<painDuration:Integer>*
@@ -78,11 +53,6 @@ Used to make pain increase delicateness slower.
 *!]
 pain-balance is a number that varies.
 
-[!<DelicateUpX>+
-
-REQUIRES COMMENTING
-
-+!]
 To PainUp (X - a number): [This function is anticipated to output some kind of flavour text when called]
 	let timesTicked be 0;
 	let K be 0;

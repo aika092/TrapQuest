@@ -59,7 +59,9 @@ To decide which object is the unique-upgrade-target of (C - purple-pom-pom):
 	if the class of the player is cumdumpster, decide on condom-pom-pom;
 	decide on nothing.
 
-Definition: purple-pom-pom is transformation-protected if the unique-upgrade-target of it is nothing.
+Definition: purple-pom-pom is transformation-protected:
+	if the unique-upgrade-target of it is nothing, decide yes;
+	decide no.
 Definition: purple-pom-pom is condom pinnable: decide yes.
 
 To compute periodic effect of (C - purple-pom-pom):

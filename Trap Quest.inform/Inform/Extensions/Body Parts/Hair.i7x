@@ -41,7 +41,9 @@ To decide which number is the lewdly exposed outrage of (B - hair):
 	decide on O.
 
 [necessary for determining outrage when cumsoaked]
-Definition: hair is lewdly exposed if it is exposed.
+Definition: hair is lewdly exposed:
+	if it is exposed, decide yes;
+	decide no.
 
 To decide which object is the concealer of (T - hair):
 	decide on a random worn actually dense hood.
@@ -80,19 +82,9 @@ To say ShortDesc of hair:
 To say ShortHairDesc:
 	say ShortDesc of hair.
 
-[!<SayTotalDescOfHair>+
-
-REQUIRES COMMENTING
-
-+!]
 To say TotalDesc of hair:
 	say "You have [HairDesc raw largeness of hair].";
 
-[!<SayHairStyle>+
-
-REQUIRES COMMENTING
-
-+!]
 To say HairStyle:
 	if the player is ponytailed:
 		say "ponytail";
@@ -101,19 +93,9 @@ To say HairStyle:
 	otherwise:
 		say "hair".
 
-[!<SayHairColour>+
-
-REQUIRES COMMENTING
-
-+!]
 To say HairColour:
 	say "[HairColourText]".
 
-[!<DecideWhichTextIsHairColourVagueText>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which text is HairColourVagueText:
 	let H be HairColourText;
 	if H is "jet black" or H is "black":
@@ -133,11 +115,6 @@ To decide which text is HairColourVagueText:
 	otherwise:
 		decide on "pink".
 
-[!<SayHairLiquids>+
-
-REQUIRES COMMENTING
-
-+!]
 To say HairLiquids:
 	if the semen coating of hair > 0 and the urine coating of hair > 0:
 		say "[semen] and [urine]";
@@ -146,11 +123,6 @@ To say HairLiquids:
 	otherwise:
 		say "[semen]".
 
-[!<SayHairSoak>+
-
-REQUIRES COMMENTING
-
-+!]
 To say HairSoak:
 	let P be (100 * (the urine coating of hair + the semen coating of hair)) / the largeness of hair; [percentage soak of hair]
 	if the urine coating of hair + the semen coating of hair is 1:
@@ -162,20 +134,10 @@ To say HairSoak:
 	otherwise if P > 0:
 		say "[HairLiquids] stained ".
 
-[!<SayHairDescNumber>+
-
-REQUIRES COMMENTING
-
-+!]
 To say HairDesc (X - a number):
 	say "[2HairDesc X]";
 	if the fake largeness of hair > 0, say " and fake hair extensions which are extending your hair to [2HairDesc the largeness of hair]";
 
-[!<Say2HairDescNumber>+
-
-REQUIRES COMMENTING
-
-+!]
 To say 2HairDesc (X - a number):
 	if diaper quest is 1:
 		say "[HairColour] hair";
@@ -210,27 +172,12 @@ To say 2HairDesc (X - a number):
 		if X > 10, say "straight [HairSoak][HairColour] [HairStyle] that is so long it drags across the ground as you crawl";
 	if the semen coating of hair is 1 and the urine coating of hair is 0, say ". The cum is [if the brightness of hair > 1]difficult to spot thanks to its light colour[otherwise]very noticeable[end if]".
 
-[!<SayRealHairDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say RealHairDesc:
 	say RealHairDesc the real largeness of hair;
 
-[!<SayRealDescOfHair>+
-
-REQUIRES COMMENTING
-
-+!]
 To say RealDesc of (XXX - hair):
 	say RealHairDesc.
 
-[!<SayRealHairDescNumber>+
-
-REQUIRES COMMENTING
-
-+!]
 To say RealHairDesc (X - a number):
 	if X is 1, say "incredibly short hair";
 	if X is 2, say "[if the player is gendered male]standard short hair[otherwise]tomboyish hair[end if]";
@@ -250,20 +197,10 @@ To say RealHairDesc (X - a number):
 
 Part 3 - Modify Hair Stats
 
-[!<DecideWhichNumberIsMaxHairLength>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is max hair length:
 	if extreme proportions fetish is 1, decide on 20;
 	decide on 9.
 
-[!<HairUpX>+
-
-REQUIRES COMMENTING
-
-+!]
 To HairUp (X - a number):
 	if frozen hair is 1 or diaper quest is 1:
 		if frozen hair is 1, say "Your hair would change size but the divine power of Aika prevents it.";
@@ -307,11 +244,6 @@ To HairUp (X - a number):
 		otherwise if hair-fail is 2:
 			say "You feel your hair try to grow, but it's already so long it can't grow any further!".
 
-[!<HairDownX>+
-
-REQUIRES COMMENTING
-
-+!]
 To HairDown (X - a number):
 	if frozen hair is 1:
 		say "Your hair would change size but the divine power of Aika prevents it.";
@@ -324,11 +256,6 @@ To HairDown (X - a number):
 			otherwise:
 				if the raw largeness of hair > 1, decrease the raw largeness of hair by 1.
 
-[!<FakeHairUpX>+
-
-REQUIRES COMMENTING
-
-+!]
 To FakeHairUp (X - a number):
 	if frozen hair is 1:
 		say "Your hair would change size but the divine power of Aika prevents it.";
@@ -337,11 +264,6 @@ To FakeHairUp (X - a number):
 			decrease X by 1;
 			if the largeness of hair < max hair length, increase the fake largeness of hair by 1;
 
-[!<FakeHairDownX>+
-
-REQUIRES COMMENTING
-
-+!]
 To FakeHairDown (X - a number):
 	if frozen hair is 1:
 		say "Your hair would change size but the divine power of Aika prevents it.";
@@ -350,21 +272,11 @@ To FakeHairDown (X - a number):
 			decrease X by 1;
 			if the fake largeness of hair > 0, decrease the fake largeness of hair by 1.
 
-[!<ColourUpX>+
-
-REQUIRES COMMENTING
-
-+!]
 To ColourUp (X - a number):
 	HairRedUp X;
 	HairBlondeUp X;
 	HairBrightUp X;
 
-[!<HairRedUpX>+
-
-REQUIRES COMMENTING
-
-+!]
 To HairRedUp (X - a number):
 	if frozen hair is 1:
 		say "Your hair would change colour but the divine power of Aika prevents it.";
@@ -377,11 +289,6 @@ To HairRedUp (X - a number):
 				HairUp 1;
 				hair permanent check.
 
-[!<HairRedDownX>+
-
-REQUIRES COMMENTING
-
-+!]
 To HairRedDown (X - a number):
 	if frozen hair is 1:
 		say "Your hair would change colour but the divine power of Aika prevents it.";
@@ -391,11 +298,6 @@ To HairRedDown (X - a number):
 			if the redness of hair > 0:
 				decrease the redness of hair by 1.
 
-[!<HairBrightUpX>+
-
-REQUIRES COMMENTING
-
-+!]
 To HairBrightUp (X - a number):
 	if frozen hair is 1:
 		say "Your hair would change colour but the divine power of Aika prevents it.";
@@ -408,11 +310,6 @@ To HairBrightUp (X - a number):
 				HairUp 1;
 				hair permanent check.
 
-[!<HairBrightDownX>+
-
-REQUIRES COMMENTING
-
-+!]
 To HairBrightDown (X - a number):
 	if frozen hair is 1:
 		say "Your hair would change colour but the divine power of Aika prevents it.";
@@ -422,11 +319,6 @@ To HairBrightDown (X - a number):
 			if the brightness of hair > 0:
 				decrease the brightness of hair by 1.
 
-[!<HairBlondeUpX>+
-
-REQUIRES COMMENTING
-
-+!]
 To HairBlondeUp (X - a number):
 	if frozen hair is 1:
 		say "Your hair would change colour but the divine power of Aika prevents it.";
@@ -439,11 +331,6 @@ To HairBlondeUp (X - a number):
 				HairUp 1;
 				hair permanent check.
 
-[!<HairBlondeDownX>+
-
-REQUIRES COMMENTING
-
-+!]
 To HairBlondeDown (X - a number):
 	if frozen hair is 1:
 		say "Your hair would change colour but the divine power of Aika prevents it.";
@@ -453,11 +340,6 @@ To HairBlondeDown (X - a number):
 			if the blondeness of hair > 0:
 				decrease the blondeness of hair by 1.
 
-[!<HairPermanentCheck>+
-
-REQUIRES COMMENTING
-
-+!]
 To hair permanent check:
 	unless the redness of hair < 3 or the blondeness of hair < 3 or the brightness of hair < 3:
 		if there is a worn tattoo and bright-hair tattoo is not worn:

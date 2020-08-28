@@ -1,19 +1,9 @@
 Disclaimer by Miscellaneous Frontend begins here.
 
-[!<tableOfDisclaimer:Table>*
-
-REQUIRES COMMENTING
-
-*!]
 Table of Disclaimer
 title	subtable	description	toggle
 "By continuing you are acknowledging that you have read the disclaimer and agree with its spirit and principles."	--	--	quit rule
 
-[!<tableOfDisclaimerBody>*
-
-REQUIRES COMMENTING
-
-*!]
 Table of Disclaimer Body
 left	central	right
 ""	"[disclaimer]"	""

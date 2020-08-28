@@ -272,11 +272,6 @@ Carry out Quest Listing:
 	follow the quest listing rules.
 Understand "recall quests", "quests", "quest" as quest listing.
 
-This is the mindflayer quest list rule:
-	if mindflayer spawned is 1 and mindflayer quest is 0:
-		say "Mind Flayer: You have been asked to kill a bugged-out monster.".
-The mindflayer quest list rule is listed in the quest listing rules.
-
 This is the mechanic quest list rule:
 	if there is a worn steel collar:
 		say "The Steel Collar: You have been asked to collect a magic amulet by a rude mechanic.".
@@ -386,7 +381,7 @@ To teach safefloating from (M - a monster):
 			say "You actually already know this spell! Do you want to try to take [NameDesc of M] by surprise and overpower [him of M]?";
 			if the player is consenting:
 				say "You say the words at the same time as [NameDesc of M], and focus your energy on [him of M]:[line break][variable custom style]'I [incantation of magic-inflating]!'[roman type][line break]";
-				if MagicPowerDamage > a random number between 0 and 2:
+				if (the magic power of the player > a random number between 0 and 2) and the player is not getting unlucky:
 					say "As the magic flows from your fingertips into [his of M] breasts, you can feel [him of M] lose control of the spell.[line break][speech style of M]'What? NO!'[roman type][line break]But it's too late - [his of M] body is expanding rapidly to stupid sizes! It's only a moment before [he of M][']s soaring up and away into the air. In [his of M] panic, [he of M] drops [his of M] wand! Without that, [he of M] can't reverse the spell! [big he of M] floats further and further away into the sky, probably gone for good.";
 					destroy M;
 					let P be a random off-stage golden phallus;
@@ -395,6 +390,7 @@ To teach safefloating from (M - a monster):
 						compute autotaking P;
 				otherwise:
 					say "As the magic flows from your fingertips into [his of M] breasts, you can feel [him of M] almost lose control of the spell. But your magic isn't strong enough, and [he of M] manages to retain control![line break][speech style of M]'What was that? You were trying to overpower me, weren't you? You [bitch]!'[roman type][line break]";
+					now the magic-fatigue of the player is 100;
 					anger M;
 					say "[BigNameDesc of M] takes advantage of your magic fatigue[if the player is not wrist bound] and summons cuffs around your wrists. They're now bound behind you[end if][if face is not actually occupied]! A bit gag appears in your mouth[end if]! [big he of M] presses [his of M] wand to your chest and starts the spell... and [big he of M][']s not stopping!";
 					cutshow figure of aeromancer cutscene 7 for M;

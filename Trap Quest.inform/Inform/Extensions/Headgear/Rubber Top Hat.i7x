@@ -2,7 +2,9 @@ Rubber Top Hat by Headgear begins here.
 
 rubber top hat is a headgear. rubber top hat is latex. rubber top hat is womanly. Figure of rubber top hat is the file "Items/Accessories/Head/tophat1.png". rubber top hat is blondeness-positive. rubber top hat is brightness-positive. rubber top hat is redness-negative. rubber top hat is hair growing. The text-shortcut of rubber top hat is "rth".
 
-Definition: rubber top hat is roleplay if artificial enhancements fetish is 1.
+Definition: rubber top hat is roleplay:
+	if artificial enhancements fetish is 1, decide yes;
+	decide no.
 
 The printed name of rubber top hat is "[clothing-title-before]rubber top hat[clothing-title-after]".
 
@@ -56,7 +58,7 @@ To compute class outfit of (H - rubber top hat):
 			repeat with O running through worn exclusive corsets:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
-			repeat with O running through worn skirted clothing:
+			repeat with O running through worn skirt clashing clothing:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
 		say "[bold type]Your [printed name of H] wobbles violently, and a tight rubber pink dress materialises around you.[roman type][line break]";

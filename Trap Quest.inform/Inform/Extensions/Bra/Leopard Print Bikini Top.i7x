@@ -2,7 +2,9 @@ Leopard Print Bikini Top by Bra begins here.
 
 A leopard print bikini top is a kind of bikini top. Figure of bikini 5 is the file "Items/Clothes/Upper/Bras/bikini5.png". The text-shortcut of leopard print bikini top is "lpb". Understand "skimpy" as leopard print bikini top.
 
-Definition: a leopard print bikini top is class-transformation-protected if the class of the player is barbarian.
+Definition: a leopard print bikini top is class-transformation-protected:
+	if the class of the player is barbarian, decide yes;
+	decide no.
 
 There is 1 leopard print bikini top.
 

@@ -18,7 +18,7 @@ To decide which figure-name is the clothing-image of (C - wasp-antennae):
 	decide on figure of real wasp antennae.
 
 To say ClothingDesc of (H - wasp-antennae):
-	say "[if total-wasps < 50]A pair of bobbing yellow and black antennae. You[']re pretty sure they[']re just on a headband.[otherwise]A pair of black antennae. They twitch to and fro, and seem to protrude directly from your head![end if]".
+	say "[if total-wasps < 50]A pair of bobbing yellow and black antennae. You're pretty sure they're just on a headband.[otherwise]A pair of black antennae. They twitch to and fro, and seem to protrude directly from your head![end if]".
 To say ShortDesc of (H - wasp-antennae):
 	say "wasp antennae".
 

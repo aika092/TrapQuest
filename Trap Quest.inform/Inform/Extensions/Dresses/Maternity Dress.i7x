@@ -12,9 +12,11 @@ To decide which figure-name is clothing-image of (C - a maternity dress):
 To say ClothingDesc of (C - a maternity dress):
 	say "This very pale blue free flowing dress has lots of spare room, to allow it to accommodate even the largest of pregnant bellies. You feel like you can detect a small amount of magical force emanating from the dress.".
 
-Definition: a maternity dress is pregnancy related: decide yes.
+Definition: a maternity dress is pregnancy themed: decide yes.
 Definition: a maternity dress is disintegration-protected: decide yes.
-Definition: a maternity dress is class-transformation-protected if the pregnancy of the player > 0.
+Definition: a maternity dress is class-transformation-protected:
+	if the pregnancy of the player > 0, decide yes;
+	decide no.
 Definition: a maternity dress is grey themed: decide yes.
 Definition: a maternity dress is blue themed: decide yes.
 Definition: a maternity dress is potentially erection concealing: decide yes. [non-tight skirts conceal erections]
@@ -29,9 +31,6 @@ To say MediumDesc of (C - a maternity dress):
 
 To decide which number is the initial outrage of (C - a maternity dress):
 	decide on 2.
-
-To decide which number is the original price of (C - a maternity dress):
-	decide on 11.
 
 To decide which object is the unique-upgrade-target of (C - a maternity dress):
 	if the pregnancy of the player > 0, decide on a random off-stage I'm knocked up T-shirt;

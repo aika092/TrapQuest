@@ -2,17 +2,21 @@ Tentacle Breeder by Objects begins here.
 
 A tentacle-breeder is a kind of summoning portal. The printed name of tentacle-breeder is "[TQlink of item described]tentacle breeder[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "tentacle", "breeder" as tentacle-breeder. The text-shortcut of a tentacle-breeder is usually "ttb".
 
-A tentacle-breeder has a number called growth. The growth of a tentacle-breeder is usually 0. The charge of a tentacle-breeder is usually 30.
+The charge of a tentacle-breeder is usually 30.
 
-To decide which number is the true-growth of (T - a tentacle-breeder):
-	let G be the growth of T;
-	if the player-class is magical girl, increase G by 1;
-	decide on G.
+To decide which number is the magic-cost of (T - a tentacle-breeder):
+	decide on 12.
 
 dungeon-breeder is a tentacle-breeder.
+To decide which number is the magic-cost of (T - dungeon-breeder):
+	decide on 4.
 woods-breeder is a tentacle-breeder.
+To decide which number is the magic-cost of (T - woods-breeder):
+	decide on 6.
 hotel-breeder is a tentacle-breeder.
 mansion-breeder is a tentacle-breeder.
+To decide which number is the magic-cost of (T - mansion-breeder):
+	decide on 8.
 player-breeder is a tentacle-breeder. player-breeder can be maid-history.
 
 To say unique-verb-desc of (T - a tentacle-breeder):
@@ -50,61 +54,66 @@ To decide which figure-name is the examine-image of (C - player-breeder):
 
 To say ExamineDesc of (C - a tentacle-breeder):
 	if inhuman pregnancy is 2:
-		say "A massively pregnant [if C is player-breeder]previous version of yourself[otherwise]woman[end if] is stuck to the wall with thick, pink slime[if C is maid-history], [bold type]your old maid headdress and magical maid outfit still worn, but completely coated in cum. [roman type][otherwise]. [end if]A sea of tentacles pushes itself into all of [if C is player-breeder]your previous self's[otherwise]her[end if] holes, throbbing rhythmically. Semen drools from her lips around the tentacles and from her [vagina]. Her eyes are rolled back up into her head, and it seems she doesn't have even the slightest sense of self or awareness. There is a translucent barrier covering her whole body, which seems to pulse in time with four eldritch seals etched into the ground below her. [if the magic-power of the player > 4]For some reason, you feel like you might be able to [bold type]purify[roman type] her corruption and rescue her from her predicament[otherwise if C is player-breeder]Realising that you are in some manner of speaking a... clone... of this woman raises some questions about the nature of consciousness which you don't have the time or desire to think about right now[otherwise]You feel like you should probably stay away from her, until you have enough power to overcome all the seals[end if].";
+		say "A massively pregnant [if C is player-breeder]previous version of yourself[otherwise]woman[end if] is stuck to the wall with thick, pink slime[if C is maid-history], [bold type]your old maid headdress and magical maid outfit still worn, but completely coated in cum. [roman type][otherwise]. [end if]A sea of tentacles pushes itself into all of [if C is player-breeder]your previous self's[otherwise]her[end if] holes, throbbing rhythmically. Semen drools from her lips around the tentacles and from her [vagina]. Her eyes are rolled back up into her head, and it seems she doesn't have even the slightest sense of self or awareness. There is a translucent barrier covering her whole body, which seems to pulse in time with [magic-cost of C] eldritch seals etched into the ground below her. [if the magic-power of the player > 4]For some reason, you feel like you might be able to [bold type]purify[roman type] her corruption and rescue her from her predicament[otherwise if C is player-breeder]Realising that you are in some manner of speaking a... clone... of this woman raises some questions about the nature of consciousness which you don't have the time or desire to think about right now[otherwise]You feel like you should probably stay away from her, until you have enough power to overcome all the seals[end if].";
 	otherwise:
-		say "A messy dome of grey flesh is stuck to one wall, with rapidly pulsating holes, kind of like spasming assholes. There is a translucent barrier covering it, which seems to vibrate in time with four eldritch seals etched into the ground below it. [if the magic-power of the player > 4]For some reason, you feel like you might be able to [bold type]purify[roman type] the corrupt substance and halt the spawning of tentacle monsters into this region[otherwise if there is a held pure totem or ritual-beads is held and the size of ritual-beads >= 7]For some reason, you feel like you have a magical item you can use to [bold type]purify[roman type] the corrupt substance and halt the spawning of tentacle monsters into this region[otherwise]You feel like you won't be able to halt the spawning of tentacle monsters here until you have enough power to overcome all the seals[end if].".
+		say "A messy dome of grey flesh is stuck to one wall, with rapidly pulsating holes, kind of like spasming assholes. There is a translucent barrier covering it, which seems to vibrate in time with [magic-cost of C] eldritch seals etched into the ground below it. [if the magic-power of the player > 4]For some reason, you feel like you might be able to [bold type]purify[roman type] the corrupt substance and halt the spawning of tentacle monsters into this region[otherwise if there is a held pure totem or ritual-beads is held and the size of ritual-beads >= 7]For some reason, you feel like you have a magical item you can use to [bold type]purify[roman type] the corrupt substance and halt the spawning of tentacle monsters into this region[otherwise]You feel like you won't be able to halt the spawning of tentacle monsters here until you have enough power to overcome all the seals[end if].".
 
 Purifying is an action applying to one thing.
 
 Check purifying:
 	if the noun is not tentacle-breeder, say "This verb is for destroying tentacle spawners." instead;
-	if the magic-power of the player < 4:[check if the player can cheat]
+	if the magic-power of the player < the magic-cost of the noun:[check if the player can cheat]
 		if ritual-beads is held:
 			if the size of ritual-beads >= 7:
 				say "This will destroy your [ShortDesc of ritual-beads]. Is that what you want? ";
 				if the player is consenting:
 					dislodge ritual-beads;
-					say "You feel a swell of energy as your [ShortDesc of ritual-beads] disintegrates!";
+					say "Your [ShortDesc of ritual-beads] disintegrates!";
 					only destroy ritual-beads;
-					MagicPowerUp 5;
-		if there is a held pure totem:
+					MagicPowerRefresh 5;
+		otherwise if there is a held pure totem:
 			let T be a random held pure totem;
 			say "This will destroy your [ShortDesc of T]. Is that what you want? ";
 			if the player is consenting:
-				say "You feel a swell of energy as your [ShortDesc of T] disintegrates!";
+				say "Your [ShortDesc of T] disintegrates!";
 				only destroy T;
-				MagicPowerUp 5;
-	if the magic-power of the player < 4, say "You don't have enough magical power to do that (you need 4)." instead.
+				MagicPowerRefresh 5;
+		otherwise:
+			say "You don't have enough magical power to do that (you need [magic-cost of the noun])." instead.
 
 Understand "purify [something]" as purifying.
 
 Carry out purifying tentacle-breeder:
 	allocate 2 seconds;
-	MagicPowerDown 4;
+	compute MagicDrain of the noun;
 	say "You feel the magical power that has built up in your body flow into the mess of [if inhuman pregnancy is 2]tentacles and gravid flesh, and suddenly the tentacles and slime begin to thrash around and turn brown. The tentacles restraining the woman quickly rot away, and as she falls to the floor she manages a look of gratitude before vanishing into motes of light[otherwise]grey flesh, which shrinks away inside of itself until it has all completely gone[end if].";
 	destroy the noun;
 	repeat with C running through worn clothing:
 		if the quest of C is tentacle-research-quest:
 			compute quest completion of tentacle-research-quest on C.
 
-Definition: a tentacle-breeder is loaded if it is regional. [Tentacle breeders only summon tentacle monsters when the player is nearby.]
+Definition: a tentacle-breeder is loaded:
+	if it is regional, decide yes;
+	decide no. [Tentacle breeders only summon tentacle monsters when the player is nearby]
 
 To compute summoning check of (T - a tentacle-breeder):
-	decrease the charge of T by time-seconds;
-	if the charge of T < 1:
-		let M be the summonChoice of T;
-		if M is monster:
-			compute T summoning M;
-			compute portal reset of T;
-		otherwise:
-			increase the charge of T by 30.
+	if the total magic power of the player > 0:
+		decrease the charge of T by time-seconds;
+		if the charge of T < 1:
+			let M be the summonChoice of T;
+			if M is monster:
+				compute T summoning M;
+				set up M;
+				compute portal reset of T;
+			otherwise:
+				increase the charge of T by 30.
 
 To decide which object is the summonChoice of (T - a tentacle-breeder):
 	let M be a random off-stage tentacle monster;
-	if M is monster:[hiding the check in an if-statement like this prevents run-time errors]
-		if the true-growth of T < 4:
+	if M is monster:
+		if the total magic power of the player < 6:
 			now M is newborn;
-		otherwise if the true-growth of T < 6:
+		otherwise if the total magic power of the player < 12:
 			now M is large;
 		otherwise:
 			now M is massive;
@@ -112,8 +121,7 @@ To decide which object is the summonChoice of (T - a tentacle-breeder):
 
 To compute portal reset of (T - a tentacle-breeder):
 	increase the spawn-count of T by 1;
-	now the reset-count of T is 0;
-	increase the growth of T by 1.
+	now the reset-count of T is 0.
 
 To compute (T - dungeon-breeder) regionally summoning (M - a monster):
 	summon M in the dungeon;

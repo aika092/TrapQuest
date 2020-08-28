@@ -137,13 +137,17 @@ To compute consequence of (Q - questWetSelf):
 	try urinating.
 
 questTired is a questConsequence.
-Definition: questTired is eligible if the player is not tired.
+Definition: questTired is eligible:
+	if the player is not tired, decide yes;
+	decide no.
 To compute consequence of (Q - questTired):
 	say "The effort of concentrating so hard on your [ShortDesc of quest-target] has drained a bit of your energy.";
 	now the fatigue of the player is the tired threshold of the player + 1.
 
 questHungry is a questConsequence.
-Definition: questHungry is eligible if hunger mechanics is 1 and the stomach-food of the player > 0.
+Definition: questHungry is eligible:
+	if hunger mechanics is 1 and the stomach-food of the player > 0, decide yes;
+	decide no.
 To compute consequence of (Q - questHungry):
 	say "The effort of concentrating so hard on your [ShortDesc of quest-target] has made you a bit more hungry.";
 	decrease the stomach-food of the player by 1;
@@ -164,6 +168,14 @@ Definition: questButt is eligible:
 To compute consequence of (Q - questButt):
 	say "The magic fizzles and rebounds onto your butt, which slightly swells!";
 	HipUp 1.
+
+questMagic is a questConsequence.
+Definition: questMagic is eligible:
+	if the magic-fatigue of the player < the total magic power of the player, decide yes;
+	decide no.
+To compute consequence of (Q - questMagic):
+	say "You feel the curse drain magic from your veins as it leaves!";
+	increase the magic-fatigue of the player by 3.
 
 To compute quest completion of (Q - a clothing-quest) on (C - a clothing):
 	say "[bold type]";
@@ -230,7 +242,9 @@ Part - Chest Exposing Quest
 
 chest-exposing-quest is a clothing-quest. chest-exposing-quest has a number called greet-count. chest-exposing-quest has an object called latest-monster.
 
-Definition: chest-exposing-quest is appropriate if diaper quest is 0 and the largeness of breasts >= 2.
+Definition: chest-exposing-quest is appropriate:
+	if diaper quest is 0 and the largeness of breasts >= 2, decide yes;
+	decide no.
 Definition: chest-exposing-quest is school-disabled: decide yes.
 
 To decide what number is the quest-weighting of (Q - chest-exposing-quest) for (C - a clothing):
@@ -265,7 +279,9 @@ Part - Cum Swallowing Quest
 
 cum-swallowing-quest is a clothing-quest.
 
-Definition: cum-swallowing-quest is appropriate if diaper quest is 0.
+Definition: cum-swallowing-quest is appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 
 To decide what number is the quest-weighting of (Q - cum-swallowing-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -285,7 +301,9 @@ Part - Piss Drinking Quest
 
 piss-drinking-quest is a clothing-quest. piss-drinking-quest is persistent.
 
-Definition: piss-drinking-quest is appropriate if watersports fetish is 1.
+Definition: piss-drinking-quest is appropriate:
+	if watersports fetish is 1, decide yes;
+	decide no.
 
 To decide what number is the quest-weighting of (Q - piss-drinking-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -304,7 +322,9 @@ Part - Anal Orgasm Quest
 
 anal-orgasm-quest is a clothing-quest.
 
-Definition: anal-orgasm-quest is appropriate if diaper quest is 0.
+Definition: anal-orgasm-quest is appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 
 To decide what number is the quest-weighting of (Q - anal-orgasm-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -324,7 +344,9 @@ Part - Anal Virginity Quest
 
 anal-virginity-quest is a clothing-quest.
 
-Definition: anal-virginity-quest is appropriate if diaper quest is 0 and the analvirgin of the player is 1.
+Definition: anal-virginity-quest is appropriate:
+	if diaper quest is 0 and the analvirgin of the player is 1, decide yes;
+	decide no.
 
 To decide what number is the quest-weighting of (Q - anal-virginity-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -345,7 +367,9 @@ Part - Vaginal Virginity Quest
 
 vaginal-virginity-quest is a clothing-quest.
 
-Definition: vaginal-virginity-quest is appropriate if diaper quest is 0 and the player is possessing a vagina and the vaginalvirgin of the player is 1.
+Definition: vaginal-virginity-quest is appropriate:
+	if diaper quest is 0 and the player is possessing a vagina and the vaginalvirgin of the player is 1, decide yes;
+	decide no.
 
 To decide what number is the quest-weighting of (Q - vaginal-virginity-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -367,7 +391,9 @@ Part - Egg Laying Quest
 
 egg-laying-quest is a clothing-quest.
 
-Definition: egg-laying-quest is appropriate if egg laying fetish is 1.
+Definition: egg-laying-quest is appropriate:
+	if egg laying fetish is 1, decide yes;
+	decide no.
 
 To decide what number is the quest-weighting of (Q - egg-laying-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -388,7 +414,9 @@ Part - Interracial Presenting Quest
 
 interracial-sex-quest is a clothing-quest.
 
-Definition: interracial-sex-quest is appropriate if interracial fetish is 1.
+Definition: interracial-sex-quest is appropriate:
+	if interracial fetish is 1, decide yes;
+	decide no.
 
 To decide what number is the quest-weighting of (Q - interracial-sex-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -410,7 +438,9 @@ Part - Titfuck Quest
 
 titfuck-quest is a clothing-quest. titfuck-quest has a number called titfuck-count.
 
-Definition: titfuck-quest is appropriate if diaper quest is 0 and the largeness of breasts >= 5.
+Definition: titfuck-quest is appropriate:
+	if diaper quest is 0 and the largeness of breasts >= 5, decide yes;
+	decide no.
 
 To decide what number is the quest-weighting of (Q - titfuck-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -443,7 +473,9 @@ Part - Creampie Drinking Quest
 
 creampie-drinking-quest is a clothing-quest.
 
-Definition: creampie-drinking-quest is appropriate if diaper quest is 0.
+Definition: creampie-drinking-quest is appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 
 To decide what number is the quest-weighting of (Q - creampie-drinking-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -463,7 +495,9 @@ Part - Milk Drinking Quest
 
 milk-drinking-quest is a clothing-quest.
 
-Definition: milk-drinking-quest is appropriate if the milk volume of breasts > 0.
+Definition: milk-drinking-quest is appropriate:
+	if the milk volume of breasts > 0, decide yes;
+	decide no.
 
 To decide what number is the quest-weighting of (Q - milk-drinking-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -481,7 +515,9 @@ Part - Creampie Quest
 
 vaginal-creampie-quest is a clothing-quest. vaginal-creampie-quest has a number called creampie-count.
 
-Definition: vaginal-creampie-quest is appropriate if the player is possessing a vagina and diaper quest is 0 and the vaginalvirgin of the player is 0.
+Definition: vaginal-creampie-quest is appropriate:
+	if the player is possessing a vagina and diaper quest is 0 and the vaginalvirgin of the player is 0, decide yes;
+	decide no.
 
 To decide what number is the quest-weighting of (Q - vaginal-creampie-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -490,7 +526,7 @@ To decide what number is the quest-weighting of (Q - vaginal-creampie-quest) for
 	if C is penetrating vagina, decide on 0;
 	if C is pussy covering:
 		if C is not displacable and C is not zippable, decide on 0;
-	if C is pregnancy related, decide on 14;
+	if C is pregnancy themed, decide on 14;
 	decide on 2.
 
 To say QuestFlav of (Q - vaginal-creampie-quest):
@@ -509,7 +545,9 @@ Part - Candy Eating Quest
 
 candy-eating-quest is a clothing-quest. candy-eating-quest has a number called candy-count.
 
-Definition: candy-eating-quest is appropriate if weight gain fetish > 0 or diaper messing >= 3.
+Definition: candy-eating-quest is appropriate:
+	if weight gain fetish > 0 or diaper messing >= 3, decide yes;
+	decide no.
 
 To decide what number is the quest-weighting of (Q - candy-eating-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -599,7 +637,9 @@ Part - Condom Creampie Quest
 
 condom-creampie-quest is a clothing-quest.
 
-Definition: condom-creampie-quest is appropriate if there is a held condom-providing thing.
+Definition: condom-creampie-quest is appropriate:
+	if there is a held condom-providing thing, decide yes;
+	decide no.
 
 To decide what number is the quest-weighting of (Q - condom-creampie-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -668,7 +708,9 @@ Part - Heel Walking Quest
 
 heel-walking-quest is a clothing-quest. heel-walking-quest is persistent.
 
-Definition: heel-walking-quest is appropriate if diaper quest is 0.
+Definition: heel-walking-quest is appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 
 To decide what number is the quest-weighting of (Q - heel-walking-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -689,7 +731,9 @@ Part - Careful Peeing Quest
 
 careful-peeing-quest is a clothing-quest. careful-peeing-quest is persistent.
 
-Definition: careful-peeing-quest is appropriate if diaper lover > 0 and the player is not incontinent.
+Definition: careful-peeing-quest is appropriate:
+	if diaper lover > 0 and the player is not incontinent, decide yes;
+	decide no.
 
 To decide what number is the quest-weighting of (Q - careful-peeing-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -738,7 +782,9 @@ Part - Poking Quest
 
 poking-quest is a clothing-quest.
 
-Definition: poking-quest is appropriate if diaper quest is 0.
+Definition: poking-quest is appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 
 To decide what number is the quest-weighting of (Q - poking-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -774,7 +820,9 @@ Part - Inking Quest
 
 inking-quest is a clothing-quest. inking-quest is persistent.
 
-Definition: inking-quest is appropriate if the number of worn tattoos > 0 and Hotel16 is discovered.
+Definition: inking-quest is appropriate:
+	if the number of worn tattoos > 0 and Hotel16 is discovered, decide yes;
+	decide no.
 
 To decide what number is the quest-weighting of (Q - inking-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -797,7 +845,9 @@ Part - Lever Quest
 
 lever-quest is a clothing-quest.
 
-Definition: lever-quest is appropriate if there is an alive caged dungeon boss.
+Definition: lever-quest is appropriate:
+	if there is an alive caged dungeon boss, decide yes;
+	decide no.
 
 To decide what number is the quest-weighting of (Q - lever-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -813,7 +863,9 @@ Part - Upskirt Quest
 
 upskirt-quest is a clothing-quest. upskirt-quest is persistent.
 
-Definition: upskirt-quest is appropriate if there is worn short or longer clothing.
+Definition: upskirt-quest is appropriate:
+	if there is worn short or longer clothing, decide yes;
+	decide no.
 Definition: upskirt-quest is school-disabled: decide yes.
 
 To decide what number is the quest-weighting of (Q - upskirt-quest) for (C - a clothing):
@@ -842,7 +894,9 @@ Part - Tentacle Quest
 
 tentacle-quest is a clothing-quest. tentacle-quest is persistent.
 
-Definition: tentacle-quest is appropriate if tentacle fetish is 1.
+Definition: tentacle-quest is appropriate:
+	if tentacle fetish is 1, decide yes;
+	decide no.
 
 To decide what number is the quest-weighting of (Q - tentacle-quest) for (C - a clothing):
 	decide on 0. [Only occurs when the code specifies (e.g. when schoolgirl outfit is summoned)]
@@ -864,7 +918,9 @@ Part - Bursting Quest
 
 bursting-quest is a clothing-quest. bursting-quest is persistent.
 
-Definition: bursting-quest is appropriate if watersports mechanics is 1.
+Definition: bursting-quest is appropriate:
+	if watersports mechanics is 1, decide yes;
+	decide no.
 
 To decide what number is the quest-weighting of (Q - bursting-quest) for (C - a clothing):
 	if bursting-quest is not appropriate, decide on 0;
@@ -959,7 +1015,9 @@ Part - Plug Quest
 
 plug-quest is a clothing-quest. plug-quest has a number called plug-count.
 
-Definition: plug-quest is appropriate if asshole is not actually occupied.
+Definition: plug-quest is appropriate:
+	if asshole is not actually occupied, decide yes;
+	decide no.
 Definition: plug-quest is school-disabled: decide yes.
 
 To decide what number is the quest-weighting of (Q - plug-quest) for (C - a clothing):
@@ -990,7 +1048,9 @@ Part - Hotel Altar Quest
 
 hotel-altar-quest is a clothing-quest.
 
-Definition: hotel-altar-quest is appropriate if diaper quest is 0 and Hotel35 is placed and the player is the donator.
+Definition: hotel-altar-quest is appropriate:
+	if diaper quest is 0 and Hotel35 is placed and the player is the donator, decide yes;
+	decide no.
 
 To decide what number is the quest-weighting of (Q - hotel-altar-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -1006,7 +1066,9 @@ Part - New Region Quest
 
 new-region-quest is a clothing-quest.
 
-Definition: new-region-quest is appropriate if Mansion01 is not placed or Hotel01 is not placed.
+Definition: new-region-quest is appropriate:
+	if Mansion01 is not placed or Hotel01 is not placed, decide yes;
+	decide no.
 
 To decide what number is the quest-weighting of (Q - new-region-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -1061,7 +1123,9 @@ To decide what number is the quest-weighting of (Q - make-up-quest) for (C - a c
 	if Q is not appropriate, decide on 0;
 	decide on 2.
 
-Definition: make-up-quest is appropriate if the make-up of face < 3 and face is temporarily made up.
+Definition: make-up-quest is appropriate:
+	if the make-up of face < 3 and face is temporarily made up, decide yes;
+	decide no.
 
 To say QuestFlav of (Q - make-up-quest):
 	say "You sense that it wants you to increase the amount of make up you're wearing.".
@@ -1083,7 +1147,9 @@ To decide what number is the quest-weighting of (Q - bust-up-quest) for (C - a c
 	if C is breast covering, decide on 5;
 	decide on 1.
 
-Definition: bust-up-quest is appropriate if diaper quest is 0 and the player is not top heavy and the largeness of breasts < 15.
+Definition: bust-up-quest is appropriate:
+	if diaper quest is 0 and the player is not top heavy and the largeness of breasts < 15, decide yes;
+	decide no.
 
 To say QuestFlav of (Q - bust-up-quest):
 	say "You sense that it wants you to have at least [BraSize the target-bust of Q] cup breasts.".
@@ -1111,7 +1177,9 @@ To decide what number is the quest-weighting of (Q - doom-quest) for (C - a clot
 	if Q is not appropriate, decide on 0;
 	decide on 1.
 
-Definition: doom-quest is appropriate if doomed > 0 and doomed < 5.
+Definition: doom-quest is appropriate:
+	if doomed > 0 and doomed < 5, decide yes;
+	decide no.
 
 To say QuestFlav of (Q - doom-quest):
 	say "You sense that it wants you to allow the dark ritual in the mansion to continue.".
@@ -1133,7 +1201,9 @@ To decide what number is the quest-weighting of (Q - mouthful-quest) for (C - a 
 	if Q is not appropriate, decide on 0;
 	decide on 1.
 
-Definition: mouthful-quest is appropriate if diaper quest is 0.
+Definition: mouthful-quest is appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 
 To say QuestFlav of (Q - mouthful-quest):
 	say "You sense that it wants you to hold onto a mouthful of [semen] until you become more accustomed to the taste.".

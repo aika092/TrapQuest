@@ -1,9 +1,13 @@
 Tube Top by Dresses begins here.
 
-A tube top is a kind of overdress. A tube top is usually unskirted. A tube top is usually belly exposing. A tube top is usually bottom-exclusive. The soak-limit of a tube top is usually 9. A tube top is usually not-top-displacable. A tube top is usually erect-nipple-exposing. [Tube tops are always displacable, but vary in degree based on breast size. This is here as a safe measure.]
+A tube top is a kind of overdress. A tube top is usually unskirted. A tube top is usually belly exposing. A tube top is usually bottom-exclusive. A tube top is usually not-top-displacable. A tube top is usually erect-nipple-exposing. A tube top is usually high cut. [Tube tops are always displacable, but vary in degree based on breast size. This is here as a safe measure.]
 
-Definition: a tube top is optional-top-displacable if the largeness of breasts > 6.
-Definition: a tube top is top-displacable if it is not optional-top-displacable.
+Definition: a tube top is optional-top-displacable:
+	if the largeness of breasts > 6, decide yes;
+	decide no.
+Definition: a tube top is top-displacable:
+	if it is not optional-top-displacable, decide yes;
+	decide no.
 
 To compute SelfExamineDesc of (C - a tube top):
 	say "A [ShortDesc of C] tightly fits over your chest. ".
@@ -16,9 +20,6 @@ To decide which number is the initial outrage of (C - a tube top):
 	if C is sheer, decide on 5;
 	if C is very low cut or lower, decide on 4;
 	decide on 3.
-
-To decide which number is the original price of (C - a tube top):
-	decide on 2.
 
 To uniquely set up (C - a tube top):
 	if a random number between 1 and 3 is 1, now C is endurance.
@@ -61,7 +62,7 @@ Definition: a cyan tube top is blue themed: decide yes.
 
 Part 2 - Silver Tube Top
 
-A silver tube top is a kind of tube top. The soak-limit of a silver tube top is usually 8.
+A silver tube top is a kind of tube top.
 
 The printed name of silver tube top is usually "[clothing-title-before]silver tube top[clothing-title-after]". The text-shortcut of silver tube top is "stu". A silver tube top is usually dense.
 
@@ -137,7 +138,9 @@ Definition: a tartan tube top is orange themed: decide yes.
 To decide which number is the initial cringe of (C - a tartan tube top):
 	decide on 2.
 
-Definition: a tartan tube top is class-transformation-protected if there is a worn scrunchie.
+Definition: a tartan tube top is class-transformation-protected:
+	if there is a worn scrunchie, decide yes;
+	decide no.
 
 Part 5 - Red Tube Top
 
@@ -215,7 +218,7 @@ To say TransformReaction of (C - a yellow exposing tube top):
 
 Part 8 - Jacket
 
-A jacket is a kind of tube top. The soak-limit of a jacket is usually 12. A jacket is usually dense.
+A jacket is a kind of tube top. A jacket is usually dense.
 
 Definition: a jacket is black themed: decide yes.
 
@@ -248,7 +251,9 @@ The printed name of leopard print tube top is "[clothing-title-before]leopard pr
 
 Definition: leopard print tube top is leopard themed: decide yes.
 Definition: leopard print tube top is discovered varied: decide yes.
-Definition: leopard print tube top is class-transformation-protected if the class of the player is barbarian.
+Definition: leopard print tube top is class-transformation-protected:
+	if the class of the player is barbarian, decide yes;
+	decide no.
 
 Figure of leopard print tube top is the file "Items/Clothes/Upper/TubeTops/tubetop8.jpg".
 

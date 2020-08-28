@@ -1,39 +1,19 @@
 Pregnancy Options by Fetish Settings begins here.
 
-[!<tableOfPregnancyOptions:Table>+
-
-REQUIRES COMMENTING
-
-+!]
 Table of Pregnancy Options
 title	subtable	description	toggle
 "I would rather not give birth to something bizarre or inhuman."	--	--	inhuman pregnancy hater rule
 "If it's at least partly human and doesn't come back I'm sure I'll be fine, but nothing too weird please!"	--	--	inhuman pregnancy disliker rule
 "I'm prepared to risk giving birth to a monster, and even risk it growing up and deciding its own 'mother' would make a good mate! (+1 point)"	--	--	inhuman pregnancy rule
 
-[!<TheInhumanPregnancyRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the inhuman pregnancy rule:
 	now choice in row 20 of the Table of Player Options is 2;
 	follow quit rule.
 
-[!<TheInhumanPregnancyDislikerRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the inhuman pregnancy disliker rule:
 	now choice in row 20 of the Table of Player Options is 1;
 	follow quit rule.
 
-[!<TheInhumanPregnancyHaterRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the inhuman pregnancy hater rule:
 	now choice in row 20 of the Table of Player Options is 0;
 	follow quit rule.
@@ -46,21 +26,11 @@ What have we chosen if the player selected random?
 random slow pregnancy is a number that varies.
 random slow birth is a number that varies.
 
-[!<DecideWhichNumberIsSlowPregnancy>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is slow pregnancy:
 	if pregnancy fetish is 0, decide on 0;
 	if choice in row 49 of the Table of Player Options is -1, decide on random slow pregnancy;
 	decide on choice in row 49 of the Table of Player Options.
 
-[!<DecideWhichNumberIsSlowPregnancy>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is slow birth:
 	if pregnancy fetish is 0, decide on 0;
 	if choice in row 75 of the Table of Player Options is 1, decide on random slow birth;
@@ -78,11 +48,6 @@ To decide which number is expectedChildRate:
 To decide which number is childValue times (N - a number):
 	decide on (N * the children of the player) / expectedChildRate.
 
-[!<DecideWhichNumberIsPregnancyPoints>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is pregnancy points:
 	if the player is female or tg fetish >= 1:
 		let P be 3;
@@ -93,11 +58,6 @@ To decide which number is pregnancy points:
 		decide on P;
 	decide on 0.
 
-[!<tableOfSlowPregnancyOptions:Table>*
-
-REQUIRES COMMENTING
-
-*!]
 Table of Slow Pregnancy Options
 title	subtable	description	toggle
 "Pregnancy should be a rather slow process, to make it feel closer to real life. (+2 points)"	--	--	superslow pregnancy lover rule
@@ -106,56 +66,26 @@ title	subtable	description	toggle
 "Pregnancies should become full term immediately through magic! (-1 point)"	--	--	superfast pregnancy lover rule
 "The way pregnancy works in this world should be a surprise! (+1 point)"	--	--	random pregnancy lover rule
 
-[!<TheSuperfastPregnancyLoverRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the superfast pregnancy lover rule:
 	now choice in row 49 of the Table of Player Options is 3;
 	follow quit rule.
 
-[!<TheSuperslowPregnancyLoverRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the superslow pregnancy lover rule:
 	now choice in row 49 of the Table of Player Options is 0;
 	follow quit rule.
 
-[!<TheRandomPregnancyLoverRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the random pregnancy lover rule:
 	now choice in row 49 of the Table of Player Options is -1;
 	follow quit rule.
 
-[!<TheFastPregnancyLoverRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the fast pregnancy lover rule:
 	now choice in row 49 of the Table of Player Options is 2;
 	follow quit rule.
 
-[!<TheSlowPregnancyLoverRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the slow pregnancy lover rule:
 	now choice in row 49 of the Table of Player Options is 1;
 	follow quit rule.
 
-[!<tableOfSlowBirthOptions:Table>*
-
-REQUIRES COMMENTING
-
-*!]
 Table of Slow Birth Options
 title	subtable	description	toggle
 "Once my pregnancy hits full term, I should have to carry it around for a long time. (+3 points)"	--	--	superslow birth lover rule
@@ -164,47 +94,22 @@ title	subtable	description	toggle
 "Birth should start a mere few moments after reaching full term! (-1 point)"	--	--	superfast birth lover rule
 "The way birth works in this world should be a surprise! (+1 point)"	--	--	random birth lover rule
 
-[!<TheSuperslowBirthLoverRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the superslow birth lover rule:
 	now choice in row 75 of the Table of Player Options is 3;
 	follow quit rule.
 
-[!<TheSlowBirthLoverRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the slow birth lover rule:
 	now choice in row 75 of the Table of Player Options is 2;
 	follow quit rule.
 
-[!<TheFastBirthLoverRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the fast birth lover rule:
 	now choice in row 75 of the Table of Player Options is 0;
 	follow quit rule.
 
-[!<TheSuperfastBirthLoverRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the superfast birth lover rule:
 	now choice in row 75 of the Table of Player Options is -1;
 	follow quit rule.
 
-[!<TheRandomBirthLoverRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the random birth lover rule:
 	now choice in row 75 of the Table of Player Options is 1;
 	follow quit rule.

@@ -63,13 +63,18 @@ student-candy is a tryhard student.
 
 The text-shortcut of student-candy is "stca".
 
-Figure of student-candy is the file "NPCs/School/Student/student5.png".
+Figure of rank 1 candy is the file "NPCs/School/Student/student5a.png".
 
 To decide which figure-name is the monster-image of (M - student-candy):
-	decide on figure of student-candy.
+	[if the current-rank of M >= 4, decide on figure of rank 4 candy;]
+	if the current-rank of M is 3, decide on figure of rank 3 candy;
+	if the current-rank of M is 2, decide on figure of rank 2 candy;
+	decide on figure of rank 1 candy.
 
 To say MonsterDesc of (M - student-candy):
-	say "This tall blonde [man of M] is wearing a super skimpy pink kitty themed outfit made out of a tiny tube top and even tinier microskirt. [big he of M] has a tattoo of a tiger on [his of M] leg and a black-and-white braid in [his of M] hair. [if the current-rank of M > 1]A sequins necklace in the style of a paw print hangs above [his of M] chest. [end if][big his of M] make up is rather heavily done[if diaper quest is 1] but still looks very grown-up[end if]. [big his of M] expression exudes focus and confidence.".
+	say "This tall blonde [man of M] is wearing a [if the current-rank of M is 1]purple cheerleader-style outfit with yellow trims, made out of a shirt that ends at [his of M] belly button, a thigh-length skirt[otherwise if the current-rank of M is 2]super skimpy purple outfit with yellow trims, made out of a tiny tube top and microskirt[otherwise]super skimpy purple microskirt and a matching chest-exposing cupless tube top[end if], thigh-high purple stockings and purple sneakers with yellow laces and soles. [big he of M] has a pair of fake pink cat ears in [his of M] rose coloured hair. [if the current-rank of M is 1][big his of M] expression exudes playfulness and confidence[otherwise][big he of M] looks a bit less certain about how awesome [he of M] looks than [he of M] used to[end if].";
+	if diaper quest is 0, say "[if the current-rank of M is 2][big he of M] now has long fake purple nails on each finger, and is holding them out to the sides delicately, as if afraid of breaking one.[otherwise if the current-rank of M >= 3][big he of M] now has fingerless pink kitty mittens locked onto [his of M] hands, rendering [him of M] almost completely without manual dexterity. A collar connected to a pink leash is locked on [his of M] neck, and a long fake pink tail sways from [his of M] rear, almost certainly connected to a butt plug.[end if]";
+	otherwise say "[if the current-rank of M is 2]The new shorter length of [his of M] skirt exposes the fact that [he of M][']s wearing a small pink diaper.[otherwise if the current-rank of M >= 3][big he of M] now has fingerless pink kitty mittens locked onto [his of M] hands, rendering [him of M] almost completely without manual dexterity. A collar connected to a pink leash is locked on [his of M] neck, and a long fake pink tail sways from [his of M] rear, almost certainly connected to a butt plug.[end if]".
 
 The max-rank of student-candy is 3.
 

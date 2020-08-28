@@ -1,38 +1,18 @@
 Submitting by Actions begins here.
 
-[!<YourselfIsHavingMaritalSex>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: yourself is having marital sex:
 	unless the class of the player is princess, decide no;
 	unless princess-consort is monster, decide no;
 	if princess-consort is grabbing the player or princess-consort is penetrating a body part, decide yes;
 	decide no.
 
-[!<submitting:Action>*
-
-REQUIRES COMMENTING
-
-*!]
 Submitting is an action applying to nothing.
 
-[!<CheckSubmitting>+
-
-REQUIRES COMMENTING
-
-+!]
 Check submitting:
 	if the number of live things penetrating a body part + the number of things grabbing the player + the number of things wrangling a body part is 0, say "You are not being held in place, so there is nothing to submit to!" instead;
 	if there is a fucking daddy's hole monster or there is a wrong race fucking monster:
 		try resisting instead; [See resisting for more info on these mechanics]
 
-[!<CarryOutSubmitting>+
-
-REQUIRES COMMENTING
-
-+!]
 Carry out submitting:
 	now the player-reaction of the player is submitting;
 	if diaper quest is 1 and there is a live thing grabbing the player:
@@ -52,11 +32,6 @@ Carry out submitting:
 			if the player is having marital sex, dignify 20;[princesses who accept their role fully are more confident after sex with their consorts]
 	allocate 6 seconds.
 
-[!<ReportSubmitting>+
-
-REQUIRES COMMENTING
-
-+!]
 Report submitting:
 	let M be a random thing grabbing the player;[prioritize anyone holding the player down]
 	if M is nothing, now M is a random live thing penetrating a body part;[next, prioritize anyone inside the player]
@@ -76,22 +51,12 @@ Report submitting:
 To compute wrangled submitting of (T - a thing):
 	say SexSubmissionFlav of T.
 
-[!<SaySexSubmissiveFlavOfThing>+
-
-REQUIRES COMMENTING
-
-+!]
 To say SexSubmissionFlav of (T - a thing):
 	if T is penetrating a body part, say "[one of]You lie still and accept the invasion.[or]You submit to being used as a plaything.[or]You don't resist being used.[purely at random]";
 	otherwise say "[if T is live]You don't resist against the [T]'s acts[otherwise]You keep still and wait[end if].".
 
 Understand "submit", "surrender", "resign", "give up", "give in", "forfeit", "yy", "yesway", "fuck" as submitting.
 
-[!<ComputePlayerSubmission>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute player submission:
 	repeat with M running through awake monsters in the location of the player:
 		if the last-interaction of M is 0 and M is enjoys sex dangerous monster, say SubmissionFlav of M;
@@ -100,19 +65,9 @@ To compute player submission:
 		compute submission reaction of M;
 	if there is an enjoys sex dangerous monster in the location of the player, say "[if the player is feeling dominant]You grit your teeth and try to suppress your rage.[otherwise]In a brief moment of clarity, you are horrified to see what you have become. The feeling soon fades and is replaced by shy enthusiasm.[end if]".
 
-[!<ComputeSubmissionReactionOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute submission reaction of (M - a monster):
 	make M expectant.
 
-[!<SaySubmissionFlavOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To say SubmissionFlav of (M - a monster):
 	if M is intelligent:
 		say "[BigNameDesc of M] laughs at your submissiveness and prepares to [if diaper quest is 1]play with[otherwise]fuck[end if] you. ";
@@ -123,11 +78,6 @@ To make (M - a monster) expectant: [This is in a function so that you can overri
 	if M is unfriendly and M is not survived, now M is triumphant;
 	if M is unfriendly or the player is in danger, now the last-interaction of M is 2.
 
-[!<ResetSubmittedMonsters>+
-
-REQUIRES COMMENTING
-
-+!]
 To reset submitted monsters: [This means that making an aggressive move breaks any mini-cutscene where the player is slowly submitting to an NPC]
 	repeat with M running through interested alive monsters:
 		now the last-interaction of M is 0.

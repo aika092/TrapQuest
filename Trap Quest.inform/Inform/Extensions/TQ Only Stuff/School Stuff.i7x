@@ -9,7 +9,9 @@ Part - Kissing Lesson
 
 kissing-lesson is a lesson. The lesson-teacher of kissing-lesson is teacher-angela.
 
-Definition: kissing-lesson is lesson-appropriate if face is not actually occupied.
+Definition: kissing-lesson is lesson-appropriate:
+	if face is not actually occupied, decide yes;
+	decide no.
 
 To compute teaching of (L - kissing-lesson):
 	allocate 40 seconds;
@@ -35,8 +37,12 @@ To compute teaching of (L - kissing-lesson):
 		if a random number between 1 and the delicateness of the player < 7:
 			say "[teacher-name of M] gives way, and allows your tongue to slip beyond [his of M] teeth.";
 			now tonguedPerson is M;
+			repeat with ST running through tryhard students in the location of the player:
+				FavourUp ST;
 		otherwise:
 			say "your bravery subsides and you relent, allowing your superior to explore the insides of your mouth.";
+			repeat with ST running through ditzy students in the location of the player:
+				FavourUp ST;
 		passively stimulate face from M times 2;
 		finally arouse the delayed arousal of the player;
 		update arousal;
@@ -44,6 +50,8 @@ To compute teaching of (L - kissing-lesson):
 	otherwise:
 		say "[teacher-name of M] tuts at your hesitation and then grabs you by the back of your head, forcing your lips together in a seal, where [he of M] immediately forces [his of M] tongue into your mouth and towards your throat. With [his of M] tongue in your mouth, it definitely feels like [he of M] is in command. At least you feel like you managed to keep some self-respect intact by not being over-eager.";
 		Dignify 250;
+		repeat with ST running through innocent students in the location of the player:
+			FavourUp ST;
 	let endN be a random number between 5 and 8;
 	let N be 0;
 	let player-groped-level be -1;
@@ -54,8 +62,8 @@ To compute teaching of (L - kissing-lesson):
 		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 		say "[if tonguedPerson is the player][teacher-name of M][']s tongue is currently in your mouth - [he of M] has control[otherwise]Your tongue is currently in [his of M] mouth - you have control[end if]. [if player-groped-level >= 0 and tonguedPerson is the player][big he of M][otherwise if player-groped-level >= 0]But [he of M] already[end if] [if player-groped-level is 0]has [his of M] hands on your [AssDesc].[otherwise if player-groped-level is 1]has one hand on your [AssDesc] and one hand on your [BreastDesc].[otherwise if player-groped-level > 1]has one hand on your [BreastDesc] and the other on your [genitals]![end if][line break]";
 		set numerical response 1 to "pull away and end the kiss[if newbie tips is 1] (have you entertained [teacher-name of teacher-angela] enough to avoid punishment?)[end if]";
-		set numerical response 2 to "keep kissing[if newbie tips is 1 and tonguedPerson is the player] ([teacher-name of teacher-angela] gets more handsy, increasing stimulation in future rounds)[end if]";
-		if tonguedPerson is the player, set numerical response 3 to "try to regain control by pushing your tongue into [his of M] mouth[if newbie tips is 1 and tonguedPerson is the player] (extra stimulation and humiliation this turn to try and prevent [teacher-name of teacher-angela] from getting more handsy)[end if]";
+		set numerical response 2 to "keep kissing[if newbie tips is 1 and tonguedPerson is the player and player-groped-level < 2] ([teacher-name of M] gets more handsy, increasing stimulation in future rounds)[otherwise if newbie tips is 1 and tonguedPerson is the player] ([teacher-name of M] deals double vaginal stimuation while you allow her to retain full control of the situation)[end if]";
+		if tonguedPerson is the player, set numerical response 3 to "try to regain control by pushing your tongue into [his of M] mouth[if newbie tips is 1 and player-groped-level < 2] (extra humiliation this turn to try and prevent [teacher-name of M] from getting more handsy)[otherwise if newbie tips is 1] (extra humiliation this turn but if you succeed in getting [his of M] tongue out of your mouth you'll significantly reduce overall stimulation)[end if]";
 		compute multiple choice question;
 		if player-numerical-response is 1:
 			now N is 10;
@@ -71,11 +79,15 @@ To compute teaching of (L - kissing-lesson):
 					now tonguedPerson is the player;
 				otherwise:
 					say "every now and then trying to push past, but not being able to find an opening.";
-				passively stimulate face from M times 2;
-				check for arousal change;
+				[passively stimulate face from M times 2;
+				check for arousal change;]
 			if player-numerical-response is 3:
 				say "Your tongues slither on top of each other for a few seconds as you fight to push [teacher-name of M][']s tongue back into [his of M] mouth. The feeling of [his of M] tongue on yours [if the player is a bit horny]arouses you further[otherwise]turns you on a little[end if], and the fact that your peers can see you eagerly leaning into the kiss makes you blush. ";
 				moderateHumiliate;
+				if player-groped-level is 1:
+					repeat with IST running through innocent students in the location of the player:
+						say "[one of][IST] can't believe that you're kissing [teacher-name of M] so passionately, considering how [he of M][']s treating your body like a piece of meat.[or][stopping]";
+						FavourDown IST;
 				let RS be a random number between 1 and the strength of the player;
 				let RM be a random number between 1 and the difficulty of M;
 				if debuginfo > 0, say "[input-style]Tongue wrestle check: Strength (d[strength of the player]) = [RS] | [RM].5 [teacher-name of M] difficulty rating[roman type][line break]";
@@ -84,12 +96,12 @@ To compute teaching of (L - kissing-lesson):
 					now tonguedPerson is M;
 				otherwise:
 					say "[teacher-name of M] doesn't relent, and [his of M] tongue remains firmly inside your mouth.";
-				passively stimulate face from M;
-				check for arousal change;
+				[passively stimulate face from M;
+				check for arousal change;]
 			if tonguedPerson is M:
 				say "[teacher-name of M] [if player-groped-level is -1]submits to your kiss, moaning enthusiastically[otherwise if player-groped-level is 0]lets you play with [his of M] tongue as [he of M] continues to knead your [AssDesc][otherwise if player-groped-level is 1]swirls [his of M] tongue with yours as [he of M] continues to fondle you[otherwise]submits to your oral probing and focuses on playing with your [genitals] and [BreastDesc][end if].";
 			otherwise:
-				say "[teacher-name of M] [if player-groped-level is -1]passionately explodes your mouth with [his of M] tongue, making over-the-top kissing sounds[otherwise if player-groped-level is 0]continues to knead your [AssDesc] as [he of M] lovingly decorates your tongue with [his of M] saliva[otherwise if player-groped-level is 1]hums happily as [he of M] explores your mouth and gropes your body[otherwise]moans with pleasure as [he of M] idly tongues your mouth and focuses on playing with your [genitals] and [BreastDesc][end if].";
+				say "[teacher-name of M] [if player-groped-level is -1]passionately explores your mouth with [his of M] tongue, making over-the-top kissing sounds[otherwise if player-groped-level is 0]continues to knead your [AssDesc] as [he of M] lovingly decorates your tongue with [his of M] saliva[otherwise if player-groped-level is 1]hums happily as [he of M] explores your mouth and gropes your body[otherwise]moans with pleasure as [he of M] idly tongues your mouth and focuses on playing with your [genitals] and [BreastDesc][end if].";
 			if player-groped-level >= 0:
 				say "You feel humiliated that you've let [him of M] [one of][or]continue to [stopping]touch you in front of your classmates! [if player-groped-level >= 2][severeHumiliateReflect][otherwise if player-groped-level >= 1][strongHumiliateReflect][otherwise][slightHumiliateReflect][end if]";
 			if player-groped-level >= 2:
@@ -100,6 +112,7 @@ To compute teaching of (L - kissing-lesson):
 			if player-groped-level >= 1, passively stimulate breasts from M;
 			if player-groped-level >= 2:
 				passively stimulate vagina from M;
+				if tonguedPerson is the player, passively stimulate vagina from M; [it's double stimulation to let her tongue you as well]
 				if vagina is orgasming:
 					repeat with ST running through students in the location of the player:
 						FavourDown ST;
@@ -173,7 +186,9 @@ To say MonsterDesc of (M - teacher-seraphina):
 
 The teacher-name of teacher-seraphina is "Seraphina".
 
-Definition: teacher-seraphina is fetish appropriate if max breast size >= 8.
+Definition: teacher-seraphina is fetish appropriate:
+	if max breast size >= 8, decide yes;
+	decide no.
 
 To say WhoAnswer of (M - teacher-seraphina):
 	say "[speech style of M]'Can you not guess what [']assets['] I bring to the table?'[roman type][line break]".
@@ -203,7 +218,7 @@ To compute teaching of (L - tits-lesson):
 	if the player is top heavy or the largeness of breasts >= 12 or the breast-enhancement of nurse < 0:
 		if the breast-enhancement of nurse < 0 or breasts is lewdly exposed or the number of worn top-placed low cut or higher nipple covering clothing is 0:
 			if lady fetish is 2:
-				say "[NameDesc of M] gestures at you. [line break][speech style of M]'This is what all women could look like. She is a woman who has truly strived for perfection, and I am proud to call her my superior.'[roman type][line break][NameDesc of M] strides over to you and then takes a step behind you, grabbing each of your breasts with one of [his of M] hands, squeezing them gently.[line break][speech style of M]'The texture, the shape, the sheer weight of these puppies screams [']power['], don't you think? I wouldn't even try to compete with this cutie for attention in a club or bar.'[roman type][line break]After a [if there is worn rigid actually breast covering clothing]final big squeeze[otherwise]cheeky tweak of your nipples[end if], [big he of M] lets go.[line break][speech style of M]'There is nothing more that I can teach you. Try to leave some knowledge for the rest of us.'[roman type][line break]";
+				say "[NameDesc of M] gestures at you.[line break][speech style of M]'This is what all women could look like. She is a woman who has truly strived for perfection, and I am proud to call her my superior.'[roman type][line break][NameDesc of M] strides over to you and then takes a step behind you, grabbing each of your breasts with one of [his of M] hands, squeezing them gently.[line break][speech style of M]'The texture, the shape, the sheer weight of these puppies screams [']power['], don't you think? I wouldn't even try to compete with this cutie for attention in a club or bar.'[roman type][line break]After a [if there is worn rigid actually breast covering clothing]final big squeeze[otherwise]cheeky tweak of your nipples[end if], [big he of M] lets go.[line break][speech style of M]'There is nothing more that I can teach you. Try to leave some knowledge for the rest of us.'[roman type][line break]";
 			otherwise:
 				say "[NameDesc of M] gestures at you.[line break][speech style of M]'Now this is a [if the largeness of breasts > 5]woman who has truly strived for perfection, and I am proud to call her my equal.'[roman type][line break][NameDesc of M] strides over to you and then takes a step behind you, grabbing each of your large breasts with one of [his of M] hands, squeezing them gently.[line break][speech style of M]'The texture, the shape, the sheer weight of these puppies screams [']power['], don't you think? I wouldn't want to try and compete with this cutie for attention in a club or bar[otherwise]special case, there seems to be some special magic keeping these puppies small and disappointing.'[roman type][line break][NameDesc of M] strides over to you and then takes a step behind you, grabbing each of your nipples with one of [his of M] hands, squeezing them painfully.[line break][speech style of M]'Still, even itty bitties like this can be fun to play with, I think[end if].'[roman type][line break]After a [if there is worn rigid actually breast covering clothing]final big squeeze[otherwise]cheeky tweak of your nipples[end if], [big he of M] lets go.[line break][speech style of M]'There is nothing more I need to teach you. You may proceed.'[roman type][line break]";
 			now armband is ruby;
@@ -229,7 +244,7 @@ To compute teaching of (L - tits-lesson):
 			update students; [an important line which makes boring old students disappear and new cool ones appear]
 		otherwise:
 			say "[NameDesc of M] gestures at you.[line break][speech style of M]'Now this is a woman who has truly strived for perfection, but look at that clothing! There's nowhere near enough cleavage showing. It's almost like she is ashamed of the size of her massive titties. That just won't do!'[roman type][line break][big he of M] actually looks rather angry.[line break][variable custom style]Uh-oh...[roman type][line break][big he of M] opens the ancient-looking book that [he of M] is holding and turns it to a certain page. [big he of M] begins reciting a chant in a very bizarre sounding language.[line break][speech style of M]'PUJ VLTU[']BE[']JAJ!'[roman type][line break]The book glows with dark energy which then shoots out and strikes you in the chest! You feel powerful magic surging through your veins.";
-			MagicPowerUp 6;
+			MagicPowerUp 4;
 			repeat with C running through worn actually breast covering clothing:
 				say "Your [ShortDesc of C] disintegrates in a burst of black flame!";
 				destroy C;
@@ -259,12 +274,13 @@ To compute teaching of (L - tits-lesson):
 			say "[variable custom style]I guess this isn't too bad.[roman type][line break]";
 		say "[BigNameDesc of M] makes you stand in a line so that [he of M] can inspect your titty graffiti. Eventually [he of M] reaches you and makes you puff our your chest as [he of M] reads the small black letters.";
 		compute tits marker reaction of S;
-		say "[big he of M] coughs loudly and then raises [his of M] voice.[line break][speech style of M]'Okay, let's raise the stakes a bit. I have a spell that can turn any ink into a permanent tattoo. Anyone who says they are willing to have their words become a permanent public declaration on bosom will graduate this class and become a ruby student. Anyone interested?'[roman type][line break]Do you volunteer to have the words '[tattoo-title of marker chest tattoo]' permanently inked on your chest? ";
+		say "[big he of M] coughs loudly and then raises [his of M] voice.[line break][speech style of M]'Okay, let's raise the stakes a bit. I have a spell that can turn any ink into a permanent tattoo. Anyone who says they are willing to have their words become a permanent public declaration on their bosom will graduate this class and become a ruby student. Anyone interested?'[roman type][line break]Do you volunteer to have the words '[tattoo-title of marker chest tattoo]' permanently inked on your chest? ";
 		if the player is bimbo consenting:
 			say "Everybody looks awkward and casts their eyes downward, but you cause the silence to be broken by a few awed gasps as you raise your hand.[line break][speech style of M]'Oh yes, I had a feeling about you.'[roman type][line break][NameDesc of M] grins and with a flourish of [his of M] spellbook, everybody's words disappear from their chest, except yours. You test your own ink with a finger and find that it indeed will not rub off or smudge at all. However, at least you can feel that some of the magic power that [NameDesc of M] used has remained in your veins.";
-			MagicPowerUp 4;
+			MagicPowerUp 3;
 			now marker chest tattoo is worn by the player;
 			try examining marker chest tattoo;
+			HappinessUp S by 2;
 			say "[speech style of M]'What a brave girl you are! Well, as promised, here you go.'[roman type][line break]";
 			now armband is ruby;
 			say "You watch as the ID card inside your armband transforms!";
@@ -346,7 +362,9 @@ Part - Rochelle / Roger
 
 teacher-rochelle is a ruby-teacher. teacher-rochelle is male.
 
-Definition: teacher-rochelle is presenting as male if futanari fetish is 0.
+Definition: teacher-rochelle is presenting as male:
+	if futanari fetish is 0, decide yes;
+	decide no.
 
 The text-shortcut of teacher-rochelle is "tero".
 
@@ -372,7 +390,7 @@ To say LongDickDesc of (M - teacher-rochelle):
 To say MonsterDesc of (M - teacher-rochelle):
 	if M is pacified:
 		if lady fetish is 1 or futanari fetish is 1, say "This poor big-dicked futa has a unique chastity cage locked around [his of M] loins. It has a strict tight belt to keep it in place and to keep [his of M] pussy blocked off, and a large clear plastic cage to contain [his of M] [LongDickDesc of M]. The exact tight fit of the cage seems to be preventing [him of M] from losing [his of M] erection. But even if [he of M] fucks someone, [he of M][']s not going to be able to feel a thing. [big he of M] is also wearing some new piercings - two nipples piercings and a belly button piercing - connected by a gold chain, completing the 'sex slave' look[unless playerRegion is school]. [big his of M] butt is a raw shade of red - evidence of a recent rough spanking session[end if].";
-		otherwise say "The cuffed ankles, wrists cuffed behind [his of M] back and the ballgag tightly strapped in [his of M] mouth are hardly noticeable thanks to the two huge pink ribbons that now constitute this big-dicked [man of M][']s only clothing. One is aruond [his of M] neck, the other around the base of [his of M] [LongDickDesc of M], mostly covering it. It would appear that either due to magic or just the sheer emasculation of [his of M] new appearance, [he of M] can no longer get hard.";
+		otherwise say "The cuffed ankles, wrists cuffed behind [his of M] back and the ballgag tightly strapped in [his of M] mouth are hardly noticeable thanks to the two huge pink ribbons that now constitute this big-dicked [man of M][']s only clothing. One is around [his of M] neck, the other around the base of [his of M] [LongDickDesc of M], mostly covering it. It would appear that either due to magic or just the sheer emasculation of [his of M] new appearance, [he of M] can no longer get hard.";
 	otherwise:
 		say "Even if [his of M] armband didn't make it clear that this grinning [man of M] is a teacher, there's no avoiding noticing [his of M] [LongDickDesc of M] swinging from [his of M] crotch. Its 9.5 inch length and equally impressive girth must put it in the top 1% of [manly-penis]s.".
 
@@ -421,7 +439,7 @@ To compute labour to (M - teacher-rochelle):
 		say DefaultBirthScene.
 
 To say EnslavedDominationFlav of (M - teacher-rochelle):
-	say "You grab [NameDesc of M] by the [manly-penis] and pull [him of M] into you. [if the player is able to speak][variable custom style]'Not so tough now, are you? Wimp.'[roman type][line break][otherwise]You stare into [his of M] eyes to let [him of M] know who's in charge. [end if][big he of M] just whimpers timidly and makes sure not to move lets [his of M] member accidentally get pulled so hard that it hurts.".
+	say "You grab [NameDesc of M] by the [manly-penis] and pull [him of M] into you. [if the player is able to speak][variable custom style]'Not so tough now, are you? Wimp.'[roman type][line break][otherwise]You stare into [his of M] eyes to let [him of M] know who's in charge. [end if][big he of M] just whimpers timidly and makes sure not to move lest [his of M] member accidentally get pulled so hard it hurts.".
 To decide which number is the EnslavedDominationThreshold of (M - teacher-angela):
 	decide on 13.
 
@@ -513,6 +531,7 @@ To compute teaching of (L - practical-lesson):
 				otherwise say "Your [vagina] slowly coats [NameDesc of lesson-teacher of L][']s [DickDesc of lesson-teacher of L] in its juices.";
 				increase pussy-count by 1;
 				FuckCount;
+				HappinessUp entry 1 in LST; [she's happy she's been given the option of vag]
 			otherwise if player-numerical-response is 3:
 				now the lesson-teacher of L is penetrating asshole;
 				add asshole to LB, if absent;
@@ -638,7 +657,7 @@ To compute teaching of (L - practical-lesson):
 		if victorious-student is filthiest-student:
 			say "[BigNameDesc of lesson-teacher of L] yawns, but it's unclear if this is because [he of lesson-teacher of L][']s bored or because [he of lesson-teacher of L] just came so hard.[line break][speech style of lesson-teacher of L]'[student-name of victorious-student] was also the filthiest slut by far, so nobody else gets promoted today for that. Too bad!'[roman type][line break]";
 		otherwise:
-			say "[BigNameDesc of lesson-teacher of L] [']hmm[']s as [he of lesson-teacher of L] thinks.[line break][speech style of lesson-teacher of L]'[student-name of filthiest-student] was the filthiest slut today, so [he of the filthiest-student] gets promoted too.'[roman type][line break]";
+			say "[BigNameDesc of lesson-teacher of L] [']hmm's as [he of lesson-teacher of L] thinks.[line break][speech style of lesson-teacher of L]'[student-name of filthiest-student] was the filthiest slut today, so [he of the filthiest-student] gets promoted too.'[roman type][line break]";
 			promote filthiest-student;
 	repeat with M running through LST:
 		now the lessonInt2 of M is 0;
@@ -664,7 +683,7 @@ To compute teaching of (L - practical-lesson):
 		repeat with ST running through LST:
 			if the current-rank of ST < 4 and the lessonInt2 of ST is the number of entries in LB:
 				if ST is not amicable student, say "[one of][BigNameDesc of ST] whines to the teacher.[line break][speech style of ST]'But I used the same number of holes! It's not fair!'[roman type][line break][or][stopping]";
-			 	HappinessDown ST;
+				HappinessDown ST;
 	update students; [an important line which makes boring old students disappear and new cool ones appear]
 	say "[BigNameDesc of lesson-teacher of L] closes [his of lesson-teacher of L] eyes and lazily stretches [his of lesson-teacher of L] arms.[line break][speech style of lesson-teacher of L]'Yep, I'm done. Class dismissed!'[roman type][line break]".
 
@@ -672,12 +691,13 @@ Part - Swimming Lesson
 
 swimming-lesson is a lesson. The lesson-teacher of swimming-lesson is teacher-hyacinthe.
 
-Definition: swimming-lesson is lesson-appropriate if diaper quest is 0 and the number of alive lesson-appropriate students > 0. [There must be another student]
+Definition: swimming-lesson is lesson-appropriate:
+	if diaper quest is 0 and the number of alive lesson-appropriate students > 0, decide yes;
+	decide no. [There must be another student]
 
 To decide which number is the swimming-strength of (M - a student):
 	decide on the dedication of M.
 
-[TODO: make this readable]
 To compute teaching of (L - swimming-lesson):
 	allocate 40 seconds;
 	now bigGameLoop is 2; [tells the game not to refresh any windows]
@@ -694,7 +714,7 @@ To compute teaching of (L - swimming-lesson):
 	now School19 is discovered;
 	now the player is in School20;
 	let LST be the list of students in School20;
-	say "[speech style of M]'I'm sure you've been wondering what we use this pool for. Well, it works very well as a test of will. [if the number of entries in LST > 0]Each of you has[otherwise]You have[end if] your promotion waiting for you, at the bottom of this pool.'[roman type][line break][BigNameDesc of M] produces a [if there is a student in the location of the player]set of weighted balls, each with one of your names on it, and launches them[otherwise]weighted ball and launches it[end if] into the pool, where it quickly disappears towards the bottom of the creamy goop.[line break][speech style of M]'There will be race from the far end of the swimming pool, the deep end, back to this end here. You don't HAVE to take part - nobody's forcing you to do anything in this school. There are two ways to get promoted. Firstly, everyone who gets in the pool, EXCEPT for the person who gets out FIRST and the person who gets out LAST, gets promoted. So you don't want to win the race, but you also don't want to lose. Secondly, everyone is allowed to take one weight out of the pool with them. You can't go back in once you get out. Whoever's name is on a weight that's not in the pool at the end of the race, wins. The end of the race is when there's nobody left in the pool. BUT there is a small incentive to be the first out: when the first person gets out, there'll be a fun... [']event['] that'll affect everyone who's still in the pool.'[roman type][line break]";
+	say "[speech style of M]'I'm sure you've been wondering what we use this pool for. Well, it works very well as a test of will. [if the number of entries in LST > 0]Each of you has[otherwise]You have[end if] your promotion waiting for you, at the bottom of this pool.'[roman type][line break][BigNameDesc of M] produces a [if there is a student in the location of the player]set of weighted balls, each with one of your names on it, and launches them[otherwise]weighted ball and launches it[end if] into the pool, where it quickly disappears towards the bottom of the creamy goop.[line break][speech style of M]'There will be race from the far end of the swimming pool, the deep end, back to this end here. You don't HAVE to take part - nobody's forcing you to do anything in this school. Everyone is allowed to take one weight out of the pool with them. You can't go back in once you get out. Whoever's name is on a weight that's not in the pool at the end of the race, gets promoted. After a minute or two, there'll be a fun... [']event['] that'll affect everyone who's still in the pool. After that, nobody else still waiting here will be allowed to get in the pool.[roman type][line break]";
 	let SM be a random off-stage fetish appropriate string monokini;
 	if the class of the player is adventurer and SM is clothing:
 		now SM is in the location of the player;
@@ -715,6 +735,7 @@ To compute teaching of (L - swimming-lesson):
 	let LCumBlinded be a list of people; [Who has dipped their head down under the cum and therefore can't see much any more?]
 	let LOutOfPool be a list of people; [In order, who has left the pool?]
 	let LWeights be the list of students in the location of the player; [List of weights with everyone's name on. Static]
+	let eventTimer be a random number between 7 and 11;
 	add yourself to LWeights;
 	sort LWeights in random order;
 	let NWeights be the number of entries in LWeights;
@@ -728,7 +749,7 @@ To compute teaching of (L - swimming-lesson):
 	while raceOver is 0:
 		let LDivers be a list of people; [Who is trying to use the diving board this turn?]
 		let LWeightDivers be a list of people; [Which people are about to dive for a weight?]
-		if playerDistance is 0:
+		if playerDistance is 0 and eventTimer > 0:
 			reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 			set numerical response 1 to "lower yourself into the pool";
 			set numerical response 2 to "dive into the pool from the diving board";
@@ -769,37 +790,35 @@ To compute teaching of (L - swimming-lesson):
 				add yourself to LWeightDivers;
 		sort LST in random order;
 		repeat with ST running through LST:
-			if poolCrazyEvent is not 1: [When someone gets out of the pool for the first time, it triggers an event which makes everyone else lose their turn.]
-				if the lessonInt1 of ST is 0: [they haven't jumped in yet]
-					if a random number between 0 and 8 <= the dedication of ST: [They jump in]
-						if a random number between 0 and 4 <= the dedication of ST: [They want to use the diving board]
-							add ST to LDivers;
-						otherwise:
-							say "[BigNameDesc of ST] runs to the edge of the pool, and [one of]with only a moment's hesitation, [or]after a brief pause, [or]immediately [at random]jumps into the pool of [semen].";
-							increase the lessonInt1 of ST by 1;
-							add ST to LInPool;
-				otherwise if ST is listed in LInPool: [they're in the pool already]
-					if the lessonInt2 of ST is 0 and the lessonInt1 of ST < 4 and a random number between 0 and 5 <= the dedication of ST:
-						add ST to LWeightDivers;
-					otherwise if the lessonInt1 of ST >= 10: [Student considers getting out of the pool]
-						if the number of entries in LOutOfPool > 0 or a random number between 0 and the dedication of ST is 0: [It's bad to be the first one out]
-							say "[BigNameDesc of ST] heaves [himself of ST] out of the pool.";
-							remove ST from LInPool;
-							add ST to LOutOfPool;
-							if ST is listed in LCumBlinded, remove ST from LCumBlinded;
-							if poolCrazyEvent is 0, now poolCrazyEvent is 1;
-						otherwise:
-							say "[BigNameDesc of ST] [one of]is at the end of the pool but doesn't get out yet[or]hovers at the end of the pool, but doesn't get out yet[or]decides not to get out of the pool yet[then at random].";
+			if the lessonInt1 of ST is 0 and eventTimer > 0: [they haven't jumped in yet]
+				if a random number between 0 and 8 <= the dedication of ST: [They jump in]
+					if a random number between 0 and 4 <= the dedication of ST: [They want to use the diving board]
+						add ST to LDivers;
 					otherwise:
-						if ST is listed in LCumBlinded and a random number between 0 and the dedication of ST is 0:
-							say "[BigNameDesc of ST] stops to wipe some [semen] from [his of ST] eyes.";
-							remove ST from LCumBlinded;
-						otherwise:
-							let SWIM be a random number between 1 and the swimming-strength of ST;
-							if SWIM > 1 and the lessonInt2 of ST > 0, decrease SWIM by 1;
-							say "[BigNameDesc of ST] swims towards the shallow end of the pool. [big he of ST] [if SWIM is 1][one of]doesn't get too far[or]only manages to progress by a couple of metres[or]makes poor progress[at random].[otherwise if SWIM is 2][one of]makes impressive progress[or]manages to travel a few metres[or]successfully makes decent progress[at random].[otherwise]makes incredible progress![end if]";
-							increase the lessonInt1 of ST by SWIM;
-							if the lessonInt1 of ST >= 10, say "[big he of ST] reaches the end of the pool.";
+						say "[BigNameDesc of ST] runs to the edge of the pool, and [one of]with only a moment's hesitation, [or]after a brief pause, [or]immediately [at random]jumps into the pool of [semen].";
+						increase the lessonInt1 of ST by 1;
+						add ST to LInPool;
+			otherwise if ST is listed in LInPool: [they're in the pool already]
+				if the lessonInt2 of ST is 0 and the lessonInt1 of ST < 4 and a random number between 0 and 5 <= the dedication of ST:
+					add ST to LWeightDivers;
+				otherwise if the lessonInt1 of ST >= 10: [Student considers getting out of the pool]
+					if the number of entries in LOutOfPool > 0 or a random number between 0 and the dedication of ST is 0: [It's bad to be the first one out]
+						say "[BigNameDesc of ST] heaves [himself of ST] out of the pool.";
+						remove ST from LInPool;
+						add ST to LOutOfPool;
+						if ST is listed in LCumBlinded, remove ST from LCumBlinded;
+					otherwise:
+						say "[BigNameDesc of ST] [one of]is at the end of the pool but doesn't get out yet[or]hovers at the end of the pool, but doesn't get out yet[or]decides not to get out of the pool yet[then at random].";
+				otherwise:
+					if ST is listed in LCumBlinded and a random number between 0 and the dedication of ST is 0:
+						say "[BigNameDesc of ST] stops to wipe some [semen] from [his of ST] eyes.";
+						remove ST from LCumBlinded;
+					otherwise:
+						let SWIM be a random number between 1 and the swimming-strength of ST;
+						if SWIM > 1 and the lessonInt2 of ST > 0, decrease SWIM by 1;
+						say "[BigNameDesc of ST] swims towards the shallow end of the pool. [big he of ST] [if SWIM is 1][one of]doesn't get too far[or]only manages to progress by a couple of metres[or]makes poor progress[at random].[otherwise if SWIM is 2][one of]makes impressive progress[or]manages to travel a few metres[or]successfully makes decent progress[at random].[otherwise]makes incredible progress![end if]";
+						increase the lessonInt1 of ST by SWIM;
+						if the lessonInt1 of ST >= 10, say "[big he of ST] reaches the end of the pool.";
 		[Now we handle all the people going for the diving board at the same time]
 		let NDivers be the number of entries in LDivers;
 		if NDivers > 1:
@@ -915,17 +934,19 @@ To compute teaching of (L - swimming-lesson):
 					if WeightName is listed in LCumBlinded, say "[BigNameDesc of WeightName] doesn't seem to notice that you've dropped [his of WeightName] weight, probably because of all the sticky [semen] plastered across [his of WeightName] eyes.";
 					otherwise HappinessDown WeightName by 2; [If they can see, they're upset that you've dropped the weight back down]
 				now playerWeight is 0;
-		if poolCrazyEvent is not 1 and the player is listed in LInPool and playerDistance >= 10:
-			say "Get out of the pool? [if the number of entries in LOutOfPool is 0]Remember, the first person out doesn't get automatically promoted, but will trigger some sort of crazy event for the other students in the pool. [end if]";
+		if the player is listed in LInPool and playerDistance >= 10:
+			say "Get out of the pool?";
 			if the player is consenting:
 				remove yourself from LInPool;
 				add yourself to LOutOfPool;
 				say "You heave yourself out of the pool and begin wiping the [semen] from your eyes.";
 				if yourself is listed in LCumBlinded, remove yourself from LCumBlinded;
-				if poolCrazyEvent is 0, now poolCrazyEvent is 1;
-		if poolCrazyEvent is 1: [The first person has gotten out of the pool. Something crazy happens.]
-			let OutName be entry 1 of LOutOfPool;
-			say "[bold type]As [if OutName is the player]you get[otherwise][NameDesc of OutName][bold type] gets[end if] out of the pool, the lights turn red and a loud klaxon starts blaring. Something is happening![roman type][line break]";
+				if playerWeight > 0:
+					let friendWeight be entry playerWeight in LWeights;
+					if friendWeight is a student, HappinessUp friendWeight by 3;
+		decrease eventTimer by 1;
+		if eventTimer is 0 and the number of entries in LInPool > 0: [Something crazy happens.]
+			say "[bold type]Suddenly the lights turn red and a loud klaxon starts blaring. The timed event that [teacher-name of M] talked about is happening![roman type][line break]";
 			if CPS is clothing and a random number between 1 and 5 > 2: [Swimming condoms]
 				now poolCrazyEvent is 2;
 				say "And then it happens: A sea of unused condoms, not in wrappers, rain from the ceiling. They land in the pool all over, and then begin swimming blindly around like leeches, filling up with [semen] from the pool as they move. ";
@@ -945,9 +966,6 @@ To compute teaching of (L - swimming-lesson):
 					increase the semen volume of belly by 25;
 				otherwise:
 					say "[if the number of entries in LInPool > 1]The students suddenly start[otherwise][NameDesc of entry 1 in LInPool] starts[end if] screaming. You can't really tell what's going on, but it's clear that something is happening to their bottom half.";
-			if OutName is yourself:
-				repeat with ST running through LInPool:
-					HappinessDown ST;
 		if poolCrazyEvent is 2:
 			repeat with ST running through LInPool:
 				if a random number between 1 and 2 is 1:
@@ -999,16 +1017,16 @@ To compute teaching of (L - swimming-lesson):
 			say line break;
 		if the number of entries in LOutOfPool > 0 and the number of entries in LInPool is 0, now raceOver is 1;
 	let LWinners be a list of people;
-	repeat with ST running through LOutOfPool:
+	[repeat with ST running through LOutOfPool:
 		add ST to LWinners;
 	let STFirstOut be entry 1 in LWinners;
 	let STLastOut be entry (the number of entries in LWinners) in LWinners;
 	remove STFirstOut from LWinners;
-	if STFirstOut is not STLastOut, remove STLastOut from LWinners;
+	if STFirstOut is not STLastOut, remove STLastOut from LWinners;]
 	repeat with PX running through monsters in the location of the player:
 		now PX is in School22;
 	now the player is in School22;
-	say "[BigNameDesc of M] blows on a whistle.[line break][speech style of M]'Alright, that's the end of that! Good race! Let's see now... [BigNameDesc of STFirstOut][speech style of M] was the first out of the pool, and [BigNameDesc of STLastOut][speech style of M] was the last. So that means [if the number of entries in LWinners is 0]nobody gets[otherwise if the number of entries in LWinners is 1][NameDesc of entry 1 in LWinners][speech style of M] gets[otherwise][LWinners][speech style of M] get[end if] promoted for not coming first or last! And as for weights...'[roman type][line break][BigNameDesc of M] looks around for which weights have been brought of the pool.";
+	say "[BigNameDesc of M] blows on a whistle.[line break][speech style of M]'Alright, that's the end of that! Good race! Let's see now...'[roman type][line break][BigNameDesc of M] looks around for which weights have been brought of the pool.";
 	repeat with ST running through LOutOfPool:
 		let WeightID be playerWeight;
 		if ST is student, now WeightID is lessonInt2 of ST;
@@ -1045,7 +1063,9 @@ To compute teaching of (L - swimming-lesson):
 
 teacher-kaylee is a diamond-teacher. teacher-kaylee is male.
 
-Definition: teacher-kaylee is presenting as male if futanari fetish is 0.
+Definition: teacher-kaylee is presenting as male:
+	if futanari fetish is 0, decide yes;
+	decide no.
 
 The text-shortcut of teacher-kaylee is "teka".
 
@@ -1064,7 +1084,7 @@ To say LongDickDesc of (M - teacher-kaylee):
 
 To say MonsterDesc of (M - teacher-kaylee):
 	if lady fetish is 1 or futanari fetish is 1, say "This may be the most perfect, beautiful, youthful, healthy, and sexy [man of M] you've ever seen. [if the player is a pervert]Since[otherwise]You struggle to marry this with the fact that since[end if] [he of M][']s fully naked, you can see that [he of M] has a [LongDickDesc of M] swinging between [his of M] legs[if futanari fetish is 0] instead of a pussy[end if].";
-	otherwise say "This naked [man of M]'s impossibly perfect abs and shockingly impressive muscles [if the player is female or the player is a pervert]make you weak at the knees with sexual attraction every time you see [him of M].[otherwise]could attract even the straightest man.[line break][variable custom style]Wait, did I really just think that? I'm attracted to a dude?[roman type][line break][end if]".
+	otherwise say "This naked [man of M]'s impossibly perfect abs and shockingly impressive muscles [if the player is gendered female or the player is a pervert]make you weak at the knees with sexual attraction every time you see [him of M].[otherwise]could attract even the straightest man.[line break][variable custom style]Wait, did I really just think that? I'm attracted to a dude?[roman type][line break][end if]".
 
 The teacher-name of teacher-kaylee is "Kaylee".
 
@@ -1118,6 +1138,12 @@ To compute teaching of (L - ultimate-lesson):
 	now the player is in DiamondLessonBlindfolded;
 	refresh windows.
 
+This is the other ultimate students get focused rule:
+	if the player is in DiamondLessonBlindfolded:
+		repeat with T running through people in the the location of (the lesson-teacher of ultimate-lesson):
+			focus-consider T.
+The other ultimate students get focused rule is listed in the focus finding rules.
+
 To compute lesson veto:
 	if the lesson-vetos of ultimate-lesson > 0:
 		let M be a random ultimate-lesson-actor;
@@ -1160,7 +1186,7 @@ To compute action (N - a number) of (M - an ultimate-lesson-actor):
 				say "[BigFuckerDesc of M] grunts as [he of M] fills your mouth with [his of M] salty load.";
 				FaceFill semen by the semen load of M;
 				orgasm M;
-				if the player is in Toilet02 and current-predicament is gloryhole-predicament and the semen-spat of gloryhole-predicament is 0, say "[bold type]If you spit it out, you will be penalized.[roman type][line break]";
+				if the player is in Toilet02 and current-predicament is gloryhole-predicament and the semen-spat of gloryhole-predicament is 0, say "[bold type]If you spit it out, you will be penalised.[roman type][line break]";
 				if current-predicament is gloryhole-predicament, suggest swallowing;
 			otherwise: [Deepthroat cumshot]
 				compute deepthroat creampie of M;
@@ -1303,6 +1329,7 @@ To compute anal creampie expel demand of (M - an ultimate-lesson-actor):
 			empty belly liquids;
 		otherwise:
 			compute lesson veto;
+			if the lesson-completed of ultimate-lesson > -1, HappinessUp ST;
 	otherwise:
 		say "You feel something cold and hard pushed against your buttcheeks. [BigNameDesc of M] who recently pulled out of your [asshole] gives you an order.[line break][speech style of M]'Push it out now, slut.'[roman type][line break]Do you obey?";
 		if the player is bimbo consenting:
@@ -1335,7 +1362,7 @@ To compute anal torture of (M - an ultimate-lesson-actor):
 	otherwise if the number of entries in LST > 0 and a2m fetish > 1 and the total squirtable fill of belly is 0:
 		say "You hear what sounds like some kind of power drill spinning up behind you![line break][speech style of M]'Spread your asshole wide, slut!'[roman type][line break]Do you obey?";
 		if the player is bimbo consenting:
-			say "It seems like the drilldo must have been for someone else. Instead of what you were expecting, you feel the mushy sensation of a banana shoved inside your [asshole]. After it's all been shoved inside, a new [manly-penis] pushes its way in behind it and begins to roughly fuck you, mashing the banana up inside you as it goes in and out.[paragraph break]A short while later, [FuckerDesc of M] ejaculates, combining [his of M] jizz with the banana in your butt.";
+			say "It seems like the drilldo must have been for someone else. Instead of what you were expecting, you feel the mushy sensation of a banana shoved inside your [asshole]. After it's all been forced inside, a new [manly-penis] pushes its way in behind it and begins to roughly fuck you, mashing the banana up inside you as it goes in and out.[paragraph break]A short while later, [FuckerDesc of M] ejaculates, combining [his of M] jizz with the banana in your butt.";
 			now M is penetrating asshole;
 			AnalCount;
 			orgasm M;
@@ -1374,6 +1401,7 @@ To compute anal torture of (M - an ultimate-lesson-actor):
 		otherwise:
 			say "You keep your tongue in your mouth, hoping they won't notice.";
 			compute lesson veto;
+			if the lesson-completed of ultimate-lesson > -1, HappinessUp ST1;
 	otherwise:
 		say "You hear what sounds like some kind of power drill spinning up behind you![line break][speech style of M]'Spread your asshole wide, slut!'[roman type][line break]Do you obey?";
 		if the player is bimbo consenting:
@@ -1389,10 +1417,14 @@ To compute anal torture of (M - an ultimate-lesson-actor):
 			compute lesson veto.
 
 An ultimate-fetish-object is a kind of object. An ultimate-fetish-object has a number called happened.
-Definition: an ultimate-fetish-object is eligible if the happened of it is 0.
+Definition: an ultimate-fetish-object is eligible:
+	if the happened of it is 0, decide yes;
+	decide no.
 
 ultimate-fetish-slap is an ultimate-fetish-object.
-Definition: ultimate-fetish-slap is eligible if breasts is exposed and breasts is not actually occupied and the largeness of breasts > 1.
+Definition: ultimate-fetish-slap is eligible:
+	if breasts is exposed and breasts is not actually occupied and the largeness of breasts > 1, decide yes;
+	decide no.
 To execute (U - ultimate-fetish-slap) for (M - a monster):
 	increase the happened of U by 1;
 	say "[BigNameDesc of M] barks out an order in an evil voice.[line break][speech style of M]'Your tits are disgusting, slut. I'm going to spank them. Push your chest out and hold it there.'[roman type][line break]Do you push your [BreastDesc] forward?";
@@ -1413,7 +1445,9 @@ To execute (U - ultimate-fetish-slap) for (M - a monster):
 	say "[BigNameDesc of M] seems to be done with you for now.".
 
 ultimate-fetish-degrade is an ultimate-fetish-object.
-Definition: ultimate-fetish-degrade is eligible if the player is able to speak.
+Definition: ultimate-fetish-degrade is eligible:
+	if the player is able to speak, decide yes;
+	decide no.
 To execute (U - ultimate-fetish-degrade) for (M - a monster):
 	increase the happened of U by 1;
 	say "[BigNameDesc of M] uses two fingers from each hand to pull your mouth wide open.[line break][speech style of M]'Tell us how much of a slut you are.'[roman type][line break]Do you do your best to degrade yourself?";
@@ -1424,7 +1458,9 @@ To execute (U - ultimate-fetish-degrade) for (M - a monster):
 		compute lesson veto.
 
 ultimate-fetish-magic is an ultimate-fetish-object.
-Definition: ultimate-fetish-magic is eligible if the player is able to speak and the magic-power of the player > 0.
+Definition: ultimate-fetish-magic is eligible:
+	if the player is able to speak and the magic-power of the player > 0, decide yes;
+	decide no.
 To execute (U - ultimate-fetish-magic) for (M - a monster):
 	increase the happened of U by 1;
 	let T be the substituted form of "I [one of]can't wait for my next taste of cum[or]love the feeling of [manly-penis][or]live to serve [men of M][at random]";
@@ -1432,7 +1468,7 @@ To execute (U - ultimate-fetish-magic) for (M - a monster):
 	if the player is bimbo consenting:
 		say "[variable custom style]'[T]!'[roman type][paragraph break]Too late you feel magic rising up in your body, and realise you've just been tricked into saying the incantation for a spell. You [if the number of students in the location of the lesson-teacher of ultimate-lesson > 0]join the other students in screaming[otherwise]scream[end if] as ";
 		if ungape is 0 and a random number between 1 and 2 is 1:
-			say "you feel your holes streched almost impossibly wide by invisible forces.";
+			say "you feel your holes stretched almost impossibly wide by invisible forces.";
 			now the openness of asshole is 10;
 			if the player is possessing a vagina, now the openness of vagina is 10;
 		otherwise:
@@ -1459,7 +1495,9 @@ To execute (U - ultimate-fetish-magic) for (M - a monster):
 		compute lesson veto.
 
 ultimate-fetish-fertility is an ultimate-fetish-object.
-Definition: ultimate-fetish-fertility is eligible if the happened of it is 0 and the player is female and the pregnancy of the player is 0 and pregnancy fetish > 0 and the number of worn chastity cage is 0 and face is not actually occupied.
+Definition: ultimate-fetish-fertility is eligible:
+	if the happened of it is 0 and the player is possessing a vagina and the pregnancy of the player is 0 and pregnancy fetish > 0 and the number of worn chastity cage is 0 and face is not actually occupied, decide yes;
+	decide no.
 To execute (U - ultimate-fetish-fertility) for (M - a monster):
 	increase the happened of U by 1;
 	say "[BigNameDesc of M] whispers in your ear.[line break][speech style of M]'Open wide, slut. We're going to give you a little something that's going to make you hyper-fertile for the next few minutes. There's no way you're leaving this room without a new bun in your belly.'[roman type][line break]Do you open your mouth?";
@@ -1471,7 +1509,9 @@ To execute (U - ultimate-fetish-fertility) for (M - a monster):
 		compute lesson veto.
 
 ultimate-fetish-milking is an ultimate-fetish-object.
-Definition: ultimate-fetish-milking is eligible if the milk volume of breasts > 2 and face is not actually occupied.
+Definition: ultimate-fetish-milking is eligible:
+	if the milk volume of breasts > 2 and face is not actually occupied, decide yes;
+	decide no.
 To execute (U - ultimate-fetish-milking) for (M - a monster):
 	increase the happened of U by 1;
 	say "Someone grabs hold of your [MediumDesc of breasts] and begins pumping the [milk] out of them. You can hear it being collected into what sounds like a large metal bucket.[line break][speech style of M]'What sound does a cow make, bitch?'[roman type][line break]Do you moo like a cow?";
@@ -1931,7 +1971,9 @@ Book - Calamity
 
 student-calamity is a innocent student.
 
-Definition: student-calamity is fetish appropriate if bukkake fetish is 1.
+Definition: student-calamity is fetish appropriate:
+	if bukkake fetish is 1, decide yes;
+	decide no.
 
 The text-shortcut of student-calamity is "stcl".
 
@@ -1977,7 +2019,9 @@ The min-rank of student-abbi is 2.
 The max-rank of student-abbi is 3.
 The current-rank of student-abbi is 2.
 
-Definition: student-abbi is fetish appropriate if lady fetish < 2.
+Definition: student-abbi is fetish appropriate:
+	if lady fetish < 2, decide yes;
+	decide no.
 
 To update name of (M - student-abbi):
 	if the current-rank of M is 2:
@@ -2007,7 +2051,9 @@ student-katya is a nasty student.
 [Katya is a real bitch from rank 1 - 3 and then suddenly turns into a submissive doll at rank 4.]
 [TODO: her ruby promotion scene can involve her breaking from brat into Stepford wife]
 
-Definition: student-katya is unfriendly rather than friendly if it is not pacified and the current-rank of it < 4.
+Definition: student-katya is unfriendly rather than friendly:
+	if it is not pacified and the current-rank of it < 4, decide yes;
+	decide no.
 
 The text-shortcut of student-katya is "stka".
 

@@ -3,10 +3,17 @@ Outrage by Clothing begins here.
 To decide which number is the outrage of (C - an object):
 	decide on 0.
 
+To decide which number is the partially visible outrage (N - a number) of (C - a thing):
+	decide on (N * 7) / 10.
+To decide which number is the partially visible outrage (N - a number) of (C - a dress):
+	decide on (N * 17) / 20. [it's difficult to conceal much about a dress]
+To decide which number is the partially visible outrage (N - a number) of (C - an equippable):
+	decide on N / 2. [You can hide it behind your back]
+
 To decide which number is the outrage of (C - a wearthing):
 	if C is currently concealed, decide on 0;
 	let O be the unworn outrage of C;
-	if C is worn and C is not currently visible, now O is (O * 7) / 10; [this means it is partially visible]
+	if C is worn and C is not currently visible, decide on the partially visible outrage O of C;
 	decide on O.
 
 To decide which number is the notManlyFactor of (C - a clothing):
@@ -92,6 +99,8 @@ Definition: a clothing (called C) is almost too much:
 	if the outrage of C + 2 is too humiliating and the outrage of C > 0, decide yes;
 	decide no.
 
-Definition: a clothing is outrageAcceptable if the outrage of it <= 6.
+Definition: a clothing is outrageAcceptable:
+	if the outrage of it <= 6, decide yes;
+	decide no.
 
 Outrage ends here.

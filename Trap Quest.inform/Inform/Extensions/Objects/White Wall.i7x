@@ -12,36 +12,22 @@ Definition: WoodsScenery03 is immune to change: decide yes.
 
 The block climbing rule is not listed in the check climbing rulebook.
 
-[!<CheckDrinkingWoodsScenery03>+
-
-REQUIRES COMMENTING
-
-+!]
 Check drinking WoodsScenery03:
 	try climbing the noun instead.
 
-[!<CheckClimbingSomething>+
-
-REQUIRES COMMENTING
-
-+!]
 Check climbing something:
 	if the noun is not WoodsScenery03, say "How would that work?" instead;
-	if the player is prone, say "You need to be standing up to climb a ladder." instead;
+	if the player is prone, say "You need to be standing to climb a ladder." instead;
 	if the player is ankle bound, say "You can't climb the ladder with your ankles bound." instead;
 	if the player is immobile or there is a thing wrangling a body part, say "Aren't you a bit busy?" instead;
 	if the uses of WoodsScenery03 is 0, say "You've already seen what's through there, no need to look again." instead.
 
-[!<CarryOutClimbingWoodsScenery03>+
-
-REQUIRES COMMENTING
-
-+!]
+[###Selkie: maybe one day extend this to operate across a few turns, where the player gets stuck as a fuckhole and something approaches from the other side: like a mannequin to adjust your face, or a denizen to use it; or something to climb the ladder behind you and make use of your other end? Even a fairy to play with your breasts: "Ooh, a cute cow has made herself ready for milking? So submissive!"]
 Carry out climbing WoodsScenery03:
 	allocate 6 seconds;
 	say "You climb the ladder and put your face through the statue's hole.";
 	if the player is getting lucky:
-		say "You can't believe what you see - beyond the wall is a beautiful green field meadow, with the sun shining onto a glittering lake. Fluffy rabbits roam the grass and graceful swans drift freely on the lake. You desire for nothing more than to find a way to the other side of the wall. The sight is so uplifting that you feel more wholesome inside.";
+		say "You can't believe what you see - beyond the wall is a beautiful green meadow, with the sun shining on a glittering lake. Fluffy rabbits roam the grass and graceful swans drift freely on its surface. You desire nothing more than to find a way to the other side of the wall. The sight is so uplifting that you feel more wholesome inside.";
 		SemenAddictDown 2;
 		IntUp 1;
 		Dignify 5000;

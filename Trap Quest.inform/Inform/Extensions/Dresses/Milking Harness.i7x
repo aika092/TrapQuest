@@ -31,7 +31,9 @@ To uniquely set up (C - a milking harness):
 To set up influence of (C - a milking harness):
 	set up taste-based influence of C.
 
-Definition: a milking harness is displacable if it is not cursed.
+Definition: a milking harness is displacable:
+	if it is not cursed, decide yes;
+	decide no.
 
 To say DisplaceFlav of (C - a milking harness):
 	say "You remove the plug of the [ShortDesc of C] from your [asshole].".

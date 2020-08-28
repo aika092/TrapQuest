@@ -94,7 +94,7 @@ After reading a command when setting-info > 0 (this is the custom flavour choosi
 		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 		set numerical response 1 to "feminine gender";
 		set numerical response 2 to "masculine gender";
-		say "Choose a binary gender for this person. (the current entry is [PlatonicGender]): [line break]";[TODO; process multiple choice?!?!]
+		say "Choose a binary gender for this person. (the current entry is [PlatonicGender]):[line break]";[TODO; process multiple choice?!?!]
 		compute multiple choice question;
 		let CNR be the chosen numerical response;
 		now name in row 16 of the Table of Info Options is the printed name of CNR;
@@ -117,7 +117,7 @@ After reading a command when setting-info > 0 (this is the custom flavour choosi
 		set numerical response 4 to "penis";
 		set numerical response 5 to "huge strapon";
 		set numerical response 6 to "huge penis";
-		say "Choose the kind of equipment would this person use in the bedroom (the current entry is [PlatonicEquipment]): [line break]";
+		say "Choose the kind of equipment would this person use in the bedroom (the current entry is [PlatonicEquipment]):[line break]";
 		compute multiple choice question;
 		let CNR be the chosen numerical response;
 		now name in row 17 of the Table of Info Options is the printed name of CNR;
@@ -127,11 +127,11 @@ After reading a command when setting-info > 0 (this is the custom flavour choosi
 		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 		set numerical response 1 to "feminine gender";
 		set numerical response 2 to "masculine gender";
-		say "Choose a binary gender for this person. (the current entry is [NemesisGender]): [line break]";[TODO; process multiple choice?!?!]
+		say "Choose a binary gender for this person. (the current entry is [NemesisGender]):[line break]";[TODO; process multiple choice?!?!]
 		compute multiple choice question;
 		let CNR be the chosen numerical response;
 		now name in row 18 of the Table of Info Options is the printed name of CNR;
-		say "Enter a name for this person (the current entry is [NemesisName]): [line break]";
+		say "Enter a name for this person (the current entry is [NemesisName]):[line break]";
 	otherwise if setting-info is 8:
 		if PCD is 0, now name in row 10 of the Table of Info Options is the player's command in lower case;
 		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
@@ -141,7 +141,7 @@ After reading a command when setting-info > 0 (this is the custom flavour choosi
 		set numerical response 4 to "penis";
 		set numerical response 5 to "huge strapon";
 		set numerical response 6 to "huge penis";
-		say "Choose the kind of equipment would this person use in the bedroom (the current entry is [NemesisEquipment]): [line break]";
+		say "Choose the kind of equipment would this person use in the bedroom (the current entry is [NemesisEquipment]):[line break]";
 		compute multiple choice question;
 		let CNR be the chosen numerical response;
 		now name in row 19 of the Table of Info Options is the printed name of CNR;
@@ -151,7 +151,7 @@ After reading a command when setting-info > 0 (this is the custom flavour choosi
 		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 		set numerical response 1 to "feminine gender";
 		set numerical response 2 to "masculine gender";
-		say "Choose a binary gender for this person. (the current entry is [FanciedGender]): [line break]";[TODO; process multiple choice?!?!]
+		say "Choose a binary gender for this person. (the current entry is [FanciedGender]):[line break]";[TODO; process multiple choice?!?!]
 		compute multiple choice question;
 		let CNR be the chosen numerical response;
 		now name in row 20 of the Table of Info Options is the printed name of CNR;
@@ -165,17 +165,17 @@ After reading a command when setting-info > 0 (this is the custom flavour choosi
 		set numerical response 4 to "penis";
 		set numerical response 5 to "huge strapon";
 		set numerical response 6 to "huge penis";
-		say "Choose the kind of equipment would this person use in the bedroom (the current entry is [FanciedEquipment]): [line break]";
+		say "Choose the kind of equipment would this person use in the bedroom (the current entry is [FanciedEquipment]):[line break]";
 		compute multiple choice question;
 		let CNR be the chosen numerical response;
 		now name in row 21 of the Table of Info Options is the printed name of CNR;
-		say "Next, enter a type of person you normally wouldn't know very well, for example maybe its your 'mailman' or 'quiet coworker' or 'old classmate' or 'bus driver' (the current entry is [DistantRole]): ";
+		say "Next, enter a type of person you normally wouldn't know very well, for example maybe it's your 'mailman' or 'quiet coworker' or 'old classmate' or 'bus driver' (the current entry is [DistantRole]): ";
 	otherwise if setting-info is 11:
 		if PCD is 0, now name in row 15 of the Table of Info Options is the player's command in lower case;
 		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 		set numerical response 1 to "feminine gender";
 		set numerical response 2 to "masculine gender";
-		say "Choose either a binary gender for this person. (the current entry is [DistantGender]): [line break]";[TODO; process multiple choice?!?!]
+		say "Choose either a binary gender for this person. (the current entry is [DistantGender]):[line break]";[TODO; process multiple choice?!?!]
 		compute multiple choice question;
 		let CNR be the chosen numerical response;
 		now name in row 22 of the Table of Info Options is the printed name of CNR;
@@ -189,7 +189,7 @@ After reading a command when setting-info > 0 (this is the custom flavour choosi
 		set numerical response 4 to "penis";
 		set numerical response 5 to "huge strapon";
 		set numerical response 6 to "huge penis";
-		say "Choose the kind of equipment would this person use in the bedroom (the current entry is [DistantEquipment]): [line break]";
+		say "Choose the kind of equipment would this person use in the bedroom (the current entry is [DistantEquipment]):[line break]";
 		compute multiple choice question;
 		let CNR be the chosen numerical response;
 		now name in row 23 of the Table of Info Options is the printed name of CNR;

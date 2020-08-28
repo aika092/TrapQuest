@@ -38,7 +38,9 @@ This is the remove inappropriate maid outfits rule:
 		unless B is sexy maid outfit or B is cafe maid outfit or B is blue sissy maid outfit or B is maid waitress outfit, now B is in Holding Pen.
 The remove inappropriate maid outfits rule is listed in the diaper quest fix rules.
 
-Definition: a maid outfit is class-transformation-protected if the class of the player is maid.
+Definition: a maid outfit is class-transformation-protected:
+	if the class of the player is maid, decide yes;
+	decide no.
 
 Part 1 - sexy maid outfit
 
@@ -233,8 +235,12 @@ Definition: a fishnet maid outfit is black themed: decide yes.
 Definition: a fishnet maid outfit is white themed: decide yes.
 
 [The apron conceals the front half but not the back half (i.e. the player's asshole).]
-Definition: a fishnet maid outfit is potentially vagina covering if it is crotch-in-place.
-Definition: a fishnet maid outfit is potentially at least partially vagina covering if it is crotch-in-place.
+Definition: a fishnet maid outfit is potentially vagina covering:
+	if it is crotch-in-place, decide yes;
+	decide no.
+Definition: a fishnet maid outfit is potentially at least partially vagina covering:
+	if it is crotch-in-place, decide yes;
+	decide no.
 
 To decide which object is the unique-upgrade-target of (M - a fishnet maid outfit):
 	decide on a random off-stage black fetish hobble dress.

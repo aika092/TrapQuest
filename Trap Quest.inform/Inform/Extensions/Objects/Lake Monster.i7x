@@ -292,12 +292,13 @@ To compute lakeClimax of (L - a lake monster):
 		if Egg Laying Fetish is 1:
 			say "The two tentacles ruining your [asshole] keep up their thrusting as they ejaculate. Instead of the [semen] you were expecting, the tentacles seem to be pumping you full of small solid spherical objects! The uncomfortable feeling immediately turns into a worryingly full feeling, and then soon a feeling of desperately needing to squirt it all back out. Your belly balloons under the pressure from your full rectum and full innards.";
 			AssFill a random number from 10 to 15 small eggs;
-			AssFill a random number from 10 to 15 small eggs;
+			[###Selkie: twice was excessive? AssFill a random number from 10 to 15 small eggs;]
 			ruin asshole times 4;
 		otherwise:
 			say "The two tentacles ruining your [asshole] keep up their thrusting as they ejaculate, and the warm sloshy feeling immediately turns into a worryingly full feeling, and then soon a feeling of desperately needing to squirt it all out. Your belly balloons under the pressure from your full rectum and full innards as the [semen] flows the wrong way up through your body.";
 			AssFill a random number from 8 to 15;
-			AssFill a random number from 8 to 15;
+			[AssFill a random number from 8 to 15;]
+			[###Selkie: twice was excessive?]
 			ruin asshole times 5;
 		AnalCount.
 
@@ -356,7 +357,7 @@ To compute swimming in (WB - DungeonScenery03):
 		if swim-turns is 0 and water-peeing is false, say "You [if the player is upright]wade[otherwise]crawl[end if] out into the water and begin to swim.";
 		otherwise say "You are treading water [if S is 0]in a relatively shallow area a couple feet away from the edge of the lake, just deep enough to let your toes brush the bottom.[otherwise if S is 1]in a deeper area a short ways away from the edge of the lake.[otherwise if S is 2]near the deepest area of the lake. In the distance, you can see the lake's shore, and in the other direction, you can just barely make out a small opening in the rock.[otherwise if S is 3]near the mouth of a cave, invisible from the shore.[otherwise]inside a huge cave. There is a thin lip of solid rock around the inner edge of the cave. It isn't wide enough to stand on, but it seems good enough for a short rest.[end if]";
 		if M is in the location of the player:
-			say "You are currently being pursued by some huge aquatic monster, which is currently trying to capture you with its four thick, octopus-like tentacles.";
+			say "You are currently being pursued by some huge aquatic monster, which is trying to capture you with its four thick, octopus-like tentacles.";
 			compute LakeChase at S;
 			if M is not lake-stalking:
 				now swimming is 0;[you got fucked.]
@@ -399,24 +400,24 @@ To compute swimming in (WB - DungeonScenery03):
 				say "You swim to the shore of the [if M is in the location of the player and M is lake-stalking]lake, just barely evading the reach of the monster's tentacles as you pull yourself out.[otherwise]lake and pull yourself out.[end if]";
 			otherwise if the printed name of CNR is "rest":
 				if M is lake-stalking:
-					say "You rest your body against the edge of the cave and begin to catch your breath. Its at that moment that you feel something slimy brush against your leg, and look down just in time to see a thick, octopus-like tentacle curling around your ankle. It yanks you out of the cave with incredible strength, dragging you underwater without giving you a chance to escape. The slimy tentacle keeps its grip on your ankle as it slowly slides around and up your leg.";
+					say "You rest your body against the edge of the cave and begin to catch your breath. It's at that moment that you feel something slimy brush against your leg, and look down just in time to see a thick, octopus-like tentacle curling around your ankle. It yanks you out of the cave with incredible strength, dragging you underwater without giving you a chance to escape. The slimy tentacle keeps its grip on your ankle as it slowly slides around and up your leg.";
 					compute lake tentacle gangbang of M;
 					now swimming is 0;
 				otherwise:
-					say "You rest your body against the edge of the cave and catch your breath. Its a little difficult to rest here, but after a few minutes, you feel less fatigued.";
+					say "You rest your body against the edge of the cave and catch your breath. It's a little difficult to rest here, but after a few minutes, you feel less fatigued.";
 					FatigueDown 5;
 			otherwise if the printed name of CNR is "dive":
 				say "You dive below the surface.";
 				compute difficult swimming check in WB;
 				if M is lake-stalking and the swim-location of M is S:
-					say "[line break]Something catches your eye, and you quickly swim toward it... Its long, red and one side of its surface is covered in octopus-like suckers. Below it is the shadow of some huge aquatic creature, which greets you by sending three more of its thick tentacles up from the depths. You change course and quickly swim back toward the surface, but just before your head breaks the water, a slimy tentacle wraps around your ankle and drags you under with incredible strength. It keeps its grip on your ankle as it slowly slides up and around your leg.";
+					say "[line break]Something catches your eye, and you quickly swim toward it... It's long, red, and one side of its surface is covered in octopus-like suckers. Below it is the shadow of some huge aquatic creature, which greets you by sending three more of its thick tentacles up from the depths. You change course and quickly swim back toward the surface, but just before your head breaks the water, a slimy tentacle wraps around your ankle and drags you under with incredible strength. It keeps its grip on your ankle as it slowly slides up and around your leg.";
 					compute lake tentacle gangbang of M;
 					now swimming is 0;
 				otherwise:
 					compute treasure diving in WB at swim-location;
 			otherwise if the printed name of CNR is "head for shore" or the printed name of CNR is "swim out of cave":
 				if M is in the location of the player:
-					if the swim-location of M < S, say "You swim straight for the monster.";[Its rare, but possible that the monter will be between you and the shore.]
+					if the swim-location of M < S, say "You swim straight for the monster.";[It's rare, but possible that the monster will be between you and the shore.]
 					otherwise say "You swim away from the monster.";
 				otherwise:
 					if swim-location is 4, say "You swim out of the cave, coming to a stop as your eyes re-adjust to the light.";
@@ -463,7 +464,12 @@ To compute treasure diving in (WB - DungeonScenery03) at (L - a number):
 	if (L is 1 and the player is getting very lucky) or (L is 2 and the player is getting lucky) or (L is 3 and the player is getting lucky) or (L is 4 and the player is not getting unlucky):
 		now N is a random number between 1 and 30;
 	say "[line break]Something catches your eye, and you quickly swim toward it... [run paragraph on]";
-	if N > 20:[jewels]
+	if N > 16 and kraken bell is off-stage and the player is getting lucky:
+		say "[bold type]You find an old metal bell with a tentacle-shaped ringer![roman type] You take it with you as you swim back to the surface. [GotLuckyFlav]";
+		now kraken bell is carried by the player;
+		now the quest of kraken bell is doom-quest;
+		if doom counter > -1 and doomed < 5, now kraken bell is cursed;
+	otherwise if N > 20:[jewels]
 		let J be a random off-stage plentiful accessory;
 		if J is accessory and L > 1 and J is actually summonable:[You won't find jewels until you go further out]
 			if N is 30:[Ruby]
@@ -566,7 +572,7 @@ To compute LakeNotice (turns - a number) with (swim-location - a number):[TODO: 
 		let R be a random number between 10 and 25 + a random number between 10 and 25;
 		if bukkake fetish is 0 or the latex-transformation of the player > 2, now R is 9999;[monster doesn't attack sex dolls]
 		if the class of the player is schoolgirl, now R is R * 10;[schoolgirls have the worst luck sometimes.]
-		if (R * 40 < the semen-sniffing of L):[if a number between 800 and 1000 is less than the monster's "curiousity"]
+		if (R * 40 < the semen-sniffing of L):[if a number between 800 and 1000 is less than the monster's "curiosity"]
 			if debugmode > 0, say "[bold type]FAILED[roman type]";
 			now M is lake-stalking;
 		otherwise:
@@ -586,10 +592,10 @@ To compute LakeChase at (swim-location - a number):
 			say "[line break]You try to evade, but you aren't fast enough to evade this creature in its own domain! One of its octopus-like tentacle curls around your ankle and drags you underwater with incredible strength! The slimy tentacle keeps its grip on your ankle as it slowly slides around and up your leg.";
 			compute lake tentacle gangbang of M;
 		otherwise:
-			say "[line break]You evade the monster's tentacles for a couple more seconds, but its only a matter of time before it catches you. You have to get out of the water!";
+			say "[line break]You evade the monster's tentacles for a couple more seconds, but it's only a matter of time before it catches you. You have to get out of the water!";
 			compute difficult swimming check in DungeonScenery03.
 
-[If you, the player, haven't noticed the monster, but its watching you, what does it do?]
+[If you, the player, haven't noticed the monster, but it's watching you, what does it do?]
 To compute LakeStalk at (swim-location - a number):
 	let M be a random lake monster;
 	let L be the swim-location of M;
@@ -599,21 +605,21 @@ To compute LakeStalk at (swim-location - a number):
 		let D be a random number between -15 and 70;[Slightly easier for the player to dodge, since the monster is being sneaky, but still harder since the monster is being sneaky and doesn't let you use dexterity]
 		if L is swim-location, decrease D by 10;
 		if D < S:[You get grabbed]
-			say "[line break]You feel something slimy brush against your leg, and look down just in time to see a thick, octopus-like tentacle curl around your ankle. Its incredibly strong, and it drags you underwater without giving you a chance to escape! The slimy tentacle keeps its grip on your ankle as it slowly slides around and up your leg.";
+			say "[line break]You feel something slimy brush against your leg, and look down just in time to see a thick, octopus-like tentacle curl around your ankle. It's incredibly strong, and it drags you underwater without giving you a chance to escape! The slimy tentacle keeps its grip on your ankle as it slowly slithers around and up your leg.";
 			compute lake tentacle gangbang of M;
 		otherwise:[You don't get grabbed.]
 			let N be a random number between 1 and 15;
 			increase N by the intelligence of the player / 3;
 			decrease N by (L - swim-location) * 5;
 			if N > 10:[You notice the monster! Oh shit!]
-				say "[line break]You feel something slimy brush against your leg, and look down just in time to avoid a thick, octopus-like tentacle curling around your ankle. The tentacle is connected to a huge shadow of something underwater [if L is swim-location]rapidly ascending from directly underneath[otherwise]rapdily moving toward[end if] you. Four tentacles break the surface of the lake and move to capture you!";
+				say "[line break]You feel something slimy brush against your leg, and look down just in time to avoid a thick, octopus-like tentacle curling around your ankle. The tentacle is connected to a huge shadow of something underwater [if L is swim-location]rapidly ascending from directly underneath[otherwise]rapidly moving toward[end if] you. Four tentacles break the surface of the lake and move to capture you!";
 				now a random lake monster is in the location of the player;
 			otherwise if N > 5:[You get a warning, but don't *actually* notice.]
 				say "[line break]You feel something slimy brush against your leg.";
 	otherwise:[Moves closer]
 		if L > swim-location:
 			unless L - 1 is 0, decrease the swim-location of M by 1;[The monster can't go to location "0"]
-		otherwise:[we know the monster's location is different, and we know it isn't higher. Therefore, its lower.]
+		otherwise:[we know the monster's location is different, and we know it isn't higher. Therefore, it's lower.]
 			increase the swim-location of M by 1.
 
 [The monster is stalking the player. Do they see it for what it is, or do they mistake it for treasure.]
@@ -640,7 +646,7 @@ To compute lake tentacle gangbang of (L - lake monster):
 	now L is not penetrating vagina;
 	now L is not penetrating face;
 	now L is not penetrating breasts;
-	say "Having finally finished with you, the monster chucks you onto the shore of the lake. Its tentacles do not disappear however, seeming to favour this part of the lake now that it is full of the gallons of [semen] that didn't manage to stay on or inside you.";
+	say "Having finally finished with you, the monster chucks you onto the shore of the lake. It's tentacles do not disappear however, seeming to favour this part of the lake now that it is full of the gallons of [semen] that didn't manage to stay on or inside you.";
 	now the stance of the player is 1;
 	now the swim-location of L is 1;
 	now L is not lake-stalking;

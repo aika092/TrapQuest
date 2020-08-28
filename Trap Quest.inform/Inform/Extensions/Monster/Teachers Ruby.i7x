@@ -47,7 +47,9 @@ To decide which number is the practical dirtiness of (M - a tryhard student):
 	decide on 6.
 
 eating-lesson is a lesson.
-Definition: eating-lesson is lesson-appropriate if (diaper quest is 0 or diaper messing >= 3) and the player is able to eat.
+Definition: eating-lesson is lesson-appropriate:
+	if (diaper quest is 0 or diaper messing >= 3) and the player is able to eat, decide yes;
+	decide no.
 
 To compute teaching of (L - eating-lesson):
 	allocate 40 seconds;

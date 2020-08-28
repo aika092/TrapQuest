@@ -148,12 +148,9 @@ Report Mopping:
 			say "[bold type]You feel a headband with cat ears materialise on your head.[line break][if the bimbo of the player > 12][second custom style]Teehee, I get it! Only a naughty pussycat would ever drink anything off the floor![otherwise][first custom style]I guess that's what I get for drinking off the floor like some kind of animal...[end if][roman type][line break]";
 			summon cat-ears;
 	now was-mopping is true;
-	if the noun is pink-spraybottle and pink-spraybottle is spray and total puddle <= 0:
-		increase the magic-charge of the noun by 1;
-		if the magic-charge of the noun > a random number between 1 and (the magic-power of the player + 1):
-			say "The [ShortDesc of the noun] rewards your continued diligent cleaning by sending real power down your arms! You feel like you have enough magic for another powerful attack with your spraybottle!";
-			MagicPowerUp 1;
-			now the magic-charge of the noun is 0.
+	if the noun is pink-spraybottle and pink-spraybottle is spray and total puddle <= 0 and the magic-fatigue of the player > 0:
+		say "The [ShortDesc of the noun] rewards your continued diligent cleaning by sending real power down your arms! You feel like you have enough magic for another powerful attack with your spraybottle!";
+		MagicPowerRefresh 2.
 
 Understand "clean puddle with [something]", "mop up puddle with [something]", "clean mess with [something]", "clean with [something]", "[something] puddle", "clean room with [something]" as mopping.
 Understand "clean cum with [something]", "clean semen with [something]" as mopping when the semen-puddle of the location of the player > 0.

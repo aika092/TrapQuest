@@ -1,23 +1,35 @@
 Gender by Player begins here.
 
-Definition: yourself is originally female rather than originally male if original-player-gender is 1.
+Definition: yourself is originally female rather than originally male:
+	if original-player-gender is 1, decide yes;
+	decide no.
 
 Definition: a person is presenting as male:
 	if lady fetish is 2, decide yes;
 	if it is male and lady fetish is 0, decide yes;
 	decide no.
 
-Definition: yourself is presenting as male if the player is gendered male and the largeness of breasts < 3 and the number of worn womanly currently visible clothing < 3.
-Definition: a person is presenting as female if it is not presenting as male.
+Definition: yourself is presenting as male:
+	if the player is gendered male and the largeness of breasts < 3 and the number of worn womanly currently visible clothing < 3, decide yes;
+	decide no.
+Definition: a person is presenting as female:
+	if it is not presenting as male, decide yes;
+	decide no.
 
 Definition: yourself is gendered female:
-	if the player is originally female and transGender is 0, decide yes;
+	if the player is originally female, decide yes;
 	if the player is originally male and transGender is 1, decide yes;
 	decide no.
-Definition: yourself is gendered male if the player is not gendered female.
+Definition: yourself is gendered male:
+	if the player is not gendered female, decide yes;
+	decide no.
 
-Definition: yourself is sexed male if the player is male.
-Definition: yourself is sexed female if the player is female.
+Definition: yourself is sexed male:
+	if the player is male, decide yes;
+	decide no.
+Definition: yourself is sexed female:
+	if the player is female, decide yes;
+	decide no.
 
 [!<SexChangePerson>+
 
@@ -27,7 +39,7 @@ This is what we do whenever the player has a sex change (from male to female).
 To SexChange (P - a person):
 	if the player is male:
 		now the player is female;
-		say "[if there is a worn chastity cage]Your chastity cage morphs into a tight, snug chastity belt. [end if]Suddenly [if the thickness of hips < 4]your hips widen, [end if]you lose a few inches of height and your shoulders become a bit less broad[if diaper quest is 1]. A pair of breasts burst forth from your chest, completing your transformation[end if].";
+		say "Suddenly [if the thickness of hips < 4]your hips widen, [end if]you lose a few inches of height and your shoulders become a bit less broad[if diaper quest is 1]. A pair of breasts burst forth from your chest, completing your transformation[end if].";
 		if the thickness of hips < 4, HipUp 2;
 		say "[if transGender is 1][variable custom style]I've dreamed about the day I might get a real vagina. But I didn't expect it to happen like this...[otherwise if the bimbo of the player < 7][first custom style]No, no, no, no! This is so gross. I want my dick! I have to win this game and get back into my real body.[otherwise if the bimbo of the player < 10][first custom style]I never asked for this! Why is this happening to me? I guess my name is definitely [NameBimbo] now.[otherwise if the bimbo of the player < 14 or diaper quest is 1][second custom style][NameBimbo]... I like that name. Well this will be a new experience, but at least it should be fun.[otherwise][second custom style]This is amazing! Now I can fuck studs just like a real girly bimbo. Thanks so much Nintendolls! I can't wait to lose my virginity. *giggle*[end if][roman type][line break]";
 		now the size of penis is 0;
@@ -46,8 +58,8 @@ To SexChange (P - a person):
 To ReverseSexChange (P - a person):
 	if the player is female and sex-changed < 2 and the vaginalvirgin of the player is 1:[Failsafe. If either of the latter two conditions are true, this shouldn't even trigger.]
 		now the player is male;
-		if there is a worn chastity cage and min penis size > 0:
-			say "Your chastity belt morphs into a tight, snug chastity cage. [run paragraph on]";
+		if chastity-belt is worn and min penis size > 0:
+			SexChange chastity-belt;[See below]
 		if the player is a flatchested trap or diaper quest is 1:
 			if the silicone volume of breasts > 0:[breast implants are irreversible]
 				say "Reacting to the surge of testosterone in your body, your breasts jiggle and slowly recede back into your flesh. However, your breast implants were never connected to your hormones anyway, and remain completely unaffected.";
@@ -58,6 +70,8 @@ To ReverseSexChange (P - a person):
 		if the player is a flatchested trap or diaper quest is 1:
 			now the flesh volume of breasts is min breast size;
 			now the real flesh volume of breasts is min breast size + the silicone volume of breasts;
+		let C be chastity-belt;
+		if C is worn, transform C into a random off-stage chastity cage;
 		now the size of penis is min penis size;
 		now the real size of penis is min penis size;
 		if penisvirginity-taker is the throne, now the penetrativevirgin of the player is 1;

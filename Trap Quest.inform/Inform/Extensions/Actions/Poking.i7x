@@ -1,17 +1,7 @@
 Poking by Actions begins here.
 
-[!<poking:Action>*
-
-REQUIRES COMMENTING
-
-*!]
 poking is an action applying to one thing.
 
-[!<CheckPoking>+
-
-REQUIRES COMMENTING
-
-+!]
 Check poking:
 	if the noun is caged monster, say "You can't reach [him of the noun] through the cage!" instead;
 	if the noun is not monster or timeBombTime > 0:
@@ -37,19 +27,9 @@ Check poking:
 				compute correct perception of the noun;
 		do nothing instead.
 
-[!<CarryOutPoking>+
-
-REQUIRES COMMENTING
-
-+!]
 Carry out poking:
 	compute poking of the noun.
 
-[!<ComputePokingOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute poking of (M - a monster):
 	say "[BigNameDesc of M] wakes up, startled!";
 	now the sleep of M is 0;

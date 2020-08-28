@@ -15,9 +15,6 @@ To say ClothingDesc of (C - a jelldo):
 To say ShortDesc of (C - a jelldo):
 	say "jelly dildo".
 
-To decide which number is the original price of (C - a jelldo):
-	decide on 6.
-
 To decide which number is the raw-masturbation-bonus of (C - a jelldo):
 	decide on 1.
 

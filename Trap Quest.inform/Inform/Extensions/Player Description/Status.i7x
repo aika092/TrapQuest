@@ -10,11 +10,6 @@ New version removes mental stats
 To say StatusDesc:
 	say "[WeightDesc][if there are worn heels or the heel skill of the player > 1][HeelSkillDesc][end if][if the soul addiction of the player > 1][SoulAddictionDesc][end if][EarningsDesc][SexStatsDesc][ChildrenDesc]".
 
-[!<SayWeightDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say WeightDesc:
 	let W be the weight of the player;
 	let S be the strength of the player;
@@ -35,11 +30,6 @@ To say WeightDesc:
 		say "You feel [if W > -7]almost [end if]weightless! ";
 	say InventoryWeightDesc.
 
-[!<SaySoulsAddictionDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say SoulAddictionDesc:
 	let S be the soul addiction of the player;
 	if S > 8:
@@ -51,11 +41,6 @@ To say SoulAddictionDesc:
 	otherwise:
 		say "[if the souls of the player > the soul addiction of the player]You feel slightly warm. The absence of your own soul highlights how much better things feel with one inside you.[otherwise]You feel empty again, perhaps you should take another soul.[end if]".
 
-[!<SayEarningsDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say EarningsDesc:
 	let E be (10000 - earnings) / 60;
 	[Round to nearest minute]
@@ -68,11 +53,6 @@ To say EarningsDesc:
 		if the intelligence of the player > 6, say "You feel like you've been in this game for about [E] minutes.";
 		otherwise say "You have no idea how long you've been in the game for.".
 
-[!<SayChildrenDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say ChildrenDesc:
 	if the children of the player > 0:
 		say "You have given birth to [the children of the player] [if the children of the player is 1]child[otherwise]children[end if].".

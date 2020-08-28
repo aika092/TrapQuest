@@ -35,11 +35,11 @@ To compute furniture resting on (F - the royal bed):
 	let N be a random off-stage nightie;
 	if nightie-check > 0 and the bladder of the player > 1:
 		if nightie-check is 3:
-			say "As you lie there, you become aware of a warm wet feeling below you. The nightie has made you wet yourself! [line break][variable custom style]Oh my god, how embarrassing![roman type][line break]";
+			say "As you lie there, you become aware of a warm wet feeling below you. The nightie has made you wet yourself![line break][variable custom style]Oh my god, how embarrassing![roman type][line break]";
 			now a random worn nightie is bed wetting;
 			now a random worn nightie is cursed;
 		otherwise:
-			say "As you lie there, you feel yourself lose control of your bladder. [line break][variable custom style]Yuck![roman type][line break]";
+			say "As you lie there, you feel yourself lose control of your bladder.[line break][variable custom style]Yuck![roman type][line break]";
 		if there is worn bottom level pee protection clothing:
 			let K be a random worn bottom level pee protection clothing;
 			let flav-said be 0;

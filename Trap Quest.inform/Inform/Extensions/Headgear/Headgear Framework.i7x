@@ -1,7 +1,9 @@
 Headgear Framework by Headgear begins here.
 
-A headgear is a kind of clothing. headgear is unique. headgear can be hair growing. The soak-limit of a headgear is usually 7. A headgear has a number called hair-charge. A headgear has a number called colour-charge. A headgear has a number called outfit-charge. A headgear is usually manly.
+A headgear is a kind of clothing. headgear is unique. headgear can be hair growing. A headgear has a number called hair-charge. A headgear has a number called colour-charge. A headgear has a number called outfit-charge. A headgear is usually manly.
 A headgear can be roleplay. A headgear is usually not roleplay. [Can this headgear appear in the wardrobe when picking the random headgear starting option.]
+
+To decide which number is the default-soak-limit of (C - a headgear): decide on 7.
 
 headgear can be blondeness-neutral, blondeness-positive, blondeness-negative (this is the blondeness-influence property). headgear is usually blondeness-neutral.
 headgear can be brightness-neutral, brightness-positive, brightness-negative (this is the brightness-influence property). headgear is usually brightness-neutral.

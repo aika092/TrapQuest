@@ -1,17 +1,7 @@
 Rinsing by Actions begins here.
 
-[!<rinsingItIn:Action>*
-
-REQUIRES COMMENTING
-
-*!]
 Rinsing it in is an action applying to two things.
 
-[!<CheckRinsingItIn>+
-
-REQUIRES COMMENTING
-
-+!]
 Check rinsing it in:
 	if the second noun is the swimming-pool and diaper quest is 0, say "That's not water..." instead;
 	if the second noun is water-body-scenery, try rinsing the noun in water-body instead;
@@ -36,11 +26,6 @@ Check rinsing it in:
 Rule for supplying a missing noun while rinsing:
 	try showering the second noun.
 
-[!<CarryOutRinsingItIn>+
-
-REQUIRES COMMENTING
-
-+!]
 Carry out rinsing it in:
 	allocate 6 seconds;
 	let T be the second noun;

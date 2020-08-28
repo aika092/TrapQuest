@@ -1,8 +1,12 @@
 Bondage Framework by Bondage begins here.
 
 A clothing can be wristless, wrist-unbound, wrist-bound-in-front or wrist-bound-behind (this is the wrist-restriction property). Clothing is usually wristless.
-Definition: a clothing is wrist locking if it is not wristless.
-Definition: a clothing is wrist locked if it is wrist-bound-in-front or it is wrist-bound-behind.
+Definition: a clothing is wrist locking:
+	if it is not wristless, decide yes;
+	decide no.
+Definition: a clothing is wrist locked:
+	if it is wrist-bound-in-front or it is wrist-bound-behind, decide yes;
+	decide no.
 Definition: yourself is wrist bound:
 	if there is worn wrist locked clothing, decide yes;
 	decide no.
@@ -14,21 +18,24 @@ Definition: yourself is wrist bound behind:
 	decide no.
 
 A clothing can be ankleless, ankle-unbound or ankle-bound (this is the ankle-restriction property). Clothing is usually ankleless.
-Definition: a clothing is ankle locking if it is not ankleless.
-[!<YourselfIsAnkleBound>
-
-REQUIRES COMMENTING
-
-+!]
+Definition: a clothing is ankle locking:
+	if it is not ankleless, decide yes;
+	decide no.
 Definition: yourself is ankle bound:
 	if there is worn ankle-bound clothing, decide yes;
 	decide no.
 
 A clothing can be neckless, neck-unbound or neck-bound (this is the neck-restriction property). [If a clothing is neck locked then it connects to the player's neck, either by being a neck item itself or connected to one.]
-Definition: a clothing is neck locking if it is not neckless.
-Definition: a clothing is neck locked if it is neck-bound and there is worn neck covering clothing.
+Definition: a clothing is neck locking:
+	if it is not neckless, decide yes;
+	decide no.
+Definition: a clothing is neck locked:
+	if it is neck-bound and there is worn neck covering clothing, decide yes;
+	decide no.
 
-Definition: a clothing is restrictive rather than unrestrictive if the restrictivity of it > 0.
+Definition: a clothing is restrictive rather than unrestrictive:
+	if the restrictivity of it > 0, decide yes;
+	decide no.
 
 To decide which number is the restrictivity of (C - a clothing):
 	let R be 0;

@@ -7,7 +7,9 @@ A mamba is a kind of dong. There is 1 rare mamba. The size of a mamba is usually
 Definition: A mamba is interracial themed: decide yes.
 Definition: a mamba is penis themed: decide yes.
 Definition: a mamba is brown themed: decide yes.
-Definition: A mamba is fetish appropriate if interracial fetish is 1.
+Definition: A mamba is fetish appropriate:
+	if interracial fetish is 1, decide yes;
+	decide no.
 
 Figure of mamba is the file "Items/Accessories/Toys/mamba1.png".
 
@@ -21,7 +23,7 @@ To say ShortDesc of (C - a mamba):
 	say "black mamba".
 
 To decide which number is the original price of (C - a mamba):
-	decide on 4.
+	decide on 2.
 
 To decide which number is the raw-masturbation-bonus of (C - a mamba):
 	if interracial fetish is 1, decide on 2;

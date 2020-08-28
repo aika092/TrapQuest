@@ -2,7 +2,9 @@ Bunny Outfit by Dresses begins here.
 
 A bunny outfit is a kind of overdress. A bunny outfit is usually crotch-intact. A bunny outfit is usually unique. A bunny outfit is usually top-exclusive. A bunny outfit is usually unskirted. A bunny outfit is usually latex. A bunny outfit is usually low cut. A bunny outfit is usually top-displacable.
 
-Definition: a bunny outfit is class-transformation-protected if the class of the player is bunny.
+Definition: a bunny outfit is class-transformation-protected:
+	if the class of the player is bunny, decide yes;
+	decide no.
 
 To decide which number is the initial outrage of (C - a bunny outfit):
 	decide on 4.
@@ -114,7 +116,9 @@ To say ShortDesc of (C - cream rubber bunny outfit):
 To decide which number is the initial outrage of (C - cream rubber bunny outfit):
 	decide on 7.
 
-Definition: cream rubber bunny outfit is transformation-protected if the class of the player is bunny.
+Definition: cream rubber bunny outfit is transformation-protected:
+	if the class of the player is bunny, decide yes;
+	decide no.
 
 Definition: cream rubber bunny outfit is white themed: decide yes.
 
@@ -139,7 +143,9 @@ To say ClothingDesc of (O - dq bunny outfit):
 To say ShortDesc of (C - dq bunny outfit):
 	say "brown bunny outfit".
 
-Definition: dq bunny outfit is transformation-protected if the class of the player is bunny.
+Definition: dq bunny outfit is transformation-protected:
+	if the class of the player is bunny, decide yes;
+	decide no.
 
 Definition: dq bunny outfit is displacable: decide no.
 Definition: dq bunny outfit is brown themed: decide yes.
@@ -173,8 +179,12 @@ To say ClothingDesc of (O - bunny dress):
 
 Definition: bunny dress is bow themed: decide yes.
 Definition: bunny dress is white themed: decide yes.
-Definition: bunny dress is pinkWardrobeAppropriate if diaper quest is 0.
+Definition: bunny dress is pinkWardrobeAppropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 
-Definition: bunny dress is transformation-protected if the class of the player is bunny.
+Definition: bunny dress is transformation-protected:
+	if the class of the player is bunny, decide yes;
+	decide no.
 
 Bunny Outfit ends here.

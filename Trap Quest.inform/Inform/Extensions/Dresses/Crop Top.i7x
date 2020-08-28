@@ -1,6 +1,6 @@
 Crop Top by Dresses begins here.
 
-A crop top is a kind of overdress. A crop top is usually unskirted. A crop top is usually belly exposing. The soak-limit of a crop top is usually 16. A crop top is usually sheer-when-wet. A crop top is usually erect-nipple-exposing. Understand "crop", "top" as crop top.
+A crop top is a kind of overdress. A crop top is usually unskirted. A crop top is usually belly exposing. A crop top is usually sheer-when-wet. A crop top is usually erect-nipple-exposing. Understand "crop", "top" as crop top.
 
 The printed name of crop top is usually "[clothing-title-before]crop top[clothing-title-after]".
 
@@ -12,9 +12,6 @@ To say ShortDesc of (C - a crop top):
 
 To decide which number is the initial outrage of (C - a crop top):
 	decide on 1.
-
-To decide which number is the original price of (C - a crop top):
-	decide on 5.
 
 To set up influence of (C - a crop top):
 	set up stat-based influence of C.
@@ -78,7 +75,9 @@ Definition: size does matter crop top is penis themed: decide yes.
 Definition: size does matter crop top is boob themed: decide yes.
 Definition: size does matter crop top is white themed: decide yes.
 
-Definition: size does matter crop top is fetish appropriate if diaper quest is 0.
+Definition: size does matter crop top is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 
 To decide which number is the initial outrage of (C - size does matter crop top):
 	decide on 8.
@@ -162,7 +161,9 @@ deepthroat princess crop top is a crop top. The printed name of deepthroat princ
 
 deepthroat princess crop top is high cut. deepthroat princess crop top is transformation-rare.
 
-Definition: deepthroat princess crop top is fetish appropriate if diaper quest is 0.
+Definition: deepthroat princess crop top is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 
 To decide which number is the initial outrage of (C - deepthroat princess crop top):
 	decide on 10.
@@ -184,7 +185,9 @@ To say ShortDesc of (C - deepthroat princess crop top):
 Definition: deepthroat princess crop top is royalty themed: decide yes.
 Definition: deepthroat princess crop top is oral sex themed: decide yes.
 Definition: deepthroat princess crop top is white themed: decide yes.
-Definition: deepthroat princess crop top is transformation-protected if the class of the player is princess.
+Definition: deepthroat princess crop top is transformation-protected:
+	if the class of the player is princess, decide yes;
+	decide no.
 
 Part 6 - Spoiled Crop Top
 
@@ -310,7 +313,9 @@ To decide which figure-name is clothing-image of (C - rugged-crop-top):
 	decide on figure of rugged crop top.
 
 Definition: rugged-crop-top is leopard themed: decide yes.
-Definition: rugged-crop-top is class-transformation-protected if the class of the player is barbarian.
+Definition: rugged-crop-top is class-transformation-protected:
+	if the class of the player is barbarian, decide yes;
+	decide no.
 
 To say ClothingDesc of (C - rugged-crop-top):
 	say "A leopard print crop top that doesn't cover your belly. The cut of the fabric leaves one of your shoulders exposed.".
@@ -393,5 +398,6 @@ To decide which number is the adult-influence of (C - underboob sweater):
 	decide on 1.
 
 Definition: underboob sweater is white themed: decide yes.
+
 
 Crop Top ends here.

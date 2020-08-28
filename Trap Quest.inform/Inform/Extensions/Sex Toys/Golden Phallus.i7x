@@ -8,7 +8,7 @@ To decide which figure-name is clothing-image of (C - a golden phallus):
 	decide on figure of golden phallus.
 
 To say ClothingDesc of (C - golden phallus):
-	say "This [if the bimbo of the player < 8]phallic object[otherwise]dildo[end if] [if saved-flat-intelligence > 6]appears to be made of pure gold, but you can't be sure it's not just its colour. In any case, it's quite heavy and cold, so definitely a metal[otherwise if the player is female]probably goes in your [vagina][otherwise]probably goes in your [asshole][end if].".
+	say "This [if the bimbo of the player < 8]phallic object[otherwise]dildo[end if] [if saved-flat-intelligence > 6]appears to be made of pure gold, but you can't be sure it's not just its colour. In any case, it's quite heavy and cold, so definitely a metal[otherwise if the player is possessing a vagina]probably goes in your [vagina][otherwise]probably goes in your [asshole][end if].".
 
 To say ShortDesc of (C - golden phallus):
 	say "golden [if the bimbo of the player < 8]phallus[otherwise]dildo[end if]".

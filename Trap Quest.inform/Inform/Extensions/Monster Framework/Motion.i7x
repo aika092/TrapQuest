@@ -54,7 +54,7 @@ To say AttractionWorry of (N - a monster):
 			if the player is glue stuck:
 				let G be a random glue in the location of the player;
 				if the smell-duration of G > 0:
-					say "[one of]The smell of the glue has filled the room and spread beyond. [line break][variable custom style]Would any monsters have learned to hunt for stuck prey?[roman type][line break][or]As you strain at the glue, you try to keep your panicked panting to a minimum.[or][line break][variable custom style]I hope the smell and my struggles don't attract 'attention'![roman type][line break][or]With the smell of the glue spreading, you try to contain your groans as you struggle against the glue's grip.[or]It'd be just awful if a monster found you while you were helpless![or]You can't help moaning as the pungent glue holds you in its relentless grip.[at random]";
+					say "[one of]The smell of the glue has filled the room and spread beyond.[line break][variable custom style]Would any monsters have learned to hunt for stuck prey?[roman type][line break][or]As you strain at the glue, you try to keep your panicked panting to a minimum.[or][line break][variable custom style]I hope the smell and my struggles don't attract 'attention'![roman type][line break][or]With the smell of the glue spreading, you try to contain your groans as you struggle against the glue's grip.[or]It'd be just awful if a monster found you while you were helpless![or]You can't help moaning as the pungent glue holds you in its relentless grip.[at random]";
 				otherwise:
 					say "Thankfully, the smell of the glue has faded".
 
@@ -158,6 +158,15 @@ To compute sleep reduction of (M - a monster):
 			if M is in the location of the player, say "[BigNameDesc of M] wakes up! [if M is unfriendly]Uh-oh...[end if]".
 
 To compute periodic healing of (M - a monster):
+	if the blind-status of M > 0:
+		decrease the blind-status of M by 1;
+		if the blind-status of M is 0 and M is in the location of the player and M is awake, say "[BigNameDesc of M] is no longer blind!";
+	if the paralyse-status of M > 0:
+		decrease the paralyse-status of M by 1;
+		if the paralyse-status of M is 0 and M is in the location of the player and M is awake, say "[BigNameDesc of M] is no longer paralysed!";
+	if the poison-status of M > 0:
+		decrease the poison-status of M by 1;
+		if the poison-status of M is 0 and M is in the location of the player and M is awake, say "[BigNameDesc of M] is no longer poisoned!";
 	if the M is awake:
 		if M is uninterested, MonsterHeal M by 2;[Uninterested monsters heal every turn.]
 	otherwise:

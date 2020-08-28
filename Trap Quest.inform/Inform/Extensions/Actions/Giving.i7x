@@ -3,11 +3,6 @@ Giving by Actions begins here.
 The can't give clothes being worn rule is not listed in the check giving it to rulebook.
 The block giving rule is not listed in the check giving it to rulebook.
 
-[!<CheckGiving>+
-
-REQUIRES COMMENTING
-
-+!]
 Check giving:
 	if the second noun is not monster, say "That makes no sense to me." instead;
 	if the player is flying, say "You aren't even on the ground!" instead;

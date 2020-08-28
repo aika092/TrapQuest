@@ -1,31 +1,16 @@
 Laundry Robots by Objects begins here.
 
-[!<laundryRobots:Scenery>*
-
-REQUIRES COMMENTING
-
-*!]
 laundry robots is a thing. laundry robots is not portable. laundry robots is in Hotel20. The printed name of laundry robots is "[TQlink of item described]robotic arms[TQxlink of item described][verb-desc of item described]". Understand "robot", "robotic", "metal", "arms", "hands", "room" as laundry robots. laundry robots has a number called charge. The text-shortcut of laundry robots is "rarm".
 
 To say ExamineDesc of (C - laundry robots):
 	say "Several extremely agile metal robotic arms with threatening looking grippers at the end. They are constantly zipping about the place with unclear purpose.".
 
-[!<ReportWhenThePlayerIsInHotel20>+
-
-REQUIRES COMMENTING
-
-+!]
 Report going when the player is in Hotel20:
 	if the player is upright:
 		compute LaundryRobots;
 	otherwise if the number of worn washable clothing > 0:
 		say "Having entered this room on your knees, it would appear that the mechanical arms above you have not detected you.".
 
-[!<ComputeLaundryRobots>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute LaundryRobots:
 	let C be a random worn washable clothing;
 	if there is a worn messed knickers, now C is a random worn knickers;
@@ -36,7 +21,7 @@ To compute LaundryRobots:
 			clean F;
 			Drench F;
 			if F is knickers, WaterEmpty F;
-		say "[one of]You think it's over, but before[or]Before[stopping] letting you go, the robotic arms silently force a new dry [ShortDesc of C] onto your crotch. [line break][variable custom style][if the bimbo of the player < 6 and C is a diaper]Why did they have to put me into another one?! Ugh.[otherwise if the bimbo of the player < 12]Well I'm glad that's over and done with.[otherwise]Thank you for changing me, nice robots![end if][roman type][line break]";
+		say "[one of]You think it's over, but before[or]Before[stopping] letting you go, the robotic arms silently force a new dry [ShortDesc of C] onto your crotch.[line break][variable custom style][if the bimbo of the player < 6 and C is a diaper]Why did they have to put me into another one?! Ugh.[otherwise if the bimbo of the player < 12]Well I'm glad that's over and done with.[otherwise]Thank you for changing me, nice robots![end if][roman type][line break]";
 		now the charge of laundry robots is 200;
 	otherwise if C is clothing and the charge of laundry robots <= 0:
 		say "You watch [if the bimbo of the player < 10][one of]in surprise[or]in frustration[stopping][otherwise]in awe[end if] as your [C] is deftly pulled off you and speedily dunked into a large vat of hot soapy water. ";
@@ -48,11 +33,6 @@ To compute LaundryRobots:
 	otherwise:
 		say "The robotic arms above you move suddenly as you enter the room, but do not approach you[if the charge of laundry robots > 0]. Maybe they need to recharge[end if].".
 
-[!<ClothingIsWashable>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a clothing (called C) is washable:
 	if C is cursed or C is locked or C is glued, decide no;
 	if C is fluid immune, decide no;
@@ -60,11 +40,6 @@ Definition: a clothing (called C) is washable:
 	if C is dirty, decide yes;
 	decide no.
 
-[!<DiaperIsWashable>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a diaper is washable: decide no.
 
 Laundry Robots ends here.

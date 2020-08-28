@@ -43,6 +43,7 @@ The elder altar gains charge when items are placed on the altar, and loses charg
 
 @!]
 The elder altar is in Mansion23. The elder altar is not portable. The printed name of elder altar is "[TQlink of item described]dark altar[shortcut-desc] [GlowDesc of the item described][TQxlink of item described][verb-desc of item described]". Understand "dark" as the elder altar. The indefinite article of the elder altar is "an". The elder altar has a number called charge. The charge of the elder altar is usually 0. The text-shortcut of elder altar is "al".
+Figure of elder altar cock is the file "Env/Mansion/cumcock1.jpg".
 
 To decide which figure-name is the examine-image of (C - elder altar):
 	decide on figure of elder altar.
@@ -151,7 +152,7 @@ Check praying something with:
 			AltarPunish the player;
 			say "A voice appears in your head:[line break][second custom style]'How dare you place such a thing on my altar!'[roman type][line break]" instead;
 		otherwise if the class of the player is succubus:
-			say "The altar appears inert. It seems the Goddess who rules it isn[']t inclined to help you." instead;
+			say "The altar appears inert. It seems the Goddess who rules it isn't inclined to help you." instead;
 	otherwise if the second noun is elder altar and the noun is a unicorn-horn:
 		say "The horn trembles as it is enveloped by black flames, shooting several long ropes of creamy white fluid across the surface of the altar
 		before being consumed completely. Purple light suffuses the altar as the horn disappears in a puff of white smoke.";
@@ -251,7 +252,7 @@ To say GoddessAddress:
 
 [To AltarUniqueReward of (T - a headgear):
 	if the class of the player is adventurer and the vaginalvirgin of the player is 1 and T is not runic headband and runic headband is off-stage and T is not severed-tentacle and the number of worn headgear is 1 and T is worn:
-		say "A shimmering blue light surrounds you as your [ShortDesc of T] shapeshifts, first turning into pure visible energy and then settling into form as some kind of religious headband. A voice appears in your head: [line break][second custom style]'Loyal Sister, you have been chosen to follow the holy path of righteousness! Go, with grace, but do not forget your duties.'[roman type][line break]";
+		say "A shimmering blue light surrounds you as your [ShortDesc of T] shapeshifts, first turning into pure visible energy and then settling into form as some kind of religious headband. A voice appears in your head:[line break][second custom style]'Loyal Sister, you have been chosen to follow the holy path of righteousness! Go, with grace, but do not forget your duties.'[roman type][line break]";
 		only destroy T;
 		summon runic headband cursed;
 		reset dungeon altar.]
@@ -287,7 +288,7 @@ To AltarUniqueReward of (T - flower hairclip):
 To AltarPray (P - a person):
 	cutshow figure of dungeon altar cutscene for dungeon altar;
 	say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] I shall help you on your quest!'[roman type][line break]";
-	MagicPowerUp 1;
+	MagicPowerRefresh 4;
 	while 1 is 1:
 		let R be a random number from 1 to 9;
 		if the class of the player is priestess and (the vaginalvirgin of the player is 0 or the player is not possessing a vagina):
@@ -302,7 +303,7 @@ To AltarPray (P - a person):
 			now permanent makeup is 0;
 			break;
 		if the pregnancy of the player > 0:
-			if (the number of held pregnancy related things is 0 and the number of worn pregnancy related clothing is 0) or (the pregnancy of the player is 3 and the class of the player is not broodmother):
+			if (the number of held pregnancy themed things is 0 and the number of worn pregnancy themed clothing is 0) or (the pregnancy of the player is 3 and the class of the player is not broodmother):
 				say "You feel an emptiness inside of you. Suddenly, your belly dramatically shrinks!";
 				now the pregnancy of the player is 0;
 				WombEmpty the womb volume of vagina;
@@ -365,7 +366,7 @@ To AltarPray (P - a person):
 	if the pregnancy of the player is 0 and the womb volume of vagina is 0 and runic headband is actually summonable:
 		summon runic headband cursed;
 		say "A shimmering blue light surrounds you as your pure visible energy rushes around your body and then settles into the form of some kind of religious headband. A voice sounds in your head:[line break][second custom style]'Loyal Sister, you have been chosen to follow the holy path of righteousness! Go, with grace, but do not forget your duties.'[roman type][line break]";
-		if the player is female and the vaginalvirgin of the player is 0:
+		if the player is possessing a vagina and the vaginalvirgin of the player is 0:
 			say "[bold type]The pure aura of your headband clashes with your lost vaginal virginity![roman type][line break]";
 			compute virginity-loss of runic headband;
 	otherwise if flower hairclip is worn:
@@ -392,7 +393,7 @@ To AltarReward (T - wrist bond):
 	otherwise:
 		say "Nothing seems to happen.".
 
-To AltarReward (T - chastity cage):
+To AltarReward (T - chastity bond):
 	if T is cursed:
 		if strongCurses is 1:
 			compute new quest of T;
@@ -466,7 +467,7 @@ To WoodsOffer (T - an accessory):
 			if the raw strength of the player >= 20 and the raw dexterity of the player >= 20 and the raw intelligence of the player >= 20:
 				say "You feel magic energy flow through you but fizzle out without making a difference. Maybe you're too powerful already for the altar to be able to help you any more?";
 			otherwise if the raw intelligence of the player < the raw strength of the player and the raw intelligence of the player < the raw dexterity of the player:
-				say "You feel yourself getting smarter!";
+				say "You feel yourself getting [smarter]!";
 				IntUp 1;
 			otherwise if the raw strength of the player <= the raw intelligence of the player and the raw strength of the player < the raw dexterity of the player:
 				say "You feel yourself getting stronger!";
@@ -523,7 +524,7 @@ To ElderEmpower (W - laurel wreath):
 		if C is not laurel wreath and (C is destructible or C is overdress) and C is not equippable and C is not bondage:
 			say "Your [C] is torn apart!";
 			destroy C;
-	say "Your clothing removed, you begin to feel terrible foreboding. But as suddenly as they appeared, the tentacles simply vanish. As you consider how lucky you were, though, a sudden pain from your neck rips through your body! You get up with a start, and feel a warm, pulsing lump attached to you. One that should definitely be there. It[']s definitely okay that it is there. As you think this, purple tentacles come out of it and wrap around your body, accentuating your curves. How thoughtful.";
+	say "Your clothing removed, you begin to feel terrible foreboding. But as suddenly as they appeared, the tentacles simply vanish. As you consider how lucky you were, though, a sudden pain from your neck rips through your body! You get up with a start, and feel a warm, pulsing lump attached to you. One that should definitely be there. It's definitely okay that it is there. As you think this, purple tentacles come out of it and wrap around your body, accentuating your curves. How thoughtful.";
 	let T be a random living tentacles;
 	summon T cursed;
 	reset elder altar;
@@ -534,7 +535,7 @@ To ElderEmpower (T - flower hairclip):
 	if voidbladeSummoned is false and abyssal tattoo is worn:
 		say "The darkness of the room grows profound, and you can feel it pressing into you almost like a weight. The only sensation you can feel for what seems like forever is the pressure of the dark. One minute or a thousand years, you are no longer able to even sense time. Time no longer exists. The world no longer exists. You no longer exist. Yes. Forget... Suddenly pink motes begin to flow from your body, and you feel a sense of joy at somehow knowing those are your useless former life leaving you. They form into the shape of a sword, and as the lights come back up, a shard of the darkness remains.";
 		now voidblade is in Mansion23;
-		Intdown 2;
+		IntDown 2;
 		reset elder altar;
 		now voidbladeSummoned is true.
 
@@ -555,12 +556,12 @@ To ElderEmpower (T - a cultist veil):
 
 []
 To ElderOffer:
-	say "What little light there is in the room extinguishes, and the [if there is an acolyte in the location of the player]cultist forces manacles onto your arms and legs[otherwise]manacles suddenly come to life and secure your arms and legs[end if]. There[']s no escape now![line break]";[there will eventually be multiple possible things that happen to you on the altar]
+	say "What little light there is in the room extinguishes, and the [if there is an acolyte in the location of the player]cultist forces manacles onto your arms and legs[otherwise]manacles suddenly come to life and secure your arms and legs[end if]. There's no escape now![line break]";[there will eventually be multiple possible things that happen to you on the altar]
 	if the number of worn headgear > 0 and diaper quest is 0:
 		ElderEmpower a random worn headgear;
 	if the charge of elder altar < 1 or diaper quest is 1:[if nothing happened with your headgear, it's time to breed]
 		if diaper quest is 0:
-			if the player is female, ElderBreed vagina;
+			if the player is possessing a vagina, ElderBreed vagina;
 			otherwise ElderBreed asshole;
 		otherwise:
 			ElderConnect;
@@ -586,7 +587,8 @@ To ElderBreed (F - vagina):[this one needs handling for pussy covering clothing 
 		vaginally orgasm shamefully;
 		say "The creature seemed to be waiting for this moment, and you feel it begin to pump [semen] into you even as you orgasm. In a shockingly short time it seems like it has sprayed most of its body into your womb, at which point what is left of its body withdraws from the altar. The lights rise slightly in the room, and you feel the manacles unlock from your body, leaving you free to leave.";
 	otherwise:
-		say "You hear horrible dripping, and the smell of [semen] fills your nose. Your feet suddenly feel cold and wet, and as you strain to turn your head to look at what is happening you are horrified to see a milky white pool of liquid is crawling up the sides of the altar on that end! You vainly struggle as it creeps quickly up your legs and towards your [vagina]. It pauses briefly before forming into a grotesque tentacle that resembles nothing so much as a [manly-penis] made out of [semen]. It pushes its way roughly into your [vagina] without hesitation, unexpectedly firm yet oddly fluid. In spite of your lack of reaction, it appears perfectly content to thrust and pump away at you. Eventually it tenses up, and begins spraying semen into you. In a shockingly short time it seems like it has sprayed most of its body into your womb, at which point what is left of its body withdraws from the altar. The lights rise slightly in the room, and you feel the manacles unlock from your body, leaving you free to leave.[line break]";
+		say "You hear horrible dripping, and the smell of [semen] fills your nose. Your feet suddenly feel cold and wet, and as you strain to turn your head to look at what is happening you are horrified to see a milky white pool of liquid is crawling up the sides of the altar on that end! You vainly struggle as it creeps quickly up your legs and towards your [vagina]. It pauses briefly before forming into a grotesque tentacle that resembles nothing so much as a [manly-penis] made out of [semen]. It pushes its way roughly into your [vagina] without hesitation, unexpectedly firm yet oddly fluid. In spite of your lack of reaction, it appears perfectly content to thrust and pump away at you. Eventually it tenses up, and begins spraying semen into you. In a shockingly short time it seems like it has sprayed most of its body into your womb, at which point what is left of its body withdraws from the altar. The lights rise slightly in the room, and you feel the manacles unlock from your body, leaving you free to leave.";
+	appropriate-cutscene-display Figure of elder altar cock with priority 3;
 	FuckCount;
 	increase the charge of the elder altar by 500;
 	PussyFill 25;
@@ -613,7 +615,8 @@ To ElderBreed (F - asshole):
 		anally orgasm shamefully;
 		say "The creature seemed to be waiting for this moment, and you feel it begin to pump [semen] into you even as you orgasm. In a shockingly short time it seems like it has sprayed most of its body into your asshole, at which point what is left of its body withdraws from the altar. The lights rise slightly in the room, and you feel the manacles unlock from your body, leaving you free to leave.";
 	otherwise:
-		say "You hear horrible dripping, and the smell of [semen] fills your nose. Your feet suddenly feel cold and wet, and as you strain to turn your head to look at what is happening you are horrified to see a milky white pool of liquid is crawling up the sides of the altar on that end! You vainly struggle as it creeps quickly up your legs and towards your ass. It pauses briefly before forming into a grotesque tentacle that resembles nothing so much as a [manly-penis] made out of [semen]. It pushes its way roughly into your ass without hesitation, unexpectedly firm yet oddly fluid. In spite of your lack of reaction, it appears perfectly content to thrust and pump away at you. Eventually it tenses up, and begins spraying semen into you. In a shockingly short time it seems like it has sprayed most of its body into your asshole, at which point what is left of its body withdraws from the altar. The lights rise slightly in the room, and you feel the manacles unlock from your body, leaving you free to leave.[line break]";
+		say "You hear horrible dripping, and the smell of [semen] fills your nose. Your feet suddenly feel cold and wet, and as you strain to turn your head to look at what is happening you are horrified to see a milky white pool of liquid is crawling up the sides of the altar on that end! You vainly struggle as it creeps quickly up your legs and towards your ass. It pauses briefly before forming into a grotesque tentacle that resembles nothing so much as a [manly-penis] made out of [semen]. It pushes its way roughly into your ass without hesitation, unexpectedly firm yet oddly fluid. In spite of your lack of reaction, it appears perfectly content to thrust and pump away at you. Eventually it tenses up, and begins spraying semen into you. In a shockingly short time it seems like it has sprayed most of its body into your asshole, at which point what is left of its body withdraws from the altar. The lights rise slightly in the room, and you feel the manacles unlock from your body, leaving you free to leave.";
+	appropriate-cutscene-display Figure of elder altar cock with priority 3;
 	AnalCount;
 	increase the charge of the elder altar by 500;
 	AssFill 25;
@@ -899,10 +902,10 @@ To DevilPray (P - a person):
 			say "The statue's face seems to wink as an orange glow surrounds your body. s a [MediumDesc of C] appears on your person.";
 		otherwise:
 			if the submission-count of the player > the dominated-count of the player:
-				say "The statue's face seems to wink as an orange glow surrounds your head. You feel smarter, but also more submissive.";
+				say "The statue's face seems to wink as an orange glow surrounds your head. You feel [smarter], but also more submissive.";
 				SexAddictUp (N / 3) + 1;
 			otherwise:
-				say "The statue appears to frown as an orange glow surrounds your head. You feel smarter!";
+				say "The statue appears to frown as an orange glow surrounds your head. You feel [smarter]!";
 			IntUp (N / 3) + 1;
 	otherwise if R is 2:[strength + bust size; 1 -> 2 -> 3]
 		let C be a random worn blessed breast covering top-placed clothing;
@@ -1059,7 +1062,7 @@ Resets the charge of the dungeon altar and triggers any code that needs to run w
 
 +!]
 To reset dungeon altar:
-	if the class of the player is priestess and the player is female and the vaginalvirgin of the player is 1, now the charge of the dungeon altar is 220;
+	if the class of the player is priestess and the player is possessing a vagina and the vaginalvirgin of the player is 1, now the charge of the dungeon altar is 220;
 	otherwise now the charge of the dungeon altar is 400;
 	if there is a worn demon tail plug, increase the charge of the dungeon altar by 150;
 	force inventory-focus redraw; [This forces the inventory window to redraw]

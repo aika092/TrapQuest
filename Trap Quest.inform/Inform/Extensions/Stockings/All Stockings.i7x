@@ -1,8 +1,10 @@
 All Stockings by Stockings begins here.
 
-A stockings is a kind of clothing. Understand "pair", "pair of" as stockings. The printed name of stockings is usually "[clothing-title-before]pair of [clothing-material of the item described] stockings[clothing-title-after]". A stockings is usually sheer. The soak-limit of stockings is usually 10.
+A stockings is a kind of clothing. Understand "pair", "pair of" as stockings. The printed name of stockings is usually "[clothing-title-before]pair of [clothing-material of the item described] stockings[clothing-title-after]". A stockings is usually sheer.
 
-Definition: a stockings is same-type if theme-share-target is stockings.
+Definition: a stockings is same-type:
+	if theme-share-target is stockings, decide yes;
+	decide no.
 Definition: a stockings is calf covering: decide yes.
 Definition: a stockings is ankle covering: decide yes.
 
@@ -34,11 +36,6 @@ To set up magic state of (C - a stockings): [Less variance than most items]
 		increase the raw-magic-modifier of C by a random number between -1 and 1;
 		if a random number between 1 and 3 is 1, increase the raw-magic-modifier of C by a random number between -1 and 1;
 		set up BUC of C.
-
-To decide which number is the original price of (C - a stockings):
-	if C is mesh, decide on 2;
-	if C is latex, decide on 1;
-	decide on 3;
 
 To decide which number is the knee-modifier of (S - a wearthing):
 	decide on 0.
@@ -96,6 +93,8 @@ Part - Socks
 
 A socks is a kind of stockings. The printed name of socks is usually "[clothing-title-before]pair of [clothing-material of the item described] socks[clothing-title-after]". A socks is usually dense. A socks is usually unique.
 
+To decide which number is the default-soak-limit of (C - a socks): decide on 6.
+
 A diaper quest fix rule:
 	repeat with C running through socks:
 		now C is transformation-rare.
@@ -112,7 +111,9 @@ To say MediumDesc of (C - a socks):
 To say ShortestDesc of (C - a socks):
 	say "socks".
 
-Definition: a socks is baby themed if the initial cringe of it > 0.
+Definition: a socks is baby themed:
+	if the initial cringe of it > 0, decide yes;
+	decide no.
 
 Part - Wearability
 
@@ -188,7 +189,9 @@ Definition: bunny socks is pink themed: decide yes.
 To decide which number is the initial cringe of (C - bunny socks):
 	decide on 5.
 
-Definition: bunny socks is transformation-protected if the class of the player is bunny.
+Definition: bunny socks is transformation-protected:
+	if the class of the player is bunny, decide yes;
+	decide no.
 
 bunny stockings is a stockings. bunny stockings is leather. The text-shortcut of bunny stockings is "bnns".
 
@@ -205,9 +208,13 @@ To say MediumDesc of (C - bunny stockings):
 
 Definition: bunny stockings is black themed: decide yes.
 
-Definition: bunny stockings is fetish appropriate if diaper quest is 0.
+Definition: bunny stockings is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
 
-Definition: bunny stockings is transformation-protected if the class of the player is bunny.
+Definition: bunny stockings is transformation-protected:
+	if the class of the player is bunny, decide yes;
+	decide no.
 
 cafe maid stockings is a stockings. cafe maid stockings is cotton. cafe maid stockings is unique. cafe maid stockings is sheer-when-wet. The text-shortcut of cafe maid stockings is "cms".
 
@@ -280,7 +287,9 @@ To decide which number is the initial outrage of (C - a frilly green socks):
 To decide which number is the initial cringe of (C - a frilly green socks):
 	decide on 4.
 
-Definition: a frilly green socks is transformation-protected if there is a worn christmas headgear.
+Definition: a frilly green socks is transformation-protected:
+	if there is a worn christmas headgear, decide yes;
+	decide no.
 Definition: a frilly green socks is green themed: decide yes.
 Definition: a frilly green socks is christmas themed: decide yes.
 
@@ -372,7 +381,9 @@ Definition: a black-and-orange rubber stockings is black themed: decide yes.
 Definition: a black-and-orange rubber stockings is orange themed: decide yes.
 Definition: a red rubber stockings is red themed: decide yes.
 
-Definition: a stockings is end of transformation chain if it is latex.
+Definition: a stockings is end of transformation chain:
+	if it is latex, decide yes;
+	decide no.
 
 Figure of rubber stockings A is the file "Items/Clothes/Lower/Legs/rubberstockings1.png".
 Figure of rubber stockings B is the file "Items/Clothes/Lower/Legs/rubberstockings2.png".
@@ -488,12 +499,14 @@ To decide which figure-name is clothing-image of (C - a black-and-yellow striped
 Figure of black-and-yellow striped stockings is the file "Items/Clothes/Lower/Legs/stripedstockings1.png".
 
 To say ClothingDesc of (C - a black-and-yellow striped stockings):
-	say "Fuzzy black and yellow stockings[if the class of the player is broodmother]. They feel like they[']ve become somewhat hard, and their tops fade into your skin[end if].".
+	say "Fuzzy black and yellow stockings[if the class of the player is broodmother]. They feel like they've become somewhat hard, and their tops fade into your skin[end if].".
 
 To say ShortDesc of (C - a black-and-yellow striped stockings):
 	say "pair of striped stockings".
 
-Definition: a black-and-yellow striped stockings is transformation-protected if the class of the player is broodmother.
+Definition: a black-and-yellow striped stockings is transformation-protected:
+	if the class of the player is broodmother, decide yes;
+	decide no.
 
 A red-and-white striped stockings is a kind of stockings. There is 1 red-and-white striped stockings. A red-and-white striped stockings is usually biological. A red-and-white striped stockings is usually dense. The printed name of red-and-white striped stockings is "[clothing-title-before]red and white striped stockings[clothing-title-after]". The text-shortcut of red-and-white striped stockings is "rws". Understand "red", "red and white", "white" as red-and-white striped stockings.
 
@@ -508,7 +521,9 @@ To say ClothingDesc of (C - a red-and-white striped stockings):
 To say ShortDesc of (C - a red-and-white striped stockings):
 	say "pair of striped stockings".
 
-Definition: a red-and-white striped stockings is transformation-protected if there is a worn christmas headgear.
+Definition: a red-and-white striped stockings is transformation-protected:
+	if there is a worn christmas headgear, decide yes;
+	decide no.
 Definition: a red-and-white striped stockings is red themed: decide yes.
 Definition: a red-and-white striped stockings is white themed: decide yes.
 Definition: a red-and-white striped stockings is christmas themed: decide yes.
@@ -528,7 +543,9 @@ To say ShortDesc of (C - red-and-white rubber stockings):
 To say MediumDesc of (C - red-and-white rubber stockings):
 	say "pair of shiny latex candy cane stockings".
 
-Definition: red-and-white rubber stockings is transformation-protected if there is a worn christmas headgear.
+Definition: red-and-white rubber stockings is transformation-protected:
+	if there is a worn christmas headgear, decide yes;
+	decide no.
 Definition: red-and-white rubber stockings is red themed: decide yes.
 Definition: red-and-white rubber stockings is white themed: decide yes.
 Definition: red-and-white rubber stockings is christmas themed: decide yes.
@@ -588,8 +605,12 @@ To say ShortDesc of (C - tongue-stockings):
 Definition: tongue-stockings is demonic: decide yes.
 Definition: tongue-stockings is tongued: decide yes.
 Definition: tongue-stockings is transformation-protected: decide yes.
-Definition: tongue-stockings is white themed if tonguesBlack is false.
-Definition: tongue-stockings is black themed if tonguesBlack is true.
+Definition: tongue-stockings is white themed:
+	if tonguesBlack is false, decide yes;
+	decide no.
+Definition: tongue-stockings is black themed:
+	if tonguesBlack is true, decide yes;
+	decide no.
 
 To decide which number is the initial outrage of (C - tongue-stockings):
 	if C is tonguing, decide on 14;

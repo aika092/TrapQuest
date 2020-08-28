@@ -22,11 +22,6 @@ To decide which figure-name is the examine-image of (V - a can):
 To BackgroundRender (T - a can) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
 	draw a rectangle TQcolour of fill-colour of T in the current focus window at X1 by Y1 with size DX by DY.
 
-[!<Can>@<Restock>+
-
-REQUIRES COMMENTING
-
-+@!]
 To restock (C - a can):
 	let B be a random basic loot can;
 	if B is bottle, now B is in Standard Item Pen.
@@ -35,22 +30,12 @@ To say ShortDesc of (B - a can):
 	if the fill-type of B is remembered, say "can of [FillName the fill-type of B]";
 	otherwise say "[fill-colour of B] can".
 
-[!<TheSetupStartingCansRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the setup starting cans rule:
 	let C be a random can;
 	repeat with N running from 1 to (2 + diaper quest):
 		restock C.
 The setup starting cans rule is listed in the setup starting items rules.
 
-[!<DestroyCan>+
-
-REQUIRES COMMENTING
-
-+!]
 To destroy (T - a can):
 	remove T from play;
 	now the magic-curse of T is bland;

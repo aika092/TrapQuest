@@ -37,11 +37,6 @@ To decide which number is lowest-cursed:
 To decide which number is highest-cursed:
 	decide on 15.
 
-[!<tableOfDrinks:Table>*
-
-REQUIRES COMMENTING
-
-*!]
 Table of Drinks
 Appearance	Magic	Known
 silver	0	0
@@ -96,34 +91,14 @@ Definition: A number is remembered:
 	if Z is 1, decide yes;
 	decide no.
 
-[!<magicCurse:MagicCurseEnum>*
-
-REQUIRES COMMENTING
-
-*!]
 magic-curse is a kind of value. The magic-curses are bland, blessed, and cursed.
 
-[!<curseID:CurseIDEnum>*
-
-REQUIRES COMMENTING
-
-*!]
 curse-ID is a kind of value. The curse-IDs are sure and unsure.
 
-[!<Thing>@<SayMagicCurse>+
-
-REQUIRES COMMENTING
-
-+@!]
 To say magic curse of (C - a thing):
 	if C is bland, say "uncursed";
 	otherwise say "[magic-curse of C]".
 
-[!<drinkColour:DrinkColourEnums>*
-
-REQUIRES COMMENTING
-
-*@!]
 Drink-Colour is a kind of value. The drink-colours are white, scarlet, blue, golden, green, grey, clear, indigo, magenta, orange, lime, brownish, violet, glittery, turquoise, creamy, silver, bronze, murky.
 
 Understand "milk" as a can when the fill-colour of item described is white and the doses of item described > 0.
@@ -131,18 +106,8 @@ Understand "urine", "piss", "pee", "wee" as a bottle when the fill-colour of ite
 Understand "semen", "cum", "jizz" as a bottle when the fill-colour of item described is creamy and the doses of item described > 0.
 Understand "unholy" as a can when the fill-colour of item described is murky and the doses of item described > 0.
 
-[!<Thing>@<KnownGoodPotion>+
-
-REQUIRES COMMENTING
-
-+@!]
 Definition: a thing is known-good-potion: decide no.
 
-[!<Thing>@<KnownCursedPotion>+
-
-REQUIRES COMMENTING
-
-+@!]
 Definition: a thing is known-cursed-potion: decide no.
 
 To Scramble Bottles:

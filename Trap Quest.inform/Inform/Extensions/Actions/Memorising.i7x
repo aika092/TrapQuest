@@ -35,7 +35,7 @@ Carry out recalling:
 	if there is a castable magic-spell:
 		say "[bold type]MEMORISED SPELLS:[roman type][line break]";
 		repeat with R running through castable magic-spells:
-			say "'[link]I [incantation of R][end link]': [MagicSpellEffect of R].[SpellOutrageousnessInfo of R][line break]".
+			say "'[link]I [incantation of R][end link]': [MagicSpellEffect of R]. Requires [magic-cost of R] magic power.[SpellOutrageousnessInfo of R][line break]".
 Understand "recall recipes", "recipes", "memorised recipes", "known recipes", "recall spells", "spells", "memorised spells", "known spells" as recalling.
 
 Memorising ends here.

@@ -127,7 +127,9 @@ To say MediumDesc of (C - turtle-swimsuit):
 To decide which number is the initial cringe of (C - turtle-swimsuit):
 	decide on 5.
 
-Definition: turtle-swimsuit is fetish appropriate if diaper lover > 0.
+Definition: turtle-swimsuit is fetish appropriate:
+	if diaper lover > 0, decide yes;
+	decide no.
 Definition: turtle-swimsuit is ballet related: decide yes.
 Definition: turtle-swimsuit is blue themed: decide yes.
 Definition: turtle-swimsuit is sissifying: decide yes.

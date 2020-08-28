@@ -8,12 +8,10 @@ To decide which figure-name is the examine-image of (B - reception bell):
 	decide on figure of reception bell.
 
 To say ExamineDesc of (C - reception bell):
-	say "The bell from the reception desk.".
+	say "The sort of bell you would see sitting on a reception desk.".
 
 Report taking reception bell:
-	if doom counter is 0:
-		say "You feel a sudden sense of foreboding. Maybe you should have left that alone.";
-		now doom counter is 1.
+	commence doom.
 
 To say ShortDesc of (C - reception bell):
 	say "bell".
@@ -35,18 +33,16 @@ To say MonsterOfferRejectFlav of (M - mechanic) to (T - reception bell):
 
 black candle is a collectible. The printed name of black candle is "[TQlink of item described]black candle[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of black candle is "bc".
 
-Figure of black candle is the file "Items/Collectibles/candle1.png".
+Figure of black candle is the file "Items/Collectibles/candle1.jpg".
 
 To decide which figure-name is the examine-image of (B - black candle):
 	decide on figure of black candle.
 
 To say ExamineDesc of (C - black candle):
-	say "A black candle.".
+	say "A black candle with a green flame, kept safe within a rusting metal lantern.".
 
 Report taking black candle:
-	if doom counter is 0:
-		say "You feel a sudden sense of foreboding. Maybe you should have left that alone.";
-		now doom counter is 1.
+	commence doom.
 
 To say ShortDesc of (C - black candle):
 	say "black candle".
@@ -69,8 +65,10 @@ To say MonsterOfferAcceptFlav of (M - vampiress) to (T - black candle):
 	say "[speech style of M]'Ah yes, this looks beautiful. I'll put it right next to my coff... I mean, my bed.'[roman type][line break]".
 
 doom notes is a collectible. The printed name of doom notes is "[TQlink of item described]doom notes[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of doom notes is "dmn".
+
+Figure of doom notes is the file "Items/Collectibles/doomnotes1.jpg".
 To decide which figure-name is the examine-image of (B - doom notes):
-	decide on figure of recipe.
+	decide on figure of doom notes.
 
 To say ExamineDesc of (C - doom notes):
 	say "The witch's notes on the current threat. 'First you will need a bell. Any sort will do, even a really small one. Next you'll need a book, but not just any one. You'll probably need one of the books the cult uses, which will be in the mansion. Then you'll need a candle, the sort that might be used in dark rituals. I suspect one is in the dungeon. Then, take all three items to the dark altar past the mansion and read this incantation (the parchment then trails off into some language you don't know and hope you'll be able to pronounce).'".

@@ -6,7 +6,9 @@ Definition: portal-pants is displacable: decide no.
 Definition: portal-pants is black themed: decide yes.
 Definition: portal-pants is transformation-protected: decide yes.
 Definition: portal-pants is fluid immune: decide yes.
-Definition: portal-pants is soakable pee covering if it is worn.
+Definition: portal-pants is soakable pee covering:
+	if it is worn, decide yes;
+	decide no.
 Definition: portal-pants is magic themed: decide yes.
 Definition: portal-pants is potentially erection concealing: decide yes.
 

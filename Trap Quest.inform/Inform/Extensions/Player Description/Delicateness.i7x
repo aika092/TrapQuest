@@ -1,10 +1,5 @@
 Delicateness by Player Description begins here.
 
-[!<SayDelicatenessDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say DelicatenessDesc:
 	if the delicateness of the player < 2:
 		say "";

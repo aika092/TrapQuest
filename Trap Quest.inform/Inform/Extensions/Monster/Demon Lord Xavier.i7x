@@ -35,6 +35,33 @@ To say BigFuckerDesc of (M - demon lord):
 To say MonsterDesc of (M - demon lord):
 	say "A giant red humanoid, with a monster's face and large red wings. [big he of M] must be literally twice as tall and wide as you. [if diaper quest is 0][big he of M] is completely naked, and as you might expect, [his of M] red monster of a [DickDesc of M] is about twice as large and thick as the average well hung human male. [end if]You can feel a raw aura of lust and evil emanating from [him of M].".
 
+To say MonsterComment of (M - demon lord):
+	if diaper quest is 0:
+		if the class of the player is worshipper:
+			if the bimbo of the player < 7:
+				say "[variable custom style][one of]My lord... and master?[or]This aura... [he of M]'s invincible! I can't lay a finger on [him of M]![or][big he of M]'s going to take over the world! What have I done![in random order]";
+			otherwise if the bimbo of the player < 12:
+				say "[variable custom style][one of]My lord and master.[or]This aura... makes me feel hot.[or]I released [him of M], so... I'm unexpectedly an awesome person, right?[in random order]";
+			otherwise:
+				say "[variable custom style][one of]My one and only lord and master.[or]This aura... that [DickDesc of M].... [he of M]'s ALL POWERFUL![or]I released [him of M]. Now I get to [']release['] [him of M]![in random order]";
+		otherwise if the class of the player is priestess:
+			if M is penetrating a body part:
+				let X be the remainder after dividing the heirs-count of M by 10;[used to determine number suffixes.]
+				increase X by 1;
+				if M is mating, say "A solemn voice sounds in your head. [first custom style]'Defiled Sister, [one of]you must find the strength to oppose [him of M]. The [X][if the heirs-count of M > 10 and the heirs-count of M < 20]th[otherwise if X is 1]st[otherwise if X is 2]nd[otherwise if X is 0]rd[otherwise]th[end if] prince must not be born!'[or]you will have another chance. Go, and escape from the hotel. Do not lose heart!'[in random order]";
+				otherwise say "A frantic voice sounds in your head.[first custom style]'Tenacious Sister, [if the player is able to get pregnant]you must not receive [his of M] seed. [big he of M] cannot be allowed an heir! Escape, sister! Hurry!'[otherwise]your holy power cannot fully protect you here! You must escape!'[end if]";
+			otherwise:
+				if M is mating, say "A calm voice sounds in your head. [first custom style]'Defiled Sister, [one of]the heir is not yet king. There is still time...'[or]you are the only one who can stop [him of M]. Do not lose heart.'[or]you know what will happen if [he of M] captures you. You cannot let that happen.'[or]the violation of your sacred womb will never remove your holy power. You can still defeat [him of M].'[in random order]";
+				otherwise say "A worried voice sounds in your head.[first custom style]'Heroic Sister, [one of]you must defeat [him of M]. [big he of M] must not be allowed to walk this plane!'[or]you must use your holy power to banish [him of M] once and for all!'[or][if the player is able to get pregnant and M is not mating]you must not let [him of M] capture you. [big he of M] cannot be allowed to make an heir!'[otherwise]you must not let [him of M] capture you. Your holy power will protect you from many things, but not the demon king.'[end if][or][he of M] cannot be allowed to regain [his of M] former power! You must stop [him of M] NOW!'[in random order]";
+		otherwise if the bimbo of the player < 7:
+			if the player is gendered male, say "[first custom style][one of][big his of M] [DickDesc of M] is wider than my arm... [if M is penetrating asshole]I'm getting stretched out, dude![otherwise]this is BULLSHIT![end if][or][big he of M] looks really tough.[or]Huge [DickDesc of M], insane muscles... does [he of M] have any weaknesses?[in random order]";
+			otherwise say "[first custom style][one of]Those muscles don't seem to be for show. Well, at least not completely.[or][if M is penetrating a body part][big he of M]'s splitting me in half![otherwise]What IS that?! It couldn't be a [DickDesc of M], could it? I-its far too big![end if][or]Can I even harm [him of M]?[or][big he of M] must have a weakness.[in random order]";
+		otherwise if the bimbo of the player < 12:
+			say "[variable custom style][one of][if M is penetrating a body part]So. BIG.[otherwise]I'm not staring at [his of M] huge [DickDesc of M]. I'm definitely not curious...'[end if][or]So this is a demon lord...[or]Even if I do find [his of M] weakness, its not like [he of M]'d lose.[in random order]";
+		otherwise:
+			say "[second custom style][one of][if M is penetrating a body part]One word. SO FUCKING BIG![otherwise]I can't wait to get that monster inside me.[end if][or]So not only is [he of M] really muscular, [he of M]'s also a demon lord. What a hard worker![or]I have to find [his of M] weakness. That'll really piss [him of M] off![in random order]";
+		say "[roman type][line break]".
+
 To decide which number is the girth of (M - demon lord):
 	decide on 8.
 
@@ -47,7 +74,9 @@ Definition: demon lord (called M) is willing to shag:
 
 Definition: demon lord is infernal: decide yes.
 
-Definition: demon lord is willing to do oral if diaper focus is 1.
+Definition: demon lord is willing to do oral:
+	if diaper focus is 1, decide yes;
+	decide no.
 
 Definition: demon lord is willing to do titfucks: decide no.
 
@@ -58,8 +87,11 @@ To set up (M - demon lord):
 	reset M;
 	now the monstersetup of M is 1;
 	add infernal gem to the banishItems of M, if absent;
-	now the raw difficulty of M is 12 + (the charge of demon codpiece * 2);
+	now the raw difficulty of M is the starting difficulty of M + (the charge of demon codpiece * 2);
 	now the health of M is the maxhealth of M.
+
+To decide which number is the starting difficulty of (M - demon lord):
+	decide on 12.
 
 To unseal xavier from (M - a monster):
 	now demon lord is in the location of M;
@@ -81,10 +113,12 @@ To unseal xavier from (M - a monster):
 To say PregGrowth of (M - demon lord):
 	say "Xavier's [child]".
 
+demon lord has a number called heirs-count.
+
 To compute labour to (M - demon lord):
 	if M is regional and M is alive:
 		compute pregnancy clothing displacement;
-		say "[PregFlav][if the father is in the location of the player][father][otherwise][father] appears almost as if on cue! [big he of M][end if] [if asshole is actually occupied or the player is ass protected]wraps [his of M] demonic tail around your neck and chokes you as you give birth to [his of M] heir, loosening [his of M] grip to let you get a gasp of air whenever you are about to faint[otherwise]thrusts [his of M] [DickDesc of M] violently into your [asshole] as [his of M] own spawn is slowly pushing its way out of your womb[end if]. [line break][variable custom style]Holy... fucking... shit...[roman type][line break][the father] senses your anguish, and feeds from it. [first custom style]'HAHAHA YES, YES, THE ULTIMATE SUBMISSION OF YOUR BODY, I CRAVE IT. ";
+		say "[PregFlav][if the father is in the location of the player][father][otherwise][father] appears almost as if on cue! [big he of M][end if] [if asshole is actually occupied or the player is ass protected]wraps [his of M] demonic tail around your neck and chokes you as you give birth to [his of M] [one of]heir[or]prince[stopping], loosening [his of M] grip to let you get a gasp of air whenever you are about to faint[otherwise]thrusts [his of M] [DickDesc of M] violently into your [asshole] as [his of M] own spawn is slowly pushing its way out of your womb[end if].[line break][variable custom style]Holy... fucking... shit...[roman type][line break][the father] senses your anguish, and feeds from it. [first custom style]'HAHAHA YES, YES, THE ULTIMATE SUBMISSION OF YOUR BODY, I CRAVE IT. ";
 		if watersports fetish is 1 or diaper lover >= 1:
 			say "SOIL YOURSELF AS YOU GIVE BIRTH TO [one of]THE FUTURE RULER[or]A FUTURE PRINCE[stopping] OF THIS WORLD!'[roman type][line break]You realise [he of M] is completely right, you are wetting yourself.";
 			now the bladder of the player is 0;
@@ -97,8 +131,9 @@ To compute labour to (M - demon lord):
 			say "For some reason, you are filled with a sense of deep, unholy fulfilment. You feel... powerful.";
 			StrengthUp 4;
 			if the player-class is succubus:
-				say "You feel truly fulfilled by playing your part in your Master[']s plans for this world.";
+				say "You feel truly fulfilled by playing your part in your Master's plans for this world.";
 				dignify 6000;
+		increase the heirs-count of M by 1;
 	otherwise if M is alive:
 		Delay Labour.
 
@@ -117,7 +152,7 @@ To compute perception of (M - demon lord):
 		if there is worn perceived unmessed knickers, compute state check of a random worn messed knickers;
 	otherwise if the player is soulless and the player-class is not succubus:
 		say "[first custom style]'YOU WILL SERVE AS AN IDEAL VESSEL FOR ONE OF MY SERVANTS! KNEEL AND PREPARE YOURSELF!'[roman type]";
-	otherwise if vaginalvirgin of the player is 1 and the player is female:
+	otherwise if vaginalvirgin of the player is 1 and the player is possessing a vagina:
 		say "[first custom style]'[one of]YOU CANNOT RESIST ME, FOOLISH [caps boy of the player]!'[or]I WILL BE THE FIRST TO IMPALE YOU ON MY MIGHTY COCK, VIRGIN!'[or]I LOVE CHERRIES!'[or]SUBMIT YOURSELF, [caps boy of the player]! YOU CANNOT PROTECT YOUR VIRGINITY FROM ME!'[at random][roman type][line break]";
 	otherwise if the class of the player is princess:
 		say "[first custom style]'[one of]HAHAHA! FOOLISH PRINCESS! YOUR KINGDOM WILL BE MY COCKSLEEVE FOR ETERNITY AND SO WILL YOU!'[or][if pregnancy fetish is 1 and the player is female and the pregnancy of the player is 1]SUBMIT, PRINCESS! YOUR BLOODLINE WILL BE TAINTED WITH MY SEED!'[otherwise]YOU CAN RUN NO LONGER, PRINCESS! I WILL FILL YOU WITH MY TAINTED SEED!'[end if][at random][roman type]";
@@ -159,7 +194,7 @@ The latex punishment rule of demon lord is usually the no latex punishment rule.
 
 To compute (M - demon lord) receiving (N - a number) damage from (X - a monster):
 	say "[AllyDamageFlav of X on M]";
-	say "[one of][BigNameDesc of M] seems immune to the attack! [line break][first custom style]'You fool, your allies cannot harm me!'[roman type][line break][roman type][or][BigNameDesc of M] still seems to be immune to the [X]![stopping]".
+	say "[one of][BigNameDesc of M] seems immune to the attack![line break][first custom style]'You fool, your allies cannot harm me!'[roman type][line break][roman type][or][BigNameDesc of M] still seems to be immune to the [X]![stopping]".
 
 To decide which number is the condom resistance of (M - demon lord):
 	if pregnancy fetish is 1, decide on 99;
@@ -177,7 +212,7 @@ This is the demon transformation rule:
 		bore M;
 		rule succeeds;
 	otherwise if the player-class is the succubus and M is mating and pentagram tattoo is not worn:
-		say "The demon lord traces [his of M] finger around your vagina, burning the shape of a pentagram around it! [line break][first custom style]'THIS HOLE IS FOR MY PERSONAL USE ONLY, CONCUBINE! MY WARD WILL SEE THIS IS SO!'[roman type][line break]Xavier considers the situation for a moment, then seems to decide [he of M]'ll hammer the point home, as it were!";
+		say "The demon lord traces [his of M] finger around your vagina, burning the shape of a pentagram around it![line break][first custom style]'THIS HOLE IS FOR MY PERSONAL USE ONLY, CONCUBINE! MY WARD WILL SEE THIS IS SO!'[roman type][line break]Xavier considers the situation for a moment, then seems to decide [he of M]'ll hammer the point home, as it were!";
 		summon pentagram tattoo.
 
 This is the xavier prioritises defeating others rule:
@@ -221,7 +256,7 @@ To say CondomRejectFlav of (M - demon lord):
 	say "[speech style of M]'[one of]YOUR PUNY MORTAL CONDOMS WILL NEVER FIT ON ME[or]NOT EVEN A CONDOM CAN PROTECT YOU FROM MY SEED, WENCH[or]I GO BAREBACK IN EVERY HOLE, SLAVE[or]FOOL! I HAVE A LATEX ALLERGY[or][if the class of the player is princess]THAT TRICK WON'T WORK A SECOND TIME, MORTAL[otherwise]HAHAHAHA! AS IF LATEX COULD CONTAIN MY SEED[end if][at random]!'[roman type] Looks like [he of M][']s going in bare...".
 
 To say CondomAcceptFlav of (M - demon lord):
-	if the condom resistance of M > 0, say "[BigNameDesc of M] frowns, but then takes the condom and sheathes [his of M] [DickDesc of M]. [line break][speech style of M]'[one of]I GUESS I SHOULD USE PROTECTION[or]YOUR PUNY LATEX WILL NOT SCARE ME THIS TIME, MORTAL[at random]!'[roman type][line break]".
+	if the condom resistance of M > 0, say "[BigNameDesc of M] frowns, but then takes the condom and sheathes [his of M] [DickDesc of M].[line break][speech style of M]'[one of]I GUESS I SHOULD USE PROTECTION[or]YOUR PUNY LATEX WILL NOT SCARE ME THIS TIME, MORTAL[at random]!'[roman type][line break]".
 
 To set up sex length of (M - demon lord) in (B - a body part):
 	set up sex length (a random number between 2 and 3) of M in B.
@@ -353,7 +388,7 @@ To say StrikingFailureFlav of (M - demon lord) on (B - a body part):
 	BodyRuin 1.
 
 To say MouthPenetrationFlav of (M - demon lord):
-	say "[BigNameDesc of M] grabs you by your neck and calmly forces your mouth onto [his of M] [DickDesc of M]. Your mouth is forced to stretch almost impossibly wide as [he of M] forces [his of M] massive demon tool down into your throat. [line break][speech style of M]'[if the player is diaper focused][one of]I HAVE DECIDED TO ALLOW YOU TO REMAIN IN YOUR PADDING, INSTEAD YOUR FACE WILL BE USED AS MY FUCKHOLE.'[or]THAT'S IT, TAKE IT ALL, YOU DIAPERED WEAKLING!'[stopping][otherwise]Yes, that's it, take it all, you whore!'[end if][roman type][line break]".
+	say "[BigNameDesc of M] grabs you by your neck and calmly forces your mouth onto [his of M] [DickDesc of M]. Your mouth is forced to stretch almost impossibly wide as [he of M] forces [his of M] massive demon tool down into your throat.[line break][speech style of M]'[if the player is diaper focused][one of]I HAVE DECIDED TO ALLOW YOU TO REMAIN IN YOUR PADDING, INSTEAD YOUR FACE WILL BE USED AS MY FUCKHOLE.'[or]THAT'S IT, TAKE IT ALL, YOU DIAPERED WEAKLING!'[stopping][otherwise]Yes, that's it, take it all, you whore!'[end if][roman type][line break]".
 
 To say NearingClimaxOral of (M - demon lord):
 	say "[speech style of M]'GRAAAAAH!'[roman type][line break][BigNameDesc of M] is about to blow!".
@@ -382,7 +417,7 @@ To compute angry punishment of (M - demon lord):
 	otherwise:
 		let T be a random off-stage anal star tattoo;
 		if T is actually summonable and there is a worn tattoo and a random number between 1 and 2 is 1:
-			say "[speech style of M]'INSOLENT...'[roman type][line break][BigNameDesc of M] stops mid-sentence, grinning as [he of M] shoves you onto your back and forces your legs up over your head. [big he of M] fires a bolt of red energy from [his of M] finger, which hits your [asshole] and immediately blossoms into a crimson marking in the shape of a star. [line break][speech style of M]'THIS IS THE MARK OF MORTALS WHO DEFY ME! ONE DAY, YOU WILL REGRET THIS.'[roman type][line break]";
+			say "[speech style of M]'INSOLENT...'[roman type][line break][BigNameDesc of M] stops mid-sentence, grinning as [he of M] shoves you onto your back and forces your legs up over your head. [big he of M] fires a bolt of red energy from [his of M] finger, which hits your [asshole] and immediately blossoms into a crimson marking in the shape of a star.[line break][speech style of M]'THIS IS THE MARK OF MORTALS WHO DEFY ME! ONE DAY, YOU WILL REGRET THIS.'[roman type][line break]";
 			summon T;
 		otherwise:
 			say "[speech style of M]'INSOLENT MORTAL! YOU WOULD DARE DEFY AN ORDER FROM ME?! YOU WILL REGRET THIS DECISION, I ASSURE YOU.'[roman type][line break][BigNameDesc of M] smacks you with [his of M] tail, sending you flying into the nearby wall with a sickening crunch! The pain is worse than anything you've ever felt before.";
@@ -420,7 +455,7 @@ To say DiaperReaction of (M - demon lord):
 
 To compute diaper mess reaction of (M - demon lord):
 	if diaper quest is 1:
-		say "[BigNameDesc of M] watches you with glee. [line break][speech style of M]'BWAHAHAHAHA! I HAVE SEEN WEAK MORTALS IN MY TIME, BUT YOU ARE TRULY THE MOST PATHETIC LIVING CREATURE TO EVER ENTER THESE HALLS[one of]! TO BE UNABLE TO CONTROL SOMETHING SO BASIC... THIS IS A FATE WORSE THAN DEATH[or][stopping].'[roman type][line break]";
+		say "[BigNameDesc of M] watches you with glee.[line break][speech style of M]'BWAHAHAHAHA! I HAVE SEEN WEAK MORTALS IN MY TIME, BUT YOU ARE TRULY THE MOST PATHETIC LIVING CREATURE TO EVER ENTER THESE HALLS[one of]! TO BE UNABLE TO CONTROL SOMETHING SO BASIC... THIS IS A FATE WORSE THAN DEATH[or][stopping].'[roman type][line break]";
 		humiliate 200;
 	otherwise:
 		say "[BigNameDesc of M] looks at you with pure disgust in [his of M] eyes.[line break][speech style of M]'I DID NOT THINK THAT EVEN HUMANS WOULD DEBASE THEMSELVES TO SUCH DISGUSTING LEVELS[if M is uninterested]. GET OUT OF MY SIGHT[end if].'[roman type][line break]";
@@ -435,7 +470,7 @@ Definition: a xavier-nightmare (called P) is appropriate:
 	decide yes.
 
 To say DemonNightmareStartFlav:
-	say "[BigNameDesc of current-monster] waves [his of current-monster] hands and red light shoots up from the ground all around you, obscuring your vision. Suddenly, you hear a voice in your head. [line break][first custom style]'TODAY YOU WILL BE A SERVANT FOR MY FAMILY.'[roman type][line break]And then the red lights disappear, and [one of]you find yourself on your knees in front of a huge castle. A blood red sky evidences that you are now in the demon realm[or]you are once again at the entrance to Xavier's castle[stopping]. Two demons clad in heavy rusting platemail take you by the arms and drag you inside.";
+	say "[BigNameDesc of current-monster] waves [his of current-monster] hands and red light shoots up from the ground all around you, obscuring your vision. Suddenly, you hear a voice in your head.[line break][first custom style]'TODAY YOU WILL BE A SERVANT FOR MY FAMILY.'[roman type][line break]And then the red lights disappear, and [one of]you find yourself on your knees in front of a huge castle. A blood red sky evidences that you are now in the demon realm[or]you are once again at the entrance to Xavier's castle[stopping]. Two demons clad in heavy rusting platemail take you by the arms and drag you inside.";
 
 Section - DQ Nightmare
 
@@ -450,7 +485,7 @@ To compute punishment of (P - xavier-nightmare-diaper):
 	let M be current-monster;
 	let K be a random worn knickers;
 	say "[DemonNightmareStartFlav]";
-	say "[second custom style]'Well aren't you a scrumptious one.'[roman type][line break]You find yourself alone kneeling in front of a seven foot high lady demon in a luxurious castle bedroom. Her curvaceous figure and powerful limbs are matched by a deep, confident and yet still very feminine voice. Her only item of clothing is a chunky diaper with a red pentagram printed on the front. It looks completely unused. [line break][second custom style]'Excellent, a vacancy just opened up. I have the perfect role for you[if K is clothing]. Now remove that undergarment[end if].'[roman type][line break]";
+	say "[second custom style]'Well aren't you a scrumptious one.'[roman type][line break]You find yourself alone kneeling in front of a seven foot high lady demon in a luxurious castle bedroom. Her curvaceous figure and powerful limbs are matched by a deep, confident and yet still very feminine voice. Her only item of clothing is a chunky diaper with a red pentagram printed on the front. It looks completely unused.[line break][second custom style]'Excellent, a vacancy just opened up. I have the perfect role for you[if K is clothing]. Now remove that undergarment[end if].'[roman type][line break]";
 	if K is clothing:
 		say "She points to your [ShortDesc of K], and before you can even react, a huge slice appears all the way across it, and it falls from your body in tatters.";
 		if K is messed: [need to check before we destroy and reset it]
@@ -470,14 +505,16 @@ To compute punishment of (P - xavier-nightmare-diaper):
 	if diaper messing < 3, cutshow figure of cutscene-xavier-nightmare-diaper-clean;
 	say "You are led from the bedroom throughout the castle, accompanying your Mistress on her queenly duties, including inspecting the troops, settling disputes amongst the common demons, and eating dinner with some demon knights. During this whole time you stay silent with your head down, standing two paces behind her, to her left side. At dinner you are seated next to her, but you are so small compared to her and the other demons that you might as well be a child, feeling a little lost in the adult- that is, the demon-sized chair. Your feet don't even touch the floor, meaning all your weight is on your thick padding. Towards the end of the meal, you notice your Lady arch her back and sigh gently. None of the other demons show that they noticed, if indeed any did. At the same time you feel the weirdest sensation - [if diaper messing >= 3]your sphincter opens wide to allow a thick soft log to exit. At the same time [end if]urine squirts out of your urethra, even though you can feel you're not pushing and nothing is exiting your bladder. It's like a ghost is sitting in your exact position, with his or her pee[if diaper messing >= 3] and poop[end if] materialising as it emerges! The hissing and crinkling sounds fill the hall, making your face turn red. You understand what is happening - the Demon Queen is going to the toilet, but it's appearing in your diaper instead of hers! And since she's so much bigger than you, she has a [italic type]lot[roman type] of waste to get out of her system. Your padding bulges from beneath you, visibly pushing you an inch higher up off of the chair.";
 	if diaper messing >= 3, cutshow figure of cutscene-xavier-nightmare-diaper-messy;
-	say "[second custom style]'Really now, how disgusting!'[roman type][line break]Your Mistress chides you in a fake offended tone.[line break][second custom style]'Using your diaper at the dinner table. Really now! Get out of here [if diaper messing >= 3]before you stink the whole room up[otherwise]now[end if]! Get a change and then return to my chambers. I'll punish you later.'[roman type][line break]With face and ears as red as hers and a full [if diaper messing >= 3]and [end if]soggy nappy you sulkily waddle your way out of the room, studying the ground intensely as you do. You are halfway through the castle back to the waterfall when you hear a gurgling sound coming from below. Moments later your diaper is completely dry and clean! [line break][variable custom style]Wow, that's... magic.[roman type][line break]You wait for the Queen to return to her bedroom, which takes hours. During this time you end up testing your diaper yourself, and find that after a [if diaper messing is 3]few moments[otherwise]minute or so[end if] it cleans itself in the same way. Finally, your Mistress returns.[line break][second custom style]'Excellent job, pet. You'll make a good potty servant. It's a shame you'll have to do it from afar for now though. I can feel that Xavier's magic is fading. Soon you will return to the mortal realm... for now. However, you are now eternally bonded to me, until the day I sever the connection or you die. So I'm sure you'll never forget me.'[roman type][line break]She and her world start to fade away.[line break][second custom style]'If I were you, I would try and keep hold of that diaper for as long as possible...'[roman type][line break]";
+	say "[second custom style]'Really now, how disgusting!'[roman type][line break]Your Mistress chides you in a fake offended tone.[line break][second custom style]'Using your diaper at the dinner table. Really now! Get out of here [if diaper messing >= 3]before you stink the whole room up[otherwise]now[end if]! Get a change and then return to my chambers. I'll punish you later.'[roman type][line break]With face and ears as red as hers and a full [if diaper messing >= 3]and [end if]soggy nappy you sulkily waddle your way out of the room, studying the ground intensely as you do. You are halfway through the castle back to the waterfall when you hear a gurgling sound coming from below. Moments later your diaper is completely dry and clean![line break][variable custom style]Wow, that's... magic.[roman type][line break]You wait for the Queen to return to her bedroom, which takes hours. During this time you end up testing your diaper yourself, and find that after a [if diaper messing is 3]few moments[otherwise]minute or so[end if] it cleans itself in the same way. Finally, your Mistress returns.[line break][second custom style]'Excellent job, pet. You'll make a good potty servant. It's a shame you'll have to do it from afar for now though. I can feel that Xavier's magic is fading. Soon you will return to the mortal realm... for now. However, you are now eternally bonded to me, until the day I sever the connection or you die. So I'm sure you'll never forget me.'[roman type][line break]She and her world start to fade away.[line break][second custom style]'If I were you, I would try and keep hold of that diaper for as long as possible...'[roman type][line break]";
 	say "You find yourself on the ground back in front of [NameDesc of M]. You feel just as exhausted as you did in the moment of your defeat.";
 	say "[speech style of M]'YOU ARE FORTUNATE I AM RECOVERING MY STRENGTH AND CAN ONLY KEEP YOU THERE FOR A SHORT WHILE AT A TIME... IN THE FUTURE IT WILL BE LONGER! HA HA HA! UNTIL NEXT TIME, CHILD.'[roman type][line break]";
 	satisfy M.
 
 xavier-nightmare-gag is a xavier-nightmare.
 
-Definition: xavier-nightmare-gag is appropriate if current-monster is demon lord.
+Definition: xavier-nightmare-gag is appropriate:
+	if current-monster is demon lord, decide yes;
+	decide no.
 
 The priority of xavier-nightmare-gag is 5.
 
@@ -520,7 +557,9 @@ To compute punishment of (P - xavier-nightmare-gag):
 
 xavier-nightmare-belt is a xavier-nightmare.
 
-Definition: xavier-nightmare-belt is appropriate if current-monster is demon lord.
+Definition: xavier-nightmare-belt is appropriate:
+	if current-monster is demon lord, decide yes;
+	decide no.
 
 The priority of xavier-nightmare-belt is 5.
 

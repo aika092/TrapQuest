@@ -15,10 +15,14 @@ To say ClothingDesc of (C - a soulstone):
 To say ShortDesc of (C - a soulstone):
 	say "swirling gem".
 
-Definition: a soulstone is removable if the player is not soulless.
+Definition: a soulstone is removable:
+	if the player is not soulless, decide yes;
+	decide no.
 Definition: a soulstone is demonic: decide yes.
 Definition: a soulstone is orange themed: decide yes.
-Definition: a soulstone is grey themed if the player is not soulless.
+Definition: a soulstone is grey themed:
+	if the player is not soulless, decide yes;
+	decide no.
 
 To decide which number is the initial outrage of (C - a soulstone):
 	decide on 1.

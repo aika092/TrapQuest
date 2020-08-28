@@ -20,20 +20,12 @@ REQUIRES COMMENTING
 @!]
 A clothing is a kind of wearthing. A clothing is wearable. Understand "worn" as clothing when item described is worn. Understand "unworn", "not worn" as clothing when item described is not worn. Understand "held", "carried", "taken" as a thing when item described is carried. Understand "unheld", "uncarried", "not held", "not carried", "untaken", "not taken" as a thing when item described is not held.
 
-[!<Clothing>@<clothingMaterial:ClothingMaterialEnum>*
+Clothing can be cotton, latex, glass, leather, pvc, satin, mesh, wool, nylon, metal, biological, hemp, silk, velvet, denim, lycra, plastic, polyester (this is the clothing-material property). Clothing is usually cotton. Understand the clothing-material property as describing a clothing.
 
-REQUIRES COMMENTING
-
-*@!]
-Clothing can be cotton, latex, glass, leather, pvc, satin, mesh, wool, nylon, metal, biological, hemp, silk, denim, lycra, plastic, polyester (this is the clothing-material property). Clothing is usually cotton. Understand the clothing-material property as describing a clothing.
-
-[!<Clothing>@<clothingTransparancy:ClothingTransparancyEnum>*
-
-REQUIRES COMMENTING
-
-*@!]
 Clothing can be dense, sheer-when-wet, sheer, see-through (this is the clothing-transparency property). Understand the clothing-transparency property as describing a clothing. Clothing is usually dense. [Sheer and see-through clothing does not prevent humiliation from being naked but soaks up liquid. Clothing that is see-through can never be less humiliating than being naked. Clothing that is sheer can.]
-Definition: a clothing is not-see-through if it is not see-through.
+Definition: a clothing is not-see-through:
+	if it is not see-through, decide yes;
+	decide no.
 
 [!<Clothing>@<IsActuallySheer>+
 
@@ -49,50 +41,32 @@ Definition: a clothing (called C) is actually sheer:
 Currently not see-through.
 
 +@!]
-Definition: a clothing is actually dense if it is not actually sheer.
+Definition: a clothing is actually dense:
+	if it is not actually sheer, decide yes;
+	decide no.
 
 [!<Clothing>@<skirtLength:SkirtLengthEnum>*
 
-REQUIRES COMMENTING
+Short clothing (usually skirts) expose the crotch when the player is on their knees. Super short clothing never covers the crotch. hobble clothing hinders walking but also makes it crotch covering. NB hobble-skirted clothing also needs to be flagged as crotch-intact.
 
 *@!]
-Clothing can be unskirted, knee-length, short, super-short, hobble-skirted (this is the skirt-length property). Understand the skirt-length property as describing a clothing. Clothing is usually unskirted. [Short clothing (usually skirts) expose the crotch when the player is on their knees. Super short clothing never covers the crotch. hobble clothing hinders walking but also makes it crotch covering. NB hobble-skirted clothing also needs to be flagged as crotch-intact.]
+Clothing can be unskirted, knee-length, short, super-short, hobble-skirted (this is the skirt-length property). Understand the skirt-length property as describing a clothing. Clothing is usually unskirted.
 
-[!<defaultWearability:Rulebook>*
+Definition: a clothing is difficult to don: decide no. [Does it take 2 turns to wear]
+Definition: a clothing is difficult to remove:
+	if it is difficult to don, decide yes;
+	decide no. [Does it take 2 turns to remove]
 
-REQUIRES COMMENTING
-
-*!]
 the default wearability rules is a rulebook.
-
-[!<Clothing>@<wearabilityRules:Rulebook>*
-
-REQUIRES COMMENTING
-
-*@!]
 Clothing has a rulebook called wearability rules. The wearability rules of clothing is usually the default wearability rules.
-
-[!<Clothing>@<removabilityRules:Rulebook>*
-
-REQUIRES COMMENTING
-
-*@!]
 Clothing has a rulebook called removability rules. The removability rules of clothing is usually the default wearability rules.
 
-[!<Clothing>@<IsSkirted>+
-
-REQUIRES COMMENTING
-
-+@!]
-Definition: a clothing is skirted if it is not unskirted.
+Definition: a clothing is skirted:
+	if it is not unskirted, decide yes;
+	decide no.
 
 Understand "glued" as clothing when item described is glued.
 
-[!<Clothing>@<IsRigid>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a clothing (called C) is rigid:
 	if C is glass or C is denim or C is metal or C is plastic, decide yes;
 	decide no.
@@ -100,7 +74,20 @@ Definition: a clothing (called C) is rigid:
 Clothing can be unlocked or locked. Clothing is usually unlocked.
 
 Clothing has a number called effect. The effect of clothing is usually 1.
-Clothing has a number called soak-limit. The soak-limit of a clothing is usually 10.
+To decide which number is the soak-limit of (C - a clothing):
+	if C is latex or C is metal or C is glass or C is pvc or C is biological or C is plastic or C is leather, decide on 0;
+	decide on the default-soak-limit of C.
+To decide which number is the default-soak-limit of (C - a clothing): decide on 10.
+Definition: a clothing is fluid immune: [Is fluid unable to soak into or pass through C?]
+	if the soak-limit of it is 0, decide yes;
+	decide no.
+Definition: a clothing is fluid vulnerable: [Can it absorb fluid all the way through?]
+	if it is not fluid immune and it is not external fluid immune, decide yes;
+	decide no.
+Definition: a clothing is external fluid immune: decide no. [Is the top of it waterproof but the underside soakable?]
+Definition: a clothing is somewhat fluid vulnerable: [Can it absorb fluid at least partially?]
+	if it is fluid immune, decide no;
+	decide yes.
 Clothing has a number called semen-soak. The semen-soak of clothing is usually 0.
 Clothing has a number called urine-soak. The urine-soak of clothing is usually 0.
 Clothing has a number called milk-soak. The milk-soak of clothing is usually 0.
@@ -129,17 +116,18 @@ To compute drying of (C - a clothing):
 				if C is worn, force clothing-focus redraw;
 				otherwise force inventory-focus redraw;
 				say "[if C is held]Your[otherwise]The[end if] [ShortDesc of C] is now completely dry.".
-[Clothing has a number called semen-limit. The semen-limit of clothing is usually 10.
-Clothing has a number called urine-limit. The urine-limit of clothing is usually 10.
-Clothing has a number called milk-limit. The milk-limit of clothing is usually 10.]
 Clothing has a number called top-layer. The top-layer of clothing is usually 0.
 Clothing has a number called mid-layer. The mid-layer of clothing is usually 0.
 Clothing has a number called bottom-layer. The bottom-layer of clothing is usually 0.
 Clothing can be crotch-intact, crotch-skirted, crotch-zipped, crotch-unzipped, crotch-ripped, crotch-exposing, no-crotch (this is the crotch-layering property). Clothing is usually no-crotch.
 
 [How is this item put on and taken off?]
-Definition: a clothing is crotch-pullup if it is not no-crotch and it is unskirted.
-Definition: a clothing is crotch-tie-up if it is not no-crotch and it is not crotch-pullup.
+Definition: a clothing is crotch-pullup:
+	if it is not no-crotch and it is unskirted, decide yes;
+	decide no.
+Definition: a clothing is crotch-tie-up:
+	if it is not no-crotch and it is not crotch-pullup, decide yes;
+	decide no.
 
 Clothing can be crotch-in-place or crotch-displaced. Clothing is usually crotch-in-place.
 [!<ClothingIsDisplacable>+
@@ -153,7 +141,9 @@ Definition: a clothing is displacable: decide no.
 Is this unable to (usually) be displaced at the crotch?
 
 +!]
-Definition: a clothing is undisplacable if it is not displacable.
+Definition: a clothing is undisplacable:
+	if it is not displacable, decide yes;
+	decide no.
 [!<ClothingIsActuallyDisplacable>+
 
 Can this be displaced at the crotch right now?
@@ -180,8 +170,12 @@ Clothing can be not-butt-windowed or butt-windowed. Clothing is usually not-butt
 Clothing have a number called armour. Clothing have a number called damage.
 Clothing can be zippable or unzippable. Clothing is usually unzippable.
 Clothing can be plentiful, rare, transformation-rare, unique (this is the clothing-rarity property). Clothing is usually plentiful. [Plentiful shows up in containers. Rare shows up much less often in special containers and in the junk room. Transformation rare are (mostly) slutty items that mainly appear from transformations. Unique are items with their own spawning mechanics that shouldn't be spawned in other ways.]
-Definition: a clothing is transformation-eligible if (it is plentiful or it is transformation-rare) and it is fetish appropriate.
-Definition: a clothing is non-unique if it is not unique.
+Definition: a clothing is transformation-eligible:
+	if (it is plentiful or it is transformation-rare) and it is fetish appropriate, decide yes;
+	decide no.
+Definition: a clothing is non-unique:
+	if it is not unique, decide yes;
+	decide no.
 Clothing can be belly exposing or belly covering. Clothing is usually belly exposing. [Does it take up the belly slot?]
 Clothing can be neck exposing or neck covering. Clothing is usually neck exposing. [Does it take up the neck slot?]
 Clothing can be leg exposing or leg covering. Clothing is usually leg exposing.
@@ -202,23 +196,30 @@ Definition: a clothing (called C) is arm covering:
 	decide yes.
 Clothing can be chestless, fully exposing, ridiculously low cut, very low cut, low cut, average cut, high cut, fully covering (this is the clothing-cleavage property). Clothing is usually chestless. [Chestless means it doesn't take up the chest slot. Whereas fully exposing means that the breasts are fully exposed but the item still takes up the chest slot. e.g. cupless bra.]
 Clothing can be top-intact or top-ripped. Clothing is usually top-intact.
-Definition: a clothing is breast exposing rather than breast covering if it is chestless.
-Definition: a clothing is actually breast covering if it is breast covering and it is not fully exposing[ and it is top-intact] and it is top-placed. [Yes it's a chest slot item but does it actually cover any skin?]
+Definition: a clothing is breast exposing rather than breast covering:
+	if it is chestless, decide yes;
+	decide no.
+Definition: a clothing is actually breast covering:
+	if it is breast covering and it is not fully exposing[ and it is top-intact] and it is top-placed, decide yes;
+	decide no. [Yes it's a chest slot item but does it actually cover any skin?]
+Definition: a clothing is breast hiding: decide no. [Does it somehow completely hide the fact that the player has breasts? Probably with a portal or something like that]
 Clothing can be top-placed or top-displaced. Clothing is usually top-placed.[Displaced but for the chest.]
 Clothing can be top-displacable, optional-top-displacable, or not-top-displacable (this is the top-displacability property). Clothing is usually not-top-displacable.[optional-top-displacable means it can be displaced, but it's not necessary.]
-Definition: a clothing is not-top-displacable if it is fully exposing or it is chestless or it is rigid or it is top-ripped or it is corset.
+Definition: a clothing is not-top-displacable:
+	if it is fully exposing or it is chestless or it is rigid or it is top-ripped or it is corset, decide yes;
+	decide no.
 Definition: a clothing (called C) is actually top-displacable rather than actually not-top-displacable:
 	if C is not worn or C is glued, decide no;
 	if C is top-displaced or C is not-top-displacable, decide no;
 	repeat with D running through worn top level breasts protection clothing:
 		if the top-layer of D > the top-layer of C, decide no;
 	decide yes.
-Clothing can be normally-nipple-covering, erect-nipple-exposing or normally-nipple-exposing. Clothing is usually normally-nipple-exposing. [This is separate as some clothing has holes specifically for the nipples.]
+Clothing can be normally-nipple-covering, erect-nipple-exposing, normally-partially-nipple-covering or normally-nipple-exposing. Clothing is usually normally-nipple-exposing. [This is separate as some clothing has holes specifically for the nipples.]
 Definition: a clothing (called C) is actually nipple exposing rather than actually nipple covering: [Are the nipples literally exposed to the open air]
 	if C is chestless or C is normally-nipple-exposing or C is top-displaced or C is top-ripped or C is fully exposing or C is uniquely nipple exposing, decide yes;
 	decide no.
 Definition: a clothing (called C) is at least partially nipple exposing rather than nipple covering: [Are the nipples at least partially visible]
-	if (C is erect-nipple-exposing and the player is horny) or C is actually nipple exposing or C is actually sheer, decide yes;
+	if C is normally-partially-nipple-covering or (C is erect-nipple-exposing and the player is horny) or C is actually nipple exposing or C is actually sheer, decide yes;
 	decide no.
 Definition: a clothing (called C) is nipple exposing rather than at least partially nipple covering: [ripped clothing leaves them only partially visible]
 	if C is normally-nipple-exposing or C is top-displaced or C is chestless or C is fully exposing or C is see-through or C is uniquely nipple exposing, decide yes;
@@ -227,7 +228,9 @@ Definition: a clothing (called C) is uniquely nipple exposing: [Allows us to cre
 	decide no.
 Clothing can be milking flappable or milking unflappable. Clothing is usually milking unflappable. [Are there flaps that allow for breast feeding / milking?]
 Clothing can be totally-exclusive, top-exclusive, bottom-exclusive, not-exclusive (this is the clothing-exclusivity property). Clothing is usually not-exclusive. [Exclusive means nothing can go above or below it.]
-Definition: a clothing is exclusive if it is not not-exclusive.
+Definition: a clothing is exclusive:
+	if it is not not-exclusive, decide yes;
+	decide no.
 Clothing can be ass plugging. Clothing is usually not ass plugging.
 Clothing can be vagina plugging. Clothing is usually not vagina plugging.
 Clothing has a number called plug size. The plug size of clothing is usually 0.
@@ -247,7 +250,9 @@ Clothing can be stuck. Clothing is usually not stuck.
 Is the player unable to move because some clothing is stuck?
 
 +!]
-Definition: yourself is clothing stuck if there is worn stuck clothing.
+Definition: yourself is clothing stuck:
+	if there is worn stuck clothing, decide yes;
+	decide no.
 Clothing can be glued or unglued. Clothing is usually unglued.
 Clothing can be womanly or manly. Clothing is usually womanly. [Manly clothing is anything that is not specifically something only women should wear. E.g. a T-shirt]
 Clothing can be restart immune. Clothing is usually not restart immune. [This means it won't disappear or change when the map is reset.]
@@ -255,18 +260,6 @@ Clothing can be spikey. A clothing is usually not spikey.
 A clothing has a number called used condoms. A clothing has a number called empty condoms.
 A clothing has a number called stolen-strength. [This strength is returned when the item is worn again]
 A clothing can be unsoaked or soaked. A clothing is usually unsoaked. [Used to track where we've already spread liquid movements to, so that recursive functions don't become infinite.]
-Definition: a clothing (called C) is fluid immune:[Is fluid unable to soak into or pass through C?]
-	if C is latex or C is metal or C is glass or C is pvc or C is biological or C is plastic or C is leather, decide yes;
-	decide no.
-Definition: a clothing (called C) is fluid vulnerable:[Can C absorb fluid all the way through?]
-	if C is fluid immune, decide no;
-	if C is top only fluid immune, decide no;
-	decide yes.
-Definition: a clothing (called C) is top only fluid immune:[Is the top of C waterproof but the underside soakable?]
-	decide no.
-Definition: a clothing (called C) is somewhat fluid vulnerable:[Can C absorb fluid at least partially?]
-	if C is fluid immune, decide no;
-	decide yes.
 [!<Clothing>@<temporarilyDisplaced:Boolean>*
 
 It's been automatically displaced to allow the player to pee or something. We intend to replace it afterwards.
@@ -301,7 +294,9 @@ This is the subdued immobility rule:
 	if the player is subdued, rule fails.
 The subdued immobility rule is listed in the immobility rules.
 Definition: a clothing is nudism-enabling: decide no. [If the player is wearing this, they are wearing something that counts as clothing!]
-Definition: a clothing is nudism-disabling if it is not nudism-enabling.
+Definition: a clothing is nudism-disabling:
+	if it is not nudism-enabling, decide yes;
+	decide no.
 Definition: an accessory is nudism-enabling: decide yes.
 Definition: a sex toy is nudism-enabling: decide yes.
 Definition: a piercing is nudism-enabling: decide yes.
@@ -346,15 +341,23 @@ Definition: a clothing is slitted: decide no. [Slitted skirts don't block knee a
 To decide which number is the stealth-influence of (C - a wearthing):
 	decide on 0.
 To decide which number is the stealth-influence of (C - a clothing):
-	if C is actually dense and C is nudism-disabling, decide on -1;
-	decide on 0.
-Definition: a clothing is stealthy if the stealth-influence of it > 0.
-Definition: yourself is stealthy if there is worn stealthy clothing.
+	let N be 0;
+	if C is nudism-disabling and C is actually dense, decrease N by 1;
+	if C is gem themed, decrease N by 1;
+	decide on N.
+Definition: a clothing is stealthy:
+	if the stealth-influence of it > 0, decide yes;
+	decide no.
+Definition: yourself is stealthy:
+	if there is worn stealthy clothing, decide yes;
+	decide no.
 
 tonguesActive is a number that varies.
 tonguesBlack is initially false.
 Definition: a clothing is tongued: decide no.
-Definition: a clothing is tonguing if it is tongued and tonguesActive > 0 and it is worn.
+Definition: a clothing is tonguing:
+	if it is tongued and tonguesActive > 0 and it is worn, decide yes;
+	decide no.
 
 latest-top-malfunction is a number that varies.
 Definition: yourself is top-wardrobe-malfunctioning:
@@ -404,9 +407,9 @@ To compute dq nip slip reaction of (M - a monster):
 	say NipSlipFlav;
 	if M is friendly human monster, progress quest of chest-exposing-quest from M.
 To say NipSlipSeenFlav of (M - a monster):
-	say "[speech style of M]'[one of]Err, I can see your nipple.'[or]Are you aware that your nipple is on show?'[or]Nip-slip alert.'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]Err, I can see your nipple.'[or]Are you aware your nipple is on show?'[or]Nip-slip alert.'[in random order][roman type][line break]".
 To say DQNipSlipSeenFlav of (M - a monster):
-	say "[speech style of M]'[one of]Err, I can see your nipple. [or]Are you aware that your nipple is on show? [purely at random][one of]Adults should not allow themselves to be exposed like this in public.'[or]Would you please put it away!'[or]Being unable to dress yourself properly is not a good sign of [maturity].'[at random][roman type][line break]".
+	say "[speech style of M]'[one of]Err, I can see your nipple. [or]Are you aware your nipple is on show? [purely at random][one of]Adults should not allow themselves to be exposed like this in public.'[or]Would you please put it away!'[or]Being unable to dress yourself properly is not a good sign of [maturity].'[at random][roman type][line break]".
 An all time based rule (this is the malfunction checking rule):
 	if saved-flat-intelligence > a random number between 1 and 350: [Do this check first as it is less computationally expensive]
 		if another-turn is 0 and the player is not immobile and the player is not in danger:

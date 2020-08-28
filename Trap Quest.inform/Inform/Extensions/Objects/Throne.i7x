@@ -91,13 +91,22 @@ Check entering the throne:
 			now R is 1;
 			now R-old is R;
 			if debuginfo > 0, say "; PRINCESS RESCUE QUEST OVERRIDE ([R]) ";
+		otherwise if the class of the player is "virgin warrior" and there is an off-stage tiara and sword-of-purity is worn:
+			now R is 1;
+			now R-old is R;
+			if debuginfo > 0, say "; VIRGIN WARRIOR OVERRIDE ([R]) ";
 		if debuginfo > 0:
 			if diaper quest is 0, say "[if R is not R-old] = [R] [end if]| 1) Tiara; 2) Tentacle Trap; 3) [if the class of the player is princess]Guard dream[otherwise]Body expansion[end if]; 4) Intelligence + 1; 5) Strength + 1; 6) Dexterity + 1; 7) Hair reduction; 8) Humiliation reduction[roman type][line break]";
 			otherwise say "[if R is not R-old] = [R] [end if]| 1) Tiara; 2-3) Potty; 4) Intelligence + 1; 5) Strength + 1; 6) Dexterity + 1; 7) Humiliation reduction[roman type][line break]";
 		if R is 1:
 			let H be a random tiara;
-			summon H cursed;
-			say "A silver tiara appears on your head. You feel important.[line break][second custom style][line break]Is this game turning me into a princess?[roman type][line break]" instead;
+			if the class of the player is "virgin warrior" and sword-of-purity is worn:
+				let C be a random worn headgear;
+				transform C into H;
+				say "[variable custom style]So I'm a princess now too?[roman type][line break]";
+			otherwise:
+				summon H cursed;
+				say "A silver tiara appears on your head. You feel important.[line break][second custom style][line break]Is this game turning me into a princess?[roman type][line break]" instead;
 		otherwise if R is not 4 and R is not 5 and R is not 6 and (there is a worn diaper or (diaper quest is 1 and R <= 3) or (diaper lover >= 1 and the noun is not transformed and ((the class of the player is princess and diaper quest is 1) or the player is an adult baby or the player is a sissy))):
 			if debuginfo > 0 and diaper quest is 0, say "[input-style]Player is a bab - Potty override![roman type][line break]";
 			if the noun is transformed:
@@ -119,7 +128,7 @@ Check entering the throne:
 			now Dungeon11 is toilets;
 			now the noun is transformed instead;
 		otherwise if R is not 4 and R is not 5 and R is not 6 and the noun is transformed and (the bladder of the player > 0 or rectum > 1):
-			say "Suddenly, you feel the magic of throne working on your crotch! You suddenly realise that you desperately need the loo! [if rectum <= 1]Maybe the throne is counteracting your incontinence? [end if]";
+			say "Suddenly, you feel the magic of throne working on your crotch! You suddenly realise that you desperately need the loo! [if rectum <= 1 and incontinence > 0 and the incontinence of the player > 0]Maybe the throne is counteracting your incontinence? [end if]";
 			say "You let go of the hold on your bladder[if rectum > 1] and sphincter[end if], using the potty for its intended purpose. After a few [if rectum > 1]embarrassing noises coming from your rear end[otherwise]awkward moments listening to yourself tinkle[end if], you're done. The potty makes a weird gurgling sound, and then is suddenly completely empty and clean again!";
 			if rectum > 0, reset rectum;
 			if incontinence > 0, decrease incontinence by 1;
@@ -172,7 +181,7 @@ Check entering the throne:
 				if weight gain fetish is 1 and the flesh volume of belly < 9, increase the flesh volume of belly by 2;
 				BustUp 2 instead;
 		otherwise if R is 4:
-			say "The throne imbues you with extra knowledge! [if the raw intelligence of the player < 30]You're getting[otherwise]but you can't get any[end if] smarter.";
+			say "The throne imbues you with extra knowledge! [if the raw intelligence of the player < 30]You're getting[otherwise]but you can't get any[end if] [smarter].";
 			IntUp 1 instead;
 		otherwise if R is 5:
 			say "The throne pumps up your muscles. [if the raw strength of the player < 30]You're getting[otherwise]but you can't get any[end if] stronger!";
@@ -227,11 +236,6 @@ To compute ThronePrincessScene:
 
 Part - Escaping the Throne
 
-[!<CheckPullingTheThrone>+
-
-REQUIRES COMMENTING
-
-+!]
 Check pulling the throne:
 	if the player is not throne stuck, say "Why would you want to do that?" instead;
 	if the throne is not untriggered, say "You've already escaped from the tentacles!" instead;
@@ -252,19 +256,9 @@ Check pulling the throne:
 		say "With an incredible display of strength, you manage to rip the tentacles off your thighs. You can stand up freely now.";
 		now the throne is not untriggered instead.
 
-[!<CheckAttackingTheThrone>+
-
-REQUIRES COMMENTING
-
-+!]
 Check attacking the throne:
 	try pulling the throne instead.
 
-[!<ComputeThroneRule>+
-
-REQUIRES COMMENTING
-
-+!]
 A time based rule (this is the compute throne rule):
 	if the throne is triggered:
 		if the player is throne stuck and the throne is not filling asshole:
@@ -323,17 +317,17 @@ A time based rule (this is the compute throne rule):
 				if the TrapNo of the throne is 8, decrease the TrapNo of the throne by 1;
 		otherwise if the squirt timer of belly > -1: [This is to prevent this coming up several times due to the missed turns caused by ass expulsion.]
 			now the throne is not triggered;
-			Strengthup 2;
+			StrengthUp 2;
 			say "You feel stronger for having survived that ordeal, ";
 			if the turns of the throne > 6:
 				say "but your head is feeling very light, and your [asshole] is feeling a bit worse for wear!";
 				ruin asshole;
-				Intdown 1;
+				IntDown 1;
 				SemenAddictUp 1;
 			otherwise:
 				if the turns of the throne > 4:
 					say "but your head is feeling very light.";
-					Intdown 1;
+					IntDown 1;
 					SemenAddictUp 1;
 				otherwise:
 					if the turns of the throne > 2:

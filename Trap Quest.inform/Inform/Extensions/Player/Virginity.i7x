@@ -1,6 +1,8 @@
 Virginity by Player begins here.
 
-Definition: yourself is totalvirgin if the analvirgin of the player is 1 and the oralvirgin of the player is 1 and (the penetrativevirgin of the player is 1 or the player is not possessing a penis) and (the vaginalvirgin of the player is 1 or the player is not possessing a vagina).
+Definition: yourself is totalvirgin:
+	if the analvirgin of the player is 1 and the oralvirgin of the player is 1 and (the penetrativevirgin of the player is 1 or the player is not possessing a penis) and (the vaginalvirgin of the player is 1 or the player is not possessing a vagina), decide yes;
+	decide no.
 
 [!<Player>@<penetrativeVirgin:Integer>*
 
@@ -74,10 +76,10 @@ To compute virginity loss:
 			say "Your skin stings as a tattoo is suddenly seared into your skin on the right hand side of your torso! You take a look: ";
 			try examining virgin void tattoo;
 	if the number of worn purity clothing > 0, say "Your aura of purity gone, your pure items lose their desire to travel with you.";
-	repeat with H running through worn purity clothing:
+	repeat with H running through worn clothing:
 		compute virginity-loss of H;
 	if the class of the player is priestess:
-		say "Your holy aura seems to diminish with the loss of your purity, enhancing the shame you are feeling. A strange new feeling of purpose passes through you, and you groan as your [vagina] loosens painfully. [line break][variable custom style]I guess all I'm good for is sex now...[roman type][line break]";
+		say "Your holy aura seems to diminish with the loss of your purity, enhancing the shame you are feeling. A strange new feeling of purpose passes through you, and you groan as your [vagina] loosens painfully.[line break][variable custom style]I guess all I'm good for is sex now...[roman type][line break]";
 		if the openness of vagina < 10, increase the openness of vagina by 1;
 		decrease the virgin bonus of the player by 1;
 	progress quest of vaginal-virginity-quest;
@@ -90,14 +92,14 @@ To virginreward:
 	if there is a worn plate warrior chestpiece and flower hairclip is blessed: [No more increases after you get this.]
 		do nothing;
 	otherwise if the player-class is the succubus:
-		say "[bold type]You can[']t imagine why you ever cared so much about purity, and you feel dark energy from the stone pressed into your flesh corrupt the power within you![roman type][line break]";
+		say "[bold type]You can't imagine why you ever cared so much about purity, and you feel dark energy from the stone pressed into your flesh corrupt the power within you![roman type][line break]";
 		now virginity-valued is 0;
 	otherwise if the player is soulless:
 		say "[bold type]You begin to feel a brief flash of pride at having retained your virginity, but even as you do it sucks away into the emptiness within your heart.[roman type][line break]";[This prevents you gaining virgin bonuses while your soul is gone.]
 	otherwise if H is clothing and the quest of H is virginity-retention-quest:
 		say "[bold type]You are extremely proud of yourself for still having managed to retain your virginity! [one of]You[or]Once again you[stopping] feel [if background-pure is 1]yourself gaining real, physical power just from the happiness you feel from[otherwise][one of]elated from[or]motivated by[or]happy for[at random][end if] having retained your purity.[roman type][line break]";
 		progress quest of virginity-retention-quest;
-		if the class of the player is magical girl, MagicPowerUp 1;
+		if the class of the player is magical girl, MagicPowerUp 2;
 		increase the virgin bonus of the player by background-pure;
 	otherwise if flower hairclip is actually summonable or (heart hairpin is worn and the class of the player is not schoolgirl) or runic headband is worn:
 		if background-pure > 0 or sword-of-purity is worn:
@@ -147,11 +149,6 @@ Definition: yourself is a sissy:
 	if the player is gendered male and the number of worn sissifying clothing > 1, decide yes;
 	decide no.
 
-[!<VirginPunish>+
-
-REQUIRES COMMENTING
-
-+!]
 To virginpunish:
 	if virgincursed > 0 and transGender is 0:
 		let S be a random off-stage sissifying transformation-eligible actually summonable clothing;
@@ -178,24 +175,14 @@ To virginpunish:
 			say VirginFlav;
 			DelicateUp 1.
 
-[!<AnnounceSissification>+
-
-REQUIRES COMMENTING
-
-+!]
 To announce sissification:
 	if the player is a sissy, say "[one of]You [if the bimbo of the player < 9]reluctantly [end if]admit to yourself that you are now officially a sissy. You become acutely aware that 'sissy' is now your official title. You realise you feel more comfortable [bold type]beg[roman type]ging[bold type] for mercy[roman type] now.[or][stopping]".
 
-[!<CheckVirginity>+
-
-REQUIRES COMMENTING
-
-+!]
 To check virginity with (M - a monster):
 	if the penetrativevirgin of the player is 1 and player-fuckchoice is FUCK-PENETRATION and the fuck-get of the player + the anal-get of the player > 0:[anal AND vaginal count]
 		if virgincursed is 1:
 			if player-fucking is DOMINANT-NONE or player-fucking is DOMINANT-SHAMEFUL:[only 'true' dominant sex can reverse your virgin curse]
-				say "[variable custom style][one of]Wait...does that count?[or]No way that counts...[or]I[']m gonna be a virgin forever...[then at random][roman type][line break]";
+				say "[variable custom style][one of]Wait...does that count?[or]No way that counts...[or]I'm gonna be a virgin forever...[then at random][roman type][line break]";
 			otherwise:
 				virginremovecurse;
 				now the penetrativevirgin of the player is 0;
@@ -205,20 +192,19 @@ To check virginity with (M - a monster):
 			now the penetrativevirgin of the player is 0;
 			now penisvirginity-taker is M.
 
-[!<VirginRemoveCurse>+
+To check realtime virginity with (M - a monster):
+	if the penetrativevirgin of the player is 1 and M is penis-virginity taking:
+		if virgincursed is 1:[only 'true' dominant sex can reverse your virgin curse]
+			say "[variable custom style][one of]Wait...does that count?[or]No way that counts...[or]I'm gonna be a virgin forever...[then at random][roman type][line break]";
+		otherwise:
+			say "[variable custom style]After that, nobody can call me a virgin. Pretty sure.[roman type][line break]";
+			now the penetrativevirgin of the player is 0;
+			now penisvirginity-taker is M.
 
-REQUIRES COMMENTING
-
-+!]
 To virginremovecurse:
 	say "[variable custom style]I did it! I lost my virginity![roman type][line break]You feel as if a curse has been lifted!";
 	now virgincursed is 0.
 
-[!<SayVirginFlav>+
-
-REQUIRES COMMENTING
-
-+!]
 To say VirginFlav:
 	say "[bold type]Another wave of [if the humiliation of the player < 40000]shame[otherwise]the curse[end if] flows through you as you [one of][or]once again [stopping]find yourself thinking about your embarrassing virginity. [roman type]".
 
@@ -231,11 +217,6 @@ This allows us to flag some stuff (e.g. female monsters) as not actually taking 
 +!]
 Definition: a thing is virginity taking: decide yes.
 
-[!<ThingIsLive>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: A thing is live: decide no.
 
 [!<YourselfIsLiveFucked>+
@@ -247,13 +228,14 @@ Definition: yourself is live fucked:
 	if there is a live thing penetrating a body part, decide yes;
 	decide no.
 
-[!<ComputeVirginityLossOfThing>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute virginity-loss of (T - a thing):
 	if T is worn: [special things like the sinful priestess effect could have already modified the item]
+		say "Your [printed name of T] drops to the ground.";
+		now T is in the location of the player;
+		dislodge T.
+
+To compute virginity-loss of (T - a clothing):
+	if T is purity and T is worn: [special things like the sinful priestess effect could have already modified the item]
 		say "Your [printed name of T] drops to the ground.";
 		now T is in the location of the player;
 		dislodge T.

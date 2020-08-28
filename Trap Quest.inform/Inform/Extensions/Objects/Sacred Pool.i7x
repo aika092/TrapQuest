@@ -93,7 +93,7 @@ To compute swimming in (S - sacred-pool):
 			if water-peeing is false, say "You slip into the pool, [if C < 60]disturbing the still surface of the clear water[otherwise if C < 120]introducing even more movement to the relatively peaceful surface of the water[otherwise]adding even more energy to the already choppy surface of the water[end if]";
 			say "[if C < 60]You hear a faint sound, like voices whispering[otherwise if C < 120]You hear a faint sound, somewhere between whispering and panting[otherwise]You hear a faint sound much like moaning[end if] as you slowly move away from the edge.";
 		otherwise:
-			say "You are treading water [if L is 0]close to the edge of the pool, with your toes easily touching[otherwise if L is 1]midway between the pool's edge and the goddess statue. Your feet are a couple inches away from touching[otherwise]in front of the goddess statue. Your feet are several meters away from[end if] the bottom. [if C < 60]The water is crystal clear, and you can easily see your feet if you look down.[otherwise if C < 120]The water is slightly murky, and if you look down you can't see anything below your knees.[otherwise]The water is almost completely opaque, and if you look down, you can't see anything past your chest.[end if]";
+			say "You are treading water [if L is 0]close to the edge of the pool, with your toes easily touching[otherwise if L is 1]midway between the pool's edge and the goddess statue. Your feet are a couple inches away from touching[otherwise]in front of the goddess statue. Your feet are several metres away from[end if] the bottom. [if C < 60]The water is crystal clear, and you can easily see your feet if you look down.[otherwise if C < 120]The water is slightly murky, and if you look down you can't see anything below your knees.[otherwise]The water is almost completely opaque, and if you look down, you can't see anything past your chest.[end if]";
 		reset multiple choice questions;
 		if swim-location is 0, set next numerical response to "get out";
 		set next numerical response to "swim in place";
@@ -131,7 +131,7 @@ To compute swimming in (S - sacred-pool):
 						slightDignify;
 						IntDown 1;
 					otherwise if C < 120 and C >= 60:
-						say "The panting and whispering grows louder, and you get a headache as all of them compete for your attention at once. Even after they quiet down again, its harder to think.";
+						say "The panting and whispering grows louder, and you get a headache as all of them compete for your attention at once. Even after they quiet down again, it's harder to think.";
 						IntDown 1;
 					otherwise if C >= 120 and the player is not shameless:
 						say "The moaning grows louder, and you begin to hear a single, clear word over and over.[line break][first custom style]Fun.[roman type][line break][first custom style]Fuuun![roman type][line break][first custom style]FUN![roman type][line break]The magic of the pool seems to erode a bit of your pride, and for some reason, it also becomes harder to think.";
@@ -197,7 +197,7 @@ To compute treasure diving in (WB - sacred-pool) at (L - a number):
 		otherwise if N > 21:[defiance token]
 			let T be a random off-stage defiance token;
 			if T is defiance token:
-				say "[bold type]You find a defiance token at the bottom![roman type]  You take it with you as you swim back to the surface.";
+				say "[bold type]You find a defiance token at the bottom![roman type] You take it with you as you swim back to the surface.";
 				now T is carried by the player;
 			otherwise:
 				say "You find a rusted coin. You leave it behind as you swim back to the surface.";
@@ -211,7 +211,7 @@ To compute treasure diving in (WB - sacred-pool) at (L - a number):
 		otherwise if N > 15:[fabric token]
 			let T be a random off-stage fabric token;
 			if T is fabric token:
-				say "[bold type]You find a fabric token at the bottom![roman type]  You take it with you as you swim back to the surface.";
+				say "[bold type]You find a fabric token at the bottom![roman type] You take it with you as you swim back to the surface.";
 				now T is carried by the player;
 			otherwise:
 				say "You find a rusted coin. You leave it behind as you swim back to the surface.";
