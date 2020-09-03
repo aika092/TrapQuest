@@ -232,6 +232,7 @@ This is the update optional arm uses rule:
 					otherwise if XX is 1 and defaultLeftTarget of arms is not hips:
 						add the defaultLeftTarget of arms to the armUses of arms, if absent;
 						if the number of entries in the armUses of arms < 2 and the defaultLeftTarget of arms is girlfriend-partner, add girlfriend-partner to the armUses of arms; [we want to add this even if not absent because the player is choosing to have both hands on their partner]
+						if the number of entries in the armUses of arms < 2 and the defaultLeftTarget of arms is vibe-photo-predicament, add vibe-photo-predicament to the armUses of arms; [we want to add this even if not absent because the player is choosing to have both hands on their partner]
 					otherwise if XX is 2 and defaultRightTarget of arms is not hips:
 						add the defaultRightTarget of arms to the armUses of arms;
 					while the number of entries in the armUses of arms < 2:

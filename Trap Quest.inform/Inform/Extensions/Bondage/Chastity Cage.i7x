@@ -34,7 +34,7 @@ The chastity bond pussy slut rule is listed in the pussy slut eligibility rules.
 
 [Chastity belt]
 
-Chastity-Belt is a chastity bond. Chastity-belt is unique. Chastity-belt is metal. The printed name of chastity-belt is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]chastity belt[clothing-title-after]". The text-shortcut of chastity-belt is "chab". Understand "belt" as chastity-belt.
+Chastity-Belt is a chastity bond. Chastity-belt is unique. Chastity-belt is metal. The printed name of chastity-belt is "[clothing-title-before]chastity belt[clothing-title-after]". The text-shortcut of chastity-belt is "chab". Understand "belt" as chastity-belt.
 
 To say ClothingDesc of (C - chastity-belt):
 	say "A metal chastity belt that completely prevents access to your [genitals], aside from a small opening for you to pee through. The back straps go over each ass cheek, allowing full access to your [asshole].";
@@ -56,7 +56,7 @@ To SexChange (J - chastity-belt):
 
 [Chastity cage]
 
-A chastity cage is a kind of chastity bond. A chastity cage is usually sheer. Understand "cage" as chastity cage. A chastity cage has a number called size. The printed name of a chastity cage is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc] [clothing-material of item described] chastity cage[clothing-title-after]". A chastity cage is usually crotch-exposing.
+A chastity cage is a kind of chastity bond. A chastity cage is usually sheer. Understand "cage" as chastity cage. A chastity cage has a number called size. The printed name of a chastity cage is "[clothing-title-before][clothing-material of item described] chastity cage[clothing-title-after]". A chastity cage is usually crotch-exposing.
 
 [Chastity cage descriptions will be in this general format]
 To say ClothingDesc of (C - a chastity cage):

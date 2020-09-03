@@ -7,6 +7,10 @@ Figure of bianca defeated is the file "NPCs/School/Teacher/teacher3c.png".
 Figure of demoness cutscene 15 is the file "Special/Cutscene/cutscene-demoness-dq-facesit1.png".
 Figure of detention chair is the file "Env/School/detentionchair2.jpg".
 
+Figure of dominatrix 1 is the file "NPCs/Hotel/Dominatrix/diapernatrix1.jpg".
+To decide which figure-name is the monster-image of (M - dominatrix):
+	decide on figure of dominatrix 1.
+
 Figure of elder altar is the file "Env/Mansion/altar1.jpg".
 
 Figure of Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator1a.jpg".
@@ -77,7 +81,7 @@ To decide which figure-name is figure of rank 3 candy:
 	if student-candy is messy, decide on figure of rank 3 candy messy;
 	if the student-diaper-state of student-candy is 1, decide on figure of rank 3 candy double diaper;
 	decide on figure of rank 3 candy dry.
-[Figure of rank 4 candy is the file "NPCs/School/Student/student5eD.png".]
+Figure of rank 4 candy is the file "NPCs/School/Student/student5g.png".
 
 Figure of rank 1 rosie is the file "NPCs/School/Student/student1a.png".
 Figure of rank 2 rosie is the file "NPCs/School/Student/student1c.png".
@@ -227,5 +231,41 @@ Figure of HipsObject3 is the file "CharWins/FocusWin/Hips/hips3.jpg".
 
 To decide which figure-name is the examine-image of (T - hips):
 	decide on figure of HipsObject3.
+
+IntroDAnimation is a loading animation track. The pause-frame of IntroDAnimation is 12.
+
+Figure of DiaperIntroBanner is the file "Special/Animations/JammyLoading3/IntroBanner.png".
+To decide which figure-name is the bannerImage of (T - IntroDAnimation):
+	decide on Figure of DiaperIntroBanner.
+
+Figure of IntroD1 is the file "Special/Animations/JammyLoading3/loading_1.jpg".
+Figure of IntroD2 is the file "Special/Animations/JammyLoading3/loading_2.jpg".
+Figure of IntroD3 is the file "Special/Animations/JammyLoading3/loading_3.jpg".
+Figure of IntroD4 is the file "Special/Animations/JammyLoading3/loading_4.jpg".
+Figure of IntroD5 is the file "Special/Animations/JammyLoading3/loading_5.jpg".
+Figure of IntroD6 is the file "Special/Animations/JammyLoading3/loading_6.jpg".
+Figure of IntroD7 is the file "Special/Animations/JammyLoading3/loading_7.jpg".
+Figure of IntroD8 is the file "Special/Animations/JammyLoading3/loading_8.jpg".
+
+To compute unique setup of (T - IntroDAnimation):
+	if the number of entries in the image-reel of T is 0:
+		fill T from Figure of IntroD1 to 2;
+		fill T from Figure of IntroD3 to -2;
+		fill T from Figure of IntroD1 to 2;
+		fill T from Figure of IntroD3 to -2;
+		fill T from Figure of IntroD1 to 2;
+		fill T from Figure of IntroD3 to -2;
+		fill T from Figure of IntroD1 to 2;
+		fill T from Figure of IntroD4 to -3;
+		fill T from Figure of IntroD1 to 7;
+		add Figure of IntroD7 to the image-reel of T;
+		add Figure of IntroD6 to the image-reel of T;
+		add Figure of IntroD7 to the image-reel of T;
+		add Figure of IntroD8 to the image-reel of T;
+		add Figure of IntroD8 to the image-reel of T;
+		add Figure of IntroD8 to the image-reel of T.
+
+To decide which number is the frameSlowness of (T - IntroDAnimation):
+	decide on 2.
 
 Necessary Figures ends here.

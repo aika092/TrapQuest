@@ -15,7 +15,7 @@ Definition: a unicorn-horn is magic themed: decide yes.
 To decide which number is the bartering value of (T - a unicorn-horn) for (M - a monster):
 	decide on 10.
 
-To compute resolution of (M - a monster) taking (T - a unicorn-horn):
+To compute resolution of (M - mechanic) taking (T - a unicorn-horn):
 	if M is unfriendly, FavourUp M by the bartering value of T for M;
 	otherwise FavourUp M by (the bartering value of T for M) / 2;
 	say OfferThanksFlav of M for T;

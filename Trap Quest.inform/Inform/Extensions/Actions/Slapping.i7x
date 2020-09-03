@@ -109,6 +109,9 @@ To decide which number is the zap damage of (P - a person):
 		increase A by 1;
 		if damage-explained > 1, say "+1 (fire palm tattoo) ";
 	if currentZapper is not yourself:
+		if the magic-power of the player <= 0 and the magic-cost of currentZapper > 0:
+			if damage-explained > 1, say "Override to 0 (insufficient magic power) ";
+			decide on 0;
 		let N be the damage improvement of currentZapper;
 		increase A by N;
 		if damage-explained > 1, say "[if N >= 0]+[end if][N] ([ShortDesc of currentZapper] bonus) ";

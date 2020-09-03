@@ -142,8 +142,8 @@ To teleport via (W - a warp portal):
 		now predicamentsAvailable is the number of appropriate eligible predicaments;
 		now team-predicament-partner is nothing;
 		now the recently-used of school-fuckhole is 0;
-		repeat with ST running through alive students:
-			now the student-diaper-state of ST is 0;
+		repeat with ST running through alive students: [When the player leaves the school, all students reset messiness, cum covered, etc.]
+			LessonReset ST;
 	reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 	if W is not in the Dungeon:
 		set next numerical response to "go to the Dungeon";

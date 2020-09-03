@@ -121,11 +121,12 @@ To clean creampie in water body:
 To soak clothing in water body:
 	let quest-only-once be 0;
 	let X be tracked-semen;[above we used X to see if we cleaned the player's body. Now we're using it to see if we cleaned any clothes.]
-	repeat with C running through worn clothing:[now handle clothing]
+	repeat with C running through worn somewhat fluid vulnerable clothing: [now handle clothing]
 		if quest-only-once is 0 and the water-soak of C is 0 and the quest of C is swimming-quest:[This probably needs work]
 			now quest-only-once is 1;
 			progress quest of swimming-quest;
 		let R be a random number between 2 and 4;[because clothing has a higher capacity than the player's body, it takes longer to "soak" clean.]
+		if diaper quest is 1, now R is 999; [we don't do this slow cleaning nonsense in DQ]
 		let S be the semen-soak of C + the urine-soak of C + the milk-soak of C;
 		while R > 0 and S > 0:[Clean off everything if S is already 0, then we go on to the next clothing.]
 			if the urine-soak of C > 0:
@@ -141,12 +142,16 @@ To soak clothing in water body:
 			if C is perceived messed and auto is 0, say "You allow the water to thoroughly clean your [C].";
 			otherwise say "The [C] quickly soaks up the water.";
 			if the soak-limit of C is the water-soak of C, say "It is now very heavy and won't be able to hold any more liquid.";
+		otherwise:
+			say "Your [C] gets soaked with water.";
 		if C is fluid vulnerable, Drench C;
-	if X < tracked-semen, say "The water washes some fluids off your clothes.".
+		if C is knickers, MessSet C to 0;
+	[if X < tracked-semen, say "The water washes some fluids off your clothes.".]
 
+[TODO: semen cleaning doesn't happen all at once.]
 [To compute fast bathing:
 	wash clothing in water body;
-	if the semen coating of face > 0 or the semen coating of hair > 0 or the urine coating of hair > 0 or the semen coating of breasts > 0 or the semen coating of thighs > 0 or the semen coating of belly > 0 or tracked-semen > 0:[TODO: this doesn't happen all at once.]
+	if the semen coating of face > 0 or the semen coating of hair > 0 or the urine coating of hair > 0 or the semen coating of breasts > 0 or the semen coating of thighs > 0 or the semen coating of belly > 0 or tracked-semen > 0:
 		let X be the semen coating of face + the semen coating of hair + the semen coating of breasts + the semen coating of thighs + the semen coating of belly + tracked-semen;
 		now the semen coating of face is 0;
 		now the semen coating of hair is 0;
@@ -167,12 +172,13 @@ To soak clothing in water body:
 			increase tracked-semen by 4;
 			PussyEmpty 2;
 		if W > 0:
-			increase tracked-semen by 6;[because it's steeped in your pheromones or something. I don't know, whatever.]
+			increase tracked-semen by 6;
 			WombEmpty 2;
 	if face is temporarily made up:
 		say "The water washes all the make up from your face.";
 		FaceDown 3;
 	Wash Salves;]
+	[womb cum increases tracked semen faster because it's steeped in your pheromones or something. I don't know, whatever.]
 
 [To wash clothing in water body:
 	let quest-only-once be 0;

@@ -155,6 +155,6 @@ To say RewardFlav of (M - a monster) for (T - a thing):
 	say "[BigNameDesc of M] puts a [T] on the ground in front of you.".
 
 To say OfferFriendshipFlav of (M - a monster):
-	if M is intelligent, say "[speech style of M]'[if M is guardian]I'm thankful to have you as my ally[otherwise if M is ally]We should stick together, you and me[otherwise if M is buddy]I hope to see you again soon[otherwise if M is acquaintance]You're all right[otherwise]Maybe you're not as much of a [bitch] as I thought[end if].'[roman type][line break]".
+	if M is intelligent, say "[speech style of M][if M is guardian]'I'm thankful to have you as my ally[otherwise if M is ally]'We should stick together, you and me[otherwise if M is buddy]'I hope to see you again soon[otherwise if M is acquaintance]'You're all right[otherwise]'Maybe you're not as much of a [bitch] as I thought[end if].'[roman type][line break]".
 
 Offering Trading ends here.

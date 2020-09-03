@@ -101,17 +101,6 @@ To say MonsterOfferAcceptFlav of (M - vampiress) to (T - whip-of-domination):
 To say MonsterOfferRejectFlav of (M - vampiress) to (T - whip-of-domination):
 	say "[speech style of M]'I don't need that to dominate you with, doll.'[roman type][line break]".
 
-[To say OfferThanksFlav of (M - a dominatrix) for (T - whip-of-domination):
-	say "[speech style of M]'What incredible craftsmanship. I must pay you accordingly!'[roman type][line break]".
-
-To compute offer reward of (M - a dominatrix) for (T - whip-of-domination):
-	let D be a random off-stage ring;
-	if D is ring:
-		now D is solid gold;
-		set shortcut of D;
-		now D is in the location of the player;
-		say "[BigNameDesc of M] summons a [D] out of nowhere, and hands it to you.".]
-
 Report taking whip-of-domination:
 	if dominatrix is in the location of the player and dominatrix is undefeated and dominatrix is awake:
 		say "[BigNameDesc of dominatrix] looks furious.[line break][speech style of dominatrix]'MY WHIP! That is not yours to take! You will pay dearly for this!'[roman type][line break]";

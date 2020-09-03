@@ -135,6 +135,7 @@ To LakeMonsterCheck (S - a number):
 slimegirl is a person. slimegirl has a number called hunger. slimegirl has a number called intensity. slimegirl has a number called timetaken.
 To SlimegirlCheck:
 	do nothing.
+A monster can be player-brood.
 
 Include Satchels of Holding by Bags of Holding.
 Include Backpacks of Holding by Bags of Holding.
@@ -142,6 +143,8 @@ Include Childish Backpacks of Holding by Bags of Holding.
 Include Diaper Bags of Holding by Bags of Holding.
 Include Baby Diaper Bags of Holding by Bags of Holding.
 a condom rolls bag of holding is a kind of bag of holding.
+an ultra slutty bag of holding is a kind of bag of holding.
+dirty little whore sack of holding is a bag of holding.
 
 gape-gloves is a gloves. The printed name of gape-gloves is "gape gloves".
 bondage-ribbons is a dress.
@@ -155,6 +158,8 @@ To say WaitressTakeFlav of (M - a monster) to (T - a thing):
 
 tits-lesson is a lesson. the lesson-teacher of tits-lesson is teacher-hannah.
 Definition: tits-lesson is lesson-appropriate: decide no.
+kissing-lesson is a lesson. the lesson-teacher of kissing-lesson is teacher-serenity.
+Definition: kissing-lesson is lesson-appropriate: decide no.
 
 Include Stuffies by Equippables.
 

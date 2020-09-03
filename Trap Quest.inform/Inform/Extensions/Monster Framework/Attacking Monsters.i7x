@@ -500,16 +500,16 @@ To say DamageReaction (N - a number) of (M - a monster):
 		say DamageReactWeak of M.
 
 To say DamageReactHealthy of (M - a monster):
-	say "The [noun] easily takes the hit!".
+	say "[BigNameDesc of M] easily takes the hit!".
 
 To say DamageReactDamaged of (M - a monster):
-	say "The [noun] flinches, taking the hit!".
+	say "[BigNameDesc of M] flinches, taking the hit!".
 
 To say DamageReactTired of (M - a monster):
-	say "The [noun] takes the hit, staggering!".
+	say "[BigNameDesc of M] takes the hit, staggering!".
 
 To say DamageReactWeak of (M - a monster):
-	say "The [noun] takes the hit, fighting to maintain [his of M] balance!".
+	say "[BigNameDesc of M] takes the hit, fighting to maintain [his of M] balance!".
 
 To say DamageReactSubmissive of (M - a monster):
 	say "[BigNameDesc of M] takes the hit, [his of M] eyes lingering on your crotch as [he of M] fights to maintain [his of M] balance.".

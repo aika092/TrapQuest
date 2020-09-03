@@ -108,7 +108,7 @@ To compute perception of (M - matron):
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
 	if the class of the player is living sex doll:
 		say "It doesn't look like [he of M]'s interested in you.";
-		bore M for 500 seconds;
+		bore M;
 	otherwise if M is unfriendly:
 		say "[one of][big he of M] seems compelled by [his of M] maternal instincts to care for [his of M] newest charge[or][big he of M] smiles warmly[if the delicateness of the player < 15], but with a small hint of malice[end if][stopping].[line break][speech style of M]'Hi, you naughty baby! You look like you need nanny's help.'[roman type][line break][if the diaper addiction of the player < 8]There's worry in your eyes as [he of M] approaches. [big he of M] won't accept that you're really an adult and can care for your own self. [otherwise if the diaper addiction of the player > 15]You giggle and react with a whimsical[line break][second custom style]'Ack!'[roman type][line break]as you ready to play with your Nanny. [end if][if the delicateness of the player < 7]You hope you have the strength to fight [him of M] off. [otherwise if the delicateness of the player < 12]Your mind begins to wander thinking of what sort of humiliation [he of M]'ll put you through, now.[otherwise if the delicateness of the player < 16]You yearn for [his of M] care.[otherwise]You ache to fall to your knees and let [him of M] do whatever [he of M] wants with your body.[end if]";
 		compute diaper check of M;

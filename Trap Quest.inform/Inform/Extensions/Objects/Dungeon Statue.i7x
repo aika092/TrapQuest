@@ -62,9 +62,12 @@ Carry out drinking DungeonScenery01:
 Whacking is an action applying to one thing.
 Check whacking:
 	if the noun is monster, say "I don't think [he of the noun] would appreciate that." instead;
-	unless the noun is DungeonScenery01, say "That wouldn't do anything" instead.
+	if diaper quest is 0 or the noun is not DungeonScenery01, say "That wouldn't do anything." instead.
 Carry out whacking:
-	say "You thwack the butt of one of the ladies[one of] with all your might[or][stopping].[line break][variable custom style]Ow!!![roman type][line break]You feel the spank on your own [buttcheeks]! [if the raw diaper addiction of the player > the raw delicateness of the player]That hurt, but you feel like it has brought you to your senses[otherwise]Nothing else seems to happen[end if].";
+	say "You thwack the butt of one of the ladies[one of] with all your might[or][stopping].[line break][variable custom style]Ow!!![roman type][line break]You feel the spank on your own [buttcheeks]!";
+	PainUp 1;
+	MagicPowerRefresh 6;
+	say "[if the raw diaper addiction of the player > the raw delicateness of the player]That hurt, but you feel like it has brought you to your senses[otherwise]Nothing else seems to happen[end if].";
 	while the raw delicateness of the player < the raw diaper addiction of the player:
 		SilentlyDiaperAddictDown 2;
 		SilentlyDelicateUp 1.

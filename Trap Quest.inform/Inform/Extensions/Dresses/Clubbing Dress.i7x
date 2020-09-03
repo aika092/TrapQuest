@@ -31,6 +31,7 @@ To decide which object is the unique-upgrade-target of (C - a clubbing dress):
 	decide on nothing.
 
 This is the remove inappropriate clubbing dresses rule:
+	now purple cocktail dress is in Holding Pen; [no diaper-varying character window art]
 	repeat with B running through black slut clubbing dresses:
 		now B is in Holding Pen;
 	repeat with B running through exposing clubbing dresses:

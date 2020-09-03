@@ -38,7 +38,8 @@ To compute sacred bathing:
 			if leech-done is 1, say "Your [ShortDesc of C] fizzes in the water, and suddenly seems more plain.";
 	wash salves.
 
-[To compute showering (SP - sacred-pool):[Much later: some interaction with slimegir]
+[Much later: some interaction with slimegirl]
+[To compute showering (SP - sacred-pool):
 	let B be the number of worn blessed clothing + the number of worn cursed clothing;
 	if the corruption of the sacred-pool > 200:
 		say "Tendrils of liquid lash out as soon as you break the surface, latching hold of you, dragging you the rest of the way in and pulling you underwater. You are thrashed around violently underneath the surface and abruptly thrown back out.";

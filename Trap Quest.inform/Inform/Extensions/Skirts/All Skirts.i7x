@@ -477,7 +477,7 @@ To decide which figure-name is the clothing-image of (C - a tartan miniskirt):
 	decide on figure of tartan miniskirt.
 
 To say ClothingDesc of (C - a tartan miniskirt):
-	say "This tiny apricot skirt is has a tartan pattern, you could imagine a skirt four times the length being part of a school uniform but this version is clearly never acceptable attire. It barely covers your crotch, and even bending over slightly would reveal everything to anyone behind you.".
+	say "This tiny apricot skirt is has a tartan pattern, you could imagine a skirt four times the length being part of a school uniform but this version is clearly never acceptable attire. It barely covers your crotch, and even bending over slightly would reveal everything to anyone behind you. It sits very low on your hips, so doesn't even completely cover up most underwear, even when you're standing.".
 
 To decide which number is the initial outrage of (C - a miniskirt):
 	decide on 2.

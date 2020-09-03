@@ -15,6 +15,8 @@ Definition: vampiress is raunchy: decide yes.
 
 Definition: vampiress is wenchy: decide yes.
 
+Definition: vampiress is mansion dwelling: decide yes.
+
 The text-shortcut of vampiress is "va".
 Understand "vampire", "seductive", "vamp" as vampiress.
 Figure of Vampiress is the file "NPCs/Mansion/vampiress1.png".

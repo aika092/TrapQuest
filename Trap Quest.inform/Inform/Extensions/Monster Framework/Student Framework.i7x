@@ -1,6 +1,6 @@
 Student Framework by Monster Framework begins here.
 
-A student is a kind of monster. A student is intelligent. A student is usually female. A student has a number called timesBullied. A student can be clitLeaded. A student has a number called teacher-obedience.
+A student is a kind of monster. A student is intelligent. A student is usually female. A student has a number called timesBullied. A student has a number called teacher-obedience.
 
 To decide which number is the aggro limit of (M - a student): [The number at which they turn unfriendly]
 	decide on 10.
@@ -8,6 +8,21 @@ To decide which number is the aggro limit of (M - a student): [The number at whi
 A student has a number called lessonInt1. [Can be used to track various things in a lesson]
 A student has a number called lessonInt2. [Can be used to track various things in a lesson]
 A student can be kissPunished. [Used in kissing lesson to track punishments]
+A student can be clitLeaded. [Do they have a clit lead permanently attached to their clit piercing?]
+A student can be cumCovered. [Are they covered in cum from the swimming lesson?]
+A student has a number called student-diaper-state.
+[
+1: Double diapered
+2+: Messy
+]
+Definition: a student is messy:
+	if diaper quest is 1 and the student-diaper-state of it >= 2 and diaper messing >= 3, decide yes;
+	decide no.
+To LessonReset (M - a student):
+	now the lessonInt1 of M is 0;
+	now the lessonInt2 of M is 0;
+	now M is not cumCovered;
+	now the student-diaper-state of M is 0.
 
 Definition: a student is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 Definition: a student is controlling: decide no. [Will they grab onto subduing clothing e.g. a clitoris lead?]
@@ -31,7 +46,19 @@ To say MonsterDesc of (M - a student):
 	say "This student seems to be missing [his of M] description!".
 
 To say StudentDesc of (M - a student):
-	say "[if M is clitLeaded]A thin silver chain dangling from [his of M] groin confirms that [he of M] is still wearing [his of M] new permanent clitoris lead piercing. [end if][big he of M] is wearing an armband which says '[student-name of M] the [student-print of M]' in large [rank-colour of M] letters.".
+	say "[if student-diaper-state of M > 0][DiaperStateDesc of M][end if][if M is kissPunished][KissPunishDesc of M][end if][if M is clitLeaded][ClitLeadDesc of M][end if][if M is cumCovered][CumCoveredDesc of M][end if][big he of M] is wearing an armband which says '[student-name of M] the [student-print of M]' in large [rank-colour of M] letters.".
+
+To say DiaperStateDesc of (M - a student):
+	say "[big he of M] is wearing an abnormally massive white diaper[if M is messy]. The diaper is bloated and discoloured brown, which is clear evidence that [he of M] has made the most massive of messes inside it[end if]. ".
+
+To say KissPunishDesc of (M - a student):
+	say "[big his of M] lips have been permamently swollen as punishment for underperforming in the kissing lesson. ".
+
+To say ClitLeadDesc of (M - a student):
+	say "A thin silver chain dangling from [his of M] groin confirms that [he of M] is still wearing [his of M] new permanent clitoris lead piercing. ".
+
+To say CumCoveredDesc of (M - a student):
+	say "[big he of M] is covered in [semen] from head to toe. ".
 
 To set up (M - a student):
 	reset M;
@@ -185,14 +212,6 @@ To decide which number is the vindictiveness of (M - a student): [Angry students
 	if M is unfriendly, now F is the aggro limit of M - the favour of M;
 	decide on the unique vindictiveness of M + F.
 
-A student has a number called student-diaper-state.
-[
-1: Double diapered
-2+: Messy
-]
-Definition: a student is messy:
-	if diaper quest is 1 and the student-diaper-state of it >= 2 and diaper messing >= 3, decide yes;
-	decide no.
 
 Part - Motion
 

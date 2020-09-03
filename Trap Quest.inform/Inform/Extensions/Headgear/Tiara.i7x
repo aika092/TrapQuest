@@ -31,7 +31,7 @@ Definition: a tiara (called C) is removal-blocking: [Some items (mainly headgear
 
 To compute virginity-loss of (C - a tiara):
 	if the quest of C is virginity-retention-quest:
-		say "In an instant, false memories of being captured and sold into slavery fill your mind. Looking down at yourself again, you realise they are more real than you could have imagined: you are now wearing the bondage that matches your memory: the bondage of a captured warrior princess repurposed as a sex slave for a cruel noble from the conquering nation.";
+		say "In an instant, false memories of being captured and sold into slavery fill your mind. Looking down at yourself again, you realise they are more real than you realised: you are now wearing the bondage that matches your memory: the bondage of a captured warrior princess repurposed as a sex slave for a cruel noble from the conquering nation.";
 		summon slave-garb locked.
 
 
@@ -44,7 +44,7 @@ To compute class outfit of (H - a tiara):
 	let R be a random off-stage ballgown royal dress;
 	if diaper quest is 0, now R is a random off-stage lolita royal dress;
 	if diaper quest is 1 or R is nothing, now R is a random off-stage fetish appropriate short or longer royal dress;
-	if R is actually summonable or (R is royal dress and tiara-summoned is 0 and the number of worn royal dress is 0):
+	if R is actually summonable or (R is royal dress and tiara-summoned is 0 and the number of worn royal dress is 0 and (the number of worn warrior chestpiece is 0 or the quest of H is not virginity-retention-quest)):
 		if tiara-summoned is 0:
 			repeat with O running through worn dresses:
 				say "Your [O] [wardrobeVanishes of O]!";

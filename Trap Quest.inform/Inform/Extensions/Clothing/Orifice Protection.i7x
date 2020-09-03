@@ -115,7 +115,7 @@ Is this item currently blocking urination and absorbs liquid?
 
 +!]
 Definition: a clothing (called C) is soakable pee covering:
-	if C is pee covering and C is fluid vulnerable and the total-soak of C < the soak-limit of C, decide yes;
+	if C is pee covering and C is somewhat fluid vulnerable and the total-soak of C < the soak-limit of C, decide yes;
 	otherwise decide no.
 
 [!<YourselfIsPeeProtected>+

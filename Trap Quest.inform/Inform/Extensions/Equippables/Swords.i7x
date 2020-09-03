@@ -39,7 +39,8 @@ To compute offer reward of (M - a gladiator) for (T - a sword):
 		now S is dexterity-influencing;
 		say "[speech style of M]'A find such as this deserves a substantial reward. Go to the [location of S], and check the top shelf, hidden right at the back left hand side. There you will find an enchanted skirt that will protect you on your travels.'[roman type][line break]";
 	otherwise:
-		FavourUp M by (1 + the bartering value of T for M) / 2.
+		let BV be the bartering value of T for M;
+		FavourUp M by ((1 + BV) / 2);
 
 Section 0 - Sword In The Stone
 

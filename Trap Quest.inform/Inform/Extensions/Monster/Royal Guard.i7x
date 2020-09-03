@@ -549,56 +549,56 @@ To compute monstermotion of (M - a royal guard):
 			let D be the the best route from the location of M to Dungeon03 through labyrinth rooms;
 			if D is nothing:
 				now the patrol of M is 1;
-			otherwise:
+			otherwise if D is not the travel-opposite of the player or the room D from (the location of M) is not (the location of the player):
 				try M going D;
 				if the location of M is Dungeon03, now patrol of M is 1;
 		otherwise if patrol of M is 1:
 			let D be the the best route from the location of M to Dungeon06 through labyrinth rooms;
 			if D is nothing:
 				now the patrol of M is 2;
-			otherwise:
+			otherwise if D is not the travel-opposite of the player or the room D from (the location of M) is not (the location of the player):
 				try M going D;
 				if the location of M is Dungeon06, now patrol of M is 2;
 		otherwise if patrol of M is 2:
 			let D be the the best route from the location of M to Dungeon22 through labyrinth rooms;
 			if D is nothing:
 				now the patrol of M is 3;
-			otherwise:
+			otherwise if D is not the travel-opposite of the player or the room D from (the location of M) is not (the location of the player):
 				try M going D;
 				if the location of M is Dungeon22, now patrol of M is 3;
 		otherwise if patrol of M is 3:
 			let D be the the best route from the location of M to Dungeon23 through labyrinth rooms;
 			if D is nothing:
 				now the patrol of M is 4;
-			otherwise:
+			otherwise if D is not the travel-opposite of the player or the room D from (the location of M) is not (the location of the player):
 				try M going D;
 				if the location of M is Dungeon23, now patrol of M is 4;
 		otherwise if patrol of M is 4:
 			let D be the the best route from the location of M to Dungeon24 through labyrinth rooms;
 			if D is nothing:
 				now the patrol of M is 5;
-			otherwise:
+			otherwise if D is not the travel-opposite of the player or the room D from (the location of M) is not (the location of the player):
 				try M going D;
 				if the location of M is Dungeon24, now patrol of M is 5;
 		otherwise if patrol of M is 5:
 			let D be the the best route from the location of M to Dungeon25 through labyrinth rooms;
 			if D is nothing:
 				now the patrol of M is 6;
-			otherwise:
+			otherwise if D is not the travel-opposite of the player or the room D from (the location of M) is not (the location of the player):
 				try M going D;
 				if the location of M is Dungeon25, now patrol of M is 6;
 		otherwise if patrol of M is 6:
 			let D be the the best route from the location of M to Dungeon28 through labyrinth rooms;
 			if D is nothing:
 				now the patrol of M is 7;
-			otherwise:
+			otherwise if D is not the travel-opposite of the player or the room D from (the location of M) is not (the location of the player):
 				try M going D;
 				if the location of M is Dungeon28, now patrol of M is 7;
 		otherwise:
 			let D be the the best route from the location of M to Dungeon10 through labyrinth rooms;
 			if D is nothing:
 				now the patrol of M is 0;
-			otherwise:
+			otherwise if D is not the travel-opposite of the player or the room D from (the location of M) is not (the location of the player):
 				try M going D;
 				if the location of M is Dungeon10, now patrol of M is 0;
 		compute monstermotion reactions of M.
@@ -1117,6 +1117,7 @@ The royal guard diaper quest rules is a rulebook. [The diaper quest rules of a r
 Definition: a royal guard is willing to donate diapers: decide yes.
 
 Definition: a royal guard is willing to double diapers: decide yes.
+Definition: a royal guard is double diaper locking: decide yes.
 
 Definition: a royal guard is willing to change diapers: decide yes.
 
@@ -1379,7 +1380,8 @@ To compute offer reward of (M - prison guard) for (T - a thing):
 			say "[speech style of M]Hmm, I guess you can be let out on parole, for now. I want to see best behaviour from you, from now on.'[roman type][line break]";
 			compute bondage releasing of M;
 	otherwise:
-		FavourUp M by the bartering value of T for M.
+		let BV be the bartering value of T for M;
+		FavourUp M by ((1 + BV) / 2);
 
 To compute bondage releasing of (M - a royal guard):
 	repeat with B running through worn locked clothing:

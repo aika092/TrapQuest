@@ -29,7 +29,12 @@ Definition: a thing is candle themed: decide no. [The player needs a bell themed
 
 To commence doom:
 	if doom counter is 0:
-		if Mansion00 is unplaced:
+		if Woods01 is unplaced:
+			Set Up The Woods;
+			follow the setting up woods monsters rules;
+			repeat with M running through alive nonexistent monsters:
+				set up M;
+		if Mansion01 is unplaced:
 			Set Up The Mansion;
 			follow the setting up mansion monsters rules;
 			repeat with M running through alive nonexistent monsters:

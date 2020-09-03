@@ -319,7 +319,7 @@ To compute vaginal sex of (M - minotaur):
 			say "[bold type]A pair of fake cow ears materialise on your head.[roman type][line break]";
 			summon cow-ears cursed;
 		orgasm M;
-		bore M for 500 seconds.
+		bore M.
 
 To say CreampieReactionFlav to (M - minotaur) in (F - vagina):
 	if the class of the player is cowgirl:

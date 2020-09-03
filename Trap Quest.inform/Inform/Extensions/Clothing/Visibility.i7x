@@ -9,7 +9,7 @@ Definition: a clothing is layer-exposing:
 	decide no.
 
 Definition: a clothing (called C) is potentially-top-layer-concealing:
-	if C is potentially-partially-top-layer-concealing and C is layer-concealing, decide yes;
+	if C is layer-concealing and C is potentially-partially-top-layer-concealing, decide yes;
 	decide no.
 Definition: a clothing (called C) is top-layer-concealing:
 	if C is worn and C is potentially-top-layer-concealing, decide yes;
@@ -22,7 +22,7 @@ Definition: a clothing (called C) is partially-top-layer-concealing:
 	decide no.
 
 Definition: a clothing (called C) is potentially-mid-layer-concealing:
-	if C is potentially-partially-mid-layer-concealing and C is layer-concealing, decide yes;
+	if C is layer-concealing and C is potentially-partially-mid-layer-concealing, decide yes;
 	decide no.
 Definition: a clothing (called C) is mid-layer-concealing:
 	if C is worn and C is potentially-mid-layer-concealing, decide yes;
@@ -35,7 +35,7 @@ Definition: a clothing (called C) is partially-mid-layer-concealing:
 	decide no.
 
 Definition: a clothing (called C) is potentially-bottom-layer-concealing:
-	if C is potentially-partially-bottom-layer-concealing and C is layer-concealing, decide yes; [crotch-assless clothing doesn't hide what's underneath]
+	if C is layer-concealing and C is potentially-partially-bottom-layer-concealing, decide yes; [crotch-assless clothing doesn't hide what's underneath]
 	decide no.
 Definition: a clothing (called C) is bottom-layer-concealing:
 	if C is worn and C is potentially-bottom-layer-concealing, decide yes;
@@ -210,7 +210,7 @@ To decide which number is the diaperCoveringLength of (C - a knickers):
 	decide on -1.
 
 Definition: a clothing (called C) is diaper covering:
-	if C is potentially at least partially asshole covering potentially-bottom-layer-concealing clothing and the diaperCoveringLength of C >= the DQBulk of the player, decide yes;
+	if C is potentially at least partially asshole covering potentially-partially-bottom-layer-concealing clothing and the diaperCoveringLength of C >= the DQBulk of the player, decide yes;
 	decide no.
 
 [For diapers, this hides the shape too.]

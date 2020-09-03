@@ -69,7 +69,7 @@ To compute class outfit of (H - cow-ears):
 		now cow-summoned is 1;
 		now basque-summoned is 1;
 		now the quest of H is milk-serve-quest;
-	otherwise if B is actually summonable or (B is bra and (cow-summoned is 0 or the lactation rate of the player < 1)):
+	otherwise if B is actually summonable or (B is bra and (cow-summoned is 0 or (the lactation rate of the player + the number of worn milk production clothing) < 1)):
 		if cow-summoned is 0:
 			repeat with O running through worn breast covering clothing:
 				if B is bra or B is totally-exclusive or B is bottom-exclusive:

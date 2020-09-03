@@ -289,8 +289,15 @@ Report going when the player is in Predicament20:
 			only destroy C;
 	repeat with C running through predicament-fixed wearthings:
 		unless C is in School15, now C is predicament-normal;
+		if C is worn clothing and C is not cursed and C is not locked and C is not armband:
+			say "[BigNameDesc of C] falls to the ground.";
+			now C is in the location of the player;
 	repeat with C running through predicamentPenList:
 		say "[BigNameDesc of C] reappears on you!";
+		if C is dress:
+			repeat with D running through worn dress:
+				say "[BigNameDesc of D] falls to the ground.";
+				now D is in the location of the player;
 		now C is worn by the player;
 		if C is clothing:
 			layer C correctly;
@@ -328,7 +335,7 @@ To decide which number is the default park pull resistance of (M - a bystander):
 
 To decide which number is the park pull resistance of (M - a bystander):
 	if smoothie van is in the location of the player and M is not interested, decide on a random number between 1 and 3;
-	if skirt-tray-vibrator is worn and M is not interested, decide on a random number between 1 and 2;
+	if skirt-tray-vibrator is worn and M is not interested, decide on a random number between 1 and 4;
 	decide on the default park pull resistance of M.
 
 Definition: a bystander is strolling:
@@ -384,7 +391,7 @@ To decide which number is the outrage tolerance of (M - a bystander):
 	decide on 5.
 
 To decide which number is the cringe tolerance of (M - a bystander):
-	decide on 7.
+	decide on 5.
 
 To check perception of (M - a bystander):
 	if M is in the location of the player:
@@ -552,7 +559,7 @@ businessman-bystander is a bystander. The printed name of businessman-bystander 
 To decide which number is the awareness of (M - businessman-bystander):
 	decide on 4.
 To decide which number is the cringe tolerance of (M - businessman-bystander):
-	decide on 5.
+	decide on 4.
 To say ExamineDesc of (M - businessman-bystander):
 	say "This smartly dressed [man of M] looks very busy and distracted. [big he of M] is constantly checking [his of M] watch.".
 
@@ -1196,11 +1203,11 @@ An all time based rule:
 						say "You hear a series of high pitched electronic tones, declaring that the camera successfully detected the pattern it was looking for. The cabinet unlocks! However, you also ";
 					otherwise:
 						say "You hear a series of low electronic tones, declaring that the camera failed to detect the pattern it was looking for.[line break][variable custom style]WHAT?![roman type][line break]You notice that you accidentally allowed a small amount of green to be visible [one of]behind your left hand[or]behind your right hand[or]on the tip of the vibrator[at random] - you're going to have to try again! [GotUnluckyFlav]You ";
-					say "watch with [horror ((the humiliation of the player / 1000) - the predicament-progression of vibe-photo-predicament)] as the photo is uploaded to [if the predicament-progression of vibe-photo-predicament < 3]www.amateursluts.com[otherwise]your social media profile[end if].[line break][variable custom style][if the predicament-progression of vibe-photo-predicament < 3][one of]Nobody looks at sites like that, right?[or]Not again![stopping][otherwise][one of]My friends are going to be able to see this! How humiliating![or]Not again![stopping][end if][roman type][line break]";
+					say "watch with [horror ((the humiliation of the player / 1000) - the predicament-progression of vibe-photo-predicament)] as the photo is uploaded to [if the predicament-progression of vibe-photo-predicament < 3 and diaper quest is 0]www.amateursluts.com[otherwise if the predicament-progression of vibe-photo-predicament < 3]www.weirdestamateurperverts.com[otherwise]your social media profile[end if].[line break][variable custom style][if the predicament-progression of vibe-photo-predicament < 3][one of]Nobody looks at sites like that, right?[or]Not again![stopping][otherwise][one of]My friends are going to be able to see this! How humiliating![or]Not again![stopping][end if][roman type][line break]";
 					choose a blank row in Table of Published Disgraces;
 					now the content entry is the substituted form of "a high resolution photo of you posing with peace signs, tongue lolled out and [genitals] pushed into a vibrating wand, [if the predicament-progression of vibe-photo-predicament > 1]with your date of birth and hometown printed on the wall behind you, [end if][if the predicament-progression of vibe-photo-predicament > 2]alongside your full name, [end if][if the predicament-progression of vibe-photo-predicament > 4]and contact information, [end if][ReputationAttire]";
 					if the predicament-progression of vibe-photo-predicament < 3:
-						now the published entry is the substituted form of "has been [one of]uploaded to[or]posted on[purely at random] www.amateursluts.com";
+						now the published entry is the substituted form of "has been [one of]uploaded to[or]posted on[purely at random] [if diaper quest is 0]www.amateursluts.com[otherwise]www.weirdestamateurperverts.com[end if]";
 						now the severity entry is 2 + the predicament-progression of vibe-photo-predicament;
 						now the popularity entry is 1;
 						now the viewsfuzz entry is a random number between -200 and 200;
@@ -1904,6 +1911,7 @@ To execute (TEP - team-enema-predicament):
 								StomachUp 3;
 							otherwise:
 								StomachSemenUp 3;
+							FavourUp M by 1;
 						otherwise:
 							now WL is 1;
 						decrease LN by 6;
@@ -2050,6 +2058,7 @@ To compute quizQuestion of (L - team-quiz-predicament):
 			increase questionWins of L by 1;
 			if questionWins of L > maxQuestionWins of L, now maxQuestionWins of L is questionWins of L;
 			say "correct!'[line break][variable custom style][one of]Phew[or]Yes[or]Nice[at random]! That's [if questionWins of L > 1][questionWins of L] in a row[otherwise]one[end if][if questionWins of L is 4]. Now let's get out of here[end if]...[roman type][line break]";
+			if the questionExpelled of L is 0 and the questionFails of L is 0, FavourUp ST;
 		otherwise:
 			increase questionFails of L by 1;
 			now questionWins of L is 0;
@@ -2082,6 +2091,7 @@ To conclude quiz of (L - team-quiz-predicament):
 				now N is predicament-temporary;
 				now the raw-magic-modifier of N is 2;
 				say "Two slutty cocktail dresses fall from another container next to the first!";
+				HappinessUp ST by 1;
 			say "[BigNameDesc of ST] grabs one of the [if maxQuestionWins of L > 3]cocktail dresses[otherwise]negligees[end if] and runs out the door as quickly as [he of ST] can.";
 		otherwise:
 			say "[BigNameDesc of ST] runs out the door as quickly as [he of ST] can.";
@@ -2698,6 +2708,7 @@ To execute (L - team-face-crotch-predicament):
 	say "[roman type][line break]You both scream as you are yanked into the air by robotic arms and manhandled in several ways at once as you are strapped into various items of bondage. Finally, the lights come on, and you can both see the nature of your predicament.[paragraph break]";
 	if playerAbove is 1, say "You are sitting on a chair, your feet held up by anklecuffs in a raised legs crossed position, with supports under your knees preventing you from lowering them. This leaves the front of your [if plain-largish-diaper is K]diaper[otherwise]bikini briefs[end if] fully exposed, and that is where [NameDesc of ST][']s face is planted, kept there by a cord from [his of ST] collar, which is also connected to [his of ST] strict arm bindings. If you were to release your hold on your bladder, [NameDesc of ST][']s face and nose would get an intimate first hand experience of it!";
 	otherwise say "[BigNameDesc of ST] is sitting on a chair, [his of ST] feet held up by anklecuffs in a raised legs crossed position. Supports under [his of ST] knees prevent [him of ST] from lowering them. This leaves the front of [his of ST] [if plain-largish-diaper is K]bikini briefs[otherwise]diaper[end if] fully exposed, and that is where your face is planted, kept there by a cord from your collar, which is also connected to your strict arm bindings. If [NameDesc of ST] were to release [his of ST] hold on [his of ST] bladder, your face and nose would get an intimate first hand experience of it!";
+	if playerAbove is 0 and plain-largish-diaper is K, HappinessUp ST by 1;
 	say "[first custom style]'YOUR BONDAGE WILL RELEASE IN [PredicamentMinutes] MINUTES. TIME TO SEE WHETHER [if playerAbove is 1 and red-bikini-briefs is K][NameBimbo in upper case] SHOULD REALLY BE IN DIAPERS TOO[otherwise if playerAbove is 0 and plain-largish-diaper is K][student-name of ST in upper case] SHOULD REALLY BE IN DIAPERS TOO[otherwise if playerAbove is 1][student-name of ST in upper case][']S LACK OF CONFIDENCE IN [NameBimbo in upper case][']S POTTY TRAINING WAS ACCURATE[otherwise][NameBimbo in upper case][']S LACK OF CONFIDENCE IN [student-name of ST in upper case][']S POTTY TRAINING WAS ACCURATE[end if]!'[roman type][line break]And with that, the voice stops speaking and a digital timer on the wall, showing [PredicamentMinutes] minutes remaining, begins ticking downwards!";
 	let STBladder be 10;
 	while PredicamentMinutes > 0:
@@ -2713,6 +2724,7 @@ To execute (L - team-face-crotch-predicament):
 					if the bladder of the player >= bladder-risky-level + 4:
 						say "Your overall control over your bladder feels permanently weakened.";
 						increase incontinence by 1;
+				FavourUp ST;
 			otherwise:
 				say "You whine and squirm as you release your warm [urine] into your [ShortDesc of K][if playerAbove is 1 and K is diaper], [NameDesc of ST][']s nose still pressed firmly into your crotch through the thick padding. You're sure [he of ST] can feel that warmth spreading throughout your diaper[otherwise if playerAbove is 1], [NameDesc of ST][']s nose still pressed firmly into your crotch through the thin nylon of your bikini briefs. You're sure [he of ST] must be getting a full face-worth of warm piss-soaked cloth. Yuck[end if].";
 				if playerAbove is 1:

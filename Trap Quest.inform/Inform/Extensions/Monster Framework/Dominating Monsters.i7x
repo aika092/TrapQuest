@@ -27,7 +27,7 @@ To compute banish drop of (C - a thing) from (M - a monster):
 		if C is plentiful accessory, compute appraisal of C from M;
 		say "[BigNameDesc of M] left [NameDesc of C] behind.";
 		increase the loot dropped of M by 1;
-		compute autotaking C.
+		if C is not equippable, compute autotaking C. [equippables would go straight into the hand which could be harsh]
 
 To compute (M - a monster) slinking away:
 	say SlinkAwayFlav of M;

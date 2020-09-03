@@ -111,7 +111,7 @@ To compute perception of (M - mind flayer):
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
 	if the class of the player is living sex doll:
 		say "It doesn't look like [he of M]'s interested in you.";
-		bore M for 500 seconds;
+		bore M;
 	otherwise:
 		alwayscutshow figure of mindflayer cutscene 1 for M;
 		anger M.

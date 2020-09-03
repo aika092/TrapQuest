@@ -207,10 +207,9 @@ To compute default condom filling of (M - a monster):
 		otherwise transform C into plastic-is-fantastic dress;
 	otherwise if the player is in a predicament room:
 		do nothing; [no new classes in the predicament world!]
-	otherwise if total used condoms > 2:
-		if thirsty work condom hat is off-stage and thirsty work condom hat is actually summonable:
-			summon thirsty work condom hat cursed;
-			say "As if to celebrate your [']achievement['], a [ShortDesc of thirsty work condom hat] appears on your head!";
+	otherwise if total used condoms > 2 and thirsty work condom hat is off-stage and thirsty work condom hat is actually summonable:
+		summon thirsty work condom hat cursed;
+		say "As if to celebrate your [']achievement['], a [ShortDesc of thirsty work condom hat] appears on your head!";
 	otherwise if C is overdress and there is a worn scrunchie and condom pigtails is off-stage:
 		let SC be a random worn scrunchie;
 		transform SC into condom pigtails;

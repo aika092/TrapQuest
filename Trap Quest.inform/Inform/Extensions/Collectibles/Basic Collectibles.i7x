@@ -297,13 +297,13 @@ To decide which number is the bartering value of (T - soul gem) for (M - a demon
 To decide which number is the bartering value of (T - soul gem) for (M - mechanic):
 	decide on 10.
 
-To say MonsterOfferAcceptFlav of (M - a mechanic) to (T - soul gem):
+To say MonsterOfferAcceptFlav of (M - mechanic) to (T - soul gem):
 	say "[speech style of M]'[one of]Holy shit! Is that pure?'[or]Where the FUCK did you find another one of those?'[stopping][roman type]".
 
-To say MonsterTakeFlav of (M - a mechanic) for (T - soul gem):
+To say MonsterTakeFlav of (M - mechanic) for (T - soul gem):
 	say "[BigNameDesc of M] takes the [T], crushing it into a sparkling powder and snorts it up [his of M] nose".
 
-To say OfferThanksFlav of (M - a mechanic) for (T - soul gem):
+To say OfferThanksFlav of (M - mechanic) for (T - soul gem):
 	if the xavier-power of M < 3:
 		say "[speech style of M]'[one of]Phew! I feel great! [or]WOOO! Fuck yeah! [at random]I won't forget this!'[roman type][line break]";
 	otherwise if the xavier-power of M < 4:
@@ -311,7 +311,7 @@ To say OfferThanksFlav of (M - a mechanic) for (T - soul gem):
 	otherwise:
 		say "[BigNameDesc of M] crushes the [T] into a sparkling powder and knocks it back.[line break][speech style of M]Yeah... YEAH! I can feel it now! The POWER running through my veins! Yes! Behold my true form, unleashed again upon this MORTAL PLANE!'[roman type][line break]".
 
-To compute resolution of (M - a mechanic) taking (T - soul gem):
+To compute resolution of (M - mechanic) taking (T - soul gem):
 	FavourUp M by (the bartering value of T for M) / 2;
 	say OfferThanksFlav of M for T;
 	say MonsterTakeFlav of M to T;

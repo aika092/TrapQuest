@@ -31,14 +31,15 @@ To compute room leaving of (M - a monster): [This CANNOT be replaced with a func
 	otherwise:
 		now neighbour finder is the location of M;
 		let A be a random N-viable direction;
-		if A is not the travel-opposite of the player: [This is allowed because when we compute mandatory room leaving we set the travel-opposite to down]
+		if A is a direction:
 			let P be the room A from the location of M;
-			if A is a random N-viable direction and P is unbossed and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
-				try M going A;
-				compute monstermotion reactions of M;
-			otherwise if A is a random N-viable direction and P is unbossed and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
-				try M going A;
-				compute monstermotion reactions of M.
+			if A is not the travel-opposite of the player or the room A from (the location of M) is not (the location of the player): [This is allowed because when we compute mandatory room leaving we set the travel-opposite to down]
+				if A is a random N-viable direction and P is unbossed and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
+					try M going A;
+					compute monstermotion reactions of M;
+				otherwise if A is a random N-viable direction and P is unbossed and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
+					try M going A;
+					compute monstermotion reactions of M.
 
 [N is a nearby monster, in case we want to say something specific about hearing that type of monster nearby.]
 To say AttractionWorry of (N - a monster):

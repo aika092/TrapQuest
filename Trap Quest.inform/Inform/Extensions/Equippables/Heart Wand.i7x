@@ -47,5 +47,6 @@ To compute attack of (W - a heart wand) at (M - a monster):
 Definition: a heart wand is heart themed: decide yes.
 Definition: a heart wand is magic themed: decide yes.
 Definition: a heart wand is pink themed: decide yes.
+Definition: a heart wand is stealable: decide no. [It's going to disappear on its own anyway!]
 
 Heart Wand ends here.

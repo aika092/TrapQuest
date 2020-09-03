@@ -307,9 +307,9 @@ To compute (M - mechanic) protecting against (X - a monster):
 To say AllyDamageFlav of (M - mechanic) on (X - a monster):
 	say "[if X is robot][one of][line break][speech style of M]'Stupid thing must be malfunctioning...'[roman type][line break][or][stopping][end if][BigNameDesc of M] casually smacks the [X] with [his of M] [if the wrench-timer of M <= 0]wrench[otherwise]fist[end if].".
 
-The latex punishment rule of mechanic is usually the no latex punishment rule.
+The latex punishment rule of mechanic is the no latex punishment rule.
 
-The mechanic priority attack rules is a rulebook. The priority attack rules of mechanic is usually the mechanic priority attack rules.
+The mechanic priority attack rules is a rulebook. The priority attack rules of mechanic is the mechanic priority attack rules.
 
 This is the mechanic obtains amulet from ground rule:
 	let A be mystical amulet;
@@ -319,8 +319,8 @@ This is the mechanic obtains amulet from ground rule:
 		rule succeeds.
 The mechanic obtains amulet from ground rule is listed in the mechanic priority attack rules.
 
-The mechanic unique punishment rules is a rulebook. The unique punishment rule of mechanic is usually the mechanic unique punishment rules.
-The mechanic diaper quest rules is a rulebook. The diaper quest rules of mechanic is usually the mechanic diaper quest rules.
+The mechanic unique punishment rules is a rulebook. The unique punishment rule of mechanic is the mechanic unique punishment rules.
+The mechanic diaper quest rules is a rulebook. The diaper quest rules of mechanic is the mechanic diaper quest rules.
 
 This is the mechanic claims amulet rule:
 	let A be mystical amulet;

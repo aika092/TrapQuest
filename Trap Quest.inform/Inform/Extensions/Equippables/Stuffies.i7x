@@ -32,8 +32,9 @@ Report taking a unique stuffie: [The 'unique' bit puts the rule in the correct p
 	try wearing the noun instead.
 
 Check taking off stuffie when the player is prone:
-	say "Are you sure? If you do this while kneeling, it'll immediately try to grab you again. Drop [NameDesc of the noun]? ";
-	unless the player is consenting, say "Action cancelled." instead.
+	if the noun is not blessed:
+		say "Are you sure? If you do this while kneeling, it'll immediately try to grab you again. Drop [NameDesc of the noun]? ";
+		unless the player is consenting, say "Action cancelled." instead.
 
 Report taking off a stuffie:
 	say "As you let go, [NameDesc of the noun] falls to the ground.";

@@ -311,11 +311,12 @@ To compute swallowing:
 		MouthEmpty.
 
 To suggest swallowing: [Sometimes the player shouldn't have to spend a turn swallowing]
-	if autodrink is 1:
-		compute swallowing;
-	otherwise:
-		say "Would you like to swallow your [MouthfulDesc]?";
-		if the player is consenting, compute swallowing.
+	if the total volume of face > 0:
+		if autodrink is 1:
+			compute swallowing;
+		otherwise:
+			say "Would you like to swallow your [MouthfulDesc]?";
+			if the player is consenting, compute swallowing.
 
 To check accidental spitting:
 	let T be the total volume of face;

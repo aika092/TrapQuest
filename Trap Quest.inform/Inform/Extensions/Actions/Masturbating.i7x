@@ -143,6 +143,17 @@ This is the research restriction blocks masturbation rule:
 		rule fails.
 The research restriction blocks masturbation rule is listed last in the penis masturbation restriction rules.
 
+[!<TheBrokenClittyBlocksMasturbationRule>+
+
+Prevents masturbation.
+
++!]
+This is the broken clitty blocks masturbation rule:
+	if broken-clitty tattoo is worn:
+		now failed-masturbation-reason is the substituted form of "The [broken-clitty tattoo] is keeping you from getting hard enough to masturbate!";
+		rule fails.
+The broken clitty blocks masturbation rule is listed last in the penis masturbation restriction rules.
+
 [!<TheBoundBehindBlocksMasturbationRule>+
 
 Prevents masturbation.

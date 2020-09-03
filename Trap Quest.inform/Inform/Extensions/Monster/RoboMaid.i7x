@@ -168,7 +168,7 @@ This is the robomaid punishment rule:
 	otherwise if the number of worn dirty clothing > 0:[The maid drags you to the laundry room.]
 		unless the player is in Hotel20:
 			drag to Hotel20 by M;
-		bore M for 500 seconds;
+		bore M;
 		compute LaundryRobots;
 		rule succeeds;
 	otherwise if the number of worn clothing is 0 and there is an alive robobellboy:[the maid drags you to the nearest robobellboy for clothing.]
@@ -186,7 +186,7 @@ This is the robomaid punishment rule:
 		unless N is dangerous, anger N;
 		now N is interested;
 		now the boredom of N is 0;
-		bore M for 500 seconds;
+		bore M;
 		rule succeeds;
 	otherwise:
 		say "[BigNameDesc of M][']s eyes turn purple as [he of M] sweeps you off the ground.[line break][speech style of M]'SEARCHING... SEARCHING... AUDIENCE FOUND. EXECUTING TRANSPORT PROTOCOL.'[roman type][line break]";
@@ -264,7 +264,7 @@ This is the milkmaid punishment rule:
 		otherwise if the largeness of breasts < 2:
 			say "[BigNameDesc of current-monster] splashes your chest with a vial of pink liquid, which causes your [ShortDesc of breasts] to suddenly grow!";
 			BustUp a random number between 2 and 3;
-			bore M for 500 seconds;
+			bore M;
 			rule succeeds;
 	otherwise:
 		say "[BigNameDesc of M][']s eyes turn purple as [he of M] sweeps you off the ground.[line break][speech style of M]'SEARCHING... SEARCHING... PATRON FOUND. EXECUTING TRANSPORT PROTOCOL.'[roman type][line break]";
@@ -278,7 +278,7 @@ This is the milkmaid punishment rule:
 			decrease X by 1;
 		drag to R by M;
 		compute publicity stunt of M;
-		bore M for 500 seconds;
+		bore M;
 		rule succeeds.
 
 To compute publicity stunt of (M - a milkmaid):

@@ -163,7 +163,7 @@ Thanks to the various schoolgirl multi-classes, we have multiple different texts
 
 +!]
 Definition: a text is schoolgirl:
-	if it matches the text "schoolgirl" or it matches the text "bully" or it is "fraternity's bicycle" or it is "walking talking condom" or it matches the text "mathlete", decide yes;
+	if it matches the text "schoolgirl" or it matches the text "classroom" or it matches the text "bully" or it is "fraternity's bicycle" or it is "walking talking condom" or it matches the text "mathlete", decide yes;
 	decide no.
 
 Definition: a wearthing is schoolgirl-enabling: decide no.

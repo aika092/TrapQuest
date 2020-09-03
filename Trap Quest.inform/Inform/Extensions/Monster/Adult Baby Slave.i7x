@@ -153,7 +153,7 @@ To compute perception of (M - an adult baby slave):
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
 	if the class of the player is living sex doll:
 		say "It doesn't look like [he of M]'s interested in you.";
-		bore M for 500 seconds;
+		bore M;
 	otherwise if M is bratty adult baby slave and the times-met of M is 0:
 		say "[speech style of M]'Hey! I wanna play! Get down on your hands and knees and play with me!'[roman type][line break]It doesn't seem like [he of M]'s willing to take no for an answer.";
 		now M is interested;

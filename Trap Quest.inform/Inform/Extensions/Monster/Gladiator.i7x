@@ -208,7 +208,7 @@ To compute unique periodic effect of (M - a gladiator):
 To set up (M - a gladiator):
 	reset M;
 	now the monstersetup of M is 1;
-	add gladiator-sword to the banishItems of M, if absent;
+	if diaper quest is 0, add gladiator-sword to the banishItems of M, if absent;
 	add metal-disc to the taxableItems of M, if absent;
 	add red-pasties to the tradableItems of M, if absent;
 	add nail-bomb to the tradableItems of M, if absent;
@@ -1700,7 +1700,8 @@ To compute offer reward of (M - a gladiator) for (T - a thing):
 		now D is carried by the player;
 		say "[speech style of M]'I must give you something in return. Here, this is something I have been saving to award one as noble as yourself.'[roman type][line break][BigNameDesc of M] hands you a [D]!";
 	otherwise:
-		FavourUp M by (1 + the bartering value of T for M) / 2.
+		let BV be the bartering value of T for M;
+		FavourUp M by ((1 + BV) / 2);
 
 To say RewardFlav of (M - a gladiator) for (T - nail-bomb):
 	say "[BigNameDesc of M] removes the pink bomb from [his of M] belt.[line break][speech style of M]'If you find yourself in an unfair fight, this might prove invaluable.'[roman type][line break]";

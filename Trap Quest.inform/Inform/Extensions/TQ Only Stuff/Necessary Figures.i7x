@@ -27,6 +27,27 @@ Figure of demoness cutscene 13 is the file "Special/Cutscene/cutscene-demoness-v
 Figure of Djinn Cutscene 1 is the file "Special/Cutscene/cutscene-djinn-fuck1.png".
 Figure of Djinn Cutscene 2 is the file "Special/Cutscene/cutscene-djinn-conception1.png".
 
+Figure of dominatrix 1 is the file "NPCs/Hotel/Dominatrix/dominatrix1.png".
+Figure of dominatrix 2 is the file "NPCs/Hotel/Dominatrix/dominatrix2.png".
+Figure of dominatrix 3 is the file "NPCs/Hotel/Dominatrix/dominatrix3.png".
+
+Figure of Dominatrix Cutscene 4 is the file "NPCs/Hotel/Dominatrix/cutscene-dominatrix-peg1.png".
+Figure of Dominatrix Cutscene 5 is the file "NPCs/Hotel/Dominatrix/cutscene-dominatrix-peg2.png".
+
+To decide which figure-name is the monster-image of (M - dominatrix):
+	if the girth of M < 4:
+		decide on figure of dominatrix 1;
+	otherwise if the girth of M < 6:
+		decide on figure of dominatrix 2;
+	otherwise:
+		decide on figure of dominatrix 3.
+
+To decide which figure-name is the anal-sex-monster-image of (M - dominatrix):
+	if the player is male:
+		if the reaction of the player is 0, decide on figure of dominatrix cutscene 5;
+		otherwise decide on figure of dominatrix cutscene 4;
+	decide on figure of Missing NPC.
+
 Figure of Fairy Cutscene 1 is the file "Special/Cutscene/cutscene-fairy-birth1.png".
 Figure of Fairy Cutscene 2 is the file "Special/Cutscene/cutscene-fairy-birth2.png".
 Figure of Fairy Cutscene 3 is the file "Special/Cutscene/cutscene-fairy-belly1.png".
@@ -142,9 +163,27 @@ Figure of quiz predicament is the file "Special/Cutscene/cutscene-quiz3.jpg".
 
 Figure of hellhound is the file "NPCs/Mansion/Hound/hound1.png".
 
-Figure of rank 2 candy is the file "NPCs/School/Student/student5b.png".
-Figure of rank 3 candy is the file "NPCs/School/Student/student5d.png".
-[Figure of rank 4 candy is the file "NPCs/School/Student/student5f.png".]
+Figure of rank 2 candy normal is the file "NPCs/School/Student/student5b.png".
+Figure of rank 2 candy pierced is the file "NPCs/School/Student/student5bP.png".
+To decide which figure-name is Figure of rank 2 candy:
+	if student-candy is clitLeaded, decide on figure of rank 2 candy pierced;
+	otherwise decide on figure of rank 2 candy normal.
+Figure of rank 3 candy normal is the file "NPCs/School/Student/student5d.png".
+Figure of rank 3 candy pierced is the file "NPCs/School/Student/student5dP.png".
+To decide which figure-name is Figure of rank 3 candy:
+	if student-candy is clitLeaded, decide on figure of rank 3 candy pierced;
+	otherwise decide on figure of rank 3 candy normal.
+Figure of rank 4 candy normal is the file "NPCs/School/Student/student5f.png".
+Figure of rank 4 candy pierced is the file "NPCs/School/Student/student5fP.png".
+Figure of rank 4 candy cum covered is the file "NPCs/School/Student/student5fC.png".
+Figure of rank 4 candy pierced cum covered is the file "NPCs/School/Student/student5fPC.png".
+To decide which figure-name is Figure of rank 4 candy:
+	if student-candy is cumCovered:
+		if student-candy is clitLeaded, decide on figure of rank 4 candy pierced cum covered;
+		otherwise decide on figure of rank 4 candy cum covered;
+	otherwise:
+		if student-candy is clitLeaded, decide on figure of rank 4 candy pierced;
+		otherwise decide on figure of rank 4 candy normal.
 
 Figure of rank 1 small lips rosie is the file "NPCs/School/Student/student1a.png".
 Figure of rank 1 big lips rosie is the file "NPCs/School/Student/student1aL.png".

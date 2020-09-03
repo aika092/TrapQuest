@@ -17,9 +17,20 @@ Figure of woman 5b is the file "NPCs/MultiFloor/berri/woman5b.jpg".
 Figure of woman 5c is the file "NPCs/MultiFloor/berri/woman5c.jpg".
 Figure of woman 5d is the file "NPCs/MultiFloor/berri/woman5d.jpg".
 
-Figure of Berri Cutscene 1 is the file "Special/Cutscene/cutscene-berri-vinepit1.jpg".
+Figure of Berri Cutscene 1a is the file "NPCs/MultiFloor/berri/woman-cutscene1a.jpg".
+Figure of Berri Cutscene 1b is the file "NPCs/MultiFloor/berri/woman-cutscene1b.jpg".
+Figure of Berri Cutscene 1c is the file "NPCs/MultiFloor/berri/woman-cutscene1c.jpg".
+Figure of Berri Cutscene 1d is the file "NPCs/MultiFloor/berri/woman-cutscene1d.jpg".
+Figure of Berri Cutscene 2 is the file "Special/Cutscene/cutscene-berri-vinepit1.jpg".
 
 To decide which figure-name is the monster-image of (M - woman-player):
+	if the dominatrix-contraption-scene of M > 0 and the dominatrix-contraption-scene of M < 6:
+		if the dominatrix-contraption-scene of M < 4 or diaper messing < 3:
+			if watersports fetish is 1, decide on Figure of Berri Cutscene 1a;
+			otherwise decide on Figure of Berri Cutscene 1b;
+		otherwise:
+			if watersports fetish is 1, decide on Figure of Berri Cutscene 1c;
+			otherwise decide on Figure of Berri Cutscene 1d;
 	if the woman-bimbo of M < 3, decide on figure of woman 1;
 	if the woman-bimbo of M is 3, decide on figure of woman 2;
 	if the woman-bimbo of M is 4, decide on figure of woman 3;
@@ -216,8 +227,8 @@ Report going when the vine-hole-scene of woman-player is 0 and the woman-bimbo o
 		now the vine-hole-scene of woman-player is 1;
 		now woman-player is in the location of the player;
 		now woman-player is interested;
-		cutshow figure of berri cutscene 1 for woman-player;
-		now temporaryYesNoBackground is figure of berri cutscene 1;
+		cutshow figure of berri cutscene 2 for woman-player;
+		now temporaryYesNoBackground is figure of berri cutscene 2;
 		say "As you arrive here you see that [NameDesc of woman-player] is here, trying to climb out of the pit, with a strong green vine wrapped around one of [his of woman-player] wrists, trying to pull [him of woman-player] back down into the underground cavern. [big his of woman-player] pistol has fallen out of [his of woman-player] hand, lying just inches away out of [his of woman-player] reach. [if the player is upright][bold type]As you are distracted by the gun, you stumble on a rock and fall to your knees.[roman type][paragraph break][BigNameDesc of woman-player] spots you and [his of woman-player] eyes widen with a look of urgency.[line break][speech style of woman-player]'[NameBimbo]! Thank the stars! Quick, my gun!'[roman type][line break]What do you do?";
 		now the stance of the player is 1; [Important to avoid the clumsy fall-in-the-hole cutscene happening in the same turn]
 		[cutshow figure of barbara cutscene 9 for woman-player;]
@@ -483,6 +494,86 @@ This is the mechanic tortures berri rule:
 			compute autotaking J;
 		rule succeeds.
 The mechanic tortures berri rule is listed first in the mechanic priority attack rules.
+
+Chapter - Dominatrix Contraption Scene
+
+Understand "fucking", "machine", "box", "pink dildo", "rope", "ropes", "pulley", "pulleys", "spring", "springs", "glue", "glove", "gloves" as woman-player when the woman-status of woman-player is 93.
+
+Report going when the player is in Hotel37 and the dominatrix-contraption-scene of woman-player is 0 and the player is an august 2020 diaper donator and the woman-bimbo of woman-player is 4 and (diaper messing >= 3 or watersports fetish is 1):
+	if debugmode is 1, say "Checking if berri can appear.";
+	if the number of monsters in the location of the player is 0 and dominatrix is alive and woman-player is redeploy appropriate:
+		deploy woman-player with woman-status 93;
+		now woman-player is in the location of the player;
+		now woman-player is interested;
+		say "As you arrive here you see that [NameDesc of woman-player] is here on [his of woman-player] back, tied up in a very unique contraption. [big he of woman-player] is bound to the wall with metal wristcuffs behind [his of woman-player] back. [big he of woman-player] is wearing a tight pink latex bodysuit around a massive diaper. Above [his of woman-player] head is a open-topped tank, slowly filling up with a [if watersports fetish is 1]yellow[otherwise]green[end if] liquid. The pipe above the tank which is feeding it with liquid has a sign next to it which reads '[if watersports fetish is 1]HOTEL URINALS DRAINAGE'[otherwise]SUPER-LAX DISPENSER'[end if]. The bottom of the tank drains down via a tube into [NameDesc of woman-player][']s mouth via an airtight tube gag. To make things worse, [his of woman-player] nostrils are also plugged by tubes with hollow corks - these two tubes join together and then go down into [his of woman-player] diaper.";
+		say "The predicament is clear: [NameDesc of woman-player] can only breathe via [his of woman-player] mouth if the tank and connecting tube are empty of liquid, which will only be the case if [he of woman-player] drinks everything that comes out of the drainpipe. Otherwise, [he of woman-player] is forced to breathe through [his of woman-player] nose, meaning [he of woman-player][']ll be getting what oxygen [he of woman-player] can from within [his of woman-player] latex-clad megadiaper.".
+
+A time based rule (this is the anal contraption predicament rule):
+	if the woman-status of woman-player is 93 and the dominatrix-contraption-scene of woman-player <= 5 and woman-player is in the location of the player:
+		let W be woman-player;
+		increase the dominatrix-contraption-scene of W by 1;
+		if the dominatrix-contraption-scene of W is 1:
+			say "[BigNameDesc of W] sees you enter, and [his of W] expression changes from one of panic to one of urgency. You can barely make out the words [he of W] tries to communicate through [his of W] mouth-tube:[line break][speech style of W]'[NameBimbo], thank the stars! That cheeky dominatrix didn't like the tone of my voice and decided I needed to [']Learn how to not waste air.['] But I don't think I can take this! [big please], find a way to disarm this thing before it... well, you know...'[roman type][line break]But it's already too late. Some [if watersports fetish is 1][urine][otherwise]green laxative drink[end if] has already started to flow out of the drainpipe, flooding the tank above [NameDesc of W][']s head and cutting off [his of W] speech and airway. [BigNameDesc of W] holds [his of W] breath, refusing to suck up the liquid. For now.";
+			say "You could [bold type]search[roman type] the box for a way to disarm it, or you could [bold type]wait[roman type] (or just leave), to not mess with the dominatrix's plans.";
+		otherwise if the dominatrix-contraption-scene of W is 2:
+			say "[BigNameDesc of W] groans in discomfort. [big he of W] can't hold [his of W] breath any longer, and begins to desperately try to breathe through [his of W] nose. When [he of W] quickly realises how little oxygen is available to [him of W] via this avenue, [he of W] whines and then reluctantly begins to suck the [if watersports fetish is 1][urine][otherwise]green laxative drink[end if] through the tube towards [his of W] mouth. [big he of W] audibly gags in disgust when [he of W] tastes it on [his of W] tongue.";
+		otherwise if the dominatrix-contraption-scene of W is 3:
+			say "[BigNameDesc of W] grunts with further shame and disgust as [he of W] gulps and sucks and swallows more and more of the [if watersports fetish is 1][urine][otherwise]green laxative drink[end if], attempting to earn a clear airway once again. Finally [he of W] succeeds in emptying the tank and tube, and begins to desperately fill [his of W] lungs through the now clear airway.";
+		otherwise if the dominatrix-contraption-scene of W is 4:
+			say "[speech style of W]'Uh-oh...'[roman type][line break]Disaster strikes as with a loud [if diaper messing >= 3]BRRRRT[otherwise]hiss[end if], [NameDesc of woman-player] soils [himself of W] and fills [his of W] superthick diaper with a large helping of [if diaper messing >= 3]stinky mess[otherwise][urine][end if]. You can't smell a thing, which you realise probably means that the entire odour is being well-contained within [NameDesc of woman-player][']s rubber prison.";
+		otherwise if the dominatrix-contraption-scene of W is 5:
+			say "The situation for [NameDesc of W] goes from bad to worse as a noise in the drain heralds the arrival of a new batch of [if watersports fetish is 1][urine][otherwise]green laxative drink[end if].[speech style of W]'Gaaaah...'[roman type][line break][BigNameDesc of W] is once again cut off by the liquid filling the tank, not only stopping [him of W] from speaking but also from breathing through [his of W] mouth. Once again needing to breathe through [his of W] nose, [NameDesc of W][']s face goes red as [he of W] is forced to experience the full scent of [his of W] soiled padding. But there's nothing for it but to breathe it all in, getting as much oxygen as [he of W] can through [his of W] own [if diaper messing >= 3]filth[otherwise][urine][end if]. At the same time, [he of W] begins once again desperately sucking and swallowing, hoping to once again gain access to fresh air.";
+			increase the delayed sluttification of W by 1;
+		otherwise if the dominatrix-contraption-scene of W is 6:
+			say "[speech style of W]'Fbbbbrt... Fgaaahh... Can't think!'[roman type][line break]After finally emptying the tank and tube, that's all [NameDesc of W] manages to say in between deep breaths before the drainpipe unleashes a third serving of [if watersports fetish is 1][urine][otherwise]green laxative drink[end if] into the tray. [if watersports fetish is 1 and diaper messing >= 3][BigNameDesc of W] soils [himself of W] with a second helping of mess as [he of W] begins to breathe through [his of W] nose once again[otherwise]Forced to breathe through [his of W] nose once again, [NameDesc of W] begins to choke and gag between every gulp[end if]. [big his of W] eyes begin to roll into the back of [his of W] head. You watch the liquid level in the tank slowly lower as [NameDesc of W] forces [himself of W] to swallow gulp after gulp of the digusting stuff. Finally it's empty again, but now for some reason [NameDesc of W][']s breathing seems less desperate and more steady? You look at [NameDesc of W][']s face to see how [he of W][']s handling the sensation... Oh. [big he of W] has already passed out.";
+			now the sleep of W is 200;
+			increase the delayed sluttification of W by 1;
+			if dominatrix is in the location of the player:
+				say "[BigNameDesc of dominatrix] laughs playfully and claps [his of dominatrix] hands as if this was just a fun little joke you were all in on. Retrieving a key, [he of dominatrix] removes [NameDesc of W][']s bondage and lies [him of W] down on the ground. But [he of dominatrix] doesn't remove the tube connecting [NameDesc of W][']s corked nostrils from [his of W] soiled diaper.[line break][speech style of dominatrix]'[big he of W][']ll be fine sleeping like that, don't you think? It'll be a nice surprise when [he of W] wakes up.'[roman type][line break]";
+				satisfy dominatrix.
+
+Check searching woman-player when the woman-status of woman-player is 93 and the dominatrix-contraption-scene of woman-player < 6:
+	if the player is at least partially immobile or the player is in danger, say "You're a bit busy right now!" instead;
+	if the traitor-hypno of hypno-lesson > 0 and the dominatrix-contraption-scene of woman-player <= 2:
+		decrease the traitor-hypno of hypno-lesson by 1;
+		allocate 6 seconds;
+		say "Something inside you urges you to [second custom style]help your friend[roman type] instead. You walk up and give the front of [his of woman-player] diaper a loving rub. [big he of woman-player] looks at you like [he of woman-player][']s seen a ghost." instead;
+	if the player is upright, try kneeling;
+	if the player is upright: [Just in case]
+		now the stance of the player is 1;
+		say "You are now on your knees.";
+	allocate 6 seconds;
+	increase the dominatrix-contraption-search of woman-player by 1;
+	if a random number between 1 and the intelligence of the player > 10, increase the dominatrix-contraption-search of woman-player by 1;
+	if the dominatrix-contraption-scene of woman-player <= 1:
+		say "You check to see if the tank can be moved so the drainpipe is no longer emptying itself into it. Unfortunately, it's completely stuck in place.";
+	otherwise if the dominatrix-contraption-scene of woman-player is 2:
+		say "You try to remove [his of woman-player] nose plugs but are dismayed to find they're somehow stuck in place, either with glue or magic!";
+	otherwise:
+		say "[one of]You decide the only way you can help [him of woman-player] is to somehow disconnect the tank from [his of woman-player] mouth. [or][stopping]";
+		if the dominatrix-contraption-search of woman-player < 4:
+			say "You fumble with the end secured in [his of woman-player] gag but it's really tight! You haven't made much progress yet.";
+		otherwise if the dominatrix-contraption-search of woman-player is 4:
+			say "You manage to loosen something! It looks like it should twist now. One more try and [he of woman-player] should be able to escape!";
+		otherwise:
+			say "You've done it! You've removed the tube from [his of woman-player] mouth! [big he of woman-player] breathes a big sigh of relief.[line break][speech style of woman-player]'I can breathe! Thank you so much [NameBimbo], I owe you my sanity! I wish I had something to give you, but...'[roman type][line break][NameDesc of woman-player] shrugs as best as [he of woman-player] can what with [his of woman-player] hands still bound behind [him of woman-player], to emphasise the point that [he of woman-player] doesn't have anything of value right now.[line break][speech style of woman-player]'I've got to come up with a good apology for the dominatrix now. Wish me luck.'[roman type][line break]";
+			FavourUp woman-player by 3;
+			say "Thanks to solving the situation, you now feel much [smarter]!";
+			IntUp 3;
+			now the dominatrix-contraption-scene of woman-player is 7;
+	if the dominatrix-contraption-scene of woman-player < 7, compute DominatrixInterruption;
+	do nothing instead.
+
+To compute DominatrixInterruption:
+	if clumsy april fools is 1 or dominatrix is in the location or dominatrix is in the room east from the location or (a random number between 1 and 10) is 1:
+		let M be dominatrix;
+		now M is in the location of the player;
+		now M is interested;
+		anger M;
+		say "[bold type][if clumsy april fools is 1]You accidentally knock two pulleys into each other, which make a loud metal CLANG! [roman type][aprilFoolsClumsyFlav][bold type]Moments later[otherwise]All of a sudden,[end if] [NameDesc of M][bold type] [if dominatrix is in the location of the player]bursts into a fit of rage[otherwise]arrives from the east[end if]![line break][speech style of M]'WHAT HAVE WE HERE? Did I give you permission to interfere in my affairs?! I saw what you were trying to do. Oh [honey of M], you're going to regret that.'[roman type][line break]";
+		now the stance of the player is 1;
+		compute spanking of M;
+		now M is stalled.
 
 Part 5 - Protection
 

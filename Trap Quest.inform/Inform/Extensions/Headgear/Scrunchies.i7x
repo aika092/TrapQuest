@@ -401,7 +401,7 @@ To decide which figure-name is the clothing-image of (C - a pair of helium ballo
 The printed name of a pair of helium balloons is "[clothing-title-before]pair of helium balloons[clothing-title-after]".
 
 To decide which number is the initial outrage of (H - a pair of helium balloons):
-	decide on 16.
+	decide on 13.
 
 To say ShortDesc of (H - a pair of helium balloons):
 	say "helium balloons".
@@ -426,9 +426,8 @@ To decide which number is the relieved heaviness of (H - a pair of helium balloo
 	decide on -4.
 
 To decide which object is the unique-upgrade-target of (C - a scrunchie):
-	if inflation fetish is 1, decide on a random off-stage pair of helium balloons;
 	if diaper lover > 0, decide on a random off-stage monkey scrunchie;
-	decide on nothing.
+	decide on a random off-stage pair of helium balloons.
 
 To check upgrade target of (C - scrunchie): [we don't validate that scrunchie upgrade targets are summonable if the scrunchie is removed. it would give a false negative because there's two worn scrunchies]
 	do nothing.

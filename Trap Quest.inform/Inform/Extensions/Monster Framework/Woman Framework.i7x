@@ -233,8 +233,8 @@ woman-player has a number called hotel-urinal-scene.
 woman-player has a number called vine-scene.
 woman-player has a number called vine-hole-scene.
 woman-player has a number called mechanic-scene.
-woman-player has a number called anal-contraption-scene.
-woman-player has a number called anal-contraption-search.
+woman-player has a number called dominatrix-contraption-scene.
+woman-player has a number called dominatrix-contraption-search.
 woman-player has a number called shopkeeper-scene.
 woman-player has a number called stool-scene.
 woman-player has a number called throne-scene.
@@ -419,7 +419,11 @@ To compute defeat of (M - woman-player):
 			compute autotaking magic pistol;
 		otherwise:
 			loot M;
-		now the sleep of M is 300.
+		now the sleep of M is 300;
+	if the woman-bimbo of M > 5, compute automatic banishment of M.
+
+To say BanishFleeFlav of (M - woman-player):
+	say "[BigNameDesc of M][']s body fizzles into blue cubes like something out of TRON, then completely disappears. It seems that [he of M][']s been removed from the game.".
 
 To compute loot dropping of (X - a thing) by (M - woman-player):
 	say "You notice that [he of M][']s wearing a [printed name of X]!".

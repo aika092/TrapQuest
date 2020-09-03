@@ -89,7 +89,7 @@ The spawn initial kitsune rule is listed in the setting up mansion monsters rule
 
 To compute unique unsimulated periodic effect of (M - kitsune):
 	if playerRegion is not school:
-		if the vanish timer of M is 0 or the vanish timer of M < a random number between -100 and -50: [The former happens 10 turns after the player reveals them. The latter happens after a long number of turns in the same region.]
+		if (the target-disguise of M is not M and the target-disguise of M is in the location of M) or the vanish timer of M is 0 or the vanish timer of M < a random number between -100 and -50: [The former happens 10 turns after the player reveals them. The latter happens after a long number of turns in the same region.]
 			if M is in the location of the player, say "[BigNameDesc of M] vanishes in a puff of pink smoke!";
 			regionally place M;
 			set up disguise of M;
@@ -217,7 +217,8 @@ To say OfferFriendshipFlav of (M - kitsune):
 	say "".
 
 To compute offer reward of (M - kitsune) for (T - a thing):
-	if M is intelligent, FavourUp M by the bartering value of T for M;
+	let BV be the bartering value of T for M;
+	FavourUp M by ((1 + BV) / 2);
 	if the favour of M > 8 and the special-gifted of M is 0:
 		say "[speech style of M]'How about something special this time? I know, these are cute!'[roman type][line break]";
 		now fox ears is in the location of M;

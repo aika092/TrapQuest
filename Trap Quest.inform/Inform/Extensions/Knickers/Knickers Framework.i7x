@@ -86,7 +86,6 @@ To decide which number is the unique cringe of (C - a knickers): [Some underwear
 
 To uniquely set up (K - a knickers):
 	repair K;
-	if K is diaper and diaper quest is 1, now the raw-soak-limit of K is 18 + the DQBulk of K * 3;
 	if diaper lover >= 1 and a random number between 1 and 8 is 1, now K is bed wetting;
 	if K is actually sheer and a random number between 1 and 4 is 1, now K is protection.
 

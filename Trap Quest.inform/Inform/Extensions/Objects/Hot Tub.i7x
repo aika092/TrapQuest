@@ -25,6 +25,7 @@ To compute swimming in (H - hot-tub):
 	while swimming is 1:
 		if swim-turns is 0 and water-peeing is false:
 			say "You slip into the tub and allow yourself to sink in all the way up to your shoulders.";
+			compute bathing;
 		otherwise:
 			say "You are sitting in the hot tub.";
 		say "[line break]Do you want to get out?";

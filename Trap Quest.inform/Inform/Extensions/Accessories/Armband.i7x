@@ -59,37 +59,7 @@ Report taking off armband[ when playerRegion is School]:
 	display entire map. [Some arrows might turn green]
 
 Carry out wearing armband:
-	say "You place the armband around your left biceps and strap it tight[one of]. As you do, you feel it close itself even tighter around you, as if it is magic, or maybe even somehow alive! It almost feels like part of your arm now - you sense that bad things might happen if you tried to remove it against its will[or][stopping].";
-
-[Check going when armband is worn:
-	if the noun is not north and class-time <= 0:
-		now lesson-room is the room north of the location of the player;
-		if lesson-room is a lecture academic room:
-			if there is a correctly-situated appropriate lesson, say "You can't, there's no time, your lesson is about to begin!" instead.
-
-Check waiting when armband is worn:
-	if class-time <= 0:
-		now lesson-room is the room north of the location of the player;
-		if lesson-room is a lecture academic room:
-			if there is a correctly-situated appropriate lesson, say "You can't, there's no time, your lesson is about to begin!" instead.
-
-Check masturbating when armband is worn:
-	if class-time <= 0:
-		now lesson-room is the room north of the location of the player;
-		if lesson-room is a lecture academic room:
-			if there is a correctly-situated appropriate lesson, say "You can't, there's no time, your lesson is about to begin!" instead.
-
-Check LongWaiting when armband is worn:
-	if class-time <= 0:
-		now lesson-room is the room north of the location of the player;
-		if lesson-room is a lecture academic room:
-			if there is a correctly-situated appropriate lesson, say "You can't, there's no time, your lesson is about to begin!" instead.
-
-Check resting when armband is worn:
-	if class-time <= 0:
-		now lesson-room is the room north of the location of the player;
-		if lesson-room is a lecture academic room:
-			if there is a correctly-situated appropriate lesson, say "You can't, there's no time, your lesson is about to begin!" instead.]
+	say "You place the armband around your left bicep and strap it tight.";
 
 Report wearing armband:
 	compute armband replacement.
