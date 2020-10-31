@@ -1,7 +1,8 @@
 Bunny Outfit by Dresses begins here.
 
-A bunny outfit is a kind of overdress. A bunny outfit is usually crotch-intact. A bunny outfit is usually unique. A bunny outfit is usually top-exclusive. A bunny outfit is usually unskirted. A bunny outfit is usually latex. A bunny outfit is usually low cut. A bunny outfit is usually top-displacable.
+A bunny outfit is a kind of overdress. A bunny outfit is usually crotch-intact. A bunny outfit is usually unique. A bunny outfit is usually totally-exclusive. A bunny outfit is usually unskirted. A bunny outfit is usually latex. A bunny outfit is usually low cut. A bunny outfit is usually top-displacable.
 
+Definition: a bunny outfit is uncovered themed: decide yes.
 Definition: a bunny outfit is class-transformation-protected:
 	if the class of the player is bunny, decide yes;
 	decide no.
@@ -89,10 +90,8 @@ To compute school periodic effect of (C - reverse bunny outfit):
 To compute periodic effect of (C - reverse bunny outfit):
 	let S be a random worn stockings;
 	unless S is bunny stockings:
-		if S is stockings:
-			say "Your [S] [wardrobeVanishes of S]!";
-			now S is in pink wardrobe;
-		summon bunny stockings;
+		if S is stockings, WardrobeVanish S;
+		summon bunny stockings uncursed;
 		say "[bold type]A pair of reverse bunny outfit themed stockings appear on you![roman type][line break]".
 
 Definition: reverse bunny outfit is black themed: decide yes.

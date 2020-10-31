@@ -75,7 +75,9 @@ Check unplugging something:
 	if the noun is not worn and the noun is sword, try taking the noun instead;
 	if the noun is not an insertable object, say "I didn't understand what you wanted to do with [NameDesc of noun], since it's not an insertable object." instead;
 	if the noun is not penetrating a body part, say "[if the noun is worn]That is not removed like this, try [bold type]removing[roman type] it instead[otherwise]That is not inside of you[end if]." instead;
-	if the noun is maybe-cursed and the noun is not dildo sword: [dildo swords come straight back out]
+	if the noun is penetrating a fuckhole and portal-hotpants is worn:
+		unless the player is in Hotel44 and pimp is not in Hotel44, say "[if the player is in Hotel44][BigNameDesc of the pimp] won't let you do that[otherwise]You can't get to your [random fuckhole penetrated by the noun] right now, since it is in the [Hotel44][end if]!" instead;
+	if the noun is maybe-cursed and the class of the player is not cultist and the noun is not dildo sword: [dildo swords come straight back out]
 		if the noun is sure and the noun is worn, say "It refuses to budge, it's like it's glued inside! It must be the curse..." instead;
 		if the noun is worn:
 			now the noun is sure;

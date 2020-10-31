@@ -39,14 +39,8 @@ To decide which number is the starting difficulty of (M - golem):
 	decide on 11.
 
 To compute monstermotion of (M - golem):
-	if M is unleashed:
-		now neighbour finder is the location of M;
-		let A be a random N-viable direction;
-		if A is a random N-viable direction and the room A from the location of M is not Dungeon12 and the room A from the location of M is not Dungeon41:
-			try M going A;
-		otherwise if A is a random N-viable direction and the room A from the location of M is not Dungeon12 and the room A from the location of M is not Dungeon41:
-			try M going A;
-		MonsterStomp M.
+	compute room leaving of M;
+	MonsterStomp M.
 
 To MonsterStomp (M - golem):
 	let stomped be 0;

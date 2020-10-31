@@ -3,7 +3,7 @@ Mopping by Actions begins here.
 Mopping is an action applying to one thing. [TODO mopping with clothing]
 
 Rule for supplying a missing noun while mopping:
-	if pink-spraybottle is worn and (diaper quest is 1 or (the player is not craving semen and the player is not thirsty)), now the noun is pink-spraybottle;
+	if pink-spraybottle is worn and (diaper quest is 1 or (semen is not craved and the player is not thirsty)), now the noun is pink-spraybottle;
 	otherwise now the noun is face.
 
 Check mopping:
@@ -14,33 +14,32 @@ Check mopping:
 	if the noun is pink-spraybottle:
 		if there is a dangerous monster in the location of the player, say "You need to deal with the [random dangerous monster in the location of the player] first!" instead;
 		if the noun is not worn by the player, say "But you're not holding the cloth..." instead;
-	if the noun is face and the player is not craving semen and the semen-puddle of the location of the player > 0 and the class of the player is not maid and the class of the player is not catgirl:
-		if the semen taste addiction of the player < 12 and the player is not broken and the semen taste addiction of the player * the thirst of the player < 18 and the player is not extremely thirsty, say "[if the semen taste addiction of the player * 5 >= 18][variable custom style]I'd have to be more thirsty than this before I'd consider doing that...[roman type][line break][otherwise]You can't bring yourself to do something so disgusting.[end if]" instead;
+	if the noun is face and semen is not craved and the semen-puddle of the location of the player > 0 and the class of the player is not maid and the class of the player is not catgirl:
+		if the semen taste addiction of the player < 11 and the player is not broken and the semen taste addiction of the player * the thirst of the player < 18 and the player is not extremely thirsty, say "[if the semen taste addiction of the player * 5 >= 18][variable custom style]I'd have to be more thirsty than this before I'd consider doing that...[roman type][line break][otherwise]You can't bring yourself to do something so disgusting.[end if]" instead;
 		if there is a dangerous monster in the location of the player and the humiliation of the player < (20 - the semen taste addiction of the player) * 1000, say "You wouldn't dare do that in front of the [random monster in the location of the player]. [if the semen taste addiction of the player > 14][line break][second custom style]no matter how much you want to...[roman type][line break][end if]" instead;
 	otherwise if the noun is face and the urine-puddle of the location of the player > 0 and the class of the player is not maid and the class of the player is not catgirl:
 		if the urine taste addiction of the player < 12 and the player is not broken and the urine taste addiction of the player * the thirst of the player < 18 and the player is not extremely thirsty, say "[if the urine taste addiction of the player * 5 >= 18][variable custom style]I'd have to be thirstier than this before I'd consider doing that...[roman type][line break][otherwise]You can't bring yourself to do something so disgusting.[end if]" instead;
 		if there is a dangerous monster in the location of the player and the humiliation of the player < (20 - the urine taste addiction of the player) * 1000, say "You wouldn't dare do that in front of the [random monster in the location of the player]. [if the urine taste addiction of the player > 14][line break][second custom style]no matter how much you want to...[roman type][line break][end if]" instead;
 	if the noun is not face and the noun is not pink-spraybottle, say "How would you clean with something like that?" instead.
-	[if the second noun is clothing:
-		if the second noun is not appropriate for cleaning, say "That's not something you can clean with. Maybe try a piece of clothing actually made out of soft fabric?" instead;
-		if the semen-soak of the second noun + the urine-soak of the second noun + the milk-soak of the second noun >= the soak-limit of the second noun, say "The [printed name of second noun] is too covered in bodily fluids to effectively soak up anything else." instead;
-		if the second noun is worn and the second noun is not gloves, say "You are currently wearing the [printed name of second noun], so it would be difficult to clean with it." instead.]
 
 To compute mopdipping:
 	if the largeness of breasts > 10 and total puddle > 0:
-		say "Your chest touches the floor as you clean, and when you sit up, it takes some of the mess with it.";
-		let A be the urine-puddle of the location of the player;
-		let B be the milk-puddle of the location of the player;
-		let C be the semen-puddle of the location of the player;
-		if A > 0:
-			Squirt urine on breasts by 1;
-			decrease the urine-puddle of the location of the player by 1;
-		if B > 0:
-			Squirt milk on breasts by 1;
-			decrease the milk-puddle of the location of the player by 1;
-		if C > 0 and bukkake fetish is 1:
-			Squirt semen on breasts by 1;[this way the cum will still stick even if there's other stuff on the floor]
-			decrease the semen-puddle of the location of the player by 1;
+		let S be the semen-puddle of the location of the player;
+		let U be the urine-puddle of the location of the player;
+		let M be the milk-puddle of the location of the player;
+		let TBP be a random top level breasts protection clothing;
+		if TBP is liquid-soak-appropriate clothing or (bukkake fetish is 1 and S > 0):
+			say "Your chest touches the floor as you clean, and when you sit up, it takes some of the mess with it.";
+			if U > 0:
+				UnannouncedSquirt urine on TBP by 1;
+				decrease the urine-puddle of the location of the player by 1;
+			if M > 0:
+				UnannouncedSquirt milk on TBP by 1;
+				decrease the milk-puddle of the location of the player by 1;
+			if S > 0:
+				if TBP is liquid-soak-appropriate clothing, UnannouncedSquirt semen on TBP by 1;
+				otherwise UnannouncedSquirt semen on breasts by 1; [putting this last, the cum will still stick even if there's other stuff on the floor, rather than be washed away]
+				decrease the semen-puddle of the location of the player by 1.
 
 Carry out mopping face:
 	allocate 6 seconds;
@@ -86,18 +85,22 @@ Carry out mopping pink-spraybottle:[TODO: breasts largeness 10+ will touch the g
 	if the class of the player is "cafe maid" and there is a carried waitress vessel:
 		let W be a random carried empty waitress vessel;
 		if W is waitress vessel:
-			let FL be 0;
-			if the urine-puddle of the location of the player > 0, increase FL by 1;
-			if the semen-puddle of the location of the player > 0, increase FL by 1;
-			if the milk-puddle of the location of the player > 0, increase FL by 1;
-			if FL is not 1:
-				now the fill-colour of W is murky;
-			otherwise if the urine-puddle of the location of the player > 0:
-				now the fill-colour of W is golden;
-			otherwise if the semen-puddle of the location of the player > 0:
-				now the fill-colour of W is creamy;
+			if diaper quest is 1:
+				if the urine-puddle of the location of the player > 0 and watersports fetish is 1, now the fill-colour of W is golden;
+				otherwise now the fill-colour of W is white;
 			otherwise:
-				now the fill-colour of W is white;
+				let FL be 0;
+				if the urine-puddle of the location of the player > 0, increase FL by 1;
+				if the semen-puddle of the location of the player > 0, increase FL by 1;
+				if the milk-puddle of the location of the player > 0, increase FL by 1;
+				if FL is not 1:
+					now the fill-colour of W is murky;
+				otherwise if the urine-puddle of the location of the player > 0:
+					now the fill-colour of W is golden;
+				otherwise if the semen-puddle of the location of the player > 0:
+					now the fill-colour of W is creamy;
+				otherwise:
+					now the fill-colour of W is white;
 			say "You [one of]jump in surprise[or]watch on[stopping] as [NameDesc of W] magically fills up with [fill-colour of W] liquid.[line break][variable custom style]I guess I'm supposed to serve this to someone?[roman type][line break]";
 			now the Known corresponding to an Magic of the fill-type of W in the Table of Drinks is 1;
 			DoseFill W;

@@ -4,10 +4,6 @@ A dildo heels is a kind of platform heels. A dildo heels is usually leather. A d
 
 Definition: a dildo heels is penis themed: decide yes.
 
-To decide which number is the kick-bonus of (S - a dildo heels):
-	let X be the heel-height of S;
-	decide on X.
-
 The printed name of dildo heels is usually "[clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch platform dildo heels[clothing-title-after]". The text-shortcut of dildo heels is "dhe".
 
 To decide which figure-name is the clothing-image of (H - a dildo heels):

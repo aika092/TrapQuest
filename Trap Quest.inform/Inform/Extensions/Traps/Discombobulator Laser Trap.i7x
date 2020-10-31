@@ -32,9 +32,10 @@ To trigger (Y - a discombobulator laser trap):
 	now Y is expired;
 	let X be a random number between 8 and 30;
 	say "A laser ray gun appears from within a hidden compartment in [if item described is in The Woods]a tree[otherwise]the wall[end if], and fires a shot right at you! ";
+	if debuginfo > 0, say "[line break][input-style]Laser dodge check: [if the player is prone]Player on knees = automatic fail[otherwise]Dexterity ([dexterity of the player]) | ([X].5) d23+7 difficulty roll[end if][roman type][line break]";
 	let C be most-transformable-uncovered-clothing;
 	if tutorial is 1, now C is a random worn dress;
-	if X > the dexterity of the player or tutorial is 1:
+	if tutorial is 1 or the player is prone or X > the dexterity of the player:
 		if C is clothing:
 			say "It hits your [ShortDesc of C], which starts to shimmer!";
 			potentially transform C;

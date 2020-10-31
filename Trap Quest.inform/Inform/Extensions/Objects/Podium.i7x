@@ -82,23 +82,13 @@ Check entering podium:
 	otherwise if the class of the player is adventurer and bondage protection is 0 and the number of unremovable neckwear is 0 and the number of unremovable dresses is 0 and the number of unremovable skirts is 0 and the number of unremovable bras is 0:
 		if debuginfo > 0 and (B is not bracelet or there is an on-stage solid gold bracelet), say "[input-style]Stage roll: bracelet scene not possible ([if B is bracelet]solid gold bracelet is already in game universe[otherwise]no bracelets left off-stage[end if]); slave stuff selected automatically.[roman type][line break]";
 		unless slave-dress is worn or bondage-ribbons is worn:
-			repeat with O running through worn dresses:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn skirts:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn bras:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn neckwear:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
 			if christmas content is 1 and diaper quest is 0:
+				PinkWardrobeUnclash bondage-ribbons;
 				summon bondage-ribbons locked;
 				now bondage-ribbons is wrist-bound-behind;
 				say "You've barely blinked when you find yourself wearing a [bondage-ribbons]! Your wrists are now pinned by your side. Uh-oh.";
 			otherwise:
+				PinkWardrobeUnclash slave-dress;
 				summon slave-dress locked;
 				now slave-dress is wrist-bound-in-front;
 				say "You've barely blinked when you find yourself wearing a [slave-dress]! Your wrists are now stuck in cuffs connected to your collar via metal chains. Uh-oh.";

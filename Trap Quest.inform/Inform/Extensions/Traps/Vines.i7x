@@ -74,6 +74,7 @@ Definition: a vine (called V) is aggressive:
 	if busy is 1, decide no;
 	if kraken bell is worn, decide no;
 	if the player is monster fucked or the player is trap stuck or the player is vine stuck or (the player is monster stuck and diaper quest is 1), decide no;
+	if there is ass covering indestructible clothing, decide no;
 	if diaper quest is 1:
 		if the player is in WoodsBoss01:
 			if the player is prone and there is a worn diaper, decide yes;
@@ -139,7 +140,9 @@ To compute vines kneeling:
 				if the player is possessing a vagina, cutshow figure of vines cutscene 1 for V;
 
 Report kneeling when there is a vine wrangling a body part:
-	say "[one of]Vines wrap around your wrists as soon as they hit the ground.[or]Your wrists are immediately pinned to the ground.[or]Vines immediately pin your hands to the ground.[or]Vines wrap around your wrists and pin them to the ground.[or]Unsurprisingly, vines immediately grab your wrists and pin them to the ground.[in random order]".
+	let V be a random vine wrangling a body part;
+	say "[one of]Vines wrap around your wrists as soon as they hit the ground.[or]Your wrists are immediately pinned to the ground.[or]Vines immediately pin your hands to the ground.[or]Vines wrap around your wrists and pin them to the ground.[or]Unsurprisingly, vines immediately grab your wrists and pin them to the ground.[in random order]";
+	now V is wrangling arms.
 
 To compute (V - a vine) penetrating:
 	if diaper quest is 1:
@@ -288,8 +291,8 @@ To compute vines fucking:
 			Ruin O;
 		if the reaction of the player is 0 and bukkake fetish is 1 and the TrapNo of V < 4 and (a random number between 1 and 3 is 1 or the player is vine-cursed):
 			say "[line break]The increase in sensation sends shivers of pleasure through the nearby vines, and they squirt and ooze from their tips. Several hover near enough that your face and chest are splashed and splattered with [semen].";
-			CumFaceUp a random number between 1 and 2;
-			CumTitsUp a random number between 1 and 2;
+		UnannouncedSquirt semen on face by a random number between 1 and 2;
+		UnannouncedSquirt semen on breasts by a random number between 1 and 2;
 		if the reaction of the player > 0:
 			say "You relax your [if V is penetrating asshole][asshole][otherwise][vagina][end if], not resisting the invasion.";
 			repeat with M running through reactive monsters:
@@ -299,11 +302,11 @@ To compute vines fucking:
 
 To compute vineNut of (V - a vine):
 	let O be a random fuckhole penetrated by V;
-	say "The vines all stop thrusting and start cumming inside you, filling [if the vine-condoms of V is 4]the condoms with their [semen][otherwise if O is asshole and egg laying fetish is 1]your [asshole] with eggs[otherwise]your [variable O] with [semen][end if]. Your belly expands and expands. ";
+	say "The vines all stop thrusting and start cumming inside you, filling [if the vine-condoms of V is 4]the condoms with their [semen]. [otherwise if O is asshole and egg laying fetish is 1]your [asshole] with eggs. Your belly expands and expands. [otherwise]your [variable O] with [semen]. Your belly expands and expands. [end if]";
 	if bukkake fetish is 1 and a random number between 1 and 3 is 1 or the player is vine-cursed:
 		say "At the same time, several vines hovering nearby launch jets of [semen] at your face and chest[if the semen addiction of the player < 6], making you recoil in disgust[end if][if the semen taste addiction of the player > a random number between 12 and 19], and you instinctively open your mouth as wide as possible to receive the tasty treat[end if].";
-		CumFaceUp a random number between 2 and 4;
-		CumTitsUp a random number between 2 and 4;
+		UnannouncedSquirt semen on face by a random number between 2 and 4;
+		UnannouncedSquirt semen on breasts by a random number between 2 and 4;
 	let X be 0;[X is the total "mess" the vines create]
 	let N be 4;
 	let C be the vine-condoms of V;
@@ -324,7 +327,7 @@ To compute vineNut of (V - a vine):
 			PussyFill (X + the stance of the player);
 			SemenPuddleUp 2;
 			let F be a random fairy grabbing the player;
-			if F is monster and the pregnancy of the player is 0 and pregnancy fetish is 1 and inhuman pregnancy is 2:
+			if F is monster and inhuman pregnancy is 2 and the player is able to get pregnant:
 				say "Your belly grows rapidly, emitting magenta light as [NameDesc of F] grins up at you, fingering [himself of F] as [he of F] floats away.";
 				cutshow figure of fairy cutscene 19 for F;
 				now the pregnancy of the player is 1;
@@ -435,6 +438,7 @@ Check pulling vines:
 		if woman-player is in the location of the player and the woman-status of woman-player is 90 and the vine-scene of woman-player <= 5:
 			if the player is not able to manually use their hands, do nothing instead;
 			if the player is wrist bound behind, say "Unfortunately you can't really do that with your wrists bound behind you!" instead;
+			if the player is immobile, say "You're a bit tied up at the moment!" instead;
 			WomanVinePull instead;
 		say "You can't see any such thing." instead;
 	if the TrapNo of the noun > 0 and diaper quest is 1, say "It's too late for that, there are way too many of them holding you in this position for you to escape now!" instead;

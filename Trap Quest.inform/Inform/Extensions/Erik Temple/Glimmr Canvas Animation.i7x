@@ -38,7 +38,7 @@ Section - Greasing the wheels for callbacks
 
 [From John Clemens: http://www.math.psu.edu/clemens/IF/I7tricks.html#command]
 
- To say perform/@ (ph - phrase): (- if (0==0) {ph} -).
+To say perform/@ (ph - phrase): (- if (0==0) {ph} -).
 
 Section - Adjusting origins and endpoints
 [This phrase is intended to allow origins of g-elements and g-windows to be changed simply. It can also be used to change the endpoint of a primitive g-element.]
@@ -214,7 +214,7 @@ To start a/-- Glulx timer of (T - a number) millisecond/milliseconds:
 	#end if.
 
 [Re-implemented in timer stuff.i7x]
- [To pause/stop the/-- Glulx timer:
+[To pause/stop the/-- Glulx timer:
 	request Glk timer event at 0 milliseconds;
 	#if utilising animation debugging;
 	say "[>console][CA]Timer event requested at 0 milliseconds.[<]";
@@ -2935,4 +2935,3 @@ Example: ** Scourge of the Vampyr - This example combines a number of different 
 
 	Report requesting the story file version:
 		say "The images used in this demo come courtesy of:[paragraph break] - Sean Howard, via his Free Pixel Project (http://www.squidi.net/pixel/index.php), released under the Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License.[line break] - David E. Gervais (http://pousse.rapiere.free.fr/tome/), released under Creative Commons Attribution 3.0 Unported License."
-

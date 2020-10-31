@@ -129,16 +129,7 @@ To compute class outfit of (H - a pink scrunchie):
 	let P be purple-pom-pom;
 	if the class of the player is cumdumpster, now P is condom-pom-pom;
 	if C is actually summonable or (C is cheerleader outfit and cheerleader-summoned is 0 and the number of worn cheerleader outfit is 0 and the number of worn silicone dress is 0):
-		if cheerleader-summoned is 0:
-			repeat with O running through worn dresses:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn exclusive corsets:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn skirt clashing clothing:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
+		PinkWardrobeUnclash C;
 		say "[bold type]A [ShortDesc of C] appears on you![line break][variable custom style]I'm a cheerleader now?[roman type][line break][if the mercyskill of the player is 0]You suddenly feel like you could get away with anything! It's like the consequences of your actions... just aren't as important as they used to be.[end if]";
 		summon C uncursed;
 		now cheerleader-summoned is 1;
@@ -249,19 +240,13 @@ To compute class outfit of (H - a blue scrunchie):
 		let S be a random off-stage mesh stockings;
 		let T be a random off-stage tartan miniskirt;
 		if T is actually summonable or (schoolgirl-summoned is 0 and T is miniskirt):
-			if schoolgirl-summoned is 0:
-				repeat with SK running through worn skirt clashing clothing:
-					say "Your [ShortDesc of SK] [wardrobeVanishes of SK]!";
-					now SK is in pink wardrobe;
+			PinkWardrobeUnclash T;
 			say "[bold type]A tight, extremely revealing tartan skirt appears on you![line break][variable custom style][if the player is pigtailed]Pigtails,[otherwise]Ponytailed hair[end if] and a tiny tartan skirt? I think I know where this is going...[roman type][line break]";
 			summon T uncursed;
 			if diaper quest is 0, now T is temptation;
 			now schoolgirl-summoned is 1;
 		if there is a worn tartan miniskirt and (O is actually summonable or (schoolgirl-summoned < 2 and O is tube top)): [if the miniskirt spawned let's try and spawn the tube top as well]
-			if schoolgirl-summoned < 2:
-				repeat with SK running through worn breast covering clothing:
-					say "Your [ShortDesc of SK] [wardrobeVanishes of SK]!";
-					now SK is in pink wardrobe;
+			PinkWardrobeUnclash O;
 			say "[bold type]A very skimpy tartan tube top shimmers into existence around your [BreastDesc]![line break][variable custom style]I guess that makes me a slutty schoolgirl. [if the bimbo of the player < 8]Sigh... there's more, isn't there.[otherwise if the bimbo of the player > 12]Teehee! I guess I am being pretty naughty. I hope there's more to this outfit...[end if][roman type][line break]";
 			summon O uncursed;
 			now O is confidence;
@@ -278,16 +263,7 @@ To compute class outfit of (H - a blue scrunchie):
 	otherwise:
 		let S be a random off-stage frilly stockings;
 		if R is actually summonable or (R is schoolgirl outfit and schoolgirl-summoned < 2):
-			if schoolgirl-summoned is 0:
-				repeat with O running through worn dresses:
-					say "Your [O] [wardrobeVanishes of O]!";
-					now O is in pink wardrobe;
-				repeat with O running through worn exclusive corsets:
-					say "Your [O] [wardrobeVanishes of O]!";
-					now O is in pink wardrobe;
-				repeat with O running through worn skirt clashing clothing:
-					say "Your [O] [wardrobeVanishes of O]!";
-					now O is in pink wardrobe;
+			PinkWardrobeUnclash R;
 			now schoolgirl-summoned is 2;
 			summon R uncursed;
 			now the raw-magic-modifier of R is 1;

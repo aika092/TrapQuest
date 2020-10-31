@@ -93,19 +93,7 @@ To compute class outfit of (H - a bunny hat):
 	let B be a random off-stage dq bunny outfit;
 	let S be a random off-stage bunny booties;
 	if B is actually summonable or (B is bunny outfit and bunny-summoned is 0 and the number of worn bunny outfit is 0):
-		if bunny-summoned is 0:
-			repeat with O running through worn dresses:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn exclusive corsets:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn skirt clashing clothing:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn trousers:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
+		PinkWardrobeUnclash B;
 		say "[bold type]You feel your bunny hat twitch as if the ears were real, and then a [ShortDesc of B] appears on you![roman type][line break]";
 		summon B cursed;
 		now the raw-magic-modifier of B is the number of worn diapers;
@@ -180,28 +168,13 @@ To compute class outfit of (H - bunny glasses):
 	let B be a random off-stage bunny dress;
 	let K be a random off-stage bunny socks;
 	if B is actually summonable or (B is bunny outfit and bunny-glasses-summoned < 1 and the number of worn bunny dress is 0):
-		if bunny-glasses-summoned < 1:
-			repeat with O running through worn dresses:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn exclusive corsets:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn skirt clashing clothing:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
+		PinkWardrobeUnclash B;
 		say "[bold type]You feel your bunny hat twitch as if the ears were real, and then a [ShortDesc of B] appears on you![roman type][line break]";
 		summon B;
 		now the raw-magic-modifier of B is the number of worn diapers;
 		if bunny-glasses-summoned < 1, now bunny-glasses-summoned is 1;
 	otherwise if K is actually summonable or (K is clothing and bunny-glasses-summoned < 2):
-		if bunny-glasses-summoned < 2:
-			repeat with O running through worn leg covering clothing:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn stockings:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
+		PinkWardrobeUnclash K;
 		say "[bold type]You feel your bunny hat twitch as if the ears were real, and then a [ShortDesc of K] appears on your feet![roman type][line break]";
 		summon K;
 		now the raw-magic-modifier of K is 1;

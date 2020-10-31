@@ -85,7 +85,7 @@ To decide which number is the magic-cost of (Z - a thing):
 	decide on M.
 
 Definition: a tentacle monster is a tripper:
-	if the class of the player is "magical schoolgirl" or there is a worn hand ready equippable, decide yes;
+	if the class of the player is "magical schoolgirl" or there is a worn zap ready equippable, decide yes;
 	decide no.
 
 To say TripChanceFlav of (M - a tentacle monster):
@@ -98,15 +98,16 @@ To decide which number is the tripping roll of (M - a tentacle monster):
 To say MonsterTrippedFlav of (M - a tentacle monster):
 	say "Roaring with unrestrained arousal, [NameDesc of M] picks you up off the ground with several strong tentacles!";
 	repeat with H running through worn equippables:
-		now H is in the location of the player;
-		say "Your [H] is wrestled out of your hand and thrown to the corner of the room!".
+		if H is not gloves:
+			now H is in the location of the player;
+			say "Your [H] is wrestled out of your hand and thrown to the corner of the room!".
 
 Check taking equippable when the player is immobile:
 	if the noun is not held, say "You try to reach it but it's too far away!" instead.
 
 This is the magical girl cums then wins her fight orgasm resolution rule:
-	let H be a random equippable in the location of the player;
-	if there is a tentacle monster penetrating a body part and the class of the player is magical girl and H is actually summonable hand ready clothing and the body soreness of the player < 10:
+	let H be a random hand ready equippable in the location of the player;
+	if there is a tentacle monster penetrating a body part and the class of the player is magical girl and H is actually summonable clothing and H is not gloves and the body soreness of the player < 10:
 		now the fatigue of the player is 0;
 		say "Your orgasm fills you with renewed energy! You feel like you could escape and keep fighting if you want. Do you want to? ";
 		if the player is consenting:
@@ -138,14 +139,17 @@ To say NewbieSpellFlav:
 	if newbie tips is 1, say "[one of][newbie style]Newbie tip: You've found a magic spell! Spells consume magic power, which is not particularly plentiful but you should hopefully acquire a bit of it over your adventure. Most spells require you to say the rude words while someone can hear (and understand) you.[roman type][line break][or][stopping]".
 
 To compute learning of (S - a magic-spell):
-	now S is everywhere;
-	sort the Table of Possible Incantations in random order;
-	choose row 1 from the Table of Possible Incantations;
-	now the outrageousness of S is the naughtiness entry;
-	now the incantation of S is the phrase entry;
-	now the text-shortcut of S is the phrase entry;
-	say "You have learned how to [MagicSpellEffect of S]! The magic incantation is 'I [incantation of S]'. It requires [magic-cost of S] magic power.[SpelloutrageousnessInfo of S]";
-	blank out the whole row.
+	if the number of filled rows in the Table of Possible Incantations > 0:
+		now S is everywhere;
+		sort the Table of Possible Incantations in random order;
+		choose row 1 from the Table of Possible Incantations;
+		now the outrageousness of S is the naughtiness entry;
+		now the incantation of S is the phrase entry;
+		now the text-shortcut of S is the phrase entry;
+		say "You have learned how to [MagicSpellEffect of S]! The magic incantation is 'I [incantation of S]'. It requires [magic-cost of S] magic power.[SpelloutrageousnessInfo of S]";
+		blank out the whole row;
+	otherwise:
+		say "BUG - no fetish appropriate incantations were left to assign to the spell.".
 
 To say ExamineDesc of (S - a magic-spell):
 	say "You know how to [MagicSpellEffect of S]! The magic incantation is 'I [incantation of S]'. It requires [magic-cost of S] magic power.[SpelloutrageousnessInfo of S]".
@@ -291,6 +295,9 @@ A game universe initialisation rule:
 		choose a blank row in the Table of Possible Incantations;
 		now the phrase entry is "want my mommy";
 		now the naughtiness entry is 5;
+		choose a blank row in the Table of Possible Incantations;
+		now the phrase entry is "have my squirt-squirt cummies inside my Pampies";
+		now the naughtiness entry is 13;
 		if diaper messing >= 3:
 			choose a blank row in the Table of Possible Incantations;
 			now the phrase entry is "love doing stinkies in my panties";

@@ -655,7 +655,7 @@ title	subtable	description	toggle
 "Map Window: [if map images is 0]OFF[otherwise if GUI layout is 0]ON[otherwise if map images is 1]SMALLEST[otherwise if map images is 2]SMALL[otherwise if map images is 3]MEDIUM[otherwise if map images is 4]LARGE[otherwise]LARGEST[end if]"	--	--	map images toggle rule
 "Icons for nearby NPCs on Map Window (causes a bit of lag): [if map-figures is 1]ENABLED[otherwise if the player is not the donator]BETA TESTERS ONLY FOR NOW[otherwise]DISABLED[end if]"	--	--	map-figures toggle rule
 "Save and Restore buttons[if SaveLoadPreference is 1] (these still won't show if you've chosen roguelike saving): ON[otherwise]: OFF[end if]"	--	--	SaveLoadPreference toggle rule
-"[if GUI layout is 1]Inline Image Cutscenes[otherwise]Keep all cutscene images in lower display bar[end if]: [if image cutscenes is 0]NO CUTSCENES[otherwise if GUI layout is 0 and image cutscenes is 1]NO[otherwise]YES[end if]"	--	--	image cutscenes toggle rule
+"[if GUI layout is 1]Inline Image Cutscenes[otherwise]Keep all cutscene images in Location Window[end if]: [if image cutscenes is 0]NO CUTSCENES[otherwise if GUI layout is 0 and image cutscenes is 1]NO[otherwise]YES[end if]"	--	--	image cutscenes toggle rule
 "Animated graphical elements: [if animationsEnabled is 1]ON[otherwise]OFF[end if]"	--	--	animationsEnabled toggle rule
 "Visible humiliating tattoos shown in Location Window [if tattoo vision is 1]ON[otherwise]OFF[end if]"	--	--	tattoo vision toggle rule
 "Dark mode (Compatible with WinGit; you just need to go into Git>Options and invert the colours for the main window manually; the exact brown RGB value is 24,13,1): [if darkMode is 1]ON[otherwise if darkMode is 2]GRAPHICAL WINDOWS ONLY[otherwise]OFF[end if]"	--	--	darkMode toggle rule

@@ -7,6 +7,7 @@ The printed name of armband is usually "[TQlink of item described][item style][a
 Figure of armband is the file "Items/Accessories/Arm/armband1.png".
 
 Definition: armband is pink themed: decide yes.
+Definition: armband is cursable: decide no.
 
 To say ShortDesc of (C - armband):
 	say "[accessory-colour of C] armband".

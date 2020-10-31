@@ -44,10 +44,7 @@ To compute class outfit of (H - wasp-antennae):
 	let B be a random off-stage striped top;
 	let S be a random off-stage black-and-yellow striped stockings;
 	if B is actually summonable or (B is striped top and wasp-summoned is 0):
-		if wasp-summoned is 0:
-			repeat with O running through worn dresses:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
+		PinkWardrobeUnclash B;
 		say "[bold type][if total-wasps < 50]A fuzzy black and yellow top suddenly appears on your chest![otherwise]You look down in shock as the skin around your breasts begins to turn black and shiny! Fine black and yellow fuzz grows out of them now![end if][roman type][line break]";
 		summon B;
 		now the raw-magic-modifier of B is total-wasps / 50;

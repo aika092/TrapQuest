@@ -236,7 +236,7 @@ To say TotalDesc of hips:
 		say "Your [if the bimbo of the player > 6]alluring [end if][MediumDesc of hips] stick out behind you[if the bimbo of the player > 8] provocatively[end if]. ";
 	otherwise:
 		say "You have [MediumDesc of hips]. [if the thickness of hips > 6 + the flesh volume of thighs]You have a feminine gap between your legs, causing you to feel a breeze on your crotch even when your knees are together. [end if]";
-	say "[AssFillDesc][AssImplantsDesc][HipWeight]";
+	say "[AssFillDesc][AssImplantsDesc][HipWeight][HipCum]";
 	if the strut of the player > 0 and the player is upright, say "You are strutting, which causes your hips to sway provocatively.";
 	let C be the at least partial concealer of hips;
 	if C is clothing:
@@ -309,6 +309,9 @@ To say HipWeight:
 		say "Your butt is extremely heavy and unwieldy, making it a huge challenge for you to move around. ";
 	otherwise:
 		say "Your butt is impossibly heavy and unwieldy, making each step a very challenging task. ".
+
+To say HipCum:
+	say "[if the semen coating of hips > 7]It is plastered in [semen]. [otherwise if the semen coating of hips > 4]There is a decent amount of [semen] stuck to it. [otherwise if the semen coating of belly > 0]It has a splattering of [semen] on it. [end if]".
 
 To say AssFillDesc:
 	if the air volume of hips is 0:

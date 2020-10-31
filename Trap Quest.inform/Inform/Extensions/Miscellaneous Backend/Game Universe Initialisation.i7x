@@ -61,16 +61,18 @@ To Start The Machine:
 		now vampiress is interested;
 		calm vampiress;
 		now the pink pill is in pink wardrobe;
-		now candy corn is in a random placed mandatory haunted room;
-		now liquorice is in a random placed mandatory haunted room;
-		while the number of candy in the location of liquorice > 1:
-			now liquorice is in a random placed mandatory haunted room;
-		now strawberry lace is in a random placed mandatory haunted room;
-		while the number of candy in the location of strawberry lace > 1:
-			now strawberry lace is in a random placed mandatory haunted room;
+		now candy corn is in Mansion28;
+		now liquorice is in Mansion36;
+		now strawberry lace is in Mansion16;
 		let H be a random fetish appropriate halloween headgear;
 		compute full outfit summon of H;
-		say "[second custom style]Ding Dong![roman type][line break]The giant manor house's doorbell sounds surprisingly cheerful and welcoming considering how scary the place looks from the outside. And yet, when the door opens, it opens with a creepy creak like you might expect from such an old and grand door. The [man of vampiress] who greets you has red eyes and very, very pale skin.[line break][variable custom style]'Trick or treat[if diaper lover > 0]! And, erm, could I use your bathroom?'[otherwise]!'[end if][roman type][line break]You say automatically, without thinking. [if diaper lover > 0]It's true - you really really do need the loo. [end if]The [man of vampiress] licks [his of vampiress] lips.[line break][speech style of vampiress]'[if diaper lover > 0]Why of course you can sweetie. Come on in...'[otherwise]Why not both?'[end if][roman type][line break][big he of vampiress] offers seductively, before ushering you inside.[line break][speech style of vampiress]'I did have some candy for you but my house is so big that I've lost it all somewhere around here. Why don't you have a little look around and see if you can find it all? There should be [bold type]three pieces of candy[roman type] [speech style of vampiress]for you to find. Feel free to eat it all when you find it.'[roman type][line break]";
+		let C be bat-pattern-corset;
+		if diaper quest is 1, now C is bat-shape-corset;
+		now C is in the location of the player;
+		now C is cursed;
+		now C is provocation;
+		now the raw-magic-modifier of C is a random number between 1 and 3;
+		say "[second custom style]Ding Dong![roman type][line break]The giant manor house's doorbell sounds surprisingly cheerful and welcoming considering how scary the place looks from the outside. And yet, when the door opens, it opens with a creepy creak like you might expect from such an old and grand door. The [man of vampiress] who greets you has red eyes and very, very pale skin. [big he of vampiress] looks at your bare chest.[line break][if the player is female][speech style of vampiress]'Nice tits.'[roman type][line break][end if]You look down and see that half of your outfit is for some reason on the ground in front of you instead of covering your chest![line break][variable custom style]'Trick or treat[if diaper lover > 0]! And, erm, could I use your bathroom?'[otherwise]!'[end if][roman type][line break]You say automatically, without thinking. [if diaper lover > 0]It's true - you really really do need the loo. [end if]The [man of vampiress] licks [his of vampiress] lips.[line break][speech style of vampiress]'[if diaper lover > 0]Why of course you can sweetie. Come on in...'[otherwise]Why not both?'[end if][roman type][line break][big he of vampiress] offers seductively, before ushering you inside.[line break][speech style of vampiress]'I did have some candy for you but my house is so big that I've lost it all somewhere around here. Why don't you have a little look around and see if you can find it all? There should be [bold type]three pieces of candy[roman type] [speech style of vampiress]for you to find. Feel free to eat it all when you find it.'[roman type][line break]You also notice a [C] on the ground nearby. You sense that wearing it should make you feel much more powerful! Intriguing...";
 		if diaper lover > 0, now the bladder of the player is 8;
 		if diaper messing >= 3, now rectum is 11;
 		if diaper quest is 1:
@@ -373,7 +375,8 @@ To initialise wardrobe:
 		if easter content is 1, now C is brown-button-diaper;
 		if C is clothing, add C to L;
 	repeat with X running through L:
-		if X is in Standard Item Pen, restock X;
+		if X is listed in Standard Item Pen:
+			restock X;
 		blandify and reveal X;
 		now X is in pink wardrobe;
 	let CG be champagne-glass;
@@ -425,6 +428,7 @@ To Scramble Items:
 	Set Up Clothing;
 	Set Up Collectibles;
 	Set Up Bras;
-	follow the setup starting items rules.
+	follow the setup starting items rules;
+	sort Standard Item Pen in random order.
 
 Game Universe Initialisation ends here.

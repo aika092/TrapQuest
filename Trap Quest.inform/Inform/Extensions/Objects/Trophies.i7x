@@ -10,15 +10,12 @@ REQUIRES COMMENTING
 A trophy is a kind of thing. The printed name of a trophy is usually "[TQlink of item described]trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of a trophy is usually "tphy". Understand "trophy" as trophy.
 Figure of trophy is the file "Env/School/trophy1.png".
 
-To decide which figure-name is the examine-image of (C - trophy):
+To decide which figure-name is the examine-image of (T - trophy):
 	decide on figure of trophy.
 
-To decide which number is the trophy-colour of (T - a trophy):
-	if the trophy-mode of T > 0, decide on lightModeFullGreen; [normal green]
-	decide on 16720896. [scarlet - off]
-
-To BackgroundRender (T - trophy) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
-	draw a rectangle trophy-colour of T in the current focus window at X1 by Y1 with size DX by DY.
+To update background colour of (T - a trophy):
+	if the trophy-mode of T > 0, now the backgroundColour of T is lightModeFullGreen; [normal green]
+	otherwise now the backgroundColour of T is 16720896. [scarlet - off]
 
 A trophy has a number called trophy-mode.
 
@@ -50,7 +47,6 @@ Report examining a trophy:
 bbc-trophy is a trophy. The printed name of bbc-trophy is "[TQlink of item described]big black cock trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of bbc-trophy is "bbct". Understand "big", "black", "black cock" as bbc-trophy.
 
 Figure of bbc trophy is the file "Env/School/trophy2.png".
-
 To decide which figure-name is the examine-image of (C - bbc-trophy):
 	decide on figure of bbc trophy.
 
@@ -71,6 +67,9 @@ Carry out TrophySwitching bbc-trophy:
 		now the trophy-mode of bbc-trophy is 0.
 
 pain-trophy is a trophy. The printed name of pain-trophy is "[TQlink of item described]dominatrix trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of pain-trophy is "dmnt". Understand "dominatrix" as pain-trophy.
+Figure of pain trophy is the file "Env/School/trophy5.png".
+To decide which figure-name is the examine-image of (C - pain-trophy):
+	decide on figure of pain trophy.
 
 To say ExamineDesc of (T - pain-trophy):
 	say "This smooth silver trophy depicts a curvy woman wielding a spanking paddle. It is surrounded by a mystical [if the trophy-mode of T is 1]green glow, and you can feel that experiencing pain will make you more perverted rather than more submissive[otherwise]red glow, which allows you to sense that its powers of turning pain into pleasurable perverted thoughts are inactive[end if].".
@@ -106,6 +105,10 @@ Carry out TrophySwitching expel-trophy:
 		now the trophy-mode of expel-trophy is 0.
 
 bust-trophy is a trophy. The printed name of bust-trophy is "[TQlink of item described]bust trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of bust-trophy is "bstt". Understand "bust" as bust-trophy.
+
+Figure of bust trophy is the file "Env/School/trophy3.png".
+To decide which figure-name is the examine-image of (C - bust-trophy):
+	decide on figure of bust trophy.
 
 To say ExamineDesc of (T - bust-trophy):
 	say "This trophy is in the shape of a large round pair of breasts. It is surrounded by a mystical [if the trophy-mode of T is 1]green glow, and you can feel that your breasts are more sensitive, but less provocative[otherwise]red glow, which allows you to sense that its magical powers to make your breasts more sensitive but less provocative is currently inactive[end if].".
@@ -156,6 +159,9 @@ Carry out TrophySwitching condom-trophy:
 		now the trophy-mode of condom-trophy is 0.
 
 ejaculate-trophy is a trophy. The printed name of ejaculate-trophy is "[TQlink of item described]semen trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of ejaculate-trophy is "smnt". Understand "semen" as ejaculate-trophy.
+Figure of ejaculate trophy is the file "Env/School/trophy4.png".
+To decide which figure-name is the examine-image of (C - ejaculate-trophy):
+	decide on figure of ejaculate trophy.
 
 Definition: ejaculate-trophy is fetish appropriate:
 	if ((the player is female or TG fetish > 0) and pregnancy fetish is 1) or bukkake fetish is 1, decide yes;
@@ -199,23 +205,23 @@ To say ExamineDesc of (T - magic-trophy):
 	otherwise say "red glow, which allows you to sense that its magical powers to make magic spells cost less magic power but summon stuff inside your belly are inactive.".
 A magic consequences rule (this is the trophy magic consequence rule):
 	if the trophy-mode of magic-trophy is 1:
-		if egg laying fetish is 1 and (the pregnancy of the player <= 0 or the pregnancy of the player is 3):
+		if egg laying fetish is 1 and the player is possessing a vagina and (the pregnancy of the player <= 0 or the pregnancy of the player is 3):
 			say "Instead of your magic power decreasing, you feel an egg manifest itself inside your womb!";
 			WombFill 1 medium eggs;
 		otherwise:
 			say "Instead of your magic power decreasing, you feel ";
 			if egg laying fetish is 1:
-				say "two eggs manifest themselves inside your belly!";
-				AssFill 2 medium eggs;
+				say "an egg manifest itself inside your belly!";
+				AssFill 1 medium eggs;
 			otherwise if a random number between 0 and watersports fetish is 1:
 				say "some [urine] appear inside your belly!";
-				AssFill 4 urine;
+				AssFill 2 urine;
 			otherwise if diaper quest is 1:
 				say "some water appear inside your belly!";
-				AssFill 4 water;
+				AssFill 2 water;
 			otherwise:
 				say "some [semen] appear inside your belly!";
-				AssFill 4.
+				AssFill 2.
 
 Carry out TrophySwitching magic-trophy:
 	say "You rub the trophy[if the player is wrist bound behind] with your nose[end if]. ";
@@ -223,7 +229,7 @@ Carry out TrophySwitching magic-trophy:
 		say "The trophy's glow changes from red to green. You can tell that from now on, [bold type]casting magic spells depletes less of your magic power, but also every time you cast a spell, your belly will be filled with [if egg laying fetish is 1]eggs[otherwise if watersports fetish is 1][urine][otherwise if diaper quest is 1]water[otherwise][semen][end if].[roman type][line break]";
 		now the trophy-mode of magic-trophy is 1;
 	otherwise:
-		say "The trophy's glow changes from green to red. You can tell that [bold type]you once again will need to spend magic power to cast spells, but the trophy will not summon things into your belly each time you do.[roman type][line break]";
+		say "The trophy's glow changes from green to red. You can tell that [bold type]you once again will need to spend more magic power to cast spells, but the trophy will not summon things into your belly each time you do.[roman type][line break]";
 		now the trophy-mode of magic-trophy is 0.
 
 Trophies ends here.

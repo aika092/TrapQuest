@@ -20,17 +20,6 @@ To decide which figure-name is the examine-image of (T - candy machine):
 	if the recent uses of T is -1, decide on figure of candy machine gold; [turn gold - gold candy]
 	decide on figure of candy machine green. [normal green]
 
-[
-To decide which number is the button-colour of (T - candy machine):
-	if the number of on-stage candy >= max-candy, decide on 0;
-	if the recent uses of T > 0, decide on 16720896; [turn scarlet - red candy]
-	if the recent uses of T is -1, decide on 16766720; [turn gold - gold candy]
-	decide on lightModeFullGreen. [normal green]
-
-To BackgroundRender (T - candy machine) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
-	draw a rectangle button-colour of T in the current focus window at X1 by Y1 with size DX by DY.
-]
-
 A candy machine has a number called recent uses.
 
 A candy machine has a number called combo.

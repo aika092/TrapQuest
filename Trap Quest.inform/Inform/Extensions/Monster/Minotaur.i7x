@@ -175,17 +175,8 @@ To compute delay of (M - minotaur):
 Part 2 - Motion, Seeking and Sleeping
 
 To compute monstermotion of (M - minotaur):
-	if M is unleashed:
-		now neighbour finder is the location of M;
-		let A be a random N-viable direction;
-		if A is a random N-viable direction and the room A from the location of M is not Dungeon12 and the room A from the location of M is not Dungeon41:
-			try M going A;
-		otherwise if A is a random N-viable direction and the room A from the location of M is not Dungeon12 and the room A from the location of M is not Dungeon41:
-			try M going A;
-		MonsterStomp M.
-
-To compute (M - minotaur) seeking (D - a direction):
-	if M is unleashed, try M going D.
+	compute room leaving of M;
+	MonsterStomp M.
 
 To compute sleep reduction of (M - minotaur):
 	if M is asleep:
@@ -336,7 +327,7 @@ To say CreampieReactionFlav to (M - minotaur) in (F - asshole):
 		say "[second custom style][if the bimbo of the player < 7][one of]It isn't over? Come on....[or]I thought [he of M] was finished...[at random][otherwise if the bimbo of the player < 12][one of]OK, so it actually isn't over. Great...[or]After filling me with all that [semen], I thought [he of M]'d be finished...[at random][otherwise][one of]I kind of want to stay like this.[or]Aww, [he of M]'s tired. I shouldn't wake [him of M].[at random][end if][roman type][line break]".
 
 To compute priestessBlessing of (M - minotaur):
-	say "You feel a surge in your holy aura and a voice appears in your head: 'Good work, Sister!'";
+	say "You feel a surge in your holy aura and a voice appears in your head: [line break][second custom style]'Good work, Sister!'[roman type][line break]";
 	decrease the charge of the dungeon altar by 300;
 	RitualUp 2.
 

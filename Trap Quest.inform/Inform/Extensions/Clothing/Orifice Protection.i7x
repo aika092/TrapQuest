@@ -127,6 +127,17 @@ Definition: yourself is pee protected:
 	if there is pee covering clothing, decide yes;
 	decide no.
 
+[!<ClothingIsBottomLevelBellyCover>+
+
+Is this item the lowest layered belly slot item?
+
++!]
+Definition: a clothing (called C) is bottom level belly cover:
+	if C is belly exposing or C is not worn, decide no;
+	repeat with O running through worn belly covering clothing:
+		if the mid-layer of O < the mid-layer of C, decide no;
+	decide yes.
+
 [!<ClothingIsTopLevelBellyCover>+
 
 Is this item the highest layered belly slot item?
@@ -136,6 +147,28 @@ Definition: a clothing (called C) is top level belly cover:
 	if C is belly exposing or C is not worn, decide no;
 	repeat with O running through worn belly covering clothing:
 		if the mid-layer of O > the mid-layer of C, decide no;
+	decide yes.
+
+[!<ClothingIsTopLevelThighCover>+
+
+Is this item the highest layered thigh covering item?
+
++!]
+Definition: a clothing (called C) is top level thigh cover:
+	if C is not thigh covering or C is not worn, decide no;
+	repeat with O running through worn thigh covering clothing:
+		if the bottom-layer of O > the bottom-layer of C, decide no;
+	decide yes.
+
+[!<ClothingIsBottomLevelLegCover>+
+
+Is this item the lowest layered leg covering item?
+
++!]
+Definition: a clothing (called C) is bottom level leg cover:
+	if C is not leg covering or C is not worn, decide no;
+	repeat with O running through worn leg covering clothing:
+		if the bottom-layer of O < the bottom-layer of C, decide no;
 	decide yes.
 
 [!<ClothingIsTopLevelCrotchCover>+
@@ -273,6 +306,10 @@ Definition: yourself is fully occupied:
 
 Part - Defence
 
+To decide what number is the defence of (K - a clothing):
+	if K is crotch covering, decide on the magic-modifier of K + the armour of K - the damage of K;
+	otherwise decide on the magic-modifier of K + 6 - the damage of K.
+
 To decide what number is the defence of the player:
 	decide on the vaginal defence of the player.
 
@@ -280,16 +317,16 @@ To decide what number is the anal defence of the player:
 	let D be 0;
 	increase D by (the total volume of hips / 2);
 	repeat with K running through top level ass protection clothing worn by the player:
-		let E be (the armour of K - the damage of K) - (the semen-soak of K / 3);
+		let E be the armour of K - the damage of K;
 		if E > 0, increase D by E;
 		increase D by the magic-modifier of K;
 	decide on D.
 
 To decide what number is the vaginal defence of the player:
 	let D be 0;
-	increase D by (the total volume of hips / 2);
+	increase D by (the flesh volume of thighs / 2);
 	repeat with K running through top level protection clothing worn by the player:
-		let E be (the armour of K - the damage of K);
+		let E be the armour of K - the damage of K;
 		if E > 0, increase D by E;
 		increase D by the magic-modifier of K;
 	decide on D.

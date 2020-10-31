@@ -29,6 +29,7 @@ To ForegroundRender (T - a recipe) at (X1 - a number) by (Y1 - a number) with di
 	now current-alchemy-key is the recipe-key of T;
 	let P be a random product-highlighted thing;
 	if P is a thing:
+		BackgroundRender P at (X1 + (DX / 4)) by (Y1 + (DY / 4)) with dimensions (DX / 2) by (DY / 2);
 		let F be the recipe-image of P;
 		display the image F in the current focus window at (X1 + (DX / 4)) by (Y1 + (DY / 4)) with dimensions (DX / 2) by (DY / 2).
 

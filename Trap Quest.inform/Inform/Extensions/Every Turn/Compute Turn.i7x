@@ -135,8 +135,8 @@ To run the engine once:
 		[Sometimes when time moves forward we need to refresh the map back to normal from unique situations. We can't do this in a time based rulebook because 'display entire map' breaks the rulebook.]
 		if map-turn-stall > 0:
 			decrease map-turn-stall by 1;
-		otherwise if temporary-map-figure is not figure of no-image-yet:
-			now temporary-map-figure is the figure of no-image-yet;
+		otherwise if temporary-map-figure is not figure of no-image-yet: [see Timer Stuff.i7x 'To commence animation of (T - a cutscene animation track)' to see how animations can trigger this block]
+			MapShowReset;
 			unless there is g-animated g-unpaused g-looping cutscene animation track, display entire map; [If there is an animation and we allow the map to redraw underneath, we lose the 'skip' hyperlink.]
 		otherwise if there is g-animated g-looping cutscene animation track:
 			repeat with G running through g-animated g-looping cutscene animation tracks:
@@ -287,7 +287,14 @@ To compute automatic actions:
 			[say "[bold type]You try to stand up.[roman type][line break]";]
 			try standing;
 			now delayed stand is 0;
-			now another-turn is 1.
+			now another-turn is 1;
+	if another-turn is 0 and the player is refusing to swallow and face is not actually occupied:
+		now another-turn-flavour is "You're too disgusted by the [if the milk volume of face > 0 and the milk taste addiction of the player is 1]thought that it's human breast milk in your mouth[otherwise]taste of what's in your mouth[end if]!";
+		now another-turn is 1;
+		now another-turn-action is the automatic spitting rule;
+	if another-turn is 0 and the player is always automatically swallowing:
+		now another-turn is 1;
+		now another-turn-action is the swallowing rule.
 
 To compute optional actions:
 	if was-mopping is true:
@@ -366,8 +373,7 @@ To compute player standing:
 						repeat with O running through worn removable breast covering clothing:
 							if O is not MO:
 								if the saved-item of magical-maid-outfit is clothing:
-									say "Your [O] [wardrobeVanishes of O]!";
-									now O is in pink wardrobe;
+									WardrobeVanish O;
 								otherwise:
 									say "Your [O] vanishes!";
 									now O is in Holding Pen;
@@ -562,11 +568,11 @@ This is the broken automatic submission rule:
 	if M is monster:
 		now auto is 1;
 		let B be a random actually presentable orifice;
-		if B is not face and face is actually presentable and M is male and the player is craving semen and M is willing to do oral, now B is face;
+		if B is not face and face is actually presentable and M is male and semen is craved and M is willing to do oral, now B is face;
 		if the player is a butt slut and asshole is actually presentable and M is willing to do anal, now B is asshole;
 		if the player is a pussy slut and vagina is actually presentable and M is willing to do vaginal, now B is vagina;
 		if the player is a tit slut and M is male and M is willing to do titfucks and breasts are actually presentable, now B is breasts;
-		if the sensitivity of breasts > 7 and there is a worn nipple chain and M is male and M is willing to do titfucks, now B is breasts;
+		if the titfuck addiction of the player > 5 and there is a worn nipple chain and M is male and M is willing to do titfucks, now B is breasts;
 		now auto is 0;
 		if B is body part and the sex addiction of the player > a random number between 12 and 18: [If B is nothing, this means there's no sex we can have right now.]
 			if M is interested:
@@ -591,16 +597,6 @@ This is the broken statue suck rule:
 	now the stance of the player is 1;
 	try drinking DungeonScenery01.
 
-This is the broken drink beg rule:
-	let P be the player;
-	repeat with M running through interested reactive friendly monsters:
-		if M is not last-begged, now P is M;
-	if P is not the player:
-		allocate 4 seconds;
-		compute desperate drinking to P;
-		now last-begged is P;
-		now last-begged-time is earnings.
-
 This is the too horny masturbation rule:
 	say "You're just way too horny - there is nothing you can do except immediately begin to masturbate!";
 	now auto is 1;
@@ -616,11 +612,6 @@ To Compute Broken Actions:
 			if the player is in Dungeon10 and the semen taste addiction of the player > 7:
 				now another-turn is 1;
 				now another-turn-action is the broken statue suck rule;
-			otherwise if last-begged-time < earnings - 30 and the player is able to speak:
-				repeat with M running through reactive friendly monsters:
-					if M is not last-begged:
-						now another-turn is 1;
-						now another-turn-action is the broken drink beg rule;
 		otherwise if the arousal of the player >= maximum arousal and the player is not in a predicament room and the player is able to automatically masturbate and the wanktime of the player <= 0:
 			now another-turn is 1;
 			now another-turn-action is the too horny masturbation rule.
@@ -805,15 +796,6 @@ recent-breasts-largeness is a number that varies.
 An all later time based rule (this is the recent breasts largeness rule):
 	now recent-breasts-largeness is the largeness of breasts.
 
-A time based rule (this is the first aid cooldown rule):
-	if background-nurse is 1:
-		if FAcooldown > 0:
-			decrease FAcooldown by 1;
-		if FAcooldown is 0 and the number of on-stage unowned bandages is 0:
-			say "A new bandage appears in your bag!";
-			let B be a random bandage;
-			now B is held by the player.
-
 An all later time based rule (this is the pain drain cooldown rule):
 	if pain-duration > 0, decrease pain-duration by 1;
 	if drain-duration > 0, decrease drain-duration by 1.
@@ -828,8 +810,6 @@ To Reset Flags:
 		decrease refractoryperiod by 1;
 		now aroused-turns is 0; [The player can keep gaining arousal after orgasms. But then some of it will rather quickly drop off after sex ends, if she successfully orgasmed.]
 		if refractoryperiod is 0 and painted-vibrator-hands is worn, say "[bold type]Your clit feels less sensitive now, and you are willing to push the thumb vibes into it again.[roman type][line break]";
-	[if testing-val is not the number of things in standard item pen and testing-val > 0, say "[bold type]The number of things in Standard Item Pen went from [testing-val] to [number of things in standard item pen].[roman type][line break]";
-	now testing-val is the number of things in standard item pen;]
 	now auto is 0;
 	now boobshrinkflav is 0;
 	now semen-encountered is 0;
@@ -869,6 +849,6 @@ To Reset Flags:
 To say other tips:
 	if the player is not immobile and the body soreness of the player > 6 and the player is prone, say "[one of][newbie style]Newbie tip: You're quite sore, so you should look out for furniture to rest on, which will heal you. If you can't find any, you can always rest on the royal bed in the starting room, but this will increase your sex addiction, so it's best used as a last resort.[roman type][line break][or][stopping]";
 	if the player is not immobile and the soreness of asshole > 6 or the soreness of vagina > 6, say "[one of][newbie style]Newbie tip: Your hole is quite sore. It'll slowly go down over time, but you can heal it a bit instantly with lubricant. Also, you can drink from the statue in the statue hall to heal loads instantly, but don't do this too much - every time you do, you'll have to swallow some semen, and too much will make you become addicted.[roman type][line break][or][stopping]";
-	if the player is monster fucked or there is a monster grabbing the player, say "[one of][newbie style]Newbie tip: There's no way to escape until they're done with you. You can now pretty much only choose between 'submit' and 'resist'. Submitting increases humiliation but generally helps prevent other [']bad['] stats [if diaper quest is 1]increasing and prevents angering the enemy further, meaning hopefully they'll be friendly the next time they meet you, rather than hold a grudge[otherwise](mainly soreness) increasing[end if].[roman type][line break][or][stopping]".
+	if (the player is monster fucked or there is a monster grabbing the player) and the number of friendly-fucking monsters is 0, say "[one of][newbie style]Newbie tip: There's no way to escape until they're done with you. You can now pretty much only choose between 'submit' and 'resist'. Submitting increases humiliation but generally helps prevent other [']bad['] stats [if diaper quest is 1]increasing and prevents angering the enemy further, meaning hopefully they'll be friendly the next time they meet you, rather than hold a grudge[otherwise](mainly soreness) increasing[end if].[roman type][line break][or][stopping]".
 
 Compute Turn ends here.

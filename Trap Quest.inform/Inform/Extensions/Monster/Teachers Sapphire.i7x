@@ -109,7 +109,7 @@ Definition: roulette-lesson is lesson-appropriate:
 Figure of roulette is the file "Special/Cutscene/cutscene-serenity-roulette1.jpg".
 
 To compute teaching of (L - roulette-lesson):
-	now bigGameLoop is 2;
+	now bigGameLoop is 3;
 	allocate 65 seconds;
 	let M be the lesson-teacher of L;
 	let LD be {"water"}; [list of types of drink]

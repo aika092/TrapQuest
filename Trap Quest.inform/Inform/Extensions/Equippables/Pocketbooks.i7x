@@ -136,8 +136,6 @@ Carry out browsing book of regrets:[TODO: player says something like "I didn't w
 		now the large egg count of vagina is 0;
 		WombEmpty the womb volume of vagina;
 		now the semen volume of vagina is X;
-		[if bukkake fetish is 1, CumThighsUp X - 1;
-		otherwise SemenPuddleUp 1;]
 		StrengthDown X / 10;
 		DexDown X / 10;
 	otherwise if R is 1 and the vaginalvirgin of the player is 0 and the player is female and the openness of vagina > 5:

@@ -9,6 +9,8 @@ Figure of original princess is the file "NPCs/MultiFloor/Princess/princess1.jpg"
 Figure of original diapered princess is the file "NPCs/MultiFloor/Princess/princess2.jpg".
 Figure of enslaved princess is the file "NPCs/MultiFloor/Princess/princess3.jpg".
 Figure of enslaved diapered princess is the file "NPCs/MultiFloor/Princess/princess4.jpg".
+Figure of original princess combat is the file "NPCs/MultiFloor/Princess/princess5.jpg".
+Figure of original diapered princess combat is the file "NPCs/MultiFloor/Princess/princess6.jpg".
 Figure of temporary caged princess is the file "NPCs/MultiFloor/Princess/cage5.jpg".
 
 To decide which figure-name is the monster-image of (M - ex-princess):
@@ -19,6 +21,9 @@ To decide which figure-name is the monster-image of (M - ex-princess):
 		if watersports fetish is 0, decide on figure of temporary caged princess;
 		if the current-torment of M > 0, decide on figure of caged urinal princess piss;
 		decide on figure of caged urinal princess;
+	if M is in School35:
+		if diaper lover > 0, decide on figure of original diapered princess combat;
+		decide on figure of original princess combat;
 	if diaper lover > 0, decide on figure of original diapered princess;
 	decide on figure of original princess;
 
@@ -246,7 +251,7 @@ To say StoryAnswer of (M - ex-princess):
 		let hb be mechanic;
 		if demon lord is alive or demon lord is bossdefeated, now hb is demon lord;
 		if hb is mechanic:
-			say "[speech style of M]'Xavier is a criminal, I bound here as part of [his of hb] punishment.'[roman type][line break]";
+			say "[speech style of M]'Xavier is a criminal I bound here as part of [his of hb] punishment.'[roman type][line break]";
 		otherwise:
 			say "[speech style of M]'Xavier is an invader from another dimension, who I defeated and sealed away. [if hb is alive][big he of hb] is even more powerful than [he of hb] was back then...I'll need your help[otherwise]Many of [his of hb] vassals remain in this world[end if].'[roman type][line break]";
 	otherwise if playerRegion is woods:
@@ -290,7 +295,7 @@ To say AdviceAnswer of (M - ex-princess):
 	otherwise if playerRegion is hotel:
 		if demon lord is alive:
 			let dl be demon lord;
-			say "[speech style of M]'It will be difficult. [big he of dl] is immune to physical weapons, so if you don't have a magic weapon, you will need a blessing from the gods. [big he of M] has a weakness, but it isn't worth the risk.'[roman type][line break]";[he's also weak to demonic items]
+			say "[speech style of M]'It will be difficult. [big he of dl] is immune to physical weapons, so if you don't have a magic weapon, you will need a blessing from the gods. If you can't manage that, [he of M] does have another weakness, but... it isn't worth the risk.'[roman type][line break]";[he's also weak to demonic items. And condoms. Which does she mean?]
 		otherwise if mechanic is alive:
 			let mec be mechanic;
 			say "[speech style of M]'If you can separate [him of mec] from [his of mec] wrench, [he of mec] will be greatly weakened. After that, [he of mec] will be just like anyone else.'[roman type][line break]";
@@ -301,9 +306,9 @@ To say AdviceAnswer of (M - ex-princess):
 			say "[speech style of M]'I...don't know. I have never seen that thing before.'[roman type][line break]";
 		otherwise if vampiress is alive:
 			let mb be vampiress;
-			say "[speech style of M]'Do you really need to defeat [him of mb]? [big he of mb]'s harmless...Well, as a vampire, [he of mb] must feed in order to maintain [his of mb] strength. If you don't allow [him of mb] to feed, [he of mb] will eventually starve.'[roman type][line break]";
+			say "[speech style of M]'Is [he of M] really that bad? ...There are two ways to defeat [him of mb]. The safe way is to just not let [him of mb] feed, and [he of mb] will eventually grow weak and starve. The risky way is to take a stake and jam it right up [his of mb] ass. Yeah, [his of mb] weakness is anal in more ways than one.'[roman type][line break]";
 	otherwise:
-		say "[speech style of M]'Hmm...I didn't create them, so I'm not sure. Let me think about it.'[roman type][line break]".[TODO: work on]
+		say "[speech style of M]'Their magic is strong enough to prevent even me entering their room, so you should be prepared to face them alone. Both of them are warriors of exceptional physical and sexual might. Its possible you will defeat them in combat, but to be safe, you should also have a strategy for taking them on in the bedroom.'[roman type][line break]".
 
 To say TeachQuestion of (M - ex-princess):
 	say "[variable custom style]'So, is there anything you can do to help me?'[roman type][line break]";
@@ -366,8 +371,8 @@ To compute resolution of (M - ex-princess) taking (T - a thing):
 To compute resolution of (M - ex-princess) taking (T - skeleton key):
 	destroy T;
 	now M is guarding;
-	now the princess-power of M is 10;
-	if M is carrying royal scepter, now the princess-power of M is 14;
+	now the princess-power of M is 14;
+	if M is carrying royal scepter, now the princess-power of M is 16;
 	now School35 is use-the-floor;
 	let LN be the list of alive undefeated staff members;
 	sort LN in random order;
@@ -417,8 +422,8 @@ An all later time based rule (this is the school rescue fight rule):
 				if M is in the location of the player:
 					say "[speech style of N]'[one of]That's enough. This rebellion is over[or]This is the end[or]Stay down[stopping].'[roman type][line break][BigNameDesc of N] makes a few arcane gestures and ropes of light begin to fly at you and [NameDesc of M].";
 					if a random number between 1 and 8 < the princess-power of M:
-						let T be the substituted form of "I [one of][if interracial fetish is 1]am a [WhiteSub] whose life is dedicated to serving [BlackCock][otherwise]I am a filthy whore whose life is dedicated to serving [manly-penis][end if][or]am a worthless object, my only purpose is to keep my [cunt] warm and ready[or]am a disgusting fraud of a Princess who fucks [GrossMates][or]need more cum in my [pussy][if pregnancy fetish is 1]! Fuck a baby into me[end if][in random order]";
-						if diaper quest is 1, now T is the substituted form of "I [one of]am dedicated to [if diaper messing >= 3]pooping in Pampers[otherwise]only using diapers[end if] for the rest of my life[or]am a worthless baby who can't even make it to the potty in time[or]am a disgusting fraud of a Princess who gets turned on by being treated like a baby[or]need my Mommy[in random order]";
+						let T be the substituted form of "I [one of][if interracial fetish is 1]am a [WhiteSub] whose life is dedicated to serving [BlackCock][otherwise]I am a filthy whore whose life is dedicated to serving [manly-penis][end if][or]am a worthless object, my only purpose is to keep my [cunt] warm and ready[or]spend my weekends guzzling [if watersports fetish is 1]piss[otherwise]cock-snot[end if] in men's public toilets[or]am a disgusting fraud of a Princess who fucks [GrossMates][or]need more cum in my [pussy][if pregnancy fetish is 1]! Fuck a baby into me[end if][in random order]";
+						if diaper quest is 1, now T is the substituted form of "I [one of]am dedicated to [if diaper messing >= 3]pooping in Pampers[otherwise]only using diapers[end if] for the rest of my life[or]spend my weekends guzzling [if watersports fetish is 1]piss[otherwise][milk][end if] from my mommy[or]am a worthless baby who can't even make it to the potty in time[or]am a disgusting fraud of a Princess who gets turned on by being treated like a baby[or]need my Mommy[in random order]";
 						say "[speech style of M]'[one of]No[or]I can't go back[or]Not yet[stopping]!'[roman type][line break][BigNameDesc of M] raises [his of M] wand and points it at you. You hear [him of M] reciting the incantation to cast a spell.[line break][speech style of M]'[T]!'[roman type][line break]";
 						if T matches the text "dedicated":
 							say "You feel your body fully heal[if the player is prone], and are raised back to your feet[end if]! But at what cost? You feel significant physical power leaving your body, and you doubt it will return after the fight is done.";
@@ -426,17 +431,22 @@ An all later time based rule (this is the school rescue fight rule):
 							StrengthDown 4; [Deliberately harsh.]
 							DexDown 4;
 						otherwise if T matches the text "worthless":
+							say "You feel your body fully heal[if the player is prone], and are raised back to your feet[end if]! But the magic ricochets off of all of your clothing, surrounding it with negative energy!";
+							BodyHeal 10;
+							repeat with C running through worn cursable clothing:
+								decrease the raw-magic-modifier of C by 1;
+						otherwise if T matches the text "guzzling":
 							say "You feel your body mostly heal[if the player is prone], and are raised back to your feet[end if]! But the magic ricochets off of all of your clothing!";
-							BodyHeal 7;
+							BodyHeal 8;
 							repeat with C running through worn transformable clothing:
 								potentially transform C;
 						otherwise if T matches the text "fraud":
 							say "You feel your body significantly heal[if the player is prone], and are raised back to your feet[end if]! But it also feels like there's a dark cloud hanging over you now, like you're going to find yourself getting very unlucky for a while!";
-							BodyHeal 5;
+							BodyHeal 7;
 							decrease the raw luck of the player by 15;
 						otherwise:
 							say "You feel your body slightly heal[if the player is prone], and are raised back to your feet[end if]!";
-							BodyHeal 3;
+							BodyHeal 5;
 						now the stance of the player is 0;
 						now the fatigue of the player is 0;
 						decrease the princess-power of M by 2;

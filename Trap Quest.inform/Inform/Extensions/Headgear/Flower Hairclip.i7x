@@ -40,26 +40,14 @@ To compute class outfit of (H - flower hairclip):
 	let W be a random off-stage reinforced warrior chestpiece;
 	let G be gown-of-purity;
 	if (W is actually summonable or (W is warrior chestpiece and warrior-summoned is 0 and the number of worn warrior chestpiece is 0)) and the largeness of breasts < 18:
-		if warrior-summoned < 2:
-			repeat with O running through worn breast covering clothing:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn belly covering clothing:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
+		PinkWardrobeUnclash W;
 		say "[bold type]You are forced to [if the player is upright]stand[otherwise]stay[end if] still as a rigid metal chestpiece appears around you. Somehow, you now feel more in control of your urges.[roman type][line break]";
 		summon W;
 		now the raw-magic-modifier of W is the virginity-count of virginity-retention-quest;
 		if warrior-summoned is 0, now warrior-summoned is 1;
 		now W is suppression;
 	otherwise if virgin magical girl outfit is not worn and the number of worn golden warrior priestess outfit is 0 and (G is actually summonable or (G is gown-of-purity and warrior-summoned < 2)):
-		if warrior-summoned < 2:
-			repeat with O running through worn skirt clashing clothing:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn exclusive corsets:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
+		PinkWardrobeUnclash G;
 		say "[bold type]A belt suddenly latches around you with a dull *clang*. Two strips of pure white fabric hang from the sides. You feel incredible - fuelled with extra determination and feeling more comfortable with your current situation, you surge onwards![roman type][line break]";
 		summon G;
 		now warrior-summoned is 2;

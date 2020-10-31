@@ -26,9 +26,15 @@ To decide which number is the slap damage of (P - a person):
 	unless there is a worn slap ready projectile equippable:
 		increase A by combat bonus;
 		if damage-explained > 1, say combat bonus explanation;
-	if demon horns is worn and the total-souls of the player > 9:
-		increase A by 3;
-		if damage-explained > 1, say "+3 (over 9 souls collected) ";
+	if avatar-headpiece is worn:
+		let BF be the blackfire of avatar-headpiece;
+		if BF > 0:
+			if BF < 3:
+				increase A by 1;
+				if damage-explained > 1, say "+1 (avatar black fire)";
+			otherwise:
+				increase A by 3;
+				if damage-explained > 1, say "+3 (avatar black fire)";
 	let L be a random worn living tentacles;
 	if L is living tentacles:
 		if the charge of L > 50:
@@ -109,7 +115,7 @@ To decide which number is the zap damage of (P - a person):
 		increase A by 1;
 		if damage-explained > 1, say "+1 (fire palm tattoo) ";
 	if currentZapper is not yourself:
-		if the magic-power of the player <= 0 and the magic-cost of currentZapper > 0:
+		if the magic power of the player <= 0 and the magic-cost of currentZapper > 0:
 			if damage-explained > 1, say "Override to 0 (insufficient magic power) ";
 			decide on 0;
 		let N be the damage improvement of currentZapper;

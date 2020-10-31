@@ -41,6 +41,6 @@ To decide which number is the bartering value of (T - a bag lunch) for (M - a wi
 To decide which number is the bartering value of (T - a bag lunch) for (M - a sex doll):
 	decide on 2.
 
-Definition: a bag lunch is oral sex themed: decide yes.
+Definition: a bag lunch is semen themed: decide yes.
 
 Bag Lunch ends here.

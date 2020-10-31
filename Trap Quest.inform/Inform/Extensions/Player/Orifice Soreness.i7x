@@ -136,7 +136,7 @@ To passively stimulate (F - a body part) from (T - an object):
 			increase AR by 100;
 		otherwise:
 			increase AR by 50;
-		if debuginfo > 1, say "[input-style]Stimulation of [F][if T is a thing] by [T][end if]: Body part base ([if F is fuckhole or F is penis]350) + addiction & sensitivity bonus ([A * 20])[otherwise if F is breasts]200) + sensitivity bonus ([A * 20])[otherwise if F is hips or F is thighs]100)[otherwise]50)[end if] + stimulation ([ST * 20]) = [AR][roman type][line break]";
+		if debuginfo > 1, say "[input-style]Stimulation of [F][if T is a thing] by [T][end if][input-style]: Body part base ([if F is fuckhole or F is penis]350) + addiction & sensitivity bonus ([A * 20])[otherwise if F is breasts]200) + sensitivity bonus ([A * 20])[otherwise if F is hips or F is thighs]100)[otherwise]50)[end if] + stimulation ([ST * 20]) = [AR][roman type][line break]";
 		arouse AR.
 
 [!<latestAssholeInvader:Object>*
@@ -213,10 +213,10 @@ To RuinRoll (F - a fuckhole):
 
 To compute submission success of (M - a thing) in (F - a fuckhole):
 	say submission success of M in F;
-	if F is asshole:
+	[if F is asshole:
 		if a random number between 0 and the raw anal sex addiction of the player is 0 and the player is horny, AnalSexAddictUp 1;
 	otherwise:
-		if a random number between 0 and the raw vaginal sex addiction of the player is 0 and the player is horny, VaginalSexAddictUp 1.
+		if a random number between 0 and the raw vaginal sex addiction of the player is 0 and the player is horny, VaginalSexAddictUp 1.]
 
 To say submission success of (M - a thing) in (F - a fuckhole):
 	say "[if the latex-transformation of the player > 3][one of]Your rubber [variable F] doesn't get sore.[or][or][cycling][otherwise if the relaxskill of the player is 1]By relaxing your [variable F] like the wrestler taught you, you have avoided getting more sore![otherwise]By not resisting the acts of [FuckerDesc of M], you have successfully stopped your [variable F] getting more sore![end if]".

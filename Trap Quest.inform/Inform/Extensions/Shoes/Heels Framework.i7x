@@ -57,9 +57,11 @@ To decide which number is the adult-influence of (C - a heels):
 To decide which number is the unique outrage of (C - a heels):
 	decide on 0.
 
-To decide which number is the kick-bonus of (S - a heels):
-	if S is blessed, decide on the heel-height of S + 1;
-	decide on the heel-height of S.
+To decide which number is the kick-bonus of (H - a heels):
+	let S be 0;
+	if H is blessed, increase S by 1;
+	if the hindrance of H <= 0, increase S by the heel-height of H;
+	decide on S.
 
 To decide which number is the damage modifier of (H - a heels):
 	[Double damage on crit with heels]

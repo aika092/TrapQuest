@@ -35,8 +35,10 @@ Definition: vampiric fangs is destructible: decide no.
 
 To decide which number is the strength-influence of (C - vampiric fangs):
 	let X be 0;
-	if the player is craving semen, decrease X by 1;
-	if the player is desperately craving semen, decrease X by 2;
+	if semen is desperately craved:
+		decrease X by 2;
+	otherwise if semen is craved:
+		decrease X by 1;
 	decide on X.
 
 Chapter - Class Outfit
@@ -54,10 +56,7 @@ To compute class outfit of (H - vampiric fangs):
 	let C be a random off-stage vampiric claws;
 	let P be a random off-stage vampiric cape;
 	if C is actually summonable or (C is vampiric claws and vampire-summoned is 0) and the number of worn wood-dongs is 0:
-		if vampire-summoned is 0:
-			repeat with O running through worn hand ready equippables:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
+		PinkWardrobeUnclash C;
 		say "[bold type]You feel your hands shift and warp painfully as your fingernails elongate and sharpen, turning into claws. Your slaps will certainly be more powerful! And, that vampiress told you you'd be able to drain an enemy's energy with these.[roman type][line break]";
 		summon C uncursed;
 		now vampire-summoned is 1;

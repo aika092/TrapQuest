@@ -265,7 +265,7 @@ To say QuestTitle of (Q - chest-exposing-quest):
 	say " (topless greeting quest)".
 
 To progress quest of (Q - chest-exposing-quest) from (M - a monster):
-	unless M is the latest-monster of Q or the player is in a predicament room:
+	unless M is the latest-monster of Q or the player is in a predicament room or playerRegion is not school:
 		increase the greet-count of Q by 1;
 		now the latest-monster of Q is M;
 		repeat with C running through worn cursed clothing:
@@ -1202,7 +1202,7 @@ To decide what number is the quest-weighting of (Q - mouthful-quest) for (C - a 
 	decide on 1.
 
 Definition: mouthful-quest is appropriate:
-	if diaper quest is 0, decide yes;
+	if diaper quest is 0 and the semen taste addiction of the player < 20, decide yes;
 	decide no.
 
 To say QuestFlav of (Q - mouthful-quest):

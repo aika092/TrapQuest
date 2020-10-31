@@ -49,7 +49,7 @@ A poster can be unspotted or spotted. A poster is usually unspotted. [Has the pl
 A poster can be identifiable or unidentifiable. A poster is usually identifiable. [Can the player be identified from the poster?]
 Understand "banner" as poster. Understand "new" as a poster when the item described is unspotted and the item described is on-stage. [For debugging purposes]
 
-Figure of poster is the file "Env/Multifloor/poster1.png".
+Figure of poster is the file "Env/MultiFloor/poster1.png".
 Figure of banner is the file "Env/Hotel/banner1.png".
 
 To decide which figure-name is the examine-image of (C - a poster):

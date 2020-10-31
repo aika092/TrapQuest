@@ -140,8 +140,8 @@ Check going while the player is in InsideTheShack:
 	let R be the source-room of InsideTheShack;
 	if the player is immobile, say "Aren't you a bit tied up at the moment?" instead;
 	if the player is in danger:
-		say "The door has been sealed with magic! [if the magic-power of the player > 2]You might be able to use your own magic to unlock it. Do you want to try?[otherwise]You might be able to overcome it, if you had some magic power...[end if]";
-		if the magic-power of the player > 2 and the player is consenting:
+		say "The door has been sealed with magic! [if the magic power of the player > 2]You might be able to use your own magic to unlock it. Do you want to try?[otherwise]You might be able to overcome it, if you had some magic power...[end if]";
+		if the magic power of the player > 2 and the player is consenting:
 			say "You feel the magic power built up in your body flow into the door, which glows bright blue before swinging open. You quickly leave the shack!";
 			now the player is in R;
 	otherwise:

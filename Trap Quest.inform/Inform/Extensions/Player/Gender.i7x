@@ -17,7 +17,7 @@ Definition: a person is presenting as female:
 	decide no.
 
 Definition: yourself is gendered female:
-	if the player is originally female, decide yes;
+	if the player is originally female or the player is female, decide yes;
 	if the player is originally male and transGender is 1, decide yes;
 	decide no.
 Definition: yourself is gendered male:
@@ -44,6 +44,8 @@ To SexChange (P - a person):
 		say "[if transGender is 1][variable custom style]I've dreamed about the day I might get a real vagina. But I didn't expect it to happen like this...[otherwise if the bimbo of the player < 7][first custom style]No, no, no, no! This is so gross. I want my dick! I have to win this game and get back into my real body.[otherwise if the bimbo of the player < 10][first custom style]I never asked for this! Why is this happening to me? I guess my name is definitely [NameBimbo] now.[otherwise if the bimbo of the player < 14 or diaper quest is 1][second custom style][NameBimbo]... I like that name. Well this will be a new experience, but at least it should be fun.[otherwise][second custom style]This is amazing! Now I can fuck studs just like a real girly bimbo. Thanks so much Nintendolls! I can't wait to lose my virginity. *giggle*[end if][roman type][line break]";
 		now the size of penis is 0;
 		now the real size of penis is -1;
+		now the size of scrotum is 0;
+		now the real size of scrotum is -1;
 		if vaginalvirginity-taker is the throne, now the vaginalvirgin of the player is 1;
 		now the soreness of vagina is 0;
 		now the openness of vagina is 0;

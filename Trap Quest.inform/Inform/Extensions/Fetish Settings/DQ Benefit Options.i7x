@@ -4,7 +4,7 @@ Table of Diaper Quest Benefit Options
 title	subtable	description	toggle
 "[roman type]Confirm Choices (shortcut: press Q)"	--	--	quit rule
 "Reset Choices"	--	--	reset rule
-"CHOOSE A BACKGROUND (5 points) [if choice in row 52 of the Table of Player Options <= 0]not [otherwise][bold type][end if]chosen[roman type]"	Table of Background Options	--	--
+"CHOOSE A BACKGROUND (5 points) [if background-selected is 0]not [otherwise][bold type][end if]chosen[roman type]"	Table of Background Options	--	--
 "Extra Strength: [bonus strength] ([bonus strength points] points used. [bonus strength cost].)"	--	--	bonus strength rule
 "Extra Dexterity: [bonus dexterity] ([bonus dexterity points] points used. [bonus dexterity cost].)"	--	--	bonus dexterity rule
 "Extra Intelligence: [bonus intelligence] ([bonus intelligence points] points used. [bonus intelligence cost].)"	--	--	bonus intelligence rule

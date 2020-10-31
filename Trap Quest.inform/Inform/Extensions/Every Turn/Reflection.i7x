@@ -67,7 +67,7 @@ To reflect on (A - huge-tits):
 	if the largeness of breasts > 5 + (the humiliation of the player / 2000) and the player-class is not succubus:
 		say "[if the bimbo of the player < 9]You look down at your [MediumDesc of breasts] and [one of]shudder as you feel your dignity continue to be ripped to shreds[or]whimper with shame[or]shiver with embarrassment[in random order][otherwise]You look down at your [MediumDesc of breasts] and giggle awkwardly [one of]as the reality of your humiliating situation hits you[or]at their crazy size[or]while trying to think about things other than your current embarrassing situation[in random order][end if].";
 	otherwise if the player-class is succubus:
-		say "A mocking voice echoes within you, saying you should be ashamed of your puny breasts.";
+		say "Your [if soulstone is worn]soulstone aches[otherwise]horns ache[end if] with embarrassment as you look down at your puny breasts.";
 	otherwise:
 		say "[if the bimbo of the player < 9]You hold your [MediumDesc of breasts] and [one of]shudder as you wonder how much bigger they are going to grow[or]feel their weight. You are not used to this[or]pray that they don't continue to grow[or]hope desperately that nobody can see you like this[in random order][otherwise]You feel your [MediumDesc of breasts] and giggle awkwardly as you [one of]wonder how much bigger they are going to grow[or]absent-mindedly play with your nipples[or]catch yourself absent-mindedly touching yourself[or]imagine how stupidly big they might end up at this rate[in random order][end if].".
 
@@ -84,7 +84,7 @@ To reflect on (A - huge-hips):
 	if the thickness of hips > the bimbo of the player + 3 and the total volume of hips > the bimbo of the player + 5 and the player-class is not succubus:
 		say "[if the bimbo of the player < 9]You feel your [AssDesc] [one of]wobbling behind you[or]bouncing wildly[in random order] and pray that no[one of] perverted businessmen are[or]body you know is[or]thing is[or]body is[sticky random] watching you play this game.[otherwise]You feel your [AssDesc] [one of]wobbling behind you[or]bouncing wildly[in random order] and realise that people could be watching you...[line break][second custom style]Oh my gawd, maybe they're all wanking over [one of]me[or]my body[or]my ass[in random order] right now?[roman type][line break][end if]";
 	otherwise if the player-class is succubus:
-		say "A mocking voice echoes within you, saying you should be ashamed of your stick of a body.";
+		say "Your [if soulstone is worn]soulstone aches[otherwise]horns ache[end if] with embarrassment as you look down at your stick-like body.";
 	otherwise if the player is not immobile:
 		say "[if the bimbo of the player < 9]You hold your [MediumDesc of hips] to stop them [one of]swaying sexily behind you[or]wobbling[in random order], and pray that no[one of] perverted businessmen are[or]body is[sticky random] watching you play this game.[otherwise]You grab hold of your wobbling [AssDesc] and realise that people could be watching you...[end if]".
 
@@ -100,15 +100,13 @@ To reflect on (A - huge-belly):
 
 crawling-around is a humiliating situation.
 Definition: crawling-around (called A) is applicable:
-	if (the player is proud or the player-class is succubus or the class of the player is princess) and the player is prone, decide yes;
+	if (the player is proud or the class of the player is princess) and the player is prone, decide yes;
 	decide no.
 To reflect on (A - crawling-around):
 	if the class of the player is princess:
 		say "[first custom style]Why am I crawling around on my knees like some sort of peasant...[roman type][line break]";
 	otherwise if the bimbo of the player < 3 and the player-class is not succubus:
 		say "[first custom style]I'm on my knees [one of]crawling through this place[or]crawling around like a [if diaper lover >= 1]kid[otherwise]dog[end if][or]like some kind of [if diaper quest is 1]baby[otherwise]common slut[end if][in random order]. How humiliating is this![roman type][line break]";
-	otherwise if the player-class is succubus:
-		say "A mocking voice in your head chides you for crawling like a pathetic mortal.";
 	otherwise:
 		say "[first custom style]I'm on my knees [one of]crawling through this place[or]crawling around[or]with my butt high in the air[in random order]. How crazy is this![roman type][line break]".
 
@@ -126,7 +124,7 @@ To reflect on (A - outrageous-heels):
 	if the player-class is not succubus:
 		say "You [one of]wobble unsteadily on your[or]can't believe you're strutting around in[or]are constantly aware of the clickety clack sound coming from you strutting around in these[in random order] ridiculous heels. How embarrassing is this!";
 	otherwise:
-		say "A voice inside you quietly tells you how demeaning it is that you aren't wearing proper heels!".
+		say "Your [if soulstone is worn]soulstone aches[otherwise]horns ache[end if] with embarrassment at walking around in such short heels!";
 
 outrageous-bra is a humiliating situation.
 Definition: outrageous-bra (called A) is applicable:

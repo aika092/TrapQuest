@@ -43,10 +43,10 @@ To say MainStatsBar:
 	say "STR: [VagueStrength] DEX: [VagueDex] INT: [VagueInt]".
 
 To say HighResBarSecondRow:
-	say "STATUS: [VagueInternalFeeling]   [TQDQ Appearance] [VagueDignity]   SLAP: [saved-printed-slap-damage] KNEE: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks][if the total magic power of the player > 0] MAGIC: [magic power of the player] / [total magic power of the player][end if][if the class of the player is succubus] SOULS: [souls of the player][end if]".
+	say "STATUS: [VagueInternalFeeling]   [TQDQ Appearance] [VagueDignity]   SLAP: [saved-printed-slap-damage] KNEE: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks][if the total magic power of the player > 0] MAGIC: [magic power of the player] / [total magic power of the player][end if]".
 
 To say MinimalBarSecondRow:
-	say "[MainStatsBar] SLAP: [saved-printed-slap-damage] KNEE: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks][if the total magic power of the player > 0] MAGIC: [magic power of the player] / [total magic power of the player][end if][if the class of the player is succubus] SOULS: [souls of the player][end if]".
+	say "[MainStatsBar] SLAP: [saved-printed-slap-damage] KNEE: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks][if the total magic power of the player > 0] MAGIC: [magic power of the player] / [total magic power of the player][end if]".
 
 To say HighResBarThirdRow:
 	say "[if diaper quest is 0]TITS: [VagueBreast] BELLY: [VagueBelly][otherwise]STOMACH: [VagueStomach][end if] [if diaper quest is 1 and there is a worn diaper]DIAPER: [VagueDiaper][otherwise if diaper quest is 1 and there is a worn knickers]UNDIES: [VagueDiaper][otherwise if diaper quest is 0]HIPS: [VagueHips][end if]".
@@ -70,7 +70,7 @@ To say LowResStatus:
 	say "STATUS: [VagueInternalFeeling]   HEALTH: [VagueExternalFeeling]".
 
 To say LowResCombat:
-	say "SLAP POWER: [saved-printed-slap-damage] KNEE POWER: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK POWER: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks][if the total magic power of the player > 0] MAGIC: [magic power of the player] / [total magic power of the player][end if][if the class of the player is succubus] SOULS: [souls of the player][end if]".
+	say "SLAP POWER: [saved-printed-slap-damage] KNEE POWER: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK POWER: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks][if the total magic power of the player > 0] MAGIC: [magic power of the player] / [total magic power of the player][end if]".
 
 Part - Debug Res Status Bars
 
@@ -85,7 +85,7 @@ left	central	right
 "[TitleBimbo]"	""	""
 "STR:[saved-flat-strength]/30 DEX:[saved-flat-dexterity]/30 INT:[saved-flat-intelligence]/30 TITS:[largeness of breasts]/[max breast size] BELLY:[largeness of belly]/[max belly size] HIPS:[thickness of hips]/[max ass size]"	""	""
 "[DebugLowResAppearance] DIGNITY:[humiliation of the player]/40000 SEX-ADDICTION:[sex addiction of the player]/20 DELICATENESS:[delicateness of the player]/20"	""	""
-"FATIGUE:[fatigue of the player] DAMAGE:[body soreness of the player]/10 ASS:[soreness of asshole]/10 [if the player is female]PUSSY:[soreness of vagina]/10 [end if]HYDRATION:[stomach-liquid of the player] FOOD:[stomach-food of the player][if the magic-power of the player > 0] MAGIC:[magic-power of the player][end if][if the class of the player is succubus] SOULS: [souls of the player][end if]"	""	""
+"FATIGUE:[fatigue of the player] DAMAGE:[body soreness of the player]/10 ASS:[soreness of asshole]/10 [if the player is female]PUSSY:[soreness of vagina]/10 [end if]HYDRATION:[stomach-liquid of the player] FOOD:[stomach-food of the player][if the total magic power of the player > 0] MAGIC: [magic power of the player] / [total magic power of the player][end if]"	""	""
 "STATUS: [VagueInternalFeeling] SLAP DICE: 2d[saved-printed-slap-damage] KNEE DICE: 2d[saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK DICE: 2d[saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks]"	""	""
 
 To say caused by (N - a number):
@@ -601,20 +601,11 @@ To say VagueInternals:
 		otherwise:
 			say "Aroused";
 		now fine is 0;
-	if the player is craving semen:
+	if there is a craved liquid-object:
 		if fine is 0, say " & ";
-		if the player is desperately craving semen:
-			say "Desperately ";
-		if the player is craving semen:
-			say "Craving [if the player is craving milk]Milk And [end if][if the class of the player is santa's little helper]A Festive Drink[otherwise]Cum[end if]";
-			now fine is 0;
-	otherwise if the player is craving milk:
-		if fine is 0, say " & ";
-		if the player is desperately craving milk:
-			say "Very ";
-		if the player is craving milk:
-			say "Cranky";
-			now fine is 0;
+		if there is a desperately craved liquid-object, say "Very ";
+		say "Cranky";
+		now fine is 0;
 	if player-immobile is true:
 		if fine is 0, say " & ";
 		say "[if the player is monster fucked]Being Fucked[otherwise]Stuck[end if]";

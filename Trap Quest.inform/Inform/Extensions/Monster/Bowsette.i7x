@@ -276,10 +276,9 @@ Part 3 - Combat
 Section 1 - Protect and Attack
 
 To compute (M - bowsette) protecting against (X - a monster):
-	if M is guardian:
-		say "[speech style of M]'[one of]An ally of the turtle clan does not fight alone[or]Rawr[stopping]!'[roman type][line break]";
-		let A be 2;
-		compute X receiving A damage from M;
+	if M is ally:
+		if M is guardian, say "[speech style of M]'[one of]An ally of the turtle clan does not fight alone[or]Rawr[stopping]!'[roman type][line break]";
+		compute M default protecting against X;
 	otherwise:
 		say "[one of][BigNameDesc of M] watches with an entertained look on [his of M] face.[or][or][cycling]";
 
@@ -353,6 +352,14 @@ To compute vaginal sex of (M - bowsette):
 		PussyFill 1;
 	say "[one of][M sex reaction][or][cycling]".
 
+To compute post climax effect of (M - bowsette) in (F - a body part):
+	if there is a worn tattoo and the number of worn ass tattoo is 0:
+		summon brainless bimbo tattoo;
+		say "You yelp as a red mark of a Turtle King appears on your ass cheek!";
+	if brainless bimbo tattoo is worn:
+		increase the stolen-intelligence of brainless bimbo tattoo by 1;
+		say "You feel the [brainless bimbo tattoo] reducing your intelligence[one of][or] even more[stopping]!".
+
 
 Section 3 - Damage
 
@@ -405,5 +412,7 @@ To say AdviceAnswer of (M - bowsette):
 
 To decide which number is the bartering value of (T - a fae mushroom) for (M - bowsette):
 	decide on 4.
+To decide which number is the bartering value of (T - nail file) for (M - bowsette):
+	decide on 3.
 
 Bowsette ends here.

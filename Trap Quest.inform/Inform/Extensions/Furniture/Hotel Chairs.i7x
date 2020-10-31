@@ -129,8 +129,7 @@ To compute baby hotel chair sitting:
 			otherwise:
 				say "The vibration is way too powerful for you to put up any resistance, and soon you are being forced into a shaking orgasm!";
 				if the player is not possessing a vagina:
-					orgasm;
-					punish shameful male orgasm;
+					penis orgasm shamefully;
 				otherwise:
 					vaginally orgasm shamefully;
 		otherwise:

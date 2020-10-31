@@ -76,13 +76,10 @@ To decide which number is the bartering value of (T - whip-of-domination) for (M
 	decide on 0.
 
 To say MonsterOfferAcceptFlav of (M - a demoness) to (T - whip-of-domination):
-	say "[speech style of M]'Oh wow, this is PERFECT!'[roman type][line break]".
+	say "[speech style of M]'Oh wow, this is PERFECT! What a rare magical item... I'll have to give you something in return. Here, take this! I understand it's the most valuable item to you mortals in the entire world.'[roman type][line break]".
 
 To say MonsterOfferRejectFlav of (M - a demoness) to (T - whip-of-domination):
 	say "[speech style of M]'I don't need that to dominate you with, slut.'[roman type][line break]".
-
-To say OfferThanksFlav of (M - a demoness) for (T - whip-of-domination):
-	say "[speech style of M]'What a rare magical item... I'll have to give you something in return. Here, take this! I understand it's the most valuable item to you mortals in the entire world.'[roman type][line break]".
 
 To compute offer reward of (M - a demoness) for (T - whip-of-domination):
 	let D be a random off-stage necklace;
@@ -90,7 +87,8 @@ To compute offer reward of (M - a demoness) for (T - whip-of-domination):
 		now D is solid gold;
 		set shortcut of D;
 		now D is in the location of the player;
-		say "[BigNameDesc of M] summons a [D] out of nowhere, and hands it to you.".
+		say "[BigNameDesc of M] summons a [D] out of nowhere, and hands it to you.";
+		compute autotaking D.
 
 To decide which number is the bartering value of (T - whip-of-domination) for (M - vampiress):
 	decide on 5.

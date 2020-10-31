@@ -70,21 +70,30 @@ To compute furniture resting on (F - modification machine):
 	now F is not grabbing the player.
 
 To compute (M - a modification machine) removing all protection from (F - a fuckhole):
+	let givenUp be 0;
 	if F is vagina:
-		while the player is pussy protected:
+		while givenUp is 0 and the player is pussy protected:
 			let C be a random top level protection clothing;
-			say "An arm with a metal claw at the end moves towards your crotch, powerfully pulls off your [ShortDesc of C], and discards it on the ground!";
-			now C is in the location of the player;
-			dislodge C;
-			compute extra turn;
+			if C is removable:
+				say "An arm with a metal claw at the end moves towards your crotch, powerfully pulls off your [ShortDesc of C], and discards it on the ground!";
+				now C is in the location of the player;
+				dislodge C;
+				compute extra turn;
+			otherwise:
+				say "An arm with a metal claw at the end tries to pull off your [ShortDesc of C], but finds that it can't! It gives up.";
+				now givenUp is 1;
 	otherwise:
-		while the player is ass protected:
+		while givenUp is 0 and the player is ass protected:
 			let C be a random top level ass protection clothing;
-			say "An arm with a metal claw at the end moves towards your butt, powerfully pulls off your [ShortDesc of C], and discards it on the ground!";
-			now C is in the location of the player;
-			dislodge C;
-			compute extra turn;
-	while there is a thing penetrating F:
+			if C is removable:
+				say "An arm with a metal claw at the end moves towards your butt, powerfully pulls off your [ShortDesc of C], and discards it on the ground!";
+				now C is in the location of the player;
+				dislodge C;
+				compute extra turn;
+			otherwise:
+				say "An arm with a metal claw at the end tries to pull off your [ShortDesc of C], but finds that it can't! It gives up.";
+				now givenUp is 1;
+	while givenUp is 0 and there is a thing penetrating F:
 		let C be a random thing penetrating F;
 		say "An arm with a metal claw at the end moves towards your [variable F], and powerfully rips out your [ShortDesc of C]!";
 		if C is sex toy:
@@ -93,11 +102,11 @@ To compute (M - a modification machine) removing all protection from (F - a fuck
 			dislodge C;
 		otherwise:
 			destroy C;
-		compute extra turn;
+		compute extra turn.
 
 To compute (M - a modification machine) widening (F - a fuckhole):
 	compute M removing all protection from F;
-	compute M stretching F.
+	if (F is vagina and the player is not pussy protected) or (F is asshole and the player is not ass protected), compute M stretching F.
 
 To compute (M - a modification machine) stretching (F - a fuckhole):
 	let O be the openness of F;
@@ -120,13 +129,15 @@ To compute (M - a modification machine) stretching (F - a fuckhole):
 To compute (M - a modification machine) babifying:
 	if diaper messing >= 4 and a random number between 1 and 2 is 1 and the number of ass covering unremovable clothing is 0:
 		compute M removing all protection from asshole;
-		say "A robotic arm pushes a small rubber pellet into your [asshole].[line break][variable custom style]Was that a[one of][or]nother[stopping] suppository?![roman type][line break]";
-		increase suppository by 7;
-		if the player is feeling full, say "As if to answer your question, your stomach begins to grown and churn.";
+		if the player is not ass protected:
+			say "A robotic arm pushes a small rubber pellet into your [asshole].[line break][variable custom style]Was that a[one of][or]nother[stopping] suppository?![roman type][line break]";
+			increase suppository by 7;
+			if the player is feeling full, say "As if to answer your question, your stomach begins to grown and churn.";
 	otherwise if the total fill of belly is 0 and a random number between 1 and 2 is 1:
 		compute M removing all protection from asshole;
-		say "A robotic arm pushes a small tube into your [asshole]. A moment later, you can feel yourself being pumped full of an enema! Moments later, you are brought to bursting point, your belly bulging under the strain. The tube is removed, leaving you with a desperate urge to [bold type]expel[roman type] all the liquid.";
-		assfill belly limit water;
+		if the player is not ass protected:
+			say "A robotic arm pushes a small tube into your [asshole]. A moment later, you can feel yourself being pumped full of an enema! Moments later, you are brought to bursting point, your belly bulging under the strain. The tube is removed, leaving you with a desperate urge to [bold type]expel[roman type] all the liquid.";
+			assfill belly limit water;
 	otherwise if the player is bursting and the player is not really bursting:
 		say "A robotic arm injects you in the side with a needle. ";
 		while the player is not really bursting and the player is not incontinent and incontinence < the max-incontinence of the player:

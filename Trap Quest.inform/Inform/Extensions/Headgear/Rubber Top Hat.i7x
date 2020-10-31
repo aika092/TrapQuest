@@ -51,16 +51,7 @@ To compute unique recycling of (C - rubber top hat):
 To compute class outfit of (H - rubber top hat):
 	let P be a random off-stage plentiful platform heels; [there are some rare ones we don't want]
 	if plastic-is-fantastic dress is actually summonable or (plastic-summoned is 0 and the number of worn silicone dress is 0):
-		if plastic-summoned is 0:
-			repeat with O running through worn dresses:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn exclusive corsets:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn skirt clashing clothing:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
+		PinkWardrobeUnclash plastic-is-fantastic dress;
 		say "[bold type]Your [printed name of H] wobbles violently, and a tight rubber pink dress materialises around you.[roman type][line break]";
 		summon plastic-is-fantastic dress uncursed;
 		now the raw-magic-modifier of plastic-is-fantastic dress is the largeness of breasts / 5;

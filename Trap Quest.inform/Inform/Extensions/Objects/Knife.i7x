@@ -26,68 +26,79 @@ A later time based rule (this is the knife charge decay rule):
 
 Knifing it with is an action applying to two things.
 Check knifing:
-	if the second noun is not knife and (the second noun is not sword or the second noun is not metal) and the second noun is not midnight tanto, say "How would you cut anything with that?" instead;
 	if the second noun is knife:
 		if the noun is monster, say "Since it's on such a short chain, you really doubt that would work." instead;
 		if the class of the player is not santa's little helper:
 			if the player is not able to manually use manual dexterity, do nothing instead;
-	otherwise:
+		if the player is immobile, say "You are a bit tied up right now!" instead;
+	otherwise if the second noun is midnight tanto:
 		if the noun is monster, try slapping the noun instead;
 		if the noun is ass hook and the player is wrist bound in front, say "You can't do that when your wrists are bound together in front of you!" instead;
-		if the noun is not vines and the noun is not ass hook and the second noun is not midnight tanto, say "How would you cut that?" instead;
+		if the player is monster stuck, say "You're a bit busy right now!" instead;
+	otherwise if the second noun is sword:
+		if the noun is monster, try slapping the noun instead;
+		if the second noun is not metal, say "Your [ShortDesc of (the second noun)] isn't hard enough to slice through anything." instead;
+		if the noun is ass hook and the player is wrist bound in front, say "You can't do that when your wrists are bound together in front of you!" instead;
+		if there is a thing wrangling arms, say "You can't do that while your arms are restricted like this!" instead;
+		if the player is monster stuck, say "You're a bit busy right now!" instead;
+	otherwise:
+		say "How would you cut anything with that?" instead;
 	if the noun is hair:
 		if the largeness of hair <= favourite hair length, say "[variable custom style][if the bimbo of the player < 10]I feel comfortable with[otherwise if the bimbo of the player < 15]I like[otherwise]I LOVE[end if] my hair being this length.[roman type][line break]" instead;
 	otherwise if the noun is worn clothing:
 		if the coverer of the noun is clothing, say "You would first need to remove or destroy your [coverer of the noun]." instead;
-	otherwise:
+	otherwise if the noun is not ass hook and the noun is not vines:
 		say "Why would you want to do that?" instead;
-	if the player is in danger, say "It's a bit dangerous to try and handle a sharp knife with enemies nearby!" instead;
-	if the player is immobile, say "You are a bit tied up right now!" instead.
+	if the player is in danger, say "It's a bit dangerous to try and handle a sharp knife with enemies nearby!" instead.
 
 Carry out knifing:
 	allocate 6 seconds;
 	force clothing-focus redraw; [This forces the clothing window to redraw]
 	if the noun is hair:
-		say "You use the knife to cut your [ShortDesc of hair] to your favourite length.";
-		while the largeness of hair > favourite hair length:
-			if the fake largeness of hair > 0:
-				decrease the fake largeness of hair by 1;
-			otherwise:
-				decrease the raw largeness of hair by 1;
-		say "You now have [ShortDesc of hair].";
-		now the charge of the second noun is 500;
+		if the second noun is equippable:
+			say "Your [ShortDesc of the second noun] refuses to cut your hair. Maybe you need to cut it with something specific...";
+		otherwise:
+			say "You use the knife to cut your [ShortDesc of hair] to your favourite length.";
+			HairCut to favourite hair length;
+			say "You now have [ShortDesc of hair].";
+			now the charge of the second noun is 500;
 	otherwise if the noun is ass hook:
 		let S be the dexterity of the player;
 		if S < 9, now S is 9;
 		let R be a random number from 1 to S;
 		if R > 3:
-			say "You manage to cut through the rope attached to the hook, abruptly severing its assistance with your balance and sending you painfully to the floor";
-			increase the body soreness of the player by 1;
+			say "You manage to cut through the rope attached to the hook, abruptly severing its assistance with your balance and sending you painfully to the floor!";
 			now the stance of the player is 1;
+			BodyRuin 1;
 			now the noun is not penetrating asshole;
 			now the noun is unrevealed;
 		otherwise:
-			say "You can't bend enough to get a safe angle for cutting the rope! Maybe you should try again?";
+			say "You try, but can't bend your arms enough to safely cut the rope. Maybe you should try again?";
 	otherwise if the noun is vine:[strength and dexterity check]
-		let V be a random vine grabbing the player;
-		if the player is upright:
-			if a random number between 1 and the dexterity of the player > 8:
-				say "You bend down and find an angle where you can safely chop through several of the vines holding your ankles. You're free!";
-				now V is not grabbing the player;
+		let V be a random vine wrangling a body part;
+		let S be a random number between 1 and the dexterity of the player;
+		if S > 8:
+			say "You bend down and try to hack through some of the vines holding onto your ankles.";
+			now S is a random number between 1 and the strength of the player;
+			if S > 8:
+				say "The vines are moving constantly, so its difficult, but after chopping through a few of them, you have enough of an opening to finally wrench free! More vines push out of the soil, determined to capture you again!";
+				now V is not wrangling thighs;
+			otherwise if S > 3:
+				say "The vines are moving constantly, and although you manage to chop through a few, the broken vines are immediately replaced with newer ones. Maybe you should keep trying?";
 			otherwise:
-				if the player is vine-cursed and a random number between 3 and the dexterity of the player < 3: [Selkie: Changed back to < 3. Can only fail if Dex is 1 or 2]
-					say "You bend down to try and free your ankles, but while you're looking for a clean cut, several vines lash out and grab you by the wrists, slamming you down onto all fours!";
-					now the stance of the player is 1;
-				otherwise:
-					say "You try, but you can't bend over enough to find a place for a clean cut! Maybe you should keep trying?";
+				say "The vines are moving constantly, and while you're trying to chop through them, a vine suddenly lashes out and grabs your wrist! You shake it off, but not before another fine grabs your [ShortDesc of (the second noun)] and tosses it away from you!";
+				now the second noun is in the location of the player;
 		otherwise:
-			if a random number between 1 and the strength of the player > 12:
-				say "You wrest your hand free of the vines and slice at every piece of vegetation in your immediate vicinity. They reflexively release you, retreating back into the soil for another attempt. You should get out of here before they catch you again!";
-				now V is not grabbing the player;
+			if S > 3:
+				say "You try to bend over, but you just aren't flexible enough for it! Maybe you should try again?";
 			otherwise:
-				say "You try, but the vines holding your wrist keep your sword arm firmly pinned to the ground. Maybe you should try again?";
+				say "You try to bend over to cut the vines around your ankles, but just as your hands are about to reach the ground, several vines lash out and grab your wrists, slamming you down onto all fours!";
+				now V is wrangling arms;
+				now the stance of the player is 1;
 	otherwise:
-		if (the noun is bondage or the noun is unremovable) and the noun is not blessed:
+		if the second noun is equippable:
+			say "Your [ShortDesc of the second noun] refuses to cut through the [clothing-material of the noun]. Maybe you need to cut it with something specific...";
+		otherwise if (the noun is bondage or the noun is unremovable) and the noun is not blessed:
 			say "The [clothing-material of the noun] material is too tough, the knife can't cut through it![line break][variable custom style]Perhaps if it was blessed?[roman type][line break]";
 		otherwise if the noun is cursed and strongCurses is 1 and the noun is not headgear:
 			say "The knife can't seem to cut through the curse! You'll need to [if the quest of the noun is no-clothing-quest]find an altar to give it a quest[otherwise]complete its quest first[end if].";

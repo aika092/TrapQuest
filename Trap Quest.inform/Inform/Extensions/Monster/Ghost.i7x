@@ -107,7 +107,7 @@ To compute phaseout of (M - a ghost):
 		if M is in the location of the player, say "[BigNameDesc of M] [bold type]shimmers as it shifts out of the corporeal world.[roman type][line break]".
 
 To compute unique final action of (M - ghostly tentacle):
-	do nothing.
+	if diaper quest is 1, compute phaseout of M.
 
 To say SummoningFlav of (M - a ghost):
 	if M is in the location of the player, say "You hear far away laughter as the glow surrounding the mummy intensifies and simultaneously converges [if futanari fetish is 1]on [his of M] crotch, [otherwise]in front of [his of M] face, [end if] coalescing into a [MediumDesc of M] and immediately [if bukkake fetish is 1 and futanari fetish is 0]ejaculates all over [his of M] face[otherwise if futanari fetish is 0]phases through [his of M] face, causing a very audible gagging noise as it comes out the other side[otherwise]ejaculates[end if]. The mummy slowly climbs to its feet, spit and [if diaper quest is 1][urine][otherwise][semen][end if] absorbing into the frayed cloth without another trace.";
@@ -529,7 +529,7 @@ To compute (C - a clothing) damaging (M - a ghost):
 To compute striking success effect of (M - jismbodied ghost) on (B - a body part):
 	if bukkake fetish is 1:
 		say "[BigNameDesc of M] leaves a glob of [semen] behind on your [B]";
-		squirt semen on B by a random number between 2 and 3.
+		AnnouncedSquirt semen on B by 1.
 
 Part 2 - DQ
 
@@ -552,12 +552,11 @@ To compute punishment of (P - ghost-diapering):
 	destroy M.
 
 To compute SelectionWaiting of (M - a ghost):
-	if a random number between 1 and 10 is 1 or diaper quest is 1, say SelectionFrustrated of M;
-	otherwise do nothing. [The monster waits its turn.]
+	if diaper quest is 1 or the selection-frustration of M > a random number between 4 and 10, compute SelectionFrustrated of M;
+	otherwise increase the selection-frustration of M by 1. [The monster waits its turn.]
 
 To say SelectionFrustrated of (M - a ghost):
-	say "[BigNameDesc of M] seems to lose interest.";
-	bore M.
+	say "[BigNameDesc of M] seems to lose interest.".
 
 Part 3 - Damage
 
@@ -704,10 +703,11 @@ Section 1 - Ectoplasm
 To compute ectoplasm to (M - ghostly tentacle):
 	if diaper quest is 1:
 		compute normal ectoplasm to M;
-	otherwise:
+	otherwise if the player is getting unlucky:
 		set up deep one;
 		now deep one is in mansion23;
 		drag to mansion23 by M;
+		say GotUnluckyFlav;
 		now M is not wrangling arms;[Once it drops you off, the tentacle lets go.]
 		now the wind-up of M is 0;
 		anger deep one;

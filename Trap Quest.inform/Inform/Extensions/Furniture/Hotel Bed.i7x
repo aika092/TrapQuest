@@ -48,11 +48,7 @@ To compute rest ending of (F - HotelBedCreamy):
 	otherwise if bukkake fetish is 1:
 		say "[if F is unencountered]It is only as you start to get up you realise that underneath the covers, the entire bed is soaked in [semen]! [otherwise]Once again the [semen] from the thoroughly soaked bed has gotten all over you. [end if]Your body [if the number of worn fluid vulnerable clothing > 0]and clothes are[otherwise]is[end if] covered in a layer of [semen].";
 		say "[if the semen addiction of the player < 6][line break][first custom style]Ewww! How fucking gross. I need to clean up now![otherwise if the semen addiction of the player < 10][line break][variable custom style]I feel all slippery and weird![otherwise if the semen addiction of the player < 15][variable custom style]Ooh, it's all so sticky and thick! I wonder whose it is...[otherwise if the semen taste addiction of the player < the semen addiction of the player][line break][second custom style]Oh yay, stranger's cum all over me, I couldn't have wished for a better treat![otherwise][second custom style]Oh yay, stranger's cum all over me, I couldn't have wished for a better treat! I can't wait to taste it.[end if][roman type][line break]";
-		CumTitsUp a random number between 2 and 5;
-		CumBellyUp a random number between 2 and 5;
-		CumThighsUp a random number between 2 and 5;
-		repeat with C running through worn fluid vulnerable clothing:
-			cumsoak a random number between 2 and 5 on C;
+		UnannouncedSquirt semen on thighs by 5;
 	otherwise:
 		say "[if F is unencountered]It is only as you start to get up, you wrinkle your nose at a weird smell. Suddenly you realise that underneath the covers, the entire bed was recently soaked in [semen]! The [otherwise]Once again the [end if]strong fumes of the rapidly drying moist baby butter assaults your senses and makes you feel funny.";
 		SemenAddictUp 1.
@@ -84,9 +80,11 @@ To compute PatronSpawning of (F - a hotel bed):
 		now R is a random number between 1 and H;
 		if R > 6, now R is 6;
 		repeat with N running from 1 to R:
-			let M be a random off-stage generic-appropriate patron;
-			now M is in the location of the player;
-			set up M;
+			let M be a random off-stage generic-appropriate pimp-appropriate patron;
+			if M is a monster:
+				now M is in the location of the player;
+				set up M;
+		now R is the number of patrons in the location of the player;
 		if R > 3, say "[first custom style]'Hey everyone, get in here!'[roman type][line break]";
 	say "[one of]A[or]Once again the[stopping] hidden door opens from the opposite wall, and you [one of]are shocked as you watch[or]watch[stopping] ";
 	if R is 1:

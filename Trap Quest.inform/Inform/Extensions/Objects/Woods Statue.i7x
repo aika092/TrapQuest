@@ -28,7 +28,7 @@ Check touching WoodsScenery02:
 		if the player is deserving of more strength:
 			say "As your hand touches the statue's, magic energy ripples through your fingers. You feel stronger!";
 			StrengthUp 1;
-		otherwise if woodsMagicHunger is false and the magic-power of the player > 0:
+		otherwise if woodsMagicHunger is false and the total magic power of the player > 0:
 			now woodsMagicHunger is true;
 			say "As your hand touches the statue's, a jolt of dark magic mixes with that running through your veins. You can feel that from now on, [bold type]whenever you use magic, you'll become more hungry.[line break][variable custom style]Uh-oh. It's going to be more difficult to use magic from now on...[roman type][line break]";
 		otherwise:

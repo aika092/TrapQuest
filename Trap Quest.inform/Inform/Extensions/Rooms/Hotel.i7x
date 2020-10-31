@@ -47,7 +47,7 @@ Hotel18 is a mandatory important modern room. The printed name of Hotel18 is "Fe
 
 Hotel19 is a mandatory important modern room. The printed name of Hotel19 is "Kitchen". "The kitchen has several spotlessly clean silver basins with modern silver taps. They're much too small for you to get in yourself, but you could probably wash dirty clothing in here.". The shape of Hotel19 is L3/0-0-1-1-1-1.
 
-Hotel20 is a mandatory important modern room. The printed name of Hotel20 is "Laundry Room". "This room has a large sign saying 'LAUNDRY ROOM' on one wall. Metal robotic hands hang extend out of walls in the ceiling and walls, and there is a large vat of soapy water on one side of the room.". The shape of Hotel20 is L3/0-0-1-1-1-1.
+Hotel20 is a mandatory important modern room. The printed name of Hotel20 is "Laundry Room". "This room has a large sign saying 'LAUNDRY ROOM' on one wall. [if hotel changing station is in Hotel20]A large capsule, about the size and shape of a shower cubicle, sits against one wall. It appears to be dedicated to giving adults diaper changes[otherwise]Metal robotic hands hang extend out of walls in the ceiling and walls, and there is a large vat of soapy water on one side of the room[end if].". The shape of Hotel20 is L3/0-0-1-1-1-1.
 
 Hotel21 is an important modern room. The printed name of Hotel21 is "Staff Room". "You would expect there to be lots of comfortable furniture for resting in here, but there isn't. Across one wall there is a single row of chairs, each [if diaper quest is 1]decorated with a cute dolphin pattern, as if they were made for kids[otherwise]boasting a huge metal dildo in the seat, guaranteeing [end if][if the bimbo of the player < 12 and diaper quest is 0]an uncomfortable sit down[otherwise if diaper quest is 0][second custom style]a fun time[roman type][end if]!". The shape of Hotel21 is L3/0-0-0-1-1-1.
 
@@ -99,12 +99,13 @@ Hotel40 is a mandatory modern room. The printed name of Hotel40 is "[if there is
 
 Hotel41 is a mandatory modern room. The printed name of Hotel41 is "Maintenance Room". "A small room with tools of varying complexity lined up on the many shelves adorning its walls.".
 Hotel42 is a modern room. The printed name of Hotel42 is "Theatre". "A large room, dark room with [if diaper quest is 1]a video of a diapered woman in a straitjacket with a strong vibrating wand taped to her diaper[otherwise]an explicit BDSM porno[end if] is playing on a huge screen. [NoChairs]". The shape of Hotel42 is L3/0-0-0-0-0-1.
-Hotel43 is a modern room. The printed name of Hotel43 is "Donator Hall". "A large room lined with pictures of well-dressed men and women. A long table fills the centre of the room. [NoChairs]"
+Hotel43 is a modern room. The printed name of Hotel43 is "Donator Hall". "A large room lined with pictures of well-dressed men and women. A long table fills the centre of the room. [NoChairs]".
+Hotel44 is a mandatory modern room. The printed name of Hotel44 is "Pedestal Hall". "This room has a series of grey stone pedestals lining the north wall. Concrete busts from neck to thigh sit on each the pedestals, positioned in vaguely provocative manners.". The shape of Hotel44 is L3/0-0-0-1-1-1.
 
 To say NoChairs:
 	say "[one of]There are no chairs.[or]There are no chairs.[or]There are no chairs in this room either.[or]The room continues the pattern of having no chairs where you might expect them.[or][line break][variable custom style]Again, no chairs. Huh.[roman type][line break][or]There are no chairs.[stopping]".
 
-The Hotel is a region. Hotel01, Hotel02, Hotel03, Hotel04, Hotel05, Hotel06, Hotel07, Hotel08, Hotel09, Hotel10, Hotel11, Hotel12, Hotel13, Hotel14, Hotel15, Hotel16, Hotel17, Hotel18, Hotel19, Hotel20, Hotel21, Hotel22, Hotel23, Hotel24, Hotel25, Hotel26, Hotel27, Hotel28, Hotel29, Hotel30, Hotel31, Hotel32, Hotel33, Hotel34, Hotel35, Hotel36, Hotel37, Hotel38, Hotel39, Hotel40, Hotel41, Hotel42, Hotel43 are in The Hotel.
+The Hotel is a region. Hotel01, Hotel02, Hotel03, Hotel04, Hotel05, Hotel06, Hotel07, Hotel08, Hotel09, Hotel10, Hotel11, Hotel12, Hotel13, Hotel14, Hotel15, Hotel16, Hotel17, Hotel18, Hotel19, Hotel20, Hotel21, Hotel22, Hotel23, Hotel24, Hotel25, Hotel26, Hotel27, Hotel28, Hotel29, Hotel30, Hotel31, Hotel32, Hotel33, Hotel34, Hotel35, Hotel36, Hotel37, Hotel38, Hotel39, Hotel40, Hotel41, Hotel42, Hotel43, Hotel44 are in The Hotel.
 
 HotelScenery01 is a thing. HotelScenery01 is not portable. HotelScenery01 is in Hotel16. The printed name of HotelScenery01 is "[TQlink of item described]chute[TQxlink of item described]". Understand "bed", "table", "visual", "display", "unit", "screen", "slot", "hole", "chute", "inspiration", "machine", "tattoo machine", "laundry" as HotelScenery01. The text-shortcut of HotelScenery01 is "chute". Figure of chute is the file "Env/Hotel/chute1.png".
 To say ExamineDesc of (C - HotelScenery01):

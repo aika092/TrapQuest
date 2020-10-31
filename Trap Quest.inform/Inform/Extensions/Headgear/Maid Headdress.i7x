@@ -37,13 +37,13 @@ Report going:
 						say "[bold type]You feel a headband with cat ears materialise on your head.[roman type] [if the bimbo of the player < 13][line break][first custom style]I think the game is trying to tell me something about how much I'm crawling around this place...[otherwise][line break][second custom style]Teehee, I guess I have been on all fours for ages, like a naughty pussycat...[end if][roman type][line break]";
 					summon M cursed;
 				otherwise if R1 < the crawl count of the player or R2 < the crawl count of the player:
-					say "With all the time you've been spending crawling along the ground, you're beginning to think this place really needs a good cleaning...[line break]";
+					say "With all the time you've been spending crawling along the ground, you're beginning to [if playerRegion is woods]feel like a stray animal who lives in the woods[otherwise]think this place really needs a good cleaning[end if]...[line break]";
 			if the crawl count of the player >= 12, progress quest of crawling-quest;
 			if the class of the player is princess and the number of monsters in the location of the player > 0, humiliate 10;
 			if the semen-puddle of the location of the player > 3 and bukkake fetish is 1:
 				if the largeness of breasts > 10 and the semen coating of breasts is 0:
 					say "[one of]Your [BreastDesc] become smeared with [semen] as they rub along the ground.[or][or][or][cycling]";
-					CumTitsUp 1;
+					AnnouncedSquirt semen on breasts by 1;
 					decrease the semen-puddle of the location of the player by 1;[TODO, milk and urine soaking into clothes; Player should probably be humiliated to crawl through their own urine.]
 				if there is a worn able to take more liquid leg covering clothing:
 					say "[one of]You can't help crawling through the puddle of [semen] as you move along the ground.[or][or][or][cycling]";
@@ -55,23 +55,24 @@ Report going:
 Chapter - Class Outfit
 
 Definition: a maid headdress is removal-blocking:
-	if wearing-target is maid outfit or wearing-target is magical-maid-outfit or wearing-target is cafe maid stockings, decide yes;
+	if wearing-target is maid outfit or wearing-target is magical-maid-outfit or wearing-target is cafe maid stockings or wearing-target is pink-spraybottle, decide yes;
 	decide no. [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
 
 To decide which thing is chosen-maid-outfit:
-	if (diaper quest is 1 or cafe maid headdress is worn) and a random off-stage maid waitress outfit is actually summonable:
-		decide on a random off-stage maid waitress outfit;
+	if cafe maid headdress is worn and cafe-maid-outfit is off-stage, decide on cafe-maid-outfit;
+	if (diaper quest is 1 or cafe maid headdress is worn) and maid-waitress-outfit is off-stage, decide on maid-waitress-outfit;
 	let B be the humiliation of the player;
 	increase B by a random number from 0 to 5000;
-	if B < 5000 and a random maid waitress outfit is actually summonable, decide on a random maid waitress outfit;
-	if B < 10000 and a random sexy maid outfit is actually summonable, decide on a random sexy maid outfit;
-	if B < 15000 and a random sexy maid outfit is actually summonable, decide on a random drooping maid outfit;
-	if B < 20000 and a random cheap maid outfit is actually summonable, decide on a random cheap maid outfit;
-	if B < 25000 and a random fetish maid outfit is actually summonable, decide on a random fetish maid outfit;
-	if B < 30000 and a random pink maid outfit is actually summonable, decide on a random pink maid outfit;
-	if B < 35000 and a random slutty maid outfit is actually summonable, decide on a random slutty maid outfit;
-	if B < 40000 and a random V-shape maid outfit is actually summonable, decide on a random V-shape maid outfit;
-	decide on a random fishnet maid outfit.
+	if B < 4000 and maid-waitress-outfit is off-stage, decide on maid-waitress-outfit;
+	if B < 8000 and sexy-maid-outfit is off-stage, decide on sexy-maid-outfit;
+	if B < 12000 and drooping-maid-outfit is off-stage, decide on drooping-maid-outfit;
+	if B < 16000 and cheap-maid-outfit is off-stage, decide on cheap-maid-outfit;
+	if B >= 20000 and B < 24000 and pink-maid-outfit is off-stage, decide on pink-maid-outfit;
+	if the number of worn exclusive crotch covering clothing is 0:
+		if B < 20000 and fetish-maid-outfit is off-stage, decide on fetish-maid-outfit;
+		if B < 28000 and slutty-maid-outfit is off-stage, decide on slutty-maid-outfit;
+		if B < 32000 and V-shape-maid-outfit is off-stage, decide on V-shape-maid-outfit;
+	decide on a random black fetish hobble dress.
 
 maid-summoned is a number that varies.
 To compute unique recycling of (C - a maid headdress):
@@ -82,25 +83,10 @@ To compute class outfit of (H - a maid headdress):
 	let M be chosen-maid-outfit;
 	let S be a random off-stage cafe maid stockings;
 	if M is actually summonable or (maid-summoned is 0 and the number of worn maid outfit is 0 and magical-maid-outfit is not worn):
-		if maid-summoned is 0:
-			repeat with O running through worn dresses:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn exclusive corsets:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn skirt clashing clothing:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn exclusive bras:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			now M is chosen-maid-outfit; [Now that we've actually removed the previous offending garments, let's check again]
+		PinkWardrobeUnclash M;
 		if M is crotch covering:
 			repeat with O running through worn knickers:
-				unless O is diaper:
-					say "Your [O] [wardrobeVanishes of O]!";
-					now O is in pink wardrobe;
+				unless O is diaper, WardrobeVanish O;
 		say "[bold type]Your headdress barely noticeably shakes, and then a [if the bimbo of the player > 4]slutty [end if]maids outfit materialises on you.[roman type][line break]";
 		summon M uncursed;
 		now maid-summoned is 1;

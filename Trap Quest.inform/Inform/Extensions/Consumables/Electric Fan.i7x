@@ -20,12 +20,8 @@ To decide which number is the bartering value of (T - an electric fan) for (M - 
 	decide on 5.
 To decide which number is the bartering value of (T - an electric fan) for (M - a mechanic):
 	decide on 3.
-To say OfferThanksFlav of (M - a mechanic) for (T - an electric fan):
-	say "[speech style of M]'Thanks a lot for this! I'd almost run out of this kind of battery.'[roman type][line break]".
-To decide which number is the bartering value of (T - an electric fan) for (M - a robot):
-	decide on 1.
-To decide which number is the bartering value of (T - an electric fan) for (M - a mannequin):
-	decide on 1.
+To say MonsterAcceptFlav of (M - a mechanic) for (T - an electric fan):
+	say "[speech style of M]'Ooh, I'd almost run out of this kind of battery!'[roman type][line break]".
 
 [air tentacles if you try to use it in a boss room]
 To decide which number is the girth of (T - an electric fan):
@@ -60,6 +56,7 @@ Carry out fanning:
 		otherwise:
 			say "The pink smoke in this room is dispersed by the fan! You can kneel here safely now.";
 			now R is not smoky;
+	check stealing of the noun;
 	let here-monsters be the list of monsters in R;
 	repeat with M running through the list of monsters in R:
 		if M is caged or M is defeated or (M is acolyte and M is not unleashed), remove M from here-monsters;

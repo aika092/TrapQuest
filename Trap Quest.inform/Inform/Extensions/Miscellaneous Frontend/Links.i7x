@@ -227,7 +227,9 @@ Definition: yourself is consenting:
 bigGameLoop is a number that varies. [If this is above 0, we are flagging that a long series of yes/no questions are about to be asked, and there's no need to refresh the map window between each one. We must remember to set it back to 0 and refresh the windows at the end of the lesson or whatever it is. Easiest way is with a 'conclude consenting' after 'now bigGameLoop is 0'.
 0: Normal behaviour
 1: Skip refreshing map window
-2: Skip refreshing all windows
+2: Skip refreshing map window, including after multiple choice
+3: Skip refreshing all windows
+4: Skip refreshing all windows, including not refreshing map after multiple choice
 ]
 
 To conclude consenting:
@@ -236,11 +238,11 @@ To conclude consenting:
 		zero focus stuff; [We empty the focus window to make sure it is rebuilt properly. By being forced to pause and choose an option, the player has seen any cutscenes, NPCs that left, etc.]
 		repeat with G running through g-paused animation tracks:
 			now G is g-unpaused;
-		if bigGameLoop is 0 or temporary-map-figure is not figure of no-image-yet or currentlyConsenting is true: [TODO work out why I put "currentlyConsenting is true" here]
+		if bigGameLoop is 0 or (bigGameLoop is not 2 and bigGameLoop is not 4 and temporary-map-figure is not figure of no-image-yet):
 			refresh the map-window;
 		otherwise:
 			clear the map-window; [if we don't do this, and we use both Yes/No questions and multiple choice questions in the same big game loop, we get some ugly overlaps in the map window]
-		if bigGameLoop < 2, render buffered stuff.
+		if bigGameLoop < 3, render buffered stuff.
 
 [Works the same as normal consenting, but the player can be forced to say yes. Some things it'll be fun if the player can't say no after a while.]
 Definition: yourself is bimbo consenting:
@@ -264,9 +266,9 @@ Definition: yourself is reverse bimbo consenting:
 
 To render YesNoBackground:
 	let F be YesNoBackground;
-	let H be the height of the map-window;
-	let W be the width of the map-window;
 	if F is not Figure of no-image-yet:
+		let H be the height of the map-window;
+		let W be the width of the map-window;
 		repeat with G running through g-animated animation tracks:
 			now G is g-paused; [stops things like the need-to-use-toilet animations from animating on top]
 		let XRatio be (W * 1.0) / the pixel-width of F;
@@ -365,6 +367,7 @@ To compute multiple choice question:
 	let inputNumber be 0;
 	let validAnswer be 0;
 	while validAnswer is 0:
+		now currentlyConsenting is true;
 		repeat with R running through numerical-response:
 			if the printed name of R is not "":
 				let N be the numerical-response-value of R;
@@ -372,6 +375,7 @@ To compute multiple choice question:
 		if gameover-flag is 0:
 			display focus stuff;
 			if the player is virtual, display stuff;
+			if YesNoBackground is Figure of no-image-yet, display entire map; [We have flagged that we still want to show the player the map in the background]
 			render YesNoBackground;
 		now inputNumber is the chosen letter;
 		decrease inputNumber by 48; [convert key ID to integer]
@@ -417,8 +421,7 @@ To say displacelinks of (T - a clothing):
 	say "[if T is skirted and T is worn and T is displacable and T is crotch-in-place] [link][bracket]raise skirt[close bracket][as]displace [text-shortcut of T][end link][otherwise if T is worn and T is displacable and T is crotch-in-place] [link][bracket]displace[close bracket][as]displace [text-shortcut of T][end link][otherwise if T is skirted and T is worn and T is displacable] [link][bracket]fix skirt[close bracket][as]replace [text-shortcut of T][end link][otherwise if T is worn and T is displacable] [link][bracket]replace[close bracket][as]replace [text-shortcut of T][end link][end if][if diaper quest is 0 and T is not not-top-displacable and T is worn actually breast covering clothing] [link][bracket]expose chest[close bracket][as]pull open [text-shortcut of T][end link][otherwise if diaper quest is 0 and T is worn top-displaced clothing] [link][bracket]cover chest[close bracket][as]fix [text-shortcut of T][end link][end if][if T is worn and T is zippable and T is crotch-zipped] [link][bracket]unzip[close bracket][as]unzip [text-shortcut of T][end link][otherwise if T is worn and T is zippable] [link][bracket]zip[close bracket][as]zip [text-shortcut of T][end link][end if]".
 
 To say wipelinks of (T - a clothing):
-	if T is not worn and T is appropriate for cleaning and the semen-soak of T + the urine-soak of T + the milk-soak of T < the soak-limit of T:
-		unless the humiliation of the player > 28000 and the semen addiction of the player > 11 and the player is not craving semen and the player is not thirsty and the semen addiction of the player > the semen taste addiction of the player, say "[if the semen coating of face > 0] [link][bracket]wipe face[close bracket][as]wipe face with [text-shortcut of T][end link][otherwise if the semen coating of hair > 1] [link][bracket]wipe hair[close bracket][as]wipe hair with [text-shortcut of T][end link][otherwise if the semen coating of breasts > 0] [link][bracket]wipe chest[close bracket][as]wipe breasts with [text-shortcut of T][end link][otherwise if the semen coating of belly > 0] [link][bracket]wipe belly[close bracket][as]wipe belly with [text-shortcut of T][end link][otherwise if the semen coating of thighs > 0] [link][bracket]wipe thighs[close bracket][as]wipe thighs with [text-shortcut of T][end link][end if]".
+	if T is not worn and T is acceptableCumRag, say "[if the semen coating of face > 0] [link][bracket]wipe face[close bracket][as]wipe face with [text-shortcut of T][end link][otherwise if the semen coating of hair > 1] [link][bracket]wipe hair[close bracket][as]wipe hair with [text-shortcut of T][end link][otherwise if the semen coating of breasts > 0] [link][bracket]wipe chest[close bracket][as]wipe breasts with [text-shortcut of T][end link][otherwise if the semen coating of belly > 0] [link][bracket]wipe belly[close bracket][as]wipe belly with [text-shortcut of T][end link][otherwise if the semen coating of thighs > 0] [link][bracket]wipe thighs[close bracket][as]wipe thighs with [text-shortcut of T][end link][end if]".
 
 To say unique-verb-desc of (T - an accessory):
 	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say "[if T is held and (T is not cursed or T is not worn)] [link][bracket]dr[close bracket][as]drop [text-shortcut of T][end link][otherwise if T is not held] [link][bracket]ta[close bracket][as]ta [text-shortcut of T][end link][end if][if T is worn and T is not cursed] [link][bracket]r[close bracket][as]rm [text-shortcut of T][end link][otherwise if T is not worn] [link][bracket]we[close bracket][as]we [text-shortcut of T][end link][end if][if the player is in Woods20 and T is plentiful] [link][bracket]altar[close bracket][as]put [text-shortcut of T] on altar[end link][end if][if the player is in Woods27] [link][bracket]wish[close bracket][as]put [text-shortcut of T] in well[end link][end if][if there is an open minibar in the location of the player and T is plentiful] [link][bracket]restock minibar[close bracket][as]restock minibar with [text-shortcut of T][end link][end if]".
@@ -669,7 +672,7 @@ To compute smart links:
 						if F is not catalogued, say "[F] ";
 						now F is catalogued;
 			say "[if the body soreness of the player > 0 and there is a held bandage and the player is not in danger][link]use bandage[end link] [end if]";
-			unless the humiliation of the player > 28000 and the semen addiction of the player > 11 and the player is not craving semen and the player is not thirsty and the semen addiction of the player > the semen taste addiction of the player, say "[if the semen coating of face > 0][link]wipe face[end link] [end if][if the semen coating of hair > 1][link]wipe hair[end link] [end if][if the semen coating of breasts > 0][link]wipe tits[end link] [end if][if the semen coating of belly > 0][link]wipe belly[end link] [end if][if the semen coating of thighs > 0][link]wipe thighs[end link] [end if]";
+			if there is carried acceptableCumRag clothing, say "[if the semen coating of face > 0][link]wipe face[end link] [end if][if the semen coating of hair > 1][link]wipe hair[end link] [end if][if the semen coating of breasts > 0][link]wipe tits[end link] [end if][if the semen coating of belly > 0][link]wipe belly[end link] [end if][if the semen coating of thighs > 0][link]wipe thighs[end link] [end if]";
 			if (the player is in Dungeon35 or the player is in Woods05):
 				repeat with F running through carried dirty clothing:
 					if F is not catalogued, say "[F] ";

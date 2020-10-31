@@ -44,7 +44,7 @@ To compute throbbing of (H - severed-tentacle) into (T - throbbing-tentacle):
 	repeat with D running through worn clothing:
 		if D is penetrating a fuckhole, now D is in pink wardrobe;
 	only destroy H;
-	if the player is male:
+	if the player is not possessing a vagina:
 		if the player is able to get horny, anally orgasm shamefully;
 		say " You leave the tentacle inside your [asshole], sensing it is now in its proper place.";
 		summon T cursed;

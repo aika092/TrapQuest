@@ -123,7 +123,7 @@ Report examining an identified respiration clothing:
 	say "You can sense that this item [if the noun is worn]is speeding[otherwise]would speed[end if] up your metabolism.".
 
 Report wearing clothing:
-	say InfluenceDesc of the noun.
+	if the noun is worn, say InfluenceDesc of the noun.
 
 To say item of (C - a wearthing):
 	say "item".
@@ -153,8 +153,8 @@ To say InfluenceDesc of (C - a wearthing):
 	if the titfuck-addiction-influence of C > 0 and diaper quest is 0, say "You can sense that this [item of C] is making you feel [if the titfuck-addiction-influence of C > 1]a lot [end if]more sexual pleasure from [if the titfuck addiction of the player < 5]rubbing a [manly-penis] between your breasts[otherwise]worshipping a [manly-penis] with your tits[end if].";
 	if the sex-addiction-influence of C < 0, say "You can sense that this [item of C] is [if the sex-addiction-influence of C < -1]significantly [end if][if diaper quest is 1]reducing your cravings for orgasms[otherwise if the sex addiction of the player > 7]reducing your [one of]cravings for orgasms[or]obsession with kinky sex acts[cycling][otherwise]helping you [one of]maintain a sensible, normal libido[or]suppress perverted thoughts[cycling][end if].";
 	if the sex-addiction-influence of C > 0, say "You can sense that this [item of C] is making you [if diaper quest is 1]crave orgasms[otherwise if the sex addiction of the player > 7][one of]crave orgasms and sex[or]daydream about lewd acts[or]get aroused by perverse things[cycling][otherwise][one of]think about sex[or]think perverted thoughts[cycling][end if] [if the sex-addiction-influence of C > 1]a lot [end if]more.";
-	if the semen-addiction-influence of C < 0 and diaper quest is 0, say "You can sense that this [item of C] is [if the semen-addiction-influence of C < -1]really [end if]helping you avoid any [if the semen addiction of the player < 4]weird [end if]temptations to experience [if the player is male and the bimbo of the player < 10]anal [end if]creampies[if bukkake fetish is 1] and facials[end if].";
-	if the semen-addiction-influence of C > 0 and diaper quest is 0, say "You can sense that this [item of C] is making you [if the semen-addiction-influence of C > 1]much [end if]more eager to get [if the player is male and the bimbo of the player < 10]anally [end if]creampied[if bukkake fetish is 1] and covered in [semen][end if].";
+	if the semen-addiction-influence of C < 0 and diaper quest is 0, say "You can sense that this [item of C] is [if the semen-addiction-influence of C < -1]really [end if]helping you avoid any [if the semen addiction of the player < 4]weird [end if]temptations to experience [if the player is not possessing a vagina and the bimbo of the player < 10]anal [end if]creampies[if bukkake fetish is 1] and facials[end if].";
+	if the semen-addiction-influence of C > 0 and diaper quest is 0, say "You can sense that this [item of C] is making you [if the semen-addiction-influence of C > 1]much [end if]more eager to get [if the player is not possessing a vagina and the bimbo of the player < 10]anally [end if]creampied[if bukkake fetish is 1] and covered in [semen][end if].";
 	if the semen-taste-addiction-influence of C < 0 and diaper quest is 0, say "You can sense that this [item of C] is [if the semen-taste-addiction-influence of C < -1]really [end if]helping you [if the semen taste addiction of the player < 6]avoid any weird temptations[otherwise]resist the urge[end if] to [if the semen taste addiction of the player < 8]taste semen[otherwise]drink [semen][end if].";
 	if the semen-taste-addiction-influence of C > 0 and diaper quest is 0, say "You can sense that this [item of C] is making you [if the semen-taste-addiction-influence of C > 1]much [end if]more eager to [if the semen taste addiction of the player > 8]drink[otherwise]taste[end if] [semen].";
 	if the urine-taste-addiction-influence of C < 0 and diaper quest is 0, say "You can sense that this [item of C] is [if the urine-taste-addiction-influence of C < -1]really [end if]helping you [if the urine taste addiction of the player < 6]avoid any weird temptations[otherwise]resist the urge[end if] to [if the urine taste addiction of the player < 8]taste urine[otherwise]drink piss[end if].";
@@ -234,7 +234,8 @@ Report examining clothing:
 			say "[if the player is herm]The item will protect your [ShortDesc of penis] and [vagina] but not[otherwise if the player is possessing a vagina]The item will protect your [vagina] but not[otherwise if the player is possessing a penis]The item will protect your [ShortDesc of penis] but not[otherwise]The item will not protect[end if] your [asshole].";
 	if the noun is top-ripped, say "The [if the noun is bra]cups have[otherwise]bust has[end if] been permanently ripped open.";
 	if the noun is not layer-concealing, say "The cut of the [ShortDesc of the noun] means that it [if the noun is partially-layer-concealing]only partially conceals[otherwise]completely fails to conceal[end if] items worn underneath it.";
-	if the stolen-strength of the noun > 0, say "[bold type]It has stolen some of your strength, and you won't get it back until you wear it again.[roman type][line break]".
+	if the stolen-strength of the noun > 0, say "[bold type]It has stolen some of your strength, and you won't get it back until you wear it again.[roman type][line break]";
+	if debugmode > 0, say "[input-style]Liquid soak limit: [soak-limit of the noun][roman type][line break]";
 
 Report examining wet clothing:
 	unless it is diaper and the player is not diaper aware, say "It is currently [cumdesc of the noun][if the noun is sheer-when-wet]which is making it more see-through than it would otherwise be[otherwise if the noun is actually dense]but it's not the type of item to turn see-through when wet[otherwise]but it's just as see-through as normal[end if].".
@@ -286,7 +287,7 @@ Report examining clothing:
 To say PlayerThoughts of (C - a clothing):
 	if the noun is diaper and C is not worn and the number of worn knickers is 0 and earnings > starting-earnings - 250 and the diaper addiction of the player < 4:
 		say "[first custom style]I guess I don't know the rules of this game are yet and who knows what it's going to throw at me. If I did wet myself I'd rather it was into a diaper than onto [if the player is female]my legs and [end if]the floor where everyone can watch it.[line break]... I can't believe I'm considering wearing this! But surely they wouldn't put it here for no reason...[roman type][line break]";
-	otherwise if the number of worn clothing is 0 and earnings > starting-earnings - 250 and the player is male and the bimbo of the player < 4:
+	otherwise if the number of worn clothing is 0 and earnings > starting-earnings - 250 and the player is gendered male and the bimbo of the player < 4:
 		say "[first custom style][one of][if the outrage of C - 9 is too humiliating]Heh, what sort of chick would be caught dead in this?[otherwise]I hope I find someone to wear this![end if][or]Wait a minute, is this supposed to be for ME to wear?!?![or]Surely this isn't meant for me, right?[stopping][roman type][line break]";
 	otherwise if C is short-skirt-disallowed:
 		say "[variable custom style]I feel [if C is worn]extremely uncomfortable in this, I can feel it sapping my strength[otherwise]like my body doesn't want me to wear this[end if]... I think it is because of my new fetish for short skirts![roman type][line break]";

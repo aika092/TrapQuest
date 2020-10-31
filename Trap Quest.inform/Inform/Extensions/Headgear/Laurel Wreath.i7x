@@ -41,28 +41,13 @@ To compute class outfit of (H - laurel wreath):
 	let G be a random off-stage goddess tunic;
 	let I be a random off-stage ivy leaves;
 	if the bimbo of the player < 10 and (G is actually summonable or (G is fertility outfit and fertility-summoned is 0)):
-		if fertility-summoned is 0:
-			repeat with O running through worn dresses:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn exclusive corsets:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn skirt clashing clothing:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
+		PinkWardrobeUnclash G;
 		say "[bold type]Your [printed name of H] [bold type]barely noticeably shakes, and then a white tunic materialises around you.[roman type][line break]You feel... divine!";
 		summon G;
 		now the raw-magic-modifier of G is childValue times 4;
 		now fertility-summoned is 1;
 	otherwise if (I is actually summonable or (I is fertility outfit and fertility-summoned is 0) or (I is fertility outfit and fertility-summoned is 1 and the bimbo of the player > 13)) and the bimbo of the player > 7:
-		if fertility-summoned < 2:
-			repeat with O running through worn dresses:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn bras:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
+		PinkWardrobeUnclash I;
 		say "[bold type]Your [printed name of H] [bold type]barely noticeably shakes, and then a tight structure of ivy leaves materialises around you.[roman type][line break]You feel... divine!";
 		summon I;
 		now fertility-summoned is 2;

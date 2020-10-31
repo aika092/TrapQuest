@@ -557,7 +557,7 @@ To compute the mutation effects of (G - a glue):
 				if watersports fetish is 1 and a random number between 0 and diaper focus is 0:
 					say "You feel... unsettled... thirsty. You picture yourself drinking from an arching stream, and lick your lips.";
 					if the stomach-water of the player > 0, decrease the stomach-water of the player by 1;
-					UrineTasteAddictUp 1;
+					SlowUrineTasteAddictUp 1;
 				otherwise if diaper lover > 0:
 					if incontinence < the max-incontinence of the player and a random number between 1 and 2 is 1:
 						say "You shiver, feeling... smaller...? scareder, less sure of yourself. You feel your ability to hold onto your bladder [if diaper messing >= 3]and bowels [end if]weakening.";
@@ -627,7 +627,7 @@ To compute the mutation effects of (G - a glue):
 					otherwise:
 						say "You feel... unsettled... thirsty. You picture yourself drinking from an arching stream, and lick your lips.";
 						if the stomach-water of the player > 0, decrease the stomach-water of the player by 1;
-						UrineTasteAddictUp 1;
+						SlowUrineTasteAddictUp 1;
 				otherwise if lactation fetish is 1 or extreme proportions fetish is 1:
 					increase the lactation rate of the player by 2;
 					say "You feel the fumes penetrate your [BreastDesc], which flush with an inner warmth.";

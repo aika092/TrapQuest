@@ -33,6 +33,8 @@ To set up (M - matron):
 	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M;
 	now M is unmotherly; [At the start she doesn't consider you her charge.]
+	let B be a random bandage;
+	add B to the tradableItems of M, if absent;
 	calm M.
 
 This is the spawn initial matron rule:
@@ -197,22 +199,15 @@ To compute diaper check of (M - matron):
 Part 3 - Motion
 
 To compute monstermotion of (M - matron):
-	if M is unfriendly and the boredom of M <= 0: [The matron goes looking for the player after a while, if she is unfriendly.]
-		now neighbour finder is the location of M;
-		let A be a random N-viable direction;
-		let P be the room A from the location of M;
-		if A is a random N-viable direction and P is not Dungeon12:
-			try M going A;
-			compute monstermotion reactions of M;
-		otherwise if A is a random N-viable direction and P is not Dungeon12:
-			try M going A;
-			compute monstermotion reactions of M;
+	if the boredom of M <= 0 and M is unfriendly: [The matron goes looking for the player after a while, if she is unfriendly.]
+		compute room leaving of M;
 	otherwise if M is not in Hotel22 and M is not in the location of the player:
 		now M is in Hotel22.
 
 To compute (M - matron) seeking (D - a direction): [The matron only follows the player if unfriendly]
-	if M is unfriendly, try M going D;
-	compute monstermotion reactions of M.
+	if M is unfriendly:
+		blockable move M to D;
+		compute monstermotion reactions of M.
 
 Part 4 - Combat
 
@@ -535,6 +530,18 @@ To UnidentifiablePosterReaction of (M - matron):
 	say "You turn slightly red but don't say a word.";
 	humiliate the lewdness of a random poster in the location of the player / 2.
 
+To say RewardFlav of (M - matron) for (T - a thing):
+	say "[speech style of M]'You deserve [one of]a[or]another[stopping] treat.'[roman type][line break][BigNameDesc of M] puts a [T] on the ground in front of you.".
+
+To say OfferFriendshipFlav of (M - matron):
+	say "".
+
+To decide which number is the bartering value of (C - a maternity bra) to (M - matron):
+	decide on 3.
+
+To say MonsterOfferAcceptFlav of (M - matron) to (C - a maternity bra):
+	say "[BigNameDesc of M] smiles sweetly.[line break][speech style of M]'How thoughtful, thank you dear.'[roman type][line break]".
+
 Section 1 Greeting
 
 [Lots written by MG]
@@ -564,8 +571,7 @@ To say RepeatGreeting to (M - matron):
 		otherwise:[The player is more like an "adult baby" here.]
 			say "[second custom style]'[one of]Nanna. Are there any men around here? I'm so hungry.'[or]Nanna! [if the player is horny]I'm soooo horny. Set me up on a play-date or something.[otherwise]Are you taking care of any cute guys? I'd love a play-date.[end if]'[or]Hey Nanna. You look SO good! I want to be hot like you when I grow up!'[at random][roman type][line break]";
 	otherwise:
-		say DefaultGreeting to M;
-	say RepeatResponse of M.
+		say DefaultGreeting to M.
 
 To say TauntRejected of (M - matron):
 	say "[speech style of M]'[one of]Don't you dare speak to me that way!'[or]Don't speak to me in that tone of voice!'[or]Grown ups know best, sweetie.'[or]You're lucky. I usually clean potty mouths with a bar of soap.'[or]Don't be a potty mouth, sweetie.'[or]Hmmph. I do not like that language, young lady.'[or]It sounds like you need a spanking.'[at random][roman type][line break][BigNameDesc of M] looks even more determined to subdue you.";
@@ -577,14 +583,12 @@ To say FriendlyPartnerGreeting to (M - matron):
 			say "[second custom style]'[one of]Hee hee!'[or]This is fun!'[at random][roman type][line break]";
 		otherwise:
 			say "[second custom style]'[one of]I'm being good, aren't I?'[or]Am I a good girl?'[at random][roman type]";
-		say EnthusiasmResponse of M;
 	otherwise:
 		if the player is feeling dominant:
 			if the player is gendered male, say "[first custom style]'Don't tell anybody about this!'[roman type]";
 			otherwise say "[first custom style]'Just so you know, this is a one time thing.'[roman type]";
 		otherwise:
-			say "[variable custom style]'[one of]This is just a one-time thing... unless I get really hungry, or something.'[or]And remember, you can't tell ANYONE about this...'[at random][roman type]";
-		say NonEnthusiasmResponse of M.
+			say "[variable custom style]'[one of]This is just a one-time thing... unless I get really hungry, or something.'[or]And remember, you can't tell ANYONE about this...'[at random][roman type]".
 
 To say SubmissiveResponse of (M - matron):
 	say "[speech style of M]'[one of]Hey there snookums. Are you hungry?'[or]Hi there! You sound hungry!'[or]Hi there cutie patootie!'[at random][roman type][line break]".

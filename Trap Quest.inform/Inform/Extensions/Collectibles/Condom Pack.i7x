@@ -11,7 +11,9 @@ To decide which figure-name is the examine-image of (C - condom-pack):
 	decide on figure of condom pack.
 
 To say ExamineDesc of (C - condom-pack):
-	say "A small box of condoms labelled 'SuperSafe Condoms, for a slut on the go. This magic condom-pack of Holding contains over a thousand condoms, more than enough for even the biggest of sluts. 100% safe and user foolproof. Warning: magical safety enchantment causes used condoms to be ungraspable by women and traps. Attempt to use sharp objects or teeth.'".
+	say "A small box of condoms labelled 'SuperSafe Condoms, for a slut on the go. This magic condom-pack of Holding contains over a thousand condoms, more than enough for even the biggest of sluts. 100% safe and user foolproof. Warning: Do not attempt to store inside bags of holding. Magical safety enchantment causes used condoms to be ungraspable by women and traps. Attempt to use sharp objects or teeth.'".
+
+Definition: condom-pack is never-in-bag: decide yes.
 
 Definition: a thing is condom-providing: decide no.
 
@@ -248,8 +250,7 @@ To say CondomManualFlav of (M - a monster):
 	say "You take out a condom and [if the bimbo of the player > 10 and face is not actually occupied]use your mouth to slowly roll it down [his of M] length[otherwise]quickly roll it down [his of M] length[end if], making [one of]sure the rubber is in intimate contact with every inch of the[or]every bump and vein glisten as you stretch and smooth the rubber over [his of M][at random] tool.".
 
 To say CondomRejectFlav of (M - a monster):
-	say "[BigNameDesc of M] [one of]scoffs[or]frowns[or]rolls [his of M] eyes[at random], and ignores your suggestion.".
-	[say "[BigNameDesc of M] [one of]scoffs[or]frowns[or]rolls [his of M] eyes[at random], and ignores your suggestion. Looks like [he of M][']s going in bare...".]
+	say "[BigNameDesc of M] [one of]scoffs[or]frowns[or]rolls [his of M] eyes[at random], and ignores your suggestion[if M is seduced].[otherwise]. Looks like [he of M][']s going in bare...[end if]".
 
 To say CondomForceSuccessFlav of (M - a monster):
 	if chosen-orifice of M is face:
@@ -259,9 +260,9 @@ To say CondomForceSuccessFlav of (M - a monster):
 
 To say CondomForceFailFlav of (M - a monster):
 	if chosen-orifice of M is face:
-		say "You hold [NameDesc of M][']s [DickDesc of M] steady as you take out a condom and try to unroll it down [his of M] length. [big he of M] moves suddenly, and you accidentally drop it! Looks like [he of M][']s going in bare...";
+		say "You hold [NameDesc of M][']s [DickDesc of M] steady as you take out a condom and try to unroll it down [his of M] length. [big he of M] moves suddenly, and you accidentally drop it[if M is seduced]![otherwise]! Looks like [he of M][']s going in bare...[end if]";
 	otherwise:
-		say "[one of]You reach between your legs, grasping for [NameDesc of M][']s [DickDesc of M] as you quickly take out a condom. It's too difficult without being able to see what you're doing, and you accidentally drop it[or]You take out a condom and reach between your legs, awkwardly applying it to [NameDesc of M][']s [DickDesc of M]. [big he of M] moves before you can unroll it completely, and you accidentally drop the condom[or]You take out a condom and reach between your legs. It's really difficult to get a good grip on [his of M] [DickDesc of M], and you accidentally drop the condom[at random]! Looks like [he of M][']s going in bare...";
+		say "[one of]You reach between your legs, grasping for [NameDesc of M][']s [DickDesc of M] as you quickly take out a condom. It's too difficult without being able to see what you're doing, and you accidentally drop it[or]You take out a condom and reach between your legs, awkwardly applying it to [NameDesc of M][']s [DickDesc of M]. [big he of M] moves before you can unroll it completely, and you accidentally drop the condom[or]You take out a condom and reach between your legs. It's really difficult to get a good grip on [his of M] [DickDesc of M], and you accidentally drop the condom[at random][if M is seduced]![otherwise]! Looks like [he of M][']s going in bare...[end if]";
 
 To say AutomaticCondomFlav of (M - a monster):
 	say "After looking at your [if there is a worn cumdumpster hat]cumdumpster hat[otherwise][ShortDesc of random held condom-providing thing][end if], [NameDesc of M] takes a condom and deftly protects [his of M] [manly-penis].";
@@ -338,8 +339,7 @@ To compute condom biting of (C - a clothing):
 	decrease the used condoms of C by 1;
 	increase the empty condoms of C by 1;
 	FaceFill semen by 1;
-	suggest swallowing;
-	if the semen volume of face > 0, SemenTasteAddictUp 1;
+	suggest swallowing with semen consequences; [You can't avoid the taste addiction increase by not swallowing]
 	get oral creampie image for the player;
 	progress quest of condom-eating-quest;
 	update appearance level;

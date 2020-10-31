@@ -478,10 +478,10 @@ To trigger (Y - a creampie pole trap):
 		let X be a random worn top level protection clothing;
 		if X is nothing:
 			say "The dildo suddenly starts squirting inhuman amounts of warm [semen] from its tip! Your thighs get coated.";
-			CumThighsUp 6;
+			AnnouncedSquirt semen on thighs by 6;
 		otherwise:
 			say "The dildo suddenly starts squirting inhuman amounts of warm [semen] from its tip! Your [printed name of X] gets coated.";
-			Cumsoak 6 on X.
+			AnnouncedSquirt semen on X by 6.
 
 To compute orgasm resolution of (R - a creampie pole trap):
 	if a random number between 1 and 2 - unlucky < 2:

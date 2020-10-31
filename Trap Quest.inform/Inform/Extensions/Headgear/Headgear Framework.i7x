@@ -94,10 +94,6 @@ To release recycled headgear:
 To say ShortDesc of (C - a headgear):
 	say "headwear".
 
-To say wardrobeVanishes of (C - a clothing):
-	say "[one of]vanishes. You can sense that it has been sent to the pink wardrobe[or]is sent from your [body area of C] to the pink wardrobe[stopping]";
-	dislodge C.
-
 To compute hair colour change of (H - a headgear):
 	increase the colour-charge of H by 1;
 	if the colour-charge of H > the hair threshold of H:
@@ -182,6 +178,135 @@ To compute hair growth of (H - a headgear):
 			HairUp 1.
 
 To compute class outfit of (H - a headgear):
+	do nothing.
+
+To WardrobeVanish (C - a clothing):
+	say "Your [C] [one of]vanishes. You can sense that it has been sent to the pink wardrobe[or]is sent from your [body area of C] to the pink wardrobe[stopping]!";
+	dislodge C;
+	now C is in pink wardrobe.
+
+[Removes all clothing that shouldn't be worn at the same time as the new item and sends them to the pink wardrobe. Should be called BEFORE the new item is summoned.]
+To PinkWardrobeUnclash (C - a clothing):
+	UniquePinkWardrobeUnclash C;
+	if C is neck covering:
+		repeat with O running through worn neck covering clothing:
+			WardrobeVanish O;
+	if C is arm covering:
+		repeat with O running through worn arm covering clothing:
+			WardrobeVanish O;
+	if C is hand ready:
+		repeat with O running through worn hand ready clothing:
+			WardrobeVanish O;
+	if C is bra:
+		repeat with O running through worn bra:
+			WardrobeVanish O;
+		repeat with O running through worn breast covering clothing:
+			if O is totally-exclusive or O is top-exclusive:
+				check that O usually goes under C;
+				if the rule succeeded:
+					WardrobeVanish O;
+	if C is corset:
+		repeat with O running through worn corsets:
+			WardrobeVanish O;
+		repeat with O running through worn bottom-exclusive belly covering clothing:
+			WardrobeVanish O;
+		repeat with O running through worn totally-exclusive belly covering clothing:
+			WardrobeVanish O;
+		if C is breast covering:
+			repeat with O running through worn breast covering clothing:
+				if O is totally-exclusive or O is top-exclusive:
+					check that O usually goes under C;
+					if the rule succeeded:
+						WardrobeVanish O;
+	if C is dress:
+		if C is overdress:
+			repeat with O running through worn overdress:
+				WardrobeVanish O;
+		if C is underdress:
+			repeat with O running through worn underdress:
+				WardrobeVanish O;
+		repeat with O running through worn clothing:
+			if O is top-exclusive or O is totally-exclusive:
+				if (O is breast covering and C is breast covering) or (O is belly covering and C is belly covering) or (O is crotch covering and C is crotch covering):
+					WardrobeVanish O;
+	if C is skirted:
+		repeat with O running through worn skirted clothing:
+			WardrobeVanish O;
+		if tough-shit is 0:
+			repeat with O running through worn unskirted themed clothing:
+				WardrobeVanish O;
+	if C is suspenders:
+		repeat with O running through worn suspenders:
+			WardrobeVanish O;
+	if C is knickers or C is ass plugging or C is vagina plugging or C is bottom-exclusive crotch covering clothing or C is totally-exclusive crotch covering clothing:
+		repeat with O running through worn knickers:
+			WardrobeVanish O;
+		repeat with O running through worn bottom-exclusive crotch covering clothing:
+			WardrobeVanish O;
+		repeat with O running through worn totally-exclusive crotch covering clothing:
+			WardrobeVanish O;
+		repeat with O running through worn ass plugging clothing:
+			WardrobeVanish O;
+		repeat with O running through worn vagina plugging clothing:
+			WardrobeVanish O;
+	if C is trousers:
+		repeat with O running through worn trousers:
+			WardrobeVanish O;
+		repeat with O running through worn top-exclusive crotch covering unskirted clothing:
+			WardrobeVanish O;
+		repeat with O running through worn totally-exclusive crotch covering clothing:
+			WardrobeVanish O;
+	if C is leg covering:
+		repeat with O running through worn leg covering clothing:
+			WardrobeVanish O;
+	if C is shoes:
+		repeat with O running through worn shoes:
+			WardrobeVanish O;
+	if C is sex toy:
+		if C is plug or the player is not possessing a vagina:
+			repeat with O running through clothing penetrating asshole:
+				WardrobeVanish O;
+		otherwise:
+			repeat with O running through clothing penetrating vagina:
+				WardrobeVanish O;
+		if C is tail plug:
+			repeat with O running through ass covering clothing:
+				WardrobeVanish O;
+	if (tough-shit is 0 and C is uncovered themed) or C is top-exclusive or C is totally-exclusive:
+		if C is breast covering:
+			repeat with O running through worn breast covering clothing:
+				check that O usually goes under C;
+				if the rule succeeded:
+					WardrobeVanish O;
+		if C is belly covering:
+			repeat with O running through worn belly covering clothing:
+				check that O usually goes under C;
+				if the rule succeeded:
+					WardrobeVanish O;
+		if C is crotch covering:
+			repeat with O running through worn crotch covering clothing:
+				check that O usually goes under C;
+				if the rule succeeded:
+					WardrobeVanish O;
+	if tough-shit is 0:
+		if C is unskirted themed:
+			repeat with O running through worn skirted clothing:
+				WardrobeVanish O;
+		if C is breast covering:
+			repeat with O running through worn uncovered themed bras:
+				WardrobeVanish O;
+		if C is belly covering:
+			repeat with O running through worn uncovered themed corsets:
+				WardrobeVanish O;
+		if C is crotch covering or (C is skirted and C is not super-short):
+			repeat with O running through worn uncovered themed crotch covering clothing:
+				check that O usually goes under C;
+				if the rule succeeded:
+					WardrobeVanish O;
+	repeat with O running through clothing in pink wardrobe:
+		dislodge O.
+
+To UniquePinkWardrobeUnclash (C - a clothing):
 	do nothing.
 
 Definition: a headgear is too boring: decide no.

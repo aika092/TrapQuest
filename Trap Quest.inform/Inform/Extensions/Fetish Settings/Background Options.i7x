@@ -13,7 +13,7 @@ To decide which number is background-waitress:
 	decide on 0.
 
 To decide which number is background-pure:
-	if choice in row 52 of the Table of Player Options is 4, decide on 1;
+	if choice in row 52 of the Table of Player Options is 4 and (diaper quest is 1 or the player is originally female), decide on 1;
 	decide on 0.
 
 To decide which number is background-magic:
@@ -24,10 +24,14 @@ To decide which number is background-rich:
 	if choice in row 52 of the Table of Player Options is 6, decide on 1;
 	decide on 0.
 
+To decide which number is background-selected:
+	if choice in row 52 of the Table of Player Options > 0 and (choice in row 52 of the Table of Player options is not 4 or diaper quest is 1 or the player is originally female), decide on 1;
+	decide on 0.
+
 Table of Background Options
 title	subtable	description	toggle
 "[roman type]Previous Menu (shortcut: press Q)"	--	--	quit rule
-"No Background - 0 points ([if choice in row 52 of the Table of Player Options > 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	empty background rule
+"No Background - 0 points ([if background-selected is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	empty background rule
 "Background (only one): Nursing Student (you can sometimes scrounge up some bandages that slightly heal you, base intelligence slightly higher) - 5 points ([if background-nurse is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	first aid skill toggle rule
 "Background (only one): Sporty (slightly higher strength, slightly reduced intelligence, build fatigue 20% slower) - 5 points ([if background-sporty is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	sporty background toggle rule
 "Background (only one): [if the player is presenting as female]Waitress[otherwise]Waiter[end if] (slightly higher dexterity, your work uniform's shoes are slightly impractical, so you start with 3/10 skill points walking in heels and your chances of spilling drinks when falling over is halved) - 5 points ([if background-waitress is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	waitress background toggle rule
@@ -56,7 +60,7 @@ This is the waitress background toggle rule:
 	if choice in row 52 of the Table of Player Options is 3:
 		now choice in row 52 of the Table of Player Options is 0;
 	otherwise if points count >= 5 or choice in row 52 of the Table of Player Options > 0:
-		now choice in row 54 of the Table of Player Options is 3.
+		now choice in row 52 of the Table of Player Options is 3.
 
 This is the pure background toggle rule:
 	if choice in row 52 of the Table of Player Options is 4:

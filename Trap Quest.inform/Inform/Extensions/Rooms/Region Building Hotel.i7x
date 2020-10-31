@@ -49,6 +49,9 @@ To Set Up The Hotel:
 	repeat with N running from 1 to 4:
 		let R be a random off-stage appropriate recipe;
 		if R is recipe, now R is in Hotel25;
+	if diaper quest is 1 and the player is an october 2020 diaper donator:
+		destroy laundry robots;
+		now hotel changing station is in Hotel20;
 	follow the set up hotel traps rules;
 	if debugmode > 0, say "Finished setting up traps.";
 	repeat with M running through alive monsters in the hotel:

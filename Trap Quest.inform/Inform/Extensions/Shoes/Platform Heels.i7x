@@ -4,8 +4,11 @@ A platform heels is a kind of heels. The printed name of platform heels is usual
 
 There is 1 leather platform heels. There is 1 latex platform heels. There is 1 pvc platform heels.
 
-To decide which number is the kick-bonus of (S - a platform heels):
-	decide on the heel-height of S - 2.
+To decide which number is the kick-bonus of (H - a platform heels):
+	let S be 0;
+	if H is blessed, increase S by 1;
+	if the hindrance of H <= 0, increase S by the heel-height of H - 2;
+	decide on S.
 
 To decide which figure-name is the clothing-image of (H - a platform heels):
 	if H is leather, decide on the figure of leather platform heels;
@@ -23,7 +26,7 @@ To say UniqueShortDesc of (C - a platform heels):
 	say "platform heels".
 
 To say ClothingDesc of (C - a platform heels):
-	say "A [if the heel-height of C is 9]unique yellow [otherwise if the heel-height of C is 10]unique red [end if]pair of [heel-height of C] inch [if C is latex]black latex[otherwise if C is leather]black leather[otherwise if C is pvc and the heel-height of C < 9]red PVC[end if] platform shoes with strong chunky heels and platforms[if C is latex] made out of cork[end if].";
+	say "A [if the heel-height of C is 9]unique yellow [otherwise if the heel-height of C is 10]unique red [end if]pair of [heel-height of C] inch [if C is latex]black latex[otherwise if C is leather]black leather[otherwise if C is pvc and the heel-height of C < 9]red PVC[end if] platform shoes with strong chunky heels and platforms[if C is latex] made out of cork[end if][if C is worn and C is cursed and C is latex and there is a worn cursed black catsuit]. The upper part of your heels have completely merged with the rest of your catsuit.[end if]";
 	say "[SteadinessDesc of C]".
 
 To uniquely set up (C - a platform heels):

@@ -3,6 +3,8 @@ Negligee by Dresses begins here.
 A negligee is a kind of overdress. A negligee is sheer. A negligee is short. A negligee is transformation-rare. A negligee is silk. A negligee is not-top-displacable.
 
 To say ShortDesc of (C - a negligee):
+	say "negligee".
+To say MediumDesc of (C - a negligee):
 	say "sheer negligee".
 
 To compute SelfExamineDesc of (O - a negligee):
@@ -62,11 +64,15 @@ floral negligee is an underdress. floral negligee is crotch-intact. floral negli
 
 To decide which number is the initial outrage of (C - floral negligee):
 	decide on 3.
+
 Definition: floral negligee is fetish appropriate:
 	if diaper quest is 0, decide yes;
 	decide no.
 
 The printed name of floral negligee is "[clothing-title-before]floral negligee[clothing-title-after]".
+
+To say MediumDesc of (C - floral negligee):
+	say "floral negligee".
 
 Figure of floral negligee is the file "Items/Clothes/Upper/Exposing/Negligees/negligee3.png".
 

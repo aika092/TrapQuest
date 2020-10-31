@@ -81,7 +81,7 @@ To say MediumDesc of (M - goth mannequin):
 Definition: goth mannequin is woods dwelling:
 	if doomed >= 5, decide yes;
 	decide no.
-Definition: goth mannequin is mansions dwelling:
+Definition: goth mannequin is mansion dwelling:
 	if doomed > 2, decide yes;
 	decide no.
 
@@ -92,32 +92,87 @@ To say mannequin-model of (M - mannequin):
 To say MonsterDesc of (M - a mannequin):[topless mannequin]
 	say "A topless [mannequin-model of M] mannequin with a tanned skin tone, wearing tight denim jeans. [big he of M] has blonde hair drawn back into a silky ponytail and a pink scrunchie around each wrist. [if lady fetish is 2]A[otherwise][big his of M] breasts are perfectly spherical and unmoving, and a[end if] small handbag hangs delicately over one shoulder.".
 
+To decide if (M - a mannequin) is theme-matched:[topless mannequin]
+	if breasts is exposed, decide yes;
+	decide no.
+
 To say MonsterDesc of (M - goth mannequin):
-	say "An unsettling [mannequin-model of M] mannequin complete with garish makeup and a blank stare. [big his of M] solid black hair frames a stark pale face which emphasises [his of M] scarlet red lips. Everything [he of M] is wearing is black: [his of M] criminally short punk dress, [his of M] knee high boots and [his of M] gloves, and the handbag hanging delicately over one shoulder.".
+	say "An unsettling [mannequin-model of M] mannequin complete with garish makeup and a blank stare. [big his of M] solid black hair frames a stark pale face which emphasises [his of M] scarlet red lips. Everything [he of M] is wearing is black: [his of M] criminally short punk dress, [his of M] knee high boots and [his of M] gloves, and even the handbag hanging over [his of M] shoulder.".
+
+To decide if (M - goth mannequin) is theme-matched:
+	if there is a worn black themed clothing, decide yes;
+	if there is a worn cursed clothing, decide yes;
+	decide no.
 
 To say MonsterDesc of (M - stylish mannequin):
 	say "An unsettling [mannequin-model of M] mannequin complete with striking makeup and a blank stare. '[big he of M]' has armpit-length black ponytailed hair, and a short pink dress underneath a trendy belt. It is low-cut and very thin, so [his of M] featureless [ChestDesc of M] and smooth crotch are on full display for your prying eyes. [big he of M] has long white fingernails, which match the latex handbag hanging delicately from one shoulder.".
 
+To decide if (M - stylish mannequin) is theme-matched:
+	if there is a worn pink themed clothing, decide yes;
+	decide no.
+
 To say MonsterDesc of (M - flirty mannequin):
 	say "An unsettling [mannequin-model of M] mannequin, with a warm tanned skin tone and an almost smirking facial expression complemented by excessive amounts of eye shadow and eyeliner. Wavy black hair flows down [his of M] front and back to [his of M] waist, giving [him of M] a very provocative look. This is emphasised by the sheer red negligee [he of M] is wearing. It is practically see-through when the light touches it in the right way.".
+
+To decide if (M - flirty mannequin) is theme-matched:
+	if there is a worn red themed clothing, decide yes;
+	decide no.
 
 To say MonsterDesc of (M - lycra-clad mannequin):
 	say "An unsettling [mannequin-model of M] mannequin, with a warm tanned skin tone and a politely smiling facial expression, painted in 'night on the town' make up. Reddish-brown hair rests on [his of M] shoulders, kept mostly tidy thanks to a ponytail. [big his of M] grey playsuit boasts a very low V neck that almost exposes [his of M] belly button, and is ever so slightly sheer, giving you glimpses of what is underneath. Or rather, what would be underneath if [he of M] wasn't a doll".
 
+To decide if (M - lycra-clad mannequin) is theme-matched:
+	if there is a worn grey themed clothing, decide yes;
+	if there is a worn lycra clothing, decide yes;
+	decide no.
+
 To say MonsterDesc of (M - latex-clad mannequin):
 	say "An unsettling [mannequin-model of M] mannequin complete with striking makeup and a blank stare. '[big he of M]' has armpit-length black ponytailed hair, and is modelling a provocative pink latex dress. The V neck is so low that [his of M] belly button is left bare. A pair of grey latex knee-length boots adorn [his of M] feet, and a small hangbag hangs delicately from one shoulder.".
+
+To decide if (M - latex-clad mannequin) is theme-matched:
+	if there is a worn pink themed clothing, decide yes;
+	if there is a worn latex clothing, decide yes;
+	decide no.
 
 To say MonsterDesc of (M - swimmer mannequin):
 	say "An unsettling [mannequin-model of M] mannequin complete with striking makeup and a blank stare. '[big he of M]' has armpit-length black ponytailed hair and is modelling a tight blue one-piece swimsuit. A small handbag hangs from one of [his of M] shoulders.".
 
+To decide if (M - swimmer mannequin) is theme-matched:
+	if there is a worn swimming themed clothing, decide yes;
+	decide no.
+
 To say MonsterDesc of (M - lingerie-clad mannequin):
 	say "An unsettling [mannequin-model of M] mannequin, with a warm tanned skin tone and an almost smirking facial expression complemented by make up that really make [his of M] eyes pop. [big his of M] 'outfit' consists of only the most skimpy, lacy black and burgundy lingerie: a full set of strapless bra, thong, stockings and suspenders. A small handbag is draped over one of [his of M] shoulders.".
+
+To decide if (M - lingerie-clad mannequin) is theme-matched:
+	if there is a worn black themed clothing, decide yes;
+	let B be a random worn bra;
+	if B is bra and B is not currently covered, decide yes;
+	now B is a random worn knickers;
+	if B is knickers and B is not currently covered, decide yes;
+	decide no.
 
 To say MonsterDesc of (M - skater mannequin):
 	say "An unsettling [mannequin-model of M] mannequin complete with striking makeup and blankly smiling stare. A pink punk-styled top sits above a tiny white skater mini-skirt, which barely hides whatever underwear [he of M] might be wearing. Fishnet tights sit under multicoloured striped knee-length socks and knee-pads. Fingerless gloves, elbow-pads and black & white trainers finish off the skater look.".
 
+To decide if (M - skater mannequin) is theme-matched:
+	if there is a worn red themed clothing, decide yes;
+	if there is a worn rollerskates, decide yes;
+	decide no.
+
 To say MonsterComment of (M - a mannequin):[TODO: fix this]
-	if diaper quest is 0, say "[if the bimbo of the player <= 4][line break][first custom style][one of]Wow, [he of M]'s really creepy.[or][big he of M] doesn't look tough, but [he of M]'s not human so I should keep an eye out.[or]I wonder if [he of M]'s got a pussy.[or]This reminds me of this one time me and my friend took a department store mannequin home.[or]Even the clothing models look like total harlots.[or]Hmm, I doubt [he of M] can feel pain, but [he of M] probably has some exploitable weak points.[or]So that's how I'm expected to dress. Disgusting.[in random order][otherwise if the bimbo of the player <= 8][line break][variable custom style][one of][big he of M]'s actually kind of attractive for a walking piece of plastic.[or]What kind pervert dressed [him of M] up so sexy?[or]Is that how I'll look by the end of this? No... I've got to resist![in random order][otherwise if the bimbo of the player <= 12][line break][second custom style][one of][big his of M] make up looks really good.[or]Is that a wig or is that real hair? [big he of M] has good fashion sense.[or]Those clothes don't look too bad...[in random order][otherwise if bimbo of the player <= 16][second custom style][one of]I should have [him of M] do my make up![or]Maybe [he of M] can give me some fashion pointers, teehee![or]People stare at [him of M] all day long, just like they will with me!*giggle*[or]I want, no, I *NEED* to look like [him of M]![in random order][otherwise if bimbo of the player <= 20][second custom style][one of]I wish *MY* head could just be empty plastic![or]Maybe I should be a mannequin when I get home![or][big he of M][']s so lucky, people make all [his of M] choices for [him of M] every day![in random order][end if][roman type][line break]".
+	if M is theme-matched:
+		if the bimbo of the player <= 6:
+			if the player is gendered male:
+				say "[line break][first custom style]Isn't she wearing the same thing as me? This is so embarrassing, dude...[roman type][line break]";
+			otherwise:
+				say "[line break][first custom style]Ugh. I can't believe that freaky thing is actually dressed like I am.'[roman type][line break]";
+		otherwise if the bimbo of the player <= 12:
+			say "[line break][variable custom style]Our outfits are kind of similar, aren't they...[roman type][line break]";
+		otherwise:
+			say "[line break][second custom style]We totally match![roman type][line break]";
+	otherwise if diaper quest is 0:
+		say "[if the bimbo of the player <= 4][line break][first custom style][one of]Wow, [he of M]'s really creepy.[or][big he of M] doesn't look tough, but [he of M]'s not human so I should keep an eye out.[or]I wonder if [he of M]'s got a pussy.[or]This reminds me of this one time me and my friend took a department store mannequin home.[or]Even the clothing models look like total harlots.[or]Hmm, I doubt [he of M] can feel pain, but [he of M] probably has some exploitable weak points.[or]So that's how I'm expected to dress. Disgusting.[in random order][otherwise if the bimbo of the player <= 8][line break][variable custom style][one of][big he of M]'s actually kind of attractive for a walking piece of plastic.[or]What kind pervert dressed [him of M] up so sexy?[or]Is that how I'll look by the end of this? No... I've got to resist![in random order][otherwise if the bimbo of the player <= 12][line break][second custom style][one of][big his of M] make up looks really good.[or]Is that a wig or is that real hair? [big he of M] has good fashion sense.[or]Those clothes don't look too bad...[in random order][otherwise if bimbo of the player <= 16][second custom style][one of]I should have [him of M] do my make up![or]Maybe [he of M] can give me some fashion pointers, teehee![or]People stare at [him of M] all day long, just like they will with me!*giggle*[or]I want, no, I *NEED* to look like [him of M]![in random order][otherwise if bimbo of the player <= 20][second custom style][one of]I wish *MY* head could just be empty plastic![or]Maybe I should be a mannequin when I get home![or][big he of M][']s so lucky, people make all [his of M] choices for [him of M] every day![in random order][end if][roman type][line break]";
 
 To set up (M - a mannequin):
 	reset M;
@@ -130,14 +185,6 @@ To set up (M - a mannequin):
 
 To decide which number is the starting difficulty of (M - mannequin):
 	decide on 6.
-
-To DifficultyUp (M - a mannequin) by (X - a number):
-	while X > 0:
-		increase the raw difficulty of M by 1;
-		decrease X by 1;
-	if diaper quest is 0 and the difficulty of M > 10 and the number of sex toys carried by M is 0:
-		let P be a random off-stage dong;[If she doesn't have a dildo and her difficulty is high enough, she gets a dildo from off-stage]
-		if a random number between 5 and the difficulty of M > the size of P * 2, now M is carrying P.
 
 [It would be annoying to manage which dildo she's using, so we have her discard any extra dildos when we make this check]
 To decide which number is the girth of (M - a mannequin):
@@ -274,8 +321,8 @@ To compute (M - a goth mannequin) entering mouth:
 		LipsUp 1;
 		satisfy M;
 	otherwise if the make-up of face > a random number between 0 and 2 and S is actually summonable and the largeness of hair > 4:
-		if the player is ponytailed, say "[BigNameDesc of M] pulls out an identical pink scrunchie and fashions your hair into a [if the bimbo of the player > 8][line break][second custom style]sexy [roman type][line break][end if]pair of pigtails.[if the player is male][one of][line break][variable custom style]There's no mistaking it now, no men wear pigtails.[roman type][line break][or][stopping][end if]";
-		otherwise say "[BigNameDesc of M] pulls out a pink scrunchie and fashions your hair into a [if the bimbo of the player < 7]tidy[otherwise][line break][second custom style]cute[roman type][line break][end if] ponytail.[if the player is male][one of][line break][variable custom style]This is definitely girly hair now.[roman type][line break][or][stopping][end if]";
+		if the player is ponytailed, say "[BigNameDesc of M] pulls out an identical pink scrunchie and fashions your hair into a [if the bimbo of the player > 8][line break][second custom style]sexy [roman type][line break][end if]pair of pigtails.[if the player is gendered male][one of][line break][variable custom style]There's no mistaking it now, no men wear pigtails.[roman type][line break][or][stopping][end if]";
+		otherwise say "[BigNameDesc of M] pulls out a pink scrunchie and fashions your hair into a [if the bimbo of the player < 7]tidy[otherwise][line break][second custom style]cute[roman type][line break][end if] ponytail.[if the player is gendered male][one of][line break][variable custom style]This is definitely girly hair now.[roman type][line break][or][stopping][end if]";
 		summon S;
 		satisfy M;
 	otherwise if the make-up of face > 1 and the largeness of hair > 4 and a random number between 1 and 5 > 2 and artificial enhancements fetish is 1 and the fake largeness of hair < 10:
@@ -334,10 +381,13 @@ To set up sex length of (M - a mannequin) in (F - asshole):
 
 To compute (M - a mannequin) entering anally:
 	let P be a random sex toy carried by M;
+	if P is nothing and the difficulty of M - the starting difficulty of M >= 3:[After a certain difficulty level, she starts using dildos.]
+		now P is a random off-stage plentiful dong;
+		if a random number between 5 and the difficulty of M > the size of P, now M is carrying P;
 	if P is sex toy:
-		say "[BigNameDesc of M] pushes a [printed name of P] into your [asshole], [if the player is not possessing a penis]angling it toward [himself of M] as [he of M] begins pumping it in and out of your hole[otherwise]angling it against your prostate with pinpoint accuracy as [he of M] begins pumping it in and out of your hole[end if].";
+		say "[BigNameDesc of M] pushes a [printed name of P] into your [asshole], [if the player is not possessing a penis]angling it toward [himself of M] as [he of M] begins pumping it in and out of your hole[otherwise]angling it against your prostate with pinpoint accuracy as [he of M] begins pumping it in and out of your hole[end if]. [run paragraph on]";
 	otherwise:
-		say "[BigNameDesc of M] inserts two fingers into your [asshole], and starts stroking in a come hither motion.";
+		say "[BigNameDesc of M] inserts two fingers into your [asshole], and starts stroking in a come hither motion. [run paragraph on]";
 	if there is a worn chastity-belt:
 		say "[big he of M] holds you still with [his of M] other hand. It's like [he of M]'s trying to force an anal orgasm out of you!";
 	otherwise if the player is possessing a penis:
@@ -417,5 +467,33 @@ To say DamageReactWeak of (M - a mannequin):
 
 To say BanishFleeFlav of (M - a mannequin):
 	say "[BigNameDesc of M] falls and breaks into pieces.".
+
+The mannequin priority attack rules is a rulebook. The priority attack rules of a mannequin is the mannequin priority attack rules.
+
+This is the mannequin strikes a pose rule:
+	let M be current-monster;
+	if M is unfriendly and the player is upright:
+		if the difficulty of M > the starting difficulty of M and (a random number between 1 and 6 is 1 or (M is theme-matched and a random number between 1 and 5 is 1)):
+			say "[BigNameDesc of M] emits a clicking noise as [he of M] strikes a pose with one hand on [his of M] hip, and starts strutting straight for you.";
+			if the accuracy roll of M >= the dexterity of the player:
+				if M is theme-matched and a random number between 1 and 2 is 1:[This *doesn't* consume her action for the turn.]
+					say "The whole thing really weirds you out, so you don't react fast enough when [he of M] suddenly reaches out and taps you on the forehead!";
+					if the intelligence roll of M >= the intelligence of the player:[TODO: possible situation where she forces you to kneel?]
+						say "You feel a strange tingling feeling in your joints as you suddenly find yourself imitating [his of M] pose. [big his of M] emits another clicking noise as [he of M] rears back to strike your now vulnerable body!";
+						moderateHumiliate;
+						now another-turn-flavour is the substituted form of "You are still stuck imitating [FuckerDesc of M]'s pose!";
+						now another-turn is 1;
+					otherwise:
+						say "You feel a strange tingling feeling in your joints as you are suddenly driven to imitate [his of M] pose, and you exhaust yourself a little trying to shake it off.";
+						FatigueUp 10;
+				otherwise:[Considering that the player has a chance to dodge, this is more or less a normal attack. TODO: revisit]
+					let B be the painful-part of M;
+					say "The whole thing really weirds you out, so you don't react fast enough when [he of M] suddenly hits you [TargetName of B] with [his of M] handbag!";
+					compute M hurting B;[always hits]
+					rule succeeds;
+			otherwise:
+				say "You're a little weirded out, but thankfully you're quick enough to back away before [he of M] gets close enough to do whatever it is [he of M] wanted to do.";
+				rule succeeds.[This is her action for the turn.]
+The mannequin strikes a pose rule is listed in the mannequin priority attack rules.
 
 Mannequin ends here.

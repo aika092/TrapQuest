@@ -24,13 +24,37 @@ To uniquely set up (C - a halloween headgear):
 	now the quest of C is trick-or-treat-quest.
 
 To say QuestFlav of (Q - trick-or-treat-quest):
-	say "You sense it wants you to explore the haunted house to find and eat lots of tasty treats.".
+	say "You sense it wants you to explore the haunted house to find AND EAT lots of tasty treats.".
 
 To say QuestTitle of (Q - trick-or-treat-quest):
 	say " (candy search quest)".
 
 To compute generic first time class reward of (Q - trick-or-treat-quest) on (C - a clothing):
-	compute generic second time class reward of Q on C.
+	repeat with N running from 1 to 3:
+		let D be a random off-stage ring;
+		if D is ring:
+			if N is 1, now D is sapphire;
+			if N is 2, now D is emerald;
+			if N is 3, now D is ruby;
+			set shortcut of D;
+			if D is actually summonable:
+				summon D;
+			otherwise:
+				now D is in the location of the player;
+			say "summoning a [MediumDesc of D] [if D is worn]straight onto your finger[otherwise]right in front of you[end if]!".
+
+To compute generic second time class reward of (Q - trick-or-treat-quest) on (C - a clothing):
+	repeat with N running from 1 to 2:
+		let D be a random off-stage ring;
+		if D is ring:
+			if N is 1, now D is pink diamond;
+			otherwise now D is pure diamond;
+			set shortcut of D;
+			if D is actually summonable:
+				summon D;
+			otherwise:
+				now D is in the location of the player;
+			say "summoning a [MediumDesc of D] [if D is worn]straight onto your finger[otherwise]right in front of you[end if]!".
 
 To progress quest of (Q - trick-or-treat-quest):
 	repeat with C running through worn clothing:
@@ -104,9 +128,6 @@ Definition: rubber nun cowl (called C) is removal-blocking: [Some items (mainly 
 To compute full outfit summon of (H - rubber nun cowl):
 	summon H cursed;
 	say "You are wearing a [H], ";
-	if nun-top is actually summonable:
-		summon nun-top;
-		say "a [nun-top], ";
 	if red-orange briefs is actually summonable:
 		summon red-orange briefs uncursed;
 		say "a [red-orange briefs], ";
@@ -116,7 +137,10 @@ To compute full outfit summon of (H - rubber nun cowl):
 	if black-leather-boots is actually summonable:
 		summon black-leather-boots uncursed;
 		now the heel-height of black-leather-boots is 1;
-		say "and a [black-leather-boots]!".
+		say "and a [black-leather-boots]!";
+	blandify and reveal nun-top;
+	now nun-top is in the location of the player;
+	say "A [nun-top] is on the ground in front of you almost as if you forgot to put it on[if the largeness of breasts > 1], leaving you completely topless. Eek[end if]!".
 
 witch's hat is a halloween headgear. witch's hat is latex. Figure of witch's hat is the file "Items/Accessories/Head/witchhat1.png". witch's hat is blondeness-negative. witch's hat is brightness-negative. witch's hat is redness-negative. The text-shortcut of witch's hat is "wtch".
 
@@ -154,9 +178,9 @@ Definition: witch's hat (called C) is removal-blocking: [Some items (mainly head
 To compute full outfit summon of (H - witch's hat):
 	summon H cursed;
 	say "You are wearing a [H], ";
-	if witch's top is actually summonable:
+	[if witch's top is actually summonable:
 		summon witch's top;
-		say "a [witch's top], ";
+		say "a [witch's top], ";]
 	if witch's trousers is actually summonable:
 		summon witch's trousers;
 		say "a [witch's trousers], ";
@@ -167,7 +191,10 @@ To compute full outfit summon of (H - witch's hat):
 		now S is blandness;
 		now the raw-magic-modifier of S is 0;
 		now the heel-height of S is 1;
-		say "and a [S]!".
+		say "and a [S]!";
+	blandify and reveal witch's top;
+	now witch's top is in the location of the player;
+	say "A [witch's top] is on the ground in front of you almost as if you forgot to put it on[if the largeness of breasts > 1], leaving you completely topless. Eek[end if]!".
 
 doll hairbow is a halloween headgear. doll hairbow is latex. Figure of doll hairbow is the file "Items/Accessories/Head/dollbow1.png". doll hairbow is blondeness-negative. doll hairbow is brightness-negative. doll hairbow is redness-negative. The text-shortcut of doll hairbow is "dlhb".
 
@@ -204,9 +231,9 @@ Definition: doll hairbow (called C) is removal-blocking: [Some items (mainly hea
 To compute full outfit summon of (H - doll hairbow):
 	summon H cursed;
 	say "You are wearing a [H], ";
-	if doll-dress is actually summonable:
+	[if doll-dress is actually summonable:
 		summon doll-dress;
-		say "a [doll-dress], ";
+		say "a [doll-dress], ";]
 	let BOR be a random black-and-orange rubber stockings;
 	if BOR is actually summonable:
 		summon BOR uncursed;
@@ -222,6 +249,9 @@ To compute full outfit summon of (H - doll hairbow):
 	if S is actually summonable:
 		summon S uncursed;
 		now the heel-height of S is 1;
-		say "and a [S]!".
+		say "and a [S]!";
+	blandify and reveal doll-dress;
+	now doll-dress is in the location of the player;
+	say "A [doll-dress] is on the ground in front of you almost as if you forgot to put it on[if the largeness of breasts > 1], leaving you completely topless. Eek[end if]!".
 
 Halloween Headgear ends here.

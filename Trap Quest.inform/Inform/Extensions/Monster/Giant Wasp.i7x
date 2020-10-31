@@ -2,6 +2,7 @@ Giant Wasp by Monster begins here.
 
 A giant wasp is a kind of monster. A giant wasp is usually airborne. A giant wasp can be flying. A giant wasp is usually not flying. A giant wasp is usually neuter. The poison-status of a giant wasp is -1. A giant wasp has a number called fertilisation-cooldown.
 
+Definition: a giant wasp is virginity taking: decide yes. [an ovipositor is a kind of sex organ]
 Definition: a giant wasp is willing to do anal: decide yes.
 Definition: a giant wasp is willing to do vaginal:
 	if the pregnancy of the player <= 0 or the pregnancy of the player is 3, decide yes;
@@ -98,7 +99,9 @@ To say SummoningFlav of (M - a giant wasp):
 	if the location of the player is Woods30, say "You hear someone (or something) moaning intensely from inside the statue, loudly climaxing as a large object, about the size of a football rolls through the stony passage. The surface of the object cracks, and a full-grown [printed name of M] emerges from the egg and begins hovering in the air just below the statue's chest.";
 	otherwise say "You hear an egg cracking somewhere close by.".
 
-Definition: a giant wasp is virginity taking: decide yes.[an ovipositor is a kind of sex organ, isn't it?]
+To compute (M - a monster) stomping (N - a giant wasp):
+	if M is in the location of the player, say "[BigNameDesc of M] smacks [NameDesc of N] with a clenched fist. [BigNameDesc of N] quickly turns tail and buzzes far, far away!";
+	destroy N.
 
 Part 2 - Perception
 
@@ -142,16 +145,8 @@ To compute monstermotion of (M - a giant wasp):
 		let E be a random medium egg in the location of M;
 		if E is not held by the player and E is laid:
 			Fertilise E with M;
-	otherwise if M is in Dungeon11 or M is in Dungeon10:
-		try M going east;
 	otherwise:
-		now neighbour finder is the location of M;
-		let A be a random N-viable direction;
-		let P be the room A from the location of M;
-		if A is a random N-viable direction and P is not Dungeon12:
-			try M going A;
-		otherwise if A is a random N-viable direction and P is not Dungeon12:
-			try M going A;
+		compute room leaving of M;
 	if the fertilisation-cooldown of M > 0, decrease the fertilisation-cooldown of M by seconds.
 
 To compute (M - a giant wasp) seeking (D - a direction):
@@ -160,7 +155,7 @@ To compute (M - a giant wasp) seeking (D - a direction):
 		if E is not held by the player and E is laid:
 			Fertilise E with M;
 	otherwise:
-		try M going D;
+		blockable move M to D;
 	if the fertilisation-cooldown of M > 0, decrease the fertilisation-cooldown of M by seconds.
 
 Part 4 - Fertilise
@@ -302,25 +297,25 @@ To compute SelectionFailure of (M - a giant wasp):
 	bore M.
 
 To say SpitroastPrep of (M - a giant wasp) with (O - a monster) in (F - asshole):
-	say "[BigNameDesc of M] lands on top of you, displacing your centre of gravity as [his of M] bizarre breeding appendage hangs down between your legs".
+	say "[BigFuckerDesc of M] lands on top of you, displacing your centre of gravity as [his of M] bizarre breeding appendage hangs down between your legs".
 
 To say ThreesomePrep of (M - a giant wasp) with (N - a monster) in (F - asshole):
-	if N is intelligent, say "[NameDesc of N] flips you over as [NameDesc of M] lands on top of you, [his of M] bizarre breeding appendage hanging down between your legs.";
-	otherwise say "[BigNameDesc of M] drops down on top of [NameDesc of N], [his of M] bizarre breeding appendage hanging down between your legs.".
+	if N is intelligent, say "[FuckerDesc of N] flips you over as [FuckerDesc of M] lands on top of you, [his of M] bizarre breeding appendage hanging down between your legs.";
+	otherwise say "[BigFuckerDesc of M] drops down on top of [FuckerDesc of N], [his of M] bizarre breeding appendage hanging down between your legs.".
 
 To say FoursomePrep of (M - a giant wasp) with (N - a monster) and (O - a monster) in (F - asshole):
-	if N is intelligent, say "[NameDesc of N] flips you over as [NameDesc of M] lands on top of you, [his of M] bizarre breeding appendage hanging down between your legs.";
-	otherwise say "[BigNameDesc of M] drops down on top of [NameDesc of N], [his of M] bizarre breeding appendage hanging down between your legs.".
+	if N is intelligent, say "[FuckerDesc of N] flips you over as [FuckerDesc of M] lands on top of you, [his of M] bizarre breeding appendage hanging down between your legs.";
+	otherwise say "[BigFuckerDesc of M] drops down on top of [FuckerDesc of N], [his of M] bizarre breeding appendage hanging down between your legs.".
 
 To say TwosomePrep of (M - a giant wasp) in (F - asshole):
-	say "[BigNameDesc of M] lands on top of you with [his of M] bizarre breeding appendage hanging down between your legs.".
+	say "[BigFuckerDesc of M] lands on top of you with [his of M] bizarre breeding appendage hanging down between your legs.".
 
 To say PenetrationFlav of (M - a giant wasp) in (F - asshole):
 	let H be the openness of asshole - the girth of M;
-	say "The ovipositor curls up between your asscheeks, immediately finding your sphincter and lubricating it with cool, slippery breeding fluid. You [if the relevant sex addiction of M > 7]coo[otherwise]wince[end if] as the tip enters your [asshole], which is so lubricated that [NameDesc of M] has no trouble sliding the whole thing into you, ensuring [his of M] [one of]children[or]spawn[or]progeny[at random] will be planted nice and deep inside your belly. You are being bred by [NameDesc of M]!".
+	say "The ovipositor curls up between your asscheeks, immediately finding your sphincter and lubricating it with cool, slippery breeding fluid. You [if the relevant sex addiction of M > 7]coo[otherwise]wince[end if] as the tip enters your [asshole], which is so lubricated that [FuckerDesc of M] has no trouble sliding the whole thing into you, ensuring [his of M] [one of]children[or]spawn[or]progeny[at random] will be planted nice and deep inside your belly. You are being bred by [FuckerDesc of M]!".
 
 To say CondomForceFailFlav of (M - a giant wasp):
-	say "[one of]You reach between your legs, grasping for [NameDesc of M][']s [DickDesc of M] as you quickly take out a condom. The strange organ actively avoids getting caught in your grip, and eventually you have no choice but to give up.[or]You take out a condom and reach between your legs, awkwardly trying to apply it to [NameDesc of M][']s [DickDesc of M]. The strange organ manages to knock your hand out of the way.[at random] Looks like [he of M]'s going in bare...";
+	say "[one of]You reach between your legs, grasping for [FuckerDesc of M][']s [DickDesc of M] as you quickly take out a condom. The strange organ actively avoids getting caught in your grip, and eventually you have no choice but to give up.[or]You take out a condom and reach between your legs, awkwardly trying to apply it to [FuckerDesc of M][']s [DickDesc of M]. The strange organ manages to knock your hand out of the way.[at random][if M is not seduced]Looks like [he of M]'s going in bare...[end if]".
 
 To decide which number is the condom resistance of (M - a giant wasp):
 	decide on 99.[Default 100% success]
@@ -336,10 +331,10 @@ To compute damaging attack of (M - a giant wasp):
 		say "The wasp stings you in the [one of]arm[or]butt[or]neck[or]back[purely at random], and you feel [if wasp-poison-timer < 1]some strength being sapped from your body! You've been poisoned![otherwise]more poison entering your body![end if]";
 		increase wasp-poison-timer by 3 * the difficulty of M;
 	otherwise if M is honey-wasp and a random number between 1 and 2 is 1 and the player is the donator:
-		say "An alien-looking appendage unfurls from [NameDesc of M][']s abdomen, pulsating wildly as it spews sweet-smelling honey across your [one of]arm[or]butt[or]neck[or]back[purely at random]. [one of]It's getting more difficult to move![or]You're having trouble moving![or]It's getting harder to move![or]You're having more trouble moving around![or]It doesn't hurt, but it's getting pretty difficult to move...[then at random]";
+		say "An alien-looking appendage unfurls from [FuckerDesc of M][']s abdomen, pulsating wildly as it spews sweet-smelling honey across your [one of]arm[or]butt[or]neck[or]back[purely at random]. [one of]It's getting more difficult to move![or]You're having trouble moving![or]It's getting harder to move![or]You're having more trouble moving around![or]It doesn't hurt, but it's getting pretty difficult to move...[then at random]";
 		increase wasp-honey-timer by 5 * the difficulty of M;
 		if wasp-honey-timer > 80:
-			say "[bold type]The honey covering your limbs begins to harden, and within moments it becomes impossible to move at all. [roman type][BigNameDesc of M] bumps you gently with [his of M] body, which in your immobile state causes you to fall over.";
+			say "[bold type]The honey covering your limbs begins to harden, and within moments it becomes impossible to move at all. [roman type][BigFuckerDesc of M] bumps you gently with [his of M] body, which in your immobile state causes you to fall over.";
 			now wasp-honey-timer is 100;
 			try kneeling;
 			now the stance of the player is 1; [failsafe]
@@ -348,13 +343,6 @@ To compute damaging attack of (M - a giant wasp):
 		FatigueUp a random number between the difficulty of M and the buckle threshold of the player / 4.
 
 Section 2 - Damage
-
-To compute damage reaction of (M - a giant wasp):
-	if M is uninterested:
-		say "[BigNameDesc of M] seems to notice you. Uh-oh...";
-	otherwise:
-		if the health of M > the maxhealth of M / 2, say "[BigNameDesc of M] buzzes angrily!";
-		otherwise say "[BigNameDesc of M][']s buzzing is getting weaker!".
 
 wasp-poison-timer is a number that varies.
 
@@ -402,7 +390,12 @@ Section 1 - Domesticated wasp
 domesticated wasp is a mundane-wasp. The text-shortcut of domesticated wasp is "lwsp". domesticated wasp is intelligent. Understand "rider", "wasp rider", "fairy" as domesticated wasp.
 
 To say MediumDesc of (M - domesticated wasp):
-	say "domesticated [ParentDesc of M] wasp".
+	say "[ParentDesc of M] wasp rider".
+
+To say FuckerDesc of (M - domesticated wasp):
+	say "the domesticated [ParentDesc of M] wasp".
+To say BigFuckerDesc of (M - domesticated wasp):
+	say "The domesticated [ParentDesc of M] wasp".
 
 To say MonsterDesc of (M - domesticated wasp):
 	say "This giant flying insect has a tiny fairy perched on [his of M] back, controlling [him of M] with a pair of fibrous green reins. Despite [his of M] clearly domesticated nature, it has a huge, nasty-looking stinger, and an even more intimidating ovipositor extending from [his of M] underbelly.".
@@ -519,19 +512,19 @@ To say WhoAnswer of (M - domesticated wasp):
 	alwayscutshow figure of fairy interact 10 for M.
 
 To say StoryAnswer of (M - domesticated wasp):
-	say "[speech style of fairy-witch]'[one of]There were always rumours among fairies that wasps could be tamed, but I was the only fairy cool enough to try.'[or]I thought waiting around getting pregnant all the time was dumb, so I decided to become a wasp tamer.'[at random][roman type][line break]";
+	say "[speech style of fairy-witch]'[one of]There were always rumours among fairies that wasps could be tamed, but I was the only fairy cool enough to try.'[or]I thought waiting around getting pregnant all the time was dumb, so I decided to become a wasp tamer.'[sticky random][roman type][line break]";
 	alwayscutshow figure of fairy interact 8 for M.
 
 To say EscapeAnswer of (M - domesticated wasp):
 	if the class of the player is faerie:
-		say "[speech style of fairy-witch]'[one of]Weak fairies like you aren't supposed to leave. I think.'[or]I can see why you would want to leave. It's a giant clam-fest around here. Can't help, sorry.'[or]There's a mansion somewhere you could hide in. It's overrated.'[at random][roman type][line break]";
+		say "[speech style of fairy-witch]'[one of]Weak fairies like you aren't supposed to leave. I think.'[or]I can see why you would want to leave. It's a giant clam-fest around here. Can't help, sorry.'[or]There's a mansion somewhere you could hide in. It's overrated.'[in random order][roman type][line break]";
 	otherwise:
-		say "[speech style of fairy-witch]'[one of]Why? Are you scared of me? Heheheh...'[or]Don't you remember how you got here? Just go that way.'[or]There's a set of doors somewhere, but behind them everything is all lame and clean. You'd probably fit right in.'[as decreasingly likely outcomes][roman type][line break]";
+		say "[speech style of fairy-witch]'[one of]Why? Are you scared of me? Heheheh...'[or]Don't you remember how you got here? Just go that way.'[or]There's a set of doors somewhere, but behind them everything is all lame and clean. You'd probably fit right in.'[in random order][roman type][line break]";
 	alwayscutshow figure of fairy interact 11 for M.
 
 To say AdviceAnswer of (M - domesticated wasp):
 	if the class of the player is faerie, say "[speech style of fairy-witch][one of]And give you an advantage? No way!'[or]Like I'd share my secrets with you!'[or]If you tried to ride a wasp you'd crush it. Idiot.'[at random][roman type][line break]";
-	otherwise say "[speech style of fairy-witch]'[one of]Demons really love it when you resist them. The more you fight, the bigger the mess you get. It's fun!'[or]If you get bred a lot, you could try building an army.[or]Many years ago, the princess used a mystical amulet to seal away a demon's power. [big he of ex-princess] [if mythical creature fetish is 0]enchanted a great warrior to watch over[otherwise]created a terrible minotaur to guard[end if] it, but [he of ex-princess] had to confine [him of minotaur], because [he of ex-princess] made [him of minotaur] too powerful to control! Or maybe [he of ex-princess] was just really attracted to [him of minotaur]. Anyway, [he of minotaur] still has the amulet. It's yours if you can sneak past [him of minotaur]!'[or]You'll get really powerful if you use demonic items, but if you're weak they might end up using you instead.'[in random order][roman type][line break].";
+	otherwise say "[speech style of fairy-witch]'[one of]Demons really love it when you resist them. The more you fight, the bigger the mess you get. It's fun!'[or]If you get bred a lot, you could try building an army.'[or]Many years ago, the princess used a mystical amulet to seal away a demon's power. [big he of ex-princess] [if mythical creature fetish is 0]enchanted a great warrior to watch over[otherwise]created a terrible minotaur to guard[end if] it, but [he of ex-princess] had to confine [him of minotaur], because [he of ex-princess] made [him of minotaur] too powerful to control! Or maybe it was some cool yandere thing. Anyway, [he of minotaur] still has the amulet. It's yours if you can sneak past [him of minotaur]!'[or]You'll get really powerful if you use demonic items, but if you're weak they might end up using you instead.'[in random order][roman type][line break].";
 	alwayscutshow figure of fairy interact 12 for M.
 
 To compute perception of (M - domesticated wasp):

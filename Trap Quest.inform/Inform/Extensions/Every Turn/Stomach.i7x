@@ -1,25 +1,5 @@
 Stomach by Every Turn begins here.
 
-[!<coldTurkey:Integer>*
-
-How long has the player starved themselves of semen?
-
-*!]
-cold turkey is a number that varies.
-[!<coldMilky:Integer>*
-
-How long has the player starved themselves of milk?
-
-*!]
-cold milky is a number that varies.
-To decide which number is cold milky limit:
-	decide on 180. [how long until addiction kicks in]
-To decide which number is cold milky addiction limit:
-	decide on 35. [multiple of milk taste addiction until addiction fades away]
-
-last-begged is a thing that varies. last-begged is the throne.
-
-last-begged-time is a number that varies.
 
 To decide which number is the thirst of the player:
 	if chess table is grabbing the player or the player is in a predicament room, decide on 0;
@@ -88,17 +68,23 @@ An all time based rule (this is the compute stomach rule):
 	if the player is not in Predicament20 and the player is not in Predicament19 and the player is not in Toilet01 and the player is not in Toilet02: [The Safe Rooms of the predicament world should not let you stall out your bodily functions]
 		compute corset strain;
 		if playerRegion is not school:
-			if the player is craving semen and the stomach-semen of the player is 0:
-				if cold turkey <= the semen taste addiction of the player * 20:
-					increase cold turkey by time-seconds;
-					if cold turkey > the semen taste addiction of the player * 20:
-						say "[bold type]Your stomach has been empty of [semen] for so long that you can feel your body's demand for the addictive substance slowly disappearing. [if the player is craving semen]But even though your body doesn't crave it as much any more, your mind still does...[end if][roman type][line break]";
-			increase cold milky by time-seconds;
-			if cold milky > cold milky limit and the milk taste addiction of the player > 13:
-				if cold milky - time-seconds <= cold milky limit:
-					say "[bold type]Your stomach and taste buds are beginning to [if the player is desperately craving milk]desperately [end if]crave more [milk]. [roman type]Until you either drink some more [milk] or avoid milk for a long time, you will feel [second custom style]cranky[roman type], lowering your submissiveness but also significantly lowering your intelligence.";
-				otherwise if cold milky > the milk taste addiction of the player * cold milky addiction limit and cold milky - time-seconds <= the milk taste addiction of the player * cold milky addiction limit:
-					say "[bold type]Your mind and body is now slowly getting used to not receiving regular helpings of [milk]. [roman type]Keep it up and your body's addiction will continue to lower.";
+			repeat with L running through liquid-objects:
+				increase the cold turkey of L by time-seconds;
+				if the relevant taste addiction of L > 13 and the cold turkey of L >= the cold turkey limit of L:
+					if cold turkey of L - time-seconds < the cold turkey limit of L:
+						say "[bold type]Your stomach and taste buds are beginning to [if L is desperately craved]desperately [end if]crave more [variable L]. [roman type]Until you either drink some more [variable L] or avoid [L] for a long time, you will feel [second custom style]cranky[roman type], lowering your submissiveness but also significantly lowering your intelligence.";
+					otherwise if cold turkey of L >= cold turkey limit of L * 2:
+						if L is semen and the raw semen taste addiction of the player > 11:
+							say "[bold type]Your mind and body is slowly getting used to not receiving regular helpings of [semen]. [roman type]Keep it up and your body's addiction will continue to lower.";
+							SemenTasteAddictDown 1;
+						otherwise if L is urine and the raw urine taste addiction of the player > 11:
+							say "[bold type]Your mind and body is slowly getting used to not receiving regular helpings of [urine]. [roman type]Keep it up and your body's addiction will continue to lower.";
+							UrineTasteAddictDown 1;
+						otherwise if L is milk and the raw milk taste addiction of the player > 11:
+							say "[bold type]Your mind and body is slowly getting used to not receiving regular helpings of [milk]. [roman type]Keep it up and your body's addiction will continue to lower.";
+							MilkTasteAddictDown 1;
+						now cold turkey of L is cold turkey limit of L;
+			if the class of the player is succubus, compute succubus hunger; [see Demon Horns extension.]
 		[say "Stomach time check: remainder after dividing [time-earnings] by [period] is [remainder after dividing time-earnings by Period]. Comparing it to round time of [time-seconds].";]
 		if the remainder after dividing time-earnings by stomach-period < time-seconds and the latex-transformation of the player < 5 and the player is not in Iron Maiden, compute hunger and thirst; [Iron Maiden triggers compute soiling every turn]
 		unless current-predicament is team-quiz-predicament and the questionFails of team-quiz-predicament < 2, compute bladder growth.
@@ -126,9 +112,9 @@ To compute hunger and thirst:
 			if P is pacifier:
 				say "Your [P] suddenly feels less stuck in your mouth. Maybe you're allowed to take it out to drink?";
 		otherwise if the thirst of the player is 4:
-			say "[bold type]Your throat is feeling pretty dry, you should really drink [if the player is craving semen]someone's [semen][otherwise]something[end if]![roman type][line break]";
+			say "[bold type]Your throat is feeling pretty dry, you should really drink [if there is a desperately craved liquid-object]some [variable random desperately craved liquid-object][otherwise if there is a craved liquid-object]some [variable random craved liquid-object][otherwise if the player is taste obsessed]some [variable random highest addicted liquid liquid-object][otherwise]something[end if]![roman type][line break]";
 		otherwise if the thirst of the player is 5:
-			say "[bold type]You are dying to drink something, anything![roman type][line break]";
+			say "[bold type]You are dying to drink [if the player is taste engulfed]some [variable random highest addicted liquid liquid-object][otherwise]something, anything[end if]![roman type][line break]";
 		if there is a worn cock pacifier and the thirst of the player > 2:
 			let C be a random worn cock pacifier;
 			say "[one of]As if it can tell you're getting thirsty[or]Right on cue[stopping], you feel your [printed name of C] twitching, like it's about to ejaculate!";

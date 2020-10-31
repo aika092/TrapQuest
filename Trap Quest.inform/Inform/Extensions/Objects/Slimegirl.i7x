@@ -306,12 +306,7 @@ To compute slimegirl meeting in (WB - WoodsScenery01):
 				otherwise:
 					compute slimegirl frustration in WB;
 			otherwise:
-				reset multiple choice questions;
-				set numerical response 0 to "let [him of witch] engulf you";
-				set numerical response 1 to "don't feed.";
-				compute multiple choice question;
-				if player-numerical-response is 0, compute slimegirl engulfing in WB;
-				otherwise compute slimegirl frustration in WB.
+				compute slimegirl engulfing in WB.[if getting engulfed is the only option, you don't get a confirmation]
 
 [When you feed the slimegirl with food. For now, lets say there's no risk of her hitching a ride here]
 To compute slimegirl feeding on (F - a food) in (WB - WoodsScenery01):

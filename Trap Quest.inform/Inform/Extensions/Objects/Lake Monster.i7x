@@ -43,7 +43,7 @@ To compute secondLakeArm of (L - a lake monster):
 		compute lakePoint to face of L with arm 2;
 	otherwise if Z is 2 and face is not actually occupied:
 		compute lakePenetrate to face of L with arm 2;
-	otherwise if there is a worn breast covering clothing:
+	otherwise if there is a worn titfuck protection clothing:
 		compute lakeShred to breasts of L with arm 2;
 	otherwise if the largeness of breasts > 5:
 		compute lakePenetrate to breasts of L with arm 2;
@@ -61,10 +61,10 @@ To compute lakePenetrate to (B - face) of (L - a lake monster) with arm (A - a n
 	increase the m-state of L by 2.
 
 To compute lakeShred to (B - breasts) of (L - a lake monster) with arm (A - a number):
-	let N be the number of worn breast covering clothing;
-	say "The [if A is 2]second[otherwise]third[end if] tentacle starts wrapping itself around your opposite wrist and up your arm. When it reaches your shoulder, it slithers underneath your [ShortDesc of list of worn breast covering clothing], and in one swift motion rips [if N is 1]it[otherwise]them[end if] from your body, tearing [if N is 1]it[otherwise]them[end if] in half. It pauses and points at your [BreastDesc], as if admiring [if the largeness of breasts > 1]them[otherwise]it[end if].";
+	let N be the number of worn titfuck protection clothing;
+	say "The [if A is 2]second[otherwise]third[end if] tentacle starts wrapping itself around your opposite wrist and up your arm. When it reaches your shoulder, it slithers underneath your [ShortDesc of list of worn titfuck protection clothing], and in one swift motion rips [if N is 1]it[otherwise]them[end if] from your body, tearing [if N is 1]it[otherwise]them[end if] in half. It pauses and points at your [BreastDesc], as if admiring [if the largeness of breasts > 1]them[otherwise]it[end if].";
 	increase the b-state of L by 1;
-	repeat with C running through worn breast covering clothing:
+	repeat with C running through worn titfuck protection clothing:
 		destroy C.
 
 To compute lakePoint to (B - breasts) of (L - a lake monster) with arm (A - a number):
@@ -148,7 +148,7 @@ To compute thirdLakeArm of (L - a lake monster):
 			compute lakePoint to face of L with arm 3;
 	otherwise if Z is 2:
 		if the b-state of L is 0:
-			if there is a worn breast covering clothing:
+			if there is a worn titfuck protection clothing:
 				compute lakeShred to breasts of L with arm 3;
 			otherwise if the largeness of breasts > 5:
 				compute lakePenetrate to breasts of L with arm 3;
@@ -234,7 +234,7 @@ To compute firstLakeArm of (L - a lake monster):
 To compute lakeClimax of (L - a lake monster):
 	if the m-state of L is 1:
 		say "The tentacle in front of your face is the first you notice cumming, as it spurts an extreme load of thick [semen] all over your face, catching you by surprise with your eyes and mouth open. You cough and splutter and it takes you a moment to notice what else is going on!";
-		CumFaceUp a random number between 7 and 10;
+		AnnouncedSquirt semen on face by a random number between 7 and 10;
 		StomachSemenUp 1;
 	otherwise if the m-state of L is 2:
 		say "The tentacle in your mouth is the first you notice cumming, as it very quickly fills your mouth with its [semen], forcing you to swallow mouthful after mouthful of the [if the semen taste addiction of the player < 6][first custom style]disgusting [roman type][otherwise if the semen taste addiction of the player > 12][second custom style]delicious [roman type][end if]stuff. After the first few mouthfuls it pushes further into your mouth, forcing you to deepthroat its length, bypassing your taste-buds completely and depositing its load directly into your stomach. You continue to choke on the tentacle-dick and it takes you a moment to notice what else is going on!";
@@ -242,29 +242,29 @@ To compute lakeClimax of (L - a lake monster):
 		BlowCount;
 	otherwise if the m-state of L is 3:
 		say "The tentacle in your mouth and the tentacle in front of your face are the first tentacles you notice cumming, as the one in your mouth very quickly fills your mouth with its [semen], forcing you to swallow mouthful after mouthful of the [if the semen taste addiction of the player < 6][first custom style]disgusting [roman type][otherwise if the semen taste addiction of the player > 12][second custom style]delicious [roman type][end if]stuff, and the one in front of your face spurts an extreme load of the thickest [semen] all over your face, catching you by surprise with your eyes open. After the first few mouthfuls the tentacle in your mouth pushes further, forcing you to deepthroat its length, bypassing your taste-buds completely and depositing its load directly into your stomach. You continue to choke on the tentacle-dick and it takes you a moment to notice what else is going on!";
-		CumFaceUp a random number between 7 and 10;
+		AnnouncedSquirt semen on face by a random number between 7 and 10;
 		StomachSemenUp 4;
 		BlowCount;
 	if the b-state of L is 1:
 		say "The tentacle in front of your chest spasms powerfully before painting your [BreastDesc] with layer upon layer of thick white sex-juice. The sticky substance clings to your flesh, dripping off incredibly slowly.";
-		CumTitsUp a random number between 7 and 10;
+		AnnouncedSquirt semen on breasts by a random number between 7 and 10;
 	otherwise if the b-state of L is 2:
 		say "The tentacle fucking your [BreastDesc] orgasms, painting both your face and tits with its [semen].[if the m-state of L is 1 or the m-state of L is 3] The tentacle's [semen] flows off your already covered face and helps completely paint your [BreastDesc] white.[end if]";
 		if the m-state of L is 1 or the m-state of L is 3:
-			CumFaceUp 10;
-			CumTitsUp 10;
+			AnnouncedSquirt semen on face by 10;
+			UnannouncedSquirt semen on breasts by 10;
 		otherwise:
-			CumTitsUp a random number between 7 and 10;
+			AnnouncedSquirt semen on breasts by a random number between 7 and 10;
 	otherwise if the b-state of L is 3:
 		say "The tentacle fucking your [BreastDesc] and the tentacle in front of your chest orgasm, painting both your face and tits with their [semen].[if the m-state of L is 1 or the m-state of L is 3] The tentacle's [semen] flows off your already covered face and helps completely paint your [BreastDesc] white.[end if]";
 		if the m-state of L is 1 or the m-state of L is 3:
-			CumFaceUp 10;
-			CumTitsUp 20;
+			AnnouncedSquirt semen on face by 10;
+			UnannouncedSquirt semen on breasts by 20;
 		otherwise:
-			CumTitsUp 15;
+			AnnouncedSquirt semen on breasts by 15;
 	if the p-state of L is 1 or the p-state of L is 3:
 		say "The tentacle vigorously rubbing against your thighs cums without stopping its rubbing[if bukkake fetish is 1], smearing the alien [semen] all over your legs, thoroughly coating them with the sticky substance[end if]!";
-		CumThighsUp a random number from 7 to 10;
+		AnnouncedSquirt semen on thighs by a random number from 7 to 10;
 	if the p-state of L is 2 or the p-state of L is 3:[TODO: also eggs.]
 		say "The tentacle destroying your [vagina] pumps your womb full of warm monster [semen], and you can feel your belly stretching to accommodate the huge load. The amount of [semen] is beyond inhuman, and it just won't stop coming...";
 		PussyFill 7;
@@ -277,7 +277,7 @@ To compute lakeClimax of (L - a lake monster):
 		FuckCount;
 	if the a-state of L is 1 or the a-state of L is 3:
 		say "The tentacle pointing at your [asshole] deposits its load all over your [MediumDesc of hips] and thighs. The stream of [semen] seems just unending, and doesn't stop until your entire bottom half is soaked in the stuff.";
-		CumThighsUp a random number from 7 to 10;
+		AnnouncedSquirt semen on thighs by a random number from 7 to 10;
 	if the a-state of L is 2 or the a-state of L is 3:
 		if Egg Laying Fetish is 1:
 			say "The tentacle ruining your [asshole] bulges, becoming nearly twice as wide. You moan with a mixture of intense pleasure and pain as your [asshole] is stretched to new levels. From the bottom end of the tentacle where it emerges from the lake, you see a huge bulge start to slowly travel along its length. Your eyes widen, and if it were possible your eyes would have widened even further when you see three more bulges of the same size appear behind it. You wriggle and wrestle with your bonds but the monster easily holds you in place as the bulges reach your rear.[line break]As the first solid bulge reaches your [asshole], you feel the immense pressure placed against it and shriek [if L is penetrating face]through the tentacle in your mouth [end if]in fear. Your sphincter does not yet yield, the object is just too big! The tip of the object has lodged itself at the entrance but isn't making any more progress. But as the other bulges catch up, they push the ones in front, doubling, tripling and then quadrupling the force trying to get the first one inside. All of a sudden your [asshole] gapes that slight bit more, and all four objects go rushing at incredible velocity into your belly, mercilessly rubbing against the inside walls of your ass as they do. Your belly instantly bulges out to an impossible size, showing you and the rest of this world just how full you now are.";

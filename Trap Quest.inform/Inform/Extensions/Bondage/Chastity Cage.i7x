@@ -39,7 +39,7 @@ Chastity-Belt is a chastity bond. Chastity-belt is unique. Chastity-belt is meta
 To say ClothingDesc of (C - chastity-belt):
 	say "A metal chastity belt that completely prevents access to your [genitals], aside from a small opening for you to pee through. The back straps go over each ass cheek, allowing full access to your [asshole].";
 	if C is cursed, say "You can feel it slowly making you more and more aroused.";
-	say "[variable custom style][if the bimbo of the player < 3][one of]I'm having trouble understanding why the game would want me to wear this.[or]As long as I'm wearing this chastity cage, nothing can touch my genitals.[or]I'd rather it covered more than my crotch, but I can't really complain, I doubt anybody here can rip through solid metal.[in random order][otherwise if the bimbo of the player < 6][one of]Wearing this should make me relieved, but I just feel frustrated...[or]This isn't protecting me, it's just making me want sex![or]I know I shouldn't take this off, but... I want to.[in random order][otherwise if the bimbo of the player < 10][one of]It won't even let me touch my clit...[or]I thought I was supposed to have lots of sex. This is so dumb...[in random order][otherwise if the bimbo of the player < 13][one of]If it's against the rules to use my pussy, I should probably keep this on.[or]This is the game's way of telling me I don't deserve to get fucked in my pussy. It's probably right.[or]My asshole may be free when I wear this, but I can't touch myself when I'm getting fucked![in random order][otherwise][one of]I'm a dirty whore, I don't deserve to have my pussy fucked![or]More anal for me. Teehee![or]When this is on, I can't get double penetrated, and that's my favourite way to get fucked![or]If I find someone strong enough to pry this off, I'll probably find somebody with a big cock too![in random order][end if][roman type][line break]".
+	say "[variable custom style][if the bimbo of the player < 3][one of]I'm having trouble understanding why the game would want me to wear this.[or]As long as I'm wearing this chastity belt, nothing can touch my genitals.[or]I'd rather it covered more than my crotch, but I can't really complain, I doubt anybody here can rip through solid metal.[in random order][otherwise if the bimbo of the player < 6][one of]Wearing this should make me relieved, but I just feel frustrated...[or]This isn't protecting me, it's just making me want sex![or]I know I shouldn't take this off, but... I want to.[in random order][otherwise if the bimbo of the player < 10][one of]It won't even let me touch my clit...[or]I thought I was supposed to have lots of sex. This is so dumb...[in random order][otherwise if the bimbo of the player < 13][one of]If it's against the rules to use my pussy, I should probably keep this on.[or]This is the game's way of telling me I don't deserve to get fucked in my pussy. It's probably right.[or]My asshole may be free when I wear this, but I can't touch myself when I'm getting fucked![in random order][otherwise][one of]I'm a dirty whore, I don't deserve to have my pussy fucked![or]More anal for me. Teehee![or]When this is on, I can't get double penetrated, and that's my favourite way to get fucked![or]If I find someone strong enough to pry this off, I'll probably find somebody with a big cock too![in random order][end if][roman type][line break]".
 
 To say ShortDesc of (C - a chastity-belt):
 	say "chastity belt".
@@ -105,10 +105,16 @@ If the player orgasms while wearing a chastity cage they could remove, it become
 +!]
 This is the chastity cage orgasm resolution rule:
 	let C be a random worn chastity cage;
-	if C is clothing and C is not cursed and C is not locked and C is not glued:
-		say "[bold type]You feel your [MediumDesc of C] become cursed[one of][or] again[stopping]![roman type][line break]";
-		now C is cursed;
-		compute summoned quest of C.
+	if C is clothing:
+		if there is a worn tattoo and diaper quest is 0 and (sissy cumslut tattoo is worn or the number of worn crotch tattoo is 0):
+			if sissy cumslut tattoo is not worn:
+				say "[bold type]You feel your [MediumDesc of C] become even more stuck in place, [roman type]as a new tattoo appears above it!";
+				summon sissy cumslut tattoo;
+				try examining sissy cumslut tattoo;
+		otherwise if C is not cursed and C is not locked and C is not glued:
+			say "[bold type]You feel your [MediumDesc of C] become cursed[one of][or] again[stopping]![roman type][line break]";
+			now C is cursed;
+			compute summoned quest of C.
 The chastity cage orgasm resolution rule is listed last in the orgasm resolution rules.
 
 [A chastity cage is a kind of bondage. A chastity cage is usually unique. A chastity cage is usually sheer. There is 1 chastity cage. The printed name of chastity cage is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]chastity [if the player is possessing a penis]cage[otherwise]belt[end if][clothing-title-after]". The text-shortcut of chastity cage is "cha". Chastity cage is usually crotch-assless. Chastity cage is usually crotch-intact. Understand "belt" as chastity cage.
@@ -207,9 +213,9 @@ This is the can't cage erection rule:
 			say "Your penis is too hard to fit into a cage right now!";
 			rule fails;
 		otherwise:
-			say "[line break]Your [player-penis] softens as it is forced into the cage.[line break]";[if the player's penis is small enough, we can force it.]
+			[if summoning is 0 and autowear is false, say "[line break]Your [player-penis] softens as it is forced into the cage.[line break]";][if the player's penis is small enough, we can force it.] [but we can't put this flavour here because what if a later rule prevents it being worn?]
 			now penis is not penis-erect.
-The can't cage erection rule is listed in the chastity cage wearability rules
+The can't cage erection rule is listed in the chastity cage wearability rules.
 
 This is the cage too big rule:
 	if the player is male and the size of penis < the size of wearing-target + 1 and summoning is 0:

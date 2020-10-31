@@ -60,10 +60,6 @@ Definition: a thing (called C) is tearable:
 	if C is worn and C is unremovable, decide no;
 	decide yes.
 
-Definition: a thing (called C) is tearable-or-stealable:
-	if C is tearable or C is stealable, decide yes;
-	decide no.
-
 the global removability rules is a rulebook.
 
 Definition: a clothing (called C) is actually removable:

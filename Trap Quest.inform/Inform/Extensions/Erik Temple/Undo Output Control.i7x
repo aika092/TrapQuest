@@ -1136,4 +1136,3 @@ Example: ** Purgatory II - As an additional enhancement, we make an automatic un
 			continue the action;
 		otherwise:
 			rule fails.
-

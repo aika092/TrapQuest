@@ -80,7 +80,7 @@ To decide which figure-name is the examine-image of (C - hotel altar):
 
 To say ExamineDesc of (C - hotel altar):
 	let N be the altar-intensity of C;
-	say "A stone slab in front of a golden statue of a muscular man with a huge [manly-penis], with a water feature spewing from its tip which makes it look like he's constantly [if diaper quest is 1]urinating[otherwise]ejaculating[end if]. The statue's eyes are inset with huge red gemstones. [if charge of C > 0]It seems dormant. [otherwise if N < 2]The gemstones are glowing with a faint red light. [otherwise if N < 4]The gemstones are glowing with a strong red light. [otherwise]The gemstones are shining with ominous red light. [end if][if N is 1]You have used the altar 1 time.[otherwise if N > 0]You have used the altar [N] times.[end if]";
+	say "A stone slab in front of a golden statue of a muscular [man of shopkeeper] with a huge [manly-penis], with a water feature spewing from its tip which makes it look like he's constantly [if diaper quest is 1]urinating[otherwise]ejaculating[end if]. The statue's eyes are inset with huge red gemstones. [if charge of C > 0]It seems dormant. [otherwise if N < 2]The gemstones are glowing with a faint red light. [otherwise if N < 4]The gemstones are glowing with a strong red light. [otherwise]The gemstones are shining with ominous red light. [end if][if N is 1]You have used the altar 1 time.[otherwise if N > 0]You have used the altar [N] times.[end if]";
 	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Each time you use this altar, the positive effect is improved but so is the negative effect. After multiple uses, then part of the payment will likely be a permanent decrease in intelligence or increase in semen taste addiction or sex addiction.[roman type][line break][or][stopping]".
 
 Check entering the dungeon altar:
@@ -108,7 +108,6 @@ Check praying something with:
 	if the second noun is a container, try inserting the noun into the second noun instead;
 	if the second noun is HotelScenery01, try inking the noun instead;
 	if the second noun is not the dungeon altar and the second noun is not the woods altar and the second noun is not elder altar and the second noun is not hotel altar, say "What would that do?" instead;
-	if the second noun is hotel altar and the player is not the donator, say "What would that do? (This is currently beta content).[line break]" instead;
 	if the second noun is woods altar:
 		if the noun is clothing:
 			if the noun is not accessory or the price of the noun < 1, say "That won't do anything." instead;
@@ -349,9 +348,9 @@ To AltarPray (P - a person):
 			say "You feel less humiliated about your current situation.";
 			dignify 2000;
 			break;
-		if R is 7 and the raw largeness of hair > 7:
+		if R is 7 and the largeness of hair > 7:
 			say "About half the length of your hair is magically chopped off!";
-			now the raw largeness of hair is the raw largeness of hair / 2;
+			HairCut to the largeness of hair / 2;
 			break;
 		if R is 8 and the size of penis < 10 and the player is possessing a penis:
 			say "You feel more virile!";
@@ -512,7 +511,7 @@ To reset elder altar:
 
 []
 To ElderEmpower (T - a headgear):[default]
-	if the player is female:
+	if the player is possessing a vagina:
 		ElderBreed vagina;
 	otherwise:
 		ElderBreed asshole;
@@ -560,7 +559,9 @@ To ElderOffer:
 	if the number of worn headgear > 0 and diaper quest is 0:
 		ElderEmpower a random worn headgear;
 	if the charge of elder altar < 1 or diaper quest is 1:[if nothing happened with your headgear, it's time to breed]
-		if diaper quest is 0:
+		if ritual-beads is worn:
+			ElderSacrifice ritual-beads;
+		otherwise if diaper quest is 0:
 			if the player is possessing a vagina, ElderBreed vagina;
 			otherwise ElderBreed asshole;
 		otherwise:
@@ -656,13 +657,13 @@ To ElderConnect:
 []
 To ElderSacrifice (T - a thing):
 	say "The [printed name of T] bursts into ominous black flames![if T is worn] Fortunately, it seems they are not actually hot.[end if] It finally vanishes in a puff of smoke.";
-	if T is mystical amulet and there is a worn tattoo:
+	if T is mystical amulet and there is a worn tattoo:[Make sure the player can get tattoos]
 		increase the charge of the elder altar by 200;
 		say "You feel that the dark beings this altar belongs to are especially pleased! You feel a sudden burning sensation as some jagged black marks burn themselves into your skin!";
 		let M be mechanic;[We want to put the mechanic into a state where his quest is inactive and he's also unable to turn into Xavier, since his power has now been permanently lost to him]
 		if M is monster:
 			now power-stolen of M is 1;
-		summon abyssal tattoo;[The reward item is a tattoo, I don't want it to care about other tattoos because otherwise you could effectively get nothing for doing this]
+		summon abyssal tattoo;
 	otherwise if T is cursed:
 		increase the charge of the elder altar by 100;
 		if whispered > 0 and whisper-type is 2:
@@ -674,103 +675,87 @@ To ElderSacrifice (T - a thing):
 		increase the charge of the elder altar by 25;
 	remove T from play.
 
-To ElderSacrifice (T - ritual-beads):
-	say "The [ShortDesc of T] bursts into ominous black flames![if T is worn] Fortunately, it seems they are not actually hot.[end if]";
-	let N be the charge of T;
-	if N < 2:
-		say "The flames flicker and die within moments, leaving the beads completely unharmed. Maybe you need to find some way to empower them?";
+[TODO: less wordy alternative]
+To ElderReward (T - ritual-beads):
+	let N be the notch-taken of T;
+	let F be a random fuckhole penetrated by T;
+	if T is worn:
+		say "The [ShortDesc of T] shifts inside you, and the [if N is 3]3rd[otherwise if N is 2]2nd[otherwise if N is 1]1st[otherwise][N]th[end if] bead pops out all on its own - and immediately bursts into flames. Each bead pops out in rapid succession, catching on fire and disintegrating into glowing embers within seconds. The manacles pull on your wrists and ankles as the last of the beads is destroyed, forcing you to lay out fully spread eagle on the altar.";
+		Ruin F times N;
+		now the notch-taken of T is 0;
+		dislodge T;
 	otherwise:
-		say "Violet embers rise up around the altar and envelop your body.";
-		compute dark reward of T;
-		now the charge of T is 0;
-		fully curse T;
-		if the notches of T < 9:
-			increase the notches of T by 2;
-			say "The flames coalesce at the end of the beads, adding two additional beads.";
-		otherwise:
-			say "The flames consume several of the beads before flickering and dying out.";
-			decrease the notches of T by a random number between 6 and 3.
+		now N is the notches of T;
+		say "The [if N is 3]3rd[otherwise][N]th[end if] notch of the [ShortDesc of T] suddenly bursts into flames. The same thing happens to each of the beads in succession, each of them catching fire and disintegrating into piles of glowing embers within seconds. The manacles pull on your wrists and ankles as the last of the beads is destroyed, forcing you to lay out fully spread eagle on the altar.";
+	compute dark reward of T;
+	increase the size of T by 1;
+	now the notches of T is 3;
+	now T is in the location of the player;
+	say "Blue light condenses in front of the altar as the manacles release you, forming a new [ShortDesc of T] with three beads.";
+
+
+To ElderSacrifice (T - ritual-beads):
+	let A be the number of acolytes in the location of the player;
+	unless T is worn, say "What little light there is in the room extinguishes, and the [if A is 1]cultist springs into action, forcing you onto the altar and securing manacles to your arms and legs[otherwise if A > 1]cultists spring into action, forcing you onto the altar and securing manacles to your arms and legs[otherwise]manacles suddenly come to life, latching onto your arms and legs as they drag you onto the altar[end if]. There's no escape now![line break]";
+	otherwise say "What little light there is in the room extinguishes, and the [if A is 1]cultist springs into action, securing manacles to your arms and legs[otherwise if A > 1]cultists spring into action, securing manacles to your arms and legs[otherwise]manacles suddenly come to life, securing your arms and legs[end if]. There's no escape now![line break]";
+	ElderReward T.
 
 [!<ComputeDarkRewardOfRitualBeads>+
 
-Provides a reward to the player based on how much the ritual beads have been charged
+Provides a reward from the dark altar, influenced by how much the ritual beads have been charged. Rewards here should generally be better than the the dungeon altar, but with the drawback of being humiliating.
 
-@param <Ritual-Beads>:<T> the anal beads offered to the elder altar
+@param <Ritual-Beads>:<T> The ritual beads
 
 +!]
 To compute dark reward of (T - ritual-beads):
-	let N be the charge of T;
-	let R be 0;
-	if N > 8:
-		now R is a random number between 4 and 8;
-	otherwise if N > 6:
-		now R is a random number between 3 and 6;
-	otherwise if N > 4:
-		now R is a random number between 2 and 5;
+	let N be the notches of T;
+	let R be a random number between (N / 2) and N;
+	if N > 6, now R is 6;
+	if R >= 6 and jinx-beads is off-stage:
+		let B be a random worn hand ready equippable;[Would be more destructive, but B could potentially be a handbag]
+		say "[if interracial fetish is 1]A long, black tentacle[otherwise]A long, thin tentacle[end if] reaches out from the darkness above you, [if B is clothing]ripping your [ShortDesc of B] out of your hand as it wriggles[otherwise]wriggling[end if] around your wrist and between your fingers. Your inability to pull away only makes the experience more dehumanizing, and it lasts so long that you wonder if you're hallucinating when the tentacle transforms into a set of tiny black beads.";
+		now B is in the location of the player;
+		summon jinx-beads;
+		moderateHumiliate;
+	otherwise if R >= 5 and the milk volume of breasts > 0:
+		let M be the milk volume of breasts;
+		say "Your mind is assaulted with visions of [if interracial fetish is 1]big, black [end if]tentacles squeezing your [BreastDesc] as milk spontaneously [if M > 10]squirts[otherwise]dribbles[end if] out of your nipples! The experience leaves you feeling incredibly drained, but also strangely purified.";
+		now the milk volume of breasts is 0;
+		SexAddictDown 1;[The idea here is that "impurities" are being wrung out too, but we specifically leave semen addiction, bbc addiction and vaginal sex addiction alone.]
+		SemenTasteAddictDown 1;
+		OralSexAddictDown 1;
+		AnalSexAddictDown 1;
+		obsceneHumiliate;[If this outcome is too good, we can bump this up to 'ultra' level]
+		now the fatigue of the player is the buckle threshold of the player;
+	otherwise if R >= 4:[cockslap vision]
+		say "Your mind is assaulted with a vision of a huge [if interracial fetish is 1]black [end if]tentacle clapping you in the face as the wind is suddenly knocked out of you! The experience somehow leaves your body feeling stronger and more flexible.";
+		StrengthUp 1;
+		DexUp 1;
+		obsceneHumiliate;
+		now the fatigue of the player is the buckle threshold of the player;
+	otherwise if R >= 3:
+		say "Your mind is assaulted with visions of [if interracial fetish is 1]big, black [end if] tentacles rubbing their huge forms between your legs as tingles pass through your [if the player is barbie]loins[otherwise][genitals][end if]. You suddenly feel considerably less sore!";
+		Heal asshole times 10;
+		Heal vagina times 10;
+		now the rawness of penis is 0;
+		severeHumiliate;
+	otherwise if R >= 2:
+		say "Your mind is assaulted with visions of [if interracial fetish is 1]big, black [end if]tentacles spraying you with [if bukkake fetish is 1]off-white [end if]liquid as your clothes are spontaneously soaked. The 'soaking' wears off within moments, leaving your clothing remarkably clean and you completely refreshed.";
+		repeat with C running through worn clothing:
+			now the semen-soak of C is 0;
+			now the urine-soak of C is 0;
+			now the milk-soak of C is 0;
+			now the water-soak of C is 0;
+			if C is glued, now C is unglued;
+		repeat with B running through body parts:
+			now the semen coating of B is 0;
+			if B is hair, now the urine coating of B is 0;
+		now the fatigue of the player is 0;
+		severeHumiliate;
 	otherwise:
-		now R is a random number between 1 and 3;
-	if R is 8:
-		let X be 4;
-		repeat with B running through worn clothing:
-			let M be the raw-magic-modifier of B;
-			if X > 0 and a random number between 1 and 2 is 1:
-				say "The embers settle over your [printed name of B], which glows faintly purple as it absorbs the cinders.";
-				if (X is 4 or a random number between 1 and 2 is 1) and M < 5:[the first one is almost always positive]
-					increase the raw-magic-modifier of B by 1;
-					fully curse B;
-				otherwise:
-					if M > -5, decrease the raw-magic-modifier of B by 1;
-				decrease X by 1;
-	[otherwise if R is 7:[TODO: summon the "herald's blessing" equippable item]
-		[let J be jinx-beads;]
-		let B be a random worn slap ready equippable;
-		if B is nothing, let B be a random worn zap ready equippable;
-		if B is clothing:
-			say "The embers become red sparks, and a cacophony of sharp *cracks* fills your ears as your [ShortDesc of B] disintegrates completely.";
-			destroy B;
-		otherwise:
-			say "The embers become red sparks, and a cacophony of sharp *cracks* fills your ears ";]
-	otherwise if R >= 6 and jinx-beads is off-stage:
-		let J be jinx-beads;
-		if J is not actually summonable:
-			let B be a random worn slap ready equippable;
-			if B is nothing, let B be a random worn zap ready equippable;
-			say "The embers are drawn to your [ShortDesc of B], eating away at it until all that remains is a peculiar set of tiny beads.";
-			destroy B;
-		otherwise:
-			say "The embers collect in your hand, slowly forming into a set of pink and black beads.";
-		summon J cursed;
-	otherwise if R is 5:
-		say "The embers settle over your joints, and you feel a lurch in your stomach as their light abruptly goes out and they fall to the ground. You feel more flexible.";
-		DexUp (N + 2) / 3;
-		FatigueUp 30;
-	otherwise if R is 4:
-		say "The embers settle on your skin, pinching you as they disappear one by one.";
-		PainUp 1;
-		say "You feel stronger.";
-		StrengthUp (N + 2) / 3;
-	otherwise if R is 3:
-		say "The embers are drawn to your hair, and you feel your hair faintly being pulled as the embers disappear one by one.";
-		HairRedDown 2;
-		HairBrightDown 2;
-		HairBlondeDown 2;
-		HairUp 1;
-	otherwise if R > 1 and there is a worn bondage:
-		let B be a random worn bondage;
-		say "The embers eat away at the [printed name of B] until it drops from your body, a mangled mess of [clothing-material of B] and ashes.";
-		destroy B;
-	otherwise:[R is 1. TODO: improve]
-		say "The embers turn to flecks of water, harshly pattering your skin as they whorl around you.";
-		repeat with C running through worn currently uncovered fluid vulnerable clothing:
-			WaterSoak 1 on C;
-		if the make-up of face > 0 and permanent makeup is 0:
-			say "[if the make-up of face > 1]Some of your[otherwise]Your[end if] make up is washed away.";
-			FaceDown 1;
-		repeat with A running through glazed body parts:
-			decrease the semen coating of A by 1;
-			say "Your [A] is cleaned of a little [semen]!";[B alone causes bold face text, so I used A instead]
-		FatigueUp 20;
-		say "You feel a lot cleaner, but incredibly tired.".
+		say "Your mind is assaulted with visions of [if interracial fetish is 1]big, black [end if]tentacles rubbing themselves all over your body as your muscles spontaneously relax. The experience leaves you completely free of any of your previous aches and pains.";
+		now the body soreness of the player is 0;
+		severeHumiliate.
 
 To AltarReward (T - runic headband):
 	if T is not purity:
@@ -797,24 +782,16 @@ To AltarReward (T - a condom hat):
 		increase the empty condoms of C by the used condoms of C;
 		now the used condoms of C is 0;
 		repeat with O running through worn trousers:
-			say "Your [O] [wardrobeVanishes of O]!";
-			now O is in pink wardrobe;
+			WardrobeVanish O;
 		repeat with O running through worn knickers:
-			say "Your [O] [wardrobeVanishes of O]!";
-			now O is in pink wardrobe;
+			WardrobeVanish O;
 		repeat with O running through worn bras:
-			say "Your [O] [wardrobeVanishes of O]!";
-			now O is in pink wardrobe;
+			WardrobeVanish O;
 		let PO be a random worn dress;
 		if PO is clothing and the number of worn dress is 1:
 			transform PO into cameltoe-priestess-outfit;
 		otherwise:
-			repeat with O running through worn skirted clothing:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn dresses:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
+			PinkWardrobeUnclash cameltoe-priestess-outfit;
 			summon cameltoe-priestess-outfit;
 			say "A [cameltoe-priestess-outfit] appears on you!";
 		reset dungeon altar.
@@ -835,15 +812,18 @@ To AltarReward (T - ritual-beads):
 				increase the size of T by 1;
 				now the notches of T is 3;
 				say "[T] with three notches again!";
+				compute light reward of T;
+				now the notches of T is 3;
+			otherwise:
+				compute light reward of T;
 			progress quest of priestess-service-quest;
-		compute light reward of T;
 		reset dungeon altar.
 
 [!<ComputeLightRewardOfRitualBeads>+
 
-Provides a reward to the player based on how much the ritual beads have been charged
+Provides a reward to the player based on how much the ritual beads have been charged. Generally these rewards should be slightly positive and have no downside.
 
-@param <Ritual-Beads>:<T> the anal beads offered to the dungeon altar
+@param <Ritual-Beads>:<T> The ritual beads
 
 +!]
 To compute light reward of (T - ritual-beads):
@@ -852,12 +832,13 @@ To compute light reward of (T - ritual-beads):
 	if N >= 8:
 		now R is 6;
 	otherwise:
-		now R is a random number between (N / 2) and (N + 2);
+		now R is a random number between (N / 2) and N;
 	if R >= 6 and prayer-beads is off-stage and the number of worn hand ready equippables is 0:
 		say "A set of tiny white beads materialises in your hands.";
 		summon prayer-beads;
 		fully bless prayer-beads;
 	otherwise if R >= 5:
+		say "You feel your will being strengthened!";
 		DelicateDown 2;
 	otherwise if R is 4:
 		say "You feel a wave of new confidence!";
@@ -870,6 +851,7 @@ To compute light reward of (T - ritual-beads):
 		say "Your [printed name of A] is cleaned of [semen].";
 		now the semen coating of A is 0;
 	otherwise if the soreness of asshole > 0:
+		say "Your [asshole] feels much less sore!";
 		heal asshole times 4;
 	otherwise:
 		say "You feel much less tired!";
@@ -883,7 +865,11 @@ To DevilPray (P - a person):
 	if gold-summoned is 0:
 		repeat with M running through infernal monsters:
 			if the times-submitted of M > 0, now R is 0;
-	if R is 0 and gold-tiara is actually summonable:[having sex with a demon at least once will give the player the worshipper headgear]
+	if avatar-summoned is 0 and the player is possessing a vagina and the vaginalvirgin of the player is 1 and the player is soulless:
+		now R is 0;[free]
+		say "The statue's eyes glow with multicolored light as a [if lady fetish is 1]husky, feminine[otherwise]deep, masculine[end if] voice echoes in your ear.[line break][first custom style]'A virgin, with a void for a soul... It would be a waste to make you an altar girl! That tight little hole in your chest is begging to be filled!'[roman type][line break]The statue's arms suddenly spring to life, grabbing either side of your head and forcing you to look directly into the statue's eyes as you feel *something* pressing in on you from *somewhere*. The empty feeling in your chest turns into a slow, painful sensation of stretching, and you let out a groan of pain as something HUGE and warm forces its way into your very core. Brand new horns push their way out of your forehead, followed by a golden tiara and hood materialising on your head.[line break][first custom style]'Hm, looks like you weren't able to take all of me, but no matter. I am your master now, [NameBimbo], so get to work collecting souls while I work on improving your vessel.'[roman type][line break]";
+		summon avatar-headpiece cursed;
+	otherwise if R is 0 and gold-tiara is actually summonable:[having sex with a demon at least once will give the player the worshipper headgear]
 		say "The statue's face seems to grin as a golden tiara materialises on your head.";
 		summon gold-tiara cursed;
 	otherwise if R is 1:[summon a demonic item. The item has a better modifier and less chance of a bad enchantment if the modifier is low]
@@ -924,7 +910,7 @@ To DevilPray (P - a person):
 		otherwise:
 			say "The statue seems to scowl as stiffness fades from your joints.";
 		DexUp (N / 3) + 1;
-	otherwise if the number of off-stage imps > 0: [summon imps; 1 -> 2 -> 3 -> 4]
+	otherwise if the number of off-stage imps > 0 and the class of the player is not avatar: [summon imps; 1 -> 2 -> 3 -> 4]
 		let X be ((N * 2) / 3) + 1;
 		if X > the number of off-stage imps, now X is the number of off-stage imps;
 		say "The statue's eyes glint as a portal opens up in front of you, accompanied by mischievous chuckling as [if X is 1]an imp steps[otherwise][X] imps step[end if] out.";
@@ -954,6 +940,7 @@ To DevilPray (P - a person):
 	if R > 0:
 		compute DevilPayment N.
 
+[TODO: move this to one of the clothing extensions]
 To compute hostileDamage:
 	let H be a random hostility clothing;
 	if H is clothing:
@@ -1022,6 +1009,9 @@ To compute DevilPayment (N - a number):
 	say "[line break]But the altar isn't finished. You feel a terrible sinking feeling as a pentagram etches itself [run paragraph on]";
 	if the class of the player is priestess, now N is 6;[a priestess always pays the maximum]
 	let R be a random number between 1 and 4;
+	if the class of the player is avatar:
+		if R is 3, now R is 1;
+		now N is 1;
 	if R is 1:
 		say "into the skin of your chest. A[if N < 3] dull[otherwise if N < 5] deep, heavy[otherwise]n incredibly deep, penetrating[end if] ache settles into your joints as the symbol slowly fades.";
 		bodyruin N;
@@ -1040,7 +1030,7 @@ To compute DevilPayment (N - a number):
 		PussyFill N;
 		now M is not penetrating vagina;
 	otherwise:
-		say "into the skin of your temples. [if N < 3]A slight [italic type]hot[roman type] feeling settles[otherwise if N < 5]A noticeably [italic type]hot[roman type] feeling settles[otherwise]Arousal washes[end if] over your body as the symbol slowly fades.";
+		say "into your temples. [if N < 3]A slight [italic type]hot[roman type] feeling settles[otherwise if N < 5]A noticeably [italic type]hot[roman type] feeling settles[otherwise]Arousal washes[end if] over your body as the symbol slowly fades.";
 		Arouse 1000 * N;
 	if N > 2:[if the charge is high enough, then part of the payment will be permanent]
 		decrease N by N / 2;
@@ -1055,6 +1045,58 @@ To compute DevilPayment (N - a number):
 		otherwise:
 			say "a [if N > 1]pronounced[otherwise]slight[end if] feeling of dirtiness settling over your thoughts.";
 			SexAddictUp N.
+
+To DevilPray (T - ritual-beads):
+	if T is worn:
+		let F be a random fuckhole penetrated by T;
+		say "The statue's eyes glint, and your [ShortDesc of T] shifts inside your [variable F], but nothing else happens. Maybe you need to remove it first?";
+	otherwise:
+		say "The statue's eyes glint ominously, and you feel power infusing your body!";
+		compute infernal reward of T;
+		if the size of T < 10:
+			say "[line break]Blue light condenses around [NameDesc of T], and it transforms into a ";
+			increase the size of T by 1;
+			say "[T] with three notches again!";
+			now the notches of T is 3;
+		increase the charge of hotel altar by 300;
+		increase the altar-intensity of hotel altar by 1.
+
+To compute infernal reward of (T - ritual-beads):
+	let N be the notches of T;
+	let S be the altar-intensity of hotel altar;
+	if S > 6, now S is 6;
+	let R be 0;
+	if N >= 8, now R is 6;
+	otherwise now R is a random number between (N / 2) and N;
+	if R >= 6 and fire-beads is off-stage and the number of worn hand ready equippables is 0:
+		say "A set of tiny red and yellow beads materialises in your hands.";
+		summon fire-beads;
+	otherwise if R >= 5:
+		say "You feel your knees being strengthened!";
+		if S < 2, now S is 2;
+		StrengthUp S / 2;
+		SexAddictUp S / 2;
+	otherwise if R >= 4:
+		say "You feel your throat becoming more flexible.";
+		if S < 2, now S is 2;
+		DexUp S / 2;
+		SemenAddictUp S / 2;
+	otherwise if R >= 3:
+		say "Your sense of pain sharpens.";
+		if S < 2, now S is 2;
+		IntUp S / 2;
+		DelicateUp S / 2;
+	otherwise if R >= 1:
+		say "Your [asshole] feels a little tougher.";
+		heal asshole times S;
+		if S < 2, now S is 2;
+		AnalSexAddictUp S / 2;
+	otherwise:
+		say "You feel your body becoming tougher.";
+		BodyHeal S;
+		if S < 2, now S is 2;
+		BustUp S / 2;
+		HipUp S / 2.
 
 [!<ResetDungeonAltar>+
 

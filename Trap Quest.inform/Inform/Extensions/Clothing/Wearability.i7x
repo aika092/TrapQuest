@@ -49,10 +49,10 @@ Definition: a clothing (called C) is too cringeworthy:
 Definition: a clothing (called C) is able to cover crotch: [Either C is the only thing covering crotch, or crotch is uncovered and this could help.]
 	let X be 0;
 	if C is worn, increase X by 1;
-	if the player is male:
+	if the player is possessing a penis:
 		if C is potentially at least partially penis concealing and C is potentially asshole covering:
 			if the number of worn potentially at least partially penis concealing clothing is X or the number of worn potentially asshole covering clothing is X, decide yes;
-	otherwise:
+	if the player is possessing a vagina:
 		if C is potentially vagina covering and C is potentially asshole covering:
 			if the number of worn potentially vagina covering clothing is X or the number of worn potentially asshole covering clothing is X, decide yes;
 	decide no.

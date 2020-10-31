@@ -35,12 +35,15 @@ To set up influence of (C - a trousers):
 	set up random-based influence of C.
 
 Definition: a trousers is rippable:
-	if it is total protection and it is not ass plugging and it is not vagina plugging and it is not zippable, decide yes;
+	if it is total protection and it is not ass plugging and it is not vagina plugging and it is not zippable and it is destructible, decide yes;
 	decide no.
 
 To restock (C - a trousers):
 	let B be a random basic loot trousers;
-	if B is trousers, now B is in Standard Item Pen.
+	if B is trousers:
+		repeat with L running through Standard Item Pen:
+			if L is trousers, remove L from Standard Item Pen;
+		add B to Standard Item Pen.
 
 This is the setup starting trousers rule:
 	let C be a random trousers;
@@ -73,19 +76,11 @@ This is the trousers already worn rule:
 The trousers already worn rule is listed in the trousers wearability rules.
 
 This is the hobble skirt trousers top level clash rule:
-	repeat with C running through worn crotch-in-place crotch covering hobble-skirted clothing:
-		if summoning is 0:
+	if summoning is 0:
+		repeat with C running through worn crotch-in-place crotch covering hobble-skirted clothing:
 			if autowear is false, say "You need to pull up your [printed name of C] to get this on successfully!";
 			rule fails.
 The hobble skirt trousers top level clash rule is listed in the trousers wearability rules.
-
-This is the knickers trousers clash rule:
-	if summoning is 0:
-		repeat with C running through worn trousers:
-			if (wearing-target is not disposable diaper or C is crotch-in-place):
-				if autowear is false, say "You can't wear that over your [printed name of C]!";
-				rule fails.
-The knickers trousers clash rule is listed in the knickers wearability rules.
 
 trousers removability rules is a rulebook. The removability rules of trousers is usually trousers removability rules.
 

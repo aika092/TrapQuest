@@ -1,7 +1,7 @@
 Taking by Actions begins here.
 
 Check taking something when the player is not able to use their hands:
-	if takingStuff is false and not-in-bag > 0, say "You can only carry one item at a time without proper [unless the class of the player is living sex doll]use of your [end if]hands!" instead.
+	if takingStuff is false and not-in-bag > 0 and the noun is not plentiful accessory, say "You can only carry one item at a time without proper [unless the class of the player is living sex doll]use of your [end if]hands!" instead.
 
 Check taking something when the available arms of the player is 0:
 	if takingStuff is false, say "You can't take [NameDesc of the noun] - your arms are already occupied this round!" instead.
@@ -24,14 +24,6 @@ Check taking something:
 			say "As you try to bend over, you slip and fall!";
 			allocate 1 seconds;
 			try kneeling instead.
-
-Check taking an accessory:
-	if the noun is held by the player or the noun is worn by the player:
-		repeat with C running through open containers in the location of the player:
-			repeat with A running through accessories in C:
-				if the price of the noun is the price of A and the accessory-colour of A is the accessory-colour of the noun and A is not worn by the player, try taking A instead;
-		repeat with A running through accessories in the location of the player:
-			if the price of the noun is the price of A and the accessory-colour of A is the accessory-colour of the noun, try taking A instead.
 
 Check taking store thing while the player is in Dungeon41 and Dungeon41 is guarded:
 	unless shopkeeper is mating:

@@ -26,6 +26,7 @@ Check unlocking:
 Carry out unlocking:
 	say "[if the noun is wrist bond]With some careful finger work, you[otherwise]You[end if] slot the key into the lock and twist. The lock clicks open! The key dissolves into dust.";
 	now the noun is unlocked;
+	check stealing of skeleton key;
 	destroy skeleton key;
 	allocate 6 seconds.
 Understand "unlock [something]", "unlock [something] with key" as unlocking.

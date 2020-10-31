@@ -16,10 +16,16 @@ To decide which number is the bartering value of (T - a unicorn-horn) for (M - a
 	decide on 10.
 
 To compute resolution of (M - mechanic) taking (T - a unicorn-horn):
-	if M is unfriendly, FavourUp M by the bartering value of T for M;
-	otherwise FavourUp M by (the bartering value of T for M) / 2;
-	say OfferThanksFlav of M for T;
-	compute offer reward of M for T;
+	if M is unfriendly:
+		say MonsterTakeFlav of M to T;
+		satisfy M;
+		let BV be the bartering value of T for M;
+		FavourUp M by ((1 + BV) / 2);
+		progress quest of christmas-quest;
+	otherwise:
+		say MonsterTakeFlav of M to T;
+		compute offer reward of M for T;
+		say OfferFriendshipFlav of M;
 	XavierUp M by 1;
 	bore M.
 

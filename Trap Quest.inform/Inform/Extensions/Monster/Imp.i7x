@@ -186,8 +186,8 @@ To check consensual submissive sex of (M - an imp):
 						if bukkake fetish is 1:
 							let B be face;
 							if a random number between 1 and 2 is 1, now B is hips;
-							say "[big he of N] quickly climaxes, spraying [his of N] hot [semen] [one of]across[or]all over[or]liberally across[in random order] your [B].";
-							squirt semen on B by (the semen load of N);
+							say "[big he of N] quickly climaxes, spraying [his of N] hot [semen] [one of]across[or]all over[or]liberally across[in random order] your [printed name of B].";
+							AnnouncedSquirt semen on B by (the semen load of N);
 						otherwise:
 							say "[big he of N] quickly climaxes, spraying [his of M] semen on the ground!";
 							SemenPuddleUp the semen load of N;

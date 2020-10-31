@@ -307,8 +307,11 @@ To display interaction of (M - a wench):
 Part 3 - Protection
 
 To compute (M - a wench) protecting against (X - a monster):
-	if M is guardian or (M is ally and the difficulty of X <= the difficulty of M):
-		compute X receiving 1 damage from M;
+	if M is ally:
+		if the player is upright and M is guardian:
+			compute M standard fighting against X;
+		otherwise:
+			compute default protecting of M;
 	otherwise if X is male or X is unintelligent or the player is at least partially monster stuck:
 		say "[speech style of M]'Eek!'[roman type][line break][BigNameDesc of M] turns tail and runs for safety, abandoning you.";
 		alwayscutshow figure of wench interact 11 for M;
@@ -461,10 +464,10 @@ To ClothingSteal (M - a wench):
 
 To (M - a wench) steals (K - a knickers):
 	if K is worn:
-		say "[PullAttempt of M at K]";
+		say PullAttempt of M at K;
 		let R be a random number between the difficulty of M and 6 + a random number between the difficulty of M and 6;[TODO: possibly replace with strength roll]
 		if debuginfo > 0, say ClothingAttackDebug of M on K with R;
-		if R > the defence of the player:
+		if R > the defence of K:
 			cutshow figure of wench cutscene 3 for M;
 			say "[big he of M] pulls them off and flees, [one of]happily[or]lewdly[or]pervertedly[or]blissfully[or]wildly[at random] [one of] sniffing[or]smelling[or]tasting[or]licking[at random] the crotch!";
 			now M is carrying K;
@@ -472,10 +475,10 @@ To (M - a wench) steals (K - a knickers):
 			calm M;
 			now the scared of M is 75;
 		otherwise:
-			say "[WeakenFlav of M on K]";
+			say WeakenFlav of M on K;
 			damage K;
 	otherwise:
-		say "[big he of M] pulls the [printed name of K] from your hands, and runs off with them!";
+		say "[big he of M] pulls the [K] from your hands, and runs off with them!";
 		now K is in holding pen;
 		now M is carrying K;
 		distract M;
@@ -523,12 +526,12 @@ To compute hug attack of (M - a wench):
 	if the accuracy roll of M >= the dexterity of the player:[Is she accurate enough to grab you?]
 		say "[BigNameDesc of M] grabs your wrists, pinning them to your sides as [he of M] presses [himself of M] in against you.[line break][speech style of M]'[one of]Even I'm fucking stronger than you.'[or]You like being held like this, don't you? Whore.'[or]Even I like to hug people every now and again. Bitch.'[in random order][roman type][line break]";
 		if the strength roll of M >= the strength of the player:
-			say "[BigNameDesc of M]'s grip isn't strong, but you aren't strong either, and you waste some stamina trying to break free.[if bukkake fetish is 1] To make things worse, [his of M] body is completely covered in [semen], and some of it is rubbing off on you![end if]";
+			say "[BigNameDesc of M][']s grip isn't strong, but you aren't strong either, and you waste some stamina trying to break free.[if bukkake fetish is 1] To make things worse, [his of M] body is completely covered in [semen], and some of it is rubbing off on you![end if]";
 			if bukkake fetish is 1:
 				let R be a random number between 1 and 3;
-				if R is 1, CumTitsUp 1;
-				if R is 2, CumBellyUp 1;
-				if R is 3, CumThighsUp 1;
+				if R is 1, UnannouncedSquirt semen on breasts by 1;
+				if R is 2, UnannouncedSquirt semen on belly by 1;
+				if R is 3, UnannouncedSquirt semen on thighs by 1;
 			FatigueUp 10;
 		otherwise:
 			say "[BigNameDesc of M]'s grip isn't very strong, and you wrench yourself free before [he of M] can kiss you.";
@@ -582,7 +585,7 @@ To compute facial climax of (M - a wench):
 	compute facesit climax of M.
 
 To compute unique facesit climax effect of (M - a wench):
-	SemenTasteAddictUp 1;
+	SlowSemenTasteAddictUp 1;
 	compute M sleeping 400 after sex;
 	FavourUp M;
 	orgasm bore M.
@@ -772,9 +775,9 @@ To say ErectionForceFlav of (M - a wench):
 		if the creampieTimer of M > 0, say "[one of][BigFuckerDesc of M] presses [his of M] [semen]-coated chest against you as [he of M] rides you, forcing you to endure someone else's load around your [player-penis] AND on your body.[or][BigFuckerDesc of M] holds you tightly as [he of M] forces your [player-penis] in and out of [his of M] creampied [HoleDesc of M], purposely rubbing [his of M] bukkake'd chest and cheeks against you.[or][BigNameDesc of M] uses [his of M] entire body to hold you down as [he of M] rides you, forcing you to enjoy the feeling of someone else's [semen] with your entire body instead of just your [player-penis].[or]You feel [semen], warm around your shaft and cool against your chest as [FuckerDesc of M] holds you down. [big he of M] uses [his of M] whole body to lock down your movement, pressing and rubbing [himself of M] against you as [he of M] fucks [himself of M] with your [player-penis].[in random order]";
 		otherwise say "[one of][BigFuckerDesc of M] presses [his of M] [semen]-coated chest against you as [he of M] rides you, forcing you to endure the feeling of someone elses's load smearing off on your body while [he of M] holds you down.[or][BigFuckerDesc of M] holds you tightly as [he of M] forces your [player-penis] in and out of [his of M] [HoleDesc of M], purposely rubbing [his of M] bukkake'd chest and cheeks against you.[or][BigNameDesc of M] uses [his of M] entire body to hold you down as [he of M] rides you, forcing to enjoy the feeling of someone else's load smearing off on your body while you have sex.[or]You feel slimy [semen] against your chest as [FuckerDesc of M] holds you down. [big he of M] uses [his of M] whole body to lock down your movement, pressing and rubbing [himself of M] against you as [he of M] fucks [himself of M] with your [player-penis].[in random order]";
 		let R be a random number between 1 and 3;
-		if R is 1, CumFaceUp 1;
-		if R is 2, CumTitsUp 1;
-		if R is 3, CumBellyUp 1;
+		if R is 1, UnannouncedSquirt semen on face by 1;
+		if R is 2, UnannouncedSquirt semen on breasts by 1;
+		if R is 3, UnannouncedSquirt semen on belly by 1;
 	otherwise:
 		if the creampieTimer of M > 0, say "[one of][BigFuckerDesc of M] uses [his of M] whole body to hold you down as [he of M] fucks you, forcing you to endure the feeling of someone else's load around your [player-penis].[or][BigFuckerDesc of M] holds you tightly as [he of M] forces your [player-penis] in and out of [his of M] creampied [HoleDesc of M].[or]You feel more [semen] than [HoleDesc of M] as [FuckerDesc of M] fucks [himself of M] with your [player-penis].[or]You feel someone else's [semen] around shaft as [FuckerDesc of M] holds you down. [big he of M] uses [his of M] whole body to lock down your movement, pressing and rubbing [himself of M] against you as [he of M] fucks [himself of M] with your [player-penis].[in random order]";
 		otherwise say "[one of][BigFuckerDesc of M] uses [his of M] whole body to hold you down as [he of M] fucks you, totally locking down your movement.[or][BigFuckerDesc of M] holds you tightly as [he of M] forces your [player-penis] in and out of [his of M] [HoleDesc of M].[or][BigNameDesc of M] uses [his of M] entire body to hold you down as [he of M] rides you, forcing you to enjoy [his of M] high-mileage hole with every inch of your [player-penis].[or]You can't move anything but your hips as [FuckerDesc of M] holds you down, using [his of M] whole body to keep you still while [he of M] fucks [himself of M] with your [player-penis].[in random order]".
@@ -789,7 +792,7 @@ To compute erection orgasm of (M - a wench):
 		increase the creampieTimer of M by (the semen load of the player * 100); [So she can sit on your face with it.]
 	otherwise:
 		say "[BigNameDesc of M] stops when [he of M] feels your [ShortDesc of penis] begin to throb, pulling you out and jerking you off until you shoot your [load] across your belly.";
-		if bukkake fetish is 1, CumBellyUp the semen load of the player;
+		if bukkake fetish is 1, AnnouncedSquirt semen on belly by the semen load of the player;
 	now penis is not penis-erect.
 
 To say ErectionLostFlav of (M - a wench):
@@ -1220,6 +1223,16 @@ To say MonsterOfferRejectFlav of (M - a wench) to (T - a sex toy):
 To say MonsterOfferAcceptFlav of (M - a wench) to (T - a sex toy):
 	say "[BigNameDesc of M][']s eyes light up.[line break][speech style of M]'Oh my god yes please! With this I could potentially satisfy myself, and that might stop me from going crazy...'[roman type][line break]".
 
+To decide which number is the bartering value of (T - an overdress) for (M - a wench):
+	if M is carrying an overdress or T is unskirted, decide on 0;
+	decide on 6 - the unworn outrage of T.
+
+To say MonsterOfferRejectFlav of (M - a wench) to (T - an overdress):
+	say "[BigNameDesc of M] shakes [his of M] head.[line break][speech style of M][if M is carrying an overdress]'You already gave me a dress, remember? I don't need two.'[otherwise if M is unfriendly]'Nuh-uh. Right now, I need something else...'[otherwise if T is unskirted]'If you have one with a skirt, I'd prefer that.'[otherwise]'That's... um... that's a bit too provocative for me. Thanks anyway.'[end if][roman type][line break]".
+
+To say MonsterOfferAcceptFlav of (M - a wench) to (T - an overdress):
+	say "[BigNameDesc of M][']s eyes light up.[line break][speech style of M]'Oh wow! Thank you! With this maybe people will treat me like less of a whore. ...I guess I should wait to put it on until after I've gotten cleaned up.'[roman type][line break]".
+
 Part 2 - Conversation
 
 Section 1 - Greeting
@@ -1242,7 +1255,7 @@ To say RepeatResponse of (M - a wench):
 		otherwise if the size of penis > 7 and penis is lewdly exposed and M is unfriendly:
 			say "[speech style of M]'[one of]You're crazy if you think I'll let you put that thing in me!'[or]You've got another thing coming if you think you can put that in me.'[or]Fuck off, asshole!'[at random][roman type][line break]";
 		otherwise:
-			say "[speech style of M]'[one of]God, do you ever fucking shut up?'[or]Shut UP.'[or]Do you ever stop running your mouth?'[or][if the bimbo of the player < 8]Shut up you fucking prude!'[otherwise if the bimbo of the player < 14]Shut up you fucking skank!'[otherwise]Shut up you fucking slut!'[end if][at random][roman type][line break]";
+			say "[speech style of M]'[one of]God, do you ever fucking shut up?'[or]SHUT. UP.'[or]Do you ever stop running your mouth?'[or][if the bimbo of the player < 8]Shut up you fucking prude!'[otherwise if the bimbo of the player < 14]Shut up you fucking skank!'[otherwise]Shut up you fucking slut!'[end if][at random][roman type][line break]";
 		alwayscutshow figure of wench interact 5 for M;
 	otherwise if the size of penis <= 3 and the player is possessing a penis and penis is exposed:
 		if M is unfriendly, say "[speech style of M]'[one of]Did you say something? I couldn't hear you over the sound of how tiny your dick is!'[or]Shut up, baby dick, I'm horny.'[or]I'm looking forward to shutting you up, baby dick.'[at random][roman type][line break]";
@@ -1279,7 +1292,7 @@ To say AttentionAccepted of (M - a wench) with (N - a monster):
 		say "[speech style of M]'It's actually sort of hot when someone else gets fucked.'[roman type][line break]";
 
 To say TauntAccepted of (M - a wench):
-	if the size of penis <= 3 and the player is male:
+	if the size of penis <= 3 and the player is gendered male:
 		say "[speech style of M]'Never mind! I don't wanna be humiliated again![roman type][line break][BigNameDesc of M] begins to run away!";
 	otherwise if the size of penis > 8:
 		say "[speech style of M]'W-wait a second! I-I can't take a dick that big. I'm out of here!'[roman type][line break][BigNameDesc of M] begins to run away!";
@@ -1305,7 +1318,7 @@ To say TauntRejected of (M - a wench):
 To say DominantResponse of (M - a wench):
 	if M is unfriendly:
 		if bukkake fetish is 1 and the semen coating of face < 1 and M is unfriendly:
-			say "[speech style of M]'[one of]Wasn't there cum on your face last time I saw you. Oh well, I can replace it.'[or]Hey, what happened to all that cum on your face? Eh, whatever. I'm replacing it anyway.'[or]Wow, your face is completely clean! I bet you fucking ate it, didn't you.'[at random][roman type][line break]";
+			say "[speech style of M]'[one of]Wasn't there cum on your face last time I saw you? Oh well, I can replace it.'[or]Hey, what happened to all that cum on your face? Eh, whatever. I'm replacing it anyway.'[or]Wow, your face is completely clean! I bet you fucking ate it, didn't you.'[at random][roman type][line break]";
 		otherwise:
 			say "[speech style of M]'[one of]Hey there. I thought of a new nickname for you. [big cunt] Wipe. How does that sound?'[or]Oh, look, it's my favourite [cunt] wipe!'[or][if M is friendly]Hey, it's my favourite [cunt] wipe!'[otherwise]Look who it is! I just got fucked so I really need a cleaning.'[end if][stopping][roman type][line break]";
 		alwayscutshow figure of wench interact 6 for M;
@@ -1353,13 +1366,13 @@ To compute unfriendly drink of (M - a wench):
 	now M is interested;
 	now the boredom of M is 0.
 
-To compute desperate drinking to (M - a wench):
+[To compute desperate drinking to (M - a wench):
 	say "[if M is uninterested]You spot a [MediumDesc of M]! [otherwise]You look at [NameDesc of M] hungrily. [end if]Your thirst combined with your new found love of the taste of [semen] means you can't help but go up to the [boy of M], get on your knees and start licking [his of M] [HoleDesc of M]. You are rewarded by [his of M] sighs of pleasure, and a flood of [semen]! You gulp it down greedily.";
 	alwayscutshow figure of wench interact 8 for M;
 	StomachSemenUp a random number between 1 and 2;
 	bore M for 400 seconds;
 	now the stance of the player is 1;
-	humiliate 250.
+	humiliate 250.]
 
 Part 5 - Trading
 

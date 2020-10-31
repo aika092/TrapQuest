@@ -60,25 +60,7 @@ To compute unique recycling of (C - royal circlet):
 To compute class outfit of (H - royal circlet):
 	let B be a random off-stage white milking basque;
 	if B is actually summonable or (B is basque and basque-summoned is 0 and the number of worn milking basque is 0 and the number of worn milking harness is 0):
-		if basque-summoned is 0:
-			repeat with O running through worn dresses:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn exclusive corsets:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn knickers:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn trousers:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn bras:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn bottom-exclusive belly covering clothing:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
+		PinkWardrobeUnclash B;
 		say "[bold type]Your [ShortDesc of H] [bold type]shines brightly, and a tight white basque materialises around you.[roman type][line break]";
 		summon B;
 		now basque-summoned is 1;

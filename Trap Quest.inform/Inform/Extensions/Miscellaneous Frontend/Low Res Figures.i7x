@@ -19,9 +19,4 @@ Figure of dq hotel loading is the file "Special/Loading/loading2b.png".
 Figure of dq mansion loading is the file "Special/Loading/loading8b.png".
 Figure of dq mansion messy loading is the file "Special/Loading/loading9b.png".
 
-Figure of chess cutscene 1 is the file "Special/Cutscene/cutscene-chess1b.png".
-Figure of chess cutscene 2 is the file "Special/Cutscene/cutscene-chess2b.png".
-Figure of chess cutscene 3 is the file "Special/Cutscene/cutscene-chess3b.png".
-Figure of chess cutscene 4 is the file "Special/Cutscene/cutscene-chess4b.png".
-
 Low Res Figures ends here.

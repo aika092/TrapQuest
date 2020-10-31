@@ -497,7 +497,7 @@ Definition: an adult baby slave (called M) is eager to deliver enemas:
 	if M is able to deliver enemas, decide yes;
 	decide no.
 
- To compute enema of (M - an adult baby slave):
+To compute enema of (M - an adult baby slave):
 	compute suppository of M.
 
 To say DiaperChangeStart of (M - an adult baby slave):
@@ -636,6 +636,12 @@ To UnidentifiablePosterReaction of (M - an adult baby slave):
 	say "[speech style of M]'Whoever that is, they seem pretty cute. I'd love to shove their face into my diaper.'[roman type][line break]";
 	say "You turn slightly red but don't say a word.";
 	humiliate the lewdness of a random poster in the location of the player / 2.
+
+To say RewardFlav of (M - an adult baby slave) for (T - a thing):
+	say "[speech style of M]'Do you want this? I found it.'[roman type][line break][BigNameDesc of M] pulls a [T] out of [his of M] diaper and drops it on the ground in front of you.".
+
+To say OfferFriendshipFlav of (M - an adult baby slave):
+	say "[speech style of M][if M is guardian]'Do you wanna go fight tha bad guys together[otherwise if M is ally]'Do you wanna adventure together for a while[otherwise if M is buddy]'Are we best friends now[otherwise if M is acquaintance]'Are we becoming friends[otherwise]'Maybe you're not as much of a doo-doo-head as I thought[end if]?'[roman type][line break]".
 
 Section 1 - Greeting
 

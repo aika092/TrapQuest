@@ -52,14 +52,20 @@ Definition: a bottle (called T) is player-serve-ready:
 A vessel can be open topped.
 The doses of a vessel is usually 0.
 
+Definition: a vessel is basic loot:
+	if it is off-stage, decide yes;
+	decide no.
+
 To restock (C - a vessel):
 	let B be a random basic loot fetish appropriate vessel;
-	if B is bottle, now B is in Standard Item Pen.
+	if B is vessel:
+		repeat with L running through Standard Item Pen:
+			if L is vessel, remove L from Standard Item Pen;
+		add B to Standard Item Pen.
 
 This is the setup starting vessels rule:
 	let C be a random vessel;
-	repeat with N running from 1 to 3:
-		restock C.
+	restock C.
 The setup starting vessels rule is listed in the setup starting items rules.
 
 This is the remove inappropriate vessels rule:
@@ -95,9 +101,10 @@ To decide which figure-name is the examine-image of (V - squirt dildo):
 Report plugging something with squirt dildo:
 	now the second noun is sure.
 Definition: squirt dildo is basic loot: decide no.
-To compute cursed drinking (X - squirt dildo):
+[To compute cursed drinking (X - squirt dildo):
 	say "An extremely bitter taste and slimy consistency immediately lets you know it's not what you put in. The squirt dildo changed everything inside it into [semen]![line break][variable custom style][if the curse-ID of X is sure and X is cursed]This vessel is cursed... it's going to turn anything that's inside it into [semen][otherwise if the curse-ID of X is sure]This potion colour must be cursed... and that's causing it to turn into [semen] when I try to drink it from here[otherwise]One of these is cursed, but I don't know which[end if]...[roman type][line break]";
-	StomachSemenUp 1.
+	FaceFill semen by 1;
+	suggest swallowing with semen consequences.] [You can't avoid the taste addiction increase by not swallowing]
 To say VesselDesc of (V - squirt dildo):
 	say "This dildo has a hollow inside, hollow balls at the base and a hole at the top. By squeezing the base you can squirt the contents out of the dildo, and by releasing you can capture a bit of whatever liquid the dildo is in.".
 To say ShortVesselDesc of (V - squirt dildo):
@@ -284,7 +291,7 @@ To compute drunken adventure:
 				summon K;
 				say "You are wearing a [ShortDesc of K] which is already utterly soaked.";
 			UrineSoakUp K by the soak-limit of K - the total-soak of K;
-		if the player is possessing a vagina and pregnancy fetish is 1 and the pregnancy of the player is 0 and condoms-used is 0:
+		if condoms-used is 0 and the player is able to get pregnant:
 			let M be a random alive father material monster;
 			if M is monster:
 				now M is inseminating vagina;
@@ -346,7 +353,7 @@ To compute cursed drinking (X - novelty mug):
 			increase suppository by 1;
 		otherwise:
 			say "It tastes like [one of]milk, but somehow you know something isn't right. It's too tangy and... sweet? This must be human[or]tangy[stopping] breast milk...";
-			MilkTasteAddictUp 1;
+			SlowMilkTasteAddictUp 1;
 	otherwise:
 		say "It tastes like milk, but somehow you know something isn't right. ";
 		if lactation fetish is 1:
@@ -357,9 +364,8 @@ To compute cursed drinking (X - novelty mug):
 			otherwise:
 				increase the lactation rate of the player by 2;
 				say "Your [BreastDesc] feel tingly.";
-		otherwise if the player is a flatchested trap:
-			say "Your nipples feel strange.";
-			increase the raw sensitivity of breasts by 1;
+		otherwise if the player is a flatchested trap or a random number between 1 and 3 is 1:
+			BreastsSensitivityUp 1;
 		otherwise:
 			BustUp a random number between 1 and 2;
 			say "You feel your [BreastDesc] slightly swell.".

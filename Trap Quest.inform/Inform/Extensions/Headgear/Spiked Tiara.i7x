@@ -156,8 +156,7 @@ To compute class outfit of (H - spiked-tiara):
 		otherwise if O is overdress and O is not tongue-suit:
 			transform O into tongue-suit;
 			repeat with SK running through worn skirted clothing:
-				say "Your [SK] [wardrobeVanishes of SK]!";
-				now SK is in pink wardrobe;
+				WardrobeVanish SK;
 		otherwise if E is equippable and E is not demonic:
 			transform E into tongue-gloves.
 

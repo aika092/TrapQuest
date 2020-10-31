@@ -121,10 +121,10 @@ To compute periodic effect of (P - breast-module):
 	increase the module-charge of P by 1;
 	if the module-charge of P > 48:
 		now the module-charge of P is 0;
-		if the player is not top heavy and the raw intelligence of the player > 1:
+		if the player is not top heavy and the raw strength of the player > 1:
 			say "[bold type]Your breasts suddenly feel terribly warm, they suddenly swell up in size! You feel some [one of][or]more [stopping]of your muscular power transferred into the nanobots for safekeeping.[roman type][line break]";
 			BustImplantsUp 1;
-			IntDown 1;
+			StrengthDown 1;
 			increase the str-transfer of P by 1.
 
 clitoris lead is a piercing. The printed name of clitoris lead is "[TQlink of item described][item style][if the bimbo of the player > 10]clit[otherwise]clitoris[end if] lead[clothing-title-after]". The text-shortcut of clitoris lead is "cl". Understand "clit" as clitoris lead. Figure of clitoris lead is the file "Items/Accessories/Piercings/clitlead1.png".
@@ -670,10 +670,10 @@ To compute periodic effect of (P - head-module):
 		now the module-charge of P is 0;
 		let HL be max hair length - the largeness of hair;
 		if frozen hair is 1, now HL is 0;
-		if the raw intelligence of the player > 1 and (the lips of face < 3 or HL > 0):
+		if the raw intelligence of the player > 1 and (the lips of face < max lip size or HL > 0):
 			IntDown 1;
 			increase the int-transfer of P by 1;
-			if HL / 3 > (3 - the lips of face):
+			if the lips of face >= max lip size or HL / 3 > (3 - the lips of face):
 				FakeHairUp 1;
 				say "[bold type]Your hair [if the fake largeness of hair > 0]extensions suddenly feel terribly warm and they suddenly stretch in size[otherwise]suddenly feels terribly warm as extensions begin to manifest themselves at the tips[end if]! ";
 			otherwise:

@@ -30,7 +30,7 @@ To compute periodic effect of (B - a cow print bikini top):
 		otherwise summon K cursed with quest.
 
 To BraGrow (B - a cow print bikini top): [Quadruple the standard chance of the bra increasing in size each round.]
-	if B is cursed and the player is not top heavy:
+	if B is cursed and the player is not top heavy and the stolen-strength of B is 0:
 		if the size of B > the largeness of breasts and a random number between 1 and (25 + (the magic-modifier of B * 5)) is 1:
 			if B is milk production:
 				MilkUp 1;

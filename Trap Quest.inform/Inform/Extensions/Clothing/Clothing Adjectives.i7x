@@ -235,8 +235,7 @@ Clothing can be ass plugging. Clothing is usually not ass plugging.
 Clothing can be vagina plugging. Clothing is usually not vagina plugging.
 Clothing has a number called plug size. The plug size of clothing is usually 0.
 Clothing can be purity. Clothing is usually not purity. [Means they care about your virginity.]
-A Magic-type is a kind of value. The magic-types are blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, stumbling, and hostility. Clothing has a magic-type. The magic-type of clothing is usually blandness.
-[Clothing can be blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, or stumbling (this is the magic-type property). Clothing is usually blandness.]
+A Magic-type is a kind of value. The magic-types are blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, stumbling, provocation, and hostility. Clothing has a magic-type. The magic-type of clothing is usually blandness.
 Magic-ID is a kind of value. The magic-IDs are unidentified and identified. Clothing has a Magic-ID. The Magic-ID of clothing is usually unidentified.
 Clothing has a number called raw-magic-modifier. The raw-magic-modifier of clothing is usually 0.
 To decide which number is the penis-capacity of (C - a clothing):[what's the largest size of penis it can cover?]
@@ -259,7 +258,6 @@ Clothing can be restart immune. Clothing is usually not restart immune. [This me
 Clothing can be spikey. A clothing is usually not spikey.
 A clothing has a number called used condoms. A clothing has a number called empty condoms.
 A clothing has a number called stolen-strength. [This strength is returned when the item is worn again]
-A clothing can be unsoaked or soaked. A clothing is usually unsoaked. [Used to track where we've already spread liquid movements to, so that recursive functions don't become infinite.]
 [!<Clothing>@<temporarilyDisplaced:Boolean>*
 
 It's been automatically displaced to allow the player to pee or something. We intend to replace it afterwards.
@@ -329,8 +327,7 @@ Does the wench want to steal it?
 
 +!]
 Definition: a clothing (called C) is desirable:
-	if C is store, decide no;
-	if C is diaper or C is cursed or C is ass plugging or C is vagina plugging, decide no;
+	if C is store or C is diaper or C is unremovable or C is cursed or C is locked or C is glued or C is ass plugging or C is vagina plugging, decide no;
 	if C is not worn by the player and C is not held by the player, decide no;
 	if C is not currently perceivable, decide no;
 	if C is knickers and (C is messed or C is not total protection), decide no;
@@ -359,13 +356,17 @@ Definition: a clothing is tonguing:
 	if it is tongued and tonguesActive > 0 and it is worn, decide yes;
 	decide no.
 
+To decide which number is top-malfunction-likelihood:
+	if titties out tattoo is worn, decide on 400;
+	decide on 1250.
+
 latest-top-malfunction is a number that varies.
 Definition: yourself is top-wardrobe-malfunctioning:
 	if (the player is male and the largeness of breasts <= 1) or the number of worn actually nipple covering clothing is not 1:
 		now latest-top-malfunction is 0;
 		decide no;
 	let C be a random worn actually nipple covering clothing;
-	if C is not-top-displacable or C is glued or C is fully covering or C is fully exposing:
+	if C is not-top-displacable or C is glued or C is fully covering or C is fully exposing or C is slutty-bat-corset:
 		now latest-top-malfunction is 0;
 		decide no;
 	if latest-top-malfunction is not 0:
@@ -374,8 +375,8 @@ Definition: yourself is top-wardrobe-malfunctioning:
 		if CC >= 3 and CC <= 7: [Just to make sure]
 			let CL be 8 - CC;
 			let malfunctionChance be timePassed * CL;
-			let R be a random number between 1 and 1000;
-			if debuginfo > 0, say "[input-style]Wardrobe Malfunction Check: Seconds since last check ([timePassed]) * cleavage ([CL]) = [malfunctionChance] | ([R].5) d1000 malfunction likelihood[roman type][line break]";
+			let R be a random number between 1 and top-malfunction-likelihood;
+			if debuginfo > 0, say "[input-style]Wardrobe Malfunction Check: Seconds since last check ([timePassed]) * cleavage ([CL]) = [malfunctionChance] | ([R].5) d[top-malfunction-likelihood] malfunction likelihood[roman type][line break]";
 			if malfunctionChance > R:
 				decide yes;
 	decide no.

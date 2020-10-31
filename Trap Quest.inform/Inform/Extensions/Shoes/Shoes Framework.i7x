@@ -43,12 +43,14 @@ To set up influence of (C - a shoes):
 
 To restock (C - a shoes):
 	let B be a random basic loot shoes;
-	if B is shoes, now B is in Standard Item Pen.
+	if B is shoes:
+		repeat with L running through Standard Item Pen:
+			if L is shoes, remove L from Standard Item Pen;
+		add B to Standard Item Pen.
 
 This is the setup starting shoes rule:
 	let C be a random shoes;
-	repeat with N running from 1 to 5:
-		restock C.
+	restock C.
 The setup starting shoes rule is listed in the setup starting items rules.
 
 To decide which number is the unique cringe of (C - a shoes):
@@ -85,8 +87,7 @@ The trousers stuck shoes clash rule is listed in the trousers wearability rules.
 Report wearing shoes:
 	if the noun is unsure and the noun is cursed, say "You finish slipping your [printed name of the noun] onto your [if there are worn stockings]stockings clad [end if]feet. As you take your first step you feel a pulse of warmth that runs from your toe tips to the back of your [feet]! The material of the [feet] shrinks to fit your feet [if the bimbo of the player < 6]firmly[otherwise if the bimbo of the player < 10]tightly[otherwise if the bimbo of the player < 15]deliciously[otherwise]enticingly[end if]. Lifting your foot tentatively, you can feel the sole of your [ShoeType of the noun] clinging to the bottom of your feet. These [ShoeType of the noun] are cursed!"; [Crowdsourced from Anya Snowdrifter]
 	otherwise say "[if the bimbo of the player > 12 and a random number between 1 and 2 is 1][line break][second custom style]These make my ass look great![roman type][line break][end if]";
-	if the noun is queen of hearts heels:
-		if the strutskill of the player is 0 and the player is not wobbling, say "These heels are so [if the bimbo of the player < 5]beautiful[otherwise][line break][second custom style]sexy[roman type][line break][end if], you feel like [bold type]strut[roman type]ting around in them!".
+	if the noun is queen of hearts heels and the strutskill of the player is 0 and the player is not wobbling, say "These heels are so [if the bimbo of the player < 5]beautiful[otherwise][second custom style]sexy[roman type][end if], you feel like [bold type]strut[roman type]ting around in them!".
 
 Check taking off worn shoes:
 	if the player is dildo stuck and the noun is heels:

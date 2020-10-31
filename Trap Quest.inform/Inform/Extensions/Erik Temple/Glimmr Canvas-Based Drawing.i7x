@@ -1184,7 +1184,7 @@ To fit (grid - an image-map) to/into a/-- total/-- width of (X - a number) canva
 	otherwise:
 		rule fails;
 	#if utilising Glimmr debugging;
-	    say "[>console][CBD]Trying to fit [grid] to a width of [X] canvas units. Changed tile-width to [width-token]. [if width-token * image-map-width is not X]The width could not be set precisely to [X]. [end if]The overall width before scaling will be [width-token * image-map-width].[<]";
+	say "[>console][CBD]Trying to fit [grid] to a width of [X] canvas units. Changed tile-width to [width-token]. [if width-token * image-map-width is not X]The width could not be set precisely to [X]. [end if]The overall width before scaling will be [width-token * image-map-width].[<]";
 	#end if.
 
 To fit (grid - an image-map) to/into a/-- total/-- height of (Y - a number) canvas/-- pixel/pixels/px/units/-- high/--:
@@ -1201,7 +1201,7 @@ To fit (grid - an image-map) to/into a/-- total/-- height of (Y - a number) canv
 	otherwise:
 		rule fails;
 	#if utilising Glimmr debugging;
-	    say "[>console][CBD]Trying to fit [grid] to a height of [Y] canvas units. Changed tile-height override to [height-token]. [if height-token * calc-height is not Y]The height could not be set to [Y]. [end if]The overall height before scaling will be [height-token * calc-height].[<]";
+	say "[>console][CBD]Trying to fit [grid] to a height of [Y] canvas units. Changed tile-height override to [height-token]. [if height-token * calc-height is not Y]The height could not be set to [Y]. [end if]The overall height before scaling will be [height-token * calc-height].[<]";
 	#end if.
 
 Section - Scaling rule for image-maps
@@ -1277,16 +1277,16 @@ An element display rule for a tileset image-map (called the grid):
 	unless the background tint of the grid is g-PlaceNullCol:
 		rectdraw (colour background tint of the grid) in (current window) from (win-x of the grid) by (win-y) to win-x + (image-map-width * scaled tile-width) by win-y + (image-map-height * scaled tile-height);
 		#if utilising Glimmr debugging;
-		    say "[>console][CBD]Drawing background rectangle (glulx colour-value [background tint of grid]) from ([win-x], [win-y]) to ([win-x + (image-map-width * scaled tile-width)], [win-y + (image-map-height * scaled tile-height)]) for tileset image-map [i][grid][/i] in [i][current window][/i].[<]";
+		say "[>console][CBD]Drawing background rectangle (glulx colour-value [background tint of grid]) from ([win-x], [win-y]) to ([win-x + (image-map-width * scaled tile-width)], [win-y + (image-map-height * scaled tile-height)]) for tileset image-map [i][grid][/i] in [i][current window][/i].[<]";
 		#end if;
 	drimagemap in (current window) at (win-x of the grid) by (win-y of the grid) using (tile-array) rendered with (associated tileset of the grid) with tile-size (scaled tile-width) by (scaled tile-height) px;
 	#if utilising Glimmr debugging;
-	    say "[>console][CBD]Drawing tileset image-map [i][grid][/i] in [i][current window][/i] at origin ([win-x of grid], [win-y of grid]). Map ([image-map-width] x [image-map-height] = [image-map-width * image-map-height] tiles) rendered using tileset [associated tileset]; tiles measure [scaled tile-width] x [scaled tile-height] pixels after scaling.[<]";
+	say "[>console][CBD]Drawing tileset image-map [i][grid][/i] in [i][current window][/i] at origin ([win-x of grid], [win-y of grid]). Map ([image-map-width] x [image-map-height] = [image-map-width * image-map-height] tiles) rendered using tileset [associated tileset]; tiles measure [scaled tile-width] x [scaled tile-height] pixels after scaling.[<]";
 	#end if;
 	if the grid is graphlinked:
 		set a graphlink in the current window identified as (the grid) from win-x by win-y to win-x + (scaled tile-width * image-map-width) by win-y + (scaled tile-height * image-map-height) as the linked replacement-command of the grid;
 		#if utilising Glimmr debugging;
-		    say "[>console][CBD]Graphlink corresponding to [i][grid][/i] set in [i][current window][/i] from ([win-x], [win-y]) to ([win-x + (scaled tile-width * image-map-width)], [win-y + (scaled tile-height * image-map-height)]): [quotation mark][linked replacement-command][quotation mark].[<]";
+		say "[>console][CBD]Graphlink corresponding to [i][grid][/i] set in [i][current window][/i] from ([win-x], [win-y]) to ([win-x + (scaled tile-width * image-map-width)], [win-y + (scaled tile-height * image-map-height)]): [quotation mark][linked replacement-command][quotation mark].[<]";
 		#end if;
 	if the grid is tile-graphlinked:
 		follow the tiled graphlink setting rules for the grid.
@@ -1299,16 +1299,16 @@ An element display rule for a direct image-map (called the grid):
 	unless the background tint of the grid is g-PlaceNullCol:
 		rectdraw (colour background tint of the grid) in (current window) from (win-x of the grid) by (win-y) to win-x + (image-map-width * scaled tile-width) by win-y + (image-map-height * scaled tile-height);
 		#if utilising Glimmr debugging;
-		    say "[>console][CBD]Drawing background rectangle (glulx colour-value [background tint of grid]) from ([win-x], [win-y]) to ([win-x + (image-map-width * scaled tile-width)], [win-y + (image-map-height * scaled tile-height)]) for direct image-map [i][grid][/i] in [i][current window][/i][<].";
+		say "[>console][CBD]Drawing background rectangle (glulx colour-value [background tint of grid]) from ([win-x], [win-y]) to ([win-x + (image-map-width * scaled tile-width)], [win-y + (image-map-height * scaled tile-height)]) for direct image-map [i][grid][/i] in [i][current window][/i][<].";
 		#end if;
 	drimagemap in (current window) at (win-x of the grid) by (win-y of the grid) using (figure-array) with tile-size (scaled tile-width) by (scaled tile-height) px;
 	#if utilising Glimmr debugging;
-	    say "[>console][CBD]Drawing direct image-map [i][grid][/i] in [i][current window][/i] at origin ([win-x of grid], [win-y of grid]). Map ([image-map-width] x [image-map-height] = [image-map-width * image-map-height] tiles); tiles measure [scaled tile-width] x [scaled tile-height] pixels after scaling.[<]";
+	say "[>console][CBD]Drawing direct image-map [i][grid][/i] in [i][current window][/i] at origin ([win-x of grid], [win-y of grid]). Map ([image-map-width] x [image-map-height] = [image-map-width * image-map-height] tiles); tiles measure [scaled tile-width] x [scaled tile-height] pixels after scaling.[<]";
 	#end if;
 	if the grid is graphlinked:
 		set a graphlink in the current window identified as (the grid) from win-x by win-y to win-x + (scaled tile-width * image-map-width) by win-y + (scaled tile-height * image-map-height) as the linked replacement-command of the grid;
 		#if utilising Glimmr debugging;
-		    say "[>console][CBD]Graphlink corresponding to [i][grid][/i] set in [i][current window][/i] from ([win-x], [win-y]) to ([win-x + (scaled tile-width * image-map-width)], [win-y + (scaled tile-height * image-map-height)]): [quotation mark][linked replacement-command][quotation mark].[<]";
+		say "[>console][CBD]Graphlink corresponding to [i][grid][/i] set in [i][current window][/i] from ([win-x], [win-y]) to ([win-x + (scaled tile-width * image-map-width)], [win-y + (scaled tile-height * image-map-height)]): [quotation mark][linked replacement-command][quotation mark].[<]";
 		#end if;
 	if the grid is tile-graphlinked:
 		follow the tiled graphlink setting rules for the grid.
@@ -1409,7 +1409,7 @@ A tiled graphlink setting rule for an image-map (called the grid):
 		increase row by scaled tile-height of the grid;
 		now column is win-x of the grid;
 	#if utilising Glimmr debugging;
-	    say "[>console][CBD]Graphlinks set on [number of entries in the linked command array of the grid * number of entries in entry 1 of the linked command array of the grid] individual tiles for tileset image-map [i][grid][/i] in [i][current window][/i].[<]";
+	say "[>console][CBD]Graphlinks set on [number of entries in the linked command array of the grid * number of entries in entry 1 of the linked command array of the grid] individual tiles for tileset image-map [i][grid][/i] in [i][current window][/i].[<]";
 	#end if.
 
 Part - Constructing graphic hyperlink sets for image maps
@@ -1431,7 +1431,7 @@ To construct/build graphic/-- hyperlinks/graphlinks array for (grid - a direct i
 				add "" to L;
 		add L to the linked command array of the grid;
 	#if utilising Glimmr debugging;
-	    say "[>console][CBD]Constructed hyperlink command array for [grid] (a direct image-map) from the table [link-table].[<]";
+	say "[>console][CBD]Constructed hyperlink command array for [grid] (a direct image-map) from the table [link-table].[<]";
 	#end if.
 
 [This table is required for the above routine to compile. It is best to make your own table rather than add to this one.]
@@ -1458,7 +1458,7 @@ To construct/build graphic/-- hyperlinks/graphlinks array for (grid - a tileset 
 				add "" to L;
 		add L to the linked command array of the grid;
 	#if utilising Glimmr debugging;
-	    say "[>console][CBD]Constructed hyperlink command array for [grid] (a tileset image-map) from the translation-table of the tileset [associated tileset of the grid].[<]";
+	say "[>console][CBD]Constructed hyperlink command array for [grid] (a tileset image-map) from the translation-table of the tileset [associated tileset of the grid].[<]";
 	#end if.
 
 Part - Debugging commands for image-maps
@@ -3468,4 +3468,3 @@ From this point on, the code does not differ from the Inform documentation's "Ti
 		high card.
 
 	Sort-debugging is a truth state that varies.
-

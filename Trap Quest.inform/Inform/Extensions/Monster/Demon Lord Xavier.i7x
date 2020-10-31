@@ -33,7 +33,11 @@ To say BigFuckerDesc of (M - demon lord):
 	say "Xavier".
 
 To say MonsterDesc of (M - demon lord):
-	say "A giant red humanoid, with a monster's face and large red wings. [big he of M] must be literally twice as tall and wide as you. [if diaper quest is 0][big he of M] is completely naked, and as you might expect, [his of M] red monster of a [DickDesc of M] is about twice as large and thick as the average well hung human male. [end if]You can feel a raw aura of lust and evil emanating from [him of M].".
+	say "A giant red humanoid, with a monster's face and large red wings. [big he of M] must be literally twice as tall and wide as you. [run paragraph on]";
+	if diaper quest is 0:
+		say "[big he of M] is completely naked, and as you might expect, [his of M] red monster of a [DickDesc of M] is about twice as large and thick as the average well hung human male. [if M is wrapped]A latex condom is covering the entirety of [his of M] shaft, and seems to be massively inhibiting [his of M] evil aura.[otherwise]You can feel a raw aura of lust and evil emanating from [him of M].[end if]";
+	otherwise:
+		say "[big he of M] looks incredibly scary.";
 
 To say MonsterComment of (M - demon lord):
 	if diaper quest is 0:
@@ -155,11 +159,11 @@ To compute perception of (M - demon lord):
 	otherwise if vaginalvirgin of the player is 1 and the player is possessing a vagina:
 		say "[first custom style]'[one of]YOU CANNOT RESIST ME, FOOLISH [caps boy of the player]!'[or]I WILL BE THE FIRST TO IMPALE YOU ON MY MIGHTY COCK, VIRGIN!'[or]I LOVE CHERRIES!'[or]SUBMIT YOURSELF, [caps boy of the player]! YOU CANNOT PROTECT YOUR VIRGINITY FROM ME!'[at random][roman type][line break]";
 	otherwise if the class of the player is princess:
-		say "[first custom style]'[one of]HAHAHA! FOOLISH PRINCESS! YOUR KINGDOM WILL BE MY COCKSLEEVE FOR ETERNITY AND SO WILL YOU!'[or][if pregnancy fetish is 1 and the player is female and the pregnancy of the player is 1]SUBMIT, PRINCESS! YOUR BLOODLINE WILL BE TAINTED WITH MY SEED!'[otherwise]YOU CAN RUN NO LONGER, PRINCESS! I WILL FILL YOU WITH MY TAINTED SEED!'[end if][at random][roman type]";
+		say "[first custom style]'[one of]HAHAHA! FOOLISH PRINCESS! YOUR KINGDOM WILL BE MY COCKSLEEVE FOR ETERNITY AND SO WILL YOU!'[or][if pregnancy fetish is 1 and the player is possessing a vagina and the pregnancy of the player is 1]SUBMIT, PRINCESS! YOUR BLOODLINE WILL BE TAINTED WITH MY SEED!'[otherwise]YOU CAN RUN NO LONGER, PRINCESS! I WILL FILL YOU WITH MY TAINTED SEED!'[end if][at random][roman type]";
 	otherwise if the player-class is succubus and M is mating and pentagram tattoo is not worn:
 		say "[first custom style]'CONCUBINE! I HAVE PREPARED A GIFT FITTING YOUR STATUS!'[roman type]";
 	otherwise:
-		say "[first custom style]'YOU! GET ON YOUR KNEES AND PRESENT [if pregnancy fetish is 1 and the player is female and the pregnancy of the player is 0]YOUR [caps cunt] TO CONCEIVE AND CARRY MY HEIR[otherwise]YOURSELF BEFORE YOUR [one of]NEW [or][stopping]MASTER[end if].'[roman type][line break]";
+		say "[first custom style]'YOU! GET ON YOUR KNEES AND PRESENT [if pregnancy fetish is 1 and the player is possessing a vagina and the pregnancy of the player is 0]YOUR [caps cunt] TO CONCEIVE AND CARRY MY HEIR[otherwise]YOURSELF BEFORE YOUR [one of]NEW [or][stopping]MASTER[end if].'[roman type][line break]";
 		if the class of the player is succubus or the class of the player is worshipper and the player is upright:
 			say "Your master's voice is too commanding for you to even consider resistance!";
 			try kneeling.
@@ -197,8 +201,7 @@ To compute (M - demon lord) receiving (N - a number) damage from (X - a monster)
 	say "[one of][BigNameDesc of M] seems immune to the attack![line break][first custom style]'You fool, your allies cannot harm me!'[roman type][line break][roman type][or][BigNameDesc of M] still seems to be immune to the [X]![stopping]".
 
 To decide which number is the condom resistance of (M - demon lord):
-	if pregnancy fetish is 1, decide on 99;
-	decide on 2. [He has a latex allergy]
+	decide on 99. [He has a latex allergy]
 
 The xavier priority attack rules is a rulebook. The priority attack rules of demon lord is usually the xavier priority attack rules.
 
@@ -253,10 +256,33 @@ To compute (M - demon lord) removing (P - an anal beads):
 	destroy P.
 
 To say CondomRejectFlav of (M - demon lord):
-	say "[speech style of M]'[one of]YOUR PUNY MORTAL CONDOMS WILL NEVER FIT ON ME[or]NOT EVEN A CONDOM CAN PROTECT YOU FROM MY SEED, WENCH[or]I GO BAREBACK IN EVERY HOLE, SLAVE[or]FOOL! I HAVE A LATEX ALLERGY[or][if the class of the player is princess]THAT TRICK WON'T WORK A SECOND TIME, MORTAL[otherwise]HAHAHAHA! AS IF LATEX COULD CONTAIN MY SEED[end if][at random]!'[roman type] Looks like [he of M][']s going in bare...".
+	say "[speech style of M]'[one of]FOOL! I HAVE A LATEX ALLERGY[or]NO! IT DOESN'T FEEL AS GOOD[or]I GO BAREBACK IN EVERY HOLE, MORTAL[or]FOOLISH MORTAL! I AM TOO BIG FOR CONDOMS[then at random]!'[roman type]";
+	if the player is able to use manual dexterity:
+		say "You might be able to force [him of M] to wear a condom, but there might be consequences if you fail. Do you try anyway?";
+		if the player is reverse bimbo consenting:
+			let D be (the dexterity of the player) / (3 - (the trophy-mode of condom-trophy * 2));
+			if the class of the player is fertility goddess, decrease D by 3;
+			if the class of the player is worshipper, now D is 0;[worshipper always fails]
+			let R be a random number between -1 and D;
+			if R < 2:
+				say CondomForceSuccessFlav of M;
+				now M is wrapped;
+				now M is seduction-refused;[makes him damageable and kicks you out of the seduction scene.]
+			otherwise:
+				say CondomForceFailFlav of M;
+				compute angry punishment of M;
+	otherwise:
+		say "Looks like [he of M]'s going in bare...".
 
-To say CondomAcceptFlav of (M - demon lord):
-	if the condom resistance of M > 0, say "[BigNameDesc of M] frowns, but then takes the condom and sheathes [his of M] [DickDesc of M].[line break][speech style of M]'[one of]I GUESS I SHOULD USE PROTECTION[or]YOUR PUNY LATEX WILL NOT SCARE ME THIS TIME, MORTAL[at random]!'[roman type][line break]".
+To say CondomForceSuccessFlav of (M - demon lord):
+	if chosen-orifice of M is face:
+		say "You take out a condom, and before [NameDesc of M] can react, [if the bimbo of the player > 10 and face is not actually occupied]use your mouth to slowly roll it down [his of M] length[otherwise]quickly roll it down [his of M] length[end if], making [one of]sure the rubber is in intimate contact with every inch of the[or]every bump and vein glisten as you stretch and smooth the rubber over [his of M][at random] tool.[line break][speech style of M]'[one of]A CONDOM?! NO! [or]I FELL FOR IT AGAIN?! [stopping]NOOOOOO!'[roman type][line break]";
+	otherwise:
+		say "You take out a condom and before [NameDesc of M] can react, you grab [his of M] [DickDesc of M] and quickly roll a condom down [his of M] huge length.[line break][speech style of M]'[one of]NO! MY POWERS ARE-! [or]AGAIN?! HOW DOES THIS KEEP HAPPENING?! [stopping]NOOOOOOO!'[roman type][line break]";
+	say " [big he of M] groans as if in great pain, and staggers away from you as the condom glows with brilliant light! [big his of M] powerful aura is gone! This is your chance!".
+
+To say CondomForceFailFlav of (M - demon lord):
+	say "You take out a condom, but [he of M] reacts immediately, grabbing your wrist and using a bolt of lightning to turn the condom to ash.".
 
 To set up sex length of (M - demon lord) in (B - a body part):
 	set up sex length (a random number between 2 and 3) of M in B.
@@ -297,18 +323,7 @@ To compute facial sex of (M - demon lord):
 	if the player-class is succubus:
 		say "You feel fulfilled in serving your true Master!";
 		dignify 800;
-	if the oral sex addiction of the player > 6, arouse 200;
-	if the sex-length of M is 1:
-		say NearingClimaxOral of M;
-		decrease the sex-length of M by 1;
-	otherwise:
-		if the reaction of the player is 0:
-			say OralResisting of M;
-			say OralResistingResponse of M;
-			if a random number between 1 and 2 is 1 or the lips of face > 2, decrease the sex-length of M by 1;
-		otherwise:
-			say OralSubmissionResponse of M;
-			decrease the sex-length of M by 1.
+	compute default facial sex of M.
 
 To compute post climax effect of (M - demon lord) in (F - vagina):
 	if the class of the player is succubus:
@@ -363,7 +378,7 @@ To compute (M - demon lord) messily pulling out of (F - a fuckhole):
 	let X be the semen load of M / 3;
 	if F is asshole, AssFill X;
 	otherwise PussyFill X;
-	CumThighsUp the semen load of M / 3;
+	AnnouncedSquirt semen on thighs by the semen load of M / 3;
 	SemenPuddleUp X.
 
 To compute (M - demon lord) cleanly pulling out of (F - a fuckhole):
@@ -615,6 +630,7 @@ To compute punishment of (P - xavier-nightmare-belt):
 Section 4 - Damage
 
 Definition: demon lord (called M) is damageable:
+	if M is wrapped, decide yes;[he has a latex allergy!]
 	if attack-type is 1:
 		let S be a random worn slap ready equippable;
 		if S is magic themed equippable or S is purity equippable, decide yes;
@@ -651,7 +667,7 @@ To compute damage reaction of (M - demon lord):
 		if the health of M >= the maxhealth of M:
 			say "[BigNameDesc of M] laughs at you mockingly!";
 		otherwise if the health of M > the maxhealth of M / 2:
-			say "[BigNameDesc of M] growls angrily[one of]![line break][first custom style]'ARGH! HOW CAN YOU HARM ME?!'[roman type][line break][or]![stopping]";
+			say "[BigNameDesc of M] growls angrily[one of]![line break][first custom style]'ARGH! [if M is wrapped]JUST WAIT UNTIL I GET OUT OF THIS THING!'[otherwise]HOW CAN YOU HARM ME?!'[end if][roman type][line break][or]![stopping]";
 		otherwise:
 			say "[BigNameDesc of M] recoils in pain[one of]![line break][first custom style]'I WILL NOT BE DEFEATED!'[roman type][line break][or]![stopping]".
 

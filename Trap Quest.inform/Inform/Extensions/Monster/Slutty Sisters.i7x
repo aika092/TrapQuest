@@ -246,13 +246,13 @@ To compute tripping attack of (M - a futanari slutty sister):
 		if a random number between (the dexterity of the player - the semen addiction of the player) and 4 < 8:
 			if a random number between (the semen taste addiction of the player + the dexterity of the player) and 4 > 12:
 				say "[BigNameDesc of M] delicately strokes [his of M] [DickDesc of M], aiming it at you. You react quickly as a huge, unrealistic jet of [semen] blasts from the tip, catching most of it in your mouth and letting the rest splatter liberally across your face and [BreastDesc].";
-				StomachSemenUp 4;
-				CumFaceUp 2;
-				CumTitsUp 2;
+				FaceFill semen by 4;
+				AnnouncedSquirt semen on face by 2;
+				UnannouncedSquirt semen on breasts by 2;
 			otherwise:
 				say "[BigNameDesc of M] delicately strokes [his of M] [DickDesc of M], aiming it at you. You [if the semen addiction of the player < 5][one of]are too shocked to dodge[or]are too slow to dodge[stopping][otherwise]too turned on to dodge[end if] as a huge, unrealistic jet of [semen] blasts from the tip and hits you straight in the mouth, coating your face and [BreastDesc].";
-				CumFaceUp 5;
-				CumTitsUp 5;
+				AnnouncedSquirt semen on face by 5;
+				UnannouncedSquirt semen on breasts by 5;
 		otherwise:
 			say "[BigNameDesc of M] delicately strokes [his of M] [DickDesc of M], aiming it at you at you at the last second. You react quickly enough to dodge out of the way as a quick jet of [semen] blasts from the tip and splatters on the floor.";
 			SemenPuddleUp 1;
@@ -323,7 +323,7 @@ To say FacesitSubmissionResponse of (M - a bulging slutty sister):
 		otherwise if the stomach of the player - 10 <= the semen taste addiction of the player:
 			say "[if the stomach of the player + 10 <= the semen taste addiction of the player]Your stomach is so full of [semen] that you have to put extra effort in to keep swallowing. But you love [semen] so much, you know you can find room![otherwise if the stomach of the player + 6 <= the semen taste addiction of the player]You are so full of [semen] you feel like you could explode! But you keep on obediently swallowing all the same.[otherwise if the stomach of the player + 2 <= the semen taste addiction of the player]Your bloated stomach screams at you - there's no more room for more [semen]! But it keeps coming, so you have to keep swallowing.[otherwise if the stomach of the player - 2 <= the semen taste addiction of the player]There's so much [semen] inside if you that you are really struggling to gulp any more down at all. Your bloated belly hurts badly. You feel like you could pass out any second.[otherwise]Thick streams of [semen] run out your nose as you begin to choke on your [semen] filled airpipe. Your eyes roll into the back of your head.[end if]";
 			increase the stomach-semen of the player by 4;
-			SemenTasteAddictUp 1;
+			SlowSemenTasteAddictUp 1;
 		otherwise:
 			say "Your mind goes blank as [NameDesc of M][']s unending stream of [semen] fills your lungs. You white out.";
 			now delayed fainting is 1;

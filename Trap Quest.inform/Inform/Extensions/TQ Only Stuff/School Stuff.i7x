@@ -1,10 +1,5 @@
 School Stuff by TQ Only Stuff begins here.
 
-Definition: chess-lesson is lesson-appropriate: decide no.
-
-To compute chess soiling:
-	do nothing.
-
 Part - Kissing Lesson
 
 kissing-lesson is a lesson. The lesson-teacher of kissing-lesson is teacher-angela.
@@ -15,7 +10,7 @@ Definition: kissing-lesson is lesson-appropriate:
 
 To compute teaching of (L - kissing-lesson):
 	allocate 40 seconds;
-	now bigGameLoop is 2; [tells the game not to refresh any windows]
+	now bigGameLoop is 3; [tells the game not to refresh any windows]
 	let M be the lesson-teacher of L;
 	say "[speech style of M]'Oral skillz 101.'[roman type][line break][BigNameDesc of M] holds [his of M] hands behind [his of M] back as [he of M] addresses you all.[line break][speech style of M]'[one of]Your teeth, your lips, your tongue... all are incredibly important toolz at your dizpozal[or]It zeemz zat you all ztill require more vork in zis department[stopping].'[roman type][line break][big he of M] licks [his of M] lips.[line break][speech style of M]'Yez... a complete examination iz required. Each of you vill take turnz to kizz me. Eizer you vill be leaving viz a promotion... or you vill be leaving viz a little upgrade...'[roman type][line break]";
 	repeat with ST running through students in the location of the player:
@@ -588,8 +583,8 @@ To compute teaching of (L - practical-lesson):
 				if the lesson-teacher of L is penetrating face, StomachSemenUp the semen load of the lesson-teacher of L;
 			if the lesson-teacher of L is penetrating breasts:
 				say "Your [ShortDesc of breasts] get drenched in [semen]!";
-				CumTitsUp the semen load of the lesson-teacher of L;
-				increase the raw sensitivity of breasts by 1;
+				AnnouncedSquirt semen on breasts by the semen load of the lesson-teacher of L;
+				BreastsSensitivityUp 1;
 			orgasm lesson-teacher of L;
 		otherwise:
 			if the lesson-teacher of L is penetrating face and player-filthiness > 0:
@@ -700,7 +695,7 @@ To decide which number is the swimming-strength of (M - a student):
 
 To compute teaching of (L - swimming-lesson):
 	allocate 40 seconds;
-	now bigGameLoop is 2; [tells the game not to refresh any windows]
+	now bigGameLoop is 3; [tells the game not to refresh any windows]
 	let M be the lesson-teacher of L;
 	say "[BigNameDesc of M] guides you all to the diving board next to the deep end of the swimming pool.";
 	repeat with N running through monsters in School22: [Clear out the stand of unnecessary NPCs]
@@ -1059,6 +1054,692 @@ To compute teaching of (L - swimming-lesson):
 	now bigGameLoop is 0; [tells the game to refresh windows again]
 	conclude consenting.
 
+
+Part - Chess Stuff
+
+The lesson-teacher of chess-lesson is teacher-hyacinthe.
+chess-lesson has a number called chess-refused.
+chess-lesson has a number called student-urine.
+chess-lesson has a number called student-bowl-fill.
+chess-lesson has a number called player-bowl-fill.
+chess-lesson has a number called student-machine.
+chess-lesson has a number called player-machine.
+chess-lesson has a number called student-drink-tolerance.
+chess-lesson has a number called student-orgasm.
+chess-lesson has a number called player-bladder-penalty.
+
+To decide which number is the girth of (C - chess table):
+	decide on 3.
+To decide which number is the stimulation of (T - chess table) on (F - a body part):
+	if the chess-victor of chess-lesson > 0, decide on 8; [game is over, we're in punishment time]
+	decide on the player-machine of chess-lesson * 6. [0 or 6 depending on fuck speed]
+
+Definition: chess-lesson is lesson-appropriate:
+	if the chess-victor of it is 0 and the chess-refused of it is 0, decide yes;
+	decide no.
+
+Figure of chess table is the file "Env/School/chesstable2.jpg".
+
+Figure of chess cutscene 1 is the file "Special/TQChess/playerwincum.jpg".
+Figure of chess cutscene 2 is the file "Special/TQChess/playerwinpiss.jpg".
+Figure of chess cutscene 3 is the file "Special/TQChess/playerlosscum.jpg".
+Figure of chess cutscene 4 is the file "Special/TQChess/playerlosspiss.jpg".
+
+To decide which figure-name is the examine-image of (C - chess table):
+	if the chess-victor of chess-lesson is 0, decide on figure of chess table;
+	if C is grabbing the player and the map-window is g-present and the focus-window is g-present, decide on figure of no-image-yet; [In this situation we put the image in the map window]
+	decide on chess-table-image.
+
+To decide which figure-name is chess-table-image:
+	if the chess-victor of chess-lesson is 1:
+		if watersports fetish is 1, decide on figure of chess cutscene 2;
+		otherwise decide on figure of chess cutscene 1;
+	otherwise:
+		if watersports fetish is 1, decide on figure of chess cutscene 4;
+		otherwise decide on figure of chess cutscene 3.
+
+To say ExamineDesc of (C - chess table):
+	if chess-victor of chess-lesson is 1:
+		say "The chess table and bondage chair where [MediumDesc of chess-opponent of chess-lesson] is bound in place, a vibrator constantly pounding [his of chess-opponent of chess-lesson] pussy at a brutal rate of five thrusts a second, and a fishbowl full of [if watersports fetish is 1][urine][otherwise][semen][end if] taped to [his of chess-opponent of chess-lesson] head.";
+	otherwise:
+		say "The chess table and bondage chair where the infamous chess competitions are held[unless C is grabbing the player]. You remember it well[end if].".
+
+Figure of ChessBaseCumLeft is the file "Special/TQChess/BaseCumLeft.jpg".
+Figure of ChessBaseCumRight is the file "Special/TQChess/BaseCumRight.jpg".
+Figure of ChessBasePissLeft is the file "Special/TQChess/BasePissLeft.jpg".
+Figure of ChessBasePissRight is the file "Special/TQChess/BasePissRight.jpg".
+
+Figure of ChessDripsCumLeft is the file "Special/TQChess/DripsCumLeft.png".
+Figure of ChessDripsCumRight is the file "Special/TQChess/DripsCumRight.png".
+Figure of ChessDripsPissLeft is the file "Special/TQChess/DripsPissLeft.png".
+Figure of ChessDripsPissRight is the file "Special/TQChess/DripsPissRight.png".
+
+Figure of ChessEyesCumLeft is the file "Special/TQChess/EyesCumLeft.png".
+Figure of ChessEyesCumRight is the file "Special/TQChess/EyesCumRight.png".
+Figure of ChessEyesPissLeft is the file "Special/TQChess/EyesPissLeft.png".
+Figure of ChessEyesPissRight is the file "Special/TQChess/EyesPissRight.png".
+
+Figure of ChessFullCumLeft is the file "Special/TQChess/FullCumLeft.png".
+Figure of ChessFullCumRight is the file "Special/TQChess/FullCumRight.png".
+Figure of ChessFullPissLeft is the file "Special/TQChess/FullPissLeft.png".
+Figure of ChessFullPissRight is the file "Special/TQChess/FullPissRight.png".
+
+Figure of ChessMouthCumLeft is the file "Special/TQChess/MouthCumLeft.png".
+Figure of ChessMouthCumRight is the file "Special/TQChess/MouthCumRight.png".
+Figure of ChessMouthPissLeft is the file "Special/TQChess/MouthPissLeft.png".
+Figure of ChessMouthPissRight is the file "Special/TQChess/MouthPissRight.png".
+
+Figure of ChessNoseCumLeft is the file "Special/TQChess/NoseCumLeft.png".
+Figure of ChessNoseCumRight is the file "Special/TQChess/NoseCumRight.png".
+Figure of ChessNosePissLeft is the file "Special/TQChess/NosePissLeft.png".
+Figure of ChessNosePissRight is the file "Special/TQChess/NosePissRight.png".
+
+Figure of ChessFuckLeft is the file "Special/TQChess/FuckLeft.png".
+Figure of ChessFuckRight is the file "Special/TQChess/FuckRight.png".
+
+To render chess state:
+	truncate temporary-map-figures to 0 entries;
+	if the chess-turn of chess-lesson is 1:
+		if watersports fetish is 1, now temporary-map-figure is Figure of ChessBasePissLeft;
+		otherwise now temporary-map-figure is Figure of ChessBaseCumLeft;
+	otherwise:
+		if watersports fetish is 1, now temporary-map-figure is Figure of ChessBasePissRight;
+		otherwise now temporary-map-figure is Figure of ChessBaseCumRight;
+	add temporary-map-figure to temporary-map-figures;
+	if the student-bowl-fill of chess-lesson >= 12:
+		if watersports fetish is 1, add Figure of ChessFullPissLeft to temporary-map-figures;
+		otherwise add Figure of ChessFullCumLeft to temporary-map-figures;
+	otherwise if the student-bowl-fill of chess-lesson >= 9:
+		if watersports fetish is 1, add Figure of ChessEyesPissLeft to temporary-map-figures;
+		otherwise add Figure of ChessEyesCumLeft to temporary-map-figures;
+	otherwise if the student-bowl-fill of chess-lesson >= 6:
+		if watersports fetish is 1, add Figure of ChessNosePissLeft to temporary-map-figures;
+		otherwise add Figure of ChessNoseCumLeft to temporary-map-figures;
+	otherwise if the student-bowl-fill of chess-lesson >= 3:
+		if watersports fetish is 1, add Figure of ChessMouthPissLeft to temporary-map-figures;
+		otherwise add Figure of ChessMouthCumLeft to temporary-map-figures;
+	if the student-bowl-fill of chess-lesson > 0:
+		if watersports fetish is 1, add Figure of ChessDripsPissLeft to temporary-map-figures;
+		otherwise add Figure of ChessDripsCumLeft to temporary-map-figures;
+	if the player-bowl-fill of chess-lesson >= 12:
+		if watersports fetish is 1, add Figure of ChessFullPissRight to temporary-map-figures;
+		otherwise add Figure of ChessFullCumRight to temporary-map-figures;
+	otherwise if the player-bowl-fill of chess-lesson >= 9:
+		if watersports fetish is 1, add Figure of ChessEyesPissRight to temporary-map-figures;
+		otherwise add Figure of ChessEyesCumRight to temporary-map-figures;
+	otherwise if the player-bowl-fill of chess-lesson >= 6:
+		if watersports fetish is 1, add Figure of ChessNosePissRight to temporary-map-figures;
+		otherwise add Figure of ChessNoseCumRight to temporary-map-figures;
+	otherwise if the player-bowl-fill of chess-lesson >= 3:
+		if watersports fetish is 1, add Figure of ChessMouthPissRight to temporary-map-figures;
+		otherwise add Figure of ChessMouthCumRight to temporary-map-figures;
+	if the player-bowl-fill of chess-lesson > 0:
+		if watersports fetish is 1, add Figure of ChessDripsPissRight to temporary-map-figures;
+		otherwise add Figure of ChessDripsCumRight to temporary-map-figures;
+	if the student-machine of chess-lesson is 1, add Figure of ChessFuckLeft to temporary-map-figures;
+	if the player-machine of chess-lesson is 1, add Figure of ChessFuckRight to temporary-map-figures.
+
+
+To compute teaching of (L - chess-lesson):
+	let M be the lesson-teacher of L;
+	say "[speech style of M]'The headmistress [one of]has told me it's time for another game of high-stakes speed chess in front of the whole school. I need two brave pink diamond students who can handle some really humiliating situations and are willing to risk becoming the most disrespected person in the entire school[or]still wants [his of headmistress] speed chess event[stopping]. Are any of you up for the challenge?'[roman type][line break][BigNameDesc of M] holds [his of M] hands together patiently.";
+	let ST be a random promotable student in the location of the player;
+	if ST is nothing, now ST is a random student in the location of the player;
+	say "After a couple of moments [NameDesc of ST] stands to [his of ST] feet, audibly gulping but with a serious and determined expression on [his of ST] face. But nobody else seems willing to join [him of ST]. It looks like this 'high-stakes speed chess' game is only going to happen if you volunteer to be [NameDesc of ST][']s opponent. Do you take up the challenge? ";
+	if the player is bimbo consenting:
+		now temporaryYesNoBackground is Figure of no-image-yet; [forces normal map to be drawn during multiple choice, which in turn forces chess state render to be drawn instead]
+		say "You stand up.";
+		repeat with FST running through students in the location of the player:
+			unless ST is FST, FavourUp FST;
+		say "[BigNameDesc of M] smiles warmly.[line break][speech style of M]'Oh, well volunteered! The headmistress will be so pleased. First, I'll need your clothing.'[roman type][line break]";
+		repeat with C running through worn stealable clothing:
+			unless C is plentiful accessory:
+				say "[BigNameDesc of M] confiscates your [ShortDesc of C]!";
+				dislodge C;
+				now C is in School01;
+		repeat with C running through worn removable clothing:
+			unless C is accessory:
+				say "[BigNameDesc of M] releases you from your [ShortDesc of C]!";
+				dislodge C;
+				now C is in School01;
+				now C is unlocked;
+		repeat with C running through carried things:
+			now C is in School01;
+		say "[speech style of M]'If you want any of those back, you'll need to pick them up from Reception later.'[roman type][line break]";
+		force immediate clothing-focus redraw;
+		force immediate inventory-focus redraw;
+		repeat with X running through undefeated staff members in the school:
+			now X is in School16;
+			now X is interested;
+			calm X;
+		repeat with X running through undefeated students in the school:
+			now X is in School16;
+			now X is interested;
+			calm X;
+		now the player is in School16;
+		let F be asshole;
+		if the player is possessing a vagina, now F is vagina;
+		now chess table is penetrating F;
+		now the arousal of the player is 0;
+		update arousal;
+		if headmistress is alive, now M is headmistress;
+		say "You are led up onto the stage along with [NameDesc of ST], where a unique scene awaits you. Two chairs sit either side of a chess table, but the seats are built like a gynecologist's chair - a V shape keeps the legs spread with the sitter's genitals left fully exposed and accessible. The frames have modern-looking cuffs at the bottom of the front two legs and the end of one arm rest, clearly to keep anyone sitting there locked in place. The chairs and chess table sit inside a massive rectangular transparent tray, which acts like a paddling pool, keeping any and all fluids inside. The chess board has a chess clock next to it, which has a large metal pump connected to it.[paragraph break]You and [NameDesc of ST] are led to the chairs, where you are made to sit down, your pussies exposed and vulnerable. Your ankles are secured in the cuffs. Two pneumatic dildo fucking machines are brought in and set up, the upper halves of the dildos inserted into your [F]s. They begin to fuck each of you, at a very slow but steady pace.[paragraph break]Hollow nose plugs are inserted in your nostrils, and a tube leading from these plugs dangles down to your chest. Large fishbowl-like helmets are placed over your heads, and loosely sealed at the bottom with tape. The tube from your nose runs underneath this tape, allowing you to breathe. Translucent tubes are used to connect the pump device to the tops of the helmets. Now, [NameDesc of M] speaks to everyone.";
+		say "[speech style of M]'Welcome to the second ever [slut school] Chess Championship! Fame and glory awaits the winner, and, well, the loser might be stuck in their chair for a while. When it's your turn, challengers, the pump will quickly fill your helmet with whatever liquid it can draw from the ground beneath you! It'll slowly dribble out the seal at the bottom but not as quickly as it'll fill up! If your helmet gets filled to the top, your fucking machine will click into overdrive until some drains away. There are two ways to lose: either you get checkmated, or you cum. The winner not only gets promoted but will gain a place in our hall of fame. The loser will get treated to some lovely... one-on-one time with a helmet full of [if watersports fetish is 1][urine][otherwise][semen][end if], and won't get released until, well, until I decide so. Which is usually quite a long time! And with the stakes made clear, let's get this game underway!'[roman type][line break][big he of M] claps [his of M] hands, making you and [student-name of ST] yelp as you feel your [if a2m fetish >= 2]bellies[otherwise]bladders[end if] suddenly filled with ludicrous amounts of [if watersports fetish is 1][urine][otherwise][semen][end if]! You try to hold on but there's way too much and it's no use. Moments later, both you and [student-name of ST] are [if a2m fetish >= 2]expelling[otherwise]pissing[end if] litres of [if watersports fetish is 1][urine][otherwise][semen][end if] into the perspex tray underneath you, where it pools in the middle.";
+		say "And then a pump starts. The pungent liquid is slowly sucked up into the pump and then begins flowing through the tube and into [NameDesc of ST][']s fishbowl, from whom you hear a muffled [second custom style]Eep![roman type] as it soaks into [his of ST] hair and then begins trickling down [his of ST] face. [big he of ST][']s got the white pieces so must be going first. [big he of ST] quickly moves [his of M] king's pawn two spaces forward and then presses the switch on the chess clock with the same hand. The liquid stops being sent through the tube connected to [his of M] helmet and instead begins to travel towards you! A moment later you are being showered by the stuff that had moments away been inside the two of you. You quickly stop the flow by matching [his of ST] pawn move with your own mirrored one, and then pressing the button on your side of the clock. Several quick moves from both of you set up the board in a rather even state, and now you properly need to think about your next move. Enough [if watersports fetish is 1][urine][otherwise][semen][end if] has collected in each of your fishbowls that it would flow into your mouths if either of you opened them. The game has begun.";
+		now chess table is in School16;
+		now chess table is grabbing the player;
+		now the chess-opponent of chess-lesson is ST;
+		now the student-bowl-fill of chess-lesson is 3;
+		now the player-bowl-fill of chess-lesson is 3;
+		allocate 0 seconds;
+		now chess-move-choice is 1;
+		reset chess planning;
+		now bigGameLoop is 2; [tells the game not to refresh map window after multiple choice]
+		if newbie tips is 1, say "[newbie style]In this minigame, your fishbowl helmet filling up can be considered a slowly refilling bank of extra time which you can use to try and find better moves to help you win the chess game. Wait too much in a row, however, and you'll quickly find yourself orgasming instead. Keep the pressure up and get ahead of your opponent in the chess game to force them to spend more time thinking. While their helmet is filling up, yours will be draining![roman type][line break]";
+		while the chess-victor of chess-lesson is 0:
+			compute chess time;
+		now bigGameLoop is 0; [tells the game to return to normal map window behaviour]
+		MapShowReset;
+	otherwise:
+		say "You stay firmly sat down[if the player is shameless] - chess sounds boring![otherwise], not willing to risk the public shame of losing, and whatever additional punishments that might entail.[end if][line break][speech style of M]'Oh darling, you're all on your own? That's a shame, but understandable, it's a lot to ask of such weak, cowardly students[run paragraph on]";
+		if ST is promotable:
+			say ". Well then [NameDesc of ST], for your bravery I think you've earned a promotion.'[roman type][line break][BigNameDesc of M] pats [NameDesc of ST] on the head.";
+			promote ST;
+			say "[speech style of M]'[run paragraph on]";
+		otherwise:
+			say ". ";
+		say "I'm afraid that until we get two volunteers for this game, or the headmistress gets bored of asking, we're not going to be able to have any other lessons. So for now class is cancelled!'[roman type][line break][big he of M] politely gestures for you all to leave the room.";
+		now the chess-refused of chess-lesson is 1;
+	allocate 6 seconds.
+
+[The playing chess rules is a rulebook.]
+
+chess-move is an indexed text that varies.
+chess-move-choice is a number that varies.
+chess-lesson has a number called defensive-move.
+
+To compute chess time:
+	let ST be chess-opponent of chess-lesson;
+	if chess-turn of chess-lesson is 1: [Opponent takes her turn]
+		if the lost-pieces of chess-lesson > 12 or (the lost-pieces of chess-lesson - student-lost-pieces of chess-lesson > 5), compute opponent checkmate;
+		otherwise compute opponent chess turn;
+		if the chess-turn of chess-lesson is 0 and (the student-lost-pieces of chess-lesson > 12 or (the student-lost-pieces of chess-lesson - lost-pieces of chess-lesson > 5)), compute checkmate;
+		now the defensive-move of chess-lesson is 2; [player always takes a couple of turns to find the defensive move when it's their turn]
+	otherwise if chess-move-choice > 10:
+		now the chess-turn of chess-lesson is 1; [It was the player's turn, but they did their move]
+	otherwise if chess-turn of chess-lesson is 0 and the student-urine of chess-lesson > a random number between 6 and 18: [Player waits, opponent pisses]
+		say "[BigNameDesc of ST] takes this brief reprieve as an opportunity to release [his of ST] hold on [his of ST] bladder, which trickles down and joins the [urine] beneath your feet.";
+		[compute student chess soiling;]
+	otherwise if the student-bowl-fill of chess-lesson - the student-drink-tolerance of chess-lesson > a random number between 2 and 11:
+		say "[BigNameDesc of ST] drinks some of the [if watersports fetish is 1][urine][otherwise][semen][end if] filling [his of ST] fishbowl.";
+		if the student-bowl-fill of chess-lesson > 11, now the student-bowl-fill of chess-lesson is 11; [drinking always stops it getting completely full again straight away]
+		if the student-bowl-fill of chess-lesson is 3, now the student-bowl-fill of chess-lesson is 2;
+		otherwise decrease the student-bowl-fill of chess-lesson by 2;
+		if watersports fetish is 1, increase the student-urine of chess-lesson by 1;
+		increase the the student-drink-tolerance of chess-lesson by 1;
+	if the chess-victor of chess-lesson is 0:
+		if chess-turn of chess-lesson is 0: [Who's getting filled?]
+			increase the player-bowl-fill of chess-lesson by 2;
+			say "The pump sends [if watersports fetish is 1][urine][otherwise][semen][end if] down the tube and into your fishbowl. It is [if the remainder after dividing player-bowl-fill of chess-lesson by 3 is 2]still[otherwise]now[end if] [if the player-bowl-fill of chess-lesson >= 12]completely full[otherwise if the player-bowl-fill of chess-lesson >= 9]up to your eyes[otherwise if the player-bowl-fill of chess-lesson >= 6]up to your nose[otherwise if the player-bowl-fill of chess-lesson >= 3]up to your mouth[otherwise]nearly up to your mouth[end if].";
+			if the player-bowl-fill of chess-lesson > 12, now the player-bowl-fill of chess-lesson is 12;
+			if the student-bowl-fill of chess-lesson > 0, decrease the student-bowl-fill of chess-lesson by 1;
+		otherwise:
+			increase the student-bowl-fill of chess-lesson by 2;
+			say "The pump sends [if watersports fetish is 1][urine][otherwise][semen][end if] down the tube and into [NameDesc of ST][']s fishbowl. It is [if the remainder after dividing student-bowl-fill of chess-lesson by 3 is 2]still[otherwise]now[end if] [if the student-bowl-fill of chess-lesson >= 12]completely full[otherwise if the student-bowl-fill of chess-lesson >= 9]up to [his of ST] eyes[otherwise if the student-bowl-fill of chess-lesson >= 6]up to [his of ST] nose[otherwise if the student-bowl-fill of chess-lesson >= 3]up to [his of ST] mouth[otherwise]nearly up to [his of ST] mouth[end if].";
+			if the student-bowl-fill of chess-lesson > 12, now the student-bowl-fill of chess-lesson is 12;
+			if the player-bowl-fill of chess-lesson > 0, decrease the player-bowl-fill of chess-lesson by 1;
+		say "[if watersports fetish is 1]Piss[otherwise]Cum[end if] continues to slowly trickle out of both of your helmets at the bottom.";
+		let F be a random fuckhole penetrated by chess table;
+		if the player-bowl-fill of chess-lesson >= 12:
+			say "[bold type]The dildo machine in your [variable F] [if the player-machine of chess-lesson is 1]keeps pumping away[otherwise]begins to piston in and out with increasing speed. [roman type]Within moments you're being fucked at a brutal rate of five thrusts a second[end if]!";
+			now the player-machine of chess-lesson is 1;
+		otherwise if the player-machine of chess-lesson is 1:
+			now the player-machine of chess-lesson is 0;
+			say "The dildo machine in your [variable F] returns to its slow and steady pace, for now.";
+		if the player-machine of chess-lesson is 1:
+			ruin F;
+		otherwise if the player is not horny:
+			stimulate F from chess table;
+		if refractoryperiod > 0, compute chess loss;
+		if the student-bowl-fill of chess-lesson >= 12 and the chess-victor of chess-lesson is 0:
+			say "[bold type]The dildo machine in [student-name of ST][']s [variable F] [if the student-machine of chess-lesson is 1]keeps destroying [his of ST] [F][otherwise]begins to piston in and out of [his of ST] [F] with brutal speed and force[end if]![roman type][line break]";
+			now the student-machine of chess-lesson is 1;
+			increase the student-orgasm of chess-lesson by 8;
+			if the student-orgasm of chess-lesson > a random number between 30 and 60, compute chess win;
+		otherwise if the student-machine of chess-lesson is 1:
+			now the student-machine of chess-lesson is 0;
+			say "[student-name of ST][']s dildo machine slows back down to a much more gentle pace.";
+		increase the student-orgasm of chess-lesson by 1;
+	if the chess-victor of chess-lesson is 0:
+		compute chess players thinking;
+		compute hunger and thirst;
+		if watersports fetish is 1:
+			compute bladder growth;
+			if the bladder of the player > 6:
+				increase player-bladder-penalty of chess-lesson by 1;
+				say "[bold type][if the player-bladder-penalty of chess-lesson is 1]You are beginning to feel the need to pee, which is making it more difficult for you to concentrate[otherwise]Holding in your pee is making it increasingly difficult to concentrate[end if].[roman type][line break]";
+			otherwise:
+				now player-bladder-penalty of chess-lesson is 0;
+		if delayed urination > 0, compute chess urination;
+		finally humiliate the delayed humiliation of the player;
+		decrease blush factor by 100;
+		if blush factor > 2000, now blush factor is 2000;
+		if blush factor < 0, now blush factor is 0;
+		check for arousal change;
+		update saved stats;
+		now focused-thing is ST;
+		render chess state;
+		if the chess-victor of chess-lesson is 0, say "You have [16 - lost-pieces of chess-lesson] pieces left, and [NameDesc of ST] has [16 - student-lost-pieces of chess-lesson] pieces left. Your fishbowl helmet is [if the player-bowl-fill of chess-lesson >= 12]completely full of[otherwise if the player-bowl-fill of chess-lesson >= 9]filled up to your eyes with[otherwise if the player-bowl-fill of chess-lesson >= 6]filled up to your nose with[otherwise if the player-bowl-fill of chess-lesson >= 3]filled up to your mouth with[otherwise if the player-bowl-fill of chess-lesson > 0]filled a little bit with[otherwise]completely empty of[end if] [if watersports fetish is 1][urine][otherwise][semen][end if], and [NameDesc of ST][']s fishbowl helmet is [if (the player-bowl-fill of chess-lesson / 3) is (the student-bowl-fill of chess-lesson / 3)]also [end if][if the student-bowl-fill of chess-lesson >= 12]completely full of[otherwise if the student-bowl-fill of chess-lesson >= 9]filled up to [his of ST] eyes with[otherwise if the student-bowl-fill of chess-lesson >= 6]filled up to [his of ST] nose with[otherwise if the student-bowl-fill of chess-lesson >= 3]filled up to [his of ST] mouth with[otherwise if the student-bowl-fill of chess-lesson > 0]filled a little bit with[otherwise]completely empty of[end if] [if watersports fetish is 1][urine][otherwise][semen][end if].";
+		compute chess move input.
+
+To compute opponent chess turn:
+	let ST be the chess-opponent of chess-lesson;
+	let competition-factor be the lost-pieces of chess-lesson - the student-lost-pieces of chess-lesson; [A positive number means that the opponent is LOSING the chess game (so they need to spend more time thinking to catch up)]
+	decrease competition-factor by (the student-orgasm of chess-lesson / 10) + (the student-bowl-fill of chess-lesson / 4); [The more cum in the fishbowl and closer to orgasm, the more urgent it is for the opponent to make a move]
+	if a random number between 5 and 25 < student-urine of chess-lesson:
+		say "[BigNameDesc of ST] looks like [he of ST][']s about to make a move, but then [he of ST] squeaks and the next thing you know, [he of ST][']s whining with shame and pissing [himself of ST].";
+		[compute student chess soiling;]
+	otherwise if a random number between 1 and (11 + competition-factor) > 4 and the student-great-move of chess-lesson > 0: [The more they're winning the orgasm game or losing the chess game, the more time they spend thinking]
+		if the student-bowl-fill of chess-lesson - the student-drink-tolerance of chess-lesson > a random number between 2 and 11:
+			say "[BigNameDesc of ST] drinks some of the [if watersports fetish is 1][urine][otherwise][semen][end if] filling [his of ST] fishbowl.";
+			if the student-bowl-fill of chess-lesson > 11, now the student-bowl-fill of chess-lesson is 11; [drinking always stops it getting completely full again straight away]
+			decrease the student-bowl-fill of chess-lesson by 2;
+			if watersports fetish is 1, increase the student-urine of chess-lesson by 1;
+			increase the student-drink-tolerance of chess-lesson by 1;
+		otherwise:
+			say "[BigNameDesc of ST] keeps thinking.";
+	otherwise if student-great-move of chess-lesson <= 0 and a random number between 1 and 3 > 1:
+		if trapping-move of chess-lesson > 1000: [the player was trapping]
+			say "[BigNameDesc of ST] smiles proudly as [he of ST] makes [his of ST] move, taking your piece and falling for the trap. [big his of ST] expression falls quickly as [he of ST] sees your surprise move in return, and within the quick few back-and-forth moves that follow, [he of ST] has lost three of [his of ST] pieces and you only lost that initial one.";
+			increase student-lost-pieces of chess-lesson by 3;
+			increase lost-pieces of chess-lesson by 1;
+		otherwise:
+			let R be the aggression of chess-lesson;
+			unless the lost-pieces of chess-lesson < 13, now R is 0;
+			say "[BigNameDesc of ST] smiles proudly as [he of ST] makes [his of ST] move. It's a very clever one, as you can see immediately, and within the quick few back-and-forth moves that follow, [he of ST] has taken [R + 2] of your pieces and lost [if R is 0]none[otherwise]only one[end if] of [his of ST] own.";
+			increase student-lost-pieces of chess-lesson by R;
+			increase lost-pieces of chess-lesson by R + 2;
+		now student-aggression of chess-lesson is 1;
+		reset chess planning;
+		now the chess-turn of chess-lesson is 0; [This ends their turn]
+	otherwise if student-trapping-move of chess-lesson <= 0 and a random number between 1 and 5 > 1:
+		say ChessMoveFlav (a random number between 0 and 1) of ST;
+		reset chess opponent planning;
+		if great-move of chess-lesson > 0, now great-move of chess-lesson is a random number between 1 and 8;
+		now student-trapping-move of chess-lesson is 9999; [This is how we flag that trapping is active]
+		now the chess-turn of chess-lesson is 0; [This ends their turn]
+	otherwise if student-safe-move of chess-lesson <= 0 and a random number between 1 and 5 > 1:
+		say "[BigNameDesc of ST] makes a very smart defensive move, blocking off your main line of attack and forcing you go to back to square one with your planning.";
+		reset chess planning;
+		now student-aggression of chess-lesson is 0;
+		now the chess-turn of chess-lesson is 0; [This ends their turn]
+	otherwise:
+		let R be a random number between 0 and 1;
+		unless a random number between 0 and (the lost-pieces of chess-lesson - the student-lost-pieces of chess-lesson) <= 0, now R is 1; [The more pieces up the opponent is, the more chance they have to play aggressive]
+		unless a random number between 0 and (the student-lost-pieces of chess-lesson - the lost-pieces of chess-lesson) <= 0, now R is 0; [The more pieces down the opponent is, the more chance they have to play defensive]
+		unless a random number between 0 and (the student-lost-pieces of chess-lesson - the lost-pieces of chess-lesson) <= 0, now R is 0; [We do the check twice because a sensible opponent *really* doesn't want to play aggressive if behind!]
+		unless the student-lost-pieces of chess-lesson < 14 and the lost-pieces of chess-lesson < 14, now R is 0; [Can't play aggressive when the game is almost over]
+		say ChessMoveFlav R of ST;
+		if R is 1 and (aggression of chess-lesson is 1 or a random number between 1 and 3 is 1):
+			say "After a couple of quick-fire moves [he of ST] has traded a piece with you, and you have both lost out equally.";
+			increase student-lost-pieces of chess-lesson by 1;
+			increase lost-pieces of chess-lesson by 1;
+			reset chess opponent planning;
+		now the chess-turn of chess-lesson is 0. [This ends their turn]
+
+To say ChessMoveFlav (N - a number) of (ST - a student):
+	say "[BigNameDesc of ST] makes what seems like a rather normal [if N is 1]aggressive[otherwise]defensive[end if] move.";
+	now student-aggression of chess-lesson is N.
+
+To decide which number is chess-move-found:
+	if a random number between 1 and 5 > 3, decide on 1;
+	decide on 0.
+
+To decide which number is chess-random-reset:
+	decide on (a random number between 1 and 6) + (a random number between 0 and 2).
+
+To decide which number is chess-great-move-toughness:
+	decide on (a random number between 0 and 7) + (a random number between 0 and 1).
+
+To decide which number is chess-safe-move-toughness:
+	decide on (a random number between 0 and 4) + (a random number between 0 and 1).
+
+To decide which number is chess-trapping-move-toughness:
+	decide on (a random number between 0 and 6) + (a random number between 0 and 1).
+
+To reset chess planning:
+	reset chess player planning;
+	reset chess opponent planning.
+
+To reset chess player planning:
+	reset chess player great planning;
+	reset chess player safe planning;
+	reset chess player trap planning.
+
+To reset chess player great planning:
+	if great-move of chess-lesson <= 0 and the chess-turn of chess-lesson is 1, say "Now that the state of the board has changed, your planned awesome move is no longer possible.";
+	if chess-move-found is 1, now great-move of chess-lesson is chess-random-reset + chess-great-move-toughness;
+	otherwise now great-move of chess-lesson is 999;
+	if the student-lost-pieces of chess-lesson > 12 or the lost-pieces of chess-lesson > 14, now great-move of chess-lesson is 999.
+
+To reset chess player safe planning:
+	if safe-move of chess-lesson <= 0 and the chess-turn of chess-lesson is 1, say "Now that the state of the board has changed, your planned safe move is no longer possible.";
+	if chess-move-found is 1, now safe-move of chess-lesson is chess-random-reset + chess-safe-move-toughness;
+	otherwise now safe-move of chess-lesson is 999;
+	if the student-lost-pieces of chess-lesson > 12 or the lost-pieces of chess-lesson > 14, now safe-move of chess-lesson is 999.
+
+To reset chess player trap planning:
+	if trapping-move of chess-lesson <= 0 and the chess-turn of chess-lesson is 1, say "Now that the state of the board has changed, your planned move to trap your opponent is no longer possible.";
+	if trapping-move of chess-lesson > 1000: [end the trap]
+		reset chess opponent great planning;
+	if chess-move-found is 1, now trapping-move of chess-lesson is chess-random-reset + chess-trapping-move-toughness;
+	otherwise now trapping-move of chess-lesson is 999;
+	if the student-lost-pieces of chess-lesson > 12 or the lost-pieces of chess-lesson > 14, now trapping-move of chess-lesson is 999.
+
+To reset chess opponent planning:
+	reset chess opponent great planning;
+	reset chess opponent safe planning;
+	reset chess opponent trap planning.
+
+To reset chess opponent great planning:
+	if chess-move-found is 1, now student-great-move of chess-lesson is chess-random-reset + chess-great-move-toughness;
+	otherwise now student-great-move of chess-lesson is 999;
+	if the lost-pieces of chess-lesson > 12 or the student-lost-pieces of chess-lesson > 14, now student-great-move of chess-lesson is 999.
+
+To reset chess opponent safe planning:
+	if chess-move-found is 1, now student-safe-move of chess-lesson is chess-random-reset + chess-safe-move-toughness;
+	otherwise now student-safe-move of chess-lesson is 999;
+	if the lost-pieces of chess-lesson > 12 or the student-lost-pieces of chess-lesson > 14, now student-safe-move of chess-lesson is 999.
+
+To reset chess opponent trap planning:
+	if student-trapping-move of chess-lesson > 1000:
+		if great-move of chess-lesson <= 0:
+			say "You realise that the great move you thought you spotted was actually a bait, and if you had gone through with it then you would have lost a lot more than your opponent!";
+			now great-move of chess-lesson is 999; [To prevent extra incorrect flavour when it's reset]
+		reset chess player great planning;
+	if chess-move-found is 1, now student-trapping-move of chess-lesson is chess-random-reset + chess-trapping-move-toughness;
+	otherwise now student-trapping-move of chess-lesson is 999;
+	if the lost-pieces of chess-lesson > 12 or the student-lost-pieces of chess-lesson > 14, now student-trapping-move of chess-lesson is 999.
+
+To compute chess players thinking:
+	let I be 0;
+	let I2 be saved-flat-intelligence - player-bladder-penalty of chess-lesson;
+	if I2 > I, now I is I2; [got to make sure we're not going to square root a negative]
+	let STI be 3 - ((a random number between 0 and (the student-orgasm of chess-lesson + 2)) / 3);
+	if the defensive-move of chess-lesson > 0 and the chess-turn of chess-lesson is 0: [It takes a couple of turns before the player is allowed to make a normal defensive move.]
+		if debugmode is 1, say "Player defensive move [defensive-move of chess-lesson] - 1 > [defensive-move of chess-lesson - 1][line break]";
+		decrease the defensive-move of chess-lesson by 1;
+		if the defensive-move of chess-lesson <= 0:
+			say "You have now studied the board long enough to find a [one of]move that isn't too aggressive, and so is less likely to result in anyone losing any pieces[or]normal defensive move[stopping].";
+		otherwise if the chess-turn of chess-lesson is 0:
+			say "You know you can find a more passive move if you give yourself a little longer to think.";
+	if the safe-move of chess-lesson > 0:
+		let R be the square root of (a random number between 0 and I);
+		if debugmode is 1, say "Player safe move [safe-move of chess-lesson] - [R] > [safe-move of chess-lesson - R][line break]";
+		decrease the safe-move of chess-lesson by R;
+		if the safe-move of chess-lesson <= 0:
+			say "You notice a different move you could take, that would be safe for you and force your opponent to think hard again.";
+		otherwise if the chess-turn of chess-lesson is 0:
+			if the safe-move of chess-lesson > 900 and the safe-move of chess-lesson < 990:
+				say "You are confident there's no extremely safe move available for you to take this turn.";
+			otherwise:
+				say "There might be a much safer move you can make, but you haven't spotted it yet.";
+	if the trapping-move of chess-lesson > 0:
+		let R be the square root of (a random number between 0 and I);
+		if debugmode is 1, say "Player trapping move [trapping-move of chess-lesson] - [R] > [trapping-move of chess-lesson - R][line break]";
+		decrease the trapping-move of chess-lesson by R;
+		if the trapping-move of chess-lesson <= 0:
+			say "You realise that there's a certain move that you could make that would allow your opponent to make a huge mistake in their next turn if they're not careful.";
+		otherwise if the chess-turn of chess-lesson is 0:
+			if the trapping-move of chess-lesson > 900 and the trapping-move of chess-lesson < 990:
+				say "You are confident there's no clever trap available for you to set up this turn.";
+			otherwise:
+				say "There might be a way to try and trap [student-name of the chess-opponent of chess-lesson], but you haven't worked one out yet.";
+	if the great-move of chess-lesson > 0:
+		let R be the square root of (a random number between 0 and I);
+		if debugmode is 1, say "Player great move [great-move of chess-lesson] - [R] > [great-move of chess-lesson - R][line break]";
+		decrease the great-move of chess-lesson by R;
+		if the great-move of chess-lesson <= 0:
+			say "You notice a move that looks absolutely brilliant! It seems sure to net you a huge advantage.";
+		otherwise if the chess-turn of chess-lesson is 0:
+			if the great-move of chess-lesson > 900 and the great-move of chess-lesson < 990:
+				say "You are confident there's no particularly amazing move available for you to take this turn.";
+			otherwise:
+				say "If there is a significantly advantageous move for you to make, you haven't seen it yet.";
+	decrease the student-safe-move of chess-lesson by a random number between 1 and STI;
+	decrease the student-trapping-move of chess-lesson by a random number between 1 and STI;
+	decrease the student-great-move of chess-lesson by a random number between 1 and STI.
+
+To compute chess mouthful:
+	say "You draw a [if player-bowl-fill of chess-lesson is 3]small[otherwise]large[end if] mouthful of [if watersports fetish is 1][urine][otherwise][semen][end if] into your mouth and gulp it all down. ";
+	if watersports fetish is 1:
+		StomachUrineUp 1;
+	otherwise:
+		StomachSemenUp 1;
+	if the player-bowl-fill of chess-lesson > 11, now the player-bowl-fill of chess-lesson is 11; [drinking always gives you a turn's break from the dildo]
+	if the player-bowl-fill of chess-lesson > 3, decrease the player-bowl-fill of chess-lesson by 2;
+	otherwise decrease the player-bowl-fill of chess-lesson by 1.
+
+To compute chess urination:
+	say "You [if delayed urination is 1]involuntarily [end if]release your hold on your bladder, soaking the pool below your feet with even more [urine] right in front of the entire school body. [severeHumiliateReflect]";
+	now the bladder of the player is 0;
+	progress temporary incontinence;
+	now delayed urination is 0;
+	let M be a random monster in the location of the player;
+	unless M is the chess-opponent of chess-lesson or M is nothing, compute chess urination reaction of M.
+
+To compute chess soiling:
+	do nothing.
+
+To compute chess urination reaction of (M - a monster):
+	say "[BigNameDesc of M] snickers as [he of M] watches you add more bodily fluids to your future meal. [moderateHumiliateReflect]".
+
+To compute chess move input:
+	say "What do you want to do[one of][or] next[stopping]?";
+	reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+	if chess-turn of chess-lesson is 0:
+		if the student-lost-pieces of chess-lesson < 14 and the lost-pieces of chess-lesson < 14, set numerical response 1 to "make an aggressive move";
+		if defensive-move of chess-lesson <= 0, set numerical response 2 to "make a defensive move";
+		if safe-move of chess-lesson <= 0, set numerical response 3 to "make a safe move";
+		if trapping-move of chess-lesson <= 0, set numerical response 4 to "make a trapping move";
+		if great-move of chess-lesson <= 0, set numerical response 5 to "make a great move";
+	if the player-bowl-fill of chess-lesson >= 3, set numerical response 6 to "drink a mouthful of [if watersports fetish is 1][urine][otherwise][semen][end if]";
+	if the bladder of the player > 6 and the player is not incontinent, set numerical response 7 to "wet yourself";
+	set numerical response 9 to "wait and think";
+	set numerical response 0 to "look";
+	compute multiple choice question;
+	let CNR be the chosen numerical response;
+	now chess-move is the printed name of CNR;
+	if chess-move is "look":
+		now chess-move-choice is 0; [allow it to happen]
+		try looking;
+	otherwise if chess-move matches the text "wait":
+		now chess-move-choice is 1;
+	otherwise if chess-move matches the text "wet":
+		now chess-move-choice is 3;
+		compute chess urination;
+	otherwise if chess-move matches the text "mouthful":
+		now chess-move-choice is 4;
+		compute chess mouthful;
+	otherwise if chess-move matches the text "aggressive":
+		now chess-move-choice is 11;
+		now aggression of chess-lesson is 1;
+		if student-aggression of chess-lesson is 1 or a random number between 1 and 3 is 1:
+			say "You make an aggressive move, and within a few quick back-and-forth moves, you have traded a piece with your opponent.";
+			increase student-lost-pieces of chess-lesson by 1;
+			increase lost-pieces of chess-lesson by 1;
+		otherwise:
+			say "You make an aggressive move, [one of]hoping that there's nothing obvious you've missed[or]hoping that you haven't made a mistake[or]hoping to bring the game closer to its conclusion[in random order].";
+		reset chess player planning;
+	otherwise if chess-move matches the text "defensive":
+		now chess-move-choice is 12;
+		now aggression of chess-lesson is 0;
+		say "You make a defensive move, [one of]trying to make sure that you don't accidentally give the opponent an advantage[or]uncertain that there wasn't a better move you could have found[or]hoping to stall the game for longer[in random order].";
+	otherwise if chess-move matches the text "safe":
+		now chess-move-choice is 13;
+		now aggression of chess-lesson is 0;
+		say "You make a clever safe move, resetting the state of the board and ensuring that your opponent can't find any cracks in your defence.";
+		reset chess planning;
+	otherwise if chess-move matches the text "trapping":
+		now chess-move-choice is 14;
+		now aggression of chess-lesson is a random number between 0 and 1;
+		say "You make an innocent looking move, which makes it look like you've made a mistake but would actually allow you to come out ahead if your opponent takes the bait.";
+		reset chess planning;
+		now student-great-move of chess-lesson is a random number between 1 and 8;
+		now trapping-move of chess-lesson is 9999; [This is how we flag that trapping is active]
+	otherwise if chess-move matches the text "great":
+		now chess-move-choice is 15;
+		now aggression of chess-lesson is 1;
+		if student-trapping-move of chess-lesson > 1000: [player was caught by a trap]
+			let ST be chess-opponent of chess-lesson;
+			say "You grin inwardly as you make your clever move. [BigNameDesc of ST][']s expression doesn't fall but instead it looks like [he of ST] is grinning from behind [his of ST] pacifier gag! [big he of ST] quickly makes a planned move in return, and you realise you've fallen for a clever trap. Within the quick few back-and-forth moves that follow, you have lost three of your pieces for only one of [hers of ST].";
+			increase student-lost-pieces of chess-lesson by 1;
+			increase lost-pieces of chess-lesson by 3;
+		otherwise:
+			let R be the student-aggression of chess-lesson;
+			say "You make a very smart move which after [one of]a couple of clever checks[or]a very sneaky knight fork[or]an impressive bishop fork[in random order] results in your opponent losing [R + 2] pieces and you losing [if R is 0]none at all[otherwise]only one[end if]!";
+			increase lost-pieces of chess-lesson by R;
+			increase student-lost-pieces of chess-lesson by R + 2;
+		now student-trapping-move of chess-lesson is 999; [prevents line about discovering the trap / move no longer possible]
+		reset chess planning;
+	otherwise:
+		say "Bug! I didn't understand that. Please report this bug.";
+		now chess-move-choice is -1.
+
+To compute chess loss:
+	let ST be the chess-opponent of chess-lesson;
+	say "A buzzer sounds as your climax begins to subside. [BigNameDesc of ST] is released from the chair and quickly rips [his of ST] fishbowl from [his of ST] head before forcing [himself of ST] to [his of ST] feet, and performing a sort-of dizzy victory celebration dance as [he of ST] staggers from the stage.";
+	compute chess loss punishment.
+
+To compute opponent checkmate:
+	let ST be the chess-opponent of chess-lesson;
+	say "You see [NameDesc of ST] grin widely from behind [his of ST] fishbowl. One move puts you in [']check['], and there's only one place you can move your king. Another of [NameDesc of ST][']s pieces moves in and boom - it's checkmate. You've lost. [big he of ST] snatches up your king with jubilation and the cuffs holding [his of ST] ankles unlock. [big he of ST] holds the chess piece above [his of ST] head as [he of ST] heaves [himself of ST] out of [his of ST] chair and staggers from the stage to the cheers of the crowd.";
+	compute chess loss punishment.
+
+To compute chess win:
+	let ST be the chess-opponent of chess-lesson;
+	let M be the lesson-teacher of chess-lesson;
+	if headmistress is alive, now M is headmistress;
+	say "A buzzer sounds as [NameDesc of ST][']s orgasm reaches its crescendo. You are released from the chair and quickly rip your fishbowl from your head before hauling yourself to your feet, and weakly celebrating as you clamber from the stage, exhausted.[line break][speech style of M]'Congratulations [NameBimbo], you've made us proud!'[roman type][line break][BigNameDesc of M] applauds and then waves a hand towards your armband.";
+	now armband is pure diamond;
+	say "You watch as the ID card inside your armband transforms!";
+	if watersports fetish is 1:
+		now the armband-title of armband is "Priscilla";
+		now the armband-print of armband is "prudent piss-guzzler";
+	otherwise:
+		now the armband-title of armband is "Constanza";
+		now the armband-print of armband is "competitive cum-guzzler";
+	say ClothingDesc of armband;
+	compute chess win reward.
+
+To compute checkmate:
+	let ST be the chess-opponent of chess-lesson;
+	let M be the lesson-teacher of chess-lesson;
+	if headmistress is alive, now M is headmistress;
+	say "This is the end. You see the moves necessary. With increasing urgency you make them, forcing [NameDesc of ST][']s king into a smaller and smaller box before eventually achieving checkmate. You've won! Picking up the white king with pride causes the cuffs holding your ankles to unlock. You keep the chess piece as you clamber with some difficulty out of the chair and stagger from the stage to the cheers and applause of the staff and student body.[line break][speech style of M]'Congratulations [NameBimbo], you've made us proud!'[roman type][line break][BigNameDesc of M] applauds and then waves a hand towards your armband.";
+	now armband is pure diamond;
+	say "You watch as the ID card inside your armband transforms!";
+	if watersports fetish is 1:
+		now the armband-title of armband is "Penny";
+		now the armband-print of armband is "pensive piss-bucket";
+	otherwise:
+		now the armband-title of armband is "Starburst";
+		now the armband-print of armband is "semen-filled schemer";
+	say ClothingDesc of armband;
+	compute chess win reward.
+
+To compute chess win reward:
+	let F be a random fuckhole penetrated by chess table;
+	let ST be the chess-opponent of chess-lesson;
+	let M be the lesson-teacher of chess-lesson;
+	if headmistress is alive, now M is headmistress;
+	dislodge chess table;
+	now the chess-victor of chess-lesson is 1;
+	now the stomach-food of the player is 2;
+	while the player is thirsty:
+		increase the stomach-water of the player by 1;
+	let ST be the chess-opponent of chess-lesson;
+	say "[speech style of M]'And now, it's punishment time!'[roman type][line break]The rest of the student body begins to file out of the hall, as [NameDesc of ST][']s fishbowl quickly fills up to the brim with [if watersports fetish is 1][urine][otherwise][semen][end if], and then the fucking machine begins to ruthlessly pound [his of ST] [F] without hesitation.";
+	remove ST from play; [prevents fuckhole acquisition]
+	update students; [an important line which makes boring old students disappear and new cool ones appear]
+	appropriate-cutscene-display chess-table-image with priority 3;
+	now chess piece is carried by the player;
+	repeat with X running through monsters in the location of the player:
+		distract X;
+		compute mandatory room leaving of X;
+		regionally place X;
+	now nurse is in School11;
+	now receptionist is in School01;
+	now headmistress is in School08;
+	now temporaryYesNoBackground is figure of small image.
+
+To compute chess loss punishment:
+	let F be a random fuckhole penetrated by chess table;
+	now the chess-victor of chess-lesson is 2;
+	now the stomach-food of the player is 2;
+	while the stomach-liquid of the player < 3:
+		increase the stomach-water of the player by 1;
+	let ST be the chess-opponent of chess-lesson;
+	let M be the lesson-teacher of chess-lesson;
+	if headmistress is alive, now M is headmistress;
+	say "[speech style of M]'Congratulations [student-name of ST], you've made us proud!'[roman type][line break]";
+	if ST is promotable, promote ST;
+	say "[speech style of M]'And now, it's punishment time!'[roman type][line break]The rest of the student body begins to file out of the hall, as your fishbowl quickly fills up to the brim with [if watersports fetish is 1][urine][otherwise][semen][end if], and then the fucking machine ramps up its speed until it's brutally pumping your [variable F] at a rapid rate! [BigNameDesc of M] speaks again.[line break][speech style of M]'Now, let's allow [NameBimbo] to sit and... [']stew['] on [his of the player] failings! Nobody is allowed to release [him of the player], understand? Okay, assembly is over!'[roman type][line break]";
+	summon fishbowl-hat locked;
+	repeat with X running through monsters in the location of the player:
+		distract X;
+		compute mandatory room leaving of X;
+		regionally place X;
+	now nurse is in School11;
+	now receptionist is in School01;
+	now headmistress is in School08;
+	now temporaryYesNoBackground is figure of small image.
+
+An all time based rule (this is the chess table taunting rule):
+	if chess table is grabbing the player and the chess-victor of chess-lesson is 2:
+		let F be a random fuckhole penetrated by chess table;
+		if F is fuckhole:
+			say "The fucking machine continues to plow in and out of your [variable F].";
+			ruin F;
+		repeat with X running through monsters in the location of the player:
+			compute mandatory room leaving of X;
+		let M be a random alive uncatalogued staff member;
+		if M is nurse or M is receptionist or (M is headmistress and the boredom of headmistress > 0):
+			now M is a random alive student;
+			if M is amicable student, now M is a random alive student; [reduced chance of amicable student]
+		now M is catalogued;
+		now M is in the location of the player;
+		say "You see [NameDesc of M] wander into the assembly hall.";
+		if M is headmistress or (M is staff member and headmistress is off-stage and the number of alive uncatalogued staff member is 0):
+			say "[speech style of M]'I guess I should let you out before you become a health hazard.'[roman type][line break]With a flick of [his of M] wrist, your ankle bondage is unlocked!";
+			dislodge chess table;
+			only destroy fishbowl-hat;
+		otherwise if M is amicable student:
+			say "[speech style of M]'I know I'm not supposed to do this but it's mean to just leave you here forever...'[roman type][line break][big he of M] walks up to the stage and steps on the pad that had been under [NameDesc of chess-opponent of chess-lesson][']s chair. There's a quiet buzzing sound and then your ankle bondage is unlocked!";
+			dislodge chess table;
+			only destroy fishbowl-hat;
+		otherwise:
+			compute chess loss taunting of M;
+		focus-consider M;
+		compute mandatory room leaving of M;
+		regionally place M.
+
+To compute chess loss taunting of (M - a monster):
+	say "[speech style of M]'[one of]Hahaha, you're still here?! What a noob!'[or]You really are the most pathetic slut in this entire school.'[or]Oh look, it's the loser bitch.'[or]I am GLAD I am not you!'[in random order][roman type][line break][moderateHumiliateReflect][big he of M] [one of]throws you a rude gesture before leaving[or]comes up and patronisingly pats you on the head before leaving you alone[or]takes advantage of your vulnerable position to tickle torture you, but [he of M] quickly grows bored[in random order].".
+
+To compute chess loss taunting of (M - a staff member):
+	say "[speech style of M]'[one of]Well if it isn't the loser! Still reflecting on your failings, I see.'[or]You're still stuck here because you deserve to be stuck here. I hope you understand that.'[or]Once a loser, always a loser.'[in random order][roman type][line break][big he of M] doesn't stick around long enough for you to reply.[line break][slightHumiliateReflect]".
+
+To compute chess loss taunting of (M - a nasty student):
+	if there is a worn tattoo and the number of worn chest tattoos is 0:
+		say "[speech style of M]'Well well well, what do we have here?'[roman type][line break][big he of M] is holding a magic marker in [his of M] hand. [big he of M] walks up to you and straddles your lap, and smirks maliciously as [he of M] scribbles [']DISGUSTING FAT UGLY PIG['] permanently onto on your chest.[line break][speech style of M]'I don't think I could have gotten away with writing something this harsh with the teachers watching, but when it's just you and me, who's going to prove that I wrote this? Hahaha.'[roman type][line break]";
+		summon marker chest tattoo;
+		now the tattoo-title of marker chest tattoo is "DISGUSTING FAT UGLY PIG";
+		now the tattoo-outrage of marker chest tattoo is 14;
+	otherwise:
+		say "[speech style of M]'[one of]Ooh, looks what I've found, all alone and with nobody to protect [him of the player].'[or]What did I hear you just say? Pinch my nipples? That's a weird request, but okay.'[cycling][roman type][line break][big he of M] ignores your whining pleas for mercy as [he of M] grabs your nipples with pincer grips and twists them painfully.";
+		PainUp 1.
+
 [Part - Kaylee / Karl
 
 teacher-kaylee is a diamond-teacher. teacher-kaylee is male.
@@ -1243,9 +1924,7 @@ To compute deepthroat creampie of (M - an ultimate-lesson-actor):
 	StomachSemenUp the semen load of M;
 	if M is in Toilet02:
 		orgasm M;
-		dislodge M;
-	otherwise:
-		compute happy reward of M.
+		dislodge M.
 To say DeepthroatCreampie of (M - an ultimate-lesson-actor):
 	if M is in Toilet02:
 		say "Without warning, [one of][FuckerDesc of M] tightens [his of M] grip, hissing through [his of M] teeth as [he of M] cums straight down your throat.[or][FuckerDesc of M][']s [DickDesc of M] throbs powerfully, firing off load after load of warm [semen] down your throat.[in random order]";
@@ -1372,7 +2051,7 @@ To compute anal torture of (M - an ultimate-lesson-actor):
 				say "Your face is guided down to the dogbowl. Do you eat the banana and cum that has just been in your ass? ";
 				if the player is bimbo consenting:
 					say "You push your face down and begin to slurp up the mushy stuff; the strong tangy flavours of banana, [semen] and ass coating your tongue. [severeHumiliateReflect]";
-					SemenTasteAddictUp 1;
+					SlowSemenTasteAddictUp 1;
 					StomachFoodUp 1;
 				otherwise:
 					say "You refuse to eat the disgusting stuff.";
@@ -1459,7 +2138,7 @@ To execute (U - ultimate-fetish-degrade) for (M - a monster):
 
 ultimate-fetish-magic is an ultimate-fetish-object.
 Definition: ultimate-fetish-magic is eligible:
-	if the player is able to speak and the magic-power of the player > 0, decide yes;
+	if the player is able to speak and the magic power of the player > 0, decide yes;
 	decide no.
 To execute (U - ultimate-fetish-magic) for (M - a monster):
 	increase the happened of U by 1;
@@ -1552,7 +2231,7 @@ An all time based rule (this is the ultimate diamond lesson rule):
 						now E is a random eligible ultimate-fetish-object;
 					otherwise if face is not actually occupied and a random number between 1 and 10 > 7:
 						compute tongue demand of M;
-					otherwise if asshole is not actually occupied and a random number between 1 and 4 > 1:
+					otherwise if asshole is not actually occupied and the player is not ass protected and a random number between 1 and 4 > 1:
 						if the semen volume of belly > 0 and (a random number between 1 and 3 is 1 or the number of entries in LST < 2): [If there are enough students, the human centipede is more fun]
 							compute anal creampie expel demand of M;
 						otherwise:
@@ -2173,7 +2852,6 @@ To say StoryAnswer of (M - student-darla):
 Book - Belinda
 
 student-belinda is a nasty student.
-student-belinda is in School14. [TODO: remove]
 
 The text-shortcut of student-belinda is "stbe".
 

@@ -46,6 +46,10 @@ To compute periodic effect of (R - a silicone dress):
 			say "You feel your ass implants slightly increase in size.";
 			AssImplantsUp 1 + extreme proportions fetish.
 
+To UniquePinkWardrobeUnclash (C - a silicone dress):
+	repeat with O running through worn removable breast covering clothing:
+		if the cleavageCover of O > the cleavageCover of C, WardrobeVanish O.
+
 plastic-is-fantastic dress is a silicone dress. plastic-is-fantastic dress is low cut. Understand "plastic", "plastic is", "fantastic", "pink", "rubber", "dress" as plastic-is-fantastic dress.
 
 The printed name of plastic-is-fantastic dress is "[clothing-title-before]pink rubber 'PLASTIC IS FANTASTIC' dress[clothing-title-after]". The text-shortcut of plastic-is-fantastic dress is "pifd".

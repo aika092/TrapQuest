@@ -56,13 +56,13 @@ Understand "who's the daddy" as Family Printing.
 
 [NB the priority order for fatherhood. What can I say, some stuff has stronger sperm.]
 To decide which thing is the new father:
-	if there is a family tentacle monster, decide on a random family tentacle monster;
+	[if there is a family tentacle monster, decide on a random family tentacle monster;
 	if there is a family elder altar, decide on a random family elder altar;
 	if there is an alive regional family monster, decide on a random alive regional family monster;
-	if there is an alive family monsters, decide on a random alive family monster; [the plural is on purpose because i7 couldn't understand it without for some reason]
+	if there is an alive family monsters, decide on a random alive family monster;]
 	if there is an on-stage family thing, decide on a random on-stage family thing;
 	if there is an off-stage family sex doll, decide on a random off-stage family sex doll;
-	if there is an off-stage family monsters, decide on a random off-stage family monster;
+	[if there is an off-stage family monsters, decide on a random off-stage family monster;] [the plural is on purpose because i7 couldn't understand it without for some reason]
 	if there is a family thing, decide on a random family thing;
 	decide on the throne.
 
@@ -184,17 +184,14 @@ To compute pregnancy:
 		if debuginfo > 1, say "[line break][input-style]Birth progress: Full Term Time ([slow-pregnancy-tracker]) | ([slow birth rate].5) Birth Ready Threshold[roman type][line break]";
 		if slow-pregnancy-tracker > slow birth rate:
 			now auto is 1; [for displacing automatically]
-			if vagina is actually occupied or there is worn undisplacable cursed pee covering clothing: [the vagina is blocked, so we delay the pregnancy and punish the player with contractions]
+			if portal-hotpants is worn and vagina is not actually occupied and the player is not in Hotel44:
+				say "[PregFlav]Your baby is painfully born through the portal encasing your [vagina], no doubt emerging in the room with [NameDesc of pimp].[line break][variable custom style]I wish I could see [his of pimp] face. This must be quite the surprise.[roman type][line break]You end up on your knees, panting, but relieved[if the father is a human monster], confident in the knowledge that [NameDesc of pimp] will be ensuring that the baby is taken away and cared for[otherwise] that it's all over[end if].";
+			otherwise if vagina is actually occupied or there is worn undisplacable cursed pee covering clothing or there is worn undisplacable unremovable pee covering clothing or there is worn glued pee covering clothing: [the vagina is blocked, so we delay the pregnancy and punish the player with contractions]
 				Delay Labour;
 			otherwise if the father is a monster:
 				let M be the father;
 				compute labour to M;[Dead fathers are handled in fatherhood of M]
-				if successful-pregnancy is 1:
-					compute fatherhood to the father;
-				[if there is worn temporarily-displaced clothing:
-					say "You replace your [ShortDesc of list of worn temporarily-displaced clothing].";
-					repeat with P running through worn temporarily-displaced clothing:
-						replace P;]
+				if successful-pregnancy is 1, compute fatherhood to the father;
 			otherwise: [The father is inanimate]
 				if inhuman pregnancy < 2 or (extreme proportions fetish is 1 and the womb volume of vagina is 30): [If the stuff in brackets is true, we checked for an extreme pregnancy and purposefully chose not to give the player one this time.]
 					say DefaultBirthScene;
@@ -238,16 +235,8 @@ To compute tentacle birth:
 	say "They all wrap around your hips and clench tightly as the monster inside you slowly and determinedly pries itself from your struggling hole. The slow movement of the huge dark red creature is accompanied by lewd squelches and slurps and some loud moaning, which you then realise is coming from yourself. Your [vagina] is forced to stretch further still as the critter reaches its widest point at your entrance and then with a loud POP it flies out and lands on the ground. [one of]You gaze with [if the bimbo of the player < 13]terror[otherwise]wonder[end if] at your 'child': a [if extreme proportions fetish is 1]beachball sized[otherwise]basketball sized[end if] heap of vulnerable looking flesh with a single eye and several phallic tentacled appendages. Before your eyes its flesh starts to slowly solidify and it gives you a long and seemingly thoughtful stare before dragging itself out of sight with its tentacles.[or]Once again you watch it start to build its strength and drag itself away.[stopping]";
 	let T be a random off-stage living tentacles;
 	if laurel wreath is worn and T is clothing:
-		repeat with O running through worn dresses:
-			say "Your [O] [wardrobeVanishes of O]!";
-			now O is in pink wardrobe;
-		repeat with O running through worn exclusive corsets:
-			say "Your [O] [wardrobeVanishes of O]!";
-			now O is in pink wardrobe;
-		repeat with O running through worn skirted clothing:
-			say "Your [O] [wardrobeVanishes of O]!";
-			now O is in pink wardrobe;
-		say "[bold type]You feel a sudden wet feeling crawl up your body to your neck, where it settles as a slight pressure. With surprising speed, a nest of warm, slimy tentacles begins to wrap around your body. For some reason, you feel very... comforted by their presence.[roman type]";
+		PinkWardrobeUnclash T;
+		say "[bold type]You feel a sudden wet feeling crawl up your body to your neck, where it settles as a slight pressure. With surprising speed, a nest of warm, slimy tentacles begins to wrap around your body. For some reason, you feel very... comforted by their presence.[roman type][line break]";
 		summon T;
 		now the raw-magic-modifier of T is childValue times 6;
 	if there is a worn tattoo and the number of worn ass tattoos is 0 and a random number between 1 and 2 is 1:
@@ -343,7 +332,7 @@ To compute pregnancy annoyance:
 			say "You feel your pregnancy making your [BreastDesc] become more engorged and [if lactation fetish is 1]their lactation rate increasing[otherwise]sensitive[end if]!";
 			BustUp 1;
 			if lactation fetish is 1, increase the lactation rate of the player by 1;
-			otherwise TitFuckAddictUp 1;
+			otherwise BreastsSensitivityUp 1;
 		otherwise if a random number between 1 and 5 is 1 and the player is not very horny:
 			say "[bold type]Your pregnancy-hormone-addled brain randomly and spontaneously flares up with arousal.[one of][or][line break][variable custom style]This is crazy, it feels like I want sex all the time at the moment...[or][stopping][roman type][line break]";
 			arouse 3000;
@@ -352,7 +341,7 @@ To compute pregnancy annoyance:
 			now the fatigue of the player is the very tired threshold of the player;
 		otherwise if the womb volume of vagina > 15:
 			say "Your unborn baby [one of]kicks vigorously[or]punches, kicks and wriggles[or]knees and elbows you from[at random] inside your womb.";
-			increase the fatigue of the player by the womb volume of vagina;
+			FatigueUp the womb volume of vagina;
 		otherwise:
 			say "[one of]You feel a flutter in your belly. Was that your baby moving?[or][or][or][in random order]";
 	otherwise if the womb volume of vagina > 15:

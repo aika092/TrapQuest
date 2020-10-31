@@ -15,6 +15,8 @@ To decide which number is the heaviness of (C - a collectible):
 
 a mass collectible is a kind of collectible.
 
+The tradability of a mass collectible is 1.
+
 To decide which number is the heaviness of (C - a mass collectible):
 	decide on 0.
 

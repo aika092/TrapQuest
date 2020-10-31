@@ -94,12 +94,14 @@ To set up influence of (C - a knickers):
 
 To restock (C - a knickers):
 	let B be a random basic loot knickers;
-	if B is knickers, now B is in Standard Item Pen.
+	if B is knickers:
+		repeat with L running through Standard Item Pen:
+			if L is knickers, remove L from Standard Item Pen;
+		add B to Standard Item Pen.
 
 This is the setup starting knickers rule:
 	let C be a random basic loot knickers;
-	repeat with N running from 1 to 5:
-		restock C.
+	restock C.
 The setup starting knickers rule is listed in the setup starting items rules.
 
 To decide which object is the unique-upgrade-target of (C - a knickers):
@@ -158,7 +160,7 @@ Report wearing knickers:
 			ruin vagina;
 		now the noun is penetrating asshole;
 		ruin asshole;
-		if the noun is cursed and the noun is vibrating plug panties, say "[line break]The [if the player is female]ass [end if] plug starts vibrating! That can't be good...";
+		if the noun is cursed and the noun is vibrating plug panties, say "[line break]The [if the player is possessing a vagina]ass [end if] plug starts vibrating! That can't be good...";
 	otherwise if the noun is unsure and the noun is cursed:
 		if the noun is diaper, say "You pull the [ShortDesc of the noun] up around your hips, [if the bimbo of the player > 12]grinning timidly[otherwise]wincing[end if] as it crinkles loudly. As you finish pulling it into place, you feel a pulse of warmth along the seams! The waistband and leg holes tighten magically, ensuring you can't take it off. This diaper is cursed!";
 		otherwise say "You pull the [ShortDesc of the noun] up around your hips. As you finish adjusting them you feel a pulse of warmth along the seams! They [if the bimbo of the player < 11]firmly[otherwise][second custom style][one of]tightly[or]deliciously[or]enticingly[in random order][roman type][end if] conform to the contours of your [ShortDesc of hips] and [if the player is male][ShortDesc of penis][otherwise][vagina][end if]. [if the bimbo of the player > 8]They make you look so fuckable! [end if]These panties are cursed!"; [Written by Anya Snowdrifter]

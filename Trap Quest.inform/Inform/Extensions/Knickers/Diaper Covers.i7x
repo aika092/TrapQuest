@@ -53,9 +53,13 @@ To uniquely set up (K - a diaper cover):
 	repair K;
 	if diaper lover >= 1 and a random number between 1 and 8 is 1, now K is bed wetting.
 
-[To restock (C - a diaper cover):
+[
+To restock (C - a diaper cover):
 	let B be a random basic loot diaper cover;
-	if B is diaper cover, now B is in Standard Item Pen.
+	if B is diaper cover:
+		repeat with L running through Standard Item Pen:
+			if L is diaper cover, remove L from Standard Item Pen;
+		add B to Standard Item Pen.
 
 This is the setup starting diaper cover rule:
 	if diaper lover >= 1:

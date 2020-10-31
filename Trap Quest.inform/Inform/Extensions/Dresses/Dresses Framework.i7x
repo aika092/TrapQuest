@@ -62,7 +62,7 @@ Definition: an overdress is same-type:
 	decide no. [Unskirted items will skip skirted dresses if there is a worn skirt]
 
 Definition: a dress is rippable:
-	if it is crotch covering and it is total protection and it is not ass plugging and it is not vagina plugging, decide yes;
+	if it is crotch covering and it is total protection and it is not ass plugging and it is not vagina plugging and it is destructible, decide yes;
 	decide no.
 
 To decide which object is the potential-upgrade-target of (C - an overdress):
@@ -140,9 +140,19 @@ Definition: an overdress is displacable:
 	if it is crotch-intact and it is not rigid and it is not biological, decide yes; [These materials tend to be too tight to displace]
 	decide no.
 
+To restock (C - an underdress):
+	let B be a random basic loot underdress;
+	if B is underdress:
+		repeat with L running through Standard Item Pen:
+			if L is underdress, remove L from Standard Item Pen;
+		add B to Standard Item Pen.
+
 To restock (C - an overdress):
 	let B be a random basic loot overdress;
-	if B is overdress, now B is in Standard Item Pen.
+	if B is overdress:
+		repeat with L running through Standard Item Pen:
+			if L is overdress, remove L from Standard Item Pen;
+		add B to Standard Item Pen.
 
 This is the setup starting overdresses rule:
 	let C be a random overdress;
@@ -181,12 +191,6 @@ This is the overdress necklace clash rule:
 			rule fails.
 The overdress necklace clash rule is listed in the overdress wearability rules.
 
-This is the trousers overdress exclusive clash rule:
-	repeat with C running through worn crotch-in-place hobble-skirted overdresses:
-		if summoning is 0 and autowear is false, say "You need to pull up your [printed name of C] to get this on successfully!";
-		rule fails.
-The trousers overdress exclusive clash rule is listed in the trousers wearability rules.
-
 This is the skirt overdress clash rule:
 	if wearing-target is skirted:
 		repeat with C running through worn overdress:
@@ -194,11 +198,5 @@ This is the skirt overdress clash rule:
 				if summoning is 0 and autowear is false, say "[if C is skirted]You can't wear that over[otherwise]You would feel a bit stupid wearing that at the same time as[end if] your [ShortDesc of C]!";
 				rule fails.
 The skirt overdress clash rule is listed in the skirt wearability rules.
-
-This is the bra overdress clash rule:
-	repeat with B running through worn breast covering overdresses:
-		if summoning is 0 and autowear is false, say "You can't wear that over your [ShortDesc of B], [if wearing-target is exclusive]the [ShortDesc of wearing-target] is [bold type]exclusive[roman type]![otherwise if B is exclusive]the [ShortDesc of B] is [bold type]exclusive[roman type]![otherwise]it should go underneath.[end if]";
-		rule fails.
-The bra overdress clash rule is listed in the bra wearability rules.
 
 Dresses Framework ends here.

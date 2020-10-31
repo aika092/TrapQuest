@@ -462,7 +462,7 @@ The tentacle monster gets fresh rule is listed in the tentacle priority attack r
 
 To compute breasts grope of (M - a tentacle monster):
 	say "[BigNameDesc of M] [one of]roughly[or]lewdly[or]eagerly[in random order] [one of]curls around[or]molests[or]gropes[or]squeezes[in random order] your [ShortDesc of breasts] with a [if M is wet-tentacle-monster][semen]-drooling [end if]tentacle!";
-	if M is wet-tentacle-monster, CumTitsUp 1.
+	if M is wet-tentacle-monster, AnnouncedSquirt semen on breasts by 1.
 
 To compute asshole grope of (M - a tentacle monster):
 	let C be a random top level ass protection clothing;
@@ -496,7 +496,7 @@ To compute penis grope of (M - a tentacle monster):
 To compute belly grope of (M - a tentacle monster):
 	say "[BigNameDesc of M] uses a tentacle to [one of]tenderly[or]almost lovingly[or]patronisingly[in random order] [one of]caress[or]stroke[in random order] your [ShortDesc of belly][if there is worn belly covering clothing] through your [ShortDesc of random worn belly covering clothing][end if].[if M is wet-tentacle-monster and bukkake fetish is 1] [big his of M] [cockhead of M] leaves a trail of stick [semen] in its wake.[end if]";
 	if M is wet-tentacle-monster and bukkake fetish is 1:
-		CumBellyUp 1.
+		AnnouncedSquirt semen on belly by 1.
 
 To compute face grope of (M - a tentacle monster):
 	if there is worn ringagged clothing:
@@ -517,7 +517,7 @@ To compute thighs grope of (M - a tentacle monster):
 	let S be a random worn skirted crotch-in-place clothing;
 	if M is wet-tentacle-monster:
 		say "[BigNameDesc of M] [one of]deftly[or]quickly[in random order] [one of]snakes[or]shoots[or]sneaks[in random order] a slimy tentacle up [if S is clothing and S is not C]under your [ShortDesc of S][otherwise]your leg[end if], leaving a sticky [semen] trail as it [one of]strokes[or]rubs[or]grips[or]squeezes[in random order] your thigh[if C is clothing] through your [ShortDesc of C][end if]!";
-		CumThighsUp 1;
+		AnnouncedSquirt semen on thighs by 1;
 	otherwise:
 		say "[BigNameDesc of M] [one of]deftly[or]quickly[in random order] [one of]snakes[or]shoots[or]sneaks[in random order] a tentacle up [if S is clothing and S is not C]under your [ShortDesc of S][otherwise]your leg[end if] and [one of]strokes[or]rubs[or]grips[or]squeezes[in random order] your thigh[if C is clothing] through your [ShortDesc of C][end if]!".
 
@@ -647,7 +647,7 @@ This is the tentacle monster climaxes rule:
 		if bukkake fetish is 1, CumFaceUp cum-amount * 5;
 	orgasm M; [needs to go above the below functions because this function cares about where is being penetrated]
 	if M is penetrating breasts:
-		increase the raw sensitivity of breasts by 1;
+		BreastsSensitivityUp 1;
 		now M is not penetrating breasts;
 	if M is penetrating face:
 		compute facial climax of M;
@@ -693,7 +693,7 @@ This is the tentacle monster climaxes rule:
 		if M is large:
 			SizeRankUp M;
 			if heart hairpin is off-stage:
-				if the class of the player is schoolgirl and the number of worn scrunchies is 1:
+				if the class of the player is "schoolgirl" and the number of worn scrunchies is 1: [has to be exactly this class and not any cross-class]
 					let S be a random worn scrunchie;
 					say "Your [S] explodes in a shower of cartoon lovehearts!";
 					destroy S;
@@ -767,7 +767,7 @@ To compute vaginal climax of (M - a tentacle monster):
 			say CreampieReactionFlav to M in vagina;
 		otherwise:
 			say "Your struggling causes the tentacle in your [vagina] to slip out at the last moment, spraying your belly with [semen].";
-			CumBellyUp the semen load of M;
+			AnnouncedSquirt semen on belly by the semen load of M;
 	if the largeness of belly < 10:[We haven't shown an image already]
 		if M is penetrating face, cutshow figure of tentacle cutscene 6 for M;
 		otherwise cutshow figure of tentacle cutscene 5 for M;
@@ -805,7 +805,7 @@ To compute anal climax of (M - a tentacle monster):
 				AssFill the semen load of M;
 			otherwise:
 				say "Your struggling causes the tentacle in your [asshole] to slip out at the last moment, spraying your ass and thighs with [semen].";
-				CumThighsUp the semen load of M;
+				AnnouncedSquirt semen on thighs by the semen load of M;
 	now M is not penetrating asshole;
 	if the largeness of belly >= 10:
 		cutshow figure of tentacle cutscene 2 for M;
@@ -836,7 +836,7 @@ To decide if (M - a tentacle monster) is losing wrapper in (F - face):
 	if M is large and a random number between 1 and 3 is 1, decide yes;[1/3]
 	decide no.[newborns never break the condom]
 
-Definition: A tentacle monster (called M) is willing to bukkake:
+Definition: a tentacle monster (called M) is willing to bukkake:
 	if the reaction of the player is 0:
 		if M is massive and a random number between 1 and 6 is 1, decide yes;[1 in 6]
 		if M is large and a random number between 1 and 3 is 1, decide yes;[1 in 3]
@@ -846,7 +846,7 @@ Definition: A tentacle monster (called M) is willing to bukkake:
 To say StrikingSuccessFlav of (M - a tentacle monster) on (B - a body part):
 	if the free-tentacles of M is 0, say "[BigNameDesc of M] constricts you with its tentacles!";
 	otherwise say "[BigNameDesc of M] smacks you [TargetName of B] with one of its tentacles!";
-	if the class of the player is maid and the magic-power of the player > 0, BodyRuin 1.
+	if the class of the player is maid and the total magic power of the player > 0, BodyRuin 1.
 
 To say StrikingFailureFlav of (M - a tentacle monster) on (B - a body part):
 	if the free-tentacles of M is 0, say "[BigNameDesc of M] tries to constrict you with its tentacles, but you squirm enough to prevent it getting a better grip.";
@@ -890,8 +890,7 @@ To say VaginaPenetrationFlav of (M - a tentacle monster):
 	say "Without hesitation [NameDesc of M] forces a [DickDesc of M] deep inside your [vagina].[if M is massive][line break]The tentacle is so large that you can feel your [vagina] being permanently gaped.[end if]".
 
 To say SelectionFrustrated of (M - a tentacle monster):
-	say "[BigNameDesc of M][']s one eye stares at you with visible frustration but then seems to decide to leave you alone.";
-	bore M.
+	say "[BigNameDesc of M][']s one eye stares at you with visible frustration but then seems to decide to leave you alone.".
 
 To say BreastsPenetrationFlav of (M - a tentacle monster):
 	say "[BigNameDesc of M] coils a [DickDesc of M] around your [ShortDesc of breasts], squeezing them together as it forces its way between their curves and begins to thrust.".
@@ -910,7 +909,7 @@ To say CondomForceSuccessFlav of (M - a tentacle monster):
 	say "You grab hold of one of [NameDesc of M][']s [DickDesc of M]s and quickly unroll a condom down its length. To your surprise, several more condoms fly out of your pack thanks and with clear magically influenced purpose, apply themselves to each of [NameDesc of M][']s undulating limbs.";
 
 To say CondomForceFailFlav of (M - a tentacle monster):
-	say "You grab hold of a [DickDesc of M] and try to unroll a condom down its length. [BigNameDesc of M] quickly smacks your hand away. Looks like [he of M][']s going in bare...";
+	say "You grab hold of a [DickDesc of M] and try to unroll a condom down its length. [BigNameDesc of M] quickly smacks your hand away[if M is seduced].[otherwise]. Looks like [he of M][']s going in bare...[end if]".
 
 To say TitfuckResistFlav of (M - a tentacle monster):
 	let C be a random worn top level covering clothing;
@@ -974,7 +973,7 @@ To compute unique banishment of (M - a tentacle monster):
 			say "[bold type]Thin white fabric appears on your body, covering your chest and waist![roman type][line break]";
 			now warrior-summoned is 2;
 		otherwise if heart hairpin is off-stage:
-			if the class of the player is schoolgirl and the number of worn scrunchies is 1:
+			if the class of the player is "schoolgirl" and the number of worn scrunchies is 1:
 				let S be a random worn scrunchie;
 				say "Your [S] explodes in a shower of cartoon lovehearts!";
 				destroy S;

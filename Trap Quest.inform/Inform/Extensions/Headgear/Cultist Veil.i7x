@@ -85,16 +85,7 @@ To compute unique recycling of (C - cultist veil):
 To compute class outfit of (H - cultist veil):
 	let C be a random off-stage cultist robe;
 	if (C is actually summonable or (C is cultist robe and cultist-summoned is 0)):
-		if cultist-summoned is 0:
-			repeat with O running through worn dresses:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn exclusive corsets:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn skirt clashing clothing:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
+		PinkWardrobeUnclash C;
 		say "[bold type]Suddenly a sheer black robe appears around you![roman type][line break]";
 		summon C;
 		now cultist-summoned is 1;

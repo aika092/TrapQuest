@@ -15,7 +15,7 @@ To decide which figure-name is the clothing-image of (H - a thigh high boots):
 	decide on the figure of leather thigh boots.
 
 To say ClothingDesc of (H - a thigh high boots):
-	say "A pair of [heel-height of H] inch black [if H is leather]leather[otherwise if H is latex]latex[end if] thigh high boots with a strong stiletto heel.";
+	say "A pair of [heel-height of H] inch black [if H is leather]leather[otherwise if H is latex]latex[end if] thigh high boots with a strong stiletto heel[if H is worn and H is cursed and H is latex and there is a worn cursed black catsuit]. The upper part of your heels have completely merged with the rest of your catsuit[end if].";
 	say "[SteadinessDesc of H]".
 
 To say UniqueShortDesc of (H - a thigh high boots):
@@ -43,7 +43,7 @@ To decide which figure-name is the clothing-image of (H - a WC thigh high boots)
 	decide on figure of WC thigh high boots.
 
 To say ClothingDesc of (H - a WC thigh high boots):
-	say "A pair of [heel-height of H] inch white latex thigh high boots with a strong stiletto heel.";
+	say "A pair of [heel-height of H] inch white latex thigh high boots with a strong stiletto heel[if H is worn and H is cursed and there is a worn cursed black catsuit]. The upper part of your heels have completely merged with the rest of your catsuit[end if].";
 	say "[SteadinessDesc of H]".
 
 To say UniqueShortDesc of (H - a WC thigh high boots):

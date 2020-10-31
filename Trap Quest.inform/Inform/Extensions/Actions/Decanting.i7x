@@ -105,14 +105,13 @@ Report decanting something with:
 		if the noun is cocktail-glass or (the noun is waitress vessel and waitress-dips > 3):
 			if black maid headdress is worn:
 				transform black maid headdress into cafe maid headdress;
-				unless there is a worn maid waitress outfit or there is a worn cafe maid outfit, now maid-summoned is 0;
+				unless maid-waitress-outfit is worn or cafe-maid-outfit is worn, now maid-summoned is 0;
 			otherwise if bunny waitress ears is off-stage and bunny waitress ears is actually summonable:
 				say "[bold type]Suddenly [ShortDesc of bunny waitress ears] appear on your head![line break][variable custom style][if the bimbo of the player < 10]What, are they trying to make me look like a bunny waitress?[otherwise]Haha, it's like I'm a bunny waitress![end if][roman type][line break]";
 				summon bunny waitress ears cursed;
 			otherwise if cafe maid headdress is worn:
 				let M be a random worn maid outfit;
-				let CMO be a random cafe maid outfit;
-				if CMO is not held and M is a thing, transform M into CMO;
+				if cafe-maid-outfit is not held and M is a thing, transform M into cafe-maid-outfit;
 	repeat with T running through all untriggered swing traps in the location of the player:
 		now focused-thing is T;
 		trigger T.

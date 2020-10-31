@@ -116,7 +116,7 @@ To update students:
 	repeat with M running through alive students:
 		if the max-rank of M < the rank of the player and M is friendly: [Students who are angry with the player stay around to bully them]
 			if M is in the location of the player, compute mandatory room leaving of M;
-			destroy M;
+			now M is guarding;
 	if the rank of the player is 2:
 		set up rank three students;
 		repeat with M running through fetish appropriate ruby-teacher:

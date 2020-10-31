@@ -62,6 +62,7 @@ To decide which number is milkingColour:
 
 To decide which object is bottom level lactation cover:
 	let N be nothing;
+	if there is worn breast hiding clothing, decide on a random worn breast hiding clothing;
 	repeat with C running through worn actually nipple covering clothing:
 		if N is nothing:
 			now N is C;
@@ -96,29 +97,27 @@ To trigger lactation:
 			AssFill M Milk;
 		otherwise if N is milking harness:
 			if M is 1:
-				say "A few drops of [milk] leak from your [BreastDesc] and into the suction cups of your [ShortDesc of N]. You hear the pumping device behind you force the [milk] through its tubes and you shiver [if the bimbo of the player > 8]in enjoyment[end if] as you feel the warm liquid enter you through the harness's plug.";
+				say "A few drops of [milk] leak from your [BreastDesc] and into the suction cups of your [ShortDesc of N]. You hear the pumping device behind you force the [milk] through its tubes and you shiver [if the bimbo of the player > 8]in enjoyment[end if] as you feel the warm liquid enter you through the harness's plug.[roman type][line break]";
 				MilkDown 1;
 				AssFill 1 Milk;
 			otherwise:
-				if M < 10, say "Milk flows from your nipples into the suction cups of your [ShortDesc of N]. You hear the pumping device behind you force the [milk] through its tubes and you shiver [if the bimbo of the player > 11]in delight[end if] as you feel substantial amounts of the warm liquid enter you through the harness's plug.";
-				otherwise say "Your [BreastDesc] powerfully squirt [milk] into the suction cups of your [ShortDesc of N]. You hear the pumping device behind you force the [milk] through its tubes and you shiver [if the bimbo of the player > 14]in ecstasy[end if] as you feel the warm liquid enter you through the harness's plug.";
+				if M < 10, say "Milk flows from your nipples into the suction cups of your [ShortDesc of N]. You hear the pumping device behind you force the [milk] through its tubes and you shiver [if the bimbo of the player > 11]in delight[end if] as you feel substantial amounts of the warm liquid enter you through the harness's plug.[roman type][line break]";
+				otherwise say "Your [BreastDesc] powerfully squirt [milk] into the suction cups of your [ShortDesc of N]. You hear the pumping device behind you force the [milk] through its tubes and you shiver [if the bimbo of the player > 14]in ecstasy[end if] as you feel the warm liquid enter you through the harness's plug.[roman type][line break]";
 				MilkDown M ;
 				AssFill M Milk;
 			say "The stimulation [one of]of the suction on your nipples combined with the [milk] rushing into your [asshole] [or][stopping]makes you aroused[if the sex addiction of the player < 11] against your will[end if].";
 			passively stimulate asshole;
 		otherwise if N is clothing:
 			if M is 1:
-				say "A few drops of [milk] leak from your [BreastDesc] and [if N is bra]into the cups of[otherwise]onto[end if] your [ShortDesc of N][if N is not liquid-soak-appropriate].[end if]";
-				MilkDown 1;
-				Squirt milk on N by 1;
+				say "A few drops of [milk] leak from your [BreastDesc] and [if N is bra]into the cups of[otherwise]onto[end if] your [ShortDesc of N][if N is not liquid-soak-appropriate].[end if][roman type][line break]";
 			otherwise:
-				if M < 10, say "Milk flows from your nipples and [if N is fluid vulnerable]noticeably stains[otherwise]onto[end if] [if N is bra]the cups of [end if]your [ShortDesc of N][if N is not liquid-soak-appropriate].[end if]";
-				otherwise say "Your [BreastDesc] powerfully squirt [milk] into your [ShortDesc of N][if N is not liquid-soak-appropriate].[end if]";
-				MilkDown M;
-				Squirt milk on N by M;
+				if M < 10, say "Milk flows from your nipples and [if N is somewhat fluid vulnerable]noticeably stains[otherwise]onto[end if] [if N is bra]the cups of [end if]your [ShortDesc of N][if N is not liquid-soak-appropriate].[end if][roman type][line break]";
+				otherwise say "Your [BreastDesc] powerfully squirt [milk] into your [ShortDesc of N][if N is not liquid-soak-appropriate].[end if][roman type][line break]";
+			MilkDown M;
+			AnnouncedExpel milk on N by M;
 		otherwise if N is gloryhole:
 			if M is 1:
-				say "A few drops of [milk] squirt from your tender nipples and into whatever is causing the suction at the [printed name of N] that's currently gripping your [BreastDesc].";
+				say "A few drops of [milk] squirt from your tender nipples and into whatever is causing the suction at the [printed name of N] that's currently gripping your [BreastDesc].[roman type][line break]";
 				MilkDown 1;
 				if a random number between 1 and 4 is 1:
 					say "A strange shivery feeling tingles through your chest.";
@@ -138,13 +137,13 @@ To trigger lactation:
 					humiliate 100;
 		otherwise:
 			if M is 1:
-				say "A few drops of [milk] leak from your [BreastDesc] and drip to the floor.";
+				say "A few drops of [milk] leak from your [BreastDesc] and drip to the floor.[roman type][line break]";
 				MilkDown 1;
 				MilkPuddleUp 1;
 				cutshow figure of lactation 1 for breasts;
 			otherwise:
-				if M < 10, say "Milk flows from your nipples and pools on the floor.";
-				otherwise say "Your [BreastDesc] powerfully squirt [milk] onto the floor.";
+				if M < 10, say "Milk flows from your nipples and pools on the floor.[roman type][line break]";
+				otherwise say "Your [BreastDesc] powerfully squirt [milk] onto the floor.[roman type][line break]";
 				MilkDown M;
 				MilkPuddleUp M;
 		let O be a random off-stage milking harness;
@@ -158,7 +157,6 @@ To trigger lactation:
 			say "[bold type]As you finish lactating, a silver circlet appears on your head.[line break][variable custom style]Why do I get the feeling that people are going to want my milk soon...[roman type][line break]";
 			summon royal circlet cursed;
 			now the lactation-count of the player is 0;
-		say "[roman type][line break]";
 		now last-lactated-time is earnings; [Record this: the idea is that the player will smell of milk for a while after lactating, and possibly exciting some monsters when they smell it.]
 		if N is gloryhole, progress quest of milking-quest;
 		otherwise now the ready-for-milking of milking-quest is 1.

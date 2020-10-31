@@ -42,10 +42,6 @@ This is the necklace already worn rule:
 		rule fails.
 The necklace already worn rule is listed in the necklace wearability rules.
 
-To restock (C - a necklace):
-	let B be a random basic loot necklace;
-	if B is necklace, now B is in Standard Item Pen.
-
 A submissive collar is a kind of neckwear. A submissive collar is usually transformation-rare.
 Definition: a submissive collar is same-type:
 	if theme-share-target is submissive collar, decide yes;

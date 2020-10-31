@@ -962,7 +962,7 @@ This function is called whenever a monster "M" is about to ejaculate in a fuckho
 To compute (M - a monster) messily pulling out of (F - a fuckhole):
 	get messy pull out image of M in F;
 	say MessyPullOutFlav of M in F;
-	CumThighsUp the semen load of M.
+	AnnouncedSquirt semen on thighs by the semen load of M.
 
 To get messy pull out image of (M - a monster) in (F - a fuckhole):
 	get clean pull out image of M in F.
@@ -992,7 +992,7 @@ Displays some text describing a monster "M" inseminating a fuckhole "F"
 
 +!]
 To say CreampieFlav of (M - a monster) in (F - a fuckhole):
-	say "[if M is intelligent][line break][speech style of M]'[one of]Ugh... yes!'[or]Take it all, now!'[or]Yes, yes, fucking take this!'[or]I'm cumming inside you, [bitch]!'[or]Oh trust me, you're going to be able to feel this!'[in random order][roman type][line break][end if][BigFuckerDesc of M] [one of]ejaculates deep inside[or]releases [his of M] load inside[or]growls as [he of M] finishes, filling[or]hisses with pleasure as [his of M] [semen] pumps into[or]pants happily and bottoms out as [he of M] shoots blast after blast of warm [semen] into[in random order] your [variable F]!".
+	say "[if M is intelligent and M is in the location of the player][line break][speech style of M]'[one of]Ugh... yes!'[or]Take it all, now!'[or]Yes, yes, fucking take this!'[or]I'm cumming inside you, [bitch]!'[or]Oh trust me, you're going to be able to feel this!'[in random order][roman type][line break][end if][BigFuckerDesc of M] [if M is in the location of the player][one of]ejaculates deep inside[or]releases [his of M] load inside[or]growls as [he of M] finishes, filling[or]hisses with pleasure as [his of M] [semen] pumps into[or]pants happily and bottoms out as [he of M] shoots blast after blast of warm [semen] into[in random order][otherwise][one of]ejaculates deep inside[or]releases [his of M] load inside[or]bottoms out as [he of M] shoots blast after blast of warm [semen] into[in random order][end if] your [variable F]!".
 
 [!<SayCreampieReactionFlavToMonsterInFuckhole>+
 

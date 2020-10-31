@@ -160,7 +160,10 @@ To compute periodic effect of (C - a rejuvenation clothing):
 
 To restock (C - a sex toy):
 	let B be a random basic loot sex toy;
-	if B is sex toy, now B is in Standard Item Pen.
+	if B is sex toy:
+		repeat with L running through Standard Item Pen:
+			if L is sex toy, remove L from Standard Item Pen;
+		add B to Standard Item Pen.
 
 To decide which number is the grip of (I - a thing):
 	decide on 999. [This should never happen]

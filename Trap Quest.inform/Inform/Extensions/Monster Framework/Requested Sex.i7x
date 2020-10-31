@@ -28,7 +28,7 @@ To decide which number is the sex desire of (M - a monster):
 	decide on 1.[How much favour does the player gain from fucking them?]
 
 This is the default monster friendly convinced rule:
-	if presented-orifice is a reasonable target and the refractory-period of current-monster <= 0:
+	if the refractory-period of current-monster <= 0 and presented-orifice is a reasonable target:
 		now the chosen-orifice of current-monster is presented-orifice;[This is on top so flavour can refer to chosen orifice.]
 		say PresentFriendlyAcceptanceFlav of current-monster;
 		rule succeeds;

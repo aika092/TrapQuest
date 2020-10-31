@@ -290,6 +290,8 @@ To compute grope of (M - a person):
 		compute ass grope of M;
 		say AssGropeFlav of M;
 		stimulate hips from M;
+		repeat with ST running through worn sex toys penetrating a fuckhole:
+			compute gripping of ST;
 	otherwise:
 		now gropeSuccess is 0;
 	if targeted-body-part is body part:
@@ -471,12 +473,13 @@ Volume - Seduction
 		* Can turn into normal oral
 	* Non-titty-fucking paizuri
 		* Can turn into normal paizuri
+	* Condom Application
+	* Soul Sucking (Succubus class)
 	* Escaping
 * NPC moves:
 	* Degradation
 	* Groping
 	* Displacement / Stripping
-* Rework condom application to be inside this game
 
 ]
 
@@ -526,6 +529,8 @@ This is the core seduction rule:
 		if the boredom of M < 470, compute seduction witness reaction of M. [NPCs that just climaxed aren't going to be unimpressed with the player. This 30s window gives them a chance to wander away]
 
 To compute seduction choice of (M - a monster):
+	let succsucc be 0;
+	if the class of the player is succubus and M is not soul-stolen and M is not infernal, now succsucc is 1;
 	say "What do you want to do to [NameDesc of M]?";
 	now current-monster is M;
 	reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
@@ -537,7 +542,9 @@ To compute seduction choice of (M - a monster):
 		set numerical response 0 to "stop seducing [him of M]";
 	if the player is upright:
 		if the player is not immobile and the seductions-performed of thighs < 2 and M is seduce-satisfiable, set next numerical response to "dance for [him of M]";
-		if face is not actually occupied and the seductions-performed of face is 0 and M is seduce-satisfiable, set next numerical response to "kiss [him of M]";
+		if face is not actually occupied and the seductions-performed of face is 0 and M is seduce-satisfiable:
+			if succsucc is 1, set next numerical response to "try to coax out [his of M] soul with a kiss";
+			set next numerical response to "[if succsucc is 1]just [end if]kiss [him of M]";
 		set next numerical response to "get on your knees";
 	let C be a random top level titfuck protection clothing;
 	if C is top-displacable unglued clothing and the player is able to use their hands and the player is not wrist bound behind, set next numerical response to "pull away your [ShortDesc of C]";
@@ -555,7 +562,9 @@ To compute seduction choice of (M - a monster):
 		if M is male and the largeness of breasts >= 5 and the seductions-performed of breasts is 0 and the number of things penetrating breasts is 0 and M is seduce-satisfiable:
 			let T be a random top level titfuck protection clothing;
 			unless T is clothing, set next numerical response to "massage [his of M] [DickDesc of M] with your [ShortDesc of breasts]";
-		if face is not actually occupied and the seductions-performed of face is 0 and M is seduce-satisfiable, set next numerical response to "[if M is male]suck [his of M] [manly-penis][otherwise]pleasure [him of M] with your mouth[end if]";
+		if face is not actually occupied and the seductions-performed of face is 0 and M is seduce-satisfiable:
+			if succsucc is 1, set next numerical response to "try coaxing out [his of M] soul with your mouth";
+			set next numerical response to "[if succsucc is 1]just [end if][if M is male]suck [his of M] [manly-penis][otherwise]pleasure [him of M] with your mouth[end if]";
 		now auto is 1;
 		now presenting-receiver is M;
 		let PB be the list of actually presentable body parts;
@@ -611,7 +620,8 @@ To compute seduction choice of (M - a monster):
 		increase the seductions-performed of thighs by 2;
 	otherwise if MCQ matches the text "kiss":
 		if turns-spent-seducing is 0, compute FirstTurnSeduceKissAnnounce of M;
-		compute SeductionKiss of M;
+		if MCQ matches the text "soul", compute SeductionSoulKiss of M;
+		otherwise compute SeductionKiss of M;
 	otherwise if MCQ matches the text "pull":
 		if turns-spent-seducing is 0, compute FirstTurnSeduceSubmitAnnounce of M;
 		let C be a random top level titfuck protection clothing;
@@ -653,7 +663,8 @@ To compute seduction choice of (M - a monster):
 			now the chosen-orifice of M is breasts;
 	otherwise if MCQ matches the text "suck" or MCQ matches the text "mouth":
 		if turns-spent-seducing is 0, compute FirstTurnSeduceOralAnnounce of M;
-		compute SeductionOral of M;
+		if MCQ matches the text "soul", compute SeductionSoulOral of M;
+		otherwise compute SeductionOral of M;
 		if the sex-length of M <= 0, compute SeductionOralClimax of M;
 		if the blue-balls of M >= the blue-balls-limit of M and a random number between 1 and 3 > 1 and face is an actual target:
 			now the selection-frustration of M is 0;
@@ -712,9 +723,12 @@ To compute seduction choice of (M - a monster):
 				let C be a random actually top-displacable clothing;
 				if C is clothing:
 					compute M topdisplacing C;
+					force immediate inventory-focus redraw;
 				otherwise:
 					let C be a random actually displacable clothing;
-					if C is clothing, compute M displacing C.
+					if C is clothing:
+						compute M displacing C;
+						force immediate inventory-focus redraw.
 
 To say BlueBallsTooFarFlav of (M - a monster):
 	if M is intelligent, say "[if M is friendly][speech style of M]'Argh, I can't hold back any longer[otherwise][speech style of M]'That's it, stay right there[end if]!'[roman type][line break]";
@@ -780,6 +794,29 @@ To compute SeductionKiss of (M - a monster):
 		increase the gropability of face by 10;
 	if a random number between 1 and the sex-length of M > (4 - the lips of face), compute WeakSexProgress of M;
 	otherwise compute WeakSexFalter of M.
+
+[Succubus class only]
+To compute SeductionSoulKiss of (M - a monster):
+	increase the seductions-performed of face by 1;
+	let D be the soul addiction of the player;
+	decrease D by the difficulty of M;
+	if D < 0, now D is 0;
+	say "You breathe seductively into [his of M] ear before locking your lips against [hers of M], mouth watering as you try to suck [his of M] soul out through [his of M] mouth.";
+	if a random number between 1 and (5 + D) >= 5:[There's always a chance of success]
+		say "[BigFuckerDesc of M] doesn't notice a thing until its too late, only pushing you away when [his of M] [one of]fat, juicy[or]delicious[or]nutritious[at random] soul is already on its way down your gullet.";
+		compute soulSucking from M;
+		anger M;
+		now M is seduction-refused;
+	otherwise if a random number between -3 and D < 0:
+		say "[BigFuckerDesc of M] notices something is off, pushing you away before you can fully coax [his of M] soul free! [slightHumiliateReflect]";
+		anger M;
+		now M is seduction-refused;
+	otherwise:
+		say "[BigFuckerDesc of M] doesn't notice a thing, eagerly exploring your mouth with [his of M] tongue as you unsuccessfully try to coax [his of M] soul free. [slightHumiliateReflect]";
+		increase the blue-balls of M by a random number between 0 and 2;
+		increase the gropability of face by 10;
+		if a random number between 1 and the sex-length of M > (4 - the lips of face), compute WeakSexProgress of M;
+		otherwise compute WeakSexFalter of M.
 
 To compute FirstTurnSeduceMasturbateAnnounce of (M - a monster):
 	if the player is able to speak:
@@ -864,8 +901,8 @@ To compute SeductionPaizuri of (M - a monster):
 
 To compute SeductionPaizuriClimax of (M - a monster):
 	now M is penetrating breasts;
-	follow the default cleavage climax rule;
-	orgasm M.
+	follow the default cleavage climax rule.
+	[orgasm M. This is handled in the cleavage climax function]
 
 To compute FirstTurnSeduceOralAnnounce of (M - a monster):
 	if the player is able to speak:
@@ -885,10 +922,32 @@ To compute SeductionOral of (M - a monster):
 	if a random number between 0 and the sex-length of M + the lips of face > 0, compute StrongSexProgress of M;
 	otherwise compute StrongSexFalter of M.
 
+[Succubus class only]
+To compute SeductionSoulOral of (M - a monster):
+	increase the seductions-performed of face by 1;
+	let D be the soul addiction of the player;
+	decrease D by the difficulty of M;
+	if D < 0, now D is 0;
+	say "You [if M is male]devour [his of M] [DickDesc of M], pushing it as far as it can get down your throat[otherwise]grind your face into [his of M] labia, lips pressed flat against [his of M] entrance[end if] as you use your powers to suck out [his of M] soul! [run paragraph on]";
+	if a random number between 1 and (8 + D) >= 5 or the sex-length of M is 0:[Higher chance of success than kissing]
+		say "[BigFuckerDesc of M] doesn't notice anything is wrong until its far too late, unsuccessfully trying to push you away as [his of M] soul flows out of [his of M] [if M is male][manly-penis][otherwise]pussy[end if] and into your waiting mouth. You look up at [him of M] triumphantly as your newly obtained soul slides down your gullet.";
+		compute soulSucking from M;
+		now the sex-length of M is 0;
+		now M is seduction-refused;
+		anger M;
+	otherwise if a random number between 1 and D < 0:[lower backfire chance than kissing as well]
+		say "[BigFuckerDesc of M] notices something is off, and shoves you away before you can coax [his of M] soul free! [severeHumiliateReflect]";
+		now M is seduction-refused;
+		anger M;
+	otherwise:
+		say "[BigFuckerDesc of M] doesn't seem to notice anything is off, grinding [his of M] hips against you as you unsuccessfully try to coax out [his of M] soul. [severeHumiliateReflect]";
+		if a random number between 0 and the sex-length of M + the lips of face > 0, compute StrongSexProgress of M;
+		otherwise compute StrongSexFalter of M.
+
 To compute SeductionOralClimax of (M - a monster):
 	now M is penetrating face;
-	follow the default facial climax rule;
-	orgasm M.
+	follow the default facial climax rule.
+	[orgasm M. handled in the cleavage climax function]
 
 To compute StrongSexProgress of (M - a monster):
 	decrease the sex-length of M by 1;
@@ -914,5 +973,17 @@ To compute friendly seduction end of (M - a monster):
 
 To compute seduction witness reaction of (M - a monster):
 	if M is not dangerous, say LewdTrapReactFlav of M.
+
+[todo: intelligence, fatigue, souls addiction]
+To compute soulSucking from (M - a monster):
+	increase the total-souls of the player by 1;[Checks how many souls the player has pulled out, total.]
+	now M is soul-stolen;
+	say "You feel a surge of power as your body absorbs the soul!";
+	MagicPowerUp 1;
+	increase the stomach-food of the player by 1;
+	unless (the player is craving souls or a random number between 1 and 2 is 1):
+		if the soul addiction of the player < 10, increase the soul addiction of the player by 1;
+	now cold souly is 0;
+	progress quest of soul-consume-quest.
 
 Desirability ends here.

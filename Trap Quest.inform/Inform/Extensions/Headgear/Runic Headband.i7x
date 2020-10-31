@@ -69,16 +69,7 @@ To compute class outfit of (H - runic headband):
 	if H is purity:
 		let P be a random off-stage flowing priestess outfit;
 		if P is actually summonable or (P is priestess outfit and priestess-summoned is 0 and the number of worn priestess outfit + the number of worn golden warrior priestess outfit is 0):
-			if priestess-summoned is 0:
-				repeat with O running through worn dresses:
-					say "Your [O] [wardrobeVanishes of O]!";
-					now O is in pink wardrobe;
-				repeat with O running through worn exclusive corsets:
-					say "Your [O] [wardrobeVanishes of O]!";
-					now O is in pink wardrobe;
-				repeat with O running through worn skirt clashing clothing:
-					say "Your [O] [wardrobeVanishes of O]!";
-					now O is in pink wardrobe;
+			PinkWardrobeUnclash P;
 			now priestess-summoned is 1;
 			say "[bold type]Your runic headband gently hums as holy attire shimmers into existence around your body.[roman type][line break]";
 			summon P;
@@ -88,15 +79,11 @@ To compute class outfit of (H - runic headband):
 			say "[bold type]Your runic headband gently hums as a [cleavage-window-priestess-outfit] [bold type]appears on you![roman type][line break]";
 			summon cleavage-window-priestess-outfit;
 		otherwise if heart-pussy-skirt is off-stage and heart-pussy-hobble-skirt is not worn and (cleavage-window-priestess-outfit is worn or heart-pussy-skirt is actually summonable):
-			repeat with O running through worn skirt clashing clothing:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
+			PinkWardrobeUnclash heart-pussy-skirt;
 			say "[bold type]Your runic headband gently hums as a [heart-pussy-skirt] [bold type]appears on you![roman type][line break]";
 			summon heart-pussy-skirt;
 			if pearl crotchless-panties is off-stage:
-				repeat with O running through worn crotch covering clothing:
-					say "Your [O] [wardrobeVanishes of O]!";
-					now O is in pink wardrobe;
+				PinkWardrobeUnclash pearl crotchless-panties;
 				say "[bold type]Your runic headband gently hums as crotchless panties with a string of pearls down the middle appear on you![roman type][line break]";
 				summon pearl crotchless-panties uncursed.
 
@@ -116,7 +103,7 @@ To say QuestTitle of (Q - priestess-service-quest):
 
 To compute persistent reward of (Q - priestess-service-quest) on (C - a clothing):
 	let D be a random off-stage ring;
-	if D is ring:
+	if D is ring and (C is cursed or diaper quest is 0):
 		if diaper quest is 1:
 			now D is ruby;
 		otherwise if the size of ritual-beads <= 4:
@@ -203,25 +190,17 @@ To compute virginity-loss of (C - runic headband):
 		now C is cursed;
 		now the quest of C is priestess-vaginal-service-quest;
 		repeat with O running through worn trousers:
-			say "Your [O] [wardrobeVanishes of O]!";
-			now O is in pink wardrobe;
+			WardrobeVanish O;
 		repeat with O running through worn knickers:
-			say "Your [O] [wardrobeVanishes of O]!";
-			now O is in pink wardrobe;
+			WardrobeVanish O;
 		repeat with O running through worn bras:
-			say "Your [O] [wardrobeVanishes of O]!";
-			now O is in pink wardrobe;
+			WardrobeVanish O;
 		let PO be a random worn priestess outfit;
 		if PO is clothing:
 			transform PO into cameltoe-priestess-outfit;
 			now cameltoe-priestess-outfit is crotch-displaced;
 		otherwise:
-			repeat with O running through worn skirt clashing clothing:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn dresses:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
+			PinkWardrobeUnclash cameltoe-priestess-outfit;
 			summon cameltoe-priestess-outfit;
 			now cameltoe-priestess-outfit is crotch-displaced;
 			say "A [cameltoe-priestess-outfit] appears on you!";
@@ -274,9 +253,7 @@ An all later time based rule (this is the sinful priestess punishment rule):
 			if C is cameltoe-priestess-outfit or C is exposing-priestess-outfit:
 				say "[bold type][BigNameDesc of C] [bold type]reacts to the [semen] that's entered your womb![roman type][line break]";
 				transform C into cleavage-window-priestess-outfit;
-				repeat with O running through worn skirt clashing clothing:
-					say "Your [O] [wardrobeVanishes of O]!";
-					now O is in pink wardrobe;
+				PinkWardrobeUnclash heart-pussy-skirt;
 				summon heart-pussy-skirt;
 				say "[bold type]A [MediumDesc of heart-pussy-skirt] [bold type]appears on you![roman type][line break]".
 

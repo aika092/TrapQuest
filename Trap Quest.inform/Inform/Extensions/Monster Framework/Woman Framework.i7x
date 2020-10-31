@@ -148,6 +148,7 @@ STATES:
 95: Released from the toilet
 96: Scene with hotel beds & patrons
 97: Appeared by sitting on the throne
+98: DQ: Diaper pail
 99: Dead
 ]
 
@@ -167,7 +168,7 @@ To deploy (M - woman-player) with woman-status (V - a number):
 	now the woman-status of M is V;
 	now the sleep of M is 0;
 	now the boredom of M is 0;
-	now M is not interested;
+	now M is uninterested;
 	if M is introduced and M is summon-available and (playerRegion is Dungeon or playerRegion is Woods or playerRegion is Hotel): [stops her spawning somewhere stupid like hole in the wall, iron maiden, blindfolded]
 		now the health of M is the maxhealth of M;
 		if V is 2:
@@ -199,7 +200,7 @@ A time based rule (this is the woman spawning rule):
 		if woman-player is not regional and (woman-player is not in WoodsBoss01 or playerRegion is not woods):
 			vanish woman-player;
 		otherwise if a random number between 1 and 40 is 1 or woman-player is asleep:
-			unless woman-player is in the location of the player or woman-player is nearby or woman-player is stranger or the woman-status of woman-player >= 80, vanish woman-player.
+			unless woman-player is in the location of the player or woman-player is nearby or woman-player is stranger or (the woman-status of woman-player >= 80 and the woman-status of woman-player is not 98), vanish woman-player.
 
 This is the woman spawning to help the player with bondage rule:
 	if there is worn locked clothing and portal gag is not worn and wrist collar bar is not worn and a random number between 1 and 60 is 1 and the player is not in danger:
@@ -310,6 +311,40 @@ To compute woman hypno solo progression:
 	say "[BigNameDesc of woman-player] drools a bit as [he of woman-player] watches the screen.";
 	increase the delayed sluttification of woman-player by 1.
 
+Chapter - Crafting Scene
+
+Report going when the location is Dungeon37 and the woman-bimbo of woman-player is (4 + diaper quest) and the crafting-scene of woman-player is 0 and woman-player is redeploy appropriate:
+	let W be woman-player;
+	deploy W with woman-status 6;
+	now W is in the location of the player;
+	now W is interested;
+	now the crafting-scene of W is 1;
+	say WomanCraftSceneFlav;
+	say "Do you drink it? ";
+	if the player is consenting:
+		say "You bravely swig the vial in a single gulp. ";
+		if the player is getting unlucky:
+			let L be the list of worn upgradable clothing;
+			say "Almost immediately you can tell something is wrong. You feel uneasy[if the number of entries in L > 0]. And then the magic bursts out of your body and into your clothes![otherwise]... but nothing happens? Weird. Oh well, no harm done apparently.[end if]";
+			repeat with C running through L:
+				potentially transform C;
+			if the number of entries in L > 0, say GotUnluckyFlav;
+		otherwise:
+			say "Almost immediately, you feel great! Your mind feels sharper and some of your new desires feel less important.";
+			SexAddictDown 1;
+			DiaperAddictDown 1;
+			IntUp 1;
+	otherwise:
+		say "[BigNameDesc of W] takes the vial back and bravely swigs it in a single gulp. ";
+		if a random number between 1 and 2 is 1:
+			say "Almost immediately you can tell something is wrong.[line break][speech style of W]'I don't feel so good...'[roman type][line break]You see [his of W] mind going blanker as the magic potion transforms [his of W] clothes!";
+			ImmediatewomanSluttify;
+		otherwise:
+			say "[line break][speech style of W]'Yeah, I feel amazing!'[roman type][line break]You see [his of W] mind becoming sharper as the magic potion transforms [his of W] clothes!";
+			ImmediatewomanUnsluttify;
+			if diaper quest is 1, ImmediatewomanUnsluttify;
+		say MonsterDesc of W.
+
 Part - Wandering
 
 The woman wandering rules is a rulebook.
@@ -320,14 +355,17 @@ To decide which number is the bondage-favour-limit of (W - woman-player):
 This is the woman helps the player remove bondage rule:
 	if the woman-status of woman-player is 2 and there is worn locked clothing and the player is not at least partially immobile:
 		if the favour of woman-player < the bondage-favour-limit of woman-player:
-			say "[second custom style]'[one of]Oh god, you're never going to be able to continue like that. Oh, what's this?!'[or]Ooh, still having trouble with bondage, eh?'[stopping][roman type][line break][big he of woman-player] dangles a skeleton key in front of your face.[line break][second custom style]'It's such a shame that I don't feel like giving you this one, isn't it?'[roman type][line break]";
+			say "[speech style of woman-player]'[one of]Oh god, you're never going to be able to continue like that. Oh, what's this?!'[or]Ooh, still having trouble with bondage, eh?'[stopping][roman type][line break][big he of woman-player] dangles a skeleton key in front of your face.[line break][second custom style]'It's such a shame that I don't feel like giving you this one, isn't it?'[roman type][line break]";
 		otherwise:
-			say "[second custom style]'[one of]Oh god, you're never going to be able to continue like that. Don't worry, I'll use this key I found!'[or]I guess I should let you have my key again, eh?'[stopping][roman type][line break]";
-			say "Using the key, [he of woman-player] unlocks your bondage. The key then crumbles to dust.";
-			repeat with C running through worn locked clothing:
-				now C is unlocked;
-			say "[second custom style]'I hope I don't need it myself now, haha...'[roman type][line break]";
-			increase the delayed sluttification of woman-player by 1;
+			say "[speech style of woman-player]'[one of]Oh god, you're never going to be able to continue like that. Don't worry, I'll use this key I found!'[or]I guess I should let you have my key again, eh?'[stopping][roman type][line break]Do you let [him of woman-player] unlock your bondage?";
+			if the player is consenting:
+				say "Using the key, [he of woman-player] unlocks your bondage. The key then crumbles to dust.";
+				repeat with C running through worn locked clothing:
+					now C is unlocked;
+				say "[speech style of woman-player]'I hope I don't need it myself now, haha...'[roman type][line break]";
+				increase the delayed sluttification of woman-player by 1;
+			otherwise:
+				say "[speech style of woman-player]'Are you sure?'[roman type][line break][BigNameDesc of woman-player] looks at you like [he of woman-player][']s worried about your state of mind, but then shrugs and drops the issue.";
 		now the woman-status of woman-player is 7;
 		rule succeeds.
 The woman helps the player remove bondage rule is listed last in the woman wandering rules.

@@ -46,7 +46,15 @@ To decide which number is the knee-modifier of (S - a stockings):
 
 To restock (C - a stockings):
 	let B be a random basic loot stockings;
-	if B is stockings, now B is in Standard Item Pen.
+	if B is stockings:
+		repeat with L running through Standard Item Pen:
+			if L is stockings, remove L from Standard Item Pen;
+		add B to Standard Item Pen.
+
+This is the setup starting stockings rule:
+	let C be a random stockings;
+	restock C.
+The setup starting stockings rule is listed in the setup starting items rules.
 
 To set up influence of (C - a stockings):
 	set up random-based influence of C.
@@ -56,11 +64,6 @@ To say ShortDesc of (C - a stockings):
 
 To say ShortestDesc of (C - a stockings):
 	say "pair of stockings".
-
-This is the setup starting stockings rule:
-	let C be a random stockings;
-	restock C.
-The setup starting stockings rule is listed in the setup starting items rules.
 
 To decide which object is the coverer of (C - a stockings):
 	repeat with R running through worn leg covering crotch-in-place clothing:
@@ -142,8 +145,9 @@ The shoes stockings clash rule is listed in the stockings wearability rules.
 This is the leg covering stockings clash rule:
 	if wearing-target is stockings:
 		repeat with O running through worn leg covering clothing:
-			if summoning is 0 and autowear is false, say "You can't wear that over the [O]!";
-			rule fails.
+			if O is not skirted or (O is not slitted and summoning is 0 and O is not crotch-displaced):
+				if summoning is 0 and autowear is false, say "You can't wear that over the [O]!";
+				rule fails.
 The leg covering stockings clash rule is listed in the stockings wearability rules.
 
 stockings removability rules is a rulebook. The removability rules of stockings is usually stockings removability rules.
@@ -207,6 +211,7 @@ To say MediumDesc of (C - bunny stockings):
 	say "pair of reverse bunny outfit stockings".
 
 Definition: bunny stockings is black themed: decide yes.
+Definition: bunny stockings is unskirted themed: decide yes.
 
 Definition: bunny stockings is fetish appropriate:
 	if diaper quest is 0, decide yes;

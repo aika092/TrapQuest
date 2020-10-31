@@ -17,8 +17,10 @@ Definition: portal gag is fetish appropriate: decide no. [Never appears randomly
 Definition: portal gag is magic themed: decide yes.
 Definition: portal gag is transformation-protected: decide yes.
 
-To Squirt (L - a liquid-object) on (C - portal gag) by (N - a number):
-	say ", disappearing through the portal.".
+To SilentSquirt (L - a liquid-object) on (C - portal gag) by (N - a number):
+	if N > 0:
+		if breasts is unsoaked, say "[announced L] flows down to your chest.";
+		ContinuedDribble L on Breasts by N.
 
 To compute school periodic effect of (C - portal gag):
 	compute periodic effect of C.
@@ -29,10 +31,11 @@ To compute periodic effect of (C - portal gag):
 		if the charge of C > a random number between 16 and 40:
 			now the charge of C is 0;
 			say "[bold type][one of]You can't help but[or]Once again you[stopping] accidentally stimulate yourself with your tongue![roman type][line break]";
-			stimulate vagina from face;
-			if the player is male:
-				if penis is pushed over the edge, vaginally orgasm shamefully;[####Selkie: surely this should be penile orgasm?]
+			if the player is possessing a penis:
+				stimulate penis from face;
+				if penis is pushed over the edge, penis orgasm shamefully;[####Selkie: surely this should be penile orgasm? ###MG: Indeed!]
 			otherwise:
+				stimulate vagina from face;
 				if vagina is pushed over the edge, vaginally orgasm shamefully;
 	otherwise:
 		let M be a random monster carrying portal-pants;

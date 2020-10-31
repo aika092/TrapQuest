@@ -48,14 +48,15 @@ To set up disguise of (M - kitsune):
 		if R is 1:
 			now the target-disguise of M is vampiress;
 		otherwise:
-			now the target-disguise of M is a random acolyte;
+			if there is an unleashed acolyte, now the target-disguise of M is a random unleashed acolyte;
+			otherwise now the target-disguise of M is a random acolyte;
 	otherwise if playerRegion is dungeon:
 		if R is 1:
 			now the target-disguise of M is a random royal guard;
 		otherwise if diaper quest is 1:
 			now the target-disguise of M is a random adult baby slave;
 		otherwise:
-			now the target-disguise of M is a random wench;
+			now the target-disguise of M is a random dungeon dwelling wench;
 	otherwise if playerRegion is hotel:
 		if R is 1:
 			now the target-disguise of M is a random wrestler;
@@ -209,14 +210,12 @@ To say MonsterOfferAcceptFlav of (M - kitsune) to (T - a mystical amulet):
 To say MonsterOfferAcceptFlav of (M - kitsune) to (T - gem-strapon):
 	say "[speech style of M]'My own shiny cock! It's all a [boy of M] could dream of and more! THANK YOU!'[roman type][line break]".
 
-To say OfferThanksFlav of (M - kitsune) for (T - a thing):
-	say "[speech style of M]'Now, what do I have for you this time, hmm?'[roman type][line break]";
-	alwayscutshow figure of kitsune interact 3 for M.
-
 To say OfferFriendshipFlav of (M - kitsune):
 	say "".
 
 To compute offer reward of (M - kitsune) for (T - a thing):
+	say "[speech style of M]'Now, what do I have for you this time, hmm?'[roman type][line break]";
+	alwayscutshow figure of kitsune interact 3 for M;
 	let BV be the bartering value of T for M;
 	FavourUp M by ((1 + BV) / 2);
 	if the favour of M > 8 and the special-gifted of M is 0:
@@ -249,15 +248,12 @@ To compute offer reward of (M - kitsune) for (T - a thing):
 		say "[speech style of M]'How about... this?'[roman type][line break]";
 		let I be a random off-stage smoke bomb;
 		if skeleton key is off-stage and (there is a held smoke bomb or I is nothing), now I is skeleton key;
-		if I is nothing, now I is a random thing in Standard Item Pen;
+		if I is nothing, now I is entry 1 in Standard Item Pen;
 		if I is clothing:
 			let Z be a random number from 5 to 8;
-			while the price of I < Z:
-				if a random number from 1 to 4 > 1:
-					let I be a random clothing in Standard Item Pen;
-					decrease Z by 1;
-				otherwise:
-					now Z is -1;
+			if the price of I < Z:
+				repeat with C running through Standard Item Pen:
+					if the price of C >= Z, now I is C;
 		if I is accessory:
 			if a random number from 1 to 3 is 1:
 				now I is ruby;

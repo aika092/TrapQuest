@@ -29,7 +29,10 @@ To set up influence of (C - a suspenders):
 
 To restock (C - a suspenders):
 	let B be a random basic loot suspenders;
-	if B is suspenders, now B is in Standard Item Pen.
+	if B is suspenders:
+		repeat with L running through Standard Item Pen:
+			if L is suspenders, remove L from Standard Item Pen;
+		add B to Standard Item Pen.
 
 This is the setup starting pair of suspenders rule:
 	let C be a random suspenders;
@@ -165,6 +168,9 @@ To set up magic state of (C - demon belt):
 Definition: demon belt is transformation-protected: decide yes.
 Definition: demon belt is demonic: decide yes.
 Definition: demon belt is black themed: decide yes.
+
+To decide which number is the original price of (C - demon belt):
+	decide on 10.
 
 living belt of sturdiness is a belt. living belt of sturdiness is unique. living belt of sturdiness is biological. The printed name of living belt of sturdiness is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]living belt of sturdiness[clothing-title-after]". The text-shortcut of living belt of sturdiness is "lbs".
 

@@ -151,7 +151,7 @@ To compute drinking effect (N - 4):
 			if rectum > 1:
 				decrease rectum by 1;
 				if rectum < 1, now rectum is 1;
-	otherwise if the fat-weight of the player > 0 and weight gain fetish is 1:
+	otherwise if the fat-weight of the player > 1 and weight gain fetish is 1:
 		FatDown 1;
 		say "You feel lighter!";
 	otherwise if the raw largeness of hair > 1 and a random number between 1 and 2 is 1:

@@ -204,9 +204,6 @@ To say MonsterOfferAcceptFlav of (M - hellhound) to (T - a thing):
 	otherwise:
 		say "[BigNameDesc of M] happily takes the [ShortDesc of T] in [his of M] mouth and wags [his of M] tail.".
 
-To say OfferThanksFlav of (M - hellhound) for (T - a thing):
-	say "".
-
 Part 2 - Perception
 
 Report kneeling when hellhound is interested and hellhound is in the location of the player:
@@ -322,7 +319,7 @@ To say ClimaxAnnounce of (M - hellhound) in (F - vagina):
 	if mythical creature fetish is 1, say "[BigNameDesc of M] howls as [he of M] climaxes, filling you with [his of M] unusually hot jism. You can feel it flow into your womb[if pregnancy fetish is 1 and inhuman pregnancy > 1], surging straight for your fallopian tubes with unnatural ease[end if]. [if pregnancy fetish is 1 and inhuman pregnancy > 1 and M is mating][line break][variable custom style]Uh-oh, not pups again![roman type][line break][otherwise if pregnancy fetish is 1 and inhuman pregnancy > 1][line break][variable custom style]I can't get pregnant with puppies, can I?! I'm a human![roman type][line break][end if]";
 	otherwise say ClimaxAnnounce of M in asshole.
 
-To say CreampieFlav of (M - hellhound) of (F - a fuckhole):
+To say CreampieFlav of (M - hellhound) in (F - a fuckhole):
 	say "But rather than pulling out, [NameDesc of M] [if mythical creature fetish is 0]chuckles knowingly to [himself of M] and [end if][one of]seems to push[or]once again pushes[stopping] even deeper into your [variable F], and [if mythical creature fetish is 0]you hear something that sounds like a balloon inflating as [his of M] cock ring begins to rapidly expand inside of you[otherwise]you can't help but make high pitched noises as you feel the base of [his of M] [DickDesc of M] inflating[end if][one of][or], stretching your tired hole once again[stopping]. There's nothing you can do under the weight of the [if mythical creature fetish is 0][man of M][otherwise]demon[end if] except shudder as you are [']knotted['] by your canine [if the player is feeling dominant]nemesis[otherwise]mate[end if].";
 
 To say MessyPullOutFlav of (M - hellhound) in (F - asshole):

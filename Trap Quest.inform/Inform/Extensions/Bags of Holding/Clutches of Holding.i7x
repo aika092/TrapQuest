@@ -6,9 +6,7 @@ Definition: a sexy-clutch is hand ready: decide yes.
 
 To decide which object is the potential-upgrade-target of (C - a sack of holding):
 	if the transform-attempts of C < a random number between 0 and unlucky, decide on nothing;
-	if a random number between 1 and 2 is 1:
-		if the number of worn hand ready clothing is 0, decide on a random sexy-clutch;
-		decide on lips clutch of holding;
+	if a random number between 1 and 2 is 1 and the number of worn hand ready clothing is 0, decide on a random sexy-clutch;
 	let P be a random patterned sack of holding;
 	if P is dirty little whore sack of holding, decide on spike skull handbag of holding;
 	decide on P.

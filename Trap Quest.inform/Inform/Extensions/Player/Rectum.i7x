@@ -192,6 +192,7 @@ To check real messing:
 						let F be temporaryYesNoBackground;
 						if the player is reverse bimbo consenting:
 							now shouldMessNow is 0;
+							now willMessNow is 0;
 							say "You grit your teeth and clench your eyes and manage to hold on through the excruciating cramps.";
 							PainUp 1;
 							if the player is getting unlucky:

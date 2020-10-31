@@ -81,12 +81,11 @@ To set up (M - unicorn):
 	reset M;
 	now the monstersetup of M is 1;
 	now the raw difficulty of M is the starting difficulty of M;
+	let D be a random demon tail plug;
+	add D to the tradableItems of M, if absent;
+	add D to the taxableItems of M, if absent;
+	add demon belt to the tradableItems of M, if absent;
 	now the health of M is the maxhealth of M.
-
-[This is the spawn potential unicorn rule:
-	if a random number between 1 and 2 is 1 and centaur is not alive:
-		summon unicorn in the woods.
-The spawn potential unicorn rule is listed in the setting up woods monsters rules.]
 
 To compute perception of (M - unicorn):
 	now M is interested;
@@ -131,7 +130,7 @@ Definition: unicorn is presenting as male:
 	if lady fetish is 2, decide yes;
 	decide no.
 
- To say ChestDesc of (M - unicorn):
+To say ChestDesc of (M - unicorn):
 	say "chest".
 
 To say SummoningFlav of (M - unicorn):
@@ -148,15 +147,17 @@ Part 3 - Combat
 
 Section 1 - Protect and Attack
 
-To compute (M - a monster) protecting against (X - unicorn):
+[To compute (M - a monster) protecting against (X - unicorn):
 	if the player is upright and M is unleashed:
-		say "[BigNameDesc of X]'s horn seems to catch [NameDesc of M][']s eye, and [he of M] stares at it blankly for a moment before suddenly rounding on you.[if M is intelligent][line break][speech style of M]'Get away from [him of X]!'[roman type][line break][end if]";
-		anger M.
+		say "[BigNameDesc of X][']s horn seems to catch [NameDesc of M][']s eye, and [he of M] stares at it blankly for a moment before suddenly rounding on you.[if M is intelligent][line break][speech style of M]'Get away from [him of X]!'[roman type][line break][end if]";
+		anger M.]
 
 To compute (M - unicorn) protecting against (X - a monster):[if you are having sex, she'll get a bit turned on]
 	if (X is witch or X is gladiator or X is ballooned aeromancer) and breasts is lewdly exposed:
 		say "[BigNameDesc of M] looks from the [X]'s chest to yours, visibly blushing.[line break][speech style of M]'I-I'll be going now.'[roman type][line break]";
 		FavourDown M;
+	otherwise if the player is upright and M is guardian:
+		compute M standard fighting against X;
 	otherwise if the player is live fucked:
 		say "[BigNameDesc of M] [one of]raises [his of M] eyebrows[or]scoffs[at random] as [he of M] watches you.[line break][speech style of M]'[one of]You're doing that all wrong, you know.'[or]You know, you're really terrible at that.'[or]Um, WOW. Who taught you how to have sex?'[or]Um, are you sure you're doing that right?'[or]You look like you have no CLUE what you're doing.'[or]Wow, you're really talentless. Don't quit your day job.'[at random][roman type][line break]";
 		FavourDown M;
@@ -175,6 +176,9 @@ To compute (M - unicorn) protecting against (X - a monster):[if you are having s
 		say "[speech style of M]'A bride to be should not concern [himself of M] with things like this.'[roman type][line break][BigNameDesc of M] turns to leave.";
 		now the scared of M is 30;
 		Bore M.
+
+To say AllyDamageFlav of (X - unicorn) on (M - a monster):
+	say "A bolt of magic fires from the tip of [NameDesc of X][']s horn and strikes [NameDesc of M][one of]. [BigNameDesc of X] looks surprised, as if [he of X] didn't even mean that to happen[or][stopping]!".
 
 To compute the default taunting of (M - unicorn):[TODO]
 	if M is unfriendly:
@@ -242,7 +246,7 @@ To say NearingClimaxOral of (M - unicorn):
 To say SwallowDemand of (M - a unicorn):
 	say "Your lips [one of]continue to burn with heat[or]radiate palpable heat[or]keep their heat[or]radiate intense heat[at random] as you hold the [semen] in your mouth.[line break][speech style of M]'[one of]Now swallow it. Or I'll curse you.'[or]By all means, spit it out. If you want to be cursed.'[or]Swallow, or I'll curse you.'[at random][roman type][line break]".
 
-To compute happy reward of (M - unicorn):
+To compute happy oral sex reward of (M - unicorn):
 	say "The heat remains for a few seconds before slowly dissipating.";[see above function]
 	FavourUp M by 1.
 
@@ -270,8 +274,6 @@ To decide if (M - unicorn) is losing wrapper in (F - a fuckhole):
 To compute post climax effect of (M - unicorn) in (F - a fuckhole):
 	compute M sleeping 200 after sex;
 	FavourUp M;
-	now M is uninterested;
-	bore M;
 	if newbie tips is 1, say sleeping tip.
 
 To say sexSubmitNearingClimax of (M - a unicorn) in (F - a fuckhole):
@@ -303,9 +305,6 @@ To say CreampieFlav of (M - unicorn) in (F - a fuckhole):
 
 To say CondomFailFlav of (M - unicorn) in (F - a fuckhole):
 	say "[BigNameDesc of M] slams [his of M] [DickDesc of M] home, and you feel a rush of heat as the condom disappears, allowing [NameDesc of M][']s load to [one of]shoot[or]surge[or]splurt[at random] directly into your unprotected [variable F]. [big he of M] doesn't seem to notice at all, continuing to thrust until [his of M] [DickDesc of M] softens and [he of M] slumps over, asleep.".
-
-To say CondomRejectFlav of (M - unicorn):
-	say "[BigNameDesc of M] [one of]scoffs[or]frowns[or]rolls [his of M] eyes[at random], and ignores your suggestion. Looks like [he of M][']s going in bare...".
 
 To say CondomPieFlav of (M - unicorn) in (F - a fuckhole):
 	say "[BigNameDesc of M] moans with pleasure as the condom floods with warmth, shivering with relief as [his of M] softening [DickDesc of M] slides out. The heat dissipates as [he of M] slumps over, asleep.".
@@ -546,6 +545,28 @@ To say AfterDominationComment (N - a number) of (M - unicorn):
 		say "[speech style of M]'[one of]Did you have to make a mess of my face?[or]Did you have to make me look like a tart?'[or]My makeup is ruined!'[in random order][roman type][line break]";
 
 Part 4 - Conversation
+
+To say RewardFlav of (M - unicorn) for (T - a thing):
+	say "A [T] appears on the ground in front of you. [BigNameDesc of M] looks at it with mild surprise.[line break][speech style of M]'That must be for you.'[roman type][line break]".
+
+To say OfferFriendshipFlav of (M - unicorn):
+	say "[speech style of M][if M is guardian]'I guess I have to b-back you up in f-fights now, or something[otherwise if M is buddy]'You're not t-trying to steal my heart, are you? It won't work[otherwise]'T-this doesn't change anything[end if].'[roman type][line break]".
+
+To decide which number is the bartering value of (T - a bridal sissy-suspenders) for (M - unicorn):
+	decide on 6.
+
+To say MonsterOfferAcceptFlav of (M - unicorn) to (T - a bridal sissy-suspenders):
+	say "[BigNameDesc of M][']s eyes sparkle with joy.[line break][speech style of M]'Oh wow! These will be perfect for my wedding day!'[roman type][line break]".
+
+To decide which number is the bartering value of (T - a stockings) for (M - unicorn):
+	if unicorn is carrying a stockings or T is not white themed, decide on 0;
+	decide on 4.
+
+To say MonsterOfferRejectFlav of (M - unicorn) to (T - a stockings):
+	say "[BigNameDesc of M] shakes [his of M] head.[line break][speech style of M][if M is carrying an overdress]'You already gave me some white stockings, remember? I don't need a second pair, I'm only getting married once.'[otherwise if M is unfriendly]'Nuh-uh. Right now, I need something else...'[otherwise]'I do need some stockings for my wedding day, but I need them to match my dress.'[end if][roman type][line break]".
+
+To say MonsterOfferAcceptFlav of (M - unicorn) to (T - a stockings):
+	say "[BigNameDesc of M] smiles widely.[line break][speech style of M]'White stockings! These will be perfect for my wedding day!'[roman type][line break]".
 
 To say UnAnnoyedResponse of (M - unicorn):
 	say "[speech style of M]'[one of]T-that's right! Take it, you hussy!'[or]Y-yes! Don't forget your place!'[or]S-stop distracting me!'[at random][roman type][line break]".

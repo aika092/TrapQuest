@@ -1,6 +1,9 @@
 Robots Framework by Monster Framework begins here.
 
-A robot is a kind of monster. A robot is usually neuter. Understand "robo", "robot" as robot. The poison-status of a robot is -1.
+A robot is a kind of monster. A robot is usually neuter. Understand "robo", "robot" as robot. The poison-status of a robot is -1. 
+
+[can't take a robot's soul]
+A robot is usually soul-stolen.
 
 To say waitingflav of (M - a robot):
 	do nothing.
@@ -126,9 +129,6 @@ To say MonsterOfferAcceptFlav of (M - a robot) to (T - a thing):
 	otherwise:
 		say "[speech style of M]'THANK YOU FOR THE GENEROUS TIP. [caps please] ENJOY YOUR STAY.'[roman type][line break]".
 
-To say OfferThanksFlav of (M - a robot) for (T - a thing):
-	say "[speech style of M]'ALLEGIANCE STATUS: [if the favour of M > the bimbo of the player + 6]MAXIMUM[otherwise if the favour of M > the bimbo of the player + 3]AMICABLE[otherwise]ACQUAINTANCE[end if].'[roman type][line break]".
-
 To say FriendlyFoodRefuseFlav of (M - a robot):
 	say "[speech style of M]'ERROR: EXISTING FOOD DETECTED.'[roman type][line break]".
 
@@ -204,6 +204,9 @@ To say DQSpankResistExtensionFlav of (M - a robot):
 	if M is intelligent, say "[speech style of M]'[one of]REBELLION DETECTED. SPANKING LIMIT OF 15 INCREASED TO 20.'[or]RESISTANCE UNACCEPTABLE. SPANKING DURATION INCREASED.'[or]FUNCTION VOID SPANK RESISTANCE CALLED: DURATION++.'[in random order][roman type][line break]". [Can be customised for specific NPCs]
 
 Part - Conversation
+
+To say OfferFriendshipFlav of (M - a robot):
+	if M is friendly, say "[speech style of M][if M is normally ally]'ALLEGIANCE STATUS: MAXIMUM[otherwise if M is normally buddy]'ALLEGIANCE STATUS: AMICABLE[otherwise]'ALLEGIANCE STATUS: ACQUAINTANCE[end if].'[roman type][line break]".
 
 Definition: a robot is fluff-question-appropriate: decide no.
 

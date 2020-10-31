@@ -70,11 +70,7 @@ To compute class outfit of (H - cow-ears):
 		now basque-summoned is 1;
 		now the quest of H is milk-serve-quest;
 	otherwise if B is actually summonable or (B is bra and (cow-summoned is 0 or (the lactation rate of the player + the number of worn milk production clothing) < 1)):
-		if cow-summoned is 0:
-			repeat with O running through worn breast covering clothing:
-				if B is bra or B is totally-exclusive or B is bottom-exclusive:
-					say "Your [O] [wardrobeVanishes of O]!";
-					now O is in pink wardrobe;
+		PinkWardrobeUnclash B;
 		say "[bold type]Your cow ears barely noticeably quiver, and then a cow print bikini top materialises on your chest.[roman type][line break]";
 		summon B;
 		now B is milk production;

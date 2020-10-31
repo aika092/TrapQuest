@@ -93,6 +93,15 @@ To set up (M - a wrestler):
 	reset M;
 	now the monstersetup of M is 1;
 	now the raw difficulty of M is the starting difficulty of M;
+	let T be a random rubber trousers;
+	add T to the tradableItems of M, if absent;
+	let P be a random vibrating plug panties;
+	add P to the tradableItems of M, if absent;
+	add plugsuit to the tradableItems of M, if absent;
+	add piece-of-rubber to the tradableItems of M, if absent;
+	add piece-of-rubber to the taxableItems of M, if absent;
+	let W be a random ben wa balls;
+	add W to the taxableItems of M, if absent;
 	now the health of M is the maxhealth of M.
 
 To decide which number is the starting difficulty of (M - a wrestler):
@@ -106,13 +115,6 @@ To decide which number is the girth of (M - a wrestler):
 		otherwise:
 			decide on the openness of F + 1;
 	decide on 0.
-
-[This is the spawn initial wrestler rule:
-	if the number of alive wrestlers is 0:
-		if debugmode > 0, say "Summoning wrestler in hotel.";
-		let M be a random wrestler;
-		summon M in the hotel.
-The spawn initial wrestler rule is listed in the setting up hotel monsters rules.]
 
 Definition: a wrestler is human: decide yes.
 
@@ -617,7 +619,7 @@ To say OralSubmissionResponse of (M - a wrestler):[This is only called if the pl
 		say "[one of][BigNameDesc of M] relentlessly teases your [ShortDesc of penis] with [his of M] tongue[or][BigNameDesc of M] skilfully runs [his of M] tongue over your genitals, coating the entire area in spit.[or][BigNameDesc of M] teases your [ShortDesc of penis] with the very tip of [his of M] tongue, as if stimulating a clitoris[or][BigNameDesc of M] pleasures you mercilessly with [his of M] tongue.[or][BigNameDesc of M][']s tongue dances over your [sissy-penis] and taint, driving you insane with expert stimulation.[at random]";
 	otherwise:
 		say "[one of][BigNameDesc of M] teases your clit with the tip of [his of M] tongue, driving you insane with expert stimulation[or][BigNameDesc of M] pushes [his of M] tongue in and out of your [vagina], hugging your clit with [his of M] lower lip.[or][BigNameDesc of M] stimulates your labia and clit with [his of M] tongue, pistoning [his of M] fingers in and out of your pussy[or][BigNameDesc of M] slurps away at your pussy, practically torturing you with [his of M] expert tongue.[at random]";
-	if the player is male:
+	if the player is possessing a penis:
 		stimulate penis from M;
 	otherwise:
 		stimulate vagina from M;
@@ -928,7 +930,7 @@ To watersports dominate (M - a wrestler):
 	otherwise:
 		say "[line break][speech style of M]'[one of]Oh wow! I didn't even know dicks could get that small! [big please], I have to know what your piss tastes like!'[or]I never get tired of your tiny cock! Let me have another taste of that yummy piss!'[stopping][roman type][line break] [big he of M] opens [his of M] mouth wide, gesturing to [his of M] outstretched tongue with a latex-clad finger. This is too good to be true! You immediately release your hold on your bladder, allowing a shudder of relief to pass through your body as you douse [NameDesc of M] in a stream of golden [urine]. [big he of M] pushes [his of M] breasts together enticingly as [he of M] captures it in [his of M] mouth, making a show of swallowing it in one huge gulp. After [he of M]'s done, [he of M] suddenly gets up and kisses you square on the lips. Wow!";
 		slightDignify;
-		UrineTasteAddictUp 1;
+		SlowUrineTasteAddictUp 1;
 	now the bladder of the player is 0;
 	cutshow figure of wrestler cutscene 2 for M;
 	say AfterDominationComment 1 of M;
@@ -1040,6 +1042,9 @@ To say FriendlySexReleaseRefusalSpeech of (M - a wrestler):
 	say "[speech style of M]'[one of]No way! Playing with you is way too fun!'[or]Don't wimp out, I know you can take it!'[or]I know you can take it, sexy!'[or]No way, I know you can take it!'[in random order][roman type][line break]".
 
 Part 5 - Conversation
+
+To compute loot dropping of (P - a ben wa balls) by (M - a wrestler):
+	say "[speech style of M]'FINE! I'll give you my favourite toy.'[roman type][line break][BigNameDesc of M] unzips [his of M] bodysuit and pulls a [P] out of [his of P] asshole.[line break][speech style of M]'Happy now?'[roman type][line break]".
 
 Section 1 - Greeting
 

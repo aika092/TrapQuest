@@ -72,16 +72,15 @@ To trigger (Y - a bukkake trap door):
 	now Y is revealed;
 	now Y is expired;
 	if watersports fetish is 1 and a random number between 0 and bukkake fetish is 0:
-		say "A trap door opens above your head, and a torrent of [urine] cascades down and over you. You have just been completely drenched in [urine]! You feel utterly degraded inside.";
-		squirt urine on face by 50;
-		reset soak flavour;
+		say "A trap door opens above your head, and a torrent of [urine] cascades down and over you.";
+		AnnouncedSquirt urine on hair by 50;
+		say "You feel utterly degraded inside.";
 	otherwise:
 		if the semen coating of face + the semen coating of breasts + the semen coating of belly + the semen coating of thighs < 30:
-			say "A trap door opens above your head, and a deluge of a sticky translucent substance completely covers you. You squeak as you realise that this is a LOT of [semen] - and you're now covered in it from head to toe! [if the player is gendered male and the raw semen addiction of the player < 8]You've seen bukkakes like this before, but it's way less fun on the receiving end.[otherwise if the raw semen addiction of the player < 8]You've seen bukkakes before but this is ridiculous![otherwise]You've seen bukkakes like this before, but you never realised it would be so much fun![end if]";
-		otherwise:
-			say "A trap door opens above your head, and more [semen] falls down all over you. Of course since you're basically completely drenched already, it all just drips off you slowly. Think of it as a fresh coat of paint.";
-		CumFaceUp 50;
+			say "A trap door opens above your head, and a deluge of a sticky translucent substance completely covers you. You squeak as you realise that this is a LOT of [semen]!";
+		AnnouncedSquirt semen on hair by 50;
 		if the player is naked, cutshow figure of bukkake door cutscene 1 for hair;
+		say "[if the player is gendered male and the semen addiction of the player < 8]You've seen bukkakes like this before, but it's way less fun on the receiving end.[otherwise if the semen addiction of the player < 8]You've seen bukkakes before but this is ridiculous![otherwise]You've seen bukkakes like this before, but you never realised it would be so much fun![end if]";
 	let R be a random number between 7 and 13;
 	if the player is upright:
 		if the living belt of sturdiness is worn and the living belt of sturdiness is not cursed:
@@ -106,18 +105,17 @@ To trigger (Y - a bukkake hose):
 		say "A hose hidden inside the container suddenly starts spraying out [semen]. It gets all over your face[if the largeness of breasts > 5] and [BreastDesc][end if]!";
 		cutshow figure of hose cutscene 1 for face;
 		if the largeness of breasts > 5:
-			CumFaceUp X / 2;
-			CumTitsUp X / 2;
+			AnnouncedSquirt semen on face by X / 2;
+			UnannouncedSquirt semen on breasts by X / 2;
 		otherwise:
-			CumFaceUp X;
+			AnnouncedSquirt semen on face by X;
 		repeat with M running through reactive monsters:
 			say BukkakeHoseTrapReactFlav of M;
 	otherwise:
 		if X < 3, now X is 3;
 		say "A hose hidden inside the container suddenly starts spraying out ice cold water right into your face!";
 		cutshow figure of water bomb cutscene 1 for face;
-		Squirt water on face by X * 10;
-		reset soak flavour;
+		AnnouncedSquirt water on face by X * 10;
 		force cool down 2000.
 
 To say BukkakeDoorTrapReactFlav of (M - a monster):

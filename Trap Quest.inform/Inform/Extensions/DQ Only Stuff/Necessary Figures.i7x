@@ -57,7 +57,7 @@ Figure of pink smoke 2 is the file "Env/MultiFloor/smoke2.jpg".
 
 To decide which figure-name is the examine-image of (T - pink smoke):
 	if the player is upright, decide on figure of pink smoke 0;
-	if the player is female, decide on figure of pink smoke 2;
+	if the player is sexed female, decide on figure of pink smoke 2;
 	decide on figure of pink smoke 1.
 
 Figure of babhound is the file "NPCs/Mansion/Hound/hound3.png".
@@ -136,7 +136,7 @@ To decide which figure-name is the examine-image of (T - cloth revolution tattoo
 Figure of cum when messing male tattoo is the file "Items/Tats/tattoo119a.jpg".
 Figure of cum when messing female tattoo is the file "Items/Tats/tattoo119b.jpg".
 To decide which figure-name is the examine-image of (T - cum-when-messing tattoo):
-	if the player is female, decide on Figure of cum when messing female tattoo;
+	if the player is not possessing a penis, decide on Figure of cum when messing female tattoo;
 	decide on Figure of cum when messing male tattoo.
 
 Figure of demon belly mark is the file "Items/Tats/tattoo120.jpg".

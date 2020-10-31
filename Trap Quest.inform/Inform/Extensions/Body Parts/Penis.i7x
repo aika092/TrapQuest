@@ -22,7 +22,7 @@ Describes how close to orgasm the player's penis is.
 *@!]
 To decide which number is the max-rawness of (P - penis):
 	let X be the size of penis;
-	if there is a worn focus band, increase X by 2;
+	if focus band is worn, increase X by 2;
 	let P be a random worn insertable thing penetrating asshole;
 	if P is clothing and P is suppression, increase X by 1;
 	if the player is horny, decrease X by 1;
@@ -201,6 +201,7 @@ To decide which object is the at least partial concealer of (P - penis):
 
 Section 2 - Erections
 
+[Range from 1 to 10]
 penis has a number called penis-obedience. The penis-obedience of penis is 1.
 
 To PenisObedienceUp (X - a number):

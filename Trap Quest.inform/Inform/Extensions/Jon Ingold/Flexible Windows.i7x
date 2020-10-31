@@ -1058,4 +1058,3 @@ Example: * Inventory Window - A simple example showing how to place a side windo
 	The Study is a room. In the study is an old oak desk. On the desk is a Parker pen, a letter, an envelope and twenty dollars.
 
 	Test me with "take pen/take letter/i/take all".
-

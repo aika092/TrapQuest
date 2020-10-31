@@ -68,7 +68,7 @@ To consider (T - talk-greet) for (M - a monster):
 		now the printed name of talk-greet is the substituted form of "[DefeatedGreet of M]";
 	otherwise if M is unintelligent:
 		now the printed name of talk-greet is the substituted form of "[MuteGreeting of M]";
-	otherwise if the greet-window of M > 0 or M is uninterested:
+	otherwise if (the greet-window of M > 0 and M is not penetrating a body part and M is not grabbing the player and M is not wrangling a body part) or M is uninterested:
 		now the printed name of talk-greet is the substituted form of "[conventional greeting of M]";
 	otherwise:
 		now the printed name of talk-greet is the substituted form of "[vanity greeting of M]";
@@ -258,11 +258,11 @@ To say vanity greeting of (M - a monster):
 		if N is unfriendly:
 			say HelpGreeting to M with N;[help me out here/help them out!]
 		otherwise:
-			say AttentionGreeting to M with N;[Please watch this!]
+			say AttentionGreeting to M with N;["Please watch!"]
 	otherwise if M is unfriendly:
-		say UnfriendlyGreeting to M;
+		say UnfriendlyGreeting to M;[either a taunt, or a request to stop]
 	otherwise:
-		say VanityGreeting to M.
+		say VanityGreeting to M.["please follow me."]
 
 [!<SayPartnerGreetingToMonster>+
 
@@ -283,8 +283,7 @@ To say PartnerGreeting to (M - a monster):
 		otherwise if the player is not a pervert:
 			say "'[one of][or]My [F] can't take much more[or]Please! There must be someone else you can do this to[or]Not my [F][in random order]!'";
 		otherwise:
-			say "'[one of]Cum already[or]Please, just hurry up[or]Ah-ah-fuck[or]Hurry up[in random order]!'";
-		say NonEnthusiasmResponse of M.
+			say "'[one of]Cum already[or]Please, just hurry up[or]Ah-ah-fuck[or]Hurry up[in random order]!'".
 
 [!<SayNonEnthusiasmResponseOfMonster>+
 
@@ -378,14 +377,12 @@ To say FriendlyPartnerGreeting to (M - a monster):
 		otherwise:
 			say "'[one of]How am I, sexy?'[or]How do you like my fuckhole, baby?'[in random order]";
 		Arouse 100;
-		say EnthusiasmResponse of M;
 	otherwise:
 		if the player is feeling dominant:
 			if the player is gendered male, say "'Don't tell anybody about this!'";
 			otherwise say "'Just so you know, this is a one time thing.'";
 		otherwise:
-			say "'[one of]This is just a one-time thing... unless you really need to go again.'[or]And remember, you can't tell ANYONE about this...'[in random order]";
-		say NonEnthusiasmResponse of M.
+			say "'[one of]This is just a one-time thing... unless you really need to go again.'[or]And remember, you can't tell ANYONE about this...'[in random order]".
 
 [!<SayHelpGreetingToMonsterWithMonster>+
 
@@ -401,15 +398,13 @@ To say HelpGreeting to (M - a monster) with (N - a monster):
 		if the player is fully occupied, now G is face;
 		otherwise now G is a random fuckhole that is not actually occupied;
 		say "'[one of]Join in!'[or]Want to make this a gangbang, sexy?'[or]Go ahead...'[or]Don't worry, I can handle another [if M is male]guy[otherwise]girl[end if]!'[or]Don't stand there, take my [G]!'[or]Don't just stand there, my [G] is empty!'[in random order]";
-		say InvitationResponse of M with N;
 	otherwise:
 		if the player is feeling dominant:
 			say "'[one of]Are you really going to stand there and watch?'[or]Why are you watching? Do something!'[or]Don't just stand there, idiot! Help me!'[in random order]";
 		otherwise if the player is feeling submissive:
 			say "'[one of]What are you waiting for? You won't just let this happen, will you?'[or]Help me! Please! I'll do anything!'[or]Please, you can't just let this happen? Y-you'll help right?'[in random order]";
 		otherwise:
-			say "'[one of]I need help! Please, I'm not ready for this!'[or]HELP! Come on!'[or]Come on, you have to help me!'[in random order]";
-		say AssistanceResponse of M with N.
+			say "'[one of]I need help! Please, I'm not ready for this!'[or]HELP! Come on!'[or]Come on, you have to help me!'[in random order]".
 
 [!<SayInvitationResponseOfMonsterWithMonster>+
 
@@ -490,8 +485,7 @@ To say AttentionGreeting to (M - a monster) with (N - a monster):
 	if the player is feeling submissive:
 		say "'[one of]Like what you see, baby?'[or]Is this turning you on, sexy?'[or]Do you like what you see?'[or]Enjoying the show, sexy?'[in random order]";
 	otherwise:
-		say "'[one of]Y-you're still watching, right?'[or]C-could you keep watching? I promise it's important.'[or]H-hey, don't leave. I really need you to watch this.'[in random order]";
-	say AttentionResponse of M with N.
+		say "'[one of]Y-you're still watching, right?'[or]C-could you keep watching? I promise it's important.'[or]H-hey, don't leave. I really need you to watch this.'[in random order]".
 
 [!<SayAttentionResponseOfMonsterWithMonster>+
 
@@ -656,16 +650,29 @@ Displayed after the player greets a monster that is already paying attention to 
 
 +!]
 To compute vanity response of (M - a monster):
-	if M is unfriendly:
-		say PleadingResponse of M;
-	otherwise if M is ally:
-		say VanityAccepted of M;
-	otherwise if M is acquaintance:
-		say VanityAnnoyed of M;
+	let N be a random unfriendly monster penetrating a body part;
+	unless N is monster, now N is a random monster penetrating a body part;
+	if M is penetrating a body part:
+		if (M is friendly and the player is a pervert) or the player is a masochist, say EnthusiasmResponse of M;[The player is enjoying it]
+		otherwise say NonEnthusiasmResponse of M;[The player is not outwardly enjoying it.]
+	otherwise if N is a monster:
+		if N is unfriendly:
+			if the player is a masochist, say InvitationResponse of M with N;[The player invited M to join]
+			otherwise say AssistanceResponse of M with N;[The player asked M to help]
+		otherwise:
+			say AttentionResponse of M with N;[The player asked M to watch]
+	otherwise if M is unfriendly:
+		if the player is a sadist, say TauntResponse of M;[The player taunted M]
+		otherwise say PleadingResponse of M;[The player asked M for a truce]
 	otherwise:
-		favourDown M;
-		say VanityRejected of M;
-		if M is friendly, bore M.
+		if M is ally:
+			say VanityAccepted of M;
+		otherwise if M is acquaintance:
+			say VanityAnnoyed of M;
+		otherwise:
+			favourDown M;
+			say VanityRejected of M;
+			if M is friendly, bore M.
 
 [!<SayVanityAcceptedOfMonster>+
 
@@ -714,11 +721,10 @@ Handles greeting monsters that are not currently paying attention to the player.
 To say conventional greeting of (M - a monster):
 	let N be a random unfriendly monster penetrating a body part;
 	unless N is monster, now N is a random monster penetrating a body part;
-	if N is a monster:
-		if N is unfriendly:
-			say InSexGreeting to M with N;
-		otherwise:
-			say InFriendlySexGreeting to M with N;
+	if M is penetrating a body part, now N is M;
+	if N is a monster:[the player has special greetings for when they are having sex]
+		if N is unfriendly, say InSexGreeting to M with N;
+		otherwise say InFriendlySexGreeting to M with N;
 	otherwise if the player is a sadist and the times-dominated of M > 0:[the player only taunts if they're a sadist]
 		say DominantGreeting to M;
 	otherwise if the player is a masochist and the times-submitted of M > 0:[the player only brings up previous sex if they enjoyed it]
@@ -733,10 +739,10 @@ To compute conventional response of (M - a monster):
 	unless N is monster, now N is a random monster penetrating a body part;
 	if N is a monster:
 		if N is unfriendly:
-			if the player is a masochist, say InvitationResponse of M with N;
-			otherwise say AssistanceResponse of M with N;
+			if the player is a masochist, say InvitationResponse of M with N;[the player invited M to join]
+			otherwise say AssistanceResponse of M with N;[the player asked M to get them free]
 		otherwise:
-			say AttentionResponse of M;
+			say AttentionResponse of M;[the player asked M to watch]
 	otherwise if the player is a sadist and the times-dominated of M > 0:[the player only taunts if they're a sadist]
 		say DominantResponse of M;
 	otherwise if the player is a masochist and the times-submitted of M > 0:[the player only brings up previous sex if they enjoyed it]
@@ -800,7 +806,7 @@ To say DominantGreeting to (M - a monster):
 	if the class of the player is princess:
 		say "'[one of][big royal-subject of M]. I am aroused. Get on your knees, NOW.'[or][big royal-subject of M]. Your services are required. On your knees.'[or]Greetings, [royal-subject of M]. I have need of your body. On your knees, chop chop.'[at random]";
 	otherwise:
-		say "'[one of]Yo, bitch! Stay there, I want to fuck you again.'[or][if the player is male]Hey bitch, how did it feel taking my BIG DICK[otherwise]Yo bitch! You might as well just get on your knees now[end if].'[or][if the player is male]Hey bitch, how'd you like to suck my [manly-penis][otherwise]Hey bitch. Ready to go again[end if]?'[or]What's up bitch? Ready for round [the times-dominated of M + 1]?'[or]Hey bitch. Up for another round?'[at random]".
+		say "'[one of]Yo, bitch! Stay there, I want to fuck you again.'[or][if the player is possessing a penis]Hey bitch, how did it feel taking my BIG DICK[otherwise]Yo bitch! You might as well just get on your knees now[end if].'[or][if the player is possessing a penis]Hey bitch, how'd you like to suck my [manly-penis][otherwise]Hey bitch. Ready to go again[end if]?'[or]What's up bitch? Ready for round [the times-dominated of M + 1]?'[or]Hey bitch. Up for another round?'[at random]".
 
 [!<SayDominantResponseOfMonster>+
 
@@ -1091,13 +1097,13 @@ To compute unfriendly drink of (M - a monster):
 		now the boredom of M is 0;
 		now M is interested.
 
-To compute desperate drinking to (M - a monster):
+[To compute desperate drinking to (M - a monster):
 	say "You [if the player is upright]drop to your knees and [end if]beg [NameDesc of M] to give you something to drink.";
 	now the stance of the player is 1;
 	if M is unfriendly:
 		compute unfriendly drink of M;
 	otherwise:
-		compute friendly drink of M.
+		compute friendly drink of M.]
 
 To say DefeatedDrinkRequest of (M - a monster):
 	if M is diaper-enslaved:

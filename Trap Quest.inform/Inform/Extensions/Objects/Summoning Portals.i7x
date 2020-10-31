@@ -301,6 +301,7 @@ Check entering summoning-circle:
 		let D be a random worn breast covering clothing;
 		if D is transformable transformation chain clothing, potentially transform D;
 		otherwise TitFuckAddictUp 1;
+		BreastsSensitivityUp 1;
 	if R is 4:
 		say "A strange feeling ripples down your spine, and you look over your shoulder to catch your [AssDesc] having a sudden growth spurt!";
 		AssSwell a random number between 1 and 2;
@@ -661,7 +662,7 @@ To say MummyColour of (S - mysterious-mummy):
 		otherwise:
 			say "green";
 	otherwise:
-		say "smoking".[as in 'smoking candles']
+		say "white".[as in 'smoking candles']
 
 To say PortalHint of (S - mysterious-mummy):
 	if S is active:
@@ -741,6 +742,7 @@ Carry out appeasing something with mysterious-mummy:
 		otherwise:
 			say "You place [NameDesc of the noun] in front of [NameDesc of the second noun], but nothing happens.".
 
+[TODO: update]
 Check entering mysterious-mummy:
 	if the player is immobile, say "Aren't you a bit tied up at the moment?" instead;
 	if the player is in danger, say "You would, but you are currently in a fight." instead;

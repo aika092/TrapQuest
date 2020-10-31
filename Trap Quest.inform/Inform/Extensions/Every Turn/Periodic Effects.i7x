@@ -50,7 +50,7 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 			if the real size of penis > min penis size:
 				decrease the real size of penis by 1;
 				if fast TG is 3 and the size of penis < the real size of penis, decrease the real size of penis by 1; [if your penis has shrunk a lot, this is going to happen even faster!]
-		if the raw largeness of hair > the real largeness of hair and the real largeness of hair < 10, increase the real largeness of hair by 1;
+		if the raw largeness of hair > the real largeness of hair, increase the real largeness of hair by 1;
 		if the openness of asshole > the real openness of asshole and ungape is 0, increase the real openness of asshole by 1;
 		if the openness of vagina > the real openness of vagina and ungape is 0, increase the real openness of vagina by 1;
 		if the latex-transformation of the player <= 2 and ungape is 0:
@@ -74,7 +74,7 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 		otherwise if the player is possessing a vagina and the vaginalvirgin of the player is 1 and (virginity-valued is 1 or flower hairclip is worn):
 			virginreward;
 	[Virgin Curse]
-	if the remainder after dividing local-earnings by 297 < local-seconds and the player is possessing a penis and the penetrativevirgin of the player is 1 and virgincursed > 0 and transGender is 0:
+	if the remainder after dividing local-earnings by 297 < local-seconds and the player is possessing a penis and the penetrativevirgin of the player is 1 and virgincursed > 0 and transGender is 0 and the player is not in a predicament room:
 		virginpunish;
 	[Various periodic decays]
 	if the remainder after dividing local-earnings by 611 < local-seconds:
@@ -126,55 +126,7 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 					say "Some speakers come to life, and you hear an announcement![line break][second custom style]'Hey there, [NameBimbo]! Are you having fun? See, we're looking at the data here and it seems like you're taking this game very seriously. In that case, it shouldn't be a problem if we spawn in a new threat. Don't worry, I'm sure you'll figure things out...'[roman type][line break]";
 					now time-tracking is 1000;
 				otherwise:
-					decrease time-tracking by X;
-	[succubus souls]
-	if the remainder after dividing local-earnings by 250 < local-seconds and the player-class is succubus:
-		if the souls of the player is greater than 0:
-			decrease the souls of the player by 1;
-			MagicPowerUp 1;
-			if a random number between 1 and 2 > 1:
-				if a random number between 1 and 3 > 2:
-					IntUp 1;
-					say "[bold type]You feel one of the souls you have devoured infusing you with power, and find it easier to focus.[roman type][line break]";
-				otherwise if a random number between 1 and 2 > 1:
-					DexUp 1;
-					say "[bold type]You feel one of the souls you have devoured infusing you with power, and feel your body becoming more flexible.[roman type][line break]";
-				otherwise:
-					StrengthUp 1;
-					say "[bold type]You feel one of the souls you have devoured infusing you with power, and feel yourself becoming stronger.[roman type][line break]";
-			otherwise if there is a worn cursed clothing:
-				say "[bold type]You feel the power of one of your devoured souls flow through your clothing![roman type][line break]";
-				repeat with C running through worn cursed clothing:
-					bless C;
-				if there is a worn dildo heels:
-					let D be a random worn dildo heels;
-					increase the raw-magic-modifier of D by 1;
-			otherwise if a random number between 1 and 2 > 1:
-				Dignify 800;
-				say "[bold type]You feel one of the souls you have devoured fading away, and you exalt in your power over these weak mortals.[roman type][line break]";
-				SexAddictDown 1;
-				SemenAddictDown 1;
-			otherwise if the raw heel skill of the player < 10 or the largeness of breasts < 5 or the thickness of hips < 5:
-				if the raw heel skill of the player < 10:
-					HeelUp 1;
-				if the largeness of breasts < 5:
-					Bustup 1;
-				if the thickness of hips < 5:
-					HipUp 1;
-				say "[bold type]'You feel one of the souls you have devoured fading away. Its power flows into the stone in your chest, and your body becomes more womanly!!'[roman type][line break]";
-			otherwise:
-				heal asshole times 1;
-				heal vagina times 1;
-				bodyheal 1;
-				if the player is thirsty, increase the stomach-water of the player by 1;
-				say "[bold type]'You feel one of the souls you have devoured fading away, and feel its power sustaining your flesh.'[roman type][line break]";
-			increase the soul addiction of the player by 1;
-			[arouse 500;] [Aika: This didn't feel necessary to me.]
-		if the souls of the player < the soul addiction of the player:
-			say "[bold type]You feel a gnawing hunger well up within you, and are filled with a sudden desire to consume more souls.[roman type][line break]";
-			humiliate 100;
-			if a random number between the soul addiction of the player and 10 >= 10:
-				decrease the soul addiction of the player by 1.
+					decrease time-tracking by X.
 
 Part 2 - Specific Procedures
 
@@ -203,7 +155,7 @@ To compute hair colour decay:
 		if X > 20, now R is 0.
 
 To compute makeup decay:
-	if a random number between 0 and diaper quest is 0 and permanent makeup is 0 and playerRegion is not school:
+	if a random number between 0 and diaper quest is 0 and permanent makeup is 0 and playerRegion is not school and the latex-transformation of the player < 7:
 		if the make-up of face > 1:
 			say "Your make-up partially fades.";
 			FaceDown 1;
@@ -309,7 +261,7 @@ A time based rule (this is the dressup rule):
 				if the size of penis > a random number between 3 and 12:
 					say "You yelp as a [one of]rough, manly[or]soft, feminine[or][if mythical creature fetish is 1]bestial, clawed[otherwise]cold, warmth-less[end if][at random] hand wraps itself around your [ShortDesc of penis], unnaturally distorting your [ShortDesc of H] as it casts an ominous glow over your inner thighs. Shivers run up your spine as the clammy fingers firmly pump you from tip to shaft, as if trying to literally feed your junk back into your body. You can only claw helplessly at the possessed [clothing-material of H] until it stops, pleasure, humiliation, and raw [if the bimbo of the player < 14]terror[otherwise]exhilaration[end if] bubbling up from your loins at having your clothes treat you [one of]as nothing but a toy to be used[or]like their personal sex guinea pig[or]as nothing but a simple plaything[at random].";
 					PenisDown 1;
-					stimulate vagina from H;
+					stimulate penis from H;
 					now molested is 1;
 			if molested is 0 and asshole is not actually occupied:
 				say "You start and look over your shoulder as something cool and wet prods your sphincter. Your [ShortDesc of H] distort unnaturally, casting an ominous glow over your inner thighs as a dexterous tongue pushes through your anal ring. It mercilessly probes your sensitive little hole, knowing you can only claw helplessly at the possessed [clothing-material of H] until [italic type]it[roman type] decides to stop. Pleasure, [if the bimbo of the player < 14]terror[otherwise]exhilaration[end if], and humiliation at being tortured by your own clothing roil inside of you until it finally wiggles out of your [asshole].";
@@ -418,14 +370,14 @@ To compute latex transformation:
 		if the latex-transformation of the player is 2:
 			say "Some of the detail in your skin is [one of]definitely[or]once again[stopping] fading. You could also swear that you feel yourself getting slowly less and less heavy...";
 		if the latex-transformation of the player is 3:
-			say "Your skin becomes more and more smooth and featureless by the minute. You suddenly realise your [if the player is male][asshole] feels[otherwise][vagina] and [asshole] feel[end if] more... relaxed. Putting a hand back there, you realise [if the player is male]it is[otherwise]they are both[end if] extremely gaped and hanging open, almost like a sex doll. Even weirder, it doesn't feel uncomfortable at all. It's almost as if your [if the player is male]entrance is[otherwise]entrances are[end if] now completely numb...";
+			say "Your skin becomes more and more smooth and featureless by the minute. You suddenly realise your [if the player is not possessing a vagina][asshole] feels[otherwise][vagina] and [asshole] feel[end if] more... relaxed. Putting a hand back there, you realise [if the player is not possessing a vagina]it is[otherwise]they are both[end if] extremely gaped and hanging open, almost like a sex doll. Even weirder, it doesn't feel uncomfortable at all. It's almost as if your [if the player is not possessing a vagina]entrance is[otherwise]entrances are[end if] now completely numb...";
 			appropriate-cutscene-display figure of latex curse 7;
 			now the openness of asshole is 10;
 			if the player is possessing a vagina, now the openness of vagina is 10;
 		if the latex-transformation of the player is 4:
 			say "Your skin is now completely smooth and featureless - it doesn't look real but more like something made out of plastic or in a cartoon. ";
 			appropriate-cutscene-display figure of latex curse 1;
-			say "Your [if the player is male][asshole] feels[otherwise][vagina] and [asshole] feel[end if] completely rubber all the way inside - whilst you can still feel things, you probably can no longer get sore.";
+			say "Your [if the player is not possessing a vagina][asshole] feels[otherwise][vagina] and [asshole] feel[end if] completely rubber all the way inside - whilst you can still feel things, you probably can no longer get sore.";
 			now the soreness of asshole is 0;
 			now the soreness of vagina is 0;
 			now the tolerated of asshole is 0;
@@ -467,5 +419,10 @@ To decide which number is latex transformation rate:
 	let N be 264;
 	if dolly tattoo is worn, decrease N by 69;
 	decide on N.
+
+To say LatexCurseRemoval:
+	say "[if the latex-transformation of the player > 2]The feeling of your skin and bones returning is extremely weird but it's over quickly and you feel as good as new. But feeling behind you, you realise your orifices have been left gaping open. But at least you[otherwise]You[end if] are back to being fully human.[line break][variable custom style]What a relief![roman type][line break]";
+	now the latex-transformation of the player is 0;
+	if the pregnancy of the player is 2, now the pregnancy of the player is 1.
 
 Periodic Effects ends here.

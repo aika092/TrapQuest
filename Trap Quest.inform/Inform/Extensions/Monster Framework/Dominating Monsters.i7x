@@ -84,7 +84,8 @@ To compute tax return of (M - a monster):
 To compute default tax return of (M - a monster):
 	loot M;
 	if the loot dropped of M > 0, say TaxReturnDismay of M;
-	otherwise say TaxReturnFail of M.
+	otherwise say TaxReturnFail of M;
+	now the loot dropped of M is 0.
 To say TaxReturnDismay of (M - a monster):
 	say "[speech style of M]'[one of]Mark my words, I will take this back... and more.'[or]I won't forgive this.'[or]This means war.'[in random order][roman type][line break]".
 To say TaxReturnFail of (M - a monster):
@@ -200,7 +201,7 @@ To compute defeat of (M - a monster):
 		let PiT be the substituted form of "[PissFuckDesc of M]";
 		let DT be the substituted form of "[DiaperRideDesc of M]";
 		let UT be the substituted form of "[UniqueFuckDesc of M]";
-		if the player-class is succubus and M is intelligent and M is not infernal, add "Absorb [his of M] soul" to LT;
+		if the player-class is avatar and M is intelligent and M is not infernal and M is not soul-stolen, add "Steal [his of M] soul" to LT;
 		if M is banishable, add BT to LT;
 		if M is taxable, add TT to LT;
 		if M is pitiable, add PT to LT;
@@ -255,18 +256,17 @@ To compute defeat of (M - a monster):
 				now player-fucker is face;
 				compute dominating M;
 			otherwise if T matches the text "soul":
-				increase the souls of the player by 1;
-				increase the total-souls of the player by 1;
-				say "You feel the soul of [NameDesc of M] flow into you!";[Gain a soul for defeating an enemy basic implementation]
-				dignify 400;[Heal some lost humiliation on eating a soul]
-				let D be a random worn demon tail plug;
-				if D is a thing and the soreness of asshole > 0:
-					heal asshole times 5;
-					say "Your [asshole] feels much less sore.";
-				standard loot M;
-				destroy M;
+				compute soulStealing from M;
 			otherwise:
 				say "BUG: Unable to understand defeat choice.".
+
+To compute soulStealing from (M - a monster):
+	increase the total-souls of the player by 1;[Checks how many souls the player has pulled out, total.]
+	now M is soul-stolen;
+	say "You put one hand on [NameDesc of M]'s chest and another on your own, calling on the power of your master as you force [FuckerDesc of M]'s soul out of [his of M] body!";
+	compute M slinking away;
+	DifficultyUp M by 1;[Once you take a soul, defeating the monster a second time should be harder.]
+	progress quest of soul-harvest-quest.
 
 [!<Player>@<dominatedCount:Integer>*
 
@@ -299,7 +299,7 @@ To DiaperGet:
 To BlowGet:
 	increase the blow-get of the player by 1.
 
- Definition: a body part is available: decide no.
+Definition: a body part is available: decide no.
 
 Definition: an orifice (called O) is available:
 	if O is actually occupied, decide no;
@@ -730,7 +730,7 @@ To compute default successful dominance of (M - a monster):
 	if player-fucking is not DOMINANT-SHAMEFUL:
 		DominateUp M;
 		DifficultyUp M by 2;
-		say "[line break]You feel [if player-fucking is DOMINANT-NEUTRAL]a bit [end if]more [if the player is gendered male]manly[otherwise]dominant[end if]![line break]";
+		[say "[line break]You feel [if player-fucking is DOMINANT-NEUTRAL]a bit [end if]more [if the player is gendered male]manly[otherwise]dominant[end if]![line break]";]
 	otherwise:
 		TimesSubmittedUp M by 1;
 		say "[line break]You feel so humiliated...[line break]".
@@ -749,7 +749,7 @@ To compute unique dominance reward of (M - a monster):
 To compute default dominance reward of (M - a monster):
 	if player-fucking >= DOMINANT-DOMINANT:
 		DelicateDown 2;
-	otherwise: [female players don't have penis length to gain, so better delicate decrease]
+	otherwise if player-fucking is not DOMINANT-SHAMEFUL: [female players don't have penis length to gain, so better delicate decrease]
 		DelicateDown 1.
 
 [!<sayPowerBottomCommentOfMonster>+
@@ -949,7 +949,7 @@ To diapersit dominate (M - a monster):
 			now N is the bladder of the player;
 			if N > 0:
 				say "Messing makes you wet your diaper at the same time.";
-				Squirt urine on D by N;
+				UnannouncedExpel urine on D by N;
 				now the bladder of the player is 0;
 			increase player-fucking by 1;
 			DiaperAddictUp 1;

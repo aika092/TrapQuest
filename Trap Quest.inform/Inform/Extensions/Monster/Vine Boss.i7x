@@ -79,21 +79,8 @@ To say StrikingFailureFlav of (M - vine boss) on (B - a body part):
 
 To TimesSubmittedUp (M - vine boss) by (N - a number):
 	DirectTimesSubmittedUp M by N;
-	if the class of the player is princess, compute vine betrothal;
+	if the class of the player is princess, compute betrothal of M;
 	if giant-statue is active, ChargeDown giant-statue by 40.
-
-To compute vine betrothal:
-	if debugmode > 0, say "princess-consort is [princess-consort][line break]";
-	if royal scepter is worn:
-		say "Your [printed name of royal scepter] pulses, and a pleasant feeling wells up inside of you.";
-		FatigueDown 50;[Small concession to help you avoid unwanted gangbangs right after]
-		if the charge of royal scepter < 3, increase the charge of royal scepter by 1;
-	otherwise if royal scepter is actually summonable:
-		if princess-consort is the throne:
-			now princess-consort is vine boss;
-			now royal scepter is worn by the player;
-			say "You find yourself peering wistfully at the ground below you, and somehow, you know that under there something is looking up at you. A [printed name of royal scepter] appears in your hand, as if to symbolise the blossoming of your connection.";
-			now the player is vine-cursed.
 
 To compute (M - vine boss) removing (C - a thing): [This is used for removing insertables]
 	let F be a random orifice penetrated by M;

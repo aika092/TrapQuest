@@ -1,6 +1,6 @@
 Butterfly Wings by Dresses begins here.
 
-butterfly wings is an overdress. butterfly wings is unique. butterfly wings is fully exposing. butterfly wings is no-crotch. butterfly wings is unskirted. The printed name of butterfly wings is "[clothing-title-before]butterfly wings[clothing-title-after]". The text-shortcut of butterfly wings is "bw". Understand "butter", "fly" as butterfly wings. butterfly wings is totally-exclusive.
+butterfly wings is an overdress. butterfly wings is unique. butterfly wings is biological. butterfly wings is fully exposing. butterfly wings is no-crotch. butterfly wings is unskirted. The printed name of butterfly wings is "[clothing-title-before]butterfly wings[clothing-title-after]". The text-shortcut of butterfly wings is "bw". Understand "butter", "fly" as butterfly wings.
 
 Figure of butterfly wings is the file "Items/Clothes/Upper/Special/butterfly1.png".
 
@@ -23,10 +23,34 @@ To decide which number is the luck-influence of (C - butterfly wings):
 	decide on 10.
 
 This is the carefree fairy rule:
-	if there is a worn butterfly wings and wearing-target is not diaper:
-		if summoning is 0 and autowear is false, say "Your wings flutter strongly as you try to pull it on past your knees, holding you back with a strong invisible force. Maybe you're not allowed to wear underwear?";
+	if there is a worn butterfly wings:
+		if summoning is 0 and autowear is false, say "Your wings flutter strongly as you try to pull it on past your knees, holding you back with a strong invisible force. Maybe you're not allowed to wear trousers?";
 		rule fails.
-The carefree fairy rule is listed in the knickers wearability rules.
+The carefree fairy rule is listed in the trousers wearability rules.
+
+This is the brafree fairy rule:
+	if there is a worn butterfly wings and wearing-target is not pasties:
+		if summoning is 0 and autowear is false, say "Your wings flutter strongly as you try to put your arms through the armholes, holding you back with a strong invisible force. Maybe you're not allowed to wear a bra?";
+		rule fails.
+The brafree fairy rule is listed in the bra wearability rules.
+
+This is the topfree fairy rule:
+	if there is a worn butterfly wings and wearing-target is breast covering:
+		if summoning is 0 and autowear is false, say "Your wings flutter strongly as you try to put it on, holding you back with a strong invisible force. Maybe you're not allowed to wear other clothing that covers your chest?";
+		rule fails.
+The topfree fairy rule is listed in the underdress wearability rules.
+
+This is the corsetfree fairy rule:
+	if there is a worn butterfly wings and wearing-target is breast covering:
+		if summoning is 0 and autowear is false, say "Your wings flutter strongly as you try to put it on, holding you back with a strong invisible force. Maybe you're not allowed to wear other clothing that covers your chest?";
+		rule fails.
+The corsetfree fairy rule is listed in the corset wearability rules.
+
+To UniquePinkWardrobeUnclash (C - butterfly wings):
+	repeat with O running through worn removable breast covering clothing:
+		unless O is pasties, WardrobeVanish O;
+	repeat with O running through worn trousers:
+		WardrobeVanish O.
 
 Definition: butterfly wings is class-transformation-protected:
 	if the class of the player is faerie, decide yes;

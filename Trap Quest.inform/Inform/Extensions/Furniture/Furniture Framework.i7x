@@ -60,6 +60,8 @@ Check entering furniture:
 		if the charge of the noun > 0 or timeBombTime > 0:
 			allocate 6 seconds;
 			say "It seems like it isn't time for a lecture right now." instead;
+	if the noun is automated changing station:
+		if the player is prone, say "You would need to be on two feet to use this." instead;
 	compute furniture resting on the noun;
 	do nothing instead.
 
@@ -261,6 +263,53 @@ To compute rest ending of (F - a furniture):
 
 an automated changing station is a kind of furniture. The printed name of an automated changing station is "[TQlink of item described]automated changing station[TQxlink of item described][if inline hyperlinks >= 2][link][bracket]use[close bracket][as]sit on [text-shortcut of item described][end link][end if]". The text-shortcut of an automated changing station is "acs". Understand "automated" as an automated changing station.
 public changing station is an automated changing station.
-private changing station is an automated changing station.
+[private changing station is an automated changing station.]
+hotel changing station is an automated changing station.
+Figure of automated changing station is the file "Env/MultiFloor/changingstation1.jpg".
+To decide which figure-name is the examine-image of (G - an automated changing station):
+	decide on figure of automated changing station.
+To say ExamineDesc of (G - an automated changing station):
+	say "An adult-sized capsule about the size and shape of a shower cubicle stands on one wall here. A box of disposable diapers sits secured at the base, and a pair of wristcuffs dangles from the top - it seems that it is an automated diaper changing station, seemingly ready to change the diaper of anyone who locks themselves in it.[if the player is in a predicament room][one of][line break][variable custom style]This was placed here by whatever forces put me in this predicament, wasn't it.[roman type][line break][or][stopping][end if]".
+To compute furniture resting on (G - an automated changing station):
+	allocate 6 seconds;
+	say "You enter the automated changing station and close the door. You push your wrists into the cuffs above your head. ";
+	let diaperChangeAllowed be 1;
+	let K be a random worn knickers;
+	if K is knickers:
+		repeat with C running through worn clothing:
+			if the bottom-layer of C > the bottom-layer of K:
+				now diaperChangeAllowed is 0;
+				say "Nothing happens. Perhaps the robots don't know how to get past [NameDesc of C].";
+		if diaperChangeAllowed is 1:
+			if K is locked:
+				now diaperChangeAllowed is 0;
+				say "Nothing happens. Perhaps the robots don't have a way to deal with the lock.";
+	if diaperChangeAllowed is 1:
+		let D be plain-largish-diaper;
+		if K is knickers:
+			fully clean K;
+			if D is not K, silently transform K into D;
+		otherwise:
+			summon D uncursed;
+		if the player is in a predicament room, now D is predicament-temporary;
+		say "The wristcuffs constrict themselves until you are locked in place. Robotic arms immediately get to work [if K is knickers]removing your [ShortDesc of K] [end if][if K is dirty knickers]and wiping you down [end if]";
+		if the player is not in a predicament room and the player is getting unlucky:
+			say "and... huh?! It seems the robotic arms have decided to do something else before putting a new diaper on you!";
+			let R be a random number between 1 and 3;
+			if R is 1 and asshole is not actually occupied:
+				say "You feel your [asshole] being invaded by an enema nozzle![line break][variable custom style]Uh-oh.[roman type][line break]There's absolutely nothing you can do as your belly is turned into a container for a pint of ice-cold water!";
+				AssFill 10 water;
+			otherwise if R is 2 and the player is able to orgasm:
+				say "A vibrating wand is pressed against your [genitals]! Your arousal quickly goes through the roof as the powerful toy works its magic. You [if the player is not a pervert]hold off for as long as you can but [end if]soon find yourself reaching a shuddering climax!";
+				now player-fucking is DOMINANT-DOMINANT; [prevents ejaculation from being handled]
+				vaginally orgasm shamefully;
+				now player-fucking is DOMINANT-NONE;
+			otherwise:
+				say "You feel a prick in your side as one of the arms injects you with a needle. What was that?! You feel all... numb... inside. Like you can't feel your bladder?! It seems like [bold type]the changing station has just rendered you temporarily incontinent.[roman type][line break]";
+				increase temporary-incontinence by 2;
+			say "[GotUnluckyFlav][line break]At least the arms seem to be finished with their fun for now. The claws reach down for a clean diaper ";
+		say "and before you know it you are wearing a dry [MediumDesc of D]! The wristcuffs release you and the door opens.";
+		if K is diaper, DiaperAddictUp 1.
+
 
 Furniture Framework ends here.

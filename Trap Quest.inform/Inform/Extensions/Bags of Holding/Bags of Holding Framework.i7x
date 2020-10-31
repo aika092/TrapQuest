@@ -28,6 +28,7 @@ Definition: a tincture is never-in-bag: decide yes.
 Definition: water-bomb is never-in-bag: decide yes.
 Definition: a trophy is never-in-bag: decide yes.
 Definition: ectoplasm is never-in-bag: decide yes.
+Definition: pink-spraybottle is never-in-bag: decide yes.
 
 Definition: a thing is in-bag rather than not-in-bag:
 	if it is not never-in-bag and it is carried, decide yes;
@@ -369,6 +370,15 @@ To execute (E - bag-feeding-wet-diaper) on (C - a thing):
 		say "Your bag reacts to the wetness! You feel a twinge behind your bladder as it weakens...";
 		increase incontinence by 1.
 
+bag-feeding-dry-diaper is a bag-feeding-effect.
+To execute (E - bag-feeding-dry-diaper) on (C - a thing):
+	if C is clean diaper:
+		let BG be a random worn bag of holding;
+		update upgrade target of BG;
+		if the upgrade-target of BG is diaper bag of holding or the upgrade-target of BG is baby diaper bag of holding:
+			say "Your bag reacts to the diaper!";
+			transform BG.
+
 bag-feeding-diaper-bag is a bag-feeding-effect.
 To execute (E - bag-feeding-diaper-bag) on (C - a thing):
 	if diaper messing >= 6 and C is diaper and (there is a worn diaper bag of holding or there is a worn baby diaper bag of holding):
@@ -395,7 +405,7 @@ To decide which number is the initial cringe of (B - enema-backpack):
 	decide on 2.
 
 To compute school periodic effect of (B - enema-backpack):
-	if B is not enema-released and (entry 1 in the armUses of arms is not hair or entry 2 in the armUses of arms is not hair):
+	if B is not enema-released and realisticArms is 1 and (entry 1 in the armUses of arms is not hair or entry 2 in the armUses of arms is not hair):
 		now B is enema-released;
 		say "A quiet 'click' sound heralds the backpack releasing its enema! Before you can do anything your [asshole] has been filled with a huge amount of water!!![line break][variable custom style]Ugh... so much...[roman type][line break]";
 		AssFill 20 with water;

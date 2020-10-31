@@ -80,7 +80,7 @@ Check resisting:
 		try submitting instead;
 	otherwise if there is a live thing penetrating face and diaper quest is 0:
 		now M is ex-princess;
-		if there is a male monster penetrating face and (a random number between 14 and 19 < the semen taste addiction of the player or the player is desperately craving semen):
+		if there is a male monster penetrating face and (a random number between 14 and 20 < the semen taste addiction of the player or semen is craved):
 			now M is a random monster penetrating face;
 			say OralAddResRefusalFlav of M;
 			now forced submit is 2;

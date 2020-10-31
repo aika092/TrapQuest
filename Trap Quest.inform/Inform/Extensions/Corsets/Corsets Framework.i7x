@@ -45,7 +45,10 @@ To uniquely set up (C - a corset):
 
 To restock (C - a corset):
 	let B be a random basic loot corset;
-	if B is corset, now B is in Standard Item Pen.
+	if B is corset:
+		repeat with L running through Standard Item Pen:
+			if L is corset, remove L from Standard Item Pen;
+		add B to Standard Item Pen.
 
 This is the setup starting corsets rule:
 	let C be a random corset;

@@ -50,7 +50,7 @@ Non automatic version prints reason why not if auto is set to 0. First ensures t
 
 +!]
 Definition: yourself is able to masturbate:
-	unless yourself is potentially able to masturbate, decide no;
+	if yourself is not potentially able to masturbate, decide no;
 	if yourself is able to penis masturbate, decide yes;
 	if yourself is able to vaginally masturbate, decide yes;
 	if yourself is able to anally masturbate, decide yes;
@@ -165,6 +165,17 @@ This is the bound behind blocks masturbation rule:
 		rule fails.
 The bound behind blocks masturbation rule is listed last in the global masturbation restriction rules.
 
+[!<TheLackOfSkillForAnalMasturbationRule>+
+
+Prevents masturbation.
+
++!]
+This is the lack of skill for anal masturbation rule:
+	if the buttskill of the player is 0:
+		now failed-masturbation-reason is "";
+		rule fails.
+The lack of skill for anal masturbation rule is listed in the anal masturbation restriction rules.
+
 [!<TheWristBondsBlockMasturbationRule>+
 
 Prevents masturbation.
@@ -199,7 +210,7 @@ This is the embarrassing masturbation rule:
 				rule fails;
 			if the player is not extremely horny and (A / 8000) < the number of monsters in the location of the player:[shouldn't ever trigger when the player is alone]
 				if M is monster:
-					if auto is 0, say "You can't bring yourself to [if the player is male]jack off[otherwise]finger yourself[end if] now. What if the [printed name of M] thinks you actually like [if the number of monsters penetrating asshole > 0 and diaper quest is 0]getting fucked in the[otherwise]having things up your[end if] ass!";
+					if auto is 0, say "You can't bring yourself to [if the player is possessing a penis]jack off[otherwise]finger yourself[end if] now. What if the [printed name of M] thinks you actually like [if the number of monsters penetrating asshole > 0 and diaper quest is 0]getting fucked in the[otherwise]having things up your[end if] ass!";
 					rule fails;
 	if the number of monsters penetrating vagina > 0:
 		if the vaginal sex addiction of the player < 5 and the sex addiction of the player < 10:
@@ -261,9 +272,9 @@ To compute climax effect of (C - an object):
 	do nothing.
 
 To say masturbate:
-	say "[if the bimbo of the player < 6]stimulate yourself[otherwise if the player is male]wank[otherwise]jill yourself[end if]".
+	say "[if the bimbo of the player < 6]stimulate yourself[otherwise if the player is gendered male]wank[otherwise]jill yourself[end if]".
 To say masturbating:
-	say "[if the bimbo of the player < 6]stimulating yourself[otherwise if the player is male]wanking[otherwise]jilling yourself[end if]".
+	say "[if the bimbo of the player < 6]stimulating yourself[otherwise if the player is gendered male]wanking[otherwise]jilling yourself[end if]".
 
 To decide which number is wanking:
 	if the continue masturbation rule is listed in the another-turn-rules, decide on 1;
@@ -283,7 +294,7 @@ To say PlayerFantasy:
 	let Dn be distant-friend;
 	let Nn be nemesis-friend;
 	if T is not expired and T is fucktoy hypno trap:
-		say "[second custom style][one of][if pregnancy fetish is 1]GETTING PREGNANT[otherwise]GETTING FUCKED[end if][or]BIG COCKS[or]HORNY GUYS[or]HARD COCKS[or]SITTING ON COCKS[or]FUCKING GUYS[or][if the player is male]PROSTATE ORGASMS[otherwise]DOUBLE PENETRATION[end if][or]ASS TO MOUTH[or][if pregnancy fetish is 1]CREAMPIES[otherwise]FORCED CUMDUMPS[end if][or]GANGBANGS[in random order][roman type]";[the player is masturbating because of the trap, more often than not, so it's affecting their ability to not think about slutty things.]
+		say "[second custom style][one of][if pregnancy fetish is 1]GETTING PREGNANT[otherwise]GETTING FUCKED[end if][or]BIG COCKS[or]HORNY GUYS[or]HARD COCKS[or]SITTING ON COCKS[or]FUCKING GUYS[or][if the player is sexed male]PROSTATE ORGASMS[otherwise]DOUBLE PENETRATION[end if][or]ASS TO MOUTH[or][if pregnancy fetish is 1]CREAMPIES[otherwise]FORCED CUMDUMPS[end if][or]GANGBANGS[in random order][roman type]";[the player is masturbating because of the trap, more often than not, so it's affecting their ability to not think about slutty things.]
 	otherwise if T is not expired and T is diaper hypno trap:
 		say "[second custom style][one of]GETTING BOUNCED ON MOMMY'S LAP WHILE WEARING A DIAPER[or]DADDY CUTTING A HOLE IN MY DIAPER AND FUCKING ME[or]GETTING PUNISHED BY MY BABYSITTER FOR BEING NAUGHTY[or]WETTING MY DIAPER UNTIL IT LEAKS[or]BEING DADDY'S LITTLE DIAPERSLUT[or]GETTING FINGERED BY MOMMY DURING A DIAPER CHANGE[or][if diaper messing >= 4]DROPPING A BIG LOAD IN MY DIAPER[end if][in random order][roman type]";
 	otherwise if T is not expired and T is cocksucker hypno trap:
@@ -396,7 +407,7 @@ Check masturbating:
 		if wanktype is COCK-WANK, now wanktype is HERM-WANK;
 		otherwise now wanktype is VAG-WANK;
 	if wanktype is NO-WANK:[that is to say, neither set of genitals worked.]
-		if the buttskill of the player is 0 or the player is not able to anally masturbate:
+		if the player is not able to anally masturbate:
 			if auto is 0, say "[failed-masturbation-reason]" instead;
 			otherwise do nothing instead;
 		otherwise:
@@ -503,7 +514,8 @@ Carry out masturbating:
 			passively stimulate asshole from masturbation-object;
 		otherwise:
 			say StartMasturbationFlav of (masturbation-object) with (M) in (C);
-			passively stimulate vagina from masturbation-object;
+			if wanktype is COCK-WANK, passively stimulate penis from masturbation-object;
+			otherwise passively stimulate vagina from masturbation-object;
 		now another-turn is 1;
 		now N is 1;
 		add the continue masturbation rule to another-turn-rules, if absent;
@@ -535,7 +547,8 @@ This is the continue masturbation rule:
 			passively stimulate asshole from masturbation-object;
 		otherwise:
 			say OngoingMasturbationFlav of (masturbation-object) with (WM) in (C);
-			passively stimulate vagina from masturbation-object;
+			if wanktype is COCK-WANK, passively stimulate penis from masturbation-object;
+			otherwise passively stimulate vagina from masturbation-object;
 		say line break;
 		now another-turn is 1;
 		add the continue masturbation rule to another-turn-rules, if absent;

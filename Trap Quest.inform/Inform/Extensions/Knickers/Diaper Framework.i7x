@@ -2,6 +2,8 @@ Diaper Framework by Knickers begins here.
 
 diaper is a kind of knickers. The armour of diaper is 11. a diaper is usually manly. a knickers has a number called mess. a knickers has a number called foreign-mess. The text-shortcut of diaper is "dp".
 
+To decide which number is the soak-limit of (C - a diaper):
+	decide on the default-soak-limit of C.
 To decide which number is the default-soak-limit of (C - a diaper):
 	decide on (the DQBulk of C + 2) * 4.
 Definition: a diaper is external fluid immune: decide yes.
@@ -321,12 +323,14 @@ Definition: a diaper (called D) is eligible: [This allows us to pull diapers tha
 
 To restock (C - a diaper):
 	let B be a random eligible diaper;
-	if B is diaper, now B is in Standard Item Pen.
+	if B is diaper:
+		repeat with L running through Standard Item Pen:
+			if L is diaper, remove L from Standard Item Pen;
+		add B to Standard Item Pen.
 
 This is the setup starting diapers rule:
 	if diaper lover >= 1 and diaper quest is 0:
 		let C be a random diaper;
-		restock C;
 		restock C.
 The setup starting diapers rule is listed in the setup starting items rules.
 
@@ -525,9 +529,11 @@ Check taking off diaper-stack: [Got to take them off one at a time, so we only c
 		diaperRemove C;
 	do nothing instead.
 
-To uniquely destroy (C - diaper-stack):
+To late uniquely destroy (C - diaper-stack):
 	repeat with D running through the list of stacked diapers:
 		remove D from play;
+		uniquely destroy D;
+		set up D;
 	truncate the list of stacked diapers to 0 entries;
 	now the perceived-mess of C is 0;
 	now the perceived-urine-soak of C is 0;
@@ -616,11 +622,9 @@ To LiquidSoak (L - milk) On (C - diaper-stack):
 To LiquidSoak (L - water) On (C - diaper-stack):
 	WaterSoakUp entry 1 of the list of stacked diapers by 1.
 
-To Squirt (L - a liquid-object) On (C - diaper-stack) by (N - a number):
-	now C is soaked;
-	UniqueSquirt L on entry 1 of the list of stacked diapers by N.
 To UniqueSquirt (L - a liquid-object) On (C - diaper-stack) by (N - a number):
-	UniqueSquirt L on entry 1 of the list of stacked diapers by N.
+	if inside-out is true, UniqueSquirt L on entry 1 of the list of stacked diapers by N;
+	otherwise UniqueSquirt L on entry (number of entries in the list of stacked diapers) of the list of stacked diapers by N;
 
 To MessUp (K - diaper-stack) by (N - a number):
 	increase the mess of entry 1 of the list of stacked diapers by N;

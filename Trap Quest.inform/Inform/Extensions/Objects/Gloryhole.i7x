@@ -458,9 +458,9 @@ An all time based rule (this is the fuckhole asscum rule):
 	if the asscum of school-fuckhole > 1:
 		decrease the asscum of school-fuckhole by 1;
 		if the player is in the location of school-fuckhole, say "The [semen] jetting out of [NameDesc of school-fuckhole][']s butthole gets all over [if the bracum of school-fuckhole > 0]the bra on [end if]the floor.";
-		SemenPuddleUp 3 in (the location of school-fuckhole);
+		SemenPuddleUp 2 in (the location of school-fuckhole);
 		repeat with B running through bras in the location of school-fuckhole:
-			CumSoak 2 on B.
+			CumSoak 1 on B.
 
 To say ExamineDesc of (C - school-fuckhole):
 	let M be the fuckhole-person of C;
@@ -542,6 +542,8 @@ Check entering school-fuckhole:
 				compute multiple choice question;
 			otherwise:
 				now player-numerical-response is 1;
+		otherwise:
+			now player-numerical-response is 2;
 		if player-numerical-response is 1:
 			now BL is carried by the player;
 			say "You keep [NameDesc of BL] for yourself.";
@@ -562,8 +564,8 @@ Check entering school-fuckhole:
 				increase the pussycum of school-fuckhole by 1;
 			otherwise:
 				if the fuckhole-rule of school-fuckhole is 2, now ruleBreaker is false;
-				increase the asscum of school-fuckhole by 1;
-				if the asscum of school-fuckhole > 1, say "As you pull out, cum starts shooting out from [his of M] asshole like a fire hydrant!";
+				increase the asscum of school-fuckhole by 2;
+				if the asscum of school-fuckhole > 2, say "As you pull out, cum starts shooting out from [his of M] asshole like a fire hydrant!";
 		otherwise if player-numerical-response is 2:
 			say "You pull out with an audible SLURP, and spill your load over [his of M] [if the buttcum of school-fuckhole > 0]cum-covered [end if]ass. You watch [his of M] toes curl as [he of M] feels your warm [semen] painting [his of M] rear.";
 			increase the buttcum of school-fuckhole by 1;

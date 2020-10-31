@@ -94,11 +94,13 @@ To set up predicament status:
 					decrease the raw strength of the player by 1;
 				now C is in Predicament20;
 			otherwise if C is listed in LC or (tough-shit is 0 and C is not armband and C is not combat visor):
+				dislodge C;
 				now C is in Predicament-Pen;
 				add C to predicamentPenList;
 			otherwise:
 				now C is predicament-fixed;
 		otherwise if C is not worn:
+			dislodge C;
 			now C is in Predicament20;
 		otherwise:
 			now C is predicament-fixed;

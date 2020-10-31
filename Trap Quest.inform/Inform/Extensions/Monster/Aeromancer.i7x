@@ -496,7 +496,7 @@ To compute fuckhole sex of (M - an aeromancer): [separated these out so it's les
 			say "[BigNameDesc of M] jeers at you as the magical sex organs fuck you.";
 		otherwise:
 			say "[one of][BigNameDesc of M][']s magic sex organs continue to fuck you.[or][BigNameDesc of M] struggles to come up with more puns as the magic tentacles piston away.[or][BigNameDesc of M] continues to violate you with [his of M] magical sex organs.[or]The invisible tentacles continue pistoning away in between [his of M] awful puns.[or]The magical tentacles fuck you extra hard when [NameDesc of M] is having extra trouble coming up with a pun. They might be a relief if they weren't so terrible.[at random]";
-	say "[speech style of M]'[one of]I think your [if F is asshole]ass[otherwise][cunt][end if] needs some airing out!'[or]After this ravaging, I think you'll be SOREing! Haha, get it?'[or]Aww, I'm sorry to burst your bubble, but I think I might have punctured your body! Don't worry, I'll be sure to fill you back up!'[or]I hope you don't feel under pressure to perform!'[or]It may be painful now, but if you get any wounds, you can always HELIUM.'[or]It looks like you're really full of hot air!'[or]It's a bird! It's a plane! It's a dick in your [if F is asshole]ass[otherwise][cunt][end if]! Hahaha!'[or]The amount of time you spend getting fucked[if the player is not female] in the ass[end if] must be pretty *high up*!'[or]I'd love to talk about a vortex, but sluts like you only care about more sex!'[in random order][roman type][line break][if the sex-length of M is 3 and the reaction of the player is 0]Despite [his of M] awful puns, you still feel humiliated, and you are continuously getting more sore.[line break][end if]";[There will be puns.]
+	say "[speech style of M]'[one of]I think your [if F is asshole]ass[otherwise][cunt][end if] needs some airing out!'[or]After this ravaging, I think you'll be SOREing! Haha, get it?'[or]Aww, I'm sorry to burst your bubble, but I think I might have punctured your body! Don't worry, I'll be sure to fill you back up!'[or]I hope you don't feel under pressure to perform!'[or]It may be painful now, but if you get any wounds, you can always HELIUM.'[or]It looks like you're really full of hot air!'[or]It's a bird! It's a plane! It's a dick in your [if F is asshole]ass[otherwise][cunt][end if]! Hahaha!'[or]The amount of time you spend getting fucked[if the player is not possessing a vagina] in the ass[end if] must be pretty *high up*!'[or]I'd love to talk about a vortex, but sluts like you only care about more sex!'[in random order][roman type][line break][if the sex-length of M is 3 and the reaction of the player is 0]Despite [his of M] awful puns, you still feel humiliated, and you are continuously getting more sore.[line break][end if]";[There will be puns.]
 	if M is penetrating asshole, ruin asshole;
 	otherwise ruin vagina;
 	decrease the sex-length of M by 1.
@@ -692,7 +692,7 @@ To say TwosomePrep of (M - an aeromancer) in (F - vagina):
 
 To say PrepTaunt of (M - an aeromancer) in (F - a fuckhole):
 	unless there is a live thing penetrating a body part:
-		say "[speech style of M]'[one of]So, now that you've had some HANG time, I think you're ready for some WANG time!'[or]Uh-oh, looks like a pretty strong breeze coming in from the south!'[or]Round and round [if the player is female]she goes, how she got that slutty[otherwise if the player is a sissy]she goes! How she became such a sissy[otherwise]he goes! How hard a fucking can he take[end if], nobody knows!'[or]The wind told me to tell you something! You're a slut! Hahahaha!'[in random order][roman type][line break]".
+		say "[speech style of M]'[one of]So, now that you've had some HANG time, I think you're ready for some WANG time!'[or]Uh-oh, looks like a pretty strong breeze coming in from the south!'[or]Round and round [if the player is gendered female]she goes, how she got that slutty[otherwise if the player is a sissy]she goes! How she became such a sissy[otherwise]he goes! How hard a fucking can he take[end if], nobody knows!'[or]The wind told me to tell you something! You're a slut! Hahahaha!'[in random order][roman type][line break]".
 
 To say PenetrationFlav of (M - an aeromancer) in (F - asshole):
 	say "The air around you compresses itself into shimmering tentacles, which take turns slapping your [AssDesc] before shooting one by one into your [asshole]. Wind lashes at your skin and clothes as [his of M] invisible tentacles begin to ruthlessly fuck you.".
@@ -872,8 +872,8 @@ To blowjob dominate (M - an aeromancer):
 		say AfterDominationComment 4 of M;
 	otherwise:
 		say "You force [NameDesc of M] to [his of M] knees, wresting the wand out of [his of M] hands. It seems to react to your touch, crackling with energy as [his of M] clothes disappear completely, leaving [if lady fetish is 2][him of M] naked except for a bright blue chastity cage[otherwise][him of M] naked[end if].[line break][speech style of M]'Wait! That's mine!'[roman type][line break][big he of M] grabs for it, but you hold it just out of reach.[line break][variable custom style]'Come on, can't you make me cum first?'[roman type][line break][big he of M] takes one look at your [SexDesc of penis] and begins to giggle.[line break][speech style of M]'OK, sure.'[roman type][line break]You puff out your chest in satisfaction at having dominated [him of M], not noticing until too late as [big he of M] takes in an enormous gulp of air and releases a focused blast of wind at your crotch. A feminine moan escapes your lips as you instantly ejaculate, your [load] of [semen] splattering across your belly and thighs. You stand there dumbfounded as [he of M] yanks the wand from your hands.";
-		CumThighsUp 1;
-		CumBellyUp 1;
+		UnannouncedSquirt semen on belly by 1;
+		UnannouncedSquirt semen on thighs by 1;
 		now player-fucking is DOMINANT-SHAMEFUL;
 		say AfterDominationComment 4 of M;
 	if sexual-penis-length >= 4, BlowGet;
@@ -1061,10 +1061,10 @@ To compute tornado experiment of (M - an aeromancer):
 			say "[line break]You suddenly lose control, groaning as your [ShortDesc of penis] explodes into the cone, which sends your [semen] flying across the room in every direction. [BigNameDesc of M] stands up slowly[if bukkake fetish is 1], thoroughly coated in your load[otherwise], [one of]obviously surprised at[or]pleased with[stopping] [his of M] own strength[end if].";
 			SemenPuddleUp the size of penis;
 			if bukkake fetish is 1:
-				CumFaceUp 1;
-				CumTitsUp 1;
-				CumThighsUp 1;
-				CumBellyUp 1;
+				UnannouncedSquirt semen on face by 1;
+				UnannouncedSquirt semen on breasts by 1;
+				UnannouncedSquirt semen on belly by 1;
+				UnannouncedSquirt semen on thighs by 1;
 			Satisfy M;
 		otherwise:
 			say "[line break][speech style of M]Oh Shi-![roman type] [BigNameDesc of M] suddenly loses control, screaming as [he of M] is pulled face first into the vortex and directly onto your rock hard cock. [big he of M] gags lewdly as your [ShortDesc of penis] slams into the back of [his of M] throat, which is that last little push that finally sends you over the edge. You groan as your cock unloads into [his of M] mouth, filling [his of M] belly with wave after wave of your [semen]. [big he of M] collapses in front of you, [if bukkake fetish is 1]lines of white rolling down [his of M] chin[otherwise]shivering[end if] as [he of M] clutches [his of M] heavily distended belly.";
@@ -1080,6 +1080,15 @@ To compute tornado experiment of (M - an aeromancer):
 	increase the science history of M by 1.
 
 Part 6 - Conversation
+
+To decide which number is the bartering value of (T - a stiletto heels) for (M - an aeromancer):
+	decide on the heel-height of T.
+
+To say MonsterOfferRejectFlav of (M - an aeromancer) to (T - a shoes):
+	say "[BigNameDesc of M] shakes [his of M] head.[line break][speech style of M]'I only wear stiletto heels.'[roman type][line break]".
+
+To say MonsterOfferAcceptFlav of (M - an aeromancer) to (T - an overdress):
+	say "[BigNameDesc of M][']s eyes light up.[line break][speech style of M]'Ooh, how pretty! A [boy of M] can never have too many heels.'[roman type][line break]".
 
 Section 1 - Greeting
 
@@ -1293,7 +1302,7 @@ To say TwosomePrep of (M - confident aeromancer) in (F - asshole):
 [CURRENTLY UNUSED]
 [To say FuckholePenetrationFlav of (M - confident aeromancer):
 	say "[BigNameDesc of M] stretches out [his of M] arms and hands towards you. You yelp as you are suddenly forced several feet off the ground by a powerful gust of wind. Cackling with glee, the aeromancer uses [his of M] mastery of air to buffet you from one end of the [if M is in the Woods]clearing[otherwise]room[end if] to the other, eventually leaving you suspended in the centre, at just above waist height. [big he of M] takes a couple of steps forward, barely containing [his of M] mirth as you [if the relevant sex addiction of M < 7]desperately try but fail to get purchase on the ground below[otherwise]look up at [him of M] in wide-eyed anticipation[end if].";
-	say "[speech style of M]'[one of]So, now that you've had some HANG time, I think you're ready for some WANG time!'[or]Uh-oh, looks like a pretty strong breeze coming in from the south!'[or]Round and round [if the player is female]she goes, how she got that slutty[otherwise if the player is a sissy]she goes! How she became such a sissy[otherwise]he goes! How hard a fucking can he take[end if], nobody knows!'[or]The wind told me to tell you something! You're a slut! Hahahaha!'[in random order][roman type]".]
+	say "[speech style of M]'[one of]So, now that you've had some HANG time, I think you're ready for some WANG time!'[or]Uh-oh, looks like a pretty strong breeze coming in from the south!'[or]Round and round [if the player is gendered female]she goes, how she got that slutty[otherwise if the player is a sissy]she goes! How she became such a sissy[otherwise]he goes! How hard a fucking can he take[end if], nobody knows!'[or]The wind told me to tell you something! You're a slut! Hahahaha!'[in random order][roman type]".]
 
 To say PenetrationFlav of (M - confident aeromancer) in (F - asshole):
 	say "The aeromancer raises [his of M] wand, which glows brightly as the air around you compresses itself into a massive, disembodied [manly-penis], only visible from the sheer speed at which it shoots up your [asshole]. Shrieking gusts of wind lash at your skin and clothes as the magical sex organ begins to ruthlessly fuck you.".

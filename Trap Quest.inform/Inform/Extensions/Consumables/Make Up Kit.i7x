@@ -52,6 +52,7 @@ Check brushing something with:
 Carry out brushing something with:
 	allocate 6 seconds;
 	say "You use the mirror to help you apply a[if the make-up of face > 1]nother[end if] layer of make up. You feel more [if diaper quest is 1]grown up[otherwise]charismatic[end if][if the make-up of face > 1], but also less dignified[end if]. You discard the used [noun].";
+	check stealing of the noun;
 	destroy the noun;
 	FaceUp 1.
 

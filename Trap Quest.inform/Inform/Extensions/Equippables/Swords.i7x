@@ -39,8 +39,7 @@ To compute offer reward of (M - a gladiator) for (T - a sword):
 		now S is dexterity-influencing;
 		say "[speech style of M]'A find such as this deserves a substantial reward. Go to the [location of S], and check the top shelf, hidden right at the back left hand side. There you will find an enchanted skirt that will protect you on your travels.'[roman type][line break]";
 	otherwise:
-		let BV be the bartering value of T for M;
-		FavourUp M by ((1 + BV) / 2);
+		compute standard offer reward of M for T.
 
 Section 0 - Sword In The Stone
 
@@ -109,7 +108,7 @@ Definition: sword-of-purity is destiny-appropriate:
 	if the class of the player is not succubus and ((the player is female and the vaginalvirgin of the player is 1) or (the player is male and fast tg >= 3)), decide yes;
 	decide no.
 Definition: sword-of-purity is destiny-prioritised:
-	if the player is female and (background-pure is 1 or flower hairclip is worn or the class of the player is virgin warrior) and the vaginalvirgin of the player is 1 and the class of the player is not succubus, decide yes;
+	if the player is female and (background-pure is 1 or flower hairclip is worn or the class of the player is virgin warrior or the class of the player is "princess") and the vaginalvirgin of the player is 1 and the class of the player is not succubus, decide yes;
 	decide no.
 
 [!<TheSwordOfPurityPussySlutRule>+
@@ -146,12 +145,22 @@ To compute sword destiny of (S - sword-of-purity):
 		SexChange the player;
 	now virginity-valued is 1;
 	virginreward;
-	if the class of the player is virgin warrior:
+	if the class of the player is "princess" and the player is possessing a vagina: [no multi-class allowed]
+		say "[bold type]You resolve to yourself that there is no way you are going to let this creepy game take away your virginity.[roman type][line break]";
+		let O be a random worn overdress;
+		if O is overdress:
+			if O is not virgin princess outfit, transform O into virgin princess outfit;
+		otherwise:
+			PinkWardrobeUnclash virgin princess outfit;
+			summon virgin princess outfit uncursed;
+		let H be a random worn headgear;
+		now the quest of H is virginity-retention-quest;
+		say "You can sense that your [MediumDesc of H] now wants you to remain a vaginal virgin!";
+	follow the player class rules; [update class]
+	if the class of the player is virgin warrior and the class of the player is not princess:
 		let K be a random worn knickers;
 		if K is not unremovable knickers:
-			if K is a thing:
-				say "Your [K] [wardrobeVanishes of K]!";
-				now K is in pink wardrobe;
+			if K is a thing, WardrobeVanish K;
 			summon white-g-string cursed;
 			now the quest of white-g-string is vaginal-virginity-quest;
 			say "A tiny tight and sheer white g-string appears over your [vagina]! You sense that it wants you to lose your vaginal virginity.";
@@ -166,7 +175,7 @@ To compute sword destiny of (S - sword-of-purity):
 		say "As you pull the sword free, it turns into a [ShortDesc of R], stuck to your hand![line break][variable custom style][if the bimbo of the player < 7]You can't be serious...[otherwise if the bimbo of the player < 14]Hmm, this actually feels like it could so some real damage![otherwise]Ooh, this is much more appropriate for a diapered baby like me![end if][roman type][line break]";
 		only destroy the noun instead;
 		do nothing instead;
-	otherwise if the vaginalvirgin of the player is 0 and the player is female:
+	otherwise if the vaginalvirgin of the player is 0 and the player is possessing a vagina:
 		let R be a random dildo sword;
 		summon R cursed;
 		say "As your hands close around the hilt, it turns into a [ShortDesc of R], which sticks to your hand![line break][variable custom style][if the bimbo of the player < 7]You can't be serious...[otherwise if the bimbo of the player < 14]Hmm, there must be a way to give this some power...[otherwise]Ooh, I can't wait to shove this massive thing inside my greedy cunt![end if][roman type][line break]";
@@ -468,11 +477,13 @@ To compute periodic effect of (H - demon broadsword):
 					decrease the arousal of H by 8;
 				otherwise:
 					say "Its red surface glistens with a mixture of your spit and its own masculine juices, causing your head to swim as you breathe in its incredibly potent masculine musk.";
-					SemenTasteAddictUp 1;
+					SlowSemenTasteAddictUp 1;
 					Arouse 200 + (the semen taste addiction of the player * 10);
 					decrease the arousal of H by 2;
 				FatigueUp 30 - S;[the lower S is, the more fatigued you get]
+				now demon lord is penetrating face;
 				BlowCount;
+				now demon lord is not penetrating face;
 				dislodge H;
 			otherwise:
 				if bukkake fetish is 1:
@@ -481,7 +492,7 @@ To compute periodic effect of (H - demon broadsword):
 				otherwise:
 					say "The [printed name of H] bends back and strikes you in the face, disorienting you and [if the player is gendered male]emasculating[otherwise]dehumanising[end if] you with its display of male power. You shiver as the pulsating length hovers above your head, causing your head to swim with its incredibly potent masculine musk.";
 					if a random number between 1 and 3 is 1, PainUp 1;
-					otherwise SemenTasteAddictUp 1;
+					otherwise SlowSemenTasteAddictUp 1;
 					Arouse 200 + (the semen taste addiction of the player * 10) + (the arousal of H * 10);
 				decrease the arousal of H by 2;
 		if H is dildoed and the arousal of H < 4 and demon lord is not alive:

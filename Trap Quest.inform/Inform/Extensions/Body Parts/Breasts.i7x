@@ -95,8 +95,8 @@ Outputs a number describing the amount of breast coverage the player gets from a
 @param <Clothing>:<C> The clothing
 @return <Number> Integer representing breast coverage
 +!]
-To decide which number is the cleavageCover of (C - a clothing):
-	if C is breast covering:
+To decide which number is the cleavageCover of (C - an object):
+	if C is breast covering clothing:
 		if C is fully covering, decide on 100;[this means the player's breasts are completely covered]
 		if C is high cut, decide on 7;
 		if C is average cut, decide on 6;
@@ -343,7 +343,7 @@ The monster doesn't do titfucks rule is listed in the breasts presentable rules.
 This is the too horny to present breasts rule:
 	if the player is horny:
 		if auto is 0 or there is an actually presentable fuckhole: [The automatic action rule does not care if you are horny, unless a fuckhole is actually presentable as well.]
-			if the player is very horny and the sensitivity of breasts < 8:
+			if the player is very horny and the sensitivity of breasts < 11:
 				if auto is 0, say "You are too aroused and your [if the player is not possessing a vagina][asshole] is[otherwise][vagina] and [asshole] are[end if] begging to be fucked; you can't bring yourself to do that!";
 				rule fails;
 			if the semen addiction of the player < 6 and bukkake fetish is 1:
@@ -639,11 +639,11 @@ To say BreastLactationRate:
 To say BreastWeight:
 	let W be the weight of breasts;
 	if the largeness of breasts > 2:
-		if the sensitivity of breasts >= 10:
+		if the sensitivity of breasts > 20:
 			say "They are extremely sensitive to the touch, similar to [if the player is not possessing a vagina]the underside of the tip of a penis[otherwise]your clitoris[end if], and you can feel them almost craving to feel a [manly-penis] rubbing in between them.";
-		otherwise if the sensitivity of breasts > 6:
+		otherwise if the sensitivity of breasts > 10:
 			say "They are sensitive to the touch, with any contact stimulating you just like an ordinary sex organ.";
-		otherwise if the sensitivity of breasts > 2:
+		otherwise if the sensitivity of breasts > 5:
 			say "They are a little sensitive to the touch, and when something rubs against them, it makes you feel light-headed and fuzzy inside, as if it was one big nipple.";
 		if W < -6:
 			say "They weigh significantly less than air and are trying to pull you up off the ground like a pair of helium balloons. [if the largeness of breasts > 7 and the number of worn bras is 0]They are floating in front of your face, obscuring your vision. [end if]";
@@ -925,8 +925,7 @@ To BustImplantsUp (X - a number):
 			let C be a random worn overdress;
 			if the class of the player is schoolgirl and the silicone volume of breasts > 3 and C is clothing and C is not daddy issues dress:
 				repeat with S running through worn skirts:
-					say "Your [S] [wardrobeVanishes of S]!";
-					now S is in pink wardrobe;
+					WardrobeVanish S;
 				transform C into daddy issues dress;
 			otherwise if C is cheerleader outfit:
 				let L be a random off-stage rubber cheerleader outfit;
@@ -949,12 +948,12 @@ breastStimulationFlavAllowed is initially true.
 To stimulate (X - breasts):
 	if breasts is pushed over the edge:
 		breasts orgasm shamefully;
-	otherwise if the sensitivity of breasts >= 2 and the player is able to get horny:
-		arouse (the square root of (the sensitivity of breasts * 1000)) * 10;
+	otherwise if the sensitivity of breasts > 5 and the player is able to get horny:
+		arouse (the square root of (the sensitivity of breasts * 500)) * 10;
 		if breastStimulationFlavAllowed is true:
-			if the sensitivity of breasts >= 10:
+			if the sensitivity of breasts > 20:
 				say "[one of]The nerves in your breasts explode with sensation! [if the player is possessing a vagina]Your [vagina] gushes with pleasure.[otherwise if the player is possessing a penis]Your [player-penis] twitches rapidly.[end if][or]Your entire body shudders with pleasure.[or]Sparks of pure euphoria fly through your brain.[or]Your super sensitive tits cause you to moan with pleasure.[at random]";
-			otherwise if the sensitivity of breasts >= 6:
+			otherwise if the sensitivity of breasts > 10:
 				say "[one of]Your breasts feel amazing. [if the player is female]Your [vagina] gets wetter.[otherwise if the player is possessing a penis]Your [player-penis] stirs gently.[end if][or][or][or]You close your eyes and shiver. it feels so good![or][or][or]Your super sensitive tits cause you to moan with pleasure.[or][or][or]You [if the player is not able to masturbate]wish you could masturbate![otherwise]can't help but gently play with yourself, eyes rolling to the back of your head with pleasure.[end if][or][stopping]";
 			otherwise:
 				say "[one of]It actually feels quite pleasurable for you.[or][or][or]You realise you are breathing heavily. Are your breasts somehow getting more sensitive?[or][or][or]You let out an involuntary whimper. It actually feels good![or][or][or]You shiver as a wave of sexual pleasure flows through you.[or][stopping]".
@@ -974,7 +973,7 @@ Report going:
 			if a random number between 5 and SM < SB:
 				say "Your [ShortDesc of C] rubs against your [if SM < 24][BreastDesc] and [end if]sensitive nipples as you [if the player is upright]walk[otherwise]crawl[end if].";
 				if a random number between 1 and 5 > 1, now breastStimulationFlavAllowed is false;
-				if SB >= 10, stimulate breasts;
+				if SB > 10, stimulate breasts;
 				otherwise passively stimulate breasts;
 				now breastStimulationFlavAllowed is true;
 		otherwise if the player is prone and SB > 7 and the largeness of breasts > 10:

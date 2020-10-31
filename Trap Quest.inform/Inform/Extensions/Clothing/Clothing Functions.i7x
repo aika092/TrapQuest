@@ -413,6 +413,7 @@ To only destroy (C - clothing):
 	now C is not temporarily-removed;
 	repeat with M running through monsters:
 		now M is not rejecting C;
+	late uniquely destroy C; [some stuff needs to happen after cleaning etc.]
 	if C is headgear and C is not held and C is not in the location of the player: [headgear that is destroyed off-stage shouldn't be added to the list of recycled headgear]
 		remove C from play;
 		set up C;
@@ -421,5 +422,8 @@ To only destroy (C - clothing):
 		if C is listed in the list of stacked diapers, diaperRemove C;
 		set up C;
 		if C is headgear, commence recycling of C.
+
+To late uniquely destroy (C - a clothing):
+	do nothing.
 
 Clothing Functions ends here.

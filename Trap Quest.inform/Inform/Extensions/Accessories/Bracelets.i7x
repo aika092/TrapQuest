@@ -30,13 +30,20 @@ This is the bracelets limited to two rule:
 		rule fails.
 The bracelets limited to two rule is listed in the bracelet wearability rules.
 
-To restock (C - a bracelet):
-	let B be a random basic loot bracelet;
-	if B is bracelet, now B is in Standard Item Pen.
+focus band is a bracelet. focus band is latex. focus band is unique. The printed name of focus band is "[clothing-title-before]focus band[clothing-title-after]". The text-shortcut of focus band is "fcb". The tradability of focus band is 6.
 
-[This is the setup starting bracelets rule:
-	let C be a random bracelet;
-	restock C.
-The setup starting bracelets rule is listed in the setup starting items rules.]
+Figure of focus band is the file "Items/Accessories/Arm/focusband1.png".
+
+To decide which figure-name is clothing-image of (C - focus band):
+	decide on figure of focus band.
+
+To say ClothingDesc of (C - focus band):
+	say "A nice stretchy band that you would wear on your wrist. You [if C is worn]feel[otherwise]would be[end if] more able to endure sex without orgasming.".
+To say ShortDesc of (C - focus band):
+	say "focus band".
+
+To decide which number is the bartering value of (T - focus band) for (M - a gladiator):
+	decide on 4.
+Definition: focus band is black themed: decide yes.
 
 Bracelets ends here.

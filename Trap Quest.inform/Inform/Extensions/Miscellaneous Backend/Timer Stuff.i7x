@@ -414,7 +414,7 @@ To commence animation of (T - a cutscene animation track):
 		now the frame-tick of T is 1;
 		now the target-window of T is the map-window;
 		let F be entry 1 of the image-reel of T;
-		now temporary-map-figure is F; [This is a cheeky way of flagging that we've set up the animation for this time period. This will mean that we see the animation looping even though time has moved forward this time, but next time it'll be overridden.]
+		MapShow figure of small image; [This is a cheeky way of flagging that we've set up the animation for this time period. This will mean that we see the animation looping even though time has moved forward this time, but next time it'll be overridden.]
 		let mapH be the height of the map-window;
 		let mapW be the width of the map-window;
 		now the animW of T is the pixel-width of F;

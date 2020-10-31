@@ -99,6 +99,7 @@ To anally orgasm shamefully:
 			set up P;
 		[severeHumiliate;]
 		progress quest of anal-orgasm-quest;
+		if diaper quest is 0 and (the raw anal sex addiction of the player < 4 or there is a live thing penetrating asshole), AnalSexAddictUp 1;
 		if newbie tips is 1, say shameful tip;
 		if the player is upright, try kneeling;
 	otherwise:
@@ -138,10 +139,8 @@ To vaginally orgasm shamefully:
 		otherwise say "[if refractoryperiod > 0]You would cum again but your body is so exhausted from its most recent climax that the wave of pleasure[otherwise]You feel a wave of pleasure that[end if] is weaker and less fulfilling than a full orgasm.";
 		arouse the sex addiction of the player * 10;
 		follow the drilldo orgasm resolution rule;
-	otherwise if the player is male: [normal shameful male orgasm]
-		say "[if the player is unable to orgasm so soon]Despite your lack of arousal you[otherwise]You[end if] feel a wave of pleasure and your [if the player is upright]knees buckle[otherwise]muscles tense then relax[end if] as you [one of]cum hard[or]climax[or]orgasm[at random].[roman type][line break]";
-		orgasm;
-		punish shameful male orgasm;
+	otherwise if the player is male:
+		penis orgasm shamefully;[Unless the player is futa, we treat vaginal orgasms as penis-based.]
 	otherwise:
 		increase vaginal-orgasms by 1;
 		say VaginalOrgasmFlav;
@@ -150,16 +149,27 @@ To vaginally orgasm shamefully:
 		orgasm;
 		slowSexAddictUp 1 + the number of live things penetrating asshole;
 		if diaper quest is 1, progress quest of asshole-presenting-quest;
+		if diaper quest is 0 and (the raw vaginal sex addiction of the player < 4 or there is a live thing penetrating vagina), VaginalSexAddictUp 1;
 		[strongHumiliate;]
 		if newbie tips is 1, say shameful tip;
 		if the player is upright, try kneeling.
 
 To breasts orgasm shamefully:
-	say "[bold type]You feel a wave of pleasure and your [if the player is upright]knees buckle. [otherwise if the player is male]muscles tense then relax. [otherwise if the openness of vagina < 6]as your [vagina] dribbles a small amount of girlcum. [otherwise]as your [vagina] squirts out girlcum. [end if][one of]You've just had your first orgasm from your breasts! [or]Your orgasm triggered by your sensitive breasts leaves you panting. [stopping][roman type][line break]";
+	say "[bold type]You feel a wave of pleasure and your [if the player is upright]knees buckle. [otherwise if the player is not possessing a vagina]muscles tense then relax. [otherwise if the openness of vagina < 6]as your [vagina] dribbles a small amount of girlcum. [otherwise]as your [vagina] squirts out girlcum. [end if][one of]You've just had your first orgasm from your breasts! [or]Your orgasm triggered by your sensitive breasts leaves you panting. [stopping][roman type][line break]";
 	orgasm;
 	if the player is male, punish shameful male orgasm;
-	[severeHumiliate;]
+	TitfuckAddictUp 1;
 	if newbie tips is 1, say shameful tip;
+	if the player is upright, try kneeling.
+
+[Triggers from femdom/sissydom where the player is on the bottom.]
+To penis orgasm shamefully:
+	say "[if the player is unable to orgasm so soon]Despite your lack of arousal you[otherwise]You[end if] feel a wave of pleasure and your [if the player is upright]knees buckle[otherwise]muscles tense then relax[end if] as you [one of]cum hard[or]climax[or]orgasm[at random].[roman type][line break]";
+	orgasm;
+	[punish shameful male orgasm; For now, this doesn't reduce penis size or trigger TG]
+	if there is a live thing penetrating penis, PenisObedienceUp 1;
+	slowSexAddictUp 1 + the number of live things penetrating face;
+	[if newbie tips is 1, say shameful tip;]
 	if the player is upright, try kneeling.
 
 To punish shameful male orgasm:
@@ -227,7 +237,7 @@ This is the latex dolls don't ejaculate rule:
 The latex dolls don't ejaculate rule is listed first in the ejaculation rules.
 
 This is the girls don't jizz semen rule:
-	if the player is female, rule succeeds.
+	if the player is not possessing a penis, rule succeeds.
 The girls don't jizz semen rule is listed last in the ejaculation rules.
 
 This is the lack of penis for ejaculation rule:
@@ -336,7 +346,7 @@ To compute ejaculation:
 	if P is clothing:
 		let A be the semen load of the player;
 		if penis is exposed and A > 1:
-			CumBellyUp 1;
+			UnannouncedSquirt semen on belly by 1;
 			cumsoak (A - 1) on P;
 		otherwise:
 			cumsoak A on P;
@@ -429,7 +439,7 @@ This is the BBC orgasm resolution rule:
 The BBC orgasm resolution rule is listed last in the orgasm resolution rules.
 
 This is the girls pee when they orgasm rule:
-	if the player is possessing a vagina and (the bladder of the player > bladder-risky-level or the player is in WoodsBoss01) and player-urinating is 0:
+	if the player is possessing a vagina and player-fucking is DOMINANT-NONE and (the bladder of the player > bladder-risky-level or the player is in WoodsBoss01) and player-urinating is 0:
 		if the bladder of the player is 0, now the bladder of the player is 2;
 		now delayed urination is 2;
 		if the player is bursting, now delayed urination is 1;
@@ -537,8 +547,7 @@ Definition: a body part (called B) is pushed over the edge:
 
 Definition: breasts (called B) is pushed over the edge:
 	if the player is unable to orgasm so soon or the player is not a bit horny, decide no;
-	if the sensitivity of breasts >= 8:
-		if arousal of the player + ((the sensitivity of breasts - 7) * 1000) > a random number between 7000 and 12000, decide yes;
+	if the sensitivity of breasts > 10 and arousal of the player > a random number between 7000 and 12000, decide yes;
 	decide no.
 
 constant-stimulation-started is a number that varies.
@@ -605,7 +614,7 @@ To decide which number is the enjoyment of (F - a fuckhole):
 		if the player is immobile, decide on 4;
 		decide on 2;
 	let A be 2;
-	if there is a worn focus band, decrease A by (a random number between 0 and 3) + a random number between 0 and 3;
+	if focus band is worn, decrease A by (a random number between 0 and 3) + a random number between 0 and 3;
 	if the reaction of the player is 1 or the player is friendly-fucking, increase A by 2;
 	if A < 0, decide on 0;
 	decide on A.

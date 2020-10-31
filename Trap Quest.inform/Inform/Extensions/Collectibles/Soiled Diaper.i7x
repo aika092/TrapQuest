@@ -60,7 +60,7 @@ Carry out examining:
 		if N > 0:
 			say "[big he of the noun] is carrying [if N is 1]a soiled diaper[otherwise][N] soiled diapers[end if] in [his of the noun] hand[if N > 1]s[end if][if the noun is intelligent]. [big he of the noun] doesn't look happy about it[end if].".
 
-A diaper pail is a kind of thing. A diaper pail is not portable. The printed name of diaper pail is "[TQlink of item described]diaper pail[shortcut-desc][TQxlink of item described][verb-desc of item described]". Figure of diaper pail is the file "Env/MultiFloor/pail1.png". Understand "diaper pail", "pail" as a diaper pail.
+A diaper pail is a kind of thing. A diaper pail is not portable. The printed name of diaper pail is "[TQlink of item described]diaper pail[shortcut-desc][TQxlink of item described][verb-desc of item described]". Figure of diaper pail is the file "Env/MultiFloor/pail1.jpg". Understand "diaper pail", "pail" as a diaper pail.
 
 A game universe initialisation rule:
 	if diaper messing < 6:
@@ -71,7 +71,7 @@ Definition: a diaper pail is immune to change: decide yes.
 
 The text-shortcut of diaper pail is "dpp".
 To say ExamineDesc of (C - a diaper pail):
-	say "A large bin specifically designed to keep the smell of used diapers from escaping.".
+	say "A large plastic storage unit, five feet tall, specifically designed to keep the smell of used diapers from escaping. Since it's so tall, it doesn't only have a lid at the top but also a door at the front.".
 To say ShortDesc of (C - a diaper pail):
 	say "diaper pail".
 To decide which figure-name is the examine-image of (C - a diaper pail):
@@ -90,7 +90,7 @@ Check inserting something into a diaper pail:
 	if the noun is soiled-diaper or the noun is carried diaper:
 		if the player is immobile or the player is in danger, say "You're a bit busy!" instead;
 		allocate 3 seconds;
-		say "You open the lid of the diaper pail[if the diaper addiction of the player < 12], holding your nose[end if], and drop [NameDesc of the noun] into it. You quickly close the lid again.";
+		say "You open the lid of the diaper pail[if the diaper addiction of the player < 12], holding your nose[end if], and push [NameDesc of the noun] into it. You quickly close the lid again.";
 		only destroy the noun;
 		if the noun is soiled-diaper, add the noun to the pailed-diapers of the second noun, if absent;
 	otherwise:

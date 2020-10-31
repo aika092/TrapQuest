@@ -38,7 +38,7 @@ To say UniqueShortDesc of (C - a court heels):
 	say "court heels".
 
 To say ClothingDesc of (C - a court heels):
-	say "A pair of [heel-height of C] inch [if C is glass]transparent glass[otherwise if C is leather]red leather[otherwise if C is satin]black satin[otherwise if C is pvc]hot pink PVC[otherwise if C is latex]shiny black[end if] fashionable shoes with a strong stiletto heel. They would be worn by noblewomen and maybe even royalty.";
+	say "A pair of [heel-height of C] inch [if C is glass]transparent glass[otherwise if C is leather]red leather[otherwise if C is satin]black satin[otherwise if C is pvc]hot pink PVC[otherwise if C is latex]shiny black[end if] fashionable shoes with a strong stiletto heel. They would be worn by noblewomen and maybe even royalty[if C is worn and C is cursed and C is latex and there is a worn cursed black catsuit]. The upper parts of the socks have completely merged with the rest of your catsuit[end if].";
 	say "[SteadinessDesc of C]".
 
 To uniquely set up (C - a court heels):

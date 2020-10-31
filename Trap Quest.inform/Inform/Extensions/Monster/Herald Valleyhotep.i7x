@@ -244,17 +244,17 @@ To compute herald's gift:
 			now R is a random number between 1 and 4;
 			if R is 1:
 				say "You feel a sudden rush of heat!";
-				SexAddictUp 3;
+				SexAddictUp 2;
 			if R is 2:
 				if diaper quest is 0:
 					say "You feel a sudden deep hunger!";
-					SemenTasteAddictUp 3;
+					SemenTasteAddictUp 2;
 				otherwise:
 					say "You feel [if there is a worn diaper]even more comfortable in your padding[otherwise]a sudden deep yearning to be padded[end if]!";
-					SilentlyDiaperAddictUp 3;
+					SilentlyDiaperAddictUp 2;
 			if R is 3:
 				say "You feel terribly fragile!";
-				SilentlyDelicateUp 3;
+				SilentlyDelicateUp 2;
 			if R is 4:
 				say "You feel a terrible sense of foreboding!";
 				humiliate 400;

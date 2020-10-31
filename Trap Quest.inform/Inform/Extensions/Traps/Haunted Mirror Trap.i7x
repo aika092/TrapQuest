@@ -19,7 +19,7 @@ To say ShortDesc of (T - a haunted mirror trap):
 
 This is the spawn initial mansion mirror traps rule:
 	repeat with N running from 1 to 3:
-		let R be a random trappable placed haunted room;
+		let R be a random trappable placed creaky haunted room;
 		let T be a random off-stage haunted mirror trap;
 		unless there is a haunted mirror trap in R, deploy T in R.
 The spawn initial mansion mirror traps rule is listed first in the set up mansion traps rules.
@@ -214,6 +214,7 @@ To compute resolution of (M - mirror-maiden):
 	say DQIronMaidenFlav;
 	now the source-room of Iron Maiden is the location of the player;[In case the player faints]
 	now the player is in Iron Maiden;
+	cutshow the examine-image of Y;
 	refresh the map-window.
 
 Haunted Mirror Trap ends here.

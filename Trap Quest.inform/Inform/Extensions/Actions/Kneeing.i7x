@@ -13,9 +13,15 @@ To decide which number is the knee damage of (P - a person):
 			if damage-explained > 1, say "[if N >= 0]+[end if][N] ([ShortDesc of S] bonus) ";
 	increase A by permanent-knee-bonus;
 	if damage-explained > 1 and permanent-knee-bonus is not 0, say "[if permanent-knee-bonus >= 0]+[end if][permanent-knee-bonus] (imprinted knee bonus) ";
-	if demon horns is worn and the total-souls of the player > 9:
-		increase A by 3;
-		if damage-explained > 1, say "+3 (over 9 souls collected) ";
+	if avatar-headpiece is worn:
+		let BF be the blackfire of avatar-headpiece;
+		if BF > 1:
+			if BF < 4:
+				increase A by 1;
+				if damage-explained > 1, say "+1 (avatar black fire)";
+			otherwise:
+				increase A by 3;
+				if damage-explained > 1, say "+3 (avatar black fire)";
 	if the player is diaper kicking:
 		decrease A by 1;
 		if damage-explained > 1, say "-1 (diaper penalty) ";

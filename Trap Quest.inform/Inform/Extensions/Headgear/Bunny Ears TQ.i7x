@@ -169,8 +169,7 @@ To compute service spill punishment:
 	if black maid headdress is worn and cafe maid headdress is off-stage:
 		transform black maid headdress into cafe maid headdress;
 		let O be a random worn overdress;
-		let CMO be a random cafe maid outfit;
-		if O is clothing and O is not CMO, transform O into CMO;
+		if O is clothing and O is not cafe-maid-outfit, transform O into cafe-maid-outfit;
 	otherwise if bondage protection is 1 or the class of the player is bunny or the class of the player is "cafe maid":
 		if the total weighty volume of hips < the largeness of breasts and the player is not bottom heavy:
 			say "You feel your butt expanding [if the silicone volume of hips > 0]with more silicone [otherwise if artificial enhancements fetish is 1]with silicone implants [end if]as punishment[if the class of the player is bunny][one of] for being a clumsy waitress[or][stopping][end if]!";
@@ -191,24 +190,13 @@ To compute class outfit of (H - bunny waitress ears):
 	let B be a random off-stage bunny waitress outfit;
 	let W be a random off-stage waitress vessel;
 	if B is actually summonable or (B is bunny outfit and bunny-summoned is 0 and the number of worn bunny outfit is 0):
-		if bunny-summoned is 0:
-			repeat with O running through worn dresses:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn exclusive corsets:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn skirted clothing:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn trousers:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
+		PinkWardrobeUnclash B;
 		say "[bold type]You feel your bunny waitress ears twitch as if they were real, and then a [ShortDesc of B] appears on you![roman type][line break]";
 		summon B;
 		if artificial enhancements fetish is 1, now the raw-magic-modifier of B is ((4 - the silicone volume of breasts) / 5) - 1;
 		if bunny-summoned < 1, now bunny-summoned is 1;
 	otherwise if asshole is not actually occupied and reverse bunny outfit is worn:
+		PinkWardrobeUnclash bunny tail plug;
 		say "[bold type]Suddenly, you feel a bunny tail plug invading your [asshole]![roman type][line break]";
 		summon bunny tail plug cursed with quest;
 	otherwise if W is a thing:
@@ -293,16 +281,7 @@ To compute SelfExamineDesc of (H - rubber bunny ears):
 To compute class outfit of (H - rubber bunny ears):
 	let B be a random off-stage cream rubber bunny outfit;
 	if B is actually summonable or (B is bunny outfit and rubber-bunny-summoned < 2):
-		if rubber-bunny-summoned < 2:
-			repeat with O running through worn dresses:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn exclusive corsets:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn trousers:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
+		PinkWardrobeUnclash B;
 		say "[bold type]You feel your rubber bunny ears twitch as if they were real, and then a [ShortDesc of B] appears on you![roman type][line break]";
 		summon B;
 		now the raw-magic-modifier of B is ((4 - the total egg fill of belly) / 5) - 1;

@@ -260,8 +260,7 @@ To compute diaper change of (M - a monster):
 				if new-diaper is not a diaper, now new-diaper is a random plentiful DQBulkier disposable diaper;
 				if new-diaper is diaper:
 					say DoubleDiaperFlav of M;
-					only destroy new-diaper; [clean and reset it]
-					blandify new-diaper;
+					blandify and reveal new-diaper; [clean and reset it]
 					if M is double diaper locking:
 						now new-diaper is locked;
 					otherwise:
@@ -297,13 +296,21 @@ To compute diaper change of (M - a monster):
 					let SD be a random off-stage soiled-diaper;
 					if M is diaper leaving and (old-diaper is not messed or (diaper messing >= 6 and SD is soiled-diaper)):
 						if old-diaper is diaper-stack:
+							if debugmode is 1, say "Sorting out the removal of a diaper stack...";
 							sort the list of stacked diapers in reverse order;
 							repeat with OD running through the list of stacked diapers:
-								if OD is not messed or (diaper messing >= 6 and SD is soiled-diaper):
+								if OD is messed and diaper messing >= 6 and SD is soiled-diaper:
+									if debugmode is 1, say "[OD] is replaced by a soiled diaper item.";
 									now oldDiaperLeft is SD;
 									now SD is in the location of the player;
 									DiaperPrint SD from OD;
 									let SD be a random off-stage soiled-diaper;
+								otherwise if OD is not messed:
+									if debugmode is 1, say "[OD] is placed in the room.";
+									now OD is in the location of the player;
+									remove OD from the list of stacked diapers;
+								otherwise:
+									if debugmode is 1, say "[OD] can't be handled appropriately so isn't respawned.";
 							only destroy diaper-stack;
 						otherwise if old-diaper is messed:
 							now oldDiaperLeft is SD;
@@ -314,24 +321,24 @@ To compute diaper change of (M - a monster):
 							now oldDiaperLeft is old-diaper;
 					if new-diaper is held or oldDiaperLeft is old-diaper:
 						unless oldDiaperLeft is old-diaper, only destroy old-diaper;
-						summon new-diaper;
-						blandify new-diaper;
+						if M is diaper disciplining, summon new-diaper uncursed;
+						otherwise summon new-diaper cursed;
 					otherwise:
 						if old-diaper is upgradable:
 							if the upgrade-target of old-diaper is disposable diaper, now new-diaper is the upgrade-target of old-diaper;
 						silently transform old-diaper into new-diaper;
 				otherwise:
-					summon new-diaper;
-					blandify new-diaper;
+					if M is diaper disciplining, summon new-diaper uncursed;
+					otherwise summon new-diaper cursed;
 				if old-diaper is diaper:
 					fully clean new-diaper;
 					say DiaperChangeFlav of M;
 					say DiaperChangeComment of M;
 					if oldDiaperLeft is a thing and oldDiaperLeft is in the location of the player, say DiaperDropFlav of M;
-					if new-diaper is cursed and (strongCurses is 1 or the quest of new-diaper is no-clothing-quest), compute new quest of new-diaper;
 				otherwise:
 					say DiaperDonateFlav of M;
 					say DiaperDonateComment of M;
+				if new-diaper is cursed and (strongCurses is 1 or the quest of new-diaper is no-clothing-quest), compute new quest of new-diaper;
 			fully clean new-diaper;
 			if M is diaper disciplining, now the diaper-duration of M is the diaper punishment length of M;
 		if old-diaper is diaper and M is diaper change complete cummies rewarding and the player is able to orgasm so soon:

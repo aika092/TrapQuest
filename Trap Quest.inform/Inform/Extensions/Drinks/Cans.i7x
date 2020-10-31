@@ -19,12 +19,19 @@ Figure of can is the file "Items/Accessories/Vessels/can1.png".
 To decide which figure-name is the examine-image of (V - a can):
 	decide on the figure of can.
 
-To BackgroundRender (T - a can) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
-	draw a rectangle TQcolour of fill-colour of T in the current focus window at X1 by Y1 with size DX by DY.
+To update background colour of (T - a can):
+	now the backgroundColour of T is the TQcolour of the fill-colour of T.
+
+Definition: a can is basic loot:
+	if it is off-stage, decide yes;
+	decide no.
 
 To restock (C - a can):
-	let B be a random basic loot can;
-	if B is bottle, now B is in Standard Item Pen.
+	let B be a random off-stage can;
+	if B is can:
+		repeat with L running through Standard Item Pen:
+			if L is can, remove L from Standard Item Pen;
+		add B to Standard Item Pen.
 
 To say ShortDesc of (B - a can):
 	if the fill-type of B is remembered, say "can of [FillName the fill-type of B]";
@@ -32,17 +39,14 @@ To say ShortDesc of (B - a can):
 
 This is the setup starting cans rule:
 	let C be a random can;
-	repeat with N running from 1 to (2 + diaper quest):
-		restock C.
+	restock C.
 The setup starting cans rule is listed in the setup starting items rules.
 
-To destroy (T - a can):
-	remove T from play;
+To uniquely destroy (T - a can):
 	now the magic-curse of T is bland;
 	now the curse-ID of T is sure;
 	now the max-doses of T is 1;
-	DoseFill T;
-	dislodge T.
+	DoseFill T.
 
 The can drinkability rules is a rulebook.
 The drinkability rules of a can is usually the can drinkability rules.

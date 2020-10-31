@@ -37,7 +37,27 @@ To decide what number is the original price of (C - an alchemy product):
 	decide on 4.
 
 To say MonsterOfferAcceptFlav of (M - witch) to (T - an alchemy product):
-	say "[BigNameDesc of M] gingerly takes it from you.[line break][speech style of M]'[if T is unsure]You couldn't even be bothered to identify it? Well, I guess I can pawn this off to some unsuspecting adventurer in the future. I'll take it[otherwise if T is cursed]Don't you think I have enough cursed [ShortDesc of T]s? No, no, I'll take it, just don't expect me to be over the moon or anything[otherwise if T is blessed]Wow, I haven't seen a blessed one of these in decades! I mean... not that I'm that old! Forget I said anything! Anyway, yes, thank you, I'll definitely take this off of your hands[otherwise]Nice, looks like it's in good condition too. Thanks[end if].'[roman type][line break]";
+	say "[BigNameDesc of M] gingerly takes it from you.[line break][speech style of M]'[if T is unsure]You couldn't even be bothered to identify it? Well, I guess I can pawn this off to some unsuspecting adventurer in the future. I'll take it[otherwise if T is cursed]Don't you think I have enough cursed [ShortDesc of T]s? No, no, I'll take it, just don't expect me to be over the moon or anything[otherwise if T is blessed]Wow, I haven't seen a blessed one of these in decades! I mean... not that I'm that old! Forget I said anything! Anyway, yes, thank you, I'll definitely take this off of your hands[otherwise]Nice, looks like it's in good condition too. Thanks[end if].'[roman type][line break]".
+
+
+[Quaffing is the verb used to handle potions created via alchemy. It is called automatically by the drinking verb when appropriate.]
+Quaffing is an action applying to one thing.
+Check quaffing:
+	if the noun is salve or the noun is true salve or the noun is powder, say "That cannot be drunk, try [bold type]rub[roman type]bing the [ShortDesc of the noun] on a [if the noun is salve]body part[otherwise]item of clothing[end if] instead." instead;
+	if the latex-transformation of the player > 4, say "You can no longer drink, you're too far into your transformation into a doll and your body doesn't need hydration any more." instead;
+	if the noun is not held and the player is flying, say "You can't reach!" instead;
+	if the player is overly full, say "Your stomach feels too full to drink any more right now, you should wait a while." instead;
+	if the player is wrist bound behind, say "You won't be able to drink this with your hands bound behind you." instead;
+	if the player is wrist bound in front and there are worn heels and the player is upright and the noun is not held by the player, say "With your hands tied together you won't be able to balance well enough to pick that up without getting on your knees." instead;
+	if there is a worn ballgag, say "The glass container is too delicate, you can't get anything past your [ShortDesc of random worn ballgag] safely!" instead;
+	if face is actually occupied, say "Your mouth is currently occupied!" instead.
+
+Carry out quaffing:
+	allocate 3 seconds;
+	StomachUp 1;
+	if the noun is cursed and the noun is not blessing-potion, say "That tasted really awful - you're pretty sure it was cursed![line break][variable custom style]Uh-oh. That probably hasn't done what it was supposed to do...[roman type][line break]";
+	check stealing of the noun;
+	destroy the noun.
 
 A bomb is a kind of alchemy product. Understand "bomb" as a bomb.
 
@@ -59,6 +79,7 @@ Check SmokeBombing:
 		unless the player is consenting, say "Action cancelled." instead.
 
 Carry Out SmokeBombing:
+	check stealing of the noun;
 	destroy the noun.
 
 Understand "throw [bomb] to [direction]", "throw [bomb] to escape [direction]" as SmokeBombing it to.
@@ -70,6 +91,7 @@ To decide which figure-name is the examine-image of (V - a bomb):
 Section 1 - Smoke Bomb
 
 A smoke bomb is a kind of bomb. The text-shortcut of smoke bomb is "smkb". There are 8 smoke bombs.
+The backgroundColour of a smoke bomb is 13882323. [grey]
 
 To say MediumDesc of (B - a smoke bomb):
 	say "smoke bomb".
@@ -82,8 +104,6 @@ To say ExamineDesc of (B - a smoke bomb):
 To decide which number is the alchemy key of (A - a smoke bomb):
 	decide on 29.
 
-To BackgroundRender (T - a smoke bomb) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
-	draw a rectangle TQcolour of grey in the current focus window at X1 by Y1 with size DX by DY.
 
 Carry out SmokeBombing a smoke bomb to a direction:
 	allocate 3 seconds;
@@ -161,6 +181,7 @@ Check throwing water-bomb at a monster:
 			increase the blind-status of the second noun by a random number between 3 and 5;
 			if the noun is blessed, increase the blind-status of the second noun by 4;
 		if the second noun is friendly or the second noun is not interested, compute standard damage of the second noun;
+	check stealing of the noun;
 	destroy the noun;
 	now the cum-known of water-bomb is 1 instead;
 	do nothing instead.
@@ -171,6 +192,7 @@ Check TQEating water-bomb when the cum-known of water-bomb > 0:
 		now BL is in Holding Pen;
 		try TQEating BL;
 		if BL is off-stage: [eating was successful]
+			check stealing of water-bomb;
 			destroy water-bomb instead;
 			do nothing instead;
 		otherwise:
@@ -179,6 +201,7 @@ Check TQEating water-bomb when the cum-known of water-bomb > 0:
 Section 3 - Energy Bomb
 
 energy-bomb is a bomb. The text-shortcut of energy-bomb is "nrgb". Understand "energy" as energy-bomb.
+The backgroundColour of energy-bomb is 16720896. [scarlet]
 
 Definition: energy-bomb is combat-bomb: decide yes.
 
@@ -192,9 +215,6 @@ To say ExamineDesc of (B - energy-bomb):
 
 To decide which number is the alchemy key of (A - energy-bomb):
 	decide on 31.
-
-To BackgroundRender (T - energy-bomb) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
-	draw a rectangle TQcolour of scarlet in the current focus window at X1 by Y1 with size DX by DY.
 
 Check throwing energy-bomb at a monster:
 	if the player is immobile, say "It's a bit late for that, don't you think?" instead;
@@ -210,6 +230,7 @@ Check throwing energy-bomb at a monster:
 		if the noun is blessed, increase D by 12;
 		damage D on the second noun;
 		now latestCombatFocus is the second noun;
+	check stealing of the noun;
 	destroy the noun instead;
 	do nothing instead.
 
@@ -217,6 +238,7 @@ Section 4 - Time Bomb
 
 timeBombTime is a number that varies.
 time-bomb is a bomb. The text-shortcut of time-bomb is "timb". Understand "time" as time-bomb.
+The backgroundColour of time-bomb is 65280. [lime]
 
 Definition: time-bomb is fetish appropriate:
 	if diaper quest is 0, decide yes;
@@ -232,9 +254,6 @@ To say ExamineDesc of (B - time-bomb):
 
 To decide which number is the alchemy key of (A - time-bomb):
 	decide on 32.
-
-To BackgroundRender (T - time-bomb) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
-	draw a rectangle TQcolour of lime in the current focus window at X1 by Y1 with size DX by DY.
 
 Check drinking time-bomb:
 	if the player is immobile, say "It's a bit late for that, don't you think?" instead;
@@ -372,6 +391,7 @@ To progress stopped time:
 Section 5 - Nail Bomb
 
 nail-bomb is a bomb. The text-shortcut of nail-bomb is "naib". Understand "nail" as nail-bomb.
+The backgroundColour of nail-bomb is 16711935. [magenta]
 
 Definition: nail-bomb is fetish appropriate:
 	if diaper quest is 0, decide yes;
@@ -387,9 +407,6 @@ To say ExamineDesc of (B - nail-bomb):
 
 To decide which number is the alchemy key of (A - nail-bomb):
 	decide on 33.
-
-To BackgroundRender (T - nail-bomb) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
-	draw a rectangle TQcolour of magenta in the current focus window at X1 by Y1 with size DX by DY.
 
 Definition: nail-bomb is combat-bomb: decide yes.
 
@@ -420,8 +437,9 @@ Check drinking nail-bomb:
 		now attack-type is 4;
 		repeat with M running through monsters in the location of the player:
 			if nail-bomb is bland or M is dangerous:
-				damage a random number between 9 and 12 on M;
+				damage a random number between 12 and 20 on M;
 				now latestCombatFocus is M;
+	check stealing of the noun;
 	destroy the noun instead;
 	do nothing instead.
 
@@ -439,6 +457,7 @@ To decide which figure-name is the examine-image of (V - an elixir):
 Section 1 Elixir of Magnetism
 
 magnetism-elixir is an elixir. The text-shortcut of magnetism-elixir is "em". Understand "magnetism" as magnetism-elixir.
+The backgroundColour of magnetism-elixir is 15631086. [violet]
 
 To say MediumDesc of (B - magnetism-elixir):
 	say "elixir of magnetism".
@@ -447,9 +466,6 @@ To say ExamineDesc of (B - magnetism-elixir):
 	say "A small glass flask filled with a small dose of shimmering purple liquid. ";
 	if B is sure and B is cursed, say "Since it is cursed, drinking it will probably do something bad. Perhaps you could find some other use for it, for example gifting.";
 	otherwise say "The label says that drinking it will encourage people in the region to wander towards you, but also [bold type]cause the enemies you are currently fighting to flee[if B is sure and B is blessed].[roman type] The blessed magic will make the effect last even longer than usual[end if].[roman type][line break]".
-
-To BackgroundRender (T - magnetism-elixir) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
-	draw a rectangle TQcolour of violet in the current focus window at X1 by Y1 with size DX by DY.
 
 To decide which number is the alchemy key of (A - magnetism-elixir):
 	decide on 3.
@@ -479,6 +495,7 @@ An all time based rule (this is the magnetism elixir decay rule):
 Section 2 Elixir of Life
 
 life-elixir is an elixir. life-elixir has a number called life-timer. The text-shortcut of life-elixir is "el". Understand "life" as life-elixir.
+The backgroundColour of life-elixir is 32768. [green]
 
 Definition: life-elixir is fetish appropriate:
 	if pregnancy fetish is 0, decide no;
@@ -493,14 +510,13 @@ To say ExamineDesc of (B - life-elixir):
 	if B is sure and B is cursed, say "Since it is cursed, drinking it will probably make you rapidly pregnant instead of healing you or something. Perhaps you could find some other use for it, for example gifting.[if the semen addiction of the player > 10][line break][second custom style]Or maybe I want to be pregnant...[roman type][line break][end if]";
 	otherwise say "[if B is sure and B is blessed]The blessed magic will make the effect last even longer than usual.[otherwise][line break][end if]".
 
-To BackgroundRender (T - life-elixir) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
-	draw a rectangle TQcolour of green in the current focus window at X1 by Y1 with size DX by DY.
-
 To decide which number is the alchemy key of (A - life-elixir):
 	decide on 4.
 
 Carry out quaffing life-elixir:
 	say "You pull out the tiny stopper and down the glowing liquid. [if the body soreness of the player > 0 or the soreness of asshole > 0 or the soreness of vagina > 0 and the noun is not cursed]You start to feel... healthier, as if some kind of magic particle is running around your body, healing your wounds. The particle gets to your belly. ";
+	if the latex-transformation of the player > 0:
+		say "[LatexCurseRemoval]But the elixir hasn't finished yet! ";
 	if the player is male:
 		say DefaultSexchangeFlav;
 		SexChange the player;
@@ -547,6 +563,7 @@ An all time based rule (this is the life elixir decay rule):
 Section 3 Elixir of Invigoration
 
 invigoration-elixir is an elixir. invigoration-elixir has a number called invigoration-timer. Understand "invigoration" as invigoration-elixir. The text-shortcut of invigoration-elixir is "ei".
+The backgroundColour of invigoration-elixir is 16776656. [creamy]
 
 Definition: invigoration-elixir is fetish appropriate:
 	if diaper quest is 0, decide yes;
@@ -560,15 +577,12 @@ To say ExamineDesc of (B - invigoration-elixir):
 	if B is sure and B is cursed, say "Since it is cursed, drinking it will probably only last for a few seconds or something. Perhaps you could find some other use for it, for example gifting.";
 	otherwise say "[if B is sure and B is blessed]The blessed magic will make the effect last even longer than usual.[otherwise][line break][end if]".
 
-To BackgroundRender (T - invigoration-elixir) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
-	draw a rectangle TQcolour of creamy in the current focus window at X1 by Y1 with size DX by DY.
-
 To decide which number is the alchemy key of (A - invigoration-elixir):
 	decide on 5.
 
 Carry out quaffing invigoration-elixir:
 	say "You pull out the small stopper and drink the creamy liquid. It tastes like [semen]. You feel your [fuckholes] pulse gently.";
-	SemenTasteAddictUp 1;
+	SlowSemenTasteAddictUp 1;
 	let R be a random number between 30 and 45;
 	if the noun is blessed, increase R by 30;
 	if the noun is cursed, decrease R by 29;
@@ -581,69 +595,7 @@ An all time based rule (this is the invigoration elixir decay rule):
 			say "[bold type]You feel the power of the elixir of invigoration finally fizzle away.[roman type][line break]";
 			now invigoration-timer of invigoration-elixir is 0.
 
-[Section 4 Elixir of Siphoning
-
-An elixir of siphoning is a kind of elixir. The printed name of elixir of siphoning is "[alchemy-title-before]elixir of siphoning[alchemy-title-after]". The printed plural name of elixir of siphoning is "[alchemy-title-before]elixirs of siphoning[alchemy-title-after]". The text-shortcut of elixir of siphoning is "esp". There are 2 elixir of siphoning.
-
-To say ExamineDesc of (B - an elixir of siphoning):
-	say "A round clear hip flask filled with a dose of shimmering red liquid. It looks like it could do something useful if you drank it, but who knows when it would be appropriate to drink, and if there are any side effects...".
-
-To BackgroundRender (T - an elixir of siphoning) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
-	draw a rectangle TQcolour of red in the current focus window at X1 by Y1 with size DX by DY.
-
-siphoning-elixir-timer is a number that varies. siphoning-elixir-timer is usually 0.
-siphoning-elixir-charge is a number that varies. siphoning-elixir-charge is usually 0.
-
-Carry out quaffing elixir of siphoning:
-	say "You pull out the small stopper and drink the shimmering liquid. You feel... hungry. You're not sure what that means";
-	let R be a random number between 20 and 25;
-	if the noun is blessed, now siphoning-elixir-charge is 100;
-	if the noun is cursed, now siphoning-elixir-charge is -1;
-	if the noun is not blessed and the noun is not cursed, now siphoning-elixir-charge is 1;
-	now siphoning-elixir-timer is R.
-
-A time based rule (this is the siphoning elixir decay rule):
-	if siphoning-elixir-timer > 0:
-		decrease siphoning-elixir-timer by time-seconds;
-		if siphoning-elixir-timer < 0:
-			say "You feel a wave of pleasure as your stored energy is fully absorbed into your body.";
-			if siphoning-elixir-charge > 100:
-				decrease siphoning-elixir-charge by 100;
-				let X be siphoning-elixir-charge;
-				if the player is female or the size of penis is 10:
-					if the vaginalvirgin of the player is 1 and the player is not originally female and sex-changed < 2 and the player is female:[if you haven't seen your real body since changing into a woman, AND you're a virgin, then you can change back]
-						say "Suddenly you feel your insides behind your crotch twisting and turning and rearranging themselves, and you yelp in surprise as you realise your [vagina] has been replaced by your original [player-penis]!";
-						ReverseSexChange the player;
-					otherwise:
-						say "You feel [smarter]!";
-						IntUp X / 2;
-				otherwise:
-					say "Your [player-penis] grows!";
-					PenisUp X / 2;
-				say "You feel stronger!";
-				StrengthUp X / 2;
-			otherwise if siphoning-elixir-charge > 0:
-				let X be siphoning-elixir-charge;
-				if the player is female or the size of penis is 10:
-					say "You feel [smarter]!";
-					IntUp X / 3;
-				otherwise:
-					say "Your [player-penis] grows!";
-					PenisUp X / 3;
-				say "You feel stronger!";
-				StrengthUp X / 3;
-			otherwise:
-				let X be siphoning-elixir-charge * -1;
-				if the size of penis > min penis size:
-					PenisDown (X / 2) + 1;
-				otherwise:
-					say "You feel dumber.";
-					IntDown (X / 2) + 1;
-				say "You feel weaker.";
-				StrengthDown X / 2;
-			MagicPowerUp (X / 2) + 1;[you always get a little bit of power out of it]
-			now siphoning-elixir-charge is 0;
-			now siphoning-elixir-timer is 0.]
+Part - Potions
 
 A potion is a kind of alchemy product. Understand "potion", "potion of" as potion.
 
@@ -668,9 +620,9 @@ To say ExamineDesc of (B - balance-potion):
 	if B is sure and B is cursed, say "Since it is cursed, drinking it will probably do the opposite. Perhaps you could find some other use for it, for example gifting.";
 	otherwise say "[if B is sure and B is blessed]The blessed magic will double the heel skill effect.[otherwise][line break][end if]".
 
-To BackgroundRender (T - balance-potion) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
-	let TQC be appearance corresponding to an Magic of 4 in the Table of Drinks;
-	draw a rectangle TQcolour of TQC in the current focus window at X1 by Y1 with size DX by DY.
+To update background colour of (P - balance-potion):
+	let A be appearance corresponding to an Magic of 4 in the Table of Drinks;
+	now the backgroundColour of P is the TQcolour of A.
 
 To decide which number is the alchemy key of (A - balance-potion):
 	decide on 6.
@@ -710,6 +662,7 @@ Carry out quaffing balance-potion:
 Section 2 Potion of the Womb
 
 womb-potion is a potion. The text-shortcut of womb-potion is "potw". Understand "womb" as womb-potion.
+The backgroundColour of womb-potion is 16711935. [magenta]
 
 Definition: womb-potion is fetish appropriate:
 	if pregnancy fetish is 0, decide no;
@@ -724,15 +677,14 @@ To say ExamineDesc of (B - womb-potion):
 	if B is sure and B is cursed, say "Since it is cursed, drinking it would probably make the pregnancy as inconvenient as possible. Perhaps you could find some other use for it, for example gifting.";
 	otherwise say "[if B is sure and B is blessed]The blessed magic will likely try to choose a father who will be very appreciative that you gave [him of shopkeeper] a child.[otherwise][line break][end if]".
 
-To BackgroundRender (T - womb-potion) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
-	draw a rectangle TQcolour of magenta in the current focus window at X1 by Y1 with size DX by DY.
-
 To decide which number is the alchemy key of (A - womb-potion):
 	decide on 7.
 
 Carry out quaffing womb-potion:
 	say "You pull out the stopper and down the smoky liquid.";
-	if the player is possessing a vagina:
+	if the latex-transformation of the player > 3:
+		say "Nothing seems to happen. Probably because of the latex curse...";
+	otherwise if the player is possessing a vagina:
 		if the pregnancy of the player is 0:
 			[The player becomes pregnant]
 			say ConceptionFlav;
@@ -768,6 +720,7 @@ To decide which number is the alchemy key of (A - blessing-potion):
 	decide on 8.
 
 blessing-potion is a potion. The text-shortcut of blessing-potion is "pob". Understand "blessing" as blessing-potion.
+The backgroundColour of blessing-potion is 4251856. [turquoise]
 
 To say MediumDesc of (B - blessing-potion):
 	say "potion of blessing".
@@ -776,9 +729,6 @@ To say ExamineDesc of (B - blessing-potion):
 	say "A round clear hip flask filled with a dose of bright glowing blue liquid. The label says that drinking it will help you in your path to receiving a holy blessing, as long as you are in the Dungeon region. ";
 	if B is sure and B is cursed, say "Since it is cursed, drinking it would probably somehow trick you into getting a curse. Perhaps you could find some other use for it, for example gifting.";
 	otherwise say "[if B is sure and B is blessed]The blessed magic will likely allow the potion to work even from outside of the Dungeon.[otherwise][line break][end if]".
-
-To BackgroundRender (T - blessing-potion) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
-	draw a rectangle TQcolour of turquoise in the current focus window at X1 by Y1 with size DX by DY.
 
 Carry out quaffing blessing-potion:
 	say "You pull out the stopper and down the brightly glowing liquid.";
@@ -802,6 +752,7 @@ Carry out quaffing blessing-potion:
 Section 4 Potion of Bull Strength
 
 bull-strength-potion is a potion. The text-shortcut of bull-strength-potion is "pbu". Understand "bull", "strength" as bull-strength-potion.
+The backgroundColour of bull-strength-potion is 16382457. [white]
 
 Definition: bull-strength-potion is fetish appropriate:
 	if weight gain fetish is 1 and lactation fetish is 1, decide yes;
@@ -814,9 +765,6 @@ To say ExamineDesc of (B - bull-strength-potion):
 	say "A round clear hip flask filled with a dose of murky white liquid. The label says that drinking it will give you the strength and body of a mighty bull. ";
 	if B is sure and B is cursed, say "Since it is cursed, drinking it would probably only give you the body of a cow. Perhaps you could find some other use for it, for example gifting.";
 	otherwise say "[if B is sure and B is blessed]The blessed magic will likely negate the body shape altering side effects of the potion.[otherwise][line break][end if]".
-
-To BackgroundRender (T - bull-strength-potion) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
-	draw a rectangle TQcolour of white in the current focus window at X1 by Y1 with size DX by DY.
 
 To decide which number is the alchemy key of (A - bull-strength-potion):
 	decide on 12.
@@ -870,6 +818,11 @@ Carry out quaffing bull-strength-potion:
 Section 5 Space Mead
 
 A space mead is a kind of potion. The printed plural name of space mead is "[alchemy-title-before]carafes of space mead[TQxlink of item described][verb-desc of item described]". There are 3 space meads. Understand "carafe", "carafe of" as space mead. The text-shortcut of space mead is "smd".
+The backgroundColour of a space mead is 16766720. [golden]
+
+Definition: a space mead is fetish appropriate:
+	if alcohol fetish is 0, decide no;
+	decide yes.
 
 A game universe initialisation rule:
 	let K be 1;
@@ -887,9 +840,6 @@ To say ExamineDesc of (B - a space mead):
 	say "A small wine carafe with a strange golden liquid in it. It smells quite sweet but has a somewhat ominous shimmer to it that suggests this is something rather unusual. Drinking it would likely have both positive and negative effects. ";
 	if B is sure and B is cursed, say "But since it is cursed, drinking it would probably only give you the negative effects.";
 	otherwise say "[if B is sure and B is blessed]But the blessed magic will likely negate the bad side-effects of the potion.[otherwise][line break][end if]".
-
-To BackgroundRender (T - a space mead) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
-	draw a rectangle TQcolour of golden in the current focus window at X1 by Y1 with size DX by DY.
 
 Carry out quaffing space mead:
 	say "You drink the golden liquid.";
@@ -911,6 +861,7 @@ Carry out quaffing space mead:
 Section 6 Potion of Luck
 
 luck-potion is a potion. The text-shortcut of luck-potion is "plk". Understand "luck" as luck-potion.
+The backgroundColour of luck-potion is 32768. [green]
 
 To decide which number is the alchemy key of (A - luck-potion):
 	decide on 34.
@@ -922,9 +873,6 @@ To say ExamineDesc of (B - luck-potion):
 	say "A round clear hip flask filled with a dose of bright glowing green liquid. The label claims that drinking it will improve your luck. ";
 	if B is sure and B is cursed, say "Since it is cursed, drinking it would probably do the opposite. Perhaps you could find some other use for it, for example gifting.";
 	otherwise say "[if B is sure and B is blessed]The blessing will enhance the effect of the potion.[otherwise][line break][end if]".
-
-To BackgroundRender (T - luck-potion) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
-	draw a rectangle TQcolour of green in the current focus window at X1 by Y1 with size DX by DY.
 
 Carry out quaffing luck-potion:
 	say "You pull out the stopper and down the green liquid.";
@@ -939,6 +887,7 @@ Carry out quaffing luck-potion:
 Section 7 Potion of Magic
 
 magic-potion is a potion. The text-shortcut of magic-potion is "pmg". Understand "magic" as magic-potion.
+The backgroundColour of magic-potion is 16111219. [murky]
 
 To decide which number is the alchemy key of (A - magic-potion):
 	decide on 36.
@@ -950,9 +899,6 @@ To say ExamineDesc of (B - magic-potion):
 	say "A round clear hip flask filled with a dose of bright glowing murky liquid. The label claims that drinking it will improve and replenish your magic power. ";
 	if B is sure and B is cursed, say "Since it is cursed, drinking it would probably lower your magic power instead. Perhaps you could find some other use for it, for example gifting.";
 	otherwise say "[if B is sure and B is blessed]The blessing will somehow enhance the effect of the potion.[otherwise][line break][end if]".
-
-To BackgroundRender (T - magic-potion) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
-	draw a rectangle TQcolour of murky in the current focus window at X1 by Y1 with size DX by DY.
 
 Carry out quaffing magic-potion:
 	say "You pull out the stopper and down the murky liquid.";
@@ -979,6 +925,7 @@ Check PowderRubbing:
 	if the second noun is not clothing, say "Powder should be applied to clothing." instead.
 
 Carry Out PowderRubbing:
+	check stealing of the noun;
 	destroy the noun.
 
 Understand "sprinkle [powder] on [something]" as PowderRubbing it on.
@@ -1023,6 +970,7 @@ Carry Out PowderRubbing identification-powder on a thing:
 Section 2 - Powder of Enhancement
 
 enhancement-powder is a powder. The text-shortcut of enhancement-powder is "poe". Understand "enhancement" as enhancement-powder.
+The backgroundColour of enhancement-powder is 32768. [green]
 
 To say MediumDesc of (B - enhancement-powder):
 	say "powder of enhancement".
@@ -1031,9 +979,6 @@ To say ExamineDesc of (B - enhancement-powder):
 	say "A small pinch of fine green powder in a tiny pouch. It looks like it is intended to be applied to clothing, to improve its magical power. ";
 	if B is sure and B is cursed, say "Since it is cursed, using it would probably do the opposite. Perhaps you could find some other use for it, for example gifting.";
 	otherwise say "[if B is sure and B is blessed]The blessing will double the enhancement.[otherwise][line break][end if]".
-
-To BackgroundRender (T - enhancement-powder) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
-	draw a rectangle TQcolour of green in the current focus window at X1 by Y1 with size DX by DY.
 
 To decide which number is the alchemy key of (A - enhancement-powder):
 	decide on 25.
@@ -1063,6 +1008,7 @@ Carry Out PowderRubbing enhancement-powder on a thing:
 Section 3 - Powder of Resistance
 
 resistance-powder is a powder. The text-shortcut of resistance-powder is "por". Understand "resistance" as resistance-powder.
+The backgroundColour of resistance-powder is 15631086. [violet]
 
 To say MediumDesc of (B - resistance-powder):
 	say "powder of resistance".
@@ -1071,9 +1017,6 @@ To say ExamineDesc of (B - resistance-powder):
 	say "A small pinch of fine purple powder in a tiny pouch. It looks like it is intended to be applied to clothing, to prevent it from transforming. ";
 	if B is sure and B is cursed, say "Since it is cursed, using it would probably transform the clothing instead. Perhaps you could find some other use for it, for example gifting.";
 	otherwise say "[if B is sure and B is blessed]The blessing will further enhance the resistance of the item.[otherwise][line break][end if]".
-
-To BackgroundRender (T - resistance-powder) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
-	draw a rectangle TQcolour of violet in the current focus window at X1 by Y1 with size DX by DY.
 
 To decide which number is the alchemy key of (A - resistance-powder):
 	decide on 26.
@@ -1096,6 +1039,7 @@ Carry Out PowderRubbing resistance-powder on a thing:
 Section 4 - Powder of Escape
 
 escape-powder is a powder. The text-shortcut of escape-powder is "pox". Understand "escape" as escape-powder.
+The backgroundColour of escape-powder is 12371660. [silver]
 
 To say MediumDesc of (B - escape-powder):
 	say "powder of escape".
@@ -1104,9 +1048,6 @@ To say ExamineDesc of (B - escape-powder):
 	say "A small pinch of fine silver powder in a tiny pouch. It looks like it is intended to be applied to clothing, to allow for its immediate removal. ";
 	if B is sure and B is cursed, say "Since it is cursed, using it would probably just make the clothing even more difficult to remove. Perhaps you could find some other use for it, for example gifting.";
 	otherwise say "[if B is sure and B is blessed]The blessing would allow you to escape from an item that can't be removed for more than one reason.[otherwise][line break][end if]".
-
-To BackgroundRender (T - escape-powder) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
-	draw a rectangle TQcolour of silver in the current focus window at X1 by Y1 with size DX by DY.
 
 To decide which number is the alchemy key of (A - escape-powder):
 	decide on 27.
@@ -1163,6 +1104,7 @@ To decide which figure-name is the examine-image of (V - a true salve):
 Part 1 - Salve of Buoyancy
 
 buoyancy-salve is a salve. The text-shortcut of buoyancy-salve is "sbo". Understand "buoyancy" as buoyancy-salve.
+The backgroundColour of buoyancy-salve is 16753920. [orange]
 
 To say MediumDesc of (C - buoyancy-salve):
 	say "salve of buoyancy".
@@ -1172,16 +1114,11 @@ To say ExamineDesc of (C - buoyancy-salve):
 	if C is sure and C is cursed, say "Since it is cursed, using it would probably do the opposite. Perhaps you could find some other use for it, for example gifting.";
 	otherwise say "[if C is sure and C is blessed]The blessing will enhance the effect of the salve.[otherwise][line break][end if]".
 
-To BackgroundRender (T - buoyancy-salve) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
-	draw a rectangle TQcolour of orange in the current focus window at X1 by Y1 with size DX by DY.
-
 To decide which number is the alchemy key of (A - buoyancy-salve):
 	decide on 9.
 
 A buoyant salve is a kind of true salve. The text-shortcut of buoyant salve is "bysv". There are 3 buoyant salve.
-
-To BackgroundRender (T - a buoyant salve) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
-	draw a rectangle TQcolour of orange in the current focus window at X1 by Y1 with size DX by DY.
+The backgroundColour of a buoyant salve is 16753920. [orange]
 
 To say MediumDesc of (C - a buoyant salve):
 	say "salve of buoyancy".
@@ -1201,6 +1138,7 @@ To oil (B - a body part) with (S - buoyancy-salve):
 Part 2 - Salve of Restriction
 
 restriction-salve is a salve. The text-shortcut of restriction-salve is "sor". Understand "restriction" as restriction-salve.
+The backgroundColour of restriction-salve is 255. [blue]
 
 To say MediumDesc of (C - restriction-salve):
 	say "salve of restriction".
@@ -1210,22 +1148,17 @@ To say ExamineDesc of (C - restriction-salve):
 	if C is sure and C is cursed, say "Since it is cursed, using it would probably do the opposite. Perhaps you could find some other use for it, for example gifting.";
 	otherwise say "[if C is sure and C is blessed]The blessed magic will (attempt to) shrink the chosen body part.[otherwise][line break][end if]".
 
-To BackgroundRender (T - restriction-salve) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
-	draw a rectangle TQcolour of blue in the current focus window at X1 by Y1 with size DX by DY.
-
 To decide which number is the alchemy key of (A - restriction-salve):
 	decide on 10.
 
 A restricting salve is a kind of true salve. A restricting salve has a number called charge. The text-shortcut of restricting salve is "rssv". There are 3 restricting salve.
+The backgroundColour of a restricting salve is 255. [blue]
 
 To say MediumDesc of (C - a restricting salve):
 	say "salve of restriction".
 
 To say ExamineDesc of (C - a restricting salve):
 	say "The salve is [if C is cursed and C is sure]making your [random backdrop covered by C] grow over time[otherwise]holding your [random backdrop covered by C] in place[end if].".
-
-To BackgroundRender (T - a restricting salve) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
-	draw a rectangle TQcolour of blue in the current focus window at X1 by Y1 with size DX by DY.
 
 A time based rule (this is the cursed restricting salve punishment rule):
 	repeat with S running through cursed restricting salve covering body parts:
@@ -1262,6 +1195,7 @@ To oil (B - a body part) with (S - restriction-salve):
 Part 3 - Salve of Concealment
 
 concealment-salve is a salve. The text-shortcut of concealment-salve is "slvc". Understand "concealment" as concealment-salve.
+The backgroundColour of concealment-salve is 16776656. [creamy]
 
 To say MediumDesc of (C - concealment-salve):
 	say "salve of concealment".
@@ -1271,13 +1205,11 @@ To say ExamineDesc of (C - concealment-salve):
 	if C is sure and C is cursed, say "Since it is cursed, using it would probably make it even more difficult for you to influence how people choose to sleep with you. Perhaps you could find some other use for it, for example gifting.";
 	otherwise say "[if C is sure and C is blessed]The blessed magic will make the body part magically hidden, so only the most powerful of beings will even be able to notice it's an option.[otherwise][line break][end if]".
 
-To BackgroundRender (T - concealment-salve) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
-	draw a rectangle TQcolour of creamy in the current focus window at X1 by Y1 with size DX by DY.
-
 To decide which number is the alchemy key of (A - concealment-salve):
 	decide on 11.
 
 A concealment salve is a kind of true salve. The text-shortcut of concealment salve is "ccsv". There are 2 concealment salve.
+The backgroundColour of a concealment salve is 16776656. [creamy]
 
 To say MediumDesc of (C - a concealment salve):
 	say "salve of concealment".
@@ -1285,9 +1217,6 @@ To say MediumDesc of (C - a concealment salve):
 To say ExamineDesc of (C - a concealment salve):
 	if C is cursed, say "You feel that [NameDesc of C] is somehow preventing you from being able to influence which way people choose to have sex with you.";
 	otherwise say "[if C is blessed][BigNameDesc of C] is making your [random backdrop covered by C] magically invisible[otherwise]Your eye slides uncomfortably by your [random backdrop covered by C][end if].".
-
-To BackgroundRender (T - a concealment salve) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
-	draw a rectangle TQcolour of creamy in the current focus window at X1 by Y1 with size DX by DY.
 
 To oil (B - a body part) with (S - concealment-salve):
 	let O be a random off-stage concealment salve;
@@ -1370,6 +1299,7 @@ Carry out SalveRubbing:
 	otherwise:
 		say "Your [printed name of B] seems to tremble unnaturally as you rub the slime into the fabric.";
 	oil B with S;
+	check stealing of S;
 	destroy S.
 
 Understand "rub [something] on [something]", "rub [something] into [something]", "apply [something] on [something]", "apply [something] to [something]", "apply [something] into [something]" as SalveRubbing it on.
@@ -1400,9 +1330,9 @@ To say ExamineDesc of (C - strength-tincture):
 	if C is sure and C is cursed, say "Since it is cursed, using it would probably make the duration of your power disappointingly short. Perhaps you could find some other use for it, for example gifting.";
 	otherwise say "[if C is sure and C is blessed]The blessed magic will make the duration of the power significantly longer.[otherwise][line break][end if]".
 
-To BackgroundRender (T - strength-tincture) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
+To update background colour of (T - strength-tincture):
 	let A be appearance corresponding to an Magic of 2 in the Table of Drinks;
-	draw a rectangle TQcolour of A in the current focus window at X1 by Y1 with size DX by DY.
+	now the backgroundColour of T is the TQcolour of A.
 
 To decide which number is the alchemy key of (A - strength-tincture):
 	decide on 1.
@@ -1446,9 +1376,9 @@ To say ExamineDesc of (C - acceleration-tincture):
 	if C is sure and C is cursed, say "Since it is cursed, using it would probably only give you the side-effects. Perhaps you could find some other use for it, for example gifting.";
 	otherwise say "[if C is sure and C is blessed]The blessed magic will make the duration of the acceleration significantly longer.[otherwise][line break][end if]".
 
-To BackgroundRender (T - acceleration-tincture) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
+To update background colour of (T - acceleration-tincture):
 	let A be appearance corresponding to an Magic of 1 in the Table of Drinks;
-	draw a rectangle TQcolour of A in the current focus window at X1 by Y1 with size DX by DY.
+	now the backgroundColour of T is the TQcolour of A.
 
 To decide which number is the alchemy key of (A - acceleration-tincture):
 	decide on 2.
@@ -1481,7 +1411,7 @@ An all time based rule (this is the acceleration tincture decay rule):
 				MilkUp 1;
 			if the lactation rate of the player is 1 and a random number between 1 and 2 is 1:
 				MilkUp 1;
-			if the womb volume of vagina > 1 and the pregnancy of the player is 0 and pregnancy fetish is 1 and acceleration-timer of acceleration-tincture < 48 and the number of family things > 0:
+			if the womb volume of vagina > 1 and acceleration-timer of acceleration-tincture < 48 and the player is able to get pregnant and the number of family things > 0:
 				say ConceptionFlav;
 				now the pregnancy of the player is 1;
 				check sudden pregnancy;
@@ -1490,6 +1420,7 @@ An all time based rule (this is the acceleration tincture decay rule):
 Section 3 Tincture of Luck
 
 luck-tincture is a tincture. The text-shortcut of luck-tincture is "til". Understand "luck" as luck-tincture. luck-tincture has a number called luck-timer. [Timer is the amount of seconds it lasts for.]
+The backgroundColour of luck-tincture is 16766720. [golden]
 
 To say MediumDesc of (C - luck-tincture):
 	say "tincture of Liquid Luck".
@@ -1498,9 +1429,6 @@ To say ExamineDesc of (C - luck-tincture):
 	say "A tiny glass vial filled with a small dose of glowing golden liquid. The label claims that it will make you extremely lucky for a short while. ";
 	if C is sure and C is cursed, say "Since it is cursed, using it would probably only make you THINK you were lucky, and perhaps in fact leave you a lot less lucky than you are now. Perhaps you could find some other use for it, for example gifting.";
 	otherwise say "[if C is sure and C is blessed]The blessed magic will make the duration of the luck significantly longer.[otherwise][line break][end if]".
-
-To BackgroundRender (T - luck-tincture) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
-	draw a rectangle TQcolour of golden in the current focus window at X1 by Y1 with size DX by DY.
 
 To decide which number is the alchemy key of (A - luck-tincture):
 	decide on 35.
@@ -1517,6 +1445,6 @@ An all time based rule (this is the luck tincture decay rule):
 		decrease luck-timer of luck-tincture by time-seconds;
 		if luck-timer of luck-tincture <= 0:
 			now luck-timer of luck-tincture is 0;
-			say "[bold type]Your lucky golden haze has faded.[roman type][line break]";
+			say "[bold type]Your lucky golden haze has faded.[roman type][line break]".
 
 Alchemy Products ends here.

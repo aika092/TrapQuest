@@ -13,6 +13,12 @@ Does the player mean wearing a clothing:
 Does the player mean taking a worn clothing: it is very unlikely.
 
 Check taking a plentiful accessory:
+	if the noun is held by the player or the noun is worn by the player:
+		repeat with C running through open containers in the location of the player:
+			repeat with A running through accessories in C:
+				if the text-shortcut of the noun is the text-shortcut of A, try wearing A instead;
+		repeat with A running through accessories in the location of the player:
+			if the text-shortcut of the noun is the text-shortcut of A, try wearing A instead;
 	try wearing the noun instead.
 
 Report taking off a plentiful accessory:
@@ -175,6 +181,18 @@ Report wearing dominance clothing:
 
 Report plugging something with dominance clothing:
 	say "A strong feeling of confidence flows through you as you finish putting it in. [if the raw sex addiction of the player > 10]You feel less eager to submit to enemies without a fight. [end if]This is a magic [ShortDesc of the second noun]!".
+
+Report wearing unidentified provocation clothing:
+	say "As you don [NameDesc of the noun], you feel some cursed magic at work to keep you trapped in it!";
+	if the noun is unsure:
+		now the noun is cursed;
+		compute summoned quest of the noun;
+	now the transform-resistance of the noun is 0;
+	potentially transform the noun;
+	say "Uh-oh, turns out it had the [bold type]provocation[roman type] attribute!";
+	repeat with C running through worn clothing:
+		now C is sure;
+		now C is identified. [this should all be true anyway but due to issues with transforming something as it's put on, we need to do this now]
 
 Report wearing confidence clothing:
 	if the humiliation-influence of the noun >= 0, say "A pleasant feeling flows through you. You feel good about your body[if the noun is unidentified]. This must be a magic [ShortDesc of the noun][end if]!".

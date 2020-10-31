@@ -162,6 +162,13 @@ To compute fatherhood to (M - a patron):
 	dislodge M.
 
 Definition: a patron is human: decide yes.
+Definition: a patron is pimp-appropriate: decide yes.
+Definition: a dickhead patron is pimp-appropriate:
+	if pimp is alive and pimp is normally ally, decide no;
+	decide yes.
+Definition: a gross patron is pimp-appropriate:
+	if pimp is alive and pimp is normally guardian, decide no;
+	decide yes.
 
 To check motion of (P - a patron):
 	if the number of monsters in the location of the player is the number of patrons in the location of the player:[should fix bugs with the dominatrix and the wrestler]
@@ -371,7 +378,7 @@ To compute patronEncounter of (M - an experienced patron):
 				if the player is shameless:
 					SemenPuddleUp (the semen load of M) in (the location of M);
 				otherwise:
-					if bukkake fetish is 1, CumThighsUp the semen load of M;
+					if bukkake fetish is 1, AnnouncedSquirt semen on thighs by the semen load of M;
 					otherwise strongHumiliate;
 					SemenPuddleUp 1 in (the location of M);
 				orgasm M;
@@ -411,9 +418,9 @@ To compute patronEncounter of (M - a dickhead patron):
 				say "A [MediumDesc of M] walks into the room and makes a beeline for you as soon as [he of M] notices you.[line break][speech style of M]'Look, I don't have any money but whatever, you're just a whore anyway. Open up.'[roman type][line break][big he of M] holds [his of M] [LongDickDesc of M] in your face. Do you give [him of M] a quick blowjob? ";
 				if the player is bimbo consenting:
 					say "You barely have time to get your mouth open before [he of M] shoves it in, roughly fucking your face until [he of M] jizzes onto your tongue.[line break][speech style of M]'Thanks. Maybe I'll have some money for you next time.'[roman type][line break][big he of M] leaves as soon as [he of M] showed up.";
+					now M is penetrating face;
 					BlowCount;
 					slightHumiliate;
-					now M is penetrating face;
 					FaceFill semen by the semen load of M;
 					orgasm M;
 					dislodge M;
@@ -507,7 +514,8 @@ To compute perception of (M - a patron):
 			say "[speech style of M]'[one of]Me first!'[or]We're going to RUIN you!'[or]How many can you take at a time?'[or]I bet you have gangbangs all the time, don't you?'[or]This slut looks like [he of the player] can handle us just fine. I'm sure your [if the player is presenting as male]boi[end if][pussy] has a lot of mileage on it already, doesn't it, whore?'[or]You're getting paid well, so you better make us all cum.'[or]I'm not getting sloppy seconds.'[or][if the number of patrons in the location of the player is 2]Ever been double penetrated, slut?'[otherwise]Ever been made [']airtight['] before, slut?'[end if][or][if the number of patrons in the location of the player is 2]This is the best birthday present ever, bro!'[otherwise]This is the best stag night ever.'[end if][or]I've been saving my cum up for weeks for this party.'[or]This is going to be a lot of fun.'[or]You're going to look like a bukkake porn star by the time we're done!'[or]Last one to cum loses the bet!'[or]I wonder if [he of the player]'ll faint before we're satisfied?'[in random order][roman type][line break]";
 		now the chosen-orifice of M is nothing;[We will allow the patrons to choose depending on what's available at the time]
 	otherwise:
-		compute appearance assessment of M.
+		compute appearance assessment of M;
+	if the player is upright, make M expectant.
 
 To compute appearance assessment of (M - a patron):[shouldn't display]
 	say "[speech style of M]'[if the chosen-orifice of M is vagina]Get on your knees [slut], I wanna fuck your [pussy]!'[otherwise if the chosen-orifice of M is a fuckhole]Get on your knees [slut], I wanna fuck!'[otherwise]Get over here and suck my [DickDesc of M], [slut]!'[end if][roman type][line break]";
@@ -540,9 +548,9 @@ To say CondomRejectFlav of (M - a patron):
 	if fishbowl is in the location of the player:
 		say "[speech style of M]'[one of]No condoms allowed today[or]Not today[or]Not this time[or]Cum goes in the fishbowl today[in random order], [bitch]!'[roman type][line break]";
 	otherwise if M is dickhead patron:
-		say "[if chosen-orifice of M is vagina and pregnancy fetish + the pregnancy of the player is 1][line break][speech style of M]'Didn't you hear me? I'm gonna get you pregnant.'[roman type][line break]Looks like there's no way out of a creampie...[otherwise][line break][speech style of M]'No thanks.'[roman type][line break]Looks like [he of M]'s going in bare...";
+		say "[speech style of M]'[if chosen-orifice of M is vagina and pregnancy fetish + the pregnancy of the player is 1]Didn't you hear me? I'm gonna get you pregnant.'[roman type][line break]Looks like there's no way out of a creampie...[otherwise]No thanks.'[roman type][line break][end if][if M is not seduced]Looks like [he of M]'s going in bare...[end if]";
 	otherwise:
-		say "[speech style of M]'It'll feel better if we don't use that.'[roman type][line break]Looks like [he of M]'s going in bare...".
+		say "[speech style of M]'It'll feel better if we don't use that.'[roman type][line break][if M is not seduced]Looks like [he of M]'s going in bare...[end if]".
 
 To compute DQ perception of (M - a patron):
 	now M is interested;
@@ -923,7 +931,7 @@ To say InstantMasturbationFlav of (O - an object) with (M - a patron) in (C - an
 			say "You [if X < 12]obediently[otherwise]passionately[end if] suck [NameDesc of F][']s [DickDesc of F], [if X < 6]trying not to make[otherwise if X < 12]accidentally making[otherwise]making[end if] eye contact with [him of F] [if O is insertable object]slide the [printed name of O] into your [vagina][otherwise if O is vibe-wand and wanktype is not VAG-WANK]rub the vibrating head of your [printed name of O] against your hardening [player-penis][otherwise if O is vibe-wand]switch on your [printed name of O] and hold it against your clit[otherwise if vagina is not actually occupied]slide your fingers into your [vagina][otherwise if wanktype is not VAG-WANK]begin to rub your [ShortDesc of penis][otherwise]begin to tenderly rub your clit[end if]. Your arousal builds as you think about how big and hard [his of F] [DickDesc of F] feels in your mouth, and you realise[if X < 6] with shame[end if] that it's actually about to make you cum.";
 		otherwise if B is patron:[boobjob]
 			say "You [if O is insertable object]slip your [printed name of O] into your [vagina][otherwise if O is vibe-wand]switch on your [printed name of O][otherwise if the player is male]grab your [ShortDesc of penis][otherwise]slip a finger into your [vagina][end if], eyes drawn to [NameDesc of B][']s dick as you begin to [if O is insertable object]fuck yourself[otherwise if O is vibe-wand]grind it against your [genitals][otherwise]masturbate[end if]. You feel yourself getting more and more turned on as you watch [his of B] shiny cockhead thrusting between your [BreastDesc], [if X < 6]and before you even have time to feel ashamed[otherwise if X < 12]and before you have time to think about anything else[otherwise]and before you have time to really enjoy yourself[end if], you realise you're going to cum.";
-		otherwise if the player is male:[anal]
+		otherwise if the player is not possessing a vagina:[anal]
 			say "You [if O is vibe-wand]switch on your [printed name of O] and hold it under the head of your [player-penis][otherwise]wrap your hand around your tiny 3 inch penis and begin to masturbate[end if]. Little sparks of ecstasy bolt up your shaft as [NameDesc of M][']s [DickDesc of M] hits your prostate, pleasure building and building as you [if X < 6]try, and fail, not to focus on[otherwise]focus[end if] how good it feels to get fucked in the ass by [if lady fetish is 1]a complete stranger[otherwise if the bimbo of the player < 8]another man[otherwise]a REAL man[end if]. You [if X < 6]feel a wave of shame[otherwise if X < 12]tell yourself to be ashamed[otherwise]feel a wave of anticipation[end if] as you realise you're about to cum.";
 		otherwise:[vaginal or anal; covers herm]
 			say "You [if O is insertable object]push the [printed name of O] into your [vagina] and eagerly begin to fuck yourself[otherwise if O is vibe-wand]turn on your [printed name of O] and hold the vibrating end against your clit[otherwise if vagina is not actually occupied]reach between your legs and eagerly push your fingers into your [vagina][otherwise]reach between your legs and eagerly to play with your clit[end if]. All you can think about is how good [NameDesc of M] feels inside you, and you find yourself submitting to [him of M] completely as the pleasure builds and builds. It only takes a moment for you realise you're about to cum.".
@@ -1113,6 +1121,8 @@ To compute payment of (M - a patron):
 		if M is pissed off:
 			say PissedOffFlav of M;
 			decrease the employee-record of senior robobellboy by 1;
+		otherwise if VIP-card is held by M:
+			say "[BigNameDesc of M] flashes [his of M] [VIP-card].[line break][speech style of M]'Thanks for the VIP card! It's great to never have to pay for this.'[roman type][line break]";
 		otherwise:
 			if free ride tattoo is not worn or a random number between 1 and 2 is 1:
 				loot M;
@@ -1161,13 +1171,13 @@ To compute SelectionWaiting of (M - a patron):
 		if bukkake fetish is 1:
 			if the wanking-target of M is face or the wanking-target of M is hair:
 				say "Your face is splattered with [if the semen coating of face > 6]even more [otherwise if the semen coating of face > 0]more [end if][semen].";
-				CumFaceUp the semen load of M;
+				AnnouncedSquirt semen on face by the semen load of M;
 			otherwise if the wanking-target of M is breasts:
 				say "Your tits are splattered with [if the semen coating of breasts > 6]even more [otherwise if the semen coating of breasts > 0]more [end if][semen].";
-				CumTitsUp the semen load of M;
+				AnnouncedSquirt semen on breasts by the semen load of M;
 			otherwise if the wanking-target of M is asshole or the wanking-target of M is vagina or the wanking-target of M is penis:
-				say "The [semen] lands on your ass and dribbles down onto your thighs.";
-				CumThighsUp the semen load of M;
+				say "The [semen] lands on your ass.";
+				AnnouncedSquirt semen on hips by the semen load of M;
 			otherwise:
 				say "The [semen] splatters off your skin, giving you a fine coating on your [wanking version of the wanking-target of M] but mostly landing on the floor.";
 				SemenPuddleUp the semen load of M;
@@ -1802,7 +1812,7 @@ To compute failed dominance punishment of (M - a patron):
 		if F is a fuckhole, say "You give up on resisting, laying there like a cheap whore as you[if P is 2]and [his of M] friend[otherwise if P > 1]all [his of M] friends[end if] wait to see what [FuckerDesc of M] does next.";
 		now another-turn-flavour is the substituted form of "[BigFuckerDesc of M] holds you in place.";
 		now another-turn is 1.
-		
+
 
 To compute domination interference of (M - a patron) for (N - a patron):
 	say "[BigNameDesc of M] moves out of the way, waiting to see what happens next.".
@@ -1892,7 +1902,7 @@ To penetration dominate (M - a patron):[dickhead patron]
 To watersports dominate (M - a patron):[no chance of backfiring]
 	let C be a random bottom level protection clothing;
 	let D be a random number between 0 and the dominance of the player;
-	say "You shove [NameDesc of M] to the ground, [if C is clothing and the player is male]pull out your [player-penis][otherwise if C is clothing]pull down your pants[otherwise if the player is male]take aim with your [player-penis][otherwise]spread your lower lips[end if] and start pissing right in [his of M] face. [run paragraph on]";
+	say "You shove [NameDesc of M] to the ground, [if C is clothing and the player is possessing a penis]pull out your [player-penis][otherwise if C is clothing]pull down your pants[otherwise if the player is possessing a penis]take aim with your [player-penis][otherwise]spread your lower lips[end if] and start pissing right in [his of M] face. [run paragraph on]";
 	if M is experienced patron:
 		say "The humiliation of being treated like a human toilet seems to hit [him of M] really hard, and [he of M]'s actually shivering by the time you stop.";
 		severeDignify;
@@ -2191,8 +2201,7 @@ To say FirstGreeting to (M - a patron):
 		otherwise if the class of the player is santa's little helper:
 			say "[variable custom style]'Merry Christmas[if N > 1], everyone[end if]!'[roman type][line break]";
 	otherwise:
-		say "[variable custom style]Hel-'[roman type][line break]";
-		say FirstResponse of M.
+		say "[variable custom style]Hello'[roman type][line break]".
 
 To say RepeatGreeting to (M - a patron):
 	say FirstGreeting to M.
@@ -2271,7 +2280,7 @@ To say PatronDesc of (M - furry patron):
 	if mythical creatures fetish is 1:
 		say "The [man of M] in particular barely even looks human, coarse black hair covering [his of M] entire frame from head to toe, even [his of M] face. What's more, [his of M] 'more than average' endowment is 14 inches long, hanging heavily between [his of M] legs like some perverted club.[line break]";
 	otherwise:
-		say "This [man of M] in particular is wearing a huge foam dog head. [big his of M] [LongDickDesc of M] is proportionally big, 14 inches long and accompanied by a pair of big, fat[if full-lady fetish is 0], hairy[end if] nuts.[line break]".
+		say "This [man of M] in particular is wearing a huge foam dog head. [big his of M] [LongDickDesc of M] is proportionally big, 14 inches long, and accompanied by a pair of big, fat[if full-lady fetish is 0], hairy[end if] nuts.[line break]".
 
 To say MediumDesc of (M - furry patron):
 	say "furry patron".

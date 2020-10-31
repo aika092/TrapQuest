@@ -19,9 +19,11 @@ To decide which number is the unique outrage of (C - a wedge heels):
 To decide which number is the hindrance-modifier of (C - a wedge heels):
 	decide on -1.
 
-To decide which number is the kick-bonus of (S - a wedge heels):
-	let X be the heel-height of S;
-	decide on X - 3.
+To decide which number is the kick-bonus of (H - a wedge heels):
+	let S be 0;
+	if H is blessed, increase S by 1;
+	if the hindrance of H <= 0, increase S by the heel-height of H - 2;
+	decide on S.
 
 To say ClothingDesc of (C - a wedge heels):
 	say "A pair of [heel-height of C] inch wedge [if C is leather]heels made of black leather pattern with a tasteful pink and green floral pattern.[otherwise if C is pvc]boots made of some combination of PVC, other plastics and cardboard. They have a slutty leopard print and open toes.[otherwise if C is satin]heels that are smart and black. Relatively modest compared to most of the clothes you've seen in this game.[end if]";

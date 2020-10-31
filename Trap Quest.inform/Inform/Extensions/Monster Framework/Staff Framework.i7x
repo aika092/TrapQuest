@@ -367,7 +367,7 @@ Definition: a lesson is correctly-ranked:
 Definition: a lesson is lesson-appropriate: decide yes.
 
 Definition: a lesson (called L) is appropriate:
-	if the lesson-teacher of L is emerald-teacher and the breast-enhancement of nurse is not 0 and the lesson-teacher of tits-lesson is alive: [If the player was recently instructed to get a breast enhancement, it takes top priority]
+	if the lesson-teacher of L is emerald-teacher and the breast-enhancement of nurse < 0 and the lesson-teacher of tits-lesson is alive: [If the player was recently instructed to get a breast enhancement and went through with it, it takes top priority]
 		if L is tits-lesson, decide yes;
 		otherwise decide no;
 	if the lesson-teacher of L is emerald-teacher and L is not pain-lesson and the lesson-teacher of pain-lesson is alive and (the player is wrist bound or the player is ankle bound or portal gag is worn), decide no; [Most if not all other emerald lessons should let releasing the bondage from the pain lesson take priority]
@@ -495,6 +495,7 @@ To conclude (A - an assembly):
 		try ST going south;
 		regionally place ST;
 		now the boredom of ST is 0;
+		if ST is unfriendly, deinterest ST;
 		now ST is unleashed;
 	now the assemblyTime of A is 0.
 
@@ -614,6 +615,7 @@ To execute (A - new-fuckhole-assembly):
 		let B be a random off-stage fetish appropriate fluid vulnerable bra;
 		if B is nothing, now B is random fetish appropriate fluid vulnerable bra;
 		now B is in the location of school-fuckhole;
+	if the fuckhole-rule of school-fuckhole >= 4, now the buttcondoms of school-fuckhole is 1;
 	say "[speech style of headmistress]'I've... ah... recently... [']acquired['] a new fuckhole. It shall be replacing the gloryholes in the changing rooms. You must only use it once per visit to the school. Anyone caught breaking the usage rules will be punished.'[roman type][line break][big he of headmistress] thinks for a moment, and then says[line break][speech style of headmistress][FuckholeRuleDesc][roman type][line break]".
 
 Part - Detention

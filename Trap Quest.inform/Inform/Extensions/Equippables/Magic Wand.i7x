@@ -17,7 +17,6 @@ To decide which number is the initial outrage of (C - a magic wand):
 To decide which number is the damage improvement of (W - a magic wand):
 	let X be MagicPowerDamage + 3;
 	increase X by the magic-modifier of W;
-	increase X by saved-flat-intelligence / 6;
 	if X < 0, decide on 0;
 	decide on X.
 

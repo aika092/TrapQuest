@@ -126,9 +126,11 @@ To say MonsterOfferAcceptFlav of (M - shopkeeper) to (T - a thing):
 	otherwise:
 		say "[BigNameDesc of M] seems very touched.[line break][speech style of M]'I was not expecting a gift! How very decent of you.'[roman type][line break]".
 
-To decide which number is the bartering value of (T - an accessory) for (M - shopkeeper):
-	if T is plentiful accessory, decide on the price of T;
-	decide on 0.
+To say MonsterOfferRejectFlav of (M - shopkeeper) to (T - a thing):
+	say "[if M is unfriendly][BigNameDesc of M] frowns.[otherwise][BigNameDesc of M] shakes [his of M] head.[end if][line break][speech style of M][if convincing power > 0 and M is unfriendly]'You're not going to get let off that easy.'[otherwise]'I don't buy second hand items.'[end if][roman type][line break]".
+
+To say OfferFriendshipFlav of (M - shopkeeper):
+	say "[speech style of M][if M is buddy]'Please come again[otherwise if M is acquaintance]'Thank you for your custom[otherwise]'Don't try anything stupid on your way out[end if].'[roman type][line break]".
 
 To decide which number is total stolen value:
 	let N be 0;
@@ -230,6 +232,12 @@ Definition: a shopkeeper is motionless-when-defeated: decide yes.
 
 Part 2 - Perception
 
+To anger (M - shopkeeper): [This should bring the shopkeeper just into unfriendly territory.]
+	if the diaper-duration of M > 0, now the diaper-duration of M is the diaper punishment length of M;
+	if the favour of M > the aggro limit of M:
+		now the favour of M is the aggro limit of M;
+	now M is unleashed.
+
 To decide which number is the bimbo tolerance of (M - shopkeeper):
 	if diaper quest is 1, decide on 20;
 	if interracial fetish is 1, decide on 14;
@@ -250,8 +258,7 @@ To bore (M - shopkeeper) for (N - a number) seconds:
 	if the player is in Dungeon41:
 		calm M; [The shopkeeper never gets distracted from his job, instead he just turns friendly after dealing with you]
 	otherwise:
-		now M is uninterested;
-		now M is in Dungeon41.
+		send M home.
 
 Report going:
 	if shopkeeper is guarding and shopkeeper is on-stage and shopkeeper is not in Dungeon41 and shopkeeper is not in the location of the player, bore shopkeeper.
@@ -259,6 +266,8 @@ Report going:
 Definition: shopkeeper (called M) is uniquely unfriendly:
 	if there is held stolen clothing and M is not mating and the stolen-aware of M > 0, decide yes;
 	decide no.
+
+shopkeeper has a truth state called princessTax. The princessTax of shopkeeper is false.
 
 To compute perception of (M - shopkeeper):
 	if diaper quest is 1, say "[BigNameDesc of M] notices you[if the player is sluttily dressed][one of], and seems to be smiling politely enough[or][stopping].[otherwise]![end if]";
@@ -283,6 +292,17 @@ To compute perception of (M - shopkeeper):
 	otherwise if player is stealthy:
 		say "[speech style of M]'[one of]Hey, what are you doing in here! Don't think I'm going to just let you steal from my shop!'[or]Who do you think you're fooling coming into my shop like that? Get out of my shop, thief!'[or]Hey! I can tell you're a thief just by looking at you, so leave my shop right now or face the consequences!'[at random][roman type]";
 		anger M;
+	otherwise if the class of the player is princess:
+		let J be a random off-stage plentiful accessory;
+		if princessTax of M is false and J is accessory:
+			now J is pure diamond;
+			now J is in the location of the player;
+			say "[speech style of M]'Ah, Princess, you must be here for this month's rent? Don't worry, I have it right here.'[roman type][line break][BigNameDesc of M] hands you a [J]!";
+			compute autotaking J;
+			now the princessTax of M is true;
+		otherwise:
+			say "[speech style of M]'Your Highness.'[roman type][line break]";
+		calm M;
 	otherwise if the refractory-period of M > 0:
 		say "[speech style of M]'Heh, that was fun. I'm still satisfied... for now.'[roman type][line break]";
 		calm M;
@@ -342,8 +362,12 @@ To compute monstermotion of (M - shopkeeper):
 		now M is in Dungeon41.
 
 To compute (M - shopkeeper) seeking (D - a direction):
-	if M is unleashed, try M going D;
+	if M is unleashed, blockable move M to D;
 	compute monstermotion reactions of M. [The shopkeeper moves with excellent purpose when seeking, but also doesn't follow the player around if friendly.]
+
+To check chase boredom of (M - shopkeeper): [only loses interest via special means]
+	if M is not in the location of the player and (M is guarding or M is caged):
+		compute chase boredom of M.
 
 Part 4 - Combat
 
@@ -496,7 +520,7 @@ To satisfy (M - shopkeeper) for (N - a number) seconds:
 			progress quest of nice-quest;
 	otherwise:
 		bore M for N seconds;
-	send M home. [This makes sure the shopkeeper always makes it back to the shop. TODO: text so [he of M] doesn't just disappear]
+	send M home. [This makes sure the shopkeeper always makes it back to the shop.]
 
 To say SwallowDemand of (M - shopkeeper):
 	say "[speech style of M][one of]'You best swallow, [if the class of the player is princess]princess[otherwise][whore][end if], if you know what's good for you. Or else.'[or]'Be a good little slut and swallow my load. I've got a shop to run, stop stalling, I'm really not in the mood for your stupid games.'[or]'Mmnf, that was some good head. You better swallow to show how grateful you are... Or I might just take some of my pent up rage out on you.'[or]'I like a slut who knows [his of the player] place; swallow and I won't have to remind you who's in charge.'[or]'I hope you learned your lesson, whore, but let's make it even more entertaining. Swallow, or else.'[or]'I don't know, [if M is objectifying the player]I still feel like abusing you[otherwise]I'm still mad at you[end if]. If you swallow, I might just forget about it.'[or]'You better start swallowing, whore, I don't have time for your games.'[or]'Do I look like I'm playing around? Swallow my load or face the consequences.'[in random order][roman type][line break]".
@@ -530,9 +554,13 @@ To say sexSubmitNearingClimax of (M - shopkeeper) in (F - a fuckhole):[shopkeepe
 	say M submission sex 0.
 
 To send (M - shopkeeper) home:
-	now M is in Dungeon41;
+	if M is not in Dungeon41:
+		if M is in the location of the player:
+			let D be the best route from the location of M to Dungeon41 through labyrinth rooms;
+			if D is a direction, say "[BigNameDesc of M] leaves to the [D].";
+		now M is in Dungeon41;
 	now M is guarding;
-	bore M.
+	if M is interested, bore M.
 
 To say CondomPieFlav of (M - shopkeeper) in (F - a fuckhole):
 	say "[speech style of M]'Fuck, this is so good! [one of]I'm almost there, baby!'[or]Ooh shit! Shii-iit! Here it comes!'[cycling][roman type][line break][BigNameDesc of M] buries [his of M] entire length inside of you, groaning with pleasure as the condom fills with [his of M] [semen]. You can feel it slowly bulging inside you, stretched thinner with every passing second as it struggles to contain [his of M] massive load, miraculously staying intact as [he of M] slowly pulls out and carefully peels it off without spilling a drop.[line break][speech style of M]'[if the reaction of the player is 2 or the class of the player is cheerleader]Didn't actually mean to come inside you, but I guess it's OK since I was wearing a condom.'[otherwise if the class of the player is living sex doll]Wow, you are one amazing sex doll. I hope you come back here again soon!'[otherwise if sissy black cock whore tattoo is worn][one of]I bet you wish this load actually ended up inside you, eh slut? Come back[or]Come[stopping] back when you're ready for this [BlackCock] to breed you for real.'[otherwise if M is friendly-fucking]That was fucking amazing. Feel free to ask me to do that again any time!'[otherwise]I hope you learned your lesson, otherwise I might have to do it without the condom sometime.'[end if][roman type][line break]".
@@ -540,7 +568,7 @@ To say CondomPieFlav of (M - shopkeeper) in (F - a fuckhole):
 To say CreampieFlav of (M - shopkeeper) in (F - vagina):
 	if the class of the player is living sex doll:[#####Selkie: could do much better here]
 		say "You're vaguely aware you've been hearing some hot chick squealing and squeaking and grunting without words for a long, long time, and then finally fireworks are exploding through your mind and body. When next you come to your senses, you can feel [semen] dripping down your thighs and [NameDesc of M] watching you with one eyebrow raised in smug amusement.";
-		CumThighsUp 2;
+		AnnouncedSquirt semen on thighs by 2;
 	otherwise:
 		say "[speech style of M]'Fuck, this is so good! [one of]I haven't properly fucked anyone in way too long...'[or]Don't worry, I've still got lots of jizz left for you...'[stopping][roman type] [BigNameDesc of M] loses control over [himself of M] and orgasms, burying [his of M] entire length inside of you and releasing [his of M] hot load. You can almost hear it flowing inside of you.[line break][speech style of M]'[if the reaction of the player is 2 or the class of the player is cheerleader]Sorry about that, to be fair I didn't mean to come inside you. [otherwise if the class of the player is living sex doll]Wow, you are one amazing sex doll. I hope you come back here again soon!'[otherwise if sissy black cock whore tattoo is worn][one of]Congratulations, you're at least good for one thing, getting bred by [BlackCock]. What do you want, a gold star? Now piss off and come[or]Come[stopping] back when you're ready for more [BlackCock], slut.'[otherwise if M is friendly-fucking]That was fucking amazing. Feel free to ask me to do that again any time!'[otherwise]I hope you learned your lesson.'[end if][roman type][line break]".
 
@@ -555,14 +583,12 @@ To say CreampieFlav of (M - shopkeeper) in (F - asshole):
 To compute post climax effect of (M - shopkeeper) in (F - a fuckhole):
 	if M is friendly, say "[line break][speech style of M]'That was awesome! Feel free to return to the shop if you start feeling horny, I'm down to fuck you anytime!'[roman type][line break]";
 	otherwise say "[line break][unless M is objectifying the player][speech style of M]'Feel free to return to the shop, but don't you dare leave without paying again.'[roman type][line break][end if][BigNameDesc of M] pulls out and leaves you alone to recover.";
-	compute happy reward of M;
 	let T be a random off-stage interracial themed drawable tattoo;
 	if there is a worn tattoo and T is tattoo:
 		summon T;
 		say "A new tattoo appears on you in permanent black ink:";
 		try examining T;
-		say "[variable custom style]Holy shit. [if the outrage of T is too humiliating]I have to keep this covered up. There's no way I can let anyone see such a nasty tattoo.[end if][roman type][line break]";
-	send M home.
+		say "[variable custom style]Holy shit. [if the outrage of T is too humiliating]I have to keep this covered up. There's no way I can let anyone see such a nasty tattoo.[end if][roman type][line break]".
 
 To decide if (M - shopkeeper) is willing to creampie (F - asshole):
 	if the class of the player is cheerleader, decide yes;
@@ -638,17 +664,18 @@ To say BreastsPenetrationFlav of (M - shopkeeper):
 		say "[BigNameDesc of M] forces [his of M] [manly-penis] in between your [ShortDesc of breasts]!".
 
 To compute cleavage climax of (M - shopkeeper):
-	TitfuckAddictUp 1;
 	if the class of the player is living sex doll:
-		say "[big he of M] begins taunting you as [he of M] thrusts harder, and suddenly ropey gobs of [semen] are jetting up between your breasts, liberally coating your face and some splashing across your cleavage and onto the generous swell of your chest.";
+		say "[big he of M] begins taunting you as [he of M] thrusts harder, and suddenly [if M is wrapped][he of M] rips the condom off of [his of M] [manly-penis] and [end if]ropey gobs of [semen] are jetting up between your breasts, liberally coating your face and some splashing across your cleavage and onto the generous swell of your chest.";
+		AnnouncedSquirt semen on face by the semen load of M / 2;
+		UnannouncedSquirt semen on breasts by the semen load of M / 2;
 		say "[speech style of M]'Not bad!'[roman type] [big he of M] grips the back of your neck and briefly, shockingly, and casually, thrusts [his of M] dick into your rounded mouth and uses your lips to scrape off the remaining juice from [his of M] rod, then releases you.[line break][speech style of M]'Yeah, this new model gets three thumbs up from me!'[roman type][line break]";
-		CumFaceUp the girth of M;
 	otherwise:
-		say "[if the titfuck addiction of the player < 6]You lay still and let [him of M] thrust in and out of your [BreastDesc][otherwise]You use your hands to squeeze your [BreastDesc] together and rub them up and down [his of M] throbbing shaft[end if] until [he of M] climaxes, spraying [his of M] [semen] all over your tits.[line break]";
+		say "[if the titfuck addiction of the player < 6]You lay still and let [him of M] thrust in and out of your [BreastDesc][otherwise]You use your hands to squeeze your [BreastDesc] together and rub them up and down [his of M] throbbing shaft[end if] until [he of M] climaxes, [if M is wrapped]ripping the condom off of [his of M] [manly-penis] and [end if]spraying [his of M] [semen] all over your tits.[line break]";
+		AnnouncedSquirt semen on breasts by the semen load of M;
 		if M is friendly, say "[speech style of M]'Unf, that was so good! Personally, I reckon you should leave my cum on your [if breasts is exposed]clothes[otherwise]chest[end if] as a souvenir.'[roman type][line break]";
 		otherwise say "[speech style of M]'Now wear that cum on your [if breasts is exposed]clothes[otherwise]chest[end if] as a reminder of your shame[unless M is objectifying the player]! And next time, pay before leaving[end if]!'[roman type][line break]";
-	CumTitsUp the girth of M;
 	TimesSubmittedUp M by 1;
+	BreastsSensitivityUp 1;
 	compute happy reward of M;
 	orgasm M;
 	send M home.
@@ -700,7 +727,7 @@ This is the shopkeeper jab rule:
 The shopkeeper jab rule is listed in the shopkeeper jab rules.
 
 To compute happy reward of (M - shopkeeper):
-	if M is friendly:
+	if M is friendly-fucking:
 		let C be a random held store thing;
 		if C is a thing:
 			if the favour of M - the aggro limit of M > a random number between 1 and the price of C:
@@ -711,9 +738,6 @@ To compute happy reward of (M - shopkeeper):
 		otherwise if the blue-balls of M <= 0:
 			say "[speech style of M]'That was incredible! [one of]In fact, I think I'll knock some off my prices just to make sure you give me another visit.'[or]Discount is still on, just so you know!'[stopping][roman type][line break]";
 			if the blue-balls of M is 0, now the blue-balls of M is -1.
-
-To compute happy oral reward of (M - shopkeeper):
-	compute happy reward of M.
 
 This is the shopkeeper punishes diaper rule:
 	if (there is a worn stolen diaper or there is a carried stolen diaper) and the number of worn unowned diapers is 0:
@@ -1210,6 +1234,7 @@ To ride dominate (M - shopkeeper):
 			otherwise:
 				if M is wrapped, say "[line break][speech style of M]'Oh wait, wasn't I supposed to be the sub? Eh, I guess it doesn't matter. Why don't you get me cleaned up?'[roman type][line break][big he of M] pulls out, peeling off the condom as [he of M] kneels over your face. You're done pretending to be dominant, and obey without a second thought, one hand [if there is a worn chastity cage or the player is not possessing a penis]buried in your newly empty [variable F][otherwise]wrapped around your [ShortDesc of penis][end if] as you wrap your lips around [his of M] glistening shaft. It's a little hard to get your mouth around it, but it's softening, and you're motivated. You go over the edge almost immediately, moaning through a mouthful of cockmeat as you cover your hands with sexual juices.";
 				otherwise say "[line break][speech style of M]'Oh wait, wasn't I supposed to be the sub? Eh. I guess it doesn't matter. Why don't you get me cleaned up?'[roman type][line break][big he of M] pulls out, [his of M] [LongDickDesc of M] swaying [if interracial fetish is 1]majestically [end if]as [he of M] kneels over your face. You're done pretending to be dominant, and obey without a second thought, one hand [if there is a worn chastity cage or the player is not possessing a penis]buried in your thoroughly creampied [variable F][otherwise]wrapped around your [ShortDesc of penis][end if] as you wrap your lips around [his of M] glistening shaft. It's a little hard to get your mouth around it, but it's softening, and you're motivated. You go over the edge almost immediately, moaning through a mouthful of cockmeat as you cover your hands with [if there is a worn chastity cage or the player is possessing a penis]your and [his of M][otherwise]your[end if] juices.";
+				now M is penetrating face;
 				BlowCount;
 				now refractoryperiod is 0;
 				orgasm;
@@ -1347,16 +1372,13 @@ To say MonsterOfferAcceptFlav of (M - shopkeeper) to (T - chess piece):
 	otherwise:
 		say "[BigNameDesc of M][']s face lights up.[line break][speech style of M]'Gosh, did you get this where I think you did? Those tournaments are only held once in a blue moon, and only a winner is allowed to take one of those away with them. They're extremely rare down here, and I know a particular collector who would buy this for a hefty price. Of course I'll take it off of your hands.'[roman type][line break]".
 
-To say OfferThanksFlav of (M - a shopkeeper) for (T - chess piece):
-	say "[speech style of M]'Of course, I'm not going to expect to get it for free. I assume this should suffice?'[roman type][line break]".
-
 To compute offer reward of (M - a shopkeeper) for (T - chess piece):
 	let D be a random off-stage ring;
 	if D is ring:
 		now D is solid gold;
 		set shortcut of D;
 		now D is in the location of the player;
-		say "[BigNameDesc of M] pulls a [D] out of [his of M] pouch, and hands it to you.".
+		say "[speech style of M]'Of course, I'm not going to expect to get it for free. I assume this should suffice?'[roman type][line break][BigNameDesc of M] pulls a [D] out of [his of M] pouch, and hands it to you.".
 
 Section 7 - Shop Maintenance
 
@@ -1392,11 +1414,10 @@ To Set Up Store:
 	while diaper lover >= 1 and diaper-stored < 3:
 		let D be a random eligible diaper;
 		if D is diaper:
-			if D is not in Standard Item Pen:
-				clean D;
-				repair D;
-				now D is in Dungeon41;
-				now D is store;
+			clean D;
+			repair D;
+			now D is in Dungeon41;
+			now D is store;
 		increase diaper-stored by 1;
 	if pregnancy fetish is 1 and the number of maternity dress in Dungeon41 is 0:
 		let D be a random off-stage maternity dress;
@@ -1453,6 +1474,14 @@ A time based rule (this is the shop cycling rule):[TODO: if the player is in the
 		if lagdebug is true:
 			say "Finished recycling shop.";
 			wait 200 ms before continuing.
+
+To check stealing of (C - a thing):
+	if C is store and Dungeon41 is guarded and shopkeeper is not mating:
+		if shopkeeper is interested:
+			say "[speech style of shopkeeper]'Oi! Don't use my stuff without paying! GUARDS!'[roman type][line break]Looks like you're in trouble with the law!";
+			anger shopkeeper;
+			increase the stolen-aware of shopkeeper by 1;
+		compute stealing of C.
 
 To compute stealing of (C - a thing):
 	if C is not stolen:

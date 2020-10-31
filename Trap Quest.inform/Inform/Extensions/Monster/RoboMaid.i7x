@@ -288,11 +288,11 @@ To compute publicity stunt of (M - a milkmaid):
 	if face is not actually occupied and lactation fetish is 1 and R is 1:[breast feeding]
 		say "as [NameDesc of M] forces a rubber teat into your mouth.[line break][speech style of current-monster]'OOH. OOH. MY NIPPLES ARE. SO TENDER.'[roman type][line break]Suction kicks in, and you have no choice but to swallow several gulps of ice cold milk before [he of M] releases you.";
 		increase the fat-burning of the player by 250;
-		StomachUp 3;
-		MilkTasteAddictUp 1;
+		StomachMilkUp 3;
 		humiliate R * MODERATE-HUMILIATION;
 	otherwise if face is not actually occupied:
 		say "as [NameDesc of M] lifts up [his of M] apron, pushing [his of M] [LongDickDesc of M] in your face as [his of M] eyes rapidly flash red and pink.[line break][speech style of current-monster]'OOH. OOH. [caps please] SUCK ME.'[roman type][line break] [big he of M] shoves [his of M] [DickDesc of M] into your open mouth and ejaculates with incredible force. Do you try to swallow it?";
+		now M is penetrating face;[TODO: possibly update]
 		if the player is bimbo consenting:
 			say "You desperately gulp, just barely able to keep up as [NameDesc of M] thoroughly empties [his of M] stored [semen] straight down your throat. Eventually, the flow dies down, and [he of M] pulls out, rolling off of you as [his of M] apron falls back into place.";
 			StomachSemenUp 4;

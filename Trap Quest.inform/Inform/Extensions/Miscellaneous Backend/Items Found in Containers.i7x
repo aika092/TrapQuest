@@ -1,71 +1,66 @@
 Items Found in Containers by Miscellaneous Backend begins here.
 
-[!<DecideWhichNumberIsTheOverloadOfItem>+
+Standard Item Pen is a list of things that varies.
 
-The higher this number, the less will spawn.
-
-+!]
-To decide which number is the overload of (C - a thing):
-	decide on 0.
-To decide which number is the overload of (C - a pocketwipes):
-	decide on the number of in-play pocketwipes + 2.
-To decide which number is the overload of (C - a shoes):
-	decide on the number of in-play shoes + 1.
-To decide which number is the overload of (C - an overdress):
-	decide on the number of in-play overdresses - 1.
-To decide which number is the overload of (C - an underdress):
-	decide on the number of in-play underdresses + 1.
-To decide which number is the overload of (C - a corset):
-	decide on the number of in-play corsets + 1.
-To decide which number is the overload of (C - a knickers):
-	let K be the number of in-play knickers + diaper quest - (1 + the number of knickers in Dungeon41);
-	if diaper lover > 0, decrease K by the number of in-play diapers - the number of diapers in Dungeon41;
-	decide on K.
-To decide which number is the overload of (C - a diaper):
-	if diaper quest is 1, decide on 100;
-	decide on the number of in-play knickers - 1.
-To decide which number is the overload of (C - a trousers):
-	decide on the number of in-play trousers + 1.
-To decide which number is the overload of (C - a stockings):
-	decide on the number of in-play stockings + 1.
-To decide which number is the overload of (C - a skirt):
-	decide on the number of in-play skirts + 1.
-To decide which number is the overload of (C - a suspenders):
-	decide on the number of in-play suspenders + 1.
-To decide which number is the overload of (C - a bra):
-	if diaper quest is 1 and the player is male, decide on 999;
-	decide on the number of in-play bras + 1.
-To decide which number is the overload of (C - a lubricant):
-	decide on the number of in-play lubricants + 2.
-To decide which number is the overload of (C - a vessel):
-	if the number of in-play vessels > 4, decide on 99;
-	decide on the number of in-play vessels.
-To decide which number is the overload of (C - a can):
-	if the player is not thirsty or number of held non-empty bottles > 1, decide on 99;
-	decide on the number of in-play non-empty vessels + 1.
-To decide which number is the overload of (C - an accessory):
-	if the number of in-play plentiful accessories > 4, decide on 999;
-	decide on 1 + (the number of in-play plentiful accessories / 2).
-
-treasure-necessity is a number that varies.
-
-max-overload is a number that varies. max-overload is 2.
-
-Definition: a thing (called C) is necessary:
-	if the overload of C < treasure-necessity, decide yes;
-	decide no.
-
-Definition: a thing (called C) is in-play:
-	if C is off-stage, decide no;
-	if C is in Standard Item Pen, decide no;
-	if C is in Holding Pen, decide no;
+Definition: a thing is in-play:
+	if it is off-stage or it is in Holding Pen or it is in Predicament-Pen, decide no;
 	decide yes.
+Definition: a thing is containerRelevant: [should it be considered when counting how many of this item are available to the player right now?]
+	if it is not in-play or it is not unowned or it is in a container or it is in School15, decide no;
+	decide yes.
+Definition: a thing is containerAvailable: [can it appear in a container?]
+	if it is off-stage, decide yes;
+	decide no.
+Definition: a thing is containerOptimal: decide yes. [is it something that we're especially happy for the player to find? If not we might reroll]
+Definition: a shoes is containerOptimal:
+	if the number of containerRelevant shoes > 2, decide no;
+	decide yes.
+Definition: a heels is containerOptimal:
+	if the number of containerRelevant heels > 1, decide no;
+	decide yes.
+Definition: an overdress is containerOptimal:
+	if the number of containerRelevant overdress > 2, decide no;
+	decide yes.
+Definition: an underdress is containerOptimal:
+	if the number of containerRelevant underdress > 1, decide no;
+	decide yes.
+Definition: a corset is containerOptimal:
+	if the number of containerRelevant corsets > 1, decide no;
+	decide yes.
+Definition: a knickers is containerOptimal:
+	if diaper lover is 0 and the number of containerRelevant knickers > 2, decide no;
+	if diaper lover > 0 and the number of containerRelevant knickers - the number of containerRelevant diapers > 2, decide no;
+	decide yes.
+Definition: a diaper is containerAvailable:
+	if diaper quest is 0 and it is off-stage, decide yes;
+	decide no.
+Definition: a trousers is containerOptimal:
+	if the number of containerRelevant trousers > 1, decide no;
+	decide yes.
+Definition: a stockings is containerOptimal:
+	if the number of containerRelevant stockings > 1, decide no;
+	decide yes.
+Definition: a skirt is containerOptimal:
+	if the number of containerRelevant skirts > 1, decide no;
+	decide yes.
+Definition: a suspenders is containerOptimal:
+	if the number of containerRelevant suspenders > 1, decide no;
+	decide yes.
+Definition: a bra is containerOptimal:
+	if the number of containerRelevant bras > 1, decide no;
+	decide yes.
+Definition: a bra is containerAvailable:
+	if diaper quest is 1 and the player is male, decide no;
+	if the max size of it + the leniency of it < the largeness of breasts, decide no;
+	if it is off-stage, decide yes;
+	decide no.
 
 To add treasure to (X - a thing):
 	if tutorial is 1, compute tutorial treasure to X;
 	otherwise compute generic treasure to X.
 
 To restock (C - a thing):
+	say "BUG - tried to restock [C] but there was no restocking function available. Please submit a quick bug report!";
 	do nothing. [Default function, should never be used.]
 
 The setup starting items rules is a rulebook. [This rulebook sets up all items that the Item Pen starts with.]
@@ -86,28 +81,31 @@ To compute generic treasure to (X - a thing):
 	if lucky you tattoo is worn, now chest-luck is 50;
 	if X is rich and earnings < starting-earnings - 100 and a random number between 1 and 500 <= chest-luck + 50 - (10 * (the number of in-play alchemy products)): [starts at 1 in 10 and gets worse as alchemy products appear]
 		let Z be nothing;
-		let R be a random number from 1 to 4;
+		let R be a random number from 1 to 6;
 		if R is 1:
 			now Z is a random off-stage fetish appropriate elixir;
-		if R is 2:
+		otherwise if R is 2:
 			now Z is a random off-stage fetish appropriate potion;
-		if R is 3:
+		otherwise if R is 3:
 			now Z is a random off-stage fetish appropriate salve;
-		if R is 4:
+		otherwise if R is 4:
 			now Z is a random off-stage fetish appropriate powder;
+		otherwise if R is 5:
+			now Z is a random off-stage fetish appropriate bomb;
 		if Z is alchemy product:
 			if a random number from 1 to 5 is 1, now Z is cursed;
 			otherwise now Z is bland;
 			if a random number from 1 to 6 is 1, now Z is blessed;
 		otherwise:
-			now Z is a random off-stage basic loot accessory;
-			if a random number from 1 to 3 is 1:
-				now Z is pink diamond;
-			otherwise if a random number from 1 to 3 is 1:
-				now Z is ruby;
-			otherwise:
-				now Z is emerald;
-			set shortcut of Z;
+			now Z is a random off-stage plentiful ring;
+			if Z is ring:
+				if playerRegion is Dungeon:
+					now Z is sapphire;
+				otherwise if playerRegion is Woods:
+					now Z is emerald;
+				otherwise if playerRegion is Hotel or playerRegion is Mansion:
+					now Z is ruby;
+				set shortcut of Z;
 		unless Z is nothing:
 			say "Inside you find a [ShortDesc of Z]! Ooh, very interesting!";
 			now Z is in X;
@@ -134,9 +132,9 @@ To compute generic treasure to (X - a thing):
 		say "You find a [printed name of C]! This [one of]looks like it [or][stopping]should help!";
 		if newbie tips is 1, say "[one of][newbie style]Newbie tip: You've found a snack! These food items will do something good to your stats. But also if you're patient, there's a certain chef you might meet who can upgrade them into even more incredible treats in exchange for jewellery.[roman type][line break][or][stopping]";
 		compute autotaking C;
-	otherwise if a random number between 1 and 7 > (3 - inventory handicap):
+	otherwise if a random number between 1 and 7 > (4 - inventory handicap):
 		let T be nothing;
-		if a random number between 0 and (2 - inventory handicap) <= last-turn-nothing, now T is a random off-stage fetish appropriate mass collectible;
+		if a random number between 0 and (3 - inventory handicap) <= last-turn-nothing, now T is a random off-stage fetish appropriate mass collectible;
 		if T is a thing:
 			now T is in X;
 			say "You find a [ShortDesc of T]! Nice.";
@@ -147,56 +145,25 @@ To compute generic treasure to (X - a thing):
 			increase last-turn-nothing by 1;
 			say "[if the bimbo of the player < 5][one of]Hmm, this one's empty.[or]Unfortunately it's empty.[or]Ugh, another empty one.[then at random][otherwise][one of]Oh no, it's empty. Boo![or]Lame, there's nothing inside![or]Aww, it's completely empty.[or]How boring, there's nothing here![in random order][end if]";
 	otherwise:
-		now treasure-necessity is [a random number between 1 and] max-overload;
-		if debugmode is 1, say "Obtaining item with maximum overload of [treasure-necessity]; ";
-		let I be a random necessary thing in Standard Item Pen;
-		if I is nothing:
-			now I is a random thing in Standard Item Pen;
-			increase max-overload by 1;
-			if debugmode is 1, say "no such item exists, increasing overload limit to [max-overload].";
-		otherwise:
-			if debugmode is 1, say "decided on item [printed name of I] (overload [overload of I]).";
-			if I is can and debugmode is 1:
-				say "LIST: ";
-				repeat with C running through in-play cans:
-					say "[C] in [location of C].";
-		if playerRegion is Dungeon:
-			if I is accessory and X is not rich:
-				if a random number from 1 to 2 is 1, now I is emerald;
-				otherwise now I is sapphire;
-			if I is plentiful accessory, set shortcut of I;
-		otherwise if playerRegion is Woods:
-			[if I is clothing:
-				let Z be a random number from 3 to 6;
-				while the price of I < Z:
-					if a random number from 1 to 4 > 1:
-						let I be a random clothing in Standard Item Pen;
-						decrease Z by 1;
-					otherwise:
-						now Z is -1;]
-			if I is accessory and X is not rich:
-				if a random number from 1 to 3 is 1, now I is ruby;
-				otherwise now I is sapphire;
-			if I is plentiful accessory, set shortcut of I;
-		otherwise if playerRegion is Hotel or playerRegion is Mansion:
-			[if I is clothing:
-				let Z be a random number from 5 to 8;
-				while the price of I < Z:
-					if a random number from 1 to 4 > 1:
-						let I be a random clothing in Standard Item Pen;
-						decrease Z by 1;
-					otherwise:
-						now Z is -1;]
-			if I is accessory and X is not rich:
-				if a random number from 1 to 3 is 1:
-					now I is ruby;
-				otherwise if a random number from 1 to 3 is 1:
-					now I is emerald;
-				otherwise:
-					now I is sapphire;
-			if I is plentiful accessory, set shortcut of I;
-		if I is a bra:
-			compute found size of I;
+		if debugmode > 1, say "Item list: [Standard Item Pen].";
+		let I be entry 1 in Standard Item Pen;
+		let itemAcceptable be 0;
+		let itemsConsidered be 0;
+		while itemAcceptable is 0 and itemsConsidered < 25:
+			if debugmode > 0, say "Chose [printed name of I].";
+			if I is not containerAvailable or (itemsConsidered is 0 and I is not containerOptimal):
+				if debugmode > 0, say "It was not [if I is containerAvailable]considered a great choice[otherwise]available for spawning[end if], so we will remove it from the list and try again.";
+				restock I;
+				sort Standard Item Pen in random order;
+				now I is entry 1 in Standard Item Pen;
+				increase itemsConsidered by 1;
+			otherwise:
+				now itemAcceptable is 1;
+		if itemsConsidered >= 25:
+			say "Bug: we've been unable to find an item to spawn. Please report the bug with this information:[line break]";
+			repeat with SIP running through Standard Item Pen:
+				say "[SIP] ([location of SIP]); ";
+		if I is a bra, compute found size of I;
 		now I is in X;
 		if X is ornate trunk and I is clothing:
 			if I is not accessory and (I is not chestless or I is belly covering or I is not no-crotch or I is not unskirted) and a random number between 1 and 3 is 1, now the magic-type of I is possession;
@@ -204,7 +171,7 @@ To compute generic treasure to (X - a thing):
 		if I is food and (a random number between 1 and the fat-weight of the player > 15 or the player is hungry) and the player is not overly full and the player is able to eat:
 			compute automatic eating of I;
 		otherwise:
-			say "[Discovery of I]";
+			say Discovery of I;
 		compute autotaking I.
 
 autotake-target is a thing that varies.
@@ -214,9 +181,14 @@ To compute autotaking (I - a thing):
 		if the player is wrist bound and there is a worn heels and the player is upright:
 			say "[one of][bold type]You won't automatically pick stuff up when you have a risk of tripping over because of your heels and wrist bondage.[roman type][line break][or][stopping]";
 		otherwise:
-			now autotake-target is I;
-			now another-turn is 1;
-			now another-turn-action is autotaking continues rule.
+			let autotakeYes be 1;
+			if (I is never-in-bag or the number of worn bag of holding is 0) and (((diaper quest is 0 or the appearance of the player >= the cringe appearance of the player)and the outrage of I >= the appearance of the player) or (diaper quest is 1 and the cringe of I >= the cringe appearance of the player and the cringe appearance of the player >= the appearance of the player)):
+				say "[if there is a worn bag of holding][BigNameDesc of I] can't go in your bag, so it[otherwise]Picking up [NameDesc of I][end if] will negatively affect your appearance. Do you want to pick it up?";
+				if the player is not consenting, now autotakeYes is 0;
+			if autotakeYes is 1:
+				now autotake-target is I;
+				now another-turn is 1;
+				now another-turn-action is autotaking continues rule.
 
 This is the autotaking continues rule:
 	let I be autotake-target;
@@ -224,6 +196,9 @@ This is the autotaking continues rule:
 		if the player is wrist bound and there is a worn heels and the player is upright:
 			say "[bold type]You won't automatically pick stuff up when you have a risk of tripping over because of your heels and wrist bondage.[roman type][line break]";
 		otherwise:
+			if I is can and there is an open minibar in the location of the player:
+				repeat with C running through cans in the location of the player:
+					if I is not C,  try silently taking C;
 			try silently taking I;
 			now focused-thing is I;
 			if I is carried:

@@ -171,6 +171,18 @@ To say variable (P - a body part):
 	otherwise:
 		say "[ShortDesc of P]".
 
+To say variable (L - a liquid-object):
+	if L is semen:
+		say semen;
+	otherwise if L is urine:
+		say urine;
+	otherwise if L is milk:
+		say milk;
+	otherwise if L is murkwater:
+		say "murky liquid";
+	otherwise:
+		say "[L]".
+
 To say player-penis:
 	say "[if the size of penis < 5][sissy-penis][otherwise][manly-penis][end if]".
 
@@ -254,7 +266,7 @@ To say urine:
 	otherwise if the urine taste addiction of the player < 14:
 		say "[one of]pee[or]piss[or]piss[or]wee[or]urine[as decreasingly likely outcomes]";
 	otherwise:
-		say "[one of][or]yummy [or]tasty [or][or]delicious [or][or]my favourite drink, [as decreasingly likely outcomes]piss".
+		say "piss".
 
 To say urinate:
 	say "[one of][if the bimbo of the player < 5]urinate[otherwise]wee[end if][or]pee[or]piss[purely at random]".
@@ -382,7 +394,7 @@ To decide which text is caps himself of (M - a thing):
 General purpose method of referring to a monster, "M"'s penis
 
 +!]
- To say DickDesc of (M - a monster):
+To say DickDesc of (M - a monster):
 	if full-lady fetish is 1, say "strap-on";
 	otherwise say manly-penis.
 

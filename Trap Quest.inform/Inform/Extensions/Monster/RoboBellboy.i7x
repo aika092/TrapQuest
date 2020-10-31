@@ -388,7 +388,7 @@ To compute headgear forcing of (M - senior robobellboy):
 		say "[BigNameDesc of M] opens up [his of M] chest compartment and pulls out a [ShortDesc of trainee hood]. You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces it over your head, where a metal latch snaps closed and emits a short and somehow ominous tone.[line break][first custom style]'APPEARANCE REGIMEN INITIATED. [caps please] WAIT PATIENTLY FOR FURTHER OPTIMISATION.[roman type][line break]";
 		FavourUp M;
 	otherwise:
-		say "[BigNameDesc of M] pauses and [his of M] eyes shift from red to green.[line break][first custom style]'CANNOT EXCEED MAXIMUM NUMBER OF ONGOING [']CLASS['] PROGRAMS. GOOD JOB TRAINEE. KEEP UP THE GOOD WORK.'[roman type][line break]";
+		say "[BigNameDesc of M] pauses and [his of M] eyes shift from red to green.[line break][first custom style]'CANNOT EXCEED MAXIMUM NUMBER OF ONGOING [']CLASS['] PROGRAMS. [caps please] REPORT BACK ONCE YOU HAVE REMOVED YOUR HEADWEAR.'[roman type][line break]";
 	bore M.
 
 To compute bra forcing of (M - senior robobellboy):

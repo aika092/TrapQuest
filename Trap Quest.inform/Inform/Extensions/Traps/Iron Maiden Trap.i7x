@@ -3,7 +3,7 @@ Iron Maiden Trap by Traps begins here.
 An iron-maiden is a kind of trap. The printed name of iron-maiden is "[TQlink of item described]iron maiden[TQxlink of item described][verb-desc of item described]". There is 1 swing iron-maiden. Understand "iron", "maiden" as iron-maiden. The text-shortcut of an iron-maiden is "irm".
 
 To say ExamineDesc of (C - an iron-maiden):
-	say "A human-shaped solid metal cage.".
+	say "A human-shaped cage, designed to keep anyone inside standing compeltely still and then torture them with wriggling [if diaper quest is 0]tentacles[otherwise]feathers[end if].".
 
 To say ShortDesc of (T - an iron-maiden):
 	say "iron maiden".
@@ -87,7 +87,7 @@ A time based rule (this is the iron-maiden-punishment rule):
 					say "The tentacles wriggle, prod and push at your [ShortDesc of C], weakening the [clothing-material of C]!";
 					damage C;
 			otherwise:
-				if the player is female:
+				if the player is possessing a vagina:
 					if M is penetrating vagina:
 						say "The metal tentacle in your [vagina] is still [one of]thrusting vigorously[or]plowing away[or]fucking you deep and hard[or]smashing against your cervix as it violates you[in random order]!";
 						ruin vagina;

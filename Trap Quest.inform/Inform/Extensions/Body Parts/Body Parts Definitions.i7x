@@ -346,13 +346,6 @@ To decide which number is the cringe of (B - a body part):
 Report examining a body part:
 	if debuginfo > 0, say "[input-style]Current outrageousness ([if the noun is lewdly exposed and (the noun is breasts or the noun is fuckhole)]lewdly exposed[otherwise if the noun is lewdly exposed]visible[otherwise if the noun is at least partially lewdly exposed]partially exposed[otherwise if the noun is exposed]visible[otherwise if the noun is breasts and breasts is showing cleavage]showing cleavage[otherwise if the noun is at least partially exposed]partially visible[otherwise]covered up[end if]): [outrage of the noun]/20[if diaper quest is 1][line break]Current babyishness: [cringe of the noun]/20[end if][roman type][line break]";
 
-[!<BodyPartIsUnSoakedOrSoaked>+
-
-Used to track where we've already spread liquid movements to, so that recursive functions don't become infinite.
-
-+!]
-A body part can be unsoaked or soaked. A body part is usually unsoaked.
-
 [!<BodyPartIsOccupied>+
 
 Appears to NPCs as if it's unavailable.
@@ -434,8 +427,19 @@ This is the body parts get focused rule:
 	repeat with B running through body parts:
 		if B is not arms:
 			if realisticArms is 1 and B is listed in the armUses of arms:
-				if debugmode > 1, say "[printed name of B] is covered by an arm.";
-				add B to LB, if absent;
+				if B is vagina:
+					if penis is at least partially exposed:
+						if debugmode > 1, say "penis is covered by an arm.";
+						add penis to LB, if absent;
+					if vagina is at least partially exposed:
+						if debugmode > 1, say "vagina is covered by an arm.";
+						add vagina to LB, if absent;
+					if asshole is at least partially exposed:
+						if debugmode > 1, say "asshole is covered by an arm.";
+						add asshole to LB, if absent;
+				otherwise:
+					if debugmode > 1, say "[printed name of B] is covered by an arm.";
+					add B to LB, if absent;
 			otherwise if diaper quest is 0 or the appearance of the player > the cringe appearance of the player:
 				let A be calculated-appearance-outrage-level - (calculated-appearance-outrage-level / 2);
 				if A > 1 and the outrage of B >= A:

@@ -166,7 +166,10 @@ To decide which number is the leniency of (B - a bra): [the higher F the bigger 
 
 To restock (C - a bra):
 	let B be a random basic loot bra;
-	if B is bra, now B is in Standard Item Pen.
+	if B is bra:
+		repeat with L running through Standard Item Pen:
+			if L is bra, remove L from Standard Item Pen;
+		add B to Standard Item Pen.
 
 This is the setup starting bras rule:
 	let C be a random bra;
@@ -237,13 +240,13 @@ This is the bra already worn rule:
 The bra already worn rule is listed in the bra wearability rules.
 
 This is the bra can't fit rule:
-	if summoning is 1:
-		unless the max size of wearing-target >= 20: [Special case where the bra doesn't care about size]
+	unless the max size of wearing-target >= 20: [Special case where the bra doesn't care about size]
+		if summoning is 1:
 			if the largeness of breasts < the min size of wearing-target or the largeness of breasts > the max size of wearing-target, rule fails;
-	otherwise:
-		if the largeness of breasts > (the size of wearing-target + the leniency of wearing-target):
-			say "You can't fit it on, your boobs are too big!";
-			rule fails.
+		otherwise:
+			if the largeness of breasts > (the size of wearing-target + the leniency of wearing-target):
+				say "You can't fit it on, your boobs are too big!";
+				rule fails.
 The bra can't fit rule is listed in the bra wearability rules.
 
 This is the bra necklace clash rule:
@@ -252,6 +255,13 @@ This is the bra necklace clash rule:
 			if summoning is 0 and autowear is false, say "You can't wear that because [if O is wearing-target]you're already wearing it[otherwise]you're already wearing the [ShortDesc of O][end if]!";
 			rule fails.
 The bra necklace clash rule is listed in the bra wearability rules.
+
+This is the bra dress clash rule:
+	if summoning is 0:
+		repeat with B running through worn breast covering clothing:
+			if autowear is false, say "You can't wear that over your [ShortDesc of B][if B is not bra], it should go underneath[end if].";
+			rule fails.
+The bra dress clash rule is listed in the bra wearability rules.
 
 Report wearing a bra:
 	if the weight of breasts < 0 and the support of the noun > 0:
@@ -271,7 +281,7 @@ Report wearing a bra:
 		BraGrow the noun.
 
 To BraGrow (B - a bra): [Checks if the bra is cursed and if so it tries to grow itself or your breasts.]
-	if diaper quest is 0 and the player is not top heavy and the player is not a flatchested trap:
+	if diaper quest is 0 and the player is not top heavy and the player is not a flatchested trap and the stolen-strength of B is 0:
 		let LB be the largeness of breasts;
 		if the size of B < the max size of B and the size of B <= LB:
 			say "The [printed name of B] grows into a ";

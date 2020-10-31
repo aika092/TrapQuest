@@ -43,6 +43,7 @@ Definition: commando outfit is fetish appropriate:
 	if diaper quest is 0, decide yes;
 	decide no.
 Definition: commando outfit is green themed: decide yes.
+Definition: commando outfit is displacable: decide no.
 
 Figure of commando outfit is the file "Items/Clothes/Upper/Special/commando1.png".
 

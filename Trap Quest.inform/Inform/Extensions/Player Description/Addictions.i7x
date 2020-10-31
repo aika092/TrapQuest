@@ -136,13 +136,13 @@ We explain how much the player likes performing tittyfucks.
 
 +!]
 This is the titfuck addiction description rule:
-	if the largeness of breasts >= 5:
+	if the largeness of breasts >= 5 or there is worn breast hiding clothing:
 		let SB be the sensitivity of breasts;
-		if the titfuck addiction of the player > 1:
-			say "[if the titfuck addiction of the player <= 2]You find the thought of having a [manly-penis] in between your breasts rather repulsive[otherwise if the titfuck addiction of the player <= 3]You find the idea of letting [men of shopkeeper] fuck your breasts distasteful[otherwise if the titfuck addiction of the player <= 5 and the anal sex addiction of the player <= 5 and the vaginal sex addiction of the player <= 5]You don't mind giving titjobs. It's often better than the alternatives[otherwise if the titfuck addiction of the player <= 5]You don't mind giving titjobs, but you usually find other types of sex more fun[otherwise if the titfuck addiction of the player <= 7]You love pleasuring [men of shopkeeper] with your boobs! It's just so sexy and convenient[otherwise if the titfuck addiction of the player <= 9]You get really turned on by your breasts being used as fuckpillows for some [man of shopkeeper] to sandwich [his of shopkeeper] thick meat between[otherwise]Whenever your cleavage is empty, you ache to feel another phallic object thrusting in and out of its voluptuous fold[end if].";
-			if debuginfo > 0, say "[input-style](Titfuck addiction [titfuck addiction of the player] / 10)[roman type][line break]";
 		if SB > 1:
-			say "[if SB <= 2]You gain no personal pleasure from having a [manly-penis] in between your breasts[otherwise if SB <= 3]You find there is little pleasure for you in relieving [manly-penis]s with your tits[otherwise if SB <= 5]Pleasuring [manly-penis]s with your breasts feels surprisingly pleasant on your skin[otherwise if SB <= 7]Giving titjobs feels great thanks to your extra-sensitive skin[otherwise if SB <= 10]Having a [manly-penis] pumping in and out of your cleavage is a great pleasure; your breasts are becoming like another sex organ[otherwise]Your super-sensitive breasts tingle with pleasure whenever something rubs against them[end if].";
+			if the titfuck addiction of the player > 1:
+				say "[if the titfuck addiction of the player <= 2]You find the thought of having a [manly-penis] in between your breasts rather repulsive[otherwise if the titfuck addiction of the player <= 3]You find the idea of letting [men of shopkeeper] fuck your breasts distasteful[otherwise if the titfuck addiction of the player <= 5 and the anal sex addiction of the player <= 5 and the vaginal sex addiction of the player <= 5]You don't mind giving titjobs. It's often better than the alternatives[otherwise if the titfuck addiction of the player <= 5]You don't mind giving titjobs, but you usually find other types of sex more fun[otherwise if the titfuck addiction of the player <= 7]You love pleasuring [men of shopkeeper] with your boobs! It's just so sexy and convenient[otherwise if the titfuck addiction of the player <= 9]You get really turned on by your breasts being used as fuckpillows for some [man of shopkeeper] to sandwich [his of shopkeeper] thick meat between[otherwise]Whenever your cleavage is empty, you ache to feel another phallic object thrusting in and out of its voluptuous fold[end if].";
+				if debuginfo > 0, say "[input-style](Titfuck addiction [titfuck addiction of the player] / 10)[roman type][line break]";
+			say "[if SB <= 2]You gain no personal pleasure from having a [manly-penis] in between your breasts[otherwise if SB <= 3]You find there is little pleasure for you in relieving [manly-penis]s with your tits[otherwise if SB <= 5]Pleasuring [manly-penis]s with your breasts feels surprisingly pleasant on your skin[otherwise if SB <= 10]Giving titjobs feels great thanks to your extra-sensitive skin[otherwise if SB <= 20]Having a [manly-penis] pumping in and out of your cleavage is a great pleasure; your breasts are becoming like another sex organ[otherwise]Your super-sensitive breasts tingle with pleasure whenever something rubs against them[end if].";
 			if debuginfo > 0, say "[input-style](Breasts sensitivity [SB])[roman type][line break]".
 The titfuck addiction description rule is listed in the addiction listing rules.
 
@@ -227,51 +227,81 @@ We explain how much the player likes tasting and drinking semen.
 
 +!]
 This is the semen taste addiction description rule:
-	if the latex-transformation of the player <= 4 and diaper quest is 0 and the semen taste addiction of the player > 1:
-		if the semen taste addiction of the player < 3:
-			say "You don't want [semen] anywhere near your mouth, never mind inside it.";
-		otherwise if the semen taste addiction of the player < 6:
-			say "You are disgusted by the taste of [semen].";
-		otherwise if the semen taste addiction of the player < 9:
-			say "You are slowly getting used to the taste of [semen].";
+	if the latex-transformation of the player <= 4 and diaper quest is 0:
+		if the semen taste addiction of the player < 2:
+			say "You are disgusted by the idea of having to taste [semen], never mind swallow it.";
+		otherwise if the semen taste addiction of the player < 5:
+			say "You don't like the taste of [semen], but it doesn't bring up the feelings of disgust that you once expected it to.";
+		otherwise if the semen taste addiction of the player < 8:
+			say "You are slowly getting used to the taste of [semen]. You think it tastes... OK. Not bad, but not good either.";
 		otherwise if the semen taste addiction of the player < 11:
 			say "You actually quite like the taste of [semen].";
-		otherwise if the semen taste addiction of the player < 13:
-			say "You frequently lick your lips in case you can find and taste a bit more [semen].";
-		otherwise if the semen taste addiction of the player < 15:
-			say "You would happily admit that [semen] is probably [if the semen taste addiction of the player > the urine taste addiction of the player]your favourite drink[otherwise]one of your favourite drinks[end if].";
+		otherwise if the semen taste addiction of the player < 14:
+			say "You really enjoy the taste of [semen]. It's delicious!";
 		otherwise if the semen taste addiction of the player < 17:
-			say "You are desperate to find ways to get to taste and swallow more [semen].";
+			if semen is highest addicted liquid, say "You would happily admit that [semen] is probably [if highest-addiction-liquids is 1]your favourite drink[otherwise]one of your favourite drinks[end if]. It's the perfect beverage!";
+			[otherwise say "You would happily admit that [semen] is one of the best drinks ever made. But you still love [if urine is highest addicted liquid and milk is highest addicted liquid][urine] and [milk][otherwise if urine is highest addicted liquid][urine][otherwise][milk][end if] more!";]
+		otherwise if the semen taste addiction of the player < 20:
+			if semen is highest addicted liquid, say "You strongly believe that [semen] [if highest-addiction-liquids is 1]is the only thing[otherwise if urine is highest addicted liquid and milk is highest addicted liquid]and [urine] and [milk] are the only things[otherwise if urine is highest addicted liquid]and [urine] are the only things[otherwise]and [milk] are the only things[end if] ever worth drinking.";
+			[otherwise say "You do enjoy the taste of [semen], but you don't really care about it because it's not [if urine is highest addicted liquid and milk is highest addicted liquid][urine] or [milk][otherwise if urine is highest addicted liquid][urine][otherwise][milk][end if].";]
 		otherwise:
-			say "You are so addicted to [semen] that you hold it in your mouth and play with it with your tongue for as long as possible before swallowing, to minimise the amount of time that your mouth isn't full of cum!";
+			say "You are so addicted to [semen][if urine is highest addicted liquid and milk is highest addicted liquid], [urine] and [milk][otherwise if urine is highest addicted liquid] and [urine][otherwise if milk is highest addicted liquid] and [milk][end if] that you don't want to have to drink anything else, ever.";
 		if debuginfo > 0, say "[input-style](Semen taste addiction [semen taste addiction of the player] / 20)[roman type][line break]".
 The semen taste addiction description rule is listed in the addiction listing rules.
 
 [!<TheUrineTasteAddictionDescriptionRule>+
 
-We explain how much the player likes tasting and drinking urine.
+We explain how much the player likes drinking urine. They always find the taste a bit gross but they love the experience.
 
 +!]
 This is the urine taste addiction description rule:
-	if the latex-transformation of the player <= 4 and the urine taste addiction of the player > 1:
-		if the urine taste addiction of the player < 3:
-			say "You absolutely hate being forced to drink [urine], as any sane person would.";
-		otherwise if the urine taste addiction of the player < 6:
-			say "You are disgusted by the taste of [urine].";
-		otherwise if the urine taste addiction of the player < 9:
-			say "You are slowly getting used to the taste of [urine].";
-		otherwise if the urine taste addiction of the player < 11:
-			say "You actually quite like the taste of [urine].";
-		otherwise if the urine taste addiction of the player < 13:
-			say "You enjoy the experience of people pissing in your mouth.";
-		otherwise if the urine taste addiction of the player < 15:
-			say "You would happily admit that [urine] is probably [if the urine taste addiction of the player > the semen taste addiction of the player]your favourite drink[otherwise]one of your favourite drinks[end if].";
-		otherwise if the urine taste addiction of the player < 17:
-			say "You get aroused when people use you as a human urinal, and savour the taste of [urine] as if it was a delicacy.";
-		otherwise:
-			say "You are addicted to [urine]. You love the taste [urine] so much that you are [if the player is a pervert]desperate to find more people to use you as a human urinal. You are [end if]extremely aroused by the mere thought of getting pissed on.";
+	if the latex-transformation of the player <= 4 and watersports fetish is 1:
+		if highest taste addiction < 17 or semen is not highest addicted liquid: [if there's a high taste addiction and semen is one of the highest, we've said everything that needed to be said.]
+			if the urine taste addiction of the player < 2:
+				say "You couldn't bring yourself to willingly engage in watersports - the idea disgusts you too much.";
+			otherwise if the urine taste addiction of the player < 5:
+				say "You are disgusted by piss play, but can bring yourself to do it if you absolutely have to.";
+			otherwise if the urine taste addiction of the player < 8:
+				say "You find [urine] a bit gross, but believe everyone should try it out at least once, to discover what it's like for themselves.";
+			otherwise if the urine taste addiction of the player < 11:
+				say "You find the taste of [urine] rather bitter, which makes sexual play involving it feel very... intense.";
+			otherwise if the urine taste addiction of the player < 14:
+				say "The bitter and slightly gross taste of [urine] makes it intense and exciting to play with.";
+			otherwise if the urine taste addiction of the player < 17:
+				say "Even though it tastes a bit foul, you enjoy the experience of people pissing in your mouth more than you enjoy any other drink[if milk is highest addicted liquid] except [milk][end if].";
+			otherwise if the urine taste addiction of the player < 20:
+				if urine is highest addicted liquid, say "You strongly believe that your role in life is to be a human urinal, and that you should try to avoid drinking anything except [urine][if highest-addiction-liquids > 1] and [milk][end if].";
+			otherwise:
+				say "You are addicted to being used as a human urinal. You love the disgusting experience of drinking [urine] so much that you don't want to have to drink anything else[if highest-addiction-liquids > 1] except [milk][end if], ever.";
 		if debuginfo > 0, say "[input-style](Urine taste addiction [urine taste addiction of the player] / 20)[roman type][line break]".
 The urine taste addiction description rule is listed in the addiction listing rules.
+
+[!<TheMilkTasteAddictionDescriptionRule>+
+
+We explain how much the player cares about where milk comes from and how much they like the taste.
+
++!]
+This is the milk taste addiction description rule:
+	if the latex-transformation of the player <= 4 and (lactation fetish is 1 or diaper quest is 1):
+		if highest taste addiction < 17 or (semen is not highest addicted liquid and urine is not highest addicted liquid): [if there's a high taste addiction and milk is not the highest on its own, we've said everything that needed to be said.]
+			if the milk taste addiction of the player < 2:
+				say "You like the taste of cow's milk, but the thought of drinking human breast milk disgusts you.";
+			otherwise if the milk taste addiction of the player < 5:
+				say "You like the taste of milk, but don't like the idea of drinking human breast milk.";
+			otherwise if the milk taste addiction of the player < 8:
+				say "You love the taste of milk enough that you're happy to drink human breast milk. Feeding directly from a breast would still be a very humiliating experience.";
+			otherwise if the milk taste addiction of the player < 11:
+				say "You love the taste of milk so much that you're happy to breast feed[if the breastskill of the player is 1]. Drinking directly from your own breasts would still feel rather humiliating[end if].";
+			otherwise if the milk taste addiction of the player < 14:
+				say "You love the taste of milk to such an extreme extent that you will willingly drink it from anywhere, including direct breastfeeding[if a2m fetish >= 2] or drinking it after it's been pushed out of someone's ass[end if].";
+			otherwise if the milk taste addiction of the player < 17:
+				say "You're rather addicted to [milk] - you think it's the perfect drink, and you sometimes find yourself craving the taste of it.";
+			otherwise if the milk taste addiction of the player < 20:
+				say "You're very addicted to [milk], and tend try to avoid drinking anything else.";
+			otherwise:
+				say "You are addicted to [milk]. You love the taste and experience so much that you don't want to have to drink anything else, ever.";
+		if debuginfo > 0, say "[input-style](Milk taste addiction [milk taste addiction of the player] / 20)[roman type][line break]".
+The milk taste addiction description rule is listed in the addiction listing rules.
 
 [!<TheCurrentWearingDiaperState>+
 

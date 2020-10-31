@@ -50,8 +50,7 @@ To say BanishFleeFlav of (M - supporter-ai):
 	say "[speech style of M]'Nooo, my perfect body, how could it lose?!'[roman type][line break][BigNameDesc of M] asks out loud as [his of M] body begins to disintegrate into blue pixels. Moments later [he of M] has completely disappeared.".
 
 To say SelectionFrustrated of (M - supporter-ai):
-	say "[BigNameDesc of M] looks at [his of M] wrist as if [he of M] was wearing a watch, yawns loudly and visibly loses interest.";
-	bore M.
+	say "[BigNameDesc of M] looks at [his of M] wrist as if [he of M] was wearing a watch, yawns loudly and visibly loses interest.".
 
 To say PresentFriendlyAcceptanceFlav of (M - supporter-ai):
 	say "[speech style of M]'It's your lucky day. Since you asked so nicely, I'll allow it, this time.'[roman type][line break]".
@@ -101,8 +100,7 @@ To set up sex length of (M - supporter-aika) in (B - a body part):
 	set up sex length 4 of M in B.
 
 To compute post climax effect of (M - supporter-aika) in (F - a fuckhole):
-	compute M sleeping 400 after sex;
-	bore M.
+	compute M sleeping 400 after sex.
 
 To say DisapprovalFlav of (M - supporter-aika):
 	say "[BigNameDesc of M][']s [LongDickDesc of M] [one of]begins to stiffen.[or]visibly twitches.[or]visibly shudders as it slightly hardens.[or]drools a worryingly huge amount of precum onto the floor.[in random order]".
@@ -145,8 +143,7 @@ To compute the default taunting of (M - supporter-aika):
 	say "[BigNameDesc of M] watches while gently stroking [his of M] long shaft.".
 
 To say SelectionFrustrated of (M - supporter-aika):
-	say "[speech style of M]'Actually, I think your situation is hilariously awful enough without me needing to join in right now.'[roman type][line break][BigNameDesc of M] gives up waiting and leaves you alone.";
-	bore M.
+	say "[speech style of M]'Actually, I think your situation is hilariously awful enough without me needing to join in right now.'[roman type][line break][BigNameDesc of M] gives up waiting and leaves you alone.".
 
 To compute the dildo stuck taunting of (M - supporter-aika):
 	if a random number between 1 and 3 is 1, say "[BigNameDesc of M] puts [his of M] hand to [his of M] chin as if admiring an art exhibit.[line break][speech style of M]'[one of]This was the first trap I ever designed, but it still works so elegantly[or]A spring-loaded dildo trap. Whatever will I think of next[or]These traps were really hard to balance, but I think they're in a good place right now in the meta[in random order].'[roman type][line break]".
@@ -223,7 +220,7 @@ To say SwallowDemand of (M - supporter-aika):
 	say "[speech style of M]'Don't disrespect the dev by refusing to swallow [his of M] cum, now.'[roman type][line break]".
 
 To say CleavageClimaxFlav of (M - supporter-aika):
-	say "[BigNameDesc of M] grunts triumphantly as [he of M] ejaculates, coating your [ShortDesc of breasts] in [his of M] [semen]!".
+	say "[if M is wrapped][BigNameDesc of M] rips the condom off of [his of M] [manly-penis]! [end if][BigNameDesc of M] grunts triumphantly as [he of M] ejaculates, coating your [ShortDesc of breasts] in [his of M] [semen]!".
 
 To compute the flying player taunting of (M - supporter-aika):
 	if a random number from 1 to 6 is 1:
@@ -361,8 +358,7 @@ To compute the default taunting of (M - supporter-critchett): [The NPC isn't abl
 	say "[BigNameDesc of M] licks [his of M] lips, waiting for [his of M] opportunity to snatch you up for [himself of M].".
 
 To say SelectionFrustrated of (M - supporter-critchett): [The NPC has got tired of waiting!]
-	say "[BigNameDesc of M][']s eyes widen vastly. [big he of M] heaves a lengthy, spent moan as [his of M] diaper brings [his of M] to cum way too hard this time.[line break][speech style of M]'Ugh, well. Maybe I'll find you later on when I've warmed back up...'[roman type][line break]";
-	bore M.
+	say "[BigNameDesc of M][']s eyes widen vastly. [big he of M] heaves a lengthy, spent moan as [his of M] diaper brings [his of M] to cum way too hard this time.[line break][speech style of M]'Ugh, well. Maybe I'll find you later on when I've warmed back up...'[roman type][line break]".
 
 To compute the dildo stuck taunting of (M - supporter-critchett):
 	if a random number between 1 and 3 is 1, say "[BigNameDesc of M] catches sight of you through [his of M] sex-crazed haze and coos delightedly as [he of M] slides up against you, pressing [his of M] hot curves against you.[line break][speech style of M]'[one of]Ooo, that's in DEEP, isn't it, sweetie? Is it cumming inside you? Will you get filled with hot cream? You'd love that, wouldn't you? I know I would.'[or]I bet you'd like help getting off of that. I really would just rather watch this, though. Wiggle a little for me?'[or]You're lucky I'm in control of myself right now. I could use a good dildo deep in my [vagina] even if you're currently part of it!'[or]You never saw this coming, did you? I mean, you did know this place was trapped, right?'[in random order][roman type][line break]".
@@ -470,14 +466,14 @@ To say FacesitClimaxFlav of (M - supporter-critchett):
 
 [Vaginal & Anal]
 
-To compute (M - supporter-critchett) attacking (C - a clothing): [Critchett always destroys clothing to make way for diapers.]
-	say "[PullAttempt of M at C]";
+To compute (M - supporter-critchett) attacking (C - a knickers): [Critchett always destroys knickers to make way for diapers.]
+	say PullAttempt of M at C;
 	let R be a random number between the difficulty of M and 6 + a random number between the difficulty of M and 6;
 	if debuginfo > 0, say ClothingAttackDebug of M on C with R;
-	if R > the defence of the player:
+	if R > the defence of C:
 		compute M destroying C;
 	otherwise:
-		say "[WeakenFlav of M on C]";
+		say WeakenFlav of M on C;
 		damage C.
 
 To say VaginaSpecialPenetrationFlav of (M - supporter-critchett): [This can be whatever you want as long as the purpose is masturbating the vagina and it's not thick enough for us to need to handle calculations about soreness and stretching. So it could be a vibrating wand, or your NPC's tongue, etc. Just make sure that the flavour in the following turns matches]
@@ -666,10 +662,6 @@ To compute the busy waiting of (M - supporter-teagan): [The NPC isn't able to do
 To compute the default taunting of (M - supporter-teagan): [The NPC isn't able to do their thing right now because the player is busy with a trap or another NPC, but they expect the player will be free soon.]
 	say "[BigNameDesc of M] watches, making no attempt to hide [his of M] excitement.".
 
-To say SelectionFrustrated of (M - supporter-teagan): [The NPC has got tired of waiting!]
-	say "[BigNameDesc of M] seems to look very frustrated, and then gives up.";
-	bore M.
-
 To compute the dildo stuck taunting of (M - supporter-teagan):
 	if a random number between 1 and 3 is 1, say "[BigNameDesc of M] pinches and tugs [his of M] nipples, trickling milk down [his of M] front.[line break][speech style of M]'[one of]Gawd, how are you supposed to suck on my tits when you're stuck like that?[or]Have you tried, like, avoiding traps? Or, ew, you like getting caught in them?! [or]Ugh, stop goofing around! My titties need draining![or]Ohmigawd, I can't believe how dumb these players are...[in random order]!'[roman type][line break]".
 
@@ -750,11 +742,12 @@ To say EnemaReactionFlav of (M - supporter-teagan) into (C - a clothing): [When 
 
 To compute facial sex of (M - supporter-teagan):
 	compute facesit sex of M;
-	StomachUp 2.
+	FaceFill milk by 1;
+	suggest swallowing.
 
 To compute facial climax of (M - supporter-teagan):
 	compute facesit climax of M;
-	StomachMilkUp 2.
+	AnnouncedSquirt milk on face by 4.
 
 To compute unique facesit climax effect of (M - supporter-teagan): [2 credits, doesn't sleep]
 	say "[BigNameDesc of M] gets off of your face and lovingly wipes your mouth with one hand.";
@@ -780,7 +773,7 @@ To say NearingClimaxFacesit of (M - supporter-teagan): [Next turn your NPC is go
 	cutshow figure of teagan cutscene 2 for M.
 
 To say FacesitClimaxFlav of (M - supporter-teagan):
-	say "[BigNameDesc of M] starts to squirm and pant with an animalistic fervour in [his of M] eyes as [he of M] orgasms from [his of M] breasts alone! Your face gets sprayed with [if the milk taste addiction of the player < 4]gross, [otherwise if the milk taste addiction of the player > 6]delicious, [end if]hot tit milk.[line break][speech style of M]'Yes, yes, oh fuck yes this is what I needed! Your face makes a damn good sex toy'[roman type][line break]";
+	say "[BigNameDesc of M] starts to squirm and pant with an animalistic fervour in [his of M] eyes as [he of M] orgasms from [his of M] breasts alone! Your face gets sprayed with [if the milk taste addiction of the player < 4]gross, [otherwise if the milk taste addiction of the player > 6]delicious, [end if]hot tit milk.[line break][speech style of M]'Yes, yes, oh fuck yes this is what I needed! Your face makes a damn good sex toy.'[roman type][line break]";
 	cutshow figure of teagan cutscene 3 for M.
 
 [###INFLATION STUFF###]
@@ -889,7 +882,7 @@ To compute delay of (M - supporter-jim): [NPCs, when they're confident that the 
 	say "[BigNameDesc of M] folds [his of M] arms.[line break][speech style of M]'What... is your quest?'[roman type][line break]".
 
 To say PresentAcceptanceFlav of (M - supporter-jim): [Your (aggressive) NPC has decided to do what the player suggested.]
-	say "[BigNameDesc of M] grins.[line break][speech style of M]'[if the player is male and presented-orifice is asshole]Yes, I'll try to examine this [man of the player]! It's all right, I'm a doctor... actually I'm a gynaecologist, but this is my lunch hour.'[otherwise]A wise choice, monsieur. And now, how would you like it served? All mixed up together in a bucket? I can assure you, just because it is mixed up with all the other things, we would not dream of giving you less than the full amount.'[end if][roman type][line break]".
+	say "[BigNameDesc of M] grins.[line break][speech style of M]'[if the player is sexed male and presented-orifice is asshole]Yes, I'll try to examine this [man of the player]! It's all right, I'm a doctor... actually I'm a gynaecologist, but this is my lunch hour.'[otherwise]A wise choice, monsieur. And now, how would you like it served? All mixed up together in a bucket? I can assure you, just because it is mixed up with all the other things, we would not dream of giving you less than the full amount.'[end if][roman type][line break]".
 
 To say PresentRejectionFlav of (M - supporter-jim): [Your (aggressive) NPC has decided to ignore the player's suggestion. NB that they may independently make the decision to do that thing anyway themselves, so it would be inaccurate to say that your NPC 'decides against doing that' or something.]
 	say "[BigNameDesc of M] thinks for a moment.[line break][speech style of M]'On second thought, let's not do that. It is a silly [if presented-orifice is orifice]hole[otherwise]body part[end if].'[roman type][line break]".
@@ -901,8 +894,7 @@ To compute the default taunting of (M - supporter-jim): [The NPC isn't able to d
 	say "[BigNameDesc of M] watches, making a poor attempt to hide [his of M] glee.[one of][line break][speech style of M]'I think what's happened is terribly, terribly funny... er, tragic!'[roman type][line break][or][stopping]".
 
 To say SelectionFrustrated of (M - supporter-jim): [The NPC has got tired of waiting!]
-	say "[BigNameDesc of M] speaks to [himself of M].[line break][speech style of M]'THIS IS IT, JIM THE INVOKER! THIS IS YOUR MOMENT, JIM THE INVOKER! AT LAST, YOU'RE A [caps man of M]!'[line break][if the player is able to speak][roman type]You reply.[line break][variable custom style]'Go away!'[line break][speech style of M]'Righto.'[roman type][line break][BigNameDesc of M] [otherwise]But then [he of M] finds the pressure too much and turns to leave you alone.";
-	bore M.
+	say "[BigNameDesc of M] speaks to [himself of M].[line break][speech style of M]'THIS IS IT, JIM THE INVOKER! THIS IS YOUR MOMENT, JIM THE INVOKER! AT LAST, YOU'RE A [caps man of M]!'[line break][if the player is able to speak][roman type]You reply.[line break][variable custom style]'Go away!'[line break][speech style of M]'Righto.'[roman type][line break][BigNameDesc of M] [otherwise]But then [he of M] finds the pressure too much and turns to leave you alone.".
 
 To compute the dildo stuck taunting of (M - supporter-jim):
 	say "[one of]Seeing you suspended on a pole, [NameDesc of M] can't help but begin to recite [his of M] favourite song.[line break][speech style of M]'Cheer up, Brian. You know what they say:
@@ -989,7 +981,7 @@ To say BreastsPenetrationFlav of (M - supporter-jim):
 	say "[BigNameDesc of M] takes [his of M] [DickDesc of M] and moves it towards your chest. [if the largeness of breasts > 8][speech style of M]'O Lord! Ooh, you are so big! So absolutely huge. Gosh, we're all really impressed down here, I can tell you.'[roman type][line break][end if]You watch in silence as [he of M] pushes forward, using the tight gap in between your boobs as a makeshift fuckhole. [if the titfuck addiction of the player < 5]You hold your body still and try to ignore the brutish grunts as [he of M] begins to thrust in and out of your [BreastDesc][otherwise]You instinctively bring your hands to your [BreastDesc], and begin to massage [his of M] [DickDesc of M] by moving them up and down with your hands as fast and powerfully as you can[end if].".
 
 To say CleavageClimaxFlav of (M - supporter-jim):
-	say "[BigNameDesc of M] ejaculates, covering your [ShortDesc of breasts] in [his of M] [semen]![line break][speech style of M]'My nipples explode with delight!'[roman type][line break]".
+	say "[if M is wrapped][BigNameDesc of M] rips the condom off of [his of M] [manly-penis]! [end if][BigNameDesc of M] ejaculates, covering your [ShortDesc of breasts] in [his of M] [semen]![line break][speech style of M]'My nipples explode with delight!'[roman type][line break]".
 
 [Vaginal & Anal]
 
@@ -1007,7 +999,7 @@ To say CondomAcceptFlav of (M - supporter-jim):
 	otherwise say "[BigNameDesc of M] [one of]smiles[or]grins wordlessly[or]smirks[at random] and takes a condom. Discarding the wrapper, [he of M] rolls it down the length of [his of M] [manly-penis]. You stare, [one of][if the semen taste addiction of the player > 13]hypnotised, eagerly licking your lips[otherwise if the semen taste addiction of the player > 6]hypnotised, unconsciously licking your lips[otherwise]disgustedly curling your upper lip[end if][or]unable to [if the player is a pervert and the player is not a nympho]bring yourself to [end if]look away[or]your mouth opening unconsciously[or][if the player is not a pervert]without a shred of enthusiasm[otherwise]with envy[end if], as the rubber makes intimate contact with every inch of the massive tool[or]as the gleaming latex makes every bump and vein glisten [if the player is not a pervert]unappealingly[otherwise]temptingly[end if][at random].".
 
 To say CondomRejectFlav of (M - supporter-jim):
-	say "[BigNameDesc of M] begins singing in response.[line break][speech style of M]'Every sperm is sacred, every sperm is good. God needs every single sperm in your neighbourhood!'[roman type][line break]Looks like [he of M][']s going in bare...".
+	say "[BigNameDesc of M] begins singing in response.[line break][speech style of M]'Every sperm is sacred, every sperm is good. God needs every single sperm in your neighbourhood!'[roman type][line break][if M is not seduced]Looks like [he of M][']s going in bare...[end if]".
 
 To say CondomPieFlav of (M - supporter-jim) in (F - a fuckhole):
 	say "[BigNameDesc of M] ejaculates [his of M] entire load into the condom! You can feel the tip bulging and ballooning inside of you. [big he of M] narrates to an imaginary camera behind you.[line break][speech style of M]'But despite the efforts of Protestants to promote the idea of sex for pleasure, children continue to multiply everywhere.'[roman type][line break]".
@@ -1326,12 +1318,6 @@ To set up sex length of (M - supporter-serena) in (B - a body part):
 To decide which number is the outrage tolerance of (M - supporter-serena):
 	decide on 10.
 
-To compute post climax effect of (M - supporter-serena) in (F - a fuckhole):
-	if M is male:
-		compute M sleeping 200 after sex;
-		bore M;
-	otherwise:
-		satisfy M.
 
 The blind-status of supporter-serena is usually 0. [Can be changed to -1 to make them immune]
 
@@ -1403,10 +1389,6 @@ To compute the busy waiting of (M - supporter-serena): [The NPC isn't able to do
 
 To compute the default taunting of (M - supporter-serena): [The NPC isn't able to do their thing right now because the player is busy with a trap or another NPC, but they expect the player will be free soon.]
 	say "[BigNameDesc of M] watches, making no attempt to hide [his of M] glee.".
-
-To say SelectionFrustrated of (M - supporter-serena): [The NPC has got tired of waiting!]
-	say "[BigNameDesc of M] seems to look very frustrated, and then gives up.";
-	bore M.
 
 To compute the dildo stuck taunting of (M - supporter-serena):
 	if a random number between 1 and 3 is 1, say "[BigNameDesc of M] puts [his of M] hand to [his of M] chin as if admiring an art exhibit.[line break][speech style of M]'[one of]Hmm, yes, you're clearly going to do REALLY well in this game. Haha[or]Have you considered NOT getting caught by traps? Someone might be led to think you're enjoying this[or]Perhaps you should leave the adventuring to the people with brains[or]I can't believe you got caught by such a basic trap[in random order]!'[roman type][line break]".
@@ -1507,9 +1489,6 @@ To say SwallowDemand of (M - supporter-serena):
 To say BreastsPenetrationFlav of (M - supporter-serena):
 	say "[BigNameDesc of M] takes [his of M] [DickDesc of M] and moves it towards your chest. You watch in silence as [he of M] pushes forward, using the tight gap in between your boobs as a makeshift fuckhole. [if the titfuck addiction of the player < 5]You hold your body still and try to ignore the brutish grunts as [he of M] begins to thrust in and out of your [BreastDesc][otherwise]You instinctively bring your hands to your [BreastDesc], and begin to massage [his of M] [DickDesc of M] by moving them up and down with your hands as fast and powerfully as you can[end if].".
 
-To say CleavageClimaxFlav of (M - supporter-serena):
-	say "[BigNameDesc of M] moans lewdly as [he of M] ejaculates, covering your [ShortDesc of breasts] in [his of M] [semen]!".
-
 [Vaginal & Anal]
 
 To say CondomAcceptFlav of (M - supporter-serena):
@@ -1517,7 +1496,7 @@ To say CondomAcceptFlav of (M - supporter-serena):
 	otherwise say "[BigNameDesc of M] [one of]smiles[or]grins wordlessly[or]smirks[at random] and takes a condom. Discarding the wrapper, [he of M] rolls it down the length of [his of M] [manly-penis]. You stare, [one of][if the semen taste addiction of the player > 13]hypnotised, eagerly licking your lips[otherwise if the semen taste addiction of the player > 6]hypnotised, unconsciously licking your lips[otherwise]disgustedly curling your upper lip[end if][or]unable to [if the player is a pervert and the player is not a nympho]bring yourself to [end if]look away[or]your mouth opening unconsciously[or][if the player is not a pervert]without a shred of enthusiasm[otherwise]with envy[end if], as the rubber makes intimate contact with every inch of the massive tool[or]as the gleaming latex makes every bump and vein glisten [if the player is not a pervert]unappealingly[otherwise]temptingly[end if][at random].".
 
 To say CondomRejectFlav of (M - supporter-serena): ['mating' is a flag that indicated that the NPC has already had a baby with the player.]
-	say "[BigNameDesc of M] strokes [his of M] chin.[line break][speech style of M]'[if M is mating]How are we going to keep making babies if I wear this?'[otherwise]I guess there is a risk, but it feels so much better without!'[end if][roman type][line break]Looks like [he of M][']s going in bare...".
+	say "[BigNameDesc of M] strokes [his of M] chin.[line break][speech style of M]'[if M is mating]How are we going to keep making babies if I wear this?'[otherwise]I guess there is a risk, but it feels so much better without!'[end if][roman type][line break][if M is not seduced]Looks like [he of M][']s going in bare...[end if]".
 
 To say CondomPieFlav of (M - supporter-serena) in (F - a fuckhole):
 	say "[BigNameDesc of M] ejaculates [his of M] entire load into the condom! You can feel the tip bulging and ballooning inside of you. ".

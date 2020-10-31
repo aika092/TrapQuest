@@ -122,9 +122,7 @@ To soak clothing in water body:
 	let quest-only-once be 0;
 	let X be tracked-semen;[above we used X to see if we cleaned the player's body. Now we're using it to see if we cleaned any clothes.]
 	repeat with C running through worn somewhat fluid vulnerable clothing: [now handle clothing]
-		if quest-only-once is 0 and the water-soak of C is 0 and the quest of C is swimming-quest:[This probably needs work]
-			now quest-only-once is 1;
-			progress quest of swimming-quest;
+		if quest-only-once is 0, now quest-only-once is 1;
 		let R be a random number between 2 and 4;[because clothing has a higher capacity than the player's body, it takes longer to "soak" clean.]
 		if diaper quest is 1, now R is 999; [we don't do this slow cleaning nonsense in DQ]
 		let S be the semen-soak of C + the urine-soak of C + the milk-soak of C;
@@ -142,11 +140,11 @@ To soak clothing in water body:
 			if C is perceived messed and auto is 0, say "You allow the water to thoroughly clean your [C].";
 			otherwise say "The [C] quickly soaks up the water.";
 			if the soak-limit of C is the water-soak of C, say "It is now very heavy and won't be able to hold any more liquid.";
-		otherwise:
+		otherwise if the water-soak of C < the soak-limit of C:
 			say "Your [C] gets soaked with water.";
-		if C is fluid vulnerable, Drench C;
+		Drench C;
 		if C is knickers, MessSet C to 0;
-	[if X < tracked-semen, say "The water washes some fluids off your clothes.".]
+	if quest-only-once is 1, progress quest of swimming-quest.
 
 [TODO: semen cleaning doesn't happen all at once.]
 [To compute fast bathing:
@@ -260,6 +258,9 @@ To compute difficult swimming check in (WB - a thing):
 To compute swimming fatigue check in (WB - a thing):
 	if the fatigue of the player >= the buckle threshold of the player:[You're too tired, and you faint.]
 		say "You're too tired, and strength leaves your limbs as you slowly sink beneath the surface. You pass out.";
+		if the location of the player is School20:
+			repeat with M running through monsters in the location of the player:
+				now M is in School19;[Kick the school npc's out so they don't get pulled in by the fainting code]
 		now delayed fainting is 1;
 		now the fainting reason of the player is 23;
 	otherwise:

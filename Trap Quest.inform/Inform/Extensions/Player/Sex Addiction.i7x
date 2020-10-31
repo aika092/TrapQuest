@@ -128,8 +128,8 @@ To SexAddictUp (X - a number):
 				[otherwise if X is 1:
 					say "You feel slightly light-headed, but in a good way.";]
 				increase the raw sex addiction of the player by 1;
-				if there is a live thing penetrating asshole, AnalSexAddictUp 1;
-				if there is a live thing penetrating vagina, VaginalSexAddictUp 1;
+				[if there is a live thing penetrating asshole, AnalSexAddictUp 1;
+				if there is a live thing penetrating vagina, VaginalSexAddictUp 1;] [this is done in the orgasm function now]
 			otherwise if the raw sex addiction of the player is 20:
 				if the raw intelligence of the player > 1, say "The fog rises as your [if the arousal of the player is minimum arousal]orgasm addled[otherwise]one track minded[end if] brain finds it a little bit more difficult to think about anything except your next orgasm.";
 				IntDown 1;
@@ -373,20 +373,9 @@ To decide which number is the calculated semen taste addiction of the player:
 		increase S by the semen-taste-addiction-influence of C;
 	if S < recent-bimbo / 3, now S is recent-bimbo / 3;
 	if S > 20, decide on 20;
+	if S < 11 and the raw semen taste addiction of the player >= 11, decide on 11;
 	if S < 1, decide on 1;
 	decide on S.
-
-Definition: yourself is craving semen:
-	if the stomach-semen of the player is 0 and the semen volume of face is 0 and the semen taste addiction of the player > 14:
-		if cold turkey > the semen taste addiction of the player * 20, decide no;
-		decide yes;
-	decide no.
-
-Definition: yourself is desperately craving semen:
-	if the stomach-semen of the player is 0 and the semen volume of face is 0 and the semen taste addiction of the player > 17:
-		if cold turkey > the semen taste addiction of the player * 20, decide no;
-		decide yes;
-	decide no.
 
 Part 2 - Modify Oral Sex Addiction
 
@@ -424,6 +413,22 @@ To SilentlyOralSexAddictDown (X - a number):
 To SilentlyOralSexAddictDown:
 	if the raw oral sex addiction of the player > 1, decrease the raw oral sex addiction of the player by 1.
 
+slowSemenTasteAddiction is a number that varies.
+To SlowSemenTasteAddictUp (X - a number):
+	let slowSemenTasteAddictionLimit be 0;
+	if the semen taste addiction of the player > 4, increase slowSemenTasteAddictionLimit by 1;
+	if the class of the player is cheerleader, increase slowSemenTasteAddictionLimit by 1;
+	if the semen taste addiction of the player > 13, increase slowSemenTasteAddictionLimit by 1;
+	if debugmode > 0, say "Semen taste addiction threshold is [slowSemenTasteAddictionLimit] ticks.";
+	while X > 0:
+		decrease X by 1;
+		increase slowSemenTasteAddiction by 1;
+		if debugmode > 0, say "[slowSemenTasteAddiction - 1] --> [slowSemenTasteAddiction].";
+		if slowSemenTasteAddiction > slowSemenTasteAddictionLimit:
+			if debugmode > 0, say "Semen taste addiction increased.";
+			now slowSemenTasteAddiction is 0;
+			SemenTasteAddictUp 1.
+
 To SemenTasteAddictUp (X - a number):
 	if there is a worn pure totem:
 		let S be a random worn pure totem;
@@ -436,8 +441,7 @@ To SemenTasteAddictUp (X - a number):
 	if S > 0, say "You feel [if S > 1]significantly [end if]more [if the calculated semen taste addiction of the player > 13]addicted to[otherwise if the calculated semen taste addiction of the player > 6]accustomed to[otherwise]tolerant of[end if] the taste of [semen].".
 
 To SilentlySemenTasteAddictUp (X - a number):
-	if the latex-transformation of the player > 4:
-		now X is 0;
+	if the latex-transformation of the player > 4 or diaper quest is 1, now X is 0;
 	while X > 0:
 		decrease X by 1;
 		if the raw semen taste addiction of the player < 20 and (watersports fetish is 1 or a random number between -1 and yellow theme bonus < 1): [When watersports is disabled, yellow items help suppress semen taste addiction gains]
@@ -455,7 +459,7 @@ To SilentlySemenTasteAddictDown (X - a number):
 		SilentlySemenTasteAddictDown.
 
 To SilentlySemenTasteAddictDown:
-	if the raw semen taste addiction of the player > 1, decrease the raw semen taste addiction of the player by 1.
+	if the raw semen taste addiction of the player > 1 and the raw semen taste addiction of the player is not 11, decrease the raw semen taste addiction of the player by 1.
 
 Book - Titfuck Addiction
 
@@ -478,6 +482,7 @@ To decide which number is the sensitivity of (B - breasts):
 	if there is a worn nipple chain, increase S by 2;
 	if true love tattoo is worn, increase S by 2;
 	increase S by 6 * the trophy-mode of bust-trophy;
+	if S > 30, decide on 30;
 	decide on S.
 
 Part 1 - Calculate Titfuck Addiction
@@ -513,22 +518,21 @@ To TitfuckAddictUp (X - a number):
 		say "Your [printed name of S] glows brightly and slowly disintegrates.[line break]";
 		only destroy S;
 		decrease X by 3;
-	let S be the sensitivity of breasts;
+	let S be the calculated titfuck addiction of the player;
 	SilentlyTitfuckAddictUp X;
-	now S is the sensitivity of breasts - S;
-	if S > 0, say "Your breasts feel [if S > 2]much [otherwise if S is 2]significantly [end if]more [if the titfuck addiction of the player > 6]oversensitive[otherwise]sensitive[end if].".
+	now S is the calculated titfuck addiction of the player - S;
+	if S > 0, say "Your breasts feel [if S > 2]much [otherwise if S is 2]significantly [end if]more eager to [if the titfuck addiction of the player > 6]pleasure [manly-penis][otherwise]be touched[end if].".
 
 To SilentlyTitfuckAddictUp (X - a number):
 	while X > 0:
 		decrease X by 1;
-		if the raw titfuck addiction of the player < 10, increase the raw titfuck addiction of the player by 1;
-		increase the raw sensitivity of breasts by 1.
+		if the raw titfuck addiction of the player < 10, increase the raw titfuck addiction of the player by 1.
 
 To TitfuckAddictDown (X - a number):
-	let S be the sensitivity of breasts;
+	let S be the calculated titfuck addiction of the player;
 	SilentlyTitfuckAddictDown X;
-	decrease S by the sensitivity of breasts;
-	if S > 0, say "Your breasts feel [if S > 2]much [otherwise if S is 2]significantly [end if]less [if the titfuck addiction of the player > 6]oversensitive[otherwise]sensitive[end if].".
+	decrease S by the calculated titfuck addiction of the player;
+	if S > 0, say "Your breasts feel [if S > 2]much [otherwise if S is 2]significantly [end if]less [if the titfuck addiction of the player > 6]eager to pleasure [men of shopkeeper][otherwise]interested in being touched[end if].".
 
 To SilentlyTitfuckAddictDown (X - a number):
 	while X > 0:
@@ -536,8 +540,11 @@ To SilentlyTitfuckAddictDown (X - a number):
 		SilentlyTitfuckAddictDown.
 
 To SilentlyTitfuckAddictDown:
-	if the raw titfuck addiction of the player > 1, decrease the raw titfuck addiction of the player by 1;
-	if the raw sensitivity of breasts > 1, decrease the raw sensitivity of breasts by 1.
+	if the raw titfuck addiction of the player > 1, decrease the raw titfuck addiction of the player by 1.
+
+To BreastsSensitivityUp (X - a number):
+	if the raw sensitivity of breasts < 30, say "Your breasts feel [if X > 2]much [otherwise if X is 2]significantly [end if]more [if the sensitivity of breasts > 10]over[end if]sensitive.";
+	increase the raw sensitivity of breasts by X.
 
 Book - BBC Addiction
 
@@ -599,7 +606,7 @@ To BBCAddictDown (X - a number):
 	SilentlyBBCAddictDown X;
 	decrease S by the calculated BBC addiction of the player;
 	if S > 0:
-		if the calculated BBC addiction of the player > 3, say "You feel [if S > 2]much [otherwise if S is 2]significantly [end if]less [if the calculated BBC addiction of the player > 6]addicted to[otherwise]interested in[end if][BlackCock].";
+		if the calculated BBC addiction of the player > 3, say "You feel [if S > 2]much [otherwise if S is 2]significantly [end if]less [if the calculated BBC addiction of the player > 6]addicted to[otherwise]interested in[end if] [BlackCock].";
 		otherwise say "You feel your racial preference for white people returning.".
 
 To SilentlyBBCAddictDown (X - a number):
@@ -609,6 +616,216 @@ To SilentlyBBCAddictDown (X - a number):
 
 To SilentlyBBCAddictDown:
 	if the raw BBC addiction of the player > 1, decrease the raw BBC addiction of the player by 1.
+
+Book - Urine Taste Addiction
+
+Part 1 - Calculate Urine Taste Addiction
+
+To decide which number is the urine-taste-addiction-influence of (C - a wearthing):
+	decide on 0.
+
+To decide which number is the urine-taste-addiction-influence of (C - a clothing):
+	if C is urine-taste-addiction-influencing:
+		let S be 0;
+		decrease S by the magic-modifier of C; [Positive magic = subtracted urine addiction]
+		decide on S;
+	decide on 0.
+
+To decide which number is the urine taste addiction of the player:
+	decide on previous-urine-taste-addiction.
+
+To decide which number is the calculated urine taste addiction of the player:
+	let S be the raw urine taste addiction of the player;
+	repeat with C running through worn wearthings:
+		increase S by the urine-taste-addiction-influence of C;
+	if S > 20, decide on 20;
+	if S < 11 and the raw urine taste addiction of the player >= 11, decide on 11;
+	if S < 1, decide on 1;
+	decide on S.
+
+Part 2 - Modify Urine Taste Addiction
+
+The player has a number called raw urine taste addiction. The raw urine taste addiction of the player is usually 1. [Min 1 Max 20]
+
+slowUrineTasteAddiction is a number that varies.
+To SlowUrineTasteAddictUp (X - a number):
+	let slowUrineTasteAddictionLimit be 0;
+	if the urine taste addiction of the player > 4, increase slowUrineTasteAddictionLimit by 1;
+	if the class of the player is cheerleader, increase slowUrineTasteAddictionLimit by 1;
+	if the urine taste addiction of the player > 13, increase slowUrineTasteAddictionLimit by 1;
+	increase slowUrineTasteAddictionLimit by yellow theme bonus;
+	if debugmode > 0, say "Urine taste addiction threshold is [slowUrineTasteAddictionLimit] ticks.";
+	while X > 0:
+		decrease X by 1;
+		increase slowUrineTasteAddiction by 1;
+		if debugmode > 0, say "[slowUrineTasteAddiction - 1] --> [slowUrineTasteAddiction].";
+		if slowUrineTasteAddiction > slowUrineTasteAddictionLimit:
+			if debugmode > 0, say "Urine taste addiction increased.";
+			now slowUrineTasteAddiction is 0;
+			UrineTasteAddictUp 1.
+
+To UrineTasteAddictUp (X - a number):
+	if watersports fetish is 1:
+		if there is a worn pure totem:
+			let S be a random worn pure totem;
+			say "Your [printed name of S] glows brightly and slowly disintegrates.";
+			only destroy S;
+			decrease X by 3;
+		let U be the urine taste addiction of the player;
+		SilentlyUrineTasteAddictUp X;
+		let U be the urine taste addiction of the player - U;
+		if U > 0, say "You feel [if U > 1]significantly [end if]more [if the urine taste addiction of the player > 13]addicted to[otherwise if the urine taste addiction of the player > 6]accustomed to[otherwise]tolerant of[end if] the taste of [urine].".
+
+To SilentlyUrineTasteAddictUp (X - a number):
+	if watersports fetish is 0 or the latex-transformation of the player > 4:
+		now X is 0;
+	while X > 0:
+		decrease X by 1;
+		if the raw urine taste addiction of the player < 20, increase the raw urine taste addiction of the player by 1.
+
+To UrineTasteAddictDown (X - a number):
+	while X > 0:
+		decrease X by 1;
+		if the raw urine taste addiction of the player > 1 and the raw urine taste addiction of the player is not 11, decrease the raw urine taste addiction of the player by 1.
+
+
+Book - Milk Taste Addiction
+
+Part 1 - Calculate Milk Taste Addiction
+
+milk-drunk is a number that varies. [Used to track how much milk is in the player's digestive system]
+milk-exercise-bonus is a number that varies. [Used to track how much milk has been digested and so should eventually contribute to strength and dex gain]
+
+To decide which number is the milk-taste-addiction-influence of (C - a wearthing):
+	decide on 0.
+
+To decide which number is the milk-taste-addiction-influence of (C - a clothing):
+	if C is milk-taste-addiction-influencing:
+		let S be 0;
+		decrease S by the magic-modifier of C; [Positive magic = subtracted milk addiction]
+		decide on S;
+	decide on 0.
+
+To decide which number is the milk taste addiction of the player:
+	decide on previous-milk-taste-addiction.
+
+To decide which number is the calculated milk taste addiction of the player:
+	let S be the raw milk taste addiction of the player;
+	repeat with C running through worn wearthings:
+		increase S by the milk-taste-addiction-influence of C;
+	if S > 20, decide on 20;
+	if S < 11 and the raw milk taste addiction of the player >= 11, decide on 11;
+	if S < 1, decide on 1;
+	decide on S.
+
+
+Part 2 - Modify Milk Taste Addiction
+
+The player has a number called raw milk taste addiction. The raw milk taste addiction of the player is usually 1. [Min 1 Max 20]
+
+slowMilkTasteAddiction is a number that varies.
+To SlowMilkTasteAddictUp (X - a number):
+	let slowMilkTasteAddictionLimit be 0;
+	if the milk taste addiction of the player > 4, increase slowMilkTasteAddictionLimit by 1;
+	if the class of the player is cheerleader, increase slowMilkTasteAddictionLimit by 1;
+	if the milk taste addiction of the player > 13, increase slowMilkTasteAddictionLimit by 1;
+	if debugmode > 0, say "Milk taste addiction threshold is [slowMilkTasteAddictionLimit] ticks.";
+	while X > 0:
+		decrease X by 1;
+		increase slowMilkTasteAddiction by 1;
+		if debugmode > 0, say "[slowMilkTasteAddiction - 1] --> [slowMilkTasteAddiction].";
+		if slowMilkTasteAddiction > slowMilkTasteAddictionLimit:
+			if debugmode > 0, say "Milk taste addiction increased.";
+			now slowMilkTasteAddiction is 0;
+			MilkTasteAddictUp 1.
+
+To MilkTasteAddictUp (X - a number):
+	if the raw milk taste addiction of the player < 20 and X > 0:
+		if the milk taste addiction of the player < 4:
+			say "You are reminded of how much you love the taste of milk.";
+		otherwise:
+			say "You feel [if X > 1]much [end if]more [if the milk taste addiction of the player < 7]interested in drinking[otherwise if the milk taste addiction of the player < 13]keen to drink[otherwise]addicted to drinking[end if] breast milk.";
+		SilentlyMilkTasteAddictUp X.
+
+To SilentlyMilkTasteAddictUp (X - a number):
+	if the latex-transformation of the player > 4:
+		now X is 0;
+	while X > 0:
+		decrease X by 1;
+		if the raw milk taste addiction of the player < 20:
+			increase the raw milk taste addiction of the player by 1.
+
+To MilkTasteAddictDown (X - a number):
+	if the raw milk taste addiction of the player > 1 and X > 0:
+		say "You feel your [if the milk taste addiction of the player < 7]interest in drinking[otherwise if the milk taste addiction of the player < 14]desire to drink[otherwise]addiction to drinking[end if] [milk] [if X is 1][one of]gradually[or]slowly[cycling][otherwise][one of]quickly[or]rapidly[at random][end if] fading away.";
+		SilentlyMilkTasteAddictDown X.
+
+To SilentlyMilkTasteAddictDown (X - a number):
+	while X > 0:
+		decrease X by 1;
+		if the raw milk taste addiction of the player > 1 and the raw milk taste addiction of the player is not 11, decrease the raw milk taste addiction of the player by 1.
+
+Book - Taste Addiction Overview
+
+To decide which number is the relevant taste addiction of (L - a liquid-object):
+	if L is semen:
+		decide on the semen taste addiction of the player;
+	otherwise if L is urine:
+		decide on the urine taste addiction of the player;
+	otherwise if L is milk:
+		decide on the milk taste addiction of the player;
+	otherwise if L is murkwater:
+		decide on highest taste addiction;
+	decide on 0.
+
+To decide which number is highest taste addiction:
+	let X be the semen taste addiction of the player;
+	if the urine taste addiction of the player > X, now X is the urine taste addiction of the player;
+	if the milk taste addiction of the player > X, now X is the milk taste addiction of the player;
+	decide on X.
+
+highest-addiction-liquids is a number that varies. [how many liquids share the top spot? this is updated by checking the below function]
+
+Definition: a liquid-object (called L) is a highest addicted liquid:
+	now highest-addiction-liquids is 0;
+	let Y be 0;
+	let X be highest taste addiction;
+	if diaper quest is 0 and (the semen taste addiction of the player + 1) / 3 is (X + 1) / 3: [this makes 5-7, 8-10, 17-19 etc. considered equal]
+		increase highest-addiction-liquids by 1;
+		if L is semen, now Y is 1;
+	if watersports fetish is 1 and (the urine taste addiction of the player + 1) / 3 is (X + 1) / 3:
+		increase highest-addiction-liquids by 1;
+		if L is urine, now Y is 1;
+	if (diaper quest is 1 or lactation fetish is 1) and (the milk taste addiction of the player + 1) / 3 is (X + 1) / 3:
+		increase highest-addiction-liquids by 1;
+		if L is milk, now Y is 1;
+	if Y is 1, decide yes;
+	decide no.
+
+Definition: yourself is taste addicted:
+	if highest taste addiction >= 14, decide yes;
+	decide no.
+
+Definition: yourself is taste obsessed:
+	if highest taste addiction >= 17, decide yes;
+	decide no.
+
+Definition: yourself is taste engulfed:
+	if highest taste addiction >= 20, decide yes;
+	decide no.
+
+To decide which number is the cold turkey limit of (L - a liquid-object):
+	decide on 500. [how long until addiction kicks in and how long between taste addiction decreases]
+Definition: a liquid-object (called L) is craved:
+	if L is water or L is murkwater, decide no; [for efficiency]
+	if L is not highest addicted liquid, decide no;
+	if the relevant taste addiction of L > 13 and cold turkey of L >= cold turkey limit of L, decide yes;
+	decide no.
+Definition: a liquid-object (called L) is desperately craved:
+	if L is water or L is murkwater, decide no; [for efficiency]
+	if L is not highest addicted liquid, decide no;
+	if the relevant taste addiction of L > 16 and cold turkey of L >= cold turkey limit of L, decide yes;
+	decide no.
 
 
 Sex Addiction ends here.

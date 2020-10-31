@@ -7,11 +7,13 @@ To say MediumDesc of (M - woman-player):
 
 Figure of woman 1 is the file "NPCs/MultiFloor/berri/woman1.jpg".
 Figure of woman 2 is the file "NPCs/MultiFloor/berri/woman2.jpg".
+Figure of woman 2b is the file "NPCs/MultiFloor/berri/woman2b.jpg".
 Figure of woman 3 is the file "NPCs/MultiFloor/berri/woman3.jpg".
 Figure of woman 4a is the file "NPCs/MultiFloor/berri/woman4a.jpg".
 Figure of woman 4b is the file "NPCs/MultiFloor/berri/woman4b.jpg".
 Figure of woman 4c is the file "NPCs/MultiFloor/berri/woman4c.jpg".
 Figure of woman 4d is the file "NPCs/MultiFloor/berri/woman4d.jpg".
+Figure of woman 4e is the file "NPCs/MultiFloor/berri/woman4e.jpg".
 Figure of woman 5a is the file "NPCs/MultiFloor/berri/woman5a.jpg".
 Figure of woman 5b is the file "NPCs/MultiFloor/berri/woman5b.jpg".
 Figure of woman 5c is the file "NPCs/MultiFloor/berri/woman5c.jpg".
@@ -22,6 +24,7 @@ Figure of Berri Cutscene 1b is the file "NPCs/MultiFloor/berri/woman-cutscene1b.
 Figure of Berri Cutscene 1c is the file "NPCs/MultiFloor/berri/woman-cutscene1c.jpg".
 Figure of Berri Cutscene 1d is the file "NPCs/MultiFloor/berri/woman-cutscene1d.jpg".
 Figure of Berri Cutscene 2 is the file "Special/Cutscene/cutscene-berri-vinepit1.jpg".
+Figure of Berri Cutscene 3 is the file "Special/Cutscene/cutscene-berri-craft1.jpg".
 
 To decide which figure-name is the monster-image of (M - woman-player):
 	if the dominatrix-contraption-scene of M > 0 and the dominatrix-contraption-scene of M < 6:
@@ -32,9 +35,12 @@ To decide which figure-name is the monster-image of (M - woman-player):
 			if watersports fetish is 1, decide on Figure of Berri Cutscene 1c;
 			otherwise decide on Figure of Berri Cutscene 1d;
 	if the woman-bimbo of M < 3, decide on figure of woman 1;
-	if the woman-bimbo of M is 3, decide on figure of woman 2;
+	if the woman-bimbo of M is 3:
+		if the woman-status of woman-player is 90 and the vine-scene of woman-player <= 4, decide on figure of woman 2b;
+		decide on figure of woman 2;
 	if the woman-bimbo of M is 4, decide on figure of woman 3;
 	if the woman-bimbo of M is 5:
+		if the woman-status of M is 98, decide on figure of woman 4e; [diaper pail]
 		if M is soggy, decide on figure of woman 4b;
 		if M is messy:
 			if the woman-diaper-state of M is 1, decide on figure of woman 4c;
@@ -89,8 +95,8 @@ To update name of (M - woman-player):
 		now the current-title of M is "Babygirl".
 
 To compute friendly boredom of (M - woman-player):
-	if the woman-status of M is 80:
-		distract M; [berri is blindfolded and can't follow the player]
+	if the woman-status of M is 98:
+		distract M; [berri is in the pail and can't follow the player]
 	otherwise:
 		increase the friendly boredom of M by 1;
 		if the player is not in danger and a random number from 10 to 30 < the friendly boredom of M:
@@ -112,7 +118,7 @@ To vanish (M - a monster):
 		remove M from play;
 		if M is messy and the woman-diaper-state of M > 1, womanSluttify;
 		reset diaper of M;
-	if the woman-status of M is 90 and the vine-scene of M is 5:
+	if the woman-status of M is 98 or (the woman-status of M is 90 and the vine-scene of M is 5):
 		FavourDown M;
 		womanSluttify.
 
@@ -208,6 +214,7 @@ To compute (M - boogeymonster) stomping (N - woman-player):
 		now L is in the location of M;
 		now the leftover-type of L is the leftover-type of N;
 		destroy N;
+		regionally place M;
 	otherwise:
 		vanish N.
 
@@ -501,7 +508,7 @@ Understand "fucking", "machine", "box", "pink dildo", "rope", "ropes", "pulley",
 
 Report going when the player is in Hotel37 and the dominatrix-contraption-scene of woman-player is 0 and the player is an august 2020 diaper donator and the woman-bimbo of woman-player is 4 and (diaper messing >= 3 or watersports fetish is 1):
 	if debugmode is 1, say "Checking if berri can appear.";
-	if the number of monsters in the location of the player is 0 and dominatrix is alive and woman-player is redeploy appropriate:
+	if dominatrix is not in the location of the player and dominatrix is alive and woman-player is redeploy appropriate:
 		deploy woman-player with woman-status 93;
 		now woman-player is in the location of the player;
 		now woman-player is interested;
@@ -574,6 +581,41 @@ To compute DominatrixInterruption:
 		now the stance of the player is 1;
 		compute spanking of M;
 		now M is stalled.
+
+To say WomanCraftSceneFlav:
+	say "You see [NameDesc of woman-player] is here, in the middle of crafting a potion. As you approach, [he of woman-player] turns to face you, holding a small vial full of a brightly glowing pink liquid.[line break][speech style of woman-player]'Oh hey [NameBimbo], I almost didn't notice you there! I have no idea what this will do but look how strong it's glowing - I bet it'll be powerful! Do you want to try it? If you don't, I'll be the guinea pig myself!'[roman type][line break][big he of woman-player] offers you the pink vial.";
+	cutshow Figure of Berri Cutscene 3 for woman-player.
+
+Chapter - Diaper Pail Scene
+
+woman-player has a number called pail-scene.
+
+Report going when there is a diaper pail in the location and the pail-scene of woman-player is 0 and the player is an october 2020 diaper donator and the woman-bimbo of woman-player is 4:
+	if debugmode is 1, say "Checking if berri can appear.";
+	let M be a random regional monster carrying a soiled-diaper;
+	if woman-player is redeploy appropriate and M is monster:
+		deploy woman-player with woman-status 98;
+		now the pail-scene of woman-player is 1;
+		now woman-player is in the location of the player;
+		now woman-player is interested;
+		say "As you arrive here you see [NameDesc of woman-player][']s legs flailing out the top of a diaper pail, its lid wide open. It looks like [he of woman-player][']s stuck! And judging by the horrid smell coming from within, you can imagine what [he of woman-player] is surrounded by. You could try to rescue [him of woman-player] by [bold type]pull[roman type]ing [him of woman-player].".
+
+Check pulling woman-player when the woman-status of woman-player is 98:
+	if the player is immobile, say "You're a bit busy!" instead;
+	if the player is prone, say "You would need to stand up first." instead;
+	if the player is not able to manually use manual dexterity, do nothing instead;
+	if the player is in danger, say "You can't do that in the middle of combat!" instead;
+	allocate 6 seconds;
+	if a random number between the strength of the player and 30 > 20:
+		let M be a random regional monster carrying a soiled-diaper;
+		say "You succeed in lifting [NameDesc of woman-player] out of [his of woman-player] stinky prison.[line break][speech style of woman-player]'Thank you so much for saving me, [NameBimbo][if M is monster]! The awful [MediumDesc of M] found a stinky diaper left lying around the [playerRegion] and thought it was mine! But it wasn't, I promise[end if]!'[roman type][line break]";
+		if M is monster:
+			repeat with SD running through soiled-diaper carried by M:
+				destroy SD;
+		now the woman-status of M is 1;
+	otherwise:
+		say "You try to lift [NameDesc of woman-player] out of the diaper pail but [he of woman-player] is so heavy! You don't manage it this time. Meanwhile, the smell of the stinky used diapers inside fills your nostrils, overwhelming you.";
+		DiaperAddictUp 1.
 
 Part 5 - Protection
 
@@ -710,7 +752,7 @@ To compute basic greeting to (M - woman-player):
 		if newbie tips is 1, say "[newbie style]Newbie tip: Berri is a special type of NPC, that under normal circumstances remains friendly throughout the entire course of the game, and will even fight alongside you, or appear to help you out of sticky situations. However if bad things happen, including if you lose a fight alongside [him of M], [he of M][']ll start to lose the game [himself of M], and become more babified. Also, sometimes when you bump into [him of M] [he of M][']ll be in the middle of a predicament, and you have to choose whether to help [him of M] or let it happen. Letting it happen usually either avoids the risk of bad stuff, or rewards you with powerful items. However, it'll continue Berri's progress towards becoming a diaper-addicted adult baby fetishist. A super-diaper-addicted Berri is a sort-of useless sidekick who can even do really unhelpful things like release the [ShortDesc of boogeymonster].[roman type][line break]";
 		now M is introduced;
 		now the text-shortcut of M is "bri";
-	otherwise if the woman-status of M is 80:
+	otherwise if the woman-status of M is 98:
 		say "[speech style of M]'MMMMPH!'[roman type][line break]";
 	otherwise if the woman-status of woman-player is 91 and the mechanic-scene of woman-player <= 3:
 		say "[speech style of M]'EEEEEEEEEE!'[roman type][line break]";
@@ -824,7 +866,7 @@ To say BerriQuestion:
 		say "'Can we chat?'".
 
 To execute (T - talk-berri-question) for (M - a monster):
-	if the woman-status of M is 80:
+	if the woman-status of M is 98:
 		say "[speech style of M]'MMMMPH!'[roman type][line break]";
 	otherwise if the woman-status of woman-player is 91 and the mechanic-scene of woman-player <= 3:
 		say "[speech style of M]'EEEEEEEEEE!'[roman type][line break]";
@@ -866,7 +908,7 @@ To compute friendly drink of (M - woman-player):
 		say "[big he of M] doesn't seem to realise you're talking to [him of M].";
 	otherwise if the woman-status of woman-player is 91 and the mechanic-scene of woman-player <= 3:
 		say "[speech style of M]'EEEEEEEEEE!'[roman type][line break]";
-	otherwise if the woman-status of M is 80:
+	otherwise if the woman-status of M is 98:
 		say "[speech style of M]'MMMMPH!'[roman type][line break]";
 	otherwise if M is angered:
 		say "[speech style of M]'As if I'd help you!'[roman type][line break]";
@@ -878,7 +920,7 @@ To compute friendly food of (M - woman-player):
 		say "[big he of M] doesn't seem to realise you're talking to [him of M].";
 	otherwise if the woman-status of woman-player is 91 and the mechanic-scene of woman-player <= 3:
 		say "[speech style of M]'EEEEEEEEEE!'[roman type][line break]";
-	otherwise if the woman-status of M is 80:
+	otherwise if the woman-status of M is 98:
 		say "[speech style of M]'MMMMPH!'[roman type][line break]";
 	otherwise if M is angered:
 		say "[speech style of M]'As if I'd help you!'[roman type][line break]";

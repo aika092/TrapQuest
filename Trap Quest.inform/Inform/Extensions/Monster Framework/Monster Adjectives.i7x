@@ -35,7 +35,7 @@ A monster has a number called friendly boredom. The friendly boredom of a monste
 A monster has a room called target-room. [Any monster that can change locations at unusual times might want to use this to hold a room in memory.]
 [A monster can be captive or released. A monster is usually released.] [Captive monsters are completely docile unless attacked, and they usually have a trigger to become 'released'.] [Replaced with the monster-restriction property]
 A monster can be dying. A monster is usually not dying. [A flag used by the game to remind itself that the monster should be removed from play.]
- Definition: A monster is wenchy: decide no.
+Definition: A monster is wenchy: decide no.
 A monster has a number called times-dominated. The times-dominated of a monster is usually 0.[Like times-submitted, but for dominant sex.]
 A monster has a number called scared. The scared of a monster is usually 0. [How many seconds left until the monster is no longer scared. Scared monsters will attempt to flee from the player upon sight.]
 Definition: a monster is father material:[This means the monster can father children.]
@@ -149,7 +149,7 @@ Definition: a monster is diaper-instructing:
 	decide no.
 
 A monster can be wrapped or unwrapped. A monster is usually unwrapped. [Are they wearing a condom?]
-A monster has a number called selection-frustration. [Have they tried the same body part several times without success?]
+A monster has a number called selection-frustration. [Have they tried the same body part several times without success, or waited several turns to be able to fuck without success?]
 A monster can be mating. [Has the player given birth to their spawn?]
 A monster has a number called waitress-boredom.
 
@@ -169,7 +169,7 @@ Definition: a monster is already moved rather than unmoved:
 	decide no.
 
 A monster has a number called last-interaction. The last-interaction of a monster is usually 0.
- [
+[
 Last-Interaction, delayed, expectant are used to track submissive interactions between the player and an unfriendly NPC.
 Last Interaction Reference:
 0: Default, nothing interesting
@@ -279,5 +279,7 @@ A game universe initialisation rule:
 			let X be a random mass collectible;
 			add X to the tradableItems of M.
 
+[Flags a monster as having a soul or not having a soul.]
+A monster can be soul-stolen or not soul-stolen. A monster is usually not soul-stolen.
 
 Monster Adjectives ends here.

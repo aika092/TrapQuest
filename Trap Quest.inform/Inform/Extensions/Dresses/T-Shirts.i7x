@@ -24,12 +24,9 @@ The remove inappropriate T-shirts rule is listed in the diaper quest fix rules.
 This is the setup starting T-shirt rule:
 	let C be a random boobies T-shirt;
 	if diaper quest is 1, now C is a random crybaby T-shirt;
-	now C is in Standard Item Pen;
-	now C is unowned.
+	only destroy C;
+	add C to Standard Item Pen.
 The setup starting T-shirt rule is listed in the setup starting items rules.
-
-To restock (C - a T-shirt):
-	do nothing.
 
 Part 1 - Boobies T-shirt
 
@@ -211,6 +208,9 @@ To say MediumDesc of (C - a birth control for sissies T-shirt):
 To decide which number is the initial outrage of (C - a birth control for sissies T-shirt):
 	decide on 5.
 
+Definition: a birth control for sissies T-shirt is fetish appropriate:
+	if pregnancy fetish is 1, decide yes;
+	decide no.
 Definition: a birth control for sissies T-shirt is pregnancy themed: decide yes.
 Definition: a birth control for sissies T-shirt is black themed: decide yes.
 

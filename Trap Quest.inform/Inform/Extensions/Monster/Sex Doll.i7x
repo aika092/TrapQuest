@@ -228,9 +228,10 @@ To compute missile attack of (M - an airfilled-sex-doll):
 To compute missile attack of (M - a creamfilled-sex-doll):
 	if the accuracy roll of M >= the dexterity of the player:
 		let B be the painful-part of M;
-		say "[BigNameDesc of M] shoots [semen] out of its [DickDesc of M], hitting you [TargetName of B]! A faint feeling of warmth spreads out from the point of 'impact' as the doll slightly deflates.";
-		stimulate B from M;
-		if bukkake fetish is 1, squirt semen on B by 1;
+		say "[BigNameDesc of M] shoots [semen] out of its [DickDesc of M], hitting you [TargetName of B]!";
+		if bukkake fetish is 1, AnnouncedSquirt semen on B by 1;
+		say "A faint feeling of warmth spreads out from the point of 'impact' as the doll slightly deflates.";
+		passively stimulate B from M;
 		now M is not doll-charged;
 	otherwise:
 		say "[BigNameDesc of M] shoots [semen] out of its [DickDesc of M], and you narrowly avoid being hit by it. The doll slightly deflates.";
@@ -327,11 +328,8 @@ To compute (M - a sex doll) entering mouth:
 			CumFaceUp 8;
 		otherwise:
 			say "You hear a faint hissing noise as [NameDesc of M] stands motionless next to your [ShortDesc of hips], which are suddenly blasted by a torrent of ejaculate! Your lower body gets plastered by what feels like gallons of [semen] as it deflates.";
-			CumThighsUp 8;
-			repeat with K running through knickers worn by the player:
-				cumsoak 7 on K;
-			repeat with O running through overdresses worn by the player:
-				if O is skirted, cumsoak 4 on O;
+			if bukkake fetish is 1, AnnouncedSquirt semen on hips by 12;
+			otherwise AnnouncedSquirt semen on thighs by 8;
 		if M is creamfilled-sex-doll, destroy M.
 
 To say type security of (M - a sex doll):
@@ -435,11 +433,14 @@ To say DamageReactWeak of (M - a sex doll):
 	say "[BigNameDesc of M] looks unstable, like it's about to burst!".
 
 To say BanishFleeFlav of (M - a sex doll):
-	if M is doll-charged or (attack-type is 1 and there is a worn sword) or (attack-type is 3 and there are worn stiletto heels):
+	if M is doll-charged or (attack-type is 1 and there is a worn sword) or (attack-type is 3 and there are worn stiletto heels and the hindrance of a random worn heels <= 0):
 		if M is creamfilled-sex-doll:
 			say "The doll rips, punctures, and explodes! You yelp as [semen] flies everywhere, [if bukkake fetish is 1]including all over you![otherwise]completely covering the floor![end if][if the semen addiction of the player < 6][line break][first custom style]Yuck yuck yuck![roman type][line break][end if]";
-			if bukkake fetish is 1, cutshow figure of sexdoll cutscene 3 for M;
-			CumTitsUp a random number between 12 and 15;
+			if bukkake fetish is 1:
+				cutshow figure of sexdoll cutscene 3 for M;
+				AnnouncedSquirt semen on breasts by a random number between 12 and 15;
+			otherwise:
+				PuddleUp semen by a random number between 12 and 15;
 		otherwise:
 			let R be a random number between the difficulty of M * 3 and 27;
 			let B be the weight of the player + (the strength of the player / 3);

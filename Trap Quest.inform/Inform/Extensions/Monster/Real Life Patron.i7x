@@ -12,11 +12,11 @@ A real-life patron can be friend-shocked. A real-life patron is usually not frie
 A real-life patron can be reconciled. [The player and the patron are now (permanently) on good terms.]
 A real-life patron has a number called times-called.
 
-Definition: a real-life patron is wenchy:
-	decide no.
+Definition: a real-life patron is wenchy: decide no.
+Definition: a real-life patron is father material: decide no.
 
-Definition: a real-life patron is father material:
-	decide no.
+To unique reset (M - a real-life patron):
+	now the text-shortcut of M is the substituted form of "[MediumDesc of M]".
 
 Definition: a real-life patron (called P) is generic-appropriate:
 	if the player is the donator:
@@ -33,6 +33,12 @@ To say NameDesc of (C - a real-life patron):
 
 To say BigNameDesc of (C - a real-life patron):
 	say "[input-style][MediumDesc of C][roman type]".
+
+To say FuckerDesc of (C - a real-life patron):
+	say MediumDesc of C.
+
+To say BigFuckerDesc of (C - a real-life patron):
+	say MediumDesc of C.
 
 To say RelationDesc of (M - a real-life patron):
 	say "[PlatonicRole]";
@@ -122,12 +128,12 @@ To say GenericSituationReaction of (M - a real-life patron):
 	otherwise:
 		if S < 16, say "This can't be real! There's no way that's actually you! ";
 		otherwise say "... No matter what kind of game this is, no self-respecting person would ever let anyone see them in such a state. I hope you know that. ";
-	[###Selkie: what about adding some comment about their physical attributes too?]
-	say "Wow, your [BreastDesc] look different to what I remember. Goes well with your [AssDesc].[if size of the penis < 4] But dude, why does your front look so flat?[otherwise if size of the penis < 6] And did you make them shrink your dick, too? That's sick![otherwise if size of the penis > 8] And have you stuffed your crotch, or are you playing this game so you can pretend your dick is bigger?[end if]".
+	[###Selkie: what about adding some comment about their physical attributes too? ###MG: this would be done through the function immediately below this, just haven't gotten around to it.]
+	if the player is originally male, say "Wow, your [BreastDesc] look different to what I remember. Goes well with your [AssDesc].[if size of the penis < 4] But dude, why does your front look so flat?[otherwise if size of the penis < 6] And did you make them shrink your dick, too? That's sick![otherwise if size of the penis > 8] And have you stuffed your crotch, or are you playing this game so you can pretend your dick is bigger?[end if]".
 
 
 [Allows the player's friends to react to specific situations like "covered in semen", stuff like that.]
-To say FriendReaction of (M - a real-life patron) to (A - a humiliating situation):
+To say FriendReaction of (M - a real-life patron) to (A - a humiliating situation):[BIG TODO]
 	say GenericSituationReaction of M.
 
 [Second part of the friend's greeting. Can change slightly depending on what monsters are around.]

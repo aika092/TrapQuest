@@ -27,12 +27,14 @@ To uniquely set up (S - a skirt):
 
 To restock (C - a skirt):
 	let B be a random basic loot skirt;
-	if B is skirt, now B is in Standard Item Pen.
+	if B is skirt:
+		repeat with L running through Standard Item Pen:
+			if L is skirt, remove L from Standard Item Pen;
+		add B to Standard Item Pen.
 
 This is the setup starting skirts rule:
 	let C be a random skirt;
-	repeat with N running from 1 to 2:
-		restock C.
+	restock C.
 The setup starting skirts rule is listed in the setup starting items rules.
 
 To set up influence of (C - a skirt):

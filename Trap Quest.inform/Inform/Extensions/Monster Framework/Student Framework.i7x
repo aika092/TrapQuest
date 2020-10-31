@@ -71,6 +71,7 @@ To set up (M - a student):
 	update name of M.
 
 To regionally place (M - a student):
+	now neighbour finder is the location of the player;
 	while M is not in the school or M is in the location of the player or M is nearby:
 		now M is in a random schoolplaced room.
 
@@ -163,14 +164,19 @@ Definition: a student (called M) is lesson-appropriate:
 	if the current-rank of M is 5 and armband is pure diamond, decide yes;
 	decide no.
 
-To BackgroundRender (M - a student) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
-	let N be 1004218; [sapphire]
-	if the current-rank of M is 2, now N is 5294200; [emerald]
-	if the current-rank of M is 3, now N is 14684511; [ruby]
-	if the current-rank of M is 4, now N is 16440029; [pale pink]
-	if the current-rank of M is 5, now N is 16447741; [pale silver]
-	if the current-rank of M is 6, now N is 16766720; [gold]
-	draw a rectangle N in the current focus window at X1 by Y1 with size DX by DY.
+To update background colour of (M - a student):
+	if the current-rank of M is 2:
+		now the backgroundColour of M is 5294200; [emerald]
+	otherwise if the current-rank of M is 3:
+		now the backgroundColour of M is 14684511; [ruby]
+	otherwise if the current-rank of M is 4:
+		now the backgroundColour of M is 16440029; [pale pink]
+	otherwise if the current-rank of M is 5:
+		now the backgroundColour of M is 16447741; [pale silver]
+	otherwise if the current-rank of M is 6:
+		now the backgroundColour of M is 16766720; [gold]
+	otherwise:
+		now the backgroundColour of M is 1004218. [sapphire]
 
 Part - Updating Students
 
@@ -221,6 +227,17 @@ To compute monstermotion of (M - a student):
 		now M is in School01;
 	otherwise if M is in a predicament room:
 		do nothing;
+	otherwise if M is guarding: [send them to their classroom if they are in a boring state]
+		let R be School32;
+		if the current-rank of M is 1:
+			now R is School14;
+		otherwise if the current-rank of M is 2:
+			now R is School18;
+		otherwise if the current-rank of M is 3:
+			now R is School29;
+		otherwise if the current-rank of M is 4:
+			now R is School30;
+		if the location of M is not R, now M is in R;
 	otherwise if a random number between 1 and 4 is 1 or (the player is at least partially immobile and (a random number between 1 and 2 is 1 or there is a teacher in the location of M)):
 		compute room leaving of M.
 
@@ -228,14 +245,12 @@ To compute (M - a student) seeking (D - a direction):
 	if M is in a predicament room or M is friendly: [Friendly students don't stalk the player]
 		compute monstermotion of M;
 	otherwise:
-		try M going D;
+		blockable move M to D;
 		compute monstermotion reactions of M.
 
-To compute room leaving of (M - a student): [This CANNOT be replaced with a function that potentially doesn't make them leave the room, for any NPC. Some while loops rely on this to eventually succeed or the game will freeze.][####Selkie: What about coding into the end of functions like this, a unique say statement that should never be reached except by a coding error, so an infinite loop here is automatically pinpointed, avoiding the need for any debug to find its source?]
-	if M is in Dungeon11 or M is in Dungeon10:
-		try M going east;
-	otherwise if M is in School11:
-		try M going north;
+To compute room leaving of (M - a student): [This CANNOT be replaced with a function that potentially doesn't make them leave the room, for any NPC. Some while loops rely on this to eventually succeed or the game will freeze.]
+	if M is in School11:
+		blockable move M to north;
 	otherwise:
 		now neighbour finder is the location of M;
 		let LA be the list of N-viable directions;
@@ -251,10 +266,10 @@ To compute room leaving of (M - a student): [This CANNOT be replaced with a func
 		let A be entry 1 in LD;
 		let P be the room A from the location of M;
 		if a random number between 1 and LDE is 1 and P is unbossed and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
-			try M going A;
+			blockable move M to A;
 			compute monstermotion reactions of M;
 		otherwise if a random number between 1 and LDE is 1 and P is unbossed and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
-			try M going A;
+			blockable move M to A;
 			compute monstermotion reactions of M.
 
 To compute fleeing of (M - a student):
@@ -966,15 +981,16 @@ To compute squirt declarations into (C - quiz-partner):
 	let ST be the bound-target of C;
 	say "You emit a pained whine as your floodgates open, and you begin powerfully expelling pints of [if watersports fetish is 1]murky[otherwise]creamy[end if] sludge from your [asshole], right into [NameDesc of ST][']s face, onto [his of ST] tongue and into [his of ST] mouth.".
 
-To Squirt (L - a liquid-object) On (C - quiz-partner) by (N - a number):
+To SilentSquirt (L - a liquid-object) On (C - quiz-partner) by (N - a number):
 	if C is unsoaked:
 		let ST be the bound-target of C;
-		say " - [one of]there's literally nothing [he of ST] can do about it other than cough and splutter as you paint [him of ST] with the [if watersports fetish is 1]butt juices[otherwise]asscum[end if][or][BigNameDesc of ST] coughs and splutters as [he of ST] is forced to take the nasty liquid into [his of ST] mouth[stopping].";
+		say "[one of]There's literally nothing [he of ST] can do about it other than cough and splutter as you paint [him of ST] with the [if watersports fetish is 1]butt juices[otherwise]asscum[end if][or][BigNameDesc of ST] coughs and splutters as [he of ST] is forced to take the nasty liquid into [his of ST] mouth[stopping].";
 		let R be the location of ST;
 		now ST is in the location of the player; [so that the happiness flavour comes through]
 		HappinessDown ST by 2;
 		now ST is in R;
-		now C is soaked.
+		now C is soaked;
+	PuddleUp L by N / 2;
 
 Check standing when quiz-partner is worn:
 	say "That's not practical while [quiz-partner] is bound to you." instead.

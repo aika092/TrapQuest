@@ -760,7 +760,7 @@ To AssSquirt:
 					say "a [if liquid-total > 6]huge [cascade][otherwise]few squirts[end if] of ";
 					if urine-count is 0 and semen-count is 0 and milk-count is 0, say "[if diaper messing >= 3 and rectum > 1][one of]murky[or]lumpy[in random order] brown water[otherwise if there is a worn total protection diaper]enema water[otherwise]clear water[end if] ";
 					otherwise say "[if urine-count > 0 and semen-count > 0 and milk-count > 0]what must be a disgraceful mix of [urine], [milk] and [semen][otherwise if urine-count > 0 and semen-count > 0]what seems like a mix of [urine] and [semen][otherwise if urine-count > 0 and milk-count > 0]what seems like a mix of [urine] and [milk][otherwise if milk-count > 0 and semen-count > 0]what seems like a mix of [milk] and [semen][otherwise if urine-count > 0][urine][otherwise if semen-count > 0][semen][otherwise if milk-count > 0][milk][otherwise]BUG - can't find any liquid. Report this bug please[end if], directly from your [asshole] ";
-					say "[if the player is ass protected]into [NameDesc of random bottom level ass protection clothing worn by the player][otherwise if collecting is a thing and collecting is not yourself]into [NameDesc of collecting][otherwise]onto your [ShortDesc of thighs][end if].";
+					say "[if the player is ass protected]into [NameDesc of random worn bottom level ass protection clothing][otherwise if collecting is a thing and collecting is not yourself]into [NameDesc of collecting][otherwise]onto your [ShortDesc of thighs][end if].";
 					if there is a worn total protection diaper and the player is full and diaper messing >= 3:
 						say "It is accompanied by [if rectum < 8]a large amount of squishy brown mush[otherwise if rectum < 10]a huge log of mess[otherwise]an ungodly amount of squishy, smelly goop[end if] as your bowels are completely excavated.";
 				if collecting is pedestal:
@@ -834,48 +834,30 @@ To AssSquirt:
 						say "The [printed name of collecting] is now full[if liquid-count < liquid-total], but it keeps coming[end if]!";
 						now collecting is the player;
 				[One the bottle is full (or never existed), we start soaking clothing or the floor]
-				[If the player isn't ass protected we are going to use a random off-stage item to allow us to perform some if checks without causing 'property does not exist' errors]
-				let C2 be a random off-stage unique fluid vulnerable clothing;
-				let C be C2;
-				now the milk-soak of C is 10;
-				now the urine-soak of C is 10;
-				now the semen-soak of C is 10;
-				now the water-soak of C is 10;
 				if semen-count > 0:
 					ExpelDisplay;
 				otherwise if the examine-image of asshole is Figure of AssholeObject0 or the examine-image of asshole is Figure of AssholeObject1:
 					cutshow Figure of AssholeObject2 for asshole; [show asshole as partially gaped for one turn]
-				[But if the player is wearing underwear we'll need to keep track of that item of clothing to see how soaked it's getting.]
-				if the player is ass protected, now C is a random bottom level ass protection clothing worn by the player;
+				[If the player is wearing underwear we'll need to keep track of that item of clothing to see how soaked it's getting.]
+				let C be a random worn bottom level ass protection clothing;
 				if turn-count is 0, compute squirt declarations into C;
+				let temp-milk-count be 0;
+				let temp-semen-count be 0;
+				let temp-urine-count be 0;
+				let temp-water-count be 0;
 				while liquid-count < 6 and liquid-count < liquid-total:
-					let temp-milk-count be 0;
-					let temp-semen-count be 0;
-					let temp-urine-count be 0;
-					let temp-water-count be 0;
 					if milk-count > 0:
-						if C is worn, increase temp-milk-count by 1;
-						otherwise MilkPuddleUp 1;
+						increase temp-milk-count by 1;
 						decrease the milk volume of belly by 1;
 						decrease milk-count by 1;
 						increase liquid-count by 1;
 					if semen-count > 0:
-						if C is worn:
-							increase temp-semen-count by 1;
-						otherwise if voluntarySquatting is 0:
-							Squirt semen On Thighs By 1;
-						otherwise:
-							SemenPuddleUp 1;
-							if flav-said is 0, now flav-said is 1;
+						increase temp-semen-count by 1;
 						decrease the semen volume of belly by 1;
 						decrease semen-count by 1;
 						increase liquid-count by 1;
 					if urine-count > 0:
-						if C is worn:
-							increase temp-urine-count by 1;
-						otherwise:
-							UrinePuddleUp 1;
-							if flav-said is 0, now flav-said is 1;
+						increase temp-urine-count by 1;
 						decrease the urine volume of belly by 1;
 						decrease urine-count by 1;
 						increase liquid-count by 1;
@@ -883,26 +865,25 @@ To AssSquirt:
 						let W be water-count;
 						if W > 6 - liquid-count, now W is 6 - liquid-count;
 						if W > 0:
-							if C is worn:
-								increase temp-water-count by 1;
-							otherwise if flav-said is 0:
-								now flav-said is 1;
+							increase temp-water-count by 1;
 							decrease the water volume of belly by W;
 							decrease water-count by W;
 							increase liquid-count by W;
-					if temp-milk-count > 0, MilkSoak temp-milk-count on C;
-					if temp-urine-count > 0, PissSoak temp-urine-count on C;
-					if temp-semen-count > 0, CumSoak temp-semen-count on C;
-					if temp-water-count > 0, WaterSoak temp-water-count on C;
-					if flav-said is 1:
-						say "It flows down your thighs to the ground.";
-						now flav-said is 2;
-					compute enema reactions;
 					if semen-count is 0 and urine-count is 0 and milk-count is 0 and water-count is 0, now liquid-count is 6; [In case of glitches and we somehow run out of liquid, we don't break the game.]
-				reset soak flavour;
-				[Let's fix that piece of off-stage clothing we just messed up]
-				clean C2;
-				WaterEmpty C2;
+				let squirt-target be nothing;
+				if C is worn clothing:
+					now squirt-target is C;
+				otherwise if voluntarySquatting is 0:
+					now squirt-target is thighs;
+				if temp-milk-count > 0:
+					AnnouncedExpel milk on squirt-target by temp-milk-count;
+				if temp-urine-count > 0:
+					AnnouncedExpel urine on squirt-target by temp-urine-count;
+				if temp-water-count > 0:
+					AnnouncedExpel water on squirt-target by temp-water-count;
+				if temp-semen-count > 0:
+					AnnouncedExpel semen on squirt-target by temp-semen-count; [semen is last so it's not washed off]
+				compute enema reactions;
 				[Now we deal with if there's much left and therefore we need to keep going. In total, no more than 6 liquid should have been released]
 				if liquid-total > 6 and liquid-total < 1000:
 					decrease liquid-total by 6;
@@ -971,13 +952,18 @@ To lay (X - a number) small eggs:
 			decrease X by 1;
 			WaterSoak 1 on D;
 	otherwise:
-		while the player is ass protected:
-			egg rip a random bottom level ass protection clothing worn by the player;
+		let L be the location of the player;
+		if portal-hotpants is worn:
+			say "The [ShortDesc of a random small egg][if X > 1]s disappear[otherwise] disappers[end if] through the portal.";
+			now L is Hotel44;
+		otherwise:
+			while the player is ass protected:
+				egg rip a random bottom level ass protection clothing worn by the player;
 		while X > 0:
 			decrease the small egg count of belly by 1;
 			decrease X by 1;
 			let S be a random available small egg;
-			now S is in the location of the player;
+			now S is in L;
 			now S is laid;
 			if a random number between 1 and 4 is 1, now the hatching of S is 1;
 		if egg laying fetish is 0:
@@ -1004,13 +990,18 @@ To lay (X - a number) medium eggs:
 			decrease X by 1;
 			WaterSoak 2 on D;
 	otherwise:
-		while the player is ass protected:
-			egg rip a random bottom level ass protection clothing worn by the player;
+		let L be the location of the player;
+		if portal-hotpants is worn:
+			say "The [ShortDesc of a random medium egg][if X > 1]s disappear[otherwise] disappers[end if] through the portal.";
+			now L is Hotel44;
+		otherwise:
+			while the player is ass protected:
+				egg rip a random bottom level ass protection clothing worn by the player;
 		while X > 0:
 			decrease the medium egg count of belly by 1;
 			decrease X by 1;
 			let S be a random available medium egg;
-			now S is in the location of the player;
+			now S is in L;
 			now S is laid;
 			if a random number between 1 and 4 is 1, now the hatching of S is 1;
 		if the semen volume of belly > 6:
@@ -1043,13 +1034,18 @@ To lay (X - a number) large eggs:
 			decrease X by 1;
 			WaterSoak 4 on D;
 	otherwise:
-		while the player is ass protected:
-			egg rip a random bottom level ass protection clothing worn by the player;
+		let L be the location of the player;
+		if portal-hotpants is worn:
+			say "The [ShortDesc of a random large egg][if X > 1]s disappear[otherwise] disappers[end if] through the portal.";
+			now L is Hotel44;
+		otherwise:
+			while the player is ass protected:
+				egg rip a random bottom level ass protection clothing worn by the player;
 		while X > 0:
 			decrease the large egg count of belly by 1;
 			decrease X by 1;
 			let S be a random available large egg;
-			now S is in the location of the player;
+			now S is in L;
 			now S is laid;
 			if a random number between 1 and 4 is 1, now the hatching of S is 1.
 
@@ -1072,7 +1068,7 @@ To Egg Rip (C - a clothing):
 		say "The force with which the egg shoots out makes it go straight through your [printed name of C], ruining them. [bold type]Your clothing has been destroyed![roman type][line break]";
 		destroy C.
 
-To compute squirt declarations into (C - a clothing):
+To compute squirt declarations into (C - an object):
 	if there is an intelligent awake monster in the location of the player and the player is able to speak:
 		let M be a random intelligent awake monster in the location of the player;
 		if there is a worn total protection diaper and diaper messing >= 3 and the player is full:

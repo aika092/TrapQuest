@@ -13,7 +13,9 @@ To decide which number is the charisma of the player:
 	repeat with C running through worn wearthings:
 		increase X by the charisma-influence of C;
 	if the class of the player is cheerleader, increase X by 2;
-	if the class of the player is succubus, increase X by 1;
+	if the class of the player is succubus:
+		if demon horns is cursed, increase X by 1;
+		otherwise increase X by 2;
 	if there is a worn book of regrets, increase X by 1;
 	if bitch tattoo is worn, decrease X by 1;
 	decide on X.
@@ -49,7 +51,7 @@ Understand "offer [something] to [something]", "trade [something] with [somethin
 
 To say OfferFlav of (T - a thing):
 	if the player is able to speak:
-		say "[variable custom style]'[if the second noun is unfriendly]Please, take this instead!'[otherwise]Would you be interested in this?'[end if][roman type][line break]";
+		say "[variable custom style][if the second noun is unfriendly]'Please, take this instead!'[otherwise]'Would you be interested in this?'[end if][roman type][line break]";
 	otherwise if the player is able to make sounds:
 		say "[variable custom style][muffled sounds][roman type][line break]";
 	otherwise:
@@ -58,7 +60,7 @@ To say OfferFlav of (T - a thing):
 Part - Monsters Reaction
 
 To decide which number is the bartering value of (T - a thing) for (M - a monster):
-	if T is plentiful accessory and M is intelligent, decide on (the price of T + 1) / 2;
+	if T is plentiful accessory and M is intelligent, decide on the price of T;
 	decide on 0.
 
 convincing power is a number that varies.
@@ -86,7 +88,7 @@ To compute (M - a monster) considering (T - a thing):
 		say MonsterOfferRejectFlav of M to T.
 
 To say MonsterOfferRejectFlav of (M - a monster) to (T - a thing):
-	if M is intelligent, say "[if M is unfriendly][BigNameDesc of M] smiles.[otherwise][BigNameDesc of M] looks a bit confused.[end if][line break][speech style of M]'[if convincing power > 0 and M is unfriendly]You're not going to get let off that easy.'[otherwise]Why the hell would I want that?'[end if][roman type][line break]";
+	if M is intelligent, say "[if M is unfriendly][BigNameDesc of M] smiles.[otherwise][BigNameDesc of M] looks a bit confused.[end if][line break][speech style of M][if convincing power > 0 and M is unfriendly]'You're not going to get let off that easy.'[otherwise]'Why the hell would I want that?'[end if][roman type][line break]";
 	otherwise say "[BigNameDesc of M] completely ignores the [T].".
 
 To say MonsterCriminalOfferRejectFlav of (M - a monster) to (T - a thing):
@@ -112,7 +114,6 @@ To compute resolution of (M - a monster) taking (T - a thing):
 		FavourUp M by ((1 + BV) / 2);
 		progress quest of christmas-quest;
 	otherwise if M is intelligent:
-		say OfferThanksFlav of M for T;
 		say MonsterTakeFlav of M to T;
 		compute offer reward of M for T;
 		say OfferFriendshipFlav of M;
@@ -122,28 +123,38 @@ To compute resolution of (M - a monster) taking (T - a thing):
 		bore M.
 
 To compute final resolution of (M - a monster) taking (T - a thing):
-	only destroy T.
+	if M is taxable, add T to the taxableItems of M;
+	if T is clothing, now M is carrying T;
+	otherwise destroy T.
 
 To say OfferThanksFlav of (M - a monster) for (T - a thing):
 	if the bartering value of T for M > 2, say "[speech style of M]'Thanks a lot for this!'[roman type][line break]".
 
-To compute offer reward of (M - a monster) for (T - a thing): [The NPC doesn't give anything in return by default.]
-	if M is intelligent:
-		let BV be the bartering value of T for M;
-		FavourUp M by ((1 + BV) / 2);
+Definition: a monster is gift giving:
+	if the number of entries in the tradableItems of it > 0, decide yes;
+	decide no.
+
+To compute offer reward of (M - a monster) for (T - a thing): [The NPC checks if any items in its tradableItems list are low enough 'tradability' to consider handing off.]
+	compute standard offer reward of M for T.
+
+To compute standard offer reward of (M - a monster) for (T - a thing): [The NPC checks if any items in its tradableItems list are low enough 'tradability' to consider handing off.]
+	let BV be the bartering value of T for M;
+	if M is intelligent, FavourUp M by ((1 + BV) / 2);
 	let X be nothing;
-	if M is buddy:
+	if M is gift giving and M is buddy:
 		sort the tradableItems of M in random order;
 		sort the tradableItems of M in reverse tradability order;
 		repeat with C running through the tradableItems of M:
 			if C is off-stage or C is carried by M, now X is C;
 	if X is a thing:
-		if the favour of M >= the tradability of X, compute M rewarding X.
+		if debugmode > 0, say "[input-style]Considering gifting the player [MediumDesc of X]: Gift value ([tradability of X].5) | ([the charisma of the player + the favour of M - the aggro limit of M]) = ([the charisma of the player]) charisma + ([the favour of M - the aggro limit of M]) favour [bold type]AND [input-style]([BV * 2]) value of [ShortDesc of T][roman type][line break]";
+		if the charisma of the player + the favour of M - the aggro limit of M > the tradability of X and BV * 2 > the tradability of X:
+			compute M rewarding X;
+			remove X from the tradableItems of M.
 
 To compute (M - a monster) rewarding (T - a thing):
 	now T is in the location of the player;
-	if T is clothing:
-		blandify and reveal T;
+	if T is clothing, blandify and reveal T;
 	if T is alchemy product:
 		now T is bland;
 		now T is sure;
@@ -155,6 +166,6 @@ To say RewardFlav of (M - a monster) for (T - a thing):
 	say "[BigNameDesc of M] puts a [T] on the ground in front of you.".
 
 To say OfferFriendshipFlav of (M - a monster):
-	if M is intelligent, say "[speech style of M][if M is guardian]'I'm thankful to have you as my ally[otherwise if M is ally]'We should stick together, you and me[otherwise if M is buddy]'I hope to see you again soon[otherwise if M is acquaintance]'You're all right[otherwise]'Maybe you're not as much of a [bitch] as I thought[end if].'[roman type][line break]".
+	if M is intelligent, say "[speech style of M][if M is guardian]'I'm thankful to have you as my ally[otherwise if M is ally]'We should stick together, you and me[otherwise if M is buddy]'I'm very glad to have met you[otherwise if M is acquaintance]'You're all right[otherwise if M is friendly]'Maybe you're not as much of a [bitch] as I thought[otherwise]'Maybe next time I use you, I'll try to be more gentle[end if].'[roman type][line break]".
 
 Offering Trading ends here.

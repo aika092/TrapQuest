@@ -20,14 +20,26 @@ Definition: a bottle (called B) is actually drinkable:
 	now drinking-target is nothing;
 	decide yes.
 
+Definition: yourself is resisting taste addiction:
+	if the player is taste obsessed:
+		if drinking-target is bottle:
+			if ((the fill-colour of drinking-target is creamy and semen is highest addicted liquid) or (the fill-colour of drinking-target is golden and urine is highest addicted liquid) or (the fill-colour of drinking-target is white and milk is highest addicted liquid)), decide no;
+		decide yes;
+	decide no.
+
 This is the addicts refuse to drink other liquids rule:
-	if the semen taste addiction of the player is 20 or the player is desperately craving semen or the urine taste addiction of the player > 15:
-		if the thirst of the player is 5:
-			if autodrink is 0, say "[variable custom style]I guess I should drink something to stop myself fainting...[roman type][line break]";
+	if the player is resisting taste addiction:
+		if autodrink is 0:
+			if the player is taste engulfed:
+				say OnlyDrinksSemen;
+				rule fails;
+			otherwise:
+				say "You are so obsessed with drinking [AddictedFluids] that you will feel rubbish for a while after drinking this. Are you sure you want to?";
+				if the player is not consenting:
+					say "Action cancelled.";
+					rule fails;
 		otherwise:
-			unless drinking-target is bottle and ((the fill-colour of drinking-target is creamy and (the semen taste addiction of the player is 20 or the player is desperately craving semen)) or (the fill-colour of drinking-target is golden and the urine taste addiction of the player > 15) or (the fill-colour of drinking-target is white and the milk taste addiction of the player > 13)):
-				if autodrink is 0, say "[OnlyDrinksSemen]";
-				rule fails.
+			rule fails.
 The addicts refuse to drink other liquids rule is listed last in the global drinkability rules.
 
 This is the just use your mouth to drink rule:
@@ -48,12 +60,6 @@ This is the bottles can't be drunk while inside you rule:
 		rule fails.
 The bottles can't be drunk while inside you rule is listed in the global drinkability rules.
 
-[Check drinking squeezy-bottle when the semen taste addiction of the player is 20 or the player is desperately craving semen or the urine taste addiction of the player > 15:
-	if the thirst of the player is 5:
-		say "[variable custom style]I guess I should drink something to stop myself fainting...[roman type][line break]";
-	otherwise:
-		unless (the fill-colour of the noun is creamy and (the semen taste addiction of the player is 20 or the player is desperately craving semen)) or (the fill-colour of the noun is golden and the urine taste addiction of the player > 15), say "[OnlyDrinksSemen]" instead.]
-
 Check drinking food:
 	try eating the noun instead.
 
@@ -64,7 +70,7 @@ To say OnlyDrinksSemen:
 	say "[second custom style]I won't drink that, [one of]it'll fill up my stomach and then I won't be able to drink as much [AddictedFluids]![or]I am on a strict diet of [AddictedFluids].[cycling][roman type][line break]".
 
 To say AddictedFluids:
-	say "[if the urine taste addiction of the player > 15][urine][end if][if the urine taste addiction of the player > 15 and (the semen taste addiction of the player is 20 or the player is desperately craving semen)] and [end if][if the semen taste addiction of the player is 20 or the player is desperately craving semen][semen][end if]".
+	say "[list of highest addicted liquid liquid-objects]".
 
 Understand "suck [something]", "suck on [something]", "gulp [something]", "gulp from [something]", "drink from [something]", "dr [something]", "dri [something]" as drinking.
 
@@ -173,7 +179,7 @@ Carry out drinking a vessel:
 	compute drinking the noun;
 	if the fill-colour of the noun is not creamy and the fill-colour of the noun is not golden and the fill-colour of the noun is not white and the fill-colour of the noun is not murky, StomachUp 2;
 	DoseDown the noun;
-	if the doses of the noun is 0, say "[line break]The [noun] is now empty.".
+	if the doses of the noun is 0, say "[BigNameDesc of the noun] is now empty.".
 
 Check drinking a living tentacles:
 	if the noun is not worn, say "You can't do that." instead;
@@ -186,6 +192,26 @@ Carry out drinking a living tentacles:
 	StomachSemenUp 2;
 	now the charge of L is 100.
 
+tasteAddictionPenaltyTime is a number that varies.
+
+To decide which number is TasteAddictionCooldown:
+	decide on 300.
+
+Report drinking:
+	if the player is resisting taste addiction:
+		increase tasteAddictionPenaltyTime by TasteAddictionCooldown;
+		say "[bold type]Drinking something other than [AddictedFluids] is making you feel very low! [roman type]Your intelligence will be reduced for [if tasteAddictionPenaltyTime > TasteAddictionCooldown]a few minutes more, and by even more than before[otherwise]a few minutes[end if]".
+
+An all time based rule (this is the taste addiction penalty cooldown rule):
+	if tasteAddictionPenaltyTime > 0 and the player is not in a predicament room:
+		let pTA be the remainder after dividing tasteAddictionPenaltyTime by TasteAddictionCooldown;
+		decrease tasteAddictionPenaltyTime by time-seconds;
+		if pTA <= time-seconds:
+			say "[bold type]Your intelligence has [if tasteAddictionPenaltyTime > 0]partially [end if]recovered from feeling low after failing to follow your [AddictedFluids] diet.[roman type][line break]";
+			if tasteAddictionPenaltyTime < 0, now tasteAddictionPenaltyTime is 0;
+
+
+
 Report drinking a vessel:
 	if the doses of the noun is 0, cancel father material of the noun.
 
@@ -193,6 +219,24 @@ Carry out drinking a carried bottle:
 	force inventory-focus redraw. [Forces redraw of inventory window]
 
 The block drinking rule is not listed in the check drinking rulebook.
+
+Check drinking breasts:
+	if the milkskill of the player is 0, say "[variable custom style]I don't really see how that would work.[roman type][line break]" instead;
+	if the milk volume of breasts is 0, say "Your [ShortDesc of breasts] are empty of [milk]." instead;
+	if the largeness of breasts < 7, say "Your [ShortDesc of breasts] are [if the largeness of breasts < 5]nowhere near[otherwise]not[end if] big enough." instead;
+	if the player is not able to manually use their hands, do nothing instead;
+	if the player is wrist bound behind, say "You would need the proper use of your arms and hands for that." instead;
+	now drinking-target is nothing;
+	if the player is not able to drink, do nothing instead;
+	if there is worn actually nipple covering clothing, say "Your nipples are not exposed." instead;
+	allocate 6 seconds;
+	MilkDown 2;
+	FaceFill milk by 2;
+	say "You [if the player is proud]cringe with humiliation[otherwise]giggle nervously[end if] as you bring your own nipple to your mouth. You suck gently, [one of]surprised about how amazing it feels. Feeling your own nipple stiffen with arousal, so it pokes into the soft flesh of your lips, sends a humiliating surge of excitement straight to your groin. You can't resist flicking the erect bud with your tongue, and even gently biting on it as you suck. Or [i]suckle[/i], really. You flush with the knowledge that you're both lactating and drinking yourself, like some hot, slutty babe in a porno, and a curious thrill of shame ripples through you at the thought of what your friends would think if they could see you now. [if the player is possessing a penis and the size of penis < 3]You burn with hot shame as your tongue tells you your [i]nipple[/i] is now bigger than your [PenisFlavour real size of penis]! [otherwise if the player is possessing a penis and the size of penis < 4]You realise your nipple isn't [i]that[/i] much smaller than your [PenisFlavour real size of penis]! [end if]It doesn't stop you, though[or]enjoying the delicate pleasurable feeling[or]once again enjoying the stimulation[stopping]. You shiver with pleasure as the [milk] exits your body and re-enters onto your tongue. It tastes great and you swallow it greedily.";
+	slightHumiliate;
+	say "[if the player is not disgraced][line break][variable custom style]Yes it was humiliating, but at least it was tasty![otherwise][line break][second custom style]Oh my, I'm such a naughty girl, drinking my own [milk] straight from the tap![end if][roman type][line break]";
+	suggest swallowing with milk consequences; [You can't avoid the taste addiction increase by not swallowing]
+	do nothing instead.
 
 Swallowing is an action applying to nothing.
 Check Swallowing:
@@ -233,7 +277,7 @@ Carry Out Spitting:
 				if V is bottle:
 					set next numerical response to "The [ShortDesc of V][if the doses of V > 0] (You'll lose its current contents of [PotionType of V])[end if]";
 				otherwise if V is pedestal:
-					set next numerical response to "The [V]";
+					set next numerical response to "The [V] (which contains [a list of things in V])";
 				otherwise:
 					set next numerical response to "[BigNameDesc of V]";
 			set numerical response 0 to "spit onto the ground";
@@ -293,12 +337,14 @@ Carry Out Spitting:
 				compute boring spit reaction of M;
 			otherwise:
 				compute disgusting spit reaction of M;
-		if the player is in a predicament room and current-predicament is gloryhole-predicament:
-			increase the semen-spat of gloryhole-predicament by 1;
-			if the semen-spat of gloryhole-predicament is 1, say "[variable custom style]I'm going to have earned a penalty point from doing that.[roman type][line break]";
 		MouthEmpty;
 	otherwise:
-		compute spitting.
+		compute spitting;
+	if the player is in a predicament room and current-predicament is gloryhole-predicament:
+		increase the semen-spat of gloryhole-predicament by 1;
+		if the semen-spat of gloryhole-predicament is 1, say "[variable custom style]I'm going to have earned a penalty point from doing that.[roman type][line break]".
 Understand "spit", "spit on ground", "spit on the ground", "spit on floor", "spit on the floor" as spitting.
+This is the automatic spitting rule:
+	try spitting.
 
 Drinking ends here.

@@ -380,14 +380,10 @@ To decide which number is the outrage tolerance of (M - a supporter):
 
 Definition: a supporter is a groper: decide yes.
 
-To compute post climax effect of (M - a supporter) in (F - a fuckhole):
-	if M is male:
-		compute M sleeping 200 after sex;
-		bore M;
-	otherwise:
-		satisfy M.
-
 The blind-status of a supporter is usually 0. [Can be changed to -1 to make them immune]
+
+To compute post climax effect of (M - a supporter) in (F - a fuckhole):
+	if M is male, compute M sleeping 200 after sex.
 
 [###SUPPORTERS WITH A PENIS ONLY###]
 
@@ -430,11 +426,20 @@ To say IdentifiablePosterReactionFlav of (M - a supporter):
 To say UnidentifiablePosterReactionFlav of (M - a supporter):
 	say "[speech style of M]'Jeepers creepers! Wow, if I got a few minutes alone with that broad, I'd bury my [if M is male]meat[otherwise]fist[end if] so deep in that ass she wouldn't be able to walk for days!'[roman type][line break]".
 
+This is the supporter friendly convinced rule: [only supporters with penises can currently accept friendly sex]
+	if current-monster is male and the refractory-period of current-monster <= 0 and presented-orifice is a reasonable target:
+		now the chosen-orifice of current-monster is presented-orifice;[This is on top so flavour can refer to chosen orifice.]
+		say PresentFriendlyAcceptanceFlav of current-monster;
+		rule succeeds;
+	otherwise if presented-orifice is not nothing:
+		say PresentFriendlyRejectionFlav of current-monster.
+The monster friendly convinced rule of a supporter is the supporter friendly convinced rule.
+
 To say PresentFriendlyAcceptanceFlav of (M - a supporter): [This is when the player offers a body part up to them and the NPC is still friendly, and accepts]
 	say "[speech style of M]'Sure, why not? There's nobody hotter around right now so I'll give you a run-over.'[roman type][line break]".
 
 To say PresentFriendlyRejectionFlav of (M - a supporter): [This is when the player offers a body part up to them and the NPC is still friendly, and refuses because a) they orgasmed recently or b) Can't fuck that particular body part]
-	say "[speech style of M]'[if presented-orifice is a potential target]Geez, give me some time to recover before asking that!'[otherwise]Not interested.'[end if][roman type][line break]".
+	say "[speech style of M]'[if M is male and presented-orifice is a potential target]Geez, give me some time to recover before asking that!'[otherwise]Not interested.'[end if][roman type][line break]".
 
 To say FriendlySexReleaseRefusalSpeech of (M - a supporter): [The player has changed their mind and wants to end the friendly sex early. The NPC has decided to dominate the player and not let go so easily.]
 	if the player is not able to speak, say "[speech style of M]'[one of]Quiet down! I'm enjoying this![or]Stop squirming, you will hurt yourself.'[or]I couldn't understand that, but we can talk about it when I am finished.'[in random order][roman type][line break]";
@@ -463,8 +468,7 @@ To compute the default taunting of (M - a supporter): [The NPC isn't able to do 
 	say "[BigNameDesc of M] watches, making no attempt to hide [his of M] glee.".
 
 To say SelectionFrustrated of (M - a supporter): [The NPC has got tired of waiting!]
-	say "[BigNameDesc of M] seems to look very frustrated, and then gives up.";
-	bore M.
+	say "[BigNameDesc of M] seems to look very bored. [big he of M] gives up.".
 
 To compute the dildo stuck taunting of (M - a supporter):
 	if a random number between 1 and 3 is 1, say "[BigNameDesc of M] puts [his of M] hand to [his of M] chin as if admiring an art exhibit.[line break][speech style of M]'[one of]Hmm, yes, you're clearly going to do REALLY well in this game. Haha[or]Have you considered NOT getting caught by traps? Someone might be led to think that you're enjoying this[or]Perhaps you should leave the adventuring to the people with brains[or]I can't believe you got caught by such a basic trap[in random order]!'[roman type][line break]".
@@ -572,7 +576,7 @@ To say BreastsPenetrationFlav of (M - a supporter):
 	say "[BigNameDesc of M] takes [his of M] [DickDesc of M] and moves it towards your chest. You watch in silence as [he of M] pushes forward, using the tight gap in between your boobs as a makeshift fuckhole. [if the titfuck addiction of the player < 5]You hold your body still and try to ignore the brutish grunts as [he of M] begins to thrust in and out of your [BreastDesc][otherwise]You instinctively bring your hands to your [BreastDesc], and begin to massage [his of M] [DickDesc of M] by moving them up and down with your hands as fast and powerfully as you can[end if].".
 
 To say CleavageClimaxFlav of (M - a supporter):
-	say "[BigNameDesc of M] moans lewdly as [he of M] ejaculates, covering your [ShortDesc of breasts] in [his of M] [semen]!".
+	say "[BigNameDesc of M] moans lewdly as [he of M] ejaculates, [if M is wrapped]rips the condom off of [his of M] [manly-penis] and [end if]covering your [ShortDesc of breasts] in [his of M] [semen]!".
 
 [Vaginal & Anal]
 

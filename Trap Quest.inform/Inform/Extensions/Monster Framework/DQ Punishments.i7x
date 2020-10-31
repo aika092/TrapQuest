@@ -124,7 +124,7 @@ Definition: a monster (called M) is eager to spank:
 	if M is able to carry out a spanking, decide yes;
 	decide no.
 
- Definition: a monster (called M) is able to carry out a spanking:
+Definition: a monster (called M) is able to carry out a spanking:
 	repeat with N running through monsters grabbing the player:
 		if N is not M, decide no;
 	decide yes.
@@ -150,7 +150,7 @@ Definition: a monster (called M) is eager to masturbate:
 	if M is able to carry out masturbation, decide yes;
 	decide no.
 
- Definition: a monster (called M) is able to carry out masturbation:
+Definition: a monster (called M) is able to carry out masturbation:
 	repeat with N running through monsters grabbing the player:
 		if N is not M, decide no;
 	if there is a worn chastity-belt, decide no;
@@ -179,7 +179,7 @@ Definition: a monster (called M) is eager to deliver enemas:
 	if M is able to deliver enemas, decide yes;
 	decide no.
 
- Definition: a monster (called M) is able to deliver enemas:
+Definition: a monster (called M) is able to deliver enemas:
 	repeat with N running through monsters grabbing the player:
 		if N is not M, decide no;
 	if there is a worn cursed clothing penetrating asshole and M is not able to remove cursed plugs, decide no;

@@ -703,9 +703,6 @@ A sex addiction theme rule:
 Section - Unskirted Themed
 
 Definition: a thing is unskirted themed: decide no. [Is it something that should not be worn at the same time as a skirt?]
-Definition: a clothing is skirt clashing:
-	if it is unskirted themed or it is skirted, decide yes;
-	decide no. [Things that need to disappear when a skirt is summoned]
 
 Definition: a trousers is unskirted themed: decide yes.
 Definition: a dress is unskirted themed:

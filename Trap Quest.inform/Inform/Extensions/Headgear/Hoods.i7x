@@ -84,7 +84,7 @@ To say ShortDesc of (H - black hood):
 	say "black latex hood".
 
 To say ClothingDesc of (H - black hood):
-	say "This black latex hood completely covers your head, and only has holes for your eyes, your nostrils, [if the player is pigtailed or the player is ponytailed]your hair, [end if]and your mouth. The mouth hole is fitted with an O-ring tube gag, which keeps your mouth wide open and prevents you from speaking properly. Anyone could put anything into your mouth that they wanted, even a penis or another gag.".
+	say "This black latex hood completely covers your head, and only has holes for your eyes, your nostrils, [if the player is pigtailed or the player is ponytailed]your hair, [end if]and your mouth. The mouth hole is fitted with an O-ring tube gag, which keeps your mouth wide open and prevents you from speaking properly. Anyone could put anything into your mouth that they wanted, even a penis or a more conventional gag[if H is worn and H is cursed and there is a worn cursed catsuit]. The bottom of the hood has merged with your catsuit.[end if]".
 
 Chapter - Class Outfit
 
@@ -160,7 +160,7 @@ To decide which figure-name is the clothing-image of (C - WC hood):
 	decide on figure of WC hood.
 
 To say ClothingDesc of (H - WC hood):
-	say "This white latex hood completely covers your head, and only has holes for your eyes, your nostrils, [if the player is pigtailed or the player is ponytailed]your hair, [end if]and your mouth. The mouth hole is fitted with an O-ring tube gag, which keeps your mouth wide open and prevents you from speaking properly. Anyone could put anything into your mouth that they wanted, even a penis or another gag.".
+	say "This white latex hood completely covers your head, and only has holes for your eyes, your nostrils, [if the player is pigtailed or the player is ponytailed]your hair, [end if]and your mouth. The mouth hole is fitted with an O-ring tube gag, which keeps your mouth wide open and prevents you from speaking properly. Anyone could put anything into your mouth that they wanted, even a penis or another gag[if H is worn and H is cursed and there is a worn cursed black catsuit]. The bottom of the hood has merged with your catsuit.[end if]".
 
 To say ShortDesc of (H - WC hood):
 	say "white latex hood".
@@ -192,35 +192,17 @@ To compute class outfit of (H - WC hood):
 	let B be a random off-stage WC thigh high boots;
 	let P be a random off-stage WC plug panties;
 	if C is actually summonable or (C is catsuit and toilet-summoned is 0):
-		if toilet-summoned is 0:
-			repeat with O running through worn dresses:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn exclusive corsets:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn skirted clothing:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn breast covering clothing:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
+		PinkWardrobeUnclash C;
 		say "[bold type]Your hood pulses once, and then a white catsuit materialises over your body![line break][variable custom style][if the player is not disgraced]Holy crap, is this icon on the front what I think it is?![otherwise]Oh, I get what this icon on the front means. I'm a human toilet now![end if][roman type][line break]";
 		summon C uncursed;
 		if toilet-summoned is 0, now toilet-summoned is 1;
 	otherwise if B is actually summonable or (B is boots and toilet-summoned < 2):
-		if toilet-summoned < 2:
-			repeat with O running through worn shoes:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
+		PinkWardrobeUnclash B;
 		say "[bold type]Your hood pulses once, and then a pair of white latex thigh high boots appear on your feet![roman type][line break]";
 		summon B uncursed;
 		if toilet-summoned < 2, now toilet-summoned is 2;
 	otherwise if P is actually summonable or (diaper quest is 0 and P is knickers and toilet-summoned < 3 and asshole is not actually occupied and vagina is not actually occupied):
-		if toilet-summoned < 3:
-			repeat with K running through worn knickers:
-				say "Your [K] [wardrobeVanishes of K]!";
-				now K is in pink wardrobe;
+		PinkWardrobeUnclash P;
 		say "[bold type]Your hood pulses once, and then a pair of white plug panties appear on (and in) you![roman type][line break]";
 		summon P cursed with quest;
 		now toilet-summoned is 3;
@@ -274,7 +256,7 @@ Report wearing clown mask:
 	say "[one of][variable custom style]No one cared who I was after I put on the mask...[roman type][line break][or][stopping]".
 
 To say ClothingDesc of (H - clown mask):
-	say "This white and cream latex hood completely covers your head, and only has holes for your eyes, your nostrils, pigtailed hair, and your mouth. The mouth hole is shaped like a creepy smile, complete with pink lips. Extreme pink and white rubber neck ruffles complete the image of some kind of latex clown.".
+	say "This white and cream latex hood completely covers your head, and only has holes for your eyes, your nostrils, pigtailed hair, and your mouth. The mouth hole is shaped like a creepy smile, complete with pink lips. Extreme pink and white rubber neck ruffles complete the image of some kind of latex clown[if H is worn and H is cursed and there is a worn cursed black catsuit]. The bottom of the hood has merged with your catsuit.[end if]".
 
 To say ShortDesc of (H - clown mask):
 	say "latex clown mask".
@@ -303,30 +285,12 @@ To compute class outfit of (H - clown mask):
 	let B be a random off-stage rubber booties;
 	let M be a random off-stage blue rubber mittens;
 	if fetish baby dress is actually summonable or (clown-summoned is 0 and the number of worn latex dress is 0):
-		if clown-summoned is 0:
-			repeat with O running through worn dresses:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn skirted clothing:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn bras:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
+		PinkWardrobeUnclash fetish baby dress;
 		say "[bold type]Your mask emits a high pitched cackling sound, and then a creamy fetish dress materialises over your body![line break][variable custom style]I look so ridiculous! [if the player is shameless]How delicious[otherwise]This is crazy[end if]![roman type][line break]";
 		summon fetish baby dress uncursed;
 		if clown-summoned is 0, now clown-summoned is 1;
 	otherwise if B is actually summonable or (B is shoes and clown-summoned < 2):
-		if clown-summoned < 2:
-			repeat with O running through worn shoes:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn stockings:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn trousers:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
+		PinkWardrobeUnclash B;
 		say "[bold type]Your mask emits a high pitched laughing sound, and then a pair of latex booties appear on your feet![roman type][line break]";
 		summon B uncursed;
 		if clown-summoned < 2, now clown-summoned is 2;
@@ -388,7 +352,7 @@ trainee hood is a hood. trainee hood has a number called training-progress. The 
 The printed name of trainee hood is "[TQlink of item described][item style]trainee hood[clothing-title-after]". The text-shortcut of trainee hood is "th".
 
 To say ClothingDesc of (H - trainee hood):
-	say "This silicone hood completely covers your head, with holes only for your eyes, nostrils, [if the player is pigtailed or the player is ponytailed]your hair, [end if]and your mouth. Padding underneath your cheekbones and around your lips gives you an exaggerated feminine appearance. The mouth hole is fitted with an O-ring tube gag, which keeps your mouth wide open for anything someone might want to put in there. Metal accents make the hood seem futuristic and high-tech, containing magnetic sensors that keep it in place with a surprising amount of security.".
+	say "This silicone hood completely covers your head, with holes only for your eyes, nostrils, [if the player is pigtailed or the player is ponytailed]your hair, [end if]and your mouth. Padding underneath your cheekbones and around your lips gives you an exaggerated feminine appearance. The mouth hole is fitted with an O-ring tube gag, which keeps your mouth wide open for anything someone might want to put in there. Metal accents make the hood seem futuristic and high-tech, containing magnetic sensors that keep it in place with a surprising amount of security[if H is worn and H is cursed and there is a worn cursed black catsuit]. The bottom of the hood has merged with your catsuit.[end if]".
 
 To decide which number is the perceived-bimbo-influence of (C - trainee hood):
 	decide on 2.

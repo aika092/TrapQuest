@@ -37,10 +37,10 @@ To compute christmas event of (C - a christmas-gift-BE):
 
 A christmas-gift-cumshot is a kind of christmas-gift-event. There are 12 christmas-gift-cumshot.
 To compute christmas event of (C - a christmas-gift-cumshot):
-	if tentacle fetish is 1 and the largeness of breasts > 5 and highest-cleavage is 0:
+	if tentacle fetish is 1 and the largeness of breasts > 5 and cleavageCover < 7:
 		say "As you open the lid, a tentacle slithers out, forcing its way between your [BreastDesc]! It thrusts and wiggles as [semen] sprays out, painting your chest!";
 		appropriate-cutscene-display figure of Xmas tentacle cutscene 1;
-		CumTitsUp a random number between 5 and 8;
+		AnnouncedSquirt semen on breasts by a random number between 5 and 8;
 	otherwise:
 		say "As you open the lid, [semen] sprays out, getting you right in the face!";
 		let N be a random number between 5 and 8;

@@ -78,6 +78,7 @@ This is the egg stuffing rule:
 				if S is small egg, assfill N small eggs;
 				if S is medium egg, assfill N medium eggs;
 				if S is large egg, assfill N large eggs;
+				now the squirt timer of belly is 0;
 			otherwise:
 				if S is small egg, wombfill N small eggs;
 				if S is medium egg, wombfill N medium eggs;
@@ -103,15 +104,24 @@ Check kicking egg:
 	try attacking the noun instead.
 Check dropping egg:
 	if the location of the player is toilets:
-		say "Do you mean dropping it down the toilet? ";
-		if the player is consenting:
+		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+		set numerical response 1 to "drop [NameDesc of the noun] on the ground";
+		set numerical response 2 to "flush [NameDesc of the noun] down the toilet";
+		if the number of carried eggs > 1:
+			set numerical response 3 to "drop all your eggs on the ground";
+			set numerical response 4 to "flush all your eggs down the toilet";
+		set numerical response 0 to "cancel";
+		compute multiple choice question;
+		if player-numerical-response is 0, say "Action cancelled." instead;
+		if the remainder after dividing player-numerical-response by 2 is 0:
 			if the player is immobile, say "You're a bit busy!" instead;
-			if the number of carried eggs > 1:
-				say "Do you want to flush all your eggs down the toilet? ";
-				if the player is consenting:
-					repeat with E running through carried eggs:
-						unless E is the noun, compute flushing of E;
-			compute flushing of the noun instead.
+			if player-numerical-response is 4:
+				repeat with E running through carried eggs:
+					unless E is the noun, compute flushing of E;
+			compute flushing of the noun instead; [beyond this let the drop action occur normally]
+		otherwise if player-numerical-response is 2:
+			repeat with E running through carried eggs:
+				unless E is the noun, now E is in the location of the player.
 
 Report examining egg when egg laying fetish is 1:
 	say "[if the noun is shuddering][bold type]You have seen it move and shudder, suggesting it has been successfully fertilised and incubated. [roman type][end if]The strong shell can't be destroy by brute force, but perhaps you could [bold type]drop[roman type] it down the toilet.".
@@ -137,6 +147,7 @@ To compute hatchtime of (E - an egg):
 		if the remainder after dividing the hatching of E by 30 is 0:
 			now E is shuddering;
 			say "[BigNameDesc of E] shudders[one of]. Is there something alive inside?![or].[stopping]";
+			if E is carried, force inventory-focus redraw;
 	if the hatching of E > 130 and E is regional:
 		compute hatch of E.
 

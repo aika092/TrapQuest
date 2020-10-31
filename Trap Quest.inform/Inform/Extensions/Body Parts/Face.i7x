@@ -222,10 +222,13 @@ Definition: face is temporarily made up:
 
 Permanent MakeUp is a number that varies. Permanent MakeUp is 0.
 
+To decide which number is max lip size:
+	decide on 2 + artificial enhancements fetish.
+
 To LipsUp (X - a number):
 	while X > 0:
 		decrease X by 1;
-		if the lips of face < 2 + artificial enhancements fetish:
+		if the lips of face < max lip size:
 			increase the lips of face by 1;
 			if X is 0:
 				display lips cutscene;
@@ -262,22 +265,27 @@ To FaceFill (L - a liquid-object) by (N - a number):
 				increase the milk volume of face by 1;
 	if N > 0:
 		say "Your mouth is completely full, and the [L] is still coming!";
-		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
-		set numerical response 1 to "try to swallow[if newbie tips is 1] (guaranteed addiction increase and you might puke, making you very thirsty)[end if]";
-		set numerical response 2 to "let it burst out of your nose[if newbie tips is 1] (fatigue increase and more likely to get on your clothes and body)[end if]";
-		compute multiple choice question;
-		if player-numerical-response is 1:
-			compute swallowing; [Must succeed to avoid infinite loops]
-			say "The fast flow makes you feel queasy.";
-			let M be a random thing penetrating face;
-			let G be the stomach-liquid of the player / 2;
-			if M is a thing, increase G by the girth of M / 2;
-			check puking G;
-			now outputSuppressed is true;
-			FaceFill L by N; [FUKKEN RECURSION BOYS, LOOK IT UP. YEE-HAH]
-		otherwise:
+		if the player is refusing to swallow:
+			say "You can't bring yourself to swallow the disgusting stuff!";
 			NoseBurst L by N;
 			now N is 0;
+		otherwise:
+			reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+			set numerical response 1 to "try to swallow[if newbie tips is 1] (guaranteed addiction increase and you might puke, making you very thirsty)[end if]";
+			set numerical response 2 to "let it burst out of your nose[if newbie tips is 1] (fatigue increase and more likely to get on your clothes and body)[end if]";
+			compute multiple choice question;
+			if player-numerical-response is 1:
+				compute swallowing; [Must succeed to avoid infinite loops]
+				say "The fast flow makes you feel queasy.";
+				let M be a random thing penetrating face;
+				let G be the stomach-liquid of the player / 2;
+				if M is a thing, increase G by the girth of M / 2;
+				check puking G;
+				now outputSuppressed is true;
+				FaceFill L by N; [FUKKEN RECURSION BOYS, LOOK IT UP. YEE-HAH]
+			otherwise:
+				NoseBurst L by N;
+				now N is 0;
 	if outputSuppressed is false and T is not the total volume of face, say "You now have a [MouthfulDesc].".
 
 To MouthEmpty:
@@ -304,32 +312,83 @@ To compute swallowing:
 	if TV <= 0:
 		if auto is 0, say "You try to swallow, but your mouth is empty.";
 	otherwise:
-		if auto < 2, say "You [if auto is 1]accidentally [end if]gulp the [MouthfulDesc] down[if auto is 1] your throat[end if].";
+		if auto < 2, say "You [if the player is always automatically swallowing]automatically [otherwise if auto is 1]accidentally [end if]gulp the [MouthfulDesc] down[if auto is 1] your throat[end if].";
 		StomachSemenUp the semen volume of face;
 		StomachUrineUp the urine volume of face;
 		StomachMilkUp the milk volume of face;
 		MouthEmpty.
+This is the swallowing rule:
+	compute swallowing.
+
+Definition: yourself is refusing to swallow:
+	if (the semen volume of face > 0 and the semen taste addiction of the player is 1) or (the urine volume of face > 0 and the urine taste addiction of the player is 1) or (the milk volume of face > 0 and the milk taste addiction of the player is 1), decide yes;
+	decide no.
+
+Definition: yourself is always automatically swallowing:
+	if (the semen volume of face > 0 and the semen taste addiction of the player is 20) or (the urine volume of face > 0 and the urine taste addiction of the player is 20) or (the milk volume of face > 0 and the milk taste addiction of the player is 20), decide yes;
+	decide no.
+
+Definition: yourself is automatically swallowing:
+	if the semen volume of face > 0 and (the semen taste addiction of the player is 20 or a random number between 10 and 30 < the semen taste addiction of the player):
+		if the semen taste addiction of the player < 20, say "You can't help it - something inside you is too in love with the taste of that [semen] - you can't stop yourself!";
+		decide yes;
+	if the urine volume of face > 0 and (the urine taste addiction of the player is 20 or a random number between 10 and 30 < the urine taste addiction of the player):
+		if the urine taste addiction of the player < 20, say "You can't help it - something inside you is too eager to act like a human urinal - you can't stop yourself!";
+		decide yes;
+	if the milk volume of face > 0 and (the milk taste addiction of the player is 20 or a random number between 10 and 30 < the milk taste addiction of the player):
+		if the milk taste addiction of the player < 20, say "You can't help it - something inside you is too in love with the taste of that [milk] - you can't stop yourself!";
+		decide yes;
+	decide no.
 
 To suggest swallowing: [Sometimes the player shouldn't have to spend a turn swallowing]
 	if the total volume of face > 0:
-		if autodrink is 1:
+		if autodrink is 1 or (the semen volume of face > 0 and the semen taste addiction of the player is 20) or (the urine volume of face > 0 and the urine taste addiction of the player is 20) or (the milk volume of face > 0 and the milk taste addiction of the player is 20):
 			compute swallowing;
+		otherwise if the player is refusing to swallow:
+			if face is not actually occupied:
+				say "You're too disgusted [if the milk volume of face > 0 and the milk taste addiction of the player is 1]by the thought that it's human breast milk in your mouth [end if]- you immediately spit it out onto the floor!";
+				let L be a list of liquid-objects; [We should then immediately increase taste addiction so that this doesn't happen again]
+				if the semen volume of face > 0, add semen to L;
+				if the urine volume of face > 0, add urine to L;
+				if the milk volume of face > 0, add milk to L;
+				compute silent spitting;
+				if milk is listed in L, MilkTasteAddictUp 1;
+				if urine is listed in L, UrineTasteAddictUp 1;
+				if semen is listed in L, SemenTasteAddictUp 1;
 		otherwise:
-			say "Would you like to swallow your [MouthfulDesc]?";
-			if the player is consenting, compute swallowing.
+			if the player is automatically swallowing:
+				compute swallowing;
+			otherwise:
+				say "Would you like to swallow your [MouthfulDesc]?";
+				if the player is consenting, compute swallowing.
+
+To suggest swallowing with (L - a liquid-object) consequences: [If the player doesn't immediately swallow they still probably get taste addiction]
+	let refusal be 0;
+	if the player is refusing to swallow, now refusal is 1; [If the player is refusing to swallow here then they will be getting addiction increases already]
+	suggest swallowing;
+	if refusal is 0:
+		if L is milk and the milk volume of face > 0 and the player is not getting lucky:
+			SlowMilkTasteAddictUp 1;
+		otherwise if L is urine and the urine volume of face > 0 and the player is not getting lucky:
+			SlowUrineTasteAddictUp 1;
+		otherwise if L is semen and the semen volume of face > 0 and the player is not getting lucky:
+			SlowSemenTasteAddictUp 1.
 
 To check accidental spitting:
 	let T be the total volume of face;
 	if T > 0 and face is not actually occupied:
-		say "[bold type]You are about to lose control and automatically spit out [if T > 1]some of [end if]your [MouthfulDesc]![roman type][line break]";
-		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
-		set numerical response 1 to "just [if T is 1]let it out[otherwise]try to hold as much in as possible[end if]";
-		set numerical response 2 to "swallow it instead";
-		compute multiple choice question;
-		if player-numerical-response is 2:
-			compute swallowing;
+		if the player is getting lucky:
+			say "You manage to hold in your [MouthfulDesc]. [GotLuckyFlav]";
 		otherwise:
-			compute accidental spitting.
+			say "[bold type]You are about to lose control and automatically spit out [if T > 1]some of [end if]your [MouthfulDesc]![roman type][line break]";
+			reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+			set numerical response 1 to "just [if T is 1]let it out[otherwise]try to hold as much in as possible[end if]";
+			set numerical response 2 to "swallow it instead";
+			compute multiple choice question;
+			if player-numerical-response is 2:
+				compute swallowing;
+			otherwise:
+				compute accidental spitting.
 
 To compute accidental spitting:
 	let A be auto;
@@ -409,8 +468,7 @@ To compute disgusting spit reaction of (M - a person):
 
 To NoseBurst (L - a liquid-object) by (N - a number):
 	say "A [if N > 2]river[otherwise if N is 2]few dribbles[otherwise]dribble[end if] of [L] bursts from your nose!";
-	unless L is murkwater, Squirt L On Breasts By N; [MURKWATER SHOULD BE HANDLED BY THE FUNCTION THAT CALLED THIS]
-	reset soak flavour;
+	unless L is murkwater, UnannouncedSquirt L On Breasts By N; [MURKWATER SHOULD BE HANDLED BY THE FUNCTION THAT CALLED THIS]
 	if the fatigue of the player < the buckle threshold of the player:
 		say "Your lungs burn as you are temporarily starved of oxygen, making you rapidly lose energy.";
 		if N > 5, now N is 5;
@@ -504,15 +562,9 @@ This is the player pukes rule:
 			if T is a thing:
 				NoseBurst L by N;
 				if L is murkwater:
-					if S > 0:
-						Squirt semen On Breasts By S;
-						reset soak flavour;
-					if U > 0:
-						Squirt urine On Breasts By U;
-						reset soak flavour;
-					if M > 0:
-						Squirt milk On Breasts By S;
-						reset soak flavour;
+					if U > 0, UnannouncedExpel urine On Breasts By U;
+					if M > 0, UnannouncedExpel milk On Breasts By M;
+					if S > 0, UnannouncedExpel semen On Breasts By S; [semen last so it's not cleaned away]
 			otherwise:
 				say "Your stomach retches. A [if N < 3]small amount of[otherwise if N < 6]decently voluminous quantity of[otherwise]veritable [cascade] of[end if] [if L is murkwater]a mixture of bodily fluids[otherwise][L][end if] flows out of your mouth and onto the floor.";
 				cutshow Figure of Oral Creampie Cutscene 6 for face;
@@ -525,7 +577,7 @@ This is the player pukes rule:
 			now the stomach-water of the player is 0.
 
 To decide which number is tasteAddictionInterval:
-	decide on 6.
+	decide on 12.
 To decide which number is tasteAddictionFlatInterval:
 	if the player is in an unbossed predicament room, decide on 0;
 	decide on 20.
@@ -534,16 +586,16 @@ An all time based rule (this is the player gets used to the taste rule):
 	if the urine volume of face > 0:
 		let A be tasteAddictionFlatInterval + (the urine taste addiction of the player * tasteAddictionInterval);
 		if the remainder after dividing time-earnings by A < time-seconds:
-			UrineTasteAddictUp 1;
+			SlowUrineTasteAddictUp 1;
 	if the semen volume of face > 0:
 		let A be tasteAddictionFlatInterval + (the semen taste addiction of the player * tasteAddictionInterval);
 		if the remainder after dividing time-earnings by A < time-seconds:
-			SemenTasteAddictUp 1;
-			progress quest of mouthful-quest;
+			SlowSemenTasteAddictUp 1;
+			if slowSemenTasteAddiction is 0, progress quest of mouthful-quest;
 	if the milk volume of face > 0:
 		let A be tasteAddictionFlatInterval + (the milk taste addiction of the player * tasteAddictionInterval);
 		if the remainder after dividing time-earnings by A < time-seconds:
-			MilkTasteAddictUp 1.
+			SlowMilkTasteAddictUp 1.
 
 Section - Image for graphics window
 

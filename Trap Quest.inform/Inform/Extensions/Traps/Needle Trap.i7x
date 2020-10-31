@@ -132,7 +132,7 @@ To compute (Y - a needle trap) injecting into (X - hips):
 			if a random number between 0 and the armour of C > 5, now needle-blocker is C;
 	if needle-blocker is clothing and tutorial is 0:
 		say "The needle is blocked by your [ShortDesc of needle-blocker]! Phew!";
-	otherwise if tutorial is 0 and fast TG is 3 and the size of penis <= min penis size and the player is male:
+	otherwise if tutorial is 0 and fast TG is 3 and the size of penis <= min penis size and the player is possessing a penis:
 		say "Owww, that really hurt! Your [AssDesc] and [ShortDesc of penis] glow pink for a moment. ";
 		PenisDown 1;
 	otherwise if diaper quest is 1:
@@ -161,7 +161,7 @@ To compute (Y - a needle trap) injecting into (X - hips):
 To cutscene needle hips:
 	if the thickness of hips < 4:
 		cutshow figure of needle cutscene 4 for hips;
-	otherwise if the thickness of hips < 7 or the player is male:
+	otherwise if the thickness of hips < 7 or the player is not possessing a vagina:
 		cutshow figure of needle cutscene 5 for hips;
 	otherwise:
 		cutshow figure of needle cutscene 6 for hips.

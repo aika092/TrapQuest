@@ -171,7 +171,7 @@ Chapter - Motion
 
 To compute (M - nurse) seeking (D - a direction):
 	if the player is in School11 or the player is in School12 or M is unfriendly:
-		try M going D;
+		blockable move M to D;
 		compute monstermotion reactions of M.
 
 To compute monstermotion of (M - nurse):

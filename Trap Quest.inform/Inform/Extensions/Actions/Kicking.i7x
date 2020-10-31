@@ -6,18 +6,24 @@ To decide which number is the kick damage of the player:
 	let A be 3;
 	let H be a random worn shoes;
 	if H is shoes:
-		let K be the magic-modifier of H;
-		if H is heels, now K is 0;
+		let K be 0;
+		if H is not heels, now K is the magic-modifier of H;
 		increase K by the kick-bonus of H;
-		increase A by K / 2;
+		increase A by (K + 1) / 2;
 		if damage-explained > 1, say "[if K / 2 >= 0]+[end if][K / 2] ([ShortDesc of H]) ";
 	increase A by combat bonus;
 	if damage-explained > 1, say combat bonus explanation;
 	increase A by permanent-kick-bonus;
 	if damage-explained > 1 and permanent-kick-bonus is not 0, say "[if permanent-kick-bonus >= 0]+[end if][permanent-kick-bonus] (imprinted kick bonus) ";
-	if demon horns is worn and the total-souls of the player > 9:
-		increase A by 3;
-		if damage-explained > 1, say "+3 (over 9 souls collected) ";
+	if avatar-headpiece is worn:
+		let BF be the blackfire of avatar-headpiece;
+		if BF > 1:
+			if BF < 4:
+				increase A by 1;
+				if damage-explained > 1, say "+1 (avatar black fire)";
+			otherwise:
+				increase A by 3;
+				if damage-explained > 1, say "+3 (avatar black fire)";
 	if the player is diaper kicking:
 		decrease A by 1;
 		if damage-explained > 1, say "-1 (diaper penalty) ";
@@ -66,8 +72,9 @@ Carry out kicking:
 	increase kick-fatigue by 1;
 	let H be a random heels worn by the player;
 	if H is heels:
-		increase the heel time of the player by the hindrance of H;
-		if the intelligence of the player < 7, say "You kick [the noun] with your [printed name of H][if H is dildo heels], and you can feel the glass dildo heels magically strengthen your kick![otherwise], connecting with the toe as if you were kicking a ball![end if]";
+		let HH be the hindrance of H;
+		increase the heel time of the player by HH;
+		if HH > 1, say "You kick [the noun] with your [printed name of H][if H is dildo heels], and you can feel the glass dildo heels magically strengthen your kick![otherwise], connecting with the toe as if you were kicking a ball![end if]";
 		otherwise say "You kick [the noun] with your [printed name of H][if H is dildo heels], and you can feel the glass dildo heels magically strengthen your kick![otherwise if H is stiletto heels], trying to get the spike of your heel to do some real damage![otherwise], hoping the heel will do some damage.[end if]";
 		damage A on the noun;
 	otherwise:

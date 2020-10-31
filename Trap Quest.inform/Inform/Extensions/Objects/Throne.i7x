@@ -104,6 +104,13 @@ Check entering the throne:
 				let C be a random worn headgear;
 				transform C into H;
 				say "[variable custom style]So I'm a princess now too?[roman type][line break]";
+				let D be a random worn overdress;
+				if D is overdress:
+					if D is not virgin princess outfit, transform D into virgin princess outfit;
+				otherwise:
+					PinkWardrobeUnclash virgin princess outfit;
+					summon virgin princess outfit uncursed;
+				say "[variable custom style]COME ON![roman type][line break]" instead;
 			otherwise:
 				summon H cursed;
 				say "A silver tiara appears on your head. You feel important.[line break][second custom style][line break]Is this game turning me into a princess?[roman type][line break]" instead;
@@ -168,13 +175,19 @@ Check entering the throne:
 		otherwise if R is 3:
 			if the class of the player is princess and the throne is not expired:
 				compute ThronePrincessScene;
+				now throne is penetrating face;
 				BlowCount;
+				now throne is not penetrating face;
 				now the throne is expired;
-				StomachSemenUp 4;
-				SexAddictUp 1;
-				repeat with M running through royal guards:
-					increase the favour of M by a random number between 1 and 2;
-				IntUp 4 instead;
+				SlowSemenTasteAddictUp 1;
+				IntUp 2;
+				let M be a random alive undefeated uninterested friendly royal guard;
+				if M is a monster:
+					now the sleep of M is 0;
+					now M is in Dungeon10;
+					try M going west;
+					check guaranteed perception of M;
+				do nothing instead;
 			otherwise:
 				say "The throne makes you more womanly. You feel your [if the player is a flatchested trap and weight gain fetish is 0]hips expand[otherwise]body expand in all directions[end if]![if the bimbo of the player is 1][one of][line break][first custom style]What the fuck is this game?![roman type][line break][or][stopping][end if]";
 				HipUp 1;
@@ -192,12 +205,7 @@ Check entering the throne:
 		otherwise if R is 7:
 			if the largeness of hair > 6:
 				say "You hear a metal slice from behind you. You turn around and see that your hair has been cut back down to shoulder length! You can see the cut strands of your [HairColour] hair on the floor behind the throne.";
-				let F be 6 - the raw largeness of hair;
-				if F < the fake largeness of hair: [all extensions are cut off first]
-					now the fake largeness of hair is F;
-					if the fake largeness of hair < 0, now the fake largeness of hair is 0;
-				if the largeness of hair > 6:
-					now the raw largeness of hair is 6;
+				HairCut 6;
 			otherwise if the redness of hair > 0:
 				say "Your hair feels pleasant, and you feel somewhat less stiff.";
 				HairRedDown 1;
@@ -227,12 +235,13 @@ To compute ThronePrincessScene:
 	say "[first custom style]'[one of]Milady.'[or]Your Highness.'[or]My liege.'[or]Princess.'[or]My lady.'[purely at random][roman type][line break]You stare down at [him of M] haughtily, a word leaving your mouth unbidden.[line break][variable custom style]'Disrobe.'[roman type][line break]";
 	say "The guard nods, [his of M] [DickDesc of M] hardening as [he of M] pulls off [his of M] clothes and drops them in a folded heap at your feet.[if the bimbo of the player < 6]To your further horror[otherwise if the bimbo of the player < 12]To your further... interest[otherwise]To your further delight[end if], you find yourself pulling exposing your chest with one hand and grabbing [his of M] [manly-penis] with the other. The tiara vibrates, making it even more obvious that it's turned you into a passenger in your own body. You draw your hand from the base of [his of M] shaft all the way to the top, teasing [his of M] cockhead with your palm. A fat dollop of pre appears at [his of M] opening and dribbles down between your fingers. Every movement of your wrist is accompanied by a lewd squelch, and a hushed grunt of pleasure from your consort.";
 	if the bimbo of the player < 8:
-		say "Despite your position of obvious power, [if lady fetish is 1]you still find the act of pleasuring the owner of a penis[otherwise if the player is female]you still find the act of pleasing men sexually[otherwise]you still find the act of pleasing other men sexually[end if] to be very degrading, especially when they're so much bigger and stronger than you. With muscles like that, the guard could easily overpower you, but since your hand is already wrapped around [his of M] [DickDesc of M] and soaked with [his of M] slippery pre-cum, there's no need! Your free hand wanders [if the player is female]between your legs, discovering an absolutely mortifying level of warmth and wetness[otherwise]down to your crotch, discovering a shameful hardness[end if] as the guard's [manly-penis] begins to twitch and throb in your grip. [big he of M] grabs you by the shoulders, and your mouth opens on its own as [his of M] [DickDesc of M] closes in on your lips. You wrinkle your nose as [his of M] sickening musk assaults you and [he of M] slides in, but that's immediately overwhelmed by the strong, salty taste of [his of M] [semen] as it spurts straight down your throat.";
+		say "Despite your position of obvious power, [if lady fetish is 1]you still find the act of pleasuring the owner of a penis[otherwise if the player is gendered female]you still find the act of pleasing men sexually[otherwise]you still find the act of pleasing other men sexually[end if] to be very degrading, especially when they're so much bigger and stronger than you. With muscles like that, the guard could easily overpower you, but since your hand is already wrapped around [his of M] [DickDesc of M] and soaked with [his of M] slippery pre-cum, there's no need! Your free hand wanders [if the player is female]between your legs, discovering an absolutely mortifying level of warmth and wetness[otherwise]down to your crotch, discovering a shameful hardness[end if] as the guard's [manly-penis] begins to twitch and throb in your grip. [big he of M] grabs you by the shoulders, and your mouth opens on its own as [his of M] [DickDesc of M] closes in on your lips. You wrinkle your nose as [his of M] sickening musk assaults you and [he of M] slides in, but that's immediately overwhelmed by the strong, salty taste of [his of M] [semen] as it spurts into your mouth.";
 	otherwise if the bimbo of the player < 11:
-		say "Despite your position of obvious power, you can't shake the feeling that there's something inherently submissive about pleasuring [if lady fetish is 1]the owner of a penis[otherwise if the player is gendered male]another man[otherwise]men[end if], especially when they're so much bigger and stronger than you. With muscles like that, the guard could easily overpower you, but since your hand is already wrapped around [his of M] [manly-penis] and soaked with [his of M] slippery pre-cum, there's no need! Your cheeks grow hot as the guard's strong hands grasp your shoulders, and you automatically open your mouth as [his of M] [DickDesc of M] twitches and throbs in your grip. [big his of M] virile musk fills your nostrils as [his of M] soft, spongy cockhead pushes its way between your lips, and you hesitantly begin to suck. Although you know it's wrong, you can't bring yourself to stop, and a moment later [he of M] sends [his of M] thick, salty [semen] spurts straight down your throat.";
+		say "Despite your position of obvious power, you can't shake the feeling that there's something inherently submissive about pleasuring [if lady fetish is 1]the owner of a penis[otherwise if the player is gendered male]another man[otherwise]men[end if], especially when they're so much bigger and stronger than you. With muscles like that, the guard could easily overpower you, but since your hand is already wrapped around [his of M] [manly-penis] and soaked with [his of M] slippery pre-cum, there's no need! Your cheeks grow hot as the guard's strong hands grasp your shoulders, and you automatically open your mouth as [his of M] [DickDesc of M] twitches and throbs in your grip. [big his of M] virile musk fills your nostrils as [his of M] soft, spongy cockhead pushes its way between your lips, and you hesitantly begin to suck. Although you know it's wrong, you can't bring yourself to stop, and a moment later [he of M] sends [his of M] thick, salty [semen] fills your mouth.";
 	otherwise:
-		say "Despite your apparent position of power, there's something so *naughty* about willingly pleasuring [if lady fetish is 1]the owner of a penis[otherwise if the player is gendered male]other men[otherwise]men[end if], especially when they're so much bigger and stronger than you. With big, sexy muscles like that, the guard could easily overpower you, but since your hand is already wrapped around [his of M] [manly-penis] and soaked with [his of M] slippery pre-cum, there's no need! You smile and lick your lips as the guard's strong hands grasp your shoulders, and you open wide as [his of M] [DickDesc of M] twitches and throbs in your grip. You breathe in [his of M] virile musk as [his of M] shiny cockhead slides in, allowing the scent to fill your nostrils as you eagerly begin to suck. A moment later, [he of M] rewards you by sending [his of M] thick, salty [semen] straight down your throat.";
-	say "The room abruptly snaps back to the familiar bleak gray of the dungeon you have come to recognise. A translucent pink tentacle withdraws from your mouth, trailing [semen] down your chin as it retreats underneath the throne.[line break][if the bimbo of the player < 8][line break][first custom style]'What just happened?'[otherwise if the bimbo of the player < 12][line break][variable custom style]'That was... really arousing.'[otherwise][line break][second custom style]'That was fun! I want to do that again!'[end if][roman type][line break]";
+		say "Despite your apparent position of power, there's something so *naughty* about willingly pleasuring [if lady fetish is 1]the owner of a penis[otherwise if the player is gendered male]other men[otherwise]men[end if], especially when they're so much bigger and stronger than you. With big, sexy muscles like that, the guard could easily overpower you, but since your hand is already wrapped around [his of M] [manly-penis] and soaked with [his of M] slippery pre-cum, there's no need! You smile and lick your lips as the guard's strong hands grasp your shoulders, and you open wide as [his of M] [DickDesc of M] twitches and throbs in your grip. You breathe in [his of M] virile musk as [his of M] shiny cockhead slides in, allowing the scent to fill your nostrils as you eagerly begin to suck. A moment later, [he of M] rewards you by sending [his of M] thick, salty [semen] straight onto your tongue, filling your cheeks.";
+	FaceFill semen by 4;
+	say "The room abruptly snaps back to the familiar bleak gray of the dungeon you have come to recognise. A translucent pink tentacle withdraws from your mouth, trailing [semen] down your chin as it retreats underneath the throne.[line break][if the bimbo of the player < 8][line break][first custom style]'What just happened?'[otherwise if the bimbo of the player < 12][line break][variable custom style]'That was... really arousing.'[otherwise][line break][second custom style]'That was fun! I want to do that again!'[end if][roman type][line break]".
 
 Part - Escaping the Throne
 

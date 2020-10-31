@@ -148,7 +148,7 @@ Report dropping in the presence of witch:
 Part 3 - Motion and Seeking
 
 To compute (M - witch) seeking (D - a direction):
-	if M is unleashed, try M going D;
+	if M is unleashed, blockable move M to D;
 	compute monstermotion reactions of M.
 
 To compute monstermotion of (M - witch):
@@ -156,7 +156,7 @@ To compute monstermotion of (M - witch):
 		let L be the location of M;
 		let D be the best route from L to Woods20;
 		if a random number between 1 and 5 > 2 and D is N-viable:
-			try M going D;
+			blockable move M to D;
 			compute monstermotion reactions of M.
 
 Part 4 - Combat
@@ -266,7 +266,7 @@ This is the witch summons cursed clothing rule:
 			otherwise:
 				say "[big he of M] doesn't manage to lift you off the ground this time.";
 		otherwise:
-			say SelectionFrustrated of M;
+			compute SelectionFrustrated of M;
 		rule succeeds.
 The witch summons cursed clothing rule is listed last in the witch attack rules.
 
@@ -285,7 +285,7 @@ To say MonsterTrippedFlav of (M - witch): [We say "it", not "she" here because t
 To say MonsterFailedTripFlav of (M - witch):
 	say "[one of]It swings over to chop your legs out from under you, but you jump on top of it instead, causing it to disintegrate.[or]It tries to grab your ankles, but you kick it away, destroying it instantly.[or]It grabs you by the ankle but you crush its fingers with your other foot.[or]It grabs your wrist, but you yank it clean off the ground, causing it to disintegrate.[or]It tries to grab your waist, but you dodge out of the way. It disintegrates.[or]It reaches up to grab your legs, but you kick it powerfully before it gets close, destroying it instantly.[in random order]".
 
-To say SelectionFrustrated of (M - witch):
+To compute SelectionFrustrated of (M - witch):
 	say "[one of][BigNameDesc of M] crosses [his of M] arms, laughing proudly at [his of M] handiwork.[or][BigNameDesc of M] throws [his of M] head back and laughs derisively.[or][BigNameDesc of M][']s breasts jiggle as [he of M] throws [his of M] head back and cackles derisively.[or][if there is a worn pair of anklecuffs][BigNameDesc of M] points at your [random worn pair of anklecuffs], cackling madly.[otherwise][BigNameDesc of M] holds [his of M] middle finger in your direction, laughing scornfully.[end if][or][BigNameDesc of M] points at you with a grin, laughing scornfully.[or][BigNameDesc of M] cackles madly, seemingly pleased by your awkward situation.[or][BigNameDesc of M] cackles with glee, pleased by your awkward situation.[or][BigNameDesc of M] squats, holding [his of M] stomach and cackling madly. [big he of M]'s clearly pleased by your situation.[or][BigNameDesc of M] laughs derisively, holding [his of M] middle finger in your direction.[in random order]";[The witch is only bored once you're getting fucked.]
 
 This is the witch summons vines rule:

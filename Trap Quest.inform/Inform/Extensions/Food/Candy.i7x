@@ -37,16 +37,6 @@ Carry out TQeating candy:
 To say DevourFlav of (C - a candy):
 	say "You unwrap the [C] and [if the player is in danger]devour it as quickly as you can[otherwise if the fat-weight of the player > 28]greedily stuff the entire thing into your mouth, immediately swallowing it whole[otherwise if the fat-weight of the player > 12]speedily devour the sweet[otherwise]consume the sweet slowly, savouring the taste[end if]. ".
 
-To restock (C - a candy):
-	let B be a random off-stage candy;
-	if B is candy, now B is in Standard Item Pen.
-
-This is the setup starting candy rule:
-	let C be a random candy;
-	repeat with N running from 1 to 3:
-		restock C.
-[The setup starting candy rule is listed in the setup starting items rules.]
-
 To decide which number is default-candy-duration:
 	decide on 650.
 
@@ -188,17 +178,6 @@ To compute (M - a robochef) cooking (I - digestive biscuit):
 		now the quality of D is a random number between 1 and -2;
 		now the fat of D is 2;
 		now D is carried by M.
-
-To decide which number is the bartering value of (T - digestive biscuit) for (M - prison guard):
-	if the times-met of ex-princess > 0, decide on 10;
-	decide on 0.
-
-To say OfferThanksFlav of (M - prison guard) for (T - digestive biscuit):
-	say "[speech style of M]'How did you know? These are my favourite! I wish I could give you something in return[if skeleton key is off-stage]. Hmm...'[otherwise].'[end if][roman type][line break]".
-
-To compute offer reward of (M - prison guard) for (T - digestive biscuit):
-	if skeleton key is off-stage, compute M rewarding skeleton key;
-	FavourUp M by 2.
 
 A liquorice is a candy. The text-shortcut of liquorice is "lq".
 
@@ -482,7 +461,7 @@ Carry out TQeating lollipop:
 			LipsUp 1;
 		otherwise if diaper messing < 3 or lactation fetish is 1:
 			say "This one tastes like sickly sweet milk!";
-			MilkTasteAddictUp 2 - diaper quest;
+			MilkTasteAddictUp 1;
 		otherwise:
 			say "You feel some cursed magic rub off onto your lips.";
 			OralSexAddictUp 1;

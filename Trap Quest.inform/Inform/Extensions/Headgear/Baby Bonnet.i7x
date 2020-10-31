@@ -36,13 +36,7 @@ To compute class outfit of (H - a baby bonnet):
 	otherwise if there is an off-stage pink pacifier:
 		now P is a random pink pacifier;
 	if O is actually summonable or (O is onesie and baby-summoned is 0 and the number of worn onesie is 0):
-		if baby-summoned is 0:
-			repeat with D running through worn dresses:
-				say "Your [D] [wardrobeVanishes of D]!";
-				now D is in pink wardrobe;
-			repeat with D running through worn corsets:
-				say "Your [D] [wardrobeVanishes of D]!";
-				now D is in pink wardrobe;
+		PinkWardrobeUnclash O;
 		say "[bold type]Your bonnet flutters in an invisible wind as a warm, thick onesie appears over you, encasing your torso and limbs in its soft fabric.[roman type][line break]";
 		summon O uncursed;
 		let D be a random worn diaper;

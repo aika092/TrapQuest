@@ -195,7 +195,7 @@ To compute horse effect of (T - a wild horse):
 		if R < 3 and mythical creature fetish is 1:
 			say "The horse tips forward suddenly, flinging you right into its path. A compartment opens in the bottom as it bears down on you, an incredibly lifelike rubber horsecock slides out. You barely have time to get out of the way before it plunges deep inside you, dragging your helpless body along the ground as the teetering motions drive the dildo in and out of your [asshole]. Semen flows inside of you as the horse slowly grinds to a halt, leaving a creamy line of white on your back as the dildo pops out.";
 			ruin asshole times 3;
-			CumThighsUp 1;
+			AnnouncedSquirt semen on thighs by 1;
 			SemenPuddleUp 3;
 			AssFill a random number between 3 and 5;
 		otherwise:

@@ -42,8 +42,9 @@ Definition: pink-spraybottle is immune to change: decide yes.
 Definition: pink-spraybottle is pink themed: decide yes.
 Definition: pink-spraybottle is fluid immune: decide yes.
 
-Check taking pink-spraybottle when the player is in Dungeon30:
-	unless the class of the player is maid:
+Check taking pink-spraybottle when pink-spraybottle is not held:
+	if the noun is not actually summonable, say "That requires a free hand." instead;
+	if the class of the player is not maid:
 		let H be a random worn headgear;
 		if H is maid headdress or black maid headdress is actually summonable:
 			allocate 2 seconds;
@@ -53,24 +54,32 @@ Check taking pink-spraybottle when the player is in Dungeon30:
 			say "You don't feel all that interested in cleaning duty right now[if there is worn headgear], while you're wearing the [ShortDesc of a random worn headgear][otherwise if the number of worn maid headdress is 0], you're not a maid[end if]. You leave the [ShortDesc of noun] where it is." instead.
 
 To compute maidification of (C - a clothing):
-	let H be a random worn headgear;
-	unless H is maid headdress:
-		now H is black maid headdress;
-		summon H cursed;
-		say "[bold type]You yelp in surprise as a [ShortDesc of H] [bold type]appears on you!";
-	now maid-summoned is 0;
-	compute class outfit of H;
-	now the outfit-charge of H is 0;
-	say "[variable custom style]I guess I'm the maid now[if the bimbo of the player < 8]?[otherwise].[end if][roman type][line break]";
-	follow the player class rules;
-	now C is worn by the player.
+	if C is actually summonable:
+		say "A [C] appears [if C is hand ready]in your hand[otherwise]on you[end if]! It looks like some kind of magic force is demanding that you clean up after you own messes!";
+		let H be a random worn headgear;
+		unless H is maid headdress:
+			now H is black maid headdress;
+			summon H cursed;
+			say "[bold type]You yelp in surprise as a [ShortDesc of H] [bold type]appears on you!";
+		now maid-summoned is 0;
+		compute class outfit of H;
+		now the outfit-charge of H is 0;
+		say "[variable custom style]I guess I'm the maid now[if the bimbo of the player < 8]?[otherwise].[end if][roman type][line break]";
+		follow the player class rules;
+		summon C.
 
 Report taking pink-spraybottle:
-	if newbie tips is 1, say "[newbie style][one of]Newbie Tip: You just picked up a spraybottle. It's out of cleaning fluid right now, but you earn some by cleaning up puddles of [if diaper quest is 1]urine[otherwise]semen[end if][if diaper quest is 0 and (watersports fetish is 1 or lactation fetish is 1)] and other fluids[end if] you've left throughout the dungeon. Once you have enough, you can spray it on some dirty clothes to quickly clean them off, or spray it on enemies for a (usually) quite damaging attack.[or][stopping][roman type]".
+	if the noun is not worn, now the noun is worn by the player;
+	if newbie tips is 1, say "[newbie style][one of]Newbie Tip: You just picked up a spraybottle. It's out of cleaning fluid right now, but you earn some by cleaning up puddles of [if diaper quest is 1]urine[otherwise]semen[end if][if diaper quest is 0 and (watersports fetish is 1 or lactation fetish is 1)] and other fluids[end if] you've left throughout the dungeon. Once you have enough, you can spray it on some dirty clothes to quickly clean them off, or spray it on enemies for a (usually) quite damaging attack.[or][stopping][roman type][line break]".
 
 Check taking off pink-spraybottle:
 	let M be a random worn maid headdress;
 	if the work ethic of the noun < 0 and M is clothing, say "You try, but it's like the [ShortDesc of M] won't let you put it down.[line break][variable custom style]'Maybe I have to clean something with it first?'[roman type][line break]" instead.
+
+Report taking off pink-spraybottle:
+	if the noun is spray:
+		say "[bold type]There's no way for you to hold it safely without having it equipped, so you place it on the ground.[roman type][line break]";
+		now the noun is in the location of the player;
 
 Check going when pink-spraybottle is worn:
 	if areYouSure is 1 and total puddle > 0:
@@ -162,13 +171,13 @@ To compute spraybottle punishment:
 			otherwise if L is 2:
 				say "[if the raw semen addiction of the player < 8]You shriek[otherwise if the raw semen taste addiction of the player > 10]You smile and open your mouth wide[otherwise if the raw semen addiction of the player < 12]You close your eyes[otherwise]You smile and close your eyes[end if] as it cascades over you, soaking your clothes and covering your skin with thick white [semen]!";
 				if the raw semen taste addiction of the player > 10:
-					StomachSemenUp 2;
-				squirt semen on face by 40;
+					FaceFill semen by 2;
+				AnnouncedSquirt semen on hair by 50;
 			otherwise:
 				say "[if the urine taste addiction of the player < 8]You shriek[otherwise]You smile and open your mouth wide[end if] as it cascades over you!";
 				if the urine taste addiction of the player >= 8:
 					FaceFill urine by 2;
-				squirt urine on face by 40;
+				AnnouncedSquirt urine on hair by 50;
 		say "[variable custom style][if the player is not a pervert]Fuck! This so unfair![otherwise if the player is not disgraced]Is it really my fault I'm such a terrible maid?[otherwise]I'm a stupid ditz, I deserve to be punished like this...[end if][roman type][line break]".
 
 To compute (M - a mechanic) considering (T - pink-spraybottle):

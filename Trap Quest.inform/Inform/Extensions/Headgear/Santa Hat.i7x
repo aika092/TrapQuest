@@ -116,15 +116,7 @@ To compute SelfExamineDesc of (H - a red bow headband):
 To compute class outfit of (H - a red bow headband):
 	let R be a random off-stage standard christmas dress;
 	if R is actually summonable or (R is dress and christmas-summoned is 0 and the number of worn christmas dress is 0):
-		repeat with O running through worn dresses:
-			say "Your [O] [wardrobeVanishes of O]!";
-			now O is in pink wardrobe;
-		repeat with O running through worn exclusive corsets:
-			say "Your [O] [wardrobeVanishes of O]!";
-			now O is in pink wardrobe;
-		repeat with O running through worn skirt clashing clothing:
-			say "Your [O] [wardrobeVanishes of O]!";
-			now O is in pink wardrobe;
+		PinkWardrobeUnclash R;
 		if christmas-summoned is 0, now christmas-summoned is 1;
 		let HG be a random worn headgear;
 		say "[bold type]Your [ShortDesc of HG] wiggles as if it's alive, and suddenly you're wearing a [ShortDesc of R]![roman type][line break]";
@@ -159,15 +151,7 @@ To compute SelfExamineDesc of (H - a star headband):
 To compute class outfit of (H - a star headband):
 	let R be a random off-stage christmas tree dress;
 	if R is actually summonable or christmas-summoned < 2:
-		repeat with O running through worn dresses:
-			say "Your [O] [wardrobeVanishes of O]!";
-			now O is in pink wardrobe;
-		repeat with O running through worn exclusive corsets:
-			say "Your [O] [wardrobeVanishes of O]!";
-			now O is in pink wardrobe;
-		repeat with O running through worn skirt clashing clothing:
-			say "Your [O] [wardrobeVanishes of O]!";
-			now O is in pink wardrobe;
+		PinkWardrobeUnclash R;
 		if christmas-summoned < 2, now christmas-summoned is 2;
 		say "[bold type]Your [ShortDesc of H] wiggles as if it's alive, and suddenly you're wearing a [ShortDesc of R]![roman type][line break]";
 		summon R;
@@ -303,13 +287,9 @@ To compute naughtification:
 			say "The motif on the front of your [ShortDesc of naughty-or-nice outfit] changes!";
 			now naughty-or-nice outfit is naughtified;
 			try examining naughty-or-nice outfit;
-			repeat with O running through worn shoes:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
+			PinkWardrobeUnclash christmas booties;
 			summon christmas booties;
-			repeat with O running through worn hand ready equippables:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
+			PinkWardrobeUnclash christmas mittens;
 			summon christmas mittens;
 			say "Christmas themed booties and mittens appear on you!";
 			let P be a random yellow pacifier;
@@ -321,19 +301,12 @@ To compute naughtification:
 			let C be a random worn dress;
 			now C is oral-sex-addiction-influencing;
 			now the raw-magic-modifier of C is -1;
-			repeat with O running through worn leg covering clothing:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn stockings:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
+			PinkWardrobeUnclash red-and-white rubber stockings;
 			summon red-and-white rubber stockings uncursed;
 			now the raw-magic-modifier of red-and-white rubber stockings is -2;
 			now red-and-white rubber stockings is oral-sex-addiction-influencing;
 			say "Candy cane patterned latex stockings appear on your legs!";
-			repeat with O running through worn hand ready equippables:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
+			PinkWardrobeUnclash candy-cane-gloves;
 			summon candy-cane-gloves uncursed;
 			now the raw-magic-modifier of candy-cane-gloves is -2;
 			now candy-cane-gloves is oral-sex-addiction-influencing;

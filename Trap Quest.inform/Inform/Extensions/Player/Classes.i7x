@@ -85,7 +85,7 @@ cowgirlExplained is initially false.
 a later time based rule (this is the explaining cowgirl rule):
 	if cowgirlExplained is false and the class of the player is cowgirl:
 		now cowgirlExplained is true;
-		say "[bold type]Now that you have become the 'cowgirl' class, you can sense that the more milk contained in your breasts, the more bonus strength you'll have, but the more sensitive your breasts are (and the more you love giving titfucks), the less intelligence you'll have. Also, [men of shopkeeper] will be more likely to choose to fuck your tits (which can increase their sensitivity)[if diaper quest is 0]. Also, when horny, you will release pheromones that might attract certain mates[end if].[roman type][line break]";
+		say "[bold type]Now that you have become the 'cowgirl' class, you can sense that the more milk contained in your breasts, the more bonus strength you'll have, but the more milk contained and the more sensitive your breasts are, the less intelligence you'll have. Also, [men of shopkeeper] will be more likely to choose to fuck your tits (which can increase their sensitivity)[if diaper quest is 0]. Also, when horny, you will release pheromones that might attract certain mates[end if].[roman type][line break]";
 	otherwise if cowgirlExplained is true and the class of the player is not cowgirl:
 		now cowgirlExplained is false;
 		say "[bold type]Now that you are no longer the 'cowgirl' class, you can sense that the bonus strength you were receiving from having milk in your breasts and the penalty intelligence for having sensitive breasts has gone.[roman type][line break]".
@@ -387,9 +387,8 @@ This is the thrall class rule:
 The thrall class rule is listed last in the player class rules.
 thrall is a text that varies. thrall is "thrall".
 
-[To avoid conflict with the demoness monster type, we'll refer to the actual class as 'succubus' plus it's about 37% hotter in strict engineering terms]
 This is the succubus class rule:
-	if demon horns is worn and there is a worn soulstone:
+	if demon horns is worn:
 		now the player-class is "succubus";
 		if demon lord is mating, now player-class is "demon concubine";
 		if abyssal tattoo is worn, now player-class is "abyssal succubus";
@@ -398,7 +397,36 @@ The succubus class rule is listed in the player class rules.
 
 Definition: a text (called T) is succubus:
 	if T matches the text "succubus", decide yes;
+	if T is "demon concubine", decide yes;
 	decide no.
+
+succubusExplained is initially false.
+a later time based rule (this is the explaining succubus rule):
+	if succubusExplained is false and the class of the player is succubus:
+		now succubusExplained is true;
+		say "[bold type]Now that you have become the 'succubus' class, you can sense that you have the ability to consume souls from enemies you have seduced. You also sense that if you go too long without taking a soul, your power will begin to weaken.[roman type][line break]";
+	otherwise if succubusExplained is true and the class of the player is not succubus:
+		now succubusExplained is false;
+		say "[bold type]Now that you are no longer the 'succubus' class, you can sense that you can no longer consume souls, and you are no longer dependent on them for power.[roman type][line break]".
+
+This is the avatar class rule:
+	if avatar-headpiece is worn:
+		now the player-class is "avatar";
+		rule succeeds.
+The avatar class rule is listed in the player class rules.
+
+Definition: a text (called T) is avatar:
+	if T matches the text "avatar", decide yes;
+	decide no.
+
+avatarExplained is initially false.
+a later time based rule (this is the explaining avatar rule):
+	if avatarExplained is false and the class of the player is avatar:
+		now avatarExplained is true;
+		say "[bold type]Now that you have become the 'avatar' class, you sense that you can harvest souls from enemies you have defeated. Also, you have a risk of losing your power if you allow your virginity to be taken.[roman type][line break]";
+	otherwise if avatarExplained is true and the class of the player is not avatar:
+		now avatarExplained is false;
+		say "[bold type]Now that you are no longer the 'avatar' class, you sense that you can no longer steal souls from defeated enemies.[roman type][line break]".
 
 This is the broodmother class rule:
 	if wasp-antennae is worn and (there is a worn striped top or there is a worn black-and-yellow striped stockings):
@@ -795,7 +823,7 @@ The cafe maid is a combination class of the maid and waitress bunny. It needs a 
 
 +!]
 This is the cafe maid class rule:
-	if there is a worn maid headdress and there is a worn cafe maid outfit:
+	if there is a worn maid headdress and cafe-maid-outfit is worn:
 		now the player-class is "cafe maid";
 		rule succeeds.
 The cafe maid class rule is listed first in the player class rules.

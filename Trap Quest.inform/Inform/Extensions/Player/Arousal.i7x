@@ -92,19 +92,14 @@ To decide which number is minimum arousal:
 Part 2 - Decay Every Turn
 
 previous-sex-addiction is a number that varies.
-
 previous-semen-addiction is a number that varies.
-
 previous-semen-taste-addiction is a number that varies.
-
+previous-urine-taste-addiction is a number that varies.
+previous-milk-taste-addiction is a number that varies.
 previous-anal-sex-addiction is a number that varies.
-
 previous-oral-sex-addiction is a number that varies.
-
 previous-bbc-addiction is a number that varies.
-
 previous-vaginal-sex-addiction is a number that varies.
-
 previous-titfuck-addiction is a number that varies.
 
 [!<arousedTurns:Integer>*
@@ -186,7 +181,7 @@ To check for arousal change:
 		now aroused-turns is 8;[When the game announces that the player becomes aroused, they can't cool down and stop being horny for 8 turns.]
 	if P > previous-horny and the number of worn steel collar is 0:
 		if the player is grossed out:
-			say "[bold type]You quickly lose all arousal since you are too grossed out.[roman type][line break]";
+			say "[bold type]You are quickly losing all arousal since you are too grossed out.[roman type][line break]";
 		otherwise if refractoryperiod <= 0:
 			say "[bold type]Over time, [if diaper quest is 1 and there is a worn pacifier]sucking on your pacifier has helped cool you off, and you[otherwise]you have cooled off and[end if] are [if previous-horny is 0]no longer horny[otherwise]now a bit less horny[end if].[roman type][line break]";
 		if the player is not pheromonal and old-pheromonal is 1:
@@ -208,6 +203,8 @@ To check for arousal change:
 		now previous-titfuck-addiction is the calculated titfuck addiction of the player;
 		now previous-semen-taste-addiction is the calculated semen taste addiction of the player;
 		now previous-semen-addiction is the calculated semen addiction of the player;
+	if diaper quest is 1 or lactation fetish is 1, now previous-milk-taste-addiction is the calculated milk taste addiction of the player;
+	if watersports fetish is 1, now previous-urine-taste-addiction is the calculated urine taste addiction of the player;
 	now previous-sex-addiction is the calculated sex addiction of the player.
 
 Part 3 - Check Values

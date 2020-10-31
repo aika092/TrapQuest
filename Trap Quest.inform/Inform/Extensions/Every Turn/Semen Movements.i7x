@@ -14,9 +14,11 @@ An all time based rule (this is the compute cum movements rule):
 			compute tits cum dribbling;
 		otherwise if R < the semen coating of belly and the semen coating of belly > 0:
 			compute belly cum dribbling;
+		otherwise if R < the semen coating of hips and the semen coating of hips > 0:
+			compute belly cum dribbling;
 		otherwise if R < the semen coating of thighs and the semen coating of thighs > 0:
 			say "Globs of [semen] drip from your [ShortDesc of thighs] onto the ground.[if the semen addiction of the player < 6][line break][first custom style]Yuck.[roman type][line break][end if]";
-			CumThighsDown 1;
+			decrease the semen coating of thighs by 1;
 			SemenPuddleUp 1;
 		if the total fill of belly > 0:
 			if the player is not possessing a vagina and the largeness of belly > 6 and pregnancy fetish is 1 and the player is not in a predicament room:
@@ -37,7 +39,7 @@ An all time based rule (this is the compute cum movements rule):
 			if the latex-transformation of the player > 3 and the pregnancy of the player is 1, now the pregnancy of the player is 2;
 			compute pregnancy;
 		if the remainder after dividing time-earnings by vagina-semen-frequency < time-seconds:
-			if the player is not in a predicament room and the womb volume of vagina > 0 and pregnancy fetish is 1 and the pregnancy of the player is 0:
+			if the womb volume of vagina > 0 and the player is able to get pregnant:
 				let PR be 0 - the pregnancy rate of the player;
 				if the class of the player is cheerleader, increase PR by 3;
 				if there is a worn maternity dress or the class of the player is fertility goddess, decrease R by 3; [TODO probably needs better balancing]

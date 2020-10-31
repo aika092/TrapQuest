@@ -35,13 +35,14 @@ To say MediumDesc of (C - a pocketwipes):
 To restock (C - a pocketwipes):
 	let B be a random off-stage pocketwipes;
 	if B is pocketwipes:
-		destroy B;
-		now B is in Standard Item Pen.
+		repeat with L running through Standard Item Pen:
+			if L is pocketwipes, remove L from Standard Item Pen;
+		add B to Standard Item Pen.
 
 A game universe initialisation rule:
 	let K be 1;
 	repeat with W running through pocketwipes:
-		if K is 1, now W is in Standard Item Pen;
+		if K is 1, add W to Standard Item Pen;
 		now the text-shortcut of W is the substituted form of "pkw[K]";
 		increase K by 1.
 
@@ -69,6 +70,7 @@ Check drinking pocketwipes: ["use" pocketwipes directs to drinking]
 		otherwise:
 			say "The pack of wipes and the [ShortDesc of K] both vanish!";
 		only destroy K;
+		check stealing of the noun;
 		destroy the noun;
 	now wipeChecking is false;
 	do nothing instead.

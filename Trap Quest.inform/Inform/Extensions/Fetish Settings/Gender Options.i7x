@@ -9,7 +9,10 @@ title	subtable	description	toggle
 [0 means that males are referred to as male pronouns at times
 1 means that the player is always referred to as female]
 To decide which number is transGender:
-	decide on choice in row 79 of the Table of Player Options.
+	if transToggle is true:
+		decide on 1 minus (choice in row 79 of the Table of Player Options);
+	otherwise:
+		decide on choice in row 79 of the Table of Player Options.
 
 This is the male choice rule:
 	now choice in row 1 of the Table of Player Options is 0;

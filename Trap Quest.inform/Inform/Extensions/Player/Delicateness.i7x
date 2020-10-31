@@ -25,7 +25,9 @@ To decide which number is the delicateness of the player:
 	if the womb volume of vagina >= 30 and the class of the player is not fertility goddess, increase S by 3;
 	repeat with C running through worn wearthings:
 		increase S by the delicateness-influence of C;
-	if the player is craving milk, decrease S by 3;
+	if there is a craved liquid-object:
+		if there is a desperately craved liquid-object, decrease S by 3;
+		otherwise decrease S by 2;
 	if mindbreak protection is 1 and S > 16, decide on 16;
 	if virgincursed > 0 and S < 8, decide on 8;
 	if truffle-confidence-timer > 0, decrease S by 2;

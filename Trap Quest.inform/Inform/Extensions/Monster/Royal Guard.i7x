@@ -550,56 +550,56 @@ To compute monstermotion of (M - a royal guard):
 			if D is nothing:
 				now the patrol of M is 1;
 			otherwise if D is not the travel-opposite of the player or the room D from (the location of M) is not (the location of the player):
-				try M going D;
+				blockable move M to D;
 				if the location of M is Dungeon03, now patrol of M is 1;
 		otherwise if patrol of M is 1:
 			let D be the the best route from the location of M to Dungeon06 through labyrinth rooms;
 			if D is nothing:
 				now the patrol of M is 2;
 			otherwise if D is not the travel-opposite of the player or the room D from (the location of M) is not (the location of the player):
-				try M going D;
+				blockable move M to D;
 				if the location of M is Dungeon06, now patrol of M is 2;
 		otherwise if patrol of M is 2:
 			let D be the the best route from the location of M to Dungeon22 through labyrinth rooms;
 			if D is nothing:
 				now the patrol of M is 3;
 			otherwise if D is not the travel-opposite of the player or the room D from (the location of M) is not (the location of the player):
-				try M going D;
+				blockable move M to D;
 				if the location of M is Dungeon22, now patrol of M is 3;
 		otherwise if patrol of M is 3:
 			let D be the the best route from the location of M to Dungeon23 through labyrinth rooms;
 			if D is nothing:
 				now the patrol of M is 4;
 			otherwise if D is not the travel-opposite of the player or the room D from (the location of M) is not (the location of the player):
-				try M going D;
+				blockable move M to D;
 				if the location of M is Dungeon23, now patrol of M is 4;
 		otherwise if patrol of M is 4:
 			let D be the the best route from the location of M to Dungeon24 through labyrinth rooms;
 			if D is nothing:
 				now the patrol of M is 5;
 			otherwise if D is not the travel-opposite of the player or the room D from (the location of M) is not (the location of the player):
-				try M going D;
+				blockable move M to D;
 				if the location of M is Dungeon24, now patrol of M is 5;
 		otherwise if patrol of M is 5:
 			let D be the the best route from the location of M to Dungeon25 through labyrinth rooms;
 			if D is nothing:
 				now the patrol of M is 6;
 			otherwise if D is not the travel-opposite of the player or the room D from (the location of M) is not (the location of the player):
-				try M going D;
+				blockable move M to D;
 				if the location of M is Dungeon25, now patrol of M is 6;
 		otherwise if patrol of M is 6:
 			let D be the the best route from the location of M to Dungeon28 through labyrinth rooms;
 			if D is nothing:
 				now the patrol of M is 7;
 			otherwise if D is not the travel-opposite of the player or the room D from (the location of M) is not (the location of the player):
-				try M going D;
+				blockable move M to D;
 				if the location of M is Dungeon28, now patrol of M is 7;
 		otherwise:
 			let D be the the best route from the location of M to Dungeon10 through labyrinth rooms;
 			if D is nothing:
 				now the patrol of M is 0;
 			otherwise if D is not the travel-opposite of the player or the room D from (the location of M) is not (the location of the player):
-				try M going D;
+				blockable move M to D;
 				if the location of M is Dungeon10, now patrol of M is 0;
 		compute monstermotion reactions of M.
 
@@ -640,7 +640,7 @@ To compute (M - a royal guard) protecting against (X - a monster):
 			anger M;
 	otherwise if M is guardian or (M is ally and the difficulty of X < the difficulty of M):
 		let A be 2;
-		say "[speech style of M]'Allow me to fight with you!'[roman type][line break]";
+		say "[speech style of M]'[one of]Allow me to fight with you[or]Hah[stopping]!'[roman type][line break]";
 		if the blue-balls of M < 0, decrease A by the blue-balls of M;[he's fighting harder because he isn't holding back a desire to fuck you, basically]
 		compute X receiving A damage from M;
 	otherwise if X is wench:
@@ -751,10 +751,12 @@ To say LandingTaunt of (M - a royal guard):
 	humiliate 50.
 
 To say SwallowDemand of (M - a royal guard):
-	if the class of the player is princess and M is not unfriendly:
-		say "[BigNameDesc of M] gives you a hopeful look.";
+	if M is not unfriendly:
+		if the class of the player is princess, say "[BigNameDesc of M] gives you a hopeful look. [big he of M] probably wants you to swallow...";
+		otherwise say "[speech style of M]'[one of]Swallow it, wench.'[or]Swallow it, whore. Every drop.'[or]Swallow it all, wench. I do not want to ask again.'[or]I order you to swallow it.'[in random order][roman type][line break]";
 	otherwise:
-		say "[speech style of M][one of]'I have prepared a gift for you, [if the class of the player is princess]princess[otherwise]wench[end if]. Do not waste a drop.'[or]'Swallow like a good whore and this will be the end of your punishment.'[or]'You disgust me, [if the class of the player is princess]princess[otherwise]whore[end if]. Swallow my seed, or I will be forced to administer further punishment.'[or]'I have decided that you will carry the evidence of your punishment in your belly.'[or]'Know that I have been merciful with you. Swallow, and I won't stop.'[or]'My mercy is at a premium, wench. Swallow if you know what's good for you.'[or]'Swallow like the filthy whore you are, or face the consequences.'[or]'Swallow. It is not a request.'[in random order][roman type][line break]".
+		if the class of the player is princess, say "[speech style of M]'[one of]Swallow it, you whore of a princess.'[or]A gift from your loyal servant, princess. I order you to swallow it.'[or]You disgust me, princess. Swallow my seed, or I will be forced to punish you further.'[or]I have shown you the mercy that is required of your station. Swallow, and I won't stop.'[or]Swallow it, princess. You no longer make the rules here.'[in random order][roman type][line break]";
+		otherwise say "[speech style of M]'[one of]I have prepared a gift for you, wench. Do not waste a drop.'[or]Swallow like a good whore and this will be the end of your punishment.'[or]You disgust me, whore. Swallow my seed, or I will be forced to administer further punishment.'[or]I have decided that you will carry the evidence of your punishment in your belly.'[or]Know that I have been merciful with you. Swallow, and I won't stop.'[or]My mercy is at a premium, wench. Swallow if you know what's good for you.'[or]Swallow like the filthy whore you are, or face the consequences.'[or]Swallow. It is not a request.'[in random order][roman type][line break]".
 
 To get oral creampie image for (M - a royal guard):
 	cutshow figure of guard cutscene 4 for M.
@@ -777,9 +779,7 @@ To get creampie image of (M - a royal guard) in (F - a fuckhole):
 To compute post climax effect of (M - a royal guard) in (F - a fuckhole):
 	compute M sleeping 200 after sex;
 	FavourUp M;
-	if the class of the player is princess or (M is acquaintance and M is prison guard), compute happy reward of M;
-	reset submissive wenches;
-	bore M.
+	reset submissive wenches.
 
 To decide if (M - a royal guard) is willing to creampie (F - a fuckhole):
 	if tutorial is 1, decide yes;
@@ -809,9 +809,9 @@ To say CondomRejectFlav of (M - a royal guard):
 	let R be 0;
 	repeat with W running through wenches in the location of the player:
 		if the guard-obedience of W is 1 and R is 0:
-			say "The [W] rips the condom out of your hand and tears it in half! [BigNameDesc of M] grins. Looks like [he of M][']s going in bare...";
+			say "The [W] rips the condom out of your hand and tears it in half! [BigNameDesc of M] grins[if M is seduced].[otherwise]. Looks like [he of M][']s going in bare...[end if]";
 			now R is 1;
-	if R is 0, say "[BigNameDesc of M] [one of]scoffs[or]frowns[or]rolls [his of M] eyes[at random], and ignores your suggestion. Looks like [he of M][']s going in bare...".
+	if R is 0, say "[BigNameDesc of M] [one of]scoffs[or]frowns[or]rolls [his of M] eyes[at random], and ignores your suggestion[if M is seduced].[otherwise]. Looks like [he of M][']s going in bare...[end if]".
 
 To say CondomPieFlav of (M - a royal guard) in (F - a fuckhole):
 	let F be a random fuckhole penetrated by M;
@@ -894,7 +894,7 @@ This is the royal guard incarcerating a criminal rule:
 	let M be current-monster;
 	let N be 1;
 	if the number of barriers in the location of the player is 0 and Dungeon03 is placed and (M is prison guard or (shopkeeper is off-stage and shopkeeper is unfriendly)):[the prison guard always takes you to the cell]
-		if milking is 0 and the player is not at least partially monster stuck:[if you're busy, he'll wait.]
+		if milking is 0 and the player is not at least partially monster stuck and the location of the player is not Dungeon41:[if you're busy, he'll wait.]
 			if the location of the player is not Dungeon03:
 				repeat with G running through alive royal guards:
 					unless G is M or the boredom of G >= 300:
@@ -921,75 +921,40 @@ To say BreastsPenetrationFlav of (M - a royal guard):
 	say "[BigNameDesc of M] takes [his of M] [DickDesc of M] and moves it towards your chest. You watch in silence as he pushes forward, using the tight gap in between your boobs as a makeshift fuckhole. [if the titfuck addiction of the player < 5]You hold your body still and try to ignore the brutish grunts as [he of M] begins to thrust in and out of your [BreastDesc][otherwise]You instinctively bring your hands to your [BreastDesc], and begin to massage [his of M] [DickDesc of M] by moving them up and down with your hands as fast and powerfully as you can[end if].".
 
 To compute cleavage climax of (M - a royal guard):
-	TitfuckAddictUp 1;
 	TimesSubmittedUp M by 1;
 	if M is unfriendly or (M is not prison guard and the class of the player is not princess):
-		say "[BigNameDesc of M] climaxes, spraying [his of M] [semen] all over your tits.[line break][speech style of M]'Ahem! Yes, that was quite satisfactory. Run along now, [if the class of the player is royal slave]slave[otherwise if the class of the player is princess]my highness[otherwise]peasant[end if].'[roman type][line break]";
-		CumTitsUp the semen load of M;
+		say "[BigNameDesc of M] [if M is wrapped]rips the condom off of [his of M] [manly-penis] as [he of M] [end if]climaxes, spraying [his of M] [semen] all over your tits.";
+		AnnouncedSquirt semen on breasts by the semen load of M;
+		say "[speech style of M]'Ahem! Yes, that was quite satisfactory. Run along now, [if the class of the player is royal slave]slave[otherwise if the class of the player is princess]my highness[otherwise]peasant[end if].'[roman type][line break]";
 	otherwise:
-		say "[BigNameDesc of M] groans with pleasure as [he of M] reaches an explosive climax, spraying thick white [semen] all over your tits.";
-		compute happy reward of M;
+		say "[BigNameDesc of M] [if M is wrapped]rips the condom off of [his of M] [manly-penis] and [end if]groans with pleasure as [he of M] reaches an explosive climax, spraying thick white [semen] all over your tits.";
+	BreastsSensitivityUp 1;
 	orgasm satisfy M.
 
 To compute happy reward of (M - a royal guard):
-	if the class of the player is princess, FavourUp M by 1; [If you keep your guards satisfied, they won't decide to take matters into their own hands.]
-	if M is prison guard and M is buddy and ((there is worn locked clothing and M is awake) or skeleton key is off-stage):
-		if M is asleep:
-			now skeleton key is in the location of the player;
-			say "As [NameDesc of M] rolls over in [his of M] sleep, a [skeleton key] falls out of [his of M] pocket onto the ground.";
-			compute autotaking skeleton key;
-		otherwise:
-			let L be a random worn locked clothing;
-			if L is clothing:
-				say "[speech style of M]'I guess I probably won't get in too much trouble for letting you out a little early...'[roman type][line break][big he of M] takes [his of M] key and unlocks your [ShortDesc of L] for you.[speech style of M]'Just don't tell anyone I did that.'[roman type][line break]";
-				now L is unlocked;
-			otherwise:
-				say "[speech style of M]'I guess you can have this, as long as nobody finds out.'[roman type][line break]";
+	if M is friendly-fucking:
+		if the class of the player is princess, FavourUp M by 1; [If you keep your guards satisfied, they won't decide to take matters into their own hands.]
+		if M is prison guard and M is buddy and ((there is worn locked clothing and M is awake) or skeleton key is off-stage):
+			if M is asleep:
 				now skeleton key is in the location of the player;
-				say "[big he of M] subtly drops a [skeleton key] on the ground.";
+				say "As [NameDesc of M] rolls over in [his of M] sleep, a [skeleton key] falls out of [his of M] pocket onto the ground.";
 				compute autotaking skeleton key;
-	otherwise if M is penetrating breasts:
-		say "[big he of M] pulls out a handkerchief as [his of M] cock softens, [his of M] breathing still heavy as [he of M] wipes the creamy remnants of [his of M] load from your cleavage.[line break][speech style of M]'[if the class of the player is princess]It was an honour to be your consort, my liege. I will serve you any time[otherwise]I appreciate your service. Now go in peace[end if].'[roman type][line break]";
-		now the semen coating of breasts is 0;
-	otherwise if M is penetrating face:
-		say "[speech style of M][if the class of the player is princess]'Thank you, your highness. I will fight for you to the very end!'[otherwise]'As expected, the [whore] makes a good cocksucker.'[end if][roman type]";
-		if the class of the player is princess, now the blue-balls of M is -1. [negative score here means he will fight harder for you. even against other guards.]
-To compute happy oral reward of (M - a royal guard):
-	compute happy reward of M.
-
-To compute (M - a royal guard) attacking (C - knickers):
-	if C is cursed vibrating plug panties:
-		let A be a random off-stage pair of anklecuffs;
-		let H be a random off-stage pair of handcuffs;
-		if A is actually summonable and a random number between 1 and 2 is 1:
-			say "The guard notices your situation with your cursed plug panties, and decides to not alter that predicament. [big he of M] decides instead to add to your humiliating situation by pulling out a pair of ankle cuffs, and binding your ankles together![line break][bold type]You are now ankle bound.[roman type][line break]";
-			summon A locked;
-		otherwise if H is actually summonable:
-			say "The guard notices your situation with your cursed plug panties, and decides to not alter that predicament. [big he of M] decides instead to add to your humiliating situation by pulling out a pair of handcuffs, and binding your wrists together![line break][bold type]You are now wrist bound.[roman type][line break]";
-			summon H locked;
-			now H is wrist-bound-in-front;
-		otherwise if A is actually summonable:
-			say "The guard notices your situation with your cursed plug panties, and decides to not alter that predicament. [big he of M] decides instead to add to your humiliating situation by pulling out a pair of ankle cuffs, and binding your ankles together![line break][bold type]You are now ankle bound.[roman type][line break]";
-			summon A locked;
-		otherwise:
-			say "The guard, seeing your situation with your cursed plug panties and bondage, laughs mercilessly.";
-		satisfy M for 450 seconds;
-	otherwise if C is zippable: [Standard from here downwards]
-		say UnzipFlav of M at C;
-		ZipDown C;
-	otherwise:
-		say PullAttempt of M at C;
-		let R be a random number between the difficulty of M and 6 + a random number between the difficulty of M and 6;[TODO: maybe replace with a strength roll]
-		if debuginfo > 0, say ClothingAttackDebug of M on C with R;
-		if R > the defence of the player:
-			compute M destroying C;
-		otherwise if R > the defence of the player - 2 and C is rippable:
-			compute M ripping C;
-		otherwise if R > the defence of the player - 4 and C is displacable:
-			compute M displacing C;
-		otherwise:
-			say WeakenFlav of M on C;
-			damage C.
+			otherwise:
+				let L be a random worn locked clothing;
+				if L is clothing:
+					say "[speech style of M]'I guess I probably won't get in too much trouble for letting you out a little early...'[roman type][line break][big he of M] takes [his of M] key and unlocks your [ShortDesc of L] for you.[speech style of M]'Just don't tell anyone I did that.'[roman type][line break]";
+					now L is unlocked;
+				otherwise:
+					say "[speech style of M]'I guess you can have this, as long as nobody finds out.'[roman type][line break]";
+					now skeleton key is in the location of the player;
+					say "[big he of M] subtly drops a [skeleton key] on the ground.";
+					compute autotaking skeleton key;
+		otherwise if M is penetrating breasts:
+			say "[big he of M] pulls out a handkerchief as [his of M] cock softens, [his of M] breathing still heavy as [he of M] wipes the creamy remnants of [his of M] load from your cleavage.[line break][speech style of M]'[if the class of the player is princess]It was an honour to be your consort, my liege. I will serve you any time[otherwise]I appreciate your service. Now go in peace[end if].'[roman type][line break]";
+			now the semen coating of breasts is 0;
+		otherwise if M is penetrating face:
+			say "[speech style of M][if the class of the player is princess]'Thank you, your highness. I will fight for you to the very end!'[otherwise]'As expected, the [whore] makes a good cocksucker.'[end if][roman type]";
+			if the class of the player is princess, now the blue-balls of M is -1. [negative score here means he will fight harder for you. even against other guards.]
 
 To say TwosomePrep of (M - a royal guard) in (F - asshole):
 	if the latex-transformation of the player > 6:
@@ -1048,11 +1013,11 @@ To compute facial climax of (M - a royal guard):
 		if bukkake fetish is 1 and a random number between 1 and 2 is 1 and the player is not a blowjob slut:
 			if the reaction of the player is 0:
 				say "You manage to force [NameDesc of M] to let go before [he of M] can cum, but [if cW > 1]the other wenches are[otherwise]the [N] is[end if] right there to grab you and hold you still as [he of M] ejaculates all over your face and [ShortDesc of breasts].";
-				CumFaceUp 3;
-				CumTitsUp 1;
+				AnnouncedSquirt semen on face by 3;
+				UnannouncedSquirt semen on breasts by 1;
 			otherwise:
 				say "The [if cW > 1]wenches crowd in around you[otherwise][N] puts [his of N] face up next to yours[end if] as [NameDesc of M] pushes you off and ejaculates all over your faces.";
-				CumFaceUp 1;
+				AnnouncedSquirt semen on face by 1;
 		otherwise:
 			if the reaction of the player is 0:
 				say "The [N] pushes you down as [NameDesc of M] goes over the edge, their combined strength ensuring not only that you get a full mouthful of [his of M] thick, slimy load, but also that you have no choice but to swallow as it shoots down your throat.";
@@ -1371,6 +1336,12 @@ To say FriendlySexReleaseFlav of (M - a royal guard):
 	otherwise:
 		say "[speech style of M]'[one of]Very well, but know this. I will not be tantalised again.'[or]I will let you go this time. Do not tantalise me again in the future.[or]Fine. Do not tantalise me again, wench.'[at random][roman type] [BigNameDesc of M] removes [his of M] [DickDesc of M] from your [F].".
 
+To say RewardFlav of (M - a royal guard) for (T - a thing):
+	say "[speech style of M]'[if the class of the player is princess]A gift for my leige[otherwise][one of]Royal guards are not allowed to give out gifts, but... [or][stopping]Whoops, I dropped this! Clumsy me[end if].'[roman type][line break][BigNameDesc of M] puts a [T] on the ground in front of you, and winks.".
+
+To say OfferFriendshipFlav of (M - a royal guard):
+	say "[speech style of M][if the class of the player is princess]'My loyalty to you is unwavering, your Majesty[otherwise if M is guardian]'If I see you in peril within these halls, you can count on my sword to support you[otherwise if M is ally]'You are truly an upstanding citizen[otherwise if M is buddy]'You are welcome down here any time, traveler[otherwise if M is acquaintance]'It is wise to treat the enforcers of the law with generosity and respect[otherwise if M is friendly]'Now, I trust you won't get up to any mischief until our next encounter? I would hate to have to arrest you, but the law is the law[otherwise]'I wish I could ignore the law, but criminals must still serve their sentences regardless of my feelings towards them[end if].'[roman type][line break]".
+
 To compute offer reward of (M - prison guard) for (T - a thing):
 	if there is worn locked clothing:
 		decrease the sentence of M by the bartering value of T for M;
@@ -1380,14 +1351,28 @@ To compute offer reward of (M - prison guard) for (T - a thing):
 			say "[speech style of M]Hmm, I guess you can be let out on parole, for now. I want to see best behaviour from you, from now on.'[roman type][line break]";
 			compute bondage releasing of M;
 	otherwise:
-		let BV be the bartering value of T for M;
-		FavourUp M by ((1 + BV) / 2);
+		compute standard offer reward of M for T.
+
+To decide which number is the bartering value of (T - digestive biscuit) for (M - prison guard):
+	if the times-met of ex-princess > 0, decide on 10;
+	decide on 0.
+
+To say MonsterAcceptFlav of (M - prison guard) for (T - digestive biscuit):
+	say "[speech style of M]'How did you know? These are my favourite! I wish I could give you something in return[if skeleton key is off-stage]. Hmm...'[otherwise].'[end if][roman type][line break]".
+
+To compute offer reward of (M - prison guard) for (T - digestive biscuit):
+	if skeleton key is off-stage, compute M rewarding skeleton key;
+	FavourUp M by 2.
 
 To compute bondage releasing of (M - a royal guard):
-	repeat with B running through worn locked clothing:
-		say "[BigNameDesc of M] uses [his of M] key to unlock your [printed name of B]!";
-		now B is unlocked;
-	now the sentence of M is 10.
+	say "Do you allow [NameDesc of M] to unlock your bondage?";
+	if the player is consenting:
+		repeat with B running through worn locked clothing:
+			say "[BigNameDesc of M] uses [his of M] key to unlock your [printed name of B]!";
+			now B is unlocked;
+		now the sentence of M is 10;
+	otherwise:
+		say "[speech style of M]'You wish to continue repenting for now? How noble! Come see me when you desire release.'[roman type][line break]".
 
 Section 1 - Greeting
 

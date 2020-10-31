@@ -16,8 +16,10 @@ To decide which number is the damage improvement of (W - a vampiric claws):
 	let X be 0;
 	increase X by the magic-modifier of W;
 	increase X by the dexterity of the player / 5;
-	if the player is craving semen, decrease X by 1;
-	if the player is desperately craving semen, decrease X by 2;
+	if semen is desperately craved:
+		decrease X by 2;
+	otherwise if semen is craved:
+		decrease X by 1;
 	if abyssal tattoo is worn, increase X by 2;
 	decide on X.
 

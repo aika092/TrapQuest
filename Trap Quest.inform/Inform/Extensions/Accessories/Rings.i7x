@@ -27,10 +27,6 @@ This is the rings limited to eight rule:
 		rule fails.
 The rings limited to eight rule is listed in the ring wearability rules.
 
-To restock (C - a ring):
-	let B be a random basic loot ring;
-	if B is ring, now B is in Standard Item Pen.
-
 To say ShortDesc of (C - a ring):
 	say "[accessory-colour of C] ring".
 

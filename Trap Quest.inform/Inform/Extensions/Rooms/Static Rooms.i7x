@@ -50,13 +50,6 @@ Holding Pen is a room.
 
 [!<standardItemPen:Room>*
 
-Anything in here will be able to appear in the next container
-
-*!]
-Standard Item Pen is a room.
-
-[!<standardItemPen:Room>*
-
 Anything in here will be able to appear in the next christmas gift
 
 *!]

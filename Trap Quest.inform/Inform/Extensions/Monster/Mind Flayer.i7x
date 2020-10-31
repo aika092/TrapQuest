@@ -148,11 +148,8 @@ To compute facial sex of (M - mind flayer):
 		IntDown 2;
 		cutshow figure of mindflayer cutscene 4 for M;
 		if the player is able to get horny:
-			if the player is female:
-				vaginally orgasm shamefully;
-			otherwise:
-				orgasm;
-				punish shameful male orgasm;
+			if the player is male, penis orgasm shamefully;
+			otherwise vaginally orgasm shamefully;
 		now the sex-length of M is 0;
 	otherwise:
 		say "The creature's gaze fills what little mind you have, and you feel yourself go blank!";

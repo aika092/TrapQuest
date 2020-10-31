@@ -62,21 +62,21 @@ To compute monstermotion of (M - a robochef):
 			if D is nothing:
 				now the patrol of M is 1;
 			otherwise:
-				try M going D;
+				blockable move M to D;
 				if the location of M is Hotel19, now patrol of M is 1;
 		otherwise if patrol of M is 1:
 			let D be the the best route from the location of M to Hotel18 through modern rooms;
 			if D is nothing:
 				now the patrol of M is 2;
 			otherwise:
-				try M going D;
+				blockable move M to D;
 				if the location of M is Hotel18, now patrol of M is 2;
 		otherwise if patrol of M is 2:
 			let D be the the best route from the location of M to Hotel21 through modern rooms;
 			if D is nothing:
 				now the patrol of M is 0;
 			otherwise:
-				try M going D;
+				blockable move M to D;
 				if the location of M is Hotel21, now patrol of M is 0;
 		compute monstermotion reactions of M.
 

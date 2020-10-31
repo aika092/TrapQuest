@@ -163,16 +163,16 @@ To decide which figure-name is the examine-image of (T - puddle-object):
 	if N > 5, decide on figure of puddle 2;
 	decide on figure of puddle 1.
 
-To BackgroundRender (T - puddle-object) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
-	let N be the TQColour of white;
+To update background colour of (T - puddle-object):
 	if the urine-puddle of the location of the player > 0:
-		if the semen-puddle of the location of the player > 0, now N is the TQColour of murky;
-		otherwise now N is the TQColour of golden;
+		if the semen-puddle of the location of the player > 0, now the backgroundColour of T is the TQColour of murky;
+		otherwise now the backgroundColour of T is the TQColour of golden;
 	otherwise if the semen-puddle of the location of the player > 0:
-		now N is the TQColour of creamy;
+		now the backgroundColour of T is the TQColour of creamy;
 	otherwise if the slime-puddle of the location of the player > 0:
-		now N is the TQColour of lime;
-	draw a rectangle N in the current focus window at X1 by Y1 with size DX by DY.
+		now the backgroundColour of T is the TQColour of lime;
+	otherwise:
+		now the backgroundColour of T is the TQColour of white.
 
 This is the puddles get focused rule:
 	if the semen-puddle of the location of the player + the urine-puddle of the location of the player + the milk-puddle of the location of the player + the slime-puddle of the location of the player > 0:
@@ -186,7 +186,7 @@ To construct normal buttons for (T - puddle-object):
 		now the ButtonCommand entry is "clean puddle with [text-shortcut of pink-spraybottle]";
 		now the ButtonColour entry is lightModeFullGreen;
 		if the player is upright, now the ButtonColour entry is lightModeFullYellow; [turn yellow - player needs to stand]
-	if diaper quest is 0 and ButtonTableFull is 0:
+	if (diaper quest is 0 or the semen-puddle of the location of the player + the urine-puddle of the location of the player + the slime-puddle of the location of the player is 0 or (watersports fetish is 1 and the semen-puddle of the location of the player + the slime-puddle of the location of the player is 0)) and ButtonTableFull is 0:
 		choose a blank row in the Table of Buttons;
 		now the ButtonImage entry is Figure of DrinkButton;
 		now the ButtonCommand entry is "clean puddle with mouth";

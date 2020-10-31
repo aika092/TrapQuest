@@ -27,7 +27,7 @@ Woods08 is a dodgy jungle room. The printed name of Woods08 is "Muddy Clearing".
 
 Woods09 is a dodgy jungle room. The printed name of Woods09 is "Stone Clearing". "This clearing seems to be man-made, as it is paved in stone.". The shape of Woods09 is L2/0-0-1-1-1-1.
 
-Woods10 is a dodgy jungle room. The printed name of Woods10 is "Statue Clearing". "Right in the middle of this clearing is a [if diaper quest is 1]fountain of a peeing woman[otherwise]statue of a man and woman having sex[end if]. [if vine boss is off-stage]The grass and trees here seems especially lush and vibrant.[otherwise]Thick green vines are draped over the man's shoulders, giving him the appearance of having a cape.[end if]". The shape of Woods10 is L2/0-0-1-1-1-1.
+Woods10 is a dodgy jungle room. The printed name of Woods10 is "Statue Clearing". "Right in the middle of this clearing is a [if diaper quest is 1]fountain of a peeing woman[otherwise]statue of a man and woman having sex[end if][if diaper quest is 0 and vine boss is off-stage]. The grass and trees here seems especially lush and vibrant.[otherwise]Thick green vines are draped over the man's shoulders, giving him the appearance of having a cape[end if].". The shape of Woods10 is L2/0-0-1-1-1-1.
 
 Woods11 is a dodgy jungle room. The printed name of Woods11 is "Creepy Pathway". "The trees either side of this pathway look like they have faces and arms. It's almost as if they're alive...". The shape of Woods11 is L2/0-0-0-1-1-0.
 

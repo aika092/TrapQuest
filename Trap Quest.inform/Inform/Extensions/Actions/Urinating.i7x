@@ -211,31 +211,37 @@ Check urinating:
 								try displacing C;
 								if C is crotch-displaced, now C is temporarily-displaced;
 					otherwise:
+						now auto is 0;
 						if P is pants pee refusal inducing and debugmode is 0, do nothing instead;
 				otherwise:
 					say "You can't displace [NameDesc of P] right now, so you'll have to pee in it. Are you sure that's what you want to do? ";
+					now auto is 0;
 					if the player is not consenting, say "You change your mind." instead;
+			now auto is 0;
 	if the player is prone and the location of the player is bathroom and delayed urination is 0:
 		say "Do you really want to try to pee [if the player is pee protected]your pants[otherwise]on the floor here[end if], while kneeling? ";
 		if the player is bimbo consenting:
-			if (the delicateness of the player < 4 or (the humiliation of the player < HUMILIATION-MODEST + 3000 and there is an intelligent monster in the location of the player)):
+			let M be a random reactive person;
+			if (the delicateness of the player < 4 or (the player is modest and M is a person)):
 				if debugmode > 0, say "If debugmode was disabled, the player would refuse to pee.";
-				otherwise say "[first custom style]I'm NOT peeing on the floor[if there is an intelligent monster in the location of the player and the delicateness of the player >= 4] in front of the [random intelligent monster in the location of the player][line break][first custom style].[roman type][line break]" instead;
+				otherwise say "[first custom style]I'm NOT peeing on the floor[if M is a person and the delicateness of the player >= 4] in front of [NameDesc of M][first custom style].[otherwise].[end if][roman type][line break]" instead;
 		otherwise:
 			say "Then you should probably stand up first." instead;
 	if a random lake monster is in the location of the player and the bimbo of the player < 14 and delayed urination is 0:
 		say "Do you really want to try to pee on the floor here? ";
 		if the player is bimbo consenting:
-			if (the delicateness of the player < 4) or (the humiliation of the player < HUMILIATION-MODEST + 3000 and there is an intelligent awake monster in the location of the player):
+			let M be a random reactive person;
+			if (the delicateness of the player < 4 or (the player is modest and M is a person)):
 				if debugmode > 0, say "If debugmode was disabled, the player would refuse to pee.";
-				otherwise say "[first custom style]I'm NOT peeing on the floor[if there is an intelligent monster in the location of the player and the delicateness of the player >= 4] in front of the [random intelligent awake monster in the location of the player][line break][first custom style].[roman type][line break]" instead;
+				otherwise say "[first custom style]I'm NOT peeing on the floor[if M is a person and the delicateness of the player >= 4] in front of [NameDesc of M][first custom style].[otherwise].[end if][roman type][line break]" instead;
 		otherwise:
 			say "Then you should probably go elsewhere, you don't dare go near the lake with the tentacle monster still lurking in these waters." instead.
 
 Definition: a clothing (called P) is pants pee refusal inducing:
-	if the urine-soak of P <= 0 and P is not diaper and (the delicateness of the player < 6 or (the humiliation of the player < HUMILIATION-DISGRACED + 1000 and there is an intelligent monster in the location of the player)) and (diaper quest is 0 or there is an intelligent monster in the location of the player):
+	let M be a random reactive person;
+	if the urine-soak of P <= 0 and P is not diaper and (the delicateness of the player < 6 or (the player is not disgraced and M is a person)) and (diaper quest is 0 or M is a person):
 		if debugmode > 0, say "If debugmode was disabled, the player would refuse to pee.";
-		otherwise say "[first custom style]I'm NOT peeing my pants[if there is an intelligent monster in the location of the player and the delicateness of the player >= 6] in front of the [random intelligent monster in the location of the player][line break][first custom style][end if].[roman type][line break]";
+		otherwise say "[first custom style]I'm NOT peeing my pants[if M is a person and the delicateness of the player >= 6] in front of [FuckerDesc of M][first custom style].[otherwise].[end if][roman type][line break]";
 		decide yes;
 	decide no.
 [In DQ players will always pee their pants just not in front of people. This is to make sure that the 'never wet myself involuntarily' bonus is always attainable.]
@@ -344,6 +350,7 @@ To compute toilet use:
 				now C is a random off-stage plentiful fetish appropriate undies;
 			if C is nothing, now C is a random off-stage eligible diaper;
 			if C is diaper:
+				destroy C;
 				now C is blessed;
 				say "Suddenly a bright light flashes from the potty throne. When your vision is restored, you see a [ShortDesc of C] on the floor in front of you.[line break][variable custom style]Maybe this is [if the player is diapered]my reward for being properly diapered[otherwise]what the throne thinks I should be wearing?[end if][roman type][line break]";
 				now C is in the location of the player;
@@ -474,8 +481,8 @@ To start urination:
 			say "Your [urine] soaks into the thick Iron Maiden padding pressed against your crotch.";
 			DiaperAddictUp 1;
 			say "The spell of your [urine] in the cramped room floods your nostrils.";
-			if watersports fetish is 1, UrineTasteAddictUp 2;
-			otherwise SexAddictUp 1;
+			if watersports fetish is 1, SlowUrineTasteAddictUp 1;
+			otherwise SlowSexAddictUp 1;
 		otherwise:
 			say "You [if delayed urination is 1]involuntarily [end if]release your hold on your bladder. Your [urine] [if the player is female and the player is dildo stuck]trickles around the dildo and down your thighs.[otherwise if playerRegion is Dungeon]flows to the ground, creating a puddle on the floor.[otherwise]flows to the ground.[end if]";
 			say PeeReaction 1;
@@ -539,7 +546,7 @@ To compute pee protected urination:
 		say "[one of][WCPantiesVibeFlav][or][or][cycling]";
 		if the player is possessing a vagina, stimulate vagina;
 		otherwise stimulate asshole;
-	otherwise if quiz-partner is worn:
+	otherwise if quiz-partner is worn and there is a worn diaper:
 		compute quiz partner messing;
 	otherwise:
 		let K be a random worn bottom level soakable pee protection clothing;
@@ -548,9 +555,9 @@ To compute pee protected urination:
 		let N be 6;
 		if the bladder of the player < 6, now N is the bladder of the player;
 		if the bladder of the player > 12 and K is clothing and the bladder of the player >= the soak-limit of K, now N is the soak-limit of K - the total-soak of K; [Fill up the underwear in one turn if this is going to take forever]
-		if K is portal-pants:
-			say "Your [urine] flows out of your [genitals][run paragraph on]";
-			Squirt urine on K by N;
+		if K is portal-pants or K is portal-hotpants or K is quiz-partner:
+			say "Your [urine] flows out of your [genitals]. ";
+			AnnouncedExpel urine on K by N;
 		otherwise:
 			let flav-said be 0;
 			repeat with X running from 1 to N:
@@ -705,7 +712,7 @@ To check (L - a liquid-object) maidification:
 			say "[bold type]Your [ShortDesc of a random worn headgear] causes you to feel deep shame at causing messes rather than cleaning them![roman type][line break]";
 			if (L is not urine or watersports fetish is 1) and bukkake fetish is 1 and a random number between 1 and 2 is 1:
 				say "A bucket full of [L] appears above your head, and tips over, dousing you in the warm stuff.";
-				Squirt L on face by 40;
+				AnnouncedSquirt L on hair by 50;
 			otherwise if L is not urine or watersports fetish is 1:
 				let N be the number of carried vessels;
 				if N > 0:
@@ -721,8 +728,7 @@ To check (L - a liquid-object) maidification:
 				say "You feel a twinge from behind your bladder, as if it is punishing you by making you gradually more incontinent...";
 				increase incontinence by 1;
 		otherwise if (there is a worn maid headdress or (black maid headdress is off-stage and black maid headdress is not listed in the list of headgear recycling and black maid headdress is actually summonable)):
-			compute maidification of pink-spraybottle;
-			say "A [pink-spraybottle] appears in your hand! It looks like some kind of magic force is demanding that you clean up after you own messes!".
+			compute maidification of pink-spraybottle.
 
 [How high will the game allow incontinence to go?]
 To decide which number is the max-incontinence of the player:

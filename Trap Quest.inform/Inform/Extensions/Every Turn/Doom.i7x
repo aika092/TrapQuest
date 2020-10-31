@@ -45,6 +45,7 @@ To commence doom:
 			add reception bell to the banishItems of M;
 		if the number of alive undefeated robobellboys is 0, now the next-summon of teleportation-pad is a random off-stage robobellboy;
 		if catbell is off-stage:
+			blandify and reveal catbell;
 			now catbell is in Dungeon41;
 			now catbell is store;
 		add black candle to the taxableItems of dominatrix;

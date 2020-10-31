@@ -552,24 +552,24 @@ Definition: yourself is moving slowly:
 	if R <= MT, decide yes;
 	decide no.
 
-Carry out going while the player is in Dungeon41 and Dungeon41 is guarded:
-	let X be the number of held stolen thing;
+Carry out going while the player is in Dungeon41:
 	let flav-said be 0;
-	repeat with C running through store things held by the player:
+	repeat with C running through held store things:
 		compute stealing of C;
-		if shopkeeper is not mating:
-			increase the stolen-aware of shopkeeper by 1;
-			if flav-said is 0, say "[BigNameDesc of shopkeeper] sees you trying to leave.[line break][first custom style]'[one of]Stop, thief!'[or]Guards! Guards! Arrest this thieving whore!'[or]Where do you think you're going with that, bitch?'[or]Oi, you haven't paid for that!'[purely at random][roman type][line break]An alarm bell rings throughout the whole dungeon. Looks like you're in trouble with the law!";
-			repeat with M running through alive royal guards:
-				deinterest M;
-				if M is asleep and M is in the location of the player, say "[BigNameDesc of M] hears the alarm and wakes up!";
-				now the sleep of M is 0;
-			now shopkeeper is interested;
-			anger shopkeeper;
-		otherwise:
-			if flav-said is 0, say "[first custom style]'The mother of my daughter can take what [he of the player] wants. I hope you find it useful!'[roman type][line break]";
-			now C is unowned;
-		now flav-said is 1.
+		if Dungeon41 is guarded:
+			if shopkeeper is not mating:
+				increase the stolen-aware of shopkeeper by 1;
+				if flav-said is 0, say "[BigNameDesc of shopkeeper] sees you trying to leave.[line break][first custom style]'[one of]Stop, thief!'[or]Guards! Guards! Arrest this thieving whore!'[or]Where do you think you're going with that, bitch?'[or]Oi, you haven't paid for that!'[purely at random][roman type][line break]An alarm bell rings throughout the whole dungeon. Looks like you're in trouble with the law!";
+				repeat with M running through alive royal guards:
+					deinterest M;
+					if M is asleep and M is in the location of the player, say "[BigNameDesc of M] hears the alarm and wakes up!";
+					now the sleep of M is 0;
+				now shopkeeper is interested;
+				anger shopkeeper;
+			otherwise:
+				if flav-said is 0, say "[first custom style]'The mother of my daughter can take what [he of the player] wants. I hope you find it useful!'[roman type][line break]";
+				now C is unowned;
+			now flav-said is 1.
 
 Part 4 - Trap Triggers
 

@@ -69,8 +69,7 @@ To StomachDown (X - a number):
 		decrease X by 1;
 	if S > 0, StomachSemenDown S;
 	if U > 0, StomachUrineDown U;
-	if M > 0, StomachMilkDown M;
-	if cold milky > cold milky limit and the player is not craving milk, MilkTasteAddictDown 1.
+	if M > 0, StomachMilkDown M.
 
 To StomachFoodUp (X - a number):
 	if the latex-transformation of the player > 4, now X is 0;
@@ -106,12 +105,12 @@ To StomachSemenUp (X - a number):
 		if the semen taste addiction of the player > 14, passively stimulate face from semen;
 		if X > 0:
 			say SemenEncounterFlav;
-			now cold turkey is 0;
+			now cold turkey of semen is 0;
 			if the stomach-food of the player < 2, now the stomach-food of the player is 2; [Improves hunger]
 		while X > 0:
 			increase the stomach-semen of the player by 1;
 			decrease X by 1;
-			if X is SU and the trophy-mode of ejaculate-trophy is 0, SemenTasteAddictUp 1; [so half the time, 2 units of semen are required for semen taste addiction to increase]
+			if X is SU and the trophy-mode of ejaculate-trophy is 0, SlowSemenTasteAddictUp 1; [so half the time, 2 units of semen are required for semen taste addiction to increase]
 	if there is a facefucker thing penetrating face:
 		OralSexAddictUp 1;
 		progress quest of cum-swallowing-quest;
@@ -123,18 +122,16 @@ To StomachSemenDown (X - a number):
 			if the stomach-semen of the player > 0:
 				decrease the stomach-semen of the player by 1;
 				if watersports mechanics is 1, increase the delayed bladder of the player by 1;
-			decrease X by 1;
-		if the player is craving semen:
-			if the player is desperately craving semen, say "[bold type]Your stomach is completely empty of [semen]! You can't stand it, you are desperate for your next fix! Your reflexes are significantly dulled until the next time you satisfy your addiction.[roman type][line break]";
-			otherwise say "[bold type]You find yourself eager to try tasting some more [semen]. Your reflexes are slightly dulled until the next time you get a fix.[roman type][line break]".
+			decrease X by 1.
 
 To StomachUrineUp (X - a number):
 	while X > 0:
 		decrease X by 1;
 		increase the stomach-urine of the player by 1;
 		if X is 0:
-			UrineTasteAddictUp 1;
-			progress quest of piss-drinking-quest.
+			SlowUrineTasteAddictUp 1;
+			progress quest of piss-drinking-quest;
+			now cold turkey of urine is 0.
 
 To StomachUrineDown (X - a number):
 	while X > 0:
@@ -149,8 +146,8 @@ To StomachMilkUp (X - a number):
 		increase the stomach-milk of the player by 1;
 		if X is 0:
 			StomachFoodUp 1;
-			MilkTasteAddictUp 1;
-			now cold milky is 0; [this tracks how long since the player last drank milk]
+			SlowMilkTasteAddictUp 1;
+			now cold turkey of milk is 0;
 			progress quest of milk-drinking-quest.
 
 To StomachMilkDown (X - a number):

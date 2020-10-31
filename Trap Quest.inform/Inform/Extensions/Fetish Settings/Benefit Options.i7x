@@ -4,7 +4,7 @@ Table of Benefit Options
 title	subtable	description	toggle
 "[roman type]Confirm Choices (shortcut: press Q)"	--	--	quit rule
 "Reset Choices"	--	--	reset rule
-"CHOOSE A BACKGROUND (5 points) [if choice in row 52 of the Table of Player Options <= 0]not [otherwise][bold type][end if]chosen[roman type]"	Table of Background Options	--	--
+"CHOOSE A BACKGROUND (5 points) [if background-selected is 0]not [otherwise][bold type][end if]chosen[roman type]"	Table of Background Options	--	--
 "CHOOSE A SECRET (7 points) [if tattoo-fetish + piercing-fetish + humiliation-fetish + artificial-fetish <= 0]not [otherwise][bold type][end if]chosen[roman type]"	Table of Secret Options	--	--
 "CHOOSE BODY SHAPE LIMITATIONS"	Table of Body Limit Options	--	--
 "Extra Strength: [bonus strength] ([bonus strength points] points used. [bonus strength cost].)"	--	--	bonus strength rule

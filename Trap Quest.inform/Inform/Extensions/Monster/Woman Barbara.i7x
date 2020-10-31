@@ -634,6 +634,7 @@ To compute patron scene of (W - woman-player):
 			now M is in the location of the player;
 			set up M;
 			decrease C by 1;
+			make M expectant;
 	now neighbour finder is the location of the player;
 	now the woman-status of W is 96;
 	now the patron-scene-done of W is 1;
@@ -673,7 +674,7 @@ To compute patron interaction of (W - woman-player):
 						now M is P;
 			let CP be a random unconcerned patron in the location of the player;
 			let RN be 5;
-			if the player is male, decrease RN by 1;
+			if the player is not possessing a vagina, decrease RN by 1;
 			if the largeness of breasts <= 7, decrease RN by 1;
 			if M is nothing: [All patrons have climaxed]
 				compute patron scene climax of W;
@@ -753,12 +754,12 @@ To compute patron scene climax of (W - woman-player):
 			if (bukkake fetish is 1 or the fill-colour of fishbowl is murky) and a random number between 1 and 5 > 2:
 				say "your head!";
 				if the fill-colour of fishbowl is murky:
-					Squirt urine on face by ((the doses of fishbowl + 1) / 2);
-					Squirt semen on face by ((the doses of fishbowl + 1) / 2);
+					AnnouncedSquirt urine on hair by ((the doses of fishbowl + 1) / 2);
+					AnnouncedSquirt semen on hair by ((the doses of fishbowl + 1) / 2);
 				otherwise if the fill-colour of fishbowl is golden:
-					Squirt urine on face by the doses of fishbowl;
+					AnnouncedSquirt urine on hair by the doses of fishbowl;
 				otherwise:
-					Squirt semen on face by the doses of fishbowl;
+					AnnouncedSquirt semen on hair by the doses of fishbowl;
 				say "[speech style of M]'Fucking slut. If you won't drink it, you'll wear it with pride.'[roman type][line break]";
 			otherwise:
 				say "[NameDesc of W][']s head! It soaks in [his of W] hair and glazes [his of W] upper body.[line break][speech style of M]'You thought that was going over yourself for a moment, didn't you? Coating you in your own shame wouldn't do. I want you to live with the deep shame that you let your best friend down in [his of W] greatest time of need. You'll have to live with that for the rest of your life.'[roman type][line break]";
@@ -930,39 +931,11 @@ An all time based rule (this is the barbara throne rule):
 			SemenPuddleUp 20 in (the location of W);
 			vanish W.
 
-Chapter - Crafting Scene
-
-Report going when the player is in Dungeon37 and the player is the donator and the woman-bimbo of woman-player is 4 and the crafting-scene of woman-player is 0 and woman-player is redeploy appropriate:
-	let W be woman-player;
-	deploy W with woman-status 6;
-	now W is in the location of the player;
-	now W is interested;
-	say "You see [NameDesc of W] is here, in the middle of crafting a potion. [big he of W] is bent over at the waist, deep in thought, [his of W] [if lady fetish < 2]pussy and [end if]asshole on total display.";
-	alwayscutshow Figure of Barbara Cutscene 6 for W;
-	say "Before you can say anything, [he of woman-player] stands up triumphantly, holding a small vial full of a brightly glowing pink liquid.[line break][speech style of W]'Oh hey [NameBimbo], I almost didn't notice you there! I think this one is gonna be good! Do you want to try it? If you don't, I'll be the guinea pig myself!'[roman type][line break][big he of W] hands you the pink vial.";
-	appropriate-cutscene-display Figure of Barbara Cutscene 7;
-	say "Do you drink it? ";
-	if the player is consenting:
-		say "You bravely swig the vial in a single gulp. ";
-		if a random number between 1 and 3 is 1:
-			let L be the list of worn upgradable clothing;
-			say "Almost immediately you can tell something is wrong. You feel uneasy[if the number of entries in L > 0]. And then the magic bursts out of your body and into your clothes![otherwise]... but nothing happens? Weird. Oh well, no harm done apparently.[end if]";
-			repeat with C running through L:
-				potentially transform C;
-		otherwise:
-			say "Almost immediately, you feel great! Your mind feels sharper and some of your new desires feel less important.";
-			SexAddictDown 1;
-			FuckholeAddictDown 1;
-			IntUp 1;
-	otherwise:
-		say "[BigNameDesc of W] takes the vial back and bravely swigs it in a single gulp. ";
-		if a random number between 1 and 2 is 1:
-			say "Almost immediately you can tell something is wrong.[line break][speech style of W]'I don't feel so good...'[roman type][line break]You see [his of W] mind going blanker as the magic potion transforms [his of W] clothes!";
-			ImmediatewomanSluttify;
-		otherwise:
-			say "[line break][speech style of W]'Yeah, I feel amazing!'[roman type][line break]You see [his of W] mind becoming sharper as the magic potion transforms [his of W] clothes!";
-			ImmediatewomanUnsluttify;
-		say MonsterDesc of W.
+To say WomanCraftSceneFlav:
+	say "You see [NameDesc of woman-player] is here, in the middle of crafting a potion. [big he of woman-player] is bent over at the waist, deep in thought, [his of woman-player] [if lady fetish < 2]pussy and [end if]asshole on total display.";
+	alwayscutshow Figure of Barbara Cutscene 6 for woman-player;
+	say "Before you can say anything, [he of woman-player] stands up triumphantly, holding a small vial full of a brightly glowing pink liquid.[line break][speech style of woman-player]'Oh hey [NameBimbo], I almost didn't notice you there! I think this one is gonna be good! Do you want to try it? If you don't, I'll be the guinea pig myself!'[roman type][line break][big he of woman-player] hands you the pink vial.";
+	appropriate-cutscene-display Figure of Barbara Cutscene 7.
 
 Part 4 - Wandering
 

@@ -237,10 +237,9 @@ To add treasure to (X - a minibar):
 	if there is an off-stage can:
 		let flav-said be 0;
 		repeat with Z running from 1 to a random number between 1 and 3:
-			let I be a random can in Standard Item Pen;
+			let I be a random off-stage can;
 			if I is can:
 				now I is in X;
-				restock I;
 				if flav-said is 0:
 					say "You find a [printed name of I] ";
 					now flav-said is 1;
@@ -248,10 +247,10 @@ To add treasure to (X - a minibar):
 					say "and a [printed name of I] ";
 		say "inside!";
 		repeat with Z running through cans in X:
-			compute autotaking Z;
+			if Z is not known-cursed-potion, compute autotaking Z;
 	otherwise:
 		compute generic treasure to X;
-		say "[variable custom style]'That's weird. Maybe it's out of drinks or something?'[roman type]".
+		say "[variable custom style]That's weird. Maybe it's out of drinks or something?[roman type][line break]".
 
 [!<Safe>@
 
@@ -280,7 +279,7 @@ REQUIRES COMMENTING
 
 @!]
 A treasure chest is a kind of container. A treasure chest is openable. A treasure chest is closed. A treasure chest is not portable. The printed name of a treasure chest is "[TQlink of item described]treasure chest[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of treasure chest is "ch".
-Figure of treasure chest is the file "Env/Multifloor/treasurechest1.jpg".
+Figure of treasure chest is the file "Env/MultiFloor/treasurechest1.jpg".
 
 To decide which figure-name is the examine-image of (C - a treasure chest):
 	decide on figure of treasure chest.
@@ -321,7 +320,6 @@ To add treasure to (X - a treasure chest):
 		now C is a random pinkWardrobeAppropriate trousers;
 		if C is clothing, add C to L;
 		repeat with Z running through L:
-			if Z is in Standard Item Pen, restock Z;
 			now Z is in X;
 			now Z is unsure;
 			now Z is unidentified;
@@ -332,10 +330,8 @@ To add treasure to (X - a treasure chest):
 			if Z is cursed, assign quest to Z;
 			otherwise now Z is blandness;
 			now Z is unowned;
-		let I be a random can in Standard Item Pen;
-		if I is can:
-			now I is in X;
-			restock I;
+		let I be a random off-stage can;
+		if I is can, now I is in X;
 		say "You find a lot of stuff in here. But something tells you that you can't be sure if any of it has any magical effects until you put them on...";
 		if newbie tips is 1, say "[newbie style]Newbie tip: Consider this your bonus starting kit. These items start UNIDENTIFIED and may have random magic properties - they might be cursed. Wearing heels is an interesting but challenging choice because this will make you more vulnerable in the early game but is a great source of damage later on.[roman type][line break]";
 	otherwise:
@@ -362,7 +358,7 @@ To say NewbieMagicSpells:
 Section - Pedestals
 
 Carry out taking museum-store clothing:
-	now the noun is unowned;
+	now the noun is unowned;[TODO: fix issue where this doesn't trigger the gargoyle]
 	if the location of the player is mansion28 and there is a worn lipstick collar:
 		let L be a random lipstick collar;
 		now L is tethering;

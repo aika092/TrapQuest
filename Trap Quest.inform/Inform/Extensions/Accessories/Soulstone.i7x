@@ -1,6 +1,6 @@
 Soulstone by Accessories begins here.
 
-A soulstone is a kind of neckwear. There is 1 unique soulstone. Printed name of soulstone is "[clothing-title-before]soulstone[clothing-title-after]". The text-shortcut of soulstone is "so".
+soulstone is a neckwear. Printed name of soulstone is "[clothing-title-before]soulstone[clothing-title-after]". The text-shortcut of soulstone is "so". Understand "swirling", "gem", "amulet", "soul", "stone" as soulstone.
 
 Figure of soulstone is the file "Items/Accessories/Neck/soulstone1.png".
 Figure of embedded soulstone is the file "Items/Accessories/Neck/soulstone2.png".

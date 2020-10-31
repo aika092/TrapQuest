@@ -43,13 +43,26 @@ To compute raising of (B - a modesty shutter):
 		destroy B;
 		if there is a hotel bed in the location of the player:
 			now patronTime is 0; [Player should now be able to rest easy]
-			if the patronbed uses > 1:
-				now pimp is in the location of the player;
-				set up pimp;
-				if pimp is in the location of the player:
+			if pimp is alive:
+				if patronbed uses is 1:
+					now pimp is in the location of the player;
 					let D be a random N-viable direction;
-					say "[one of]A tall black [man of pimp] dressed as a pimp arrive from[or][BigNameDesc of pimp] arrives from[stopping] the [D]!";
-					compute perception of pimp.
+					say "A tall black [man of pimp] dressed as a pimp arrive froms the [D]!";
+					if the times-met of pimp is 0:
+						if the class of the player is princess, say "[speech style of pimp]'Listen up, princess. I don't work for you anymore. In fact, starting now you're gonna be ";
+						otherwise say "[speech style of pimp]'Listen up[if diaper quest is 0], bitch[end if]. Nobody works in Bimbacia without reporting to me first, which means you're ";
+					otherwise:
+						say "[speech style of pimp]'Well done, [if diaper quest is 1]little one[otherwise]slut[end if]. I'm so glad you've decided to become ";
+					say "one of my [if diaper quest is 1]baby slaves for hire[otherwise]whores[end if]. That means every time you [if diaper quest is 1]let one of these patrons babify you[otherwise]fuck a [Brotha of pimp][end if], you owe me a cut. Once you've turned a few tricks, it's best if you come and find me rather than wait for me to find you.'[roman type][line break]";
+					increase the times-met of pimp by 1;
+					now pimp is interested;
+				otherwise:
+					FavourDown pimp;
+					if pimp is unfriendly and the player is getting unlucky:
+						now pimp is in the location of the player;
+						let D be a random N-viable direction;
+						say "[BigNameDesc of pimp] arrives from the [D]! [GotUnluckyFlav]";
+						check guaranteed perception of pimp.
 
 vine-wall is a barrier. The printed name of a vine-wall is "vine wall".
 

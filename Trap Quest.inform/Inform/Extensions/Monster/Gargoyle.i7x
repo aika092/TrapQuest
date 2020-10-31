@@ -1,6 +1,6 @@
 Gargoyle by Monster begins here.
 
-gargoyle is a monster. The poison-status of gargoyle is -1. The paralyse-status of gargoyle is -1. The blind-status of gargoyle is -1. gargoyle has a number called guard-level. The guard-level of gargoyle is 0. gargoyle has a number called satiated. The satiated of a gargoyle is usually 0.
+gargoyle is a monster. The poison-status of gargoyle is -1. The paralyse-status of gargoyle is -1. The blind-status of gargoyle is -1. gargoyle has a number called guard-level. gargoyle has a number called satiated. The satiated of a gargoyle is usually 0.
 
 Definition: gargoyle is mansion dwelling: decide yes.
 
@@ -163,7 +163,7 @@ To compute delay of (M - gargoyle):
 	otherwise:
 		say "[BigNameDesc of M] simply stares at you silently, as if waiting to see what you do next.".
 
-To say SelectionFrustrated of (M - gargoyle):
+To compute SelectionFrustrated of (M - gargoyle):
 	if M is not airborne:
 		say "[BigNameDesc of M] seems to look very frustrated, and then gives up.";
 		bore M;
@@ -183,7 +183,8 @@ This is the gargoyle flight rule:
 	rule succeeds.
 
 This is the gargoyle dive bomb rule:
-	if the location of current-monster is not the location of the player:
+	let M be current-monster;
+	if the location of M is not the location of the player:
 		now current-monster is not airborne;[the gargoyle will try to chase the player normally instead]
 	if current-monster is airborne and the player is not at least partially immobile:
 		drag to Mansion16 by current-monster;[really just important that you get dropped off near the bedroom.]
@@ -198,6 +199,7 @@ This is the gargoyle dive bomb rule:
 		now neighbour finder is Mansion16;
 		now vampiress is in a random next door room;
 		now current-monster is not airborne;
+		now the guard-level of M is 1;
 		rule succeeds;
 	otherwise if current-monster is airborne:[She waits silently until she can carry you off]
 		rule succeeds.
@@ -212,7 +214,7 @@ To say DragFlav of (M - gargoyle) to (R - a room):
 
 This is the gargoyle vigilance rule:
 	let M be current-monster;
-	if M is grabbing the player and the guard-level of M is 0:
+	if M is grabbing the player and the guard-level of M > 0:
 		if vampiress is penetrating an orifice:[the gargoyle holds you down until her mistress is having sex with you.]
 			say "[BigNameDesc of M] releases you and takes off into the sky.";
 			dislodge M;
@@ -223,8 +225,8 @@ This is the gargoyle vigilance rule:
 			now the guard-level of current-monster is 0;
 		otherwise:
 			say "[BigNameDesc of current-monster] holds you down silently in wait.";
-			if the guard-level of current-monster < 5, increase the guard-level of current-monster by 1;
-			if the guard-level of current-monster >= 5 and vampiress is not in the location of the player:
+			if the guard-level of current-monster < 3, increase the guard-level of current-monster by 1;
+			if the guard-level of current-monster >= 3 and vampiress is not in the location of the player:
 				say "You hear high pitched shrieking as dozens of bats fly in through some narrow, high windows, converging in a twisting mass of flapping wings and black fur. Just as suddenly as they appeared, the bats disperse, leaving a [printed name of vampiress] standing in the doorway.";
 				now vampiress is in the location of the player;
 			if vampiress is uninterested, now vampiress is interested;
@@ -351,7 +353,7 @@ To compute post climax effect of (M - gargoyle) in (F - penis):
 	Calm M;
 	now the guard-level of M is 0;
 	now M is guarding;
-	now the sleep of M is 150.
+	compute M sleeping 150 after sex.
 
 To compute damage reaction of (M - gargoyle):
 	if the sleep of M > 0:

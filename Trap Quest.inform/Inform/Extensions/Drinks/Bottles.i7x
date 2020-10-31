@@ -124,6 +124,10 @@ To decide which number is the fill-type of (B - a bottle):
 	let X be Magic corresponding to a appearance of fill-colour of B in the Table of Drinks;
 	decide on X.
 
+To update background colour of (T - a bottle):
+	if T is empty, now the backgroundColour of T is -1;
+	otherwise now the backgroundColour of T is the TQcolour of the fill-colour of T.
+
 [!<Bottle>@<IsIngredient>+
 
 Can it be used to craft things?
@@ -187,17 +191,7 @@ Definition: a bottle (called B) is known-good-potion:
 Can it appear in containers?
 
 +@!]
-Definition: a bottle (called B) is basic loot:
-	if B is off-stage, decide yes.
-
-[!<Bottle>@<Restock>+
-
-This is how we funnel bottles into the list of items that can be found next
-
-+@!]
-To restock (C - a bottle):
-	let B be a random basic loot bottle;
-	if B is bottle, now B is in Standard Item Pen.
+Definition: a bottle is basic loot: decide no.
 
 To Set Up Drinks:
 	repeat with B running through all vessels:
@@ -283,12 +277,9 @@ To Dump (X - a bottle):
 This is all the things we need to do when a bottle is destroyed to reset it for the next time it appears and to make sure it has no lingering unintended effects.
 
 +!]
-To destroy (T - a bottle):
-	remove T from play;
+To uniquely destroy (T - a bottle):
 	now the magic-curse of T is bland;
 	now the curse-ID of T is unsure;
-	DoseEmpty T;
-	now T is unowned;
-	dislodge T.
+	DoseEmpty T.
 
 Bottles ends here.

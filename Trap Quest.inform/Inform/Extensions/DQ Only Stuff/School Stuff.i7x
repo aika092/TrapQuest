@@ -361,16 +361,37 @@ headmistress has a number called chess-boredom.
 chess-lesson has a number called chess-refused.
 chess-lesson has a number called student-latest-percent.
 chess-lesson has a number called player-latest-percent.
+chess-lesson has a number called player-bladder-penalty.
 
 Definition: chess-lesson is lesson-appropriate:
 	if the chess-victor of it is 0 and the chess-refused of it is 0, decide yes;
 	decide no.
 
-Figure of chess table is the file "Env/School/chesstable1.png".
+Figure of chess table is the file "Env/School/chesstable1.jpg".
+
+Figure of chess cutscene 1 is the file "Special/Cutscene/cutscene-chess1a.png".
+Figure of chess cutscene 2 is the file "Special/Cutscene/cutscene-chess2a.png".
+Figure of chess cutscene 2c is the file "Special/Cutscene/cutscene-chess2c.png".
+Figure of chess cutscene 2d is the file "Special/Cutscene/cutscene-chess2d.png".
+Figure of chess cutscene 3 is the file "Special/Cutscene/cutscene-chess3a.png".
+Figure of chess cutscene 4 is the file "Special/Cutscene/cutscene-chess4a.png".
+
+To render chess state:
+	if diaper messing < 3:
+		now temporary-map-figure is Figure of chess cutscene 1;
+	otherwise if player-latest-percent of chess-lesson > 5:
+		if student-latest-percent of chess-lesson > 5, now temporary-map-figure is Figure of chess cutscene 2;
+		otherwise now temporary-map-figure is Figure of chess cutscene 2c;
+	otherwise:
+		if student-latest-percent of chess-lesson > 5, now temporary-map-figure is Figure of chess cutscene 2d;
+		otherwise now temporary-map-figure is Figure of chess cutscene 1.
 
 To decide which figure-name is the examine-image of (C - chess table):
 	if the chess-victor of chess-lesson is 0, decide on figure of chess table;
 	if C is grabbing the player and the map-window is g-present and the focus-window is g-present, decide on figure of no-image-yet; [In this situation we put the image in the map window]
+	decide on chess-table-image.
+
+To decide which figure-name is chess-table-image:
 	if diaper messing < 3, decide on figure of chess cutscene 3;
 	decide on figure of chess cutscene 4.
 
@@ -390,7 +411,7 @@ To compute teaching of (L - chess-lesson):
 		say "You stand up.";
 		repeat with FST running through students in the location of the player:
 			unless ST is FST, FavourUp FST;
-		say "[BigNameDesc of M] smiles warmly.[line break][speech style of M]'Oh, well volunteered! The headmistress will be so [please]d. You'll both need one of these, and I'm afraid you're not allowed any other clothing.'[roman type][line break]";
+		say "[BigNameDesc of M] smiles warmly.[line break][speech style of M]'Oh, well volunteered! The headmistress will be so pleased. You'll both need one of these, and I'm afraid you're not allowed any other clothing.'[roman type][line break]";
 		repeat with C running through worn stealable clothing:
 			unless C is plentiful accessory:
 				say "[BigNameDesc of M] confiscates your [ShortDesc of C]!";
@@ -402,12 +423,17 @@ To compute teaching of (L - chess-lesson):
 				dislodge C;
 				now C is in School01;
 				now C is unlocked;
+		repeat with C running through carried things:
+			now C is in School01;
 		say "[speech style of M]'If you want any of those back, you'll need to pick them up from Reception later.'[roman type][line break]You are made to wear a new giant plain white disposable diaper, bigger than any diaper you've ever seen before.";
 		if plain-massive-diaper is not worn:
 			if there is a worn diaper:
 				diaperAdd plain-massive-diaper;
 			otherwise:
 				summon plain-massive-diaper uncursed;
+		now bigGameLoop is 2; [tells the game not to refresh map window after multiple choice]
+		force immediate clothing-focus redraw;
+		force immediate inventory-focus redraw;
 		say "[speech style of M]'This diaper is made of a special material that will expand almost endlessly as you keep filling it up. Trust me, that's going to be important later.'[roman type][line break]And then you are all marched to the assembly hall, where it feels like every single other person in the school seems to already be waiting!";
 		repeat with X running through undefeated staff members in the school:
 			now X is in School16;
@@ -417,6 +443,8 @@ To compute teaching of (L - chess-lesson):
 			now X is in School16;
 			now X is interested;
 			calm X;
+		now the arousal of the player is 0;
+		update arousal;
 		now the player is in School16;
 		say "You are led up onto the stage along with [NameDesc of ST], where a unique scene awaits you. Two chairs sit either side of a chess table, but the seats are missing - there's just chair frames. The frames have modern-looking cuffs at the bottom of the front two legs, clearly to keep anyone sitting there locked in place by the ankles. A pressure plate sits underneath each chair frame, with an electronic wire leading to the other seat's anklecuffs. The chess board has a chess clock next to it, which has a large clear container with some orange liquid bubbling away inside it[if diaper messing >= 3] and the word 'NUTRI-LAX' on the side[end if]. This container has two clear tubes running from it, each with a pacifier gag at the end.[paragraph break]You and [NameDesc of ST] are led to the chairs, where you are made to sit down, your giant diapers squashing into the holes where the seats should have been and sort-of holding your weight, along with your thighs on the fronts of the frames. Your ankles are secured in the cuffs and each of you gets a pacifier-tube-gag locked in your mouth. Now, [if headmistress is alive][NameDesc of headmistress][otherwise][NameDesc of M][end if] speaks to everyone.";
 		say "[speech style of headmistress]'Welcome to the second ever [slut school] Chess Championship! Fame and glory awaits the winner, and, well, the loser might be stuck in their chair for a while. When it's your turn, babies, you will be force-fed our special [if diaper messing >= 3]NUTRI-LAX brew which makes you desperate to go and increases the bulk of your poopsies[otherwise]brew which is designed to fill up your bladder super fast and make it hard to hold on[end if]! There are two ways to lose: either you get checkmated, or you fill your Pampers so much that your diaper stretches to the pressure pad below you and releases your opponent. The winner not only gets promoted but will gain a place in our hall of fame. The loser will get treated to some lovely... artistry from anyone with a funny idea and a marker pen, and won't get released until, well, until I decide so. Which is usually quite a long time! And with the stakes made clear, let's get this game underway!'[roman type][line break]That orange-gold liquid begins to emerge from the container, flowing through the tube and into [NameDesc of ST][']s mouth, from whom you hear a muffled [second custom style]Eep![roman type] followed by audible gulping and swallowing. [big he of ST][']s got the white pieces so must be going first. [big he of ST] quickly moves [his of M] king's pawn two spaces forward and then presses the switch on the chess clock with the same hand. The liquid stops being sent through the tube connected to [his of M] face and instead begins to travel towards you! A moment later you are being forced to swallow a gulp of the foul-tasting fizzy concoction. You quickly stop the flow by matching [his of ST] pawn move with your own mirrored one, and then pressing the button on your side of the clock. Several quick moves from both of you set up the board in a rather even state, and now you properly need to think about your next move. The game has begun.";
@@ -429,6 +457,8 @@ To compute teaching of (L - chess-lesson):
 		reset chess planning;
 		while the chess-victor of chess-lesson is 0:
 			compute chess time;
+		now bigGameLoop is 0; [tells the game to return to normal map window behaviour]
+		MapShowReset;
 	otherwise:
 		say "You stay firmly sat down[if the player is shameless] - chess sounds boring![otherwise], not willing to risk the public shame of losing, and whatever additional punishments that might entail.[end if][line break][speech style of M]'Oh darling, you're all on your own? That's a shame, but understandable, it's a lot to ask of such weak, cowardly students[run paragraph on]";
 		if ST is promotable:
@@ -439,7 +469,7 @@ To compute teaching of (L - chess-lesson):
 			say ". ";
 		say "I'm afraid that until we get two volunteers for this game, or the headmistress gets bored of asking, we're not going to be able to have any other lessons. So for now class is cancelled!'[roman type][line break][big he of M] politely gestures for you all to leave the room.";
 		now the chess-refused of chess-lesson is 1;
-		allocate 6 seconds.
+	allocate 6 seconds.
 
 [The playing chess rules is a rulebook.]
 
@@ -450,9 +480,13 @@ chess-lesson has a number called defensive-move.
 To compute chess time:
 	let ST be chess-opponent of chess-lesson;
 	if chess-turn of chess-lesson is 1: [Opponent takes her turn]
-		if the lost-pieces of chess-lesson > 12 or (the lost-pieces of chess-lesson - student-lost-pieces of chess-lesson > 5), compute opponent checkmate;
+		let diffNeeded be 5;
+		if the lost-pieces of chess-lesson >= 7 or the student-lost-pieces of chess-lesson >= 7, now diffNeeded is 4;
+		if the lost-pieces of chess-lesson >= 10 or the student-lost-pieces of chess-lesson >= 10, now diffNeeded is 3;
+		if the lost-pieces of chess-lesson >= 13 or the student-lost-pieces of chess-lesson >= 13, now diffNeeded is 2;
+		if (the lost-pieces of chess-lesson > 12 and the lost-pieces of chess-lesson > the student-lost-pieces of chess-lesson) or (the lost-pieces of chess-lesson - student-lost-pieces of chess-lesson >= diffNeeded), compute opponent checkmate;
 		otherwise compute opponent chess turn;
-		if the chess-turn of chess-lesson is 0 and (the student-lost-pieces of chess-lesson > 12 or (the student-lost-pieces of chess-lesson - lost-pieces of chess-lesson > 5)), compute checkmate;
+		if the chess-turn of chess-lesson is 0 and (the student-lost-pieces of chess-lesson > 12 or (the student-lost-pieces of chess-lesson - lost-pieces of chess-lesson >= diffNeeded)), compute checkmate;
 		now the defensive-move of chess-lesson is 2; [player always takes a couple of turns to find the defensive move when it's their turn]
 	otherwise if chess-move-choice > 10:
 		now the chess-turn of chess-lesson is 1; [It was the player's turn, but they did their move]
@@ -470,15 +504,20 @@ To compute chess time:
 			increase the student-rectum of chess-lesson by 2;
 		compute hunger and thirst;
 		compute bladder growth;
+		if the player is bursting:
+			increase player-bladder-penalty of chess-lesson by 1;
+			say "[bold type][if the player-bladder-penalty of chess-lesson is 1]You are beginning to feel the need to pee, which is making it more difficult for you to concentrate[otherwise]Holding in your pee is making it increasingly difficult to concentrate[end if].[roman type][line break]";
+		otherwise:
+			now player-bladder-penalty of chess-lesson is 0;
 		if delayed urination > 0, compute chess urination;
 		finally humiliate the delayed humiliation of the player;
 		decrease blush factor by 100;
 		if blush factor > 2000, now blush factor is 2000;
 		if blush factor < 0, now blush factor is 0;
-		now saved-intelligence is -1;
 		check for arousal change;
+		update saved stats;
 		now focused-thing is ST;
-		display stuff;
+		render chess state;
 		if the chess-victor of chess-lesson is 0, say "You have [16 - lost-pieces of chess-lesson] pieces left, and [NameDesc of ST] has [16 - student-lost-pieces of chess-lesson] pieces left. Your diaper is [if player-latest-percent of chess-lesson > 0][player-latest-percent of chess-lesson][end if]0% of the way towards your pressure plate, and [NameDesc of ST][']s diaper is [if student-latest-percent of chess-lesson > 0][student-latest-percent of chess-lesson][end if]0% of the way towards the other pressure plate.";
 		compute chess move input.
 
@@ -510,7 +549,6 @@ To compute opponent chess turn:
 			increase lost-pieces of chess-lesson by R + 2;
 		now student-aggression of chess-lesson is 1;
 		reset chess planning;
-		now great-move of chess-lesson is 999;
 	otherwise if student-trapping-move of chess-lesson <= 0 and a random number between 1 and 5 > 1:
 		say ChessMoveFlav (a random number between 0 and 1) of ST;
 		reset chess opponent planning;
@@ -519,8 +557,6 @@ To compute opponent chess turn:
 	otherwise if student-safe-move of chess-lesson <= 0 and a random number between 1 and 5 > 1:
 		say "[BigNameDesc of ST] makes a very smart defensive move, blocking off your main line of attack and forcing you go to back to square one with your planning.";
 		reset chess planning;
-		now great-move of chess-lesson is 999;
-		now trapping-move of chess-lesson is 999;
 		now student-aggression of chess-lesson is 0;
 	otherwise:
 		let R be a random number between 0 and 1;
@@ -544,16 +580,16 @@ To decide which number is chess-move-found:
 	decide on 0.
 
 To decide which number is chess-random-reset:
-	decide on a random number between 1 and 10.
+	decide on (a random number between 1 and 6) + (a random number between 0 and 2).
 
 To decide which number is chess-great-move-toughness:
-	decide on a random number between 0 and 5.
+	decide on (a random number between 0 and 7) + (a random number between 0 and 1).
 
 To decide which number is chess-safe-move-toughness:
-	decide on a random number between 0 and 2.
+	decide on (a random number between 0 and 4) + (a random number between 0 and 1).
 
 To decide which number is chess-trapping-move-toughness:
-	decide on a random number between 0 and 4.
+	decide on (a random number between 0 and 6) + (a random number between 0 and 1).
 
 To reset chess planning:
 	reset chess player planning;
@@ -564,20 +600,21 @@ To reset chess player planning:
 	reset chess player safe planning;
 	reset chess player trap planning.
 
+
 To reset chess player great planning:
-	if great-move of chess-lesson <= 0, say "Now that the state of the board has changed, your planned awesome move is no longer possible.";
+	if great-move of chess-lesson <= 0 and the chess-turn of chess-lesson is 1, say "Now that the state of the board has changed, your planned awesome move is no longer possible.";
 	if chess-move-found is 1, now great-move of chess-lesson is chess-random-reset + chess-great-move-toughness;
 	otherwise now great-move of chess-lesson is 999;
 	if the student-lost-pieces of chess-lesson > 12 or the lost-pieces of chess-lesson > 14, now great-move of chess-lesson is 999.
 
 To reset chess player safe planning:
-	if safe-move of chess-lesson <= 0, say "Now that the state of the board has changed, your planned safe move is no longer possible.";
+	if safe-move of chess-lesson <= 0 and the chess-turn of chess-lesson is 1, say "Now that the state of the board has changed, your planned safe move is no longer possible.";
 	if chess-move-found is 1, now safe-move of chess-lesson is chess-random-reset + chess-safe-move-toughness;
 	otherwise now safe-move of chess-lesson is 999;
 	if the student-lost-pieces of chess-lesson > 12 or the lost-pieces of chess-lesson > 14, now safe-move of chess-lesson is 999.
 
 To reset chess player trap planning:
-	if trapping-move of chess-lesson <= 0, say "Now that the state of the board has changed, your planned move to trap your opponent is no longer possible.";
+	if trapping-move of chess-lesson <= 0 and the chess-turn of chess-lesson is 1, say "Now that the state of the board has changed, your planned move to trap your opponent is no longer possible.";
 	if trapping-move of chess-lesson > 1000: [end the trap]
 		reset chess opponent great planning;
 	if chess-move-found is 1, now trapping-move of chess-lesson is chess-random-reset + chess-trapping-move-toughness;
@@ -610,23 +647,53 @@ To reset chess opponent trap planning:
 	if the lost-pieces of chess-lesson > 12 or the student-lost-pieces of chess-lesson > 14, now student-trapping-move of chess-lesson is 999.
 
 To compute chess players thinking:
-	let I be the square root of saved-flat-intelligence;
-	let STI be 3; [TODO: Change this depending on opponent?]
+	let I be 0;
+	let I2 be saved-flat-intelligence - player-bladder-penalty of chess-lesson;
+	if I2 > I, now I is I2; [got to make sure we're not going to square root a negative]
+	let STI be 3 - ((a random number between 0 and the student-rectum of chess-lesson) / 5);
 	if the defensive-move of chess-lesson > 0 and the chess-turn of chess-lesson is 0: [It takes a couple of turns before the player is allowed to make a normal defensive move.]
+		if debugmode is 1, say "Player defensive move [defensive-move of chess-lesson] - 1 > [defensive-move of chess-lesson - 1][line break]";
 		decrease the defensive-move of chess-lesson by 1;
-		if the defensive-move of chess-lesson <= 0, say "You have now studied the board long enough to find a [one of]move that isn't too aggressive, and so is less likely to result in anyone losing any pieces[or]normal defensive move[stopping].";
+		if the defensive-move of chess-lesson <= 0:
+			say "You have now studied the board long enough to find a [one of]move that isn't too aggressive, and so is less likely to result in anyone losing any pieces[or]normal defensive move[stopping].";
+		otherwise if the chess-turn of chess-lesson is 0:
+			say "You know you can find a more passive move if you give yourself a little longer to think.";
 	if the safe-move of chess-lesson > 0:
-		decrease the safe-move of chess-lesson by a random number between 2 and I;
-		if the safe-move of chess-lesson <= 0, say "You notice a different move you could take, that would be safe for you and force your opponent to think hard again.";
+		let R be the square root of (a random number between 0 and I);
+		if debugmode is 1, say "Player safe move [safe-move of chess-lesson] - [R] > [safe-move of chess-lesson - R][line break]";
+		decrease the safe-move of chess-lesson by R;
+		if the safe-move of chess-lesson <= 0:
+			say "You notice a different move you could take, that would be safe for you and force your opponent to think hard again.";
+		otherwise if the chess-turn of chess-lesson is 0:
+			if the safe-move of chess-lesson > 900 and the safe-move of chess-lesson < 990:
+				say "You are confident there's no extremely safe move available for you to take this turn.";
+			otherwise:
+				say "There might be a much safer move you can make, but you haven't spotted it yet.";
 	if the trapping-move of chess-lesson > 0:
-		decrease the trapping-move of chess-lesson by a random number between 2 and I;
-		if the trapping-move of chess-lesson <= 0, say "You realise that there's a certain move that you could make that would allow your opponent to make a huge mistake in their next turn if they're not careful.";
+		let R be the square root of (a random number between 0 and I);
+		if debugmode is 1, say "Player trapping move [trapping-move of chess-lesson] - [R] > [trapping-move of chess-lesson - R][line break]";
+		decrease the trapping-move of chess-lesson by R;
+		if the trapping-move of chess-lesson <= 0:
+			say "You realise that there's a certain move that you could make that would allow your opponent to make a huge mistake in their next turn if they're not careful.";
+		otherwise if the chess-turn of chess-lesson is 0:
+			if the trapping-move of chess-lesson > 900 and the trapping-move of chess-lesson < 990:
+				say "You are confident there's no clever trap available for you to set up this turn.";
+			otherwise:
+				say "There might be a way to try and trap [student-name of the chess-opponent of chess-lesson], but you haven't worked one out yet.";
 	if the great-move of chess-lesson > 0:
-		decrease the great-move of chess-lesson by a random number between 2 and I;
-		if the great-move of chess-lesson <= 0, say "You notice a move that looks absolutely brilliant! It seems sure to net you a huge advantage.";
-	decrease the student-safe-move of chess-lesson by a random number between 2 and STI;
-	decrease the student-trapping-move of chess-lesson by a random number between 2 and STI;
-	decrease the student-great-move of chess-lesson by a random number between 2 and STI.
+		let R be the square root of (a random number between 0 and I);
+		if debugmode is 1, say "Player great move [great-move of chess-lesson] - [R] > [great-move of chess-lesson - R][line break]";
+		decrease the great-move of chess-lesson by R;
+		if the great-move of chess-lesson <= 0:
+			say "You notice a move that looks absolutely brilliant! It seems sure to net you a huge advantage.";
+		otherwise if the chess-turn of chess-lesson is 0:
+			if the great-move of chess-lesson > 900 and the great-move of chess-lesson < 990:
+				say "You are confident there's no particularly amazing move available for you to take this turn.";
+			otherwise:
+				say "If there is a significantly advantageous move for you to make, you haven't seen it yet.";
+	decrease the student-safe-move of chess-lesson by a random number between 1 and STI;
+	decrease the student-trapping-move of chess-lesson by a random number between 1 and STI;
+	decrease the student-great-move of chess-lesson by a random number between 1 and STI.
 
 To compute student chess soiling:
 	increase the student-diaper of chess-lesson by the student-rectum of chess-lesson;
@@ -686,7 +753,7 @@ To compute chess messing:
 
 To compute chess urination:
 	let D be a random worn diaper;
-	say "You [if delayed urination is 1]involuntarily [end if]release your hold on your bladder, soaking your padding with [if the urine-soak of D > 0]even more [end if][urine].";
+	say "You [if delayed urination is 1]involuntarily [end if]release your hold on your bladder, soaking your padding with [if the urine-soak of D > 0]even more [end if][urine], right in front of the entire school body. [strongHumiliateReflect]";
 	UrineSoakUp D by the bladder of the player;
 	now the bladder of the player is 0;
 	if the diaper addiction of the player > 14 and the player is able to get horny:
@@ -778,32 +845,19 @@ To compute chess move input:
 		otherwise:
 			say "You make an aggressive move, [one of]hoping that there's nothing obvious you've missed[or]hoping that you haven't made a mistake[or]hoping to bring the game closer to its conclusion[in random order].";
 		reset chess player planning;
-		decrease the chess-boredom of headmistress by 1;
 	otherwise if chess-move matches the text "defensive":
 		now chess-move-choice is 12;
 		now aggression of chess-lesson is 0;
 		say "You make a defensive move, [one of]trying to make sure that you don't accidentally give the opponent an advantage[or]uncertain that there wasn't a better move you could have found[or]hoping to stall the game for longer[in random order].";
-		reset chess player planning;
-		if headmistress is alive:
-			increase the chess-boredom of headmistress by 1;
-			if the player is able to get horny and refractoryperiod <= 0 and chess-boredom of headmistress > a random number between 2 and 7:
-				say "[speech style of headmistress]'Booooring!'[roman type][line break][BigNameDesc of headmistress] cups both hands over [his of headmistress] mouth as [he of headmistress] yells to further amplify [his of headmistress] voice.[line break][speech style of headmistress]'[one of]I want to see more action! Here, this should help you get excited[or]Clearly you still need more encouragement[stopping]...'[roman type][line break][big he of headmistress] waves [his of headmistress] hands at you and you feel your body heating up and becoming sexually aroused. You can feel the blood pumping through your veins and your breathing becomes rushed and heavy.";
-				arouse 6000;
-				now the chess-boredom of headmistress is 1;
 	otherwise if chess-move matches the text "safe":
 		now chess-move-choice is 13;
 		now aggression of chess-lesson is 0;
 		say "You make a clever safe move, resetting the state of the board and ensuring that your opponent can't find any cracks in your defence.";
-		now safe-move of chess-lesson is 999; [Prevents the line about move no longer being possible]
 		reset chess planning;
-		now student-great-move of chess-lesson is 999;
-		now student-trapping-move of chess-lesson is 999;
-		increase the chess-boredom of headmistress by 1;
 	otherwise if chess-move matches the text "trapping":
 		now chess-move-choice is 14;
 		now aggression of chess-lesson is a random number between 0 and 1;
 		say "You make an innocent looking move, which makes it look like you've made a mistake but would actually allow you to come out ahead if your opponent takes the bait.";
-		now trapping-move of chess-lesson is 999; [Prevents the line about move no longer being possible]
 		reset chess planning;
 		now student-great-move of chess-lesson is a random number between 1 and 8;
 		now trapping-move of chess-lesson is 9999; [This is how we flag that trapping is active]
@@ -821,9 +875,7 @@ To compute chess move input:
 			increase lost-pieces of chess-lesson by R;
 			increase student-lost-pieces of chess-lesson by R + 2;
 		now student-trapping-move of chess-lesson is 999; [prevents line about discovering the trap / move no longer possible]
-		now great-move of chess-lesson is 999; [prevents line about move no longer possible]
 		reset chess planning;
-		now student-great-move of chess-lesson is 999;
 	otherwise:
 		say "Bug! I didn't understand that. Please report this bug.";
 		now chess-move-choice is -1.
@@ -881,14 +933,12 @@ To compute chess win reward:
 	if headmistress is alive, now M is headmistress;
 	dislodge chess table;
 	now the chess-victor of chess-lesson is 1;
-	allocate 60 seconds;
 	now the stomach-water of the player is 5;
 	let ST be the chess-opponent of chess-lesson;
 	say "[speech style of M]'And now, it's punishment time! Hehehe... Go on darlings, take these Sharpies. It's time to get creative!'[roman type][line break]The rest of the student body advances on the stage, permanent markers in hand. Soon [NameDesc of ST] is surrounded by them, and two students hold [his of ST] hands as the rest cover [his of ST] mostly-naked body in humiliating phrases.";
 	destroy ST;
 	update students; [an important line which makes boring old students disappear and new cool ones appear]
-	if diaper messing < 3, appropriate-cutscene-display figure of chess cutscene 3 with priority 3;
-	otherwise appropriate-cutscene-display figure of chess cutscene 4 with priority 3;
+	appropriate-cutscene-display chess-table-image with priority 3;
 	now chess piece is carried by the player;
 	say "[BigNameDesc of M] speaks again.[line break][speech style of M]'Now, let's allow [student-name of ST] to sit and... [']stew['] on [his of ST] failings! Nobody is allowed to release [him of ST], understand? Okay, assembly is over!'[roman type][line break]The students and staff begin to disperse, leaving nothing to prove that the event even happened except the [chess piece] in your hand and the poor girl still locked in [his of ST] chair on the stage.";
 	repeat with X running through monsters in the location of the player:
@@ -902,7 +952,6 @@ To compute chess win reward:
 
 To compute chess loss punishment:
 	now the chess-victor of chess-lesson is 2;
-	allocate 60 seconds;
 	now the stomach-water of the player is 5;
 	let ST be the chess-opponent of chess-lesson;
 	let M be the lesson-teacher of chess-lesson;
@@ -931,8 +980,6 @@ To compute chess loss punishment:
 	now nurse is in School11;
 	now receptionist is in School01;
 	now headmistress is in School08;
-	if diaper messing < 3, appropriate-cutscene-display figure of chess cutscene 3 with priority 3;
-	otherwise appropriate-cutscene-display figure of chess cutscene 4 with priority 3;
 	now temporaryYesNoBackground is figure of small image.
 
 An all time based rule (this is the chess table taunting rule):
@@ -954,6 +1001,7 @@ An all time based rule (this is the chess table taunting rule):
 			display entire map;
 		otherwise:
 			compute chess loss taunting of M;
+		focus-consider M;
 		compute mandatory room leaving of M;
 		regionally place M.
 
@@ -1009,7 +1057,7 @@ To compute teaching of (L - enema-race-lesson):
 	now the student-diaper-state of S2 is 1;
 	say "[YouDesc of S1] and [NameDesc of S2] are given very bulky white diapers to wear giving [if S1 is the player]you[otherwise]them[end if] each a bit of a waddle. Not really the ideal type of clothing for sprinting. [if S1 is the player]You[otherwise]They[end if] are both made to bend over and enema kits are used to slowly but surely fill [if S1 is the player]your[otherwise]their[end if] bellies. [if S1 is the player]Your[otherwise]Their[end if] bellies start to visibly expand until [if S1 is the player]you[otherwise]they[end if] both look nine months pregnant.";
 	say "[one of]While the enemas are going in, [NameDesc of M] gives a briefing.[line break][speech style of M]'The rules are simple. You both keep running until you BOTH have expelled your enemas. The race ends 15 seconds after that and whoever is in front wins.'[roman type][line break][or][stopping][if S1 is the player]You[otherwise][NameDesc of S1][end if] and [NameDesc of S2] are led to the starting line and then with a bang the race begins.";
-	now bigGameLoop is 2; [tells the game not to refresh any windows]
+	now bigGameLoop is 3; [tells the game not to refresh any windows]
 	if S1 is the player:
 		let silentMess be 0; [If this is 1 the player is unaware that the other racer has messed]
 		let D1 be 0; [Player's distance in front of opponent]
@@ -1200,8 +1248,10 @@ To compute teaching of (L - dodgeball-lesson):
 		let K be a random worn knickers;
 		if K is diaper-stack:
 			only destroy K;
-		otherwise:
+		otherwise if K is knickers:
 			now K is in the location of the player;
+		let T be a random worn trousers;
+		if T is trousers, now T is in the location of the player;
 		summon D;
 	fully clean D;
 	force immediate clothing-focus redraw;
@@ -1560,7 +1610,7 @@ To execute (E - ultimate-lesson-yes):
 	say "[second custom style]A good [boy of the player] should always say yes! When 'yes' is the option that a good obedient baby would make, I will never choose no![roman type][line break]A large white rune shaped a bit like a 'Y' approaches your forehead and begins to settle...".
 
 To compute teaching of (L - ultimate-lesson):
-	now bigGameLoop is 2; [tells the game not to refresh any windows]
+	now bigGameLoop is 3; [tells the game not to refresh any windows]
 	let M be the lesson-teacher of L;
 	let LST be the list of students in the location of M;
 	say "[BigNameDesc of M] guides you [if the number of entries in LST is 1]and [student-name of entry 1 of LST] [otherwise if the number of entries in LST > 1]all [end if]to kneel down[if the number of entries in LST > 0] in a circle[end if]. With a flourish of [his of M] arms, [NameDesc of M] fills the room with countless floating magic runes, in an unknown language, all glowing a brilliant white.[line break][speech style of M]'Try to think of this as less of a lesson and more of an initiation into our inner circle. All you have to do is remain still and allow me to conduct the [']celebrations['][if the number of entries in LST > 0]. If any of you get up and try to leave, you ALL fail[end if].'[roman type][line break]";

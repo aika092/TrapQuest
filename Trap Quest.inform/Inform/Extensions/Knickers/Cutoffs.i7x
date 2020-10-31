@@ -3,7 +3,9 @@ Cutoffs by Knickers begins here.
 cutoffs is a kind of knickers. cutoffs is usually denim. cutoffs is usually totally-exclusive. The armour of cutoffs is 7. Understand "pair", "of" as cutoffs.
 
 Definition: a cutoffs is blue themed: decide yes.
-Definition: a cutoffs is rippable: decide yes.
+Definition: a cutoffs is rippable:
+	if it is destructible, decide yes;
+	decide no.
 
 To compute SelfExamineDesc of (K - a cutoffs):
 	say "A pair of tiny tiny denim cutoffs fails to provide much dignity to your [ShortDesc of hips]. ";

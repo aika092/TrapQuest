@@ -103,6 +103,7 @@ To lube up (O - an orifice) with (L - a lubricant):
 	now the timer of the noun is a random number between 300 and 600;
 	compute player submission;
 	say "You discard the empty bottle of [lubricant].";
+	check stealing of L;
 	remove L from play.
 
 An all time based rule (this is the lubricant drying rule):
@@ -121,12 +122,14 @@ An all time based rule (this is the lubricant drying rule):
 
 To restock (C - a lubricant):
 	let B be a random off-stage lubricant;
-	if B is lubricant, now B is in Standard Item Pen.
+	if B is lubricant:
+		repeat with L running through Standard Item Pen:
+			if L is lubricant, remove L from Standard Item Pen;
+		add B to Standard Item Pen.
 
 This is the setup starting lubricants rule:
 	let C be a random lubricant;
-	repeat with N running from 1 to 3:
-		restock C.
+	restock C.
 The setup starting lubricants rule is listed in the setup starting items rules.
 
 To decide which number is the bartering value of (T - a lubricant) for (M - a wench):
@@ -144,12 +147,11 @@ This is the lube not appropriate in diaper quest rule:
 		now C is in Holding Pen.
 The lube not appropriate in diaper quest rule is listed in the diaper quest fix rules.
 
-To destroy (C - a lubricant):
+To uniquely destroy (C - a lubricant):
+	check stealing of C;
 	now C is not covering asshole;
 	now C is not covering vagina;
 	now C is not covering face;
-	now the timer of C is 0;
-	now C is unowned;
-	remove C from play.
+	now the timer of C is 0.
 
 Lubricant ends here.

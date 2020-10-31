@@ -8,7 +8,7 @@ New version removes mental stats
 [To say StatusDesc:
 	say "[WeightDesc][if there are worn heels or the heel skill of the player > 1][HeelSkillDesc][end if][HumiliationDesc][DelicatenessDesc][if the sex addiction of the player > 1][SexAddictionDesc][end if][if the soul addiction of the player > 1][SoulAddictionDesc][end if][EarningsDesc][ChildrenDesc]".]
 To say StatusDesc:
-	say "[WeightDesc][if there are worn heels or the heel skill of the player > 1][HeelSkillDesc][end if][if the soul addiction of the player > 1][SoulAddictionDesc][end if][EarningsDesc][SexStatsDesc][ChildrenDesc]".
+	say "[WeightDesc][if there are worn heels or the heel skill of the player > 1][HeelSkillDesc][end if][if the soul addiction of the player > 1 and the class of the player is succubus][SoulAddictionDesc][end if][EarningsDesc][SexStatsDesc][ChildrenDesc]".
 
 To say WeightDesc:
 	let W be the weight of the player;
@@ -31,15 +31,24 @@ To say WeightDesc:
 	say InventoryWeightDesc.
 
 To say SoulAddictionDesc:
+	let C be cold souly / cold souly limit;
 	let S be the soul addiction of the player;
-	if S > 8:
-		say "[if the souls of the player > the soul addiction of the player]Even though you feel almost bloated with souls, it barely takes the edge off your hunger.[otherwise]You feel a terrible hollow ache and know the only thing that can cure it is to consume more souls.[end if]";
-	otherwise if S > 5:
-		say "[if the souls of the player > the soul addiction of the player]You feel quite a few souls within you, but still somehow are not entirely satisfied.[otherwise]You feel a throbbing ache and something inside you calls out for more souls.[end if]";
-	otherwise if S > 2:
-		say "[if the souls of the player > the soul addiction of the player]You feel a warm glow from the souls you have consumed.[otherwise]You feel a dull ache. Maybe you need more souls?[end if]";
+	if the player is craving souls:
+		if C < 3:
+			say "You feel a dull, aching void inside you that can only be filled with more souls!";
+		otherwise if C < 5:
+			say "You feel an awful, aching void inside you that can only be filled with more souls!";
+		otherwise:
+			say "You feel a terrible, throbbing void inside you that can only be filled with more souls!";
 	otherwise:
-		say "[if the souls of the player > the soul addiction of the player]You feel slightly warm. The absence of your own soul highlights how much better things feel with one inside you.[otherwise]You feel empty again, perhaps you should take another soul.[end if]".
+		if S > 8:
+			say "No matter how many souls you consume, it barely takes the edge off the aching hunger inside you. You can't wait for your next feast.";
+		otherwise if S > 5:
+			say "No matter how many souls you consume, you still feel an aching hunger inside you at all times. You only feel better when you're actively sucking a soul from someone's body.";
+		otherwise if S > 2:
+			say "For now, you are satisfied, but a shadow of your hunger for souls always seems to hang over you. No matter how many you consume, you always want more.";
+		otherwise:
+			say "You feel an odd emptiness inside of you that you instinctively sense can only be filled with the souls of others.".
 
 To say EarningsDesc:
 	let E be (10000 - earnings) / 60;
@@ -76,7 +85,11 @@ To LickCount:
 	increase the lick-count of the player by 1.
 
 To BlowCount:
-	increase the blow-count of the player by 1.
+	increase the blow-count of the player by 1;
+	if the oralvirgin of the player is 1 and there is a live virginity taking thing penetrating face:
+		now the oralvirgin of the player is 0;
+		now oralvirginity-taker is a random live virginity taking thing penetrating face;
+		say "[bold type]You just lost your oral virginity![roman type][line break]";
 
 To say SexStatsDesc:
 	if the blow-count of the player > 0:

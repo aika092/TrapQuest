@@ -331,14 +331,11 @@ To finally humiliate (X - a number):
 		now X is 0;
 	let humiliation-restriction be 0;
 	if X > 0, blush X;
-	if the humiliation of the player + X >= 40000:
-		if the player-class is succubus:
-			if abyssal tattoo is worn:
-				now humiliation-restriction is 1;
-				say "[bold type]You feel the jagged black marks on your skin pulse and burn, then tighten around you. It seems like the powers who rule at the elder altar have more use for you, and are unwilling to let the demonic entity in the soulstone take you over quite yet![roman type][line break]";
-			otherwise:
-				say "A sudden pain explodes from the stone in your chest! It sears through your mind and pushes all thought from it! Before you can recover, you feel a wave of pleasure surge through you. Everything feels so floaty and warm... You hear the voice in your mind say[line break][variable custom style]'Yes, that's it, just let it all go...'[roman type][line break]and you surrender to the euphoria and stop trying to think at all. As your awareness begins to fade, you hear your own voice laugh evilly.";
-				end the story finally;
+	if the humiliation of the player + X >= HUMILIATION-BROKEN:
+		if the class of the player is avatar and mindbreak protection is 0: [If the player can't be mindbroken, they can't be fully taken over]
+			say "[one of]Pleasure pierces through your temples as your empty core finally stretches to its breaking point, and your master's presence finally pushes all the way in! You hear the voice of your master, not in your head, but from your own mouth.[line break][first custom style]'Do you FEEL that, [NameBimbo]?! Its been so long since I HILTED a mortal body so thoroughly! Now I just have to give it a pounding!'[roman type][line break]You answer your master's declaration with an insensanate moan, thoughts completely short-circuiting as you struggle to process the pleasure as your master presence shifts out of you and rams straight back in![or]Your thoughts short-circuit as your master 'fucks' the gaping void where your soul used to be, sending another explosion of pleasure through your body![stopping]";
+			if the raw intelligence of the player > 1, IntDown 3;
+			vaginally orgasm shamefully;[will eventually lead to bad-end.]
 		otherwise if there is a worn holy warrior chestpiece:
 			let P be a random plate warrior chestpiece;
 			let H be a random worn holy warrior chestpiece;
@@ -349,12 +346,12 @@ To finally humiliate (X - a number):
 			now humiliation-restriction is 1;
 		otherwise if there is a worn immodest warrior chestpiece or mindbreak protection is 1: [Player can't snap]
 			now humiliation-restriction is 1;
-	if the humiliation of the player < 40000 and humiliation-restriction is 0:
+	if the humiliation of the player < HUMILIATION-BROKEN and humiliation-restriction is 0:
 		while X > 100: [We do this in chunks for the sake of performance.]
 			decrease X by 100;
 			2Humiliate 100;
 		2Humiliate X;
-		if the humiliation of the player >= 40000 and the player-class is not succubus:
+		if the humiliation of the player >= HUMILIATION-BROKEN and the player-class is not avatar:
 			now the raw delicateness of the player is 20;
 			say "[bold type]You feel yourself shivering with a strange sense of adrenaline and pleasure. Your mind has finally snapped, and you no longer can see yourself as anything but an object to be acted upon by others, especially when you are on your knees. You get the feeling that this change in outlook is permanent, [if the bimbo of the player < 11]which makes you both very concerned and even more aroused[otherwise]which just makes you aroused and excited[end if]. From now on when on your knees, you will usually automatically submit to anyone you see[if no-panties-fetish is 1 and diaper quest is 0]. Furthermore you now find the idea of wearing panties disgusting - a worthless fucktoy like yourself should have [his of the player] holes visible and open for business at all times[end if].[roman type][line break]"; [Should only happen once when 40k is hit]
 			if worthless cunt tattoo is drawable and there is a worn tattoo:
@@ -367,17 +364,17 @@ To finally humiliate (X - a number):
 
 To 2Humiliate (X - a number):
 	if the humiliation of the player < 50000, increase the humiliation of the player by X;
-	if the player-class is not succubus:
-		if the humiliation of the player > 8000 and the humiliation of the player < 9000, say "[one of][line break][first custom style]How can I consider myself a dignified person if there are people witnessing me doing these things? I feel so ashamed...[roman type][line break][or][stopping]";
+	if the player-class is not avatar:
+		if the humiliation of the player > HUMILIATION-PROUD and the humiliation of the player < HUMILIATION-PROUD + 1000, say "[one of][line break][first custom style]How can I consider myself a dignified person if there are people witnessing me doing these things? I feel so ashamed...[roman type][line break][or][stopping]";
 		if the humiliation of the player > 16000 and the humiliation of the player < 17000, say "[one of][line break][first custom style]Oh god, what am I doing?[if the player is gendered female][line break]I'm willingly doing everything I would normally stand against![end if][roman type][line break]You can feel the lights in the back of your head slowly shutting down and accepting your inevitable spiral into sexual shame.[or][stopping]";
 		if the humiliation of the player > 24000 and the humiliation of the player < 25000, say "[one of][line break][second custom style]Like, whatever, I guess[roman type][line break]You are getting so used to humiliating yourself that it doesn't affect you as much as it used to. You definitely don't feel like anyone has any reason to respect you any more, but you're not even that bothered by that.[or][stopping]";
 		if the humiliation of the player > 32000 and the humiliation of the player < 33000, say "[one of][line break][second custom style]Things are so much easier when I just accept that I'm worthless.[roman type][line break]You now have barely a shred of self respect or dignity left. You are not far off from being unable to see yourself as anything but an object to be used.[or][stopping]";
-		if newbie tips is 1 and the humiliation of the player > 8000, say "[one of][newbie style]Newbie tip: Your dignity is slowly declining. This isn't the biggest deal - it doesn't actually impact the game that much at first. In fact, right now there are some things that [NameBimbo] will refuse to wear, and by gaining a bit of humiliation you can unlock that restriction. However, if it gets out of hand, you can start to get aroused when you're humiliated further, which can be a quick way for the game to spiral out of control. [if mindbreak protection is 0]If you go even further, you can become 'broken' - this permanent condition is really bad because not only will all humiliation now arouse you, but whenever you end up on your knees, your brain will *click* and you won't be able to do anything to resist enemies until they're done with you.[end if][roman type][line break][or][stopping]";
+		if newbie tips is 1 and the humiliation of the player > HUMILIATION-PROUD, say "[one of][newbie style]Newbie tip: Your dignity is slowly declining. This isn't the biggest deal - it doesn't actually impact the game that much at first. In fact, right now there are some things that [NameBimbo] will refuse to wear, and by gaining a bit of humiliation you can unlock that restriction. However, if it gets out of hand, you can start to get aroused when you're humiliated further, which can be a quick way for the game to spiral out of control. [if mindbreak protection is 0]If you go even further, you can become 'broken' - this permanent condition is really bad because not only will all humiliation now arouse you, but whenever you end up on your knees, your brain will *click* and you won't be able to do anything to resist enemies until they're done with you.[end if][roman type][line break][or][stopping]";
 	otherwise:
-		if the humiliation of the player > 8000 and the humiliation of the player < 9000, say "[one of]You hear a voice in your head![line break][first custom style]'Why hello there... It seems you don't quite get what you are. Start picking up the slack or eventually I'll need to take control...'[roman type] You start to feel a bit light-headed.[line break][or][stopping]";
-		if the humiliation of the player > 16000 and the humiliation of the player < 17000, say "[one of]You hear the voice again![line break][first custom style]'Seriously, what part of this do you not understand? Start acting a proper demon already.'[roman type] For some reason you find [his of a random demoness] voice very persuasive![line break][or][stopping]";
-		if the humiliation of the player > 24000 and the humiliation of the player < 25000, say "[one of]The voice rings out once more![line break][first custom style]'Do you need me to spell this out? If you keep up like this I'm going to erase you. Unless you'd RATHER me take over your body, I suggest you do better. And fast, I'm already getting ready to start emptying you out.'[roman type] Come to mention it, you do feel a bit strange![line break][or][stopping]";
-		if the humiliation of the player > 32000 and the humiliation of the player < 33000, say "[one of]You hear the voice again![line break][first custom style]'Okay, last chance. I've got to build some energy up before I can properly overwrite you, that's how long you have to shape up.'[roman type] You feel the stone begin to heat up![line break][or][stopping]".
+		if the humiliation of the player > HUMILIATION-PROUD and the humiliation of the player < HUMILIATION-PROUD + 1000, say "[one of]You feel a faint pain in your temples as your master seems to shift around inside of you. [big his of shopkeeper] sounds off in your head as you feel [his of shopkeeper] presence slightly expand![line break][first custom style]'Mmf. You've loosened up a little, but you're still so tight, aren't you, [NameBimbo]. I suppose I'll have to humiliate you a little more before we start making any real progress...'[roman type][line break][or][stopping]";
+		if the humiliation of the player > HUMILIATION-MODEST and the humiliation of the player < HUMILIATION-MODEST + 1000, say "[one of]You feel a sharp pain in your temples as your core once again begins to stretch. Your master's [if lady fetish is 1]husky[otherwise]deep[end if] voice booms in your head as [his of shopkeeper] presence increases sharply![line break][first custom style]'You're finally starting to loosen up, but we're still only halfway there. Just keep degrading yourself just like that, [NameBimbo]...'[roman type][line break][or][stopping]";
+		if the humiliation of the player > HUMILIATION-DISGRACED and the humiliation of the player < HUMILIATION-DISGRACED + 1000, say "[one of]You feel a splitting pain in your temples as the stretching sensation returns, intensifying more rapidly than ever before! Your master's [if lady fetish is 1]husky[otherwise]deep[end if] voice booms in your head as more and more of [his of shopkeeper] presence forces its way into your empty core.[line break][first custom style]We're past the halfway point, but there's still so much to go. Debase yourself more, [NameBimbo]. Soon you'll be able to take all of me...[roman type][line break][or][stopping]";
+		if the humiliation of the player > HUMILIATION-SHAMELESS and the humiliation of the player < HUMILIATION-SHAMELESS + 1000, say "[one of]You once again feel a splitting pain in your temples, but this time, the intense stretching sensation is accompanied by an odd feeling of pleasure. You can't help but moan as the enormous *girth* of your master's presence rushes into you anew, and [his of shopkeeper] powerful voice echoes inside your head.[line break][first custom style]'That's right, [NameBimbo]! Take. It. All! Ooh, just a little bit more. Just a little more more space, and you'll take it all. We're so close...'[roman type][line break][or][stopping]".
 
 blush factor is a number that varies.
 
@@ -394,7 +391,7 @@ To blush (X - a number):
 
 Unlike numbers plugged into the humiliation function, these numbers are mostly raw. This means that dignity gains
 are more significant the higher the player's humiliation, and less significant the lower it gets. Note that the player
-cannot lose dignity once their humiliation score passes above 40000, or HUMILIATION-BROKEN
+cannot lose dignity once their humiliation score passes above the value described by HUMILIATION-BROKEN (40000)
 
 +!]
 To Dignify (X - a number):

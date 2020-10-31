@@ -326,8 +326,6 @@ Part 4 - Yellow Baby Romper
 
 A yellow baby romper is a kind of romper. There is 1 transformation-rare yellow baby romper. A yellow baby romper is top-exclusive. The text-shortcut of yellow baby romper is "ybr". The printed name of yellow baby romper is usually "[clothing-title-before]yellow baby romper[clothing-title-after]".
 
-Definition: a yellow baby romper is yellow themed: [Is it significantly yellow?]
-	decide yes.
 
 Figure of yellow baby romper is the file "Items/Clothes/Upper/Rompers/romper4.png".
 
@@ -351,6 +349,36 @@ To decide which number is the initial cringe of (C - a yellow baby romper):
 
 Definition: a yellow baby romper is end of transformation chain: decide yes.
 Definition: a yellow baby romper is babywear: decide yes.
+Definition: a yellow baby romper is yellow themed: decide yes.
+
+Part 5 - Pink Hooded Romper
+
+[this item only appears in a predicament, then disappears again]
+pink-hooded-romper is a bodysuit. pink-hooded-romper is unique. pink-hooded-romper is only arm covering. The text-shortcut of pink-hooded-romper is "phr". The printed name of pink-hooded-romper is "[clothing-title-before]pink hooded romper[clothing-title-after]". Understand "pink", "hooded", "romper" as pink-hooded-romper.
+
+Figure of pink-hooded-romper is the file "Items/Clothes/Upper/Rompers/romper7.png".
+
+To decide which figure-name is clothing-image of (C - pink-hooded-romper):
+	decide on figure of pink-hooded-romper.
+
+To say ClothingDesc of (C - pink-hooded-romper):
+	say "This pink romper suit has long sleeves, furry wrists and legholes, and a furry hood.".
+
+To say ShortDesc of (C - pink-hooded-romper):
+	say "pink romper".
+To say MediumDesc of (C - pink-hooded-romper):
+	say "pink hooded romper".
+
+To decide which number is the initial outrage of (C - pink-hooded-romper):
+	if diaper quest is 0, decide on the initial cringe of C;
+	decide on 2.
+
+To decide which number is the initial cringe of (C - pink-hooded-romper):
+	decide on 6.
+
+Definition: pink-hooded-romper is fetish appropriate: decide no.
+Definition: pink-hooded-romper is baby themed: decide yes.
+Definition: pink-hooded-romper is pink themed: decide yes.
 
 Part - Plaid Skimpy Romper
 
@@ -488,7 +516,7 @@ Definition: superheroine outfit is displacable: decide no.
 
 Volume - Catsuit
 
-A catsuit is a kind of jumpsuit. A catsuit is usually latex. A catsuit is usually transformation-rare. A catsuit is usually manly. A catsuit is usually crotch-exposing. The printed name of catsuit is usually "[clothing-title-before]latex catsuit[clothing-title-after]". The text-shortcut of catsuit is "cst". Understand "cat", "suit" as catsuit.
+A catsuit is a kind of jumpsuit. A catsuit is usually latex. A catsuit is usually transformation-rare. A catsuit is usually manly. A catsuit is usually crotch-exposing. The printed name of catsuit is usually "[clothing-title-before]latex catsuit[clothing-title-after]". The text-shortcut of catsuit is "cst". Understand "cat", "suit" as catsuit. A catsuit is usually unzippable.
 
 To say ShortDesc of (C - a catsuit):
 	say "catsuit".
@@ -530,7 +558,7 @@ To reflect on (A - outrageous-catsuit):
 
 Part 1 - Pink Catsuit
 
-A pink catsuit is a kind of catsuit. A pink catsuit is very low cut. A pink catsuit is womanly. A pink catsuit is crotch-intact. A pink catsuit is plentiful. There is 1 pink catsuit. A pink catsuit is usually optional-top-displacable. The printed name of pink catsuit is usually "[clothing-title-before]pink latex catsuit[clothing-title-after]". The text-shortcut of pink catsuit is "pcs".
+A pink catsuit is a kind of catsuit. A pink catsuit is very low cut. A pink catsuit is womanly. A pink catsuit is crotch-intact. A pink catsuit is plentiful. There is 1 pink catsuit. A pink catsuit is usually optional-top-displacable. The printed name of pink catsuit is usually "[clothing-title-before]pink latex catsuit[clothing-title-after]". The text-shortcut of pink catsuit is "pcs". A pink catsuit is zippable.
 
 Definition: a pink catsuit is pink themed: decide yes.
 
@@ -571,9 +599,10 @@ To decide which number is the initial outrage of (C - a black catsuit):
 
 Report wearing latex clothing:
 	repeat with B running through worn cursed latex clothing:
-		if the noun is black catsuit or B is black catsuit: [cursed latex clothing sticks to each other if at least one is a catsuit]
+		if the noun is black catsuit or B is black catsuit: [cursed latex clothing sticks to each other if at least one is a black catsuit]
 			if the noun is not B:
-				say "Your [printed name of B] seem to melt into your [printed name of the noun] to form one item of clothing... uh-oh.";
+				if the noun is pasties, say "Your [printed name of B] shivers, and thin strands of plastic shoot out of its edges in all four directions, connecting it to the catsuit.";
+				otherwise say "Your [printed name of B] seem to melt into your [printed name of the noun] to form one item of clothing... uh-oh.";
 				fully curse the noun;
 				fully curse B.
 

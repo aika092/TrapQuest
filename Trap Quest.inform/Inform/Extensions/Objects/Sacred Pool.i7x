@@ -168,7 +168,6 @@ To poolpurify (N - a number):
 Deep end:
 	Token (uncommon)
 	Jewellery (rare)
-
 	ectoplasm(depends on corruption level)
 
 ]

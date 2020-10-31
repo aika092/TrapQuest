@@ -88,7 +88,7 @@ Definition: a crotchless-panties is walking-stimulating: decide no.
 Definition: crotch chain is walking-stimulating: decide yes.
 Definition: pearl crotchless-panties is walking-stimulating: decide yes.
 
-Report going when the player is female and the player is upright and there is worn walking-stimulating crotchless-panties:
+Report going when the player is possessing a vagina and the player is upright and there is worn walking-stimulating crotchless-panties:
 	let C be a random worn walking-stimulating crotchless-panties;
 	increase the walkCharge of C by 1;
 	if the walkCharge of C > 10:

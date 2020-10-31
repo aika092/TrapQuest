@@ -54,20 +54,8 @@ This is the player can't slap while ballet strutting rule:
 		rule fails.
 The player can't slap while ballet strutting rule is listed in the ability to slap rules.
 
-A bat corset is a kind of corset. A bat corset is usually leather. A bat corset is rare. A bat corset is usually normally-nipple-covering. There is 1 bat corset. A bat corset is usually very low cut.
-
+A bat corset is a kind of corset. A bat corset is usually leather. A bat corset is unique. A bat corset is usually normally-nipple-covering. A bat corset is usually very low cut. Understand "bat", "corset" as a bat corset.
 Definition: a bat corset is fluid immune: decide yes.
-Definition: a bat corset is black themed: decide yes.
-
-The printed name of bat corset is usually "[clothing-title-before]bat corset[clothing-title-after]". The text-shortcut of bat corset is "bco".
-
-Figure of Bat Corset is the file "Items/Clothes/Upper/Corsets/batcorset1.png".
-
-To decide which figure-name is clothing-image of (C - a bat corset):
-	decide on figure of bat corset.
-
-To say ClothingDesc of (C - a bat corset):
-	say "A stylish black overbust corset in the shape of a bat. You can feel powerful magic flowing from it.".
 
 To decide which number is the dexterity-influence of (C - a bat corset):
 	let D be 1;
@@ -87,16 +75,68 @@ To decide which number is the intelligence-influence of (C - a bat corset):
 To uniquely set up (C - a bat corset):
 	do nothing. [It never gets a magic enhancement, unlike other corsets]
 
-Definition: a bat corset is transformation-protected: decide yes.
-
 To decide what number is the price of (C - a bat corset):
 	decide on 7.
 
-To decide which number is the initial outrage of (C - a bat corset):
-	decide on 4.
-
 To say ShortDesc of (C - a bat corset):
 	say "bat corset".
+
+bat-shape-corset is a bat corset. bat-shape-corset is rare. The printed name of bat-shape-corset is "[clothing-title-before]bat corset[clothing-title-after]". The text-shortcut of bat corset is "bco".
+Definition: bat-shape-corset is black themed: decide yes.
+
+To decide which number is the initial outrage of (C - bat-shape-corset):
+	decide on 4.
+
+Figure of Bat Corset is the file "Items/Clothes/Upper/Corsets/batcorset1.png".
+To decide which figure-name is clothing-image of (C - bat-shape-corset):
+	decide on figure of bat corset.
+
+To say ClothingDesc of (C - bat-shape-corset):
+	say "A stylish black overbust corset in the shape of a bat. You can feel powerful magic flowing from it.".
+
+To decide which object is the unique-upgrade-target of (C - bat-shape-corset):
+	if diaper quest is 1, decide on bat-pattern-corset;
+	decide on slutty-bat-corset.
+
+
+bat-pattern-corset is a bat corset. bat-pattern-corset is high cut. The printed name of bat-pattern-corset is "[clothing-title-before]bat pattern corset[clothing-title-after]". The text-shortcut of bat-pattern-corset is "bpco". Understand "pattern" as bat-pattern-corset.
+Definition: bat-pattern-corset is grey themed: decide yes.
+
+To decide which number is the initial outrage of (C - bat-pattern-corset):
+	decide on 2.
+To decide which number is the initial cringe of (C - bat-pattern-corset):
+	decide on 4.
+
+Figure of Bat Pattern Corset is the file "Items/Clothes/Upper/Corsets/batcorset2.png".
+To decide which figure-name is clothing-image of (C - bat-pattern-corset):
+	decide on figure of bat pattern corset.
+
+Definition: bat-pattern-corset is transformation-protected:
+	if diaper quest is 1, decide yes;
+	decide no.
+
+To decide which object is the unique-upgrade-target of (C - bat-pattern-corset):
+	decide on slutty-bat-corset.
+
+To say ClothingDesc of (C - bat-pattern-corset):
+	say "A cute grey overbust corset with a spooky pattern of bats, ghosts and candy on it. You can feel powerful magic flowing from it.".
+
+
+slutty-bat-corset is a bat corset. slutty-bat-corset is ridiculously low cut. slutty-bat-corset is top-exclusive. The printed name of slutty-bat-corset is "[clothing-title-before]nipple clamp bat corset[clothing-title-after]". The text-shortcut of slutty-bat-corset is "ncbc". Understand "nipple", "clamp" as slutty-bat-corset. slutty-bat-corset is normally-partially-nipple-covering. slutty-bat-corset is optional-top-displacable.
+Definition: slutty-bat-corset is grey themed: decide yes.
+Definition: slutty-bat-corset is not-top-displacable: decide no.
+
+To decide which number is the initial outrage of (C - slutty-bat-corset):
+	decide on 6.
+
+Figure of Slutty Bat Corset is the file "Items/Clothes/Upper/Corsets/batcorset3.png".
+To decide which figure-name is clothing-image of (C - slutty-bat-corset):
+	decide on figure of slutty bat corset.
+
+Definition: slutty-bat-corset is transformation-protected: decide yes.
+
+To say ClothingDesc of (C - slutty-bat-corset):
+	say "A cute grey underbust corset with a spooky pattern of bats, ghosts and candy on it. It has bat wings at the back and nipple clamps in the shape of small bats that come up via chains to semi-cover your nipples. You can feel powerful magic flowing from it.".
 
 A fetish corset is a kind of corset. A fetish corset is usually latex. A fetish corset is usually top-exclusive. A fetish corset is usually sheer. There is 1 transformation-rare fetish corset.
 

@@ -32,8 +32,8 @@ Definition: a tiara (called C) is removal-blocking: [Some items (mainly headgear
 To compute virginity-loss of (C - a tiara):
 	if the quest of C is virginity-retention-quest:
 		say "In an instant, false memories of being captured and sold into slavery fill your mind. Looking down at yourself again, you realise they are more real than you realised: you are now wearing the bondage that matches your memory: the bondage of a captured warrior princess repurposed as a sex slave for a cruel noble from the conquering nation.";
-		summon slave-garb locked.
-
+		summon slave-garb locked;
+		now the quest of C is unlock-quest.
 
 
 tiara-summoned is a number that varies.
@@ -44,17 +44,8 @@ To compute class outfit of (H - a tiara):
 	let R be a random off-stage ballgown royal dress;
 	if diaper quest is 0, now R is a random off-stage lolita royal dress;
 	if diaper quest is 1 or R is nothing, now R is a random off-stage fetish appropriate short or longer royal dress;
-	if R is actually summonable or (R is royal dress and tiara-summoned is 0 and the number of worn royal dress is 0 and (the number of worn warrior chestpiece is 0 or the quest of H is not virginity-retention-quest)):
-		if tiara-summoned is 0:
-			repeat with O running through worn dresses:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn exclusive corsets:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn skirt clashing clothing:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
+	if R is actually summonable or (R is royal dress and tiara-summoned is 0 and the number of worn royal dress is 0 and (the number of worn warrior chestpiece is 0 or the quest of H is not virginity-retention-quest) and (the quest of H is not unlock-quest or the number of worn locked clothing is 0)):
+		PinkWardrobeUnclash R;
 		say "[bold type]Your tiara shines brightly, and a [if R is baby royal dress]childish[otherwise]silky[end if] pink dress materialises around you.[roman type][line break]";
 		summon R uncursed;
 		now tiara-summoned is 1;
@@ -65,6 +56,7 @@ Chapter - Quest
 
 betrothal-quest is a headgear-clothing-quest.
 stealth-diaper-quest is a headgear-clothing-quest.
+unlock-quest is a headgear-clothing-quest.
 
 To uniquely set up (C - a tiara):
 	if diaper quest is 1, now the quest of C is stealth-diaper-quest;
@@ -75,5 +67,27 @@ To say QuestFlav of (Q - betrothal-quest):
 
 To say QuestTitle of (Q - betrothal-quest):
 	say " (betrothal quest)".
+
+To say QuestFlav of (Q - unlock-quest):
+	say "You sense it wants you to escape from your bondage.".
+
+To say QuestTitle of (Q - unlock-quest):
+	say " (bondage escape quest)".
+
+To compute generic first time class reward of (Q - unlock-quest) on (C - a clothing):
+	let D be a random off-stage ring;
+	if D is ring:
+		now D is sapphire;
+		set shortcut of D;
+		if D is actually summonable:
+			summon D;
+		otherwise:
+			now D is in the location of the player;
+		say "summoning a [MediumDesc of D] [if D is worn]straight onto your finger[otherwise]right in front of you[end if]!";
+	otherwise:
+		compute generic second time class reward of Q on C.
+
+To compute unique periodic effect of (H - a tiara):
+	if the quest of H is unlock-quest and H is cursed and the number of worn locked clothing is 0, progress quest of unlock-quest.
 
 Tiara ends here.

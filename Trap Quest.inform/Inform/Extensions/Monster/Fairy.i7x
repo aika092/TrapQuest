@@ -66,6 +66,9 @@ To set up (M - a fairy):
 	reset M;
 	now the monstersetup of M is 1;
 	add pink-hair to the taxableItems of M, if absent;
+	if pregnancy fetish is 1:
+		let T be a random birth control for sissies T-shirt;
+		add T to the tradableItems of M, if absent;
 	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M.
 
@@ -192,11 +195,11 @@ To compute (M - a fairy) protecting against (X - a monster):
 	if the player is at least partially monster stuck:
 		say "[one of][or][or][BigNameDesc of M] giggles, seemingly very entertained.[or][or][cycling]";
 	otherwise if X is not fairy and the pregnancy of the player > 0 and the pregnancy of the player < 3:
-		compute X receiving 2 damage from M;
+		compute M default protecting against X;
 	otherwise if X is fairy:
 		say "[one of][BigNameDesc of M] giggles, seemingly very entertained.[or][or][cycling]";
 	otherwise if M is guardian:
-		compute X receiving 2 damage from M;
+		compute M default protecting against X;
 	otherwise:
 		say "[speech style of M]'Well it's been fun, but I better buzz off!'[roman type][line break][BigNameDesc of M] flies off at the first sign of trouble.";
 		distract M;
@@ -610,10 +613,7 @@ To compute failed damage of (M - a fairy):
 	anger M.
 
 To compute loot dropping of (P - pink-hair) by (M - a fairy):
-	say "[speech style of M]'You want some of my special hair, don't you?'[roman type][line break]";
-	say "[BigNameDesc of M] winces as [he of M] pulls out a small clump of [his of M] [P].[line break][speech style of M]'That hurt!'[roman type][line break]";
-	now P is in the location of the player;
-	compute autotaking P.
+	say "[speech style of M]'You want some of my special hair, don't you?'[roman type][line break][BigNameDesc of M] winces as [he of M] pulls out a small clump of [his of M] [P].[line break][speech style of M]'That hurt!'[roman type][line break]".
 
 To say BanishForceFlav of (M - a fairy):
 	say "You grab [NameDesc of M] by the hair.[line break][if the player is able to speak][variable custom style]'Begone, little minx.'[roman type][line break][end if]You give [him of M] a painful flick on the rear at the same time as you release [his of M] hair, which sends [him of M] squealing and spiralling into the sky.";
@@ -636,16 +636,21 @@ To say damage-flavour of (N - a number) on (M - a fairy):
 
 Part 4 - Conversation
 
+To say RewardFlav of (M - a fairy) for (T - a thing):
+	say "[speech style of M]'A gift from a fairy is a rare thing, you know.'[roman type][line break]A [T] appears on the ground in front of you.".
+
+To say OfferFriendshipFlav of (M - a fairy):
+	say "".
+
 Section 1 - Greeting
 
 [Fairies use a custom to greet function, since their perception works differently than it does for most monsters, but while we're here, we can use the default functions for special pregnancy themed stuff]
-[To compute basic greeting to (M - a fairy):
-	if the greet-window of M < 1 or M is uninterested:
-		compute vanity greeting of M;
-	otherwise:
-		compute conventional greeting of M;
-	if M is uninterested:
-		now M is interested.]
+To compute basic greeting to (M - a fairy):
+	if M is interested and the greet-window of M > 0:
+		compute conventional response of M;
+	otherwise if M is interested:
+		compute vanity response of M;
+	if M is uninterested, now M is interested.
 
 To say FirstResponse of (M - a fairy):
 	say "[speech style of M]'[one of]Hi there!'[or]Hello!'[or]Hi hi!'[or]Hello hello hello!'[or]Hiya!'[or]Nice to meet you!'[or]Hello!'[at random][roman type][line break]";
@@ -718,8 +723,8 @@ To say TauntRejected of (M - a fairy):
 Section 2 - Questioning
 
 To say TeachQuestion of (M - a fairy):
-	if bellyskill is 1 and the pregnancy of the player is 1, say "[variable custom style]'Can you teach me anything useful?'[roman type][line break]";
-	otherwise say "[variable custom style]'[one of]Do you have any idea who the father is?'[or]Hey, can you tell me who the father is, by any chance?'[or]Can you tell me what's growing inside me?'[at random][roman type] You gesture at your [BellyDesc].".
+	if bellyskill is 1 and the pregnancy of the player is 1, say "[variable custom style]'[one of]Do you have any idea who the father is?'[or]Hey, can you tell me who the father is, by any chance?'[or]Can you tell me what's growing inside me?'[at random][roman type] You gesture at your [BellyDesc].";
+	otherwise say "[variable custom style]'Can you teach me anything useful?'[roman type][line break]".
 
 To compute teaching of (M - a fairy):
 	if bellyskill is 1 and the pregnancy of the player is 1:
@@ -762,13 +767,13 @@ To say PregnancyAssessment of (M - fairy-witch):
 	if M is the father:
 		say "[speech style of M]'It's definitely mine, heehee!'[roman type]";
 		alwayscutshow figure of fairy interact 7 for M;
-	otherwise if the father is tentacle monster or the father is lake monster or the father is vines or the father is living belt of sturdiness or the father is sex doll:
+	otherwise if the father is tentacle monster or the father is lake monster or the father is vines or the father is living belt of sturdiness or the father is sex doll or the father is deep one:
 		say "[speech style of M]'Well, the daddy definitely isn't a human. Does that help?'[roman type]";
 		alwayscutshow figure of fairy interact 7 for M;
 	otherwise if the father is a creampie pole trap:
 		say "[speech style of M]'I don't know, could be anything! How fun!'[roman type]";
 		alwayscutshow figure of fairy interact 7 for M;
-	otherwise if the father is royal guard or the father is gladiator:
+	otherwise if the father is royal guard or the father is gladiator or the father is centaur:
 		say "[speech style of M]'Um, I think the daddy definitely likes weapons. Does that help?'[roman type]";
 		alwayscutshow figure of fairy interact 7 for M;
 	otherwise if the father is unicorn:
@@ -883,7 +888,10 @@ To compute offer reward of (M - a fairy) for (T - a thing):
 			if womb-potion is off-stage:
 				now C is womb-potion;
 				now womb-potion is blessed;
-		unless C is yourself:
+				now womb-potion is sure;
+		if C is yourself:
+			compute standard offer reward of M for T;
+		otherwise:
 			now C is in the location of the player;
 			say "[BigNameDesc of M] hands you a [C].[line break][speech style of M]'Take this. [if C is womb-potion and interracial fetish is 1]If you use it at the right time you will make a certain black [man of shopkeeper] very happy[otherwise if C is womb-potion]If you use it at the right time you will make a certain strong [man of shopkeeper] very happy[otherwise]It's a good one[end if]. Yep yep yep.'[roman type][line break]";
 			compute autotaking C.
@@ -983,7 +991,7 @@ To say AdviceAnswer of (M - fairy-witch):
 	let S be a random on-stage sword;
 	unless S is sword, now S is dildo sword;
 	if diaper quest is 1, say "[speech style of M]'[one of]Wearing heels can help your kicks and make you look more like a grown up, but they sure are difficult to walk in if you're wearing a diaper!'[or]Cumming while in a diaper isn't just humiliating, it's likely to get you addicted to diapers if you do it too much! Which kinda sounds fun, hehe!'[or]Many years ago, the princess used a mystical amulet to seal away a super mean demon's power. [big he of ex-princess] trusted us fairies to take care of it, but we lost it! It's probably around here somewhere, you should go find it, teehee!'[or]All demons are evil, but that means they all share weaknesses to the same types of magic. There are some out there that are impervious to all physical attack, but there's no such thing as impervious to magic. That's cheating!'[in random order][roman type][line break].";
-	otherwise say "[speech style of M]'[one of]Those horny vines you find around here aren't just plants. They're all part of the same forest lord who wants to [if the player is possessing a vagina]do fun stuff to your [pussy][otherwise]do fun stuff with your butthole[end if]! [big he of vine boss] lives underground!'[or][if egg laying fetish is 1 and mythical creature fetish is 1]Wasps won't come inside you, but they sure do love cumming on eggs. If you don't see many wasps around, just leave them some eggs to find!'[otherwise if pregnancy fetish is 1]Be careful around dark magic when you're pregnant. If you're not careful it might reverse it somehow!'[otherwise]Cultivate your relationship with the forest lord! [big he of vine boss]'s friendly to everyone, even mean altar witches with tiny boobs![end if][or]There's a sword here in the woods! It can only be pulled by from the stone by[if S is dildo sword] the true slut of yore![otherwise if S is demon broadsword]... um... whoever turns it on the most, I guess![otherwise if S is gladiator-sword] a warrior with a true woman's heart![otherwise]a powerful virgin warrior! Or was it powerful virgin. I don't really remember, that sword is boring anyway![end if]'[or]Penises like it when you kiss them with your [if the player is possessing a vagina][pussy][otherwise]asshole[end if]! Yeah, it's true![or]There are some elixirs so powerful you'll get pregnant just by drinking them! Make sure you drink everything you find!'[in random order][roman type][line break].";
+	otherwise say "[speech style of M]'[one of]Those horny vines you find around here aren't just plants. They're all part of the same forest lord who wants to [if the player is possessing a vagina]do fun stuff to your [pussy][otherwise]do fun stuff with your butthole[end if]! [big he of vine boss] lives underground!'[or][if egg laying fetish is 1 and mythical creature fetish is 1]Wasps won't come inside you, but they sure do love cumming on eggs. If you don't see many wasps around, just leave them some eggs to find!'[otherwise if pregnancy fetish is 1]Be careful around dark magic when you're pregnant. If you're not careful it might reverse it somehow!'[otherwise]Cultivate your relationship with the forest lord! [big he of vine boss]'s friendly to everyone, even mean altar witches with tiny boobs![end if][or]There's a sword here in the woods! It can only be pulled by from the stone by[if S is dildo sword] the true slut of yore![otherwise if S is demon broadsword]... um... whoever turns it on the most, I guess![otherwise if S is gladiator-sword] a warrior with a true woman's heart![otherwise]a powerful virgin warrior! Or was it powerful virgin. I don't really remember, that sword is boring anyway![end if]'[or]Penises like it when you kiss them with your [if the player is possessing a vagina]pussy[otherwise]asshole[end if]! Yeah, it's true![or]There are some elixirs so powerful you'll get pregnant just by drinking them! Make sure you drink everything you find!'[in random order][roman type][line break].";
 	alwayscutshow figure of fairy interact 12 for M.
 
 To set up (M - fairy-witch):

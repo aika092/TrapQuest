@@ -81,13 +81,11 @@ The player has a number called extra lives. The extra lives of the player is usu
 
 A person can be souled or soulless. A person is usually souled. [Implementation of soullessness]
 
-The player has a number called souls.
-
+[Keeps track of how many souls the player has removed, in total.]
 The player has a number called total-souls.
 
+[The player's addiction to eating souls. See the Demon Horns extension]
 The player has a number called soul addiction.
-
-The player has a number called souled-humiliation.
 
 A person can be vine-cursed. A person is usually not vine-cursed.[Can vines pick on the player while they are standing? Inflicted by the witch]
 

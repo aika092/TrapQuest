@@ -36,24 +36,14 @@ To compute class outfit of (H - cat-ears):
 	let K be a random off-stage kitty claws;
 	let P be a random cat tail plug;
 	let M be a random off-stage exposing magical dress;
-	if diaper quest is 0 and the magic-power of the player > 2 and (M is actually summonable or (M is magical dress and kitty-summoned < 2)):
-		if kitty-summoned is 0:
-			repeat with O running through worn dresses:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn exclusive corsets:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
+	if diaper quest is 0 and the total magic power of the player > 2 and (M is actually summonable or (M is magical dress and kitty-summoned < 2)):
+		PinkWardrobeUnclash M;
 		say "[bold type]Your cat ears barely noticeably quiver, and then a sailor uniform appears on you! [roman type]No wait, this is only the neckline of a sailor uniform, leaving your entire body fully exposed!";
 		summon M;
 		now the raw-magic-modifier of M is the stance of the player;
 		now kitty-summoned is 2;
 	otherwise if the class of the player is not magical girl and (K is actually summonable or (K is kitty claws and kitty-summoned is 0)):
-		if kitty-summoned is 0:
-			repeat with O running through worn equippables:
-				if O is hand ready:
-					say "Your [O] [wardrobeVanishes of O]!";
-					now O is in pink wardrobe;
+		PinkWardrobeUnclash K;
 		say "[bold type]Your cat ears barely noticeably quiver, and then your hands become encased in puffy warm gloves! On closer inspection, these are cat paws![roman type][line break]";
 		summon K;
 		now the raw-magic-modifier of K is the stance of the player;

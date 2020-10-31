@@ -23,23 +23,29 @@ To compute mandatory room leaving of (M - a monster):
 		decrease N by 1;
 		regionally place M.
 
-To compute room leaving of (M - a monster): [This CANNOT be replaced with a function that potentially doesn't make them leave the room, for any NPC. Some while loops rely on this to eventually succeed or the game will freeze.]
+To blockable move (M - a monster) to (D - a direction):
+	if M is in the location of the player:
+		if debugmode > 1, say "player is moving (currently counts as being in [location of the player]) and [M] is trying to move [D], so [if D is the travel-opposite of the player]MOVEMENT IS BLOCKED[otherwise]movement is still allowed[end if].";
+		if D is not the travel-opposite of the player, try M going D;
+	otherwise:
+		try M going D.
+
+To compute room leaving of (M - a monster): [This CANNOT be replaced with a function that potentially doesn't make them leave the room, for any NPC. Some while loops rely on this to eventually succeed or the game will freeze. 'blockable move' function is acceptable because when we compute mandatory room leaving we set travel-opposite to down]
 	if M is in Dungeon11 or M is in Dungeon10:
-		try M going east;
+		blockable move M to east;
 	otherwise if M is in School33 and M is uninterested:
-		try M going west;
+		blockable move M to west;
 	otherwise:
 		now neighbour finder is the location of M;
 		let A be a random N-viable direction;
 		if A is a direction:
 			let P be the room A from the location of M;
-			if A is not the travel-opposite of the player or the room A from (the location of M) is not (the location of the player): [This is allowed because when we compute mandatory room leaving we set the travel-opposite to down]
-				if A is a random N-viable direction and P is unbossed and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
-					try M going A;
-					compute monstermotion reactions of M;
-				otherwise if A is a random N-viable direction and P is unbossed and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
-					try M going A;
-					compute monstermotion reactions of M.
+			if A is a random N-viable direction and P is unbossed and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
+				blockable move M to A;
+				compute monstermotion reactions of M;
+			otherwise if A is a random N-viable direction and P is unbossed and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
+				blockable move M to A;
+				compute monstermotion reactions of M.
 
 [N is a nearby monster, in case we want to say something specific about hearing that type of monster nearby.]
 To say AttractionWorry of (N - a monster):
@@ -84,7 +90,7 @@ To decide which number is the seek roll of (M - a monster):
 	decide on a random number between 0 and 3. [Most monsters have a 75% chance of successfully moving.]
 
 To compute (M - a monster) seeking (D - a direction): [Default Compute Seeking if not specified for the monster.]
-	try M going D;
+	blockable move M to D;
 	compute monstermotion reactions of M.
 
 Check someone going:
@@ -96,9 +102,9 @@ To compute fleeing of (M - a monster): [Default Compute Fleeing if not specified
 		let A be a random N-viable direction;
 		let P be the room A from the location of M;
 		if A is a random N-viable direction and the room A from the location of M is unbossed and P is not the location of the player and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
-			try M going A;
+			blockable move M to A;
 		otherwise if A is a random N-viable direction and P is not the location of the player and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
-			try M going A.
+			blockable move M to A.
 
 The motion reaction rules is a rulebook.
 

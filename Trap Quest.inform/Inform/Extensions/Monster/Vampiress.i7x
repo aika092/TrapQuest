@@ -41,6 +41,31 @@ To say MonsterDesc of (M - vampiress):
 	if lady fetish is 2, say "A monstrous, seductive looking [man of M] with flowing golden brown hair and sharp fangs. [big he of M]'s wearing a cape and a linen loincloth. [if S is clothing][big he of M] currently has a [MediumDesc of S] in [his of M] ass, which seems to be interfering with [his of M] vampiric powers[otherwise if M is willing to do vaginal][big he of M] looks starved[otherwise]The look in [his of M] eyes suggests that [he of M]'s outrageously turned on[end if].";
 	otherwise say "A monstrous, seductive looking [man of M] with flowing, golden brown hair and sharp fangs. [big he of M]'s wearing a skirted black and red corset. [if S is clothing][big he of M] currently has a [MediumDesc of S] in [his of M] ass, which seems to be interfering with [his of M] vampiric powers[otherwise if M is willing to do vaginal][big he of M] looks starved[otherwise]The look in [his of M] eyes suggests that [he of M]'s outrageously turned on[end if].".
 
+To say MonsterComment of (M - vampiress):
+	if diaper quest is 1:
+		if M is interested, say "[variable custom style][big he of M] seems bossy, but [first custom style]is that really so bad?";
+		otherwise say "[variable custom style][big he of M] seems bossy.";
+	otherwise if M is interested:
+		if the class of the player is vampire spawn:
+			say "[variable custom style]I belong to [him of M]. [first custom style]Isn't it time to accept it?";
+		otherwise:
+			say "[variable custom style][big his of M] eyes are so pretty...";
+	otherwise if the class of the player is vampire spawn:
+		if the semen taste addiction of the player < 8:
+			say "[first custom style]If my only choice is to drink blood or [semen], isn't blood the better option?!";
+		otherwise if the semen taste addiction of the player < 12:
+			say "[variable custom style]So I have no choice but to drink blood or [semen] from now on? Most people would choose [semen], right?";
+		otherwise:
+			say "[second custom style]So I have no choice but to drink [semen] from now on? Perfect.";
+	otherwise if the bimbo of the player < 7:
+		if the player is gendered male, say "[first custom style][one of]So if [he of M]'s an ancient vampire, doesn't that make [him of M] a [if M is presenting as male]dilf[otherwise]milf[end if]?[or][big he of M] can suck on me anytime![or][if M is willing to do vaginal]That look in [his of M] eyes is actually pretty scary... maybe I should get out of here.[otherwise][big he of M] seems hungry. Heh, wonder if [he of M] likes sausage?[end if][in random order]";
+		otherwise say "[first custom style][one of]The way [he of M] looks at me... makes me feel like food...[or][if the stake of M is clothing]I knew [he of M] had a weakness! I just wish it were less lewd...[otherwise]Vampires in literature have so many weaknesses. I wonder if [he of M]'s the same?[end if][or][big he of M]'s clearly insane, but [he of M] doesn't seem violent.[in random order]";
+	otherwise if the bimbo of the player < 12:
+		say "[variable custom style][one of][big he of M] looks at me like I'm food, but... that's kind of flattering, isn't it?[or][big he of M] has really good skin.[or]She seems horny, but aren't all vampires that way?[in random order]";
+	otherwise:
+		say "[second custom style][one of][big he of M] looks at me like I'm food! Eat me up, [stud of M]![or][big he of M] looks so turned on. I wonder what [he of M]'s thinking about~?[or][big he of M]'s a vampire, so you just KNOW [he of M] has a ton of experience in bed![in random order]";
+	say "[roman type][line break]".
+
 To set up (M - vampiress):
 	reset M;
 	now the monstersetup of M is 1;
@@ -170,10 +195,10 @@ To compute appearance assessment of (M - vampiress):
 		if M is willing to do vaginal:
 			say "[speech style of M]'I have to feed. I HAVE TO FEED![roman type][line break]";
 			anger M;
-		if the player is craving semen:
-			say "[speech style of M]'Hello there, my youngest fledgling. Don't forget to feast. I wouldn't want you to lose your strength.'[roman type][line break]";
-		otherwise if the player is desperately craving semen:
+		if semen is desperately craved:
 			say "[speech style of M]'... You look awful. You mustn't let yourself go hungry. I recommend going to find one of those wenches to present your face to. Surely they will feed you.'[roman type][line break]";
+		otherwise if semen is craved:
+			say "[speech style of M]'Hello there, my youngest fledgling. Don't forget to feast. I wouldn't want you to lose your strength.'[roman type][line break]";
 		otherwise:
 			say "[speech style of M]'Hello there, my youngest fledgling. You don't look hungry yet but, mark my words, you will be. Don't go too long without feasting on some sort of seminal fluid or you'll regret it.'[roman type][line break]";
 	otherwise if M is buddy:
@@ -334,24 +359,6 @@ To say SwallowDemand of (M - vampiress):
 
 Section 1 - Attack
 
-To compute (M - vampiress) attacking (C - knickers):
-	if C is zippable:
-		say "[UnzipFlav of M at C]";
-		ZipDown C;
-	otherwise:
-		say "[PullAttempt of M at C]";
-		let R be a random number between the difficulty of M and 6 + a random number between the difficulty of M and 6;
-		if debuginfo > 0, say ClothingAttackDebug of M on C with R;
-		if R > the defence of the player:
-			compute M destroying C;
-		otherwise if R > the defence of the player - 2 and C is rippable:
-			compute M ripping C;
-		otherwise if R > the defence of the player - 4 and C is displacable:
-			compute M displacing C;
-		otherwise:
-			say "[WeakenFlav of M on C]";
-			damage C.
-
 To reset vampire hunger:
 	now the hunger-timer of vampiress is 0;
 	DifficultyUp vampiress by 3.
@@ -481,13 +488,13 @@ To say NormalMouthPenetrationFlav of (M - vampiress):
 To compute happy reward of (M - vampiress):
 	if the player is able to get horny and the player is not barbie:
 		let C be a random chastity bond;
-		say "[BigNameDesc of M][if there is a worn chastity cage] reaches between your legs, prying off your [printed name of C] with a heavy crunch. [big he of M][end if] smiles at you as [he of M] [if the size of penis > 4]wraps [his of M] hand around your [ShortDesc of penis] and begins to pump[otherwise if the player is male]gently begins to tease your [ShortDesc of penis][otherwise if vagina is actually occupied]begins to tease your clit[otherwise]slips [his of M] fingers into your [vagina][end if]. You feel a sharp pressure in the back of your mind, and [if the player is female]your lips twist themselves into a big, submissive 'O' as orgasm crashes through your body. [BigNameDesc of M] catches your fluids in [his of M] hand, chuckling softly as licks your juices from [his of M] fingers[otherwise if the bimbo of the player < 6]you grit your teeth as your [player-penis] immediately explodes, coating [his of M] hand in fresh, creamy [semen]. [BigNameDesc of M] chuckles softly as [he of M] licks your load off [his of M] fingers[otherwise]your lips twist themselves into a big, submissive 'O' as your [player-penis] shoots several ropes of fresh, creamy [semen] directly into [his of M] hand. [BigNameDesc of M] chuckles softly as [he of M] licks your load off [his of M] fingers[end if].[line break][speech style of M]'I look forward to feeding from you again.'[roman type][line break]";
+		say "[BigNameDesc of M][if C is clothing] reaches between your legs, prying off your [printed name of C] with a heavy crunch. [big he of M][end if] smiles at you as [he of M] [if the size of penis > 4]wraps [his of M] hand around your [ShortDesc of penis] and begins to pump[otherwise if the player is male]gently begins to tease your [ShortDesc of penis][otherwise if vagina is actually occupied]begins to tease your clit[otherwise]slips [his of M] fingers into your [vagina][end if]. You feel a sharp pressure in the back of your mind, and [if the player is female]your lips twist themselves into a big, submissive 'O' as orgasm crashes through your body. [BigNameDesc of M] catches your fluids in [his of M] hand, chuckling softly as licks your juices from [his of M] fingers[otherwise if the bimbo of the player < 6]you grit your teeth as your [player-penis] immediately explodes, coating [his of M] hand in fresh, creamy [semen]. [BigNameDesc of M] chuckles softly as [he of M] licks your load off [his of M] fingers[otherwise]your lips twist themselves into a big, submissive 'O' as your [player-penis] shoots several ropes of fresh, creamy [semen] directly into [his of M] hand. [BigNameDesc of M] chuckles softly as [he of M] licks your load off [his of M] fingers[end if].[line break][speech style of M]'I look forward to feeding from you again.'[roman type][line break]";
 		reset vampire hunger;
 		if C is clothing, destroy C;
 		orgasm quietly;
 	otherwise:
-		say "[speech style of M]'Good girl.'[roman type][line break]";
-	FavourUp M by 3;
+		say "[speech style of M]'Good [boy of the player].'[roman type][line break]";
+	FavourUp M by 3.
 
 To check forgiveness of (M - vampiress):
 	if ((a random number between the favour of M and the charisma of the player) > 6 or M is willing to do vaginal) and the player is able to get horny and the player is not barbie:[she is only interested in forgiving you if you can cum for her]
@@ -579,7 +586,7 @@ To compute striking attack of (M - vampiress):
 	FatigueUp a random number between the difficulty of M and the difficulty of M * 3.
 
 [The vampiress has to be "invited in"]
-To say SelectionFrustrated of (M - vampiress):
+To compute SelectionFrustrated of (M - vampiress):
 	let R be a random number between 1 and 3;
 	if R is 3 and M is not willing to do vaginal, now R is 1;
 	let P be a random worn insertable thing penetrating asshole;
@@ -945,6 +952,7 @@ To blowjob dominate (M - vampiress):[You 'feed' the vampiress]
 				say "You [NameDesc of M] push [him of M] to [his of M] knees, looking down at [him of M] hopefully as [he of M] delicately runs [his of M] fingertip along your [SexDesc of penis]. [big he of M] gazes back up at you, never breaking eye contact as [his of M] tongue flutters against your tiny [SexShaft]. It becomes increasingly hard to look away as your [sexual-player-penis] begins to spasm, and you lose yourself in [his of M] gaze as you cover [his of M] tongue with fresh [semen]. [BigNameDesc of M] swallows your [load] as [he of M] returns to [his of M] feet, and you are suddenly overcome with an urge to get on your knees [if face is not actually occupied]and wrap your lips around [his of M] [LongDickDesc of M]. You're not nearly as good as [he of M] is, but you try your best to please your mistress, and eventually [he of M] rewards you with a big load straight down your throat.[otherwise]wrap your hands around [his of M] [LongDickDesc of M]. You don't really see what's dominant about it, but it's exhilarating to pleasure your mistress, and eventually [he of M] rewards you with a big load all over your face.[end if]";
 				BlowGet;
 				if face is not actually occupied:
+					now M is penetrating face;
 					BlowCount;
 					StomachSemenUp the semen load of M;
 				otherwise if bukkake fetish is 1:
@@ -1087,21 +1095,41 @@ Section 1 - Greeting
 
 To say FirstGreeting to (M - vampiress):
 	say "Your eyes meet with [hers of M], and you get the feeling [he of M] is picking your words out for you.[line break][second custom style]'[one of]Hello, I'm [NameBimbo]. Please be my [literalMistress of M]!'[or]Hello, new [literalMistress of M]! My name is [NameBimbo].'[or]Hello, [literalMistress of M]! My name is [NameBimbo]!'[at random][roman type][line break]";
-	say FirstResponse of M.
 
 To say FirstResponse of (M - vampiress):
 	say "[speech style of M]'Hello there, doll...'[roman type][line break]";
 
 To say RepeatGreeting to (M - vampiress):
 	say "Your eyes meet with [hers of M], and you get the feeling [he of M] is picking your words out for you.[line break][second custom style]'[one of]Hello, [literalMistress of M]! I can't wait for you to fuck me.'[or]Feed from me soon, [literalMistress of M]!'[or]Please use me soon, [literalMistress of M]! I'm delicious!'[at random][roman type][line break]";
-	say RepeatResponse of M.
 
 To say RepeatResponse of (M - vampiress):
 	say "[speech style of M]'Hello again, [NameBimbo]...'[roman type][line break]".
 
+[The vampiress controls what the player says to her, so her responses are special]
+To compute vanity response of (M - vampiress):
+	let N be a random unfriendly monster penetrating a body part;
+	unless N is monster, now N is a random monster penetrating a body part;
+	if M is penetrating a body part:
+		say EnthusiasmResponse of M;
+	otherwise if N is a monster:
+		if N is unfriendly:
+			say InvitationResponse of M with N;[The player invited M to join]
+		otherwise:
+			say AttentionResponse of M with N;[The player asked M to watch]
+	otherwise if M is unfriendly:
+		say PleadingResponse of M;[The player asked M for a truce]
+	otherwise:
+		if M is ally:
+			say VanityAccepted of M;
+		otherwise if M is acquaintance:
+			say VanityAnnoyed of M;
+		otherwise:
+			favourDown M;
+			say VanityRejected of M;
+			if M is friendly, bore M.
+
 To say UnfriendlyGreeting to (M - vampiress):
-	say "Your eyes meet with [hers of M], and you get the feeling [he of M] is picking your words out for you.[line break][second custom style]'[one of]I can't wait for you to punish me, [literalMistress of M]!'[or]Oooh, I'm being so bad, aren't I, [literalMistress of M]!'[or]Please punish me, [literalMistress of M]!'[or]Ooh, I'm being naughty, aren't I, [literalMistress of M]?'[at random][roman type][line break]";
-	say PleadingResponse of M.
+	say "Your eyes meet with [hers of M], and you get the feeling [he of M] is picking your words out for you.[line break][second custom style]'[one of]I can't wait for you to punish me, [literalMistress of M]!'[or]Oooh, I'm being so bad, aren't I, [literalMistress of M]!'[or]Please punish me, [literalMistress of M]!'[or]Ooh, I'm being naughty, aren't I, [literalMistress of M]?'[at random][roman type][line break]".
 
 To say PleadingResponse of (M - vampiress):
 	say "[speech style of M]'[one of]Yes, you're such a bad slave!'[or]Oh yes. You will be punished thoroughly, my darling.'[or]Mmm, you're in SO much trouble!'[or]I have quite the comeuppance in store for you, darling!'[at random][roman type][line break]".
@@ -1110,20 +1138,19 @@ To say SubmissiveResponse of (M - vampiress):
 	if M is friendly:
 		say RepeatResponse of M;
 	otherwise:
-		say "[speech style of M][one of]'Come back for more? They never can stay away...'[or]'It's nice to see you again... You were quite delicious.'[or]'It's good to see you... I'd love another taste.'[at random][roman type][line break]";
+		say "[speech style of M][one of]'Come back for more? They never can stay away...'[or]'It's nice to see you again... You were quite delicious.'[or]'It's good to see you... I'd love another taste.'[at random][roman type][line break]".
 
 To say PartnerGreeting to (M - vampiress):
 	say FriendlyPartnerGreeting to M.
 
 To say FriendlyPartnerGreeting to (M - vampiress):
-	say "You find yourself unable to turn away from [him of M] as [he of M] picks your words out for you.[line break][first custom style]'[one of]Please fuck me harder, [literalMistress of M]![or]Please never stop!'[or]Yes! Fuck me, [literalMistress of M]![or]Use me, [literalMistress of M]!'[at random][roman type][line break]";
+	say "You find yourself unable to turn away from [him of M] as [he of M] picks your words out for you.[line break][second custom style]'[one of]Please fuck me harder, [literalMistress of M]![or]Please never stop!'[or]Yes! Fuck me, [literalMistress of M]![or]Use me, [literalMistress of M]!'[at random][roman type][line break]";
 
 To say EnthusiasmResponse of (M - vampiress):
-	say "[second custom style]'[one of]My, my... Aren't you enthusiastic. What happened to your fight?'[or]Now that's better...'[or]You really are enjoying yourself, aren't you?'[or]Mindless little puppet... It's almost too easy to be fun.'[or]Shush now, slave...'[at random][roman type][line break]".
+	say "[speech style of M]'[one of]My, my... Aren't you enthusiastic.'[or]If you insist...'[or]You really are enjoying yourself, aren't you?'[or]Mindless little puppet... It's almost too easy to be fun. Almost.'[or]Shush now, slave...'[then at random][roman type][line break]".
 
 To say HelpGreeting to (M - vampiress) with (N - a monster):
-	say "Your eyes meet with [hers of M], and you get the feeling [he of M] is picking your words out for you.[line break][second custom style]'[one of]I can serve you too, [literalMistress of M].'[or]My body is open to you as well, [literalMistress of M].'[or]Go ahead, [literalMistress of M]...'[or]Don't worry, I can always handle my [literalMistress of M].'[at random][roman type][line break]";
-	say InvitationResponse of M with N.
+	say "Your eyes meet with [hers of M], and you get the feeling [he of M] is picking your words out for you.[line break][second custom style]'[one of]I can serve you too, [literalMistress of M].'[or]My body is open to you as well, [literalMistress of M].'[or]Go ahead, [literalMistress of M]...'[or]Don't worry, I can always handle my [literalMistress of M].'[at random][roman type][line break]".
 
 To say InvitationAccepted of (M - vampiress) with (N - a monster):
 	say "[speech style of M]'Mmm, how could I pass that up?'[roman type][line break]".
@@ -1134,19 +1161,19 @@ To say InvitationRejected of (M - vampiress) with (N - a monster):
 Section 2 - Questioning
 
 To say WhereAnswer of (M - vampiress):
-	say "[speech style of M]'[one of]We're in a haunted manor... Speaking of hauntings, I'd avoid the ghosts if I were you.'[or]Like I said, we're in a haunted manor. Are you a touch deaf and/or demented?[or]I'm going to go ahead and assume that you're demented... It doesn't mean that I love you any less though.[stopping][roman type][line break]".
+	say "[speech style of M]'[one of]We're in a haunted manor... Speaking of hauntings, I'd avoid the ghosts if I were you.'[or]Like I said, we're in a haunted manor. Are you a touch deaf and/or demented?'[or]I'm going to go ahead and assume that you're demented... It doesn't mean that I love you any less though.'[then at random][roman type][line break]".
 
 To say WhoAnswer of (M - vampiress):
 	say "[speech style of M]'As you might have guessed, I am a vampire, and a very old one at that. Originally, I hail from Rome... You wouldn't believe the things that I've seen. By the way, my name is Aurora... Ironic, isn't it?'[roman type][line break]".
 
 To say StoryAnswer of (M - vampiress):
-	say "[speech style of M]'[one of]As I might have told you, I can't remember for sure, I originally came from Rome. When I was turned, Trajan was still emperor... He was a damned fine one too. But, I digress.'[or]In case you wondered, yes, I used to feast on blood. And, for the record, people tasted better before industrialisation. In addition to the pure cruelty of sucking people dry, it was all of the processed food that led me to switch from blood to cum... Though, truth be told, cum used to taste better as well. When all else fails, at least there's pineapple.'[or]When I was younger, I served as a vestal virgin... If they could only see me now!'[or]Why am I here? I found out about this little game and decided it might be amusing. I fucked the creator, manipulated them into letting me in and they don't even remember me doing it!'[as decreasingly likely outcomes][roman type][line break]".
+	say "[speech style of M]'[one of]As I might have told you, I can't remember for sure, I originally came from Rome. When I was turned, Trajan was still emperor... He was a damned fine one too. But, I digress.'[or]In case you wondered, yes, I used to feast on blood. And, for the record, people tasted better before industrialisation. In addition to the pure cruelty of sucking people dry, it was all of the processed food that led me to switch from blood to cum... Though, truth be told, cum used to taste better as well. When all else fails, at least there's pineapple.'[or]When I was younger, I served as a vestal virgin... If they could only see me now!'[or]Why am I here? I found out about this little game and decided it might be amusing. I fucked the creator, manipulated them into letting me in and they don't even remember me doing it!'[then at random][roman type][line break]".
 
 To say EscapeAnswer of (M - vampiress):
 	say "[speech style of M]'I suppose you can leave this place any time you like. Just find the front door and walk out. [if M is annoyed] But, you'll stay a while, won't you? I'd love to have you for dinner...'[otherwise]Now getting back to your home... That's the real question, isn't it?'[end if][roman type][line break]".
 
 To say AdviceAnswer of (M - vampiress):
-	say "[speech style of M]'[one of]I'm not the only dead thing here, just to warn you. The ghosts here can be quite annoying.'[or]I'd avoid the cultists if I were you. There's a price to be paid for the things that they engage in... But then again, there's a price for just about everything, isn't there?[or]The owners of this house had an odd sense of humour. You might want to avoid the mirrors, and some of the chests are not quite what they seem.'[at random][roman type][line break]".
+	say "[speech style of M]'[one of]I'm not the only dead thing here, just to warn you. The ghosts here can be quite annoying.'[or]I'd avoid the cultists if I were you. There's a price to be paid for the things that they engage in... But then again, there's a price for just about everything, isn't there?[or]Some of my possessions have a difficult sense of humour, but they wouldn't actually do anything to hurt you. The mirrors will get bored eventually, and the mimics don't like to look the same for too long.'[or][if the player is possessing a vagina]While I personally find vaginal sex to be boring, it seems I've become something of a minority while I was away. Remember to use protection, darling.'[otherwise if the player is possessing a penis]You might think having a larger penis is perfect, but if you ask me, it only makes concealing your erection more difficult.'[otherwise]Don't think you can't cum just because your genitals are gone. Its harder, of course, but that's nothing a skilled hand (or member) can't fix.'[end if][in random order][roman type][line break]".
 
 To compute teaching of (M - vampiress):
 	say "[speech style of M]'It's so annoying when you want to cum, but you can't touch yourself, isn't it? If you angle your hips like this, you won't need to touch your[if the size of penis > 5] yummy [player-penis][otherwise if the player is possessing a penis] adorable little [player-penis][otherwise if the player is possessing a vagina] dainty little honeypot[end if][if the player is barbie]... oh, I guess you don't have genitals anyway.'[otherwise] at all!'[end if][roman type][line break]";

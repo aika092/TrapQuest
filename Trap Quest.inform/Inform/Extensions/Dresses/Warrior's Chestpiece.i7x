@@ -203,6 +203,8 @@ Definition: a golden warrior priestess outfit is class-transformation-protected:
 	if the class of the player is virgin warrior or the class of the player is priestess, decide yes;
 	decide no.
 
+golden warrior priestess outfit can be doomed-bloodline or not doomed-bloodline. golden warrior priestess outfit is not doomed-bloodline.
+
 To compute virginity-loss of (H - a golden warrior priestess outfit):
 	say "As the [H] shatters into fragments, in a single instant you experience the lives of every single one of your clan's descendants. This scene is probably more extreme than most things in this game, do you want to read it? ";
 	if the player is consenting:
@@ -214,6 +216,7 @@ To compute virginity-loss of (H - a golden warrior priestess outfit):
 		say "All of this - every single ounce of cum, every single forced orgasm as huge cocks brutally plow three sore holes, every last spank and nipple tweak and clit flick, many millennia worth of sleep deprivation, [if watersports fetish is 1]every single time an exhausted face is used as a urinal, [end if][if pregnancy fetish is 1]every painful, shameful birthing, [end if]every single degrading word of abuse hurled at any of your clan throughout time[if there is a worn tattoo], or permanently tattooed onto their flesh[end if], and the deep sense of perverse fulfilment that your sisters achieve from all of this happening to them - it all hits your soul at the same instant, like a bullet train forcing its way through the eye of a needle. Your mind, rather unsurprisingly, exits stage left. What is left of your frazzled brain is a shell of a human, with no self-respect and no ability to recognise herself as anything but an object.";
 	otherwise:
 		say "You lose all self-respect, becoming a sexually broken object to be used.";
+	now H is doomed-bloodline;
 	decrease the virgin bonus of the player by 1;
 	now the humiliation of the player is 40001;
 	if mindbreak protection is 1:
@@ -254,8 +257,44 @@ To compute virginity-loss of (H - virgin magical girl outfit):
 	say "As the [ShortDesc of H] dissolves into nothingness, [bold type]a burst of dark magical energy shoots out from your body and surges into every tentacle monster in the world, empowering them and growing them to their maximum size. [roman type]You shiver with [joy (the bimbo of the player - 3)] [if there is a tentacle monster penetrating a fuckhole]as the tentacle inside you doubles and triples in size![otherwise if there is a tentacle monster in the location of the player]at the prospect of what's about to happen to you...[otherwise]at the prospect of having to battle your way through this place now that it is filled with very powerful and very very big tentacle monstrosities.[end if]";
 	repeat with M running through alive tentacle monsters:
 		now M is massive;
-		set up M;
+		if M is penetrating a body part:
+			repeat with F running through fuckholes penetrated by M:
+				if the openness of F + 1 < the girth of M, gape F times 1;
+		otherwise:
+			set up M;
 	decrease the virgin bonus of the player by 1;
 	only destroy H.
+
+Part 8 - Virgin Princess Outfit
+
+virgin princess outfit is an immodest warrior chestpiece. virgin princess outfit is belly exposing. virgin princess outfit is neck covering. virgin princess outfit is unskirted. virgin princess outfit is crotch-intact. virgin princess outfit is optional-top-displacable. virgin princess outfit is ridiculously low cut. virgin princess outfit is totally-exclusive. virgin princess outfit is normally-partially-nipple-covering.
+
+Figure of virgin princess outfit is the file "Items/Clothes/Upper/Special/Warrior/princess1.png".
+
+The printed name of virgin princess outfit is usually "[clothing-title-before]virgin princess outfit[clothing-title-after]". The text-shortcut of virgin princess outfit is "vpro".
+
+To decide which figure-name is clothing-image of (C - virgin princess outfit):
+	decide on figure of virgin princess outfit.
+
+To say ClothingDesc of (C - virgin princess outfit):
+	say "This ridiculous outfit consists of a collar with a red gem in it connected to a white tight cameltoe-creating crotch panel by a single long thread. The panel goes up your butt crack and back to wrap around and pin over your nipples, again so tightly that your nipples are always partially visible through the flimsy fabric. It's literally the minimum amount of clothing you could possibly imagine that could partially cover your nipples and [pussy].".
+
+To say ShortDesc of (C - virgin princess outfit):
+	say "slut princess outfit".
+
+To decide which number is the initial outrage of (C - virgin princess outfit):
+	decide on 6.
+
+Definition: virgin princess outfit is class-transformation-protected:
+	if the class of the player is virgin warrior or the class of the player is princess, decide yes;
+	decide no.
+
+Definition: virgin princess outfit is gem themed: decide yes.
+Definition: virgin princess outfit is white themed: decide yes.
+Definition: virgin princess outfit is potentially vagina covering:
+	if the player is not possessing a vagina and it is potentially pussy covering, decide yes;
+	decide no. [On women, this item doesn't fully conceal the vagina]
+To decide which number is the penis-capacity of (H - virgin princess outfit):
+	decide on 2.
 
 Warrior's Chestpiece ends here.

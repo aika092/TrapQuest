@@ -37,14 +37,12 @@ To decide which number is the intelligence-influence of (H - heart hairpin):
 
 Chapter - Class Outfit
 
-Definition: heart hairpin (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
+Definition: heart hairpin is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
 	if wearing-target is magical dress or wearing-target is magical stockings or wearing-target is heart wand, decide yes;
-	[if wearing-target is C and the magic-power of the player > 1 and there is an on-stage tentacle-breeder, decide yes;]
 	decide no.
 
 To say RemovalBlocked of (C - heart hairpin):
-	if wearing-target is C, say "You have too much magic power surging through you! You won't be able to take this off until you [if the magic-power of the player < 4]gain some more power and [end if]use your abilities to purify some tentacle breeders, or lose the excess magic by having some tentacle monsters... [']take['] it from you...";
-	otherwise say "Your [ShortDesc of C] is somehow preventing you from taking this off!".
+	say "Your [ShortDesc of C] is somehow preventing you from taking this off!".
 
 magic-summoned is a number that varies.
 To compute unique recycling of (C - heart hairpin):
@@ -57,16 +55,7 @@ To compute class outfit of (H - heart hairpin):
 	if the class of the player is schoolgirl, now D is a random schoolgirl outfit; [We don't want to overwrite the schoolgirl stuff with magical stuff if the player is both]
 	let S be a random off-stage magical stockings;
 	if D is actually summonable or (magic-summoned is 0 and D is magical dress and the number of worn magical dress is 0):
-		if magic-summoned is 0:
-			repeat with O running through worn dresses:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn exclusive corsets:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
-			repeat with O running through worn skirt clashing clothing:
-				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
+		PinkWardrobeUnclash D;
 		say "[bold type]You feel a rush of magic as a [ShortDesc of D] materialises around you.[roman type][line break]";
 		summon D uncursed;
 		now magic-summoned is 1;
@@ -84,12 +73,13 @@ Report Spellcasting wand-summoning:
 	let E be a random worn hand ready clothing;
 	if E is clothing, now wearing-target is E;
 	let H be a random worn headgear;
-	if E is clothing and ((E is vibe-wand or E is cursed or E is unremovable) or (H is clothing and H is removal-blocking)): [class wands can't be replaced by this spell]
+	if E is clothing and ((E is vibe-wand or E is cursed or E is unremovable or E is bag of holding) or (H is clothing and H is removal-blocking)): [class wands can't be replaced by this spell]
 		say "The spell doesn't seem to work while you're holding [NameDesc of E]!";
 	otherwise:
 		let W be nintendolls-wand;
 		if the class of the player is magical girl, now W is a random heart wand;
 		if the class of the player is "magical schoolgirl", now W is a random notebook;
+		PinkWardrobeUnclash W;
 		summon W uncursed;
 		say "With a flash of pink, [NameDesc of W] appears in your hand! Wow!".
 

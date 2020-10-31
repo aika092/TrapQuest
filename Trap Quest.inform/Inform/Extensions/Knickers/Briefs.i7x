@@ -5,7 +5,9 @@ A briefs is a kind of undies. Understand "pair", "pair of", "briefs" as briefs. 
 To decide which number is the penis-capacity of (K - a briefs):
 	decide on 6.
 
-Definition: a briefs is rippable: decide yes.
+Definition: a briefs is rippable:
+	if it is destructible, decide yes;
+	decide no.
 
 The printed name of briefs is "[clothing-title-before][selfexamineuniquetitle of item described][clothing-title-after]".
 
@@ -198,6 +200,8 @@ To decide which number is the unique outrage of (C - green-briefs):
 	decide on 1.
 To decide which number is the luck-influence of (C - green-briefs):
 	decide on 5.
+To decide which number is the original price of (C - green-briefs):
+	decide on 10.
 Definition: green-briefs is green themed: decide yes.
 
 grey-briefs is a briefs. The text-shortcut of grey-briefs is "grb".

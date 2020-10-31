@@ -63,7 +63,7 @@ Carry out PeeBottling:
 			try examining drinkme tattoo;
 		otherwise:
 			say "The smell of your own [urine] inside the [ShortDesc of the noun] hits your nose.";
-			UrineTasteAddictUp 1;
+			SlowUrineTasteAddictUp 1;
 	otherwise:
 		let P be the noun;
 		let B be the bladder of the player;

@@ -17,7 +17,7 @@ To say monster-title-before of (M - a monster):
 	say "[if M is in the location of the player][TQlink of M][end if][input-style]".
 
 To say monster-title-after of (M - a monster):
-	say "[if debuginfo > 0 and M is kitsune and the target-disguise of M is not M] (lvl [difficulty of target-disguise of M])[otherwise if debuginfo > 0 or M is threatening] (lvl [difficulty of M])[end if][if M is asleep] (fast asleep)[end if][shortcut-desc][roman type][if M is in the location of the player][TQxlink of M][verb-desc of M][end if]".
+	say "[if debuginfo > 0 and M is kitsune and the target-disguise of M is not M and the difficulty of target-disguise of M > 1] (lvl [difficulty of target-disguise of M])[otherwise if debuginfo > 0 or M is threatening] (lvl [difficulty of M])[end if][if M is asleep] (fast asleep)[end if][shortcut-desc][roman type][if M is in the location of the player][TQxlink of M][verb-desc of M][end if]".
 
 To say FullExamineDesc of (M - a monster):
 	say FullMonsterDesc of M.
