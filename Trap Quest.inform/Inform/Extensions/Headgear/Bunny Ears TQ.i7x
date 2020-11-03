@@ -151,7 +151,7 @@ To compute service spill punishment:
 				say "Suddenly, your serving tray disappears in a flash! ";
 				only destroy serving tray;
 			say "[bold type]You feel a heavy weight on your back! [roman type]You now have a large glass table magically attached to your back. It's preventing you from standing up!";
-			summon serving table;
+			summon serving table locked;
 		if there is worn serving-bondage:
 			repeat with V running through held waitress vessels:
 				if V is empty:
