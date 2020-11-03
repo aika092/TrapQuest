@@ -75,7 +75,7 @@ Chapter 1 - Pink Scrunchie
 
 [Obtained from the mannequin]
 
-A pink scrunchie is a kind of scrunchie. pink-scrunchie-1 is a pink scrunchie. pink-scrunchie-2 is a pink scrunchie. The text-shortcut of pink-scrunchie-1 is "psc1". The text-shortcut of pink-scrunchie-2 is "psc2". pink-scrunchie-1 is roleplay.
+A pink scrunchie is a kind of scrunchie.  A pink scrunchie is usually cursed pink-scrunchie-1 is a pink scrunchie. pink-scrunchie-2 is a pink scrunchie. The text-shortcut of pink-scrunchie-1 is "psc1". The text-shortcut of pink-scrunchie-2 is "psc2". pink-scrunchie-1 is roleplay.
 Understand "pink" as a pink scrunchie.
 Figure of left pink scrunchie is the file "Items/Accessories/Head/scrunchie1a.png".
 Figure of right pink scrunchie is the file "Items/Accessories/Head/scrunchie1b.png".
