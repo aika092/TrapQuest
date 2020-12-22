@@ -44,7 +44,7 @@ To compute SelfExamineDesc of (H - fishbowl-hat):
 Chapter - Class Outfit
 
 Definition: fishbowl-hat (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
-	if the semen-soak of C > 0 or the urine-soak of C > 0, decide yes;
+	if the semen-soak of wearing-target > 0 or the urine-soak of wearing-target > 0, decide yes;
 	decide no.
 
 Check cleaning a body part with a clothing when fishbowl-hat is worn:
@@ -55,9 +55,6 @@ Check showering when fishbowl-hat is worn:
 
 To say RemovalBlocked of (C - fishbowl-hat):
 	say "Your [ShortDesc of C] is somehow preventing you from taking this off while it still has [if the urine-soak of C > 0][urine] or [end if][semen] on it!".
-
-To compute class outfit of (H - fishbowl-hat):
-	do nothing.
 
 This is the fishbowl class rule:
 	if fishbowl-hat is worn:

@@ -2,9 +2,14 @@ Warrior's Chestpiece by Dresses begins here.
 
 A warrior chestpiece is a kind of overdress. A warrior chestpiece is usually metal. A warrior chestpiece is usually unique. A warrior chestpiece is usually totally-exclusive. A warrior chestpiece is usually unskirted. A warrior chestpiece is usually belly exposing. A warrior chestpiece is usually purity. A warrior chestpiece is usually not-top-displacable. Understand "warrior's" as warrior chestpiece.
 
-Definition: a warrior chestpiece is class-transformation-protected:
+Definition: a warrior chestpiece is class-relevant:
 	if the class of the player is virgin warrior, decide yes;
 	decide no.
+
+To compute class set up of (C - a warrior chestpiece):
+	now C is strength-influencing;
+	now C is protection;
+	now C is blessed.
 
 Check wearing warrior chestpiece:
 	if the vaginalvirgin of the player is 0, say "The latches refuse to close! It's almost as if the chestpiece is refusing to let you wear it..." instead.
@@ -39,138 +44,135 @@ This is the virgin warrior butt slut rule:
 	if there is a worn immodest warrior chestpiece, increase the desirability of asshole by 20.
 The virgin warrior butt slut rule is listed in the butt slut eligibility rules.
 
-Part 1 - Ornate Warrior Chestpiece
+Part 1 - ornate warrior chestpiece
 
-An ornate warrior chestpiece is a kind of holy warrior chestpiece. An ornate warrior chestpiece is usually neck covering. An ornate warrior chestpiece is usually ridiculously low cut.
+ornate warrior chestpiece is a holy warrior chestpiece. ornate warrior chestpiece is neck covering. ornate warrior chestpiece is ridiculously low cut.
 
-The printed name of ornate warrior chestpiece is usually "[clothing-title-before]ornate warrior's chestpiece[clothing-title-after]". The text-shortcut of ornate warrior chestpiece is "owc".
-
-There is 1 ornate warrior chestpiece.
+The printed name of ornate warrior chestpiece is "[clothing-title-before]ornate warrior's chestpiece[clothing-title-after]". The text-shortcut of ornate warrior chestpiece is "owc".
 
 Figure of ornate warrior chestpiece is the file "Items/Clothes/Upper/Special/Warrior/warrior1.png".
 
-To decide which figure-name is clothing-image of (C - an ornate warrior chestpiece):
+To decide which figure-name is clothing-image of (C - ornate warrior chestpiece):
 	decide on figure of ornate warrior chestpiece.
 
-To say ClothingDesc of (O - an ornate warrior chestpiece):
+To say ClothingDesc of (O - ornate warrior chestpiece):
 	say "This is less of a bra and more of a metal chestpiece, by beginning at your shoulders and your sides, travelling around your neck and underneath your bustline and narrowing and ending at your nipples from below, it manages to provide some protection to your upper chest whilst completely exposing essentially the entirety of your breasts. An ornate golden necklace shaped out of what seems to be hearts and religious iconography sits proudly on top of your cleavage, but hides nothing.[line break]It is impossible to wear other necklaces or collars whilst wearing this chestpiece.".
 
-Definition: an ornate warrior chestpiece is heart themed: decide yes.
+Definition: ornate warrior chestpiece is heart themed: decide yes.
 
-To decide which number is the initial outrage of (C - an ornate warrior chestpiece):
+To decide which number is the initial outrage of (C - ornate warrior chestpiece):
 	decide on 5.
 
-Definition: an ornate warrior chestpiece is grey themed: decide yes.
-Definition: an ornate warrior chestpiece is gem themed: decide yes.
+Definition: ornate warrior chestpiece is grey themed: decide yes.
+Definition: ornate warrior chestpiece is gem themed: decide yes.
 
-To decide which object is the unique-upgrade-target of (C - an ornate warrior chestpiece):
+To decide which object is the unique-upgrade-target of (C - ornate warrior chestpiece):
 	decide on a random off-stage leaf pattern warrior chestpiece.
 
 Part 2 - Leaf Pattern Warrior Chestpiece
 
-A leaf pattern warrior chestpiece is a kind of holy warrior chestpiece. A leaf pattern warrior chestpiece is very low cut. A leaf pattern warrior chestpiece is normally-partially-nipple-covering. A leaf pattern warrior chestpiece is belly covering.
+leaf pattern warrior chestpiece is a holy warrior chestpiece. leaf pattern warrior chestpiece is very low cut. leaf pattern warrior chestpiece is normally-partially-nipple-covering. leaf pattern warrior chestpiece is belly covering.
 
-The printed name of leaf pattern warrior chestpiece is usually "[clothing-title-before]leaf pattern warrior's chestpiece[clothing-title-after]". The text-shortcut of leaf pattern warrior chestpiece is "lpwc".
-
-There is 1 leaf pattern warrior chestpiece.
+The printed name of leaf pattern warrior chestpiece is "[clothing-title-before]leaf pattern warrior's chestpiece[clothing-title-after]". The text-shortcut of leaf pattern warrior chestpiece is "lpwc".
 
 Figure of leaf pattern warrior chestpiece is the file "Items/Clothes/Upper/Special/Warrior/warrior3.png".
 
-To decide which figure-name is clothing-image of (C - a leaf pattern warrior chestpiece):
+To decide which figure-name is clothing-image of (C - leaf pattern warrior chestpiece):
 	decide on figure of leaf pattern warrior chestpiece.
 
-To say ClothingDesc of (O - a leaf pattern warrior chestpiece):
+To say ClothingDesc of (O - leaf pattern warrior chestpiece):
 	say "This metal piece of 'armour' hangs from your neck, providing protection to your chest and belly, and the tiniest bit of protection to your [genitals]. The leafy pattern around the belly makes it look quite provocative, and some of your areolae is left exposed. It is very heavy.".
 
-Definition: a leaf pattern warrior chestpiece is layer-concealing: decide no.
-Definition: a leaf pattern warrior chestpiece is partially-layer-concealing: decide yes.
-Definition: a leaf pattern warrior chestpiece is potentially at least partially vagina covering:
+Definition: leaf pattern warrior chestpiece is layer-concealing: decide no.
+Definition: leaf pattern warrior chestpiece is partially-layer-concealing: decide yes.
+Definition: leaf pattern warrior chestpiece is potentially at least partially vagina covering:
 	if the player is upright, decide yes;
 	decide no. [Partially covers vagina]
 
-To decide which number is the initial outrage of (C - a leaf pattern warrior chestpiece):
+To decide which number is the initial outrage of (C - leaf pattern warrior chestpiece):
 	decide on 5.
 
-To decide which number is the heaviness of (C - a leaf pattern warrior chestpiece):
+To decide which number is the heaviness of (C - leaf pattern warrior chestpiece):
 	decide on 6.
 
-Definition: a leaf pattern warrior chestpiece is grey themed: decide yes.
-Definition: a leaf pattern warrior chestpiece is flower themed: decide yes.
+Definition: leaf pattern warrior chestpiece is grey themed: decide yes.
+Definition: leaf pattern warrior chestpiece is flower themed: decide yes.
 
 Part 3 - Reinforced Warrior Chestpiece
 
-A reinforced warrior chestpiece is a kind of holy warrior chestpiece. A reinforced warrior chestpiece is usually high cut. A reinforced warrior chestpiece is usually belly covering.
+reinforced warrior chestpiece is a holy warrior chestpiece. reinforced warrior chestpiece is high cut. reinforced warrior chestpiece is belly covering.
 
-The printed name of reinforced warrior chestpiece is usually "[clothing-title-before]reinforced warrior's chestpiece[clothing-title-after]". The text-shortcut of reinforced warrior chestpiece is "rwc".
-
-There is 1 reinforced warrior chestpiece.
+The printed name of reinforced warrior chestpiece is "[clothing-title-before]reinforced warrior's chestpiece[clothing-title-after]". The text-shortcut of reinforced warrior chestpiece is "rwc".
 
 Figure of reinforced warrior chestpiece is the file "Items/Clothes/Upper/Special/Warrior/warrior4.png".
 
-To decide which figure-name is clothing-image of (C - a reinforced warrior chestpiece):
+To decide which figure-name is clothing-image of (C - reinforced warrior chestpiece):
 	decide on figure of reinforced warrior chestpiece.
 
-To say ClothingDesc of (O - a reinforced warrior chestpiece):
+To say ClothingDesc of (O - reinforced warrior chestpiece):
 	say "This metal piece of armour wraps around your waist and provides modesty and protection to your chest and belly. It is very heavy.".
 
-To decide which number is the initial outrage of (C - a reinforced warrior chestpiece):
+To decide which number is the initial outrage of (C - reinforced warrior chestpiece):
 	decide on 2.
 
-To decide which number is the heaviness of (C - a reinforced warrior chestpiece):
+To decide which number is the heaviness of (C - reinforced warrior chestpiece):
 	decide on 5.
 
-To decide which object is the unique-upgrade-target of (C - a reinforced warrior chestpiece):
-	if the number of worn neck covering clothing is 0, decide on a random off-stage ornate warrior chestpiece;
-	decide on a random off-stage leaf pattern warrior chestpiece.
+To decide which object is the unique-upgrade-target of (C - reinforced warrior chestpiece):
+	if the number of worn neck covering clothing is 0, decide on ornate warrior chestpiece;
+	decide on leaf pattern warrior chestpiece.
 
-Definition: a reinforced warrior chestpiece is grey themed: decide yes.
+Definition: reinforced warrior chestpiece is grey themed: decide yes.
+
+Definition: reinforced warrior chestpiece is uniquely class summonable:
+	if the largeness of breasts < 18, decide yes;
+	decide no.
+
+To say ClassSummonFlav of (C - reinforced warrior chestpiece):
+	say "You are forced to [if the player is upright]stand[otherwise]stay[end if] still as a rigid metal chestpiece appears around you. Somehow, you now feel more in control of your urges.".
 
 Part 4 - Plate Warrior Chestpiece
 
-A plate warrior chestpiece is a kind of immodest warrior chestpiece. A plate warrior chestpiece is usually fully exposing.
+plate warrior chestpiece is an immodest warrior chestpiece. plate warrior chestpiece is fully exposing.
 
-The printed name of plate warrior chestpiece is usually "[clothing-title-before]plate warrior's chestpiece[clothing-title-after]". The text-shortcut of plate warrior chestpiece is "pwc".
-
-There is 1 plate warrior chestpiece.
+The printed name of plate warrior chestpiece is "[clothing-title-before]plate warrior's chestpiece[clothing-title-after]". The text-shortcut of plate warrior chestpiece is "pwc".
 
 Figure of plate warrior chestpiece is the file "Items/Clothes/Upper/Special/Warrior/warrior2.png".
 
-To decide which figure-name is clothing-image of (C - a plate warrior chestpiece):
+To decide which figure-name is clothing-image of (C - plate warrior chestpiece):
 	decide on figure of plate warrior chestpiece.
 
-To say ClothingDesc of (O - a plate warrior chestpiece):
+To say ClothingDesc of (O - plate warrior chestpiece):
 	say "This is less of a bra and more of a metal chestpiece. Metal plates curve under your bust but leave your nipples fully exposed. The chest-plate is extremely shiny, providing a perfect clear reflection of whatever light hits it. [if O is worn and the humiliation of the player > 37500]You can feel it holding your mind together, preventing you from completely snapping.[otherwise][line break][end if]".
 
-To decide which number is the initial outrage of (C - a plate warrior chestpiece):
+To decide which number is the initial outrage of (C - plate warrior chestpiece):
 	decide on 9.
 
-To decide which object is the unique-upgrade-target of (C - a plate warrior chestpiece):
-	decide on a random off-stage hide warrior chestpiece.
+To decide which object is the unique-upgrade-target of (C - plate warrior chestpiece):
+	decide on hide warrior chestpiece.
 
-Definition: a plate warrior chestpiece is grey themed: decide yes.
+Definition: plate warrior chestpiece is grey themed: decide yes.
 
 Part 5 - Leather Warrior Chestpiece
 
-A hide warrior chestpiece is a kind of immodest warrior chestpiece. A hide warrior chestpiece is usually fully exposing. A hide warrior chestpiece is usually leather.
+hide warrior chestpiece is an immodest warrior chestpiece. hide warrior chestpiece is fully exposing. hide warrior chestpiece is leather.
 
-The printed name of hide warrior chestpiece is usually "[clothing-title-before]leather warrior's chestpiece[clothing-title-after]". The text-shortcut of hide warrior chestpiece is "lwc".
-
-There is 1 hide warrior chestpiece.
+The printed name of hide warrior chestpiece is "[clothing-title-before]leather warrior's chestpiece[clothing-title-after]". The text-shortcut of hide warrior chestpiece is "lwc".
 
 Figure of hide warrior chestpiece is the file "Items/Clothes/Upper/Special/Warrior/warrior5.png".
 
-To decide which figure-name is clothing-image of (C - a hide warrior chestpiece):
+To decide which figure-name is clothing-image of (C - hide warrior chestpiece):
 	decide on figure of hide warrior chestpiece.
 
-To say ClothingDesc of (O - a hide warrior chestpiece):
+To say ClothingDesc of (O - hide warrior chestpiece):
 	say "This leather chestpiece has two large holes made for [if O is worn]your[otherwise]the wearer's[end if] breasts to sit through, leaving them completely exposed. It is directly connected to a leather collar with a valuable looking gem in the centre. [if O is worn and the humiliation of the player > 37500]You can feel it holding your mind together, preventing you from completely snapping.[otherwise][line break][end if]".
 
-To decide which number is the initial outrage of (C - a hide warrior chestpiece):
+To decide which number is the initial outrage of (C - hide warrior chestpiece):
 	decide on 10.
 
-Definition: a hide warrior chestpiece is black themed: decide yes.
+Definition: hide warrior chestpiece is black themed: decide yes.
 
-To say TransformReaction of (C - a hide warrior chestpiece):
+To say TransformReaction of (C - hide warrior chestpiece):
 	if the outrage of C is too humiliating:
 		say "[variable custom style]No, this is even worse! If being a virgin warrior in this place means wearing such embarrassing things as this, maybe I don't want to be one...[roman type][line break]";
 	otherwise if C is almost too much:
@@ -180,32 +182,33 @@ To say TransformReaction of (C - a hide warrior chestpiece):
 
 Part 6 - Golden Warrior Priestess Outfit
 
-A golden warrior priestess outfit is a kind of immodest warrior chestpiece. There is 1 golden warrior priestess outfit. A golden warrior priestess outfit is metal. A golden warrior priestess outfit is super-short. A golden warrior priestess outfit is ridiculously low cut. A golden warrior priestess outfit is totally-exclusive.
+golden warrior priestess outfit is an immodest warrior chestpiece. golden warrior priestess outfit is metal. golden warrior priestess outfit is super-short. golden warrior priestess outfit is ridiculously low cut. golden warrior priestess outfit is totally-exclusive.
 
-Definition: a golden warrior priestess outfit is yellow themed: [Is it significantly yellow?]
-	decide yes.
-Definition: a golden warrior priestess outfit is layer-concealing: decide no.
 
-Figure of golden warrior priestess outfit is the file "Items/Clothes/Upper/Special/Warrior/priestess5.png".
-
-The printed name of golden warrior priestess outfit is usually "[clothing-title-before]golden warrior priestess outfit[clothing-title-after]". The text-shortcut of golden warrior priestess outfit is "gpo".
-
-To decide which figure-name is clothing-image of (C - a golden warrior priestess outfit):
-	decide on figure of golden warrior priestess outfit.
-
-To say ClothingDesc of (C - a golden warrior priestess outfit):
-	say "This bizarre metal outfit consists of just a few shiny constricting bars. It covers your nipples but not much else.".
-
-To decide which number is the initial outrage of (C - a golden warrior priestess outfit):
-	decide on 5.
-
-Definition: a golden warrior priestess outfit is class-transformation-protected:
+Definition: golden warrior priestess outfit is class-relevant:
 	if the class of the player is virgin warrior or the class of the player is priestess, decide yes;
 	decide no.
 
+Definition: golden warrior priestess outfit is yellow themed: [Is it significantly yellow?]
+	decide yes.
+Definition: golden warrior priestess outfit is layer-concealing: decide no.
+
+Figure of golden warrior priestess outfit is the file "Items/Clothes/Upper/Special/Warrior/priestess5.png".
+
+The printed name of golden warrior priestess outfit is "[clothing-title-before]golden warrior priestess outfit[clothing-title-after]". The text-shortcut of golden warrior priestess outfit is "gpo".
+
+To decide which figure-name is clothing-image of (C - golden warrior priestess outfit):
+	decide on figure of golden warrior priestess outfit.
+
+To say ClothingDesc of (C - golden warrior priestess outfit):
+	say "This bizarre metal outfit consists of just a few shiny constricting bars. It covers your nipples but not much else.".
+
+To decide which number is the initial outrage of (C - golden warrior priestess outfit):
+	decide on 5.
+
 golden warrior priestess outfit can be doomed-bloodline or not doomed-bloodline. golden warrior priestess outfit is not doomed-bloodline.
 
-To compute virginity-loss of (H - a golden warrior priestess outfit):
+To compute virginity-loss of (H - golden warrior priestess outfit):
 	say "As the [H] shatters into fragments, in a single instant you experience the lives of every single one of your clan's descendants. This scene is probably more extreme than most things in this game, do you want to read it? ";
 	if the player is consenting:
 		say "You experience the lives of each member of your clan, each one destined to spend her life as nothing more than ";
@@ -240,6 +243,9 @@ To say ClothingDesc of (C - virgin magical girl outfit):
 
 To say ShortDesc of (C - virgin magical girl outfit):
 	say "magical girl outfit".
+
+To say ClassSummonFlav of (C - virgin magical girl outfit):
+	say "Thin white fabric appears on your body, covering your chest and waist!".
 
 To decide which number is the initial outrage of (C - virgin magical girl outfit):
 	decide on 6.

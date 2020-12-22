@@ -22,31 +22,31 @@ To compute (C - a wrist bond) unique inheriting from (D - a wrist bond):
 	if D is wrist-bound-in-front, now C is wrist-bound-in-front;
 	otherwise now C is wrist-bound-behind.
 
-pair of handcuffs is a wrist bond. The printed name of pair of handcuffs is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of handcuffs[clothing-title-after]". The text-shortcut of pair of handcuffs is "hc".
+pair of handcuffs is a wrist bond. The printed name of pair of handcuffs is "[clothing-title-before]pair of handcuffs[clothing-title-after]". The text-shortcut of pair of handcuffs is "hc".
 Definition: a pair of handcuffs is grey themed: decide yes.
 
-pair of pink handcuffs is a wrist bond. The printed name of pair of pink handcuffs is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of pink handcuffs[clothing-title-after]". The text-shortcut of pair of pink handcuffs is "phc".
+pair of pink handcuffs is a wrist bond. The printed name of pair of pink handcuffs is "[clothing-title-before]pair of pink handcuffs[clothing-title-after]". The text-shortcut of pair of pink handcuffs is "phc".
 Definition: pair of pink handcuffs is pink themed:
 	decide yes.
 
 To decide which number is the initial outrage of (W - pair of pink handcuffs):
 	decide on 4.
 
-pair of furry handcuffs is a wrist bond. pair of furry handcuffs is leather. The printed name of pair of furry handcuffs is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of furry handcuffs[clothing-title-after]". The text-shortcut of pair of furry handcuffs is "fhc".
+pair of furry handcuffs is a wrist bond. pair of furry handcuffs is leather. The printed name of pair of furry handcuffs is "[clothing-title-before]pair of furry handcuffs[clothing-title-after]". The text-shortcut of pair of furry handcuffs is "fhc".
 Definition: pair of furry handcuffs is pink themed:
 	decide yes.
 
 To decide which number is the initial outrage of (W - pair of furry handcuffs):
 	decide on 5.
 
-pair of trashy handcuffs is a wrist bond. pair of trashy handcuffs is leather. The printed name of pair of trashy handcuffs is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of trashy handcuffs[clothing-title-after]". The text-shortcut of pair of trashy handcuffs is "thc".
+pair of trashy handcuffs is a wrist bond. pair of trashy handcuffs is leather. The printed name of pair of trashy handcuffs is "[clothing-title-before]pair of trashy handcuffs[clothing-title-after]". The text-shortcut of pair of trashy handcuffs is "thc".
 Definition: pair of trashy handcuffs is pink themed:
 	decide yes.
 
 To decide which number is the initial outrage of (W - pair of trashy handcuffs):
 	decide on 6.
 
-pair of wristcuffs is a wrist bond. The printed name of pair of wristcuffs is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of wristcuffs[clothing-title-after]". The text-shortcut of pair of wristcuffs is "wc".
+pair of wristcuffs is a wrist bond. The printed name of pair of wristcuffs is "[clothing-title-before]pair of wristcuffs[clothing-title-after]". The text-shortcut of pair of wristcuffs is "wc".
 Definition: pair of wristcuffs is black themed: decide yes.
 
 To decide which number is the initial outrage of (W - pair of wristcuffs):

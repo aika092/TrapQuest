@@ -100,7 +100,11 @@ To compute defeated perception of (M - a monster):
 
 To compute correct perception of (M - a monster):
 	now the latest-appearance of M is the appearance of the player;
-	if diaper quest is 1:
+	if the player is a december 2020 top donator and M is proposer:
+		compute proposal of M;
+	otherwise if the player is a december 2020 top donator and the class of the player is bride and M is bride-consort and there is a worn bouquet and M is not uniquely unfriendly:
+		compute bride perception of M;
+	otherwise if diaper quest is 1:
 		now the latest-cringe of M is the cringe appearance of the player; [We only want to do that if we're playing DQ otherwise we're wasting CPU cycles]
 		compute DQ perception of M;
 	otherwise:
@@ -225,7 +229,7 @@ To compute sudden objectification of (M - a monster):
 
 Definition: a monster (called M) is objectifying the player:
 	if diaper quest is 1, decide no;
-	if M is not interested or M is not in the location of the player:
+	if M is not interested or M is not in the location of the player or (M is bride-consort and there is a worn bouquet):
 		now the objectification of M is 0;
 		decide no;
 	if the objectification of M is 1, decide yes;
@@ -476,7 +480,11 @@ To FavourDown (M - a monster) with consequences:
 
 To FavourUp (M - a monster) by (N - a number):
 	if the class of the player is cheerleader, increase N by 1;
-	if N > 0, increase the favour of M by N.
+	if N > 0:
+		increase the favour of M by N;
+		if M is royal guard and the refractory-period of M < 0:
+			progress quest of royal-quest;
+			now the refractory-period of M is the refractory-time of M. [This stops the player being able to trigger the duty performed repeatedly within a short time]
 
 To FavourDown (M - a monster) by (N - a number) with consequences:
 	if M is alive:

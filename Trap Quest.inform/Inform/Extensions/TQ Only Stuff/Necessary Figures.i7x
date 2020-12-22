@@ -185,6 +185,27 @@ To decide which figure-name is Figure of rank 4 candy:
 		if student-candy is clitLeaded, decide on figure of rank 4 candy pierced;
 		otherwise decide on figure of rank 4 candy normal.
 
+Figure of rank 2 laci normal is the file "NPCs/School/Student/student3b.png".
+Figure of rank 2 laci pierced is the file "NPCs/School/Student/student3bp.png".
+To decide which figure-name is Figure of rank 2 laci:
+	if student-laci is clitLeaded, decide on figure of rank 2 laci pierced;
+	otherwise decide on figure of rank 2 laci normal.
+Figure of rank 3 laci normal is the file "NPCs/School/Student/student3c.png".
+Figure of rank 3 laci pierced is the file "NPCs/School/Student/student3cp.png".
+To decide which figure-name is Figure of rank 3 laci:
+	if student-laci is clitLeaded, decide on figure of rank 3 laci pierced;
+	otherwise decide on figure of rank 3 laci normal.
+Figure of rank 4 laci normal is the file "NPCs/School/Student/student3d.png".
+Figure of rank 4 laci pierced is the file "NPCs/School/Student/student3dp.png".
+To decide which figure-name is Figure of rank 4 laci:
+	if student-laci is clitLeaded, decide on figure of rank 4 laci pierced;
+	otherwise decide on figure of rank 4 laci normal.
+Figure of rank 5 laci normal is the file "NPCs/School/Student/student3e.png".
+Figure of rank 5 laci pierced is the file "NPCs/School/Student/student3ep.png".
+To decide which figure-name is Figure of rank 5 laci:
+	if student-laci is clitLeaded, decide on figure of rank 5 laci pierced;
+	otherwise decide on figure of rank 5 laci normal.
+
 Figure of rank 1 small lips rosie is the file "NPCs/School/Student/student1a.png".
 Figure of rank 1 big lips rosie is the file "NPCs/School/Student/student1aL.png".
 To decide which figure-name is Figure of rank 1 rosie:

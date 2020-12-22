@@ -32,9 +32,9 @@ Check kneeling:
 				say "[variable custom style]I may be on my knees, but I'm not going to just submit![roman type][line break]" instead;
 		otherwise:
 			say "You are already kneeling!" instead;
-	if seconds is 0 and the fatigue of the player < the buckle threshold of the player and debugmode is 0 and the delicateness of the player < 9 and the bimbo of the player < 10 and the player is in danger and the player is not very horny and the class of the player is princess and princess-consort is not in the location of the player and auto is 0:
+	if seconds is 0 and the fatigue of the player < the buckle threshold of the player and debugmode is 0 and the delicateness of the player < 9 and the bimbo of the player < 10 and the player is in danger and the player is not very horny and the class of the player is princess and bride-consort is not in the location of the player and auto is 0:
 		say "A strange tingle passes through your head, and a strange voice orders you to stay on your feet.[line break][first custom style]'A princess does not kneel for anyone!'[roman type][line break]" instead;[TODO: WILLING TO KNEEL RULES]
-	if seconds is 0 and auto is 0 and the fatigue of the player < the buckle threshold of the player and the delicateness of the player < 3 and the player is not a pervert and debugmode is 0 and the bimbo of the player < 8 and the player is in danger and the player is not a bit horny and the class of the player is not puppy and the number of dangerous gladiator in the location of the player is 0 and the player is not grossed out and the player is not perturbed: [It's very legit to submit to a gladiator early, so she doesn't grow a penis.]
+	if seconds is 0 and auto is 0 and the fatigue of the player < the buckle threshold of the player and the delicateness of the player < 3 and the player is not a pervert and debugmode is 0 and the bimbo of the player < 8 and the player is in danger and the player is not a bit horny and the class of the player is not puppy and the number of dangerous gladiator in the location of the player is 0 and the player is not grossed out and the player is not perturbed and the class of the player is not santa's little helper: [It's very legit to submit to a gladiator early, so she doesn't grow a penis.]
 		say "[variable custom style]No way, I'm fighting until I drop![roman type][line break]" instead.
 
 Carry out kneeling:
@@ -42,9 +42,11 @@ Carry out kneeling:
 	if seconds > 0 and auto is 0 and the location of the player is unbossed: [It'd be unfair to have the player get serving bondage during a boss fight in my opinion, especially the vine boss]
 		let servePunished be 0;
 		repeat with X running through carried open topped non-empty vessels:
-			let D be the dexterity of the player * (1 + background-waitress);
+			let balanceBonus be 1;
+			if background-waitress > 0 or there is a worn bunny outfit, now balanceBonus is 2;
+			let D be the dexterity of the player * balanceBonus;
 			let R be a random number between 1 and D;
-			if debuginfo > 0, say "[input-style][ShortVesselDesc of X] balance check: dexterity [if background-waitress > 0](doubled from waitress background) [end if]d[D] ([R]) | ([1 + (clumsy * 4)].5) spill evasion difficulty[roman type][line break]";
+			if debuginfo > 0, say "[input-style][ShortVesselDesc of X] balance check: dexterity [if background-waitress > 0](doubled from waitress background) [otherwise if balanceBonus is 2](doubled from magical clothing effect) [end if]d[D] ([R]) | ([1 + (clumsy * 4)].5) spill evasion difficulty[roman type][line break]";
 			if R < (2 + (clumsy * 4)) or there is worn serving-bondage:
 				say "You spill the [printed name of X] on the floor[if the fill-type of X < 20]. What a waste[end if]!";
 				Dump X;

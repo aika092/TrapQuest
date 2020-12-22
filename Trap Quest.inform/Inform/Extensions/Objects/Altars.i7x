@@ -257,9 +257,8 @@ To say GoddessAddress:
 		reset dungeon altar.]
 
 To AltarUniqueReward of (T - flower hairclip):
-	let C be a random golden warrior priestess outfit;
 	let D be a random worn overdress;
-	if C is not D:
+	if D is not golden warrior priestess outfit:
 		repeat with X running through worn breast covering clothing:
 			unless X is D:
 				say "Your [X] vanishes!";
@@ -273,12 +272,12 @@ To AltarUniqueReward of (T - flower hairclip):
 				say "Your [X] vanishes!";
 				destroy X;
 		say "A shimmering blue light surrounds you as [if D is clothing]your [ShortDesc of D] shapeshifts, first turning into pure visible energy and then[otherwise]pure visible energy surrounds you before eventually[end if] settling into form as some kind of bizarre solid gold frame. A voice appears in your head:[line break][second custom style]'At last, the chosen one has arrived! You are the True Herald, the prophecies speak of your role in deciding the destiny of our entire clan. Now go, and keep yourself pure, for if you fail, all your descendants will be doomed to be nothing but the playthings of the monsters of this world.'[line break][variable custom style][if the bimbo of the player < 14]My virginity decides the future of this entire world? That's an extreme amount of responsibility to just drop on someone...[otherwise]I'll do my best, but that outcome sounds kind of fun![end if][roman type][line break]";
-		if D is clothing, silently transform D into C;
-		otherwise summon C;
+		if D is clothing, silently transform D into golden warrior priestess outfit;
+		otherwise summon golden warrior priestess outfit;
 	otherwise:
-		say "Your [C] glows blue as its power is enhanced with holy magic!";
-		increase the raw-magic-modifier of C by 1;
-		now C is blessed;
+		say "Your [golden warrior priestess outfit] glows blue as its power is enhanced with holy magic!";
+		increase the raw-magic-modifier of golden warrior priestess outfit by 1;
+		now golden warrior priestess outfit is blessed;
 	if T is not cursed:
 		say "Your [ShortDesc of T] becomes cursed again! You'll have to stay like this, at least for a little while...";
 		now T is cursed;
@@ -524,10 +523,8 @@ To ElderEmpower (W - laurel wreath):
 			say "Your [C] is torn apart!";
 			destroy C;
 	say "Your clothing removed, you begin to feel terrible foreboding. But as suddenly as they appeared, the tentacles simply vanish. As you consider how lucky you were, though, a sudden pain from your neck rips through your body! You get up with a start, and feel a warm, pulsing lump attached to you. One that should definitely be there. It's definitely okay that it is there. As you think this, purple tentacles come out of it and wrap around your body, accentuating your curves. How thoughtful.";
-	let T be a random living tentacles;
-	summon T cursed;
-	reset elder altar;
-	now fertility-summoned is 1.
+	class summon living tentacles;
+	reset elder altar.
 
 voidbladeSummoned is initially false.
 To ElderEmpower (T - flower hairclip):
@@ -862,14 +859,14 @@ To DevilPray (P - a person):
 	if the class of the player is priestess or N < 1, now N is 1; [a priestess always gets the minimum effect]
 	if N > 6, now N is 6;[the effect maxes out at a certain point]
 	let R be a random number between 1 and 4;
-	if gold-summoned is 0:
-		repeat with M running through infernal monsters:
-			if the times-submitted of M > 0, now R is 0;
-	if avatar-summoned is 0 and the player is possessing a vagina and the vaginalvirgin of the player is 1 and the player is soulless:
+	repeat with M running through infernal monsters:
+		if the times-submitted of M > 0, now R is 0;
+	if avatar-summoned is false and the player is possessing a vagina and the vaginalvirgin of the player is 1 and the player is soulless:
 		now R is 0;[free]
 		say "The statue's eyes glow with multicolored light as a [if lady fetish is 1]husky, feminine[otherwise]deep, masculine[end if] voice echoes in your ear.[line break][first custom style]'A virgin, with a void for a soul... It would be a waste to make you an altar girl! That tight little hole in your chest is begging to be filled!'[roman type][line break]The statue's arms suddenly spring to life, grabbing either side of your head and forcing you to look directly into the statue's eyes as you feel *something* pressing in on you from *somewhere*. The empty feeling in your chest turns into a slow, painful sensation of stretching, and you let out a groan of pain as something HUGE and warm forces its way into your very core. Brand new horns push their way out of your forehead, followed by a golden tiara and hood materialising on your head.[line break][first custom style]'Hm, looks like you weren't able to take all of me, but no matter. I am your master now, [NameBimbo], so get to work collecting souls while I work on improving your vessel.'[roman type][line break]";
 		summon avatar-headpiece cursed;
-	otherwise if R is 0 and gold-tiara is actually summonable:[having sex with a demon at least once will give the player the worshipper headgear]
+		now avatar-summoned is true;
+	otherwise if R is 0 and gold-tiara is off-stage and gold-tiara is actually summonable:[having sex with a demon at least once will give the player the worshipper headgear]
 		say "The statue's face seems to grin as a golden tiara materialises on your head.";
 		summon gold-tiara cursed;
 	otherwise if R is 1:[summon a demonic item. The item has a better modifier and less chance of a bad enchantment if the modifier is low]
@@ -1106,7 +1103,7 @@ Resets the charge of the dungeon altar and triggers any code that needs to run w
 To reset dungeon altar:
 	if the class of the player is priestess and the player is possessing a vagina and the vaginalvirgin of the player is 1, now the charge of the dungeon altar is 220;
 	otherwise now the charge of the dungeon altar is 400;
-	if there is a worn demon tail plug, increase the charge of the dungeon altar by 150;
+	if demon tail plug is worn, increase the charge of the dungeon altar by 150;
 	force inventory-focus redraw; [This forces the inventory window to redraw]
 	force clothing-focus redraw. [This forces the clothing window to redraw]
 

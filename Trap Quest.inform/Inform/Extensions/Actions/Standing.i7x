@@ -86,7 +86,7 @@ Check standing:
 			if RM > H:
 				allocate 6 seconds;
 				say "[LongHairStandingBlock of M]" instead;
-	if there is a worn cursed puppy tail plug:
+	if puppy tail plug is worn and puppy tail plug is cursed:
 		repeat with M running through dangerous flightless human monsters in the location of the player: [This is the monster standing on their plug.]
 			allocate 6 seconds;
 			say "[BigNameDesc of M] steps on your tail plug, its magic curse keeping it anchored inside you and preventing you from standing up." instead;

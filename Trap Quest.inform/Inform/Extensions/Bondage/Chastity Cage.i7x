@@ -117,7 +117,7 @@ This is the chastity cage orgasm resolution rule:
 			compute summoned quest of C.
 The chastity cage orgasm resolution rule is listed last in the orgasm resolution rules.
 
-[A chastity cage is a kind of bondage. A chastity cage is usually unique. A chastity cage is usually sheer. There is 1 chastity cage. The printed name of chastity cage is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]chastity [if the player is possessing a penis]cage[otherwise]belt[end if][clothing-title-after]". The text-shortcut of chastity cage is "cha". Chastity cage is usually crotch-assless. Chastity cage is usually crotch-intact. Understand "belt" as chastity cage.
+[A chastity cage is a kind of bondage. A chastity cage is usually unique. A chastity cage is usually sheer. There is 1 chastity cage. The printed name of chastity cage is "[clothing-title-before]chastity [if the player is possessing a penis]cage[otherwise]belt[end if][clothing-title-after]". The text-shortcut of chastity cage is "cha". Chastity cage is usually crotch-assless. Chastity cage is usually crotch-intact. Understand "belt" as chastity cage.
 A chastity cage has a number called size.]
 
 [Classic]

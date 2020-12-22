@@ -1,32 +1,36 @@
 Cow Pattern Boots by Shoes begins here.
 
-A cow pattern boots is a kind of boots. A cow pattern boots is usually leather. A cow pattern boots is usually unique. The heel-height of a cow pattern boots is usually 3.
-Definition: a cow pattern boots is fluid immune: decide yes.
+cow pattern boots is a boots. cow pattern boots is leather. cow pattern boots is unique.
+Definition: cow pattern boots is fluid immune: decide yes.
 
-The printed name of cow pattern boots is usually "[clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch cow pattern boots[clothing-title-after]". The text-shortcut of cow pattern boots is "cpb".
+Definition: cow pattern boots is class-relevant:
+	if the class of the player is cowgirl, decide yes;
+	decide no.
 
-Understand "boots" as cow pattern boots.
+The printed name of cow pattern boots is "[clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch cow pattern boots[clothing-title-after]". The text-shortcut of cow pattern boots is "cpb".
 
-There is 1 cow pattern boots.
-
-To decide which figure-name is the clothing-image of (H - a cow pattern boots):
+To decide which figure-name is the clothing-image of (H - cow pattern boots):
 	decide on the figure of cow boots.
 
 Figure of cow boots is the file "Items/Clothes/Lower/Feet/Boots/cowboots1.png".
 
-To decide which number is the unique outrage of (C - a cow pattern boots):
+To compute class set up of (C - cow pattern boots):
+	now the raw-magic-modifier of C is (the largeness of breasts + a random number between -2 and 6) / 5;
+	now the heel-height of C is 3.
+
+To decide which number is the unique outrage of (C - cow pattern boots):
 	decide on 1.
 
-To decide which number is the hindrance-modifier of (C - a cow pattern boots):
+To decide which number is the hindrance-modifier of (C - cow pattern boots):
 	decide on -1.
 
-Definition: a cow pattern boots is cow themed: decide yes.
-Definition: a cow pattern boots is black themed: decide yes.
-Definition: a cow pattern boots is white themed: decide yes.
+Definition: cow pattern boots is cow themed: decide yes.
+Definition: cow pattern boots is black themed: decide yes.
+Definition: cow pattern boots is white themed: decide yes.
 
-To say UniqueShortDesc of (C - a cow pattern boots):
+To say UniqueShortDesc of (C - cow pattern boots):
 	say "cow pattern boots".
-To say ClothingDesc of (C - a cow pattern boots):
+To say ClothingDesc of (C - cow pattern boots):
 	say "A pair of warm leather boots with a fluffy wool cow pattern on the outside.";
 	say "[SteadinessDesc of C]".
 

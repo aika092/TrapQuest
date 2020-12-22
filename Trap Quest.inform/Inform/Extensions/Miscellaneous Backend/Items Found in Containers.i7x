@@ -192,13 +192,13 @@ To compute autotaking (I - a thing):
 
 This is the autotaking continues rule:
 	let I be autotake-target;
-	if autotake >= 1 and I is in-play and I is not held and ((I is not food and I is not bottle and I is not plentiful accessory) or autotake is 2) and I is not known-cursed-potion and there is a worn bag of holding and the player is able to use their hands and the player is not in danger:
+	if I is a thing and autotake >= 1 and I is in-play and I is not held and ((I is not food and I is not bottle and I is not plentiful accessory) or autotake is 2) and I is not known-cursed-potion and there is a worn bag of holding and the player is able to use their hands and the player is not in danger:
 		if the player is wrist bound and there is a worn heels and the player is upright:
 			say "[bold type]You won't automatically pick stuff up when you have a risk of tripping over because of your heels and wrist bondage.[roman type][line break]";
 		otherwise:
 			if I is can and there is an open minibar in the location of the player:
 				repeat with C running through cans in the location of the player:
-					if I is not C,  try silently taking C;
+					if I is not C, try silently taking C;
 			try silently taking I;
 			now focused-thing is I;
 			if I is carried:
@@ -209,11 +209,12 @@ This is the autotaking continues rule:
 				otherwise:
 					if I is not food and I is not bottle and I is not plentiful accessory, say "You add the [ShortDesc of I] to your bag.";
 					otherwise say "You are now carrying the [ShortDesc of I].";
-				now another-turn is 1.
+					if I is clothing and the bimbo of the player > a random number between 11 and 18, compute automatic wearing of I.
+				[now another-turn is 1.]
 
 Report opening a container:
 	repeat with I running through clothing in the noun:
-		if I is clothing and the bimbo of the player > 10, compute automatic wearing of I.
+		if I is clothing and the bimbo of the player > a random number between 11 and 18, compute automatic wearing of I.
 
 To say Discovery of (I - a thing):
 	say "You find a [ShortDesc of I] inside![line break][variable custom style][DiscoveryFlav of I][roman type][line break]";
@@ -256,7 +257,7 @@ To compute automatic wearing of (C - a clothing):
 		now autowear is true;
 		if C is actually wearable and C is not cursed or C is not sure:
 			say "[variable custom style]Ooh, this is perfect! I want to wear this right now![roman type] You try to put it on.";
-			now C is held by the player;
+			now C is carried by the player;
 			try wearing C;
 		now autowear is false.
 

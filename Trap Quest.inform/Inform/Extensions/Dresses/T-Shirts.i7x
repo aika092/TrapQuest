@@ -53,41 +53,37 @@ To decide which number is the initial outrage of (C - a Boobies T-shirt):
 
 Part 2 - Gang Bang Girl T-shirt
 
-A Gang Bang Girl T-shirt is a kind of T-shirt. The printed name of Gang Bang Girl T-shirt is usually "[clothing-title-before]Gang Bang Girl T-shirt[clothing-title-after]". The text-shortcut of Gang Bang Girl T-shirt is "ggt".
+gang-bang-girl T-shirt is a T-shirt. The printed name of gang-bang-girl T-shirt is usually "[clothing-title-before]Gang Bang Girl T-shirt[clothing-title-after]". The text-shortcut of gang-bang-girl T-shirt is "ggt". Understand "gang", "bang", "girl" as gang-bang-girl T-shirt.
 
-Definition: a Gang Bang Girl T-shirt is interracial themed: decide yes.
+Definition: gang-bang-girl T-shirt is interracial themed: decide yes.
 
-Figure of Gang Bang Girl T-shirt is the file "Items/Clothes/Upper/Shirts/tshirt1.png".
+Figure of gang-bang-girl T-shirt is the file "Items/Clothes/Upper/Shirts/tshirt1.png".
 
-There is 1 Gang Bang Girl T-shirt.
+To decide which figure-name is clothing-image of (C - gang-bang-girl T-shirt):
+	decide on figure of gang-bang-girl T-shirt.
 
-To decide which figure-name is clothing-image of (C - a Gang Bang Girl T-shirt):
-	decide on figure of Gang Bang Girl T-shirt.
-
-To say ClothingDesc of (C - a Gang Bang Girl T-shirt):
+To say ClothingDesc of (C - gang-bang-girl T-shirt):
 	say "This normal white T-shirt has the phrase 'Gang Bang Girl' in large letters on it, accompanied by a female symbol surrounded by male symbols.".
 
-To say MediumDesc of (C - a Gang Bang Girl T-shirt):
-	say "'gangbang girl' T-shirt".
+To say MediumDesc of (C - gang-bang-girl T-shirt):
+	say "'gang bang girl' T-shirt".
 
-Definition: a Gang Bang Girl T-shirt is anal sex themed: decide yes.
-Definition: a Gang Bang Girl T-shirt is oral sex themed: decide yes.
-Definition: a Gang Bang Girl T-shirt is vagina themed: decide yes.
-Definition: a Gang Bang Girl T-shirt is white themed: decide yes.
+Definition: gang-bang-girl T-shirt is anal sex themed: decide yes.
+Definition: gang-bang-girl T-shirt is oral sex themed: decide yes.
+Definition: gang-bang-girl T-shirt is vagina themed: decide yes.
+Definition: gang-bang-girl T-shirt is white themed: decide yes.
 
-To decide which number is the initial outrage of (C - a Gang Bang Girl T-shirt):
+To decide which number is the initial outrage of (C - gang-bang-girl T-shirt):
 	decide on 4.
 
 outrageous-gang-bang-shirt is a humiliating situation.
 Definition: outrageous-gang-bang-shirt (called A) is applicable:
-	let B be a random worn gang bang girl T-shirt;
-	let O be the outrage of B;
-	if the player is not disgraced and O is too humiliating, decide yes;
+	if gang-bang-girl T-shirt is worn and the player is not disgraced and the outrage of gang-bang-girl T-shirt is too humiliating, decide yes;
 	decide no.
 To reflect on (A - outrageous-gang-bang-shirt):
-	say "[variable custom style]I really shouldn't be wearing this T-shirt... if I get forced into some kind of gang bang situation right now, I don't think my mind would survive... never mind my [asshole]![roman type][line break]".
+	say "[variable custom style]I really shouldn't be wearing this T-shirt... if I get forced into some kind of gang bang situation right now, I don't think my mind would survive... never mind my [if the player is possessing a vagina][vagina][otherwise][asshole][end if]![roman type][line break]".
 
-To decide which number is the initial outrage of (C - a gang bang girl T-shirt):
+To decide which number is the initial outrage of (C - gang-bang-girl T-shirt):
 	decide on 9.
 
 Part 3 - Gender Bender T-shirt

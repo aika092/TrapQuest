@@ -47,14 +47,14 @@ To decide which number is the intelligence-influence of (C - a huge ballgag):
 	increase S by the magic-modifier of C;
 	decide on S.
 
-A small ballgag is a kind of ballgag. There is 1 small ballgag. The printed name of small ballgag is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]small ballgag[clothing-title-after]". The text-shortcut of small ballgag is "sga".
+A small ballgag is a kind of ballgag. There is 1 small ballgag. The printed name of small ballgag is "[clothing-title-before]small ballgag[clothing-title-after]". The text-shortcut of small ballgag is "sga".
 Definition: a small ballgag is red themed: decide yes.
 Definition: a small ballgag is IcarusScienceAppropriate:
 	if it is actually summonable, decide yes;
 	decide no.
-A large ballgag is a kind of ballgag. There is 1 large ballgag. The printed name of large ballgag is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]large ballgag[clothing-title-after]". The text-shortcut of large ballgag is "lga".
+A large ballgag is a kind of ballgag. There is 1 large ballgag. The printed name of large ballgag is "[clothing-title-before]large ballgag[clothing-title-after]". The text-shortcut of large ballgag is "lga".
 Definition: a large ballgag is white themed: decide yes.
-A huge ballgag is a kind of ballgag. There is 1 huge ballgag. The printed name of huge ballgag is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]huge ballgag[clothing-title-after]". The text-shortcut of ballgag is "hga".
+A huge ballgag is a kind of ballgag. There is 1 huge ballgag. The printed name of huge ballgag is "[clothing-title-before]huge ballgag[clothing-title-after]". The text-shortcut of ballgag is "hga".
 Definition: a huge ballgag is red themed: decide yes.
 
 To compute SelfExamineDesc of (C - a ballgag):
@@ -101,7 +101,7 @@ Definition: A ballgag is fetish appropriate:
 	if diaper quest is 0, decide yes;
 	decide no.
 
-A bit gag is a kind of ballgag. There is 1 bit gag. The printed name of bit gag is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]bit gag[clothing-title-after]". The text-shortcut of bit gag is "btg".
+A bit gag is a kind of ballgag. There is 1 bit gag. The printed name of bit gag is "[clothing-title-before]bit gag[clothing-title-after]". The text-shortcut of bit gag is "btg".
 
 To say ShortDesc of (C - a bit gag):
 	say "bit gag".
@@ -128,6 +128,13 @@ To reflect on (A - outrageous-gag):
 	if G is large ballgag or G is huge ballgag, say "[variable custom style][if the intelligence of the player < 9]Ow ow ow, this ballgag is making my jaw ache! Get it off![otherwise]I can't even talk with this ballgag in my mouth, and it's making me drool everywhere. Yuck![end if]";
 	if G is cock pacifier, say "[variable custom style][if the oral sex addiction of the player > 6]I guess it's pretty embarrassing to have this fake [manly-penis] in my mouth, but at least it keeps me hydrated! Yum![otherwise]This [manly-penis] pacifier is so humiliating. Not only can everyone see that I've got a pacifier in my mouth, but while it's in my mouth I'm basically permanently sucking [manly-penis]![end if]";
 	if G is opengag, say "[variable custom style]I can't even talk with this gag in my mouth, and it makes me look like I'm always ready to suck dick. Yuck!";
+	say "[roman type][line break]".
+
+To say FriendReaction of (M - a real-life patron) to (A - outrageous-gag):
+	let G be a random worn gag;
+	if G is not pacifier and G is ballgag, say "... [if M is nemesis-friend]If you ask me, you should do everyone else a favour and keep yourself gagged all the time. [otherwise]I guess there's no point asking you for an explanation. [end if]";
+	if G is pacifier, say "... Just so you know, [if G is cock pacifier]I can tell what's on the end of that [otherwise]no self-respecting adult would wear a [end if]pacifier. ";
+	if G is opengag, say "... I guess there's no point asking if you know how that makes you look. ";
 	say "[roman type][line break]".
 
 Chapter - Wearability

@@ -26,7 +26,7 @@ To teleport to (R - a room):
 	repeat with C running through held store things:
 		compute stealing of C;
 		if shopkeeper is interested and the shopkeeper is in the location of the player, increase the stolen-aware of shopkeeper by 1;
-		if there is a worn tethering lipstick collar, end tethering;
+		if vampiress is chain-tethered, end tethering;
 	if the player is glue stuck, compute raw glue escaping a random glue in the location of the player with 1;[this may be causing lag]
 	now the player is in R;
 	zero focus stuff; [Location has changed so we need to empty the location window]

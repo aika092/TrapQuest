@@ -13,10 +13,8 @@ To compute persistent reward of (Q - stealth-diaper-quest) on (C - a clothing):
 		compute generic second time class reward of Q on C;
 	otherwise:
 		compute generic class reward of Q on C;
-	if the class of the player is princess and the player is not in a predicament room and royal scepter is actually summonable:
-		summon royal scepter;
-		now the charge of royal scepter is 25;
-		say "[bold type]Suddenly a [MediumDesc of royal scepter] appears in your hand! The sphere at the top shines brightly! It feels like it has some magic power that will decay over time.[roman type][line break]".
+	if the class of the player is princess and the player is not in a predicament room:
+		class summon royal scepter.
 
 To compute periodic effect of (C - royal scepter):
 	if the charge of C > 0:
@@ -149,6 +147,9 @@ dirty little whore sack of holding is a bag of holding.
 gape-gloves is a gloves. The printed name of gape-gloves is "gape gloves".
 bondage-ribbons is a dress.
 
+A bridal veil is a kind of headgear. floral bridal veil is a bridal veil.
+betrothal-quest is a headgear-clothing-quest. betrothal-quest has a truth state called ceremony. betrothal-quest has a truth state called consumation.
+
 Include Chocolates Bag by Objects.
 Include Bunny Ears DQ by Headgear.
 To say WaitressOfferAcceptFlav of (M - a monster) to (T - a thing):
@@ -164,6 +165,9 @@ Definition: kissing-lesson is lesson-appropriate: decide no.
 Include Stuffies by Equippables.
 
 To progress quest of (Q - whore-exposing-quest) for (M - a monster):
+	do nothing.
+
+To check clutch replacement:
 	do nothing.
 
 Figure of Jammy Messy Loading Animation Frame 1 is the file "Special/Animations/JammyLoading/frame_000001.jpeg".

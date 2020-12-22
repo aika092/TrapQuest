@@ -162,7 +162,6 @@ To UniqueSquirt (L - a liquid-object) On (C - Face) by (N - a number):
 		if the semen coating of C > 0:
 			say SemenEncounterFlav;
 			if newbie tips is 1, say "[one of][newbie style]Newbie tip: You've got cum on your face! That's not great - you'll be extremely humiliated if anyone sees you. It'll slowly drip off, but if you have any spare clothing, you might be able to use it as a rag to wipe the cum off, by typing 'wipe face with X'. Your chest and belly work similarly.[roman type][line break][or][stopping]";
-			if LC is tethering lipstick collar, end tethering;
 	otherwise: [NOT semen]
 		if M > 0:
 			decrease N by M; [reduce liquid hitting face by the amount that's going into headgear & hair instead]
@@ -243,7 +242,6 @@ To UniqueSquirt (L - a liquid-object) On (C - Breasts) by (N - a number):
 			while the semen coating of C < 10 and N > 0:
 				LiquidSoak L on C;
 				decrease N by 1;
-			if LC is tethering lipstick collar, end tethering;
 		otherwise:
 			if M > 0 and HC is unsoaked clothing:
 				decrease N by M; [exposed cleavage]

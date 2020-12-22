@@ -2,7 +2,7 @@ Unicorn by Monster begins here.
 
 Unicorn is a monster. Unicorn is intelligent. Unicorn is male. Understand "temperamental", "temper", "mental" as unicorn. The text-shortcut of unicorn is "uni".
 
-To decide which number is the girth of (M - a unicorn):
+To decide which number is the girth of (M - unicorn):
 	decide on 2.
 
 To decide which number is the base semen load of (M - unicorn):
@@ -12,21 +12,30 @@ To say LongDickDesc of (M - unicorn):
 	if full-lady fetish is 1, say "short strap-on";
 	otherwise say "short [manly-penis]".
 
-Definition: A unicorn is willing to urinate:
+Definition: unicorn is willing to urinate:
+	if the class of the player matches the text "princess bride", decide no;
 	if mythical creature fetish is 1, decide yes;
 	decide no.
+
+Definition: unicorn is willing to do oral:
+	if the class of the player matches the text "princess bride", decide no;
+	decide yes.
+
+Definition: unicorn is willing to do anal:
+	if the class of the player matches the text "princess bride" and the player is possessing a vagina, decide no;
+	decide yes.
 
 [Definition: unicorn is willing to masturbate: decide yes.]
 
 To say speech style of (M - unicorn):
 	say second custom style.
 
-Definition: a unicorn is father material: decide yes.
-Definition: a unicorn is wenchy: decide yes.
-Definition: a unicorn is human: decide yes.
+Definition: unicorn is father material: decide yes.
+Definition: unicorn is wenchy: decide yes.
+Definition: unicorn is human: decide yes.
 Definition: unicorn is musky: decide yes.
 
-Definition: a unicorn is woods dwelling: decide yes.
+Definition: unicorn is woods dwelling: decide yes.
 
 To say ShortDesc of (M - unicorn):
 	say "unicorn".
@@ -81,17 +90,25 @@ To set up (M - unicorn):
 	reset M;
 	now the monstersetup of M is 1;
 	now the raw difficulty of M is the starting difficulty of M;
-	let D be a random demon tail plug;
-	add D to the tradableItems of M, if absent;
-	add D to the taxableItems of M, if absent;
+	add demon tail plug to the tradableItems of M, if absent;
+	add demon tail plug to the taxableItems of M, if absent;
 	add demon belt to the tradableItems of M, if absent;
 	now the health of M is the maxhealth of M.
+
+Definition: unicorn is uniquely unfriendly: [We can use this to easily specify when a monster is pissed off regardless of usual stats.]
+	if unicorn is friendly-fucking, decide no;
+	if unicorn is default uniquely unfriendly, decide yes;
+	if player-class matches the text "princess bride", decide yes;
+	decide no.
 
 To compute perception of (M - unicorn):
 	now M is interested;
 	let X be demon lord;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed]![otherwise].[end if]";
-	if there is a worn xavier's cunt tattoo or X is mating:
+	if player-class matches the text "princess bride":
+		say "[big he of M] has fury in [his of M] eyes.[line break][speech style of M]'My name is Unicorn Montoya. You stole my fiancé. Prepare to be creampied.'[roman type][line break]";
+		anger M;
+	otherwise if there is a worn xavier's cunt tattoo or X is mating:
 		say "[big he of M] snarls.[line break][speech style of M]'[one of]The demon lord is MINE. You can't have [him of X]!'[or]You think you can compete with me, but you can't. The demon lord wants only ME. ME!'[or]You'll regret you ever looked at the demon lord.'[at random][roman type][line break]";
 		anger M;
 	otherwise if the class of the player is princess:
@@ -139,11 +156,13 @@ To say SummoningFlav of (M - unicorn):
 
 Part 3 - Combat
 
-[To say waitingflav of (M - a unicorn):
-	if the player is able to speak:
-		say "[one of][line break][variable custom style]'[if the bimbo of the player < 10]Go on then, let's get this over with.'[otherwise]You're the boss, big boy!'[end if][roman type][line break][or][or][or][or][cycling]";
-	otherwise:
-		say "[variable custom style][muffled sounds][roman type][line break]".]
+To check motion of (M - unicorn):
+	if player-class matches the text "princess bride" and the boredom of M <= 0, check seeking 1 of M;
+	otherwise check default motion of M.
+
+To check attack of (M - unicorn):
+	say "[speech style of M]'My name is Unicorn Montoya. You stole my fiancé. Prepare to be creampied.'[roman type][line break]";
+	check default attack of M.
 
 Section 1 - Protect and Attack
 
@@ -261,6 +280,7 @@ To decide if (M - unicorn) is willing to creampie (F - asshole):
 	decide yes.
 
 To decide if (M - unicorn) is willing to creampie (F - vagina):
+	if player-class matches the text "princess bride", decide yes;
 	if there is a worn xavier's cunt tattoo, decide no;[she respects her master]
 	if the player is pheromonal, decide yes;
 	if the class of the player is princess or the player is mating demon lord, decide yes;
@@ -268,7 +288,7 @@ To decide if (M - unicorn) is willing to creampie (F - vagina):
 	decide yes.
 
 To decide if (M - unicorn) is losing wrapper in (F - a fuckhole):
-	if the reaction of the player is 1 or the class of the player is princess, decide yes;
+	if the reaction of the player is 0 or the class of the player is princess, decide yes;
 	decide no.
 
 To compute post climax effect of (M - unicorn) in (F - a fuckhole):
@@ -276,6 +296,7 @@ To compute post climax effect of (M - unicorn) in (F - a fuckhole):
 	FavourUp M;
 	if newbie tips is 1, say sleeping tip.
 
+[TODO: modify to account for condom]
 To say sexSubmitNearingClimax of (M - a unicorn) in (F - a fuckhole):
 	say "[one of]Heat begins to gather in your [variable F] as [NameDesc of M] pounds away. You can tell [he of M]'s close.[or]Heat slowly builds in your [variable F] as [NameDesc of M] fucks you with more and more urgency.[or][BigNameDesc of M] pounds you harder and harder, heat slowly building up inside your [variable F].[or]You feel heat building in your [variable F] as [NameDesc of M] slowly speeds up, every thrust coming even faster than the last.'[at random][line break][speech style of M]'[one of]You better let me cum inside, or I'll curse you!'[or]If you know what's good for you, you'll take all my cum.'[at random][roman type][line break]".
 

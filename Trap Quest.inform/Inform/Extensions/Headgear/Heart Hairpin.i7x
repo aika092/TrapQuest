@@ -25,43 +25,17 @@ Definition: heart hairpin is pink themed: decide yes.
 Definition: heart hairpin is white themed: decide yes.
 
 To decide which number is the intelligence-influence of (H - heart hairpin):
-	let M be the magic power of the player;
-	let I be 0;
-	if M > 0:
-		increase I by 1;
-		if M > 3:
-			increase I by 1;
-			if M > 5:
-				increase I by 2;
-	decide on I.
+	decide on 1.
 
 Chapter - Class Outfit
 
-Definition: heart hairpin is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
-	if wearing-target is magical dress or wearing-target is magical stockings or wearing-target is heart wand, decide yes;
-	decide no.
-
-To say RemovalBlocked of (C - heart hairpin):
-	say "Your [ShortDesc of C] is somehow preventing you from taking this off!".
-
-magic-summoned is a number that varies.
 To compute unique recycling of (C - heart hairpin):
 	now the large-met of tentacle-research-quest is 0;
-	now the massive-met of tentacle-research-quest is 0;
-	now magic-summoned is 0.
+	now the massive-met of tentacle-research-quest is 0.
 
 To compute class outfit of (H - heart hairpin):
-	let D be a random off-stage lolita magical dress;
-	if the class of the player is schoolgirl, now D is a random schoolgirl outfit; [We don't want to overwrite the schoolgirl stuff with magical stuff if the player is both]
-	let S be a random off-stage magical stockings;
-	if D is actually summonable or (magic-summoned is 0 and D is magical dress and the number of worn magical dress is 0):
-		PinkWardrobeUnclash D;
-		say "[bold type]You feel a rush of magic as a [ShortDesc of D] materialises around you.[roman type][line break]";
-		summon D uncursed;
-		now magic-summoned is 1;
-	otherwise if S is actually summonable:
-		say "[bold type]A pair of light pink stockings appears on your legs![roman type][line break]";
-		summon S uncursed.
+	class summon lolita magical dress;
+	class summon magical stockings.
 
 wand-summoning is a magic-spell.
 To decide which number is the raw-magic-cost of (S - wand-summoning):

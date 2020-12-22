@@ -114,7 +114,7 @@ Definition: anal-slut tattoo is drawable:
 	if there is a worn lower back tattoo, decide no;
 	decide yes.
 Definition: anal-slut tattoo is eligible:
-	if the noun is ass plugging clothing or the noun is anal sex themed or the noun is plug or the noun is gang bang girl T-shirt, decide yes;
+	if the noun is ass plugging clothing or the noun is anal sex themed or the noun is plug or the noun is gang-bang-girl T-shirt, decide yes;
 	decide no.
 To say tattoo-desc of (T - anal-slut tattoo):
 	say "You have a tramp stamp tattoo on your lower back that says the words 'Anal Slut'. You can feel it somehow preventing you from suggesting anything except anal sex.".
@@ -182,7 +182,7 @@ Definition: angel tattoo is magic themed: decide yes.
 
 asshole-cupid tattoo is an asshole-tattoo. The tattoo-title of asshole-cupid tattoo is "bumhole cupid".
 Definition: asshole-cupid tattoo is eligible:
-	if the noun is chastity bond or the noun is anal sex themed or the noun is plug or the noun is purity clothing or the noun is dildo heels or the noun is heart themed, decide yes;
+	if the noun is chastity bond or the noun is anal sex themed or the noun is plug or the noun is purity clothing or the noun is dildo-heels or the noun is heart themed, decide yes;
 	decide no.
 To say tattoo-desc of (T - asshole-cupid tattoo):
 	say "A black tattoo in the shape of a cupid is aiming an arrow at your [asshole]. You can feel that your asshole is somehow more... desirable.".
@@ -259,7 +259,7 @@ Definition: bbc-fairy tattoo is drawable:
 	if interracial fetish is 1 and the number of worn upper back tattoo is 0, decide yes;
 	decide no.
 Definition: bbc-fairy tattoo is eligible:
-	if the noun is interracial themed or the noun is heart themed or the noun is semen themed or the noun is penis themed or the noun is pink-hair or the noun is fae mushroom or the noun is butterfly-wings or the noun is fairy wand, decide yes;
+	if the noun is interracial themed or the noun is heart themed or the noun is semen themed or the noun is penis themed or the noun is pink-hair or the noun is fae mushroom or the noun is butterfly-wings or the noun is fairy-wand, decide yes;
 	if the noun is non-empty bottle and the fill-colour of the noun is creamy, decide yes;
 	decide no.
 To say tattoo-desc of (T - bbc-fairy tattoo):
@@ -560,7 +560,7 @@ The broken clitty orgasm rule is listed in the orgasm resolution rules.
 butt-slut tattoo is an asshole-tattoo. The tattoo-title of butt-slut tattoo is "butt slut bumhole".
 Understand "butt slut", "asshole-tattoo" as butt-slut tattoo.
 Definition: butt-slut tattoo is eligible:
-	if the noun is chastity bond or the noun is anal sex themed or the noun is plug or the noun is flower hairclip or the noun is dildo heels or the noun is buttockless pants or the noun is sword-of-purity or the noun is book of anal, decide yes;
+	if the noun is chastity bond or the noun is anal sex themed or the noun is plug or the noun is flower hairclip or the noun is dildo-heels or the noun is buttockless pants or the noun is sword-of-purity or the noun is book of anal, decide yes;
 	decide no.
 To say tattoo-desc of (T - butt-slut tattoo):
 	say "The word BUTT is tattooed above your [asshole], and 'SLUT' is tattooed directly underneath it. It's going to be more likely that people want to fuck you up the ass from now on.".
@@ -571,7 +571,7 @@ The butt-slut tattoo butt slut rule is listed in the butt slut eligibility rules
 butterfly-wings tattoo is an asshole-tattoo. The tattoo-title of butterfly-wings tattoo is "butterfly wings bumhole".
 Understand "butterfly", "wings", "asshole-tattoo" as butterfly-wings tattoo.
 Definition: butterfly-wings tattoo is eligible:
-	if the noun is butterfly themed or the noun is glittering rose or the noun is fairy wand or the noun is pink-hair or the noun is fae mushroom, decide yes;
+	if the noun is butterfly themed or the noun is glittering rose or the noun is fairy-wand or the noun is pink-hair or the noun is fae mushroom, decide yes;
 	decide no.
 To say tattoo-desc of (T - butterfly-wings tattoo):
 	say "A blue butterfly wing is inked either side of your heart. It is making you less heavy.".
@@ -895,6 +895,7 @@ Definition: demon tattoo is demonic: decide yes.
 
 demon slut tattoo is an ass tattoo. The tattoo-title of demon slut tattoo is "demon slut".
 Definition: demon slut tattoo is drawable:
+	if there is a worn ass tattoo, decide no;
 	if diaper quest is 0, decide yes;
 	decide no.
 Definition: demon slut tattoo is eligible:
@@ -1720,7 +1721,7 @@ Figure of nothing's sacred tattoo is the file "Items/Tats/tattoo42.jpg".
 To decide which figure-name is the examine-image of (T - nothing's sacred tattoo):
 	decide on figure of nothing's sacred tattoo.
 Definition: nothing's sacred tattoo is eligible:
-	if the noun is infernal gem or the noun is purity clothing or the noun is runic headband or the noun is witch's goblet or the noun is mystical amulet or the noun is demonic or the noun is soulstone or the noun is blazing dress or the noun is dildo heels, decide yes;
+	if the noun is infernal gem or the noun is purity clothing or the noun is runic headband or the noun is witch's goblet or the noun is mystical amulet or the noun is demonic or the noun is soulstone or the noun is dildo-heels, decide yes;
 	decide no.
 To say tattoo-desc of (T - nothing's sacred tattoo):
 	say "The words 'Nothing's Sacred' are tattooed near your belly.".
@@ -2674,7 +2675,7 @@ To decide which number is the initial outrage of (T - unfaithful tattoo):
 unicorn-horn-finger tattoo is a body tattoo. The tattoo-title of unicorn-horn-finger tattoo is "unicorn horn finger".
 Figure of unicorn-horn-finger tattoo is the file "Items/Tats/tattoo62.jpg".
 Definition: unicorn-horn-finger tattoo is eligible:
-	if the noun is gloves or the noun is magic themed or the noun is fairy wand or the noun is royal scepter or the noun is purity clothing or the noun is horn or the noun is magic lamp or the noun is bow themed or the noun is horseshoe, decide yes;
+	if the noun is gloves or the noun is magic themed or the noun is fairy-wand or the noun is royal scepter or the noun is purity clothing or the noun is horn or the noun is magic lamp or the noun is bow themed or the noun is horseshoe, decide yes;
 	decide no.
 To decide which figure-name is the examine-image of (T - unicorn-horn-finger tattoo):
 	decide on figure of unicorn-horn-finger tattoo.
@@ -2876,6 +2877,7 @@ Definition: whore-is-my-mind tattoo is whore themed:
 whore-mouth tattoo is a face-tattoo. The tattoo-title of whore-mouth tattoo is "whore mouth".
 Definition: whore-mouth tattoo is drawable:
 	if the lips of face < 2, decide no;
+	if whore-mouth tattoo is worn, decide no;
 	decide yes.
 Definition: whore-mouth tattoo is eligible:
 	if the noun is whore themed, decide yes;

@@ -28,30 +28,12 @@ To compute SelfExamineDesc of (H - laurel wreath):
 
 Chapter - Class Outfit
 
-Definition: laurel wreath (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
-	if wearing-target is fertility outfit, decide yes;
-	decide no.
-
-fertility-summoned is a number that varies.
 To compute unique recycling of (C - laurel wreath):
-	now the conception-count of babymaking-quest is 0;
-	now fertility-summoned is 0.
+	now the conception-count of babymaking-quest is 0.
 
 To compute class outfit of (H - laurel wreath):
-	let G be a random off-stage goddess tunic;
-	let I be a random off-stage ivy leaves;
-	if the bimbo of the player < 10 and (G is actually summonable or (G is fertility outfit and fertility-summoned is 0)):
-		PinkWardrobeUnclash G;
-		say "[bold type]Your [printed name of H] [bold type]barely noticeably shakes, and then a white tunic materialises around you.[roman type][line break]You feel... divine!";
-		summon G;
-		now the raw-magic-modifier of G is childValue times 4;
-		now fertility-summoned is 1;
-	otherwise if (I is actually summonable or (I is fertility outfit and fertility-summoned is 0) or (I is fertility outfit and fertility-summoned is 1 and the bimbo of the player > 13)) and the bimbo of the player > 7:
-		PinkWardrobeUnclash I;
-		say "[bold type]Your [printed name of H] [bold type]barely noticeably shakes, and then a tight structure of ivy leaves materialises around you.[roman type][line break]You feel... divine!";
-		summon I;
-		now fertility-summoned is 2;
-		now the raw-magic-modifier of I is childValue times 5.
+	if the bimbo of the player < 10, class summon goddess tunic;
+	otherwise class summon ivy leaves.
 
 Chapter - Quest
 

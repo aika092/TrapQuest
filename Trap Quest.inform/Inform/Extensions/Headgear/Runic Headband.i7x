@@ -43,49 +43,22 @@ To decide which number is the intelligence-influence of (H - runic headband):
 			if L is not H, increase I by 1;
 	decide on I.
 
-To compute hair colour change of (H - runic headband):
-	compute hair colour darken of H.
-
 Definition: runic headband is magic themed: decide yes.
 
 Chapter - Class Outfit
 
 Definition: runic headband is removal-blocking:
-	if wearing-target is runic headband, decide no;
-	if wearing-target is purity or wearing-target is priestess outfit, decide yes;
 	if diaper quest is 1 and wearing-target is dirty diaper, decide yes;
-	if runic headband is not purity and (wearing-target is crotchless-panties or wearing-target is heart-pussy-skirt or wearing-target is heart-pussy-hobble-skirt), decide yes;
-	decide no. [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
-
-priestess-summoned is a number that varies.
-To compute unique recycling of (C - runic headband):
-	now priestess-summoned is 0.
+	decide no.
 
 To compute class outfit of (H - runic headband):
-	if the number of alive royal guards is 0: [We need someone to service]
-		let M be a random royal guard;
-		summon M in the dungeon;
-		set up M;
-	if H is purity:
-		let P be a random off-stage flowing priestess outfit;
-		if P is actually summonable or (P is priestess outfit and priestess-summoned is 0 and the number of worn priestess outfit + the number of worn golden warrior priestess outfit is 0):
-			PinkWardrobeUnclash P;
-			now priestess-summoned is 1;
-			say "[bold type]Your runic headband gently hums as holy attire shimmers into existence around your body.[roman type][line break]";
-			summon P;
-			now the raw-magic-modifier of P is the number of worn cursed clothing + the number of worn blessed clothing - 1;
-	otherwise:
-		if cleavage-window-priestess-outfit is off-stage and cleavage-window-priestess-outfit is actually summonable:
-			say "[bold type]Your runic headband gently hums as a [cleavage-window-priestess-outfit] [bold type]appears on you![roman type][line break]";
-			summon cleavage-window-priestess-outfit;
-		otherwise if heart-pussy-skirt is off-stage and heart-pussy-hobble-skirt is not worn and (cleavage-window-priestess-outfit is worn or heart-pussy-skirt is actually summonable):
-			PinkWardrobeUnclash heart-pussy-skirt;
-			say "[bold type]Your runic headband gently hums as a [heart-pussy-skirt] [bold type]appears on you![roman type][line break]";
-			summon heart-pussy-skirt;
-			if pearl crotchless-panties is off-stage:
-				PinkWardrobeUnclash pearl crotchless-panties;
-				say "[bold type]Your runic headband gently hums as crotchless panties with a string of pearls down the middle appear on you![roman type][line break]";
-				summon pearl crotchless-panties uncursed.
+	if the number of alive undefeated royal guards is 0: [We need someone to service]
+		let M be a random off-stage royal guard;
+		if M is monster:
+			summon M in the dungeon;
+			set up M;
+	if H is purity, class summon flowing priestess outfit;
+	otherwise class summon cameltoe-priestess-outfit.
 
 Chapter - Quest
 
@@ -253,8 +226,7 @@ An all later time based rule (this is the sinful priestess punishment rule):
 			if C is cameltoe-priestess-outfit or C is exposing-priestess-outfit:
 				say "[bold type][BigNameDesc of C] [bold type]reacts to the [semen] that's entered your womb![roman type][line break]";
 				transform C into cleavage-window-priestess-outfit;
-				PinkWardrobeUnclash heart-pussy-skirt;
-				summon heart-pussy-skirt;
-				say "[bold type]A [MediumDesc of heart-pussy-skirt] [bold type]appears on you![roman type][line break]".
+				class summon heart-pussy-skirt;
+				class summon pearl crotchless-panties.
 
 Runic Headband ends here.

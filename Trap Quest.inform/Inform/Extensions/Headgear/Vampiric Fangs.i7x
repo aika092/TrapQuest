@@ -43,26 +43,12 @@ To decide which number is the strength-influence of (C - vampiric fangs):
 
 Chapter - Class Outfit
 
-Definition: vampiric fangs (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
-	if wearing-target is vampiric cape, decide yes;
-	decide no.
-
-vampire-summoned is a number that varies.
 To compute unique recycling of (C - vampiric fangs):
-	now the ritual-only-once of ritual-quest is 0;
-	now vampire-summoned is 0.
+	now the ritual-only-once of ritual-quest is 0.
 
 To compute class outfit of (H - vampiric fangs):
-	let C be a random off-stage vampiric claws;
-	let P be a random off-stage vampiric cape;
-	if C is actually summonable or (C is vampiric claws and vampire-summoned is 0) and the number of worn wood-dongs is 0:
-		PinkWardrobeUnclash C;
-		say "[bold type]You feel your hands shift and warp painfully as your fingernails elongate and sharpen, turning into claws. Your slaps will certainly be more powerful! And, that vampiress told you you'd be able to drain an enemy's energy with these.[roman type][line break]";
-		summon C uncursed;
-		now vampire-summoned is 1;
-	otherwise if P is actually summonable:
-		say "[bold type]A long, black cape suddenly appears on your back! You feel it making you quicker and more nimble![roman type][line break]";
-		summon P uncursed.
+	if the number of worn wood-dong is 0, class summon vampiric claws;
+	class summon vampiric cape.
 
 Chapter - Quest
 

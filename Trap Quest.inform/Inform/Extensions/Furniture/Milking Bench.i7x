@@ -62,30 +62,13 @@ To compute furniture resting on (M - a milking bench):
 			allocate 4 seconds;
 			MilkDown 1;
 			increase the units collected of M by 1;
-			let C be a random off-stage cow print milking basque;
 			if cow-ears is off-stage and cow-ears is actually summonable and a random number between 1 and 40 - (20 * unlucky) is 1:
 				say "As you are getting milked, a headband with fake cow ears appears on your head. You let out a soft involuntary [variable custom style]'moo'[roman type].";
 				summon cow-ears cursed;
-			otherwise if the class of the player is royal slave and C is basque:
-				say "As you are getting milked, ";
-				let N be 0;
-				let MM be 0;
-				repeat with X running through worn clothing:
-					if X is dress or X is knickers or X is trousers or X is bra:
-						say "[if N > 0]Your[otherwise]your[end if] [X] disappears!";
-						if X is dress:
-							now MM is the raw-magic-modifier of X;
-							only destroy X;
-						otherwise:
-							destroy X;
-						increase N by 1;
-				summon C;
-				now C is milk production;
-				now the raw-magic-modifier of C is MM;
-				TopDisplace C;
-				now basque-summoned is 1;
-				now cow-summoned is 1;
-				say "[if N is 0]a[otherwise]A[end if] [ShortDesc of C] shimmers into place over your body[if N > 1], taking their place[otherwise if N > 0], taking its place[end if]!";
+			otherwise if the class of the player is royal slave and cow print basque is not worn:
+				class summon cow print basque;
+				TopDisplace cow print basque;
+				say "A [ShortDesc of cow print basque] shimmers into place over your body!";
 			compute extra turn;
 			if the alert of the player is 0, compute monster detection;
 		while the body soreness of the player > 0 and milking is 1 and the player is in the location of M:

@@ -350,7 +350,7 @@ To decide which number is the fatigue-influence of (C - an endurance clothing):
 
 To compute player standing:
 	now resting is 0;
-	if the largeness of belly > 3 or the largeness of breasts > 16 or dungeon chains is worn or black hood is worn or (the ready-for-milking of milking-quest is 1 and the milk volume of breasts > 10)[ or there is worn heels], compute upright fatigue gain; [We only gain fatigue while standing for very big bodies or when wearing heels. Other fatigue gain comes from walking around and kicking.]
+	if the largeness of belly > 3 or the largeness of breasts > 16 or dungeon chains is worn or black hood is worn or (the ready-for-milking of milking-quest is 1 and the milk volume of breasts > 10 and cowbell is not worn)[ or there is worn heels], compute upright fatigue gain; [We only gain fatigue while standing for very big bodies or when wearing heels. Other fatigue gain comes from walking around and kicking.]
 	if diaper quest is 0 and the location of the player is Dungeon19:
 		if the soreness of asshole is 10:
 			say "The stench in this room takes you over the edge and you start to faint.";

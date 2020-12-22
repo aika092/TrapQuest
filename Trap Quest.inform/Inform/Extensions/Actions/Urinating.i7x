@@ -39,7 +39,8 @@ To say ExamineDesc of (T - urinal):
 To decide which figure-name is the examine-image of (T - toilet):
 	if the player is in the location of ex-princess and ex-princess is caged, decide on examine-image of ex-princess;
 	if playerRegion is school and the player is not in a predicament room, decide on figure of school toilets;
-	if the player is in Hotel38 and watersports fetish is 1 and a2m fetish >= 2 and diaper quest is 0 and the human-toilet-scene of woman-player is not 1, decide on figure of human toilet;
+	if diaper quest is 1 and the player is in Hotel38 and the human-toilet-scene of woman-player is 2, decide on figure of human toilet;
+	if diaper quest is 0 and the player is in Hotel38 and watersports fetish is 1 and a2m fetish >= 2 and the human-toilet-scene of woman-player is not 1, decide on figure of human toilet;
 	if diaper quest is 0 and the player is in Toilet01, decide on figure of male toilet;
 	if diaper quest is 0 and playerRegion is not Dungeon, decide on figure of female toilet;
 	decide on figure of toilet.
@@ -93,6 +94,7 @@ Definition: yourself is able to use a toilet:
 	decide no.
 
 Definition: yourself is potentially able to use a toilet:
+	if diaper quest is 1 and watersports fetish is 0 and the player is in Hotel38 and the human-toilet-scene of woman-player is 2, decide no; [can't use Berri without watersports enabled!]
 	if the player is upright and the location of the player is toilets, decide yes;
 	decide no.
 
@@ -183,13 +185,16 @@ Check urinating:
 	if the player is incontinent and delayed urination is 0, say "You are [one of]fully[or]hopelessly[or]utterly[or]totally[or]completely[at random] incontinent; you can't control this at all any more! Pushing just does nothing." instead;
 	if the latex-transformation of the player > 4, say "[if delayed urination is 0]You can't pee, you're a sex doll![end if]" instead;
 	[if the player is not bursting and delayed urination is 0, say "You don't feel the need." instead;]
+	let toilet-refused be 0;
 	if delayed urination is 0 and (the player is able to use a toilet or the player is able to use a urinal):
 		say "Did you want to use the [if the location of the player is urinals]urinal[otherwise]toilet[end if]? ";
 		if the player is consenting:
 			if the location of the player is urinals, try toileting urinal instead;
 			try toileting toilet instead;
+		otherwise:
+			now toilet-refused is 1;
 	if delayed urination is 0 and the player is pee protected:
-		if the player is not able to use a toilet and the player is not able to use a urinal:
+		if toilet-refused is 1 or (the player is not able to use a toilet and the player is not able to use a urinal):
 			let P be a random bottom level pee protection clothing;
 			now auto is 1;
 			if there is pee covering undisplacable unzippable clothing or (there is a worn diaper and the diaper addiction of the player >= 3):
@@ -257,11 +262,15 @@ To compute toilet use:
 			let C be a random pee covering clothing;
 			if C is clothing, say "Pulling the crotch fabric of your [ShortDesc of C] to one side, you ";
 			otherwise say "You ";
-			say "sit on the [if the player is in Dungeon11]training potty throne[otherwise]nearby toilet[end if] [if the player is in Hotel38 and the human-toilet-scene of woman-player is 2]above [NameDesc of woman-player][']s ring-gagged face [end if]and release your hold on your bladder.";
-			now too is " too";
+			if diaper quest is 1 and the player is in Hotel38 and the human-toilet-scene of woman-player is 2:
+				say "sit on the Punishment Potty above [NameDesc of woman-player][']s face and release your hold on your bladder.[line break][speech style of woman-player]'Wait please, no, [one of]let's talk about this[or]not again[stopping]- FFFFFFFFBBBBBFFFFFTTTT!'[roman type][line break][BigNameDesc of woman-player][']s pleas are drowned out by the heavy flow of your [urine].[line break][speech style of woman-player]'You [bitch]!'[roman type][line break]";
+				now too is "NOPE";
+			otherwise:
+				say "sit on the [if the player is in Dungeon11]training potty throne[otherwise]nearby toilet[end if] [if the player is in Hotel38 and the human-toilet-scene of woman-player is 2]above [NameDesc of woman-player][']s ring-gagged face [end if]and release your hold on your bladder.";
+				now too is " too";
 			now the bladder of the player is 0;
 			now toiletJustUsed is true;
-	if (rectum > 3 or the total squirtable fill of belly > 0 or suppository > 0) and asshole is not actually occupied and (the number of ass covering undisplacable clothing is 0 or the player is able to use the toilet past their diaper):
+	if (rectum > 3 or the total squirtable fill of belly > 0 or suppository > 0) and asshole is not actually occupied and (the number of ass covering undisplacable clothing is 0 or the player is able to use the toilet past their diaper) and too is not "NOPE":
 		if the player is in Hotel38 and the human-toilet-scene of woman-player is 2:
 			say "With an embarrassing sound, you evacuate your bowels[too], kind of cream-pie-ing [him of woman-player]. [if the bimbo of the player < 10][one of]You blush at the thought [he of woman-player]'ll know how you've been used back there.[or]Once again you've sort of creampied [him of woman-player].[or][variable custom style]I hope [he of woman-player] doesn't think my ass is always filled with [BellyContentsAlone]![roman type][line break][or][variable custom style]Why does this keep happening?[roman type][line break][or][variable custom style][big he of woman-player] must think I'm such an anal slut![roman type][line break][or]Again.[stopping][otherwise if the humiliation of the player > 20]You have a vague feeling this might have once embarrassed you, but, really, it's kinda hot.[otherwise]You bite your lip, wondering if [he of woman-player] appreciates how hard you worked to get that![end if]"; [Mainly added so we can feel Barbara's not eating poo. Eww.]
 		otherwise:
@@ -441,20 +450,13 @@ To start urination:
 		otherwise now target-poster is a random off-stage wetting poster;
 	otherwise:
 		now target-poster is nothing;
-	if the player is not pee protected or the player is able to use a toilet or the player is able to use a urinal:
+	if the player is not pee protected:
 		if the player is flying:
-			say "You urinate freely from the air onto the ground below.";
-			say "[variable custom style]Well this is a new experience...[roman type][line break]";
+			say "You urinate freely from the air onto the ground below.[line break][variable custom style]Well this is a new experience...[roman type][line break]";
 			if the bladder of the player > 6:
 				UrinePuddleUp 6;
 			otherwise:
 				UrinePuddleUp the bladder of the player;
-		otherwise if the player is able to use a toilet and delayed urination is 0:
-			compute toilet use;
-			say PeeReaction 0;
-		otherwise if the player is able to use a urinal and delayed urination is 0:
-			compute urinal use;
-			say PeeReaction 0;
 		otherwise if the player is able to use a body of water and delayed urination is 0:
 			say "Get into the water (people won't be able to see you peeing but you'll get wet)? ";
 			if the player is consenting:
@@ -541,7 +543,7 @@ To start urination:
 		end urination.
 
 To compute pee protected urination:
-	if there is a worn WC plug panties:
+	if WC-plug-panties is worn:
 		say "Your plug panties [one of]seem to somehow absorb the [urine], and also vibrate powerfully in response! [or]absorb the [urine], vibrating powerfully as they do. [stopping]";
 		say "[one of][WCPantiesVibeFlav][or][or][cycling]";
 		if the player is possessing a vagina, stimulate vagina;
@@ -555,6 +557,12 @@ To compute pee protected urination:
 		let N be 6;
 		if the bladder of the player < 6, now N is the bladder of the player;
 		if the bladder of the player > 12 and K is clothing and the bladder of the player >= the soak-limit of K, now N is the soak-limit of K - the total-soak of K; [Fill up the underwear in one turn if this is going to take forever]
+		if diaper quest is 1 and K is diaper and the player is in Hotel38 and the human-toilet-scene of woman-player is 2 and delayed urination is 0 and the player is not immobile and the player is not in danger:
+			say "Sit on the Punishment Potty?";
+			if the player is bimbo consenting:
+				say "You sit on the Punishment Potty, smushing your [K] into [NameDesc of woman-player][']s face.[line break][speech style of woman-player]'Wait please, no, [one of]let's talk about this[or]not again[stopping]- FFFFFFFFBBBBBFFFFFTTTT!'[roman type][line break][BigNameDesc of woman-player][']s pleas are blocked out by your padded butt.[line break][speech style of woman-player]'You [bitch]!'[roman type][line break][BigNameDesc of woman-player] chastises you when you pull up and allow [him of woman-player] to breathe again.";
+				DelicateDown 1;
+				FavourDown woman-player by 1;
 		if K is portal-pants or K is portal-hotpants or K is quiz-partner:
 			say "Your [urine] flows out of your [genitals]. ";
 			AnnouncedExpel urine on K by N;
@@ -581,7 +589,7 @@ To compute pee protected urination:
 						say urinationoverflow of K;
 						now overflowed is 1;
 						if diaper quest is 1, progress quest of priestess-service-quest;
-						if diaper lover >= 1 and delayed urination is 0:
+						if diaper lover >= 1 and delayed urination is 0 and the player is not in a predicament room:
 							let H be a random off-stage victorian-baby-bonnet;
 							if H is actually summonable:
 								say "[bold type]As your [ShortDesc of K] overflows, you feel your head suddenly surrounded by soft silky fabric. You're now wearing a large pink baby's bonnet![roman type][line break]";
@@ -1010,7 +1018,7 @@ To say PeeReaction (N - 3):
 						humiliate 200;
 						say ClothesPeeReaction of Z;
 				otherwise:
-					unless K is WC plug panties, say "[one of][line break][variable custom style]Yuck.[or][variable custom style]Eww![or][if the bimbo of the player > 9][line break][second custom style]Uh-oh, I'm a bad girl![otherwise][line break][first custom style]Err, whoops.[end if][purely at random][roman type][line break]";
+					unless K is WC-plug-panties, say "[one of][line break][variable custom style]Yuck.[or][variable custom style]Eww![or][if the bimbo of the player > 9][line break][second custom style]Uh-oh, I'm a bad girl![otherwise][line break][first custom style]Err, whoops.[end if][purely at random][roman type][line break]";
 			otherwise: [Accidental urination]
 				if M is monster:
 					say ClothesPeeDeclaration of M;
@@ -1018,7 +1026,7 @@ To say PeeReaction (N - 3):
 						humiliate 300;
 						say ClothesPeeReaction of Z;
 				otherwise:
-					unless K is WC plug panties, say "[one of][line break][variable custom style]Err, whoops![or][if saved-flat-intelligence < 6][line break][second custom style]Uh-oh, I had a little accident![otherwise][line break][first custom style]I can't believe I just let that happen...[end if][or][variable custom style]I guess I should try and find a toilet next time...[purely at random][roman type][line break]";
+					unless K is WC-plug-panties, say "[one of][line break][variable custom style]Err, whoops![or][if saved-flat-intelligence < 6][line break][second custom style]Uh-oh, I had a little accident![otherwise][line break][first custom style]I can't believe I just let that happen...[end if][or][variable custom style]I guess I should try and find a toilet next time...[purely at random][roman type][line break]";
 					humiliate 150;
 		humiliate 275;
 	if target-poster is a poster:

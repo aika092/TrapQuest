@@ -464,11 +464,14 @@ To compute treasure diving in (WB - DungeonScenery03) at (L - a number):
 	if (L is 1 and the player is getting very lucky) or (L is 2 and the player is getting lucky) or (L is 3 and the player is getting lucky) or (L is 4 and the player is not getting unlucky):
 		now N is a random number between 1 and 30;
 	say "[line break]Something catches your eye, and you quickly swim toward it... [run paragraph on]";
-	if N > 16 and kraken bell is off-stage and the player is getting lucky:
+	if N > 16 and anchor collar is off-stage and the player is getting lucky:
+		say "[bold type]You find a shiny golden collar![roman type] You take it with you as you swim back to the surface. [GotLuckyFlav]";
+		now anchor collar is carried by the player;
+	otherwise if N > 16 and kraken bell is off-stage and the player is getting lucky:
 		say "[bold type]You find an old metal bell with a tentacle-shaped ringer![roman type] You take it with you as you swim back to the surface. [GotLuckyFlav]";
 		now kraken bell is carried by the player;
 		now the quest of kraken bell is doom-quest;
-		if doom counter > -1 and doomed < 5, now kraken bell is cursed;
+		if doom counter > -1 and doomed < 5, now kraken bell is cursed;;
 	otherwise if N > 20:[jewels]
 		let J be a random off-stage plentiful accessory;
 		if J is accessory and L > 1 and J is actually summonable:[You won't find jewels until you go further out]

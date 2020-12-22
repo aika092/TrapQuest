@@ -142,12 +142,16 @@ Carry out TrophySwitching trip-trophy:
 
 condom-trophy is a trophy. The printed name of condom-trophy is "[TQlink of item described]condom trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of condom-trophy is "cdmt". Understand "condom" as condom-trophy.
 
+Figure of condom trophy is the file "Env/School/trophy6.png".
+To decide which figure-name is the examine-image of (C - condom-trophy):
+	decide on figure of condom trophy.
+
 Definition: condom-trophy is fetish appropriate:
 	if diaper quest is 0, decide yes;
 	decide no.
 
 To say ExamineDesc of (T - condom-trophy):
-	say "This trophy is in the shape of a realistic erect penis protected by a condom. It is surrounded by a mystical [if the trophy-mode of T is 1]green glow, and you can feel that people are much more likely to be willing to wear a condom, and your brain and body will much more quickly become addicted to creampies if you receive any[otherwise]red glow, which allows you to sense that its magical powers to make condoms more reliable and creampies more addictive are inactive[end if].".
+	say "This trophy is in the shape of a used condom, bloated with [semen]. It is surrounded by a mystical [if the trophy-mode of T is 1]green glow, and you can feel that people are much more likely to be willing to wear a condom, and your brain and body will much more quickly become addicted to creampies if you receive any[otherwise]red glow, which allows you to sense that its magical powers to make condoms more reliable and creampies more addictive are inactive[end if].".
 
 Carry out TrophySwitching condom-trophy:
 	say "You rub the trophy[if the player is wrist bound behind] with your nose[end if]. ";
@@ -206,10 +210,10 @@ To say ExamineDesc of (T - magic-trophy):
 A magic consequences rule (this is the trophy magic consequence rule):
 	if the trophy-mode of magic-trophy is 1:
 		if egg laying fetish is 1 and the player is possessing a vagina and (the pregnancy of the player <= 0 or the pregnancy of the player is 3):
-			say "Instead of your magic power decreasing, you feel an egg manifest itself inside your womb!";
+			say "Less of your magic power is depleted than normal. But at the same time, you feel an egg manifest itself inside your womb!";
 			WombFill 1 medium eggs;
 		otherwise:
-			say "Instead of your magic power decreasing, you feel ";
+			say "Less of your magic power is depleted than normal. But at the same time, you feel ";
 			if egg laying fetish is 1:
 				say "an egg manifest itself inside your belly!";
 				AssFill 1 medium eggs;

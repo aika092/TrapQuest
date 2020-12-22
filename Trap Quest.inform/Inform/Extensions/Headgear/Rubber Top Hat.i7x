@@ -34,43 +34,12 @@ To set up influence of (C - rubber top hat):
 Definition: rubber top hat is condom pinnable: decide yes.
 Definition: rubber top hat is pink themed: decide yes.
 
-This is the top hat titfuck rule:
-	if rubber top hat is worn, increase the desirability of breasts by 5.
-The top hat titfuck rule is listed in the tit slut eligibility rules.
-
 Chapter - Class Outfit
 
-Definition: rubber top hat (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
-	if wearing-target is silicone dress or wearing-target is platform heels, decide yes;
-	decide no.
-
-plastic-summoned is a number that varies.
-To compute unique recycling of (C - rubber top hat):
-	now plastic-summoned is 0.
-
 To compute class outfit of (H - rubber top hat):
-	let P be a random off-stage plentiful platform heels; [there are some rare ones we don't want]
-	if plastic-is-fantastic dress is actually summonable or (plastic-summoned is 0 and the number of worn silicone dress is 0):
-		PinkWardrobeUnclash plastic-is-fantastic dress;
-		say "[bold type]Your [printed name of H] wobbles violently, and a tight rubber pink dress materialises around you.[roman type][line break]";
-		summon plastic-is-fantastic dress uncursed;
-		now the raw-magic-modifier of plastic-is-fantastic dress is the largeness of breasts / 5;
-		if the silicone volume of breasts is 0 and the player is not top heavy:
-			let B be the largeness of breasts;
-			while B is the largeness of breasts:
-				BustImplantsUp 1;
-			say "[bold type]You feel and hear your tits expanding like stretchy rubber until they are [BreastDesc]![roman type] Touching and feeling them, you can definitely feel tight, less squishy areas below the nipple. Somehow, your new dress has summoned breast implants inside of your boobs!";
-		now plastic-summoned is 1;
-	otherwise if the class of the player is silicone queen and P is actually summonable:
-		summon P uncursed;
-		now P is pvc;
-		now the heel-height of P is 4;
-		if the silicone volume of breasts + a random number between 1 and 10 > 10, now P is speed;
-		otherwise now P is unowned;
-		say "[bold type][if the player is upright]You suddenly shoot four inches upwards off the ground![otherwise]The soles of your feet are forced into an arch![end if][roman type][line break]A pair of [printed name of P] have appeared on your feet.";
-	otherwise if the class of the player is silicone queen and the total weighty volume of hips < max ass size and the silicone volume of hips is 0:
-		AssImplantsUp 1;
-		say "[bold type]You feel and hear your ass expanding like stretchy rubber! Touching and feeling it, you can feel a tight, less squishy area in each cheek. Somehow, your dress has also summoned implants into your ass![roman type][line break]".
+	class summon plastic-is-fantastic dress;
+	class summon pvc-platform-heels;
+	class summon spike-collar.
 
 Chapter - Quest
 

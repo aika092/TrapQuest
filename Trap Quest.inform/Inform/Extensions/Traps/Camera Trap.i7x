@@ -711,7 +711,7 @@ To compute title of (P - an expulsion poster):
 		otherwise if the old-overdress of P is priestess outfit:
 			if P is in the hotel, now the title of P is "HOLY COW!";
 			otherwise now the title of P is "That's what she gets for leaving her post at the dungeon altar.";
-		otherwise if the old-overdress of P is gang bang girl T-shirt:
+		otherwise if the old-overdress of P is gang-bang-girl T-shirt:
 			if P is in the hotel, now the title of P is "GANG BANG BITCH";
 			otherwise now the title of P is "A very appropriate T-shirt.";
 		otherwise if the old-overdress of P is fertility outfit:

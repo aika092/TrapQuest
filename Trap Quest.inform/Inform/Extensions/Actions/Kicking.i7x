@@ -74,8 +74,8 @@ Carry out kicking:
 	if H is heels:
 		let HH be the hindrance of H;
 		increase the heel time of the player by HH;
-		if HH > 1, say "You kick [the noun] with your [printed name of H][if H is dildo heels], and you can feel the glass dildo heels magically strengthen your kick![otherwise], connecting with the toe as if you were kicking a ball![end if]";
-		otherwise say "You kick [the noun] with your [printed name of H][if H is dildo heels], and you can feel the glass dildo heels magically strengthen your kick![otherwise if H is stiletto heels], trying to get the spike of your heel to do some real damage![otherwise], hoping the heel will do some damage.[end if]";
+		if HH > 1, say "You kick [the noun] with your [printed name of H][if H is dildo-heels], and you can feel the glass dildo heels magically strengthen your kick![otherwise], connecting with the toe as if you were kicking a ball![end if]";
+		otherwise say "You kick [the noun] with your [printed name of H][if H is dildo-heels], and you can feel the glass dildo heels magically strengthen your kick![otherwise if H is stiletto heels], trying to get the spike of your heel to do some real damage![otherwise], hoping the heel will do some damage.[end if]";
 		damage A on the noun;
 	otherwise:
 		if the player is zeroG:

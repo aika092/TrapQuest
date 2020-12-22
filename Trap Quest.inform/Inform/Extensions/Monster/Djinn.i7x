@@ -170,7 +170,10 @@ To compute djinn wishing of (M - a monster):
 	if the printed name of CNR is "wish for strength":
 		say "[BigNameDesc of M] unfolds [his of M] folded arms and waves them at your body.[line break][speech style of M]'I shall give you stronger muscles...'[roman type][line break]You feel your muscles grow!";
 		StrengthUp 1;
-		if interracial fetish is 1 and the raw bbc addiction of the player < 10 and the calculated bbc addiction of the player < 10:
+		if diaper quest is 1:
+			say "[speech style of M]'...and a stronger desire not to use them!'[roman type][line break]";
+			DelicateUp 1;
+		otherwise if interracial fetish is 1 and the raw bbc addiction of the player < 10 and the calculated bbc addiction of the player < 10:
 			say "[speech style of M]'...and a stronger love for my kind!'[roman type][line break]";
 			BBCAddictUp 1;
 		otherwise:
@@ -337,13 +340,17 @@ To say LandingTaunt of (M - djinn):
 
 To decide if (M - djinn) is losing wrapper in (F - asshole):
 	if the class of the player is priestess or the class of the player is cultist, decide yes;
-	if a random number between 1 and 5 is 1, decide yes;
+	if the player is getting unlucky, decide yes;
 	decide no.
 
 To compute wrapped climax of (M - djinn) in (F - a fuckhole):
 	say CondomStrain of M in F;
-	if M is losing wrapper in F, compute condom failure of M in F;
-	otherwise compute condom success of M in F.
+	if M is losing wrapper in F:
+		compute condom failure of M in F;
+		if F is asshole, say GotUnluckyFlav;
+	otherwise:
+		compute condom success of M in F;
+		if F is vagina, say GotLuckyFlav.
 
 To say CondomStrain of (M - djinn) in (F - a fuckhole):
 	say "[speech style of M]'Yes... yes... [if F is asshole]I can feel it coming[otherwise]Your [cunt] is pleasing to me, mortal[end if]!'[roman type][line break][BigNameDesc of M] bellows as [he of M] ejaculates, filling the condom with wave after wave of fresh [semen]. You can feel it shifting inside of you, almost as if [his of M] little baby-making bastards were struggling to bust out of their flimsy latex prison. It stretches further and further as it struggles to contain the rest of [his of M] cum, rounding out as the commotion inside reaches its peak.[line break]".
@@ -368,8 +375,8 @@ To say CreampieFlav of (M - djinn) in (F - asshole):
 
 To decide if (M - djinn) is losing wrapper in (F - vagina):
 	if the class of the player is priestess or the class of the player is cultist, decide yes;
-	if a random number between 1 and 3 is 1, decide yes;
-	decide no.
+	if the player is getting lucky, decide no;
+	decide yes.
 
 To compute post climax effect of (M - djinn) in (F - vagina):
 	if M is unwrapped and the player is able to get pregnant:
@@ -553,10 +560,9 @@ Definition: djinn is pitiable:
 	let L be a random magic lamp;
 	if L is held or L is in the location of djinn, decide yes;
 	decide no.
-Definition: djinn is wenchy:[saves like 100 lines of code. Not really. (Really though.)]
+Definition: djinn is wenchy:
 	let L be a random magic lamp;
-	if L is held or L is in the location of djinn:
-		if the player is the donator, decide yes;
+	if L is held or L is in the location of djinn, decide yes;
 	decide no.
 
 To say DefeatBrink of (M - djinn):
@@ -791,6 +797,7 @@ To failed dominance penis punish of (M - djinn):
 			say "You find yourself back in [the location of the player], but your [player-penis] is still nowhere to be seen! You reach down to feel yourself and discover that the [vagina] you had during your [']wish['] is still there (thankfully with its hymen intact.)";
 			say "You gape at the unexpected change, head shaking slowly from side to side in disbelief, trying to process what your eyes are telling you. Your hands start moving towards the place where you [italic type]used to[roman type] have a proud penis, but you falter to a stop, not quite willing to touch those plump-looking lips. [italic type]Virginal[roman type] lips. You swallow in shock."; [###Selkie: I didn't try hard to find the test for your hands bound so you couldn't reach forward]
 			SexChange the player;
+			say GotUnluckyFlav;
 		otherwise:
 			say "You find yourself back in [the location of the player], your [SexDesc of penis] back where it belongs.";
 			PenisDown 1;

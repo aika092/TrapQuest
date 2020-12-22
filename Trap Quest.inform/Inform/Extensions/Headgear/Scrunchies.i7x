@@ -2,7 +2,7 @@ Scrunchies by Headgear begins here.
 
 A scrunchie is a kind of headgear. A scrunchie is usually hair growing. Understand "scrunchie" as a scrunchie.
 
-A scrunchie is blondeness-positive. A scrunchie is brightness-positive. A scrunchie is redness-positive. A scrunchie is womanly.
+A scrunchie is blondeness-positive. A scrunchie is brightness-positive. A scrunchie is womanly.
 
 The printed name of scrunchie is usually "[clothing-title-before]blue scrunchie[clothing-title-after]". The printed plural name of scrunchie is usually "[clothing-title-before]blue scrunchies[clothing-title-after]". The text-shortcut of scrunchie is "scr".
 
@@ -26,10 +26,6 @@ This is the scrunchie must be the same colour rule:
 	if there is a worn pigtail-scrunchie:
 		if wearing-target is scrunchie:
 			if summoning is 0 and autowear is false, say "You are already wearing two hair ties!";
-			rule fails;
-	if there is a worn rubber scrunchie:
-		if wearing-target is scrunchie and wearing-target is not rubber scrunchie:
-			if summoning is 0 and autowear is false, say "Your [printed name of random worn scrunchie] emits a sharp noise, as if preventing you from applying the new scrunchie.";
 			rule fails.
 The scrunchie must be the same colour rule is listed in the headgear wearability rules.
 
@@ -109,37 +105,13 @@ To compute (C - a scrunchie) unique inheriting from (D - a scrunchie):
 
 Chapter - Class Outfit
 
-Definition: a pink scrunchie (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
-	if wearing-target is cheerleader outfit, decide yes;
-	decide no.
-
-cheerleader-summoned is a number that varies.
 To compute unique recycling of (C - a pink scrunchie):
-	if the class of the player is not cheerleader:
-		now the cheer-greets of greet-quest is 0;
-		now cheerleader-summoned is 0.
+	if the class of the player is not cheerleader, now the cheer-greets of greet-quest is 0.
 
 To compute class outfit of (H - a pink scrunchie):
-	let C be a random off-stage longsleeved cheerleader outfit;
-	if C is nothing, now C is a random off-stage vest top cheerleader outfit;
-	if C is nothing, now C is a random supershort cheerleader outfit;
-	if C is nothing or there is a worn pigtail-scrunchie:
-		if blue-rubber-cheerleader-outfit is off-stage, now C is blue-rubber-cheerleader-outfit;
-		if C is nothing, now C is a random off-stage rubber cheerleader outfit;
-	let P be purple-pom-pom;
-	if the class of the player is cumdumpster, now P is condom-pom-pom;
-	if C is actually summonable or (C is cheerleader outfit and cheerleader-summoned is 0 and the number of worn cheerleader outfit is 0 and the number of worn silicone dress is 0):
-		PinkWardrobeUnclash C;
-		say "[bold type]A [ShortDesc of C] appears on you![line break][variable custom style]I'm a cheerleader now?[roman type][line break][if the mercyskill of the player is 0]You suddenly feel like you could get away with anything! It's like the consequences of your actions... just aren't as important as they used to be.[end if]";
-		summon C uncursed;
-		now cheerleader-summoned is 1;
-		increase the raw-magic-modifier of C by the flesh volume of hips / 5;
-	otherwise if P is actually summonable and cheerleader-summoned < 2:
-		say "[bold type]A pair of [MediumDesc of P] appear to cover your hands![line break][variable custom style][if P is purple-pom-pom]I guess I shouldn't be surprised.[otherwise]ARE YOU SERIOUS?![end if][roman type][line break]";
-		summon P cursed with persistent quest;
-		now the raw-magic-modifier of P is 0;
-		now cheerleader-summoned is 2;
-		if the player is not ass protected, now the raw-magic-modifier of P is 2.
+	class summon longsleeved cheerleader outfit;
+	if the class of the player is cumdumpster, class summon condom-pom-pom;
+	otherwise class summon purple-pom-pom.
 
 Chapter - Quest
 
@@ -184,10 +156,6 @@ To decide which figure-name is the examine-image of (C - blue-scrunchie-2):
 Definition: a blue scrunchie is immune to change: decide yes.
 Definition: a blue scrunchie is blue themed: decide yes.
 
-schoolgirl-summoned is a number that varies.
-To compute unique recycling of (C - a blue scrunchie):
-	if the class of the player is not schoolgirl, now schoolgirl-summoned is 0.
-
 To say ShortDesc of (H - a blue scrunchie):
 	say "blue scrunchie".
 
@@ -206,74 +174,21 @@ Report wearing blue scrunchie:
 		if the player is ponytailed, say "Your hair magically changes colour and is now platinum blonde!";
 		otherwise say "Your hair magically changes colour and is now dark brown!".
 
-To decide which number is the intelligence-influence of (H - a blue scrunchie):
-	if the class of the player is schoolgirl, decide on 2;[+2 bonus if you have both scrunchies and the class]
-	decide on 0.[until you do the work to become a schoolgirl, you get no intelligence bonus]
-
-To decide which number is the strength-influence of (H - a blue scrunchie):
-	if the class of the player is schoolgirl, decide on 0;
-	decide on -1.
-
-To decide which number is the dexterity-influence of (H - a blue scrunchie):
-	if the class of the player is schoolgirl, decide on 0;
-	decide on -1.
-
 Chapter - Class Outfit
 
-Definition: a scrunchie (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
-	if wearing-target is schoolgirl-enabling or wearing-target is tartan themed or wearing-target is stockings, decide yes;
-	decide no.
-
-To compute outfit of (H - a blue scrunchie):
-	if diaper quest is 1:
-		increase the outfit-charge of H by 1;
-		if the outfit-charge of H > 25:
-			now the outfit-charge of H is 0;
-			compute class outfit of H.
-
 To compute class outfit of (H - a blue scrunchie):
-	let R be a random off-stage cheeky schoolgirl outfit;
-	if the class of the player is magical girl, now R is a random magical dress; [We don't want to overwrite the magical girl stuff with schoolgirl stuff if the player is both]
-	if diaper quest is 0 and (the number of worn scrunchies is 1 or (R is not actually summonable and the number of worn schoolgirl outfits is 0 and the number of worn magical dress is 0)):
-		let O be a random off-stage tartan tube top;
-		let N be a random off-stage necktie;
-		let S be a random off-stage mesh stockings;
-		let T be a random off-stage tartan miniskirt;
-		if T is actually summonable or (schoolgirl-summoned is 0 and T is miniskirt):
-			PinkWardrobeUnclash T;
-			say "[bold type]A tight, extremely revealing tartan skirt appears on you![line break][variable custom style][if the player is pigtailed]Pigtails,[otherwise]Ponytailed hair[end if] and a tiny tartan skirt? I think I know where this is going...[roman type][line break]";
-			summon T uncursed;
-			if diaper quest is 0, now T is temptation;
-			now schoolgirl-summoned is 1;
-		if there is a worn tartan miniskirt and (O is actually summonable or (schoolgirl-summoned < 2 and O is tube top)): [if the miniskirt spawned let's try and spawn the tube top as well]
-			PinkWardrobeUnclash O;
-			say "[bold type]A very skimpy tartan tube top shimmers into existence around your [BreastDesc]![line break][variable custom style]I guess that makes me a slutty schoolgirl. [if the bimbo of the player < 8]Sigh... there's more, isn't there.[otherwise if the bimbo of the player > 12]Teehee! I guess I am being pretty naughty. I hope there's more to this outfit...[end if][roman type][line break]";
-			summon O uncursed;
-			now O is confidence;
-			if tentacle-quest is appropriate, now the quest of O is tentacle-quest;
-			now schoolgirl-summoned is 2;
-		otherwise if S is actually summonable and there is a worn tartan tube top and there is a worn tartan miniskirt and there is a worn necktie:
-			summon S uncursed;
-			now the raw-magic-modifier of S is 1;
-			now S is confidence;
-			say "[bold type]Fishnet stockings appear around your [ShortDesc of thighs]![roman type][line break]";
-		otherwise if N is actually summonable and there is a worn tartan tube top and there is a worn tartan miniskirt:
-			summon N uncursed;
-			say "[bold type]A small tartan necktie shimmers into existence around your neck![line break][variable custom style]This must complete the outfit.[roman type][line break]";
+	if diaper quest is 0 and the player is not pigtailed:
+		class summon tartan tube top;
+		class summon necktie;
+		class summon tartan miniskirt;
+		class summon fishnet stockings;
 	otherwise:
-		let S be a random off-stage frilly stockings;
-		if R is actually summonable or (R is schoolgirl outfit and schoolgirl-summoned < 2):
-			PinkWardrobeUnclash R;
-			now schoolgirl-summoned is 2;
-			summon R uncursed;
-			now the raw-magic-modifier of R is 1;
-			if tentacle-quest is appropriate, now the quest of R is tentacle-quest;
-			say "[bold type]A black fleece appears on you, followed by a short skirt and a matching tie![line break][variable custom style]I guess that makes me a [if diaper quest is 1]naughty[otherwise]slutty[end if] schoolgirl. [if the bimbo of the player < 8]Sigh...[end if][roman type][line break]";
-		otherwise if there is a worn schoolgirl outfit and S is actually summonable:
-			summon S uncursed;
-			now the raw-magic-modifier of S is 1;
-			now S is confidence;
-			say "[bold type]White cotton stockings appear around your [ShortDesc of thighs]![roman type][line break]".
+		if the silicone volume of breasts > 0:
+			class summon daddy issues dress;
+		otherwise:
+			class summon cheeky schoolgirl outfit;
+			class summon frilly stockings;
+		if the number of worn knickers + the number of worn trousers is 0, class summon purple-pom-pom.
 
 Chapter - Quest
 
@@ -344,11 +259,10 @@ To decide if a monkey scrunchie is roleplay:
 	if diaper quest is 0, decide no;
 	decide yes;
 
-Chapter 4 - Rubber Scrunchie
-
-A rubber scrunchie is a kind of scrunchie. [There is 1 rubber scrunchie. ]A rubber scrunchie is usually latex.
-
-The printed name of a rubber scrunchie is "[clothing-title-before]rubber scrunchie[clothing-title-after]".
+To compute class outfit of (H - a monkey scrunchie):
+	if the silicone volume of breasts > 0, class summon daddy issues dress;
+	otherwise class summon cheeky schoolgirl outfit;
+	class summon frilly stockings.
 
 Part - Pigtail Scrunchies
 
@@ -362,10 +276,14 @@ To transform (D - a scrunchie) into (C - a pigtail-scrunchie):
 	say "[TransformReaction of C]".
 
 To compute class outfit of (C - a pigtail-scrunchie):
-	unless the class of the player is schoolgirl:
-		let P be a random pink scrunchie;
-		compute class outfit of P;
-		if C is not temptation, now C is temptation.
+	if the quest of C is recipe-quest:
+		if the silicone volume of breasts > 0, class summon daddy issues dress;
+		otherwise class summon cheeky schoolgirl outfit;
+		class summon frilly stockings;
+	otherwise:
+		class summon blue-rubber-cheerleader-outfit;
+	class summon condom-pom-pom.
+
 
 Chapter 5 - Helium Balloons
 

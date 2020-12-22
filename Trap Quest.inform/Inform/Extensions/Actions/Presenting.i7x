@@ -34,7 +34,7 @@ the default presentable rules is a rulebook.
 A body part has a rulebook called presentable rules. The presentable rules of a body part is usually the default presentable rules.
 
 This is the unpresentable body part rule:
-	if auto is 0, say "You can only present an orifice on your body that can be fucked[if the largeness of breasts >= 5 and (the player is not possessing a penis or the player is not the donator)] or your breasts[otherwise if the largeness of breasts >= 5 and the player is the donator and the player is possessing a penis], your breasts or your penis[otherwise if the player is possessing a penis and the player is the donator] or your penis[end if]." instead;
+	if auto is 0, say "You can only present an orifice on your body that can be fucked[if the largeness of breasts >= 5 and the player is not possessing a penis] or your breasts[otherwise if the largeness of breasts >= 5 and the player is possessing a penis], your breasts or your penis[otherwise if the player is possessing a penis] or your penis[end if]." instead;
 	rule fails.
 The unpresentable body part rule is listed in the default presentable rules.
 
@@ -69,7 +69,7 @@ Check presenting:
 		otherwise if there is a monster in the location of the player:
 			say "Nobody is paying attention to you." instead;
 		say "There's literally nobody here but you." instead;
-	if the noun is not body part, say "You can only present an orifice on your body that can be fucked[if the largeness of breasts >= 5 and (the player is not possessing a penis or the player is not the donator)] or your breasts[otherwise if the largeness of breasts >= 5 and the player is the donator and the player is possessing a penis], your breasts or your penis[otherwise if the player is possessing a penis and the player is the donator] or your penis[end if]." instead;
+	if the noun is not body part, say "You can only present an orifice on your body that can be fucked[if the largeness of breasts >= 5 and the player is not possessing a penis] or your breasts[otherwise if the largeness of breasts >= 5 and the player is possessing a penis], your breasts or your penis[otherwise if the player is possessing a penis] or your penis[end if]." instead;
 	unless the noun is actually presentable, do nothing instead;
 	let M be nothing;
 	[Highest priority is anything unfriendly that will use that body part]

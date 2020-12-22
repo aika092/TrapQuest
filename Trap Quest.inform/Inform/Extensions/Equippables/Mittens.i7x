@@ -2,6 +2,14 @@ Mittens by Equippables begins here.
 
 A mittens is a kind of gloves. A mittens is usually unique. A mittens is usually cotton. A mittens is usually diaper-addiction-influencing.
 
+Definition: a mittens is class-relevant:
+	if the player is actually an adult baby, decide yes;
+	decide no.
+
+To compute class set up of (C - a mittens):
+	let H be a random headgear;
+	if H is not clothing or the quest of H is not naughty-quest, now C is cursed.
+
 To decide which number is the initial outrage of (C - a mittens):
 	if diaper quest is 1, decide on 0;
 	decide on the initial cringe of C.
@@ -18,7 +26,7 @@ To compute attack of (W - a mittens) at (M - a monster):
 	say "You [if the bimbo of the player < 10][one of]weakly[or]pathetically[or]timidly[at random][otherwise][one of]playfully[or]meekly[or]softly[at random][end if] slap at [NameDesc of M] with your [printed name of W].".
 
 To say ShortDesc of (W - a mittens):
-	say "pink mittens".
+	say "pair of mittens".
 
 This is the mittens prevent manual dexterity rule:
 	if there are worn mittens:
@@ -29,11 +37,15 @@ The mittens prevent manual dexterity rule is listed in the manual dexterity rest
 To say BabywearDonationDeclarationFlav of (M - a monster) on (C - a mittens):
 	if M is intelligent, say "[speech style of M]'[if the health of M < the maxhealth of M]It seems like we need to keep you from being too dangerous[otherwise]Babies don't need their hands, since they should be letting the grown-ups take care of them[end if].'[roman type][line break]".
 
-rubber mittens is a mittens. rubber mittens is latex. The printed name of rubber mittens is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of latex mittens[clothing-title-after]". Figure of rubber mittens is the file "Items/Accessories/Equippables/mittens1.png". The text-shortcut of rubber mittens is "lmi".
-blue rubber mittens is a mittens. blue rubber mittens is latex. The printed name of blue rubber mittens is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of blue latex mittens[clothing-title-after]". Figure of blue rubber mittens is the file "Items/Accessories/Equippables/mittens4.png". The text-shortcut of blue rubber mittens is "blmi".
-inflated rubber mittens is a mittens. inflated rubber mittens is latex. The printed name of inflated rubber mittens is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of inflated latex mittens[clothing-title-after]". Figure of inflated rubber mittens is the file "Items/Accessories/Equippables/mittens3.png". The text-shortcut of inflated rubber mittens is "ilmi".
-teddy bear mittens is a mittens. The printed name of teddy bear mittens is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of teddy bear mittens[clothing-title-after]". Figure of teddy bear mittens is the file "Items/Accessories/Equippables/mittens2.png". The text-shortcut of teddy bear mittens is "tmi".
-christmas mittens is a mittens. The printed name of christmas mittens is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of christmas mittens[clothing-title-after]". Figure of christmas mittens is the file "Items/Accessories/Equippables/mittens5.png". The text-shortcut of christmas mittens is "chmi".
+rubber mittens is a mittens. rubber mittens is latex. The printed name of rubber mittens is "[clothing-title-before]pair of latex mittens[clothing-title-after]". Figure of rubber mittens is the file "Items/Accessories/Equippables/mittens1.png". The text-shortcut of rubber mittens is "lmi".
+blue rubber mittens is a mittens. blue rubber mittens is latex. The printed name of blue rubber mittens is "[clothing-title-before]pair of blue latex mittens[clothing-title-after]". Figure of blue rubber mittens is the file "Items/Accessories/Equippables/mittens4.png". The text-shortcut of blue rubber mittens is "blmi".
+inflated rubber mittens is a mittens. inflated rubber mittens is latex. The printed name of inflated rubber mittens is "[clothing-title-before]pair of inflated latex mittens[clothing-title-after]". Figure of inflated rubber mittens is the file "Items/Accessories/Equippables/mittens3.png". The text-shortcut of inflated rubber mittens is "ilmi".
+teddy bear mittens is a mittens. The printed name of teddy bear mittens is "[clothing-title-before]pair of teddy bear mittens[clothing-title-after]". Figure of teddy bear mittens is the file "Items/Accessories/Equippables/mittens2.png". The text-shortcut of teddy bear mittens is "tmi".
+christmas mittens is a mittens. The printed name of christmas mittens is "[clothing-title-before]pair of christmas mittens[clothing-title-after]". Figure of christmas mittens is the file "Items/Accessories/Equippables/mittens5.png". The text-shortcut of christmas mittens is "chmi".
+
+Definition: christmas mittens is class-relevant:
+	if the class of the player is santa's little helper, decide yes;
+	decide no.
 
 To decide which figure-name is clothing-image of (C - rubber mittens):
 	decide on figure of rubber mittens.
@@ -57,6 +69,9 @@ To say ClothingDesc of (W - rubber mittens):
 To say ClothingDesc of (W - blue rubber mittens):
 	say "A pair of large blue latex mittens. You lose some manual dexterity and some slapping power from wearing them.";
 	if the player is an adult baby and W is worn, say "You feel much, much better at running away from monsters whilst on your knees.".
+
+To compute class set up of (W - blue rubber mittens):
+	now W is cursed.
 
 To say ShortDesc of (W - inflated rubber mittens):
 	say "inflated latex mittens".

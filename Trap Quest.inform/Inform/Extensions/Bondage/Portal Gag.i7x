@@ -1,6 +1,6 @@
 Portal Gag by Bondage begins here.
 
-portal gag is a ballgag. The printed name of portal gag is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]portal gag[clothing-title-after]". The text-shortcut of portal gag is "ptg". portal gag has a number called charge.
+portal gag is a ballgag. The printed name of portal gag is "[clothing-title-before]portal gag[clothing-title-after]". The text-shortcut of portal gag is "ptg". portal gag has a number called charge.
 
 To say ShortDesc of (C - portal gag):
 	say "portal gag".

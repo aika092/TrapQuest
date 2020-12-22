@@ -2,44 +2,41 @@ Gingham Dress by Dresses begins here.
 
 A gingham dress is a kind of overdress. A gingham dress is usually transformation-rare. A gingham dress is usually not-top-displacable. A gingham dress is usually intelligence-influencing.
 
-Definition: a gingham dress is schoolgirl-enabling: decide yes.
-Definition: a gingham dress is class-transformation-protected:
+Definition: a gingham dress is class-relevant:
 	if the class of the player is schoolgirl, decide yes;
 	decide no.
 Definition: a gingham dress is baby themed: decide yes.
 
 Part 1 - Gingham Schoolgirl Outfit
 
-A gingham schoolgirl outfit is a kind of gingham dress.
+gingham schoolgirl outfit is a gingham dress.
 
-The printed name of gingham schoolgirl outfit is usually "[clothing-title-before]gingham schoolgirl outfit[clothing-title-after]". The text-shortcut of gingham schoolgirl outfit is "gso". A gingham schoolgirl outfit is usually fully covering.
-
-There is 1 gingham schoolgirl outfit.
+The printed name of gingham schoolgirl outfit is "[clothing-title-before]gingham schoolgirl outfit[clothing-title-after]". The text-shortcut of gingham schoolgirl outfit is "gso". gingham schoolgirl outfit is fully covering.
 
 Figure of gingham schoolgirl outfit is the file "Items/Clothes/Upper/Special/Schoolgirl/schoolgirl5.png".
 
-To decide which figure-name is clothing-image of (C - a gingham schoolgirl outfit):
+To decide which figure-name is clothing-image of (C - gingham schoolgirl outfit):
 	decide on figure of gingham schoolgirl outfit.
 
-To say ShortDesc of (C - a gingham schoolgirl outfit):
+To say ShortDesc of (C - gingham schoolgirl outfit):
 	say "gingham schoolgirl outfit".
 
-To say ClothingDesc of (C - a gingham schoolgirl outfit):
+To say ClothingDesc of (C - gingham schoolgirl outfit):
 	say "A purple and white gingham schoolgirl outfit. It looks like a primary school uniform!".
 
-To decide which number is the initial outrage of (C - a gingham schoolgirl outfit):
+To decide which number is the initial outrage of (C - gingham schoolgirl outfit):
 	if diaper quest is 0, decide on the initial cringe of C;
 	decide on 0.
 
-To decide which number is the initial cringe of (C - a gingham schoolgirl outfit):
+To decide which number is the initial cringe of (C - gingham schoolgirl outfit):
 	decide on 4.
 
-To decide which object is the unique-upgrade-target of (C - a gingham schoolgirl outfit):
+To decide which object is the unique-upgrade-target of (C - gingham schoolgirl outfit):
 	unless the class of the player is schoolgirl, decide on a random off-stage patterned baby dress;
 	decide on a random off-stage super short gingham dress.
 
-Definition: a gingham schoolgirl outfit is purple themed: decide yes.
-Definition: a gingham schoolgirl outfit is fetish appropriate:
+Definition: gingham schoolgirl outfit is purple themed: decide yes.
+Definition: gingham schoolgirl outfit is fetish appropriate:
 	if diaper lover > 0, decide yes;
 	decide no.
 

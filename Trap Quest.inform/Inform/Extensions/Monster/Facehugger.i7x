@@ -81,8 +81,8 @@ To compute action (N - a number) of (M - a facehugger):
 	if M is in the location of the player and N is not 2:
 		anger M;
 		now M is interested;
-		let O be a random undefended orifice;
-		if O is orifice:
+		let O be a random orifice;
+		if O is undefended:
 			say "[BigNameDesc of M] leaps at you, trying to latch onto your [variable O]!";
 			let D be a random number between 1 and the dexterity of the player;
 			let X be D;
@@ -129,7 +129,19 @@ To compute action (N - a number) of (M - a facehugger):
 						StomachSemenUp SL;
 				say "The legs let go of you and the body falls off, motionless and dead.";
 				increase facehuggers-fucked by 1;
-				destroy M.
+				destroy M;
+		otherwise:
+			let C be a random currently uncovered tearable skirted clothing;
+			if C is nothing, now C is a random currently uncovered tearable crotch covering clothing;
+			if C is clothing:
+				say "[BigNameDesc of M] shoots acid at your [C]!";
+				if C is pussy covering and C is rippable:
+					say "The crotch section dissolves away!";
+					now C is crotch-ripped;
+				otherwise:
+					say "Parts of the [ShortDesc of C] rapdily dissolve the whole thing falls off you, completely ruined!";
+					destroy C.
+
 
 To compute (M - a monster) stomping (N - a facehugger):
 	if M is in the location of the player, say "[BigNameDesc of M] kills the [N].";

@@ -65,9 +65,7 @@ Carry out crafting:
 			increase times-crafted by 1;
 			reset alchemy charge;
 			let H be a random worn blue scrunchie;
-			if H is clothing:
-				compute class outfit of H;
-				if playerRegion is not school, MagicPowerUp 1;
+			if H is clothing and playerRegion is not school, MagicPowerUp 1;
 		otherwise:
 			if there is a product-highlighted thing:
 				say "Nothing happens.";

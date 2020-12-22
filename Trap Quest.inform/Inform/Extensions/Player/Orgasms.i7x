@@ -347,9 +347,9 @@ To compute ejaculation:
 		let A be the semen load of the player;
 		if penis is exposed and A > 1:
 			UnannouncedSquirt semen on belly by 1;
-			cumsoak (A - 1) on P;
+			AnnouncedExpel semen on P by (A - 1);
 		otherwise:
-			cumsoak A on P;
+			AnnouncedExpel semen on P by A;
 	otherwise:
 		SemenPuddleUp the size of penis.
 

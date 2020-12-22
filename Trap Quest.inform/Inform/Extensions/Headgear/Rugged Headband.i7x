@@ -1,6 +1,6 @@
 Rugged Headband by Headgear begins here.
 
-rugged-headband is a headgear. rugged-headband is unique. rugged-headband is redness-positive. rugged-headband is roleplay. rugged-headband is manly. Understand "rugged", "headband" as rugged-headband.
+rugged-headband is a headgear. rugged-headband is redness-positive. rugged-headband is roleplay. rugged-headband is manly. Understand "rugged", "headband" as rugged-headband.
 
 Definition: rugged-headband is roleplay: decide yes. [Extension not included in DQ]
 
@@ -20,32 +20,10 @@ Definition: rugged-headband is condom pinnable: decide yes.
 
 Definition: rugged-headband is leopard themed: decide yes.
 
-rugged-summoned is a number that varies.
-To compute unique recycling of (C - rugged-headband):
-	now rugged-summoned is 0.
-
-Definition: rugged-headband (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
-	if wearing-target is not C and wearing-target is leopard themed, decide yes;
-	if wearing-target is heavy-club, decide yes;
-	decide no.
-
 To compute class outfit of (H - rugged-headband):[TODO: eventually add a loincloth]
-	let B be leopard-hotpants;
-	if B is not actually summonable, now B is leopard print bikini bottoms;
-	let T be rugged-crop-top;
-	if T is not actually summonable, now T is leopard print tube top;
-	if T is not actually summonable, now T is a random off-stage leopard print bikini top;
-	let C be heavy-club;
-	if C is actually summonable:
-		say "[bold type]Your headband flexes, and a [printed name of C] materialises in your hands.[roman type][line break]";
-		summon C;
-	otherwise if T is clothing and T is actually summonable:
-		say "[bold type]Your headband flexes, and a [printed name of T] materialises on your chest![roman type][line break]";
-		summon T;
-	otherwise if B is clothing and B is actually summonable:
-		now B is dominance;[means you can't wear a strapon, so you get a bit of a freebie]
-		say "[bold type]Your headband flexes, and a [printed name of B] materialises on your crotch![roman type][line break]";
-		summon B.
+	class summon leopard-hotpants;
+	class summon rugged-crop-top;
+	class summon heavy-club.
 
 To decide which number is the intelligence-influence of (C - rugged-headband):
 	let X be -5;

@@ -1,6 +1,6 @@
 Headgear Framework by Headgear begins here.
 
-A headgear is a kind of clothing. headgear is unique. headgear can be hair growing. A headgear has a number called hair-charge. A headgear has a number called colour-charge. A headgear has a number called outfit-charge. A headgear is usually manly.
+A headgear is a kind of clothing. headgear is unique. headgear can be hair growing. A headgear is usually manly.
 A headgear can be roleplay. A headgear is usually not roleplay. [Can this headgear appear in the wardrobe when picking the random headgear starting option.]
 
 To decide which number is the default-soak-limit of (C - a headgear): decide on 7.
@@ -15,7 +15,6 @@ Definition: a headgear is cursable: decide no.
 Definition: a headgear is magic-enhanceable: decide yes.
 Definition: a headgear is blessable: decide no.
 Definition: a headgear is class-transformation-protected: decide yes.
-Definition: an object is removal-blocking: decide no. [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
 
 [Headgears come with quests. These quests (unless super special) will reward with jewellery or stats the first time they are completed, then X the second time they are completed, and then minor healing from then on.]
 
@@ -48,14 +47,24 @@ To compute generic first time class reward of (Q - a clothing-quest) on (C - a c
 		compute generic second time class reward of Q on C.
 
 To compute generic second time class reward of (Q - a headgear-clothing-quest) on (C - a clothing):
-	say "[if the player is shameless]repairing some of your self-esteem[otherwise]filling you with pride[end if]!";
-	dignify 2500.
+	if frozen hair is 0 and ((C is not brightness-positive and the brightness of hair > natural brightness * 3) or (C is not redness-positive and the redness of hair > natural redness * 3) or (C is not blondeness-positive and the blondeness of hair > natural blondeness * 3)):
+		say "darkening your hair colour!";
+		if C is not brightness-positive, HairBrightDown 1;
+		if C is not blondeness-positive, HairBlondeDown 1;
+		if C is not redness-positive, HairRedDown 1;
+	otherwise:
+		say "[if the player is shameless]repairing some of your self-esteem[otherwise]filling you with pride[end if]!";
+		dignify 2500.
 
 To compute generic class reward of (Q - a headgear-clothing-quest) on (C - a clothing):
-	say "filling you with renewed energy!";
-	repeat with F running through fuckholes:
-		heal F times 5;
-	now the fatigue of the player is 0.
+	if C is hair growing or the raw largeness of hair <= 1 or frozen hair is 1:
+		say "filling you with renewed energy!";
+		repeat with F running through fuckholes:
+			heal F times 5;
+		now the fatigue of the player is 0;
+	otherwise:
+		say "shrinking the length of your hair!";
+		HairDown 1.
 
 Report taking off headgear: [Otherwise the player could remove the headgear, remove the nasty class blocked clothing items, then replace the headgear.]
 	compute AutoRemoveFizzling of the noun.
@@ -95,45 +104,35 @@ To say ShortDesc of (C - a headgear):
 	say "headwear".
 
 To compute hair colour change of (H - a headgear):
-	increase the colour-charge of H by 1;
-	if the colour-charge of H > the hair threshold of H:
-		now the colour-charge of H is 0;
-		let C be a random number between 1 and 3;
-		if H is redness-neutral, now C is 1;[when we can't increase redness we force check brightness. NOTE: brightness increase is most likely.]
-		if C is 1:
-			if the brightness of hair < 3 and H is brightness-positive:
-				say "You feel your [printed name of H] changing your hair colour.";
-				HairBrightUp 1;
-			if the brightness of hair > 0 and H is brightness-negative:
-				say "You feel your [printed name of H] changing your hair colour.";
-				HairBrightDown 1;
-			if H is brightness-neutral, now C is 2;[we couldn't increase brightness so we try blondeness]
-		if C is 2:
-			if the blondeness of hair < 3 and H is blondeness-positive:
-				say "Your feel your [printed name of H] changing your hair colour.";
-				HairBlondeUp 1;
-			if the blondeness of hair > 0 and H is blondeness-negative:
-				say "You feel your [printed name of H] changing your hair colour.";
-				HairBlondeDown 1;
-			if H is blondeness-neutral, now C is 3;[couldn't increase blondeness so let's try redness]
-		if C is 3:
-			if the redness of hair < 3 and H is redness-positive:
-				say "You feel your [printed name of H] changing your hair colour.";
-				HairRedUp 1;
-			if the redness of hair > 0 and H is redness-negative:
-				say "You feel your [printed name of H] changing your hair colour.";
-				HairRedDown 1.
+	if frozen hair is 0:
+		let flav-said be 0;
+		if the brightness of hair < 3 and H is brightness-positive:
+			say "[if flav-said is 0]You feel your [ShortDesc of H] changing your hair colour, making it[otherwise] and[end if] brighter";
+			now flav-said is 1;
+		if the brightness of hair > 0 and H is brightness-negative:
+			say "[if flav-said is 0]You feel your [ShortDesc of H] changing your hair colour, making it[otherwise] and[end if] darker";
+			now flav-said is 1;
+		if the blondeness of hair < 3 and H is blondeness-positive:
+			say "[if flav-said is 0]You feel your [ShortDesc of H] changing your hair colour, making it[otherwise] and[end if] more blonde";
+			now flav-said is 1;
+		if the blondeness of hair > 0 and H is blondeness-negative:
+			say "[if flav-said is 0]You feel your [ShortDesc of H] changing your hair colour, making it[otherwise] and[end if] less blonde";
+			now flav-said is 1;
+		if the redness of hair < 3 and H is redness-positive:
+			say "[if flav-said is 0]You feel your [ShortDesc of H] changing your hair colour, making it[otherwise] and[end if] more red";
+			now flav-said is 1;
+		if the redness of hair > 0 and H is redness-negative:
+			say "[if flav-said is 0]You feel your [ShortDesc of H] changing your hair colour, making it[otherwise] and[end if] less red";
+			now flav-said is 1;
+		if flav-said is 1, say ".";
+		[these need to go afterwards because they might cause something to be printed]
+		if the brightness of hair < 3 and H is brightness-positive, HairBrightUp 1;
+		if the brightness of hair > 0 and H is brightness-negative, HairBrightDown 1;
+		if the blondeness of hair < 3 and H is blondeness-positive, HairBlondeUp 1;
+		if the blondeness of hair > 0 and H is blondeness-negative, HairBlondeDown 1;
+		if the redness of hair < 3 and H is redness-positive, HairRedUp 1;
+		if the redness of hair > 0 and H is redness-negative, HairRedDown 1.
 
-To compute hair colour darken of (H - a headgear): [Some awesome headgears darken hair when blessed]
-	if H is blessed and frozen hair is 0:
-		increase the colour-charge of H by 1;
-		if the colour-charge of H > the hair threshold of H * 3:
-			now the colour-charge of H is 0;
-			if the redness of hair > natural redness * 3 or the brightness of hair > natural brightness * 3 or the blondeness of hair > natural blondeness * 3:
-				say "You feel the blessed holy power your [ShortDesc of H] darkening your hair colour. ";
-				HairBrightDown 1;
-				HairBlondeDown 1;
-				HairRedDown 1.
 
 To decide which number is the initial outrage of (C - a headgear):
 	decide on 1.
@@ -143,49 +142,64 @@ To set up magic state of (C - a headgear):
 
 To compute periodic effect of (H - a headgear):
 	if the player is not in a predicament room:
-		if diaper quest is 0:
-			compute hair growth of H;
-			compute hair colour change of H;
-		compute outfit of H;
 		compute unique periodic effect of H.
 
 To compute unique periodic effect of (H - a headgear):
 	do nothing.
 
-To compute outfit of (H - a headgear):
-	increase the outfit-charge of H by 1;
-	if the outfit-charge of H > the outfit threshold of H:
-		now the outfit-charge of H is 0;
-		compute class outfit of H.
-
-To decide which number is the outfit threshold of (H - a headgear):
-	decide on 25.
-
-To decide which number is the hair threshold of (H - a headgear):
-	if H is cursed:
-		decide on 30;
-	otherwise if H is blessed:
-		decide on 75;
-	otherwise:
-		decide on 60.
-
 To compute hair growth of (H - a headgear):
-	if diaper quest is 0 and H is hair growing and the largeness of hair < the bimbo of the player + 4:
-		increase the hair-charge of H by 1;
-		if the hair-charge of H > the hair threshold of H + (the raw largeness of hair * 3):
-			now the hair-charge of H is 0;
-			say "Your [ShortDesc of H] feels warm as your hair grows slightly.";
-			HairUp 1.
+	if diaper quest is 0 and H is hair growing:
+		say "Your [ShortDesc of H] feels warm as your hair grows slightly.";
+		HairUp 1.
+
+To summon (H - a headgear):
+	only destroy H; [This cleans up all potentially incorrect flags except ripped and various effects]
+	only summon H;
+	follow the player class rules;
+	compute hair growth of H;
+	compute hair colour change of H;
+	compute class outfit of H.
+
+To compute post transformation effect of (H - a headgear):
+	let PC1 be the substituted form of "[player-class]";
+	follow the player class rules;
+	let PC2 be the substituted form of "[player-class]";
+	unless PC1 matches the text PC2, compute class outfit of H. [In general if the player changes class they get a new outfit where possible. NB this won't replace clothing that is still class-relevant, that will need to be done manually]
+
+Report wearing a headgear:
+	compute class outfit of the noun.
 
 To compute class outfit of (H - a headgear):
-	do nothing.
+	do nothing. [This will be replaced with the headgear spawning the default class outfit using the "class summon" function on each item of clothing.]
+
+To compute class set up of (C - a clothing): [Any unique changes to its state when it's summoned as part of a class outfit]
+	if C is gloves or C is sex toy, now C is cursed; [With rare exceptions these are always 'bad stuff' that need to come into play cursed]
+	if C is sex toy:
+		let F be a random fuckhole penetrated by C;
+		if F is fuckhole, assign size (openness of F) to C;
+	if C is bondage, now C is locked.
+
+To say ClassSummonFlav of (C - a clothing):
+	say "A [C] appears on your [body area of C]!".
+
+To class summon (C - a clothing):
+	if debugmode > 0, say "[input-style]Class summoning [C].[roman type][line break]";
+	if C is hand ready, check clutch replacement;
+	if C is class summonable:
+		PinkWardrobeUnclash C;
+		summon C uncursed;
+		compute class set up of C;
+		say ClassSummonFlav of C;
+		if C is cursed:
+			if the quest of C is no-clothing-quest, compute persistent quest of C;
+			unless the quest of C is no-clothing-quest, say QuestFlav of C.
 
 To WardrobeVanish (C - a clothing):
 	say "Your [C] [one of]vanishes. You can sense that it has been sent to the pink wardrobe[or]is sent from your [body area of C] to the pink wardrobe[stopping]!";
 	dislodge C;
 	now C is in pink wardrobe.
 
-[Removes all clothing that shouldn't be worn at the same time as the new item and sends them to the pink wardrobe. Should be called BEFORE the new item is summoned.]
+[Removes all clothing that shouldn't be worn at the same time as the new item and sends them to the pink wardrobe. Should be called BEFORE the new item is summoned. This function needs to match the function below.]
 To PinkWardrobeUnclash (C - a clothing):
 	UniquePinkWardrobeUnclash C;
 	if C is neck covering:
@@ -232,9 +246,8 @@ To PinkWardrobeUnclash (C - a clothing):
 	if C is skirted:
 		repeat with O running through worn skirted clothing:
 			WardrobeVanish O;
-		if tough-shit is 0:
-			repeat with O running through worn unskirted themed clothing:
-				WardrobeVanish O;
+		repeat with O running through worn unskirted themed clothing:
+			WardrobeVanish O;
 	if C is suspenders:
 		repeat with O running through worn suspenders:
 			WardrobeVanish O;
@@ -259,6 +272,9 @@ To PinkWardrobeUnclash (C - a clothing):
 	if C is leg covering:
 		repeat with O running through worn leg covering clothing:
 			WardrobeVanish O;
+	if C is stockings:
+		repeat with O running through worn stockings:
+			WardrobeVanish O;
 	if C is shoes:
 		repeat with O running through worn shoes:
 			WardrobeVanish O;
@@ -272,7 +288,7 @@ To PinkWardrobeUnclash (C - a clothing):
 		if C is tail plug:
 			repeat with O running through ass covering clothing:
 				WardrobeVanish O;
-	if (tough-shit is 0 and C is uncovered themed) or C is top-exclusive or C is totally-exclusive:
+	if C is uncovered themed or C is top-exclusive or C is totally-exclusive:
 		if C is breast covering:
 			repeat with O running through worn breast covering clothing:
 				check that O usually goes under C;
@@ -288,26 +304,153 @@ To PinkWardrobeUnclash (C - a clothing):
 				check that O usually goes under C;
 				if the rule succeeded:
 					WardrobeVanish O;
-	if tough-shit is 0:
-		if C is unskirted themed:
-			repeat with O running through worn skirted clothing:
+	if C is unskirted themed:
+		repeat with O running through worn skirted clothing:
+			WardrobeVanish O;
+	if C is breast covering:
+		repeat with O running through worn uncovered themed bras:
+			WardrobeVanish O;
+	if C is belly covering:
+		repeat with O running through worn uncovered themed corsets:
+			WardrobeVanish O;
+	if C is crotch covering or (C is skirted and C is not super-short):
+		repeat with O running through worn uncovered themed crotch covering clothing:
+			check that O usually goes under C;
+			if the rule succeeded:
 				WardrobeVanish O;
-		if C is breast covering:
-			repeat with O running through worn uncovered themed bras:
-				WardrobeVanish O;
-		if C is belly covering:
-			repeat with O running through worn uncovered themed corsets:
-				WardrobeVanish O;
-		if C is crotch covering or (C is skirted and C is not super-short):
-			repeat with O running through worn uncovered themed crotch covering clothing:
-				check that O usually goes under C;
-				if the rule succeeded:
-					WardrobeVanish O;
 	repeat with O running through clothing in pink wardrobe:
 		dislodge O.
 
 To UniquePinkWardrobeUnclash (C - a clothing):
 	do nothing.
+
+Definition: a clothing is uniquely class summonable: decide yes. [needs to match UniquePinkWardrobeUnclash]
+Definition: a clothing is class-relevant: [should we avoid non-unique transformations, and avoid replacing this during an attempted class summon?]
+	if it is latex and the class of the player is latex fetish model, decide yes;
+	decide no.
+
+Definition: a clothing (called C) is class summonable:
+	if C is worn, decide no;
+	if C is not uniquely class summonable, decide no;
+	if C is hand ready and C is not actually summonable, decide no; [don't banish equippables]
+	[This section needs to match the function above.]
+	if C is neck covering:
+		repeat with O running through worn neck covering clothing:
+			if O is unremovable or O is class-relevant, decide no;
+	if C is arm covering:
+		repeat with O running through worn arm covering clothing:
+			if O is unremovable or O is class-relevant, decide no;
+	[if C is hand ready:
+		repeat with O running through worn hand ready clothing:
+			if O is unremovable or O is class-relevant, decide no;]
+	if C is bra:
+		repeat with O running through worn bra:
+			if O is unremovable or O is class-relevant, decide no;
+		repeat with O running through worn breast covering clothing:
+			if O is totally-exclusive or O is top-exclusive:
+				check that O usually goes under C;
+				if the rule succeeded:
+					if O is unremovable or O is class-relevant, decide no;
+	if C is corset:
+		repeat with O running through worn corsets:
+			if O is unremovable or O is class-relevant, decide no;
+		repeat with O running through worn bottom-exclusive belly covering clothing:
+			if O is unremovable or O is class-relevant, decide no;
+		repeat with O running through worn totally-exclusive belly covering clothing:
+			if O is unremovable or O is class-relevant, decide no;
+		if C is breast covering:
+			repeat with O running through worn breast covering clothing:
+				if O is totally-exclusive or O is top-exclusive:
+					check that O usually goes under C;
+					if the rule succeeded:
+						if O is unremovable or O is class-relevant, decide no;
+	if C is dress:
+		if C is overdress:
+			repeat with O running through worn overdress:
+				if O is unremovable or O is class-relevant, decide no;
+		if C is underdress:
+			repeat with O running through worn underdress:
+				if O is unremovable or O is class-relevant, decide no;
+		repeat with O running through worn clothing:
+			if O is top-exclusive or O is totally-exclusive:
+				if (O is breast covering and C is breast covering) or (O is belly covering and C is belly covering) or (O is crotch covering and C is crotch covering):
+					if O is unremovable or O is class-relevant, decide no;
+	if C is skirted:
+		repeat with O running through worn skirted clothing:
+			if O is unremovable or O is class-relevant, decide no;
+		repeat with O running through worn unskirted themed clothing:
+			if O is unremovable or O is class-relevant, decide no;
+	if C is suspenders:
+		repeat with O running through worn suspenders:
+			if O is unremovable or O is class-relevant, decide no;
+	if C is knickers or C is ass plugging or C is vagina plugging or C is bottom-exclusive crotch covering clothing or C is totally-exclusive crotch covering clothing:
+		repeat with O running through worn knickers:
+			if O is unremovable or O is class-relevant, decide no;
+		repeat with O running through worn bottom-exclusive crotch covering clothing:
+			if O is unremovable or O is class-relevant, decide no;
+		repeat with O running through worn totally-exclusive crotch covering clothing:
+			if O is unremovable or O is class-relevant, decide no;
+		repeat with O running through worn ass plugging clothing:
+			if O is unremovable or O is class-relevant, decide no;
+		repeat with O running through worn vagina plugging clothing:
+			if O is unremovable or O is class-relevant, decide no;
+	if C is trousers:
+		repeat with O running through worn trousers:
+			if O is unremovable or O is class-relevant, decide no;
+		repeat with O running through worn top-exclusive crotch covering unskirted clothing:
+			if O is unremovable or O is class-relevant, decide no;
+		repeat with O running through worn totally-exclusive crotch covering clothing:
+			if O is unremovable or O is class-relevant, decide no;
+	if C is leg covering:
+		repeat with O running through worn leg covering clothing:
+			if O is unremovable or O is class-relevant, decide no;
+	if C is stockings:
+		repeat with O running through worn stockings:
+			if O is unremovable or O is class-relevant, decide no;
+	if C is shoes:
+		repeat with O running through worn shoes:
+			if O is unremovable or O is class-relevant, decide no;
+	if C is sex toy:
+		if C is plug or the player is not possessing a vagina:
+			repeat with O running through clothing penetrating asshole:
+				if O is unremovable or O is class-relevant, decide no;
+		otherwise:
+			repeat with O running through clothing penetrating vagina:
+				if O is unremovable or O is class-relevant, decide no;
+		if C is tail plug:
+			repeat with O running through ass covering clothing:
+				if O is unremovable or O is class-relevant, decide no;
+	if C is uncovered themed or C is top-exclusive or C is totally-exclusive:
+		if C is breast covering:
+			repeat with O running through worn breast covering clothing:
+				check that O usually goes under C;
+				if the rule succeeded:
+					if O is unremovable or O is class-relevant, decide no;
+		if C is belly covering:
+			repeat with O running through worn belly covering clothing:
+				check that O usually goes under C;
+				if the rule succeeded:
+					if O is unremovable or O is class-relevant, decide no;
+		if C is crotch covering:
+			repeat with O running through worn crotch covering clothing:
+				check that O usually goes under C;
+				if the rule succeeded:
+					if O is unremovable or O is class-relevant, decide no;
+	if C is unskirted themed:
+		repeat with O running through worn skirted clothing:
+			if O is unremovable or O is class-relevant, decide no;
+	if C is breast covering:
+		repeat with O running through worn uncovered themed bras:
+			if O is unremovable or O is class-relevant, decide no;
+	if C is belly covering:
+		repeat with O running through worn uncovered themed corsets:
+			if O is unremovable or O is class-relevant, decide no;
+	if C is crotch covering or (C is skirted and C is not super-short):
+		repeat with O running through worn uncovered themed crotch covering clothing:
+			check that O usually goes under C;
+			if the rule succeeded:
+				if O is unremovable or O is class-relevant, decide no;
+	decide yes.
 
 Definition: a headgear is too boring: decide no.
 

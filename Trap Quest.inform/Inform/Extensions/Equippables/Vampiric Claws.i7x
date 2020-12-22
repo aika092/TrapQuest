@@ -1,8 +1,15 @@
 Vampiric Claws by Equippables begins here.
 
-A vampiric claws is a kind of equippable. There is 1 vampiric claws. A vampiric claws is usually unique. A vampiric claws is usually slap ready. A vampiric claws is usually manly. A vampiric claws is usually biological.
+vampiric claws is an equippable. vampiric claws is unique. vampiric claws is slap ready. vampiric claws is manly. vampiric claws is biological.
 
-The printed name of vampiric claws is usually "[clothing-title-before]vampiric claws[clothing-title-after]". The text-shortcut of vampiric claws is "vcl".
+Definition: vampiric claws is class-relevant:
+	if the class of the player is vampire spawn, decide yes;
+	decide no.
+
+To say ClassSummonFlav of (C - vampiric claws):
+	say "You feel your hands shift and warp painfully as your fingernails elongate and sharpen, turning into claws. Your slaps will certainly be more powerful! And, that vampiress told you you'd be able to drain an enemy's energy with these.".
+
+The printed name of vampiric claws is "[clothing-title-before]vampiric claws[clothing-title-after]". The text-shortcut of vampiric claws is "vcl".
 
 To say ClothingDesc of (W - vampiric claws):
 	say "A pair of claws where your fingernails used to be.".
@@ -10,9 +17,11 @@ To say ClothingDesc of (W - vampiric claws):
 To say ShortDesc of (W - vampiric claws):
 	say "vampiric claws".
 
-Definition: a vampiric claws is removable: decide no.
+Definition: vampiric claws is removable:
+	if there is a worn wood-dong, decide yes;
+	decide no.
 
-To decide which number is the damage improvement of (W - a vampiric claws):
+To decide which number is the damage improvement of (W - vampiric claws):
 	let X be 0;
 	increase X by the magic-modifier of W;
 	increase X by the dexterity of the player / 5;
@@ -23,10 +32,10 @@ To decide which number is the damage improvement of (W - a vampiric claws):
 	if abyssal tattoo is worn, increase X by 2;
 	decide on X.
 
-To compute attack of (W - a vampiric claws) at (M - a monster):
-	say "[one of]You slash at [NameDesc of M] with your [ShortDesc of W].[or]You scratch [NameDesc of M] with your [ShortDesc of W].[at random]".
+To compute attack of (W - vampiric claws) at (M - a monster):
+	say "You [one of]slash[or]scratch[at random] at [NameDesc of M] with your [ShortDesc of W].".
 
-To compute attack effect of (W - a vampiric claws):
+To compute attack effect of (W - vampiric claws):
 	if attack-type is 1:
 		bodyheal 1;
 		if the fatigue of the player > 20, FatigueDown 20;

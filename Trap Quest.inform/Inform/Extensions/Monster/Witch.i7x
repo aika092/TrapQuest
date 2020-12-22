@@ -423,7 +423,7 @@ To penetration dominate (M - witch):
 			say "[line break][speech style of M]'Thank the goddess...'[roman type][line break][big he of M] shivers as you stop and slowly pull out.[line break][speech style of M]'I'm thankful to you as well, but... if you think it's ok to put that *thing* inside other people, you're clearly an evil person. If I see you again, I'll do everything I can to stop you.'[roman type][line break]With that [he of M] stands up, makes a few intricate hand gestures, and vanishes.";
 			FavourDown M by 1;
 		otherwise:
-			say "[line break][speech style of M]'NOOOOO!'[roman type][line break][big he of M] screams, tears welling up in [his of M] eyes as you mercilessly destroy [his of M] ass. Luckily for [him of M], you are near finishing anyway because [he of M] is TIGHT! You savour [him of M] as much as you can before finally losing control, spanking [him of M] roughly as your [sexual-player-penis] fills [him of M] with your [load]. [big he of M] can't take the stimulation, and [his of M] eyes roll back in the bed as [if lady fetish is 2][his of M] [sissy-penis] covers the ground with several strings of [semen]. [otherwise][his of M] pussy squirts out girlcum. [end if][line break][speech style of M]'Why do they always go for my ass... '[roman type][line break][big he of M] makes a few intricate hand gestures as you pull out, and immediately vanishes.";
+			say "[line break][speech style of M]'NOOOOO!'[roman type][line break][big he of M] screams, tears welling up in [his of M] eyes as you mercilessly destroy [his of M] ass. Luckily for [him of M], you are near finishing anyway because [he of M] is TIGHT! You savour [him of M] as much as you can before finally losing control, spanking [him of M] roughly as your [sexual-player-penis] fills [him of M] with your [load]. [big he of M] can't take the stimulation, and [his of M] eyes roll back in [his of M] head as [if lady fetish is 2][his of M] [sissy-penis] covers the ground with several strings of [semen]. [otherwise][his of M] pussy squirts out girlcum. [end if][line break][speech style of M]'Why do they always go for my ass...'[roman type][line break][big he of M] makes a few intricate hand gestures as you pull out, and immediately vanishes.";
 			orgasm;
 			AnalGet;
 	otherwise if sexual-penis-length > 6:
@@ -468,6 +468,7 @@ To say DominanceFailure of (M - witch):
 To compute failed dominance punishment of (M - witch):
 	if the times-dominated of M > a random number between 1 and 0 and player-fucker is penis and the player is getting very unlucky:
 		Drag to WoodsBoss01 by M;
+		say GotUnluckyFlav;
 		now M is in Woods16;
 		Satisfy M;
 	otherwise if the player is getting unlucky:
@@ -481,6 +482,7 @@ To compute failed dominance punishment of (M - witch):
 		otherwise:
 			say "[BigNameDesc of M] fires a bolt of energy into your chest, repeating a short chant as strength permanently leaves your body. [big he of M] appears to be satisfied with that and leaves you alone.";
 			StrengthDown 5;
+		say GotUnluckyFlav;
 		Satisfy M;
 	otherwise:
 		if watersports fetish is 1 and a random number between 1 and 2 is 1:

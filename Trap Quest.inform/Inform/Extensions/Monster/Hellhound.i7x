@@ -43,9 +43,9 @@ To say MonsterComment of (M - hellhound):
 				say "[second custom style]I'll do whatever it wants, no matter what form it decides to take. That's just the kind of sex slave I am!";
 		otherwise if the class of the player is priestess:
 			if M is penetrating a body part:
-				say "An solemn voice sounds in your head. [first custom style]'Defiled Sister, [one of]you must not accept this indignity. Escape!'[or]this is a powerful being, and it will stop at nothing to defile this world. You must escape! Quickly!'[or][if M is knotted]you now know for yourself the truth of this creature's powers. You must not let this happen to anyone else!'[otherwise]you must now allow this creature to use its evil powers. Escape! Hurry!'[end if][in random order]";
+				say "An solemn voice sounds in your head. [second custom style]'Defiled Sister, [one of]you must not accept this indignity. Escape!'[or]this is a powerful being, and it will stop at nothing to defile this world. You must escape! Quickly!'[or][if M is knotted]you now know for yourself the truth of this creature's powers. You must not let this happen to anyone else!'[otherwise]you must now allow this creature to use its evil powers. Escape! Hurry!'[end if][in random order]";
 			otherwise:
-				say "A concerned voice sounds in your head.[first custom style]'Kind Sister, [one of]this is a cruel, wicked existence. You must drive it away![or]this terrible being will stop at nothing to defile this world. It cannot be allowed to roam here!'[or]you must be wary of this being's dark power, which tethers it to the victims of its torment.'[in random order]";
+				say "A concerned voice sounds in your head.[second custom style]'Kind Sister, [one of]this is a cruel, wicked existence. You must drive it away![or]this terrible being will stop at nothing to defile this world. It cannot be allowed to roam here!'[or]you must be wary of this being's dark power, which tethers it to the victims of its torment.'[in random order]";
 		otherwise if the player is pheromonal:
 			if M is penetrating a body part:
 				if the bimbo of the player < 7:
@@ -77,7 +77,7 @@ To say MonsterComment of (M - hellhound):
 				otherwise say "[variable custom style][one of][if the times-submitted of M > 0]Nice and rough, just how I like it![otherwise]I wonder if it wants to 'hump my leg.'[end if][or]What a beatiful beast! Wait, I wonder if that's disrespectful.[in random order]";
 	otherwise:
 		if the bimbo of the player < 7:
-			if the player is gendered male, say "[first custom style][one of][if M is knotted or the times-submitted of M > 0]That isn't a cockring! What the fuck![otherwise]That cockring doesn't even seem like it does anything.[end if][or]Is it really that fun?[or]I better watch out for whoever did that to [him of M].[in random order]";
+			if the player is gendered male, say "[first custom style][one of][if M is knotted or the times-submitted of M > 0]That isn't a cockring! What the fuck![otherwise]That cockring looks a little loose.[end if][or]Is it really that fun?[or]I better watch out for whoever did that to [him of M].[in random order]";
 			otherwise say "[first custom style][one of][if M is knotted or the times-submitted of M > 0]Is that really a cockring?! How is it so painful?[otherwise]Ugh. Penis rings are disgusting.[end if][or]How could anyone enjoy such a thing?[or]A slave... who would own a slave like that?[in random order]";
 		otherwise if the bimbo of the player < 12:
 			say "[variable custom style][one of][if M is knotted or the times-submitted of M > 0]I guess I can see where the idea for the cockring came from![otherwise]That cockring isn't just a cockring, right? Its special.[end if][or][big he of M]'s really enjoying [his of M] pet play a lot...[or]Will I also end up as a slave? Wait, I shouldn't answer that.[in random order]";
@@ -91,10 +91,6 @@ To set up (M - hellhound):
 	now the raw difficulty of M is the starting difficulty of M;
 	if mythical creature fetish is 0, now M is intelligent;
 	now the health of M is the maxhealth of M.
-
-[This is the spawn initial hellhound rule:
-	if hellhound is off-stage and hellhound is mansion dwelling, summon hellhound in the mansion.
-The spawn initial hellhound rule is listed in the setting up mansion monsters rules.]
 
 To decide which number is the girth of (M - hellhound):
 	if mythical creature fetish is 0, decide on 2;
@@ -218,6 +214,10 @@ To compute perception of (M - hellhound):
 		anger M;
 		say "[BigNameDesc of M] seems to notice you! [if mythical creature fetish is 1]You could swear you see [his of M] mouth form into a sinister smile[otherwise][big his of M] smile just got even wider[end if]...";
 		now M is interested;
+	otherwise if the player is pheromonal:
+		anger M;
+		say "[BigNameDesc of M] sniffs the air as a waft of your pheremones catches [his of M] attention. [big his of M] massive demon cock swells, and [he of M] turns towards you with visible aggression! [if mythical creature fetish is 1]You could swear you see [his of M] mouth form into a sinister smile[otherwise][big his of M] smile just got even wider[end if]...";
+		now M is interested;
 	if M is interested, now the sex-length of M is the difficulty of M.
 
 To compute kneeling reaction of (M - hellhound):
@@ -289,11 +289,11 @@ To say CondomPieFlav of (M - hellhound) in (F - a fuckhole):
 	say "[BigNameDesc of M] howls as [he of M] climaxes, filling the condom with [if mythical creature fetish is 1]unnatural [end if]warmth. You can [if mythical creature fetish is 0]feel [his of M] cock ring expanding[otherwise]feel the base of [his of M] [DickDesc of M] expanding[end if], but luckily [he of M] pulls out before it can lock [him of M] inside of you.";
 	UnKnot M in F.
 
+[This function gets checked in a special way that prevents us from using randomness here.]
 To decide if (M - hellhound) is willing to creampie (F - asshole):
 	if the class of the player is catgirl, decide no;[he never creampies a catgirl]
 	if the class of the player is puppygirl or the class of the player is succubus, decide yes;
-	if the class of the player is priestess:
-		if the virgin bonus of the player > 0, decide no;[doesn't creampie priestesses with a virgin bonus]
+	if the class of the player is priestess, decide no;
 	if the player is a butt slut, decide yes;
 	if the thickness of hips > 4, decide yes;
 	decide no.
@@ -303,9 +303,7 @@ To decide if (M - hellhound) is willing to creampie (F - vagina):
 	if the player is pheromonal, decide yes;
 	if the class of the player is catgirl, decide no;[you can still get creampied if you count as pheromonal]
 	if the class of the player is succubus, decide yes;
-	if the class of the player is priestess:
-		if the virgin bonus of the player < 0 or the player is a sissy, decide yes;[sissy priestesses or deflowered priestesses]
-		decide no;[normally he can't vaginally creampie priestesses at all]
+	if the class of the player is priestess, decide no;[would be brutal, so we prevent it.]
 	if the player is a pussy slut, decide yes;
 	if the thickness of hips + the pregnancy rate of the player > 4, decide yes;
 	decide no.

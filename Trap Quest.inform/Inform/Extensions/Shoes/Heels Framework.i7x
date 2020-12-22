@@ -15,8 +15,6 @@ Understand the heel-height property as describing a heels when disambiguation-ID
 stiletto heels is a kind of heels. boots is a kind of heels. platform heels is a kind of heels.
 Understand "boot", "boots" as boots.
 
-Definition: a boots is calf covering: decide yes.
-
 To decide which number is the initial cringe of (C - a shoes):
 	let X be 0;
 	if C is latex, decrease X by 2;
@@ -114,7 +112,9 @@ To say SteadinessDesc of (C - a heels):
 		otherwise:
 			say "You feel extremely off balance.";
 		if the slipperiness of the location of the player > 0 and the hindrance of C > 0:
-			say "The slipperiness of the floor certainly isn't helping!".
+			say "The slipperiness of the floor certainly isn't helping!";
+	otherwise:
+		say line break.
 
 To say UniqueShortDesc of (C - a heels):
 	say "heels".

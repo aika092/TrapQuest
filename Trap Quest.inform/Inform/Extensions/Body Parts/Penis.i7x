@@ -377,11 +377,11 @@ This is the penis doesn't exist rule:
 The penis doesn't exist rule is listed in the penis presentable rules.
 
 [When the donator lock comes off, this rule must be removed]
-This is the penis in beta rule:
+[This is the penis in beta rule:
 	if the player is not the donator:
 		if auto is 0, say "This feature is currently in beta. Wait until it comes out!s";
 		rule fails.
-The penis in beta rule is listed in the penis presentable rules.
+The penis in beta rule is listed in the penis presentable rules.]
 
 This is the monster doesn't do penetration rule:
 	if auto > 0 and ((presenting-receiver is monster and presenting-receiver is not willing to charm snakes) or the number of willing to charm snakes monsters in the location of the player is 0), rule fails.

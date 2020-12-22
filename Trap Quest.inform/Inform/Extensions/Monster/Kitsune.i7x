@@ -33,6 +33,7 @@ To say MonsterDesc of (M - kitsune):
 		say "Kitsune failing to disguise properly, please report bug.".
 
 To set up (M - kitsune):
+	reset M;
 	now the monstersetup of M is 1;
 	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M;
@@ -44,6 +45,7 @@ To decide which number is the starting difficulty of (M - kitsune):
 
 To set up disguise of (M - kitsune):
 	let R be a random number between 1 and 2;
+	if debugmode > 1, say "target-disguise of kitsune was [target-disguise of M]. [R] set to 2.";
 	if playerRegion is mansion:
 		if R is 1:
 			now the target-disguise of M is vampiress;
@@ -55,8 +57,10 @@ To set up disguise of (M - kitsune):
 			now the target-disguise of M is a random royal guard;
 		otherwise if diaper quest is 1:
 			now the target-disguise of M is a random adult baby slave;
-		otherwise:
+		otherwise if there is a dungeon dwelling wench:
 			now the target-disguise of M is a random dungeon dwelling wench;
+		otherwise:
+			now the target-disguise of M is a random gladiator;
 	otherwise if playerRegion is hotel:
 		if R is 1:
 			now the target-disguise of M is a random wrestler;
@@ -73,7 +77,8 @@ To set up disguise of (M - kitsune):
 			now the target-disguise of M is confident aeromancer;
 		otherwise:
 			now the target-disguise of M is unicorn;
-	now the text-shortcut of M is the text-shortcut of the target-disguise of M.
+	if debugmode > 1, say "target-disguise of kitsune is [target-disguise of M].";
+	if the target-disguise of M is monster, now the text-shortcut of M is the text-shortcut of the target-disguise of M.
 
 To reveal disguise of (M - kitsune):
 	if M is in the location of the player, say "Standing in place of [NameDesc of M] is now a ";
@@ -91,7 +96,14 @@ The spawn initial kitsune rule is listed in the setting up mansion monsters rule
 To compute unique unsimulated periodic effect of (M - kitsune):
 	if playerRegion is not school:
 		if (the target-disguise of M is not M and the target-disguise of M is in the location of M) or the vanish timer of M is 0 or the vanish timer of M < a random number between -100 and -50: [The former happens 10 turns after the player reveals them. The latter happens after a long number of turns in the same region.]
-			if M is in the location of the player, say "[BigNameDesc of M] vanishes in a puff of pink smoke!";
+			if M is in the location of the player:
+				if the target-disguise of M is not M:
+					say "[BigNameDesc of M] suddenly performs a 360 degrees twirl!";
+					reveal disguise of M;
+					say "[speech style of M]'Surprise, it was me all along!'[roman type][line break][BigNameDesc of M] giggles and vanishes in a puff of pink smoke!";
+				otherwise:
+					say "[BigNameDesc of M] giggles and vanishes in a puff of pink smoke!";
+				focus-consider M;
 			regionally place M;
 			set up disguise of M;
 			now the vanish timer of M is 0;

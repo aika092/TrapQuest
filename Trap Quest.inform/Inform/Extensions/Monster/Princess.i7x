@@ -114,7 +114,10 @@ To compute perception of (M - ex-princess):
 	otherwise if M is messy:
 		compute ChangeRequest of M;
 	otherwise:
-		say "[speech style of M]'Greetings [NameBimbo], saviour of Bimbacia!'[roman type][line break]";
+		say "[speech style of M]'Greetings [NameBimbo], saviour of Bimbacia!'[roman type][line break]".
+
+To compute friendly boredom of (M - ex-princess):
+	if playerRegion is not school, compute default friendly boredom progress of M.
 
 Part 2 - Misc Flavour
 
@@ -210,7 +213,7 @@ To consider (T - talk-princess-question) for (M - a monster):
 
 To execute (T - talk-princess-question) for (M - a monster):
 	if the number of monsters in the location of the player is 1:
-		say "[speech style of M]'[if the question-sequence of M is 0]I'm Princess Annie! [big please] help me!'[otherwise if the question-sequence of M is 1]I conjured up this entire pocket dimension and the people inside it... but I was sloppy and got overpowered by my own creation! Now hurry up and get me out of here!'[otherwise if the question-sequence of M is 2]I'm going to get my revenge on that fucking [ShortDesc of headmistress] and [his of headmistress] pawns. [big he of headmistress][']ll wish [he of headmistress][']d never been created...'[otherwise if the question-sequence of M is 3 and diaper quest is 0]I'm going to need you to unlock this cell. For that, you'll need a magical skeleton key. My prison guard has one, but [he of prison guard] might need... [']persuading['] to part with it. I happen to know that [he of prison guard] loves digestive biscuits. I'm also going to need something to fight with. Any magical wand will do, but my royal scepter would be our best chance. For that you'll need to first find my tiara. It should present itself to anyone worthy who sits on my throne. And then... you'll need to choose someone to get rather... familiar with.'[otherwise if the question-sequence of M is 3]I'm going to need you to unlock this cell. For that, you'll need a magical skeleton key. My prison guard has one, but [he of prison guard] might need... [']persuading['] to part with it. I happen to know that [he of prison guard] loves digestive biscuits. I'm also going to need something to fight with. Any magical wand will do, but my royal scepter would be our best chance. For that you'll need to first find my tiara. It should present itself to anyone worthy who sits on my throne. And then... you'll need to pee in a dry diaper. Don't ask me why.'[otherwise][Azathot] above... is this really the best chance I have? I need you to help me escape!'[end if][roman type][line break]";
+		say "[speech style of M]'[if the question-sequence of M is 0]I'm Princess Annie! [big please] help me!'[otherwise if the question-sequence of M is 1]I conjured up this entire pocket dimension and the people inside it... but I was sloppy and got overpowered by my own creation! Now hurry up and get me out of here!'[otherwise if the question-sequence of M is 2]I'm going to get my revenge on that fucking [ShortDesc of headmistress] and [his of headmistress] pawns. [big he of headmistress][']ll wish [he of headmistress][']d never been created...'[otherwise if the question-sequence of M is 3]I'm going to need you to unlock this cell. For that, you'll need a magical skeleton key. My prison guard has one, but [he of prison guard] might need... [']persuading['] to part with it. I happen to know that [he of prison guard] loves digestive biscuits. I'm also going to need something to fight with. Any magical wand will do, but my royal scepter would be our best chance. For that you'll need to first find my tiara. It should present itself to anyone worthy who sits on my throne.'[otherwise][Azathot] above... is this really the best chance I have? I need you to help me escape!'[end if][roman type][line break]";
 		increase the question-sequence of M by 1;
 	otherwise: [She's not alone so she can't talk sincerely]
 		say "You see [him of M] notice you're not alone, and then [he of M] just squeaks and keeps [his of M] mouth shut.".
@@ -384,7 +387,8 @@ To compute resolution of (M - ex-princess) taking (T - skeleton key):
 		if the number of unleashed staff member in the location of M < 2:
 			now N is unleashed;
 			try N going north;
-			now N is interested;
+			if N is unfriendly, now N is interested;
+			otherwise deinterest N;
 	repeat with N running through alive students:
 		now N is guarding; [This will stop them joining the fight]
 	let STN be the number of staff members in the location of the player;
@@ -734,5 +738,8 @@ To compute ChangeRequest of (M - ex-princess):
 
 To compute diaper mess reaction of (M - ex-princess):
 	say "[BigNameDesc of M] looks at you with a caring smile.".
+
+To compute MasturbationReaction of (M - ex-princess):
+	say "[BigNameDesc of M] looks at you with a mildly interested smile.".
 
 Princess ends here.

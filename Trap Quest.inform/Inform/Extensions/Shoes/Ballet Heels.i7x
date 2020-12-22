@@ -27,7 +27,7 @@ To say UniqueShortDesc of (C - a ballet heels):
 	say "ballet heels".
 
 To say ClothingDesc of (C - a ballet heels):
-	say "A pair of black latex ballet heels, with an extreme [heel-height of C] inch heel to force you onto tip toes at all times. They [if C is worn]are[otherwise]look[end if] impossible to walk in by anyone except an expert[if C is worn and C is cursed and there is a worn cursed black catsuit]! The upper part of your heels have completely merged with the rest of your catsuit.[otherwise]![end if]";
+	say "A pair of black latex ballet heels, with an extreme [heel-height of C] inch heel to force you onto tip toes at all times. They [if C is worn]are[otherwise]look[end if] impossible to walk in by anyone except an expert[if C is worn and C is cursed and black-catsuit is worn and black-catsuit is cursed]! The upper part of your heels have completely merged with the rest of your catsuit.[otherwise]![end if]";
 	say "[SteadinessDesc of C]".
 
 Definition: a ballet heels is ballet related: decide yes.

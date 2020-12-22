@@ -51,4 +51,7 @@ Definition: outrageous-milking-harness (called A) is applicable:
 To reflect on (A - outrageous-milking-harness):
 	say "[variable custom style]I can't believe what this crazy harness is doing to me... and even worse, everyone can see exactly what's happening![roman type][line break]".
 
+To say FriendReaction of (M - a real-life patron) to (A - outrageous-milking-harness):
+	say "... You're LITERALLY being milked right now. Just, WOW. ".
+
 Milking Harness ends here.

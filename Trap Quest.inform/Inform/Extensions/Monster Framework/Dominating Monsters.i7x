@@ -528,10 +528,9 @@ To compute dominating (M - a monster):
 		let H be rugged-headband;
 		if the player is the donator, progress quest of domination-quest;
 		if the times-dominated of M >= 2 and the player is the donator:
-			if H is actually summonable and rugged-summoned is 0:
+			if H is off-stage and H is actually summonable:
 				say "You feel your hair being tousled as a [MediumDesc of H] materialises on your head.";
 				summon H cursed with quest;
-				now rugged-summoned is 1;
 		unless M is interested:[if a monster is still interested, it means we want them to stay around after they are dominated. ]
 			replace M after domination;
 		repeat with N running through monsters in the location of the player:

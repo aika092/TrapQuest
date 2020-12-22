@@ -1,6 +1,6 @@
 Whip of Domination by Equippables begins here.
 
-whip-of-domination is an equippable. whip-of-domination is slap ready. whip-of-domination is unique. whip-of-domination is leather. The printed name of whip-of-domination is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]whip [if item described is in Hotel37 and item described is not held]rack[otherwise]of domination[end if][clothing-title-after]". The text-shortcut of whip-of-domination is "whi". Understand "whip", "of domination", "rack" as whip-of-domination.
+whip-of-domination is an equippable. whip-of-domination is slap ready. whip-of-domination is unique. whip-of-domination is leather. The printed name of whip-of-domination is "[clothing-title-before]whip [if item described is in Hotel37 and item described is not held]rack[otherwise]of domination[end if][clothing-title-after]". The text-shortcut of whip-of-domination is "whi". Understand "whip", "of domination", "rack" as whip-of-domination.
 
 Figure of whip-of-domination is the file "Items/Accessories/Equippables/whipofdomination1.png".
 Figure of whip rack is the file "Items/Accessories/Equippables/whipofdomination2.jpg".

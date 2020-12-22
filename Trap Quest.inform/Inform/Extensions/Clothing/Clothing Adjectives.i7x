@@ -156,6 +156,15 @@ Definition: a clothing (called C) is actually displacable rather than actually u
 		repeat with D running through worn top level protection unskirted clothing:
 			if the bottom-layer of D > the bottom-layer of C, decide no;
 	decide yes.
+[!<ClothingIsActuallyAvoidable>+
+
+Can this be somehow made to expose the crotch if it's the top level protection?
+
++!]
+Definition: a clothing (called C) is actually avoidable rather than actually unavoidable:
+	if C is glued, decide no;
+	if C is crotch-displaced or (C is not displacable and C is not zippable and C is not usually autoremovable), decide no;
+	decide yes.
 
 [!<ClothingIsRippable>+
 
@@ -235,7 +244,7 @@ Clothing can be ass plugging. Clothing is usually not ass plugging.
 Clothing can be vagina plugging. Clothing is usually not vagina plugging.
 Clothing has a number called plug size. The plug size of clothing is usually 0.
 Clothing can be purity. Clothing is usually not purity. [Means they care about your virginity.]
-A Magic-type is a kind of value. The magic-types are blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, stumbling, provocation, and hostility. Clothing has a magic-type. The magic-type of clothing is usually blandness.
+A Magic-type is a kind of value. The magic-types are blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, stumbling, provocation, exposure, and hostility. Clothing has a magic-type. The magic-type of clothing is usually blandness.
 Magic-ID is a kind of value. The magic-IDs are unidentified and identified. Clothing has a Magic-ID. The Magic-ID of clothing is usually unidentified.
 Clothing has a number called raw-magic-modifier. The raw-magic-modifier of clothing is usually 0.
 To decide which number is the penis-capacity of (C - a clothing):[what's the largest size of penis it can cover?]
@@ -258,6 +267,7 @@ Clothing can be restart immune. Clothing is usually not restart immune. [This me
 Clothing can be spikey. A clothing is usually not spikey.
 A clothing has a number called used condoms. A clothing has a number called empty condoms.
 A clothing has a number called stolen-strength. [This strength is returned when the item is worn again]
+Definition: an object is removal-blocking: decide no. [Some items can prevent other clothing from being removed until it is removed]
 [!<Clothing>@<temporarilyDisplaced:Boolean>*
 
 It's been automatically displaced to allow the player to pee or something. We intend to replace it afterwards.

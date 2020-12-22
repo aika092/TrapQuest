@@ -553,6 +553,15 @@ This is the skirt tail plug clash rule:
 			rule fails.
 The skirt tail plug clash rule is listed in the skirt wearability rules.
 
+To UniquePinkWardrobeUnclash (C - a tail plug):
+	repeat with O running through worn total protection clothing:
+		WardrobeVanish O.
+
+Definition: a tail plug is uniquely class summonable:
+	repeat with O running through worn total protection clothing:
+		if O is unremovable or O is class-relevant, decide no;
+	decide yes.
+
 Check replacing:
 	if there is a worn tail plug:
 		unless the noun is crotch-assless or the noun is skirted, say "You can't replace any clothing while you are wearing the [random worn tail plug]!" instead.

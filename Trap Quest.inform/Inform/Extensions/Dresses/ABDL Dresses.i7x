@@ -14,6 +14,12 @@ To say ShortDesc of (C - a baby-reins):
 	say "baby reins".
 Definition: a baby-reins is subduing: decide yes.
 
+This is the baby-reins prevents player diaper removal rule:
+	if summoning is 0 and there is a worn baby-reins:
+		if autoremove is false, say "You can't take [NameDesc of wearing-target] off on your own whilst wearing [NameDesc of random worn baby-reins] - it's too tight!";
+		rule fails.
+The baby-reins prevents player diaper removal rule is listed in the knickers removability rules.
+
 purple-baby-reins is a baby-reins. The printed name of purple-baby-reins is "[clothing-title-before]purple baby reins[clothing-title-after]". Understand "purple" as purple-baby-reins. The text-shortcut of purple-baby-reins is "pbrn".
 
 Figure of purple-baby-reins is the file "Items/Clothes/Upper/Dresses/Baby/babyreins1.png".

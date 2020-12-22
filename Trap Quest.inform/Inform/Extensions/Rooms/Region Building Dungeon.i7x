@@ -15,7 +15,7 @@ To Set Up The Dungeon:
 			otherwise:
 				display figure of dq dungeon loading;
 		let T be a random loading animation track;
-		if animationsEnabled is 1 and T is an animation track:
+		if the player is not virtual and animationsEnabled is 1 and T is an animation track:
 			commence animation of T;
 			wait until loading animation pauses;
 		otherwise:

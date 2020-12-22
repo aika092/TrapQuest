@@ -427,7 +427,7 @@ To say daddy of (M - a monster):
 		say "[if M is presenting as male]Daddy[otherwise]Mummy[end if]".
 
 To say royal-subject of (M - a monster):
-	if M is princess-consort:
+	if M is bride-consort:
 		say "consort";
 	otherwise if M is patron:
 		say "peasant";
@@ -435,7 +435,7 @@ To say royal-subject of (M - a monster):
 		say "subject".
 
 To say big royal-subject of (M - a monster):
-	if M is princess-consort:
+	if M is bride-consort:
 		say "Consort";
 	otherwise if M is patron:
 		say "Peasant";
@@ -443,7 +443,7 @@ To say big royal-subject of (M - a monster):
 		say "Subject".
 
 To say caps royal-subject of (M - a monster):
-	if M is princess-consort:
+	if M is bride-consort:
 		say "CONSORT";
 	otherwise if M is patron:
 		say "PEASANT";

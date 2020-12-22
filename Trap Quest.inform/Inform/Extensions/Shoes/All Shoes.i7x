@@ -1,4 +1,4 @@
-Sporty Shoes by Shoes begins here.
+All Shoes by Shoes begins here.
 
 sneakers is a kind of shoes. A sneakers is manly. A sneakers is rare. Understand "sneakers" as sneakers.
 
@@ -189,4 +189,5 @@ Definition: black-wheeled red-rollerskates is black themed: decide yes.
 To decide which figure-name is the clothing-image of (C - black-wheeled red-rollerskates):
 	decide on figure of black-wheeled red-rollerskates.
 
-Sporty Shoes ends here.
+
+All Shoes ends here.

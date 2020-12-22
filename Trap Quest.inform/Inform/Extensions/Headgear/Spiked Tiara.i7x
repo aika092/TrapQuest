@@ -62,7 +62,6 @@ An all time based rule (this is the tongued clothing licking rule):
 		decrease tonguesActive by 1;
 		let C be a random worn tongued clothing;
 		if the player is not a bit horny or refractoryperiod > 0:
-			now the rounds-horny of no-orgasm-quest is 0;
 			if refractoryperiod > 0 and tonguesActive < 0, now tonguesActive is -30; [As soon as refractory period is over, tongues will start]
 		otherwise if playerRegion is not school:
 			increase the rounds-horny of no-orgasm-quest by 1;
@@ -119,46 +118,27 @@ To compute tongue clothing:
 
 Chapter - Class Outfit
 
-Definition: spiked-tiara (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed]
-	if wearing-target is not C and wearing-target is tongued, decide yes;
-	decide no.
-
-[tongue-summoned is a number that varies.
-To compute unique recycling of (C - spiked-tiara):
-	now tongue-summoned is 0.]
-
 To compute class outfit of (H - spiked-tiara):
-	let L be the list of off-stage tongued clothing;
-	let something-summoned be H;
-	repeat with C running through L:
-		if something-summoned is H and C is actually summonable:
-			now something-summoned is C;
-			say "[bold type]Your spiked tiara's tongues wriggle enthusiastically as a [ShortDesc of C] materialises on you.[roman type][line break]";
-			summon C;
-			if a random number between 1 and 2 is 1, now C is dexterity-influencing;
-			otherwise now C is strength-influencing;
-			now the raw-magic-modifier of C is the number of worn tongued clothing / 3;
-	if something-summoned is H:
-		let O be a random worn overdress;
-		let S be a random worn shoes;
-		let B be a random worn bra;
-		let T be a random worn stockings;
-		let BT be a random worn belt;
-		let E be a random worn hand ready equippable;
-		if S is shoes and S is not tongue-heels:
-			transform S into tongue-heels;
-		otherwise if T is stockings and T is not tongue-stockings:
-			transform T into tongue-stockings;
-		otherwise if BT is belt and BT is not demonic:
-			transform BT into tongue-belt;
-		otherwise if B is bra and B is not tongue-bra:
-			transform B into tongue-bra;
-		otherwise if O is overdress and O is not tongue-suit:
-			transform O into tongue-suit;
-			repeat with SK running through worn skirted clothing:
-				WardrobeVanish SK;
-		otherwise if E is equippable and E is not demonic:
-			transform E into tongue-gloves.
+	let O be a random worn overdress;
+	let S be a random worn shoes;
+	let B be a random worn bra;
+	let T be a random worn stockings;
+	let BT be a random worn belt;
+	let E be a random worn hand ready equippable;
+	if S is shoes and S is not tongue-heels:
+		transform S into tongue-heels;
+	if T is stockings and T is not tongue-stockings:
+		transform T into tongue-stockings;
+	if BT is belt and BT is not demonic:
+		transform BT into tongue-belt;
+	if B is bra and B is not tongue-bra:
+		transform B into tongue-bra;
+	if O is overdress and O is not tongue-suit:
+		transform O into tongue-suit;
+		repeat with SK running through worn skirted clothing:
+			WardrobeVanish SK;
+	if E is equippable and E is not demonic:
+		transform E into tongue-gloves.
 
 Chapter - Quest
 
@@ -170,9 +150,13 @@ To uniquely set up (C - spiked-tiara):
 	now the quest of C is no-orgasm-quest.
 
 To say QuestFlav of (Q - no-orgasm-quest):
-	say "You sense it wants you to [bold type]stay horny[roman type] but try and avoid orgasming for as long as possible.".
+	say "You sense it wants you be horny as much as possible but avoid orgasming for as long as possible.".
 
 To say QuestTitle of (Q - no-orgasm-quest):
 	say " (orgasm avoiding quest)".
+
+This is the symbiote shouldn't orgasm rule:
+	now the rounds-horny of no-orgasm-quest is 0.
+The symbiote shouldn't orgasm rule is listed in the orgasm resolution rules.
 
 Spiked Tiara ends here.

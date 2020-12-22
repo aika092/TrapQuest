@@ -159,6 +159,10 @@ Part 5 - Deep Throat Princess Crop Top
 
 deepthroat princess crop top is a crop top. The printed name of deepthroat princess crop top is "[clothing-title-before]deepthroat princess crop top[clothing-title-after]". The text-shortcut of deepthroat princess crop top is "dpt". deepthroat princess crop top is oral-sex-addiction-influencing.
 
+Definition: a deepthroat princess crop top is class-relevant:
+	if the class of the player is princess or the class of the player is cheerleader, decide yes;
+	decide no.
+
 deepthroat princess crop top is high cut. deepthroat princess crop top is transformation-rare.
 
 Definition: deepthroat princess crop top is fetish appropriate:
@@ -185,9 +189,6 @@ To say ShortDesc of (C - deepthroat princess crop top):
 Definition: deepthroat princess crop top is royalty themed: decide yes.
 Definition: deepthroat princess crop top is oral sex themed: decide yes.
 Definition: deepthroat princess crop top is white themed: decide yes.
-Definition: deepthroat princess crop top is transformation-protected:
-	if the class of the player is princess, decide yes;
-	decide no.
 
 Part 6 - Spoiled Crop Top
 
@@ -236,6 +237,9 @@ To say ShortDesc of (C - burning love crop top):
 Definition: burning love crop top is heart themed: decide yes.
 Definition: burning love crop top is white themed: decide yes.
 Definition: burning love crop top is red themed: decide yes.
+Definition: burning love crop top is class-relevant:
+	if the class of the player is bride, decide yes;
+	decide no.
 
 Part 8 - Red Wool Crop Top
 
@@ -313,7 +317,7 @@ To decide which figure-name is clothing-image of (C - rugged-crop-top):
 	decide on figure of rugged crop top.
 
 Definition: rugged-crop-top is leopard themed: decide yes.
-Definition: rugged-crop-top is class-transformation-protected:
+Definition: rugged-crop-top is class-relevant:
 	if the class of the player is barbarian, decide yes;
 	decide no.
 
@@ -398,6 +402,37 @@ To decide which number is the adult-influence of (C - underboob sweater):
 	decide on 1.
 
 Definition: underboob sweater is white themed: decide yes.
+
+Part 15 - Bitch Top
+
+bitch top is a crop top. bitch top is low cut. bitch top is only arm covering. bitch top is dense. bitch top is normally-nipple-covering. The printed name of bitch top is "[clothing-title-before]bitch top[clothing-title-after]". The text-shortcut of bitch top is "bctp".
+
+Definition: bitch top is class-relevant:
+	if the class of the player is cumdumpster, decide yes;
+	decide no.
+
+Figure of bitch top is the file "Items/Clothes/Upper/CropTops/croptop15.png".
+
+To decide which figure-name is clothing-image of (C - bitch top):
+	decide on figure of bitch top.
+
+To say ClothingDesc of (C - bitch top):
+	say "This short longsleeved pink sweater has a zip stuck halfway down, to expose a bit of cleavage. The pattern has the word 'Bitch' repeating along with pink love hearts.".
+
+To say ShortDesc of (C - bitch top):
+	say "bitch top".
+To say MediumDesc of (C - bitch top):
+	say "pink bitch top".
+
+To decide which number is the initial outrage of (C - bitch top):
+	decide on 4.
+
+To decide which number is the adult-influence of (C - bitch top):
+	decide on 1.
+
+Definition: bitch top is pink themed: decide yes.
+Definition: bitch top is heart themed: decide yes.
+Definition: bitch top is dog themed: decide yes.
 
 
 Crop Top ends here.

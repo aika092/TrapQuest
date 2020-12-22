@@ -171,6 +171,15 @@ This is the robomaid punishment rule:
 		bore M;
 		compute LaundryRobots;
 		rule succeeds;
+	otherwise if the number of barriers in the location of the player is 0:
+		say "[BigNameDesc of M]'s [LongDickDesc of M] pushes out from underneath [his of M] apron and [one of]spurts warm, pink liquid across your [ShortDesc of breasts][or]shoots several [']ropes['] of warm, pink fluid onto your [BellyDesc][or]splatters your [ShortDesc of face] with warm, pink liquid[at random].[line break][speech style of M]'OOH. SO HOT. SO HOT.'[roman type][line break]The fluid rapidly absorbs into your skin and causes a wave of arousal!";
+		let C be a random video-monitor in the location of M;
+		if C is video-monitor, now C is recording-disgrace;
+		Arouse 1000;
+		moderateHumiliate;
+		say "[line break][FuckerDesc of M] seems to lose interest.";
+		bore M;
+		rule succeeds;
 	otherwise if the number of worn clothing is 0 and there is an alive robobellboy:[the maid drags you to the nearest robobellboy for clothing.]
 		say "[BigNameDesc of M][']s eyes turn purple as [he of M] sweeps you off the ground.[line break][speech style of M]'SEARCHING... SEARCHING... PATRON FOUND. EXECUTING TRANSPORT PROTOCOL.'[roman type][line break]";
 		let N be a random robobellboy in the location of the player;
@@ -266,7 +275,7 @@ This is the milkmaid punishment rule:
 			BustUp a random number between 2 and 3;
 			bore M;
 			rule succeeds;
-	otherwise:
+	otherwise if the number of barriers in the location of the player is 0:
 		say "[BigNameDesc of M][']s eyes turn purple as [he of M] sweeps you off the ground.[line break][speech style of M]'SEARCHING... SEARCHING... PATRON FOUND. EXECUTING TRANSPORT PROTOCOL.'[roman type][line break]";
 		let R be a random placed unbossed modern room;
 		while R is Hotel20:
@@ -278,6 +287,14 @@ This is the milkmaid punishment rule:
 			decrease X by 1;
 		drag to R by M;
 		compute publicity stunt of M;
+		bore M;
+		rule succeeds;
+	otherwise:
+		say "[BigNameDesc of M] pins you against a wall, grinding [his of M] surprisingly supple body against you as [he of M] [if face is not actually occupied]passionately kisses your lips[otherwise]peppers your face with kisses[end if].";
+		let C be a random video-monitor in the location of M;
+		if C is video-monitor, now C is recording-disgrace;
+		moderateHumiliate;
+		say "[line break][FuckerDesc of M] seems to lose interest.";
 		bore M;
 		rule succeeds.
 

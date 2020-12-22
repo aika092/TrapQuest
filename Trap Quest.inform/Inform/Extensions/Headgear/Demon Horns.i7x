@@ -57,29 +57,10 @@ Definition: demon horns is removable:
 	if soulstone is worn, decide no;
 	decide yes.
 
-demon-summoned is a number that varies.
-To compute unique recycling of (C - demon horns):
-	now demon-summoned is 0.
-
 To compute class outfit of (H - demon horns):
-	let O be a random off-stage dildo heels;
-	let D be a random off-stage blazing dress;
-	let P be a random off-stage demon tail plug;
-	if O is actually summonable:
-		say "[bold type]You feel a rush of power as your body raises several inches higher all of a sudden and a pair of dildo heels appear on your feet. They make you feel simply amazing![roman type][line break]";
-		summon O;
-		now O is kicking;
-		now the raw-magic-modifier of O is 4;
-	otherwise if D is actually summonable or (D is blazing dress and demon-summoned is 0):
-		PinkWardrobeUnclash D;
-		say "[bold type]A red dress suddenly appears on your body! You feel it infuse you with fire![roman type][line break]";
-		summon D uncursed;
-		now demon-summoned is 1;
-	otherwise if P is actually summonable:
-		PinkWardrobeUnclash P;
-		say "[bold type]You feel your [asshole] suddenly being invaded by a foreign object! Looking around you see a long, snake-like red tail hanging down between your legs.[roman type][line break]";
-		summon P cursed;
-		now the size of P is the openness of asshole.
+	class summon dildo-heels;
+	class summon blazing dress;
+	class summon demon tail plug.
 
 To compute succubus transformation:
 	let K be soulstone;
@@ -88,6 +69,7 @@ To compute succubus transformation:
 		now B is in pink wardrobe;
 	repeat with C running through worn neck covering clothing:
 		say " The [ShortDesc of K] shatters your [ShortDesc of C]!";
+		if the player is soulless, now K is soul-embedded;
 		now C is in pink wardrobe;
 	summon demon horns;
 	summon K;
@@ -119,7 +101,11 @@ To compute succubus hunger:
 					MagicPowerDown 2;
 					IntDown 2;
 				otherwise:
-					say "[bold type]You terrible pangs of hunger assault your mind and body as your power continues wasting away. You need souls, NOW![roman type]";
+					if soulstone is soul-embedded:
+						say "[bold type]Terrible pangs of hunger assault your mind and body as your soulstone shrivels and suddenly pops out of your skin![roman type]";
+						now soulstone is not soul-embedded;
+					otherwise:
+						say "[bold type]Terrible pangs of hunger assault your mind and body as your power continues wasting away. You need souls, NOW![roman type]";
 					BodyRuin 3;
 					MagicPowerDown 3;
 					IntDown 3.

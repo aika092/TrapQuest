@@ -92,7 +92,8 @@ Carry out purifying tentacle-breeder:
 	destroy the noun;
 	repeat with C running through worn clothing:
 		if the quest of C is tentacle-research-quest:
-			compute quest completion of tentacle-research-quest on C.
+			compute quest completion of tentacle-research-quest on C;
+	if playerRegion is Dungeon, progress quest of royal-quest.
 
 Definition: a tentacle-breeder is loaded:
 	if it is regional, decide yes;

@@ -20,6 +20,11 @@ To uniquely set up (C - a crotchless-panties):
 	if a random number between 1 and 3 is 1, now C is protection.
 
 pearl crotchless-panties is a crotchless-panties. The printed name of pearl crotchless-panties is "[clothing-title-before]pair of stimulating crotchless panties[clothing-title-after]". Understand "stimulating" as pearl crotchless-panties. The text-shortcut of pearl crotchless-panties is "stcp".
+Definition: pearl crotchless-panties is class-relevant:
+	if the class of the player is priestess, decide yes;
+	decide no.
+To compute class set up of (C - pearl crotchless-panties):
+	now C is cursed.
 Definition: pearl crotchless-panties is pink themed: decide yes.
 Definition: pearl crotchless-panties is gem themed: decide yes.
 buckled crotchless-panties is a crotchless-panties. The printed name of buckled crotchless-panties is "[clothing-title-before]pair of buckled crotchless panties[clothing-title-after]".The text-shortcut of buckled crotchless-panties is "bcp".
@@ -150,5 +155,45 @@ To compute recipe specific cursing of (T - cum dump's undergarment):
 
 To set up influence of (C - cum dump's undergarment):
 	now C is semen-addiction-influencing.
+
+
+meat-toilet-panties is a crotchless-panties. meat-toilet-panties is unique. The armour of meat-toilet-panties is 10. The printed name of meat-toilet-panties is "[clothing-title-before]meat toilet panties[clothing-title-after]". Understand "meat", "toilet", "panties" as meat-toilet-panties. The text-shortcut of meat-toilet-panties is "mtp".
+
+Definition: meat-toilet-panties is class-relevant:
+	if the class of the player is human toilet or the class of the player is cumdumpster, decide yes;
+	decide no.
+
+Figure of meat toilet panties closed is the file "Items/Clothes/Lower/Underwear/Skimpy/Crotchless/crotchless8a.png".
+Figure of meat toilet panties ripped is the file "Items/Clothes/Lower/Underwear/Skimpy/Crotchless/crotchless8b.png".
+Figure of meat toilet panties open is the file "Items/Clothes/Lower/Underwear/Skimpy/Crotchless/crotchless8c.png".
+
+To decide which figure-name is clothing-image of (C - meat-toilet-panties):
+	if C is crotch-ripped, decide on figure of meat toilet panties ripped;
+	if C is crotch-intact, decide on figure of meat toilet panties closed;
+	decide on figure of meat toilet panties open.
+
+Definition: meat-toilet-panties is displacable: decide no.
+Definition: meat-toilet-panties is toilet themed: decide yes.
+Definition: meat-toilet-panties is white themed: decide yes.
+Definition: meat-toilet-panties is bow themed: decide yes.
+Definition: meat-toilet-panties is condom pinnable: decide yes.
+
+To compute SelfExamineDesc of (K - meat-toilet-panties):
+	say "A pair of meat toilet panties sits on your [ShortDesc of hips]. ";
+
+To say ClothingDesc of (K - meat-toilet-panties):
+	say "This white pair of crotchless panties has a toilet seat in front of the crotch, and the words 'MEAT TOILET' printed above. [if K is crotch-intact]As long as it doesn't open up, you'll be nicely protected[otherwise if K is crotch-ripped]The lid has been ripped off, so now there's just a permanent open seat surrounding your [player-crotch][otherwise]It's currently open, exposing your [player-crotch] to the world[end if].".
+
+To decide which number is the initial outrage of (C - meat-toilet-panties):
+	decide on 8.
+
+To compute periodic effect of (C - meat-toilet-panties):
+	if C is crotch-intact and the stomach-urine of the player is 0:
+		say "[bold type]Now that your stomach is empty of [urine], the lid of your meat toilet panties opens itself up, and is no longer protecting your [player-crotch]![roman type][line break]";
+		now C is crotch-exposing;
+	otherwise if C is crotch-exposing and the stomach-urine of the player > 0 and the number of embodied things penetrating a fuckhole is 0 and the number of worn tail plugs is 0:
+		say "[bold type]Your meat toilet panties react to the [urine] in your stomach, and the lid of the toilet seat closes, protecting your [player-crotch]! For now...[roman type][line break]";
+		now C is crotch-intact.
+
 
 Crotchless Panties ends here.

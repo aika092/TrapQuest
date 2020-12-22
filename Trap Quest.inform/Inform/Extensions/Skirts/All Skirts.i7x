@@ -246,7 +246,7 @@ To set up influence of (C - full zip skirt):
 To decide which number is the adult-influence of (C - full zip skirt):
 	decide on 1.
 
-gown-of-purity is a skirt. Figure of Gown of Purity is the file "Items/Clothes/Lower/Skirts/gown1.png". gown-of-purity is purity. gown-of-purity is silk. gown-of-purity is unique. The printed name of gown-of-purity is "[clothing-title-before]gown of purity[clothing-title-after]". The text-shortcut of gown of purity is "gop". Understand "gown", "gown of", "purity" as gown-of-purity.
+gown-of-purity is a skirt. Figure of Gown of Purity is the file "Items/Clothes/Lower/Skirts/gown1.png". gown-of-purity is purity. gown-of-purity is silk. gown-of-purity is unique. The printed name of gown-of-purity is "[clothing-title-before]gown of purity[clothing-title-after]". The text-shortcut of gown-of-purity is "gop". Understand "gown", "gown of", "purity" as gown-of-purity.
 
 To decide which figure-name is clothing-image of (C - gown-of-purity):
 	decide on figure of gown of purity.
@@ -267,6 +267,12 @@ To compute virginity-loss of (H - gown-of-purity):
 	decrease the virgin bonus of the player by 1;
 	now H is in the location of the player.
 
+To compute class set up of (C - gown-of-purity):
+	now C is dexterity-influencing.
+
+To say ClassSummonFlav of (C - gown-of-purity):
+	say "A belt suddenly latches around you with a dull *clang*. Two strips of pure white fabric hang from the sides.".
+
 To decide which number is the humiliation-influence of (O - gown-of-purity):
 	let B be 1;
 	increase B by the magic-modifier of O;
@@ -282,6 +288,36 @@ To decide which number is the initial outrage of (C - gown-of-purity):
 	decide on 2.
 
 Definition: gown-of-purity is slitted: decide yes.
+
+avatar-silks is a skirt. avatar-silks is purity. avatar-silks is silk. avatar-silks is unique. The printed name of avatar-silks is "[clothing-title-before]avatar silks[clothing-title-after]". The text-shortcut of avatar-silks is "aop". Understand "avatar", "silks" as avatar-silks.
+
+To say ClassSummonFlav of (C - avatar-silks):
+	say "You feel a slight pressure in your chest as your master's presence shifts around inside you, and [bold type]several strips of black silk materialise around your waist![roman type][line break][first custom style]'Keep and wear this holy garment, [NameBimbo]. It will help your vessel adapt.'[roman type][line break]".
+
+Figure of avatar silks is the file "Items/Clothes/Lower/Skirts/silks.png".
+
+To decide which figure-name is clothing-image of (C - avatar-silks):
+	decide on figure of gown of purity.
+
+To say ClothingDesc of (C - avatar-silks):
+	say "This garment is made up of a gold and black waist band with several sheets of long, silky fabric attached. Each piece of fabric is transparent, but darkly colored enough to barely conceal details behind it. The nature of the garment [if C is worn]exposes some of your[otherwise]would expose the wearer's[end if] thighs and help make movement easy.".
+
+To compute SelfExamineDesc of (Y - avatar-silks):
+	say "Strips of black silk hang from your waist, exposing some thigh.".
+
+To say ShortDesc of (Y - avatar-silks):
+	say "flowing black silks".
+
+To decide which number is the initial outrage of (C - avatar-silks):
+	decide on 2.
+Definition: avatar-silks is slitted: decide yes.
+Definition: avatar-silks is black themed: decide yes.
+Definition: avatar-silks is potentially erection concealing: decide yes. [non-tight skirts conceal erections]
+
+To decide which number is the humiliation-influence of (O - avatar-silks):
+	let B be 2;
+	increase B by the magic-modifier of O;
+	decide on B.
 
 black-rubber-hobble-skirt is a skirt. Printed name of black-rubber-hobble-skirt is "[clothing-title-before]tight black latex skirt[clothing-title-after]". The text-shortcut of black-rubber-hobble-skirt is "tbls". black-rubber-hobble-skirt is latex. black-rubber-hobble-skirt is hobble-skirted. black-rubber-hobble-skirt is crotch-skirted. The armour of black-rubber-hobble-skirt is 10. Understand "tight" as black-rubber-hobble-skirt.
 
@@ -396,12 +432,12 @@ A red microskirt is a kind of microskirt. There is 1 latex red microskirt. Print
 Definition: a red microskirt is red themed: decide yes.
 A white microskirt is a kind of microskirt. There is 1 latex white microskirt. Printed name of white microskirt is "[clothing-title-before]white latex microskirt[clothing-title-after]". Figure of white microskirt is the file "Items/Clothes/Lower/Skirts/Micro/microskirt5.png". The text-shortcut of white microskirt is "wms".
 Definition: a white microskirt is white themed: decide yes.
-A tartan microskirt is a kind of microskirt. There is 1 tartan microskirt. Printed name of tartan microskirt is "[clothing-title-before]tartan microskirt[clothing-title-after]". The text-shortcut of tartan microskirt is "tms". Figure of tartan microskirt is the file "Items/Clothes/Lower/Skirts/Micro/microskirt2.png".
-Definition: a tartan microskirt is transformation-protected:
-	if the class of the player is schoolgirl, decide yes;
+tartan microskirt is a microskirt. Printed name of tartan microskirt is "[clothing-title-before]tartan microskirt[clothing-title-after]". The text-shortcut of tartan microskirt is "tms". Figure of tartan microskirt is the file "Items/Clothes/Lower/Skirts/Micro/microskirt2.png".
+Definition: tartan microskirt is class-relevant:
+	if the class of the player is schoolgirl and the player is not pigtailed, decide yes;
 	decide no.
-Definition: a tartan microskirt is tartan themed: decide yes.
-Definition: a tartan microskirt is brown themed: decide yes.
+Definition: tartan microskirt is tartan themed: decide yes.
+Definition: tartan microskirt is brown themed: decide yes.
 A pink microskirt is a kind of microskirt. There is 1 pink microskirt. Printed name of pink microskirt is "[clothing-title-before]pink microskirt[clothing-title-after]". The text-shortcut of pink microskirt is "pms". Figure of pink microskirt is the file "Items/Clothes/Lower/Skirts/Micro/microskirt3.png".
 Definition: a pink microskirt is tartan themed: decide yes.
 Definition: a pink microskirt is pink themed: decide yes.
@@ -473,28 +509,32 @@ Definition: a lace miniskirt is black themed: decide yes.
 To say ShortDesc of (Y - a miniskirt):
 	say "small miniskirt".
 
-A tartan miniskirt is a kind of miniskirt. There is 1 unique tartan miniskirt. Printed name of tartan miniskirt is "[clothing-title-before]tartan miniskirt[clothing-title-after]". The text-shortcut of tartan miniskirt is "tm". Figure of tartan miniskirt is the file "Items/Clothes/Lower/Skirts/Mini/miniskirt2.png".
+tartan miniskirt is a miniskirt. tartan miniskirt is unique. Printed name of tartan miniskirt is "[clothing-title-before]tartan miniskirt[clothing-title-after]". The text-shortcut of tartan miniskirt is "tm". Figure of tartan miniskirt is the file "Items/Clothes/Lower/Skirts/Mini/miniskirt2.png".
 
-To decide which figure-name is the clothing-image of (C - a tartan miniskirt):
+Definition: tartan miniskirt is class-relevant:
+	if the class of the player is schoolgirl and the player is not pigtailed, decide yes;
+	decide no.
+
+To compute class set up of (C - tartan miniskirt):
+	now C is intelligence-influencing;
+	now the raw-magic-modifier of C is 1.
+
+To decide which figure-name is the clothing-image of (C - tartan miniskirt):
 	decide on figure of tartan miniskirt.
 
-To say ClothingDesc of (C - a tartan miniskirt):
+To say ClothingDesc of (C - tartan miniskirt):
 	say "This tiny apricot skirt is has a tartan pattern, you could imagine a skirt four times the length being part of a school uniform but this version is clearly never acceptable attire. It barely covers your crotch, and even bending over slightly would reveal everything to anyone behind you. It sits very low on your hips, so doesn't even completely cover up most underwear, even when you're standing.".
 
 To decide which number is the initial outrage of (C - a miniskirt):
 	decide on 2.
 
-Definition: a tartan miniskirt is class-transformation-protected:
-	if the class of the player is schoolgirl, decide yes;
-	decide no.
+To decide which object is the unique-upgrade-target of (C - tartan miniskirt):
+	decide on tartan microskirt.
 
-To decide which object is the unique-upgrade-target of (C - a tartan miniskirt):
-	decide on a random off-stage tartan microskirt.
-
-Definition: a tartan miniskirt is tartan themed: decide yes.
-Definition: a tartan miniskirt is orange themed: decide yes.
-Definition: a tartan miniskirt is layer-concealing: decide no.
-Definition: a tartan miniskirt is partially-layer-concealing: decide yes.
+Definition: tartan miniskirt is tartan themed: decide yes.
+Definition: tartan miniskirt is orange themed: decide yes.
+Definition: tartan miniskirt is layer-concealing: decide no.
+Definition: tartan miniskirt is partially-layer-concealing: decide yes.
 
 A naughty skirt is a kind of skirt. A naughty skirt is usually leather. A naughty skirt is transformation-rare. A naughty skirt is usually butt-windowed.
 
@@ -581,7 +621,7 @@ Definition: a punishment skirt is end of transformation chain:
 Definition: a punishment skirt is displacable: decide no.
 Definition: a punishment skirt is black themed: decide yes.
 
-A sequins belt is a kind of skirt. A sequins belt is usually sheer. A sequins belt is short. Figure of sequins belt is the file "Items/Clothes/Lower/Waist/Belts/belt1.png". There is 1 transformation-rare metal sequins belt. The printed name of sequins belt is "[clothing-title-before]sequins belt[clothing-title-after]". The text-shortcut of sequins belt is "seq".
+A sequins belt is a kind of skirt. A sequins belt is usually sheer. A sequins belt is short. Figure of sequins belt is the file "Items/Clothes/Lower/Waist/Belts/belt1.png". There is 1 transformation-rare plastic sequins belt. The printed name of sequins belt is "[clothing-title-before]sequins belt[clothing-title-after]". The text-shortcut of sequins belt is "seq".
 
 To decide which figure-name is clothing-image of (C - a sequins belt):
 	decide on figure of sequins belt.
@@ -739,5 +779,46 @@ Definition: open-front-skirt is potentially at least partially penis concealing:
 Definition: open-front-skirt is potentially erection concealing:
 	if girlfriend-partner is snogged, decide yes;
 	decide no.
+
+sheer-open-front-skirt is a skirt. sheer-open-front-skirt is unique. sheer-open-front-skirt is sheer. The printed name of sheer-open-front-skirt is "[clothing-title-before]sheer open front skirt[clothing-title-after]". The text-shortcut of sheer-open-front-skirt is "sofs". Understand "sheer", "open", "front", "skirt" as sheer-open-front-skirt.
+Figure of sheer-open-front-skirt is the file "Items/Clothes/Lower/Skirts/openfrontskirt4.png".
+To decide which figure-name is clothing-image of (H - sheer-open-front-skirt):
+	decide on figure of sheer-open-front-skirt.
+
+To compute class set up of (C - sheer-open-front-skirt):
+	now C is cursed.
+
+Definition: sheer-open-front-skirt is class-relevant:
+	if the class of the player is bride, decide yes;
+	decide no.
+
+To say MediumDesc of (C - sheer-open-front-skirt):
+	say "sheer front-exposing skirt".
+To say ClothingDesc of (C - sheer-open-front-skirt):
+	say "This long but flimsy skirt is mostly sheer, and even worse has a large chunk missing from the front, to completely expose the wearer's crotch. A gold buckle at the centre of the waistband looks like a penis and is pointing towards the wearer's genitals[if C is worn]. You can sense it significantly increasing the chances of aggressors deciding to use your [vagina][end if].".
+
+Definition: sheer-open-front-skirt is skirt-covering-crotch: decide no.
+Definition: sheer-open-front-skirt is potentially penis covering: decide no.
+Definition: sheer-open-front-skirt is potentially at least partially penis concealing: decide no.
+Definition: sheer-open-front-skirt is potentially erection concealing: decide no.
+Definition: sheer-open-front-skirt is potentially at least partially asshole covering: [can't cover much but it does partially cover the butthole]
+	if it is crotch-displaced, decide no;
+	decide yes.
+Definition: sheer-open-front-skirt is penis themed: decide yes.
+Definition: sheer-open-front-skirt is slitted: decide yes.
+This is the sheer-open-front-skirt pussy slut rule:
+	if sheer-open-front-skirt is worn, increase the desirability of vagina by 9.
+The sheer-open-front-skirt pussy slut rule is listed in the pussy slut eligibility rules.
+
+window-skirt is a skirt. window-skirt is unique. window-skirt is latex. window-skirt is sheer. The printed name of window-skirt is "[clothing-title-before]fetish window skirt[clothing-title-after]". The text-shortcut of window-skirt is "fwsk". Understand "fetish", "window", "skirt" as window-skirt.
+Figure of window-skirt is the file "Items/Clothes/Lower/Skirts/Latex/latexskirt3.png".
+To decide which figure-name is clothing-image of (H - window-skirt):
+	decide on figure of window-skirt.
+
+To say MediumDesc of (C - window-skirt):
+	say "latex fetish window skirt".
+To say ClothingDesc of (C - window-skirt):
+	say "A black latex skirt, with a patterned sheer window section in the middle, to somewhat expose your crotch and butt.".
+
 
 All Skirts ends here.

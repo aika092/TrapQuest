@@ -22,7 +22,7 @@ To Set Up The Mansion:
 		say "Now loading the mansion region!";
 		render buffered stuff;
 	Scramble Mansion;
-	if debugmode is 1, say "SETTING UP CONTAINERS[line break]";
+	if debugmode > 0, say "SETTING UP CONTAINERS[line break]";
 	repeat with G running through creaky rooms in The Mansion:
 		unless G is the location of the player:
 			let R be a random number between 1 and 3;
@@ -30,14 +30,19 @@ To Set Up The Mansion:
 			let Y be a random large sack in Holding Pen;
 			if memic is in Holding Pen, now Y is memic;
 			if Y is not memic:
-				now Y is a random large sack in Holding Pen;
 				if R is 2, now Y is a random wooden crate in Holding Pen;
-				if R is 3:
+				if R is 3 or Y is nothing:
 					let S be a random number between 1 and 3;
 					if S is 1 or the number of ornate trunks in Holding Pen > 2, now Y is a random ornate trunk in Holding Pen;
 					if Y is not ornate trunk, now Y is a random antique trunk in Holding Pen;
-			now Y is in G;
+			if Y is a thing, now Y is in G;
+	if debugmode > 1:
+		say "Setting up containers complete.";
+		wait 1000 ms before continuing;
 	follow the set up mansion traps rules;
+	if debugmode > 1:
+		say "Setting up traps complete.";
+		wait 1000 ms before continuing;
 	repeat with M running through alive monsters in the mansion:
 		if the location of M is not placed, now M is in a random placed haunted room;
 	[let N1 be the regionalMonsterCount of the Mansion;]
@@ -47,6 +52,9 @@ To Set Up The Mansion:
 		if M is monster:
 			set up M;
 			if M is not in a placed haunted room, now M is in a random placed unbossed haunted room;
+	if debugmode > 1:
+		say "Setting up monsters complete.";
+		wait 1000 ms before continuing;
 	let N be 0;
 	let Nattempts be 0;
 	while N < 4:
@@ -58,9 +66,15 @@ To Set Up The Mansion:
 		if Nattempts > 100:
 			say "BUG: Unable to make enough rooms 'garlic'. Please report this bug along with a save file.";
 			now N is 4;
+	if debugmode > 1:
+		say "Setting up blessed areas complete.";
+		wait 1000 ms before continuing;
 	repeat with P running through pedestals:
 		now P is in Mansion28;
 		add treasure to P;
+	if debugmode > 1:
+		say "Setting up pedestals complete.";
+		wait 1000 ms before continuing;
 	now a random master bed is in Mansion16;
 	lock pedestals;
 	if debugmode is 0 and loading scenes is 1, clear the screen;

@@ -140,7 +140,6 @@ Per unit of urine already in a diaper when it is worn
 Drinking from the squirt dildo
 Inserting a sex toy
 Lactating in the glory hole
-(Periodical) Wearing a cultist veil and a cultist robe at the same time
 Random effect from reading the book of regrets
 
 Moderate + Slight (~75)
@@ -153,7 +152,7 @@ Strong - Slight + Trivial (~80)
 Submitting for a round during sex (i.e. not fighting back) with medium - high sex addiction
 
 Strong (~100)
-Submitting to a princess-consort during a round of sex (low - medium sex addiction)
+Submitting to a bride-consort during a round of sex (low - medium sex addiction)
 Begging for mercy for a round during sex
 Lactating a lot of milk in the glory hole
 Having a monster watching you when you eat from the dog bowls
@@ -337,10 +336,9 @@ To finally humiliate (X - a number):
 			if the raw intelligence of the player > 1, IntDown 3;
 			vaginally orgasm shamefully;[will eventually lead to bad-end.]
 		otherwise if there is a worn holy warrior chestpiece:
-			let P be a random plate warrior chestpiece;
 			let H be a random worn holy warrior chestpiece;
 			say "[bold type]You feel your mind about to snap - and then, it just doesn't. You feel excited about getting humiliated, but still feel focused on your [if the bimbo of the player < 15]original goal[otherwise]quest to stay a virgin[end if]. Suddenly you feel your chestpiece transform around you - the metal slithers and slides around you, reshaping into plate armour that leaves your [ShortDesc of breasts] completely uncovered.[roman type][line break][variable custom style]Ooh, even more naughty! How perfect.[roman type][line break]";
-			silently transform H into P;
+			silently transform H into plate warrior chestpiece;
 			repeat with M running through holy warrior chestpieces: [banish them from ever appearing again]
 				now M is in Holding Pen;
 			now humiliation-restriction is 1;

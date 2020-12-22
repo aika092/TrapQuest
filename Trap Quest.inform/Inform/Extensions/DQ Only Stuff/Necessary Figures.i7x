@@ -83,6 +83,17 @@ To decide which figure-name is figure of rank 3 candy:
 	decide on figure of rank 3 candy dry.
 Figure of rank 4 candy is the file "NPCs/School/Student/student5g.png".
 
+Figure of rank 2 laci is the file "NPCs/School/Student/student3f.png".
+Figure of rank 3 laci dry is the file "NPCs/School/Student/student3g.png".
+Figure of rank 3 laci messy is the file "NPCs/School/Student/student3gm.png".
+Figure of rank 3 laci double diaper is the file "NPCs/School/Student/student3gmd.png".
+To decide which figure-name is figure of rank 3 laci:
+	if student-laci is messy, decide on figure of rank 3 laci messy;
+	if the student-diaper-state of student-laci is 1, decide on figure of rank 3 laci double diaper;
+	decide on figure of rank 3 laci dry.
+Figure of rank 4 laci is the file "NPCs/School/Student/student3h.png".
+Figure of rank 5 laci is the file "NPCs/School/Student/student3i.png".
+
 Figure of rank 1 rosie is the file "NPCs/School/Student/student1a.png".
 Figure of rank 2 rosie is the file "NPCs/School/Student/student1c.png".
 

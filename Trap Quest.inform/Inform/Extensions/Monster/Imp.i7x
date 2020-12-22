@@ -1,6 +1,6 @@
 Imp by Monster begins here.
 
-An imp is a kind of monster. An imp is male.
+An imp is a kind of monster. An imp is male. An imp can be player-brood. An imp is usually not player-brood.[This will be used to flag the imp as one of your children]
 
 Definition: an imp is willing to urinate:
 	if it is unfriendly, decide yes;
@@ -76,8 +76,8 @@ To say MonsterComment of (M - an imp):
 			if U is 1, say "[variable custom style][one of][big he of M] only turned on me so I could win [him of M] back![or][if M is not penetrating a body part]I should hurry up and satisfy [him of M] already. [big he of M] deserves it, after all [he of M]'s done for me.[otherwise][big he of M]'s going to be so happy after [he of M] busts this nut![end if][or]Even if I could run, I still wouldn't.[in random order]";
 			otherwise say "[variable custom style][one of][big he of M] may look weak, but that's because all [his of M] strength is below the waist. I should get below [his of M] waist too![or]A good bodyguard has your back. A perfect bodyguard has your butt. Thank you![or][big he of M] follows me everywhere because he needs me. For sex.[in random order]";
 	otherwise if the class of the player is priestess:
-		if M is player-brood, say "An angry voice sounds in your head.[first custom style]Disgraced Sister, [one of]you may not feel familial love toward such a being. Drive it away at once![or]you have brought this vile creature into being. It is your responsibility.[or]you must not succumb to such a being. You must escape before you are defiled again![in random order]";
-		otherwise  say "An panicked voice sounds in your head.[first custom style]Lost Sister, [one of]your holy power is useless against such a being! Drive it away!'[or][if M is penetrating a body part]you may not submit to this vile existence! Resist, sister! You must resist!'[otherwise if U is 1]that is a vile, corrupted existence. You must not let it defile you!'[otherwise]that is a vile, corrupted existence. You must never trust it.'[end if][or]you have become ensnarled in a web of darkness. You must seek help!'[in random order]";
+		if M is player-brood, say "An angry voice sounds in your head.[second custom style]Disgraced Sister, [one of]you may not feel familial love toward such a being. Drive it away at once![or]you have brought this vile creature into being. It is your responsibility.[or]you must not succumb to such a being. You must escape before you are defiled again![in random order]";
+		otherwise  say "An panicked voice sounds in your head.[second custom style]Lost Sister, [one of]your holy power is useless against such a being! Drive it away!'[or][if M is penetrating a body part]you may not submit to this vile existence! Resist, sister! You must resist!'[otherwise if U is 1]that is a vile, corrupted existence. You must not let it defile you!'[otherwise]that is a vile, corrupted existence. You must never trust it.'[end if][or]you have become ensnarled in a web of darkness. You must seek help!'[in random order]";
 	otherwise if the bimbo of the player < 7:
 		if the player is gendered male, say "[first custom style][one of][if U is 1][big he of M]'s looking at me like I look at chicks![otherwise][big he of M] looks weak, but that's better than nothing.[end if][or][big he of M] [if U is 1]probably can't keep dodging forever.[otherwise]seems a little scummy, but who doesn't?[end if][or]How do I get rid of this [if M is presenting as male]guy[otherwise]chick[end if]?[in random order]";
 		otherwise say "[first custom style][one of][if U is 1]Stop looking at me like that, you BRUTE![otherwise]What's [he of M] planning?[end if][or][if U is 1]Why am I surprised it betrayed me?[otherwise]I can smell the entitlement from here. News flash: I won't be fucking you.[end if][or]Stop following me![in random order]";
@@ -280,7 +280,10 @@ To say AllyDamageFlav of (M - an imp) on (X - a monster):
 
 To decide if (M - an imp) is willing to creampie (F - vagina):
 	if there is a worn xavier's cunt tattoo, decide no;[they respect their master]
-	if the class of the player is priestess and the number of infernal monsters penetrating the player < 3, decide no;
+	if the reaction of the player is 0:
+		let N be the number of infernal monsters penetrating a body part;
+		if the class of the player is priestess, decrease N by 1;
+		if a random number between -1 and N < 1, decide no;
 	decide yes.
 
 Section 2 - Damage

@@ -161,6 +161,10 @@ Part 7 - Naughty or Nice Outfit
 
 naughty-or-nice outfit is a christmas dress. naughty-or-nice outfit can be naughtified. The printed name of naughty-or-nice outfit is "[clothing-title-before][if item described is naughtified]naughty[otherwise]nice[end if] baby christmas outfit[clothing-title-after]". The text-shortcut of naughty-or-nice outfit is "nbco". Understand "baby", "christmas" as naughty-or-nice outfit. Understand "nice" as naughty-or-nice outfit when item described is not naughtified. Understand "naughty" as naughty-or-nice outfit when item described is naughtified.
 
+Definition: naughty-or-nice outfit is class-relevant:
+	if the class of the player is santa's little helper, decide yes;
+	decide no.
+
 naughty-or-nice outfit is arm exposing. naughty-or-nice outfit is very low cut. naughty-or-nice outfit is unskirted. naughty-or-nice outfit is crotch-intact.
 
 Figure of nice dress is the file "Items/Clothes/Upper/Dresses/Christmas/christmasdress7a.png".
@@ -223,6 +227,10 @@ Part 9 - Candy Cane Outfit
 
 candy cane outfit is a christmas dress. candy cane outfit is latex. The printed name of candy cane outfit is "[clothing-title-before]slutty candy cane outfit[if item described is skirted] (ripped)[end if][clothing-title-after]". The text-shortcut of candy cane outfit is "scco". Understand "slutty" as candy cane outfit.
 
+Definition: candy cane outfit is class-relevant:
+	if the class of the player is santa's little helper, decide yes;
+	decide no.
+
 candy cane outfit is arm exposing. candy cane outfit is low cut. candy cane outfit is unskirted. candy cane outfit is crotch-intact.
 
 Figure of candy cane outfit is the file "Items/Clothes/Upper/Dresses/Christmas/christmasdress9.png".
@@ -241,6 +249,10 @@ To say ShortDesc of (C - candy cane outfit):
 
 To decide which number is the initial outrage of (C - candy cane outfit):
 	decide on 7.
+
+To compute class set up of (C - candy cane outfit):
+	now C is oral-sex-addiction-influencing;
+	now the raw-magic-modifier of C is -1.
 
 Definition: candy cane outfit is white themed: decide yes.
 Definition: candy cane outfit is red themed: decide yes.

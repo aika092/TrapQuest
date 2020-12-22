@@ -4,9 +4,15 @@ pink-spraybottle is an equippable. pink-spraybottle is in Dungeon30. The printed
 
 pink-spraybottle is zap ready. pink-spraybottle has a number called charge. pink-spraybottle has a number called work ethic. pink-spraybottle is unique. pink-spraybottle can be spray or cloth. pink-spraybottle is spray. pink-spraybottle is projectile. pink-spraybottle is cotton.
 
-Definition: pink-spraybottle is stealable:
-	if the class of the player is not maid, decide yes;
+Definition: pink-spraybottle is class-relevant:
+	if the class of the player is maid, decide yes;
 	decide no.
+
+Definition: pink-spraybottle is stealable:
+	if it is class-relevant, decide no;
+	decide yes.
+
+Definition: pink-spraybottle is never-in-bag: decide yes.
 
 Figure of spraybottle is the file "Items/Accessories/Equippables/spraybottle1.png".
 Figure of washcloth is the file "Items/Accessories/Equippables/spraybottle2.png".
@@ -59,11 +65,8 @@ To compute maidification of (C - a clothing):
 		let H be a random worn headgear;
 		unless H is maid headdress:
 			now H is black maid headdress;
-			summon H cursed;
 			say "[bold type]You yelp in surprise as a [ShortDesc of H] [bold type]appears on you!";
-		now maid-summoned is 0;
-		compute class outfit of H;
-		now the outfit-charge of H is 0;
+			summon H cursed;
 		say "[variable custom style]I guess I'm the maid now[if the bimbo of the player < 8]?[otherwise].[end if][roman type][line break]";
 		follow the player class rules;
 		summon C.
@@ -72,14 +75,11 @@ Report taking pink-spraybottle:
 	if the noun is not worn, now the noun is worn by the player;
 	if newbie tips is 1, say "[newbie style][one of]Newbie Tip: You just picked up a spraybottle. It's out of cleaning fluid right now, but you earn some by cleaning up puddles of [if diaper quest is 1]urine[otherwise]semen[end if][if diaper quest is 0 and (watersports fetish is 1 or lactation fetish is 1)] and other fluids[end if] you've left throughout the dungeon. Once you have enough, you can spray it on some dirty clothes to quickly clean them off, or spray it on enemies for a (usually) quite damaging attack.[or][stopping][roman type][line break]".
 
-Check taking off pink-spraybottle:
-	let M be a random worn maid headdress;
-	if the work ethic of the noun < 0 and M is clothing, say "You try, but it's like the [ShortDesc of M] won't let you put it down.[line break][variable custom style]'Maybe I have to clean something with it first?'[roman type][line break]" instead.
-
 Report taking off pink-spraybottle:
-	if the noun is spray:
-		say "[bold type]There's no way for you to hold it safely without having it equipped, so you place it on the ground.[roman type][line break]";
-		now the noun is in the location of the player;
+	if the charge of the noun > 0:
+		say "[bold type]As you unequip the spraybottle, you feel its stored magical energy fizzling away.[roman type][line break]";
+		now the charge of the noun is 0;
+	if the work ethic of the noun > 0, now the work ethic of the noun is 0.
 
 Check going when pink-spraybottle is worn:
 	if areYouSure is 1 and total puddle > 0:
@@ -117,7 +117,10 @@ To compute spraybottle punishment:
 		let P be a random worn sex toy;
 		if P is nothing, let P be a random off-stage basic plug;
 		say "[bold type]Your [ShortDesc of a random worn maid headdress] causes you to feel deep shame at your awful work ethic![roman type][line break]";
-		if V is vaginally summonable and the player is possessing a vagina:
+		if the player is extremely horny and chastity-belt is off-stage and chastity-belt is actually summonable:
+			summon chastity-belt locked;
+			say "You suddenly feel a tightness around your loins. You [if there are worn knickers]can feel[otherwise]look down and see[end if] that a [chastity-belt] has appeared around your crotch! [if the bimbo of the player < 10]Even worse, it[otherwise]It[end if] only stops anything from touching your genitals, so your [asshole] remains completely unprotected![line break][variable custom style]I'm a horny maid locked in chastity! But I need to cum so badly...[roman type][line break]";
+		otherwise if V is vaginally summonable and the player is possessing a vagina:
 			say "You feel a stiff, hard object burrowing into your [vagina]. It starts vibrating. ";
 			summon V cursed vaginally with quest;
 		otherwise if V is actually summonable and the player is sexed male:

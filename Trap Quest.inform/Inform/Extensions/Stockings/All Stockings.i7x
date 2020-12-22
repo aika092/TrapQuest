@@ -210,6 +210,9 @@ To say ClothingDesc of (C - bunny stockings):
 To say MediumDesc of (C - bunny stockings):
 	say "pair of reverse bunny outfit stockings".
 
+To compute class set up of (C - bunny stockings):
+	now the raw-magic-modifier of C is 1.
+
 Definition: bunny stockings is black themed: decide yes.
 Definition: bunny stockings is unskirted themed: decide yes.
 
@@ -223,27 +226,69 @@ Definition: bunny stockings is transformation-protected:
 
 cafe maid stockings is a stockings. cafe maid stockings is cotton. cafe maid stockings is unique. cafe maid stockings is sheer-when-wet. The text-shortcut of cafe maid stockings is "cms".
 
+Definition: cafe maid stockings is class-relevant:
+	if the class of the player is maid, decide yes;
+	decide no.
+
 The printed name of cafe maid stockings is "[clothing-title-before]cafe maid stockings[clothing-title-after]".
 
 Figure of cafe maid stockings is the file "Items/Clothes/Lower/Legs/cafestockings1.png".
 
-To decide which figure-name is clothing-image of (C - a cafe maid stockings):
+To decide which figure-name is clothing-image of (C - cafe maid stockings):
 	decide on figure of cafe maid stockings.
 
-To say ClothingDesc of (C - a cafe maid stockings):
+To say ClothingDesc of (C - cafe maid stockings):
 	say "These pink cotton thigh high stockings have little ribbons tied into bows at the top. They undoubtedly are designed to go with a cafe maid cosplay outfit.".
 
-To say MediumDesc of (C - a cafe maid stockings):
+To say MediumDesc of (C - cafe maid stockings):
 	say "pair of cafe maid stockings".
 
-To decide which number is the initial outrage of (C - a cafe maid stockings):
+To compute class set up of (C - cafe maid stockings):
+	now C is strength-influencing;
+	now the raw-magic-modifier of C is -1;
+	increase the raw-magic-modifier of C by the crawl count of the player / 7.
+
+To decide which number is the initial outrage of (C - cafe maid stockings):
 	if diaper quest is 1, decide on 0;
 	decide on 2.
 
-To decide which number is the initial cringe of (C - a cafe maid stockings):
+To decide which number is the initial cringe of (C - cafe maid stockings):
 	decide on 4.
 
 Definition: cafe maid stockings is pink themed: decide yes.
+
+condom socks is a socks. condom socks is unique. condom socks is latex. The text-shortcut of condom socks is "cdso".
+
+Definition: condom socks is class-relevant:
+	if the class of the player is cumdumpster, decide yes;
+	decide no.
+
+To compute class set up of (C - condom socks):
+	now C is endurance;
+	now C is dexterity-influencing;
+	now the raw-magic-modifier of C is 1.
+
+Figure of condom socks is the file "Items/Clothes/Lower/Legs/socks4.png".
+
+To decide which figure-name is clothing-image of (C - condom socks):
+	decide on figure of condom socks.
+
+To say ClothingDesc of (C - condom socks):
+	say "Two unravelled slightly misshapen condoms that can be worn on your feet.".
+
+To say ShortDesc of (C - condom socks):
+	say "pair of condom socks".
+To say MediumDesc of (C - condom socks):
+	say "pair of condom socks".
+
+To decide which number is the initial outrage of (C - condom socks):
+	decide on 7.
+
+To decide which object is the concealer of (C - condom socks):
+	decide on a random worn actually dense shoes.
+
+To decide which object is the at least partial concealer of (C - condom socks):
+	decide on a random worn not-see-through shoes.
 
 A deer socks is a kind of socks. There is 1 deer socks. The text-shortcut of deer socks is "dso".
 
@@ -298,30 +343,34 @@ Definition: a frilly green socks is transformation-protected:
 Definition: a frilly green socks is green themed: decide yes.
 Definition: a frilly green socks is christmas themed: decide yes.
 
-A frilly stockings is a kind of stockings. There is 1 frilly stockings. A frilly stockings is usually cotton. A frilly stockings is usually sheer-when-wet. The text-shortcut of frilly stockings is "fst".
+frilly stockings is a stockings. frilly stockings is cotton. frilly stockings is sheer-when-wet. The text-shortcut of frilly stockings is "fst".
+
+Definition: frilly stockings is class-relevant:
+	if the class of the player is schoolgirl and the player is pigtailed, decide yes;
+	decide no.
 
 Figure of cotton stockings is the file "Items/Clothes/Lower/Legs/cottonstockings1.png".
 
-To decide which figure-name is clothing-image of (C - a frilly stockings):
+To decide which figure-name is clothing-image of (C - frilly stockings):
 	decide on figure of cotton stockings.
 
-To say ClothingDesc of (C - a frilly stockings):
+To say ClothingDesc of (C - frilly stockings):
 	say "These white cotton thigh high stockings are [if C is dry]opaque and [end if]snug[if diaper quest is 0], but still pretty sexy[end if].".
 
-To say ShortDesc of (C - a frilly stockings):
+To say ShortDesc of (C - frilly stockings):
 	say "pair of cotton stockings".
 
-To decide which number is the initial outrage of (C - a frilly stockings):
+To decide which number is the initial outrage of (C - frilly stockings):
 	if diaper quest is 1, decide on 0;
 	decide on 2.
 
-To decide which number is the initial cringe of (C - a frilly stockings):
+To decide which number is the initial cringe of (C - frilly stockings):
 	decide on 4.
 
-To decide which object is the unique-upgrade-target of (C - a frilly stockings):
+To decide which object is the unique-upgrade-target of (C - frilly stockings):
 	if diaper quest is 1 and bow-stockings is off-stage, decide on bow-stockings.
 
-Definition: a frilly stockings is white themed: decide yes.
+Definition: frilly stockings is white themed: decide yes.
 
 bow-stockings is a stockings. bow-stockings is cotton. bow-stockings is transformation-rare. bow-stockings is sheer-when-wet. The text-shortcut of bow-stockings is "bpst". Understand "bow", "patterned", "stockings" as bow-stockings.
 
@@ -348,21 +397,21 @@ To decide which number is the initial cringe of (C - bow-stockings):
 Definition: bow-stockings is white themed: decide yes.
 
 A black rubber stockings is a kind of stockings. There is 1 transformation-rare black rubber stockings. A black rubber stockings is usually latex. A black rubber stockings is usually dense. The text-shortcut of black rubber stockings is "bls". The printed name of black rubber stockings is usually "[clothing-title-before]pair of black [clothing-material of the item described] stockings[clothing-title-after]".
-A black-and-orange rubber stockings is a kind of stockings. There is 1 transformation-rare black-and-orange rubber stockings. A black-and-orange rubber stockings is usually latex. A black-and-orange rubber stockings is usually dense. The text-shortcut of black-and-orange rubber stockings is "bols". The printed name of black-and-orange rubber stockings is usually "[clothing-title-before]pair of black and orange [clothing-material of the item described] stockings[clothing-title-after]".
+black-and-orange rubber stockings is a stockings. black-and-orange rubber stockings is transformation-rare. black-and-orange rubber stockings is latex. black-and-orange rubber stockings is dense. The text-shortcut of black-and-orange rubber stockings is "bols". The printed name of black-and-orange rubber stockings is "[clothing-title-before]pair of black and orange [clothing-material of the item described] stockings[clothing-title-after]".
 A red rubber stockings is a kind of stockings. There is 1 red transformation-rare rubber stockings. A red rubber stockings is usually latex. A red rubber stockings is usually dense. The text-shortcut of red rubber stockings is "rls". The printed name of red rubber stockings is usually "[clothing-title-before]pair of red [clothing-material of the item described] stockings[clothing-title-after]".
 
 To say ShortDesc of (C - a red rubber stockings):
 	say "latex stockings".
 To say ShortDesc of (C - a black rubber stockings):
 	say "latex stockings".
-To say ShortDesc of (C - a black-and-orange rubber stockings):
+To say ShortDesc of (C - black-and-orange rubber stockings):
 	say "latex stockings".
 
 To say MediumDesc of (C - a red rubber stockings):
 	say "pair of red latex stockings".
 To say MediumDesc of (C - a black rubber stockings):
 	say "pair of black latex stockings".
-To say MediumDesc of (C - a black-and-orange rubber stockings):
+To say MediumDesc of (C - black-and-orange rubber stockings):
 	say "pair of black and orange latex stockings".
 
 To say ClothingDesc of (C - a red rubber stockings):
@@ -378,12 +427,12 @@ To decide which figure-name is clothing-image of (C - a black-and-orange rubber 
 To say ClothingDesc of (C - a black rubber stockings):
 	say "These black latex thigh high stockings are extremely provocative and eye catching.".
 
-To say ClothingDesc of (C - a black-and-orange rubber stockings):
+To say ClothingDesc of (C - black-and-orange rubber stockings):
 	say "These black and orange striped latex thigh high stockings are very shiny.".
 
 Definition: a black rubber stockings is black themed: decide yes.
-Definition: a black-and-orange rubber stockings is black themed: decide yes.
-Definition: a black-and-orange rubber stockings is orange themed: decide yes.
+Definition: black-and-orange rubber stockings is black themed: decide yes.
+Definition: black-and-orange rubber stockings is orange themed: decide yes.
 Definition: a red rubber stockings is red themed: decide yes.
 
 Definition: a stockings is end of transformation chain:
@@ -399,44 +448,48 @@ To decide which number is the initial outrage of (C - a latex stockings):
 To decide which number is the initial cringe of (C - a latex stockings):
 	decide on 2.
 
-A magical stockings is a kind of stockings. There is 1 magical stockings. A magical stockings is usually cotton. The text-shortcut of magical stockings is "mst". A magical stockings is usually unique. A magical stockings is usually dexterity-influencing. The printed name of magical stockings is "[clothing-title-before]magical stockings[clothing-title-after]".
+magical stockings is a stockings. magical stockings is cotton. The text-shortcut of magical stockings is "mst". magical stockings is unique. magical stockings is dexterity-influencing. The printed name of magical stockings is "[clothing-title-before]magical stockings[clothing-title-after]".
 
 Figure of magical stockings is the file "Items/Clothes/Lower/Legs/magicalstockings1.png".
 
-To decide which figure-name is the clothing-image of (C - a magical stockings):
+To decide which figure-name is the clothing-image of (C - magical stockings):
 	decide on figure of magical stockings.
 
-To say ClothingDesc of (C - a magical stockings):
+To say ClothingDesc of (C - magical stockings):
 	say "These pink cotton thigh high stockings are opaque and snug, but still pretty sexy. You feel positively magical in them.".
 
-To say ShortDesc of (C - a magical stockings):
+To say ShortDesc of (C - magical stockings):
 	say "pair of magical stockings".
 
-To decide which number is the initial outrage of (C - a magical stockings):
+To decide which number is the initial outrage of (C - magical stockings):
 	decide on 1.
 
-Definition: a magical stockings is transformation-protected: decide yes.
+Definition: magical stockings is transformation-protected: decide yes.
 
-To decide which number is the dexterity-influence of (S - a magical stockings):
+To decide which number is the dexterity-influence of (S - magical stockings):
 	let M be the magic power of the player;
 	if M > 5, decide on 4;
 	if M > 3, decide on 2;
 	if M > 0, decide on 1;
 	decide on 0.
 
-Definition: a magical stockings is magic themed: decide yes.
-Definition: a magical stockings is pink themed: decide yes.
+Definition: magical stockings is magic themed: decide yes.
+Definition: magical stockings is pink themed: decide yes.
 
 A heart stockings is a kind of stockings. There is 1 transformation-rare heart stockings. A heart stockings is usually mesh. The text-shortcut of heart stockings is "hbs". The printed name of heart stockings is usually "[clothing-title-before]pair of heart bow [clothing-material of the item described] stockings[clothing-title-after]". Understand "bow" as heart stockings.
-A fishnet stockings is a kind of stockings. There is 1 transformation-rare fishnet stockings. A fishnet stockings is usually mesh. The text-shortcut of fishnet stockings is "fs". The printed name of fishnet stockings is usually "[clothing-title-before]pair of fishnet stockings[clothing-title-after]". Understand "fish", "net" as fishnet stockings.
+fishnet stockings is a stockings. fishnet stockings is transformation-rare. fishnet stockings is mesh. The text-shortcut of fishnet stockings is "fs". The printed name of fishnet stockings is "[clothing-title-before]pair of fishnet stockings[clothing-title-after]". Understand "fish", "net" as fishnet stockings.
 
-To decide which figure-name is clothing-image of (C - a fishnet stockings):
+Definition: fishnet stockings is class-relevant:
+	if the class of the player is schoolgirl and the player is not pigtailed, decide yes;
+	decide no.
+
+To decide which figure-name is clothing-image of (C - fishnet stockings):
 	decide on figure of mesh stockings B.
 
-To say ClothingDesc of (C - a fishnet stockings):
+To say ClothingDesc of (C - fishnet stockings):
 	say "These black fishnet thigh high stockings have smallish gaps in between the fabric showing moderate amounts of skin.".
 
-To say ShortDesc of (C - a fishnet stockings):
+To say ShortDesc of (C - fishnet stockings):
 	say "pair of fishnet stockings".
 To say ShortDesc of (C - a heart stockings):
 	say "pair of fishnet stockings".
@@ -451,7 +504,7 @@ Definition: a heart stockings is heart themed: decide yes.
 Definition: a heart stockings is black themed: decide yes.
 Definition: a heart stockings is gem themed: decide yes.
 Definition: a heart stockings is bow themed: decide yes.
-Definition: a fishnet stockings is black themed: decide yes.
+Definition: fishnet stockings is black themed: decide yes.
 
 Figure of mesh stockings A is the file "Items/Clothes/Lower/Legs/meshstockings1.png".
 Figure of mesh stockings B is the file "Items/Clothes/Lower/Legs/meshstockings2.png".
@@ -533,12 +586,23 @@ Definition: a red-and-white striped stockings is red themed: decide yes.
 Definition: a red-and-white striped stockings is white themed: decide yes.
 Definition: a red-and-white striped stockings is christmas themed: decide yes.
 
-red-and-white rubber stockings is a stockings. red-and-white rubber stockings is latex. A red-and-white rubber stockings is dense. The printed name of red-and-white rubber stockings is "[clothing-title-before]red and white latex stockings[clothing-title-after]". The text-shortcut of red-and-white rubber stockings is "rwls". Understand "red", "red and white", "white" as red-and-white rubber stockings.
+red-and-white rubber stockings is a stockings. red-and-white rubber stockings is latex. red-and-white rubber stockings is dense. The printed name of red-and-white rubber stockings is "[clothing-title-before]red and white latex stockings[clothing-title-after]". The text-shortcut of red-and-white rubber stockings is "rwls". Understand "red", "red and white", "white" as red-and-white rubber stockings.
+
+Definition: red-and-white rubber stockings is class-relevant:
+	if the class of the player is santa's little helper, decide yes;
+	decide no.
 
 To decide which figure-name is clothing-image of (C - red-and-white rubber stockings):
 	decide on figure of red-and-white rubber stockings.
 
 Figure of red-and-white rubber stockings is the file "Items/Clothes/Lower/Legs/stripedstockings3.png".
+
+To compute class set up of (C - red-and-white rubber stockings):
+	now the raw-magic-modifier of C is -2;
+	now C is oral-sex-addiction-influencing.
+
+To say ClassSummonFlav of (C - red-and-white rubber stockings):
+	say "Elbow-length candy cane patterned latex gloves appear on your arms! You feel a weird desperate craving to suck on something...".
 
 To say ClothingDesc of (C - red-and-white rubber stockings):
 	say "A pair of [if christmas content > 0]candy cane [end if]red and white striped thigh-high stockings made out of shiny latex.".
@@ -549,7 +613,7 @@ To say MediumDesc of (C - red-and-white rubber stockings):
 	say "pair of shiny latex candy cane stockings".
 
 Definition: red-and-white rubber stockings is transformation-protected:
-	if there is a worn christmas headgear, decide yes;
+	if the class of the player is santa's little helper, decide yes;
 	decide no.
 Definition: red-and-white rubber stockings is red themed: decide yes.
 Definition: red-and-white rubber stockings is white themed: decide yes.
@@ -557,6 +621,33 @@ Definition: red-and-white rubber stockings is christmas themed: decide yes.
 
 To decide which number is the initial outrage of (C - red-and-white rubber stockings):
 	decide on 5.
+
+princess-bride-stockings is a stockings. princess-bride-stockings is silk. princess-bride-stockings is unique. The printed name of princess-bride-stockings is "[clothing-title-before]sheer white silk stockings[clothing-title-after]". The text-shortcut of princess-bride-stockings is "swss". Understand "sheer", "white" as princess-bride-stockings.
+
+Definition: princess-bride-stockings is class-relevant:
+	if the class of the player is bride, decide yes;
+	decide no.
+
+To decide which figure-name is clothing-image of (C - princess-bride-stockings):
+	decide on figure of princess-bride-stockings.
+
+Figure of princess-bride-stockings is the file "Items/Clothes/Lower/Legs/silkstockings1.png".
+
+To say ClothingDesc of (C - princess-bride-stockings):
+	say "A pair of while silk stockings with a sheer section at the thighs, adding to their provocative nature.".
+
+To say ShortDesc of (C - princess-bride-stockings):
+	say "pair of silk stockings".
+To say MediumDesc of (C - princess-bride-stockings):
+	say "pair of silk white sheer stockings".
+
+Definition: princess-bride-stockings is transformation-protected:
+	if the class of the player is bride, decide yes;
+	decide no.
+Definition: princess-bride-stockings is white themed: decide yes.
+
+To decide which number is the initial outrage of (C - princess-bride-stockings):
+	decide on 3.
 
 A woven stockings is a kind of stockings. There is 1 transformation-rare woven stockings. A woven stockings is usually wool. A woven stockings is usually dense. The text-shortcut of woven stockings is "wlst".
 

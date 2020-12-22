@@ -161,10 +161,11 @@ A later time based rule (this is the compute doom rule):
 					say "[bold type]The world begins to shake and pink lightning begins to arc off the floating pink bubble and into the world! The bubble twists and resolves into an increasingly humanoid shape, finally becoming an extremely feminine figure composed of shocking pink light. In spite of being faceless, you can somehow tell it is looking at you.[line break][second custom style]'Like, cower in fear and junk because Valleyhotep, herald of [Azathot], is totally here.'[roman type][line break]This is probably bad.";
 				otherwise:
 					say "[bold type]The world begins to shake and pink lightning begins to arc off the floating pink bubble and into the world! The bubble twists and resolves into an increasingly humanoid shape, finally becoming an extremely feminine figure composed of shocking pink light. In spite of being faceless, you can somehow tell it is looking at you.[line break][second custom style]'You have totally done well, minions! Now go and, like, spread the word of Valleyhotep, herald of [Azathot]!'[roman type][line break]";
-			SexAddictUp 2;
-			SemenAddictUp 2;
-			DelicateUp 2;
-			Resolve Doom;[spawn valleyhotep and remove the pink bubble]
+			if diaper quest is 0:
+				SexAddictUp 2;
+				SemenAddictUp 2;
+				DelicateUp 2;
+				Resolve Doom;[spawn valleyhotep and remove the pink bubble]
 	otherwise:
 		if the gifted of herald > 0, decrease the gifted of herald by 1.
 
@@ -211,6 +212,7 @@ To Resolve Doom:
 	now herald is in Mansion23;
 	progress quest of ritual-quest.
 
+[TODO: update for lady fetish]
 To compute chosen birth:[now that the mindless acolytes are no longer needed to pool their strength, it's time to have some babies!]
 	repeat with A running through alive mindless acolytes:
 		now A is unleashed;
@@ -224,7 +226,7 @@ To compute chosen birth:[now that the mindless acolytes are no longer needed to 
 	let N be a random alive mindless acolyte in the location of the player;
 	let E be a random tentacle monster in the location of N;
 	if the number of mindless acolytes in the location of the player > 1:
-		say "Each of the cultists gives birth to [if inhuman pregnancy is 1]a [MediumDesc of E][otherwise]a floating ghost made of semen[end if], emitting an insane laugh as [he of N] stumbles to [his of N] feet.";
+		say "Each of the cultists gives birth to [if inhuman pregnancy is 1]a [MediumDesc of E][otherwise]masses of black and purple motes[end if], filling the room with the sound of insane laughter as magenta light surrounds their bodies.";
 	otherwise:
 		if N is monster, say "[BigNameDesc of N] gives birth to [if inhuman pregnancy is 1]a [MediumDesc of E], emitting an insane laugh as [he of N] stumbles to [his of N] feet[otherwise]a mass of black and purple motes, which separate and disappear as [he of N] stumbles to [his of N] feet and emits an insane laugh[end if].".
 

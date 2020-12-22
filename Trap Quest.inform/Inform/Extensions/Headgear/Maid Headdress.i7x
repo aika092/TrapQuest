@@ -54,10 +54,6 @@ Report going:
 
 Chapter - Class Outfit
 
-Definition: a maid headdress is removal-blocking:
-	if wearing-target is maid outfit or wearing-target is magical-maid-outfit or wearing-target is cafe maid stockings or wearing-target is pink-spraybottle, decide yes;
-	decide no. [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
-
 To decide which thing is chosen-maid-outfit:
 	if cafe maid headdress is worn and cafe-maid-outfit is off-stage, decide on cafe-maid-outfit;
 	if (diaper quest is 1 or cafe maid headdress is worn) and maid-waitress-outfit is off-stage, decide on maid-waitress-outfit;
@@ -72,35 +68,11 @@ To decide which thing is chosen-maid-outfit:
 		if B < 20000 and fetish-maid-outfit is off-stage, decide on fetish-maid-outfit;
 		if B < 28000 and slutty-maid-outfit is off-stage, decide on slutty-maid-outfit;
 		if B < 32000 and V-shape-maid-outfit is off-stage, decide on V-shape-maid-outfit;
-	decide on a random black fetish hobble dress.
-
-maid-summoned is a number that varies.
-To compute unique recycling of (C - a maid headdress):
-	now maid-summoned is 0.
+	decide on black fetish hobble dress.
 
 To compute class outfit of (H - a maid headdress):
-	let C be a random off-stage actually summonable chastity bond;
-	let M be chosen-maid-outfit;
-	let S be a random off-stage cafe maid stockings;
-	if M is actually summonable or (maid-summoned is 0 and the number of worn maid outfit is 0 and magical-maid-outfit is not worn):
-		PinkWardrobeUnclash M;
-		if M is crotch covering:
-			repeat with O running through worn knickers:
-				unless O is diaper, WardrobeVanish O;
-		say "[bold type]Your headdress barely noticeably shakes, and then a [if the bimbo of the player > 4]slutty [end if]maids outfit materialises on you.[roman type][line break]";
-		summon M uncursed;
-		now maid-summoned is 1;
-		increase the raw-magic-modifier of M by the crawl count of the player / 10;
-	otherwise if H is cafe maid headdress and S is actually summonable:
-		say "[bold type]Your headdress barely noticeably shakes, and then a [ShortDesc of S] materialises on your legs.[roman type][line break]";
-		summon S uncursed;
-		now S is strength-influencing;
-		now the raw-magic-modifier of S is -1;
-		increase the raw-magic-modifier of S by the crawl count of the player / 7;
-	otherwise if there is a worn maid outfit and C is actually summonable and the player is extremely horny:
-		say "[bold type]You suddenly feel a tightness around your loins. You [if there are worn knickers]can feel[otherwise]look down and see[end if] that a [Shortdesc of C] has appeared around your [if C is chastity cage][ShortDesc of penis][otherwise]crotch[end if]! [if the bimbo of the player < 10]Even worse, it[otherwise]It[end if] only stops anything from touching your [if C is chastity-belt]genitals[otherwise]dick[end if], so your [asshole] remains completely unprotected!";
-		summon C locked;
-		say "[variable custom style]I'm a horny maid locked in chastity! But I need to cum so badly...[roman type][line break]".
+	class summon chosen-maid-outfit;
+	if H is cafe maid headdress, class summon cafe maid stockings.
 
 Chapter - Quest
 

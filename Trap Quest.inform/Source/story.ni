@@ -1,11 +1,11 @@
 "Trap Quest" by Aika
 
-[PUBLIC VERSION]
+[PRIVATE VERSION]
 
 Release along with cover art.
 The story genre is "Erotica".
 Use BRIEF room descriptions.
-The story creation year is 2019.
+The story creation year is 2020.
 Use scoring.
 
 Include Save File Control by Nathanael Marion.
@@ -16,7 +16,7 @@ Use ALLOC_CHUNK_SIZE of 3200000.
 Use SYMBOLS_CHUNK_SIZE of 100000.
 Use MAX_EXPRESSION_NODES of 20000.
 Use MAX_SYMBOLS of 500000.
-Use MAX_PROP_TABLE_SIZE of 4000000.
+Use MAX_PROP_TABLE_SIZE of 5000000.
 Use MAX_NUM_STATIC_STRINGS of 300000.
 Use MAX_STATIC_DATA of 100000000.
 Use MAX_CLASSES of 2000.
@@ -42,10 +42,10 @@ Include Glimmr Drawing Commands by Erik Temple.
 Include Undo Output Control by Erik Temple.
 Include Glimmr Canvas-Based Drawing by Erik Temple.
 Include Glimmr Graphic Hyperlinks by Erik Temple.
-Include Menus by Emily Short.
+
+Include TQ Menus by Emily Short.
 
 links-disabled is a truth state that varies. [When you want to briefly disable links]
-
 
 [Include Version 3 of Fixed Point Maths by Third Party Extensions.
 Include Version 4 of Glulx Text Effects by Third Party Extensions.
@@ -156,14 +156,14 @@ Apparently, because I am writing these things now, that would indicate that I
 can document things. Woop!
 
  @param <Integer>:<a> The integer, a, is given to the function as a gift from
- 					 three wise programmers.
- @param <String>:<b> The String, b, is given to the function by a wandering
- 					 shepherd.
+ 					  three wise programmers.
+ @param  <String>:<b> The String, b, is given to the function by a wandering
+ 					  shepherd.
  @param <Boolean>:<c> The boolean, c, is given to the function by a daft old
- 					 geezer that appeared from nowhere.
+ 					  geezer that appeared from nowhere.
 
  @return <Boolean> Returns whether the programmer can document things or not.
- Mainly not since this is kinda a fake function...
+  Mainly not since this is kinda a fake function...
 
 +@!]
 
@@ -209,7 +209,6 @@ Area 4: Nintendolls R&D Facility
 [THINGS TO ADD TO THE FAQ
 ]
 
-
 Include Cutscene Figures by Miscellaneous Frontend.
 
 Volume 1 - Graphics (Private Version Only)
@@ -229,8 +228,6 @@ Include ASCII Map by Miscellaneous Frontend.
 
 Volume 2 - Game Setup
 
-
-
 Include Output Text by Miscellaneous Frontend.
 Include Variable Text by Miscellaneous Frontend.
 Include Parser Errors by Miscellaneous Frontend.
@@ -243,7 +240,6 @@ Include Announcements by Miscellaneous Frontend.
 
 Include Prologue by Miscellaneous Frontend.
 
-
 [Include Menus by Third Party Extensions.
 Include Basic Help Menu by Third Party Extensions.
 Include Help by Miscellaneous Frontend.]
@@ -252,6 +248,12 @@ Include Timer Stuff by Miscellaneous Backend.
 
 Include Game Settings by Miscellaneous Backend.
 Include Fetish Settings by Miscellaneous Backend.
+
+Include Gender Options by Fetish Settings.
+Include Diaper Lover Options by Fetish Settings.
+Include Pregnancy Options by Fetish Settings.
+Include Instant TG Options by Fetish Settings.
+Include Info Options by Fetish Settings.
 
 Include Fetish Options by Fetish Settings.
 Include Handicap Options by Fetish Settings.
@@ -265,22 +267,9 @@ Include Festive Options by Fetish Settings.
 Include Engine Initialisation by Miscellaneous Backend.
 Include Game Universe Initialisation by Miscellaneous Backend.
 
-
-Include Executing Fainting by Fainting.
-Include Fainting Flavour by Fainting.
-Include Recovering the Player by Fainting.
-Include Recovering Rooms by Fainting.
-Include Recovering Clothing by Fainting.
-Include Recovering Drinks by Fainting.
-Include Recovering Collectibles by Fainting.
-Include Recovering Traps by Fainting.
-Include Recovering Containers by Fainting.
-Include Recovering Monsters by Fainting.
-Include Fainting Reasons by Fainting.
-
+Include Fainting by Miscellaneous Frontend.
 
 Include Static Rooms by Rooms.
-
 
 Include Spatial Vectors and Shape by Rooms.
 Include Solid Rock by Rooms.
@@ -294,7 +283,6 @@ Include Region Building School by Rooms.
 Include Region Building by Rooms.
 Include Deploying by Rooms.
 
-
 Include Room Adjectives by Rooms.
 Include Room Descriptions by Rooms.
 Include Puddles by Rooms.
@@ -305,10 +293,9 @@ Include Laundry Robots by Objects.
 Include Barriers by Rooms.
 Include Mansion by Rooms.
 Include School by Rooms.
+Include Predicament World by Rooms.
 
 An introductory room is a kind of room. An introductory room has a labyrinth shape called shape. The shape of an introductory room is usually L3/0-0-1-1-1-1. The grid position of an introductory room is usually <0,0,0>.
-
-
 
 Volume 1 - The Player
 
@@ -331,22 +318,13 @@ Include Thighs by Body Parts.
 Include Arms by Body Parts.
 Include Hair by Body Parts.
 Include Penis by Body Parts.
+Include Scrotum by Body Parts.
 
 Book 2 - Stats and Status
 
 Include Calculating Stats by Player.
-Include Strength by Player.
-Include Dexterity by Player.
-Include Intelligence by Player.
 Include Sex Addiction by Player.
-Include Anal Sex Addiction by Player.
-Include Vaginal Sex Addiction by Player.
-Include Semen Taste and Oral Sex Addiction by Player.
-Include Titfuck Addiction by Player.
-Include BBC Addiction by Player.
 Include Semen Addiction by Player.
-Include Milk Taste Addiction by Player.
-Include Urine Taste Addiction by Player.
 Include Diaper Addiction by Player.
 Include Delicateness by Player.
 Include Appearance by Player.
@@ -391,33 +369,18 @@ Include TG by Player Description.
 Include Status by Player Description.
 Include Addictions by Player Description.
 
-
 Volume 3 - Every Turn (MAIN CODE BLOCK)
 
 Include Compute Turn by Every Turn.
-Include Player Standing by Every Turn.
-Include Player Kneeling by Every Turn.
-Include Automatic Actions by Every Turn.
-Include Instinctive Actions by Every Turn.
-Include Periodical Clothing Effects by Every Turn.
-Include Periodical Other Effects by Every Turn.
-Include Traps by Every Turn.
-Include Creepiness by Every Turn.
+Include Periodic Effects by Every Turn.
 Include Stomach by Every Turn.
 Include Reflection by Every Turn.
 Include Flight by Every Turn.
 Include Lactation by Every Turn.
-Include Dressup by Every Turn.
-Include Advance Counters by Every Turn.
-Include Reset Flags by Every Turn.
-Include Latex Curse by Every Turn.
-Include Mindflayer Quest by Every Turn.
 Include Doom by Every Turn.
-Include Absorption by Every Turn.
 Include Pregnancy by Every Turn.
 Include Semen Movements by Every Turn.
 Include Diaper Orgasms by Every Turn.
-Include Hypnotic Suggestion by Every Turn.
 
 Volume 4 - Things
 
@@ -438,19 +401,21 @@ Include MimicInvestigating by Actions.
 
 Include Candy Machine by Objects.
 
+Include Trophies by Objects.
 
 Include Altars by Objects.
 Include Sacred Pool by Objects.
 Include Hot Tub by Objects.
 Include Swimming Pool by Objects.
-Include Pink Wardrobe by Objects.
+Include Wardrobes by Objects.
 Include Crafting Table by Objects.
 Include Podium by Objects.
 
-Include WellWishing by Actions.
+[Include WellWishing by Actions.]
 Include Well by Objects.
 Include Dungeon Statue by Objects.
 Include Woods Statue by Objects.
+Include Mansion Statue by Objects.
 Include Pink Sphere by Objects.
 Include Summoning Portals by Objects.
 Include Knife by Objects.
@@ -467,25 +432,19 @@ Part - Collectibles
 
 Include Collectible Definition by Collectibles.
 
+Include Basic Collectibles by Collectibles.
+
 Include Sanity Token by Collectibles.
 Include Defiance Token by Collectibles.
 Include Fabric Token by Collectibles.
+Include Magic Token by Collectibles.
 
 Include Doom Stuff by Collectibles.
-Include Ectoplasm by Collectibles.
 Include Condom Pack by Collectibles.
 Include Magic Lamp by Collectibles.
 Include Eggs by Collectibles.
-Include Piece of Rubber by Collectibles.
-Include Infernal Gem by Collectibles.
-Include Wasp Wing by Collectibles.
-Include Pink Hair by Collectibles.
-Include Mechanical Joint by Collectibles.
-Include Metal Disc by Collectibles.
-Include Royal Sigil by Collectibles.
-Include Playing Cards by Collectibles.
-Include Chess Piece by Collectibles.
-Include Soul Gem by Collectibles.
+
+
 Include Soiled Diaper by Collectibles.
 
 Include Lubricant by Consumables.
@@ -497,11 +456,11 @@ Include Squeezy Bottle by Consumables.
 Include Skeleton Key by Consumables.
 Include Bandage by Consumables.
 Include Dark Scroll by Consumables.
+Include Wipes by Consumables.
 
 Part - Traps
 
 Include Trap Framework by Traps.
-
 
 Include Makeup Pad Trap by Traps.
 Include Ass Hook Trap by Traps.
@@ -530,19 +489,8 @@ Part - Crafting
 
 Include Crafting Framework by Crafting.
 
-
-Include Powder by Crafting.
-Include Bombs by Crafting.
-Include Tinctures by Crafting.
-Include Elixirs by Crafting.
-Include Potions by Crafting.
-Include Salves by Crafting.
-
-Include Salve Rubbing by Actions.
-
+Include Alchemy Products by Crafting.
 Include Recipes by Crafting.
-Include Currently Craftable by Crafting.
-Include Memorising by Actions.
 Include Crafting by Actions.
 
 Part - Furniture
@@ -553,49 +501,32 @@ Include Kneeling Stool by Furniture.
 Include Hammock by Furniture.
 Include Hotel Bed by Furniture.
 Include Royal Bed by Furniture.
-Include Prison Guard's Bed by Furniture.
 Include Hotel Chairs by Furniture.
 Include Modification Machine by Furniture.
-Include Cot by Furniture.
-Include Bunk Bed by Furniture.
 Include Lecture Chair by Furniture.
 Include Guest Bed by Furniture.
 Include Master Bed by Furniture.
 Include Med Bay Bed by Furniture.
 Include Detention Chair by Furniture.
+Include Basic Beds by Furniture.
 
 Part - Food
-
 
 Include Food Framework by Food.
 Include Fae Mushroom by Food.
 Include Candy by Food.
-Include Toffee by Food.
-Include Fudge by Food.
-Include Creme Egg by Food.
-Include Pink Nougat by Food.
-Include Chocolate Bar by Food.
-Include Liquorice by Food.
-Include Strawberry Lace by Food.
-Include Digestive Biscuit by Food.
 Include Bag Lunch by Food.
 Include Chef Foods by Food.
 Include Truffle by Food.
 Include Cookie by Food.
 Include Stuffed Mushroom by Food.
 Include Gelatin by Food.
-Include Candy Corn by Food.
 
 Include Hotel Feeding Bowls by Objects.
 Include School Food Machine by Objects.
 Include School Drink Machine by Objects.
 
 Include Snacks by Food.
-Include Banana by Food.
-Include Apple by Food.
-Include Pack of Crisps by Food.
-Include Lemon by Food.
-Include Pack of Nuts by Food.
 
 Part - Clothing
 
@@ -604,10 +535,8 @@ Include Orifice Protection by Clothing.
 Include Clothing Functions by Clothing.
 Include Clothing Setup by Clothing.
 
-
 Include Outrage by Clothing.
 Include Cringe by Clothing.
-Include Price by Clothing.
 Include Printed Names by Clothing.
 Include Description by Clothing.
 Include Layering by Clothing.
@@ -621,7 +550,6 @@ Include Influence by Clothing.
 Include Imprinting by Clothing.
 Include Quests by Clothing.
 Include Themes by Clothing.
-
 
 Include Headgear Framework by Headgear.
 
@@ -650,20 +578,20 @@ Include Glittering Rose by Headgear.
 Include Cumdumpster Hat by Headgear.
 Include Heart Hairpin by Headgear.
 Include Combat Visor by Headgear.
-
+Include Golden Tiara by Headgear.
+Include Spiked Tiara by Headgear.
+Include Rugged Headband by Headgear.
+Include Halloween Headgear by Headgear.
+Include Avatar Headpiece by Headgear.
 
 Include Shoes Framework by Shoes.
 
-Include Rollerskates Framework by Shoes.
-Include White Rollerskates by Shoes.
-Include Nonwhite Rollerskates by Shoes.
+Include All Shoes by Shoes.
 Include Heels Framework by Shoes.
 
-
-Include Thigh High Boots by Shoes.
+Include Boots by Shoes.
 Include Peep Toe Heels by Shoes.
 Include Platform Heels by Shoes.
-Include Supertall Platform Heels by Shoes.
 Include Dildo Heels by Shoes.
 Include Court Heels by Shoes.
 Include Girly Bow Court Heels by Shoes.
@@ -675,21 +603,13 @@ Include Ballet Shoes by Shoes.
 Include Lipstick Heels by Shoes.
 Include Armadillo Heels by Shoes.
 Include Baby Booties by Shoes.
-Include Bunny Booties by Shoes.
 Include Mary Janes by Shoes.
 Include Sandals by Shoes.
 Include Trainee Boots by Shoes.
 
 Include Bra Framework by Bra.
 
-
-Include Training Bra by Bra.
-Include Wonder Bra by Bra.
-Include Exercise Bra by Bra.
-Include Fetish Bra by Bra.
-Include Maternity Bra by Bra.
-Include Chastity Bra by Bra.
-Include Bikini Top by Bra.
+Include All Bras by Bra.
 Include White String Bikini Top by Bra.
 Include Red String Bikini Top by Bra.
 Include Cow Print Bikini Top by Bra.
@@ -701,13 +621,6 @@ Include Skimpy Pink Bikini Top by Bra.
 Include Pink Bikini Top by Bra.
 Include Purple String Bikini Top by Bra.
 Include Nipple Ring Bikini Top by Bra.
-Include Cupless Bra by Bra.
-Include Ribbon Bra by Bra.
-Include Spike Bra by Bra.
-Include Sheer Bra by Bra.
-Include Trainee Bra by Bra.
-Include Pasties by Bra.
-
 
 Include Knickers Framework by Knickers.
 
@@ -717,34 +630,29 @@ Include Bikini Bottoms by Knickers.
 Include Crotch Rope by Knickers.
 Include Pouch Panties by Knickers.
 Include Crotchless Panties by Knickers.
-Include Cum Dump's Undergarment by Knickers.
 Include Hotpants by Knickers.
 Include Bloomers by Knickers.
 Include Microshorts by Knickers.
 Include Strapon by Knickers.
+Include Demonic Underwear by Knickers.
+Include Portal Pants by Knickers.
 
 Include Undies by Knickers.
-Include G-strings by Knickers.
+Include G-Strings by Knickers.
 Include Thongs by Knickers.
 Include Briefs by Knickers.
 Include Panties by Knickers.
-
 
 Include Diaper Framework by Knickers.
 Include Diapers by Knickers.
 Include Diaper Covers by Knickers.
 
-
 Include Trousers Framework by Trousers.
-Include Yoga Pants by Trousers.
-Include PJ Bottoms by Trousers.
-Include Jeans by Trousers.
-Include Buttocksless Pants by Trousers.
-Include Leggings by Trousers.
-Include Latex Pants by Trousers.
-Include Bloomers by Trousers.
-Include Teddy Bear Pantyhose by Trousers.
-Include Exercise Shorts by Trousers.
+Include All Trousers by Trousers.
+
+Part - Skirts
+
+Include All Skirts by Skirts.
 
 Part - Dresses
 
@@ -756,8 +664,6 @@ Include Monokinis by Dresses.
 Include Slutty Monokinis by Dresses.
 
 Include Royal Dress by Dresses.
-Include Catsuit by Dresses.
-Include Leotard by Dresses.
 Include Fishnet Dress by Dresses.
 Include Maid Outfit by Dresses.
 Include Blouse by Dresses.
@@ -772,10 +678,9 @@ Include Maternity Dress by Dresses.
 Include Basque by Dresses.
 Include Milking Harness by Dresses.
 Include Fertility Goddess Outfit by Dresses.
-Include Pink Rubber Dress by Dresses.
+Include Plastic Themed Dresses by Dresses.
 Include Warrior's Chestpiece by Dresses.
 Include T-Shirts by Dresses.
-Include Superheroine Outfit by Dresses.
 Include Clubbing Dress by Dresses.
 Include Rope Harness by Dresses.
 Include Negligee by Dresses.
@@ -785,19 +690,16 @@ Include Shirt by Dresses.
 Include Fishnet Top by Dresses.
 Include Crop Top by Dresses.
 Include Onesie by Dresses.
-Include Blazing Dress by Dresses.
+Include Demonic Dresses by Dresses.
 Include Striped Top by Dresses.
 Include Cultist Robe by Dresses.
 Include Vest Top by Dresses.
-Include Sequins Outfit by Dresses.
-Include Kimonos by Dresses.
+Include Stealth Dresses by Dresses.
 Include Butterfly Wings by Dresses.
-Include Lycra Bodysuit by Dresses.
-Include Diaper Dresses by Dresses.
+Include ABDL Dresses by Dresses.
 Include Ribbon Dress by Dresses.
 Include Slave Dress by Dresses.
 Include Business Dresses by Dresses.
-Include Rompers by Dresses.
 Include Dining Dresses by Dresses.
 Include Rubber Dress by Dresses.
 Include Gingham Dress by Dresses.
@@ -806,30 +708,17 @@ Include Christmas Dress by Dresses.
 Include Bunny Outfit by Dresses.
 Include Open Front Dress by Dresses.
 Include Latex Dungarees by Dresses.
+Include Halloween Dresses by Dresses.
+Include Bridal Outfits by Dresses.
 
 Part - Corsets
 
 Include Corsets Framework by Corsets.
-Include Gothic Corset by Corsets.
-Include Satin Corset by Corsets.
-Include Vinyl Corset by Corsets.
-Include Leather Corset by Corsets.
-Include Fetish Corset by Corsets.
-Include Bat Corset by Corsets.
-Include Santa Corset by Corsets.
-Include Spike Corset by Corsets.
-Include Ballet Corset by Corsets.
-
-Part - Skirts
-
-Include All Skirts by Skirts.
-
-
+Include All Corsets by Corsets.
 
 Part - Belts and Suspenders
 
 Include All Belts by Belts Suspenders.
-
 
 Part - Stockings
 
@@ -842,18 +731,10 @@ Include Accessories Framework by Accessories.
 Include Rings by Accessories.
 Include Necklaces by Accessories.
 Include Bracelets by Accessories.
-Include Stethoscope by Accessories.
-Include Cowbell by Accessories.
-Include Catbell by Accessories.
 Include Slave Collar by Accessories.
-Include Necktie by Accessories.
 Include Pullstring Collar by Accessories.
-Include Focus Band by Accessories.
 Include Steel Collar by Accessories.
-Include Mystical Amulet by Accessories.
-Include Soulstone by Accessories.
 Include Bib by Accessories.
-Include Vampiric Cape by Accessories.
 Include Lipstick Collar by Accessories.
 Include Cumslut Collar by Accessories.
 Include Fuckdoll Collar by Accessories.
@@ -861,17 +742,13 @@ Include Research Airhancer by Accessories.
 
 Include Armband by Accessories.
 
-
-
 Part - Piercing
 
 Include All Piercings by Piercings Modules.
 
-
 Part - Equippables
 
 Include Equippables Framework by Equippables.
-
 
 Include Whip of Domination by Equippables.
 Include Magic Wand by Equippables.
@@ -897,13 +774,12 @@ Include Fake Nails by Equippables.
 Include Totem of Purity by Equippables.
 Include Pom Poms by Equippables.
 Include Heart Wand by Equippables.
-Include Magic Pistol by Equippables.
 Include Wrench by Equippables.
+Include Heavy Club by Equippables.
 
 Part - Bondage
 
 Include Bondage Framework by Bondage.
-
 
 Include Wrist Bondage by Bondage.
 Include Ankle Bondage by Bondage.
@@ -913,6 +789,7 @@ Include Pacifiers by Bondage.
 Include Puppy Gag by Bondage.
 Include Rubber Duck Gag by Bondage.
 Include Ring Gag by Bondage.
+Include Portal Gag by Bondage.
 Include Chastity Cage by Bondage.
 Include Pet Collar by Bondage.
 Include Ball and Chain by Bondage.
@@ -920,8 +797,8 @@ Include Wrist Collar Bar by Bondage.
 
 Part - Sex Toys
 
-
 Include Sex Toy Framework by Sex Toys.
+Include Plugging by Actions.
 
 Include Golden Phallus by Sex Toys.
 Include Throbbing Tentacle by Sex Toys.
@@ -948,23 +825,18 @@ Include All Tattoos by Tattoos.
 
 Include Inking by Actions.
 
-
 Part - Bags of Holding
 
 Include Bags of Holding Framework by Bags of Holding.
 Include Sacks of Holding by Bags of Holding.
 Include Handbags of Holding by Bags of Holding.
 
-
-
 Volume 5 - More Backend Stuff
 
 Include Relations by Miscellaneous Backend.
 Include Immobility by Player.
 Include Manual Dexterity by Player.
-Include Dungeon Shop by Rooms.
 Include Nearby Simulated Danger by Miscellaneous Backend.
-
 
 Volume 6 - Other Actions
 
@@ -975,7 +847,6 @@ Include TopDisplacing TopReplacing by Actions.
 Include Zipping by Actions.
 
 Include Drinking by Actions.
-Include Quaffing by Actions.
 Include Decanting by Actions.
 Include Extracting by Actions.
 Include Squirting by Actions.
@@ -996,7 +867,7 @@ Include Long Waiting by Actions.
 Include Resting by Actions.
 Include Taking by Actions.
 Include Dropping by Actions.
-Include Strutting by Actions.
+[Include Strutting by Actions.]
 Include Resisting by Actions.
 Include Submitting by Actions.
 Include Begging for Mercy by Actions.
@@ -1011,10 +882,8 @@ Include Cleaning by Actions.
 Include Eating by Actions.
 Include Presenting by Actions.
 Include Rinsing by Actions.
-Include Self Drinking by Actions.
 Include Squatting by Actions.
 Include Offering Trading by Actions.
-Include Repairing by Actions.
 Include Invoking by Actions.
 Include Poking by Actions.
 Include Fainting by Actions.
@@ -1030,7 +899,7 @@ Include Compute Monsters by Monster Framework.
 Include Motion by Monster Framework.
 Include Perception by Monster Framework.
 
-Include Conversation by Monster Framework.
+Include Conversation by Monster Framework. [Has to go before definitions of specific NPCs so that multiple choice talk orders are correct]
 Include Interacting Protecting by Monster Framework.
 Include Combat by Monster Framework.
 Include DQ Punishments by Monster Framework.
@@ -1056,6 +925,7 @@ Include Vine Boss by Monster.
 Include Fairy by Monster.
 Include Witch by Monster.
 Include Patron by Monster.
+Include Real Life Patron by Monster.
 Include Matron by Monster.
 
 Include Robots Framework by Monster Framework.
@@ -1079,6 +949,7 @@ Include Kitsune by Monster.
 Include Hellhound by Monster.
 Include Pimp by Monster.
 Include Princess by Monster.
+Include Imp by Monster.
 
 Include Staff Framework by Monster Framework.
 Include Receptionist by Monster.
@@ -1099,10 +970,9 @@ Include Students Ditzy by Monster.
 Include Supporter Framework by Monster Framework.
 Include Supporters by Monster.
 
-Include Woman Barbara by Monster.
+Include Woman Framework by Monster Framework.
 
 Include Talking by Actions.
-
 
 Volume 8 - Other
 
@@ -1111,7 +981,6 @@ Include Forbidden Actions by Actions.
 Include Actions with Missing Nouns by Actions.
 
 Include Tutorial by Miscellaneous Frontend.
-
 
 The clothingFocusPriority of headgear is -10.
 
@@ -1169,7 +1038,40 @@ The clothingFocusPriority of shoes is 20.
 
 The clothingFocusPriority of bag of holding is 24.
 
+Include Endgame Variables by Ending the Game.
+Include Endgame Images by Ending the Game.
+Include Epilogue Outcomes by Ending the Game.
+Include Reusable Content by Ending the Game.
+Include Ending the Game by Ending the Game.
+Include Transformation Reversal Options by Ending the Game.
+Include Body Score by Ending the Game.
 
-Volume 3 - Version
+Include TQ DQ Nintendolls Job Epilogues by Ending the Game.
+Include TQ DQ One Year Later Epilogues by Ending the Game.
 
-Include Public Version Stuff by Miscellaneous Backend.
+Figure of Empty Space is the file "CharWins/DQWin/emptyspace.png".
+
+Include [Danaume] [Keriax] [Wonderfuller] [Porn] [Strateg] TQ [DQ] Character Window by Character Window.
+
+Include Debug Commands by Miscellaneous Frontend.
+
+Include Donators Unlocks by Miscellaneous Backend.
+
+Figure of dungeon loading is the file "Special/Loading/loading7.png".
+Figure of dungeon pregnant loading is the file "Special/Loading/loading7a.jpg".
+Figure of dungeon minotaur loading is the file "Special/Loading/loading7b.jpg".
+[Figure of dq dungeon loading is the file "Special/Loading/loading5a.jpg".] Figure of dq dungeon loading is the file "Special/Loading/loading5b.jpg".
+
+Figure of woods loading is the file "Special/Loading/loading1.jpg".
+Figure of woods vines loading is the file "Special/Loading/loading2.png".
+Figure of woods fairy loading is the file "Special/Loading/loading3.png".
+Figure of dq woods loading is the file "Special/Loading/loading6a.png".
+
+Figure of hotel loading 1 is the file "Special/Loading/loading4a.jpg".
+Figure of hotel pregnant loading 1 is the file "Special/Loading/loading4b.png".
+Figure of hotel loading 2 is the file "Special/Loading/loading5.png".
+Figure of hotel loading 3 is the file "Special/Loading/loading6.png".
+Figure of dq hotel loading is the file "Special/Loading/loading2a.png".
+
+Figure of dq mansion loading is the file "Special/Loading/loading8a.png".
+Figure of dq mansion messy loading is the file "Special/Loading/loading9a.png".

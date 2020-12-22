@@ -1,6 +1,6 @@
 Tentacle Monster by Monster begins here.
 
-Tentacle monster is a kind of monster. A tentacle monster is neuter. A tentacle monster can be player-brood. A tentacle monster is usually not player-brood.[This will be used to flag the TM as not one of your children]
+Tentacle monster is a kind of monster. A tentacle monster is neuter. A tentacle monster can be player-brood. A tentacle monster is usually not player-brood.[This will be used to flag the TM as one of your children]
 
 A tentacle monster can be newborn, large, massive (this is the tentacle-size property). Understand the tentacle-size property as describing a tentacle monster. A tentacle monster has a number called evolved.
 
@@ -373,34 +373,45 @@ To decide which number is the max-tentacles of (M - a tentacle monster):
 
 The tentacle priority attack rules is a rulebook. The priority attack rules of a tentacle monster is the tentacle priority attack rules.
 
-[Tentacle monsters have a certain number of free tentacles. With a free tentacle, they can wrangle the player.]
-This is the tentacle monster grabbiness rule:
-	let M be current-monster;
-	let C be 5;
-	if M is smart-tentacle-monster, now C is 4;[smart monsters are more likely to use a special attack]
-	if the player is upright and M is not penetrating a body part and the free-tentacles of M > 0 and a random number between 1 and C is 1:
-		let R be a random number between 1 and 2;
-		if the arm-count of M >= 3, now R is 2;
-		if the leg-count of M >= 3, now R is 1;
-		if R is 1:[grab your arm]
-			if the accuracy roll of M >= the dexterity of the player:
-				say "[BigNameDesc of M] [if the arm-count of M > 1]uses another tentacle to pin your arms together and bind them securely. Escaping will be a lot harder now...[otherwise if the arm-count of M > 0]uses a tentacle to seize your other wrist![otherwise]uses a tentacle to grab and curl around one of your wrists![end if]";
-				decrease the free-tentacles of M by 1;
-				increase the arm-count of M by 1;
-				now M is wrangling arms;
-			otherwise:
-				say "[BigNameDesc of M] [if the arm-count of M > 1]forces your arms together and tries to bind you with another tentacle, but you're just quick enough to avoid it.[otherwise if the arm-count of M > 0]tries to grab your free wrist with another tentacle, but you don't let it grab you![otherwise]tries to grab your wrist with one of its tentacles, but you avoid it just in time![end if]";
-		otherwise:[grab your leg; We know there's a free arm, since the arm and leg counts are less than the number of free tentacles.]
-			if the accuracy roll of M >= the dexterity of the player:
-				say "[BigNameDesc of M] [if the leg-count of M > 1]uses another tentacle to force your legs together and bind them securely. Escaping will be a lot harder now...[otherwise if the leg-count of M > 0]uses a tentacle to seize your other ankle![otherwise]uses a tentacle to grab and curl around one of your ankles![end if]";
-				decrease the free-tentacles of M by 1;
-				increase the leg-count of M by 1;
-				now M is wrangling thighs;
-			otherwise:
-				say "[BigNameDesc of M] [if the leg-count of M > 1]uses another tentacle to force your legs together and tries binding you with another tentacle, but you're quick enough to avoid it.[otherwise if the leg-count of M > 0]tries grabbing your other ankle, but you dodge the tentacle![otherwise]tries to grab one of your ankles with its tentacles, but you avoid it![end if]";
-		rule succeeds.
-The tentacle monster grabbiness rule is listed in the tentacle priority attack rules.
+To compute damaging attack of (M - a tentacle monster):
+	let C be 4;
+	if M is smart-tentacle-monster, now C is 3;
+	if a random number between 1 and C is 1:[The monster decides to use a special attack]
+		let R be a random number between 1 and 3;
+		let attack-done be 0;
+		if R is 1:
+			if the free-tentacles of M > 0 and the arm-count of M + the leg-count of M < 6, compute grabbing attack of M;
+			otherwise now R is 3;
+		if R is 2:
+			if the free-tentacles of M > 2, compute bashing attack of M;
+			otherwise now R is 3;
+		if R is 3:[most likely outcome]
+			if the free-tentacles of M < the max-tentacles of M and the health of M >= (the maxhealth of M / 2), compute molesting attack of M;
+			otherwise compute striking attack of M;
+	otherwise:
+		compute striking attack of M.
 
+[Tentacle monsters have a certain number of free tentacles. With a free tentacle, they can wrangle the player.]
+To compute grabbing attack of (M - a tentacle monster):
+	let R be a random number between 1 and 2;
+	if the arm-count of M >= 3, now R is 2;
+	if the leg-count of M >= 3, now R is 1;
+	if R is 1:[grab your arm]
+		if the accuracy roll of M >= the dexterity of the player:
+			say "[BigNameDesc of M] [if the arm-count of M > 1]uses another tentacle to pin your arms together and bind them securely. Escaping will be a lot harder now...[otherwise if the arm-count of M > 0]uses a tentacle to seize your other wrist![otherwise]uses a tentacle to grab and curl around one of your wrists![end if]";
+			decrease the free-tentacles of M by 1;
+			increase the arm-count of M by 1;
+			now M is wrangling arms;
+		otherwise:
+			say "[BigNameDesc of M] [if the arm-count of M > 1]forces your arms together and tries to bind you with another tentacle, but you're just quick enough to avoid it.[otherwise if the arm-count of M > 0]tries to grab your free wrist with another tentacle, but you don't let it grab you![otherwise]tries to grab your wrist with one of its tentacles, but you avoid it just in time![end if]";
+	otherwise:[grab your leg; We know there's a free arm, since the arm and leg counts are less than the number of free tentacles.]
+		if the accuracy roll of M >= the dexterity of the player:
+			say "[BigNameDesc of M] [if the leg-count of M > 1]uses another tentacle to force your legs together and bind them securely. Escaping will be a lot harder now...[otherwise if the leg-count of M > 0]uses a tentacle to seize your other ankle![otherwise]uses a tentacle to grab and curl around one of your ankles![end if]";
+			decrease the free-tentacles of M by 1;
+			increase the leg-count of M by 1;
+			now M is wrangling thighs;
+		otherwise:
+			say "[BigNameDesc of M] [if the leg-count of M > 1]uses another tentacle to force your legs together and tries binding you with another tentacle, but you're quick enough to avoid it.[otherwise if the leg-count of M > 0]tries grabbing your other ankle, but you dodge the tentacle![otherwise]tries to grab one of your ankles with its tentacles, but you avoid it![end if]".
 
 This is the player can't attack in wrist tentacles rule:
 	let M be a random live thing wrangling arms;
@@ -432,33 +443,21 @@ To decide which number is the strength roll of (T - a tentacle monster):
 	decide on the difficulty of T + (a random number between Y and X) + (a random number between Y and X).
 
 [When tentacle monsters have free tentacles, they will sometimes bash the player with all of them]
-This is the tentacle monster bashiness rule:
-	let M be current-monster;
-	let C be 5;
-	if M is smart-tentacle-monster, now C is 4;
-	if the player is upright and M is not penetrating a body part and the free-tentacles of M > 2 and a random number between 1 and C is 1:
-		let B be the painful-part of M;
-		if the accuracy roll of M >= the dexterity of the player:
-			say "[BigNameDesc of M] bashes you [TargetName of B] with its tentacles, causing you huge amounts of pain!";
-			let T be the free-tentacles of M / 3;
-			if T > 0, BodyRuin T;
-			compute M striking B;[applies bonus damage for bust and face]
-		otherwise:
-			say "You manage to narrowly dodge [NameDesc of M][']s bundled up tentacles as they come flying towards your [printed name of B].";
-		rule succeeds.
-The tentacle monster bashiness rule is listed in the tentacle priority attack rules.
+To compute bashing attack of (M - tentacle monster):
+	let B be the painful-part of M;
+	if the accuracy roll of M >= the dexterity of the player:
+		say "[BigNameDesc of M] bashes you [TargetName of B] with its tentacles, causing you huge amounts of pain!";
+		let T be the free-tentacles of M / 3;
+		if T > 0, BodyRuin T;
+		compute M striking B;[applies bonus damage for bust and face]
+	otherwise:
+		say "You manage to narrowly dodge [NameDesc of M][']s bundled up tentacles as they come flying towards your [printed name of B].".
 
-This is the tentacle monster gets fresh rule:
-	let M be current-monster;
-	let C be 5;
-	if M is smart-tentacle-monster, now C is 4;
-	if the player is upright and M is not penetrating a body part and the free-tentacles of M < the max-tentacles of M and the health of M > the maxhealth of M / 2 and a random number between 1 and C is 1:[When tentacle monsters are feeling healthy, they get kind of handsy/tentaclesy.]
-		if the accuracy roll of M >= the dexterity of the player:
-			compute seduction grope of M;
-		otherwise:
-			say "[BigNameDesc of M] tries to grope you with one of its tentacles, but you avoid it!";
-		rule succeeds.
-The tentacle monster gets fresh rule is listed in the tentacle priority attack rules.
+To compute molesting attack of (M - tentacle monster):
+	if the accuracy roll of M >= the dexterity of the player:
+		compute seduction grope of M;[see the Desirability extension]
+	otherwise:
+		say "[BigNameDesc of M] tries to grope you with one of its tentacles, but you avoid it!".
 
 To compute breasts grope of (M - a tentacle monster):
 	say "[BigNameDesc of M] [one of]roughly[or]lewdly[or]eagerly[in random order] [one of]curls around[or]molests[or]gropes[or]squeezes[in random order] your [ShortDesc of breasts] with a [if M is wet-tentacle-monster][semen]-drooling [end if]tentacle!";
@@ -959,19 +958,8 @@ To compute unique banishment of (M - a tentacle monster):
 		MagicPowerUp 3;
 	say "[one of][variable custom style]Wow! This is what happens when I defeat tentacle monsters?[roman type][line break][or][stopping]";
 	if the total magic power of the player >= a random number between 6 and 12:
-		if the class of the player is virgin warrior and virgin magical girl outfit is off-stage and the number of worn golden warrior priestess outfit is 0:
-			repeat with O running through worn breast covering clothing:
-				say "Your [O] vanishes!";
-				destroy O;
-			repeat with O running through worn dresses:
-				say "Your [O] vanishes!";
-				destroy O;
-			repeat with O running through worn skirts:
-				say "Your [O] vanishes!";
-				destroy O;
-			summon virgin magical girl outfit;
-			say "[bold type]Thin white fabric appears on your body, covering your chest and waist![roman type][line break]";
-			now warrior-summoned is 2;
+		if the class of the player is "virgin warrior" and virgin magical girl outfit is off-stage:
+			class summon virgin magical girl outfit;
 		otherwise if heart hairpin is off-stage:
 			if the class of the player is "schoolgirl" and the number of worn scrunchies is 1:
 				let S be a random worn scrunchie;

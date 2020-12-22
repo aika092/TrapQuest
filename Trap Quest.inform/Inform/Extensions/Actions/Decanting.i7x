@@ -103,15 +103,15 @@ Report decanting something with:
 				if waitress-dips is 2, say "You have a fleeting thought that if you carry this drink around with you for too long, people might think you're some kind of waitress.";
 				if waitress-dips is 3, say "Your ears perk up when you hear a voice behind you say[line break][first custom style]'That's a mighty fine tail.'[roman type][line break]You quickly turn around, but there's no one there. Curious...";
 		if the noun is cocktail-glass or (the noun is waitress vessel and waitress-dips > 3):
-			if black maid headdress is worn:
+			if black maid headdress is worn and the class of the player is "maid": [no cross-class yet]
 				transform black maid headdress into cafe maid headdress;
-				unless maid-waitress-outfit is worn or cafe-maid-outfit is worn, now maid-summoned is 0;
+				class summon cafe-maid-outfit; [will be blocked if a class-relevant outfit is already worn]
+				let M be a random worn overdress;
+				if cafe-maid-outfit is not held and M is a removable overdress, transform M into cafe-maid-outfit;
+				class summon cafe maid stockings;
 			otherwise if bunny waitress ears is off-stage and bunny waitress ears is actually summonable:
 				say "[bold type]Suddenly [ShortDesc of bunny waitress ears] appear on your head![line break][variable custom style][if the bimbo of the player < 10]What, are they trying to make me look like a bunny waitress?[otherwise]Haha, it's like I'm a bunny waitress![end if][roman type][line break]";
 				summon bunny waitress ears cursed;
-			otherwise if cafe maid headdress is worn:
-				let M be a random worn maid outfit;
-				if cafe-maid-outfit is not held and M is a thing, transform M into cafe-maid-outfit;
 	repeat with T running through all untriggered swing traps in the location of the player:
 		now focused-thing is T;
 		trigger T.

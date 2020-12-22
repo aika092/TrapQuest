@@ -20,7 +20,7 @@ To say BigFuckerDesc of (M - Icarus):
 	say "Icarus".
 
 Definition: Icarus is dungeon dwelling:
-	if diaper quest is 0, decide yes;
+	if diaper quest is 0 and christmas content is 0, decide yes;
 	decide no.
 
 Figure of Icarus 1 is the file "NPCs/MultiFloor/Icarus1.png".
@@ -61,12 +61,6 @@ To set up (M - Icarus):
 
 To decide which number is the girth of (M - Icarus):
 	decide on 3.
-
-[This is the spawn initial Icarus rule:
-	if christmas content is 0 and a random number between 1 and 5 > 2:
-		if debugmode > 1, say "Now summoning Icarus.";
-		if Icarus is off-stage, summon Icarus in the dungeon.
-The spawn initial Icarus rule is listed in the setting up dungeon monsters rules.]
 
 Definition: Icarus is human: decide yes.
 

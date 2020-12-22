@@ -1,6 +1,6 @@
 Avatar Headpiece by Headgear begins here.
 
-avatar-headpiece is a headgear. avatar-headpiece is metal. avatar-headpiece is purity. avatar-headpiece is redness-positive. avatar-headpiece is hair growing. avatar-headpiece is womanly. Understand "tiara", "gold", "golden", "headdress", "horns", "hood" as avatar-headpiece.
+avatar-headpiece is a headgear. avatar-headpiece is metal. avatar-headpiece is purity. avatar-headpiece is redness-positive. avatar-headpiece is hair growing. avatar-headpiece is womanly. avatar-headpiece has a number called charge. Understand "tiara", "gold", "golden", "headdress", "horns", "hood" as avatar-headpiece.
 
 The printed name of avatar-headpiece is usually "[clothing-title-before]avatar headpiece[clothing-title-after]". The text-shortcut of avatar-headpiece is "avh".
 
@@ -27,36 +27,41 @@ Definition: avatar-headpiece is removable:
 avatar-headpiece has a number called blackfire.
 
 
-
 Chapter - Class Outfit
 
 [1 - slap bonus, 2 - knee and kick bonus, 3 - better slap bonus, 4 - better everything bonus]
 To compute class outfit of (H - avatar-headpiece):
-	if the humiliation of the player > HUMILIATION-PROUD and the blackfire of H is 0:
-		say "You feel a weak pressure in your chest as your master's presence shifts around inside you. Something, somewhere seems to click, and a wave of pleasure passes through your body as two ominous clouds of burning motes appear around your hands.  You hear the voice of your master inside your head.[line break][first custom style]'Did that feel good, [NameBimbo]? Now that your vessel has begun to adapt, my power is starting to manifest. You and I will only grow more powerful from here.'[roman type][line break]";
-		Arouse 500;
-		now the blackfire of H is 1;
-	otherwise if the humiliation of the player > HUMILIATION-MODEST and the blackfire of H is 1:
-		say "You feel a moderate pressure in your chest as your master's presence shifts around inside you. Something, somewhere seems to click, and waves of pleasure pass through you as the cloud of burning motes expands, encompassing your whole body! Your master's voice booms inside your head.[line break][first custom style]'That is the pleasure of power, [NameBimbo]. The stronger I become the better you will feel!'[roman type][line break]";
-		Arouse 750;
-		now the blackfire of H is 2;
-	otherwise if the humiliation of the player > HUMILIATION-DISGRACED and the blackfire of H is 2:
-		say "You feel a strong, almost rhythmic pressure in your chest as your master's presence shifts around inside you. Something, somewhere seems to click, and you can't help but gasp as waves of pleasure suddenly radiate out from your core. You hear your master's voice booming inside your head as the motes around your hands seem to grow even hotter.[line break][first custom style]'Enjoy yourself, [NameBimbo]. My power is almost fully manifest. Soon, [NameBimbo]... soon.'[roman type][line break]";
-		Arouse 1000;
-		now the blackfire of H is 3;
-	otherwise if the humiliation of the player > HUMILIATION-BROKEN and the blackfire of H is 3:
-		say "You feel a strong, strangely rhythmic pressure in your chest, and your knees nearly buckle as something inside you finally shifts. Your master's voice booms in your head as the cloud of motes around you grows even stronger.[line break][first custom style]'Even I felt that one. Your vessel has completely adapted, [NameBimbo], and my full power is manifest. [if the humiliation of the player > HUMILIATION-BROKEN]Of course, you probably aren't in any state to care...'[otherwise]Of course, I still haven't entered you fully. That will come soon enough...'[end if][roman type][line break]";
-		Arouse 1500;
-		now the blackfire of H is 4;
-	otherwise:
-		say "You feel a tiny pressure in your chest as your master's presence shifts around inside you.";
-		ModerateHumiliate;
+	class summon avatar-silks.
 
-avatar-summoned is a number that varies.
+To compute unique periodic effect of (H - avatar-headpiece):
+	increase the charge of H by 1;
+	if the charge of H >= a random number between 30 and 55:
+		now the charge of H is 0;
+		if the humiliation of the player > HUMILIATION-PROUD and the blackfire of H is 0:
+			say "You feel a weak pressure in your chest as your master's presence shifts around inside you. Something, somewhere seems to click, and a wave of pleasure passes through your body as two ominous clouds of burning motes appear around your hands.  You hear the voice of your master inside your head.[line break][first custom style]'Did that feel good, [NameBimbo]? Now that your vessel has begun to adapt, my power is starting to manifest. You and I will only grow more powerful from here.'[roman type][line break]";
+			Arouse 500;
+			now the blackfire of H is 1;
+		otherwise if the humiliation of the player > HUMILIATION-MODEST and the blackfire of H is 1:
+			say "You feel a moderate pressure in your chest as your master's presence shifts around inside you. Something, somewhere seems to click, and waves of pleasure pass through you as the cloud of burning motes expands, encompassing your whole body! Your master's voice booms inside your head.[line break][first custom style]'That is the pleasure of power, [NameBimbo]. The stronger I become the better you will feel!'[roman type][line break]";
+			Arouse 750;
+			now the blackfire of H is 2;
+		otherwise if the humiliation of the player > HUMILIATION-DISGRACED and the blackfire of H is 2:
+			say "You feel a strong, almost rhythmic pressure in your chest as your master's presence shifts around inside you. Something, somewhere seems to click, and you can't help but gasp as waves of pleasure suddenly radiate out from your core. You hear your master's voice booming inside your head as the motes around your hands seem to grow even hotter.[line break][first custom style]'Enjoy yourself, [NameBimbo]. My power is almost fully manifest. Soon, [NameBimbo]... soon.'[roman type][line break]";
+			Arouse 1000;
+			now the blackfire of H is 3;
+		otherwise if the humiliation of the player > HUMILIATION-BROKEN and the blackfire of H is 3:
+			say "You feel a strong, strangely rhythmic pressure in your chest, and your knees nearly buckle as something inside you finally shifts. Your master's voice booms in your head as the cloud of motes around you grows even stronger.[line break][first custom style]'Even I felt that one. Your vessel has completely adapted, [NameBimbo], and my full power is manifest. [if the humiliation of the player > HUMILIATION-BROKEN]Of course, you probably aren't in any state to care...'[otherwise]Of course, I still haven't entered you fully. That will come soon enough...'[end if][roman type][line break]";
+			Arouse 1500;
+			now the blackfire of H is 4;
+		otherwise:
+			say "You feel a tiny pressure in your chest as your master's presence shifts around inside you.";
+			ModerateHumiliate.
+
+avatar-summoned is initially false.
 To compute unique recycling of (C - avatar-headpiece):
-	now avatar-summoned is 0.
+	now avatar-summoned is false.
 To compute predicament resolution of (C - avatar-headpiece):
-	now avatar-summoned is 0.
+	now avatar-summoned is false.
 
 soul-harvest-quest is a headgear-clothing-quest.
 To uniquely set up (C - avatar-headpiece):
@@ -71,7 +76,7 @@ To say QuestTitle of (Q - soul-harvest-quest):
 soul-harvest-quest has a number called soul-counter.
 soul-harvest-quest has a number called completion-count.
 
-To progress quest of (Q - a soul-harvest-quest):
+To progress quest of (Q - soul-harvest-quest):
 	repeat with C running through worn clothing:
 		if the quest of C is Q:
 			increase the soul-counter of Q by 1;
@@ -81,28 +86,27 @@ To progress quest of (Q - a soul-harvest-quest):
 				compute quest completion of Q on C;
 			otherwise:
 				say QuestProgressFlav of Q on C.
-				
 
-To compute persistent reward of (Q - a soul-harvest-quest) on (C - a clothing):
+To compute persistent reward of (Q - soul-harvest-quest) on (C - a clothing):
 	increase the completion-count of Q by 1;
 	if the completion-count of Q is 1:
 		compute generic first time class reward of Q on C;
 	otherwise:
 		compute generic class reward of Q on C.
 
-To say QuestProgressFlav of (Q - a soul-harvest-quest) on (C - a clothing):
+To say QuestProgressFlav of (Q - soul-harvest-quest) on (C - a clothing):
 	let S be the soul-counter of Q;
 	let T be the completion-count of Q;
 	while completion-count of Q > 5 and S + 6 < T:[Once we reach 6 completions, loop]
 		decrease T by 6;
 	let N be T - S + 1;
-	if N < 0, now N is 1;[This generally shouldn't happen, but just in case.]
+	if N < 1, now N is 1;[This generally shouldn't happen, but just in case.]
 	say "[line break][first custom style]'[one of]That isn't enough, [NameBimbo][or]You could have done that hours ago. Stop wasting time, [NameBimbo][or]They were barely resisting! You don't deserve anything yet[or]I want more, [NameBimbo][in random order]. Find me [N] more [if N is 1]soul[otherwise]souls[end if].'[roman type][line break]The voice of your master reveberates as the newly released soul is sucked into your [ShortDesc of C].";
 
-To say QuestPersistFlav of (Q - a soul-harvest-quest) on (C - a clothing):
+To say QuestPersistFlav of (Q - soul-harvest-quest) on (C - a clothing):
 	say "The voice of your master sounds off in your head[if C is cursed] as the magic sealing your [MediumDesc of C] is lifted[otherwise if C is bland and Q is soul-harvest-quest] as a blessing is laid upon your [MediumDesc of C][end if]! ".
 
-To compute generic first time class reward of (Q - a soul-harvest-quest) on (C - a clothing):
+To compute generic first time class reward of (Q - soul-harvest-quest) on (C - a clothing):
 	let D be a random off-stage ring;
 	if D is ring:
 		now D is pink diamond;
@@ -118,7 +122,7 @@ To compute generic first time class reward of (Q - a soul-harvest-quest) on (C -
 		now the fatigue of the player is 0;
 		MagicPowerUp 1.[same as the reward for succubus taking a soul, minus int]
 
-To compute generic class reward of (Q - a soul-harvest-quest) on (C - a clothing):
+To compute generic class reward of (Q - soul-harvest-quest) on (C - a clothing):
 	say "[line break][first custom style]'[one of]Ok, [NameBimbo]. I suppose you deserve something nice.'[or]Good girl, [NameBimbo]. Keep working hard, and you'll get more gifts like this.'[or]I suppose I'm satisfied. Now be a good girl and accept this reward, [NameBimbo].'[in random order][roman type][line break]";
 	let D be a random off-stage ring;
 	if D is ring and the completion-count of Q < 2:[its a second time class reward, essentially]
@@ -141,6 +145,7 @@ To compute virginity-loss of (C - avatar-headpiece):
 	now C is cursed;
 	now the quest of C is demon-slut-quest;
 	transform C into gold-tiara;
+	follow the player class rules;
 	compute class outfit of gold-tiara.
 
 Avatar Headpiece ends here.

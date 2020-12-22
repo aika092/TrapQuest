@@ -11,7 +11,7 @@ To compute SelfExamineDesc of (A - an ankle bond):
 To say ShortDesc of (A - an ankle bond):
 	say "ankle bondage".
 
-A pair of anklecuffs is a kind of ankle bond. The printed name of pair of anklecuffs is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of anklecuffs[clothing-title-after]". The text-shortcut of pair of anklecuffs is "ac". The printed plural name of pair of anklecuffs is "pairs of anklecuffs". There is 1 pair of anklecuffs.
+A pair of anklecuffs is a kind of ankle bond. The printed name of pair of anklecuffs is "[clothing-title-before]pair of anklecuffs[clothing-title-after]". The text-shortcut of pair of anklecuffs is "ac". The printed plural name of pair of anklecuffs is "pairs of anklecuffs". There is 1 pair of anklecuffs.
 
 Definition: a pair of anklecuffs is grey themed: decide yes.
 

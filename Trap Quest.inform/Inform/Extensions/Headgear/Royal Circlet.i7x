@@ -39,7 +39,6 @@ To decide which number is the dexterity-influence of (H - royal circlet):
 	decide on 0.
 
 Definition: royal circlet is condom pinnable: decide yes.
-
 Definition: royal circlet is royalty themed: decide yes.
 Definition: royal circlet is grey themed: decide yes.
 Definition: royal circlet is gem themed: decide yes.
@@ -49,28 +48,16 @@ Report examining worn clothing:
 
 Chapter - Class Outfit
 
-Definition: royal circlet (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
-	if wearing-target is milking basque, decide yes;
-	decide no.
-
-basque-summoned is a number that varies.
-To compute unique recycling of (C - royal circlet):
-	now basque-summoned is 0.
-
 To compute class outfit of (H - royal circlet):
-	let B be a random off-stage white milking basque;
-	if B is actually summonable or (B is basque and basque-summoned is 0 and the number of worn milking basque is 0 and the number of worn milking harness is 0):
-		PinkWardrobeUnclash B;
-		say "[bold type]Your [ShortDesc of H] [bold type]shines brightly, and a tight white basque materialises around you.[roman type][line break]";
-		summon B;
-		now basque-summoned is 1;
-		now the raw-magic-modifier of B is (the milk volume of breasts + a random number between -2 and 6) / 5;
-	otherwise if there is a worn crotch-ripped milking basque and the number of embodied things penetrating a fuckhole is 0:
-		now B is a random worn milking basque;
-		say "Your [ShortDesc of H] shines brightly, and your [ShortDesc of B] magically repairs itself.[line break]";
+	class summon white-milking-basque.
+
+To compute periodic effect of (H - royal circlet):
+	let B be a random worn crotch-ripped milking basque;
+	if B is clothing and the number of embodied things penetrating a fuckhole is 0:
+		say "Your [ShortDesc of H] shines brightly, and your [ShortDesc of B] magically repairs itself.";
 		repair B;
-	otherwise if there is a worn milking basque and the lactation rate of the player < 5:
-		say "[bold type]Your [BreastDesc] feel more active...[roman type][line break]";
+	otherwise if there is a worn milking basque and the lactation rate of the player < a random number between -50 and 5:
+		say "[bold type]Your [ShortDesc of H] feels warm, and moments later your [BreastDesc] feel more active...[roman type][line break]";
 		increase the lactation rate of the player by 1.
 
 Chapter - Quest
@@ -81,7 +68,7 @@ To uniquely set up (C - royal circlet):
 	now the quest of C is milk-serve-quest.
 
 To say QuestFlav of (Q - milk-serve-quest):
-	say "You sense that it wants you to serve milk that's been brewed in your belly to others.".
+	say "You sense that it wants you to serve milk to others.".
 
 To say QuestTitle of (Q - milk-serve-quest):
 	say " (milk serving quest)".

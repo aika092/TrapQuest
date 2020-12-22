@@ -304,7 +304,9 @@ To VaginalSexAddictUp (X - a number):
 	let S be the calculated vaginal sex addiction of the player;
 	SilentlyVaginalSexAddictUp X;
 	now S is the calculated vaginal sex addiction of the player - S;
-	if S > 0 and (the player is possessing a vagina or TG fetish > 0), say "You feel [if S > 2]much [otherwise if S is 2]significantly [end if]more [if the vaginal sex addiction of the player > 6]desperate for[otherwise]interested in[end if] [if the player is possessing a vagina]vaginal sex[otherwise]being transformed into a woman[end if].".
+	if S > 0 and (the player is possessing a vagina or TG fetish > 0):
+		say "You feel [if S > 2]much [otherwise if S is 2]significantly [end if]more [if the vaginal sex addiction of the player > 6]desperate for[otherwise]interested in[end if] [if the player is possessing a vagina]vaginal sex[otherwise]being transformed into a woman[end if].";
+		if the calculated vaginal sex addiction of the player >= 7 or the raw vaginal sex addiction of the player >= 10, progress quest of vaginal-addict-quest.
 
 To SilentlyVaginalSexAddictUp (X - a number):
 	while X > 0:

@@ -168,7 +168,7 @@ To compute perception of (M - a wrestler):
 		say "[speech style of M]'Heh, you're trying to look scary but you don't have me fooled for a minute!'[roman type][line break]";
 		alwayscutshow figure of wrestler interact 10 for M;
 		anger M;
-	otherwise if M is unfriendly or the class of the player is royal slave or the class of the player is the latex fetish model or the class of the player is maid or the player is a sissy:
+	otherwise if M is unfriendly or the class of the player is royal slave or the class of the player is latex fetish model or the class of the player is maid or the player is a sissy:
 		if the player is flying:
 			say "[speech style of M]'What are you doing up there, you crazy bitch?!'[roman type][line break]";
 			alwayscutshow figure of wrestler interact 8 for M;
@@ -339,7 +339,7 @@ This is the wrestler feeds you to master rule:
 	let M be current-monster;
 	let N be a random alive dominatrix;
 	if N is not monster and the times-met of M <= 1, now N is a random alive matron; [We don't want to do this if the wrestler has already dragged the player to the dominatrix earlier in the game] [The test is <= 1 because times-met gets set to 1 as soon as the wrestler first perceives the player. This action will come directly after that, hence a times-met of 1 means this is their first interaction, and anything higher than that means it's a future interaction.]
-	if N is monster and the times-met of N is 0 and the times-met of M < 2:
+	if N is monster and the times-met of N is 0 and the times-met of M < 2 and the number of barriers in the location of the player is 0:
 		let Q be Hotel22;
 		if N is dominatrix, now Q is Hotel37;
 		if Q is not the location of M:
@@ -988,20 +988,21 @@ To compute failed dominance punishment of (M - a wrestler):
 			passively stimulate penis times 3;
 			Satisfy M;
 		otherwise:
-			if M is presenting as male, say "[big he of M] unzips [his of M] catsuit, revealing bright purple chastity cage.[line break][speech style of M]'Normally, this is where I'd fuck you... But I'm locked up for life!'[roman type][line break][big he of M] straddles your [if P is clothing][ShortDesc of P][otherwise][vagina][end if]and begins to grind against you. It feels good, but [if P is clothing]you can barely feel it through the [clothing-material of P][otherwise][big he of M] moves too slowly for you to get very much of anything out of it[end if] [big he of M] puts you through several minutes of slow torture, somehow bringing [himself of M] to orgasm after orgasm. You have no choice but to lie there and endure it until [he of M] finally gets up, leaving you achingly aroused and completely soaked in [his of M] slippery precum.";
+			if M is presenting as male, say "[big he of M] unzips [his of M] catsuit, revealing bright purple chastity cage.[line break][speech style of M]'Normally, this is where I'd fuck you... But I'm locked up for life!'[roman type][line break][big he of M] straddles your [if P is clothing][ShortDesc of P][otherwise][vagina][end if]and begins to grind against you. It feels good, but [if P is clothing]you can barely feel it through the [clothing-material of P][otherwise][big he of M] moves too slowly for you to get very much of anything out of it[end if] [big he of M] puts you through several minutes of slow torture, somehow bringing [himself of M] to orgasm after orgasm. You have no choice but to lie there and endure it until [he of M] finally gets up, leaving you achingly aroused and completely soaked in [his of M] juices.";
 			otherwise say "[big he of M] unzips [his of M] catsuit, revealing [his of M] wet, rosy vagina.[line break][speech style of M]'I was really hoping you'd win... Looks like I'm going to have to punish you.'[roman type][line break][big he of M] straddles your [if P is clothing][ShortDesc of P][otherwise][vagina][end if] with [his of M] bare sex and begins to grind against you. It feels good, but [if P is clothing]you can barely feel it through the [clothing-material of P][otherwise][big he of M] moves too slowly for you to get very much of anything out of it[end if] [big he of M] puts you through several minutes of slow torture, somehow bringing [himself of M] to orgasm after orgasm. You have no choice but to lie there and endure it until [he of M] finally gets up, leaving you achingly aroused and completely soaked in [his of M] feminine juices.";
 			passively stimulate vagina from M times 3;
 			Satisfy M;
 		now the excitement of M is 0;
+		say GotUnluckyFlav;
 	otherwise if the player is getting unlucky:
 		let B be a random off-stage actually summonable bondage;
 		if B is clothing:
-			say "[line break][speech style of M]'You're into bondage, right? I bet you'll like this, then!'[roman type][line break][big he of M] pulls out a [ShortDesc of B] and locks it into place.";
+			say "[line break][speech style of M]'You're into bondage, right? I bet you'll like this, then!'[roman type][line break][big he of M] pulls out a [ShortDesc of B] and locks it into place. [GotUnluckyFlav]";
 			summon B cursed;
 			now B is locked;
 			Satisfy M;
 		otherwise:[she just fucks you]
-			say "[speech style of M]'Hehe, this will be fun!'[roman type][line break]";
+			say "[speech style of M]'Hehe, this will be fun!'[roman type][line break][GotUnluckyFlav]";
 			now another-turn-flavour is the substituted form of "[BigFuckerDesc of M] holds you in place.";
 			now another-turn is 1;
 	otherwise:

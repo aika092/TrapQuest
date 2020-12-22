@@ -331,9 +331,8 @@ This is the buttskill list rule:
 The buttskill list rule is listed in the skill listing rules.
 
 This is the buttskill learn rule:
-	if the player is the donator:
-		if the buttskill of the player is 0, say "You now know how to masturbate anally.";
-		now the buttskill of the player is 1.
+	if the buttskill of the player is 0, say "You now know how to masturbate anally.";
+	now the buttskill of the player is 1.
 The buttskill learn rule is listed in the skill cheating rules.
 
 Part 17 - Domination Skill

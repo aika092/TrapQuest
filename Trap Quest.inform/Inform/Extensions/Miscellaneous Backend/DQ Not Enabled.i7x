@@ -85,6 +85,7 @@ A stuffie is a kind of equippable. A stuffie is unique.
 Include School Stuff by TQ Only Stuff.
 Include Serving Table by Bondage.
 Include Bunny Ears TQ by Headgear.
+Include Bridal Veils by Headgear.
 
 Include Dildo Pole Trap by Traps.
 Include Bukkake Traps by Traps.

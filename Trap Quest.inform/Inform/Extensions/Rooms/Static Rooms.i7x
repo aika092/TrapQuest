@@ -48,13 +48,6 @@ Put stuff here that's in stasis, maybe it's held by an NPC or something
 *!]
 Holding Pen is a room.
 
-[!<standardItemPen:Room>*
-
-Anything in here will be able to appear in the next christmas gift
-
-*!]
-Christmas Item Pen is a room.
-
 soon-to-imprint is a room.
 
 [!<linkedRoom:Room>*

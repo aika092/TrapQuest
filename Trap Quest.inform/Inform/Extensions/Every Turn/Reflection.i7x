@@ -71,6 +71,14 @@ To reflect on (A - huge-tits):
 	otherwise:
 		say "[if the bimbo of the player < 9]You hold your [MediumDesc of breasts] and [one of]shudder as you wonder how much bigger they are going to grow[or]feel their weight. You are not used to this[or]pray that they don't continue to grow[or]hope desperately that nobody can see you like this[in random order][otherwise]You feel your [MediumDesc of breasts] and giggle awkwardly as you [one of]wonder how much bigger they are going to grow[or]absent-mindedly play with your nipples[or]catch yourself absent-mindedly touching yourself[or]imagine how stupidly big they might end up at this rate[in random order][end if].".
 
+To say FriendReaction of (M - a real-life patron) to (A - huge-tits):[TODO: maybe account for super huge boobs]
+	if the class of the player is succubus:
+		say GenericSituationReaction of M;
+	otherwise if the player is originally male:
+		say "Your chest looks really different, but those [BreastDesc] go well with your [AssDesc].[if the player is not possessing a penis] But dude, why does your front look so flat? [otherwise if size of the penis < 6] And did you make them shrink your dick, too? That's sick! [otherwise if size of the penis > 8] And have you stuffed your crotch, or are you playing this game so you can pretend your dick is bigger? [end if]";
+	otherwise:
+		say "Your chest looks different, but [if M is nemesis-friend]those [BreastDesc] fit you a lot better than those tiny bee-stings you used to have. [otherwise]those [BreastDesc] might suit you better. [end if]";
+
 huge-hips is a humiliating situation.
 Definition: huge-hips (called A) is applicable:
 	if diaper quest is 1, decide no;
@@ -97,6 +105,12 @@ To reflect on (A - huge-belly):
 		say "[if the player is male]You look down at your [BellyDesc] and [one of]realise how fucked up your situation really is[or]wonder if this is what it feels like to be pregnant[or]feel a shiver of shame go down your spine[in random order].[otherwise if the largeness of belly > 4]You put a hand on your [BellyDesc].[line break][variable custom style][one of]I can definitely feel kicking.[or]I just can't believe I got myself knocked up so quickly.[or]I don't want to give birth...[in random order][roman type][line break][otherwise]You put a hand on your [BellyDesc].[line break][first custom style][one of]Was that just me or did I just feel kicking??[or]Can I get pregnant in this game??[or]Please don't tell me this means what I think it means...[in random order][roman type][line break][end if]";
 	otherwise:
 		say "[if the player is male]You look down at your [BellyDesc] and [one of]realise how ridiculous your situation really is[or]are suddenly very thankful that you can't get pregnant[or]quiver as you think about how large it might be able to grow to in this game[in random order].[otherwise]You put a hand on your [BellyDesc].[line break][first custom style][one of]So this is what it's like to feel pregnant? How humiliating...[or]Please don't grow any more...[or]I mustn't let anything else cum inside me![in random order][roman type][line break][end if]".
+
+To say FriendReaction of (M - a real-life patron) to (A - huge-belly):
+	if the pregnancy of the player is 1:
+		say "... [one of]you really let some stranger get you pregnant, huh? [or]I don't know a lot about this game, but I'm pretty sure there are condoms. [or]Do you even know who the father is? [in random order]";
+	otherwise:
+		say GenericSituationReaction of M.
 
 crawling-around is a humiliating situation.
 Definition: crawling-around (called A) is applicable:
@@ -175,6 +189,14 @@ To reflect on (A - chubby-slut):
 	otherwise if the fat-weight of the player > 8:
 		say "[variable custom style][one of]Oh dear, I'm getting a bit unfit, aren't I?[or]Oh dear, I feel like I'm getting a bit chubby![in random order][roman type][line break]".
 
+To say FriendReaction of (M - a real-life patron) to (A - chubby-slut):
+	if the fat-weight of the player > 22:
+		say "[one of]You look like a pig. [or]Sorry, but you look awful. Try losing some weight. [or]Do you care about your body at ALL? You're so fat. [in random order]";
+	otherwise if the fat-weight of the player > 14:
+		say "[one of]You look fat. [or]You've really put on a few pounds... [or]You've really gained weight... [in random order]";
+	otherwise if the fat-weight of the player > 8:
+		say "... Have you gained weight? ".
+
 crotch-on-show is a humiliating situation.
 Definition: crotch-on-show (called A) is applicable:
 	if the player is modest and the bimbo of the player < 6 and the player is not crotch covered, decide yes;
@@ -188,7 +210,7 @@ Definition: outrageous-dry-diaper (called A) is applicable:
 	decide no.
 To reflect on (A - outrageous-dry-diaper):
 	if there is a worn cursed diaper or change-self tattoo is worn, say "[first custom style][one of]I'm in a diaper, and I can't even take it off... I've got to prioritise finding a way to get rid of this curse before... before...[or]A magic curse is making it impossible for me to pull this infernal diaper away from my skin! Even just saying that in my head sounds crazy! This can't really be happening, can it?![or]This is just unacceptable... I've got to find a way to take this diaper off and fast! Not only is it super humiliating but I am not going to be able to hold my bladder for forever...[in random order][roman type][line break]";
-	otherwise say "[first custom style][one of]Am I really wearing a diaper? Me, a fully grown [man of the player], wearing an incontinence aid meant for babies?! No, this can't be happening...[or]Are they watching me? Do they know I'm wearing a diaper in their fucked up game? I bet they do, the bastards...[or]If anyone in the real world know what I was wearing over my crotch down here... I think I'd just die of embarrassment.[in random order][roman type][line break]".
+	otherwise say "[first custom style][one of]Am I really wearing a diaper? Me, a fully grown [if the player is gendered female]wo[end if]man, wearing an incontinence aid meant for babies?! No, this can't be happening...[or]Are they watching me? Do they know I'm wearing a diaper in their fucked up game? I bet they do, the bastards...[or]If anyone in the real world know what I was wearing over my crotch down here... I think I'd just die of embarrassment.[in random order][roman type][line break]".
 
 outrageous-wet-diaper is a humiliating situation.
 Definition: outrageous-wet-diaper (called A) is applicable:
@@ -214,12 +236,19 @@ To reflect on (A - glazed-body):
 	let F be a random glazed body part;
 	say "[variable custom style]'[one of]I can't believe I'm walking around with [semen] all over my [if the number of glazed body parts is 1][printed name of F][otherwise]body[end if]! I'm such a disgrace....'[or]There's [semen] actually [if the number of glazed body parts is 1]on my [printed name of F][otherwise]all over my body[end if]...This is so disgusting!'[or]There's no way there's really [semen] all over my [if the number of glazed body parts is 1][printed name of F][otherwise]body[end if]There's no way. There's no fucking way...'[in random order][roman type]".
 
+To say FriendReaction of (M - a real-life patron) to (A - glazed-body):
+	let F be a random glazed body part;
+	say "... [one of]Is that cum on your [printed name of F]? [or]You're seriously walking around with cum on your [printed name of F]? [in random order]".
+
 visible-erection is a humiliating situation.
 Definition: visible-erection is applicable:
 	if the size of penis > 2 and penis is exposed and penis is penis-erect and the player is modest, decide yes;
 	decide no.
 To reflect on (A - visible-erection):
 	say "[variable custom style]'[one of]Everyone can see my boner...This is so embarrassing.'[or]I can't believe I have a boner. Someone's going to think I'm actually enjoying this...'[in random order][roman type]".
+
+To say FriendReaction of (M - a real-life patron) to (A - visible-erection):[BIG TODO]
+	say "... [one of]So you ARE enjoying this. [or]Oh, so this IS exciting for you. [in random order]".
 
 [!<SayHumiliationFlav>+
 

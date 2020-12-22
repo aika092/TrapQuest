@@ -6,10 +6,16 @@ A time based rule (this is the clothing drying rule):
 
 An all time based rule (this is the compute clothing rule):
 	repeat with C running through worn wearthing:
-		if C is clothing and the stolen-strength of C > 0:
-			say "You feel your stolen strength returning to you from [NameDesc of C].";
-			StrengthUp the stolen-strength of C;
-			now the stolen-strength of C is 0;
+		if C is clothing:
+			if the stolen-strength of C > 0:
+				say "You feel your stolen strength returning to you from [NameDesc of C].";
+				StrengthUp the stolen-strength of C;
+				now the stolen-strength of C is 0;
+			if C is exposure and C is cursed:
+				let X be the coverer of C;
+				if X is removable clothing:
+					say "[bold type]You feel your [C][bold type] fire cursed energy into your [X][bold type], destroying it!";
+					destroy X;
 		if playerRegion is school, compute school periodic effect of C;
 		otherwise compute periodic effect of C.
 

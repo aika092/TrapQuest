@@ -39,12 +39,63 @@ To say MediumDesc of (M - unsettling ghost):
 
 To say MonsterDesc of (M - a ghost):
 	if diaper quest is 1:
-		say "[if M is ghostly tentacle]This blue glowing ghost takes on a human female form, dressed in a right black gown which completely fails to cover [his of M] very thick white diaper. Beneath a black veil is a friendly and playful but also somewhat sinister face.[otherwise]This orange lifeform appears to be a sentient ghost, in the shape of a large, thick diaper cover, with a face etched into it like something out of a Disney movie! [end if][if M is jismbodied ghost]A small cloud of baby powder with its own cute little face floats alongside it.[end if]";
+		say "This orange lifeform appears to be a sentient ghost, in the shape of a large, thick diaper cover, with a face etched into it like something out of a Disney movie! [if the wind-up of M is 1]Although normally intangbile, it has temporarily shifted into the corporeal world, glowing brighter and brighter by the second. Its clearly about to unleash a powerful attack![otherwise if M is phased]Its body doesn't fully exist in the corporeal world, preventing you from interacting with it through normal means.[otherwise]Its body has temporarily shifted into the corporeal world.[end if]";
 	otherwise:
-		say "[if M is jismbodied ghost]This floating, faintly glowing penis is composed entirely of semi-solid silver slime. Even for an evil spectre, the size of it is unreal...[otherwise if M is ghostly tentacle]This transparent purple tentacle is hanging from the ceiling, drooling some brightly coloured grey fluid.[otherwise]This silvery-blue glowing ghost takes on a human female form. Its [']body['] is slightly transparent, and it casts a dim glow over the surrounding walls and furniture. It's obvious it wants to fuck you.[end if]".
+		let U be 0;
+		if M is unfriendly or M is penetrating a body part, now U is 1;
+		say "This silvery-blue glowing ghost takes on a human [if lady fetish is 2]male[otherwise]female[end if] form. [big his of M] [']body['] is slightly transparent, and it casts a dim glow over the surrounding walls and furniture. [if the wind-up of M is 1 and bukkake fetish is 1]While normally intangible, [his of M] body is currently shifted into the corporeal world, along with a rock-hard [DickDesc of M] with bulging veins and slimy grey 'drool' leaking from its tip. It's clearly about to violently explode![otherwise if the wind-up of M is 1]While normally intangible, [his of M] body is currently shifted into the corporeal world, glowing brighter and brighter by the second. Its clearly about to unleash a powerful attack![otherwise if U is 1 and M is phased][big he of M] doesn't fully exist in the corporeal world, but from the [LongDickDesc of M] sticking out from [his of M] crotch, that isn't going to stop [him of M] from having [his of M] way with you![otherwise if U is 1][big his of M] body has temporarily shifted into the corporeal world, which only makes the [LongDickDesc of M] stick out of [his of M] crotch seem more substantial![otherwise if M is phased][big he of M] doesn't fully exist in the corporeal world, preventing you from interacting with it through normal means. Still, its obvious [he of M] wants to fuck you.[otherwise][big he of M] has temporarily shifted into the corporeal world, making [him of M] vulnerable to normal attacks. [big he of M] probably wants to fuck you.[end if]".
+
+To say MonsterDesc of (M - ghostly tentacle):
+	if diaper quest is 1, say "This blue glowing ghost takes on a human [if lady fetish is 2]male[otherwise]female[end if] form, dressed in a right black gown which completely fails to cover [his of M] very thick white diaper. Beneath a black veil is a friendly and playful but also somewhat sinister face. [if M is phased][big he of M] doesn't fully exist in the corporeal world, preventing you from interacting with it through normal means.[otherwise][big he of M] has temporarily shifted into the corporeal world, making [him of M] vulnerable to normal attacks.[end if]";
+	otherwise say "This transparent purple tentacle is hanging from the ceiling, drooling some brightly coloured grey fluid. [if M is wrangling a body part]It has temporarily shifted into the corporeal world and wrapped itself around your wrist![otherwise if M is phased]Its body doesn't fully exist in the corporeal world, preventing you from interacting with it through normal means.[otherwise]Its body has temporarily shifted into the corporeal world.[end if]".
+
+To say MonsterDesc of (M - jismbodied ghost):
+	if diaper quest is 1, say "This orange lifeform appears to be a sentient ghost, in the shape of a large, thick diaper cover, with a face etched into it like something out of a Disney movie! A small cloud of baby powder with its own cute little face floats alongside it. [run paragraph on]";
+	otherwise say "This floating, faintly glowing penis is composed entirely of semi-solid silver slime. Even for an evil spectre, the size of it is unreal. [run paragraph on]";
+	say "[if diaper quest is 1 and the wind-up of M is 1]Although normally intangible, it has temporarily shifted into the corporeal world, glowing brighter and brighter by the second. Its clearly about to unleash a powerful attack![otherwise if the wind-up of M is 1]Although normally transparent, it has temporarily shifted into the corporeal world, its eerie glow growing stronger by the second. Its clearly about to explode, and violently![otherwise if M is phased]Its body doesn't fully exist in the corporeal world, preventing you from interacting with it through normal means.[otherwise]Its body has temporarily shifted into the corporeal world, making it vulnerable to normal attacks.[end if]".
+
+To say MonsterComment of (M - a ghost):
+	if diaper quest is 1:
+		do nothing;
+	if M is penetrating a body part:
+		say "[variable custom style][one of]So cold![or]Chilly![or]I-its frigid![in random order]";
+	otherwise if the bimbo of the player < 7:
+		if the player is gendered male, say "[first custom style][one of][if the times-submitted of M > 0]I knew there had to be something fucking weird about these ghosts.[otherwise]Nice! Its a sexy ghost chick![end if][or][if M is phased]I can't touch it, so how am I supposed to fuck it?[otherwise]This is my chance to touch some spooky tits![end if][or]Its kind of freaky.[in random order]";
+		otherwise say "[first custom style][one of]Its creepy, but for the wrong reasons.[or][if M is phased]I'll have to think outside the box if I want to fight it.[otherwise]This is my chance to damage it![end if][or]Even the ghosts have impossible proportions in this game. How stupid.[in random order]";
+	otherwise if the bimbo of the player < 12:
+		say "[variable custom style][one of]I can't see [him of M] clearly, but what I can see is actually really hot...[or][if M is phased]I can't fight [him of M] normally, so I probably shouldn't try, right?[otherwise]I can touch it now, which just makes me more curious.[end if][or]Ghosts are normally creepy, but this one is just sexy.[in random order]";
+	otherwise:
+		say "[second custom style][one of]If [he of M]'s a ghost, [he of M]'s probably single.[or][if M is phased]If I let [him of M] fuck me... how would it feel? Would I feel anything?[otherwise]I guess I don't need to worry about how [he of M]'ll fuck me![end if][or]It's spooky, but in a really sexy way.[in random order]";
+	say "[roman type][line break]".
 
 To say MonsterComment of (M - jismbodied ghost):
-	if diaper quest is 0, say "[variable custom style][if the player is male and the bimbo of the player < 5][one of]I guess if I only had one part I could show as a ghost...[or]That's not spooky, just weird. Really weird.[or]Doesn't look solid. Wouldn't take that deal even if it made me that big.[in random order][otherwise if the bimbo of the player < 5][one of]Wow, that's so creepy.[or]At least if it tries to fuck me I'll know it won't make gross faces at me the whole time.[or]I know I'm going to have to fight that thing off eventually. But it doesn't look solid...[in random order][otherwise if the bimbo of the player < 8 and the player is male][one of]So is that a dick's ghost or a ghost's dick?[or]It reminds me of my dick in a way. But weirder. And higher up.[at random][otherwise if the bimbo of the player < 8][one of]Why does everything have to be sexual in this game...[or]Something perverted like that probably wouldn't handle blessings very well.[or]I guess this is the kind of unholy creature you would expect from this game.[at random][otherwise if the bimbo of the player < 12 and the player is male and the size of penis < 6][one of]It's bigger than mine...[or]It's huge! Wait... no. I'm just small.[or]I wish mine was that big...[in random order][otherwise if the bimbo of the player < 12][one of]It's gross, but not in a way that turns me off.[or]If I let it fuck me... how would it feel? Would I feel anything?[or]It wouldn't bother me nearly as much if it had a pair of balls.[in random order][otherwise][one of]I want to know how it would feel inside of me[or]I wonder what its [semen] tastes like...[or]Big. Just how I like it.[or]I can see through it. That means when I suck it I can see the load before it even touches my tongue![or]It doesn't look like I can touch it normally. But I'm sure it can fuck me, that's what dicks are for![in random order][end if][roman type][line break]".
+	if diaper quest is 1:
+		do nothing;
+	otherwise if M is penetrating a body part:
+		say "[variable custom style][one of]Slimy![or][if the bimbo of the player < 7]It feels disgusting![otherwise]It feels like ice cream![end if][or]Its so slimy![in random order]";
+	otherwise if the bimbo of the player < 7:
+		if the player is gendered male, say "[first custom style][one of]I guess if I only had one part I could show as a ghost...[or][if M is phased]I guess it would be weirder if I *could* touch it.[otherwise]This is my chance to touch it. Should be easy...[end if][or]Does not suprise me that dicks have ghosts. Does not surprise me.'[in random order]";
+		otherwise say "[first custom style][one of]Its just a floating penis. This is ridiculous...[or][if M is phased]It can't really touch me that way, can it?[otherwise]I can attack it now, but to do that... I'll have to touch it.[end if][or]I've never seen anything more disgusting.[in random order]";
+	otherwise if the bimbo of the player < 12:
+		say "[variable custom style][one of]W-why does everything have to be so sexual in this game?[or][if M is phased]Even if it looks like that, its still a ghost. It has to have the same weaknesses.[otherwise]So I can touch it now. Not sure how to feel about that.[end if][or]Its kind of gross, but honestly, what isn't?[in random order]";
+	otherwise:
+		say "[second custom style][one of]The best type of ghost.[or][if M is phased]If I let it fuck me... how would it feel? Would I feel anything?[otherwise]I guess I don't need to worry about how it'll fuck me![end if][or]It's gross, but not in a way that turns me off.[in random order]";
+	say "[roman type][line break]".
+
+[TODO eventually: special text for cultist]
+To say MonsterComment of (M - ghostly tentacle):
+	if diaper quest is 1:
+		do nothing;
+	otherwise if M is penetrating a body part:
+		say "[variable custom style][one of]So cold![or]Chilly![or]I-its frigid![in random order]";
+	otherwise if the bimbo of the player < 7:
+		if the player is gendered male, say "[first custom style][one of]Is that even a ghost? Tentacles don't have ghosts, right?[or][if M is wrangling a body part]Dude! Fuck off![otherwise]I don't mind if I can't tocuh some freaky floating tentacle. Whatever.[end if][or]I guess its ominous.'[in random order]";
+		otherwise say "[first custom style][one of]Is that tentacle... attached to something?[or][if M is wrangling a body part]Let go of me![otherwise]Normal attacks won't work.[end if][or]Its ominious...[in random order]";
+	otherwise if the bimbo of the player < 12:
+		say "[variable custom style][one of]That tentacle clearly belongs to something... I wonder what?[or][if M is wrangling a body part]This grip is so strong. Can I even fight?[otherwise]Its intangible, which means I can't do anything to it. But it can still do stuff to me.[end if][or]Its intimidating, but is that really so bad?[in random order]";
+	otherwise:
+		say "[second custom style][one of]I can't wait to meet whatever that tentacle is attached to.[or][if M is wrangling a body part]Its holding me so tightly. How romantic![otherwise]I wonder if it plans on fucking me.[end if][or]Its really intimidating, which is perfect. Reminds me of my place![in random order]";
+	say "[roman type][line break]".
 
 Definition: a ghost is blocker: decide no.
 
@@ -107,7 +158,7 @@ To compute phaseout of (M - a ghost):
 		if M is in the location of the player, say "[BigNameDesc of M] [bold type]shimmers as it shifts out of the corporeal world.[roman type][line break]".
 
 To compute unique final action of (M - ghostly tentacle):
-	if diaper quest is 1, compute phaseout of M.
+	if diaper quest is 1, compute phaseout of M.[in TQ, the tentacle only phases in and out under specific circumstances]
 
 To say SummoningFlav of (M - a ghost):
 	if M is in the location of the player, say "You hear far away laughter as the glow surrounding the mummy intensifies and simultaneously converges [if futanari fetish is 1]on [his of M] crotch, [otherwise]in front of [his of M] face, [end if] coalescing into a [MediumDesc of M] and immediately [if bukkake fetish is 1 and futanari fetish is 0]ejaculates all over [his of M] face[otherwise if futanari fetish is 0]phases through [his of M] face, causing a very audible gagging noise as it comes out the other side[otherwise]ejaculates[end if]. The mummy slowly climbs to its feet, spit and [if diaper quest is 1][urine][otherwise][semen][end if] absorbing into the frayed cloth without another trace.";
@@ -117,12 +168,13 @@ To compute labour to (M - a ghost):
 	compute pregnancy clothing displacement;
 	say "[PregFlav]Slime trickles out of your [vagina], collecting in a pool between your legs as a steady flow of viscous, glowing fluid spreads across the floor beneath you. A heavy, suffocating feeling falls over your surroundings as your belly slowly returns to its original size. You're going to be stuck like this for a little while until the slime dissipates...";
 	if playerRegion is Mansion or (playerRegion is Woods and doomed > 2):
-		say "And even as some of the slime begins to disappear, its glow seems to intensify. Tiny pinpricks of light rise up from the wet floor, growing and intensifying into a floating horde of big, grey, and very erect penises right before your eyes.";
+		say "And even as some of the slime begins to disappear, its glow seems to intensify. Tiny pinpricks of light rise up from the wet floor, growing and intensifying into a floating horde of silvery blue bodies with big and very erect penises.";
 		repeat with N running through ghosts:
-			unless N is ghostly tentacle:
+			if (N is not ghostly tentacle and N is not jismbodied):
 				set up N;
 				dislodge N;
 				now N is in the location of the player;
+				anger N;
 	increase the stickiness of the player by 3.
 
 To compute fatherhood to (M - a ghost):
@@ -149,7 +201,7 @@ To compute perception of (M - a ghost):
 	repeat with N running through monsters in the location of the player:
 		if the favour of N >= the aggro limit of N, now A is 1;
 	if M is unfriendly or the bimbo of the player >= 15 or A is 1:
-		say "[if M is jismbodied ghost][BigNameDesc of M] seems to reform itself, elongating slowly until a foot-long, slimy [manly-penis] thick enough to qualify as lumber is hovering in the air in front of you. [otherwise]Light seems to converge in front of [NameDesc of M], and forming a massive, and very erect [manly-penis] right before your eyes. [end if]From the way it's pointing at you it's not hard to guess at its intentions...";
+		say "[if M is jismbodied ghost][BigNameDesc of M] seems to reform itself, elongating slowly until a foot-long, slimy [manly-penis] thick enough to qualify as lumber is hovering in the air in front of you. [otherwise]Light seems to converge in front of [NameDesc of M], forming a massive and very erect [manly-penis] right before your eyes. [end if]From the way it's pointing at you it's not hard to guess at its intentions...";
 		anger M;
 		say GhostTip;
 	otherwise:
@@ -175,7 +227,8 @@ To compute (M - a ghost) protecting against (X - a monster):
 Section 2 - Sex
 
 To compute delay of (M - a ghost):
-	if diaper quest is 0, say "A huge silvery glowing [manly-penis] appears at [NameDesc of M][']s crotch, fully erect.".
+	do nothing.
+	[if diaper quest is 0, say "A huge silvery glowing [manly-penis] appears at [NameDesc of M][']s crotch, fully erect.".]
 
 To say CondomForceFailFlav of (M - a ghost):
 	say "[one of]You reach between your legs, grasping for [NameDesc of M][']s [DickDesc of M] as you quickly take out a condom. [if M is phased]Unfortunately, your fingers simply pass through its incorporeal form[otherwise]Unfortunately, your hand is forcefully shoved away by a wall of pressure[end if].[or]You take out a condom and reach between your legs, awkwardly trying to apply it to [NameDesc of M][']s [DickDesc of M]. [if M is phased]Unfortunately, its incorporeal form allows it to pass right through[otherwise]Unfortunately, your hand is forcefully shoved away by a wall of pressure[end if].[at random]";
@@ -218,7 +271,7 @@ To compute unique penetration effect of (M - jismbodied ghost) in (F - a fuckhol
 	let C be a random worn total protection clothing;[The jismbodied ghost leaves semen on everything it touches]
 	if C is clothing and bukkake fetish is 1, CumSoak 5 on C.
 
-To compute sexDumb of (M - a monster) in (F - a fuckhole):[submit and resist are the same for the ghost]
+To compute sexDumb of (M - a ghost) in (F - a fuckhole):[submit and resist are the same for the ghost]
 	compute sexSubmit of M in F.
 
 To say sexSubmitFondleFlav of (M - a ghost) in (O - an orifice):
@@ -502,7 +555,7 @@ To say MonsterFailedTripFlav of (M - a ghost):
 To decide which body part is the painful-part of (M - a ghost):[Only attacks places it could conceivably fuck]
 	let B be a random body part;
 	if B is belly, now B is thighs;
-	if B is a fuckhole or B is penis, now B is hips;
+	if B is a fuckhole or B is penis or B is scrotum, now B is hips;
 	if B is hair, now B is face;
 	decide on B.
 
@@ -595,17 +648,20 @@ To say damage-flavour of (N - a number) on (M - a ghost):
 
 To compute damage reaction of (M - a ghost):
 	if M is uninterested:
-		if M is jismbodied ghost, say "[BigNameDesc of M][']s slimy core begins to expand, slowly reforming itself into a very big and very erect floating [one of]penis[or]dick[at random], big enough to club you over the head.";
-		otherwise say "The light emanating from [NameDesc of M] flickers, and seems to bend around an unseen object at its core, slowly reforming it into a very long and very erect [manly-penis] right before your eyes";
+		if M is jismbodied ghost, say "The light cast by [NameDesc of M] seems to change, the shape of its penis-like body slowly shifting from 'flaccid' to 'very big' and 'very, very erect'.";
+		otherwise say "The light emanating from [NameDesc of M] flickers, and it focuses its attention purely on you!";
 		now M is interested;
 		anger M;
 	otherwise if the health of M is the maxhealth of M:
-		say "[one of]Grey fluid beads at[or]Grey fluid continues dripping from[stopping] [his of M] [if M is jismbodied ghost]tip[otherwise]crotch[end if]. It seems like all you've succeeded at is turning it on!";
+		let U be 0;
+		if M is unfriendly or M is ghostly tentacle or M is jismbodied ghost, now U is 1;
+		if U is 1, say "[one of]Grey fluid beads at[or]Grey fluid continues dripping from[stopping] [his of M] [if U is 1]tip[otherwise]crotch[end if]. It seems like all you've succeeded at is turning it on!";
+		otherwise say "[one of]Grey fluid beads[or]Grey fluid continues dripping from[stopping] between [his of M] legs as a very long and very erect [DickDesc of M] slowly crows out from [his of M] crotch. It seems like all you've succeeded at is turning it on!";
 		increase the bank of M by 10;
 		anger M;
 	otherwise if the wind-up of M > 0 and M is not jismbodied ghost:
 		if M is ghostly tentacle:
-			say "[BigNameDesc of M] releases you instantly, shifting back out of the physical world as it recoils from your attack!";
+			say "[bold type][BigNameDesc of M] releases you instantly, shifting back out of the physical world as it recoils from your attack![roman type]";
 			now the wind-up of M is 0;
 			now M is not wrangling arms;
 			now M is phased;
@@ -725,7 +781,7 @@ This is the deep one express rule:
 		let M be current-monster;
 		now the wind-up of M is 1;
 		now the bank of M is 0;
-		say "The air seems to rumble as [NameDesc of M] shifts fully into the corporeal world. It seizes you by the wrist!";
+		say "[bold type]The air seems to rumble as [NameDesc of M] shifts fully into the corporeal world. It seizes you by the wrist![roman type]";
 		now M is wrangling arms;
 		now M is unphased;
 		rule succeeds.

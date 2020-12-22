@@ -9,6 +9,7 @@ Definition: a fairy is father material: decide yes.
 Figure of fairy is the file "NPCs/Forest/Fairy/fairy1.png".
 Figure of diaper fairy is the file "NPCs/Forest/Fairy/fairy2.png".
 Figure of blue fairy is the file "NPCs/Forest/Fairy/fairy3.png".
+Figure of witch fairy is the file "NPCs/Forest/Fairy/fairy4.png".
 
 Figure of fairy interact 1 is the file "Special/Cutscene/cutscene-fairy-interact1.png".
 Figure of fairy interact 2 is the file "Special/Cutscene/cutscene-fairy-interact2.png".
@@ -982,6 +983,10 @@ To say ShortDesc of (M - fairy-witch):
 	say MediumDesc of M.
 To say MediumDesc of (M - fairy-witch):
 	say "fairy [if lady fetish is 2]wizard[otherwise]witch[end if]".
+
+To decide which figure-name is the monster-image of (M - fairy-witch):
+	if diaper quest is 1, decide on the figure of diaper fairy;
+	otherwise decide on the figure of witch fairy.
 
 Definition: fairy-witch is woods dwelling:
 	if diaper quest is 0, decide yes;

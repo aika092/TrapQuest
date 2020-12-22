@@ -112,35 +112,40 @@ Definition: a pink rubber tube top is pink themed: decide yes.
 
 Part 4 - Tartan Tube Top
 
-A tartan tube top is a kind of tube top. A tartan tube top is erect-nipple-exposing. Understand "apricot", "schoolgirl" as tartan tube top.
+tartan tube top is a tube top. tartan tube top is erect-nipple-exposing. Understand "apricot", "schoolgirl" as tartan tube top.
 
-There is 1 unique tartan tube top. A tartan tube top is usually dense.
+tartan tube top is unique. tartan tube top is dense.
 
-The printed name of tartan tube top is usually "[clothing-title-before]schoolgirl tube top[clothing-title-after]". The text-shortcut of tartan tube top is "sgt".
+Definition: tartan tube top is class-relevant:
+	if the class of the player is schoolgirl and the player is not pigtailed, decide yes;
+	decide no.
+
+To compute class set up of (C - tartan tube top):
+	now C is intelligence-influencing;
+	now the raw-magic-modifier of C is 1.
+
+The printed name of tartan tube top is "[clothing-title-before]schoolgirl tube top[clothing-title-after]". The text-shortcut of tartan tube top is "sgt".
 
 Figure of Schoolgirl Tube Top is the file "Items/Clothes/Upper/TubeTops/tubetop2.png".
 
-To decide which figure-name is clothing-image of (C - a tartan tube top):
+To decide which figure-name is clothing-image of (C - tartan tube top):
 	decide on figure of schoolgirl tube top.
 
-To say ClothingDesc of (C - a tartan tube top):
+To say ClothingDesc of (C - tartan tube top):
 	say "A tiny apricot tartan tube that clings tightly to your chest in order to stay in place. It carries a parody of a school's badge, shaped like a heart[if C is worn]. Your nipples can almost be seen through it[end if].".
 
-To say ShortDesc of (C - a tartan tube top):
+To say ShortDesc of (C - tartan tube top):
 	say "tartan boob tube".
-To say MediumDesc of (C - a tartan tube top):
+To say MediumDesc of (C - tartan tube top):
 	say "sexy tartan boob tube".
 
-Definition: a tartan tube top is heart themed: decide yes.
-Definition: a tartan tube top is tartan themed: decide yes.
-Definition: a tartan tube top is orange themed: decide yes.
+Definition: tartan tube top is heart themed: decide yes.
+Definition: tartan tube top is tartan themed: decide yes.
+Definition: tartan tube top is orange themed: decide yes.
 
-To decide which number is the initial cringe of (C - a tartan tube top):
+To decide which number is the initial cringe of (C - tartan tube top):
 	decide on 2.
 
-Definition: a tartan tube top is class-transformation-protected:
-	if there is a worn scrunchie, decide yes;
-	decide no.
 
 Part 5 - Red Tube Top
 
@@ -269,7 +274,7 @@ To say ClothingDesc of (C - leopard print tube top):
 	say "A small leopard print tube that clings tightly to your chest in order to stay in place.".
 
 To decide which object is the unique-upgrade-target of (C - leopard print tube top):
-	decide on a random off-stage leopard print bikini.
+	decide on a random off-stage leopard print bikini top.
 
 Part 10 - White Tube Top
 

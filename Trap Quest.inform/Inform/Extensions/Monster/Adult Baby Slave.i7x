@@ -658,7 +658,7 @@ To say UnfriendlyResponse of (M - an adult baby slave):
 	say "[speech style of M]'[one of]No talk! Just play!'[or]Just get down on your hands and knees so we can play!'[or]You're being annoying!'[or]Shut up and play with me!'[at random][roman type][line break]".
 
 To say SubmissiveGreeting of (M - an adult baby slave):
-	if the class of the player is princess and M is princess-consort:
+	if the class of the player is princess and M is bride-consort:
 		say "You compulsively straighten your back as your words come out in a measured tone.[line break][first custom style]'[one of][big royal-subject of M]. Our previous tryst was most satisfying, I will admit.'[or][big royal-subject of M]. I cannot help but congratulate you on your unique skill.'[or]Greetings, [royal-subject of M]. I may require your services again at a later date.'[at random][roman type][line break]";
 		trivialDignify;
 	otherwise:

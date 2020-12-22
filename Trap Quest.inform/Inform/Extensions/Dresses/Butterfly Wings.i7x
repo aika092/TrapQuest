@@ -2,6 +2,10 @@ Butterfly Wings by Dresses begins here.
 
 butterfly wings is an overdress. butterfly wings is unique. butterfly wings is biological. butterfly wings is fully exposing. butterfly wings is no-crotch. butterfly wings is unskirted. The printed name of butterfly wings is "[clothing-title-before]butterfly wings[clothing-title-after]". The text-shortcut of butterfly wings is "bw". Understand "butter", "fly" as butterfly wings.
 
+Definition: butterfly wings is class-relevant:
+	if the class of the player is faerie, decide yes;
+	decide no.
+
 Figure of butterfly wings is the file "Items/Clothes/Upper/Special/butterfly1.png".
 
 To decide which figure-name is clothing-image of (C - butterfly wings):
@@ -16,8 +20,11 @@ To compute SelfExamineDesc of (C - butterfly wings):
 To say ShortDesc of (C - butterfly wings):
 	say "giant pink wings".
 
+To say ClassSummonFlav of (C - butterfly wings):
+	say "A giant pair of wings appear on your back. You feel lighter!".
+
 To decide which number is the initial cringe of (C - butterfly wings):
-	decide on 7.
+	decide on 6.
 
 To decide which number is the luck-influence of (C - butterfly wings):
 	decide on 10.
@@ -52,9 +59,6 @@ To UniquePinkWardrobeUnclash (C - butterfly wings):
 	repeat with O running through worn trousers:
 		WardrobeVanish O.
 
-Definition: butterfly wings is class-transformation-protected:
-	if the class of the player is faerie, decide yes;
-	decide no.
 
 Definition: butterfly wings is flower themed: decide yes.
 Definition: butterfly wings is butterfly themed: decide yes.

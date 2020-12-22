@@ -303,12 +303,11 @@ To HairRedUp (X - a number):
 		say "Your hair would change colour but the divine power of Aika prevents it.";
 	otherwise:
 		now the previous hair redness of face is the redness of hair;
-		if a random number from 0 to the redness of hair is 0 or a random number between 1 and 2 is 1:
-			if the redness of hair < 3:
-				if the class of the player is not silicone queen and the class of the player is not cheerleader, increase the redness of hair by 1;
-			otherwise:
-				HairUp 1;
-				hair permanent check.
+		if the redness of hair < 3:
+			if the class of the player is not silicone queen and the class of the player is not cheerleader, increase the redness of hair by 1;
+		otherwise:
+			HairUp 1;
+			hair permanent check.
 
 To HairRedDown (X - a number):
 	if frozen hair is 1:
@@ -324,12 +323,11 @@ To HairBrightUp (X - a number):
 		say "Your hair would change colour but the divine power of Aika prevents it.";
 	otherwise:
 		now the previous hair brightness of face is the brightness of hair;
-		if a random number from 0 to the brightness of hair is 0 or a random number between 1 and 2 is 1:
-			if the brightness of hair < 3:
-				increase the brightness of hair by 1;
-			otherwise:
-				HairUp 1;
-				hair permanent check.
+		if the brightness of hair < 3:
+			increase the brightness of hair by 1;
+		otherwise:
+			HairUp 1;
+			hair permanent check.
 
 To HairBrightDown (X - a number):
 	if frozen hair is 1:
@@ -345,12 +343,11 @@ To HairBlondeUp (X - a number):
 		say "Your hair would change colour but the divine power of Aika prevents it.";
 	otherwise:
 		now the previous hair blondeness of face is the blondeness of hair;
-		if a random number from 0 to the blondeness of hair is 0 or a random number between 1 and 2 is 1:
-			if the blondeness of hair < 3:
-				increase the blondeness of hair by 1;
-			otherwise:
-				HairUp 1;
-				hair permanent check.
+		if the blondeness of hair < 3:
+			increase the blondeness of hair by 1;
+		otherwise:
+			HairUp 1;
+			hair permanent check.
 
 To HairBlondeDown (X - a number):
 	if frozen hair is 1:

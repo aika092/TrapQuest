@@ -1,28 +1,30 @@
 Hypno Traps by Traps begins here.
 
-A hypno trap is a kind of trap. A cocksucker hypno trap is a kind of hypno trap. A fucktoy hypno trap is a kind of hypno trap. A BBC hypno trap is a kind of hypno trap. A diaper hypno trap is a kind of hypno trap. There are 3 potentially wire potentially sticky potentially click cocksucker hypno traps. There are 3 potentially wire potentially sticky potentially click fucktoy hypno traps. There are 2 potentially wire potentially sticky potentially click BBC hypno traps. There are 4 potentially wire potentially sticky potentially click diaper hypno traps. Understand "screen" as hypno trap. The printed name of a hypno trap is "hypno screen".
+A hypno trap is a kind of trap. cocksucker hypno trap is a hypno trap. fucktoy hypno trap is a hypno trap. BBC hypno trap is a hypno trap. diaper-hypno-trap is a hypno trap. A hypno trap is potentially wire. A hypno trap is potentially sticky. A hypno trap is potentially click. Understand "screen" as hypno trap. The printed name of a hypno trap is "hypno screen".
 
 This is the spawn initial hotel hypno traps rule:
-	repeat with N running from 1 to 4:
+	repeat with T running through fetish appropriate hypno traps:
 		let R be a random trappable placed modern room;
 		let X be 0;
 		while there is a hypno trap in R and X < 50:
 			now R is a random trappable placed modern room;
 			increase X by 1;
-		let U be a random off-stage hypno trap;
-		now X is 0;
-		while ((diaper lover < 1 and U is a diaper hypno trap) or (interracial fetish < 1 and U is a BBC hypno trap)) and X < 50:
-			now U is a random off-stage hypno trap;
-			increase X by 1;
-		if diaper quest is 1 or (diaper focus is 1 and the number of on-stage diaper hypno traps < 3), now U is a random off-stage diaper hypno trap;
-		deploy U in R.
+		deploy T in R.
 The spawn initial hotel hypno traps rule is listed first in the set up hotel traps rules.
+
+Definition: bbc hypno trap is fetish appropriate:
+	if interracial fetish is 1, decide yes;
+	decide no.
+
+Definition: diaper-hypno-trap is fetish appropriate:
+	if diaper lover > 0, decide yes;
+	decide no.
 
 To say ExamineDesc of (T - a hypno trap):
 	say "A monitor revealed from within a hidden compartment in a wall. On the screen is [hypno content of T]. It's difficult to look away once you start watching it.".
 
 To say EnvironmentDesc of (T - a hypno trap):
-	say "A large [if T is expired]blank TV screen[otherwise if T is diaper hypno trap]TV screen showing adults being treated like babies[otherwise]TV screen showing degrading sex acts with a hypnotic pattern[end if] takes up a large portion of the wall in front of you. ".
+	say "A large [if T is expired]blank TV screen[otherwise if T is diaper-hypno-trap]TV screen showing adults being treated like babies[otherwise]TV screen showing degrading sex acts with a hypnotic pattern[end if] takes up a large portion of the wall in front of you. ".
 
 To say ShortDesc of (T - a hypno trap):
 	say "hypno screen".
@@ -55,7 +57,7 @@ To say hypno content of (Y - a fucktoy hypno trap):
 To say hypno content of (Y - a BBC hypno trap):
 	say "a swirling hypnotic pattern, with short clips flashing constantly of porn stars worshipping and pleasuring incredibly sized black [manly-penis]s with every part of their body".
 
-To say hypno content of (Y - a diaper hypno trap):
+To say hypno content of (Y - a diaper-hypno-trap):
 	say "a swirling hypnotic pattern, with short clips flashing constantly of adults gleefully wetting [if diaper messing >= 4]and messing [end if]their diapers and playing around in them, frequently stopping to rub their padded crotches enthusiastically".
 
 To compute hypno effect of (Y - a hypno trap):
@@ -131,7 +133,7 @@ To compute specific hypno effect of (Y - a BBC hypno trap):
 
 hypno-trigger-please is a number that varies.
 
-To compute specific hypno effect of (Y - a diaper hypno trap):
+To compute specific hypno effect of (Y - a diaper-hypno-trap):
 	commence animation of DiaperHypnoAnimation;
 	if hypno-trigger is "please" and hypno-trigger-please is 0:
 		say "For some reason the words [second custom style]'PLEASE'[roman type] and [second custom style]'PEE'[roman type] keep echoing around in your head. You feel it ebb and settle, taking a permanent home in the deepest recesses of your mind.";
@@ -166,7 +168,7 @@ To say specific video content of (Y - a fucktoy hypno trap):
 To say specific video content of (Y - a BBC hypno trap):
 	say "[second custom style][one of]BLACK IS BETTER[line break]BLACK IS BEST[or]GET BLACKED[line break]NEVER GO BACK[or]BLACK IS BIGGER[line break]BIGGER IS BETTER[or]I'M A PATHETIC SUBMISSIVE [WhiteSub in upper case][line break]BORN TO SERVE [BlackCock in upper case][or][if the player is possessing a penis]MY WHITE WILLY IS USELESS[line break]I WAS BORN TO SERVE SUPERIOR COCKS[otherwise]MY JOB IN LIFE[line break]IS TO KEEP [BlackCock in upper case] HAPPY[end if][or]THE ONLY THING BETTER THAN A [BlackCock in upper case][line break]IS TWO[or][if pregnancy fetish is 1 and the player is possessing a vagina]MY [caps cunt] IS FOR BREEDING[line break]STRONG BLACK BABIES[otherwise]I ONLY USE CONDOMS[line break]WITH BORING WHITE COCKS[end if][or]MY HOLE IS SO [if ungape is 1]GREEDY[otherwise]STRETCHED[end if][line break]ONLY [BlackCock in upper case] CAN FULFIL IT[or]ONE [BlackCock in upper case] FOR MY MOUTH[line break][if the player is possessing a vagina]TWO EACH FOR MY [caps cunt] AND ASS[otherwise]TWO FOR MY ASS[end if][or]MY [if pregnancy fetish is 1]WOMB[otherwise]BELLY[end if] IS FULL[line break]OF MY BULL'S BABY BATTER[or]I DON'T CARE WHO [caps he of shopkeeper] IS[line break]IF [caps he of shopkeeper][']S BLACK THEN I'M GAME[or]WHEN A BLACK [caps man of shopkeeper] WALKS IN[line break]MY PANTIES HIT THE FLOOR[line break][or]I'LL SERVE AS A SEX SLAVE[line break]TO THE BLACK MASTER RACE[or]WHITE COCKS HAVE TO PAY[line break]BLACK ENTRY IS FREE[in random order][roman type][line break]".
 
-To say specific video content of (Y - a diaper hypno trap):
+To say specific video content of (Y - a diaper-hypno-trap):
 	say "[second custom style][one of]I'M JUST A BABY[or]I'M JUST A DIAPERSLUT[or]CALL ME POTTYPANTS[or]NO TOILETS[line break]JUST DIAPERS[or]I'M NOT GROWN-UP[line break]I'LL NEVER GROW UP[or][if diaper messing >= 4]GRUNT AND PUSH[otherwise]I WET MY NAPPY[end if][or]SPANK MY ASS[line break][if diaper messing >= 4]AND SPREAD MY MESS[otherwise]AND MAKE IT RED[end if][or]FIND A MOMMY[line break]TO RUB MY DIAPER[or]I NEED[line break]A GROWN-UP[line break]TO TELL ME WHAT TO DO[or]I NEED A DADDY[line break][if the player is gendered male]TO MAKE ME HIS SISSY[otherwise]TO MAKE ME HIS BABYGIRL[end if][or][if the player is gendered male]GOOD SISSIES[otherwise]GOOD GIRLS[end if][line break]CREAM THEIR PAMPERS[or][if diaper quest is 1]DON'T THINK[line break]JUST LET IT GO[otherwise]PRETEND HIS COCK[line break]IS A PACIFIER[end if][or]WHEN I'M NAUGHTY[line break]PUT ME OVER YOUR KNEE[or][if diaper quest is 1]THE MORE I DRINK[line break]THE MORE I PEE[otherwise]FILL MY BOTTLE[line break]FULL OF CUM[end if][or][if lactation fetish is 1]FEED ME MILK[line break]FROM YOUR BREASTS[otherwise]BOUNCE ME[end if][line break]IN A DIAPER[line break]ON YOUR KNEE[or]FILL MY NAPPY[line break][if diaper quest is 1]SHOW MY FRIENDS[otherwise]WITH YOUR CUM[end if][or]RUB MY CLITTY[line break]THROUGH MY SOGGY PADDING[or][if diaper messing >= 3]MESS[otherwise]WET[end if] MYSELF ON PURPOSE[line break]DURING MY DIAPER CHECK[or]SPANK ME HARD ENOUGH[line break]AND YOU'LL MAKE ME CUM[or]CLEAN ME OUT[line break]WITH A BIG SOAPY ENEMA[or]THE FEELING OF [if diaper messing >= 3]POOPING[otherwise]WETTING[end if] MYSELF[line break]IS ABSOLUTE BLISS[or][caps please] LET ME PEE PEE PLEASE LET ME PEE PEE PLEASE LET ME PEE PEE PLEASE[in random order][roman type][line break]".
 
 Figure of HypnoDiaperAnimation000 is the file "Special/Animations/HypnoDiaper/frame_000.jpg".

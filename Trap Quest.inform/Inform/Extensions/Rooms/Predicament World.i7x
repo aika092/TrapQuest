@@ -1432,8 +1432,7 @@ To execute (P - painted-cutoffs-predicament):
 	now C is speed;
 	now the heel-height of C is 2;
 	now the raw-magic-modifier of C is 2;
-	let C be a random frilly stockings;
-	summon C uncursed;
+	summon frilly stockings uncursed;
 	now refractoryperiod is 0;
 	if the rank of the player < 3:
 		now the predicament-completed of painted-cutoffs-predicament is 1;
@@ -1474,8 +1473,7 @@ To execute (P - serving-tray-predicament):
 	now C is speed;
 	now the raw-magic-modifier of C is 2;
 	now the heel-height of C is 2;
-	let C be a random frilly stockings;
-	summon C uncursed;
+	summon frilly stockings uncursed;
 	now refractoryperiod is 0;
 	if diaper quest is 1:
 		let C be plain-largish-diaper;
@@ -1824,9 +1822,8 @@ Definition: team-enema-predicament is appropriate:
 Figure of team enema predicament is the file "Special/Cutscene/cutscene-predicament-team-enema1.jpg".
 
 To execute (TEP - team-enema-predicament):
-	let SGO be a random cheeky schoolgirl outfit;
-	only destroy SGO;
-	now SGO is in Predicament01;
+	only destroy cheeky schoolgirl outfit;
+	now cheeky schoolgirl outfit is in Predicament01;
 	now Predicament01 is discovered;
 	now the player is in Predicament01;
 	now temporaryYesNoBackground is Figure of team enema predicament;
@@ -1940,7 +1937,7 @@ To execute (TEP - team-enema-predicament):
 			if L is urine, now BL is LN;
 			otherwise now SB is LN;
 		if the stomach-liquid of the player > 3, StomachDown (the stomach-liquid of the player / 3);
-	say "As the timer hits 0, a latch on the grate underneath your feet opens, allowing you access to the outfits. [BigNameDesc of M][']s bondage all clicks open, releasing [him of M]. [big he of M] is still having some trouble removing the ring gag from [his of M] jaw, so [he of M] just mutters some frustrated noises towards you before retrieving one of the [ShortDesc of SGO]s and making for the now-unlocked door.";
+	say "As the timer hits 0, a latch on the grate underneath your feet opens, allowing you access to the outfits. [BigNameDesc of M][']s bondage all clicks open, releasing [him of M]. [big he of M] is still having some trouble removing the ring gag from [his of M] jaw, so [he of M] just mutters some frustrated noises towards you before retrieving one of the [ShortDesc of cheeky schoolgirl outfit]s and making for the now-unlocked door.";
 	try M going north;
 	now M is in School01;
 	say "It looks like you're going to have to make your way out of here on your own.".
@@ -2031,7 +2028,7 @@ An all time based rule (this is the team quiz predicament time rule):
 					otherwise:
 						AssSquirt;
 			compute quizQuestion of L;
-			say "The screens all around you display the same words, followed by [first custom style]'next question in 59 secs...'[roman type][line break]";
+			if the questionFails of L < 2 and the maxQuestionWins of L < 4, say "The screens all around you display the same words, followed by [first custom style]'next question in 59 secs...'[roman type][line break]".
 
 Check going north when current-predicament is team-quiz-predicament:
 	if the questionFails of team-quiz-predicament < 2 and the maxQuestionWins of team-quiz-predicament < 4 and the player is in Predicament01:
@@ -2599,7 +2596,7 @@ To execute (L - sex-toy-predicament):
 	now C is bland;
 	now C is blandness;
 	now C is in Predicament01;
-	if diaper quest is 0, now C is a random pink catsuit;
+	if diaper quest is 0, now C is pink-catsuit;
 	otherwise now C is baby-medium-diaper;
 	only destroy C;
 	now the raw-magic-modifier of C is 0;
@@ -2775,10 +2772,9 @@ To execute (L - diaper-grope-predicament):
 	summon plain-medium-diaper uncursed;
 	now the raw-magic-modifier of plain-medium-diaper is -3;
 	summon nipples-crop-top uncursed;
-	let S be a random frilly stockings;
-	summon S uncursed;
-	now the raw-magic-modifier of S is 1;
-	now S is intelligence-influencing;
+	summon frilly stockings uncursed;
+	now the raw-magic-modifier of frilly stockings is 1;
+	now frilly stockings is intelligence-influencing;
 	let MJ be a random mary janes;
 	summon MJ uncursed;
 	now the raw-magic-modifier of MJ is 1;
@@ -3242,66 +3238,67 @@ Report going when the player is in Predicament20:
 				say "CONGRATULATIONS. NO PUNISHMENTS ENABLED.[roman type][line break]";
 			otherwise:
 				say "[if PP is 1]ONE PUNISHMENT[otherwise][PP] PUNISHMENTS[end if] ENABLED.[roman type][line break]";
-				let T be "CCTV video footage of you sucking [cocks-sucked of gloryhole-predicament] [manly-penis][if cocks-sucked of gloryhole-predicament > 1]s[end if] through a gloryhole, dressed in nothing but super skimpy swimwear";
-				say "The screen changes to show thumbnail summaries of [T], which then animate into being packaged in an email attachment and sent to [DistantName], your [DistantRole].";
-				now distant-friend is friend-shocked;
+		if PP > 0:
+			let T be "CCTV video footage of you sucking [cocks-sucked of gloryhole-predicament] [manly-penis][if cocks-sucked of gloryhole-predicament > 1]s[end if] through a gloryhole, dressed in nothing but super skimpy swimwear";
+			say "The screen changes to show thumbnail summaries of [T], which then animate into being packaged in an email attachment and sent to [DistantName], your [DistantRole].";
+			now distant-friend is friend-shocked;
+			choose a blank row in Table of Published Disgraces;
+			now the content entry is the substituted form of T;
+			now the published entry is the substituted form of "has been uploaded to an obscure website www.fatherless.com by your [DistantRole] [DistantName]";
+			now the severity entry is 2 + the internet-outrage of gloryhole-predicament;
+			now the popularity entry is 1;
+			now the timestamp entry is time-earnings;
+			now the lastwitnessed entry is time-earnings;
+			now the deletedtime entry is -1;
+			now the viewsfuzz entry is a random number between -10 and 10;
+			if PP > 1:
+				say "Then the screen shows the same file being sent to your [PlatonicRole] [PlatonicName].";
+				now platonic-friend is friend-shocked;
 				choose a blank row in Table of Published Disgraces;
 				now the content entry is the substituted form of T;
-				now the published entry is the substituted form of "has been uploaded to an obscure website www.fatherless.com by your [DistantRole] [DistantName]";
-				now the severity entry is 2 + the internet-outrage of gloryhole-predicament;
-				now the popularity entry is 1;
+				now the published entry is the substituted form of "has been sent to a small private group chat of your friends by your [PlatonicRole] [PlatonicName]";
+				now the severity entry is 500;
+				now the popularity entry is 0;
+				now the timestamp entry is 0;
+				now the lastwitnessed entry is time-earnings;
+				now the deletedtime entry is -1;
+				now the viewsfuzz entry is 0;
+			if PP > 2:
+				say "Next, the screen shows the same file being sent to [NemesisName], your [NemesisRole].";
+				now nemesis-friend is friend-shocked;
+				choose a blank row in Table of Published Disgraces;
+				now the content entry is the substituted form of T;
+				now the published entry is the substituted form of "has been sent to a small private group chat of your friends and family by your [NemesisRole] [NemesisName]";
+				now the severity entry is 750;
+				now the popularity entry is 0;
+				now the timestamp entry is 0;
+				now the lastwitnessed entry is time-earnings;
+				now the deletedtime entry is -1;
+				now the viewsfuzz entry is 0;
+			if PP > 3:
+				say "Next, the screen shows the same file being sent to [FanciedName], your [FanciedRole].";
+				now fancied-friend is friend-shocked;
+				choose a blank row in Table of Published Disgraces;
+				now the content entry is the substituted form of T;
+				now the published entry is the substituted form of "has been sent to a large private group chat of all your friends by your [FanciedRole] [FanciedName] along with the message 'WARNING: TURNS OUT THAT [NameBimbo] IS A HUGE CREEP AND A MASSIVE PERV. GROSS!!!'";
+				now the severity entry is 1400;
+				now the popularity entry is 0;
+				now the timestamp entry is 0;
+				now the lastwitnessed entry is time-earnings;
+				now the deletedtime entry is -1;
+				now the viewsfuzz entry is 0;
+			if PP > 4:
+				say "Next, the screen shows the file is now live on www.pronhub.com, gaining views in real time as you watch.";
+				choose a blank row in Table of Published Disgraces;
+				now the content entry is the substituted form of T;
+				now the published entry is the substituted form of "has been uploaded to www.pronhub.com";
+				now the severity entry is 12 + the internet-outrage of gloryhole-predicament;
+				now the popularity entry is 5;
 				now the timestamp entry is time-earnings;
 				now the lastwitnessed entry is time-earnings;
 				now the deletedtime entry is -1;
-				now the viewsfuzz entry is a random number between -10 and 10;
-				if PP > 1:
-					say "Then the screen shows the same file being sent to your [PlatonicRole] [PlatonicName].";
-					now platonic-friend is friend-shocked;
-					choose a blank row in Table of Published Disgraces;
-					now the content entry is the substituted form of T;
-					now the published entry is the substituted form of "has been sent to a small private group chat of your friends by your [PlatonicRole] [PlatonicName]";
-					now the severity entry is 500;
-					now the popularity entry is 0;
-					now the timestamp entry is 0;
-					now the lastwitnessed entry is time-earnings;
-					now the deletedtime entry is -1;
-					now the viewsfuzz entry is 0;
-				if PP > 2:
-					say "Next, the screen shows the same file being sent to [NemesisName], your [NemesisRole].";
-					now nemesis-friend is friend-shocked;
-					choose a blank row in Table of Published Disgraces;
-					now the content entry is the substituted form of T;
-					now the published entry is the substituted form of "has been sent to a small private group chat of your friends and family by your [NemesisRole] [NemesisName]";
-					now the severity entry is 750;
-					now the popularity entry is 0;
-					now the timestamp entry is 0;
-					now the lastwitnessed entry is time-earnings;
-					now the deletedtime entry is -1;
-					now the viewsfuzz entry is 0;
-				if PP > 3:
-					say "Next, the screen shows the same file being sent to [FanciedName], your [FanciedRole].";
-					now fancied-friend is friend-shocked;
-					choose a blank row in Table of Published Disgraces;
-					now the content entry is the substituted form of T;
-					now the published entry is the substituted form of "has been sent to a large private group chat of all your friends by your [FanciedRole] [FanciedName] along with the message 'WARNING: TURNS OUT THAT [NameBimbo] IS A HUGE CREEP AND A MASSIVE PERV. GROSS!!!'";
-					now the severity entry is 1400;
-					now the popularity entry is 0;
-					now the timestamp entry is 0;
-					now the lastwitnessed entry is time-earnings;
-					now the deletedtime entry is -1;
-					now the viewsfuzz entry is 0;
-				if PP > 4:
-					say "Next, the screen shows the file is now live on www.pronhub.com, gaining views in real time as you watch.";
-					choose a blank row in Table of Published Disgraces;
-					now the content entry is the substituted form of T;
-					now the published entry is the substituted form of "has been uploaded to www.pronhub.com";
-					now the severity entry is 12 + the internet-outrage of gloryhole-predicament;
-					now the popularity entry is 5;
-					now the timestamp entry is time-earnings;
-					now the lastwitnessed entry is time-earnings;
-					now the deletedtime entry is -1;
-					now the viewsfuzz entry is a random number between 1 and 9;
-				say obsceneHumiliateReflect.
+				now the viewsfuzz entry is a random number between 1 and 9;
+			say obsceneHumiliateReflect.
 
 An all later time based rule:
 	if current-predicament is gloryhole-predicament:

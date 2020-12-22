@@ -92,7 +92,7 @@ To decide which number is the insertableGirthAcceptance of (F - a fuckhole):
 	otherwise:
 		decide on (the sex addiction of the player / 5) + the openness of F + T.
 
-To fill (F - a fuckhole) times (X - a number):
+To CumFill (F - a fuckhole) times (X - a number):
 	if F is asshole, AssFill X;
 	otherwise PussyFill X.
 

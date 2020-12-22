@@ -129,29 +129,55 @@ Definition: a greyish exercise bra is IcarusScienceAppropriate:
 	if it is actually summonable, decide yes;
 	decide no.
 
-A fetish bra is a kind of bra. Figure of fetish bra is the file "Items/Clothes/Upper/Bras/latexbra1.png". A fetish bra is usually normally-nipple-exposing. A fetish bra is usually sheer. A fetish bra is high cut. A fetish bra is usually latex. A fetish bra is usually transformation-rare.
+A fetish bra is a kind of bra. A fetish bra is sheer. A fetish bra is latex. A fetish bra is transformation-rare. Understand "fetish", "bra" as fetish bra.
+The min size of a fetish bra is 5. The max size of a fetish bra is 12. The support of a fetish bra is 2.
 
-There is 1 fetish bra. The text-shortcut of fetish bra is "fbr".
-
-Definition: a fetish bra is yellow themed: decide yes.
 Definition: a fetish bra is uncovered themed: decide yes.
-
-The min size of a fetish bra is usually 5. The max size of a fetish bra is usually 12. The support of a fetish bra is usually 2.
-
-To say ShortDesc of (B - a fetish bra):
-	say "fetish bra".
 
 To say selfexaminetitle of (B - a fetish bra):
 	say "lewd latex fetish bra".
 
-To decide which figure-name is clothing-image of (C - a fetish bra):
-	decide on figure of fetish bra.
-
-To say ClothingDesc of (C - a fetish bra):
-	say "A transparent latex [printed name of C], which clings tightly to the flesh, and has holes for the nipples, leaving them completely exposed.[if C is worn and C is cursed and there is a worn cursed black catsuit] The edges of the bra have completely merged with the rest of your catsuit.[end if][if lactation fetish is 1][one of][or][or][or][line break]Lactating [milk] could potentially escape the bra, but probably only if you were on your hands and knees.[as decreasingly likely outcomes][end if]".
-
 To decide which number is the initial outrage of (C - a fetish bra):
 	decide on 9.
+
+nipple-hole-bra is a fetish bra. nipple-hole-bra is normally-nipple-exposing. nipple-hole-bra is high cut. Understand "nipple", "hole" as nipple-hole-bra.
+
+To say ShortDesc of (B - nipple-hole-bra):
+	say "nipple hole fetish bra".
+
+The text-shortcut of nipple-hole-bra is "fbr".
+
+Definition: nipple-hole-bra is yellow themed: decide yes.
+
+Figure of nipple-hole-bra is the file "Items/Clothes/Upper/Bras/latexbra1.png".
+
+To decide which figure-name is clothing-image of (C - nipple-hole-bra):
+	decide on figure of nipple-hole-bra.
+
+To say ClothingDesc of (C - nipple-hole-bra):
+	say "A transparent latex fetish bra, which clings tightly to the flesh, and has holes for the nipples, leaving them completely exposed[if C is worn and C is cursed and black-catsuit is worn and black-catsuit is cursed]. The edges of the bra have completely merged with the rest of your catsuit[end if].[if lactation fetish is 1][one of][or][or][or][line break]Lactating [milk] could potentially escape the bra, but probably only if you were on your hands and knees.[as decreasingly likely outcomes][end if]".
+
+window-bra is a fetish bra. Understand "fetish", "window" as window-bra.
+
+To say ShortDesc of (B - window-bra):
+	say "fetish window bra".
+
+The text-shortcut of window-bra is "fwbr".
+
+Definition: window-bra is black themed: decide yes.
+
+Figure of window-bra is the file "Items/Clothes/Upper/Bras/latexbra2.png".
+
+To decide which figure-name is clothing-image of (C - window-bra):
+	decide on figure of window-bra.
+
+To say ClothingDesc of (C - window-bra):
+	say "A black latex fetish window bra, with a patterned sheer window section in the middle, to somewhat expose your cleavage and nipples[if C is worn and C is cursed and black-catsuit is worn and black-catsuit is cursed]. The edges of the bra have completely merged with the rest of your catsuit[end if].".
+
+To decide which object is the unique-upgrade-target of (C - window-bra):
+	if nipple-hole-bra is off-stage, decide on nipple-hole-bra;
+	decide on nothing.
+
 
 A maternity bra is a kind of bra. Figure of maternity bra is the file "Items/Clothes/Upper/Bras/maternitybra1.png".
 
@@ -389,10 +415,16 @@ Definition: a flimsy bra is sissifying: decide yes.
 
 To decide which object is the unique-upgrade-target of (C - a flimsy bra):
 	if diaper quest is 1, decide on nothing;
-	if (a random number between 1 and 2 is 1 and there is an off-stage fetish bra) or the number of off-stage ribbon bra is 0, decide on a random off-stage fetish bra;
+	if (a random number between 1 and 2 is 1 and window-bra is off-stage) or the number of off-stage ribbon bra is 0, decide on window-bra;
 	decide on a random off-stage ribbon bra.
 
-A pasties is a kind of bra. The support of a pasties is usually 0. A pasties is usually latex. A pasties is usually ridiculously low cut. The min size of a pasties is 20. The max size of a pasties is 20. A pasties is usually transformation-rare. Understand "stickers", "caps", "nipple" as pasties. The text-shortcut of a pasties is "psts". A pasties is not-top-displacable.
+A pasties is a kind of bra. The support of a pasties is usually 0. A pasties is usually latex. A pasties is usually fully exposing. The min size of a pasties is 20. The max size of a pasties is 20. A pasties is usually transformation-rare. Understand "stickers", "caps", "nipple" as pasties. The text-shortcut of a pasties is "psts". A pasties is not-top-displacable.
+
+Definition: a pasties (called C) is actually nipple exposing rather than actually nipple covering: [Pasties always cover your nipples.]
+	decide no.
+
+Definition: a pasties (called C) is nipple exposing rather than at least partially nipple covering:[Pasties always cover your nipples.]
+	decide no.
 
 To say ShortDesc of (B - a pasties):
 	say "nipple pasties".
@@ -415,7 +447,17 @@ To decide which number is the bartering value of (T - a pasties) for (M - a robo
 To decide which number is the bartering value of (T - a pasties) for (M - a mechanic):
 	decide on 2.
 
+
 red-pasties is a pasties. Understand "red", "pasties" as red-pasties.
+
+To compute class set up of (C - red-pasties):
+	now C is cursed;
+	now the quest of C is vaginal-creampie-quest;
+	now vaginal-creampie-quest is persistent;
+	now C is vaginal-sex-addiction-influencing.
+
+To say ClassSummonFlav of (C - red-pasties):
+	say "A pair of red pasties appears on your nipples!".
 
 Figure of pasties is the file "Items/Clothes/Upper/Bras/pasties1.png".
 
@@ -598,9 +640,15 @@ To compute periodic effect of (C - a trainee bra):[remember that training-progre
 				destroy C;
 				ProgressUp senior robobellboy.
 
-acolyte-chestpiece is a cupless bra. The text-shortcut of acolyte-chestpiece is "actp". acolyte-chestpiece is metal. Understand "gold", "golden", "acolyte", "acolyte's", "chestpiece" as acolyte-chestpiece. acolyte-chestpiece is unique. acolyte-chestpiece is top-exclusive. The printed name of acolyte-chestpiece is "[clothing-title-before]acolyte's chestpiece[clothing-title-after]". acolyte-chestpiece has a number called charge. The charge of acolyte-chestpiece is usually 0.
+acolyte-chestpiece is a cupless bra. The text-shortcut of acolyte-chestpiece is "actp". acolyte-chestpiece is metal. Understand "gold", "golden", "acolyte", "acolyte's", "chestpiece" as acolyte-chestpiece. acolyte-chestpiece is unique. acolyte-chestpiece is top-exclusive. The printed name of acolyte-chestpiece is "[clothing-title-before]acolyte's chestpiece[clothing-title-after]". acolyte-chestpiece has a number called charge.
 
-Definition: acolyte-chestpiece is blessable: decide no.
+Definition: acolyte-chestpiece is class-relevant:
+	if the class of the player is worshipper, decide yes;
+	decide no.
+
+To compute class set up of (C - acolyte-chestpiece):
+	now C is cursed.
+
 Definition: acolyte-chestpiece is demonic: decide yes.
 Definition: acolyte-chestpiece is yellow themed: decide yes.
 

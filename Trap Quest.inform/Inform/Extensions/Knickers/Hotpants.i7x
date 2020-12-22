@@ -21,6 +21,14 @@ To say ClothingDesc of (K - a hotpants):
 leopard-hotpants is a hotpants.
 
 The printed name of leopard-hotpants is "[clothing-title-before]pair of leopard print hotpants[clothing-title-after]". Understand "leopard", "leopard print" as leopard-hotpants. The text-shortcut of leopard-hotpants is "lhp".
+
+Definition: leopard-hotpants is class-relevant:
+	if the class of the player is barbarian, decide yes;
+	decide no.
+
+To compute class set up of (C - leopard-hotpants):
+	now C is dominance.
+
 Definition: leopard-hotpants is leopard themed: decide yes.
 Definition: leopard-hotpants is discovered varied: decide no.
 

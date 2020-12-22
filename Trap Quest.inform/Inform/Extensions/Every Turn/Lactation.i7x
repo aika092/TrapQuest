@@ -23,7 +23,7 @@ A time based rule (this is the lactation rule):
 					if the largeness of belly > previous-size:
 						say "Your body has produced [if the milk volume of belly < 5]enough[otherwise]so much[end if] [milk] that you now have a [BellyDesc]![one of][line break][variable custom style]Wait... what?!?! What the hell is this basque doing to me? That's not how lactation is supposed to work.[roman type][line break][or][stopping]";
 						now flav-said is 1;
-				if the number of ass covering white milking basques is 0: [this way, cow print milking basques do both]
+				if white-milking-basque is not ass covering: [this way, cow print basque does both]
 					let previous-size be the largeness of breasts;
 					MilkUp 1;
 					if the largeness of breasts > previous-size:
@@ -50,7 +50,7 @@ A time based rule (this is the lactation rule):
 					let quest-2b-milked be nothing;
 					repeat with C running through worn clothing:
 						if the quest of C is milking-quest, now quest-2b-milked is C;
-					say "[bold type]Your breasts are now completely full of milk[if quest-2b-milked is clothing]. Your [ShortDesc of quest-2b-milked] fills you with a desire to find somewhere to get milked[end if][if the milk volume of breasts > 10]. Until you do, your heavy breasts will make you become fatigued much faster while standing[end if].[roman type][line break]";
+					say "[bold type]Your breasts are now completely full of milk[if quest-2b-milked is clothing]. Your [ShortDesc of quest-2b-milked] fills you with a desire to find somewhere to get milked[end if][if the milk volume of breasts > 10]. Until you do, your heavy breasts will make you become fatigued much faster while standing[end if][if the milk volume of breasts > 10 and cowbell is not worn] - or rather they would if it weren't for the magic effect of your cowbell[end if].[roman type][line break]";
 				now the ready-for-milking of milking-quest is 1.
 
 To decide which number is milkingColour:
@@ -85,9 +85,8 @@ To trigger lactation:
 				say "[variable custom style]This is not possible! What the hell is this crazy game doing to me?![roman type][line break]";
 				humiliate 200;
 		let N be bottom level lactation cover;
-		if there is a worn yellow pacifier, now N is a random worn yellow pacifier;
-		if N is yellow pacifier:
-			say "[one of]You feel [milk] leak from your [BreastDesc], but the milk never reaches [if bottom level lactation cover is clothing]your [bottom level lactation cover][otherwise]the air[end if]![roman type] Instead you feel your [ShortDesc of N] magically feeding it back into your body via your mouth[or]Once again you feel [milk] leak from your nipples and magically appear in your mouth[stopping].[line break][variable custom style][if the milk taste addiction of the player < 7][one of]Yuck![or]Gross...[or]My own milk? Eww![or]I'm breastfeeding myself, gross![in random order][otherwise if the milk taste addiction of the player < 14][one of]At least it tastes good.[or]This is a bit weird, but I've done weirder.[or]Well I guess it's good for my nutrition...[or]Does all breast milk taste this good?[in random order][otherwise][one of]Yum![or]How delicious![or]So tasty![or]Ooh, I want to drink even more![in random order][end if][roman type][line break]";
+		if yellow-pacifier is worn:
+			say "[one of]You feel [milk] leak from your [BreastDesc], but the milk never reaches [if bottom level lactation cover is clothing]your [bottom level lactation cover][otherwise]the air[end if]![roman type] Instead you feel your [ShortDesc of yellow-pacifier] magically feeding it back into your body via your mouth[or]Once again you feel [milk] leak from your nipples and magically appear in your mouth[stopping].[line break][variable custom style][if the milk taste addiction of the player < 7][one of]Yuck![or]Gross...[or]My own milk? Eww![or]I'm breastfeeding myself, gross![in random order][otherwise if the milk taste addiction of the player < 14][one of]At least it tastes good.[or]This is a bit weird, but I've done weirder.[or]Well I guess it's good for my nutrition...[or]Does all breast milk taste this good?[in random order][otherwise][one of]Yum![or]How delicious![or]So tasty![or]Ooh, I want to drink even more![in random order][end if][roman type][line break]";
 			MilkDown M;
 			StomachUp M;
 			increase the fat-burning of the player by 75 * M;
@@ -147,13 +146,13 @@ To trigger lactation:
 				MilkDown M;
 				MilkPuddleUp M;
 		let O be a random off-stage milking harness;
-		if a random number from 6 to 50 - (20 * unlucky) < the lactation-count of the player and O is actually summonable and royal circlet is not worn and the number of worn yellow pacifiers is 0:
+		if a random number from 6 to 50 - (20 * unlucky) < the lactation-count of the player and O is actually summonable and royal circlet is not worn and yellow-pacifier is not worn:
 			say "[bold type]As you finish lactating, a plug connected to some tubing and suction cups [italic type]shunks[bold type] into place around you.[roman type] You feel your loins encased in latex and your nipples pulled outwards by a suction force.";
 			summon O cursed;
 			now the lactation-count of the player is 0;
 			now the plug size of O is the openness of asshole;
 			say "[one of]You look down to try and work out exactly what this thing does...[line break][ExamineDesc of O][or][stopping]";
-		otherwise if a random number from 4 to 50 - (30 * unlucky) < the lactation-count of the player and a2m fetish >= 2 and royal circlet is off-stage and royal circlet is actually summonable and the number of worn yellow pacifiers is 0:
+		otherwise if a random number from 4 to 50 - (30 * unlucky) < the lactation-count of the player and a2m fetish >= 2 and royal circlet is off-stage and royal circlet is actually summonable and yellow-pacifier is not worn:
 			say "[bold type]As you finish lactating, a silver circlet appears on your head.[line break][variable custom style]Why do I get the feeling that people are going to want my milk soon...[roman type][line break]";
 			summon royal circlet cursed;
 			now the lactation-count of the player is 0;

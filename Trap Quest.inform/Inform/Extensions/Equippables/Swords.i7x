@@ -553,7 +553,7 @@ Definition: rattle is yellow themed: decide yes.
 Definition: rattle is blue themed: decide yes.
 Definition: rattle is swimming themed: decide yes.
 
-The printed name of rattle is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]giant rattle[clothing-title-after]". The text-shortcut of rattle is "rat". Understand "giant" as rattle.
+The printed name of rattle is "[clothing-title-before]giant rattle[clothing-title-after]". The text-shortcut of rattle is "rat". Understand "giant" as rattle.
 
 Figure of rattle is the file "Items/Accessories/Equippables/rattle1.png".
 
@@ -602,7 +602,7 @@ Section 6 - Sissy Slut's Longsword
 
 sissy-sword is a sword. sissy-sword has a number called charge.
 
-The printed name of sissy-sword is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc][if the item described is not held and the item described is in Woods26]sword in the stone[otherwise]sissy slut's longsword[end if][clothing-title-after]". The text-shortcut of sissy-sword is "ssl". Understand "sissy", "slut", "slut's", "longsword", "long" as sissy-sword.
+The printed name of sissy-sword is "[clothing-title-before][if the item described is not held and the item described is in Woods26]sword in the stone[otherwise]sissy slut's longsword[end if][clothing-title-after]". The text-shortcut of sissy-sword is "ssl". Understand "sissy", "slut", "slut's", "longsword", "long" as sissy-sword.
 
 Figure of sissy-sword is the file "Items/Accessories/Equippables/sword6.png".
 To decide which figure-name is clothing-image of (C - sissy-sword):

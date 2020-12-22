@@ -92,7 +92,7 @@ To decide which object is the unique-upgrade-target of (C - nun cowl):
 To decide which number is the initial outrage of (C - nun cowl):
 	decide on 0.
 
-rubber nun cowl is a halloween headgear. rubber nun cowl is womanly. Figure of rubber nun cowl is the file "Items/Accessories/Head/nuncowl1.png". rubber nun cowl is blondeness-negative. rubber nun cowl is brightness-negative. rubber nun cowl is redness-negative. The text-shortcut of rubber nun cowl is "lnc".
+rubber nun cowl is a halloween headgear. rubber nun cowl is womanly. rubber nun cowl is latex. Figure of rubber nun cowl is the file "Items/Accessories/Head/nuncowl1.png". rubber nun cowl is blondeness-negative. rubber nun cowl is brightness-negative. rubber nun cowl is redness-negative. The text-shortcut of rubber nun cowl is "lnc".
 
 The printed name of rubber nun cowl is "[clothing-title-before]latex nun cowl[clothing-title-after]".
 
@@ -121,10 +121,6 @@ To decide which number is the initial outrage of (C - rubber nun cowl):
 
 Chapter - Class Outfit
 
-Definition: rubber nun cowl (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
-	if wearing-target is black themed and wearing-target is not C, decide yes;
-	decide no.
-
 To compute full outfit summon of (H - rubber nun cowl):
 	summon H cursed;
 	say "You are wearing a [H], ";
@@ -141,6 +137,12 @@ To compute full outfit summon of (H - rubber nun cowl):
 	blandify and reveal nun-top;
 	now nun-top is in the location of the player;
 	say "A [nun-top] is on the ground in front of you almost as if you forgot to put it on[if the largeness of breasts > 1], leaving you completely topless. Eek[end if]!".
+
+To compute class outfit of (H - rubber nun cowl):
+	class summon nun-top;
+	class summon black-rubber-hobble-skirt;
+	class summon black-leather-boots;
+	class summon red-orange briefs.
 
 witch's hat is a halloween headgear. witch's hat is latex. Figure of witch's hat is the file "Items/Accessories/Head/witchhat1.png". witch's hat is blondeness-negative. witch's hat is brightness-negative. witch's hat is redness-negative. The text-shortcut of witch's hat is "wtch".
 
@@ -196,6 +198,10 @@ To compute full outfit summon of (H - witch's hat):
 	now witch's top is in the location of the player;
 	say "A [witch's top] is on the ground in front of you almost as if you forgot to put it on[if the largeness of breasts > 1], leaving you completely topless. Eek[end if]!".
 
+To compute class outfit of (H - witch's hat):
+	class summon witch's top;
+	class summon witch's trousers.
+
 doll hairbow is a halloween headgear. doll hairbow is latex. Figure of doll hairbow is the file "Items/Accessories/Head/dollbow1.png". doll hairbow is blondeness-negative. doll hairbow is brightness-negative. doll hairbow is redness-negative. The text-shortcut of doll hairbow is "dlhb".
 
 The printed name of doll hairbow is "[clothing-title-before]doll hairbow[clothing-title-after]".
@@ -234,10 +240,9 @@ To compute full outfit summon of (H - doll hairbow):
 	[if doll-dress is actually summonable:
 		summon doll-dress;
 		say "a [doll-dress], ";]
-	let BOR be a random black-and-orange rubber stockings;
-	if BOR is actually summonable:
-		summon BOR uncursed;
-		say "a [BOR], ";
+	if black-and-orange rubber stockings is actually summonable:
+		summon black-and-orange rubber stockings uncursed;
+		say "a [black-and-orange rubber stockings], ";
 	if red-orange briefs is actually summonable:
 		summon red-orange briefs uncursed;
 		say "a [red-orange briefs], ";
@@ -253,5 +258,10 @@ To compute full outfit summon of (H - doll hairbow):
 	blandify and reveal doll-dress;
 	now doll-dress is in the location of the player;
 	say "A [doll-dress] is on the ground in front of you almost as if you forgot to put it on[if the largeness of breasts > 1], leaving you completely topless. Eek[end if]!".
+
+To compute class outfit of (H - doll hairbow):
+	class summon doll-dress;
+	class summon black girly bow court heels;
+	class summon red-orange briefs.
 
 Halloween Headgear ends here.

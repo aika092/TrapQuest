@@ -24,11 +24,11 @@ This is the ring prevents speech rule:
 	if there is a worn ringagged clothing, rule fails.
 The ring prevents speech rule is listed in the player speech rules.
 
-dental gag is an opengag. The printed name of dental gag is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]dental gag[clothing-title-after]". The text-shortcut of dental gag is "dga".
+dental gag is an opengag. The printed name of dental gag is "[clothing-title-before]dental gag[clothing-title-after]". The text-shortcut of dental gag is "dga".
 
-ring gag is an opengag. The printed name of ring gag is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]ring gag[clothing-title-after]". The text-shortcut of ring gag is "rga".
+ring gag is an opengag. The printed name of ring gag is "[clothing-title-before]ring gag[clothing-title-after]". The text-shortcut of ring gag is "rga".
 
-lip gag is an opengag. The printed name of lip gag is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]lip gag[clothing-title-after]". The text-shortcut of lip gag is "lgg". lip gag is leather.
+lip gag is an opengag. The printed name of lip gag is "[clothing-title-before]lip gag[clothing-title-after]". The text-shortcut of lip gag is "lgg". lip gag is leather.
 
 To decide which figure-name is clothing-image of (C - an opengag):
 	decide on figure of ring gag.

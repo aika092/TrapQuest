@@ -33,8 +33,7 @@ bunny hat is a kind of bunny ears. a bunny hat is wool. a bunny hat has a number
 
 bunny-summoned is a number that varies.
 To compute unique recycling of (C - a bunny hat):
-	now the eggs-eaten of egg-eating-quest is 0;
-	now bunny-summoned is 0.
+	now the eggs-eaten of egg-eating-quest is 0.
 
 black bunny hat is a bunny hat. The printed name of black bunny hat is "[clothing-title-before]black bunny hat[clothing-title-after]". The text-shortcut of black bunny hat is "bbh".
 Definition: black bunny hat is black themed: decide yes.
@@ -90,18 +89,8 @@ To compute SelfExamineDesc of (H - a bunny hat):
 	say "You are wearing a bunny hat on top of your [ShortDesc of hair]. ".
 
 To compute class outfit of (H - a bunny hat):
-	let B be a random off-stage dq bunny outfit;
-	let S be a random off-stage bunny booties;
-	if B is actually summonable or (B is bunny outfit and bunny-summoned is 0 and the number of worn bunny outfit is 0):
-		PinkWardrobeUnclash B;
-		say "[bold type]You feel your bunny hat twitch as if the ears were real, and then a [ShortDesc of B] appears on you![roman type][line break]";
-		summon B cursed;
-		now the raw-magic-modifier of B is the number of worn diapers;
-		if bunny-summoned is 0, now bunny-summoned is 1;
-	otherwise if the class of the player is bunny and S is actually summonable:
-		say "[bold type]You feel your bunny hat twitch as if the ears were real, and then a [ShortDesc of S] appears on your feet![roman type][line break]";
-		summon S cursed;
-		now the raw-magic-modifier of S is 2 - the number of held chocolate eggs.
+	class summon dq bunny outfit;
+	class summon bunny booties.
 
 To compute unique periodic effect of (C - a bunny hat):
 	increase the charge of C by 1;
@@ -165,28 +154,11 @@ To say ShortDesc of (H - bunny glasses):
 	say "bunny glasses".
 
 To compute class outfit of (H - bunny glasses):
-	let B be a random off-stage bunny dress;
-	let K be a random off-stage bunny socks;
-	if B is actually summonable or (B is bunny outfit and bunny-glasses-summoned < 1 and the number of worn bunny dress is 0):
-		PinkWardrobeUnclash B;
-		say "[bold type]You feel your bunny hat twitch as if the ears were real, and then a [ShortDesc of B] appears on you![roman type][line break]";
-		summon B;
-		now the raw-magic-modifier of B is the number of worn diapers;
-		if bunny-glasses-summoned < 1, now bunny-glasses-summoned is 1;
-	otherwise if K is actually summonable or (K is clothing and bunny-glasses-summoned < 2):
-		PinkWardrobeUnclash K;
-		say "[bold type]You feel your bunny hat twitch as if the ears were real, and then a [ShortDesc of K] appears on your feet![roman type][line break]";
-		summon K;
-		now the raw-magic-modifier of K is 1;
-		now K is intelligence-influencing;
-		if bunny-glasses-summoned < 2, now bunny-glasses-summoned is 2.
+	class summon bunny dress;
+	class summon bunny socks.
 
 To compute SelfExamineDesc of (H - bunny glasses):
 	say "You are wearing a pair of silly pink bunny glasses on your face. ".
-
-Definition: bunny glasses (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
-	if wearing-target is bunny outfit or wearing-target is bunny socks, decide yes;
-	decide no.
 
 Chapter - Quest
 

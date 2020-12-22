@@ -3,6 +3,9 @@ Combat by Monster Framework begins here.
 current-monster is a monster that varies.
 
 To check attack of (M - a monster):
+	check default attack of M.
+
+To check default attack of (M - a monster):
 	if M is threatening or M is penetrating a body part or M is grabbing the player:
 		now the alert of the player is 1;
 		if M is delayed:
@@ -131,13 +134,17 @@ This function runs any code that needs to be executed whenever the player finish
 
 +!]
 To orgasm (M - a monster):
+	if M is penetrating face and M is male, progress quest of naughty-quest;
 	if M is dark skinned and M is penetrating a fuckhole, BBCAddictUp 1;
 	if ritual-beads is worn or runic headband is worn:
 		if runic headband is purity or M is penetrating vagina, compute priestessBlessing of M;
 	if the class of the player is worshipper and M is infernal, compute demonBoon of M;
 	if the class of the player is succubus, FavourUp M by 1;
 	if ghost-strapon is worn, compute ghostGrowth of M;
-	if the class of the player is princess and M is male and M is intelligent and M is in-play and M is not dying, compute betrothal of M;
+	if M is male and M is intelligent and M is in the location of the player and M is not dying, compute betrothal of M;
+	if M is royal guard and the class of the player is princess:
+		increase the duties-performed of royal-quest by 1; [making guards cum completes the quest twice as fast]
+		progress quest of royal-quest;
 	compute refractoryReset of M;
 	if M is infernal, progress quest of demon-slut-quest;
 	let vm be a random video-monitor in the location of the player;
@@ -155,7 +162,7 @@ To compute refractoryReset of (M - a monster):
 	if the blue-balls of M > 0, now the blue-balls of M is 0;
 	if M is intelligent:
 		now the refractory-period of M is the refractory-time of M;
-		if royal scepter is worn and the charge of royal scepter > 2, increase the refractory-period of M by (the refractory-time of M + 4);
+		if there is a worn bouquet and the charge of floral bouquet > 2, increase the refractory-period of M by (the refractory-time of M + 4);
 		if there is a worn enhancing book of anal and M is penetrating asshole:
 			FavourUp M;
 			increase the refractory-period of M by the intelligence of the player.
@@ -178,7 +185,7 @@ To compute priestessBlessing of (M - a monster):
 		otherwise:
 			if ritual-beads is worn:
 				say "You can feel a surge in your holy aura, and a voice appears in your head: [line break][second custom style]'[if the vaginalvirgin of the player is 1 and the player is female]Noble[otherwise]Dutiful[end if] Sister, your sacred rite [if the notches of ritual-beads < 6]has only just begun! Remember, [otherwise if the notches of ritual-beads < 10]is nearly complete! Remember, [otherwise]is complete, but [end if]there is always more work to be done!'[roman type][line break]";
-				heal asshole times (the soreness of asshole / 5);	
+				heal asshole times (the soreness of asshole / 5);
 			otherwise:
 				say "You can feel a surge in your holy aura and a voice appears in your head: '[if the vaginalvirgin of the player is 1 and the player is female]Noble[otherwise]Dutiful[end if] Sister, there is still more work to be done!'";
 			decrease the charge of the dungeon altar by 150;
@@ -264,7 +271,7 @@ To TimesSubmittedUp (M - a monster):
 	increase the times-submitted of M by 1;
 	increase the submission-count of the player by 1;
 	increase the sex-count of the player by 1;
-	if there is a worn tethering lipstick collar, end tethering.
+	if vampiress is chain-tethered, end tethering.
 
 [!<ComputeFacialClimaxOfMonster>+
 
@@ -706,6 +713,20 @@ This is the selecting an orifice rule:
 The selecting an orifice rule is listed last in the sex attempt rules.
 
 The selecting an orifice rules is a rulebook.
+
+This is the bride consort waits for his wedding night rule:
+	if current-monster is bride-consort and the consumation of betrothal-quest is false:
+		if playerRegion is hotel and the ceremony of betrothal-quest is true:
+			now auto is 1;
+			if vagina is actually presentable:
+				if the player is not in Hotel06, drag to Hotel06 by current-monster;
+				compute wedding night;
+			otherwise:
+				now auto is 0;
+		otherwise:
+			compute angry punishment of current-monster;
+		rule succeeds.
+The bride consort waits for his wedding night rule is listed first in the selecting an orifice rules.
 
 This is the monster convinced by player rule:
 	follow the monster convinced rule of current-monster;
@@ -1463,7 +1484,7 @@ Chooses which part of the body this monster will attack. Certain body parts can'
 +!]
 To decide which body part is the painful-part of (M - a monster):
 	let B be a random body part;
-	if B is a fuckhole or B is penis, now B is hips;
+	if B is a fuckhole or B is penis or B is scrotum, now B is hips;
 	if B is hair, now B is face;
 	decide on B.
 

@@ -358,17 +358,19 @@ To say NewbieMagicSpells:
 Section - Pedestals
 
 Carry out taking museum-store clothing:
-	now the noun is unowned;[TODO: fix issue where this doesn't trigger the gargoyle]
+	now the noun is museum-stolen;
 	if the location of the player is mansion28 and there is a worn lipstick collar:
-		let L be a random lipstick collar;
-		now L is tethering;
-		say "The barrier shatters as your hands pull back, and you hear a chilling rattling noise as a brilliant pink chain shoots out of your collar and secures itself to a tiny hook in the floor. [if vampiress is in the location of the player][BigNameDesc of vampiress] grins as the chain pulls taut[otherwise]You hear a sultry voice giggling down the hall as the chain pulls taut[end if].[line break][speech style of vampiress]'It would be a shame if you left without paying, now wouldn't it?'[roman type][line break][line break][line break]";
-		unless vampiress is alive:
-			summon vampiress in the mansion;
-			say "[SummoningFlav of vampiress]";
-			set up vampiress;
-			now vampiress is interested;
-			anger vampiress.
+		let V be vampiress;
+		now V is chain-tethered;
+		now the collar-ready of V is -15;[she'll chase a long time]
+		say "The barrier shatters as your hands pull back, and you hear a chilling rattling noise as a brilliant pink chain shoots out of your collar and [if V is in the location of the player]flies into [NameDesc of V]'s hand. [Big he of V] grins as [he of V] pulls the chain[otherwise]curves down the hall. You hear a sultry voice coming from that direction as the chain pulls[end if] taut.[line break][speech style of V]'It would be a shame if you left without paying, now wouldn't it?'[roman type][line break][line break][line break]";
+		unless V is alive:
+			summon V in the mansion;
+			say "[SummoningFlav of V]";
+			set up V;
+			now V is interested;
+			now the boredom of V is 0;
+			anger V.
 
 A pedestal is a kind of container. A pedestal is usually not openable. A pedestal is closed. A pedestal is not portable. The printed name of a pedestal is "[TQlink of item described][if the item described is erect and diaper lover > 0]nurturing[otherwise][pedestal-lock of the item described][end if] [pedestal-variant of the item described] pedestal[if the paid of the item described > 0] ([paid of the item described])[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of pedestal is "ped". A pedestal has a number called paid. The paid of a pedestal is usually 0. Understand "glass", "dome", "case", "barrier" as pedestal.
 
@@ -445,10 +447,13 @@ To add treasure to (X - a pedestal):[This function should happen when the mansio
 		now the paid of X is 10;
 	otherwise:
 		let P be a random off-stage rare fetish appropriate clothing;
-		now P is in X;
-		now P is museum-store;
-		now the paid of X is the price of P / 3;
-		if the paid of X <= 0, now the paid of X is 1.
+		if P is a thing:
+			now P is in X;
+			now P is museum-store;
+			now the paid of X is the price of P / 3;
+			if the paid of X <= 0, now the paid of X is 1;
+		otherwise:
+			say "BUG - not enough rare items to fill pedestals.".
 
 To BackgroundRender (T - a pedestal) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
 	let C be a random thing in T;

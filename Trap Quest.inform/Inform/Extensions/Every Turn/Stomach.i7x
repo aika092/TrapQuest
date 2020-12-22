@@ -166,8 +166,10 @@ To compute food:
 			if (player-hunger > a random number between 1 and 3 and the raw dexterity of the player > the starting dexterity of the player) or player-hunger > 4, DexDown 1;
 		increase player-hunger by 1;
 		if hunger-flav-said is 0, say "You feel yourself getting thinner as you starve yourself of food.";
-		if weight gain fetish is 1, FatDown 1;
-		otherwise BustDown 2;
+		if weight gain fetish is 1:
+			FatDown 1;
+		otherwise if diaper quest is 0:
+			BustDown 2;
 	otherwise if the stomach-food of the player > 0:
 		now player-hunger is 0;
 		StomachFoodDown 1;

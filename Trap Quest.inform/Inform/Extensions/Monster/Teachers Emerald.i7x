@@ -429,7 +429,7 @@ To say AdviceAnswer of (M - teacher-bianca):
 	say "[speech style of M]'There should never be a reason you need to bend your knees.'[roman type][line break]".
 
 To say EnslavedDominationFlav of (M - teacher-bianca):
-	if the player is possessing a penis and the number of worn cursed undisplacable clothing is 0:
+	if the player is possessing a penis and the number of worn pussy covering actually unavoidable clothing is 0:
 		say "Stepping right up to [NameDesc of M], you ";
 		if penis is penis-erect or penis is erect-at-will:
 			say "push your [if penis is penis-erect]erect[otherwise]rapidly hardening[end if] [ShortDesc of penis] into [his of M] fully exposed cunt in a single thrust, it gliding all the way in like a knife through butter. [BigNameDesc of M] turns more and more red in the face but remains standing perfectly still as you use [his of M] hole like a sex toy before finally painting [his of M] insides with your load.";

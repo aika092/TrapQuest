@@ -7,14 +7,14 @@ dominatrix is a monster. dominatrix is intelligent. The leftover-type of dominat
 If above 0, the player came early during the most recent sex session, and the dominatrix is not impressed.
 
 *@!]
-dominatrix has a number called disappointment. 
+dominatrix has a number called disappointment.
 
 [!<Dominatrix>@<strapOnGirth:Integer>*
 
 Determines the thickness of the dominatrix's strapon.
 
 *@!]
-dominatrix has a number called strap-on girth. The strap-on girth of dominatrix is 2. 
+dominatrix has a number called strap-on girth. The strap-on girth of dominatrix is 2.
 
 [!<Dominatrix>@<frustration:Integer>*
 
@@ -43,7 +43,7 @@ Definition: dominatrix is willing to do oral: decide yes.
 Definition: dominatrix is willing to do anal: decide yes.
 
 Definition: a dominatrix is willing to charm snakes:
-	if the player is the donator, decide yes;
+	if diaper quest is 0, decide yes;
 	decide no.
 
 Definition: dominatrix is hotel dwelling: decide yes.
@@ -227,7 +227,7 @@ To compute perception of (M - dominatrix):
 			otherwise say "[BigNameDesc of M] smirks.[line break][speech style of M]'Ah, found you. I'm ready for another session, and I know you are too[if the disappointment of M > 1]. You're going to love the new toy I picked out for you.'[otherwise]. Let's go.'[end if][roman type][line break]";
 		otherwise if the class of the player is royal slave:[no need to anger M when the dominatrix is uniquely unfriendly]
 			say "[speech style of M]'[if M is unfriendly and M is in Hotel37]Ah, slave, you have returned. Good timing, I am ready to play with you again.'[otherwise if M is unfriendly]Slave, return to my dungeon with me. My needs are more pressing than the Princess's.'[otherwise]You, slave! You're owned by the princess? [big his of M] jurisdiction does not reach into my dungeon. You will be mine tonight.'[end if][roman type][line break]";
-		otherwise if the class of the player is the latex fetish model:
+		otherwise if the class of the player is latex fetish model:
 			say "[speech style of M]'[if M is unfriendly and M is in Hotel37]Ah, slave, you have returned. Good timing, I am ready to play with you again.'[otherwise if M is unfriendly]Slave, return to my dungeon with me. You will be my fucktoy again tonight.'[otherwise]Ooh, a rubber fuckdoll. I've been waiting for a natural sub like you to walk into my dungeon.'[end if][roman type][line break]";
 		otherwise if the times-submitted of M > 3 and the frustration of M < 1:
 			say "[speech style of M]'[one of]Ah, my favourite customer! I have some good news. Since you've been such a good sub, I've decided to give you my services free of charge. All I want from you is your unconditional submission! [if the player is prone]Don't move.'[otherwise]Get on your knees.'[end if][or]If it isn't my favourite slave. You know the drill by now, don't you, slut.[stopping][roman type][line break]";
@@ -1028,12 +1028,12 @@ To compute failed dominance punishment of (M - dominatrix):
 	if the player is getting very unlucky and (player-fucker is penis or (the player is possessing a vagina and vagina is not actually occupied)) and H is off-stage clothing:
 		let C be a random worn bottom level protection clothing;
 		if the size of penis > 3:
-			say "[big he of M] [if C is clothing]fishes your [player-penis] out of your [printed name of C], frowning as it rapidly stiffens in [his of M] grip.[otherwise if penis is penis-erect]frowns as [he of M] wraps [his of M] hand around your rock-hard [player-penis].[otherwise]wraps [his of M] hand around your [player-penis], frowning as it rapidly stiffens in [his of M] grip.[end if][line break][speech style of M]'Well, I suppose it wouldn't hurt to remind you of what you'll be missing.'[roman type][line break][BigNameDesc of M] kneels between your legs, slowly stroking your [ShortDesc of penis] as [he of M] removes a small object from [his of M] belt. [big he of M] holds eye contact with you as [he of M] wraps [his of M] lips around your shaft, [his of M] hand continuing to pump your shaft from the base as [he of M] places the object, a chastity cage, down on your stomach. Your eyes widen as you realise what [he of M] has in store for you, but it's too late. You arch your back and buck your hips, emitting a dejected groan as your [literalMistress of M] forces you to fill [his of M] mouth with your [semen]. [big he of M] pulls off with a smirk, swallowing your [load] as [he of M] applies the cage to your already softening [player-penis].[line break][speech style of M]'There we-*click*-go! You're free to go, slave!'[roman type][line break]";
+			say "[big he of M] [if C is clothing]fishes your [player-penis] out of your [printed name of C], frowning as it rapidly stiffens in [his of M] grip.[otherwise if penis is penis-erect]frowns as [he of M] wraps [his of M] hand around your rock-hard [player-penis].[otherwise]wraps [his of M] hand around your [player-penis], frowning as it rapidly stiffens in [his of M] grip.[end if][line break][speech style of M]'Well, I suppose it wouldn't hurt to remind you of what you'll be missing.'[roman type][line break][BigNameDesc of M] kneels between your legs, slowly stroking your [ShortDesc of penis] as [he of M] removes a small object from [his of M] belt. [big he of M] holds eye contact with you as [he of M] wraps [his of M] lips around your shaft, [his of M] hand continuing to pump your shaft from the base as [he of M] places the object, a chastity cage, down on your stomach. Your eyes widen as you realise what [he of M] has in store for you, but it's too late. You arch your back and buck your hips, emitting a dejected groan as your [literalMistress of M] forces you to fill [his of M] mouth with your [semen]. [big he of M] pulls off with a smirk, swallowing your [load] as [he of M] applies the cage to your already softening [player-penis].[line break][speech style of M]'There we-*click*-go! You're free to go, slave!'[roman type][line break][GotUnluckyFlav]";
 			BlowGet;
 		otherwise if the player is possessing a penis:
-			say "[big he of M] [if C is clothing]pulls aside your [printed name of C] and begins using [his of M] fingertip to play with your [player-penis][otherwise if penis is penis-erect]teases your rock-hard [player-penis] with [his of M] fingertip[otherwise]teases your [player-penis] with [his of M] fingertip[end if] as [he of M] removes a small object from [his of M] belt.[line break][speech style of M]'So cute.'[roman type][line break][big he of M] kneels between your legs as places the object, a chastity cage, on your belly. It only takes a moment for [his of M] skilful teasing to bring you to the edge, and you arch your back and emit a shameful moan as you fill [his of M] hand with your [load]. [big he of M] licks your [semen] off [his of M] fingers as [he of M] applies the object, a chastity cage, to your newly softened [sissy-penis], locking it into place with an audible *click*.[line break][speech style of M]'That's better. See you later, slave!'[roman type][line break]";
+			say "[big he of M] [if C is clothing]pulls aside your [printed name of C] and begins using [his of M] fingertip to play with your [player-penis][otherwise if penis is penis-erect]teases your rock-hard [player-penis] with [his of M] fingertip[otherwise]teases your [player-penis] with [his of M] fingertip[end if] as [he of M] removes a small object from [his of M] belt.[line break][speech style of M]'So cute.'[roman type][line break][big he of M] kneels between your legs as places the object, a chastity cage, on your belly. It only takes a moment for [his of M] skilful teasing to bring you to the edge, and you arch your back and emit a shameful moan as you fill [his of M] hand with your [load]. [big he of M] licks your [semen] off [his of M] fingers as [he of M] applies the object, a chastity cage, to your newly softened [sissy-penis], locking it into place with an audible *click*.[line break][speech style of M]'That's better. See you later, slave!'[roman type][line break][GotUnluckyFlav]";
 		otherwise:
-			say "[big he of M] [if C is clothing]shifts aside your [printed name of C], slipping [his of M] fingers into your [vagina][otherwise]slips [his of M] fingers into your [vagina][end if] as [he of M] removes several curved metal parts from [his of M] belt.[line break][speech style of M]'You're feeling pent up, aren't you. Let me take care of that.'[roman type][line break][big he of M] kneels down next to you, using [his of M] the tip of [his of M] tongue to tenderly tease your clit as [he of M] assembles the parts around your waist. Your eyes widen as you realise [he of M]'s putting together a chastity cage, but it's too late. You arch your back and buck your hips, as your skilled [literalMistress of M] forces you right over the edge, forcing you to squirt as a powerful orgasm wracks your body. [big he of M] pauses to slurp your juices off [his of M] fingers before screwing the last piece into place.[line break][speech style of M]'Alright, now all I need to do is-*click*-lock it and we're done. You're free to go, slave!'[roman type][line break]";
+			say "[big he of M] [if C is clothing]shifts aside your [printed name of C], slipping [his of M] fingers into your [vagina][otherwise]slips [his of M] fingers into your [vagina][end if] as [he of M] removes several curved metal parts from [his of M] belt.[line break][speech style of M]'You're feeling pent up, aren't you. Let me take care of that.'[roman type][line break][big he of M] kneels down next to you, using [his of M] the tip of [his of M] tongue to tenderly tease your clit as [he of M] assembles the parts around your waist. Your eyes widen as you realise [he of M]'s putting together a chastity cage, but it's too late. You arch your back and buck your hips, as your skilled [literalMistress of M] forces you right over the edge, forcing you to squirt as a powerful orgasm wracks your body. [big he of M] pauses to slurp your juices off [his of M] fingers before screwing the last piece into place.[line break][speech style of M]'Alright, now all I need to do is-*click*-lock it and we're done. You're free to go, slave!'[roman type][line break][GotUnluckyFlav]";
 			LickGet;
 			orgasm;
 		orgasm;
@@ -1041,6 +1041,7 @@ To compute failed dominance punishment of (M - dominatrix):
 		summon H locked;
 	otherwise if the player is getting lucky:
 		compute sissy punishment of M;
+		say GotLuckyFlav;
 		Bore M;
 	otherwise:
 		say "[line break][speech style of M]'Alright slave, I get it. I'll play with you.'[roman type][line break]";

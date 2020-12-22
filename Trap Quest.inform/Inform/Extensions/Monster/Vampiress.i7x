@@ -1,6 +1,6 @@
 Vampiress by Monster begins here.
 
-vampiress is a monster. vampiress is intelligent. vampiress is male. The poison-status of vampiress is -1. vampiress has a number called hunger-timer.
+vampiress is a monster. vampiress is intelligent. vampiress is male. The poison-status of vampiress is -1. vampiress has a number called hunger-timer. vampiress can be chain-tethered or not chain-tethered. vampiress is not chain-tethered. vampiress has a number called collar-ready.
 
 vampiress has a thing called stake. The stake of vampiress is the throne.
 
@@ -107,7 +107,7 @@ Definition: vampiress is human: decide yes.
 To check chase boredom of (M - vampiress):
 	let D be 15;
 	if catbell is worn, increase D by 30;
-	if M is not in the location of the player and a random number from 1 to D is 1 and the number of worn tethering lipstick collars is 0 and the player is not bed-stuck and gargoyle is not grabbing the player:
+	if M is not in the location of the player and a random number from 1 to D is 1 and M is not chain-tethered and the player is not bed-stuck and gargoyle is not grabbing the player:
 		deinterest M;
 		if M is threatening and M is regional:
 			progress quest of nice-quest;
@@ -152,7 +152,7 @@ Definition: vampiress (called M) is objectifying the player:
 	if M is not interested or M is not in the location of the player:
 		now the objectification of M is 0;
 		decide no;
-	if there is a worn tethering lipstick collar, decide yes;
+	if M is chain-tethered, decide yes;
 	if the objectification of M is 1, decide yes;
 	if the class of the player is cheerleader, decide no;
 	let A be the appearance of the player;
@@ -167,12 +167,12 @@ To compute perception of (M - vampiress):
 	if the player is not able to get horny or the player is barbie:[covers living sex doll]
 		say "[speech style of M]'You are not even fit for feeding. How amusing. Now get out of my sight.'[roman type][line break]";
 		distract M;
-		if there is a worn tethering lipstick collar:
+		if M is chain-tethered:
 			let T be a random lipstick collar;
-			say "The chains binding you to the floor, along with the [ShortDesc of T], completely disintegrate, freeing you.";
-			now T is not tethering;
+			say "Your [ShortDesc of T] disintegrates freeing you.";
 			destroy T;[you get a freebie, but only one freebie]
-	otherwise if there is a worn tethering lipstick collar:
+			end tethering;
+	otherwise if M is chain-tethered:
 		say "[speech style of M]It's those sticky fingers of yours that make me so determined to give you a sticky face.[roman type][line break]";
 		anger M;
 	otherwise if the class of the player is vixen:
@@ -243,7 +243,7 @@ To compute DQ perception of (M - vampiress):
 	now M is interested;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]"; [The output for clothing humiliation takes place within the 'sluttily dressed' check.]
 	if M is uniquely unfriendly:
-		if there is a worn tethering lipstick collar:
+		if M is chain-tethered:
 			say "[speech style of M]It's those sticky fingers of yours that make me so determined to give you a sticky surprise.[roman type][line break]";
 			anger M;
 		otherwise:
@@ -297,7 +297,9 @@ To compute unique periodic effect of (M - vampiress):
 			if the raw difficulty of M is 0:
 				if M is in the location of the player, say "[BigNameDesc of M] doubles over, groaning as if in agony. [big he of M] gives you a single doleful, famished look as [his of M] body dissolves into a cloud of bats and disperses in every direction. You have a feeling [he of M] won't be back soon.";
 				otherwise say "You hear the screeching of fleeing bats coming from another room in the mansion.";
-				destroy M.
+				destroy M;
+	increase the collar-ready of M by 1;
+	if M is chain-tethered and (the collar-ready of M > 0 or the number of worn submissive collars is 0), end tethering.
 
 Part 3 - Combat
 
@@ -361,7 +363,7 @@ Section 1 - Attack
 
 To reset vampire hunger:
 	now the hunger-timer of vampiress is 0;
-	DifficultyUp vampiress by 3.
+	DifficultyUp vampiress by 2.
 
 This is the vampiress punishes diaper rule:
 	let D be a random worn diaper;
@@ -442,14 +444,14 @@ To compute condom success of (M - vampiress) in (F - a fuckhole):
 	if refractoryperiod > 0, DifficultyUp M by 1.
 
 To say CondomPieFlav of (M - vampiress) in (F - a fuckhole):
-	say "[BigNameDesc of M] roars with pleasure, tightening [his of M] grip as the condom floods with warm [semen], only barely prevented from flowing freely into your used hole[if the player is able to get horny]. You feel a strong pressure in the back of your mind, and in your [genitals] as [he of M] places a hand on your temples, and you immediately feel yourself go over the edge.";
+	say "[BigNameDesc of M] coos with pleasure, tightening [his of M] grip as the condom floods with warm [semen], only barely prevented from flowing freely into your used hole[if the player is able to get horny]. You feel a strong pressure in the back of your mind, and in your [genitals] as [he of M] places a hand on your temples, and you immediately feel yourself go over the edge.";
 	if the player is able to get horny, trigger shameful orgasm of F;
-	say "[big he of M] wipes up some of your sexual fluids, sighing in satisfaction as [he of M] licks it off [his of M] fingers.[line break][speech style of M]'You should have some too, darling.'[roman type][line break][big he of M] pulls out and circles around you, carefully peeling off the condom and upending it over your face. [if there is a worn tethering lipstick collar][line break][speech style of M]'Drink it, little thief. Drink it all...[roman type][line break][otherwise][line break][speech style of M]'Drink it all. Feed on me...'[roman type][line break][end if][line break]".
+	say "[big he of M] wipes up some of your sexual fluids, sighing in satisfaction as [he of M] licks it off [his of M] fingers.[line break][speech style of M]'You should have some too, darling.'[roman type][line break][big he of M] pulls out and circles around you, carefully peeling off the condom and upending it over your face. [if M is chain-tethered][line break][speech style of M]'Drink it, little thief. Drink it all...[roman type][line break][otherwise][line break][speech style of M]'Drink it all. Feed on me...'[roman type][line break][end if][line break]".
 
 To say CreampieFlav of (M - vampiress) in (F - asshole):
-	say "[BigNameDesc of M] roars with pleasure, tightening [his of M] grip as warm [semen] begins spurting out into your used hole[if the anal sex addiction of the player > 5], causing you to cry out with ecstasy.[otherwise].[end if] Still, [his of M] rapid penetration doesn't cease until [his of M] love has thoroughly coated the inside of your anus. You feel a strong pressure in the back of your mind, and in your [genitals] as [he of M] places a hand on your temples, and you immediately feel yourself go over the edge.";
+	say "[BigNameDesc of M] coos with pleasure, tightening [his of M] grip as warm [semen] begins spurting out into your used hole[if the anal sex addiction of the player > 5], causing you to cry out with ecstasy.[otherwise].[end if] Still, [his of M] rapid penetration doesn't cease until [his of M] love has thoroughly coated the inside of your anus. You feel a strong pressure in the back of your mind, and in your [genitals] as [he of M] places a hand on your temples, and you immediately feel yourself go over the edge.";
 	if the player is able to get horny, anally orgasm shamefully;
-	say "[big he of M] releases [his of M] magical grip on your [genitals] as [he of M] [if the player is possessing a penis]scoops up some of your [semen][otherwise]wipes up some of your fluids[end if], sighing in satisfaction as [he of M] licks it off [his of M] fingers.[line break][speech style of M]'Was it good for you, honey? What am I saying? Of course it was. It was good for me too, you know.";
+	say "[big he of M] releases [his of M] magical grip on your [genitals] as [he of M] [if the player is possessing a penis]scoops up some of your [semen][otherwise]wipes up some of your fluids[end if], sighing in satisfaction as [he of M] licks it off [his of M] fingers.[line break][speech style of M]'Was it good for you, honey? What am I saying? Of course it was. It was good for me too, you know. [run paragraph on]";
 	if the number of worn headgear is 0 and newbie tips is 1:
 		if futanari fetish is 0, say "By the way, I should tell you that although that seed was fake, it contained enough of my essence that I was able to turn you. You'll probably start to notice some changes in yourself. First, the rumour about vampires needing blood isn't entirely accurate. What we really need is human fluid, of any variety. Most vampires see themselves above the degradation of collecting and feasting on cum, but all of us have the same cravings. I'd sate those if I were you, as ignoring them will make you weaker. Other than that, once your claws grow in, you'll also be able to drain energy from your enemies, healing yourself and fighting your fatigue. However, you won't be able to turn anyone else. That is a power you do not gain until you are many, many years old. Have fun, my newest fledgling.'[roman type][line break]You check your mouth and, sure enough, fangs have grown where your canine teeth once were.";
 		otherwise say "By the way, I should tell you that the sperm of a vampire contains our virus and when delivered anally, the virus is transmitted. You'll probably start to notice some changes in yourself. First, the rumour about vampires needing blood isn't entirely accurate. What we really need is human fluid, of any variety. Most vampires see themselves above the degradation of collecting and feasting on cum. But, most vampires are vicious murderers. My point is, you're going to start noticing these cravings. I'd sate those if I were you, as ignoring them will make you weaker. Other than that, once your claws grow in, you'll also be able to drain energy from your enemies, healing yourself and fighting your fatigue. However, you won't be able to turn anyone else. That is a power you do not gain until you are many, many years old. Have fun, my newest fledgling.'[roman type][line break]You check your mouth and, sure enough, fangs have grown where your canine teeth once were.";
@@ -487,7 +489,7 @@ To say NormalMouthPenetrationFlav of (M - vampiress):
 [The benefit of her happy reward is that you don't have to have a shameful orgasm]
 To compute happy reward of (M - vampiress):
 	if the player is able to get horny and the player is not barbie:
-		let C be a random chastity bond;
+		let C be a random worn chastity bond;
 		say "[BigNameDesc of M][if C is clothing] reaches between your legs, prying off your [printed name of C] with a heavy crunch. [big he of M][end if] smiles at you as [he of M] [if the size of penis > 4]wraps [his of M] hand around your [ShortDesc of penis] and begins to pump[otherwise if the player is male]gently begins to tease your [ShortDesc of penis][otherwise if vagina is actually occupied]begins to tease your clit[otherwise]slips [his of M] fingers into your [vagina][end if]. You feel a sharp pressure in the back of your mind, and [if the player is female]your lips twist themselves into a big, submissive 'O' as orgasm crashes through your body. [BigNameDesc of M] catches your fluids in [his of M] hand, chuckling softly as licks your juices from [his of M] fingers[otherwise if the bimbo of the player < 6]you grit your teeth as your [player-penis] immediately explodes, coating [his of M] hand in fresh, creamy [semen]. [BigNameDesc of M] chuckles softly as [he of M] licks your load off [his of M] fingers[otherwise]your lips twist themselves into a big, submissive 'O' as your [player-penis] shoots several ropes of fresh, creamy [semen] directly into [his of M] hand. [BigNameDesc of M] chuckles softly as [he of M] licks your load off [his of M] fingers[end if].[line break][speech style of M]'I look forward to feeding from you again.'[roman type][line break]";
 		reset vampire hunger;
 		if C is clothing, destroy C;
@@ -495,6 +497,11 @@ To compute happy reward of (M - vampiress):
 	otherwise:
 		say "[speech style of M]'Good [boy of the player].'[roman type][line break]";
 	FavourUp M by 3.
+
+To compute happy anal sex reward of (M - vampiress):
+	do nothing.
+To compute happy vaginal sex reward of (M - vampiress):
+	do nothing.
 
 To check forgiveness of (M - vampiress):
 	if ((a random number between the favour of M and the charisma of the player) > 6 or M is willing to do vaginal) and the player is able to get horny and the player is not barbie:[she is only interested in forgiving you if you can cum for her]
@@ -576,14 +583,141 @@ To say (M - vampiress) mercy sex (N - a number):
 	if N is 4:
 		say "[BigNameDesc of M] fucks your [variable O] slowly and methodically, breathing evenly as if trying to maintain focus.".
 
-To compute striking attack of (M - vampiress):
-	if the stake of M is clothing:
-		say "[BigNameDesc of M] rakes [his of M] clawed fingers across your skin, causing you to feel fatigued.";
+To compute damaging attack of (M - vampiress):
+	let S be the stake of M;
+	let L be a random worn submissive collar;
+	if L is clothing and (S is the throne or L is lipstick collar) and M is not chain-tethered and the collar-ready of M > 3 and a random number between 1 and 3 is 1:
+		compute grabbing attack of M;[she tries to attach a chain to you, but only if you're wearing a collar.]
+	otherwise if S is clothing or (M is willing to do vaginal and a random number between 1 and 3 is 1):
+		compute striking attack of M;
 	otherwise:
-		say "[BigNameDesc of M] disappears from your vision and appears behind you a moment later, seductively running [his of M] clawed fingers across your skin, causing you to feel fatigued and aroused.[line break][speech style of M]'[one of]Why don't you just give up, darling? You know that you want to...'[or]Why should we fight when we could have so much fun together?'[or]Such meaningless violence... Wouldn't you rather just enjoy yourself?'[or]We both know that you want me... Why should you deny yourself that which you want when it's right in front of you?'[or]You do think I'm sexy, don't you?'[or]What do you really have to lose by giving into your desires?'[in random order][roman type][line break]";
+		compute molesting attack of M.
+
+[if the collar is the lipstick collar and she HAS NOT been staked, her chain can't miss.]
+To compute grabbing attack of (M - vampiress):
+	let L be a random worn submissive collar;
+	say "[BigNameDesc of M] stretches [his of M] hand out, and a glowing pink chain bursts from [his of M] palm!";
+	if (L is a lipstick collar and the stake of M is the throne) or the accuracy roll of M > the dexterity of the player:
+		say "[line break][bold type][one of]CLINK![or]SHINK![or]KA-CHINK![in random order][roman type][line break]The chain curves through the air and attaches itself to the front of your [printed name of L]! [big he of M] licks [his of M] lips as [he of M] pulls the chain taut. Escaping will be much harder now!";
+		now M is chain-tethered;
+	otherwise:
+		say "The chain curves through the air towards you, but you manage to avoid it! [big he of M] frowns as [he of M] closes [his of M] hand and the chain disappears.";
+	now the collar-ready of M is a random number between -5 and -7.
+
+To end tethering:
+	let M be vampiress;
+	repeat with P running through pedestals:
+		unless the paid of P <= 0, now P is closed;
+	if M is chain-tethered:
+		now M is not chain-tethered;
+		say "[line break]The chain releases you, glittering as it fades from existence.".
+
+To check tethering:
+	let M be vampiress;
+	if the collar-ready of M > 0 or the number of worn submissive collars is 0:
+		end tethering.
+
+Report going down when vampiress is chain-tethered:
+	end tethering.
+
+[displayed when the player tries to move, fails, and wastes their turn]
+To say TetherMove:
+	let M be vampiress;
+	if there is museum-stolen currently perceivable thing:
+		if diaper quest is 0:
+			if M is in the location of the player, say "The chain pulls hard as soon as you start to move, very nearly throwing you off balance.[line break][speech style of M]'[one of]Why are you running away darling? Afraid I'm going to pull out when I cum? Hahaha!'[or]You're cute for a thief, which is all the more reason to make sure I collect your payment personally...'[or]No getting away from me now, [if the player is presenting as male]Mr[otherwise]Mrs[end if]. sticky fingers!'[or]Scared of me, darling? Don't worry, I don't kill thieves, I inseminate them.'[in random order][roman type][line break]";
+			otherwise say "The chain pulls hard as soon as you start to move, [one of]forcefully dragging you back several feet[or]accompanied by a sing-songy voice down the hall.[line break][speech style of M]'I've been deep-throated by faster thieves than you, darling~!'[roman type][line break][or]dragging you back several feet. You hear a mocking roll of laughter down the hall. [or]accompanied by a sing-songy voice down the hall.[line break][speech style of M]'Better run faster unless you want a sticky face to match those sticky fingers~!'[roman type][line break][or][line break][speech style of M]'Run run run, as fast as you can, can't escape me, I'm going to violate your asshole!'[roman type][line break][at random][one of]You have to keep trying to escape![or]You have to keep trying![stopping]";
+		otherwise:
+			if M is in the location of the player, say "The chain pulls hard as soon as you start to move, very nearly throwing you off balance.[line break][speech style of M]'[one of]Why are you running away darling? Afraid I'm going to make you wet yourself? Hahaha!'[or]You're cute for a thief, which is all the more reason to make sure I collect your payment personally...'[or]No getting away from me now, [if the player is presenting as male]Mr[otherwise]Mrs[end if]. sticky fingers!'[or]Scared of me, darling? Don't worry, I don't kill thieves, I just [']adopt['] them...'[in random order][roman type][line break]";
+			otherwise say "The chain pulls hard as soon as you start to move, [one of]forcefully dragging you back several feet[or]accompanied by a sing-songy voice down the hall.[line break][speech style of M]'I've diapered faster thieves than you, darling~!'[roman type][line break][or]dragging you back several feet. You hear a mocking roll of laughter down the hall. [or]accompanied by a sing-songy voice down the hall.[line break][speech style of M]'Better run faster unless you want some sticky padding to match those sticky fingers~!'[roman type][line break][or][line break][speech style of M]'Run run run, as fast as you can, can't escape me, I'm going to put you in [if the player is diapered]an even thicker[otherwise]a[end if] nappy!'[roman type][line break][in random order][one of]You have to keep trying to escape![or]You have to keep trying![stopping]";
+	otherwise:
+		say "[if M is in the location of the player]The chain pulls hard as soon as you start to move, very nearly throwing you off balance.[otherwise]The chain pulls hard as soon as you start to move, forcefully dragging you back several feet as a voice yells from down the hall.[end if][line break][speech style of M]'[one of]Where are you going, darling? Your [literalMistress of M] is right here!'[or]Wait just a minute, darling. [if diaper quest is 0]We haven't even made love yet[otherwise]I haven't even pampered you yet[end if]!'[or]Ah-ah! I can't let you go without [if diaper quest is 0]inseminating you[otherwise]inspecting you[end if] first![in random order]";
+
+[displayed when the player tries to move, and succeeds.]
+To compute TetherBust:
+	let M be vampiress;
+	say "The chain pulls taut as you start to move, and white cracks slowly progess out away from you as it begins to break.";
+	if the strength roll of M > the strength of the player:
+		say "At the last moment, several additional links of chain [if M is in the location of the player]are dragged out of [FuckerDesc of M]'s hand.[otherwise]are dragged through the doorway.[end if]";
+	otherwise:
+		say "A piercing noise echoes through the room as the chain breaks![bold type]You're free![roman type]";
+		end tethering.
+	
+
+[If there's a chain on your collar, can't be dodged.]
+To compute molesting attack of (M - vampiress):
+	let H be 1;
+	increase H by ((the difficulty of M - the starting difficulty of M) / 2);
+	if the health of M + H >= the maxhealth of M, now H is the maxhealth of M - the health of M;[can be 0]
+	if M is chain-tethered:
+		say "[BigNameDesc of M] yanks on the chain, dragging you into [his of M] arms before you have a chance to resist! You feel your stamina draining away as [he of M] seductively runs [his of M] clawed fingers across your skin. [if H > 5]At the same, several of [his of M] wounds rapidly close up. [otherwise if H > 0]At the same time, a few of [his of M] wounds close up. [end if]";
+		FatigueUp H * 2;
+		increase the health of M by H;[We already know overhealing won't happen, since we handled it above.]
 		passively stimulate vagina from M;
-		increase health of M by 2;
-	FatigueUp a random number between the difficulty of M and the difficulty of M * 3.
+		if the strength roll of M > the strength of the player:
+			say "[line break][speech style of M]'[one of]Isn't it wonderful being close together like this?'[or]Lets stay like this for just a bit longer, darling...'[or]I love being so close like this...'[in random order][roman type][line break]";
+			compute seduction grope of M;
+			say "[line break][big he of M] keeps a strong grip on the chain as [he of M] finally releases you from [his of M] embrace.";
+		otherwise:
+			say "You squirm out of [his of M] grip before [he of M] can continue.[line break][speech style of M]'[one of]Don't you want more of me?'[or]What's wrong? You do think I'm sexy, don't you?'[or]We both know you want me...'[or]Don't you want more?[in random order][roman type][line break]";
+	otherwise:
+		say "[BigNameDesc of M] disappears from your vision and suddenly reappears right behind you.";
+		if the accuracy roll of M > the dexterity of the player:
+			say "You feel your stamina draining away as [he of M] seductively runs [his of M] clawed fingers down your back.[if H > 5] At the same, several of [his of M] wounds rapidly close up.[otherwise if H > 0] At the same time, a few of [his of M] wounds close up.[end if]";
+			FatigueUp H * 2;
+			increase the health of M by H;
+			passively stimulate vagina from M;
+		otherwise:
+			say "Luckily, you get away before [he of M] can do anything to you.".
+
+[If there's a chain on your collar, can't be dodged.]
+To compute striking attack of (M - vampiress):
+	let B be the painful-part of M;
+	if M is chain-tethered or the accuracy roll of M >= the dexterity of the player:
+		if M is chain-tethered, say "[BigNameDesc of M] yanks on the chain, leaving you with no ability to dodge as [he of M] rakes [his of M] clawed fingers across your [if B is face]face[otherwise if B is hips]ass[otherwise][printed name of B][end if]";
+		otherwise say StrikingSuccessFlav of M on B;
+		compute M striking B;
+		compute striking success effect of M on B;
+	otherwise:
+		say StrikingFailureFlav of M on B.
+
+To say StrikingSuccessFlav of (M - vampiress) on (B - a body part):
+	say "[BigNameDesc of M] rakes [his of M] clawed fingers across your [if B is face]face[otherwise if B is hips]ass[otherwise][printed name of B][end if]! Ouch!";
+
+To say StrikingFailureFlav of (M - vampiress) on (B - a body part):
+	say "[BigNameDesc of M] tries to claw you [TargetName of B], but you manage to swiftly dodge the blow!".
+
+To compute tripping attack of (M - vampiress):
+	say MonsterTripAnnounceFlav of M;
+	let D be the intelligence roll of M;
+	if the stake of M is clothing or the blind-status of M is 1:
+		say "[line break][speech style of M]'[one of]Y-you have to kneel! Obey me!'[or]S-surrender! Obey!'[or]Surrender, now! R-right now!'[or]I-its time to kneel. Now!'[in random order][roman type][line break][big he of M] isn't able to hold eye contact with you, and you squirm out of [his of M] grip before [he of M] succeeds.";
+		say MonsterFailedTripFlav of M;
+	otherwise:
+		say "[line break][speech style of M]'[one of]You'll kneel for me, won't you? Kneel. Do it for me.'[or]This violence is all pointless, isn't it? So lets stop fighting. Get on your knees.'[or]Surrender for me, darling. Right now, surrender.'[or]You don't want to fight anymore, darling. You want to get on your knees.'[or]Fighting is such a waste. Can't we end this? Can't you surrender?'[in random order][roman type][line break]";
+		if D > the intelligence of the player:
+			say MonsterTrippedFlav of M;
+			now the stance of the player is 1;
+			if the player is prone, check attack of M;
+		otherwise:
+			say MonsterFailedTripFlav of M.
+
+To say TripChanceFlav of (M - vampiress):
+	if the trip frequency of M > 2:
+		say "[bold type][BigNameDesc of M] [bold type][one of]makes eye contact and quickly looks away[or]meets your gaze suddenly[or]briefly makes eye contact[in random order]. There's a chance [he of M]'s about to use [his of M] vampiric powers to do something...[roman type][line break]";
+	otherwise:
+		say "[bold type][BigNameDesc of M] [bold type][one of]is blatantly trying to catch your eye[or]keeps trying to make eye contact with you[or]is blatantly trying to get you to look her in the eye[in random order]! [big he of M] is clearly about to use [his of M] vampiric powers on you![roman type][line break]";
+	if newbie tips is 1 and tutorial is 0, say "[one of][newbie style]There is a CHANCE that the [ShortDesc of M] will attempt to trip you next turn. If [he of M] succeeds, [he of M] will be able to immediately transition into [his of M] punishment routine. This would be a good turn to choose a slap attack. Kicking is the least safe option.[roman type][line break][or][stopping]";
+	now M is trip-warned.
+
+To say MonsterTripAnnounceFlav of (M - vampiress):
+	say "[BigNameDesc of M] lunges at you with cat-like quickness, grabbing your chin and forcing you to look [him of M] directly in the eye!".
+
+To say MonsterTrippedFlav of (M - vampiress):
+	say "Tingles pass through your head as you are forced to stare deeply into [his of M] eyes, and you find yourself nodding slowly as you drop to your knees.".
+
+To say MonsterFailedTripFlav of (M - vampiress):
+	say "Tingles pass through your head as you are forced to stare deeply into [his of M] eyes, but you snap out of it and quickly break [his of M] grip!".
 
 [The vampiress has to be "invited in"]
 To compute SelectionFrustrated of (M - vampiress):
@@ -757,31 +891,42 @@ To say BecomesAggressive of (M - vampiress):
 Section 3 - Damage
 
 To compute damage reaction of (M - vampiress):
-	if M is uninterested:
-		say "[big he of M] grins malevolently! Uh-oh...";
+	if M is uninterested or M is friendly:
+		if M is uninterested, say "[big he of M] grins malevolently! Uh-oh...";
+		otherwise say "[BigNameDesc of M] looks surprised, but quickly smirks before leering seductively in your direction!";
 		now the sex-length of M is a random number between 2 and 3;
 	otherwise:
-		if M is friendly:
-			say "[BigNameDesc of M] looks surprised, but quickly smirks before leering seductively in your direction!";
-			now the sex-length of M is a random number between 2 and 3;
+		let D be the difficulty of M;
+		let X be the maxhealth of M;
+		let H be the health of M;
+		if H < (X / 4) * 3, decrease D by 1;
+		if H < (X / 4) * 2, decrease D by 2;
+		if H < (X / 4), decrease D by 4;[escaping gets easier the more damage she takes]
+		if M is chain-tethered and D < the strength of the player:
+			say "[BigNameDesc of M] releases the chain as [he of M] receives your attack! [bold type]You're free![roman type]";
+			end tethering;
 		otherwise:
-			say DamageReaction (the health of M) of M;
-			if a random number between 1 and 3 is 1, increase the sex-length of M by 1.
+			say DamageReaction (the health of M) of M.
 
 To say DamageReactHealthy of (M - vampiress):
-	say "[one of][BigNameDesc of M] laughs playfully, ignoring the hit.[or][BigNameDesc of M] continues to shrug off your hits with mirth.[at random]".
+	if M is chain-tethered, say "[BigNameDesc of M] [one of]holds onto the chain tightly, ignoring the hit.[or]maintains [his of M] grip on the chain, ignoring the hit.[then at random]";
+	otherwise say "[one of][BigNameDesc of M] laughs playfully, ignoring the hit.[or][BigNameDesc of M] continues to ignore your hits[then at random]".
 
 To say DamageReactDamaged of (M - vampiress):
-	say "[one of][BigNameDesc of M] moans lecherously. It looks like the pain is turning [him of M] on![or][BigNameDesc of M] seems to grow more excited with every hit![stopping]".
+	if M is chain-tethered, say "[BigNameDesc of M] [one of]adjusts [his of M] grip on the chain as [he of M] takes the hit![or]fumbles with the chain as [he of M] takes the hit.[then at random]";
+	otherwise say "[one of][BigNameDesc of M] moans lecherously. It looks like the pain is turning [him of M] on![or][BigNameDesc of M] seems to grow more excited with every hit![then at random]".
 
 To say DamageReactTired of (M - vampiress):
-	say "[BigNameDesc of M] pouts as [he of M] takes the hit.".
+	if M is chain-tethered, say "[BigNameDesc of M] struggles to hold onto the chain as [he of M] takes the hit.";
+	otherwise say "[BigNameDesc of M] pouts as [he of M] takes the hit.".
 
 To say DamageReactWeak of (M - vampiress):
-	say "[BigNameDesc of M] winces as [he of M] endures the hit.[one of][line break][speech style of M]'Darling, you're being too rough!'[roman type][line break][or][stopping]".
+	if M is chain-tethered, say "[BigNameDesc of M] nearly drops the chain as [he of M] endures the hit!";
+	otherwise say "[BigNameDesc of M] winces as [he of M] endures the hit.[one of][line break][speech style of M]'Darling, you're being too rough!'[roman type][line break][or][stopping]".
 
 To say DamageReactSubmissive of (M - vampiress):
-	say "[BigNameDesc of M] moans, rubbing [his of M] thighs together as [he of M] endures the hit.[line break][speech style of M]'[one of]Ooh, take me NOW, darling!'[or]I'm ready, darling. Take me! TAKE ME!'[or]Take me now! TAKE ME NOW!'[in random order][roman type][line break]".
+	if M is chain-tethered, say "[BigNameDesc of M] moans, nearly drops the chain as [he of M] endures the hit!";
+	otherwise say "[BigNameDesc of M] moans, rubbing [his of M] thighs together as [he of M] endures the hit.[line break][speech style of M]'[one of]Ooh, take me NOW, darling!'[or]I'm ready, darling. Take me!'[or]Yes! Take me now!'[in random order][roman type][line break]".
 
 To say BanishDemandFlav of (M - vampiress):
 	say "[variable custom style]'[if there is worn purity clothing]Begone, evil creature[otherwise]I guess this is my house now[end if]!'[roman type][line break]".
@@ -820,7 +965,7 @@ To compute unique banishment of (M - vampiress):
 	unless X is nothing:
 		now X is in the location of the player;
 		compute autotaking X;
-	if there is a worn tethering lipstick collar, end tethering;
+	if M is chain-tethered, end tethering;
 	progress quest of ritual-quest.
 
 To compute (M - vampiress) slinking away:
@@ -831,7 +976,7 @@ To compute (M - vampiress) slinking away:
 	increase the hunger-timer of M by 50.
 
 To compute unique dislodging of (M - vampiress):
-	if there is a worn tethering lipstick collar, end tethering.
+	if M is chain-tethered, end tethering.
 
 Section 4 - Dominant Sex
 
@@ -879,13 +1024,12 @@ To compute failed dominance punishment of (M - vampiress):
 	let V be a random off-stage vampiric fangs;
 	let F be player-fucker;
 	if F is fuckhole or the player is getting unlucky or M is willing to do vaginal:[if she's starved or you tried to ride her, she skips straight to the sex]
-		let R be a random number between 1 and 3;
-		say "[BigNameDesc of M] never breaks eye contact as you sit down in [his of M] lap, pulling you into [his of M] embrace as [he of M] guides [his of M] [LongDickDesc of M] into your [variable F].[line break][speech style of M]'Don't worry, darling, just focus on enjoying yourself. I'll handle everything.'[roman type][line break]";
+		say "[BigNameDesc of M] never breaks eye contact as you sit down in [his of M] lap, pulling you into [his of M] embrace as [he of M] guides [his of M] [LongDickDesc of M] into your [variable F].[line break][speech style of M]'Don't worry, darling, just focus on enjoying yourself. I'll handle everything.'[roman type][line break][if M is not willing to do vaginal and F is not fuckhole][GotUnluckyFlav][end if]";
 		now M is penetrating F;
 		set up sex length of M in F;
 		now another-turn-flavour is the substituted form of "[BigFuckerDesc of M] fucks you with gentle thrusts.";
 		now another-turn is 1;
-	otherwise if V is actually summonable and F is face or the player is getting very unlucky:[if you tried to "stake" her or you're just super unlucky, she punishes you]
+	otherwise if V is actually summonable and (F is face or the player is getting very unlucky):[if you tried to "stake" her or you're just super unlucky, she punishes you]
 		say "[BigNameDesc of M] never breaks eye contact as you lie down next to [him of M], [if face is not actually occupied]kissing you passionately[otherwise]peppering kisses around your mouth[end if] as [he of M] pulls you into [his of M] embrace.[line break][speech style of M]'You've been bad, [NameBimbo]. But if you become my thrall, I won't have to punish you.'[roman type][line break][big he of M] grazes your neck with [his of M] fangs, and you realise [he of M]'s asking for permission to suck your blood.";
 		if the player is consenting:[Bloodsucking may squick some people, so the player has to choose it explicitly]
 			say "You feel a jolt of pain as [his of M] fangs pierce your neck, but thankfully it's over with quickly. [NameDesc of M] kisses you on the cheek, blood running down [his of M] chin as [he of M] gets to [his of M] feet.[line break][speech style of M]'Consider myself my newest fledgling. As long as you have enough semen in your diet, you should enjoy it immensely. See you later, darling!'[roman type][line break]You check your mouth and, sure enough, fangs have grown where your canine teeth once were.";
@@ -896,6 +1040,7 @@ To compute failed dominance punishment of (M - vampiress):
 		otherwise:
 			say "Pain pierces through your skull as [NameDesc of M] climbs to [his of M] feet.[line break][speech style of M]'Oh well. I prefer the new way anyway.'[roman type][line break]";
 			PainUp 2;
+		say "[unless F is face][GotUnluckyFlav][end if]";
 		Bore M;
 	otherwise:
 		say "[line break][speech style of M]'Better luck next time, darling. I'm rooting for you!'[roman type][line break]";
@@ -1093,14 +1238,26 @@ To UnidentifiablePosterReaction of (M - vampiress):
 
 Section 1 - Greeting
 
+To consider (T - talk-greet) for (M - vampiress):
+	say "Your eyes meet with [hers of M], and you get the feeling [he of M] is picking your words out for you.";
+	if M is defeated:
+		now the printed name of talk-greet is the substituted form of "[DefeatedGreet of M]";
+	otherwise if M is unintelligent:
+		now the printed name of talk-greet is the substituted form of "[MuteGreeting of M]";
+	otherwise if (the greet-window of M > 0 and M is not penetrating a body part and M is not grabbing the player and M is not wrangling a body part) or M is uninterested:
+		now the printed name of talk-greet is the substituted form of "[conventional greeting of M]";
+	otherwise:
+		now the printed name of talk-greet is the substituted form of "[vanity greeting of M]";
+	set next numerical response to the substituted form of "[printed name of T]".
+
 To say FirstGreeting to (M - vampiress):
-	say "Your eyes meet with [hers of M], and you get the feeling [he of M] is picking your words out for you.[line break][second custom style]'[one of]Hello, I'm [NameBimbo]. Please be my [literalMistress of M]!'[or]Hello, new [literalMistress of M]! My name is [NameBimbo].'[or]Hello, [literalMistress of M]! My name is [NameBimbo]!'[at random][roman type][line break]";
+	say "[line break][second custom style]'[one of]Hello, I'm [NameBimbo]. Please be my [literalMistress of M]!'[or]Hello, new [literalMistress of M]! My name is [NameBimbo].'[or]Hello, [literalMistress of M]! My name is [NameBimbo]!'[at random][roman type][line break]";
 
 To say FirstResponse of (M - vampiress):
 	say "[speech style of M]'Hello there, doll...'[roman type][line break]";
 
 To say RepeatGreeting to (M - vampiress):
-	say "Your eyes meet with [hers of M], and you get the feeling [he of M] is picking your words out for you.[line break][second custom style]'[one of]Hello, [literalMistress of M]! I can't wait for you to fuck me.'[or]Feed from me soon, [literalMistress of M]!'[or]Please use me soon, [literalMistress of M]! I'm delicious!'[at random][roman type][line break]";
+	say "[line break][second custom style]'[one of]Hello, [literalMistress of M]! I can't wait for you to fuck me.'[or]Feed from me soon, [literalMistress of M]!'[or]Please use me soon, [literalMistress of M]! I'm delicious!'[at random][roman type][line break]";
 
 To say RepeatResponse of (M - vampiress):
 	say "[speech style of M]'Hello again, [NameBimbo]...'[roman type][line break]".
@@ -1129,7 +1286,7 @@ To compute vanity response of (M - vampiress):
 			if M is friendly, bore M.
 
 To say UnfriendlyGreeting to (M - vampiress):
-	say "Your eyes meet with [hers of M], and you get the feeling [he of M] is picking your words out for you.[line break][second custom style]'[one of]I can't wait for you to punish me, [literalMistress of M]!'[or]Oooh, I'm being so bad, aren't I, [literalMistress of M]!'[or]Please punish me, [literalMistress of M]!'[or]Ooh, I'm being naughty, aren't I, [literalMistress of M]?'[at random][roman type][line break]".
+	say "[line break][second custom style]'[one of]I can't wait for you to punish me, [literalMistress of M]!'[or]Oooh, I'm being so bad, aren't I, [literalMistress of M]!'[or]Please punish me, [literalMistress of M]!'[or]Ooh, I'm being naughty, aren't I, [literalMistress of M]?'[at random][roman type][line break]".
 
 To say PleadingResponse of (M - vampiress):
 	say "[speech style of M]'[one of]Yes, you're such a bad slave!'[or]Oh yes. You will be punished thoroughly, my darling.'[or]Mmm, you're in SO much trouble!'[or]I have quite the comeuppance in store for you, darling!'[at random][roman type][line break]".
@@ -1144,13 +1301,13 @@ To say PartnerGreeting to (M - vampiress):
 	say FriendlyPartnerGreeting to M.
 
 To say FriendlyPartnerGreeting to (M - vampiress):
-	say "You find yourself unable to turn away from [him of M] as [he of M] picks your words out for you.[line break][second custom style]'[one of]Please fuck me harder, [literalMistress of M]![or]Please never stop!'[or]Yes! Fuck me, [literalMistress of M]![or]Use me, [literalMistress of M]!'[at random][roman type][line break]";
+	say "[line break][second custom style]'[one of]Please fuck me harder, [literalMistress of M]![or]Please never stop!'[or]Yes! Fuck me, [literalMistress of M]![or]Use me, [literalMistress of M]!'[at random][roman type][line break]";
 
 To say EnthusiasmResponse of (M - vampiress):
 	say "[speech style of M]'[one of]My, my... Aren't you enthusiastic.'[or]If you insist...'[or]You really are enjoying yourself, aren't you?'[or]Mindless little puppet... It's almost too easy to be fun. Almost.'[or]Shush now, slave...'[then at random][roman type][line break]".
 
 To say HelpGreeting to (M - vampiress) with (N - a monster):
-	say "Your eyes meet with [hers of M], and you get the feeling [he of M] is picking your words out for you.[line break][second custom style]'[one of]I can serve you too, [literalMistress of M].'[or]My body is open to you as well, [literalMistress of M].'[or]Go ahead, [literalMistress of M]...'[or]Don't worry, I can always handle my [literalMistress of M].'[at random][roman type][line break]".
+	say "[line break][second custom style]'[one of]I can serve you too, [literalMistress of M].'[or]My body is open to you as well, [literalMistress of M].'[or]Go ahead, [literalMistress of M]...'[or]Don't worry, I can always handle my [literalMistress of M].'[at random][roman type][line break]".
 
 To say InvitationAccepted of (M - vampiress) with (N - a monster):
 	say "[speech style of M]'Mmm, how could I pass that up?'[roman type][line break]".

@@ -132,8 +132,6 @@ To say TitleBimbo:
 			if armband is worn, say " [armband-print of armband]";
 			if T is "catgirl" and the player is gendered male and the bimbo of the player < 13 and the largeness of breasts < 6:
 				say " catboy";
-			otherwise if T is "puppygirl" and the player is gendered male and the bimbo of the player < 13 and the largeness of breasts < 6:
-				say " puppyboy";
 			otherwise if the player is a sissy and the player is queen of spades and the bimbo of the player > 7:
 				say " [BlackCock] [if highest body part sex addiction > 7]addict[otherwise if the sex addiction of the player > 11]lover[otherwise]enthusiast[end if]";
 			otherwise:
@@ -148,8 +146,8 @@ To say TitleBimbo:
 			say " wasp [if the number of alive giant wasps < 4]queen[otherwise]broodmother[end if]";
 		otherwise if the virgin bonus of the player <= -2:
 			say " [one of]fallen[or]disgraced[sticky random] ex-warrior";
-		otherwise if there is a worn T-shirt and the bimbo of the player > 8:
-			if there is a worn gang bang girl T-shirt, say " gang bang girl";
+		otherwise if there is a worn T-shirt:
+			if gang-bang-girl T-shirt is worn, say " gang bang girl";
 			if there is a worn gender bender T-shirt, say " gender bender";
 		otherwise if the bimbo of the player < 11:
 			if the bimbo of the player < 5 or submissive sex addict is 1:

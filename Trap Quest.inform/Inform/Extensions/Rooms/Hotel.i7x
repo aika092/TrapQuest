@@ -19,7 +19,7 @@ Hotel04 is a guest modern room. The printed name of Hotel04 is "Room 103". "A no
 
 Hotel05 is a guest modern room. The printed name of Hotel05 is "Room 104". "A normal hotel room, except for the [if diaper quest is 1]childish theme. The walls, furniture and bedding all have bright teddy-bear patterns.[otherwise]special phallic theme. The telephone, light switches, drawer handles and several other objects have all been replaced by realistic looking dildos.[end if]". The shape of Hotel05 is L3/0-0-0-0-1-0.
 
-Hotel06 is a guest modern room. The printed name of Hotel06 is "[if diaper quest is 1]Pretty Princess[otherwise]Karma Sutra[end if] Penthouse Suite". "This huge bedroom has [if diaper quest is 1]pink girls everything, reminding you of the Royal Chambers, but this has a much more modern feel[otherwise]a large wooden four poster bed as its centrepiece, each poster shaped as a giant [manly-penis] and with elegant carvings of humans engaged in group orgies[end if].". The shape of Hotel06 is L3/0-0-0-1-0-0.
+Hotel06 is a mandatory guest modern room. The printed name of Hotel06 is "[if diaper quest is 1]Pretty Princess[otherwise]Karma Sutra[end if] Penthouse Suite". "This huge bedroom has [if diaper quest is 1]pink girls everything, reminding you of the Royal Chambers, but this has a much more modern feel[otherwise]a large wooden four poster bed as its centrepiece, each poster shaped as a giant [manly-penis] and with elegant carvings of humans engaged in group orgies[end if].". The shape of Hotel06 is L3/0-0-0-1-0-0.
 
 Hotel07 is an untrappable modern room. The printed name of Hotel07 is "Hotel Hallway". "A standard hotel hallway, impossible to tell apart from any other.". The shape of Hotel07 is L3/0-0-1-0-1-1.
 

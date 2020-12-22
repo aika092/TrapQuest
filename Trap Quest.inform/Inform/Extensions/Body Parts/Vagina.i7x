@@ -78,10 +78,9 @@ the vagina presentable rules is a rulebook.
 the presentable rules of vagina is usually the vagina presentable rules.
 
 This is the vagina protected rule:
-	repeat with O running through pussy covering clothing:
-		unless (O is displacable and O is not glued) or O is zippable or O is usually autoremovable:
-			if auto is 0, say "Your [O] is preventing you from getting your [vagina] on display.";
-			rule fails.
+	repeat with O running through pussy covering actually unavoidable clothing:
+		if auto is 0, say "Your [O] is preventing you from getting your [vagina] on display.";
+		rule fails.
 The vagina protected rule is listed in the vagina presentable rules.
 
 This is the vagina occupied rule:
@@ -336,8 +335,7 @@ To PussyFill (X - a number):
 		otherwise:
 			increase the semen volume of vagina by 1;
 	now M is a random thing penetrating vagina;
-	if M is a thing, progress quest of vaginal-creampie-quest from M;
-	if there is a worn tethering lipstick collar, end tethering.
+	if M is a thing, progress quest of vaginal-creampie-quest from M.
 
 Definition: vagina is accepting womb semen:
 	if the womb volume of vagina < 5 and the pregnancy of the player is 0, decide yes;

@@ -27,7 +27,7 @@ Definition: a gladiator is father material:
 	decide no.
 
 Definition: a gladiator is willing to charm snakes:
-	if the player is the donator, decide yes;
+	if diaper quest is 0, decide yes;
 	decide no.
 
 Definition: a gladiator is dark skinned: decide yes.
@@ -540,7 +540,7 @@ To compute DQ perception of (M - a gladiator):
 			FavourDown M by 4;
 			anger M;
 	otherwise if M is unfriendly:
-		say "[speech style of M]'I'm still angry with you. Come here, [child].'[roman type][line break]";
+		say "[speech style of M]'I'm disappointed in you. Come here, child.'[roman type][line break]";
 	otherwise:
 		let F be the favour of M;
 		compute DQ appearance assessment of M;
@@ -670,6 +670,10 @@ To compute satisfaction of (M - a gladiator):
 			now the target-room of M is Capsule;
 	otherwise:
 		if the largeness of breasts > the growth-target of M:
+			let C be a random currently uncovered tearable normally-nipple-covering clothing;
+			if C is clothing and a random number between the cleavageCover of C and 10 >= 9:
+				say "[speech style of M]'I can't see enough of your new puppies. Let me get a better look.'[roman type][line break]Without waiting for a response, [NameDesc of M] slices your [C] open with [his of M] sword, destroying it!";
+				destroy C;
 			satisfy M for 850 seconds;
 			now the target-room of M is Capsule.
 
@@ -831,13 +835,13 @@ To decide which body part is the painful-part of (M - a gladiator):
 	if B is breasts:
 		if the breast-happy of M is 1, now B is face;[She *won't* attack the proud breasts of a true woman]
 		otherwise now B is a random body part;[Otherwise, breasts will be viable, but a lower priority]
-	if B is a fuckhole or B is penis, now B is hips;
+	if B is a fuckhole or B is penis or B is scrotum, now B is hips;
 	if B is hair, now B is face;
 	decide on B.
 
 To decide which body part is the painful-part of (M - an enlightened gladiator):[The enlightened gladiator prefers to target breasts]
 	let B be a random body part;
-	if B is a fuckhole or B is penis, now B is breasts;
+	if B is a fuckhole or B is penis or B is scrotum, now B is breasts;
 	if B is hair, now B is face;
 	decide on B.
 
@@ -864,13 +868,46 @@ To compute (M - a gladiator) hurting (B - breasts):
 To compute (M - a gladiator) hurting (F - face):
 	compute M hurting breasts.
 
-[To compute damaging attack of (M - a gladiator):
-	if M is swordless:
-		compute striking attack of M;
+To compute damaging attack of (M - a gladiator):
+	let C be nothing;
+	if M is swordless:[pretty much only the enlightened gladiator]
+		now C is a random worn stealable equippable;
+		if C is clothing and a random number between 1 and 7 is 1:
+			compute disarming attack of M;
+		otherwise:
+			compute striking attack of M;
 	otherwise:
-		compute striking attack of M.]
+		now C is a random worn nipple covering bra;
+		if C is clothing and the coverer of C is nothing and the difficulty of M > the starting difficulty of M and a random number between 1 and 7 is 1:
+			compute shredding attack of M;
+		otherwise:
+			compute striking attack of M.
 
-[TODO: unarmed gladiator can disarm you.]
+To compute disarming attack of (M - a gladiator):
+	let E be a random worn slap ready equippable;
+	unless E is clothing, let E be a random worn zap ready equippable;
+	say "[speech style of M]'[one of]Fight me barehanded, coward!'[or]Weapons are useless against a true woman! I'll show you!'[or]You can't defeat me with such a pitiful weapon!'[in random order][roman type][line break][BigNameDesc of M] tries to grab you!";
+	if the accuracy roll of M >= the dexterity of the player:
+		say "[big he of M] catches your wrist with one hand and uses the other to try and pry the [printed name of E] out of your grip!";
+		if the strength roll of M >= the strength of the player:
+			if E is pink-spraybottle:
+				compute E breaking;
+			otherwise:
+				say "You aren't strong enough to fight off [his of M] grip, and a moment later, your [printed name of E] clatters across the floor.";
+				now E is in the location of the player;
+		otherwise:
+			say "You quickly fight off [his of M] grip and shove [him of M] away.";
+	otherwise:
+		say "You get away before [he of M] catches you.".
+
+To compute shredding attack of (M - a gladiator):
+	let B be a random worn nipple covering bra;
+	say "[speech style of M]'[one of]Enough of this! Your womanhood must be free!'[or]I can watch no longer! Your breasts must be freed![or]Enough! Your chest must be freed at once!'[in random order][roman type][line break][BigNameDesc of M] tries to grab you!";
+	if the accuracy roll of M >= the dexterity of the player:
+		say "You aren't fast enough to avoid [him of M] seizing your bra by the front and slicing through it with [his of M] sword! Your [ShortDesc of breasts] jiggle free!";
+		destroy B;
+	otherwise:
+		say "You're just fast enough to avoid getting caught in [his of M] grip!".
 
 To decide which number is (M - a gladiator) pierce success: [0 means failure, 2 means success.]
 	if the player is a flatchested trap, decide on 0;
@@ -897,7 +934,8 @@ To decide which number is (M - a gladiator) pierce success: [0 means failure, 2 
 		decide on 0.
 
 To compute post climax effect of (M - a gladiator) in (F - a fuckhole):
-	compute M sleeping 200 after sex.
+	if M is not wild gladiator and M is not enlightened gladiator:
+		compute M sleeping 200 after sex.
 
 To decide if (M - a gladiator) is willing to creampie (F - vagina):
 	if there is a worn sword and the largeness of breasts > 5, decide yes;[if she sees you as a proper warrior, she'll definitely seed you]
@@ -945,6 +983,25 @@ To say CondomRejectFlav of (M - a gladiator):
 
 To say CondomPieFlav of (M - a gladiator) in (F - a fuckhole):
 	say "[one of][BigNameDesc of M] roars with pleasure, tightening [his of M] grip as the condom begins to fill up with warm [semen].[line break][speech style of M]'[if lady fetish < 2]That actually felt... pretty... amazing[otherwise]That actually wasn't...so...bad[end if]...'[roman type][line break]You hear a sigh as [he of M] pulls out, a *snap* as [he of M] pulls the condom off, and a soft thump as [he of M] immediately falls over, asleep.[or][BigNameDesc of M] grunts, [his of M] [DickDesc of M] throbbing as it unloads into the surprisingly stretchy latex condom. [big he of M] sighs in satisfaction, pulling out and drowsily peeling it off before slumping over, asleep.[or][line break][speech style of M]'Haahh... hahhh... HAAAAH!'[roman type][line break]You're used to this series of events by now, and find yourself clenching around [NameDesc of M][']s [DickDesc of M] as the condom catches several jets of [semen]. You wait expectantly, and after a few seconds [he of M] pulls out, removing the condom before immediately falling asleep.[then at random]";
+
+To decide if (M - a gladiator) is losing wrapper in (F - a fuckhole):
+	if the player is getting unlucky, decide yes;
+	decide no.
+
+To compute condom failure of (M - a gladiator) in (F - a fuckhole):
+	get condom failure image of M in F;
+	say CondomFailFlav of M in F;
+	say GotUnluckyFlav;
+	now M is unwrapped;
+	if M is wild gladiator or M is enlightened gladiator:[gladiators on upper levels give you the full amount]
+		compute M finishing in F;
+	otherwise: [in the dungeon, failed condoms are less severe]
+		if F is asshole, AssFill 1;
+		otherwise PussyFill 1;
+	say CreampieReactionFlav to M in F.
+
+To say CondomFailFlav of (M - a gladiator) in (F - a fuckhole):
+	say "[BigNameDesc of M] roars with pleasure, tightening [his of M] grip as warm [semen] begins flowing inside of you. [if the semen addiction of the player < 5]You immediately realize something is wrong, and thankfully [he of M]'s already begun[otherwise if the semen addiction of the player < 11]It takes you a split second to realize something is wrong, but luckily [he of M]'s already noticed and begun[otherwise]You're so in love with the feeling of taking [his of M] hot load that you don't realize something is wrong until [he of M] suddenly starts[end if] to pull out. You look down to see the remains of the condom bunched up around the base of [his of M] [DickDesc of M], which [one of]is still slightly connected to your [variable F] by a strand of [semen][or]is currently dripping fresh [semen][or]throbs visibly as the rest of [his of M] load dribbles down [his of M] bare shaft[in random order][line break][speech style of M]'[one of]Oh... well...'[or]I shouldn't have... stopped...'[or]I should have... kept going...'[in random order][roman type][line break][big he of M] snarls at you as [he of M] slumps over and immediately falls asleep.".
 
 To say CreampieFlav of (M - a gladiator) in (F - a fuckhole):
 	say "[one of][BigNameDesc of M] roars with pleasure, tightening [his of M] grip as warm [semen] begins flowing inside of you. [big he of M] continues fucking you until [his of M] lust as been completely and thoroughly emptied into your [variable F].[line break][speech style of M]'I'm sleepy...'[roman type][line break]You feel [his of M] hands leave your hips as [he of M] pulls out and falls over, asleep.[or][BigNameDesc of M] grunts, [his of M] [DickDesc of M] throbbing as [he of M] unloads into your [variable F]. [big he of M] sighs in satisfaction, roughly shoving you off [his of M] [DickDesc of M] before slumping over, asleep.[or][line break][speech style of M]'Haahh... hahhh... HAAAAH!'[roman type][line break]You're used to this series of events by now, and find yourself clenching around [NameDesc of M][']s [DickDesc of M] as [he of M] shoots several jets of [semen] deep inside you. You wait expectantly, and then after a few seconds feel and hear [him of M] slump to the ground, asleep.[then at random]".
@@ -1095,7 +1152,7 @@ To compute unerect taunting of (M - a gladiator):
 		Bore M.
 
 To say ErectionForceFlav of (M - a gladiator):
-	say "[one of][BigFuckerDesc of M] 's [if M is male][DickDesc of M] jiggles[otherwise if lady fetish is 2]cage jiggles[otherwise]breasts jiggle[end if] as [he of M] aggressively bounces on your [player-penis].[or][BigFuckerDesc of M] skilfully massages your [player-penis] with [his of M] powerful inner muscles as [he of M] rides you.[or][BigFuckerDesc of M][']s [if M is male][DickDesc of M] jiggles[otherwise if lady fetish is 2]cage jiggles[otherwise]breasts jiggle[end if] as [he of M] forcefully slams [his of M] hips down into you.[or][BigFuckerDesc of M] grunts with effort as [he of M] drives your [ShortDesc of penis] in and out of [his of M] [HoleDesc of M].[or]Your [ShortDesc of penis] slides in and out of [FuckerDesc of M][']s [HoleDesc of M] as [he of M] forcefully slams [his of M] hips down into you.[in random order]".
+	say "[one of][BigFuckerDesc of M]'s [if M is male][DickDesc of M] jiggles[otherwise if lady fetish is 2]cage jiggles[otherwise]breasts jiggle[end if] as [he of M] aggressively bounces on your [player-penis].[or][BigFuckerDesc of M] skilfully massages your [player-penis] with [his of M] powerful inner muscles as [he of M] rides you.[or][BigFuckerDesc of M][']s [if M is male][DickDesc of M] jiggles[otherwise if lady fetish is 2]cage jiggles[otherwise]breasts jiggle[end if] as [he of M] forcefully slams [his of M] hips down into you.[or][BigFuckerDesc of M] grunts with effort as [he of M] drives your [ShortDesc of penis] in and out of [his of M] [HoleDesc of M].[or]Your [ShortDesc of penis] slides in and out of [FuckerDesc of M][']s [HoleDesc of M] as [he of M] forcefully slams [his of M] hips down into you.[in random order]".
 
 To say ErectionUseFlav of (M - a gladiator):
 	say ErectionForceFlav of M.
@@ -1393,6 +1450,7 @@ To compute failed dominance punishment of (M - a gladiator):
 		if the player is getting lucky:
 			if player-fucker is penis, say "[speech style of M]'[one of]I was looking forward to what you would do when you won. But you did not win.'[or]And I thought you had potential. How stupid.'[or]If you defeated me, I would be servicing you right now. But you did not defeat me.'[at random][roman type][line break][BigNameDesc of M] loses interest.";
 			otherwise say "[speech style of M]'[one of]Grow from this defeat.'[or]I hope this has been a wake-up call.'[or]Do better.'[at random][roman type][line break][BigNameDesc of M] loses interest.";
+			say GotLuckyFlav;
 			slightHumiliate;
 			Bore M;
 		otherwise if (the player is getting very unlucky or player-fucker is penis) and face is not actually occupied:[you can either eat her out or piss her off]
@@ -1409,13 +1467,17 @@ To compute failed dominance punishment of (M - a gladiator):
 				humiliate 50 + ((the times-dominated of M - 1) * 3);
 				LickCount;
 				Satisfy M;
+			unless player-fucker is penis, say GotUnluckyFlav;
+		otherwise:[she decides she didn't earn this victory]
+			say "[speech style of M]'[one of]It won't be satisfying unless I defeat you properly.'[or]I want a complete victory. For that reason alone, I will spare you.'[in random order][roman type][line break]";
+			Bore M;
 	otherwise:
 		if (player-fuckchoice is FUCK-RIDE and the player is getting very unlucky) or the player is getting unlucky:[she decides to fuck you]
-			say "[speech style of M]'[one of]I can't wait to humiliate you!'[or]Prepare for your will to be broken!'[or]Enough games! It's time I shattered your dignity for good!'[in random order][roman type][line break]";
+			say "[speech style of M]'[one of]I can't wait to humiliate you!'[or]Prepare for your will to be broken!'[or]Enough games! It's time I shattered your dignity for good!'[in random order][roman type][line break][GotUnluckyFlav]";
 			now another-turn-flavour is the substituted form of "[BigFuckerDesc of M] holds you in place.";
 			now another-turn is 1;[She's still interested because she intends to fuck you]
 		otherwise if player-fuckchoice is FUCK-RIDE:[she decides punishing you would be useless, and is totally not flattered or anything.]
-			say "[line break][speech style of M]'[one of]Is there even a way to punish [him of the player]...'[or]Ugh, how do I punish [him of the player]...'[or]Even punishing [him of the player] is useless. Ugh...'[in random order][roman type][line break][BigNameDesc of M] makes a frustrated noise before turning away in frustration, seeming to lose interest.";
+			say "[line break][speech style of M]'[one of]Is there even a way to punish [him of the player]...'[or]Ugh, how do I punish [him of the player]...'[or]Even punishing [him of the player] is useless. Ugh...'[in random order][roman type][line break][BigNameDesc of M] makes a frustrated noise before turning away, seeming to lose interest.";
 			FavourUp M by 1;
 			Bore M;
 		otherwise:[she decides she didn't earn this victory]
@@ -2018,6 +2080,7 @@ To compute (M - enlightened gladiator) entering breasts:
 To say DamageReactSubmissive of (M - an enlightened gladiator):
 	say "The gladiator huffs as [he of M] fights to keep [his of M] balance, gnashing [his of M] teeth and rubbing[his of M] thighs together.".
 
+[If she is NOT willing to creampie vagina, it means she pulls out and fucks the player anally]
 To decide if (M - enlightened gladiator) is willing to creampie (F - vagina):
 	if asshole is actually occupied or the number of worn top level ass protection clothing > 0, decide yes;
 	if the openness of vagina <= a random number between 2 and 7, decide yes;
@@ -2034,9 +2097,12 @@ To compute (M - enlightened gladiator) pulling out of (F - vagina):
 	now M is penetrating asshole;
 	ruin Asshole.
 
-To say CondomPieFlav of (M - enlightened gladiator) in (F - vagina):
+To say CondomPieFlav of (M - enlightened gladiator) in (F - a fuckhole):
 	let F be a random fuckhole penetrated by M;
 	say "[BigNameDesc of M] grunts, tightening [his of M] grip as the condom begins to fill up with warm [semen]. [big he of M] continues fucking you until [his of M] supply of [semen] has been completely and thoroughly emptied inside of it.[line break][speech style of M]'Hmph. A waste.'[roman type][line break]You feel [his of M] hands squeeze your hips as [he of M] pulls out and carefully peels the condom off.".
+
+To say CondomFailFlav of (M - enlightened gladiator) in (F - a fuckhole):
+	say "[BigNameDesc of M] roars with pleasure as warm [semen] begins flowing inside of you. [if the semen addiction of the player < 5]You immediately realize something is wrong, and so does [he of M], from the way [he of M] suddenly[otherwise if the semen addiction of the player < 11]It takes you a split second to realize something is wrong, so at first you don't realize why [he of M][otherwise]You're so in love with the feeling of taking [his of M] hot load that you don't realize something is strange until [he of M][end if] tightens [his of M] grip. [if the semen addiction of the player >= 11]Luckily, there's[otherwise]There's[end if] nothing you can do about the apparently broken condom as [he of M] continues to fuck you, only stopping when [his of M] [load] has been completely emptied into your [variable F].[line break][speech style of M]'[one of]Do you understand? Protection cannot be relied on. Offense is the only true way.'[or]If you were in control, I never could have broken the condom. Remember this.'[or]Protection fails. You must remember never to trust it.'[in random order][roman type][line break]You feel [his of M] hands squeeze your hips as [he of M] pulls out.";
 
 To say DefaultDeepthroatDeclaration of (M - enlightened gladiator):
 	say "[first custom style]'I have conquered the art of deepthroating, and so will you!'[roman type][line break]";
@@ -2230,11 +2296,13 @@ To say CondomRejectFlav of (M - wild gladiator):
 	say "[speech style of M]'[one of]Do not insult me.'[or]You are my trophy, I will do as I [please]. Speak no more of this.'[or]No. You will not deny me my right.'[at random][roman type][line break][if M is not seduced]Looks like [he of M][']s going in bare...[end if]".
 
 To decide which number is the condom resistance of (M - wild gladiator):
-	decide on 99.
+	decide on 5.
 
-To say CondomPieFlav of (M - wild gladiator) in (F - vagina):
-	let F be a random fuckhole penetrated by M;
-	say "[BigNameDesc of M] grunts, tightening [his of M] grip as the condom begins to fill up with warm [semen]. [big he of M] continues fucking you until [his of M] supply of [semen] has been completely and thoroughly emptied inside of it.[line break][speech style of M]'Hmph. You will still be marked.'[roman type][line break]You feel [his of M] hands squeeze your hips as [he of M] pulls out and carefully peels the condom off.".
+To say CondomPieFlav of (M - wild gladiator) in (F - a fuckhole):
+	say "[BigNameDesc of M] grunts, tightening [his of M] grip as the condom begins to fill up with warm [semen]. [big he of M] continues fucking you until [his of M] supply of [semen] has been completely and thoroughly emptied inside of it.[line break][speech style of M]'[one of]Hmph. I meant to break it.'[or]So, it didn't break. A pity.'[in random order][roman type][line break]You feel [his of M] hands squeeze your hips as [he of M] pulls out and carefully peels the condom off.".
+
+To say CondomFailFlav of (M - enlightened gladiator) in (F - a fuckhole):
+	say "[BigNameDesc of M] roars with pleasure as warm [semen] begins flowing inside of you. [if the semen addiction of the player < 5]You immediately realize something is wrong, and so does [he of M], from the way [he of M] suddenly[otherwise if the semen addiction of the player < 11]It takes you a split second to realize something is wrong, so at first you don't realize why [he of M][otherwise]You're so in love with the feeling of taking [his of M] hot load that you don't realize something is strange until [he of M][end if] tightens [his of M] grip. [if the semen addiction of the player >= 11]Luckily, there's[otherwise]There's[end if] nothing you can do about the apparently broken condom as [he of M] continues to fuck you, only stopping when [his of M] [load] has been completely emptied into your [variable F].[line break][speech style of M]'[one of]Even your condom submits to me.'[or]As always, I receive my just due.'[or]Protection is useless. I cannot be denied.'[in random order][roman type][line break][big he of M] slaps your ass as [he of M] pulls out.".
 
 To say angry punishment clothing destruction of (M - wild gladiator) on (C - a clothing):
 	say "[first custom style]'[if C is actually breast covering and the largeness of breasts > 3]Challenge me now, whore, and see what happens. Perhaps then you will not be so disrespectful.'[otherwise if C is ass covering and the player is not possessing a vagina]You belong to me. Perhaps if your [asshole] is on display, the jungle will reveal to you the slut you really are?[otherwise if C is ass covering]You belong to me. Perhaps if your [fuckholes] are on display, the jungle will reveal to you the slut you really are.'[otherwise]I own you, slut. You will no longer delude yourself by concealing your body from me!'[end if][roman type][line break]".
@@ -2260,10 +2328,12 @@ To compute failed dominance punishment of (M - wild gladiator):
 		if player-fucker is penis, say "[speech style of M]'You may be a [if size of penis > 8]virile male[otherwise]powerful warrior[end if], but only I rule this forest.'[roman type][line break]You try your best to focus on the compliment and ignore the bobbing of [his of M] [LongDickDesc of M] as [he of M] guides you up onto your hands and knees.";
 		otherwise say "[speech style of M]'You are fine warrior, but lust is a fatal weakness.'[roman type][line break]You can't help but agree with [NameDesc of M][']s words, eyes glued to [his of M] [LongDickDesc of M] as [he of M] guides you up onto your hands and knees.";
 		slightDignify;
+		say GotUnluckyFlav;
 		now another-turn-flavour is the substituted form of "[BigFuckerDesc of M] holds you in place.";
 		now another-turn is 1;
 	otherwise if the player is getting lucky:[lucky; she doesn't do anything.]
 		say "[speech style of M]'You were close, but this can only be called a loss. Out of respect for your skill, I will wait until later to remind you of your place.'[roman type][line break][BigNameDesc of M] loses interest in you.";
+		say GotLuckyFlav;
 		Bore M;
 	otherwise:
 		say "[speech style of M]'There is no such thing as partial victory. You lost. May the jungle determine your fate.'[roman type] [BigNameDesc of M] seems to lose interest you and begins walking away, but it seems like the game still has more in store for you!";

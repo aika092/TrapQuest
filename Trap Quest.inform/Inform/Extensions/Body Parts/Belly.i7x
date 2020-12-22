@@ -418,9 +418,6 @@ has the player ever had cum in their butt?
 +!]
 assfilled is a number that varies.
 
-[To SeedFill (F - asshole) times (X - a number):
-	AssFill X.]
-
 To Assfill (X - a number):
 	let L be a random worn lipstick collar;
 	if L is clothing, increase X by 1;
@@ -453,8 +450,7 @@ To Assfill (X - a number):
 	while X > 0:
 		increase the semen volume of belly by 1;
 		decrease X by 1;
-	overflow;
-	if L is clothing and L is tethering, end tethering.
+	overflow.
 
 To Assfill (X - a number) with (L - semen):
 	Assfill X.

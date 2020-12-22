@@ -1,10 +1,16 @@
 Cheerleader Outfit by Dresses begins here.
 
-A cheerleader outfit is a kind of overdress. A cheerleader outfit is usually unique. A cheerleader outfit is usually short. Understand "cheer", "leader" as cheerleader outfit.
+A cheerleader outfit is a kind of overdress. A cheerleader outfit is unique. A cheerleader outfit is usually short. Understand "cheer", "leader" as cheerleader outfit.
 
-Definition: a cheerleader outfit is class-transformation-protected:
+Definition: a cheerleader outfit is class-relevant:
 	if the class of the player is cheerleader, decide yes;
 	decide no.
+
+To say ClassSummonFlav of (C - a cheerleader outfit):
+	say "[bold type]A [ShortDesc of C] appears on you![line break][if the mercyskill of the player is 0]You suddenly feel like you could get away with anything! It's like the consequences of your actions... just aren't as important as they used to be.[end if]".
+
+To compute class set up of (C - a cheerleader outfit):
+	now the raw-magic-modifier of C is the total volume of hips / 4.
 
 To say ShortDesc of (C - a cheerleader outfit):
 	say "cheerleader outfit".
@@ -28,58 +34,54 @@ To decide which number is the initial cringe of (C - a cheerleader outfit):
 
 Part 1 - Longsleeved Cheerleader Outfit
 
-A longsleeved cheerleader outfit is a kind of cheerleader outfit. A longsleeved cheerleader outfit is usually only arm covering.
+longsleeved cheerleader outfit is a cheerleader outfit. longsleeved cheerleader outfit is only arm covering.
 
-The printed name of longsleeved cheerleader outfit is usually "[clothing-title-before]longsleeved cheerleader outfit[clothing-title-after]". The text-shortcut of longsleeved cheerleader outfit is "lco".
-
-There is 1 longsleeved cheerleader outfit.
+The printed name of longsleeved cheerleader outfit is "[clothing-title-before]longsleeved cheerleader outfit[clothing-title-after]". The text-shortcut of longsleeved cheerleader outfit is "lco".
 
 Figure of longsleeved cheerleader outfit is the file "Items/Clothes/Upper/Special/Cheerleader/cheerleader2.png".
 
-To decide which number is the initial outrage of (C - a longsleeved cheerleader outfit):
+To decide which number is the initial outrage of (C - longsleeved cheerleader outfit):
 	decide on 3.
 
-To decide which figure-name is clothing-image of (C - a longsleeved cheerleader outfit):
+To decide which figure-name is clothing-image of (C - longsleeved cheerleader outfit):
 	decide on figure of longsleeved cheerleader outfit.
 
-To say ClothingDesc of (C - a longsleeved cheerleader outfit):
+To say ClothingDesc of (C - longsleeved cheerleader outfit):
 	say "This red cheerleader outfit is made of a short flowing red skirt, a white longsleeved top and a red sweater, all subtly sewn together into one piece of clothing.".
 
-To decide which object is the unique-upgrade-target of (C - a longsleeved cheerleader outfit):
-	decide on a random off-stage vest top cheerleader outfit.
+To decide which object is the unique-upgrade-target of (C - longsleeved cheerleader outfit):
+	decide on vest-top cheerleader outfit.
 
-Definition: a longsleeved cheerleader outfit is red themed: decide yes.
+Definition: longsleeved cheerleader outfit is red themed: decide yes.
 
 Part 2 - Supershort Cheerleader Outfit
 
-A supershort cheerleader outfit is a kind of cheerleader outfit. A supershort cheerleader outfit is usually super-short.
+supershort cheerleader outfit is a cheerleader outfit. supershort cheerleader outfit is super-short.
 
-The printed name of supershort cheerleader outfit is usually "[clothing-title-before]supershort cheerleader outfit[clothing-title-after]". The text-shortcut of supershort cheerleader outfit is "scho".
-
-There is 1 supershort cheerleader outfit.
+The printed name of supershort cheerleader outfit is "[clothing-title-before]supershort cheerleader outfit[clothing-title-after]". The text-shortcut of supershort cheerleader outfit is "scho".
 
 Figure of supershort cheerleader outfit is the file "Items/Clothes/Upper/Special/Cheerleader/cheerleader3.png".
 Figure of DQ supershort cheerleader outfit is the file "Items/Clothes/Upper/Special/Cheerleader/cheerleader5.png".
 
-To decide which number is the initial outrage of (C - a supershort cheerleader outfit):
+To decide which number is the initial outrage of (C - supershort cheerleader outfit):
 	decide on 10.
 
-To decide which figure-name is clothing-image of (C - a supershort cheerleader outfit):
+To decide which figure-name is clothing-image of (C - supershort cheerleader outfit):
 	if diaper quest is 1, decide on figure of dq supershort cheerleader outfit;
 	decide on figure of supershort cheerleader outfit.
 
-Definition: a supershort cheerleader outfit is blue themed:
+Definition: supershort cheerleader outfit is blue themed:
 	if diaper quest is 0, decide yes;
 	decide no.
-Definition: a supershort cheerleader outfit is white themed:
+Definition: supershort cheerleader outfit is white themed:
 	if diaper quest is 1, decide yes;
 	decide no.
 
-To say ClothingDesc of (C - a supershort cheerleader outfit):
+To say ClothingDesc of (C - supershort cheerleader outfit):
 	if diaper quest is 1, say "This white cheerleader one-piece dress covers very little skin.";
 	otherwise say "This blue cheerleader outfit has a ridiculously short skirt.".
 
-To say TransformReaction of (C - a supershort cheerleader outfit):
+To say TransformReaction of (C - supershort cheerleader outfit):
 	if the outrage of C is too humiliating:
 		say "[variable custom style]Oh no, change it back! [if asshole is lewdly exposed or vagina is lewdly exposed]This is much too short, my naughty bits are on show! Eek![otherwise]This is much too short, it's not decent![end if][roman type][line break]";
 	otherwise if C is almost too much:
@@ -89,27 +91,25 @@ To say TransformReaction of (C - a supershort cheerleader outfit):
 
 Part 3 - Vest Top Cheerleader Outfit
 
-A vest top cheerleader outfit is a kind of cheerleader outfit.
+vest-top cheerleader outfit is a cheerleader outfit.
 
-The printed name of vest top cheerleader outfit is usually "[clothing-title-before]vest top cheerleader outfit[clothing-title-after]". The text-shortcut of vest top cheerleader outfit is "vtco".
-
-There is 1 vest top cheerleader outfit.
+The printed name of vest-top cheerleader outfit is "[clothing-title-before]vest top cheerleader outfit[clothing-title-after]". The text-shortcut of vest-top cheerleader outfit is "vtco". Understand "vest", "vest top" as vest-top cheerleader outfit.
 
 Figure of vest top cheerleader outfit is the file "Items/Clothes/Upper/Special/Cheerleader/cheerleader4.png".
 
-To decide which number is the initial outrage of (C - a vest top cheerleader outfit):
+To decide which number is the initial outrage of (C - vest-top cheerleader outfit):
 	decide on 4.
 
-To decide which figure-name is clothing-image of (C - a vest top cheerleader outfit):
+To decide which figure-name is clothing-image of (C - vest-top cheerleader outfit):
 	decide on figure of vest top cheerleader outfit.
 
-To say ClothingDesc of (C - a vest top cheerleader outfit):
+To say ClothingDesc of (C - vest-top cheerleader outfit):
 	say "This black and white onepiece cheerleader outfit is very standard and bland; the skirt is quite short as you would expect from a cheerleader outfit but in reality it's a lot less slutty than it could have been. It has the word 'CHEERS' across the chest.".
 
-Definition: a vest top cheerleader outfit is white themed: decide yes.
+Definition: vest-top cheerleader outfit is white themed: decide yes.
 
-To decide which object is the unique-upgrade-target of (C - a vest top cheerleader outfit):
-	decide on a random off-stage supershort cheerleader outfit.
+To decide which object is the unique-upgrade-target of (C - vest-top cheerleader outfit):
+	decide on supershort cheerleader outfit.
 
 Part 4 - Latex Cheerleader Outfits
 

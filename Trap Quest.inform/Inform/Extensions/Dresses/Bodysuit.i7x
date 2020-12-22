@@ -187,7 +187,7 @@ Definition: purple rubber bodysuit is fetish appropriate:
 
 Part - Sequins Bodysuit
 
-sequins bodysuit is a bodysuit. sequins bodysuit is low cut.
+sequins bodysuit is a bodysuit. sequins bodysuit is low cut. sequins bodysuit is plastic.
 
 The printed name of sequins bodysuit is usually "[clothing-title-before]sequins bodysuit[clothing-title-after]". The text-shortcut of sequins bodysuit is "sdr".
 
@@ -516,7 +516,7 @@ Definition: superheroine outfit is displacable: decide no.
 
 Volume - Catsuit
 
-A catsuit is a kind of jumpsuit. A catsuit is usually latex. A catsuit is usually transformation-rare. A catsuit is usually manly. A catsuit is usually crotch-exposing. The printed name of catsuit is usually "[clothing-title-before]latex catsuit[clothing-title-after]". The text-shortcut of catsuit is "cst". Understand "cat", "suit" as catsuit. A catsuit is usually unzippable.
+A catsuit is a kind of jumpsuit. A catsuit is usually latex. A catsuit is usually transformation-rare. A catsuit is usually manly. A catsuit is usually crotch-exposing. The printed name of catsuit is usually "[clothing-title-before]latex catsuit[clothing-title-after]". The text-shortcut of catsuit is "cst". Understand "cat", "suit", "catsuit" as catsuit. A catsuit is usually unzippable.
 
 To say ShortDesc of (C - a catsuit):
 	say "catsuit".
@@ -535,6 +535,9 @@ To decide which number is the dexterity-influence of (C - a catsuit):
 	decide on D.
 
 Definition: a catsuit is displacable: decide no.
+
+To decide which number is the initial outrage of (C - a catsuit):
+	decide on 7.
 
 Figure of Latex Catsuit 1 is the file "Items/Clothes/Upper/Latex/latexcatsuit1.png".
 Figure of Latex Catsuit 2 is the file "Items/Clothes/Upper/Latex/latexcatsuit2.png".
@@ -556,63 +559,86 @@ To reflect on (A - outrageous-catsuit):
 	otherwise:
 		say "[variable custom style][one of]This catsuit has holes specifically for my chest and [genitals]. This must be the sluttiest item of clothing ever made.[or]I need to get this catsuit off as soon as possible, before someone else sees me![stopping]".
 
+To say FriendReaction of (M - a real-life patron) to (A - outrageous-catsuit):
+	if M is friend-shocked:
+		say "... Do you like walking around with your genitals on display like that? ";
+	otherwise:
+		say "[if M is nemesis-friend]It doesn't suprise me that a whore like you would walk around with [his of the player] genitals on display like that.[otherwise]... I don't know why I'm not shocked to see you with your genitals on display like that. Ugh. [end if]".
+
 Part 1 - Pink Catsuit
 
-A pink catsuit is a kind of catsuit. A pink catsuit is very low cut. A pink catsuit is womanly. A pink catsuit is crotch-intact. A pink catsuit is plentiful. There is 1 pink catsuit. A pink catsuit is usually optional-top-displacable. The printed name of pink catsuit is usually "[clothing-title-before]pink latex catsuit[clothing-title-after]". The text-shortcut of pink catsuit is "pcs". A pink catsuit is zippable.
+pink-catsuit is a catsuit. pink-catsuit is very low cut. pink-catsuit is womanly. pink-catsuit is crotch-intact. pink-catsuit is plentiful. pink-catsuit is optional-top-displacable. The printed name of pink-catsuit is "[clothing-title-before]pink latex catsuit[clothing-title-after]". The text-shortcut of pink-catsuit is "pcs". pink-catsuit is zippable.
 
-Definition: a pink catsuit is pink themed: decide yes.
+Definition: pink-catsuit is pink themed: decide yes.
 
-To decide which figure-name is clothing-image of (C - a pink catsuit):
+To decide which figure-name is clothing-image of (C - pink-catsuit):
 	decide on figure of latex catsuit 3.
 
-To say ClothingDesc of (C - a pink catsuit):
+To say ClothingDesc of (C - pink-catsuit):
 	say "A pink, skin-tight suit that goes up to the neck and down to the ankles. The suit clings to the body to make sure it hides none of its curves, and it has a long strip missing down the middle to show off a lot of cleavage. [if C is not worn]The rubbery nature of the suit and the long arms ending in latex gloves mean it would take a long time to take on and off...[end if][line break]".
 
-To compute SelfExamineDesc of (C - a pink catsuit):
+To compute SelfExamineDesc of (C - pink-catsuit):
 	say "Your neck to your ankles is covered by a [MediumDesc of C]. ".
 
-To say MediumDesc of (C - a pink catsuit):
+To say MediumDesc of (C - pink-catsuit):
 	say "skin hugging pink latex catsuit".
 
-To decide which number is the initial outrage of (C - a pink catsuit):
+To decide which number is the initial outrage of (C - pink-catsuit):
 	decide on 6.
 
 Part 2 - Black Catsuit
 
-A black catsuit is a kind of catsuit. A black catsuit is fully exposing. There is 1 black catsuits. The printed name of black catsuit is usually "[clothing-title-before]black latex catsuit[clothing-title-after]". The text-shortcut of black catsuit is "bcs".
+black-catsuit is a catsuit. black-catsuit is fully exposing. The printed name of black-catsuit is "[clothing-title-before]black latex catsuit[clothing-title-after]". The text-shortcut of black-catsuit is "bcs". Understand "black" as black-catsuit.
 
-To decide which figure-name is clothing-image of (C - a black catsuit):
+To compute class set up of (C - black-catsuit):
+	now C is cursed.
+
+To decide which figure-name is clothing-image of (C - black-catsuit):
 	if C is worn by the player and the player is prone, decide on Figure of Latex Catsuit 2;
 	otherwise decide on Figure of Latex Catsuit 1.
 
-To say ClothingDesc of (C - a black catsuit):
+To say ClothingDesc of (C - black-catsuit):
 	say "A black, skin-tight suit that goes up to the neck and down to the ankles. The suit clings to the body to make sure it hides none of its curves, and it has holes for breasts and is crotchless, meaning it fails to cover all of one's most sensitive parts! [if the largeness of breasts > 6]It would definitely do nothing to support your [BreastDesc]. [end if][if C is not worn]The rubbery nature of the suit and the long arms ending in latex gloves mean it would take a long time to take on and off...[end if][line break]".
 
-To compute SelfExamineDesc of (C - a black catsuit):
+To compute SelfExamineDesc of (C - black-catsuit):
 	say "Your neck to your ankles (except your tits and crotch) is covered by a [MediumDesc of C]. ".
 
-To say MediumDesc of (O - a black catsuit):
+To say MediumDesc of (O - black-catsuit):
 	say "skin hugging black latex catsuit".
-
-To decide which number is the initial outrage of (C - a black catsuit):
-	decide on 10.
 
 Report wearing latex clothing:
 	repeat with B running through worn cursed latex clothing:
-		if the noun is black catsuit or B is black catsuit: [cursed latex clothing sticks to each other if at least one is a black catsuit]
+		if the noun is black-catsuit or B is black-catsuit: [cursed latex clothing sticks to each other if at least one is black-catsuit]
 			if the noun is not B:
 				if the noun is pasties, say "Your [printed name of B] shivers, and thin strands of plastic shoot out of its edges in all four directions, connecting it to the catsuit.";
 				otherwise say "Your [printed name of B] seem to melt into your [printed name of the noun] to form one item of clothing... uh-oh.";
 				fully curse the noun;
 				fully curse B.
 
-Definition: a black catsuit is black themed: decide yes.
+Definition: black-catsuit is black themed: decide yes.
 
 Part 3 - WC Catsuit
 
-A WC catsuit is a kind of catsuit. A WC catsuit is usually arm exposing. The printed name of WC catsuit is usually "[clothing-title-before]latex human toilet catsuit[clothing-title-after]". Understand "human", "toilet" as WC catsuit. There is 1 unique WC catsuit. Figure of WC catsuit is the file "Items/Clothes/Upper/Special/WcLatexCat.png". The text-shortcut of WC catsuit is "wcs". A WC catsuit is usually oral-sex-addiction-influencing.
-Definition: a WC catsuit is toilet themed: decide yes.
-Definition: a WC catsuit is white themed: decide yes.
+WC catsuit is a catsuit. WC catsuit is arm exposing. The printed name of WC catsuit is "[clothing-title-before]latex human toilet catsuit[clothing-title-after]". Understand "human", "toilet" as WC catsuit. WC catsuit is unique. The text-shortcut of WC catsuit is "wcs". WC catsuit is oral-sex-addiction-influencing.
+
+Definition: WC catsuit is class-relevant:
+	if the class of the player is human toilet, decide yes;
+	decide no.
+
+To compute class set up of (C - WC catsuit):
+	now the raw-magic-modifier of C is 2;
+	now C is speed.
+
+To say ClassSummonFlav of (C - WC catsuit):
+	say "A white catsuit materialises over your body![line break][variable custom style][if the player is not disgraced]Holy crap, is this icon on the front what I think it is?![otherwise]Oh, I get what this icon on the front means. I'm a human toilet now![end if][roman type][line break]".
+
+Figure of WC catsuit is the file "Items/Clothes/Upper/Special/WcLatexCat.png".
+
+To decide which figure-name is clothing-image of (C - WC catsuit):
+	decide on figure of WC catsuit.
+
+Definition: WC catsuit is toilet themed: decide yes.
+Definition: WC catsuit is white themed: decide yes.
 
 [!<TheWCCatsuitPissSlutRule>+
 
@@ -620,26 +646,19 @@ Significantly increases the chances of urination.
 
 +!]
 This is the WC catsuit piss slut rule:
-	if there is a worn WC catsuit, increase the desirability of belly by 20.
+	if WC catsuit is worn, increase the desirability of belly by 20.
 The WC catsuit piss slut rule is listed in the piss slut eligibility rules.
 
-To decide which figure-name is clothing-image of (C - a WC catsuit):
-	decide on figure of WC catsuit.
+To say ClothingDesc of (C - WC catsuit):
+	say "A white, skin-tight suit that goes up to the neck and down to the knees. The suit clings to the body to make sure it hides none of its curves, and it has a massive gap at the crotch, leaving the wearer completely exposed! Even worse, the catsuit has stick figures of a man and a woman printed on the chest, much like you would see at the entrance to a public toilet. You can sense that it has the magic power to enhance the wearer's mind if they allow themselves to get pissed on[if C is not worn]. The rubbery nature of the suit and the long arms ending in latex gloves mean it would take a long time to take on and off...[otherwise].[end if][line break]".
 
-To say ClothingDesc of (C - a WC catsuit):
-	say "A white, skin-tight suit that goes up to the neck and down to the knees. The suit clings to the body to make sure it hides none of its curves, and it has a massive gap at the crotch, leaving the wearer completely exposed! Even worse, the catsuit has stick figures of a man and a woman printed on the chest, much like you would see at the entrance to a public toilet.[if C is not worn]The rubbery nature of the suit and the long arms ending in latex gloves mean it would take a long time to take on and off...[end if][line break]".
-
-To compute SelfExamineDesc of (C - a WC catsuit):
+To compute SelfExamineDesc of (C - WC catsuit):
 	say "Your neck to your knees (except your crotch) is covered by a [MediumDesc of C]. ".
 
-To say MediumDesc of (O - a WC catsuit):
+To say MediumDesc of (O - WC catsuit):
 	say "white [']human toilet['] catsuit".
 
-Definition: a WC catsuit is class-transformation-protected:
-	if the class of the player is human toilet, decide yes;
-	decide no.
-
-To decide which number is the initial outrage of (C - a WC catsuit):
+To decide which number is the initial outrage of (C - WC catsuit):
 	decide on 16.
 
 Part - Lycra Bodysuit

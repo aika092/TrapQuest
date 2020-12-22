@@ -209,6 +209,9 @@ To compute spell outrageousness reaction of (M - a monster) to (S - a magic-spel
 A game universe initialisation rule:
 	if diaper quest is 0:
 		choose a blank row in the Table of Possible Incantations;
+		now the phrase entry is "love to cum";
+		now the naughtiness entry is 4;
+		choose a blank row in the Table of Possible Incantations;
 		now the phrase entry is "love having anal orgasms";
 		now the naughtiness entry is 6;
 		choose a blank row in the Table of Possible Incantations;
@@ -274,6 +277,9 @@ A game universe initialisation rule:
 		now the phrase entry is "love laying eggs from my butthole";
 		now the naughtiness entry is 9;
 	if diaper lover > 0:
+		choose a blank row in the Table of Possible Incantations;
+		now the phrase entry is "love thick diapers";
+		now the naughtiness entry is 6;
 		choose a blank row in the Table of Possible Incantations;
 		now the phrase entry is "love my wet nappies";
 		now the naughtiness entry is 9;
@@ -475,5 +481,23 @@ To say MagicSpellEffect of (S - magic-luck):
 Report Spellcasting magic-luck when there is a reactive monster:
 	increase luck-timer of luck-tincture by 30;
 	say "A golden aura begins to shimmer around you.[line break][variable custom style][one of]I feel amazing! Maybe I should look for things that would usually require me to get lucky...[or]I feel lucky![stopping][roman type][line break]".
+
+magic-clothe is a magic-spell.
+To decide which number is the raw-magic-cost of (S - magic-clothe):
+	decide on 2.
+To say MagicSpellEffect of (S - magic-clothe):
+	say "summon a random cursed +2 sexy item of clothing".
+Report Spellcasting magic-clothe when there is a reactive monster:
+	let C be a random off-stage transformation-rare fetish appropriate class summonable clothing;
+	if C is clothing:
+		PinkWardrobeUnclash C;
+		summon C uncursed;
+		now C is cursed;
+		now the raw-magic-modifier of C is 2;
+		say ClassSummonFlav of C;
+		compute persistent quest of C;
+		unless the quest of C is no-clothing-quest, say QuestFlav of C;
+	otherwise:
+		say "Nothing happens! The universe couldn't find an item of clothing to make you wear.".
 
 Magic Power ends here.

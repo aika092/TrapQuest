@@ -803,17 +803,10 @@ Carry out quaffing bull-strength-potion:
 	unless the noun is blessed or (the flesh volume of thighs > 6 and the flesh volume of arms > 6 and the flesh volume of belly > 6 and the flesh volume of hips > 6):
 		say "Your body instantly spills out as you instantly put on huge amounts of weight!";
 		FatUp 20;
-	if lactation fetish is 1:
-		if cow-ears is off-stage and cow-ears is actually summonable:
-			say "[bold type]A pair of fake cow ears materialise on your head.[roman type][line break]";
-			summon cow-ears cursed;
-			now the lactation-count of the player is 0;
-		let B be a random off-stage cow print bikini top;
-		if B is actually summonable:
-			say "[bold type]A cow print bikini top materialises on your chest.[roman type][line break]";
-			if there is worn cow-ears, summon B;
-			otherwise summon B cursed with quest;
-			now B is milk production.
+	if lactation fetish is 1 and cow-ears is off-stage and cow-ears is actually summonable:
+		say "[bold type]A pair of fake cow ears materialise on your head.[roman type][line break]";
+		summon cow-ears cursed;
+		now the lactation-count of the player is 0.
 
 Section 5 Space Mead
 

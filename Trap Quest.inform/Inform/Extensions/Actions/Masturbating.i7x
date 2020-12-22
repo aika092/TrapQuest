@@ -295,7 +295,7 @@ To say PlayerFantasy:
 	let Nn be nemesis-friend;
 	if T is not expired and T is fucktoy hypno trap:
 		say "[second custom style][one of][if pregnancy fetish is 1]GETTING PREGNANT[otherwise]GETTING FUCKED[end if][or]BIG COCKS[or]HORNY GUYS[or]HARD COCKS[or]SITTING ON COCKS[or]FUCKING GUYS[or][if the player is sexed male]PROSTATE ORGASMS[otherwise]DOUBLE PENETRATION[end if][or]ASS TO MOUTH[or][if pregnancy fetish is 1]CREAMPIES[otherwise]FORCED CUMDUMPS[end if][or]GANGBANGS[in random order][roman type]";[the player is masturbating because of the trap, more often than not, so it's affecting their ability to not think about slutty things.]
-	otherwise if T is not expired and T is diaper hypno trap:
+	otherwise if T is not expired and T is diaper-hypno-trap:
 		say "[second custom style][one of]GETTING BOUNCED ON MOMMY'S LAP WHILE WEARING A DIAPER[or]DADDY CUTTING A HOLE IN MY DIAPER AND FUCKING ME[or]GETTING PUNISHED BY MY BABYSITTER FOR BEING NAUGHTY[or]WETTING MY DIAPER UNTIL IT LEAKS[or]BEING DADDY'S LITTLE DIAPERSLUT[or]GETTING FINGERED BY MOMMY DURING A DIAPER CHANGE[or][if diaper messing >= 4]DROPPING A BIG LOAD IN MY DIAPER[end if][in random order][roman type]";
 	otherwise if T is not expired and T is cocksucker hypno trap:
 		say "[second custom style][one of]CUM. YUMMY CUM[or]CUM. DELICIOUS CUM[or]THICK CUM[or]CUM DRINKING[or]GUZZLING CUM[or]CUM GUZZLING[or][if bukkake fetish is 1]SALTY MAKEUP[otherwise]SALTY MOUTHWASH[end if][or]SUCKING COCK[or]ACCEPTING HIS CUM[or]SWALLOWING HIS CUM[or]DEEPTHROATING COCKS[in random order][roman type]";

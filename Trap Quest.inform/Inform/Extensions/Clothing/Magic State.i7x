@@ -68,6 +68,12 @@ Definition: an alchemy product is blessable:
 	if it is carried and it is not blessed, decide yes;
 	decide no.
 
+To blandify (C - a thing):
+	do nothing.
+
+To blandify (C - an alchemy product):
+	now C is bland.
+
 To blandify (C - a clothing):
 	only destroy C; [resets it but also sets it up with random magic state, so we need to do the below]
 	now the raw-magic-modifier of C is 0;

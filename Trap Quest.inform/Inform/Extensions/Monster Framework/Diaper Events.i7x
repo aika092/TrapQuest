@@ -277,10 +277,10 @@ To compute diaper change of (M - a monster):
 					rule succeeds;
 			otherwise:
 				say DiaperChangeRemovalFlav of M;
-				now M is carrying current-diaper;
+				if current-diaper is not diaper-stack, now M is carrying current-diaper;
 				dislodge current-diaper;
 				if current-diaper is diaper, DiaperAddictUp 1;
-				rule succeeds;
+				if current-diaper is not diaper-stack, rule succeeds; [we remove diaper stack and put on new diaper in same turn to avoid loads of glitches]
 		otherwise if old-diaper is diaper and M is diaper change during cummies rewarding and the player is able to orgasm so soon: [player was wearing a diaper, what a good girl! she gets cummies]
 			compute diaper change during cummies reward of M;
 			rule succeeds;
@@ -362,6 +362,7 @@ To compute diaper change of (M - a monster):
 		repeat with C running through diapers carried by M:
 			only destroy C;
 		if debugmode > 0, say "[speech style of M]'I have changed you [times-changed of M] time[if times-changed of M is not 1]s[end if].'[roman type][line break]";
+		if diaper quest is 1, progress quest of naughty-quest;
 		rule succeeds;
 	otherwise:
 		say DiaperChangeStart of M;

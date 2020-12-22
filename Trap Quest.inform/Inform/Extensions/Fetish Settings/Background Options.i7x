@@ -31,7 +31,7 @@ To decide which number is background-selected:
 Table of Background Options
 title	subtable	description	toggle
 "[roman type]Previous Menu (shortcut: press Q)"	--	--	quit rule
-"No Background - 0 points ([if background-selected is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	empty background rule
+"No Background - 0 points ([if background-selected is not 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	empty background rule
 "Background (only one): Nursing Student (you can sometimes scrounge up some bandages that slightly heal you, base intelligence slightly higher) - 5 points ([if background-nurse is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	first aid skill toggle rule
 "Background (only one): Sporty (slightly higher strength, slightly reduced intelligence, build fatigue 20% slower) - 5 points ([if background-sporty is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	sporty background toggle rule
 "Background (only one): [if the player is presenting as female]Waitress[otherwise]Waiter[end if] (slightly higher dexterity, your work uniform's shoes are slightly impractical, so you start with 3/10 skill points walking in heels and your chances of spilling drinks when falling over is halved) - 5 points ([if background-waitress is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	waitress background toggle rule

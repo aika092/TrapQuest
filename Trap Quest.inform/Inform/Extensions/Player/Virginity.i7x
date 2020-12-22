@@ -89,7 +89,7 @@ Part 2 - Virgin Reward
 
 To virginreward:
 	let H be a random worn headgear;
-	if there is a worn plate warrior chestpiece and flower hairclip is blessed: [No more increases after you get this.]
+	if plate warrior chestpiece is worn and flower hairclip is blessed: [No more increases after you get this.]
 		do nothing;
 	otherwise if the player-class is the succubus:
 		say "[bold type]You can't imagine why you ever cared so much about purity, and you feel dark energy from the stone pressed into your flesh corrupt the power within you![roman type][line break]";
@@ -146,7 +146,7 @@ The virginbonus pussy slut rule is listed in the pussy slut eligibility rules.
 Part - Virgin Punish (Sissification)
 
 Definition: yourself is a sissy:
-	if the player is gendered male and the number of worn sissifying clothing > 1, decide yes;
+	if the player is gendered male and (the class of the player is sissyclass or the number of worn sissifying clothing > 1), decide yes;
 	decide no.
 
 To virginpunish:

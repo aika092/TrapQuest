@@ -121,12 +121,6 @@ To decide which number is the bartering value of (T - a thing) for (M - a suppor
 To decide which number is the bartering value of (T - a unicorn-horn) for (M - a supporter):
 	decide on 0.
 
-To decide which number is the bartering value of (T - a christmas gift) for (M - a supporter):
-	decide on 0.
-
-[To FavourUp (M - a supporter):
-	do nothing.]
-
 To compute perception of (M - a supporter):
 	now M is interested;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]"; [The output for clothing humiliation takes place within the 'sluttily dressed' check.]

@@ -220,7 +220,7 @@ To compute clothes forcing of (M - a robobellboy):
 		compute bra forcing of M.
 
 Definition: a clothing (called C) is super-slutty-bra:
-	if C is unique, decide no;
+	if C is unique or C is rare, decide no;
 	if C is ridiculously low cut or lower and diaper quest is 0, decide yes;
 	if C is breast covering and C is actually sheer, decide yes;
 	decide no.
@@ -241,7 +241,7 @@ To compute bra forcing of (M - a robobellboy):
 		compute failed forcing of M.
 
 Definition: a clothing (called C) is super-slutty-knickers:
-	if C is unique, decide no;
+	if C is unique or C is rare, decide no;
 	if C is diaper:
 		if diaper lover >= 1, decide yes;
 		decide no;

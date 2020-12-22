@@ -166,7 +166,14 @@ This is the demon junk punishment rule:
 		IntDown 2;
 		say "A fog settles over your mind, permanently impairing your ability to think about... just about anything, really.".
 
-acolyte-undergarment is a crotchless-panties. acolyte-undergarment is unique. The text-shortcut of acolyte-undergarment is "audg". acolyte-undergarment is metal. Understand "gold", "golden", "undergarment", "acolyte", "acolyte's" as acolyte-undergarment. acolyte-undergarment has a number called charge. The charge of acolyte-undergarment is usually 0. acolyte-undergarment is top-exclusive. The printed name of acolyte-undergarment is "[clothing-title-before]acolyte's undergarment[clothing-title-after]".
+acolyte-undergarment is a crotchless-panties. acolyte-undergarment is unique. The text-shortcut of acolyte-undergarment is "audg". acolyte-undergarment is metal. Understand "gold", "golden", "undergarment", "acolyte", "acolyte's" as acolyte-undergarment. acolyte-undergarment has a number called charge. acolyte-undergarment is top-exclusive. The printed name of acolyte-undergarment is "[clothing-title-before]acolyte's undergarment[clothing-title-after]".
+
+Definition: acolyte-undergarment is class-relevant:
+	if the class of the player is worshipper, decide yes;
+	decide no.
+
+To compute class set up of (C - acolyte-undergarment):
+	now C is cursed.
 
 Figure of acolyte undergarment is the file "Items/Clothes/Lower/Underwear/Skimpy/Crotchless/crotchless7.jpg".
 
@@ -179,7 +186,6 @@ To say ShortDesc of (B - acolyte-undergarment):
 To say ClothingDesc of (C - acolyte-undergarment):
 	say "A pair of crotchless golden 'underwear,' with [if the player is possessing a penis]two matching strings of rubies[otherwise]a string of rubies[end if][if the player is herm]that fit around your [ShortDesc of penis] and stimulate your [vagina][otherwise if the player is possessing a vagina and C is worn] that stimulates your [vagina] as you walk[otherwise if the player is possessing a penis and C is worn]that fit around your [ShortDesc of penis][otherwise]down the middle[end if]. It hides absolutely nothing.[if the charge of C > 0][line break][end if][if the charge of C > 4]The skimpy 'fabric' is warm to the touch, and you can tell it has absorbed a great deal of power.[otherwise if the charge of C > 1]The skimpy 'fabric' is slightly warm to the touch, and you can tell it has absorbed a bit of power.[otherwise]The skimpy 'fabric' is surprisingly cool to the touch.[end if]";
 
-Definition: acolyte-undergarment is blessable: decide no.
 Definition: acolyte-undergarment is demonic: decide yes.
 Definition: acolyte-undergarment is yellow themed: decide yes.
 Definition: acolyte-undergarment is walking-stimulating: decide yes.

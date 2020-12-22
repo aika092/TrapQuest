@@ -435,7 +435,17 @@ Check messing:
 Carry out messing:
 	now voluntarySquatting is 1;
 	allocate 6 seconds;
-	compute messing.
+	let berri-scene be 0;
+	if diaper quest is 1 and there is a worn diaper and the player is in Hotel38 and the human-toilet-scene of woman-player is 2 and the player is not immobile and the player is not in danger:
+		say "Sit on the Punishment Potty?";
+		if the player is bimbo consenting:
+			say "You sit on the Punishment Potty, smushing your [random worn diaper] into [NameDesc of woman-player][']s face.[line break][speech style of woman-player]'Wait please, no, [one of]let's talk about this[or]not again[stopping]- FFFFFFFFBBBBBFFFFFTTTT!'[roman type][line break][BigNameDesc of woman-player][']s pleas are blocked out by your padded butt.";
+			now berri-scene is 1;
+	compute messing;
+	if berri-scene is 1:
+		DelicateDown 2;
+		FavourDown woman-player by 2;
+		say "You finally pull your filthy diaper off of [NameDesc of woman-player][']s face. [big he of woman-player] doesn't say a word - [he of woman-player] is too busy gasping for breath and sobbing with self-pity.".
 
 TargetMessing is an action applying to one thing.
 Understand "poo in [something]", "poop in [something]", "crap in [something]", "shit in [something]", "mess in [something]", "mess [something]", "soil [something]" as TargetMessing.

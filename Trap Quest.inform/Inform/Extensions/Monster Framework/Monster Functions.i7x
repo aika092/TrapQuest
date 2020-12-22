@@ -23,10 +23,12 @@ To compute common boredom of (M - a monster) for (N - a number) seconds:
 	now the babification of M is 0;
 	now the friendly boredom of M is 0;
 	now the last-tripped of M is 0;
-	if debugmode > 1, say "Deinteresting [ShortDesc of M]. Latest appearance seen is [latest-appearance of M]. Refreshing...";
-	now the latest-appearance of M is the appearance of the player;
+	if debugmode > 1, say "Deinteresting [ShortDesc of M]. Latest appearance seen is [latest-appearance of M].";
+	now the latest-appearance of M is 0;
+	if diaper quest is 1, now the latest-cringe of M is 0;
+	[now the latest-appearance of M is the appearance of the player;
 	if debugmode > 1, say "Latest appearance seen is now [latest-appearance of M].";
-	if diaper quest is 1, now the latest-cringe of M is the cringe appearance of the player;
+	if diaper quest is 1, now the latest-cringe of M is the cringe appearance of the player;]
 	now M is not diaper-committed;
 	now M is not double-diaper-committed;
 	now the dismissRefused of M is 0;
@@ -59,12 +61,12 @@ To say SatisfiedFlav of (M - a monster):
 Part - Destroying
 
 To destroy (M - a monster):
-	if the player is in the location of M, decrease the charge of the dungeon altar by the difficulty of M * 10;
-	if the player is in the location of M and the charge of hotel altar > 0, decrease the charge of hotel altar by the difficulty of M * 10;
 	now M is dying.
 
 To finally destroy (M - a monster):
 	uniquely destroy M;
+	if the player is in the location of M, decrease the charge of the dungeon altar by the difficulty of M * 10;
+	if the player is in the location of M and the charge of hotel altar > 0, decrease the charge of hotel altar by the difficulty of M * 10;
 	now the times-met of M is 0;
 	now the blue-balls of M is 0;
 	now the times-submitted of M is 0;
@@ -72,6 +74,7 @@ To finally destroy (M - a monster):
 	now the sex-length of M is 0;
 	now the collar-pulled of M is 0;
 	now M is not soul-stolen;
+	if M is bride-consort, progress quest of betrothal-quest;
 	remove M from play;
 	reset M.
 
@@ -115,11 +118,11 @@ To loot (M - a monster):
 	repeat with T running through the taxableItems of M:
 		if T is off-stage or T is carried by M, now X is T;
 	if X is a thing:
-		now X is in the location of the player;
 		if X is clothing, blandify and reveal X;
 		if X is alchemy product:
 			now X is bland;
 			now X is sure;
+		now X is in the location of the player;
 		compute loot dropping of X by M;
 		increase the loot dropped of M by 1;
 		compute autotaking X;
@@ -130,12 +133,12 @@ To standard loot (M - a monster):
 	let X be a random off-stage plentiful accessory;
 	if the class of the player is santa's little helper, now X is a random off-stage christmas gift;
 	unless X is nothing:
-		now X is in the location of the player;
 		if X is plentiful accessory, compute appraisal of X from M;
 		if X is clothing, blandify and reveal X;
 		if X is alchemy product:
 			now X is bland;
 			now X is sure;
+		now X is in the location of the player;
 		compute loot dropping of X by M;
 		increase the loot dropped of M by 1;
 		compute autotaking X.

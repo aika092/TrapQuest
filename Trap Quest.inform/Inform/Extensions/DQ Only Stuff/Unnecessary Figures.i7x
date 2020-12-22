@@ -382,8 +382,6 @@ To decide which figure-name is Figure of Throne Cutscene 5:
 To decide which figure-name is Figure of Throne Cutscene 6:
 	decide on figure of small image.
 
-To decide which figure-name is Figure of human toilet:
-	decide on figure of small image.
 To decide which figure-name is Figure of male toilet:
 	decide on figure of small image.
 To decide which figure-name is Figure of female toilet:

@@ -24,6 +24,7 @@ Definition: yourself is resisting taste addiction:
 	if the player is taste obsessed:
 		if drinking-target is bottle:
 			if ((the fill-colour of drinking-target is creamy and semen is highest addicted liquid) or (the fill-colour of drinking-target is golden and urine is highest addicted liquid) or (the fill-colour of drinking-target is white and milk is highest addicted liquid)), decide no;
+		if drinking-target is DungeonScenery01 and semen is highest addicted liquid, decide no;
 		decide yes;
 	decide no.
 
@@ -181,16 +182,6 @@ Carry out drinking a vessel:
 	DoseDown the noun;
 	if the doses of the noun is 0, say "[BigNameDesc of the noun] is now empty.".
 
-Check drinking a living tentacles:
-	if the noun is not worn, say "You can't do that." instead;
-	if the charge of the noun > 0, say "It's still a bit tired." instead.
-
-Carry out drinking a living tentacles:
-	let L be the noun;
-	say "You tenderly grasp one of the tentacles wrapping around your body and take it into your mouth. It begins to throb excitedly, and the rest of the tentacles tighten and rub against you as well. You begin to forcefully suck on it almost by instinct, and quickly feel it increasing its pace. Your whole body shudders as you feel its orgasm yourself, flooding through you, as thick cords of [semen] pump down your throat. Wrung out by the sensation still echoing through your body, you shiver in delight as it withdraws, spent for the moment.";
-	allocate 6 seconds;
-	StomachSemenUp 2;
-	now the charge of L is 100.
 
 tasteAddictionPenaltyTime is a number that varies.
 

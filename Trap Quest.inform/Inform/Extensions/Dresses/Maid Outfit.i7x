@@ -26,6 +26,7 @@ Figure of Maid Outfit 8 is the file "Items/Clothes/Upper/Special/Maid/maid8.png"
 Figure of Maid Outfit 9 is the file "Items/Clothes/Upper/Special/Maid/maid9.png".
 Figure of Maid Outfit 10 is the file "Items/Clothes/Upper/Special/Maid/maid10.png".
 Figure of Maid Outfit 11 is the file "Items/Clothes/Upper/Special/Maid/maid11.png".
+Figure of Maid Outfit 12 is the file "Items/Clothes/Upper/Special/Maid/maid12.png".
 
 To decide which number is the strength-influence of (C - a maid outfit):
 	let S be 1;
@@ -51,6 +52,9 @@ Definition: a maid outfit is transformation-theme-blockable: decide no.
 To decide which object is the unique-upgrade-target of (M - a maid outfit):
 	if cafe maid headdress is worn and M is not cafe-maid-outfit, decide on cafe-maid-outfit;
 	decide on nothing.
+
+To compute class set up of (M - a maid outfit):
+	increase the raw-magic-modifier of M by the crawl count of the player / 10.
 
 Part 0 - Maid Waitress Outfit
 
@@ -263,7 +267,8 @@ Definition: fishnet-maid-outfit is potentially at least partially vagina coverin
 	decide no.
 
 To decide which object is the potential-upgrade-target of (M - fishnet-maid-outfit):
-	decide on a random off-stage black fetish hobble dress.
+	if black fetish hobble dress is off-stage, decide on black fetish hobble dress;
+	decide on nothing.
 
 Part 9 - Blue Sissy Maid Outfit
 
@@ -309,6 +314,36 @@ Definition: cafe-maid-outfit is pink themed: decide yes.
 Definition: cafe-maid-outfit is white themed: decide yes.
 Definition: cafe-maid-outfit is transformation-protected:
 	if the class of the player is maid, decide yes;
+	decide no.
+
+Part 11 - Black Latex Maid Outfit
+
+black-latex-maid-outfit is a maid outfit. black-latex-maid-outfit is fully exposing. black-latex-maid-outfit is neck covering. black-latex-maid-outfit is latex. The text-shortcut of black-latex-maid-outfit is "blmo". black-latex-maid-outfit is short. The printed name of black-latex-maid-outfit is "[clothing-title-before]black latex maid outfit[clothing-title-after]". Understand "black" as black-latex-maid-outfit.
+
+To decide which figure-name is clothing-image of (C - black-latex-maid-outfit):
+	decide on figure of maid outfit 11.
+
+To say ClothingDesc of (M - black-latex-maid-outfit):
+	say "A black latex dress. A big cut-out section exposes the wearer's chest. Even more outrageously, the skirt has a big apron-shaped section that is completely see-through.".
+
+To compute class set up of (M - black-latex-maid-outfit):
+	if there is worn stumbling headgear, now M is cursed.
+
+To decide which number is the initial outrage of (C - black-latex-maid-outfit):
+	decide on 14.
+
+[See through window at the front]
+Definition: black-latex-maid-outfit is potentially penis covering: decide no.
+Definition: black-latex-maid-outfit is potentially at least partially vagina covering: decide no.
+Definition: black-latex-maid-outfit is potentially vagina covering: decide no.
+Definition: black-latex-maid-outfit is potentially-partially-bottom-layer-concealing: decide no.
+
+Definition: black-latex-maid-outfit is black themed: decide yes.
+Definition: black-latex-maid-outfit is transformation-protected:
+	if the class of the player is maid, decide yes;
+	decide no.
+Definition: black-latex-maid-outfit is class-relevant:
+	if the class of the player is latex fetish model, decide yes;
 	decide no.
 
 Maid Outfit ends here.

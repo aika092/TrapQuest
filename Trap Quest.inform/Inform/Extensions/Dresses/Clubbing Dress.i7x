@@ -32,6 +32,7 @@ To decide which object is the unique-upgrade-target of (C - a clubbing dress):
 
 This is the remove inappropriate clubbing dresses rule:
 	now purple cocktail dress is in Holding Pen; [no diaper-varying character window art]
+	now pink sequins dress is in Holding Pen; [no diaper-varying character window art]
 	repeat with B running through black slut clubbing dresses:
 		now B is in Holding Pen;
 	repeat with B running through exposing clubbing dresses:
@@ -286,9 +287,34 @@ To say ShortDesc of (C - purple cocktail dress):
 To say MediumDesc of (C - purple cocktail dress):
 	say "purple velvet cocktail dress".
 
-To decide which number is the initial outrage of (C - purple cocktail dress):
-	decide on 2.
-
 Definition: purple cocktail dress is purple themed: decide yes.
+
+Part 12 - Pink Sequins Dress
+
+pink sequins dress is a clubbing dress. pink sequins dress is plastic. The text-shortcut of pink sequins dress is "pksd". The printed name of pink sequins dress is usually "[clothing-title-before]pink sequins dress[clothing-title-after]".
+
+Figure of pink sequins dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress12.png".
+
+To decide which figure-name is clothing-image of (C - pink sequins dress):
+	decide on figure of pink sequins dress.
+
+To say ClothingDesc of (C - pink sequins dress):
+	say "This body-hugging pink dress is made of glittering sequins. It has a deep plunging neckline that goes past your chest to also expose your belly button.".
+
+To say ShortDesc of (C - pink sequins dress):
+	say "sequins dress".
+To say MediumDesc of (C - pink sequins dress):
+	say "pink sequins dress".
+
+To decide which number is the initial outrage of (C - pink sequins dress):
+	decide on 3.
+
+Definition: pink sequins dress is pink themed: decide yes.
+Definition: pink sequins dress is gem themed: decide yes.
+Definition: pink sequins dress is potentially-mid-layer-concealing: decide no. [only partially conceals midsection]
+
+To decide which object is the unique-upgrade-target of (C - pink sequins dress):
+	if sequins bodysuit is off-stage and the number of worn knickers is 0 and the number of worn bras is 0 and the number of worn corsets is 0 and the number of worn underdress is 0 and the number of worn tail plugs is 0, decide on sequins bodysuit;
+	decide on nothing.
 
 Clubbing Dress ends here.

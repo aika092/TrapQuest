@@ -2,6 +2,16 @@ Pom Poms by Equippables begins here.
 
 A pom-pom is a kind of gloves. A pom-pom is unique. A pom-pom is womanly. A pom-pom is usually pvc. Understand "pom", "poms" as pom-pom. A pom-pom has a number called charge.
 
+Definition: a pom-pom is class-relevant:
+	if the class of the player is cheerleader, decide yes;
+	decide no.
+
+To say ClassSummonFlav of (P - a pom-pom):
+	say "A pair of [MediumDesc of P] appear to cover your hands![line break][variable custom style][if P is purple-pom-pom]I guess I shouldn't be surprised.[otherwise]ARE YOU SERIOUS?![end if][roman type][line break]".
+
+To compute class set up of (C - a pom-pom):
+	now C is cursed.
+
 To say ShortDesc of (C - a pom-pom):
 	say "pom-poms".
 

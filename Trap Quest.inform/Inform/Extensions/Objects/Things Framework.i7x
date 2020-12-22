@@ -4,10 +4,10 @@ A thing has an indexed text called a text-shortcut. Understand the text-shortcut
 
 Part - Price and Ownership
 
-A thing can be unowned, store, museum-store, stolen (this is the ownership property). A thing is usually unowned.
+A thing can be unowned, store, museum-store, stolen, museum-stolen (this is the ownership property). A thing is usually unowned.
 
 To say ownership-desc of (T - a thing):
-	if the item described is stolen, say "[roman type] (stolen)";
+	if the item described is stolen or the item described is museum-stolen, say "[roman type] (stolen)";
 	if the item described is store and the location of the player is not Mansion28, say "[roman type] ([if T is in Dungeon41 or the player is in Dungeon41]for sale - [price of item described][otherwise]cleverly stolen - please report bug[end if])".
 
 To decide what number is the original price of (C - a thing):

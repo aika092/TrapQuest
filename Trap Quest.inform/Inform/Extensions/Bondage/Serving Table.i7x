@@ -27,7 +27,7 @@ To compute periodic effect of (C - a serving-bondage):
 To compute school periodic effect of (C - a serving-bondage):
 	compute periodic effect of C.
 
-serving table is a serving-bondage. serving table is glass. The printed name of serving table is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]serving table[clothing-title-after]". The text-shortcut of serving table is "svtb".
+serving table is a serving-bondage. serving table is glass. The printed name of serving table is "[clothing-title-before]serving table[clothing-title-after]". The text-shortcut of serving table is "svtb".
 
 To decide which figure-name is clothing-image of (C - serving table):
 	decide on figure of serving table.
@@ -46,7 +46,7 @@ This is the serving table prevents standing rule:
 		rule fails.
 The serving table prevents standing rule is listed in the ability to stand rules.
 
-serving tray is a serving-bondage. serving tray is leather. The printed name of serving tray is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]serving tray[clothing-title-after]".
+serving tray is a serving-bondage. serving tray is leather. The printed name of serving tray is "[clothing-title-before]serving tray[clothing-title-after]".
 
 To decide which figure-name is clothing-image of (C - serving tray):
 	decide on figure of serving tray.

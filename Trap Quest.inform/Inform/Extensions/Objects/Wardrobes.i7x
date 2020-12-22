@@ -1,4 +1,4 @@
-Pink Wardrobe by Objects begins here.
+Wardrobes by Objects begins here.
 
 pink wardrobe is a container. the printed name of pink wardrobe is "[TQlink of item described]pink wardrobe[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of pink wardrobe is "wa". Understand "pw" as pink wardrobe. pink wardrobe is closed. A pink wardrobe is openable. A pink wardrobe is not portable. pink wardrobe is in Dungeon12.
 
@@ -27,12 +27,44 @@ To add treasure to (X - a pink wardrobe):
 	if earnings > starting-earnings - 100:
 		if diaper focus >= 1:
 			say "[first custom style]Oh my god, there's a diaper in here, but in my size! [one of]I think it's meant for me[or]I feel weirdly drawn to it[or]I weirdly feel like I'm almost destined to wear it[purely at random]... No! This is the game trying to mess with my mind! I've got to fight against it, I think? I should just wear the padded underwear. But maybe it'll be much easier to do well in the game if I'm wearing the diaper? Ooh, I can't even tell what are my real thoughts and what are the fake thoughts they are filling my head with![line break][second custom style]Or are these all my thoughts, and I'm just being paranoid?[roman type][line break]";
-		otherwise if there is an on-stage santa hat:
-			say "[first custom style]A Santa hat?! I guess it is Christmas... maybe I should make this a festive play-through?[roman type][line break]";
 		otherwise if the player is gendered male:
 			say "[first custom style][if there is I love my wet nappies T-shirt in X]Oh sweet! Looks like a total MILF lives here. And one who really loves her offspring, looking at that T-shirt.[otherwise][one of]Wow, a total slut must live in here.[or]I've only seen closets like this in hustler magazine.[or]I hope the babe that lives in here won't mind if I steal her panties.[purely at random][end if][roman type][line break]";
 		otherwise:
 			say "[first custom style][if latex prisoner is 1]So THAT's what I'll be able to wear after I get this awful thing off?[otherwise if there is I love my wet nappies T-shirt in X]That underwear seems okay at least. Wait, does that T-shirt say what I think it says?![otherwise][one of]Is this supposed to be my wardrobe?[or]Am I supposed to wear this slutty crap?[or]So, I either have to go naked, or I have to walk around in this crap like a tart. I'm not sure which is worse.[purely at random][end if][roman type][line break]";
 	if newbie tips is 1, say "[newbie style]Newbie tip: Consider this your main starting kit. These items start identified and have no random magic properties and although they might be more slutty than what your character would normally wear, you are still going to want to put some on, since going around naked will upset most NPCs, and these are actually some of the least outrageous clothing items in the game.[roman type][line break]".
 
-Pink Wardrobe ends here.
+
+mystical wardrobe is a thing. the printed name of mystical wardrobe is "[TQlink of item described]mystical wardrobe[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of mystical wardrobe is "wa". mystical wardrobe is not portable. mystical wardrobe is in Mansion16.
+
+To decide which figure-name is the examine-image of (C - mystical wardrobe):
+	decide on figure of mysticalwardrobe.
+
+To say ExamineDesc of (C - mystical wardrobe):
+	say "An ornate mystical wardrobe. Who knows what would happen if you opened this.".
+
+Figure of mysticalwardrobe is the file "Env/Mansion/wardrobe1.jpg".
+
+Definition: mystical wardrobe is immune to change: decide yes.
+
+Check opening mystical wardrobe:
+	if the player is immobile or the player is in danger, say "You're a bit busy right now!" instead;
+	allocate 6 seconds;
+	say "You open the wardrobe door... ";
+	let H be a random worn headgear;
+	if H is headgear:
+		say "There's a bright flash!";
+		let LC1 be the list of worn clothing;
+		compute class outfit of H;
+		let LC2 be the list of worn clothing;
+		let clothes-changed be 0;
+		let LCE be the number of entries in LC1;
+		if LCE is not the number of entries in LC2, now clothes-changed is 1;
+		if clothes-changed is 0:
+			repeat with N running from 1 to LCE:
+				if entry N in LC1 is not entry N in LC2, now clothes-changed is 1;
+		if clothes-changed is 0, say "But nothing seems to have happened.[line break][variable custom style]Clearly the wardrobe doesn't believe that it's appropriate or possible to change what I'm wearing right now.[roman type][line break]";
+	otherwise:
+		say "There's nothing inside.";
+	say "The wardrobe door closes itself of its own accord.[one of][variable custom style]Spooky.[roman type][line break][or][stopping]" instead.
+
+Wardrobes ends here.

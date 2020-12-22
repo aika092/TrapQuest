@@ -27,8 +27,7 @@ Definition: a demoness is willing to do oral:
 
 Definition: a demoness is willing to charm snakes:
 	if diaper quest is 1, decide no;
-	if the player is the donator, decide yes;[Maybe bump this up if a new donator thing is coming out.]
-	decide no.
+	decide yes.
 
 Definition: a demoness is willing to urinate: decide yes.
 
@@ -115,8 +114,8 @@ To say MonsterComment of (M - a demoness):
 		otherwise if the class of the player is worshipper:
 			say "[variable custom style][one of]Submission is... my only option?[or]My mind is telling me I can't possibly resist [his of M] will.[or]I can't oppose [him of M]. I don't know how I know that, I just know I can't.[in random order]";
 		otherwise if the class of the player is priestess:
-			if M is penetrating a body part, say "A disappointed voice sounds in your head.[first custom style]'Sinful Sister, [if M is soul-seeking and (M is penetrating vagina or M is penetrating penis)]your purity may be gone forever, but your soul can still be saved! Escape, sister! Hurry!'[otherwise]your choices here cannot be redeemed. Escape now, with what little dignity you have left.'[end if]";
-			otherwise say "A grave voice sounds in your head.[first custom style]'Diligent Sister, [one of][if the vaginalvirgin of the player is 1 and the player is possessing a vagina]you must never let [him of M] obtain your purity. There is no telling how powerful [he of M] might become!'[otherwise]you must never let [him of M] sample your flesh. There is no telling what could come of it!'[end if][or]you must oppose [him of M] will all your might!'[or][he of M] cannot resist your holy power. Banish [him of M] to whence [he of M] came![or]you must not let [him of M] take your soul!'[in random order]";
+			if M is penetrating a body part, say "A disappointed voice sounds in your head.[second custom style]'Sinful Sister, [if M is soul-seeking and (M is penetrating vagina or M is penetrating penis)]your purity may be gone forever, but your soul can still be saved! Escape, sister! Hurry!'[otherwise]your choices here cannot be redeemed. Escape now, with what little dignity you have left.'[end if]";
+			otherwise say "A grave voice sounds in your head.[second custom style]'Diligent Sister, [one of][if the vaginalvirgin of the player is 1 and the player is possessing a vagina]you must never let [him of M] obtain your purity. There is no telling how powerful [he of M] might become!'[otherwise]you must never let [him of M] sample your flesh. There is no telling what could come of it!'[end if][or]you must oppose [him of M] will all your might!'[or][he of M] cannot resist your holy power. Banish [him of M] to whence [he of M] came![or]you must not let [him of M] take your soul!'[in random order]";
 		otherwise if the bimbo of the player < 7:
 			if the player is gendered male, say "[first custom style][one of][big he of M]'s smoking hot. I think it's a bad idea to ask if [he of M] wants to fuck, though.[or]This slut looks like [he of M]'s DTF.[or]I normally think eating [HoleDesc of M] is only for Beta cuckold virgins, but... this [if lady fetish is 2]sissy[otherwise]chick[end if] might be worth it.[or]Man, what is up with those heels? I'd hate to get hit with one of those.[or]Whoa, are those dildos on [his of M] heels? Maybe [he of M]'d let me stick one up [his of M] butt.[in random order]";
 			otherwise say "[first custom style][one of]Wow, I can't believe how [he of M]'s dressed. Slut.[or]Even someone that beautiful has to play to the macho fantasies of this game. Ugh.[or]There is something supernatural about this [man of M].[or]What a digusting outfit. How can [he of M] bear it?[or]Those heels look like they pack a punch, even if they look ridiculous.[or]There's something foreboding about this [man of M].[in random order]";
@@ -132,8 +131,7 @@ To set up (M - a demoness):
 	reset M;
 	now the monstersetup of M is 1;
 	add infernal gem to the banishItems of M, if absent;
-	let D be a random dildo heels;
-	add D to the banishItems of M, if absent;
+	add dildo-heels to the banishItems of M, if absent;
 	now the raw difficulty of M is the starting difficulty of M;
 	if doomed is 5, DifficultyUp M by 1;
 	now the health of M is the maxhealth of M;
@@ -289,7 +287,7 @@ To compute perception of (M - a demoness):
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed][end if]. "; [The output for if the player is sluttily dressed occurs within the check itself.]
 	let T be 1;
 	repeat with H running through worn heels:
-		if H is dildo heels or the heel-height of H > 3, now T is 0;
+		if H is dildo-heels or the heel-height of H > 3, now T is 0;
 	if the player is flying:
 		say "The demoness has noticed the player flying, this should be impossible since [he of M] lives in the woods. Report the bug to Aika please!";
 		anger M;
@@ -1390,7 +1388,9 @@ To compute sexBegging of (M - a demoness) in (F - a fuckhole):
 
 To decide if (M - a demoness) is willing to creampie (F - vagina):
 	if there is a worn xavier's cunt tattoo, decide no;[she respects her master]
-	if the reaction of the player is 0 and a random number between 1 and the excitement of M is 1, decide no;[if you struggle at the last moment, you can rarely avoid a creampie]
+	if the reaction of the player is 0:
+		let E be the excitement of M;
+		if a random number between -1 and the excitement of M < 1, decide no;[if you struggle, you can rarely avoid a creampie.]
 	if the pregnancy of the player > 0 and (the pregnancy of the player is 3 or the father is a demonic thing or the father is an infernal monster), decide no;[She won't end your pregnancy if it's one of her own]
 	decide yes.
 
@@ -1523,7 +1523,7 @@ To compute forced banishment of (M - a demoness):
 To say BanishFleeFlav of (M - a demoness):
 	say "[BigNameDesc of M] screams as [he of M] falls to the floor, and then you watch as [his of M] essence is sucked back into [his of M] home dimension.";
 
-To compute banish drop of (C - a dildo heels) from (M - a demoness):
+To compute banish drop of (C - dildo-heels) from (M - a demoness):
 	if C is off-stage:
 		now C is in the location of the player;
 		now the raw-magic-modifier of C is a random number between 0 and 2;
@@ -1717,7 +1717,7 @@ Section 1 - Greeting
 
 To say FirstResponse of (M - a demoness):
 	say "[speech style of M]'Hey. Like my heels?'[roman type][line break]";
-	cutshow figure of dildo heels for M.
+	cutshow figure of dildo-heels for M.
 
 To say RepeatResponse of (M - a demoness):
 	if M is unfriendly:
@@ -1871,7 +1871,7 @@ To compute failed dominance punishment of (M - a demoness):
 		AssFill X;
 		now N is not penetrating vagina;
 		now N is not penetrating asshole;
-		say "You're not sure how much time has passed by the time the [NameDesc of M] returns to shoo the tiny red bastards away.[line break][speech style of M]'Sorry I had you wait so long, but I couldn't think of anything. I hope you'll forgive me...'[roman type][line break]";
+		say "You're not sure how much time has passed by the time the [NameDesc of M] returns to shoo the tiny red bastards away.[line break][speech style of M]'Sorry I had you wait so long, but I couldn't think of anything. I hope you'll forgive me...'[roman type][line break][GotUnluckyFlav]";
 		Satisfy M;
 	otherwise:
 		say "[speech style of M]'That was nice of you. I really appreciate it.'[roman type][line break][BigNameDesc of M] kneels down in front of you, wearing a conspiratorial grin.[line break][speech style of M]'How about a nice kiss in return?'[roman type][line break][big he of M] maintains [his of M] vice-like grip on your wrists as [he of M] closes [his of M] eyes and puckers [his of M] lips.[line break][if the player is able to speak][speech style of M]'Oh, oops. You can't...'[roman type][line break][otherwise]Do you 'bribe' [him of M] with a kiss?[end if]";
@@ -1882,7 +1882,7 @@ To compute failed dominance punishment of (M - a demoness):
 			Satisfy M;
 		otherwise:
 			if the player is getting unlucky:
-				say "[line break][speech style of M]'Well I have to repay you somehow... I know! How does a round of torture sound?'[roman type][line break]";
+				say "[line break][speech style of M]'Well I have to repay you somehow... I know! How does a round of torture sound?'[roman type][line break][GotUnluckyFlav]";
 				now another-turn-flavour is the substituted form of "[BigFuckerDesc of M] holds you in place.";
 				now another-turn is 1;
 			otherwise:
@@ -2026,7 +2026,7 @@ To compute perception of (M - abyssal demoness):
 	let T be 1;
 	if there are worn heels:
 		repeat with H running through worn heels:
-			if H is dildo heels or the heel-height of H > 3, now T is 0;
+			if H is dildo-heels or the heel-height of H > 3, now T is 0;
 	if the player is flying:
 		say "What are you doing on my ceiling! Do you believe yourself ABOVE ME?! How dare you!";
 		anger M;

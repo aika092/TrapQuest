@@ -2300,26 +2300,53 @@ student-tiana is an amicable student.
 
 The text-shortcut of student-tiana is "stti".
 
-Figure of tiana is the file "NPCs/School/Student/student2.png".
+Figure of rank 1 tiana is the file "NPCs/School/Student/student2a.png".
+Figure of rank 2 tiana normal is the file "NPCs/School/Student/student2b.png".
+Figure of rank 2 tiana pierced is the file "NPCs/School/Student/student2bp.png".
+Figure of rank 3 tiana normal is the file "NPCs/School/Student/student2c.png".
+Figure of rank 3 tiana pierced is the file "NPCs/School/Student/student2cp.png".
+Figure of rank 4 tiana normal is the file "NPCs/School/Student/student2d.png".
+Figure of rank 4 tiana pierced is the file "NPCs/School/Student/student2dp.png".
+Figure of rank 4 tiana cum is the file "NPCs/School/Student/student2dc.png".
+Figure of rank 4 tiana cum pierced is the file "NPCs/School/Student/student2dcp.png".
 
 To decide which figure-name is the monster-image of (M - student-tiana):
-	decide on figure of tiana.
+	if the current-rank of M >= 4:
+		if M is clitLeaded:
+			if M is cumCovered, decide on Figure of rank 4 tiana cum pierced;
+			otherwise decide on Figure of rank 4 tiana pierced;
+		otherwise:
+			if M is cumCovered, decide on Figure of rank 4 tiana cum;
+			otherwise decide on Figure of rank 4 tiana normal;
+	if the current-rank of M is 3:
+		if M is clitLeaded, decide on Figure of rank 3 tiana pierced;
+		otherwise decide on Figure of rank 3 tiana normal;
+	if the current-rank of M is 2:
+		if M is clitLeaded, decide on Figure of rank 2 tiana pierced;
+		otherwise decide on Figure of rank 2 tiana normal;
+	decide on figure of rank 1 tiana.
 
 To say MonsterDesc of (M - student-tiana):
-	say "This chubby brunette has [if the largeness of breasts > 10]large[otherwise]massive[end if] J-cup breasts which are threatening to burst out of [his of M] plain white bra. [big his of M] red blouse [if the current-rank of M is 2]has a few top buttons undone allowing you to see most of this glorious shiny cleavage[otherwise]and is completely unbuttoned and pulled away, leaving all of [his of M] shiny cleavage on full display[end if]. [big his of M] babydoll pigtails and smiling red lips give [him of M] a friendly, non-threatening demeanour.".
+	say "This chubby blonde has impressively wide hips and [if the largeness of breasts > 10]large[otherwise]massive[end if] breasts [if the current-rank of M > 1]that seem to have grown even larger since [he of M] got promoted - [end if][if the current-rank of M is 1]stretching out a tight white blouse over a red tartan skirt[otherwise if the current-rank of M is 2][he of M] can no longer do up the top button of [his of M] white blouse, leaving [his of M] red bra and lots of cleavage on display. [big he of M] has also lost [his of M] skirt, meaning you can see all of [his of M] matching red panties[otherwise if the current-rank of M is 2][his of M] white bra has completely fallen open and [he of M] can no longer fit inside [his of M] bra, leaving [his of M] jugs completely on display. [big his of M] red panties are also still entirely uncovered[otherwise][he of M] now plays with them idly at all times. [big he of M] is now completely naked and has a rather sex-addled expression on [his of M] face[end if]. [big his of M] smile gives [him of M] a friendly, non-threatening demeanour.".
+
+To say ClitLeadDesc of (M - student-tiana):
+	say "[big his of M] clitoris piercing is connected to nipple piercings by a long gold chain. ".
 
 Definition: student-tiana is fetish appropriate:
 	if lady fetish is 2, decide no;
 	decide yes.
 
-The min-rank of student-tiana is 2.
-The max-rank of student-tiana is 3.
-The current-rank of student-tiana is 2.
+The min-rank of student-tiana is 1.
+The max-rank of student-tiana is 4.
+The current-rank of student-tiana is 1.
 
 To update name of (M - student-tiana):
-	if the current-rank of M is 2:
+	if the current-rank of M is 1:
 		now the student-name of M is "Tiana";
 		now the student-print of M is "buxom babe";
+	otherwise if the current-rank of M is 2:
+		now the student-name of M is "Titi";
+		now the student-print of M is "chunky chested chick";
 	otherwise:
 		now the student-name of M is "Titania";
 		now the student-print of M is "titanic titted tart".
@@ -2780,7 +2807,7 @@ To update name of (M - student-katya):
 		now the student-name of M is "Cuntwarmer";
 		now the student-print of M is "brainless bimbo";
 		now the text-shortcut of M is "stcu";
-	if the current-rank of M < 4, now the text-shortcut of M is "stka".
+	if the current-rank of M < 4, now the text-shortcut of M is "stkt".
 
 [Once katya is "domesticated," she no longer tries to bully you]
 To compute student perception of (M - student-katya):

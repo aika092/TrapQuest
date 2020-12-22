@@ -62,7 +62,7 @@ Definition: yourself is able to cool down:
 	if there is worn steel collar, decide no;
 	if there is a worn prostate massager plug, decide no;
 	if there is a worn thrusting living belt of sturdiness, decide no;
-	if princess-consort is monster and the class of the player is princess and the refractory-period of princess-consort is 0 and princess-consort is awake, decide no;
+	if bride-consort is monster and the class of the player is princess and the refractory-period of bride-consort is 0 and bride-consort is awake, decide no;
 	decide yes.
 
 [!<CoolDownX>+
@@ -250,7 +250,7 @@ Definition: yourself is pheromonal:
 Definition: yourself is able to get horny:
 	if the player is magically horny, decide yes;
 	[if the player is grossed out, decide no;]
-	if the class of the player is princess and princess-consort is monster and the refractory-period of princess-consort > 0, decide no;
+	if the class of the player is princess and bride-consort is monster and the refractory-period of bride-consort > 0, decide no;
 	if the latex-transformation of the player > 3, decide no;
 	if refractoryperiod > 2 and (the player is not possessing a vagina or the number of live things penetrating a fuckhole is 0), decide no; [Player can't gain arousal on the turn that they cum. Except women, during sex, who can have continued orgasms.]
 	[if the player is barbie, decide no;]

@@ -16,7 +16,7 @@ This is the belt already worn rule:
 		rule fails.
 The belt already worn rule is listed in the belt wearability rules.
 
-A suspenders is a kind of belt. The printed name of suspenders is usually "[clothing-title-before]pair of suspenders[clothing-title-after]". The printed plural name of suspenders is usually "[clothing-title-before]pairs of suspenders[clothing-title-after]". The text-shortcut of suspenders is "sus". Understand "pair", "pair of", "garter", "garters", "garterbelt" as suspenders.
+A suspenders is a kind of belt. The printed name of suspenders is usually "[clothing-title-before]pair of suspenders[clothing-title-after]". The printed plural name of suspenders is usually "[clothing-title-before]pairs of suspenders[clothing-title-after]". The text-shortcut of suspenders is "sus". Understand "pair", "pair of", "garter", "garters", "garterbelt", "suspenders" as suspenders.
 
 To decide which number is the initial outrage of (C - a suspenders):
 	decide on 2.
@@ -128,7 +128,28 @@ To say ClothingDesc of (S - a black suspenders):
 To decide which number is the initial outrage of (C - a black suspenders):
 	decide on 3.
 
-a bridal sissy-suspenders is a kind of suspenders. There is 1 transformation-rare bridal sissy-suspenders. A bridal sissy-suspenders is usually silk. The printed name of a bridal sissy-suspenders is usually "[clothing-title-before]pair of bridal sissy suspenders[clothing-title-after]". The printed plural name of a bridal sissy-suspenders is usually "[clothing-title-before]pairs of bridal sissy-suspenders[clothing-title-after]". The text-shortcut of bridal sissy-suspenders is "bss". Figure of bridal sissy-suspenders is the file "Items/Clothes/Lower/Waist/Suspenders/suspenders1.png". Understand "sissy", "suspenders" as bridal sissy-suspenders.
+princess-bride-suspenders is a suspenders. princess-bride-suspenders is unique. princess-bride-suspenders is sheer. princess-bride-suspenders is silk. The printed name of princess-bride-suspenders is "[clothing-title-before]pair of white sheer bridal suspenders[clothing-title-after]". The text-shortcut of princess-bride-suspenders is "wsbs". Figure of princess-bride-suspenders is the file "Items/Clothes/Lower/Waist/Suspenders/suspenders6.png". Understand "white", "sheer", "bridal" as princess-bride-suspenders.
+
+Definition: princess-bride-suspenders is class-relevant:
+	if the class of the player is bride, decide yes;
+	decide no.
+
+To decide which figure-name is clothing-image of (C - princess-bride-suspenders):
+	decide on figure of princess-bride-suspenders.
+
+To say ClothingDesc of (S - princess-bride-suspenders):
+	say "A very feminine set of white silk suspenders with large sheer sections.".
+
+To say ShortDesc of (S - princess-bride-suspenders):
+	say "bridal sissy suspenders".
+
+Definition: princess-bride-suspenders is sissifying: decide yes.
+Definition: princess-bride-suspenders is white themed: decide yes.
+
+To decide which number is the initial outrage of (C - princess-bride-suspenders):
+	decide on 3.
+
+a bridal sissy-suspenders is a kind of suspenders. There is 1 transformation-rare bridal sissy-suspenders. A bridal sissy-suspenders is usually silk. The printed name of a bridal sissy-suspenders is usually "[clothing-title-before]pair of bridal sissy suspenders[clothing-title-after]". The text-shortcut of bridal sissy-suspenders is "bss". Figure of bridal sissy-suspenders is the file "Items/Clothes/Lower/Waist/Suspenders/suspenders1.png". Understand "sissy" as bridal sissy-suspenders.
 
 To decide which figure-name is clothing-image of (C - a bridal sissy-suspenders):
 	decide on figure of bridal sissy-suspenders.
@@ -148,7 +169,7 @@ To set up influence of (C - a bridal sissy-suspenders):
 To decide which number is the initial outrage of (C - a bridal sissy-suspenders):
 	decide on 4.
 
-The demon belt is a belt. Figure of demon belt is the file "Items/Clothes/Lower/Waist/Belts/belt3.png". The demon belt is unique. The demon belt is leather. The printed name of demon belt is usually "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]demon belt[clothing-title-after]". The text-shortcut of demon belt is "dbl".
+The demon belt is a belt. Figure of demon belt is the file "Items/Clothes/Lower/Waist/Belts/belt3.png". The demon belt is unique. The demon belt is leather. The printed name of demon belt is usually "[clothing-title-before]demon belt[clothing-title-after]". The text-shortcut of demon belt is "dbl".
 
 To decide which figure-name is clothing-image of (C - demon belt):
 	decide on figure of demon belt.
@@ -172,7 +193,7 @@ Definition: demon belt is black themed: decide yes.
 To decide which number is the original price of (C - demon belt):
 	decide on 10.
 
-living belt of sturdiness is a belt. living belt of sturdiness is unique. living belt of sturdiness is biological. The printed name of living belt of sturdiness is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]living belt of sturdiness[clothing-title-after]". The text-shortcut of living belt of sturdiness is "lbs".
+living belt of sturdiness is a belt. living belt of sturdiness is unique. living belt of sturdiness is biological. The printed name of living belt of sturdiness is "[clothing-title-before]living belt of sturdiness[clothing-title-after]". The text-shortcut of living belt of sturdiness is "lbs".
 
 living belt of sturdiness has a number called buildup. The buildup of the living belt of sturdiness is 0.
 
@@ -368,6 +389,28 @@ To say ShortDesc of (C - string-belt):
 	say "string belt".
 
 Definition: string-belt is condom pinnable: decide yes.
+
+bridal garter is a clothing. [No clashes.] The printed name of bridal garter is "[clothing-title-before]bridal garter[clothing-title-after]". The text-shortcut of bridal garter is "stb". bridal garter is unique. bridal garter is silk.
+
+Definition: bridal garter is class-relevant:
+	if the class of the player is bride, decide yes;
+	decide no.
+
+Figure of bridal garter is the file "Items/Clothes/Lower/Waist/Belts/garter1.png".
+
+To decide which figure-name is the clothing-image of (C - bridal garter):
+	decide on figure of bridal garter.
+
+To say ClothingDesc of (C - bridal garter):
+	say "This sheer white fabric sits on your right thigh.".
+
+To say ShortDesc of (C - bridal garter):
+	say "garter".
+To say MediumDesc of (C - bridal garter):
+	say "sheer bridal garter".
+
+Definition: bridal garter is condom pinnable: decide yes.
+
 
 tongue-belt is a belt. tongue-belt is unique. tongue-belt is biological. The printed name of tongue-belt is "[clothing-title-before]tongue belt[clothing-title-after]". The text-shortcut of tongue-belt is "tgbt". Understand "tongue", "belt" as tongue-belt.
 

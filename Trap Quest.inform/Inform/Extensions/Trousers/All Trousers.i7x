@@ -28,6 +28,27 @@ To decide which figure-name is clothing-image of (H - a pink bloomers):
 
 Definition: a pink bloomers is babywear: decide yes. [NPCs can put this on the player]
 
+
+bitch bottoms is a trousers.
+The printed name of bitch bottoms is "[clothing-title-before]bitch bottoms[clothing-title-after]". The text-shortcut of bitch bottoms is "btms".
+Figure of bitch bottoms is the file "Items/Clothes/Lower/Pants/bitchbottoms1.png".
+To decide which figure-name is clothing-image of (H - bitch bottoms):
+	decide on figure of bitch bottoms.
+To say UniqueClothingDesc of (Y - bitch bottoms):
+	say "A pair of tight pink shorts with a zip. The pattern has the word 'Bitch' repeating along with pink love hearts.".
+To say ShortDesc of (Y - bitch bottoms):
+	say "bitch bottoms".
+To say MediumDesc of (Y - bitch bottoms):
+	say "bitch bottoms".
+Definition: bitch bottoms is pink themed: decide yes.
+Definition: bitch bottoms is heart themed: decide yes.
+Definition: bitch bottoms is dog themed: decide yes.
+To decide which number is the initial outrage of (C - bitch bottoms):
+	decide on 4.
+To decide which number is the defaultDiaperHidingLength of (C - bitch bottoms):
+	decide on 2. [Can only hide the thinnest of diapers]
+
+
 buttockless pants is a kind of trousers. A buttockless pants is usually butt-windowed. A buttockless pants is manly. The armour of buttockless pants is 10. The printed name of buttockless pants is usually "[clothing-title-before][clothing-material of item described] buttockless pants[clothing-title-after]". The text-shortcut of buttockless pants is "bp". Figure of yellow buttockless pants is the file "Items/Clothes/Lower/Pants/Buttockless/buttocklesspants1.png". Figure of blue buttockless pants is the file "Items/Clothes/Lower/Pants/Buttockless/buttocklesspants2.png".
 
 To say ShortDesc of (Y - a buttockless pants):
@@ -79,7 +100,7 @@ To decide which object is the unique-upgrade-target of (C - an exercise shorts):
 Definition: an exercise shorts is exercise themed: decide yes.
 
 blue-exercise-shorts is an exercise shorts. blue-exercise-shorts is rare.
-The printed name of blue-exercise-shorts is usually "[clothing-title-before]loose blue exercise shorts[clothing-title-after]". Understand "loose", "blue" as blue-exercise-shorts. The text-shortcut of blue-exercise-shorts is "lbes".
+The printed name of blue-exercise-shorts is "[clothing-title-before]loose blue exercise shorts[clothing-title-after]". Understand "loose", "blue" as blue-exercise-shorts. The text-shortcut of blue-exercise-shorts is "lbes".
 Figure of blue exercise shorts is the file "Items/Clothes/Lower/Pants/exerciseshorts2.png".
 To decide which figure-name is clothing-image of (H - blue-exercise-shorts):
 	decide on figure of blue exercise shorts.
@@ -94,7 +115,7 @@ To decide which number is the defaultDiaperHidingLength of (C - blue-exercise-sh
 	decide on 2. [Can only hide the thinnest of diapers]
 
 grey-exercise-shorts is an exercise shorts.
-The printed name of grey-exercise-shorts is usually "[clothing-title-before]tight grey exercise shorts[clothing-title-after]". Understand "tight", "grey" as grey-exercise-shorts. The text-shortcut of grey-exercise-shorts is "tges".
+The printed name of grey-exercise-shorts is "[clothing-title-before]tight grey exercise shorts[clothing-title-after]". Understand "tight", "grey" as grey-exercise-shorts. The text-shortcut of grey-exercise-shorts is "tges".
 Figure of tight exercise shorts is the file "Items/Clothes/Lower/Pants/exerciseshorts1.png".
 To decide which figure-name is clothing-image of (H - grey-exercise-shorts):
 	decide on figure of tight exercise shorts.

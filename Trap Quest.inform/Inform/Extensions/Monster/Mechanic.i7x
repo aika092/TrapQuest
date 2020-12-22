@@ -41,8 +41,8 @@ To say MonsterComment of (M - mechanic):
 	if diaper quest is 1:
 		do nothing;
 	otherwise if the class of the player is priestess:
-		if M is infernal, say "A wavering voice sounds in your head. [line break][first custom style]'Naive Sister, [one of]this [man of M] is none other than the demon king! Prepare yourself, sister! Hurry!'[or]the revival of the demon king is now inevitable. You cannot falter now, sister. You are the only one who can stop [him of M].[or][if the times-submitted of M > 0]I must reveal to you that which your body experienced. That [man of M] is the demon king in the flesh, and [his of M] revival is at hand. Find strength, sister, and vanquish [him of M]!'[otherwise]I must reveal to you the truth of this [man of M]. [big he of M] is the demon king in the flesh, and [his of M] revival is at hand. Gather power quickly sister, for you must be the one to stop [him of M]!'[end if][in random order][roman type][line break]";
-		otherwise say "A wary voice sounds in your head. [line break][first custom style]'Innocent Sister, [one of]this [man of M] is more than [he of M] seems. You may not let [his of M] power grow[if the xavier-power of M > 0] any further[end if].'[or]this is no [man of M] at all. You must never trust [him of M].'[or][if the times-submitted of M > 0]you have already tasted the cruelty of this [man of M]. Defeat [him of M], sister, before [he of M] goes after someone else!'[otherwise]you know nothing of the evil that lies in the heart of this being. Defeat [him of M] at once, and never find out!'[end if][in random order][roman type][line break]";
+		if M is infernal, say "A wavering voice sounds in your head. [line break][second custom style]'Naive Sister, [one of]this [man of M] is none other than the demon king! Prepare yourself, sister! Hurry!'[or]the revival of the demon king is now inevitable. You cannot falter now, sister. You are the only one who can stop [him of M].[or][if the times-submitted of M > 0]I must reveal to you that which your body experienced. That [man of M] is the demon king in the flesh, and [his of M] revival is at hand. Find strength, sister, and vanquish [him of M]!'[otherwise]I must reveal to you the truth of this [man of M]. [big he of M] is the demon king in the flesh, and [his of M] revival is at hand. Gather power quickly sister, for you must be the one to stop [him of M]!'[end if][in random order][roman type][line break]";
+		otherwise say "A wary voice sounds in your head. [line break][second custom style]'Innocent Sister, [one of]this [man of M] is more than [he of M] seems. You may not let [his of M] power grow[if the xavier-power of M > 0] any further[end if].'[or]this is no [man of M] at all. You must never trust [him of M].'[or][if the times-submitted of M > 0]you have already tasted the cruelty of this [man of M]. Defeat [him of M], sister, before [he of M] goes after someone else!'[otherwise]you know nothing of the evil that lies in the heart of this being. Defeat [him of M] at once, and never find out!'[end if][in random order][roman type][line break]";
 	otherwise if M is infernal and the class of the player is worshipper:
 		say "[variable custom style]'[one of]This [man of M]... why does [he of M] seem like a king?'[or]I can't fight [him of M] anymore? Just who is [he of M]?!'[or]Why does this [man of M] feel like a demon? Can I even oppose [him of M]?'[in random order][roman type][line break]";
 	otherwise if the bimbo of the player < 4 and the player is gendered male:[Originally this was one big block, but it was impossible to debug so now it's separated.]
@@ -352,7 +352,6 @@ The mechanic claims amulet rule is listed last in the mechanic diaper quest rule
 To compute xavier reward of (M - mechanic):
 	let R be a random number from 1 to 6;
 	let J be a random off-stage demon codpiece;
-	let P be a random off-stage demon tail plug;
 	if R is 1:
 		say "[BigNameDesc of M] points at you with [his of M] hands, and lightning fires from [his of M] fingertips, enveloping your body. Instead of pain, though, you just feel your skin tingle gently. After a few moments, the lightning stops. You feel STRONG!";
 		StrengthUp 4;
@@ -364,9 +363,9 @@ To compute xavier reward of (M - mechanic):
 		summon J;
 		bless J;
 		DelicateDown 2;
-	otherwise if R is 4 and P is actually summonable:
-		say "[BigNameDesc of M] points at you with [his of M] hands, and lightning fires from [his of M] fingertips, enveloping your body. It hurts, but somehow, you feel even more confident because of it! You feel your [asshole] being forced open as a [printed name of P], materialises inside you.";
-		summon P;
+	otherwise if R is 4 and demon tail plug is actually summonable:
+		say "[BigNameDesc of M] points at you with [his of M] hands, and lightning fires from [his of M] fingertips, enveloping your body. It hurts, but somehow, you feel even more confident because of it! You feel your [asshole] being forced open as a [MediumDesc of demon tail plug] materialises inside you.";
+		summon demon tail plug;
 		now the body soreness of the player is 10;
 		if the delicateness of the player > 4:
 			DelicateDown 5;
@@ -381,7 +380,7 @@ This is the mechanic strips princess rule:
 	if the class of the player is princess:
 		if there is a monster penetrating a body part:
 			rule succeeds; [Mechanic will wait until he has you alone]
-		let D be a random tiara;
+		let D be a random worn tiara;
 		if D is clothing:
 			say "[BigNameDesc of current-monster] snatches your [ShortDesc of D] off your head. [speech style of current-monster]'If you want to play princess in my hotel, you're going to earn it, bitch.'[roman type][line break][big he of current-monster] unzips [his of current-monster] jeans.";
 			destroy D;
@@ -390,14 +389,24 @@ The mechanic strips princess rule is listed in the mechanic unique punishment ru
 
 This is the mechanic applies collar rule:
 	let C be a random steel collar;
-	if C is actually summonable and C is not in the location of the player and the class of the player is not living sex doll and the bimbo of the player <= 15 and the xavier-power of current-monster < 2 and the player is souled and the power-stolen of current-monster is 0:
+	if diaper quest is 0 and the class of the player is "princess" and bride-consort is throne and the player is a december 2020 top donator:
+		let H be a random worn headgear;
+		say "[speech style of current-monster]'At long last, release shall be mine. To dispel your magic, I must simply make you my bride...'[roman type][line break][big he of current-monster] touches your [ShortDesc of H].";
+		transform H into tiara-veil;
+		now bride-consort is mechanic;
+		let C be a random worn removable overdress;
+		if C is a thing, WardrobeVanish C; [this would prevent the class summon below]
+		class summon princess bride dress;
+		satisfy current-monster;
+		rule succeeds;
+	otherwise if C is actually summonable and C is not in the location of the player and the class of the player is not living sex doll and the bimbo of the player <= 15 and the xavier-power of current-monster < 2 and the player is souled and the power-stolen of current-monster is 0:
 		if there is a monster penetrating face, rule succeeds; [Mechanic waits silently for an opening]
 		say "[speech style of current-monster]'Haha[if diaper quest is 1], you're my baby slave now[end if]!'[roman type][line break]CLUNK! [BigNameDesc of current-monster] takes this opportunity to force [if C is in the location of the player or C is held]the[otherwise]a smooth, round[end if] steel collar around your neck and click it shut. The locking mechanism is completely internal, meaning it's impossible to remove.[line break][if the player is able to speak][variable custom style]'Hey, what the hell?'[line break][end if][speech style of current-monster]'This is my own special invention. It is completely impossible to take off without my knowledge, and when you get aroused, it will make sure you don't cool off until you orgasm.'[paragraph break]";
 		summon C;
 		say "[variable custom style][if the bimbo of the player < 10]Fuck, how did I get myself into this mess?[otherwise if the bimbo of the player < 15]I guess I should do whatever [he of current-monster] says...[otherwise]Oooh, this could be a fun game![end if][roman type][line break]";
 		if diaper quest is 0, say "[BigNameDesc of current-monster] rubs [his of current-monster] chin.[line break][speech style of current-monster]'I have a... favour to ask. There's an amulet somewhere in this world, maybe you've encountered it already. Last I heard it was being guarded by a large monster. I want you to retrieve it for me. If you do that, I'll free you from the collar. I would get it myself, but why risk the journey when I could get adventurers like you to go on the quest for me?'[roman type][line break][variable custom style][if the bimbo of the player < 5]On the one hand, this is the first real quest I've been given all game. On the other hand, this guy is a bastard.[otherwise if the bimbo of the player < 10]Obviously this is just some ploy to get that monstrous beast in the dungeon to fuck me, but what other choice do I have?.[otherwise if the bimbo of the player < 15]If it's the only way to stop being [his of current-monster] slave...![otherwise]Playing with a monster, huh? Sounds kinky![end if][roman type][line break][big he of current-monster] pauses once more.[line break][speech style of current-monster]'And while you're here, I think you're going to do a little something extra for me.'[roman type][line break][big he of current-monster] unzips [his of current-monster] jeans.";
 		otherwise say "[BigNameDesc of current-monster] rubs [his of current-monster] chin.[line break][speech style of current-monster]'I have a... favour to ask. There's an amulet somewhere in this world, maybe you've encountered it already. Last I heard it was being guarded by a spooky monster. I want you to retrieve it for me. If you do that, I'll free you from the collar. I would get it myself, but why risk the journey when I could get adventurers like you to go on the quest for me?'[roman type][line break][variable custom style][if the bimbo of the player < 5]On the one hand, this is the first real quest I've been given all game. On the other hand, this guy is a bastard.[otherwise if the bimbo of the player < 10]Obviously this is just some ploy to get that monstrous beast in the dungeon to dominate me, but what other choice do I have?.[otherwise if the bimbo of the player < 15]If it's the only way to stop being [his of current-monster] slave...![otherwise]Playing with a monster, huh? Sounds scary but fun![end if][roman type][line break][big he of current-monster] pauses once more.[line break][speech style of current-monster]'And while you're down there, I think I'm going to start training my newest baby slave.'[line break]";
-		say "[variable custom style][if the bimbo of the player < 5]And [he of current-monster] isn't even satisfied having me doing [his of current-monster] dirty work for me.[otherwise if the bimbo of the player < 10]I guess I should have seen that coming.[otherwise if the bimbo of the player < 15]I saw that coming![otherwise]Oh yes PLEASE.[end if][roman type][line break]";
+		say "[variable custom style][if the bimbo of the player < 5]And [he of current-monster] isn't even satisfied having me doing [his of current-monster] dirty work for [him of current-monster]. Asshole.[otherwise if the bimbo of the player < 10]I guess I should have seen that coming.[otherwise if the bimbo of the player < 15]I saw that coming![otherwise]Oh yes PLEASE.[end if][roman type][line break]";
 		rule succeeds.
 The mechanic applies collar rule is listed last in the mechanic unique punishment rules.
 The mechanic applies collar rule is listed last in the mechanic diaper quest rules.
@@ -407,7 +416,7 @@ This is the mechanic dark ritual rule:
 		let M be current-monster;
 		say "[BigNameDesc of M] seems to consider you for a second, then pulls out a swirling black and red gem.[line break][speech style of M]'You cannot imagine how difficult it was to come by this, you should be honoured to play host to one of my servants...'[roman type][line break]";
 		say "You have no idea what the hell [he of M][']s talking about, but before you can react [he of M] plunges the stone into your chest. Agony overflows your body, and you briefly black out. When you come to, [he of M][']s still glancing down at you.[line break]";
-		say "[speech style of M]'All better? Good. You serve me now. [unless mystical amulet is carried by M]You don't need to know the details, all you need to know is that you will have a place in my service for eternity if you can only recover the mystical amulet guarded by the minotaur in the dungeon. Fail, and of course your spirit will fall to oblivion forever...'[otherwise]This is really all a formality since I already have the amulet I need, but you'll need to get to collecting souls. Slack off and your soul will fall to oblivion forever. Hop to it slut!'[end if][roman type][line break]";
+		say "[speech style of M]'All better? Good. You serve me now. [unless mystical amulet is carried by M]You don't need to know the details, all you need to know is that you will have a place in my service for eternity if you can only recover the mystical amulet guarded by [NameDesc of minotaur] in the dungeon. Fail, and of course your spirit will fall to oblivion forever...'[otherwise]This is really all a formality since I already have the amulet I need, but you'll need to get to collecting souls. Slack off and your soul will fall to oblivion forever. Hop to it slut!'[end if][roman type][line break]";
 		compute succubus transformation;
 		bore M;
 		rule succeeds.
@@ -468,44 +477,57 @@ To say VaginalVirginityTaunt of (M - mechanic):
 
 To decide if (M - mechanic) is losing wrapper in (F - a fuckhole):
 	if the class of the player is princess, decide yes;[he hates princesses]
-	if the class of the player is priestess, decide no;[he's weak to priestesses]
-	if the player is hotel employed:[He's less likely to creampie the help]
-		if a random number between 1 and 5 is 1, decide yes;
+	if the reaction of the player is 0:
+		unless the player is getting lucky, decide yes;
 	otherwise:
-		if a random number between 1 and 3 is 1, decide yes;
+		if the player is getting very unlucky, decide yes;
 	decide no.
 
-To compute condom success of (M - mechanic) in (F - a fuckhole):
-	say CondomPieFlav of M in F;
-	now M is unwrapped;
-	if F is asshole, AssFill 1;
-	otherwise PussyFill 1;
-	say CreampieReactionFlav to M in F.
-
 To say CondomFailFlav of (M - mechanic) in (F - a fuckhole):
-	say "[BigNameDesc of M] suddenly pulls out, tearing off the condom before immediately slamming [his of M] [DickDesc of M] back in.[line break][speech style of M]'[one of]I'm going to jizz inside you, bitch!'[or][if pregnancy fetish is 1 and M is penetrating vagina]Hope you're on the pill, bitch,[otherwise]Hope you like creampies, bitch,[end if] this load is going to be big!'[or]You're gonna take it all, bitch![or]That's right bitch, enjoy all my cum!'[at random][roman type][line break][if the semen addiction of the player < 7]You struggle as much as you can without setting [him of M] off immediately[otherwise if the semen addiction of the player < 12]You half-heartedly struggle to get away[otherwise]You playfully struggle to get away[end if], but [he of M] holds you down effortlessly, [one of][his of M] [DickDesc of M] continuing to slam in and out as wave after wave of [semen] rushes into your now unprotected [variable F][or]continuing to thrust as [his of M] [DickDesc of M] plants [his of M] [semen] nice and deep inside your now unprotected [variable F][or][his of M] [DickDesc of M] throbbing powerfully as it floods your unprotected [variable F] with [his of M] load, pushing it deeper with every thrust[at random].".
+	say "[BigNameDesc of M] suddenly pulls out. [one of]You think for a moment that it might be over, only to[or]you know better than to believe it's over, and a moment later you[stopping] hear a sharp *SNAP* as [he of M] tears off the condom and slams [his of M] [DickDesc of M] back in, [one of]completely bareback[or]fully bareback[or]fully raw[in random order].[line break][speech style of M]'[one of]I'm going to jizz inside you, bitch!'[or][if F is vagina and the player is able to get pregnant]Hope you're on the pill, bitch,[otherwise]Hope you like creampies, bitch,[end if] this load is going to be big!'[or]You're gonna take it all, bitch![or]That's right bitch, enjoy all my cum!'[at random][roman type][line break]";
+	if the reaction of the player is 0, say "[if the semen addiction of the player < 7]You struggle as much as you can without setting [him of M] off immediately[otherwise if the semen addiction of the player < 12]You half-heartedly struggle to get away[otherwise]You playfully struggle to get away[end if], but [he of M] holds you down effortlessly, [one of][his of M] [DickDesc of M] continuing to slam in and out as wave after wave of [semen] rushes into your now unprotected [variable F][or]continuing to thrust as [his of M] [DickDesc of M] plants [his of M] [semen] nice and deep inside your now unprotected [variable F][or][his of M] [DickDesc of M] throbbing powerfully as it floods your unprotected [variable F] with [his of M] load, pushing it deeper with every thrust[at random].";
+	otherwise say "[if the semen addiction of the player < 7]You shudder[otherwise if the semen addiction of the player < 12]You glance over your shoulder[otherwise]You look over your shoulder and lick your lips[end if] as [he of M] deposits [his of M] load deep inside your newly unprotected [variable F].";
+	if the reaction of the player > 0 and the class of the player is not princess, say GotUnluckyFlav;
 
 To say CondomPieFlav of (M - mechanic) in (F - a fuckhole):
-	say "[one of][BigNameDesc of M] tightens [his of M] grip, pistoning fervently as the condom fills with warmth. When [he of M] pulls out [one of]you think it's over, only to[or]you know better than to believe it's over, and a moment later you[stopping] feel [him of M] slide [his of M] [DickDesc of M] back in completely bare. [if the semen addiction of the player < 7]You shudder[otherwise if the semen addiction of the player < 12]You glance over your shoulder[otherwise]You look over your shoulder and lick your lips[end if] as [he of M] deposits the last of [his of M] load directly into your [variable F].[or][BigNameDesc of M] groans, tightening [his of M] grip as [his of M] [DickDesc of M] shoots jet after jet of fresh [semen] into the condom. [big he of M] pulls out, quickly peeling it off before sliding back in, sighing in satisfaction as [he of M] sends a final spurt of [semen] directly into your [variable F].[at random]".
+	say "[one of][BigNameDesc of M] tightens [his of M] grip, pistoning fervently as the condom fills with warmth. [big he of M] slaps your ass as [he of M] pulls out.[or][BigNameDesc of M] groans, tightening [his of M] grip as [his of M] [DickDesc of M] shoots jet after jet of fresh [semen] into the condom. [big he of M] gives your ass a hearty spank as [he of M] pulls out.[at random]";
+	if the reaction of the player is 0, say GotLuckyFlav;
 
 To decide if (M - mechanic) is willing to creampie (F - a fuckhole):
-	if the class of the player is princess, decide yes;
-	if the class of the player is priestess, decide no;
-	if the reaction of the player is 2:
-		if the player is hotel employed, decide no;
-		if a random number between 1 and the charisma of the player > 1, decide no;[if you don't work for him you need to be persuasive]
+	if the class of the player is princess, decide yes;[always creampies princess]
+	if the reaction of the player is 2:[You can beg him not to cum in you. Charisma dependent]
+		let C be the charisma of the player;
+		if a random number between 0 and C > 0, decide no;
 	decide yes.
 
 To say CreampieFlav of (M - mechanic) in (F - a fuckhole):
 	say "[one of][BigNameDesc of M] slams [his of M] [DickDesc of M] home, groaning with pleasure as [he of M] floods your [variable F] with [semen]. [big he of M] gives you a healthy smack across the ass as [he of M] pulls out, climbing to [his of M] feet and wiping a bit of sweat from [his of M] brow.[or][BigNameDesc of M] jams [his of M] [DickDesc of M] in as far as it will go, reaching underneath you to play with your [ShortDesc of breasts] [he of M] fills your [variable F] with [his of M] load. [big he of M] roughly shoves you off [his of M] [DickDesc of M], sighing in satisfaction as [he of M] gets to [his of M] feet.[or][BigNameDesc of M] groans, tightening [his of M] grip as [his of M] [DickDesc of M] shoots jet after jet of fresh [semen] directly into your [variable F]. [big he of M] finishes [himself of M] off with a few short thrusts before pulling out and climbing to [his of M] feet.[at random]".
 
+To compute (M - mechanic) pulling out of (F - a fuckhole):
+	if a2m fetish > 0 and face is not actually occupied and (M is infernal or the player is getting unlucky), compute M messily pulling out of F;
+	otherwise compute M cleanly pulling out of F.
+
 To compute (M - mechanic) messily pulling out of (F - a fuckhole):
 	get messy pull out image of M in F;
 	say MessyPullOutFlav of M in F;
-	AnnouncedSquirt semen on breasts by the semen load of M.
+	now M is not penetrating F;
+	now the sex-length of M is 3;
+	now M is penetrating face.
 
-To say MessyPullOutFlav of (M - a monster) in (F - a fuckhole):
-	say "[BigNameDesc of M] pulls out, flipping you over as [he of M] rapidly pumps [his of M] [DickDesc of M]. [big his of M] groan of pleasure is the last warning you get as [he of M] blows [his of M] load all over your [ShortDesc of Breasts].".
+[TODO: work on a little more]
+To say MessyPullOutFlav of (M - mechanic) in (F - a fuckhole):
+	say "[BigNameDesc of M] suddenly slows down and pulls out.";
+	if the class of the player is worshipper:
+		say "[line break][speech style of M]'[one of]I bet you're dying to find out what your [if F is vagina]pussy[otherwise]ass[end if] tastes like.'[or]You're fine with [if F is vagina]tasting your own pussy[otherwise]ass to mouth[end if], right?'[in random order][roman type][line break]";
+	otherwise if the class of the player is priestess:
+		say "[line break][speech style of M]'[one of]Alright, I won't cum inside you. There's more than one way to defile uppity priestesses, after all.'[or]Ok, priestess, I don't have to creampie you. After all, I have other ways of defiling you.'[in random order][roman type][line break]";
+	otherwise:
+		say "[line break][speech style of M]'[one of]Alright, I'll give your [if F is vagina]pussy[otherwise]ass[end if] a break. But [if M is infernal]I've been really full of energy recently, so we'll have to keep going.'[otherwise]I'm not about to let you blue-ball me, though.'[end if][or]Getting bored, are we? Me too.'[or]Tired already? Hmm, I guess I should make things more interesting.'[in random order][roman type][line break]";
+	say "[big he of M] walks round to your face, casually grabbing a handful of your hair and dragging your head towards [his of M] [LongDickDesc of M]. You are only left with a moment to contemplate if avoiding a creampie is really worse than tasting your own [variable F] before [he of M] makes the decision for you, shoving [his of M] [DickDesc of M] into your mouth and beginning to thrust.[unless M is infernal] [GotUnluckyFlav][end if]".
+
+To say PullOutFlav of (M - mechanic) in (F - a fuckhole):
+	say "[BigNameDesc of M] pulls out, grunting as [he of M] blows [his of M] load all over the floor.[line break][speech style of M]'[one of]Next time, I'm going to nut inside you.'[or]Don't say I never did anything nice for you.'[or]Its your lucky day, bitch.'[in random order][roman type][line break]";
+	SemenPuddleUp the semen load of M.
 
 To compute happy reward of (M - mechanic):
 	if M is friendly-fucking:
@@ -924,7 +946,7 @@ To vaginal ride dominate (M - mechanic):
 	otherwise now J is carried by the player;
 	now M is penetrating vagina;
 	check vaginal dominate entrance of M for J;[does the player get too excited]
-	if player-fucking is not DOMINANT-SHAMEFUL, check vaginal dominate vigilance of M for J;[if the player wasn't too excited, does she pay attention?]
+	if player-fucking is not DOMINANT-SHAMEFUL, check vaginal dominate vigilance of M for J;[if the player wasn't too excited, do they pay attention?]
 	if player-fucking is not DOMINANT-SHAMEFUL, check vaginal dominate focus of M for J;[if the player paid attention, do they lose focus]
 	FuckCount;
 	compute domination aftermath of M for J;
@@ -957,7 +979,7 @@ To check vaginal dominate entrance of (M - a mechanic) for (J - a thing):
 				say "[big he of M] grabs your cheeks, forcing you to [if face is actually occupied]look [him of M] directly in the eye as [he of M] spits in your face[otherwise if there is a worn ringagged clothing]look [him of M] directly in the eye as [he of M] spits in your mouth[otherwise]part your lips as [he of M] spits in your mouth[end if]. [if the delicateness of the player < 6]You seethe in rage and disgust[otherwise if the delicateness of the player < 12]You shiver in disgust, but don't look away[otherwise]You don't dare look away[end if] as [he of M] [if G < -1]eases[otherwise]slides[end if] [his of M] [DickDesc of M] into your [vagina] and eagerly begins to thrust. ";
 				slightHumiliate;
 		Ruin vagina times 2;
-		say "Your thoughts are divided between [if the delicateness of the player > 5]the rush[otherwise]the humiliation[end if] of not being in control, and stupid you were to try and take control in the first place. It's obvious now that there's only one natural position for you, and [NameDesc of M] emphasises where that is with every thrust. You [if G < -1]feel yourself being stretched out more with every moment[otherwise if G < 2]enjoy yourself more with every moment[end if], and you begin to moan as the pleasure builds and builds. [big he of M] doesn't show any signs of stopping, and you clench your fists as your lips form into a large, submissive 'O.'";
+		say "Your thoughts are divided between [if the delicateness of the player > 5]the rush[otherwise]the humiliation[end if] of not being in control, and how stupid you were to try and take control in the first place. It's obvious now that there's only one natural position for you, and [NameDesc of M] emphasises where that is with every thrust. You [if G < -1]feel yourself being stretched out more with every moment[otherwise if G < 2]enjoy yourself more with every moment[end if], and you begin to moan as the pleasure builds and builds. [big he of M] doesn't show any signs of stopping, and you clench your fists as your lips form into a large, submissive 'O.'";
 		now refractoryperiod is 0;
 		vaginally orgasm shamefully;
 		say "[line break][BigNameDesc of M] doesn't let up at all, roughly smacking your tits as [he of M] erodes your inhibitions away with every thrust. You hold eye contact with [him of M], moaning shamelessly as [he of M] uses you as nothing but a [if G < 2]tight[otherwise]warm[end if] sleeve for relieving [his of M] lust. Excitement wells up inside you as [his of M] [DickDesc of M] rapidly begins to spasm, and [he of M] jams [himself of M] in as far as [he of M] can go, groaning like the primal [man of M] [he of M] is as [he of M] pumps your [vagina] full of potent [semen].";
@@ -982,7 +1004,7 @@ To check vaginal dominate vigilance of (M - mechanic) for (J - a thing):
 		if M is wrapped:
 			let N be the semen load of M;
 			passively stimulate vagina from M;
-			say "[big he of M] suddenly pulls out.[line break][speech style of M]'Lose this.'[roman type][line break][big he of M] gestures at the condom covering [his of M] [DickDesc of M]. Pull it off? It might be your only chance to cum...";
+			say "But instead of finishing you off, [he of M] pulls out.[line break][speech style of M]'Lose this.'[roman type][line break][big he of M] gestures at the condom covering [his of M] [DickDesc of M]. Pull it off? It might be your only chance to cum...";
 			if the player is bimbo consenting:
 				say "You rip the condom off without missing a beat, gasping as [his of M] [DickDesc of M] slams back in completely bareback.[line break][speech style of M][if the semen addiction of the player < 8]I can't believe I did that! I CAN'T BELIEVE I DID THAT[otherwise if pregnancy fetish is 1 and the pregnancy of the player is 0]I could get pregnant... I-I could get fucking pregnant[otherwise]I'm going to take it all in my fucking [vagina][end if]![roman type][line break]";
 				now M is unwrapped;
@@ -997,7 +1019,7 @@ To check vaginal dominate vigilance of (M - mechanic) for (J - a thing):
 				if J is clothing, now M is carrying J;
 		otherwise:
 			if J is clothing and a random number between 0 and the appearance of the player < 10, now M is carrying J;
-			say "[big he of M] suddenly pulls out.[line break][variable custom style]'W-why did you stop?'[roman type][line break]You blurt, eliciting a nasty grin from your fucktoy turned stud.[line break][speech style of M]'Oh, just making sure you don't cum.'[roman type][line break][big he of M] [if M is carrying J]grabs the [ShortDesc of J] off the ground[otherwise]smirks[end if], keeping [himself of M] hard as [he of M] waits for you to cool off. You look up at [him of M] in dejectedly as [he of M] slams [his of M] [DickDesc of M] back in and ejaculates within only a few thrusts. Equal parts embarrassment and frustration swirl inside you as [he of M] floods your [vagina] with [semen].";
+			say "But instead of finishing you off, [he of M] pulls out.[line break][variable custom style]'W-why did you stop?'[roman type][line break]You blurt, eliciting a nasty grin from your fucktoy turned stud.[line break][speech style of M]'Oh, just making sure you don't cum.'[roman type][line break][big he of M] [if M is carrying J]grabs the [ShortDesc of J] off the ground[otherwise]smirks[end if], jerking off to stay hard as [he of M] waits for you to cool off. You can only look up at [him of M] in dejectedly as [he of M] slams [his of M] [DickDesc of M] back in and ejaculates within only a few thrusts. Equal parts embarrassment and frustration swirl inside you as [he of M] floods your [vagina] with [semen].";
 			passively stimulate vagina from M;
 			slightHumiliate;
 			PussyFill the semen load of M;
@@ -1009,7 +1031,7 @@ To check vaginal dominate focus of (M - mechanic) for (J - a thing):
 	let R be the semi-dominance roll for M;
 	if R > 0:[player is distracted by how it feels and drops J]
 		if debugmode > 0, say "[bold type]FAILED![roman type][line break]";
-		say "Just as soon as you begin to really enjoy yourself, [big he of M] grabs your wrists, and you struggle to shake [him of M] off and [if J is clothing]hold onto the [ShortDesc of J][otherwise]stay on top[end if] at the same time. After a short scuffle, you fail at both, and [NameDesc of M] pins your arms firmly behind your back.[line break][speech style of M]'Looks like I WIN, bitch.'[roman type][line break]";
+		say "Just as soon as you begin to really enjoy yourself, [big he of M] actually grabs your wrists, and you struggle to shake [him of M] off and [if J is clothing]hold onto the [ShortDesc of J][otherwise]stay on top[end if] at the same time. After a short scuffle, you fail at both, and [NameDesc of M] pins your arms firmly behind your back.[line break][speech style of M]'Looks like I WIN, bitch.'[roman type][line break]";
 		unless J is throne, now J is in the location of the player;
 		now player-fucking is DOMINANT-SHAMEFUL;
 		if M is wrapped:
@@ -1088,10 +1110,10 @@ To check anal dominate entrance of (M - a mechanic) for (J - a thing):
 				say "[big he of M] grabs your cheeks, forcing you to [if face is actually occupied]look [him of M] directly in the eye as [he of M] spits in your face[otherwise if there is a worn ringagged clothing]look [him of M] directly in the eye as [he of M] spits in your mouth[otherwise]part your lips as [he of M] spits in your mouth[end if]. [if the delicateness of the player < 6]You seethe in rage and disgust[otherwise if the delicateness of the player < 12]You shiver in disgust, but don't look away[otherwise]You don't dare look away[end if] as [he of M] [if G < -1]eases[otherwise]slides[end if] [his of M] [DickDesc of M] into your [asshole] and eagerly begins to thrust. ";
 				slightHumiliate;
 		Ruin asshole times 2;
-		say "[if G < -1]It's way too big, but the pain is overshadowed by the feeling of [his of M] tip ramming against your prostate[otherwise][big his of M] tip feels incredible ramming up against your prostate[end if], and [if C is worn]clear precum dribbles out of your cage as it jiggles[otherwise if the size of penis > 6]clear precum forms a squiggly line on your belly as your [ShortDesc of penis] jiggles[otherwise if the player is possessing a penis]clear precum pools on your belly as your [ShortDesc of Penis] bobs[otherwise]waves of pleasure wash over you pant[end if] in time with [NameDesc of M][']s powerful thrusts. You [if the player is ashamed]eagerly moan[otherwise]moan involuntarily[end if] as [he of M] pounds away, shame rushing through you as you realise that not only did you instantly mess everything up, but it never would have felt this good if you were still in control.[line break][second custom style]'[if face is actually occupied]MMMGG MMMHHH!'[otherwise]OOOH, FUCK ME!'[end if][roman type][line break]";
+		say "[if G < -1]It's way too big, but the pain is overshadowed by the feeling of [his of M] tip ramming against your prostate[otherwise][big his of M] tip feels incredible ramming up against your prostate[end if], and [if C is worn]clear precum dribbles out of your cage as it jiggles[otherwise if the size of penis > 6]clear precum forms a squiggly line on your belly as your [ShortDesc of penis] jiggles[otherwise if the player is possessing a penis]clear precum pools on your belly as your [ShortDesc of Penis] bobs[otherwise]waves of pleasure wash over you as you pant[end if] in time with [NameDesc of M][']s powerful thrusts. You [if the player is ashamed]eagerly moan[otherwise]moan involuntarily[end if] as [he of M] pounds away, shame rushing through you as you realise that not only did you instantly mess everything up, but it never would have felt this good if you were still in control.[line break][second custom style]'[if face is actually occupied]MMMGG MMMHHH!'[otherwise]OOOH, FUCK ME!'[end if][roman type][line break]";
 		now refractoryperiod is 0;
 		anally orgasm shamefully;
-		if previous penis length is 0 or refractoryperiod is 0 or the player is female:
+		if previous penis length is 0 or refractoryperiod is 0 or the player is not possessing a penis:
 			say "You don't ejaculate, but the look on [NameDesc of M][']s face tells you [he of M] definitely knows you [if refractoryperiod > 0]came[otherwise]almost did[end if]. [run paragraph on]";
 		otherwise if the size of penis < 4 or C is worn:
 			say "You moan uncontrollably as [semen] dribbles out of your [sissy-penis], forming a pitiful white pool on your belly. [run paragraph on]";
@@ -1124,12 +1146,12 @@ To check anal dominate vigilance of (M - mechanic) for (J - a thing):
 		moderateHumiliate;
 		if M is wrapped:
 			passively stimulate asshole from M;
-			say "[big he of M] suddenly pulls out.[line break][speech style of M]'Lose this.'[roman type][line break][big he of M] gestures at the condom covering [his of M] [DickDesc of M]. Pull it off? It might be your only chance to cum...";
+			say "But instead of finishing you off, [he of M] pulls out.[line break][speech style of M]'Lose this.'[roman type][line break][big he of M] gestures at the condom covering [his of M] [DickDesc of M]. Pull it off? It might be your only chance to cum...";
 			if the player is bimbo consenting:
 				say "You rip the condom off without missing a beat, gasping as [his of M] [DickDesc of M] slams back in completely bareback.[line break][variable custom style]I'm going to take it all in my fucking ass![roman type][line break]";
 				now M is unwrapped;
-				if previous penis length is 0 or refractoryperiod is 0 or the player is female:
-					say "You don't ejaculate, but [NameDesc of M] doesn't seem to notice, groaning primally as as [he of M] floods your [asshole] with [his of M] thick, creamy [semen].";
+				if previous penis length is 0 or refractoryperiod is 0 or the player is not possessing a penis:
+					say "You [if refractoryperiod > 0]cum[otherwise if the player is possessing a penis]don't ejaculate[otherwise]don't cum[end if], but [NameDesc of M] doesn't seem to notice, groaning primally as as [he of M] floods your [asshole] with [his of M] thick, creamy [semen].";
 				otherwise if the size of penis < 4 or C is worn:
 					say "You moan uncontrollably as [semen] dribbles out of your [sissy-penis], forming a shameful white pool on your belly. It sits there, a sticky reminder of the shameful nature of [i]your[/i] orgasm as [NameDesc of M] has one of [his of M] own, tightening [his of M] grip as [he of M] floods your [asshole] with [his of M] thick, creamy load.";
 					AnnouncedSquirt semen on belly by the semen load of the player;
@@ -1148,7 +1170,7 @@ To check anal dominate vigilance of (M - mechanic) for (J - a thing):
 				if J is clothing, now M is carrying J;
 		otherwise:
 			if J is clothing and a random number between 0 and the appearance of the player < 10, now M is carrying J;
-			say "[big he of M] suddenly pulls out.[line break][variable custom style]'W-why did you stop?'[roman type][line break]You blurt, eliciting a nasty grin from your fucktoy turned stud.[line break][speech style of M]'Oh, just making sure you don't cum.'[roman type][line break][big he of M] [if M is carrying J]grabs the [ShortDesc of J] off the ground[otherwise]smirks[end if], keeping [himself of M] hard as [he of M] waits for you to cool off. You look up at [him of M] in dejectedly as [he of M] slams [his of M] [DickDesc of M] back in and ejaculates within only a few thrusts. Equal parts embarrassment and frustration swirl inside you as [he of M] floods your [asshole] with [semen].";
+			say "But instead of finishing you off, [he of M] pulls out.[line break][variable custom style]'W-why did you stop?'[roman type][line break]You blurt, eliciting a nasty grin from your fucktoy turned stud.[line break][speech style of M]'Oh, just making sure you don't cum.'[roman type][line break][big he of M] [if M is carrying J]grabs the [ShortDesc of J] off the ground[otherwise]smirks[end if], jerking off to stay hard while [he of M] waits for you to cool off. You look up at [him of M] dejectedly as [he of M] slams [his of M] [DickDesc of M] back in and ejaculates within only a few thrusts. Equal parts embarrassment and frustration swirl inside you as [he of M] floods your [asshole] with [semen].";
 			slightHumiliate;
 			AssFill the semen load of M;
 			orgasm M;
@@ -1161,7 +1183,7 @@ To check anal dominate focus of (M - mechanic) for (J - a thing):
 	let R be the semi-dominance roll for M;
 	if R > 0:[player is distracted by how it feels and drops J]
 		if debugmode > 0, say "[bold type]FAILED![roman type][line break]";
-		say "Just as soon as you begin to really enjoy yourself, [big he of M] grabs your wrists, and you struggle to shake [him of M] off and [if J is clothing]hold onto the [ShortDesc of J][otherwise]stay on top[end if] at the same time. After a short scuffle, you fail at both, and [NameDesc of M] pins your arms firmly behind your back.[line break][speech style of M]'REAL men always come out on top, sissy.'[roman type][line break]";
+		say "Just as soon as you begin to really enjoy yourself, [big he of M] actually grabs your wrists, and you struggle to shake [him of M] off and [if J is clothing]hold onto the [ShortDesc of J][otherwise]stay on top[end if] at the same time. After a short scuffle, you fail at both, and [NameDesc of M] pins your arms firmly behind your back.[line break][speech style of M]'REAL men always come out on top, [sissy slut].'[roman type][line break]";
 		unless J is throne, now J is in the location of the player;
 		now player-fucking is DOMINANT-SHAMEFUL;
 		if M is wrapped:
@@ -1293,7 +1315,7 @@ To compute domination aftermath of (M - mechanic) for (J - throne):
 			say AfterDominationComment 2 of M;["Thanks for the sex, here's a reward!"]
 	otherwise:
 		say "You get to your feet with an overwhelming feeling of confidence bubbling up from your core.";
-		Dignify 500;[getting to this point is difficult, so the reward is big]
+		ultraDignify;[getting to this point is difficult, so the reward is big]
 		say AfterDominationComment 7 of M.
 
 [The rewards for failing to dominate the mechanic should be better than the rewards for sex, since it's way more humiliating, creampie chance is 100%, and he gets a difficulty boost]

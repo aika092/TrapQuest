@@ -250,7 +250,7 @@ Definition: a royal guard (called M) is distracted:
 		let N be a random undefeated wench in the location of M;
 		if N is monster and (N is uninterested or N is friendly):
 			say "[BigNameDesc of M][']s eyes are drawn [if M is interested]away from you [end if]to [NameDesc of N]. [big he of M] grabs [him of N] by the hair and pushes [him of N] onto [his of N] knees.[line break][speech style of M]'[one of]Back for more punishment, I see[or]If you still haven't left these halls, you must really want this[or]I do not approve of your appearance, wench[in random order].'[roman type][line break]Freeing [his of M] [LongDickDesc of M], [NameDesc of M] forces it into [NameDesc of N][']s [if N is penetrating face]mouth[otherwise][one of]mouth[or][HoleDesc of N][or]asshole[purely at random][end if] before [he of N] can even begin to protest. Several awkward moan-filled seconds later, [NameDesc of N] is discarded onto the stone floor, panting, with a fresh load of [semen] oozing out of [his of N] abused orifice.";
-			now the creampieTimer of N is the semen load of M * 100;
+			if a2m fetish > 1, now the creampieTimer of N is the semen load of M * 100;
 			now the refractory-period of M is the refractory-time of M;
 			satisfy M;
 			compute mandatory room leaving of M;
@@ -785,7 +785,7 @@ To decide if (M - a royal guard) is willing to creampie (F - a fuckhole):
 	if tutorial is 1, decide yes;
 	if F is vagina and M is mating, decide yes;
 	if class of the player is princess:
-		if the reaction of the player is 2 or M is not princess-consort, decide no;
+		if the reaction of the player is 2 or M is not bride-consort, decide no;
 	if the class of the player is royal slave, decide yes;
 	if the reaction of the player is 2, decide no;
 	if the favour of M >= (a random number between 20 and 25) - the saved appearance of the player, decide yes;[He thinks of you as a whore, but he'd rather not drop one in your pussy. Expect a creampie if you're really attractive]
@@ -814,8 +814,23 @@ To say CondomRejectFlav of (M - a royal guard):
 	if R is 0, say "[BigNameDesc of M] [one of]scoffs[or]frowns[or]rolls [his of M] eyes[at random], and ignores your suggestion[if M is seduced].[otherwise]. Looks like [he of M][']s going in bare...[end if]".
 
 To say CondomPieFlav of (M - a royal guard) in (F - a fuckhole):
-	let F be a random fuckhole penetrated by M;
-	say "[one of][BigNameDesc of M] roars with pleasure, tightening [his of M] grip as the condom floods with warmth. [big he of M] continues fucking you until the [semen] filled pocket at the tip begins to bulge with the volume of [his of M] load, and with a sigh, you feel [his of M] hands leave your hips as [he of M] pulls out and falls asleep.[or][BigNameDesc of M] grunts, [his of M] [DickDesc of M] throbbing as [he of M] unloads [his of M] balls into the condom, which stretches readily to prevent [his of M] load from flowing freely into your [variable F]. [big he of M] sighs in satisfaction, roughly shoving you off [his of M] [DickDesc of M] before slumping over, asleep.[or][if the semen addiction of the player < 7][BigNameDesc of M] tightens [his of M] grip and begins grunting in pleasure. You shudder and look over your shoulder as the condom bloats with [his of M] [semen], as if threatening your [variable F] with its slimy warmth. [big he of M] releases your hips, allowing you to crawl away in shame as [he of M] slumps over, asleep.[otherwise if the semen addiction of the player < 15][BigNameDesc of M] tightens [his of M] grip and begins grunting in pleasure. You gasp and look over your shoulder as the condom bloats with [his of M] [semen]. [big he of M] releases your hips, thrusting a few more times before pulling out and falling asleep.[otherwise][BigNameDesc of M] tightens [his of M] grip and begins grunting in pleasure. You look over your shoulder and grin as the condom bloats with [his of M] [semen]. [big he of M] releases your hips, allowing you to milk [his of M] [DickDesc of M] down to the last drop before pulling out and falling asleep.[end if][or][if the semen addiction of the player < 7][BigNameDesc of M] grunts and tightens [his of M] grip, causing you to whimper uncomfortably as [he of M] fills [his of M] condom with wave after wave of [semen], subtly stretching it more and more until finally [he of M] pulls out and falls asleep.[otherwise if the semen addiction of the player < 11][BigNameDesc of M] grunts and tightens [his of M] grip, causing you to look over your shoulder wearily as [he of M] fills [his of M] condom with wave after wave of [semen], subtly stretching it more and more until finally [he of M] pulls out and falls asleep.[otherwise][BigNameDesc of M] grunts and tightens [his of M] grip, causing you to coo happily as [he of M] fills the condom with wave after wave of[line break][second custom style]yummy[roman type][line break][semen], subtly stretching it more and more until finally [he of M] pulls out and immediately falls asleep.[end if][at random]".
+	say "[BigNameDesc of M] grunts and tightens [his of M] grip, causing you to [if the semen addiction of the player < 5]whimper uncomfortably[otherwise if the semen addiction of the player < 11]gasp quietly[otherwise]coo happily[end if] as [he of M] fills [one of]the condom's reservoir tip[or]the end of the condom[or]the condom[in random order] with wave after wave of [semen]. You feel a pocket of [one of]warm liquid[or]warmth[in random order] slip out of you as [he of M] pulls out and immediately falls asleep.".
+
+To decide if (M - a royal guard) is losing wrapper in (F - a fuckhole):
+	if the player is getting unlucky, decide yes;
+	decide no.
+
+To compute condom failure of (M - a royal guard) in (F - a fuckhole):
+	get condom failure image of M in F;
+	say CondomFailFlav of M in F;
+	say GotUnluckyFlav;
+	now M is unwrapped;
+	if F is asshole, AssFill 1;
+	otherwise PussyFill 1;
+	say CreampieReactionFlav to M in F.
+
+To say CondomFailFlav of (M - a royal guard) in (F - a fuckhole):
+	say "[BigNameDesc of M] grunts and tightens [his of M] grip, causing you to [if the semen addiction of the player < 4]whimper uncomfortably[otherwise if the semen addiction of the player < 11]gasp quietly[otherwise]coo happily[end if] as [he of M] fills the condom's reservoir tip with wave after wave of [semen]. The pocket of warm liquid shifts inside you as [he of M] begins to pull out, and you realize the condom is starting to come off.[line break][variable custom style]'[one of]Wait, wait-!'[or]Hey, the condom-!'[or]Wait, the condom is-!'[in random order][roman type][line break][big he of M] doesn't respond, and you feel a faint trickle of wetness spreading out inside your [variable F] as [he of M] slumps over and passes out. You look down to see the condom hanging half-on, half-off [his of M] softening [DickDesc of M].";
 
 To say CreampieFlav of (M - a royal guard) in (F - a fuckhole):
 	if tutorial is 1:

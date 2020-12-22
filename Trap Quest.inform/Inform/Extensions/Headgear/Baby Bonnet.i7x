@@ -16,50 +16,12 @@ Definition: a baby bonnet is condom pinnable: decide yes.
 
 Part - Class Outfit
 
-Definition: a baby bonnet is removal-blocking:
-	if wearing-target is onesie or wearing-target is mittens or wearing-target is baby booties, decide yes;
-	decide no. [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
-
-baby-summoned is a number that varies.
-To compute unique recycling of (C - a baby bonnet):
-	now baby-summoned is 0.
-
 To compute class outfit of (H - a baby bonnet):
-	let O be a random off-stage onesie;
-	let M be a random off-stage rubber mittens;
-	let P be nothing;
-	let B be a random off-stage baby booties;
-	if there is a worn mittens and there is a worn baby booties and a random tiger pacifier is off-stage:
-		now P is a random tiger pacifier;
-	otherwise if there is an off-stage yellow pacifier:
-		now P is a random yellow pacifier;
-	otherwise if there is an off-stage pink pacifier:
-		now P is a random pink pacifier;
-	if O is actually summonable or (O is onesie and baby-summoned is 0 and the number of worn onesie is 0):
-		PinkWardrobeUnclash O;
-		say "[bold type]Your bonnet flutters in an invisible wind as a warm, thick onesie appears over you, encasing your torso and limbs in its soft fabric.[roman type][line break]";
-		summon O uncursed;
-		let D be a random worn diaper;
-		if D is diaper:
-			increase the raw-magic-modifier of O by 1;
-			if the urine-soak of D > 0, increase the raw-magic-modifier of O by 1;
-			if D is messed, increase the raw-magic-modifier of O by 1;
-		now baby-summoned is 1;
-	otherwise if M is actually summonable:
-		say "[bold type]Your bonnet flutters in an invisible wind as large, round mittens appear around your hands.[roman type][line break]";
-		summon M cursed with quest;
-		now the raw-magic-modifier of M is 0;
-	otherwise if B is actually summonable:
-		say "[bold type]Your bonnet flutters in an invisible wind as soft pink booties appear around your feet.[roman type][line break]";
-		summon B uncursed;
-	otherwise if P is actually summonable:
-		if the semen taste addiction of the player > 11:
-			now P is a random cock pacifier;
-			say "[bold type]Your bonnet flutters in an invisible wind as a penis shaped pacifier suddenly appears out of nowhere and forces its way into your mouth![roman type][line break]";
-		otherwise:
-			say "[bold type]Your bonnet flutters in an invisible wind as a pacifier suddenly appears out of nowhere and forces its way into your mouth![roman type][line break]";
-		summon P cursed with quest;
-		now the raw-magic-modifier of P is 0.
+	class summon little dinosaur onesie;
+	class summon rubber mittens;
+	class summon yellow-pacifier;
+	class summon pink-baby-booties;
+
 
 Part - Quest
 

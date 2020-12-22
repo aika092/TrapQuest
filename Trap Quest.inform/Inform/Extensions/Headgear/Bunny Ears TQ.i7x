@@ -8,8 +8,6 @@ Part 1 - Bunny Waitress Ears
 
 bunny waitress ears is a bunny ears. bunny waitress ears is satin. bunny waitress ears has a number called service-ready.
 
-bunny-summoned is a number that varies.
-
 Definition: bunny waitress ears is fluid immune: decide no.
 
 Figure of bunny waitress ears is the file "Items/Accessories/Head/bunnyears1.png".
@@ -84,8 +82,6 @@ To compute (M - a monster) considering (T - a bottle):
 	otherwise if the waitress bartering value of T for M > 0:
 		if the waitress-boredom of M > 0:
 			say "[BigNameDesc of M] turns away.[line break][speech style of M]'I'm not thirsty at the moment.'[roman type][line break]";
-		otherwise if T is player-origin and the class of the player is royal slave:
-			say "[BigNameDesc of M] turns away.[line break][speech style of M]'I can tell that hasn't been brewed inside a royal slave.'[roman type][line break]";
 		otherwise:
 			now autodrink is 1;
 			if the class of the player is bunny and (T is not sure or (T is cursed and T is sure) or the Known corresponding to an Magic of the fill-type of T in the Table of Drinks is 0 or the fill-type of T >= lowest-cursed) and (alcohol fetish is 1 or a random number between 1 and 2 is 1) and the player is able to drink:
@@ -126,14 +122,13 @@ To say WaitressOfferSuspiciousAcceptFlav of (M - a monster) to (T - a bottle):
 To say WaitressTakeFlav of (M - a monster) to (T - a bottle):
 	say "[big he of M] takes the [ShortDesc of T] out of your hand and drinks it all, before returning the empty vessel to you.".
 
-[To say WaitressPaymentFlav of (M - a monster) with (C - an accessory):
-	say "[speech style of M]'Keep the change.'[roman type][line break][big he of M] throws a [ShortDesc of C] in your direction.".]
-
 To compute waitress resolution of (M - a monster) taking (T - a bottle):
-	DoseEmpty T;
 	now the waitress-boredom of M is 300;
 	progress quest of milk-serve-quest;
+	if T is player-origin and the class of the player is royal slave:
+		class summon cow print basque;
 	progress quest of bunny-waitress-quest;
+	DoseEmpty T;
 	if T is can:
 		say "You discard the empty [T].";
 		destroy T.
@@ -182,31 +177,8 @@ To compute service spill punishment:
 
 Chapter - Class Outfit
 
-Definition: a bunny ears is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
-	if wearing-target is bunny outfit or wearing-target is serving table or wearing-target is bunny stockings, decide yes;
-	decide no.
-
 To compute class outfit of (H - bunny waitress ears):
-	let B be a random off-stage bunny waitress outfit;
-	let W be a random off-stage waitress vessel;
-	if B is actually summonable or (B is bunny outfit and bunny-summoned is 0 and the number of worn bunny outfit is 0):
-		PinkWardrobeUnclash B;
-		say "[bold type]You feel your bunny waitress ears twitch as if they were real, and then a [ShortDesc of B] appears on you![roman type][line break]";
-		summon B;
-		if artificial enhancements fetish is 1, now the raw-magic-modifier of B is ((4 - the silicone volume of breasts) / 5) - 1;
-		if bunny-summoned < 1, now bunny-summoned is 1;
-	otherwise if asshole is not actually occupied and reverse bunny outfit is worn:
-		PinkWardrobeUnclash bunny tail plug;
-		say "[bold type]Suddenly, you feel a bunny tail plug invading your [asshole]![roman type][line break]";
-		summon bunny tail plug cursed with quest;
-	otherwise if W is a thing:
-		now W is carried by the player;
-		now the fill-colour of W is white;
-		now W is bland;
-		now W is sure;
-		DoseFill W;
-		let S be a random worn serving-bondage;
-		say "[bold type]Suddenly a [ShortDesc of W] appears [if S is a thing]on your [ShortDesc of S][otherwise]in your hand[end if]! It appears to be full of [milk].[roman type][line break]".
+	class summon bunny waitress outfit.
 
 Chapter - Quest
 
@@ -214,14 +186,13 @@ bunny-waitress-quest is a headgear-clothing-quest. bunny-waitress-quest has a nu
 
 To compute unique recycling of (C - a bunny waitress ears):
 	now the serve-count of bunny-waitress-quest is 0;
-	now waitress-dips is 0;
-	now bunny-summoned is 0.
+	now waitress-dips is 0.
 
 To uniquely set up (C - bunny waitress ears):
 	now the quest of C is bunny-waitress-quest.
 
 To say QuestFlav of (Q - bunny-waitress-quest):
-	say "You sense it wants you to [unless the class of the player is bunny]first become a bunny waitress and then [end if]share drinks with customers.".
+	say "You sense it wants you to share drinks with customers.".
 
 To say QuestTitle of (Q - bunny-waitress-quest):
 	say " (waitress quest)".
@@ -279,13 +250,7 @@ To compute SelfExamineDesc of (H - rubber bunny ears):
 	say "You are wearing a latex bunny ears hood on top of your [ShortDesc of hair]. ".
 
 To compute class outfit of (H - rubber bunny ears):
-	let B be a random off-stage cream rubber bunny outfit;
-	if B is actually summonable or (B is bunny outfit and rubber-bunny-summoned < 2):
-		PinkWardrobeUnclash B;
-		say "[bold type]You feel your rubber bunny ears twitch as if they were real, and then a [ShortDesc of B] appears on you![roman type][line break]";
-		summon B;
-		now the raw-magic-modifier of B is ((4 - the total egg fill of belly) / 5) - 1;
-		if rubber-bunny-summoned < 2, now rubber-bunny-summoned is 2.
+	class summon cream rubber bunny outfit.
 
 To compute unique periodic effect of (C - rubber bunny ears):
 	increase the charge of C by 1;

@@ -1,6 +1,9 @@
 Motion by Monster Framework begins here.
 
 To check motion of (M - a monster):
+	check default motion of M.
+
+To check default motion of (M - a monster):
 	if M is penetrating a body part:
 		dislodge M;
 	if M is undefeated and M is willing to punish untidiness and the player is not in the location of M: [While the NPC idly wanders, it can pick up leftover soiled diapers]
@@ -191,9 +194,9 @@ To compute periodic recovery of (M - a monster):
 	unless the class of the player is princess and M is asleep, decrease the refractory-period of M by 4;
 	if M is messy and the refractory-period of M + 4 > the messRefractoryLimit of M:
 		if M is in the location of the player, say SuddenMessFlav of M;
-	otherwise if the class of the player is princess and princess-consort is M:
+	otherwise if the class of the player is princess and bride-consort is M:
 		if the refractory-period of M <= 0:
-			if the refractory-period of M > -4, say "A strange tingle passes through your body[if the player is very horny], and you suddenly find yourself stricken with need[end if] as thoughts of the [princess-consort] begin to swirl around inside your head. Somehow, you know you won't be able to satisfy yourself at all until you see to [his of M] needs.[line break][variable custom style][if the player is not a pervert]Ugh, it's not my job to get anyone off! Stop messing with my head, game![otherwise if the sex addiction of the player < 12]I guess I should go see [him of M] quick so I can get it over with.[otherwise]Looks like [he of M] needs my help. I don't want to keep [him of M] waiting![end if][roman type][line break]";
+			if the refractory-period of M > -4, say "A strange tingle passes through your body[if the player is very horny], and you suddenly find yourself stricken with need[end if] as thoughts of the [bride-consort] begin to swirl around inside your head. Somehow, you know you won't be able to satisfy yourself at all until you see to [his of M] needs.[line break][variable custom style][if the player is not a pervert]Ugh, it's not my job to get anyone off! Stop messing with my head, game![otherwise if the sex addiction of the player < 12]I guess I should go see [him of M] quick so I can get it over with.[otherwise]Looks like [he of M] needs my help. I don't want to keep [him of M] waiting![end if][roman type][line break]";
 			Arouse 10.[The princess will get a little hornier every turn her consort goes unsatisfied]
 
 To say SuddenMessFlav of (M - a monster):

@@ -22,7 +22,6 @@ This definition performs 3 checks to determine whether or not a monster will act
 
 Definition: a thing (called C) is stealable: [Some clothing can never be stolen or destroyed, even by monsters.]
 	if C is accessory and (the unworn outrage of C >= 5 or the unworn cringe of C >= 5), decide no;[Regardless of how you feel about regular clothes, most npcs would agree it's better not to be naked.]
-	if C is overdress and the class of the player is not adventurer, decide no;
 	if C is worn:
 		if C is not actually strippable, decide no; [This checks if it can be removed by NPCs without destroying it]
 	decide yes.
@@ -48,7 +47,7 @@ Definition: a thing is indestructible:
 
 [!<ThingIsTearable>+
 
-This definition determines whether or not a given item can be destroyed by being torn off by monsters
+This definition determines whether or not a given item can be destroyed by being torn off by monsters and traps
 
 @param <Object>:<C> The item that can potentially be torn off
 

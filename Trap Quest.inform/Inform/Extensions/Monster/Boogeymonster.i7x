@@ -14,7 +14,12 @@ To decide which figure-name is the monster-image of (M - boogeymonster):
 	decide on figure of boogeymonster.
 
 To say MonsterDesc of (M - boogeymonster):
-	say "This giant tentacle monster looks like something straight out of a nightmare[if M is caged]. Luckily it is currently stuck inside a giant cage above head height, so none of its tentacles can quite reach you[end if].";
+	say "This giant tentacle monster looks like something straight out of a nightmare.";
+	if M is caged, say DungeonBossCageDesc of M.
+
+To say DungeonBossCageDesc of (M - boogeymonster):
+	if M is caged, say "[big he of M] is currently trapped within a giant steel birdcage, which is suspended off the ground by a tough-looking chain. [big he of M] can see and look around with ease, capable of swinging [himself of M] a few inches in any direction if [he of M] feels provoked, but unable to inflict any real harm. Looking up at the chain that keeps the cage suspended, you notice that it doesn't appear to coordinate to any device or [bold type]lever[roman type] in the room. To lower [him of M] and open the cage, you'd need to find something elsewhere. [if mystical amulet is in the location of M][line break]Underneath [his of M] feet, you can see a valuable-looking amulet.[end if]";
+	otherwise say "The cage is open and empty[if mystical amulet is in Dungeon36][line break], save for a valuable-looking amulet.[end if]".
 
 To set up (M - boogeymonster):
 	if M is alive: [We don't want to reset the boogeymonster if he's dead]
@@ -121,7 +126,7 @@ To say StrikingFailureFlav of (M - boogeymonster) on (B - a body part):
 
 To decide which body part is the painful-part of (M - boogeymonster):
 	let B be a random body part;
-	if B is a fuckhole, now B is hips;
+	if B is a fuckhole or B is scrotum, now B is hips;
 	if B is hair, now B is breasts;
 	if B is not hips and B is not breasts, now B is belly;
 	decide on B.
@@ -218,12 +223,11 @@ To compute punishment of (N - boogeymonster-nightmare-aeroplane):
 	repeat with K running through worn knickers:
 		destroy K;
 	summon D;
-	let P be a random yellow pacifier;
-	unless P is worn:
-		destroy P;
+	if yellow-pacifier is not worn:
+		destroy yellow-pacifier;
 		repeat with B running through worn clothing penetrating face:
 			destroy B;
-		summon P cursed with silent quest;
+		summon yellow-pacifier cursed with silent quest;
 	if rectum > 1, now rectum is 1;
 	now the bladder of the player is 0;
 	fully clean D;
@@ -251,7 +255,7 @@ To compute punishment of (N - boogeymonster-nightmare-aeroplane):
 		DiaperAddictUp 2;
 		if diaper messing >= 3, now rectum is 10;
 		now the bladder of the player is 10;
-	say "You open your eyes. You are lying on your back in the [location of the player], but now wearing a [D][if F is worn], [F][end if][if B is worn], [printed name of B][end if] and [P]. The [ShortDesc of D] feels extremely heavy[if the player is bursting], you feel desperate for the toilet[end if], and you feel extremely fatigued. [BigNameDesc of M] is nowhere to be seen.";
+	say "You open your eyes. You are lying on your back in the [location of the player], but now wearing a [D][if F is worn], [F][end if][if B is worn], [printed name of B][end if] and [yellow-pacifier]. The [ShortDesc of D] feels extremely heavy[if the player is bursting], you feel desperate for the toilet[end if], and you feel extremely fatigued. [BigNameDesc of M] is nowhere to be seen.";
 	now the fatigue of the player is the buckle threshold of the player;
 	regionally place M;
 	distract M;
@@ -373,18 +377,16 @@ To compute punishment of (N - boogeymonster-nightmare-courtroom):
 		repeat with K running through worn knickers:
 			destroy K;
 		summon D cursed with silent quest;
-	let O be a random velcro onesie;
-	unless O is worn:
-		destroy O;
-		repeat with K running through worn overdress:
+	if the number of worn onesie is 0:
+		repeat with K running through worn dress:
 			destroy K;
 		repeat with K running through worn trousers:
 			destroy K;
-		summon O cursed with silent quest;
+		summon velcro onesie cursed with silent quest;
 	let A be a random off-stage pair of anklecuffs;
 	if A is actually summonable, summon A locked;
 	MessSet D to 20;
-	say "When you open your eyes, you find yourself lying on your back in the [location of the player], wearing an impossibly full [ShortDesc of D], covered by a [ShortDesc of O][if A is worn clothing]. A pair of anklecuffs keeps your feet locked close together[end if]. [BigNameDesc of M] is nowhere to be seen.";[Plain white diaper and pink onesie, maybe bondage?]
+	say "When you open your eyes, you find yourself lying on your back in the [location of the player], wearing an impossibly full [ShortDesc of D], covered by a [ShortDesc of a random worn onesie][if A is worn clothing]. A pair of anklecuffs keeps your feet locked close together[end if]. [BigNameDesc of M] is nowhere to be seen.";[Plain white diaper and pink onesie, maybe bondage?]
 	now the fatigue of the player is the buckle threshold of the player;
 	regionally place M;
 	distract M;
@@ -475,11 +477,9 @@ To compute punishment of (N - boogeymonster-nightmare-mahjong):[todo: replace Sa
 	let D be pink-huge-diaper;
 	summon D uncursed;
 	if the class of the player is adventurer:
-		let O be a random frilly onesie;
-		unless O is worn:
-			destroy O;
-			summon O uncursed;
-			now O is locked;
+		if the number of worn onesie is 0:
+			summon frilly onesie uncursed;
+			now frilly onesie is locked;
 	MessSet D to 10;
 	now rectum is 6;
 	now suppository is 1;

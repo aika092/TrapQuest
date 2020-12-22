@@ -1,6 +1,6 @@
 Minotaur by Monster begins here.
 
-minotaur is a dungeon boss. minotaur is male. The leftover-type of minotaur is 107. minotaur has a number called nutting-turns. The nutting-turns of minotaur is usually 0.
+minotaur is a dungeon boss. minotaur is male. The leftover-type of minotaur is 107. minotaur has a number called nutting-turns. The nutting-turns of minotaur is usually 0. minotaur has a number called swing-intensity.
 
 minotaur is in Dungeon36. minotaur is caged.
 Figure of minotaur is the file "NPCs/Bosses/Minotaur/minotaur1.png". Figure of minotaur caged is the file "NPCs/Bosses/Minotaur/minotaur2.png". Figure of hulk is the file "NPCs/Bosses/Minotaur/hulk1.png".
@@ -52,7 +52,12 @@ To say LongDickDesc of (M - a minotaur):
 
 To say MonsterDesc of (M - minotaur):
 	if mythical creature fetish is 1, say "A naked bull-[man of M] with rippling muscles covering [his of M] entire body. [big his of M] face is bestial, covered in thick [one of]auburn[or]gold[or]black[or]brown[or]ashen[sticky random] fur, with big flat nostrils and beady black eyes. Two long gray horns extend from just above [his of M] floppy bovine ears, one of which is pierced with a small [one of]brass[or]iron[or]gold[or]onyx[sticky random] ring. [big he of M] is seething with rage, [his of M] wide shoulders covered in a fine sheen of sweat and [if lady fetish is 1][his of M] heavy bosom[otherwise][his of M] thick barrel chest[end if] heaves with every breath. Between [his of M] legs is a fully erect, [LongDickDesc of M], which twitches and throbs as if it could blow at any time.";
-	otherwise say "A naked hulk of a [man of M] with rippling muscles covering [his of M] entire body. [big he of M] looks like the result of some mad science experiment gone wrong. [big he of M] is seething with rage, [his of M] wide shoulders covered in a fine sheen of sweat and [if lady fetish is 1][his of M] heavy bosom[otherwise][his of M] thick barrel chest[end if] heaving with every breath. Between [his of M] legs is a fully erect [LongDickDesc of M], which twitches and throbs as if it could blow at any time.".
+	otherwise say "A naked hulk of a [man of M] with rippling muscles covering [his of M] entire body. [big he of M] looks like the result of some mad science experiment gone wrong. [big he of M] is seething with rage, [his of M] wide shoulders covered in a fine sheen of sweat and [if lady fetish is 1][his of M] heavy bosom[otherwise][his of M] thick barrel chest[end if] heaving with every breath. Between [his of M] legs is a fully erect [LongDickDesc of M], which twitches and throbs as if it could blow at any time.";
+	if M is caged, say DungeonBossCageDesc of M.
+
+To say DungeonBossCageDesc of (M - minotaur):
+	if M is caged, say "[big he of M] is currently trapped within a giant steel birdcage, which is suspended off the ground by a tough-looking chain. The bars seem sturdy enough to hold [him of M], but they are far apart, allowing [him of M] to see or even reach through them with ease[if the intelligence of the player > 7]. If provoked, [he of M] might even be capable of swinging several feet in any direction[end if]. Looking up at the chain that keeps the cage suspended, you notice that it doesn't appear to coordinate to any device or [bold type]lever[roman type] in the room. To lower [him of M] and open the cage, you'd need to find something elsewhere. [if mystical amulet is in the location of M][line break]Underneath [his of M] feet, you can see a valuable-looking amulet.[end if]";
+	otherwise say "The cage is open and empty[if mystical amulet is in Dungeon36][line break], save for a valuable-looking amulet.[end if]".
 
 To say MonsterComment of (M - minotaur):
 	if M is penetrating a body part:
@@ -206,37 +211,153 @@ The minotaur priority attack rules is a rulebook. The priority attack rules of m
 To compute interaction of (M - a minotaur):
 	if M is caged:
 		if M is automatically tempted:
-			if (a random number between 1 and 4 is 1 or wanking > 1) and the blue-balls of M < 5:
-				say "[one of][BigNameDesc of M] turns toward you, grunting primally as [he of M] vigorously thrusts [his of M] giant [DickDesc of M] through the sturdy bars of [his of M] cage.[or][BigNameDesc of M] stares holes in your skull, drooling slightly as [he of M] roughly humps the space between the heavy bars of [his of M] cage.[or][BigNameDesc of M] never once looks away from you, hungrily thrusting [his of M] massive [DickDesc of M] through the bars of [his of M] cage, panting roughly as [he of M] smears them with thick, slimy pre-cum.[in random order]";
-				increase the blue-balls of M by 1;
-			otherwise:
-				if the blue-balls of M > 4:
-					say CagedMinotaurMessFlav;
-					now the blue-balls of M is 0;
-				otherwise:
-					say ArousedCagedMinotaurFlav;
+			compute CagedMinotaurLusting of M;
 		otherwise:
 			say "[one of][CagedMinotaurFlav][or][or][or][in random order]".
 
 To say CagedMinotaurFlav:
 	say "[one of][BigNameDesc of current-monster] angrily shakes the metal bars of [his of current-monster] cage.[or][BigNameDesc of current-monster] paws at the floor of [his of current-monster] cage, snarling with anger.[or][BigNameDesc of current-monster] snarls angrily at [his of current-monster] captive state.[or][BigNameDesc of current-monster] bangs at the bars of [his of current-monster] cage. The sound of clanging metal rings through the room.[or][BigNameDesc of current-monster] throws [himself of current-monster] at the bars of [his of current-monster] cage. You try to ignore [his of current-monster] angry snarling.[in random order]".
 
-To say ArousedCagedMinotaurFlav:
-	let M be current-monster;
-	say "[one of][BigNameDesc of M] thrusts [his of M] arm through a gap in [his of M] cage, grasping at the empty air between you.[or][BigNameDesc of current-monster] fixes you with an intimidating stare, furiously masturbating with obvious hunger in [his of M] eyes.[or][BigNameDesc of M] stares at you with obvious and unrestrained arousal.[or][BigNameDesc of M] stares at you with unrestrained lust in [his of M] eyes. [if the bimbo of the player < 8]You feel uncomfortable.[otherwise if the bimbo of the player < 12][line break][otherwise]You feel sexy![end if][or][BigNameDesc of M] seems incredibly taken with your crotch.[in random order]".
+To compute CagedMinotaurLusting of (M - minotaur):
+	let R be a random number between 1 and 4;
+	if M is wrangling a body part:
+		compute CagedMinotaurMolesting of M;
+	otherwise if R is 1 or (R < 3 and the blue-balls of M < 0) and the swing-intensity of M < 5:[He doesn't do anything.]
+		say "[one of][BigNameDesc of M] stares at you with obvious and unrestrained arousal.[or][BigNameDesc of M] stares at you with unrestrained lust in [his of M] eyes.[or][BigNameDesc of M]'s [DickDesc of M] twitches as [he of M] stares at your crotch.[or]You can hear [NameDesc of M] breathing heavily as [he of M] stares at your crotch.[in random order]";
+		if the blue-balls of M < 3, increase the blue-balls of M by 1;
+		decrease the swing-intensity of M by 1;
+	otherwise if R is 2 and the swing-intensity of M < 5:[He jerks off]
+		if the blue-balls of M > a random number between 4 and 9:[minimum number is 5, max is 10]
+			compute CagedMinotaurExplosion of M;
+		otherwise:
+			say CagedMinotaurThrustFlav of M;
+			increase the blue-balls of M by 1;
+		decrease the swing-intensity of M by 1;
+	otherwise if R is 3 and the swing-intensity of M < 5:[He swings]
+		say CagedMinotaurSwingFlav of M;
+		increase the swing-intensity of M by 2;
+		if the swing-intensity of M > 6, now the swing-intensity of M is 5;
+	otherwise:[He grabs]
+		compute CagedMinotaurGrabbing of M;
+	if the swing-intensity of M < 0, now the swing-intensity of M is 0.
 
-To say CagedMinotaurMessFlav:
+To compute CagedMinotaurExplosion of (M - minotaur):
+	say "[BigNameDesc of M] roars as [he of M] slams [his of M] [LongDickDesc of M] between the bars of [his of M] cage, aiming the tip right at you as [his of M] giant balls, and then every inch of [his of M] thick, veiny shaft flex with primal power.";
 	let L be a random number between 2 and 4;
-	let M be current-monster;
-	say "[BigNameDesc of M] roars as [his of M] [DickDesc of M] explodes all over the floor and walls around [him of M]. [run paragraph on]";
-	if a random number between 1 and the dexterity of the player > 5 and bukkake fetish is 1:
-		say "It comes out so violently that you can't get out of the way, and you take several ropes all over your face.";
+	let D be a random number between 1 and the dexterity of the player;
+	if the player is pheromonal and (a random number between 1 and the intelligence of the player) < the blue-balls of M, now D is 0;[pheromonal? you're less likely to dodge]
+	if D < the blue-balls of M and bukkake fetish is 1:
+		say "You're too late to realize that's your cue to dodge, and half a second later, an explosion of hot [semen] hits you directly in the [if the player is prone]face, [otherwise]chest, knocking you over and [end if]sending you flying into the opposite wall.";
 		if lady fetish is 0 and mythical creature fetish is 1, cutshow figure of minotaur cutscene 6 for M;
-		CumFaceUp 2;
-		SemenPuddleUp L - 2;
+		if the player is prone:
+			CumFaceUp 2;
+			SemenPuddleUp L - 2;
+		otherwise:
+			now the stance of the player is 1;
+			AnnouncedSquirt semen on breasts by 2;
+			SemenPuddleUp L - 2;
+		now another-turn is 1;
+		now another-turn-flavour is "The wind is knocked out of you!";
 	otherwise:
-		say "It comes out so violently that you have to dodge out of the way to avoid getting slammed into the wall.";
-		SemenPuddleUp L.
+		say "You somehow realize that's your cue to dodge, and half a second later, you narrowly avoid an explosion of hot [semen] hitting you directly in the [if the player is prone]face[otherwise]chest[end if]. [BigFuckerDesc of M] steps away from the edge of the cage, apparently satisfied for now.";
+		SemenPuddleUp L;
+	now the blue-balls of M is 0.
+
+To say CagedMinotaurThrustFlav of (M - minotaur):
+	say "[one of][BigNameDesc of M] turns toward you, grunting primally as [he of M] vigorously thrusts [his of M] giant [DickDesc of M] through the sturdy bars of [his of M] cage.[or][BigNameDesc of M] stares holes into you, drooling slightly as [he of M] roughly humps the space between the heavy bars of [his of M] cage.[or][BigNameDesc of M] never once looks away from you, hungrily thrusting [his of M] massive [DickDesc of M] through the bars of [his of M] cage.[or][BigNameDesc of M] pants roughly as [he of M] thrusts [his of M] [LongDickDesc of M] through the bars of the cage, smearing them with thick, slimy pre-cum.[in random order]".
+
+To say CagedMinotaurSwingFlav of (M - minotaur):
+	let N be the swing-intensity of M;
+	say "[BigNameDesc of M] [one of]bang [his of M] fists against the side of the cage[or]throws [his of M] weight against the side of the cage[or]slams against the bars of the cage[or]throws [himself of M] at the side of the cage[in random order], [if N <= 0]causing it to swing slightly back and forth[otherwise if N is 1]causing it to slowly swing a few centimeters back and forth[otherwise if N is 2]causing it to steadily swing a few inches back and forth[otherwise if N is 3]causing it to swing a few feet in either direction[otherwise if N is 4]causing it to steadily swing several feet back and forth[otherwise]swinging the cage in a huge arc covering most of the room[end if]".
+
+To compute CagedMinotaurGrabbing of (M - minotaur):
+	say "[BigNameDesc of M] [one of]thrusts [his of M] arm through a gap in[or]reaches through the bars in[or]tries to grab you through the bars of[or]pushes [his of M] arms through the gaps in[in random order] [his of M] cage!";
+	let D be the dexterity of the player;
+	let B be the blue-balls of M;
+	let S be the swing-intensity of M;
+	if S < 2, now B is 0;
+	if a random number between B * -2 and D < S * 2:[You're caught!]
+		say "[big his of M] muscular hand barely closes around one of your wrists, and in the next moment, [he of M]'s yanked it into [his of M] cage, pulling your torso flat against the bars!";
+		now the swing-intensity of M is 0;
+		now M is wrangling arms;
+	otherwise:
+		say "[one of][big he of M] catches nothing but air.[or][big his of M] efforts are all in vain.[or][big he of M] only manages to capture the air.[or][big he of M] only catches the air between you.[in random order]".
+
+To compute CagedMinotaurMolesting of (M - minotaur):
+	if the blue-balls of M > a random number between 4 and 9:[NUT]
+		if the largeness of breasts < 6 and the thickness of hips < 5 and asshole is undefended:[If you fit into the cage, you faint, since the cum bloating would mean you couldn't get out. Should be easy enough to delete if its unacceptable.]
+			say "[if the reaction of the player is 0][BigNameDesc of M] shrugs off your attempts to struggle[otherwise][BigNameDesc of M] breathes heavily[end if] as [he of M] pulls your arm even further through the gap between the bars, which is just wide enough to let [him of M] drag in your shoulder, followed by your head, neck, chest, hips, knees, and finally your feet. You [if the sex addiction of the player < 5]curse[otherwise]thank nintendolls for[end if] your petite frame as [FuckerDesc of M] pulls you all the way into the cage and effortlessly pins you down with [his of M] huge limbs. [big his of M] 'smallest' limb is rock-hard, throbbing, and drooling precum as [he of M] lifts your legs and aligns [his of M] [cockhead of M] with your exposed asshole. Knowing there's nothing more you can do at this point, you [if the reaction of the player is 0]stop struggling and [end if]grit your teeth as [he of M] slams right in. You faint.";
+			now delayed fainting is 1;
+			now the fainting reason of the player is 24;
+		otherwise:
+			say "[if the reaction of the player is 0][BigNameDesc of M] shrugs off your attempts to struggle[otherwise][BigNameDesc of M] breathes heavily[end if] as [he of M] pulls your head through another gap between the bars and pushes you down so your face is level with [his of M] huge, precum-drooling [LongDickDesc of M]. [big his of M] [cockhead of M] immediately connects with your lips, and [if the player is pheromonal]your head swims from being exposed to such a huge dosage of virile musk. Your instincts take over, and immediately open wide so [his of M] shaft can slide[otherwise]your head swims from the insane saltiness of the stuff. You open your mouth to wretch, and immediately feel your jaw being pried open as [his of M] shaft slides[end if] right in. You feel a single, tell-tale throb, and half a second later you feel hot [semen] exploding into your mouth. Even [he of M] isn't prepared for the force, and you're flung back from the edge of the cage as a huge amount of cum shoots down your throat.";
+			StomachSemenUp 5;
+			now M is penetrating face; [This allows orgasm function to work properly]
+			orgasm M;
+			now the blue-balls of M is -5;
+			now the swing-intensity of M is 0;
+			dislodge M;
+	otherwise:[TODO: migrate to seduction grope, probably.]
+		increase the blue-balls of M by 2;
+		compute seduction grope of M.
+
+To compute breasts grope of (M - minotaur):
+	say "[BigNameDesc of M]'s [DickDesc of M] twitches as [he of M] reaches [his of M] other arm through the bars, [one of]roughly[or]clumsily[or]eagerly[in random order] [one of]fondling[or]molesting[or]groping[or]squeezeing[in random order] your [BreastDesc].".
+
+To compute asshole grope of (M - minotaur):
+	let C be a random top level ass protection clothing;
+	let S be a random worn skirted crotch-in-place clothing;
+	if S is clothing, now C is S;
+	let A be a random uncursed anal beads penetrating asshole;
+	if A is nothing and M is able to remove cursed plugs monster, now A is a random anal beads penetrating asshole;
+	if A is clothing:
+		let N be the notch-taken of A;
+		say "[BigNameDesc of M] forces [his of M] other arm through the bars and grabs the hook at the end of your anal beads. All [N] beads are pulled out of your [asshole] at once!";
+		ruin asshole times (N + 1) / 2;
+		now A is in the location of the player;
+		dislodge A;
+		say "The [A] falls to the ground.";
+		force immediate inventory-focus redraw;
+	otherwise:
+		say "[BigNameDesc of M] forces [his of M] other arm through the bars and [one of]roughly[or]clumsily[or]eagerly[in random order] uses [his of M] thick fingers to [one of]prods[or]poke[in random order] your [asshole][if C is clothing] through your [ShortDesc of C][end if].".
+
+To compute vagina grope of (M - minotaur):
+	let C be a random top level protection clothing;
+	let S be a random worn skirted crotch-in-place clothing;
+	say "[if S is clothing and S is not C][BigNameDesc of M] forces [his of M] [one of]throbbing[or]twitching[or]rock-hard[or]rigid[in random order] [DickDesc of M] up under your [ShortDesc of S], grinding [his of M] [cockhead of M][otherwise][BigNameDesc of M] grinds [his of M] [one of]throbbing[or]twitching[or]rock-hard[or]rigid[in random order] [DickDesc of M][end if] [if C is clothing]against your [vagina] through your [ShortDesc of C][otherwise][one of]between your labia[or]between your nether lips[or]against your clit[or]along your labia lips[in random order]![end if]";
+	if the player is pheromonal:
+		say "The sensation of [his of M] virile [DickDesc of M] [if C is clothing]so nearly touching your[otherwise]touching your bare[end if] [vagina] sends your hormones into overdrive!";
+		Arouse 300.
+
+To compute penis grope of (M - minotaur):
+	let C be a random top level protection clothing;
+	let S be a random worn skirted crotch-in-place clothing;
+	say "[if S is clothing and S is not C][BigNameDesc of M] forces [his of M] [one of]throbbing[or]twitching[or]rock-hard[or]rigid[in random order] [DickDesc of M] up under your [ShortDesc of S], grinding [his of M] [otherwise][BigNameDesc of M] grinds [his of M] [one of]throbbing[or]twitching[or]rock-hard[or]rigid[in random order] [end if][DickDesc of M] [if C is clothing]against your [player-penis] through your [ShortDesc of C][otherwise]against your [player-penis]![end if]".
+
+To compute belly grope of (M - minotaur):
+	let B be a random worn belly covering clothing;
+	say "You feel [NameDesc of M]'s breath hot on your face as [he of M] holds [his of M] [DickDesc of M] against your [ShortDesc of belly], [if B is clothing]darkening your [ShortDesc of B] with precum[otherwise]smearing you with precum[end if] as [he of M] [one of]furiously[or]eagerly[or]hungrily[in random order] jerks off with [his of M] free hand.".
+
+To compute face grope of (M - minotaur):
+	if there is worn ringagged clothing:
+		say "[BigNameDesc of M] grinds [his of M] [cockhead of M] against your face, smearing your lips with sticky precum as [he of M] clumsily tries to shove [his of M] [DickDesc of M] into your open mouth.";
+	otherwise if the player is pheromonal or (the player is a nympho and the player is not feeling dominant):
+		say "[BigNameDesc of M] grinds [his of M] [LongDickDesc of M] against your face, breathing heavily as [if the player is pheromonal]your hormone-addled senses force you to[otherwise]You can't help but[end if] worship [his of M] balls and [one of]throbbing[or]pulsing[or]twitching[in random order] shaft with your tongue.";
+		increase the blue-balls of M by 1;
+	otherwise:
+		say "[BigNameDesc of M] grinds [his of M] [cockhead of M] against your face, smearing your lips with thick, sticky precum.";
+	if the player is pheromonal:
+		say "Your head swims as you breath in [his of M] potent virile musk.";
+		Arouse 300.
+
+To compute thighs grope of (M - minotaur):
+	let C be a random worn crotch-in-place leg covering clothing;
+	let S be a random worn skirted crotch-in-place clothing;
+	say "[if S is clothing and S is not C][BigNameDesc of M] forces [his of M] [one of]throbbing[or]twitching[or]rock-hard[or]rigid[in random order] [DickDesc of M] up under your [ShortDesc of S], thrusting [his of M] [otherwise][BigNameDesc of M] thrusts [his of M] [one of]throbbing[or]twitching[or]rock-hard[or]rigid[in random order] [end if][DickDesc of M] between your legs!".
+
+To compute ass grope of (M - minotaur):
+	let S be a random worn skirted crotch-in-place clothing;
+	say "[BigNameDesc of M] forces [his of M] other arm through the bars, [one of]roughly[or]clumsily[or]eagerly[in random order] fondling your [AssDesc] [one of]fondling[or]molesting[or]groping[or]squeezeing[in random order] your [AssDesc][if S is clothing] over your [ShortDesc of S][end if].".
 
 This is the minotaur prioritises defeating others rule:
 	if the critical-windup of current-monster is 0 and the number of undefeated awake monsters in the location of current-monster > 1: [1 is going to be the minotaur itself]
@@ -278,7 +399,7 @@ To compute anal sex of (M - minotaur):
 			say "[one of][BigNameDesc of M] is completely spent, and collapses on top of you, crushing your body. You can't manage to crawl out from underneath [his of M] weight![or][BigNameDesc of M], spent, collapses on top of you, crushing you under [his of M] full weight. You try, but you don't manage to crawl out from underneath [him of M]![or][BigNameDesc of M] lets go of you as the torrent finally stops, collapsing on top of you just before you manage to crawl out from underneath [him of M].[or][BigNameDesc of M], completely spent, collapses on top of you, pinning you down with [his of M] full weight. No matter what you do, you can't manage to crawl out from underneath [him of M]![at random] You're going to have to wait [one of]like this with [his of M] [DickDesc of M] in your [asshole] until [he of M] wakes up...[or]with [his of M] [DickDesc of M] buried in your [asshole] until [he of M] wakes up...[at random]";
 			if lady fetish is 0 and mythical creature fetish is 1, alwayscutshow figure of minotaur cutscene 2 for M;
 		say CreampieReactionFlav to M in asshole;
-		if the player is the donator and mythical creature fetish is 1 and cow-horns is off-stage and cow-ears is worn and (M is the father or M is mating):
+		if mythical creature fetish is 1 and cow-horns is off-stage and cow-ears is worn and (M is the father or M is mating):
 			say "[bold type]Your fake cow ears transform into a pair of very permanent horns[roman type][line break]";
 			only destroy cow-ears;
 			summon cow-horns;
@@ -363,7 +484,7 @@ To compute fuckhole sex of (M - minotaur):
 		if lady fetish is 0 and mythical creature fetish is 1, cutshow figure of minotaur cutscene 5 for M.
 
 To compute damaging attack of (M - a minotaur):
-	if the player is the donator and a random number between 1 and 7 is 1 and asshole is undefended:[He lifts you into the air.]
+	if a random number between 1 and 7 is 1 and asshole is undefended:[He lifts you into the air.]
 		compute grab attack of M;
 	otherwise:
 		compute striking attack of M;
@@ -398,7 +519,7 @@ To compute wrangled resisting of (T - minotaur):
 	otherwise:
 		say "You force [FuckerDesc of T] to let you go!";
 		now the critical-windup of T is 0;
-		now T is not wrangling thighs.
+		dislodge T.
 
 This is the minotaur lifts before crits rule:
 	let M be current-monster;

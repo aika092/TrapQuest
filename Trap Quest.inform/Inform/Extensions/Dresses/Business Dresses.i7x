@@ -59,7 +59,7 @@ Definition: a pinstripe business dress is black themed: decide yes.
 Definition: a pinstripe business dress is white themed: decide yes.
 
 To decide which object is the unique-upgrade-target of (C - a pinstripe business dress):
-	if diaper quest is 1, decide on a random off-stage cheeky schoolgirl outfit;
+	if diaper quest is 1, decide on cheeky schoolgirl outfit;
 	decide on a random off-stage fetish business dress.
 
 Part 3 - Fetish Business Dress
@@ -113,7 +113,7 @@ Definition: vest-dress is blue themed: decide yes.
 Definition: vest-dress is tartan themed: decide yes.
 
 To decide which object is the unique-upgrade-target of (C - vest-dress):
-	if there is a worn scrunchie, decide on a random off-stage cheeky schoolgirl outfit;
+	if there is a worn scrunchie, decide on cheeky schoolgirl outfit;
 	decide on a random off-stage pinstripe business dress.
 
 Business Dresses ends here.

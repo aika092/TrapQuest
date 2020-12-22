@@ -22,36 +22,14 @@ To compute SelfExamineDesc of (H - flower hairclip):
 	let X be the largeness of hair;
 	say "You are wearing a hairclip fashioned as a white rose in your [ShortDesc of hair]. ".
 
-To compute hair colour change of (H - flower hairclip):
-	compute hair colour darken of H.
-
 Chapter - Class Outfit
 
-Definition: flower hairclip is removal-blocking:
-	if wearing-target is warrior chestpiece or wearing-target is gown-of-purity, decide yes;
-	decide no. [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
-
-warrior-summoned is a number that varies.
 To compute unique recycling of (C - flower hairclip):
-	now the virginity-count of virginity-retention-quest is 0;
-	now warrior-summoned is 0.
+	now the virginity-count of virginity-retention-quest is 0.
 
 To compute class outfit of (H - flower hairclip):
-	let W be a random off-stage reinforced warrior chestpiece;
-	let G be gown-of-purity;
-	if (W is actually summonable or (W is warrior chestpiece and warrior-summoned is 0 and the number of worn warrior chestpiece is 0)) and the largeness of breasts < 18:
-		PinkWardrobeUnclash W;
-		say "[bold type]You are forced to [if the player is upright]stand[otherwise]stay[end if] still as a rigid metal chestpiece appears around you. Somehow, you now feel more in control of your urges.[roman type][line break]";
-		summon W;
-		now the raw-magic-modifier of W is the virginity-count of virginity-retention-quest;
-		if warrior-summoned is 0, now warrior-summoned is 1;
-		now W is suppression;
-	otherwise if virgin magical girl outfit is not worn and the number of worn golden warrior priestess outfit is 0 and (G is actually summonable or (G is gown-of-purity and warrior-summoned < 2)):
-		PinkWardrobeUnclash G;
-		say "[bold type]A belt suddenly latches around you with a dull *clang*. Two strips of pure white fabric hang from the sides. You feel incredible - fuelled with extra determination and feeling more comfortable with your current situation, you surge onwards![roman type][line break]";
-		summon G;
-		now warrior-summoned is 2;
-		now the raw-magic-modifier of G is the virginity-count of virginity-retention-quest.
+	class summon reinforced warrior chestpiece;
+	class summon gown-of-purity.
 
 To compute virginity-loss of (H - flower hairclip):
 	say "As the [H] falls from your hair, you feel [if the virgin bonus of the player < 0]even more of [end if]your strength ripped from you.";
@@ -74,9 +52,7 @@ To uniquely set up (C - flower hairclip):
 To compute (C - flower hairclip) unique inheriting from (D - a clothing):
 	uniquely set up C; [It doesn't keep the same quest.]
 	let M be a random worn magical dress;
-	if M is magical dress:
-		transform M into virgin magical girl outfit;
-		now warrior-summoned is 2.
+	if M is magical dress, transform M into virgin magical girl outfit.
 
 To say QuestFlav of (Q - virginity-retention-quest):
 	say "You sense it wants you to make sure you remain a virgin.".

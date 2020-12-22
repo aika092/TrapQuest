@@ -233,12 +233,10 @@ To compute tentacle birth:
 	say "[PregFlav][one of]You are [if the bimbo of the player < 13]horrified[otherwise]enthralled[end if] as you see a slimy tentacle about as thick as an ordinary penis push its way out of your [vagina] quickly followed by several more. [or]You [if the bimbo of the player < 13]wince with fear and then shudder with shame when[otherwise]brace yourself with gleeful anticipation when[end if] you begin to feel the familiar dark red tentacles begin to push themselves out of your [vagina]. [stopping]";
 	cutshow figure of tentacle cutscene 1;
 	say "They all wrap around your hips and clench tightly as the monster inside you slowly and determinedly pries itself from your struggling hole. The slow movement of the huge dark red creature is accompanied by lewd squelches and slurps and some loud moaning, which you then realise is coming from yourself. Your [vagina] is forced to stretch further still as the critter reaches its widest point at your entrance and then with a loud POP it flies out and lands on the ground. [one of]You gaze with [if the bimbo of the player < 13]terror[otherwise]wonder[end if] at your 'child': a [if extreme proportions fetish is 1]beachball sized[otherwise]basketball sized[end if] heap of vulnerable looking flesh with a single eye and several phallic tentacled appendages. Before your eyes its flesh starts to slowly solidify and it gives you a long and seemingly thoughtful stare before dragging itself out of sight with its tentacles.[or]Once again you watch it start to build its strength and drag itself away.[stopping]";
-	let T be a random off-stage living tentacles;
-	if laurel wreath is worn and T is clothing:
-		PinkWardrobeUnclash T;
+	if laurel wreath is worn and living tentacles is off-stage:
+		PinkWardrobeUnclash living tentacles;
 		say "[bold type]You feel a sudden wet feeling crawl up your body to your neck, where it settles as a slight pressure. With surprising speed, a nest of warm, slimy tentacles begins to wrap around your body. For some reason, you feel very... comforted by their presence.[roman type][line break]";
-		summon T;
-		now the raw-magic-modifier of T is childValue times 6;
+		class summon living tentacles;
 	if there is a worn tattoo and the number of worn ass tattoos is 0 and a random number between 1 and 2 is 1:
 		say "Suddenly a new tattoo appears on you!";
 		summon tentacles tattoo;

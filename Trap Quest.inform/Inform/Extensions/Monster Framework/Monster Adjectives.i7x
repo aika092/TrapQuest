@@ -229,7 +229,7 @@ A monster can be unleashed, caged, guarding, unconcerned, fucked-silly, sex-ensl
 Definition: a monster is threatening rather than non-threatening:
 	if it is unleashed or it is guarding, decide yes;
 	decide no. [non-threatening can't attack the player (but might be unfriendly and caged)]
-Definition: a monster is pacified:
+Definition: a monster is pacified rather than unpacified:
 	if it is non-threatening and it is not caged, decide yes;
 	decide no. [Will never be unfriendly in its current state]
 Definition: a monster is defeated rather than undefeated:

@@ -2,10 +2,6 @@ Cat Ears by Headgear begins here.
 
 cat-ears is a headgear. cat-ears is manly. Figure of cat ears is the file "Items/Accessories/Head/catears1.png". Understand "pair", "of" as cat-ears. cat-ears is blondeness-negative. cat-ears is brightness-positive. cat-ears is redness-negative. cat-ears is hair growing. cat-ears is dexterity-influencing. cat-ears is roleplay. Understand "cat", "ears" as cat-ears.
 
-kitty-summoned is a number that varies.
-To compute unique recycling of (C - cat-ears):
-	now kitty-summoned is 0.
-
 Definition: cat-ears is fluid immune: decide yes.
 
 The printed name of cat-ears is "[clothing-title-before]pair of cat ears[clothing-title-after]". The text-shortcut of cat-ears is "cte".
@@ -28,46 +24,34 @@ Definition: cat-ears is black themed: decide yes.
 
 Chapter - Class Outfit
 
-Definition: cat-ears (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
-	if wearing-target is kitty claws or wearing-target is catbell or wearing-target is exposing magical dress, decide yes;
-	decide no.
-
 To compute class outfit of (H - cat-ears):
-	let K be a random off-stage kitty claws;
-	let P be a random cat tail plug;
-	let M be a random off-stage exposing magical dress;
-	if diaper quest is 0 and the total magic power of the player > 2 and (M is actually summonable or (M is magical dress and kitty-summoned < 2)):
-		PinkWardrobeUnclash M;
-		say "[bold type]Your cat ears barely noticeably quiver, and then a sailor uniform appears on you! [roman type]No wait, this is only the neckline of a sailor uniform, leaving your entire body fully exposed!";
-		summon M;
-		now the raw-magic-modifier of M is the stance of the player;
-		now kitty-summoned is 2;
-	otherwise if the class of the player is not magical girl and (K is actually summonable or (K is kitty claws and kitty-summoned is 0)):
-		PinkWardrobeUnclash K;
-		say "[bold type]Your cat ears barely noticeably quiver, and then your hands become encased in puffy warm gloves! On closer inspection, these are cat paws![roman type][line break]";
-		summon K;
-		now the raw-magic-modifier of K is the stance of the player;
-		if kitty-summoned < 1, now kitty-summoned is 1;
-	otherwise if catbell is actually summonable:
-		say "[bold type]You feel a sudden tightness around your neck. You look down to see that [if catbell is held]the cat collar has reappeared[otherwise]a cat collar has appeared[end if]![roman type][line break]";
-		summon catbell;
-	otherwise if (P is off-stage or P is cursed) and diaper quest is 0 and the class of the player is catgirl and P is actually summonable and the player is not ass protected:
-		say "[bold type]You feel your [asshole] suddenly invaded by a foreign object! Looking around you see [if P is in-play]the cat tail has reappeared and is[otherwise]a cat tail[end if] swaying proudly from your [asshole].[roman type][line break]";
-		summon P cursed;
-		let X be (the openness of asshole + the number of worn nudism-disabling clothing) - 3;
-		assign size X to P.
+	if diaper quest is 0 and the total magic power of the player >= 6, class summon exposing-magical-dress;
+	if exposing-magical-dress is not worn, class summon kitty claws;
+	class summon catbell;
+	if diaper quest is 0, class summon cat tail plug.
 
 Chapter - Quest
 
-puddle-licking-quest is a headgear-clothing-quest.
+follow-me-quest is a headgear-clothing-quest.
+
+Definition: follow-me-quest is school-disabled: decide yes.
 
 To uniquely set up (C - cat-ears):
-	now the quest of C is puddle-licking-quest.
+	now the quest of C is follow-me-quest.
 
-To say QuestFlav of (Q - puddle-licking-quest):
-	say "You sense that it wants you to lick up puddles from the floor.".
+To say QuestFlav of (Q - follow-me-quest):
+	say "You sense that it wants you to have lots of people following you around as you move.".
 
-To say QuestTitle of (Q - puddle-licking-quest):
-	say " (puddle licking quest)".
+To say QuestTitle of (Q - follow-me-quest):
+	say " (NPC leading quest)".
+
+Report going:
+	let H be a random headgear;
+	if H is headgear and the quest of H is follow-me-quest:
+		let N be 0;
+		repeat with M running through interested alive monsters:
+			if (M is unleashed or M is unconcerned) and M is regional, increase N by 1;
+		if N >= 4:
+			if H is cursed or (H is uncursed and N >= 5), progress quest of follow-me-quest.
 
 Cat Ears ends here.

@@ -3,10 +3,9 @@ Bunny Outfit by Dresses begins here.
 A bunny outfit is a kind of overdress. A bunny outfit is usually crotch-intact. A bunny outfit is usually unique. A bunny outfit is usually totally-exclusive. A bunny outfit is usually unskirted. A bunny outfit is usually latex. A bunny outfit is usually low cut. A bunny outfit is usually top-displacable.
 
 Definition: a bunny outfit is uncovered themed: decide yes.
-Definition: a bunny outfit is class-transformation-protected:
+Definition: a bunny outfit is class-relevant:
 	if the class of the player is bunny, decide yes;
 	decide no.
-
 To decide which number is the initial outrage of (C - a bunny outfit):
 	decide on 4.
 
@@ -29,10 +28,24 @@ To decide which figure-name is clothing-image of (C - a bunny waitress outfit):
 	decide on figure of bunny waitress outfit.
 
 To say ClothingDesc of (O - bunny waitress outfit):
-	say "This classic black sexy waitress outfit has a low cut bust and a V-shaped crotch and a white fluffy cottontail.".
+	say "This classic black sexy waitress outfit has a low cut bust and a V-shaped crotch and a white fluffy cottontail[if background-waitress is 0]. It makes the wearer better at avoiding spilling drinks[end if].".
 
 To say ShortDesc of (C - bunny waitress outfit):
 	say "bunny waitress outfit".
+
+To compute class set up of (C - bunny waitress outfit):
+	set up taste-based influence of C;
+	now the raw-magic-modifier of C is the square root of (the largeness of breasts + the total volume of hips);
+	let W be a random off-stage waitress vessel;
+	if W is a thing:
+		now W is carried by the player;
+		now the fill-colour of W is white;
+		if C is urine-taste-addiction-influencing, now the fill-colour of W is golden;
+		now W is bland;
+		now W is sure;
+		DoseFill W;
+		let S be a random worn serving-bondage;
+		say "[bold type]Suddenly a [ShortDesc of W] appears [if S is a thing]on your [ShortDesc of S][otherwise]in your hand[end if]![roman type][line break]".
 
 To decide which object is the unique-upgrade-target of (C - bunny waitress outfit):
 	if the number of worn neck covering clothing is 0 and the number of worn arm covering clothing is 0, decide on reverse bunny outfit;
@@ -40,6 +53,7 @@ To decide which object is the unique-upgrade-target of (C - bunny waitress outfi
 
 Definition: bunny waitress outfit is black themed: decide yes.
 Definition: bunny waitress outfit is party themed: decide yes.
+
 
 Part 2 - Black Latex Bunny Outfit
 
@@ -51,7 +65,7 @@ To decide which figure-name is clothing-image of (C - a black rubber bunny outfi
 	decide on figure of black rubber bunny outfit.
 
 To say ClothingDesc of (O - black rubber bunny outfit):
-	say "This latex version of the classic black sexy waitress outfit has a low cut bust and a V-shaped crotch and a white fluffy cottontail.".
+	say "This latex version of the classic black sexy waitress outfit has a low cut bust and a V-shaped crotch and a white fluffy cottontail[if background-waitress is 0]. It makes the wearer better at avoiding spilling drinks[end if].".
 
 To say ShortDesc of (C - black rubber bunny outfit):
 	say "latex bunny outfit".
@@ -77,7 +91,7 @@ To decide which figure-name is clothing-image of (C - a reverse bunny outfit):
 	decide on figure of reverse bunny outfit.
 
 To say ClothingDesc of (O - reverse bunny outfit):
-	say "This parody of the bunny outfit concept covers exactly the opposite parts of you - the collar is connected to black sleeves with white cuffs and in-built gloves, and nothing else. It leaves everything else exposed.".
+	say "This parody of the bunny outfit concept covers exactly the opposite parts of you - the collar is connected to black sleeves with white cuffs and in-built gloves, and nothing else. It leaves everything else exposed[if background-waitress is 0]. It makes the wearer better at avoiding spilling drinks[end if].".
 
 To say ShortDesc of (C - reverse bunny outfit):
 	say "latex bunny outfit".
@@ -85,14 +99,9 @@ To say ShortDesc of (C - reverse bunny outfit):
 To decide which number is the initial outrage of (C - reverse bunny outfit):
 	decide on 5.
 
-To compute school periodic effect of (C - reverse bunny outfit):
-	compute periodic effect of C.
-To compute periodic effect of (C - reverse bunny outfit):
-	let S be a random worn stockings;
-	unless S is bunny stockings:
-		if S is stockings, WardrobeVanish S;
-		summon bunny stockings uncursed;
-		say "[bold type]A pair of reverse bunny outfit themed stockings appear on you![roman type][line break]".
+To compute post transformation effect of (C - reverse bunny outfit):
+	class summon bunny stockings;
+	if asshole is not occupied, summon bunny tail plug cursed with quest.
 
 Definition: reverse bunny outfit is black themed: decide yes.
 Definition: reverse bunny outfit is party themed: decide yes.
@@ -107,7 +116,7 @@ To decide which figure-name is clothing-image of (C - a cream rubber bunny outfi
 	decide on figure of cream rubber bunny outfit.
 
 To say ClothingDesc of (O - cream rubber bunny outfit):
-	say "This cream latex catsuit has pink frills at the edges and a pink latex cottontail.".
+	say "This cream latex catsuit has pink frills at the edges and a pink latex cottontail[if background-waitress is 0]. It makes the wearer better at avoiding spilling drinks[end if].".
 
 To say ShortDesc of (C - cream rubber bunny outfit):
 	say "latex bunny outfit".
@@ -115,9 +124,8 @@ To say ShortDesc of (C - cream rubber bunny outfit):
 To decide which number is the initial outrage of (C - cream rubber bunny outfit):
 	decide on 7.
 
-Definition: cream rubber bunny outfit is transformation-protected:
-	if the class of the player is bunny, decide yes;
-	decide no.
+To compute class set up of (C - cream rubber bunny outfit):
+	now the raw-magic-modifier of C is 1.
 
 Definition: cream rubber bunny outfit is white themed: decide yes.
 
@@ -133,18 +141,17 @@ To decide which number is the initial outrage of (C - dq bunny outfit):
 To decide which number is the initial cringe of (C - dq bunny outfit):
 	decide on 6.
 
+To compute class set up of (C - a dq bunny outfit):
+	now the raw-magic-modifier of C is 1.
+
 To decide which figure-name is clothing-image of (C - dq bunny outfit):
 	decide on figure of dq bunny outfit.
 
 To say ClothingDesc of (O - dq bunny outfit):
-	say "This brown onesie has a white fluffy cottontail at the back and a white section over your chest and belly to make you look like a bunny rabbit.".
+	say "This brown onesie has a white fluffy cottontail at the back and a white section over your chest and belly to make you look like a bunny rabbit[if background-waitress is 0]. It makes the wearer better at avoiding spilling drinks[end if].".
 
 To say ShortDesc of (C - dq bunny outfit):
 	say "brown bunny outfit".
-
-Definition: dq bunny outfit is transformation-protected:
-	if the class of the player is bunny, decide yes;
-	decide no.
 
 Definition: dq bunny outfit is displacable: decide no.
 Definition: dq bunny outfit is brown themed: decide yes.
@@ -174,16 +181,12 @@ To say ShortDesc of (C - bunny dress):
 	say "bunny dress".
 
 To say ClothingDesc of (O - bunny dress):
-	say "This white dress has a drawing of a pink rabbit on the front and short bright multicoloured skirt. There are two cute blue bows at the armpits.".
+	say "This white dress has a drawing of a pink rabbit on the front and short bright multicoloured skirt. There are two cute blue bows at the armpits[if background-waitress is 0]. It makes the wearer better at avoiding spilling drinks[end if].".
 
 Definition: bunny dress is bow themed: decide yes.
 Definition: bunny dress is white themed: decide yes.
 Definition: bunny dress is pinkWardrobeAppropriate:
 	if diaper quest is 0, decide yes;
-	decide no.
-
-Definition: bunny dress is transformation-protected:
-	if the class of the player is bunny, decide yes;
 	decide no.
 
 Bunny Outfit ends here.

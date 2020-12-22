@@ -52,11 +52,11 @@ To say MonsterComment of (M - demon lord):
 			if M is penetrating a body part:
 				let X be the remainder after dividing the heirs-count of M by 10;[used to determine number suffixes.]
 				increase X by 1;
-				if M is mating, say "A solemn voice sounds in your head. [first custom style]'Defiled Sister, [one of]you must find the strength to oppose [him of M]. The [X][if the heirs-count of M > 10 and the heirs-count of M < 20]th[otherwise if X is 1]st[otherwise if X is 2]nd[otherwise if X is 0]rd[otherwise]th[end if] prince must not be born!'[or]you will have another chance. Go, and escape from the hotel. Do not lose heart!'[in random order]";
-				otherwise say "A frantic voice sounds in your head.[first custom style]'Tenacious Sister, [if the player is able to get pregnant]you must not receive [his of M] seed. [big he of M] cannot be allowed an heir! Escape, sister! Hurry!'[otherwise]your holy power cannot fully protect you here! You must escape!'[end if]";
+				if M is mating, say "A solemn voice sounds in your head. [second custom style]'Defiled Sister, [one of]you must find the strength to oppose [him of M]. The [X][if the heirs-count of M > 10 and the heirs-count of M < 20]th[otherwise if X is 1]st[otherwise if X is 2]nd[otherwise if X is 0]rd[otherwise]th[end if] prince must not be born!'[or]you will have another chance. Go, and escape from the hotel. Do not lose heart!'[in random order]";
+				otherwise say "A frantic voice sounds in your head.[second custom style]'Tenacious Sister, [if the player is able to get pregnant]you must not receive [his of M] seed. [big he of M] cannot be allowed an heir! Escape, sister! Hurry!'[otherwise]your holy power cannot fully protect you here! You must escape!'[end if]";
 			otherwise:
-				if M is mating, say "A calm voice sounds in your head. [first custom style]'Defiled Sister, [one of]the heir is not yet king. There is still time...'[or]you are the only one who can stop [him of M]. Do not lose heart.'[or]you know what will happen if [he of M] captures you. You cannot let that happen.'[or]the violation of your sacred womb will never remove your holy power. You can still defeat [him of M].'[in random order]";
-				otherwise say "A worried voice sounds in your head.[first custom style]'Heroic Sister, [one of]you must defeat [him of M]. [big he of M] must not be allowed to walk this plane!'[or]you must use your holy power to banish [him of M] once and for all!'[or][if the player is able to get pregnant and M is not mating]you must not let [him of M] capture you. [big he of M] cannot be allowed to make an heir!'[otherwise]you must not let [him of M] capture you. Your holy power will protect you from many things, but not the demon king.'[end if][or][he of M] cannot be allowed to regain [his of M] former power! You must stop [him of M] NOW!'[in random order]";
+				if M is mating, say "A calm voice sounds in your head. [second custom style]'Defiled Sister, [one of]the heir is not yet king. There is still time...'[or]you are the only one who can stop [him of M]. Do not lose heart.'[or]you know what will happen if [he of M] captures you. You cannot let that happen.'[or]the violation of your sacred womb will never remove your holy power. You can still defeat [him of M].'[in random order]";
+				otherwise say "A worried voice sounds in your head.[second custom style]'Heroic Sister, [one of]you must defeat [him of M]. [big he of M] must not be allowed to walk this plane!'[or]you must use your holy power to banish [him of M] once and for all!'[or][if the player is able to get pregnant and M is not mating]you must not let [him of M] capture you. [big he of M] cannot be allowed to make an heir!'[otherwise]you must not let [him of M] capture you. Your holy power will protect you from many things, but not the demon king.'[end if][or][he of M] cannot be allowed to regain [his of M] former power! You must stop [him of M] NOW!'[in random order]";
 		otherwise if the bimbo of the player < 7:
 			if the player is gendered male, say "[first custom style][one of][big his of M] [DickDesc of M] is wider than my arm... [if M is penetrating asshole]I'm getting stretched out, dude![otherwise]this is BULLSHIT![end if][or][big he of M] looks really tough.[or]Huge [DickDesc of M], insane muscles... does [he of M] have any weaknesses?[in random order]";
 			otherwise say "[first custom style][one of]Those muscles don't seem to be for show. Well, at least not completely.[or][if M is penetrating a body part][big he of M]'s splitting me in half![otherwise]What IS that?! It couldn't be a [DickDesc of M], could it? I-its far too big![end if][or]Can I even harm [him of M]?[or][big he of M] must have a weakness.[in random order]";
@@ -345,17 +345,19 @@ To compute unique climax of (M - demon lord) in (F - a fuckhole):[assumes M is m
 	otherwise compute unprotected climax of M in F.
 
 To decide if (M - demon lord) is losing wrapper in (F - a fuckhole):
-	let X be a random number between 11 and (the openness of F);
-	if the class of the player is priestess, decrease X by 3;
-	if X > 6, decide yes;[The demon lord's loads are huge, so he tends to break condoms, but if you're tight it helps hold it together]
-	decide no.
+	if the girth of M >= the openness of F:[being tight increases your chances of escaping!]
+		if the player is getting lucky, decide no;
+	otherwise:
+		if the player is getting very lucky, decide yes.
 
 To compute condom failure of (M - demon lord) in (F - a fuckhole):
 	say CondomFailFlav of M in F;
-	now M is unwrapped;[condom comes off in the flavour, so we remove it]
-	PussyFill the semen load of M / 2.
+	now M is unwrapped;
+	compute M finishing in F;
+	say CreampieReactionFlav to M in F.
 
 To say CondomPieFlav of (M - demon lord) in (F - a fuckhole):
+	say GotLuckyFlav;
 	say "[BigNameDesc of M] [one of]roars with pleasure, stretching the condom like a water balloon with the sheer force of [his of M] ejaculation[or]groans in pleasure, ejaculating with such force that the condom immediately begins stretching like a water balloon[or]balloons the condom with [his of M] load, roaring with pleasure as the insane force of [his of M] ejaculation causes it to stretch[at random]. The latex inches up [his of M] length as it struggles to contain [his of M] huge load, allowing you to feel every throb of [his of M] [DickDesc of M] that much more intimately than the last as the condom comes closer and closer to coming off completely. By some stroke of [if the semen addiction of the player > 6]bad [end if]luck, [one of][his of M] orgasm dies down just as the condom is about to overflow, and [he of M] begins to pull out[or][he of M] starts to pull out just as it's about to overflow[or]it doesn't overflow, and [his of M] [semen] stays safely behind a layer of latex as [he of M] pulls out[at random]. [big he of M] seems to lose interest.".
 
 To say CondomFailFlav of (M - demon lord) in (O - a fuckhole):
@@ -634,7 +636,7 @@ Definition: demon lord (called M) is damageable:
 	if attack-type is 1:
 		let S be a random worn slap ready equippable;
 		if S is magic themed equippable or S is purity equippable, decide yes;
-	if attack-type is 3 and there is a worn dildo heels, decide yes;
+	if attack-type is 3 and dildo-heels is worn, decide yes;
 	if attack-type > 3, decide yes;
 	if the class of the player is priestess or the class of the player is virgin warrior or the class of the player is fertility goddess or the class of the player is cultist or there is a worn demonic wearthing, decide yes;
 	decide no.

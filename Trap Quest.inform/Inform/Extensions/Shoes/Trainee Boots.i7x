@@ -12,7 +12,7 @@ To decide which figure-name is the clothing-image of (C - a trainee thigh highs)
 	decide on figure of trainee thigh highs.
 
 To say ClothingDesc of (C - a trainee thigh highs):
-	say "These white silicone socks fit perfectly to the contours of your legs, metal accents giving the socks a futuristic high-tech appearance[if C is worn]. Your ankle is held up by a metal stiletto, and the way it pinches your thigh makes your butt look big[end if][if C is worn and C is cursed and there is a worn cursed black catsuit]. The upper parts of the socks have completely merged with the rest of your catsuit[end if].".
+	say "These white silicone socks fit perfectly to the contours of your legs, metal accents giving the socks a futuristic high-tech appearance[if C is worn]. Your ankle is held up by a metal stiletto, and the way it pinches your thigh makes your butt look big[end if][if C is worn and C is cursed and black-catsuit is worn and black-catsuit is cursed]. The upper parts of the socks have completely merged with the rest of your catsuit[end if].".
 
 To say UniqueShortDesc of (C - a trainee thigh highs):
 	say "trainee thigh high socks".

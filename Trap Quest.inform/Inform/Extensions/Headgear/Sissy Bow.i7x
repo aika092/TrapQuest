@@ -21,10 +21,6 @@ To decide which number is the initial outrage of (C - a sissy bow):
 
 Definition: a sissy bow is bow themed: decide yes.
 
-Definition: a sissy bow (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
-	if wearing-target is not C and wearing-target is sissifying, decide yes;
-	decide no.
-
 Chapter - Quest
 
 asshole-presenting-quest is a headgear-clothing-quest.

@@ -186,6 +186,9 @@ To set up (M - a mannequin):
 To decide which number is the starting difficulty of (M - mannequin):
 	decide on 6.
 
+To decide which number is the starting difficulty of (M - goth mannequin):
+	decide on 9.
+
 [It would be annoying to manage which dildo she's using, so we have her discard any extra dildos when we make this check]
 To decide which number is the girth of (M - a mannequin):
 	let C be the number of sex toys carried by M;
@@ -468,32 +471,39 @@ To say DamageReactWeak of (M - a mannequin):
 To say BanishFleeFlav of (M - a mannequin):
 	say "[BigNameDesc of M] falls and breaks into pieces.".
 
-The mannequin priority attack rules is a rulebook. The priority attack rules of a mannequin is the mannequin priority attack rules.
+To compute damaging attack of (M - a mannequin):
+	let C be nothing;
+	if (M is goth mannequin or difficulty of M > the starting difficulty of M) and a random number between 1 and 6 is 1:
+		compute stunning attack of M;
+	otherwise:
+		compute striking attack of M.
 
-This is the mannequin strikes a pose rule:
-	let M be current-monster;
-	if M is unfriendly and the player is upright:
-		if the difficulty of M > the starting difficulty of M and (a random number between 1 and 6 is 1 or (M is theme-matched and a random number between 1 and 5 is 1)):
-			say "[BigNameDesc of M] emits a clicking noise as [he of M] strikes a pose with one hand on [his of M] hip, and starts strutting straight for you.";
-			if the accuracy roll of M >= the dexterity of the player:
-				if M is theme-matched and a random number between 1 and 2 is 1:[This *doesn't* consume her action for the turn.]
-					say "The whole thing really weirds you out, so you don't react fast enough when [he of M] suddenly reaches out and taps you on the forehead!";
-					if the intelligence roll of M >= the intelligence of the player:[TODO: possible situation where she forces you to kneel?]
-						say "You feel a strange tingling feeling in your joints as you suddenly find yourself imitating [his of M] pose. [big his of M] emits another clicking noise as [he of M] rears back to strike your now vulnerable body!";
-						moderateHumiliate;
-						now another-turn-flavour is the substituted form of "You are still stuck imitating [FuckerDesc of M]'s pose!";
-						now another-turn is 1;
-					otherwise:
-						say "You feel a strange tingling feeling in your joints as you are suddenly driven to imitate [his of M] pose, and you exhaust yourself a little trying to shake it off.";
-						FatigueUp 10;
-				otherwise:[Considering that the player has a chance to dodge, this is more or less a normal attack. TODO: revisit]
-					let B be the painful-part of M;
-					say "The whole thing really weirds you out, so you don't react fast enough when [he of M] suddenly hits you [TargetName of B] with [his of M] handbag!";
-					compute M hurting B;[always hits]
-					rule succeeds;
+To compute stunning attack of (M - a monster):
+	let T be 0;
+	if M is theme-matched, now T is 1;
+	say "[BigNameDesc of M] emits a clicking noise as [he of M] strikes a pose with one hand on [his of M] hip. [if T is 1 and M is topless mannequin][big he of M] isn't alive, but you wouldn't know that from the casual elegance of [his of M] pose. You begin to feel intimidated[otherwise if T is 1]The casual elegance of [his of M] pose emphasises how much better [his of M] outfit looks compared to yours, and you feel a wave of embarassment[otherwise]You find yourself feeling intimidated by the casual elegance of [his of M] movements[end if] as [he of M] struts straight for you.";
+	if M is goth mannequin:[goth forces you to kneel. Can only be resisted with int]
+		say "The closer [he of M] gets, the more inadequate you feel, and when [he of M] stops in front of you and makes a simple downward gesture of [his of M] porcelain fingers, your will is pushed to its breaking point.";
+		if M is theme-matched or the intelligence roll of M >= the intelligence of the player:
+			say "You aren't able to hold it together, and you drop to your knees as [he of M] returns to [his of M] normal posture.";
+			now the stance of the player is 1;
+			moderateHumiliate;
+		otherwise:
+			say "Somehow, you manage to hold it together, stumbling away from [him of M] as [he of M] returns to [his of M] normal posture.";
+	otherwise:[mannequins try to stun you. Can be dodged or resisted with int]
+		if the accuracy roll of M >= the dexterity of the player:
+			say "The closer [he of M] gets, the more inadequate you feel, so you aren't prepared to resist when [he of M] suddenly reaches out and taps you on the forehead.";
+			if M is theme-matched or the intelligence roll of M >= the intelligence of the player:
+				say "You feel a strange tingling feeling in your joints as you suddenly find yourself imitating [his of M] perfect pose. Its exhausting, and worse, your body seems to want to hold this posture for awhile!";
+				moderateHumiliate;
+				FatigueUp 20;
+				now another-turn-flavour is the substituted form of "You're still stuck imitating [FuckerDesc of M]'s pose!";
+				now another-turn is 1;
 			otherwise:
-				say "You're a little weirded out, but thankfully you're quick enough to back away before [he of M] gets close enough to do whatever it is [he of M] wanted to do.";
-				rule succeeds.[This is her action for the turn.]
-The mannequin strikes a pose rule is listed in the mannequin priority attack rules.
+				say "You feel a strange tingling feeling in your joints as you are suddenly driven to imitate [his of M] pose, and you exhaust yourself a little trying to shake it off.";
+				FatigueUp 10;
+		otherwise:
+			say "You back away before [he of M] can get any closer.";
+			slightHumiliate.
 
 Mannequin ends here.

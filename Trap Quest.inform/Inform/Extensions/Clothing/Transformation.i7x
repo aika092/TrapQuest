@@ -105,7 +105,9 @@ Definition: a clothing is disintegration-protected:
 	if it is class-transformation-protected, decide yes;
 	decide no. [Some stuff doesn't get transformed while it has nothing to turn into]
 
-Definition: a clothing is class-transformation-protected: decide no. [Some stuff doesn't get transformed while it has no other class relevant items to transform into.]
+Definition: a clothing is class-transformation-protected: [Some stuff doesn't get transformed while it has no other class-relevant items to transform into.]
+	if it is class-relevant, decide yes;
+	decide no.
 
 Definition: a clothing is transformation-theme-blockable:
 	if it is not class-transformation-protected, decide yes;
@@ -227,7 +229,8 @@ To transform (D - a clothing) into (C - a clothing):
 	otherwise:
 		say ThemeDesc of C;
 		say InfluenceDesc of C;
-	say TransformReaction of C.
+	say TransformReaction of C;
+	compute post transformation effect of C.
 
 To say TransformReaction of (C - a clothing): [We make the assumption it's worse. We just need to assess how bad the damage is.]
 	if diaper quest is 1 and C is too cringeworthy and the cringe of C >= the outrage of C: [TODO new text that's different from skimpy humiliation]
@@ -290,6 +293,9 @@ To silently transform (D - a clothing) into (C - a clothing):
 	if D is headgear, commence recycling of D; [stops that headgear re-appearing for a while]
 	layer C correctly;
 	if the quest of C is not appropriate, compute quest of C.
+
+To compute post transformation effect of (C - a clothing):
+	do nothing.
 
 To transform (C - a clothing):
 	transform C into the upgrade-target of C.

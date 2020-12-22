@@ -8,15 +8,8 @@ To set up influence of (C - a cumdumpster hat):
 To say ShortDesc of (H - a cumdumpster hat):
 	say "cum dumpster hat".
 
-Definition: a cumdumpster hat is condom pinnable: decide yes.
-
+[Definition: a cumdumpster hat is condom pinnable: decide yes.]
 Definition: a cumdumpster hat is semen themed: decide yes.
-
-Report wearing a cumdumpster hat:
-	if condom-pack is not carried:
-		now condom-pack is carried by the player;
-		say "Suddenly a pack of condoms appears in your hand!";
-		now condom-pack is not condom-trapped.
 
 To decide which number is the initial outrage of (C - a cumdumpster hat):
 	decide on 10.
@@ -65,6 +58,24 @@ To decide which number is the initial outrage of (C - cumdumpster condom hat):
 Definition: cumdumpster condom hat is drink themed: decide yes.
 Definition: cumdumpster condom hat is purple themed: decide yes.
 
+rubber condom hat is a cumdumpster hat. rubber condom hat is latex.
+The printed name of rubber condom hat is "[clothing-title-before]condom hat[clothing-title-after]". The text-shortcut of rubber condom hat is "cdmh".
+
+Figure of rubber condom hat is the file "Items/Accessories/Head/condomhat1.png".
+
+To decide which figure-name is the clothing-image of (C - rubber condom hat):
+	decide on figure of rubber condom hat.
+
+To say ClothingDesc of (H - rubber condom hat):
+	say "This tight rubber hat is made from the same latex material as condoms, and is styled to look like you've got a stretched out condom on your head.".
+
+To compute SelfExamineDesc of (H - rubber condom hat):
+	say "You are wearing a condom hat on top of your [ShortDesc of hair]. ".
+
+To decide which number is the initial outrage of (C - rubber condom hat):
+	decide on 8.
+
+
 Chapter - Class Outfit
 
 Definition: a cumdumpster hat (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
@@ -74,11 +85,34 @@ Definition: a cumdumpster hat (called C) is removal-blocking: [Some items (mainl
 To say RemovalBlocked of (C - a cumdumpster hat):
 	say "Your [ShortDesc of C] is somehow preventing you from taking this off while it still has used condoms on it that you haven't yet eaten!".
 
+To respawn condom pack:
+	if condom-pack is not carried:
+		now condom-pack is carried by the player;
+		say "Suddenly a pack of condoms appears in your hand!";
+		now condom-pack is not condom-trapped.
+
 To compute class outfit of (H - a cumdumpster hat):
-	if lycra-bodysuit is off-stage and lycra-bodysuit is actually summonable:
-		summon lycra-bodysuit cursed;
-		if the raw-magic-modifier of H >= 0 or H is blessed, now the raw-magic-modifier of lycra-bodysuit is the used condoms of H / 2;
-		say "[bold type]Your cumdumpster hat makes a weird squelching sound as a [ShortDesc of lycra-bodysuit] suddenly appears around your body![roman type][line break]".
+	class summon lycra-bodysuit;
+	class summon condom socks;
+	respawn condom pack.
+
+To compute class outfit of (H - thirsty work condom hat):
+	class summon bitch top;
+	class summon bitch bottoms;
+	respawn condom pack.
+
+To compute class outfit of (H - rubber condom hat):
+	class summon condoms dress;
+	class summon condom socks;
+	respawn condom pack.
+
+To compute post transformation effect of (H - rubber condom hat):
+	compute class outfit of H;
+	if condoms dress is not worn: [the above function won't work if class-relevant clothing is already worn]
+		let C be a random worn overdress;
+		if C is clothing and C is not condoms dress, transform C into condoms dress.
+
+
 
 Chapter - Quest
 
@@ -101,13 +135,9 @@ To progress quest of (Q - condom-eating-quest):
 			if condom-count of Q >= 5:
 				now the condom-count of Q is 0;
 				compute quest completion of Q on C;
-			otherwise if total used condoms is 0:
-				if C is thirsty work condom hat:
-					transform C into cumdumpster condom hat;
-				otherwise:
-					say "[BigNameDesc of C] wiggles happily! But because you are still wearing some used condoms, it doesn't want to reward you just yet. You either need to eat them all or collect some more!";
 			otherwise:
-				say "[BigNameDesc of C] wiggles happily! [one of]If you keep this up, surely you'll be rewarded eventually.[or]Keep it up![stopping]".
+				say "[BigNameDesc of C] wiggles happily! [one of]If you keep this up, surely you'll be rewarded eventually.[or]Keep it up![stopping]";
+				if total used condoms is 0 and C is thirsty work condom hat, transform C into cumdumpster condom hat.
 
 To compute persistent reward of (Q - condom-eating-quest) on (C - a clothing):
 	if C is cursed:

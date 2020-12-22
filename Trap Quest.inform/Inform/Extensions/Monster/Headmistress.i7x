@@ -106,7 +106,7 @@ To regionally place (M - headmistress):
 
 To say EnslavedDominationFlav of (M - headmistress):
 	say "You grab [NameDesc of M][']s ponytail and force [him of M] to [his of M] knees. ";
-	if the number of worn cursed undisplacable clothing is 0:
+	if the number of worn pussy covering actually unavoidable clothing is 0:
 		if penis is penis-erect or penis is erect-at-will:
 			say "Holding your [if penis is penis-erect]erect[otherwise]rapidly hardening[end if] [ShortDesc of penis] in one hand, you guide it into [his of M] well-lubricated snatch, and thrust away until you bring yourself to a well-earned climax.";
 			orgasm quietly;

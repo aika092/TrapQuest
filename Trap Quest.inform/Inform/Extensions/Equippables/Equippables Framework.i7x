@@ -173,12 +173,18 @@ To construct normal buttons for (T - painted-vibrator-hands):
 
 candy-cane-gloves is a gloves. candy-cane-gloves is latex.
 The printed name of candy-cane-gloves is "[clothing-title-before]candy cane gloves[clothing-title-after]". The text-shortcut of candy-cane-gloves is "ccg". Figure of candy-cane-gloves is the file "Items/Accessories/Equippables/gloves2.png". Understand "candy", "cane", "gloves" as candy-cane-gloves.
+Definition: candy-cane-gloves is class-relevant:
+	if the class of the player is santa's little helper, decide yes;
+	decide no.
 Definition: candy-cane-gloves is red themed: decide yes.
 Definition: candy-cane-gloves is white themed: decide yes.
 Definition: candy-cane-gloves is christmas themed: decide yes.
 Definition: candy-cane-gloves is transformation-protected: decide yes.
 To decide which figure-name is clothing-image of (H - candy-cane-gloves):
 	decide on figure of candy-cane-gloves.
+To compute class set up of (Y - candy-cane-gloves):
+	now the raw-magic-modifier of Y is -2;
+	now Y is oral-sex-addiction-influencing.
 To say ClothingDesc of (Y - candy-cane-gloves):
 	say "These elbow-length gloves have a red and white striped pattern, much like a candy cane.".
 To say ShortDesc of (Y - candy-cane-gloves):

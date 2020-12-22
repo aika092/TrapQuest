@@ -137,7 +137,8 @@ STATES:
 ==Anything below 30 implies that a scene has just ended so a new one shouldn't start, but she's able to move around as normal==
 
 ==Anything 80 or above prevents protection==
-80: Anal only stool
+80: TQ: Anal only stool
+81: DQ: Hidding messy diaper
 
 ==Anything 90 or above prevents movement==
 90: Appeared by being fucked by vines in the woods
@@ -149,13 +150,16 @@ STATES:
 96: Scene with hotel beds & patrons
 97: Appeared by sitting on the throne
 98: DQ: Diaper pail
-99: Dead
+99: DQ: Ass hook
 ]
 
 Definition: woman-player is summon appropriate: decide no. [Can she be randomly selected to be summoned?]
 Definition: woman-player is redeploy appropriate:
 	if it is not angered and it is summon-available and it is introduced and (it is off-stage or (the woman-status of it < 10 and it is not in the location of the player and it is not nearby)):
 		if the number of interested regional monsters is 0, decide yes;
+	decide no.
+Definition: woman-player is relaxed redeploy appropriate: [Allows for interested NPCs]
+	if it is not angered and it is summon-available and it is introduced and (it is off-stage or (the woman-status of it < 10 and it is not in the location of the player and it is not nearby)), decide yes;
 	decide no.
 Definition: woman-player is deploy appropriate:
 	if it is off-stage and it is not angered and it is summon-available and it is introduced, decide yes;
@@ -229,7 +233,7 @@ This is the woman spawning in the region of the player rule:
 The woman spawning in the region of the player rule is listed last in the womanspawning rules.
 
 woman-player has a number called hypno-scene.
-woman-player has a number called human-toilet-scene.
+woman-player has a number called human-toilet-scene. forbidden-key is an object that varies.
 woman-player has a number called hotel-urinal-scene.
 woman-player has a number called vine-scene.
 woman-player has a number called vine-hole-scene.

@@ -101,7 +101,7 @@ To say MonsterOfferAcceptFlav of (M - a monster) to (T - a thing):
 		otherwise:
 			say "[BigNameDesc of M] seems elated.[line break][speech style of M]'Wow, thank you so much! How generous of you.'[roman type][line break]";
 	otherwise:
-		say "[BigNameDesc of M] turns its full attention to [NameDesc of T], completely ignoring you for now!".
+		say "[BigNameDesc of M] turns [his of M] full attention to [NameDesc of T], completely ignoring you for now!".
 
 To say MonsterTakeFlav of (M - a monster) to (T - a thing):
 	say "[BigNameDesc of M] takes [NameDesc of T].".

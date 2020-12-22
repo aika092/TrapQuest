@@ -120,7 +120,10 @@ To uniquely set up (B - a bra):
 		if diaper quest is 1, now B is respiration;
 	if R is 4 and lactation fetish is 1, now B is milk production;
 	if R > 6 and B is fully exposing, now B is protection;
-	if R is 3 or R is 4, curse B;
+	if R is 3 or R is 4, now B is cursed;
+	if B is uncovered themed and a random number between 1 and 10 is 1:
+		now B is exposure;
+		now B is cursed.
 
 To Assign Size to (B - a bra):
 	if diaper quest is 1, now the size of B is 5;
@@ -328,7 +331,7 @@ To say ShortDesc of (B - a bikini top):
 	say "bikini top".
 
 To decide which object is the unique-upgrade-target of (C - a bikini top):
-	if the lactation rate of the player > a random number between 0 and 4, decide on a random off-stage cow print bikini top;
+	if cow print bikini top is off-stage and the lactation rate of the player > a random number between 0 and 4, decide on cow print bikini top;
 	decide on nothing.
 
 Bra Framework ends here.

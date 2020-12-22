@@ -123,16 +123,16 @@ Carry out WellWishing:
 			decrease the stored-offerings of wishing well by offer-value + 1;
 		otherwise:
 			if wish-type is 1:
-				compute WellPurifying for offer (offer-value + the stored-offerings of wishing well);
+				compute WellPurifying for offer (offer-value + the stored-offerings of wishing well) with roll 0;
 			otherwise if wish-type is 2:
-				compute WellHealing for offer (offer-value + the stored-offerings of wishing well);
+				compute WellHealing for offer (offer-value + the stored-offerings of wishing well) with roll 0;
 			otherwise:
-				compute WellItems for offer (offer-value + the stored-offerings of wishing well);
+				compute WellItems for offer (offer-value + the stored-offerings of wishing well) with roll 0;
 	unless the noun is vessel, only destroy the noun.
 
-To compute WellPurifying for offer (N - a number):
+To compute WellPurifying for offer (N - a number) with roll (R - a number):
 	let wish-done be 0;
-	let R be a random number between 1 and 5;
+	if R is 0, now R is a random number between 1 and 5;
 	if the class of the player is avatar:
 		let T be a random worn headgear;
 		say "Payment... Unnecessary... Be DESTROYED![roman type][line break]The voice echoes as a powerful wave of force strikes you right between the eyes! A terrible scream pierces your thoughts, followed by a throbbing pain radiating through your entire body as the huge presence is violently torn out of you! Your [ShortDesc of T] flies off your head and explodes into black cinders.";
@@ -144,7 +144,8 @@ To compute WellPurifying for offer (N - a number):
 	if R is 1:
 		let U be a random worn unremovable clothing;
 		if (U is cursed piercing and N < 50) or (U is piercing and N < 40) or (U is clothing and N < 30) or U is not clothing:
-			if N < 100, say "Rejected... Power... Limited...[roman type][line break]The voice echoes in your head as light gathers around the well and slowly dissipates.";[if N is at or above 100, we skip flavour and reroll.]
+			if N < 100, say "Rejected... Power... Limited...[roman type][line break]The voice echoes in your head as light gathers around the well and slowly dissipates.";
+			otherwise increase R by 1;[if N is at or above 100, we skip flavour and try a different wish.]
 		otherwise:
 			say "Accepted... You are... Free...[roman type][line break]The voice echoes as your [ShortDesc of U] lights up and slowly disappears from your body.";
 			destroy U;
@@ -155,6 +156,7 @@ To compute WellPurifying for offer (N - a number):
 		unless C is clothing, now C is a random worn cursed clothing;
 		if (C is unremovable) or (C is demonic clothing and N < 25) or (C is clothing and N < 10) or C is not clothing:
 			if N < 100, say "Rejected... Taint... Powerful...[roman type][line break]The voice echoes in your head as light gathers around the well and slowly dissipates.";
+			otherwise increase R by 1;
 		otherwise:
 			say "Accepted... Taint... Purified...[roman type][line break]The voice echoes as your [ShortDesc of C] lights up and slowly disappears from your body.";
 			destroy C;
@@ -165,21 +167,14 @@ To compute WellPurifying for offer (N - a number):
 		repeat with A running through worn tattoos:
 			if A is not tally tattoo and A is not ink-me tattoo, now T is A;[ink-me and tally tattoos are special, and can't be removed ever.]
 		if (T is tattoo and N < 50) or T is not tattoo:
-			if N < 100, say "Rejected... Contaminant... Resilient[roman type][line break]The voice echoes in your head as light gathers around the well and slowly dissipates.";
+			if N < 100, say "Rejected... Contaminant... Resilient...[roman type][line break]The voice echoes in your head as light gathers around the well and slowly dissipates.";
+			otherwise increase R by 1;
 		otherwise:
 			say "Accepted... Contaminant... Purged...[roman type][line break]The voice echoes as your [ShortDesc of T] lights up and slowly disappears from your body.";
 			destroy T;
 			now the stored-offerings of wishing well is 0;
 			now wish-done is 1;
 	if R is 4:
-		if N < 10:
-			if N < 100, say "Rejected... Corruption... Deep[roman type][line break]The voice echoes in your head as light gathers around the well and slowly dissipates.";
-		otherwise:
-			say "Accepted... Corruption... Purified[roman type][line break]The voice echoes in your head as a wave of clarity passes through you.";
-			SexAddictDown 1;
-			now the stored-offerings of wishing well is 0;
-			now wish-done is 1;
-	if R is 5:
 		if (hungover > 0 or alcohol > 0 or toffee-poison-timer > 0 or fudge-poison-timer > 0 or cookie-poison-timer > 0) and N > 10:
 			say "Accepted... Toxins... Destroyed...[roman type][line break]The voice echoes in your head as you feel your body being purged of all poisons and toxins[if alcohol > 0 or hungover > 0]. You feel completely sober[end if]!";
 			now hungover is 0;
@@ -190,15 +185,21 @@ To compute WellPurifying for offer (N - a number):
 			now the stored-offerings of wishing well is 0;
 			now wish-done is 1;
 		otherwise:
-			if N < 100, say "Rejected... Toxins... Embedded.[roman type][line break]The voice echoes in your head as light gathers around the well and slowly dissipates.";
+			if N < 100, say "Rejected... Toxins... Embedded...[roman type][line break]The voice echoes in your head as light gathers around the well and slowly dissipates.";
+			otherwise increase R by 1;
+	if R is 5:
+		say "Accepted... Corruption... Purified...[roman type][line break]The voice echoes in your head as a wave of clarity passes through you.";
+		SexAddictDown 1;
+		now the stored-offerings of wishing well is 0;
+		now wish-done is 1;
 	if wish-done is 0:
-		if N >= 100, compute WellPurifying for offer (N - 10);[If N is very high, lets try to grant the wish again.]
-		otherwise increase N by N - the stored-offerings of wishing well;[If you don't get a wish granted, the well adds the offering to your tab]
+		if N >= 100, compute WellPurifying for offer 100 with roll 1;[If N is very high, we'll try every possible wish, starting from 1]
+		otherwise increase the stored-offerings of wishing well by (N - the stored-offerings of wishing well);[If you don't get a wish granted, the well adds the offering to your tab]
 
 
-To compute WellHealing for offer (N - a number):
+To compute WellHealing for offer (N - a number) with roll (R - a number):
 	let wish-done be 0;
-	let R be a random number between 1 and 4;
+	if R is 0, now R is a random number between 1 and 4;
 	if the class of the player is avatar:
 		now R is 0;
 		if N > 30:
@@ -207,13 +208,13 @@ To compute WellHealing for offer (N - a number):
 				now L is a random placed jungle room;
 			say "Rebuke... Possible... BEGONE![roman type][line break]The voice echoes in your head as a strong wave of force connects with your body, teleporting you to the [L]!";
 		otherwise:
-			say "Rebuke... Impossible... Vile Presence[roman type][line break]The voice echoes in your head as you feel yourself being slightly healed.";
+			say "Rebuke... Impossible... Vile Presence...[roman type][line break]The voice echoes in your head as you feel yourself being slightly healed.";
 			BodyHeal 1;
 		now the stored-offerings of wishing well is 0;
 		now wish-done is 1;
 	if R is 1:
 		if pink-spraybottle is held and pink-spraybottle is cloth and N > 30:
-			say "Accepted... Shards... Reconstructed[roman type][line break]The voice echoes as lemon-scented air blows out of the well, swirling around your [ShortDesc of pink-spraybottle] before weaving into a brand new matching pink bottle of cleaner.";
+			say "Accepted... Shards... Reconstructed...[roman type][line break]The voice echoes as lemon-scented air blows out of the well, swirling around your [ShortDesc of pink-spraybottle] before weaving into a brand new matching pink bottle of cleaner.";
 			now pink-spraybottle is spray;
 			now the stored-offerings of wishing well is 0;
 			now wish-done is 1;
@@ -222,33 +223,29 @@ To compute WellHealing for offer (N - a number):
 			repeat with C running through worn clothing:
 				if C is crotch-ripped or the damage of C > 0, now P is C;
 			if P is not clothing or (P is clothing and N <= 20):
-				say "Rejected... Tatters... Unworkable[roman type][line break]The voice echoes in your head as light gathers around the well and slowly dissipates.";
+				if N < 100, say "Rejected... Tatters... Unworkable...[roman type][line break]The voice echoes in your head as light gathers around the well and slowly dissipates.";
+				otherwise increase R by 1;
 			otherwise:
-				say "Accepted... Tatters... Reconstructed[roman type][line break]The voice echoes as the damage to your [Shortdesc of P] spontaneously repairs itself.";
+				say "Accepted... Tatters... Reconstructed...[roman type][line break]The voice echoes as the damage to your [Shortdesc of P] spontaneously repairs itself.";
 				if P is crotch-ripped, repair P;
 				now the damage of P is 0;
+				now wish-done is 1;
 	if R is 2:
-		if N < 10:
-			say "Rejected... Vitality... Unecessary[roman type][line break]The voice echoes in your head as light gathers around the well and slowly dissipates.";
+		if (the body soreness of the player is 0 and the fatigue of the player < 10) or N < 20:
+			if N < 100, say "Rejected... Vitality... Unneeded...[roman type][line break]The voice echoes in your head as light gathers around the well and slowly dissipates.";
+			otherwise increase R by 1;
 		otherwise:
-			say "Accepted... Vitality... Restored[roman type][line break]The voice echoes in your head as a healing wave spreads through your body, erasing all wounds and filling you with new-found energy.";
+			say "Accepted... Vitality... Restored...[roman type][line break]The voice echoes in your head as a healing wave spreads through your body, erasing all wounds and filling you with new-found energy.";
 			now the body soreness of the player is 0;
 			now the fatigue of the player is 0;
 			now the stored-offerings of wishing well is 0;
 			now wish-done is 1;
 	if R is 3:
-		if N < 20:
-			say "Rejected... Fortune... Unaligned[roman type][line break]The voice echoes in your head as light gathers around the well and slowly dissipates.";
-		otherwise:
-			say "A wave of positivity flows through your body, and you now feel more... lucky?";
-			increase the raw luck of the player by 20;
-			now the stored-offerings of wishing well is 0;
-			now wish-done is 1;
-	if R is 4:
 		if N < 30 or the soreness of asshole + the soreness of vagina is 0:
-			if N < 100, say "Rejected... Tolerance... Deserved[roman type][line break]The voice echoes in your head as light gathers around the well and slowly dissipates.";
+			if N < 100, say "Rejected... Tolerance... Undeserved...[roman type][line break]The voice echoes in your head as light gathers around the well and slowly dissipates.";
+			otherwise increase R by 1;
 		otherwise:
-			say "Rejected... Tolerance... Replenished[roman type][line break]The voice echoes as all feelings of soreness and tension in your [fuckholes] are washed away.";
+			say "Rejected... Tolerance... Replenished...[roman type][line break]The voice echoes as all feelings of soreness and tension in your [fuckholes] are washed away.";
 			now the soreness of asshole is 0;
 			now the tolerated of asshole is 0;
 			if the player is possessing a vagina:
@@ -256,13 +253,18 @@ To compute WellHealing for offer (N - a number):
 				now the tolerated of vagina is 0;
 			now the stored-offerings of wishing well is 0;
 			now wish-done is 1;
+	if R is 4:
+		say "Accepted... Fortune... Aligned...[roman type][line break]A wave of positivity flows through your body, and you now feel more... lucky?";
+		increase the raw luck of the player by 20;
+		now the stored-offerings of wishing well is 0;
+		now wish-done is 1;
 	if wish-done is 0:
-		if N >= 100, compute WellPurifying for offer (N - 10);[If N is very high, lets try to grant the wish again.]
-		otherwise increase N by N - the stored-offerings of wishing well;[If you don't get a wish granted, the well adds the offering to your tab]
+		if N >= 100, compute WellHealing for offer 100 with roll 1;
+		otherwise increase the stored-offerings of wishing well by (N - the stored-offerings of wishing well);
 
-To compute WellItems for offer (N - a number):
+To compute WellItems for offer (N - a number) with roll (R - a number):
 	let wish-done be 0;
-	let R be a random number between 1 and 2;
+	if R is 0, now R is a random number between 1 and 3;
 	if the class of the player is avatar:
 		now R is 0;
 		if N > 30:
@@ -271,7 +273,7 @@ To compute WellItems for offer (N - a number):
 				now L is a random placed jungle room;
 			say "Rebuke... Possible... BEGONE![roman type][line break]The voice echoes in your head as a strong wave of force connects with your body, teleporting you to the [L]!";
 		otherwise:
-			say "Rebuke... Impossible... Vile Presence[roman type][line break]The voice echoes in your head as you feel yourself being slightly healed.";
+			say "Rebuke... Impossible... Vile Presence...[roman type][line break]The voice echoes in your head as you feel yourself being slightly healed.";
 			BodyHeal 1;
 		now the stored-offerings of wishing well is 0;
 		now wish-done is 1;
@@ -279,9 +281,10 @@ To compute WellItems for offer (N - a number):
 		let L be a random worn locked clothing;
 		let K be skeleton key;
 		if N < 40 or L is not clothing or K is not off-stage:
-			if N < 100, say "Rejected... Metals... Elusive[roman type][line break]The voice echoes in your head as light gathers around the well and slowly dissipates.";
+			if N < 100, say "Rejected... Metals... Elusive...[roman type][line break]The voice echoes in your head as light gathers around the well and slowly dissipates.";
+			otherwise increase R by 1;
 		otherwise:
-			say "Accepted... Metals... Collected[roman type][line break]The voice echoes in your head as a [skeleton key] materialises in your head.";[TODO: possibly make this more similar to spraybottle healing.]
+			say "Accepted... Metals... Collected...[roman type][line break]The voice echoes in your head as a [skeleton key] materialises in your head.";[TODO: possibly make this more similar to spraybottle healing.]
 			now K is carried by the player;
 			now the stored-offerings of wishing well is 0;
 			now wish-done is 1;
@@ -289,15 +292,26 @@ To compute WellItems for offer (N - a number):
 		let P be pure totem;
 		let E be a random worn hand ready equippable;
 		if N < 50 or P is off-stage or E is clothing:
-			say "Rejected... Temperance... Hidden[roman type][line break]The voice echoes in your head as light gathers around the well and slowly dissipates.";
+			if N < 100, say "Rejected... Temperance... Hidden...[roman type][line break]The voice echoes in your head as light gathers around the well and slowly dissipates.";
+			otherwise increase R by 1;
 		otherwise:
-			say "Accepted... Temperance... Awarded[roman type][line break]The voice echoes in your head as an invisible force gently pushes your hands open and a tiny ivory carving materialises in your palm.";
+			say "Accepted... Temperance... Awarded...[roman type][line break]The voice echoes in your head as an invisible force gently pushes your hands open and a tiny ivory carving materialises in your palm.";
 			now P is carried by the player;
 			now the stored-offerings of wishing well is 0;
 			now wish-done is 1;
+	if R is 3:
+		let T be a random off-stage magic token;
+		if T is magic token:
+			say "Accepted... Power... Accumulated...[roman type][line break]The voice echoes in your head as a magic token materialises in your hand.";
+			now T is carried by the player;
+		otherwise:
+			say "Accepted... Power... Overflowing...[roman type][line break]The voice echoes in your head as a magic token materialises in your hand... and immediately dissolves into glowing motes. You feel stronger!";
+			MagicPowerUp 1;
+		now the stored-offerings of wishing well is 0;
+		now wish-done is 1;
 	if wish-done is 0:
-		if N >= 100, compute WellPurifying for offer (N - 10);[If N is very high, lets try to grant the wish again.]
-		otherwise increase N by N - the stored-offerings of wishing well;[If you don't get a wish granted, the well adds the offering to your tab]
+		if N >= 100, compute WellItems for offer 100 with roll 1;[If N is very high, lets try to grant the wish again.]
+		otherwise increase the stored-offerings of wishing well by (N - the stored-offerings of wishing well);
 
 Report WellWishing:
 	allocate 6 seconds.

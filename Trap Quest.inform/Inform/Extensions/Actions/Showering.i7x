@@ -208,13 +208,12 @@ To wash salves:
 [How hard is it for the player to swim. High = bad, low = good]
 To decide which number is the swimming challenge of the player:
 	[This is what makes it more difficult for the player to stand up.]
-	let W be 0;
+	let W be 3;
 	repeat with C running through worn clothing:
 		if C is swimming themed:
-			increase W by the magic-modifier of C;
+			decrease W by 1 + the magic-modifier of C;
 		otherwise if C is not fluid immune:
-			increase W by the total-soak of C / 3; [Wearing soaked clothing will make your swimming worse.]
-	increase W by the weight of the player / 2;
+			increase W by the total-soak of C / 5; [Wearing soaked clothing will make your swimming worse.]
 	if the player is wrist bound, increase W by 5;
 	if the player is wrist bound behind, increase W by 10;
 	if the player is ankle bound, increase W by 10;
@@ -248,7 +247,7 @@ To compute normal swimming check in (WB - a thing):
 [Mainly for diving]
 To compute difficult swimming check in (WB - a thing):
 	let C be the swimming challenge of the player;
-	FatigueUp C * 4;
+	FatigueUp C * 3;
 	increase the fat-burning of the player by 50;
 	increase the fat-burning of hips by 30;
 	increase the fat-burning of arms by 30;

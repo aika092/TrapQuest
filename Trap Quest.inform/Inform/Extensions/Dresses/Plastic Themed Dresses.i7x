@@ -7,25 +7,42 @@ Definition: a silicone dress is pink themed: decide yes.
 To decide which number is the initial outrage of (C - a silicone dress):
 	decide on 5.
 
-Definition: a silicone dress is upgradable:
+To compute class set up of (C - a silicone dress):
+	now the raw-magic-modifier of C is the largeness of breasts / 5.
+
+To say ClassSummonFlav of (C - a silicone dress):
+	say "A tight [ShortDesc of C] appears on your body!";
+	if the silicone volume of breasts is 0 and the player is not top heavy:
+		let B be the largeness of breasts;
+		while B is the largeness of breasts:
+			BustImplantsUp 1;
+		say "[bold type]You feel and hear your tits expanding like stretchy rubber until they are [BreastDesc]![roman type] Touching and feeling them, you can definitely feel tight, less squishy areas below the nipple. Somehow, your new dress has summoned breast implants inside of your boobs!";
+	if the total weighty volume of hips < max ass size and the silicone volume of hips is 0:
+		AssImplantsUp 1;
+		say "[bold type]You feel and hear your ass expanding like stretchy rubber! Touching and feeling it, you can feel a tight, less squishy area in each cheek. Somehow, your dress has also summoned implants into your ass![roman type][line break]".
+
+A growing silicone dress is a kind of silicone dress.
+
+Definition: a silicone dress is class-relevant:
+	if the class of the player is silicone queen, decide yes;
+	decide no.
+Definition: a growing silicone dress is upgradable:
 	if the player is not top heavy, decide yes;
 	decide no.
-Definition: a silicone dress is transformation-protected:
+Definition: a growing silicone dress is transformation-protected:
 	if it is not upgradable, decide yes;
 	decide no.
-Definition: a silicone dress is disintegration-protected: decide yes.
-Definition: a silicone dress is loop-safe-upgradable:
+Definition: a growing silicone dress is disintegration-protected: decide yes.
+Definition: a growing silicone dress is loop-safe-upgradable:
 	if it is upgradable, decide yes;
 	decide no.
 Definition: a silicone dress is transformation-theme-blockable: decide no. [It doesn't care about the theme it shares with other items.]
-
-To decide which number is the transformability of (C - a silicone dress):
+To decide which number is the transformability of (C - a growing silicone dress):
 	decide on 12.
-
-To decide which object is the unique-upgrade-target of (C - a silicone dress):
+To decide which object is the unique-upgrade-target of (C - a growing silicone dress):
 	decide on C.
 
-To transform (C - a silicone dress):
+To transform (C - a growing silicone dress):
 	say "Your silicone implants grow [one of]a small amount[or]some more[stopping]!";
 	BustImplantsUp 1.
 
@@ -50,7 +67,7 @@ To UniquePinkWardrobeUnclash (C - a silicone dress):
 	repeat with O running through worn removable breast covering clothing:
 		if the cleavageCover of O > the cleavageCover of C, WardrobeVanish O.
 
-plastic-is-fantastic dress is a silicone dress. plastic-is-fantastic dress is low cut. Understand "plastic", "plastic is", "fantastic", "pink", "rubber", "dress" as plastic-is-fantastic dress.
+plastic-is-fantastic dress is a growing silicone dress. plastic-is-fantastic dress is low cut. Understand "plastic", "plastic is", "fantastic", "pink", "rubber", "dress" as plastic-is-fantastic dress.
 
 The printed name of plastic-is-fantastic dress is "[clothing-title-before]pink rubber 'PLASTIC IS FANTASTIC' dress[clothing-title-after]". The text-shortcut of plastic-is-fantastic dress is "pifd".
 
@@ -65,7 +82,15 @@ To say ClothingDesc of (C - plastic-is-fantastic dress):
 To say MediumDesc of (C - plastic-is-fantastic dress):
 	say "'PLASTIC IS FANTASTIC' minidress".
 
-daddy issues dress is a silicone dress. daddy issues dress is high cut. Understand "daddy", "issues", "pink", "rubber", "dress" as daddy issues dress.
+To decide which object is the unique-upgrade-target of (C - plastic-is-fantastic dress):
+	if the used condoms of C > 0, decide on condoms dress;
+	decide on nothing.
+
+daddy issues dress is a growing silicone dress. daddy issues dress is high cut. Understand "pink", "rubber" as daddy issues dress.
+
+Definition: daddy issues dress is class-relevant:
+	if the class of the player is silicone queen or the class of the player is schoolgirl, decide yes;
+	decide no.
 
 The printed name of daddy issues dress is "[clothing-title-before]pink rubber 'Daddy Issues' dress[clothing-title-after]". The text-shortcut of daddy issues dress is "ddid".
 
@@ -80,6 +105,65 @@ To say ClothingDesc of (C - daddy issues dress):
 To say MediumDesc of (C - daddy issues dress):
 	say "'DADDY ISSUES' minidress".
 
-Definition: daddy issues dress is schoolgirl-enabling: decide yes.
+condoms dress is a silicone dress. condoms dress is high cut.
+
+The printed name of condoms dress is "[clothing-title-before]condoms dress[clothing-title-after]". The text-shortcut of condoms dress is "cndd".
+
+Definition: condoms dress is class-relevant:
+	if the class of the player is silicone queen or the class of the player is cumdumpster, decide yes;
+	decide no.
+
+To compute class set up of (C - condoms dress):
+	now the quest of C is condom-creampie-quest;
+	now C is cursed.
+
+Figure of condoms dress is the file "Items/Clothes/Upper/Latex/rubberdress6.png".
+
+To decide which figure-name is clothing-image of (C - condoms dress):
+	decide on figure of condoms dress.
+
+To say ClothingDesc of (C - condoms dress):
+	say "This short dress is made entirely from unravelled condoms. Mercifully, they are not filled with semen.".
+
+To say ShortDesc of (C - condoms dress):
+	say "condoms dress".
+To say MediumDesc of (C - condoms dress):
+	say "dress made of condoms".
+
+To decide which number is the initial outrage of (C - condoms dress):
+	decide on 11.
+
+To decide which object is the unique-upgrade-target of (C - condoms dress):
+	decide on giant condom.
+
+giant condom is a growing silicone dress. giant condom is fully covering. giant condom is see-through. giant condom is not-top-displacable. giant condom is hobble-skirted. giant condom is crotch-intact.
+
+The printed name of giant condom is "[clothing-title-before]giant condom[clothing-title-after]". The text-shortcut of giant condom is "gcdm".
+
+This is the giant condom prevents hand use rule:
+	if giant condom is worn:
+		if manual hands attempt is 1, say "[variable custom style]I can't do that whilst my arms are stuck to my sides under this giant condom![roman type][line break]";
+		rule fails.
+The giant condom prevents hand use rule is listed in the hands restriction rules.
+
+Definition: giant condom is class-relevant:
+	if the class of the player is silicone queen or the class of the player is cumdumpster, decide yes;
+	decide no.
+
+Figure of giant condom is the file "Items/Clothes/Upper/Latex/rubberdress7.png".
+
+To decide which figure-name is clothing-image of (C - giant condom):
+	decide on figure of giant condom.
+
+To say ClothingDesc of (C - giant condom):
+	say "This giant condom-shaped piece of latex covers your whole body and prevents you from moving your arms.".
+
+To say ShortDesc of (C - giant condom):
+	say "giant condom".
+To say MediumDesc of (C - giant condom):
+	say "giant condom".
+
+To decide which number is the initial outrage of (C - giant condom):
+	decide on 14.
 
 Plastic Themed Dresses ends here.

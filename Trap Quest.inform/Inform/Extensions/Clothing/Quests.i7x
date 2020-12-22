@@ -2,27 +2,27 @@ Quests by Clothing begins here.
 
 A clothing-quest is a kind of object.
 
-A clothing-quest can be disappearing or persistent. A clothing-quest is usually disappearing.
+A clothing-quest can be disappearing or persistent. A clothing-quest is usually disappearing. [Disappearing quests offer to let the player have the item instantly vanish when the quest is completed and only ever trigger once. Persistent quests don't offer to have the item vanish, they just uncurse or bless the item. They can be triggered multiple times.]
 
-A headgear-clothing-quest is a kind of clothing-quest. A headgear-clothing-quest is persistent.
+A headgear-clothing-quest is a kind of clothing-quest. A headgear-clothing-quest is persistent. [Headgear don't disappear instantly when the class quest is completed.]
 
 To decide what number is the quest-weighting of (Q - a clothing-quest) for (C - a clothing): [How often should this appear as the quest?]
 	decide on 0.
 
-To decide what number is the actual-quest-weighting of (Q - a clothing-quest) for (C - a clothing):
-	if C is unremovable and Q is not persistent, decide on 0; [Unremovable objects need quests that are persistent]
+To decide what number is the actual-quest-weighting of (Q - a clothing-quest) for (C - a clothing): [Unremovable objects need quests that are persistent so we use this to weight all vanishing quests at 0]
+	if C is unremovable and Q is not persistent, decide on 0;
 	decide on the quest-weighting of Q for C.
 
-Definition: a clothing-quest is appropriate: decide yes.
-Definition: a clothing-quest is school-disabled: decide no.
+Definition: a clothing-quest is appropriate: decide yes. [Does it make sense for this quest to appear on an item right now?]
+Definition: a clothing-quest is school-disabled: decide no. [Is this quest temporarily deactivated when the player is in the school region? (Some quests would be too easy in this region)]
 
-To decide which number is the total-quest-weighting of (C - a clothing):
+To decide which number is the total-quest-weighting of (C - a clothing): [In order to use the weightings to choose a random quest, we need to know the sum of the weighting of all quests]
 	let N be 0;
 	repeat with Q running through clothing-quests:
 		increase N by the actual-quest-weighting of Q for C;
 	decide on N.
 
-To decide which clothing-quest is the random-quest of (C - a clothing):
+To decide which clothing-quest is the random-quest of (C - a clothing): [Choose a quest at random, using their weightings]
 	let R be a random number between 1 and the total-quest-weighting of C;
 	if debugmode is 2, say "Setting up quest for [C]. Total weighting is [R]. ";
 	repeat with Q running through clothing-quests:
@@ -33,13 +33,13 @@ To decide which clothing-quest is the random-quest of (C - a clothing):
 	if debugmode is 2, say "Unable to find a quest.";
 	decide on no-clothing-quest. [Shouldn't be necessary]
 
-To decide which number is the total-persistent-quest-weighting of (C - a clothing):
+To decide which number is the total-persistent-quest-weighting of (C - a clothing): [In order to use the weightings to choose a random persistent quest, we need to know the sum of the weighting of all persistent quests]
 	let N be 0;
 	repeat with Q running through persistent clothing-quests:
 		increase N by the actual-quest-weighting of Q for C;
 	decide on N.
 
-To decide which clothing-quest is the random-persistent-quest of (C - a clothing):
+To decide which clothing-quest is the random-persistent-quest of (C - a clothing): [Choose a persistent quest at random, using their weightings]
 	let R be a random number between 1 and the total-persistent-quest-weighting of C;
 	if debugmode is 2, say "Setting up quest for [C]. Total weighting is [R]. ";
 	repeat with Q running through persistent clothing-quests:
@@ -50,39 +50,39 @@ To decide which clothing-quest is the random-persistent-quest of (C - a clothing
 	if debugmode is 2, say "Unable to find a quest.";
 	decide on no-clothing-quest. [Shouldn't be necessary]
 
-To compute quest of (C - a clothing):
+To compute quest of (C - a clothing): [Give the item a quest if it is cursed]
 	if C is cursed and tutorial is 0, assign quest to C.
 
-To compute persistent quest of (C - a clothing):
+To compute persistent quest of (C - a clothing): [Give the item a persistent quest if it is cursed]
 	if C is cursed and tutorial is 0, assign persistent quest to C.
 
 To compute summoned quest of (C - a clothing): [sometimes after summoning an item we want to give it a quest and let the player know]
 	compute quest of C;
 	unless the quest of C is no-clothing-quest, say QuestFlav of C.
 
-To compute summoned persistent quest of (C - a clothing): [sometimes after summoning an item we want to give it a quest and let the player know]
+To compute summoned persistent quest of (C - a clothing): [sometimes after summoning an item we want to give it a persistent quest and let the player know]
 	compute persistent quest of C;
 	unless the quest of C is no-clothing-quest, say QuestFlav of C.
 
-To compute new quest of (C - a clothing): [sometimes we want to give the clothing a new quest]
+To compute new quest of (C - a clothing): [sometimes we want to give the clothing a new quest when it already has one]
 	let OQ be the quest of C;
 	let N be 200;
 	while N > 0 and the quest of C is OQ:
 		if OQ is persistent, compute persistent quest of C;
 		otherwise compute quest of C;
-		decrease N by 1;
+		decrease N by 1; [failsafe to avoid infinite loop if there's only one acceptable quest]
 	if the quest of C is OQ, say "[BigNameDesc of C] refuses to change its quest!";
 	otherwise say QuestFlav of C.
 
-To assign quest to (C - a clothing):
+To assign quest to (C - a clothing): [this is how we give an item a quest and set up any necessary variables]
 	now the quest of C is the random-quest of C;
 	set up the quest of C.
 
-To assign persistent quest to (C - a clothing):
+To assign persistent quest to (C - a clothing): [this is how we give an item a persistent quest and set up any necessary variables]
 	now the quest of C is the random-persistent-quest of C;
 	set up the quest of C.
 
-To set up (Q - a clothing-quest):
+To set up (Q - a clothing-quest): [by default a quest doesn't need any extra setup. NB anything you put here will trigger each time a new item is assigned this quest, which might include when the player is already halfway through doing this quest for another clothing item.]
 	do nothing.
 
 To say QuestFlav of (C - a clothing):
@@ -91,8 +91,8 @@ To say QuestFlav of (C - a clothing):
 To say FullQuestFlav of (Q - a clothing-quest):
 	say "[QuestFlav of Q][if armband is worn and Q is school-disabled][line break][bold type]This quest cannot be completed while you are in the [slut school] region.[line break][roman type][end if]".
 
-To say QuestFlav of (Q - a clothing-quest):
-	say "".
+To say QuestFlav of (Q - a clothing-quest): [The long description. Must be replaced for each quest.]
+	say "This quest is missing its long description.".
 
 Carry out wearing cursed clothing:
 	if the noun is not sure and the noun is discovered varied: [We want the quest to be as relevant as possible for right now. So if this is the first time the player is wearing it, let's make sure it's not something stupid that only made sense earlier when the item was found, e.g. virginity]
@@ -109,12 +109,13 @@ Report wearing clothing:
 To say QuestTitle of (C - a clothing):
 	say QuestTitle of the quest of C.
 
-To say QuestTitle of (Q - a clothing-quest):
-	say "".
+To say QuestTitle of (Q - a clothing-quest): [The short description. Must be replaced for each quest.]
+	say "missing quest title".
 
 To say quest-desc:
 	if item described is sure and (item described is cursed or the quest of item described is persistent), say QuestTitle of item described.
 
+[A random quest consequence is chosen and computed when a vanishing quest completes but the player decides to let the clothing stay around]
 A questConsequence is a kind of object.
 quest-target is an object that varies.
 
@@ -205,22 +206,24 @@ To say QuestProgressFlav of (Q - a clothing-quest) on (C - a clothing):
 To say QuestCompleteFlav of (Q - a clothing-quest) on (C - a clothing):
 	say "The magic sealing your [MediumDesc of C] is lifted and it rips itself from your [body area of C] before falling to the ground and quickly fading away, leaving nothing behind.".
 
+[This is the bread and butter of resolving a quest. This is the function we call all around the rest of the code when a quest should be considered triggered.]
 To progress quest of (Q - a clothing-quest):
 	if playerRegion is not school or Q is not school-disabled:
 		unless the player is in a predicament room:
 			if debugmode > 0, say "Checking for[QuestTitle of Q].";
 			repeat with C running through worn clothing:
-				if C is diaper-stack:
-					repeat with D running through the list of stacked diapers:
-						if D is cursed or the quest of D is persistent:
-							if the quest of D is Q, compute quest completion of Q on D;
-				otherwise:
-					if C is cursed or the quest of C is persistent:
-						if the quest of C is Q, compute quest completion of Q on C.
+				if the quest of C is Q:
+					if C is diaper-stack:
+						repeat with D running through the list of stacked diapers:
+							if D is cursed or the quest of D is persistent, compute quest completion of Q on D;
+					otherwise:
+						if C is cursed or the quest of C is persistent, compute quest completion of Q on C. [disappearing quests only trigger once]
 
+[Persistent quests have an added effect each time they are completed]
 To say QuestPersistFlav of (Q - a clothing-quest) on (C - a clothing):
 	say "[if C is cursed]The magic sealing your [MediumDesc of C] is lifted! It rewards your efforts by[otherwise if C is bland and Q is headgear-clothing-quest]You sense a blessing being laid upon your [MediumDesc of C]! It rewards your continued efforts by[otherwise]Your [MediumDesc of C] rewards your continued efforts by[end if] ".
 
+[By default, persistent quests give slightly bad stuff whenever they complete. This can be changed by creating a more specific function.]
 To compute persistent reward of (Q - a clothing-quest) on (C - a clothing):
 	if C is pussy covering:
 		say "gently vibrating, stimulating your [genitals]!";
@@ -234,6 +237,7 @@ To compute persistent reward of (Q - a clothing-quest) on (C - a clothing):
 
 Part - No Quest
 
+[Since every clothing must have a quest, we need a default quest object for when the clothing has no quest.]
 no-clothing-quest is a clothing-quest.
 
 A clothing has a clothing-quest called quest. The quest of a clothing is usually no-clothing-quest.
@@ -939,7 +943,7 @@ To say QuestPersistFlav of (Q - bursting-quest) on (C - a clothing):
 	say "[if C is cursed]The magic sealing your [MediumDesc of C] is lifted! It rewards you refusing to pee on purpose[otherwise if C is bland and (delayed urination is 1 or Q is headgear-clothing-quest)]You sense a blessing being laid upon your [MediumDesc of C]! It rewards your continued refusal to pee on purpose[otherwise]Your [MediumDesc of C] rewards your continued bladder holding efforts[end if] by ".
 
 To compute persistent reward of (Q - bursting-quest) on (C - a clothing):
-	say "Filling your bladder even further!";
+	say "filling your bladder even further!";
 	increase the bladder of the player by 1.
 
 Part - Next Lesson Quest
@@ -1098,6 +1102,24 @@ To say QuestTitle of (Q - throne-quest):
 To set up (Q - throne-quest):
 	now the charge of throne is 0.
 
+Part - Podium Quest
+
+podium-quest is a clothing-quest.
+
+To decide what number is the quest-weighting of (Q - podium-quest) for (C - a clothing):
+	if Q is not appropriate, decide on 0;
+	if piercing-fetish is 1, decide on 6;
+	decide on 1.
+
+To say QuestFlav of (Q - podium-quest):
+	say "You sense that it wants you to climb up onto a stage.".
+
+To say QuestTitle of (Q - podium-quest):
+	say " (stage quest)".
+
+To set up (Q - podium-quest):
+	now the charge of podium is 0.
+
 Part - Attack Provocation Quest
 
 attack-quest is a clothing-quest. attack-quest is persistent.
@@ -1215,5 +1237,23 @@ To compute persistent reward of (Q - mouthful-quest) on (C - a clothing):
 	say "[if the body soreness of the player > 0 and the raw semen taste addiction of the player < 20]healing some of your wounds and [end if]restoring your energy!";
 	if the raw semen taste addiction of the player < 20, BodyHeal 3;
 	now the fatigue of the player is 0.
+
+Part - Vaginal Addict Quest
+
+vaginal-addict-quest is a clothing-quest.
+
+To decide what number is the quest-weighting of (Q - vaginal-addict-quest) for (C - a clothing):
+	if Q is not appropriate, decide on 0;
+	decide on 1.
+
+Definition: vaginal-addict-quest is appropriate:
+	if the vaginal sex addiction of the player > 4 and the vaginal sex addiction of the player < 7, decide yes;
+	decide no.
+
+To say QuestFlav of (Q - vaginal-addict-quest):
+	say "You sense that it wants you to have lots more vaginal sex until you become almost addicted to it.".
+
+To say QuestTitle of (Q - vaginal-addict-quest):
+	say " (vaginal sex quest)".
 
 Quests ends here.

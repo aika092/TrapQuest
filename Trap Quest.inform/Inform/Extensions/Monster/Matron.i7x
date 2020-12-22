@@ -8,7 +8,7 @@ Definition: matron is hotel dwelling:
 
 Understand "strict" as matron. The text-shortcut of matron is "mat".
 
-Figure of matron is the file "NPCs/Hotel/matron1.png".
+Figure of matron is the file "NPCs/Hotel/matron1.jpg".
 
 To decide which figure-name is the monster-image of (M - matron):
 	decide on figure of matron.
@@ -20,7 +20,7 @@ To say MediumDesc of (M - a matron):
 	say "strict matron".
 
 To say MonsterDesc of (M - a matron):
-	say "Standing proudly in [his of M] pink latex dress the matron of the Adult Nursery is casting a vigilant eye across the room. [big he of M] has the look of a determined mother that will do anything to attend to those under [his of M] special care. [big his of M] aura of dominance is only slightly muted by the sluttiness of [his of M] dress."
+	say "Standing proudly in [his of M] pink latex dress, the matron of the Adult Nursery is casting a vigilant eye across the room. [big he of M] has the look of a determined mother that will do anything to attend to those under [his of M] special care. [big his of M] aura of dominance is only slightly muted by the sluttiness of [his of M] dress."
 
 To say MonsterComment of (M - a matron):
 	if diaper quest is 0 and lady fetish < 2, say "[variable custom style][if the diaper addiction of the player < 6 and the player is gendered male]What a MILF! This must be the [man of M] in charge of the princess. [otherwise if the diaper addiction of the player > 14][line break][second custom style]*giggle* [one of]Maybe [he of M] can be my mommy[or]It's my mommy[stopping]! [end if][if the delicateness of the player < 7]If I can play it cool, maybe [he of M]'ll be nice to me.[otherwise if the delicateness of the player < 12]I wonder what sorts of games [he of M]'d play with someone that's not [his of M] baby?[otherwise if the delicateness of the player < 16]I bet [he of M] could take real good care of me.[otherwise]I hope [he of M] can be my mommy and show me how to be a slut like [him of M].[end if][roman type][line break]".

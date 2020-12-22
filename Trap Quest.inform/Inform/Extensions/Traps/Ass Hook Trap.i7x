@@ -84,14 +84,17 @@ To trigger (Y - an ass hook):
 				repeat with M running through reactive monsters:
 					say WedgieTrapReactFlav of M;
 			otherwise:
-				say "thankfully bounces harmlessly away[if K is clothing] thanks to your [ShortDesc of K][otherwise] without being able to find anything to hook onto[end if]. The hook shoots up into the hole in the ceiling that the rope was connected to.";
+				say "thankfully bounces harmlessly away[if K is clothing] thanks to your [ShortDesc of K][otherwise] without being able to find anything to hook onto[end if]. ";
+				compute bra attempt of Y;
 		otherwise:
 			let CK be nothing;
 			if K is clothing, now CK is the coverer of K;
-			say "thankfully bounces harmlessly away[if CK is clothing] thanks to your [ShortDesc of CK][otherwise] without being able to find anything to hook onto[end if]. The hook shoots up into the hole in the ceiling that the rope was connected to.";
+			say "thankfully bounces harmlessly away[if CK is clothing] thanks to your [ShortDesc of CK][otherwise] without being able to find anything to hook onto[end if]. ";
+			compute bra attempt of Y;
 		now Y is unrevealed;
 	otherwise if asshole is actually occupied:
-		say "thankfully bounces harmlessly away thanks to your [if the player is ass protected][ShortDesc of random top level ass protection clothing][otherwise][ShortDesc of random thing penetrating asshole][end if]. The hook shoots up into the hole in the ceiling that the rope was connected to.";
+		say "thankfully bounces harmlessly away thanks to your [if the player is ass protected][ShortDesc of random top level ass protection clothing][otherwise][ShortDesc of random thing penetrating asshole][end if]. ";
+		compute bra attempt of Y;
 		now Y is unrevealed;
 	otherwise:
 		say "glides swiftly into your [asshole] with the upward motion of the rope. You realise as it tries to lift you off the ground by your delicate hole that this is an ass hook on the end of the rope! It lifts you onto your tiptoes and clearly would lift you off the ground by your [asshole] if its pulling mechanism had the strength!";
@@ -99,6 +102,15 @@ To trigger (Y - an ass hook):
 		repeat with M running through reactive monsters:
 			say AssHookTrapReactFlav of M;
 	if Y is penetrating asshole or Y is grabbing the player, now Y is revealed. [because wtf glitches I don't understand]
+
+To compute bra attempt of (Y - an ass hook):
+	let C be a random currently uncovered tearable bra;
+	if C is clothing:
+		if C is not locked and C is not pasties and C is not fully exposing and C is not normally-nipple-exposing:
+			if the player is getting unlucky:
+				say "Or has it?! As the hook rises, it manages to get itself stuck under the strap of your [C]! A moment later, the pressure becomes too much and your [ShortDesc of C] is ripped apart, ruined! [GotUnluckyFlav]";
+				destroy C;
+	say "The hook shoots up into the hole in the ceiling that the rope was connected to.".
 
 To say WedgieTrapReactFlav of (M - a monster):
 	say TriggeredTrapReactFlav of M.

@@ -1,6 +1,6 @@
 Lipstick Collar by Accessories begins here.
 
-A lipstick collar is a kind of submissive collar. There is 1 lipstick collar in Mansion16. Printed name of lipstick collar is "[clothing-title-before][if item described is tethering]thieves collar[otherwise]lipstick collar[end if][clothing-title-after]". The text-shortcut of lipstick collar is "lsc". A lipstick collar can be tethering or not tethering. A lipstick collar is usually not tethering. A lipstick collar is usually leather. Understand "thief", "lip", "stick", "thieves" as lipstick collar.
+A lipstick collar is a kind of submissive collar. There is 1 lipstick collar in Mansion16. Printed name of lipstick collar is "[clothing-title-before]lipstick collar[clothing-title-after]". The text-shortcut of lipstick collar is "lsc". A lipstick collar is usually leather. Understand "thief", "lip", "stick", "thieves" as lipstick collar.
 
 Figure of lipstick collar is the file "Items/Accessories/Neck/lipstickcollar1.png".
 
@@ -30,30 +30,14 @@ Report wearing lipstick collar:
 	repeat with P running through closed pedestals:
 		now P is open.
 
-To decide which number is the soreness-influence of (C - a lipstick collar):
-	decide on the make-up of face * 2 + the lips of face.
 
 Report taking off lipstick collar:
-	now the noun is blandness;
-	if the noun is tethering, end tethering.
-
-To say TetherMove:
-	let M be vampiress;
-	if diaper quest is 0:
-		if M is in the location of the player, say "The chain pulls hard as soon as you start to move, very nearly throwing you off balance.[line break][speech style of M]'[one of]Why are you running away darling? Afraid I'm going to pull out when I cum? Hahaha!'[or]You're cute for a thief, which is all the more reason to make sure I collect your payment personally...'[or]No getting away from me now, [if the player is presenting as male]Mr[otherwise]Mrs[end if]. sticky fingers!'[or]Scared of me, darling? Don't worry, I don't kill thieves, I inseminate them.'[in random order][roman type][line break]";
-		otherwise say "The chain pulls hard as soon as you start to move, [one of]forcefully dragging you back several feet[or]accompanied by a sing-songy voice down the hall.[line break][speech style of M]'I've been deep-throated by faster thieves than you, darling~!'[roman type][line break][or]dragging you back several feet. You hear a mocking roll of laughter down the hall. [or]accompanied by a sing-songy voice down the hall.[line break][speech style of M]'Better run faster unless you want a sticky face to match those sticky fingers~!'[roman type][line break][or][line break][speech style of M]'Run run run, as fast as you can, can't escape me, I'm going to violate your asshole!'[roman type][line break][at random][one of]You have to keep trying to escape![or]You have to keep trying![stopping]";
-	otherwise:
-		if M is in the location of the player, say "The chain pulls hard as soon as you start to move, very nearly throwing you off balance.[line break][speech style of M]'[one of]Why are you running away darling? Afraid I'm going to make you wet yourself? Hahaha!'[or]You're cute for a thief, which is all the more reason to make sure I collect your payment personally...'[or]No getting away from me now, [if the player is presenting as male]Mr[otherwise]Mrs[end if]. sticky fingers!'[or]Scared of me, darling? Don't worry, I don't kill thieves, I just [']adopt['] them...'[in random order][roman type][line break]";
-		otherwise say "The chain pulls hard as soon as you start to move, [one of]forcefully dragging you back several feet[or]accompanied by a sing-songy voice down the hall.[line break][speech style of M]'I've diapered faster thieves than you, darling~!'[roman type][line break][or]dragging you back several feet. You hear a mocking roll of laughter down the hall. [or]accompanied by a sing-songy voice down the hall.[line break][speech style of M]'Better run faster unless you want some sticky padding to match those sticky fingers~!'[roman type][line break][or][line break][speech style of M]'Run run run, as fast as you can, can't escape me, I'm going to put you in [if the player is diapered]an even thicker[otherwise]a[end if] nappy!'[roman type][line break][in random order][one of]You have to keep trying to escape![or]You have to keep trying![stopping]".
-
-To end tethering:
-	let L be a random worn tethering lipstick collar;
-	now L is not tethering;
-	repeat with P running through pedestals:
-		unless the paid of P > 0, now P is closed;
-	say "The chain releases you, glittering as it fades from existence.".
-
-Report going down when there is a worn tethering lipstick collar:
 	end tethering.
+
+To uniquely destroy lipstick collar:
+	end tethering.
+
+To decide which number is the soreness-influence of (C - a lipstick collar):
+	decide on the make-up of face * 2 + the lips of face.
 
 Lipstick Collar ends here.

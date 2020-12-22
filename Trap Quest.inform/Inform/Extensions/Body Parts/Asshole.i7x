@@ -77,10 +77,9 @@ the asshole presentable rules is a rulebook.
 the presentable rules of asshole is usually the asshole presentable rules.
 
 This is the asshole protected rule:
-	repeat with O running through ass covering clothing:
-		unless (O is displacable and O is not glued) or O is zippable or O is usually autoremovable:
-			if auto is 0, say "Your [O] is preventing you from getting your [asshole] on display.";
-			rule fails.
+	repeat with O running through ass covering actually unavoidable clothing:
+		if auto is 0, say "Your [O] is preventing you from getting your [asshole] on display.";
+		rule fails.
 The asshole protected rule is listed in the asshole presentable rules.
 
 This is the asshole occupied rule:

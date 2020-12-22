@@ -2,8 +2,8 @@ Submitting by Actions begins here.
 
 Definition: yourself is having marital sex:
 	unless the class of the player is princess, decide no;
-	unless princess-consort is monster, decide no;
-	if princess-consort is grabbing the player or princess-consort is penetrating a body part, decide yes;
+	unless bride-consort is monster, decide no;
+	if bride-consort is grabbing the player or bride-consort is penetrating a body part, decide yes;
 	decide no.
 
 Submitting is an action applying to nothing.

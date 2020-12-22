@@ -69,6 +69,33 @@ Definition: scrotum is at least partially exposed:
 	if the concealer of scrotum is a thing, decide no;
 	decide yes.
 
+Definition: a clothing is potentially scrotum concealing:
+	if it is actually dense and it is potentially penis covering, decide yes;
+	decide no.
+Definition: a clothing is potentially at least partially scrotum concealing:
+	if it is not see-through and it is potentially penis covering, decide yes;
+	decide no.
+
+
+To decide which object is the concealer of (P - scrotum):
+	if water-fountain is penetrating asshole, decide on water-fountain;
+	repeat with C running through worn potentially scrotum concealing clothing:
+		let this-one be 1;
+		repeat with D running through worn potentially scrotum concealing clothing:
+			if the bottom-layer of D > the bottom-layer of C, now this-one is 0;
+		if this-one is 1, decide on C;
+	decide on nothing.
+
+To decide which object is the at least partial concealer of (P - scrotum):
+	if water-fountain is penetrating asshole, decide on water-fountain;
+	if vagina is listed in the armUses of arms, decide on arms;
+	repeat with C running through worn potentially at least partially scrotum concealing clothing:
+		let this-one be 1;
+		repeat with D running through worn potentially at least partially scrotum concealing clothing:
+			if the bottom-layer of D > the bottom-layer of C, now this-one is 0;
+		if this-one is 1, decide on C;
+	decide on nothing.
+
 To decide which number is min scrotum size points: decide on 0. [temporary]
 
 [!<DecideWhichNumberIsMinScrotumSize>+

@@ -207,8 +207,8 @@ To decide which number is bondage protection:
 	decide on the choice in row 64 of the Table of Player Options.
 
 To decide which number is christmas content:
-	if the player is not a top donator, decide on 0;
-	decide on the choice in row 65 of the Table of Player Options.
+	if choice in row 65 of the Table of Player Options < 2, decide on 1; [override last year's setting]
+	decide on 0.
 
 To decide which number is easter content:
 	if the player is not a top donator or diaper quest is 0, decide on 0;
@@ -220,9 +220,9 @@ To decide which number is april fools content:
 	decide on 0.
 
 To decide which number is halloween content:
-	if the player is not a top donator, decide on 1;
-	if choice in row 80 of the Table of Player Options < 2, decide on 1; [override last year's setting]
-	decide on 0.
+	if the player is not a top donator, decide on 0;
+	if choice in row 80 of the Table of Player Options < 3, decide on 0;
+	decide on 1.
 
 To decide which number is futanari fetish:
 	if diaper quest is 1, decide on 0;

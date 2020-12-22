@@ -23,17 +23,26 @@ Part - Laci
 
 student-laci is a tryhard student.
 
+Definition: student-laci is dark skinned: decide yes.
+
 The text-shortcut of student-laci is "stla".
 
-Figure of laci is the file "NPCs/School/Student/student3.png".
+Figure of rank 1 laci is the file "NPCs/School/Student/student3a.png".
 
 To decide which figure-name is the monster-image of (M - student-laci):
-	decide on figure of laci.
+	if the current-rank of M >= 5, decide on figure of rank 5 laci;
+	if the current-rank of M is 4, decide on figure of rank 4 laci;
+	if the current-rank of M is 3, decide on figure of rank 3 laci;
+	if the current-rank of M is 2, decide on figure of rank 2 laci;
+	decide on figure of rank 1 laci.
 
 To say MonsterDesc of (M - student-laci):
-	say "This tall, dirty blonde [man of M] is wearing a skimpy sexy schoolgirl outfit with matching tartan [if the current-rank of M is 1]miniskirt and tie[otherwise]skirt and tie. What was once a miniskirt is now so short it's really nothing more than a belt[end if]. [big his of M] chunky black heels are polished to the nth degree. [big he of M] is constantly 'accidentally' dropping things and then bending over with completely unbent knees to expose as much of [his of M] bottom as possible to whoever might be looking [his of M] way[if the current-rank of M is 3]. Whenever [he of M] bends over [he of M] makes sure to first cross [his of M] feet, perhaps to make sure people know [he of M] is bending at the waist on purpose[end if].".
+	say "This tall dark skinned redheaded [man of M] is wearing a skimpy sexy schoolgirl outfit with matching tartan miniskirt and tie. [big his of M] chunky black heels are polished to the nth degree. [big he of M] is constantly 'accidentally' dropping things and then bending over with completely unbent knees to expose as much of [his of M] bottom as possible to whoever might be looking [his of M] way[if the current-rank of M >= 3]. Whenever [he of M] bends over [he of M] makes sure to first cross [his of M] feet, perhaps to make sure people know [he of M] is bending at the waist on purpose[end if]. ";
+	if diaper quest is 0, say "[if the current-rank of M is 1][big he of M] is wearing plain white briefs[otherwise if the current-rank of M is 2][big he of M] is no longer wearing any underwear. You can almost see everything, if it wasn't for [his of M] thick thighs and buttocks squshed together[otherwise if the current-rank of M is 3][big he of M] is no longer wearing any underwear, and is pulling one of [his of M] thick thighs and buttocks a bit to enable you to see [his of M] pussy[otherwise if the current-rank of M is 4][big he of M] is no longer wearing any underwear, and is pulling both of [his of M] thick thighs and buttocks apart to enable you to see [his of M] pussy and asshole[otherwise][big he of M] is no longer wearing any underwear, and is pulling both of [his of M] thick thighs and buttocks apart to enable you to see the jewelled buttplug and vibrator currently occupying [his of M] pussy and asshole[end if].";
+	otherwise say "[if the current-rank of M is 1][big he of M] is wearing plain white briefs[otherwise if the current-rank of M is 2][big his of M] white briefs have been replaced by a small purple patterned diaper[otherwise if the current-rank of M is 3][big he of M] is now wearing a thick white diaper[otherwise if the current-rank of M is 4][big he of M] is now wearing a thick white diaper, and spanks [himself of M] each time [he of M] bends over[otherwise][big he of M] is now wearing a thick white diaper, and gleefully rubs [his of M] pussy and asshole through [his of M] padding each time [he of M] bends over[end if].".
 
-The max-rank of student-laci is 3.
+To say ClitLeadDesc of (M - student-laci):
+	say "A long golden chain with a leash handle at the end trails on the ground, clearly permanently connected to [his of M] pierced clitoris. ".
 
 To update name of (M - student-laci):
 	if the current-rank of M is 1:

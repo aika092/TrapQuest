@@ -38,7 +38,7 @@ To say UniqueShortDesc of (C - a court heels):
 	say "court heels".
 
 To say ClothingDesc of (C - a court heels):
-	say "A pair of [heel-height of C] inch [if C is glass]transparent glass[otherwise if C is leather]red leather[otherwise if C is satin]black satin[otherwise if C is pvc]hot pink PVC[otherwise if C is latex]shiny black[end if] fashionable shoes with a strong stiletto heel. They would be worn by noblewomen and maybe even royalty[if C is worn and C is cursed and C is latex and there is a worn cursed black catsuit]. The upper parts of the socks have completely merged with the rest of your catsuit[end if].";
+	say "A pair of [heel-height of C] inch [if C is glass]transparent glass[otherwise if C is leather]red leather[otherwise if C is satin]black satin[otherwise if C is pvc]hot pink PVC[otherwise if C is latex]shiny black[end if] fashionable shoes with a strong stiletto heel. They would be worn by noblewomen and maybe even royalty[if C is worn and C is cursed and C is latex and black-catsuit is worn and black-catsuit is cursed]. The upper parts of the socks have completely merged with the rest of your catsuit[end if].";
 	say "[SteadinessDesc of C]".
 
 To uniquely set up (C - a court heels):
@@ -59,7 +59,7 @@ To uniquely set up (C - a court heels):
 	set up heel length of C.
 
 To decide which object is the potential-upgrade-target of (C - a court heels):
-	if the heel-height of C >= 6 and C is plentiful, decide on a random off-stage dildo heels;
+	if the heel-height of C >= 6 and C is plentiful and dildo-heels is off-stage, decide on dildo-heels;
 	if (C is leather or C is satin) and C is plentiful, decide on a random off-stage girly bow court heels; [since there's only one girly bow court heels it won't transform into itself since it'll be on-stage already]
 	decide on nothing.
 

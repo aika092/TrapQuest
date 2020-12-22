@@ -49,11 +49,6 @@ To decide which number is the intelligence-influence of (H - cultist veil):
 			if L is not H, increase I by 1;
 	decide on I.
 
-[Report taking off cultist veil:
-	say "You feel a sudden sense of foreboding as you remove the veil. This may have been a mistake.";
-	OralSexAddictUp 1;
-	SexAddictUp 1.]
-
 Report wearing cultist veil:
 	if doom counter is 0:
 		if Woods01 is not placed:
@@ -71,28 +66,16 @@ Definition: cultist veil is condom pinnable: decide yes.
 
 Chapter - Class Outfit
 
-Definition: cultist veil (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
-	if wearing-target is cultist robe, decide yes;
+Definition: cultist veil (called C) is removal-blocking:
 	if wearing-target is C and the quest of C is insanity-quest and the quest-success of insanity-quest is 0, decide yes;
 	decide no.
 
-cultist-summoned is a number that varies.
 To compute unique recycling of (C - cultist veil):
 	now C is in the location of the elder altar;
-	now the times-met of herald is 0;
-	now cultist-summoned is 0.
+	now the times-met of herald is 0.
 
 To compute class outfit of (H - cultist veil):
-	let C be a random off-stage cultist robe;
-	if (C is actually summonable or (C is cultist robe and cultist-summoned is 0)):
-		PinkWardrobeUnclash C;
-		say "[bold type]Suddenly a sheer black robe appears around you![roman type][line break]";
-		summon C;
-		now cultist-summoned is 1;
-		now the raw-magic-modifier of C is the humiliation of the player / 10000;
-	otherwise if the humiliation of the player <= 40000:
-		say "[one of]Wearing the veil is making you feel less like a person![or][or][or][or][or][or]The veil continues to destroy any sense of self-respect or dignity that you have.[or][or][or][or][or][or][cycling]";
-		humiliate 50.
+	class summon cultist robe.
 
 Chapter - Quest
 

@@ -87,7 +87,10 @@ To decide which number is the unique cringe of (C - a knickers): [Some underwear
 To uniquely set up (K - a knickers):
 	repair K;
 	if diaper lover >= 1 and a random number between 1 and 8 is 1, now K is bed wetting;
-	if K is actually sheer and a random number between 1 and 4 is 1, now K is protection.
+	if K is actually sheer and a random number between 1 and 4 is 1, now K is protection;
+	if K is uncovered themed and a random number between 1 and 10 is 1:
+		now K is exposure;
+		now K is cursed.
 
 To set up influence of (C - a knickers):
 	set up random-based influence of C.
@@ -109,7 +112,7 @@ To decide which object is the unique-upgrade-target of (C - a knickers):
 
 This is the remove inappropriate knickers rule:
 	repeat with B running through plug panties:
-		unless B is WC plug panties, now B is in Holding Pen;
+		unless B is WC-plug-panties, now B is in Holding Pen;
 	now crotch rope is in Holding Pen;
 	repeat with B running through crotchless-panties:
 		now B is in Holding Pen;

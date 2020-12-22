@@ -28,13 +28,13 @@ To compute swimming in (H - hot-tub):
 			compute bathing;
 		otherwise:
 			say "You are sitting in the hot tub.";
-		say "[line break]Do you want to get out?";
+		say "[line break]Do you want to get out yet?";
 		if the player is consenting:
 			say "You climb out of the tub.";
 			now swimming is 0;
 		otherwise:
 			say "You keep relaxing in the tub.";
-			if a random number between 2 and 6 < swim-turns:[starting at the end of the third turn, a teacher might show up!]
+			if a random number between 1 and 4 < swim-turns:[a teacher might show up!]
 				let M be a random alive male teacher;
 				if diaper quest is 1, now M is a random alive teacher;
 				if M is monster and M is not in the location of the player and armband is worn and the refractory-period of M < 0:
@@ -55,7 +55,7 @@ To compute swimming in (H - hot-tub):
 						now swimming is 0;
 			otherwise:
 				let N be a random interested male teacher in the location of the player;
-				if N is monster and a random number between 4 and 7 < swim-turns:
+				if N is monster and a random number between 2 and 4 < swim-turns:
 					say "[line break][speech style of N]'While we're both here, let's see how your blowjob skills are coming along, eh?'[roman type][line break]It looks like you're going to have to decide whether or not to accept the rather blunt proposal...[line break]Do you suck [his of N] [DickDesc of N]? ";
 					if the player is bimbo consenting:
 						now presented-orifice is face;
@@ -64,10 +64,11 @@ To compute swimming in (H - hot-tub):
 						FavourUp N by the sex desire of N;
 						now current-monster is N;
 						follow the monster mouth insertion rules;
-						now swimming is 0;
 					otherwise:
+						say "[speech style of N]'Then get the fuck out of my hot tub!'[roman type][line break][BigNameDesc of N] looks furious.";
 						compute angry punishment of N;
 						satisfy N;
+					now swimming is 0;
 			say "[line break]";
 		if swimming is 1:
 			compute bathing;

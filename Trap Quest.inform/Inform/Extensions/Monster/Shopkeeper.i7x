@@ -255,6 +255,7 @@ To say BecomesAggressive of (M - shopkeeper):
 To bore (M - shopkeeper) for (N - a number) seconds:
 	dislodge M;
 	compute common boredom of M for N seconds;
+	now M is uninterested;
 	if the player is in Dungeon41:
 		calm M; [The shopkeeper never gets distracted from his job, instead he just turns friendly after dealing with you]
 	otherwise:
@@ -293,13 +294,15 @@ To compute perception of (M - shopkeeper):
 		say "[speech style of M]'[one of]Hey, what are you doing in here! Don't think I'm going to just let you steal from my shop!'[or]Who do you think you're fooling coming into my shop like that? Get out of my shop, thief!'[or]Hey! I can tell you're a thief just by looking at you, so leave my shop right now or face the consequences!'[at random][roman type]";
 		anger M;
 	otherwise if the class of the player is princess:
-		let J be a random off-stage plentiful accessory;
+		let J be a random off-stage ring;
 		if princessTax of M is false and J is accessory:
 			now J is pure diamond;
+			set shortcut of J;
 			now J is in the location of the player;
 			say "[speech style of M]'Ah, Princess, you must be here for this month's rent? Don't worry, I have it right here.'[roman type][line break][BigNameDesc of M] hands you a [J]!";
 			compute autotaking J;
 			now the princessTax of M is true;
+			progress quest of royal-quest;
 		otherwise:
 			say "[speech style of M]'Your Highness.'[roman type][line break]";
 		calm M;
@@ -545,9 +548,6 @@ To say LandingTaunt of (M - shopkeeper):
 	humiliate 50.
 
 To decide which number is the rounds of sex left of (M - shopkeeper):
-	if interracial fetish is 0 and M is not penetrating face:
-		if a random number between 1 and 4 is 1 and the reaction of the player is 1, decide on 0;
-		if a random number between 1 and 2 is 1 and the reaction of the player is 2, decide on 0;
 	decide on the sex-length of M.
 
 To say sexSubmitNearingClimax of (M - shopkeeper) in (F - a fuckhole):[shopkeeper climax is special]
@@ -562,8 +562,29 @@ To send (M - shopkeeper) home:
 	now M is guarding;
 	if M is interested, bore M.
 
+To decide if (M - shopkeeper) is losing wrapper in (F - a fuckhole):
+	if the class of the player is cheerleader:
+		if the player is getting lucky, decide no;
+		decide yes;
+	otherwise:
+		if the player is getting unlucky, decide yes;
+	decide no.
+
 To say CondomPieFlav of (M - shopkeeper) in (F - a fuckhole):
-	say "[speech style of M]'Fuck, this is so good! [one of]I'm almost there, baby!'[or]Ooh shit! Shii-iit! Here it comes!'[cycling][roman type][line break][BigNameDesc of M] buries [his of M] entire length inside of you, groaning with pleasure as the condom fills with [his of M] [semen]. You can feel it slowly bulging inside you, stretched thinner with every passing second as it struggles to contain [his of M] massive load, miraculously staying intact as [he of M] slowly pulls out and carefully peels it off without spilling a drop.[line break][speech style of M]'[if the reaction of the player is 2 or the class of the player is cheerleader]Didn't actually mean to come inside you, but I guess it's OK since I was wearing a condom.'[otherwise if the class of the player is living sex doll]Wow, you are one amazing sex doll. I hope you come back here again soon!'[otherwise if sissy black cock whore tattoo is worn][one of]I bet you wish this load actually ended up inside you, eh slut? Come back[or]Come[stopping] back when you're ready for this [BlackCock] to breed you for real.'[otherwise if M is friendly-fucking]That was fucking amazing. Feel free to ask me to do that again any time!'[otherwise]I hope you learned your lesson, otherwise I might have to do it without the condom sometime.'[end if][roman type][line break]".
+	say "[speech style of M]'Fuck, this is so good! [one of]I'm almost there, baby!'[or]Ooh shit! Shii-iit! Here it comes!'[cycling][roman type][line break][BigNameDesc of M] buries [his of M] entire length inside of you, groaning with pleasure as the condom fills with [his of M] [semen]. You can feel it slowly bulging inside you, stretched thinner with every passing second as it struggles to contain [his of M] massive load, miraculously staying intact as [he of M] slowly pulls out and carefully peels it off without spilling a drop.[line break][speech style of M]'[if the reaction of the player is 2 or the class of the player is cheerleader]Didn't actually mean to come inside you, but I guess it's OK since I was wearing a condom.'[otherwise if the class of the player is living sex doll]Wow, you are one amazing sex doll. I hope you come back here again soon!'[otherwise if sissy black cock whore tattoo is worn][one of]I bet you wish this load actually ended up inside you, eh slut? Come back[or]Come[stopping] back when you're ready for this [BlackCock] to breed you for real.'[otherwise if M is friendly-fucking]That was fucking amazing. Feel free to ask me to do that again any time!'[otherwise]I hope you learned your lesson, otherwise I might have to do it without the condom sometime.'[end if][roman type][line break]";
+	if the class of the player is cheerleader, say GotLuckyFlav.
+
+To compute condom failure of (M - shopkeeper) in (F - a fuckhole):
+	get condom failure image of M in F;
+	say CondomFailFlav of M in F;
+	unless the class of the player is cheerleader, say GotUnluckyFlav;
+	now M is unwrapped;
+	if F is asshole, AssFill 1;
+	otherwise PussyFill 1;
+	say CreampieReactionFlav to M in F.
+
+To say CondomFailFlav of (M - shopkeeper) in (F - a fuckhole):
+	say "[speech style of M]'Fuck, this is so good! [one of]I'm almost there, baby!'[or]Ooh shit! Shii-iit! Here it comes!'[cycling][roman type][line break][BigNameDesc of M] buries [his of M] entire length inside of you, groaning with pleasure as the condom fills with [his of M] [semen]. You can feel it slowly bulging inside you, stretched thinner with every passing second as it struggles to contain [his of M] massive load. At first, it seems to stay intact, but a little bit of warmth seems to linger inside you after [he of M] pulls out, and you look down to see a barely noticeable tear near the tip.[line break][speech style of M]'[if the reaction of the player is 2 or the class of the player is cheerleader]Didn't actually mean to come inside you, but I guess it's OK since I was wearing a condom.'[otherwise if the class of the player is living sex doll]Good thing I wore a condom, eh sex doll?'[otherwise if sissy black cock whore tattoo is worn][one of]I bet you wish I didn't wear a condom, eh slut? Come back[or]Come[stopping] back when you're ready for this [BlackCock] to breed you for real.'[otherwise if M is friendly-fucking]That was fucking amazing. Feels way better if I don't have to worry about cumming inside you.'[otherwise]I hope you learned your lesson, otherwise I might have to do it without the condom sometime.'[end if][roman type][line break][big he of M] doesn't seem to notice the condom is dripping as [he of M] peels it off.".
 
 To say CreampieFlav of (M - shopkeeper) in (F - vagina):
 	if the class of the player is living sex doll:[#####Selkie: could do much better here]
@@ -604,7 +625,7 @@ To decide if (M - shopkeeper) is willing to creampie (F - vagina):
 	decide yes.
 
 To say PullOutFlav of (M - shopkeeper) in (F - a fuckhole):
-	say "[speech style of M]'Since you've been so much fun, I'll let you off - I won't [if pregnancy fetish is 1 and M is penetrating vagina and the pregnancy of the player is 0]risk getting you pregnant[otherwise]come inside you[end if]!'[roman type] [BigNameDesc of M] suddenly pulls out and ejaculates over the stone floor. [speech style of M]'I hope you learned your lesson though.'".
+	say "[speech style of M]'Since you've been so much fun, I'll let you off - I won't [if F is vagina and the player is able to get pregnant]risk getting you pregnant[otherwise]come inside you[end if]!'[roman type] [BigNameDesc of M] suddenly pulls out and ejaculates over the stone floor. [line break][speech style of M]'I hope you learned your lesson though.'[roman type][line break]".
 
 To compute sexResist of (M - shopkeeper) in (F - a fuckhole):
 	say M rough sex 0;
@@ -1291,10 +1312,12 @@ To compute failed dominance punishment of (M - shopkeeper):
 			now M is carrying S;
 	if Dungeon05 is placed and (the class of the player is cheerleader or the player is getting unlucky):
 		drag to Dungeon05 by M;
+		unless the class of the player is cheerleader, say GotUnluckyFlav;
 		now another-turn-flavour is the substituted form of "[BigFuckerDesc of M] holds you in place.";
 		now another-turn is 1;
 	otherwise if Dungeon03 is placed and (the player is stealthy or the player is getting very unlucky):
 		drag to Dungeon03 by M;
+		unless yourself is stealthy, say GotUnluckyFlav;
 		now another-turn-flavour is the substituted form of "[BigFuckerDesc of M] holds you in place.";
 		now another-turn is 1;
 	[otherwise if Dungeon08 is placed and the player is getting unlucky:

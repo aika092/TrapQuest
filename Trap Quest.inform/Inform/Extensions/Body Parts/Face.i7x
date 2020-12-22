@@ -321,6 +321,7 @@ This is the swallowing rule:
 	compute swallowing.
 
 Definition: yourself is refusing to swallow:
+	if the player is very thirsty, decide no;
 	if (the semen volume of face > 0 and the semen taste addiction of the player is 1) or (the urine volume of face > 0 and the urine taste addiction of the player is 1) or (the milk volume of face > 0 and the milk taste addiction of the player is 1), decide yes;
 	decide no.
 
@@ -527,6 +528,9 @@ This is the player pukes rule:
 		if T is throater:
 			say "Your throat spasms around [FuckerDesc of T] as you gag uncontrollably!";
 			compute puking; [We keep going]
+			if T is royal guard and the class of the player is princess:
+				let C be a random worn overdress;
+				if C is royal dress, transform C into deepthroat princess crop top;
 		otherwise:
 			let L be water;
 			let U be 0;

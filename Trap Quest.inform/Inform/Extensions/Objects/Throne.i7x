@@ -104,12 +104,8 @@ Check entering the throne:
 				let C be a random worn headgear;
 				transform C into H;
 				say "[variable custom style]So I'm a princess now too?[roman type][line break]";
-				let D be a random worn overdress;
-				if D is overdress:
-					if D is not virgin princess outfit, transform D into virgin princess outfit;
-				otherwise:
-					PinkWardrobeUnclash virgin princess outfit;
-					summon virgin princess outfit uncursed;
+				PinkWardrobeUnclash virgin princess outfit;
+				class summon virgin princess outfit;
 				say "[variable custom style]COME ON![roman type][line break]" instead;
 			otherwise:
 				summon H cursed;

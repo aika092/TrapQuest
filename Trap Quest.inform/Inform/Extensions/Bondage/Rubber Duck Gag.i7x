@@ -1,6 +1,6 @@
 Rubber Duck Gag by Bondage begins here.
 
-A rubber duck gag is a kind of ballgag. There is 1 rubber duck gag. The printed name of rubber duck gag is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]rubber duck gag[clothing-title-after]". The text-shortcut of rubber duck gag is "rdg".
+A rubber duck gag is a kind of ballgag. There is 1 rubber duck gag. The printed name of rubber duck gag is "[clothing-title-before]rubber duck gag[clothing-title-after]". The text-shortcut of rubber duck gag is "rdg".
 
 To say ShortDesc of (C - a rubber duck gag):
 	say "rubber duck gag".

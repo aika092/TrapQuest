@@ -4,6 +4,10 @@ Heavy Club by Equippables begins here.
 
 heavy-club is an equippable. heavy-club is slap ready. heavy-club is biological. Understand "heavy club", "heavy", "club", "giant", "wooden" as heavy-club. The text-shortcut of heavy-club is "hek". heavy-club has a number called charge-status. The charge-status of heavy-club is 0.
 
+Definition: heavy-club is class-relevant:
+	if the class of the player is barbarian, decide yes;
+	decide no.
+
 Figure of heavy-club is the file "Items/Accessories/Equippables/heavyclub1.png".
 To decide which figure-name is the clothing-image of (W - heavy-club):
 	decide on figure of heavy-club.

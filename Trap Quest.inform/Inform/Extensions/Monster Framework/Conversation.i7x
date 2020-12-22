@@ -742,7 +742,7 @@ To compute conventional response of (M - a monster):
 			if the player is a masochist, say InvitationResponse of M with N;[the player invited M to join]
 			otherwise say AssistanceResponse of M with N;[the player asked M to get them free]
 		otherwise:
-			say AttentionResponse of M;[the player asked M to watch]
+			say AttentionResponse of M with N;[the player asked M to watch]
 	otherwise if the player is a sadist and the times-dominated of M > 0:[the player only taunts if they're a sadist]
 		say DominantResponse of M;
 	otherwise if the player is a masochist and the times-submitted of M > 0:[the player only brings up previous sex if they enjoyed it]
@@ -828,7 +828,7 @@ Displayed when a masochistic player greets a monster they have a mostly submissi
 To say SubmissiveGreeting to (M - a monster):
 	let N be the times-submitted of M;
 	let P be N + 1;
-	if the class of the player is princess and M is princess-consort:
+	if the class of the player is princess and M is bride-consort:
 		say "'[one of][big royal-subject of M]. Our previous tryst was most satisfying, I will admit.'[or][big royal-subject of M]. Your status certainly belies your skill in the bedroom.'[or]Greetings, [royal-subject of M]. I would not mind it if you were to ravish me again at a later time.'[at random]";
 	otherwise if M is mating:
 		say "'[one of][if M is presenting as female]Hey there baby momma!'[otherwise]Hey there baby daddy.'[end if][or]Hey baby. Want to make out?'[or]Hey babe! Let's hold hands!'[or][if M is presenting as female]So, want to be girlfriend girlfriend now that we have a baby together?'[otherwise]Want to be boyfriend girlfriend now that we have a baby together?'[end if][at random]";

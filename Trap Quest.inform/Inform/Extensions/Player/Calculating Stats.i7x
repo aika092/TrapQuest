@@ -47,6 +47,9 @@ To decide which number is the flat strength of the player:
 	repeat with C running through worn wearthings:
 		increase S by the strength-influence of C;
 	if the class of the player is priestess, decrease S by 2;
+	if the class of the player is puppy:
+		let N be the number of worn nudism-disabling clothing;
+		if N < 4, increase S by 4 - N;
 	if the player is thirsty, decrease S by the thirst of the player - 2;
 	if the player is hungry, decrease S by 2;
 	if the player is craving souls, decrease S by (the soul addiction of the player / 4) + 1;
@@ -139,6 +142,12 @@ To decide which number is the flat dexterity of the player:
 	repeat with C running through worn wearthings:
 		increase D by the dexterity-influence of C;
 	if the class of the player is cheerleader, increase D by the blondeness of hair;
+	if the class of the player is latex fetish model:
+		let O be 0;
+		repeat with C running through worn latex clothing:
+			let A be the outrage of C;
+			if A > O, now O is A;
+		increase D by O / 4;
 	if the player is blinded, decrease D by 2;
 	decrease D by the bondage dexterity penalty of the player;
 	if the player is bursting and the bladder of the player > 6, decrease D by (the bladder of the player - 6);

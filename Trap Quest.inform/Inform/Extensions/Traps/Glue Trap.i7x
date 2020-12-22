@@ -147,6 +147,7 @@ To trigger (Y - a glue trap):
 		if C is clothing and C is not glued clothing:
 			say "Your [C] is now stuck to you with glue!";
 			now C is glued;
+			force clothing-focus redraw;
 		if tough-shit is 1:
 			now G is in the location of the player;
 			now the times-stuck of G is 0;
@@ -588,10 +589,10 @@ To compute the mutation effects of (G - a glue):
 						now C is a random off-stage black rubber skirt;
 					otherwise if X is 4:
 						now C is a random off-stage ballet heels;
-					otherwise if X is 5:
-						now C is a random off-stage black catsuit;
-					otherwise if X is 6:
-						now C is a random off-stage black fetish hobble dress;
+					otherwise if X is 5 and black-catsuit is off-stage:
+						now C is black-catsuit;
+					otherwise if X is 6 and black fetish hobble dress is off-stage:
+						now C is black fetish hobble dress;
 					otherwise if X is 7:
 						now C is a random off-stage fetish business dress;
 					otherwise if X is 8 and black hood is off-stage:
@@ -621,9 +622,8 @@ To compute the mutation effects of (G - a glue):
 				if pregnancy fetish is 1 and C is actually summonable:
 					compute GlueMorphingInto of G to C;
 				otherwise if watersports fetish is 1:
-					let C be a random off-stage WC catsuit;
-					if C is actually summonable:
-						compute GlueMorphingInto of G to C;
+					if WC catsuit is actually summonable:
+						compute GlueMorphingInto of G to WC catsuit;
 					otherwise:
 						say "You feel... unsettled... thirsty. You picture yourself drinking from an arching stream, and lick your lips.";
 						if the stomach-water of the player > 0, decrease the stomach-water of the player by 1;

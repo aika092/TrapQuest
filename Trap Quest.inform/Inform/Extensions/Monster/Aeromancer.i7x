@@ -921,7 +921,7 @@ To vaginal penetration dominate (M - an aeromancer):
 		if the player is consenting:
 			anal penetration dominate M;
 		otherwise:
-			say "Nope. You throw the wand over your shoulder, smirking at the look on [his of M] face as your [sexual-player-penis] sinks into [his of M] warm pussy. [big he of M] groans dejectedly as you begin to fuck [him of M], and [if M is ballooned][his of M] [ChestDesc of M] jiggles[otherwise][his of M] chains clinks[end if] as [he of M] struggles ineffectively. With [his of M] entire body bound, there isn't much [he of M] can do aside from increase the sensation around your [SexShaft], but that turns out to be enough. It isn't long at all before you're struggling to hold back your orgasm, hoping [FuckerDesc of M] won't notice and take advantage of it somehow. At first it seems like [he of M] hasn't noticed, but it turns out [he of M]'s only waiting for the right moment, and starts struggling fiercely just before you go over the edge. [run paragraph on]";
+			say "Nope. You throw the wand over your shoulder, smirking at the look on [his of M] face as your [sexual-player-penis] sinks into [his of M] warm pussy. [big he of M] groans dejectedly as you begin to fuck [him of M], and [if M is ballooned][his of M] [ChestDesc of M] jiggles[otherwise][his of M] chains clink[end if] as [he of M] struggles ineffectively. With [his of M] entire body bound, there isn't much [he of M] can do aside from increase the sensation around your [SexShaft], but that turns out to be enough. It isn't long at all before you're struggling to hold back your orgasm, hoping [FuckerDesc of M] won't notice and take advantage of it somehow. At first it seems like [he of M] hasn't noticed, but it turns out [he of M]'s only waiting for the right moment, and starts struggling fiercely just before you go over the edge. [run paragraph on]";
 			let R be the semi-dominance roll for M;
 			if R >= 0:
 				if debugmode > 0, say "[bold type]PASSED[roman type][line break]";
@@ -1048,6 +1048,7 @@ To compute failed dominance punishment of (M - an aeromancer):
 			calm M;
 		otherwise:
 			compute tornado experiment of M;
+		say GotUnluckyFlav;
 	otherwise:
 		say "[speech style of M]'This experiment-... You won't believe-... Ugh. You threw off my train of thought. I'll be back.'[roman type]";
 		compute sissification;

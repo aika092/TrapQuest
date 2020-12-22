@@ -1,6 +1,9 @@
 Interacting Protecting by Monster Framework begins here.
 
 To compute friendly boredom of (M - a monster):
+	compute default friendly boredom progress of M.
+
+To compute default friendly boredom progress of (M - a monster):
 	increase the friendly boredom of M by 1;
 	if M is not caged and a random number from 10 to 30 < the friendly boredom of M and the player is not in danger, compute default friendly boredom of M.
 

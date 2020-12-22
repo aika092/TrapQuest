@@ -206,7 +206,7 @@ The woman spawning as a stool rule is listed last in the womanspawning rules.
 Chapter - Hotel Chair Scene
 
 Report going when the player is in Hotel21 and Hotel21 is not discovered:
-	if the number of monsters in Hotel21 is 0 and diaper focus is 0 and woman-player is redeploy appropriate:
+	if the number of monsters in Hotel21 is 0 and diaper focus is 0 and woman-player is relaxed redeploy appropriate:
 		deploy woman-player with woman-status 5;
 		say "You walk into the staff room just in time to see [NameDesc of woman-player] sitting down on one of the dildo chairs in this room, easing the large golden dong into [his of woman-player] asshole. Suddenly [he of woman-player] yelps. ";
 		let R be a random number between 1 and 4;
@@ -231,7 +231,7 @@ Chapter - Vines Scene
 
 Report going when there is an aggressive vine in the location and the woman-bimbo of woman-player < 4 and the vine-scene of woman-player is 0:
 	if debugmode is 1, say "Checking if barbara can appear.";
-	if the number of monsters in the location of the player is 0 and woman-player is redeploy appropriate:
+	if the number of monsters in the location of the player is 0 and woman-player is relaxed redeploy appropriate:
 		deploy woman-player with woman-status 90;
 		now woman-player is in the location of the player;
 		now woman-player is interested;
@@ -432,7 +432,7 @@ Understand "fucking", "machine", "box", "pink dildo", "rope", "ropes", "pulley",
 
 Report going when the player is in Hotel37 and the dominatrix-contraption-scene of woman-player is 0:
 	if debugmode is 1, say "Checking if barbara can appear.";
-	if the number of monsters in the location of the player is 0 and dominatrix is alive and woman-player is redeploy appropriate:
+	if dominatrix is alive and dominatrix is not in the location of the player and woman-player is relaxed redeploy appropriate:
 		deploy woman-player with woman-status 93;
 		now woman-player is in the location of the player;
 		now woman-player is interested;
@@ -564,7 +564,7 @@ Chapter - Human Toilet Scene
 
 To check woman toilet:
 	if the player is in Hotel38 and watersports fetish is 1 and a2m fetish >= 2:
-		if the human-toilet-scene of woman-player is 0 and the woman-bimbo of woman-player >= (a random number between 2 and 5) and the woman-status of woman-player < 10 and woman-player is redeploy appropriate:
+		if the human-toilet-scene of woman-player is 0 and the woman-bimbo of woman-player >= (a random number between 2 and 5) and woman-player is relaxed redeploy appropriate:
 			say "A groaning, gurgling noise from below you makes you notice that the [man of woman-player] below you looks different from usual.";
 			cutshow figure of barbara cutscene 4 for toilet;
 			say "Looking [if the player is not possessing a penis]between your legs [end if]into the toilet bowl you realise you recognise the ring-gagged face at the bottom - it's [NameDesc of woman-player]! [big he of woman-player] looks up at you with imploring puppy-dog eyes.[line break][speech style of woman-player]'Wease eh ee ow! Weeeease! Ha hay-hron hah heh hee!'[roman type][line break]You think you understand what [he of woman-player][']s saying? There's a key that can be used to release [him of woman-player], but it's currently in the possession of a hotel patron. Perhaps if you spend enough time in the hotel, you'll be able to encounter [him of a random patron] and agree to pay some kind of... [']ransom[']. Until then there's nothing you can do about the fact that [NameDesc of woman-player] is the new hotel toilet. It's up to you how many more times you use [his of woman-player] mouth as your waste disposal unit. You doubt it'll be very good for [his of woman-player] sanity, but it might help you feel more dominant.";
@@ -574,12 +574,10 @@ To check woman toilet:
 		otherwise if the human-toilet-scene of woman-player is not 1:
 			cutshow figure of barbara cutscene 4 for toilet;
 			if the human-toilet-scene of woman-player > 1:
-				say "You feel more dominant!";
 				SportsGet;
 				DelicateDown 1;
+				FavourDown woman-player by 1;
 				womanSluttify.
-
-forbidden-key is an object that varies.
 
 To compute woman toilet release:
 	let K be skeleton key;
@@ -876,9 +874,9 @@ Check pulling woman-player when the woman-status of woman-player is 80 and the s
 
 Chapter - Throne Scene
 
-Report going when the player is in Dungeon11 and the player is the donator and the woman-bimbo of woman-player is 4 and the throne-scene of woman-player is 0 and woman-player is redeploy appropriate:
+Report going when the player is in Dungeon11 and the player is the donator and the woman-bimbo of woman-player is 4 and the throne-scene of woman-player is 0:
 	if debugmode is 1, say "Checking if [WomanName] can appear.";
-	if the number of monsters in the location of the player is 0 and woman-player is redeploy appropriate:
+	if woman-player is relaxed redeploy appropriate:
 		deploy woman-player with woman-status 97;
 		now woman-player is in the location of the player;
 		now woman-player is interested;

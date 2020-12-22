@@ -42,6 +42,7 @@ This is the soiled diapers smell gross rule:
 	if messySmellSource is nothing, now messySmellSource is a random messy monster in the location of the player;
 	if messySmellSource is nothing, now messySmellSource is a random messed knickers in the location of the player;
 	if messySmellSource is nothing, now messySmellSource is a random soiled-diaper in the location of the player;
+	if messySmellSource is nothing and woman-player is in the location of the player and the woman-status of woman-player is 81, now messySmellSource is woman-player;
 	if messySmellSource is a thing:
 		if turnsWithSoiledDiaper < 100, increase turnsWithSoiledDiaper by 1;
 		if turnsWithSoiledDiaper is 1 and the player is perturbed and the player is not grossed out, say "The gross smell of [NameDesc of messySmellSource] is gradually filling your nostrils.";

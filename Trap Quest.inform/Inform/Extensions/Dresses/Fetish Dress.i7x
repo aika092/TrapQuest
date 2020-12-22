@@ -127,8 +127,8 @@ To say ClothingDesc of (O - a pink fetish dress):
 	say "An extremely tight fitting pink latex dress[if the largeness of breasts > 3] that shows off a decent amount of cleavage[end if].[if O is worn and the outrage of O is too humiliating]The bottom of the dress only goes down to your inner thighs, and is so tight that you walk with small steps to avoid it constantly riding up and revealing your crotch.[otherwise if O is worn]The bottom of the dress only goes down to your inner thighs and threatens to ride up at any moment.[end if]".
 
 To decide which object is the unique-upgrade-target of (C - a pink fetish dress):
-	if there is worn crotch covering clothing, decide on nothing;
-	decide on a random off-stage pink catsuit.
+	if pink-catsuit is off-stage and the number of worn crotch covering clothing is 0, decide on pink-catsuit;
+	decide on nothing.
 
 Definition: a pink fetish dress is pink themed: decide yes.
 
@@ -172,34 +172,39 @@ Definition: a windowed fetish dress is white themed: decide yes.
 
 Part 6 - Black Fetish Hobble Dress
 
-A black fetish hobble dress is a kind of fetish dress. A black fetish hobble dress is usually hobble-skirted. A black fetish hobble dress is usually crotch-skirted. A black fetish hobble dress is usually low cut. The text-shortcut of black fetish hobble dress is "bld". The armour of black fetish hobble dress is usually 14.
+black fetish hobble dress is a fetish dress. black fetish hobble dress is hobble-skirted. black fetish hobble dress is crotch-skirted. black fetish hobble dress is low cut. The text-shortcut of black fetish hobble dress is "bld". The armour of black fetish hobble dress is 14.
 
-There is 1 black fetish hobble dress.
+Definition: black fetish hobble dress is class-relevant:
+	if the class of the player is maid or the class of the player is latex fetish model, decide yes;
+	decide no.
 
-The printed name of black fetish hobble dress is usually "[clothing-title-before]black latex hobble dress[clothing-title-after]".
+The printed name of black fetish hobble dress is "[clothing-title-before]black latex hobble dress[clothing-title-after]".
 
-To decide which figure-name is clothing-image of (C - a black fetish hobble dress):
+To decide which figure-name is clothing-image of (C - black fetish hobble dress):
 	decide on figure of latex dress 6.
 
-To say ClothingDesc of (O - a black fetish hobble dress):
+To say ClothingDesc of (O - black fetish hobble dress):
 	say "This tight black latex dress has a hobble style skirt which forces the wearer to walk with short steps. The deep neckline and bottom of the dress have a white pattern that vaguely resembles a maid's outfit.".
 
-To decide which number is the initial outrage of (C - a black fetish hobble dress):
+To decide which number is the initial outrage of (C - black fetish hobble dress):
 	decide on 8.
 
-To uniquely set up (C - a black fetish hobble dress):
+To uniquely set up (C - black fetish hobble dress):
 	repair C;
 	now the armour of C is 8.
 
-To decide which number is the strength-influence of (O - a black fetish hobble dress):
+To compute class set up of (M - black fetish hobble dress):
+	increase the raw-magic-modifier of M by the crawl count of the player / 10.
+
+To decide which number is the strength-influence of (O - black fetish hobble dress):
 	let S be the magic-modifier of O;
 	decide on S.
 
-Definition: a black fetish hobble dress is transformation-protected:
+Definition: black fetish hobble dress is transformation-protected:
 	if the class of the player is maid, decide yes;
 	decide no.
 
-To say TransformReaction of (C - a black fetish hobble dress):
+To say TransformReaction of (C - black fetish hobble dress):
 	if the outrage of C is too humiliating:
 		say "[variable custom style]How am I even supposed to walk properly in this?! [if C is cursed]I wish I could take it off.[otherwise if the class of the player is maid]I guess I should probably take it off. But then I'd lose the bonuses from being a [']maid[']...[otherwise]I guess I should probably just take it off.[end if][roman type][line break]";
 	otherwise if C is almost too much:
@@ -207,8 +212,8 @@ To say TransformReaction of (C - a black fetish hobble dress):
 	otherwise if the humiliation of the player < 40000:
 		say "[variable custom style]Ooh, I didn't think that outfit could get any more ridiculous, but I'm glad it did![roman type][line break]".
 
-Definition: a black fetish hobble dress is black themed: decide yes.
-Definition: a black fetish hobble dress is black-and-white themed: decide yes.
+Definition: black fetish hobble dress is black themed: decide yes.
+Definition: black fetish hobble dress is black-and-white themed: decide yes.
 
 Part 7 - Purple Fetish Hobble Dress
 
@@ -289,9 +294,13 @@ Definition: an assless fetish dress is red themed: decide yes.
 
 Part 10 - Fetish Baby Dress
 
-fetish baby dress is a fetish dress. fetish baby dress is short. A fetish baby dress is transformation-rare. The text-shortcut of fetish baby dress is "fbbd".
+fetish baby dress is a fetish dress. fetish baby dress is short. fetish baby dress is transformation-rare. The text-shortcut of fetish baby dress is "fbbd".
 
 The printed name of fetish baby dress is usually "[clothing-title-before]latex fetish [if diaper lover > 0]baby [end if]dress[clothing-title-after]".
+
+Definition: fetish baby dress is class-relevant:
+	if the class of the player is latex clown, decide yes;
+	decide no.
 
 Definition: fetish baby dress is fetish appropriate:
 	if diaper lover > 0, decide yes;
@@ -299,23 +308,27 @@ Definition: fetish baby dress is fetish appropriate:
 
 Figure of fetish baby dress is the file "Items/Clothes/Upper/Latex/latexbabydress1.png".
 
-To decide which figure-name is clothing-image of (C - a fetish baby dress):
+To decide which figure-name is clothing-image of (C - fetish baby dress):
 	decide on figure of fetish baby dress.
 
-To say ClothingDesc of (O - a fetish baby dress):
+To say ClothingDesc of (O - fetish baby dress):
 	say "This cream and blue latex dress is covered in bows. It has a frilly[if diaper lover > 0], babyish[end if] theme, including what looks like a blue [if diaper lover > 0]baby [end if]rein harness around the middle.".
 
-To decide which number is the initial outrage of (C - a fetish baby dress):
+To say ClassSummonFlav of (C - fetish baby dress):
+	say "Your mask emits a high pitched cackling sound, and then a creamy fetish dress materialises over your body![line break][variable custom style]I look so ridiculous! [if the player is shameless]How delicious[otherwise]This is crazy[end if]![roman type][line break]".
+
+To compute class set up of (C - fetish baby dress):
+	now C is dominance;
+	now the raw-magic-modifier of C is 3.
+
+To decide which number is the initial outrage of (C - fetish baby dress):
 	if diaper quest is 1, decide on 0;
 	decide on 15.
-To decide which number is the initial cringe of (C - a fetish baby dress):
+To decide which number is the initial cringe of (C - fetish baby dress):
 	decide on 15.
 
-Definition: a fetish baby dress is baby themed: decide yes.
-Definition: a fetish baby dress is white themed: decide yes.
-Definition: a fetish baby dress is bow themed: decide yes.
-Definition: a fetish baby dress is transformation-protected:
-	if the class of the player is latex clown, decide yes;
-	decide no.
+Definition: fetish baby dress is baby themed: decide yes.
+Definition: fetish baby dress is white themed: decide yes.
+Definition: fetish baby dress is bow themed: decide yes.
 
 Fetish Dress ends here.

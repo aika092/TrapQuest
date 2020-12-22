@@ -5,9 +5,6 @@ Definition: a christmas headgear is christmas themed: decide yes.
 Definition: a christmas headgear is transformation-protected: decide no.
 
 christmas-summoned is a number that varies.
-To compute unique recycling of (C - a christmas headgear):
-	now christmas-summoned is 0;
-	now C is in pink wardrobe.
 
 To set up influence of (C - a christmas headgear):
 	set up taste-based influence of C.
@@ -19,14 +16,21 @@ To compute christmas socks of (H - a christmas headgear):
 	let S be a random frilly green socks;
 	if there is a worn deer dress, now S is a random deer socks;
 	if there is a worn gingerbread dress, now S is a random red-and-white striped stockings;
-	if S is actually summonable:
-		say "[bold type]Your [ShortDesc of H] wiggles as if it's alive, and suddenly you're wearing a [ShortDesc of S]![roman type][line break]";
-		summon S cursed;
-		now the raw-magic-modifier of S is 2.
+	class summon S.
 
 Definition: a christmas headgear is removal-blocking:
-	if (it is cursed or the quest of it is naughty-quest) and wearing-target is christmas themed, decide yes;
+	if the quest of it is naughty-quest and wearing-target is christmas themed, decide yes;
 	decide no.
+
+To compute class outfit of (H - a christmas headgear):
+	if the quest of H is naughty-quest:
+		compute naughtification;
+	otherwise if the number of worn christmas dress is 0:
+		let R be a random off-stage fetish appropriate standard christmas dress;
+		if R is a clothing:
+			class summon R;
+			if R is worn, compute christmas socks of H;
+	class summon candy cane boots.
 
 Chapter - Quest
 
@@ -60,40 +64,29 @@ To compute persistent reward of (Q - christmas-quest) on (C - a clothing):
 		let CG be a random off-stage christmas gift;
 		now CG is carried by the player.
 
-A santa hat is a kind of christmas headgear. A santa hat is usually wool. Figure of santa hat is the file "Items/Accessories/Head/santahat1.png". There is 1 santa hat.
+santa hat is a christmas headgear. santa hat is wool. Figure of santa hat is the file "Items/Accessories/Head/santahat1.png".
 
-The printed name of santa hat is usually "[clothing-title-before]Santa hat[clothing-title-after]". The text-shortcut of santa hat is "sah".
+The printed name of santa hat is "[clothing-title-before]Santa hat[clothing-title-after]". The text-shortcut of santa hat is "sah".
 
-To decide which figure-name is the clothing-image of (C - a santa hat):
+To decide which figure-name is the clothing-image of (C - santa hat):
 	decide on figure of santa hat.
 
-To say ClothingDesc of (H - a santa hat):
+To say ClothingDesc of (H - santa hat):
 	say "A smallish red and white Santa hat.".
 
-To say ShortDesc of (H - a santa hat):
+To say ShortDesc of (H - santa hat):
 	say "Santa hat".
 
-To compute SelfExamineDesc of (H - a santa hat):
+To compute SelfExamineDesc of (H - santa hat):
 	say "You are wearing a Santa hat on top of your [ShortDesc of hair]. ".
 
-Definition: a santa hat is condom pinnable: decide yes.
-Definition: a santa hat is red themed: decide yes.
+Definition: santa hat is condom pinnable: decide yes.
+Definition: santa hat is red themed: decide yes.
 
-To decide which object is the unique-upgrade-target of (H - a santa hat):
+To decide which object is the unique-upgrade-target of (H - santa hat):
 	let R be a random off-stage red bow headband;
 	if R is nothing or diaper quest is 0, decide on a random off-stage star headband;
 	otherwise decide on R.
-
-To compute class outfit of (H - a santa hat):
-	if diaper quest is 1:
-		if christmas-summoned is 0:
-			let R be a random red bow headband;
-			compute class outfit of R;
-	otherwise:
-		let C be a random off-stage santa corset;
-		if H is not cursed and C is actually summonable:
-			summon C;
-			say "You hear the sound of sleigh bells as a [C] appears around your midriff!".
 
 A red bow headband is a kind of christmas headgear. The printed name of red bow headband is usually "[clothing-title-before]red bow headband[clothing-title-after]". Figure of red bow headband is the file "Items/Accessories/Head/bowheadband1.png". There is 1 red bow headband. The text-shortcut of red bow headband is "rbh".
 
@@ -112,18 +105,6 @@ To say ShortDesc of (H - a red bow headband):
 
 To compute SelfExamineDesc of (H - a red bow headband):
 	say "You are wearing a green headband with a red bow on top of your [ShortDesc of hair]. ".
-
-To compute class outfit of (H - a red bow headband):
-	let R be a random off-stage standard christmas dress;
-	if R is actually summonable or (R is dress and christmas-summoned is 0 and the number of worn christmas dress is 0):
-		PinkWardrobeUnclash R;
-		if christmas-summoned is 0, now christmas-summoned is 1;
-		let HG be a random worn headgear;
-		say "[bold type]Your [ShortDesc of HG] wiggles as if it's alive, and suddenly you're wearing a [ShortDesc of R]![roman type][line break]";
-		summon R cursed;
-		now the raw-magic-modifier of R is 2;
-	otherwise:
-		compute christmas socks of H.
 
 To decide which object is the unique-upgrade-target of (H - a red bow headband):
 	decide on a random off-stage star headband.
@@ -168,6 +149,9 @@ christmas bonnet is a christmas headgear.
 
 The printed name of christmas bonnet is "[clothing-title-before]Christmas bonnet[clothing-title-after]". Figure of christmas bonnet is the file "Items/Accessories/Head/christmasbonnet1.png". The text-shortcut of christmas bonnet is "chmb".
 
+To compute unique recycling of (C - christmas bonnet):
+	now C is in pink wardrobe.
+
 Definition: christmas bonnet is bow themed: decide yes.
 Definition: christmas bonnet is green themed: decide yes.
 
@@ -192,6 +176,9 @@ To decide which number is the initial cringe of (H - christmas bonnet):
 	decide on 6.
 
 conic santa hat is a christmas headgear. conic santa hat is latex.
+
+To compute unique recycling of (C - conic santa hat):
+	now C is in pink wardrobe.
 
 The printed name of conic santa hat is "[clothing-title-before]conic Santa hat[clothing-title-after]". Figure of conic santa hat is the file "Items/Accessories/Head/santahat2.png". The text-shortcut of conic santa hat is "csh".
 
@@ -252,20 +239,29 @@ To compute generic first time class reward of (Q - nice-quest) on (C - a clothin
 		otherwise:
 			now D is in the location of the player;
 		say "summoning a [MediumDesc of D] [if D is worn]straight onto your finger[otherwise]right in front of you[end if]!";
-	let S be a random santa hat;
-	now S is in the location of the player;
-	now S is cursed;
-	now the quest of S is christmas-quest;
+	now santa hat is in the location of the player;
+	now santa hat is cursed;
+	now the quest of santa hat is christmas-quest;
 	say "A Santa hat appears in front of you on the ground!";
-	compute autotaking S;
+	compute autotaking santa hat;
 	say "[BigNameDesc of C] fizzles into nothingness. ";
 	only destroy C.
 
 naughty-quest is a headgear-clothing-quest.
 To say QuestFlav of (Q - naughty-quest):
-	say "You sense that the only way to stop being labelled as a naughty [if diaper quest is 1]baby[otherwise][boy of the player][end if] is to find a [bold type]knife[roman type] and destroy the headgear.".
+	say "You sense that it wants you to [if diaper quest is 1]get your diaper changed by others[otherwise]suck on some sticks (penises)[end if].".
 To say QuestTitle of (Q - naughty-quest):
-	say " (naughty quest)".
+	say " (naughty [if diaper quest is 1]diaper change[otherwise]oral[end if] quest)".
+To progress quest of (Q - naughty-quest):
+	let H be a random worn headgear;
+	if H is headgear and the quest of H is Q:
+		let LC be the list of worn christmas themed clothing;
+		if the number of entries in LC > 0:
+			if the number of entries in LC > 1 and H is listed in LC, remove H from LC;
+			sort LC in random order;
+			let C be entry 1 in LC;
+			say "Reacting to you fulfilling the request of your [H], [NameDesc of C] fizzles into nothingness!";
+			destroy C.
 
 Report resisting:
 	compute naughtification.
@@ -280,37 +276,27 @@ Report zapping it with:
 	compute naughtification.
 To compute naughtification:
 	let C be a random worn christmas headgear;
-	if C is a thing and the quest of C is nice-quest:
-		say "[bold type]Your [ShortDesc of C] vibrates with anger! You have been deemed naughty![roman type][line break]";
-		now the quest of C is naughty-quest;
-		if naughty-or-nice outfit is worn and naughty-or-nice outfit is not naughtified:
-			say "The motif on the front of your [ShortDesc of naughty-or-nice outfit] changes!";
-			now naughty-or-nice outfit is naughtified;
-			try examining naughty-or-nice outfit;
-			PinkWardrobeUnclash christmas booties;
-			summon christmas booties;
-			PinkWardrobeUnclash christmas mittens;
-			summon christmas mittens;
-			say "Christmas themed booties and mittens appear on you!";
-			let P be a random yellow pacifier;
-			if P is actually summonable:
-				say "A pacifier appears in your mouth!";
-				summon P cursed with quest;
-		if diaper lover <= 0:
-			if present outfit is worn, transform present outfit into candy cane outfit;
-			let C be a random worn dress;
-			now C is oral-sex-addiction-influencing;
-			now the raw-magic-modifier of C is -1;
-			PinkWardrobeUnclash red-and-white rubber stockings;
-			summon red-and-white rubber stockings uncursed;
-			now the raw-magic-modifier of red-and-white rubber stockings is -2;
-			now red-and-white rubber stockings is oral-sex-addiction-influencing;
-			say "Candy cane patterned latex stockings appear on your legs!";
-			PinkWardrobeUnclash candy-cane-gloves;
-			summon candy-cane-gloves uncursed;
-			now the raw-magic-modifier of candy-cane-gloves is -2;
-			now candy-cane-gloves is oral-sex-addiction-influencing;
-			say "Elbow-length candy cane patterned latex gloves appear on your arms!";
-			say "You feel a weird desperate craving to suck on something...";
+	if C is a thing:
+		if the quest of C is nice-quest:
+			say "[bold type]Your [ShortDesc of C] vibrates with anger! You have been deemed naughty![roman type][line break]";
+			now the quest of C is naughty-quest;
+		if the quest of C is naughty-quest:
+			if diaper lover <= 0:
+				class summon candy cane outfit;
+				class summon candy-cane-gloves;
+				class summon red-and-white rubber stockings;
+			otherwise:
+				if naughty-or-nice outfit is worn:
+					if naughty-or-nice outfit is not naughtified:
+						say "The motif on the front of your [ShortDesc of naughty-or-nice outfit] changes!";
+						now naughty-or-nice outfit is naughtified;
+						try examining naughty-or-nice outfit;
+				otherwise:
+					class summon naughty-or-nice outfit;
+					now naughty-or-nice outfit is naughtified;
+					try examining naughty-or-nice outfit;
+				class summon christmas booties;
+				class summon christmas mittens;
+				class summon yellow-pacifier.
 
 Santa Hat ends here.

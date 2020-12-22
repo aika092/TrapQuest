@@ -34,6 +34,15 @@ Check touching WoodsScenery02:
 		otherwise:
 			say "As your hand touches the statue's, a jolt of electricity shocks your fingers! You recoil in pain. ";
 			PainUp 1;
+			let C be a random currently uncovered tearable dress;
+			if C is clothing:
+				say "The electricity reaches your [C]! ";
+				if C is metal:
+					say "The metal becomes scorching hot for a moment, hurting you even more!";
+					PainUp 1;
+				otherwise:
+					say "With a bright white flash, your [C] becomes cinders, burning away until there's nothing left.";
+					destroy C;
 		now the charge of the noun is 450;
 		allocate 2 seconds instead;
 	otherwise if the player's command includes "head":

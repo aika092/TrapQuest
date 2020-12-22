@@ -125,7 +125,7 @@ To compute perception of (M - receptionist):
 
 To say EnslavedDominationFlav of (M - receptionist):
 	say "You force [NameDesc of M] to bend over [his of M] desk. With [his of M] ankle chained down, there's not much [he of M] can do to stop you. ";
-	if the player is possessing a penis and the number of worn cursed undisplacable clothing is 0:
+	if the player is possessing a penis and the number of worn pussy covering actually unavoidable clothing is 0:
 		if penis is penis-erect or penis is erect-at-will:
 			say "Holding your [if penis is penis-erect]erect[otherwise]rapidly hardening[end if] [ShortDesc of penis] in one hand, you guide it into [his of M] well-lubricated snatch, and thrust away until you bring yourself to a well-earned climax.";
 			orgasm quietly;

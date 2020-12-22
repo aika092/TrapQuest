@@ -2,6 +2,14 @@ Baby Booties by Shoes begins here.
 
 A baby booties is a kind of shoes. A baby booties is usually cotton. A baby booties is usually unique.
 
+Definition: a baby booties is class-relevant:
+	if the player is actually an adult baby, decide yes;
+	decide no.
+
+To compute class set up of (C - a baby booties):
+	let H be a random headgear;
+	if H is not clothing or the quest of H is not naughty-quest, now C is cursed.
+
 The printed name of baby booties is usually "[clothing-title-before]pair of baby booties[clothing-title-after]". The text-shortcut of baby booties is "bbo". Understand "baby", "booties" as baby booties.
 
 pink-baby-booties is a baby booties.
@@ -76,7 +84,7 @@ Understand "booties" as baby slippers.
 
 rubber booties is a baby booties. rubber booties is unique. rubber booties is latex.
 
-Definition: a rubber booties is transformation-protected:
+Definition: rubber booties is class-relevant:
 	if the class of the player is latex clown, decide yes;
 	decide no.
 
@@ -89,6 +97,9 @@ To decide which figure-name is the clothing-image of (H - a rubber booties):
 
 Definition: rubber booties is bow themed: decide yes.
 Definition: rubber booties is black themed: decide yes.
+
+To compute class set up of (W - rubber booties):
+	now W is cursed.
 
 To say ClothingDesc of (C - rubber booties):
 	say "A pair of latex booties. It consists of black mary janes with blue bows at the bottom, and then a rubber skin-coloured section that goes up to your knee, where latex blue frills complete the fetishy look.".
@@ -120,7 +131,10 @@ The trousers latex booties clash rule is listed in the trousers wearability rule
 
 christmas booties is a baby booties. christmas booties is unique.
 
-Definition: a christmas booties is transformation-protected:
+Definition: christmas booties is class-relevant:
+	if the class of the player is santa's little helper, decide yes;
+	decide no.
+Definition: christmas booties is transformation-protected:
 	if the class of the player is santa's little helper, decide yes;
 	decide no.
 
@@ -128,7 +142,7 @@ The printed name of christmas booties is "[clothing-title-before]pair of Christm
 
 Figure of christmas booties is the file "Items/Clothes/Lower/Feet/Booties/booties5.png".
 
-To decide which figure-name is the clothing-image of (H - a christmas booties):
+To decide which figure-name is the clothing-image of (H - christmas booties):
 	decide on the figure of christmas booties.
 
 Definition: christmas booties is bow themed: decide yes.
@@ -156,6 +170,9 @@ To decide which number is the unique cringe of (C - bunny booties):
 To decide which number is the hindrance-modifier of (C - bunny booties):
 	decide on 0.
 
+To compute class set up of (C - bunny booties):
+	now the raw-magic-modifier of C is 2.
+
 To say UniqueShortDesc of (C - bunny booties):
 	say "bunny booties".
 
@@ -171,5 +188,31 @@ To set up influence of (C - bunny booties):
 Definition: bunny booties is transformation-protected: decide yes.
 Definition: bunny booties is brown themed: decide yes.
 Definition: bunny booties is baby themed: decide yes.
+
+candy cane boots is a shoes. candy cane boots is wool. candy cane boots is unique.
+
+Definition: candy cane boots is class-relevant:
+	if the class of the player is santa's little helper, decide yes;
+	decide no.
+Definition: candy cane boots is transformation-protected:
+	if the class of the player is santa's little helper, decide yes;
+	decide no.
+
+The printed name of candy cane boots is "[clothing-title-before]pair of candy cane boots[clothing-title-after]". The text-shortcut of candy cane boots is "ccb".
+
+Figure of candy cane boots is the file "Items/Clothes/Lower/Feet/Booties/booties6.png".
+
+To decide which figure-name is the clothing-image of (H - candy cane boots):
+	decide on the figure of candy cane boots.
+
+Definition: candy cane boots is white themed: decide yes.
+Definition: candy cane boots is food themed: decide yes.
+Definition: candy cane boots is christmas themed: decide yes.
+
+To say ClothingDesc of (C - candy cane boots):
+	say "A pair of white woooly boots with a pattern of red candy canes.".
+
+To say UniqueShortDesc of (C - candy cane boots):
+	say "candy cane boots".
 
 Baby Booties ends here.

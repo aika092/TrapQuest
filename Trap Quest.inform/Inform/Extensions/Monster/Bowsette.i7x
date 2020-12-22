@@ -311,6 +311,9 @@ To compute angry punishment of (M - bowsette):
 		say "[speech style of M]'Oops! I didn't mean to do that.'[roman type][line break][BigNameDesc of M] look embarrassed.";
 		cutshow Figure of happy bowsette fire cutscene for M;
 
+To decide which number is the condom resistance of (M - bowsette):
+	decide on 5 - (the temperament of M * 3).
+
 To say NearingClimaxOral of (M - bowsette):
 	say "Smoke begins to billow from [NameDesc of M][']s mouth as [he of M] picks up speed!".
 

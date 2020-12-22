@@ -610,6 +610,9 @@ To say FaintingFlav (N - 22):
 To say FaintingFlav (N - 23):
 	say "'Next time, you should get out of the water before you get so tired.'".
 
+To say FaintingFlav (N - 24):
+	say "'Next time, you should leave the room as soon as [he of minotaur] starts swinging the cage around. Honestly, MOST players slutty enough to act like yout are already too voluptuous to get dragged in.'".
+
 To say FaintingFlav (N - 50):
 	say "'It was all getting a bit much for you, was it? No need to feel ashamed, it happens to the best of us. Have as much time as you need to rest up and recover.'".
 

@@ -44,7 +44,7 @@ Definition: centaur is presenting as male:
 	decide no.
 
 Definition: a centaur is woods dwelling:
-	if the player is the donator and diaper quest is 0, decide yes;
+	if diaper quest is 0 and mythical creature fetish is 1, decide yes;
 	decide no.
 
 Definition: centaur is controlling: decide no.[She can't exactly reach]
@@ -65,7 +65,7 @@ To say cockhead of (M - centaur):
 	say "flat, [if full-lady fetish is 1]plastic[otherwise]bestial[end if] [one of]cockhead[or]tip[or]bellend[or]dicktip[in random order]".
 
 To set up (M - centaur):
-	if mythical creature fetish is 0 or diaper quest is 1 or the player is not the donator, destroy M;
+	if mythical creature fetish is 0 or diaper quest is 1, destroy M;
 	reset M;
 	now the monstersetup of M is 1;
 	now the raw difficulty of M is the starting difficulty of M;
@@ -194,6 +194,7 @@ This is the centaur lowers shield rule:
 	let M be centaur;
 	if M is shieldblocked and a random number between 1 and 2 is not 1:
 		say "[BigNameDesc of M] lowers [his of M] shield and pulls out [his of M] sword.";
+		now M is not shieldblocked;
 		rule succeeds.
 The centaur lowers shield rule is listed first in the centaur priority attack rules.
 
@@ -528,6 +529,19 @@ To say CreampieFlav of (M - centaur) in (F - a fuckhole):
 
 To say CondomPieFlav of (M - centaur) in (F - a fuckhole):
 	say "[BigFuckerDesc of M] begins to groan, forcing [his of M] long [DickDesc of M] in deeper and deeper with every thrust. You are left with a final moment of anticipation as [he of M] bottoms out, [his of M] [LongDickDesc of M] penetrating you all the way to your core as the first salvo of [semen] explodes into the condom. [big he of M] continues to lightly thrust as the latex sheath captures [his of M] load, taking a solid minute to thoroughly empty out [his of M] balls before finally pulling out.";
+	if the player is pheromonal, say GotLuckyFlav;
+
+To decide if (M - centaur) is losing wrapper in (F - a fuckhole):
+	if the player is pheromonal:
+		if the player is getting lucky, decide no;
+		decide yes;
+	otherwise:
+		if the player is getting unlucky, decide yes;
+	decide no.
+
+To say CondomFailFlav of (M - centaur) in (F - a fuckhole):
+	say "[BigFuckerDesc of M] begins to groan, forcing [his of M] long [DickDesc of M] in deeper and deeper with every thrust. You are left with a final moment of anticipation as [he of M] bottoms out, [his of M] [LongDickDesc of M] penetrating you all the way to your core as the first salvo of [semen] explodes into the condom. It struggles to contain the next salvo, and when the third salvo hits, you can practically feel the latex tearing open as hot [semen] breaks through and rushes into your unprotected [variable F]. With [his of M] [DickDesc of M] so deep inside you, there's nothing you can do as every last drop of [his of M] load is pumped into your belly.";
+	unless the player is pheromonal, say GotUnluckyFlav;
 
 To say MercyReaction of (M - centaur):
 	if the rounds of sex left of M is 0 and M is unwrapped:

@@ -129,6 +129,7 @@ Report examining a condom pinned clothing:
 
 Definition: a monster is condom-preferring:
 	if the class of the player is cumdumpster, decide yes;
+	if it is bride-consort, decide no;
 	if a random number between -3 and (the trophy-mode of condom-trophy * 10) >= 0, decide yes;
 	decide no.
 
@@ -189,11 +190,15 @@ To compute default condom filling of (M - a monster):
 	if C is nothing or C is not condom pinnable or a random number between 1 and 2 is 1, now C is a random worn condom pinnable clothing; [50% chance of condoms going on the same item as there are already condoms]
 	if runic headband is worn and runic headband is not purity and M is penetrating vagina, now C is runic headband;
 	let S be nothing;
+	if the class of the player is bride:
+		now C is bridal garter;
+		now S is bridal garter;
+		if bridal garter is not worn, summon bridal garter cursed with silent quest;
 	if C is nothing:
 		now S is string-belt;
 		summon S cursed with silent quest;
 		now C is S;
-	say "[if S is clothing]Suddenly, a [printed name of S] appears around your waist! [end if][CondomPinFlav of M on C][CondomPinReactionFlav of M on C]";
+	say "[if S is clothing]Suddenly, a [printed name of S] appears on you! [end if][CondomPinFlav of M on C][CondomPinReactionFlav of M on C]";
 	say CondomNewbieTip;
 	increase the used condoms of C by 1;
 	say "[one of]They seem to magically fuse, and you now have a used condom hanging from your [C]! [or]The condom fuses to your [C] just like before. [or]The condom fuses to your [C]. [stopping]";
@@ -216,7 +221,11 @@ To compute default condom filling of (M - a monster):
 		let SC be a random worn scrunchie;
 		transform SC into condom pigtails;
 	otherwise if thirsty work condom hat is worn and total used condoms > 4:
-		transform thirsty work condom hat into cumdumpster condom hat.
+		transform thirsty work condom hat into cumdumpster condom hat;
+	otherwise if the class of the player is "silicone queen":
+		let H be a random worn headgear;
+		now the quest of H is condom-eating-quest;
+		transform H into rubber condom hat.
 
 To say CondomNewbieTip:
 	if newbie tips is 1, say "[one of][newbie style]Newbie tip: You've got a condom on your clothes! That's right, NPCs will invariably pin the condoms they use to your clothing and this increases how humiliating the clothing is, and therefore your appearance rating. You can't remove the condoms from the clothing yourself - blame the makers of the game and their ability to manipulate the rules of this universe. You can however bite and drink them - this obviously makes you drink a humiliating dose of [semen], but it also negates the increased outrage of the item. Of course, the best solution is probably to eventually remove the piece of clothing when it gets too ridiculous.[roman type][line break][or][stopping]".

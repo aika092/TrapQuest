@@ -47,7 +47,6 @@ Carry out PinkEating:
 	if the player is prone:
 		now the stance of the player is 0;
 		say "[bold type]You are now standing.[roman type]";
-	if there is a worn lipstick collar, now a random worn lipstick collar is not tethering;
 	remove the noun from play.
 
 Pink Pill ends here.

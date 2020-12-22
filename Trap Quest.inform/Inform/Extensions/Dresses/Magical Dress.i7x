@@ -1,8 +1,8 @@
 Magical Dress by Dresses begins here.
 
-A magical dress is a kind of overdress. A magical dress is usually unique. A magical dress is usually silk. A magical dress is usually only arm covering. A magical dress is not-top-displacable. The text-shortcut of magical dress is "mgd". [A magical dress is usually strength-influencing.]
+A magical dress is a kind of overdress. A magical dress is unique. A magical dress is silk. A magical dress is only arm covering. A magical dress is not-top-displacable. The text-shortcut of magical dress is "mgd". [A magical dress is strength-influencing.]
 
-Definition: a magical dress is class-transformation-protected:
+Definition: a magical dress is class-relevant:
 	if the class of the player is magical girl, decide yes;
 	decide no.
 
@@ -21,54 +21,62 @@ Definition: a magical dress is magic themed: decide yes.
 To decide which number is the initial outrage of (H - a magical dress):
 	decide on 4.
 
-A lolita magical dress is a kind of magical dress.
-
-There is 1 lolita magical dress.
+lolita magical dress is a magical dress.
 
 Figure of lolita magical dress is the file "Items/Clothes/Upper/Special/MahouShoujo/magicaldress1.png".
 
-To decide which figure-name is the clothing-image of (O - a lolita magical dress):
+To decide which figure-name is the clothing-image of (O - lolita magical dress):
 	decide on figure of lolita magical dress.
 
-The printed name of lolita magical dress is usually "[clothing-title-before]magical dress[clothing-title-after]".
+The printed name of lolita magical dress is "[clothing-title-before]magical dress[clothing-title-after]".
 
-To compute SelfExamineDesc of (O - a lolita magical dress):
+To compute SelfExamineDesc of (O - lolita magical dress):
 	say "[if the top-layer of O > 1 or the mid-layer of O > 1]Over this you[otherwise]You[end if] are wearing a [ShortDesc of O]. ".
 
-To say ShortDesc of (O - a lolita magical dress):
+To say ShortDesc of (O - lolita magical dress):
 	say "lolita magical dress".
 
-To say ClothingDesc of (O - a lolita magical dress):
+To say ClothingDesc of (O - lolita magical dress):
 	say "A frilly hime lolita dress that [if the thickness of hips > 5 and O is worn]would be just below knee height on a normal sized ass, but yours prevents it from sitting properly and so it only covers just beneath your rear[otherwise]is just below knee height[end if]. It is layered with bows and lace, making it incredibly innocent looking. It sparkles with an almost magical air.".
 
-Definition: a lolita magical dress is white themed: decide yes.
-Definition: a lolita magical dress is potentially erection concealing: decide yes. [non-tight skirts conceal erections]
+Definition: lolita magical dress is white themed: decide yes.
+Definition: lolita magical dress is potentially erection concealing: decide yes. [non-tight skirts conceal erections]
 
-An exposing magical dress is a kind of magical dress. An exposing magical dress is usually arm exposing. An exposing magical dress is optional-top-displacable. An exposing magical dress is chestless. An exposing magical dress is belly exposing. An exposing magical dress is unskirted.
+exposing-magical-dress is a magical dress. exposing-magical-dress is arm exposing. exposing-magical-dress is optional-top-displacable. exposing-magical-dress is chestless. exposing-magical-dress is belly exposing. exposing-magical-dress is unskirted. Understand "exposing", "magical", "dress" as exposing-magical-dress.
 
-There is 1 exposing magical dress.
+Definition: exposing-magical-dress is class-relevant:
+	if the class of the player is magical girl or the class of the player is catgirl, decide yes;
+	decide no.
 
 Figure of exposing magical dress is the file "Items/Clothes/Upper/Special/MahouShoujo/magicaldress2.png".
 
-To decide which figure-name is the clothing-image of (O - an exposing magical dress):
+To decide which figure-name is the clothing-image of (O - exposing-magical-dress):
 	decide on figure of exposing magical dress.
 
-The printed name of exposing magical dress is usually "[clothing-title-before]exposing magical dress[clothing-title-after]".
 
-To compute SelfExamineDesc of (O - an exposing magical dress):
+The printed name of exposing-magical-dress is "[clothing-title-before]exposing magical dress[clothing-title-after]".
+
+To compute SelfExamineDesc of (O - exposing-magical-dress):
 	say "You are wearing a [ShortDesc of O]. ".
 
-To say ShortDesc of (O - an exposing magical dress):
+To say ClassSummonFlav of (C - exposing-magical-dress):
+	say "A sailor uniform appears on you! No wait, this is only the neckline of a sailor uniform, leaving your entire body fully exposed!".
+
+To say ShortDesc of (O - exposing-magical-dress):
 	say "exposing magical dress".
 
-To say ClothingDesc of (O - an exposing magical dress):
+To say ClothingDesc of (O - exposing-magical-dress):
 	say "The top of a Japanese sailor uniform, but just the neckline with the bow, literally nothing else. It sits just above your chest, exposing literally everything, and yet somehow magically forbidding you from wearing much else.".
 
-To decide which number is the initial outrage of (H - an exposing magical dress):
-	decide on 10.
+To compute class set up of (O - exposing-magical-dress):
+	now O is intelligence-influencing;
+	now the raw-magic-modifier of O is 1 + the stance of the player.
 
-Definition: an exposing magical dress is nudism-enabling: decide yes.
-Definition: an exposing magical dress is blue themed: decide yes.
+To decide which number is the initial outrage of (H - exposing-magical-dress):
+	decide on 5.
+
+Definition: exposing-magical-dress is nudism-enabling: decide yes.
+Definition: exposing-magical-dress is blue themed: decide yes.
 
 magical-maid-outfit is a magical dress. Understand "magical", "maid", "outfit" as magical-maid-outfit. magical-maid-outfit is fully exposing. magical-maid-outfit is arm exposing. magical-maid-outfit is crotch-intact. magical-maid-outfit is unskirted. magical-maid-outfit has a number called charge. magical-maid-outfit has an object called saved-item.
 
@@ -79,7 +87,7 @@ Figure of magical-maid-outfit is the file "Items/Clothes/Upper/Special/MahouShou
 To decide which figure-name is the clothing-image of (O - magical-maid-outfit):
 	decide on figure of magical-maid-outfit.
 
-The printed name of magical-maid-outfit is usually "[clothing-title-before]magical maid outfit[clothing-title-after]".
+The printed name of magical-maid-outfit is "[clothing-title-before]magical maid outfit[clothing-title-after]".
 
 To compute SelfExamineDesc of (O - magical-maid-outfit):
 	say "You are wearing a [ShortDesc of O]. ".

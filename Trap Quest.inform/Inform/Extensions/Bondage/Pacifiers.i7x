@@ -1,6 +1,6 @@
 Pacifiers by Bondage begins here.
 
-A pacifier is a kind of ballgag. The text-shortcut of pacifier is "pac".
+A pacifier is a kind of ballgag. The text-shortcut of pacifier is "pac". Understand "pacifier" as pacifier.
 Definition: a pacifier is same-type:
 	if theme-share-target is ballgag, decide yes;
 	decide no.
@@ -28,8 +28,11 @@ A pink pacifier is a kind of baby pacifier. There is 1 pink pacifier. The printe
 Definition: a pink pacifier is pink themed: decide yes.
 A tiger pacifier is a kind of baby pacifier. There is 1 tiger pacifier. The printed name of tiger pacifier is "[clothing-title-before]tiger pacifier[clothing-title-after]". The text-shortcut of tiger pacifier is "tpa".
 Definition: tiger pacifier is orange themed: decide yes.
-A yellow pacifier is a kind of baby pacifier. There is 1 yellow pacifier. The printed name of yellow pacifier is "[clothing-title-before]yellow pacifier[clothing-title-after]". The text-shortcut of yellow pacifier is "ypa".
-Definition: a yellow pacifier is yellow themed: decide yes.
+yellow-pacifier is baby pacifier. The printed name of yellow-pacifier is "[clothing-title-before]yellow pacifier[clothing-title-after]". The text-shortcut of yellow-pacifier is "ypa". Understand "yellow" as yellow-pacifier.
+Definition: yellow-pacifier is yellow themed: decide yes.
+Definition: yellow-pacifier is class-relevant:
+	if the class of the player is santa's little helper or the player is actually an adult baby, decide yes;
+	decide no.
 A sparkly princess pacifier is a kind of baby pacifier. There is 1 sparkly princess pacifier. The printed name of sparkly princess pacifier is "[clothing-title-before]sparkly princess pacifier[clothing-title-after]". The text-shortcut of sparkly princess pacifier is "spp".
 Definition: a sparkly princess pacifier is royalty themed: decide yes.
 Definition: a sparkly princess pacifier is heart themed: decide yes.
@@ -111,7 +114,7 @@ To decide which figure-name is clothing-image of (C - a pink pacifier):
 	decide on figure of pink pacifier.
 To decide which figure-name is clothing-image of (C - a tiger pacifier):
 	decide on figure of tiger pacifier.
-To decide which figure-name is clothing-image of (C - a yellow pacifier):
+To decide which figure-name is clothing-image of (C - yellow-pacifier):
 	decide on figure of yellow pacifier.
 To decide which figure-name is clothing-image of (C - a sparkly princess pacifier):
 	decide on figure of sparkly princess pacifier.
@@ -127,7 +130,7 @@ To say ClothingDesc of (C - a pink pacifier):
 To say ClothingDesc of (C - a tiger pacifier):
 	say "This orange pacifier has a tiger face on the front.".
 
-To say ClothingDesc of (C - a yellow pacifier):
+To say ClothingDesc of (C - yellow-pacifier):
 	say "This white and yellow pacifier is more discreet than most. But it's still a pacifier, and therefore rather visible.".
 
 To say ClothingDesc of (C - a sparkly princess pacifier):
@@ -157,7 +160,6 @@ To compute periodic effect of (P - a pacifier):
 			StomachSemenUp 1.
 
 A diaper quest fix rule:
-	let P be a random yellow pacifier;
-	now P is plentiful.
+	now yellow-pacifier is plentiful.
 
 Pacifiers ends here.
