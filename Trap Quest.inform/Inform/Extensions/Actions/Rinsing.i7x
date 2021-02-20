@@ -57,6 +57,7 @@ To compute bodyRinsing of (B - a body part) in (T - a thing):[TODO: change so it
 	now the semen coating of B is 0;
 	if B is hair:
 		now the urine coating of hair is 0;
+		now the water-drench of hair is the largeness of hair;
 		repeat with H running through worn headgear:
 			compute clothesRinsing of H in T;
 	otherwise if B is face:
