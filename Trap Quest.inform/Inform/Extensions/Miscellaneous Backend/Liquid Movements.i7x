@@ -200,7 +200,7 @@ To UniqueSquirt (L - a liquid-object) On (C - Hair) by (N - a number):
 			say "[announced L] gets all over your [ShortDesc of H].";
 			ContinuedSquirt L on H by M;
 	if L is semen or L is urine:
-		while the semen coating of C + the urine coating of C < the largeness of hair and N > 0: [soak liquid into hair]
+		while the semen coating of C + the urine coating of C + the water-drench of C < the largeness of hair and N > 0: [soak liquid into hair]
 			LiquidSoak L on C;
 			decrease N by 1;
 		if N > 0 and the urine coating of C is 0 and the semen coating of C > 0: [if hair is completely saturated by cum we want to replace one unit with urine so that the hair is correctly identified as both cum and piss stained]
