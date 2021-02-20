@@ -280,6 +280,7 @@ To compute drunken adventure:
 				now the semen coating of belly is 10;
 				now the semen coating of breasts is 10;
 				now the semen coating of face is 10;
+				now the water-drench of hair is 0;
 				now the semen coating of hair is the largeness of hair;
 				now the semen coating of thighs is 10;
 		otherwise:
