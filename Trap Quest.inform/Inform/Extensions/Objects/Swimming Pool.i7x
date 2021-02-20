@@ -171,7 +171,9 @@ To compute cum pool coating:
 		if the semen coating of B > 10, now the semen coating of B is 10.
 
 To compute cum pool face coating:
-	if bukkake fetish is 1:
+	if bukkake fetish is 0:
+		now the water-drench of hair is the largeness of hair;
+	otherwise:
 		if the semen coating of face < 10:
 			increase the semen coating of face by a random number between 1 and 2;
 			if the semen coating of face > 10, now the semen coating of face is 10;
@@ -180,6 +182,7 @@ To compute cum pool face coating:
 			if the player is naked, cutshow figure of bukkake door cutscene 1 for hair;
 			if the semen coating of hair > the largeness of hair, now the semen coating of hair is the largeness of hair;
 		now the semen coating of hair is the largeness of hair;
+		now the water-drench of hair is 0;
 		repeat with C running through worn fluid vulnerable headgear:
 			if the total-soak of C < the soak-limit of C:
 				increase the semen-soak of C by a random number between 1 and 2;
