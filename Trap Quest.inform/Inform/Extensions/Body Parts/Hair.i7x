@@ -9,6 +9,7 @@ To say FullExamineDesc of (B - hair):
 To decide which number is the largeness of hair:
 	decide on the raw largeness of hair + the fake largeness of hair.
 
+hair has a number called water-drench. The water-drench of hair is usually 0. [Min 0 Max is total largeness of hair. Named so as to avert confusion with water-soak.]
 hair has a number called blondeness. The blondeness of hair is usually 0. [Min 0 Max 3 - A low number means not at all blonde.]
 hair has a number called brightness. The brightness of hair is usually 0. [Min 0 Max 3 - A low number means very dark.]
 hair has a number called redness. The redness of hair is usually 0. [Min 0 Max 3 - A high number means very red.]
@@ -24,6 +25,11 @@ To decide which number is favourite hair length:
 	if extreme proportions fetish is 1, increase L by the bimbo of the player / 4;
 	if L < 2, now L is 2;
 	decide on L.
+
+To decide which number is the weight of (XXX - hair):
+	let S be (the largeness of hair * 3) / 5; [Hair isn't that heavy so let's take 3/5ths of a unit to start.]
+	increase S by the water-drench of hair; [Water is pretty heavy though so we'll take it as is.]
+	decide on S. [This number is going to get divided by 3 in Weight Gain, thus every 5 units of hair is worth only 1 unit of weight, while every 3 units of water equal 1 unit of weight, same as when it soaks into clothes.]
 
 To decide which number is the outrage of (B - hair):
 	let O be 0;
@@ -87,9 +93,9 @@ To say TotalDesc of hair:
 
 To say HairStyle:
 	if the player is ponytailed:
-		say "ponytail";
+		say "ponytailed hair";
 	otherwise if the player is pigtailed:
-		say "pigtails";
+		say "pigtailed hair";
 	otherwise:
 		say "hair".
 
@@ -134,6 +140,19 @@ To say HairSoak:
 	otherwise if P > 0:
 		say "[HairLiquids] stained ".
 
+To say HairWet:
+	let Q be (100 * the water-drench of hair) / the largeness of hair; [This is just a copy paste of HairSoak as applied to wetness]
+	if the water-drench of hair is 1:
+		say "and slightly damp, ";
+	otherwise Q >= 100:
+		say "and absolutely drenched, ";
+	otherwise if Q >= 66:
+		say "and soaking wet, ";
+	otherwise if Q >= 33:
+		say "and sopping wet, ";
+	otherwise if Q > 0:
+		say "and dripping wet, ".
+
 To say HairDesc (X - a number):
 	say "[2HairDesc X]";
 	if the fake largeness of hair > 0, say " and fake hair extensions which are extending your hair to [2HairDesc the largeness of hair]";
@@ -142,34 +161,34 @@ To say 2HairDesc (X - a number):
 	if diaper quest is 1:
 		say "[HairColour] hair";
 	otherwise if the player is upright:
-		if X is 1, say "incredibly short, [HairSoak][HairColour] army style hair";
-		if X is 2, say "[if the player is gendered male]standard, short [HairSoak][HairColour] hair[otherwise]tomboyish [HairSoak][HairColour] hair[end if]";
-		if X is 3, say "straight [HairSoak][HairColour] [HairStyle] that reaches the tops of your ears";
-		if X is 4, say "straight [HairSoak][HairColour] [HairStyle] that reaches the bottoms of your ears";
-		if X is 5, say "straight [HairSoak][HairColour] [HairStyle] that reaches your chin";
-		if X is 6, say "straight [HairSoak][HairColour] [HairStyle] that goes down to your shoulders";
-		if X is 7, say "straight [HairSoak][HairColour] [HairStyle] that goes down to your nipples";
-		if X is 8, say "straight [HairSoak][HairColour] [HairStyle] that flows down to your elbows";
-		if X is 9, say "straight [HairSoak][HairColour] [HairStyle] that flows down to your belly button";
-		if X is 10, say "straight [HairSoak][HairColour] [HairStyle] that flows all the way down to your crotch";
-		if X is 11, say "straight [HairSoak][HairColour] [HairStyle] that flows all the way down to your thighs";
-		if X is 12, say "straight [HairSoak][HairColour] [HairStyle] that flows all the way down to your knees";
-		if X is 13, say "straight [HairSoak][HairColour] [HairStyle] that flows all the way down to your calves";
-		if X is 14, say "straight [HairSoak][HairColour] [HairStyle] that flows all the way down to your ankles";
-		if X is 15, say "straight [HairSoak][HairColour] [HairStyle] that is so long it touches the ground when you are standing";
-		if X > 15, say "straight [HairSoak][HairColour] [HairStyle] that is so long it collects and drags along the ground as you walk";
+		if X is 1, say "incredibly short, [HairSoak][HairWet][HairColour] army style hair";
+		if X is 2, say "[if the player is gendered male]standard, short [HairSoak][HairWet][HairColour] hair[otherwise]tomboyish [HairSoak][HairWet][HairColour] hair[end if]";
+		if X is 3, say "straight [HairSoak][HairWet][HairColour] [HairStyle] that reaches the tops of your ears";
+		if X is 4, say "straight [HairSoak][HairWet][HairColour] [HairStyle] that reaches the bottoms of your ears";
+		if X is 5, say "straight [HairSoak][HairWet][HairColour] [HairStyle] that reaches your chin";
+		if X is 6, say "straight [HairSoak][HairWet][HairColour] [HairStyle] that goes down to your shoulders";
+		if X is 7, say "straight [HairSoak][HairWet][HairColour] [HairStyle] that goes down to your nipples";
+		if X is 8, say "straight [HairSoak][HairWet][HairColour] [HairStyle] that flows down to your elbows";
+		if X is 9, say "straight [HairSoak][HairWet][HairColour] [HairStyle] that flows down to your belly button";
+		if X is 10, say "straight [HairSoak][HairWet][HairColour] [HairStyle] that flows all the way down to your crotch";
+		if X is 11, say "straight [HairSoak][HairWet][HairColour] [HairStyle] that flows all the way down to your thighs";
+		if X is 12, say "straight [HairSoak][HairWet][HairColour] [HairStyle] that flows all the way down to your knees";
+		if X is 13, say "straight [HairSoak][HairWet][HairColour] [HairStyle] that flows all the way down to your calves";
+		if X is 14, say "straight [HairSoak][HairWet][HairColour] [HairStyle] that flows all the way down to your ankles";
+		if X is 15, say "straight [HairSoak][HairWet][HairColour] [HairStyle] that is so long it touches the ground when you are standing";
+		if X > 15, say "straight [HairSoak][HairWet][HairColour] [HairStyle] that is so long it collects and drags along the ground as you walk";
 	otherwise:
-		if X is 1, say "incredibly short, [HairSoak][HairColour] army style hair";
-		if X is 2, say "[if the player is gendered male]standard, short [HairSoak][HairColour] hair[otherwise]tomboyish [HairSoak][HairColour] hair[end if]";
-		if X is 3, say "straight [HairSoak][HairColour] [HairStyle] that reaches the tops of your ears";
-		if X is 4, say "straight [HairSoak][HairColour] [HairStyle] that reaches the bottoms of your ears";
-		if X is 5, say "straight [HairSoak][HairColour] [HairStyle] that reaches your chin";
-		if X is 6, say "straight [HairSoak][HairColour] [HairStyle] that hangs past your chin as you kneel";
-		if X is 7, say "straight [HairSoak][HairColour] [HairStyle] that hangs past your chin as you kneel";
-		if X is 8, say "straight [HairSoak][HairColour] [HairStyle] that touches the ground as you crawl";
-		if X is 9, say "straight [HairSoak][HairColour] [HairStyle] that touches the ground as you crawl";
-		if X is 10, say "straight [HairSoak][HairColour] [HairStyle] that is so long it drags across the ground as you crawl";
-		if X > 10, say "straight [HairSoak][HairColour] [HairStyle] that is so long it drags across the ground as you crawl";
+		if X is 1, say "incredibly short, [HairSoak][HairWet][HairColour] army style hair";
+		if X is 2, say "[if the player is gendered male]standard, short [HairSoak][HairWet][HairColour] hair[otherwise]tomboyish [HairSoak][HairWet][HairColour] hair[end if]";
+		if X is 3, say "straight [HairSoak][HairWet][HairColour] [HairStyle] that reaches the tops of your ears";
+		if X is 4, say "straight [HairSoak][HairWet][HairColour] [HairStyle] that reaches the bottoms of your ears";
+		if X is 5, say "straight [HairSoak][HairWet][HairColour] [HairStyle] that reaches your chin";
+		if X is 6, say "straight [HairSoak][HairWet][HairColour] [HairStyle] that hangs past your chin as you kneel";
+		if X is 7, say "straight [HairSoak][HairWet][HairColour] [HairStyle] that hangs past your chin as you kneel";
+		if X is 8, say "straight [HairSoak][HairWet][HairColour] [HairStyle] that touches the ground as you crawl";
+		if X is 9, say "straight [HairSoak][HairWet][HairColour] [HairStyle] that touches the ground as you crawl";
+		if X is 10, say "straight [HairSoak][HairWet][HairColour] [HairStyle] that is so long it drags across the ground as you crawl";
+		if X > 10, say "straight [HairSoak][HairWet][HairColour] [HairStyle] that is so long it drags across the ground as you crawl";
 	if the semen coating of hair is 1 and the urine coating of hair is 0, say ". The cum is [if the brightness of hair > 1]difficult to spot thanks to its light colour[otherwise]very noticeable[end if]".
 
 To say RealHairDesc:
@@ -201,6 +220,8 @@ To decide which number is max hair length:
 	if extreme proportions fetish is 1, decide on 20;
 	decide on 9.
 
+hairup-hist is a number that varies. hairup-hist is 1. [Variable for tracking hairup success/failure. I do not know the fine details of Informs RNG but experience has shown that many closely timed rolls trend towards the same results.]
+
 To HairUp (X - a number):
 	if frozen hair is 1 or diaper quest is 1:
 		if frozen hair is 1, say "Your hair would change size but the divine power of Aika prevents it.";
@@ -211,14 +232,18 @@ To HairUp (X - a number):
 			decrease X by 1;
 			if the raw largeness of hair < max hair length:
 				now hair-fail is 0;
-				if a random number between 1 and 4 > 1, increase the raw largeness of hair by 1;
+				if (a random number between 1 and 4 > 1 and hairup-hist < 3) or hairup-hist < 1: [Hopefully this change should mitigate wonky RNG by limiting fail/win streaks with hairup-hist without invalidating it's original purpose of slowing hair growth.]
+					increase the raw largeness of hair by 1;
+					increase hairup-hist by a random number between 1 and 2;
+				otherwise:
+					decrease hairup-hist by a random number between 1 and 2;
 			otherwise:
 				if hair-fail is 0, now hair-fail is 1;
 				if hair-fail is -1, now hair-fail is 2;
 		if hair-fail is 0 or hair-fail is 1:
 			if the largeness of hair is 2, say "You feel your hair grow!";
-			if the largeness of hair is 3, say "You feel your hair significantly grow! [one of][line break][first custom style]This can't be a good sign...[or][if the bimbo of the player < 12][first custom style]Here we go again...[otherwise]That felt goood...[end if][stopping][roman type][line break]";
-			if the largeness of hair is 4, say "You feel your hair significantly grow! [one of][line break][first custom style]So this game is going to make my hair grow really long?[or][if the bimbo of the player < 12][first custom style]A bearable size for now...[otherwise]Yay, my hair does need to be longer![end if][stopping][roman type][line break]";
+			if the largeness of hair is 3, say "You feel your hair significantly grow! [one of][line break][first custom style]This can't be a good sign...[or][if the bimbo of the player < 12][first custom style]Here we go again...[otherwise][second custom style]That felt goood...[end if][stopping][roman type][line break]";
+			if the largeness of hair is 4, say "You feel your hair significantly grow! [one of][line break][first custom style]So this game is going to make my hair grow really long?[or][if the bimbo of the player < 12][first custom style]A bearable size for now...[otherwise][second custom style]Yay, my hair does need to be longer![end if][stopping][roman type][line break]";
 			if the largeness of hair is 5 and the player is gendered male, say "You feel your hair grow until it reaches your chin. [one of][if the bimbo of the player < 7][line break][first custom style]This hair is starting to feel very girly...[otherwise][line break][second custom style]I guess this hair length isn't too bad.[end if][or][stopping][roman type][line break]";
 			if the largeness of hair is 5 and the player is gendered female, say "You feel your hair grow until it reaches your chin. [one of][if the bimbo of the player < 5][line break][first custom style]I always cut my hair before it gets this long...[otherwise][line break][second custom style]I know I usually cut my hair before it gets this long, but I guess this length isn't too bad.[end if][or][stopping][roman type][line break]";
 			if the largeness of hair is 6 and the player is gendered male, say "You feel your hair grow until it reaches your shoulders. [one of][if the bimbo of the player < 8][line break][first custom style]Ugh, this is definitely girl's hair now.[otherwise][line break][second custom style]It could be worse, I don't mind having this length hair I guess...[end if][or][stopping][roman type][line break]";
@@ -252,8 +277,9 @@ To HairDown (X - a number):
 		now the previous hair length of face is the largeness of hair;
 		while X > 0:
 			decrease X by 1;
-			if the player is pigtailed or the player is ponytailed:
+			if the player is pigtailed or the player is ponytailed: [Maybe have hair extensions prevent shrinking below 5 too.]
 				if the raw largeness of hair > 5, decrease the raw largeness of hair by 1;
+				otherwise say "Only for it to suddenly stop, your scrunchie[if the number of worn scrunchies < 2][otherwise]s[endif] shaking for a moment as if to protest."; [Some feedback so the player knows hair shrinking was stopped and why. Maybe reroute to fakehairdown if extensions are greater than 0? Though nothing seems to call on the fakehairdown function anywhere.]
 			otherwise:
 				if the raw largeness of hair > 1, decrease the raw largeness of hair by 1.
 
@@ -364,6 +390,20 @@ To hair permanent check:
 			summon bright-hair tattoo;
 			say "[bold type]A new tattoo has appeared on your arm![roman type][line break]";
 			try examining bright-hair tattoo.
+
+To compute hair drying: [Mostly built from the ripped out skeleton of the clothing dry function.]
+	if the water-drench of hair > 0:
+		if a random number between 1 and 10 is 1: [The more soaked hair is the faster it can dry, basically to simulate the excess water dripping down.]
+			decrease the water-drench of hair by a random number between 1 and (3 * the water-drench of hair / the largeness of hair);
+		if the urine-coating of hair > 1: [The last unit of urine cannot be removed by drying, the 'smell' sticks around until washed/cleaned.]
+			if a random number between 1 and 14 is 1:
+				decrease the urine-coating of hair by 1;
+		if the semen-coating of hair > 1: [As above, so below.]
+			if a random number between 1 and 20 is 1:
+				decrease the semen-coating of Chair by 1;
+			if the water-drench of hair is 0:
+				force inventory-focus redraw;
+				say "Your [ShortHairDesc] is now completely dry[if (the urine coating of hair + the semen coating of hair) > 0], if not exactly clean[endif].".
 
 Section - Image for graphics window
 
