@@ -400,7 +400,7 @@ To compute hair drying: [Mostly built from the ripped out skeleton of the clothi
 				decrease the urine-coating of hair by 1;
 		if the semen-coating of hair > 1: [As above, so below.]
 			if a random number between 1 and 20 is 1:
-				decrease the semen-coating of Chair by 1;
+				decrease the semen-coating of hair by 1;
 			if the water-drench of hair is 0:
 				force inventory-focus redraw;
 				say "Your [ShortHairDesc] is now completely dry[if (the urine coating of hair + the semen coating of hair) > 0], if not exactly clean[endif].".
