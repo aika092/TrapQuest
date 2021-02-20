@@ -394,7 +394,7 @@ To hair permanent check:
 To compute hair drying: [Mostly built from the ripped out skeleton of the clothing dry function.]
 	if the water-drench of hair > 0:
 		if a random number between 1 and 10 is 1: [The more soaked hair is the faster it can dry, basically to simulate the excess water dripping down.]
-			decrease the water-drench of hair by a random number between 1 and (3 * the water-drench of hair / the largeness of hair);
+			decrease the water-drench of hair by a random number between 1 and (1 + 3 * the water-drench of hair / the largeness of hair);
 		if the urine-coating of hair > 1: [The last unit of urine cannot be removed by drying, the 'smell' sticks around until washed/cleaned.]
 			if a random number between 1 and 14 is 1:
 				decrease the urine-coating of hair by 1;
