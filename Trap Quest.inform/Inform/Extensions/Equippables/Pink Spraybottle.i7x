@@ -166,9 +166,7 @@ To compute spraybottle punishment:
 				if the fatigue of the player > the tired threshold of the player:
 					say "[if the player is not prone]It's so jarring you instantly fall to your knees.[end if]";
 					silently try kneeling;
-				if the make-up of face > 0 and permanent makeup is 0:
-					say "[if the make-up of face > 1]Some of your[otherwise]Your[end if] make up is washed away.";
-					FaceDown 1;
+				AnnouncedSquirt water on face by a random number between 2 and 6;
 				now another-turn is 1;
 				if another-turn-flavour is "", now another-turn-flavour is "You [if the player is prone]stay[otherwise]stand[end if] there, shivering in place, recovering from the cold water.";
 			otherwise if L is 2:
