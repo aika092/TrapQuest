@@ -281,7 +281,8 @@ To HairDown (X - a number):
 				if the raw largeness of hair > 5, decrease the raw largeness of hair by 1;
 				otherwise say "Only for it to suddenly stop, your scrunchie[if the number of worn scrunchies < 2][otherwise]s[endif] shaking for a moment as if to protest."; [Some feedback so the player knows hair shrinking was stopped and why. Maybe reroute to fakehairdown if extensions are greater than 0? Though nothing seems to call on the fakehairdown function anywhere.]
 			otherwise:
-				if the raw largeness of hair > 1, decrease the raw largeness of hair by 1.
+				if the raw largeness of hair > 1, decrease the raw largeness of hair by 1;
+		compute hair liquids overflow.
 
 [Hair extensions first, then actual hair]
 To HairCut (X - a number):
@@ -295,6 +296,7 @@ To HairCut (X - a number):
 				decrease the fake largeness of hair by 1;
 			otherwise if the raw largeness of hair > 1:
 				decrease the raw largeness of hair by 1;
+		compute hair liquids overflow;
 		if head-module is worn:
 			if the int-transfer of head-module > the lips of face + the fake largeness of hair: [This is to check if migrated INT can 'fit' inside the players lips and leftover hair extensions.]
 				say "You feel your ability to think straight [if the int-transfer of head-module > the lips of face + the fake largeness of hair + 1]rapidly [end if]decreasing, as your [head-module] finds itself with reduced capacity to store all that extra brain processing power.";
@@ -317,7 +319,8 @@ To FakeHairDown (X - a number):
 	otherwise:
 		while X > 0:
 			decrease X by 1;
-			if the fake largeness of hair > 0, decrease the fake largeness of hair by 1.
+			if the fake largeness of hair > 0, decrease the fake largeness of hair by 1;
+		compute hair liquids overflow.
 
 To ColourUp (X - a number):
 	HairRedUp X;
@@ -404,6 +407,11 @@ To compute hair drying: [Mostly built from the ripped out skeleton of the clothi
 			if the water-drench of hair is 0:
 				force inventory-focus redraw;
 				say "Your [ShortHairDesc] is now completely dry[if (the urine coating of hair + the semen coating of hair) > 0], if not exactly clean[endif].".
+
+To compute hair liquids overflow: [This is so we don't have to copy paste 3 lines every time something might decrease hair size below its liquid content.]
+	if the semen coating of hair > the largeness of hair, now the semen coating of hair is the largeness of hair;
+	if the urine coating of hair > the largeness of hair, now the urine coating of hair is the largeness of hair;
+	if the water-drench of hair > the largeness of hair, now the water-drench of hair is the largeness of hair.
 
 Section - Image for graphics window
 
