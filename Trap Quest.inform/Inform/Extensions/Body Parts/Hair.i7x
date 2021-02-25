@@ -398,15 +398,15 @@ To compute hair drying: [Mostly built from the ripped out skeleton of the clothi
 	if the water-drench of hair > 0:
 		if a random number between 1 and 10 is 1: [The more soaked hair is the faster it can dry, basically to simulate the excess water dripping down.]
 			decrease the water-drench of hair by a random number between 1 and (1 + 3 * the water-drench of hair / the largeness of hair);
-		if the urine-coating of hair > 1: [The last unit of urine cannot be removed by drying, the 'smell' sticks around until washed/cleaned.]
-			if a random number between 1 and 14 is 1:
-				decrease the urine-coating of hair by 1;
-		if the semen-coating of hair > 1: [As above, so below.]
-			if a random number between 1 and 20 is 1:
-				decrease the semen-coating of hair by 1;
 			if the water-drench of hair is 0:
 				force inventory-focus redraw;
-				say "Your [ShortHairDesc] is now completely dry[if (the urine coating of hair + the semen coating of hair) > 0], if not exactly clean[endif].".
+				say "Your [ShortHairDesc] is now completely dry[if (the urine coating of hair + the semen coating of hair) > 0], if not exactly clean[endif].";
+	if the urine-coating of hair > 1: [The last unit of urine cannot be removed by drying, the 'smell' sticks around until washed/cleaned.]
+		if a random number between 1 and 14 is 1:
+			decrease the urine-coating of hair by 1;
+	if the semen-coating of hair > 1: [As above, so below.]
+		if a random number between 1 and 20 is 1:
+			decrease the semen-coating of hair by 1.
 
 To compute hair liquids overflow: [This is so we don't have to copy paste 3 lines every time something might decrease hair size below its liquid content.]
 	if the semen coating of hair > the largeness of hair, now the semen coating of hair is the largeness of hair;
