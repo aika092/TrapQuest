@@ -48,7 +48,7 @@ Check squatting:
 Carry out squatting:
 	now voluntarySquatting is 1;
 	allocate 6 seconds;
-	say "[if the player is upright]You bend your knees to squat, with your [MediumDesc of hips] near the ground. [end if]You relax your sphincter's muscles and push.";
+	say "[if the player is upright and the player is not flying]You bend your knees to squat, with your [MediumDesc of hips] near the ground. [end if]You relax your sphincter's muscles and push.";
 	if the latex-transformation of the player > 4:
 		say "Nothing happens.";
 	otherwise:

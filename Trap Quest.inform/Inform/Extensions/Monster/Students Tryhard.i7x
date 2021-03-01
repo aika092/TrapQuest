@@ -38,7 +38,7 @@ To decide which figure-name is the monster-image of (M - student-laci):
 
 To say MonsterDesc of (M - student-laci):
 	say "This tall dark skinned redheaded [man of M] is wearing a skimpy sexy schoolgirl outfit with matching tartan miniskirt and tie. [big his of M] chunky black heels are polished to the nth degree. [big he of M] is constantly 'accidentally' dropping things and then bending over with completely unbent knees to expose as much of [his of M] bottom as possible to whoever might be looking [his of M] way[if the current-rank of M >= 3]. Whenever [he of M] bends over [he of M] makes sure to first cross [his of M] feet, perhaps to make sure people know [he of M] is bending at the waist on purpose[end if]. ";
-	if diaper quest is 0, say "[if the current-rank of M is 1][big he of M] is wearing plain white briefs[otherwise if the current-rank of M is 2][big he of M] is no longer wearing any underwear. You can almost see everything, if it wasn't for [his of M] thick thighs and buttocks squshed together[otherwise if the current-rank of M is 3][big he of M] is no longer wearing any underwear, and is pulling one of [his of M] thick thighs and buttocks a bit to enable you to see [his of M] pussy[otherwise if the current-rank of M is 4][big he of M] is no longer wearing any underwear, and is pulling both of [his of M] thick thighs and buttocks apart to enable you to see [his of M] pussy and asshole[otherwise][big he of M] is no longer wearing any underwear, and is pulling both of [his of M] thick thighs and buttocks apart to enable you to see the jewelled buttplug and vibrator currently occupying [his of M] pussy and asshole[end if].";
+	if diaper quest is 0, say "[if the current-rank of M is 1][big he of M] is wearing plain white briefs[otherwise if the current-rank of M is 2][big he of M] is no longer wearing any underwear. You can see almost everything, if it wasn't for [his of M] thick thighs and buttocks squooshed together[otherwise if the current-rank of M is 3][big he of M] is no longer wearing any underwear, and is pulling at [his of M] thick thighs and buttocks a bit to enable you to see [his of M] pussy[otherwise if the current-rank of M is 4][big he of M] is no longer wearing any underwear, and is pulling both of [his of M] thick thighs and buttocks apart to enable you to see [his of M] pussy and asshole[otherwise][big he of M] is no longer wearing any underwear, and is pulling both of [his of M] thick thighs and buttocks apart to enable you to see the jewelled buttplug and vibrator currently occupying [his of M] pussy and asshole[end if].";
 	otherwise say "[if the current-rank of M is 1][big he of M] is wearing plain white briefs[otherwise if the current-rank of M is 2][big his of M] white briefs have been replaced by a small purple patterned diaper[otherwise if the current-rank of M is 3][big he of M] is now wearing a thick white diaper[otherwise if the current-rank of M is 4][big he of M] is now wearing a thick white diaper, and spanks [himself of M] each time [he of M] bends over[otherwise][big he of M] is now wearing a thick white diaper, and gleefully rubs [his of M] pussy and asshole through [his of M] padding each time [he of M] bends over[end if].".
 
 To say ClitLeadDesc of (M - student-laci):
@@ -65,6 +65,73 @@ To say StoryAnswer of (M - student-laci):
 
 To say WhereAnswer of (M - student-laci):
 	say "[speech style of M]'[if the rank of the player <= 1]Um, dumb-head alert! Quit talking to me before the teachers think I'm an idiot too!'[otherwise]Practise makes perfect. Oops, I dropped my pen, teehee!'[end if][roman type][line break]".
+
+Book - Misty
+
+student-misty is a tryhard student.
+
+The text-shortcut of student-misty is "stmi".
+
+
+Figure of rank 1 misty is the file "NPCs/School/Student/student4a.png".
+
+To decide which figure-name is the monster-image of (M - student-misty):
+	if the current-rank of M >= 5, decide on figure of rank 5 misty;
+	if the current-rank of M is 4, decide on figure of rank 4 misty;
+	if the current-rank of M is 3, decide on figure of rank 3 misty;
+	if the current-rank of M is 2, decide on figure of rank 2 misty;
+	decide on figure of rank 1 misty.
+
+To say MonsterDesc of (M - student-misty):
+	if the current-rank of M is 1:
+		say "This slim brunette is wearing a tiny white cotton vest and matching panties. [if diaper quest is 0 and lady fetish is not 2]You can see [his of M] clit piercing poking through. [end if][big he of M] is holding a bottle of water, [if diaper quest is 0]in a somewhat suggestive manner[otherwise]and seems to be trying to remember to take a sip every few seconds[end if].";
+	otherwise if diaper quest is 1:
+		say "This slim brunette is wearing a tiny white cotton vest and a thick white diaper. [if the current-rank of M is 2][big he of M] is holding a bottle of water, and seems to be trying to remember to take a sip every few seconds[otherwise if the current-rank of M is 3][big his of M] shirt has now been soaked wet with water and turned see-through, and [he of M] seems to be trying to remember to pour a bit of water into [his of M] ever-expanding padding every few seconds[otherwise if the current-rank of M is 4][big his of M] shirt and diaper have now been completely saturated with water, causing the shirt to go see-through and the diaper to have expanded to an insanely massive size. [big he of M] holds onto [his of M] empty water bottle with pride[otherwise][big his of M] shirt and diaper have now been completely saturated with [urine], causing the shirt to go see-through and the diaper to have expanded to an insanely massive size. [big he of M] holds onto [his of M] water bottle full of [urine] with pride. Something tells you it's not [his of M] urine in the bottle[end if].";
+	otherwise if the current-rank of M < 4 and M is clitLeaded:
+		say "This slim brunette is wearing a tiny white cotton vest which has been soaked with water, and is now see-through. [big his of M] panties have been removed entirely to make space for [his of M] new clit lead.";
+	otherwise:
+		say "This slim brunette is wearing a tiny white cotton vest[if the current-rank of M <  4] and matching panties[end if]. [if the current-rank of M < 5][big his of M] vest has been soaked with water, and is now see-through. [end if][if the current-rank of M is 3][big his of M] panties have recieved similar treatment, and [his of M] genitals can be clearly seen through them. [end if][if the current-rank of M >= 4][big his of M] panties have been removed entirely. [end if][if the current-rank of M >= 5][big his of M] hair, face and vest are soaked with [semen], which has turned [his of M] vest see-through. [big his of M] bottle also has an impressive serving of [semen] stored inside it[end if].".
+
+A diaper quest fix rule:
+	if watersports fetish is 0, now the max-rank of student-misty is 4.
+
+To update name of (M - student-misty):
+	if the current-rank of M is 1:
+		now the student-name of M is "Missy";
+		if diaper quest is 0, now the student-print of M is "tight topped trollop";
+		otherwise now the student-print of M is "thirsty trollop";
+	otherwise if the current-rank of M is 2:
+		now the student-name of M is "Misty";
+		if diaper quest is 0, now the student-print of M is "technically-not-topless tart";
+		otherwise now the student-print of M is "thirsty tinkler";
+	otherwise if the current-rank of M is 3:
+		now the student-name of M is "Minxie";
+		now the student-print of M is "wet wench";
+	otherwise if diaper quest is 0:
+		now the student-name of M is "Minx";
+		if the current-rank of M is 4, now the student-print of M is "sheer shirted slut";
+		otherwise now the student-print of M is "cum-covered cunt";
+	otherwise if the current-rank of M is 4 or watersports fetish is 0:
+		now the student-name of M is "Minx";
+		now the student-print of M is "saturated sagger";
+	otherwise:
+		now the student-name of M is "M";
+		now the student-print of M is "human toilet".
+
+To say WhereAnswer of (M - student-misty):
+	say "[speech style of M]'[if the rank of the player <= 1]This is an... exotic skills academy. But surely you know this already?'[otherwise]You've got to be willing to try anything once. And then twice. And then three times...'[end if][roman type][line break]".
+
+To say StoryAnswer of (M - student-misty):
+	if diaper quest is 0, say "[speech style of M]'There's a lot of money in winning wet T-shirt contests in my home town. With the skills and techniques [if the current-rank of M is 2]I'll learn here, I'll be brave enough to sign up and wear daring enough clothing to win[otherwise if the current-rank of M is 3]I'm learning here, I'll have no trouble showing off my practically bare tits to the crowd and raking in the dosh[otherwise]I've learned here, I think I'm going to do much better than just rake in all that prize money. I reckon a glamour model scout will notice me in no time, and after I suck [his of shopkeeper] [manly-penis] a few times I'm sure I can convince [him of shopkeeper] to offer me a lucrative contract[end if]!'[roman type][line break]";
+	otherwise say "[speech style of M]'I caught my boyfriend reading some weird stories. He explained he finds it hot when [men of M] are desperate to go to the toilet and then sometimes end up wetting themselves. So I thought I'd come here to learn more about how to turn his fantasy into a reality. What can I say, I'm a dedicated [boy of M]friend...'[roman type][line break]".
+
+To compute friendly drink of (M - a student-misty):
+	if the current-rank of M >= 4:
+		say "[speech style of M]'I'm all out. Find your own drink.'[roman type][line break]";
+	otherwise:
+		say "[speech style of M]'Bah. I guess you can have a sip from my water bottle. But only a little mind you, I need the rest [if the current-rank of M is 2 or diaper quest is 1]for... reasons[otherwise]to, erm, well, keep myself looking so sexy[end if].'[roman type][line break]";
+		say "You take a sip and feel much better!";
+		StomachUp 2.
 
 Part - Candy
 

@@ -136,6 +136,32 @@ Part 3 - Combat
 
 Section 1 - Attack
 
+To compute damaging attack of (M - a robobellboy):
+	if the player is the donator and (the difficulty of M > the starting difficulty of M + 1 or M is senior robobellboy) and M is wrangling a body part:
+		compute shredding attack of M;
+	otherwise:
+		if the player is the donator and (the difficulty of M > the starting difficulty of M + 1 or M is senior robobellboy) and a random number between 1 and 5 is 1 and M is not wrangling a body part, compute grabbing attack of M;
+		otherwise compute striking attack of M.
+
+To compute shredding attack of (M - a robobellboy):
+	let C be a random worn tearable clothing;
+	if C is trainee bra, now C is nothing;
+	if C is trainee thigh highs, now C is nothing;
+	if C is headgear, now C is nothing;
+	if C is clothing and C is not super-slutty-bra and C is not super-slutty-knickers and C is not nudism-enabling or C is cursed:
+		say "[speech style of M]'ERROR, SERVANT ATTIRE UNSUITABLE. REMOVING.'[roman type][line break][BigNameDesc of M] pulls a pair of scissors from its chest compartment and cuts apart your [ShortDesc of C]!";
+		destroy C;
+	otherwise:[If we pick a clothing we don't want to destroy, just do a normal attack.]
+		compute striking attack of M.
+
+To compute grabbing attack of (M - a robobellboy):
+	say "[speech style of M]'UNACCEPTABLE RESISTANCE DETECTED. INITIATING AUXILARY RESTRAINT PROTOCOL.'[roman type][line break][BigNameDesc of M]'s eyes flash as [he of M] rushes towards you! [run paragraph on]";
+	if the accuracy roll of M >= the dexterity of the player:
+		say "You aren't quick enough to avoid [him of M], and [FuckerDesc of M] latches onto your leg!";
+		now M is wrangling thighs;
+	otherwise:
+		say "You're just quick enough to avoid [him of M].";
+
 The latex punishment rule of a robobellboy is usually the no latex punishment rule.
 
 The unique punishment rule of a robobellboy is usually the robobellboy punishment rule.
@@ -209,7 +235,13 @@ To compute change forcing of (M - a robobellboy):
 	say "[first custom style]'FULL CHANGING PROCESS ENGAGED. [caps please] RELAX.'[roman type][line break]";
 	bore M for 400 seconds;
 	now the whore-intent of M is 0;
-	compute LaundryRobots.
+	let ACS be a random automated changing station in Hotel20;
+	if ACS is a thing:
+		now auto is 1;
+		compute furniture resting on ACS;
+		now auto is 0;
+	otherwise:
+		compute LaundryRobots.
 
 To compute clothes forcing of (M - a robobellboy):
 	if a random number between 1 and 2 is 1 and the number of worn breast covering clothing is 0:
@@ -233,7 +265,8 @@ To compute bra forcing of (M - a robobellboy):
 		now C is a random off-stage super-slutty-bra clothing;
 		increase N by 1;
 	if C is actually summonable clothing:
-		say "[BigNameDesc of M] opens up [his of M] chest compartment and pulls out a [ShortDesc of C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces the item onto your body, where it sticks to your skin like glue. After this, [NameDesc of M] seems to be happy leaving you alone.";
+		if the player is the donator and the difficulty of M > the starting difficulty of M and a random number between 1 and 5 is 1 and C is gluable, now C is glued;
+		say "[BigNameDesc of M] opens up [his of M] chest compartment and pulls out a [ShortDesc of C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces the item onto your body, where it sticks to your skin like glue. [if C is glued]Unfortunately, [FuckerDesc of M] isn't satisfied with it being [italic type]like[roman type] glue, and applies a translucent adhesive to the garment before finally[otherwise]After this, [NameDesc of M] seems to be happy[end if] leaving you alone.";
 		summon C cursed with quest;
 		bore M;
 		FavourUp M;
@@ -255,7 +288,8 @@ To compute knickers forcing of (M - a robobellboy):
 		now C is a random off-stage super-slutty-knickers clothing;
 		increase N by 1;
 	if C is actually summonable clothing:
-		say "[BigNameDesc of M] opens up [his of M] chest compartment and pulls out a [ShortDesc of C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces the item onto your body, where it sticks to your skin like glue. After this, [he of M] seems to be happy to leave you alone.";
+		if the player is the donator and the difficulty of M > the starting difficulty of M and a random number between 1 and 5 is 1, now C is glued;
+		say "[BigNameDesc of M] opens up [his of M] chest compartment and pulls out a [ShortDesc of C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces the item u, where it sticks to your skin like glue. [if C is glued]Unfortunately, [FuckerDesc of M] isn't satisfied with it being [italic type]like[roman type] glue, and applies a translucent adhesive to the garment before finally[otherwise]After this, [NameDesc of M] seems to be happy[end if] leaving you alone.";
 		summon C cursed with quest;
 		bore M;
 		FavourUp M;
@@ -345,7 +379,7 @@ To say MediumDesc of (M - senior robobellboy):
 
 To ProgressUp (M - senior robobellboy):
 	if the training-progress of M >= 0, increase the training-progress of M by 1;
-	if the training-progress of M >= 3, say "You hear a computerized voice speaking in your head.[line break][second custom style][if the player is a trained hooker]CONGRATULATIONS ON COMPLETING YOUR IMPROVEMENT PROGRAM, EMPLOYEE. ALWAYS KEEP IMPROVING[otherwise]CONGRATULATIONS, TRAINEE. YOU HAVE COMPLETED [training-progress of M] EMPLOYEE IMPROVEMENT PROGRAMS. [caps please] SEE THE SENIOR ROBOBELLBOY FOR CERTIFICATION[end if].'[roman type][line break]";
+	if the training-progress of M >= 3, say "You hear a computerised voice speaking in your head.[line break][second custom style][if the player is a trained hooker]CONGRATULATIONS ON COMPLETING YOUR IMPROVEMENT PROGRAM, EMPLOYEE. ALWAYS KEEP IMPROVING[otherwise]CONGRATULATIONS, TRAINEE. YOU HAVE COMPLETED [training-progress of M] EMPLOYEE IMPROVEMENT PROGRAMS. [caps please] SEE THE SENIOR ROBOBELLBOY FOR CERTIFICATION[end if].'[roman type][line break]";
 
 To compute unique banishment of (M - senior robobellboy):
 	let L be a random off-stage leftover;

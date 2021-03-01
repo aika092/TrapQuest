@@ -50,7 +50,7 @@ A time based rule (this is the lactation rule):
 					let quest-2b-milked be nothing;
 					repeat with C running through worn clothing:
 						if the quest of C is milking-quest, now quest-2b-milked is C;
-					say "[bold type]Your breasts are now completely full of milk[if quest-2b-milked is clothing]. Your [ShortDesc of quest-2b-milked] fills you with a desire to find somewhere to get milked[end if][if the milk volume of breasts > 10]. Until you do, your heavy breasts will make you become fatigued much faster while standing[end if][if the milk volume of breasts > 10 and cowbell is not worn] - or rather they would if it weren't for the magic effect of your cowbell[end if].[roman type][line break]";
+					say "[bold type]Your breasts are now completely full of milk[if quest-2b-milked is clothing]. Your [ShortDesc of quest-2b-milked] fills you with a desire to find somewhere to get milked[end if][if the milk volume of breasts > 10]. Until you do, your heavy breasts will make you become fatigued much faster while standing[end if][if the milk volume of breasts > 10 and cowbell is worn] - or rather they would if it weren't for the magic effect of your cowbell[end if].[roman type][line break]";
 				now the ready-for-milking of milking-quest is 1.
 
 To decide which number is milkingColour:
@@ -81,7 +81,7 @@ To trigger lactation:
 		increase the lactation-count of the player by 1;
 		if lactation-count of the player is 1:
 			say "You feel a strange tingle in your chest... a feeling like... something weird is going on. Your nipples perk up and feel strangely sensitive. The feeling intensifies, and then with a shock you stare at your chest as you work out what's happening.[line break]";
-			if the player is male:
+			if the player is sexed male:
 				say "[variable custom style]This is not possible! What the hell is this crazy game doing to me?![roman type][line break]";
 				humiliate 200;
 		let N be bottom level lactation cover;
@@ -94,18 +94,6 @@ To trigger lactation:
 			say "[one of]Milk flows from your nipples, but it doesn't stain your [ShortDesc of N]! Instead you feel the milk somehow flow directly into your [asshole]![line break][variable custom style]What the hell?! This thing must be magic![roman type][line break][or]Milk flows from your nips directly into your [asshole] thanks to your [ShortDesc of N].[stopping]";
 			MilkDown M;
 			AssFill M Milk;
-		otherwise if N is milking harness:
-			if M is 1:
-				say "A few drops of [milk] leak from your [BreastDesc] and into the suction cups of your [ShortDesc of N]. You hear the pumping device behind you force the [milk] through its tubes and you shiver [if the bimbo of the player > 8]in enjoyment[end if] as you feel the warm liquid enter you through the harness's plug.[roman type][line break]";
-				MilkDown 1;
-				AssFill 1 Milk;
-			otherwise:
-				if M < 10, say "Milk flows from your nipples into the suction cups of your [ShortDesc of N]. You hear the pumping device behind you force the [milk] through its tubes and you shiver [if the bimbo of the player > 11]in delight[end if] as you feel substantial amounts of the warm liquid enter you through the harness's plug.[roman type][line break]";
-				otherwise say "Your [BreastDesc] powerfully squirt [milk] into the suction cups of your [ShortDesc of N]. You hear the pumping device behind you force the [milk] through its tubes and you shiver [if the bimbo of the player > 14]in ecstasy[end if] as you feel the warm liquid enter you through the harness's plug.[roman type][line break]";
-				MilkDown M ;
-				AssFill M Milk;
-			say "The stimulation [one of]of the suction on your nipples combined with the [milk] rushing into your [asshole] [or][stopping]makes you aroused[if the sex addiction of the player < 11] against your will[end if].";
-			passively stimulate asshole;
 		otherwise if N is clothing:
 			if M is 1:
 				say "A few drops of [milk] leak from your [BreastDesc] and [if N is bra]into the cups of[otherwise]onto[end if] your [ShortDesc of N][if N is not liquid-soak-appropriate].[end if][roman type][line break]";
@@ -145,13 +133,12 @@ To trigger lactation:
 				otherwise say "Your [BreastDesc] powerfully squirt [milk] onto the floor.[roman type][line break]";
 				MilkDown M;
 				MilkPuddleUp M;
-		let O be a random off-stage milking harness;
-		if a random number from 6 to 50 - (20 * unlucky) < the lactation-count of the player and O is actually summonable and royal circlet is not worn and yellow-pacifier is not worn:
+		if a random number from 6 to 50 - (20 * unlucky) < the lactation-count of the player and milking harness is actually summonable and royal circlet is not worn and yellow-pacifier is not worn:
 			say "[bold type]As you finish lactating, a plug connected to some tubing and suction cups [italic type]shunks[bold type] into place around you.[roman type] You feel your loins encased in latex and your nipples pulled outwards by a suction force.";
-			summon O cursed;
+			summon milking harness cursed with quest;
 			now the lactation-count of the player is 0;
-			now the plug size of O is the openness of asshole;
-			say "[one of]You look down to try and work out exactly what this thing does...[line break][ExamineDesc of O][or][stopping]";
+			now the plug size of milking harness is the openness of asshole;
+			say "[one of]You look down to try and work out exactly what this thing does...[line break][ExamineDesc of milking harness][or][stopping]";
 		otherwise if a random number from 4 to 50 - (30 * unlucky) < the lactation-count of the player and a2m fetish >= 2 and royal circlet is off-stage and royal circlet is actually summonable and yellow-pacifier is not worn:
 			say "[bold type]As you finish lactating, a silver circlet appears on your head.[line break][variable custom style]Why do I get the feeling that people are going to want my milk soon...[roman type][line break]";
 			summon royal circlet cursed;

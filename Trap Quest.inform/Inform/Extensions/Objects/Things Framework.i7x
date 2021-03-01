@@ -114,17 +114,22 @@ Carry out examining a thing:
 	say FullExamineDesc of the noun.
 
 To say FullExamineDesc of (C - a thing):
-	say FullTitle of C;
+	say BoldFullTitle of C;
 	say ImageDesc of C;
 	say ExamineDesc of C;
 	say ThemeDesc of C;
 	if C is carried and C is not-in-bag and (the outrage of C > 0 or (diaper quest is 1 and the cringe of C > 0)), say HeldOutrageDesc of C;
 	if C is worn wearthing, say InfluenceDesc of C.
 
-To say FullTitle of (C - a thing):
+To say BoldFullTitle of (C - a thing):
 	let T be links-disabled;
 	now links-disabled is true;
 	say "[bold type][C][roman type][line break]";
+	now links-disabled is T.
+To say FullTitle of (C - a thing):
+	let T be links-disabled;
+	now links-disabled is true;
+	say "[C]";
 	now links-disabled is T.
 
 To say ImageDesc of (C - a thing):

@@ -56,7 +56,7 @@ To say PregDescription:
 	otherwise if the number of family things is 1:
 		say "[PregGrowth of the father] inside your womb";
 	otherwise:
-		say "an unknown[if inhuman pregnancy is 2] (and hopefully human)[end if] child".
+		say "an unknown[if inhuman pregnancy > 0] (and hopefully human)[end if] child".
 
 To say OptionalDescription:
 	if the pregnancy of the player > 0, say "You are currently carrying [PregDescription].[if the latex-transformation of the player > 0 or the pregnancy of the player is 2]The pregnancy doesn't seem to be growing any bigger.[end if]";

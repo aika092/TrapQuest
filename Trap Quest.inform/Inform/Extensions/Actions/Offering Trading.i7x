@@ -32,6 +32,7 @@ Check offering it to:
 	if the noun is diaper and the second noun is witch, try giving the noun to the second noun instead;
 	if the noun is worn and the noun is not autoremovable, say "You'd need to remove it first." instead;
 	if the second noun is uninterested, say "The [second noun] doesn't seem to be paying attention to you." instead;
+	if the second noun is mechanic and the woman-status of woman-player is 91 and the mechanic-scene of woman-player <= 3 and woman-player is in the location of the player and mechanic is unfriendly, say "[big he of mechanic] doesn't seem interested in counter-offers." instead;
 	if the second noun is wench and the second noun is dangerous and the noun is desirable knickers and the second noun is not horny-wench:
 		allocate 4 seconds;
 		compute the second noun WenchReceiving the noun instead;
@@ -153,8 +154,8 @@ To compute standard offer reward of (M - a monster) for (T - a thing): [The NPC 
 			remove X from the tradableItems of M.
 
 To compute (M - a monster) rewarding (T - a thing):
-	now T is in the location of the player;
 	if T is clothing, blandify and reveal T;
+	now T is in the location of the player;
 	if T is alchemy product:
 		now T is bland;
 		now T is sure;

@@ -21,7 +21,7 @@ To decide which figure-name is the monster-image of (M - ex-princess):
 		if watersports fetish is 0, decide on figure of temporary caged princess;
 		if the current-torment of M > 0, decide on figure of caged urinal princess piss;
 		decide on figure of caged urinal princess;
-	if M is in School35:
+	if M is in School35 and glittery-wand is carried by M and glittery-wand is cursed:
 		if diaper lover > 0, decide on figure of original diapered princess combat;
 		decide on figure of original princess combat;
 	if diaper lover > 0, decide on figure of original diapered princess;
@@ -85,8 +85,7 @@ Definition: ex-princess is able to remove cursed plugs: decide yes.
 
 Definition: ex-princess is butt slut immune: decide yes.
 
-Definition: ex-princess is uniquely unfriendly:
-	decide no.
+Definition: ex-princess is uniquely unfriendly: decide no.
 
 To decide which number is the aggro limit of (M - an ex-princess): [The number at which they turn unfriendly]
 	decide on -999999.
@@ -126,7 +125,7 @@ To IdentifiablePosterReaction of (M - ex-princess):
 	say "You turn bright red with shame.";
 	humiliate the lewdness of a random poster in the location of the player * 2.
 
-To UnidentifiablePosterReaction of (M - ex-princess):
+To UnidentifiablePosterReaction of (M - ex-princess) with (P - a poster):
 	say "[BigNameDesc of M] looks at the banner with a big frown on [his of M] face. [big he of M] doesn't seem to realise it is you.[line break][speech style of M]'Has this world become overrun with harlots and whores like this one? Seriously, do they have no shame?'[roman type][line break]";
 	say "You turn slightly red but don't say a word.";
 	humiliate the lewdness of a random poster in the location of the player / 2.
@@ -139,7 +138,7 @@ To compute interaction of (M - ex-princess):
 	otherwise if M is unconcerned:
 		if there is a tentacle-breeder in the location of the player:
 			let T be a random tentacle-breeder in the location of the player;
-			say "[speech style of M]'[if inhuman pregnancy is 2]Poor girl. Let me put you out of your misery.'[roman type][line break][BigNameDesc of M] points [his of M] wand at [NameDesc of T], and suddenly the tentacles and slime begin to thrash around and turn brown. The tentacles restraining the woman quickly rot away, and as she falls to the floor she manages a look of gratitude before vanishing into motes of light[otherwise]This place really needs a spring clean.'[roman type][line break][BigNameDesc of M] points [his of M] wand at [NameDesc of T], which shrinks away inside itself until it has completely gone[end if].";
+			say "[speech style of M]'[if inhuman pregnancy >= 2]Poor girl. Let me put you out of your misery.'[roman type][line break][BigNameDesc of M] points [his of M] wand at [NameDesc of T], and suddenly the tentacles and slime begin to thrash around and turn brown. The tentacles restraining the woman quickly rot away, and as she falls to the floor she manages a look of gratitude before vanishing into motes of light[otherwise]This place really needs a spring clean.'[roman type][line break][BigNameDesc of M] points [his of M] wand at [NameDesc of T], which shrinks away inside itself until it has completely gone[end if].";
 			destroy T;
 			repeat with C running through worn clothing:
 				if the quest of C is tentacle-research-quest:
@@ -152,8 +151,23 @@ To compute (M - ex-princess) protecting against (X - a monster):
 	otherwise if X is facehugger:
 		say "[speech style of M]'Ugh[one of], please don't tell me this place is infested with these things[or][stopping].'[roman type][line break][BigNameDesc of M] points [his of M] wand at [NameDesc of X], and zaps it with some kind of laser. And a moment later, [NameDesc of X] is no more.";
 		destroy X;
+	otherwise if M is unconcerned and the player is upright:
+		compute M standard fighting against X;
 	otherwise:
 		compute default protecting of M.
+
+To compute (M - ex-princess) standard fighting against (X - a royal guard):
+	say "[BigNameDesc of M] raises a hand towards [NameDesc of X].[line break][speech style of M]'Stand down, Sir Knight. I pardon [NameBimbo] of [his of the player] crimes.'[roman type][line break][BigNameDesc of X] [one of][or]frowns with frustration, but [stopping]bows.[line break][speech style of X]'As you wish, my liege.'[roman type][line break][big he of X] turns to you.[line break][speech style of X]'You [one of]have a clean slate, thanks to my forgiving Princess. I suggest you use it wisely, and clean up your act before we next meet[or]continue to have friends in high places, it would seem[stopping].'[roman type][line break]";
+	calm X;
+	bore X;
+	compute mandatory room leaving of X;
+	now X is moved.
+
+To compute (M - ex-princess) standard fighting against (X - shopkeeper):
+	say "[BigNameDesc of M] raises a hand towards [NameDesc of X].[line break][speech style of M]'[if there is a held store thing]I shall pay for [his of the player] items[otherwise]This one is with me[end if].'[roman type][line break][BigNameDesc of X] bows.[line break][speech style of X]'Of course, your grace.'[roman type][line break]";
+	repeat with T running through held store things:
+		now T is unowned;
+	send X home.
 
 To compute failed damage of (M - ex-princess):
 	say "[BigNameDesc of M] completely ignores your attack, as if [he of M] didn't even feel it!".
@@ -196,12 +210,12 @@ To say RepeatResponse of (M - ex-princess):
 	say "[speech style of M]'[if M is caged][big please], you've got to help me get out of here!'[otherwise]Oh?'[end if][roman type][line break]".
 
 To say SubmissiveResponse of (M - ex-princess):
-	say "You try to talk to [NameDesc of M], but [he of M][']s busy [if diaper quest is 0]sucking up the [urine] and transferring it to [his of M] toilet[otherwise]occupied by having [his of M] face smushed into used diapers[end if].[line break][speech style of M]'[if diaper quest is 0][one of]*Glug glug glug*...'[or]*Hck hck hck*...'[or]Mmmmmmmph...'[in random order][otherwise]Mmmmgggg!'[end if][roman type][line break]".
+	say "You try to talk to [NameDesc of M], but [he of M][']s busy [if diaper quest is 0 and watersports fetish is 1]sucking up the [urine] and transferring it to [his of M] toilet[otherwise if diaper quest is 0]sucking up the [semen] and transferring it to [his of M] toilet[otherwise]occupied by having [his of M] face smushed into used diapers[end if].[line break][speech style of M]'[if diaper quest is 0][one of]*Glug glug glug*...'[or]*Hck hck hck*...'[or]Mmmmmmmph...'[in random order][otherwise]Mmmmgggg!'[end if][roman type][line break]".
 
 Section 2 - Questioning
 
 Definition: ex-princess is fluff-question-appropriate:
-	if it is not caged and it is undefeated, decide yes;
+	if it is not caged and it is undefeated and princess-rewarded is true, decide yes;
 	decide no.
 
 talk-princess-question is a talk-object. ex-princess has a number called question-sequence.
@@ -269,8 +283,9 @@ To say StoryAnswer of (M - ex-princess):
 		otherwise:
 			say "[speech style of M]'This mansion [first custom style]BELONGS TO THE GREAT ONES. SOON, OTHER PLACES WILL FALL.'[roman type][line break]".
 
-To say EscapeAnswer of (M - ex-princess):
-	say "[speech style of M]'You must defeat the masters of this game. They're beyond my jurisdiction, so I can't really help you.'[roman type][line break]".[TODO: work on]
+Definition: ex-princess is escape-question-appropriate: decide no. [Princess can have over 9 questions now, we need to drop a couple]
+[To say EscapeAnswer of (M - ex-princess):
+	say "[speech style of M]'You must defeat the masters of this game. They're beyond my jurisdiction, so I can't really help you.'[roman type][line break]".][TODO: work on]
 
 To say AdviceQuestion of (M - ex-princess):
 	let B be a random slutty sister;
@@ -286,7 +301,7 @@ To say AdviceQuestion of (M - ex-princess):
 		if vampiress is alive, now B is vampiress;
 		if herald is alive, now B is herald;
 	if B is a slutty sister, say "[variable custom style]'How do I defeat the slutty sisters?'[roman type][line break]";
-	otherwise say "[variable custom style]'How do I defeat [NameDesc of B]?'[roman type][line break]".
+	otherwise say "[variable custom style]'How do I defeat the [ShortDesc of B]?'[roman type][line break]".
 
 To say AdviceAnswer of (M - ex-princess):
 	if playerRegion is dungeon:
@@ -294,7 +309,8 @@ To say AdviceAnswer of (M - ex-princess):
 			let db be minotaur;
 			say "[speech style of M]'[big he of db] may be strong, but [he of db] tires easily. If you exhaust [him of db] first, [he of db] will die quickly.'[roman type][line break]";
 		otherwise if boogeymonster is alive:
-			say "[speech style of M]'You must ignore its evil visions and fight it head on.'[roman type][line break]";
+			let bm be boogeymonster;
+			say "[speech style of M]'You must ignore [his of bm] evil visions and fight [him of bm] head on.'[roman type][line break]";
 	otherwise if playerRegion is hotel:
 		if demon lord is alive:
 			let dl be demon lord;
@@ -311,13 +327,44 @@ To say AdviceAnswer of (M - ex-princess):
 			let mb be vampiress;
 			say "[speech style of M]'Is [he of M] really that bad? ...There are two ways to defeat [him of mb]. The safe way is to just not let [him of mb] feed, and [he of mb] will eventually grow weak and starve. The risky way is to take a stake and jam it right up [his of mb] ass. Yeah, [his of mb] weakness is anal in more ways than one.'[roman type][line break]";
 	otherwise:
-		say "[speech style of M]'Their magic is strong enough to prevent even me entering their room, so you should be prepared to face them alone. Both of them are warriors of exceptional physical and sexual might. Its possible you will defeat them in combat, but to be safe, you should also have a strategy for taking them on in the bedroom.'[roman type][line break]".
-
-To say TeachQuestion of (M - ex-princess):
-	say "[variable custom style]'So, is there anything you can do to help me?'[roman type][line break]";
+		say "[speech style of M]'Their magic is strong enough to prevent even me entering their room, so you should be prepared to face them alone. Both of them are warriors of exceptional physical and sexual might. It's possible you will defeat them in combat, but to be safe, you should also have a strategy for taking them on in the bedroom.'[roman type][line break]".
 
 To compute teaching of (M - ex-princess):
-	say "[line break][speech style of M]'When the time comes, I will aid you, but until then, I need to conserve all my energy and strength.'[roman type][line break]".
+	if M is unconcerned:
+		say "[line break][speech style of M]'Let me show you how to properly wield a magic wand, to get more UMPH into your zaps. Firstly, stick your bum out more, like this. And the zap itself, it's all in the wrist...'[roman type][line break]";
+		teach zapskill;
+	otherwise:
+		say "[line break][speech style of M]'When the time comes, I will aid you, but until then, I need to conserve all my energy and strength.'[roman type][line break]".
+
+talk-princess-magic is a talk-object.
+
+To consider (T - talk-princess-magic) for (M - a monster):
+	if M is ex-princess and M is unconcerned and the magic-fatigue of the player > 0:
+		now the printed name of T is the substituted form of "[variable custom style]'Can you help me replenish my magic energy?'[roman type][line break]";
+		set next numerical response to the substituted form of "[printed name of T]".
+
+To execute (T - talk-princess-magic) for (M - a monster):
+	say "[BigNameDesc of M] smiles.[line break][speech style of M]'Sure.'[roman type][line break][big he of M] clears [his of M] throat and then announces:[line break][speech style of M]'I lick clits!'[roman type][line break]";
+	MagicPowerRefresh 99.
+
+princess-rewarded is initially false.
+talk-princess-reward is a talk-object.
+
+To consider (T - talk-princess-reward) for (M - a monster):
+	if M is ex-princess and M is unconcerned and princess-rewarded is false:
+		now the printed name of T is the substituted form of "[variable custom style]'So, is there any reward for rescuing you?'[roman type][line break]";
+		set next numerical response to the substituted form of "[printed name of T]".
+
+To execute (T - talk-princess-reward) for (M - a monster):
+	now princess-rewarded is true;
+	say "[BigNameDesc of M] thinks.[line break][speech style of M]'You do deserve a reward.'[roman type][line break][big he of M] points [his of M] wand towards you. [big he of M] clears [his of M] throat and announces:[line break][speech style of M]'I simp for this stud!'[roman type][line break]";
+	MagicPowerUp 2;
+	repeat with C running through worn potentially blessable clothing:
+		say "Your [C] shines blue and becomes a ";
+		increase the raw-magic-modifier of C by 1;
+		say "[C]!";
+	say "[BigNameDesc of M] looks fatigued.[line break][speech style of M]'Don't ask me to do that again - that took a whole lot of my magic power to perform.'[roman type][line break]";
+
 
 Section 3 - Drink Requesting
 
@@ -326,7 +373,21 @@ To compute friendly drink of (M - ex-princess):
 		if M is caged or M is defeated:
 			compute unfriendly drink of M;
 		otherwise:
-			say "[speech style of M]'I'm sorry, while I can usually conjure up drinks for everyone, right now I need to conserve every ounce of my magical strength.'[roman type][line break]";
+			let C be a random can in Solid Rock;
+			let LC be the list of off-stage cans;
+			sort LC in random order;
+			repeat with B running through LC:
+				if the fill-type of B <= 7:
+					now C is B;
+					break;
+			if C is can and the number of in-play cans < 5:
+				now C is in the location of M;
+				DoseFill C;
+				say "[speech style of M]'Of course. Take this!'[roman type][line break][BigNameDesc of M] waves [his of M] hand, and a [C] appears before you.";
+				compute autotaking C;
+			otherwise:
+				say "[speech style of M]'I'm sorry, while I can usually conjure up drinks for everyone, right now I need to conserve some of my magical strength.'[roman type][line break]";
+				if newbie tips is 1, say "[newbie style]Try drinking some more of the cans that have already spawned first.[roman type][line break]";
 	otherwise:
 		say "[BigNameDesc of M] acts as if [he of M] didn't even hear you.".
 
@@ -435,7 +496,7 @@ An all later time based rule (this is the school rescue fight rule):
 							StrengthDown 4; [Deliberately harsh.]
 							DexDown 4;
 						otherwise if T matches the text "worthless":
-							say "You feel your body fully heal[if the player is prone], and are raised back to your feet[end if]! But the magic ricochets off of all of your clothing, surrounding it with negative energy!";
+							say "You feel your body fully heal[if the player is prone], and are raised back to your feet[end if]! But, oh, bad luck: the magic ricochets off of all of your clothing, surrounding it with negative energy!";
 							BodyHeal 10;
 							repeat with C running through worn cursable clothing:
 								decrease the raw-magic-modifier of C by 1;
@@ -516,7 +577,9 @@ An all later time based rule (this is the school rescue fight rule):
 				now the raw difficulty of M is 99;
 				now M is uninterested;
 				now the refractory-period of M is the messRefractoryLimit of M + 40;
-				now the boredom of M is 0.
+				now the boredom of M is 0;
+				repeat with H running through worn tiara:
+					destroy H.
 
 To compute (M - ex-princess) enslaving (N - a monster):
 	if diaper quest is 1 or a random number between 0 and diaper lover > 0, now N is diaper-enslaved;
@@ -710,6 +773,18 @@ An all time based rule (this is the caged princess tortured rule):
 			say "[BigNameDesc of N] pushes the button and you watch with [horror the sex addiction of the player] as ";
 			if diaper quest is 1, say "mechanical winches clunk into motion, forcing [his of ex-princess] arms up and [his of ex-princess] neck and head down, and down, and down until [his of ex-princess] face is pressed into the soiled diapers on the ground. The diapers queued up in the tube roll out, falling down on top of [his of ex-princess] head, half-burying [his of ex-princess] face in gross used nappies. A loud vibrating sound can be heard through the intercom.[line break][speech style of N]'[one of]Oooh, are you enjoying smelling our nasty used diapers?'[or]That's right bitch, get a good sniff of our diapers while you cum!'[in random order][roman type][line break]A frustrated groan escapes [NameDesc of ex-princess][']s lips, which soon turns into a sexual moan.";
 			otherwise say "the [if watersports fetish is 1][urine][otherwise][semen][end if] begins to flow down the tube.[line break][speech style of N]'[one of]Get to work, [if watersports fetish is 1]toilet [boy of M][otherwise]cum-bucket[end if][or]Time's ticking, [cunt][or]Grub's up, bitch[then at random]!'[roman type][line break][BigNameDesc of M] [one of]sobs quietly to [himself of M][or]mutters expletives under [his of M] breath[or]groans weakly[in random order] as [he of M] gets to work.".
+
+
+[We can make this resolve to 'yes' and also output some text about what they get up to instead of taking their action.]
+Definition: ex-princess (called M) is distracted:
+	if M is unconcerned and headmistress is in the location of M and M is in the location of the player and the teaseTimer of headmistress <= 0:
+		let E be a random vibe-wand held by M;
+		if E is nothing, now E is royal scepter;
+		say "[speech style of M]'[one of]I'm going to give you payback for every single time you forced me to cum, bitch[or]Found you again[stopping]!'[roman type][line break]Suddenly, [NameDesc of M] steps behind [NameDesc of headmistress] and pushes the head of [his of M] [ShortDesc of E] up against [NameDesc of headmistress][']s snatch.[line break][speech style of headmistress]'Oh Lo!'[roman type][line break][BigNameDesc of headmistress] groans, trying to keep [his of headmistress] tongue out of [his of headmistress] mouth as the powerful magical artifact between [his of headmistress] legs begins to vibrate, sending incomparably powerful vibrations directly into [his of headmistress] delicate sex.[line break][speech style of M]'[one of]Cum for me, slave[or]Come on slut, I know you've got another one in you[stopping].'[roman type][line break][BigNameDesc of M] teases [him of headmistress].[paragraph break][speech style of headmistress]'GGGGAAAAH!'[roman type][line break][BigNameDesc of headmistress] yells as [he of headmistress] cums, [his of headmistress] knees buckling as the sensations overwhelm [him of headmistress]. [big he of headmistress] ends up face down on the floor, shuddering in pleasure, still holding [his of headmistress] tongue out of [his of headmistress] mouth to avoid being shocked, which means that [he of headmistress][']s effectively licking the dirty floor.[line break][speech style of M]'[one of]Pathetic[or]And remember, if you lose count of how many times I've done this, we start again from zero[in random order].'[roman type][line break]You can't help but find the sight of this very arousing.";
+		Arouse 2000;
+		now the teaseTimer of headmistress is 50;
+		decide yes;
+	decide no.
 
 Definition: ex-princess is messy:
 	if it is unconcerned and the refractory-period of it <= (the messRefractoryLimit of it) and diaper messing >= 7, decide yes;

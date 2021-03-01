@@ -70,8 +70,8 @@ Definition: predicament-painted-cutoffs is hand-blocked:
 	if current-predicament is vibe-photo-predicament or (realisticArms is 1 and entry 1 in the armUses of arms is painted-vibrator-hands and entry 2 in the armUses of arms is painted-vibrator-hands), decide yes;
 	decide no.
 
-Figure of predicament-painted-cutoffs is the file "Items/Clothes/Lower/Pants/paintedcutoffs1.jpg".
-Figure of full-painted-cutoffs is the file "Items/Clothes/Lower/Pants/paintedcutoffs2.jpg".
+Figure of predicament-painted-cutoffs is the file "Items/Clothes/Lower/Underwear/Skimpy/Cutoffs/cutoffs4b.png".
+Figure of full-painted-cutoffs is the file "Items/Clothes/Lower/Underwear/Skimpy/Cutoffs/cutoffs4a.png".
 
 To decide which figure-name is clothing-image of (H - predicament-painted-cutoffs):
 	if current-predicament is vibe-photo-predicament, decide on figure of full-painted-cutoffs;

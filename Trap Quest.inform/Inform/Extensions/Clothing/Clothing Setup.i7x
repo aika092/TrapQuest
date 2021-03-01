@@ -54,11 +54,12 @@ To set up magic state of (C - a clothing):
 	if C is discovered varied:
 		now the raw-magic-modifier of C is 0;
 		now C is bland;
-		increase the raw-magic-modifier of C by a random number between -1 and 1;
-		increase the raw-magic-modifier of C by a random number between -1 and 1;
-		increase the raw-magic-modifier of C by a random number between -1 and 1;
-		increase the raw-magic-modifier of C by a random number between -1 and 1;
-		increase the raw-magic-modifier of C by a random number between -1 and 1;
+		if C is magic-enhanceable:
+			increase the raw-magic-modifier of C by a random number between -1 and 1;
+			increase the raw-magic-modifier of C by a random number between -1 and 1;
+			increase the raw-magic-modifier of C by a random number between -1 and 1;
+			increase the raw-magic-modifier of C by a random number between -1 and 1;
+			increase the raw-magic-modifier of C by a random number between -1 and 1;
 		set up BUC of C.
 
 To set up BUC of (C - a clothing):

@@ -78,7 +78,7 @@ To anally orgasm shamefully:
 		otherwise say "[if refractoryperiod > 0]You would cum again but your body is so exhausted from its most recent climax that the wave of pleasure[otherwise]You feel a wave of pleasure that[end if] is weaker and less fulfilling than a full orgasm.";
 		arouse the sex addiction of the player * 10;
 		follow the drilldo orgasm resolution rule;
-	otherwise if the player is male:
+	otherwise if the player is sexed male:
 		say ProstateOrgasmFlav;
 		orgasm;
 		punish shameful male orgasm;
@@ -185,7 +185,7 @@ To punish shameful male orgasm:
 	otherwise:
 		say "[one of]You expected to feel a bit light-headed after, but you don't. [or][stopping]Your [random worn chastity cage] pulses softly.";
 	if diaper quest is 1, progress quest of asshole-presenting-quest;
-	if the player is male and transGender is 0 and the penetrativevirgin of the player is 1 and pink sissy bow is off-stage and pink sissy bow is actually summonable and (asshole is actually occupied or there is worn sissifying clothing):
+	if the player is gendered male and the penetrativevirgin of the player is 1 and pink sissy bow is off-stage and pink sissy bow is actually summonable and (asshole is actually occupied or there is worn sissifying clothing):
 		summon pink sissy bow cursed;
 		say "Suddenly, a [MediumDesc of pink sissy bow] appears in your hair! Clearly you've been acting too much like a sissy...".
 
@@ -242,7 +242,7 @@ The girls don't jizz semen rule is listed last in the ejaculation rules.
 
 This is the lack of penis for ejaculation rule:
 	if the player is not possessing a penis:
-		if the player is male, say "You would have ejaculated, but you no longer have a penis.";
+		if the player is sexed male, say "You would have ejaculated, but you no longer have a penis.";
 		rule fails.
 The lack of penis for ejaculation rule is listed last in the ejaculation rules.
 
@@ -360,9 +360,10 @@ This is the penis softens after ejaculation rule:
 			do nothing;
 		otherwise if P is clothing and penis is exposed:
 			say "Your [ShortDesc of penis] softens enough to slip back into your [ShortDesc of P].";
+			now penis is not penis-erect;
 		otherwise:
 			say "Your [ShortDesc of penis] slowly softens.";
-		now penis is not penis-erect.
+			now penis is not penis-erect.
 The penis softens after ejaculation rule is listed last in the orgasm resolution rules.
 
 This is the orgasm stops masturbation resolution rule:
@@ -382,7 +383,7 @@ This is the living belt of sturdiness orgasm resolution rule:
 		if the living belt of sturdiness is penetrating asshole, AssFill S;
 		otherwise PussyFill S;
 		now S is the buildup of the living belt of sturdiness - S;
-		if the player is male:
+		if the player is not possessing a vagina:
 			AssFill S;
 		otherwise if the living belt of sturdiness is penetrating vagina:
 			PussyFill S;
@@ -459,7 +460,7 @@ This is the hentai orgasm resolution rule:
 		say "[one of][line break][variable custom style]Good grief! That was a most peculiar feeling![roman type][line break][or][line break][variable custom style]Wow, that was a strange coincidence! I hope.[roman type][line break][or]Once again, you seem to squirt milk [i]as[/i] you climaxed.[line break][variable custom style]Huh! I thought that only happened in hentai fiction![roman type][line break]I hope that's not going to happen [i]every[/i] time![or]Oh, man... again? You feel your face turn red.[line break][variable custom style] I think my boobs have been turned into helplessly-squirting milk dispensers when I come![roman type][line break]Surely, not? Please?[or]Oh, no![line break][variable custom style]It's true: each time I come, my boobies squirt milky goodness![roman type][line break]Worse, you can't help but privately thrill at the feel of the thin fluid squirting from your so-sensitive and swollen nips![or][line break][variable custom style]Oooh, yesss! Squirt, squirt! So good! [roman type][line break]Uh... you feel your face flush pink in shame at just how much you enjoyed that sensation![or][line break][variable custom style]Here we go again - yum![roman type][line break]So I ejaculate milk from my boobies now? So what? Is it really such a big deal?[roman type] You feel the warm milk running wetly down your swollen boobs.[or][line break][variable custom style]I love my milky boobs.[roman type][line break][stopping][roman type][line break]";
 		[moderateHumiliate;]
 		if N is clothing:
-			milksoak M on N;
+			AnnouncedExpel milk on N by M;
 		otherwise:
 			milkpuddleup M;
 			if M > 2, cutshow figure of lactation orgasm 1 for breasts;

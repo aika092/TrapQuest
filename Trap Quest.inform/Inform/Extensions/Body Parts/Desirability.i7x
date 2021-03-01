@@ -45,7 +45,7 @@ An all time based rule (this is the determining desirability rule):
 		if the largeness of breasts > 7:
 			now the desirability of breasts is the largeness of breasts / 2;
 			follow the tit slut eligibility rules;
-		if the player is female:
+		if the player is possessing a vagina:
 			now the desirability of vagina is 5;
 			follow the pussy slut eligibility rules;
 		if the player is possessing a penis:
@@ -226,6 +226,9 @@ Definition: a person (called M) is groping:
 	if grope-me-skirt is worn, decide yes;
 	if diaper quest is 1, decide no;
 	if M is monster and the times-met of M is 0, decide no;
+	if M is interested-in-groping, decide yes;
+	decide no.
+Definition: a person (called M) is interested-in-groping:
 	if groping-person is not M: [For efficiency, we only need to update gropability if the NPC we are looking at has changed this turn.]
 		now groping-person is M;
 		update gropability;
@@ -252,55 +255,58 @@ To choose a grope target:
 	now specificBodyPartChosen is false.
 
 To compute grope of (M - a person):
-	let RF be refractoryperiod; [this is how we check if the player orgasmed from the grope]
-	if groping-person is not M:
-		now groping-person is M;
-		update gropability;
-	choose a grope target;
-	let gropeSuccess be 1;
-	if targeted-body-part is breasts:
-		compute breasts grope of M;
-		say BreastsGropeFlav of M;
-		stimulate breasts from M;
-		progress quest of titfuck-desirability-quest;
-	otherwise if targeted-body-part is asshole:
-		say AssholeGropeFlav of M;
-		compute asshole grope of M;
-		stimulate asshole from M;
-	otherwise if targeted-body-part is vagina:
-		say VaginaGropeFlav of M;
-		compute vagina grope of M;
-		stimulate vagina from M;
-	otherwise if targeted-body-part is penis:
-		say PenisGropeFlav of M;
-		compute penis grope of M;
-		stimulate penis from M;
-	otherwise if targeted-body-part is belly:
-		compute belly grope of M;
-		say BellyGropeFlav of M;
-		stimulate belly from M;
-	otherwise if targeted-body-part is face:
-		compute face grope of M;
-		stimulate face from M;
-	otherwise if targeted-body-part is thighs:
-		compute thighs grope of M;
-		say ThighsGropeFlav of M;
-		stimulate thighs from M;
-	otherwise if targeted-body-part is hips:
-		compute ass grope of M;
-		say AssGropeFlav of M;
-		stimulate hips from M;
-		repeat with ST running through worn sex toys penetrating a fuckhole:
-			compute gripping of ST;
+	if current-predicament is team-scissor-lift-predicament and the player is in a predicament room and there is a student in the location of the player: [this is a bystander reacting to a player on a scissor lift tour]
+		say "[speech style of M]'Holy shit[one of], look at those two sluts up there[or], I can see their tits and everything[or], what the fuck[or][stopping]!'[roman type][line break]";
 	otherwise:
-		now gropeSuccess is 0;
-	if targeted-body-part is body part:
-		if debugmode is 1, say "Reacting to a grope on [targeted-body-part] ([gropability of targeted-body-part] gropability out of a total of [total gropability]).";
-		if refractoryperiod > RF, compute grope orgasm reaction of M;
-		otherwise compute grope reaction of M;
-	if M is unfriendly monster:
-		bore M;
-		say "[BigNameDesc of M] seems satisfied, for now...".
+		let RF be refractoryperiod; [this is how we check if the player orgasmed from the grope]
+		if groping-person is not M:
+			now groping-person is M;
+			update gropability;
+		choose a grope target;
+		let gropeSuccess be 1;
+		if targeted-body-part is breasts:
+			compute breasts grope of M;
+			say BreastsGropeFlav of M;
+			stimulate breasts from M;
+			progress quest of titfuck-desirability-quest;
+		otherwise if targeted-body-part is asshole:
+			say AssholeGropeFlav of M;
+			compute asshole grope of M;
+			stimulate asshole from M;
+		otherwise if targeted-body-part is vagina:
+			say VaginaGropeFlav of M;
+			compute vagina grope of M;
+			stimulate vagina from M;
+		otherwise if targeted-body-part is penis:
+			say PenisGropeFlav of M;
+			compute penis grope of M;
+			stimulate penis from M;
+		otherwise if targeted-body-part is belly:
+			compute belly grope of M;
+			say BellyGropeFlav of M;
+			stimulate belly from M;
+		otherwise if targeted-body-part is face:
+			compute face grope of M;
+			stimulate face from M;
+		otherwise if targeted-body-part is thighs:
+			compute thighs grope of M;
+			say ThighsGropeFlav of M;
+			stimulate thighs from M;
+		otherwise if targeted-body-part is hips:
+			compute ass grope of M;
+			say AssGropeFlav of M;
+			stimulate hips from M;
+			repeat with ST running through worn sex toys penetrating a fuckhole:
+				compute gripping of ST;
+		otherwise:
+			now gropeSuccess is 0;
+		if targeted-body-part is body part:
+			if debugmode is 1, say "Reacting to a grope on [targeted-body-part] ([gropability of targeted-body-part] gropability out of a total of [total gropability]).";
+			if refractoryperiod > RF, compute grope orgasm reaction of M;
+			otherwise compute grope reaction of M;
+		if M is unfriendly monster:
+			bore M;
+			say "[BigNameDesc of M] seems satisfied, for now...".
 
 To compute seduction grope of (M - a monster):
 	let RF be refractoryperiod; [this is how we check if the player orgasmed from the grope]
@@ -342,9 +348,10 @@ To compute breasts grope of (M - a person):
 	say "[BigNameDesc of M] [one of]roughly[or]lewdly[or]eagerly[in random order] [one of]grabs[or]molests[or]gropes[or]squeezes[in random order] your [ShortDesc of breasts] with both hands[unless there is worn rigid actually nipple covering clothing], making sure to tweak your nipples hard[end if]!".
 
 To say AssholeGropeFlav of (M - a person):
-	let A be a random uncursed anal beads penetrating asshole;
-	if A is nothing and M is able to remove cursed plugs monster, now A is a random anal beads penetrating asshole;
-	if M is not unintelligent monster, say "[speech style of M]'[if A is anal beads][one of]How many beads have you got stuffed up your asshole, [slut]?'[or]What happens if I pull on this, hmm?'[or]This is much too inviting...'[in random order][otherwise if asshole is lewdly exposed][one of]I can see the entirety of your butthole[or]Your asshole is on complete display[in random order][one of], you know.'[or]. How... inviting.'[or], [slut].'[or]...'[or]. Disgraceful!'[in random order][otherwise if asshole is at least partially lewdly exposed][one of]I can see your butthole, you know.'[or]Your asshole is insufficiently protected right now, wouldn't you say?'[or]Why can I catch glimpses of this? You must be a real [slut]...'[in random order][otherwise][one of]Gotcha!'[or]Whoops, my finger slipped.'[or]I bet a [slut] like you loves anal!'[in random order][end if][roman type][line break]".
+	if M is not unintelligent monster:
+		let A be a random uncursed anal beads penetrating asshole;
+		if A is nothing and M is able to remove cursed plugs monster, now A is a random anal beads penetrating asshole;
+		say "[speech style of M]'[if A is anal beads][one of]How many beads have you got stuffed up your asshole, [slut]?'[or]What happens if I pull on this, hmm?'[or]This is much too inviting...'[in random order][otherwise if asshole is lewdly exposed][one of]I can see the entirety of your butthole[or]Your asshole is on complete display[in random order][one of], you know.'[or]. How... inviting.'[or], [slut].'[or]...'[or]. Disgraceful!'[in random order][otherwise if asshole is at least partially lewdly exposed][one of]I can see your butthole, you know.'[or]Your asshole is insufficiently protected right now, wouldn't you say?'[or]Why can I catch glimpses of this? You must be a real [slut]...'[in random order][otherwise][one of]Gotcha!'[or]Whoops, my finger slipped.'[or]I bet a [slut] like you loves anal!'[in random order][end if][roman type][line break]".
 To compute asshole grope of (M - a person):
 	let C be a random top level ass protection clothing;
 	let S be a random worn skirted crotch-in-place clothing;
@@ -433,7 +440,7 @@ To compute ass grope of (M - a person):
 
 To compute grope reaction of (M - a person):
 	if M is unintelligent monster:
-		say "You can't help but shiver.";
+		say "[if the player is not a pervert]You [one of]squeal in shock, recoiling away as quickly as you can[or]squeak with dismay[cycling]![otherwise if the player is not a nympho]You [one of]can't help but shiver[or]squirm uncomfortably[cycling].[otherwise]You [one of]shiver with delight[or]squirm with pleasure[cycling].[end if]";
 	otherwise if the player is a nympho:
 		say "You shiver with arousal.";
 		if the player is able to speak, say "[second custom style]'[if the player is feeling submissive][one of]Thank you for giving my slutty body your attention, [stud of M].'[or]Thank you [stud of M]. Please feel free to fuck me whenever you want.'[or]Aah~! This disgusting whore is thankful for any and all attention!'[or]Oh thank you [stud of M]! I don't deserve such gentle treatment...'[in random order][otherwise if the player is not feeling dominant][one of]Oh is that it? I kind of thought you were going to fuck me...'[or]Oh my~! You know just how to touch me, [stud of M]!'[or]Oooh, is that your idea of foreplay, [stud of M]?'[or]Well aren't you quite the charmer!'[in random order][otherwise][one of]Is that a challenge? Don't expect me to go easy on you!'[or]Oh [stud of M], if we fuck, I'll be the one on top.'[or]Careful now, if you get me too worked up, you'll be the one that regrets it...'[in random order][end if][roman type][line break]";
@@ -525,8 +532,8 @@ This is the core seduction rule:
 		[if debugmode > 0, say "setting another-turn to 1.";]
 		now another-turn is 1;
 		add the core seduction rule to another-turn-rules;
-	repeat with M running through unseduced reactive monsters:
-		if the boredom of M < 470, compute seduction witness reaction of M. [NPCs that just climaxed aren't going to be unimpressed with the player. This 30s window gives them a chance to wander away]
+		repeat with M running through unseduced reactive monsters:
+			if the boredom of M < 470, compute seduction witness reaction of M. [NPCs that just climaxed aren't going to be unimpressed with the player. This 30s window gives them a chance to wander away]
 
 To compute seduction choice of (M - a monster):
 	let succsucc be 0;
@@ -803,7 +810,7 @@ To compute SeductionSoulKiss of (M - a monster):
 	if D < 0, now D is 0;
 	say "You breathe seductively into [his of M] ear before locking your lips against [hers of M], mouth watering as you try to suck [his of M] soul out through [his of M] mouth.";
 	if a random number between 1 and (5 + D) >= 5:[There's always a chance of success]
-		say "[BigFuckerDesc of M] doesn't notice a thing until its too late, only pushing you away when [his of M] [one of]fat, juicy[or]delicious[or]nutritious[at random] soul is already on its way down your gullet.";
+		say "[BigFuckerDesc of M] doesn't notice a thing until it's too late, only pushing you away when [his of M] [one of]fat, juicy[or]delicious[or]nutritious[at random] soul is already on its way down your gullet.";
 		compute soulSucking from M;
 		anger M;
 		now M is seduction-refused;
@@ -930,7 +937,7 @@ To compute SeductionSoulOral of (M - a monster):
 	if D < 0, now D is 0;
 	say "You [if M is male]devour [his of M] [DickDesc of M], pushing it as far as it can get down your throat[otherwise]grind your face into [his of M] labia, lips pressed flat against [his of M] entrance[end if] as you use your powers to suck out [his of M] soul! [run paragraph on]";
 	if a random number between 1 and (8 + D) >= 5 or the sex-length of M is 0:[Higher chance of success than kissing]
-		say "[BigFuckerDesc of M] doesn't notice anything is wrong until its far too late, unsuccessfully trying to push you away as [his of M] soul flows out of [his of M] [if M is male][manly-penis][otherwise]pussy[end if] and into your waiting mouth. You look up at [him of M] triumphantly as your newly obtained soul slides down your gullet.";
+		say "[BigFuckerDesc of M] doesn't notice anything is wrong until it's far too late, unsuccessfully trying to push you away as [his of M] soul flows out of [his of M] [if M is male][manly-penis][otherwise]pussy[end if] and into your waiting mouth. You look up at [him of M] triumphantly as your newly obtained soul slides down your gullet.";
 		compute soulSucking from M;
 		now the sex-length of M is 0;
 		now M is seduction-refused;

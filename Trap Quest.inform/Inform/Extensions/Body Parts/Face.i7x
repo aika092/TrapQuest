@@ -184,7 +184,7 @@ To say LipDesc:
 		say "lips";
 	otherwise:
 		if the lips of face is 0:[default]
-			say "[if the player is male][one of]narrow[or]unremarkable[at random][otherwise][one of]slender[or]delicate[at random][end if]";
+			say "[if the player is gendered male][one of]narrow[or]unremarkable[at random][otherwise][one of]slender[or]delicate[at random][end if]";
 		if the lips of face is 1:
 			say "[one of]flared[or]full[or][if artificial enhancements fetish is 1]pouting[otherwise]big[end if][or]well-developed[at random]";
 		if the lips of face is 2:[maximum for vanilla players]
@@ -223,6 +223,7 @@ Definition: face is temporarily made up:
 Permanent MakeUp is a number that varies. Permanent MakeUp is 0.
 
 To decide which number is max lip size:
+	if diaper quest is 1, decide on 0;
 	decide on 2 + artificial enhancements fetish.
 
 To LipsUp (X - a number):
@@ -499,7 +500,7 @@ To check puking (N - a number):
 		if there is a lubricant covering face:
 			increase X by 8;
 			if debuginfo > 0, say "+ lubed throat bonus (8) ";
-		if there is a worn lipstick collar:
+		if lipstick collar is worn:
 			increase X by make-up of face * 2;
 			increase X by the lips of face * 2;
 			if debuginfo > 0, say "+ lipstick collar lips bonus ([lips of face * 2]) + lipstick collar make up bonus ([make-up of face * 2]) ";

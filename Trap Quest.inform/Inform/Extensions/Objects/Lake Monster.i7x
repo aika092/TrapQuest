@@ -52,27 +52,27 @@ To compute secondLakeArm of (L - a lake monster):
 	say "[line break]".
 
 To compute lakePoint to (B - face) of (L - a lake monster) with arm (A - a number):
-	say "[if A is 2]The second tentacle starts wrapping itself around your opposite wrist and up your arm. When it reaches your shoulder, it[otherwise if A is 3]The third tentacle wraps around your other arm and towards your face. It[otherwise]It journeys up your front and to your head. It[end if] rounds towards your face and stays there, pointing. From here you can see a tiny opening at the tip of the tentacle[one of]... and you realise these tentacles are definitely sex organs[or], an all-too-clear reminder of how this ended last time[stopping]!";
+	say "[if A is 2]A second tentacle starts wrapping itself around your opposite wrist and up your arm. When it reaches your shoulder, it[otherwise if A is 3]The third tentacle wraps around your other arm and towards your face. It[otherwise]It journeys up your front and to your head. It[end if] rounds towards your face and stays there, pointing. From here you can see a tiny opening at the tip of the tentacle[one of]... and you realise these tentacles are definitely sex organs[or], an all-too-clear reminder of how this ended last time[stopping]!";
 	increase the m-state of L by 1.
 
 To compute lakePenetrate to (B - face) of (L - a lake monster) with arm (A - a number):
-	say "[if A is 2]The second tentacle starts wrapping itself around your opposite wrist and up your arm. When it reaches your shoulder, it[otherwise if A is 3]The third tentacle wraps around your other arm and towards your face. It[otherwise]It journeys up your front and to your head. It[end if] rounds towards your face and forces its way straight into your mouth! It [one of]starts pumping away like some sort of sex organ![or]immediately starts pumping away.[stopping]";
+	say "[if A is 2]A second tentacle starts wrapping itself around your opposite wrist and up your arm. When it reaches your shoulder, it[otherwise if A is 3]The third tentacle wraps around your other arm and towards your face. It[otherwise]It journeys up your front and to your head. It[end if] rounds towards your face and forces its way straight into your mouth! It [one of]starts pumping away like some sort of sex organ![or]immediately starts pumping away.[stopping]";
 	now L is penetrating B;
 	increase the m-state of L by 2.
 
 To compute lakeShred to (B - breasts) of (L - a lake monster) with arm (A - a number):
 	let N be the number of worn titfuck protection clothing;
-	say "The [if A is 2]second[otherwise]third[end if] tentacle starts wrapping itself around your opposite wrist and up your arm. When it reaches your shoulder, it slithers underneath your [ShortDesc of list of worn titfuck protection clothing], and in one swift motion rips [if N is 1]it[otherwise]them[end if] from your body, tearing [if N is 1]it[otherwise]them[end if] in half. It pauses and points at your [BreastDesc], as if admiring [if the largeness of breasts > 1]them[otherwise]it[end if].";
+	say "[if A is 2]A second[otherwise]The third[end if] tentacle starts wrapping itself around your opposite wrist and up your arm. When it reaches your shoulder, it slithers underneath your [ShortDesc of list of worn titfuck protection clothing], and in one swift motion rips [if N is 1]it[otherwise]them[end if] from your body, tearing [if N is 1]it[otherwise]them[end if] in half. It pauses and points at your [BreastDesc], as if admiring [if the largeness of breasts > 1]them[otherwise]it[end if].";
 	increase the b-state of L by 1;
 	repeat with C running through worn titfuck protection clothing:
 		destroy C.
 
 To compute lakePoint to (B - breasts) of (L - a lake monster) with arm (A - a number):
-	say "[if A is 2]The second tentacle starts wrapping itself around your opposite wrist and up your arm. When it reaches your shoulder, it[otherwise if A is 3]The third tentacle wraps around your other arm and towards your chest. It[otherwise]It journeys up your front and to your torso. It[end if] curves and points at your [BreastDesc], as if admiring [if the largeness of breasts > 1]them[otherwise]it[end if].";
+	say "[if A is 2]A second tentacle starts wrapping itself around your opposite wrist and up your arm. When it reaches your shoulder, it[otherwise if A is 3]The third tentacle wraps around your other arm and towards your chest. It[otherwise]It journeys up your front and to your torso. It[end if] curves and points at your [BreastDesc], as if admiring [if the largeness of breasts > 1]them[otherwise]it[end if].";
 	increase the b-state of L by 1.
 
 To compute lakePenetrate to (B - breasts) of (L - a lake monster) with arm (A - a number):
-	say "[if A is 2]The second tentacle starts wrapping itself around your opposite wrist and up your arm. When it reaches your shoulder, it[otherwise if A is 3]The third tentacle wraps around your other arm and towards your chest. It[end if] slithers [if there is a worn bra]underneath your [printed name of random bra worn by the player] and [end if]between your [BreastDesc], and starts thrusting between them as if it were a [manly-penis] using your tits for sex!";
+	say "[if A is 2]A second tentacle starts wrapping itself around your opposite wrist and up your arm. When it reaches your shoulder, it[otherwise if A is 3]The third tentacle wraps around your other arm and towards your chest. It[end if] slithers [if there is a worn bra]underneath your [printed name of random bra worn by the player] and [end if]between your [BreastDesc], and starts thrusting between them as if it were a [manly-penis] using your tits for sex!";
 	now L is penetrating B;
 	increase the b-state of L by 2.
 
@@ -441,7 +441,7 @@ To compute swimming in (WB - DungeonScenery03):
 			compute bathing;[Happens every turn]
 			increase swim-turns by 1;
 			if (the fatigue of the player >= the buckle threshold of the player) and (M is lake-stalking or M is in the location of the player):
-				say "You're too tired, and strength leaves your limbs as you begin to pass out.[line break]A sudden tug on your ankle snaps you back to alertness, and you look down to see a thick, octopus-like tentacle dragging you deeper with incredibly strength. Your slimy [']saviour['] keeps its grip on your ankle as it slowly slides around and up your leg.";
+				say "You're too tired, and strength leaves your limbs as you begin to pass out.[line break]A sudden tug on your ankle snaps you back to alertness, and you look down to see a thick, octopus-like tentacle dragging you deeper with incredible strength. Your slimy [']saviour['] keeps its grip on your ankle as it slowly slides around and up your leg.";
 				compute lake tentacle gangbang of M;
 				now swimming is 0;
 			otherwise:
@@ -471,7 +471,7 @@ To compute treasure diving in (WB - DungeonScenery03) at (L - a number):
 		say "[bold type]You find an old metal bell with a tentacle-shaped ringer![roman type] You take it with you as you swim back to the surface. [GotLuckyFlav]";
 		now kraken bell is carried by the player;
 		now the quest of kraken bell is doom-quest;
-		if doom counter > -1 and doomed < 5, now kraken bell is cursed;;
+		if doom counter > -1 and doomed < 5, now kraken bell is cursed;
 	otherwise if N > 20:[jewels]
 		let J be a random off-stage plentiful accessory;
 		if J is accessory and L > 1 and J is actually summonable:[You won't find jewels until you go further out]
@@ -566,7 +566,7 @@ To compute treasure diving in (WB - DungeonScenery03) at (L - a number):
 location - current location]
 To compute LakeNotice (turns - a number) with (swim-location - a number):[TODO: factor in luck]
 	let M be a random lake monster;
-	if M is not lake-stalking and bukkake fetish is 1:[It hasn't noticed you. Lets see if it does. Disabled if bukkake is disabled.]
+	if M is not lake-stalking and bukkake fetish is 1:[It hasn't noticed you. Let's see if it does. Disabled if bukkake is disabled.]
 		if debugmode > 0, say "[input style]Checking if player escapes notice...[line break]";
 		let T be tracked-semen;
 		let L be a random lake monster;
@@ -586,7 +586,7 @@ To compute LakeChase at (swim-location - a number):
 	let M be a random lake monster;
 	let L be the swim-location of M;
 	if L is swim-location or (L + a random number between 1 and -1) is swim-location or (L is 1 and swim-location is 0):[under you? Tries to grab you. Otherwise, 1 in 3.]
-		if debugmode > 0, say "[input style]Checking if monster visibly grabs...[line break]";
+		if debugmode > 0, say "[input style]Checking if monster visibly grabs...[roman type][line break]";
 		let S be the swimming challenge of the player;
 		decrease S by a random number between dexterity of the player / 3 and the dexterity of the player;
 		let D be a random number between -10 and 75;

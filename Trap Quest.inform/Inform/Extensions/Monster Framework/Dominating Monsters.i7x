@@ -1,16 +1,16 @@
 Dominating Monsters by Monster Framework begins here.
 
-Definition: a monster is permanently banishable:
+Definition: a monster is permanently banishable: [Can't be summoned again once banished]
 	if it is intelligent, decide yes;
-	decide no. [Can't be summoned again once banished]
+	decide no.
 To compute banishment of (M - a monster):
 	compute unique banishment of M;
 	if there are things carried by M:
-		say "Your [list of things carried by M] [if the number of things carried by M > 1]are[otherwise]is[end if] also left behind.";
+		if M is in the location of the player, say "Your [list of things carried by M] [if the number of things carried by M > 1]are[otherwise]is[end if] also left behind.";
 		repeat with K running through things carried by M:
-			now K is in the location of the player;
-			compute autotaking K;
-	if there is a worn notebook, compute studying 1 of M;
+			now K is in the location of M;
+			if M is in the location of the player, compute autotaking K;
+	if M is in the location of the player and there is a worn notebook, compute studying 1 of M;
 	destroy M;
 	if M is permanently banishable, now M is permanently banished.
 To compute unique banishment of (M - a monster):
@@ -77,7 +77,7 @@ To say TaxDesc of (M - a monster):
 To compute taxing of (M - a monster):
 	FavourDown M;
 	compute tax return of M;
-	DifficultyUp M by 1;
+	SilentlyDifficultyUp M by 1;
 	compute M slinking away.
 To compute tax return of (M - a monster):
 	compute default tax return of M.
@@ -265,7 +265,7 @@ To compute soulStealing from (M - a monster):
 	now M is soul-stolen;
 	say "You put one hand on [NameDesc of M]'s chest and another on your own, calling on the power of your master as you force [FuckerDesc of M]'s soul out of [his of M] body!";
 	compute M slinking away;
-	DifficultyUp M by 1;[Once you take a soul, defeating the monster a second time should be harder.]
+	SilentlyDifficultyUp M by 1;[Once you take a soul, defeating the monster a second time should be harder.]
 	progress quest of soul-harvest-quest.
 
 [!<Player>@<dominatedCount:Integer>*
@@ -625,7 +625,7 @@ To decide which number is the submissiveness of (M - a monster):
 
 [!<DecideWhichNumberIsTheSemiDominanceRollForMonster>+
 
-Sometimes player will need to flex their domination muscles after they successfully dominate a monster. This check is meant to standardize those checks.
+Sometimes player will need to flex their domination muscles after they successfully dominate a monster. This check is meant to standardise those checks.
 
 @param <Monster>:<M> The monster the player is trying to flex on
 @return <Integer> A negative value indicates that the player's flexing failed. Any other value means the player succeeded.
@@ -728,7 +728,7 @@ To compute default successful dominance of (M - a monster):
 	say DominationEscapeFlav of M;
 	if player-fucking is not DOMINANT-SHAMEFUL:
 		DominateUp M;
-		DifficultyUp M by 2;
+		SilentlyDifficultyUp M by 2;
 		[say "[line break]You feel [if player-fucking is DOMINANT-NEUTRAL]a bit [end if]more [if the player is gendered male]manly[otherwise]dominant[end if]![line break]";]
 	otherwise:
 		TimesSubmittedUp M by 1;
@@ -767,7 +767,7 @@ To say PowerBottomComment of (M - a monster):
 		otherwise:
 			say "[first custom style]'[one of]Oh we're going to fuck, but you're not going to be doing the fucking.'[or]This time, you're MY fucktoy.'[or]That didn't go the way you'd hoped, now did it?'[at random][roman type]";
 	otherwise if the bimbo of the player < 12:
-		say "[variable custom style]'[one of]I'm going to be on top this time.'[or]I hope you're not a quick-shot, sweetie.'[or]So, are you excited? You get to be fucktoy now!'[at random][roman type]";
+		say "[variable custom style]'[one of]I'm going to be on top this time.'[or]I hope you're not a quick-shot, sweetie.'[or]So, are you excited? You get to be the fucktoy now!'[at random][roman type]";
 	otherwise:
 		say "[second custom style]'[one of]Are you ready, sugar?'[or]So, stud, why don't we get down to business?'[or]Don't worry baby, I'll do everything.'[or]Don't worry about a thing, honey, you're in [NameBimbo][']s hands.'[at random][roman type]".
 
@@ -907,7 +907,7 @@ To diapersit dominate (M - a monster):
 	let D be a random worn diaper;
 	let F be vagina;
 	now player-fucking is DOMINANT-NEUTRAL;
-	if the player is male, now F is penis;
+	if the player is not possessing a vagina, now F is penis;
 	say "You force [NameDesc of M] to [his of M] knees and take a seat on [his of M] face, pressing your [MediumDesc of D] into [his of M] mouth and nose. [big he of M] struggles in vain to get free!";
 	reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 	set numerical response 1 to "hold still and make [him of M] breathe it in";
@@ -1057,7 +1057,7 @@ To compute sissification:
 
 To compute enslaved domination of (M - a monster):
 	if the teaseTimer of M > 0:
-		say "You already did that recently. Perhaps give them a bit of a break first.";
+		say "[big he of M] has been dominated recently. Perhaps give [him of M] a bit of a break first.";
 	otherwise if the player is not able to use their hands:
 		say "You can't use your hands right now so there's not much you can do.";
 	otherwise:

@@ -42,14 +42,11 @@ To say ExamineDesc of (C - woods altar):
 The elder altar gains charge when items are placed on the altar, and loses charge when the player uses the special invoking verb learned from the necronomicon.
 
 @!]
-The elder altar is in Mansion23. The elder altar is not portable. The printed name of elder altar is "[TQlink of item described]dark altar[shortcut-desc] [GlowDesc of the item described][TQxlink of item described][verb-desc of item described]". Understand "dark" as the elder altar. The indefinite article of the elder altar is "an". The elder altar has a number called charge. The charge of the elder altar is usually 0. The text-shortcut of elder altar is "al".
+The elder altar is in Mansion23. The elder altar is not portable. The printed name of elder altar is "[TQlink of item described]dark altar[shortcut-desc][if the charge of item described <= 0] (glowing)[otherwise] (not glowing)[end if][TQxlink of item described][verb-desc of item described]". Understand "dark" as the elder altar. The indefinite article of the elder altar is "an". The elder altar has a number called charge. The text-shortcut of elder altar is "al".
 Figure of elder altar cock is the file "Env/Mansion/cumcock1.jpg".
 
 To decide which figure-name is the examine-image of (C - elder altar):
 	decide on figure of elder altar.
-
-To say GlowDesc of (A - elder altar):
-	say "([if the charge of elder altar < 100]glowing faintly[otherwise]glowing brightly[end if])";
 
 Definition: an elder altar is father material: decide yes.
 
@@ -132,8 +129,8 @@ Check praying something with:
 		if the noun is worn and the second noun is dungeon altar, say "You lie on the altar, focusing your thoughts on the [ShortDesc of the noun].";
 		otherwise say "You place the [ShortDesc of the noun] on the altar.";
 	if the second noun is dungeon altar:
-		if the player is soulless:
-			say "Nothing happens.[line break][variable custom style]'This couldn't be because my soul is gone, could it?'[roman type][line break]" instead;
+		if herald is alive, say "Nothing happens. For some reason, you can tell that [NameDesc of herald] is nullifying the powers of the goddess." instead;
+		if the player is soulless, say "Nothing happens.[line break][variable custom style]'This couldn't be because my soul is gone, could it?'[roman type][line break]" instead;
 		if the noun is a unicorn-horn:
 			say "The smell of spring rain fills the room as the horn slowly disappears, completely replenishing the altar's strong blue glow.";
 			destroy the noun;
@@ -153,10 +150,9 @@ Check praying something with:
 		otherwise if the class of the player is succubus:
 			say "The altar appears inert. It seems the Goddess who rules it isn't inclined to help you." instead;
 	otherwise if the second noun is elder altar and the noun is a unicorn-horn:
-		say "The horn trembles as it is enveloped by black flames, shooting several long ropes of creamy white fluid across the surface of the altar
-		before being consumed completely. Purple light suffuses the altar as the horn disappears in a puff of white smoke.";
-		destroy the noun;
-		now the charge of the elder altar is 0 instead;
+		now the charge of the elder altar is 0;
+		say "The horn trembles as it is enveloped by black flames, shooting several long ropes of creamy white fluid across the surface of the altar before being consumed completely. Purple light suffuses the altar as the horn disappears in a puff of white smoke.";
+		destroy the noun instead;
 	otherwise if the second noun is hotel altar:
 		if the noun is a unicorn-horn:
 			say "Smoke rises slowly as the pearly surface of the horn shifts from white to black, and it slowly breaks down into powder.";
@@ -202,17 +198,18 @@ Carry out praying something with:
 	if the second noun is woods altar:
 		if the noun is accessory, WoodsOffer the noun;
 		otherwise say "Nothing happens.";
-	otherwise if the second noun is the elder altar:[To actually benefit from the elder altar's ability to bless things you need to learn a skill from a monster, the cultist otherwise all you can do is sacrifice things (which does at least let you destroy cursed clothing)]
+	otherwise if the second noun is the elder altar: [To actually benefit from the elder altar's ability to bless things you need to learn a skill from a monster, the cultist otherwise all you can do is sacrifice things (which does at least let you destroy cursed clothing)]
 		if doomed is -1:
 			say "Nothing happens. The altar seems completely inert.";
-		otherwise if the noun is the player:
+		otherwise if the noun is the player and the charge of elder altar <= 0:
 			ElderOffer;
+			force commence doom;
 			progress quest of insanity-quest;
+		otherwise if the noun is clothing and the charge of elder altar <= 0:
+			ElderSacrifice the noun;
+			force commence doom;
 		otherwise:
-			if (the noun is clothing and the noun is not cult garb) or the noun is ritual-beads:
-				ElderSacrifice the noun;
-			otherwise:
-				say "Nothing happens.";
+			say "Nothing happens.";
 	otherwise if the second noun is the hotel altar:
 		DevilPray the noun.
 
@@ -492,7 +489,6 @@ To WoodsOffer (T - an accessory):
 			remove T from play;
 	if witch is in the location of the player, WitchCheck witch.
 
-[]
 To WitchCheck (M - witch):
 	if the altar-uses of witch <= 0 and witch is bitchy:
 		if witch is unconcerned or witch is uninterested:
@@ -504,17 +500,11 @@ To WitchCheck (M - witch):
 	otherwise if witch is bitchy:
 		decrease the altar-uses of witch by 1.
 
-[]
 To reset elder altar:
-	increase the charge of the elder altar by 500.
+	increase the charge of the elder altar by 300.
 
-[]
 To ElderEmpower (T - a headgear):[default]
-	if the player is possessing a vagina:
-		ElderBreed vagina;
-	otherwise:
-		ElderBreed asshole;
-	reset elder altar.
+	do nothing.
 
 To ElderEmpower (W - laurel wreath):
 	say "You feel cold and wet on your arms as the manacles suddenly turn into tentacles! More tentacles appear on either side and begin to thrash out at everything you're wearing below your head!";
@@ -533,7 +523,8 @@ To ElderEmpower (T - flower hairclip):
 		now voidblade is in Mansion23;
 		IntDown 2;
 		reset elder altar;
-		now voidbladeSummoned is true.
+		now voidbladeSummoned is true;
+		compute autotaking voidblade.
 
 To ElderEmpower (T - runic headband):
 	let R be ritual-beads;
@@ -550,12 +541,12 @@ To ElderEmpower (T - a cultist veil):
 		now R is cursed;
 		reset elder altar.
 
-[]
 To ElderOffer:
-	say "What little light there is in the room extinguishes, and the [if there is an acolyte in the location of the player]cultist forces manacles onto your arms and legs[otherwise]manacles suddenly come to life and secure your arms and legs[end if]. There's no escape now![line break]";[there will eventually be multiple possible things that happen to you on the altar]
-	if the number of worn headgear > 0 and diaper quest is 0:
-		ElderEmpower a random worn headgear;
-	if the charge of elder altar < 1 or diaper quest is 1:[if nothing happened with your headgear, it's time to breed]
+	say "What little light there is in the room extinguishes, and the [if there is an acolyte in the location of the player]cultist forces manacles onto your arms and legs[otherwise]manacles suddenly come to life and secure your arms and legs[end if]. There's no escape now!";[there will eventually be multiple possible things that happen to you on the altar]
+	let H be a random worn headgear;
+	now the charge of elder altar is 0;
+	if diaper quest is 0 and H is headgear, ElderEmpower H;
+	if the charge of elder altar is 0 or diaper quest is 1: [if nothing happened with your headgear, it's time to breed]
 		if ritual-beads is worn:
 			ElderSacrifice ritual-beads;
 		otherwise if diaper quest is 0:
@@ -563,9 +554,7 @@ To ElderOffer:
 			otherwise ElderBreed asshole;
 		otherwise:
 			ElderConnect;
-		reset elder altar;
-	otherwise:
-		say "The elder altar must be recharging or something, because nothing else happens.".
+		reset elder altar.
 
 To ElderBreed (F - vagina):[this one needs handling for pussy covering clothing Aika: it also needs to do something for males, I assume? And what about females that are unable to orgasm? ("if the player is not able to get horny")]
 	repeat with C running through top level protection clothing worn by the player:
@@ -651,39 +640,41 @@ To ElderConnect:
 		increase incontinence by 1;
 	compute periodic effect of D.
 
-[]
 To ElderSacrifice (T - a thing):
-	say "The [printed name of T] bursts into ominous black flames![if T is worn] Fortunately, it seems they are not actually hot.[end if] It finally vanishes in a puff of smoke.";
-	if T is mystical amulet and there is a worn tattoo:[Make sure the player can get tattoos]
-		increase the charge of the elder altar by 200;
-		say "You feel that the dark beings this altar belongs to are especially pleased! You feel a sudden burning sensation as some jagged black marks burn themselves into your skin!";
-		let M be mechanic;[We want to put the mechanic into a state where his quest is inactive and he's also unable to turn into Xavier, since his power has now been permanently lost to him]
-		if M is monster:
-			now power-stolen of M is 1;
-		summon abyssal tattoo;
-	otherwise if T is cursed:
-		increase the charge of the elder altar by 100;
-		if whispered > 0 and whisper-type is 2:
-			now whisper-tracking is 1;
-		if doom counter > 0, increase doom counter by 5;
-	otherwise if T is bland:
-		increase the charge of the elder altar by 50;
+	if T is uncursed magic-enhanceable clothing and the raw-magic-modifier of T < a random number between 3 and 5:
+		say "The [printed name of T] flashes blue. ";
+		increase the raw-magic-modifier of T by 1;
+		now T is identified;
+		say "It is now a [T].";
+		if doom counter > 0, increase doom counter by 45;
+		say "The air becomes slightly heavier. You sense that you have somehow given the altar a little more power.";
 	otherwise:
-		increase the charge of the elder altar by 25;
-	remove T from play.
+		say "The [printed name of T] bursts into [one of]ominous black flames! Fortunately, it seems they are not actually hot. [or]those same heatless black flames[stopping]It finally vanishes in a puff of smoke.";
+		if T is mystical amulet and there is a worn tattoo:[Make sure the player can get tattoos]
+			increase the charge of the elder altar by 200;
+			say "You feel that the dark beings this altar belongs to are especially pleased! You feel a sudden burning sensation as some jagged black marks burn themselves into your skin!";
+			now power-stolen of mechanic is 1; [We want to put the mechanic into a state where his quest is inactive and he's also unable to turn into Xavier, since his power has now been permanently lost to him]
+			summon abyssal tattoo;
+		otherwise if T is cursed clothing:
+			if whispered > 0 and whisper-type is 2:
+				now whisper-tracking is 1;
+			if doom counter > 0, increase doom counter by 100;
+			say "The heaviness in the air intensifies. You sense that you have somehow given the altar more power.";
+		destroy T;
+	reset elder altar.
 
 [TODO: less wordy alternative]
 To ElderReward (T - ritual-beads):
 	let N be the notch-taken of T;
 	let F be a random fuckhole penetrated by T;
 	if T is worn:
-		say "The [ShortDesc of T] shifts inside you, and the [if N is 3]3rd[otherwise if N is 2]2nd[otherwise if N is 1]1st[otherwise][N]th[end if] bead pops out all on its own - and immediately bursts into flames. Each bead pops out in rapid succession, catching on fire and disintegrating into glowing embers within seconds. The manacles pull on your wrists and ankles as the last of the beads is destroyed, forcing you to lay out fully spread eagle on the altar.";
+		say "The [ShortDesc of T] shifts inside you, and the [if N is 3]3rd[otherwise if N is 2]2nd[otherwise if N is 1]1st[otherwise][N]th[end if] bead pops out all on its own - and immediately bursts into flames. Each bead pops out in rapid succession, catching on fire and disintegrating into glowing embers within seconds. The manacles pull on your wrists and ankles as the last of the beads is destroyed, forcing you to lay out fully spreadeagle on the altar.";
 		Ruin F times N;
 		now the notch-taken of T is 0;
 		dislodge T;
 	otherwise:
 		now N is the notches of T;
-		say "The [if N is 3]3rd[otherwise][N]th[end if] notch of the [ShortDesc of T] suddenly bursts into flames. The same thing happens to each of the beads in succession, each of them catching fire and disintegrating into piles of glowing embers within seconds. The manacles pull on your wrists and ankles as the last of the beads is destroyed, forcing you to lay out fully spread eagle on the altar.";
+		say "The [if N is 3]3rd[otherwise][N]th[end if] notch of the [ShortDesc of T] suddenly bursts into flames. The same thing happens to each in succession, each bead catching fire and disintegrating into piles of glowing embers within seconds. The manacles pull on your wrists and ankles as the last of the beads is destroyed, forcing you to lay out fully spreadeagle on the altar.";
 	compute dark reward of T;
 	increase the size of T by 1;
 	now the notches of T is 3;
@@ -710,7 +701,7 @@ To compute dark reward of (T - ritual-beads):
 	if N > 6, now R is 6;
 	if R >= 6 and jinx-beads is off-stage:
 		let B be a random worn hand ready equippable;[Would be more destructive, but B could potentially be a handbag]
-		say "[if interracial fetish is 1]A long, black tentacle[otherwise]A long, thin tentacle[end if] reaches out from the darkness above you, [if B is clothing]ripping your [ShortDesc of B] out of your hand as it wriggles[otherwise]wriggling[end if] around your wrist and between your fingers. Your inability to pull away only makes the experience more dehumanizing, and it lasts so long that you wonder if you're hallucinating when the tentacle transforms into a set of tiny black beads.";
+		say "[if interracial fetish is 1]A long, black tentacle[otherwise]A long, thin tentacle[end if] reaches out from the darkness above you, [if B is clothing]ripping your [ShortDesc of B] out of your hand as it wriggles[otherwise]wriggling[end if] around your wrist and between your fingers. Your inability to pull away only makes the experience more dehumanising, and it lasts so long that you wonder if you're hallucinating when the tentacle transforms into a set of tiny black beads.";
 		now B is in the location of the player;
 		summon jinx-beads;
 		moderateHumiliate;
@@ -731,13 +722,13 @@ To compute dark reward of (T - ritual-beads):
 		obsceneHumiliate;
 		now the fatigue of the player is the buckle threshold of the player;
 	otherwise if R >= 3:
-		say "Your mind is assaulted with visions of [if interracial fetish is 1]big, black [end if] tentacles rubbing their huge forms between your legs as tingles pass through your [if the player is barbie]loins[otherwise][genitals][end if]. You suddenly feel considerably less sore!";
+		say "Your mind is assaulted with visions of [if interracial fetish is 1]big, black [end if] tentacles rubbing their huge forms between your legs as tingles pass through your [genitals]. You suddenly feel considerably less sore!"; [Selkie: genitals encompasses the barbie case, with more variation too.]
 		Heal asshole times 10;
 		Heal vagina times 10;
 		now the rawness of penis is 0;
 		severeHumiliate;
 	otherwise if R >= 2:
-		say "Your mind is assaulted with visions of [if interracial fetish is 1]big, black [end if]tentacles spraying you with [if bukkake fetish is 1]off-white [end if]liquid as your clothes are spontaneously soaked. The 'soaking' wears off within moments, leaving your clothing remarkably clean and you completely refreshed.";
+		say "Your mind is assaulted with visions of [if interracial fetish is 1]big, black [end if]tentacles spraying you with [if bukkake fetish is 1]off-white [end if]liquid as your clothes are spontaneously soaked. The 'soaking' wears off within moments, leaving you completely refreshed, and your clothing remarkably clean.";
 		repeat with C running through worn clothing:
 			now the semen-soak of C is 0;
 			now the urine-soak of C is 0;
@@ -863,7 +854,7 @@ To DevilPray (P - a person):
 		if the times-submitted of M > 0, now R is 0;
 	if avatar-summoned is false and the player is possessing a vagina and the vaginalvirgin of the player is 1 and the player is soulless:
 		now R is 0;[free]
-		say "The statue's eyes glow with multicolored light as a [if lady fetish is 1]husky, feminine[otherwise]deep, masculine[end if] voice echoes in your ear.[line break][first custom style]'A virgin, with a void for a soul... It would be a waste to make you an altar girl! That tight little hole in your chest is begging to be filled!'[roman type][line break]The statue's arms suddenly spring to life, grabbing either side of your head and forcing you to look directly into the statue's eyes as you feel *something* pressing in on you from *somewhere*. The empty feeling in your chest turns into a slow, painful sensation of stretching, and you let out a groan of pain as something HUGE and warm forces its way into your very core. Brand new horns push their way out of your forehead, followed by a golden tiara and hood materialising on your head.[line break][first custom style]'Hm, looks like you weren't able to take all of me, but no matter. I am your master now, [NameBimbo], so get to work collecting souls while I work on improving your vessel.'[roman type][line break]";
+		say "The statue's eyes glow with multicoloured light as a [if lady fetish is 1]husky, feminine[otherwise]deep, masculine[end if] voice echoes in your ear.[line break][first custom style]'A virgin, with a void for a soul... It would be a waste to make you an altar girl! That tight little hole in your chest is begging to be filled!'[roman type][line break]The statue's arms suddenly spring to life, grabbing either side of your head and forcing you to look directly into the its eyes as you feel *something* pressing in on you from *somewhere*. The empty feeling in your chest turns into a slow, painful sensation of stretching, and you let out a groan of pain as something HUGE and warm forces its way into your very core. Brand new horns push their way out of your forehead. Finally, a golden tiara and hood materialises on your head.[line break][first custom style]'Hm, looks like you weren't able to take all of me, but no matter. I am your master now, [NameBimbo], so get to work collecting souls while I work on improving your vessel.'[roman type][line break]";
 		summon avatar-headpiece cursed;
 		now avatar-summoned is true;
 	otherwise if R is 0 and gold-tiara is off-stage and gold-tiara is actually summonable:[having sex with a demon at least once will give the player the worshipper headgear]
@@ -930,7 +921,7 @@ To DevilPray (P - a person):
 				say "The statue's eyes glint ominously, but nothing else seems to happen. ";
 			otherwise:
 				say "The statue's eyes emit a brilliant red glow, and a thrill of fear runs up your spine. However, nothing else seems to happen.";
-				DifficultyUp D by 1;
+				SilentlyDifficultyUp D by 1;
 	increase the charge of hotel altar by 300;
 	increase the altar-intensity of hotel altar by 1;
 	progress quest of hotel-altar-quest;
@@ -959,7 +950,7 @@ To DevilPray (T - a thing):
 			say "The statue's eyes glint ominously, but nothing else seems to happen. ";
 		otherwise:
 			say "The statue's eyes emit a brilliant red glow, and a thrill of fear runs up your spine. However, nothing else seems to happen.";
-			DifficultyUp D by 1;
+			SilentlyDifficultyUp D by 1;
 	increase the charge of hotel altar by 300;
 	increase the altar-intensity of hotel altar by 1.
 
@@ -1016,7 +1007,7 @@ To compute DevilPayment (N - a number):
 		say "into the skin of your buttocks. A[if N < 3] faint[otherwise if N < 5] deep, throbbing[otherwise]n incredibly deep, terrible[end if] ache settles into your [if the player is possessing a vagina]fuckholes[otherwise][asshole][end if] as the symbol slowly fades.";
 		if the player is possessing a vagina, ruin vagina times N;
 		ruin asshole times N;
-	otherwise if R is 3 and the player is female and diaper quest is 0:
+	otherwise if R is 3 and the player is possessing a vagina and diaper quest is 0:
 		say "into the skin of your abdomen. A [if N < 3]barely noticeable[otherwise if N < 5]noticeable[otherwise]heavily noticeable[end if] feeling of fullness settles into your belly as the symbol slowly fades.";
 		let M be a random imp;
 		now M is penetrating vagina;

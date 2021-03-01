@@ -169,7 +169,7 @@ To say FriendRespond to (M - a real-life patron):
 		otherwise:
 			say "[variable custom style]Oh no! Now [he of M] thinks I'm a prostitute![roman type][line break]";
 	otherwise:
-		if the player is not able to speak, say "[variable custom style]'[if there is a worn ballgag]MMmm?! Mm-mm! Mm-mm!'[otherwise]Uuooah?! Uh-uh! Uh-uh!'[end if][roman type][line break]You desperately try to let your friend know that you don't want to be recorded, but with no ability to speak, you know you aren't going to get your message through to them. Looks like you'll have to deal with [NameDesc of N] first!";
+		if the player is not able to speak, say "[variable custom style]'[if there is a worn ballgag]Mmm?! Mm-mm! Mm-mm!'[otherwise]Uuooah?! Uh-uh! Uh-uh!'[end if][roman type][line break]You desperately try to let your friend know that you don't want to be recorded, but with no ability to speak, you know you aren't going to get your message through to them. Looks like you'll have to deal with [NameDesc of N] first!";
 		otherwise say "[variable custom style]'What?! No, wait, you can't record this! Please just hang up!'[roman type][line break]You try talk your friend into ending the call, but [NameDesc of N] is still demanding your full attention. Looks like you'll have to deal with [him of N] first!".
 
 To compute (M - a real-life patron) protecting against (X - a monster):
@@ -246,15 +246,16 @@ To compute HangUpDisgraced of (C - a video-monitor) with (M - platonic-friend):
 		say "[speech style of M]'Well, [B], we both know what I just watched. You're a disgrace, and I've lost all respect for you.'[roman type][line break][MediumDesc of M] hangs up the call, and the [MediumDesc of C] turns off.";
 	otherwise:
 		say "[speech style of M]'[one of]I'm sorry, [B], but I'll be sharing what I saw here with everyone. Someone else has to see this.'[or]I think I'll be sharing this as well.'[stopping][roman type][line break][strongHumiliateReflect][MediumDesc of M] hangs up the call, and then the [MediumDesc of C] goes blank.";
-		choose a blank row in Table of Published Disgraces;
-		now the content entry is the substituted form of "a screenshot of you in a video call, [the video-event of C],";
-		now the published entry is the substituted form of "posted to your wall on facepage.com by [MediumDesc of M], accompanied by the comment 'Yes, this is really, [OriginalNameBimbo]!'";
-		now the severity entry is 500;
-		now the popularity entry is 0;
-		now the viewsfuzz entry is 0;
-		now the lastwitnessed entry is 0;
-		now the deletedtime entry is 0;
-		now the timestamp entry is 0;[by setting these to 0, the 'views' will be set to 1, which means there's no tracked views and the reputation damage is flat severity]
+		if the number of blank rows in the Table of Published Disgraces > 0:
+			choose a blank row in Table of Published Disgraces;
+			now the content entry is the substituted form of "a screenshot of you in a video call, [the video-event of C],";
+			now the published entry is the substituted form of "posted to your wall on facepage.com by [MediumDesc of M], accompanied by the comment 'Yes, this is really, [OriginalNameBimbo]!'";
+			now the severity entry is 500;
+			now the popularity entry is 0;
+			now the viewsfuzz entry is 0;
+			now the lastwitnessed entry is 0;
+			now the deletedtime entry is 0;
+			now the timestamp entry is 0;[by setting these to 0, the 'views' will be set to 1, which means there's no tracked views and the reputation damage is flat severity]
 
 To compute HangUpUndisgraced of (C - a video-monitor) with (M - platonic-friend):
 	say "[second custom style]'[one of]When I heard what kind of game this was, I wasn't sure what to think of you playing it. I'm still not sure.'[or]Well, that certainly was something.'[or]Good enough. Now don't forget to keep your act together.'[at random][roman type][line break][MediumDesc of M] hangs up the call, and the [MediumDesc of C] turns off.".
@@ -302,7 +303,7 @@ To say FightObserve of (M - nemesis-friend) with (N - a monster):
 		say "[speech style of M]'[one of]Do me a favour and stay down. I want to see how [FuckerDesc of N] messes with you!'[or]Giving up already? I can't say I'm surprised.'[or]Yes, I knew it! You were only pretending to fight so you could save face!'[at random][roman type][line break][moderateHumiliateReflect]".
 
 To say SexObserve of (M - nemesis-friend) with (N - a monster):
-	say "[first custom style]'[one of]I always knew you'd turn out to be a whore.'[or]This is too good to be true! Hahaha, oh my god...'[or]We both know you're enjoying this. Stop fucking kidding yourself.'[or]Aren't you proud? [BigNameDesc of N] seems like he's really enjoying that!'[then at random][roman type][strongHumiliateReflect]".
+	say "[first custom style]'[one of]I always knew you'd turn out to be a whore.'[or]This is too good to be true! Hahaha, oh my god...'[or]We both know you're enjoying this. Stop fucking kidding yourself.'[or]Aren't you proud? [BigFuckerDesc of N] seems like [he of N][']s really enjoying that!'[then at random][roman type][strongHumiliateReflect]".
 
 To compute HangUpDisgraced of (C - a video-monitor) with (M - nemesis-friend):
 	let B be the friend-old-name of M;
@@ -310,15 +311,16 @@ To compute HangUpDisgraced of (C - a video-monitor) with (M - nemesis-friend):
 		say "[speech style of M]'Well, that was some great blackmail material you just gave me. I can't wait to find out how you're going to disgrace yourself next!'[roman type][line break][MediumDesc of M] hangs up the call, and the [MediumDesc of C] turns off.";
 	otherwise:
 		say "[speech style of M]'[one of]Oh my god, [B], I have to share this with EVERYONE!'[or]I can't wait to update everyone on your progress!'[stopping][roman type][line break][strongHumiliateReflect][MediumDesc of M] hangs up the call, and then the PC Monitor goes blank.";
-		choose a blank row in Table of Published Disgraces;
-		now the content entry is the substituted form of "a slideshow of you in a video call, [the video-event of C],";
-		now the published entry is the substituted form of "posted to your wall on facepage.com by [MediumDesc of M], accompanied by the comment '[OriginalNameBimbo] BEGGED me to share this with everyone!'";
-		now the severity entry is 500;
-		now the popularity entry is 0;
-		now the viewsfuzz entry is 0;
-		now the lastwitnessed entry is 0;
-		now the deletedtime entry is 0;
-		now the timestamp entry is 0;[by setting these to 0, the 'views' will be set to 1, which means there's no tracked views and the reputation damage is flat severity]
+		if the number of blank rows in the Table of Published Disgraces > 0:
+			choose a blank row in Table of Published Disgraces;
+			now the content entry is the substituted form of "a slideshow of you in a video call, [the video-event of C],";
+			now the published entry is the substituted form of "posted to your wall on facepage.com by [MediumDesc of M], accompanied by the comment '[OriginalNameBimbo] BEGGED me to share this with everyone!'";
+			now the severity entry is 500;
+			now the popularity entry is 0;
+			now the viewsfuzz entry is 0;
+			now the lastwitnessed entry is 0;
+			now the deletedtime entry is 0;
+			now the timestamp entry is 0;[by setting these to 0, the 'views' will be set to 1, which means there's no tracked views and the reputation damage is flat severity]
 
 To compute HangUpUndisgraced of (C - a video-monitor) with (M - nemesis-friend):
 	say "[second custom style]'[one of]That was a little... boring. I thought you were going to do something really gross and slutty. What a waste of time.'[or]Really, nothing again? I was so sure you were a whore deep down...'[or]I know you're whoring it up in there. I'll catch you eventually.'[at random][roman type][line break][MediumDesc of M] hangs up the call, and the [MediumDesc of C] turns off.".
@@ -368,7 +370,7 @@ To say FightObserve of (M - distant-friend) with (N - a monster):
 To say SexObserve of (M - distant-friend) with (N - a monster):
 	let B be the friend-old-name of M;
 	if M is unfriendly, say "[first custom style]'[one of]You love it when I watch you, don't you?'[or][B], you're such a dirty whore...'[or]This is so fucking hot...'[or]I think I love this game...'[or]Thank you for the show...'[then at random][roman type][line break][strongHumiliateReflect]";
-	otherwise say "[first custom style]'[one of]I can't believe you're actually having sex right in front of me.'[or]Um, isn't [NameDesc of M][speech style of M] a complete stranger?'[or]I had no clue this is what you were really like.'[or]You want me to see this, don't you. You like this.'[or]It's still so hard to believe you're really [OriginalNameBimbo].'[then at random][if the player is not disgraced and the player is able to speak][line break][variable custom style]'[one of]It's not what it looks like!'[or]Please look away!'[or]I don't normally do this!'[or]This isn't real, I'm telling you!'[in random order][end if][roman type][line break][strongHumiliateReflect]".
+	otherwise say "[first custom style]'[one of]I can't believe you're actually having sex right in front of me.'[or]Um, isn't [FuckerDesc of N][speech style of M] a complete stranger?'[or]I had no clue this is what you were really like.'[or]You want me to see this, don't you. You like this.'[or]It's still so hard to believe you're really [OriginalNameBimbo].'[then at random][if the player is not disgraced and the player is able to speak][line break][variable custom style]'[one of]It's not what it looks like!'[or]Please look away!'[or]I don't normally do this!'[or]This isn't real, I'm telling you!'[in random order][end if][roman type][line break][strongHumiliateReflect]".
 
 To compute HangUpDisgraced of (C - a video-monitor) with (M - distant-friend):
 	let B be the friend-old-name of M;
@@ -376,15 +378,16 @@ To compute HangUpDisgraced of (C - a video-monitor) with (M - distant-friend):
 		say "[speech style of M]'That was pretty... intense, but it can be our secret, [B]. Just between us.'[roman type][line break][MediumDesc of M] hangs up the call, and the [MediumDesc of C] turns off.";
 	otherwise:
 		say "[speech style of M]'[one of]I can't wait to see what everyone else thinks of this...'[or]Everyone really liked the last video, [B]. So, I think I'll share this one too.'[stopping][roman type][line break][strongHumiliateReflect][MediumDesc of M] hangs up the call, and the [MediumDesc of C] turns off.";
-		choose a blank row in Table of Published Disgraces;
-		now the content entry is the substituted form of "a video clip of you, [the video-event of C],";
-		now the published entry is the substituted form of "posted to your wall on facepage.com by [MediumDesc of M], accompanied by the comment '[OriginalNameBimbo] sex tape'";
-		now the severity entry is 500;
-		now the popularity entry is 0;
-		now the viewsfuzz entry is 0;
-		now the lastwitnessed entry is 0;
-		now the deletedtime entry is 0;
-		now the timestamp entry is 0.
+		if the number of blank rows in the Table of Published Disgraces > 0:
+			choose a blank row in Table of Published Disgraces;
+			now the content entry is the substituted form of "a video clip of you, [the video-event of C],";
+			now the published entry is the substituted form of "posted to your wall on facepage.com by [MediumDesc of M], accompanied by the comment '[OriginalNameBimbo] sex tape'";
+			now the severity entry is 500;
+			now the popularity entry is 0;
+			now the viewsfuzz entry is 0;
+			now the lastwitnessed entry is 0;
+			now the deletedtime entry is 0;
+			now the timestamp entry is 0.
 
 To compute HangUpUndisgraced of (C - a video-monitor) with (M - distant-friend):
 	let B be the friend-old-name of M;
@@ -442,15 +445,16 @@ To compute HangUpDisgraced of (C - a video-monitor) with (M - fancied-friend):
 		say "[speech style of M]'Who knew you were such a tart? I certainly didn't.'[roman type][line break][MediumDesc of M] hangs up the call, and the [MediumDesc of C] turns off.";
 	otherwise:
 		say "[speech style of M]'[one of]OK, [B], if you're going to act like such a disgrace, I might as well share this with everyone.'[or]You obviously want me to share this, I know.[or]I'm going to share this video too.'[stopping][roman type][line break][strongHumiliateReflect][MediumDesc of M] hangs up the call, and the [MediumDesc of C] turns off.";
-		choose a blank row in Table of Published Disgraces;
-		now the content entry is the substituted form of "a screenshot of you in a video call, [the video-event of C],";
-		now the published entry is the substituted form of "posted to your wall on facepage.com by [MediumDesc of M], accompanied by the comment 'WTF, [OriginalNameBimbo]!'";
-		now the severity entry is 500;
-		now the popularity entry is 0;
-		now the viewsfuzz entry is 0;
-		now the lastwitnessed entry is 0;
-		now the deletedtime entry is 0;
-		now the timestamp entry is 0.
+		if the number of blank rows in the Table of Published Disgraces > 0:
+			choose a blank row in Table of Published Disgraces;
+			now the content entry is the substituted form of "a screenshot of you in a video call, [the video-event of C],";
+			now the published entry is the substituted form of "posted to your wall on facepage.com by [MediumDesc of M], accompanied by the comment 'WTF, [OriginalNameBimbo]!'";
+			now the severity entry is 500;
+			now the popularity entry is 0;
+			now the viewsfuzz entry is 0;
+			now the lastwitnessed entry is 0;
+			now the deletedtime entry is 0;
+			now the timestamp entry is 0.
 
 To compute HangUpUndisgraced of (C - a video-monitor) with (M - fancied-friend):
 	let B be the friend-old-name of M;

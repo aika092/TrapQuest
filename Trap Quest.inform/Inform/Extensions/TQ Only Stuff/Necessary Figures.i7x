@@ -4,8 +4,19 @@ Part - Monsters
 
 Figure of acolyte 1 is the file "NPCs/Mansion/Cultist/cultist1.png".
 Figure of acolyte 2 is the file "NPCs/Mansion/Cultist/cultist2.png".
-Figure of acolyte 3 is the file "NPCs/Mansion/Cultist/cultist3.png".
+Figure of acolyte 3a is the file "NPCs/Mansion/Cultist/cultist3.png".
+Figure of acolyte 3b is the file "NPCs/Mansion/Cultist/cultist3.jpg".
 Figure of acolyte 4 is the file "NPCs/Mansion/Cultist/cultist4.png".
+To decide which figure-name is the monster-image of (M - an acolyte):
+	if inhuman pregnancy > 0 and doomed > 3, decide on figure of acolyte 4;
+	decide on figure of acolyte 1.
+To decide which figure-name is the monster-image of (M - a mindless acolyte):
+	if pregnancy fetish is 1:
+		if M is unleashed, decide on figure of acolyte 3a;
+		decide on figure of acolyte 3b;
+	otherwise:
+		decide on figure of acolyte 2.
+
 
 Figure of aeromancer cutscene 7 is the file "Special/Cutscene/cutscene-aeromancer-punish1.jpg".
 
@@ -206,6 +217,29 @@ To decide which figure-name is Figure of rank 5 laci:
 	if student-laci is clitLeaded, decide on figure of rank 5 laci pierced;
 	otherwise decide on figure of rank 5 laci normal.
 
+Figure of rank 2 misty normal is the file "NPCs/School/Student/student4b.png".
+To decide which figure-name is Figure of rank 2 misty:
+	if student-misty is clitLeaded, decide on figure of rank 4 misty pierced;
+	otherwise decide on figure of rank 2 misty normal.
+Figure of rank 3 misty normal is the file "NPCs/School/Student/student4d.png".
+To decide which figure-name is Figure of rank 3 misty:
+	if student-misty is clitLeaded, decide on figure of rank 4 misty pierced;
+	otherwise decide on figure of rank 3 misty normal.
+Figure of rank 4 misty normal is the file "NPCs/School/Student/student4f.png".
+Figure of rank 4 misty pierced is the file "NPCs/School/Student/student4fP.png".
+Figure of rank 4 misty cum is the file "NPCs/School/Student/student4fC.png".
+Figure of rank 4 misty pierced cum is the file "NPCs/School/Student/student4fPC.png".
+To decide which figure-name is Figure of rank 4 misty:
+	if student-misty is clitLeaded:
+		if student-misty is cumCovered, decide on figure of rank 4 misty pierced cum;
+		otherwise decide on figure of rank 4 misty pierced;
+	otherwise:
+		if student-misty is cumCovered, decide on figure of rank 4 misty cum;
+		otherwise decide on figure of rank 4 misty normal.
+To decide which figure-name is Figure of rank 5 misty:
+	if student-misty is cumCovered, decide on figure of rank 4 misty cum;
+	otherwise decide on figure of rank 4 misty normal.
+
 Figure of rank 1 small lips rosie is the file "NPCs/School/Student/student1a.png".
 Figure of rank 1 big lips rosie is the file "NPCs/School/Student/student1aL.png".
 To decide which figure-name is Figure of rank 1 rosie:
@@ -290,6 +324,13 @@ Figure of Egg Laying 7 is the file "Special/Cutscene/cutscene-egg-large2.jpg".
 Figure of Egg Laying 8 is the file "Special/Cutscene/cutscene-egg-small3.jpg".
 
 Figure of elder altar is the file "Env/Mansion/altar2.jpg".
+
+Figure of enema tag 1 is the file "Special/Cutscene/cutscene-enema-tag-1a.jpg".
+Figure of enema tag 1 finish line is the file "Special/Cutscene/cutscene-enema-tag-1c.jpg".
+Figure of enema tag 2 is the file "Special/Cutscene/cutscene-enema-tag-2a.jpg".
+Figure of enema tag 2 finish line is the file "Special/Cutscene/cutscene-enema-tag-2c.jpg".
+Figure of enema tag 3 is the file "Special/Cutscene/cutscene-enema-tag-3a.jpg".
+Figure of enema tag 3 finish line is the file "Special/Cutscene/cutscene-enema-tag-3c.jpg".
 
 Figure of enslaved angela is the file "NPCs/School/Teacher/teacher2b.png".
 Figure of enslaved headmistress is the file "NPCs/School/headmistress2.png".

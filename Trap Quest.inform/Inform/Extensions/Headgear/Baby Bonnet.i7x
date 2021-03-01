@@ -20,8 +20,7 @@ To compute class outfit of (H - a baby bonnet):
 	class summon little dinosaur onesie;
 	class summon rubber mittens;
 	class summon yellow-pacifier;
-	class summon pink-baby-booties;
-
+	class summon pink-baby-booties.
 
 Part - Quest
 

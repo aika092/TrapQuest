@@ -93,4 +93,20 @@ This is the futanari fetish toggle rule:
 	now choice in row 68 of the Table of Player Options is 0.
 The futanari fetish reset rule is listed in the reset rules.]
 
+Part 2 - Silicone Milk
+
+Table of Silicone Milk Options
+title	subtable	description	toggle
+"Silicone-enhanced breasts should be able to store less breast milk than fully natural breasts of the same size."	--	--	silicone milk clash rule
+"Man fuck realism, I want to be able to get some big plastic sloshy milk fountains!"	--	--	silicone milk merge rule
+
+This is the silicone milk merge rule:
+	now choice in row 84 of the Table of Player Options is 0;
+	follow quit rule.
+
+This is the silicone milk clash rule:
+	now choice in row 84 of the Table of Player Options is 1;
+	follow quit rule.
+
+
 Body Limit Options ends here.

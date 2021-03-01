@@ -4,6 +4,8 @@ A clothing-quest is a kind of object.
 
 A clothing-quest can be disappearing or persistent. A clothing-quest is usually disappearing. [Disappearing quests offer to let the player have the item instantly vanish when the quest is completed and only ever trigger once. Persistent quests don't offer to have the item vanish, they just uncurse or bless the item. They can be triggered multiple times.]
 
+A clothing-quest has a number called quest-completions. [counts the number of times a quest has been completed.]
+
 A headgear-clothing-quest is a kind of clothing-quest. A headgear-clothing-quest is persistent. [Headgear don't disappear instantly when the class quest is completed.]
 
 To decide what number is the quest-weighting of (Q - a clothing-quest) for (C - a clothing): [How often should this appear as the quest?]
@@ -89,7 +91,7 @@ To say QuestFlav of (C - a clothing):
 	say QuestFlav of the quest of C.
 
 To say FullQuestFlav of (Q - a clothing-quest):
-	say "[QuestFlav of Q][if armband is worn and Q is school-disabled][line break][bold type]This quest cannot be completed while you are in the [slut school] region.[line break][roman type][end if]".
+	unless Q is no-clothing-quest, say "[QuestFlav of Q][if armband is worn and Q is school-disabled][line break][bold type]This quest cannot be completed while you are in the [slut school] region.[line break][roman type][end if]".
 
 To say QuestFlav of (Q - a clothing-quest): [The long description. Must be replaced for each quest.]
 	say "This quest is missing its long description.".
@@ -99,7 +101,7 @@ Carry out wearing cursed clothing:
 		compute quest of the noun.
 
 Report examining clothing:
-	if the noun is sure and (the noun is cursed or the quest of the noun is persistent), say FullQuestFlav of (the quest of the noun).
+	if the noun is sure and (the noun is cursed or the quest of the noun is persistent) and the quest of the noun is not no-clothing-quest, say FullQuestFlav of (the quest of the noun).
 
 Report wearing clothing:
 	if the noun is worn cursed clothing:
@@ -107,7 +109,7 @@ Report wearing clothing:
 		if newbie tips is 1 and the quest of the noun is not no-clothing-quest, say "[one of][newbie style]Newbie tip: Your item has a 'quest' attached to it! This means that if you perform the task outlined above, the curse will disappear and you'll be able to remove the item[if the quest of the noun is disappearing]. In fact, with this particular quest, the item will just disappear entirely. Other less common quests will simply decurse the item and also give you a special (usually slightly bad) effect every time you complete the quest, and it's up to you if it's worth it to keep wearing it[end if].[roman type][line break][or][stopping]".
 
 To say QuestTitle of (C - a clothing):
-	say QuestTitle of the quest of C.
+	unless the quest of C is no-clothing-quest, say QuestTitle of the quest of C.
 
 To say QuestTitle of (Q - a clothing-quest): [The short description. Must be replaced for each quest.]
 	say "missing quest title".
@@ -191,10 +193,12 @@ To compute quest completion of (Q - a clothing-quest) on (C - a clothing):
 			now disappearTime is 1;
 	if disappearTime is 1:
 		say QuestCompleteFlav of Q on C;
+		increase the quest-completions of Q by 1;
 		only destroy C;
 	otherwise:
 		say QuestPersistFlav of Q on C;
 		compute persistent reward of Q on C;
+		increase the quest-completions of Q by 1;
 		if C is bland, now C is blessed;
 		if C is cursed, silently bless C;
 	say "[roman type][line break]";
@@ -945,26 +949,6 @@ To say QuestPersistFlav of (Q - bursting-quest) on (C - a clothing):
 To compute persistent reward of (Q - bursting-quest) on (C - a clothing):
 	say "filling your bladder even further!";
 	increase the bladder of the player by 1.
-
-Part - Next Lesson Quest
-
-next-lesson-quest is a clothing-quest. next-lesson-quest is persistent.
-
-To decide what number is the quest-weighting of (Q - next-lesson-quest) for (C - a clothing):
-	decide on 0. [Only occurs when the code specifies (e.g. when schoolgirl outfit is summoned)]
-
-To say QuestFlav of (Q - next-lesson-quest):
-	say "You sense that it wants you to attend another lesson at the school.".
-
-To say QuestTitle of (Q - next-lesson-quest):
-	say " (school lesson quest)".
-
-To compute persistent reward of (Q - next-lesson-quest) on (C - a clothing):
-	if apple is not carried:
-		now apple is carried by the player;
-		say "dropping an [apple] into your hand.";
-	otherwise:
-		say "filling your mind with a reminder to eat your fruit.".
 
 Part - Show and Tell Quest
 

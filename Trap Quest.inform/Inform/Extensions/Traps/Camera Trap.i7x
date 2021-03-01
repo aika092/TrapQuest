@@ -59,6 +59,8 @@ To decide which figure-name is the examine-image of (C - a poster):
 A poster has a text called title.
 [The below variables are to track the state of the player at the time the image was taken.]
 A poster has a number called old-gender.
+A poster has a number called old-penis.
+A poster has a number called old-vagina.
 A poster has a number called old-stance.
 A poster has a number called old-breasts.
 A poster has a number called old-belly.
@@ -92,8 +94,12 @@ To set up (P - a poster):
 	distribute P.
 
 To develop (P - a poster):
-	if the player is female, now the old-gender of P is 1;
-	otherwise now the old-gender of P is 0;
+	if the player is presenting as male, now the old-gender of P is 0;
+	otherwise now the old-gender of P is 1;
+	if the player is possessing a penis, now the old-penis of P is 1;
+	otherwise now the old-penis of P is 0;
+	if the player is possessing a vagina, now the old-vagina of P is 1;
+	otherwise now the old-vagina of P is 0;
 	now the old-stance of P is the stance of the player;
 	now the old-breasts of P is the largeness of breasts;
 	now the old-belly of P is the largeness of belly;
@@ -123,6 +129,21 @@ To develop (P - a poster):
 	if vagina is lewdly exposed or penis is lewdly exposed, now the genitals visible of P is 1;
 	compute special of P;
 	compute unique variables of P.
+
+To decide which text is he of (P - a poster):
+	decide on "[if the old-gender of P is 1]she[otherwise]he[end if]".
+
+To decide which text is his of (P - a poster):
+	decide on "[if the old-gender of P is 1]her[otherwise]his[end if]".
+
+To decide which text is him of (P - a poster):
+	decide on "[if the old-gender of P is 1]her[otherwise]him[end if]".
+
+To decide which text is himself of (P - a poster):
+	decide on "[if the old-gender of P is 1]herself[otherwise]himself[end if]".
+
+To decide which text is boy of (P - a poster):
+	decide on "[if the old-gender of P is 1]girl[otherwise]boy[end if]".
 
 To compute special of (P - a poster):
 	if there is a worn gag:
@@ -183,7 +204,7 @@ An all time based rule (this is the monster spots poster rule):
 				if P is identifiable:
 					IdentifiablePosterReaction of M;
 				otherwise:
-					UnidentifiablePosterReaction of M;
+					UnidentifiablePosterReaction of M with P;
 				now M is disapproving P.
 
 To IdentifiablePosterReaction of (M - a monster):
@@ -191,13 +212,13 @@ To IdentifiablePosterReaction of (M - a monster):
 	say "You turn bright red with shame.";
 	humiliate the lewdness of a random poster in the location of the player * 2.
 
-To UnidentifiablePosterReaction of (M - a monster):
-	say "[speech style of M]'Heh, [one of]this bitch is a total disgrace, whoever she is[or]that's fucking disgusting, I'm glad I don't know this girl[or]I've never seen such a nasty sight in my life[or]what a slut[or]that's one fine booty[at random].'[roman type][line break]";
+To UnidentifiablePosterReaction of (M - a monster) with (P - a poster):
+	say "[speech style of M]'Heh, [one of]this bitch is a total disgrace, whoever [he of P] is[or]that's fucking disgusting, I'm glad I don't know this [boy of P][or]I've never seen such a nasty sight in my life[or]what a slut[or]that's one fine booty[at random].'[roman type][line break]";
 	say "You turn bright red but don't say a word.";
 	humiliate the lewdness of a random poster in the location of the player.
 
 To say PosterGenitals of (P - a poster):
-	if genitals visible of P is 1 or asshole visible of P is 1, say "Your [if genitals visible of P is 1 and old-gender of P is 0][PenisFlavour old-penislength of P][otherwise if genitals visible of P is 1][vagina][end if][if genitals visible of P is 1 and asshole visible of P is 1] and [end if][if asshole visible of P is 1][asshole][end if] [if genitals visible of P is 1 and asshole visible of P is 1]are[otherwise]is[end if] fully visible. ".
+	if genitals visible of P is 1 or asshole visible of P is 1, say "Your [if genitals visible of P is 1 and old-penis of P is 1][PenisFlavour old-penislength of P][otherwise if genitals visible of P is 1 and the old-vagina of P is 1][vagina][end if][if genitals visible of P is 1 and asshole visible of P is 1] and [end if][if asshole visible of P is 1][asshole][end if] [if genitals visible of P is 1 and asshole visible of P is 1]are[otherwise]is[end if] fully visible. ".
 
 To say PosterCum of (P - a poster):
 	if old-cumface of P > 0, say "Your face is [if old-cumface of P > 7]caked[otherwise if old-cumface of P > 3]covered[otherwise]splattered[end if] with [semen].";
@@ -219,19 +240,19 @@ To compute title of (P - an upskirt poster):
 		otherwise now the title of P is "I only cum from my butthole!";
 	otherwise if the old-knickers-mess of P > 0:
 		if P is in the hotel, now the title of P is "PATHETIC POOPYPANTS";
-		otherwise now the title of P is "This big baby is so pathetic that [if the player is male and the bimbo of the player < 8]he went number two in his[otherwise]she went number two in her[end if] own pants!";
+		otherwise now the title of P is "This big baby is so pathetic that [he of P] went number two in [his of P] own pants!";
 	otherwise if the old-knickers-urine of P > 0:
 		if diaper lover >= 0:
 			if P is in the hotel, now the title of P is "CAN'T STAY DRY";
-			otherwise now the title of P is "Shocking evidence that this little one can't even control its own bladder!";
+			otherwise now the title of P is "Shocking evidence that this little one can't even control [his of P] own bladder!";
 		otherwise:
 			if P is in the hotel, now the title of P is "NAUGHTY PISS SLUT";
-			otherwise now the title of P is "Shocking evidence that this whore gets turned on by pissing herself.";
+			otherwise now the title of P is "Shocking evidence that this whore gets turned on by pissing [himself of P].";
 	otherwise if the old-knickers of P is diaper:
 		if P is in the hotel, now the title of P is "DIAPERED CRYBABY";
 		otherwise now the title of P is "A properly padded peepot.";
 	otherwise if the old-overdress of P is royalty themed:
-		if P is in the hotel, now the title of P is "HER ROYAL SLUTNESS";
+		if P is in the hotel, now the title of P is "[caps his of P] ROYAL SLUTNESS";
 		otherwise now the title of P is "A royal slip-up!";
 	otherwise if there is a lewdly exposed fuckhole:
 		if P is in the hotel, now the title of P is "SHAME ON YOU";
@@ -254,7 +275,7 @@ To say ExamineDesc of (C - an upskirt poster):
 	if old-father of C is a thing and old-belly of C > 3:
 		say "You are visibly pregnant[if the pregnancy of the player is 0] with [PregGrowth of old-father of C] inside your[otherwise]with a[end if] [if old-belly of C > 5]giant[otherwise]large[end if] belly.";
 	if old-skirt of C is clothing or old-overdress of C is skirted clothing, say "[if old-skirt of C is clothing]Due to your compromising position, your [ShortDesc of old-skirt of C] does nothing to protect your modesty. [otherwise]You are wearing a [ShortDesc of old-overdress of C]. However it does nothing to protect your modesty. [end if]";
-	if genitals visible of C is 1 or asshole visible of C is 1, say "Your [if genitals visible of C is 1 and old-gender of C is 0][PenisFlavour old-penislength of C][otherwise if genitals visible of C is 1][vagina][end if][if genitals visible of C is 1 and asshole visible of C is 1] and [end if][if asshole visible of C is 1][asshole][end if] [if genitals visible of C is 1 and asshole visible of C is 1]are[otherwise]is[end if] fully visible. ";
+	if genitals visible of C is 1 or asshole visible of C is 1, say "Your [if genitals visible of C is 1 and old-penis of C is 1][PenisFlavour old-penislength of C][otherwise if genitals visible of C is 1 and old-vagina of C is 1][vagina][end if][if genitals visible of C is 1 and asshole visible of C is 1] and [end if][if asshole visible of C is 1][asshole][end if] [if genitals visible of C is 1 and asshole visible of C is 1]are[otherwise]is[end if] fully visible. ";
 	if old-trousers of C is clothing or old-knickers of C is clothing:
 		say "You are wearing a ";
 		if old-trousers of C is clothing:
@@ -297,64 +318,64 @@ To compute title of (P - a shameful orgasm poster):
 			if a random number between 1 and 2 is 1, now the title of P is "FUCKDOLL FEELS FABULOUS";
 			otherwise now the title of P is "SEX DOLL LOVES IT";
 		otherwise if the old-bimbo of P > 10:
-			now the title of P is "Rubber fuckdoll loves her new purpose in life.";
+			now the title of P is "Rubber fuckdoll loves [his of P] new purpose in life.";
 		otherwise:
-			now the title of P is "The latex sex doll enjoys itself a bit too much!";
+			now the title of P is "The latex sex doll enjoys [himself of P] a bit too much!";
 	otherwise if old-stimulant of P is monster or diaper quest is 1:
 		if the old-overdress of P is royalty themed:
 			if P is in the hotel:
 				now the title of P is "FIT TO RULE?";
 			otherwise if the old-bimbo of P > 10:
-				now the title of P is "Prudish princess turned girl gone wild!";
+				now the title of P is "Prudish princess turned [boy of P] gone wild!";
 			otherwise:
 				now the title of P is "Royal princess caught in sex scandal!";
-		otherwise if the old-overdress of P is ballet related and old-gender of P is 0 and diaper quest is 0 and transGender is 0:
+		otherwise if the old-overdress of P is ballet related and old-gender of P is 0 and diaper quest is 0:
 			if P is in the hotel:
 				now the title of P is "SISSY SLUT";
 			otherwise if the dexterity of the player > 15:
-				now the title of P is "'Sissy ballerina shows just how flexible she can be!'";
+				now the title of P is "'Sissy ballerina shows just how flexible [he of P] can be!'";
 			otherwise:
-				now the title of P is "'This sissy ballerina is sure enjoying her morning stretches.'";
+				now the title of P is "'This sissy ballerina is sure enjoying [his of P] morning stretches.'";
 		otherwise if the old-overdress of P is maid outfit:
 			if P is in the hotel:
 				now the title of P is "SERVICE WITH A SMILE";
 			otherwise if the old-sex-addiction of P > 10:
-				now the title of P is "At Hotel Premier Sinn, your every demand is her desire!";
+				now the title of P is "At Hotel Premier Sinn, your every demand is [his of P] desire!";
 			otherwise:
 				now the title of P is "Come along to Hotel Premier Sinn, where even the maids join in on the fun!";
 		otherwise if the old-overdress of P is schoolgirl outfit:
 			if P is in the hotel:
-				now the title of P is "GOOD GIRL";
+				now the title of P is "GOOD [caps boy of P]";
 			otherwise if diaper lover <= 0:
 				now the title of P is "This Detention Hall Doll just can't keep out of trouble!";
 			otherwise:
-				now the title of P is "Daddy's little girl is all grown up!";
+				now the title of P is "Daddy's little [boy of P] is all grown up!";
 		otherwise if the old-overdress of P is clubbing dress or the old-overdress of P is evening dress:
-			if P is in the hotel, now the title of P is "PARTY GIRL";
+			if P is in the hotel, now the title of P is "PARTY [caps boy of P]";
 			otherwise now the title of P is "After the club is the after party, and after the party is...";
 		otherwise if the diaper quest is 1:
 			if the old-knickers of P is not knickers:
 				if P is in the hotel, now the title of P is "PUBLIC DISGRACE";
-				otherwise now the title of P is "Be on the look-out for this disgusting pervert! Punish her on sight!";
+				otherwise now the title of P is "Be on the look-out for this disgusting pervert! Punish [him of P] on sight!";
 			if the old-knickers of P is diaper:
 				if P is in the hotel, now the title of P is "I LOVE MY PADDING";
 				otherwise now the title of P is "My thick padding feels sooo good I just can't help but cum in them again and again!";
 			otherwise:
 				if P is in the hotel, now the title of P is "I LOVE MY PANTIES";
-				otherwise now the title of P is "Look at me doing grown-up things in my big girl panties!";
+				otherwise now the title of P is "Look at me doing grown-up things in my big [boy of P] panties!";
 		otherwise if old-sex-addiction of P < 7:
 			if P is in the hotel, now the title of P is "ANAL SLUT";
-			otherwise now the title of P is "As much as she'd tell you she hates it right now, we know she'll be back for more.";
+			otherwise now the title of P is "As much as [he of P]'d tell you [he of P] hates it right now, we know [he of P]'ll be back for more.";
 		otherwise if old-sex-addiction of P < 12:
 			if P is in the hotel, now the title of P is "ANAL ADDICT";
 			otherwise now the title of P is "The only way to beat this addiction is to feed it!";
 		otherwise:
 			if P is in the hotel, now the title of P is "FUCK ME HARDER!";
-			otherwise now the title of P is "Slut Watch: If you see this girl, just say the word and she will happily let you fuck her ass.";
+			otherwise now the title of P is "Slut Watch: If you see this [boy of P], just say the word and [he of P] will happily let you fuck [his of P] ass.";
 	otherwise:
 		if old-sex-addiction of P < 7:
 			if P is in the hotel, now the title of P is "BUTTHOLE BANDIT";
-			otherwise now the title of P is "Her mind says no, but her body says yes. She'll be addicted to anal in no time.";
+			otherwise now the title of P is "[big his of P] mind says no, but [his of P] body says yes. [big he of P]'ll be addicted to anal in no time.";
 		otherwise if old-sex-addiction of P < 12:
 			if P is in the hotel, now the title of P is "ANAL TRAINING";
 			otherwise now the title of P is "Learning to love anal, one day at a time.";
@@ -395,57 +416,57 @@ To compute title of (P - a masturbation poster):
 	if old-monster of P is monster:
 		if old-sex-addiction of P < 7:
 			if P is in the hotel, now the title of P is "PUBLIC DISGRACE";
-			otherwise now the title of P is "This one tries to claim she's not a slut, but enjoys an audience when wanking! Someone's in denial.";
+			otherwise now the title of P is "This one tries to claim [he of P]'s not a slut, but enjoys an audience when wanking! Someone's in denial.";
 		otherwise if old-sex-addiction of P < 10:
 			if P is in the hotel, now the title of P is "SHAMELESS";
-			otherwise now the title of P is "She prefers when there's an audience.";
+			otherwise now the title of P is "[big he of P] prefers when there's an audience.";
 		otherwise:
 			if P is in the hotel, now the title of P is "ATTENTION WHORE";
 			otherwise now the title of P is "Look at the lengths this whore will go to get attention.";
 	otherwise if diaper quest is 1:
 		if the old-knickers of P is not knickers:
 			if P is in the hotel, now the title of P is "PUBLIC DISGRACE";
-			otherwise now the title of P is "Be on the look-out for this exhibitionist masturbating pervert! Punish her on sight!";
+			otherwise now the title of P is "Be on the look-out for this exhibitionist masturbating pervert! Punish [him of P] on sight!";
 		if the old-knickers-mess of P > 0:
 			if P is in the hotel, now the title of P is "ULTIMATE DISGRACE";
-			otherwise now the title of P is "Little one proves there are no limits to her depravity.";
+			otherwise now the title of P is "Little one proves there are no limits to [his of P] depravity.";
 		otherwise if the old-knickers-urine of P > 0:
 			if P is in the hotel, now the title of P is "WILD WET WANKER";
-			otherwise now the title of P is "She can't help herself - she just loves the way her soggy pants feel!";
+			otherwise now the title of P is "[big he of P] can't help [himself of P] - [he of P] just loves the way [his of P] soggy pants feel!";
 		otherwise if the old-knickers of P is diaper:
 			if P is in the hotel, now the title of P is "I LOVE MY PADDING";
 			otherwise now the title of P is "My thick padding feels sooo good I just can't help but cum in them again and again!";
 		otherwise:
 			if P is in the hotel, now the title of P is "I LOVE MY PANTIES";
-			otherwise now the title of P is "Look at me doing grown-up things in my big girl panties!";
+			otherwise now the title of P is "Look at me doing grown-up things in my big [boy of P] panties!";
 	otherwise:
 		if the old-overdress of P is royalty themed:
 			if P is in the hotel:
 				now the title of P is "OUR ROYAL HORNDOG";
 			otherwise if the humiliation of the player < 17500:
-				now the title of P is "Princess caught polishing her pearl!";
+				now the title of P is "Princess caught polishing [his of P] pearl!";
 			otherwise:
 				now the title of P is "Apparently even royalty suffer from the basest of urges.";
-		otherwise if the old-overdress of P is ballet related and old-gender of P is 0 and transGender is 0:
+		otherwise if the old-overdress of P is ballet related and old-gender of P is 0:
 			if P is in the hotel, now the title of P is "SISSY SLUT";
-			otherwise now the title of P is "'This sissy is showing just how much she likes being dressed in a tutu.'";
+			otherwise now the title of P is "'This sissy is showing just how much [he of P] likes being dressed in a tutu.'";
 		otherwise if the old-overdress of P is maid outfit:
 			if P is in the hotel:
-				now the title of P is "PUT HER IN CHASTITY";
+				now the title of P is "PUT [caps him of P] IN CHASTITY";
 			otherwise if there is an interested monster:
-				now the title of P is "Serving herself before anyone else? How disgraceful!";
+				now the title of P is "Serving [himself of P] before anyone else? How disgraceful!";
 			otherwise:
 				now the title of P is "This is why you should keep your maid locked in chastity.";
 		otherwise if the old-overdress of P is schoolgirl outfit:
-			if P is in the hotel, now the title of P is "BAD GIRL";
-			otherwise now the title of P is "Only the naughtiest girls have a danger wank in public!";
+			if P is in the hotel, now the title of P is "BAD [caps boy of P]";
+			otherwise now the title of P is "Only the naughtiest [boy of P]s have a danger wank in public!";
 		otherwise if the old-overdress of P is clubbing dress or the old-overdress of P is evening dress:
 			if P is in the hotel:
 				now the title of P is "NICE DANCE MOVES";
 			otherwise if the bimbo of the player > 10:
-				now the title of P is "Looks like this slut decided to have a party of her own!";
+				now the title of P is "Looks like this slut decided to have a party of [his of P] own!";
 			otherwise:
-				now the title of P is "I guess she didn't pull tonight. Clearly, she needs to act even sluttier!";
+				now the title of P is "I guess [he of P] didn't pull tonight. Clearly, [he of P] needs to act even sluttier!";
 		otherwise if old-sex-addiction of P < 7:
 			if P is in the hotel, now the title of P is "NOT AS DISCREET AS YOU THOUGHT";
 			otherwise now the title of P is "There are no prudes, only people who try and pretend they're not nymphomaniacs in private.";
@@ -501,7 +522,7 @@ To compute title of (P - a wetting poster):
 			if the old-overdress of P is royalty themed:
 				if P is in the hotel, now the title of P is "PRINCESS POTTYPANTS";
 				otherwise now the title of P is "A royal relief!";
-			otherwise if the old-overdress of P is ballet related and old-gender of P is 0 and transGender is 0:
+			otherwise if the old-overdress of P is ballet related and old-gender of P is 0:
 				if P is in the hotel, now the title of P is "SISSY PEEPOT";
 				otherwise now the title of P is "'I'm a little peepot, whimper and pout[line break]Here is my diapee I cry about[line break]When I get all fussy I wail and shout[line break]Check my diaper and change me out'";
 			otherwise if the old-overdress of P is maid outfit:
@@ -512,7 +533,7 @@ To compute title of (P - a wetting poster):
 				otherwise now the title of P is "When conventional punishments didn't work, this is what the principal came up with.";
 			otherwise if the old-overdress of P is clubbing dress or the old-overdress of P is evening dress:
 				if P is in the hotel, now the title of P is "PARTYING WHILE PADDED?";
-				otherwise now the title of P is "Are you sure you're mature enough for big girl parties, dear?";
+				otherwise now the title of P is "Are you sure you're mature enough for big [boy of P] parties, dear?";
 			otherwise if the old-overdress of P is nightie:
 				if P is in the hotel, now the title of P is "BIMBO BABYDOLL";
 				otherwise now the title of P is "This is how you can tell it's bedtime.";
@@ -521,14 +542,14 @@ To compute title of (P - a wetting poster):
 					if P is in the hotel, now the title of P is "SNEAKY SLUT";
 					otherwise now the title of P is "There's nothing quite like the risk of being caught in the act.";
 				otherwise:
-					if P is in the hotel, now the title of P is "ATTENTION WHORE DIAPER GIRL";
+					if P is in the hotel, now the title of P is "ATTENTION WHORE DIAPER [caps boy of P]";
 					otherwise now the title of P is "An attention starved diaper slut demands an audience.";
 			otherwise if old-bimbo of P < 7:
 				if P is in the hotel, now the title of P is "TOILET TRAINING?";
-				otherwise now the title of P is "Getting used to her new life in nappies.";
+				otherwise now the title of P is "Getting used to [his of P] new life in nappies.";
 			otherwise if old-bimbo of P < 12:
 				if P is in the hotel, now the title of P is "I LOVE DIAPERS";
-				otherwise now the title of P is "Learning to love her diapers, one day at a time.";
+				otherwise now the title of P is "Learning to love [his of P] diapers, one day at a time.";
 			otherwise:
 				if P is in the hotel, now the title of P is "ORGASMIC NAPPY";
 				otherwise now the title of P is "The diapered slut loses control.";
@@ -541,7 +562,7 @@ To compute title of (P - a wetting poster):
 			otherwise now the title of P is "A royal mess!";
 		otherwise if the old-overdress of P is maid outfit:
 			if P is in the hotel, now the title of P is "YOU'RE FIRED!";
-			otherwise now the title of P is "Why the maid was fired - she kept making messes of her own.";
+			otherwise now the title of P is "Why the maid was fired - [he of P] kept making messes of [his of P] own.";
 		otherwise if the old-overdress of P is nightie:
 			if P is in the hotel, now the title of P is "BEDWETTER";
 			otherwise now the title of P is "This is why mommy wanted to put you in diapers, dearie.";
@@ -554,7 +575,7 @@ To compute title of (P - a wetting poster):
 				otherwise now the title of P is "A well trained piss slave.";
 		otherwise if old-bimbo of P < 10:
 			if P is in the hotel, now the title of P is "SOGGY FEELING?";
-			otherwise now the title of P is "Not her proudest moment.";
+			otherwise now the title of P is "Not [his of P] proudest moment.";
 		otherwise:
 			if P is in the hotel, now the title of P is "PISS PERVERT";
 			otherwise now the title of P is "Caught in the act! What a pervert.";
@@ -564,7 +585,7 @@ To compute title of (P - a wetting poster):
 			otherwise now the title of P is "A royal mess!";
 		otherwise if the old-overdress of P is maid outfit:
 			if P is in the hotel, now the title of P is "YOU'RE FIRED!";
-			otherwise now the title of P is "Why the maid was fired - she kept making messes of her own.";
+			otherwise now the title of P is "Why the maid was fired - [he of P] kept making messes of [his of P] own.";
 		otherwise if old-monster of P is monster:
 			if old-humiliation of P < 27500:
 				if P is in the hotel, now the title of P is "DISGRACEFUL";
@@ -630,7 +651,7 @@ To compute title of (P - an expulsion poster):
 			otherwise now the title of P is "Whatever is inside that egg, you can be sure it's not of this world.";
 		otherwise if the old-overdress of P is royalty themed:
 			if P is in the hotel, now the title of P is "QUEEN CHICKEN";
-			otherwise now the title of P is "Royal princess caught laying mystery eggs! Is she an alien?";
+			otherwise now the title of P is "Royal princess caught laying mystery eggs! Is [he of P] an alien?";
 		otherwise if P is in the hotel:
 			if old-bimbo of P < 7:
 				now the title of P is "I LAY EGGS";
@@ -639,18 +660,18 @@ To compute title of (P - an expulsion poster):
 			otherwise:
 				now the title of P is "EGG LAYING BIMBO";
 		otherwise:
-			now the title of P is "WANTED: Information on mystery slut. Why is she laying eggs in our hotel?!";
+			now the title of P is "WANTED: Information on mystery slut. Why is [he of P] laying eggs in our hotel?!";
 	otherwise:
 		if the liquid types of P > 1:
 			if P is in the hotel, now the title of P is "LIVING CUM COCKTAIL MACHINE?";
-			otherwise now the title of P is "However that disgusting mess got inside her is probably a mystery best left unsolved.";
+			otherwise now the title of P is "However that disgusting mess got inside [him of P] is probably a mystery best left unsolved.";
 		otherwise if the old-urine-count of P > 0:
 			if P is in the hotel, now the title of P is "HUMAN TOILET";
-			otherwise now the title of P is "A girl really knows her place in the world after her asshole has been used as a urinal.";
+			otherwise now the title of P is "A [boy of P] really knows [his of P] place in the world after [his of P] asshole has been used as a urinal.";
 		otherwise if the old-milk-count of P > 0:
 			if old-headgear of P is royal circlet:
 				if P is in the hotel, now the title of P is "ROYAL MILK ON TAP";
-				otherwise now the title of P is "A rare image of a royal slave dutifully producing milk for her princess, and carrying it in her belly.";
+				otherwise now the title of P is "A rare image of a royal slave dutifully producing milk for [his of P] princess, and carrying it in [his of P] belly.";
 			otherwise:
 				if P is in the hotel, now the title of P is "MILK ON TAP";
 				otherwise now the title of P is "What a waste of perfectly good milk!";
@@ -664,12 +685,12 @@ To compute title of (P - an expulsion poster):
 			otherwise if old-headgear of P is pink scrunchie:
 				if P is in the hotel:
 					let R be a random number between 1 and 2;
-					if R is 1, now the title of P is "CHEER FOR HER";
+					if R is 1, now the title of P is "CHEER FOR [caps him of P]";
 					if R is 2, now the title of P is "CHEERBAB'S FAMOUS ROUTINE";
 				otherwise:
 					let R be a random number between 1 and 2;
 					if R is 1, now the title of P is "You need detention for such disgusting behaviour, young Miss!";
-					if R is 2, now the title of P is "Schoolgirls should be put back into diapers until they can control their buttholes.";
+					if R is 2, now the title of P is "School[boy of P]s should be put back into diapers until they can control their buttholes.";
 			otherwise if old-headgear of P is blue scrunchie:
 				if P is in the hotel:
 					let R be a random number between 1 and 4;
@@ -681,14 +702,14 @@ To compute title of (P - an expulsion poster):
 					let R be a random number between 1 and 4;
 					if R is 1, now the title of P is "You need detention for such disgusting behaviour, young Miss!";
 					if R is 2, now the title of P is "Someone deserves a spanking!";
-					if R is 3, now the title of P is "If this schoolgirl can't find the toilet, maybe she should be put back into kindergarten!";
-					if R is 4, now the title of P is "Schoolgirls should be put back into diapers until they can control their buttholes.";
+					if R is 3, now the title of P is "If this school[boy of P] can't find the toilet, maybe [he of P] should be put back into kindergarten!";
+					if R is 4, now the title of P is "School[boy of P]s should be put back into diapers until they can control their buttholes.";
 			otherwise:
 				if P is in the hotel:
 					let R be a random number between 1 and 4;
 					if R is 1, now the title of P is "ENE-MISHAP";
 					if R is 2, now the title of P is "#JUSTBABYPROBLEMS";
-					if R is 3, now the title of P is "TSUNAMI FROM HER TUMMY";
+					if R is 3, now the title of P is "TSUNAMI FROM [caps his of P] TUMMY";
 					if R is 4, now the title of P is "FOUNTAIN OF SHAME";
 				otherwise:
 					let R be a random number between 1 and 4;
@@ -699,9 +720,9 @@ To compute title of (P - an expulsion poster):
 		if the old-overdress of P is royalty themed:
 			if P is in the hotel, now the title of P is "DISHONOURED ROYALTY";
 			otherwise now the title of P is "Royal princess caught in sex scandal!";
-		otherwise if the old-overdress of P is ballet related and old-gender of P is 0 and transGender is 0:
+		otherwise if the old-overdress of P is ballet related and old-gender of P is 0:
 			if P is in the hotel, now the title of P is "SISSY SLUT";
-			otherwise now the title of P is "'This ballerina is learning what a true sissy's life is like.'";
+			otherwise now the title of P is "This ballerina is learning what a true sissy's life is like.";
 		otherwise if the old-overdress of P is maid outfit:
 			if P is in the hotel, now the title of P is "CLEAN THAT UP";
 			otherwise now the title of P is "The aftermath of this maid's most recent disciplinary session.";
@@ -710,7 +731,7 @@ To compute title of (P - an expulsion poster):
 			otherwise now the title of P is "Being the teacher's pet has its ups and downs.";
 		otherwise if the old-overdress of P is priestess outfit:
 			if P is in the hotel, now the title of P is "HOLY COW!";
-			otherwise now the title of P is "That's what she gets for leaving her post at the dungeon altar.";
+			otherwise now the title of P is "That's what [he of P] gets for leaving [his of P] post at the dungeon altar.";
 		otherwise if the old-overdress of P is gang-bang-girl T-shirt:
 			if P is in the hotel, now the title of P is "GANG BANG BITCH";
 			otherwise now the title of P is "A very appropriate T-shirt.";
@@ -722,13 +743,13 @@ To compute title of (P - an expulsion poster):
 			otherwise now the title of P is "Anal sex is the perfect birth control method for a one night stand.";
 		otherwise if old-bimbo of P < 7:
 			if P is in the hotel, now the title of P is "WE KNOW WHAT YOU DID";
-			otherwise now the title of P is "Not how she expected to be spending her day.";
+			otherwise now the title of P is "Not how [he of P] expected to be spending [his of P] day.";
 		otherwise if old-bimbo of P < 12:
 			if P is in the hotel, now the title of P is "ANAL CREAMPIE ADDICT";
-			otherwise now the title of P is "This is not the first nor the last time she had this happen today.";
+			otherwise now the title of P is "This is not the first nor the last time [he of P] had this happen today.";
 		otherwise:
 			if P is in the hotel, now the title of P is "ASSCUM CRAZED SLUT";
-			otherwise now the title of P is "This whore is famous throughout the lands for being able to take huge amounts of cum in her belly. It all comes out sooner or later, though.".
+			otherwise now the title of P is "This whore is famous throughout the lands for being able to take huge amounts of cum in [his of P] belly. It all comes out sooner or later, though.".
 
 To say ExamineDesc of (C - an expulsion poster):
 	say "[ShortDesc of C]";

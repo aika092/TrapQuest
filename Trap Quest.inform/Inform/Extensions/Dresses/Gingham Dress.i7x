@@ -68,4 +68,26 @@ To decide which number is the initial cringe of (C - a super short gingham dress
 
 Definition: a super short gingham dress is pink themed: decide yes.
 
+dainty dress is an overdress. dainty dress is short. dainty dress is only arm covering. The printed name of dainty dress is "[clothing-title-before]dainty dress[clothing-title-after]". The text-shortcut of dainty dress is "dtyd".
+
+Figure of dainty dress is the file "Items/Clothes/Upper/Dresses/dainty1.png".
+
+To decide which figure-name is clothing-image of (C - dainty dress):
+	decide on figure of dainty dress.
+
+To say ShortDesc of (C - dainty dress):
+	say "dainty dress".
+
+To say ClothingDesc of (C - dainty dress):
+	say "A pink dainty dress with puffy sleeves and some lace at the bust. It's very... feminine.".
+
+To decide which number is the initial outrage of (C - dainty dress):
+	if diaper quest is 0, decide on the initial cringe of C;
+	decide on 0.
+To decide which number is the initial cringe of (C - dainty dress):
+	decide on 3.
+
+Definition: dainty dress is pink themed: decide yes.
+
+
 Gingham Dress ends here.

@@ -277,6 +277,7 @@ To initialise latex prisoner:
 	let L be black-catsuit;
 	if diaper quest is 1, now L is a random rubber jacket;
 	if L is actually summonable clothing, summon L;
+	if black hood is actually summonable, summon black hood cursed;
 	repeat with C running through worn latex clothing:
 		if C is discovered varied:
 			if a random number between 1 and 4 is 1, now the raw-magic-modifier of C is -1;
@@ -298,7 +299,6 @@ To initialise latex prisoner:
 		if C is overdress:
 			layer C correctly;
 			if C is posture training, now C is blandness;
-	if black hood is actually summonable, summon black hood cursed;
 	if rubber-baby-bonnet is worn:
 		now rubber-baby-bonnet is cursed;
 	if there is worn vibrating plug panties:
@@ -357,7 +357,11 @@ To initialise wardrobe:
 	let C be a random pinkWardrobeAppropriate undies;
 	if roleplay fetish is 1, compute starting headgear;
 	if pregnancy fetish is 1, now C is white-diagram briefs;
-	if diaper lover >= 1, now C is a random training pants;
+	if diaper lover >= 1:
+		now C is a random training pants;
+		if tough-shit is 1:
+			now the bladder of the player is 9;
+			say "[bold type]You are bursting to pee![line break][variable custom style]Crap, how unfair! I've got to find a toilet right away or I'm going to piss myself![roman type][line break]";
 	if C is clothing, add C to L;
 	now C is a random pinkWardrobeAppropriate bikini top;
 	if C is bikini top:

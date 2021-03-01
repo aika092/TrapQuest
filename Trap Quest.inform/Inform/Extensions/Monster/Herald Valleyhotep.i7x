@@ -48,7 +48,6 @@ Part 1 - Perception
 Definition: herald is scarable: decide no.
 
 To compute perception of (M - herald):
-	now M is interested;
 	if the player-class is cultist:
 		say "[speech style of M]'Oh are you, like, still here? Were you, like, wanting a blessing or some junk?'[roman type][line break]";
 		calm M;
@@ -106,7 +105,7 @@ To compute punishment of (P - herald-blessing):
 		if altar-diaper-link is 0:
 			say "[speech style of M]'All mortals will serve as vessels for [Azathot]'s infinite waste.'[roman type][line break]The next thing you know, you are hovering above the elder altar, completely unable to resist as you are slowly lowered onto the stone slab.";
 			if the player is not in Mansion23, teleport to Mansion23;
-			try praying yourself with the elder altar;
+			ElderOffer;
 		otherwise:
 			say "You feel your mind twisting and warping, becoming more naturally subservient, perverted and simple.";
 			SexAddictUp 1;
@@ -124,6 +123,15 @@ To compute punishment of (P - herald-blessing):
 			say ".";
 			UrineSoakUp K by 9;
 	satisfy M.
+
+Definition: herald is distracted:
+	if herald is in the location of the player:
+		let M be a random explorer in the location of the player;
+		if M is explorer:
+			say "[BigNameDesc of herald] spots [NameDesc of M].[line break][speech style of herald]'Your [if diaper quest is 0]flesh[otherwise if diaper messing >= 3]bowels[otherwise]bladder[end if] will, like, totally bend to the will of [Azathot].'[roman type][line break]Before [NameDesc of M] can react, [he of M] is hit with a bolt of pink electricity. You feel like you can almost see [his of M] brain cells getting fried. [BigNameDesc of M] is force to run squealing from the mansion, the pink lightning chasing [him of M] down through the halls.";
+			compute banishment of M;
+			decide yes;
+	decide no.
 
 Section 2 - Damage
 

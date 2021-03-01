@@ -37,7 +37,7 @@ To compute unique unsimulated periodic effect of (M - fairy-witch):
 To check bowsettification of (X - a monster):
 	let M be fairy-witch;
 	now crown-timer is 0;
-	say "You spot [NameDesc of M] swooping through the air behind [NameDesc of X], holding a small mushroom-shaped crown! [big he of M] looks intent at dropping it on [NameDesc of X][']s head!";
+	say "You spot [NameDesc of M] swooping through the air behind [NameDesc of X], holding a small mushroom-shaped crown! [big he of M] looks intent on dropping it on [NameDesc of X][']s head!";
 	reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 	now player-numerical-response is 0;
 	let N be 0;
@@ -52,9 +52,9 @@ To check bowsettification of (X - a monster):
 	if player-numerical-response is 1:
 		say "[variable custom style]'Look out behind you!'[roman type][line break]";
 		if X is normally buddy or (X is friendly and the player is not getting unlucky) or (X is unfriendly and the player is getting lucky):
-			say "[BigNameDesc of X] swivels and looks around, spotting [NameDesc of M] in time and dodging out of the way in time to avoid getting the crown placed on [his of X] head. [big he of X] swipes at [NameDesc of M], forcing [him of M] to quickly swerve away in a cloud of fairy dust, giggling to [himself of M] as [he of M] goes.[if X is not normally buddy and X is unfriendly][GotLuckyFlav][end if]";
+			say "[BigNameDesc of X] swivels and looks around, spotting [NameDesc of M] and dodging out of the way in time to avoid getting the crown placed on [his of X] head. [big he of X] swipes at [NameDesc of M], forcing [him of M] to quickly swerve away in a cloud of fairy dust, giggling to [himself of M] as [he of M] goes.[if X is not normally buddy and X is unfriendly][GotLuckyFlav][end if]";
 			say "[bold type]As the fairy dust gets on [NameDesc of X][bold type] you see [him of X] visibly grow in strength!!![if X is combative][line break][variable custom style]Uh-oh.[end if][roman type][line break]";
-			DifficultyUp X by 1;
+			SilentlyDifficultyUp X by 1;
 			now X is stalled;
 		otherwise:
 			say "[BigNameDesc of X] frowns, clearly not trusting you enough to turn [his of X] back on you.[if X is not normally buddy and X is friendly][GotUnluckyFlav][end if]";
@@ -68,17 +68,17 @@ To check bowsettification of (X - a monster):
 		bowsettify X.
 
 To bowsettify (M - a monster):
-	say "[BigNameDesc of M] feels the crown land on [his of M] head. [big he of M] looks at you, thinking you've done something to [him of M] yourself.[line break][speech style of M]'What on earth have you...'[roman type][line break]But [he of M] is cut off as a transformation begins. Before your eyes, [NameDesc of M] shapeshifts until [he of M] looks completely different!";
+	say "[BigNameDesc of M] feels the crown land on [his of M] head. [big he of M] looks at you, thinking you've done something to [him of M] yourself.[line break][speech style of M]'What on Earth have you...'[roman type][line break]But [he of M] is cut off as a transformation begins. Before your eyes, [NameDesc of M] shapeshifts until [he of M] looks completely different!";
 	dislodge M;
 	now the bowsette-origin of bowsette is M;
 	set up bowsette;
 	now bowsette is in the location of M;
 	now bowsette is interested;
 	if M is male and (the girth of bowsette < the girth of M or M is unfriendly or (M is presenting as male and a random number between 1 and 2 is 1)):
-		say "Standing before you is a brown skinned [man of bowsette] with red hair in a gothic black dress. [big he of bowsette] has a spikey black collar around her neck and matching spikey bracelets. Sharp white horns sprout up above [his of bowsette] ears and [he of bowsette] has fanged teeth. You can detect the budge of an average-sized [LongDickDesc of bowsette] underneath [his of bowsette] skirt.[line break][speech style of bowsette]'What the hell?! [if the girth of bowsette < the girth of M]My [manly-penis]! No, no. no! My [manly-penis] is too small[otherwise if M is unfriendly]What evil sorcery is this[otherwise]Boobs?! Long nails?! I'm not a lady[end if]! Change me back NOW! RAAAWR!'[roman type][line break][big he of bowsette] tries to take the crown off of [his of bowsette] head but it won't budge. [big he of bowsette] looks very frustrated and angry.";
+		say "Standing before you is a brown skinned [man of bowsette] with red hair, wearing a gothic black dress. [big he of bowsette] has a spikey black collar around [his of bowsette] neck and matching spikey bracelets. Sharp white horns sprout up above [his of bowsette] ears and [he of bowsette] has fanged teeth. You can detect the bulge of an average-sized [LongDickDesc of bowsette] underneath [his of bowsette] skirt.[line break][speech style of bowsette]'What the hell?! [if the girth of bowsette < the girth of M]My [manly-penis]! No, no. no! My [manly-penis] is too small[otherwise if M is unfriendly]What evil sorcery is this[otherwise]Boobs?! Long nails?! I'm not a lady[end if]! Change me back NOW! RAAAWR!'[roman type][line break][big he of bowsette] tries to take the crown off of [his of bowsette] head but it won't budge. [big he of bowsette] looks very frustrated and angry.";
 		cutshow figure of angry bowsette transform cutscene for bowsette;
 	otherwise:
-		say "Standing before you is a pale skinned blonde [man of bowsette] in a gothic black dress. [big he of bowsette] has a spikey black collar around her neck and matching spikey bracelets. Sharp white horns sprout up above [his of bowsette] ears and [he of bowsette] has fanged teeth. A large erect [LongDickDesc of bowsette] is poking out from underneath [his of bowsette] skirt.[line break][speech style of bowsette]'What the hell?! I'm... I'm sexy! I feel... strong! ";
+		say "Standing before you is a pale skinned blonde [man of bowsette] in a gothic black dress. [big he of bowsette] has a spikey black collar around [his of bowsette] neck and matching spikey bracelets. Sharp white horns sprout up above [his of bowsette] ears and [he of bowsette] has fanged teeth. A large erect [LongDickDesc of bowsette] is poking out from underneath [his of bowsette] skirt.[line break][speech style of bowsette]'What the hell?! I'm... I'm sexy! I feel... strong! ";
 		if the player is getting lucky:
 			now the temperament of bowsette is 2;
 			say "I feel... AMAZING! Oh, yes, thank you, [NameBimbo]... I like this new form very much.'[roman type][line break][GotLuckyFlav]";
@@ -229,7 +229,6 @@ Definition: bowsette is uniquely unfriendly:
 	decide no.
 
 To compute perception of (M - bowsette):
-	now M is interested;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed]![otherwise].[end if]";
 	if the temperament of M is 0:
 		say "[big he of M] roars.[line break][speech style of M]'[one of]Turn me back into a human, you [cunt]!'[or]Find a way to transform me back, you [cunt]!'[or]I'll never forgive you!'[then at random][roman type][line break]";
@@ -401,7 +400,7 @@ To compute teaching of (M - bowsette):
 To say WhereAnswer of (M - bowsette):
 	say "[speech style of M]'This is a kingdom that is ruled over by a long-forgotten princess. Strange, I have a weird urge to... take it over.'[roman type][line break]".
 
-To say WhoAnswer of (M - bowsette):
+To say WhoAnswer of (M - bowsette): [###Selkie: I failed to think of a lewd teenage mutant ninja nephew joke for here]
 	say "[speech style of M]'I'm a Turtle Princess, but as you know, I wasn't always this way.'[roman type][line break]";
 
 To say StoryAnswer of (M - bowsette):

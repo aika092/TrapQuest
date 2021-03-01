@@ -23,7 +23,7 @@ To compute attack of (W - heavy-club) at (M - a monster):
 
 [The more damaged you are, the more dexterous you become]
 To decide which number is the dexterity-influence of (W - heavy-club):
-	let X be the body soreness of the player - 10;
+	let X be the body soreness of the player - 5;
 	if W is blessed, increase X by 1;
 	if W is cursed, decrease X by 2;
 	if the player is horny, decide on X / 2;
@@ -34,7 +34,7 @@ To decide which number is the fatigue-influence of (W - heavy-club):
 	decrease F by the magic-modifier of W / 2;
 	decide on F.
 
-To decide which number is the damage improvement of (W - heavy-club):
+To decide which number is the slap damage improvement of (W - heavy-club):
 	let X be 0;
 	unless the player is horny:
 		increase X by 4;
@@ -46,23 +46,23 @@ To compute periodic effect of (G - heavy-club):
 	if the player is not the donator:
 		do nothing;
 	otherwise if rugged-headband is not worn:
-		say "[bold type]You aren't strong enough to carry the [printed name of G]! It falls out of your hands with a resounding thud.[roman type][line break]";
+		say "[bold type]You aren't strong enough to carry the [printed name of G][bold type]! It falls out of your hands with a resounding thud.[roman type][line break]";
 		now the charge-status of G is 0;
 		now G is in the location of the player;
 	otherwise if the player is horny:
-		if the charge-status of G > -1, say "[bold type]Your [printed name of G] softens up as you get turned on.[roman type]";
+		if the charge-status of G > -1, say "[bold type]Your [printed name of G][bold type] softens up as you get turned on.[roman type]";
 		now the charge-status of G is -1;
 	otherwise if S < 3:
-		if the charge-status of G is -1, say "[bold type]Your [printed name of G] hardens up again.[roman type]";
-		if the charge-status of G > 0, say "[bold type]Your [printed name of G] loses its glow[roman type]";
+		if the charge-status of G is -1, say "[bold type]Your [printed name of G][bold type] hardens up again.[roman type]";
+		if the charge-status of G > 0, say "[bold type]Your [printed name of G][bold type] loses its glow[roman type]";
 		now the charge-status of G is 0;
 	otherwise if S < 6:
-		if the charge-status of G < 1, say "[bold type]Your [printed name of G] begins to glow[roman type]";
-		if the charge-status of G > 1, say "[bold type]Your [printed name of G] loses its glow[roman type]";
+		if the charge-status of G < 1, say "[bold type]Your [printed name of G][bold type] begins to glow[roman type]";
+		if the charge-status of G > 1, say "[bold type]Your [printed name of G][bold type] loses its glow[roman type]";
 		now the charge-status of G is 1;
 	otherwise:
-		if the charge-status of G < 1, say "[bold type]Your [printed name of G] begins to glow strongly[roman type]";
-		if the charge-status of G < 1, say "[bold type]Your [printed name of G] begins to glow even brighter[roman type]";
+		if the charge-status of G < 1, say "[bold type]Your [printed name of G][bold type] begins to glow strongly[roman type]";
+		if the charge-status of G < 1, say "[bold type]Your [printed name of G][bold type] begins to glow even brighter[roman type]";
 		now the charge-status of G is 2.
 
 
@@ -74,10 +74,10 @@ To decide which figure-name is the examine-image of (B - kraken bell):
 	decide on figure of kraken bell.
 
 To say ExamineDesc of (C - kraken bell):
-	say "An old metal bell, green with rust as if it has lived at the bottom of a lake for millenia. In place of a conventional ringer, there is a metal tentacle. Some dark magic seems to emanate from it. Its power currently feels [if the damage improvement of C < 0]very weak[otherwise if the damage improvement of C is 0]weak[otherwise if the damage improvement of C < 3]slightly strong[otherwise if the damage improvement of C is 3]very strong[otherwise]exceptionally strong[end if][if C is worn]. You feel more safe from tentacles[end if].".
+	say "An old metal bell, green with rust as if it has lived at the bottom of a lake for millennia. In place of a conventional ringer, there is a metal tentacle. Some dark magic seems to emanate from it. Its power currently feels [if the slap damage improvement of C < 0]very weak[otherwise if the slap damage improvement of C is 0]weak[otherwise if the slap damage improvement of C < 3]slightly strong[otherwise if the slap damage improvement of C is 3]very strong[otherwise]exceptionally strong[end if][if C is worn]. You feel more safe from tentacles[end if].".
 
 To compute attack of (W - kraken bell) at (M - a monster):
-	say "The club makes a powerful thud as it hits [NameDesc of M], followed by a heavy metal clang[one of] that continues to echo for longer than seems natural[or][stopping].".
+	say "The bell makes a powerful thud as it hits [NameDesc of M], followed by a heavy metal clang[one of] that continues to echo for longer than seems natural[or][stopping].".
 
 Report taking kraken bell:
 	commence doom.
@@ -104,9 +104,9 @@ To compute attack effect of (W - kraken bell):
 		if doom counter > 0:
 			increase doom counter by 25;
 		otherwise:
-			commence doom.
+			if tough-shit is 1, force commence doom.
 
-To decide which number is the damage improvement of (W - kraken bell):
+To decide which number is the slap damage improvement of (W - kraken bell):
 	decide on the magic-modifier of W + ((doomed - 1) / 2).
 
 Heavy Club ends here.

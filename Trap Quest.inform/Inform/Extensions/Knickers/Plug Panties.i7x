@@ -1,6 +1,6 @@
 Plug Panties by Knickers begins here.
 
-plug panties is a kind of knickers. Understand "pair of", "plug", "panties" as plug panties. The plug size of plug panties is usually 2.
+plug panties is a kind of knickers. Understand "pair of", "plug", "panties" as plug panties. The plug size of plug panties is usually 2. A plug panties is latex.
 
 To compute SelfExamineDesc of (K - a plug panties):
 	say "A pair of latex plug panties covers your [ShortDesc of hips]. ";
@@ -26,13 +26,13 @@ To say selfexamineuniquetitle of (K - a plug panties):
 Chapter 1 Vibrating Plug Panties
 
 vibrating plug panties is a kind of plug panties.
-There are 2 unique ass plugging vagina plugging latex vibrating plug panties. The armour of vibrating plug panties is 12. The printed name of vibrating plug panties is usually "[clothing-title-before]pair of [clothing-material of item described] plug panties[clothing-title-after]". The printed plural name of vibrating plug panties is usually "[clothing-title-before]pairs of [clothing-material of item described] plug panties[clothing-title-after]". The text-shortcut of vibrating plug panties is "lpp". A vibrating plug panties has a number called charge.
+There are 2 unique ass plugging vagina plugging vibrating plug panties. The armour of vibrating plug panties is 12. The printed name of vibrating plug panties is usually "[clothing-title-before]pair of [clothing-material of item described] plug panties[clothing-title-after]". The printed plural name of vibrating plug panties is usually "[clothing-title-before]pairs of [clothing-material of item described] plug panties[clothing-title-after]". The text-shortcut of vibrating plug panties is "lpp". A vibrating plug panties has a number called charge.
 
 Definition: a vibrating plug panties is black themed: decide yes.
 
 To decide which figure-name is clothing-image of (C - a vibrating plug panties):
-	if the player is not possessing a vagina, decide on figure of male latex plug panties;
-	otherwise decide on figure of female latex plug panties.
+	[if the player is not possessing a vagina, decide on figure of male latex plug panties;]
+	decide on figure of female latex plug panties.
 
 To say ClothingDesc of (P - a vibrating plug panties):
 	say "[if the player is possessing a vagina]These panties have inbuilt anal and vaginal plugs that would prevent anything escaping[otherwise]These panties have an in-built anal plug that would prevent anything escaping[end if]. [if P is cursed and P is sure and P is worn]The ass plug is vibrating! [end if]The latex material looks very tough.".
@@ -42,7 +42,7 @@ To compute SelfExamineDesc of (K - a vibrating plug panties):
 	say "The in-built plugs keep your [if the player is possessing a vagina][vagina] and [end if][asshole] open and [if the soreness of asshole > 6 or the soreness of vagina > 6]sore[otherwise]stimulated[end if][if the largeness of belly > 2], and prevent any [semen] from escaping your body[end if]. [if K is cursed and the bimbo of the player < 12][line break][first custom style]Oh god, I can't stop the vibrating! This is bad... [roman type][line break][otherwise if K is cursed and the bimbo of the player > 11][line break][second custom style]It just keeps vibrating in my [asshole]... I'm going insane... [roman type][line break][end if]";
 
 Figure of female latex plug panties is the file "Items/Clothes/Lower/Underwear/Special/Plug/latexplugpanties1.png".
-Figure of male latex plug panties is the file "Items/Clothes/Lower/Underwear/Special/Plug/latexplugpanties2.png".
+[Figure of male latex plug panties is the file "Items/Clothes/Lower/Underwear/Special/Plug/latexplugpanties2.png".]
 
 To say CurseCurseFlav of (B - a vibrating plug panties):
 	if B is in the location of the player, say "The ass plug of the latex plug panties starts vibrating!!".
@@ -126,5 +126,37 @@ Definition: a WC-plug-panties is white themed: decide yes.
 To say WCPantiesVibeFlav:
 	say "[variable custom style][one of][if the anal sex addiction of the player < 4]Holy crap, I can't believe how good this feels...[otherwise]Mmm, so good...[end if][or][if the player is a pervert]I've been a good [boy of the player], and this is my reward![otherwise]It's making wetting myself feel amazing...![end if][or][if the player is horny]I'm going to cum soon![otherwise]Mmmm. More...[end if][then at random][roman type][line break]".
 
+
+anal-beads-plug-panties is a knickers. anal-beads-plug-panties is unique. anal-beads-plug-panties is ass plugging. anal-beads-plug-panties is crotch-assless. anal-beads-plug-panties is sheer. The printed name of anal-beads-plug-panties is usually "[clothing-title-before]pair of anal beads plug panties[clothing-title-after]". The text-shortcut of anal-beads-plug-panties is "abpp". Understand "anal", "beads", "plug", "panties" as anal-beads-plug-panties.
+Figure of anal-beads-plug-panties is the file "Items/Clothes/Lower/Underwear/Special/Plug/analbeadsplugpanties1.png".
+Figure of anal-beads-plug-panties inserted is the file "Items/Clothes/Lower/Underwear/Special/Plug/analbeadsplugpanties2.png".
+
+To decide which figure-name is clothing-image of (C - anal-beads-plug-panties):
+	if C is penetrating asshole, decide on figure of anal-beads-plug-panties inserted;
+	decide on figure of anal-beads-plug-panties.
+
+Definition: anal-beads-plug-panties is black themed: decide yes.
+Definition: anal-beads-plug-panties is transformation-protected: decide yes.
+
+To say ClothingDesc of (P - anal-beads-plug-panties):
+	say "This black sheer backless thong has a set of pink anal beads ending in a small plug instead of a normal rear thong section. It will only stay in place if it's pushed inside your butt.".
+
+To say selfexamineuniquetitle of (K - anal-beads-plug-panties):
+	say "pair of anal beads plug panties".
+
+To decide which number is the girth of (K - anal-beads-plug-panties):
+	decide on 1.
+
+Definition: anal-beads-plug-panties is displacable: decide yes.
+
+Definition: anal-beads-plug-panties is potentially at least partially asshole covering:
+	if anal-beads-plug-panties is penetrating asshole, decide yes;
+	decide no.
+
+To say DisplaceFlav of (C - anal-beads-plug-panties):
+	say "You reach [if the player is prone]behind you[otherwise]down[end if] and pull your [C] [if C is penetrating asshole]out of your [asshole][otherwise]to the side[end if], freeing [if the bimbo of the player > 6]up access to [end if]your crotch.".
+
+To say ReplaceFlav of (C - anal-beads-plug-panties):
+	say "You reach [if the player is prone]behind you[otherwise]down[end if] and push it back into your [asshole].".
 
 Plug Panties ends here.

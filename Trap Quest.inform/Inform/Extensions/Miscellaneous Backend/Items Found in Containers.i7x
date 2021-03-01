@@ -207,8 +207,8 @@ This is the autotaking continues rule:
 				if I is worn:
 					do nothing;
 				otherwise:
-					if I is not food and I is not bottle and I is not plentiful accessory, say "You add the [ShortDesc of I] to your bag.";
-					otherwise say "You are now carrying the [ShortDesc of I].";
+					if I is not food and I is not bottle and I is not plentiful accessory, say "You add the [FullTitle of I] to your bag.";
+					otherwise say "You are now carrying the [FullTitle of I].";
 					if I is clothing and the bimbo of the player > a random number between 11 and 18, compute automatic wearing of I.
 				[now another-turn is 1.]
 

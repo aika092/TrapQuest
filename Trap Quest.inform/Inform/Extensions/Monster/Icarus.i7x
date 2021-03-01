@@ -139,7 +139,6 @@ To compute appearance assessment of (M - Icarus):
 			if lady fetish is 0, alwayscutshow figure of Icarus interact 1 for M.
 
 To compute perception of (M - Icarus):
-	now M is interested;
 	if the class of the player is living sex doll:
 		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]Oh sweet, you're under the latex curse? I guess this is my lucky day! Come here sweetie, let me try a road test[or]Oh look, my favourite walking fuckdoll is back for more[stopping]...'[roman type][line break]";
 		anger M;

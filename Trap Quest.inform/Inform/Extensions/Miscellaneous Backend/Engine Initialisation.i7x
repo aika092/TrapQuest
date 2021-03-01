@@ -56,6 +56,7 @@ When play begins:
 			retrieve diaper focus options;
 			retrieve diaper options;
 			retrieve toilet allowance options;
+			retrieve silicone milk options;
 			retrieve slow random options; [At this point, the player can choose to have the rest randomised, which sets quick start to 1]
 		if quick start is 1 or quick start is 2:
 			follow the random mode rules;
@@ -143,7 +144,9 @@ To fill in fake table blanks:
 		unless there is a choice in row 54 of the Table of Settings, now choice in row 54 of Table of Settings is 0;
 		unless there is a choice in row 55 of the Table of Settings, now choice in row 55 of Table of Settings is 1;
 		unless there is a choice in row 56 of the Table of Settings, now choice in row 56 of Table of Settings is 15;
-		unless there is a choice in row 57 of the Table of Settings, now choice in row 57 of Table of Settings is 1.
+		unless there is a choice in row 57 of the Table of Settings, now choice in row 57 of Table of Settings is 1;
+		unless there is a choice in row 58 of the Table of Settings, now choice in row 58 of Table of Settings is 2;
+		unless there is a choice in row 59 of the Table of Settings, now choice in row 59 of Table of Settings is 0.
 
 To fill in legacy table blanks:
 	unless there is a choice in row 32 of the Table of Player Options, now choice in row 32 of Table of Player Options is 0;
@@ -207,7 +210,8 @@ To fill in legacy table blanks:
 	unless there is a choice in row 80 of the Table of Player Options, now choice in row 80 of Table of Player Options is 0;
 	unless there is a choice in row 81 of the Table of Player Options, now choice in row 81 of Table of Player Options is 0;
 	unless there is a choice in row 82 of the Table of Player Options, now choice in row 82 of Table of Player Options is 0;
-	unless there is a choice in row 83 of the Table of Player Options, now choice in row 83 of Table of Player Options is 0.
+	unless there is a choice in row 83 of the Table of Player Options, now choice in row 83 of Table of Player Options is 0;
+	unless there is a choice in row 84 of the Table of Player Options, now choice in row 84 of Table of Player Options is 1.
 
 To fill in custom flavour blanks:
 	unless there is a name in row 10 of the Table of Info Options:
@@ -237,11 +241,9 @@ To correct table entries:
 		blank out the whole row;
 		choose the row with a toggle of custom name rule in the Table of Female Name Diaper Quest Options;
 		blank out the whole row;
-	[if the player is not a top donator:
-		choose the row with a subtable of Table of Festive Options in the Table of Kink Options;
+	if the player is not a top donator:
+		choose the row with a toggle of simulated internet toggle rule in the Table of Optional Text Settings;
 		blank out the whole row;
-		choose the row with a subtable of Table of Festive Options in the Table of Diaper Fetish Options;
-		blank out the whole row;]
 	if diaper quest is 0:
 		choose the row with a toggle of easter content toggle rule in the Table of Festive Options;
 		blank out the whole row;
@@ -363,6 +365,12 @@ To retrieve toilet allowance options:
 		carry out the displaying activity;
 		clear the screen.
 
+To retrieve silicone milk options:
+	if lactation fetish > 0 and artificial enhancements fetish > 0 and the player is a february 2021 top donator:
+		now the current menu is the Table of Silicone Milk Options;
+		carry out the displaying activity;
+		clear the screen.
+
 To retrieve slow random options:
 	now the current menu is the Table of Random Settings;
 	carry out the displaying activity;
@@ -395,7 +403,7 @@ To fix starting stats:
 	now the thickness of hips is min hip size;
 	now the real thickness of hips is min hip size;
 	now the flesh volume of hips is min ass size;
-	if the player is female:
+	if the player is sexed female:
 		while the largeness of breasts < min breast size: [Starting body shape fixed here]
 			increase the flesh volume of breasts by 1;
 			now the real flesh volume of breasts is the flesh volume of breasts;

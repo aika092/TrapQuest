@@ -2,6 +2,11 @@ All Shoes by Shoes begins here.
 
 sneakers is a kind of shoes. A sneakers is manly. A sneakers is rare. Understand "sneakers" as sneakers.
 
+Figure of sneakers is the file "Items/Clothes/Lower/Feet/sneakers2.png".
+
+To decide which figure-name is the clothing-image of (C - sneakers):
+	decide on figure of sneakers.
+
 To say ShoeType of (S - a sneakers):
 	say "sneakers".
 

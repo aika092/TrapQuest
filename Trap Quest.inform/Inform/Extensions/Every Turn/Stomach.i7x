@@ -2,7 +2,7 @@ Stomach by Every Turn begins here.
 
 
 To decide which number is the thirst of the player:
-	if chess table is grabbing the player or the player is in a predicament room, decide on 0;
+	if chess table is grabbing the player or (the player is in a predicament room and current-predicament is not team-scissor-lift-predicament), decide on 0;
 	decide on 5 - the stomach-liquid of the player.
 
 Definition: yourself is thirsty:
@@ -241,7 +241,10 @@ To DigestionTimerUp (N - a number):
 		otherwise if the player is nearly hungry:
 			say "You suddenly feel a bit hungry.".
 
+hunger-override is initially false.
+
 Definition: yourself is hungry:
+	if hunger-override is true, decide yes;
 	if chess table is grabbing the player or the player is in a predicament room, decide no;
 	if the stomach-food of the player is 0 and active hunger mechanics is 1, decide yes;
 	decide no.

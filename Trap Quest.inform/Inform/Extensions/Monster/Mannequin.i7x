@@ -79,10 +79,13 @@ To decide which figure-name is the monster-image of (M - goth mannequin):
 To say MediumDesc of (M - goth mannequin):
 	say "goth mannequin".
 Definition: goth mannequin is woods dwelling:
-	if doomed >= 5, decide yes;
+	if doomed > 2, decide yes;
 	decide no.
 Definition: goth mannequin is mansion dwelling:
-	if doomed > 2, decide yes;
+	if doomed > 0, decide yes;
+	decide no.
+Definition: goth mannequin is woods prioritised: [it'll have a decent chance of spawning even if there is another mannequin]
+	if it is woods dwelling, decide yes;
 	decide no.
 
 To say mannequin-model of (M - mannequin):
@@ -145,11 +148,8 @@ To say MonsterDesc of (M - lingerie-clad mannequin):
 	say "An unsettling [mannequin-model of M] mannequin, with a warm tanned skin tone and an almost smirking facial expression complemented by make up that really make [his of M] eyes pop. [big his of M] 'outfit' consists of only the most skimpy, lacy black and burgundy lingerie: a full set of strapless bra, thong, stockings and suspenders. A small handbag is draped over one of [his of M] shoulders.".
 
 To decide if (M - lingerie-clad mannequin) is theme-matched:
-	if there is a worn black themed clothing, decide yes;
-	let B be a random worn bra;
-	if B is bra and B is not currently covered, decide yes;
-	now B is a random worn knickers;
-	if B is knickers and B is not currently covered, decide yes;
+	repeat with C running through currently uncovered clothing:
+		if C is bra or C is knickers or C is black themed stockings or C is black themed suspenders or C is black themed dress, decide yes;
 	decide no.
 
 To say MonsterDesc of (M - skater mannequin):
@@ -172,12 +172,19 @@ To say MonsterComment of (M - a mannequin):[TODO: fix this]
 		otherwise:
 			say "[line break][second custom style]We totally match![roman type][line break]";
 	otherwise if diaper quest is 0:
-		say "[if the bimbo of the player <= 4][line break][first custom style][one of]Wow, [he of M]'s really creepy.[or][big he of M] doesn't look tough, but [he of M]'s not human so I should keep an eye out.[or]I wonder if [he of M]'s got a pussy.[or]This reminds me of this one time me and my friend took a department store mannequin home.[or]Even the clothing models look like total harlots.[or]Hmm, I doubt [he of M] can feel pain, but [he of M] probably has some exploitable weak points.[or]So that's how I'm expected to dress. Disgusting.[in random order][otherwise if the bimbo of the player <= 8][line break][variable custom style][one of][big he of M]'s actually kind of attractive for a walking piece of plastic.[or]What kind pervert dressed [him of M] up so sexy?[or]Is that how I'll look by the end of this? No... I've got to resist![in random order][otherwise if the bimbo of the player <= 12][line break][second custom style][one of][big his of M] make up looks really good.[or]Is that a wig or is that real hair? [big he of M] has good fashion sense.[or]Those clothes don't look too bad...[in random order][otherwise if bimbo of the player <= 16][second custom style][one of]I should have [him of M] do my make up![or]Maybe [he of M] can give me some fashion pointers, teehee![or]People stare at [him of M] all day long, just like they will with me!*giggle*[or]I want, no, I *NEED* to look like [him of M]![in random order][otherwise if bimbo of the player <= 20][second custom style][one of]I wish *MY* head could just be empty plastic![or]Maybe I should be a mannequin when I get home![or][big he of M][']s so lucky, people make all [his of M] choices for [him of M] every day![in random order][end if][roman type][line break]";
+		say "[if the bimbo of the player <= 4][line break][first custom style][one of]Wow, [he of M]'s really creepy.[or][big he of M] doesn't look tough, but [he of M]'s not human so I should keep an eye out.[or]I wonder if [he of M]'s got a pussy.[or]This reminds me of this one time me and my friend took a department store mannequin home.[or]Even the clothing models look like total harlots.[or]Hmm, I doubt [he of M] can feel pain, but [he of M] probably has some exploitable weak points.[or]So that's how I'm expected to dress. Disgusting.[in random order][otherwise if the bimbo of the player <= 8][line break][variable custom style][one of][big he of M]'s actually kind of attractive for a walking piece of plastic.[or]What kind pervert dressed [him of M] up so sexy?[or]Is that how I'll look by the end of this? No... I've got to resist![in random order][otherwise if the bimbo of the player <= 12][line break][second custom style][one of][big his of M] make up looks really good.[or]Is that a wig or is that real hair? [big he of M] has good fashion sense.[or]Those clothes don't look too bad...[in random order][otherwise if bimbo of the player <= 16][second custom style][one of]I should have [him of M] do my make up![or]Maybe [he of M] can give me some fashion pointers, teehee![or]People stare at [him of M] all day long, just like they will with me!*giggle*[or]I want, no, I *NEED* to look like [him of M]![in random order][otherwise if bimbo of the player <= 20][second custom style][one of]I wish *MY* head could just be empty plastic![or]Maybe I should be a mannequin when I get home![or][big he of M][']s so lucky, people make all [his of M] choices for [him of M] every day![in random order][end if][roman type][line break]".
+
+To decide which object is the banish-item of (M - a mannequin):
+	decide on a random off-stage make up kit.
+To decide which object is the banish-item of (M - lingerie-clad mannequin):
+	decide on anal-beads-plug-panties.
+To decide which object is the banish-item of (M - skater mannequin):
+	decide on blue-wheeled white-rollerskates.
 
 To set up (M - a mannequin):
 	reset M;
 	now the monstersetup of M is 1;
-	let T be a random off-stage make up kit;
+	let T be the banish-item of M;
 	if T is a thing:
 		add T to the banishItems of M, if absent;
 	now the raw difficulty of M is the starting difficulty of M;
@@ -206,11 +213,11 @@ Definition: a mannequin is willing to do oral: decide yes.
 Part 1 - Misc Flavour
 
 To say SummoningFlav of (M - a mannequin):
-	if M is in the location of the player, say "A quiet moan can be heard as several gears, pieces of clothing, and what looks like ceramic fall through the stone opening between the statue's legs. The gears whir rapidly as the pieces begin to put themselves together, forming a [printed name of M].";
+	if M is in the location of the player, say "A quiet moan can be heard as several gears, pieces of clothing, and what looks like ceramic fall through the stone opening between the statue's legs. The gears whirr rapidly as the pieces begin to put themselves together, forming a [printed name of M].";
 	otherwise say "You hear the sound of mechanical joints whirring.".
 
 To say SummoningFlav of (M - a goth mannequin):
-	if M is in the location of the player, say "A deafening whir passes through the room as every mannequin turns toward the mummy at once, and the fabric slowly begins to unravel. A porcelain face comes into view as the linens fall away, followed by jointed arms, legs and stylish black clothing. The whir peters out as the [printed name of M] takes [his of M] first few steps into the room, and the mummy's wrappings slowly reform behind it.";
+	if M is in the location of the player, say "A deafening whirr passes through the room as every mannequin turns toward the mummy at once, and the fabric slowly begins to unravel. A porcelain face comes into view as the linens fall away, followed by jointed arms, legs and stylish black clothing. The whirr peters out as the [printed name of M] takes [his of M] first few steps into the room, and the mummy's wrappings slowly reform behind it.";
 	otherwise say "You hear the sound of mechanical joints whirring.".
 
 To say MuteGreetResponse of (M - a mannequin):
@@ -222,7 +229,6 @@ To say MuteQuestion of (M - a mannequin):
 Part 2 - Perception
 
 To compute perception of (M - a mannequin):
-	now M is interested;
 	if permanent makeup is 0 or the anal sex addiction of the player < 9:
 		if the latex-transformation of the player < 3:
 			anger M;
@@ -384,24 +390,30 @@ To set up sex length of (M - a mannequin) in (F - asshole):
 
 To compute (M - a mannequin) entering anally:
 	let P be a random sex toy carried by M;
-	if P is nothing and the difficulty of M - the starting difficulty of M >= 3:[After a certain difficulty level, she starts using dildos.]
+	if P is nothing and the difficulty of M - the starting difficulty of M >= 2:[After a certain difficulty level, she starts using dildos.]
 		now P is a random off-stage plentiful dong;
 		if a random number between 5 and the difficulty of M > the size of P, now M is carrying P;
-	if P is sex toy:
-		say "[BigNameDesc of M] pushes a [printed name of P] into your [asshole], [if the player is not possessing a penis]angling it toward [himself of M] as [he of M] begins pumping it in and out of your hole[otherwise]angling it against your prostate with pinpoint accuracy as [he of M] begins pumping it in and out of your hole[end if]. [run paragraph on]";
+	if M is lingerie-clad mannequin and anal-beads-plug-panties is off-stage and anal-beads-plug-panties is actually summonable:
+		summon anal-beads-plug-panties cursed with quest;
+		displace anal-beads-plug-panties;
+		say "[BigNameDesc of M] forces you to wear a [MediumDesc of anal-beads-plug-panties]! And it looks like it's cursed! It looks like it's up to you - do you [bold type]replace[roman type] it and put the plug section inside to partially preserve your modesty?";
+		satisfy M;
 	otherwise:
-		say "[BigNameDesc of M] inserts two fingers into your [asshole], and starts stroking in a come hither motion. [run paragraph on]";
-	if there is a worn chastity-belt:
-		say "[big he of M] holds you still with [his of M] other hand. It's like [he of M]'s trying to force an anal orgasm out of you!";
-	otherwise if the player is possessing a penis:
-		say "[big he of M] [if there is a worn chastity cage]grasps your testicles with [his of M] other hand, delicately massaging them as [his of M] faux-knuckles bump against your cage. [otherwise if the size of penis > 3]grabs your [ShortDesc of penis] with [his of M] other hand and skilfully begins stroking away. [otherwise]delicately teasing your [ShortDesc of penis] with [his of M] fingertips. [end if][big he of M]'s trying to force an orgasm out of you!";
-	otherwise if the player is possessing a vagina:
-		say "[unless the player is pussy protected]With [his of M] other hand [he of M] starts expertly pinching and rubbing your clitoris. [end if][big he of M]'s trying to force an orgasm out of you!";
-	otherwise:
-		say "[big he of M] holds you still with [his of M] other hand. It's like [he of M]'s trying to force an anal orgasm out of you!";
-	cutshow figure of mannequin cutscene 3 for M;
-	now M is penetrating asshole;
-	now the sex-length of M is 0.
+		if P is sex toy:
+			say "[BigNameDesc of M] pushes a [printed name of P] into your [asshole], [if the player is not possessing a penis]angling it toward [himself of M] as [he of M] begins pumping it in and out of your hole[otherwise]angling it against your prostate with pinpoint accuracy as [he of M] begins pumping it in and out of your hole[end if]. [run paragraph on]";
+		otherwise:
+			say "[BigNameDesc of M] inserts two fingers into your [asshole], and starts stroking in a come hither motion. [run paragraph on]";
+		if there is a worn chastity-belt:
+			say "[big he of M] holds you still with [his of M] other hand. It's like [he of M]'s trying to force an anal orgasm out of you!";
+		otherwise if the player is possessing a penis:
+			say "[big he of M] [if there is a worn chastity cage]grasps your testicles with [his of M] other hand, delicately massaging them as [his of M] faux-knuckles bump against your cage. [otherwise if the size of penis > 3]grabs your [ShortDesc of penis] with [his of M] other hand and skilfully begins stroking away. [otherwise]delicately teasing your [ShortDesc of penis] with [his of M] fingertips. [end if][big he of M]'s trying to force an orgasm out of you!";
+		otherwise if the player is possessing a vagina:
+			say "[unless the player is pussy protected]With [his of M] other hand [he of M] starts expertly pinching and rubbing your clitoris. [end if][big he of M]'s trying to force an orgasm out of you!";
+		otherwise:
+			say "[big he of M] holds you still with [his of M] other hand. It's like [he of M]'s trying to force an anal orgasm out of you!";
+		cutshow figure of mannequin cutscene 3 for M;
+		now M is penetrating asshole;
+		now the sex-length of M is 0.
 
 This is the mannequin forces orgasm through diaper rule:
 	if there is a worn total protection diaper and the player is diaper focused and the player is a bit horny and the player is able to orgasm:
@@ -481,10 +493,10 @@ To compute damaging attack of (M - a mannequin):
 To compute stunning attack of (M - a monster):
 	let T be 0;
 	if M is theme-matched, now T is 1;
-	say "[BigNameDesc of M] emits a clicking noise as [he of M] strikes a pose with one hand on [his of M] hip. [if T is 1 and M is topless mannequin][big he of M] isn't alive, but you wouldn't know that from the casual elegance of [his of M] pose. You begin to feel intimidated[otherwise if T is 1]The casual elegance of [his of M] pose emphasises how much better [his of M] outfit looks compared to yours, and you feel a wave of embarassment[otherwise]You find yourself feeling intimidated by the casual elegance of [his of M] movements[end if] as [he of M] struts straight for you.";
+	say "[BigNameDesc of M] emits a clicking noise as [he of M] strikes a pose with one hand on [his of M] hip. [if T is 1 and M is topless mannequin][big he of M] isn't alive, but you wouldn't know that from the casual elegance of [his of M] pose. You begin to feel intimidated[otherwise if T is 1]The casual elegance of [his of M] pose emphasises how much better [his of M] outfit looks compared to yours, and you feel a wave of embarrassment[otherwise]You find yourself feeling intimidated by the casual elegance of [his of M] movements[end if] as [he of M] struts straight for you.";
 	if M is goth mannequin:[goth forces you to kneel. Can only be resisted with int]
 		say "The closer [he of M] gets, the more inadequate you feel, and when [he of M] stops in front of you and makes a simple downward gesture of [his of M] porcelain fingers, your will is pushed to its breaking point.";
-		if M is theme-matched or the intelligence roll of M >= the intelligence of the player:
+		if T is 1 or the intelligence roll of M >= the intelligence of the player:
 			say "You aren't able to hold it together, and you drop to your knees as [he of M] returns to [his of M] normal posture.";
 			now the stance of the player is 1;
 			moderateHumiliate;
@@ -493,12 +505,12 @@ To compute stunning attack of (M - a monster):
 	otherwise:[mannequins try to stun you. Can be dodged or resisted with int]
 		if the accuracy roll of M >= the dexterity of the player:
 			say "The closer [he of M] gets, the more inadequate you feel, so you aren't prepared to resist when [he of M] suddenly reaches out and taps you on the forehead.";
-			if M is theme-matched or the intelligence roll of M >= the intelligence of the player:
-				say "You feel a strange tingling feeling in your joints as you suddenly find yourself imitating [his of M] perfect pose. Its exhausting, and worse, your body seems to want to hold this posture for awhile!";
+			if T is 1 or the intelligence roll of M >= the intelligence of the player:
+				say "You feel a strange tingling feeling in your joints as you suddenly find yourself imitating [his of M] perfect pose. It's exhausting, and worse, your body seems to want to hold this posture for a while!";
 				moderateHumiliate;
 				FatigueUp 20;
 				now another-turn-flavour is the substituted form of "You're still stuck imitating [FuckerDesc of M]'s pose!";
-				now another-turn is 1;
+				now another-turn is 1; [###Selkie: Any chance we could have this effect worsen so in the end the player has a good chance of autmatically adopting the pose again when feeling under threat?]
 			otherwise:
 				say "You feel a strange tingling feeling in your joints as you are suddenly driven to imitate [his of M] pose, and you exhaust yourself a little trying to shake it off.";
 				FatigueUp 10;

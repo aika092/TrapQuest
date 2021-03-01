@@ -80,7 +80,7 @@ To decide which object is the potential-upgrade-target of (M - maid-waitress-out
 
 Part 1 - Sexy maid outfit
 
-sexy-maid-outfit is a maid outfit. sexy-maid-outfit is high cut. The text-shortcut of sexy-maid-outfit is "mo1". The printed name of sexy-maid-outfit is "[clothing-title-before]sexy maid outfit[clothing-title-after]". Understand "sexy" as sexy-maid-outfit.
+sexy-maid-outfit is a maid outfit. sexy-maid-outfit is high cut. sexy-maid-outfit is short. The text-shortcut of sexy-maid-outfit is "mo1". The printed name of sexy-maid-outfit is "[clothing-title-before]sexy maid outfit[clothing-title-after]". Understand "sexy" as sexy-maid-outfit.
 
 To decide which figure-name is clothing-image of (C - sexy-maid-outfit):
 	decide on figure of maid outfit 1.
@@ -102,7 +102,7 @@ Definition: sexy-maid-outfit is bow themed: decide yes.
 
 Part 2 - Drooping Maid Outfit
 
-drooping-maid-outfit is a maid outfit. drooping-maid-outfit is very low cut. The text-shortcut of drooping-maid-outfit is "mo2". The printed name of drooping-maid-outfit is "[clothing-title-before]drooping maid outfit[clothing-title-after]". Understand "drooping" as drooping-maid-outfit.
+drooping-maid-outfit is a maid outfit. drooping-maid-outfit is very low cut. drooping-maid-outfit is short. The text-shortcut of drooping-maid-outfit is "mo2". The printed name of drooping-maid-outfit is "[clothing-title-before]drooping maid outfit[clothing-title-after]". Understand "drooping" as drooping-maid-outfit.
 
 To decide which figure-name is clothing-image of (C - drooping-maid-outfit):
 	decide on figure of maid outfit 2.

@@ -1,6 +1,6 @@
 Equippables Framework by Equippables begins here.
 
-An equippable is a kind of clothing. An equippable can be slap ready, knee ready, kick ready or zap ready (this is the equippable-type property). An equippable is usually manly. An equippable can be melee or projectile. An equippable is usually melee. An equippable is usually unique.
+An equippable is a kind of clothing. An equippable is usually slap ready. An equippable is usually manly. An equippable can be melee or projectile. An equippable is usually melee. An equippable is usually unique.
 
 To decide which number is the default-soak-limit of (C - an equippable): decide on 5.
 
@@ -20,8 +20,7 @@ Definition: a thing is zappable: decide no. [Can it be used to cast a magic comb
 Definition: an equippable is zappable:
 	if it is zap ready and it is worn, decide yes;
 	decide no.
-Definition: a clothing is hand ready: decide no.
-Definition: an equippable is hand ready:
+Definition: a clothing is hand ready:
 	if it is slap ready or it is zap ready, decide yes;
 	decide no.
 
@@ -32,9 +31,9 @@ To decide which object is the concealer of (C - an equippable):
 
 Understand "wield [equippable]", "equip [equippable]" as wearing.
 
-To compute attack of (E - an equippable) at (M - a monster):
+To compute attack of (E - a clothing) at (M - a monster):
 	if E is zap ready:
-		if the damage improvement of E > 0:
+		if the zap damage improvement of E > 0:
 			say "You try to use your [ShortDesc of E] to cast a spell at [NameDesc of M]. Bang! A bolt of energy shoots out strikes [him of M]! A direct hit!";
 		otherwise:
 			say "You try to use your [ShortDesc of E] to cast a spell at [NameDesc of M]. Nothing happens!";
@@ -44,7 +43,9 @@ To compute attack of (E - an equippable) at (M - a monster):
 To compute attack effect of (E - an equippable):
 	do nothing.
 
-To decide which number is the damage improvement of (E - a thing):
+To decide which number is the slap damage improvement of (E - a thing):
+	decide on 0.
+To decide which number is the zap damage improvement of (E - a thing):
 	decide on 0.
 
 To uniquely set up (E - an equippable):
@@ -52,10 +53,19 @@ To uniquely set up (E - an equippable):
 
 Part 1 - Gloves
 
-A gloves is a kind of equippable. A gloves is usually slap ready. Understand "pair", "pair of", "glove" as gloves.
+A gloves is a kind of clothing. Understand "pair", "pair of", "glove", "gloves" as gloves.
 
-To decide which number is the damage improvement of (G - a gloves):
-	decide on the magic-modifier of G.
+Definition: a gloves is nudism-enabling: decide yes.
+
+To decide which number is the slap damage improvement of (G - a gloves):
+	if G is blessed, decide on 2;
+	decide on 1.
+
+A big-gloves is a kind of gloves. A big-gloves is usually slap ready. [gloves that would prevent someone wielding a weapon]
+
+To decide which number is the slap damage improvement of (G - a big-gloves):
+	if G is blessed, decide on 0;
+	decide on -1.
 
 tongue-gloves is a gloves. tongue-gloves is unique. tongue-gloves is biological. The printed name of tongue-gloves is "[clothing-title-before]tongue gloves[clothing-title-after]". The text-shortcut of tongue-gloves is "tgvs". Understand "tongue", "gloves" as tongue-gloves.
 
@@ -102,7 +112,7 @@ To decide which number is the masturbation-bonus of (E - a vibe-wand):
 	increase X by the raw-masturbation-bonus of E;
 	decide on X.
 
-To decide which number is the damage improvement of (W - a vibe-wand):
+To decide which number is the zap damage improvement of (W - a vibe-wand):
 	let X be MagicPowerDamage + 2;
 	increase X by the magic-modifier of W;
 	if X < 0, decide on 0;
@@ -119,37 +129,33 @@ To decide which number is the initial outrage of (E - a vibe-wand):
 
 Part 3 - Wearability
 
-equippable wearability rules is a rulebook. The wearability rules of equippable is usually equippable wearability rules.
+equippable wearability rules is a rulebook. The wearability rules of an equippable is usually equippable wearability rules.
+gloves wearability rules is a rulebook. The wearability rules of gloves is usually gloves wearability rules.
+gloves removability rules is a rulebook. The removability rules of gloves is usually gloves removability rules.
 
-This is the hand ready equippable already worn rule:
-	if wearing-target is hand ready:
-		repeat with O running through worn hand ready clothing:
-			if summoning is 0 and autowear is false, say "You can't because [if O is wearing-target]you're already wielding it[otherwise if O is equippable]you're already wielding the [ShortDesc of O][otherwise]it needs to occupy the same hand as your [ShortDesc of O][end if]!";
+This is the fingers gloves clash rule:
+	repeat with C running through worn finger covering clothing:
+		if C is not wearing-target:
+			if summoning is 0 and autowear is false, say "You can't wear that at the same time as [NameDesc of C].";
 			rule fails.
-The hand ready equippable already worn rule is listed in the equippable wearability rules.
+The fingers gloves clash rule is listed in the gloves wearability rules.
 
-[This is the rings gloves clash rule:
-	if there are worn gloves and wearing-target is ring and summoning is 0:
-		say "You need to remove your [random worn gloves] first.";
-		rule fails.
-The rings gloves clash rule is listed in the global wearability rules.]
+This is the equip after wearing gloves rule:
+	repeat with E running through worn hand ready clothing:
+		if E is clothing:
+			if summoning is 0 and autoremove is false, say "You would need to stop wielding [NameDesc of E] first[if wearing-target is not hand ready] (but you should be able to wield it again afterwards)[end if].";
+			rule fails.
+The equip after wearing gloves rule is listed in the gloves wearability rules.
 
-Check taking off cursed worn equippable:
-	if the noun is hand ready:
-		say "The [ShortDesc of noun] is welded to your [if there is worn gloves and the noun is not gloves][random worn gloves][otherwise]hand[end if]!";
-		now the curse-ID of the noun is sure instead.
-
-Check taking off worn gloves:
-	if the noun is cursed:
-		say "The [ShortDesc of noun] won't come off!";
-		now the curse-ID of the noun is sure instead;
-	let E be a random worn slap ready equippable;
-	if E is nothing, let E be a random worn zap ready equippable;
-	if E is clothing and E is not the noun:
-		say "You would need to stop wielding the [E] first." instead.
+This is the unequip before removing gloves rule:
+	repeat with E running through worn hand ready clothing:
+		if E is clothing and E is not wearing-target:
+			if summoning is 0 and autoremove is false, say "You would need to stop wielding [NameDesc of E] first.";
+			rule fails.
+The unequip before removing gloves rule is listed in the gloves removability rules.
 
 painted-vibrator-hands is a gloves.
-The printed name of painted-vibrator-hands is "[clothing-title-before]painted vibrator hands[clothing-title-after]". The text-shortcut of painted-vibrator-hands is "pvh". Figure of painted-vibrator-hands is the file "Items/Accessories/Equippables/thumbvibrators1.jpg". Understand "painted", "vibrator", "hands" as painted-vibrator-hands.
+The printed name of painted-vibrator-hands is "[clothing-title-before]painted vibrator hands[clothing-title-after]". The text-shortcut of painted-vibrator-hands is "pvh". Figure of painted-vibrator-hands is the file "Items/Accessories/Equippables/gloves4.png". Understand "painted", "vibrator", "hands" as painted-vibrator-hands.
 Definition: painted-vibrator-hands is blue themed: decide yes.
 Definition: painted-vibrator-hands is transformation-protected: decide yes.
 Definition: painted-vibrator-hands is removable: decide no.

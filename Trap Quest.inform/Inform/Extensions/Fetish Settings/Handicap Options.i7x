@@ -305,7 +305,7 @@ The strongCurses random rule is listed in the random mode rules.
 To decide which number is realisticArms:
 	if the player is in a predicament room and (the player is not in Predicament01 or current-predicament is vibe-photo-predicament) and the player is not in Predicament20, decide on 1;
 	decide on 0.
-	[if tutorial is 1 or (diaper quest is 0 and the player is not a february 2020 top donator) or (diaper quest is 1 and the player is not a february 2020 diaper donator), decide on 0;
+	[if tutorial is 1, decide on 0;
 	if choice in row 81 of the Table of Player Options <= 0, decide on 0;
 	otherwise decide on 1.]
 

@@ -63,7 +63,7 @@ To say ClothingDesc of (W - royal scepter):
 To say ShortDesc of (W - royal scepter):
 	say "royal scepter".
 
-To decide which number is the damage improvement of (W - royal scepter):
+To decide which number is the zap damage improvement of (W - royal scepter):
 	let X be MagicPowerDamage + the magic-modifier of W - (the humiliation of the player / 10000);
 	if W is cursed, decrease X by 1;
 	if W is blessed, increase X by 1;
@@ -80,30 +80,10 @@ Definition: royal scepter is royalty themed: decide yes.
 To decide which number is the initial outrage of (E - royal scepter):
 	decide on 2.
 
-To compute climax effect of (E - royal scepter):
-	if bride-consort is penetrating a body part:
-		say "Your [ShortDesc of E] pulses, and a pleasant feeling wells up inside of you.";
-		dignify the charge of E * 3;
-	otherwise if bride-consort is not the throne:
-		if there is a live thing penetrating a body part:
-			say "Your [ShortDesc of E] pulses, and you feel a horrible sense of shame in your heart from touching yourself while someone other than the [bride-consort] was inside you.";
-			humiliate STRONG-HUMILIATION;
-		otherwise:
-			say "Your [ShortDesc of E] pulses, and you feel a powerful sense of yearning deep in your heart as an image of the [bride-consort] appears in your mind.";
-			Arouse 3000;
-			if the refractory-period of bride-consort > 0, decrease the refractory-period of bride-consort by the charge of E * 20.
-
-To decide which number is the raw-masturbation-bonus of (E - royal scepter):
-	if bride-consort is penetrating a body part:
-		decide on 2;
-	otherwise if bride-consort is the throne:
-		decide on 1;
-	decide on 0.
-
 To compute periodic effect of (E - royal scepter):
 	if a random number between the charge of royal scepter and 45 >= 45, decrease the charge of royal scepter by 1.
 
-A bouquet is a kind of equippable. A bouquet is slap ready.
+A bouquet is a kind of equippable. A bouquet is slap ready. A bouquet is biological.
 
 Definition: a bouquet is class-relevant:
 	if the class of the player is bride, decide yes;
@@ -120,48 +100,55 @@ To decide which number is the initial outrage of (E - a bouquet):
 To say ShortDesc of (C - a bouquet):
 	say "bouquet".
 
-To decide which number is the damage improvement of (C - a bouquet):
+To decide which number is the slap damage improvement of (C - a bouquet):
 	decide on -8.
 
 Definition: a monster (called M) is proposer:
-	if the class of the player is bride and bride-consort is the throne and M is undefeated and M is intelligent and M is human and M is male and the times-met of M > 0 and M is friendly, decide yes;
+	if the class of the player is bride and bride-consort is the throne and M is undefeated and M is intelligent and M is human and M is male and the times-met of M > 0 and M is not refusing to propose and M is friendly, decide yes;
 	decide no.
+Definition: a monster is refusing to propose: decide no.
+
+total-proposals is a number that varies.
 
 To compute proposal of (M - a monster):
 	let R be random off-stage plentiful ring;
 	if R is ring:
-		let D be the difficulty of M + a random number between -4 and 4;
-		if D < 0:
-			now R is sapphire;
-		otherwise if D < 4:
-			now R is emerald;
-		otherwise if D < 8:
-			now R is ruby;
-		otherwise if D < 12:
-			now R is pink diamond;
-		otherwise if D < 16:
-			now R is pure diamond;
-		otherwise:
+		let D be the difficulty of M;
+		if D > 15 and total-proposals > 4:
 			now R is solid gold;
+		otherwise if D > 13 and total-proposals > 3:
+			now R is pure diamond;
+		otherwise if D > 11 and total-proposals > 2:
+			now R is pink diamond;
+		otherwise if D > 9 and total-proposals > 1:
+			now R is ruby;
+		otherwise if D > 7 and total-proposals > 0:
+			now R is emerald;
+		otherwise:
+			now R is sapphire;
 		set shortcut of R;
+		increase total-proposals by 1;
 		say "[BigNameDesc of M] notices you! [big he of M] gets down on one knee.[line break][ProposalFlav of M][big he of M] offers you a [R]. Do you accept it?";
 		if the player is consenting:
 			if the number of worn rings < 8, summon R;
 			otherwise now R is in the location of the player;
-			say "[BigNameDesc of M] looks jubliant.[line break][speech style of M]'It is settled! Please meet me at the stage for the ceremony.'[roman type][line break]";
+			say "[BigNameDesc of M] looks jubilant.[line break][speech style of M]'It is settled! Please meet me at the stage for the ceremony.'[roman type][line break]";
 			now bride-consort is M;
 		otherwise:
 			say "[speech style of M]'I will not stop asking until you [one of]are mine[or]say yes[or]accept[in random order]!'[roman type][line break]";
-			DifficultyUp M by 1;
-		say "With that, [NameDesc of M] takes [his of M] leave.";
-		distract M;
-		regionally place M;
+			SilentlyDifficultyUp M by 1;
+		compute proposal leaving of M;
 	otherwise:
 		say "[speech style of M]'I've lost my ring!'[roman type][line break][BigNameDesc of M] seems too distracted to pay any proper attention to you.";
 		bore M.
 
 To say ProposalFlav of (M - a monster):
 	say "[speech style of M]'[one of]It would be my honour to be your [man of M], if you will have me[or]Madame, would you take my hand in marriage[or][NameBimbo], will you marry me[or]Will you take this ring, and be my bride[in random order]?'[roman type][line break]".
+
+To compute proposal leaving of (M - a monster):
+	say "With that, [NameDesc of M] takes [his of M] leave.";
+	distract M;
+	regionally place M.
 
 To compute bride perception of (M - a monster):
 	say "[BigNameDesc of M] notices you.[line break][speech style of M]'My blushing bride! Well met!'[roman type][line break]";
@@ -178,21 +165,21 @@ To compute betrothal of (M - a monster):[This only triggers when the player is f
 		if bride-consort is M, now F is 2;
 		if F is -1:[the consort isn't around. Adultery!]
 			if bride-consort is alive and bride-consort is mating and the refractory-period of bride-consort > 0:
-				say "Your [printed name of royal scepter] pulses, and an image of [NameDesc of bride-consort] appears in your head. You know that no matter who you have sex with, nothing could ever shake your everlasting connection.";
+				say "Your [C] pulses, and an image of [NameDesc of bride-consort] appears in your head. You know that no matter who you have sex with, nothing could ever shake your everlasting connection.";
 			otherwise if bride-consort is alive:
-				say "Your [printed name of royal scepter] pulses, and an image of [NameDesc of bride-consort] appears in your head as an overwhelming feeling of guilt washes over you.";
+				say "Your [C] pulses, and an image of [NameDesc of bride-consort] appears in your head as an overwhelming feeling of guilt washes over you.";
 				punish infidelity;
 			otherwise if bride-consort is monster:[How do we handle it if the consort is dead?]
 				unless bride-consort is mating:
-					say "Your [printed name of C] disappears, and you feel your connection to [NameDesc of bride-consort] slowly fade away.";
+					say "Your [C] disappears, and you feel your connection to [NameDesc of bride-consort] slowly fade away.";
 					now the charge of floral bouquet is 0;
 					only destroy C;
 					now bride-consort is the throne;
 				otherwise:[Getting pregnant from your consort grants freedom, but becomes constricting if they die]
-					say "Your [printed name of C] pulses, and an image of [NameDesc of bride-consort] appears in your head as an overwhelming feeling of guilt at your lack of loyalty washes over you.";
+					say "Your [C] pulses, and an image of [NameDesc of bride-consort] appears in your head as an overwhelming feeling of guilt at your lack of loyalty washes over you.";
 					punish infidelity;
 		if F is 2:[M is the consort]
-			if M is mechanic and the class of the player is "princess bride":
+			if M is mechanic and the class of the player is "princess bride" and M is alive:
 				say "[speech style of M]'Your royal energy... I feel it flowing through me... releasing ME!'[roman type][line break]";
 				unseal xavier from M;
 			say "Your [C] pulses, and a pleasant feeling wells up inside of you.";
@@ -232,7 +219,7 @@ To punish infidelity:
 		IntDown 1;
 		say "You feel your mind clouding over with thoughts of regret.".
 
-floral bouquet is a bouquet. floral bouquet has a number called charge.
+floral bouquet is a bouquet. floral bouquet has a number called charge. The text-shortcut of floral bouquet is "fbqt".
 
 Definition: floral bouquet is flower themed: decide yes.
 
@@ -244,9 +231,9 @@ Figure of floral bouquet is the file "Items/Accessories/Equippables/bouquet1.png
 To decide which figure-name is the clothing-image of (R - floral bouquet):
 	decide on figure of floral bouquet.
 
-condoms bouquet is a bouquet.
+condoms bouquet is a bouquet. condoms bouquet is latex.
 
-Definition: condoms bouquet is semen themed: decide yes.
+Definition: condoms bouquet is semen themed: decide yes. The text-shortcut of condoms bouquet is "cbqt".
 
 To say MediumDesc of (C - condoms bouquet):
 	say "condoms bouquet".
@@ -261,7 +248,7 @@ To decide which figure-name is the clothing-image of (R - condoms bouquet):
 
 A time based rule:
 	now auto is 1;
-	if the class of the player is bride and bride-consort is an alive undefeated monster and there is a worn bouquet and the ceremony of betrothal-quest is true and the consumation of betrothal-quest is false and the player is in Hotel06 and the number of monsters in Hotel06 is 0 and the player is possessing a vagina and vagina is not actually occupied and the number of pussy covering actually unavoidable clothing is 0:
+	if the class of the player is bride and bride-consort is an alive undefeated monster and there is a worn bouquet and the ceremony of betrothal-quest is true and the consummation of betrothal-quest is false and the player is in Hotel06 and the number of monsters in Hotel06 is 0 and the player is possessing a vagina and vagina is not actually occupied and the number of pussy covering actually unavoidable clothing is 0:
 		compute wedding night;
 	otherwise:
 		now auto is 0.
@@ -282,15 +269,18 @@ To compute wedding night:
 			now C is in the location of the player;
 	say "A split second later, [NameDesc of bride-consort] is behind you, lining up [his of bride-consort] [manly-penis] with your [vagina].[line break][speech style of bride-consort]'With this, our bond is truly sealed.'[roman type][line break]In one strong motion, [he of bride-consort] pushes inside you.";
 	now bride-consort is penetrating vagina;
+	if bride-consort is mechanic and the class of the player is "princess bride":
+		say "[speech style of bride-consort]'Your royal energy... I feel it flowing through me... releasing ME!'[roman type][line break]";
+		unseal xavier from bride-consort; [don't worry this automatically changes who bride-consort is and who is penetrating]
 	ruin vagina times 1;
-	now the consumation of betrothal-quest is true;
+	now the consummation of betrothal-quest is true;
 	progress quest of betrothal-quest;
-	say "[speech style of bride-consort]'C-cumming!'[roman type][line break][BigNameDesc of bride-consort] begins unleashing [himself of bride-consort] inside of you.[line break][speech style of bride-consort]Already?![roman type][line break]";
-	PussyFill the semen load of bride-consort;
-	focus-consider bride-consort;
-	orgasm bore bride-consort;
-	if bride-consort is in Hotel06: [Might not be! Mechanic disappears as demon lord is unsealed]
-		say "[speech style of bride-consort]'Being inside you... is the best feeling I've ever felt! We must do this again soon. Until then, I trust you will be faithful to me.'[roman type][line break][if L is not Hotel06][BigNameDesc of bride-consort] leaves the way [he of bride-consort] came.[end if]";
+	unless bride-consort is demon lord: [xavier gives the player a good seeing to]
+		say "[speech style of bride-consort]'C-cumming!'[roman type][line break][BigNameDesc of bride-consort] begins unleashing [himself of bride-consort] inside of you.[line break][speech style of bride-consort]Already?![roman type][line break]";
+		PussyFill the semen load of bride-consort;
+		focus-consider bride-consort;
+		orgasm bore bride-consort;
+		say "[speech style of bride-consort]'Being inside you... is the best feeling of my life! We must do this again soon. Until then, I trust you will be faithful to me.'[roman type][line break][if L is not Hotel06][BigNameDesc of bride-consort] leaves the way [he of bride-consort] came.[end if]";
 		now bride-consort is in L.
 
 Royal Scepter ends here.

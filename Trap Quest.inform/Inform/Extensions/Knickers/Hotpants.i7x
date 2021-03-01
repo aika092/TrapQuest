@@ -91,7 +91,7 @@ To say selfexamineuniquetitle of (K - football-hotpants):
 To say UniqueTitle of (K - football-hotpants):
 	say "tiny cotton hotpants".
 
-Figure of football-hotpants is the file "Items/Clothes/Lower/Underwear/Special/football1.jpg".
+Figure of football-hotpants is the file "Items/Clothes/Lower/Underwear/Special/football1.png".
 
 Definition: football-hotpants is exercise themed: decide yes.
 Definition: football-hotpants is discovered varied: decide no.

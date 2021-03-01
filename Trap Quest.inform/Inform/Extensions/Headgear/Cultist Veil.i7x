@@ -50,24 +50,14 @@ To decide which number is the intelligence-influence of (H - cultist veil):
 	decide on I.
 
 Report wearing cultist veil:
-	if doom counter is 0:
-		if Woods01 is not placed:
-			Set Up The Woods;
-			follow the setting up woods monsters rules;
-		if Mansion01 is not placed:
-			Set Up The Mansion;
-			follow the setting up mansion monsters rules;
-		repeat with M running through alive nonexistent monsters:
-			set up M;
-		say "You feel that something epic has begun.";
-		commence doom.
+	force commence doom.
 
 Definition: cultist veil is condom pinnable: decide yes.
 
 Chapter - Class Outfit
 
 Definition: cultist veil (called C) is removal-blocking:
-	if wearing-target is C and the quest of C is insanity-quest and the quest-success of insanity-quest is 0, decide yes;
+	if wearing-target is C and the quest of C is insanity-quest and the quest-completions of insanity-quest is 0, decide yes;
 	decide no.
 
 To compute unique recycling of (C - cultist veil):
@@ -79,7 +69,7 @@ To compute class outfit of (H - cultist veil):
 
 Chapter - Quest
 
-insanity-quest is a headgear-clothing-quest. insanity-quest has a number called quest-success.
+insanity-quest is a headgear-clothing-quest.
 
 To uniquely set up (C - cultist veil):
 	now the quest of C is insanity-quest.
@@ -98,12 +88,12 @@ To compute quest completion of (Q - insanity-quest) on (C - cultist veil):
 	say "[bold type]";
 	say QuestPersistFlav of Q on C;
 	compute persistent reward of Q on C;
-	increase the quest-success of Q by 1;
+	increase the quest-completions of Q by 1;
 	if C is cursed, now C is bland;
 	say "[roman type][line break]".
 
 To say QuestPersistFlav of (Q - insanity-quest) on (C - cultist veil):
-	say "[if the quest-success of Q is 0]The magic sealing your [MediumDesc of C] is lifted! It rewards your efforts by[otherwise]Your [MediumDesc of C] rewards your continued efforts by[end if] ".
+	say "[if the quest-completions of Q is 0]The magic sealing your [MediumDesc of C] is lifted! It rewards your efforts by[otherwise]Your [MediumDesc of C] rewards your continued efforts by[end if] ".
 
 To compute generic first time class reward of (Q - insanity-quest) on (C - a clothing):
 	let D be a random off-stage ring;

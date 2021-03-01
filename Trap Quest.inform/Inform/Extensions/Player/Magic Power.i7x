@@ -34,8 +34,8 @@ To MagicPowerUp (X - a number):
 		otherwise if the magic-power of the player < 20:
 			increase the magic-power of the player by 1;
 			if X is 0:
-				if T is 0, say "[bold type]You feel that you now have the ability to use magic! [one of][if newbie tips is 1]When you use magic, your magic energy will deplete. Several environment objects and game effects will enable you to either partially or fully replenish your magical energy.[end if][line break][variable custom style]Wow!!! What an incredible feeling! I'm magic![or][stopping][roman type][line break]";
-				otherwise say "You feel that your capacity to use magic has [one of]increased[or]improved[or]expanded[in random order].";
+				if T is 0, say "[bold type]You feel you now have the ability to use magic! [one of][if newbie tips is 1]When you use magic, your magic energy will deplete. Several environment objects and game effects will enable you to either partially or fully replenish your magical energy.[end if][line break][variable custom style]Wow!!! What an incredible feeling! I'm magic![or][stopping][roman type][line break]";
+				otherwise say "You feel your capacity to use magic has [one of]increased[or]improved[or]expanded[in random order].";
 		otherwise if X is 0:
 			if a random number between 1 and 5 is 1 and the player is deserving of more intelligence:
 				say "Your body is so full of magic that the excess fizzles into your brain, making you slightly [smarter].";
@@ -79,8 +79,9 @@ To decide which number is the raw-magic-cost of (Z - a thing):
 	decide on 2.
 To decide which number is the magic-cost of (Z - a thing):
 	let M be the raw-magic-cost of Z;
-	if M > 0 and the trophy-mode of magic-trophy is 1:
-		now M is M / 3;
+	if M > 0:
+		if the trophy-mode of magic-trophy is 1, now M is M / 3;
+		if Z is equippable and combatSpeed > 1, now M is M / combatSpeed;
 		if M < 1, now M is 1;
 	decide on M.
 
@@ -414,10 +415,10 @@ an all time based rule (this is the magic speed decay rule):
 			now magic-speed-timer is 0.
 
 magic-strength-timer is a number that varies.
-magic-strengthing is a magic-spell.
-To say MagicSpellEffect of (S - magic-strengthing):
+magic-strengthening is a magic-spell.
+To say MagicSpellEffect of (S - magic-strengthening):
 	say "temporarily boost your strength".
-Report Spellcasting magic-strengthing when there is a reactive monster:
+Report Spellcasting magic-strengthening when there is a reactive monster:
 	say "The magic rushes to your arms, giving them additional energy and strength!";
 	increase magic-strength-timer by default-candy-duration.
 

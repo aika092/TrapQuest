@@ -11,6 +11,9 @@ To compute monsters:
 	now shocked-monsters is 0; [This is the variable that makes sure we don't spam the player with too much humiliation flavour if several monsters notice them at once]
 	now aroused-monsters is 0;
 	let L be the list of alive simulated monsters;
+	if (a random number between 1 and combatSpeed) > 1 and the player is in danger:
+		repeat with M running through L:
+			if M is not interested and M is not in the location of the player, remove M from L;
 	sort L in random order;
 	repeat with M running through L:
 		if debugmode > 1, say "Computing [M]...";
@@ -27,6 +30,13 @@ To compute turn (N - a number) of (M - a monster):
 	[If N is 1, this is a full action
 	if N is 2, this is a passive action (no attacking or perception) because the player moved and we're just making NPCs move at the same time
 	if N is 3, this is a stationary passive action (only perception) because it already moved (probably with the player with N = 2 above)]
+	if the wrangle-bonus of M > 0 and M is wrangling a body part: [NPC is currently wrangling, and it can end automatically]
+		decrease the wrangle-bonus of M by 1;
+		if the wrangle-bonus of M is 0:
+			repeat with BP running through body parts wrangled by M:
+				say "[BigNameDesc of M][']s hold on your [BP] loosens, and you are able to wriggle free!";
+				now M is not wrangling BP;
+	now M is not trip-warned;
 	if M is seduced: [If the NPC got to its compute turn function, that means that the seduction failed (the NPC wasn't stalled) and we can exit the seduction minigame.]
 		if M is interested, now M is seduction-refused;
 		otherwise now M is unseduced;
@@ -79,13 +89,15 @@ To compute action (N - a number) of (M - a monster):
 	if the scared of M > 0 and M is not scarable, now the scared of M is 0;
 	if the scared of M > 0 and M is not penetrating a body part:
 		compute fleeing of M;
-		if a random number from 1 to 5 is 1 and M is not in the location of the player and M is not nearby:
-			bore M for 100 seconds;
-			now the scared of M is 0;
+		if M is not in the location of the player and M is not nearby:
+			decrease the scared of M by 25;
+			if the scared of M <= 0:
+				deinterest M;
+				now the scared of M is 0;
 	otherwise if M is interested:
 		if M is in the location of the player or M is grabbing the player or M is penetrating a body part:
 			if N is 1:
-				if M is penetrating a body part or M is grabbing the player or (M is unfriendly and M is threatening):
+				if M is penetrating a body part or M is grabbing the player or M is attack-threatening:
 					check attack of M;
 				otherwise if M is not distracted:
 					if M is undefeated and M is friendly:
@@ -114,6 +126,9 @@ Definition: a monster is motionless-when-defeated:
 	decide no. [Most NPCs can continue moving around when enslaved, but not when fucked silly]
 
 To check chase boredom of (M - a monster):
+	check default chase boredom of M.
+
+To check default chase boredom of (M - a monster):
 	let D be 15; [Every turn the monster (after seeking) is not in the location of the player, there's a 1 in 15 chance of them getting bored.]
 	if catbell is worn, increase D by 30;
 	if the player is pheromonal and M is musky, increase D by 15;[beast monsters follow you longer]

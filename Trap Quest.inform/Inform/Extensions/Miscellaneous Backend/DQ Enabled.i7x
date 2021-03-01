@@ -63,20 +63,21 @@ Figure of Minotaur Cutscene 2 is the file "Special/smallimage.jpg".
 To decide which figure-name is YesNoBackground:
 	if temporaryYesNoBackground is not figure of small image, decide on temporaryYesNoBackground;
 	if the bimbo of the player < 10:
-		if the player is female:
+		if the player is gendered female:
 			if the player is diapered, decide on figure of YesNoBackground1B;
 			otherwise decide on figure of YesNoBackground1A;
 		otherwise:
 			if the player is diapered, decide on figure of YesNoBackground2B;
 			otherwise decide on figure of YesNoBackground2A;
 	otherwise:
-		if the player is female:
+		if the player is gendered female:
 			if the player is diapered, decide on figure of YesNoBackground3B;
 			otherwise decide on figure of YesNoBackground3A;
 		otherwise:
 			if the player is diapered, decide on figure of YesNoBackground3B;
 			otherwise decide on figure of YesNoBackground3A;
 
+Include DQ Monster Variants by DQ Only Stuff.
 Include School Stuff by DQ Only Stuff.
 
 a wench is a kind of monster. a horny-wench is a kind of wench. a wench has a number called creampieTimer.
@@ -148,7 +149,7 @@ gape-gloves is a gloves. The printed name of gape-gloves is "gape gloves".
 bondage-ribbons is a dress.
 
 A bridal veil is a kind of headgear. floral bridal veil is a bridal veil.
-betrothal-quest is a headgear-clothing-quest. betrothal-quest has a truth state called ceremony. betrothal-quest has a truth state called consumation.
+betrothal-quest is a headgear-clothing-quest. betrothal-quest has a truth state called ceremony. betrothal-quest has a truth state called consummation.
 
 Include Chocolates Bag by Objects.
 Include Bunny Ears DQ by Headgear.

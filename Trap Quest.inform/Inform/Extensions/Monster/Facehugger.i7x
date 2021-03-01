@@ -44,7 +44,7 @@ To say MonsterComment of (M - facehugger):
 			say "[second custom style][one of]Hurry up and catch me, you naughty little freakshow![or]I wonder what hole it's going to choose this time...[in random order]";
 	otherwise if the bimbo of the player < 7:
 		if the player is gendered male, say "[first custom style][one of]What the fuck is this thing?![or]It's fast![in random order]";
-		otherwise say "[first custom style][one of]Its moving in such a creepy way![or]What happens if it catches me?![in random order]";
+		otherwise say "[first custom style][one of]It's moving in such a creepy way![or]What happens if it catches me?![in random order]";
 	otherwise if the bimbo of the player < 12:
 		say "[variable custom style][one of]It moves in such an elegant way...[or]I don't know what it is, but if it catches me... maybe I'll find out?[in random order]";
 	otherwise:
@@ -63,7 +63,7 @@ To set up (M - facehugger):
 To decide which number is the difficulty of (M - a facehugger):
 	decide on the raw difficulty of M.
 
-To decide which number is the maxhealth of (M - a facehugger):
+To decide which number is the initial maxhealth of (M - a facehugger):
 	decide on 7.
 
 To compute labour to (M - a facehugger):
@@ -139,9 +139,8 @@ To compute action (N - a number) of (M - a facehugger):
 					say "The crotch section dissolves away!";
 					now C is crotch-ripped;
 				otherwise:
-					say "Parts of the [ShortDesc of C] rapdily dissolve the whole thing falls off you, completely ruined!";
+					say "Parts of the [ShortDesc of C] rapidly dissolve the whole thing falls off you, completely ruined!";
 					destroy C.
-
 
 To compute (M - a monster) stomping (N - a facehugger):
 	if M is in the location of the player, say "[BigNameDesc of M] kills the [N].";
@@ -168,6 +167,7 @@ To compute standard damage of (M - a facehugger):
 
 To compute defeat of (M - a facehugger):
 	say "You hear a snap as [NameDesc of M] drops lifelessly to the ground.";
+	check tentacle clear;
 	destroy M.
 
 To loot (M - a facehugger):

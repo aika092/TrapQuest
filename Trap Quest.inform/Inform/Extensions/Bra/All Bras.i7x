@@ -329,7 +329,7 @@ To decide which number is the alchemy key of (C - a pink spike bra):
 Definition: a pink spike bra is recipe specific: decide yes.
 
 To decide which text is RecipeDesc of (B - a pink spike bra):
-	decide on "This recipe says '[if egg laying fetish is 1]Medium Sized Egg or [end if][if diaper quest is 1]Grown Up[otherwise]Super Slutty[end if] Bra'".
+	decide on "This recipe just says '[if egg laying fetish is 1]Medium Sized Egg or [end if][if diaper quest is 1]Grown Up[otherwise]Super Slutty[end if] Bra'.".
 
 This is the spike bra specific recipe rule:
 	now the Product in row 26 of the Table of Alchemy is 14;

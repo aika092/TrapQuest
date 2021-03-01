@@ -18,7 +18,7 @@ To say ClothingDesc of (W - carrot daggers):
 To say ShortDesc of (W - carrot daggers):
 	say "carrot[if W is blessed] dagger[end if]s".
 
-To decide which number is the damage improvement of (W - carrot daggers):
+To decide which number is the slap damage improvement of (W - carrot daggers):
 	let X be 0;
 	increase X by the magic-modifier of W;
 	if W is blessed, increase X by 3; [when they're daggers they are even better]

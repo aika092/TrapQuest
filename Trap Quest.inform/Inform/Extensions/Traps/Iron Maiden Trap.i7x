@@ -1,31 +1,38 @@
 Iron Maiden Trap by Traps begins here.
 
-An iron-maiden is a kind of trap. The printed name of iron-maiden is "[TQlink of item described]iron maiden[TQxlink of item described][verb-desc of item described]". There is 1 swing iron-maiden. Understand "iron", "maiden" as iron-maiden. The text-shortcut of an iron-maiden is "irm".
+iron-maiden is a trap. The printed name of iron-maiden is "[TQlink of item described]iron maiden[TQxlink of item described][verb-desc of item described]". Understand "iron", "maiden" as iron-maiden. The text-shortcut of iron-maiden is "irm".
 
-To say ExamineDesc of (C - an iron-maiden):
-	say "A human-shaped cage, designed to keep anyone inside standing compeltely still and then torture them with wriggling [if diaper quest is 0]tentacles[otherwise]feathers[end if].".
+Figure of Iron Maiden is the file "Env/Mansion/ironmaiden1.jpg".
+To decide which figure-name is the examine-image of (C - iron-maiden):
+	decide on figure of Iron Maiden.
 
-To say ShortDesc of (T - an iron-maiden):
+To say ExamineDesc of (C - iron-maiden):
+	say "A human-shaped cage, designed to keep anyone inside standing completely still and then torture them with wriggling feathers.".
+
+To say ShortDesc of (T - iron-maiden):
 	say "iron maiden".
 
-To say EnvironmentDesc of (T - an iron-maiden):
-	say "[if playerRegion is Mansion]The iron maiden rests against one wall here, the door wide open[otherwise]The two halves of the iron maiden trap are lying horizontally on the ground[end if]. ".
+To say EnvironmentDesc of (T - iron-maiden):
+	say "The iron maiden rests against one wall here. ".
 
-To decide which number is the girth of (D - an iron-maiden):
+To decide which number is the girth of (D - iron-maiden):
 	decide on 3.
 
-To compute reset cooldown of (T - an iron-maiden):
-	if diaper quest is 0, compute default reset cooldown of T. [Just sticks around visible in DQ, triggered again by the haunted mirror trap]
+To compute reset cooldown of (T - iron-maiden):
+	do nothing. [Just sticks around visible, triggered again by the haunted mirror trap]
 
-To trigger (Y - an iron-maiden):
+[To trigger (Y - iron-maiden):
 	now Y is not untriggered;
 	now Y is revealed;
 	now Y is expired;
 	now iron-maiden-turns is 0;
 	say "As you finish using the bucket and lower your arms, a giant metal contraption springs out of the ground from both in front and behind you, instantly closing around you with a loud CLANG! [one of]You're trapped inside, unable to move a muscle! This must be some kind of Iron Maiden! In the pitch black darkness you feel something slimy, cold, hard and... wriggling... pressing at you from all directions. The inside lining of the maiden is made of metal tentacles! [or]The Iron Maiden has gotten you again! Once again the slimy metal tentacles press in against you from all directions. [stopping]There's probably nothing you can do but [bold type][TQlink]wait[TQdlink][roman type].";
-	now the source-room of Iron Maiden is the location of the player;[In case the player faints]
+	now the source-room of Iron Maiden is the location of the player;
 	now the player is in Iron Maiden;
-	refresh the map-window.
+	refresh the map-window.]
+
+To say TQIronMaidenFlav:
+	say "[one of]You're trapped inside, your arms pointing vertically upwards above your head, unable to move a muscle! This must be some kind of Iron Maiden! In the pitch black darkness you feel some mysterious soft things pressing into your armpits. They flick left and right to a mechanical rhythm. You're being tickled by feathers! It's surprisingly erotic, being trapped in the pitch black with the steady physical stimuli[or]You're inside the Iron Maiden again! Once again the feathers press into your armpits. [stopping]There's probably nothing you can do but [bold type][TQlink]wait[TQdlink][roman type].".
 
 To say DQIronMaidenFlav:
 	let D be a random worn diaper;
@@ -40,20 +47,22 @@ This is the iron maiden immobility rule:
 	if the player is in Iron Maiden, rule fails.
 The iron maiden immobility rule is listed in the immobility rules.
 
-Definition: an iron-maiden is throater: decide yes.
+Definition: iron-maiden is throater: decide yes.
 
 A time based rule (this is the iron-maiden-punishment rule):
 	if the player is in Iron Maiden:
-		let M be a random iron-maiden;
+		let M be iron-maiden;
 		increase iron-maiden-turns by 1;
 		if iron-maiden-turns > a random number between 4 and 6:
-			say "You hear a creak, and then a sliver of daylight appears above you. The two halves of the iron maiden creak apart, [if playerRegion is Mansion]as the door slowly opens, releasing you[otherwise]before falling open, clanging to the ground and allowing you back out in the open[end if]. [if the number of body parts penetrated by M > 1]But you're still being invaded! With effort, you squirm and wriggle, but feel the stretched-out metal tentacles resisting as the walls fall away. Finally, with some force, you manage to pull them out, freeing your orifices from their mechanical invasion. [otherwise if M is penetrating a body part]As the walls fall away, the tentacle is rather violently pulled out of your [random body part penetrated by M]. [end if][line break][variable custom style]Phew, I'm free![roman type][line break]";
+			if M is penetrating face:
+				say "The [manly-penis] in your mouth shudders and then ejaculates! Your mouth is filled to the brim with [semen].";
+				FaceFill semen by 4;
+			say "You hear a creak, and then a sliver of daylight appears above you. The two halves of the iron maiden creak apart, as the door slowly opens, releasing you[if M is penetrating a body part]. The ghost is nowhere to be seen[end if].[line break][variable custom style]Phew, I'm free![roman type][line break]";
 			increase the submission-count of the player by 1;
 			increase the sex-count of the player by 1;
 			repeat with T running through things in Iron Maiden:
 				unless T is the player or T is backdrop, now T is in the location of M;
 			now the player is in the location of M;
-			if M is penetrating a body part, progress quest of tentacle-quest;
 			dislodge M;
 			refresh the map-window;
 			force inventory-focus redraw; [Forces redraw of inventory window, some buttons might be the wrong colour]
@@ -67,51 +76,23 @@ A time based rule (this is the iron-maiden-punishment rule):
 			say "The feathers [one of]begin to [or][stopping]twist back and forth, tickling your armpits, making you [one of]shudder[or]wiggle and squirm[or]writhe around[then at random][one of], making it difficult to hold onto your bladder[if diaper messing >= 3] and bowels[end if][or][stopping]!";
 			if diaper messing >= 3, compute soiling;
 		otherwise:
-			if M is penetrating face:
-				say "The tentacle in your mouth continues to [one of]fuck your face[or]use your throat as a fuck sock[or]energetically fuck your mouth[or]turn your mouth into its own personal onahole[in random order]!";
+			say "The feathers [one of]begin to [or][stopping]twist back and forth, tickling your armpits, making you [one of]shudder[or]wiggle and squirm[or]writhe around[then at random].";
+			stimulate arms from M;
+			let F be a random body part penetrated by M;
+			if F is face:
+				say "The phantom [manly-penis] in your mouth continues to [one of]fuck your face[or]use your throat as a fuck sock[or]energetically fuck your mouth[or]turn your mouth into its own personal onahole[in random order]!";
+			[otherwise if F is fuckhole:
+				say "The phantom [manly-penis] in your [variable F] continues to [one of]fuck you[or]thrust in and out[in random order]!";
+				ruin F;
+			otherwise if the player is possessing a vagina and the player is not pussy protected:
+				say "Suddenly, a bright green ghostly penis phases through the front of the Iron Maiden! Its tip is aligned directly with your [vagina]. There's no stopping it! Before you can do anything, it is pushing past your pussy lips. Depsite its supernatural ghostly nature, it feels very real as it penetrates deeper and deeper inside you, and then begins to fuck you. The only difference between this and a real penis is that this ghost [manly-penis], instead of feeling warm and alive, feels cold to the touch.";
+				now M is penetrating vagina;
+				ruin vagina;
+				FuckCount;]
 			otherwise if face is not actually occupied:
-				say "Suddenly a tentacle pushes its way into your mouth! It immediately starts worming its way down into your throat until you are choking helplessly on its girth!";
+				say "Suddenly, a bright green ghostly penis phases through the front of the Iron Maiden, right in front of your face! In this tight cramped prison, you can't even turn your head away! It pushes against your lips with increasing pressure until you are forced to let it inside. It immediately starts worming its way down into your throat until you are choking helplessly on its girth!";
 				now M is penetrating face;
-				BlowCount;
-			otherwise:
-				say "Metal tentacles [one of][or]continue to[stopping][one of]wriggle[or]writhe[or]squirm[at random] [one of]pointlessly[or]in vain[or][in random order] against your face!";
-			let C be a random worn top level protection clothing;
-			if C is clothing:
-				if C is displacable:
-					displace C;
-					say "The tentacles wriggle, prod and push until they succeed at pulling your [ShortDesc of C] out of the way!";
-				otherwise if the damage of C + a random number between 1 and 6 > the armour of C:
-					say "The tentacles wriggle, prod and push at your [ShortDesc of C], plucking and tearing at it until, over time, you feel it shred completely and fall away!";
-					destroy C;
-				otherwise if C is not rigid:
-					say "The tentacles wriggle, prod and push at your [ShortDesc of C], weakening the [clothing-material of C]!";
-					damage C;
-			otherwise:
-				if the player is possessing a vagina:
-					if M is penetrating vagina:
-						say "The metal tentacle in your [vagina] is still [one of]thrusting vigorously[or]plowing away[or]fucking you deep and hard[or]smashing against your cervix as it violates you[in random order]!";
-						ruin vagina;
-					otherwise if vagina is not actually occupied:
-						say "You feel the tip of one metal tentacle find the entrance to your [vagina]! You don't have a moment to react before it launches forward, sliding inexorably in, penetrating you, bottoming out with one relentless motion!";
-						now M is penetrating vagina;
-						ruin vagina;
-						FuckCount;
-					otherwise:
-						say "Tentacles [one of][or]continue to [stopping][one of]wriggle[or]writhe[or]squirm[at random] [one of]pointlessly[or]in vain[or]weakly[or]fruitlessly[in random order] against your [vagina]!";
-				otherwise if the player is possessing a penis:
-					say "The metal tentacles [one of]wrap around your [ShortDesc of penis], massaging you in a fast rhythm and greatly increasing your arousal[or]continue to stroke your [player-penis][stopping]!";
-					stimulate penis from M;
-			unless there is worn top level ass protection clothing:
-				if M is penetrating asshole:
-					say "The metal tentacle behind you continues to [one of]impale your [asshole] on its seemingly endless length[or]plunder your [asshole], snaking its way up through your colon, with each thrust working closer and closer to your belly itself[or]delve deeper and deeper into your [asshole][or]ruin the deepest parts of your [asshole][in random order]!";
-					ruin asshole;
-				otherwise if asshole is not actually occupied:
-					say "A particularly slimy metal tentacle presses against your [asshole]! You feel your sphincter quickly losing its battle to remain closed as the unseen tentacle drills its way inside!";
-					now M is penetrating asshole;
-					ruin asshole;
-					AnalCount;
-				otherwise:
-					say "Tentacles [one of][or]continue to [stopping][one of]wriggle[or]writhe[or]squirm[at random] [one of]pointlessly[or]in vain[or]weakly[or]fruitlessly[in random order] against your [asshole]!";
+				BlowCount.
 
 To say IronMaidenTrapReactFlav of (M - a monster):
 	say LewdTrapReactFlav of M.

@@ -65,10 +65,10 @@ To say MonsterDesc of (M - woman-player):
 		if the woman-bimbo of M is 3, say "A long haired, large breasted brunette wearing a tight black latex top which is too small and has too large of a cleavage window to cover [his of M] nipples. A pair of fishnet leggings and a super short black latex skirt are too exposing to hide the fact that [he of M][']s not wearing underwear and barely provides any modesty for [his of M] pussy. [big he of M] is wearing glasses over a decent amount of makeup.";[nipples exposed, crotch almost visible]
 		if the woman-bimbo of M is 4, say "A long haired, huge breasted brunette wearing nothing on [his of M] top half but a sheer lace bra that leaves [his of M] boobs and nipples very visible. [big he of M] is wearing black suspenders and stockings but no underwear, leaving [his of M] pussy fully exposed. [big he of M] is wearing heavily done make up. You can tell by [his of M] facial expressions that [he of M]'s having more trouble than usual thinking straight.";[nipples exposed, crotch exposed]
 		if the woman-bimbo of M is 5, say "A huge breasted [man of M] wearing nothing on [his of M] top half at all except a tight black latex choker around [his of M] neck. [big he of M] is wearing a pair of fake kitty cat ears with the headband well hidden under [his of M] long brown hair, which is in a ponytail. [big he of M] is also wearing a pair of black latex crotchless panties which has a line of pearls running along [his of M] pussy, and some very shiny black latex thigh-high boots with long stiletto heels. [big he of M] is wearing a very heavy amount of make up. You can tell by [his of M] facial expressions that [he of M]'s having huge amounts of trouble thinking straight.";[basically naked]
-		if the woman-bimbo of M is 6, say "A long haired, huge breasted brunette wearing nothing at all[if bukkake fetish is 0] except a pair of white latex fetish boots with chunky heels[end if]. [big his of M] facial expression is one of empty-headed bliss.[if bukkake fetish is 1] [big he of M] is thoroughly covered in [semen] from head to toe, and has yet more [semen] dripping out of [his of M] two lower fuckholes. [big his of M] hips and buttcheeks must have doubled if not tripled in size since you first met [him of M].";[actually naked]
+		if the woman-bimbo of M is 6, say "A long haired, huge breasted brunette wearing nothing at all[if bukkake fetish is 0] except a pair of white latex fetish boots with chunky heels[end if]. [big his of M] facial expression is one of empty-headed bliss.[if bukkake fetish is 1] [big he of M] is thoroughly covered in [semen] from head to toe, and has yet more [semen] dripping out of [his of M] two lower fuckholes. [end if][big his of M] hips and buttcheeks must have doubled if not tripled in size since you first met [him of M].";[actually naked]
 	if M is tentacle-pregnant, say "[big his of M] massive bulging belly is a clear sign that [he of M][']s pregnant, and probably with something inhuman.";
 	if the human-toilet-scene of M is 1, say "[big he of M] is wearing oversized nipple rings and has the words 'TOILET SLUT' and 'URINAL [caps boy of M]' permanently written onto [his of M] flesh.";
-	if the woman-status of M is 80, say "[big he of M] is bound bent over a barstool on wheels, with a blindfold over [his of M] eyes and a ballgag in [his of M] mouth. [big his of M] asshole is pulled wide open by duct tape, and more rainbow covered tape with the words 'ANAL ONLY' printed on it is plastered chaotically over [his of M] [if lady fetish is 2]taint[otherwise]pussy[end if]. You could probably [if the player is possessing a penis or there is worn strapon-panties]fuck [him of M] or [end if]free [him of M] by [bold type]pull[roman type]ing at [his of M] bondage if you like.";
+	if the woman-status of M is 80, say "[big he of M] is bound bent over a bar-stool on wheels, with a blindfold over [his of M] eyes and a ballgag in [his of M] mouth. [big his of M] asshole is pulled wide open by duct tape, and more rainbow covered tape with the words 'ANAL ONLY' printed on it is plastered chaotically over [his of M] [if lady fetish is 2]taint[otherwise]pussy[end if]. You could probably [if the player is possessing a penis or there is worn strapon-panties]fuck [him of M] or [end if]free [him of M] by [bold type]pull[roman type]ing at [his of M] bondage if you like.";
 	if the woman-status of M is 97, say "[big he of M] is sat on the throne, with a bulging belly[if the throne-scene of M >= 3] and a river of [semen] flowing from [his of M] mouth. [big he of M] seems barely conscious[end if].".
 
 To update name of (M - woman-player):
@@ -133,7 +133,7 @@ To say ClothingDesc of (W - magic pistol):
 To say ShortDesc of (W - magic pistol):
 	say "pistol".
 
-To decide which number is the damage improvement of (W - magic pistol):
+To decide which number is the zap damage improvement of (W - magic pistol):
 	if the stomach-semen of the player > 0, decide on 2;
 	decide on -99.
 
@@ -418,6 +418,7 @@ This is the mechanic facefucks barbara rule:
 			say "[BigNameDesc of M] moans as [he of M] cums, [his of M] ropes of [semen] making [NameDesc of W] choke as it rebounds and spurts out the sides of [his of W] mouth. [big he of M] removes [his of M] [Dickdesc of M] and begins to clean it off by wiping it all over [NameDesc of W][']s forehead. But [he of W] is looking directly at you, with dismay in [his of W] eyes.[line break][speech style of W]'Really?'[roman type][line break]That's all [he of W] manages before [he of W] passes out. [BigNameDesc of M] drops the [J] in front of you.[line break][speech style of M]'Money well spent.'[roman type][line break]";
 			now the latest-appearance of M is the appearance of the player; [to stop him suddenly noticing the player and deciding to bang]
 			satisfy mechanic;
+			DifficultyUp mechanic by 1;
 			now mechanic is unleashed;
 			WomanSluttify;
 			FavourDown W;
@@ -533,7 +534,10 @@ To compute DominatrixInterruption:
 			now C is in the location of the player;
 		now the fatigue of the player is the buckle threshold of the player;
 		now the stance of the player is 1;
-		now M is penetrating asshole.
+		now M is penetrating asshole;
+		summon gape-gloves;
+		now gape-gloves is glued;
+		now gape-gloves is wrist-bound-behind.
 
 Check resisting when dominatrix is penetrating asshole and woman-player is in the location and the woman-status of woman-player is 93 and woman-player is awake:
 	say "You try to raise your ankles but your body is much too fatigued to be able to resist in any meaningful way!";
@@ -553,9 +557,6 @@ To compute contraption sex of (M - a monster):
 
 To compute contraption climax of (M - a monster):
 	say "[speech style of M]'I guess that's enough.'[roman type][line break][BigNameDesc of M] snaps [his of M] fingers and the dildo stops its merciless machinations. The ropes loosen themselves from your ankles and you are able to roll away to the side. However, your hands are still glued inside those gloves, which are in turn glued to your [asshole]!";
-	summon gape-gloves;
-	now gape-gloves is glued;
-	now gape-gloves is wrist-bound-behind;
 	satisfy M;
 	say "[BigNameDesc of woman-player] slinks away, muttering a quiet [speech style of woman-player]'Sorry.'[roman type][line break]";
 	vanish woman-player.
@@ -617,10 +618,11 @@ This is the woman spawning to get shopkeeper discount rule:
 The woman spawning to get shopkeeper discount rule is listed last in the womanspawning rules.
 
 Report going when shopkeeper is in the location and woman-player is in the location and the woman-bimbo of woman-player <= 2 and the shopkeeper-scene of woman-player is 0 and woman-player is not interested and shopkeeper is not interested:
-	say "In this room you see that [NameDesc of shopkeeper] is not alone: [NameDesc of woman-player] is on [his of woman-player] knees, with four fifths of [his of shopkeeper] massive length stuffed into [his of woman-player] mouth. [big he of woman-player] is desperately trying to force that last bit in, causing the tip to penetrate [his of woman-player] throat. Lewd gagging noises fill the room as the distension in [his of woman-player] throat becomes more and more visible.[line break][speech style of shopkeeper]'Damn girl, you can really swallow a sword, can't you?! Unng, I'm reaching my limit...'[roman type][line break][BigNameDesc of shopkeeper] grunts and without a second thought grabs the back of [NameDesc of woman-player][']s head, forcing it forward and pushing that last inch of [his of shopkeeper] manhood in past [his of woman-player] jaw. Noises of weak resistance emanate from [NameDesc of woman-player][']s nose but it's too little too late - [NameDesc of shopkeeper] is cumming hard. [big he of shopkeeper] grips [his of woman-player] head tight with both arms keeping [his of shopkeeper] whole [manly-penis] firmly wedged inside for the duration of [his of shopkeeper] climax, each string of [semen] being accompanied by an involuntary gulp from [his of shopkeeper][']s new cumdump's gullet. [big he of shopkeeper] finally releases [him of woman-player] and [he of woman-player] falls back choking, spewing up lumps of thick [semen].[line break][speech style of woman-player]'Did I win?'[roman type][line break]Is all [he of woman-player] manages to say before [he of woman-player] collapses backward onto the ground.[line break][speech style of shopkeeper]'Yeah, you won honey.'[roman type][line break][BigNameDesc of shopkeeper] replies but [NameDesc of woman-player] has already passed out cold.";
+	say "In this room you see that [NameDesc of shopkeeper] is not alone: [NameDesc of woman-player] is on [his of woman-player] knees, with four fifths of [his of shopkeeper] massive length stuffed into [his of woman-player] mouth. [big he of woman-player] is desperately trying to force that last bit in, causing the tip to penetrate [his of woman-player] throat. Lewd gagging noises fill the room as the distension in [his of woman-player] throat becomes more and more visible.[line break][speech style of shopkeeper]'Damn [boy of woman-player], you can really swallow a sword, can't you?! Unng, I'm reaching my limit...'[roman type][line break][BigNameDesc of shopkeeper] grunts and without a second thought grabs the back of [NameDesc of woman-player][']s head, forcing it forward and pushing that last inch of [his of shopkeeper] manhood in past [his of woman-player] jaw. Noises of weak resistance emanate from [NameDesc of woman-player][']s nose but it's too little too late - [NameDesc of shopkeeper] is cumming hard. [big he of shopkeeper] grips [his of woman-player] head tight with both arms keeping [his of shopkeeper] whole [manly-penis] firmly wedged inside for the duration of [his of shopkeeper] climax, each string of [semen] being accompanied by an involuntary gulp from [his of shopkeeper][']s new cumdump's gullet. [big he of shopkeeper] finally releases [him of woman-player] and [he of woman-player] falls back choking, spewing up lumps of thick [semen].[line break][speech style of woman-player]'Did I win?'[roman type][line break]Is all [he of woman-player] manages to say before [he of woman-player] collapses backward onto the ground.[line break][speech style of shopkeeper]'Yeah, you won honey.'[roman type][line break][BigNameDesc of shopkeeper] replies but [NameDesc of woman-player] has already passed out cold.";
 	now the sleep of woman-player is 200;
 	[increase the delayed sluttification of woman-player by 1;]
 	now the woman-status of woman-player is 92;
+	DifficultyUp shopkeeper by 1;
 	now the shopkeeper-scene of woman-player is 1.
 
 Chapter - Patron Scene
@@ -636,6 +638,7 @@ To compute patron scene of (W - woman-player):
 	now neighbour finder is the location of the player;
 	now the woman-status of W is 96;
 	now the patron-scene-done of W is 1;
+	increase patronbed uses by 1;
 	now W is interested;
 	say "[first custom style]'Hey everyone, get in here!'[roman type][line break]A hidden door opens from the opposite wall, and you watch [the number of patrons in the location of the player] patrons stride in, each with a bottle of beer in one hand and a party hat on their head. [if the number of N-viable directions is 1]A modesty barrier comes[otherwise]Modesty barriers come[end if] down, preventing either of you from leaving[if W is asleep]. [BigNameDesc of W] wakes up with a start[end if].[line break][first custom style]'We've paid a lot of money to be allowed to have two of you at once, so you'd better follow everything we say.'[roman type][line break]A look of [if the bimbo of the player < 5]horror[otherwise if the bimbo of the player < 10]uncertainty[otherwise]understanding[end if] passes between you and [NameDesc of W]. Whether you fight or fuck them, this is going to be a great challenge. One of the older patrons speaks first.[line break][first custom style]'Okay, let's get this party started[if the player is upright]. On your knees, bitches[end if].'[roman type][line break]";
 	now the sleep of W is 0;
@@ -1260,6 +1263,8 @@ To compute friendly drink of (M - woman-player):
 		say "[speech style of M]'HYUK HYUK HYUK'[roman type][line break]";
 	otherwise if the woman-status of M is 80:
 		say "[speech style of M]'MMMMPH!'[roman type][line break]";
+	otherwise if the woman-bimbo of M is 6:
+		compute woman cum drink offer;
 	otherwise:
 		say "[speech style of M]'I'm sorry, I've got nothing!'[roman type][line break]".
 
@@ -1272,8 +1277,22 @@ To compute friendly food of (M - woman-player):
 		say "[speech style of M]'HYUK HYUK HYUK'[roman type][line break]";
 	otherwise if the woman-status of M is 80:
 		say "[speech style of M]'MMMMPH!'[roman type][line break]";
+	otherwise if the woman-bimbo of M is 6:
+		compute woman cum drink offer;
 	otherwise:
 		say FriendlyFoodApologiseFlav of M.
+
+To compute woman cum drink offer:
+	say "[speech style of woman-player]'I've been saving some tasty cum in my [if a2m fetish > 2]ass[otherwise]pussy[end if] if you want some!'[roman type][line break]";
+	if the semen taste addiction of the player < 4:
+		say "You can't bring yourself to even begin to consider that offer.";
+	otherwise:
+		say "Do you drink [semen] from [his of woman-player] fuckhole?";
+		if the player is bimbo consenting:
+			say "You create a seal around [NameDesc of woman-player][']s [if a2m fetish > 2]asshole[otherwise]love tunnel[end if] with your [LipDesc] and suck and slurp as [he of woman-player] pushes multiple thick loads of warm [semen] into your mouth. [strongHumiliateReflect]";
+			if a2m fetish > 2, OralSexAddictUp 1;
+			FaceFill semen by 4;
+			suggest swallowing with semen consequences;
 
 Part - Unused Functions
 

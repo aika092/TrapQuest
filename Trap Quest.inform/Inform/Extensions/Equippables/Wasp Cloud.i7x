@@ -25,7 +25,7 @@ To compute attack effect of (W - a wasp-cloud):
 		say "Some of your wasps die in the effort of attacking!";
 		decrease the swarm of W by 1.
 
-To decide which number is the damage improvement of (W - a wasp-cloud):
+To decide which number is the slap damage improvement of (W - a wasp-cloud):
 	let X be 0;
 	increase X by the swarm of W / 2;
 	decide on X;

@@ -17,7 +17,7 @@ To decide which figure-name is the monster-image of (M - vine boss):
 
 To say MonsterDesc of (M - vine boss):
 	say "[one of]A 10 foot mass of seething plant matter, with primitive club-like arms and a pair of beady red eyes. Its body is supported by a trunk of interwoven vines, but the centre and top looks vaguely like a giant flower.[or]A sentient mass of seething plant matter. Its [']body['] is supported by a vast network of living vines, all of which seem to perk up at your presence. You can feel invisible eyes peering at you from the giant pink flower that makes its [']head['] boring holes through your skull.[in random order]";
-	say "[if the bimbo of the player > 15][line break][second custom style][one of]I can't get away. I guess I'll just have to get on my knees then![or]It looks strong! Strong enough to hold me down for a good LONG time![in random order][otherwise if the bimbo of the player > 5][line break][variable custom style][one of]I'm trapped down here. I wonder what it's going to do to me.[or]All those vines look so strong. Oh no...[or]This may have been a mistake...[in random order][otherwise if the player is female][line break][first custom style][one of]It's terrifying![or]What is THAT?![or]I don't think I can fight it... but I don't think I have any choice.[or]I don't want any of those vines to touch me.[or]It looks extremely powerful.[in random order][otherwise][first custom style][one of]I'm getting a final boss vibe here.[or]I'm not scared, but... I still want to get out of here.[or]Nowhere to run. Me or the monster.[or]It looks pretty powerful. But it can't be prepared for THESE GUNS![in random order][end if][roman type][line break]".
+	say "[if the bimbo of the player > 15][line break][second custom style][one of]I can't get away. I guess I'll just have to get on my knees then![or]It looks strong! Strong enough to hold me down for a good LONG time![in random order][otherwise if the bimbo of the player > 5][line break][variable custom style][one of]I'm trapped down here. I wonder what it's going to do to me.[or]All those vines look so strong. Oh no...[or]This may have been a mistake...[in random order][otherwise if the player is gendered female][line break][first custom style][one of]It's terrifying![or]What is THAT?![or]I don't think I can fight it... but I don't think I have any choice.[or]I don't want any of those vines to touch me.[or]It looks extremely powerful.[in random order][otherwise][first custom style][one of]I'm getting a final boss vibe here.[or]I'm not scared, but... I still want to get out of here.[or]Nowhere to run. Me or the monster.[or]It looks pretty powerful. But it can't be prepared for THESE GUNS![in random order][end if][roman type][line break]".
 
 To set up (M - vine boss):
 	reset M;
@@ -222,7 +222,8 @@ To say BanishFleeFlav of (M - vine boss):
 To compute unique banishment of (M - vine boss):
 	repeat with V running through vines:
 		destroy V;
-	now M is bossdefeated.
+	now M is bossdefeated;
+	check tentacle clear.
 
 To loot (M - vine boss):
 	let B be a random off-stage writhing vine;

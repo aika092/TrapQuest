@@ -43,7 +43,6 @@ To compute friendly boredom of (M - robomatron):
 Part 1 - Perception
 
 To compute perception of (M - robomatron):
-	now M is interested;
 	now the raw difficulty of M is 5;
 	say "[BigNameDesc of M] notices you![line break][speech style of M]'TEST SUBJECT DETECTED. FINAL BOSS ROUTINE ENGAGED. SCANNING STATUS...[line break]";
 	if the wealth of the player < 20:
@@ -53,26 +52,26 @@ To compute perception of (M - robomatron):
 		let D be a random worn diaper;
 		unless D is a total protection diaper:
 			say "NO [if D is diaper]INTACT [end if]DIAPER DETECTED. INCREASING POWER LEVEL BY 3.";
-			DifficultyUp M by 3;
+			SilentlyDifficultyUp M by 3;
 		if diaper messing >= 4 and D is not messed diaper:
 			say "NO MESSED DIAPER DETECTED. INCREASING POWER LEVEL BY 1.";
-			DifficultyUp M by 1;
+			SilentlyDifficultyUp M by 1;
 		if D is unsoiled diaper:
 			say "COMPLETELY UNUSED DIAPER DETECTED. INCREASING POWER LEVEL BY 1.";
-			DifficultyUp M by 1;
+			SilentlyDifficultyUp M by 1;
 		if the incontinence of the player < the max-incontinence of the player:
 			say "POTTY UNTRAINING INCOMPLETE. INCREASING POWER LEVEL BY 2.";
-			DifficultyUp M by 2;
+			SilentlyDifficultyUp M by 2;
 		if the cringe appearance of the player < 14:
 			say "APPEARANCE INSUFFICIENTLY DEGRADING. INCREASING POWER LEVEL BY 2.";
-			DifficultyUp M by 2;
+			SilentlyDifficultyUp M by 2;
 		if the player is male and TG fetish > 0:
 			say "SEX CHANGE INCOMPLETE. INCREASING POWER LEVEL BY 2.";
-			DifficultyUp M by 2;
+			SilentlyDifficultyUp M by 2;
 		if the difficulty of M > 5:
 			unless there is a worn pacifier:
 				say "NO PACIFIER DETECTED. INCREASING POWER LEVEL BY 1.";
-				DifficultyUp M by 1;
+				SilentlyDifficultyUp M by 1;
 			anger M;
 			say "PREPARE YOURSELF.'[roman type][line break]";
 		otherwise:
@@ -138,7 +137,7 @@ To say EnemaStartFlav of (M - robomatron):
 
 To say EnemaFlav of (M - robomatron):
 	if the sex-length of M is 4:
-		say "[BigNameDesc of M] pushes the tube into your [asshole], and with a quiet whir you hear a mechanism inside [his of M] torso start up. A moment later, warm water is flooding into your rectum.";
+		say "[BigNameDesc of M] pushes the tube into your [asshole], and with a quiet whirr you hear a mechanism inside [his of M] torso start up. A moment later, warm water is flooding into your rectum.";
 	otherwise if the sex-length of M is 3:
 		say "[BigNameDesc of M] continues to administer your enema via the nozzle in [his of M] palm. You feel yourself rapidly becoming more full than is comfortable!";
 	otherwise if the sex-length of M is 2:
@@ -166,7 +165,7 @@ To compute damage reaction of (M - robomatron):
 		if the health of M > the maxhealth of M / 2, say "[BigNameDesc of M] doesn't pay any attention to the damage!";
 		otherwise say "[one of][BigNameDesc of M][']s movement seems slightly more erratic now, as if [his of M] joints have suffered some proper damage.[or][BigNameDesc of M] is forced to slightly recoil![stopping]";
 	otherwise:
-		compute perception of M.
+		check guaranteed perception of M.
 
 Definition: robomatron is automatically banishable: decide yes. [Will this NPC automatically resolve their disappearance rather than giving the player options on what to do?]
 

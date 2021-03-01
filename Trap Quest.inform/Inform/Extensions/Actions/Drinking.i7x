@@ -25,6 +25,7 @@ Definition: yourself is resisting taste addiction:
 		if drinking-target is bottle:
 			if ((the fill-colour of drinking-target is creamy and semen is highest addicted liquid) or (the fill-colour of drinking-target is golden and urine is highest addicted liquid) or (the fill-colour of drinking-target is white and milk is highest addicted liquid)), decide no;
 		if drinking-target is DungeonScenery01 and semen is highest addicted liquid, decide no;
+		if drinking-target is breasts and milk is highest addicted liquid, decide no;
 		decide yes;
 	decide no.
 
@@ -106,7 +107,7 @@ Definition: yourself (called Y) is able to drink:
 	if the latex-transformation of the player > 4:
 		if autodrink is 0, say "You can no longer drink, you're too far through your transformation into a doll and your body doesn't need hydration any more.";
 		decide no;
-	if drinking-target is a thing:
+	if drinking-target is a thing and drinking-target is not breasts:
 		if drinking-target is not drinkable:
 			if autodrink is 0, say "How would you drink that?";
 			decide no;
@@ -189,9 +190,12 @@ To decide which number is TasteAddictionCooldown:
 	decide on 300.
 
 Report drinking:
-	if the player is resisting taste addiction:
-		increase tasteAddictionPenaltyTime by TasteAddictionCooldown;
-		say "[bold type]Drinking something other than [AddictedFluids] is making you feel very low! [roman type]Your intelligence will be reduced for [if tasteAddictionPenaltyTime > TasteAddictionCooldown]a few minutes more, and by even more than before[otherwise]a few minutes[end if]".
+	if the player is resisting taste addiction, compute taste addiction resist punishment.
+
+To compute taste addiction resist punishment:
+	increase tasteAddictionPenaltyTime by TasteAddictionCooldown;
+	say "[bold type]Drinking something other than [AddictedFluids] is making you feel very low! [roman type]Your intelligence will be reduced for [if tasteAddictionPenaltyTime > TasteAddictionCooldown]a few minutes more, and by even more than before[otherwise]a few minutes[end if]".
+
 
 An all time based rule (this is the taste addiction penalty cooldown rule):
 	if tasteAddictionPenaltyTime > 0 and the player is not in a predicament room:
@@ -217,15 +221,18 @@ Check drinking breasts:
 	if the largeness of breasts < 7, say "Your [ShortDesc of breasts] are [if the largeness of breasts < 5]nowhere near[otherwise]not[end if] big enough." instead;
 	if the player is not able to manually use their hands, do nothing instead;
 	if the player is wrist bound behind, say "You would need the proper use of your arms and hands for that." instead;
-	now drinking-target is nothing;
+	now drinking-target is breasts;
 	if the player is not able to drink, do nothing instead;
 	if there is worn actually nipple covering clothing, say "Your nipples are not exposed." instead;
 	allocate 6 seconds;
 	MilkDown 2;
 	FaceFill milk by 2;
-	say "You [if the player is proud]cringe with humiliation[otherwise]giggle nervously[end if] as you bring your own nipple to your mouth. You suck gently, [one of]surprised about how amazing it feels. Feeling your own nipple stiffen with arousal, so it pokes into the soft flesh of your lips, sends a humiliating surge of excitement straight to your groin. You can't resist flicking the erect bud with your tongue, and even gently biting on it as you suck. Or [i]suckle[/i], really. You flush with the knowledge that you're both lactating and drinking yourself, like some hot, slutty babe in a porno, and a curious thrill of shame ripples through you at the thought of what your friends would think if they could see you now. [if the player is possessing a penis and the size of penis < 3]You burn with hot shame as your tongue tells you your [i]nipple[/i] is now bigger than your [PenisFlavour real size of penis]! [otherwise if the player is possessing a penis and the size of penis < 4]You realise your nipple isn't [i]that[/i] much smaller than your [PenisFlavour real size of penis]! [end if]It doesn't stop you, though[or]enjoying the delicate pleasurable feeling[or]once again enjoying the stimulation[stopping]. You shiver with pleasure as the [milk] exits your body and re-enters onto your tongue. It tastes great and you swallow it greedily.";
+	say "You [if the player is proud]cringe with humiliation[otherwise]giggle nervously[end if] as you bring your own nipple to your mouth. You suck gently, [one of]surprised about how amazing it feels. Feeling your own nipple stiffen with arousal, so it pokes into the soft flesh of your lips, sends a humiliating surge of excitement straight to your groin. You can't resist flicking the erect bud with your tongue, and even gently biting on it as you suck. Or [i]suckle[/i], really. You flush with the knowledge that you're both lactating and drinking yourself, like some hot, slutty babe in a porno, and a curious thrill of shame ripples through you at the thought of what your friends would think if they could see you now. [if the player is possessing a penis and the size of penis < 3]You burn with hot shame as your tongue tells you your [i]nipple[/i] is now bigger than your [PenisFlavour real size of penis]! [otherwise if the player is possessing a penis and the size of penis < 4]You realise your nipple isn't [i]that[/i] much smaller than your [PenisFlavour real size of penis]! [end if]It doesn't stop you, though[or]enjoying the delicate pleasurable feeling[or]once again enjoying the stimulation[stopping]. You shiver with pleasure as the [milk] exits your body and re-enters onto your tongue.";
 	slightHumiliate;
-	say "[if the player is not disgraced][line break][variable custom style]Yes it was humiliating, but at least it was tasty![otherwise][line break][second custom style]Oh my, I'm such a naughty girl, drinking my own [milk] straight from the tap![end if][roman type][line break]";
+	if the player is resisting taste addiction:
+		compute taste addiction resist punishment;
+	otherwise:
+		say "[if the player is not disgraced][line break][variable custom style]Yes it was humiliating, but at least it was tasty![otherwise][line break][second custom style]Oh my, I'm such a naughty girl, drinking my own [milk] straight from the tap![end if][roman type][line break]";
 	suggest swallowing with milk consequences; [You can't avoid the taste addiction increase by not swallowing]
 	do nothing instead.
 
@@ -331,11 +338,18 @@ Carry Out Spitting:
 		MouthEmpty;
 	otherwise:
 		compute spitting;
+	if the implant of pledge-lesson-spit is 1:
+		say "[second custom style]Only prudes spit![bold type][line break]The curse from your pledge in the diamond ranked lesson activates. [roman type]You become extremely tired and thirsty!";
+		StomachDown 40;
+		now the fatigue of the player is the buckle threshold of the player;
 	if the player is in a predicament room and current-predicament is gloryhole-predicament:
 		increase the semen-spat of gloryhole-predicament by 1;
 		if the semen-spat of gloryhole-predicament is 1, say "[variable custom style]I'm going to have earned a penalty point from doing that.[roman type][line break]".
 Understand "spit", "spit on ground", "spit on the ground", "spit on floor", "spit on the floor" as spitting.
 This is the automatic spitting rule:
+	if the semen volume of face > 0 and the semen taste addiction of the player is 1, SemenTasteAddictUp 1;
+	if the urine volume of face > 0 and the urine taste addiction of the player is 1, UrineTasteAddictUp 1;
+	if the milk volume of face > 0 and the milk taste addiction of the player is 1, MilkTasteAddictUp 1;
 	try spitting.
 
 Drinking ends here.

@@ -4,6 +4,8 @@ A thong is a kind of undies. The text-shortcut of thong is "thng". Understand "t
 
 To decide which number is the penis-capacity of (K - a thong):
 	decide on 4.
+To decide which number is the hipModesty of (C - a thong):
+	decide on 1.
 
 The printed name of thong is "[clothing-title-before][selfexamineuniquetitle of item described][clothing-title-after]".
 

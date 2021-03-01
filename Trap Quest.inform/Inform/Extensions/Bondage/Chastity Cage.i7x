@@ -218,7 +218,7 @@ This is the can't cage erection rule:
 The can't cage erection rule is listed in the chastity cage wearability rules.
 
 This is the cage too big rule:
-	if the player is male and the size of penis < the size of wearing-target + 1 and summoning is 0:
+	if the player is possessing a penis and the size of penis < the size of wearing-target + 1 and summoning is 0:
 		if autowear is false, say "The cage is too big for your [ShortDesc of penis] - it'd just slide right off!";
 		rule fails.
 The cage too big rule is listed in the chastity cage wearability rules.

@@ -1,6 +1,6 @@
 Mittens by Equippables begins here.
 
-A mittens is a kind of gloves. A mittens is usually unique. A mittens is usually cotton. A mittens is usually diaper-addiction-influencing.
+A mittens is a kind of big-gloves. A mittens is usually unique. A mittens is usually cotton. A mittens is usually diaper-addiction-influencing.
 
 Definition: a mittens is class-relevant:
 	if the player is actually an adult baby, decide yes;
@@ -17,7 +17,7 @@ To decide which number is the initial outrage of (C - a mittens):
 To decide which number is the initial cringe of (C - a mittens):
 	decide on 7.
 
-To decide which number is the damage improvement of (W - a mittens):
+To decide which number is the slap damage improvement of (W - a mittens):
 	let X be -2;
 	increase X by the magic-modifier of W;
 	decide on X.
@@ -111,7 +111,7 @@ To decide which object is the unique-upgrade-target of (C - rubber mittens):
 	if the number of worn latex clothing > 1, decide on a random off-stage inflated rubber mittens;
 	decide on a random off-stage teddy bear mittens.
 
-To decide which number is the damage improvement of (W - inflated rubber mittens):
+To decide which number is the slap damage improvement of (W - inflated rubber mittens):
 	decide on -10.
 
 Definition: inflated rubber mittens is black themed: decide yes.

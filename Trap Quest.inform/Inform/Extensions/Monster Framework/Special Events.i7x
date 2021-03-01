@@ -827,9 +827,6 @@ To compute default angry punishment of (M - a monster):
 	if C is nothing:
 		now stealableFound is 0;
 		now C is a random worn nudism-disabling currently at least partially visible tearable clothing;
-	if C is not clothing:
-		DifficultyUp M by 1;
-		say angry punishment difficulty gain of M;
 	let D be a random top level protection nudism-disabling currently at least partially visible tearable clothing;
 	if stealableFound is 1:
 		let D be a random top level protection nudism-disabling currently at least partially visible stealable clothing;
@@ -843,10 +840,13 @@ To compute default angry punishment of (M - a monster):
 			say angry punishment accessory confiscation of M;
 		otherwise:
 			say angry punishment clothing confiscation of M on C;
-	otherwise:
+	otherwise if C is clothing:
 		say "[BigNameDesc of M] brutally rips your [C] from your [body area of C]. It is completely destroyed!";
 		say angry punishment clothing destruction of M on C;
-		destroy C.
+		destroy C;
+	otherwise:
+		SilentlyDifficultyUp M by 1;
+		say angry punishment difficulty gain of M.
 
 To compute sissy punishment of (M - a monster):
 	compute default angry punishment of M;
@@ -1174,7 +1174,7 @@ Displays some text describing the player ejaculating whilst penetrating a monste
 +!]
 To compute erection orgasm of (M - a monster):
 	follow the default ejaculation rule;
-	now penis is not penis-erect.[Although the above line is a default, and should be changed, this line should almost always be included, since automatic erection loss skipped if anything is penetrating penis]
+	now penis is not penis-erect.[Although the above line is a default, and should be changed, this line should almost always be included, since automatic erection loss is skipped if anything is penetrating penis]
 
 [!<SayErectionClimaxFlavOfMonster>+
 

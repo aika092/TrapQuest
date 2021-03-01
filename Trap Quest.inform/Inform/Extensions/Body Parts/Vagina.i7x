@@ -12,7 +12,7 @@ REQUIRES COMMENTING
 vagina is a fuckhole. vagina is everywhere. Understand "pussy", "fuckhole", "cunt", "fanny", "snatch", "muffin", "cum dump" as vagina. Understand "womb", "vulva", "cherry", "kitty", "slit", "clunge", "honey pot", "baby maker" as vagina when the player is possessing a vagina. The text-shortcut of vagina is "vagina".
 
 To say FullExamineDesc of (B - vagina):
-	say "[if the player is female][ImageDesc of vagina][TotalDesc of vagina][VaginaModesty][otherwise if the bimbo of the player > 6][description of asshole][otherwise]You don't have a vagina.[end if]".
+	say "[if the player is possessing a vagina][ImageDesc of vagina][TotalDesc of vagina][VaginaModesty][otherwise if the bimbo of the player > 6][description of asshole][otherwise]You don't have a vagina.[end if]".
 
 Vagina has a number called semen volume.
 Vagina has a number called womb volume.
@@ -301,7 +301,7 @@ This function should be called whenever semen enters the player's vagina
 
 +!]
 To PussyFill (X - a number):
-	if there is a worn lipstick collar, increase X by 1;
+	if lipstick collar is worn, increase X by 1;
 	[let flav-said be 0;]
 	let M be a random wrapped monster penetrating vagina;
 	if M is monster:

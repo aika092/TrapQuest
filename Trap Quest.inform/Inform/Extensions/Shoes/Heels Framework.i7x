@@ -10,7 +10,7 @@ To say ShoeType of (S - a boots):
 
 Definition: a heels is fluid immune: decide yes.
 
-Understand the heel-height property as describing a heels when disambiguation-ID-count is 1. Understand "heel", "inch" as heels. The printed plural name of heels is usually "[TQlink of item described][item style]pairs of heels[roman type]". The text-shortcut of heels is "he".
+Understand the heel-height property as describing a heels. Understand "heel", "inch" as heels. The printed plural name of heels is usually "[TQlink of item described][item style]pairs of heels[roman type]". The text-shortcut of heels is "he".
 
 stiletto heels is a kind of heels. boots is a kind of heels. platform heels is a kind of heels.
 Understand "boot", "boots" as boots.
@@ -102,12 +102,10 @@ To say SteadinessDesc of (C - a heels):
 		if the hindrance of C is 0:
 			say "You feel completely balanced.";
 		otherwise if the hindrance of C is 1:
-			say "You feel only slightly off balance.";
-		otherwise if the hindrance of C is 2:
 			say "You feel a bit off balance.";
-		otherwise if the hindrance of C is 3:
+		otherwise if the hindrance of C is 2:
 			say "You feel quite a bit off balance.";
-		otherwise if the hindrance of C < 6:
+		otherwise if the hindrance of C is 3:
 			say "You feel very off balance.";
 		otherwise:
 			say "You feel extremely off balance.";

@@ -96,7 +96,7 @@ To compute offer reward of (M - a mechanic) for (T - infernal gem):
 			compute xavier reward of M;
 		otherwise:
 			say "[BigNameDesc of M] looks... more powerful somehow? [big he of M] seems to have lost interest in you.";
-			DifficultyUp M by a random number between 1 and 2.
+			SilentlyDifficultyUp M by a random number between 1 and 2.
 
 To decide which number is the bartering value of (T - infernal gem) for (M - a shopkeeper):
 	decide on 2.
@@ -559,7 +559,7 @@ To say MonsterOfferAcceptFlav of (M - djinn) to (T - rubber-duck):
 To decide which number is the bartering value of (T - rubber-duck) for (M - an adult baby slave):
 	decide on 2.
 To say MonsterOfferAcceptFlav of (M - a monster) to (T - rubber-duck):
-	say "[speech style of M]'Bathtime is more fun with toys! Thank you.'[roman type][line break]".
+	say "[speech style of M]'Bath time is more fun with toys! Thank you.'[roman type][line break]".
 Definition: rubber-duck is swimming themed: decide yes.
 
 Section - Romance Novel

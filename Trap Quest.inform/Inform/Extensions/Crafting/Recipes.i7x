@@ -40,7 +40,7 @@ To say ExamineDesc of (C - a recipe):
 	now current-alchemy-key is the recipe-key of C;
 	let P be a random product-highlighted thing;
 	if the RecipeDesc of P is not "":
-		say "[RecipeDesc of P]";
+		say RecipeDesc of P;
 	otherwise:
 		now current-crafting-key is 0;
 		repeat through the Table of Alchemy:

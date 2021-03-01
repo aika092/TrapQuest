@@ -89,7 +89,7 @@ Carry out kneeling:
 	[If the player falls over we want to let the other monsters know.]
 	if seconds > 0:
 		repeat with M running through uninterested monsters in the location of the player:
-			if the boredom of M is 0 and M is awake, compute correct perception of M;
+			if the boredom of M is 0 and M is awake, check guaranteed perception of M;
 	if seconds is 0, allocate 2 seconds;
 	otherwise allocate 1 seconds. [seconds = 1 means monsters don't get delayed in "report kneeling when the player is in danger"]
 

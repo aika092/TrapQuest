@@ -56,10 +56,9 @@ To compute rest ending of (F - HotelBedCreamy):
 HotelBedCollar is a kind of hotel bed. There are 2 HotelBedCollar.
 
 To compute rest ending of (F - HotelBedCollar):
-	let C be a random pullstring collar;
-	if C is off-stage and C is actually summonable:
+	if pullstring collar is off-stage and pullstring collar is actually summonable:
 		say "[bold type]You squawk in surprise as a tight collar appears around your neck![roman type] Feeling around you can find absolutely no latch or way to remove it, but at the back there is a ripcord you can pull. Do you dare pull it, or do you leave it alone?!";
-		summon C.
+		summon pullstring collar.
 
 HotelBedPatrons is a kind of hotel bed.
 

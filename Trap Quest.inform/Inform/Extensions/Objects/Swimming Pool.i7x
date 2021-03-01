@@ -47,7 +47,7 @@ To compute TQ swimmingpool swimming at (swim-location - a number) with (swim-tur
 			compute cum pool coating;
 		otherwise:
 			let L be swim-location;
-			say "You are 'treading [semen]' [if L is 0]in the shallow end of the pool, with your feet easily touching the bottom.[otherwise if L is 1]near the shallow end of the pool. Your feet just barely touch the bottom[otherwise if L is 2]midway between the deep end and the shallow end. Your feet are a couple inches from touching the bottom.[otherwise if L is 3]near the deep end of the pool. Your feet are about a meter from the bottom.[otherwise if L is 4]in the deep end of the pool, with several meters between your feet and the bottom.[end if]";
+			say "You are 'treading [semen]' [if L is 0]in the shallow end of the pool, with your feet easily touching the bottom.[otherwise if L is 1]near the shallow end of the pool. Your feet just barely touch the bottom[otherwise if L is 2]midway between the deep end and the shallow end. Your feet are a couple inches from touching the bottom.[otherwise if L is 3]near the deep end of the pool. Your feet are about a metre from the bottom.[otherwise if L is 4]in the deep end of the pool, with several metres between your feet and the bottom.[end if]";
 		reset multiple choice questions;
 		if swim-location is 0, set next numerical response to "get out";
 		set next numerical response to "swim in place";
@@ -113,7 +113,7 @@ To compute DQ swimmingpool swimming at (swim-location - a number) with (swim-tur
 				say "You [if the player is upright]wade[otherwise]crawl[end if] out into the water and begin to swim.";
 				now swim-location is 0;
 		otherwise:
-			say "You are treading water [if swim-location is 0]in the shallow end of the pool, with your feet easily touching the bottom.[otherwise if swim-location is 1]near the shallow end of the pool. Your feet just barely touch the bottom[otherwise if swim-location is 2]midway between the deep end and the shallow end. Your feet are a couple inches from touching the bottom.[otherwise if swim-location is 3]near the deep end of the pool. Your feet are about a meter from the bottom.[otherwise if swim-location is 4]in the deep end of the pool, with several meters between your feet and the bottom.[end if]";
+			say "You are treading water [if swim-location is 0]in the shallow end of the pool, with your feet easily touching the bottom.[otherwise if swim-location is 1]near the shallow end of the pool. Your feet just barely touch the bottom[otherwise if swim-location is 2]midway between the deep end and the shallow end. Your feet are a couple inches from touching the bottom.[otherwise if swim-location is 3]near the deep end of the pool. Your feet are about a metre from the bottom.[otherwise if swim-location is 4]in the deep end of the pool, with several metres between your feet and the bottom.[end if]";
 		reset multiple choice questions;
 		if swim-location is 0, set next numerical response to "get out";
 		set next numerical response to "swim in place";

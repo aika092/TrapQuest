@@ -41,7 +41,15 @@ To Execute Fainting:
 	if the player is in HoleInWall, now the player is in the location of hole-in-wall;
 	if the player is in DiaperPail, now the player is in the location of most-recent-pail;
 	if the player is in MimicCrib, now the player is in the location of memic;]
-	if the player is in a predicament room, now the player is in School01;
+	if the player is in a predicament room:
+		now the player is in School01;
+		repeat with T running through things in Predicament20:
+			if T is trophy:
+				if T is in the location of the player, now T is in School31;
+				otherwise destroy T;
+			otherwise:
+				now T is in School01;
+	if class-time < lessonFrequency, now class-time is lessonFrequency;
 	if playerRegion is Mansion and there is an off-stage mindless acolyte:
 		let A be a random off-stage mindless acolyte;
 		set up A;
@@ -611,7 +619,7 @@ To say FaintingFlav (N - 23):
 	say "'Next time, you should get out of the water before you get so tired.'".
 
 To say FaintingFlav (N - 24):
-	say "'Next time, you should leave the room as soon as [he of minotaur] starts swinging the cage around. Honestly, MOST players slutty enough to act like yout are already too voluptuous to get dragged in.'".
+	say "'Next time, you should leave the room as soon as [he of minotaur] starts swinging the cage around. Honestly, MOST players slutty enough to act like you are already too voluptuous to get dragged in.'".
 
 To say FaintingFlav (N - 50):
 	say "'It was all getting a bit much for you, was it? No need to feel ashamed, it happens to the best of us. Have as much time as you need to rest up and recover.'".

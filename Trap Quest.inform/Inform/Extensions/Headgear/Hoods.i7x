@@ -194,7 +194,9 @@ To compute unique recycling of (C - WC hood):
 	now the gulp-count of human-toilet-quest is 0.
 
 To compute class outfit of (H - WC hood):
-	if total pinned condoms > 0, class summon meat-toilet-panties;
+	if total pinned condoms > 0:
+		class summon meat-toilet-panties;
+		follow the player class rules;
 	if meat-toilet-panties is worn:
 		repeat with C running through worn clothing:
 			if the used condoms of C > 0:

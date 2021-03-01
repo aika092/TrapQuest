@@ -34,7 +34,7 @@ Section - Diaper Check
 
 Report taking off diaper:
 	repeat with M running through friendly monsters in the location of the player:
-		if the diaper-duration of M > 0, compute perception of M.
+		if the diaper-duration of M > 0, check perception of M.
 
 diaperChecking is a number that varies. [Sometimes we want to flag that there's a diaper check currently in place.]
 
@@ -243,6 +243,14 @@ To compute diaper change of (M - a monster):
 		now current-diaper is a random top level protection clothing; [Top level takes priority]
 		if current-diaper is worn no protection overdress, now current-diaper is nothing; [These are allowed to stay around!]
 		if (current-diaper is nothing or current-diaper is chastity bond) and there are worn knickers, now current-diaper is a random worn knickers; [All knickers MUST be removed]
+		if current-diaper is unmessed unremovable knickers:
+			say "[speech style of M]'I can't remove that [ShortDesc of current-diaper]. Damn, I guess I'll have to leave you like this, for now.'[roman type][line break]";
+			satisfy M;
+			dislodge M;
+			repeat with C running through diapers carried by M:
+				only destroy C;
+			if diaper quest is 1, progress quest of naughty-quest;
+			rule succeeds;
 		if old-diaper is diaper and current-diaper is chastity bond and M is diaper change chastity cummies rewarding and the player is able to orgasm so soon:
 			compute diaper change chastity cummies reward of M;
 			rule succeeds;

@@ -26,13 +26,14 @@ To say MediumDesc of (M - golem):
 	say "[if artificial enhancements fetish is 1]silicone[otherwise]slime[end if] golem".
 
 To say MonsterDesc of (M - golem):
-	say "This blue creature superficially resembles a female form, but seems to be made out of a translucent, moist gel. You can immediately tell what whoever created [him of M] was most concerned with, as the face has no detail at all, while the breasts, belly, thighs and ass are all extremely 'thicc', rendered with as much perfection as can be managed in the medium. In spite of the lack of a face, [he of M] exudes a sense of malice.".
+	say "This blue creature superficially resembles a female form, but seems to be made out of a translucent, moist gel. You can immediately tell what whoever created [him of M] was most concerned with, as the face has no detail at all, while the breasts, belly, thighs and ass are all extremely 'thicc', rendered with as much perfection as can be managed in the medium. In spite of the lack of a face, [he of M] exudes a sense of malice[if M is guarding]. [bold type][big he of M] stands in front of the stairwell, blocking the way[roman type][end if].".
 
 To set up (M - golem):
 	reset M;
 	now the monstersetup of M is 1;
 	now the raw difficulty of M is the starting difficulty of M;
 	now M is guarding;
+	now the boredom of M is 1000; [at first it doesn't attack on sight]
 	now the health of M is the maxhealth of M.
 
 To decide which number is the starting difficulty of (M - golem):
@@ -51,7 +52,7 @@ To MonsterStomp (M - golem):
 
 To compute (M - a monster) stomping (N - golem):
 	say "[BigNameDesc of M] grabs [NameDesc of N], but the golem seems happier for it! [if artificial enhancements fetish is 1][big his of N] body engulfs [NameDesc of M], and [NameDesc of M][']s muscles bulge out with new definition and power![otherwise][big his of N] body dissolves into a mass of ones and zeroes, which are absorbed into [NameDesc of M][']s skin. [big he of M] grunts as [his of M] muscles suddenly bulge out with even more definition and power![end if]";
-	DifficultyUp M by 6;
+	SilentlyDifficultyUp M by 6;
 	destroy N.
 
 Definition: golem is objectifying the player: decide yes.
@@ -70,7 +71,6 @@ To say MovementBlock of (M - golem):
 	otherwise say "[BigNameDesc of M] manages to get in front of you and block your path, slowing down your movement!".
 
 To compute perception of (M - golem):
-	now M is interested;
 	anger M;
 	say "The golem turns to face you almost mechanically and yet with unsettling grace[one of]. [big he of M] seems to be blocking the path forward, you'll need to deal with [him of M] to move on[or][stopping]. [CombatProvokedReaction of M]".
 
@@ -114,12 +114,19 @@ To say CombatProvokedReaction of (M - golem):
 
 To say DamageReaction (N - a number) of (M - golem):
 	if N > (the maxhealth of M / 4):
-		say "[BigNameDesc of M] seems completely unaffected by your attack!";
+		say "[BigNameDesc of M] ignores the blow!";
 	otherwise:
 		say "[if artificial enhancements fetish is 1][BigNameDesc of M] seems to be leaking clear fluid from some tears in its body.[otherwise][BigNameDesc of M] seems to be starting to come apart at the seams.[end if]".
 
 To compute failed damage of (M - golem):
-	compute golem attack stickiness.
+	if attack-type >= 4:
+		say "[big he of M] is completely unaffected[one of]. It would seem that magic attacks have no effect on [NameDesc of golem][or][stopping]!";
+	otherwise:
+		compute golem attack stickiness.
+
+To decide which number is the damage modifier of (M - golem): [Immune to magic]
+	if attack-type >= 4, decide on (attack-damage * -1);
+	decide on 0.
 
 To compute standard damage of (M - golem):
 	if the health of M > 0:
@@ -169,16 +176,12 @@ This is the player can't attack in golem thigh wrangle rule:
 The player can't attack in golem thigh wrangle rule is listed in the ability to knee rules.
 The player can't attack in golem thigh wrangle rule is listed in the ability to kick rules.
 
-To compute wrangled resisting of (M - golem):
-	let S be the strength of the player;
-	let SR be the strength roll of M;
-	if debuginfo > 0, say "[input-style]Golem escape check: Player strength ([S]) | ([SR].5) golem strength roll[roman type][line break]";
-	if SR >= S:
-		say "You struggle, but [one of]you don't manage to break free[or]the slime clinging to you is just too strong[in random order] this time!";
-	otherwise:
-		say "You yank as hard you can, and with a loud SLURP, your [if the number of body parts wrangled by M > 1]arms and legs[otherwise if thighs is wrangled by M]leg[otherwise]arm[end if] slips free!";
-		now M is not wrangling arms;
-		now M is not wrangling thighs.
+
+To say WrangleResistFailFlav of (M - golem):
+	say "You struggle, but [one of]you don't manage to break free[or]the slime clinging to you is just too strong[in random order] this time!".
+
+To say WrangleResistSuccessFlav of (M - golem):
+	say "You yank as hard you can, and with a loud SLURP, your [if the number of body parts wrangled by M > 1]arms and legs[otherwise if thighs is wrangled by M]leg[otherwise]arm[end if] slips free!".
 
 To decide which number is the strength roll of (M - golem):
 	decide on (a random number between 1 and the difficulty of M) + (a random number between 1 and the difficulty of M).

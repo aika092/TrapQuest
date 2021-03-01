@@ -2,7 +2,7 @@ Monokinis by Dresses begins here.
 
 Part 1 - White Monokini
 
-A white monokini is a kind of monokini. A white monokini is usually sheer. There is 1 white monokini. A white monokini is fully covering. A white monokini is not-top-displacable. The text-shortcut of white monokini is "wmk".
+A white monokini is a kind of monokini. A white monokini is usually sheer-when-wet. There is 1 white monokini. A white monokini is fully covering. A white monokini is not-top-displacable. The text-shortcut of white monokini is "wmk".
 
 The printed name of white monokini is usually "[clothing-title-before]white onepiece swimsuit[clothing-title-after]".
 
@@ -15,7 +15,7 @@ To decide which figure-name is clothing-image of (C - a white monokini):
 	decide on figure of white monokini.
 
 To say ClothingDesc of (C - a white monokini):
-	say "This tight fitting white onepiece swimsuit would be modest enough if it wasn't for the fact that it's quite see-through. [if C is crotch-ripped]It has a rip at the crotch.[otherwise]At least it covers your crotch![end if]".
+	say "This tight fitting white onepiece swimsuit would be modest enough if it wasn't for the fact that it would go quite see-through as soon as it got wet. [if C is crotch-ripped]It has a rip at the crotch.[otherwise]At least it covers your crotch![end if]".
 
 To say ShortDesc of (C - a white monokini):
 	say "translucent swimsuit".

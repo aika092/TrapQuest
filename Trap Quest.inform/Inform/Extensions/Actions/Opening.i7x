@@ -42,7 +42,10 @@ Check opening a container:
 Carry out opening a container:
 	allocate arm use to the noun;
 	allocate 2 seconds;
-	decrease the charge of the dungeon altar by a random number between 1 and 30.
+	let R be a random number between 1 and 30;
+	decrease the charge of the elder altar by R;
+	decrease the charge of the hotel altar by R;
+	decrease the charge of the dungeon altar by R.
 
 Report opening a container:
 	if the noun is pink wardrobe:

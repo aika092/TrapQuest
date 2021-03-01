@@ -5,7 +5,7 @@ The father is a thing that varies. The father is the throne.
 Definition: a thing is father material: decide no.
 
 Definition: a thing (called M) is family:
-	if M is inseminating vagina and M is father material and inhuman pregnancy is 2:
+	if M is inseminating vagina and M is father material and inhuman pregnancy >= 2:
 		decide yes;
 	decide no.
 
@@ -27,7 +27,7 @@ Definition: a monster (called M) is family:
 			if M is male and M is intelligent and M is human, decide yes;
 		otherwise if inhuman pregnancy is 1:
 			if M is intelligent, decide yes;
-		otherwise if inhuman pregnancy is 2:
+		otherwise if inhuman pregnancy >= 2:
 			decide yes;
 	decide no.
 
@@ -174,7 +174,7 @@ To compute pregnancy:
 				if the largeness of belly > B or the womb volume of vagina is 50:
 					say PregGrowth;
 					if the womb volume of vagina is 50:
-						say "You feel like your mega-pregnancy has [one of]finally reached full term. You'll be ready to pop soon[or]once again finally reached full term[stopping].";
+						say "[bold type]You feel like your mega-pregnancy has [one of]finally reached full term. You'll be ready to pop soon[or]once again finally reached full term[stopping].[roman type][line break]";
 						cutshow figure of giant pregnancy for belly;
 			otherwise:
 				if the remainder after dividing the womb volume of vagina by 5 is 0, compute pregnancy annoyance;
@@ -193,7 +193,7 @@ To compute pregnancy:
 				compute labour to M;[Dead fathers are handled in fatherhood of M]
 				if successful-pregnancy is 1, compute fatherhood to the father;
 			otherwise: [The father is inanimate]
-				if inhuman pregnancy < 2 or (extreme proportions fetish is 1 and the womb volume of vagina is 30): [If the stuff in brackets is true, we checked for an extreme pregnancy and purposefully chose not to give the player one this time.]
+				if inhuman pregnancy < 2 or (inhuman pregnancy >= 3 and the womb volume of vagina is 30): [If the stuff in brackets is true, we checked for an extreme pregnancy and purposefully chose not to give the player one this time.]
 					say DefaultBirthScene;
 				otherwise if the father is elder altar:
 					compute god birth;
@@ -292,10 +292,10 @@ To say PregnancyBugFlav:
 	say "In some weird twist of this virtual game, you can literally feel the moment where someone up high decides you don't deserve a pregnancy, presses a button, and all the body mass inside you turns into liquid! Your poor womb is now just completely over-full of [semen]! It all comes gushing out in a torrent, coating your thighs and the ground.".
 
 To check for extreme pregnancies:
-	if extreme proportions fetish is 1 and inhuman pregnancy > 0 and the father is not the throne: [Super-pregnancies are go]
+	if inhuman pregnancy >= 3 and the father is not the throne: [Super-pregnancies are go]
 		if the father is a minotaur or the father is vines or the father is lake monster or the father is living belt of sturdiness or the father is hellhound or the father is demon lord or the father is facehugger or the father is elder altar:
 			now the womb volume of vagina is 31;
-		if the father is creampie pole trap and inhuman pregnancy is 2 and (tentacle fetish is 1 or the player is getting unlucky):
+		if the father is creampie pole trap and (tentacle fetish is 1 or the player is getting unlucky):
 			now the womb volume of vagina is 31;
 			if tentacle fetish is 0, say "[if slow pregnancy > 2][bold type]You have just noticed that your belly is getting even bigger than a normal pregnancy. [end if][one of][line break][variable custom style]What the hell have I got growing inside me?! [or][stopping][roman type][GotUnluckyFlav]";
 		if the father is djinn:

@@ -38,6 +38,7 @@ To compute class outfit of (H - laurel wreath):
 Chapter - Quest
 
 To uniquely set up (C - laurel wreath):
+	now the previously-pregnant of babymaking-quest is 1; [otherwise the quest completes immediately]
 	if the conception-count of babymaking-quest is 0, now the quest of C is babymaking-quest.
 
 [babymaking quest defined in Glittering Rose]

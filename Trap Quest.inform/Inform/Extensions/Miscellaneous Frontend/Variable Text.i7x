@@ -34,6 +34,10 @@ To say literalMistress of (M - a monster):
 	if M is presenting as female, say "mistress";
 	otherwise say "master".
 
+To say big literalMistress of (M - a monster):
+	if M is presenting as female, say "Mistress";
+	otherwise say "Master".
+
 [!<SayMistress>+
 
 If the player is impressed with the (assumed female) NPC
@@ -389,6 +393,33 @@ To decide which text is big himself of (M - a thing):
 To decide which text is caps himself of (M - a thing):
 	decide on himself of M in upper case.
 
+To decide which text is father of (M - a thing):
+	decide on "parent".
+
+To decide which text is father of (M - yourself):
+	decide on "[if M is presenting as female]mother[otherwise]father[end if]".
+
+To decide which text is father of (M - a person):
+	decide on "[if M is neuter]parent[otherwise if M is presenting as female]mother[otherwise]father[end if]".
+
+To decide which text is big father of (M - a thing):
+	decide on father of M in title case.
+
+To decide which text is caps father of (M - a thing):
+	decide on father of M in upper case.
+
+To decide which text is brother of (M - a thing):
+	decide on "sibling".
+
+To decide which text is brother of (M - a person):
+	decide on "[if M is neuter]sibling[otherwise if M is presenting as female]sister[otherwise]brother[end if]".
+
+To decide which text is big brother of (M - a thing):
+	decide on brother of M in title case.
+
+To decide which text is caps brother of (M - a thing):
+	decide on brother of M in upper case.
+
 [!<SayDickDescOfMonster>+
 
 General purpose method of referring to a monster, "M"'s penis
@@ -425,6 +456,12 @@ To say daddy of (M - a monster):
 		say "[if M is presenting as male]Papa[otherwise]Mama[end if]";
 	otherwise:
 		say "[if M is presenting as male]Daddy[otherwise]Mummy[end if]".
+
+To say daddytitle of (M - a monster):
+	if M is presenting as male:
+		say "Daddy";
+	otherwise:
+		say "Mommy".
 
 To say royal-subject of (M - a monster):
 	if M is bride-consort:
@@ -471,7 +508,7 @@ To say baby title of (M - a monster):
 		say "[one of]my little trooper[or]our little bedwetter[or]little miss waddlebum[or]chubby-cheeks[or]little miss [if diaper messing >= 3]stinker[otherwise]pee-pee-pants[end if][or]Baby [NameBimbo][or][at random]".
 
 To say slut school:
-	say "[if diaper quest is 1]Attitude[otherwise]Slut[end if] School".
+	say "[if diaper quest is 1]Attitude[otherwise]Slut[end if] Academy".
 
 To say muffled sounds:
 	if the player is able to make sounds:

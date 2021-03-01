@@ -126,7 +126,7 @@ An all time based rule (this is the sticky decay rule):
 				now a random glue in the location of the player is not grabbing the player;
 				[I don't destroy the glue because only the stickiness of the parts in contact with the player have faded.]
 			otherwise:
-				say "Enough of the [if bukkake fetish is 1]slime dries for you to finally move by yourself again[otherwise]magic dissipates for you to move again[end if].".
+				say "[bold type]Enough of the [if bukkake fetish is 1]slime dries for you to finally move by yourself again[otherwise]magic dissipates for you to move again[end if].[roman type][line break]".
 
 Figure of puddle 1 is the file "Env/MultiFloor/puddle1.png".
 Figure of puddle 2 is the file "Env/MultiFloor/puddle2.png".

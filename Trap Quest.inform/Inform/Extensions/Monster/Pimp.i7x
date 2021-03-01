@@ -30,9 +30,11 @@ The text-shortcut of pimp is "pmp".
 Figure of pimp is the file "NPCs/Hotel/pimp1.png".
 Figure of pimp vag for sale is the file "NPCs/Hotel/pimp2.jpg".
 Figure of pimp ass for sale is the file "NPCs/Hotel/pimp3.jpg".
+Figure of pimp femme is the file "NPCs/Hotel/pimp4.jpg".
 Figure of pimp portal cutscene is the file "Special/Cutscene/cutscene-pimp-portals1.jpg".
 
 To decide which figure-name is the monster-image of (M - pimp):
+	if lady fetish is 1, decide on figure of pimp femme;
 	if M is in Hotel44 and (portal-bra is worn or portal-hotpants is worn):
 		if the player is possessing a vagina, decide on figure of pimp vag for sale;
 		otherwise decide on figure of pimp ass for sale;
@@ -93,7 +95,6 @@ To decide which number is the bab tolerance of (M - pimp):
 	decide on 20.
 
 To compute perception of (M - pimp):
-	now M is interested;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]"; [The output for clothing humiliation takes place within the 'sluttily dressed' check.]
 	if portal-bra is worn or portal-hotpants is worn:
 		say "[speech style of M]'Sales are going well, slut, which I guess is good news for both of us.'[roman type][line break][big he of M] counts some jewellery in [his of M] pocket.";
@@ -151,6 +152,21 @@ To say SatisfiedFlav of (M - pimp):
 
 Part 2 - Misc Flavour
 
+Definition: pimp is distracted:
+	if pimp is in the location of the player:
+		if composed-explorer is in the location of the player and the explorer-bimbo of composed-explorer < 2:
+			let D be the best route from the location of the player to Hotel01 through modern rooms;
+			say "[BigNameDesc of pimp] spots [NameDesc of composed-explorer].[line break][speech style of pimp]'HEY BITCH! YOU OWE ME MONEY!'[roman type][line break][BigNameDesc of composed-explorer] whirls around, with an alarmed look on [his of composed-explorer] face.[line break][speech style of composed-explorer]'Shut up! I am NOT your whore!'[roman type][line break][big he of composed-explorer] shouts. And then to [himself of composed-explorer], [he of composed-explorer] says:[line break][speech style of composed-explorer]'Fuck this, I'm getting out of here!'[roman type][line break][BigNameDesc of composed-explorer] breaks into a run!";
+			if D is a direction, try composed-explorer going D;
+			say "[speech style of pimp]'Come back here, you little minx! I know you took that ring from that John! Now you owe me!'[roman type][line break][BigNameDesc of pimp] [if pimp is interested]has lost all interest in you and [end if]moves to chase after [NameDesc of composed-explorer][if the player is in Hotel01], but [he of composed-explorer] makes it down the stairs and out the door before [he of pimp] can stop [him of composed-explorer][end if].";
+			deinterest pimp;
+			if D is a direction, try pimp going D;
+			unless player is in Hotel01, now pimp is in Hotel01;
+			compute banishment of composed-explorer;
+			decide yes;
+	decide no.
+
+
 To compute kneeling reaction of (M - pimp):
 	say "[BigNameDesc of M] laughs.[line break][speech style of M]'[if the health of M >= the maxhealth of M]I guess this one time, you can pay me with your services[otherwise]Surrender means nothing to me. You've crossed me, and now I'm going to find a new way to get my dues[end if].'[roman type][line break][if the player is not shameless]You shiver with shame.[end if]";
 	strongHumiliate.
@@ -168,7 +184,7 @@ To IdentifiablePosterReaction of (M - pimp):
 	say "You turn bright red with shame.";
 	humiliate the lewdness of a random poster in the location of the player * 2.
 
-To UnidentifiablePosterReaction of (M - pimp):
+To UnidentifiablePosterReaction of (M - pimp) with (P - a poster):
 	say "[BigNameDesc of M] looks at the banner with a big grin on [his of M] face. [big he of M] doesn't seem to realise it is you, but is clearly enjoying looking at it.";
 	say "You turn slightly red but don't say a word.";
 	humiliate the lewdness of a random poster in the location of the player / 2.
@@ -288,11 +304,9 @@ Section 3 - Damage
 
 To compute damage reaction of (M - pimp):
 	if M is uninterested or M is friendly: [should never happen]
-		say "[big he of M] shouts angrily!";
+		say "[BigNameDesc of M] is momentarily dumbstruck with surprise.[line break][speech style of M]'You think you can take me? Bring it on!'[roman type][line break]";
 	otherwise:
-		if the health of M >= the maxhealth of M:
-			say "[BigNameDesc of M] is momentarily dumbstruck with surprise.[line break][speech style of M]'You think you can take me? Bring it on!'[roman type][line break]";
-		otherwise if the health of M > the maxhealth of M / 2:
+		if the health of M > the maxhealth of M / 2:
 			say "[BigNameDesc of M] [one of]sneers menacingly[or]smiles sadistically[or]grins[at random].[line break][speech style of M]'[one of]Not bad, not bad[or]You're going to have to do better than that[or]Is that all you've got[or]Oh I'm going to make you regret this[or]Don't say I didn't warn you[in random order]!'[roman type][line break]";
 		otherwise:
 			say "[BigNameDesc of M] recoils in pain. [one of][big he of M][']s not teasing you any more. [or][stopping]".
@@ -367,7 +381,7 @@ To say WhoAnswer of (M - pimp):
 	say "[speech style of M]'I am but a humble businessman.'[roman type][line break]".
 
 To say StoryAnswer of (M - pimp):
-	say "[speech style of M]'I convinced the mechanic-looking chappie who runs this place to let me turn most of [his of mechanic] rooms into mini-brothels, and we split the profits. The working girls tend to do pretty well out of the deal, too, as long as they get on their knees when they're told to, and as long as they pay me my cut.'[roman type][line break]".
+	say "[speech style of M]'I convinced the mechanic-looking chappie who runs this place to let me turn most of [his of mechanic] rooms into mini-brothels, and we split the profits. The working girls tend to do pretty well out of the deal, too, as long as they get on their knees when they're told to, and pay me my cut.'[roman type][line break]".
 
 To say EscapeAnswer of (M - pimp):
 	say "[speech style of M]'Unfortunately most working girls find that after they get into the lifestyle, it's hard to say goodbye to it. But then, who can complain about getting tons of [if diaper quest is 1]kinky play time[otherwise]sex[end if] and pretty jewellery? Two of a slut's favourite things.'[roman type][line break]".

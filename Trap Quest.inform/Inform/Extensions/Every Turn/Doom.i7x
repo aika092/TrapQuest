@@ -21,13 +21,28 @@ doomed is a number that varies.
 Increases once per turn. At 300 (might change), resets and a new mindless cultist joins the ritual.
 
 *!]
-new-acolyte-counter is initially 0.
+[new-acolyte-counter is initially 0.]
+new-acolytes is a list of people that varies.
+To update new acolytes:
+	repeat with M running through explorers:
+		if M is regional:
+			add M to new-acolytes, if absent;
+		otherwise:
+			if M is listed in new-acolytes, remove M from new-acolytes.
 
 Definition: a thing is bell themed: decide no. [The player needs a bell themed, a book themed and a candle themed thing to complete the doom ritual.]
 Definition: a thing is book themed: decide no. [The player needs a bell themed, a book themed and a candle themed thing to complete the doom ritual.]
 Definition: a thing is candle themed: decide no. [The player needs a bell themed, a book themed and a candle themed thing to complete the doom ritual.]
 
 To commence doom:
+	if the number of mindless acolytes in Mansion23 < 4:
+		update new acolytes;
+		if (tough-shit is 1 or Mansion01 is placed) and the number of entries in new-acolytes > 0:
+			let M be entry 1 in new-acolytes;
+			compute cultist conversion cutscene of M;
+			force commence doom.
+
+To force commence doom:
 	if doom counter is 0:
 		if Woods01 is unplaced:
 			Set Up The Woods;
@@ -56,10 +71,51 @@ To commence doom:
 		if the number of alive undefeated dungeon dwelling gladiators is 0, now the next-summon of summoning-circle is a random off-stage dungeon dwelling gladiator;
 		now doom counter is 1.
 
+To compute cultist conversion cutscene of (M - a monster):
+	let N be a random alive intelligent acolyte;
+	if N is nothing, now N is a random intelligent acolyte;
+	let R be the room south from Stairwell03;
+	say "You spot [NameDesc of M] nearby! [big he of M] turns around and notices you too. Before [he of M] can react to your presence, suddenly, [NameDesc of N] appears behind [him of M]! [BigNameDesc of N] pulls a black sack down over [NameDesc of M][']s head.[line break][speech style of M]'Hey, what's the big ide-MMMPH!'[roman type][line break][BigNameDesc of N] announces in a loud, proud voice.[line break][speech style of N]'Come, young one, and join our order. We shall bless you in the name of [Azathot].'[roman type][line break]You don't have a chance to try and do anything before [NameDesc of N] has [if playerRegion is mansion or the player is in Stairwell03 or the player is in R]dragged [NameDesc of M] away into the depths of the mansion[otherwise]somehow teleported away, taking [NameDesc of M] along with [him of N][end if].";
+	if M is listed in new-acolytes, remove M from new-acolytes;
+	let X be a random off-stage mindless acolyte;
+	if X is acolyte:
+		set up X;
+		summon X in the mansion;
+		now X is in Mansion23;
+	focus-consider N;
+	focus-consider M;
+	destroy M;
+	now M is permanently banished.
+
+Report going when the player is in School01:
+	if Mansion01 is placed and most-recent-furious is student and doomed < 5 and doomed >= 0:
+		let M be most-recent-furious;
+		let N be a random alive intelligent acolyte;
+		if N is nothing, now N is a random intelligent acolyte;
+		say "[bold type]As you enter the reception, you notice [M] [bold type]just leaving via the portal.[roman type][line break]But as [he of M] goes through it, the image on the other side glitches, and changes from a very normal looking house to the haunted mansion![line break][speech style of M]'Wait, this isn't where I wanted to go!'[roman type][line break]Suddenly, [NameDesc of N] appears behind [him of M]! [BigNameDesc of N] pulls a black sack down over [NameDesc of M][']s head.[line break][speech style of M]'Hey, what's the big ide-MMMPH!'[roman type][line break][BigNameDesc of N] announces in a loud, proud voice.[line break][speech style of N]'Come, young one, and join our order. We shall bless you in the name of [Azathot].'[roman type][line break]You watch with [horror the bimbo of the player] as [NameDesc of M] is dragged away.";
+		now most-recent-furious is nothing;
+		let X be a random off-stage mindless acolyte;
+		if X is acolyte:
+			set up X;
+			summon X in the mansion;
+			now X is in Mansion23;
+		focus-consider N;
+		focus-consider M;
+		force commence doom.
+
 A later time based rule (this is the compute doom rule):
-	if tough-shit is 1 and doom counter is 0:
+	if doom counter is 0:
 		let R be the room south from Stairwell03;
-		if the player is in Stairwell03 or the player is in R, commence doom;
+		if the player is in Stairwell03 or the player is in R:
+			let W be a random alive wench;
+			update new acolytes;
+			if tough-shit is 1 and the number of entries in new-acolytes is 0 and W is monster:
+				compute banishment of W;
+				add W to new-acolytes, if absent;
+			if the number of entries in new-acolytes is 0 and tough-shit is 1:
+				force commence doom;
+			otherwise:
+				commence doom;
 	if doom counter > 0:
 		let BLT be a random held bell themed thing;
 		let BT be a random held book themed thing;
@@ -120,7 +176,7 @@ A later time based rule (this is the compute doom rule):
 			if debuginfo > 1, say "- non-corrupted sacred pool (1) ";
 		if doom counter <= 0, now doom counter is 1; [Otherwise the quest can accidentally end itself]
 		if debuginfo > 1, say "=> [doom counter] | [(doomed + 1) * 150][roman type][line break]";
-		let MC be a random off-stage mindless acolyte;
+		[let MC be a random off-stage mindless acolyte;
 		if MC is a monster:
 			increase new-acolyte-counter by 1;
 			if debuginfo > 1, say "[input-style]New cultist counter: [new-acolyte-counter] | 250[roman type][line break]";
@@ -129,20 +185,28 @@ A later time based rule (this is the compute doom rule):
 				set up MC;
 				summon MC in the mansion;
 				now MC is in Mansion23;
-				if debuginfo > 1, say "[input-style]NEW RITUAL CULTIST SPAWNED.[roman type][line break]";
-		otherwise if doom counter > 150 and doomed is 0:
+				if debuginfo > 1, say "[input-style]NEW RITUAL CULTIST SPAWNED.[roman type][line break]";]
+		if doom counter > 150 and doomed is 0:
 			say "[bold type]You feel a sense of impending doom, as though something terrible is in motion. Perhaps you should consult with an expert in magic?[roman type][line break]";
 			now doomed is 1;
+			if a random number between 1 and 2 is 1 and wild gladiator is summon-available and wild gladiator is off-stage and wild gladiator is woods dwelling, now the next-summon of giant-statue is wild gladiator;
+			repeat with A running through alive unleashed acolytes:
+				DifficultyUp A by 1;
 		otherwise if doom counter > 300 and doomed is 1:
 			say "[bold type]You feel a strange sense of being watched, and the atmosphere begins to feel oddly humid. It is almost like something horrible is breathing down your neck.[roman type][line break]";
 			now doomed is 2;
 			if diaper quest is 1 and ghostly tentacle is off-stage:
 				set up ghostly tentacle;
 				summon ghostly tentacle in the mansion;
+			if a random number between 1 and 3 is 1 and enlightened gladiator is summon-available and enlightened gladiator is off-stage and enlightened gladiator is mansion dwelling, now the next-summon of mysterious-mummy is enlightened gladiator;
+			repeat with A running through alive unleashed acolytes:
+				DifficultyUp A by 1;
 		otherwise if doom counter > 450 and doomed is 2:
 			say "[bold type]The air feels positively moist and somehow everything seems more unwholesome, an impressive feat given the content of the game normally.[roman type][line break]";
 			now doomed is 3;
 			if flower hairclip is worn, transform flower hairclip into spiked-tiara;
+			repeat with A running through alive unleashed acolytes:
+				DifficultyUp A by 1;
 		otherwise if doom counter > 600 and doomed is 3:
 			if the location of the player is not Mansion23:
 				say "[bold type]A horrible noise like a thousand screams of pure bliss echoes through the world itself, and the world itself takes on a soft pink cast for a moment. Something is drawing close to this world![roman type][line break]";
@@ -150,22 +214,25 @@ A later time based rule (this is the compute doom rule):
 				say "[bold type]A horrible noise like a thousand screams of bliss echoes through the world and a soft pink light fills the area. Above the altar a translucent pink bubble swirls and throbs, the ritual is clearly almost complete![roman type][line break]";
 			now doomed is 4;
 			now the Pink Sphere is in Mansion23; [spawn the pink bubble scenery in mansion23]
-		otherwise if doom counter > 750 and doomed is 4:
-			if the location of the player is not Mansion23:
-				if the player-class is not cultist:
-					say "[bold type]The world begins to shake and pink lightning crackles over every surface! You desperately try to avoid them, but you feel the energy wash over you before the effect settles down. Even still, there is a strange pink energy hanging in the air. One thing is certain: You have failed.[roman type][line break]";
-				otherwise:
-					say "[bold type]The world begins to shake and pink lightning crackles over every surface! You can feel it, the Great One has come! You revel as the energy flows into you, through you. Even after it settles down, a pink glow remains in the air.[roman type][line break]";
-			otherwise:
-				if the player-class is not cultist:
-					say "[bold type]The world begins to shake and pink lightning begins to arc off the floating pink bubble and into the world! The bubble twists and resolves into an increasingly humanoid shape, finally becoming an extremely feminine figure composed of shocking pink light. In spite of being faceless, you can somehow tell it is looking at you.[line break][second custom style]'Like, cower in fear and junk because Valleyhotep, herald of [Azathot], is totally here.'[roman type][line break]This is probably bad.";
-				otherwise:
+			repeat with A running through alive unleashed acolytes:
+				DifficultyUp A by 1;
+		otherwise if doom counter > 800 and doomed is 4:
+			if the location of the player is Mansion23:
+				if the class of the player is cultist:
 					say "[bold type]The world begins to shake and pink lightning begins to arc off the floating pink bubble and into the world! The bubble twists and resolves into an increasingly humanoid shape, finally becoming an extremely feminine figure composed of shocking pink light. In spite of being faceless, you can somehow tell it is looking at you.[line break][second custom style]'You have totally done well, minions! Now go and, like, spread the word of Valleyhotep, herald of [Azathot]!'[roman type][line break]";
-			if diaper quest is 0:
-				SexAddictUp 2;
-				SemenAddictUp 2;
-				DelicateUp 2;
-				Resolve Doom;[spawn valleyhotep and remove the pink bubble]
+				otherwise:
+					say "[bold type]The world begins to shake and pink lightning begins to arc off the floating pink bubble and into the world! The bubble twists and resolves into an increasingly humanoid shape, finally becoming an extremely feminine figure composed of shocking pink light. In spite of being faceless, you can somehow tell it is looking at you.[line break][second custom style]'Like, cower in fear and junk because Valleyhotep, herald of [Azathot], is totally here.'[roman type][line break]This is probably bad.";
+			otherwise:
+				if the class of the player is cultist:
+					say "[bold type]The world begins to shake and pink lightning crackles over every surface! You can feel it, the Great One has come! You revel as the energy flows into you, through you. Even after it settles down, a pink glow remains in the air.[roman type][line break]";
+				otherwise:
+					say "[bold type]The world begins to shake and pink lightning crackles over every surface! You desperately try to avoid them, but you feel the energy wash over you before the effect settles down. Even still, there is a strange pink energy hanging in the air. One thing is certain: You have failed.[roman type][line break]";
+			resolve doom;
+		otherwise if a random number between 1 and (40 + (10 * MA)) is 1:
+			if debuginfo > 1:
+				update new acolytes;
+				say "[input-style]ATTEMPTING TO SPAWN A NEW RITUAL CULTIST (new acolytes list is: [new-acolytes]).[roman type][line break]";
+			commence doom; [abduct a new cultist if possible]
 	otherwise:
 		if the gifted of herald > 0, decrease the gifted of herald by 1.
 
@@ -204,23 +271,28 @@ A time based rule (this is the doom weather rule):
 			say "[bold type]You have just stepped inside, out of the rain.[roman type][line break]";
 			now latestAnnouncedRaining is 0.
 
-To Resolve Doom:
+To resolve doom:
 	now doomed is 5;
 	now the Pink Sphere is in Holding Pen;
 	set up herald;
-	compute chosen birth;
+	if enlightened gladiator is summon-available and enlightened gladiator is dungeon dwelling and enlightened gladiator is not in the location of the player, summon enlightened gladiator in the dungeon;
+	if goth mannequin is woods dwelling and goth mannequin is off-stage, summon goth mannequin in the woods;
+	if diaper quest is 0, compute chosen birth;
 	now herald is in Mansion23;
 	progress quest of ritual-quest.
 
 [TODO: update for lady fetish]
 To compute chosen birth:[now that the mindless acolytes are no longer needed to pool their strength, it's time to have some babies!]
-	repeat with A running through alive mindless acolytes:
-		now A is unleashed;
-		if inhuman pregnancy > 0:
-			let T be a random off-stage tentacle monster;
-			set up T;
-			decrease the raw difficulty of T by 2;
-			now T is in the location of A;
+	repeat with A running through alive acolytes:
+		DifficultyUp A by 1;
+		if A is mindless acolyte:
+			now A is unleashed;
+			if inhuman pregnancy > 0:
+				let T be a random off-stage tentacle monster;
+				if T is monster:
+					set up T;
+					decrease the raw difficulty of T by 2;
+					now T is in the location of A;
 	repeat with M running through tentacle monsters:
 		now the evolved of M is 3;
 	let N be a random alive mindless acolyte in the location of the player;

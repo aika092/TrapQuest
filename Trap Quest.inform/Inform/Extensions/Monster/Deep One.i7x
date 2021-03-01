@@ -2,7 +2,7 @@ Deep One by Monster begins here.
 
 deep one is a monster. Understand "deepone" as deep one. deep one is male. The text-shortcut of deep one is "do".
 
-deep one can be angered.
+deep one has a number called times-encountered.
 
 Definition: deep one is musky: decide yes.
 
@@ -31,29 +31,33 @@ To say MonsterComment of (M - deep one):
 				say "[variable custom style][big he of M] smells so strong I can actually taste it. All the way in the back of my throat. And my belly, too. Especially there...";
 			otherwise:
 				say "[second custom style][big he of M] smells so good I can taste it! I can feel it, too. Especially between my legs...";
-		otherwise if M is unfriendly:
+		otherwise if M is unleashed:
 			if the bimbo of the player < 7:
 				if the player is gendered male, say "[first custom style]I guess even freaky fish monsters can get pissed off.";
 				otherwise say "[first custom style]I never should have angered this creature!";
 			otherwise if the bimbo of the player < 12:
-				say "[variable custom style]Its even smart enough to get angry at me! Maybe I'm in the wrong here...";
+				say "[variable custom style]It's even smart enough to get angry at me! Maybe I'm in the wrong here...";
 			otherwise:
 				say "[second custom style][big his of M] [DickDesc of M] throbs even harder when [he of M]'s mad.";
 		otherwise if the bimbo of the player < 7:
 			if the player is gendered male, say "[first custom style][one of]I prefer my fish people with sea shells on their tits.[or]So is this thing like a bodyguard or something?[in random order]";
 			otherwise say "[first custom style][one of]I get the feeling that it will simply show up again if I send it away.[or]Why is it protecting those cultists?[in random order]";
 		otherwise if the bimbo of the player < 12:
-			say "[variable custom style][one of]We may be different species, but [his of M] body is in suprisingly good shape, isn't it.[or][big he of M]'s relentless when it comes to protecting those cultists. They must feel really safe.[in random order]";
+			say "[variable custom style][one of]We may be different species, but [his of M] body is in surprisingly good shape, isn't it.[or][big he of M]'s relentless when it comes to protecting those cultists. They must feel really safe.[in random order]";
 		otherwise:
 			say "[second custom style][one of]Who cares if we aren't the same species? [big he of M]'s sexy![or]I wonder if those cultists keep [him of M] satisfied.[in random order]";
 		say "[roman type][line break]".
 
+To decide which number is the starting difficulty of (M - deep one):
+	decide on 10.
+
 To set up (M - deep one):
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is 10;
+	now the raw difficulty of M is the starting difficulty of M - the times-encountered of M;
 	now the health of M is the maxhealth of M;
-	anger M.
+	permanently anger M;
+	now M is unconcerned.
 
 To compute labour to (M - deep one):
 	if M is regional and M is alive:
@@ -74,36 +78,93 @@ Definition: deep one is willing to do titfucks: decide no.
 
 Definition: deep one is able to remove cursed plugs: decide yes.
 
-To compute monstermotion of (M - deep one):
-	do nothing.
-
-To compute (M - deep one) seeking (D - a direction):
-	do nothing.
-
 Part 1 - Perception
 
-Definition: deep one is objectifying the player:
-	if deep one is angered, decide yes;
-	if the player-class is cultist or the pregnancy of the player > 0 or altar-diaper-link > 0, decide no;
-	decide yes.
-
 To compute perception of (M - deep one):
-	now M is interested;
-	if M is angered:
-		say "[BigNameDesc of M] roars in anger! This doesn't look good!";
-	otherwise if M is not objectifying the player:
+	if the player-class is cultist or the pregnancy of the player > 0 or altar-diaper-link > 0:
 		say "[BigNameDesc of M] looks at you, but seems not to be concerned with your presence.";
-		calm M;
+		now M is unconcerned;
 	otherwise:
-		say "[BigNameDesc of M] moves to engage you!";
-		anger M.
+		say "[BigNameDesc of M] roars in anger! This doesn't look good!";
+		now M is unleashed.
+
+To decide which number is the seek roll of (M - deep one):
+	if there is an acolyte in the location of the player, decide on 1; [100% success]
+	decide on a random number between 0 and 3. [Most monsters have a 75% chance of successfully moving.]
+
+To compute monstermotion of (M - deep one):
+	if the number of acolytes in Mansion23 is 0: [return to the altar to defend it]
+		if M is not in Mansion23:
+			let D be the best route from the location of M to Mansion23 through haunted rooms;
+			if D is a direction, try M going D;
+			otherwise compute room leaving of M;
+	otherwise:
+		compute room leaving of M. [This is default wandering if function is left undefined for a specific monster]
+
+To check chase boredom of (M - deep one):
+	if the player is not in Mansion23, check default chase boredom of M.
 
 Part 2 - Combat
 
 Section 1 - Attack
 
+To compute damaging attack of (M - deep one):
+	if a random number between 1 and 5 is 1 and the player is a february 2021 top donator:[Or whatever is the most recent]
+		let R be a random number between 1 and 2;
+		if R is 1:
+			compute stunning attack of M;
+		otherwise if R is 2:
+			compute summoning attack of M;
+		otherwise:[remnant of a more complicated setup, but its here just in case]
+			compute striking attack of M;
+	otherwise:
+		compute striking attack of M.
+
+[arousal + humiliation. At doomed > 5, stuns.]
+To compute stunning attack of (M - deep one):
+	say "[BigNameDesc of M] emits a guttural croak that literally rumbles your surroundings.";
+	if the intelligence roll of M >= the intelligence of the player:
+		say "It takes you a second too long to realize that 'you' are included in 'your surroundings', and powerful vibrations travel up your legs [if doomed >= 5]temporarily stopping your movement and making[otherwise]and cause[end if] your crotch to explode with sensation!";
+		if doomed >= 5:
+			now another-turn-flavour is the substituted form of "Your legs are still trembling!";
+			now another-turn is 1;
+		stimulate vagina from M;
+		moderateHumiliate;
+	otherwise:
+		say "Luckily, you're smart enough to realize that 'you' are included in 'your surroundings' and quickly create some distance before you start rumbling too.".
+
+[Applies glue to a random piece of clothing. Was clunky to implement, and made the deep one a little too complicated.]
+[To compute grabbing attack of (M - deep one):
+	say "[BigNameDesc of M] makes a horrible noise as it spits out a glob of slime! [run paragraph on]";
+	let B be the painful-part of M;
+	if the accuracy roll of M >= the dexterity of the player:
+		say "The slimeball hits you [TargetName of B], splattering sticky slime everywhere!";
+		let C be a random worn removable cursable gluable wearthings;
+		if C is clothing and C is not glued:
+			say "Some of the slime lands on your [ShortDesc of C], causing it to adhere to you like glue!";
+			now C is glued;
+			force clothing-focus redraw;
+	otherwise:
+		say "You narrowly avoid being hit.";]
+
+To compute summoning attack of (M - deep one):
+	say "[BigNameDesc of M] makes a sharp noise and points a finned finger right at you.";
+	if the intelligence roll of M >= the intelligence of the player:
+		say "You have no clue what's about to happen, and aren't prepared when you are suddenly struck by a bolt of pink lightning! You feel terribly tired and yet also horny at the same time!";
+		FatigueUp the difficulty of M + (doomed * 2);
+		stimulate vagina from herald;
+	otherwise:
+		if doomed > 5 or the accuracy roll of M >= the dexterity of the player:
+			if doomed > 5, say "You know something is about to happen, but before you can react, you are suddenly struck by a bolt of pink lightning! ";
+			otherwise say "You immediately realize that something is about to happen, but you're still unprepared to be struck by a bolt of pink lightning! You feel terribly tired and yet also horny at the same time!";
+			FatigueUp (doomed * 2);
+			stimulate vagina from herald;
+		otherwise:
+			say "You immediately realize that something is about to happen, and dodge out of the way just in time to avoid being struck by a bolt of pink lightning.".
+
+
 To TimesSubmittedUp (M - deep one) by (N - a number):
-	if M is angered, now M is not angered;
+	increase the times-encountered of M by 1;
 	DirectTimesSubmittedUp M by N.
 
 To decide if (M - deep one) is willing to creampie (F - vagina):
@@ -134,6 +195,7 @@ To say CreampieFlav of (M - deep one) in (F - a fuckhole):
 			say "An odd tingling feeling spreads through your belly, but...it seems to pass.";
 	otherwise:
 		say "[if the player is not ashamed]Fear pierces your body as you suddenly answer [his of M] call, croaking like some demented frog[otherwise if the player is not shameless]Confusion and disbelief assault your mind as you suddenly answer [his of M] call, croaking like a frog[otherwise]You immediately answer with a call of your own, croaking like an obedient little mate[end if] as [he of M] slowly pulls out and returns to [his of M] feet.";
+		severeHumiliate.
 
 To say MessyPullOutFlav of (M - deep one) in (F - a fuckhole):
 	say "[one of][BigNamedesc of M] suddenly pulls out, spraying your [variable F] with [semen].[or][BigNameDesc of M] suddenly decides to pull out, spraying your [variable F] with fresh [semen].[or][BigNameDesc of M] suddenly decides not to creampie you, allowing [his of M] load to spray out all over your [variable F].[at random]".
@@ -155,7 +217,8 @@ To say EnemaFlav of (M - deep one):
 	say "[BigNameDesc of M] [one of]makes a weird gurgling sound[or]makes a low humming sound[or]makes a clicking sound[in random order] as water pumps [one of]into your belly[or]up your anal passage[or]into you[at random] from [one of]inside [his of M] body[or][his of M] alien tongue[at random].".
 
 To say EnemaAftermath of (M - deep one):
-	say "[BigNameDesc of M] pulls [his of M] tube-like tongue from your [asshole] with a noisy slurp, and then [he of M] releases you.".
+	say "[BigNameDesc of M] pulls [his of M] tube-like tongue from your [asshole] with a noisy slurp, and then [he of M] releases you.";
+	TimesSubmittedUp M by 1.
 
 To decide which number is the enema quarts of (M - deep one):
 	decide on a random number between 2 and 3.
@@ -185,6 +248,9 @@ To say DamageReactWeak of (M - deep one):
 
 To say BanishFleeFlav of (M - deep one):
 	say "[BigNameDesc of M] shrieks and retreats into the darkness!".
+
+To compute unique banishment of (M - deep one):
+	increase the times-encountered of M by 1.
 
 To compute domination interference of (M - a deep one) for (N - a monster):
 	if N is acolyte:

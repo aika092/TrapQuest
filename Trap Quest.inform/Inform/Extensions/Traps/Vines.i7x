@@ -116,28 +116,28 @@ To compute vines kneeling:
 	repeat with V running through aggressive vines:
 		if playerRegion is Woods or the player is in WoodsBoss01:
 			now V is in the location of the player;
-		otherwise:
-			dislodge V; [To avoid glitches]
-		if the player is vine stuck and the player is not vine fucked:
-			compute V penetrating;
-		otherwise if diaper quest is 1 and refractoryperiod <= 0 and the player is able to get horny:
-			let D be a random worn diaper;
-			say "Squirming living vines [one of]rise up from the ground and begin rubbing[or]squirm and rub[stopping] against the crotch of your diaper! Your [genitals] [one of]is stimulated through your padding[or]feels amazing[or]tingles with delight[or]pulses with pleasure[at random]...";
-			if the player is not a pervert, say "[variable custom style][one of]Not good, not good![or]I need to get out of here! Or at least stand up high enough that these guys can't reach me...[or][if the diaper addiction of the player < 8]No, I don't want to be turned on in my diaper[otherwise]Enough with making me turned on all the time, I just want to wear my diapers in peace[end if]![or]This game is totally trying to give me a diaper fetish, isn't it?[then at random][roman type][line break]";
-			ruin vagina;
-			ruin vagina;
-		otherwise if the player is not vine stuck:
-			now V is revealed;
-			let D be the dexterity of the player;
-			let R be a random number from 1 to D;
-			if debuginfo > 0, say "[input-style]Vine evasion check: dexterity d[D] ([R]) | ([if the class of the player is schoolgirl or the class of the player is magical girl or diaper quest is 1]6[otherwise]3[end if].5) vine difficulty[roman type][line break]";
-			if R <= 3 or (R <= 6 and (the class of the player is schoolgirl or the class of the player is magical girl or diaper quest is 1)):
-				say "[one of]The soil beneath you shifts as living vines burst out and instantly pin your wrists and ankles to the ground. Maybe you'll be able to get away if you [bold type]pull[roman type] them.[or]Several vines rise out of the soil, closing in on you slowly. Watching the movement of their [if diaper quest is 1]undulating bodies is strangely hypnotic, and before[otherwise if the raw sex addiction of the player > 6]oozing, bulbous tips is strangely hypnotic, and before[otherwise]oozing, bulbous tips is unsettling enough to distract you from the feeling of the shifting soil underneath you. Before[end if] you realise it they've pinned your wrists and ankles to the ground.[or]Vines burst out of the soil and grab your wrists with whip-like quickness. They do the same with your ankles.[or]Before you can react, vines have grabbed your wrists and ankles. You try to move, but it's no use. You're pinned.[or]Vines shoot out of the soil and wrap around your wrists and ankles![then at random]";
-				now V is wrangling thighs;
-				now V is wrangling arms;
-			otherwise:
-				say "[one of]Vines shoot out of the ground and attempt to wrap around your wrists and ankles. You manage to avoid being grappled for now![or]Several vines rise out of the soil, closing in on you slowly. You bat away each one. Looks like you've avoided a grapple for now.[or]Vines shoot out of the soil with whip-like quickness! But thanks to your good reflexes you jump out of the way just in time. You're safe for now.[or]Living vines burst out of the soil, fumbling to grab your wrists. You're much too fast for them to catch you. For now.[in random order]";
-				if the player is possessing a vagina, cutshow figure of vines cutscene 1 for V;
+			if the player is vine stuck and the player is not vine fucked:
+				compute V penetrating;
+			otherwise if diaper quest is 1 and refractoryperiod <= 0 and the player is able to get horny:
+				let D be a random worn diaper;
+				say "Squirming living vines [one of]rise up from the ground and begin rubbing[or]squirm and rub[stopping] against the crotch of your diaper! Your [genitals] [one of]is stimulated through your padding[or]feels amazing[or]tingles with delight[or]pulses with pleasure[at random]...";
+				if the player is not a pervert, say "[variable custom style][one of]Not good, not good![or]I need to get out of here! Or at least stand up high enough that these guys can't reach me...[or][if the diaper addiction of the player < 8]No, I don't want to be turned on in my diaper[otherwise]Enough with making me turned on all the time, I just want to wear my diapers in peace[end if]![or]This game is totally trying to give me a diaper fetish, isn't it?[then at random][roman type][line break]";
+				ruin vagina;
+				ruin vagina;
+			otherwise if the player is not vine stuck:
+				now V is revealed;
+				let D be the dexterity of the player;
+				let R be a random number from 1 to D;
+				if debuginfo > 0, say "[input-style]Vine evasion check: dexterity d[D] ([R]) | ([if the class of the player is schoolgirl or the class of the player is magical girl or diaper quest is 1]6[otherwise]3[end if].5) vine difficulty[roman type][line break]";
+				if R <= 3 or (R <= 6 and (the class of the player is schoolgirl or the class of the player is magical girl or diaper quest is 1)):
+					say "[one of]The soil beneath you shifts as living vines burst out and instantly pin your wrists and ankles to the ground. Maybe you'll be able to get away if you [bold type]pull[roman type] them.[or]Several vines rise out of the soil, closing in on you slowly. Watching the movement of their [if diaper quest is 1]undulating bodies is strangely hypnotic, and before[otherwise if the raw sex addiction of the player > 6]oozing, bulbous tips is strangely hypnotic, and before[otherwise]oozing, bulbous tips is unsettling enough to distract you from the feeling of the shifting soil underneath you. Before[end if] you realise it they've pinned your wrists and ankles to the ground.[or]Vines burst out of the soil and grab your wrists with whip-like quickness. They do the same with your ankles.[or]Before you can react, vines have grabbed your wrists and ankles. You try to move, but it's no use. You're pinned.[or]Vines shoot out of the soil and wrap around your wrists and ankles![then at random]";
+					now V is wrangling thighs;
+					now V is wrangling arms;
+				otherwise:
+					say "[one of]Vines shoot out of the ground and attempt to wrap around your wrists and ankles. You manage to avoid being grappled for now![or]Several vines rise out of the soil, closing in on you slowly. You bat away each one. Looks like you've avoided a grapple for now.[or]Vines shoot out of the soil with whip-like quickness! But thanks to your good reflexes you jump out of the way just in time. You're safe for now.[or]Living vines burst out of the soil, fumbling to grab your wrists. You're much too fast for them to catch you. For now.[in random order]";
+					if the player is possessing a vagina, cutshow figure of vines cutscene 1 for V;
+		otherwise: [player has escaped the reach of the vines]
+			dislodge V. [To avoid glitches]
 
 Report kneeling when there is a vine wrangling a body part:
 	let V be a random vine wrangling a body part;
@@ -327,7 +327,7 @@ To compute vineNut of (V - a vine):
 			PussyFill (X + the stance of the player);
 			SemenPuddleUp 2;
 			let F be a random fairy grabbing the player;
-			if F is monster and inhuman pregnancy is 2 and the player is able to get pregnant:
+			if F is monster and inhuman pregnancy >= 2 and the player is able to get pregnant:
 				say "Your belly grows rapidly, emitting magenta light as [NameDesc of F] grins up at you, fingering [himself of F] as [he of F] floats away.";
 				cutshow figure of fairy cutscene 19 for F;
 				now the pregnancy of the player is 1;

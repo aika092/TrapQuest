@@ -21,7 +21,7 @@ Definition: vampiric claws is removable:
 	if there is a worn wood-dong, decide yes;
 	decide no.
 
-To decide which number is the damage improvement of (W - vampiric claws):
+To decide which number is the slap damage improvement of (W - vampiric claws):
 	let X be 0;
 	increase X by the magic-modifier of W;
 	increase X by the dexterity of the player / 5;

@@ -21,6 +21,7 @@ The player has a number called wishskill.
 The player has a number called fuckskill.
 The player has a number called buttskill.
 The player has a number called divinationskill.
+The player has a number called zapskill.
 
 Part 1 - Mercy
 
@@ -339,7 +340,7 @@ Part 17 - Domination Skill
 
 To teach divinationskill:
 	if the divinationskill of the player is 0:
-		say "[big he of witch] launches into a very long complicated explanation you don't fully understand, but manage to follow, mostly. [bold type]**You have learned how to read the flow of magic!**[line break]From now on, you'll find it a lot easier to find a way to have dominant sex![roman type][line break]";
+		say "[big he of witch] launches into a very long complicated explanation you don't fully understand, but manage to follow, mostly. [bold type]**You have learned how to read the flow of magic!**[roman type][line break]";
 		now the divinationskill of the player is 1;
 		reset skill cooldown;
 	otherwise:
@@ -350,11 +351,30 @@ This is the divinationskill list rule:
 The divinationskill list rule is listed in the skill listing rules.
 
 This is the divinationskill learn rule:
-	if the divinationskill of the player is 0, say "When you try to have dominant sex, you are now just as likely to succeed regardless of sex addiction.";
+	if the divinationskill of the player is 0, say "You are now able to read the flow of magic, and sense what type of monsters will emerge from portals.";
 	now the divinationskill of the player is 1.
 The divinationskill learn rule is listed in the skill cheating rules.
 
-Part 18 - Safe Floating
+Part 18 - Zap Skill
+
+To teach zapskill:
+	if the zapskill of the player is 0:
+		say "[big he of ex-princess] shows you the proper posture and technique for wielding a magic wand. [bold type]**You have learned how to best hold a magic wand!**[line break]From now on, you'll do more damage when zapping enemies with a ranged magical weapons![roman type][line break]";
+		now the zapskill of the player is 1;
+		reset skill cooldown;
+	otherwise:
+		say "You've already learned how to properly wield a magic wand!".
+
+This is the zapskill list rule:
+	if the zapskill of the player is 1, say "You are an expert in zapping enemies with ranged magical weapons.".
+The zapskill list rule is listed in the skill listing rules.
+
+This is the zapskill learn rule:
+	if the zapskill of the player is 0, say "You have increased damage when zapping enemies with ranged magical weapons.";
+	now the zapskill of the player is 1.
+The zapskill learn rule is listed in the skill cheating rules.
+
+Part 19 - Safe Floating
 
 To teach safefloating from (M - a monster):
 	say "[speech style of M]'There are some tricks to keeping hold of your items while floating. Let me show you...'[roman type][line break]";

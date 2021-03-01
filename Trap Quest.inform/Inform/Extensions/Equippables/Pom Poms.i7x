@@ -1,6 +1,6 @@
 Pom Poms by Equippables begins here.
 
-A pom-pom is a kind of gloves. A pom-pom is unique. A pom-pom is womanly. A pom-pom is usually pvc. Understand "pom", "poms" as pom-pom. A pom-pom has a number called charge.
+A pom-pom is a kind of big-gloves. A pom-pom is unique. A pom-pom is womanly. A pom-pom is usually pvc. Understand "pom", "poms" as pom-pom. A pom-pom has a number called charge.
 
 Definition: a pom-pom is class-relevant:
 	if the class of the player is cheerleader, decide yes;
@@ -31,7 +31,7 @@ This is the pom-poms prevent manual dexterity rule:
 		rule fails.
 The pom-poms prevent manual dexterity rule is listed in the manual dexterity restriction rules.
 
-To decide which number is the damage improvement of (W - a pom-pom):
+To decide which number is the slap damage improvement of (W - a pom-pom):
 	decide on the magic-modifier of W - 4.
 
 To decide which number is the luck-influence of (W - a pom-pom):

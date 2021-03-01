@@ -7,7 +7,7 @@ appearance-explained is a number that varies.
 
 To explain appearance:
 	now appearance-explained is 1;
-	let A be the appearance of the player;
+	update appearance level;
 	now appearance-explained is 0.
 
 To decide which number is the appearance of the player: [Update values first. Forces a new line if triggered in the middle of a sentence; consider just using saved appearance and fingers crossed it's not horribly inaccurate.]

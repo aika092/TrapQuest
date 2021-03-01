@@ -197,8 +197,9 @@ To decide which number is the girth of (I - a clothing):
 	decide on the plug size of I.
 
 An all time based rule (this is the sex toys slipping out rule):
-	repeat with I running through insertable things penetrating a fuckhole:
-		compute gripping of I.
+	if wanking is 0: [otherwise sex toys can do their stimulation (and orgasms) and even dropping out while being used for masturbation]
+		repeat with I running through insertable things penetrating a fuckhole:
+			compute gripping of I.
 
 vaginalGripCount is a number that varies.
 analGripCount is a number that varies.
@@ -520,7 +521,7 @@ This is the remove inappropriate tail plugs rule:
 The remove inappropriate tail plugs rule is listed in the diaper quest fix rules.
 
 Report kneeling while there is a worn balancing tail plug:
-	if seconds > 0 and the player is in danger and the standing capability of the player > 0:
+	if seconds > 0 and the player is in danger and the standing capability of the player > 0 and auto is 1:
 		say "With catlike reflexes, you immediately try to spring back to your feet!";
 		now delayed stand is 0;
 		try standing.

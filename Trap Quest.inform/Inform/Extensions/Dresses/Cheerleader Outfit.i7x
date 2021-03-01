@@ -34,7 +34,7 @@ To decide which number is the initial cringe of (C - a cheerleader outfit):
 
 Part 1 - Longsleeved Cheerleader Outfit
 
-longsleeved cheerleader outfit is a cheerleader outfit. longsleeved cheerleader outfit is only arm covering.
+longsleeved cheerleader outfit is a cheerleader outfit. longsleeved cheerleader outfit is only arm covering. longsleeved cheerleader outfit is fully covering.
 
 The printed name of longsleeved cheerleader outfit is "[clothing-title-before]longsleeved cheerleader outfit[clothing-title-after]". The text-shortcut of longsleeved cheerleader outfit is "lco".
 

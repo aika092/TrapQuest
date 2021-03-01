@@ -65,6 +65,6 @@ Check opening mystical wardrobe:
 		if clothes-changed is 0, say "But nothing seems to have happened.[line break][variable custom style]Clearly the wardrobe doesn't believe that it's appropriate or possible to change what I'm wearing right now.[roman type][line break]";
 	otherwise:
 		say "There's nothing inside.";
-	say "The wardrobe door closes itself of its own accord.[one of][variable custom style]Spooky.[roman type][line break][or][stopping]" instead.
+	say "The wardrobe door closes of its own accord.[one of][variable custom style]Spooky.[roman type][line break][or][stopping]" instead.
 
 Wardrobes ends here.

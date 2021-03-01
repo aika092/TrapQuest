@@ -534,7 +534,7 @@ Displayed when the player greets a monster that is currently aggressive. If the 
 +!]
 To say UnfriendlyGreeting to (M - a monster):
 	if the player is a sadist:
-		if the player is male, say "'[one of]I can't wait to tear your [HoleDesc of M] up when I beat you.'[or]Just for this, I'm going in dry.'[or]I can't wait to make you gag on my [sexual-player-penis]!'[in random order]";
+		if the player is gendered male, say "'[one of]I can't wait to tear your [HoleDesc of M] up when I beat you.'[or]Just for this, I'm going in dry.'[or]I can't wait to make you gag on my [sexual-player-penis]!'[in random order]";
 		otherwise say "'[one of]I'm pissed off right now, but don't worry. You'll be making it up to me.'[or]Get ready for a long apology!'[or]I can't wait to show you what I have in store for you!'[in random order]";
 		say TauntResponse of M;
 	otherwise:
@@ -828,7 +828,10 @@ Displayed when a masochistic player greets a monster they have a mostly submissi
 To say SubmissiveGreeting to (M - a monster):
 	let N be the times-submitted of M;
 	let P be N + 1;
-	if the class of the player is princess and M is bride-consort:
+	if diaper quest is 1:
+		if the diaper addiction of the player > 8, say "'[one of]Hey there. Are you going to do that thing to me again?'[or]Hey there [daddy of M].'[or][if the player is diapered]Hey [daddy of M]. I wonder if my diaper needs checking[otherwise]Hey you. Remind me, what do you do to naughty babies who are being bad [boy of the player]s and not wearing diapers[end if]...'[at random]";
+		otherwise say "'[one of]Uh-oh, it's you again...'[or]Why do we keep meeting at moments like this!'[or][if the player is diapered]Hi there. Yes I'm diapered. No I don't need you to check me[otherwise]Oh look, another [man of M] who's obsessed with making me wear a diaper[end if].'[at random]";
+	otherwise if the class of the player is princess and M is bride-consort:
 		say "'[one of][big royal-subject of M]. Our previous tryst was most satisfying, I will admit.'[or][big royal-subject of M]. Your status certainly belies your skill in the bedroom.'[or]Greetings, [royal-subject of M]. I would not mind it if you were to ravish me again at a later time.'[at random]";
 	otherwise if M is mating:
 		say "'[one of][if M is presenting as female]Hey there baby momma!'[otherwise]Hey there baby daddy.'[end if][or]Hey baby. Want to make out?'[or]Hey babe! Let's hold hands!'[or][if M is presenting as female]So, want to be girlfriend girlfriend now that we have a baby together?'[otherwise]Want to be boyfriend girlfriend now that we have a baby together?'[end if][at random]";
@@ -845,7 +848,10 @@ Displayed after a masochistic player greets a monster they have a mostly submiss
 
 +!]
 To say SubmissiveResponse of (M - a monster):
-	if M is unfriendly:
+	if diaper quest is 1:
+		if M is unfriendly, say "[speech style of M]'Oh good, you're getting used to it, then? Here I come...'[roman type][line break]";
+		otherwise say "[speech style of M]'Oh look, it's my favourite baby!'[roman type][line break]";
+	otherwise if M is unfriendly:
 		say "[speech style of M]'Time for another round!'[roman type][line break]";
 	otherwise:
 		if a random number between -1 and the charisma of the player > 3, FavourUp M;
@@ -1246,7 +1252,7 @@ speakingOutLoud is a number that varies. [For tracking whether the player chose 
 talk-dismiss is a talk-object.
 
 To consider (T - talk-dismiss) for (M - a monster):
-	if M is intelligent and M is interested:
+	if M is intelligent and M is interested and M is not caged:
 		if M is defeated:
 			now the printed name of T is the substituted form of "[DefeatedDismissal of M]";
 		otherwise:
@@ -1535,8 +1541,12 @@ To say SexDollExplanation of (M - a monster):
 
 talk-where-question is a talk-object.
 
+Definition: a monster is where-question-appropriate:
+	if it is fluff-question-appropriate, decide yes;
+	decide no.
+
 To consider (T - talk-where-question) for (M - a monster):
-	if M is fluff-question-appropriate:
+	if M is where-question-appropriate:
 		now the printed name of T is the substituted form of "[WhereQuestion of M]";
 		set next numerical response to the substituted form of "[printed name of T]".
 
@@ -1550,8 +1560,12 @@ To say WhereAnswer of (M - a monster):
 
 talk-who-question is a talk-object.
 
+Definition: a monster is who-question-appropriate:
+	if it is fluff-question-appropriate, decide yes;
+	decide no.
+
 To consider (T - talk-who-question) for (M - a monster):
-	if M is fluff-question-appropriate:
+	if M is who-question-appropriate:
 		now the printed name of T is the substituted form of "[WhoQuestion of M]";
 		set next numerical response to the substituted form of "[printed name of T]".
 
@@ -1569,8 +1583,12 @@ To say WhoAnswer of (M - a monster):
 
 talk-story-question is a talk-object.
 
+Definition: a monster is story-question-appropriate:
+	if it is fluff-question-appropriate, decide yes;
+	decide no.
+
 To consider (T - talk-story-question) for (M - a monster):
-	if M is fluff-question-appropriate:
+	if M is story-question-appropriate:
 		now the printed name of T is the substituted form of "[StoryQuestion of M]";
 		set next numerical response to the substituted form of "[printed name of T]".
 
@@ -1588,8 +1606,12 @@ To say StoryAnswer of (M - a monster):
 
 talk-escape-question is a talk-object.
 
+Definition: a monster is escape-question-appropriate:
+	if it is fluff-question-appropriate, decide yes;
+	decide no.
+
 To consider (T - talk-escape-question) for (M - a monster):
-	if M is fluff-question-appropriate:
+	if M is escape-question-appropriate:
 		now the printed name of T is the substituted form of "[EscapeQuestion of M]";
 		set next numerical response to the substituted form of "[printed name of T]".
 
@@ -1607,8 +1629,12 @@ To say EscapeAnswer of (M - a monster):
 
 talk-advice-question is a talk-object.
 
+Definition: a monster is advice-question-appropriate:
+	if it is fluff-question-appropriate, decide yes;
+	decide no.
+
 To consider (T - talk-advice-question) for (M - a monster):
-	if M is fluff-question-appropriate:
+	if M is advice-question-appropriate:
 		now the printed name of T is the substituted form of "[AdviceQuestion of M]";
 		set next numerical response to the substituted form of "[printed name of T]".
 

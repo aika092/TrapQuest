@@ -48,7 +48,6 @@ To compute furniture resting on (F - a master bed):
 		now the stance of the player is 1;
 		compute chain rest of F;
 	otherwise:
-		let C be a random lipstick collar;
 		if there is a worn submissive collar and the player is horny and V is nothing:
 			now V is a random off-stage vampiress;
 			set up V;
@@ -56,9 +55,9 @@ To compute furniture resting on (F - a master bed):
 			now V is interested;
 			anger V;
 			now the stance of the player is 1;
-		otherwise if the player is very horny and C is actually summonable:
+		otherwise if the player is very horny and lipstick collar is actually summonable:
 			say "You climb onto the bed and slip under the covers. The normally soft mattress is as hard as rock, and the sheets seem to bristle excitedly at your presence. Comfortable waves of heat blossom from the silky throw-pillows cradling your head, and you feel a tingling sensation along the nape of your neck, like a tongue on your skin slowly tracing its way all the way around. You hear a sound like someone breathily moaning in your ear as a leather collar materialises around your neck.";
-			summon C cursed;
+			summon lipstick collar cursed;
 		otherwise if there is a worn submissive collar:
 			say "You climb into the bed and slip under the covers. The mattress is even more comfortable than you expected it to be, cradling your body as if it were made of wisps of cloud.";
 		otherwise:
@@ -77,7 +76,7 @@ To compute chain rest of (F - a master bed):
 	unless V is in the location of the player:
 		say "You hear high pitched shrieking as dozens of bats fly in through some narrow, high windows, converging in a twisting mass of flapping wings and black fur. Just as suddenly as they appeared, the bats disperse, leaving a [printed name of V] standing in the doorway.";
 		now V is in the location of the player;
-	say "[speech style of V]Mmm, what do we have here?[roman type][line break][big he of V] purrs, snapping [his of V] fingers as the chains release you and recede back into the bed.";
+	say "[speech style of V]'Mmm, what do we have here?'[roman type][line break][big he of V] purrs, snapping [his of V] fingers as the chains release you and recede back into the bed.";
 	now F is not grabbing the player.
 
 To compute normal rest of (F - a master bed):

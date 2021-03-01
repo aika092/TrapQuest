@@ -1,6 +1,7 @@
 All Belts by Belts Suspenders begins here.
 
 A belt is a kind of clothing. A belt is unskirted. A belt is manly.
+Definition: a belt is nudism-enabling: decide yes.
 Definition: a belt is same-type:
 	if theme-share-target is belt, decide yes;
 	decide no.
@@ -272,7 +273,7 @@ To compute periodic effect of (I - living belt of sturdiness):
 			otherwise:
 				say "[if the openness of asshole < 8]With a moderate amount of effort and force, it manages to make its way in![otherwise]The tentacle slides into your loose hole with ease![end if]";
 				now the living belt of sturdiness is penetrating asshole;
-			if the player is female:
+			if the player is possessing a vagina:
 				say "You feel the warm, smooth tip of a tentacle trying to push its way into your [vagina]! ";
 				while the player is pussy protected:
 					let A be a random top level protection clothing worn by the player;
@@ -389,6 +390,7 @@ To say ShortDesc of (C - string-belt):
 	say "string belt".
 
 Definition: string-belt is condom pinnable: decide yes.
+Definition: string-belt is nudism-enabling: decide yes.
 
 bridal garter is a clothing. [No clashes.] The printed name of bridal garter is "[clothing-title-before]bridal garter[clothing-title-after]". The text-shortcut of bridal garter is "stb". bridal garter is unique. bridal garter is silk.
 
@@ -410,6 +412,7 @@ To say MediumDesc of (C - bridal garter):
 	say "sheer bridal garter".
 
 Definition: bridal garter is condom pinnable: decide yes.
+Definition: bridal garter is nudism-enabling: decide yes.
 
 
 tongue-belt is a belt. tongue-belt is unique. tongue-belt is biological. The printed name of tongue-belt is "[clothing-title-before]tongue belt[clothing-title-after]". The text-shortcut of tongue-belt is "tgbt". Understand "tongue", "belt" as tongue-belt.

@@ -18,6 +18,7 @@ To say MediumDesc of (C - fake-nails):
 
 Definition: fake-nails is too boring: decide no.
 Definition: fake-nails is pink themed: decide yes.
+Definition: fake-nails is nudism-enabling: decide yes.
 
 To decide which number is the initial outrage of (C - fake-nails):
 	if C is cursed, decide on 6;
@@ -51,6 +52,10 @@ Check taking off fake-nails:
 	say "[if item described is cursed]It[otherwise]It's not a magic curse keeping these melded with your real nails, it just[end if] seems like they are permanently glued on!" instead.
 
 Definition: fake-nails is removable: decide no.
+
+Definition: fake-nails is actually summonable:
+	if fake-nails is worn, decide no;
+	decide yes.
 
 This is the fake nails prevent hand use rule:
 	if fake-nails is worn and fake-nails is cursed:

@@ -133,12 +133,14 @@ STATES:
 7: Just freed the player from bondage (or told them no)
 ==Anything below 10 can be interpreted as normal wandering and hijacked for a scene==
 
+27: DQ: After matron fight scene.
+28: DQ: Changing station
 29: Just rescued from the vine boss hole
 ==Anything below 30 implies that a scene has just ended so a new one shouldn't start, but she's able to move around as normal==
 
 ==Anything 80 or above prevents protection==
 80: TQ: Anal only stool
-81: DQ: Hidding messy diaper
+81: DQ: Hiding messy diaper
 
 ==Anything 90 or above prevents movement==
 90: Appeared by being fucked by vines in the woods
@@ -151,6 +153,7 @@ STATES:
 97: Appeared by sitting on the throne
 98: DQ: Diaper pail
 99: DQ: Ass hook
+100: DQ: Matron fight scene
 ]
 
 Definition: woman-player is summon appropriate: decide no. [Can she be randomly selected to be summoned?]

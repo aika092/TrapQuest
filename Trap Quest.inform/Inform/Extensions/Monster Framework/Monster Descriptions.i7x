@@ -23,10 +23,10 @@ To say FullExamineDesc of (M - a monster):
 	say FullMonsterDesc of M.
 
 To say FullMonsterDesc of (M - a monster):
-	say FullTitle of M;
+	say BoldFullTitle of M;
 	say ImageDesc of M;
 	say MonsterDesc of M;
-	say MonsterComment of M;
+	if M is undefeated, say MonsterComment of M;
 	if M is messy, say MessyMonsterFlav of M.
 
 To say MonsterDesc of (M - a monster):

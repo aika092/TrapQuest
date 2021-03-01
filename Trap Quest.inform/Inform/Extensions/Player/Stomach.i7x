@@ -98,7 +98,7 @@ To StomachSemenUp (X - a number):
 	if M is monster:
 		compute condom filling of M;
 	otherwise:
-		if there is a worn lipstick collar, increase X by 1;
+		if lipstick collar is worn, increase X by 1;
 		if the latex-transformation of the player > 4:
 			AssFill X;
 			now X is 0;

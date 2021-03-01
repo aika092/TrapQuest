@@ -307,8 +307,10 @@ To larvaShortcutAssign (C - a larva):
 Check attacking larva:
 	if the player is immobile or there is a thing wrangling a body part, say "You're a bit busy!" instead;
 	allocate 2 seconds;
+	say "You squish [NameDesc of the noun]. [big his of the noun] body disappears.";
+	check tentacle clear;
 	destroy the noun;
-	say "You squish [NameDesc of the noun]. [big his of the noun] body disappears." instead.
+	do nothing instead.
 Check slapping larva:
 	try attacking the noun instead.
 Check kneeing larva:

@@ -49,13 +49,13 @@ To decide which figure-name is clothing-image of (C - sheer-black crotchless-pan
 	decide on figure of crotchless-panties 5.
 
 To say ClothingDesc of (K - pearl crotchless-panties):
-	say "This crotchless g-string has a line of pearls down the middle[if the player is female and K is worn] that stimulate your [vagina] as you walk[end if]. It hides absolutely nothing.".
+	say "This crotchless g-string has a line of pearls down the middle[if the player is possessing a vagina and K is worn] that stimulate your [vagina] as you walk[end if]. It hides absolutely nothing.".
 
 To say ClothingDesc of (K - buckled crotchless-panties):
 	say "This black crotchless g-string has a frill and stylish buckle at the waist. It hides absolutely nothing.".
 
 To say ClothingDesc of (K - crotch chain):
-	say "This underwear is literally just a chain attached to a belt. [if the player is female and K is worn]The chain sits inside the entrance to your [vagina] and stimulates you as you walk. [end if]It hides absolutely nothing.".
+	say "This underwear is literally just a chain attached to a belt. [if the player is possessing a vagina and K is worn]The chain sits inside the entrance to your [vagina] and stimulates you as you walk. [end if]It hides absolutely nothing.".
 
 To say ClothingDesc of (K - black-and-red lace crotchless-panties):
 	say "This pair of lace knickers is already sexy, but the crotchless parting makes it downright slutty. It hides absolutely nothing.".
@@ -82,9 +82,9 @@ To set up influence of (C - a crotchless-panties):
 	set up sex-based influence of C.
 
 To say TransformReaction of (C - a crotchless-panties):
-	if the outrage of C is too humiliating:
+	if the initial outrage of C is too humiliating:
 		say "[variable custom style]Come on, what is even the point of these?! They don't help me in any way at all. [if C is cursed]I wish I could[otherwise]I guess I should probably[end if] take them off and wear a normal pair...[roman type][line break]";
-	otherwise if C is almost too much:
+	otherwise if C is almost too much when visible:
 		say "[variable custom style]What does it say about me that I kind of like the way this looks, even though it's completely useless?[roman type][line break]";
 	otherwise if the humiliation of the player < 40000:
 		say "[variable custom style]Now THIS is the sort of underwear that a gal like me likes to be seen in! Sweet![roman type][line break]".
@@ -103,6 +103,7 @@ Report going when the player is possessing a vagina and the player is upright an
 
 cum dump's undergarment is a crotchless-panties. cum dump's undergarment is unique. The armour of cum dump's undergarment is 1. The printed name of cum dump's undergarment is usually "[clothing-title-before]unholy cum dump's undergarment[clothing-title-after]". Figure of unholy panties is the file "Items/Clothes/Lower/Underwear/Skimpy/Crotchless/crotchless6.png". Understand "unholy" as cum dump's undergarment. The text-shortcut of cum dump's undergarment is "uu".
 
+Definition: cum dump's undergarment is transformation-protected: decide yes.
 Definition: cum dump's undergarment is uncovered themed: decide yes.
 Definition: cum dump's undergarment is butterfly themed: decide yes.
 Definition: cum dump's undergarment is white themed: decide yes.

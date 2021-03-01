@@ -19,7 +19,7 @@ To decide which number is the delicateness-influence of (C - a dominance clothin
 
 To decide which number is the delicateness of the player:
 	if the class of the player is living sex doll, decide on 1;
-	if the humiliation of the player >= 40000, decide on 20;
+	if the player is broken and mindbreak protection is 0, decide on 20;
 	let S be the raw delicateness of the player;
 	if submissive sex addict is 1, increase S by 7;
 	if the womb volume of vagina >= 30 and the class of the player is not fertility goddess, increase S by 3;

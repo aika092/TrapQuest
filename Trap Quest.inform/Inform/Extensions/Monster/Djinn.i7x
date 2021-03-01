@@ -20,9 +20,10 @@ To say MediumDesc of (M - djinn):
 
 Figure of djinn is the file "NPCs/Forest/Djinn/djinn1.png".
 Figure of censored djinn is the file "NPCs/Forest/Djinn/djinn2.png".
+Figure of djinn femme is the file "NPCs/Forest/Djinn/djinn3.jpg".
 
 To decide which figure-name is the monster-image of (M - djinn):
-	[if lady fetish is 1, decide on figure of missing NPC;]
+	if lady fetish is 1, decide on figure of djinn femme;
 	if diaper quest is 0, decide on figure of djinn;
 	otherwise decide on figure of censored djinn.
 
@@ -33,8 +34,12 @@ To decide which figure-name is the vaginal-sex-monster-image of (M - djinn):
 To decide which number is the default favour of (M - djinn):
 	decide on the aggro limit of M + 4. [This puts the djinn 1 favour below the number necessary to be considered your 'buddy'.]
 
+djinn has a number called cloudy.
+
 To say MonsterDesc of (M - djinn):
-	say "This [if lady fetish is 0]tall, dark-skinned [man of M][otherwise]muscular, dark-skinned [man of M][end if] has no legs but instead a billowing smoky pillar below [his of M] [if diaper quest is 1 or full-lady fetish is 1]waist[otherwise]thick, veiny cock[end if]. [big he of M] has four arms, two of which are kept folded in front of [his of M] chest whilst the other two are used to wildly gesticulate as [he of M] talks. [if full-lady fetish is 1 and diaper quest is 0]A patch of night sky in the shape of a penis hangs from [his of M] waist.[end if]".
+	say "This [if lady fetish is 0]tall, dark-skinned [man of M][otherwise]muscular, dark-skinned [man of M][end if] has no legs but instead a billowing smoky pillar below [his of M] [if diaper quest is 1 or full-lady fetish is 1]waist[otherwise]thick, veiny cock[end if]. [big he of M] has four arms, two of which are kept folded in front of [his of M] chest whilst the other two are used to wildly gesticulate as [he of M] talks. [if full-lady fetish is 1 and diaper quest is 0]A patch of night sky in the shape of a penis hangs from [his of M] waist.[end if]";
+	if the cloudy of M > 0:
+		say "A thin barrier of clouds is floating around above [his of M] chest. You could probably *slap* [him of M] through it, but that's probably exactly what [he of M] wants.";
 
 To say LongDickDesc of (M - djinn):
 	if full-lady fetish is 1:
@@ -124,7 +129,6 @@ To compute appearance assessment of (M - djinn):
 			bore M.
 
 To compute perception of (M - djinn):
-	now M is interested;
 	if M is unfriendly:
 		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]Whore, your holes are required.'[or]You look like a [tasty] mortal. Bow before me!'[or]Come here, young one. My shaft isn't going to pleasure itself...'[in random order][roman type][line break]";
 	otherwise:
@@ -189,8 +193,8 @@ To compute djinn wishing of (M - a monster):
 			summon T;
 			say "A [T] is seared into existence around your [asshole]!";
 		otherwise if the player is possessing a vagina and normal clit piercing is actually summonable:
+			say "A [MediumDesc of normal clit piercing] is seared into existence straight through your clitoris!";
 			summon normal clit piercing cursed with persistent quest;
-			say "A [normal clit piercing] is seared into existence straight through your clitoris!";
 		otherwise:
 			SexAddictUp 1;
 	otherwise if the printed name of CNR is "wish for blessings":
@@ -224,6 +228,7 @@ To compute djinn wishing of (M - a monster):
 			now auto is 0;
 			say "You open your mouth obediently.";
 		now the player-reaction of the player is submitting;
+		now the refractory-period of M is 0;
 		now presented-orifice is face;
 		check consensual submissive sex of M;
 	otherwise if the printed name of CNR is "wish for a spanking":
@@ -263,6 +268,18 @@ To say SpankingAfterFlav of (M - djinn):
 	say "[BigNameDesc of M] releases you.[line break][speech style of M]'It was a wise decision to not make an enemy of me.'[roman type][line break]";
 	now the favour of M is the default favour of M.
 
+Definition: djinn is distracted:
+	if djinn is in the location of the player:
+		let M be a random explorer in the location of the player;
+		if M is explorer:
+			let D be the best route from the location of the player to Stairwell02 through jungle rooms;
+			say "[BigNameDesc of djinn] spots [NameDesc of M].[line break][speech style of djinn]'Your third and final wish. I will hear it now.'[roman type][line break][BigNameDesc of M] looks nervous as [he of M] tries to decide what [he of M] wants to wish for. The time pressure seems to get to [him of M], and [he of M] panics.[line break][speech style of M]'I, um I wish for... ";
+			if the explorer-bimbo of M > 0, say "I wish for endless riches!'[roman type][line break][BigNameDesc of djinn] nods.[line break][speech style of djinn]'It is done. You now have access to endless riches. You must merely touch your new bed to summon one of an endless number of [men of shopkeeper] who will give you jewellery in exchange for your... [']services[']. Just make sure to give the pimp [his of pimp] cut.'[line break][speech style of M]'New bed? [']Services[']? PIMP?! What are you on about?!'[roman type][line break][BigNameDesc of M] squeaks.[line break][speech style of djinn]'Don't worry, I shall give you an attitude adjustment to match your new role as a [if diaper quest is 1]Professional Baby Slave[otherwise]Hotel Whore[end if].'[roman type][line break]You watch with [horror the bimbo of the player] as [NameDesc of M][']s eyes glaze over and then a vacant, happy smile grows [his of M] face.[line break][speech style of M]'Ooh, goodie! I'm gonna so rich!'[roman type][line break][big he of M] starts almost mindlessly walking away from you, but clearly with a fixed destination in mind.";
+			otherwise say "I wish for better self-control!'[roman type][line break][BigNameDesc of djinn] nods.[line break][speech style of djinn]'You are finding it difficult to resist touching yourself. Don't worry, you won't have that trouble any more.'[roman type][line break][BigNameDesc of djinn] snaps [his of djinn] fingers and suddenly [NameDesc of M] is wearing a tight set of bondage ropes that keep [his of M] hands bound behind [his of M] back.[line break][speech style of M]'Hey, what the hell is this?!'[roman type][line break][BigNameDesc of M] squeaks.[line break][speech style of djinn]'That's your final wish. No take-backs.'[line break][speech style of M]'This is bullshit! Please help me! How am I going to get free?'[roman type][line break][BigNameDesc of djinn] raises an eyebrow.[line break][speech style of djinn]'If you really want to ruin your wish and free your hands, I guess you will need to find a knife.'[roman type][line break][BigNameDesc of M] looks frustrated but also determined.[line break][speech style of M]'I know where I can find a knife. I just hope none of the robots find me first...'[roman type][line break][big he of M] starts walking away from you, clearly with a fixed destination in mind.";
+			if D is a direction, try M going D;
+			compute banishment of M;
+			decide yes;
+	decide no.
 
 Part 4 - Djinn Messing
 
@@ -329,6 +346,26 @@ To compute happy oral sex reward of (M - djinn):
 
 Section 1 - Attack
 
+The djinn priority attack rules is a rulebook. The priority attack rules of djinn is usually the djinn priority attack rules.
+
+This is the djinn smoke trapping rule:
+	let M be current-monster;
+	if M is interested and the player is the donator and M is unfriendly and the player is upright and the difficulty of M > the starting difficulty of M and the cloudy of M is 0:
+		say "[BigNameDesc of M] unfolds [his of M] bottom pair of arms, waving them in front of [himself of M] as a shield of clouds appears in front of [him of M].";
+		increase the cloudy of M by 2 + (the difficulty of M - the starting difficulty of M);[starting at 3 then +1 for every difficulty point]
+		rule succeeds;
+	otherwise if the cloudy of M < 0:
+		increase the cloudy of M by 1.
+The djinn smoke trapping rule is listed in the djinn priority attack rules.
+
+To compute unique periodic effect of (M - djinn):
+	if the cloudy of M > 0:
+		if M is in the location of the player, decrease the cloudy of M by 1;
+		otherwise now the cloudy of M is 0;
+		if the cloudy of M <= 0:
+			if M is in the location of the player, say "The layer of clouds covering [NameDesc of M]'s upper body disperses.";
+			now the cloudy of M is -5;
+
 To compute the flying player taunting of (M - djinn):
 	if a random number from 1 to 6 is 1:
 		say "[BigNameDesc of M] laughs at you.[line break][speech style of M]'[one of]Your attempt at flight is laughable.'[or]If the [great one] had intended you to fly, he would have given you my power!'[or]How dreadfully pathetic, even for a mortal.'[in random order][roman type][line break][if the humiliation of the player < 17500]You [one of]wince[or]shudder[or]cringe[purely at random] with shame.";
@@ -393,10 +430,10 @@ To say SuddenPregFlav of (M - djinn):
 	say "[speech style of M]'Excellent, [one of]it appears that we are compatible. Don't worry, this is completely normal, this instant gestation period often happens with Djinn. You'll give birth soon enough. Make sure you're here when you do[or]another perfect conception. See you soon[stopping].'[line break][variable custom style][if the semen addiction of the player < 5]Fuck fuck FUCK! [one of]I'm really pregnant with this asshole's magical demon spawn[or]How did I let this happen again[stopping]?![otherwise if the semen addiction of the player < 11]Well at least I won't be pregnant for long, I guess...[otherwise]Ooh, feeling so heavily pregnant feels so right...[end if][roman type][line break]".
 
 To say CondomFailFlav of (M - djinn) in (F - vagina):
-	say "It can't handle the strain! You feel it burst open inside you, and a gush of warmth floods your [vagina][if pregnancy fetish is 1] as your womb explodes with sensation, and [his of M] horde of eager swimmers rush straight for your fallopian tubes, filling every crevice and tunnel they can find![line break][otherwise].[line break][speech style of M]'Hahaha! Your mortal condom was no match for my divine sperm!'[roman type][line break][end if]".
+	say "It can't handle the strain! You feel it burst open inside you, and a gush of warmth floods your [vagina][if pregnancy fetish is 1] as your womb explodes with sensation, and [his of M] horde of eager swimmers rush straight for your Fallopian tubes, filling every crevice and tunnel they can find![line break][otherwise].[line break][speech style of M]'Hahaha! Your mortal condom was no match for my divine sperm!'[roman type][line break][end if]".
 
 To say CreampieFlav of (M - djinn) in (F - vagina):
-	say "[speech style of M]'Yes... yes... [if pregnancy fetish is 1 and the pregnancy of the player is 0]take my seed, and carry my spawn, whore[otherwise]your [cunt] is pleasing to me, mortal[end if]!'[roman type][line break][BigNameDesc of M] ejaculates deep inside your [vagina][if pregnancy fetish is 1]. Your womb explodes with sensation, as you feel [his of M] swimmers rush straight for your fallopian tubes, filling every crevice and tunnel they can find[end if]!".
+	say "[speech style of M]'Yes... yes... [if pregnancy fetish is 1 and the pregnancy of the player is 0]take my seed, and carry my spawn, whore[otherwise]your [cunt] is pleasing to me, mortal[end if]!'[roman type][line break][BigNameDesc of M] ejaculates deep inside your [vagina][if pregnancy fetish is 1]. Your womb explodes with sensation, as you feel [his of M] swimmers rush straight for your Fallopian tubes, filling every crevice and tunnel they can find[end if]!".
 
 To compute labour to (M - djinn):
 	if M is regional and M is alive:
@@ -536,6 +573,27 @@ To compute (M - djinn) wishing on (J - an accessory):
 
 Section 2 - Damage
 
+To compute damage reaction of (M - djinn):
+	if the cloudy of M > 0 and attack-type is 1:
+		if the health of M < the maxhealth of M / 4 and the difficulty of M > the starting difficulty of M + 1 and the player is getting unlucky:
+			say "As soon as your arm passes through the barrier of clouds, it envelops you! [line break][speech style of M]'You've triggered my trap cloud!'[roman type][line break][BigNameDesc of M] laughs triumphantly as you feel yourself being transported somewhere else!";
+			let R be a random placed jungle room;
+			while R is the location of M:
+				now R is a random placed jungle room;
+			teleport to R;
+			bore M;
+			now the scared of M is 5;
+			say "[line break]You find yourself in the [printed name of R].";
+		otherwise:
+			say "The clouds disperse as your hand passes through them, shocking your fingers with tiny lightning bolts!";
+			BodyRuin 1;
+		now the cloudy of M is -5;
+	otherwise if M is uninterested or M is friendly:
+		say CombatProvokedReaction of M;
+		now the sleep of M is 0;
+	otherwise:
+		say DamageReaction (the health of M) of M.
+
 To say CombatProvokedReaction of (M - djinn):
 	say "[BigNameDesc of M] bellows with anger.[line break][speech style of M]'You dare challenge me to a duel? Do you not know who I am?!'[roman type][line break]".
 
@@ -633,7 +691,7 @@ To say PissFuckDesc of (M - a demoness):
 		compute autotaking L;
 	otherwise:
 		say "You feel like you haven't seen the last of [him of M].";
-		DifficultyUp M by 1;
+		SilentlyDifficultyUp M by 1;
 		now the health of M is the maxhealth of M;
 		bore M;
 		regionally place M.]
@@ -815,7 +873,7 @@ To failed dominance penis punish of (M - djinn):
 
 [The djinn becomes the submissive slut]
 To penetration dominate (M - djinn):
-	say "You wait until the last moment before closing the lamp, and demand a wish as a reward for saving [him of M]. [big he of M] agrees, cocking [his of M] eyebrow as you consider how to phrase it.[line break][variable custom style]'See this [sexual-player-penis]? I want it in a submissive slut, and they've gotta be my type.'[roman type][line break][line break][speech style of M]'Hmm... YOUR type... Very well, mortal. I will grant your wish!'[roman type][line break][BigNameDesc of M] waves [his of M] hands, and a cloud of smoke envelops you! A moment later, you find yourself standing in front of a huge bed with gorgeous canopy curtains. You push the curtains aside to reveal a naked [man of M] with gorgeous brown skin, impossibly soft lips, and a perfectly shaped ass, [his of M] eyes darting around frantically as if struggling to take in [his of M] surroundings. [big his of M] eyes widen as [he of M] notices you, and an adorable crease forms between [his of M] eyebrows as you climb onto the bed and [if M is presenting as female]spread her legs.[otherwise]flip [him of M] over.[end if]";
+	say "You wait until the last moment before closing the lamp, and demand a wish as a reward for saving [him of M]. [big he of M] agrees, cocking [his of M] eyebrow as you consider how to phrase it.[line break][variable custom style]'See this [sexual-player-penis]? I want it in a submissive slut, and they've gotta be my type.'[roman type][line break][line break][speech style of M]'Hmm... YOUR type... Very well, mortal. I will grant your wish!'[roman type][line break][BigNameDesc of M] waves [his of M] hands, and a cloud of smoke envelops you! A moment later, you find yourself standing in front of a huge bed with gorgeous canopy curtains. You push the curtains aside to reveal a naked [man of M] with gorgeous brown skin, impossibly soft lips, and a perfectly shaped ass, [his of M] eyes darting around frantically as if struggling to take in [his of M] surroundings. [big his of M] eyes widen as [he of M] notices you, and an adorable crease forms between [his of M] eyebrows as you climb onto the bed and [if M is presenting as female]spread [his of M] legs.[otherwise]flip [him of M] over.[end if]";
 	if sexual-penis-length > 8:
 		say "[line break][speech style of M]'I-it backfired?! This is bad! This mortal is going to destroy me...'[roman type][line break][BigNameDesc of M] grits [his of M] teeth, [his of M] eyes rolling back in [his of M] head as you slide in your [SexDesc of penis] and begin to fuck [him of M]. [big his of M] [HoleDesc of M] feels just as perfect as it looks, its inner contours seemingly moulded to hug your [SexShaft] in just the right way. Every movement you make feels even better than the last, and no matter how you angle your thrusts, your body doesn't stop begging you to cum right away. [big he of M] isn't much better, [his of M] [if M is presenting as female]back arching and [his of M] chest heaving[otherwise][DickDesc of M] drooling precum[end if] as [he of M] belts out desperate moans. You force yourself to hold on just long enough to push [him of M] to the edge, forcing [him of M] to [if M is presenting as female]douse the sheets with girlcum[otherwise]shoot a squiggly white line across [his of M] belly[end if] before finally losing control and flooding [his of M] [HoleDesc of M] with [semen].";
 		orgasm;
@@ -1002,7 +1060,7 @@ To say StoryAnswer of (M - djinn):
 	say "[speech style of M]'Have you seen Aladdin? Something like that, but with way more sex.'[roman type][line break]".
 
 To say EscapeAnswer of (M - djinn):
-	say "[speech style of M]'[one of]Why would I tell you that? What's in it for me if you escape? Exactly, nothing.'[or]Naturally I am powerful enough to travel between dimensions as I [please]. Mortal plane? Furthest reaches of the cosmos? All child's play. I guess that wouldn't work for you though.'[or]Perhaps if you [if diaper quest is 0]suck my cock[otherwise]call me Daddy[end if] enough times, I will tell you.'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]Why would I tell you that? What's in it for me if you escape? Exactly, nothing.'[or]Naturally I am powerful enough to travel between dimensions as I [please]. Mortal plane? Furthest reaches of the cosmos? All child's play. I guess that wouldn't work for you though.'[or]Perhaps if you [if diaper quest is 0]suck my cock[otherwise]call me [daddytitle of M][end if] enough times, I will tell you.'[in random order][roman type][line break]".
 
 To say AdviceAnswer of (M - djinn):
 	say "[speech style of M]'[one of]Do something too much and you'll get addicted.'[or]Resting on furniture may heal you, but it also resets your exercise counter.'[in random order][roman type][line break]".

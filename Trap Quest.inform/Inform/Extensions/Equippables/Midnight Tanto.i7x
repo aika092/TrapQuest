@@ -12,7 +12,7 @@ To say ClothingDesc of (W - a midnight tanto):
 To say ShortDesc of (W - a midnight tanto):
 	say "Japanese-style knife".
 
-To decide which number is the damage improvement of (W - a midnight tanto):
+To decide which number is the slap damage improvement of (W - a midnight tanto):
 	let X be 4;
 	decide on X.
 

@@ -12,7 +12,7 @@ The remove inappropriate dining dresses rule is listed in the diaper quest fix r
 
 Definition: a dining dress is slitted: decide yes. [Slitted skirts don't block knee attacks]
 Definition: a dining dress is party themed: decide yes.
-Definition: a dining dress is is potentially-bottom-layer-concealing: decide no.
+Definition: a dining dress is potentially-bottom-layer-concealing: decide no.
 To decide which number is the usualHipModesty of (C - a dining dress): decide on 6.
 
 Part 1 - Red Dining Dress

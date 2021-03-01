@@ -174,7 +174,7 @@ To decide which object is the concealer of (T - angel tattoo):
 To decide which object is the at least partial concealer of (T - angel tattoo):
 	if T is listed in the armUses of arms, decide on arms;
 	decide on a random worn not-see-through arm covering clothing.
-To decide which number is the bimbo-influence of (T - angel tattoo):
+To decide which number is the sex-addiction-influence of (T - angel tattoo):
 	decide on -2.
 To decide which number is the initial outrage of (T - angel tattoo):
 	decide on 1.
@@ -580,7 +580,7 @@ To decide which number is the anal-sex-addiction-influence of (T - butterfly-win
 To decide which number is the heaviness of (T - butterfly-wings tattoo):
 	decide on -10.
 
-buttslut tattoo is an ass tattoo. The tattoo-title of buttslut tattoo is "butt slut ass tattoo".
+buttslut tattoo is an ass tattoo. The tattoo-title of buttslut tattoo is "butt slut ass".
 Understand "butt slut", "ass tattoo" as buttslut tattoo.
 Definition: buttslut tattoo is anal sex themed: decide yes.
 Definition: buttslut tattoo is eligible:
@@ -922,7 +922,9 @@ To decide which object is the at least partial concealer of (T - demongirl tatto
 	if T is listed in the armUses of arms, decide on arms;
 	decide on a random worn not-see-through arm covering clothing.
 To decide which number is the sex-addiction-influence of (T - demongirl tattoo):
-	decide on -2.
+	decide on 1.
+To decide which number is the delicateness-influence of (T - demongirl tattoo):
+	decide on 1.
 Definition: demongirl tattoo is demonic: decide yes.
 
 diapered dinosaur tattoo is a dq tattoo. The tattoo-title of diapered dinosaur tattoo is "diapered dinosaur".
@@ -1146,7 +1148,7 @@ Figure of flower ballerina tattoo is the file "Items/Tats/tattoo58.jpg".
 To decide which figure-name is the examine-image of (T - flower ballerina tattoo):
 	decide on figure of flower ballerina tattoo.
 Definition: flower ballerina tattoo is eligible:
-	if the noun is ballet related or the noun is flower themed, decide yes;
+	if the noun is ballet related or the noun is flower themed or the noun is shoes, decide yes;
 	decide no.
 To say tattoo-desc of (T - flower ballerina tattoo):
 	say "A ballerina with a flower instead of a skirt is tattooed on the inside of your left arm.".
@@ -1169,7 +1171,7 @@ Figure of fire palm tattoo is the file "Items/Tats/tattoo132.jpg".
 To decide which figure-name is the examine-image of (T - fire palm tattoo):
 	decide on figure of fire palm tattoo.
 Definition: fire palm tattoo is eligible:
-	if the noun is magic themed or the noun is zap ready equippable or the noun is bomb, decide yes;
+	if the noun is magic themed or the noun is zap ready equippable or the noun is bomb or the noun is blazing dress or the noun is infernal gem or the noun is soulstone, decide yes;
 	decide no.
 To say tattoo-desc of (T - fire palm tattoo):
 	say "A drawing of a burning fire is inked on your right palm. You sense that it will enhance the power of any attacks you make with a wand.".
@@ -1221,7 +1223,7 @@ Definition: free ride tattoo is drawable:
 	if it is not worn and diaper quest is 0 and the number of worn tally tattoos > 0, decide yes;
 	decide no.
 Definition: free ride tattoo is eligible:
-	if the noun is whore themed or the noun is plentiful accessory, decide yes;
+	if the noun is whore themed or the noun is plentiful accessory or the noun is rollerskates, decide yes;
 	decide no.
 To say tattoo-desc of (T - free ride tattoo):
 	say "The words 'Free Ride' have been tattooed on your right cheek, just under your eye. You imagine that people will be less likely to pay you for sex now.".
@@ -1233,7 +1235,7 @@ To decide which number is the initial outrage of (T - free ride tattoo):
 freedom tattoo is a body tattoo. The tattoo-title of freedom tattoo is "freedom".
 Figure of freedom tattoo is the file "Items/Tats/tattoo2.jpg".
 Definition: freedom tattoo is eligible:
-	if the noun is bondage or the noun is submissive collar or the noun is an unlock-key or the noun is bird themed or the noun is slave-dress, decide yes;
+	if the noun is bondage or the noun is submissive collar or the noun is an unlock-key or the noun is bird themed or the noun is slave-dress or the noun is shoes, decide yes;
 	decide no.
 To decide which figure-name is the examine-image of (T - freedom tattoo):
 	decide on figure of freedom tattoo.
@@ -1246,14 +1248,10 @@ To decide which number is the initial outrage of (T - freedom tattoo):
 To decide which number is the cringe of (T - freedom tattoo):
 	decide on 0.
 To decide which object is the concealer of (T - freedom tattoo):
-	let C be a random worn actually dense stockings;
-	if C is a thing, decide on C;
-	decide on a random worn actually dense shoes.
+	decide on a random worn actually dense ankle covering clothing.
 To decide which object is the at least partial concealer of (T - freedom tattoo):
 	if T is listed in the armUses of arms, decide on arms;
-	let C be a random worn not-see-through stockings;
-	if C is a thing, decide on C;
-	decide on a random worn not-see-through shoes.
+	decide on a random worn not-see-through ankle covering clothing.
 
 fuck-me tattoo is a face-tattoo. The tattoo-title of fuck-me tattoo is "fuck me".
 Definition: fuck-me tattoo is eligible: decide no.
@@ -1333,7 +1331,7 @@ hundred percent cunt tattoo is a crotch tattoo. The tattoo-title of hundred perc
 Definition: hundred percent cunt tattoo is drawable:
 	if there is a worn crotch tattoo, decide no;
 	if diaper quest is 1, decide no;
-	if TG fetish is 0 or the player is female, decide no;
+	if TG fetish is 0 or the player is possessing a vagina, decide no;
 	decide yes.
 Definition: hundred percent cunt tattoo is eligible:
 	if the noun is vagina themed and the noun is not anal sex themed and the noun is not oral sex themed, decide yes;
@@ -1342,7 +1340,7 @@ Definition: hundred percent cunt tattoo is eligible:
 To say tattoo-desc of (T - hundred percent cunt tattoo):
 	say "The words '100% CUNT' are tattooed in block capitals above your crotch. [if the player is not possessing a vagina]At the moment, this is clearly a lie![otherwise]Now that this is true, it seems to be helping your mind stay focused, but you can also feel it making your [vagina] somehow... desirable.[end if]".
 To decide which number is the bimbo-influence of (T - hundred percent cunt tattoo):
-	if the player is female, decide on -2;
+	if the player is possessing a vagina, decide on -2;
 	decide on 0.
 This is the hundred percent cunt tattoo pussy slut rule:
 	if hundred percent cunt tattoo is worn, increase the desirability of vagina by 10.
@@ -1681,7 +1679,7 @@ Definition: nintendolls-brand tattoo (called T) is drawable:
 	if it is not worn and lactation fetish is 1, decide yes;
 	decide no.
 Definition: nintendolls-brand tattoo is eligible:
-	if the noun is cow themed, decide yes;
+	if the noun is cow themed or the noun is shoes, decide yes;
 	decide no.
 To say tattoo-desc of (T - nintendolls-brand tattoo):
 	say "The Nintendolls logo has been branded just below your cleavage, just like a cow. You can feel it making your breasts much more active!".
@@ -1987,7 +1985,7 @@ Definition: pussy deluxe tattoo is vagina themed: decide yes.
 Definition: pussy deluxe tattoo is whore themed: decide yes.
 
 put-it-in-my-ass tattoo is an ass tattoo. The tattoo-title of put-it-in-my-ass tattoo is "put it in my butt".
-Understand "put", "put it", "put it in ", "it in my" as put-it-in-my-ass tattoo.
+Understand "put", "put it", "put it in ", "it in my", "my butt" as put-it-in-my-ass tattoo.
 Definition: put-it-in-my-ass tattoo is eligible:
 	if the noun is candy or the noun is heart themed or the noun is romance-novel, decide yes;
 	decide no.
@@ -1996,9 +1994,11 @@ Definition: put-it-in-my-ass tattoo is drawable:
 	if diaper quest is 0, decide yes;
 	decide no.
 To say tattoo-desc of (T - put-it-in-my-ass tattoo):
-	say "The words 'put it in my butt' appear on tattooed love hearts on your right butt cheek.[line break][if the anal sex addiction of the player < 3][line break][variable custom style]Please don't! *sob*[otherwise if the anal sex addiction of the player < 7][variable custom style]Well now everything is going to aim for my [asshole], isn't it?![otherwise][line break][second custom style]This way everything and everyone knows that my [asshole] is open for business![end if][roman type][line break]".
+	say "The words 'put it in my butt' appear on tattooed love hearts on your right butt cheek.[line break][if the anal sex addiction of the player < 3][line break][variable custom style]Please don't! *sob*[otherwise if the anal sex addiction of the player < 7][variable custom style]Well now everything is going to aim for my [asshole], isn't it?![otherwise][line break][second custom style]This way everything and everyone knows that my [asshole] is open for business![end if][roman type][line break]You can sense that it will make people more likely to choose to have anal sex with you.".
 To decide which number is the initial outrage of (T - put-it-in-my-ass tattoo):
-	decide on 10.
+	decide on 7.
+To decide which number is the anal-sex-addiction-influence of (T - put-it-in-my-ass tattoo):
+	decide on 1.
 This is the put-it-in-my-ass tattoo butt slut rule:
 	if put-it-in-my-ass tattoo is worn, increase the desirability of asshole by 10.
 The put-it-in-my-ass tattoo butt slut rule is listed in the butt slut eligibility rules.
@@ -2022,7 +2022,7 @@ To say tattoo-desc of (T - respect the pussy tattoo):
 To decide which number is the initial outrage of (T - respect the pussy tattoo):
 	decide on 7.
 To decide which number is the delicateness-influence of (T - respect the pussy tattoo):
-	if the player is female and T is currently visible, decide on -2;
+	if the player is possessing a vagina and T is currently visible, decide on -2;
 	decide on 0.
 Definition: respect the pussy tattoo is vagina themed: decide yes.
 
@@ -2285,7 +2285,7 @@ Definition: spank-me-heart tattoo is drawable:
 To decide which figure-name is the examine-image of (T - spank-me-heart tattoo):
 	decide on figure of spank-me-heart tattoo.
 To say tattoo-desc of (T - spank-me-heart tattoo):
-	say "Your right ankle has a small heart tattooed on it, with a butt inside, with a handprint on the butt. The words 'spank me' can be read above and underneath.".
+	say "Your right ankle has a small heart tattooed on it, with a butt inside, with a hand-print on the butt. The words 'spank me' can be read above and underneath.".
 To decide which number is the delicateness-influence of (T - spank-me-heart tattoo):
 	decide on 1.
 To decide which number is the initial outrage of (T - spank-me-heart tattoo):
@@ -2295,14 +2295,10 @@ To decide which number is the initial cringe of (T - spank-me-heart tattoo):
 Definition: spank-me-heart tattoo is heart themed: decide yes.
 Definition: spank-me-heart tattoo is impact play themed: decide yes.
 To decide which object is the concealer of (T - spank-me-heart tattoo):
-	let C be a random worn actually dense stockings;
-	if C is a thing, decide on C;
-	decide on a random worn actually dense shoes.
+	decide on a random worn actually dense ankle covering clothing.
 To decide which object is the at least partial concealer of (T - spank-me-heart tattoo):
 	if T is listed in the armUses of arms, decide on arms;
-	let C be a random worn not-see-through stockings;
-	if C is a thing, decide on C;
-	decide on a random worn not-see-through shoes.
+	decide on a random worn not-see-through ankle covering clothing.
 
 spank my kitty tattoo is an ass tattoo. The tattoo-title of spank my kitty tattoo is "spank my kitty".
 Figure of spank my kitty tattoo is the file "Items/Tats/tattoo4.jpg".
@@ -2333,7 +2329,7 @@ Definition: spank my kitty tattoo is impact play themed: decide yes.
 
 spit first tattoo is an asshole-tattoo. The tattoo-title of spit first tattoo is "spit first".
 Definition: spit first tattoo is eligible:
-	if the noun is lubricant, decide yes;
+	if the noun is lubricant or the noun is pocketwipes, decide yes;
 	decide no.
 To say tattoo-desc of (T - spit first tattoo):
 	say "The word SPIT is tattooed above your [asshole], and FIRST is tattooed directly underneath it, with water effects going into the entrance. You can tell that it somehow enhances the effects of lube.".
@@ -2398,7 +2394,7 @@ To decide which number is the initial outrage of (T - a tally tattoo):
 asshole-tally tattoo is a tally tattoo. The tattoo-title of asshole-tally tattoo is "asshole tally".
 Understand "asshole tally" as asshole-tally tattoo.
 To say MediumDesc of (T - asshole-tally tattoo):
-	say "asshole tally ([tallies of item described] [if tallies of item described is 1]tally[otherwise]tallies[end if])".
+	say "asshole tally ([tallies of T] [if tallies of T is 1]tally[otherwise]tallies[end if])".
 To decide which object is the concealer of (T - asshole-tally tattoo):
 	decide on a random worn potentially asshole covering clothing.
 To decide which object is the at least partial concealer of (T - asshole-tally tattoo):
@@ -2412,7 +2408,7 @@ Definition: asshole-tally tattoo is semen themed:
 vagina-tally tattoo is a tally tattoo. The tattoo-title of vagina-tally tattoo is "vagina tally".
 Understand "vagina tally" as vagina-tally tattoo.
 To say MediumDesc of (T - vagina-tally tattoo):
-	say "vagina tally ([tallies of item described] [if tallies of item described is 1]tally[otherwise]tallies[end if])".
+	say "vagina tally ([tallies of T] [if tallies of T is 1]tally[otherwise]tallies[end if])".
 To decide which object is the concealer of (T - a vagina-tally tattoo):
 	decide on a random worn potentially vagina covering clothing.
 To decide which object is the at least partial concealer of (T - a vagina-tally tattoo):
@@ -2423,7 +2419,7 @@ Definition: vagina-tally tattoo is vagina themed: decide yes.
 mouth-tally tattoo is a tally tattoo. The tattoo-title of mouth-tally tattoo is "mouth tally".
 Understand "mouth tally" as mouth-tally tattoo.
 To say MediumDesc of (T - mouth-tally tattoo):
-	say "mouth tally ([tallies of item described] [if tallies of item described is 1]tally[otherwise]tallies[end if])".
+	say "mouth tally ([tallies of T] [if tallies of T is 1]tally[otherwise]tallies[end if])".
 To decide which object is the concealer of (T - mouth-tally tattoo):
 	decide on a random worn hood.
 To decide which object is the at least partial concealer of (T - mouth-tally tattoo):
@@ -2444,6 +2440,7 @@ Definition: target tattoo is drawable:
 	if diaper quest is 1, decide no;
 	decide yes.
 Definition: target tattoo is eligible:
+	if the noun is pocketwipes, decide yes;
 	if the noun is boob themed, decide yes;
 	if the noun is clothing:
 		if the semen-soak of the noun + the urine-soak of the noun > 0, decide yes;
@@ -2567,7 +2564,7 @@ Definition: titties out tattoo is eligible:
 	if the noun is very low cut clothing or the noun is ridiculously low cut clothing, decide yes;
 	decide no.
 To say tattoo-desc of (T - titties out tattoo):
-	say "You have the words 'WHEN IN DOUBT TITTIES OUT' tattooed under your [BreastDesc], with some sort of magic portal styled out of straight lines underneath. You feel like it's more likely that you'll have a wardrobe malfunction.".
+	say "You have the words 'WHEN IN DOUBT TITTIES OUT' tattooed under your [BreastDesc], with some sort of magic portal, styled out of straight lines underneath. You feel like it's more likely that you'll have a wardrobe malfunction.".
 To decide which number is the initial outrage of (T - titties out tattoo):
 	decide on 6.
 Definition: titties out tattoo is boob themed: decide yes.
@@ -2629,7 +2626,7 @@ To decide which number is the delicateness-influence of (T - tribal wrist tattoo
 ABDL finger tattoo is a hand-tattoo. The tattoo-title of ABDL finger tattoo is "ABDL finger".
 Definition: ABDL finger tattoo is eligible:
 	if diaper lover <= 0, decide no;
-	if the noun is mittens or the noun is soiled-diaper, decide yes;
+	if the noun is mittens or the noun is soiled-diaper or the noun is pocketwipes, decide yes;
 	decide no.
 To say tattoo-desc of (T - ABDL finger tattoo):
 	say "The black outline of a disposable diaper is tattooed on the back of one hand, along with the letters 'ABDL' and safety pins on the back of your fingers.".
@@ -2749,7 +2746,7 @@ Book - W Tattoos
 
 walking teddy bear tattoo is a dq tattoo. The tattoo-title of walking teddy bear tattoo is "walking teddy bear". Understand "walking", "teddy", "bear" as walking teddy bear tattoo.
 Definition: walking teddy bear tattoo is eligible:
-	if the noun is bear themed, decide yes;
+	if the noun is bear themed or the noun is shoes, decide yes;
 	decide no.
 To say tattoo-desc of (T - walking teddy bear tattoo):
 	say "A drawing of a walking, living teddy bear is tattooed to the left of your belly.".
@@ -2814,7 +2811,8 @@ Definition: wet dream tattoo is drawable:
 	if diaper quest is 1, decide no;
 	decide yes.
 Definition: wet dream tattoo is eligible:
-	if the noun is semen themed or the noun is romance-novel, decide yes;
+	if the noun is pocketwipes, decide yes;
+	if the noun is semen themed or the noun is swimming themed or the noun is romance-novel, decide yes;
 	if the noun is clothing:
 		if the semen-soak of the noun > 0, decide yes;
 	decide no.

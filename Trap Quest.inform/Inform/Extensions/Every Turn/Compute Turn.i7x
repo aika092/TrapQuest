@@ -481,10 +481,10 @@ To compute pink smoke:
 		let R be a random number between 1 and 12;
 		if the player is not able to breathe, now R is 0;
 		if diaper quest is 1:
-			if the player is male and a random number between 1 and 3 is 1, now R is 7; [penis shrink]
+			if the player is possessing a penis and a random number between 1 and 3 is 1, now R is 7; [penis shrink]
 			otherwise now R is 1; [arousal]
 		if the player is in School34 and a random number between 1 and 8 > 1, now R is 1; [arousal]
-		if (the player is a flatchested trap or (diaper quest is 1 and the player is male)) and R > 6:
+		if (the player is a flatchested trap or (diaper quest is 1 and the player is possessing a penis)) and R > 6:
 			say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room.";
 			PenisDown 1;
 		otherwise if R > 6 and diaper quest is 0:
@@ -546,7 +546,7 @@ To Compute Compulsions:
 			if D is penetrating a fuckhole:
 				destroy D;
 		now P is worn by the player;
-		if the player is male:
+		if the player is not possessing a vagina:
 			now P is penetrating asshole;
 		otherwise:
 			now P is penetrating vagina;

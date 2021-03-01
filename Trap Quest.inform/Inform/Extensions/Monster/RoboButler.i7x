@@ -126,6 +126,28 @@ Part 3 - Combat
 
 Section 1 - Attack
 
+To compute damaging attack of (M - a robobutler):
+	if the player is the donator and the difficulty of M > the starting difficulty of M and a random number between 1 and 3 is 1:
+		compute stunning attack of M;
+	otherwise:
+		compute striking attack of M.
+
+To compute stunning attack of (M - a robobutler):
+	say "A slot opens up on [NameDesc of M]'s chest, firing out a fluid-filled dart! [run paragraph on]";
+	let B be the painful-part of M;
+	if the accuracy roll of M >= the dexterity of the player:
+		say "The dart hits you [if B is face]in the cheek[otherwise]in the [printed name of B][end if]! [run paragraph on]";
+		if the difficulty of M > the starting difficulty of M + 1 and a random number between 1 and 3 is 1:
+			say "You feel your dexterity being drained as the poison spreads through your veins!";
+			increase fudge-poison-timer by 20 + (3 * (the difficulty of M - the starting difficulty of M));
+		otherwise:
+			say "You feel your fatigue rapidly building up as the poison spreads through your veins!";
+			FatigueUp 20;
+		BodyRuin 1;
+		if B is exposed, PainUp 1;
+	otherwise:
+		say "You get out of the way before the dart hits you, and it shatters harmlessly against a wall.".
+
 Definition: a robobutler is willing to forcefeed: decide yes.
 
 To compute forcefeed of (M - a robobutler):

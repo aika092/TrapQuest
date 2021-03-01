@@ -217,7 +217,7 @@ To set up (Q - nice-quest):
 	now the nice-count of Q is 0.
 
 To say QuestFlav of (Q - nice-quest):
-	say "You sense that it wants you to prove you are nice by [bold type]not attacking or resisting[roman type] during your first several encounters.".
+	say "You sense that it wants you to prove you are nice by [bold type]not attacking[if diaper quest is 0] or resisting[end if][roman type] during your first several encounters.".
 
 To say QuestTitle of (Q - nice-quest):
 	say " (naughty or nice quest)".
@@ -264,7 +264,7 @@ To progress quest of (Q - naughty-quest):
 			destroy C.
 
 Report resisting:
-	compute naughtification.
+	if diaper quest is 0, compute naughtification.
 
 Report slapping:
 	compute naughtification.

@@ -275,7 +275,7 @@ Definition: penis is erect-on-request:
 	if R < -1, decide no;
 	decide yes.
 
-[Sometimes NPC's will test the player to see if they get an erection, and punish them if it happens.]
+[Sometimes NPCs will test the player to see if they get an erection, and punish them if it happens.]
 Definition: penis is flaccid-under-pressure:
 	if penis is penis-erect, decide no;
 	if penis is not able to get erect, decide yes;
@@ -379,7 +379,7 @@ The penis doesn't exist rule is listed in the penis presentable rules.
 [When the donator lock comes off, this rule must be removed]
 [This is the penis in beta rule:
 	if the player is not the donator:
-		if auto is 0, say "This feature is currently in beta. Wait until it comes out!s";
+		if auto is 0, say "This feature is currently in beta. Wait until it comes out!";
 		rule fails.
 The penis in beta rule is listed in the penis presentable rules.]
 
@@ -474,7 +474,7 @@ To say TotalDesc of penis:
 		otherwise:
 			if penis is penis-erect, say "Your [one of]erect[or]hard[or]stiff[at random] [ShortDesc of penis] stands at attention, and your [ShortBallsDesc] [if the size of penis > 5]sway freely[otherwise if the size of penis > 3]hang freely[otherwise]are barely noticeable[end if]. ";
 			otherwise say "Your soft [ShortDesc of penis] and [ShortBallsDesc] [if the size of penis > 5]sway freely. [otherwise if the size of penis > 3]hang freely. [otherwise]are barely noticeable. [end if]";
-	otherwise if the player is male:
+	otherwise if the player is sexed male:
 		say "A doll-like flat mound exists where your penis used to be[if watersports mechanics is 1]. There's just a tiny hole to allow you to pee[end if].".
 
 To say ShortBallsDesc:

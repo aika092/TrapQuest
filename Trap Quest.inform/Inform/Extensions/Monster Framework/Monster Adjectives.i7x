@@ -3,11 +3,11 @@ Monster Adjectives by Monster Framework begins here.
 A monster is a kind of animal. A dungeon boss is a kind of monster.
 Definition: a dungeon boss is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 A monster can be interested or uninterested. A monster is usually uninterested. [Are they currently actively looking to interact with the player?]
-A monster has a number called sleep. The sleep of a monster is usually 0. [The number of seconds until they wake up.]
+A monster has a number called sleep. [The number of seconds until they wake up.]
 Definition: a monster is awake rather than asleep:
 	if the sleep of it <= 0 and timeBombTime <= 0, decide yes;
 	decide no.
-A monster has a number called sex-length. The sex-length of a monster is usually 0. [Used in sex to determine how many turns until ejaculation. Also can be used to track something else outside of sex.]
+A monster has a number called sex-length. [Used in sex to determine how many turns until ejaculation. Also can be used to track something else outside of sex.]
 A monster has a number called raw difficulty. The raw difficulty of a monster is usually 1. [Used in combat calculations, higher number means they take less damage and it's harder to run away]
 To decide which number is the difficulty of (M - a monster):
 	decide on the raw difficulty of M[ + game difficulty].
@@ -25,26 +25,28 @@ A monster can be friendly-fucking. [Are they having non-aggressive sex with you?
 Definition: a monster is damageable: decide yes. [A monster who is not damageable takes no damage from attacks.]
 A monster has a number called health. The health of a monster is usually 10. [Current HP, if this hits 0 they die.]
 To decide which number is the maxhealth of (M - a monster):
+	decide on the initial maxhealth of M * combatSpeed.
+To decide which number is the initial maxhealth of (M - a monster):
 	if tutorial is 1, decide on 99999;
 	let X be 10;
 	increase X by (the difficulty of M * 7) / 3;
 	if M is durable-tentacle-monster, increase X by the difficulty of M;
 	decide on X.
-A monster has a number called boredom. The boredom of a monster is usually 0. [The number of seconds until they will begin actively perceiving. If the monster doesn't fall asleep, set this to something between 100 and 250 after sex to stop the monster just fucking the player repeatedly.]
-A monster has a number called friendly boredom. The friendly boredom of a monster is usually 0. [The number of turns that the monster has been following the player around. The higher it gets, the more chance that the monster will get bored and leave the player alone.]
+A monster has a number called boredom. [The number of seconds until they will begin actively perceiving. If the monster doesn't fall asleep, set this to something between 100 and 250 after sex to stop the monster just fucking the player repeatedly.]
+A monster has a number called friendly boredom. [The number of turns that the monster has been following the player around. The higher it gets, the more chance that the monster will get bored and leave the player alone.]
 A monster has a room called target-room. [Any monster that can change locations at unusual times might want to use this to hold a room in memory.]
 [A monster can be captive or released. A monster is usually released.] [Captive monsters are completely docile unless attacked, and they usually have a trigger to become 'released'.] [Replaced with the monster-restriction property]
 A monster can be dying. A monster is usually not dying. [A flag used by the game to remind itself that the monster should be removed from play.]
 Definition: A monster is wenchy: decide no.
-A monster has a number called times-dominated. The times-dominated of a monster is usually 0.[Like times-submitted, but for dominant sex.]
-A monster has a number called scared. The scared of a monster is usually 0. [How many seconds left until the monster is no longer scared. Scared monsters will attempt to flee from the player upon sight.]
+A monster has a number called times-dominated. [Like times-submitted, but for dominant sex.]
+A monster has a number called scared. [How many seconds left until the monster is no longer scared. Scared monsters will attempt to flee from the player upon sight.]
 Definition: a monster is father material:[This means the monster can father children.]
 	if it is male, decide yes;
 	decide no.
 A person can be intelligent or unintelligent. A monster is usually unintelligent. [Essentially, can they speak English?; TODO: definition]
 A monster is usually female. [Male = Do they have a sex organ that can ejaculate semen?]
-A monster has a number called times-met. The times-met of a monster is usually 0.
-A monster has a number called times-submitted. The times-submitted of a monster is usually 0.
+A monster has a number called times-met.
+A monster has a number called times-submitted.
 A monster can be moved. A monster is usually not moved. [Has the monster moved this turn?]
 A monster can be seeked. A monster is usually not seeked. [Has the monster moved aggressively this turn?]
 A monster can be stalled. A monster is usually not stalled. [If the player is moving slowly so monsters get a double move, monsters in the location of the player who aren't already chasing the player lose their second action.]
@@ -66,9 +68,11 @@ Definition: a monster is hotel dwelling: decide no.
 Definition: a monster is mansion dwelling: decide no.
 
 A monster can be intelligent. A monster is usually unintelligent. [Essentially, can they speak English?]
-To say speech style of (M - a monster):
+To say speech style of (M - a person):
 	if M is male, say first custom style; [has a penis = red]
 	otherwise say second custom style.
+To say speech style of (M - yourself):
+	say variable custom style.
 Definition: a monster is raunchy: decide no.
 A monster can be airborne or flightless. A monster is usually flightless. [Does the monster fly or does it walk around? (Currently used to decide if the monster can stop the player standing back up by standing on their hair)]
 A monster can be strangers, survived or triumphant (this is the monster-history property). A monster is usually strangers. [A monster who is strangers has never voluntarily gotten aggressive at the player. A survived monster has attacked the player, and then failed to catch them, and then gotten bored. A triumphant monster has defeated the player. We use this to reward the player for surviving several encounters with DIFFERENT enemies.]
@@ -168,7 +172,7 @@ Definition: a monster is already moved rather than unmoved:
 	if it is moved or it is seeked, decide yes;
 	decide no.
 
-A monster has a number called last-interaction. The last-interaction of a monster is usually 0.
+A monster has a number called last-interaction.
 [
 Last-Interaction, delayed, expectant are used to track submissive interactions between the player and an unfriendly NPC.
 Last Interaction Reference:
@@ -229,6 +233,9 @@ A monster can be unleashed, caged, guarding, unconcerned, fucked-silly, sex-ensl
 Definition: a monster is threatening rather than non-threatening:
 	if it is unleashed or it is guarding, decide yes;
 	decide no. [non-threatening can't attack the player (but might be unfriendly and caged)]
+Definition: a monster is attack-threatening: [monsters that are NOT attack-threatening skip the 'compute attack' function.]
+	if it is threatening and it is unfriendly, decide yes;
+	decide no.
 Definition: a monster is pacified rather than unpacified:
 	if it is non-threatening and it is not caged, decide yes;
 	decide no. [Will never be unfriendly in its current state]

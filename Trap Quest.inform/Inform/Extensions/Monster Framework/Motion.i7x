@@ -7,8 +7,11 @@ To check default motion of (M - a monster):
 	if M is penetrating a body part:
 		dislodge M;
 	if M is undefeated and M is willing to punish untidiness and the player is not in the location of M: [While the NPC idly wanders, it can pick up leftover soiled diapers]
-		repeat with D running through soiled-diaper in the location of M:
-			now D is carried by M;
+		repeat with D running through on-stage soiled-diaper:
+			if D is in the location of M:
+				if M is in the location of the player, say "[BigNameDesc of M] picks up [NameDesc of D] with a disgusted look on [his of M] face.";
+				now D is carried by M;
+				now the boredom of M is 0;
 	compute monstermotion of M;
 	now M is moved.
 
@@ -177,7 +180,7 @@ To compute periodic healing of (M - a monster):
 	if the poison-status of M > 0:
 		decrease the poison-status of M by 1;
 		if the poison-status of M is 0 and M is in the location of the player and M is awake, say "[BigNameDesc of M] is no longer poisoned!";
-	if the M is awake:
+	if M is awake:
 		if M is uninterested, MonsterHeal M by 2;[Uninterested monsters heal every turn.]
 	otherwise:
 		MonsterHeal M by 4.[Sleeping monsters always get to heal, and they heal double]

@@ -280,11 +280,11 @@ To check that (C - an underdress) usually goes under (D - an overdress):
 To check that (C - a bra) usually goes under (D - a corset):
 	rule succeeds.
 
-To check that (C - a dress) usually goes under (D - a bra):
+To check that (C - an underdress) usually goes under (D - a bra):
 	if C is bottom-exclusive, rule succeeds;
 	rule fails.
 
-To check that (C - a bra) usually goes under (D - a dress):
+To check that (C - a bra) usually goes under (D - an underdress):
 	if D is bottom-exclusive, rule fails;
 	rule succeeds.
 

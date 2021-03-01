@@ -41,10 +41,11 @@ To Execute Landing:
 	if the player is in Sky01:
 		say "You have no idea where you are going to land.";
 		now the player is in a random placed jungle room;
+		now playerRegion is Woods;
 		repeat with M running through monsters in the location of the player:
-			compute perception of M;
+			check guaranteed perception of M;
 	let monster-flav be 0;
-	repeat with M running through dangerous monsters in the location of the player:
+	repeat with M running through combative monsters:
 		if monster-flav is 0 and the sex addiction of the player < 10 and the bimbo of the player > 4, say "Seeing the danger below, you pathetically try to flap your arms to stay airborne, but just manage to make yourself look like an utter idiot.";
 		say LandingTaunt of M;
 		now monster-flav is 1;

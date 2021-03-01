@@ -20,7 +20,7 @@ To decide which number is the bartering value of (T - an electric fan) for (M - 
 	decide on 5.
 To decide which number is the bartering value of (T - an electric fan) for (M - a mechanic):
 	decide on 3.
-To say MonsterAcceptFlav of (M - a mechanic) for (T - an electric fan):
+To say MonsterOfferAcceptFlav of (M - a mechanic) for (T - an electric fan):
 	say "[speech style of M]'Ooh, I'd almost run out of this kind of battery!'[roman type][line break]".
 
 [air tentacles if you try to use it in a boss room]
@@ -71,7 +71,7 @@ Carry out fanning:
 			let M be entry 1 of here-monsters;
 			say "[BigNameDesc of M] stands in front of you, completely unaffected by the wind, looking menacing. It seems like you may have made a huge mistake by trying that here.";
 			if diaper quest is 0:
-				say "Several tentacles made of pure pressurized air materialise in front of you, and then the tornado around you lifts you off the ground, leaving your orifices completely defenceless as the air tentacles move to penetrate you in every fuckhole, quickly making you 'airtight'. They widen and widen as more and more barely visible tentacles force their way into your body!";
+				say "Several tentacles made of pure pressurised air materialise in front of you, and then the tornado around you lifts you off the ground, leaving your orifices completely defenceless as the air tentacles move to penetrate you in every fuckhole, quickly making you 'airtight'. They widen and widen as more and more barely visible tentacles force their way into your body!";
 				repeat with O running through orifices:
 					if O is not actually occupied:
 						now the noun is penetrating O;

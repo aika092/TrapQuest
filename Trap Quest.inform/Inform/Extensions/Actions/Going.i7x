@@ -59,10 +59,10 @@ Check going south:
 	now the travel-opposite of the player is north;
 
 Check going up:
-	if there is a golem in the location of the player, say "You're going to need to deal with this monster!" instead.
+	if there is a golem in the location of the player, say "[bold type][BigNameDesc of golem] stands in front of the stairwell, blocking the way. [roman type]You're going to need to deal with [him of golem] first!" instead.
 
 Check going down:
-	if there is a golem in the location of the player, say "You're going to need to deal with this monster!" instead.
+	if there is a golem in the location of the player, say "[bold type][BigNameDesc of golem] stands in front of the stairwell, blocking the way. [roman type]You're going to need to deal with [him of golem] first!" instead.
 
 Carry out going up (this is the hotel-setup rule):
 	if the player is in Stairwell02:
@@ -368,16 +368,17 @@ Check going:
 		if the player is prone and a random number between -3 and 3 > the weight of the player:
 			say "You try to crawl forward but by pushing on the ground with your extremely light body, you inadvertently stand up.";
 			silently try standing;
-		if vampiress is chain-tethered:
+		if vampiress is chain-tethering:
 			check tethering;
-			if vampiress is chain-tethered:
+			if vampiress is chain-tethering:
 				if the strength roll of vampiress > the strength of the player:
 					say TetherMove;
 					now another-turn is 1 instead;
 				otherwise:
 					compute TetherBust;
 		[Firstly, monsters each get a chance to block the player, this is only likely to happen if the player has low dexterity or lots of movement reductions.]
-		repeat with M running through dangerous monsters in the location of the player:
+		if (the noun is up or the noun is down) and golem is in the location of the player and golem is uninterested, check guaranteed perception of golem; [golem wakes up to block if present]
+		repeat with M running through combative monsters:
 			if M is successfully blocking:
 				allocate 2 seconds;
 				say "[another-turn-flavour] [MovementBlock of M]" instead; [In the 'successfully blocking check' we fill `another-turn-flavour` with the details of the main thing slowing the player down.]
@@ -468,8 +469,12 @@ Check going:
 	[Finally we handle portals.]
 	let W be a random warp portal in the location of the player;
 	if W is warp portal and the noun is the covered-direction of W:
-		if playerRegion is dungeon and location of hotel portal is not discovered and location of mansion portal is not discovered and class-time < 1000 and class-time > 0 and armband is in-play and armband is not solid gold, say "[if armband is worn]Your armband pulls you away, not wanting to let you in! Perhaps you need to wait until it's time for the next class[otherwise]The warp portal turns momentarily red, and you can't seem to push any part of your body through it, as if it was a metal wall! Perhaps you'd need to be wearing that armband[end if]?" instead;
-		if W is school portal and (class-time is 1000 or class-time < 0) and armband is worn and armband is not solid gold and there is an alive undefeated correctly-ranked teacher, say "Your armband pulls you away, not wanting to let you leave! Perhaps you need to attend class first?" instead;
+		if playerRegion is dungeon and location of hotel portal is not discovered and location of mansion portal is not discovered and class-time < 1000 and class-time > 0 and armband is worn and armband is not solid gold and the player is the donator:
+			say "Your armband hasn't beeped yet. If you enter the school before it's beeped even once, even if you take a lesson, you won't be able to access the Extra Credit Zone. Are you sure you want to enter the school early?";
+			if the player is not consenting:
+				now seconds is 0;
+				say "Action cancelled." instead;
+		if W is school portal and (class-time is 1000 or class-time <= 0) and armband is worn and armband is not solid gold and there is an alive undefeated correctly-ranked teacher, say "Your armband pulls you away, not wanting to let you leave! Perhaps you need to attend class first?" instead;
 		if the player is glue stuck:
 			say "You stretch and strain towards the portal, and finally feel it take a grip on you!";
 			compute raw glue escaping a random glue in the location of the player with 1;
@@ -504,7 +509,7 @@ Carry Out Going (this is the monsters-go-next rule):
 				compute movement of M;
 		let R be the room noun from the location of the player; [NPCs in the room that the player is entering don't move yet]
 		repeat with M running through alive simulated monsters:
-			unless M is vine boss or M is in R, compute turn 2 of M;
+			unless M is vine boss or M is in R or M is moved, compute turn 2 of M; [if the player used a smoke bomb, we may have flagged monsters in the room as 'moved', and we need to catch that here]
 		if the noun is not up and the noun is not down, compute slow movement.
 
 previous-slow-movement-flavour is a text that varies.
@@ -780,8 +785,7 @@ Report going when playerRegion is Woods:
 		follow the handle snagged clothing rule.
 
 This is the handle snagged clothing rule:
-	let C be a random worn stuck skirted clothing;
-	if C is clothing:
+	repeat with C running through worn stuck skirted clothing:
 		let M be a random reactive interested unpacified buddy monster;
 		if M is monster:
 			say "[speech style of M]'Here, let me help you with that.'[roman type][line break][BigNameDesc of M] frees your [ShortDesc of C] from the foliage![line break][speech style of M]'You should be more careful.'[roman type][line break]";
@@ -793,19 +797,19 @@ This is the handle snagged clothing rule:
 			if the player is able to use manual dexterity, set numerical response 2 to "try to free it with your hands";
 			set numerical response 0 to "wait and hope someone else helps you";
 			compute multiple choice question;
-			if player-numerical-response is 2:
+			if player-numerical-response is 1:
+				say "You sacrifice your [C], pulling forward, damaging it beyond repair but immediately freeing yourself.";
+				destroy C;
+			otherwise:
 				let R be a random number between 1 and 3;
-				if debuginfo > 0, say "[input-style]Snag release roll: d3 ([R]) | (2.5) difficulty[roman type][line break]";
-				if R is 3:
+				if debuginfo > 0 and player-numerical-response is 2, say "[input-style]Snag release roll: d3 ([R]) | (2.5) difficulty[roman type][line break]";
+				if R is 3 and player-numerical-response is 2:
 					say "You manage to wiggle it free. Phew!";
 					now C is not stuck;
 				otherwise:
-					say "You don't manage it this time. You'll have to try again!";
-					now another-turn-action is the handle snagged clothing rule;
-				now another-turn is 1;
-			otherwise:
-				say "You sacrifice your [C], pulling forward, damaging it beyond repair but immediately freeing yourself.";
-				destroy C.
+					if player-numerical-response is 2, say "You don't manage it this time. You'll have to try again!";
+					add the handle snagged clothing rule to another-turn-rules, if absent;
+				now another-turn is 1.
 
 
 Going ends here.

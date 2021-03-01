@@ -18,7 +18,7 @@ Check begging:
 				allocate 6 seconds;
 				say "[variable custom style]'GGHGPHMMN!'[roman type][line break][big he of M] probably didn't understand that.";
 			otherwise:
-				say "[one of]How are you going to beg? Your mouth is full![or]You can't beg now, your mouth is full, silly![in random order]";
+				say "[one of]How are you going to beg? Your mouth is busy![or]You can't beg now, your mouth is busy, silly![in random order]";
 		otherwise if the player is able to trigger manual speech:
 			do nothing; [Player has chosen to speak, so we allow it]
 		otherwise:

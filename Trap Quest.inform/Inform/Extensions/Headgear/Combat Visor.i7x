@@ -20,16 +20,13 @@ To set up magic state of (C - a combat visor):
 	now the raw-magic-modifier of C is 0.
 
 Definition: combat visor is cursable: decide no.
-
 Definition: combat visor is alwaysSure: decide yes.
-
 Definition: combat visor is immune to change: decide yes.
-
 Definition: combat visor is transformation-protected: decide yes.
-
 Definition: combat visor is destructible: decide no.
-
 Definition: combat visor is stealable: decide no.
+Definition: combat visor is nudism-enabling: decide yes.
+Definition: combat visor is too boring: decide no.
 
 verbose-debug is a number that varies.
 alwaysCombatVisor is initially false.

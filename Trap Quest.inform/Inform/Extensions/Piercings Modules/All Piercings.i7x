@@ -166,6 +166,7 @@ To decide which object is the at least partial concealer of (C - clitoris lead):
 	decide on nothing.
 
 Definition: clitoris lead (called C) is subduing:[Can C be held by monsters to fully control the player?]
+	if the at least partial concealer of C is a thing, decide no;
 	decide yes.
 
 Definition: yourself is clit stuck:
@@ -674,8 +675,8 @@ To compute periodic effect of (P - head-module):
 			IntDown 1;
 			increase the int-transfer of P by 1;
 			if the lips of face >= max lip size or HL / 3 > (3 - the lips of face):
-				FakeHairUp 1;
 				say "[bold type]Your hair [if the fake largeness of hair > 0]extensions suddenly feel terribly warm and they suddenly stretch in size[otherwise]suddenly feels terribly warm as extensions begin to manifest themselves at the tips[end if]! ";
+				FakeHairUp 1;
 			otherwise:
 				LipsUp 1;
 				say "[bold type]Your lips suddenly feel terribly warm as they puff out inside, even more collagen having been created inside by the module! ";

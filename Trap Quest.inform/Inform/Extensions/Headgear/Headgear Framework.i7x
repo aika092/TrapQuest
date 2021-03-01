@@ -167,6 +167,7 @@ To compute post transformation effect of (H - a headgear):
 	unless PC1 matches the text PC2, compute class outfit of H. [In general if the player changes class they get a new outfit where possible. NB this won't replace clothing that is still class-relevant, that will need to be done manually]
 
 Report wearing a headgear:
+	follow the player class rules;
 	compute class outfit of the noun.
 
 To compute class outfit of (H - a headgear):
@@ -202,6 +203,9 @@ To WardrobeVanish (C - a clothing):
 [Removes all clothing that shouldn't be worn at the same time as the new item and sends them to the pink wardrobe. Should be called BEFORE the new item is summoned. This function needs to match the function below.]
 To PinkWardrobeUnclash (C - a clothing):
 	UniquePinkWardrobeUnclash C;
+	if C is gag:
+		repeat with O running through worn gags:
+			WardrobeVanish O;
 	if C is neck covering:
 		repeat with O running through worn neck covering clothing:
 			WardrobeVanish O;
@@ -291,6 +295,22 @@ To PinkWardrobeUnclash (C - a clothing):
 	if C is uncovered themed or C is top-exclusive or C is totally-exclusive:
 		if C is breast covering:
 			repeat with O running through worn breast covering clothing:
+				check that C usually goes under O;
+				if the rule succeeded or C is totally-exclusive:
+					WardrobeVanish O;
+		if C is belly covering:
+			repeat with O running through worn belly covering clothing:
+				check that C usually goes under O;
+				if the rule succeeded or C is totally-exclusive:
+					WardrobeVanish O;
+		if C is crotch covering:
+			repeat with O running through worn crotch covering clothing:
+				check that C usually goes under O;
+				if the rule succeeded or C is totally-exclusive:
+					WardrobeVanish O;
+	if C is bottom-exclusive:
+		if C is breast covering:
+			repeat with O running through worn breast covering clothing:
 				check that O usually goes under C;
 				if the rule succeeded:
 					WardrobeVanish O;
@@ -334,6 +354,12 @@ Definition: a clothing (called C) is class summonable:
 	if C is not uniquely class summonable, decide no;
 	if C is hand ready and C is not actually summonable, decide no; [don't banish equippables]
 	[This section needs to match the function above.]
+	if C is gag:
+		repeat with O running through things penetrating face:
+			if O is gag:
+				if O is unremovable or O is class-relevant, decide no;
+			otherwise:
+				decide no;
 	if C is neck covering:
 		repeat with O running through worn neck covering clothing:
 			if O is unremovable or O is class-relevant, decide no;
@@ -421,6 +447,22 @@ Definition: a clothing (called C) is class summonable:
 			repeat with O running through ass covering clothing:
 				if O is unremovable or O is class-relevant, decide no;
 	if C is uncovered themed or C is top-exclusive or C is totally-exclusive:
+		if C is breast covering:
+			repeat with O running through worn breast covering clothing:
+				check that C usually goes under O;
+				if the rule succeeded or C is totally-exclusive:
+					if O is unremovable or O is class-relevant, decide no;
+		if C is belly covering:
+			repeat with O running through worn belly covering clothing:
+				check that C usually goes under O;
+				if the rule succeeded or C is totally-exclusive:
+					if O is unremovable or O is class-relevant, decide no;
+		if C is crotch covering:
+			repeat with O running through worn crotch covering clothing:
+				check that C usually goes under O;
+				if the rule succeeded or C is totally-exclusive:
+					if O is unremovable or O is class-relevant, decide no;
+	if C is bottom-exclusive:
 		if C is breast covering:
 			repeat with O running through worn breast covering clothing:
 				check that O usually goes under C;

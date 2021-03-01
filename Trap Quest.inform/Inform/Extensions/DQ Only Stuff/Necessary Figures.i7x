@@ -1,6 +1,8 @@
 Necessary Figures by DQ Only Stuff begins here.
 
 Figure of acolyte 5 is the file "NPCs/Mansion/Cultist/cultist5.png".
+To decide which figure-name is the monster-image of (M - an acolyte):
+	decide on figure of acolyte 5.
 
 Figure of bianca defeated is the file "NPCs/School/Teacher/teacher3c.png".
 
@@ -12,6 +14,13 @@ To decide which figure-name is the monster-image of (M - dominatrix):
 	decide on figure of dominatrix 1.
 
 Figure of elder altar is the file "Env/Mansion/altar1.jpg".
+
+Figure of enema tag 1 is the file "Special/Cutscene/cutscene-enema-tag-1b.jpg".
+Figure of enema tag 1 finish line is the file "Special/Cutscene/cutscene-enema-tag-1d.jpg".
+Figure of enema tag 2 is the file "Special/Cutscene/cutscene-enema-tag-2b.jpg".
+Figure of enema tag 2 finish line is the file "Special/Cutscene/cutscene-enema-tag-2d.jpg".
+Figure of enema tag 3 is the file "Special/Cutscene/cutscene-enema-tag-3b.jpg".
+Figure of enema tag 3 finish line is the file "Special/Cutscene/cutscene-enema-tag-3d.jpg".
 
 Figure of Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator1a.jpg".
 
@@ -25,10 +34,7 @@ To decide which figure-name is the monster-image of (M - a ghost):
 To decide which figure-name is the monster-image of (M - jismbodied ghost):
 	decide on figure of ghost 7.
 
-Figure of Iron Maiden is the file "Env/Mansion/ironmaiden1.jpg".
 Figure of IronMaidenBackground is the file "Map/maiden2.png".
-To decide which figure-name is the examine-image of (C - an iron-maiden):
-	decide on figure of Iron Maiden.
 
 Figure of Maths Predicament Xray 1 is the file "Special/Cutscene/cutscene-maths-dq-xray1.jpg".
 Figure of Maths Predicament 1 is the file "Special/Cutscene/cutscene-maths-dq1.jpg".
@@ -93,6 +99,11 @@ To decide which figure-name is figure of rank 3 laci:
 	decide on figure of rank 3 laci dry.
 Figure of rank 4 laci is the file "NPCs/School/Student/student3h.png".
 Figure of rank 5 laci is the file "NPCs/School/Student/student3i.png".
+
+Figure of rank 2 misty is the file "NPCs/School/Student/student4c.png".
+Figure of rank 3 misty is the file "NPCs/School/Student/student4e.png".
+Figure of rank 4 misty is the file "NPCs/School/Student/student4g.png".
+Figure of rank 5 misty is the file "NPCs/School/Student/student4h.png".
 
 Figure of rank 1 rosie is the file "NPCs/School/Student/student1a.png".
 Figure of rank 2 rosie is the file "NPCs/School/Student/student1c.png".

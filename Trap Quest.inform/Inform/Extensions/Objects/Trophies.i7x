@@ -88,6 +88,10 @@ Carry out TrophySwitching pain-trophy:
 
 expel-trophy is a trophy. The printed name of expel-trophy is "[TQlink of item described]sphincter trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of expel-trophy is "spht". Understand "sphincter" as expel-trophy.
 
+Figure of expel trophy is the file "Env/School/trophy7.png".
+To decide which figure-name is the examine-image of (C - expel-trophy):
+	decide on figure of expel trophy.
+
 To say ExamineDesc of (T - expel-trophy):
 	say "This trophy is in the shape of a tight butthole. It is surrounded by a mystical [if the trophy-mode of T is 1]green glow, and you can feel that expelling things from your butthole now happens automatically, and never happens when you're plugged, and it no longer hurts to hold things in[otherwise]red glow, which allows you to sense that you can control when you release liquid from your butthole, but holding it is painful over time[end if].".
 

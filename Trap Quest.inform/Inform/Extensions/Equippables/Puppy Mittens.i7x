@@ -1,6 +1,6 @@
 Puppy Mittens by Equippables begins here.
 
-puppy mittens is a gloves. puppy mittens is unique. puppy mittens is leather. puppy mittens is manly. The printed name of puppy mittens is "[clothing-title-before]pair of puppy mittens[clothing-title-after]". The text-shortcut of puppy mittens is "pm".
+puppy mittens is a big-gloves. puppy mittens is unique. puppy mittens is leather. puppy mittens is manly. The printed name of puppy mittens is "[clothing-title-before]pair of puppy mittens[clothing-title-after]". The text-shortcut of puppy mittens is "pm".
 
 Definition: puppy mittens is class-relevant:
 	if the class of the player is puppygirl, decide yes;
@@ -35,7 +35,7 @@ The puppy mittens prevent manual dexterity rule is listed in the manual dexterit
 To decide which number is the initial outrage of (C - puppy mittens):
 	decide on 3.
 
-To decide which number is the damage improvement of (W - puppy mittens):
+To decide which number is the slap damage improvement of (W - puppy mittens):
 	let X be -2;
 	if W is cursed, decrease X by 1;
 	if W is blessed, increase X by 1;
@@ -43,7 +43,7 @@ To decide which number is the damage improvement of (W - puppy mittens):
 	decide on X.
 
 To compute attack of (W - puppy mittens) at (M - a monster):
-	if the damage improvement of W < 0, say "You [if the bimbo of the player < 12][one of]weakly[or]pathetically[or]timidly[at random][otherwise][one of]playfully[or]meekly[or]softly[at random][end if] slap at [NameDesc of M] with your [printed name of W]!";
+	if the slap damage improvement of W < 0, say "You [if the bimbo of the player < 12][one of]weakly[or]pathetically[or]timidly[at random][otherwise][one of]playfully[or]meekly[or]softly[at random][end if] slap at [NameDesc of M] with your [printed name of W]!";
 	otherwise say "You slap at [NameDesc of M] with your puppy paws.".
 
 To compute class set up of (C - puppy mittens):

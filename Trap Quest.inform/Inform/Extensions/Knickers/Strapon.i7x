@@ -1,6 +1,6 @@
 Strapon by Knickers begins here.
 
-A strapon-panties is a kind of knickers. The printed name of strapon-panties is "[clothing-title-before][PenisSizeFlav strap-length of the item described] [ShortDesc of item described][clothing-title-after]". Understand "strapon", "dildo", "strap on", "strap-on" as strapon-panties. A strapon-panties has a number called strap-length. A strapon-panties is usually totally-exclusive. A strapon-panties is usually leather. A strapon-panties is crotch-assless.
+A strapon-panties is a kind of knickers. The printed name of strapon-panties is "[clothing-title-before][PenisFlavour of item described][clothing-title-after]". Understand "strapon", "dildo", "strap on", "strap-on" as strapon-panties. A strapon-panties has a number called strap-length. A strapon-panties is usually totally-exclusive. A strapon-panties is usually leather. A strapon-panties is crotch-assless.
 Definition: a strapon-panties is penis themed: decide yes.
 Definition: a strapon-panties is fluid vulnerable: decide no.
 
@@ -16,7 +16,7 @@ To uniquely set up (C - a strapon-panties):
 	now the strap-length of C is a random number between 4 and 6.
 
 Definition: a strapon-panties (called P) is fetish appropriate:
-	if diaper quest is 0 and the player is the donator, decide yes;
+	if diaper quest is 0, decide yes;
 	decide no.
 
 [is it a strapon or a penis]
@@ -56,7 +56,7 @@ Definition: a strapon-panties is displacable: decide no.
 
 Chapter 1 - Strapon Dildo
 
-A strapon-dildo is a kind of strapon-panties. The text-shortcut of a strapon-dildo is "stpd". There is 1 strapon-dildo. A strapon-dildo is crotch-assless. The armour of a strapon-dildo is 2. The printed name of strapon-dildo is "[clothing-title-before][if the size of penis < the strap-length of the item described][PenisSizeFlav strap-length of the item described] [end if][ShortDesc of item described][clothing-title-after]". Understand "pouch", "nintendolls" as strapon-dildo.
+A strapon-dildo is a kind of strapon-panties. The text-shortcut of a strapon-dildo is "stpd". There is 1 strapon-dildo. A strapon-dildo is crotch-assless. The armour of a strapon-dildo is 2. Understand "pouch", "nintendolls" as strapon-dildo.
 
 To decide which number is the penis-capacity of (K - a strapon-dildo):
 	decide on the strap-length of K - 1.
@@ -85,7 +85,7 @@ To say ShortDesc of (H - a strapon-dildo):
 To say UniqueClothingDesc of (K - strapon-dildo):
 	if K is not dildo-usage:
 		say "A leather pouch with the Nintendolls logo printed along the front, along with a large number '[strap-length of K].' [if K is worn]It cradles your [ShortBallsDesc], gently stimulating them with the tiny nodes covering its inner surface.[otherwise]The inside of it is covered in tiny silver nodes.[end if]";
-	otherwise if the player is male:
+	otherwise if the player is possessing a penis:
 		say "A leather pouch with a [PenisSizeFlav the strap-length of K] silicone dildo mounted on the front. [if K is worn]Tiny metal nodes are passing a gentle current into your [ShortDesc of penis], transmitting sensation from the fake penis and forcing your real one to remain completely soft[otherwise]The inside of it is covered in tiny silver nodes[end if].";
 	otherwise:
 		say "A [PenisSizeFlav the strap-length of K] silicone dildo mounted onto a small patch of leather. [if K is worn]Tiny metal nodes are passing a gentle current into your [vagina], transmitting all the sensation from the dildo to you[otherwise]The inner surface is covered in tiny metal nodes[end if].".
@@ -113,8 +113,7 @@ To uniquely set up (C - an equine-strapon):
 	now the strap-length of C is 12.
 
 Definition: An equine-strapon (called P) is fetish appropriate:
-	if the player is the donator:[for now]
-		decide yes;
+	if diaper quest is 0, decide yes;
 	decide no.
 
 To say PenisFlavour of (K - an equine-strapon):
@@ -203,11 +202,11 @@ To decide which number is the intelligence-influence of (C - gem-strapon):
 	decide on 0.
 
 To say UniqueClothingDesc of (K - gem-strapon):
-	say "A silk thong covered in multicoloured gems with a [PenisFlavour of K] dildo mounted to the front. [if K is worn]Arousal radiates through your body at every point of contact, and [i]every[/i] gemstone is somehow as sensitive as your bare flesh[otherwise]".
+	say "A silk thong covered in multicoloured gems with a [PenisFlavour of K] dildo mounted to the front[if K is worn]. Arousal radiates through your body at every point of contact, and [i]every[/i] gemstone is somehow as sensitive as your bare flesh[end if].".
 
 Chapter 4 - Ghost Strapon
 
-Ghost-strapon is a strapon-panties. The text-shortcut of ghost-strapon is "ghpd". ghost-strapon is totally-exclusive. Ghost-strapon is unique. The printed name of ghost-strapon is "[clothing-title-before][if the item described is worn and the size of penis >= the strap-length of the item described][PenisSizeFlav sexual-penis-length] [end if][ShortDesc of item described][clothing-title-after]". The armour of ghost-strapon is 1. Understand "pair", "pair of", "crotchless", "panties", "goth", "ghost", "ghostly" as ghost-strapon. Ghost-strapon is crotch-exposing. Ghost-strapon is satin.
+Ghost-strapon is a strapon-panties. The text-shortcut of ghost-strapon is "ghpd". ghost-strapon is totally-exclusive. Ghost-strapon is unique. The armour of ghost-strapon is 1. Understand "pair", "pair of", "crotchless", "panties", "goth", "ghost", "ghostly" as ghost-strapon. Ghost-strapon is crotch-exposing. Ghost-strapon is satin.
 
 Figure of ghost-strapon is the file "Items/Accessories/Toys/strapon4.jpg".
 To decide which figure-name is the examine-image of (H - ghost-strapon):

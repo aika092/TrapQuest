@@ -111,14 +111,13 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 					summon M in the dungeon;
 		if the number of alive golem is 0 and diaper quest is 0 and playerRegion is not school:
 			let M be a random off-stage golem;
-			let X be max ass size + max breast size + 1;
-			let S be X - (the thickness of hips + the largeness of breasts);
-			let SR be a random number between S and time-tracking;
+			let S be the thickness of hips + the largeness of breasts;
+			let SR be a random number between 1 and time-tracking;
 			if time-tracking < 1000:
-				decrease time-tracking by 1;
-				if debuginfo > 0, say "[input-style]Golem spawn prevention check: body shape ([S]); time ticker ([time-tracking])[if time-tracking >= 285]; time ticker not yet below 293 so automatic success[otherwise] ==> RNG([S]~[time-tracking]) = [SR] | ([X].5) max possible body shape[end if][roman type][line break]";
-			if time-tracking < 293:
-				if SR < X:[more likely the larger the larger the player's body has gotten.]
+				decrease time-tracking by 20;
+				if debuginfo > 0, say "[input-style]Golem spawn prevention check: body shape ([S]); time ticker ([time-tracking])[if time-tracking > 200]; time ticker not yet below 200 so automatic success[otherwise] ==> d[time-tracking] = [SR] | ([S].5) body shape[end if][roman type][line break]";
+			if time-tracking <= 200:
+				if SR <= S:[less likely the larger the larger the player's body has gotten.]
 					set up M;
 					if playerRegion is Woods:
 						now M is in Stairwell02;
@@ -129,10 +128,10 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 					otherwise:
 						now M is in Stairwell01;
 					now M is guarding;
-					say "Some speakers come to life, and you hear an announcement![line break][second custom style]'Hey there, [NameBimbo]! Are you having fun? See, we're looking at the data here and it seems like you're taking this game very seriously. In that case, it shouldn't be a problem if we spawn in a new threat. Don't worry, I'm sure you'll figure things out...'[roman type][line break]";
+					say "Some speakers come to life, and you hear an announcement![line break][second custom style]'Hey there, [NameBimbo]! Are you having fun? See, we're looking at the data here and [if S < 10]based on your body shape stats [end if]it seems like you're taking this game very seriously. In that case, it shouldn't be a problem if we spawn in a new threat. Don't worry, I'm sure you'll figure things out...'[roman type][line break]";
 					now time-tracking is 1000;
 				otherwise:
-					decrease time-tracking by X.
+					decrease time-tracking by 20.
 
 Part 2 - Specific Procedures
 
@@ -258,19 +257,19 @@ A time based rule (this is the dressup rule):
 		let molested be 0;
 		let H be a random worn possession clothing;[TODO: breast covering]
 		if H is crotch covering:
-			if the player is female:
+			if the player is possessing a vagina:
 				if vagina is not actually occupied and (asshole is actually occupied or a random number between 1 and 3 > 1):
-					say "You shriek as a pair of [one of]thick, manly[or]thin, feminine[or]dexterous, long-nailed[or][if mythical creature fetish is 1]bestial, clawed[otherwise]fluid, warmth-less[end if][at random] fingers plunge into your [vagina], unnaturally distorting your [ShortDesc of H] as it casts an ominous glow over your inner thighs. Shivers run up your spine as the clammy digits stroke your inner walls, unceremoniously violating you[if the number of monsters in the location of the player > 0] in full view of [NameDesc of a random monster in the location of the player][otherwise] without so much as a second's warning[end if]. You can only claw helplessly at the possessed [clothing-material of H] until it stops, pleasure, humiliation, and raw [if the bimbo of the player < 14]terror[otherwise]exhilaration[end if] bubbling up from your loins at having your clothes treat you [one of]as nothing but a toy to be used[or]like their personal sex guinea pig[or]as nothing but a simple plaything[at random].";
+					say "[bold type]You shriek as a pair of [one of]thick, manly[or]thin, feminine[or]dexterous, long-nailed[or][if mythical creature fetish is 1]bestial, clawed[otherwise]fluid, warmth-less[end if][at random] fingers plunge into your [vagina], unnaturally distorting your [ShortDesc of H] as it casts an ominous glow over your inner thighs. [roman type]Shivers run up your spine as the clammy digits stroke your inner walls, unceremoniously violating you[if the number of monsters in the location of the player > 0] in full view of [NameDesc of a random monster in the location of the player][otherwise] without so much as a second's warning[end if]. You can only claw helplessly at the possessed [clothing-material of H] until it stops, pleasure, humiliation, and raw [if the bimbo of the player < 14]terror[otherwise]exhilaration[end if] bubbling up from your loins at having your clothes treat you [one of]as nothing but a toy to be used[or]like their personal sex guinea pig[or]as nothing but a simple plaything[at random].";
 					ruin vagina;
 					now molested is 1;
 			otherwise:
 				if the size of penis > a random number between 3 and 12:
-					say "You yelp as a [one of]rough, manly[or]soft, feminine[or][if mythical creature fetish is 1]bestial, clawed[otherwise]cold, warmth-less[end if][at random] hand wraps itself around your [ShortDesc of penis], unnaturally distorting your [ShortDesc of H] as it casts an ominous glow over your inner thighs. Shivers run up your spine as the clammy fingers firmly pump you from tip to shaft, as if trying to literally feed your junk back into your body. You can only claw helplessly at the possessed [clothing-material of H] until it stops, pleasure, humiliation, and raw [if the bimbo of the player < 14]terror[otherwise]exhilaration[end if] bubbling up from your loins at having your clothes treat you [one of]as nothing but a toy to be used[or]like their personal sex guinea pig[or]as nothing but a simple plaything[at random].";
+					say "[bold type]You yelp as a [one of]rough, manly[or]soft, feminine[or][if mythical creature fetish is 1]bestial, clawed[otherwise]cold, warmth-less[end if][at random] hand wraps itself around your [ShortDesc of penis], unnaturally distorting your [ShortDesc of H] as it casts an ominous glow over your inner thighs. [roman type]Shivers run up your spine as the clammy fingers firmly pump you from tip to shaft, as if trying to literally feed your junk back into your body. You can only claw helplessly at the possessed [clothing-material of H] until it stops, pleasure, humiliation, and raw [if the bimbo of the player < 14]terror[otherwise]exhilaration[end if] bubbling up from your loins at having your clothes treat you [one of]as nothing but a toy to be used[or]like their personal sex guinea pig[or]as nothing but a simple plaything[at random].";
 					PenisDown 1;
 					stimulate penis from H;
 					now molested is 1;
 			if molested is 0 and asshole is not actually occupied:
-				say "You start and look over your shoulder as something cool and wet prods your sphincter. Your [ShortDesc of H] distort unnaturally, casting an ominous glow over your inner thighs as a dexterous tongue pushes through your anal ring. It mercilessly probes your sensitive little hole, knowing you can only claw helplessly at the possessed [clothing-material of H] until [italic type]it[roman type] decides to stop. Pleasure, [if the bimbo of the player < 14]terror[otherwise]exhilaration[end if], and humiliation at being tortured by your own clothing roil inside of you until it finally wiggles out of your [asshole].";
+				say "[bold type]You start and look over your shoulder as something cool and wet prods your sphincter. [roman type]Your [ShortDesc of H] distort unnaturally, casting an ominous glow over your inner thighs as a dexterous tongue pushes through your anal ring. It mercilessly probes your sensitive little hole, knowing you can only claw helplessly at the possessed [clothing-material of H] until [italic type]it[roman type] decides to stop. Pleasure, [if the bimbo of the player < 14]terror[otherwise]exhilaration[end if], and humiliation at being tortured by your own clothing roil inside of you until it finally wiggles out of your [asshole].";
 				stimulate asshole from H;
 		otherwise:
 			let R be a random number between 1 and 3;
@@ -280,7 +279,7 @@ A time based rule (this is the dressup rule):
 			if H is not chestless and R is 2, let P be breasts;
 			otherwise increase R by 1;
 			unless H is no-crotch and R is 3, let P be hips;
-			say "Your [ShortDesc of H] lights up as unseen hands grab your [ShortDesc of P], distorting the [clothing-material of H] material unnaturally as they mischievously grope the tender skin underneath. [one of]You're being molested by your own clothing![or]You can't help feeling strangely, intimately exposed to your clothes themselves, now you know they can mess with you any time![at random]";
+			say "[bold type]Your [ShortDesc of H] lights up as unseen hands grab your [ShortDesc of P], distorting the [clothing-material of H] material unnaturally as they mischievously grope the tender skin underneath. [roman type][one of]You're being molested by your own clothing![or]You can't help feeling strangely, intimately exposed to your clothes themselves, now you know they can mess with you any time![at random]";
 			if P is breasts, stimulate breasts.
 
 [If the player doesn't properly fit in their clothes, there is a chance of the clothing becoming displaced without input from the player.]
@@ -307,10 +306,10 @@ A time based rule (this is the dressup rule):
 		if debugmode > 0, say "[input style]Wardrobe malfunction. Player will notice if R > 20. R = [R].[roman type][line break]";
 		if R > 20, say "[line break][one of]You feel a slight draft...[or]You feel a slight breeze...[or]You can feel the air touching your skin...[or]You feel a little freer...[at random][line break]";][You only get an announcement if you win an intelligence roll]
 
-shunk-happened is a number that varies.
+shunk-happened is initially false.
 
 A time based rule (this is the trap time rule):
-	now shunk-happened is 0;
+	now shunk-happened is false;
 	repeat with T running through traps:
 		if T is vines:
 			if the TrapNo of T < 0:
@@ -338,22 +337,25 @@ To compute default reset cooldown of (T - a trap):
 	if the reset-timer of T <= time-seconds:
 		now the reset-timer of T is 0;
 		unless T is penetrating a fuckhole:
-			now T is untriggered;
-			now T is not expired;
-			now T is not triggered;
-			now T is unrevealed;
-			dislodge T;
-			if T is click:
-				repeat with C running through containers in the location of T:
-					now C is closed;
-					now C is emptied;
-			if T is in the location of the player and shunk-happened is 0:
-				say "There is a loud 'shunk' sound as the [T] in this room resets[if T is click]. All the containers in the room shut themselves automatically![otherwise].[end if]";
-				now shunk-happened is 1;
+			compute default reset of T;
 		otherwise:
 			now the reset-timer of T is 1;
 	otherwise:
 		decrease the reset-timer of T by time-seconds.
+
+To compute default reset of (T - a trap):
+	now T is untriggered;
+	now T is not expired;
+	now T is not triggered;
+	now T is unrevealed;
+	dislodge T;
+	if T is click:
+		repeat with C running through containers in the location of T:
+			now C is closed;
+			now C is emptied;
+	if T is in the location of the player and shunk-happened is false:
+		say "There is a loud 'shunk' sound as the [T] in this room resets[if T is click]. All the containers in the room shut themselves automatically![otherwise].[end if]";
+		now shunk-happened is true.
 
 [
 LATEX TRANSFORMATION GUIDELINES:

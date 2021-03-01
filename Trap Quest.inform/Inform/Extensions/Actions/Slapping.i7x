@@ -12,17 +12,19 @@ To decide which number is the slap damage of (P - a person):
 	if wasp sting tattoo is worn:
 		increase A by 1;
 		if damage-explained > 1, say "+1 (wasp tattoo) ";
-	now punch is 0;
-	let S be a random worn slap ready equippable;
-	if S is equippable:
-		let N be the damage improvement of S;
-		increase A by N;
-		if damage-explained > 1, say "[if N >= 0]+[end if][N] ([ShortDesc of S] bonus) ";
-	otherwise:
+	now punch is 1;
+	if there is worn slap ready clothing, now punch is 0;
+	repeat with C running through worn clothing:
+		if (punch is 1 or C is slap ready) and the slap damage improvement of C is not 0:
+			let N be the slap damage improvement of C;
+			increase A by N;
+			if damage-explained > 1, say "[if N >= 0]+[end if][N] ([ShortDesc of C] bonus) ";
+	if punch is 1:
 		if the player is feeling dominant:
-			now punch is 1;
 			increase A by 1;
 			if damage-explained > 1, say "+1 (dominant player clenched fist bonus) ";
+		otherwise:
+			now punch is 0;
 	unless there is a worn slap ready projectile equippable:
 		increase A by combat bonus;
 		if damage-explained > 1, say combat bonus explanation;
@@ -92,8 +94,8 @@ Carry out slapping:
 	now damage-explained is debuginfo;
 	let A be the slap damage of the player;
 	if damage-explained > 0, say "[if damage-explained > 1][close bracket] = [A]; [otherwise][input-style]Slap attack: [A][end if][roman type][line break]";
-	let S be a random worn slap ready equippable;
-	if S is equippable:
+	let S be a random worn slap ready clothing;
+	if S is clothing:
 		compute attack of S at the noun;
 	otherwise:
 		let heel-H be 0;
@@ -105,7 +107,8 @@ Carry out slapping:
 	say "[if the largeness of breasts >= 6 and the breastskill of the player is 0]Your [BreastDesc] are getting in the way and slightly reducing the power of your swing. [otherwise if the largeness of breasts > 12 and the breastskill of the player is 0]Your [BreastDesc] are getting in the way and significantly reducing the power of your swing. [end if][if the player is wrist bound]Unfortunately your wrists being bound significantly hampers the strength you can get into your slaps. [end if][if the player is zeroG]Your body is weightless, meaning you can hardly get any force into your slap without sending yourself flying backwards. [otherwise if the weight of the player < 1]Your body is so light that you don't have the grounding to put your full strength into the slap. [otherwise if living tentacles is worn]The tentacles wrapping around you flail about and strike the enemy as well! [end if]";
 	say "[if the largeness of breasts >= 6 and the breastskill of the player is 0]Your [BreastDesc] are getting in the way and slightly reducing the power of your swing. [otherwise if the largeness of breasts > 12 and the breastskill of the player is 0]Your [BreastDesc] are getting in the way and significantly reducing the power of your swing. [end if][if the player is wrist bound]Unfortunately your wrists being bound significantly hampers the strength you can get into your slaps. [end if][if the player is zeroG]Your body is weightless, meaning you can hardly get any force into your slap without sending yourself flying backwards. [otherwise if the weight of the player < 1]Your body is so light that you don't have the grounding to put your full strength into the slap. [otherwise if living tentacles is worn]The tentacles wrapping around you flail about and strike the enemy as well! [end if]";
 	if there is a worn hostility clothing, compute hostileDamage;
-	damage A on the noun.
+	damage A on the noun;
+	if the noun is combative, compute wrangle reaction of the noun.
 Understand "slap [something]", "hit [something]", "punch [something]", "slash [something]", "slash at [something]", "swipe [something]", "swipe at [something]", "scratch [something]", "thrust at [something]", "swing at [something]", "sa [something]", "sl [something]", "pu [something]" as slapping.
 
 To decide which number is the zap damage of (P - a person):
@@ -114,11 +117,14 @@ To decide which number is the zap damage of (P - a person):
 	if fire palm tattoo is worn:
 		increase A by 1;
 		if damage-explained > 1, say "+1 (fire palm tattoo) ";
+	if the zapskill of the player is 1:
+		increase A by 1;
+		if damage-explained > 1, say "+1 (expert wand flicking technique) ";
 	if currentZapper is not yourself:
 		if the magic power of the player <= 0 and the magic-cost of currentZapper > 0:
 			if damage-explained > 1, say "Override to 0 (insufficient magic power) ";
 			decide on 0;
-		let N be the damage improvement of currentZapper;
+		let N be the zap damage improvement of currentZapper;
 		increase A by N;
 		if damage-explained > 1, say "[if N >= 0]+[end if][N] ([ShortDesc of currentZapper] bonus) ";
 	if A < 0, decide on 0;

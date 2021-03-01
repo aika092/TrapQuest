@@ -124,13 +124,15 @@ To compute drinking effect (N - 2):
 	if a random number between 1 and 8 < the sex addiction of the player, SexAddictDown 1;
 	if thickDrinkTick is 0:
 		now thickDrinkTick is 1;
-		TitfuckAddictDown 1;
 		AnalSexAddictDown 1;
 		BBCAddictDown 1;
+	if thickDrinkTick is 1:
+		now thickDrinkTick is 2;
+		OralSexAddictDown 1;
+		DiaperAddictDown 1;
 	otherwise:
 		now thickDrinkTick is 0;
-		DiaperAddictDown 1;
-		OralSexAddictDown 1;
+		TitfuckAddictDown 1;
 		VaginalSexAddictDown 1.
 
 To compute drinking effect (N - 3):
@@ -151,7 +153,7 @@ To compute drinking effect (N - 4):
 			if rectum > 1:
 				decrease rectum by 1;
 				if rectum < 1, now rectum is 1;
-	otherwise if the fat-weight of the player > 1 and weight gain fetish is 1:
+	otherwise if the fat-weight of the player > min ass size and weight gain fetish is 1:
 		FatDown 1;
 		say "You feel lighter!";
 	otherwise if the raw largeness of hair > 1 and a random number between 1 and 2 is 1:

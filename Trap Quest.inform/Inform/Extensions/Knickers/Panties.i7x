@@ -181,7 +181,7 @@ Report wearing black-diagram-panties:
 	compute early pregnancy eagerness.
 To compute early pregnancy eagerness:
 	if the pregnancy rate of the player is 1 or the size of penis > min penis size:
-		if the player is male, say "Somewhere deep down, something clicks, and you realise you wish you could get pregnant and have babies.";
+		if the player is not possessing a vagina, say "Somewhere deep down, something clicks, and you realise you wish you could get pregnant and have babies.";
 		otherwise say "[if the pregnancy of the player is 0]You can almost hear your womb cry out for something to fill it![otherwise]You feel an energetic kick from your stomach. Wow, the baby is growing fast![end if]";
 		if the pregnancy rate of the player is 1, now the pregnancy rate of the player is 2;
 		if the size of penis > min penis size, PenisDown 1.

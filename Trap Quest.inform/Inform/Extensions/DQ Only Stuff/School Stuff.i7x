@@ -1,6 +1,7 @@
 School Stuff by DQ Only Stuff begins here.
 
-The lesson-teacher of eating-lesson is teacher-hannah.
+teacher-hannah is an emerald-teacher.
+The lesson-teacher of pledge-lesson is teacher-kaylee.
 
 Part - Ruby Teacher Brooke
 
@@ -426,13 +427,14 @@ To compute teaching of (L - chess-lesson):
 		repeat with C running through carried things:
 			now C is in School01;
 		say "[speech style of M]'If you want any of those back, you'll need to pick them up from Reception later.'[roman type][line break]You are made to wear a new giant plain white disposable diaper, bigger than any diaper you've ever seen before.";
-		if plain-massive-diaper is not worn:
+		if plain-massive-diaper is not worn and plain-massive-diaper is not listed in the List of Stacked Diapers:
 			if there is a worn diaper:
 				diaperAdd plain-massive-diaper;
 			otherwise:
 				summon plain-massive-diaper uncursed;
+		otherwise:
+			clean a random worn diaper;
 		now bigGameLoop is 2; [tells the game not to refresh map window after multiple choice]
-		force immediate clothing-focus redraw;
 		force immediate inventory-focus redraw;
 		say "[speech style of M]'This diaper is made of a special material that will expand almost endlessly as you keep filling it up. Trust me, that's going to be important later.'[roman type][line break]And then you are all marched to the assembly hall, where it feels like every single other person in the school seems to already be waiting!";
 		repeat with X running through undefeated staff members in the school:
@@ -518,7 +520,7 @@ To compute chess time:
 		update saved stats;
 		now focused-thing is ST;
 		render chess state;
-		if the chess-victor of chess-lesson is 0, say "You have [16 - lost-pieces of chess-lesson] pieces left, and [NameDesc of ST] has [16 - student-lost-pieces of chess-lesson] pieces left. Your diaper is [if player-latest-percent of chess-lesson > 0][player-latest-percent of chess-lesson][end if]0% of the way towards your pressure plate, and [NameDesc of ST][']s diaper is [if student-latest-percent of chess-lesson > 0][student-latest-percent of chess-lesson][end if]0% of the way towards the other pressure plate.";
+		if the chess-victor of chess-lesson is 0, say "You have [bold type][16 - lost-pieces of chess-lesson][roman type] pieces left, and [NameDesc of ST] has [bold type][16 - student-lost-pieces of chess-lesson][roman type] pieces left. Your diaper is [if player-latest-percent of chess-lesson > 0][player-latest-percent of chess-lesson][end if]0% of the way towards your pressure plate, and [NameDesc of ST][']s diaper is [if student-latest-percent of chess-lesson > 0][student-latest-percent of chess-lesson][end if]0% of the way towards the other pressure plate.";
 		compute chess move input.
 
 To compute opponent chess turn:
@@ -1025,16 +1027,16 @@ Part - Enema Race
 
 enema-race-lesson is a lesson. The lesson-teacher of enema-race-lesson is teacher-brooke.
 
-To set up diaper gym lesson of (M - a monster):
+To set up gym lesson of (M - a monster):
 	say "[speech style of M]'[one of]I know what you're thinking. Why are you wearing a diaper? Aren't diapers for babies? Well yes [if diaper messing >= 3]MESSY[otherwise]USED[end if] diapers are for babies, since only a baby can't control their own bodily functions, but a DRY diaper can be used as a proud sign of your continence. Look at me, living proof! I carry this baby off with style and grace. And today, two of you lot will see who can do the same for longest[or]You know what time it is[stopping]. Follow me to the gym, little ones!'[roman type][line break]";
 	allocate 35 seconds;
 	repeat with N running through monsters in the location of the player:
-		if N is rank3 student or N is M, now N is in School23;
+		if N is student or N is M, now N is in School23;
 	now the player is in School23.
 
 To compute teaching of (L - enema-race-lesson):
 	let M be the lesson-teacher of L;
-	set up diaper gym lesson of M;
+	set up gym lesson of M;
 	let D be plain-massive-diaper;
 	let S1 be a random student in the location of the player;
 	let S2 be a random student in the location of the player;
@@ -1207,12 +1209,10 @@ To compute teaching of (L - enema-race-lesson):
 			if diaper messing is 3:
 				say "[speech style of M]'As for you, [NameBimbo]... I'm feeling very soft and generous today.'[roman type][line break]With a wave of [NameDesc of M][']s hand, all the stinky mess disappears from your [ShortDesc of D]!";
 			otherwise:
-				say "[speech style of M]'As for you, [NameBimbo], your punishment is that you're going to have to sit in that nasty mess you've made for a while.'[roman type][line break]With a wave of [NameDesc of M][']s hand, your diaper becomes cursed!";
+				say "[speech style of M]'As for you, [NameBimbo], your punishment is that you're going to have to sit in that nasty mess you've made for a while.'[roman type][line break]With a wave of [NameDesc of M][']s hand, your diaper becomes stuck to you with glue!";
 				let D be a random worn diaper;
-				curse D;
-				now the quest of D is next-lesson-quest;
-				say QuestFlav of D;
-				if the wont-change of nurse < 1, now the wont-change of nurse is 1;
+				now D is glued;
+				if the wont-change of nurse < 3, now the wont-change of nurse is 3;
 			say "[speech style of M]'Well, that's all she wrote for this enema race! Class is now dismissed!'[roman type][line break]";
 		now the fatigue of the player is the buckle threshold of the player;
 		DexUp 2;
@@ -1238,7 +1238,7 @@ Definition: dodgeball-lesson is lesson-appropriate:
 To compute teaching of (L - dodgeball-lesson):
 	allocate 30 seconds;
 	let M be the lesson-teacher of L;
-	set up diaper gym lesson of M;
+	set up gym lesson of M;
 	let D be a random worn diaper;
 	if D is nothing or D is diaper-stack, now D is plain-massive-diaper;
 	now bigGameLoop is 1; [tells the game not to refresh map window]
@@ -1470,12 +1470,10 @@ To compute teaching of (L - dodgeball-lesson):
 			now D2 is a random huge diaper;
 		if the mess of D >= 100:
 			only destroy D2;
-			now D2 is cursed;
-			now the quest of D2 is next-lesson-quest;
-			now the quest of D is next-lesson-quest;
+			now D2 is glued;
 			diaperAdd D2;
-			if the wont-change of nurse < 1, now the wont-change of nurse is 1;
-		say "With a smirk, [he of M] snaps [his of M] fingers, and a second equally thick diaper magically appears [if the DQBulk of D2 >= the DQBulk of D]over[otherwise]under[end if] [if the mess of D >= 100]your first! A quick tug tells you what you deep down already knew - it's cursed[otherwise]the top of the diapers of everyone who was eliminated from the game[end if].[line break][speech style of M]'I think you all need a bit more time in your shameful situations to really come to terms with what it means to be such a loser. And don't think you can just run off to the nurse and get a change, I'll be telling [him of nurse] that you're all on [his of nurse] [']no changes until the next lesson['] list.'[roman type][line break]";
+			if the wont-change of nurse < 3, now the wont-change of nurse is 3;
+		say "With a smirk, [he of M] snaps [his of M] fingers, and a second equally thick diaper magically appears [if the DQBulk of D2 >= the DQBulk of D]over[otherwise]under[end if] [if the mess of D >= 100]your first! A quick tug tells you what you deep down already knew - they're glued to you[otherwise]the top of the diapers of everyone who was eliminated from the game[end if].[line break][speech style of M]'I think you all need a bit more time in your shameful situations to really come to terms with what it means to be such a loser. And don't think you can just run off to the nurse and get a change, I'll be telling [him of nurse] that you're all on [his of nurse] [']no changes['] list.'[roman type][line break]";
 		if diaper-stack is worn, say QuestFlav of diaper-stack;
 	say "[speech style of M]'Alright I'm bored of you all now. Get out of my sight. Class dismissed!'[roman type][line break]";
 	DexUp 2;
@@ -1537,141 +1535,5 @@ To say AdviceAnswer of (M - teacher-kaylee):
 To compute teaching of (M - teacher-kaylee):
 	say "[speech style of M]'I'm going to teach you to fully dedicate yourself to diapers, so that you can become the perfect sexy submissive.'[roman type][line break]".
 
-ultimate-lesson is a lesson. The lesson-teacher of ultimate-lesson is teacher-kaylee.
-
-An ultimate-lesson-object is a kind of object. An ultimate-lesson-object has a number called implant.
-Definition: an ultimate-lesson-object is eligible:
-	if the implant of it is 0, decide yes;
-	decide no.
-To execute (E - an ultimate-lesson-object):
-	say "BUG - lesson object with no function.".
-
-Figure of Ultimate Lesson Toilet User Cutscene is the file "Special/Cutscene/cutscene-toilet-curse1.jpg".
-Figure of Ultimate Lesson Toilet Player Cutscene is the file "Special/Cutscene/cutscene-toilet-curse2.jpg".
-
-ultimate-lesson-toilet is an ultimate-lesson-object.
-To execute (E - ultimate-lesson-toilet):
-	say "[second custom style]I'll never use the big [boy of the player] potty again. If I ever try to use a toilet, I will be dragged down into the punishment realm.[roman type][line break]A large white rune in the air flies down into your chest, right where your heart is. You can feel its magic begin to take hold...";
-	now toiletJustUsed is false.
-
-An all later time based rule (this is the toilet punishment rule):
-	if the implant of ultimate-lesson-toilet is 1 and toiletJustUsed is true:
-		compute toilet predicament punishment;
-		now toiletJustUsed is false.
-
-To compute toilet predicament punishment:
-	if diaper messing >= 3:
-		say "Suddenly, the magic curse you got from [NameDesc of lesson-teacher of ultimate-lesson] activates! Demonic hands shoot out of the floor and drag you down through the floor, to underneath the toilet. Before you know what's happened, you're on your knees in the thickest diaper you've ever seen, with legs and mittened hands bound behind you by ropes, a ballgag in your mouth, and some kind of tubing stuck down the back of your diaper.";
-		unless plain-massive-diaper is worn:
-			only destroy plain-massive-diaper;
-			repeat with K running through worn knickers:
-				silently transform K into plain-massive-diaper;
-			unless plain-massive-diaper is worn, summon plain-massive-diaper cursed with silent quest;
-		unless rubber mittens is worn:
-			repeat with E running through worn hand ready equippables:
-				now E is in the location of the player;
-			summon rubber mittens cursed with silent quest;
-		unless there is a worn gag or face is actually occupied:
-			let G be a random small ballgag;
-			summon G locked;
-		let friend be fancied-friend;
-		say "A monitor appears in front of you, showing a public bathroom stall. And then[one of], to your surprise,[or][stopping] your [RelationDesc of friend] [MediumDesc of friend] walks in, with a grimace on [his of friend] face and a bulging belly. [one of][line break][variable custom style]Wait, what? Is this real life? Are they stalking [him of friend] or something?[roman type][line break][or][stopping][big he of friend] groans as [he of friend] [if friend is presenting as female]drops [his of friend] panties from under [his of friend] skirt[otherwise]pulls down [his of friend] jeans[end if] and sits on the can.[line break][first custom style]'Nnghhh, why did I try the bean dip?!'[roman type][line break]You can hear [him of friend] mutter to [himself of friend] as [he of friend] quickly begins to let rip. It's disgustingly loud.[paragraph break]";
-		appropriate-cutscene-display Figure of Ultimate Lesson Toilet User Cutscene;
-		say "[one of]You're trying to make sense of all of this as you feel a flow of something hot and slimy on your backside.[line break][variable custom style]No, surely not...![roman type][line break][or]Once again you feel that flow of hot slimy stuff on your backside.[stopping]";
-		appropriate-cutscene-display Figure of Ultimate Lesson Toilet Player Cutscene;
-		say "Yep - [MediumDesc of friend][']s super nasty episode is being funnelled directly into your own [plain-massive-diaper]. You wiggle and squirm but the ropes hold you tight, so there's nothing you can do but watch with [horror the diaper addiction of the player] as [he of friend] continues to unload [his of friend] belly and load your padding. The awful smell quickly fills your room, leaving you gagging.[paragraph break]What feels like several minutes pass before [MediumDesc of friend] finally finishes indirectly messing your diaper, with a final ungraceful [italic type]BLART[roman type]. The curse's demonic hands return, quickly undoing your bonds and carrying you back to the [location of the player], but leaving you with an overfilled messy [ShortDesc of plain-massive-diaper][if rubber mittens is worn], [rubber mittens][end if][if there is a worn ballgag] and [ShortDesc of random worn ballgag][end if] as a souvenir.";
-		MessSet plain-massive-diaper to 36;
-		now the foreign-mess of plain-massive-diaper is 36;
-		say "[variable custom style][one of]Oh god... is that really going to happen every time I try to use a toilet from now on?![or]I think maybe I need to stick to diapers[if the diaper addiction of the player < 15]. This is just too gross[end if]...[stopping][roman type][line break]";
-	otherwise:
-		say "Suddenly, the magic curse you got from [NameDesc of lesson-teacher of ultimate-lesson] activates! You feel like your bladder is much weaker than before. Uh-oh...";
-		increase incontinence by 2.
-
-ultimate-lesson-magic is an ultimate-lesson-object.
-To execute (E - ultimate-lesson-magic):
-	say "[second custom style]Using magic is for grown-ups. Whenever I try to use magic, my body reminds me of how much I need to use my diaper instead.[roman type][line break]Two smaller white runes in the air fly down into your arms. You can feel their magic begin to work their way towards your shoulders...".
-A magic consequences rule (this is the ultimate-lesson magic consequence rule):
-	if the implant of ultimate-lesson-magic is 1:
-		say "The magic ripples through your arms, activating the curse you got from [NameDesc of lesson-teacher of ultimate-lesson]. Your bladder [if diaper lover > 3]and bowels explode[otherwise]explodes[end if] [if the bladder of the player >= 12]to inhuman levels of fullness[otherwise]with contents until completely full[end if]!";
-		increase the bladder of the player by 12;
-		if diaper lover >= 3:
-			increase rectum by 15;
-			increase suppository by 1.
-
-ultimate-lesson-mess is an ultimate-lesson-object.
-Definition: ultimate-lesson-mess is eligible:
-	if the implant of it is 0 and diaper messing >= 3, decide yes;
-	decide no.
-To execute (E - ultimate-lesson-mess):
-	say "[second custom style]When my body tells me to go poo, I should do as I'm told and do a number two![roman type][line break]A large circular white rune approaches your bottom and begins to phase inside you...".
-
-ultimate-lesson-yes is an ultimate-lesson-object.
-To execute (E - ultimate-lesson-yes):
-	say "[second custom style]A good [boy of the player] should always say yes! When 'yes' is the option that a good obedient baby would make, I will never choose no![roman type][line break]A large white rune shaped a bit like a 'Y' approaches your forehead and begins to settle...".
-
-To compute teaching of (L - ultimate-lesson):
-	now bigGameLoop is 3; [tells the game not to refresh any windows]
-	let M be the lesson-teacher of L;
-	let LST be the list of students in the location of M;
-	say "[BigNameDesc of M] guides you [if the number of entries in LST is 1]and [student-name of entry 1 of LST] [otherwise if the number of entries in LST > 1]all [end if]to kneel down[if the number of entries in LST > 0] in a circle[end if]. With a flourish of [his of M] arms, [NameDesc of M] fills the room with countless floating magic runes, in an unknown language, all glowing a brilliant white.[line break][speech style of M]'Try to think of this as less of a lesson and more of an initiation into our inner circle. All you have to do is remain still and allow me to conduct the [']celebrations['][if the number of entries in LST > 0]. If any of you get up and try to leave, you ALL fail[end if].'[roman type][line break]";
-	let ULO be the list of eligible ultimate-lesson-objects;
-	sort ULO in random order;
-	let lessonResists be 1;
-	let lessonImplants be 0;
-	let maxLessonImplants be a random number between 2 and 3;
-	while the number of entries in ULO > 0 and lessonImplants < maxLessonImplants:
-		say "[BigNameDesc of M] [one of]begins to sing with a sweet innocent voice. The words are not in a language you've ever heard before, but somehow you can understand the words[or]continues to sing in the foreign language you can somehow understand[or]sings [his of M] magic spell, the meaning forming in your head[stopping].";
-		let E be entry 1 in ULO;
-		execute E;
-		remove E from ULO;
-		if lessonImplants is 0, say "You understand that [NameDesc of M] is laying a curse on you, and it's pretty clear what the consequences of that will be if [he of M] is successful. You could [bold type]stand up and leave[roman type], [bold type]resist the curse[roman type] or [bold type]allow it to happen[roman type]. If you spend your energy resisting this curse, you probably won't have the mental strength to resist the next ones.";
-		otherwise say "[if lessonResists > 0]Since you haven't resisted a curse yet, you're still able to resist this one, if you choose[otherwise]Since you've already resisted a curse, you can't resist any more[end if].";
-		say "You feel the magic power from the curse settling inside you.";
-		MagicPowerUp 2;
-		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
-		set numerical response 1 to "Stand up and leave";
-		set numerical response 2 to "Accept the curse";
-		if lessonResists > 0, set numerical response 3 to "Resist the curse (you can only do this once)";
-		compute multiple choice question;
-		if player-numerical-response is 1:
-			say "You rip yourself free of the trance and stand up to leave. [BigNameDesc of M] frowns.[line break][speech style of M]'Disappointing. [if the number of entries in LST > 0]Despite your best efforts, thanks to [NameBimbo], you all fail. I imagine you might have lost at least one friend today[otherwise]The other teachers thought you were ready. Clearly they were mistaken. I think you would do well to increase your tolerances before you return here[end if], [NameBimbo].'[roman type][line break]After one final look of derision, [NameDesc of M] leaves the room.";
-			repeat with ST running through LST:
-				HappinessDown ST by 4;
-			now maxLessonImplants is 0; [This is how we indicate that the player left]
-		otherwise if player-numerical-response is 3:
-			decrease lessonResists by 1;
-			say "You scrunch up your eyes and reject the curse. You feel like you've successfully resisted it[if lessonImplants < maxLessonImplants]! But you mind tires and you realise that you won't be able to do that again any time soon[end if].";
-		otherwise:
-			increase lessonImplants by 1;
-			now the implant of E is 1;
-			say "The curse ebbs and eddies in your body, spreading out to your extremities through your veins. It feels a part of you, now.";
-	if maxLessonImplants > 0:
-		say "[speech style of M]'That's enough!'[roman type][line break][BigNameDesc of M] claps [his of M] hands and you open your eyes.";
-		if the number of entries in LST > 0:
-			say "[speech style of M]'Congratulations, babies, you did it. You've become perfect diaper lovers. I couldn't be prouder. Now, come kiss my padding and claim your reward.'[roman type][line break]";
-			repeat with ST running through LST:
-				say "[BigNameDesc of ST] crawls over and [one of]respectfully[or]lovingly[or]happily[in random order] [one of]kisses[or]nuzzles [his of ST] nose into[or]rubs [his of ST] face in[at random] [NameDesc of M][']s soggy diaper.";
-				promote ST;
-				if the current-rank of ST is 6, now the student-print of ST is "golden babygirl";
-		otherwise:
-			say "[speech style of M]'Congratulations, [NameBimbo], you did it. You've become the perfect diaper lover. I couldn't be prouder. Now, come kiss my padding and claim your reward.'[roman type][line break]";
-		say "You cross the room and kneel at [NameDesc of M][']s feet, looking up at [his of M] gentle smile.[line break][speech style of M]'Go ahead.'[roman type][line break]You plant your lips on the outside of [his of M] soaked diaper[if the player is feeling dominant], but without breaking eye contact with [him of M] at any time[otherwise]with eyes submissively lowered[end if].";
-		now armband is solid gold;
-		say "You watch as the ID card inside your armband transforms!";
-		now the armband-title of armband is "";
-		now the armband-print of armband is "golden babygirl";
-		say ClothingDesc of armband;
-		if ex-princess is caged:
-			say "[BigNameDesc of M] continues to speak.[line break][speech style of M]'Now that you've proven your loyalty to our cause, I've got something special to show you. Come with me!'[roman type][line break][BigNameDesc of M] leads you down to the other end of the school.";
-			repeat with N running through monsters in the location of the player:
-				now N is in the location of ex-princess;
-			reveal the school dungeon;
-			teleport to the location of ex-princess;
-			now the stance of the player is 0;
-			say MonsterDesc of ex-princess;
-			say "[BigNameDesc of M] leans against the cell wall.[speech style of M]'The diaper pail you saw outside leads into this chamber. In there is the [ShortDesc of headmistress][']s favourite toy. And now that you're [if there is a student in the location of the player]all gold-star students[otherwise]a gold-star student[end if], [he of headmistress] has given you permission to play with [him of ex-princess] too. Just try not to break [him of ex-princess].'[roman type][line break]And with that, [NameDesc of M] leaves you behind.";
-			compute mandatory room leaving of M;
-	now bigGameLoop is 0;
-	conclude consenting.
 
 School Stuff ends here.

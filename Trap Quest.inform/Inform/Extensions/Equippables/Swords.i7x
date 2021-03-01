@@ -120,7 +120,7 @@ This is the sword-of-purity pussy slut rule:
 	if sword-of-purity is worn, increase the desirability of vagina by 13.
 The sword-of-purity pussy slut rule is listed in the pussy slut eligibility rules.
 
-To decide which number is the damage improvement of (W - sword-of-purity):
+To decide which number is the slap damage improvement of (W - sword-of-purity):
 	let X be the number of at least partially exposed body parts - 5; [for a maximum of +4 (or +5 for a futa)]
 	if there is a worn warrior chestpiece and breasts is not at least partially exposed, increase X by 1; [close enough]
 	if gown-of-purity is worn, increase X by 2;
@@ -132,7 +132,7 @@ To decide which number is the vaginal-sex-addiction-influence of (W - sword-of-p
 	decide on 2.
 
 To compute attack of (W - sword-of-purity) at (M - a monster):
-	say "[if the damage improvement of W <= 1][one of]You slash at [NameDesc of M] with your [ShortDesc of W].[or]You scratch [NameDesc of M] with the tip of your [ShortDesc of W].[at random][otherwise][one of]You can hear a holy orchestra in the background as you fiercely slash at [NameDesc of M] with your [ShortDesc of W].[or]You leave a trail of golden light as you slice [NameDesc of M] with your [ShortDesc of W].[at random][end if]".
+	say "[if the slap damage improvement of W <= 1][one of]You slash at [NameDesc of M] with your [ShortDesc of W].[or]You scratch [NameDesc of M] with the tip of your [ShortDesc of W].[at random][otherwise][one of]You can hear a holy orchestra in the background as you fiercely slash at [NameDesc of M] with your [ShortDesc of W].[or]You leave a trail of golden light as you slice [NameDesc of M] with your [ShortDesc of W].[at random][end if]".
 
 To compute attack effect of (W - sword-of-purity):
 	do nothing.
@@ -225,12 +225,12 @@ To decide which figure-name is clothing-image of (C - dildo sword):
 	decide on figure of dildo sword.
 
 To say ClothingDesc of (S - dildo sword):
-	say "[if S is worn]You are wielding[otherwise]This is[end if] [if the girth of S < 7]a large[otherwise if the girth of S < 9]a giant[otherwise]an absolutely massive[end if] floppy dildo[if the raw-magic-modifier of S is 0], which is currently absolutely useless for real combat! But you wonder what would happen if you put it inside of you...[otherwise], which has some slight power in combat thanks to its magic glow.[end if][line break][variable custom style][if the vaginalvirgin of the player is 0 and the player is female]It serves as a permanent reminder of the shameful way I lost my cherry.[otherwise if the raw-magic-modifier of S <= 0]I could barely win a cat-fight using a weapon like this![otherwise]A weapon that gains its power from fucking me. How appropriate.[end if][roman type][line break]".
+	say "[if S is worn]You are wielding[otherwise]This is[end if] [if the girth of S < 7]a large[otherwise if the girth of S < 9]a giant[otherwise]an absolutely massive[end if] floppy dildo[if the raw-magic-modifier of S is 0], which is currently absolutely useless for real combat! But you wonder what would happen if you put it inside of you...[otherwise], which has some slight power in combat thanks to its magic glow.[end if][line break][variable custom style][if the vaginalvirgin of the player is 0 and the player is possessing a vagina]It serves as a permanent reminder of the shameful way I lost my cherry.[otherwise if the raw-magic-modifier of S <= 0]I could barely win a cat-fight using a weapon like this![otherwise]A weapon that gains its power from fucking me. How appropriate.[end if][roman type][line break]".
 
 To decide which number is the initial outrage of (C - dildo sword):
 	decide on 13.
 
-To decide which number is the damage improvement of (W - dildo sword):
+To decide which number is the slap damage improvement of (W - dildo sword):
 	let X be -1;
 	increase X by the magic-modifier of W;
 	decide on X.
@@ -339,7 +339,7 @@ To compute attack effect of (C - gladiator-sword):[The gladiator-sword becomes l
 To compute attack of (W - gladiator-sword) at (M - a monster):
 	say "You [one of]slash at [NameDesc of M] with[or]scratch [NameDesc of M] with the tip of[at random] your [W].".
 
-To decide which number is the damage improvement of (W - gladiator-sword):
+To decide which number is the slap damage improvement of (W - gladiator-sword):
 	let X be 2;
 	increase X by the magic-modifier of W;
 	if the largeness of breasts > 15 or the largeness of breasts >= max breast size, increase X by 2;
@@ -450,7 +450,7 @@ To compute attack effect of (W - demon broadsword):
 			increase the arousal of W by a random number between 1 and 2;
 			if a random number between 1 and 2 is 1, say "[one of]The [printed name of W] flexes. It's definitely getting excited by having you swing it around like a weapon![or][or][cycling]".
 
-To decide which number is the damage improvement of (W - demon broadsword):
+To decide which number is the slap damage improvement of (W - demon broadsword):
 	if W is dildoed:
 		if demon lord is alive, decide on the favour of demon lord;
 		decide on the arousal of W / 3;
@@ -573,7 +573,7 @@ To decide which number is the initial outrage of (C - rattle):
 To decide which number is the initial cringe of (C - rattle):
 	decide on 8.
 
-To decide which number is the damage improvement of (W - rattle):
+To decide which number is the slap damage improvement of (W - rattle):
 	let X be 1;
 	increase X by the magic-modifier of W;
 	decide on X.
@@ -638,7 +638,7 @@ To say ClothingDesc of (S - a sissy-sword):[I always use pink, so I described it
 	let C be the number of worn chastity bond + the number of worn clothing penetrating asshole;
 	say "A sword that's really more of a dagger. The blade is four inches long, with [if the charge of S > 50]a powder blue[otherwise if the charge of S > 25]a light blue[otherwise if C <= 0]an angry red[otherwise]a dark, crystalline blue[end if] gemstone set into the hilt, which is [if the charge of S > 50]rather warm[otherwise if the charge of S > 0]slightly warm[otherwise]strangely cool[end if] to the touch. [unless C > 0]For some reason, it seems like it doesn't accept you.[line break][variable custom style]For some reason, I can sense that it wants me to either wear a chastity cage or... *gulp*... something in my butt...[roman type][line break][end if]".
 
-To decide which number is the damage improvement of (W - sissy-sword):
+To decide which number is the slap damage improvement of (W - sissy-sword):
 	let X be the number of worn chastity bond + the number of worn ass plugging clothing;
 	if X is 0, decide on -3;
 	increase X by the magic-modifier of W;
@@ -677,7 +677,7 @@ To compute attack effect of (W - voidblade):
 	say "As you swing the blade, you cannot help but gaze into the swirling black and pink void it leaves in its wake. You feel like a tiny portion of your sense of self is being sucked into it.";
 	humiliate 10.
 
-To decide which number is the damage improvement of (W - voidblade):
+To decide which number is the slap damage improvement of (W - voidblade):
 	let X be 0;
 	increase X by the magic-modifier of W;
 	increase X by the humiliation of the player / 7000;

@@ -233,6 +233,20 @@ This is the nails fingers clash rule:
 		rule fails.
 The nails fingers clash rule is listed in the global wearability rules.
 
+This is the gloves fingers clash rule:
+	if wearing-target is finger covering:
+		repeat with C running through worn gloves:
+			if summoning is 0 and autowear is false, say "You can't wear that at the same time as [NameDesc of C].";
+			rule fails.
+The gloves fingers clash rule is listed in the global wearability rules.
+
+This is the hand ready clash rule:
+	if wearing-target is hand ready:
+		repeat with O running through worn hand ready clothing:
+			if summoning is 0 and autowear is false, say "You can't because [if O is wearing-target]you're already wielding it[otherwise if O is equippable]you're already wielding the [ShortDesc of O][otherwise]it needs to occupy the same hand as your [ShortDesc of O][end if]!";
+			rule fails.
+The hand ready clash rule is listed in the global wearability rules.
+
 This is the legs shoes clash rule:
 	if wearing-target is crotch-pullup and summoning is 0:
 		if the player is ankle bound:

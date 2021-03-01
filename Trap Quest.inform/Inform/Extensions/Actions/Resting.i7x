@@ -3,6 +3,7 @@ Resting by Actions begins here.
 Resting is an action applying to nothing.
 
 Check resting:
+	if tutorial is 1, say "This action is disabled in the tutorial." instead;
 	if the player is monster fucked, try resisting instead;
 	if the player is immobile, say "Aren't you a bit busy?" instead;
 	if the fatigue of the player is 0, say "[if the body soreness of the player is 0]You feel completely fine.[otherwise]You're not fatigued at the moment, just injured. You're going to need to find somewhere specific to rest to heal your injuries.[end if]" instead;

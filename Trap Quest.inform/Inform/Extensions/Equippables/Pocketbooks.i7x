@@ -138,7 +138,7 @@ Carry out browsing book of regrets:[TODO: player says something like "I didn't w
 		now the semen volume of vagina is X;
 		StrengthDown X / 10;
 		DexDown X / 10;
-	otherwise if R is 1 and the vaginalvirgin of the player is 0 and the player is female and the openness of vagina > 5:
+	otherwise if R is 1 and the vaginalvirgin of the player is 0 and the player is possessing a vagina and the openness of vagina > 5:
 		say "'[one of]I just can't stop thinking about the way I lost my cherry. My tight little cumdump got ruined by that big, hard [manly-penis]! Now, it's like everybody wants to pin me down and [if pregnancy fetish is 1]breed my hot box[otherwise]come inside me[end if]! Life is so unfair[or]I can't believe I let anybody put their [manly-penis] in my fuckhole! Now whenever I get fucked, I have to think about my first time, and how huge that yummy [manly-penis] was[or]I can barely look at myself in the mirror ever since I lost my virginity! All I can think about is getting pounded into the floor by that heavenly [manly-penis]. Umm, hellooo, if I wanted to be treated like the worthless cumdumpster I am, I would ask[at random]! I want a do-over.' You cringe at what's written on the page, partly because of the [if the bimbo of the player > 14]prudish[end if]wording, but also because it captures how you've always felt on the inside ever since you lost your purity. The words light up as the book emits a wave of energy, erasing themselves from the page as your [vagina] suddenly and very painfully begins tightening up.";
 		PussyClose 5;
 		if the noun is blessed and a random number between 1 and 3 is 1, decrease P by 2;
@@ -208,7 +208,7 @@ Carry out browsing book of anal:[If books are never made easier to get, this pro
 	say "You thumb through the book, which is full of incredibly graphic depictions of [one of]the eponymous Brandi[or]'Brandi'[or]a woman named Brandi[at random] engaged in anal sex.";
 	let R be a random number between 1 and 7;
 	if the player is horny and R >= 4 and the player is able to automatically masturbate:[TODO: automatic ass wank]
-		say "[line break][variable custom style][if the bimbo of the player < 8 and the player is male]Nothing wrong with a quick wank...[otherwise if the bimbo of the player < 8]I-I can't believe I'm about to do this...[otherwise if the analvirgin of the player is 1]T-that was... H-he came right when... and... and... I have to get off. I have to get off RIGHT now.[otherwise if the bimbo of the player < 13]I can't help myself...[otherwise]Ugh, now I HAVE to masturbate! Maybe someone will find me and take over...[end if][roman type][line break]";
+		say "[line break][variable custom style][if the bimbo of the player < 8 and the player is gendered male]Nothing wrong with a quick wank...[otherwise if the bimbo of the player < 8]I-I can't believe I'm about to do this...[otherwise if the analvirgin of the player is 1]T-that was... H-he came right when... and... and... I have to get off. I have to get off RIGHT now.[otherwise if the bimbo of the player < 13]I can't help myself...[otherwise]Ugh, now I HAVE to masturbate! Maybe someone will find me and take over...[end if][roman type][line break]";
 		now auto is 1;
 		try masturbating;
 		now auto is 0;
@@ -233,7 +233,7 @@ Carry out browsing book of anal:[If books are never made easier to get, this pro
 			say "[line break][variable custom style][one of]That looks like it hurts. Will that happen to me?[or]I can't imagine how it would feel to take two [if the player is not possessing a vagina]at the same time[otherwise]in there at the same time[end if]. I know I couldn't stand it...[or]I don't ever want to take anything that big. I'd just cry if anyone made me do that...[or]She can't really enjoy that, can she? I know I couldn't, that's way too big...[or]He didn't even clean it first! I don't want anything to do with that![at random][roman type][line break][run paragraph on]";
 			DelicateUp 1;
 		otherwise if R is 7 and the anal sex addiction of the player < 10:
-			say " [if the anal sex addiction of the player < 3 and the player is male][line break][first custom style][one of]That actually looks pretty good for the one on the bottom...[or]Some of these shots make the guy look good too. Must be the angle or something.[at random][otherwise if the anal sex addiction of the player < 5][first custom style][one of]I guess it isn't all bad. I could see how some people might like it.[or]Not that I'd ever willingly let someone to that to me, but if I had to, that's the position I would pick.[at random][otherwise if the analvirgin of the player is 1][line break][variable custom style][one of]That actually seems like it would feel pretty good...[or]Is that really what anal is like? Wow...[or]I guess I can see why she would write a book about anal. It looks like she's having so much fun...[or]So that's why it feels better if he doesn't pull out. I'm learning so much...[or]Wow... it looks like she's really enjoying that.[at random][otherwise if the anal sex addiction of the player < 7][variable custom style][one of]I guess if he does it like that it would feel pretty great.[or]That did feel pretty good when it happened to me...[or]I guess it really did feel that good. I kind of want to do it even more now.[at random][otherwise][line break][second custom style][one of]I wish someone would fuck me like that...[or]It's great to read about someone getting enthusiastic about getting pounded![or]These dicks are so big... where did she find these guys? I want to meet them![at random][end if][roman type][line break]";
+			say " [if the anal sex addiction of the player < 3 and the player is gendered male][line break][first custom style][one of]That actually looks pretty good for the one on the bottom...[or]Some of these shots make the guy look good too. Must be the angle or something.[at random][otherwise if the anal sex addiction of the player < 5][first custom style][one of]I guess it isn't all bad. I could see how some people might like it.[or]Not that I'd ever willingly let someone to that to me, but if I had to, that's the position I would pick.[at random][otherwise if the analvirgin of the player is 1][line break][variable custom style][one of]That actually seems like it would feel pretty good...[or]Is that really what anal is like? Wow...[or]I guess I can see why she would write a book about anal. It looks like she's having so much fun...[or]So that's why it feels better if he doesn't pull out. I'm learning so much...[or]Wow... it looks like she's really enjoying that.[at random][otherwise if the anal sex addiction of the player < 7][variable custom style][one of]I guess if he does it like that it would feel pretty great.[or]That did feel pretty good when it happened to me...[or]I guess it really did feel that good. I kind of want to do it even more now.[at random][otherwise][line break][second custom style][one of]I wish someone would fuck me like that...[or]It's great to read about someone getting enthusiastic about getting pounded![or]These dicks are so big... where did she find these guys? I want to meet them![at random][end if][roman type][line break]";
 			AnalSexAddictUp 1;
 		otherwise:[arousal]
 			say " [if the bimbo of the player < 8 and the player is female][line break][first custom style][one of]I can't believe I'm actually getting turned on by this. I mean- it's disgusting![or]Why am I getting turned on by this trash...[or]I'm actually getting aroused looking at this filthy tripe. I can't believe this...[at random][otherwise if the bimbo of the player < 8][first custom style][one of]Man, I wish I could find the chick who made this so I could give her a piece of my DICK![or]THIS BOOK IS AWESOME! One thing is for sure, this Brandi chick knows porn![or]I really want to try some of this stuff. But where could I find a bitch who'd let me...[at random][otherwise if the bimbo of the player < 13][line break][variable custom style][one of]Why am I getting so turned on? It's not like any of this is happening to me...[or]This is kind of hot... really hot. What's happening to me?[or]Whoever Brandi is, she must have had a lot of fun making this. It's a lot of fun reading it...[at random][otherwise][line break][second custom style][one of]Teehee, I'm getting horny just reading it![or]This Brandi is kind of a prude. But I love watching her get fucked![or]This book is turning me on! I should ask for a copy to bring home.[at random][end if][roman type][line break]";
@@ -270,7 +270,7 @@ Fighting. Choose a monster and fight them. The book will research them and add t
 ]
 
 To compute attack of (W - a notebook) at (M - a monster):
-	let I be the damage improvement of W;
+	let I be the zap damage improvement of W;
 	if M is notebook-studied:
 		say "The [printed name of W] emits pink and red sparks as you thrust your hand at [NameDesc of M], channelling the energy into a [if I < 3]small[otherwise if I < 6]big[otherwise if I < 9]huge[otherwise]massive[end if], [one of]fizzling[or]crackling[or]sizzling[at random], [one of]dick[or]cock[or]penis[at random]-shaped magic missile!";
 	otherwise:
@@ -306,7 +306,7 @@ To compute studying (N - a number) of (M - a monster):
 			now M is notebook-studied.
 
 [Considering the player usually has to go three regions to get to the notebook, then run back, the item should be fairly powerful]
-To decide which number is the damage improvement of (W - a notebook):
+To decide which number is the zap damage improvement of (W - a notebook):
 	let X be MagicPowerDamage;
 	increase X by (2 + the number of notebook-studied monsters) / 3;
 	if the noun is notebook-studied:
@@ -328,7 +328,7 @@ To decide which number is the crafting key of (C - a notebook):
 	decide on 0.
 
 To decide which text is the RecipeDesc of (C - a notebook):
-	say "The recipe just says 'Place a pocketbook in the bowl'.".
+	decide on "The recipe just says 'Place a pocketbook in the bowl'.".
 
 This is the notebook specific recipe rule:
 	let R be a random notebook;

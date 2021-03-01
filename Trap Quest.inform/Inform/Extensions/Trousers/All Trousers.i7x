@@ -29,7 +29,7 @@ To decide which figure-name is clothing-image of (H - a pink bloomers):
 Definition: a pink bloomers is babywear: decide yes. [NPCs can put this on the player]
 
 
-bitch bottoms is a trousers.
+bitch bottoms is a trousers. bitch bottoms is leg exposing.
 The printed name of bitch bottoms is "[clothing-title-before]bitch bottoms[clothing-title-after]". The text-shortcut of bitch bottoms is "btms".
 Figure of bitch bottoms is the file "Items/Clothes/Lower/Pants/bitchbottoms1.png".
 To decide which figure-name is clothing-image of (H - bitch bottoms):
@@ -92,12 +92,27 @@ exercise shorts is a kind of trousers. An exercise shorts is manly. An exercise 
 To say ShortDesc of (Y - an exercise shorts):
 	say "pair of exercise shorts".
 To decide which object is the unique-upgrade-target of (C - an exercise shorts):
-	if the number of worn knickers is 0, decide on a random off-stage hotpants;
+	if the number of worn knickers is 0, decide on a random off-stage plentiful hotpants;
 	let E be a random off-stage exercise shorts;
 	if E is clothing and the initial outrage of E > the initial outrage of C, decide on E;
 	if diaper lover > 0, decide on a random off-stage yoga pants;
 	decide on nothing.
 Definition: an exercise shorts is exercise themed: decide yes.
+
+black-exercise-shorts is an exercise shorts. black-exercise-shorts is unique.
+The printed name of black-exercise-shorts is "[clothing-title-before]black exercise shorts[clothing-title-after]". Understand "black" as black-exercise-shorts. The text-shortcut of black-exercise-shorts is "bes".
+Figure of black exercise shorts is the file "Items/Clothes/Lower/Pants/exerciseshorts3.png".
+To decide which figure-name is clothing-image of (H - black-exercise-shorts):
+	decide on figure of black exercise shorts.
+To say UniqueClothingDesc of (Y - black-exercise-shorts):
+	say "A pair of black exercise shorts that are nice and snug.".
+To say MediumDesc of (Y - black-exercise-shorts):
+	say "pair black exercise shorts".
+Definition: black-exercise-shorts is black themed: decide yes.
+To decide which number is the initial outrage of (C - black-exercise-shorts):
+	decide on 1.
+To decide which number is the defaultDiaperHidingLength of (C - black-exercise-shorts):
+	decide on 0. [Can only hide normal underwear]
 
 blue-exercise-shorts is an exercise shorts. blue-exercise-shorts is rare.
 The printed name of blue-exercise-shorts is "[clothing-title-before]loose blue exercise shorts[clothing-title-after]". Understand "loose", "blue" as blue-exercise-shorts. The text-shortcut of blue-exercise-shorts is "lbes".

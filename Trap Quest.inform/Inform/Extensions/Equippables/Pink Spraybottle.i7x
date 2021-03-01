@@ -51,13 +51,14 @@ Definition: pink-spraybottle is fluid immune: decide yes.
 Check taking pink-spraybottle when pink-spraybottle is not held:
 	if the noun is not actually summonable, say "That requires a free hand." instead;
 	if the class of the player is not maid:
-		let H be a random worn headgear;
-		if H is maid headdress or black maid headdress is actually summonable:
-			allocate 2 seconds;
-			compute maidification of the noun;
-			do nothing instead;
-		otherwise:
-			say "You don't feel all that interested in cleaning duty right now[if there is worn headgear], while you're wearing the [ShortDesc of a random worn headgear][otherwise if the number of worn maid headdress is 0], you're not a maid[end if]. You leave the [ShortDesc of noun] where it is." instead.
+		if playerRegion is not school:
+			let H be a random worn headgear;
+			if H is maid headdress or black maid headdress is actually summonable:
+				allocate 2 seconds;
+				compute maidification of the noun;
+				do nothing instead;
+			otherwise:
+				say "You don't feel all that interested in cleaning duty right now[if there is worn headgear], while you're wearing the [ShortDesc of a random worn headgear][otherwise if the number of worn maid headdress is 0], you're not a maid[end if]. You leave the [ShortDesc of noun] where it is." instead.
 
 To compute maidification of (C - a clothing):
 	if C is actually summonable:
@@ -72,8 +73,9 @@ To compute maidification of (C - a clothing):
 		summon C.
 
 Report taking pink-spraybottle:
-	if the noun is not worn, now the noun is worn by the player;
-	if newbie tips is 1, say "[newbie style][one of]Newbie Tip: You just picked up a spraybottle. It's out of cleaning fluid right now, but you earn some by cleaning up puddles of [if diaper quest is 1]urine[otherwise]semen[end if][if diaper quest is 0 and (watersports fetish is 1 or lactation fetish is 1)] and other fluids[end if] you've left throughout the dungeon. Once you have enough, you can spray it on some dirty clothes to quickly clean them off, or spray it on enemies for a (usually) quite damaging attack.[or][stopping][roman type][line break]".
+	if the noun is not worn and the player is not in a predicament room:
+		now the noun is worn by the player;
+	if newbie tips is 1 and the noun is worn, say "[newbie style][one of]Newbie Tip: You just picked up a spraybottle. It's out of cleaning fluid right now, but you earn some by cleaning up puddles of [if diaper quest is 1]urine[otherwise]semen[end if][if diaper quest is 0 and (watersports fetish is 1 or lactation fetish is 1)] and other fluids[end if] you've left throughout the dungeon. Once you have enough, you can spray it on some dirty clothes to quickly clean them off, or spray it on enemies for a (usually) quite damaging attack.[or][stopping][roman type][line break]".
 
 Report taking off pink-spraybottle:
 	if the charge of the noun > 0:
@@ -190,7 +192,7 @@ To compute (M - a mechanic) considering (T - pink-spraybottle):
 	otherwise:
 		say "[speech style of M]'I can see that it's not broken. Congratulations, you aren't the most useless maid ever. Incredible...'[roman type][line break][big he of M] doesn't seem very interested in the [ShortDesc of the noun].".
 
-To decide which number is the damage improvement of (S - pink-spraybottle):
+To decide which number is the zap damage improvement of (S - pink-spraybottle):
 	if S is spray and the magic power of the player > 0:
 		if the class of the player is maid, decide on 7;
 		decide on 5;

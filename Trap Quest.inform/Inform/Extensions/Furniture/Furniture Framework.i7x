@@ -46,6 +46,10 @@ Check entering furniture:
 	if the noun is royal bed:
 		if the body soreness of the player is 0 and the fatigue of the player is 0, say "You are uninjured, so this would do nothing." instead;
 	if the noun is hotel bed or the noun is prison guard's bed:
+		repeat with M running through undefeated explorers in the location of the noun:
+			if the explorer-bimbo of M >= 2:
+				allocate 3 seconds;
+				say "[BigNameDesc of M] blocks you.[line break][speech style of M]'Hey, this is my turf! Find your own room!'[roman type][line break]Looks like you won't be able to rest (or work) in [the location of M] while [he of M][']s stationed here." instead;
 		say "Rest on the bed until you feel completely better?[if the location of the player is smoky][bold type]Remember, there is pink smoke in this room, which you will inevitably have to breathe for several rounds.[roman type][end if] ";
 		unless the player is in agreement, say "You change your mind." instead;
 	if the noun is hotel chairs and diaper focus is 0:
@@ -272,7 +276,7 @@ To say ExamineDesc of (G - an automated changing station):
 	say "An adult-sized capsule about the size and shape of a shower cubicle stands on one wall here. A box of disposable diapers sits secured at the base, and a pair of wristcuffs dangles from the top - it seems that it is an automated diaper changing station, seemingly ready to change the diaper of anyone who locks themselves in it.[if the player is in a predicament room][one of][line break][variable custom style]This was placed here by whatever forces put me in this predicament, wasn't it.[roman type][line break][or][stopping][end if]".
 To compute furniture resting on (G - an automated changing station):
 	allocate 6 seconds;
-	say "You enter the automated changing station and close the door. You push your wrists into the cuffs above your head. ";
+	if auto is 0, say "You enter the automated changing station and close the door. You push your wrists into the cuffs above your head. ";
 	let diaperChangeAllowed be 1;
 	let K be a random worn knickers;
 	if K is knickers:

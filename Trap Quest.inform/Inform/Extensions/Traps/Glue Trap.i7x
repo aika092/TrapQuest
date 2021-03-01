@@ -363,7 +363,7 @@ To compute glue escaping:
 	if the stickiness of the player is 0:
 		say "The glue touching you seems a bit dry and crumbly. You're free![line break]";
 		compute raw glue escaping G with 0;
-		[###If they stumble and fall or if they're weak and kneel back down, we should probably test for re-glueing; but maybe not here; danger of recursion... ###Aika I don't think we should do that test at all in the name of keeping the game actually fun.]
+		[###If they stumble and fall or if they're weak and kneel back down, we should probably test for re-gluing; but maybe not here; danger of recursion... ###Aika I don't think we should do that test at all in the name of keeping the game actually fun.]
 	otherwise:
 		[The mutation effects are handled by compute glue trap]
 		say "You tug harder at the glue, trying desperately to get free.";
@@ -865,6 +865,8 @@ Carry out tearing off worn clothing:
 		if player-numerical-response is 2:
 			say "Ouch! That really hurt!";
 			PainUp 1;
+			repeat with F running through fuckholes penetrated by the noun:
+				ruin F;
 			if C is not rigid:
 				if C is crotch-intact or C is crotch-zipped or C is crotch-skirted:
 					say "Oh... and the glue had adhered so strongly you hear a tearing sound...";

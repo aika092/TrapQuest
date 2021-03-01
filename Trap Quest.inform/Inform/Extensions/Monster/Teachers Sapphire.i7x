@@ -47,36 +47,40 @@ To decide which number is the EnslavedDominationThreshold of (M - teacher-sereni
 
 heel-lesson is a lesson. The lesson-teacher of heel-lesson is teacher-serenity.
 
-To compute teaching of (L - heel-lesson):[TODO - deal with edge case where there aren't enough students left to run a full class]
+Definition: heel-lesson is lesson-appropriate:
+	if the number of alive rank1 students < 2, decide no;
+	decide yes.
+
+To compute teaching of (L - heel-lesson):
 	allocate 65 seconds;
 	let M be the lesson-teacher of L;
-	let H be a random worn heels;
-	if H is nothing:
-		now H is a random off-stage court heels;
-		if H is nothing, now H is a random court heels;
-		blandify H;
-		now the heel-height of H is 4;
-	let X be the hindrance of H;
-	say "[speech style of M]'Today's lesson will be on wearing high heels. Is everyone wearing their own pair of high heels?'[roman type][line break][BigNameDesc of M] speaks quickly and efficiently as if [he of M] is under a strict time limit. A couple of students [if the number of worn heels is 0]including yourself [end if]are not wearing heels and so [he of M] provides spare pairs - 4 inch hot pink court heels - where necessary.[line break][speech style of M]'Okay now follow my lead: put your hands out to the side like a delicate lady and step, then step, then step, always putting one foot directly in front of the other.'[roman type][line break]You join the other students in doing your best to mimic [his of M] perfect walk.";
+	let H be a random worn shoes;
+	let PH be a random pvc court heels;
+	say "[speech style of M]'Today's lesson will be on wearing high heels.'[roman type][line break][BigNameDesc of M] speaks quickly and efficiently as if [he of M] is under a strict time limit. As [he of M] speaks, [he of M] clicks [his of M] fingers. In a flash, everyone is wearing an identical pair of 4 inch pink pvc court heels!";
+	if PH is not worn:
+		if H is clothing, WardrobeVanish H;
+		summon PH uncursed;
+	otherwise:
+		if the heel-height of PH is not 4, say "You feel your heels magically changing height to be the same as everyone else's.";
+	now the heel-height of PH is 4;
+	let X be the hindrance of PH;
+	say "[speech style of M]'Okay, now follow my lead: put your hands out to the side like a delicate lady and step, then step, then step, always putting one foot directly in front of the other.'[roman type][line break]You join the other students in doing your best to mimic [his of M] perfect walk.";
 	refresh the clothing-focus-window;
 	repeat with ST running through students in the location of the player:
 		let R be (a random number between 1 and 3) - the heel-skill of ST;
 		say "[BigNameDesc of ST] [if R < -1]manages to walk perfectly, [one of]and even adds in a cheeky skip! [or]adding a cheeky curtsey at the end. [purely at random][otherwise if R <= 0][one of]struts around almost as well as miss [teacher-name of M][or]seems to have no problems learning and perfecting the walk[purely at random]. [otherwise if R is 1]wobbles [one of]as [he of ST] tries to practise the steps[or]once or twice[or]only a little as [he of ST] tries [his of ST] best to copy [teacher-name of M][in random order]. [otherwise if R is 2][one of]wobbles dangerously and very nearly falls over[or]has to frantically wave [his of ST] arms to steady [himself of ST] as [he of ST] almost topples over[in random order]! [otherwise if R is 3][one of]slips and falls onto [his of ST] bum! Ouch[or]suddenly stumbles and has to grab a desk to avoid falling over[in random order]! [otherwise]can hardly move! [big he of ST] tries to take a single step forward and immediately slips up, clattering to the ground. [end if]";
 	say "[if X <= 0 and the heel skill of the player > 5]You show up the entire room by not only perfectly strutting around but also adding in some 360 degree twirls and ballet-like prances into the air. The other faces in the room are a mix of awe, envy and fury. [otherwise if X <= 0]You manage to do very well yourself. You make it around the room with an almost faultless performance, placing one foot precisely in front of the other each time, with no noticeable wobbles. You feel proud! [otherwise if X is 1]You manage to do pretty well yourself. You make it around the room with only one or two minor wobbles. [otherwise if X is 2]You make it around the room successfully but not without several definitely noticeable wobbles as you do. During your worst wobble you could swear you hear one of the other students snicker from behind you. [otherwise if X is 3]It's a very wobbly journey but it does seem like you might make it all the way around the room without falling over. But then tragedy strikes! It's like a rug is pulled out from underneath you as you suddenly go toppling to the ground and land on your [buttcheeks] with a thud. An array of chuckles from several of the other students greets your ears. [otherwise if X is 4]You only make it forward a few steps before you trip over yourself and clatter to the ground, landing on your [buttcheeks] with a thud. Nearly all the other students giggle as they witness your pathetic attempt.[otherwise]You try to put one foot exactly in front of the other just like miss [teacher-name of M] but as soon as you do you instantly lose your balance and end up on your [buttcheeks]! The whole class points and laughs at your abject failure. [end if]";
 	HeelUp 1;
-	say "[BigNameDesc of M] calls for quiet.[line break][speech style of M]'Okay, that's enough practise for today. Now we will have a little competition between two of you, to see who's surest on their heels, and then the loser will get a little... forfeit. So, I need two daring volunteers from among you all. Who's up for it?'[roman type][line break]";
+	say "[BigNameDesc of M] calls for quiet.[line break][speech style of M]'Okay, that's enough practise for today. Now we will have a little competition between two of you, to see who's surest on their heels. The winner will get promoted, and the loser will have to wear their shoes for a little longer. So, I need two daring volunteers from among you all. Who's up for it?'[roman type][line break]";
 	let ST be a random student in the location of the player;
 	say "[BigNameDesc of ST] stands up quickly.[line break][speech style of ST]'I'll do it!'[roman type][line break]It looks like you could choose to be the second challenger, if you wish. Do you want to volunteer? ";
 	if the player is bimbo consenting:
 		let R be (a random number between 1 and 5) - the heel-skill of ST;
 		say "You stand up and raise your hand [if the delicateness of the player > 11]nervously[otherwise if the delicateness of the player < 5]confidently[end if]. You feel several stares boring into the back of your head, but you keep your own gaze fixed firmly on the teacher. [big he of M] nods and smiles.[line break][speech style of M]'[one of]Fine, let's see what you've got[or]Let's hope you do better this time[stopping].'[roman type][line break]You are both taken to one end of the front of the room and then spun round several times until you are quite dizzy. You can hardly see straight, never mind walk! And yet you are quickly given a command to go! The girl who makes it the furthest across the room wins. You see that [NameDesc of ST] has already taken [his of ST] first awkward step and so you quickly try to do the same. You feel so off-balance! And yet you must win. You take another step. [if X > 1 and X > R]THUMP. That's it, you're already flat on your butt! It's over! You hear a few sniggers from other students.[line break][variable custom style]Why did I think this was a good idea?![otherwise if X > R]Step. Wobble. Step. Wobble. [BigNameDesc of ST] is increasing [his of ST] lead! You try to go faster and stagger even more, almost toppling over completely. In the end you are forced to watch as you are beaten by a good couple of feet to the other end of the room. [variable custom style]Darn![otherwise]Step. Wobble. Step. Wobble. [BigNameDesc of ST] is getting further ahead of you! You focus as hard as you can and speed up. You catch [him of ST] up! Stumbling the last few feet, you half lean and half collapse onto the end wall moments before [BigNameDesc of ST].[line break][variable custom style]I've won![end if][roman type][line break]";
 		if X > R:
-			say "As [NameDesc of ST] whoops and celebrates, one of [NameDesc of M][']s heeled feet lightly presses down on your back, letting you know you're not allowed to stand back up. You keep your head bowed in shame and it's only a few moments before something hard smacks into your butt with a loud THWACK!";
-			PainUp 1;
-			say "THWACK![line break]THWACK![line break][speech style of M]'This is how we treat losers in this class! We'll beat overconfidence out of you one series of paddling at a time!'[roman type][line break]THWACK![line break]THWACK![line break][M] removes [his of M] heel from your back and you think you hear a little sadistic chuckle escape [his of M] lips as [he of M] turns around, having finished with you.";
-			PainUp 1;
-			say "Your [if the delicateness of the player < 9]heavy breathing[otherwise]sobbing[end if] is the only audible sound as the others silently filter out of the room.";
-			BodyRuin 5;
+			say "[speech style of M]'Well well, [NameBimbo], you clearly need some more practise in these heels, don't you.'[roman type][line break]As [NameDesc of ST] whoops and celebrates, [NameDesc of M] waves [his of M] hand, and [bold type]you feel a curse taking hold of your heels![roman type][line break]";
+			now PH is cursed;
+			compute summoned quest of PH;
 			promote ST;
 		otherwise:
 			now armband is emerald;
@@ -84,10 +88,9 @@ To compute teaching of (L - heel-lesson):[TODO - deal with edge case where there
 			now the armband-title of armband is "Precious";
 			now the armband-print of armband is "prancing [if diaper quest is 1]princess[otherwise]paramour[end if]";
 			say ClothingDesc of armband;
-			say "You are so distracted with examining your new armband that you almost don't even notice that [NameDesc of ST] is being kept in a kneeling position, and the teacher is spanking [him of ST] with a large wooden paddle. By the time you're properly paying attention the show is over leaving the poor [boy of ST][']s sobbing the only audible sound as the others silently file out of the room.";
-			HappinessDown ST by 5;
+			say "You are so distracted with examining your new armband that you almost don't even notice that [NameDesc of M] is using magic to place a curse on [NameDesc of ST][']s heels, preventing [him of ST] from removing them. By the time you're properly paying attention, it's been done, leaving the poor [boy of ST] whining with frustration as [he of ST] tries to join the others who are silently filing out of the room, struggling to stay upright on [his of ST] new semi-permanent high heels.";
+			HappinessDown ST by 3;
 			update students; [an important line which makes boring old students disappear and new cool ones appear]
-			demote ST; [pointless as it's a sapphire course so people can't be demoted but as a reminder to other lessons, this is what should be here]
 	otherwise if the number of students in the location of the player > 1:
 		let ST2 be a random student in the location of the player;
 		while ST is ST2:
@@ -151,7 +154,7 @@ To compute teaching of (L - roulette-lesson):
 						let STU be entry STN of LST;
 						FavourDown STU; [If you put water in, 50% of the students that didn't put water in are unimpressed.]
 	say "[BigNameDesc of M] gathers up all the canisters, before producing one more.[line break][speech style of M]'Okay, now I want everyone to spit in this one!'[roman type][line break][big he of M] demonstrates by letting a big glob of saliva run from [his of M] tongue into the canister. Several students grimace or make disgusted sounds, but nobody refuses, and less than a minute later there are [number of people in the location of the player] different helpings of spit all mixed up in the canister.[line break][speech style of M]'And now for the cherry on top...'[roman type][line break][BigNameDesc of M] [if diaper quest is 1]takes out a little pink vial and pours a dose of magenta liquid into the canister, before sealing it shut like the others.[line break][speech style of M]'Just a little concoction the nurse so kindly let me borrow. Whoever drinks it will become COMPLETELY incontinent for a short while. How fun! [otherwise]turns [his of M] back to the class and lowers the canister to under [his of M] pussy, and the whole class watches in mortified silence as [he of M] audibly rubs and squelches [himself of M] until what sounds like several drops of [his of M] juices have joined the saliva in the canister. Then [he of M] seals it shut like the others.[line break][speech style of M]'[end if]Now THIS is a real forfeit drink! Let me explain. Two of you are going to play a little game of Russian Roulette with this!'[roman type][line break]";
-	say "[BigNameDesc of M] produces two pink devices that look like miniature leaf blowers or watering cans, and sets them on the table. They each have a base with a circular slot which one of the canisters would fit into, and a long hollow spout that is narrow enough for you to get your mouth around.[line break][speech style of M]'You will take it in turns to load a canister into your SwallowMatic4000, put the nozzle in your mouth and pull the trigger. The contents of the canister will be forcefully squirted to the back of your throat where you'll be forced to swallow. You will keep going until one of you chickens out, or one of you gets the forfeit shot. So, I need two daring volunteers from among you all. Who's up for it?'[roman type][line break]";
+	say "[BigNameDesc of M] produces two pink devices that look like miniature leaf blowers or watering cans, and sets them on the table. They each have a base with a circular slot which one of the canisters would fit into, and a long hollow spout that is narrow enough for you to get your mouth around.[line break][speech style of M]'You will take it in turns to load a canister into your SwallowMatic4000, put the nozzle in your mouth and pull the trigger. The contents of the canister will be forcefully squirted to the back of your throat where you'll be forced to swallow. You will keep going until one of you chickens out, or one of you gets the forfeit shot. The other one gets promoted. So, I need two daring volunteers from among you all. Who's up for it?'[roman type][line break]";
 	let ST be a random student in the location of the player;
 	truncate LST to 0 entries;
 	add ST to LST;
@@ -186,6 +189,7 @@ To compute teaching of (L - roulette-lesson):
 			if the player is bimbo consenting:
 				say "You take a canister at random. You put your mouth around the nozzle and push the canister down! ";
 				if CD is 0:
+					remove yourself from LST;
 					say "Something slimy and wrong floods your mouth. You immediately know you're drinking the combined spit of your classmates and [NameDesc of M][']s special sauce. It feels so wrong! [if diaper quest is 1]You feel a twinge behind your bladder. [end if][moderateHumiliateReflect]";
 					if diaper quest is 1, increase temporary-incontinence by a random number between 3 and 5;
 					otherwise SexAddictUp 1;
@@ -215,6 +219,7 @@ To compute teaching of (L - roulette-lesson):
 				say "[BigNameDesc of P] takes a canister and shoots it into [his of P] mouth! ";
 				if CD is 0:
 					say "You watch [him of P] gag as something clear runs out of [his of P] nose and the sides of [his of P] mouth. You immediately know that [he of P] got the forfeit drink[if yourself is listed in LST]! You're safe[end if]!";
+					remove P from LST;
 					if yourself is listed in LST:
 						HappinessDown P by 2;
 						repeat with TST running through unfriendly students in the location of the player:
@@ -231,7 +236,7 @@ To compute teaching of (L - roulette-lesson):
 				say "[BigNameDesc of P] takes a step back and shakes [his of P] head. [big he of P] is too scared to take another shot!";
 				remove P from LST;
 		truncate LS to (number of entries in LS - 1) entries;
-	say "[BigNameDesc of M] [if the number of entries in LST is 2]doubles over laughing.[line break][speech style of M]'Too bad, too bad! What a lovely drink, hmm? I bet you enjoyed that! But hey, at least you earned yourself a promotion[otherwise]tilts [his of M] head to one side.[line break][speech style of M]'Hmm, fair enough, up to you[end if].'[roman type][line break]";
+	say "[BigNameDesc of M] [if 0 is listed in LS]tilts [his of M] head to one side.[line break][speech style of M]'Hmm, fair enough, up to you[otherwise]doubles over laughing.[line break][speech style of M]'Too bad, too bad! What a lovely drink, hmm? I bet you enjoyed that[end if].'[roman type][line break]";
 	repeat with P running through LST:
 		if P is yourself:
 			now armband is emerald;
@@ -300,11 +305,23 @@ To decide which number is the EnslavedDominationThreshold of (M - teacher-angela
 
 make-up-lesson is a lesson. The lesson-teacher of make-up-lesson is teacher-angela.
 
+To decide which number is the min-students of (L - make-up-lesson):
+	decide on 0.
+
 To compute teaching of (L - make-up-lesson):
 	let M be the lesson-teacher of L;
-	let P be a random promotable student in the location of the player;
-	if the make-up of face is 2 or permanent makeup is 1 or P is nothing, now P is the player;
-	say "[speech style of M]'It iz time for ze regularly scheduled make up lezzon.'[roman type][line break][BigNameDesc of M] paces up and down at the front as [he of M] addresses you all.[line break][speech style of M]'Az per uzual, ze student who haz come to clazz viz ze most beautiful vizage vill increaze her rank. You.'[roman type][line break][big he of M] turns to face the class and points [his of M] finger directly at [YouDesc of P].[line break][speech style of M]'Go.'[roman type][line break]";
+	let P be a random student in the location of the player;
+	if P is nothing:
+		if the make-up of face >= 3 or permanent makeup is 1, now P is the player;
+		say "[speech style of M]'You are my only student at the moment, hmm?'[roman type][line break][BigNameDesc of M] looks at you.[line break]";
+		if P is the player:
+			say "[speech style of M]'Zizz face is acceptable. Go.'[roman type][line break]";
+		otherwise:
+			allocate 6 seconds;
+			say "[speech style of M]'Zizz face needs more work.'[roman type][line break]";
+	otherwise:
+		if the make-up of face >= 2 or permanent makeup is 1, now P is the player;
+		say "[speech style of M]'It iz time for ze regularly scheduled make up lezzon.'[roman type][line break][BigNameDesc of M] paces up and down at the front as [he of M] addresses you all.[line break][speech style of M]'Az per uzual, ze student who haz come to clazz viz ze most beautiful vizage vill increaze her rank. You.'[roman type][line break][big he of M] turns to face the class and points [his of M] finger directly at [YouDesc of P].[line break][speech style of M]'Go.'[roman type][line break]";
 	if P is the player:
 		allocate 12 seconds;
 		now armband is emerald;
@@ -318,12 +335,12 @@ To compute teaching of (L - make-up-lesson):
 		try going south;
 		say "[variable custom style]Huh, that was easy.[roman type][line break]";
 		update students; [an important line which makes boring old students disappear and new cool ones appear]
-	otherwise:
+	otherwise if P is student:
 		allocate 40 seconds;
 		promote P;
 		say "You watch as [his of P] sapphire ID card turns into an emerald one, and [he of P] is now '[student-name of P] the [student-print of P]'. [big he of P] grins widely and then prances out of the room.";
 		compute mandatory room leaving of P;
-		say "[speech style of M]'You vill now practize ze art of make up on yourzelves. The ztudent amongzt you who iz ze most bold with zeir efforts vill also increase her rank.'[roman type][line break]You are each given a make up kit and a mirror.";
+		say "[speech style of M]'You vill now practize ze art of make up on yourzelves. If you vant to be promoted at ze ztart of ze next clazz, zen be bold!'[roman type][line break]You are each given a make up kit and a mirror.";
 		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 		let MU be the make-up of face;
 		repeat with N running from MU to 3:
@@ -341,11 +358,18 @@ To compute teaching of (L - make-up-lesson):
 			if the make-up of face is 0:
 				repeat with ST running through ditzy students in the location of the player:
 					FavourDown ST;
-		repeat with ST running through students in the location of the player:
+		[repeat with ST running through students in the location of the player:
 			now the lessonInt1 of ST is (the dedication of ST + 1) / 2;
-			say "[BigNameDesc of ST] [if the lessonInt1 of ST <= 0]is too timid to do anything to [his of ST] face at all[otherwise if the lessonInt1 of ST is 1][one of]adds only the tiniest amount of make up[or]works on [his of ST] lipstick but nothing else[or]adds a light touch of blusher to [his of ST] cheeks[in random order][otherwise if the lessonInt1 of ST is 2][one of]works hard on [his of ST] eyes and contours to create a rather strikingly beautiful appearance[or]works on [his of ST] lips and eyelashes, and ends up looking rather sexy[or]applies an even layer of foundation and then a dash of blusher on top[in random order][otherwise]coats [his of ST] visage with layers upon layers of make up until [he of ST] looks rather ridiculous[end if].";
-		say "[BigNameDesc of M] comes over to assess everyone's handiwork. [big he of M] raises [his of M] eyebrows when [he of M] looks at yours.[line break][speech style of M]'[if the make-up of face >= 3]Bah! This lookz like little child tried to create it. Although I zuppoze I did inztruct you to be bold, hmm?'[otherwise if the make-up of face is 2]Zis is exzellent! Marvey-yeuh! Bravo. But iz it bold enough? Hmm.'[otherwise]Bah, zis iz boring. Perhaps you are lacking in ze confidenze to graduate zis clazz any time zoon.'[end if][roman type][line break]";
-		let PP be the player;
+			say "[BigNameDesc of ST] [if the lessonInt1 of ST <= 0]is too timid to do anything to [his of ST] face at all[otherwise if the lessonInt1 of ST is 1][one of]adds only the tiniest amount of make up[or]works on [his of ST] lipstick but nothing else[or]adds a light touch of blusher to [his of ST] cheeks[in random order][otherwise if the lessonInt1 of ST is 2][one of]works hard on [his of ST] eyes and contours to create a rather strikingly beautiful appearance[or]works on [his of ST] lips and eyelashes, and ends up looking rather sexy[or]applies an even layer of foundation and then a dash of blusher on top[in random order][otherwise]coats [his of ST] visage with layers upon layers of make up until [he of ST] looks rather ridiculous[end if].";]
+		say "[BigNameDesc of M] comes over to assess everyone's handiwork. [big he of M] raises [his of M] eyebrows when [he of M] looks at yours.";
+		if the make-up of face < 3 and the printed name of the chosen numerical response matches the text "any": [no make up added]
+			say "[speech style of M]'No change?! Zis won't do. Not in my clazz!'[roman type][line break]";
+			if lipstick collar is actually summonable:
+				summon lipstick collar locked;
+				say "[BigNameDesc of M] produces a collar with a pair of lips at the front, and locks it around your neck![line break][speech style of M]'Zis will teach you not to refuse my teaching!'[roman type][line break]";
+		otherwise:
+			say "[speech style of M]'[if the make-up of face >= 3]Bah! This lookz like little child tried to create it. Although I zuppoze I did inztruct you to be bold, hmm?'[otherwise if the make-up of face is 2]Zis is exzellent! Marvey-yeuh! Bravo. But iz it bold enough? Hmm.'[otherwise]Bah, zis iz boring. Perhaps you are lacking in ze confidenze to graduate zis clazz any time zoon.'[end if][roman type][line break]";
+		[let PP be the player;
 		repeat with ST running through students in the location of the player:
 			if ST is promotable and (the lessonInt1 of ST >= the make-up of face or (the lessonInt1 of ST is the make-up of face and a random number between 1 and 2 is 1)), now PP is ST;
 		say "[BigNameDesc of M] turns to face the class and points [his of M] finger directly at [YouDesc of PP].[line break][speech style of M]'You are the boldezt.'[roman type][line break]";
@@ -363,13 +387,14 @@ To compute teaching of (L - make-up-lesson):
 					HappinessDown STTH;
 				otherwise if STTH is ditzy student:
 					FavourUp STTH;
-			update students; [an important line which makes boring old students disappear and new cool ones appear]
+			update students;] [an important line which makes boring old students disappear and new cool ones appear]
+	if P is not the player:
 		let MP be a random off-stage make up kit;
 		if MP is a thing:
-			say "[BigNameDesc of M] hands each of you a small make up kit.[line break][speech style of M]'For you to practize viz at home.'[roman type][line break]";
+			say "[BigNameDesc of M] hands [if P is student]each of [end if]you a small make up kit.[line break][speech style of M]'For you to practize viz at home.'[roman type][line break]";
 			now MP is carried by the player;
 			now focused-thing is MP;
-		say "[big he of M] turns to face the whole class and claps [his of M] hands loudly.[line break][speech style of M]'Enough! Clazz dizmizzed!'[roman type][line break]".
+		say "[big he of M] [if P is student]turns to face the whole class and [end if]claps [his of M] hands loudly.[line break][speech style of M]'Enough! Clazz dizmizzed!'[roman type][line break]".
 
 [To compute make-up-lesson-application of (M - a student):
 	say "When it's [his of M] job to return the favour, [he of M] tries to copy you pretty much stroke for stroke, leaving you with a similar faint and mild paintjob.";

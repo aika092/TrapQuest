@@ -53,7 +53,7 @@ Definition: pink sissy bow is transformation-protected:
 	if diaper lover <= 0, decide yes;
 	decide no.
 Definition: pink sissy bow is roleplay:
-	if the player is male, decide yes;
+	if the player is gendered male, decide yes;
 	decide no.
 
 To say ClothingDesc of (H - pink sissy bow):

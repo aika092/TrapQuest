@@ -126,7 +126,6 @@ Definition: kitsune is babifying the player: decide no.
 Definition: kitsune is normally annoyed: decide yes. [Kitsune never drops to unfriendly levels of favour]
 
 To compute perception of (M - kitsune):
-	now M is interested;
 	if the target-disguise of M is M:
 		say "Well hello there. Have anything for me?";
 		alwayscutshow figure of kitsune interact 2 for M;

@@ -161,7 +161,7 @@ Carry out wearing clothing:
 		now another-turn-flavour is the substituted form of "It takes a long time to finish putting [NameDesc of the noun] on.";
 	if the noun is bottom layer, layer the noun correctly; [Cage, knickers and trousers can do some funky stuff like going under skirts]
 	otherwise layer the noun correctly on top;
-	say "[line break]You put on the [ShortDesc of noun].[line break]".
+	say "[line break]You put on the [FullTitle of noun].[line break]".
 
 Report wearing something (this is the identify-magic-state rule):
 	if the noun is wearthing:

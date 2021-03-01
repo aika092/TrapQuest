@@ -29,6 +29,8 @@ To compute school periodic effect of (C - a serving-bondage):
 
 serving table is a serving-bondage. serving table is glass. The printed name of serving table is "[clothing-title-before]serving table[clothing-title-after]". The text-shortcut of serving table is "svtb".
 
+Definition: serving table is removable: decide no.
+
 To decide which figure-name is clothing-image of (C - serving table):
 	decide on figure of serving table.
 

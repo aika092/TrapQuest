@@ -17,7 +17,7 @@ Does this item cover the player's crotch but not ass?
 +!]
 Definition: a clothing (called C) is pussy protection:
 	if C is crotch-displaced, decide no;
-	if C is crotch-intact or C is crotch-zipped or C is crotch-skirted:
+	if C is crotch-intact or C is crotch-zipped[ or C is crotch-skirted]:
 		if C is crotch-assless, decide yes;
 	decide no.
 [!<ClothingIsNoProtection>+

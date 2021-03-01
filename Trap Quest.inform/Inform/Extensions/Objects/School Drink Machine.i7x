@@ -2,6 +2,8 @@ School Drink Machine by Objects begins here.
 
 drink-machine is a dispenser. The printed name of drink-machine is "[TQlink of item described]drink machine[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of drink-machine is "drm". Understand "drink", "machine" as drink-machine. drink-machine is in School17.
 
+Definition: drink-machine is immune to change: decide yes.
+
 Figure of school drink machine is the file "Env/School/drinkmachine1.jpg".
 
 To say ShortDesc of (C - drink-machine):
@@ -72,6 +74,6 @@ Report going when the player is in School17: [We automatically get a bully if po
 					otherwise:
 						now M is in SR;
 						try M going north;
-			if M is in the location of the player, compute perception of M.
+			if M is in the location of the player, check guaranteed perception of M.
 
 School Drink Machine ends here.

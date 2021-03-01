@@ -1,11 +1,11 @@
 Wrench by Equippables begins here.
 
-A wrench is a kind of equippable. A wrench is unique. There are 2 wrenches. A wrench is usually slap ready. A wrench is usually metal.[ Figure of sword is the file "Items/Accessories/Equippables/sword1.png".]
+A wrench is a kind of equippable. A wrench is unique. There are 2 wrenches. A wrench is usually slap ready. A wrench is usually metal. Figure of wrench is the file "Items/Accessories/Equippables/wrench1.jpg".
 
 The printed name of wrench is "[clothing-title-before]wrench[clothing-title-after]". The text-shortcut of wrench is "wrn".
 
-[To decide which figure-name is clothing-image of (C - wrench):
-	decide on figure of sword.]
+To decide which figure-name is clothing-image of (C - wrench):
+	decide on figure of wrench.
 
 To say ClothingDesc of (S - a wrench):
 	say "An oversized steel wrench that you took from the mechanic.".
@@ -22,7 +22,7 @@ To decide which number is the magic-modifier of (C - a wrench):
 		decide on -5;
 	decide on the number of worn demonic clothing.
 
-To decide which number is the damage improvement of (W - a wrench):
+To decide which number is the slap damage improvement of (W - a wrench):
 	let X be 4;
 	increase X by the magic-modifier of W;
 	decide on X.
@@ -43,7 +43,7 @@ To compute final resolution of (M - mechanic) taking (T - a wrench):
 To say MonsterOfferAcceptFlav of (M - a demoness) to (T - a wrench):
 	say "[speech style of M]'[one of]I'll return to [him of demon lord], but how did YOU get it?'[or]How did you... Never mind. I'll return it to [him of demon lord].'[stopping][roman type]".
 
-To say MonsterAcceptFlav of (M - a demoness) for (T - a wrench):
+To say MonsterOfferAcceptFlav of (M - a demoness) for (T - a wrench):
 	say "[if the class of the player is succubus]Our[otherwise]My[end if] master grows stronger.".
 
 To compute final resolution of (M - a demoness) taking (T - infernal gem):

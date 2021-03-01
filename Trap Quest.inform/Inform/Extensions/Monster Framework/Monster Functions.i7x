@@ -23,6 +23,8 @@ To compute common boredom of (M - a monster) for (N - a number) seconds:
 	now the babification of M is 0;
 	now the friendly boredom of M is 0;
 	now the last-tripped of M is 0;
+	now M is not trip-warned;
+	now the wrangle-bonus of M is 0;
 	if debugmode > 1, say "Deinteresting [ShortDesc of M]. Latest appearance seen is [latest-appearance of M].";
 	now the latest-appearance of M is 0;
 	if diaper quest is 1, now the latest-cringe of M is 0;
@@ -36,8 +38,10 @@ To compute common boredom of (M - a monster) for (N - a number) seconds:
 	repeat with K running through things rejected by M:
 		now M is not rejecting K;
 	if N >= 50 and playerRegion is not School and the player is not in Dungeon12:[Dungeon12 is the Throne Room. We don't want to let the player farm by going in and out of the Royal Chambers.]
-		decrease the charge of the dungeon altar by a random number between 1 and 50;
-		if the charge of hotel altar > 0, decrease the charge of hotel altar by a random number between 1 and 50;
+		let R be a random number between 1 and 50;
+		decrease the charge of the dungeon altar by R;
+		decrease the charge of the elder altar by R;
+		if the charge of hotel altar > 0, decrease the charge of hotel altar by R;
 
 To satisfy (M - a monster):
 	satisfy M for 500 seconds.
@@ -66,6 +70,7 @@ To destroy (M - a monster):
 To finally destroy (M - a monster):
 	uniquely destroy M;
 	if the player is in the location of M, decrease the charge of the dungeon altar by the difficulty of M * 10;
+	if the player is in the location of M, decrease the charge of the elder altar by the difficulty of M * 10;
 	if the player is in the location of M and the charge of hotel altar > 0, decrease the charge of hotel altar by the difficulty of M * 10;
 	now the times-met of M is 0;
 	now the blue-balls of M is 0;

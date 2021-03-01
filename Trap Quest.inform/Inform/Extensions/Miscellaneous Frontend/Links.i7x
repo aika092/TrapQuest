@@ -101,6 +101,18 @@ To decide which number is linksCurrentlyEnabled:
 	if (links-disabled is true and inventory hyperlinks is 0) or (excessiveHyperlinks is 0 and inventory-busy is 0 and the focus-window is g-present and the clothing-focus-window is g-present and (the inventory-focus-window is g-present or the inventory-window is g-present) and the map-window is g-present), decide on 0;
 	decide on 1.
 
+disambiguation-busy is initially false.
+disambiguation-was-busy is initially false.
+
+Before asking which do you mean (this is the Disambiguation Choices need clarification rule):
+	now disambiguation-busy is true.
+
+After asking which do you mean (this is the Disambiguation Choices no longer need clarification rule):
+	force immediate inventory-focus redraw;
+	zero focus stuff;
+	display focus stuff;
+	now disambiguation-busy is false.
+
 [!<SayTQLink>+
 
 Start of a hyperlink.
@@ -115,18 +127,7 @@ Start of a hyperlink for a thing that's been properly coded.
 
 +!]
 To say TQlink of (T - a thing):
-	if ((inline hyperlinks >= 1 or disambiguation-busy is true) and the text-shortcut of T is not "") or the link-disambiguation-ID of T > 0, say "[link]".
-
-A thing has a number called the link-disambiguation-ID.
-linkDisambiguationHighest is a number that varies.
-An all later time based rule (this is the reset link disambiguation rule):
-	if linkDisambiguationHighest > 0:
-		now linkDisambiguationHighest is 0;
-		repeat with T running through things:
-			now the link-disambiguation-ID of T is 0.
-To assign link disambiguation ID to (T - a thing):
-	increase linkDisambiguationHighest by 1;
-	now the link-disambiguation-ID of T is linkDisambiguationHighest.
+	if inline hyperlinks >= 1 and the text-shortcut of T is not "", say "[link]".
 
 [!<SayTQxlinkOfThing>+
 
@@ -135,15 +136,11 @@ End of a hyperlink for a thing that's been properly coded, where clicking examin
 +!]
 To say TQxlink of (T - a thing):
 	say ownership-desc of T;
-	if the link-disambiguation-ID of T > 0:
-		say " ([link-disambiguation-ID of T])[as][link-disambiguation-ID of T][end link]";
+	if inline hyperlinks >= 1 and the text-shortcut of T is not "":
+		if disambiguation-busy is true, say "[as][text-shortcut of T][end link]";
+		otherwise say "[as]x [text-shortcut of T][end link]";
 	otherwise if disambiguation-busy is true:
-		if the text-shortcut of T is not "", say "[as][Disambiguation-ID-count / 2][end link]";
-		say " ([Disambiguation-ID-count / 2])";
-		now the disambiguation-ID of T is disambiguation-ID-count / 2;
-		increase disambiguation-ID-count by 1; [It seems to go up twice each time for no reason. Hence we do the halving thing.]
-	otherwise if inline hyperlinks >= 1 and the text-shortcut of T is not "":
-		say "[as]x [text-shortcut of T][end link]".
+		say " ([text-shortcut of T])".
 
 [*<SayTQdlink>+
 
@@ -159,7 +156,9 @@ End of a hyperlink for a thing that's been properly coded.
 
 +!]
 To say TQdlink of (T - a thing):
-	if inline hyperlinks >= 1 and the text-shortcut of T is not "", say "[end link]".
+	if inline hyperlinks >= 1 and the text-shortcut of T is not "":
+		if disambiguation-busy is true, say "[as][text-shortcut of T][end link]";
+		otherwise say "[end link]".
 
 [!<SayTQtlinkOfThing>+
 
@@ -167,7 +166,9 @@ For when the click always takes the thing
 
 +!]
 To say TQtlink of (T - a thing):
-	if inline hyperlinks >= 1 and the text-shortcut of T is not "", say "[as]ta [text-shortcut of T][end link]".
+	if inline hyperlinks >= 1 and the text-shortcut of T is not "":
+		if disambiguation-busy is true, say "[as][text-shortcut of T][end link]";
+		otherwise say "[as]ta [text-shortcut of T][end link]".
 
 Part 2 - Yes & No
 
@@ -210,7 +211,6 @@ Definition: yourself is consenting:
 	now currentlyConsenting is true;
 	refresh the map-window;
 	force immediate inventory-focus redraw;
-	force immediate clothing-focus redraw;
 	let inputNumber be 0;
 	while inputNumber is not consent-responsive:
 		say yesnolink;
@@ -249,8 +249,8 @@ Definition: yourself is bimbo consenting:
 	if the player is consenting:
 		decide yes;
 	otherwise:
-		if the player is not in a predicament room and (the implant of ultimate-lesson-yes is 1 or the bimbo of the player >= a random number between 16 and 20):
-			say "[if the implant of ultimate-lesson-yes is 1]The curse activates.[line break][second custom style][otherwise][second custom style]Huh? [end if]Good [boy of the player]s always say yes! I pick yes![roman type][line break]";
+		if the player is not in a predicament room and (the implant of pledge-lesson-yes is 1 or the bimbo of the player >= a random number between 16 and 20):
+			say "[if the implant of pledge-lesson-yes is 1]The curse activates.[line break][second custom style][otherwise][second custom style]Huh? [end if]Good [boy of the player]s always say yes! I pick yes![roman type][line break]";
 			decide yes;
 		decide no.
 
@@ -457,7 +457,7 @@ To say unique-verb-desc of (T - a monster):
 		otherwise if the player is upright:
 			say " [link][bracket]sl[close bracket][as]sl [text-shortcut of T][end link] [link][bracket]kn[close bracket][as]kn [text-shortcut of T][end link] [link][bracket]ki[close bracket][as]ki [text-shortcut of T][end link]";
 			repeat with BM running through held zappable things:
-				if the damage improvement of BM > 0, say " [link][bracket][ShortDesc of BM][close bracket][as]zap [the text-shortcut of T] with [the text-shortcut of BM][end link]";
+				if the slap damage improvement of BM > 0, say " [link][bracket][ShortDesc of BM][close bracket][as]zap [the text-shortcut of T] with [the text-shortcut of BM][end link]";
 			repeat with BM running through carried combat-bomb bombs:
 				say " [link][bracket][ShortDesc of BM][close bracket][as]throw [the text-shortcut of BM] at [the text-shortcut of T][end link]";
 		otherwise if T is uninterested:
@@ -591,7 +591,7 @@ To say unique-verb-desc of (T - a trophy):
 To say unique-verb-desc of (T - a summoning-circle):
 	if inline hyperlinks >= 2, say "[if T is active] [link][bracket]enter[close bracket][as]enter [text-shortcut of T][end link][end if]".
 
-To say unique-verb-desc of (T - a pullstring collar):
+To say unique-verb-desc of (T - pullstring collar):
 	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say "[if T is held and (T is not cursed or T is not worn)] [link][bracket]dr[close bracket][as]drop [text-shortcut of T][end link][otherwise if T is not held] [link][bracket]ta[close bracket][as]ta [text-shortcut of T][end link][end if][if T is worn and T is not cursed] [link][bracket]r[close bracket][as]rm [text-shortcut of T][end link][end if][if T is worn] [link][bracket]pull[close bracket][as]pull [text-shortcut of T][end link][end if]".
 
 To say unique-verb-desc of (T - WoodsScenery02):

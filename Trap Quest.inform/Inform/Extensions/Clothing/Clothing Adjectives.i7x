@@ -177,6 +177,7 @@ Clothing can be not-enema-helping or enema-helping. Clothing is usually not-enem
 Clothing can be crotch-normal or crotch-assless. Clothing is usually crotch-normal.
 Clothing can be not-butt-windowed or butt-windowed. Clothing is usually not-butt-windowed. [A butt window exposes underwear but not the asshole itself.]
 Clothing have a number called armour. Clothing have a number called damage.
+Clothing can be non-combat, slap ready, knee ready, kick ready or zap ready (this is the equippable-type property). Clothing is usually non-combat.
 Clothing can be zippable or unzippable. Clothing is usually unzippable.
 Clothing can be plentiful, rare, transformation-rare, unique (this is the clothing-rarity property). Clothing is usually plentiful. [Plentiful shows up in containers. Rare shows up much less often in special containers and in the junk room. Transformation rare are (mostly) slutty items that mainly appear from transformations. Unique are items with their own spawning mechanics that shouldn't be spawned in other ways.]
 Definition: a clothing is transformation-eligible:
@@ -306,6 +307,7 @@ Definition: a clothing is nudism-disabling:
 	if it is not nudism-enabling, decide yes;
 	decide no.
 Definition: an accessory is nudism-enabling: decide yes.
+Definition: an headgear is nudism-enabling: decide yes.
 Definition: a sex toy is nudism-enabling: decide yes.
 Definition: a piercing is nudism-enabling: decide yes.
 Definition: a bondage is nudism-enabling: decide yes.
@@ -372,7 +374,7 @@ To decide which number is top-malfunction-likelihood:
 
 latest-top-malfunction is a number that varies.
 Definition: yourself is top-wardrobe-malfunctioning:
-	if (the player is male and the largeness of breasts <= 1) or the number of worn actually nipple covering clothing is not 1:
+	if (the player is sexed male and the largeness of breasts <= 1) or the number of worn actually nipple covering clothing is not 1:
 		now latest-top-malfunction is 0;
 		decide no;
 	let C be a random worn actually nipple covering clothing;

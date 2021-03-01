@@ -139,7 +139,7 @@ To compute swimming in (WB - WoodsScenery01):
 				now the waterfall-timer of WB is 0;
 				now swim-location is 0;
 		otherwise:
-			say "You are [if L is 0]swimming in a thinner part of the river. The current here is very strong, but the edges are close by and if you can reach the waterfall, you could probably find something to hold onto.[otherwise if L is 1]swimming in a wider part of the river. The current here is very strong, and the edges are far away, and would require an effort to swim to.[otherwise if L is 3]swimming near a whirlpool at the end of the river. The current here seems to lead underwater, and you have to resist it strongly to keep form being pulled under. The edges are far away, and would probably require a lot of effort to swim to.[otherwise]swimming directly underneath the waterfall. There are small metal rails sticking out of the water here, helping you resist the current.[end if]";
+			say "You are swimming [if L is 0]in a thinner part of the river. The current here is very strong, but the edges are close by and if you can reach the waterfall, you could probably find something to hold onto.[otherwise if L is 1]swimming in a wider part of the river. The current here is very strong, and the edges are far away, and would require an effort to swim to.[otherwise if L is 2]in a very wide part of the river. The current here is constantly dragging you toward a whirlpool at the end of the river, which makes it more difficult to reach the river's edges from where you are.[otherwise if L is 3]near a whirlpool at the end of the river. The current here seems to lead underwater, and you have to resist it strongly to keep from being pulled under. The edges are far away, and would probably require a lot of effort to swim to.[otherwise]directly underneath the waterfall. There are small metal rails sticking out of the water here, helping you resist the current.[end if]";
 		reset multiple choice questions;
 		set next numerical response to "swim toward edge";
 		if L > -1:
@@ -409,7 +409,7 @@ To compute treasure diving in (WB - WoodsScenery01) at (L - a number):
 				otherwise:[sapphire]
 					now J is sapphire;
 				set shortcut of J;
-				say "[bold type]You find a [ClothingDesc of J]! It's too heavy to carry, but as you head back to the surface, it magically teleports onto your body.";
+				say "[bold type]You find a [ClothingDesc of J]![roman type] It's too heavy to carry, but as you head back to the surface, it magically teleports onto your body.";
 				summon J;
 			otherwise:
 				say "You find a rusted out piece of jewellery. You leave it behind as you swim back to the surface.";

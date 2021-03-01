@@ -1,6 +1,6 @@
 Fuckdoll Collar by Accessories begins here.
 
-fuckdoll collar is a submissive collar. fuckdoll collar is leather. fuckdoll collar is womanly. The printed name of fuckdoll collar is "[clothing-title-before]fuckdoll collar[clothing-title-after]". The text-shortcut of fuckdoll collar is "fdc".
+fuckdoll collar is a submissive collar. fuckdoll collar is leather. The printed name of fuckdoll collar is "[clothing-title-before]fuckdoll collar[clothing-title-after]". The text-shortcut of fuckdoll collar is "fdc".
 
 Definition: fuckdoll collar is class-relevant:
 	if the class of the player is silicone queen, decide yes;
@@ -55,7 +55,38 @@ To compute periodic effect of (C - fuckdoll collar):
 
 
 
-spike-collar is a submissive collar. spike-collar is leather. spike-collar is womanly. The printed name of spike-collar is "[clothing-title-before]spike collar[clothing-title-after]". The text-shortcut of spike-collar is "spkc". Understand "spike", "collar" as spike-collar.
+heart-collar is a submissive collar. heart-collar is leather. The printed name of heart-collar is "[clothing-title-before]heart collar[clothing-title-after]". The text-shortcut of heart-collar is "hrtc". Understand "heart", "collar" as heart-collar.
+
+Figure of heart collar is the file "Items/Accessories/Neck/collar8.png".
+
+To decide which figure-name is clothing-image of (C - heart-collar):
+	decide on figure of heart collar.
+
+To say ClothingDesc of (C - heart-collar):
+	say "This pink leather collar has a metal heart at the front.".
+
+To say ShortDesc of (C - heart-collar):
+	say "heart collar".
+
+To decide which number is the bartering value of (T - heart-collar) for (M - matron):
+	decide on 2.
+To decide which number is the bartering value of (T - heart-collar) for (M - an adult baby slave):
+	decide on 2.
+
+Definition: heart-collar is transformation-protected: decide no.
+Definition: heart-collar is pink themed: decide yes.
+
+To decide which number is the initial outrage of (C - heart-collar):
+	if diaper quest is 0, decide on the initial cringe of C;
+	decide on 0.
+To decide which number is the initial cringe of (C - heart-collar):
+	decide on 4.
+
+To decide which object is the unique-upgrade-target of (C - heart-collar):
+	decide on spike-collar.
+
+
+spike-collar is a submissive collar. spike-collar is leather. The printed name of spike-collar is "[clothing-title-before]spike collar[clothing-title-after]". The text-shortcut of spike-collar is "spkc". Understand "spike", "collar" as spike-collar.
 
 Definition: spike-collar is class-relevant:
 	if the class of the player is silicone queen, decide yes;
@@ -67,7 +98,7 @@ To decide which figure-name is clothing-image of (C - spike-collar):
 	decide on figure of spike collar.
 
 To say ClothingDesc of (C - spike-collar):
-	say "This pink leather collar has metal spikes all the way round. You can tell it somehow makes it significantly more likely that an aggressor will decide to fuck your breasts, if able.".
+	say "This pink leather collar has metal spikes all the way round[if diaper quest is 0 and the largeness of breasts > 3]. You can tell it somehow makes it significantly more likely that an aggressor will decide to fuck your breasts, if able[end if].".
 
 To say ShortDesc of (C - spike-collar):
 	say "spike collar".
@@ -82,7 +113,8 @@ To decide which number is the initial outrage of (C - spike-collar):
 	decide on 6.
 
 To decide which object is the unique-upgrade-target of (C - spike-collar):
-	decide on fuckdoll collar.
+	if diaper quest is 0, decide on fuckdoll collar;
+	decide on a random off-stage bib.
 
 This is the collar titfuck rule:
 	if spike-collar is worn or fuckdoll collar is worn, increase the desirability of breasts by 5.

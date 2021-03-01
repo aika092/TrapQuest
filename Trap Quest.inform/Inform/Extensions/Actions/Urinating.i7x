@@ -486,7 +486,7 @@ To start urination:
 			if watersports fetish is 1, SlowUrineTasteAddictUp 1;
 			otherwise SlowSexAddictUp 1;
 		otherwise:
-			say "You [if delayed urination is 1]involuntarily [end if]release your hold on your bladder. Your [urine] [if the player is female and the player is dildo stuck]trickles around the dildo and down your thighs.[otherwise if playerRegion is Dungeon]flows to the ground, creating a puddle on the floor.[otherwise]flows to the ground.[end if]";
+			say "You [if delayed urination is 1]involuntarily [end if]release your hold on your bladder. Your [urine] [if the player is possessing a vagina and the player is dildo stuck]trickles around the dildo and down your thighs.[otherwise if playerRegion is Dungeon]flows to the ground, creating a puddle on the floor.[otherwise]flows to the ground.[end if]";
 			say PeeReaction 1;
 			if the bladder of the player > 6:
 				UrinePuddleUp 6;
@@ -576,6 +576,7 @@ To compute pee protected urination:
 					otherwise:
 						UrinePuddleUp 1;
 						if flav-said is 0, say "Your [urine] drips through your clothing and onto the ground.";
+						if there is worn bottom level pee protection clothing, now overflowed is 2;
 					if there is a worn diaper and diaper quest is 1, progress quest of priestess-service-quest;
 				otherwise:
 					if flav-said is 0, say "Your [urine] flows into your [ShortDesc of K][unless K is fluid immune or K is diaper], soaking it[end if].";
@@ -625,7 +626,7 @@ To compute urination:
 		otherwise if diaper quest is 1 and the player is in Iron Maiden:
 			say "Your [urine] continues to soak into the thick Iron Maiden padding.";
 		otherwise:
-			say "Your [urine] continues to [if the player is female and the player is dildo stuck]trickle around the dildo and down your thighs.[otherwise if playerRegion is Dungeon]flow to the ground, creating a puddle on the floor.[otherwise]flows to the ground.[end if]";
+			say "Your [urine] continues to [if the player is possessing a vagina and the player is dildo stuck]trickle around the dildo and down your thighs.[otherwise if playerRegion is Dungeon]flow to the ground, creating a puddle on the floor.[otherwise]flows to the ground.[end if]";
 			if the bladder of the player > 6:
 				UrinePuddleUp 6;
 			otherwise:

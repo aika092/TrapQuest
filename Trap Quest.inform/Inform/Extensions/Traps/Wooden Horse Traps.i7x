@@ -96,19 +96,28 @@ To trigger (Y - a painted horse):
 	now the reset-timer of Y is 90000; [Doesn't reset]
 	now Y is not untriggered;
 	now Y is revealed;
-	say "A giant triangular block of wood with a horse head at the front shoots out from the ground beneath you, [if the player is prone]forcing you upright and [end if]pulling you up until your feet aren't touching the floor. All of your weight is forced onto the top corner of this wooden 'horse' and more specifically onto your [if the player is possessing a vagina][vagina] and [end if][asshole]. [if the latex-transformation of the player > 3]Your rubbery crotch is unaffected by the weight on it. [otherwise if the player is diapered]The padding of your diaper is helping a bit but the pain is still unmanageable. [otherwise if the weight of the player < 5]Your light weight is helping at bit but the pain is still unmanageable. [otherwise if the weight of the player > 15]Your weight is making it even worse! [end if]You're going to quickly get more sore and if you stay on here for too long, you'll definitely faint! [one of]Looking forward, you notice that[or]Once again you can see that[stopping] there are five buttons embedded into the top of the head of the horse. [one of]Maybe one of them will let you down?[or]One of them should let you down.[stopping]";
-	now the stance of the player is 0;
-	now Y is penetrating asshole;
-	if the player is possessing a vagina, now Y is penetrating vagina;
-	repeat with M running through reactive monsters:
-		say WoodenHorseTrapReactFlav of M;
-	truncate the list of possible horse effects to 0 entries;
-	truncate the list of current horse effects to 0 entries;
-	add the horse-disable to the list of possible horse effects;
-	add the horse-cuffs to the list of possible horse effects;
-	add the horse-blade to the list of possible horse effects;
-	add the horse-alarm to the list of possible horse effects;
-	add the horse-hair to the list of possible horse effects;
+	let G be a random rigid pussy covering clothing;
+	if G is nothing, now G is a random thing penetrating asshole;
+	if G is nothing and the player is possessing a vagina, now G is a random thing penetrating vagina;
+	if G is a thing:
+		say "A giant triangular block of wood with a horse head at the front shoots out from the ground beneath you, [if the player is prone]forcing you upright and [end if]pulling you up until your feet aren't touching the floor. The force of it on [NameDesc of G] causes you to gain some airtime after the horse reaches its full height, and you come tumbling down next to the horse.";
+		if seconds > 0 and the player is upright, try kneeling;
+		repeat with F running through fuckholes penetrated by G:
+			ruin G;
+	otherwise:
+		say "A giant triangular block of wood with a horse head at the front shoots out from the ground beneath you, [if the player is prone]forcing you upright and [end if]pulling you up until your feet aren't touching the floor. All of your weight is forced onto the top corner of this wooden 'horse' and more specifically onto your [if the player is possessing a vagina][vagina] and [end if][asshole]. [if the latex-transformation of the player > 3]Your rubbery crotch is unaffected by the weight on it. [otherwise if the player is diapered]The padding of your diaper is helping a bit but the pain is still unmanageable. [otherwise if the weight of the player < 5]Your light weight is helping at bit but the pain is still unmanageable. [otherwise if the weight of the player > 15]Your weight is making it even worse! [end if]You're going to quickly get more sore and if you stay on here for too long, you'll definitely faint! [one of]Looking forward, you notice that[or]Once again you can see that[stopping] there are five buttons embedded into the top of the head of the horse. [one of]Maybe one of them will let you down?[or]One of them should let you down.[stopping]";
+		now the stance of the player is 0;
+		now Y is penetrating asshole;
+		if the player is possessing a vagina, now Y is penetrating vagina;
+		repeat with M running through reactive monsters:
+			say WoodenHorseTrapReactFlav of M;
+		truncate the list of possible horse effects to 0 entries;
+		truncate the list of current horse effects to 0 entries;
+		add the horse-disable to the list of possible horse effects;
+		add the horse-cuffs to the list of possible horse effects;
+		add the horse-blade to the list of possible horse effects;
+		add the horse-alarm to the list of possible horse effects;
+		add the horse-hair to the list of possible horse effects;
 
 To say WoodenHorseTrapReactFlav of (M - a monster):
 	say HarshTrapReactFlav of M.
@@ -174,12 +183,21 @@ To trigger (Y - a wild horse):
 	now the reset-timer of Y is 500;
 	now Y is not untriggered;
 	now Y is revealed;
-	say "A giant triangular block of wood with a horse head at the front shoots out from the ground beneath you, [if the player is prone]forcing you upright and [end if]pulling you up until your feet aren't touching the floor. All of your weight is forced onto the top corner of this wooden 'horse' and more specifically onto your [if the player is possessing a vagina][vagina] and [end if][asshole]. You hear a pre-recorded whinny as the horse begins to 'gallop' through the clearing, each movement rubbing small grooves in the wood up against your crotch. [if the latex-transformation of the player > 3]Your rubbery crotch is unaffected by the weight on it. [otherwise if the player is diapered]The padding of your diaper is helping at bit but the pain is still unmanageable. [otherwise if the weight of the player < 5]Your light weight is helping at bit but the pain is still unmanageable. [otherwise if the weight of the player > 15]Your weight is making it even worse! [end if]You look at the plastic cord around its neck. Looks like you're going to have to tame this wild horse!";
-	now the stance of the player is 0;
-	now Y is penetrating asshole;
-	if the player is possessing a vagina, now Y is penetrating vagina;
-	repeat with M running through reactive monsters:
-		say WoodenHorseTrapReactFlav of M.
+	let G be a random rigid pussy covering clothing;
+	if G is nothing, now G is a random thing penetrating asshole;
+	if G is nothing and the player is possessing a vagina, now G is a random thing penetrating vagina;
+	if G is a thing:
+		say "A giant triangular block of wood with a horse head at the front shoots out from the ground beneath you, [if the player is prone]forcing you upright and [end if]pulling you up until your feet aren't touching the floor. The force of it on [NameDesc of G] causes you to gain some airtime after the horse reaches its full height, and you come tumbling down next to the horse.";
+		if seconds > 0 and the player is upright, try kneeling;
+		repeat with F running through fuckholes penetrated by G:
+			ruin G;
+	otherwise:
+		say "A giant triangular block of wood with a horse head at the front shoots out from the ground beneath you, [if the player is prone]forcing you upright and [end if]pulling you up until your feet aren't touching the floor. All of your weight is forced onto the top corner of this wooden 'horse' and more specifically onto your [if the player is possessing a vagina][vagina] and [end if][asshole]. You hear a pre-recorded whinny as the horse begins to 'gallop' through the clearing, each movement rubbing small grooves in the wood up against your crotch. [if the latex-transformation of the player > 3]Your rubbery crotch is unaffected by the weight on it. [otherwise if the player is diapered]The padding of your diaper is helping at bit but the pain is still unmanageable. [otherwise if the weight of the player < 5]Your light weight is helping at bit but the pain is still unmanageable. [otherwise if the weight of the player > 15]Your weight is making it even worse! [end if]You look at the plastic cord around its neck. Looks like you're going to have to tame this wild horse!";
+		now the stance of the player is 0;
+		now Y is penetrating asshole;
+		if the player is possessing a vagina, now Y is penetrating vagina;
+		repeat with M running through reactive monsters:
+			say WoodenHorseTrapReactFlav of M.
 
 To compute horse effect of (T - a wild horse):
 	let W be the weight of the player;

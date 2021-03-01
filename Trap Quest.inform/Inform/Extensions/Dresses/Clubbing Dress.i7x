@@ -238,14 +238,15 @@ To decide which figure-name is clothing-image of (C - an exposing pink clubbing 
 	decide on figure of exposing pink clubbing dress.
 
 To say ClothingDesc of (C - an exposing pink clubbing dress):
-	say "This pink dress has a very short cut that nearly leaves your bottom nearly exposed. It just has a few small strips of fabric over the chest region for [if C is worn and the largeness of breasts > 1]your[otherwise]the wearer's[end if] breasts to stick through, leaving them completely uncovered.".
+	say "This apricot-pink dress has a very short cut that nearly leaves your bottom nearly exposed. It just has a few small strips of fabric over the chest region for [if C is worn and the largeness of breasts > 1]your[otherwise]the wearer's[end if] breasts to stick through, leaving them completely uncovered.".
 
 To say ShortDesc of (C - an exposing pink clubbing dress):
 	say "whorish clubbing dress".
 To say MediumDesc of (C - an exposing pink clubbing dress):
-	say "whorish pink clubbing dress with an exposed chest".
+	say "whorish apricot clubbing dress with an exposed chest".
 
 Definition: an exposing pink clubbing dress is pink themed: decide yes.
+Definition: an exposing pink clubbing dress is orange themed: decide yes.
 Definition: an exposing pink clubbing dress is end of transformation chain: decide yes.
 
 Part 10 - Blue Slut Clubbing Dress
@@ -280,7 +281,7 @@ To decide which figure-name is clothing-image of (C - purple cocktail dress):
 	decide on figure of purple cocktail dress.
 
 To say ClothingDesc of (C - purple cocktail dress):
-	say "This body-hugging purple dress is made of pure velvet. Its high collar means that there's no revealing neckline.".
+	say "This body-hugging purple dress is made of pure velvet. Its high collar means there's no revealing neckline.".
 
 To say ShortDesc of (C - purple cocktail dress):
 	say "purple dress".
@@ -291,7 +292,7 @@ Definition: purple cocktail dress is purple themed: decide yes.
 
 Part 12 - Pink Sequins Dress
 
-pink sequins dress is a clubbing dress. pink sequins dress is plastic. The text-shortcut of pink sequins dress is "pksd". The printed name of pink sequins dress is usually "[clothing-title-before]pink sequins dress[clothing-title-after]".
+pink sequins dress is a clubbing dress. pink sequins dress is plastic. pink sequins dress is normally-partially-nipple-covering. The text-shortcut of pink sequins dress is "pksd". The printed name of pink sequins dress is usually "[clothing-title-before]pink sequins dress[clothing-title-after]".
 
 Figure of pink sequins dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress12.png".
 
@@ -299,7 +300,7 @@ To decide which figure-name is clothing-image of (C - pink sequins dress):
 	decide on figure of pink sequins dress.
 
 To say ClothingDesc of (C - pink sequins dress):
-	say "This body-hugging pink dress is made of glittering sequins. It has a deep plunging neckline that goes past your chest to also expose your belly button.".
+	say "This body-hugging pink dress is made of glittering sequins. It has a deep plunging neckline that goes past your chest to also expose your belly button, and would struggle to completely cover your areolae.".
 
 To say ShortDesc of (C - pink sequins dress):
 	say "sequins dress".

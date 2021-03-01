@@ -123,26 +123,6 @@ Check taking off worn skirt:
 	if the noun is living belt of sturdiness:
 		if the noun is penetrating a fuckhole, say "You're going to have to find some way to remove it from your insides first!" instead.
 
-assless skirt is a skirt. assless skirt is latex. assless skirt is transformation-rare. assless skirt is butt-windowed.
-Definition: assless skirt is black themed: decide yes.
-
-Printed name of assless skirt is "[clothing-title-before]assless latex skirt[clothing-title-after]". The text-shortcut of assless skirt is "alxs". Figure of assless skirt is the file "Items/Clothes/Lower/Skirts/naughtyskirt2.png".
-
-To decide which figure-name is clothing-image of (C - assless skirt):
-	decide on figure of assless skirt.
-
-To say ClothingDesc of (C - assless skirt):
-	say "This tight knee length black skirt has nothing but four thin buckle straps at the back, completely exposing [if diaper quest is 1]what underwear or incontinence aid the wearer has on[otherwise]all of the wearer's butt[end if].".
-
-To say ShortDesc of (Y - assless skirt):
-	say "assless latex skirt".
-
-To say MediumDesc of (Y - assless skirt):
-	say "butt cheek exposing latex skirt".
-
-To decide which number is the initial outrage of (C - assless skirt):
-	decide on 7.
-
 A chainmail skirt is a kind of miniskirt. A chainmail skirt is usually see-through. A chainmail skirt is rare. A chainmail skirt is metal. There is 1 chainmail skirt. Figure of chainmail skirt is the file "Items/Clothes/Lower/Skirts/chainmailskirt1.png".
 
 The printed name of a chainmail skirt is "[clothing-title-before]chainmail skirt[clothing-title-after]". The text-shortcut of chainmail skirt is "cs".
@@ -538,13 +518,13 @@ Definition: tartan miniskirt is partially-layer-concealing: decide yes.
 
 A naughty skirt is a kind of skirt. A naughty skirt is usually leather. A naughty skirt is transformation-rare. A naughty skirt is usually butt-windowed.
 
-There is 1 naughty skirts. Printed name of naughty skirt is "[clothing-title-before]naughty leather skirt[clothing-title-after]". The text-shortcut of naughty skirt is "nls". Figure of naughty skirt is the file "Items/Clothes/Lower/Skirts/naughtyskirt1.png".
+There is 1 naughty skirts. Printed name of naughty skirt is "[clothing-title-before]naughty leather skirt[clothing-title-after]". The text-shortcut of naughty skirt is "nls". Figure of naughty skirt is the file "Items/Clothes/Lower/Skirts/naughtyskirt1.jpg".
 
 To decide which figure-name is clothing-image of (C - a naughty skirt):
 	decide on figure of naughty skirt.
 
 To say ClothingDesc of (C - a naughty skirt):
-	say "This tight knee length black skirt has a deep groove at the top with laces, which shows off [if diaper quest is 1]what underwear or incontinence aid the wearer has on[otherwise]lots of butt cleavage[end if].".
+	say "This tight knee length black skirt has a deep groove at the top with laces, which shows off [if diaper quest is 1]what underwear or incontinence aid the wearer has on[otherwise]lots of butt cleavage, and even the wearer's crotch[end if].".
 
 To say ShortDesc of (Y - a naughty skirt):
 	say "assless leather skirt".
@@ -556,6 +536,9 @@ To decide which number is the initial outrage of (C - a naughty skirt):
 	decide on 6.
 
 Definition: a naughty skirt is black themed: decide yes.
+Definition: a naughty skirt is potentially vagina covering: decide no. [ass window is so big, even the vag is exposed]
+Definition: a naughty skirt is potentially asshole covering: decide no.
+Definition: a naughty skirt is potentially-bottom-layer-concealing: decide no. [partially exposing]
 
 office skirt is a skirt. Printed name of office skirt is "[clothing-title-before]office skirt[clothing-title-after]". The text-shortcut of office skirt is "os". office skirt is nylon. office skirt is hobble-skirted. office skirt is crotch-skirted. The armour of office skirt is 7.
 
@@ -587,20 +570,13 @@ To restock (C - office skirt):
 To set up influence of (C - office skirt):
 	do nothing.
 
-A punishment skirt is a kind of skirt. A punishment skirt is usually latex. A punishment skirt is usually hobble-skirted. A punishment skirt is usually crotch-skirted. A punishment skirt is transformation-rare. A punishment skirt is usually butt-windowed. The armour of punishment skirt is usually 12.
-
-There is 1 punishment skirt. Printed name of punishment skirt is "[clothing-title-before]latex backless hobble skirt[clothing-title-after]". The text-shortcut of punishment skirt is "hs". Figure of punishment skirt is the file "Items/Clothes/Lower/Skirts/punishmentskirt1.png". Understand "backless", "hobble" as punishment skirt. A punishment skirt is usually crotch-assless.
-
-To decide which figure-name is clothing-image of (C - a punishment skirt):
-	decide on figure of punishment skirt.
-
-To say ClothingDesc of (C - a punishment skirt):
-	say "This constricting ankle length black skirt is made entirely of latex, which just makes it cling even tighter to your body. Even worse, it has a huge circle cut out at the back to expose [if C is worn]your[otherwise]the wearer's[end if] [if there is a worn diaper or the diaper addiction of the player > 5]diaper[otherwise]backside[end if].".
+A punishment skirt is a kind of skirt. A punishment skirt is usually latex. A punishment skirt is usually hobble-skirted. A punishment skirt is usually crotch-skirted. A punishment skirt is transformation-rare. A punishment skirt is usually butt-windowed. The armour of punishment skirt is usually 12. A punishment skirt is usually crotch-assless.
 
 To say ShortDesc of (Y - a punishment skirt):
 	say "punishment skirt".
-To say MediumDesc of (Y - a punishment skirt):
-	say "tight black punishment skirt with butt window".
+
+Definition: a punishment skirt is displacable: decide no.
+Definition: a punishment skirt is black themed: decide yes.
 
 To decide which number is the initial outrage of (C - a punishment skirt):
 	if diaper quest is 1:
@@ -608,18 +584,42 @@ To decide which number is the initial outrage of (C - a punishment skirt):
 		decide on 4;
 	decide on 8.
 
-To uniquely set up (C - a punishment skirt):
+To decide which object is the unique-upgrade-target of (C - a punishment skirt):
+	if the number of worn overdress is 0 and diaper quest is 0, decide on a random off-stage discovered varied hobble-skirted butt-windowed fetish appropriate overdress.
+
+latex-backless-hobble-skirt is a punishment skirt. Printed name of latex-backless-hobble-skirt is "[clothing-title-before]latex backless hobble skirt[clothing-title-after]". The text-shortcut of latex-backless-hobble-skirt is "hs".  Understand "backless", "hobble", "skirt" as latex-backless-hobble-skirt.
+
+Figure of latex-backless-hobble-skirt is the file "Items/Clothes/Lower/Skirts/punishmentskirt1.jpg".
+To decide which figure-name is clothing-image of (C - latex-backless-hobble-skirt):
+	decide on figure of latex-backless-hobble-skirt.
+
+To say ClothingDesc of (C - latex-backless-hobble-skirt):
+	say "This constricting ankle length black skirt is made entirely of latex, which just makes it cling even tighter to your body. Even worse, it has a huge circle cut out at the back to expose [if C is worn]your[otherwise]the wearer's[end if] [if there is a worn diaper or the diaper addiction of the player > 5]diaper[otherwise]backside[end if]. Permanently closed red straps at the back provide a bondage vibe.".
+
+To say MediumDesc of (Y - latex-backless-hobble-skirt):
+	say "tight black punishment skirt with butt window".
+
+To uniquely set up (C - latex-backless-hobble-skirt):
 	if a random number between 1 and 3 is 1, now C is stumbling.
 
-To decide which object is the unique-upgrade-target of (C - a punishment skirt):
-	if the number of worn overdress is 0 and diaper quest is 0, decide on a random off-stage hobble-skirted fetish dress.
-
-Definition: a punishment skirt is end of transformation chain:
+Definition: latex-backless-hobble-skirt is end of transformation chain:
 	if the unique-upgrade-target of it is nothing, decide yes;
 	decide no.
 
-Definition: a punishment skirt is displacable: decide no.
-Definition: a punishment skirt is black themed: decide yes.
+assless skirt is a punishment skirt. Printed name of assless skirt is "[clothing-title-before]assless latex skirt[clothing-title-after]". The text-shortcut of assless skirt is "alxs". Figure of assless skirt is the file "Items/Clothes/Lower/Skirts/punishmentskirt2.jpg".
+
+To decide which figure-name is clothing-image of (C - assless skirt):
+	decide on figure of assless skirt.
+
+To say ClothingDesc of (C - assless skirt):
+	say "This tight knee length black skirt has nothing but four thin buckle straps at the back, completely exposing [if diaper quest is 1]what underwear or incontinence aid the wearer has on[otherwise]all of the wearer's butt[end if]. The straps make it impossible to move one's thighs very far apart.".
+
+To say ShortDesc of (Y - assless skirt):
+	say "assless skirt".
+
+To say MediumDesc of (Y - assless skirt):
+	say "assless latex skirt".
+
 
 A sequins belt is a kind of skirt. A sequins belt is usually sheer. A sequins belt is short. Figure of sequins belt is the file "Items/Clothes/Lower/Waist/Belts/belt1.png". There is 1 transformation-rare plastic sequins belt. The printed name of sequins belt is "[clothing-title-before]sequins belt[clothing-title-after]". The text-shortcut of sequins belt is "seq".
 
@@ -648,12 +648,20 @@ To set up influence of (C - a sequins belt):
 
 skirt-tray-vibrator is a skirt. skirt-tray-vibrator is unique. skirt-tray-vibrator is sure. skirt-tray-vibrator is identified.
 
-Figure of skirt tray vibrator is the file "Items/Clothes/Lower/Waist/Belts/trayvibrator1.jpg".
+Figure of skirt tray vibrator A is the file "Items/Clothes/Lower/Waist/Belts/trayvibrator1a.png".
+Figure of skirt tray vibrator B is the file "Items/Clothes/Lower/Waist/Belts/trayvibrator1b.png".
+Figure of skirt tray vibrator C is the file "Items/Clothes/Lower/Waist/Belts/trayvibrator1c.png".
+Figure of skirt tray vibrator D is the file "Items/Clothes/Lower/Waist/Belts/trayvibrator1d.png".
+Figure of skirt tray vibrator E is the file "Items/Clothes/Lower/Waist/Belts/trayvibrator1e.png".
 Figure of diaper tray vibrator is the file "Items/Clothes/Lower/Waist/Belts/trayvibrator2.jpg".
 
 To decide which figure-name is the clothing-image of (C - skirt-tray-vibrator):
-	if diaper quest is 0, decide on figure of skirt tray vibrator;
-	otherwise decide on figure of diaper tray vibrator.
+	if diaper quest is 1, decide on figure of diaper tray vibrator;
+	if the cakes-taken of C >= the max-cakes of C, decide on Figure of skirt tray vibrator E;
+	if the cakes-taken of C > (the max-cakes of C * 2) / 3, decide on Figure of skirt tray vibrator D;
+	if the cakes-taken of C > the max-cakes of C / 3, decide on Figure of skirt tray vibrator C;
+	if the cakes-taken of C > 0, decide on Figure of skirt tray vibrator B;
+	decide on Figure of skirt tray vibrator A.
 
 The printed name of skirt-tray-vibrator is "[clothing-title-before][if item described is skirted]skirt with [end if]vibrating serving tray contraption[clothing-title-after]". The text-shortcut of skirt-tray-vibrator is "stv". Understand "with vibrating", "vibrating", "serving", "tray", "contraption" as skirt-tray-vibrator. skirt-tray-vibrator has a number called cakes-taken. skirt-tray-vibrator has a number called charge.
 
@@ -675,18 +683,18 @@ To say skirtTrayVibratorPower:
 
 To say ClothingDesc of (C - skirt-tray-vibrator):
 	let CR be the max-cakes of C - the cakes-taken of C;
-	if diaper quest is 0, say "This purple skirt is connected to a serving tray with [if CR is 1]one small cupcake remaining[otherwise if CR < the max-cakes of C][CR] small cupcakes remaining[otherwise][CR] small cupcakes[end if] on it. A rigid metal pole at the rear of the serving tray goes through a discreet hole at the front of the skirt and to a vibrator. To wear the skirt, you [if C is not worn]would [end if]have to hold the serving tray in front of you and [if C is worn]keep[otherwise]put[end if] the [if the player is female]rabbit vibrator inside your [vagina][otherwise]vibrating tip up against your [ShortDesc of penis][end if][run paragraph on]";
+	if diaper quest is 0, say "This purple skirt is connected to a serving tray with [if CR is 1]one small cupcake remaining[otherwise if CR < the max-cakes of C][CR] small cupcakes remaining[otherwise][CR] small cupcakes[end if] on it. A rigid metal pole at the rear of the serving tray goes through a discreet hole at the front of the skirt and to a vibrator. To wear the skirt, you [if C is not worn]would [end if]have to hold the serving tray in front of you and [if C is worn]keep[otherwise]put[end if] the [if the player is possessing a vagina]rabbit vibrator inside your [vagina][otherwise]vibrating tip up against your [ShortDesc of penis][end if][run paragraph on]";
 	otherwise say "A red vibrator is connected via a small rigid pole to a serving tray with [if CR is 1]one small cupcake remaining[otherwise if CR < the max-cakes of C][CR] small cupcakes remaining[otherwise][CR] small cupcakes[end if] on it. [if the player is female]The pole goes through the hole in your diaper, so the vibrator is on the inside[otherwise]The tip of the pole is made of soft sex toy material and is attached to the front of your diaper[end if]. To wear the diaper, you have to continue to hold the serving tray in front of you and [if C is worn]keep[otherwise]put[end if] the [if the player is female]rabbit vibrator inside your [vagina][otherwise]vibrating tip up against your [ShortDesc of penis][end if][run paragraph on]";
 	say "[if the cakes-taken of C >= the max-cakes of C or the charge of C > 0]. It is currently vibrating[skirtTrayVibratorPower]![otherwise].[end if]".
 
 To decide which number is the stimulation of (D - skirt-tray-vibrator) on (B - a body part):
 	decide on the cakes-taken of skirt-tray-vibrator.
 
-Report wearing skirt-tray-vibrator:
+Carry out wearing skirt-tray-vibrator:
 	if diaper quest is 1, summon plain-largish-diaper uncursed;
 	say "You [if diaper quest is 1]wear the diaper and [end if]push the vibrator [if the player is female]into your [vagina][otherwise]up against your [ShortDesc of penis][end if] and hold the tray with your hands either side.".
 
-Report taking off skirt-tray-vibrator when diaper quest is 1:
+Carry out taking off skirt-tray-vibrator when diaper quest is 1:
 	only destroy plain-largish-diaper.
 
 Check taking off plain-largish-diaper when skirt-tray-vibrator is worn:
@@ -740,7 +748,7 @@ The orgasm drops cupcakes rule is listed last in the orgasm fatigue effects rule
 To decide which object is the concealer of (C - skirt-tray-vibrator): decide on nothing.
 To decide which object is the at least partial concealer of (C - skirt-tray-vibrator): decide on nothing.
 
-grope-me-skirt is a skirt. grope-me-skirt is unique. grope-me-skirt is short. The printed name of grope-me-skirt is "[clothing-title-before]'PLEASE GROPE MY TITS' skirt[clothing-title-after]". The text-shortcut of grope-me-skirt is "gms". Figure of grope-me-skirt is the file "Items/Clothes/Lower/Skirts/gropemeskirt1.jpg". Understand "please", "grope", "my tits", "skirt" as grope-me-skirt.
+grope-me-skirt is a skirt. grope-me-skirt is unique. grope-me-skirt is short. The printed name of grope-me-skirt is "[clothing-title-before]'PLEASE GROPE MY TITS' skirt[clothing-title-after]". The text-shortcut of grope-me-skirt is "gms". Figure of grope-me-skirt is the file "Items/Clothes/Lower/Skirts/gropemeskirt1.png". Understand "please", "grope", "my tits", "skirt" as grope-me-skirt.
 To decide which figure-name is clothing-image of (H - grope-me-skirt):
 	decide on figure of grope-me-skirt.
 

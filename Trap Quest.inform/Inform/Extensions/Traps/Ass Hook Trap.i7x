@@ -110,7 +110,7 @@ To compute bra attempt of (Y - an ass hook):
 			if the player is getting unlucky:
 				say "Or has it?! As the hook rises, it manages to get itself stuck under the strap of your [C]! A moment later, the pressure becomes too much and your [ShortDesc of C] is ripped apart, ruined! [GotUnluckyFlav]";
 				destroy C;
-	say "The hook shoots up into the hole in the ceiling that the rope was connected to.".
+	say "The hook shoots up into the hole in the ceiling the rope was connected to.".
 
 To say WedgieTrapReactFlav of (M - a monster):
 	say TriggeredTrapReactFlav of M.
@@ -132,56 +132,59 @@ Check pulling an ass hook:
 	HookPull instead.
 
 To HookPull:
-	let H be the noun;
-	if the player is wedgie hook stuck, now H is a random ass hook grabbing the player;
-	let K be the wedgie-target of H;
-	allocate 3 seconds;
-	let S be the dexterity of the player;
-	if S > 4 or the class of the player is cheerleader:[cheerleaders always get a chance to try.]
-		if S < 9, now S is 9;
-		let R be a random number from 1 to S;
-		if debuginfo > 0, say "[input-style]Escape check: Dexterity-based roll d[S] ([R]) | (6.5) ass hook difficulty check[roman type][line break]";
-		if R > 3:
-			if R > 6:
-				if H is grabbing the player, say "You manage to slowly pull down on the hook until it releases your [ShortDesc of K], ";
-				otherwise say "You manage to slowly pull down on the ass hook until it comes out of your [asshole], ";
-				say "at which point you can take a step to the side and let go. The hook shoots up into the hole in the ceiling that the rope was connected to.";
-				dislodge H;
-				now H is unrevealed;
-			otherwise:
-				say "You manage to pull down on the [if H is grabbing the player]hook but it doesn't quite manage to release your [ShortDesc of K] before you slip and it pulls the wedgie right back up, hurting you even more[otherwise]ass hook but can't quite get it out of your [asshole]. You slip and it shoots back into your [asshole], just making it more sore[end if]! Fuck! You should [one of][bold type][or][stopping]keep trying[roman type]!";
-				if H is penetrating asshole:
-					let able-to-orgasm be 1;
-					let prev-horny be 0;
-					if the player is a bit horny, now prev-horny is 1;
-					if the player is horny, now prev-horny is 2;
-					if the player is unable to orgasm so soon, now able-to-orgasm is 0;
-					ruin asshole;
-					if able-to-orgasm is 1 and the player is unable to orgasm so soon: [player just came]
-						if the player is not possessing a vagina, cutshow figure of hook cutscene 6 for H;
-						otherwise cutshow figure of hook cutscene 5 for H;
-					otherwise if (prev-horny is 0 and the player is a bit horny) or (prev-horny is 1 and the player is horny): [player just got aroused]
-						if the player is not possessing a vagina, cutshow figure of hook cutscene 3 for H;
-						otherwise cutshow figure of hook cutscene 4 for H;
-					repeat with M running through reactive monsters:
-						say AssHookFuckTrapReactFlav of M;
-				otherwise:
-					PainUp 1;
-		otherwise:
-			say "You can't get a grip on the hook to pull it down at all. Keep pulling!";
-	[otherwise if sex fainting is 1:
-		say "Your joints are so stiff that you can't bend your arms properly get a good grip on the ass hook at all! This is fucking ridiculous, here you are, stuck in the middle of the [the printed name of the location of the player], held in place by a hook in your [asshole]. But unless something changes, you're never going to be able to move! It may be best to just [bold type]wait[roman type] and see what happens.";]
+	if the player is wrist bound in front or (gape-gloves is worn and gape-gloves is wrist-bound-behind):
+		say "Your wrist bondage prevents you from reaching! This is fucking ridiculous, here you are, stuck in the middle of the [the printed name of the location of the player], held in place by a hook in your [asshole]. But unless something changes, you're never going to be able to move! It may be best to just [bold type]wait[roman type] and see what happens.";
 	otherwise:
-		if H is grabbing the player:
-			say "Your low dexterity causes you to have to repeatedly pull down on the hook, flossing your crack raw.";
-			PainUp 2;
-			say "After you finally manage to release your [ShortDesc of K], the hook shoots up into the hole in the ceiling that the rope was connected to.";
-			BodyRuin 3;
+		let H be the noun;
+		if the player is wedgie hook stuck, now H is a random ass hook grabbing the player;
+		let K be the wedgie-target of H;
+		allocate 3 seconds;
+		let S be the dexterity of the player;
+		if S > 4 or the class of the player is cheerleader:[cheerleaders always get a chance to try.]
+			if S < 9, now S is 9;
+			let R be a random number from 1 to S;
+			if debuginfo > 0, say "[input-style]Escape check: Dexterity-based roll d[S] ([R]) | (6.5) ass hook difficulty check[roman type][line break]";
+			if R > 3:
+				if R > 6:
+					if H is grabbing the player, say "You manage to slowly pull down on the hook until it releases your [ShortDesc of K], ";
+					otherwise say "You manage to slowly pull down on the ass hook until it comes out of your [asshole], ";
+					say "at which point you can take a step to the side and let go. The hook shoots up into the hole in the ceiling that the rope was connected to.";
+					dislodge H;
+					now H is unrevealed;
+				otherwise:
+					say "You manage to pull down on the [if H is grabbing the player]hook but it doesn't quite manage to release your [ShortDesc of K] before you slip and it pulls the wedgie right back up, hurting you even more[otherwise]ass hook but can't quite get it out of your [asshole]. You slip and it shoots back into your [asshole], just making it more sore[end if]! Fuck! You should [one of][bold type][or][stopping]keep trying[roman type]!";
+					if H is penetrating asshole:
+						let able-to-orgasm be 1;
+						let prev-horny be 0;
+						if the player is a bit horny, now prev-horny is 1;
+						if the player is horny, now prev-horny is 2;
+						if the player is unable to orgasm so soon, now able-to-orgasm is 0;
+						ruin asshole;
+						if able-to-orgasm is 1 and the player is unable to orgasm so soon: [player just came]
+							if the player is not possessing a vagina, cutshow figure of hook cutscene 6 for H;
+							otherwise cutshow figure of hook cutscene 5 for H;
+						otherwise if (prev-horny is 0 and the player is a bit horny) or (prev-horny is 1 and the player is horny): [player just got aroused]
+							if the player is not possessing a vagina, cutshow figure of hook cutscene 3 for H;
+							otherwise cutshow figure of hook cutscene 4 for H;
+						repeat with M running through reactive monsters:
+							say AssHookFuckTrapReactFlav of M;
+					otherwise:
+						PainUp 1;
+			otherwise:
+				say "You can't get a grip on the hook to pull it down at all. Keep pulling!";
+		[otherwise if sex fainting is 1:
+			say "Your joints are so stiff that you can't bend your arms properly get a good grip on the ass hook at all! This is fucking ridiculous, here you are, stuck in the middle of the [the printed name of the location of the player], held in place by a hook in your [asshole]. But unless something changes, you're never going to be able to move! It may be best to just [bold type]wait[roman type] and see what happens.";]
 		otherwise:
-			say "Your low dexterity causes you to have to repeatedly pull down on the hook, fucking your [asshole] raw. After you finally get it out, the ass hook shoots up into the hole in the ceiling that the rope was connected to.";
-			now the soreness of asshole is 10;
-		dislodge H;
-		now H is unrevealed.
+			if H is grabbing the player:
+				say "Your low dexterity causes you to have to repeatedly pull down on the hook, flossing your crack raw.";
+				PainUp 2;
+				say "After you finally manage to release your [ShortDesc of K], the hook shoots up into the hole in the ceiling that the rope was connected to.";
+				BodyRuin 3;
+			otherwise:
+				say "Your low dexterity causes you to have to repeatedly pull down on the hook, fucking your [asshole] raw. After you finally get it out, the ass hook shoots up into the hole in the ceiling that the rope was connected to.";
+				now the soreness of asshole is 10;
+			dislodge H;
+			now H is unrevealed.
 
 Hook fucking is an action applying to one touchable thing.
 

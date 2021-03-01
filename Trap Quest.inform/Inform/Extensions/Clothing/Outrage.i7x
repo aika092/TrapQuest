@@ -99,6 +99,10 @@ Definition: a clothing (called C) is almost too much:
 	if the outrage of C + 2 is too humiliating and the outrage of C > 0, decide yes;
 	decide no.
 
+Definition: a clothing (called C) is almost too much when visible:
+	if the unworn outrage of C + 2 is too humiliating and the unworn outrage of C > 0, decide yes;
+	decide no.
+
 Definition: a clothing is outrageAcceptable:
 	if the outrage of it <= 6, decide yes;
 	decide no.

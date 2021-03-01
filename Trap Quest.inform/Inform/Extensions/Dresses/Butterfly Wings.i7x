@@ -64,5 +64,6 @@ Definition: butterfly wings is flower themed: decide yes.
 Definition: butterfly wings is butterfly themed: decide yes.
 Definition: butterfly wings is pink themed: decide yes.
 Definition: butterfly wings is layer-blocking: decide no. [It can be removed whenever, and it doesn't block other things being worn or removed underneath it.]
+Definition: butterfly wings is condom pinnable: decide no.
 
 Butterfly Wings ends here.

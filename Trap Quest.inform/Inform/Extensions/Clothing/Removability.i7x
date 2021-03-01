@@ -58,6 +58,9 @@ Definition: a thing (called C) is tearable:
 	if C is indestructible, decide no;
 	if C is worn and C is unremovable, decide no;
 	decide yes.
+Definition: a thing is untearable:
+	if it is tearable, decide no;
+	decide yes.
 
 the global removability rules is a rulebook.
 
@@ -121,7 +124,12 @@ The unremovable rule is listed in the global removability rules.
 
 This is the cursed unremovable rule:
 	if wearing-target is cursed curse-sticky clothing and summoning is 0 and the class of the player is not cultist and (wearing-target is headgear or the player is not in Predicament20):
-		if autoremove is false, say "It won't budge! It's magically forcing you to keep [if wearing-target is equippable]wielding[otherwise]wearing[end if] it.";
+		if autoremove is false:
+			now the curse-ID of the noun is sure;
+			if the noun is hand ready:
+				say "The [ShortDesc of wearing-target] is welded to your [if there is worn gloves and the noun is not gloves][random worn gloves][otherwise]hand[end if]!";
+			otherwise:
+				say "It won't budge! It's magically forcing you to keep [if wearing-target is equippable]wielding[otherwise]wearing[end if] it.";
 		rule fails.
 The cursed unremovable rule is listed in the global removability rules.
 

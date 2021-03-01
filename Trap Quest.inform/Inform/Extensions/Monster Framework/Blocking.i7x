@@ -30,8 +30,11 @@ Definition: a monster (called M) is successfully blocking: [Do they succeed in a
 	if M is not blocker, decide no;
 	let D be the difficulty of M * 2;
 	if M is seduced and the sex-length of M < 6, decrease D by (6 - the sex-length of M);
-	let R be a random number from 1 to (D + the movement reduction of the player); [When we check the movement reduction of the player for the first time in a round, if it is significant, it outputs text explaining why the player is struggling to move away from the monster.]
-	if debuginfo > 0, say "[input-style][ShortDesc of M][']s movement block check: player movement penalty ([movement reduction of the player]) + block skill d[D] ([R - the movement reduction of the player]) = [R] | ([the dexterity of the player].5) dexterity[roman type][line break]";
+	let MR be the movement reduction of the player; [When we check the movement reduction of the player for the first time in a round, if it is significant, it outputs text explaining why the player is struggling to move away from the monster.]
+	let DM be D + MR;
+	if combatSpeed > 1 and DM > the dexterity of the player, increase D by (DM - the dexterity of the player) * (combatSpeed - 1); [double the likelihood of success by doubling the difference between DM and Dex]
+	let R be MR + a random number from 1 to D;
+	if debuginfo > 0, say "[input-style][ShortDesc of M][']s movement block check: player movement penalty ([MR]) + block skill d[D] ([R - MR]) = [R] | ([dexterity of the player].5) dexterity[roman type][line break]";
 	if R > the dexterity of the player, decide yes;
 	decide no.
 

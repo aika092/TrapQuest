@@ -11,7 +11,7 @@ To decide which figure-name is the examine-image of (C - DungeonScenery01):
 To say ExamineDesc of (C - DungeonScenery01):
 	if diaper quest is 0:
 		say "A statue of a naked man with a ridiculously sized [if the bimbo of the player > 13][line break][second custom style]but yummy looking[roman type][line break][end if][manly-penis]. There seems to be a hollow tube inside the [manly-penis] with an exit at the tip.";
-		if newbie tips is 1, say "[one of][newbie style]Newbie tip: This can be sucked, healing the soreness of your orifices but forcing you to drink some semen. It's very useful but if you use it too much you might find yourself with a new oral fixation.[or][stopping]";
+		if newbie tips is 1, say "[one of][newbie style]Newbie tip: This can be sucked, healing the soreness of your orifices and replenishing some of your magic, but forcing you to drink some semen. It's very useful but if you use it too much you might find yourself with a new oral fixation.[or][stopping]";
 	otherwise:
 		say "A line of bronze women with their big bare butts pointing towards you. They look weirdly... spankable.";
 		if newbie tips is 1, say "[one of][newbie style]Newbie tip: These statues can be spanked, reducing your overall diaper addiction but slightly increasing delicateness in return. If your addiction to diapers gets too high, you can come here to resolve the issue.[or][stopping]".

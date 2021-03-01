@@ -135,7 +135,7 @@ Outputs a hint on what the summoning portal "S" will spawn next.
 To say PortalHint of (S - a summoning portal):
 	say "It's going to summon something soon!".
 
-To say DivinationHint of (S - summoning-circle):
+To say DivinationHint of (S - a summoning portal):
 	let M be the next-summon of S;
 	say "You can sense that it will summon a [ShortDesc of M] next.".
 
@@ -323,7 +323,7 @@ Carry out appeasing something with summoning-circle:
 	if the noun is plentiful accessory:
 		say "[BigNameDesc of the noun] lights up as you throw it into the circle, disintegrating as it absorbs some of the building energy.";
 		let P be the price of the noun;
-		ChargeUp summoning-circle by (P * 75);
+		ChargeUp summoning-circle by (P * 150);
 		only destroy the noun;
 	otherwise if the noun is blessed clothing:
 		say "[BigNameDesc of the noun] lights up as you throw it into the circle, [if the noun is not cursable]disintegrating as it absorbs some of the building energy[otherwise]trembling visibly as holy energy stored inside [NameDesc of the noun] absorbs some of the building energy. [bold type]It is no longer blessed[roman type][end if].";
@@ -460,7 +460,7 @@ Carry out appeasing something with giant-statue:
 	if the noun is plentiful accessory:
 		say "Glowing vines reach out of the ground, slowly pulling [NameDesc of the noun] underneath the soil. You feel some of the surrounding energy fading away.";
 		let P be the price of the noun;
-		ChargeUp the second noun by (P * 75);
+		ChargeUp the second noun by (P * 150);
 		only destroy the noun;
 	otherwise if the noun is pure totem:
 		say "Glowing vines reach out of the ground, grasping [NameDesc of the noun] as it lights up. Waves of relief passes through your surroundings as they slowly but surely drag it underneath the soil.";
@@ -721,7 +721,7 @@ Carry out appeasing something with mysterious-mummy:
 		if the noun is plentiful accessory:
 			say "[BigNameDesc of noun] lights up as you place it at the mummy's feet, disintegrating as it absorbs some of its energy.";
 			let P be the price of the noun;
-			ChargeUp the second noun by (P * 75);
+			ChargeUp the second noun by (P * 150);
 			destroy the noun;
 		otherwise if the noun is pure totem:
 			say "[BigNameDesc of noun] lights up as you place it up at the mummy's feet, disintegrating as it absorbs the building energy. A wave of relief passes through your surroundings as the last remnants of [NameDesc of the noun] disappear completely.";

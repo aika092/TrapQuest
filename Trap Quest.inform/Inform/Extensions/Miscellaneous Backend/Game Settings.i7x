@@ -90,12 +90,9 @@ choice
 1 [map-figures]
 15 [maximumMenuSize]
 1 [areYouSure]
+2 [combatSpeed]
+0 [simulatedInternet]
 
-[!<DecideWhichNumberIsTextDelay>+
-
-How long until the 'press enter to continue' happens automatically. The higher the longer.
-
-+!]
 To decide which number is YesNoPreference:
 	decide on choice in row 1 of the Table of Settings.
 
@@ -478,8 +475,8 @@ title	subtable	description	toggle
 "Quick Start [if halloween content is 1]- disabled because Halloween content is enabled (disable this in Normal Start > Seasonal Content)[otherwise](use same player choices as last time, skip prologue)[end if]"	--	--	quick start rule
 "Quick RANDOM Start [if halloween content is 1]- disabled because Halloween content is enabled[otherwise](randomise everything that isn't set to [']never['] or [']always['], skip prologue)[end if]"	--	--	random start rule
 "Tutorial (learn how to play the game)"	--	--	tutorial start rule
-"Game Difficulty: [if game difficulty is 0]EASIEST[otherwise if game difficulty is 1]EASY[otherwise if game difficulty is 2]NORMAL[otherwise if game difficulty is 3]HARD[otherwise if game difficulty is 4]HARDER[otherwise]GET FUCKED[end if] (+[game difficulty * 10] points to your score at the end of the game)"	--	--	game difficulty rule
 "Maximum menu rows: [maximumMenuSize + 1]"	--	--	maximumMenuSize toggle rule
+"GAME FLOW SETTINGS"	Table of Game Flow Settings	--	--
 "IMAGE AND LAYOUT SETTINGS"	Table of Image Settings	--	--
 "OPTIONAL TEXT SETTINGS"	Table of Optional Text Settings	--	--
 "AUTOMATIC ACTIONS SETTINGS"	Table of Automatic Actions Settings	--	--
@@ -581,6 +578,15 @@ This is the crash debug rule:
 	otherwise:
 		now crashdebug is 0.
 
+Part - Game Flow Settings
+
+Table of Game Flow Settings
+title	subtable	description	toggle
+"Previous Menu (Shortcut: Q)"	--	--	quit rule
+"Game Difficulty (base friendliness of NPCs): [if game difficulty is 0]EASIEST[otherwise if game difficulty is 1]EASY[otherwise if game difficulty is 2]NORMAL[otherwise if game difficulty is 3]HARD[otherwise if game difficulty is 4]HARDER[otherwise]GET FUCKED[end if] (+[game difficulty * 10] points to your score at the end of the game)"	--	--	game difficulty rule
+"Combat Speed: [if combatSpeed is 1]FAST[otherwise if combatSpeed is 2]SLOWER[otherwise if combatSpeed is 3]VERY SLOW[otherwise]SLOWEST[end if]"	--	--	combat speed toggle rule
+
+
 Part - Optional Text Settings
 
 Table of Optional Text Settings
@@ -596,7 +602,8 @@ title	subtable	description	toggle
 "When you are asked to respond yes / no: [if actual inline hyperlinks < 1]Respond by keyboard only (since you've disabled hyperlinks)[otherwise if YesNoPreference is 0]Respond by keyboard only[otherwise if YesNoPreference is 1]Respond by keyboard or text hyperlinks or map window buttons (all options will be provided to you)[otherwise]Respond by keyboard or text hyperlinks (obnoxious map window buttons don't appear)[end if]"	--	--	YesNoPreference toggle rule
 "Examine Items After Transform: On / Off: [if transformation cutscenes is 1]ON[otherwise]OFF[end if]"	--	--	transformation cutscenes toggle rule
 "Schoolteachers can give you new names: [if schoolNames is 0]OFF[otherwise]ON[end if]"	--	--	school names toggle rule
-[ALL EXTRA OPTIONS SHOULD GO ABOVE SCHOOL NAMES ROW, OR NON-DONATORS WON'T SEE THEM.]
+"Simulated internet (at the end of the game it's revealed that nothing compromising was actually published to the real internet): [if simulatedInternet is 0]OFF[otherwise]ON[end if]"	--	--	simulated internet toggle rule
+[ALL EXTRA OPTIONS SHOULD GO ABOVE SIMULATED INTERNET ROW, OR NON-DONATORS WON'T SEE THEM.]
 
 This is the new status toggle rule:
 	if choice in row 19 of Table of Settings < 3, increase choice in row 19 of Table of Settings by 1;
@@ -921,6 +928,24 @@ This is the areYouSure toggle rule:
 		increase choice in row 57 of Table of Settings by 1;
 	otherwise:
 		now choice in row 57 of Table of Settings is 0.
+
+To decide which number is combatSpeed:
+	decide on choice in row 58 of Table of Settings.
+
+This is the combat speed toggle rule:
+	if combatSpeed < 3:
+		increase choice in row 58 of Table of Settings by 1;
+	otherwise:
+		now choice in row 58 of Table of Settings is 1.
+
+To decide which number is simulatedInternet:
+	decide on choice in row 59 of Table of Settings.
+
+This is the simulated internet toggle rule:
+	if simulatedInternet is 0:
+		increase choice in row 59 of Table of Settings by 1;
+	otherwise:
+		now choice in row 59 of Table of Settings is 0.
 
 Part - Settings
 

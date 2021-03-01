@@ -157,7 +157,7 @@ To compute persistent reward of (Q - priestess-vaginal-service-quest) on (C - a 
 			compute autotaking condom-pack.
 
 To compute virginity-loss of (C - runic headband):
-	if diaper quest is 0 and the quest of C is priestess-service-quest and the player is female:
+	if diaper quest is 0 and the quest of C is priestess-service-quest and the player is possessing a vagina:
 		now C is not purity;
 		say "[if C is not cursed]Your [ShortDesc of C] shudders as a curse falls upon it. [end if]A voice reverberates in your head.[line break][second custom style]'[GoddessAddress] you have sinned! Your quest will have to be... reassigned. Once a sinner, always a sinner, as they say. From now on, you must use that sinful [cunt] of yours for your service. But beware, if you [if pregnancy fetish > 0]fall pregnant[otherwise]fill your sacred womb with too much seed[end if], you will not be forgiven, and the price will be dear. Present your ritual beads or headband with [']evidence['] of your service to my altar when your deeds are complete.'[roman type][line break]";
 		now C is cursed;

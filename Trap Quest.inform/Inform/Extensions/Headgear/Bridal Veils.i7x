@@ -42,13 +42,13 @@ To compute class outfit of (H - a bridal veil):
 
 Chapter - Quest
 
-betrothal-quest is a headgear-clothing-quest. betrothal-quest has a truth state called ceremony. the ceremony of betrothal-quest is false. betrothal-quest has a truth state called consumation. the consumation of betrothal-quest is false.
+betrothal-quest is a headgear-clothing-quest. betrothal-quest has a truth state called ceremony. the ceremony of betrothal-quest is false. betrothal-quest has a truth state called consummation. the consummation of betrothal-quest is false.
 
 To uniquely set up (C - a bridal veil):
 	now the quest of C is betrothal-quest.
 
 To say QuestFlav of (Q - betrothal-quest):
-	say "You sense it wants you to [if bride-consort is the throne]find a husband to please[otherwise]keep your husband ([FuckerDesc of bride-consort]) pleased (or banish [him of bride-consort])[end if].".
+	say "You sense it wants you to [if bride-consort is the throne]find a husband to please (but the more you say no, the more appealing the offers may become!)[otherwise]keep your husband ([FuckerDesc of bride-consort]) pleased (or banish [him of bride-consort])[end if].".
 
 To say QuestTitle of (Q - betrothal-quest):
 	say " (marriage quest)".

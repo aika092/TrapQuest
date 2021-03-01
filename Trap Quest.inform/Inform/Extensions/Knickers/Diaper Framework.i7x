@@ -263,7 +263,7 @@ To compute periodic effect of (D - a diaper):
 		increase xavier-diaper-link by 1;
 		if xavier-diaper-link is 57 or xavier-diaper-link is 113:
 			say "All of a sudden you get a wet feeling from your [genitals]... but it's not you. The Demon Queen must be urinating [one of][or]once [stopping]again! In any case it feels, sounds, and appears as if you are wetting yourself. ";
-			PissSoak 12 on D;
+			AnnouncedExpel urine on D by 12;
 			say "[PeeReaction 2]";
 			if diaper messing < 3, now xavier-diaper-link is 1;
 		if xavier-diaper-link >= 163 and asshole is not actually occupied:
@@ -359,8 +359,8 @@ Check taking off a worn messed knickers:
 	say "[variable custom style]There's no way I'm touching that until I've found [if the bimbo of the player < 13]a way to change and clean myself[otherwise]someone to change me[end if].[roman type][line break]" instead.
 
 Definition: a knickers is removable:
-	if it is not messed, decide yes;
-	decide no.
+	if it is messed, decide no;
+	decide yes.
 
 To say MonsterOfferRejectFlav of (M - an intelligent monster) to (T - a diaper):
 	say "[speech style of M]'Do I look like I have problems controlling my bladder?!'[roman type][line break]".
@@ -731,5 +731,47 @@ An all later time based rule (this is the maintain diaper stack rule):
 
 Check wearing store diaper:
 	if diaper-stack is worn, say "You can't do that without the shopkeeper having ample time to stop you." instead.
+
+A DQClothing is a kind of object. NoDQImage is a DQClothing. A knickers has a DQClothing called the DQFigure. The DQFigure of a knickers is usually DQBlackPants.
+DQCloth is a DQClothing. DQGiant is a DQClothing. DQHuge is a DQClothing. DQLarge is a DQClothing. DQMedium is a DQClothing. DQMoosive is a DQClothing. DQSmall is a DQClothing. DQVelcro is a DQClothing. DQBunny is a DQClothing. DQWaddle is a DQClothing. DQWhitePants is a DQClothing. DQBlackPants is a DQClothing. DQPinkPants is a DQClothing. DQPullups is a DQClothing. DQTrainingPants is a DQClothing. DQRubber is a DQClothing.
+
+To decide which number is the DQBulk of (D - a DQClothing):
+	decide on 0.
+
+To decide which number is the DQBulk of (D - a knickers):
+	decide on the DQBulk of the DQFigure of D.
+
+To decide which number is the DQBulk of (Y - yourself):
+	if diaper-stack is worn:
+		let E be the number of entries in the list of stacked diapers;
+		decide on the DQBulk of entry E in the list of stacked diapers;
+	if there is worn knickers, decide on the DQBulk of a random worn knickers;
+	decide on 0.
+
+To decide which number is the DQBulk of (D - a DQClothing):
+	decide on 0.
+To decide which number is the DQBulk of (D - DQSmall):
+	decide on 1.
+To decide which number is the DQBulk of (D - DQMedium):
+	decide on 2.
+To decide which number is the DQBulk of (D - DQCloth):
+	decide on 3.
+To decide which number is the DQBulk of (D - DQBunny):
+	decide on 4.
+To decide which number is the DQBulk of (D - DQLarge):
+	decide on 4.
+To decide which number is the DQBulk of (D - DQVelcro):
+	decide on 5.
+To decide which number is the DQBulk of (D - DQHuge):
+	decide on 6. [Jammy usually refers to this as "diap5"]
+[Thigh spreading is below this line]
+To decide which number is the DQBulk of (D - DQMoosive):
+	decide on 7. [Jammy refers to this as "diap6"]
+To decide which number is the DQBulk of (D - DQGiant):
+	decide on 8. [Jammy refers to this as "diap8"]
+[Might add slightly smaller waddle diaper later at 9]
+To decide which number is the DQBulk of (D - DQWaddle):
+	decide on 10. [Jammy refers to this as "diap9"]
+
 
 Diaper Framework ends here.

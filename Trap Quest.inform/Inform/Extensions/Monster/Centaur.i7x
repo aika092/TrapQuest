@@ -16,7 +16,7 @@ To say MonsterComment of (M - centaur):
 	if diaper quest is 0:
 		if M is penetrating a body part:
 			if the bimbo of the player < 7:
-				say "[first custom style]Its too long! Its just way too long!";
+				say "[first custom style]It's too long! It's just way too long!";
 			otherwise if the bimbo of the player < 12:
 				say "[variable custom style]How am I supposed to deal with a [DickDesc of M] like this?!";
 			otherwise:
@@ -32,7 +32,7 @@ To say MonsterComment of (M - centaur):
 			if the player is gendered male, say "[first custom style][one of]What a freakshow.[or]I wonder if I could swipe that sword.[or][big his of M] rack is really nice, at least.[in random order]";
 			otherwise say "[first custom style][one of]I can't believe [his of M] genitals are just OUT like that. So gross.[or]I'll have to be careful of that sword if [he of M] and I ever come to blows.[or]I wish [he of M] would stop ogling me so much.[in random order]";
 		otherwise if the bimbo of the player < 12:
-			say "[variable custom style][one of][big he of M] might be pretty hung centaur standards.[or]That sword seems like its really valuable. I wonder if I could try it. The metal one. Yup, that's the one I want to try.[or][big he of M] keeps staring at my butt. I mean, I'm flattered, but...[in random order]";
+			say "[variable custom style][one of][big he of M] might be pretty hung centaur standards.[or]That sword seems like it's really valuable. I wonder if I could try it. The metal one. Yup, that's the one I want to try.[or][big he of M] keeps staring at my butt. I mean, I'm flattered, but...[in random order]";
 		otherwise:
 			say "[second custom style][one of]I love how [he of M] just lets it all hang out.[or]That sword looks like it'd be fun to play with. [big his of M] blade seems kind of nice too.[or]Stop ogling me and fuck me already![in random order]";
 		say "[roman type][line break]".
@@ -69,13 +69,13 @@ To set up (M - centaur):
 	reset M;
 	now the monstersetup of M is 1;
 	now the raw difficulty of M is the starting difficulty of M;
-	if doomed is 5, DifficultyUp M by 1;
+	if doomed is 5, SilentlyDifficultyUp M by 1;
 	now the health of M is the maxhealth of M.
 
 To decide which number is the starting difficulty of (M - centaur):
 	decide on 9.
 
-To decide which number is the maxhealth of (M - centaur):
+To decide which number is the initial maxhealth of (M - centaur):
 	if tutorial is 1, decide on 99999;
 	decide on 3 + ((the difficulty of M * 10) / 2).
 
@@ -92,7 +92,7 @@ To say PregGrowth of (M - centaur):
 To compute labour to (M - centaur):
 	if M is regional and M is alive:
 		compute pregnancy clothing displacement;
-		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue! [big he of M][end if] drops to [his of M] knees, supporting your back as you push out an adorable centaur foal. You watch quietly as your newborn child wobbles to [one of]her[or]his[cycling] feet.[line break][speech style of M]'[one of]How do you feel, [']Mommy[']?'[or]Moments like this make it all worth it.'[stopping][roman type][line break]The [father] stands up, ruffling your [one of]daughter's[or]son's[cycling] hair as [he of M] gently takes [one of]her[or]his[cycling] wrist.[line break][speech style of M]'[one of]Don't worry, I'll take care of everything. Come with me, little one!'[or]Come with Daddy. Your mommy needs her rest.'[stopping][roman type][line break]The two of them trot off together, leaving you to recover from your ordeal.";
+		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue! [big he of M][end if] drops to [his of M] knees, supporting your back as you push out an adorable centaur foal. You watch quietly as your newborn child wobbles to [one of]her[or]his[cycling] feet.[line break][speech style of M]'[one of]How do you feel, [']Mommy[']?'[or]Moments like this make it all worth it.'[stopping][roman type][line break]The [father] stands up, ruffling your [one of]daughter's[or]son's[cycling] hair as [he of M] gently takes [one of]her[or]his[cycling] wrist.[line break][speech style of M]'[one of]Don't worry, I'll take care of everything. Come with me, little one!'[or]Come with Daddy. Your mommy needs [his of the player] rest.'[stopping][roman type][line break]The two of them trot off together, leaving you to recover from your ordeal.";
 		if the father is in the location of the player:
 			say "For some reason, you are filled with a sense of deep fulfilment. You feel great!";
 			StrengthUp 1;
@@ -116,7 +116,6 @@ To decide which number is the outrage tolerance of (M - centaur):
 	decide on 8.
 
 To compute perception of (M - centaur):
-	now M is interested;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
 	if the class of the player is succubus:
 		say "[BigNameDesc of M][']s face scrunches with hostility![line break][speech style of M]'[one of]Yet another demon?! There's no end to them! Have at you!'[or]Begone, demon! Have at you!'[or]Demon! Have at you!'[at random][roman type][line break]";
@@ -202,7 +201,7 @@ Section 2 - Damage
 
 To compute damage reaction of (M - centaur):
 	if M is shieldblocked:[Counter!]
-		say "[line break][speech style of M]'[one of]Hyah!'[or]Dumbass!'[or]Gotcha!'[at random][roman type][line break][BigNameDesc of M] waits for the moment just before your attack connects and suddenly bashes you with [his of M] shield!";
+		say "[line break][speech style of M]'[one of]Hyah!'[or]Dumbass!'[or]Gotcha!'[at random][roman type][line break][BigNameDesc of M] waits for the moment just after your attack connects and suddenly bashes you with [his of M] shield!";
 		now M is not shieldblocked;
 		silently try kneeling;
 		if the player is prone:

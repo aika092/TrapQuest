@@ -23,7 +23,7 @@ To Set Up The Mansion:
 		render buffered stuff;
 	Scramble Mansion;
 	if debugmode > 0, say "SETTING UP CONTAINERS[line break]";
-	repeat with G running through creaky rooms in The Mansion:
+	repeat with G running through creaky haunted rooms:
 		unless G is the location of the player:
 			let R be a random number between 1 and 3;
 			if debugmode is 1, say "[R] in [G]...";

@@ -34,12 +34,12 @@ To uniquely set up (C - prayer-beads):
 	now C is blessed.
 
 To compute attack of (E - prayer-beads) at (M - a monster):
-	if the damage improvement of E > 0:
+	if the zap damage improvement of E > 0:
 		say "You point your beads at [NameDesc of M], and reaching behind you, you rip your [ShortDesc of ritual-beads] out of your [variable (random body part penetrated by ritual-beads)]! A blast of power shoots out of your [ShortDesc of prayer-beads] - a direct hit!";
 	otherwise:
 		say "You try to use your [ShortDesc of E] to cast a spell at [NameDesc of M]. Nothing happens!".
 
-To decide which number is the damage improvement of (E - prayer-beads):
+To decide which number is the zap damage improvement of (E - prayer-beads):
 	if ritual-beads is worn:
 		if ritual-beads is autoremovable, decide on the notch-taken of ritual-beads;
 	decide on 0.
@@ -76,7 +76,7 @@ To compute periodic effect of (L - jinx-beads):
 		now the jinx-charge of L is 0;
 		compute jinx of L.
 
-To decide which number is the damage improvement of (E - jinx-beads):
+To decide which number is the zap damage improvement of (E - jinx-beads):
 	let W be 1;
 	if ritual-beads is worn:
 		if the notch-taken of E > 5, increase W by 1;
@@ -138,9 +138,9 @@ To compute periodic effect of (W - fire-beads):
 			decrease the water-soak of B by 1;
 			break.
 
-To decide which number is the damage improvement of (W - fire-beads):
+To decide which number is the zap damage improvement of (W - fire-beads):
 	let X be 3;
-	if ritual-beads is worn, increase X by (the notch-taken of ritual-beads / 2);[lets see if this is too weak]
+	if ritual-beads is worn, increase X by (the notch-taken of ritual-beads / 2);[let's see if this is too weak]
 	decide on X.
 
 To compute attack of (W - fire-beads) at (M - a monster):

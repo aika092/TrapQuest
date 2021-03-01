@@ -18,7 +18,8 @@ To decide which figure-name is the monster-image of (M - a robochef):
 To say MonsterDesc of (M - a robochef):
 	say "A human sized robot with a chef's hat and a painted on moustache. [big he of M] has old fashioned joints and a large compartment in [his of M] [if lady fetish is 1]vase[otherwise]barrel[end if]-shaped torso, perfect for storing large quantities of food. [big his of M] 'eyes' glow brightly as he glides around silently on [his of M] wheels-for-feet. ";
 	if diaper quest is 0, say "At [his of M] groin, a normal sized rock solid transparent solid penis is filled with [if lactation fetish is 1 and watersports fetish is 1]some horrid grey liquid that looks a lot like it might be a mixture of [semen], [milk] and [urine][otherwise if watersports fetish is 1]some horrid yellowish liquid that looks a lot like it might be a mixture of [urine] and [semen][otherwise if lactation fetish is 1]some horrid white liquid that looks a lot like it might be a mixture of [milk] and [semen][otherwise]thick white [semen][end if].";
-	otherwise say line break.
+	otherwise say line break;
+	if M is chef-wound, say "One of [his of M] arms is currently spinning faster and faster in preparation for a powerful attack!".
 
 To set up (M - a robochef):
 	reset M;
@@ -140,18 +141,40 @@ Part 4 - Combat
 
 Chapter 1 - Attack
 
+The robochef priority attack rules is a rulebook. The priority attack rules of a robochef is the robochef priority attack rules.
+
+A robochef can be chef-wound or not chef-wound.
+
+This is the robochef winding rule:
+	let M be current-monster;
+	if M is chef-wound:
+		if the player is upright:
+			say "[BigNameDesc of M]'s arm stops spinning as it unleashes a powerful punch! [run paragraph on]";
+			if the accuracy roll of M >= the dexterity of the player:
+				if the difficulty of M > the starting difficulty of M + 1:
+					say "The strike connects with overwhelming force, knocking the wind out of you!";
+					now another-turn-flavour is the substituted form of "You're still trying to catch your breath!";
+					now another-turn is 1;
+				otherwise:
+					say "The strike connects with heavy force! Ouch!";
+				BodyRuin a random number between 2 and 3;
+			otherwise:
+				say "Since you saw it coming, you're able to get out of the way without being hit!";
+		otherwise:
+			say "[BigNameDesc of M]'s spinning arm slowly comes to a stop.";
+		now M is not chef-wound;
+		rule succeeds;
+	otherwise:
+		if the player is the donator and the difficulty of M > the starting difficulty of M and a random number between 1 and 5 is 1 and the player is upright:
+			say "One of [NameDesc of M]'s arms straightens out and slowly begins to spin around its circular joint. It must be charging up a powerful attack!";
+			now M is chef-wound;
+			rule succeeds.
+The robochef winding rule is listed in the robochef priority attack rules.
+
 The latex punishment rule of a robochef is usually the no latex punishment rule.
 
 To say PullAttempt of (M - a robochef) at (C - a clothing):
 	say "[BigNameDesc of M] pulls at your [printed name of C] with a strong metal hand, trying and rip it off!".
-
-To compute (M - a robochef) destroying (C - a clothing):
-	say "[BigNameDesc of M] rips it off, destroying it completely!";
-	destroy C.
-
-To compute (M - a robochef) ripping (C - a clothing):
-	say "[BigNameDesc of M] manages to create a tear in the fabric! Your [printed name of C] is now permanently ripped.";
-	now C is crotch-ripped.
 
 To set up sex length of (M - a robochef) in (F - asshole):
 	set up sex length (a random number between 2 and 3) of M in F.

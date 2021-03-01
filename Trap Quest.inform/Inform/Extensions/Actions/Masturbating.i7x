@@ -204,7 +204,7 @@ This is the embarrassing masturbation rule:
 	if asshole is actually occupied:
 		if the anal sex addiction of the player < 5 and the sex addiction of the player < 10:
 			let A be the humiliation of the player;
-			if the player is male, increase A by 4000; [Female players are more open to anal masturbation.]
+			if the player is gendered male, increase A by 4000; [Female players are more open to anal masturbation.]
 			if A < HUMILIATION-DISGRACED:
 				if auto is 0, say "You can't bring yourself to masturbate when there's [if the number of monsters penetrating asshole > 0 and diaper quest is 0]someone fucking[otherwise]something in[end if] your [asshole]!";
 				rule fails;
@@ -599,7 +599,7 @@ This is the masturbation climax rule:
 		let C be a random off-stage chastity bond;
 		if C is actually summonable:[This should handle "penis cage" + no penis situations on its own.]
 			if the player is getting unlucky:
-				say "As you pull your hand away from your crotch, you feel a tightness around your loins. You look down and see that a [Shortdesc of C] has appeared around your [if C is chastity cage][ShortDesc of penis][otherwise]crotch[end if]! [if the bimbo of the player < 10]Even worse, it[otherwise]It[end if] only stops anything from touching your [if C is chastity-belt]genitals[otherwise]dick[end if], so your [asshole] remains completely unprotected![line break][GotUnluckyFlav]";
+				say "As you pull your hand away from your crotch, you feel a tightness around your loins. You look down and see that a [ShortDesc of C] has appeared around your [if C is chastity cage][ShortDesc of penis][otherwise]crotch[end if]! [if the bimbo of the player < 10]Even worse, it[otherwise]It[end if] only stops anything from touching your [if C is chastity-belt]genitals[otherwise]dick[end if], so your [asshole] remains completely unprotected![line break][GotUnluckyFlav]";
 				summon C cursed with quest;
 				say "[variable custom style]What is the game saying? That I'm too eager to play with myself? How frustrating...![roman type][line break]";
 	now the wanktime of the player is 500;
@@ -661,7 +661,7 @@ To say InstantAnalMasturbationFlav of (O - an object) with (M - a thing) in (C -
 	if R is 1:
 		say "You [if O is insertable object]ease the [printed name of O] into your [asshole][otherwise]ease your fingers into your [asshole][end if], [if A < 5]cheeks burning with shame[otherwise if A < 10]panting with excitement[otherwise]cooing with unabashed excitement[end if] as you begin to fuck yourself to the [if M is a live thing]the feeling of [NameDesc of M][otherwise]thought of [PlayerFantasy][end if]. Nothing more than a moment passes, [if A < 5]and you are immediately ashamed to[otherwise if A < 10]and you tell yourself you should be ashamed to[otherwise]and you feel your muscles tightening in anticipation as you[end if] realise that you're about to cum.";
 	otherwise if R is 2:
-		say "[if O is insertable object]The [printed name of O][otherwise]Your fingers[end if] send ripples of pleasure through your body as you push them into your [if the soreness of asshole > 3]sensitive [end if][asshole], eliciting a hiss of pleasure as you [if the player is male and O is nothing]begin to delicately stroke your prostate[otherwise if the player is male]begin to grind the [printed name of O] against your prostate[otherwise if O is insertable object]gingerly push the [printed name of O] in and out[otherwise]gingerly push your fingers in and out[end if]. [if A < 5 and M is a live thing]It feels wrong, but you focus on [NameDesc of M][otherwise if M is a live thing]You focus as much as you can on [NameDesc of M][otherwise]A fantasy of [PlayerFantasy] enters your thoughts[end if], and just like that, you realise you're already going to cum.";
+		say "[if O is insertable object]The [printed name of O][otherwise]Your fingers[end if] send ripples of pleasure through your body as you push them into your [if the soreness of asshole > 3]sensitive [end if][asshole], eliciting a hiss of pleasure as you [if the player is sexed male and O is nothing]begin to delicately stroke your prostate[otherwise if the player is sexed male]begin to grind the [printed name of O] against your prostate[otherwise if O is insertable object]gingerly push the [printed name of O] in and out[otherwise]gingerly push your fingers in and out[end if]. [if A < 5 and M is a live thing]It feels wrong, but you focus on [NameDesc of M][otherwise if M is a live thing]You focus as much as you can on [NameDesc of M][otherwise]A fantasy of [PlayerFantasy] enters your thoughts[end if], and just like that, you realise you're already going to cum.";
 	otherwise if R is 3:
 		say "You eagerly slide your [if O is insertable object][printed name of O][otherwise]fingers[end if] into your [asshole], closing your eyes and beginning to fuck yourself [if M is a live thing]to the feeling of [NameDesc of M][otherwise]as your mind fills with thoughts of [PlayerFantasy][end if]. [if A < 5]You can't help feeling ashamed at how much it turns you on[otherwise if A < 9]You can't believe how much it turns you on[otherwise]It gets you unbelievably turned on[end if], and as the rush of new arousal passes through your body, you realise that you're about to cum.".
 

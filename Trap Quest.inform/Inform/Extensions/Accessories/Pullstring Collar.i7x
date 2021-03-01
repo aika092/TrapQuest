@@ -1,40 +1,40 @@
 Pullstring Collar by Accessories begins here.
 
-A pullstring collar is a kind of submissive collar. There is 1 unique latex pullstring collar. Printed name of pullstring collar is "[clothing-title-before]pink pullstring choker[clothing-title-after]". The text-shortcut of pullstring collar is "pul". Understand "pink", "pull", "string", "ripcord", "cord", "choker" as pullstring collar. A pullstring collar has a number called times pulled. The times pulled of a pullstring collar is usually 0.
+pullstring collar is a submissive collar. pullstring collar is unique. pullstring collar is latex. The printed name of pullstring collar is "[clothing-title-before]pink pullstring choker[clothing-title-after]". The text-shortcut of pullstring collar is "pul". Understand "pink", "pull", "string", "ripcord", "cord", "choker" as pullstring collar. pullstring collar has a number called times pulled.
 
 Monster-puller is a thing that varies. Monster-puller is yourself.
 
-Definition: a pullstring collar is removable: decide no.
-Definition: a pullstring collar is transformation-protected: decide yes.
-Definition: a pullstring collar is pink themed: decide yes.
+Definition: pullstring collar is removable: decide no.
+Definition: pullstring collar is transformation-protected: decide yes.
+Definition: pullstring collar is pink themed: decide yes.
 
-To decide which number is the initial outrage of (C - a pullstring collar):
+To decide which number is the initial outrage of (C - pullstring collar):
 	decide on 4.
 
-Check wearing a pullstring collar:
-	say "It's in two pieces, there's no way for it to stay on!" instead.
+Carry out wearing pullstring collar:
+	now the times pulled of the noun is 0;
+	say "The two pieces of the collar snap back together.".
 
 Figure of pullstring collar is the file "Items/Accessories/Neck/collar2.png".
 
-To decide which figure-name is clothing-image of (C - a pullstring collar):
+To decide which figure-name is clothing-image of (C - pullstring collar):
 	decide on figure of pullstring collar.
 
-To say ClothingDesc of (C - a pullstring collar):
+To say ClothingDesc of (C - pullstring collar):
 	say "[if C is worn]This pink latex choker feels too small, but apparently stretches just enough that it fits your neck like a second skin. It makes adjusting it into the right spot on your neck a real bitch. It has no clear way to remove it. However there is a small plastic ring connected to a metal cord that you can pull at the back.[otherwise]A small pink choker with a pull cord at the back.[end if]".
 
-To say ShortDesc of (C - a pullstring collar):
+To say ShortDesc of (C - pullstring collar):
 	say "pullstring collar".
 
-Check pulling a pullstring collar:
+Check pulling pullstring collar:
 	let W be a random wild horse penetrating asshole;
 	if W is a thing, try HorsePulling W instead;
 	if auto is 0 and the player is not able to manually use their hands, do nothing instead;
 	if the player is silently able to manually speak and the noun is worn:
 		say "[if monster-puller is the player]You pull the ring and then you let go[otherwise]You yelp in surprise[end if], [one of]giving a gasp as you feel it start winding back into the collar, a shudder going through your body as your mouth opens all on its own, [or][stopping]and in a bubbly voice you hear yourself say:[line break][second custom style]";
-		let R be a random number between 1 and 6;
-		if the times pulled of the noun is 0 and R is 1, now R is a random number between 2 and 6;
-		if the times pulled of the noun >= a random number between 4 and 7 and R is not 1 [and monster-puller is the player], now R is 1;
-		if R is 1 and monster-puller is the player:
+		let R be a random number between 2 and 6;
+		if the times pulled of the noun >= a random number between 4 and 7 and R is not 1, now R is 1;
+		if R is 1:
 			say "'I'm so looking forward to [if diaper quest is 1]wearing nappies for the rest of my life[otherwise]meeting all those big [manly-penis]s out there waiting for me[end if]!'[roman type][line break]You feel funny inside, but also a bit stronger.";
 			SemenAddictUp 1;
 			SexAddictUp 1;
@@ -56,13 +56,17 @@ Check pulling a pullstring collar:
 				SemenTasteAddictUp 1;
 			now R is 0;
 		otherwise if R is 3 or monster-puller is monster:
-			if diaper quest is 1:
-				say "'[if the sex addiction of the player < 5 and the player is gendered female]Being a prude gets boring, the truth is that I love masturbating just as much as boys do!'[otherwise if the sex addiction of the player < 8][one of]Nothing in life is better than a well-earned orgasm[or]If you hold me down while you play with my bits, I'm sure to enjoy it[then at random]!'[otherwise if the sex addiction of the player < 11][one of]The only thing more fun than being a big baby is being a big baby who's allowed cummies[or]I'll wear anything I'm told as long as you rub me through it[at random]!'[otherwise if there is a worn diaper]If I'm an obedient little baby, will you rub me through my diaper?'[otherwise]If I put on a diaper, will you promise to give me my cummies through it?'[end if][roman type][line break]";
+			if watersports fetish is 1 and monster-puller is willing to urinate monster:
+				say "'[if the urine taste addiction of the player < 4]I wonder what your pee tastes like?'[otherwise if the urine taste addiction of the player < 7][one of]I hope [he of monster-puller] pees on my face[or]Force me to drink your pee[then at random]!'[otherwise][one of]I'm a disgusting human toilet, please make me drink all your [urine][or]I'm desperate for your pee, please give it all to me[at random]!'[end if][roman type][line break]";
+				UrineTasteAddictUp 1;
 			otherwise:
-				if monster-puller is female monster and monster-puller is not neuter monster, say "'[if the player is a sissy]Pathetic sissies like me love working hard to earn our cummies![otherwise if the player is gendered male]Girls turn me on, especially when they're on top! I'm not manly enough to try and dominate a woman.'[otherwise]This girl is so sexy... I hope she sits on my face!'[end if][roman type][line break]";
-				otherwise say "'[if the sex addiction of the player < 5 and the player is gendered female]Being a prude gets boring, I need someone to fuck me!'[otherwise if the sex addiction of the player < 5]Nothing in life is better than a well-earned orgasm!'[otherwise if the sex addiction of the player < 11]There's nothing more fun than being a nympho!'[otherwise if highest body part sex addiction < 6]I can't wait until my new Masters train my body to be addicted to [manly-penis]!'[otherwise]Having my [asshole] destroyed gives me the best orgasms!'[end if][roman type][line break]";
-			say "You feel a little [if the sex addiction of the player < 10]less inhibited[otherwise]more obsessed with domination and submission[end if].";
-			SexAddictUp 1;
+				if diaper quest is 1:
+					say "'[if the sex addiction of the player < 5 and the player is gendered female]Being a prude gets boring, the truth is that I love masturbating just as much as boys do!'[otherwise if the sex addiction of the player < 8][one of]Nothing in life is better than a well-earned orgasm[or]If you hold me down while you play with my bits, I'm sure to enjoy it[then at random]!'[otherwise if the sex addiction of the player < 11][one of]The only thing more fun than being a big baby is being a big baby who's allowed cummies[or]I'll wear anything I'm told as long as you rub me through it[at random]!'[otherwise if there is a worn diaper]If I'm an obedient little baby, will you rub me through my diaper?'[otherwise]If I put on a diaper, will you promise to give me my cummies through it?'[end if][roman type][line break]";
+				otherwise:
+					if monster-puller is female monster and monster-puller is not neuter monster, say "'[if the player is a sissy]Pathetic sissies like me love working hard to earn our cummies![otherwise if the player is gendered male]Girls turn me on, especially when they're on top! I'm not manly enough to try and dominate a woman.'[otherwise]This girl is so sexy... I hope she sits on my face!'[end if][roman type][line break]";
+					otherwise say "'[if the sex addiction of the player < 5 and the player is gendered female]Being a prude gets boring, I need someone to fuck me!'[otherwise if the sex addiction of the player < 5]Nothing in life is better than a well-earned orgasm!'[otherwise if the sex addiction of the player < 11]There's nothing more fun than being a nympho!'[otherwise if highest body part sex addiction < 6]I can't wait until my new Masters train my body to be addicted to [manly-penis]!'[otherwise]Having my [asshole] destroyed gives me the best orgasms!'[end if][roman type][line break]";
+				say "You feel a little [if the sex addiction of the player < 10]less inhibited[otherwise]more obsessed with domination and submission[end if].";
+				SexAddictUp 1;
 			now R is 0;
 		otherwise if R is 4:
 			if no-panties permanent fetish is 0 and a random number between -1 and 1 >= diaper quest:

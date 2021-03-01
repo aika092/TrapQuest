@@ -10,6 +10,8 @@ The printed name of g-string is "[clothing-title-before][selfexamineuniquetitle 
 
 To decide which number is the penis-capacity of (C - a g-string):
 	decide on 0.
+To decide which number is the hipModesty of (C - a g-string):
+	decide on 1.
 
 To say TypeTitle of (G - a g-string):
 	say "g-string".

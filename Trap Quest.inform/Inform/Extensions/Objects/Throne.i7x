@@ -87,11 +87,11 @@ Check entering the throne:
 			now R is a random number between 4 and 6;
 			now R-old is R;
 			if debuginfo > 0, say "; FIRST TIME REROLL d3+3 ([R]) ";
-		if the times-met of ex-princess > 0 and ex-princess is caged and there is an off-stage tiara and the number of worn headgear is 0:
+		if the times-met of ex-princess > 0 and ex-princess is caged and silver-tiara is off-stage and the number of worn headgear is 0:
 			now R is 1;
 			now R-old is R;
 			if debuginfo > 0, say "; PRINCESS RESCUE QUEST OVERRIDE ([R]) ";
-		otherwise if the class of the player is "virgin warrior" and there is an off-stage tiara and sword-of-purity is worn:
+		otherwise if the class of the player is "virgin warrior" and silver-tiara is off-stage and sword-of-purity is worn:
 			now R is 1;
 			now R-old is R;
 			if debuginfo > 0, say "; VIRGIN WARRIOR OVERRIDE ([R]) ";
@@ -99,16 +99,15 @@ Check entering the throne:
 			if diaper quest is 0, say "[if R is not R-old] = [R] [end if]| 1) Tiara; 2) Tentacle Trap; 3) [if the class of the player is princess]Guard dream[otherwise]Body expansion[end if]; 4) Intelligence + 1; 5) Strength + 1; 6) Dexterity + 1; 7) Hair reduction; 8) Humiliation reduction[roman type][line break]";
 			otherwise say "[if R is not R-old] = [R] [end if]| 1) Tiara; 2-3) Potty; 4) Intelligence + 1; 5) Strength + 1; 6) Dexterity + 1; 7) Humiliation reduction[roman type][line break]";
 		if R is 1:
-			let H be a random tiara;
 			if the class of the player is "virgin warrior" and sword-of-purity is worn:
 				let C be a random worn headgear;
-				transform C into H;
+				transform C into silver-tiara;
 				say "[variable custom style]So I'm a princess now too?[roman type][line break]";
 				PinkWardrobeUnclash virgin princess outfit;
 				class summon virgin princess outfit;
 				say "[variable custom style]COME ON![roman type][line break]" instead;
 			otherwise:
-				summon H cursed;
+				summon silver-tiara cursed;
 				say "A silver tiara appears on your head. You feel important.[line break][second custom style][line break]Is this game turning me into a princess?[roman type][line break]" instead;
 		otherwise if R is not 4 and R is not 5 and R is not 6 and (there is a worn diaper or (diaper quest is 1 and R <= 3) or (diaper lover >= 1 and the noun is not transformed and ((the class of the player is princess and diaper quest is 1) or the player is an adult baby or the player is a sissy))):
 			if debuginfo > 0 and diaper quest is 0, say "[input-style]Player is a bab - Potty override![roman type][line break]";
@@ -201,7 +200,7 @@ Check entering the throne:
 		otherwise if R is 7:
 			if the largeness of hair > 6:
 				say "You hear a metal slice from behind you. You turn around and see that your hair has been cut back down to shoulder length! You can see the cut strands of your [HairColour] hair on the floor behind the throne.";
-				HairCut 6;
+				HairCut to 6;
 			otherwise if the redness of hair > 0:
 				say "Your hair feels pleasant, and you feel somewhat less stiff.";
 				HairRedDown 1;

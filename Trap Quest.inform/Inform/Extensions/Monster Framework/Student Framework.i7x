@@ -1,6 +1,6 @@
 Student Framework by Monster Framework begins here.
 
-A student is a kind of monster. A student is intelligent. A student is usually female. A student has a number called timesBullied. A student has a number called teacher-obedience.
+A student is a kind of monster. A student is intelligent. A student is usually female. A student has a number called timesBullied. A student has a number called teacher-obedience. A student can be unexpelled or expelled. A student is usually unexpelled.
 
 To decide which number is the aggro limit of (M - a student): [The number at which they turn unfriendly]
 	decide on 10.
@@ -52,7 +52,7 @@ To say DiaperStateDesc of (M - a student):
 	say "[big he of M] is wearing an abnormally massive white diaper[if M is messy]. The diaper is bloated and discoloured brown, which is clear evidence that [he of M] has made the most massive of messes inside it[end if]. ".
 
 To say KissPunishDesc of (M - a student):
-	say "[big his of M] lips have been permamently swollen as punishment for underperforming in the kissing lesson. ".
+	say "[big his of M] lips have been permanently swollen as punishment for under-performing in the kissing lesson. ".
 
 To say ClitLeadDesc of (M - a student):
 	say "A thin silver chain dangling from [his of M] groin confirms that [he of M] is still wearing [his of M] new permanent clitoris lead piercing. ".
@@ -92,7 +92,7 @@ Part - Rank, Name and Print
 
 A student has a number called current-rank. The current-rank of a student is usually 1.
 A student has a number called min-rank. The min-rank of a student is usually 1.
-A student has a number called max-rank. The max-rank of a student is usually 5.
+A student has a number called max-rank. The max-rank of a student is usually 6.
 
 Definition: a student (called M) is rank1:
 	if the current-rank of M is 1, decide yes;
@@ -108,6 +108,12 @@ Definition: a student (called M) is rank4:
 	decide no.
 Definition: a student (called M) is rank5:
 	if the current-rank of M is 5, decide yes;
+	decide no.
+Definition: a student (called M) is same-rank:
+	if current-rank of M is the rank of the player, decide yes;
+	decide no.
+Definition: a student (called M) is rank-relevant:
+	if max-rank of M > the rank of the player, decide yes;
 	decide no.
 
 A student has an indexed text called student-name. The student-name of a student is usually "Anonymous".
@@ -182,25 +188,48 @@ Part - Updating Students
 
 school-earnings-latest is a number that varies. [let's track how long it's been since the player last stepped into the school]
 
-To compute background student promotions: [Happens whenever the player returns to the school via warp portal]
-	if school-earnings-latest is 0:
-		now school-earnings-latest is earnings;
-	otherwise:
-		let LST be the list of alive students;
-		sort LST in random order;
-		repeat with M running through LST: [Essentially what we do here is limit background promotions to one every 120 seconds that passes in the game universe, and make sure that no student is promoted to fill the same role that another already has (so there should be no more than 5 students in a class with the player)]
-			if the max-rank of M < the rank of the player and M is friendly: [bullies stay around]
-				destroy M; [just to catch anyone who fell through the update students net somehow]
-			otherwise if the current-rank of M < the rank of the player and school-earnings-latest - earnings >= 120:
-				let STPromotable be 1;
-				repeat with N running through alive students:
-					if the current-rank of M is the current-rank of N - 1: [checking the ones 1 higher for ones that already fill the same role]
-						if (M is innocent student and N is innocent student) or (M is ditzy student and N is ditzy student) or (M is tryhard student and N is tryhard student) or (M is nasty student and N is nasty student) or (M is amicable student and N is amicable student), now STPromotable is 0;
-				if STPromotable is 1 or M is student-katya: [Katya always gets promoted]
-					if debugmode is 1, say "Silently promoting [NameDesc of M] to ";
-					silently promote M;
-					say "[NameDesc of M].";
-					decrease school-earnings-latest by 120.
+To optimise students: [happens just before class starts]
+	let RK be the rank of the player;
+	while RK > 1:
+		let LST be a list of people;
+		let LSTP be a list of people;
+		repeat with ST running through alive students:
+			if the current-rank of ST is RK:
+				if the max-rank of ST > RK, add ST to LST; [needs to be able to promote once]
+				otherwise destroy ST; [has reached max promotion]
+			if the current-rank of ST is RK - 1:
+				if the max-rank of ST > RK, add ST to LSTP; [needs to be able to promote twice]
+				otherwise destroy ST; [irrelevant forever]
+		if the number of entries in LSTP > 0, sort LSTP in random order;
+		let E be 5 - the number of entries in LST;
+		while E < 5:
+			increase E by 1;
+			if the number of entries in LSTP > 0:
+				let ST be entry 1 in LSTP;
+				remove ST from LSTP;
+				silently promote ST;
+			otherwise:
+				let M be a random off-stage unexpelled fetish appropriate rank-relevant same-rank student;
+				if M is student, set up M;
+		decrease RK by 1;
+
+
+To update students: [happens after the player is promoted]
+	if the rank of the player is 2:
+		set up rank two students;
+	if the rank of the player is 3:
+		set up rank three students;
+	if the rank of the player is 4:
+		set up rank four students;
+	if the rank of the player is 5:
+		set up rank five students;
+	let LT be the list of alive undefeated teachers;
+	sort LT in random order;
+	repeat with M running through LT: [permanently remove one now-irrelevant teacher from the zone]
+		if M is not in the location of the player:
+			if M is sapphire-teacher or (M is emerald-teacher and the rank of the player > 2) or (M is ruby-teacher and the rank of the player > 3):
+				destroy M;
+				break.
 
 Part - Stats
 
@@ -238,7 +267,7 @@ To compute monstermotion of (M - a student):
 		otherwise if the current-rank of M is 4:
 			now R is School30;
 		if the location of M is not R, now M is in R;
-	otherwise if a random number between 1 and 4 is 1 or (the player is at least partially immobile and (a random number between 1 and 2 is 1 or there is a teacher in the location of M)):
+	otherwise if a random number between 1 and 4 is 1 or (M is in School35 and a random number between 1 and 5 > 2) or (the player is at least partially immobile and (a random number between 1 and 2 is 1 or there is a teacher in the location of M)):
 		compute room leaving of M.
 
 To compute (M - a student) seeking (D - a direction):
@@ -295,7 +324,6 @@ To compute fleeing of (M - a student):
 Part - Perception
 
 To compute perception of (M - a student):
-	now M is interested;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
 	if detention chair is grabbing the player:
 		compute detention chair tease of M;
@@ -434,7 +462,7 @@ To say SatisfiedFlav of (M - a student):
 	if M is in the location of the player and M is not dying, say "[BigNameDesc of M] seems satisfied, and loses interest.[if M is friendly][line break][speech style of M]'Okay, we're cool now. Just don't you dare piss me off again.'[roman type][line break]".
 
 To say SatisfiedFlav of (M - a nasty student):
-	if M is in the location of the player and M is not dying, say "[BigNameDesc of M] seems satisfied, and loses interest.[line break][speech style of M]'What a [one of]wimp[or]loser[or][if the player is gendered male]faggot[otherwise]pathetic little girl[end if][in random order].'[roman type][line break]".
+	if M is in the location of the player and M is not dying, say "[BigNameDesc of M] seems satisfied, and loses interest.[line break][speech style of M]'What a [one of]wimp[or]loser[or][if the player is gendered male]faggot[otherwise]pathetic little [boy of the player][end if][in random order].'[roman type][line break]".
 
 To FavourUp (M - a student) by (N - a number):
 	RespectUp M by N.
@@ -459,8 +487,8 @@ To HappinessUp (M - a student):
 
 To HappinessUp (M - a student) by (N - a number): [This is the same mechanically as favour but with different flavour]
 	if N > 0 and M is alive:
-		decrease the favour of M by N;
-		say "You can tell that [BigNameDesc of M] is [if M is not acquaintance][one of]relieved[or]trying to hide a smile[in random order][otherwise][one of]smiling about that[or]pleased by that[or]happy with you[in random order][end if].".
+		increase the favour of M by N;
+		say "You can tell that [BigNameDesc of M] is [if M is not acquaintance][one of]pleased by that[or]trying to hide a smile[in random order][otherwise][one of]smiling about that[or]happy with you[in random order][end if].".
 
 To HappinessDown (M - a student):
 	HappinessDown M by 1.
@@ -551,7 +579,7 @@ The student obeys teacher rule is listed in the student priority attack rules.
 To compute striking success effect of (M - a student) on (B - a body part):
 	let N be a random staff member in the location of M;
 	if N is a monster:
-		if N is uninterested, compute perception of N;
+		if N is uninterested, check guaranteed perception of N;
 		if N is interested and the health of M >= the maxhealth of M, now the health of M is the maxhealth of M - 1; [This is how we flag to the game that the staff member has witnessed the fight and can demand that it stops]
 
 To say AllyDamageFlav of (X - a student) on (M - a monster):
@@ -618,10 +646,8 @@ This is the bullying rule:
 		compute punishment of student-bully-swimming-pool;
 	otherwise if the number of alive unfriendly students > 2:
 		compute group bullying of current-monster;
-	[otherwise if diaper quest is 1:
-		compute dq bullying of current-monster;]
-	otherwise: [Currently there's nothing in TQ bullying that's inappropriate for DQ]
-		compute tq bullying of current-monster;
+	otherwise:
+		compute default bullying of current-monster;
 	rule succeeds.
 The unique punishment rule of a student is usually the bullying rule.
 
@@ -634,7 +660,7 @@ To compute punishment of (P - student-bully-food-hall):
 
 student-bully-swimming-pool is a diaper punishment. The priority of student-bully-swimming-pool is 5.
 Definition: student-bully-swimming-pool is appropriate:
-	if current-monster is student and the player is not at least partially immobile and the player is not flying and the rank of the player >= the entry-rank of School20 and the current-rank of current-monster >= the entry-rank of School20 and the semen coating of thighs < 9, decide yes;
+	if current-monster is student and the player is not at least partially immobile and the player is not flying and the rank of the player >= the entry-rank of School20 and the current-rank of current-monster >= the entry-rank of School20 and the semen coating of thighs < 9 and the number of staff member in School20 is 0, decide yes;
 	decide no.
 To compute punishment of (P - student-bully-swimming-pool):
 	if the location of the player is not School20:
@@ -747,7 +773,7 @@ Definition: student-bully is appropriate:
 	if current-monster is student, decide yes;
 	decide no.
 To compute punishment of (P - student-bully):
-	compute angry punishment of current-monster;
+	compute default bullying of current-monster;
 	satisfy current-monster.
 
 To compute bully perception of (M - a student):
@@ -791,28 +817,93 @@ To say RepeatBullyFlav of (M - a student):
 To say BullyCombatFlav of (M - a student):
 	say "[speech style of M]'[one of]I guess you really want to fight.'[or]Oops, looks like you pissed me off.'[or]Now I'm mad. Come on then.'[at random][roman type][line break]".
 
-To compute tq bullying of (M - a student):
-	let R be a random number between 1 and 4;
-	if there is a staff member in the location of M, now R is 5;
-	if R is 1 and asshole is exposed:
-		let P be a random sex toy penetrating asshole;
-		if P is clothing:
-			say "[speech style of M]'Why do you have that in your ass? It obviously doesn't fit you, tryhard [bitch].'[roman type][line break][BigNameDesc of M] smacks your ass, making sure [his of M] palm connects with your [ShortDesc of P] so you feel it all the way inside your [asshole].";
-		otherwise:
-			now P is a random off-stage plentiful dong;
-			let pN be the openness of asshole - size of P;
-			say "[speech style of M]'You look like you need something hard to work on for a little while.'[roman type][line break][BigNameDesc of M] pulls out a [ShortDesc of P], [if pN < 0]laughing cruelly at your whimper of pain as [he of M] roughly forces it into your [asshole][otherwise if pN < 3]slamming it into your [asshole][end if] and harshly swats your ass. [big his of M] palm makes full contact with the bottom of the [ShortDesc of P], making you feel it all the way inside.";
-			summon P;
-		ruin asshole times 2;
-	otherwise if R <= 2 and watersports fetish is 1:
-		say "[BigNameDesc of M] [if M is female]pulls apart [his of M] pussy lips[otherwise]holds [his of M] [DickDesc of M] steady[end if], and a moment later a jet of [urine] is heading straight for your face.";
-		FacePiss from M;
-	otherwise if R <= 2:
+a bully-action is a kind of object.
+Definition: a bully-action is eligible: decide yes.
+To execute (A - a bully-action):
+	do nothing.
+
+To compute default bullying of (M - a student):
+	now current-monster is M;
+	let A be a random eligible bully-action;
+	if A is nothing or there is a staff member in the location of M:
 		compute angry punishment of M;
 	otherwise:
-		say "[if there is a staff member in the location of M]As soon as there's a brief moment where nobody is looking, [NameDesc of M][otherwise][BigNameDesc of M][end if] kicks you in the [one of][genitals][or]side[at random]!";
-		PainUp 1;
+		execute A;
 	satisfy M.
+
+bully-plug is a bully-action.
+Definition: bully-plug is eligible:
+	if there is an embodied thing penetrating asshole, decide no;
+	if asshole is exposed and the current-rank of current-monster > 1, decide yes;
+	decide no.
+To execute (A - bully-plug):
+	let P be a random sex toy penetrating asshole;
+	if P is clothing:
+		say "[speech style of current-monster]'Why do you have that in your ass? It obviously doesn't fit you, tryhard [bitch].'[roman type][line break][BigNameDesc of current-monster] smacks your ass, making sure [his of current-monster] palm connects with your [ShortDesc of P] so you feel it all the way inside your [asshole].";
+	otherwise:
+		now P is a random off-stage plentiful dong;
+		let pN be the openness of asshole - size of P;
+		say "[speech style of current-monster]'You look like you need something hard to work on for a little while.'[roman type][line break][BigNameDesc of current-monster] pulls out a [ShortDesc of P], [if pN < 0]laughing cruelly at your whimper of pain as [he of current-monster] roughly forces it into your [asshole][otherwise if pN < 3]slamming it into your [asshole][end if] and harshly swats your ass. [big his of current-monster] palm makes full contact with the bottom of the [ShortDesc of P], making you feel it all the way inside.";
+		summon P;
+	ruin asshole times 2.
+
+bully-piss is a bully-action.
+Definition: bully-piss is eligible:
+	if watersports fetish is 1 and the current-rank of current-monster > 2, decide yes;
+	decide no.
+To execute (A - bully-piss):
+	say "[BigNameDesc of current-monster] [if current-monster is female]pulls apart [his of current-monster] pussy lips[otherwise]holds [his of current-monster] [DickDesc of current-monster] steady[end if], and a moment later a jet of [urine] is heading straight for your face.";
+	FacePiss from current-monster.
+
+bully-forcefeed is a bully-action.
+Definition: bully-forcefeed is eligible:
+	if face is actually occupied, decide no;
+	decide yes.
+To execute (A - bully-forcefeed):
+	say "[speech style of current-monster]'Open wide, [bitch]!'[roman type][line break][BigNameDesc of current-monster] holds your nose until you have to open your mouth, and then forces ";
+	if the current-rank of current-monster > a random number between 2 and 3:
+		say "you to drink a glowing pink potion.";
+		if diaper lover >= 0:
+			increase digestion-timer by 300;
+			say "You can feel that your body is now digesting food and drink twice as fast as before![line break][variable custom style]Uh-oh...[roman type][line break]";
+		if the lips of face < max lip size:
+			BustUp 1;
+			HipUp 1;
+			LipsUp 1;
+			say "Your lips grow in size and become [LipDesc]![line break][variable custom style]Eek![roman type][line break]";
+	otherwise:
+		say "a candy corn into your mouth! You're forced to swallow it.";
+		compute CandyCornEat.
+
+bully-rimjob is a bully-action.
+Definition: bully-rimjob is eligible:
+	if a2m fetish > 0 and face is not actually occupied and the current-rank of current-monster > 2, decide yes;
+	decide no.
+To execute (A - bully-rimjob):
+	say "[BigNameDesc of current-monster] pulls apart [his of current-monster] ass cheeks, and pushes [his of current-monster] asshole against your mouth.[line break][speech style of current-monster]'Lick it.'[roman type][line break]Do you obey?";
+	if the player is bimbo consenting:
+		say "It's humiliating, but you acquiesce and stick your tongue inside, sampling the bitter tastes of [his of current-monster] backdoor. [strongHumiliateReflect]";
+		HappinessUp current-monster;
+		if a2m fetish > 1 and the current-rank of current-monster > a random number between 2 and 5:
+			say "[BigNameDesc of current-monster] grunts and sighs as all of a sudden [he of current-monster] pushes out a big creamy helping of [semen] from [his of current-monster] [asshole] into your mouth! Yuck!";
+			FaceFill semen by 6;
+	otherwise:
+		say "[BigNameDesc of current-monster] settles for rubbing [his of current-monster] asshole over your nose and lips.";
+	say "[speech style of current-monster]'Nasty bitch, you like that, don't you?'[roman type][line break]";
+
+bully-confiscate is a bully-action.
+Definition: bully-confiscate is eligible:
+	if diaper quest is 1 and current-monster is able to confiscate, decide yes;
+	decide no.
+To execute (A - bully-confiscate):
+	compute punishment of confiscate.
+
+bully-donate is a bully-action.
+Definition: bully-donate is eligible:
+	if diaper quest is 1 and current-monster is able to donate babywear, decide yes;
+	decide no.
+To execute (A - bully-confiscate):
+	compute punishment of donate babywear.
 
 To say angry punishment insult of (M - a student):
 	say "[speech style of M]'Your outfit is fucking ugly.'[roman type][line break]".
@@ -822,18 +913,6 @@ To say angry punishment accessory confiscation of (M - a student):
 
 To say angry punishment clothing destruction of (M - a student) on (C - a clothing):
 	say "[speech style of M]'Trust me, you're going to look way hotter like this!'[roman type][line break]".
-
-To compute dq bullying of (M - a student):
-	now current-monster is M;
-	let N be the number of staff member in the location of M;
-	if N is 0 and M is able to confiscate:
-		compute punishment of confiscate;
-	otherwise if N is 0 and M is able to donate babywear:
-		compute punishment of donate babywear;
-	otherwise:
-		say "[if there is a staff member in the location of M]As soon as there's a brief moment where nobody is looking, [NameDesc of M][otherwise][BigNameDesc of M][end if] [one of]punches you in the arm[or]Pinches your upper arm[or]Pulls your [ShortHairDesc][or]Flicks your soft cheek[or]Pinches a nipple[or]Jabs you in the side[in random order]. [one of]Ouch![or]Ow![or]Yow![in random order]";
-		PainUp 1;
-		satisfy M.
 
 To compute food hall bullying of (M - a student):
 	say "[speech style of M]'[one of]I'm thirsty, [bitch], which means you're going to get some soda for me[or]Come over here, [bitch]. You'll be my drink dispenser today[or]I'm thirsty. You know what to do, [bitch][then at random]!'[roman type][line break][BigNameDesc of M] drags you over to the [drink-machine] by your [MediumDesc of hair] and places [his of M] paper cup under the nozzle. [big he of M] tugs sharply on your [ShortDesc of hair] and you wince with pain.";
@@ -946,6 +1025,7 @@ Definition: quiz-partner is layer-concealing: decide no. [It doesn't prevent thi
 Definition: quiz-partner is removable: decide no.
 Definition: quiz-partner is fluid vulnerable: decide no.
 Definition: quiz-partner is live: decide yes.
+Definition: quiz-partner is nudism-enabling: decide yes.
 The printed name of quiz-partner is "[if bound-target of item described is student][student-name of (bound-target of item described)][otherwise]ERROR: no target for quiz-partner clothing item[end if]". The text-shortcut of quiz-partner is "qzp".
 
 To decide which figure-name is clothing-image of (C - quiz-partner):
@@ -955,7 +1035,7 @@ To decide which figure-name is clothing-image of (C - quiz-partner):
 To say ClothingDesc of (C - quiz-partner):
 	let ST be the bound-target of C;
 	if ST is a student:
-		if diaper quest is 0, say "[BigNameDesc of ST] has [his of ST] tongue piercing tightly attached to your [if the player is male]testicle cuffs[otherwise]clit piercing[end if]. This means that you can't stand up and [he of ST] has to follow you around wherever you go.";
+		if diaper quest is 0, say "[BigNameDesc of ST] has [his of ST] tongue piercing tightly attached to your [if the player is possessing a scrotum]testicle cuffs[otherwise if the player is possessing a vagina]clit piercing[end if]. This means that you can't stand up and [he of ST] has to follow you around wherever you go.";
 		otherwise say "[BigNameDesc of ST] has [his of ST] collar connected to your ankles with a short length of rope that runs through D-rings in your thigh bindings, which means [his of ST] face presses into the seat of your diaper with every crawling movement you make.".
 
 To say MuchTooHumiliatingFlav of (C - quiz-partner):

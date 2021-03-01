@@ -34,4 +34,24 @@ Definition: slave collar is pink themed: decide yes.
 To decide which object is the unique-upgrade-target of (C - slave collar):
 	decide on a random off-stage cumslut collar.
 
+
+pet collar is a submissive collar. pet collar is leather. pet collar is unique. pet collar is manly.
+
+The printed name of pet collar is "[clothing-title-before]pet collar and leash[clothing-title-after]". The text-shortcut of pet collar is "pcl". Understand "and leash", "leash" as pet collar.
+
+Figure of pet collar is the file "Items/Accessories/Neck/petcollar1.png".
+
+To decide which figure-name is clothing-image of (C - pet collar):
+	decide on figure of pet collar.
+
+To say ClothingDesc of (C - pet collar):
+	say "A human sized pet collar, connected to a leash.".
+
+To say ShortDesc of (C - pet collar):
+	say "pet collar".
+
+Definition: pet collar is dog themed: decide yes.
+Definition: pet collar is black themed: decide yes.
+Definition: pet collar is subduing: decide yes.
+
 Slave Collar ends here.

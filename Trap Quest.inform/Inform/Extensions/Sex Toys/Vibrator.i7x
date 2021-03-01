@@ -86,7 +86,7 @@ To compute periodic effect of (P - remote-controlled-vibrator):
 			otherwise:
 				let F be vagina;
 				if the player is possessing a penis, now F is penis;
-				say "Your [ShortDesc of P] whirs away [if F is vagina]inside you[otherwise]around your [player-penis][end if]!";
+				say "Your [ShortDesc of P] whirrs away [if F is vagina]inside you[otherwise]around your [player-penis][end if]!";
 				stimulate F from P;
 		if the player is not in a predicament room, increase the toy-charge of P by 1;
 	otherwise if the game-state of team-football-predicament is not 1:

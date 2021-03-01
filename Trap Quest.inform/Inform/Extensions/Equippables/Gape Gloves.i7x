@@ -9,7 +9,7 @@ To decide which number is the initial outrage of (C - gape-gloves):
 	if C is wrist-bound-behind, decide on 20;
 	decide on 1.
 
-To decide which number is the damage improvement of (W - gape-gloves):
+To decide which number is the slap damage improvement of (W - gape-gloves):
 	decide on 0.
 
 Definition: gape-gloves is anal sex themed: decide yes.
@@ -32,6 +32,9 @@ This is the gape gloves prevent hand use rule:
 The gape gloves prevent hand use rule is listed in the hands restriction rules.
 
 Definition: gape-gloves is transformation-protected: decide yes.
+Definition: gape-gloves is revmoable: [let's prevent a game effect from ruining this predicament]
+	if gape-gloves is glued, decide no;
+	decide yes.
 
 This is the knickers gape gloves clash rule:
 	if wearing-target is total protection:
@@ -72,14 +75,15 @@ Check replacing:
 		unless the noun is crotch-assless, say "You can't replace any clothing while you are stuck with your [MediumDesc of gape-gloves] on your [AssDesc]!" instead.
 
 This is the gape gloves butt slut rule:
-	if gape-gloves is worn, increase the desirability of asshole by 20.
+	if gape-gloves is worn and gape-gloves is wrist-bound-behind, increase the desirability of asshole by 20.
 The gape gloves butt slut rule is listed in the butt slut eligibility rules.
 
 To compute periodic effect of (C - gape-gloves):
-	let S be a random worn crotch-in-place displacable clothing;
-	if S is clothing:
-		say "Your [ShortDesc of S] quickly bunches up at the back thanks to the position of your hands on your [AssDesc].";
-		displace S.
+	if C is wrist-bound-behind:
+		let S be a random worn crotch-in-place displacable clothing;
+		if S is clothing:
+			say "Your [ShortDesc of S] quickly bunches up at the back thanks to the position of your hands on your [AssDesc].";
+			displace S.
 To compute school periodic effect of (C - gape-gloves):
 	compute periodic effect of C.
 

@@ -1,6 +1,6 @@
 Robots Framework by Monster Framework begins here.
 
-A robot is a kind of monster. A robot is usually neuter. Understand "robo", "robot" as robot. The poison-status of a robot is -1. 
+A robot is a kind of monster. A robot is usually neuter. Understand "robo", "robot" as robot. The poison-status of a robot is -1.
 
 [can't take a robot's soul]
 A robot is usually soul-stolen.
@@ -8,7 +8,7 @@ A robot is usually soul-stolen.
 To say waitingflav of (M - a robot):
 	do nothing.
 
-Definition: A robot is hotel dwelling: decide yes.
+Definition: a robot is hotel dwelling: decide yes.
 
 To say royal-subject of (M - a robot):
 	say "automaton".
@@ -25,6 +25,18 @@ To compute (S - a striped top) damaging (M - a robot):
 To compute kneeling reaction of (M - a robot):
 	say "[BigNameDesc of M] watches you, with [his of M] fixed emotionless expression and red eyes[if the player is not shameless]. You lower your eyes with shame[end if].";
 	moderateHumiliate.
+
+Definition: a robot is a wrangler: decide yes.
+
+To WrangleUp (M - a robot):
+	if the wrangle-bonus of M is 0, say "[speech style of M]'[one of]WRIST GRAPPLING ROUTINE INITIALIZING[or]PRIORITY TARGET: ARMS[or]ARM RESTRAINT SUBROUTINE IS LOADING, PLEASE WAIT[then at random].'[roman type][line break]";
+	increase the wrangle-bonus of M by (4 - combatSpeed) * 2.
+
+To say ArmWrangleSuccess of (M - a robot):
+	say "[bold type]With lightning speed, [NameDesc of M][bold type] shoots out a metal hand and grabs your wrist![roman type] You won't be able to use hand-based attacks until you break free[one of]. [bold type]You might break free automatically after a few turns[roman type] or you can spend your turns trying to break free yourself by using [bold type][TQlink]resist[TQdlink][roman type][or][stopping].".
+
+To say ArmWrangleFailure of (M - a robot):
+	say "".
 
 To compute DQ kneeling reaction of (M - a robot):
 	compute kneeling reaction of M.
@@ -43,8 +55,8 @@ To IdentifiablePosterReaction of (M - a robot):
 	say "You turn bright red with shame.";
 	humiliate the lewdness of a random poster in the location of the player * 2.
 
-To UnidentifiablePosterReaction of (M - a robot):
-	say "[BigNameDesc of M] looks at the banner.[line break][first custom style]'SLUT UNIDENTIFIABLE. UNFORTUNATE, SINCE [caps he of the player] IS CLEARLY IN NEED OF FURTHER PUBLIC SHAMING.'[roman type][line break]";
+To UnidentifiablePosterReaction of (M - a robot) with (P - a poster):
+	say "[BigNameDesc of M] looks at the banner.[line break][first custom style]'SLUT UNIDENTIFIABLE. UNFORTUNATE, SINCE [caps he of P] IS CLEARLY IN NEED OF FURTHER PUBLIC SHAMING.'[roman type][line break]";
 	say "You turn slightly red but don't say a word.";
 	humiliate the lewdness of a random poster in the location of the player / 2.
 

@@ -172,7 +172,7 @@ To compute demonBoon of (M - a monster):
 		say "You feel a surge of unholy energy!";
 	otherwise:
 		say "You feel a surge in [NameDesc of M]'s unholy aura!";
-		DifficultyUp M by 1;
+		SilentlyDifficultyUp M by 1;
 		FavourUp M by 1;
 	decrease the charge of hotel altar by 150;
 	RitualUp 2.
@@ -208,7 +208,7 @@ To RitualUp (X - a number):
 
 To compute ghostGrowth of (M - a monster):
 	let G be ghost-strapon;
-	if the strap-length of G < 11 and the player is the donator:
+	if the strap-length of G < 11:
 		increase the strap-length of G by 1;
 		say "Your [ShortDesc of G] seems to grow stronger[if the strap-length of G > the size of penis], and a shiver moves up your spine as it grows into a [PenisFlavour of G][end if].".
 
@@ -271,7 +271,7 @@ To TimesSubmittedUp (M - a monster):
 	increase the times-submitted of M by 1;
 	increase the submission-count of the player by 1;
 	increase the sex-count of the player by 1;
-	if vampiress is chain-tethered, end tethering.
+	if vampiress is chain-tethering, end tethering.
 
 [!<ComputeFacialClimaxOfMonster>+
 
@@ -654,18 +654,17 @@ To say LatexPunishmentFlav of (M - a monster):
 	say "[BigNameDesc of M] brings one of your nipples to [his of M] mouth, and blows powerfully for a few seconds. Your rubber tits inflate [one of]in front of your eyes[or]even larger[stopping]!".
 
 This is the monster pulls collar rule:
-	if there is a worn pullstring collar:
+	if pullstring collar is worn:
 		follow the pullstring rule of current-monster;
 		if the rule succeeded, rule succeeds.
 The monster pulls collar rule is listed last in the monster punishment rules.
 
 This is the default pullstring rule:
 	if current-monster is intelligent and the collar-pulled of current-monster is 0:
-		let P be a random worn pullstring collar;
-		say "[BigNameDesc of current-monster] notices your [ShortDesc of P]! After a brief moment of consideration, [he of current-monster] takes hold of the string and pulls it!";
+		say "[BigNameDesc of current-monster] notices your [ShortDesc of pullstring collar]! After a brief moment of consideration, [he of current-monster] takes hold of the string and pulls it!";
 		now monster-puller is current-monster;
 		now auto is 1;
-		try pulling P;
+		try pulling pullstring collar;
 		now auto is 0;
 		now monster-puller is the player;
 		if the bimbo of the player < 13, say "[variable custom style]'Uh-oh...'[roman type][line break]";
@@ -715,16 +714,14 @@ The selecting an orifice rule is listed last in the sex attempt rules.
 The selecting an orifice rules is a rulebook.
 
 This is the bride consort waits for his wedding night rule:
-	if current-monster is bride-consort and the consumation of betrothal-quest is false:
+	if current-monster is bride-consort and the consummation of betrothal-quest is false:
 		if playerRegion is hotel and the ceremony of betrothal-quest is true:
-			now auto is 1;
-			if vagina is actually presentable:
+			if the player is possessing a vagina and vagina is not actually occupied and the number of pussy covering actually unavoidable clothing is 0:
 				if the player is not in Hotel06, drag to Hotel06 by current-monster;
 				compute wedding night;
-			otherwise:
-				now auto is 0;
 		otherwise:
 			compute angry punishment of current-monster;
+			satisfy current-monster;
 		rule succeeds.
 The bride consort waits for his wedding night rule is listed first in the selecting an orifice rules.
 
@@ -947,6 +944,15 @@ To compute (M - a monster) removing (C - a thing): [This is used for removing in
 		say "[BigNameDesc of M] effortlessly pulls out your [ShortDesc of C] and discards it onto the floor.";
 		now C is in the location of the player;
 	dislodge C.
+
+To compute (M - a monster) removing (C - a chastity bond):
+	if M is intelligent:
+		say "[BigNameDesc of M] [if C is locked]unlocks your [Shortdesc of C] and pulls it off.[otherwise]pulls off your [ShortDesc of C].[end if]";
+		now M is carrying C;
+		now C is temporarily-removed;
+	otherwise:
+		say "[BigNameDesc of M] tears open your [ShortDesc of C]!";
+		destroy C.
 
 To say UnzipFlav of (M - a monster) at (C - a clothing):
 	say "[BigNameDesc of M] pulls down the zipper on your [ShortDesc of C][if the number of ass covering clothing is 1], exposing your [fuckholes][end if]!".
@@ -1337,7 +1343,8 @@ To decide which number is the accuracy roll of (M - a monster):
 	let D be the difficulty of M + (a random number between 1 and 6) + (a random number between 1 and 6);
 	if D >= the difficulty of M + 6, now D is 9999; [This check means that the right hand side of the normal distribution roll always is a successful hit. i.e. 50% of the time, the monster will hit automatically]
 	if the blind-status of M > 0, now D is (the difficulty of M + (a random number between 0 and 6) + (a random number between 0 and 6)) / 2; [If the monster is blinded then we ignore the 50% minimum hit chance and also nerf accuracy massively]
-	if debugmode is 1, say "Player [dexterity of the player] | [D].5 [ShortDesc of M][line break]";
+	if a random number between 1 and combatSpeed > 1, now D is 0;
+	if debuginfo > 0, say "[input-style][ShortDesc of M] attack dodge check: Player [dexterity of the player] | [D].5 [ShortDesc of M][if D is 0] (random automiss - slower combat rules)[end if][roman type][line break]";
 	decide on D.
 
 [!<ToDecideWhichNumberIsTheStrengthRollOfMonster>
@@ -1351,14 +1358,43 @@ Determines the strength of a monster for an action.
 To decide which number is the strength roll of (M - a monster):
 	let D be the difficulty of M + (a random number between 1 and 6) + (a random number between 1 and 6);
 	let S be the strength of the player + the weight of the player;
-	if debugmode is 1, say "Player [S] | [D].5 [ShortDesc of M][line break]";
+	[if debugmode is 1, say "Player [S] | [D].5 [ShortDesc of M][line break]";]
 	decide on D.
 
 To decide which number is the intelligence roll of (M - a monster):
 	let D be the difficulty of M + (a random number between 1 and 6) + (a random number between 1 and 6);
 	let S be the intelligence of the player;
-	if debugmode is 1, say "Player [S] | [D].5 [ShortDesc of M][line break]";
+	[if debugmode is 1, say "Player [S] | [D].5 [ShortDesc of M][line break]";]
 	decide on D.
+
+A monster has a number called wrangle-bonus. [the number of times it has been slapped in a row]
+
+Definition: a monster is a wrangler: [Can it react to slap attacks with a wrangle?]
+	if it is intelligent and it is human, decide yes;
+	decide no.
+
+To compute wrangle reaction of (M - a monster):
+	if M is a wrangler and M is not trip-warned and M is not wrangling a body part:
+		WrangleUp M;
+		let D be the dexterity of the player;
+		let MD be a random number between 1 and the difficulty of M;
+		let MDW be MD + the wrangle-bonus of M;
+		if debuginfo > 0, say "[input-style]Wrangle avoidance check: Player dexterity ([D]) | ([MDW].5) = ([MD]) d[D] [ShortDesc of M] dexterity roll + ([wrangle-bonus of M]) bonus from player slapping multiple times in a row[roman type][line break]";
+		if MDW >= D:
+			now M is wrangling arms;
+			say ArmWrangleSuccess of M;
+			now the wrangle-bonus of M is 10 - the square root of (a random number between 1 and 80); [turns until release]
+		otherwise:
+			say ArmWrangleFailure of M.
+
+To WrangleUp (M - a monster):
+	increase the wrangle-bonus of M by 4 - combatSpeed.
+
+To say ArmWrangleSuccess of (M - a monster):
+	say "[bold type][BigNameDesc of M][bold type] manages to grab your wrist![roman type] You won't be able to use hand-based attacks until you break free[one of]. [bold type]You might break free automatically after a few turns[roman type] or you can spend your turns trying to break free yourself by using [bold type][TQlink]resist[TQdlink][roman type][or][stopping].".
+
+To say ArmWrangleFailure of (M - a monster):
+	say "[if the wrangle-bonus of M > 9][BigNameDesc of M] tries [his of M] best to catch your wrist, but misses![otherwise if the wrangle-bonus of M > 5][BigNameDesc of M] is paying close attention to the movement of your arm.[otherwise if the wrangle-bonus of M > 1][one of][BigNameDesc of M] glances at your arm[or][BigNameDesc of M][']s eyes flick between your face and your wrist[cycling].[end if]".
 
 A monster has a number called last-tripped.
 
@@ -1388,7 +1424,7 @@ The choice of attack rule is listed last in the default monster attack rules.
 To decide which number is the trip threshold of (M - a monster):
 	decide on 4. [The higher this is, the less often they consider tripping next turn]
 To decide which number is the raw trip frequency of (M - a monster):
-	decide on 4. [The higher this is, the less often they actually choose to trip after considering it]
+	decide on 4 * combatSpeed. [The higher this is, the less often they actually choose to trip after considering it]
 To decide which number is the trip frequency of (M - a monster):
 	let TC be the raw trip frequency of M;
 	if TC > 2 and the trophy-mode of trip-trophy is 1 and there is worn heels, now TC is (TC + 1) / 2;
@@ -1405,12 +1441,12 @@ To compute attack choice of (M - a monster):
 	let TC be the trip frequency of M;
 	if M is a tripper and the last-tripped of M >= the trip threshold of M:
 		now the last-tripped of M is 0;
-		if a random number between 1 and TC is 1 or tutorial is 1, now TC is 0;
+		if tutorial is 1 or (the wrangle-bonus of M < 3 and a random number between 1 and TC is 1), now TC is 0;
 	if TC <= 0:
 		compute tripping attack of M;
 	otherwise:
 		compute damaging attack of M;
-		if M is a tripper and the player is upright:
+		if M is a tripper and the player is upright and the wrangle-bonus of M < 2:
 			if tutorial is 1, increase the last-tripped of M by (the trip threshold of M - 1); [so he trips every third attack]
 			otherwise increase the last-tripped of M by a random number between 1 and the trip threshold of M;
 			let R be a random number between -3 and the intelligence of the player;
@@ -1719,7 +1755,8 @@ Handles a monster being damaged by another monster.
 +!]
 To compute (M - a monster) receiving (N - a number) damage from (X - a monster):
 	say AllyDamageFlav of X on M;
-	decrease the health of M by N.
+	decrease the health of M by N;
+	if N > 0, now the wrangle-bonus of M is 0.
 
 [!<ToSayAllyDamageFlavOfMonsterOnMonster>
 

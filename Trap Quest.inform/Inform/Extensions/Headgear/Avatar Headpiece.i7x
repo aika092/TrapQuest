@@ -9,7 +9,7 @@ To decide which figure-name is the clothing-image of (C - avatar-headpiece):
 
 [Like a "sphinx headdress"]
 To say ClothingDesc of (H - avatar-headpiece):
-	say "This elaborate crown is made up of a solid gold tiara attached to a hood that [if H is worn]would cover[otherwise]covers[end if] the top of your head, back of your neck, and some of your shoulders. The tiara is decorated with a large, red gemstone in the center and two holes on either side of it, [if the class of the player is avatar]which are currently occupied by two horns that suddenly grew out of your forehead, locking the tiara in place.[otherwise]which makes the whole thing seem a bit incomplete.[end if]";
+	say "This elaborate crown is made up of a solid gold tiara attached to a hood that [if H is worn]would cover[otherwise]covers[end if] the top of your head, back of your neck, and some of your shoulders. The tiara is decorated with a large, red gemstone in the centre and two holes on either side of it, [if the class of the player is avatar]which are currently occupied by two horns that suddenly grew out of your forehead, locking the tiara in place.[otherwise]which makes the whole thing seem a bit incomplete.[end if]";
 	if the blackfire of H > 0 and H is worn:
 		let F be the blackfire of H;
 		say "The crown is projecting a shroud of black flames that surrounds your [if F is 1]hands[otherwise if F is 2 or F is 4]whole body[otherwise if F is 3]whole body, especially your hands[end if]";
@@ -74,34 +74,33 @@ To say QuestTitle of (Q - soul-harvest-quest):
 	say " (soul harvesting quest)".
 
 soul-harvest-quest has a number called soul-counter.
-soul-harvest-quest has a number called completion-count.
 
 To progress quest of (Q - soul-harvest-quest):
 	repeat with C running through worn clothing:
 		if the quest of C is Q:
 			increase the soul-counter of Q by 1;
 			let S be the soul-counter of Q;
-			if S > the completion-count of Q or S >= 6:
+			if S > the quest-completions of Q or S >= 6:
 				now the soul-counter of Q is 0;
 				compute quest completion of Q on C;
 			otherwise:
 				say QuestProgressFlav of Q on C.
 
 To compute persistent reward of (Q - soul-harvest-quest) on (C - a clothing):
-	increase the completion-count of Q by 1;
-	if the completion-count of Q is 1:
+	increase the quest-completions of Q by 1;
+	if the quest-completions of Q is 1:
 		compute generic first time class reward of Q on C;
 	otherwise:
 		compute generic class reward of Q on C.
 
 To say QuestProgressFlav of (Q - soul-harvest-quest) on (C - a clothing):
 	let S be the soul-counter of Q;
-	let T be the completion-count of Q;
-	while completion-count of Q > 5 and S + 6 < T:[Once we reach 6 completions, loop]
+	let T be the quest-completions of Q;
+	while quest-completions of Q > 5 and S + 6 < T:[Once we reach 6 completions, loop]
 		decrease T by 6;
 	let N be T - S + 1;
 	if N < 1, now N is 1;[This generally shouldn't happen, but just in case.]
-	say "[line break][first custom style]'[one of]That isn't enough, [NameBimbo][or]You could have done that hours ago. Stop wasting time, [NameBimbo][or]They were barely resisting! You don't deserve anything yet[or]I want more, [NameBimbo][in random order]. Find me [N] more [if N is 1]soul[otherwise]souls[end if].'[roman type][line break]The voice of your master reveberates as the newly released soul is sucked into your [ShortDesc of C].";
+	say "[line break][first custom style]'[one of]That isn't enough, [NameBimbo][or]You could have done that hours ago. Stop wasting time, [NameBimbo][or]They were barely resisting! You don't deserve anything yet[or]I want more, [NameBimbo][in random order]. Find me [N] more [if N is 1]soul[otherwise]souls[end if].'[roman type][line break]The voice of your master reverberates as the newly released soul is sucked into your [ShortDesc of C].";
 
 To say QuestPersistFlav of (Q - soul-harvest-quest) on (C - a clothing):
 	say "The voice of your master sounds off in your head[if C is cursed] as the magic sealing your [MediumDesc of C] is lifted[otherwise if C is bland and Q is soul-harvest-quest] as a blessing is laid upon your [MediumDesc of C][end if]! ".
@@ -115,17 +114,17 @@ To compute generic first time class reward of (Q - soul-harvest-quest) on (C - a
 			summon D;
 		otherwise:
 			now D is in the location of the player;
-		say "[line break][first custom style]'Take this, [NameBimbo]. Its a gift.'[roman type][line break]A [MediumDesc of D] materialises [if D is worn]straight onto your finger[otherwise]right in front of you[end if] as the newly released soul is sucked into your [ShortDesc of C].";
+		say "[line break][first custom style]'Take this, [NameBimbo]. It's a gift.'[roman type][line break]A [MediumDesc of D] materialises [if D is worn]straight onto your finger[otherwise]right in front of you[end if] as the newly released soul is sucked into your [ShortDesc of C].";
 		unless D is worn, compute autotaking D;
 	otherwise:
-		say "[line break][first custom style]'Absorb this soul, [NameBimbo]! Its a gift.'[roman type][line break]The newly released soul is suddenly sucked into your body, erasing your fatigue and filling you with power!";
+		say "[line break][first custom style]'Absorb this soul, [NameBimbo]! It's a gift.'[roman type][line break]The newly released soul is suddenly sucked into your body, erasing your fatigue and filling you with power!";
 		now the fatigue of the player is 0;
 		MagicPowerUp 1.[same as the reward for succubus taking a soul, minus int]
 
 To compute generic class reward of (Q - soul-harvest-quest) on (C - a clothing):
 	say "[line break][first custom style]'[one of]Ok, [NameBimbo]. I suppose you deserve something nice.'[or]Good girl, [NameBimbo]. Keep working hard, and you'll get more gifts like this.'[or]I suppose I'm satisfied. Now be a good girl and accept this reward, [NameBimbo].'[in random order][roman type][line break]";
 	let D be a random off-stage ring;
-	if D is ring and the completion-count of Q < 2:[its a second time class reward, essentially]
+	if D is ring and the quest-completions of Q < 2:[its a second time class reward, essentially]
 		now D is ruby;
 		set shortcut of D;
 		if D is actually summonable:
@@ -141,7 +140,7 @@ To compute generic class reward of (Q - soul-harvest-quest) on (C - a clothing):
 
 To compute virginity-loss of (C - avatar-headpiece):
 	now C is not purity;
-	say "You hear a sharp *snap* as your horns simultaneously break and fall off.[line break][first custom style]'You SLUT! Nobody's going to want their soul harvested by some used up whore like you!'[roman type][line break]The voice of your master echoes inside your head as [his of shopkeeper] presence abruptly shifts out of you.[line break][first custom style]'My only choice is to turn you into an altar girl. Don't worry, all you have to do is fuck a couple demons. It should come naturally for a dirty slut like you.'[roman type][line break]Your [ShortDesc of C] trembles as the two holes close up, and the hood disintegrates into ash, leaving only the golden tiara sitting on your head.";
+	say "You hear a sharp *snap* as your horns simultaneously break and fall off.[line break][first custom style]'You SLUT! Nobody's going to want their soul harvested by some used-up whore like you!'[roman type][line break]The voice of your master echoes inside your head as [his of shopkeeper] presence abruptly shifts out of you.[line break][first custom style]'My only choice is to turn you into an altar girl. Don't worry, all you have to do is fuck a couple of demons. It should come naturally for a dirty slut like you.'[roman type][line break]Your [ShortDesc of C] trembles as the two holes close up, and the hood disintegrates into ash, leaving only the golden tiara sitting on your head.";
 	now C is cursed;
 	now the quest of C is demon-slut-quest;
 	transform C into gold-tiara;

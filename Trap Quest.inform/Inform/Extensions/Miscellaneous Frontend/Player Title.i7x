@@ -111,7 +111,7 @@ To say TitleBimbo:
 			otherwise:
 				say " [one of]bimbo slut[or]dick lover[sticky random]";
 		otherwise if the bimbo of the player > 17:
-			say "";
+			say " bimbolicious";
 		say "[run paragraph on]";
 		if the player is flying:
 			say " balloon";
@@ -120,7 +120,7 @@ To say TitleBimbo:
 		otherwise if the player is queen of spades and the bimbo of the player > 7:
 			say " [if the player is presenting as male]jack[otherwise]queen[end if] of spades";
 		if the player is a sissy:
-			say " sissy[if the player is an adult baby] baby[end if]";
+			say "[if the class of the player is not sissyclass] sissy[end if][if the player is an adult baby] baby[end if]";
 		otherwise if the player is an adult baby:
 			if there are worn perceived messed knickers:
 				say " messy baby";

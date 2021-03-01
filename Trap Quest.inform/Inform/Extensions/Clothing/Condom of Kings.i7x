@@ -2,6 +2,8 @@ Condom of Kings by Clothing begins here.
 
 A condom of kings is a kind of clothing. A condom of kings is usually unique. A condom of kings is usually latex. A condom of kings can be creamfilled. A condom of kings is usually not creamfilled. There is 1 condom of kings. The printed name of condom of kings is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][if item described is creamfilled]cum filled [end if][raw-magic-modifier-desc]condom of kings[clothing-title-after]". The printed plural name of condom of kings is "[clothing-title-before]condoms of kings[clothing-title-after]". The text-shortcut of condom of kings is "cok".
 
+Definition: a condom of kings is nudism-enabling: decide yes.
+
 [TODO: better account for gender]
 To say ClothingDesc of (C - a condom of kings):
 	if C is worn and C is cursed:[Cursed, but not worn condoms look different.]

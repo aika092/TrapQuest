@@ -28,7 +28,7 @@ Knifing it with is an action applying to two things.
 Check knifing:
 	if the second noun is knife:
 		if the noun is monster, say "Since it's on such a short chain, you really doubt that would work." instead;
-		if the class of the player is not santa's little helper:
+		if the class of the player is not santa's little helper and the noun is not wrist-bound-behind clothing:
 			if the player is not able to manually use manual dexterity, do nothing instead;
 		if the player is immobile, say "You are a bit tied up right now!" instead;
 	otherwise if the second noun is midnight tanto:
@@ -81,12 +81,12 @@ Carry out knifing:
 			say "You bend down and try to hack through some of the vines holding onto your ankles.";
 			now S is a random number between 1 and the strength of the player;
 			if S > 8:
-				say "The vines are moving constantly, so its difficult, but after chopping through a few of them, you have enough of an opening to finally wrench free! More vines push out of the soil, determined to capture you again!";
+				say "The vines are moving constantly, so it's difficult, but after chopping through a few of them, you have enough of an opening to finally wrench free! More vines push out of the soil, determined to capture you again!";
 				now V is not wrangling thighs;
 			otherwise if S > 3:
 				say "The vines are moving constantly, and although you manage to chop through a few, the broken vines are immediately replaced with newer ones. Maybe you should keep trying?";
 			otherwise:
-				say "The vines are moving constantly, and while you're trying to chop through them, a vine suddenly lashes out and grabs your wrist! You shake it off, but not before another fine grabs your [ShortDesc of (the second noun)] and tosses it away from you!";
+				say "The vines are moving constantly, and while you're trying to chop through them, a vine suddenly lashes out and grabs your wrist! You shake it off, but not before another vine grabs your [ShortDesc of (the second noun)] and tosses it away from you!";
 				now the second noun is in the location of the player;
 		otherwise:
 			if S > 3:
@@ -97,8 +97,8 @@ Carry out knifing:
 				now the stance of the player is 1;
 	otherwise:
 		if the second noun is equippable:
-			say "Your [ShortDesc of the second noun] refuses to cut through the [clothing-material of the noun]. Maybe you need to cut it with something specific...";
-		otherwise if (the noun is bondage or the noun is unremovable) and the noun is not blessed:
+			say "Your [ShortDesc of the second noun] refuses to cut through the [clothing-material of the noun]. Maybe you need to cut it with something more specialised...";
+		otherwise if (the noun is bondage and the noun is not ballgag and the noun is not blessed) or the noun is unremovable:
 			say "The [clothing-material of the noun] material is too tough, the knife can't cut through it![line break][variable custom style]Perhaps if it was blessed?[roman type][line break]";
 		otherwise if the noun is cursed and strongCurses is 1 and the noun is not headgear:
 			say "The knife can't seem to cut through the curse! You'll need to [if the quest of the noun is no-clothing-quest]find an altar to give it a quest[otherwise]complete its quest first[end if].";

@@ -31,6 +31,13 @@ To decide which number is the intelligence-influence of (C - rugged-headband):
 	if C is blessed, increase X by 2;
 	decide on X.
 
+To decide which number is the arousal-influence of (C - rugged-headband):
+	let X be -3;
+	if C is cursed, decrease X by 2;
+	if C is blessed, increase X by 2;
+	increase X by the magic-modifier of C;
+	decide on X.
+
 domination-quest is a headgear-clothing-quest.
 
 domination-quest-tries is a number that varies.

@@ -286,7 +286,7 @@ Report examining clothing:
 
 To say PlayerThoughts of (C - a clothing):
 	if the noun is diaper and C is not worn and the number of worn knickers is 0 and earnings > starting-earnings - 250 and the diaper addiction of the player < 4:
-		say "[first custom style]I guess I don't know the rules of this game are yet and who knows what it's going to throw at me. If I did wet myself I'd rather it was into a diaper than onto [if the player is female]my legs and [end if]the floor where everyone can watch it.[line break]... I can't believe I'm considering wearing this! But surely they wouldn't put it here for no reason...[roman type][line break]";
+		say "[first custom style]I guess I don't know the rules of this game are yet and who knows what it's going to throw at me. If I did wet myself I'd rather it was into a diaper than onto [if the player is possessing a vagina]my legs and [end if]the floor where everyone can watch it.[line break]... I can't believe I'm considering wearing this! But surely they wouldn't put it here for no reason...[roman type][line break]";
 	otherwise if the number of worn clothing is 0 and earnings > starting-earnings - 250 and the player is gendered male and the bimbo of the player < 4:
 		say "[first custom style][one of][if the outrage of C - 9 is too humiliating]Heh, what sort of chick would be caught dead in this?[otherwise]I hope I find someone to wear this![end if][or]Wait a minute, is this supposed to be for ME to wear?!?![or]Surely this isn't meant for me, right?[stopping][roman type][line break]";
 	otherwise if C is short-skirt-disallowed:

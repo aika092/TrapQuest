@@ -50,7 +50,7 @@ To compute attack effect of (W - whip-of-domination):
 		passively stimulate vagina from W;
 		say "Using the [printed name of W] is [if the player is a pervert]quickly [end if]making you more[if the player is horny] and more[end if] aroused!".
 
-To decide which number is the damage improvement of (W - whip-of-domination):
+To decide which number is the slap damage improvement of (W - whip-of-domination):
 	let X be 0;
 	if W is cursed, decrease X by 1;
 	increase X by the magic-modifier of W;

@@ -126,6 +126,9 @@ Report resisting:
 	let M be a random thing grabbing the player;[prioritize anyone holding the player down]
 	if M is nothing, now M is a random live thing penetrating a body part;[next, prioritize anyone inside the player]
 	if M is nothing, now M is a random thing wrangling a body part;[Lastly, we take a look at any holders on.]
+	if the implant of pledge-lesson-resist is 1 and the raw intelligence of the player > 1:
+		say "[second custom style]Only a dumb useless slut resists the will of [his of the player] masters.[roman type][line break][bold type]The curse from your diamond ranked lesson pledge activates![roman type] You feel more stupid [second custom style]like a dumb useless slut.[roman type][line break]";
+		IntDown 1;
 	unless M is nothing:
 		if the player is friendly fucked:
 			say FriendlySexResistFlav of M;
@@ -143,6 +146,27 @@ Report resisting:
 
 To compute wrangled resisting of (T - a thing):
 	say SexResistFlav of T.
+
+To compute wrangled resisting of (T - a monster):
+	let SR be the strength roll of T;
+	if debuginfo > 0, say "[input-style]Wrangle escape check: Player strength ([the strength of the player]) | ([SR].5) [ShortDesc of T] strength roll[roman type][line break]";
+	if SR >= the strength of the player:
+		compute WrangleResistFail of T;
+	otherwise:
+		compute WrangleResistSuccess of T.
+
+To compute WrangleResistFail of (T - a thing):
+	say WrangleResistFailFlav of T.
+
+To say WrangleResistFailFlav of (T - a thing):
+	say "You struggle, but [NameDesc of T] holds on tightly!".
+
+To compute WrangleResistSuccess of (T - a thing):
+	say WrangleResistSuccessFlav of T;
+	dislodge T.
+
+To say WrangleResistSuccessFlav of (T - a thing):
+	say "You force [NameDesc of T] to let you go!".
 
 To say SexResistFlav of (T - a thing):
 	if diaper quest is 1, say DQResistFlav of T;

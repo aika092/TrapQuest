@@ -122,7 +122,6 @@ To decide which number is the bartering value of (T - a unicorn-horn) for (M - a
 	decide on 0.
 
 To compute perception of (M - a supporter):
-	now M is interested;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]"; [The output for clothing humiliation takes place within the 'sluttily dressed' check.]
 	if M is unfriendly:
 		say AlreadyUnfriendlyPerception of M;
@@ -177,8 +176,8 @@ To IdentifiablePosterReaction of (M - a supporter):
 		now the boredom of M is 0;
 	humiliate the lewdness of a random poster in the location of the player * 2.
 
-To UnidentifiablePosterReaction of (M - a supporter):
-	say UnidentifiablePosterReactionFlav of M;
+To UnidentifiablePosterReaction of (M - a supporter) with (P - a poster):
+	say UnidentifiablePosterReactionFlav of M with P;
 	say "You turn bright red but don't say a word.";
 	humiliate the lewdness of a random poster in the location of the player.
 
@@ -406,7 +405,7 @@ To say AlreadyUnfriendlyPerception of (M - a supporter): [The NPC has just spott
 	say "[speech style of M]'[one of]Swiggity swooty, I'm comin['] for that booty!'[or]You've got a date with my [if M is male]dick[otherwise]delicate parts[end if], sunshine!'[or]I'm glad to see you're still around, friend! Because I'm still in the mood for you-know-what!'[or]We must stop meeting like this! People will talk! Especially because I'm going to fuck you now.'[in random order][roman type][line break]".
 
 To say FriendlySluttyPerception of (M - a supporter): [The NPC has just spotted the player while the player looks slutty, but hasn't witnessed enough to decide to fuck them.]
-	say "[speech style of M]'[one of]Hey chica, looking good! Keep it up and I might even decide to fuck you.'[or]You know if you're trying to scream 'fuck me' with that appearance, you're doing a good job.'[or]Wow, there are some real sluts down here! I'll probably come back for you later.'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]Hey chic[if the player is gendered male]o[otherwise]a[end if], looking good! Keep it up and I might even decide to fuck you.'[or]You know if you're trying to scream 'fuck me' with that appearance, you're doing a good job.'[or]Wow, there are some real sluts down here! I'll probably come back for you later.'[in random order][roman type][line break]".
 
 To say UnfriendlySluttyPerception of (M - a supporter): [The NPC has just spotted the player while the player looks slutty, but hasn't had much of a chance to start disapproving of them yet.]
 	say "[speech style of M]'[one of]Okay that's it, you clearly need a good hard seeing to. Let's do this.'[or]I think it's time for me to join in with your [']training['].'[or]Well geez, when you look like that, how can I say no?'[in random order][roman type][line break]".
@@ -417,8 +416,8 @@ To say BoringPerception of (M - a supporter): [The NPC has spotted the player wh
 To say IdentifiablePosterReactionFlav of (M - a supporter):
 	say "[BigNameDesc of M] stares at the poster with [his of M] mouth open wide.[line break][speech style of M]'You really let them photograph you as you did that?! You're way more of a slut than I ever dreamed.'[roman type][line break]".
 
-To say UnidentifiablePosterReactionFlav of (M - a supporter):
-	say "[speech style of M]'Jeepers creepers! Wow, if I got a few minutes alone with that broad, I'd bury my [if M is male]meat[otherwise]fist[end if] so deep in that ass she wouldn't be able to walk for days!'[roman type][line break]".
+To say UnidentifiablePosterReactionFlav of (M - a supporter) with (P - a poster):
+	say "[speech style of M]'Jeepers creepers! Wow, if I got a few minutes alone with that [if old-gender of P is 1]broad[otherwise]guy[end if], I'd bury my [if M is male]meat[otherwise]fist[end if] so deep in that ass [he of P] wouldn't be able to walk for days!'[roman type][line break]".
 
 This is the supporter friendly convinced rule: [only supporters with penises can currently accept friendly sex]
 	if current-monster is male and the refractory-period of current-monster <= 0 and presented-orifice is a reasonable target:

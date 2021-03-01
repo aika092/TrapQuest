@@ -74,14 +74,17 @@ Check an actor going (this is the can't go that way except for warp portals rule
 To decide which direction is the covered-direction of (C - school portal):
 	decide on south.
 
-predicamentJustDone is initially false. [We only want one 'extra credit' predicament between each lesson.]
+predicamentJustDone is initially true. [We only want one 'extra credit' predicament between each lesson.]
 predicamentSavedMakeUp is a number that varies.
 
 To set up predicament status:
 	let LC be a list of things;
 	repeat with C running through worn clothing:
-		now wearing-target is C;
-		if there is worn removal-blocking clothing, add C to LC; [should be sent to predicament-pen so that it is reunited afterwards]
+		if C is headgear:
+			add C to LC;
+		otherwise:
+			now wearing-target is C;
+			if there is worn removal-blocking clothing, add C to LC; [should be sent to predicament-pen so that it is reunited afterwards]
 	repeat with C running through held things:
 		if C is clothing and (C is worn or C is not diaper): [held used diapers don't get refreshed]
 			fully clean C;
@@ -141,17 +144,18 @@ To teleport via (W - a warp portal):
 		if receptionist is in the location of the player:
 			let ST be a random student in the location of the player;
 			if ST is student, now team-predicament-partner is ST;
-		now predicamentsAvailable is the number of appropriate eligible predicaments;
+		now predicamentsAvailable is the number of eligible appropriate predicaments;
 		now team-predicament-partner is nothing;
 		now the recently-used of school-fuckhole is 0;
-		repeat with ST running through alive students: [When the player leaves the school, all students reset messiness, cum covered, etc.]
-			LessonReset ST;
+		repeat with M running through monsters in the school:
+			deinterest M;
+			if M is student, LessonReset M; [When the player leaves the school, all students reset messiness, cum covered, etc.]
 	reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 	if W is not in the Dungeon:
 		set next numerical response to "go to the Dungeon";
 		increase NOptions by 1;
-	if W is not in the School and ((armband is worn and (class-time < 0 or armband is solid gold)) or ex-princess is unconcerned):
-		set next numerical response to "go to the School";
+	if W is not in the School and (armband is worn or armband is solid gold or ex-princess is unconcerned):
+		set next numerical response to "go to the Academy";
 		increase NOptions by 1;
 	if W is not in the Hotel and location of hotel portal is discovered:
 		set next numerical response to "go to the Hotel";
@@ -159,18 +163,18 @@ To teleport via (W - a warp portal):
 	if W is not in the Mansion and location of mansion portal is discovered:
 		set next numerical response to "go to the Mansion";
 		increase NOptions by 1;
-	if W is school portal and (the player is an october 2019 top donator or the player is an october 2019 diaper donator) and predicamentJustDone is false and predicamentsAvailable > 0 and the player is predicament-ready:
+	if W is school portal and the player is the donator and predicamentJustDone is false and ex-princess is not unconcerned and predicamentsAvailable > 0 and the player is predicament-ready:
 		set next numerical response to "go to the Extra Credit Zone";
 		increase NOptions by 1;
 		if newbie tips is 1, say "[one of][newbie style]Newbie tip: The Extra Credit zone puts you in a predicament where you could lose a lot of dignity and 'real world reputation' (the latter of which is only relevant for epilogues). Cursed clothing (except headgear) will be removed but will cost you 1 strength if you don't put it back on after you complete the task. [if tough-shit is 0]Other things like tattoos and make up will disappear for the duration of the predicament and reappear at the end. [end if]You will earn one 'trophy' which gives you the option to tweak a rule of the game universe and also gives you a permanent +1 to luck rolls. Finally, each time you go into the predicament zone, one of each type of crafting token will be lying on the floor somewhere in the region. So if you happen to stumble across any, you can often nab yourself that extra bonus. Or if you're brave, you could even go searching for them...[roman type][line break][or][stopping]";
 	if NOptions is 0, say "BUG! Player was able to enter a warp portal with zero viable exits...";
-	unless playerRegion is not school or the printed name of (the chosen numerical response of NOptions) matches the text "Extra" or the player is not a top donator, say "[line break][newbie style]You are currently unable to access the Extra Credit Zone because [if the player is not an october 2019 top donator and the player is not an october 2019 diaper donator]your unlock file is not up-to-date enough[otherwise if predicamentJustDone is true]you haven't returned to the main game world since your most recent extra credit session[otherwise if the number of appropriate eligible predicaments is 0]there are no more predicaments coded for the combination of your current rank, sex, and fetish selection[otherwise if the latex-transformation of the player > 0 or black hood is worn]it wouldn't interact well with your rubbery state[otherwise if (class-time is 1000 or class-time < 0) and armband is worn and armband is not solid gold and there is an alive undefeated correctly-ranked teacher]you need to go to class before you can apply for extra credit[otherwise if there is worn locked clothing]you are wearing locked clothing[otherwise]something you are currently wearing (not including headgear) is flagged as not being appropriate to remove (perhaps something with the curse quest of wearing it until your next lesson)[end if].[roman type][line break]";
+	unless playerRegion is not school or the printed name of (the chosen numerical response of NOptions) matches the text "Extra" or the player is not the donator, say "[line break][newbie style]You are currently unable to access the Extra Credit Zone because [if ex-princess is unconcerned]the Princess has purged the Academy of its staff[otherwise if predicamentJustDone is true and (class-time <= 0 or class-time is 1000)]you haven't gone to a normal class yet[otherwise if predicamentJustDone is true]you haven't spent enough time in the main game world since your most recent extra credit session[otherwise if the number of appropriate eligible predicaments is 0]there are no more predicaments coded for the combination of your current rank, sex, and fetish selection[otherwise if the latex-transformation of the player > 0 or black hood is worn]it wouldn't interact well with your rubbery state[otherwise if (class-time is 1000 or class-time < 0) and armband is worn and armband is not solid gold and there is an alive undefeated correctly-ranked teacher]you need to go to class before you can apply for extra credit[otherwise if there is worn locked clothing]you are wearing locked clothing[otherwise if there is worn glued clothing]you are wearing glued clothing[otherwise]something you are currently wearing (not including headgear) is flagged as not being appropriate to remove (perhaps something with the curse quest of wearing it until your next lesson)[end if].[roman type][line break]";
 	if NOptions > 1, compute multiple choice question;
 	otherwise now player-numerical-response is 1;
 	let T be the printed name of chosen numerical response;
 	if T matches the text "Dungeon":
 		now the destination of W is the Dungeon;
-	otherwise if T matches the text "School" or T matches the text "Extra":
+	otherwise if T matches the text "Academy" or T matches the text "Extra":
 		now the destination of W is the School;
 	otherwise if T matches the text "Hotel":
 		now the destination of W is the Hotel;
@@ -189,7 +193,7 @@ To teleport via (W - a warp portal):
 						say "[bold type]Just as you begin to step into the warp portal, [NameDesc of M] [bold type]appears and yanks on a nearby lever! [roman type][big he of M] grins a mischievous, vindictive grin and waves goodbye as the destination changes to the 'extra credit zone'!";
 						satisfy M;
 						now the destination of W is school;
-		if the destination of W is dungeon and armband is not sapphire and armband is not emerald and armband is worn and Mansion32 is not discovered:
+		if the destination of W is dungeon and armband is not sapphire and armband is not emerald and armband is worn and Mansion32 is not discovered and the player is getting unlucky:
 			if Woods01 is unplaced:
 				Set Up The Woods;
 				follow the setting up woods monsters rules;
@@ -203,7 +207,7 @@ To teleport via (W - a warp portal):
 			now the destination of W is mansion;
 			say "[bold type]The warp portal appears to shudder and glitch as you step into it. It's sending you to somewhere you didn't ask to go! Uh-oh...[roman type][line break]";
 			now NPF is 1;
-		otherwise if (the destination of W is dungeon or the destination of W is hotel) and armband is worn and armband is not sapphire and armband is not emerald and armband is not ruby and Hotel40 is not discovered:
+		otherwise if (the destination of W is dungeon or the destination of W is hotel) and armband is worn and armband is not sapphire and armband is not emerald and armband is not ruby and Hotel40 is not discovered and the player is getting unlucky:
 			if Woods01 is unplaced:
 				Set Up The Woods;
 				follow the setting up woods monsters rules;
@@ -231,18 +235,22 @@ To teleport via (W - a warp portal):
 		let L be the list of eligible appropriate predicaments;
 		say "As you go through the portal, you feel your clothing stolen away by some invisible forces![one of][line break][variable custom style]This isn't like before?![roman type][line break][or][stopping][if debugmode > 0][line break]List of appropriate predicaments: [L][line break][end if]";
 		set up predicament status;
-		sort L in random order;
-		let P be entry 1 in L;
-		if debugmode > 0, say "selected [P].";
+		let P be nothing;
+		if the number of entries in L > 0:
+			sort L in random order;
+			let P be entry 1 in L;
+			if debugmode > 0, say "selected [P].";
+		otherwise:
+			if debugmode > 0, say "The list of appropriate predicaments was empty, which must mean that we calculated that there was an available team predicament. Fingers crossed that was right...";
 		if team-predicament-partner is not student and receptionist is in the location of the player:
 			let ST be a random student in the location of the player;
 			if ST is student:
 				now team-predicament-partner is ST;
-				if there is an eligible appropriate team-predicament and a random number between 1 and 4 > 1:
+				if there is an eligible appropriate team-predicament and (the number of entries in L is 0 or a random number between 1 and 4 > 1):
 					now P is a random eligible appropriate team-predicament;
 					if debugmode > 0, say "After reconsidering joint predicament options and seeing [ST] in the reception area, selected [P].";
 		otherwise if team-predicament-partner is student:
-			if there is an eligible appropriate team-predicament and a random number between 1 and 3 > 1, now P is a random eligible appropriate team-predicament;
+			if there is an eligible appropriate team-predicament and (the number of entries in L is 0 or a random number between 1 and 4 > 1), now P is a random eligible appropriate team-predicament;
 			if debugmode > 0, say "After reconsidering joint predicament options, selected [P].";
 		if P is team-predicament:
 			say "[paragraph break]Behind [NameDesc of team-predicament-partner], [NameDesc of receptionist] casually struts up and then plants a foot on [NameDesc of team-predicament-partner][']s back![line break][speech style of team-predicament-partner]'What?! No wait-!'[roman type][line break][BigNameDesc of receptionist] kicks forward, and [NameDesc of team-predicament-partner] is pushed into the warp portal alongside you! You're both going in at the same time!";
@@ -264,14 +272,13 @@ To teleport via (W - a warp portal):
 		now temporaryYesNoBackground is Figure of small image;
 		now predicamentJustDone is true;
 	otherwise if D is school portal:
-		compute background student promotions;
 		if receptionist is alive and receptionist is not in School01, now receptionist is in School01;
 		if armband is worn and armband is not solid gold and there is an alive undefeated correctly-ranked teacher and the armband-print of armband is not "new recruit":
 			let A be a random appropriate assembly;
 			if A is assembly:
 				set up A;
 			otherwise:
-				say "As you go through the portal, you appear back in the School again, just in front of the classroom. After you've gone through, the portal closes behind you. There's a classroom right in front of you. A schoolbell rings - it's time for class right now!";
+				say "As you go through the portal, you appear back in the academy again, just in front of the classroom. After you've gone through, the portal closes behind you. There's a classroom right in front of you. A bell rings - it's time for class right now!";
 				if armband is sapphire:
 					now the player is in School07;
 				otherwise if armband is emerald:
@@ -288,9 +295,12 @@ To teleport via (W - a warp portal):
 			now the player is in School01;
 			update player region;
 			display entire map;
-			say "As you go through the portal, you find yourself [one of]in a large room with expensive marble walls and floor[or]back in the school reception[stopping].";
+			say "As you go through the portal, you find yourself [one of]in a large room with expensive marble walls and floor[or]back in the academy reception[stopping].";
+			if class-time is 0, now class-time is -1; [extra credit zone resets at -1 and lower]
+			if class-time > 0, now class-time is 0; [lesson required at 0 and lower. in this way, extra credit zone is still forbidden but player can't leave until they've had a lesson]
 	otherwise if D is warp portal:
-		now predicamentJustDone is false;
+		if armband is worn and armband is solid gold, now predicamentJustDone is false;
+		otherwise now predicamentJustDone is true;
 		now the player is in the location of D;
 		if NPF is 1, now D is next-portal-forbidden;
 		update player region;

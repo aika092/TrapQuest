@@ -50,7 +50,7 @@ To decide which figure-name is the sex-profile of (M - gargoyle):
 
 To say MonsterDesc of (M - gargoyle):
 	if mythical creature fetish is 1:
-		say "An eerie stone statue of a [man of M] with a long tail, curved horns and giant bat-like wings. Every inch of [his of M] body is exposed, including [his of M] [if lady fetish < 2]wide hips and expansive, paradoxically soft-looking chest[otherwise]big, but flaccid [manly-penis], and gorgeously chiseled chest[end if]. Although [he of M] is rendered in stone, [if M is unleashed][he of M] certainly isn't acting like it![otherwise if M is vigilant][his of M] bright blue eyes are open, and follow your every movement with beastly keeness, never stopping, not even to blink.[otherwise][his of M] posture gives you the feeling of a beast lying in wait, ready to pounce.[end if]";
+		say "An eerie stone statue of a [man of M] with a long tail, curved horns and giant bat-like wings. Every inch of [his of M] body is exposed, including [his of M] [if lady fetish < 2]wide hips and expansive, paradoxically soft-looking chest[otherwise]big, but flaccid [manly-penis], and gorgeously chiseled chest[end if]. Although [he of M] is rendered in stone, [if M is unleashed][he of M] certainly isn't acting like it![otherwise if M is vigilant][his of M] bright blue eyes are open, and follow your every movement with beastly keenness, never stopping, not even to blink.[otherwise][his of M] posture gives you the feeling of a beast lying in wait, ready to pounce.[end if]";
 	otherwise:
 		if diaper quest is 1, say "An eerie stone statue of an angel wearing a thin robe that exposes a lot of [if lady fetish is 2]muscle[otherwise]cleavage[end if]. [run paragraph on]";
 		otherwise say "An eerie stone statue of an angel wearing [if lady fetish < 2]an ill-fitting robe, draped open by [his of M] elbows, leaving [his of M] expansive chest completely exposed[otherwise]a thin robe that exposes [his of M] rippling chest muscles[end if]. [run paragraph on]";
@@ -65,10 +65,10 @@ To say MonsterComment of (M - gargoyle):
 		otherwise say "[variable custom style]Why do I get the feeling [he of M]s going to attack me?";
 	otherwise if diaper quest is 0:
 		if the bimbo of the player < 7:
-			if the player is gendered male, say "[first custom style][one of][big his of M] [if lady fetish is 2]butt is[otherwise]tits are[end if] fucking rocking![or][big he of M]'s made of stone, but so are THESE GUNS! Heheheh.[or]Its a statue, so its fine to stare, right?[in random order]";
-			otherwise say "[first custom style][one of]How... idealized.[or][if M is guarding]That thing is obviously going to attack me eventually, but how do I hurt it...[otherwise if M is not penetrating a body part]I can bring this thing down![otherwise]This is ridiculous![end if][or][if M is vigilant]Its paying attention to me for some reason.[otherwise]Only Nintendolls would make a statue look that way.[end if][in random order]";
+			if the player is gendered male, say "[first custom style][one of][big his of M] [if lady fetish is 2]butt is[otherwise]tits are[end if] fucking rocking![or][big he of M]'s made of stone, but so are THESE GUNS! Heheheh.[or]It's a statue, so it's fine to stare, right?[in random order]";
+			otherwise say "[first custom style][one of]How... idealised.[or][if M is guarding]That thing is obviously going to attack me eventually, but how do I hurt it...[otherwise if M is not penetrating a body part]I can bring this thing down![otherwise]This is ridiculous![end if][or][if M is vigilant]It's paying attention to me for some reason.[otherwise]Only Nintendolls would make a statue look that way.[end if][in random order]";
 		otherwise if the bimbo of the player < 12:
-			say "[variable custom style][one of]What a beautiful statue.[or]Its made of stone, so its unbeatable, right?[or]It seems like it'd be really heavy.[in random order]";
+			say "[variable custom style][one of]What a beautiful statue.[or]It's made of stone, so it's unbeatable, right?[or]It seems like it'd be really heavy.[in random order]";
 		otherwise:
 			say "[second custom style][one of]What a sexy statue![or]Stone body means stone weight. No way I'm escaping that![or][if M is vigilant]Stare at me more![otherwise]How can I get [his of M] attention...[end if][in random order]";
 		say "[roman type][line break]".
@@ -125,7 +125,6 @@ To compute sudden objectification of (M - gargoyle):
 	say "[NameDesc of M]'s eyes [if mythical creature fetish is 1]dilate[otherwise]widen[end if] as [he of M] suddenly leaps off the pedestal!";
 
 To compute perception of (M - gargoyle):
-	now M is interested;
 	now the sleep of M is 0;
 	say "You hear a deep rumble, and [NameDesc of M][']s eyes slowly open. [run paragraph on]";
 	if M is vigilant:
@@ -288,7 +287,7 @@ This is the gargoyle flying punishment rule:
 	if M is airborne:
 		follow the gargoyle dive bomb rule;
 		if the rule succeeded, rule succeeds;
-	otherwise if the health of M < (the maxhealth of M / 2) and the difficulty of M - the starting difficulty of M > 2 and the number of worn diapers is 0 and the health of M > 5 and the refractory-period of M > 0:
+	otherwise if the health of M < (the maxhealth of M / 2) and the difficulty of M - the starting difficulty of M > 1 and the number of worn diapers is 0 and the health of M > 5:
 		follow the gargoyle flight rule;
 		if the rule succeeded, rule succeeds.
 The gargoyle flying punishment rule is listed last in the gargoyle unique punishment rules.
@@ -300,7 +299,7 @@ To compute damaging attack of (M - a gargoyle):
 		let X be the number of unfriendly monsters in the location of the player;
 		let A be the number of worn ankle-bound clothing;[she can't do her grab if your ankles are locked together.]
 		let S be the number of worn crotch-in-place short or longer clothing;[she also can't do her grab if you're wearing an undisplaced skirt.]
-		if X > 1 and the difficulty of M > (the starting difficulty of M + 2) and the health of M < (the maxhealth of M / 2) and A + S is 0 and a random number between 1 and 5 is 1:
+		if X > 1 and the difficulty of M > (the starting difficulty of M + 1) and the health of M < (the maxhealth of M / 2) and A + S is 0 and a random number between 1 and 5 is 1:
 			compute grabbing attack of M;
 		otherwise:
 			compute striking attack of M.
@@ -334,7 +333,7 @@ The minotaur does something similar to you over several turns that the gargoyle 
 - this is prevented with certain clothing, which are more specific than the requirements for avoiding the minotaur's version, but she isn't specifically checking for exposed orifices, which means the player may still have a lifeline.
 ]
 To compute grabbing attack of (M - a gargoyle):
-	say "[BigNameDesc of M] flaps [his of M] wings powerfully, leaping over your head and slamming into the ground behind you.";
+	say "[BigNameDesc of M]'s wings flap powerfully a [he of M] leaps over your head and slams heavily to the ground behind you.";
 	decrease the health of M by 5;
 	if the health of M < 1, now the health of M is 1;[damages her slightly.]
 	if the accuracy roll of M > the dexterity of the player:[She puts you in a full nelson]
@@ -408,7 +407,7 @@ To compute erection orgasm of (M - gargoyle):
 	StrengthDown 2;
 	FatigueUp 20;
 	PenisDown 1;
-	DifficultyUp M by 1;
+	SilentlyDifficultyUp M by 1;
 	if the size of penis > 8, cutshow Figure of gargoyle BJ 5 for M;
 	otherwise cutshow Figure of gargoyle BJ 6 for M;
 	now penis is not penis-erect.[we must do this, because we don't handle erection loss normally while we're penetrating a monster]
@@ -445,7 +444,7 @@ To say AssholePenetrationFlav of (M - gargoyle):
 	now M is penetrating asshole;
 	if the class of the player is living sex doll:
 		now the tail-depth of M is 5;
-		say "You feel its bumpy surface slide along your taint, finding your gaping rubber sphincter as [he of M] secures [his of M] grip. Your [asshole] emits a cartoonish squeaking noise as [his of M] tail slides right in, pushing deep, deep into your rubberised colon beginning to thrust.";
+		say "You feel its bumpy surface slide along your taint, finding your gaping rubber sphincter as [he of M] secures [his of M] grip. Your [asshole] emits a cartoonish squeaking noise as [his of M] tail slides right in, pushing deep, deep into your rubberised colon and beginning to thrust.";
 	otherwise:
 		[decide on a starting value for tail-depth]
 		now the tail-depth of M is a random number between 0 and (the openness of asshole / 2);
@@ -473,7 +472,7 @@ To compute anal sex of (M - gargoyle):
 			let N be a random number between 1 and 2;
 			if the openness of asshole is 1, now N is 1;
 			increase the tail-depth of M by N;
-			say "Slowly, you feel yourself beginning to stretch. [if N is 1]Its only a little, but that's just enough to let the very end of [his of M] tail finally slip in. [big he of M] doesn't miss [his of M] chance, amping up the pressure until a full inch of [his of M] tail is buried in your [asshole][otherwise]Its only a little at first, but [he of M] amps up the pressure, and bit by bit, your [asshole] opens up to accept the first few inches of [his of M] tail[end if]. [big he of M] tightens [his of M] grip as [he of M] gently begins to thrust.";
+			say "Slowly, you feel yourself beginning to stretch. [if N is 1]It's only a little, but that's just enough to let the very end of [his of M] tail finally slip in. [big he of M] doesn't miss [his of M] chance, amping up the pressure until a full inch of [his of M] tail is buried in your [asshole][otherwise]It's only a little at first, but [he of M] amps up the pressure, and bit by bit, your [asshole] opens up to accept the first few inches of [his of M] tail[end if]. [big he of M] tightens [his of M] grip as [he of M] gently begins to thrust.";
 	otherwise if the tail-depth of M is 1:
 		say "[one of][BigFuckerDesc of M] stares at you curiously as the tip of [his of M] tail slips in and out of your [asshole].[or]The tip of [FuckerDesc of M]'s tail continues to slide in and out of your [asshole].[or][BigFuckerDesc of M]'s tail teases your sphincter as it slides in and out of your [asshole].[in random order]";
 		if L > the girth of M:
@@ -481,7 +480,7 @@ To compute anal sex of (M - gargoyle):
 			increase the tail-depth of M by N;
 			say "Each time [his of M] tail enters you, you feel it reaching just a little bit deeper. [if N is 1]It isn't long before [he of M] stops pulling out after each thrust, fucking you with a couple inches at a time.[otherwise]It isn't long before [he of M] stops teasing you and starts speeding up, vigorously fucking you with several thick inches at a time.[end if]";
 	otherwise if the tail-depth of M is 2:
-		say "[one of][BigFuckerDesc of M] stares at you curiously as [he of M] slowly fucks you with the tip of [his of M] tail.[or]The tip of [FuckerDesc of M]'s tail continues to slowly thrust into you.[or][BigFuckerDesc of M]'s face crunches up with effort as [he of M] slowly fucks you with the end of [his of M] tail.[in random order]";
+		say "[one of][BigFuckerDesc of M] stares at you curiously as [he of M] slowly fucks you with the tip of [his of M] tail.[or]The tip of [FuckerDesc of M]'s tail continues to slowly thrust into you.[or][BigFuckerDesc of M]'s face scrunches up with effort as [he of M] slowly fucks you with the end of [his of M] tail.[in random order]";
 		if L > the girth of M:
 			let N be a random number between 1 and 2;
 			increase the tail-depth of M by N;
@@ -501,8 +500,7 @@ To compute anal sex of (M - gargoyle):
 		if the class of the player is living sex doll, compute sexSexDoll of M in asshole;
 		otherwise say sexDumbFlav of M in asshole;
 	unless the class of the player is living sex doll, ruin asshole times 1 + (the girth of M / 2);
-	[if refractoryperiod > 0, now the sex-length of M is 0; Considering the circumstances that make the gargoyle aggressive, made things too short.]
-	otherwise decrease the sex-length of M by 1;
+	decrease the sex-length of M by 1;
 	say "[one of][M sex reaction][or][cycling]".
 
 To say sexDollFlav of (M - gargoyle) in (F - asshole):
@@ -526,11 +524,14 @@ To compute damage reaction of (M - gargoyle):
 	if the sleep of M > 0:
 		say "[BigNameDesc of M] seems completely unperturbed.";
 	otherwise if M is guarding or M is uninterested:
-		say "[BigNameDesc of M] faces you and slowly steps down from [his of M] pedestal.";
+		say CombatProvokedReaction of M;
 		now M is unleashed;
 		anger M;
 	otherwise:
 		say DamageReaction (the health of M) of M.
+
+To say CombatProvokedReaction of (M - gargoyle):
+	say "[BigNameDesc of M] faces you and slowly steps down from [his of M] pedestal.";
 
 To say DamageReactHealthy of (M - gargoyle):
 	say "[BigNameDesc of M] seems completely unaffected by your attack!".

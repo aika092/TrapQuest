@@ -97,7 +97,7 @@ Carry out WellWishing:
 			say "The evil one's [if wish-type is 0]burden[otherwise]command[end if]... ";[Rebuke... Impossible.]
 			if offer-value < 1, now offer-value is 1;
 	otherwise if the class of the player is cultist or the class of the player is worshipper or the class of the player is priestess:
-		say "A greedy steward's [if wish-type is 0]charity[otherwise]solicitacion[end if]...";
+		say "A greedy steward's [if wish-type is 0]charity[otherwise]solicitation[end if]...";
 		decrease offer-value by 5;
 	otherwise if the player is sissy or the class of the player is royal slave:
 		say "The pitiful one's [if wish-type is 0]contribution[otherwise]desperate prayer[end if]...";
@@ -226,7 +226,7 @@ To compute WellHealing for offer (N - a number) with roll (R - a number):
 				if N < 100, say "Rejected... Tatters... Unworkable...[roman type][line break]The voice echoes in your head as light gathers around the well and slowly dissipates.";
 				otherwise increase R by 1;
 			otherwise:
-				say "Accepted... Tatters... Reconstructed...[roman type][line break]The voice echoes as the damage to your [Shortdesc of P] spontaneously repairs itself.";
+				say "Accepted... Tatters... Reconstructed...[roman type][line break]The voice echoes as the damage to your [ShortDesc of P] spontaneously repairs itself.";
 				if P is crotch-ripped, repair P;
 				now the damage of P is 0;
 				now wish-done is 1;

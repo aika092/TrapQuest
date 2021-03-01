@@ -167,11 +167,15 @@ Part - Damage
 
 To compute damage reaction of (M - a staff member):
 	if M is uninterested or M is friendly or armband is held:
-		say "[big he of M] [if M is asleep]wakes up! [big he of M][end if][if armband is held]makes an arcane gesture, and a split second later your [MediumDesc of armband] has vanished![line break][speech style of M]'Traitor! You're going straight to the dungeons after this!'[roman type][line break][otherwise][one of]snarls in[or]growls with[at random] [one of]pain[or]frustration[or]anger[at random].[end if]";
+		say CombatProvokedReaction of M;
 		if armband is held, now armband is in Holding Pen;
 		now the sleep of M is 0;
 	otherwise:
 		say "[big he of M] screams even louder!".
+
+
+To say CombatProvokedReaction of (M - a staff member):
+	say "[big he of M] [if M is asleep]wakes up! [big he of M][end if][if armband is held]makes an arcane gesture, and a split second later your [MediumDesc of armband] has vanished![line break][speech style of M]'Traitor! You're going straight to the dungeons after this!'[roman type][line break][otherwise][one of]snarls in[or]growls with[at random] [one of]pain[or]frustration[or]anger[at random].[end if]";
 
 Definition: a staff member is automatically banishable: decide yes. [Will this NPC automatically resolve their disappearance rather than giving the player options on what to do?]
 To say BanishFleeFlav of (M - a staff member):
@@ -330,10 +334,22 @@ And the other pure diamond class would be fucking an inhuman beast, or tentacle 
 An all later time based rule (this is the class-time cooldown rule):
 	if class-time < 1000 and armband is not solid gold and (playerRegion is not Hotel or Hotel40 is discovered) and (playerRegion is not Mansion or Mansion32 is discovered): [We use 1000 to represent that the player hasn't been to a class before.] [Players who are in the hotel looking for the warp portal shouldn't be penalised]
 		let CS be time-seconds;
-		if class-time <= 0 and playerRegion is Woods, now CS is (CS + 1) / 2; [Woods is further away from the school so school time moves slower here.]
 		if playerRegion is not School or class-time <= 0, decrease class-time by CS;
-		if class-time <= 0 and class-time + CS > 0 and armband is worn:
-			say "[bold type]Your [ShortDesc of armband] begins to beep like an alarm clock![line break][variable custom style][one of]Huh?! Does this mean it's time for the next class or something?[or]Time for class again...[stopping][roman type][line break]".
+		if armband is worn:
+			let LF1 be lessonFrequency * -1;
+			let LF2 be lessonFrequency * -2;
+			let LF3 be lessonFrequency * -3;
+			let LF4 be lessonFrequency * -4;
+			if class-time <= 0 and class-time + CS > 0:
+				say "[bold type]Your [ShortDesc of armband] begins to beep like an alarm clock![line break][variable custom style][one of]That must be my first reminder that I need to return to class...[or]Time for class again...[stopping][roman type][line break]";
+			otherwise if class-time <= LF1 and class-time + CS > LF1:
+				say "[bold type]Your [ShortDesc of armband] beeps like an alarm clock again![line break][variable custom style]That's the 2nd beep. If it beeps a 5th time, I get detention.[roman type][line break]";
+			otherwise if class-time <= LF2 and class-time + CS > LF2:
+				say "[bold type]Your [ShortDesc of armband] beeps like an alarm clock again![line break][variable custom style]That's the 3rd beep. If it beeps a 5th time, I get detention.[roman type][line break]";
+			otherwise if class-time <= LF3 and class-time + CS > LF3:
+				say "[bold type]Your [ShortDesc of armband] beeps like an alarm clock again![line break][variable custom style]That's the 4th beep. If it beeps a 5th time, I get detention.[roman type][line break]";
+			otherwise if class-time <= LF4 and class-time + CS > LF4:
+				say "[bold type]Your [ShortDesc of armband] beeps like an alarm clock again![line break][variable custom style]That's the 5th beep. I'm in trouble...[roman type][line break]".
 
 Definition: a lesson (called L) is correctly-situated:
 	if lesson-room is School14 and the lesson-teacher of L is sapphire-teacher, decide yes;
@@ -365,13 +381,15 @@ Definition: a lesson is correctly-ranked:
 	decide no.
 
 Definition: a lesson is lesson-appropriate: decide yes.
+To decide which number is the min-students of (L - a lesson):
+	decide on 1.
 
 Definition: a lesson (called L) is appropriate:
 	if the lesson-teacher of L is emerald-teacher and the breast-enhancement of nurse < 0 and the lesson-teacher of tits-lesson is alive: [If the player was recently instructed to get a breast enhancement and went through with it, it takes top priority]
 		if L is tits-lesson, decide yes;
 		otherwise decide no;
-	if the lesson-teacher of L is emerald-teacher and L is not pain-lesson and the lesson-teacher of pain-lesson is alive and (the player is wrist bound or the player is ankle bound or portal gag is worn), decide no; [Most if not all other emerald lessons should let releasing the bondage from the pain lesson take priority]
-	if the lesson-teacher of L is alive and the lesson-teacher of L is undefeated and L is lesson-appropriate, decide yes;
+	if ((diaper quest is 1 and the lesson-teacher of L is emerald-teacher) or (diaper quest is 0 and the lesson-teacher of L is ruby-teacher)) and L is not pain-lesson and the lesson-teacher of pain-lesson is alive and (the player is wrist bound or the player is ankle bound or portal gag is worn), decide no; [Most if not all other emerald lessons should let releasing the bondage from the pain lesson take priority]
+	if the lesson-teacher of L is alive and the lesson-teacher of L is undefeated and the number of alive lesson-appropriate students >= the min-students of L and L is lesson-appropriate, decide yes;
 	decide no.
 
 Report going north:
@@ -379,47 +397,45 @@ Report going north:
 	compute potential lesson.
 
 To decide which number is lessonFrequency:
-	decide on 150.
+	decide on 225.
 
 totalLessonCount is a number that varies.
 
 To compute potential lesson:
 	if lesson-room is a lecture academic room and armband is worn and armband is not solid gold and the armband-print of armband is not "new recruit":
-		if debugmode > 0, say "Class time tracker is at [class-time]; less than [lessonFrequency * -3] = detention.";
-		if class-time is 1000 or class-time <= 0:
-			now chosen-lesson is a random correctly-ranked appropriate lesson;
-			if chosen-lesson is not lesson:
-				say "ERROR: No lesson currently coded for this class for the player's current state. If this is an early alpha of the school, it's likely that this content just doesn't exist yet! Come back soon. For now, we'll change the timer so that the game thinks you've had a lesson.";
+		if debugmode > 0, say "Class time tracker is at [class-time]; less than [lessonFrequency * -4] = detention.";
+		[if class-time is 1000 or class-time <= 0:]
+		now chosen-lesson is a random correctly-ranked appropriate lesson;
+		if class-time < (lessonFrequency * -4):
+			compute detention of lesson-teacher of chosen-lesson;
+			now class-time is -1;
+		otherwise if chosen-lesson is not lesson:
+			compute solo lesson;
+		otherwise:
+			if chosen-lesson is correctly-situated:
+				set up chosen-lesson;
+				refresh the clothing-focus-window;
+				try looking;
+				display focus stuff;
+				render buffered stuff;
+				if the wont-change of nurse > 0, decrease the wont-change of nurse by 1;
+				if predicamentJustDone is true and (class-time is 1000 or class-time < 0), now predicamentJustDone is false;
 				now class-time is lessonFrequency;
-			otherwise if class-time < (lessonFrequency * -3):
-				compute detention of lesson-teacher of chosen-lesson;
-				now class-time is lessonFrequency;
+				compute teaching of chosen-lesson;
+				increase totalLessonCount by 1;
+				[let B be (the rank of the player * 3) - the bimbo of the player;
+				if B > 0, increase class-time by B * 60;] [Lessons are spaced further apart if the player isn't slutty enough for them]
+				if the breast-enhancement of nurse is not 0:
+					decrease the breast-enhancement of nurse by 1; [If the player has had a lesson since they were instructed to get a breast enhancement, this should end that side-quest.]
+					if the breast-enhancement of nurse is 0, say "[bold type]You realise that you should now be able to visit the nurse again without [him of the nurse] giving you a breast enhancement.[roman type][line break]";
 			otherwise:
-				if chosen-lesson is correctly-situated:
-					set up chosen-lesson;
-					progress quest of next-lesson-quest;
-					refresh the clothing-focus-window;
-					try looking;
-					display focus stuff;
-					render buffered stuff;
-					if the wont-change of nurse > 0, decrease the wont-change of nurse by 1;
-					now class-time is lessonFrequency;
-					compute teaching of chosen-lesson;
-					increase totalLessonCount by 1;
-					let B be (the rank of the player * 3) - the bimbo of the player;
-					repeat with C running through worn clothing:
-						if the quest of C is next-lesson-quest, increase B by 2;
-					if B > 0, increase class-time by B * 60; [Lessons are spaced further apart if the player isn't slutty enough for them]
-					if the breast-enhancement of nurse is not 0:
-						decrease the breast-enhancement of nurse by 1; [If the player has had a lesson since they were instructed to get a breast enhancement, this should end that side-quest.]
-						if the breast-enhancement of nurse is 0, say "[bold type]You realise that you should now be able to visit the nurse again without [him of the nurse] giving you a breast enhancement.[roman type][line break]";
-				otherwise:
-					say "Your rank is [accessory-colour of armband], so there's no lesson for you here.".
+				say "Your rank is [accessory-colour of armband], so there's no lesson for you here.".
 
 To compute teaching of (L - an object):
 	say "BUG - Tried to compute teaching of [L], but it doesn't exist.".
 
 To set up (L - a lesson):
+	optimise students;
 	repeat with M running through monsters in lesson-room:
 		regionally place M;
 		bore M;
@@ -432,6 +448,78 @@ To set up (L - a lesson):
 		let ST be a random student in lesson-room;
 		regionally place ST;
 		if ST is not in lesson-room, now the boredom of ST is 0.
+
+To compute solo lesson:
+	let L be the location of the player;
+	let M be yourself;
+	if L is School14 and armband is sapphire:
+		now M is a random alive undefeated sapphire-teacher;
+	otherwise if L is School18 and armband is emerald:
+		now M is a random alive undefeated emerald-teacher;
+	otherwise if L is School29 and armband is ruby:
+		now M is a random alive undefeated ruby-teacher;
+	otherwise if L is School30 and armband is pink diamond:
+		now M is a random alive undefeated pink-diamond-teacher;
+	otherwise if L is School32:
+		now M is a random alive undefeated diamond-teacher;
+	if M is nothing and headmistress is alive and headmistress is undefeated, now M is headmistress;
+	if M is nothing, now M is a random alive undefeated teacher;
+	if M is nothing:
+		say "There is nobody available to run your lesson.";
+	otherwise if M is yourself:
+		say "Your rank is [accessory-colour of armband], so there's no lesson for you here.";
+	otherwise:
+		compute solo lesson of M.
+
+To compute solo lesson of (M - staff member):
+	repeat with X running through monsters in lesson-room:
+		regionally place X;
+		bore X;
+	now M is in lesson-room;
+	bore M;
+	say "[BigNameDesc of M] enters the room shortly after you. There's nobody else with [him of M].[line break][speech style of M]'Looks like you're my only student today. We'll have to get creative with your lesson, then.'[roman type][line break]";
+	if armband is solid gold:
+		say "[BigNameDesc of M] stretches [his of M] arms.[line break][speech style of M]'You're already solid gold rank, too. Can we just do this another time? I'm tired.'[roman type][line break][BigNameDesc of M] shoos you away.";
+	otherwise if diaper quest is 0 and armband is ruby and gloryhole is in School19 and face is not actually occupied:
+		compute gloryhole lesson of M;
+	otherwise:
+		say "[BigNameDesc of M] stretches [his of M] arms.[line break][speech style of M]'Ugh, I can't think of anything right now. Let's just pretend this went well. Here's your coveted promotion.'[roman type][line break][BigNameDesc of M] waves a hand in your direction.";
+		if armband is pure diamond, now armband is solid gold;
+		if armband is pink diamond, now armband is pure diamond;
+		if armband is ruby, now armband is pink diamond;
+		if armband is emerald, now armband is ruby;
+		if armband is sapphire, now armband is emerald;
+		say "You watch as the ID card inside your armband transforms!";
+		now the armband-title of armband is "";
+		now the armband-print of armband is "solo student";
+		say ClothingDesc of armband.
+
+To compute gloryhole lesson of (M - staff member):
+	say "[speech style of M]'Let's test out your cocksucking skills.'[roman type][line break][BigNameDesc of M] leads you to the Changing Rooms, and forces you to your knees.";
+	now M is in School19;
+	teleport to School19;
+	now the stance of the player is 1;
+	say "Your face is brought near to the bottom hole, and suddenly a magic force grips you, and forces your mouth up against the hole. Within moments, a large [if the oral sex addiction of the player > 5]juicy [end if][manly-penis] is pushed through the hole and into your mouth. It is easily long enough to hit the back of your throat, causing you to gag[if the oral sex addiction of the player > 7] slightly[end if].";
+	now gloryhole is penetrating face;
+	now busy is 1;
+	now the turns trapped of gloryhole is 0;
+	say "Do you want to resist? ";
+	if the player is consenting:
+		try resisting;
+		say "[speech style of M]'A poor choice. I see you're not ready for promotion after all.'[roman type][line break]";
+	otherwise:
+		try submitting;
+		say "[speech style of M]'Well done, [he of shopkeeper] seems to like you. I've seen enough already to know you deserve this.'[roman type][line break][BigNameDesc of M] waves a hand in your direction.";
+		now armband is pink diamond;
+		say "You watch as the ID card inside your armband transforms!";
+		now the armband-title of armband is "Gloria";
+		now the armband-print of armband is "gloryhole guzzler";
+		say ClothingDesc of armband;
+	say "[speech style of M]'Have fun now!'[roman type][line break]";
+	satisfy M;
+	compute mandatory room leaving of M.
+
+
 
 Part - Assembly
 
@@ -480,7 +568,7 @@ An all time based rule (this is the assembly computation rule):
 			conclude A. [failsafe]
 
 Check going when the player is in School16 and there is an active assembly:
-	say "There seems to be some kind of forcefield preventing you from leaving via the doorway until assembly is over." instead.
+	say "There seems to be some kind of force-field preventing you from leaving via the doorway until assembly is over." instead.
 
 Check standing when the player is in School16 and the player is prone and there is an active assembly:
 	say "There seems to be some kind of magical force preventing you from standing up until assembly is over." instead.
@@ -507,7 +595,7 @@ To say AssemblyStartFlav of (A - soiled-diaper-assembly):
 	repeat with SD running through soiled-diaper:
 		if SD is in the school, now SD is in the location of the player;
 	let M be the assemblyAnnouncer of A;
-	say "As you stumble through the warp portal, you find yourself in the assembly hall. A lot of other students are also filing in, and [NameDesc of M] is at the front, ready to lead assembly.[line break][speech style of M]'It has come to my attention that one of you has been leaving their filth in my halls.'[roman type][line break][big he of M] is holding up a soiled diaper, which [he of M] then throws on the ground right at your feet.[line break][speech style of M]'That's right, I know who's responsible. I want everyone here to know it too, and to take part in reminding [NameBimbo] of just how bad her diapers smell.'[roman type][line break]".
+	say "As you stumble through the warp portal, you find yourself in the assembly hall. A lot of other students are also filing in, and [NameDesc of M] is at the front, ready to lead assembly.[line break][speech style of M]'It has come to my attention that one of you has been leaving their filth in my halls.'[roman type][line break][big he of M] is holding up a soiled diaper, which [he of M] then throws on the ground right at your feet.[line break][speech style of M]'That's right, I know who's responsible. I want everyone here to know it too, and to take part in reminding [NameBimbo] of just how bad [his of the player] diapers smell.'[roman type][line break]".
 
 To decide which number is the assemblyTurns of (A - soiled-diaper-assembly):
 	decide on a random number between 2 and 4.
@@ -608,6 +696,7 @@ To say AssemblyStartFlav of (A - new-fuckhole-assembly):
 To execute (A - new-fuckhole-assembly):
 	now school-fuckhole is in the location of gloryhole;
 	now the fuckhole-person of school-fuckhole is most-recent-furious;
+	now most-recent-furious is nothing;
 	destroy gloryhole;
 	now the fuckhole-rule of school-fuckhole is a random number between 1 and 5;
 	if bukkake fetish is 1 and (the fuckhole-rule of school-fuckhole is 2 or the fuckhole-rule of school-fuckhole is 3), now the fuckhole-rule of school-fuckhole is 0;
@@ -638,7 +727,7 @@ To compute detention of (M - a staff member):
 	now M is in the location of the player;
 	let specificDetention be 0;
 	let ST be M;
-	if (diaper quest is 0 and the player is a december 2019 top donator) or (diaper quest is 1 and the player is a december 2019 diaper donator):
+	if the player is the donator:
 		repeat with S running through students in the location of the player:
 			if the health of S < the maxhealth of S, now ST is S;
 	if the health of M < the maxhealth of M:

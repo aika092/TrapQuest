@@ -94,6 +94,7 @@ choice
 0 [realisticArms]
 0 [super gag reflex]
 0 [a2m fetish]
+1 [silicone milk clash]
 
 [!<DecideWhichNumberIsOriginalPlayerGender>+
 
@@ -207,6 +208,7 @@ To decide which number is bondage protection:
 	decide on the choice in row 64 of the Table of Player Options.
 
 To decide which number is christmas content:
+	if the player is not a top donator, decide on 0;
 	if choice in row 65 of the Table of Player Options < 2, decide on 1; [override last year's setting]
 	decide on 0.
 
@@ -269,6 +271,10 @@ The a2m fetish random rule is listed in the random mode rules.
 To decide which number is a2m fetish points:
 	decide on choice in row 83 of the Table of Player Options.
 
+To decide which number is silicone milk clash:
+	if the player is not a february 2021 top donator, decide on 1;
+	decide on choice in row 84 of the Table of Player Options.
+
 Part - Options Menus
 
 Table of Kink Options
@@ -286,7 +292,7 @@ To decide which number is positive points count:
 	if diaper quest is 1, increase X by 10;
 	if bukkake fetish is 1, increase X by 7;
 	if pregnancy fetish is 1, increase X by pregnancy points;
-	if inhuman pregnancy is 2 and (the player is female or tg fetish >= 1), increase X by 1;
+	if inhuman pregnancy >= 2 and (the player is female or tg fetish >= 1), increase X by inhuman pregnancy - 1;
 	if lactation fetish is 1, increase X by 5;
 	if watersports fetish is 1, increase X by 3;
 	if diaper lover >= 1 and diaper quest is 0, increase X by diaper points;

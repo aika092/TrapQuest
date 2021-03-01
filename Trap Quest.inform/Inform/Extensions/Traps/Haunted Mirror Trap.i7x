@@ -18,7 +18,7 @@ To say ShortDesc of (T - a haunted mirror trap):
 	say "haunted mirror".
 
 This is the spawn initial mansion mirror traps rule:
-	repeat with N running from 1 to 3:
+	repeat with N running from 1 to (1 + tough-shit):
 		let R be a random trappable placed creaky haunted room;
 		let T be a random off-stage haunted mirror trap;
 		unless there is a haunted mirror trap in R, deploy T in R.
@@ -43,6 +43,7 @@ To trigger (Y - a haunted mirror trap):
 	now Y is not untriggered;
 	say "A section of the wall in front of you slides away, revealing a large mirror. ";
 	if times-mirrored is 0:
+		if mirror-maiden is acceptable, compute resolution of mirror-maiden;
 		compute resolution of mirror nipple tweak;
 	otherwise:
 		compute mirror;
@@ -198,23 +199,22 @@ To compute resolution of (M - mirror-stuffie):
 
 mirror-maiden is a mirror attack.
 Definition: mirror-maiden is acceptable:
-	if (there is an iron-maiden in the location of the player or there is an off-stage iron-maiden) and (the number of worn messed knickers is 0 or tough-shit is 1), decide yes;
+	if (iron-maiden is in the location of the player or iron-maiden is off-stage) and (diaper quest is 0 or the number of worn messed knickers is 0 or tough-shit is 1), decide yes;
 	decide no.
 To compute resolution of (M - mirror-maiden):
-	let Y be a random iron-maiden in the location of the player;
-	if Y is nothing, now Y is a random iron-maiden;
-	if Y is not in the location of the player:
+	if iron-maiden is not in the location of the player:
 		say "Your reflection looks behind [himself of the player], at a large metal upright humanoid box that you could swear wasn't there a moment ago![line break][variable custom style]What?![roman type][line break]";
-		now Y is in the location of the player;
+		now iron-maiden is in the location of the player;
 	say "You watch your reflection with [horror the sex addiction of the player] as you take several steps backwards, and then open the door of the metal box, and step inside. The door closes in front of you, and a lock clicks shut!";
-	now Y is not untriggered;
-	now Y is revealed;
-	now Y is expired;
+	now iron-maiden is not untriggered;
+	now iron-maiden is revealed;
+	now iron-maiden is expired;
 	now iron-maiden-turns is 0;
-	say DQIronMaidenFlav;
+	if diaper quest is 1, say DQIronMaidenFlav;
+	otherwise say TQIronMaidenFlav;
 	now the source-room of Iron Maiden is the location of the player;[In case the player faints]
 	now the player is in Iron Maiden;
-	cutshow the examine-image of Y;
+	cutshow the examine-image of iron-maiden;
 	refresh the map-window.
 
 Haunted Mirror Trap ends here.

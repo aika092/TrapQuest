@@ -81,6 +81,9 @@ To decide which figure-name is clothing-image of (C - pink-kitty-briefs):
 To decide which figure-name is clothing-image of (C - red-anal-briefs):
 	decide on figure of briefs 17.
 
+To decide which figure-name is clothing-image of (C - turquoise briefs):
+	decide on figure of briefs 18.
+
 white-briefs is a briefs. white-briefs is sheer. The text-shortcut of white-briefs is "whb". Understand "white" as white-briefs.
 To say selfexamineuniquetitle of (G - white-briefs):
 	say "pair of white briefs".
@@ -290,6 +293,7 @@ Figure of briefs 14 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs14.p
 Figure of briefs 15 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs15.png".
 Figure of briefs 16 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs16.png".
 Figure of briefs 17 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs17.png".
+Figure of briefs 18 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs18.png".
 
 [Below are from Lucas]
 
@@ -352,5 +356,15 @@ To decide which number is the sex-addiction-influence of (G - blue-polka-dot bri
 Understand "blue", "polka", "dot" as blue-polka-dot briefs.
 Definition: blue-polka-dot briefs is heart themed: decide yes.
 Definition: blue-polka-dot briefs is blue themed: decide yes.
+To decide which number is the unique outrage of (C - blue-polka-dot briefs):
+	decide on 3.
+
+turquoise briefs is a briefs. The text-shortcut of turquoise briefs is "tqb".
+To say selfexamineuniquetitle of (G - turquoise briefs):
+	say "pair of turquoise briefs".
+To say UniqueClothingDesc of (G - turquoise briefs):
+	say "A cute pair of bright blue polka-dot briefs, with a faint pattern of hearts all over.".
+Definition: turquoise briefs is heart themed: decide yes.
+Definition: turquoise briefs is blue themed: decide yes.
 
 Briefs ends here.

@@ -1,6 +1,6 @@
 Kitty Claws by Equippables begins here.
 
-kitty claws is a gloves. kitty claws is unique. kitty claws is wool. The printed name of kitty claws is "[clothing-title-before]pair of [ShortDesc of item described][clothing-title-after]". The text-shortcut of kitty claws is "kc". Figure of kitty claws 1 is the file "Items/Accessories/Equippables/kittyclaws1.png". Figure of kitty claws 2 is the file "Items/Accessories/Equippables/kittyclaws2.png". Understand "paws" as kitty claws.
+kitty claws is a big-gloves. kitty claws is unique. kitty claws is wool. The printed name of kitty claws is "[clothing-title-before]pair of [ShortDesc of item described][clothing-title-after]". The text-shortcut of kitty claws is "kc". Figure of kitty claws 1 is the file "Items/Accessories/Equippables/kittyclaws1.png". Figure of kitty claws 2 is the file "Items/Accessories/Equippables/kittyclaws2.png". Understand "paws" as kitty claws.
 
 Definition: kitty claws is class-relevant:
 	if the class of the player is catgirl, decide yes;
@@ -29,7 +29,7 @@ To decide which number is the initial outrage of (C - kitty claws):
 To decide which number is the initial cringe of (C - kitty claws):
 	decide on 5.
 
-To decide which number is the damage improvement of (W - kitty claws):
+To decide which number is the slap damage improvement of (W - kitty claws):
 	let X be 3;
 	if W is cursed, decrease X by 4;
 	increase X by the magic-modifier of W;

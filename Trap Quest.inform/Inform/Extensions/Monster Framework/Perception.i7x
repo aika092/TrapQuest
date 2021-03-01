@@ -44,56 +44,68 @@ To check perception of (M - a monster):
 			now M is interested;
 			now the last-tripped of M is 0;
 			now the last-interaction of M is 0;
+			let father-wait be false;
 			if M is the father:
 				calm M;
-				say "[BigNameDesc of M] notices you![line break][big he of M] seems to be waiting for something...";[Waiting for you to give birth to their baby]
-			otherwise if the scared of M > 0 and M is scarable:
-				compute scared perception of M;
-			otherwise if stealthActive is true and (the player is stealthy or the blind-status of M > 0 or (M is woman-player and the woman-status of woman-player is 80)) and the player is not in a bossed room and a random number between 1 and the stealth of the player > 1:
-				say PerceptionFail of M;
-				if the blind-status of M > 0, decrease the blind-status of M by 1;
-				deinterest M;
-			otherwise:
-				compute correct perception of M;
-				if latest-top-malfunction is not 0 and M is intelligent and M is friendly, now latest-top-malfunction is earnings; [If an intelligent NPC has noticed the player for whatever reason that probably means they would have seen a nip slip if one existed. So we'll say one didn't exist.]
-				progress quest of whore-exposing-quest for M;
-				if M is intelligent:
-					progress quest of show-and-tell-quest for M;
-					if topless temporary fetish > 0 and breasts is lewdly exposed:
-						decrease topless temporary fetish by 1;
-						if topless temporary fetish is 0, say "[bold type]Your brain finally seems satisfied that you've exposed your breasts to enough people. You will no longer lose intelligence from concealing your nipples.[roman type][line break]";
-						otherwise say "You [one of]can tell that you have made progress towards removing the curse that makes you desperate to keep your breasts exposed[or]have made more progress towards removing your topless fetish curse[cycling].";
-				if the times-met of M < 0, now the times-met of M is 0;
-				increase the times-met of M by 1;
-				if M is friendly human monster and breasts is exposed:
-					progress quest of chest-exposing-quest from M;
-				if M is unfriendly:
-					now the previous-babification of M is 1;
-					now the previous-objectification of M is 1;
+				if M is friendly:
+					say "[BigNameDesc of M] notices you![line break][big he of M] seems to be waiting for something...";[Waiting for you to give birth to their baby]
+					now father-wait is true;
+			if father-wait is false:
+				if the scared of M > 0 and M is scarable:
+					compute scared perception of M;
+				otherwise if stealthActive is true and (the player is stealthy or the blind-status of M > 0 or (M is woman-player and the woman-status of woman-player is 80)) and the player is not in a bossed room and a random number between 1 and the stealth of the player > 1:
+					say PerceptionFail of M;
+					if the blind-status of M > 0, decrease the blind-status of M by 1;
+					deinterest M;
 				otherwise:
-					now the previous-babification of M is the babification of M;
-					now the previous-objectification of M is the objectification of M;
-				if M is interested:
-					now the greet-window of M is 3;
-					if newbie tips is 1 and tutorial is 0:
-						if M is friendly, say "[one of][newbie style]Newbie tip: You have been noticed by an NPC! Looks like this one is friendly, which means you could try using the 'talk' verb to find out more from them. If thirsty, you'll even be able to ask [him of M] for a drink.[roman type][line break][or][stopping]";
-						otherwise say "[one of][newbie style]Newbie tip: You have been noticed by an NPC! Looks like this one is unfriendly, which usually always means [he of M] wants to [if diaper quest is 1]babify[otherwise]fuck[end if] you, or at the very least make your life more miserable in some way. You can either fight back with 'slap', 'knee' or 'kick' (you'll need to be standing), or you can run away! If your delicateness is high enough, there's also a third option, just get on your knees and let it happen... Anyway, if you want to fight back, experiment with the different attacks. At the start of the game, kicking is usually the worst option as you risk falling over and do less damage.[roman type][line break][or][stopping]";
-					if hypno-curtsey-trigger > 0 and the player is upright and M is intelligent friendly monster and the player is not wrist bound and the player is able to use manual dexterity and there is a worn knee-length or longer crotch-in-place clothing:
-						let R be a random number between 1 and hypno-curtsey-trigger;
-						let HR be 2 + the square root of (the humiliation of the player / 2000);
-						if debuginfo > 0, say "[input-style]Curtsey resistance check: Built-up resistance roll (d[hypno-curtsey-trigger]) = [R] | ([HR].5) Humiliation rating[roman type][line break]";
-						if R <= HR:
-							increase hypno-curtsey-trigger by 1;
-							let C be a random worn knee-length or longer crotch-in-place clothing;
-							say "[bold type]You instinctively grab the sides of your [ShortDesc of C] and begin to curtsey.[roman type][line break]";
-							now auto is 1;
-							try displacing C;
-							now auto is 0;
-							if C is crotch-displaced, compute curtsey reaction of M;
-						otherwise:
-							say "You manage to resist the urge to curtsey!";
-				now the latest-appearance of M is the appearance of the player;
-				if diaper quest is 1, now the latest-cringe of M is the cringe appearance of the player.
+					compute correct perception of M;
+					if latest-top-malfunction is not 0 and M is intelligent and M is friendly, now latest-top-malfunction is earnings; [If an intelligent NPC has noticed the player for whatever reason that probably means they would have seen a nip slip if one existed. So we'll say one didn't exist.]
+					progress quest of whore-exposing-quest for M;
+					if M is intelligent:
+						progress quest of show-and-tell-quest for M;
+						if topless temporary fetish > 0 and breasts is lewdly exposed:
+							decrease topless temporary fetish by 1;
+							if topless temporary fetish is 0, say "[bold type]Your brain finally seems satisfied that you've exposed your breasts to enough people. You will no longer lose intelligence from concealing your nipples.[roman type][line break]";
+							otherwise say "You [one of]can tell that you have made progress towards removing the curse that makes you desperate to keep your breasts exposed[or]have made more progress towards removing your topless fetish curse[cycling].";
+					if the times-met of M < 0, now the times-met of M is 0;
+					increase the times-met of M by 1;
+					if M is friendly human monster and breasts is exposed:
+						progress quest of chest-exposing-quest from M;
+					if M is unfriendly:
+						now the previous-babification of M is 1;
+						now the previous-objectification of M is 1;
+					otherwise if herald is alive and the class of the player is not cultist and the remainder after dividing the times-met of M by 4 is 3 and ((diaper quest is 0 and M is willing to shag) or (diaper quest is 1 and M is eager to spank)):
+						say "[bold type]You feel a sudden wave of sexual energy pulse outwards from the [if playerRegion is mansion]centre of the [end if]mansion, flowing straight through both you and [NameDesc of M][bold type]![roman type][line break]";
+						passively stimulate breasts from herald;
+						passively stimulate vagina from herald;
+						passively stimulate asshole from herald;
+						if diaper quest is 1, now the babification of M is 1;
+						otherwise now the objectification of M is 1;
+						if M is uniquely unfriendly, resolve sudden appearance change of M;
+					otherwise:
+						now the previous-babification of M is the babification of M;
+						now the previous-objectification of M is the objectification of M;
+					if M is interested:
+						now the greet-window of M is 3;
+						if newbie tips is 1 and tutorial is 0:
+							if M is friendly, say "[one of][newbie style]Newbie tip: You have been noticed by an NPC! Looks like this one is friendly, which means you could try using the 'talk' verb to find out more from them. If thirsty, you'll even be able to ask [him of M] for a drink.[roman type][line break][or][stopping]";
+							otherwise say "[one of][newbie style]Newbie tip: You have been noticed by an NPC! Looks like this one is unfriendly, which usually always means [he of M] wants to [if diaper quest is 1]babify[otherwise]fuck[end if] you, or at the very least make your life more miserable in some way. You can either fight back with 'slap', 'knee' or 'kick' (you'll need to be standing), or you can run away! If your delicateness is high enough, there's also a third option, just get on your knees and let it happen... Anyway, if you want to fight back, experiment with the different attacks. At the start of the game, kicking is usually the worst option as you risk falling over and do less damage.[roman type][line break][or][stopping]";
+						if hypno-curtsey-trigger > 0 and the player is upright and M is intelligent friendly monster and the player is not wrist bound and the player is able to use manual dexterity and there is a worn knee-length or longer crotch-in-place clothing:
+							let R be a random number between 1 and hypno-curtsey-trigger;
+							let HR be 2 + the square root of (the humiliation of the player / 2000);
+							if debuginfo > 0, say "[input-style]Curtsey resistance check: Built-up resistance roll (d[hypno-curtsey-trigger]) = [R] | ([HR].5) Humiliation rating[roman type][line break]";
+							if R <= HR:
+								increase hypno-curtsey-trigger by 1;
+								let C be a random worn knee-length or longer crotch-in-place clothing;
+								say "[bold type]You instinctively grab the sides of your [ShortDesc of C] and begin to curtsey.[roman type][line break]";
+								now auto is 1;
+								try displacing C;
+								now auto is 0;
+								if C is crotch-displaced, compute curtsey reaction of M;
+							otherwise:
+								say "You manage to resist the urge to curtsey!";
+		now the latest-appearance of M is the appearance of the player;
+		if diaper quest is 1, now the latest-cringe of M is the cringe appearance of the player.
 
 To compute defeated perception of (M - a monster):
 	do nothing.
@@ -176,10 +188,19 @@ To decide which number is the aggro limit of (M - a monster): [The number at whi
 	decide on 10.
 
 To DifficultyUp (M - a monster) by (X - a number):
+	let D be the raw difficulty of M;
+	SilentlyDifficultyUp M by X;
+	let DD be the raw difficulty of M - D;
+	if DD > 0 and M is in the location of the player, say "[BigNameDesc of M] looks [if DD > 1]much [otherwise]somewhat[one of]... [or][stopping][end if]stronger.";
+
+To SilentlyDifficultyUp (M - a monster) by (X - a number):
+	let MH be false;
+	if the health of M >= the maxhealth of M, now MH is true;
 	while X > 0:
 		increase the raw difficulty of M by 1;
-		decrease X by 1.
-	[if debugmode > 0, say "now the raw difficulty of [M] is [the difficulty of M]".]
+		decrease X by 1;
+	if MH is true, now the health of M is the maxhealth of M;
+	if debugmode > 0, say "[input-style]the raw difficulty of [FuckerDesc of M] is now [raw difficulty of M].[roman type][line break]".
 
 [This is coded as a loop, MG explained, in case something happens when a monster passes a certain threshold of difficulty(and only when passing that threshold of difficulty)]
 [Aika: That's not true, currently this loop is pointless. There's no way the code can detect when a threshold is reached. It does however mean that it follows the same structure as other similar functions and could be quickly modified in the future to allow for such triggers.]

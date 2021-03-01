@@ -340,7 +340,7 @@ To compute damaging attack of (M - a giant wasp):
 			now the stance of the player is 1; [failsafe]
 	otherwise:
 		say "The wasp stings you in the [one of]arm[or]butt[or]neck[or]back[purely at random]! [one of]It doesn't really hurt but you feel yourself getting tired very quickly...[or]You can feel yourself getting tired![or]It's getting harder to stay on your feet![or]You're having more trouble holding yourself up![or]It doesn't hurt, but you're struggling to stay on your feet...[then at random]";
-		FatigueUp a random number between the difficulty of M and the buckle threshold of the player / 4.
+		FatigueUp (a random number between the difficulty of M and the buckle threshold of the player / 4) / combatSpeed.
 
 Section 2 - Damage
 

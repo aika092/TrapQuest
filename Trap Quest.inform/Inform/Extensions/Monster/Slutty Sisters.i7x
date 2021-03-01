@@ -58,7 +58,7 @@ To say MonsterComment of (M - a futanari slutty sister):
 	say "[line break][variable custom style][if item described is penetrating an fuckhole]Uuuuugh! So big![otherwise if the anal sex addiction of the player < 5 and the vaginal sex addiction of the player < 5]Keep that monster of a thing away from me![otherwise if the anal sex addiction of the player < 8 and the vaginal sex addiction of the player < 8]I don't know if I'll survive a round with that...[otherwise]I wonder if I can take that without fainting. Sounds like a challenge![end if][roman type][line break]".
 
 To say MonsterComment of (M - a bulging slutty sister):
-	if the belly contents of item described > 0, say "[line break][variable custom style][if item described is penetrating face][']Mmmmmmmmph!['][otherwise if the semen addiction of the player < 10]I'm so glad that's inside [him of M] and not inside me![otherwise if the semen taste addiction of the player < 15 and the belly contents of item described > 7]I think my stomach would explode if I had to drink all of that...[otherwise]I bet [his of M] sister's cum tastes soooo good!![end if][roman type][line break]";
+	if the belly contents of item described > 0, say "[line break][variable custom style][if item described is penetrating face][']Mmmmmmmmph!['][otherwise if the semen addiction of the player < 10]I'm so glad that's inside [him of M] and not inside me![otherwise if the semen taste addiction of the player < 15 and the belly contents of item described > 7]I think my stomach would explode if I had to drink all of that...[otherwise]I bet [his of M] [brother of M]'s cum tastes soooo good!![end if][roman type][line break]";
 
 To set up (M - a slutty sister):
 	reset M;
@@ -76,7 +76,7 @@ To compute unique periodic effect of (M - a bulging slutty sister):
 		let F be a random futanari slutty sister;
 		if F is in the location of M and M is awake and F is awake and M is uninterested and F is uninterested and M is not in the location of the player, increase the belly contents of M by 1.
 
-To decide which number is the maxhealth of (M - a slutty sister):
+To decide which number is the initial maxhealth of (M - a slutty sister):
 	decide on 20 + (4 * game difficulty).
 
 To decide which number is the girth of (M - a futanari slutty sister):
@@ -364,7 +364,7 @@ To say VaginaPenetrationFlav of (M - a futanari slutty sister):
 
 To compute fuckhole sex of (M - a futanari slutty sister):[the sister is facing you so we can do some fun stuff we couldn't do normally]
 	let F be a random fuckhole penetrated by M;
-	say "[one of][BigNameDesc of M] continues pumping [his of M] [LongDickDesc of M] in and out of your [variable F].[or][BigNameDesc of M] slams [his of M] [LongDickDesc of M] in and out of your [variable F][or][BigNameDesc of M] grins [if the reaction of the player is 0]cruelly[otherwise]knowingly[end if] as [he of M] relentlessly pounds your [variable F].[or][if the player is gagged][BigNameDesc of M] pounds you viciously, forcing you to grunt and moan through the [printed name of a random worn ballgag] in your mouth.[otherwise if there is a bulging slutty sister penetrating face][BigNameDesc of M] high fives [his of M] sister as [he of M] viciously pumps away.[otherwise][BigNameDesc of M] forces [his of M] tongue into your mouth, making exaggerated moaning noises as [he of M] pumps away.[end if][or][BigNameDesc of M] keeps pounding your [variable F], [if the largeness of breasts > 4]groping your [ShortDesc of breasts] as they flop against your chest.[otherwise]laughing cruelly as [he of M] brutally twists your nipples.[end if][or][BigNameDesc of M] moans with pleasure as [his of M] [LongDickDesc of M] slams in and out of your [variable F].[or][BigNameDesc of M] tosses you around like a living fleshlight, jamming your [variable F] into every thrust of [his of M] [LongDickDesc of M].[in random order]"; [TODO expand]
+	say "[one of][BigNameDesc of M] continues pumping [his of M] [LongDickDesc of M] in and out of your [variable F].[or][BigNameDesc of M] slams [his of M] [LongDickDesc of M] in and out of your [variable F].[or][BigNameDesc of M] grins [if the reaction of the player is 0]cruelly[otherwise]knowingly[end if] as [he of M] relentlessly pounds your [variable F].[or][if the player is gagged][BigNameDesc of M] pounds you viciously, forcing you to grunt and moan through the [printed name of a random worn ballgag] in your mouth.[otherwise if there is a bulging slutty sister penetrating face][BigNameDesc of M] high fives [his of M] sister as [he of M] viciously pumps away.[otherwise][BigNameDesc of M] forces [his of M] tongue into your mouth, making exaggerated moaning noises as [he of M] pumps away.[end if][or][BigNameDesc of M] keeps pounding your [variable F], [if the largeness of breasts > 4]groping your [ShortDesc of breasts] as they flop against your chest.[otherwise]laughing cruelly as [he of M] brutally twists your nipples.[end if][or][BigNameDesc of M] moans with pleasure as [his of M] [LongDickDesc of M] slams in and out of your [variable F].[or][BigNameDesc of M] tosses you around like a living fleshlight, jamming your [variable F] into every thrust of [his of M] [LongDickDesc of M].[in random order]"; [TODO expand]
 	decrease the sex-length of M by 1.
 
 To compute anal sex of (M - a futanari slutty sister):

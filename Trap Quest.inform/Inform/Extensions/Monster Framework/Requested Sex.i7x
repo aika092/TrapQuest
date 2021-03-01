@@ -15,7 +15,7 @@ Definition: yourself is friendly fucked:
 
 To check consensual submissive sex of (M - a monster):
 	now current-monster is M;
-	if presented-orifice is vagina and M is bride-consort and the consumation of betrothal-quest is false:
+	if presented-orifice is vagina and M is bride-consort and the consummation of betrothal-quest is false:
 		say "[speech style of M]'This isn't the right place or time.'[roman type][line break]";
 	otherwise:
 		follow the monster friendly convinced rule of M;

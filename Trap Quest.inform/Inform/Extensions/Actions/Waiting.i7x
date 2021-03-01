@@ -138,14 +138,14 @@ To DildoWait:
 		if the dexterity of the player > prev-dex, say "You've gained back a bit of dexterity, better check if that changes anything!".
 
 To HookWait:
-	if woman-player is regional and the woman-status of woman-player is 1:
+	let X be a random ass hook penetrating asshole;
+	if woman-player is regional and the woman-status of woman-player < 80:
 		allocate 6 seconds;
 		now woman-player is interested;
 		say "[if woman-player is in the location of the player][BigNameDesc of woman-player] chuckles as [he of woman-player] looks at you.[otherwise]You are only waiting a few seconds when [NameDesc of woman-player] comes walking round the corner! Salvation![end if]";
 		now woman-player is in the location of the player;
 		if the woman-bimbo of woman-player < 3:
 			say "[second custom style]'Oh no, how have you managed to get stuck like that? That looks like it hurts. Don't worry, I'll save you, honey.'[roman type][line break]With impressive dexterity and strength, [he of woman-player] pulls the hook clean from your [asshole]! The contraption shoots up into the hole in the ceiling that the rope was connected to.";
-			let X be a random ass hook penetrating asshole;
 			now X is not penetrating asshole;
 			now X is unrevealed;
 		otherwise if the woman-bimbo of woman-player < 5:
@@ -154,7 +154,6 @@ To HookWait:
 			say "[second custom style]'Oopsie! Let me try that again.'[roman type][line break]This time [he of woman-player] gets it all the way out, but just before you can react and step to the side, [he of woman-player] loses [his of woman-player] grip again! It shoots back in with twice the force of last time!";
 			ruin asshole;
 			say "[second custom style]'Silly [boy of the player], try to move out the way this time.'[roman type][line break]This time as soon as it's all the way out, you leap away, finally free! The contraption shoots up into the hole in the ceiling that the rope was connected to.";
-			let X be a random ass hook penetrating asshole;
 			now X is not penetrating asshole;
 			now X is unrevealed;
 		otherwise:
@@ -175,11 +174,11 @@ To HookWait:
 				say "[second custom style]'I'm getting bored, I'm going to see if I can find something to fuck. See you later babe!'[roman type][line break][big he of woman-player] wanders off, ignoring your pleas to help you down.";
 			vanish woman-player;
 	otherwise:
-		let prev-dex be the dexterity of the player;
-		while the player is hook stuck and the player is not monster fucked and the dexterity of the player <= prev-dex and delayed fainting is 0 and sex fainting is 1:
-			allocate 6 seconds;
-			compute extra turn;
-		if the player is hook stuck:
-			if the dexterity of the player > prev-dex, say "You've gained back a bit of dexterity, better check if that changes anything!".
+		allocate 250 seconds;
+		now the soreness of asshole is 10;
+		say "So here you are, a human, reduced to a decorative ornament, dangling from your [asshole] by a hook, getting more and more tender and sore by the moment, with no way to release yourself. What an outrageous, and pathetic, situation.[paragraph break]By the time the ass hook trap resets, slackening and allowing you to escape, your [asshole] is on fire and there are tears streaming down your face.";
+		PainUp 5;
+		now shunk-happened is false;
+		compute default reset of X.
 
 Waiting ends here.

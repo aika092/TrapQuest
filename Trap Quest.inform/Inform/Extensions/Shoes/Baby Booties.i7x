@@ -210,7 +210,7 @@ Definition: candy cane boots is food themed: decide yes.
 Definition: candy cane boots is christmas themed: decide yes.
 
 To say ClothingDesc of (C - candy cane boots):
-	say "A pair of white woooly boots with a pattern of red candy canes.".
+	say "A pair of white woolly boots with a pattern of red candy canes.".
 
 To say UniqueShortDesc of (C - candy cane boots):
 	say "candy cane boots".

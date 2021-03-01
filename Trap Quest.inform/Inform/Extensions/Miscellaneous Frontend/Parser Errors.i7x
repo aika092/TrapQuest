@@ -3,24 +3,6 @@ Parser Errors by Miscellaneous Frontend begins here.
 [After asking which do you mean (this is the Disambiguation Choices cause crashes rule):
 	if inline hyperlinks > 0 and newbie tips is 1, say "[bold type][one of]Do not use a hyperlink here, or this will cause the game to crash. Type a number instead. I have no idea why, sorry.[or]Remember, don't use a hyperlink or the game will crash.[stopping][roman type][line break]".]
 
-disambiguation-busy is initially false.
-
-A thing has a number called the disambiguation-ID. Understand the disambiguation-ID property as describing a thing when disambiguation-ID-count > 1.
-
-Disambiguation-ID-count is a number that varies.
-
-Before asking which do you mean (this is the Disambiguation Choices need clarification rule):
-	now disambiguation-busy is true.
-
-After asking which do you mean (this is the Disambiguation Choices no longer need clarification rule):
-	now disambiguation-busy is false.
-
-Every turn:
-	if disambiguation-ID-count > 1:
-		now disambiguation-ID-count is 1;
-		repeat with T running through things:
-			now the disambiguation-ID of T is 0.
-
 Rule for printing a parser error when the latest parser error is the I beg your pardon error:
 	if the bimbo of the player > 11, say "[second custom style][one of]I like, totally forgot what I was going to do![or]Gosh, I feel so light-headed. What was I going to do again?[in random order][roman type][line break]" instead.
 

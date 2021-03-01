@@ -132,7 +132,7 @@ To reflect on (A - outrageous-gag):
 
 To say FriendReaction of (M - a real-life patron) to (A - outrageous-gag):
 	let G be a random worn gag;
-	if G is not pacifier and G is ballgag, say "... [if M is nemesis-friend]If you ask me, you should do everyone else a favour and keep yourself gagged all the time. [otherwise]I guess there's no point asking you for an explanation. [end if]";
+	if G is not pacifier and G is ballgag, say "... [if M is nemesis-friend]If you ask me, you should do everyone a favour and keep yourself gagged all the time. [otherwise]I guess there's no point asking you for an explanation. [end if]";
 	if G is pacifier, say "... Just so you know, [if G is cock pacifier]I can tell what's on the end of that [otherwise]no self-respecting adult would wear a [end if]pacifier. ";
 	if G is opengag, say "... I guess there's no point asking if you know how that makes you look. ";
 	say "[roman type][line break]".

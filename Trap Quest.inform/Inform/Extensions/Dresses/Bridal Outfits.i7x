@@ -7,7 +7,7 @@ To say ShortDesc of (C - a bridal dress):
 
 Definition: a bridal dress is white themed: decide yes.
 
-long bridal dress is a bridal dress. Understand "short" as long bridal dress when the item described is short.
+long bridal dress is a bridal dress. Understand "short" as long bridal dress when the item described is short. The text-shortcut of long bridal dress is "lbrd".
 
 To compute class set up of (C - long bridal dress):
 	if the ceremony of betrothal-quest is false:
@@ -55,7 +55,7 @@ This is the bridal dress pussy slut rule:
 	if long bridal dress is worn, decrease the desirability of vagina by 4.
 The bridal dress pussy slut rule is listed in the pussy slut eligibility rules.
 
-sexy bridal dress is a bridal dress. sexy bridal dress is finger covering.
+sexy bridal dress is a bridal dress. sexy bridal dress is finger covering. The text-shortcut of sexy bridal dress is "sbrd".
 
 Figure of sexy bridal dress is the file "Items/Clothes/Upper/Special/Bridal/bridaldress2.png".
 
@@ -80,7 +80,7 @@ To say ClothingDesc of (C - sexy bridal dress):
 To decide which number is the initial outrage of (C - sexy bridal dress):
 	decide on 6.
 
-slutty bridal dress is a bridal dress. slutty bridal dress is unskirted. slutty bridal dress is crotch-intact.
+slutty bridal dress is a bridal dress. slutty bridal dress is unskirted. slutty bridal dress is crotch-intact. The text-shortcut of slutty bridal dress is "stbd".
 
 Figure of slutty bridal dress is the file "Items/Clothes/Upper/Special/Bridal/bridaldress3.png".
 
@@ -111,7 +111,7 @@ To decide which number is the initial outrage of (C - slutty bridal dress):
 	decide on 9.
 
 
-princess bride dress is a bridal dress. princess bride dress is finger covering. princess bride dress is neck covering. princess bride dress is totally-exclusive. princess bride dress is sheer.
+princess bride dress is a bridal dress. princess bride dress is finger covering. princess bride dress is neck covering. princess bride dress is totally-exclusive. princess bride dress is sheer. The text-shortcut of princess bride dress is "pbrd".
 
 Figure of princess bride dress is the file "Items/Clothes/Upper/Special/Bridal/bridaldress4.png".
 

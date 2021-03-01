@@ -43,11 +43,11 @@ Definition: breasts is at least partially exposed:
 	decide yes.
 
 Definition: breasts is lewdly exposed:
-	if breasts is exposed and (the player is female or the largeness of breasts > 1), decide yes;
+	if breasts is exposed and (the player is sexed female or the largeness of breasts > 1), decide yes;
 	decide no.
 
 Definition: breasts is at least partially lewdly exposed:
-	if breasts is at least partially exposed and (the player is female or the largeness of breasts > 1), decide yes;
+	if breasts is at least partially exposed and (the player is sexed female or the largeness of breasts > 1), decide yes;
 	decide no.
 
 [!<DecideWhichObjectIsTheAtLeastPartialConcealerOfBreasts>+
@@ -766,7 +766,7 @@ To Bustup (X - a number):
 		if the largeness of breasts is 1:
 			if the bimbo of the player < 8, say "[one of][line break][first custom style][line break]Woah, am I getting boobs?[roman type][line break][or][stopping]";
 			otherwise say "[one of][line break][second custom style][line break]Oooh, I'm growing tits![roman type][line break][or][stopping]";
-			if the player is male, cutshow figure of body reaction 1 for breasts;
+			if the player is possessing a penis, cutshow figure of body reaction 1 for breasts;
 		if the largeness of breasts is 3:
 			if the bimbo of the player < 8, say "[one of][line break][first custom style][line break][if the player is sexed male]Yep, I'm definitely[otherwise]Wow, I'm[end if] growing boobs...[roman type][line break][or][stopping]";
 			otherwise say "[one of][line break][second custom style][line break]I can't wait to see what I look like with huge tits![roman type][line break][or][stopping]";
@@ -834,6 +834,7 @@ To 2Bustdown:
 
 To decide which number is the milk capacity of (B - breasts):
 	let F be the flesh volume of breasts * 2;
+	if silicone milk clash is 0, increase F by the silicone volume of breasts * 2;
 	if F > 40, decide on 40;
 	decide on F.
 
@@ -913,7 +914,7 @@ To BustImplantsUp (X - a number):
 		otherwise if the air volume of breasts > 0:
 			decrease the air volume of breasts by 1;
 			increase the silicone volume of breasts by 1;
-		otherwise if the milk volume of breasts > the flesh volume of breasts and attempt-done is 0:
+		otherwise if silicone milk clash is 1 and the milk volume of breasts > the flesh volume of breasts and attempt-done is 0:
 			now attempt-done is 1;
 			say "Your new [if the silicone volume of breasts > 0]and improved [end if]implants put such internal pressure on your [BreastDesc] that they instantly lactate!";
 			trigger lactation;
@@ -954,7 +955,7 @@ To stimulate (X - breasts):
 			if the sensitivity of breasts > 20:
 				say "[one of]The nerves in your breasts explode with sensation! [if the player is possessing a vagina]Your [vagina] gushes with pleasure.[otherwise if the player is possessing a penis]Your [player-penis] twitches rapidly.[end if][or]Your entire body shudders with pleasure.[or]Sparks of pure euphoria fly through your brain.[or]Your super sensitive tits cause you to moan with pleasure.[at random]";
 			otherwise if the sensitivity of breasts > 10:
-				say "[one of]Your breasts feel amazing. [if the player is female]Your [vagina] gets wetter.[otherwise if the player is possessing a penis]Your [player-penis] stirs gently.[end if][or][or][or]You close your eyes and shiver. it feels so good![or][or][or]Your super sensitive tits cause you to moan with pleasure.[or][or][or]You [if the player is not able to masturbate]wish you could masturbate![otherwise]can't help but gently play with yourself, eyes rolling to the back of your head with pleasure.[end if][or][stopping]";
+				say "[one of]Your breasts feel amazing. [if the player is herm]Your [vagina] gets wetter and your [player-penis] stirs gently.[otherwise if the player is possessing a vagina]Your [vagina] gets wetter.[otherwise if the player is possessing a penis]Your [player-penis] stirs gently.[end if][or][or][or]You close your eyes and shiver. it feels so good![or][or][or]Your super sensitive tits cause you to moan with pleasure.[or][or][or]You [if the player is not able to masturbate]wish you could masturbate![otherwise]can't help but gently play with yourself, eyes rolling to the back of your head with pleasure.[end if][or][stopping]";
 			otherwise:
 				say "[one of]It actually feels quite pleasurable for you.[or][or][or]You realise you are breathing heavily. Are your breasts somehow getting more sensitive?[or][or][or]You let out an involuntary whimper. It actually feels good![or][or][or]You shiver as a wave of sexual pleasure flows through you.[or][stopping]".
 

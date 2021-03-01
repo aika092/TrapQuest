@@ -11,6 +11,8 @@ To dislodge (C - a thing):
 		now C is not grabbing B;
 	repeat with B running through body parts wrangled by C:
 		now C is not wrangling B;
+		if C is monster: [there may have been a timer counting down to automatic release, using these variables]
+			now the wrangle-bonus of C is 0;
 	repeat with B running through things covered by C:
 		now C is not covering B.
 

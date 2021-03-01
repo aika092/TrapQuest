@@ -129,7 +129,7 @@ To compute cursed drinking (X - baby's bottle):
 		say "your [ShortDesc of X] shimmers and a diaper appears around your loins!";
 		summon D cursed with quest;
 	otherwise if diaper lover >= 1 and incontinence < 5 and incontinence < the max-incontinence of the player:
-		say "you feel a weird twang internally, just behind your [if the player is male][ShortDesc of penis][otherwise][vagina][end if], where your bladder should be.[if the bimbo of the player < 8][one of][line break][variable custom style]That can't be good...[roman type][line break][or][stopping][end if]";
+		say "you feel a weird twang internally, just behind your [if the player is possessing a penis][ShortDesc of penis][otherwise if the player is possessing a vagina][vagina][end if], where your bladder should be.[if the bimbo of the player < 8][one of][line break][variable custom style]That can't be good...[roman type][line break][or][stopping][end if]";
 		increase incontinence by 1;
 	otherwise:
 		say "a fuzzy feeling enters your head, and it's harder to concentrate.";

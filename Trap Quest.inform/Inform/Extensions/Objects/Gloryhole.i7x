@@ -77,7 +77,7 @@ Check entering gloryhole:
 				try displacing C1;
 				if C1 is crotch-displaced, now C1 is temporarily-displaced;
 			now C1 is a random top level protection clothing;
-		say "[if the player is male]You stick your [ShortDesc of penis] into[otherwise]You press your [vagina] against[end if] the waiting lips. ";
+		say "[if the player is possessing a penis]You stick your [ShortDesc of penis] into[otherwise if the player is possessing a vagina]You press your [vagina] against[end if] the waiting lips. ";
 		repeat with M running through reactive students:
 			if the outrage tolerance of M <= 8:
 				FavourDown M;
@@ -121,7 +121,7 @@ Check entering gloryhole:
 			compute gloryhole cunnilingus receipt;
 	otherwise:
 		if face is not actually occupied:
-			say "Within moments, a large [if the oral sex addiction of the player > 5]juicy [end if][manly-penis] is pushed through the hole [if gloryhole is glorywrapped]and you use your lips to unroll the condom down its length as it enter your mouth[otherwise]and into your mouth[end if]. It is easily long enough to hit the back of your throat, causing you to gag[if the oral sex addiction of the player > 7] slightly[end if].";
+			say "Within moments, a large [if the oral sex addiction of the player > 5]juicy [end if][manly-penis] is pushed through the hole [if gloryhole is glorywrapped]and you use your lips to unroll the condom down its length as it enters your mouth[otherwise]and into your mouth[end if]. It is easily long enough to hit the back of your throat, causing you to gag[if the oral sex addiction of the player > 7] slightly[end if].";
 			now gloryhole is penetrating face;
 			now busy is 1;
 		otherwise:
@@ -177,7 +177,7 @@ To compute gloryhole upper blowjob:
 	now gloryhole is upper oral;
 	now gloryhole is gloryunwrapped;
 	say GloryHoleSuction;
-	say "You hear a playful feminine giggle as the pair of soft lips [if the player is male]close around your [ShortDesc of penis][otherwise]press against your labia[end if]. But then a split second later, the mouth disappears! You know something is up but it's too late. You watch in [horror (the oral sex addiction of the player * 2)] as a large [manly-penis] advances through the upper hole, sealing your [LipDesc] around it as it [if the oral sex addiction of the player < 12]forces[otherwise]pushes[end if] them apart. The penis begins thrusting in and out of your mouth.";
+	say "You hear a playful feminine giggle as the pair of soft lips [if the player is possessing a penis]close around your [ShortDesc of penis][otherwise if the player is possessing a vagina]press against your labia[end if]. But then a split second later, the mouth disappears! You know something is up but it's too late. You watch in [horror (the oral sex addiction of the player * 2)] as a large [manly-penis] advances through the upper hole, sealing your [LipDesc] around it as it [if the oral sex addiction of the player < 12]forces[otherwise]pushes[end if] them apart. The penis begins thrusting in and out of your mouth.";
 	now gloryhole is penetrating face;
 	say "Do you want to resist?";
 	if the player is reverse bimbo consenting:
@@ -464,8 +464,8 @@ An all time based rule (this is the fuckhole asscum rule):
 
 To say ExamineDesc of (C - school-fuckhole):
 	let M be the fuckhole-person of C;
-	say "The lower half of a [man of M] is stuck in the wall here: [big his of M] hands, calves and butt are presented through five tight rubber-sealed holes in the wall. [big his of M] head, torso, arms and knees must be on the other side. It doesn't look like [he of M]['] be getting out any time soon.";
-	say "[if the asscum of C is 1]The cum leaking out of [his of M] asshole is evidence that [he of M][']s recently been anally creampied. [otherwise if the asscum of C > 1]The cum shooting out of [his of M] asshole is evidence that [his of M] ass recently been filled to the brim with [semen]. [end if][if the pussycum of C > 0]The cum leaking out of [his of M] cunt is evidence that [he of M][']s recently been vaginally creampied. [end if][if the buttcum of C > 0][big his of M] buttcheeks are coated in [semen]. [end if][if the buttcondoms of C > 0]Used condoms are piled on top of [his of C] butt. [end if][if the bracum of C > 0][big his of M] bra is lying on the ground by [his of M] feet. [end if][if the bracum of C is 2]It has been plastered by several ropes of [semen]. [end if]You remember [NameDesc of headmistress][']s instructions:[line break][speech style of headmistress][FuckholeRuleDesc][roman type][line break]".
+	say "The lower half of a [man of M] is stuck in the wall here: [big his of M] hands, calves and butt are presented through five tight rubber-sealed holes in the wall. [big his of M] head, torso, arms and knees must be on the other side. It doesn't look like [he of M][']ll be getting out any time soon.";
+	say "[if the asscum of C is 1]The cum leaking out of [his of M] asshole is evidence that [he of M][']s recently been anally creampied. [otherwise if the asscum of C > 1]The cum shooting out of [his of M] asshole is evidence that [his of M] ass has recently been filled to the brim with [semen]. [end if][if the pussycum of C > 0]The cum leaking out of [his of M] cunt is evidence that [he of M][']s recently been vaginally creampied. [end if][if the buttcum of C > 0][big his of M] buttcheeks are coated in [semen]. [end if][if the buttcondoms of C > 0]Used condoms are piled on top of [his of C] butt. [end if][if the bracum of C > 0][big his of M] bra is lying on the ground by [his of M] feet. [end if][if the bracum of C is 2]It has been plastered by several ropes of [semen]. [end if]You remember [NameDesc of headmistress][']s instructions:[line break][speech style of headmistress][FuckholeRuleDesc][roman type][line break]".
 
 To construct normal buttons for (T - school-fuckhole):
 	if the player is a bit horny:
@@ -528,7 +528,7 @@ Check entering school-fuckhole:
 	let O be player-numerical-response;
 	if O is 1 or O is 3, now F is asshole;
 	reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
-	say "You [if O > 2]wrap your member then [end if]push inside the easily accessible [F] in front of you. It feels warm and tight - everything you could ever want in a fuckhole. It doesn't take long before you're growing with pleasure and ";
+	say "You [if O > 2]wrap your member then [end if]push inside the easily accessible [F] in front of you. It feels warm and tight - everything you could ever want in a fuckhole. It doesn't take long before you're groaning with pleasure and ";
 	if O > 2:
 		say "filling your condom with your [if the semen load of the player > 7]huge [otherwise if the semen load of the player < 4]small [end if]load.";
 		if the fuckhole-rule of school-fuckhole is 4, now ruleBreaker is false;

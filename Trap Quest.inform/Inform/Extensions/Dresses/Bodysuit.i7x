@@ -93,7 +93,7 @@ To decide which figure-name is clothing-image of (C - plugsuit):
 	decide on figure of plugsuit.
 
 To say ClothingDesc of (C - plugsuit):
-	say "A black, skin-tight one-piece leotard. The suit clings to the body to make sure it hides none of its curves. A plug is inbuilt into the crotch of the garment, to ensure that anyone who wears the item has their [if the player is possessing a vagina][vagina][otherwise][asshole][end if] kept [if the vaginal sex addiction of the player > 3]nice and [end if]full.".
+	say "A black, skin-tight one-piece leotard. The suit clings to the body to make sure it hides none of its curves. A plug is inbuilt into the crotch of the garment, to ensure that anyone who wears the item has their [if the player is possessing a vagina][vagina][otherwise][asshole][end if] kept [if (the vaginal sex addiction of the player > 3 and the player is possessing a vagina) or (the anal sex addiction of the player > 3 and the player is not possessing a vagina)]nice and [end if]full.".
 
 To compute SelfExamineDesc of (C - plugsuit):
 	let F be a random fuckhole penetrated by C;
@@ -540,7 +540,6 @@ To decide which number is the initial outrage of (C - a catsuit):
 	decide on 7.
 
 Figure of Latex Catsuit 1 is the file "Items/Clothes/Upper/Latex/latexcatsuit1.png".
-Figure of Latex Catsuit 2 is the file "Items/Clothes/Upper/Latex/latexcatsuit2.png".
 Figure of Latex Catsuit 3 is the file "Items/Clothes/Upper/Latex/latexcatsuit3.png".
 
 outrageous-catsuit is a humiliating situation.
@@ -563,7 +562,7 @@ To say FriendReaction of (M - a real-life patron) to (A - outrageous-catsuit):
 	if M is friend-shocked:
 		say "... Do you like walking around with your genitals on display like that? ";
 	otherwise:
-		say "[if M is nemesis-friend]It doesn't suprise me that a whore like you would walk around with [his of the player] genitals on display like that.[otherwise]... I don't know why I'm not shocked to see you with your genitals on display like that. Ugh. [end if]".
+		say "[if M is nemesis-friend]It doesn't surprise me that a whore like you would walk around with [his of the player] genitals on display like that.[otherwise]... I don't know why I'm not shocked to see you with your genitals on display like that. Ugh. [end if]".
 
 Part 1 - Pink Catsuit
 
@@ -594,11 +593,10 @@ To compute class set up of (C - black-catsuit):
 	now C is cursed.
 
 To decide which figure-name is clothing-image of (C - black-catsuit):
-	if C is worn by the player and the player is prone, decide on Figure of Latex Catsuit 2;
-	otherwise decide on Figure of Latex Catsuit 1.
+	decide on Figure of Latex Catsuit 1.
 
 To say ClothingDesc of (C - black-catsuit):
-	say "A black, skin-tight suit that goes up to the neck and down to the ankles. The suit clings to the body to make sure it hides none of its curves, and it has holes for breasts and is crotchless, meaning it fails to cover all of one's most sensitive parts! [if the largeness of breasts > 6]It would definitely do nothing to support your [BreastDesc]. [end if][if C is not worn]The rubbery nature of the suit and the long arms ending in latex gloves mean it would take a long time to take on and off...[end if][line break]".
+	say "A black, skin-tight suit that goes up to the neck and down to the ankles. The suit clings to the body to make sure it hides none of its curves, and it has holes for breasts and is crotchless at the back, meaning it fails to cover all of one's most sensitive parts! [if the largeness of breasts > 6]It would definitely do nothing to support your [BreastDesc]. [end if][if C is not worn]The rubbery nature of the suit and the long arms ending in latex gloves mean it would take a long time to take on and off...[end if][line break]".
 
 To compute SelfExamineDesc of (C - black-catsuit):
 	say "Your neck to your ankles (except your tits and crotch) is covered by a [MediumDesc of C]. ".

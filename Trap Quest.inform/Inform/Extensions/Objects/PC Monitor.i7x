@@ -155,11 +155,11 @@ To say BaseObservationFlav of (M - a slutty sister):
 	say "The slutty sister and the executives continue to watch [one of]you[or]the action[at random].".
 
 To say FightObserve of (M - a slutty sister) with (N - a monster):
-	if the player is prone, say "[speech style of M]'[one of]Once the player is on their knees, that's when the fun REALLY begins. Teehee.'[or]After the subject's fuck or flight response kicks in, all we need to do is restrict their options a little bit, and voila, it's a porno!'[or]See, gentlemen? I told you!'[or]Of course, the pain the subject feels is real, but as you're about to see, so is the pleasure.'[or]Remember, stakeholders: The subject has a safeword [he of the player] can use to stop the stimulation at any time. Keep that in mind as you watch what happens next.'[at random][roman type][line break][moderateHumiliateReflect]";
+	if the player is prone, say "[speech style of M]'[one of]Once the player is on their knees, that's when the fun REALLY begins. Teehee.'[or]After the subject's fuck or flight response kicks in, all we need to do is restrict their options a little bit, and voila, it's a porno!'[or]See, gentlemen? I told you!'[or]Of course, the pain the subject feels is real, but as you're about to see, so is the pleasure.'[or]Remember, stakeholders: The subject has a safe-word [he of the player] can use to stop the stimulation at any time. Keep that in mind as you watch what happens next.'[at random][roman type][line break][moderateHumiliateReflect]";
 	otherwise say "[speech style of M]'[one of]Once combat begins, it generally doesn't take long for the subject's fuck or flight response to kick in.'[or]Although some subjects do choose to engage in combat, they usually lose, so we see it as more of a formality.'[or]Early on, we have to begin most encounters by making the subject docile, but later on, the subject will learn to be docile naturally.'[or][if N is patron]We care about our investors, so we dull any pain that you might experience within the situation.'[otherwise]We find that combat is a good way of increasing the subject's bloodflow before the main event.[end if][or]Repressed submissives like [NameBimbo] here will often take a while to break, but sometimes we get lucky.'[at random][roman type][line break][moderateHumiliateReflect]";
 
 To say SexObserve of (M - a slutty sister) with (N - a monster):
-	say "[first custom style]'[one of]As you can see, even if [he of the player] pretends not to enjoy it, [his of the player] vital signs definitely won't lie.'[or]As always, tap the button on the upper right of your screens to change your viewing angle.'[or]It's important to introduce the subject to sex early and often, so they get addicted. We're very confident it works, teehee!'[or][if the reaction of the player is 0]It's true [he of the player]'s resisting, but remember that safeword we told you about?'[otherwise]See? Even if we give the subject a safeword, they'd think twice about escaping something that feels so good.'[end if][or]Ooh, so your hands ARE as strong as they look...no no, that's included in the price... Teehee, I'll think about it, but I'm contractually obligated to remind you that [NameBimbo] is meant to be the centre of attention right now!'[or]If you look here, you'll see a diagram of [NameBimbo]'s most sensitive internal areas.'[or]Sir, if you keep doing that, I'm going to have to...really, double?...-ahem, we'll have to discuss how I can earn that after we finish the conference.'[then at random][if the player is not disgraced and the player is able to speak][line break][variable custom style]'[one of]Stop watching me!'[or]This isn't a show!'[or]This is so humiliating! It's like I'm a lab rat!'[in random order][end if][roman type][line break][strongHumiliateReflect]".
+	say "[first custom style]'[one of]As you can see, even if [he of the player] pretends not to enjoy it, [his of the player] vital signs definitely won't lie.'[or]As always, tap the button on the upper right of your screens to change your viewing angle.'[or]It's important to introduce the subject to sex early and often, so they get addicted. We're very confident it works, teehee!'[or][if the reaction of the player is 0]It's true [he of the player]'s resisting, but remember that safe-word we told you about?'[otherwise]See? Even if we give the subject a safe-word, they'd think twice about escaping something that feels so good.'[end if][or]Ooh, so your hands ARE as strong as they look...no no, that's included in the price... Teehee, I'll think about it, but I'm contractually obligated to remind you that [NameBimbo] is meant to be the centre of attention right now!'[or]If you look here, you'll see a diagram of [NameBimbo]'s most sensitive internal areas.'[or]Sir, if you keep doing that, I'm going to have to...really, double?...-ahem, we'll have to discuss how I can earn that after we finish the conference.'[then at random][if the player is not disgraced and the player is able to speak][line break][variable custom style]'[one of]Stop watching me!'[or]This isn't a show!'[or]This is so humiliating! It's like I'm a lab rat!'[in random order][end if][roman type][line break][strongHumiliateReflect]".
 
 [Determines the "video" content that is produced by the monitor when the player gets beaten in combat]
 To compute disgraceful event of (C - a video-monitor):
@@ -207,17 +207,19 @@ To compute reset of (C - a video-monitor):
 
 To compute HangUpDisgraced of (C - a video-monitor) with (M - a slutty sister):
 	say "[second custom style]'*Great* job, [NameBimbo]! Our investors here think that footage was good enough for a commercial release, so look forward to seeing it once we've got it uploaded. That will be all for now!'[roman type][line break][strongHumiliateReflect]The slutty sister hangs up the call, and the [MediumDesc of C] turns off.";
-	choose a blank row in Table of Published Disgraces;
-	now the content entry is the substituted form of "an HD video of you [the video-event of C]";
-	now the published entry is the substituted form of "has been uploaded to the Nintendolls company website";
-	now the severity entry is 10;
-	now the popularity entry is 1;
-	now the timestamp entry is earnings.
+	if the number of blank rows in the Table of Published Disgraces > 0:
+		choose a blank row in Table of Published Disgraces;
+		now the content entry is the substituted form of "an HD video of you [the video-event of C]";
+		now the published entry is the substituted form of "has been uploaded to the Nintendolls company website";
+		now the severity entry is 10;
+		now the popularity entry is 1;
+		now the timestamp entry is earnings.
 
 To compute HangUpUndisgraced of (C - a video-monitor) with (M - a slutty sister):
 	say "[second custom style]'Alright, good job, [NameBimbo]. That will be all for now!'[roman type][line break]The slutty sister hangs up the call, and the [MediumDesc of C] turns off.".
 
 Definition: a video-monitor (called V) is video-callable:
+	if V is pc-monitor and the number of patrons in the location of the player is 0, decide no; [hotel PC monitor only works with patrons. necessary for current pimp spawning code]
 	if the currentlyOn of V > 0 and the call-cooldown of V <= 0, decide yes;
 	decide no.
 
@@ -226,9 +228,7 @@ Section - PC Monitor
 To say ShortDesc of (C - video-monitor):
 	say "monitor".
 
-A pc-monitor is a kind of video-monitor. The printed name of a pc-monitor is "[TQlink of item described]PC monitor[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "PC", "monitor" as pc-monitor. A pc-monitor has a number called currentSlide. A pc-monitor has a number called currentlyOn. The currentlyOn of a pc-monitor is 1.
-
-There is a pc-monitor in Hotel33.
+pc-monitor is a video-monitor. pc-monitor is in Hotel33. The printed name of a pc-monitor is "[TQlink of item described]PC monitor[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "PC", "monitor" as pc-monitor. pc-monitor has a number called currentSlide. pc-monitor has a number called currentlyOn. The currentlyOn of pc-monitor is 1.
 
 To say ShortDesc of (C - pc-monitor):
 	say "monitor".
@@ -255,44 +255,6 @@ To say SlideDesc (N - a number):
 [In-built humiliation gain]
 To say HumiliatingSlideDesc (N - a number):
 	say "[DisgracePost N].[line break][HumiliatingDisgracePostReaction N]".
-
-[
-Slideshow thing that was originally part of the video monitor. Should probably find a way to work it back in
-
-A later time based rule:
-	if the currentlyOn of PC Monitor < 2 and PC Monitor is in the location of the player and the number of patrons in the location of the player > 0:
-		if the currentlyOn of PC Monitor is 1:
-			say "[FriendName] continues to watch [one of]the action[or]you[purely at random][one of], mouth wide open[or][or], scowling furiously[or][stopping].";
-			if there is a monster penetrating a body part:
-				say "[first custom style]'[one of]I hope you're ashamed of yourself.'[or]Do you even know this guy's name?!'[or]I can't believe I'm watching this. Disgusting!'[or]You're enjoying this, aren't you?'[or]How long is this going to take?!'[then at random][if the player is not disgraced and the player is able to speak][line break][variable custom style]'[one of]It's not what it looks like!'[or]Please look away!'[or]I don't normally do this!'[or]This isn't real, I'm telling you!'[in random order][end if][roman type][line break][strongHumiliateReflect]";
-			otherwise if the player is prone:
-				let T be NameBimbo;
-				say "[first custom style]'[one of]You're not about to do what I think you are, are you, [OriginalNameBimbo]?'[if T is not OriginalNameBimbo][roman type][line break][BigNameDesc of a random patron in the location of the player] laughs.[line break][speech style of a random patron]'That's not [his of the player] name any more, you have to call [him of the player] [NameBimbo] now!'[line break][end if][or]So should I call you [NameBimbo], or just [']Slut[']?'[or]Stand up and fight back, you pathetic whore!'[stopping][roman type][line break][moderateHumiliateReflect]";
-		otherwise if the number of patrons in the location of the player > 0:
-			now the currentlyOn of PC Monitor is 1;
-			say "[bold type]Suddenly, you hear the sound of your computer making a video call. [roman type]You look up with a start and see that yes indeed, your PC monitor is now wide awake, and with that green calling symbol over a blue background. Moments later, the video call is answered, and the face of your [FriendRole] [FriendName] is staring back at you. She frowns in confusion, slowly turning to disbelief.[line break][first custom style]'[OriginalNameBimbo]? Is that really you?! What are you doing? Did you call me by accident or something?!'[roman type][line break]You instinctively shake your head 'No' with wide eyes, but then change your mind and begin nodding your head 'Yes'.";
-			say "[variable custom style]No... Someone from the real world...! This is so humiliating! My reputation could be ruined if this got out![roman type][line break]";
-			if the player is able to speak:
-				let M be a random patron in the location of the player;
-				say "[variable custom style]'No, you see, well this is a virtual reality game made by Nintendolls, and I think it must be glitching, or this is a very horrible prank, because I didn't try to phone you, that's not even my real computer...'[roman type][line break]Your attempt to explain the insane situation is hindered by a chuckle from [if the number of patrons in the location of the player > 1]one of the half-naked [men of M][otherwise]the half-naked [man of M][end if] behind you.[line break][speech style of M]'Haha, yeah, sure, I'm a figment of your imagination. Tell yourself whatever you have to, Sunshine, but you're not getting paid until [if diaper quest is 1]we've had some kinky fun[otherwise]my imaginary [DickDesc of M] has jizzed its imaginary load[end if].'[roman type][line break]You turn bright red.";
-				humiliate SLIGHT-HUMILIATION;
-	otherwise if the currentlyOn of PC Monitor is 1:
-		now the currentlyOn of PC Monitor is 2;
-		if PC monitor is in the location of the player:
-			if latestCombatFocus is not patron:
-				say "[first custom style]'Oh my god, you really WERE [if diaper quest is 1]doing that[otherwise]having sex[end if] for money?! I'm sorry but there's no way I'm not sending this to EVERYONE. You're such a disgrace.'[roman type][line break][strongHumiliateReflect][FriendName] hangs up the call, and then the PC Monitor goes blank.";
-				choose a blank row in Table of Published Disgraces;
-				now the content entry is the substituted form of "a screenshot of you in a video call, [if diaper quest is 1]engaging in ABDL kink play[otherwise]having sex[end if] with a patron,";
-				now the published entry is the substituted form of "posted to your wall on facepage.com by [FriendName], accompanied by the comment 'WTF explain yourself, [NameBimbo]!'";
-				now the severity entry is 100;
-				now the popularity entry is 0;
-				now the viewsfuzz entry is 0;
-				now the lastwitnessed entry is 0;
-				now the deletedtime entry is 0;
-				now the timestamp entry is 0;
-			otherwise:
-				say "[first custom style]'I don't really understand what's going on here but I also know I don't like it. You'd better have a pretty good fucking explanation the next time I see you, [OriginalNameBimbo].'[roman type][line break][FriendName] hangs up the call, and then the PC Monitor goes blank.";
-]
 
 To beginCall of (C - pc-monitor):
 	let M be the video-caller of C;

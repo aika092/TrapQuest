@@ -147,8 +147,7 @@ To UniqueSquirt (L - a liquid-object) On (C - Face) by (N - a number):
 	let M be N / 2; [50% of the fluid (rounded down) is going to be redirected to headgear & hair]
 	if L is semen:
 		increase times-bukkaked by 1;
-		let LC be a random worn lipstick collar;
-		if LC is clothing and N > 0, increase N by 1; [lipstick collar increases semen volume on face by 1 each time]
+		if lipstick collar is worn and N > 0, increase N by 1; [lipstick collar increases semen volume on face by 1 each time]
 		if N > a random number between 0 and 3, SemenAddictUp 1; [semen addiction might go up]
 		if the semen addiction of the player > 14:
 			say "You shiver with arousal as your face gets a fresh gooey load.";
@@ -233,8 +232,7 @@ To UniqueSquirt (L - a liquid-object) On (C - Breasts) by (N - a number):
 		let M be N;
 		if the player is showing cleavage, now M is (N * HCC) / 8; [the amount blocked by clothing]
 		if L is semen:
-			let LC be a random worn lipstick collar;
-			if LC is clothing, increase N by 1;
+			if lipstick collar is worn, increase N by 1;
 			if M > 0 and HC is unsoaked clothing:
 				decrease N by M; [exposed cleavage]
 				if HC is fluid vulnerable, say "[announced L] lands on your [ShortDesc of HC].";

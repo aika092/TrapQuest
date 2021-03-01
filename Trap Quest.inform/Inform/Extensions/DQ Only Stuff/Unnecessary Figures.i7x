@@ -2,15 +2,6 @@ Unnecessary Figures by DQ Only Stuff begins here.
 
 Part - Monsters
 
-To decide which figure-name is Figure of acolyte 1:
-	decide on figure of small image.
-To decide which figure-name is Figure of acolyte 2:
-	decide on figure of small image.
-To decide which figure-name is Figure of acolyte 3:
-	decide on figure of small image.
-To decide which figure-name is Figure of acolyte 4:
-	decide on figure of small image.
-
 To decide which figure-name is Figure of aeromancer cutscene 7:
 	decide on figure of small image.
 

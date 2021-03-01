@@ -26,11 +26,13 @@ To teleport to (R - a room):
 	repeat with C running through held store things:
 		compute stealing of C;
 		if shopkeeper is interested and the shopkeeper is in the location of the player, increase the stolen-aware of shopkeeper by 1;
-		if vampiress is chain-tethered, end tethering;
+		if vampiress is chain-tethering, end tethering;
+	repeat with T running through on-stage trophies:
+		if T is held, say "[bold type][BigNameDesc of T] [bold type]is ripped from your hands by an invisible force, and in your mind's eye you can see that it has been taken to the 'Trophy Hall'![roman type][line break]";
+		now T is in School31;
 	if the player is glue stuck, compute raw glue escaping a random glue in the location of the player with 1;[this may be causing lag]
 	now the player is in R;
 	zero focus stuff; [Location has changed so we need to empty the location window]
-	if class-time <= 0 and playerRegion is School, now class-time is lessonFrequency * -2; [teleporting = detention]
 	now the location of the player is discovered;
 	update player region;
 	if map images > 0, display entire map.

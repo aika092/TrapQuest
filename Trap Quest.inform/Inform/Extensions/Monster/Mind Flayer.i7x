@@ -94,7 +94,7 @@ A time based rule (this is the mindflayer domination rule):
 			otherwise if (a random number between 1 and 3 < 3) and (the raw oral sex addiction of the player < 10):
 				say "Images of erect penises fill your mind, and you hear a voice in your head![line break][first custom style]'You hunger to taste the prize inside of us.'[roman type][line break]";
 				OralSexAddictUp 1;
-			otherwise if (a random number between 1 and 2 < 3)	and (the humiliation of the player < 40000):
+			otherwise if (a random number between 1 and 2 < 3) and (the humiliation of the player < 40000):
 				say "You see images of yourself mindlessly complying as men use every part of your body, and you hear a voice in your head![line break][first custom style]'A man chooses, an object obeys.'[roman type][line break]You feel less and less like a person!";
 				humiliate 400;
 			otherwise:
@@ -244,5 +244,7 @@ To say DamageReactTired of (M - mind flayer):
 To say DamageReactWeak of (M - mind flayer):
 	say "The creature's expression grows frantic as [he of M] senses [his of M] life might be in jeopardy!".
 
+To compute unique banishment of (M - mind flayer):
+	check tentacle clear.
 
 Mind Flayer ends here.

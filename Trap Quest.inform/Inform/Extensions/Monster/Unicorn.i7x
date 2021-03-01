@@ -50,13 +50,13 @@ To say MonsterComment of (M - unicorn):
 	if diaper quest is 0:
 		if the player is pheromonal:
 			if the bimbo of the player < 7:
-				say "[first custom style][big his of M] perfume is really nice. No, actually it doesn't smell like perfume at all. In fact, its making me feel a bit... strange.";
+				say "[first custom style][big his of M] perfume is really nice. No, actually it doesn't smell like perfume at all. In fact, it's making me feel a bit... strange.";
 			otherwise if the bimbo of the player < 12:
-				say "[variable custom style][big he of M] smells good. Its like the best perfume ever, but... why is it making me horny?";
+				say "[variable custom style][big he of M] smells good. It's like the best perfume ever, but... why is it making me horny?";
 			otherwise:
 				say "[second custom style][big he of M] smells so good I'm actually starting to get turned on. I really have to try that scent... especially inside me.";
 		otherwise if the bimbo of the player < 7:
-			if the player is gendered male, say "[first custom style][one of][if the times-submitted of M > 0]Is that how I'm supposed to end up?[otherwise]I wonder what's up with that bulge in [his of M] panties. Heh, I bet its a dildo or something.[end if][or]Reminds me of a dating sim I used to play at home.[or][big he of M] seems kind of haughty, but I can handle that.[in random order]";
+			if the player is gendered male, say "[first custom style][one of][if the times-submitted of M > 0]Is that how I'm supposed to end up?[otherwise]I wonder what's up with that bulge in [his of M] panties. Heh, I bet it's a dildo or something.[end if][or]Reminds me of a dating sim I used to play at home.[or][big he of M] seems kind of haughty, but I can handle that.[in random order]";
 			otherwise say "[first custom style][one of][if the times-submitted of M > 0]I suppose I know the reason for the panty bulge now...[otherwise][big his of M] panties don't seem to fit right. They're bulging out a bit in the front.[end if][or]That dress is fairly modest by this game's standards.[or][big he of M] seems like [he of M] has a good head on [his of M] shoulders.[in random order]";
 		otherwise if the bimbo of the player < 12:
 			say "[variable custom style][one of][big he of M]'s so beautiful...[or]That dress is so fashionable![or][big he of M]'s really dignified![in random order]";
@@ -102,7 +102,6 @@ Definition: unicorn is uniquely unfriendly: [We can use this to easily specify w
 	decide no.
 
 To compute perception of (M - unicorn):
-	now M is interested;
 	let X be demon lord;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed]![otherwise].[end if]";
 	if player-class matches the text "princess bride":
@@ -165,11 +164,6 @@ To check attack of (M - unicorn):
 	check default attack of M.
 
 Section 1 - Protect and Attack
-
-[To compute (M - a monster) protecting against (X - unicorn):
-	if the player is upright and M is unleashed:
-		say "[BigNameDesc of X][']s horn seems to catch [NameDesc of M][']s eye, and [he of M] stares at it blankly for a moment before suddenly rounding on you.[if M is intelligent][line break][speech style of M]'Get away from [him of X]!'[roman type][line break][end if]";
-		anger M.]
 
 To compute (M - unicorn) protecting against (X - a monster):[if you are having sex, she'll get a bit turned on]
 	if (X is witch or X is gladiator or X is ballooned aeromancer) and breasts is lewdly exposed:
@@ -508,7 +502,7 @@ To penetration dominate (M - unicorn):
 				now player-fucking is DOMINANT-NEUTRAL;
 			say AfterDominationComment 1 of M;
 		otherwise:[The unicorn is actually a huge slut]
-			say "You answer by way of spitting on your [sexual-player-penis], smirking at the angry face [he of M] makes as you slowly push your [SexShaft] into [his of M] [asshole]. [big he of M] flings curses and obscenities at you as you begin to fuck [him of M], stifled moans punctuating every word as [his of M] [DickDesc of M] bobs in time with your thrusts. [big his of M] voice quickly loses all coherence, reducing [him of M] to frustrated spluttering and grunting as you eagerly piston away. It's a little difficult to tell if [he of M]'s actually upset or not, so you decide to see if you can force another reaction out of [him of M]. You plant both hands on the ground, throwing your full weight against [him of M] as you drive every inch of your [sexual-player-penis] into [his of M] ass. [big his of M] eyes cross, and [he of M] grits [his of M] teeth in the midst of the merciless pounding, still trying to hold out. Unfortunately, you won't allow it. Your balls slap the nape of [his of M] ass as you relentlessly drill [his of M] prostate, forcing [him of M] to moan as [his of M] [asshole] starts clenching up around you. [big his of M] mouth slowly twists into a big, submissive 'O,' and [he of M] cries out in pleasure as [his of M] [DickDesc of M] shoots streamers of [semen] across [his of M] belly, chest, and face. Defeated, [he of M] stares up at you [if bukkake fetish is 1]with [his of M] own [semen] glueing one of [his of M] eyes shut [end if]as [he of M] finally accepts the pounding like the horny submissive [he of M] is. You ease off a little, making sure to enjoy yourself nice and fully before slamming your [sexual-player-penis] home, groaning as you pump [his of M] [asshole] full of fresh [semen].";
+			say "You answer by way of spitting on your [sexual-player-penis], smirking at the angry face [he of M] makes as you slowly push your [SexShaft] into [his of M] [asshole]. [big he of M] flings curses and obscenities at you as you begin to fuck [him of M], stifled moans punctuating every word as [his of M] [DickDesc of M] bobs in time with your thrusts. [big his of M] voice quickly loses all coherence, reducing [him of M] to frustrated spluttering and grunting as you eagerly piston away. It's a little difficult to tell if [he of M]'s actually upset or not, so you decide to see if you can force another reaction out of [him of M]. You plant both hands on the ground, throwing your full weight against [him of M] as you drive every inch of your [sexual-player-penis] into [his of M] ass. [big his of M] eyes cross, and [he of M] grits [his of M] teeth in the midst of the merciless pounding, still trying to hold out. Unfortunately, you won't allow it. Your balls slap the nape of [his of M] ass as you relentlessly drill [his of M] prostate, forcing [him of M] to moan as [his of M] [asshole] starts clenching up around you. [big his of M] mouth slowly twists into a big, submissive 'O,' and [he of M] cries out in pleasure as [his of M] [DickDesc of M] shoots streamers of [semen] across [his of M] belly, chest, and face. Defeated, [he of M] stares up at you [if bukkake fetish is 1]with [his of M] own [semen] gluing one of [his of M] eyes shut [end if]as [he of M] finally accepts the pounding like the horny submissive [he of M] is. You ease off a little, making sure to enjoy yourself nice and fully before slamming your [sexual-player-penis] home, groaning as you pump [his of M] [asshole] full of fresh [semen].";
 			orgasm;
 			increase the times-seeded of M by 1;
 			now player-fucking is DOMINANT-SUPER;
@@ -534,7 +528,7 @@ To penetration dominate (M - unicorn):
 			say AfterDominationComment 2 of M;
 	otherwise:
 		say "[line break][speech style of M]'Stop, you can't do that. My arse belongs to the demon lord. Surely [if the player is gendered male and lady fetish is not 1]a fellow sissy[otherwise]someone[end if] like you can understand that.'[roman type][line break]Do you want to fuck [him of M] anyway?";
-		if the player is consenting:
+		unless the player is consenting:
 			Calm M;
 			let H be a random held clothing;
 			say "You release [him of M], watching expectantly as [his of M] horn lights up and shoots off a single, glittering fleck of light. It lands on your [printed name of H].";

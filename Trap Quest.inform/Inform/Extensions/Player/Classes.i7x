@@ -157,7 +157,7 @@ a later time based rule (this is the explaining warrior rule):
 
 This is the schoolgirl class rule:
 	if there is a worn blue scrunchie:
-		now player-class is "schoogirl";
+		now player-class is "schoolgirl";
 		if there is a worn magical dress, now player-class is "magical schoolgirl";
 		let TUC be total used condoms;
 		if there is worn cheerleader outfit or there is worn pom-poms, now player-class is "class bully"; [schoolgirl + cheerleader]
@@ -473,10 +473,10 @@ succubusExplained is initially false.
 a later time based rule (this is the explaining succubus rule):
 	if succubusExplained is false and the class of the player is succubus:
 		now succubusExplained is true;
-		say "[bold type]Now that you have become the 'succubus' class, you can sense that you have the ability to consume souls from enemies you have seduced. You also sense that if you go too long without taking a soul, your power will begin to weaken.[roman type][line break]";
+		say "[bold type]Now that you have become the 'succubus' class, you sense that you have the ability to consume souls from enemies you have seduced. You also sense that if you go too long without taking a soul, your power will begin to weaken.[roman type][line break]";
 	otherwise if succubusExplained is true and the class of the player is not succubus:
 		now succubusExplained is false;
-		say "[bold type]Now that you are no longer the 'succubus' class, you can sense that you can no longer consume souls, and you are no longer dependent on them for power.[roman type][line break]".
+		say "[bold type]Now that you are no longer the 'succubus' class, you sense you can no longer consume souls, and are no longer dependent on them for power.[roman type][line break]".
 
 This is the avatar class rule:
 	if avatar-headpiece is worn:
@@ -569,10 +569,10 @@ brideExplained is initially false.
 a later time based rule (this is the explaining bride rule):
 	if brideExplained is false and the class of the player is bride:
 		now brideExplained is true;
-		say "[bold type]Now that you have become the 'bride' class, bla bla bla.[roman type][line break]";
+		say "[bold type]Now that you have become the 'bride' class, [if bride-consort is the throne]you sense that some friendly [men of shopkeeper] who have met you at least once before will want to propose to you[otherwise]you sense you could be punished if you are unfaithful to [NameDesc of bride-consort] by making another [man of shopkeeper] orgasm[end if].[roman type][line break]";
 	otherwise if brideExplained is true and the class of the player is not bride:
 		now brideExplained is false;
-		say "[bold type]Now that you are no longer the 'bride' class, you are no longer bla bla bla.[roman type][line break]".
+		say "[bold type]Now that you are no longer the 'bride' class, you are no longer [if bride-consort is the throne]likely to be the recipient of marriage proposals[otherwise]required to be faithful to [NameDesc of bride-consort][end if].[if the player is a nympho] What a relief![end if][roman type][line break]".
 
 This is the cultist class rule:
 	if cultist veil is worn:

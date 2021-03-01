@@ -73,7 +73,7 @@ To set up (M - a fairy):
 	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M.
 
-To decide which number is the maxhealth of (M - a fairy):
+To decide which number is the initial maxhealth of (M - a fairy):
 	decide on 1 + the difficulty of M.
 
 To decide which number is the starting difficulty of (M - a fairy):
@@ -124,7 +124,6 @@ Definition: a fairy (called M) is uniquely unfriendly:
 	decide no.
 
 To compute perception of (M - a fairy):
-	now M is interested;
 	say "[BigNameDesc of M] giggles and focuses [his of M] eyes on you[if the player is sluttily dressed], even though [he of M]'s naked [himself of M][end if]. [if M is unfriendly][big he of M] starts flying towards you...[otherwise][big he of M] doesn't seem aggressive right now.[end if]";
 	display interaction of M.
 
@@ -209,6 +208,17 @@ To say AllyDamageFlav of (M - a fairy) on (X - a monster):
 	say "[speech style of M]'[if the pregnancy of the player > 0 and the pregnancy of the player < 3]Don't harm the baby!'[otherwise]Don't hurt my friend!'[end if][roman type][line break][BigNameDesc of M] darts around the [X], firing little bolts of magic.".
 
 Part 4 - Combat
+
+To compute periodic healing of (M - a fairy): [no periodic healing, ever]
+	if the blind-status of M > 0:
+		decrease the blind-status of M by 1;
+		if the blind-status of M is 0 and M is in the location of the player and M is awake, say "[BigNameDesc of M] is no longer blind!";
+	if the paralyse-status of M > 0:
+		decrease the paralyse-status of M by 1;
+		if the paralyse-status of M is 0 and M is in the location of the player and M is awake, say "[BigNameDesc of M] is no longer paralysed!";
+	if the poison-status of M > 0:
+		decrease the poison-status of M by 1;
+		if the poison-status of M is 0 and M is in the location of the player and M is awake, say "[BigNameDesc of M] is no longer poisoned!".
 
 To compute boredom reduction of (M - a fairy):
 	if the boredom of M > 0:
@@ -522,20 +532,20 @@ To compute fairy meddling on (XXX - belly):
 	otherwise cutshow figure of fairy cutscene 3 for current-monster.
 Definition: face (called XXX) is fairy targetable:
 	if the make-up of face < 3, decide yes;
-	if the lips of face < 3 and current-monster is blue-fairy, decide yes;
+	if the lips of face < max lip size and current-monster is blue-fairy, decide yes;
 	decide no.
 
 To compute fairy meddling on (XXX - face):
-	say "[BigNameDesc of current-monster] whizzes over your head, tossing a handful of glittering dust at your face. [big he of current-monster] giggles as it settles on your cheeks, adding a new layer of makeup. [if current-monster is blue-fairy and the lips of face < 2 + artificial enhancements fetish]Your face tingles as your lips grow thicker.[end if]";
+	say "[BigNameDesc of current-monster] whizzes over your head, tossing a handful of glittering dust at your face. [big he of current-monster] giggles as it settles on your cheeks, adding a new layer of makeup. [if current-monster is blue-fairy and the lips of face < max lip size]Your face tingles as your lips grow thicker.[end if]";
 	if current-monster is blue-fairy, LipsUp 1;
 	FaceUp 1.
 
 Definition: hair (called XXX) is fairy targetable:
-	if the raw largeness of hair < 9 and 0 is the number of worn headgear, decide yes;
+	if the raw largeness of hair < max hair length and 0 is the number of worn headgear, decide yes;
 	decide no.
 
 To compute fairy meddling on (XXX - hair):
-	say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your hair as [he of current-monster] does. [big he of current-monster] turns and smirks as you feel your hair grow[if the redness of hair + the blondeness of hair + the brightness of hair < 9 and current-monster is blue-fairy] and tingle as it changes colour[end if].";
+	say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your hair as [he of current-monster] does. [big he of current-monster] turns and smirks as you feel your hair grow[if the redness of hair + the blondeness of hair + the brightness of hair < max hair length and current-monster is blue-fairy] and tingle as it changes colour[end if].";
 	if current-monster is blue-fairy:
 		if the brightness of hair < 3:
 			HairBrightUp 1;
@@ -647,11 +657,11 @@ Section 1 - Greeting
 
 [Fairies use a custom to greet function, since their perception works differently than it does for most monsters, but while we're here, we can use the default functions for special pregnancy themed stuff]
 To compute basic greeting to (M - a fairy):
-	if M is interested and the greet-window of M > 0:
+	if the greet-window of M > 0 or M is friendly:
 		compute conventional response of M;
-	otherwise if M is interested:
+	otherwise:
 		compute vanity response of M;
-	if M is uninterested, now M is interested.
+	now M is interested.
 
 To say FirstResponse of (M - a fairy):
 	say "[speech style of M]'[one of]Hi there!'[or]Hello!'[or]Hi hi!'[or]Hello hello hello!'[or]Hiya!'[or]Nice to meet you!'[or]Hello!'[at random][roman type][line break]";
@@ -738,7 +748,7 @@ To compute teaching of (M - a fairy):
 To say PregnancyAssessment of (M - a fairy):
 	say "[BigNameDesc of M] puts [his of M] face up against your belly, listening intently.";
 	if M is the father:
-		say "[speech style of M]'Hee hee! I'm going to be a daddy!'[roman type][line break]";
+		say "[speech style of M]'Hee hee! I'm going to be a [daddytitle of M]!'[roman type][line break]";
 		alwayscutshow figure of fairy interact 7 for M;
 	otherwise if the father is tentacle monster or the father is lake monster or the father is vines or the father is living belt of sturdiness or the father is creampie pole trap:
 		say "[speech style of M]'Oooh, how kinky!'[roman type] [big he of M] looks up at you and starts giggling uncontrollably. What could that mean?";
@@ -961,7 +971,7 @@ To set up (M - blue-fairy):
 	now the raw difficulty of M is the starting difficulty of M + 2;
 	now the health of M is the maxhealth of M.
 
-To decide which number is the maxhealth of (M - blue-fairy):
+To decide which number is the initial maxhealth of (M - blue-fairy):
 	decide on 5 + (the difficulty of M * 3).
 
 [Of course, 'current-monster' here is the blue-fairy]
@@ -988,6 +998,9 @@ To decide which figure-name is the monster-image of (M - fairy-witch):
 	if diaper quest is 1, decide on the figure of diaper fairy;
 	otherwise decide on the figure of witch fairy.
 
+To display interaction of (M - fairy-witch):
+	do nothing. [No image of pink fairy because it's confusing]
+
 Definition: fairy-witch is woods dwelling:
 	if diaper quest is 0, decide yes;
 	decide no.
@@ -1007,6 +1020,20 @@ To set up (M - fairy-witch):
 
 Definition: fairy-witch is blocker:
 	if it is not airborne, decide yes;
+	decide no.
+
+Definition: fairy-witch is distracted:
+	if fairy-witch is in the location of the player:
+		let LM be the list of monsters in the location of the player;
+		repeat with M running through LM:
+			if M is fairy-witch or M is woman-player or M is not threatening, remove M from LM;
+		if the refractory-period of fairy-witch <= -100 and the number of entries in LM > 0:
+			sort LM in random order;
+			let M be entry 1 in LM;
+			say "[BigNameDesc of fairy-witch] looks at [NameDesc of M] and giggles. [big he of fairy-witch] flies towards [him of M] and throws some fairy dust over [him of M].[line break][speech style of fairy-witch]'HUGEIFY!'[roman type][line break]";
+			DifficultyUp M by 1;
+			now the refractory-period of fairy-witch is 150;
+			decide yes;
 	decide no.
 
 To say MovementBlock of (M - fairy-witch):

@@ -131,7 +131,7 @@ To SexAddictUp (X - a number):
 				[if there is a live thing penetrating asshole, AnalSexAddictUp 1;
 				if there is a live thing penetrating vagina, VaginalSexAddictUp 1;] [this is done in the orgasm function now]
 			otherwise if the raw sex addiction of the player is 20:
-				if the raw intelligence of the player > 1, say "The fog rises as your [if the arousal of the player is minimum arousal]orgasm addled[otherwise]one track minded[end if] brain finds it a little bit more difficult to think about anything except your next orgasm.";
+				if the raw intelligence of the player > 1 and X is 0, say "The fog rises as your [if the arousal of the player is minimum arousal]orgasm addled[otherwise]one track minded[end if] brain finds it a little bit more difficult to think about anything except your next orgasm.";
 				IntDown 1;
 			otherwise:
 				say "[one of]You feel slightly light-headed, but then it passes.[or][or][or][cycling]";
@@ -256,9 +256,12 @@ To AnalSexAddictDown (X - a number):
 	if S > 0, say "You feel [if S > 2]much [otherwise if S is 2]significantly [end if]less [if the anal sex addiction of the player > 6]desperate for[otherwise]interested in[end if] anal sex.".
 
 To SilentlyAnalSexAddictDown (X - a number):
-	while X > 0:
-		decrease X by 1;
-		SilentlyAnalSexAddictDown.
+	if diaper quest is 1:
+		SilentlySexAddictDown X;
+	otherwise:
+		while X > 0:
+			decrease X by 1;
+			SilentlyAnalSexAddictDown.
 
 To SilentlyAnalSexAddictDown:
 	if the raw anal sex addiction of the player > 1, decrease the raw anal sex addiction of the player by 1.
@@ -320,9 +323,12 @@ To VaginalSexAddictDown (X - a number):
 	if S > 0 and (the player is possessing a vagina or TG fetish > 0), say "You feel [if S > 2]much [otherwise if S is 2]significantly [end if]less [if the vaginal sex addiction of the player > 6]desperate for[otherwise]interested in[end if] [if the player is possessing a vagina]vaginal sex[otherwise]being transformed into a woman[end if].".
 
 To SilentlyVaginalSexAddictDown (X - a number):
-	while X > 0:
-		decrease X by 1;
-		SilentlyVaginalSexAddictDown.
+	if diaper quest is 1:
+		SilentlySexAddictDown X;
+	otherwise:
+		while X > 0:
+			decrease X by 1;
+			SilentlyVaginalSexAddictDown.
 
 To SilentlyVaginalSexAddictDown:
 	if the raw vaginal sex addiction of the player > 1, decrease the raw vaginal sex addiction of the player by 1.
@@ -408,9 +414,12 @@ To OralSexAddictDown (X - a number):
 	if S > 0, say "You feel [if S > 2]much [otherwise if S is 2]significantly [end if]less [if the oral sex addiction of the player > 6]orally fixated[otherwise]interested in performing oral sex[end if].".
 
 To SilentlyOralSexAddictDown (X - a number):
-	while X > 0:
-		decrease X by 1;
-		SilentlyOralSexAddictDown.
+	if diaper quest is 1:
+		SilentlySexAddictDown X;
+	otherwise:
+		while X > 0:
+			decrease X by 1;
+			SilentlyOralSexAddictDown.
 
 To SilentlyOralSexAddictDown:
 	if the raw oral sex addiction of the player > 1, decrease the raw oral sex addiction of the player by 1.
@@ -537,9 +546,12 @@ To TitfuckAddictDown (X - a number):
 	if S > 0, say "Your breasts feel [if S > 2]much [otherwise if S is 2]significantly [end if]less [if the titfuck addiction of the player > 6]eager to pleasure [men of shopkeeper][otherwise]interested in being touched[end if].".
 
 To SilentlyTitfuckAddictDown (X - a number):
-	while X > 0:
-		decrease X by 1;
-		SilentlyTitfuckAddictDown.
+	if diaper quest is 1:
+		SilentlySexAddictDown X;
+	otherwise:
+		while X > 0:
+			decrease X by 1;
+			SilentlyTitfuckAddictDown.
 
 To SilentlyTitfuckAddictDown:
 	if the raw titfuck addiction of the player > 1, decrease the raw titfuck addiction of the player by 1.
@@ -612,9 +624,12 @@ To BBCAddictDown (X - a number):
 		otherwise say "You feel your racial preference for white people returning.".
 
 To SilentlyBBCAddictDown (X - a number):
-	while X > 0:
-		decrease X by 1;
-		SilentlyBBCAddictDown.
+	if diaper quest is 1:
+		SilentlySexAddictDown X;
+	otherwise:
+		while X > 0:
+			decrease X by 1;
+			SilentlyBBCAddictDown.
 
 To SilentlyBBCAddictDown:
 	if the raw BBC addiction of the player > 1, decrease the raw BBC addiction of the player by 1.

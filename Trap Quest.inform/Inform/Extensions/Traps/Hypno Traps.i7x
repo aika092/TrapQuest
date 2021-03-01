@@ -12,6 +12,10 @@ This is the spawn initial hotel hypno traps rule:
 		deploy T in R.
 The spawn initial hotel hypno traps rule is listed first in the set up hotel traps rules.
 
+Definition: a hypno trap is fetish appropriate:
+	if diaper quest is 1, decide no;
+	decide yes.
+
 Definition: bbc hypno trap is fetish appropriate:
 	if interracial fetish is 1, decide yes;
 	decide no.

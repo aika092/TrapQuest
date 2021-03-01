@@ -332,7 +332,7 @@ To decide which object is the unique-upgrade-target of (C - rugged-crop-top):
 
 Part 11 - Nipple Holes Crop Top
 
-nipples-crop-top is a crop top. nipples-crop-top is transformation-rare. nipples-crop-top is dense. nipples-crop-top is normally-nipple-exposing. The printed name of nipples-crop-top is "[clothing-title-before]nipple holes crop top[clothing-title-after]". The text-shortcut of nipples-crop-top is "nct". Figure of nipples-crop-top is the file "Items/Clothes/Upper/CropTops/croptop12.jpg". Understand "nipple", "holes" as nipples-crop-top.
+nipples-crop-top is a crop top. nipples-crop-top is transformation-rare. nipples-crop-top is dense. nipples-crop-top is normally-nipple-exposing. The printed name of nipples-crop-top is "[clothing-title-before]nipple holes crop top[clothing-title-after]". The text-shortcut of nipples-crop-top is "nct". Figure of nipples-crop-top is the file "Items/Clothes/Upper/CropTops/croptop12.png". Understand "nipple", "holes" as nipples-crop-top.
 To decide which figure-name is clothing-image of (H - nipples-crop-top):
 	decide on figure of nipples-crop-top.
 
@@ -433,6 +433,51 @@ To decide which number is the adult-influence of (C - bitch top):
 Definition: bitch top is pink themed: decide yes.
 Definition: bitch top is heart themed: decide yes.
 Definition: bitch top is dog themed: decide yes.
+
+Part 16 - Sporty Crop Top
+
+sporty crop top is a crop top. sporty crop top is unique. The printed name of sporty crop top is "[clothing-title-before]sporty crop top[clothing-title-after]". The text-shortcut of sporty crop top is "spct".
+
+Figure of sporty crop top is the file "Items/Clothes/Upper/CropTops/croptop16.png".
+
+To decide which figure-name is clothing-image of (C - sporty crop top):
+	decide on figure of sporty crop top.
+
+To say ClothingDesc of (C - sporty crop top):
+	say "A sporty white crop top that doesn't cover your belly, complete with a V neck in team colours.".
+
+To say ShortDesc of (C - sporty crop top):
+	say "sporty crop top".
+To say MediumDesc of (C - sporty crop top):
+	say "white sporty crop top".
+
+Definition: sporty crop top is exercise themed: decide yes.
+Definition: sporty crop top is white themed: decide yes.
+
+To decide which object is the unique-upgrade-target of (C - sporty crop top):
+	if the number of worn exercise themed wearthing > 0, decide on football-crop-top;
+	decide on nothing.
+
+
+Part 17 - Free Samples Crop Top
+
+free samples crop top is a crop top. free samples crop top is unique. The printed name of free samples crop top is "[clothing-title-before]free samples crop top[clothing-title-after]". The text-shortcut of free samples crop top is "fsct".
+
+Figure of free samples crop top is the file "Items/Clothes/Upper/CropTops/croptop17.png".
+
+To decide which figure-name is clothing-image of (C - free samples crop top):
+	decide on figure of free samples crop top.
+
+To say ClothingDesc of (C - free samples crop top):
+	say "A pink strap top with white frills that doesn't cover your belly, and says 'FREE SAMPLES' on the front in big letters. It's so thin that ".
+
+To say ShortDesc of (C - free samples crop top):
+	say "pink crop top".
+To say MediumDesc of (C - free samples crop top):
+	say "pink 'free samples' crop top".
+
+Definition: free samples crop top is food themed: decide yes.
+Definition: free samples crop top is pink themed: decide yes.
 
 
 Crop Top ends here.

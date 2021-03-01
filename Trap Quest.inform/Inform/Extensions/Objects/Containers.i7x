@@ -357,20 +357,20 @@ To say NewbieMagicSpells:
 
 Section - Pedestals
 
-Carry out taking museum-store clothing:
+Carry out taking museum-store thing:
 	now the noun is museum-stolen;
-	if the location of the player is mansion28 and there is a worn lipstick collar:
+	if the location of the player is mansion28 and lipstick collar is worn and the player is getting unlucky:
 		let V be vampiress;
-		now V is chain-tethered;
 		now the collar-ready of V is -15;[she'll chase a long time]
-		say "The barrier shatters as your hands pull back, and you hear a chilling rattling noise as a brilliant pink chain shoots out of your collar and [if V is in the location of the player]flies into [NameDesc of V]'s hand. [Big he of V] grins as [he of V] pulls the chain[otherwise]curves down the hall. You hear a sultry voice coming from that direction as the chain pulls[end if] taut.[line break][speech style of V]'It would be a shame if you left without paying, now wouldn't it?'[roman type][line break][line break][line break]";
 		unless V is alive:
 			summon V in the mansion;
-			say "[SummoningFlav of V]";
+			say SummoningFlav of V;
 			set up V;
 			now V is interested;
 			now the boredom of V is 0;
-			anger V.
+			anger V;
+		now V is chain-tethering; [this needs to happen AFTER the summon otherwise the chain-tether will be immediately ended as the vampiress is reset during the summon function]
+		say "The barrier shatters as your hands pull back, and you hear a chilling rattling noise as a brilliant pink chain shoots out of your collar and [if V is in the location of the player]flies into [NameDesc of V]'s hand. [Big he of V] grins as [he of V] pulls the chain[otherwise]curves down the hall. You hear a sultry voice coming from that direction as the chain pulls[end if] taut.[line break][speech style of V]'It would be a shame if you left without paying, now wouldn't it?'[roman type][paragraph break]";
 
 A pedestal is a kind of container. A pedestal is usually not openable. A pedestal is closed. A pedestal is not portable. The printed name of a pedestal is "[TQlink of item described][if the item described is erect and diaper lover > 0]nurturing[otherwise][pedestal-lock of the item described][end if] [pedestal-variant of the item described] pedestal[if the paid of the item described > 0] ([paid of the item described])[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of pedestal is "ped". A pedestal has a number called paid. The paid of a pedestal is usually 0. Understand "glass", "dome", "case", "barrier" as pedestal.
 
@@ -567,7 +567,8 @@ To say fullPaymentSatisfy of (P - a pedestal):
 		say "The [pedestal-variant of P] basin fills with [milk], and you hear a deep rumble as the [pedestal-variant of P] carvings in the base fill out impressively, breasts growing and hips widening as the glass dome opens with a distinctive *shunk*.";
 	repeat with X running through things in P:
 		now X is unowned;
-		now P is open.
+		compute autotaking X;
+	now P is open.
 
 To say partialPaymentSatisfy of (P - a pedestal):
 	if P is fertile:

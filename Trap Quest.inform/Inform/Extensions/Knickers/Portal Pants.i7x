@@ -127,15 +127,16 @@ To SilentSquirt (L - a liquid-object) On (C - portal-hotpants) by (N - a number)
 To compute periodic effect of (C - portal-hotpants):
 	increase the charge of C by 1;
 	if the charge of C < 100 and the charge of C > (a random number between 40 and 60) and the player is not in Hotel44 and Hotel44 is not nearby:
-		now the charge of C is 100;
 		let F be asshole;
 		if the player is possessing a vagina and (asshole is actually occupied or a random number between 1 and 2 is 1), now F is vagina;
-		repeat with T running through things penetrating F:
+		repeat with T running through disembodied things penetrating F:
 			say "You feel [NameDesc of T] being removed from your [variable F]!";
 			now T is in Hotel44;
 			dislodge T;
-		say "[bold type]Suddenly, you feel a large [manly-penis] push into your [variable F]![line break][variable custom style][one of]Aaaah! So sudden![or]Oh god, I'm being used right now?![or]That pimp is selling my [F] again![then at random][roman type][line break]";
-		now C is penetrating F;
+		if F is not actually occupied:
+			say "[bold type]Suddenly, you feel something long and hard push into your [variable F]![line break][variable custom style][one of]Aaaah! So sudden![or]Oh god, I'm being used right now?![or]That pimp is selling my [F] again![then at random][roman type][line break]";
+			now C is penetrating F;
+			now the charge of C is 100;
 	compute school periodic effect of C.
 
 To compute school periodic effect of (C - portal-hotpants):
@@ -151,13 +152,15 @@ To compute school periodic effect of (C - portal-hotpants):
 			now the sex-length of M is 0;
 			now M is not interested; [to prevent orgasm satisfy function]
 			compute climax of M in F;
-			say "You feel the [manly-penis] being quickly pulled out of your [variable F], leaving you empty once again.";
+			say "You feel the [DickDesc of M] being quickly pulled out of your [variable F], leaving you empty once again.";
 			now the charge of C is 0;
 			if pimp is not normally ally, FavourUp pimp;
 		otherwise:
 			now C is penetrating F;
 			say StealthPortalSexFlav;
-		dislodge M.
+		dislodge M;
+	otherwise if the charge of C > 100:
+		now the charge of C is 0.
 
 Definition: portal-hotpants is pants pee refusal inducing:
 	if the player is proud:

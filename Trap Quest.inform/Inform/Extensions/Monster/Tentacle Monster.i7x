@@ -180,15 +180,15 @@ To say MediumDesc of (M - a tentacle monster):
 
 To say MonsterDesc of (M - a tentacle monster):
 	if M is newborn:
-		say "[one of]A mass of [TentacleColour of the M] tentacles, about the size of a [if extreme proportions fetish is 1]beachball[otherwise]basketball[end if]. Each 'arm' is about as thick around as a normal human penis, and looks just like one too. [or]A [if extreme proportions fetish is 1]beach[otherwise]basket[end if]ball-sized heap of [TentacleColour of the M] tentacles. Each one is looks almost identical to a normal human penis in shape and thickness, although alien in colour. [in random order]";
+		say "[one of]A mass of [TentacleColour of M] tentacles, about the size of a [if extreme proportions fetish is 1]beachball[otherwise]basketball[end if]. Each 'arm' is about as thick around as a normal human penis, and looks just like one too. [or]A [if extreme proportions fetish is 1]beach[otherwise]basket[end if]ball-sized heap of [TentacleColour of M] tentacles. Each one is looks almost identical to a normal human penis in shape and thickness, although alien in colour. [in random order]";
 		say "[if the evolved of the M is 3]A single eye is visible inside the main mass, no larger than a plum and as black as the void itself.[otherwise if M is asleep]A single eye no larger than a plum rests on the ground before it, attached to the main body by a fleshy stalk. It's closed, and the tentacles surrounding it are completely motionless.[otherwise]A single eye no larger than a plum is raised above the main body on a fleshy stalk, scanning the surrounding objects and area with a keen, lucid curiosity.[end if]";
 	otherwise if M is large:
-		say "[one of]A large mass of [TentacleColour of the M] tentacles, about the size of a person. Each of its arms is as thick around as a soda bottle and ends in a soft, [cockhead of M]. [or]A person-sized mass of [TentacleColour of the M] tentacles. Each one is about as thick around as a soda bottle and ends in a shiny, [cockhead of M]. [in random order]";
+		say "[one of]A large mass of [TentacleColour of M] tentacles, about the size of a person. Each of its arms is as thick around as a soda bottle and ends in a soft, [cockhead of M]. [or]A person-sized mass of [TentacleColour of M] tentacles. Each one is about as thick around as a soda bottle and ends in a shiny, [cockhead of M]. [in random order]";
 		say "[if the evolved of the M is 3]At least a dozen eyes are visible inside the main mass, each about the size of a grapefruit and as black as the void itself.[otherwise if M is asleep]A single eye the size of a grapefruit is resting on the ground before it, connected to the main body by a fleshy stalk. It is closed, and the surrounding tentacles are completely motionless.[otherwise]A single eye the size of a grapefruit is raised above the main body on a fleshy stalk, scanning the surrounding objects and area with visible intelligence.[end if]";
 	otherwise:
-		say "[one of]A massive heap of [TentacleColour of the M] tentacles, big enough to dwarf most humans and even some cars. Each arm is as about as thick around as *your* forearm and ends in a soft, [cockhead of M]. [or]A car-sized mass of [TentacleColour of the M] tentacles. Each one, about as thick around as your forearm, has a natural sheen and a lightly coloured [cockhead of M]. [in random order]";
+		say "[one of]A massive heap of [TentacleColour of M] tentacles, big enough to dwarf most humans and even some cars. Each arm is as about as thick around as *your* forearm and ends in a soft, [cockhead of M]. [or]A car-sized mass of [TentacleColour of M] tentacles. Each one, about as thick around as your forearm, has a natural sheen and a lightly coloured [cockhead of M]. [in random order]";
 		say "[if the evolved of the M is 3]Dozens of eyes are visible inside the main mass, each about the size of a softball and as black as the void itself.[otherwise if M is asleep]It is completely motionless, and its single, softball sized eye is closed and resting on the ground before it.[otherwise]A single eye about the size of a softball is raised above the main body on a fleshy stalk, scanning the surrounding objects and area with an unnervingly human measure of intelligence.[end if]";
-	say "[if the free-tentacles of M is 0]All [the max-tentacles of M] its longer tentacles are holding onto your body[otherwise if the free-tentacles of M is 1]All but one of its longer tentacles are holding onto your body[otherwise if the free-tentacles of M is the max-tentacles of M]It has [the max-tentacles of M] longer tentacles, which seem well suited for grabbing.[otherwise]It is holding you with [the max-tentacles of M - the free-tentacles of M] of its longer tentacles, with [the free-tentacles of M] still undulating about above it.[end if]".
+	say "[if the free-tentacles of M is 0]All [the max-tentacles of M] [his of M] longer tentacles are holding onto your body[otherwise if the free-tentacles of M is 1]All but one of its longer tentacles are holding onto your body[otherwise if the free-tentacles of M is the max-tentacles of M]It has [the max-tentacles of M] longer tentacles, which seem well suited for grabbing.[otherwise][big he of M] is holding you with [the max-tentacles of M - the free-tentacles of M] of [his of M] longer tentacles, with [the free-tentacles of M] still undulating about above it.[end if]".
 
 To say cockhead of (M - a tentacle monster):
 	say "[one of]mushroom-like[or]penis-like[or]bell-shaped[or]mushroom-shaped[or]phallic[in random order] [one of]head[or]tip[at random]".
@@ -198,11 +198,11 @@ To say MonsterComment of (M - a tentacle monster):
 		if the bimbo of the player < 7:
 			if the player is gendered male:
 				if M is penetrating a body part or M is wrangling a body part:
-					say "[line break][first custom style]'[if M is newborn]Its weak, but its arms look like dicks! I have to shake this thing off![otherwise if M is large]How is it so much stronger?! Let go of me, you stupid alien![otherwise]Our arms are the same size, so why is it so strong?! How am I supposed to get away?[end if]";
+					say "[line break][first custom style]'[if M is newborn][big he of M]'s weak, but [his of M] arms look like dicks! I have to shake this thing off![otherwise if M is large]How is [he of M] so much stronger?! Let go of me, you stupid alien![otherwise]Our arms are the same size, so why is it so strong?! How am I supposed to get away?[end if]";
 				otherwise:
-					if M is newborn, say "[line break][first custom style][one of]I don't want to get grabbed by anything that looks like a dick.[or]Freaky, but its not like I can't beat it. It doesn't even have two eyes.[in random order]";
-					if M is large, say "[line break][second custom style][one of]Its dicks actually got bigger after fucking me? That's so fucking broken, dude...[or]Its a horny alien that wants to fuck me even though I'm clearly not a chick. I-I can still fight it though. It isn't that much stronger now, right?[in random order]";
-					if M is massive, say "[line break][second custom style][one of]No big deal, its just bigger than I am. N-no big deal...[or]Why doesn't it understand that I'm not a chick? My [player-penis] may be smaller now, but I... I-I'm not a chick, dude! UGH!'[in random order]";
+					if M is newborn, say "[line break][first custom style][one of]I don't want to get grabbed by anything that looks like a dick.[or]Freaky, but it's not like I can't beat [him of M]. [big he of M] doesn't even have two eyes.[in random order]";
+					if M is large, say "[line break][second custom style][one of][big his of M] dicks actually got bigger after fucking me? That's so fucking broken, dude...[or][big he of M]'s a horny alien that wants to fuck me even though I'm clearly not a chick. I-I can still fight it though. It isn't that much stronger now, right?[in random order]";
+					if M is massive, say "[line break][second custom style][one of]No big deal, it's just bigger than I am. N-no big deal...[or]Why doesn't it understand that I'm not a chick? My [player-penis] may be smaller now, but I... I-I'm not a chick, dude! UGH!'[in random order]";
 			otherwise:
 				if M is penetrating a body part or M is wrangling a body part:
 					say "[line break][first custom style]'[if M is newborn]This hold isn't strong, but I won't let this hideous thing touch me any longer![otherwise if M is large]Since when is it as strong as I am?! Shit! I have to escape![otherwise]I-It doesn't have any weak tentacles! How am I supposed to get away?'[end if]";
@@ -212,25 +212,25 @@ To say MonsterComment of (M - a tentacle monster):
 					if M is massive, say "[line break][second custom style][one of]On the bright side, it can't get any worse. That's as big as those arms as going to get. I-I have to believe...[or]It violated me with its tentacles. More than once. So why is it never satisfied?!'[in random order]";
 		otherwise if the bimbo of the player < 12:
 			if M is penetrating a body part or M is wrangling a body part:
-				say "[line break][first custom style]'[if M is newborn]It isn't very strong, but won't I hurt it if I resist too hard?[otherwise if M is large]It's already so strong, and it's still making such an effort to fuck me. I have to admit its a little flattering.[otherwise]All these [manly-penis]s, and they all want a piece of me. Maybe I should take it as a compliment.'[end if]";
+				say "[line break][first custom style]'[if M is newborn]It isn't very strong, but won't I hurt it if I resist too hard?[otherwise if M is large]It's already so strong, and it's still making such an effort to fuck me. I have to admit it's a little flattering.[otherwise]All these [manly-penis]s, and they all want a piece of me. Maybe I should take it as a compliment.'[end if]";
 			otherwise:
-				if M is newborn, say "[line break][first custom style][one of]Every arm is a [manly-penis], so if you think about it, even touching it is like foreplay.[or]Its cute, in a really freaky way.[in random order]";
+				if M is newborn, say "[line break][first custom style][one of]Every arm is a [manly-penis], so if you think about it, even touching it is like foreplay.[or]It's cute, in a really freaky way.[in random order]";
 				if M is large, say "[line break][second custom style][one of]Its [manly-penis]s got bigger just by fucking me. Do I really feel that good?[or]It seems like it still has some growing to do, but if I want to see it, I'll have to let it fuck me...[in random order]";
-				if M is massive, say "[line break][second custom style][one of]This must be as big as its going to get. Not really sure why that makes me feel so disappointed.[or]No matter what, it seems to keep coming back for more. I guess fucking me must feel really good or something...'[in random order]";
+				if M is massive, say "[line break][second custom style][one of]This must be as big as it's going to get. Not really sure why that makes me feel so disappointed.[or]No matter what, it seems to keep coming back for more. I guess fucking me must feel really good or something...'[in random order]";
 		otherwise:
 			if M is penetrating a body part or M is wrangling a body part:
-				say "[line break][first custom style]'[if M is newborn]Its not very strong, so I'll only pretend to struggle.[otherwise if M is large]Its already so strong, and it's still making such an effort to fuck me. Gotta love a determined man... or alien. Whatever, I'm horny.[otherwise]All these big [manly-penis]s, and they all want a piece of me. Is this heaven?'[end if]";
+				say "[line break][first custom style]'[if M is newborn]It's not very strong, so I'll only pretend to struggle.[otherwise if M is large]It's already so strong, and it's still making such an effort to fuck me. Gotta love a determined man... or alien. Whatever, I'm horny.[otherwise]All these big [manly-penis]s, and they all want a piece of me. Is this heaven?'[end if]";
 			otherwise:
-				if M is newborn, say "[line break][first custom style][one of]Every arm is a [manly-penis], so if you think about it, its like I'm jacking [him of M] off every time I touch it![or]How cute![in random order]";
+				if M is newborn, say "[line break][first custom style][one of]Every arm is a [manly-penis], so if you think about it, it's like I'm jacking [him of M] off every time I touch it![or]How cute![in random order]";
 				if M is large, say "[line break][second custom style][one of]Its [manly-penis]s got bigger just by fucking me. I guess I should make that happen regularly...[or]It seems like it still has some growing to do, and I know exactly what to do to help out![in random order]";
 				if M is massive, say "[line break][second custom style][one of]So this is as big as it gets? Kind of a let down..[or]No matter what, it seems to keep coming back for more. How romantic!'[in random order]";
 		say "[roman type][line break]";
 	otherwise if M is newborn:[TODO: magical girl]
-		say "[if the bimbo of the player < 7][line break][first custom style][one of]That thing, it... it really came out of me?[or][or]That thing is disgusting. I can't believe it came out of me.[or]Just as disgusting as its father was. I should kill it.[in random order][otherwise if the bimbo of the player < 12][line break][variable custom style][one of]That really came out of me. Wow.[or]Is it weird that I feel kind of... proud of it?[or]It's kind of cute.[or]It's disgusting, but in an endearing way.[or]If I don't kill it, it might want to breed with me. But it just looks so helpless...[in random order][otherwise][line break][second custom style][one of][big he of the M]'s adorable![or]How cute![or]I love my baby![or]Mmm, [he of the M] looks hor~ny![or]I want to take *good care* of my baby boy.[or][big he of the M] looks like [he of the M] wants to breed with me. Anything for my baby boy![in random order][end if][roman type][line break]";
+		say "[if the bimbo of the player < 7][line break][first custom style][one of]That thing, it... it really came out of me?[or][or]That thing is disgusting. I can't believe it came out of me.[or]Just as disgusting as its father was. I should kill it.[in random order][otherwise if the bimbo of the player < 12][line break][variable custom style][one of]That really came out of me. Wow.[or]Is it weird that I feel kind of... proud of it?[or]It's kind of cute.[or]It's disgusting, but in an endearing way.[or]If I don't kill it, it might want to breed with me. But it just looks so helpless...[in random order][otherwise][line break][second custom style][one of][big he of M]'s adorable![or]How cute![or]I love my baby![or]Mmm, [he of M] looks hor~ny![or]I want to take *good care* of my baby boy.[or][big he of M] looks like [he of M] wants to breed with me. Anything for my baby boy![in random order][end if][roman type][line break]";
 	otherwise if M is large:
-		say "[if the bimbo of the player < 8][line break][first custom style][one of]It's growing! I have to deal with it now or I may never get another chance![or]I can't believe what this thing did to me. I have to destroy it.[or]It fucked me... even though I'm its mother.[or]I can't be responsible for something this evil.[in random order][otherwise if the bimbo of the player < 13][line break][variable custom style][one of]Seeing him grow like that was actually a little fulfilling.[or][big he of the M] had sex with me even though I'm [his of the M] mother.[or][big he of the M]'s getting big. Could [he of the M] grow like that again?[or]I probably could have fought more, but... [he of the M] was just so cute.[or][big his of the M] tentacles are getting big. Thick. Juicy. Oh no...[in random order][otherwise][line break][second custom style][one of][big he of the M] had a growth spurt![or]I let him breed me like any good mommy would![or][big he of the M]'s growing up so fast. Especially where it counts...[or]I want to let him breed me again. [big he of the M] might grow even bigger![or]Who wants to fuck mommy? You do! You do![or][big he of the M]'s going to grow up big and horny, just like [his of the M] daddy.[then at random][end if][roman type][line break]";
+		say "[if the bimbo of the player < 8][line break][first custom style][one of]It's growing! I have to deal with it now or I may never get another chance![or]I can't believe what this thing did to me. I have to destroy it.[or]It fucked me... even though I'm its mother.[or]I can't be responsible for something this evil.[in random order][otherwise if the bimbo of the player < 13][line break][variable custom style][one of]Seeing him grow like that was actually a little fulfilling.[or][big he of M] had sex with me even though I'm [his of M] mother.[or][big he of M]'s getting big. Could [he of M] grow like that again?[or]I probably could have fought more, but... [he of M] was just so cute.[or][big his of M] tentacles are getting big. Thick. Juicy. Oh no...[in random order][otherwise][line break][second custom style][one of][big he of M] had a growth spurt![or]I let him breed me like any good mommy would![or][big he of M]'s growing up so fast. Especially where it counts...[or]I want to let him breed me again. [big he of M] might grow even bigger![or]Who wants to fuck mommy? You do! You do![or][big he of M]'s going to grow up big and horny, just like [his of M] daddy.[then at random][end if][roman type][line break]";
 	otherwise:
-		say "[if the bimbo of the player < 9][line break][variable custom style][one of]It keeps overpowering me like it's nothing. I have to get out of here.[or]Those tentacles are enormous! I'm not giving it another chance to put them in me![or]How could I let it get so big? Now I'll never get rid of it.[or]It keeps trying to breed with me. I'm your mother you disgusting beast![in random order][otherwise if the bimbo of the player < 14][variable custom style][one of][big he of the M]'s so strong now. There's no way I can fight him, let alone keep him from fucking me.[or][big he of the M]'s all grown-up now. What's this wistful feeling?[or]I'm so proud. I wish [he of the M] were more obedient, but still...[or][big his of the M] tentacles are so big. I don't think he'll grow much more than that.[in random order][otherwise][line break][second custom style][one of]Look who grew up all big and hung![or]I want to make another.[or]They grow up so fast. And big too, teehee![or][big he of the M] knows just how to please [his of the M] mommy.[or]Those [manly-penis]s are so big! [big he of the M] gets it from [his of the M] daddy.[or]I wonder when [he of the M]'ll be ready to breed me again?[in random order][end if][roman type][line break]".
+		say "[if the bimbo of the player < 9][line break][variable custom style][one of]It keeps overpowering me like it's nothing. I have to get out of here.[or]Those tentacles are enormous! I'm not giving it another chance to put them in me![or]How could I let it get so big? Now I'll never get rid of it.[or]It keeps trying to breed with me. I'm your mother you disgusting beast![in random order][otherwise if the bimbo of the player < 14][variable custom style][one of][big he of M]'s so strong now. There's no way I can fight him, let alone keep him from fucking me.[or][big he of M]'s all grown-up now. What's this wistful feeling?[or]I'm so proud. I wish [he of M] were more obedient, but still...[or][big his of M] tentacles are so big. I don't think he'll grow much more than that.[in random order][otherwise][line break][second custom style][one of]Look who grew up all big and hung![or]I want to make another.[or]They grow up so fast. And big too, teehee![or][big he of M] knows just how to please [his of M] mommy.[or]Those [manly-penis]s are so big! [big he of M] gets it from [his of M] daddy.[or]I wonder when [he of M]'ll be ready to breed me again?[in random order][end if][roman type][line break]".
 
 To say TentacleColour of (M - a tentacle monster):
 	say "[if the evolved of M is 3]pure white[otherwise if M is not player-brood]grey[otherwise]dark red[end if]".
@@ -312,7 +312,7 @@ Definition: a tentacle monster is butt slut immune: decide yes.
 To say SummoningFlav of (M - a tentacle monster):
 	let S be a random tentacle-breeder in the location of the player;
 	distract M;
-	if inhuman pregnancy is 2, say "[bold type]You [if S is player-breeder]watch as your previous self gives birth to a grey mass of tentacles with a loud squelch. The newborn tentacle monster looks around, blinking with a single giant eye as it takes in its new surroundings[otherwise if S is tentacle-breeder]watch as the girl stuck to the wall gives birth to a grey mass of tentacles with a loud squelch. The newborn tentacle monster looks around, blinking with a single giant eye as it takes in its new surroundings[otherwise]hear a loud squelch and mindless moaning coming from nearby[end if]![roman type][line break]";
+	if inhuman pregnancy >= 2, say "[bold type]You [if S is player-breeder]watch as your previous self gives birth to a grey mass of tentacles with a loud squelch. The newborn tentacle monster looks around, blinking with a single giant eye as it takes in its new surroundings[otherwise if S is tentacle-breeder]watch as the girl stuck to the wall gives birth to a grey mass of tentacles with a loud squelch. The newborn tentacle monster looks around, blinking with a single giant eye as it takes in its new surroundings[otherwise]hear a loud squelch and mindless moaning coming from nearby[end if]![roman type][line break]";
 	otherwise say "[bold type]You [if S is tentacle-breeder]watch as the hole in the flesh in the wall widens, and a ball of grey flesh drops out to the ground. The newly spawned tentacle monster looks at you with its single eye before scuttling off into the distance[otherwise]hear a loud squelch coming from nearby[end if]![roman type][line break]";
 	compute mandatory room leaving of M.
 
@@ -349,7 +349,7 @@ To compute perception of (M - a tentacle monster):
 			say "[big he of M] doesn't seem to be aggressive.";
 			calm M;
 		otherwise:
-			say "[big he of M] rears up with [his of M] tentacles[if M is newborn], coming right for you[otherwise if inhuman pregnancy is 2], looking like [he of M] wants to breed[otherwise], clearly selecting you as [his of M] next target[end if]!";
+			say "[big he of M] rears up with [his of M] tentacles[if M is newborn], coming right for you[otherwise if inhuman pregnancy >= 2], looking like [he of M] wants to breed[otherwise], clearly selecting you as [his of M] next target[end if]!";
 			anger M.
 
 To compute (M - a monster) stomping (N - a tentacle monster):
@@ -412,14 +412,6 @@ To compute grabbing attack of (M - a tentacle monster):
 			now M is wrangling thighs;
 		otherwise:
 			say "[BigNameDesc of M] [if the leg-count of M > 1]uses another tentacle to force your legs together and tries binding you with another tentacle, but you're quick enough to avoid it.[otherwise if the leg-count of M > 0]tries grabbing your other ankle, but you dodge the tentacle![otherwise]tries to grab one of your ankles with its tentacles, but you avoid it![end if]".
-
-This is the player can't attack in wrist tentacles rule:
-	let M be a random live thing wrangling arms;
-	if M is tentacle monster and the arm-count of M > 1:
-		if the arm-count of M > 2, say "[BigFuckerDesc of M] has your arms immobilised with [his of M] tentacles. You'll have to free yourself first!";
-		otherwise say "[BigFuckerDesc of M] has both of your wrists gripped by [his of M] tentacles. You'll have to free yourself first!";
-		rule fails.
-The player can't attack in wrist tentacles rule is listed in the ability to slap rules.
 
 To compute wrangled resisting of (T - tentacle monster):
 	let S be the strength of the player;
@@ -671,19 +663,19 @@ This is the tentacle monster climaxes rule:
 			compute condom filling of M;
 		now M is unwrapped;
 	if M is not massive:
-		DifficultyUp M by 3;
+		SilentlyDifficultyUp M by 3;
 	say "[BigNameDesc of M] [one of]seems to stop[or]once again stops[stopping] moving as its tentacles rest peacefully on the ground and its single eye closes.[unless M is massive][line break][one of]It appears to have entered some kind of dormant state. You watch with silent awe as it[or]The monster[stopping] smoothly but rapidly grows in size until its main body is [end if][if M is newborn]as big as yours, and its many tentacles have thickened to the width of a small bottle.[otherwise if M is large]as big as a car, and its multitude of tentacles have thickened to the width of your forearm.[otherwise][one of]Much to your relief it doesn't seem to grow any larger.[or][stopping][end if]";
-	if magical-maid-outfit is worn and (M is not massive or (inhuman pregnancy is 2 and the player is female)):
+	if magical-maid-outfit is worn and (M is not massive or (inhuman pregnancy >= 2 and the player is female)):
 		SizeRankUp M;
 		say "[bold type]Just as you are about to begin to crawl away, you feel some magic drain from your [magical-maid-outfit], and it wakes up again![line break][variable custom style][one of]What?![or]I can't... I'll break...[stopping][roman type][line break]";
 		MagicPowerDown 1;
-		if inhuman pregnancy is 2 and the player is female:
+		if inhuman pregnancy >= 2 and the player is female:
 			say "With renewed vigour it leaps into action once again, and within seconds is filling all of your holes and molesting you anew. Before you know it, a second barrage of [semen] is coating you and filling you to the brim. More magic ebbs and flows from [NameDesc of magical-maid-outfit] into [NameDesc of M], enabling [him of M] to recommence fucking you over and over and over again, pumping you full of its potent [semen] until eventually you white out.";
 			now delayed fainting is 1;
 			now the fainting reason of the player is 18;
 			bore M;
 			if M is not massive:
-				DifficultyUp M by 3;
+				SilentlyDifficultyUp M by 3;
 				SizeRankUp M;
 		otherwise:
 			dislodge M;
@@ -950,36 +942,16 @@ Definition: a tentacle monster is auto-banish-loot-dropping:
 	decide no. [Will it automatically drop jewellery when it is banished in this manner?]
 
 To compute unique banishment of (M - a tentacle monster):
-	if M is newborn:
-		MagicPowerUp 1;
-	otherwise if M is large:
-		MagicPowerUp 2;
-	otherwise if M is massive:
-		MagicPowerUp 3;
+	if M is massive, MagicPowerUp 2;
+	otherwise MagicPowerUp 1;
 	say "[one of][variable custom style]Wow! This is what happens when I defeat tentacle monsters?[roman type][line break][or][stopping]";
-	if the total magic power of the player >= a random number between 6 and 12:
-		if the class of the player is "virgin warrior" and virgin magical girl outfit is off-stage:
-			class summon virgin magical girl outfit;
-		otherwise if heart hairpin is off-stage:
-			if the class of the player is "schoolgirl" and the number of worn scrunchies is 1:
-				let S be a random worn scrunchie;
-				say "Your [S] explodes in a shower of cartoon lovehearts!";
-				destroy S;
-			if heart hairpin is actually summonable:
-				say "[bold type]Suddenly, you feel a small weight in your hair. A hair clip in the shape of a heart has appeared! You feel a sudden rush, which almost takes you to your knees.[roman type][line break]";
-				summon heart hairpin cursed;
-				if the player is male and (fast tg is 3 or (the size of penis <= min penis size and tg fetish > 0)):
-					say "Your whole body suddenly goes numb, then is filled with an almost electric tingle. You feel terrible wrenching from your insides that you're sure should hurt, but you just don't seem to be able to feel much of anything right now. The tingling comes to a focus in your crotch, filling you with a sense of terrible foreboding. [if the player is possessing a penis]As feeling comes back to you, you reach down and can immediately tell you're missing something kind of notable: your [player-penis]![otherwise]As feeling comes back to you, you reach down with a sense of foreboding.[end if] It seems whatever magic made that hair clip appear has decided you'd be better off as a girl...";
-					SexChange the player;
-			if the class of the player is "silicone queen": [has to be exactly this class and not any cross-class]
-				let C be a random worn overdress;
-				if C is a thing and the number of worn underdress is 0, transform C into anime superheroine top;
 	if the evolved of M is 3 and there is an off-stage ghostly tentacle and playerRegion is Mansion:
 		let T be a random off-stage ghostly tentacle;
 		set up T;
 		now T is in the location of the player;
 		say "A translucent tentacle floats up from its lifeless body, unfurling to reveal an underside full of giant, octopus-like suckers.";
-		anger T.
+		anger T;
+	check tentacle clear.
 
 To standard loot (M - a tentacle monster):
 	let X be a random off-stage plentiful ring;

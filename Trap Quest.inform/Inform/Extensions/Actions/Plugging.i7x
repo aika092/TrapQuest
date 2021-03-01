@@ -85,6 +85,7 @@ Check unplugging something:
 	if the latex-transformation of the player is 8, say "You don't have the manual dexterity to do that!" instead;
 	if the noun is penetrating asshole and the player is ass protected, say "You need to get your [random bottom level ass protection clothing] out of the way first." instead;
 	if (the noun is penetrating vagina or the noun is penetrating penis) and the player is pussy protected, say "You need to get your [random bottom level protection clothing] out of the way first." instead;
+	if the noun is glued, try tearing off the noun instead;
 	if diaper quest is 0 and the noun is plug and the noun is penetrating a fuckhole and the girth of the noun > the insertableGirthAcceptance of a random fuckhole penetrated by the noun + 4:
 		say "You push with your [random fuckhole penetrated by the noun][']s muscles and [if the noun is anal beads]pull on the cord of [NameDesc of noun], but they're just so big that they[otherwise]pull on the base of [NameDesc of noun], but the plug's bulb is so big that it[end if] just won't come out!" instead.
 Carry out unplugging something:

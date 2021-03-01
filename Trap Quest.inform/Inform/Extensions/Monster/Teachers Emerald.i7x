@@ -5,7 +5,6 @@ To say MediumDesc of (M - an emerald-teacher):
 
 Part - Hannah
 
-teacher-hannah is an emerald-teacher.
 
 Definition: teacher-hannah is motionless-when-defeated: decide yes.
 
@@ -55,25 +54,30 @@ To compute teaching of (L - pain-lesson):
 	let M be the lesson-teacher of L;
 	say "[speech style of M]'Brats. That's what you all are - rebellious, mischievous minxes, every last one of you.'[roman type][line break][BigNameDesc of M] doesn't even look at the assembled class as [he of M] paces back and forth at the front, already ranting.[line break][speech style of M]'You think you're all so clever, so [if diaper quest is 1]grown up[otherwise]elegant[end if] and independent, but I know that deep inside each of you is a whimpering, submissive [if diaper quest is 1]little babygirl[otherwise]sex addict[end if] who is more than willing to obey any and all orders given to her. It's my job to force those inner submissive tendencies out into the open.'[roman type][line break][big he of M] pauses for dramatic effect.[line break][speech style of M]'So, what is the best way to turn a bold bitch into a wimpy wench? ";
 	if the player is wrist bound or the player is ankle bound or portal gag is worn:
-		if wrist collar bar is worn or portal gag is worn:
-			let W be wrist collar bar;
-			if W is not worn, now W is portal gag;
-			say "Well [NameBimbo] found that out [if wrist collar bar is worn]last time we all gathered for this lesson[otherwise]recently[end if], didn't [he of the player]? And I'm glad to see that [he of the player] is still wearing [his of the player] bondage as instructed.'[roman type][line break][if W is locked][BigNameDesc of M] produces a key and slots it into the lock, allowing you to remove the [ShortDesc of W] whenever you like.[end if]";
-			now W is unlocked;
-			if portal-pants is worn, now portal-pants is unlocked;
-			say "[speech style of M]'I guess it's only fair that I keep my end of the bargain and promote you, then.'[roman type][line break]";
+		if class-time > 0:
+			say "Well, [NameBimbo] is in the process of finding out, but [he of the player] hasn't been wearing [his of the player] bondage for long enough yet. So, we're going to adjourn this class until [he of the player] has [bold type]spent some more time out of school[speech style of M] getting used to [his of the player] bondage. Until then, class is dismissed.'[roman type][line break]";
+			allocate 6 seconds;
 		otherwise:
-			say "Well [NameBimbo] here already knows how to show the world that [he of the player][']s a wimp. [big he of the player] is walking around with [his of the player] [if the player is wrist bound]wrists[end if][if the player is wrist bound and the player is ankle bound] and [end if][if the player is ankle bound]ankles[end if] bound! Bravo! I think it's only fair that I promote you for your exemplary dedication to servitude.";
-		now armband is ruby;
-		say "You watch as the ID card inside your armband transforms!";
-		now the armband-title of armband is "";
-		now the armband-print of armband is "obedient submissive";
-		say ClothingDesc of armband;
-		say "[speech style of M]'Well, off you trot then!'[roman type][line break][BigNameDesc of M] ushers you out of the door.";
-		try going south;
-		say "[variable custom style]Boy, that sure went well![roman type][line break]";
-		allocate 12 seconds;
-		update students; [an important line which makes boring old students disappear and new cool ones appear]
+			if wrist collar bar is worn or portal gag is worn:
+				let W be wrist collar bar;
+				if W is not worn, now W is portal gag;
+				say "Well [NameBimbo] found that out [if wrist collar bar is worn]last time we all gathered for this lesson[otherwise]recently[end if], didn't [he of the player]? And I'm glad to see that [he of the player] is still wearing [his of the player] bondage as instructed.'[roman type][line break][if W is locked][BigNameDesc of M] produces a key and slots it into the lock, allowing you to remove the [ShortDesc of W] whenever you like.[end if]";
+				now W is unlocked;
+				if portal-pants is worn, now portal-pants is unlocked;
+				say "[speech style of M]'I guess it's only fair that I keep my end of the bargain and promote you, then.'[roman type][line break]";
+			otherwise:
+				say "Well [NameBimbo] here already knows how to show the world that [he of the player][']s a wimp. [big he of the player] is walking around with [his of the player] [if the player is wrist bound]wrists[end if][if the player is wrist bound and the player is ankle bound] and [end if][if the player is ankle bound]ankles[end if] bound! Bravo! I think it's only fair that I promote you for your exemplary dedication to servitude.";
+			if armband is ruby, now armband is pink diamond;
+			otherwise now armband is ruby;
+			say "You watch as the ID card inside your armband transforms!";
+			now the armband-title of armband is "";
+			now the armband-print of armband is "obedient submissive";
+			say ClothingDesc of armband;
+			say "[speech style of M]'Well, off you trot then!'[roman type][line break][BigNameDesc of M] ushers you out of the door.";
+			try going south;
+			say "[variable custom style]Boy, that sure went well![roman type][line break]";
+			allocate 12 seconds;
+			update students; [an important line which makes boring old students disappear and new cool ones appear]
 	otherwise if diaper quest is 0 and clitoris piercing is eligible and (a random number between 1 and 3 > 1 or portal gag is not actually summonable) and lady fetish < 2:
 		say "Well, today we'll be finding out the first step. Anyone who wants to be able to progress further in this class you must make a permanent change in order to prove your dedication.'[roman type][line break][big he of M] holds up a small, glittering metal object.[line break][speech style of M]'Personally, I think that every slut should have their clit pierced. It's not just a way to enhance the feelings, it's a symbol that constantly reminds you of your place in the world. And, of course, it means that everyone that sees it will know that you've gone through excruciating pain just to decorate yourself as a submissive.'[roman type][line break][big he of M] begins putting on hygienic latex gloves and produces a professional-looking sterilised piercing kit. Everyone in the room looks very nervous.[line break][speech style of M]'So, who's going to dedicate themselves to progress?'[roman type][line break]Do you let [him of M] give you a clitoris piercing? ";[possibly more indication here that everyone will follow you]
 		if the player is bimbo consenting:
@@ -137,7 +141,8 @@ To compute teaching of (L - pain-lesson):
 			appropriate-cutscene-display figure of teacher hannah cutscene 2 with priority 3; [draw it straight away]
 			if competition-success is 1:
 				say "Yes you won!!! You feel a little bad but you can't stop yourself from grinning from ear to ear. Sweat drips down your face, but it was worth it. [BigNameDesc of M] claps [his of M] hands.[line break][speech style of M]'Well done [NameBimbo]. Yes, you've definitely earned a promotion.'[roman type][line break]";
-				now armband is ruby;
+				if armband is ruby, now armband is pink diamond;
+				otherwise now armband is ruby;
 				say "You watch as the ID card inside your armband transforms!";
 				now the armband-title of armband is "Princess";
 				now the armband-print of armband is "properly pierced pet";
@@ -156,7 +161,8 @@ To compute teaching of (L - pain-lesson):
 				say "[speech style of M]'As for you [NameBimbo], you're going to regret your lack of dedication.'[roman type][line break][BigNameDesc of M] snaps [his of M] fingers and the chain falls from [NameDesc of ST][']s clit piercing but remains sealed to yours. You give it a tug but it won't come off - it's clearly permanently fixed on! Your clit throbs with renewed sensitivity, and you immediately can tell that if anyone was to grab hold of this chain, there'd just be no way you'd be able to fight back any more, or refuse their commands at all.";
 				summon clitoris lead;
 				say "[variable custom style]And I'm going to be wearing this forever?![roman type][line break][BigNameDesc of M] chuckles.[line break][speech style of M]'Well that's two girls who are much closer to being a proper submissive. A job well done if I say so myself. To be honest, that's all I can teach you now, I'll allow you to progress.'[roman type][line break]";
-				now armband is ruby;
+				if armband is ruby, now armband is pink diamond;
+				otherwise now armband is ruby;
 				say "You watch as the ID card inside your armband transforms!";
 				now the armband-title of armband is "Princess";
 				now the armband-print of armband is "properly pierced pet";
@@ -181,7 +187,7 @@ To compute teaching of (L - pain-lesson):
 			let K be a random worn removable uncursed unglued unlocked knickers;
 			if (portal-pants is actually summonable or (a random number between 1 and 2 is 1 and K is knickers and the number of worn crotch covering clothing is 1)) and (watersports fetish is 1 or watersports mechanics is 0): [Can't do this if the player needs to pee but isn't into piss drinking]
 				if K is knickers, now K is in the location of the player;
-				say "A wicked grin flashes on [NameDesc of M][']s face.[line break][speech style of M]'Would you like it, [NameBimbo]?'[roman type][line break]Concern flashes through your brain - that seems too good to be true. And you quickly find out, yes it is. [BigNameDesc of M] [if K is knickers]removes your [ShortDesc of K] and [end if]straps the other half of the portal equipment over your crotch, so that your [if the player is male][ShortDesc of penis] is pushed through the portal and into your mouth[otherwise][vagina] is pressed through the portal right against your mouth and tongue[end if].[line break][speech style of M]'Yes, yes, this is perfect. I don't think you'll be able to resist keeping yourself nice and stimulated until we next see each other. How delightful[if watersports fetish is 1]! And if you find yourself needing the toilet before then... well, I imagine that might be quite fun too[end if].'[roman type][line break]";
+				say "A wicked grin flashes on [NameDesc of M][']s face.[line break][speech style of M]'Would you like it, [NameBimbo]?'[roman type][line break]Concern flashes through your brain - that seems too good to be true. And you quickly find out, yes it is. [BigNameDesc of M] [if K is knickers]removes your [ShortDesc of K] and [end if]straps the other half of the portal equipment over your crotch, so that your [if the player is possessing a penis][ShortDesc of penis] is pushed through the portal and into your mouth[otherwise if the player is possessing a vagina][vagina] is pressed through the portal right against your mouth and tongue[end if].[line break][speech style of M]'Yes, yes, this is perfect. I don't think you'll be able to resist keeping yourself nice and stimulated until we next see each other. How delightful[if watersports fetish is 1]! And if you find yourself needing the toilet before then... well, I imagine that might be quite fun too[end if].'[roman type][line break]";
 				summon portal-pants locked;
 			otherwise:
 				let N be a random alive male teacher;
@@ -206,13 +212,18 @@ To say ClitPiercingConcede of (M - an innocent student):
 
 toy-lesson is a lesson. The lesson-teacher of toy-lesson is teacher-hannah.
 
+Definition: toy-lesson is lesson-appropriate:
+	if asshole is actually occupied, decide no;
+	decide yes.
+
 To compute teaching of (L - toy-lesson):
 	let M be the lesson-teacher of L;
 	say "[speech style of M]'To turn in a brat into a proper submissive, they need to be constantly reminded that they are OWNED. Most of my colleagues focus on external... [']stimulation['] to deliver this message but I strongly believe that nothing makes someone feel more submissive than allowing themselves to be dominated... on the INSIDE.'[roman type][line break][BigNameDesc of M] pulls away a tablecloth to reveal an array of butt plugs lines up on a table, with wildly varying sizes.[line break][speech style of M]'When wearing a plug, a submissive has a constant intrusion in their most sensitive and private place, constantly making them think: [']I am owned. All of what I am, inside and out, has been claimed by my owners[if diaper quest >= 3]. Even my ability to use the toilet is not my own; I must remain here squirming with discomfort until I am allowed to go[end if].['] And the bigger the plug, the more powerful the effect.'[roman type][line break][big he of M] rubs [his of M] fingers together with unhidden greedy anticipation.";
 	if asshole is actually occupied:
 		let T be a random thing penetrating asshole;
 		say "[speech style of M]'But first... I can sense that one of our group has been busy [']studying['] this [']curriculum['] in [his of the player] own time.'[roman type][line break][big he of M] walks up to you and pushes at your [asshole] with one hand, feeling the base of the solid [ShortDesc of T].[line break][speech style of M]'Just as I thought.'[roman type][line break][BigNameDesc of M] whispers in a seductive voice.[line break][speech style of M]'You already know who owns this hole, don't you, puppet?'[roman type][line break][strongHumiliateReflect]When [his of M] gaze meets yours, you can't help but gulp and nod.[line break][speech style of M]'Very good. Well, I think you're more than ready to move on then.'[roman type][line break]";
-		now armband is ruby;
+		if armband is ruby, now armband is pink diamond;
+		otherwise now armband is ruby;
 		say "You watch as the ID card inside your armband transforms!";
 		now the armband-title of armband is "Bambi";
 		now the armband-print of armband is "buttplug bandit";
@@ -242,30 +253,27 @@ To compute teaching of (L - toy-lesson):
 				now LPS is the size of P;
 				say "A [PlugSize LPS] one gets you [LPS] [if LPS is 1]copy[otherwise]copies[end if]. ";
 		let raffleWinners be (the number of entries in LP / 3) + 1;
-		say "[if raffleWinners > 1]I'll pick [raffleWinners] names out of the hat, and all the winners[otherwise]The winner of the raffle pick[end if] will get promoted. Oh, and all these toys have been magically cursed to not let you remove them until you attend your next class. Hahaha. So, anyway, let's see... I'll let you come up and choose in a random order.'[roman type][line break][BigNameDesc of M] makes a show of closing [his of M] eyes and waving a pointing finger randomly across the classroom, before letting it stop and opening [his of M] eyes again.";
+		say "[if raffleWinners > 1]I'll pick [raffleWinners] names out of the hat, and all the winners[otherwise]The winner of the raffle pick[end if] will get promoted. Oh, and all these toys have been coated in a special glue, so it'll take you some time to manage to remove them. Hahaha. So, anyway, let's see... I'll let you come up and choose in a random order.'[roman type][line break][BigNameDesc of M] makes a show of closing [his of M] eyes and waving a pointing finger randomly across the classroom, before letting it stop and opening [his of M] eyes again.";
 		sort LP in reverse size order;
 		repeat with ST running through LS:
 			if ST is yourself:
 				say "[speech style of M]'[NameBimbo], you next. Do your best.'[roman type][line break]";
 				let CP be nothing;
-				repeat with P running through LP:
-					assign link disambiguation ID to P;
 				while CP is nothing:
-					try looking;
+					say "Your options are:[line break]";
+					let N be 1;
+					repeat with P running through LP:
+						say "[link][N]) [MediumDesc of P][as][N][end link][line break]";
+						increase N by 1;
 					if the focus-window is g-present, display focus stuff;
 					let CLTR be the chosen letter - 48;
 					now CP is yourself;
-					repeat with P running through LP:
-						if the link-disambiguation-ID of P is CLTR:
-							try examining P;
-							say "Choose [P]?";
-							if the player is consenting, now CP is P;
-							otherwise now CP is nothing;
-					[if the glulx replacement command exactly matches the text "look":
-						now CP is nothing;
-					otherwise if the glulx replacement command matches the text "pineapple":
-						say "You bail from the lesson by saying the safe word.";
-						now delayed fainting is 1;]
+					if CLTR > 0 and CLTR < the number of entries in LP:
+						let P be entry CLTR in LP;
+						try examining P;
+						say "Choose [P]?";
+						if the player is consenting, now CP is P;
+						otherwise now CP is nothing;
 					if CP is yourself:
 						say "Input not understood. Please enter a number that corresponds to one of the toys.";
 						now CP is nothing;
@@ -289,13 +297,11 @@ To compute teaching of (L - toy-lesson):
 							try examining measurement tattoo;
 							if the player is male, SexChange the player;
 				otherwise:
+					blandify and reveal CP;
 					now CP is worn by the player;
-					now CP is sure;
-					now CP is identified;
 					say "You relax your [asshole] as much as you can to try and push the plug inside of you. ";
 					compute toyInsertion of CP into asshole;
-					now CP is cursed;
-					now the quest of CP is next-lesson-quest;
+					now CP is glued;
 					remove CP from LP;
 					add the size of CP to LN;
 					say "[BigNameDesc of M] folds [his of M] arms with satisfaction.[line break][speech style of M]'Good job. You get [size of CP] [if size of CP is 1]entry[otherwise]entries[end if] in the raffle.'[roman type][line break]";
@@ -365,7 +371,8 @@ To compute teaching of (L - toy-lesson):
 						if WST is student:
 							promote WST;
 						otherwise:
-							now armband is ruby;
+							if armband is ruby, now armband is pink diamond;
+							otherwise now armband is ruby;
 							say "You watch as the ID card inside your armband transforms!";
 							if diaper quest is 0:
 								now the armband-title of armband is "Darling";
@@ -473,6 +480,9 @@ To decide which number is the EnslavedDominationThreshold of (M - teacher-bianca
 
 dress-lesson is a lesson. The lesson-teacher of dress-lesson is teacher-bianca.
 
+To decide which number is the min-students of (L - dress-lesson):
+	decide on 0.
+
 Definition: dress-lesson (called L) is lesson-appropriate:
 	if the number of worn skirted clothing is not 1 and (there is a worn dress or there is worn trousers), decide no;
 	if the player is not able to use their hands, decide no;
@@ -495,14 +505,14 @@ To compute teaching of (L - dress-lesson):
 		allocate 12 seconds;
 		update students; [an important line which makes boring old students disappear and new cool ones appear]
 	otherwise if C is hobble-skirted clothing:
-		say "[speech style of M]'You.'[roman type][line break][NameDesc of M] points a finger directly at you. You can't help but gulp.[line break][speech style of M]'That skirt is much too long! You can't use it for flashing your underwear properly at all! No, you'll have to keep using your hands to expose yourself. But we can't just trust you to do that now, can we? No, I think we need some kind of guarantee. Come up to the front now, [NameBimbo].'[roman type][line break]You sheepishly obey. As soon as you reach [him of M], [he of M] holds your head still between both [his of M] hands and stares directly into your eyes.[line break][speech style of M]'Do you know what a curtsey is, little one? Yes you do. Well I think you will feel a lot more like curtseying politely to people in the future, won't you?'[roman type][line break][big his of M] fierce gaze penetrates deep down into your soul and you feel some kind of magic entering your body through the connection. Your mind feels foggy and you feel something like a switch click in your brain.[line break][speech style of M]'Yes, I think you will.'[roman type][line break][M] lets go of you and the fog begins to clear. You notice that [NameDesc of M] looks very tired and is breathing rather heavily.";
+		say "[speech style of M]'You.'[roman type][line break][NameDesc of M] points a finger directly at you. You can't help but gulp.[line break][speech style of M]'That skirt is much too long! You can't use it for flashing your underwear properly at all! No, you'll have to keep using your hands to expose yourself. But we can't just trust you to do that now, can we? No, I think we need some kind of guarantee. Come up to the front now, [NameBimbo].'[roman type][line break]You sheepishly obey. As soon as you reach [him of M], [he of M] holds your head still between both [his of M] hands and stares directly into your eyes.[line break][speech style of M]'Do you know what a curtsey is, little one? Yes you do. Well I think you will feel a lot more like curtsying politely to people in the future, won't you?'[roman type][line break][big his of M] fierce gaze penetrates deep down into your soul and you feel some kind of magic entering your body through the connection. Your mind feels foggy and you feel something like a switch click in your brain.[line break][speech style of M]'Yes, I think you will.'[roman type][line break][M] lets go of you and the fog begins to clear. You notice that [NameDesc of M] looks very tired and is breathing rather heavily.";
 		now hypno-curtsey-trigger is 1;
 		MagicPowerUp 2;
 		say "[speech style of M]'Congratulations [NameBimbo], you're now a professional curtseyer, even if you don't realise it yet.'[roman type][line break][NameDesc of M] looks away from you, then looks back, pretending to notice you for the first time. You instinctively rise to your feet and perform a perfect curtsey, exposing [if there is worn total protection knickers]your underwear[otherwise]yourself[end if] to the room.[line break][speech style of M]'Yes, I see your new [']talent['] has taken its proper hold. In that case, there is nothing more I need to teach you.'[roman type][line break]";
 		now armband is ruby;
 		say "You watch as the ID card inside your armband transforms!";
 		now the armband-title of armband is "Curiosity";
-		now the armband-print of armband is "curtseying courtesan";
+		now the armband-print of armband is "curtsying courtesan";
 		say ClothingDesc of armband;
 		update students; [an important line which makes boring old students disappear and new cool ones appear]
 		say "[speech style of M]'I'm afraid that's going to have to be the end of the class for today. Dismissed.'[roman type][line break][big he of M] makes for the door, as gracefully as [he of M] can.";
@@ -523,8 +533,8 @@ To compute teaching of (L - dress-lesson):
 			refresh the clothing-focus-window;
 		say "[speech style of M]'Let's begin. A skirt is a tool that we can use not only to keep our [if diaper quest is 1]underwear[otherwise]privates[end if] easily accessible at all times, but also it allows us to make them visible to onlookers at a moment's notice, should we so choose. Now, firstly everyone please stand up straight.'[roman type][line break]You all do so obediently.[line break][speech style of M]'Right now, your private area is hidden under your skirt. But what happens if you do this?'[roman type][line break][BigNameDesc of M] bends over at the waist, keeping [his of M] legs perfectly straight.[line break][speech style of M]'Come on everyone, give it a go!'[roman type][line break]As everyone mimics the teacher's actions, flashes of panties and bare bottoms become visible all over the room.[line break][speech style of M]'So you see, just by keeping your knees unbent and bending over, we can send signals to whomever we like. Now, who wants to be today's volunteer? If you do well, you might even get promoted.'[roman type][line break]";
 		DexUp 1;
-		say "Do you want to volunteer? ";
-		if the player is bimbo consenting:
+		if the number of students in the location of the player > 0, say "Do you want to volunteer? ";
+		if the number of students in the location of the player is 0 or the player is bimbo consenting:
 			say "You raise your hand and then at [NameDesc of M][']s signal, you walk to the front of the class. [big he of M] then brushes [his of M] hand over [his of M] desk, making several various pieces of chalk fall to the floor around you.[line break][speech style of M]'Oh no [NameBimbo], how clumsy of you! Pick all those up at once!'[roman type][line break]You understand what is required of you - you are supposed to make sure you always bend at the waist and not at the knees. ";
 			if short skirts permanent fetish is 0 and (the player is proud or (the player is modest and the number of worn dense total protection knickers is 0)):
 				say "You try your best, but as your back goes down and your butt becomes exposed to the class, you lose your nerve. This is too weird and embarrassing, to have all this attention on you as your [if the number of worn dense total protection knickers is 0]private parts become[otherwise]underwear becomes[end if] exposed! You can't bring yourself to go through with it, and end up bending your knees and quickly picking up the chalk the 'normal' way. Your cheeks flush red in shame, but you're not even sure if you feel most ashamed about the fact that you didn't manage to complete the task, or the fact that you almost did.[line break][speech style of M]'Very disappointing. Why volunteer when you're CLEARLY not ready to go through with this yet?! Well, [boy of the player], if you're so desperate to be done with this class, then I can make that happen. You should just be careful what you've wished for...'[roman type][line break][big he of M] shoves a hand up your skirt and grips a butt cheek, beginning to knead it like dough. You yelp in surprise [if the player is feeling dominant]and then grind your teeth with anger[otherwise]but don't dare move away from [him of M][end if]. You feel a bizarre, almost magical warmth emitting from [his of M] hands, and then a weird shiver overcomes your entire body.";
@@ -556,8 +566,7 @@ To compute teaching of (L - dress-lesson):
 					update students; [an important line which makes boring old students disappear and new cool ones appear]
 					say "[if schoolNames is 1]You find yourself beaming proudly as your mind somehow rewires itself to adopt your new name. [end if][NameDesc of M] rolls [his of M] eyes.[line break][speech style of M]'Class dismissed!'[roman type][line break]";
 		otherwise:
-			let P be a random promotable student in the location of the player;
-			if P is nothing, now P is a random student in the location of the player;
+			let P be a random student in the location of the player;
 			say "[BigNameDesc of P] raises [his of P] hand and then at [NameDesc of M][']s signal, walks to the front of the class. [BigNameDesc of M] then brushes [his of M] hand over [his of M] desk, making several various pieces of chalk fall to the floor around [NameDesc of P].[line break][speech style of M]'Oh no [student-name of P], how clumsy of you! Pick all those up at once!'[roman type][line break][BigNameDesc of P] makes sure to keep [his of P] knees locked unbent as [he of P] bends over and picks up the chalk, exposing what's under [his of P] skirt to the class as [he of P] does. [BigNameDesc of M] is visibly impressed, and claps [his of M] hands.[line break][speech style of M]'Outstanding! The rest of you should ensure to learn from [his of P] example.'[roman type][line break]";
 			promote P;
 			say "You watch as [his of P] emerald ID card turns into a ruby one, and [he of P] is now '[student-name of P] the [student-print of P]'. [big he of P] grins widely and then prances out of the room.";

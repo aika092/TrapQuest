@@ -419,8 +419,7 @@ has the player ever had cum in their butt?
 assfilled is a number that varies.
 
 To Assfill (X - a number):
-	let L be a random worn lipstick collar;
-	if L is clothing, increase X by 1;
+	if lipstick collar is worn, increase X by 1;
 	let M be a random wrapped monster penetrating asshole;
 	if M is monster:
 		now X is 0;
@@ -950,7 +949,7 @@ To lay (X - a number) small eggs:
 	otherwise:
 		let L be the location of the player;
 		if portal-hotpants is worn:
-			say "The [ShortDesc of a random small egg][if X > 1]s disappear[otherwise] disappers[end if] through the portal.";
+			say "The [ShortDesc of a random small egg][if X > 1]s disappear[otherwise] disappears[end if] through the portal.";
 			now L is Hotel44;
 		otherwise:
 			while the player is ass protected:
@@ -988,7 +987,7 @@ To lay (X - a number) medium eggs:
 	otherwise:
 		let L be the location of the player;
 		if portal-hotpants is worn:
-			say "The [ShortDesc of a random medium egg][if X > 1]s disappear[otherwise] disappers[end if] through the portal.";
+			say "The [ShortDesc of a random medium egg][if X > 1]s disappear[otherwise] disappears[end if] through the portal.";
 			now L is Hotel44;
 		otherwise:
 			while the player is ass protected:
@@ -1032,7 +1031,7 @@ To lay (X - a number) large eggs:
 	otherwise:
 		let L be the location of the player;
 		if portal-hotpants is worn:
-			say "The [ShortDesc of a random large egg][if X > 1]s disappear[otherwise] disappers[end if] through the portal.";
+			say "The [ShortDesc of a random large egg][if X > 1]s disappear[otherwise] disappears[end if] through the portal.";
 			now L is Hotel44;
 		otherwise:
 			while the player is ass protected:

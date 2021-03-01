@@ -5,6 +5,11 @@ title	subtable	description	toggle
 "I would rather not give birth to something bizarre or inhuman."	--	--	inhuman pregnancy hater rule
 "If it's at least partly human and doesn't come back I'm sure I'll be fine, but nothing too weird please!"	--	--	inhuman pregnancy disliker rule
 "I'm prepared to risk giving birth to a monster, and even risk it growing up and deciding its own 'mother' would make a good mate! (+1 point)"	--	--	inhuman pregnancy rule
+"Not only that, but it makes sense that when I'm pregnant with a monster, my pregnant belly might grow to absolutely insane sizes! (+2 points)"	--	--	inhuman pregnancy lover rule
+
+This is the inhuman pregnancy lover rule:
+	now choice in row 20 of the Table of Player Options is 3;
+	follow quit rule.
 
 This is the inhuman pregnancy rule:
 	now choice in row 20 of the Table of Player Options is 2;

@@ -5,6 +5,7 @@ A necklace is a kind of accessory. The printed name of necklace is usually "[TQl
 A neckwear is a kind of clothing. A neckwear is neck covering. A neckwear is metal. A neckwear is manly. [Necklaces can now be worn in addition to other neckwear items]
 
 Definition: a neckwear is transformation-protected: decide yes.
+Definition: a neckwear is nudism-enabling: decide yes.
 
 There are 6 necklaces.
 
@@ -48,6 +49,8 @@ Definition: a submissive collar is same-type:
 	decide no.
 To decide which number is the initial outrage of (C - a submissive collar):
 	decide on 8.
+To decide which number is the bartering value of (T - a submissive collar) for (M - hellhound):
+	decide on 3.
 
 anchor collar is a neckwear. anchor collar is rare.
 

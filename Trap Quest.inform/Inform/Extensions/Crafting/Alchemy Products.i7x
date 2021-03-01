@@ -226,9 +226,9 @@ Check throwing energy-bomb at a monster:
 	otherwise:
 		say "You launch the [energy-bomb] at [NameDesc of the second noun], which hits [him of the second noun] right in [his of the second noun] [MonsterFaceDesc of the second noun]! Sparks of red electricity shoot all over [his of the second noun] body!";
 		now attack-type is 4;
-		let D be a random number between 14 and 18;
+		let D be a random number between 18 and 28;
 		if the noun is blessed, increase D by 12;
-		damage D on the second noun;
+		damage (D * combatSpeed) on the second noun;
 		now latestCombatFocus is the second noun;
 	check stealing of the noun;
 	destroy the noun instead;
@@ -437,7 +437,9 @@ Check drinking nail-bomb:
 		now attack-type is 4;
 		repeat with M running through monsters in the location of the player:
 			if nail-bomb is bland or M is dangerous:
-				damage a random number between 12 and 20 on M;
+				let D be a random number between 18 and 25;
+				if nail-bomb is blessed, increase D by 8;
+				damage (D * combatSpeed) on M;
 				now latestCombatFocus is M;
 	check stealing of the noun;
 	destroy the noun instead;
@@ -499,7 +501,7 @@ The backgroundColour of life-elixir is 32768. [green]
 
 Definition: life-elixir is fetish appropriate:
 	if pregnancy fetish is 0, decide no;
-	if the player is male and tg fetish is 0, decide no;
+	if the player is not possessing a vagina and tg fetish is 0, decide no;
 	decide yes.
 
 To say MediumDesc of (B - life-elixir):
@@ -666,7 +668,7 @@ The backgroundColour of womb-potion is 16711935. [magenta]
 
 Definition: womb-potion is fetish appropriate:
 	if pregnancy fetish is 0, decide no;
-	if the player is male and tg fetish is 0, decide no;
+	if the player is not possessing a vagina and tg fetish is 0, decide no;
 	decide yes.
 
 To say MediumDesc of (B - womb-potion):
@@ -1151,7 +1153,8 @@ To say MediumDesc of (C - a restricting salve):
 	say "salve of restriction".
 
 To say ExamineDesc of (C - a restricting salve):
-	say "The salve is [if C is cursed and C is sure]making your [random backdrop covered by C] grow over time[otherwise]holding your [random backdrop covered by C] in place[end if].".
+	let BP be a random thing covered by C;
+	say "The salve is [if C is cursed and C is sure]making your [BP] grow over time[otherwise]holding your [BP] in place[end if].".
 
 A time based rule (this is the cursed restricting salve punishment rule):
 	repeat with S running through cursed restricting salve covering body parts:

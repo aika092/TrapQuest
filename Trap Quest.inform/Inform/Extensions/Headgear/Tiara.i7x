@@ -110,7 +110,7 @@ To compute unique periodic effect of (H - silver-tiara):
 
 tiara-veil is a tiara.
 
-The printed name of tiara-veil is "[clothing-title-before]silver tiara[clothing-title-after]". The text-shortcut of tiara-veil is "tv". Understand "veil" as tiara-veil.
+The printed name of tiara-veil is "[clothing-title-before]tiara veil[clothing-title-after]". The text-shortcut of tiara-veil is "tv". Understand "veil" as tiara-veil.
 
 Figure of tiara veil is the file "Items/Accessories/Head/royaltiara3.png".
 

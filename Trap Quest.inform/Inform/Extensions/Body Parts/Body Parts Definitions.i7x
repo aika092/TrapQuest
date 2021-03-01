@@ -453,6 +453,13 @@ This is the body parts get focused rule:
 	if the total volume of face > 0:
 		if debugmode > 1, say "mouth has [MouthfulDesc].";
 		add face to LB, if absent;
+	if there is held pocketwipes:
+		if the make-up of face > 0 and permanent makeup is 0:
+			if debugmode > 1, say "face has make up.";
+			add face to LB, if absent;
+		if the semen coating of hair > 0 or the urine coating of hair > 0:
+			if debugmode > 1, say "hair has liquid in it.";
+			add hair to LB, if absent;
 	if the largeness of belly > 5:
 		if debugmode > 1, say "belly size is [largeness of belly].";
 		add belly to LB, if absent;

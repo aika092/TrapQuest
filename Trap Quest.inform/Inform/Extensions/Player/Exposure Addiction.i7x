@@ -7,7 +7,7 @@ To decide which number is no-panties-fetish:
 	otherwise decide on 0.
 
 Definition: a knickers (called C) is no-panties-disallowed:
-	if no-panties-fetish is 1 or the class of the player is faerie:
+	if no-panties-fetish is 1 or the implant of pledge-lesson-panties is 1 or the class of the player is faerie:
 		unless C is diaper or C is no protection, decide yes;
 	decide no.
 

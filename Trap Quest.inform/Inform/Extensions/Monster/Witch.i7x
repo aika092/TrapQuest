@@ -26,7 +26,7 @@ To say MonsterDesc of (M - witch):
 		say "A tall black [man of M] dressed in a short sheer purple dress, black leather gloves, and black thigh high boots. A magic wand in [his of M] hand and a witch's hat on [his of M] head makes [his of M] speciality quite clear. [big his of M] [if diaper quest is 1]presumably milk filled[otherwise]proud F cup[end if] breasts are very visible through the extremely flimsy material of [his of M] dress. [if there is a diaper carried by M][big he of M] is wearing your [ShortDesc of random diaper carried by M] proudly and visibly. [end if]".
 
 To say MonsterComment of (M - a witch):
-	if lady fetish is not 2, say "[if the bimbo of the player <= 7 and the player is female][line break][first custom style][one of]How typical for this game...[or]Seriously?[purely at random][otherwise if the bimbo of the player <= 7][one of]I bet [he of M] loves motor-boating![or]Nice![at random][otherwise if the bimbo of the player <= 12][line break][variable custom style][one of][big he of M] looks good in that outfit.[or]What a naughty look![purely at random][otherwise][line break][second custom style][one of]Wow! [big he of M]'s probably like, magic and stuff![or]I know [his of M] boobs are casting a spell on me! Teehee![purely at random][end if][roman type][line break]".
+	if lady fetish is not 2, say "[if the bimbo of the player <= 7 and the player is gendered female][line break][first custom style][one of]How typical for this game...[or]Seriously?[purely at random][otherwise if the bimbo of the player <= 7][one of]I bet [he of M] loves motor-boating![or]Nice![at random][otherwise if the bimbo of the player <= 12][line break][variable custom style][one of][big he of M] looks good in that outfit.[or]What a naughty look![purely at random][otherwise][line break][second custom style][one of]Wow! [big he of M]'s probably like, magic and stuff![or]I know [his of M] boobs are casting a spell on me! Teehee![purely at random][end if][roman type][line break]".
 
 To set up (M - witch):
 	reset M;
@@ -87,7 +87,6 @@ Definition: witch is objectifying the player: decide no.
 Definition: witch is babifying the player: decide no.
 
 To compute perception of (M - witch):
-	now M is interested;
 	now the altar-questioned of M is 0;
 	if the witch-target of M is off-stage and the witch-target of M is not the throne and the witch-target-state of M > -1:
 		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'I saw everything through my crystal ball. Your form was a little off, but it was still pretty entertaining. I'm happy to give you anything you need![roman type][line break]";
@@ -410,7 +409,7 @@ To compute domination blessing of (M - witch) at (bless-count - a number):
 
 To penetration dominate (M - witch):
 	let T be a random worn tattoo;
-	say "You force [NameDesc of M] onto [his of M] hands and knees and get behind [him of M]. [if T is worn][one of]Your eyes are drawn to a red star tattooed around [his of M][or]Your eyes are once again drawn to her tattooed[stopping] asshole, and you go straight for it, [otherwise][one of]Feeling particularly sadistic, [or]Once again, [stopping]you go straight for [his of M] asshole, [end if][run paragraph on]";
+	say "You force [NameDesc of M] onto [his of M] hands and knees and get behind [him of M]. [if T is worn][one of]Your eyes are drawn to a red star tattooed around [his of M][or]Your eyes are once again drawn to [his of M] tattooed[stopping] asshole, and you go straight for it, [otherwise][one of]Feeling particularly sadistic, [or]Once again, [stopping]you go straight for [his of M] asshole, [end if][run paragraph on]";
 	cutshow figure of witch cutscene 2 for M;
 	let bless-count be 0;
 	repeat with X running through held blessable things:
@@ -578,9 +577,6 @@ To say WhoQuestion of (M - witch):
 To say WhoAnswer of (M - witch):
 	say "[BigNameDesc of M] rolls [his of M] eyes.[line break][speech style of M]'You have [if the altar-uses of M > 1][altar-uses of M] uses left. Don't try to slip one by me, I'll know.'[otherwise if the altar-uses of M is 1]1 use left.[otherwise]None left. Give me something to drink first.'[end if][roman type][line break]".
 
-To say WhoAnswer of (M - witch):
-	say "[speech style of M]'Nobody of consequence.'[roman type][line break]".
-
 To say WhereQuestion of (M - witch):
 	say "[variable custom style]'Can you tell me anything about alchemy?'[roman type][line break]".
 
@@ -624,7 +620,7 @@ To compute teaching of (M - witch):
 					let W be the witch-target of M;
 					if W is student or W is staff member or W is ex-princess, now the witch-target of M is M;
 				say "[BigNameDesc of M] chuckles, muttering a short incantation under [his of M] breath.[speech style of M]'Alright then. Find [NameDesc of witch-target][speech style of M] and kill [him of witch-target]. I'll know when you've succeeded.'[roman type][line break]";
-				DifficultyUp witch-target by 5;
+				SilentlyDifficultyUp witch-target by 5;
 			otherwise:
 				say "[speech style of M]'Then fuck off. [big please] and thank you!'[roman type][line break]".
 

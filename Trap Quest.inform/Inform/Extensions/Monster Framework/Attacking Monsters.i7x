@@ -215,12 +215,12 @@ This is the player can't attack when bound behind rule:
 		rule fails.
 The player can't attack when bound behind rule is listed in the ability to slap rules.
 
-This is the player can't attack without range of motion rule:
-	let M be a random live thing wrangling arms;
-	if M is a live thing and there is a worn wrist bond:
-		say "Your range of motion is too small to be able to attack while [FuckerDesc of M] is holding you by the wrists!";
+This is the player can't slap while arm wrangled rule:
+	let M be a random thing wrangling arms;
+	if M is a thing:
+		say "You can't do that while [NameDesc of M] is holding you by the wrist!";
 		rule fails.
-The player can't attack without range of motion rule is listed in the ability to slap rules.
+The player can't slap while arm wrangled rule is listed in the ability to slap rules.
 
 [!<ThePlayerCanNotAttackWithMessRule>+
 
@@ -238,7 +238,7 @@ The player can't attack with mess rule is listed in the ability to kick rules.
 This is the player can't attack when thigh restricted rule:
 	let M be a random live thing wrangling thighs;
 	if M is a live thing:
-		if autoattack is 0, say "You can't do that while [FuckerDesc of M] is holding your legs!";
+		if autoattack is 0, say "You can't do that while [NameDesc of M] is holding your legs!";
 		rule fails.
 The player can't attack when thigh restricted rule is listed in the ability to knee rules.
 The player can't attack when thigh restricted rule is listed in the ability to kick rules.
@@ -586,6 +586,7 @@ To damage (A - a number) on (M - a monster):
 			if damage-explained > 0, say "[input-style]HP set to 1 since NPCs are not allowed to get the last hit[roman type][line break]";
 		compute failed damage of M; [Perhaps we want the NPC to become unfriendly even if the attack failed.]
 	now damage-explained is 0;
+	if attack-type is not 1, now the wrangle-bonus of M is 0;
 	[Check for weapons effects]
 	repeat with E running through worn equippables:
 		compute attack effect of E;

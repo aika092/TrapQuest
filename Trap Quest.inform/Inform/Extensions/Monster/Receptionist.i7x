@@ -30,7 +30,7 @@ To say MonsterDesc of (M - receptionist):
 		say "This [man of M] looks like [he of M]'s in [his of M] mid-thirties, but [his of M] complexion and physique are completely perfect in every way. A made up face and long wavy blonde hair sit on top of a Barbie-doll body with an impossibly small waist, covered by a tight-fitting very short blue dress that manages to ooze sex appeal and still look at least slightly professional.".
 
 To say MonsterComment of (M - receptionist):
-	say "[if the bimbo of the player <= 10 and the player is female][line break][first custom style]That's not fair, we can't all be born with perfect genes like that...[otherwise if the bimbo of the player <= 7]Oh, mama! What a fox![otherwise if the bimbo of the player <= 12][line break][variable custom style][one of][big he of M] looks so good in that dress.[or]What an amazing look![purely at random][otherwise][line break][second custom style][one of]Wow, [he of M]'s probably like, the perfect shape for a bimbo![or]Oh, how I wish I looked like that![or]Maybe I can look like that one day, too![at random][end if][roman type][line break]".
+	say "[if the bimbo of the player <= 10 and the player is gendered female][line break][first custom style]That's not fair, we can't all be born with perfect genes like that...[otherwise if the bimbo of the player <= 7]Oh, mama! What a fox![otherwise if the bimbo of the player <= 12][line break][variable custom style][one of][big he of M] looks so good in that dress.[or]What an amazing look![purely at random][otherwise][line break][second custom style][one of]Wow, [he of M]'s probably like, the perfect shape for a bimbo![or]Oh, how I wish I looked like that![or]Maybe I can look like that one day, too![at random][end if][roman type][line break]".
 
 To set up (M - receptionist):
 	reset M;
@@ -69,7 +69,6 @@ Definition: receptionist is dismissable: decide no.
 Part - Perception
 
 To compute perception of (M - receptionist):
-	now M is interested;
 	calm M;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
 	if the times-met of M <= 1 and armband is not worn and the number of fucked-silly monsters in the school is 0:
@@ -98,7 +97,7 @@ To compute perception of (M - receptionist):
 					let R be the location of headmistress;
 					teleport to R;
 					now shocked-monsters is 0;
-					compute perception of headmistress;
+					check guaranteed perception of headmistress;
 					increase the times-met of headmistress by 1;
 					display entire map;
 					now receptionist is not interested;
@@ -113,7 +112,7 @@ To compute perception of (M - receptionist):
 			display entire map; [needs to update because the portal is now closed]
 	otherwise if playerRegion is School:
 		if armband is worn:
-			if (the player is an october 2019 top donator or the player is an october 2019 diaper donator) and there is an appropriate eligible predicament and predicamentJustDone is false and the player is predicament-ready, say "[line break][speech style of M]'Hello again [NameBimbo], I hope you're enjoying your studies! [one of]Have you considered trying the extra credit zone? [or]You should consider the extra credit zone again. [stopping][if the number of worn cursed removable clothing > the number of worn cursed removable headgear]Not only would you get a bracelet, a trophy and potentially some useful tokens, but you could escape from that annoying cursed clothing[otherwise]You can earn some tokens, a new bracelet and a cool trophy[end if]!'[roman type][line break]";
+			if the player is the donator and there is an appropriate eligible predicament and predicamentJustDone is false and the player is predicament-ready, say "[line break][speech style of M]'Hello again [NameBimbo], I hope you're enjoying your studies! [one of]Have you considered trying the extra credit zone? [or]You should consider the extra credit zone again. [stopping][if the number of worn cursed removable clothing > the number of worn cursed removable headgear]Not only would you get a bracelet, a trophy and potentially some useful tokens, but you could escape from that annoying cursed clothing[otherwise]You can earn some tokens, a new bracelet and a cool trophy[end if]!'[roman type][line break]";
 			otherwise say "[line break][speech style of M]'Hello again [NameBimbo], I hope you're enjoying your studies!'[roman type][line break]";
 		otherwise:
 			say "[line break][speech style of M]'Hey, I recognise you! Where is your armband?!'[roman type][line break][big he of M] takes an aggressive stance.";
@@ -180,7 +179,7 @@ To say GenericDetention of (M - receptionist):
 	now M is unconcerned.
 
 This is the receptionist forces armband rule:
-	if armband is not worn and playerRegion is School:
+	if armband is not worn and playerRegion is School and ex-princess is not guarding: [if princess is guarding this is the final fight]
 		compute current-monster forcing armband;
 		rule succeeds.
 The receptionist forces armband rule is listed first in the receptionist unique punishment rules.

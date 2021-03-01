@@ -184,7 +184,7 @@ To decide which object is the at least partial concealer of (C - a wearthing):
 		decide on M; [We point at the middle coverer (if there is no coverer at all because it's an item without a layer, this will resolve to 'nothing').]
 	decide on the concealer of C. [For non-clothing items there's no difference.]
 
-[This is is at what bulk levels the clothing can prevent people from even knowing there's a diaper there]
+[This is at what bulk levels the clothing can prevent people from even knowing there's a diaper there]
 To decide which number is the diaperHidingLength of (C - a clothing):
 	if C is crotch-displaced or C is crotch-unzipped or C is crotch-ripped, decide on -1;
 	if C is skirted and C is not hobble-skirted, decide on the skirtLength of C; [Hobble skirts are too tight to conceal thick diapers]

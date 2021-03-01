@@ -332,7 +332,7 @@ To finally humiliate (X - a number):
 	if X > 0, blush X;
 	if the humiliation of the player + X >= HUMILIATION-BROKEN:
 		if the class of the player is avatar and mindbreak protection is 0: [If the player can't be mindbroken, they can't be fully taken over]
-			say "[one of]Pleasure pierces through your temples as your empty core finally stretches to its breaking point, and your master's presence finally pushes all the way in! You hear the voice of your master, not in your head, but from your own mouth.[line break][first custom style]'Do you FEEL that, [NameBimbo]?! Its been so long since I HILTED a mortal body so thoroughly! Now I just have to give it a pounding!'[roman type][line break]You answer your master's declaration with an insensanate moan, thoughts completely short-circuiting as you struggle to process the pleasure as your master presence shifts out of you and rams straight back in![or]Your thoughts short-circuit as your master 'fucks' the gaping void where your soul used to be, sending another explosion of pleasure through your body![stopping]";
+			say "[one of]Pleasure pierces your temples as your empty core finally stretches to its breaking point, and your master's presence finally pushes all the way in! You hear the voice of your master, not in your head, but from your own mouth.[line break][first custom style]'Do you FEEL that, [NameBimbo]?! It's been so long since I HILTED a mortal body so thoroughly! Now I just have to give it a pounding!'[roman type][line break]You answer your master's declaration with an insensate moan, thoughts completely short-circuiting as you struggle to process the pleasure as your master presence shifts out of you and rams straight back in![or]Your thoughts short-circuit as your master 'fucks' the gaping void where your soul used to be, sending another explosion of pleasure through your body![stopping]";
 			if the raw intelligence of the player > 1, IntDown 3;
 			vaginally orgasm shamefully;[will eventually lead to bad-end.]
 		otherwise if there is a worn holy warrior chestpiece:
@@ -372,7 +372,7 @@ To 2Humiliate (X - a number):
 		if the humiliation of the player > HUMILIATION-PROUD and the humiliation of the player < HUMILIATION-PROUD + 1000, say "[one of]You feel a faint pain in your temples as your master seems to shift around inside of you. [big his of shopkeeper] sounds off in your head as you feel [his of shopkeeper] presence slightly expand![line break][first custom style]'Mmf. You've loosened up a little, but you're still so tight, aren't you, [NameBimbo]. I suppose I'll have to humiliate you a little more before we start making any real progress...'[roman type][line break][or][stopping]";
 		if the humiliation of the player > HUMILIATION-MODEST and the humiliation of the player < HUMILIATION-MODEST + 1000, say "[one of]You feel a sharp pain in your temples as your core once again begins to stretch. Your master's [if lady fetish is 1]husky[otherwise]deep[end if] voice booms in your head as [his of shopkeeper] presence increases sharply![line break][first custom style]'You're finally starting to loosen up, but we're still only halfway there. Just keep degrading yourself just like that, [NameBimbo]...'[roman type][line break][or][stopping]";
 		if the humiliation of the player > HUMILIATION-DISGRACED and the humiliation of the player < HUMILIATION-DISGRACED + 1000, say "[one of]You feel a splitting pain in your temples as the stretching sensation returns, intensifying more rapidly than ever before! Your master's [if lady fetish is 1]husky[otherwise]deep[end if] voice booms in your head as more and more of [his of shopkeeper] presence forces its way into your empty core.[line break][first custom style]We're past the halfway point, but there's still so much to go. Debase yourself more, [NameBimbo]. Soon you'll be able to take all of me...[roman type][line break][or][stopping]";
-		if the humiliation of the player > HUMILIATION-SHAMELESS and the humiliation of the player < HUMILIATION-SHAMELESS + 1000, say "[one of]You once again feel a splitting pain in your temples, but this time, the intense stretching sensation is accompanied by an odd feeling of pleasure. You can't help but moan as the enormous *girth* of your master's presence rushes into you anew, and [his of shopkeeper] powerful voice echoes inside your head.[line break][first custom style]'That's right, [NameBimbo]! Take. It. All! Ooh, just a little bit more. Just a little more more space, and you'll take it all. We're so close...'[roman type][line break][or][stopping]".
+		if the humiliation of the player > HUMILIATION-SHAMELESS and the humiliation of the player < HUMILIATION-SHAMELESS + 1000, say "[one of]You once again feel a splitting pain in your temples, but this time, the intense stretching sensation is accompanied by an odd feeling of pleasure. You can't help but moan as the enormous *girth* of your master's presence rushes into you anew, and [his of shopkeeper] powerful voice echoes inside your head.[line break][first custom style]'That's right, [NameBimbo]! Take. It. All! Yes, just a little more. Just a scintilla more space, and you'll take it all. We're so close...'[roman type][line break][or][stopping]".
 
 blush factor is a number that varies.
 
@@ -458,33 +458,34 @@ To say DisgracePostReaction strength (S - a number):
 	say "[roman type][line break]".
 
 To compute digital reputation damage (T - a text) strength (S - a number) quality (N - a number):
-	decrease N by a random number between 0 and 1;
-	now T is "[if N < 1]a low resolution photo[otherwise if N < 3]a high resolution photo[otherwise if N < 5]an animated gif[otherwise]a high quality video[end if] showing [T] [ReputationAttire]";
-	if face is listed in the armUses of arms, now S is (S + 1) / 2;
-	let W be "[if S < a random number between 3 and 5][sexyWebsite][otherwise][sluttyWebsite][end if]";
-	choose a blank row in Table of Published Disgraces;
-	now the content entry is the substituted form of T;
-	now the published entry is the substituted form of "has been [one of]uploaded to[or]posted on[purely at random] [W]";
-	now the severity entry is S;
-	now the popularity entry is N;
-	now the timestamp entry is earnings;
-	now the lastwitnessed entry is 0;
-	now the deletedtime entry is -1;
-	now the viewsfuzz entry is a random number between -100 and 100;
+	if the number of blank rows in the Table of Published Disgraces > 0:
+		decrease N by a random number between 0 and 1;
+		now T is "[if N < 1]a low resolution photo[otherwise if N < 3]a high resolution photo[otherwise if N < 5]an animated gif[otherwise]a high quality video[end if] showing [T] [ReputationAttire]";
+		if face is listed in the armUses of arms, now S is (S + 1) / 2;
+		let W be "[if S < a random number between 3 and 5][sexyWebsite][otherwise][sluttyWebsite][end if]";
+		choose a blank row in Table of Published Disgraces;
+		now the content entry is the substituted form of T;
+		now the published entry is the substituted form of "has been [one of]uploaded to[or]posted on[purely at random] [W]";
+		now the severity entry is S;
+		now the popularity entry is N;
+		now the timestamp entry is earnings;
+		now the lastwitnessed entry is 0;
+		now the deletedtime entry is -1;
+		now the viewsfuzz entry is a random number between -100 and 100;
 
 To decide which text is ReputationAttire:
 	let C be the at least partial concealer of vagina;
-	if the player is male, now C is the at least partial concealer of penis;
+	if the player is not possessing a vagina, now C is the at least partial concealer of penis;
 	let AF be "";
 	if face is listed in the armUses of arms, now AF is " and an arm trying to conceal your face";
 	if breasts is exposed:
 		if (the player is possessing a penis and penis is exposed) or (the player is possessing a vagina and vagina is exposed):
-			decide on "with your chest and [if the player is male][ShortDesc of penis][otherwise][vagina][end if] on full display[AF]";
+			decide on "with your chest and [if the player is possessing a penis][ShortDesc of penis][otherwise if the player is possessing a vagina][vagina][end if] on full display[AF]";
 		otherwise:
-			decide on "topless, with your [ShortDesc of C][if C is not actually dense] partially covering your [genitals][end if][AF]";
+			decide on "topless, with a [ShortDesc of C][if C is not actually dense clothing] partially covering your [genitals][end if][AF]";
 	otherwise:
 		let B be the at least partial concealer of breasts;
-		decide on "with your [ShortDesc of B][if C is nothing] and nothing covering your [genitals][otherwise if C is not B] and your [ShortDesc of C][end if][AF]";
+		decide on "with a [ShortDesc of B][if C is nothing] and nothing covering your [genitals][otherwise if C is arms] and a hand trying to cover your [genitals][otherwise if C is clothing and C is not B] and a [ShortDesc of C][end if][AF]";
 
 To say sexyWebsite:
 	if diaper quest is 1, say "embarrassedbabes.net";

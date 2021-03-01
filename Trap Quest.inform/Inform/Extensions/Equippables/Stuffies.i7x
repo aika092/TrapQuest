@@ -8,7 +8,7 @@ This is the spawn initial mansion stuffie rule:
 	now T is in R.
 The spawn initial mansion stuffie rule is listed in the set up mansion traps rules.
 
-To decide which number is the damage improvement of (W - a stuffie):
+To decide which number is the slap damage improvement of (W - a stuffie):
 	decide on -99.
 
 To decide which number is the initial outrage of (C - a stuffie):

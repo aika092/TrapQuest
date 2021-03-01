@@ -32,7 +32,7 @@ To compute class set up of (C - fairy-wand):
 	now the raw-magic-modifier of C is childValue times 1;
 	if the magic-power of the player < 2, MagicPowerUp 2.
 
-To decide which number is the damage improvement of (W - fairy-wand):
+To decide which number is the zap damage improvement of (W - fairy-wand):
 	let X be MagicPowerDamage + 3;
 	if W is cursed, decrease X by 1;
 	increase X by the magic-modifier of W;

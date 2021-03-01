@@ -84,6 +84,8 @@ To say MediumDesc of (M - prissy robomaid):
 To say MediumDesc of (M - a milkmaid):
 	say "sultry MilkMaid".
 
+Part 1 - Misc Flavour
+
 [To compute unique periodic effect of (M - a robomaid):
 	if a random number between 1 and 30 is 1:
 		[TODO: cleanup.]]
@@ -96,6 +98,8 @@ To compute unique periodic effect of (M - a milkmaid):
 		otherwise:
 			if M is in the location of the player, say "[BigNameDesc of M] starts jacking off, moaning in a grating monotone as [his of M] [LongDickDesc of M] blows [his of M] load on the floor.";
 			PuddleUp semen by (a random number between 2 and 3) in (the location of M).
+
+Part 2 - Perception
 
 To compute perception of (M - a robomaid):
 	say "[BigNameDesc of M] notices you!";
@@ -156,7 +160,63 @@ To compute perception of (M - a milkmaid):
 		say "[big his of M] eyes turn red and [he of M] spins toward you.[line break][first custom style]'FREELANCE WHORE DETECTED. PUBLICITY STUNT PROGRAM INITIATED.'[roman type][line break]";
 		anger M.
 
-The unique punishment rule of a robomaid is usually the robomaid punishment rule.
+Part 3 - Combat
+
+Section 1 - Attack
+
+The robomaid priority attack rules is a rulebook. The priority attack rules of a robomaid is the robomaid priority attack rules.
+
+[After reaching +3 difficulty, the robomaid constantly emits aphrodesiacs]
+This is the robomaid haziness rule:
+	let M be current-monster;
+	if the player is the donator and the difficulty of M > the starting difficulty of M + 1:
+		say "[one of]A haze of pink smoke follows [NameDesc of M] around as [he of M] moves.[or]Pink smoke follows [NameDesc of M] around in a haze.[or][BigNameDesc of M]'s movements are followed by a haze of pink smoke.[in random order] [one of]There's so much of it that you're forced to breathe some of it in.[or]You cough as you breathe it in.[or]You can't help breathing a bit of it in.[in random order]";
+		Arouse 100.
+The robomaid haziness rule is listed in the robomaid priority attack rules.
+
+To compute damaging attack of (M - a robomaid):
+	if the player is the donator and the difficulty of M > the starting difficulty of M and a random number between 1 and 3 is 1:
+		compute molesting attack of M;
+	otherwise:
+		compute striking attack of M.
+
+[The robomaid puffs out aphrodesiac, avoided with intelligence.]
+To compute molesting attack of (M - a robomaid):
+	let D be the difficulty of M - the starting difficulty of M;
+	say "[BigNameDesc of M] puckers [his of M] mechanical lips, blowing out a [if D > 2]huge cloud[otherwise]cloud[end if] of pink smoke. [run paragraph on]";
+	if the latex-transformation of the player > 6:
+		say "You don't need to breathe, so it doesn't affect you.";
+	otherwise if there is a worn ringagged clothing or (the intelligence roll of M >= the intelligence of the player):
+		if there is a worn ringagged clothing, say "With no way of closing your mouth, you are forced to breathe in a good amount of it. You cough as the heat of new arousal quickly spreads out from your core.";
+		otherwise say "It takes you a couple seconds to realize that you probably shouldn't breathe it in, and you cough as you feel the heat of new arousal spreading out from your core.";
+		Arouse 200;
+	otherwise:
+		say "You notice that the smoke disperses really quickly, so you hold your breath just long enough to avoid breathing any of it in.".
+
+[The milkmaid sprays out an aphrodesiac, avoided with dexterity]
+To compute molesting attack of (M - milkmaid):
+	if diaper quest is 0 or (lactation fetish is 1 and a random number between 1 and 2 is 1), say "[BigNameDesc of M] pushes [his of M] breasts together, forcing out twin streamers of pink liquid. [run paragraph on]";
+	otherwise say "[BigNameDesc of M] lifts [his of M] apron, aiming [his of M] [LongDickDesc of M] at you as it shoots out a spurt of pink liquid. [run paragraph on]";
+	let B be the painful-part of M;
+	if the latex-transformation of the player > 6:
+		say "Some of it lands on you, but it doesn't seem to have any effect.";
+	otherwise:
+		if the accuracy roll of M >= the dexterity of the player:
+			if B is face:
+				if there is worn ringagged clothing:[hitting your face is a "crit"]
+					say "A good amount of the liquid lands directly in your open mouth, and you accidentally drink it. Your knees grow weak as arousal blooms through your whole body.";
+					Arouse 500;
+					FatigueUp 15;
+				otherwise:
+					say "A good amount of the liquid hits you in the face, and you accidentally swallow some it. Your lips tingle as arousal blooms through your whole body.";
+					Arouse 400;
+			otherwise if B is exposed:
+				say "A good amount of the liquid hits you [TargetName of B], where it rapidly soaks into your skin. Your skin tingles as arousal blooms through your body.";
+				Arouse 300;
+			otherwise:
+				say "A some of the liquid hits you [TargetName of B], but luckily it doesn't touch your skin directly.";
+		otherwise:
+			say "You avoid letting any of the liquid land on you!";
 
 This is the robomaid punishment rule:
 	let M be current-monster;
@@ -211,6 +271,7 @@ This is the robomaid punishment rule:
 		compute publicity stunt of M;
 		satisfy M for 500 seconds;
 		rule succeeds.
+The unique punishment rule of a robomaid is usually the robomaid punishment rule.
 
 To compute publicity stunt of (M - a robomaid):
 	let R be a random number between 1 and 3;
@@ -315,7 +376,7 @@ To compute publicity stunt of (M - a milkmaid):
 			StomachSemenUp 4;
 			humiliate R * MODERATE-HUMILIATION;
 		otherwise:
-			say "Your mouth rapidly fills as you hold your throat closed, sparing your stomach from [his of M]'s huge load. With nowhere else to go, [semen] explodes out the edges of your mouth, coating your cheeks, chin, and neck as the flow steadily dies down, and [NameDesc of M] slowly pulls out. You spit the rest of it, gasping for air as [he of M] rolls off you and lets [his of M] apron fall back into place.";
+			say "Your mouth rapidly fills as you hold your throat closed, sparing your stomach from [his of M]'s huge load. With nowhere else to go, [semen] explodes out the edges of your mouth, coating your cheeks, chin, and neck as the flow steadily dies down, and [NameDesc of M] slowly pulls out. You spit out the rest of it, gasping for air as [he of M] rolls off you and lets [his of M] apron fall back into place.";
 			CumFaceUp 3;
 			SemenPuddleUp 1;
 			humiliate R * SLIGHT-HUMILIATION;
@@ -350,6 +411,10 @@ To compute publicity stunt of (M - a milkmaid):
 	otherwise say "[NameDesc of P] smirks at you as [he of P] leaves the room.";
 	repeat with N running through patrons in the location of the player:
 		destroy N.
+
+Part 4 - Conversation
+
+Section 1 - Greeting
 
 [To compute basic greeting to (M - a robomaid):
 	if M is interested:

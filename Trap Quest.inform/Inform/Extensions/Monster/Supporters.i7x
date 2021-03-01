@@ -18,6 +18,21 @@ To say ChestDesc of (M - supporter-ai):
 	if lady fetish is 2, say "pecs";
 	otherwise say "boobs".
 
+To compute perception of (M - supporter-ai):
+	add M to new-acolytes;
+	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]"; [The output for clothing humiliation takes place within the 'sluttily dressed' check.]
+	if M is unfriendly:
+		say AlreadyUnfriendlyPerception of M;
+	otherwise if the class of the player is living sex doll:
+		if M is strapped:
+			say "[big he of M] doesn't seem interested in you.";
+			bore M;
+		otherwise:
+			say SexDollPerception of M;
+			anger M;
+	otherwise:
+		compute appearance assessment of M.
+
 To say LeftoverDesc (N - 202):
 	say "The bloated, cumfilled and unconscious body of Ai is on the ground here.[line break]".
 
@@ -27,7 +42,7 @@ To say BoringPerception of (M - supporter-ai):
 To say DisapprovalFlav of (M - supporter-ai):
 	say "[BigNameDesc of M] [one of]shivers with arousal.[or]moves a hand down to delicately touch [his of M] [if lady fetish is 2]caged [sissy-penis][otherwise]clit[end if].[or]licks [his of M] lips seductively[in random order][line break][speech style of M]'Keep that up, and [one of]you might like what happens next[or]I might decide that you're worth my time[at random].'[roman type][line break]".
 
-To say UnidentifiablePosterReactionFlav of (M - supporter-ai):
+To say UnidentifiablePosterReactionFlav of (M - supporter-ai) with (P - a poster):
 	say "[speech style of M]'Not bad, not bad at all! This babe is almost as hot as me.'[roman type][line break]".
 
 To say MonsterTripAnnounceFlav of (M - supporter-ai):
@@ -127,7 +142,7 @@ To say BoringPerception of (M - supporter-aika):
 To say IdentifiablePosterReactionFlav of (M - supporter-aika):
 	say "[BigNameDesc of M] takes a good long look at the poster.[line break][speech style of M]'This one is you, right? Outstanding. I hope you like it - I put a lot of work into designing these camera traps.'[roman type][line break]".
 
-To say UnidentifiablePosterReactionFlav of (M - supporter-aika):
+To say UnidentifiablePosterReactionFlav of (M - supporter-aika) with (P - a poster):
 	say "[speech style of M]'Oh ho ho, I wonder if this might be you? Don't worry, I can keep a secret!'[roman type][line break]".
 
 To say PresentFriendlyAcceptanceFlav of (M - supporter-aika):
@@ -322,7 +337,7 @@ To say BoringPerception of (M - supporter-critchett): [The NPC has spotted the p
 To say IdentifiablePosterReactionFlav of (M - supporter-critchett):
 	say "[BigNameDesc of M] takes notice of your incriminating poster. [big he of M] looks at you with wide eyes that momentarily roll up into [his of M] eyelids as [he of M] rubs [his of M] crotch with wet squelches into [his of M] diaper.[line break][speech style of M]'Wasn't it so wonderful?! Mmm, I bet you felt amazing! Like a totally degraded slut fit only for disposal!'[roman type][line break]".
 
-To say UnidentifiablePosterReactionFlav of (M - supporter-critchett):
+To say UnidentifiablePosterReactionFlav of (M - supporter-critchett) with (P - a poster):
 	say "[speech style of M]'Ohhh, would you look at that! That really looks... hot! Would you like to play that out with me? We could do our own photo shoot! You'd look good like that!'[roman type][line break]";
 
 To say PresentFriendlyAcceptanceFlav of (M - supporter-critchett): [This is when the player offers a body part up to them and the NPC is still friendly, and accepts]
@@ -332,7 +347,7 @@ To say PresentFriendlyRejectionFlav of (M - supporter-critchett): [This is when 
 	say "[speech style of M]'[if presented-orifice is a potential target]I promised myself I wouldn't jump you right away. Be careful, I can't be held responsible for what I'll do to you if you keep begging me.'[otherwise]Ahhh... umm...'[roman type][line break][BigNameDesc of M] rolls [his of M] eyes back, ignoring you and grinding [himself of M] gently into [his of M] diaper to get [himself of M] off again. [big his of M] cream expands [his of M] diaper some more.[end if][roman type][line break]".
 
 To say FriendlySexReleaseRefusalSpeech of (M - supporter-critchett): [The player has changed their mind and wants to end the friendly sex early. The NPC has decided to dominate the player and not let go so easily.]
-	if the player is not able to speak, say "[speech style of M]'[one of]Shh-shh-shh-shh! Mommy's got you, sweetie!'[or]I... I can't stop! I have to... YOU have to!'[or]Oh no, you promised me! Your pretty little mouth is mine!'[in random order][roman type][line break]";
+	if the player is not able to speak, say "[speech style of M]'[one of]Shh-shh-shh-shh! [daddytitle of M]'s got you, sweetie!'[or]I... I can't stop! I have to... YOU have to!'[or]Oh no, you promised me! Your pretty little mouth is mine!'[in random order][roman type][line break]";
 	otherwise say "[speech style of M]'[one of]You're about to get a throatful of titty. Keep doing what you're doing'[or]We are enjoying a moment here, darling. [big please] don't spoil it.'[at random][roman type][line break]".
 
 To compute kneeling reaction of (M - supporter-critchett): [The player has got on their knees voluntarily while the NPC is aggressive.]
@@ -627,7 +642,7 @@ To say BoringPerception of (M - supporter-teagan): [The NPC has spotted the play
 To say IdentifiablePosterReactionFlav of (M - supporter-teagan):
 	say "[BigNameDesc of M] stares at the poster with [his of M] hands covering [his of M] mouth.[line break][speech style of M]'I can't believe you're such a whore! I'd never let them take that kinda picture of me.'[roman type][line break]".
 
-To say UnidentifiablePosterReactionFlav of (M - supporter-teagan):
+To say UnidentifiablePosterReactionFlav of (M - supporter-teagan) with (P - a poster):
 	say "[speech style of M]'Oh wow, there's some next-level sluts strutting around here!'[roman type][line break]".
 
 To say PresentFriendlyAcceptanceFlav of (M - supporter-teagan): [This is when the player offers a body part up to them and the NPC is still friendly, and accepts]
@@ -851,7 +866,7 @@ To say BecomesAggressive of (M - supporter-jim):
 	say "[speech style of M]'[one of]Right, I'll do you for that! Come here!'[or]I have you surrounded. I'm afraid I must not ask anyone to leave the room. No, I must ask nobody... no, I must ask everybody to... I must not ask anyone to leave the room. No one must be asked by me to leave the room. No, no one must ask the room to leave. I... I... ask the room shall by someone be left. Not. Ask nobody the room somebody leave shall I. Shall I leave the room? Everyone must leave the room... as it is... with them in it. Phew. Understand?'[or]Good evening. Tonight on [']Is There['] we examine the question, [']Is there anyone around these parts who can take my entire cock balls-deep?['] And here to discuss it is [NameBimbo].'[in random order][roman type][line break][big he of M] takes an offensive stance!".
 
 To say AlreadyUnfriendlyPerception of (M - supporter-jim): [The NPC has just spotted the player, and has already decided they're best used as a cumdump]
-	say "[speech style of M]'[if the class of the player is princess]None shall pass! I move for no [man of the player].'[otherwise if the player is male and a random number between 1 and 2 is 1]I cut down trees, I skip and jump, I like to press wild-flowers. I put sissies in women's clothing, and ankle spreader bars!'[otherwise][one of]This morning, shortly after 11am, comedy struck this little whore on Bimbo Road. Sudden, violent comedy.'[or]I cut down trees, I eat my lunch, I go to the lavatory. On Wednesdays I find a hot slut, and give [him of the player] my [manly-penis] for [his of the player] tea!'[or]Have I got anything to feed you without cum? Well, cum, egg, sausage, and cum - that's not got much cum in it.'[or]Drop your panties, Sir William, I cannot wait [']till lunchtime!'[in random order][end if][roman type][line break]".
+	say "[speech style of M]'[if the class of the player is princess]None shall pass! I move for no [man of the player].'[otherwise if the player is gendered male and a random number between 1 and 2 is 1]I cut down trees, I skip and jump, I like to press wild-flowers. I put sissies in women's clothing, and ankle spreader bars!'[otherwise][one of]This morning, shortly after 11am, comedy struck this little whore on Bimbo Road. Sudden, violent comedy.'[or]I cut down trees, I eat my lunch, I go to the lavatory. On Wednesdays I find a hot slut, and give [him of the player] my [manly-penis] for [his of the player] tea!'[or]Have I got anything to feed you without cum? Well, cum, egg, sausage, and cum - that's not got much cum in it.'[or]Drop your panties, Sir William, I cannot wait [']till lunchtime!'[in random order][end if][roman type][line break]".
 
 To say FriendlySluttyPerception of (M - supporter-jim): [The NPC has just spotted the player while the player looks slutty, but hasn't witnessed enough to decide to fuck them.]
 	say "[speech style of M]'[one of]Uh, you have beautiful thighs.'[or]Do you-- do you want...do you want to come back to my place? Bouncy, bouncy!'[or]If I said you had a beautiful body, would you hold it against me? I am no longer infected.'[in random order][roman type][line break]".
@@ -865,11 +880,11 @@ To say BoringPerception of (M - supporter-jim): [The NPC has spotted the player 
 To say IdentifiablePosterReactionFlav of (M - supporter-jim):
 	say "[BigNameDesc of M] grins at you.[line break][speech style of M]'Well, you're a [man of the player] of the world, squire... you've been there, you've been around. Eh? know what I mean? Know what I mean? Nudge, nudge! Know what I mean? Say no more! A nod's as good as a wink to a blind bat, say no more, say no more!'[roman type][line break]".
 
-To say UnidentifiablePosterReactionFlav of (M - supporter-jim):
+To say UnidentifiablePosterReactionFlav of (M - supporter-jim) with (P - a poster):
 	say "[speech style of M]'What Nintendolls blatantly fails to appreciate is that it's the sluts who are the problem.'[roman type][line break]".
 
 To say PresentFriendlyAcceptanceFlav of (M - supporter-jim): [This is when the player offers a body part up to them and the NPC is still friendly, and accepts]
-	say "[speech style of M]'[if the player is male and presented-orifice is asshole and pregnancy fetish is 1]You want to have babies?! But... you can't HAVE babies! I'm not oppressing you, [NameBimbo]. You haven't got a womb! Where's the foetus gonna gestate? You gonna keep it in a box?'[otherwise if presented-orifice is breasts]Well, ladies and gentlemen, I don't think any of our contestants tonight succeeded in encapsulating the intricacies of Proust's master-work. So, I'm going to give the award to the [boy of the player] with the biggest tits.'[otherwise]Sure, why not? There's nobody hotter around right now so I'll give you a run-over.'[end if][roman type][line break]".
+	say "[speech style of M]'[if the player is sexed male and presented-orifice is asshole and pregnancy fetish is 1]You want to have babies?! But... you can't HAVE babies! I'm not oppressing you, [NameBimbo]. You haven't got a womb! Where's the foetus gonna gestate? You gonna keep it in a box?'[otherwise if presented-orifice is breasts]Well, ladies and gentlemen, I don't think any of our contestants tonight succeeded in encapsulating the intricacies of Proust's master-work. So, I'm going to give the award to the [boy of the player] with the biggest tits.'[otherwise]Sure, why not? There's nobody hotter around right now so I'll give you a run-over.'[end if][roman type][line break]".
 
 To compute kneeling reaction of (M - supporter-jim): [The player has got on their knees voluntarily while the NPC is aggressive.]
 	say "[BigNameDesc of M] grins.[line break][speech style of M]'[one of]This [man of the player] is [NameBimbo], lover of dicks. In a few moments, [he of the player] will have experienced the best [manly-penis] in the world, and, as a consequence, [he of the player] will die orgasming.'[in random order][roman type][line break]";
@@ -1137,8 +1152,8 @@ To say UnfriendlySluttyPerception of (M - supporter-misako): [The NPC has just s
 To say BoringPerception of (M - supporter-misako): [The NPC has spotted the player who doesn't look slutty enough to decrease their friendliness]
 	say "[speech style of M]'[one of]Ahh, [please] don't look at me! I don't usually dress like this. This belt is cursed, so I can't take anything off!'[or]You again. No, I don't enjoy this! I just haven't found a way to remove the curse yet.'[or]Yes, I'm still around too, still hunting for a powerful enough magic to remove my belt. I'm starting to think it doesn't exist...'[or]Oh it's you again. I've lost hope of ever escaping this metal prison. My poor wonderful clit, how I long to be able to touch you, to feel you again...'[stopping][roman type][line break]".
 
-To say UnidentifiablePosterReactionFlav of (M - supporter-misako):
-	say "[speech style of M]'Wow, what a disgusting, shameless slut. Still, I'd rather be in [his of the player] position than permanently stuck in chastity...'[roman type][line break]".
+To say UnidentifiablePosterReactionFlav of (M - supporter-misako) with (P - a poster):
+	say "[speech style of M]'Wow, what a disgusting, shameless slut. Still, I'd rather be in [his of P] position than permanently stuck in chastity...'[roman type][line break]".
 
 To say PresentFriendlyAcceptanceFlav of (M - supporter-misako): [This is when the player offers a body part up to them and the NPC is still friendly, and accepts]
 	say "[BigNameDesc of M][']s eyes light up.[line break][speech style of M]'Yes... yes, maybe if we grind together, I'll finally be able to feel something!'[roman type][line break]".
@@ -1290,7 +1305,7 @@ To say LeftoverDesc (N - 208):
 	say "The bloated, cumfilled and unconscious body of [supporter-name of supporter-serena] is on the ground here.[line break]".
 
 To say MonsterDesc of (M - supporter-serena):
-	say "This tall warrior woman seems cut from the same cloth as the gladiators, however, there's certainly something different about her. Unlike the dark-skinned Amazons, she is of a much fairer complexion, with pure white hair flowing from her head. Much of her upper body is uncovered, exposing lithe, yet rippling musculature that looks like it could break stone, from her rock hard abs to her well trained arms. That which is hidden lays behind dark brown leather armour that covers her breasts and shoulders, modest yet protective. Sturdy adventuring boots protect her carefully positioned feet and a strong belt holds her long bladed weapons by her off-hand. The belt seems to purposefully expose the crotch of her tight blue pants, holding a tell-tale bulge in place between her thighs. Tall canine ears and two sharp fangs hint that she's probably not 100% human[if M is interested]. She looks at you with what could be a friendly smile, a mocking smirk,or a predatory sneer. It's difficult to tell[end if].".
+	say "This tall warrior [man of M] seems cut from the same cloth as the gladiators, however, there's certainly something different about [him of M]. Unlike the dark-skinned Amazons, [he of M] is of a much fairer complexion, with pure white hair flowing from [his of M] head. Much of [his of M] upper body is uncovered, exposing lithe, yet rippling musculature that looks like it could break stone, from [his of M] rock hard abs to [his of M] well trained arms. That which is hidden lays behind dark brown leather armour that covers [his of M] breasts and shoulders, modest yet protective. Sturdy adventuring boots protect [his of M] carefully positioned feet and a strong belt holds [his of M] long bladed weapons by [his of M] off-hand. The belt seems to purposefully expose the crotch of [his of M] tight blue pants, holding a tell-tale bulge in place between [his of M] thighs. Tall canine ears and two sharp fangs hint that [he of M]'s probably not 100% human[if M is interested]. [big he of M] looks at you with what could be a friendly smile, a mocking smirk, or a predatory sneer. It's difficult to tell[end if].".
 
 Section - Incremental Changes
 
@@ -1355,8 +1370,8 @@ To say BoringPerception of (M - supporter-serena): [The NPC has spotted the play
 To say IdentifiablePosterReactionFlav of (M - supporter-serena):
 	say "[BigNameDesc of M] stares at the poster with [his of M] mouth open wide.[line break][speech style of M]'You really let them photograph you as you did that?! You're way more of a slut than I ever dreamed.'[roman type][line break]".
 
-To say UnidentifiablePosterReactionFlav of (M - supporter-serena):
-	say "[speech style of M]'Jeepers creepers! Wow, if I got a few minutes alone with that broad, I'd bury my [if M is male]meat[otherwise]fist[end if] so deep in that ass she wouldn't be able to walk for days!'[roman type][line break]".
+To say UnidentifiablePosterReactionFlav of (M - supporter-serena) with (P - a poster):
+	say "[speech style of M]'Jeepers creepers! Wow, if I got a few minutes alone with that [if old-gender of P is 1]broad[otherwise]guy[end if], I'd bury my [if M is male]meat[otherwise]fist[end if] so deep in that ass [he of P] wouldn't be able to walk for days!'[roman type][line break]".
 
 To say PresentFriendlyAcceptanceFlav of (M - supporter-serena): [This is when the player offers a body part up to them and the NPC is still friendly, and accepts]
 	say "[speech style of M]'Sure, why not? There's nobody hotter around right now so I'll give you a run-over.'[roman type][line break]".
