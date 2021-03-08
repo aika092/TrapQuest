@@ -91,6 +91,8 @@ To soak body in water body:
 	let X be tracked-semen;
 	repeat with B running through body parts:[clean off body parts]
 		let R be a random number between 2 and 4;
+		if the water-drench of hair < the largeness of hair, increase the water-drench of hair by R;
+		if the water-drench of hair > the largeness of hair, now the water-drench of hair is the largeness of hair;
 		if the semen coating of B > 0 or (B is hair and the urine coating of hair > 0):
 			while R > 0 and (the semen coating of B > 0 or (B is hair and the urine coating of hair > 0)):
 				decrease R by 1;

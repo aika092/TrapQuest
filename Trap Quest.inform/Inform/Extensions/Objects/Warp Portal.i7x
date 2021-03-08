@@ -117,6 +117,7 @@ To set up predicament status:
 	now the semen coating of face is 0;
 	now the semen coating of hair is 0;
 	now the urine coating of hair is 0;
+	now the water-drench of hair is 0;
 	now the semen coating of breasts is 0;
 	now the semen coating of belly is 0;
 	now the semen coating of thighs is 0;

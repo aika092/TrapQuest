@@ -337,6 +337,7 @@ Check drinking time-bomb:
 			now C is in the location of the player;
 		if bukkake fetish is 1:
 			say "Your entire body and clothes is completely caked in [semen].";
+			now the water-drench of hair is 0;
 			now the semen coating of hair is the largeness of hair;
 			now the semen coating of face is 10;
 			now the semen coating of breasts is 10;

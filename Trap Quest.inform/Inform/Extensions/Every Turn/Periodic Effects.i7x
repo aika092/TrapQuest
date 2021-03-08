@@ -4,6 +4,9 @@ A time based rule (this is the clothing drying rule):
 	repeat with C running through in-play clothing:
 		compute drying of C;
 
+A time based rule (this is the hair drying rule):
+	compute hair drying;
+
 An all time based rule (this is the compute clothing rule):
 	repeat with C running through worn wearthing:
 		if C is clothing:

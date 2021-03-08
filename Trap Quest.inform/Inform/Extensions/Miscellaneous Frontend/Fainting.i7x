@@ -331,8 +331,11 @@ Return the player to a playable state.
 
 +!]
 To Recover the Player:
-	SemenPuddleUp (the semen coating of face + the semen coating of breasts + the semen coating of thighs) / 2;
+	SemenPuddleUp (the semen coating of face + the semen coating of breasts + the semen coating of thighs + the semen coating of hair) / 2;
 	now the semen coating of face is 0;
+	now the semen coating of hair is 0;
+	now the urine coating of hair is 0;
+	now the water-drench of hair is 0;
 	now the semen coating of breasts is 0;
 	now the semen coating of thighs is 0;
 	now the air volume of breasts is 0;
@@ -357,7 +360,7 @@ To Recover the Player:
 		now the tolerated of asshole is 0;
 		now the openness of asshole is the real openness of asshole;
 		MilkPuddleUp the milk volume of belly / 2;
-		if watersports mechanics is 1, UrinePuddleUp the urine volume of belly / 2;
+		if watersports mechanics is 1, UrinePuddleUp (the urine volume of belly + the urine coating of hair) / 2;
 		empty belly liquids;
 		while the small egg count of belly > 0:
 			decrease the small egg count of belly by 1;

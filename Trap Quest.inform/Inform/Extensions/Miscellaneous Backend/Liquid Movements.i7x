@@ -49,6 +49,8 @@ To LiquidSoak (L - milk) On (B - a body part):
 	do nothing.
 To LiquidSoak (L - water) On (B - a body part):
 	do nothing.
+To LiquidSoak (L - water) On (B - hair):
+	increase the water-drench of B by 1.
 To LiquidSoak (L - murkwater) On (B - an object):
 	LiquidSoak semen on B.
 To LiquidSoak (L - semen) On (C - a clothing):
@@ -197,12 +199,35 @@ To UniqueSquirt (L - a liquid-object) On (C - Hair) by (N - a number):
 			say "[announced L] gets all over your [ShortDesc of H].";
 			ContinuedSquirt L on H by M;
 	if L is semen or L is urine:
-		while the semen coating of C + the urine coating of C < the largeness of hair and N > 0: [soak liquid into hair]
+		while the semen coating of C + the urine coating of C + the water-drench of C < the largeness of hair and N > 0: [soak liquid into hair]
 			LiquidSoak L on C;
 			decrease N by 1;
 		if N > 0 and the urine coating of C is 0 and the semen coating of C > 0: [if hair is completely saturated by cum we want to replace one unit with urine so that the hair is correctly identified as both cum and piss stained]
 			LiquidSoak L on C;
 			decrease the semen coating of C by 1;
+			decrease N by 1;
+	otherwise if L is water:
+		if (the semen coating of C + the urine coating of C) > 0: [Water cleans hair, 1 unit of water to 1 unit of semen/urine.]
+			let O be N;
+			let P be the semen coating of C; [We need to know the pre-cleaning values of semen and urine for accurate flavour text afterwards.]
+			let Q be the urine coating of C;
+			while O > 0: [We only clean 1 unit at a time so we can alternate targets. Would be silly to always clean out all of semen first before touching urine or vice versa.]
+				if the semen coating of C > 0:
+					decrease O by 1;
+					decrease the semen coating of C by 1;
+					PuddleUp semen by 1;
+				if the urine coating of C > 0 and O > 0:
+					decrease O by 1;
+					decrease the urine coating of C by 1;
+					PuddleUp urine by 1;
+				if (the semen coating of C + the urine coating of C) < 1:
+					now O is 0;
+			if (the semen coating of C + the urine coating of C) > 0:
+				say "The [variable L] washes some [if P > 0 and Q > 0][semen] and [urine][otherwise if Q > 0][urine][otherwise][semen][endif] out of your hair. ";
+			otherwise:
+				say "The [variable L] washes all the [if P > 0 and Q > 0][semen] and [urine][otherwise if Q > 0][urine][otherwise][semen][endif] out of your hair. ";
+		while the water-drench of C < the largeness of hair and N > 0: [soak water into hair]
+			LiquidSoak L on C;
 			decrease N by 1;
 	if N > 0 and face is unsoaked:
 		say "[announced L] drips down your [ShortDesc of hair] onto your face.";
