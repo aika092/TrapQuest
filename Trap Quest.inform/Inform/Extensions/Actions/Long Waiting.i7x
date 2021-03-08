@@ -7,8 +7,6 @@ Check LongWaiting:
 		skywait instead;
 	otherwise if the player is pole stuck and the player is not monster fucked and sex fainting is 1:
 		dildowait instead;
-	otherwise if the player is hook stuck and the player is not monster fucked and sex fainting is 1:
-		hookwait instead;
 	otherwise if the player is in UrinalBlindfolded:
 		urinalwait instead;
 	otherwise if the player is in HoleInWall:

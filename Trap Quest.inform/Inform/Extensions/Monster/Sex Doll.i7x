@@ -74,7 +74,7 @@ Air filled: wandering - uncanny
 ]
 
 Definition: a sex doll (called M) is father material:
-	if M is creamfilled, decide yes;
+	if M is creamfilled-sex-doll, decide yes;
 	decide no.
 
 Definition: a sex doll (called M) is liquidfilled:

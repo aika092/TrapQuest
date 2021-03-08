@@ -392,6 +392,7 @@ To compute teaching of (L - enema-tag-lesson):
 						otherwise say "[BigNameDesc of ST] [bold type]makes it to the finish line![roman type] [big he of ST][']s done it, and is now safe! [big he of ST] joins [NameDesc of M] at the sidelines.";
 						remove ST from LST;
 						add ST to LSP;
+						if ST is listed in LSZ, remove ST from LSZ;
 					otherwise if raceAbandoning is true:
 						say "[speech style of ST]'[one of]I concede[or]I quit[or]Let me out[or]No more[or]Screw this[in random order]!'[roman type][line break]";
 						if ST is yourself, say "You [if zentaied is true]pound the ground with your hand, tapping out in submission[otherwise]turn to the side and run off the track[end if], ";
@@ -599,7 +600,7 @@ To compute teaching of (L - pledge-lesson):
 	now bigGameLoop is 3; [tells the game not to refresh any windows]
 	let M be the lesson-teacher of L;
 	let LST be the list of students in the location of M;
-	say "[BigNameDesc of M] guides you [if the number of entries in LST is 1]and [student-name of entry 1 of LST] [otherwise if the number of entries in LST > 1]all [end if]to kneel down[if the number of entries in LST > 0] in a circle[end if]. With a flourish of [his of M] arms, [NameDesc of M] fills the room with countless floating magic runes, in an unknown language, all glowing a brilliant white.[line break][speech style of M]'Try to think of this as less of a lesson and more of an initiation into our inner circle. All you have to do is remain still and allow me to conduct the [']celebrations['][if the number of entries in LST > 0]. If any of you get up and try to leave, you ALL fail[end if]. Furthermore, [bold type]this is your only chance to partake in this lesson[speech style of M] - if any of you interrupt it, then the alternate ceremony that you all will have to attend will be much, much more... physical.'[roman type][line break]";
+	say "[BigNameDesc of M] guides you [if the number of entries in LST is 1]and [student-name of entry 1 of LST] [otherwise if the number of entries in LST > 1]all [end if]to kneel down[if the number of entries in LST > 0] in a circle[end if]. With a flourish of [his of M] arms, [NameDesc of M] fills the room with countless floating magic runes, in an unknown language, all glowing a brilliant white.[line break][speech style of M]'Try to think of this as less of a lesson and more of an initiation into our inner circle. All you have to do is remain still and allow me to conduct the [']celebrations['][if the number of entries in LST > 0]. If any of you get up and try to leave, you ALL fail[end if][if diaper quest is 0]. Furthermore, [bold type]this is your only chance to partake in this lesson[speech style of M] - if any of you interrupt it, then the alternate ceremony that you all will have to attend will be much, much more... physical[end if].'[roman type][line break]";
 	let ULO be the list of eligible pledge-lesson-objects;
 	sort ULO in random order;
 	let lessonResists be 1;
@@ -612,8 +613,6 @@ To compute teaching of (L - pledge-lesson):
 		remove E from ULO;
 		if lessonImplants is 0, say "You understand that [NameDesc of M] is laying a curse on you, and it's pretty clear what the consequences of that will be if [he of M] is successful. You could [bold type]stand up and leave[roman type], [bold type]resist the curse[roman type] or [bold type]allow it to happen[roman type]. If you spend your energy resisting this curse, you probably won't have the mental strength to resist the next ones.";
 		otherwise say "[if lessonResists > 0]Since you haven't resisted a curse yet, you're still able to resist this one, if you choose[otherwise]Since you've already resisted a curse, you can't resist any more[end if].";
-		say "You feel the magic power from the curse settling inside you.";
-		MagicPowerUp 2;
 		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 		set numerical response 1 to "Stand up and leave";
 		set numerical response 2 to "Accept the curse";
@@ -628,6 +627,8 @@ To compute teaching of (L - pledge-lesson):
 			decrease lessonResists by 1;
 			say "You scrunch up your eyes and reject the curse. You feel like you've successfully resisted it[if lessonImplants < maxLessonImplants]! But you mind tires and you realise that you won't be able to do that again any time soon[end if].";
 		otherwise:
+			say "You feel the magic power from the curse settling inside you.";
+			MagicPowerUp 1;
 			increase lessonImplants by 1;
 			now the implant of E is 1;
 			say "The curse ebbs and eddies in your body, spreading out to your extremities through your veins. It feels a part of you, now.";

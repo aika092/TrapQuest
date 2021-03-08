@@ -499,9 +499,6 @@ To say DamageReactTired of (M - a supporter):
 To say DamageReactWeak of (M - a supporter):
 	say "[BigNameDesc of M] [one of]is struggling for breath[or]puts [his of M] hand on [his of M] belly as if [he of M] has a stitch[at random].".
 
-To say DamageReactSubmissive of (M - a supporter): [Hinting that the player might be able to turn the tables and fuck your NPC]
-	say "[BigNameDesc of M] [one of]whimpers with pain[or]looks at you meekly as [he of M] catches [his of M] breath[at random].".
-
 To say MovementBlock of (M - a supporter):
 	say "[BigNameDesc of M] manages to get in front of you and block your path, slowing down your movement!".
 

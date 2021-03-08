@@ -6,6 +6,8 @@ A neckwear is a kind of clothing. A neckwear is neck covering. A neckwear is met
 
 Definition: a neckwear is transformation-protected: decide yes.
 Definition: a neckwear is nudism-enabling: decide yes.
+Definition: a neckwear is discovered varied: decide no.
+Definition: a neckwear is magic-enhanceable: decide no.
 
 There are 6 necklaces.
 

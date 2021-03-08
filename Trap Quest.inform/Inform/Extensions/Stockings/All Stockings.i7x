@@ -197,7 +197,7 @@ Definition: bunny socks is transformation-protected:
 	if the class of the player is bunny, decide yes;
 	decide no.
 
-bunny stockings is a stockings. bunny stockings is leather. The text-shortcut of bunny stockings is "bnns".
+bunny stockings is a stockings. bunny stockings is leather. bunny stockings is dense. The text-shortcut of bunny stockings is "bnns".
 
 Figure of bunny stockings is the file "Items/Clothes/Lower/Legs/bunnystockings1.png".
 

@@ -298,8 +298,7 @@ To compute teaching of (L - tits-lesson):
 			update students; [an important line which makes boring old students disappear and new cool ones appear]
 			say "[M] folds [his of M] arms, looking very pleased with [himself of M].[line break][speech style of M]'All right, class dismissed.'[roman type][line break]";
 		otherwise:
-			say "Everybody looks awkward and casts their eyes downward, and a long silence comes over the room. Eventually [NameDesc of M] speaks.[line break][speech style of M]'Disappointing.'[roman type][line break]With a flourish of [his of M] spellbook, everybody's words disappear from their chest. You can feel that a small amount of the magic power that [NameDesc of M] just used has remained in your veins.[line break][big he of M] sounds genuinely downcast.[line break][speech style of M]'You all need to work on your bravery for the next time we convene. Class dismissed.'[roman type][line break]";
-			MagicPowerUp 1;
+			say "Everybody looks awkward and casts their eyes downward, and a long silence comes over the room. Eventually [NameDesc of M] speaks.[line break][speech style of M]'Disappointing.'[roman type][line break]With a flourish of [his of M] spellbook, everybody's words disappear from their chest. [one of]You can feel that a small amount of the magic power that [NameDesc of M] just used has remained in your veins.[@ MagicPowerUp 1][or][stopping][line break][big he of M] sounds genuinely downcast.[line break][speech style of M]'You all need to work on your bravery for the next time we convene. Class dismissed.'[roman type][line break]";
 	otherwise:
 		let S be a random promotable student in the location of the player;
 		if student-abbi is in the location of the player, now S is student-abbi; [She's large breasted after all]
@@ -671,7 +670,7 @@ To compute teaching of (L - practical-lesson):
 	say "[BigNameDesc of DL] stands up and adjusts [his of DL] clothes.[line break][speech style of DL]'Yes, yes, well done, you nasty slut.'[roman type][line break]";
 	if victorious-student is the player:
 		say "[big he of DL] waves a hand in your direction.";
-		now armband is pink diamond;
+		now armband is pure diamond;
 		say "You watch as the ID card inside your armband transforms!";
 		now the armband-title of armband is "Foxxxy";
 		now the armband-print of armband is "first-class fuckdoll";
@@ -683,7 +682,7 @@ To compute teaching of (L - practical-lesson):
 			say "[BigNameDesc of DL] yawns, but it's unclear if this is because [he of DL][']s bored or because [he of DL] just came so hard.[line break][speech style of DL]'[NameBimbo] was also the filthiest slut by far, so nobody else gets promoted today. Too bad!'[roman type][line break]";
 		otherwise:
 			say "[BigNameDesc of DL] 'hmm's as [he of DL] thinks.[line break][speech style of DL]'[NameBimbo] was the filthiest slut today, so [he of the player] gets promoted too.'[roman type][line break]";
-			now armband is pink diamond;
+			now armband is pure diamond;
 			say "You watch as the ID card inside your armband transforms!";
 			now the armband-title of armband is "Foxxxy";
 			now the armband-print of armband is "filthy facefucker";
@@ -709,7 +708,7 @@ To compute teaching of (L - practical-lesson):
 		if M is student:
 			promote M;
 		otherwise:
-			now armband is pink diamond;
+			now armband is pure diamond;
 			say "You watch as the ID card inside your armband transforms!";
 			now the armband-title of armband is "Fanny";
 			now the armband-print of armband is "[if the player is possessing a vagina]three[otherwise]two[end if]-hole fuckdoll";

@@ -53,7 +53,7 @@ To uniquely set up (E - an equippable):
 
 Part 1 - Gloves
 
-A gloves is a kind of clothing. Understand "pair", "pair of", "glove", "gloves" as gloves.
+A gloves is a kind of clothing. A gloves is usually unique. Understand "pair", "pair of", "glove", "gloves" as gloves.
 
 Definition: a gloves is nudism-enabling: decide yes.
 

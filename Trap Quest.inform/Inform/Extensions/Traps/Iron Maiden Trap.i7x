@@ -21,16 +21,6 @@ To decide which number is the girth of (D - iron-maiden):
 To compute reset cooldown of (T - iron-maiden):
 	do nothing. [Just sticks around visible, triggered again by the haunted mirror trap]
 
-[To trigger (Y - iron-maiden):
-	now Y is not untriggered;
-	now Y is revealed;
-	now Y is expired;
-	now iron-maiden-turns is 0;
-	say "As you finish using the bucket and lower your arms, a giant metal contraption springs out of the ground from both in front and behind you, instantly closing around you with a loud CLANG! [one of]You're trapped inside, unable to move a muscle! This must be some kind of Iron Maiden! In the pitch black darkness you feel something slimy, cold, hard and... wriggling... pressing at you from all directions. The inside lining of the maiden is made of metal tentacles! [or]The Iron Maiden has gotten you again! Once again the slimy metal tentacles press in against you from all directions. [stopping]There's probably nothing you can do but [bold type][TQlink]wait[TQdlink][roman type].";
-	now the source-room of Iron Maiden is the location of the player;
-	now the player is in Iron Maiden;
-	refresh the map-window.]
-
 To say TQIronMaidenFlav:
 	say "[one of]You're trapped inside, your arms pointing vertically upwards above your head, unable to move a muscle! This must be some kind of Iron Maiden! In the pitch black darkness you feel some mysterious soft things pressing into your armpits. They flick left and right to a mechanical rhythm. You're being tickled by feathers! It's surprisingly erotic, being trapped in the pitch black with the steady physical stimuli[or]You're inside the Iron Maiden again! Once again the feathers press into your armpits. [stopping]There's probably nothing you can do but [bold type][TQlink]wait[TQdlink][roman type].".
 

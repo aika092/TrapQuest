@@ -1092,7 +1092,7 @@ To decide which number is the bartering value of (T - a stiletto heels) for (M -
 To say MonsterOfferRejectFlav of (M - an aeromancer) to (T - a shoes):
 	say "[BigNameDesc of M] shakes [his of M] head.[line break][speech style of M]'I only wear stiletto heels.'[roman type][line break]".
 
-To say MonsterOfferAcceptFlav of (M - an aeromancer) to (T - an overdress):
+To say MonsterOfferAcceptFlav of (M - an aeromancer) to (T - a heels):
 	say "[BigNameDesc of M][']s eyes light up.[line break][speech style of M]'Ooh, how pretty! A [boy of M] can never have too many heels.'[roman type][line break]".
 
 Section 1 - Greeting

@@ -191,7 +191,7 @@ To DifficultyUp (M - a monster) by (X - a number):
 	let D be the raw difficulty of M;
 	SilentlyDifficultyUp M by X;
 	let DD be the raw difficulty of M - D;
-	if DD > 0 and M is in the location of the player, say "[BigNameDesc of M] looks [if DD > 1]much [otherwise]somewhat[one of]... [or][stopping][end if]stronger.";
+	if DD > 0 and M is in the location of the player, say "[BigNameDesc of M] looks [if DD > 1]much [otherwise]somewhat[one of]... [or] [stopping][end if]stronger.";
 
 To SilentlyDifficultyUp (M - a monster) by (X - a number):
 	let MH be false;

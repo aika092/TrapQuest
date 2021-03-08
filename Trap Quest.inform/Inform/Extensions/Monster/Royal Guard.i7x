@@ -927,6 +927,7 @@ This is the royal guard incarcerating a criminal rule:
 					now gymnast-explorer is in Dungeon03;
 					now the sleep of gymnast-explorer is 250;
 					say "There is a [man of gymnast-explorer] sleeping on the ground here. [UniqueMonsterDesc of gymnast-explorer]It's unclear if [he of gymnast-explorer] was being kept prisoner here or if [he of gymnast-explorer] just chose a rather controversial place to take a nap.";
+					focus-consider gymnast-explorer;
 			repeat with G running through alive royal guards:
 				unless G is M or the boredom of G >= 300 or G is defeated or G is asleep:
 					now G is in Dungeon03;
@@ -945,6 +946,7 @@ This is the royal guard incarcerating a criminal rule:
 					unless X is royal guard, compute mandatory room leaving of X;
 			otherwise:
 				say "[speech style of M]'Your crime spree ends here, villain. You have been sentenced to [if diaper quest is 1]forced babification[otherwise]ten minutes of community service[end if].'[roman type][line break][BigNameDesc of M] [if N is 1]throws you into the cell, following you in and locking the door behind [him of M][otherwise if N > 2]drags you into the cell as the rest of the guards follow you in and lock the door behind them[otherwise]the other guard follows you in and locks the door behind [him of M][end if].";
+			anger M; [just to make sure nothing weird is going on]
 			now prison-bars is in the location of the player;
 		rule succeeds.
 The royal guard incarcerating a criminal rule is listed last in the royal guard unique punishment rules.
@@ -1214,7 +1216,7 @@ This is the guard punishes diaper rule:
 			compute spanking of M;
 		otherwise:
 			say "The guard, who sees the diaper, appears to consider your predicament with your diaper[if there is worn ankle bond or there is worn wrist bond] and bondage[end if]. [big he of M] looks you in the eyes and shakes [his of M] head, before chuckling to [himself of M] taking pity on your helplessness.";
-		satisfy M for 450 seconds;
+		if M is doing nothing special, satisfy M for 450 seconds;
 		rule succeeds.
 The diaper punishment rule of a royal guard is usually the guard punishes diaper rule.
 The guard punishes diaper rule is listed last in the royal guard diaper quest rules.

@@ -200,15 +200,6 @@ To compute drinking effect (N - 7):
 		now C is identified;
 		say "You sense that something good has happened, but you don't know where[if debugmode >= 1] (DEBUG: It was the [C] in the [location of C])[end if].".
 
-Definition: a clothing (called C) is positive-magic-enhanceable:
-	if C is not magic-enhanceable, decide no;
-	if the raw-magic-modifier of C < 0, decide no;
-	decide yes.
-
-Definition: a clothing is magic-enhanceable:
-	if it is cursable, decide yes;
-	decide no.
-
 To compute drinking effect (N - 20):
 	if the Known corresponding to an Magic of N in the Table of Drinks is 0:
 		say "A slimy feel, and a bitter salty taste. [if the semen taste addiction of the player < 6]Yuck! Your worst fears are confirmed, you just tasted someone's [semen]![otherwise if the semen taste addiction of the player < 10]Holy shit, this drink is someone's [semen]![otherwise if the semen taste addiction of the player < 13]Oh, looks like you're tasting someone's [semen]![otherwise]Oh yay, it's your favourite drink, some unknown stud's [semen]![end if]";

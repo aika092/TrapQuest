@@ -514,6 +514,7 @@ To compute spanking of (M - a monster):
 			now delayed urination is 1;
 			try urinating;
 		if spankContinue is 1, increase the sex-length of M by 1;
+		now spankContinue is 0;
 	decrease the sex-length of M by 1;
 	if the sex-length of M <= 0:
 		say SpankingAftermath of M;

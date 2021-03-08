@@ -95,7 +95,7 @@ waitress-dips is a number that varies.
 Report decanting something with:
 	if the fill-colour of the second noun is creamy:
 		compute father material of the second noun into the noun;
-	if diaper quest is 0:
+	if diaper quest is 0 and tutorial is 0:
 		if the noun is waitress vessel and (the number of worn headgear is 0 or black maid headdress is worn):
 			increase waitress-dips by 1;
 			unless the noun is cocktail-glass:

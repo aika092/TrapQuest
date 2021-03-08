@@ -8,6 +8,7 @@ To say MediumDesc of (M - woman-player):
 Figure of woman 1 is the file "NPCs/MultiFloor/berri/woman1.jpg".
 Figure of woman 2 is the file "NPCs/MultiFloor/berri/woman2.jpg".
 Figure of woman 2b is the file "NPCs/MultiFloor/berri/woman2b.jpg".
+Figure of woman 2c is the file "NPCs/MultiFloor/berri/woman2c.jpg".
 Figure of woman 3 is the file "NPCs/MultiFloor/berri/woman3.jpg".
 Figure of woman 4a is the file "NPCs/MultiFloor/berri/woman4a.jpg".
 Figure of woman 4b is the file "NPCs/MultiFloor/berri/woman4b.jpg".
@@ -47,6 +48,7 @@ To decide which figure-name is the monster-image of (M - woman-player):
 		decide on figure of woman 1;
 	if the woman-bimbo of M is 3:
 		if the woman-status of woman-player is 90 and the vine-scene of woman-player <= 4, decide on figure of woman 2b;
+		if there is a revealed hypno trap in the location of M, decide on figure of woman 2c;
 		decide on figure of woman 2;
 	if the woman-bimbo of M is 4, decide on figure of woman 3;
 	if the woman-bimbo of M is 5:

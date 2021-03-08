@@ -293,13 +293,11 @@ To say PregnancyBugFlav:
 
 To check for extreme pregnancies:
 	if inhuman pregnancy >= 3 and the father is not the throne: [Super-pregnancies are go]
-		if the father is a minotaur or the father is vines or the father is lake monster or the father is living belt of sturdiness or the father is hellhound or the father is demon lord or the father is facehugger or the father is elder altar:
+		if the father is a minotaur or the father is vines or the father is lake monster or the father is living belt of sturdiness or the father is hellhound or the father is demon lord or the father is facehugger or the father is elder altar or the father is djinn or the father is tentacle monster:
 			now the womb volume of vagina is 31;
 		if the father is creampie pole trap and (tentacle fetish is 1 or the player is getting unlucky):
 			now the womb volume of vagina is 31;
 			if tentacle fetish is 0, say "[if slow pregnancy > 2][bold type]You have just noticed that your belly is getting even bigger than a normal pregnancy. [end if][one of][line break][variable custom style]What the hell have I got growing inside me?! [or][stopping][roman type][GotUnluckyFlav]";
-		if the father is djinn:
-			now the womb volume of vagina is 31;
 	if the womb volume of vagina is 31 and slow pregnancy > 2:
 		now the womb volume of vagina is 50;
 		cutshow figure of giant pregnancy for belly;

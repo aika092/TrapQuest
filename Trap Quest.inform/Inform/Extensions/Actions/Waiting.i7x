@@ -10,9 +10,8 @@ Check waiting:
 	otherwise if the player is pole stuck and the player is not monster fucked and sex fainting is 1:
 		say "Do you want to keep waiting until something changes that might make it possible for you to get off the trap? ";
 		if the player is in agreement, dildowait instead;
-	otherwise if the player is hook stuck and the player is not monster fucked and sex fainting is 1:
-		say "Do you want to keep waiting until something changes that might make it possible for you to pull out the hook? ";
-		if the player is in agreement, hookwait instead;
+	otherwise if the player is hook stuck and (the player is wrist bound in front or (gape-gloves is worn and gape-gloves is wrist-bound-behind)):
+		hookwait instead;
 	otherwise if the player is in UrinalBlindfolded:
 		say "Do you want to keep waiting until something changes? ";
 		if the player is in agreement, urinalwait instead;

@@ -1,6 +1,6 @@
 Wardrobes by Objects begins here.
 
-pink wardrobe is a container. the printed name of pink wardrobe is "[TQlink of item described]pink wardrobe[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of pink wardrobe is "wa". Understand "pw" as pink wardrobe. pink wardrobe is closed. A pink wardrobe is openable. A pink wardrobe is not portable. pink wardrobe is in Dungeon12.
+pink wardrobe is a container. the printed name of pink wardrobe is "[TQlink of item described]pink wardrobe[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of pink wardrobe is "pkwa". pink wardrobe is closed. A pink wardrobe is openable. A pink wardrobe is not portable. pink wardrobe is in Dungeon12.
 
 To decide which figure-name is the examine-image of (C - pink wardrobe):
 	decide on figure of pinkwardrobe.
@@ -34,7 +34,7 @@ To add treasure to (X - a pink wardrobe):
 	if newbie tips is 1, say "[newbie style]Newbie tip: Consider this your main starting kit. These items start identified and have no random magic properties and although they might be more slutty than what your character would normally wear, you are still going to want to put some on, since going around naked will upset most NPCs, and these are actually some of the least outrageous clothing items in the game.[roman type][line break]".
 
 
-mystical wardrobe is a thing. the printed name of mystical wardrobe is "[TQlink of item described]mystical wardrobe[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of mystical wardrobe is "wa". mystical wardrobe is not portable. mystical wardrobe is in Mansion16.
+mystical wardrobe is a thing. the printed name of mystical wardrobe is "[TQlink of item described]mystical wardrobe[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of mystical wardrobe is "mswa". mystical wardrobe is not portable. mystical wardrobe is in Mansion16.
 
 To decide which figure-name is the examine-image of (C - mystical wardrobe):
 	decide on figure of mysticalwardrobe.

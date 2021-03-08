@@ -54,9 +54,9 @@ To reflect on (A - outrageous-milking-harness):
 To say FriendReaction of (M - a real-life patron) to (A - outrageous-milking-harness):
 	say "... You're LITERALLY being milked right now. Just, WOW. ".
 
-To AnnouncedExpel (L - milk) On (C - an object) by (N - a number):
+To AnnouncedExpel (L - milk) On (C - milking harness) by (N - a number):
 	compute harness milking N.
-To UnannouncedExpel (L - milk) On (C - an object) by (N - a number):
+To UnannouncedExpel (L - milk) On (C - milking harness) by (N - a number):
 	compute harness milking N.
 
 To compute harness milking (N - a number):

@@ -287,8 +287,17 @@ A nipple piercing is a kind of piercing.
 A nipple chain is a kind of nipple piercing. The printed name of nipple chain is "[clothing-title-before]nipple chain[clothing-title-after]". The printed plural name of nipple chain is "[TQlink of item described][item style]nipple chains[clothing-title-after]". The text-shortcut of nipple chain is "nc". There is 1 nipple chain. Figure of nipple chain is the file "Items/Accessories/Piercings/nipplechain1.png". A nipple chain is usually titfuck-addiction-influencing. A nipple chain has a number called arousal-charge.
 
 To decide which object is the coverer of (C - a nipple chain):
-	repeat with O running through top-layer-concealing clothing:
+	repeat with O running through top-layer-concealing very low cut or higher clothing:
 		if O is not mesh, decide on O;
+	decide on nothing.
+
+To decide which object is the concealer of (C - a nipple chain):
+	repeat with O running through actually dense top-layer-concealing very low cut or higher clothing:
+		decide on O;
+	decide on nothing.
+To decide which object is the at least partial concealer of (C - a nipple chain):
+	repeat with O running through partially-top-layer-concealing very low cut or higher clothing:
+		if O is not see-through, decide on O;
 	decide on nothing.
 
 [!<TheCowChainSlutRule>+

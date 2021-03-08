@@ -156,6 +156,16 @@ To silently bless (B - a thing):
 		otherwise:
 			now B is bland.
 
+
+Definition: a clothing (called C) is positive-magic-enhanceable:
+	if C is not magic-enhanceable, decide no;
+	if the raw-magic-modifier of C < 0, decide no;
+	decide yes.
+
+Definition: a clothing is magic-enhanceable:
+	if it is cursable, decide yes;
+	decide no.
+
 To decide which number is the magic-modifier of (C - a clothing):
 	let R be the raw-magic-modifier of C;
 	[if C is diaper or C is fluid immune, decide on R;

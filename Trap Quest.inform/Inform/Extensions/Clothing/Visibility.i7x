@@ -175,7 +175,7 @@ To decide which object is the at least partial concealer of (C - a wearthing):
 		if the top-layer of C > 0:
 			let T be nothing;
 			repeat with O running through partially-top-layer-concealing clothing:
-				if the top-layer of O > the top-layer of C and O is not fully exposing and O is not see-through:
+				if the top-layer of O > the top-layer of C and O is not see-through:
 					now T is O;
 			if appearance-explained is 1 and debugmode > 1, say "So far we've found [if T is nothing]that there's no[otherwise]that [printed name of T] is the[end if] at least partial top layer cover.";
 			decide on T; [We point at the top coverer over others, because it's the most visible.]

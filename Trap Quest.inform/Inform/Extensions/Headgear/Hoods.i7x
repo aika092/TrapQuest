@@ -136,13 +136,13 @@ To compute persistent reward of (Q - just-wait-quest) on (C - a clothing):
 		compute generic class reward of Q on C.
 
 Report wearing clothing when black hood is worn:
-	compute just-wait-reset.
+	unless the noun is plentiful accessory, compute just-wait-reset.
 
 Report taking off clothing when black hood is worn:
-	compute just-wait-reset.
+	unless the noun is plentiful accessory, compute just-wait-reset.
 
 Report knifing clothing with a thing when black hood is worn:
-	compute just-wait-reset.
+	if the noun is not worn, compute just-wait-reset.
 
 To compute just-wait-reset:
 	now the wait-count of just-wait-quest is 0;

@@ -663,14 +663,15 @@ To compute unique automatic banishment of (M - minotaur):
 	if M is caged, say "The cage swings wildly, and then suddenly the chain snaps and the cage falls to the floor with a thud! The cage door's hinges snap, and the door falls away. ";
 	say "The injured [ShortDesc of M] turns and flees towards the exit of the dungeon. ";
 	if mythical creature fetish is 1:
-		if X is clothing and a random number between 1 and 3 is 1:
+		if X is clothing and the player is getting lucky:
 			now the strap-length of X is 11;[15 inches]
 			if full-lady fetish is 1, say "The huge strapon dildo [he of M] was wearing loosens and slips from [his of M] loins. It seems like you could actually wear it!";
 			otherwise say "A huge strapon dildo materialises on the floor in front of you.";
+			say GotLuckyFlav;
 			now X is in the location of the player;
 			compute autotaking X;
 			increase the loot dropped of M by 1;
-		otherwise if H is a thing:
+		if H is a thing:
 			say "One of [his of M] injured horns catches smacks into a low doorway and snaps clean off, clattering to the ground. [BigNameDesc of M] whines loudly with pain but doesn't stop running away. The [ShortDesc of H] appears to be hollow - you could almost use this as a drinking vessel!";
 			now H is in the location of the player;
 			compute autotaking H;

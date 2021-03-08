@@ -66,6 +66,9 @@ Report going north when the player is in School01:
 	repeat with T running through on-stage trophies:
 		if T is held, say "[bold type][BigNameDesc of T] [bold type]is ripped from your hands by an invisible force, and in your mind's eye you can see that it has been taken to the 'Trophy Hall'![roman type][line break]";
 		now T is in School31;
+	if the player is wrist-bound-behind:
+		repeat with T running through things in Predicament20:
+			say "[BigNameDesc of T] is teleported to the [School01] along with you!";
 	repeat with R running through predicament rooms:
 		repeat with T running through things in R:
 			unless T is backdrop or T is male-gloryhole or T is female-gloryhole or T is automated changing station, destroy T;

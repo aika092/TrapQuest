@@ -668,11 +668,12 @@ To compute satisfaction of (M - a gladiator):
 			satisfy M for 450 seconds;
 			now the target-room of M is Capsule;
 	otherwise:
-		if the largeness of breasts > the growth-target of M and M is not swordless and the difficulty of M > the starting difficulty of M:
-			let C be a random currently uncovered tearable normally-nipple-covering clothing;
-			if C is clothing and a random number between the cleavageCover of C and 10 >= 9:
-				say "[speech style of M]'I can't see enough of your new puppies. Let me get a better look.'[roman type][line break]Without waiting for a response, [NameDesc of M] slices your [C] open with [his of M] sword, destroying it!";
-				destroy C;
+		if the largeness of breasts > the growth-target of M:
+			if M is not swordless and the difficulty of M > the starting difficulty of M:
+				let C be a random currently uncovered tearable normally-nipple-covering clothing;
+				if C is clothing and a random number between the cleavageCover of C and 10 >= 9:
+					say "[speech style of M]'I can't see enough of your new puppies. Let me get a better look.'[roman type][line break]Without waiting for a response, [NameDesc of M] slices your [C] open with [his of M] sword, destroying it!";
+					destroy C;
 			satisfy M for 850 seconds;
 			now the target-room of M is Capsule.
 

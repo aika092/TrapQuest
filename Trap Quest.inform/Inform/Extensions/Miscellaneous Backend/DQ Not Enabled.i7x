@@ -32,7 +32,7 @@ To decide which figure-name is YesNoBackground:
 	decide on figure of YesNoBackground2.
 
 The story description is "Explore a dangerous world of transformation, penetration, and bimbofication. 18+ only!".
-The release number is 11.
+The release number is 13.
 
 Definition: a thing is thigh-spreading: decide no.
 

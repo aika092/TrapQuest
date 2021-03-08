@@ -196,7 +196,6 @@ To compute teaching of (L - pain-lesson):
 				say "[if N is M][BigNameDesc of M] pockets the device.[line break][speech style of M]'I think I'll keep it for myself.'[otherwise][BigNameDesc of M] twirls the device in [his of M] hand.[line break][speech style of M]'I think I'll give it to Teacher [teacher-name of N]. Something tells me [he of N] will be able to find some good uses for your mouth! If you haven't met [him of M] yet, [he of M][']s the proud owner of a rather juicy [DickDesc of N], which pretty soon your mouth and tongue are likely to be well acquainted with, I should think!'[end if][roman type][line break]";
 			say "You emit a muffled whine through the gag.[line break][speech style of M]'I imagine that wearing this around for a bit will give you a good idea of what submission is like! [bold type]Keep it on until next time we have this class [speech style of M]and I'll reward you with a promotion, okay?'[roman type][line break]As [NameDesc of M] dismisses the class, there's nothing you can do but groan and accept your new fate. There is a small silver lining - you can feel that the magic power of the portal gag has slightly rubbed off on you, adding to your own magic power reserves.";
 			MagicPowerUp 2;
-		increase class-time by 120; [There's a longer time period until the next class]
 	otherwise:
 		say "Well, actually all the things I wanted to suggest aren't possible right now. Oh well. I'll probably have more potential actions in a future version of the game.'[roman type][line break]";
 		allocate 6 seconds.
@@ -268,7 +267,7 @@ To compute teaching of (L - toy-lesson):
 					if the focus-window is g-present, display focus stuff;
 					let CLTR be the chosen letter - 48;
 					now CP is yourself;
-					if CLTR > 0 and CLTR < the number of entries in LP:
+					if CLTR > 0 and CLTR <= the number of entries in LP:
 						let P be entry CLTR in LP;
 						try examining P;
 						say "Choose [P]?";

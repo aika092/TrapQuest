@@ -420,9 +420,9 @@ To compute potential lesson:
 				render buffered stuff;
 				if the wont-change of nurse > 0, decrease the wont-change of nurse by 1;
 				if predicamentJustDone is true and (class-time is 1000 or class-time < 0), now predicamentJustDone is false;
-				now class-time is lessonFrequency;
 				compute teaching of chosen-lesson;
 				increase totalLessonCount by 1;
+				now class-time is lessonFrequency;
 				[let B be (the rank of the player * 3) - the bimbo of the player;
 				if B > 0, increase class-time by B * 60;] [Lessons are spaced further apart if the player isn't slutty enough for them]
 				if the breast-enhancement of nurse is not 0:
