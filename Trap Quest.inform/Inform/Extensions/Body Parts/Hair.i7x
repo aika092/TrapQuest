@@ -144,7 +144,7 @@ To say HairWet:
 	let Q be (100 * the water-drench of hair) / the largeness of hair; [This is just a copy paste of HairSoak as applied to wetness]
 	if the water-drench of hair is 1:
 		say "and slightly damp, ";
-	otherwise Q >= 100:
+	otherwise if Q >= 100:
 		say "and absolutely drenched, ";
 	otherwise if Q >= 66:
 		say "and soaking wet, ";
@@ -279,7 +279,7 @@ To HairDown (X - a number):
 			decrease X by 1;
 			if the player is pigtailed or the player is ponytailed: [Maybe have hair extensions prevent shrinking below 5 too.]
 				if the raw largeness of hair > 5, decrease the raw largeness of hair by 1;
-				otherwise say "Only for it to suddenly stop, your scrunchie[if the number of worn scrunchies < 2][otherwise]s[endif] shaking for a moment as if to protest."; [Some feedback so the player knows hair shrinking was stopped and why. Maybe reroute to fakehairdown if extensions are greater than 0? Though nothing seems to call on the fakehairdown function anywhere.]
+				otherwise say "Only for it to suddenly stop, your scrunchie[if the number of worn scrunchies < 2][otherwise]s[end if] shaking for a moment as if to protest."; [Some feedback so the player knows hair shrinking was stopped and why. Maybe reroute to fakehairdown if extensions are greater than 0? Though nothing seems to call on the fakehairdown function anywhere.]
 			otherwise:
 				if the raw largeness of hair > 1, decrease the raw largeness of hair by 1;
 		compute hair liquids overflow.
@@ -400,13 +400,13 @@ To compute hair drying: [Mostly built from the ripped out skeleton of the clothi
 			decrease the water-drench of hair by a random number between 1 and (1 + 3 * the water-drench of hair / the largeness of hair);
 			if the water-drench of hair is 0:
 				force inventory-focus redraw;
-				say "Your [ShortHairDesc] is now completely dry[if (the urine coating of hair + the semen coating of hair) > 0], if not exactly clean[endif].";
-	if the urine-coating of hair > 1: [The last unit of urine cannot be removed by drying, the 'smell' sticks around until washed/cleaned.]
+				say "Your [ShortHairDesc] is now completely dry[if (the urine coating of hair + the semen coating of hair) > 0], if not exactly clean[end if].";
+	if the urine coating of hair > 1: [The last unit of urine cannot be removed by drying, the 'smell' sticks around until washed/cleaned.]
 		if a random number between 1 and 14 is 1:
-			decrease the urine-coating of hair by 1;
-	if the semen-coating of hair > 1: [As above, so below.]
+			decrease the urine coating of hair by 1;
+	if the semen coating of hair > 1: [As above, so below.]
 		if a random number between 1 and 20 is 1:
-			decrease the semen-coating of hair by 1.
+			decrease the semen coating of hair by 1.
 
 To compute hair liquids overflow: [This is so we don't have to copy paste 3 lines every time something might decrease hair size below its liquid content.]
 	if the semen coating of hair > the largeness of hair, now the semen coating of hair is the largeness of hair;

@@ -223,9 +223,9 @@ To UniqueSquirt (L - a liquid-object) On (C - Hair) by (N - a number):
 				if (the semen coating of C + the urine coating of C) < 1:
 					now O is 0;
 			if (the semen coating of C + the urine coating of C) > 0:
-				say "The [variable L] washes some [if P > 0 and Q > 0][semen] and [urine][otherwise if Q > 0][urine][otherwise][semen][endif] out of your hair. ";
+				say "The [variable L] washes some [if P > 0 and Q > 0][semen] and [urine][otherwise if Q > 0][urine][otherwise][semen][end if] out of your hair. ";
 			otherwise:
-				say "The [variable L] washes all the [if P > 0 and Q > 0][semen] and [urine][otherwise if Q > 0][urine][otherwise][semen][endif] out of your hair. ";
+				say "The [variable L] washes all the [if P > 0 and Q > 0][semen] and [urine][otherwise if Q > 0][urine][otherwise][semen][end if] out of your hair. ";
 		while the water-drench of C < the largeness of hair and N > 0: [soak water into hair]
 			LiquidSoak L on C;
 			decrease N by 1;
