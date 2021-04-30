@@ -109,6 +109,9 @@ Report decanting something with:
 				let M be a random worn overdress;
 				if cafe-maid-outfit is not held and M is a removable overdress, transform M into cafe-maid-outfit;
 				class summon cafe maid stockings;
+			otherwise if inflation fetish is 1 and the player is on tiptoes and flight attendant hat is off-stage and flight attendant hat is actually summonable:
+				say "[bold type]Suddenly a [ShortDesc of flight attendant hat] appears on your head![line break][variable custom style][if the bimbo of the player < 10]What, are they trying to make me serve drinks rather than drink them myself?[otherwise]Haha, I get it, it's because I'm almost lighter than air![end if][roman type][line break]";
+				summon flight attendant hat cursed;
 			otherwise if bunny waitress ears is off-stage and bunny waitress ears is actually summonable:
 				say "[bold type]Suddenly [ShortDesc of bunny waitress ears] appear on your head![line break][variable custom style][if the bimbo of the player < 10]What, are they trying to make me look like a bunny waitress?[otherwise]Haha, it's like I'm a bunny waitress![end if][roman type][line break]";
 				summon bunny waitress ears cursed;

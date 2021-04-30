@@ -124,7 +124,7 @@ To compute generic first time class reward of (Q - soul-harvest-quest) on (C - a
 To compute generic class reward of (Q - soul-harvest-quest) on (C - a clothing):
 	say "[line break][first custom style]'[one of]Ok, [NameBimbo]. I suppose you deserve something nice.'[or]Good girl, [NameBimbo]. Keep working hard, and you'll get more gifts like this.'[or]I suppose I'm satisfied. Now be a good girl and accept this reward, [NameBimbo].'[in random order][roman type][line break]";
 	let D be a random off-stage ring;
-	if D is ring and the quest-completions of Q < 2:[its a second time class reward, essentially]
+	if D is ring and the quest-completions of Q < 2:[it's a second time class reward, essentially]
 		now D is ruby;
 		set shortcut of D;
 		if D is actually summonable:

@@ -189,13 +189,19 @@ Definition: a clothing is non-unique:
 Clothing can be belly exposing or belly covering. Clothing is usually belly exposing. [Does it take up the belly slot?]
 Clothing can be neck exposing or neck covering. Clothing is usually neck exposing. [Does it take up the neck slot?]
 Clothing can be leg exposing or leg covering. Clothing is usually leg exposing.
+Definition: a clothing (called C) is at least partially thigh covering:
+	if C is crotch-in-place:
+		if C is leg covering, decide yes;
+		if C is short or longer, decide yes;
+	decide no.
 Definition: a clothing (called C) is thigh covering:
 	if C is crotch-in-place:
 		if C is leg covering, decide yes;
 		if C is knee-length or longer, decide yes;
 	decide no.
 Definition: a clothing (called C) is calf covering:
-	if C is crotch-in-place and C is leg covering, decide yes;
+	if C is crotch-in-place:
+		if C is leg covering or C is hobble-skirted, decide yes;
 	decide no.
 Definition: a clothing (called C) is ankle covering:
 	if C is leg covering, decide yes;

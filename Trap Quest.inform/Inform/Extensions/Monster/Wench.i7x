@@ -10,6 +10,8 @@ Definition: a wench is raunchy: decide yes.
 
 Definition: a wench is wenchy: decide yes.
 
+Definition: a wench is willing to fluff: decide yes.
+
 Definition: a wench is dungeon dwelling:
 	if diaper quest is 0 and a2m fetish >= 1, decide yes;
 	decide no.
@@ -233,7 +235,7 @@ To compute appearance assessment of (M - a wench):
 	otherwise if the player is top-wardrobe-malfunctioning:
 		compute tq nip slip reaction of M;
 	otherwise if the class of the player is barbarian:
-		say "[speech style of M]'[one of]Not a barbarian-! I'm fucking out of here!'[or]Another fucking babarian-! I'm out of here!'[or]That headband-! I can't stick around!'[in random order][roman type][line break][BigFuckerDesc of M] starts to run away!";
+		say "[speech style of M]'[one of]Not a barbarian-! I'm fucking out of here!'[or]Another fucking barbarian-! I'm out of here!'[or]That headband-! I can't stick around!'[in random order][roman type][line break][BigFuckerDesc of M] starts to run away!";
 		now the scared of M is 15;
 		distract M;
 	otherwise:
@@ -325,7 +327,7 @@ To compute (M - a wench) protecting against (X - a monster):
 		distract M.
 
 To say AllyDamageFlav of (M - a wench) on (X - a monster):
-	say "[speech style of M]'Take this[one of], meanie[or][stopping]!'[roman type][line break][BigNameDesc of M] weakly slaps the [X]!".
+	say "[speech style of M]'Take this[one of], meanie[or][stopping]!'[roman type][line break][BigNameDesc of M] weakly slaps [NameDesc of X]!".
 
 Part 4 - Combat
 
@@ -411,46 +413,79 @@ The obedient wench rule is listed in the wench priority attack rules.
 This is the wench submits to guard rule:
 	let N be current-monster;
 	if the guard-obedience of N is 1:
+		if N is not submission-assisting, now N is submission-assisting;
 		let M be a random royal guard penetrating a body part;
 		let F be asshole;[placeholder]
 		unless M is monster:
 			say "[one of][BigNameDesc of N] continues to lie face down on the ground with [his of N] hands behind [his of N] head.[or][or][cycling]";
 			rule succeeds;
-		otherwise if M is penetrating face or M is penetrating breasts and a random number between 1 and 3 > 1:
-			if a2m fetish > 1:
-				say "[BigNameDesc of N] [one of]submissively[or]diligently[or]quietly[or]obediently[or]greedily[at random] [one of]tongues[or]eats out[in random order] [NameDesc of M][']s asshole";
-			otherwise:
-				if lady fetish is 2, say "[BigNameDesc of N] [one of]submissively[or]diligently[or]quietly[or]obediently[or]greedily[at random] [one of]licks[or]sucks on[as decreasingly likely outcomes] [NameDesc of M]'s [one of]balls[or]testicles[or]scrotum[as decreasingly likely outcomes].";
-				otherwise say "[BigNameDesc of N] [one of]submissively[or]diligently[or]quietly[or]obediently[or]greedily[at random] [one of]tongues[or]eats out[in random order] [NameDesc of M][']s pussy.";
-		otherwise if M is penetrating face:
-			say "[one of][BigNameDesc of N] kneels next to you, holding [his of N] mouth open, allowing [NameDesc of M] to fuck your mouth and [hers of N] alternately[or][line break][speech style of M]'You! Fuck my [DickDesc of M] with [his of the player] mouth.'[roman type][line break][BigNameDesc of N] obeys, holding your head and forcing it back and forth like a living onahole.[line break][if M is able to make sounds][line break][variable custom style][muffled sounds][roman type][line break][end if]You choke and splutter[at random].";
-		otherwise if a random number from 1 to 2 is 1 and M is penetrating a fuckhole:
-			if a random number between 1 and 2 is 1:
-				say "[BigNameDesc of N] kneels over you, holding [his of N] ass cheeks open, allowing [NameDesc of M] to fuck your [variable random fuckhole penetrated by M] and [hers of N] alternately. [if bukkake fetish is 1]While there, [his of N] cum-glazed face rubs all over yours.[end if]";
-				cutshow figure of wench cutscene 6 for M;
-				if bukkake fetish is 1, CumFaceUp 2;
-			otherwise:
-				say "[speech style of M]'You! Ride [him of the player] face.'[roman type][line break][BigNameDesc of M] barks the order and [NameDesc of N] obeys, getting on [his of N] knees facing away from you and pushing [his of N] pussy into your face.";
-				if bukkake fetish is 1 and the creampieTimer of N > 0, CumFaceUp 2;
 		otherwise:
-			say "[one of][BigNameDesc of N] kisses [NameDesc of M] passionately, slapping your [BreastDesc] roughly as [he of N] does for good measure, purposefully hurting you.[or][line break][speech style of M]'You! Slap [him of the player] while I fuck [him of the player]. HARD.'[roman type][line break][BigNameDesc of N] looks at you and hesitates for only a brief moment, before bringing [his of N] hand powerfully across your cheek. It stings painfully![in random order]";
-			PainUp 1;
+			compute submissive assistance of N with M;
 		rule succeeds.
 The wench submits to guard rule is listed in the wench priority attack rules.
 
 To reset submissive wenches:
 	repeat with N running through awake wenches in the location of the player:
-		if the number of royal guards penetrating a body part is 0 and the guard-obedience of N is 1:
+		if the guard-obedience of N is 1:
 			if the health of N >= the maxhealth of N, calm N;
 			say "[if N is unfriendly][line break][speech style of N]'[one of]You got lucky this time, [bitch][or]I'll get you next time, [bitch][or]I'll be back for you later[in random order].'[roman type][line break][end if]The [N] starts to crawl away.";
 			bore N;
 			now the guard-obedience of N is 0;
+			now N is not submission-assisting;
 	repeat with N running through awake adult baby slaves in the location of the player:
 		if the number of spanking the player royal guards is 0 and the guard-obedience of N is 1:
 			if the health of N >= the maxhealth of N, calm N;
 			say "[if N is unfriendly][line break][speech style of N]'[one of]You got lucky this time, [bitch][or]I'll [']play['] with you next time we meet, [bitch][or]We'll finish this later[in random order].'[roman type][line break][end if]The [N] starts to crawl away.";
 			bore N;
-			now the guard-obedience of N is 0.
+			now the guard-obedience of N is 0;
+			now N is not submission-assisting.
+
+To compute vaginal assistance from (S - a wench) with (D - a monster):
+	if a random number between 1 and 2 is 1 and lady fetish < 2:
+		say "[BigFuckerDesc of S] kneels over you, holding [his of S] ass cheeks open, allowing [NameDesc of D] to [if D is wrestler]fist[otherwise]fuck[end if] your [vagina] and [hers of S] alternately. [if the creampieTimer of S > 0]Each time [his of D] [DickDesc of D] slides back in, some of [FuckerDesc of S]'s creampie is left behind![end if]";
+		cutshow figure of wench cutscene 6 for S;
+		if the creampieTimer of S > 0:
+			PussyFill 1;
+			decrease the creampieTimer of S by 30;
+			if the creampieTimer of S < 0, now the creampieTimer of S is 0;
+	otherwise if a random number between 1 and 2 is 1 and the number of monsters penetrating face is 0:
+		if S is unfriendly and face is not actually occupied:
+			say "[speech style of S]'You! Ride [his of the player] face.'[roman type][line break][BigFuckerDesc of D] barks the order and [FuckerDesc of S] looks over at you with a smirk.[line break][speech style of S]'My hands are tied here!'[roman type][line break][big he of S] flips you off as [he of S] sits down on your face.";
+			now S is penetrating face;
+			set up sex length of S in face;
+		otherwise:
+			say "[speech style of S]'You! Ride [his of the player] face.'[roman type][line break][BigNameDesc of D] barks the order and [NameDesc of S] hesitantly obeys, getting on [his of S] knees facing away from you and grinding [his of S] pussy on your face until it's covered in [if bukkake fetish is 1 and the creampieTimer of S > 0][his of S] creampie[otherwise]juices[end if].";
+			if bukkake fetish is 1 and the creampieTimer of S > 0:
+				CumFaceUp 2;
+				decrease the creampieTimer of S by 60;
+				if the creampieTimer of S < 0, now the creampieTimer of S is 0;
+			LickCount;
+	otherwise:
+		compute generic assistance from S with D.
+
+[Currently just a copy of the wench]
+To compute anal assistance from (S - a wench) with (D - a monster):
+	if a random number between 1 and 2 is 1 and lady fetish is 2:
+		say "[BigFuckerDesc of S] kneels over you, holding [his of S] ass cheeks open, allowing [NameDesc of D] to [if D is wrestler]fist[otherwise]fuck[end if] your [asshole] and [hers of S] alternately. [if the creampieTimer of S > 0]Each time [his of D] [DickDesc of D] slides back in, some of [FuckerDesc of S]'s creampie is left behind![end if]";
+		cutshow figure of wench cutscene 6 for S;
+		if the creampieTimer of S > 0:
+			AssFill 1;
+			decrease the creampieTimer of S by 30;
+			if the creampieTimer of S < 0, now the creampieTimer of S is 0;
+	otherwise if a random number between 1 and 2 is 1 and the number of monsters penetrating face is 0:
+		if S is unfriendly and face is not actually occupied:
+			say "[speech style of D]'You! Ride [his of the player] face.'[roman type][line break][BigFuckerDesc of D] barks the order and [FuckerDesc of S] looks over at you with a smirk.[line break][speech style of S]'I'm *soooo* sorry about this.'[roman type][line break][big he of S] flips you off as [he of S] sits down on your face.";
+			now S is penetrating face;
+			set up sex length of S in face;
+		otherwise:
+			say "[speech style of D]'You! Ride [his of the player] face.'[roman type][line break][BigNameDesc of D] barks the order and [NameDesc of S] hesitantly obeys, getting on [his of S] knees facing away from you and grinding [his of S] ass on your face until [if bukkake fetish is 1 and the creampieTimer of S > 0]you've been coated with [his of S] creampie and [end if]you're struggling to breathe.";
+			if bukkake fetish is 1 and the creampieTimer of S > 0:
+				CumFaceUp 2;
+				decrease the creampieTimer of S by 60;
+				if the creampieTimer of S < 0, now the creampieTimer of S is 0;
+			FatigueUp 30;
+	otherwise:
+		compute generic assistance from S with D.
 
 This is the wench steals clothing rule:
 	let M be current-monster;
@@ -743,7 +778,7 @@ To say ErectionDemand of (M - a wench):
 	if M is friendly-fucking or presented-orifice is penis:
 		say "[BigNameDesc of M] stares down at your flaccid [player-penis] while fingering [himself of M].[line break][speech style of M]'[one of]Why aren't you hard? Hurry up.'[or]Wow, you aren't even hard... fix that.'[or]What's the matter? Get hard.'[at random][roman type][line break]";
 	otherwise:
-		say "[BigNameDesc of M] stares down at your flaccid [player-penis] while fingering [himself of M].[line break][speech style of M]'[one of]Want to hear a joke? [if the size of penis < 4]That tiny thing you call a dick! Luckily for you, if it's capable of getting hard I'm gonna fuck you.'[otherwise]Your dick is huge, and you still fucking lost to me. Now get hard for me.'[end if][or]If you get hard for me, I'll let you fuck me, but I don't know if your [player-penis] is even capable of that. [if M is presenting as male]Mine certainly doesn't.'[otherwise]After all, its attached to a [sissy slut] like you.'[end if][or]Get hard. I'm not giving up this chance to finally be on top.'[or][if the creampieTimer of M > 0]Want a taste of [FuckerDesc of a random alive royal guard]'s sloppy seconds? [otherwise]Want a taste of this [HoleDesc of M]? [end if]Not really asking you, FYI. Either you get hard in the next ten seconds or you are literally going to taste it.'[in random order][roman type][line break]".
+		say "[BigNameDesc of M] stares down at your flaccid [player-penis] while fingering [himself of M].[line break][speech style of M]'[one of]Want to hear a joke? [if the size of penis < 4]That tiny thing you call a dick! Luckily for you, if it's capable of getting hard I'm gonna fuck you.'[otherwise]Your dick is huge, and you still fucking lost to me. Now get hard for me.'[end if][or]If you get hard for me, I'll let you fuck me, but I don't know if your [player-penis] is even capable of that. [if M is presenting as male]Mine certainly doesn't.'[otherwise]After all, it's attached to a [sissy slut] like you.'[end if][or]Get hard. I'm not giving up this chance to finally be on top.'[or][if the creampieTimer of M > 0]Want a taste of [FuckerDesc of a random alive royal guard]'s sloppy seconds? [otherwise]Want a taste of this [HoleDesc of M]? [end if]Not really asking you, FYI. Either you get hard in the next ten seconds or you are literally going to taste it.'[in random order][roman type][line break]".
 
 To say ErectionPenetrationFlav of (M - a wench):
 	let U be 0;
@@ -794,7 +829,7 @@ To compute erection orgasm of (M - a wench):
 		say "[BigNameDesc of M] speeds up slightly when [he of M] feels your [ShortDesc of penis] begin to throb, smirking as [if the creampieTimer of M > 0]you add your [load] to the creampie that's already there.[otherwise]you fill [his of M] [HoleDesc of M] with a nice, fresh creampie.[end if]";
 		increase the creampieTimer of M by (the semen load of the player * 100); [So she can sit on your face with it.]
 	otherwise:
-		say "[BigNameDesc of M] stops when [he of M] feels your [ShortDesc of penis] begin to throb, pulling you out and jerking you off until you shoot your [load] across your belly.";
+		say "[BigNameDesc of M] slows down when [he of M] feels your [ShortDesc of penis] begin to throb, pulling you out and jerking you off until you shoot your [load] across your belly.";
 		if bukkake fetish is 1, AnnouncedSquirt semen on belly by the semen load of the player;
 	now penis is not penis-erect.
 
@@ -820,11 +855,17 @@ To say ErectionNearingClimaxFlav of (M - a wench):
 	say "[one of][BigFuckerDesc of M]'s [if the size of penis > 7]moans climb higher and higher in pitch[otherwise]pants turn to moans, climbing higher and higher in pitch[end if] as [he of M] slowly starts speeding up.[or][BigNameDesc of M] rides you with more and more urgency, moaning breathlessly as [his of M] fingers attack [his of M] [if M is presenting as male]dick[otherwise]clit[end if][at random]. [big he of M] must be close!".
 
 To say ErectionClimaxFlav of (M - a wench):
-	say "[BigNameDesc of M] shudders, [one of]shrieking[or]practically crying[at random] with pleasure as [his of M] [if lady fetish is 2]cock shoots strings of [semen] across your belly[otherwise]pussy squirts out femcum[end if]. [big his of M] climax goes on for at least 15 seconds, but eventually [his of M] voice fades, and the movement of [his of M] hips slowly comes to a stop. [big he of M] heaves a satisfied sigh as [he of M] climbs off you.[line break][speech style of M]'[one of]Wow, I needed that.'[or]That felt SO good.'[or]THAT was fucking perfect, cutie.'[in random order][roman type][line break]";
-	orgasm M;
-	Calm M;
-	let N be the size of penis / 3;
-	if N > 0, FavourUp M by (the size of penis / 3).
+	if M is unfriendly or refractoryperiod <= 0:
+		say "[BigNameDesc of M] shudders, [one of]shrieking[or]practically crying[at random] with pleasure as climax takes [him of M]. [big he of M] doesn't stop as [his of M] [if lady fetish is 2]cock shoots strings of [semen] across your belly[otherwise]pussy squirts out femcum[end if]. [if refractoryperiod > 0]You would envy [him of M], if not for the fact that [he of M] made you blow your load only a few seconds ago. [BigFuckerDesc of M] heaves a satisfied sigh as the movements of [his of M] hips come to a stop, and your softening [player-penis] slips out of [his of M] creampied [HoleDesc of M].[otherwise if the reaction of the player is 0]You can't help but envy [him of M], which makes it that much harder to hold on! [otherwise]You can't help but envy [him of M], which makes your desire to cum before you lose your chance even stronger! [end if]";
+		if refractoryperiod <= 0:
+			stimulate penis from M times 1;[player can still cum]
+			say "Looking satisfied, [FuckerDesc of M] climbs off of you.";
+		say "[line break][speech style of M]'[one of]Wow, I needed that.'[or]That felt SO good.'[or]THAT was fucking perfect, cutie.'[in random order][roman type][line break]";
+		Calm M;
+		let N be the size of penis / 3;
+		if N > 0, FavourUp M by (the size of penis / 3);
+	otherwise:
+		say ErectionLostFlav of M.[if M was friendly and the player came, she doesn't cum.]
 
 Section 2 - Damage
 
@@ -1129,7 +1170,12 @@ To facesit dominate (M - a wench):
 				say "You sigh in pleasure, massaging your breasts as the sensations cause your vaginal muscles to loosen and allow [semen] to dribble out onto [his of M] face. [if M is horny-wench][big he of M]'s even more eager after that, moaning greedily as [he of M][otherwise][big he of M] doesn't seem to like that, but a simple glare down at [him of M] is enough to make sure [he of M] thoroughly[end if] scours your creampied [vagina] with [his of M] tongue. You let push [him of M] away gently once you're cleaned out.";
 				now the semen volume of vagina is 0;
 			otherwise:
-				say "Pulling your [AssDesc] apart, you position your [vagina] over [his of M] mouth and your [asshole] over [his of M] nose, cutting off [his of M] airflow. [big he of M] squirms petulantly, weakly clawing at your thighs to try and make you get up, but fails because [he of M] is weakened from the preceding fight. Reluctantly, [he of M] opens [his of M] mouth and pushes [his of M] tongue into your folds. You take the opportunity to play with [his of M] breasts, pinching and rubbing [his of M] nipples until they are tight and red. [big he of M] doesn't forget about your clit, gently pushing it back and forth in hopes of making you orgasm. It feels good, but eventually you grow bored and climb to your feet.";
+				say "Pulling your [AssDesc] apart, you position your [vagina] over [his of M] mouth and your [asshole] over [his of M] nose, cutting off [his of M] airflow. [big he of M] squirms petulantly, weakly clawing at your thighs to try and make you get up, but fails because [he of M] is weakened from the preceding fight. Reluctantly, [he of M] opens [his of M] mouth and pushes [his of M] tongue into your folds. You take the opportunity to play with [his of M] breasts, pinching and rubbing [his of M] nipples until they are tight and red. [big he of M] doesn't forget about your clit, gently pushing it back and forth in hopes of making you orgasm. ";
+				passively stimulate vagina;
+				if the arousal of the player > a random number between 5000 and 7000:
+					orgasm;
+				otherwise:
+					say "It feels good, but eventually you grow bored and climb to your feet.";
 				slightDignify;
 		say AfterDominationComment 9 of M;
 	LickGet.
@@ -1395,6 +1441,16 @@ To decide which number is the bartering value of (T - a desirable knickers) for 
 	if M is objectifying the player, decide on 0;
 	decide on 4.
 
+To decide which number is the bartering value of (T - bag lunch) for (M - a wench):
+	if M is objectifying the player, decide on 0;
+	decide on 1.
+
+To say MonsterOfferAcceptFlav of (M - a wench) to (T - bag lunch):
+	say "[speech style of M]'I'm never going to say no to another emergency snack.'[roman type][line break]".
+
+To say RewardFlav of (M - a wench) for (T - bag lunch):
+	say "[speech style of M]'Don't take this the wrong way, but sometimes when you need a snack, anything is better than nothing. Still, I won't be offended if you don't want it.'[roman type][line break][BigNameDesc of M] puts a [T] on the ground in front of you.".
+
 Part 3 - Variants
 
 workaholic wench is a wench. The text-shortcut of workaholic wench is "wwe".
@@ -1415,8 +1471,7 @@ To set up (M - workaholic wench):
 	add condom-pack to the tradableItems of M;
 	now the raw difficulty of M is the starting difficulty of M + 6;
 	if a2m fetish > 1, now the creampieTimer of M is 300;
-	now the health of M is the maxhealth of M;
-	if the player is not the donator, now M is off-stage.
+	now the health of M is the maxhealth of M.
 
 Definition: workaholic wench is dungeon dwelling: decide no.
 Definition: workaholic wench is hotel dwelling:

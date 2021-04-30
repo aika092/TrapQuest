@@ -54,7 +54,7 @@ Woods18 is a dodgy jungle room. The printed name of Woods18 is "Pine Clearing". 
 
 Woods19 is a dodgy jungle room. The printed name of Woods19 is "Oak Clearing". "For some reason, all the trees around the edge of this clearing are oak trees.". The shape of Woods19 is L2/0-0-0-0-0-1.
 
-Woods20 is a mandatory important jungle room. The printed name of Woods20 is "Witch's Shack". "In the middle of another clearing, a small open air shack stands, sheltering a peculiar stone pillar.". The shape of Woods20 is L2/0-0-1-1-1-1.
+Woods20 is a mandatory important roofed jungle room. The printed name of Woods20 is "Witch's Shack". "In the middle of another clearing, a small open air shack stands, sheltering a peculiar stone pillar.". The shape of Woods20 is L2/0-0-1-1-1-1.
 
 Woods21 is a mandatory important jungle room. The printed name of Woods21 is "Mysterious White Wall". "At the other end of this area, is a white wall with a very unique statue of the bottom half of a human stuck through it. A ladder leads up to a huge hole in the statue which it looks like you could peek through.". The shape of Woods21 is L2/0-0-1-0-0-0. The first forbidden direction of Woods21 is south.
 
@@ -76,7 +76,7 @@ Woods29 is a jungle room. The printed name of Woods29 is "Pumpkin Patch". "A pat
 
 Woods30 is a mandatory dodgy jungle room. The printed name of Woods30 is "Giant Statue". "There is an enormous statue of a naked woman [if doomed is 5]laying in the centre of this clearing. Green vines are wrapped around her body, as if holding her down for the massive, sickly purple creepers plugging her holes.[otherwise if vine boss is off-stage]kneeling in the centre of this clearing.[otherwise]on all fours in the centre of this clearing. Massive green vines are crammed into her mouth and wrapped around her wrists and ankles.[end if]". The shape of Woods30 is L2/0-0-0-1-0-1.
 
-Woods31 is a dodgy jungle room. The printed name of Woods31 is "Cave of Divination". "A shallow cave, with a pair of [if diaper quest is 1]diapered [otherwise if pregnancy fetish is 1]pregnant [end if]women carved into the rock on either side of the entrance.". The shape of Woods31 is L2/0-0-0-0-0-1.
+Woods31 is a dodgy roofed jungle room. The printed name of Woods31 is "Cave of Divination". "A shallow cave, with a pair of [if diaper quest is 1]diapered [otherwise if pregnancy fetish is 1]pregnant [end if]women carved into the rock on either side of the entrance.". The shape of Woods31 is L2/0-0-0-0-0-1.
 
 Stairwell03 is a mandatory untrappable jungle room. The printed name of Stairwell03 is "Spooky Mansion". "An imposing mansion, which rests at just the right angle to be completely hidden from the rest of the woods unless you're standing on the crude path leading up to the front stoop.". The shape of Stairwell03 is L2/0-0-0-0-1-0. [Stairwell03 is north of Woods29. The grid position of Stairwell03 is <?,?,?>]
 

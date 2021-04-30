@@ -58,7 +58,7 @@ To decide which number is the largeness of belly:
 		if the air volume of belly > B, now B is the air volume of belly;
 		decide on belly magnitude of B;
 	let B be the largeness fill of belly;
-	repeat with C running through corsets worn by the player:
+	repeat with C running through worn corsets:
 		decrease B by (the magic-modifier of C + 5);
 		if C is constriction, decrease B by 4;
 	let F be belly magnitude of B;
@@ -411,12 +411,7 @@ To Overflow:
 
 Chapter 3 - Ass Filling
 
-[!<assFilled:Integer>+
-
-has the player ever had cum in their butt?
-
-+!]
-assfilled is a number that varies.
+assfilled is initially false. [has the player ever had cum in their butt?]
 
 To Assfill (X - a number):
 	if lipstick collar is worn, increase X by 1;
@@ -426,7 +421,7 @@ To Assfill (X - a number):
 		compute condom filling of M;
 	otherwise:
 		compute father material of asshole;
-		now assfilled is 1;
+		now assfilled is true;
 	if invigoration-timer of invigoration-elixir > 0 and the soreness of asshole > 0 and X > 0:
 		say "As the [semen] rushes through your system into your [BellyDesc], the lining of your [asshole] is somehow healed!";
 		if the soreness of asshole > X, decrease the soreness of asshole by X;

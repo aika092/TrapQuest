@@ -25,9 +25,13 @@ To decide which number is the knee damage of (P - a person):
 	if the player is diaper kicking:
 		decrease A by 1;
 		if damage-explained > 1, say "-1 (diaper penalty) ";
-	if the player is zeroG:
-		if damage-explained > 1, say "[if A * -1 >= 0]+[end if][A * -1] (weightless) ";
-		now A is 0;
+	if flight-attendant-skirt is not worn:
+		if the player is zeroG:
+			if damage-explained > 1, say "[if A * -1 >= 0]+[end if][A * -1] (weightless) ";
+			now A is 0;
+		otherwise if the player is on tiptoes:
+			if damage-explained > 1, say "-2 (low weight) ";
+			decrease A by 2;
 	decide on A.
 
 knee-fatigue is a number that varies.
@@ -67,9 +71,9 @@ Carry out kneeing:
 	if damage-explained > 0, say "[roman type][line break]";
 	now knee-fatigue-delay is 2;
 	increase knee-fatigue by 1;
-	if the player is zeroG:
+	if the player is zeroG and flight-attendant-skirt is not worn:
 		say "Your body is weightless, meaning you can hardly get any force into your knee without sending yourself backwards.";
-	otherwise if the weight of the player < 1:
+	otherwise if the player is on tiptoes and flight-attendant-skirt is not worn:
 		say "Your body is so light that you don't have the grounding to put your full strength into the attack.";
 	otherwise if the player is diaper kicking:
 		say "Your displeasure at wearing a soggy diaper slightly hampers the power of your knee.";

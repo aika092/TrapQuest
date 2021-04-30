@@ -247,6 +247,7 @@ This is the mouthful prevents speech rule:
 The mouthful prevents speech rule is listed in the player speech rules.
 
 To FaceFill (L - a liquid-object) by (N - a number):
+	if debugmode > 1, say "Filling face by [N] units of [L].";
 	let T be the total volume of face;
 	let outputSuppressed be false;
 	while N > 0 and the total volume of face < face-limit:
@@ -315,6 +316,7 @@ To compute swallowing:
 	otherwise:
 		if auto < 2, say "You [if the player is always automatically swallowing]automatically [otherwise if auto is 1]accidentally [end if]gulp the [MouthfulDesc] down[if auto is 1] your throat[end if].";
 		StomachSemenUp the semen volume of face;
+		if the semen volume of face > 0 and face is monster-origin, progress quest of creampie-drinking-quest;
 		StomachUrineUp the urine volume of face;
 		StomachMilkUp the milk volume of face;
 		MouthEmpty.
@@ -481,7 +483,14 @@ An all later time based rule (this is the do we puke rule):
 		if T is throater:
 			let G be the girth of T;
 			check puking G;
-			if T is monster, decrease the throating of T by 1.
+			if T is monster, decrease the throating of T by 1;
+		check oral virginity loss with T.
+
+To check oral virginity loss with (T - a thing):
+	if the oralvirgin of the player is 1 and T is a live virginity taking thing:
+		now the oralvirgin of the player is 0;
+		now oralvirginity-taker is T;
+		say "[bold type]You just lost your oral virginity![roman type][line break]".
 
 To check puking (N - a number):
 	if player-gagging is false and the latex-transformation of the player < 5 and super gag reflex is 0: [if player-gagging is true then we're already guaranteed to try and puke]
@@ -516,7 +525,7 @@ To compute puking:
 		now player-gagging is true;
 		add the player pukes rule to another-turn-rules, if absent.
 
-[A throater tends to be down the player's throat when penetrating face, blocking puking entirely.]
+[A throater tends to be down the player's throat when penetrating face, allowing the player to gag but preventing puking.]
 Definition: a thing is throater: decide no.
 
 This is the player pukes rule:

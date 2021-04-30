@@ -3,18 +3,6 @@ DQ Not Enabled by Miscellaneous Backend begins here.
 To decide which number is diaper quest:
 	decide on 0.
 
-Figure of Cutscene Prologue Male is the file "Special/Cutscene/cutscene-prologue3.png".
-Figure of Cutscene Prologue Female is the file "Special/Cutscene/cutscene-prologue4.png".
-Figure of YesNoBackground2 is the file "Special/Buttons/yesno2.png".
-Figure of YesNoBackground3 is the file "Special/Buttons/yesno3.png".
-Figure of YesNoBackground4 is the file "Special/Buttons/yesno4.png".
-Figure of YesNoBackground5 is the file "Special/Buttons/yesno5.png".
-Figure of YesNoBackground6 is the file "Special/Buttons/yesno6.png".
-Figure of HoleInWallBackground is the file "Map/hole1.png".
-Figure of IronMaidenBackground is the file "Map/maiden1.png".
-Figure of demon lord is the file "NPCs/Bosses/xavier2.png".
-Figure of modification machine is the file "Env/Hotel/modmachine1.png".
-Figure of slavehound is the file "NPCs/Mansion/Hound/hound2.png".
 
 Include Unnecessary Figures by TQ Only Stuff.
 Include Necessary Figures by TQ Only Stuff.

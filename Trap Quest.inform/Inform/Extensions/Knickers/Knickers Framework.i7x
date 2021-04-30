@@ -70,7 +70,7 @@ To decide which number is the core outrage of (C - a knickers): [This is plugged
 	if C is crotch-exposing, decide on 11;
 	[if C is crotch-ripped, decide on 12;] [Let's try turning this off. Ripped underwear doesn't make it lewd, but of course what it exposes is probably lewd.]
 	if C is actually sheer, decide on 8; [Sheer undies? Very lewd!]
-	let O be 10 - the armour of C;
+	let O be 10 - the penis-capacity of C;
 	if O < 3, decide on 3; [It's always a bit tiny bit outrageous to have your bottoms on display, even if it's swimwear]
 	decide on O.
 
@@ -84,11 +84,10 @@ To decide which number is the unique outrage of (C - a knickers): [Some underwea
 To decide which number is the unique cringe of (C - a knickers): [Some underwear has additional factors that make it babyish, e.g. a silly motif]
 	decide on 0.
 
-To uniquely set up (K - a knickers):
-	repair K;
-	if diaper lover >= 1 and a random number between 1 and 8 is 1, now K is bed wetting;
+To set up magic attribute of (K - a knickers):
+	if diaper lover >= 1 and a random number between 1 and 7 is 1, now K is bed wetting;
 	if K is actually sheer and a random number between 1 and 4 is 1, now K is protection;
-	if K is uncovered themed and a random number between 1 and 10 is 1:
+	if K is uncovered themed and a random number between 1 and 8 is 1:
 		now K is exposure;
 		now K is cursed.
 

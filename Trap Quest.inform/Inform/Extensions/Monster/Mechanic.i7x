@@ -380,6 +380,7 @@ This is the mechanic strips princess rule:
 		let H be a random worn headgear;
 		say "[speech style of current-monster]'At long last, release shall be mine. To dispel your magic, I need simply make you my bride...'[roman type][line break][big he of current-monster] touches your [ShortDesc of H].";
 		transform H into tiara-veil;
+		now the quest of H is betrothal-quest;
 		now bride-consort is mechanic;
 		let C be a random worn removable overdress;
 		if C is a thing, WardrobeVanish C; [this would prevent the class summon below]
@@ -461,7 +462,7 @@ To say StrikingSuccessFlav of (M - mechanic) on (B - a body part):
 	otherwise say "[BigNameDesc of M] [one of]punches[or]slaps[or]kicks[at random] you [TargetName of B]!".
 
 To say StrikingFailureFlav of (M - mechanic) on (B - a body part):
-	if the wrench-timer of M <= 0, say "[BignameDesc of M] tries to [one of]strike[or]whack[or]smack[at random] you [TargetName of B] with [his of M] wrench! You narrowly avoid it.";
+	if the wrench-timer of M <= 0, say "[BigNameDesc of M] tries to [one of]strike[or]whack[or]smack[at random] you [TargetName of B] with [his of M] wrench! You narrowly avoid it.";
 	otherwise say "[BigNameDesc of M] tries to [one of]punch[or]slap[or]kick[at random] you [TargetName of B]! You narrowly dodge.".
 
 To compute (M - mechanic) hurting (B - a body part):

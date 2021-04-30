@@ -423,7 +423,7 @@ To decide which figure-name is clothing-image of (C - a sissy faggot T-shirt):
 	decide on figure of sissy faggot T-shirt.
 
 To say ClothingDesc of (C - a sissy faggot T-shirt):
-	say "This unisex T-shirt has the words sissy faggot' in large black letters on the front and back.".
+	say "This unisex T-shirt has the words 'sissy faggot' in large black letters on the front and back.".
 
 To say ShortDesc of (C - a sissy faggot T-shirt):
 	say "sissy faggot T-shirt".
@@ -441,5 +441,30 @@ Definition: a sissy faggot T-shirt is fetish appropriate:
 
 To decide which number is the initial outrage of (C - a sissy faggot T-shirt):
 	decide on 11.
+
+Part 14 - No Bra No Panties T-shirt
+
+no-bra-no-panties T-Shirt is a T-shirt. no-bra-no-panties T-Shirt is bottom-exclusive. The printed name of no-bra-no-panties T-Shirt is "[clothing-title-before]no bra no panties T-Shirt[clothing-title-after]". The text-shortcut of no-bra-no-panties T-Shirt is "nbpt".
+
+Figure of no-bra-no-panties T-Shirt is the file "Items/Clothes/Upper/Shirts/tshirt13.png".
+
+To decide which figure-name is clothing-image of (C - no-bra-no-panties T-Shirt):
+	decide on figure of no-bra-no-panties T-Shirt.
+
+To say ClothingDesc of (C - no-bra-no-panties T-Shirt):
+	say "This unisex T-shirt has the words 'NO BRA, NO PANTIES' in small white letters on the front.".
+
+To say ShortDesc of (C - no-bra-no-panties T-Shirt):
+	say "no bra no panties T-Shirt".
+
+Definition: no-bra-no-panties T-Shirt is grey themed: decide yes.
+
+To decide which number is the initial outrage of (C - no-bra-no-panties T-Shirt):
+	decide on 5.
+
+To compute periodic effect of (C - no-bra-no-panties T-Shirt):
+	repeat with K running through worn removable knickers:
+		say "Your [C] shudders, and you feel your [K] shimmer and disappear!";
+		destroy K.
 
 T-Shirts ends here.

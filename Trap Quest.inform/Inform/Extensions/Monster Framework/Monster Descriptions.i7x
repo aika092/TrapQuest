@@ -149,7 +149,7 @@ To say FavourDesc of (M - a monster):
 		say "You have a very intimate relationship with [NameDesc of M]. [big he of M][']s [if diaper quest is 0]fucking[otherwise]got access to[end if] your [variable O]!";
 	otherwise if M is unfriendly:
 		if M is unconcerned, say "For whatever reason, it doesn't seem like [he of M][']s interested in fighting you right now.";
-		otherwise say "You have a bad relationship with [NameDesc of M]. It seems like [he of M] wants to fight. [if M is interested][big he of M] is looking right at you![otherwise][big he of M] doesn't seem interested in you right now.[end if]";
+		otherwise say "You have a bad relationship with [NameDesc of M]. It seems like [he of M] wants to fight, [if M is interested]and [he of M] is looking right at you![otherwise]but at least [he of M] doesn't seem interested in you right now.[end if]";
 	otherwise if M is undefeated and M is not caged:
 		if M is guardian:
 			say "You have a very solid relationship with [NameDesc of M], and would expect [him of M] to help you out in a fight and share resources with you.";

@@ -10,20 +10,20 @@ A miniskirt is a kind of skirt. A miniskirt is usually short.
 Definition: a miniskirt is potentially erection concealing: decide yes. [non-tight skirts conceal erections]
 
 To decide which number is the initial outrage of (C - a skirt):
-	decide on 2;
+	decide on 2.
 
-To uniquely set up (S - a skirt):
-	unless S is unique:
-		let R be a random number between 1 and 7;
-		if R is 1, now the magic-type of S is confidence;
-		if R is 2, now the magic-type of S is endurance;
-		if R is 3:
-			now the magic-type of S is temptation;
-			if diaper quest is 1, now S is respiration;
-		if R is 4, now the magic-type of S is dressup;
-		if R >= 5 and S is super-short or S is actually sheer, now the magic-type of S is protection;
-		if R is 3, curse S;
-	now the raw-magic-modifier of S is 0.
+Definition: a skirt is magic-enhanceable: decide no.
+
+To set up magic attribute of (S - a skirt):
+	let R be a random number between 1 and 7;
+	if R is 1, now the magic-type of S is confidence;
+	if R is 2, now the magic-type of S is endurance;
+	if R is 3:
+		now the magic-type of S is temptation;
+		if diaper quest is 1, now S is respiration;
+	if R is 4, now the magic-type of S is dressup;
+	if R >= 5 and S is super-short or S is actually sheer, now the magic-type of S is protection;
+	if R is 3, curse S.
 
 To restock (C - a skirt):
 	let B be a random basic loot skirt;
@@ -164,9 +164,6 @@ To say ShortDesc of (Y - chequered skirt):
 To decide which number is the initial outrage of (C - chequered skirt):
 	decide on 1.
 
-To set up influence of (C - chequered skirt):
-	set up random-based influence of C.
-
 To decide which number is the adult-influence of (C - chequered skirt):
 	decide on 1.
 
@@ -189,9 +186,6 @@ To say ShortDesc of (Y - flowing skirt):
 
 To decide which number is the initial outrage of (C - flowing skirt):
 	decide on 2.
-
-To set up influence of (C - flowing skirt):
-	set up random-based influence of C.
 
 To decide which number is the adult-influence of (C - flowing skirt):
 	decide on 1.
@@ -219,9 +213,6 @@ Definition: full zip skirt is white themed: decide yes.
 
 To decide which number is the initial outrage of (C - full zip skirt):
 	decide on 2.
-
-To set up influence of (C - full zip skirt):
-	set up random-based influence of C.
 
 To decide which number is the adult-influence of (C - full zip skirt):
 	decide on 1.
@@ -299,7 +290,7 @@ To decide which number is the humiliation-influence of (O - avatar-silks):
 	increase B by the magic-modifier of O;
 	decide on B.
 
-black-rubber-hobble-skirt is a skirt. Printed name of black-rubber-hobble-skirt is "[clothing-title-before]tight black latex skirt[clothing-title-after]". The text-shortcut of black-rubber-hobble-skirt is "tbls". black-rubber-hobble-skirt is latex. black-rubber-hobble-skirt is hobble-skirted. black-rubber-hobble-skirt is crotch-skirted. The armour of black-rubber-hobble-skirt is 10. Understand "tight" as black-rubber-hobble-skirt.
+black-rubber-hobble-skirt is a skirt. Printed name of black-rubber-hobble-skirt is "[clothing-title-before]tight black latex skirt[clothing-title-after]". The text-shortcut of black-rubber-hobble-skirt is "tbls". black-rubber-hobble-skirt is latex. black-rubber-hobble-skirt is hobble-skirted. black-rubber-hobble-skirt is crotch-skirted. Understand "tight" as black-rubber-hobble-skirt.
 
 Figure of black-rubber-hobble-skirt is the file "Items/Clothes/Lower/Skirts/Latex/latexhobbleskirt2.png".
 
@@ -325,7 +316,7 @@ To restock (C - black-rubber-hobble-skirt):
 To set up influence of (C - black-rubber-hobble-skirt):
 	do nothing.
 
-blue rubber hobble skirt is a skirt. Printed name of blue rubber hobble skirt is "[clothing-title-before]blue latex hobble skirt[clothing-title-after]". The text-shortcut of blue rubber hobble skirt is "lxhs". blue rubber hobble skirt is latex. blue rubber hobble skirt is hobble-skirted. blue rubber hobble skirt is crotch-skirted. The armour of blue rubber hobble skirt is 12.
+blue rubber hobble skirt is a skirt. Printed name of blue rubber hobble skirt is "[clothing-title-before]blue latex hobble skirt[clothing-title-after]". The text-shortcut of blue rubber hobble skirt is "lxhs". blue rubber hobble skirt is latex. blue rubber hobble skirt is hobble-skirted. blue rubber hobble skirt is crotch-skirted.
 
 Figure of blue rubber hobble skirt is the file "Items/Clothes/Lower/Skirts/Latex/latexhobbleskirt1.png".
 
@@ -406,7 +397,7 @@ Definition: a pink rubber miniskirt is black themed: decide no.
 
 A microskirt is a kind of skirt. A microskirt is usually super-short. A microskirt is usually transformation-rare.
 
-Understand "micro" or "skirt" as the microskirt.
+Understand "micro" as a microskirt.
 
 A red microskirt is a kind of microskirt. There is 1 latex red microskirt. Printed name of red microskirt is "[clothing-title-before]red latex microskirt[clothing-title-after]". Figure of red microskirt is the file "Items/Clothes/Lower/Skirts/Micro/microskirt1.png". The text-shortcut of red microskirt is "rms".
 Definition: a red microskirt is red themed: decide yes.
@@ -540,7 +531,7 @@ Definition: a naughty skirt is potentially vagina covering: decide no. [ass wind
 Definition: a naughty skirt is potentially asshole covering: decide no.
 Definition: a naughty skirt is potentially-bottom-layer-concealing: decide no. [partially exposing]
 
-office skirt is a skirt. Printed name of office skirt is "[clothing-title-before]office skirt[clothing-title-after]". The text-shortcut of office skirt is "os". office skirt is nylon. office skirt is hobble-skirted. office skirt is crotch-skirted. The armour of office skirt is 7.
+office skirt is a skirt. Printed name of office skirt is "[clothing-title-before]office skirt[clothing-title-after]". The text-shortcut of office skirt is "os". office skirt is nylon. office skirt is hobble-skirted. office skirt is crotch-skirted.
 
 Figure of office skirt is the file "Items/Clothes/Lower/Skirts/officeskirt1.png".
 
@@ -570,13 +561,15 @@ To restock (C - office skirt):
 To set up influence of (C - office skirt):
 	do nothing.
 
-A punishment skirt is a kind of skirt. A punishment skirt is usually latex. A punishment skirt is usually hobble-skirted. A punishment skirt is usually crotch-skirted. A punishment skirt is transformation-rare. A punishment skirt is usually butt-windowed. The armour of punishment skirt is usually 12. A punishment skirt is usually crotch-assless.
+A punishment skirt is a kind of skirt. A punishment skirt is usually latex. A punishment skirt is usually hobble-skirted. A punishment skirt is usually crotch-skirted. A punishment skirt is transformation-rare. A punishment skirt is usually butt-windowed. A punishment skirt is usually crotch-assless.
 
 To say ShortDesc of (Y - a punishment skirt):
 	say "punishment skirt".
 
 Definition: a punishment skirt is displacable: decide no.
 Definition: a punishment skirt is black themed: decide yes.
+To decide which number is the initial armour of (C - a punishment skirt):
+	decide on 12.
 
 To decide which number is the initial outrage of (C - a punishment skirt):
 	if diaper quest is 1:
@@ -587,7 +580,7 @@ To decide which number is the initial outrage of (C - a punishment skirt):
 To decide which object is the unique-upgrade-target of (C - a punishment skirt):
 	if the number of worn overdress is 0 and diaper quest is 0, decide on a random off-stage discovered varied hobble-skirted butt-windowed fetish appropriate overdress.
 
-latex-backless-hobble-skirt is a punishment skirt. Printed name of latex-backless-hobble-skirt is "[clothing-title-before]latex backless hobble skirt[clothing-title-after]". The text-shortcut of latex-backless-hobble-skirt is "hs".  Understand "backless", "hobble", "skirt" as latex-backless-hobble-skirt.
+latex-backless-hobble-skirt is a punishment skirt. Printed name of latex-backless-hobble-skirt is "[clothing-title-before]latex backless hobble skirt[clothing-title-after]". The text-shortcut of latex-backless-hobble-skirt is "hs".  Understand "backless", "hobble" as latex-backless-hobble-skirt.
 
 Figure of latex-backless-hobble-skirt is the file "Items/Clothes/Lower/Skirts/punishmentskirt1.jpg".
 To decide which figure-name is clothing-image of (C - latex-backless-hobble-skirt):
@@ -599,7 +592,7 @@ To say ClothingDesc of (C - latex-backless-hobble-skirt):
 To say MediumDesc of (Y - latex-backless-hobble-skirt):
 	say "tight black punishment skirt with butt window".
 
-To uniquely set up (C - latex-backless-hobble-skirt):
+To set up magic attribute of (C - latex-backless-hobble-skirt):
 	if a random number between 1 and 3 is 1, now C is stumbling.
 
 Definition: latex-backless-hobble-skirt is end of transformation chain:
@@ -683,7 +676,7 @@ To say skirtTrayVibratorPower:
 
 To say ClothingDesc of (C - skirt-tray-vibrator):
 	let CR be the max-cakes of C - the cakes-taken of C;
-	if diaper quest is 0, say "This purple skirt is connected to a serving tray with [if CR is 1]one small cupcake remaining[otherwise if CR < the max-cakes of C][CR] small cupcakes remaining[otherwise][CR] small cupcakes[end if] on it. A rigid metal pole at the rear of the serving tray goes through a discreet hole at the front of the skirt and to a vibrator. To wear the skirt, you [if C is not worn]would [end if]have to hold the serving tray in front of you and [if C is worn]keep[otherwise]put[end if] the [if the player is possessing a vagina]rabbit vibrator inside your [vagina][otherwise]vibrating tip up against your [ShortDesc of penis][end if][run paragraph on]";
+	if diaper quest is 0, say "This purple skirt is connected to a serving tray with [if CR is 1]one small cupcake remaining[otherwise if CR < the max-cakes of C][CR] small cupcakes remaining[otherwise][CR] small cupcakes[end if] on it. A rigid metal pole at the rear of the serving tray goes through a discreet hole at the front of the skirt and to a vibrator. To wear the skirt, you [if C is not worn]would [end if]have to hold the serving tray in front of you and [if C is worn]keep[otherwise]put[end if] the [if the player is not possessing a penis]rabbit vibrator inside your [vagina][otherwise]vibrating tip up against your [ShortDesc of penis][end if][run paragraph on]";
 	otherwise say "A red vibrator is connected via a small rigid pole to a serving tray with [if CR is 1]one small cupcake remaining[otherwise if CR < the max-cakes of C][CR] small cupcakes remaining[otherwise][CR] small cupcakes[end if] on it. [if the player is female]The pole goes through the hole in your diaper, so the vibrator is on the inside[otherwise]The tip of the pole is made of soft sex toy material and is attached to the front of your diaper[end if]. To wear the diaper, you have to continue to hold the serving tray in front of you and [if C is worn]keep[otherwise]put[end if] the [if the player is female]rabbit vibrator inside your [vagina][otherwise]vibrating tip up against your [ShortDesc of penis][end if][run paragraph on]";
 	say "[if the cakes-taken of C >= the max-cakes of C or the charge of C > 0]. It is currently vibrating[skirtTrayVibratorPower]![otherwise].[end if]".
 
@@ -692,7 +685,7 @@ To decide which number is the stimulation of (D - skirt-tray-vibrator) on (B - a
 
 Carry out wearing skirt-tray-vibrator:
 	if diaper quest is 1, summon plain-largish-diaper uncursed;
-	say "You [if diaper quest is 1]wear the diaper and [end if]push the vibrator [if the player is female]into your [vagina][otherwise]up against your [ShortDesc of penis][end if] and hold the tray with your hands either side.".
+	say "You [if diaper quest is 1]wear the diaper and [end if]push the vibrator [if the player is not possessing a penis]into your [vagina][otherwise]up against your [ShortDesc of penis][end if] and hold the tray with your hands either side.".
 
 Carry out taking off skirt-tray-vibrator when diaper quest is 1:
 	only destroy plain-largish-diaper.
@@ -708,7 +701,7 @@ An all time based rule (this is the skirt tray vibrator rule):
 		otherwise if the cakes-taken of skirt-tray-vibrator >= the max-cakes of skirt-tray-vibrator or the charge of skirt-tray-vibrator > 0:
 			decrease the charge of skirt-tray-vibrator by 1;
 			if skirt-tray-vibrator is worn:
-				say "The hidden [if the player is female]rabbit vibrates[skirtTrayVibratorPower] inside your [vagina] and on your clit[otherwise]toy vibrates[skirtTrayVibratorPower] on your [player-penis][end if]!";
+				say "The hidden [if the player is not possessing a penis]rabbit vibrates[skirtTrayVibratorPower] inside your [vagina] and on your clit[otherwise]toy vibrates[skirtTrayVibratorPower] on your [player-penis][end if]!";
 				stimulate vagina from skirt-tray-vibrator;
 			if skirt-tray-vibrator is held or skirt-tray-vibrator is in the location of the player:
 				if the charge of skirt-tray-vibrator <= 0 and the cakes-taken of skirt-tray-vibrator < the max-cakes of skirt-tray-vibrator, say "[bold type]The vibrator section of the [skirt-tray-vibrator] [bold type]stops vibrating, for now.[roman type][line break]".
@@ -731,7 +724,7 @@ To say CupcakeExplanation of (M - a bystander):
 		say "[line break][one of][speech style of M]'Outrageous costume. But they look so tasty, I can't resist.'[roman type][line break][or][speech style of M]'I'm still taking one.'[roman type][line break][stopping]".
 
 To say skirtTrayBuzzFlav:
-	say "The vibrator [if the player is female]in your [vagina] and pushed against your clit[otherwise]pushed against your [ShortDesc of penis][end if] [if the charge of skirt-tray-vibrator <= 0]kicks into action, [otherwise]becomes even [end if]stronger than before! It buzzes away[skirtTrayVibratorPower].".
+	say "The vibrator [if the player is possessing a vagina]in your [vagina] and [end if][if the player is possessing a penis]pushed against your [ShortDesc of penis] [otherwise if the player is possessing a vagina]pushed against your clit [end if][if the charge of skirt-tray-vibrator <= 0]kicks into action, [otherwise]becomes even [end if]stronger than before! It buzzes away[skirtTrayVibratorPower].".
 
 This is the orgasm drops cupcakes rule:
 	if skirt-tray-vibrator is worn and the cakes-taken of skirt-tray-vibrator < the max-cakes of skirt-tray-vibrator:
@@ -748,7 +741,7 @@ The orgasm drops cupcakes rule is listed last in the orgasm fatigue effects rule
 To decide which object is the concealer of (C - skirt-tray-vibrator): decide on nothing.
 To decide which object is the at least partial concealer of (C - skirt-tray-vibrator): decide on nothing.
 
-grope-me-skirt is a skirt. grope-me-skirt is unique. grope-me-skirt is short. The printed name of grope-me-skirt is "[clothing-title-before]'PLEASE GROPE MY TITS' skirt[clothing-title-after]". The text-shortcut of grope-me-skirt is "gms". Figure of grope-me-skirt is the file "Items/Clothes/Lower/Skirts/gropemeskirt1.png". Understand "please", "grope", "my tits", "skirt" as grope-me-skirt.
+grope-me-skirt is a skirt. grope-me-skirt is unique. grope-me-skirt is short. The printed name of grope-me-skirt is "[clothing-title-before]'PLEASE GROPE MY TITS' skirt[clothing-title-after]". The text-shortcut of grope-me-skirt is "gms". Figure of grope-me-skirt is the file "Items/Clothes/Lower/Skirts/gropemeskirt1.png". Understand "please", "grope", "my tits" as grope-me-skirt.
 To decide which figure-name is clothing-image of (H - grope-me-skirt):
 	decide on figure of grope-me-skirt.
 
@@ -758,7 +751,7 @@ To say ClothingDesc of (C - grope-me-skirt):
 To decide which number is the initial outrage of (C - grope-me-skirt):
 	decide on 6.
 
-open-front-skirt is a skirt. open-front-skirt is unique. The printed name of open-front-skirt is "[clothing-title-before]open front skirt[clothing-title-after]". The text-shortcut of open-front-skirt is "ofs". Understand "open", "front", "skirt" as open-front-skirt.
+open-front-skirt is a skirt. open-front-skirt is unique. The printed name of open-front-skirt is "[clothing-title-before]open front skirt[clothing-title-after]". The text-shortcut of open-front-skirt is "ofs". Understand "open", "front" as open-front-skirt.
 Figure of open-front-skirt female is the file "Items/Clothes/Lower/Skirts/openfrontskirt1.jpg".
 Figure of open-front-skirt male is the file "Items/Clothes/Lower/Skirts/openfrontskirt2.jpg".
 Figure of open-front-skirt diaper is the file "Items/Clothes/Lower/Skirts/openfrontskirt3.jpg".
@@ -788,7 +781,7 @@ Definition: open-front-skirt is potentially erection concealing:
 	if girlfriend-partner is snogged, decide yes;
 	decide no.
 
-sheer-open-front-skirt is a skirt. sheer-open-front-skirt is unique. sheer-open-front-skirt is sheer. The printed name of sheer-open-front-skirt is "[clothing-title-before]sheer open front skirt[clothing-title-after]". The text-shortcut of sheer-open-front-skirt is "sofs". Understand "sheer", "open", "front", "skirt" as sheer-open-front-skirt.
+sheer-open-front-skirt is a skirt. sheer-open-front-skirt is unique. sheer-open-front-skirt is sheer. The printed name of sheer-open-front-skirt is "[clothing-title-before]sheer open front skirt[clothing-title-after]". The text-shortcut of sheer-open-front-skirt is "sofs". Understand "sheer", "open", "front" as sheer-open-front-skirt.
 Figure of sheer-open-front-skirt is the file "Items/Clothes/Lower/Skirts/openfrontskirt4.png".
 To decide which figure-name is clothing-image of (H - sheer-open-front-skirt):
 	decide on figure of sheer-open-front-skirt.
@@ -818,7 +811,7 @@ This is the sheer-open-front-skirt pussy slut rule:
 	if sheer-open-front-skirt is worn, increase the desirability of vagina by 9.
 The sheer-open-front-skirt pussy slut rule is listed in the pussy slut eligibility rules.
 
-window-skirt is a skirt. window-skirt is unique. window-skirt is latex. window-skirt is sheer. The printed name of window-skirt is "[clothing-title-before]fetish window skirt[clothing-title-after]". The text-shortcut of window-skirt is "fwsk". Understand "fetish", "window", "skirt" as window-skirt.
+window-skirt is a skirt. window-skirt is unique. window-skirt is latex. window-skirt is sheer. The printed name of window-skirt is "[clothing-title-before]fetish window skirt[clothing-title-after]". The text-shortcut of window-skirt is "fwsk". Understand "fetish", "window" as window-skirt.
 Figure of window-skirt is the file "Items/Clothes/Lower/Skirts/Latex/latexskirt3.png".
 To decide which figure-name is clothing-image of (H - window-skirt):
 	decide on figure of window-skirt.
@@ -827,6 +820,26 @@ To say MediumDesc of (C - window-skirt):
 	say "latex fetish window skirt".
 To say ClothingDesc of (C - window-skirt):
 	say "A black latex skirt, with a patterned sheer window section in the middle, to somewhat expose your crotch and butt.".
+
+flight-attendant-skirt is a skirt. flight-attendant-skirt is unique. flight-attendant-skirt is nylon. flight-attendant-skirt is short. The printed name of flight-attendant-skirt is "[clothing-title-before]flight attendant skirt[clothing-title-after]". The text-shortcut of flight-attendant-skirt is "fas". Understand "flight", "attendant" as flight-attendant-skirt.
+Figure of flight-attendant-skirt is the file "Items/Clothes/Lower/Skirts/flightattendant1.png".
+To decide which figure-name is clothing-image of (H - flight-attendant-skirt):
+	decide on figure of flight-attendant-skirt.
+
+Definition: flight-attendant-skirt is class-relevant:
+	if the class of the player is flight attendant, decide yes;
+	decide no.
+
+Definition: flight-attendant-skirt is layer-concealing: decide no.
+Definition: flight-attendant-skirt is partially-layer-concealing: decide yes.
+Definition: flight-attendant-skirt is blue themed: decide yes.
+Definition: flight-attendant-skirt is inflation themed: decide yes.
+
+To say MediumDesc of (C - flight-attendant-skirt):
+	say "flight attendant's skirt".
+To say ClothingDesc of (C - flight-attendant-skirt):
+	say "A short blue flight attendant's skirt, with yellow laces all the way down at each side, exposing some hip. Its magical power will allow the wearer to knee and kick enemies without suffering any damage penalties from being almost weightless.".
+
 
 
 All Skirts ends here.

@@ -58,9 +58,13 @@ To decide which number is the slap damage of (P - a person):
 		if the player is wrist bound:
 			decrease A by 2;
 			if damage-explained > 1, say "-2 (wrists bound) ";
-		if the player is zeroG:
-			if damage-explained > 1, say "[if A * -1 >= 0]+[end if][A * -1] (weightless) ";
-			now A is 0;
+		if flight-attendant-top is not worn:
+			if the player is zeroG:
+				if damage-explained > 1, say "[if A * -1 >= 0]+[end if][A * -1] (weightless) ";
+				now A is 0;
+			otherwise if the player is on tiptoes:
+				if damage-explained > 1, say "-2 (low weight) ";
+				decrease A by 2;
 	decide on A.
 
 Slapping is an action applying to one thing.
@@ -104,8 +108,7 @@ Carry out slapping:
 				now heel-H is 1;
 				say "[one of]You are feeling so unstable in your [ShortDesc of H] that you don't dare raise your feet.[or][stopping]";
 		say "[if punch is 1][one of]Clenching your fist tight, you[or]You[stopping] punch[otherwise]You slap[end if] [the noun][if heel-H is 1] instead[end if][if the latex-transformation of the player is 8] with your fingerless arms![end if]! ";
-	say "[if the largeness of breasts >= 6 and the breastskill of the player is 0]Your [BreastDesc] are getting in the way and slightly reducing the power of your swing. [otherwise if the largeness of breasts > 12 and the breastskill of the player is 0]Your [BreastDesc] are getting in the way and significantly reducing the power of your swing. [end if][if the player is wrist bound]Unfortunately your wrists being bound significantly hampers the strength you can get into your slaps. [end if][if the player is zeroG]Your body is weightless, meaning you can hardly get any force into your slap without sending yourself flying backwards. [otherwise if the weight of the player < 1]Your body is so light that you don't have the grounding to put your full strength into the slap. [otherwise if living tentacles is worn]The tentacles wrapping around you flail about and strike the enemy as well! [end if]";
-	say "[if the largeness of breasts >= 6 and the breastskill of the player is 0]Your [BreastDesc] are getting in the way and slightly reducing the power of your swing. [otherwise if the largeness of breasts > 12 and the breastskill of the player is 0]Your [BreastDesc] are getting in the way and significantly reducing the power of your swing. [end if][if the player is wrist bound]Unfortunately your wrists being bound significantly hampers the strength you can get into your slaps. [end if][if the player is zeroG]Your body is weightless, meaning you can hardly get any force into your slap without sending yourself flying backwards. [otherwise if the weight of the player < 1]Your body is so light that you don't have the grounding to put your full strength into the slap. [otherwise if living tentacles is worn]The tentacles wrapping around you flail about and strike the enemy as well! [end if]";
+	unless there is a worn slap ready projectile equippable, say "[if the largeness of breasts >= 6 and the breastskill of the player is 0]Your [BreastDesc] are getting in the way and slightly reducing the power of your swing. [otherwise if the largeness of breasts > 12 and the breastskill of the player is 0]Your [BreastDesc] are getting in the way and significantly reducing the power of your swing. [end if][if the player is wrist bound]Unfortunately your wrists being bound significantly hampers the strength you can get into your slaps. [end if][if the player is zeroG and flight-attendant-top is not worn]Your body is weightless, meaning you can hardly get any force into your slap without sending yourself flying backwards. [otherwise if the player is on tiptoes and flight-attendant-top is not worn]Your body is so light that you don't have the grounding to put your full strength into the slap. [otherwise if living tentacles is worn]The tentacles wrapping around you flail about and strike the enemy as well! [end if]";
 	if there is a worn hostility clothing, compute hostileDamage;
 	damage A on the noun;
 	if the noun is combative, compute wrangle reaction of the noun.
@@ -140,7 +143,7 @@ The first portion of the "Zapping" action, which confirms that the player has th
 Check zapping it with:
 	if the noun is monster and the second noun is not monster, try zapping the second noun with the noun instead;
 	if the second noun is not monster, say "Err, why would you do that?" instead;
-	if the noun is zap ready equippable and the noun is not worn, say "Unfortunately, you can't use that if you're not wielding it!" instead;
+	if the noun is zap ready clothing and the noun is not worn, say "Unfortunately, you can't use that if you're not wielding it!" instead;
 	if the noun is not zappable, say "That can't be used to cast spells." instead;
 	if the player is in a predicament room, say "This is neither the time nor the place for violence." instead;
 	if the second noun is woman-player and woman-player is not angered:
@@ -154,7 +157,7 @@ currentZapper is a thing that varies. currentZapper is yourself.
 
 [!<CarryOutZapping>+
 
-The second portion of the "Zapping" action, which executes calculates damage based on any zap ready equippables.
+The second portion of the "Zapping" action, which executes calculates damage based on any zap ready wearbles.
 
 +!]
 Carry out zapping it with:

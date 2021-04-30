@@ -246,8 +246,8 @@ To decide which number is supportersEnabled:
 
 Definition: a person is a flatchested trap:
 	if diaper quest is 1, decide no;
-	if trap fetish is 1 and the player is male, decide yes;
-	if the player is male and max breast size <= 1, decide yes;
+	if trap fetish is 1 and the player is not possessing a vagina, decide yes;
+	if the player is not possessing a vagina and max breast size <= 1, decide yes;
 	decide no.
 
 To decide which number is super gag reflex:

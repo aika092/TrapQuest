@@ -121,7 +121,7 @@ To compute perception of (M - matron):
 	otherwise if M is unfriendly:
 		say "[one of][big he of M] seems compelled by [his of M] maternal instincts to care for [his of M] newest charge[or][big he of M] smiles warmly[if the delicateness of the player < 15], but with a small hint of malice[end if][stopping].[line break][speech style of M]'Hi, you naughty baby! You look like you need nanny's help.'[roman type][line break][if the diaper addiction of the player < 8]There's worry in your eyes as [he of M] approaches. [big he of M] won't accept that you're really an adult and can care for your own self. [otherwise if the diaper addiction of the player > 15]You giggle and react with a whimsical[line break][second custom style]'Ack!'[roman type][line break]as you ready to play with your Nanny. [end if][if the delicateness of the player < 7]You hope you have the strength to fight [him of M] off. [otherwise if the delicateness of the player < 12]Your mind begins to wander thinking of what sort of humiliation [he of M]'ll put you through, now.[otherwise if the delicateness of the player < 16]You yearn for [his of M] care.[otherwise]You ache to fall to your knees and let [him of M] do whatever [he of M] wants with your body.[end if]";
 		compute diaper check of M;
-	otherwise if there is a worn diaper or the player is incontinent or M is aware that the player needs a change:
+	otherwise if there is a worn diaper or the player is incontinent or the player is actually an adult baby or M is aware that the player needs a change:
 		say "[speech style of M]'[if the times-met of M < 1]Hey there you cute little thing.'[otherwise][one of]Oh it's my favourite big baby!'[or]Hi little baby potty pants!'[or]Don't you cry little one, Nanny is here to take care of you!'[in random order][end if][roman type][line break]";
 		compute diaper check of M;
 	otherwise if M is motherly:
@@ -537,7 +537,7 @@ To compute damage reaction of (M - matron):
 			DifficultyUp M by 1;
 			now the countdown of M is -5;
 		otherwise:
-			say "[BigNameDesc of M] stumbles as [he of M] receives your kick, but it doens't look like [he of M]'s done counting.";
+			say "[BigNameDesc of M] stumbles as [he of M] receives your kick, but it doesn't look like [he of M]'s done counting.";
 	otherwise if M is uninterested or M is friendly:
 		say CombatProvokedReaction of M;
 		now the sleep of M is 0;

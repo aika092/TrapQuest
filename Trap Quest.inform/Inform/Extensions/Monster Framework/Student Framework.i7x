@@ -837,14 +837,14 @@ Definition: bully-plug is eligible:
 	if asshole is exposed and the current-rank of current-monster > 1, decide yes;
 	decide no.
 To execute (A - bully-plug):
-	let P be a random sex toy penetrating asshole;
+	let P be a random thing penetrating asshole;
 	if P is clothing:
-		say "[speech style of current-monster]'Why do you have that in your ass? It obviously doesn't fit you, tryhard [bitch].'[roman type][line break][BigNameDesc of current-monster] smacks your ass, making sure [his of current-monster] palm connects with your [ShortDesc of P] so you feel it all the way inside your [asshole].";
+		say "[speech style of current-monster]'Why do you have that in your ass? It obviously doesn't fit you, tryhard [bitch].'[roman type][line break][BigNameDesc of current-monster] smacks your ass, making sure [his of current-monster] palm connects with [NameDesc of P] so you feel it all the way inside your [asshole].";
 	otherwise:
 		now P is a random off-stage plentiful dong;
 		let pN be the openness of asshole - size of P;
 		say "[speech style of current-monster]'You look like you need something hard to work on for a little while.'[roman type][line break][BigNameDesc of current-monster] pulls out a [ShortDesc of P], [if pN < 0]laughing cruelly at your whimper of pain as [he of current-monster] roughly forces it into your [asshole][otherwise if pN < 3]slamming it into your [asshole][end if] and harshly swats your ass. [big his of current-monster] palm makes full contact with the bottom of the [ShortDesc of P], making you feel it all the way inside.";
-		summon P;
+		summon P uncursed;
 	ruin asshole times 2.
 
 bully-piss is a bully-action.
@@ -860,7 +860,7 @@ Definition: bully-forcefeed is eligible:
 	if face is actually occupied, decide no;
 	decide yes.
 To execute (A - bully-forcefeed):
-	say "[speech style of current-monster]'Open wide, [bitch]!'[roman type][line break][BigNameDesc of current-monster] holds your nose until you have to open your mouth, and then forces ";
+	say "[speech style of current-monster]'Open wide, [bitch]!'[roman type][line break][BigNameDesc of current-monster] holds your nose until you have to open your mouth, and then forces [run paragraph on]";
 	if the current-rank of current-monster > a random number between 2 and 3:
 		say "you to drink a glowing pink potion.";
 		if diaper lover >= 0:

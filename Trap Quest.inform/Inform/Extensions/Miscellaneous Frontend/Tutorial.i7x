@@ -29,12 +29,12 @@ Check going north when tutorial is 1:
 Tutorial01 is an introductory room. "A weird room with a stone ground and pink walls. Something tells you this is a practise area.[paragraph break][newbie style]Surprise, graphics! Your character starts off [if diaper quest is 1]naked and proud[otherwise]looking rather flat and androgynous[end if] but by the end of the game that will almost certainly not be the case. Anyway, as you're about to be told, there's a container in this room. Containers are your main way of obtaining loot. [bold type][if the focus-window is g-present]The padlock image can be clicked on like a button, in order to open the container[otherwise]The hyperlink shortcut 'op' stands for 'open'[end if]. [newbie style]When you find an item, it'll automatically be added to your bag of holding (a magic item which helps you hold infinite items) unless it's something you eat or drink. There's a limit on how many of these items you can carry so you'll have to actively choose to take them manually[if the hyper-window is g-present]. You may also want to check out some of the useful links in the window in the bottom left. The most interesting one right now is probably 'x self'[end if].[roman type][line break]". The printed name of Tutorial01 is "A pink room". The shape of Tutorial01 is L10/0-0-0-1-0-0. The grid position of Tutorial01 is <10,11,12>. Tutorial01 is discovered.
 
 Check going east when the player is in Tutorial01:
-	unless there is a worn grey monokini, say "You should probably make sure that your naughty bits aren't on display before you continue.[unless there is a held grey monokini] What's in that sack, I wonder?[end if]" instead.
+	unless grey-monokini is worn, say "You should probably make sure that your naughty bits aren't on display before you continue.[unless grey-monokini is held] What's in that sack, I wonder?[end if]" instead.
 
 Tutorial02 is an introductory room. "An identical room to the one before, but this one has a different container in the middle of it![paragraph break][newbie style]Looks like another thing you can open. This game is easy! Surely nothing can go wrong? Also, you'll notice you can see a guard in the next room, but not yet interact or even examine [him of a random royal guard]. You can only do actions to things in the same location as yourself.[roman type][line break]". Tutorial02 is east of Tutorial01. The printed name of Tutorial02 is "Another pink room". The shape of Tutorial02 is L10/0-0-0-1-0-1. The grid position of Tutorial02 is <10,12,12>.
 
 Check going east when the player is in Tutorial02:
-	unless there is a worn heels and there is a worn grey monokini, say "You should probably make sure you're obtaining and wearing all possible equipment before moving forward." instead.
+	unless there is a worn heels and grey-monokini is worn, say "You should probably make sure you're obtaining and wearing all possible equipment before moving forward." instead.
 
 Report wearing:
 	if tutorial is 1:
@@ -88,13 +88,12 @@ The TutorialArea is a region. Tutorial01, Tutorial02, Tutorial03, Tutorial04, Tu
 
 To compute tutorial treasure to (X - a container):
 	if X is in Tutorial01:
-		let C be a random grey monokini;
-		blandify C;
-		now C is unowned;
-		now C is not-influencing;
-		now C is in X;
-		say "[Discovery of C]";
-		compute autotaking C;
+		blandify grey-monokini;
+		now grey-monokini is unowned;
+		now grey-monokini is not-influencing;
+		now grey-monokini is in X;
+		say Discovery of grey-monokini;
+		compute autotaking grey-monokini;
 		say "[newbie style]As you are currently naked, you should probably try wearing this! It will make your appearance much more respectable and less humiliating. [if the inventory-focus-window is g-present]The buttons below the swimsuit are to drop or wear it respectively, and you can click on the image itself to view a description[otherwise]The hyperlink 'dr' is short for 'drop' and 'we' is short for 'wear'. And don't forget you can click on an item's name to view a description and image[end if]![roman type][line break]";
 	if X is in Tutorial02:
 		let C be a random leather peep toe heels;

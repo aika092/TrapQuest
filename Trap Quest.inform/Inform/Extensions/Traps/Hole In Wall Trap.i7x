@@ -82,7 +82,7 @@ HoleEntering is an action applying to one thing.
 Check HoleEntering:
 	if the noun is warp portal, try entering the noun instead;
 	if the noun is not hole-in-wall, say "This verb is for entering holes in walls." instead;
-	if the player is immobile or there is a thing wrangling a body part, say "You're currently immobile!" instead;
+	if the player is at least partially immobile, say "You're currently immobile!" instead;
 	if the player is upright or the player is flying, say "You'd need to be on your knees." instead;
 	allocate 3 seconds;
 	if the largeness of breasts > 15, say "You try but your [MediumDesc of breasts] are just too big, you won't be able to fit through!" instead.
@@ -133,7 +133,8 @@ Check resisting when the location of the player is HoleInWall:
 			increase hole-in-wall-resists by 1;
 			say "You don't manage to make it out this time.";
 			now the player-reaction of the player is resisting;
-			HoleWait.
+			HoleWait;
+		do nothing instead.
 
 To HoleWait:
 	let break-wait be 0;
@@ -147,7 +148,7 @@ To HoleWait:
 			now break-wait is 1;
 	if hole-in-wall-turns >= 11:
 		let M be a random alive robobellboy;
-		if (tentacle fetish is 0 or inhuman pregnancy < 2) and composed-explorer is summon-available and composed-explorer is off-stage, now M is composed-explorer;
+		if diaper quest is 0 and (tentacle fetish is 0 or inhuman pregnancy < 2) and composed-explorer is summon-available and composed-explorer is off-stage, now M is composed-explorer;
 		if M is nothing:
 			now M is a random robobellboy;
 			set up M;

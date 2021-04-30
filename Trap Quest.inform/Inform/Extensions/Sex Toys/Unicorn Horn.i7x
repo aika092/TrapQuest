@@ -1,6 +1,6 @@
 Unicorn Horn by Sex Toys begins here.
 
-A unicorn-horn is a kind of dong. The printed name of unicorn-horn is "[TQlink of item described]unicorn horn[shortcut-desc][TQxlink of item described][verb-desc of item described]". A unicorn-horn is usually unique. A unicorn-horn is biological. There is 1 unicorn-horn. The size of a unicorn-horn is usually 4.
+A unicorn-horn is a kind of dong. The printed name of unicorn-horn is "[TQlink of item described]unicorn horn[shortcut-desc][TQxlink of item described][verb-desc of item described]". A unicorn-horn is unique. A unicorn-horn is biological. There is 1 unicorn-horn. The size of a unicorn-horn is usually 4.
 
 Figure of unicorn horn is the file "Items/Accessories/Toys/horn1.jpg".
 
@@ -34,9 +34,6 @@ To compute resolution of (M - mechanic) taking (T - a unicorn-horn):
 	XavierUp M by 1;
 	bore M.
 
-To uniquely set up (C - a unicorn-horn):
-	now C is suppression.
-
 To compute climax effect of (C - a unicorn-horn):
 	say "The [printed name of C] briefly lights up before exploding into a shower of glittering motes.";
 	only destroy C;
@@ -63,6 +60,7 @@ To compute resolution of (M - a monster) taking (T - a unicorn-horn):
 
 To uniquely set up (C - a unicorn-horn):
 	now the size of C is 6;
+	now C is suppression;
 	now C is blessed.
 
 Definition: a unicorn-horn is cursable: decide no.

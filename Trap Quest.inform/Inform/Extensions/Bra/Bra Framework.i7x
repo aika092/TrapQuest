@@ -109,7 +109,9 @@ To uniquely set up (B - a bra):
 	if diaper quest is 0:
 		if extreme proportions fetish is 0 and the size of B > 11 - max breast size points, now the size of B is a random number between 3 and (11 - max breast size points);
 		if extreme proportions fetish is 1 and the size of B > 20 - max breast size points, now the size of B is a random number between 10 and (20 - max breast size points);
-	if the size of B < the min size of B, now the size of B is min size of B;
+	if the size of B < the min size of B, now the size of B is min size of B.
+
+To set up magic attribute of (B - a bra):
 	let R be a random number between 1 and 9;
 	if R is 1, now B is suppression;
 	if R is 2:

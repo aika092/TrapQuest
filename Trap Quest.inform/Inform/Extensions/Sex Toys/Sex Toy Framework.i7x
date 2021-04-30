@@ -97,7 +97,7 @@ To set up magic state of (C - a sex toy):
 		now C is bland;
 		set up BUC of C.
 
-To set up toy enchantments of (C - a sex toy):
+To set up magic attribute of (C - a sex toy):
 	let R be a random number between 1 and 10;
 	if R is 1, now C is refreshment;
 	if R is 2, now C is rejuvenation;
@@ -113,12 +113,8 @@ To set up toy enchantments of (C - a sex toy):
 
 To uniquely set up (C - a sex toy):
 	ToyShortcutAssign C;
-	set up toy enchantments of C;
-	if the size of C is 0:
-		now the size of C is a random number between 1 and 10;
-	if C is plug:
-		if the size of C is 0, now the size of C is a random number between 1 and 10;
-		if C is blandness and the size of C < 4 and a random number between 1 and 4 is 1, now C is expansion.
+	if the size of C is 0, now the size of C is a random number between 1 and 10;
+	if C is plug and C is not unique and C is blandness and the size of C < 4 and a random number between 1 and 4 is 1, now C is expansion.
 
 To compute periodic effect of (C - an expansion clothing):
 	increase the toy-charge of C by 1;

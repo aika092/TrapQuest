@@ -17,7 +17,7 @@ Definition: an equippable is stealable:
 
 Definition: a thing is zappable: decide no. [Can it be used to cast a magic combat spell?]
 
-Definition: an equippable is zappable:
+Definition: a clothing is zappable:
 	if it is zap ready and it is worn, decide yes;
 	decide no.
 Definition: a clothing is hand ready:
@@ -47,9 +47,6 @@ To decide which number is the slap damage improvement of (E - a thing):
 	decide on 0.
 To decide which number is the zap damage improvement of (E - a thing):
 	decide on 0.
-
-To uniquely set up (E - an equippable):
-	do nothing.
 
 Part 1 - Gloves
 

@@ -274,7 +274,7 @@ Definition: djinn is distracted:
 		if M is explorer:
 			let D be the best route from the location of the player to Stairwell02 through jungle rooms;
 			say "[BigNameDesc of djinn] spots [NameDesc of M].[line break][speech style of djinn]'Your third and final wish. I will hear it now.'[roman type][line break][BigNameDesc of M] looks nervous as [he of M] tries to decide what [he of M] wants to wish for. The time pressure seems to get to [him of M], and [he of M] panics.[line break][speech style of M]'I, um I wish for... ";
-			if the explorer-bimbo of M > 0, say "I wish for endless riches!'[roman type][line break][BigNameDesc of djinn] nods.[line break][speech style of djinn]'It is done. You now have access to endless riches. You must merely touch your new bed to summon one of an endless number of [men of shopkeeper] who will give you jewellery in exchange for your... [']services[']. Just make sure to give the pimp [his of pimp] cut.'[line break][speech style of M]'New bed? [']Services[']? PIMP?! What are you on about?!'[roman type][line break][BigNameDesc of M] squeaks.[line break][speech style of djinn]'Don't worry, I shall give you an attitude adjustment to match your new role as a [if diaper quest is 1]Professional Baby Slave[otherwise]Hotel Whore[end if].'[roman type][line break]You watch with [horror the bimbo of the player] as [NameDesc of M][']s eyes glaze over and then a vacant, happy smile grows [his of M] face.[line break][speech style of M]'Ooh, goodie! I'm gonna so rich!'[roman type][line break][big he of M] starts almost mindlessly walking away from you, but clearly with a fixed destination in mind.";
+			if the explorer-bimbo of M > 0, say "I wish for endless riches!'[roman type][line break][BigNameDesc of djinn] nods.[line break][speech style of djinn]'It is done. You now have access to endless riches. You must merely touch your new bed to summon one of an endless number of [men of shopkeeper] who will give you jewellery in exchange for your... [']services[']. Just make sure to give the pimp [his of pimp] cut.'[line break][speech style of M]'New bed? [']Services[']? PIMP?! What are you on about?!'[roman type][line break][BigNameDesc of M] squeaks.[line break][speech style of djinn]'Don't worry, I shall give you an attitude adjustment to match your new role as a [if diaper quest is 1]Professional Baby Slave[otherwise]Hotel Whore[end if].'[roman type][line break]You watch with [horror the bimbo of the player] as [NameDesc of M][']s eyes glaze over and then a vacant, happy smile grows upon [his of M] face.[line break][speech style of M]'Ooh, goodie! I'm gonna so rich!'[roman type][line break][big he of M] starts almost mindlessly walking away from you, but clearly with a fixed destination in mind.";
 			otherwise say "I wish for better self-control!'[roman type][line break][BigNameDesc of djinn] nods.[line break][speech style of djinn]'You are finding it difficult to resist touching yourself. Don't worry, you won't have that trouble any more.'[roman type][line break][BigNameDesc of djinn] snaps [his of djinn] fingers and suddenly [NameDesc of M] is wearing a tight set of bondage ropes that keep [his of M] hands bound behind [his of M] back.[line break][speech style of M]'Hey, what the hell is this?!'[roman type][line break][BigNameDesc of M] squeaks.[line break][speech style of djinn]'That's your final wish. No take-backs.'[line break][speech style of M]'This is bullshit! Please help me! How am I going to get free?'[roman type][line break][BigNameDesc of djinn] raises an eyebrow.[line break][speech style of djinn]'If you really want to ruin your wish and free your hands, I guess you will need to find a knife.'[roman type][line break][BigNameDesc of M] looks frustrated but also determined.[line break][speech style of M]'I know where I can find a knife. I just hope none of the robots find me first...'[roman type][line break][big he of M] starts walking away from you, clearly with a fixed destination in mind.";
 			if D is a direction, try M going D;
 			compute banishment of M;
@@ -308,11 +308,10 @@ To compute (M - djinn) transforming (C - a clothing):
 
 Part 5 - Combat
 
-To compute (M - djinn) protecting against (X - a unicorn):
-	compute default protecting of M.
-
 To compute (M - djinn) protecting against (X - a monster):
-	if M is mating and the player is not monster stuck:
+	if X is unicorn:
+		compute default protecting of M;
+	otherwise if M is mating and the player is not monster stuck:
 		dislodge X;[accounts for wrangling]
 		let T be a random placed jungle room;
 		while T is Dungeon12 or T is the location of the player:
@@ -350,8 +349,8 @@ The djinn priority attack rules is a rulebook. The priority attack rules of djin
 
 This is the djinn smoke trapping rule:
 	let M be current-monster;
-	if M is interested and the player is the donator and M is unfriendly and the player is upright and the difficulty of M > the starting difficulty of M and the cloudy of M is 0:
-		say "[BigNameDesc of M] unfolds [his of M] bottom pair of arms, waving them in front of [himself of M] as a shield of clouds appears in front of [him of M].";
+	if M is interested and M is unfriendly and the player is upright and the difficulty of M > the starting difficulty of M and the cloudy of M is 0:
+		say "[BigNameDesc of M] unfolds [his of M] bottom pair of arms, waving them in front of [himself of M], as a shield of clouds appears in front of [him of M].";
 		increase the cloudy of M by 2 + (the difficulty of M - the starting difficulty of M);[starting at 3 then +1 for every difficulty point]
 		rule succeeds;
 	otherwise if the cloudy of M < 0:
@@ -576,7 +575,7 @@ Section 2 - Damage
 To compute damage reaction of (M - djinn):
 	if the cloudy of M > 0 and attack-type is 1:
 		if the health of M < the maxhealth of M / 4 and the difficulty of M > the starting difficulty of M + 1 and the player is getting unlucky:
-			say "As soon as your arm passes through the barrier of clouds, it envelops you! [line break][speech style of M]'You've triggered my trap cloud!'[roman type][line break][BigNameDesc of M] laughs triumphantly as you feel yourself being transported somewhere else!";
+			say "As soon as your arm passes through the barrier of clouds, it envelops you! [line break][speech style of M]'Ha ha, foolish mortal, you have triggered my trap cloud!'[roman type][line break][BigNameDesc of M] laughs triumphantly as you feel yourself being transported somewhere else!";
 			let R be a random placed jungle room;
 			while R is the location of M:
 				now R is a random placed jungle room;
@@ -927,7 +926,7 @@ To ride dominate (M - djinn):
 			otherwise PussyFill the semen load of M;
 			say AfterDominationComment 4 of M;
 	otherwise:
-		say "[line break][variable custom style]I'm going to have to try something else...'[roman type][line break]'Something else' turns out to be suckling [his of M] [if full-lady fetish is 1]celestial balls, [otherwise]balls, [end if]which is too degrading to be worth it, even if it's the only thing that works. You do your best to swallow your shame as you climb on top of [him of M] and guide [his of M] [DickDesc of M] into your [variable F]. ";
+		say "[line break][variable custom style]I'm going to have to try something else...'[roman type][line break]'Something else' turns out to be suckling [his of M] [if full-lady fetish is 1][DickDesc of M], [otherwise]balls, [end if]which is too degrading to be worth it, even if it's the only thing that works. You do your best to swallow your shame as you climb on top of [him of M] and guide [his of M] [DickDesc of M] into your [variable F]. ";
 		now M is penetrating F;
 		ruin F;
 		say "The humiliation slowly ebbs away as you begin to ride [him of M], finally turning your attention to your own pleasure. However, it seems you went too far in more ways than one, and all too soon your partner's shaft begins to twitch and throb inside you. [big his of M] strong hands are around your waist before you have a chance to consider stopping, and one look at [his of M] face tells you [he of M] won't let you avoid a creampie unless you use up your last wish.";

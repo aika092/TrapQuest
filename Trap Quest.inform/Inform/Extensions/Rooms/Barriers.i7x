@@ -53,7 +53,7 @@ To compute raising of (B - a modesty shutter):
 						otherwise say "[speech style of pimp]'Listen up[if diaper quest is 0], bitch[end if]. Nobody works in Bimbacia without reporting to me first, which means you're ";
 					otherwise:
 						say "[speech style of pimp]'Well done, [if diaper quest is 1]little one[otherwise]slut[end if]. I'm so glad you've decided to become ";
-					say "one of my [if diaper quest is 1]baby slaves for hire[otherwise]whores[end if]. That means every time you [if diaper quest is 1]let one of these patrons babify you[otherwise]fuck a [Brotha of pimp][end if], you owe me a cut. Once you've turned a few tricks, it's best if you come find me rather than make me find you.'[roman type][line break]";
+					say "one of my [if diaper quest is 1]baby slaves for hire[otherwise]whores[end if]. That means every time you [if diaper quest is 1]let one of these patrons babify you[otherwise]fuck a [brotha of pimp][end if], you owe me a cut. Once you've turned a few tricks, it's best if you come find me rather than make me find you.'[roman type][line break]";
 					increase the times-met of pimp by 1;
 					now pimp is interested;
 				otherwise:

@@ -62,11 +62,11 @@ Carry out drinking a can:
 	say "You [if the doses of the noun is the max-doses of the noun]remove the ring pull of [the noun], [end if]bring it to your mouth and gulp. ";
 	compute drinking the noun;
 	now the Known corresponding to an Magic of the fill-type of the noun in the Table of Drinks is 1;
+	if the fill-type of the noun < 20, StomachUp 2;
 	DoseDown the noun;
 	if the doses of the noun is 0:
 		say "[line break]You discard the empty can.";
-		destroy the noun;
-	StomachUp 2.
+		destroy the noun.
 
 Report examining can:
 	zero focus stuff. [Flags the focus window for a full redraw (prevents duplicates of the can from appearing in it).]

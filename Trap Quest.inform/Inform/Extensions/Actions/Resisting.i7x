@@ -127,7 +127,7 @@ Report resisting:
 	if M is nothing, now M is a random live thing penetrating a body part;[next, prioritize anyone inside the player]
 	if M is nothing, now M is a random thing wrangling a body part;[Lastly, we take a look at any holders on.]
 	if the implant of pledge-lesson-resist is 1 and the raw intelligence of the player > 1:
-		say "[second custom style]Only a dumb useless slut resists the will of [his of the player] masters.[roman type][line break][bold type]The curse from your diamond ranked lesson pledge activates![roman type] You feel more stupid [second custom style]like a dumb useless slut.[roman type][line break]";
+		say "[second custom style]Only a dumb useless slut resists the will of [his of the player] masters.[roman type][line break][bold type]The curse from your diamond ranked lesson pledge activates![roman type] [one of]You blink, feeling a wave confusion wash through your thoughts[or]Once again your thoughts swim, getting all muddled.[or]You feel more stupid [second custom style]like a dumb useless slut.[roman type][line break][stopping]";
 		IntDown 1;
 	unless M is nothing:
 		if the player is friendly fucked:
@@ -273,7 +273,7 @@ To say OralSlutResRefusalFlav of (M - a monster):
 	otherwise say "You just can't bring yourself to resist; you love oral sex so much!".
 
 To say ThirstResRefusalFlav of (M - a monster):
-	say "[one of]You want to resist, you really do, but you're just so thirsty...[or]You tell yourself to resist, but your body needs something to drink, and it knows where to get it from.[or]You can't stop now. Now when you're so close to something that can wet your throat...[or]You can't bring yourself to resist [NameDesc of M] knowing that [his of M] balls are so full of something to drink.[or][if the player is feeling dominant]You try to stop, but in the end your[otherwise]Your[end if] thirst wins out and you obediently pleasure [him of M] like the slut you are.[at random]".
+	say "[one of]You want to resist, you really do, but you're just so thirsty...[or]You tell yourself to resist, but your body needs something to drink, and it knows where to get it from.[or]You can't stop now. Now when you're so close to something that can wet your throat...[or]You can't bring yourself to resist [NameDesc of M] knowing that [if M is a balls-haver][his of M] balls are so full of[otherwise][he of M] can shoot out[end if] something to drink.[or][if the player is feeling dominant]You try to stop, but in the end your[otherwise]Your[end if] thirst wins out and you obediently pleasure [him of M] like the slut you are.[at random]".
 
 Part - Resist Punishments
 

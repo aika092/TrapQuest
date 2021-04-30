@@ -26,9 +26,35 @@ Chapter - Class Outfit
 
 To compute class outfit of (H - cat-ears):
 	if diaper quest is 0 and the total magic power of the player >= 6, class summon exposing-magical-dress;
-	if exposing-magical-dress is not worn, class summon kitty claws;
-	class summon catbell;
-	if diaper quest is 0, class summon cat tail plug.
+	if the class of the player is cowgirl:
+		compute meowcowification;
+	otherwise:
+		if exposing-magical-dress is not worn, class summon kitty claws;
+		class summon catbell;
+		if diaper quest is 0, class summon cat tail plug.
+
+To compute meowcowification:
+	if lactation fetish is 1:
+		repeat with C running through worn clothing:
+			if C is cow themed or C is cat themed:
+				if C is animalbell:
+					if C is not meowcowbell, transform C into meowcowbell;
+				otherwise if C is cow print bikini top:
+					transform C into cow print nippleless bikini top;
+				otherwise if C is cow print bikini bottoms:
+					transform C into cow print crotchless bikini bottoms;
+				otherwise if C is kitty claws:
+					transform C into meow cow claws;
+			otherwise if C is removable and C is nudism-disabling and C is not exposing-magical-dress:
+				destroy C;
+		class summon meowcowbell;
+		class summon cow print nippleless bikini top;
+		now cow print nippleless bikini top is speed;
+		class summon cow print crotchless bikini bottoms;
+		now cow print crotchless bikini bottoms is speed;
+		if exposing-magical-dress is not worn, class summon meow cow claws;
+		now cowgirlExplained is false;
+		follow the milkskill learn rule.
 
 Chapter - Quest
 

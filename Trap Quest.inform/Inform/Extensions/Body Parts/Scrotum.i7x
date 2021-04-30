@@ -11,13 +11,13 @@ REQUIRES COMMENTING
 @!]
 scrotum is a body part. scrotum is everywhere. The text-shortcut of scrotum is "scrotum".
 To say FullExamineDesc of (B - scrotum):
-	say "[if the player is possessing a scrotum][TotalDesc of scrotum][ScrotumModesty][otherwise]You don't have a scrotum.[end if]".
+	say "[if the player is possessing a scrotum][TotalDesc of scrotum][ScrotumModesty][otherwise if the player is possessing a penis][TotalDesc of scrotum][otherwise]You don't have a scrotum.[end if]".
 
 Understand "scrotum", "balls", "bollocks", "testicles", "nutsack", "nutsac", "ballsack", "ballsac", "scrote", "testes" as scrotum.
 
 [!<Scrotum>@<size:Integer>*
 
-REQUIRES COMMENTING
+Ranges from 0 to 10, just like penis size.
 
 *@!]
 scrotum has a number called size. the size of scrotum is usually 0.
@@ -165,16 +165,14 @@ To ScrotumUp (X - a number):
 	now previous scrotum size is the size of scrotum;
 	if fast tg is 3, now X is -1; [no text flavour]
 	if bitch tattoo is worn, now X is X / 2;
-	if X is 0:
-		say "[if the player is possessing a scrotum]Your ballsack can't seem to grow any larger![end if]";
 	while X > 0:
 		decrease X by 1;
-		if the size of scrotum < 10:
+		if the size of scrotum < 10 and the size of scrotum < the size of penis:
 			increase the size of scrotum by 1;
-			say "You feel your scrotum grow into a [ShortDesc of scrotum]!";
+			if X is 0 and scrotum-flav is true, say "You feel your scrotum grow into a [ShortDesc of scrotum]!";
 		otherwise:
 			dignify 50;
-			if X is 0, say "Your monster of a nutsack can't seem to grow any larger! You feel like a stud!".
+			if X is 0 and scrotum-flav is true, say "Your monster of a nutsack can't seem to grow any larger! You feel like a stud!".
 
 To SilentlyScrotumDown (X - a number):
 	now scrotum-flav is false;

@@ -112,8 +112,12 @@ To compute perception of (M - receptionist):
 			display entire map; [needs to update because the portal is now closed]
 	otherwise if playerRegion is School:
 		if armband is worn:
-			if the player is the donator and there is an appropriate eligible predicament and predicamentJustDone is false and the player is predicament-ready, say "[line break][speech style of M]'Hello again [NameBimbo], I hope you're enjoying your studies! [one of]Have you considered trying the extra credit zone? [or]You should consider the extra credit zone again. [stopping][if the number of worn cursed removable clothing > the number of worn cursed removable headgear]Not only would you get a bracelet, a trophy and potentially some useful tokens, but you could escape from that annoying cursed clothing[otherwise]You can earn some tokens, a new bracelet and a cool trophy[end if]!'[roman type][line break]";
-			otherwise say "[line break][speech style of M]'Hello again [NameBimbo], I hope you're enjoying your studies!'[roman type][line break]";
+			if the class of the player is princess:
+				say "[line break][speech style of M]'[one of]Hello again... Princess?! I thought you were locked up in the... oh wait it's you, [NameBimbo]! Never mind that. I hope you're enjoying your studies[or]You! Oh, right, it's just you, [NameBimbo]. Phew. I keep mistaking you for someone else[stopping]!'[roman type][line break]";
+			otherwise if the player is the donator and there is an appropriate eligible predicament and predicamentJustDone is false and the player is predicament-ready:
+				say "[line break][speech style of M]'Hello again [NameBimbo], I hope you're enjoying your studies! [one of]Have you considered trying the extra credit zone? [or]You should consider the extra credit zone again. [stopping][if the number of worn cursed removable clothing > the number of worn cursed removable headgear]Not only would you get a bracelet, a trophy and potentially some useful tokens, but you could escape from that annoying cursed clothing[otherwise]You can earn some tokens, a new bracelet and a cool trophy[end if]!'[roman type][line break]";
+			otherwise:
+				say "[line break][speech style of M]'Hello again [NameBimbo], I hope you're enjoying your studies!'[roman type][line break]";
 		otherwise:
 			say "[line break][speech style of M]'Hey, I recognise you! Where is your armband?!'[roman type][line break][big he of M] takes an aggressive stance.";
 			anger M;

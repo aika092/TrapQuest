@@ -59,7 +59,7 @@ Figure of Dominatrix Cutscene 7 is the file "NPCs/Hotel/Dominatrix/cutscene-domi
 To say MonsterDesc of (M - dominatrix):
 	if diaper quest is 0:
 		let N be the strap-on girth of M;
-		say "This brunette [man of M] is standing aggressively and it doesn't look like [he of M] messes around. [big he of M] is wearing thigh-length latex boots, [if N < 4]a black latex jacket, which has been unbuttoned slightly to show a bit of cleavage[otherwise if N < 6]a black latex jacket, which has been unbuttoned to show off a sliver of [his of M] toned chest and stomach[otherwise]a black latex overbust corset[end if], and a [StraponDesc of M]. [run paragraph on]";
+		say "This brunette [man of M] is standing aggressively and it doesn't look like [he of M] messes around. [big he of M] is wearing thigh-length latex boots, [if N < 4]a black latex jacket, which has been unbuttoned slightly to show a bit of cleavage[otherwise if N < 6]a black latex jacket, which has been unbuttoned to show off a sliver of [his of M] toned chest and stomach[otherwise]a black latex overbust corset[end if], and a [StraponDesc of M] [run paragraph on]";
 	otherwise:
 		say "This brunette [man of M] is standing aggressively and it doesn't look like [he of M] messes around. Your eyes can't help but look down at the bottom half of [his of M] black spandex outfit, where [he of M] is sporting a huge black diaper with a very unique strap-on at the front: instead of a dong there's a large baby's bottle, tip facing outwards, slowly dripping [milk].";
 	if M is dominatrix-equipped:
@@ -211,6 +211,15 @@ Definition: dominatrix (called M) is objectifying the player:
 		if the player is prone or there is a wrestler in the location of M, decide yes;
 	decide no.
 
+To compute correct perception of (M - dominatrix):
+	if dominatrix-cage is not grabbing the player:
+		now the latest-appearance of M is the appearance of the player;
+		if diaper quest is 1:
+			now the latest-cringe of M is the cringe appearance of the player; [We only want to do that if we're playing DQ otherwise we're wasting CPU cycles]
+			compute DQ perception of M;
+		otherwise:
+			compute perception of M.
+
 To compute perception of (M - dominatrix):
 	if the disappointment of M > 1, now the strap-on girth of M is the disappointment of M;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";[We shouldn't need a linebreak here because punctuation inside text-based if-clauses cause an automatic line break]
@@ -313,7 +322,7 @@ The priority attack rules of dominatrix is usually the dominatrix priority attac
 This is the dominatrix whip acquisition rule:
 	let M be current-monster;
 	let W be whip-of-domination;
-	if M is in Hotel37 and M is not dominatrix-equipped and the player is the donator and M is unfriendly and M is interested and M is not penetrating a body part and M is not grabbing the player and the player is upright:
+	if M is in Hotel37 and M is not dominatrix-equipped and M is unfriendly and M is interested and M is not penetrating a body part and M is not grabbing the player and M is not wrangling a body part and the player is upright:
 		say "[BigFuckerDesc of M] grabs [if W is in Hotel37][his of M] whip and [end if]a bigger riding crop before rounding on you.";
 		now M is dominatrix-equipped;
 		if W is in Hotel37, now M is carrying W.
@@ -412,6 +421,7 @@ To compute stocks paddling of (M - dominatrix):
 				if N is penetrating face:
 					say DeepthroatCreampie of N;
 					StomachSemenUp the semen load of N;
+					instantThroat N;
 					say "[BigNameDesc of N] pulls out and without even saying a word to you, walks away. You are too busy gasping for breath to be able to say anything to [him of N] before [he of N]'s out of sight.";
 					now N is not penetrating face;
 					destroy N;
@@ -763,7 +773,7 @@ To say ErectionPenetrationFlav of (M - dominatrix):
 		say "[BigNameDesc of M] bends over, [his of M] face coming within a few centimeters of your [player-penis] as [he of M] pulls out a translucent pink cocksleeve. [big he of M] glances at you as [he of M] forces the flexible, jelly-like material over your shaft.[line break][speech style of M]'Cum without permission, and *both* of you will be punished.'[roman type][line break]".
 
 To say ErectionUseFlav of (M - dominatrix):
-	say "[one of][BigFuckerDesc of M] plays with your balls as [he of M] pumps your [player-penis] with the sleeve.[or][BigFuckerDesc of M] squeezes your [player-penis] through the sleeve as [he of M] [if the size of penis < 4]twists it around[otherwise]pumps it over[end if] your shaft.[or]The inner material of the cocksleeve massages your [player-penis] as [FuckerDesc of M] [if the size of penis < 4]twists it around[otherwise]pumps it up and down[end if] your length.[or][BigFuckerDesc of M] maintains a business-like facial expression as [he of M] twists the sleeve around your shaft.[or]The cocksleeve makes faint squelching noises as [FuckerDesc of M] pumps and squeezes it around your [player-penis].[or][BigFuckerDesc of M] glances at you as [he of M] uses the sleeve to slowly pump your [player-penis].[in random order]".
+	say "[one of][BigFuckerDesc of M] plays with your [if the player is possessing a scrotum]balls[otherwise]taint[end if] as [he of M] pumps your [player-penis] with the sleeve.[or][BigFuckerDesc of M] squeezes your [player-penis] through the sleeve as [he of M] [if the size of penis < 4]twists it around[otherwise]pumps it over[end if] your shaft.[or]The inner material of the cocksleeve massages your [player-penis] as [FuckerDesc of M] [if the size of penis < 4]twists it around[otherwise]pumps it up and down[end if] your length.[or][BigFuckerDesc of M] maintains a business-like facial expression as [he of M] twists the sleeve around your shaft.[or]The cocksleeve makes faint squelching noises as [FuckerDesc of M] pumps and squeezes it around your [player-penis].[or][BigFuckerDesc of M] glances at you as [he of M] uses the sleeve to slowly pump your [player-penis].[in random order]".
 
 To say ErectionForceFlav of (M - dominatrix):
 	say "[one of][BigFuckerDesc of M] holds you down firmly as [he of M] forces the cocksleeve up and down your shaft.[or][BigFuckerDesc of M] holds you down, squeezing your [player-penis] through the sleeve as [he of M] pumps it over your shaft.[or][BigFuckerDesc of M] twists the sleeve as [he of M] forces it forces your [player-penis] in and out of the sleeve, through the sleeve, roughly twisting it around your shaft.[or][BigFuckerDesc of M] doesn't send a single glance your way as [he of M] roughly twists it around your shaft.[or][BigFuckerDesc of M]'s expression doesn't change at all as [he of M] forces your [player-penis] in and out of the sleeve.[or]The cocksleeve makes faint squelching noises as [FuckerDesc of M] forces it up and down your shaft.[in random order]".
@@ -983,7 +993,7 @@ To blowjob dominate (M - dominatrix):
 		orgasm;
 		decrease the slave-status of M by 1;
 	otherwise:
-		say "You chuckle, tossing [his of M] kinky underwear over your shoulder as you [if C is not strapon-panties and C is clothing]take your [SexDesc of penis] out of your [printed name of random worn bottom level protection clothing]. [otherwise]play with your [SexDesc of penis]. [end if]A moment passes, and neither of you make a move.[line break][speech style of M]'[if the times-dominated of M < 3]Ugh, FINE.'[otherwise]...Right away, master.'[end if][roman type][line break][BigNameDesc of M] wraps two fingers around your base, jerking you off as [he of M] purses [his of M] lips around your tip. The sensation isn't that intense, but your tiny [sexual-player-penis] is really sensitive, so you blow your loads in no time flat. [big he of M] wipes [his of M] mouth as [he of M] pulls away.";
+		say "You chuckle, tossing [his of M] kinky underwear over your shoulder as you [if C is not strapon-panties and C is clothing]take your [SexDesc of penis] out of your [printed name of random worn bottom level protection clothing]. [otherwise]play with your [SexDesc of penis]. [end if]A moment passes, and neither of you make a move.[line break][speech style of M]'[if the times-dominated of M < 3]Ugh, FINE.'[otherwise]...Right away, master.'[end if][roman type][line break][BigNameDesc of M] wraps two fingers around your base, jerking you off as [he of M] purses [his of M] lips around your tip. The sensation isn't that intense, but your tiny [sexual-player-penis] is really sensitive, so you blow your load in no time flat. [big he of M] wipes [his of M] mouth as [he of M] pulls away.";
 		now player-fucking is DOMINANT-NEUTRAL;
 		moderateDignify;
 		if the slave-status of M < 0, increase the slave-status of M by 1;
@@ -1025,7 +1035,7 @@ To penetration dominate (M - dominatrix):
 		otherwise:
 			say AfterDominationComment 3 of M;
 	otherwise:[you fuck him, but you don't get to cum]
-		say "You try your best to keep your hand from shaking as you [if C is not strapon-panties and C is clothing]pull out your [SexDesc of penis] and push it[otherwise if penis is penis-erect]push your desperately hard [SexDesc of penis][otherwise]push your rapidly hardening [sexual-player-penis][end if] into [his of M] [HoleDesc of M].[line break][speech style of M]'Ground rules.'[roman type][line break][big his of M] cold voice instantly freezes you in your tracks.[line break][speech style of M]'I have *decided* to let you fuck me, but you may not cum. You know why.'[roman type][line break]You nod sheepishly, taking a moment to compose yourself before slowly beginning to thrust. Your tiny [sexual-player-penis] is incredibly sensitive, so you only get to enjoy your [literalMistress of M][']s warm confines for a couple seconds, but it's better than nothing.";
+		say "You try your best to keep your hand from shaking as you [if C is not strapon-panties and C is clothing]pull out your [SexDesc of penis] and push it[otherwise if penis is penis-erect]push your desperately hard [SexDesc of penis][otherwise]push your rapidly hardening [sexual-player-penis][end if] into [his of M] [HoleDesc of M].[line break][speech style of M]'Ground rules.'[roman type][line break][big his of M] cold voice instantly freezes you in your tracks.[line break][speech style of M]'I have *decided* to let you fuck me, but you may not cum. You know why.'[roman type][line break]You nod sheepishly, taking a moment to compose yourself before slowly beginning to thrust. Your tiny [sexual-player-penis] is incredibly sensitive, so you only get to enjoy your [literalMistress of M][']s warm confines for a couple seconds before pulling out and allowing [him of M] to get up.";
 		if the slave-status of M < 1, now the slave-status of M is 1;[resets]
 		if the player is possessing a penis, passively stimulate penis;
 		if the player is possessing a vagina, passively stimulate vagina;
@@ -1301,5 +1311,110 @@ To compute unfriendly drink of (M - dominatrix):
 
 To compute friendly drink of (M - dominatrix):
 	say "[speech style of M]'You'll get no hospitality from me.'[roman type][line break]".
+
+Volume - Dominatrix Cage
+
+dominatrix-cage is a thing. dominatrix-cage is not portable. dominatrix-cage is in Hotel37. The printed name of dominatrix-cage is "[TQlink of item described]small cage[TQxlink of item described][verb-desc of item described]". Understand "small", "cage" as dominatrix-cage. The text-shortcut of dominatrix-cage is "smcg".
+dominatrix-cage has a number called mess. [flag whether the caged NPC is messy]
+dominatrix-cage has a number called cage-time. [how long until release]
+
+To say ExamineDesc of (C - dominatrix-cage):
+	say "A small metal cage that could fit a human inside but it would be a very cramped fit.".
+
+Figure of dominatrix cage empty is the file "Env/Hotel/cage1.jpg".
+
+To focus-consider (T - dominatrix-cage):
+	unless there is a caged monster in the location of T, appropriate-display the next-examine-image of T for T. [While there's a caged NPC in the area, we don't bother showing the cage itself]
+
+Definition: dominatrix-cage is immune to change: decide yes.
+
+Definition: dominatrix is distracted:
+	let M be a random unleashed wrestler in Hotel37;
+	if M is monster:
+		if the player is in Hotel37 and dominatrix is in Hotel37 and dominatrix-cage is in Hotel37 and the number of caged monsters in Hotel37 is 0 and dominatrix-cage is not grabbing the player and the player is an april 2021 top donator:
+			if M is uninterested or M is friendly:
+				say "[speech style of dominatrix]'[WrestlerNickname], I think you've been having too much fun recently. It's time for you to remember your place. Get in.'[line break][speech style of M]'*sniff* Yes [big literalMistress of dominatrix]...'[roman type][line break]";
+				compute dominatrix caging of M;
+				decide yes;
+			otherwise if the player is prone and M is not grabbing the player and M is not penetrating a body part and dominatrix is dangerous:
+				say "[speech style of dominatrix]'Okay, I'll deal with you in a moment. But first - [WrestlerNickname], you forget your place. What are you?'[line break][speech style of M]'*sniff* A s-submissive s-slave, [big literalMistress of dominatrix]...'[line break][speech style of dominatrix]'That's right. And where do submissive slaves go when they've been naughty?'[line break][speech style of M]'Aaaah... Oh no... In their cage, [big literalMistress of dominatrix]...'[roman type][line break]";
+				compute dominatrix caging of M;
+				decide yes;
+		otherwise if dominatrix is in Hotel37 and dominatrix is uninterested and dominatrix-cage is in Hotel37 and the number of caged monsters in Hotel37 is 0 and the player is an april 2021 top donator and the player is not in Hotel37:
+			compute dominatrix caging of M;
+			decide yes;
+	decide no.
+
+To compute dominatrix caging of (M - a monster):
+	if dominatrix is in the location of the player, say "[BigNameDesc of dominatrix] opens the door of [NameDesc of dominatrix-cage] and forces [NameDesc of M] inside, locking it behind [him of M]![line break][speech style of dominatrix]'That should keep you from getting up to any more mischief for the time being.'[roman type][line break]";
+	now the cage-time of dominatrix-cage is 1000;
+	now the mess of dominatrix-cage is 0;
+	now M is caged.
+
+A time based rule (this is the dominatrix cage timer rule):
+	if the cage-time of dominatrix-cage > 0:
+		decrease the cage-time of dominatrix-cage by time-seconds;
+		if diaper messing > 3 and the cage-time of dominatrix-cage <= 600 and the cage-time of dominatrix-cage + time-seconds > 600:
+			let M be a random caged monster in the location of dominatrix-cage;
+			if M is monster:
+				increase the mess of dominatrix-cage by 1;
+				if M is in the location of the player, say "With a loud 'FFFFFBBBBRRRRRRRRRRRRRT', [NameDesc of M] can be heard filling [his of M] padding from inside the cage.[line break][speech style of M]'Oh no... Oops... Eurgh... I couldn't hold it.'[roman type][line break][if the mess of dominatrix-cage is 1]The horrid smell quickly begins to fill the room![end if]";
+		if the cage-time of dominatrix-cage is 0, now the cage-time of dominatrix-cage is -1; [see line below]
+	otherwise if the cage-time of dominatrix-cage < 0: [this way we can avoid doing the below check every turn]
+		let M be a random caged monster in the location of dominatrix-cage;
+		if M is monster:
+			if dominatrix is off-stage or dominatrix is defeated:
+				now M is unleashed;
+				if M is woman-player, increase the delayed sluttification of M by 1;
+				if the player is in the location of M, say "[bold type]The cage door lock somehow clicks open of its own accord. [roman type][BigNameDesc of M] is free!";
+			otherwise if dominatrix is in the location of M:
+				now M is unleashed;
+				if M is woman-player, increase the delayed sluttification of M by 1;
+				if the player is in the location of M, say "[BigNameDesc of dominatrix] unlocks the door to the cage.[line break][speech style of dominatrix]'Go on, get out of here, before I change my mind.'[roman type][line break][BigNameDesc of M] is free!";
+			if M is not caged:
+				say "[BigNameDesc of M] squeaks in fear and quickly scampers out of the room!";
+				if M is woman-player:
+					vanish M;
+				otherwise:
+					regionally place M;
+					distract M;
+		if dominatrix-cage is grabbing the player:
+			now dominatrix-cage is not grabbing the player;
+			if dominatrix is off-stage or dominatrix is defeated:
+				say "[bold type]The cage door lock somehow clicks open of its own accord. [roman type]You are free!";
+			otherwise:
+				if dominatrix is not in the location of the player:
+					now dominatrix is in the location of the player;
+					say "[BigNameDesc of dominatrix] appears from the east!";
+				now dominatrix is interested;
+				say "[BigNameDesc of dominatrix] unlocks the door to the cage.[line break][speech style of dominatrix]'Go on, get out of here, before I change my mind.'[roman type][line break]You are free!";
+				satisfy dominatrix;
+
+To compute angry punishment of (M - dominatrix):
+	if M is in the location of dominatrix-cage and the number of caged monsters in the location is 0 and the favour of M < the aggro limit of M and the player is not immobile:
+		say "[speech style of M]'You need a [']Time Out['] to think about what you've done.'[roman type][line break][BigNameDesc of M] opens the door of [NameDesc of dominatrix-cage] and forces you inside, locking it behind you!";
+		now dominatrix-cage is grabbing the player;
+		now the stance of the player is 1;
+		now the cage-time of dominatrix-cage is 300;
+	otherwise:
+		say angry punishment insult of M;
+		if M is not friendly-fucking and (M is not seduced or M is unfriendly):
+			compute default angry punishment of M.
+
+To compute the cage stuck taunting of (M - dominatrix):
+	say "[BigNameDesc of M] seems to be purposefully ignoring your presence.";
+	distract M.
+
+To compute unique teleportation to (R - Hotel37):
+	if the number of caged monsters in Hotel37 is 0 and the number of embodied things penetrating a body part is 0 and the number of things grabbing the player is 0:
+		now dominatrix-cage is grabbing the player;
+		now the cage-time of dominatrix-cage is 300;
+		now the stance of the player is 1;
+		say "You have appeared inside [NameDesc of dominatrix-cage], and the door is locked! What rotten luck!";
+		if dominatrix is alive:
+			now dominatrix is in Hotel37;
+			say "[BigNameDesc of dominatrix] notices you[if the player is sluttily dressed].[otherwise]![end if] [big he of dominatrix] shrugs.[speech style of dominatrix]'That's something you don't see every day. Well, I guess you just earned yourself some [']Time Out['], didn't you?'[roman type][line break]";
+			increase the times-met of dominatrix by 1;
+			bore dominatrix.
 
 Dominatrix ends here.

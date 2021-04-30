@@ -392,6 +392,7 @@ Check dominating:
 	if the latex-transformation of the player >= 6, say "You wouldn't feel anything from it, so you don't see the point." instead;
 	if the player is prone, say "That would be a little hard to do from your knees." instead;
 	if the noun is sex-enslaved and the player is the donator, compute enslaved domination of the noun instead;
+	if the noun is caged and the player is an april 2021 top donator, compute caged domination of the noun instead;
 	say "You would need to defeat [NameDesc of the noun] first." instead;
 	unless the noun is interested, say "[BigNameDesc of the noun] isn't looking at you right now. Try getting their attention first." instead;
 	now player-fucker is face;[player-fucker is what is used to fuck the monster. Face is merely a default value]
@@ -558,7 +559,7 @@ To compute dominating (M - a monster):
 	now player-fucking is DOMINANT-NONE;
 	now player-fuckchoice is FUCK-NONE.
 
-Understand "dominate [something]", "fuck [something]", "dom [something]", "punish [something]", "screw [something]", "bang [something]", "do [something]", "enjoy [something]", "have sex with [something]", "sleep with [something]" as dominating.
+Understand "dominate [something]", "fuck [something]", "dom [something]", "punish [something]", "screw [something]", "bang [something]", "torment [something]", "enjoy [something]", "have sex with [something]", "sleep with [something]" as dominating.
 
 To say DominationReaction of (M - a monster) to (N - a monster):
 	make M expectant.
@@ -762,8 +763,8 @@ To say PowerBottomComment of (M - a monster):
 	if the player is not able to speak:
 		say "You give [NameDesc of M] a smouldering look, hopefully conveying how [if the bimbo of the player < 6]dominant you are even though you're about to sit on [his of M] [DickDesc of M][otherwise if the bimbo of the player < 12]compromising this situation is for [him of M] and [his of M] [DickDesc of M][otherwise]much you want to sit on [his of M] [DickDesc of M][end if].";
 	otherwise if the bimbo of the player < 6:
-		if the player is male:
-			say "[first custom style]'[one of]I don't care how it looks, I've fucking earned this. Your dick is MINE.'[or][if the size of penis < the girth of M]You think you're so fucking great because you're bigger than me? Better not be a quick-shot.'[otherwise]Good thing I'm so much bigger than you, otherwise I might be worried this would hurt!'[end if][or]Now, *I* get to stick your dick in me.'[at random][roman type]";
+		if the player is gendered male:
+			say "[first custom style]'[one of]I don't care how it looks, I've fucking earned this. Your dick is MINE.'[or][if the size of penis > the girth of M]Good thing I'm so much bigger than you, otherwise I might be worried this would hurt!'[otherwise if the player is possessing a penis]You think you're so fucking great because you're bigger than me? Better not be a quick-shot.'[end if][or]Now, *I* get to stick your dick in me.'[at random][roman type]";
 		otherwise:
 			say "[first custom style]'[one of]Oh we're going to fuck, but you're not going to be doing the fucking.'[or]This time, you're MY fucktoy.'[or]That didn't go the way you'd hoped, now did it?'[at random][roman type]";
 	otherwise if the bimbo of the player < 12:
@@ -1065,8 +1066,25 @@ To compute enslaved domination of (M - a monster):
 		now the teaseTimer of M is 50;
 		compute default enslaved domination of M.
 
+To compute caged domination of (M - a monster):
+	if the teaseTimer of M > 0:
+		say "[big he of M] has been dominated recently. Perhaps give [him of M] a bit of a break first.";
+	otherwise if the player is not able to use their hands:
+		say "You can't use your hands right now so there's not much you can do.";
+	otherwise:
+		allocate 6 seconds;
+		now the teaseTimer of M is 50;
+		compute default caged domination of M.
+
 To compute default enslaved domination of (M - a monster):
 	say EnslavedDominationFlav of M;
+	if the raw delicateness of the player > the EnslavedDominationThreshold of M:
+		say "You feel vaguely better about yourself, but mostly just a bit ambivalent.";
+	otherwise:
+		DelicateDown 1.
+
+To compute default caged domination of (M - a monster):
+	say CagedDominationFlav of M;
 	if the raw delicateness of the player > the EnslavedDominationThreshold of M:
 		say "You feel vaguely better about yourself, but mostly just a bit ambivalent.";
 	otherwise:
@@ -1075,7 +1093,10 @@ To compute default enslaved domination of (M - a monster):
 To say EnslavedDominationFlav of (M - a monster):
 	say "You spank [NameDesc of M] on the buttcheeks, [one of]eliciting a pained[or]being rewarded by a cry of pain[or]pleased by [his of M] poorly suppressed gasp of pain[at random] yelp. ".
 
+To say CagedDominationFlav of (M - a monster):
+	say "You rattle the bars of [NameDesc of M][']s cage. ".
+
 To decide which number is the EnslavedDominationThreshold of (M - a monster):
-	decide on 10.
+	decide on a random number between 5 and 10.
 
 Dominating Monsters ends here.

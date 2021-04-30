@@ -1,6 +1,6 @@
 PC Monitor by Objects begins here.
 
-A video-monitor is a kind of thing. A video-monitor is not portable. [A video-monitor has a number called currentlyOn. A video-monitor has a number called currentCall. ]
+A video-monitor is a kind of thing. A video-monitor is not portable.
 
 A video-monitor has a text called video-event. The video-event of a video-monitor is usually "doing nothing special".
 A video-monitor has a thing called video-caller. The video-caller of a video-monitor is usually the throne.
@@ -12,15 +12,20 @@ A later time based rule:
 	let V be a random video-monitor regionally in playerRegion;
 	if V is video-monitor:
 		if the video-caller of V is the throne:[if video-caller is not the throne, it means a call is already happening.]
-			if V is video-callable and there is a dangerous monster in the location of the player and V is in the location of the player:
-				let M be a random real-life patron;[Friend from outside the game]
-				if diaper quest is 0 and a random number between 1 and 5 is 1:
-					now M is a random slutty sister;
-				otherwise:
-					let B be the friend-old-name of M;
-					if B is "none" or B is not a text, now the friend-old-name of M is the substituted form of "[OriginalNameBimbo]";
-				now the video-caller of V is M;
-				if M is a real-life patron, increase the times-called of M by 1;
+			if V is video-callable and V is in the location of the player and the player is in danger:
+				let P be a random slutty sister;
+				if diaper quest is 1 or a random number between 1 and 5 > 1:
+					now P is a random real-life patron;[Friend from outside the game]
+					if eye-mask is off-stage and eye-mask is actually summonable and there is a male human intelligent combative monster:
+						say "An [eye-mask] appears on your face!";
+						summon eye-mask cursed;
+						say "[variable custom style]I'm... I'm a superhero[if the player is gendered female]ine[end if]?[roman type][line break]";
+						repeat with M running through male human intelligent combative monsters:
+							say "You suddenly notice that [NameDesc of M] is also wearing an eye mask[one of]! But the sinister sneer on [his of M] face suggests that [he of M] is no hero[or]! You're outnumbered by villains[or][stopping]...";
+					let B be the friend-old-name of P;
+					if B is "none" or B is not a text, now the friend-old-name of P is the substituted form of "[OriginalNameBimbo]";
+				now the video-caller of V is P;
+				if P is a real-life patron, increase the times-called of P by 1;
 				beginCall of V;
 				if the number of barriers in the location of the player < 1:
 					if V is in the Hotel:
@@ -41,16 +46,16 @@ A later time based rule:
 				CheckActivation of V;
 		otherwise:
 			if V is in the location of the player, compute ongoingCall of V;
-			otherwise compute reset of V; [For example if the player is dragged or teleported away]
+			otherwise compute reset of V; [For example if the player is dragged or teleported away] [N.B. if the player escapes mid-sex e.g. with a teleport, this line currently means there is no screenshot uploaded anywhere. Might be room for improvement there.]
 	otherwise:
 		repeat with AM running through video-monitors:
 			if the video-caller of AM is not the throne:
 				now the video-caller of AM is the throne;
-				now the video-event of AM is "nothing special".
+				now the video-event of AM is "doing nothing special".
 
 To CheckActivation of (C - a video-monitor):
 	if the currentlyOn of C < 1:
-		if debugmode > 0 and debuginfo > 1, say "[input style]Checking activation of [C][roman type][line break]";
+		if debugmode > 0 and debuginfo > 1, say "[input style]Checking activation of [C].[roman type][line break]";
 		if the call-cooldown of C <= 0:
 			if C is a crystal-monitor:
 				if doomed is 5 or there is an active summoning portal regionally in playerRegion:
@@ -131,9 +136,10 @@ To say FriendRespond to (M - a slutty sister):
 [Handles an on-going call]
 To compute ongoingCall of (C - a video-monitor):
 	let M be the video-caller of C;
-	if the number of dangerous monsters in the location of the player > 0:
+	if the player is in danger:
 		if C is recording-disgrace and the video-event of C is "doing nothing special", compute disgraceful event of C;
-		compute M protecting against a random dangerous monster in the location of the player;
+		let X be a random combative monster;
+		compute M protecting against X;
 	otherwise:[if there are no dangerous monsters around, it's time to end the call]
 		if C is not recording-disgrace:[if no disgraceful event happened, we need to make sure there's no recording.]
 			now the video-event of C is "doing nothing special";
@@ -172,7 +178,7 @@ To compute disgraceful event of (C - a video-monitor):
 		let A be a random monster penetrating asshole;
 		let B be a random monster penetrating breasts;
 		if X is 1:
-			if O is monster, now T is the substituted form of "[if O is male][one of]blowing [NameDesc of O][or]sucking [NameDesc of O]'s [DickDesc of O][or]giving [NameDesc of O] a blowjob[at random][otherwise][one of]using your mouth to pleasure [NameDesc of O][or]servicing [NameDesc of O] with your mouth[at random][end if]";
+			if O is monster, now T is the substituted form of "[if O is male][one of]blowing [NameDesc of O][or]sucking [NameDesc of O][']s [DickDesc of O][or]giving [NameDesc of O] a blowjob[at random][otherwise][one of]using your mouth to pleasure [NameDesc of O][or]servicing [NameDesc of O] with your mouth[at random][end if]";
 			if V is monster, now T is the substituted form of "[if V is male][one of]getting bred by [NameDesc of V][or]getting fucked by [NameDesc of V][or]getting your [vagina] pounded by [NameDesc of V][at random][otherwise]letting [NameDesc of V] play with your [vagina][end if]";
 			if A is monster, now T is the substituted form of "[if A is male or A is dominatrix][one of]getting assfucked by [NameDesc of A][or]getting anally pounded by [NameDesc of A][or]getting your [asshole] pounded by [NameDesc of A][at random][otherwise][one of]letting [NameDesc of A] play with your [asshole][or]engaging in anal play with [NameDesc of A][at random][end if]";
 			if P is monster, now T is the substituted form of "[one of]having [NameDesc of P] abuse your penis[or]with [NameDesc of P] playing with your penis[at random]";
@@ -182,15 +188,16 @@ To compute disgraceful event of (C - a video-monitor):
 		otherwise:
 			now T is the substituted form of "getting gangbanged[if O is patron] by patrons[end if]";
 	otherwise:
-		let M be a random dangerous monster in the location of the player;
+		let M be a random combative monster;
 		if M is monster, now T is the substituted form of "[if diaper quest is 1]engaging in ABDL kink play with [NameDesc of M][otherwise]engaging in kinky play with [NameDesc of M][end if]";
 		otherwise now T is the substituted form of "[one of]getting humiliated[or]engaging in kinky play[or]acting like a shameful whore[at random]";
 	now the video-event of C is T.
 
 To compute endCall of (C - a video-monitor):
-	let T be "doing nothing special";
 	let M be the video-caller of C;
-	if the video-event of C is not T:
+	if eye-mask is worn:
+		compute HangUpMasked of C with M;
+	otherwise if the video-event of C is not "doing nothing special":
 		if M is real-life patron:
 			let X be a random number between 0 and the favour of M;
 			if X < the favour of M - 3, now M is friend-shocked;
@@ -213,10 +220,22 @@ To compute HangUpDisgraced of (C - a video-monitor) with (M - a slutty sister):
 		now the published entry is the substituted form of "has been uploaded to the Nintendolls company website";
 		now the severity entry is 10;
 		now the popularity entry is 1;
+		now the viewsfuzz entry is a random number between -100 and 100;
+		now the lastwitnessed entry is 0;
+		now the deletedtime entry is -1;
 		now the timestamp entry is earnings.
 
 To compute HangUpUndisgraced of (C - a video-monitor) with (M - a slutty sister):
 	say "[second custom style]'Alright, good job, [NameBimbo]. That will be all for now!'[roman type][line break]The slutty sister hangs up the call, and the [MediumDesc of C] turns off.".
+
+To compute HangUpMasked of (C - a video-monitor) with (M - a monster):
+	if the video-event of C is not "doing nothing special":
+		say "[first custom style]'You're lucky we didn't find out your identity!'[roman type][line break][BigNameDesc of M] hangs up the call, and the [MediumDesc of C] turns off.";
+	otherwise:
+		say "[first custom style]'What a weird livestream.'[roman type][line break][BigNameDesc of M] shrugs and hangs up the call, and the [MediumDesc of C] turns off.";
+		progress quest of hero-quest;
+		say "[bold type]Not only did you survive without being unmasked, but you won the fight![roman type][line break]";
+		progress quest of hero-quest.
 
 Definition: a video-monitor (called V) is video-callable:
 	if V is pc-monitor and the number of patrons in the location of the player is 0, decide no; [hotel PC monitor only works with patrons. necessary for current pimp spawning code]
@@ -284,8 +303,8 @@ To say ExamineDesc of (C - a crystal-monitor):
 
 [The ancient monitor is only on if ]
 
-Definition: A crystal-monitor (called V) is video-callable:
-	if the currentlyOn of V > 0, decide yes;
+Definition: a crystal-monitor is video-callable:
+	if the currentlyOn of it > 0, decide yes;
 	decide no.
 
 To beginCall of (C - crystal-monitor):

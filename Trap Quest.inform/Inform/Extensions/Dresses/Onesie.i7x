@@ -29,8 +29,7 @@ To decide which number is the heel-skill-influence of (O - a onesie):
 	increase X by the magic-modifier of O;
 	decide on X.
 
-To uniquely set up (C - a onesie):
-	repair C;
+To set up magic attribute of (C - a onesie):
 	now C is absorption.
 
 Definition: a onesie is sissifying: decide yes.
@@ -79,9 +78,6 @@ To decide which figure-name is clothing-image of (C - velcro onesie):
 
 To say ClothingDesc of (C - velcro onesie):
 	say "A pink onesie which fully covers your arms and legs. A large open flap at the back [if C is worn]exposes[otherwise]would expose[end if] your [if there is worn top level protection clothing][random worn top level protection clothing][otherwise][fuckholes][end if] to the world. It has a Velcro strip which looks like it should be able to close, but in fact the Velcro doesn't stick at all. This means it [if C is worn]looks[otherwise]would look[end if] like you've purposefully left it open so everyone can see inside. [if C is worn and the player is a blowjob slut]You can feel the onesie somehow magically encouraging the monsters in this game to use your face for sex.[otherwise][line break][end if]".
-
-To uniquely set up (C - velcro onesie):
-	now C is absorption.
 
 To decide which number is the initial cringe of (C - velcro onesie):
 	decide on 12.

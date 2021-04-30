@@ -1,6 +1,8 @@
 Cow Ears by Headgear begins here.
 
-cow-ears is a headgear. Figure of cow ears is the file "Items/Accessories/Head/cowears1.png". Figure of cow ears full is the file "Items/Accessories/Head/cowears2.png". Understand "pair", "pair of", "cow", "ears" as cow-ears. cow-ears is hair growing. cow-ears is milk-taste-addiction-influencing.
+A cow ears is a kind of headgear.
+
+cow-ears is a cow ears. Figure of cow ears is the file "Items/Accessories/Head/cowears1.png". Figure of cow ears full is the file "Items/Accessories/Head/cowears2.png". Understand "pair", "pair of", "cow", "ears" as cow-ears. cow-ears is hair growing. cow-ears is milk-taste-addiction-influencing.
 
 Definition: cow-ears is roleplay:
 	if lactation fetish is 1, decide yes;
@@ -8,8 +10,6 @@ Definition: cow-ears is roleplay:
 Definition: cow-ears is IcarusScienceAppropriate:
 	if it is actually summonable and lactation fetish is 1, decide yes;
 	decide no.
-To uniquely set up (C - cow-ears):
-	now C is milk production.
 
 cow-ears has a number called temporary-milked-bonus.
 
@@ -48,8 +48,10 @@ Chapter - Class Outfit
 To compute unique recycling of (C - cow-ears):
 	now the ready-for-milking of milking-quest is 0.
 
-To compute class outfit of (H - cow-ears):
-	if the lactation-count of the player >= 10:
+To compute class outfit of (H - a cow ears):
+	if the class of the player is catgirl:
+		compute meowcowification;
+	otherwise if the lactation-count of the player >= 10:
 		class summon cow print basque;
 		now the quest of H is milk-serve-quest;
 	otherwise:
@@ -77,6 +79,7 @@ Chapter - Quest
 milking-quest is a headgear-clothing-quest. milking-quest has a number called ready-for-milking. milking-quest has a number called successful-milks.
 
 To uniquely set up (C - cow-ears):
+	now C is milk production;
 	now the ready-for-milking of milking-quest is 0;
 	now the successful-milks of milking-quest is 0;
 	now the quest of C is milking-quest.
@@ -111,12 +114,9 @@ To progress quest of (Q - milking-quest):
 
 Chapter - Cow horns
 
-cow-horns is a headgear. cow-horns is biological. Figure of cow horns is the file "Items/Accessories/Head/cowhorns1.png". Understand "pair", "pair of", "cow", "horns" as cow-horns. cow-horns is hair growing. cow-horns is milk-taste-addiction-influencing.
+cow-horns is a cow ears. cow-horns is biological. Figure of cow horns is the file "Items/Accessories/Head/cowhorns1.png". Understand "pair", "pair of", "cow", "horns" as cow-horns. cow-horns is hair growing. cow-horns is milk-taste-addiction-influencing.
 
 The printed name of cow-horns is "[clothing-title-before]pair of cow horns[clothing-title-after]". The text-shortcut of cow-horns is "ches".
-
-To uniquely set up (C - cow-horns):
-	now C is milk production.
 
 To decide which figure-name is the clothing-image of (C - cow-horns):
 	decide on figure of cow horns.
@@ -129,6 +129,7 @@ Definition: cow-horns is cow themed: decide yes.
 Definition: cow-horns is white themed: decide yes.
 
 To uniquely set up (C - cow-horns):
+	now C is milk production;
 	now the quest of C is babymaking-quest;
 	if the pregnancy of the player > 0 and the pregnancy of the player < 3, now the previously-pregnant of babymaking-quest is 1.
 

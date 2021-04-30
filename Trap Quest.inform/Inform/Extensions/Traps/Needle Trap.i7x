@@ -41,21 +41,30 @@ To trigger (Y - a needle trap):
 	now Y is not untriggered;
 	now Y is not untriggered;
 	now the reset-timer of Y is 250;
-	let X be a random number between 1 and 3;
-	let target-body-part be nothing;
-	if X is 1:
-		now target-body-part is breasts;
-	otherwise if X is 2:
-		now target-body-part is belly;
-		if lactation fetish is 1, now target-body-part is breasts;
+	let C be a random worn drinkable condom pinned clothing;
+	if bukkake fetish is 1 and C is clothing and the player is getting unlucky:
+		say "A tiny needle shoots out of [if playerRegion is Dungeon]the stone wall[otherwise if playerRegion is Woods]a tree[otherwise]a tiny hole in the wall[end if] and towards your [ShortDesc of C]! By sheer bad luck, the needle strikes [if the used condoms of C > 1]one of the condoms[otherwise]the condom[end if] pinned to it. It ruptures and bursts!";
+		if the used condoms of C > 0:
+			increase the empty condoms of C by 1;
+			decrease the used condoms of C by 1;
+		UnannouncedSquirt semen on C by 4;
+		say GotUnluckyFlav;
 	otherwise:
-		now target-body-part is hips;
-	if the latex-transformation of the player > 0, now target-body-part is breasts;
-	if the player is a flatchested trap or the player is prone or diaper quest is 1 or tutorial is 1, now target-body-part is hips;
-	say "A tiny needle shoots out of [if playerRegion is Dungeon]the stone wall[otherwise if playerRegion is Woods]a tree[otherwise]a tiny hole in the wall[end if] and towards your [if target-body-part is breasts][BreastDesc][otherwise if target-body-part is belly]side[otherwise if the player is prone]butt cheek[otherwise]hip[end if]. ";
-	compute Y injecting into target-body-part;
-	repeat with M running through reactive monsters:
-		say NeedleTrapReactFlav of M.
+		let X be a random number between 1 and 3;
+		let target-body-part be nothing;
+		if X is 1:
+			now target-body-part is breasts;
+		otherwise if X is 2:
+			now target-body-part is belly;
+			if lactation fetish is 1 and diaper lover is 0, now target-body-part is breasts;
+		otherwise:
+			now target-body-part is hips;
+		if the latex-transformation of the player > 0, now target-body-part is breasts;
+		if the player is a flatchested trap or the player is prone or diaper quest is 1 or tutorial is 1, now target-body-part is hips;
+		say "A tiny needle shoots out of [if playerRegion is Dungeon]the stone wall[otherwise if playerRegion is Woods]a tree[otherwise]a tiny hole in the wall[end if] and towards your [if target-body-part is breasts][BreastDesc][otherwise if target-body-part is belly]side[otherwise if the player is prone]butt cheek[otherwise]hip[end if]. ";
+		compute Y injecting into target-body-part;
+		repeat with M running through reactive monsters:
+			say NeedleTrapReactFlav of M.
 
 To compute (Y - a needle trap) injecting into (X - breasts):
 	let R be a random number between 1 and 7;
@@ -115,6 +124,9 @@ To compute (Y - a needle trap) injecting into (X - belly):
 	if 1 <= the number of worn belly covering clothing, now needle-blocker is a random worn belly covering currently uncovered clothing;
 	if needle-blocker is clothing:
 		say "The needle is blocked by your [ShortDesc of needle-blocker]! Phew!";
+	otherwise if diaper lover > 0:
+		say "You feel weirdly numb on the inside. Whatever you were injected with has made you temporarily incontinent![line break][variable custom style]Uh-oh...[roman type][line break]";
+		increase temporary-incontinence by 2;
 	otherwise:
 		say "Owww, that really hurt! You take it out and notice that it has an empty capsule at the end you're holding. It looks like it injected you with something?";
 		NeedleDelicateUp;

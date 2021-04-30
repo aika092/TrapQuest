@@ -114,6 +114,8 @@ The printed name of tiara-veil is "[clothing-title-before]tiara veil[clothing-ti
 
 Figure of tiara veil is the file "Items/Accessories/Head/royaltiara3.png".
 
+Definition: tiara-veil is roleplay: decide no.
+
 To decide which figure-name is the clothing-image of (C - tiara-veil):
 	decide on figure of tiara veil.
 

@@ -164,6 +164,8 @@ Check drinking urinal:
 Check drinking diaper:
 	try urinating instead.
 
+toilet-sitting is initially false. [the player can sit on the toilet while using a diaper to avoid leakage onto the floor]
+
 [!<CheckUrinating>+
 
 Delayed urination:
@@ -440,6 +442,7 @@ To start urination:
 	now player-urinating is 1;
 	now overflowed is 0;
 	now water-peeing is false;
+	now toilet-sitting is false;
 	if pee-bottling is 1: [We are automatically urinating so we set delayed urination to 1 to make sure we skipped the check functions. But we don't want to tell the player that the urination was involuntary because that's not actually true.]
 		now pee-bottling is 0;
 		if debugmode is 1, say "resetting accidental urination flag.";
@@ -494,9 +497,16 @@ To start urination:
 				UrinePuddleUp the bladder of the player;
 				check urine maidification;
 	otherwise:
+		let K be a random worn bottom level pee protection clothing;
+		if the player is potentially able to use a toilet and delayed urination is 0 and the player is not immobile and the player is not in danger and the player is not flying:
+			say "Would you like to sit on the toilet while you soil your [ShortDesc of K] (to avoid wetting the floor if you leak)?";
+			if the player is consenting:
+				say "You sit on the toilet. ";
+				now toilet-sitting is true;
+			otherwise:
+				say "You stay where you are. ";
 		say "You [if delayed urination is 1]involuntarily [end if]release your hold on your bladder. ";
 		compute pee protected urination;
-		let K be a random worn bottom level pee protection clothing;
 		if K is diaper and the player is in the location of dungeon altar:
 			if diaper quest is 1:
 				if the class of the player is priestess:
@@ -573,6 +583,8 @@ To compute pee protected urination:
 					if resting is 1 and there is a hotel bed in the location of the player:
 						if flav-said is 0, say "Your [urine] soaks into the sheets and mattress.";
 						now a random hotel bed in the location of the player is soggy;
+					otherwise if toilet-sitting is true:
+						if flav-said is 0, say "Your [urine] drips through your clothing and into the toilet.";
 					otherwise:
 						UrinePuddleUp 1;
 						if flav-said is 0, say "Your [urine] drips through your clothing and onto the ground.";

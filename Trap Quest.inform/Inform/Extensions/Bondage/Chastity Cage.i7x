@@ -50,7 +50,7 @@ To decide which figure-name is clothing-image of (C - chastity-belt):
 Definition: chastity-belt is grey themed: decide yes.
 
 To SexChange (J - chastity-belt):
-	if the player is male and metal-cage is off-stage:
+	if the player is possessing a penis and metal-cage is off-stage:
 		say "Your chastity belt morphs into a tight, snug chastity cage.";
 		transform J into metal-cage.
 
@@ -142,7 +142,7 @@ To say ClothingDesc of (C - metal-cage):
 	say ChastityComment of C.
 
 To SexChange (J - metal-cage):
-	if the player is female and chastity-belt is off-stage:
+	if the player is not possessing a penis and chastity-belt is off-stage:
 		say "Your chastity cage morphs into a tight, snug chastity belt. ";
 		transform J into chastity-belt.
 

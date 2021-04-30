@@ -32,7 +32,7 @@ Figure of friendly newborn tentacle monster is the file "NPCs/Bosses/TentacleMon
 Figure of friendly large tentacle monster is the file "NPCs/Bosses/TentacleMonster5.png".
 Figure of friendly massive tentacle monster is the file "NPCs/Bosses/TentacleMonster6.png".
 
-Figure of Tentacle Cutscene 1 is the file "Special/Cutscene/cutscene-tentacle-birth1.png".
+Figure of Tentacle Cutscene 1 is the file "Special/Cutscene/cutscene-tentacle-birth1.jpg".
 Figure of Tentacle Cutscene 2 is the file "Special/Cutscene/cutscene-tentacle-belly1.jpg".
 Figure of Tentacle Cutscene 3 is the file "Special/Cutscene/cutscene-tentacle-grab1.png".
 Figure of Tentacle Cutscene 4 is the file "Special/Cutscene/cutscene-tentacle-grab2.png".
@@ -228,7 +228,7 @@ To say MonsterComment of (M - a tentacle monster):
 	otherwise if M is newborn:[TODO: magical girl]
 		say "[if the bimbo of the player < 7][line break][first custom style][one of]That thing, it... it really came out of me?[or][or]That thing is disgusting. I can't believe it came out of me.[or]Just as disgusting as its father was. I should kill it.[in random order][otherwise if the bimbo of the player < 12][line break][variable custom style][one of]That really came out of me. Wow.[or]Is it weird that I feel kind of... proud of it?[or]It's kind of cute.[or]It's disgusting, but in an endearing way.[or]If I don't kill it, it might want to breed with me. But it just looks so helpless...[in random order][otherwise][line break][second custom style][one of][big he of M]'s adorable![or]How cute![or]I love my baby![or]Mmm, [he of M] looks hor~ny![or]I want to take *good care* of my baby boy.[or][big he of M] looks like [he of M] wants to breed with me. Anything for my baby boy![in random order][end if][roman type][line break]";
 	otherwise if M is large:
-		say "[if the bimbo of the player < 8][line break][first custom style][one of]It's growing! I have to deal with it now or I may never get another chance![or]I can't believe what this thing did to me. I have to destroy it.[or]It fucked me... even though I'm its mother.[or]I can't be responsible for something this evil.[in random order][otherwise if the bimbo of the player < 13][line break][variable custom style][one of]Seeing him grow like that was actually a little fulfilling.[or][big he of M] had sex with me even though I'm [his of M] mother.[or][big he of M]'s getting big. Could [he of M] grow like that again?[or]I probably could have fought more, but... [he of M] was just so cute.[or][big his of M] tentacles are getting big. Thick. Juicy. Oh no...[in random order][otherwise][line break][second custom style][one of][big he of M] had a growth spurt![or]I let him breed me like any good mommy would![or][big he of M]'s growing up so fast. Especially where it counts...[or]I want to let him breed me again. [big he of M] might grow even bigger![or]Who wants to fuck mommy? You do! You do![or][big he of M]'s going to grow up big and horny, just like [his of M] daddy.[then at random][end if][roman type][line break]";
+		say "[if the bimbo of the player < 8][line break][first custom style][one of]It's growing! I have to deal with it now or I may never get another chance![or]I can't believe what this thing did to me. I have to destroy it.[or]It fucked me... even though I'm it's mother.[or]I can't be responsible for something this evil.[in random order][otherwise if the bimbo of the player < 13][line break][variable custom style][one of]Seeing him grow like that was actually a little fulfilling.[or][big he of M] had sex with me even though I'm [his of M] mother.[or][big he of M]'s getting big. Could [he of M] grow like that again?[or]I probably could have fought more, but... [he of M] was just so cute.[or][big his of M] tentacles are getting big. Thick. Juicy. Oh no...[in random order][otherwise][line break][second custom style][one of][big he of M] had a growth spurt![or]I let him breed me like any good mommy would![or][big he of M]'s growing up so fast. Especially where it counts...[or]I want to let him breed me again. [big he of M] might grow even bigger![or]Who wants to fuck mommy? You do! You do![or][big he of M]'s going to grow up big and horny, just like [his of M] daddy.[then at random][end if][roman type][line break]";
 	otherwise:
 		say "[if the bimbo of the player < 9][line break][variable custom style][one of]It keeps overpowering me like it's nothing. I have to get out of here.[or]Those tentacles are enormous! I'm not giving it another chance to put them in me![or]How could I let it get so big? Now I'll never get rid of it.[or]It keeps trying to breed with me. I'm your mother you disgusting beast![in random order][otherwise if the bimbo of the player < 14][variable custom style][one of][big he of M]'s so strong now. There's no way I can fight him, let alone keep him from fucking me.[or][big he of M]'s all grown-up now. What's this wistful feeling?[or]I'm so proud. I wish [he of M] were more obedient, but still...[or][big his of M] tentacles are so big. I don't think he'll grow much more than that.[in random order][otherwise][line break][second custom style][one of]Look who grew up all big and hung![or]I want to make another.[or]They grow up so fast. And big too, teehee![or][big he of M] knows just how to please [his of M] mommy.[or]Those [manly-penis]s are so big! [big he of M] gets it from [his of M] daddy.[or]I wonder when [he of M]'ll be ready to breed me again?[in random order][end if][roman type][line break]".
 
@@ -539,6 +539,9 @@ To say AllyDamageFlav of (M - a tentacle monster) on (X - a monster):
 To compute the flying player taunting of (M - a tentacle monster):
 	say "[one of][BigNameDesc of M] clearly refuses to move from your location until you stop floating.[or][stopping]".
 
+To compute the cage stuck taunting of (M - a tentacle monster):
+	follow the sex attempt rules. [tentacle monsters can fuck you through the cage]
+
 The latex punishment rule of a tentacle monster is usually the no latex punishment rule.
 
 The tentacle monster continue sex rules is a rulebook. The continue sex rules of tentacle monster is usually the tentacle monster continue sex rules.
@@ -684,7 +687,7 @@ This is the tentacle monster climaxes rule:
 		if M is large:
 			SizeRankUp M;
 			if heart hairpin is off-stage:
-				if the class of the player is "schoolgirl" and the number of worn scrunchies is 1: [has to be exactly this class and not any cross-class]
+				if the class of the player is "schoolgirl" and (there is a worn schoolgirl outfit or tartan tube top is worn): [has to be exactly this class and not any cross-class]
 					let S be a random worn scrunchie;
 					say "Your [S] explodes in a shower of cartoon lovehearts!";
 					destroy S;

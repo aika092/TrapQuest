@@ -248,11 +248,25 @@ To say VaginaPenetrationFlav of (M - a supporter):
 	otherwise: [Supporter's choice]
 		say VaginaSpecialPenetrationFlav of M.
 
+To say FriendlyVaginaPenetrationFlav of (M - a supporter):
+	if M is male or M is strapped:
+		say FriendlyVaginaPenPrep of M;
+		say FriendlyPenetrationFlav of M in vagina;
+	otherwise: [default friendly penetration flav assumes penis]
+		say VaginaSpecialPenetrationFlav of M.
+
 To say AssholePenetrationFlav of (M - a supporter):
 	if M is male or M is strapped: [Cock or Strapon]
 		say PenPrep of M in asshole;
 		say PenetrationFlav of M in asshole;
 	otherwise: [Supporter's choice]
+		say AssholeSpecialPenetrationFlav of M.
+
+To say FriendlyAssholePenetrationFlav of (M - a supporter):
+	if M is male or M is strapped:
+		say FriendlyAssholePenPrep of M;
+		say FriendlyPenetrationFlav of M in asshole;
+	otherwise: [default friendly penetration flav assumes penis]
 		say AssholeSpecialPenetrationFlav of M.
 
 To compute vaginal sex of (M - a supporter):
@@ -584,7 +598,7 @@ To say CondomPinFlav of (M - a supporter) on (C - a clothing):
 	say "Before you can stop [him of M], [NameDesc of M] presses the [one of]newly created and now used [or]strongly-smelling [or]wobbling, semen-swollen [or][or][cycling]condom to your [C]. After giving you a final mischievous grin, [he of M] yawns, lies back, and falls asleep.".
 
 To say CreampieFlav of (M - a supporter) in (F - a fuckhole):
-	say "[BigNameDesc of M] moans with pleasure as [he of M] ejaculates [his of M] [if the girth of M < 5]smallish [otherwise if the girth of M > 8]gargantuan [otherwise if the girth of M > 6]huge [end if]load into your [variable F]! [big he of M] grips your hips tightly as [he of M] keeps his [DickDesc of M] firmly lodged as deep as it can go inside you and you can feel it constantly twitching as [he of M] cums. Having thoroughly drained [his of M] balls inside of you, [his of M] [DickDesc of M] pops out as [he of M] lies backwards and quickly falls into a well-earned sleep.".
+	say "[BigNameDesc of M] moans with pleasure as [he of M] ejaculates [his of M] [if the girth of M < 5]smallish [otherwise if the girth of M > 8]gargantuan [otherwise if the girth of M > 6]huge [end if]load into your [variable F]! [big he of M] grips your hips tightly as [he of M] keeps his [DickDesc of M] firmly lodged as deep as it can go inside you and you can feel it constantly twitching as [he of M] cums. Having thoroughly drained [his of M] [if M is a balls-haver]balls[otherwise]load[end if] inside of you, [his of M] [DickDesc of M] pops out as [he of M] lies backwards and quickly falls into a well-earned sleep.".
 
 [###SUPPORTERS WITH A STRAPON ONLY###]
 

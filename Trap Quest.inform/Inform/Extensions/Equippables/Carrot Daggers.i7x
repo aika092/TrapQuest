@@ -11,6 +11,7 @@ To decide which figure-name is the clothing-image of (W - carrot daggers):
 
 Definition: carrot daggers is food themed: decide yes.
 Definition: carrot daggers is orange themed: decide yes.
+Definition: carrot daggers is bunny themed: decide yes.
 
 To say ClothingDesc of (W - carrot daggers):
 	say "Two carrots made out of latex[if W is blessed]. The tips are surprisingly sharp[end if].".

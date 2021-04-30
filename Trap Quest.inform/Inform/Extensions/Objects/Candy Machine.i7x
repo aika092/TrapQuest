@@ -62,7 +62,7 @@ CandyObtaining is an action applying to one thing.
 
 Check CandyObtaining:
 	if the noun is not candy machine, say "This verb is used for operating vending machines." instead;
-	if the player is immobile or there is a thing wrangling a body part, say "Aren't you a bit busy?" instead.
+	if the player is at least partially immobile, say "Aren't you a bit busy?" instead.
 
 Check drinking candy machine:
 	try CandyObtaining the noun instead.

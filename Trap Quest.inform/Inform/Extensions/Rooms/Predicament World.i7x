@@ -66,7 +66,7 @@ Report going north when the player is in School01:
 	repeat with T running through on-stage trophies:
 		if T is held, say "[bold type][BigNameDesc of T] [bold type]is ripped from your hands by an invisible force, and in your mind's eye you can see that it has been taken to the 'Trophy Hall'![roman type][line break]";
 		now T is in School31;
-	if the player is wrist-bound-behind:
+	if the player is wrist bound behind:
 		repeat with T running through things in Predicament20:
 			say "[BigNameDesc of T] is teleported to the [School01] along with you!";
 	repeat with R running through predicament rooms:
@@ -240,6 +240,7 @@ Report going when the player is in Park02:
 
 Predicament-Pen is a room. [stored items that would make the predicament difficult]
 predicamentPenList is a list of things that varies.
+predicamentWornList is a list of things that varies.
 To say PredicamentPenCheck:
 	repeat with C running through predicamentPenList:
 		if C is not in Predicament-Pen:
@@ -247,6 +248,7 @@ To say PredicamentPenCheck:
 			now C is in Predicament-Pen.
 
 Report going when the player is in Predicament20:
+	let abnormalClothingSituation be 0;
 	repeat with C running through predicament-temporary wearthings:
 		now C is predicament-normal;
 		if C is clothing and (the raw-magic-modifier of C > 0 or C is not blandness):
@@ -264,6 +266,8 @@ Report going when the player is in Predicament20:
 			say "[BigNameDesc of C] falls to the ground.";
 			dislodge C;
 			now C is in the location of the player;
+		otherwise:
+			now abnormalClothingSituation is 1;
 	repeat with C running through predicamentPenList:
 		say "[BigNameDesc of C] reappears on you! ";
 		if C is dress:
@@ -275,14 +279,16 @@ Report going when the player is in Predicament20:
 			layer C correctly;
 			now C is sure;
 			now C is identified;
-			if C is sex toy:
-				let F be asshole;
-				if (C is not plug or asshole is actually occupied) and the player is possessing a vagina, now F is vagina;
-				now C is penetrating F;
-			otherwise:
-				if C is ass plugging, now C is penetrating asshole;
-				if C is vagina plugging and the player is possessing a vagina, now C is penetrating vagina;
-				if C is gag and C is not ringagged, now C is penetrating face;
+		if C is ass plugging clothing:
+			now C is penetrating asshole;
+		otherwise if C is vagina plugging clothing:
+			if the player is possessing a vagina, now C is penetrating vagina;
+		otherwise if C is insertable:
+			let F be asshole;
+			if (C is not plug or asshole is actually occupied) and the player is possessing a vagina, now F is vagina;
+			now C is penetrating F;
+		otherwise if C is gag:
+			if C is not ringagged, now C is penetrating face;
 		say line break;
 	truncate predicamentPenList to 0 entries;
 	if tough-shit is 0:
@@ -302,7 +308,36 @@ Report going when the player is in Predicament20:
 		if B is in Predicament20, say "[bold type][if C is not B]Your [C][bold type] has been transformed into a [B][bold type]! [otherwise]A brand new [B][bold type] is waiting for you in this room! [end if]Wow![roman type][line break]";
 	let T be a random trophy in Predicament20;
 	if T is trophy, say "[bold type]There is a [T][bold type] in this room![roman type] [one of]You feel [bold type]permanently more lucky[roman type][or]Once again you feel more lucky[stopping] for having completed this Extra Credit Assignment.[one of][line break][variable custom style]Why do I get the feeling that if I rub the trophy, something interesting might happen?[roman type][line break][or][stopping]";
-	now the fatigue of the player is 0.
+	say EndGameFlav of current-predicament;
+	now the fatigue of the player is 0;
+	if the number of entries in predicamentWornList > 0:
+		if abnormalClothingSituation is 1:
+			say "[newbie style]Since you are wearing new clothing from the predicament, it's too complex to just automatically put everything you were wearing back on. You'll have to do it manually.[roman type][line break]";
+		otherwise:
+			say "Would you like to put back on the same clothing that you were wearing when you entered the Extra Credit Zone? ([predicamentWornList])[line break]";
+			if the player is consenting:
+				repeat with C running through predicamentWornList:
+					say "You wear [NameDesc of C]. ";
+					now C is worn by the player;
+					if C is clothing:
+						layer C correctly;
+						now C is sure;
+						now C is identified;
+					if C is ass plugging clothing:
+						now C is penetrating asshole;
+					otherwise if C is vagina plugging clothing:
+						if the player is possessing a vagina, now C is penetrating vagina;
+					otherwise if C is insertable:
+						let F be asshole;
+						if (C is not plug or asshole is actually occupied) and the player is possessing a vagina, now F is vagina;
+						now C is penetrating F;
+					otherwise if C is gag:
+						if C is not ringagged, now C is penetrating face;
+					say line break;
+	truncate predicamentWornList to 0 entries.
+
+To say EndGameFlav of (P - a predicament):
+	say "".
 
 To say speech style of (M - a person):
 	say first custom style.
@@ -1203,7 +1238,7 @@ An all time based rule:
 						say "You hear a series of high pitched electronic tones, declaring that the camera successfully detected the pattern it was looking for. The cabinet unlocks! However, you also ";
 					otherwise:
 						say "You hear a series of low electronic tones, declaring that the camera failed to detect the pattern it was looking for.[line break][variable custom style]WHAT?![roman type][line break]You notice that you accidentally allowed a small amount of green to be visible [one of]behind your left hand[or]behind your right hand[or]on the tip of the vibrator[at random] - you're going to have to try again! [GotUnluckyFlav]You ";
-					say "watch with [horror ((the humiliation of the player / 1000) - the predicament-progression of vibe-photo-predicament)] as the photo is uploaded to [if the predicament-progression of vibe-photo-predicament < 3 and diaper quest is 0]www.amateursluts.com[otherwise if the predicament-progression of vibe-photo-predicament < 3]www.weirdestamateurperverts.com[otherwise]your social media profile[end if].[line break][variable custom style][if the predicament-progression of vibe-photo-predicament < 3][one of]Nobody looks at sites like that, right?[or]Not again![stopping][otherwise][one of]My friends are going to be able to see this! How humiliating![or]Not again![stopping][end if][roman type][line break]";
+					say "watch with [horror ((the humiliation of the player / 1000) - the predicament-progression of vibe-photo-predicament)] as the photo is uploaded to [if the predicament-progression of vibe-photo-predicament < 4 and diaper quest is 0]www.amateursluts.com[otherwise if the predicament-progression of vibe-photo-predicament < 4]www.weirdestamateurperverts.com[otherwise]your social media profile[end if].[line break][variable custom style][if the predicament-progression of vibe-photo-predicament < 4][one of]Nobody looks at sites like that, right?[or]Not again![stopping][otherwise][one of]My friends are going to be able to see this! How humiliating![or]Not again![stopping][end if][roman type][line break]";
 					if the number of blank rows in the Table of Published Disgraces > 0:
 						choose a blank row in Table of Published Disgraces;
 						now the content entry is the substituted form of "a high resolution photo of you posing with peace signs, tongue lolled out and [genitals] pushed into a vibrating wand, [if the predicament-progression of vibe-photo-predicament > 1]with your date of birth and hometown printed on the wall behind you, [end if][if the predicament-progression of vibe-photo-predicament > 2]alongside your full name, [end if][if the predicament-progression of vibe-photo-predicament > 4]and contact information, [end if][ReputationAttire]";
@@ -1411,7 +1446,7 @@ An all time based rule (this is the triple dildo punishment pill rule):
 painted-cutoffs-predicament is a predicament.
 painted-cutoffs-predicament has a number called predicament-completed.
 Definition: painted-cutoffs-predicament is appropriate:
-	if the player is female and ((the predicament-completed of painted-cutoffs-predicament is 0 and the rank of the player is 2) or (the predicament-completed of painted-cutoffs-predicament < 3 and the rank of the player is 3)) and the player is able to get horny, decide yes;
+	if the player is possessing a vagina and ((the predicament-completed of painted-cutoffs-predicament is 0 and the rank of the player is 2) or (the predicament-completed of painted-cutoffs-predicament < 3 and the rank of the player is 3)) and the player is able to get horny, decide yes;
 	decide no.
 Definition: painted-cutoffs-predicament is eligible:
 	if diaper quest is 0 and ((the times-completed of it is 0 and the rank of the player is 2) or (the times-completed of it < 2 and the rank of the player is 3)), decide yes;
@@ -1661,18 +1696,19 @@ To maths-execute (M - make-me-cum):
 
 new-ass-tattoo is a maths-sex-predicament-punishment.
 Definition: new-ass-tattoo is appropriate:
-	if diaper quest is 0 and there is a worn tattoo and the number of worn ass tattoo is 0, decide yes;
+	if diaper quest is 0 and there is a tattoo in Predicament-Pen and the number of worn asscheek tattoo is 0, decide yes;
 	decide no.
 To decide which text is the maths-punishment-description of (M - new-ass-tattoo):
 	decide on "Write something degrading on my ass with permanent ink".
 To maths-execute (M - new-ass-tattoo):
 	say "You hear the [man of shopkeeper] chuckle and pull the lid off of a permanent marker. And then you feel [him of shopkeeper] write 'just the tip' on your ass![line break][variable custom style]Really?![roman type][line break]";
 	summon just the tip tattoo;
+	now just the tip tattoo is predicament-normal;
 	say "The [man of shopkeeper] leaves the way [he of shopkeeper] came, taking the pen with [him of shopkeeper].".
 
 new-ankle-tattoo is a maths-sex-predicament-punishment.
 Definition: new-ankle-tattoo is appropriate:
-	if there is a worn tattoo and new-ass-tattoo is not appropriate and spank-me-heart tattoo is not worn, decide yes;
+	if there is a tattoo in Predicament-Pen and new-ass-tattoo is not appropriate and spank-me-heart tattoo is not worn, decide yes;
 	decide no.
 To decide which text is the maths-punishment-description of (M - new-ankle-tattoo):
 	decide on "Give me a new ankle tattoo".
@@ -1680,6 +1716,7 @@ To maths-execute (M - new-ankle-tattoo):
 	say "You hear the [if diaper quest is 0][man of shopkeeper] think to [himself of shopkeeper] carefully[otherwise]robotic arm whirr into action[end if] and then you hear a tattoo needle being turned on![line break][variable custom style]Uh-oh...[roman type][line break]The needle brings stinging pain with it as it engages with your ankle.";
 	PainUp 1;
 	summon spank-me-heart tattoo;
+	now spank-me-heart tattoo is predicament-normal;
 	say "A few minutes later, you have a brand new tattoo.";
 	try examining spank-me-heart tattoo;
 	say "[variable custom style]No way... and this is permanent??[roman type][line break]";
@@ -1993,8 +2030,8 @@ To execute (L - team-quiz-predicament):
 			summon normal clit piercing;
 			now normal clit piercing is predicament-fixed;
 			force immediate clothing-focus redraw;
-		otherwise if the player is male:
-			say "You realise you have a metal ring clamped around the top of your scrotum. It feels weird, and you certainly won't be able to get it off past your balls any time soon. ";
+		otherwise if the player is possessing a penis:
+			say "You realise you have a metal ring clamped around the [if the player is possessing a scrotum]top of your scrotum[otherwise]base of your penis[end if]. It feels weird, and you certainly won't be able to get it off [if the player is possessing a scrotum]past your balls [end if]any time soon. ";
 		say "It is somehow stuck attached to a tongue piercing, which in turn is... pierced in [ST][']s mouth.[line break][variable custom style]Uh-oh.[roman type][line break]Yes, that's right, you're on all fours, with [NameDesc of ST] stuck behind you and [his of ST] tongue forced to stretch out as if waiting for a serving from your [asshole]. Your belly gurgles again, and you realise that your innards are indeed completely, painfully full of something goopy and nasty...";
 		if the total fill of belly < belly limit - 5:
 			if watersports fetish is 1, increase the urine volume of belly by ((belly limit - 5) - total fill of belly);
@@ -2801,6 +2838,8 @@ Definition: team-football-predicament is appropriate:
 	decide yes.
 To say PredicamentDescription of (P - team-football-predicament):
 	say "I'm currently in an Extra Credit lesson where I need to stay close to the football and try and get it far away from [student-name of team-predicament-partner] to win the game and avoid the forfeits, but also try to avoid having the ball for too long without winning as it'll make me cum, and then I need to get back to my home while avoiding as many bystanders as possible from noticing me.".
+To say EndGameFlav of (P - team-football-predicament):
+	say "[bold type]You notice a skeleton key among your belongings. [roman type]Great! You can open the lock on those hotpants!".
 
 football is a thing. football is not portable. The printed name of football is "[TQlink of item described]football[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of football is "ftb". football has a person called the football-possessor. football can be dribbled. Understand "ball" as football.
 Figure of football is the file "Env/School/football1.png".
@@ -2832,10 +2871,10 @@ To execute (L - team-football-predicament):
 	now football-hotpants is predicament-fixed;
 	summon football-gloves;
 	summon remote-controlled-vibrator vaginally;
-	if the player is male:
+	if the player is possessing a penis:
 		dislodge remote-controlled-vibrator;
 		now remote-controlled-vibrator is penetrating penis;
-	otherwise:
+	otherwise if the player is possessing a vagina:
 		now the size of remote-controlled-vibrator is the openness of vagina;
 	now the toy-charge of remote-controlled-vibrator is 0;
 	now remote-controlled-vibrator is predicament-fixed;
@@ -2857,7 +2896,7 @@ An all later time based rule:
 			say "[bold type]Your vibrator plays a little sad tune and turns itself to maximum! The football has gotten too far away from you, and you've lost! [BigNameDesc of M] squeals with delight and runs for home as fast as [his of M] legs will carry [him of M]!";
 			HappinessUp M by 2;
 			say "You squeal in [horror the semen addiction of the player] as the vibrator begins spurting huge amounts of [semen] from its tip!";
-			if the player is female:
+			if the player is possessing a vagina:
 				PussyFill 12;
 				if the pregnancy of the player is 0 and pregnancy fetish is 1: [Once pregnant you don't get any more potential fathers!]
 					let ULA be a random ultimate-lesson-actor;
@@ -3890,7 +3929,7 @@ To execute (TSLP - team-scissor-lift-predicament):
 			now the bladder of the player is 10;
 		otherwise:
 			increase STEnema by 6;
-	say "You look around... you are on top of an industrial scissor lift along with [M]. The platform is raised up high - there's no way to get down safely. You are both completely naked, and you both have massive distended bellies, filled to the brim with [if watersports fetish is 1][urine][otherwise if diaper quest is 1]water[otherwise][semen][end if]. On the platform alongside you are [if diaper lover is 0]some finger foods on plates, but all with thick ropes of [semen] plastered over the top[otherwise]a large supply of unused disposable diapers, giant hamster feeders full of pureed diuretic baby food, and baby bottles full of [milk][end if][if watersports fetish is 1], and sports bottles (with the lids glued on) full of [urine][otherwise if diaper lover is 0], and sports bottles with the lids glued on[end if]. A large sign next to the scissor lift has the following information on it:[paragraph break][bold type]TIME UNTIL PLATFORM IS LOWERED[roman type][line break][if diaper lover is 0]30:00[otherwise]24:00:00[end if][line break][bold type]CURRENT PLATFORM WEIGHT[roman type][line break][W] LBS.[line break][bold type]AT 348 LBS:[roman type] MODEST CLOTHES BOX LOCKED[line break][bold type]AT 347 LBS:[roman type] HUMILIATING CLOTHES BOX LOCKED[line break][bold type][if diaper lover > 0]AT 345 LBS:[roman type] PLATFORM TAKES AN AUTOMATED TOUR OF NEIGHBOURHOOD[line break][bold type]AT 342 LBS:[roman type] TIMER INCREASED BY 24 HOURS[otherwise]AT 345 LBS:[roman type] TIMER INCREASED BY 24 HOURS[line break][bold type]AT 342 LBS:[roman type] PLATFORM TAKES AN AUTOMATED TOUR OF NEIGHBOURHOOD[end if][line break][paragraph break]Understanding washes over you: [bold type]This is a weight retention game. [roman type]If you were to expel your enema [if diaper lover > 0]or urinate outside of a diaper[otherwise if watersports fetish is 1]or urinate anywhere except into [NameDesc of M][']s mouth[otherwise]anywhere except into [NameDesc of M][']s mouth[end if], the liquid would travel down through the grate floor, and the weight measured by the scissor lift will decrease[if diaper lover > 0]. The same is true if you throw any of the used diapers off the platform, which means that the only other option is keeping your used nappies right next to you in the small space[end if]. So, the question is, what is worse? The things you'll have to do to retain the weight measurement of the platform, or the penalties for the weight going down?";
+	say "You look around, and see you are on top of an industrial scissor lift along with [M]. The platform is raised up high - there's no way to get down safely. You are both completely naked, and you both have massive distended bellies, filled to the brim with [if watersports fetish is 1][urine][otherwise if diaper quest is 1]water[otherwise][semen][end if]. On the platform alongside you are [if diaper lover is 0]some finger foods on plates, but all with thick ropes of [semen] plastered over the top[otherwise]a large supply of unused disposable diapers, giant hamster feeders full of pureed diuretic baby food, and baby bottles full of [milk][end if][if watersports fetish is 1], and sports bottles (with the lids glued on) full of [urine][otherwise if diaper lover is 0], and sports bottles with the lids glued on[end if]. A large sign next to the scissor lift has the following information on it:[paragraph break][bold type]TIME UNTIL PLATFORM IS LOWERED[roman type][line break][if diaper lover is 0]30:00[otherwise]24:00:00[end if][line break][bold type]CURRENT PLATFORM WEIGHT[roman type][line break][W] LBS.[line break][bold type]AT 348 LBS:[roman type] MODEST CLOTHES BOX LOCKED[line break][bold type]AT 347 LBS:[roman type] HUMILIATING CLOTHES BOX LOCKED[line break][bold type][if diaper lover > 0]AT 345 LBS:[roman type] PLATFORM TAKES AN AUTOMATED TOUR OF NEIGHBOURHOOD[line break][bold type]AT 342 LBS:[roman type] TIMER INCREASED BY 24 HOURS[otherwise]AT 345 LBS:[roman type] TIMER INCREASED BY 24 HOURS[line break][bold type]AT 342 LBS:[roman type] PLATFORM TAKES AN AUTOMATED TOUR OF NEIGHBOURHOOD[end if][line break][paragraph break]Understanding washes over you: [bold type]This is a weight retention game. [roman type]If you were to expel your enema [if diaper lover > 0]or urinate outside of a diaper[otherwise if watersports fetish is 1]or urinate anywhere except into [NameDesc of M][']s mouth[otherwise]anywhere except into [NameDesc of M][']s mouth[end if], the liquid would travel down through the grate floor, and the weight measured by the scissor lift would decrease[if diaper lover > 0]. The same is true if you throw any of the used diapers off the platform, which means that the only other option is keeping your used nappies right next to you in the small space[end if]. So, the question is, what is worse? The things you'll have to do to retain the weight measurement of the platform, or the penalties for the weight going down?";
 	while T >= 0:
 		let D be a random worn diaper;
 		say "[one of][or][bold type]Time moves forward. [roman type]The clock now reads [bold type][if T < 10]0[end if][T]:[if mins < 10]0[end if][mins]:00.[roman type][line break][stopping][if the player is extremely thirsty][bold type]You are extremely thirsty.[roman type][line break][otherwise if the player is very thirsty]You are very thirsty.[line break][otherwise if the player is thirsty]You are thirsty.[line break][end if][if the player is hungry][bold type]You are very hungry.[roman type][line break][otherwise if the player is nearly hungry]You are hungry.[line break][end if][if the bladder of the player >= 8][bold type]You desperately need to pee.[roman type][line break][otherwise if the bladder of the player >= 6]You need to pee.[line break][otherwise if the bladder of the player >= 4]You slightly need to pee.[line break][end if][if the total squirtable fill of belly > 0][bold type]You are filled to the brim with a [EL] enema.[roman type][line break][otherwise if rectum >= 6]You need to go number two.[line break][otherwise if rectum >= 4]You need to go number two soon.[line break][end if][if the number of soiled-diaper in the location of the player is 1]You have one used diaper up on the platform with you.[line break][otherwise if there is soiled-diaper in the location of the player]There are [number of soiled-diaper in the location of the player] used diapers up on the platform with you.[line break][end if]";
@@ -4182,7 +4221,7 @@ To execute (TSLP - team-scissor-lift-predicament):
 							say "[student-name of M] groans and clutches [his of M] belly.";
 							if a random number between -1 and 1 <= the dedication of M:
 								if diaper lover > 0:
-									say "[speech style of M]'I can't hold it any longer, it's going to come out! Eeeek!'[roman type][line break][student-name of M] queezes [his of M] eyes shut in shame as you watch [him of M] fill [his of M] diaper with a big helping of [if diaper messing >= 3]dirty [end if]enema water.[roman type][line break]";
+									say "[speech style of M]'I can't hold it any longer, it's going to come out! Eeeek!'[roman type][line break][student-name of M] squeezes [his of M] eyes shut in shame as you watch [him of M] fill [his of M] diaper with a big helping of [if diaper messing >= 3]dirty [end if]enema water.[roman type][line break]";
 									if diaper messing >= 3:
 										increase STDiaperMess by STRectum;
 										now STRectum is 1;

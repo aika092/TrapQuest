@@ -45,7 +45,7 @@ To compute attack effect of (W - a magic wand):
 			AssInflate 2;
 			if the total volume of hips > H, say "You notice that your [AssDesc] have somehow grown in size. It must be the wand?".
 
-To compute takeoff of (W - a magic wand):
+To compute takeoff of (W - a clothing):
 	let M be a random off-stage aeromancer;
 	if M is monster and a random number between -1 and 2 > the floatskill of the player:
 		now M is in the location of the player;

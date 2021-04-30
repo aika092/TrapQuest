@@ -11,7 +11,9 @@ To compute unique dislodging of (P - an anal beads):
 To uniquely set up (C - an anal beads):
 	now the size of C is a random number between 3 and 10;
 	now the notches of C is a random number between 5 and 6;
-	if the size of C > 7, now the notches of C is a random number between 4 and 3;
+	if the size of C > 7, now the notches of C is a random number between 4 and 3.
+
+To set up magic attribute of (C - an anal beads):
 	let R be a random number between 1 and 15;
 	if R < 3 and diaper quest is 0, now C is temptation;
 	if R < 5 and the size of C < 6, now C is expansion;
@@ -233,7 +235,7 @@ To say ClothingDesc of (P - ritual-beads):
 To say ShortDesc of (P - ritual-beads):
 	say "ritual beads".
 
-To uniquely set up (C - a ritual-beads):
+To uniquely set up (C - ritual-beads):
 	now the size of C is 3;
 	now the notches of C is 3.
 

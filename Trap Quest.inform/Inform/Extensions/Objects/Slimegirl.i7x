@@ -3,7 +3,7 @@ Slimegirl by Objects begins here.
 slimegirl is a person. slimegirl is female. The printed name of slimegirl is "[TQlink of item described]slimegirl[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of slimegirl is "slgl". Understand "slime", "girl" as slimegirl. slimegirl is wearable.
 
 Figure of slimegirl is the file "NPCs/Forest/slimegirl1.png".
-Figure of Slimegirl Cutscene 1 is the file "Special/Cutscene/cutscene-slimegirl1.png".
+Figure of Slimegirl Cutscene 1 is the file "Special/Cutscene/cutscene-slimegirl1.jpg".
 Figure of Slimegirl Cutscene 2 is the file "Special/Cutscene/cutscene-slimegirl2.png".
 
 To decide which figure-name is the examine-image of (C - slimegirl):
@@ -478,7 +478,7 @@ Carry out talking slimegirl:
 				otherwise:
 					say "[second custom style]'Why don't you come a bit closer, honey?'[roman type][line break]";
 			if player-numerical-response is 2:
-				if slimegirl is worn:
+				if slimegirl is worn or the slime-favour of slimegirl > 6:
 					if the hunger of slimegirl < 3:
 						teach milkskill;
 					otherwise:

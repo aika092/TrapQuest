@@ -25,9 +25,6 @@ To decide which number is the initial outrage of (C - milking harness):
 
 Definition: milking harness is class-transformation-protected: decide yes.
 
-To uniquely set up (C - milking harness):
-	do nothing.
-
 To set up influence of (C - milking harness):
 	set up taste-based influence of C.
 

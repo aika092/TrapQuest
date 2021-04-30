@@ -331,7 +331,7 @@ To say AdviceAnswer of (M - ex-princess):
 
 To compute teaching of (M - ex-princess):
 	if M is unconcerned:
-		say "[line break][speech style of M]'Let me show you how to properly wield a magic wand, to get more UMPH into your zaps. Firstly, stick your bum out more, like this. And the zap itself, it's all in the wrist...'[roman type][line break]";
+		say "[line break][speech style of M]'Let me show you how to properly wield a magic wand, to get more OOMPH into your zaps. Firstly, stick your bum out more, like this. And the zap itself, it's all in the wrist...'[roman type][line break]";
 		teach zapskill;
 	otherwise:
 		say "[line break][speech style of M]'When the time comes, I will aid you, but until then, I need to conserve all my energy and strength.'[roman type][line break]".
@@ -555,6 +555,7 @@ An all later time based rule (this is the school rescue fight rule):
 				let NLN be 1;
 				repeat with N running through LN:
 					if N is defeated:
+						dislodge N;
 						if N is headmistress:
 							now N is in Dungeon11;
 						otherwise if N is receptionist:
@@ -584,6 +585,7 @@ An all later time based rule (this is the school rescue fight rule):
 To compute (M - ex-princess) enslaving (N - a monster):
 	if diaper quest is 1 or a random number between 0 and diaper lover > 0, now N is diaper-enslaved;
 	otherwise now N is sex-enslaved;
+	dislodge N;
 	now the refractory-period of N is a random number between -100 and 150; [doesn't start off messy]
 	if M is in the location of the player:
 		let W be a random vibe-wand carried by M;
@@ -780,7 +782,7 @@ Definition: ex-princess (called M) is distracted:
 	if M is unconcerned and headmistress is in the location of M and M is in the location of the player and the teaseTimer of headmistress <= 0:
 		let E be a random vibe-wand held by M;
 		if E is nothing, now E is royal scepter;
-		say "[speech style of M]'[one of]I'm going to give you payback for every single time you forced me to cum, bitch[or]Found you again[stopping]!'[roman type][line break]Suddenly, [NameDesc of M] steps behind [NameDesc of headmistress] and pushes the head of [his of M] [ShortDesc of E] up against [NameDesc of headmistress][']s snatch.[line break][speech style of headmistress]'Oh Lo!'[roman type][line break][BigNameDesc of headmistress] groans, trying to keep [his of headmistress] tongue out of [his of headmistress] mouth as the powerful magical artifact between [his of headmistress] legs begins to vibrate, sending incomparably powerful vibrations directly into [his of headmistress] delicate sex.[line break][speech style of M]'[one of]Cum for me, slave[or]Come on slut, I know you've got another one in you[stopping].'[roman type][line break][BigNameDesc of M] teases [him of headmistress].[paragraph break][speech style of headmistress]'GGGGAAAAH!'[roman type][line break][BigNameDesc of headmistress] yells as [he of headmistress] cums, [his of headmistress] knees buckling as the sensations overwhelm [him of headmistress]. [big he of headmistress] ends up face down on the floor, shuddering in pleasure, still holding [his of headmistress] tongue out of [his of headmistress] mouth to avoid being shocked, which means that [he of headmistress][']s effectively licking the dirty floor.[line break][speech style of M]'[one of]Pathetic[or]And remember, if you lose count of how many times I've done this, we start again from zero[in random order].'[roman type][line break]You can't help but find the sight of this very arousing.";
+		say "[speech style of M]'[one of]I'm going to pay you back for every single time you forced me to cum, bitch[or]Found you again[stopping]!'[roman type][line break]Suddenly, [NameDesc of M] steps behind [NameDesc of headmistress] and pushes the head of [his of M] [ShortDesc of E] up against [NameDesc of headmistress][']s snatch.[line break][speech style of headmistress]'Oh Lo!'[roman type][line break][BigNameDesc of headmistress] groans, trying to keep [his of headmistress] tongue out of [his of headmistress] mouth as the powerful magical artifact between [his of headmistress] legs begins to vibrate, sending incomparably powerful vibrations directly into [his of headmistress] delicate sex.[line break][speech style of M]'[one of]Cum for me, slave[or]Come on slut, I know you've got another one in you[stopping].'[roman type][line break][BigNameDesc of M] teases [him of headmistress].[paragraph break][speech style of headmistress]'GGGGAAAAH!'[roman type][line break][BigNameDesc of headmistress] yells as [he of headmistress] cums, [his of headmistress] knees buckling as the sensations overwhelm [him of headmistress]. [big he of headmistress] ends up face down on the floor, shuddering in pleasure, still holding [his of headmistress] tongue out of [his of headmistress] mouth to avoid being shocked, which means that [he of headmistress][']s effectively licking the dirty floor.[line break][speech style of M]'[one of]Pathetic[or]And remember, if you lose count of how many times I've done this, we start again from zero[in random order].'[roman type][line break]You can't help but find the sight of this very arousing.";
 		Arouse 2000;
 		now the teaseTimer of headmistress is 50;
 		decide yes;

@@ -1,9 +1,11 @@
 Crotch Rope by Knickers begins here.
 
-crotch rope is a knickers. crotch rope is unique. crotch rope is hemp. The armour of crotch rope is 15. The printed name of crotch rope is "[clothing-title-before]crotch rope[clothing-title-after]". The text-shortcut of crotch rope is "cr". A crotch rope is crotch-assless.
+crotch rope is a knickers. crotch rope is unique. crotch rope is hemp. The printed name of crotch rope is "[clothing-title-before]crotch rope[clothing-title-after]". The text-shortcut of crotch rope is "cr". A crotch rope is crotch-assless.
 
 To decide which number is the penis-capacity of (K - crotch rope):
 	decide on 0.
+To decide which number is the initial armour of (C - crotch rope):
+	decide on 15.
 
 Definition: crotch rope is displacable: decide no.
 Definition: crotch rope is black themed: decide yes.

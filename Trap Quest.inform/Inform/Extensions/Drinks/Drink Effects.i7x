@@ -15,14 +15,19 @@ To compute default cursed drinking (X - a bottle):
 		otherwise if R is 9:
 			say "[input-style]Normal cursed drink roll: Overridden; [fill-colour of X] is arousal drink[roman type][line break]";
 		otherwise if diaper quest is 0:
-			say "[input-style]Normal cursed drink roll: d[7 + alcohol fetish] ([R]) | 1) Sex addiction + 1; 2) Hair + 1; 3) Dex - 1; 4) Strength - 1; 5) Penis - 1 / Breasts + 2; 6) Hips + 2; 7) Str&Dex&Int - 1[if alcohol fetish is 1]; 8) Alcohol[end if][roman type][line break]";
+			say "[input-style]Normal cursed drink roll: d[7 + alcohol fetish] ([R]) | 1) Sex addiction + 1; 2) [if diaper lover > 0 and the player is not incontinent]Temporary Incontinence[otherwise]Hair + 1[end if]; 3) Dex - 1; 4) Strength - 1; 5) Penis - 1 / Breasts + 2; 6) Hips + 2; 7) Str&Dex&Int - 1[if alcohol fetish is 1]; 8) Alcohol[end if][roman type][line break]";
 		otherwise:
-			say "[input-style]Normal cursed drink roll: d[7 + alcohol fetish] ([R]) | 1) Sex addiction + 1; 2) Hair + 1; 3) Dex - 1; 4) Strength - 1; 5-6) Penis - 1 / Arousal + 2000; 7) Str&Dex&Int - 1[if alcohol fetish is 1]; 8) Alcohol[end if][roman type][line break]";
+			say "[input-style]Normal cursed drink roll: d[7 + alcohol fetish] ([R]) | 1) Sex addiction + 1; 2) Temporary Incontinence; 3) Dex - 1; 4) Strength - 1; 5-6) Penis - 1 / Arousal + 2000; 7) Str&Dex&Int - 1[if alcohol fetish is 1]; 8) Alcohol[end if][roman type][line break]";
 	if R is 1:
 		let S be the raw sex addiction of the player;
 		SexAddictUp 1;
 		if S is the raw sex addiction of the player, say "You feel a naughty thought trying to worm its way into your mind, but you force it away.";
-	if R is 2, HairUp 1;
+	if R is 2:
+		if diaper lover > 0 and the player is not incontinent:
+			increase temporary-incontinence by 2;
+			say "You suddenly can't feel your insides... including whether or not you need to go to the toilet. The cursed drink has made you temporarily incontinent!";
+		otherwise:
+			HairUp 1;
 	if R is 3:
 		say "You feel slightly less flexible.";
 		DexDown 1;
@@ -224,6 +229,8 @@ To compute drinking effect (N - 22):
 		say "[one of]A[or]Another[stopping] healthy gulp of [milk]. Yum!";
 	FaceFill milk by 1;
 	if the noun is blessed, increase the fat-burning of the player by 100;
+	if there is a milking bench in the location of the player:
+		if (the class of the player is cowgirl and the class of the player is not catgirl) or (the class of the player is catgirl and the class of the player is not cowgirl), compute meowcowification;
 	suggest swallowing.
 
 To compute drinking effect (N - 23):

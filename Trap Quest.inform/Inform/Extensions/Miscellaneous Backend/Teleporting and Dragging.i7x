@@ -15,13 +15,15 @@ To teleport to (R - a room):
 		if R is unbossed and (M is grabbing the player or M is penetrating an orifice):
 			say "[line break][BigNameDesc of M] is pulled [if player-dragger is not monster]through the portal [end if]with you!";
 			now M is in R;
-			if M is grabbing the player and M is not ghostly tentacle and M is not penetrating a body part:
+			if (M is grabbing the player or M is wrangling a body part) and M is not ghostly tentacle and M is not penetrating a body part:
 				say "In the confusion, [he of M] loses [his of M] grip on you!";
 				dislodge M;
 		if gladiator-sword is worn and M is dangerous, BurdenUp gladiator-sword by 1;
 	repeat with T running through things penetrating a body part:
 		unless T is worn or T is player-dragger, dislodge T;
 	repeat with T running through things grabbing the player:
+		unless T is ghostly tentacle or T is player-dragger, dislodge T;
+	repeat with T running through things wrangling a body part:
 		unless T is ghostly tentacle or T is player-dragger, dislodge T;
 	repeat with C running through held store things:
 		compute stealing of C;
@@ -35,9 +37,10 @@ To teleport to (R - a room):
 	zero focus stuff; [Location has changed so we need to empty the location window]
 	now the location of the player is discovered;
 	update player region;
-	if map images > 0, display entire map.
+	if map images > 0, display entire map;
+	compute unique teleportation to R.
 
-To drag to (R - a room) by (M - a monster):[TODO: player can't be dragged when stuck unless the circumstances are special.]
+To drag to (R - a room) by (M - a thing):[TODO: player can't be dragged when stuck unless the circumstances are special.]
 	compute glue-freeing by M;
 	say DragFlav of M to R;
 	check shopstealing of M;
@@ -58,21 +61,24 @@ To fix map-drag to (R - a room):
 		otherwise:
 			now L is a random unplaced room.
 
-To say DragFlav of (M - a monster) to (R - a room):
+To say DragFlav of (M - a thing) to (R - a room):
 	say "[BigNameDesc of M] drags you [if the distance of R > 1]all the way [end if]to the [R]!".
 
-To say DragArrival of (M - a monster) to (R - a room):
+To say DragArrival of (M - a thing) to (R - a room):
 	say "".
 
-To check shopstealing of (M - a monster):
+To check shopstealing of (M - a thing):
 	if the location of the player is guarded:
 		let X be the number of held store things;
 		repeat with C running through held store things:
 			compute stealing of C;
 		if X > 0:
-			say "[BigNameDesc of shopkeeper] sees [NameDesc of M] [']helping['] you to leave. [big he of shopkeeper] seems to think it's your fault.[line break][speech style of M]'[one of]Stop Thief!'[or]Guards! Guards! Arrest this thieving imbecile!'[or]Where do you think you're going with that, bitch?'[or]Oi, you haven't paid for that!'[purely at random][roman type][line break]An alarm bell rings throughout the whole dungeon. [bold type]Looks like you're in trouble with the law![roman type][line break]";
+			say "[BigNameDesc of shopkeeper] sees [NameDesc of M] [']helping['] you to leave. [big he of shopkeeper] seems to think it's your fault.[line break][speech style of shopkeeper]'[one of]Stop Thief!'[or]Guards! Guards! Arrest this thieving imbecile!'[or]Where do you think you're going with that, bitch?'[or]Oi, you haven't paid for that!'[purely at random][roman type][line break]An alarm bell rings throughout the whole dungeon. [bold type]Looks like you're in trouble with the law![roman type][line break]";
 			now shopkeeper is interested;
 			increase the stolen-aware of shopkeeper by 1;
 			anger shopkeeper.
+
+To compute unique teleportation to (R - a room):
+	do nothing.
 
 Teleporting and Dragging ends here.

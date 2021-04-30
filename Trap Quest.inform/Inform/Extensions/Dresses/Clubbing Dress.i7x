@@ -8,7 +8,7 @@ To decide which number is the dexterity-influence of (C - a clubbing dress):
 	increase D by the magic-modifier of C;
 	decide on D.
 
-To uniquely set up (C - a clubbing dress):
+To set up magic attribute of (C - a clubbing dress):
 	if a random number between 1 and 5 is 1, now C is protection.
 
 To decide which number is the initial outrage of (C - a clubbing dress):
@@ -61,7 +61,7 @@ Definition: a pink clubbing dress is pink themed: decide yes.
 
 Part 2 - Long Pink Dress
 
-pink cocktail dress is a clubbing dress. pink cocktail dress is hobble-skirted. The armour of pink cocktail dress is 8. pink cocktail dress is crotch-skirted. There is 1 pink cocktail dress. Figure of pink cocktail dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress2.png". The text-shortcut of pink cocktail dress is "lpcd". Understand "long" as pink cocktail dress.
+pink cocktail dress is a clubbing dress. pink cocktail dress is hobble-skirted. pink cocktail dress is crotch-skirted. There is 1 pink cocktail dress. Figure of pink cocktail dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress2.png". The text-shortcut of pink cocktail dress is "lpcd". Understand "long" as pink cocktail dress.
 
 To decide which figure-name is clothing-image of (C - pink cocktail dress):
 	decide on figure of pink cocktail dress.
@@ -317,5 +317,26 @@ Definition: pink sequins dress is potentially-mid-layer-concealing: decide no. [
 To decide which object is the unique-upgrade-target of (C - pink sequins dress):
 	if sequins bodysuit is off-stage and the number of worn knickers is 0 and the number of worn bras is 0 and the number of worn corsets is 0 and the number of worn underdress is 0 and the number of worn tail plugs is 0, decide on sequins bodysuit;
 	decide on nothing.
+
+Part 13 - Exposing Blue Clubbing Dress
+
+An exposing blue clubbing dress is a kind of exposing clubbing dress. There is 1 exposing blue clubbing dress. An exposing blue clubbing dress is usually fully exposing. Figure of exposing blue clubbing dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress13.png". An exposing blue clubbing dress is transformation-rare. The text-shortcut of exposing blue clubbing dress is "ebd".
+
+The printed name of exposing blue clubbing dress is usually "[clothing-title-before]exposing blue clubbing dress[clothing-title-after]".
+
+To decide which figure-name is clothing-image of (C - an exposing blue clubbing dress):
+	decide on figure of exposing blue clubbing dress.
+
+To say ClothingDesc of (C - an exposing blue clubbing dress):
+	say "This blue dress has curved transparent straps at the chest sections, that prevent the dress from being able to conceal the breasts at all but instead just sit on the outside of [if C is worn and the largeness of breasts > 1]your[otherwise]the wearer's[end if] breasts, leaving them completely uncovered.".
+
+To say ShortDesc of (C - an exposing blue clubbing dress):
+	say "whorish clubbing dress".
+To say MediumDesc of (C - an exposing blue clubbing dress):
+	say "whorish apricot clubbing dress with an exposed chest".
+
+Definition: an exposing blue clubbing dress is blue themed: decide yes.
+Definition: an exposing blue clubbing dress is end of transformation chain: decide yes.
+
 
 Clubbing Dress ends here.

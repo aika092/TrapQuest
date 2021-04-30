@@ -211,6 +211,7 @@ Carry Out TattooListing:
 	now inventory-busy is 1;
 	repeat with T running through worn tattoos:
 		say "[T][line break]";
+		focus-consider T;
 	say "[unless there is a worn tattoo]You have no tattoos.[end if][line break]";
 	now inventory-busy is 0.
 

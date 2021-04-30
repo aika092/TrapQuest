@@ -724,11 +724,6 @@ Figure of Portal Bra is the file "Items/Clothes/Upper/Bras/portalbra1.png".
 To decide which figure-name is clothing-image of (C - portal-bra):
 	decide on figure of Portal Bra.
 
-To uniquely set up (C - portal-bra):
-	do nothing.
-To set up (C - portal-bra):
-	do nothing.
-
 To compute periodic effect of (C - portal-bra):
 	increase the charge of C by 1;
 	if the charge of C < 100 and the charge of C > (a random number between 30 and 50) and the player is not in Hotel44 and Hotel44 is not nearby:

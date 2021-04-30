@@ -15,7 +15,7 @@ To say ExamineDesc of (C - a milking bench):
 	say "A bench you could kneel and rest on. There are cups that are clearly for milking swollen mammaries.".
 
 Figure of milking bench is the file "Env/Dungeon/milkingbench1.png".
-Figure of milking bench cutscene 1 is the file "Special/Cutscene/cutscene-milking-bench1.png".
+Figure of milking bench cutscene 1 is the file "Special/Cutscene/cutscene-milking-bench1.jpg".
 Figure of milking bench cutscene 2 is the file "Special/Cutscene/cutscene-milking-bench2.png".
 
 To compute furniture resting on (M - a milking bench):

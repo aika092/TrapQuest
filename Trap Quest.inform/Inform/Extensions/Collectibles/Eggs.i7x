@@ -93,7 +93,7 @@ The egg stuffing rule is listed in the statsetting rules.
 An egg has a number called hatching.
 
 Check attacking egg:
-	if the player is immobile or there is a thing wrangling a body part, say "You're a bit busy!" instead;
+	if the player is at least partially immobile, say "You're a bit busy!" instead;
 	allocate 1 seconds;
 	say "The shell is too strong! You can't damage it at all. If you want to get rid of it, perhaps you could [bold type]flush it down a toilet[roman type][line break]" instead.
 Check slapping egg:
@@ -305,7 +305,7 @@ To larvaShortcutAssign (C - a larva):
 		increase larvaShortcutCount by 1.
 
 Check attacking larva:
-	if the player is immobile or there is a thing wrangling a body part, say "You're a bit busy!" instead;
+	if the player is at least partially immobile, say "You're a bit busy!" instead;
 	allocate 2 seconds;
 	say "You squish [NameDesc of the noun]. [big his of the noun] body disappears.";
 	check tentacle clear;

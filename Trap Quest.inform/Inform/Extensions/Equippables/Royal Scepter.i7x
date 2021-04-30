@@ -151,7 +151,7 @@ To compute proposal leaving of (M - a monster):
 	regionally place M.
 
 To compute bride perception of (M - a monster):
-	say "[BigNameDesc of M] notices you.[line break][speech style of M]'My blushing bride! Well met!'[roman type][line break]";
+	say "[BigNameDesc of M] notices you.[line break][speech style of M]'[if the refractory-period of bride-consort < 0]Oh it is good to see you again, my beautiful bride! My shaft swells in anticipation of what we're about to do![otherwise]My blushing bride! Well met!'[end if][roman type][line break]";
 	now M is interested;
 	calm M.
 
@@ -208,7 +208,7 @@ To punish infidelity:
 	if the number of worn chest tattoo is 0 and there is a worn tattoo:
 		summon unfaithful tattoo;
 		say "You feel a searing pain as the word 'UNFAITHFUL' burns itself into your chest in big red letters.";
-	otherwise if the number of worn ass tattoo is 0 and there is a worn tattoo:
+	otherwise if the number of worn asscheek tattoo is 0 and there is a worn tattoo:
 		summon cheating whore tattoo;
 		say "You experience a heavy feeling of shame as the words 'CHEATING WHORE' etch themselves into your cheeks.";
 	otherwise if a random number between 1 and 2 is 1 and there is a worn plentiful accessory:
@@ -257,6 +257,7 @@ To compute wedding night:
 	now auto is 0;
 	let L be the location of bride-consort;
 	now bride-consort is in Hotel06;
+	now bride-consort is interested;
 	say "[if L is not Hotel06][BigNameDesc of bride-consort] appears from the east![line break][end if][speech style of bride-consort]'I have been looking forward to this all day.'[roman type][line break][if there is a worn bouquet]Suddenly, your [random worn bouquet] takes on a life of its own, and throws itself towards the bed. Since you're holding it, you go with it, tumbling down onto the bed on your front. [end if]";
 	repeat with C running through pussy covering clothing:
 		if C is zippable:

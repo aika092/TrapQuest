@@ -7,10 +7,10 @@ last-turn-flight is a number that varies. last-turn-flight is 0.
 To compute flight:
 	follow the player class rules; [We want to make sure we know what the player class is]
 	if the player is flying, compute fatigue loss;
-	if last-turn-flight is 1 and the player is not flying, Execute Landing;
-	if last-turn-flight is 0 and the player is flying, Execute Takeoff.
+	if last-turn-flight is 1 and the player is not flying, compute landing;
+	if last-turn-flight is 0 and the player is flying, compute takeoff.
 
-To Execute Takeoff:
+To compute takeoff:
 	now last-turn-flight is 1;
 	say "Your body is now lighter than air! As you try to [if the player is upright]step[otherwise]crawl[end if] forward, your body is pushed off the ground![line break][bold type]You are now floating![line break][one of][if the bimbo of the player < 15][line break][first custom style]What the fuck is happening to me?![otherwise][line break][second custom style]Oooh, yay, I can fly! Wait, how do I control where I go? Waaaah![end if][or][if the bimbo of the player < 15][first custom style]Oh shit, not again...![otherwise][second custom style]Ooh, yay, I'm flying again! Weeeee![end if][stopping][roman type][line break]";
 	repeat with D running through dildo traps penetrating a fuckhole:
@@ -32,10 +32,21 @@ To Execute Takeoff:
 		repeat with R running through placed no-roof rooms:
 			now R is discovered;
 		now the player is in Sky01;
+	if flight attendant hat is worn:
+		compute takeoff of flight attendant hat;
+	otherwise if bunny waitress ears is worn:
+		follow the player class rules;
+		transform bunny waitress ears into flight attendant hat;
+		let BO be a random worn bunny outfit;
+		if BO is clothing:
+			transform BO into flight-attendant-top;
+		otherwise:
+			class summon flight-attendant-top;
+		class summon flight-attendant-skirt;
 	refresh the map-window;
 	now the alert of the player is 1. [You stop resting]
 
-To Execute Landing:
+To compute landing:
 	now last-turn-flight is 0;
 	say "You slowly start to descend towards the ground. ";
 	if the player is in Sky01:
@@ -66,8 +77,8 @@ Part 2 - Various Levels of Flight
 
 [FLOATING RULES:
 3+: Normal walking
--2 to 2: Tiptoes
--5 to -3: Almost ZeroG
+-2 to 2: Tiptoes (lunar walking)
+-5 to -3: Almost ZeroG (sex doll and flight attendant only)
 -6 and lower: Flying
 ]
 
@@ -77,11 +88,12 @@ Definition: yourself is grounded:
 
 Definition: yourself is on tiptoes:
 	if butterfly wings is worn, decide yes;
-	if the weight of the player < 3 and the weight of the player > -5, decide yes;
+	if the weight of the player < 3 and the weight of the player >= -5, decide yes;
 	decide no.
 
 Definition: yourself is zeroG:
 	if the class of the player is living sex doll, decide yes;
+	if the class of the player is flight attendant and the weight of the player < -2 and the weight of the player >= -5, decide yes;
 	decide no.
 
 Definition: yourself is flying:
@@ -89,10 +101,6 @@ Definition: yourself is flying:
 	if butterfly wings is worn, decide no;
 	if the latex-transformation of the player > 5, decide no;
 	if the weight of the player < -5, decide yes;
-	decide no.
-
-Definition: yourself is too high to see:
-	if the player is flying and playerRegion is Woods, decide yes;
 	decide no.
 
 Flight ends here.

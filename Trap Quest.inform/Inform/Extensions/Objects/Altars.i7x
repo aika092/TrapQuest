@@ -29,13 +29,26 @@ Report going when the player is in Dungeon28:
 The woods altar allows the player to randomly bless or uncurse items in exchange for a piece of jewellery. This altar is unique because it does not have a charge, and only jewellery can be placed on it.
 
 @!]
-The woods altar is in Woods20. The woods altar is not portable. The printed name of woods altar is "[TQlink of item described]small altar[shortcut-desc][TQxlink of item described][verb-desc of item described]". Understand "small" as the woods altar. The text-shortcut of woods altar is "al". Figure of woods altar is the file "Env/Forest/altar2.png".
+The woods altar is in Woods20. The woods altar is not portable. The printed name of woods altar is "[TQlink of item described]small altar[if witch is bitchy and witch is in Woods20 and the altar-uses of witch is 1] (1 use remaining)[otherwise if witch is bitchy and witch is in Woods20] ([altar-uses of witch] uses remaining)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". Understand "small" as the woods altar. The text-shortcut of woods altar is "al".
+
+Figure of woods altar 0 is the file "Env/Forest/altar1.jpg".
+Figure of woods altar 1 is the file "Env/Forest/altar2.jpg".
+Figure of woods altar 2 is the file "Env/Forest/altar3.jpg".
+Figure of woods altar 3 is the file "Env/Forest/altar4.jpg".
+Figure of woods altar 4 is the file "Env/Forest/altar5.jpg".
+Figure of woods altar 5 is the file "Env/Forest/altar6.jpg".
 
 To decide which figure-name is the examine-image of (C - woods altar):
-	decide on figure of woods altar.
+	if witch is bitchy and witch is in Woods20 and the altar-uses of witch > 0:
+		if the altar-uses of witch is 1, decide on figure of woods altar 1;
+		if the altar-uses of witch is 2, decide on figure of woods altar 2;
+		if the altar-uses of witch is 3, decide on figure of woods altar 3;
+		if the altar-uses of witch is 4, decide on figure of woods altar 4;
+		decide on figure of woods altar 5;
+	decide on figure of woods altar 0.
 
 To say ExamineDesc of (C - woods altar):
-	say "On top of a stone pillar rests a metal bowl shaped into several penises in a circle[one of]. It looks like you could try to [bold type]place[roman type] small objects, like jewellery, on it[or][stopping].";
+	say "On top of a stone pillar rests a metal bowl shaped into several penises in a circle[one of]. It looks like you could try to [bold type]place[roman type] small objects, like jewellery, on it[or][stopping][if witch is bitchy and witch is in Woods20 and the altar-uses of witch is 1]. The altar has a single realistic penis amongst the metal ones, indicating that you are currently only allowed to use it one more time[otherwise if witch is bitchy and witch is in Woods20]. The altar has [altar-uses of witch] realistic penises amongst the metal ones, indicating how many times you are currently allowed to use it[end if].";
 	if newbie tips is 1, say "[one of][newbie style]Placing jewellery on here will uncurse worn clothing. If you have no cursed clothing, it'll instead raise your lowest stat. Just make sure you've paid the witch's toll first.[roman type][line break][or][stopping]".
 
 [!<ElderAltar>@
@@ -133,6 +146,13 @@ Check praying something with:
 		if the player is soulless, say "Nothing happens.[line break][variable custom style]'This couldn't be because my soul is gone, could it?'[roman type][line break]" instead;
 		if the noun is a unicorn-horn:
 			say "The smell of spring rain fills the room as the horn slowly disappears, completely replenishing the altar's strong blue glow.";
+			destroy the noun;
+			now the charge of the dungeon altar is 0 instead;
+		otherwise if the noun is horn and minotaur is off-stage:
+			now minotaur is in the location of the player;
+			set up minotaur;
+			now minotaur is unleashed;
+			say "The smell of manly sweat fills the room as the horn slowly disappears, completely replenishing the altar's strong blue glow. But then, with a huge roar, [NameDesc of minotaur] appears where moments ago there was nothing but [his of minotaur] horn! Uh-oh...";
 			destroy the noun;
 			now the charge of the dungeon altar is 0 instead;
 		otherwise if the charge of the dungeon altar > 0:
@@ -501,6 +521,7 @@ To WitchCheck (M - witch):
 		decrease the altar-uses of witch by 1.
 
 To reset elder altar:
+	if the charge of elder altar < 0, now the charge of elder altar is 0;
 	increase the charge of the elder altar by 300.
 
 To ElderEmpower (T - a headgear):[default]
@@ -668,13 +689,13 @@ To ElderReward (T - ritual-beads):
 	let N be the notch-taken of T;
 	let F be a random fuckhole penetrated by T;
 	if T is worn:
-		say "The [ShortDesc of T] shifts inside you, and the [if N is 3]3rd[otherwise if N is 2]2nd[otherwise if N is 1]1st[otherwise][N]th[end if] bead pops out all on its own - and immediately bursts into flames. Each bead pops out in rapid succession, catching on fire and disintegrating into glowing embers within seconds. The manacles pull on your wrists and ankles as the last of the beads is destroyed, forcing you to lay out fully spreadeagle on the altar.";
+		say "The [ShortDesc of T] shifts inside you, and the [if N is 3]3rd[otherwise if N is 2]2nd[otherwise if N is 1]1st[otherwise][N]th[end if] bead pops out all on its own - and immediately bursts into flames. Each bead pops out in rapid succession, catching on fire and disintegrating into glowing embers within seconds. The manacles pull on your wrists and ankles as the last of the beads is destroyed, forcing you to lie fully spread-eagled on the altar.";
 		Ruin F times N;
 		now the notch-taken of T is 0;
 		dislodge T;
 	otherwise:
 		now N is the notches of T;
-		say "The [if N is 3]3rd[otherwise][N]th[end if] notch of the [ShortDesc of T] suddenly bursts into flames. The same thing happens to each in succession, each bead catching fire and disintegrating into piles of glowing embers within seconds. The manacles pull on your wrists and ankles as the last of the beads is destroyed, forcing you to lay out fully spreadeagle on the altar.";
+		say "The [if N is 3]3rd[otherwise][N]th[end if] notch of the [ShortDesc of T] suddenly bursts into flames. The same thing happens to each in succession, each bead catching fire and disintegrating into piles of glowing embers within seconds. The manacles pull on your wrists and ankles as the last of the beads is destroyed, forcing you to lie fully spread-eagled on the altar.";
 	compute dark reward of T;
 	increase the size of T by 1;
 	now the notches of T is 3;
@@ -798,12 +819,12 @@ To AltarReward (T - ritual-beads):
 			if the size of T < 10:
 				say "[line break]Blue light condenses around [NameDesc of T], and it transforms into a ";
 				increase the size of T by 1;
+				let N be the notches of T;
 				now the notches of T is 3;
 				say "[T] with three notches again!";
-				compute light reward of T;
-				now the notches of T is 3;
+				compute light reward of T at N;
 			otherwise:
-				compute light reward of T;
+				compute light reward of T at N;
 			progress quest of priestess-service-quest;
 		reset dungeon altar.
 
@@ -814,8 +835,7 @@ Provides a reward to the player based on how much the ritual beads have been cha
 @param <Ritual-Beads>:<T> The ritual beads
 
 +!]
-To compute light reward of (T - ritual-beads):
-	let N be the notches of T;
+To compute light reward of (T - ritual-beads) at (N - a number):
 	let R be 0;
 	if N >= 8:
 		now R is 6;
@@ -852,7 +872,7 @@ To DevilPray (P - a person):
 	let R be a random number between 1 and 4;
 	repeat with M running through infernal monsters:
 		if the times-submitted of M > 0, now R is 0;
-	if avatar-summoned is false and the player is possessing a vagina and the vaginalvirgin of the player is 1 and the player is soulless:
+	if avatar-summoned is false and the player is possessing a vagina and the vaginalvirgin of the player is 1 and the player is soulless and avatar-headpiece is actually summonable:
 		now R is 0;[free]
 		say "The statue's eyes glow with multicoloured light as a [if lady fetish is 1]husky, feminine[otherwise]deep, masculine[end if] voice echoes in your ear.[line break][first custom style]'A virgin, with a void for a soul... It would be a waste to make you an altar girl! That tight little hole in your chest is begging to be filled!'[roman type][line break]The statue's arms suddenly spring to life, grabbing either side of your head and forcing you to look directly into the its eyes as you feel *something* pressing in on you from *somewhere*. The empty feeling in your chest turns into a slow, painful sensation of stretching, and you let out a groan of pain as something HUGE and warm forces its way into your very core. Brand new horns push their way out of your forehead. Finally, a golden tiara and hood materialises on your head.[line break][first custom style]'Hm, looks like you weren't able to take all of me, but no matter. I am your master now, [NameBimbo], so get to work collecting souls while I work on improving your vessel.'[roman type][line break]";
 		summon avatar-headpiece cursed;
@@ -1044,8 +1064,8 @@ To DevilPray (T - ritual-beads):
 		if the size of T < 10:
 			say "[line break]Blue light condenses around [NameDesc of T], and it transforms into a ";
 			increase the size of T by 1;
-			say "[T] with three notches again!";
 			now the notches of T is 3;
+			say "[T] with three notches again!";
 		increase the charge of hotel altar by 300;
 		increase the altar-intensity of hotel altar by 1.
 

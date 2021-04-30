@@ -75,18 +75,6 @@ Definition: a thigh high boots is calf covering: decide yes.
 To say UniqueShortDesc of (H - a thigh high boots):
 	say "thigh high boots".
 
-To uniquely set up (C - a thigh high boots):
-	let R be a random number between 1 and 8;
-	if C is cursed:
-		if R <= 2:
-			now C is posture training;
-		otherwise if R <= 4:
-			now C is stumbling;
-	otherwise:
-		if R is 1, now C is speed;
-		if R is 2, now C is kicking;
-	set up heel length of C.
-
 To decide which number is the unique outrage of (C - a thigh high boots):
 	decide on 1.
 

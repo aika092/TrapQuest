@@ -170,6 +170,9 @@ To check for arousal change:
 				otherwise say "Your nipples [one of]harden[or]stiffen[or]spring erect[or]jut proudly[at random].";
 			otherwise:
 				say "Your nipples [one of]harden[or]stiffen[or]spring erect[or]jut proudly[at random].";
+			if diaper quest is 0 and the player is in Iron Maiden:
+				say "[bold type]Blue ghostly hands appear through the rear of the Iron Maiden, and grab onto your [BreastDesc] and [genitals]![roman type] They start to caress and masturbate you, and there's nothing you can do to stop them!";
+				if iron-maiden is penetrating face, OralSexAddictUp 1;
 		if previous-horny is 3:
 			say "[bold type]You now feel desperately horny. You are having an even harder time thinking about anything non-sexual[if the bimbo of the player > 8][one of] [second custom style](Tee-hee, hard)[or][stopping][end if][run paragraph on][roman type] - [if diaper quest is 1]your intelligence is significantly reduced until you orgasm or cool off.[otherwise if there is an unfriendly monster penetrating a fuckhole and the player is feeling dominant][run paragraph on]you might struggle to bring yourself to properly resist now.[otherwise if the delicateness of the player < 12][run paragraph on]it's going to be a lot more difficult to say no to the advances of others now![otherwise][run paragraph on]once there's a [manly-penis] inside you, there's no way you're going to be anything but a willing fuckhole until you get off.[end if][roman type][line break]";
 		if previous-horny is 4:
@@ -195,6 +198,12 @@ To check for arousal change:
 				otherwise say "Your nipples have softened.";
 			otherwise:
 				say "Your nipples have softened.";
+			if diaper quest is 0 and the player is in Iron Maiden:
+				say "[bold type]The ghostly hands let go of you and retreat back through the rear of the Iron Maiden.[roman type][line break]";
+				if face is not actually occupied:
+					say "Suddenly, a bright green ghostly penis phases through the front of the Iron Maiden, right in front of your face! Clamped inside this tight cramped prison, you can't even turn your head away! It pushes against your lips with increasing pressure until you are forced to let it inside. It immediately starts worming its way down into your throat until you are choking helplessly on its girth!";
+					now iron-maiden is penetrating face;
+					BlowCount;
 	if diaper quest is 0:
 		now previous-oral-sex-addiction is the calculated oral sex addiction of the player;
 		now previous-anal-sex-addiction is the calculated anal sex addiction of the player;

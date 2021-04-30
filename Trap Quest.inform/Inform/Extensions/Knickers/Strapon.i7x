@@ -53,10 +53,12 @@ To say PenisHarden of (K - a strapon-panties):
 Definition: a strapon-panties is end of transformation chain: decide yes.
 
 Definition: a strapon-panties is displacable: decide no.
+To decide which number is the initial armour of (C - a strapon-panties):
+	decide on 15.
 
 Chapter 1 - Strapon Dildo
 
-A strapon-dildo is a kind of strapon-panties. The text-shortcut of a strapon-dildo is "stpd". There is 1 strapon-dildo. A strapon-dildo is crotch-assless. The armour of a strapon-dildo is 2. Understand "pouch", "nintendolls" as strapon-dildo.
+A strapon-dildo is a kind of strapon-panties. The text-shortcut of a strapon-dildo is "stpd". There is 1 strapon-dildo. A strapon-dildo is crotch-assless. Understand "pouch", "nintendolls" as strapon-dildo.
 
 To decide which number is the penis-capacity of (K - a strapon-dildo):
 	decide on the strap-length of K - 1.
@@ -84,7 +86,7 @@ To say ShortDesc of (H - a strapon-dildo):
 
 To say UniqueClothingDesc of (K - strapon-dildo):
 	if K is not dildo-usage:
-		say "A leather pouch with the Nintendolls logo printed along the front, along with a large number '[strap-length of K].' [if K is worn]It cradles your [ShortBallsDesc], gently stimulating them with the tiny nodes covering its inner surface.[otherwise]The inside of it is covered in tiny silver nodes.[end if]";
+		say "A leather pouch with the Nintendolls logo printed along the front, along with a large number '[strap-length of K].' [if K is worn and the player is possessing a scrotum]It cradles your [ShortBallsDesc], gently stimulating them with the tiny nodes covering its inner surface.[otherwise if K is worn]It cradles your taint, gently stimulating it with tiny nodes covering its inner surface.[otherwise]The inside of it is covered in tiny silver nodes.[end if]";
 	otherwise if the player is possessing a penis:
 		say "A leather pouch with a [PenisSizeFlav the strap-length of K] silicone dildo mounted on the front. [if K is worn]Tiny metal nodes are passing a gentle current into your [ShortDesc of penis], transmitting sensation from the fake penis and forcing your real one to remain completely soft[otherwise]The inside of it is covered in tiny silver nodes[end if].";
 	otherwise:
@@ -92,7 +94,7 @@ To say UniqueClothingDesc of (K - strapon-dildo):
 
 Chapter 2 - Equine Strapon
 
-An equine-strapon is a kind of strapon-panties. An equine-strapon is usually unique. The text-shortcut of an equine-strapon is "eqsd". There are 2 equine-strapons. The armour of an equine-strapon is 10. Understand "equine", "horse", "harness" as equine-strapon.
+An equine-strapon is a kind of strapon-panties. An equine-strapon is usually unique. The text-shortcut of an equine-strapon is "eqsd". There are 2 equine-strapons. Understand "equine", "horse", "harness" as equine-strapon.
 Figure of equine-strapon is the file "Items/Accessories/Toys/strapon3.jpg".
 To decide which figure-name is the examine-image of (H - an equine-strapon):
 	decide on figure of equine-strapon.
@@ -136,7 +138,7 @@ To say PenisHarden of (K - an equine-strapon):
 
 Chapter 3 - Gemstone Strapon
 
-Gem-strapon is a strapon-panties. The text-shortcut of gem-strapon is "gspd". Gem-strapon is rare. The armour of gem-strapon is 6. Understand "thong", "gem", "encrusted", "gem-encrusted", "gem encrusted" as a gem-strapon. Gem-strapon is silk.
+Gem-strapon is a strapon-panties. The text-shortcut of gem-strapon is "gspd". Gem-strapon is rare. Understand "thong", "gem", "encrusted", "gem-encrusted", "gem encrusted" as a gem-strapon. Gem-strapon is silk.
 
 Figure of gem-strapon is the file "Items/Accessories/Toys/strapon2.jpg".
 To decide which figure-name is the examine-image of (H - gem-strapon):
@@ -206,7 +208,7 @@ To say UniqueClothingDesc of (K - gem-strapon):
 
 Chapter 4 - Ghost Strapon
 
-Ghost-strapon is a strapon-panties. The text-shortcut of ghost-strapon is "ghpd". ghost-strapon is totally-exclusive. Ghost-strapon is unique. The armour of ghost-strapon is 1. Understand "pair", "pair of", "crotchless", "panties", "goth", "ghost", "ghostly" as ghost-strapon. Ghost-strapon is crotch-exposing. Ghost-strapon is satin.
+Ghost-strapon is a strapon-panties. The text-shortcut of ghost-strapon is "ghpd". ghost-strapon is totally-exclusive. Ghost-strapon is unique. Understand "pair", "pair of", "crotchless", "panties", "goth", "ghost", "ghostly" as ghost-strapon. Ghost-strapon is crotch-exposing. Ghost-strapon is satin.
 
 Figure of ghost-strapon is the file "Items/Accessories/Toys/strapon4.jpg".
 To decide which figure-name is the examine-image of (H - ghost-strapon):
@@ -225,13 +227,13 @@ To uniquely set up (C - a ghost-strapon):
 	now the strap-length of C is 3.[should these be possessed? Not sure, but probably not]
 
 Definition: A ghost-strapon (called P) is dildo-usage:
-	if the player is female and futanari fetish is 0, decide yes;
+	if the player is not possessing a penis and futanari fetish is 0, decide yes;
 	decide no.
 
 To say ShortDesc of (H - ghost-strapon):
 	unless H is worn:
 		say "spectral satin panties";
-	otherwise if the player is female and futanari fetish is 0:
+	otherwise if the player is not possessing a penis and futanari fetish is 0:
 		say "spectral strap-on";
 	otherwise:
 		if the size of penis < the strap-length of H, say "spectral [player-penis]";
@@ -239,9 +241,9 @@ To say ShortDesc of (H - ghost-strapon):
 
 To say PenisFlavour of (K - ghost-strapon):
 	let N be the strap-length of K;
-	if the player is male and the size of penis >= the strap-length of K:
+	if the player is possessing a penis and the size of penis >= the strap-length of K:
 		say "glowing [ShortDesc of penis]";
-	otherwise if the player is female and futanari fetish is 0:
+	otherwise if the player is not possessing a penis and futanari fetish is 0:
 		say "[PenisSizeFlav N] spectral strap-on [PenisShaftFlav N]";
 	otherwise:
 		say "[PenisSizeFlav N] spectral [PenisShaftFlav N]".
@@ -250,7 +252,7 @@ To say UniqueClothingDesc of (K - ghost-strapon):
 	if K is not worn:
 		say "A pair of black satin panties. The fabric is glowing very faintly, and it seems to turn slightly invisible when exposed to your touch. It contains the spirit of a very horny ghost.";
 	otherwise if the player is not possessing a penis:
-		say "A pair of black satin panties, with perfectly sized holes that keep your ass and genitals fully accessible and on display. The spirit inhabiting the fabric is actively sapping your strength, using it to maintain a rock hard [PenisFlavour of K] and a matching pair of ghostly balls.";
+		say "A pair of black satin panties, with perfectly sized holes that keep your ass and genitals fully accessible and on display. The spirit inhabiting the fabric is actively sapping your strength, using it to maintain a rock hard [PenisFlavour of K][if futanari fetish is 1] and a matching pair of ghostly balls[end if].";
 	otherwise:
 		say "A pair of black satin panties, with perfectly sized holes that keep your ass and genitals fully accessible and on display. The spirit inhabiting the fabric [if the size of penis >= the strap-length of K]has possessed your [ShortDesc of penis], preventing it from going soft even for a moment.[otherwise]has completely dominated your genitals and begun to actively sap your strength. The spirit's [PenisFlavour of K] has superimposed itself over your shaft.[end if]".
 

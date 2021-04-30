@@ -12,6 +12,8 @@ To compute SelfExamineDesc of (O - a negligee):
 
 To decide which number is the initial outrage of (C - a negligee):
 	decide on 8.
+To decide which number is the initial armour of (C - a negligee):
+	decide on 3.
 
 Definition: a negligee is end of transformation chain: decide yes.
 Definition: a negligee is sissifying: decide yes.
@@ -60,7 +62,7 @@ To say ClothingDesc of (C - lacy negligee):
 
 Part 3 - Floral Negligee
 
-floral negligee is an underdress. floral negligee is crotch-intact. floral negligee is bottom-exclusive. floral negligee is unskirted. floral negligee is silk. floral negligee is optional-top-displacable. floral negligee is low cut. The armour of floral negligee is 3. The text-shortcut of floral negligee is "fng".
+floral negligee is an underdress. floral negligee is crotch-intact. floral negligee is bottom-exclusive. floral negligee is unskirted. floral negligee is silk. floral negligee is optional-top-displacable. floral negligee is low cut. The text-shortcut of floral negligee is "fng".
 
 To decide which number is the initial outrage of (C - floral negligee):
 	decide on 3.

@@ -12,10 +12,8 @@ To say ClothingDesc of (M - a ribbon dress):
 
 To decide which number is the initial outrage of (C - a ribbon dress):
 	decide on 13.
-
-To uniquely set up (C - a ribbon dress):
-	now the armour of C is 1;
-	repair C.
+To decide which number is the initial armour of (C - a ribbon dress):
+	decide on 2.
 
 To say ShortDesc of (C - a ribbon dress):
 	say "red ribbons".

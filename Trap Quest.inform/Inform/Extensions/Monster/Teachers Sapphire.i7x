@@ -109,6 +109,9 @@ Definition: roulette-lesson is lesson-appropriate:
 	if (alcohol fetish is 1 or lactation fetish is 1 or diaper quest is 1) and the player is able to drink, decide yes;
 	decide no.
 
+To decide which number is the min-students of (L - roulette-lesson):
+	decide on 2.
+
 Figure of roulette is the file "Special/Cutscene/cutscene-serenity-roulette1.jpg".
 
 To compute teaching of (L - roulette-lesson):
@@ -166,88 +169,95 @@ To compute teaching of (L - roulette-lesson):
 	otherwise:
 		while ST is entry 1 in LST and the number of students in the location of the player > 1:
 			let ST be a random student in the location of the player;
-		add ST to LST;
+		add ST to LST, if absent;
 		say "You remain seated while [NameDesc of ST] rises to the occasion. You feel proud of your sensible decision to remain out of this perverse gamble.";
 		cutshow figure of roulette;
 	dignify 1000;
-	sort LST in random order;
-	sort LS in random order;
-	let N be 1;
-	while 0 is listed in LS and the number of entries in LST is 2:
-		let P be entry N in LST;
-		increase N by 1;
-		if N > 2, now N is 1;
-		let CD be entry (number of entries in LS) of LS;
-		if P is yourself:
-			let E be the number of entries in LD;
-			repeat with EN running from 1 to E:
-				let ENN be 0;
-				repeat with SN running through LS:
-					if SN is EN, increase ENN by 1;
-				say "There [if ENN is 1]is 1 shot[otherwise]are [ENN] shots[end if] of [entry EN of LD] left. ";
-			say "The forfeit shot is still remaining. Do you keep playing? (If you choose no you won't get promoted).";
-			if the player is bimbo consenting:
-				say "You take a canister at random. You put your mouth around the nozzle and push the canister down! ";
-				if CD is 0:
+	if the number of entries in LST is 2:
+		sort LST in random order;
+		sort LS in random order;
+		let N be 1;
+		while 0 is listed in LS and the number of entries in LST is 2:
+			let P be entry N in LST;
+			let chickenedOut be 0;
+			increase N by 1;
+			if N > 2, now N is 1;
+			let CD be entry (number of entries in LS) of LS;
+			if P is yourself:
+				let E be the number of entries in LD;
+				repeat with EN running from 1 to E:
+					let ENN be 0;
+					repeat with SN running through LS:
+						if SN is EN, increase ENN by 1;
+					say "There [if ENN is 1]is 1 shot[otherwise]are [ENN] shots[end if] of [entry EN of LD] left. ";
+				say "The forfeit shot is still remaining. Do you keep playing? (If you choose no you won't get promoted).";
+				if the player is bimbo consenting:
+					say "You take a canister at random. You put your mouth around the nozzle and push the canister down! ";
+					if CD is 0:
+						remove yourself from LST;
+						say "Something slimy and wrong floods your mouth. You immediately know you're drinking the combined spit of your classmates and [NameDesc of M][']s special sauce. It feels so wrong! [if diaper quest is 1]You feel a twinge behind your bladder. [end if][moderateHumiliateReflect]";
+						if diaper quest is 1, increase temporary-incontinence by a random number between 3 and 5;
+						otherwise SexAddictUp 1;
+						repeat with TST running through innocent students in the location of the player:
+							if TST is not listed in LST, FavourDown TST; [innocent students that are watching are disgusted]
+					otherwise if entry CD in LD matches the text "alcohol":
+						say "Strong vodka burns your mouth as it is shot down your throat![line break][variable custom style]Shit![roman type][line break]";
+						if alcohol-level <= 3, increase alcohol level; [Can't allow it to compute drunken adventure in the middle of a lesson]
+						StomachUp 1;
+					otherwise if entry CD in LD matches the text "milk":
+						say "You are forced to swallow a huge gulp of breast milk![line break][variable custom style]Eww![roman type][line break]";
+						StomachMilkUp 1;
+					otherwise:
+						say "Water shoots to the back of your throat![line break][variable custom style]Phew![roman type][line break]";
+						StomachUp 1;
+				otherwise:
 					remove yourself from LST;
-					say "Something slimy and wrong floods your mouth. You immediately know you're drinking the combined spit of your classmates and [NameDesc of M][']s special sauce. It feels so wrong! [if diaper quest is 1]You feel a twinge behind your bladder. [end if][moderateHumiliateReflect]";
-					if diaper quest is 1, increase temporary-incontinence by a random number between 3 and 5;
-					otherwise SexAddictUp 1;
-					repeat with TST running through innocent students in the location of the player:
-						if TST is not listed in LST, FavourDown TST; [innocent students that are watching are disgusted]
-				otherwise if entry CD in LD matches the text "alcohol":
-					say "Strong vodka burns your mouth as it is shot down your throat![line break][variable custom style]Shit![roman type][line break]";
-					if alcohol-level <= 3, increase alcohol level; [Can't allow it to compute drunken adventure in the middle of a lesson]
-					StomachUp 1;
-				otherwise if entry CD in LD matches the text "milk":
-					say "You are forced to swallow a huge gulp of breast milk![line break][variable custom style]Eww![roman type][line break]";
-					StomachMilkUp 1;
-				otherwise:
-					say "Water shoots to the back of your throat![line break][variable custom style]Phew![roman type][line break]";
-					StomachUp 1;
+					now chickenedOut is 1;
+					repeat with TST running through students in the location of the player:
+						if TST is listed in LST:
+							HappinessUp TST;
+						otherwise if TST is tryhard student:
+							FavourDown TST; [tryhard students that are watching are unimpressed with your lack of dedication]
 			otherwise:
-				remove yourself from LST;
-				repeat with TST running through students in the location of the player:
-					if TST is listed in LST:
-						HappinessUp TST;
-					otherwise if TST is tryhard student:
-						FavourDown TST; [tryhard students that are watching are unimpressed with your lack of dedication]
-		otherwise:
-			let STD be the dedication of P;
-			let CDRisk be 3 - the number of entries in LS;
-			if STD >= CDRisk:
-				say "[BigNameDesc of P] takes a canister and shoots it into [his of P] mouth! ";
-				if CD is 0:
-					say "You watch [him of P] gag as something clear runs out of [his of P] nose and the sides of [his of P] mouth. You immediately know that [he of P] got the forfeit drink[if yourself is listed in LST]! You're safe[end if]!";
+				let STD be the dedication of P;
+				if STD > 3, now STD is 3; [nobody takes the forfeit shot on its own]
+				let CDRisk be 4 - the number of entries in LS;
+				if STD > CDRisk:
+					say "[BigNameDesc of P] takes a canister and shoots it into [his of P] mouth! ";
+					if CD is 0:
+						say "You watch [him of P] gag as something clear runs out of [his of P] nose and the sides of [his of P] mouth. You immediately know that [he of P] got the forfeit drink[if yourself is listed in LST]! You're safe[end if]!";
+						remove P from LST;
+						if yourself is listed in LST:
+							HappinessDown P by 2;
+							repeat with TST running through unfriendly students in the location of the player:
+								if TST is not P:
+									HappinessDown TST;
+									say "Clearly [he of TST] was hoping that you'd be the one who lost.";
+					otherwise if entry CD in LD matches the text "alcohol":
+						say "[big he of P] chokes and splutters and shakes [his of P] head rapidly to recover. That must have been vodka!";
+					otherwise if entry CD in LD matches the text "milk":
+						say "[big he of P] shudders and you see a trickle of white seeping out the corners of [his of P] mouth. That must have been breast milk.";
+					otherwise:
+						say "[big he of P] coughs once. Hmm, must have just been water.";
+				otherwise:
+					say "[BigNameDesc of P] takes a step back and shakes [his of P] head. [big he of P] is too scared to take another shot!";
 					remove P from LST;
-					if yourself is listed in LST:
-						HappinessDown P by 2;
-						repeat with TST running through unfriendly students in the location of the player:
-							if TST is not P:
-								HappinessDown TST;
-								say "Clearly [he of TST] was hoping that you'd be the one who lost.";
-				otherwise if entry CD in LD matches the text "alcohol":
-					say "[big he of P] chokes and splutters and shakes [his of P] head rapidly to recover. That must have been vodka!";
-				otherwise if entry CD in LD matches the text "milk":
-					say "[big he of P] shudders and you see a trickle of white seeping out the corners of [his of P] mouth. That must have been breast milk.";
-				otherwise:
-					say "[big he of P] coughs once. Hmm, must have just been water.";
+					now chickenedOut is 1;
+			if chickenedOut is 0, truncate LS to (number of entries in LS - 1) entries;
+		say "[BigNameDesc of M] [if 0 is listed in LS]tilts [his of M] head to one side.[line break][speech style of M]'Hmm, fair enough, up to you[otherwise]doubles over laughing.[line break][speech style of M]'Too bad, too bad! What a lovely drink, hmm? I bet you enjoyed that[end if].'[roman type][line break]";
+		repeat with P running through LST:
+			if P is yourself:
+				now armband is emerald;
+				say "[speech style of M]'Congratulations, [NameBimbo].'[roman type][line break][BigNameDesc of M] touches your armband and the ID card inside transforms!";
+				now the armband-title of armband is "Darya";
+				now the armband-print of armband is "daredevil";
+				say ClothingDesc of armband;
+				update students; [an important line which makes boring old students disappear and new cool ones appear]
 			otherwise:
-				say "[BigNameDesc of P] takes a step back and shakes [his of P] head. [big he of P] is too scared to take another shot!";
-				remove P from LST;
-		truncate LS to (number of entries in LS - 1) entries;
-	say "[BigNameDesc of M] [if 0 is listed in LS]tilts [his of M] head to one side.[line break][speech style of M]'Hmm, fair enough, up to you[otherwise]doubles over laughing.[line break][speech style of M]'Too bad, too bad! What a lovely drink, hmm? I bet you enjoyed that[end if].'[roman type][line break]";
-	repeat with P running through LST:
-		if P is yourself:
-			now armband is emerald;
-			say "[speech style of M]'Congratulations, [NameBimbo].'[roman type][line break][BigNameDesc of M] touches your armband and the ID card inside transforms!";
-			now the armband-title of armband is "Darya";
-			now the armband-print of armband is "daredevil";
-			say ClothingDesc of armband;
-			update students; [an important line which makes boring old students disappear and new cool ones appear]
-		otherwise:
-			say "[speech style of M]'Congratulations, [student-name of P].'[roman type][line break]";
-			promote P;
+				say "[speech style of M]'Congratulations, [student-name of P].'[roman type][line break]";
+				promote P;
+	otherwise:
+		say "With only one volunteer, the roulette game can't go ahead.";
 	now temporaryYesNoBackground is figure of small image;
 	now bigGameLoop is 0;
 	say "[speech style of M]'Well I guess that's my fun over with for today. Class dismissed.'[roman type][line break]".

@@ -132,6 +132,10 @@ Carry out TrophySwitching bust-trophy:
 
 trip-trophy is a trophy. The printed name of trip-trophy is "[TQlink of item described]heel trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of trip-trophy is "helt". Understand "heel" as trip-trophy.
 
+Figure of trip trophy is the file "Env/School/trophy8.png".
+To decide which figure-name is the examine-image of (C - trip-trophy):
+	decide on figure of trip trophy.
+
 To say ExamineDesc of (T - trip-trophy):
 	say "This trophy is in the shape of a pair of high heels. It is surrounded by a mystical [if the trophy-mode of T is 1]green glow, and you can feel that you are more steady in heels, but more likely to be targeted by trip attacks whilst wearing them[otherwise]red glow, which allows you to sense that its magical powers to make you more steady in heels but more prone to tripping attacks is currently inactive[end if].".
 
@@ -206,6 +210,10 @@ Carry out TrophySwitching diaper-trophy:
 		now the trophy-mode of diaper-trophy is 0.
 
 magic-trophy is a trophy. The printed name of magic-trophy is "[TQlink of item described]magic wand trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of magic-trophy is "mgwt". Understand "magic", "wand" as magic-trophy.
+
+Figure of magic trophy is the file "Env/School/trophy9.png".
+To decide which figure-name is the examine-image of (C - magic-trophy):
+	decide on figure of magic trophy.
 
 To say ExamineDesc of (T - magic-trophy):
 	say "This trophy is in the shape of a vibrating magic wand. It is surrounded by a mystical ";

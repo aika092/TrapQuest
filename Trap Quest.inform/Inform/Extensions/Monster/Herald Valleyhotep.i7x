@@ -128,7 +128,7 @@ Definition: herald is distracted:
 	if herald is in the location of the player:
 		let M be a random explorer in the location of the player;
 		if M is explorer:
-			say "[BigNameDesc of herald] spots [NameDesc of M].[line break][speech style of herald]'Your [if diaper quest is 0]flesh[otherwise if diaper messing >= 3]bowels[otherwise]bladder[end if] will, like, totally bend to the will of [Azathot].'[roman type][line break]Before [NameDesc of M] can react, [he of M] is hit with a bolt of pink electricity. You feel like you can almost see [his of M] brain cells getting fried. [BigNameDesc of M] is force to run squealing from the mansion, the pink lightning chasing [him of M] down through the halls.";
+			say "[BigNameDesc of herald] spots [NameDesc of M].[line break][speech style of herald]'Your [if diaper quest is 0]flesh[otherwise if diaper messing >= 3]bowels[otherwise]bladder[end if] will, like, totally bend to the will of [Azathot].'[roman type][line break]Before [NameDesc of M] can react, [he of M] is hit with a bolt of pink electricity. You feel like you can almost see [his of M] brain cells getting fried. [BigNameDesc of M] is forced to run squealing from the mansion, the pink lightning chasing [him of M] down through the halls.";
 			compute banishment of M;
 			decide yes;
 	decide no.

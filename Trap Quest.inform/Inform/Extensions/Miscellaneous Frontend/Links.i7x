@@ -462,6 +462,10 @@ To say unique-verb-desc of (T - a monster):
 				say " [link][bracket][ShortDesc of BM][close bracket][as]throw [the text-shortcut of BM] at [the text-shortcut of T][end link]";
 		otherwise if T is uninterested:
 			say " [link][bracket]poke[close bracket][as]poke [text-shortcut of T][end link]";
+		if T is sex-enslaved and the player is the donator:
+			say " [link][bracket]torment[close bracket][as]torment [the text-shortcut of T][end link]";
+		otherwise if T is caged and the player is an april 2021 top donator:
+			say " [link][bracket]torment[close bracket][as]torment [the text-shortcut of T][end link]";
 		if T is actually seducable:
 			say " [link][bracket]seduce[close bracket][as]seduce [text-shortcut of T][end link]".
 
@@ -580,7 +584,7 @@ To say unique-verb-desc of (T - a recipe):
 	if inline hyperlinks >= 2, say "[if T is not memorised] [link][bracket]mem[close bracket][as]learn [text-shortcut of T][end link][end if]".
 
 To say unique-verb-desc of (T - sex toy):
-	if inline hyperlinks >= 2, say "[if T is held and (T is not cursed or T is not worn)] [link][bracket]dr[close bracket][as]drop [text-shortcut of T][end link][otherwise if T is not held] [link][bracket]ta[close bracket][as]ta [text-shortcut of T][end link][end if][if the player is male and T is not worn] [link][bracket]plug[close bracket][as]plug butthole with [text-shortcut of T][end link][otherwise if T is not worn] [link][bracket]pussy[close bracket][as]plug vagina with [text-shortcut of T][end link] [link][bracket]ass[close bracket][as]plug butthole with [text-shortcut of T][end link][end if][if the player is in Dungeon28] [link][bracket]altar[close bracket][as]put [text-shortcut of T] on altar[end link][end if][if the player is in Hotel19 and T is worn] [link][bracket]cut[close bracket][as]cut [text-shortcut of T] with knife[end link][end if]".
+	if inline hyperlinks >= 2, say "[if T is held and (T is not cursed or T is not worn)] [link][bracket]dr[close bracket][as]drop [text-shortcut of T][end link][otherwise if T is not held] [link][bracket]ta[close bracket][as]ta [text-shortcut of T][end link][end if][if the player is not possessing a vagina and T is not worn] [link][bracket]plug[close bracket][as]plug butthole with [text-shortcut of T][end link][otherwise if T is not worn] [link][bracket]pussy[close bracket][as]plug vagina with [text-shortcut of T][end link] [link][bracket]ass[close bracket][as]plug butthole with [text-shortcut of T][end link][end if][if the player is in Dungeon28] [link][bracket]altar[close bracket][as]put [text-shortcut of T] on altar[end link][end if][if the player is in Hotel19 and T is worn] [link][bracket]cut[close bracket][as]cut [text-shortcut of T] with knife[end link][end if]".
 
 To say unique-verb-desc of (T - a knife):
 	if inline hyperlinks >= 2, say "[if diaper quest is 0 and the largeness of hair > favourite hair length] [link][bracket]cut hair[close bracket][as]cut hair[end link][end if]".
@@ -649,7 +653,7 @@ To compute smart links:
 					if C is actually removable:
 						say "[C] ";
 						now C is catalogued;
-				if the player is female:
+				if the player is possessing a vagina:
 					now C is a random worn top level protection clothing;
 					if C is clothing and C is not catalogued:
 						if C is displacable or C is actually removable:

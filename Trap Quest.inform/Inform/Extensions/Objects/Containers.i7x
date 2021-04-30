@@ -371,6 +371,7 @@ Carry out taking museum-store thing:
 			anger V;
 		now V is chain-tethering; [this needs to happen AFTER the summon otherwise the chain-tether will be immediately ended as the vampiress is reset during the summon function]
 		say "The barrier shatters as your hands pull back, and you hear a chilling rattling noise as a brilliant pink chain shoots out of your collar and [if V is in the location of the player]flies into [NameDesc of V]'s hand. [Big he of V] grins as [he of V] pulls the chain[otherwise]curves down the hall. You hear a sultry voice coming from that direction as the chain pulls[end if] taut.[line break][speech style of V]'It would be a shame if you left without paying, now wouldn't it?'[roman type][paragraph break]";
+		progress quest of stealing-quest.
 
 A pedestal is a kind of container. A pedestal is usually not openable. A pedestal is closed. A pedestal is not portable. The printed name of a pedestal is "[TQlink of item described][if the item described is erect and diaper lover > 0]nurturing[otherwise][pedestal-lock of the item described][end if] [pedestal-variant of the item described] pedestal[if the paid of the item described > 0] ([paid of the item described])[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of pedestal is "ped". A pedestal has a number called paid. The paid of a pedestal is usually 0. Understand "glass", "dome", "case", "barrier" as pedestal.
 

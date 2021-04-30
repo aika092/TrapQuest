@@ -4,11 +4,11 @@ Part 1 - Yellow String Monokini
 
 A yellow string monokini is a kind of string monokini. A yellow string monokini is usually see-through. There is 1 yellow string monokini. The text-shortcut of yellow string monokini is "ymk".
 
-The armour of yellow string monokini is usually 1.
-
 The printed name of yellow string monokini is usually "[clothing-title-before]yellow string swimsuit[clothing-title-after]".
 
 Definition: a yellow string monokini is yellow themed: decide yes.
+To decide which number is the initial armour of (C - a yellow string monokini):
+	decide on 1.
 
 Figure of yellow string monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/stringmonokini1.png".
 

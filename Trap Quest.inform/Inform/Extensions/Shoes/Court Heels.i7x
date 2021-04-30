@@ -47,15 +47,6 @@ To uniquely set up (C - a court heels):
 	if C is leather, now the text-shortcut of C is "lch";
 	if C is pvc, now the text-shortcut of C is "pch";
 	if C is latex, now the text-shortcut of C is "ltch";
-	let R be a random number between 1 and 8;
-	if C is cursed:
-		if R <= 2:
-			now C is posture training;
-		otherwise if R <= 4:
-			now C is stumbling;
-	otherwise:
-		if R is 1, now C is speed;
-		if R is 2, now C is kicking;
 	set up heel length of C.
 
 To decide which object is the potential-upgrade-target of (C - a court heels):

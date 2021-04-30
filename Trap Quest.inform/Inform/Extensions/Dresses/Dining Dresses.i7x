@@ -2,9 +2,6 @@ Dining Dresses by Dresses begins here.
 
 A dining dress is a kind of overdress.
 
-To set up influence of (C - a dining dress):
-	set up random-based influence of C.
-
 This is the remove inappropriate dining dresses rule:
 	repeat with B running through dining dress:
 		now B is in Holding Pen.

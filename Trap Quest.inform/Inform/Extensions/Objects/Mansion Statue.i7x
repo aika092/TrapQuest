@@ -15,7 +15,7 @@ A time based rule (this is the mansion statue charge decay rule):
 	if the charge of MansionScenery01 > 0, decrease the charge of MansionScenery01 by time-seconds.
 
 Check touching MansionScenery01:
-	if the player is immobile or there is a thing wrangling a body part, say "Aren't you a bit busy?" instead;
+	if the player is at least partially immobile, say "Aren't you a bit busy?" instead;
 	if the charge of the noun > 0:
 		allocate 2 seconds;
 		say "Nothing happens. Maybe the magic needs to recharge." instead;

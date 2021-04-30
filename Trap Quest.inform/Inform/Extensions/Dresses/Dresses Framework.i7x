@@ -100,6 +100,7 @@ Definition: an underdress is displacable: decide yes.
 Chapter - Wearability
 
 underdress wearability rules is a rulebook. The wearability rules of underdress is usually underdress wearability rules.
+underdress removability rules is a rulebook. The removability rules of underdress is usually underdress removability rules.
 
 This is the underdress already worn rule:
 	repeat with O running through worn underdresses:
@@ -128,12 +129,17 @@ This is the skirt underdress clash rule:
 				rule fails.
 The skirt underdress clash rule is listed in the skirt wearability rules.
 
+This is the underdress removed over head rule:
+	if wearing-target is not crotch-pullup and summoning is 0:
+		repeat with O running through embodied things penetrating face:
+			unless O is wearing-target:
+				if autoremove is false, say "You can't remove that while the [ShortDesc of O] is in your mouth!";
+				rule fails.
+The underdress removed over head rule is listed in the underdress removability rules.
+
 Part 2 - Overdresses
 
-An overdress is usually knee-length. An overdress is usually average cut. An overdress is usually normally-nipple-covering. An overdress is usually belly covering. The armour of an overdress is usually 5. An overdress is usually top-displacable.
-
-To uniquely set up (C - an overdress):
-	repair C.
+An overdress is usually knee-length. An overdress is usually average cut. An overdress is usually normally-nipple-covering. An overdress is usually belly covering. An overdress is usually top-displacable.
 
 Definition: an overdress is displacable:
 	if it is short or longer, decide yes;
@@ -190,6 +196,14 @@ This is the overdress necklace clash rule:
 			if summoning is 0 and autowear is false, say "You can't wear that because [if O is wearing-target]you're already wearing it[otherwise]you're already wearing the [ShortDesc of O][end if]!";
 			rule fails.
 The overdress necklace clash rule is listed in the overdress wearability rules.
+
+This is the overdress removed over head rule:
+	if wearing-target is not crotch-pullup and summoning is 0:
+		repeat with O running through embodied things penetrating face:
+			unless O is wearing-target:
+				if autoremove is false, say "You can't remove that while the [ShortDesc of O] is in your mouth!";
+				rule fails.
+The overdress removed over head rule is listed in the overdress removability rules.
 
 This is the skirt overdress clash rule:
 	if wearing-target is skirted:

@@ -15,10 +15,6 @@ To say TypeTitle of (T - a thong):
 To say selfexaminetitle of (T - a thong):
 	say "[one of]skimpy[or]lewd[or]naughty[at random] [selfexamineuniquetitle of T]".
 
-To uniquely set up (T - a thong):
-	now the damage of T is 0;
-	now the armour of T is a random number between 4 and 6.
-
 To say selfexamineuniquetitle of (G - a thong):
 	say "thong".
 

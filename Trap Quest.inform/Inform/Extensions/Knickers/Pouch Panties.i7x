@@ -21,9 +21,6 @@ To say ClothingDesc of (K - pouch-panties):
 	say "This pair of black girly panties is backless to allow full access to [if K is not worn]the wearer's[otherwise]your[end if] [asshole]. At the front, there is an added pouch for [if K is not worn or the player is not possessing a penis]the wearer's[otherwise]your[end if] penis.".
 Figure of pouch panties is the file "Items/Clothes/Lower/Underwear/Special/pouchpanties1.png".
 
-To uniquely set up (C - pouch-panties):
-	do nothing.
-
 To set up influence of (C - pouch-panties):
 	now C is anal-sex-addiction-influencing.
 

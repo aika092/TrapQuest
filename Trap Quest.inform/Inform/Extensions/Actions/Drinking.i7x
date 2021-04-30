@@ -23,6 +23,7 @@ Definition: a bottle (called B) is actually drinkable:
 Definition: yourself is resisting taste addiction:
 	if the player is taste obsessed:
 		if drinking-target is bottle:
+			if debugmode > 0, say "[input-style]Fill colour of [MediumDesc of drinking-target] is [fill-colour of drinking-target].[roman type][line break]";
 			if ((the fill-colour of drinking-target is creamy and semen is highest addicted liquid) or (the fill-colour of drinking-target is golden and urine is highest addicted liquid) or (the fill-colour of drinking-target is white and milk is highest addicted liquid)), decide no;
 		if drinking-target is DungeonScenery01 and semen is highest addicted liquid, decide no;
 		if drinking-target is breasts and milk is highest addicted liquid, decide no;
@@ -321,7 +322,7 @@ Carry Out Spitting:
 					now focused-thing is T;
 				otherwise:
 					say "The screen says 'ERROR: Canvas already full. No appropriate templates found.' The arms let go of you and recede into the ceiling.";
-		otherwise if collecting is bottle: [TODO NEXT: FLAVOUR]
+		otherwise if collecting is bottle:
 			dump collecting;
 			if L is semen, now the fill-colour of collecting is creamy;
 			if L is urine, now the fill-colour of collecting is golden;

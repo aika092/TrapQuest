@@ -12,7 +12,7 @@ To compute SelfExamineDesc of (C - a fishnet top):
 To decide which number is the initial outrage of (C - a fishnet top):
 	decide on 8.
 
-To uniquely set up (C - a fishnet top):
+To set up magic attribute of (C - a fishnet top):
 	if a random number between 1 and 3 is 1, now C is endurance;
 	if a random number between 1 and 3 is 1, now C is dominance;
 	if a random number between 1 and 3 is 1, now C is protection.

@@ -50,7 +50,7 @@ Carry out kneeling:
 			if R < (2 + (clumsy * 4)) or there is worn serving-bondage:
 				say "You spill the [printed name of X] on the floor[if the fill-type of X < 20]. What a waste[end if]!";
 				Dump X;
-				if servePunished is 0 and ((X is waitress vessel and clumsy is 1) or X is probably-serve-ready waitress vessel or (the service-ready of bunny waitress ears is 1 and bunny waitress ears is worn)):
+				if servePunished is 0 and ((X is waitress vessel and clumsy is 1) or X is probably-serve-ready waitress vessel or (the service-ready of bunny waitress ears is 1 and bunny waitress ears is worn) or (the service-ready of flight attendant hat is 1 and flight attendant hat is worn)):
 					now servePunished is 1; [So that this only happens once per trip, even with multiple vessels]
 					compute service spill punishment;
 					say aprilFoolsClumsyFlav;

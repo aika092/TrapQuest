@@ -237,12 +237,14 @@ To compute tentacle birth:
 		PinkWardrobeUnclash living tentacles;
 		say "[bold type]You feel a sudden wet feeling crawl up your body to your neck, where it settles as a slight pressure. With surprising speed, a nest of warm, slimy tentacles begins to wrap around your body. For some reason, you feel very... comforted by their presence.[roman type][line break]";
 		class summon living tentacles;
-	if there is a worn tattoo and the number of worn ass tattoos is 0 and a random number between 1 and 2 is 1:
+	if there is a worn tattoo and the number of worn asscheek tattoos is 0 and a random number between 1 and 2 is 1:
 		say "Suddenly a new tattoo appears on you!";
 		summon tentacles tattoo;
 		try examining tentacles tattoo;
 	let M be a random off-stage tentacle monster;
-	if M is a monster, compute birth set up of M.
+	if M is a monster, compute birth set up of M;
+	say "Deep in your core, you sense a yearning to [one of]become pregnant again.[or]use your womb to spawn more and more tentacle monsters into this world![stopping]";
+	increase the pregnancy rate of the player by 1.
 
 To compute infernal birth:
 	let M be a random imp;
@@ -293,7 +295,7 @@ To say PregnancyBugFlav:
 
 To check for extreme pregnancies:
 	if inhuman pregnancy >= 3 and the father is not the throne: [Super-pregnancies are go]
-		if the father is a minotaur or the father is vines or the father is lake monster or the father is living belt of sturdiness or the father is hellhound or the father is demon lord or the father is facehugger or the father is elder altar or the father is djinn or the father is tentacle monster:
+		if the father is a minotaur or the father is vines or the father is lake monster or the father is living belt of sturdiness or the father is hellhound or the father is demon lord or the father is facehugger or the father is elder altar or the father is djinn or the father is tentacle monster or the father is centaur:
 			now the womb volume of vagina is 31;
 		if the father is creampie pole trap and (tentacle fetish is 1 or the player is getting unlucky):
 			now the womb volume of vagina is 31;

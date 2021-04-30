@@ -64,7 +64,16 @@ To compute generic class reward of (Q - a headgear-clothing-quest) on (C - a clo
 		now the fatigue of the player is 0;
 	otherwise:
 		say "shrinking the length of your hair!";
-		HairDown 1.
+		HairDown 1;
+	let D be a random off-stage ring;
+	if D is ring:
+		now D is emerald;
+		set shortcut of D;
+		if D is actually summonable:
+			summon D;
+		otherwise:
+			now D is in the location of the player;
+		say "You're also rewarded with a bonus [MediumDesc of D], which appears [if D is worn]straight onto your finger[otherwise]right in front of you[end if]!".
 
 Report taking off headgear: [Otherwise the player could remove the headgear, remove the nasty class blocked clothing items, then replace the headgear.]
 	compute AutoRemoveFizzling of the noun.

@@ -165,7 +165,7 @@ This is the robochef winding rule:
 		now M is not chef-wound;
 		rule succeeds;
 	otherwise:
-		if the player is the donator and the difficulty of M > the starting difficulty of M and a random number between 1 and 5 is 1 and the player is upright:
+		if the difficulty of M > the starting difficulty of M and a random number between 1 and 5 is 1 and the player is upright:
 			say "One of [NameDesc of M]'s arms straightens out and slowly begins to spin around its circular joint. It must be charging up a powerful attack!";
 			now M is chef-wound;
 			rule succeeds.

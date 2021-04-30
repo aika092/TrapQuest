@@ -54,10 +54,4 @@ To compute periodic effect of (P - a throbbing-tentacle):
 		now P is penetrating asshole;
 		ruin asshole.
 
-To set up magic state of (P - a throbbing-tentacle):
-	do nothing.[Currently redundant, but just in case we end up making a default dong / sex toy rule and forget about this edge case]
-
-To uniquely set up (P - a throbbing-tentacle):
-	do nothing.[No enchantments here!]
-
 Throbbing Tentacle ends here.

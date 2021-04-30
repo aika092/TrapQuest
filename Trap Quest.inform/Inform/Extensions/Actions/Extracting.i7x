@@ -10,7 +10,7 @@ Check extracting something with:
 	if the player is not able to manually use manual dexterity, do nothing instead;
 	if the doses of the noun > 0:
 		say "Are you sure you wish to empty your [noun] of its current contents? ";
-		if the player is bimbo consenting:
+		if the player is consenting:
 			say "You empty the contents of the [ShortDesc of the noun] onto the ground.";
 			dump the noun;
 		otherwise:

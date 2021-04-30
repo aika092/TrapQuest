@@ -34,7 +34,6 @@ To decide which number is the stimulation of (D - ben wa balls) on (B - a body p
 	decide on 0.
 
 To uniquely set up (C - ben wa balls):
-	let R be a random number between 1 and 10;
-	if R is 1, now C is endurance.
+	if a random number between 1 and 3 is 1, now C is endurance.
 
 Ben Wa Balls ends here.

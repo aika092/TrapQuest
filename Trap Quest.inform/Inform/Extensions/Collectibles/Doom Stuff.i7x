@@ -42,13 +42,14 @@ To say ExamineDesc of (C - black candle):
 	say "A black candle with a green flame, kept safe within a rusting metal lantern.".
 
 Report taking black candle:
-	commence doom.
+	force commence doom.
 
 To say ShortDesc of (C - black candle):
 	say "black candle".
 
 Definition: black candle is ingredient: decide no.
 Definition: black candle is immune to change: decide yes.
+Definition: black candle is black themed: decide yes.
 Definition: black candle is candle themed: decide yes.
 
 To decide which number is the bartering value of (T - black candle) for (M - a gladiator):
@@ -62,6 +63,49 @@ To say MonsterOfferAcceptFlav of (M - dominatrix) to (T - black candle):
 To decide which number is the bartering value of (T - black candle) for (M - vampiress):
 	decide on 4.
 To say MonsterOfferAcceptFlav of (M - vampiress) to (T - black candle):
+	say "[speech style of M]'Ah yes, this looks beautiful. I'll put it right next to my coff... I mean, my bed.'[roman type][line break]".
+
+cock candle is a collectible. cock candle is in Dungeon37. The printed name of cock candle is "[TQlink of item described]cock candle[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of cock candle is "ckc".
+
+Figure of cock candle is the file "Items/Collectibles/candle2.png".
+
+To decide which figure-name is the examine-image of (B - cock candle):
+	decide on figure of cock candle.
+
+A diaper quest fix rule:
+	remove cock candle from play.
+
+To say ExamineDesc of (C - cock candle):
+	say "A candle made of pure cream wax, shaped like a penis. It has a flame at the top that seems to magically stay aflame no matter what you do, and the wick never grows shorter as it burns.".
+
+Report taking cock candle:
+	if tough-shit is 1, force commence doom.
+
+To say ShortDesc of (C - cock candle):
+	say "cock candle".
+
+To decide which number is the outrage of (C - cock candle):
+	decide on 12.
+
+Definition: cock candle is ingredient: decide no.
+Definition: cock candle is immune to change:
+	if cock candle is in Dungeon37, decide yes;
+	decide no.
+Definition: cock candle is candle themed: decide yes.
+Definition: cock candle is penis themed: decide yes.
+Definition: cock candle is never-in-bag: decide yes.
+
+To decide which number is the bartering value of (T - cock candle) for (M - a gladiator):
+	decide on 3.
+To say MonsterOfferAcceptFlav of (M - a gladiator) to (T - cock candle):
+	say "[speech style of M]'Ah yes, this will be useful for a certain... ritual.'[roman type][line break]".
+To decide which number is the bartering value of (T - cock candle) for (M - dominatrix):
+	decide on 2.
+To say MonsterOfferAcceptFlav of (M - dominatrix) to (T - cock candle):
+	say "[speech style of M]'Oh, I've been running low on candles for wax play. I'll take it!'[roman type][line break]".
+To decide which number is the bartering value of (T - cock candle) for (M - vampiress):
+	decide on 4.
+To say MonsterOfferAcceptFlav of (M - vampiress) to (T - cock candle):
 	say "[speech style of M]'Ah yes, this looks beautiful. I'll put it right next to my coff... I mean, my bed.'[roman type][line break]".
 
 doom notes is a collectible. The printed name of doom notes is "[TQlink of item described]doom notes[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of doom notes is "dmn".

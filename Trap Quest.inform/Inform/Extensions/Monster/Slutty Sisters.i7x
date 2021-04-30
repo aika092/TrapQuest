@@ -35,10 +35,9 @@ To say ShortDesc of (M - a futanari slutty sister):
 To say MediumDesc of (M - a slutty sister):
 	say ShortDesc of M.
 
-Figure of futanari slutty sister is the file "NPCs/Bosses/SluttySister/sluttysister1.png".
-Figure of bulging slutty sister is the file "NPCs/Bosses/SluttySister/sluttysister2.png".
-
-Figure of Slutty Sisters Cutscene 1 is the file "Special/Cutscene/cutscene-nintendolls-start1.png".
+Figure of futanari slutty sister is the file "NPCs/Bosses/SluttySister/sluttysister1.jpg".
+Figure of bulging slutty sister is the file "NPCs/Bosses/SluttySister/sluttysister2.jpg".
+Figure of Slutty Sisters Cutscene 1 is the file "NPCs/Bosses/SluttySister/sluttysister-start1.jpg".
 
 To decide which figure-name is the monster-image of (M - a futanari slutty sister):
 	decide on figure of futanari slutty sister.
@@ -129,7 +128,7 @@ To compute perception of (M - a slutty sister):
 		bore M;
 	otherwise if M is objectifying the player:
 		say "[speech style of M]'[if M is futanari slutty sister][one of]About fucking time, I was getting tired of just fucking Little Miss Cum Balloon here over and over.'[or]Yum, let's go again.'[stopping][otherwise][one of]Ooh, yay, you made it at last! Yep, we're the final boss! Surprise! Get past us and press that STOP button to end the game. But we won't make it easy!'[or]Do your best, sweetie!'[stopping][end if][roman type][line break]";
-		if the times-met of M is 0 and M is futanari slutty sister and futanari fetish is 1, alwayscutshow figure of slutty sisters cutscene 1 for M;
+		if the times-met of M is 0 and M is futanari slutty sister and futanari fetish > 0, alwayscutshow figure of slutty sisters cutscene 1 for M;
 		anger M; [Should be unnecessary but just in case]
 	otherwise:
 		say "[speech style of M]'[if M is bulging slutty sister][one of]Oh dear honey, you've arrived at the final boss! That's us. Usually we would force you to fight us, but you don't even have enough prize money to pay back the game fee yet.'[or]Oh, you're back again.'[stopping][otherwise][one of]So if you do push the button now, you'll be working for us for a whole year. So we're not gonna stop you!'[or]Have you changed your mind? You gonna end the simulation early and dedicate yourself to work for us for a year?'[stopping][end if][roman type][line break]";

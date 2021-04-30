@@ -97,7 +97,7 @@ The player has a person-reaction called player-reaction.
 
 To decide which number is the reaction of the player: [TODO eventually remove]
 	if the player-reaction of the player is resisting, decide on 0;
-	if wanking is 1 or the player-reaction of the player is submitting, decide on 1;
+	if wanking is 1 or the player-reaction of the player is submitting or the number of seduced reactive monsters > 0, decide on 1;
 	if the player-reaction of the player is begging for mercy, decide on 2;
 	[below here is for when the player is 'unprepared']
 	if the delicateness of the player > 8, decide on 1;

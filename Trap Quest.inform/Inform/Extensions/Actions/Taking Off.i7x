@@ -16,9 +16,10 @@ Check taking off worn leg covering clothing:
 Definition: a clothing is curse-sticky: decide yes. [If it's cursed, it can't be taken off]
 
 Check taking off clothing:
-	if the noun is glued, try tearing off the noun instead;
-	now summoning is 0;
-	unless the noun is actually removable, do nothing instead.
+	unless the noun is bag of holding: [these checks are already performed once in the bag of holding's own 'check taking off' block]
+		if the noun is glued, try tearing off the noun instead;
+		now summoning is 0;
+		unless the noun is actually removable, do nothing instead.
 
 Carry out taking off something:
 	dislodge the noun.

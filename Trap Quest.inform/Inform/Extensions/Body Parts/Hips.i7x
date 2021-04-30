@@ -96,12 +96,10 @@ To decide which number is max ass size modifier:
 
 To decide which number is max ass size:
 	if there is a restricting salve covering hips, decide on the total volume of hips;
-	if extreme proportions fetish is 1 and the player is not a flatchested trap, decide on 20 - max ass size modifier;
+	if extreme proportions fetish is 1 and the player is not a flatchested trap, decide on 20 - (max ass size modifier * 2);
 	otherwise decide on 10 - max ass size modifier.
 To decide which number is max hip size:
 	decide on max ass size.
-	[if there is a restricting salve covering hips, decide on the thickness of hips;
-	decide on 10 - max ass size modifier.]
 
 To say MaxAssSizeDesc:
 	let MAS be max ass size;
@@ -384,7 +382,7 @@ To HipUp (X - a number):
 				now X is 0;
 			otherwise if X is 0:
 				say "[one of]You feel your [MediumDesc of hips] try to expand further, but they physically can't grow any more![or]Once again your [MediumDesc of hips] fail to grow any further.[stopping]"; [This will not display when extreme proportions fetish is enabled, this is intentional]
-				if there is a worn tattoo and the number of worn ass tattoos is 0 and lactation fetish is 1:
+				if there is a worn tattoo and the number of worn left-asscheek tattoos is 0 and the number of worn both-asscheeks tattoos is 0 and lactation fetish is 1:
 					summon prime USDA tattoo;
 					say "A brand appears on your butt!";
 					try examining prime USDA tattoo;
@@ -473,7 +471,7 @@ To FatAssUp (X - a number):
 			update appearance level;
 		otherwise if X is 0:
 			say "Your [AssDesc] try to get fatter but have reached their limit!";
-			if there is a worn tattoo and the number of worn ass tattoos is 0 and (weight gain fetish is 1 or lactation fetish is 1):
+			if there is a worn tattoo and the number of worn left-asscheek tattoos is 0 and the number of worn both-asscheeks tattoos is 0 and (weight gain fetish is 1 or lactation fetish is 1):
 				summon prime USDA tattoo;
 				say "A brand appears on your butt!";
 				try examining prime USDA tattoo;

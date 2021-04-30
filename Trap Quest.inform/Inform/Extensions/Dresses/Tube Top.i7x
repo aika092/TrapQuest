@@ -21,16 +21,13 @@ To decide which number is the initial outrage of (C - a tube top):
 	if C is very low cut or lower, decide on 4;
 	decide on 3.
 
-To uniquely set up (C - a tube top):
+To set up magic attribute of (C - a tube top):
 	if a random number between 1 and 3 is 1, now C is endurance.
 
 This is the remove inappropriate tube tops rule:
 	repeat with B running through tube tops:
 		unless B is cyan tube top or B is tartan tube top or B is silver tube top or B is jacket, now B is in Holding Pen.
 The remove inappropriate tube tops rule is listed in the diaper quest fix rules.
-
-To set up influence of (C - a tube top):
-	set up random-based influence of C.
 
 outrageous-tubetop is a humiliating situation.
 Definition: outrageous-tubetop (called A) is applicable:
@@ -227,11 +224,8 @@ A jacket is a kind of tube top. A jacket is usually dense.
 
 Definition: a jacket is black themed: decide yes.
 
-To uniquely set up (C - a jacket):
+To set up magic attribute of (C - a jacket):
 	if a random number between 1 and 4 is 1, now C is dominance.
-
-To set up influence of (C - a jacket):
-	set up random-based influence of C.
 
 To say ShortDesc of (C - a jacket):
 	say "[clothing-material of C] jacket".

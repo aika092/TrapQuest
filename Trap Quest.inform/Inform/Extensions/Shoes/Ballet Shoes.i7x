@@ -104,7 +104,7 @@ To decide which number is the unique cringe of (C - a thigh high ballet boots):
 	decide on 3.
 
 Definition: a thigh high ballet boots is transformation-protected:
-	if there is a worn ballet corset, decide yes;
+	if ballet corset is worn, decide yes;
 	decide no.
 
 Ballet Shoes ends here.

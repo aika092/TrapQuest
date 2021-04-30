@@ -256,7 +256,7 @@ The text output of this function should be displayed whenever the player puts a 
 
 +!]
 To say CondomManualFlav of (M - a monster):
-	say "You take out a condom and [if the bimbo of the player > 10 and face is not actually occupied]use your mouth to slowly roll it down [his of M] length[otherwise]quickly roll it down [his of M] length[end if], making [one of]sure the rubber is in intimate contact with every inch of the[or]every bump and vein glisten as you stretch and smooth the rubber over [his of M][at random] tool.".
+	say "You take out a condom and [if oral sex addiction of the player > 3 and face is not actually occupied]use your mouth to slowly roll it down [his of M] length[otherwise]quickly roll it down [his of M] length[end if], making [one of]sure the rubber is in intimate contact with every inch of the[or]every bump and vein glisten as you stretch and smooth the rubber over [his of M][at random] tool.".
 
 To say CondomRejectFlav of (M - a monster):
 	say "[BigNameDesc of M] [one of]scoffs[or]frowns[or]rolls [his of M] eyes[at random], and ignores your suggestion[if M is seduced].[otherwise]. Looks like [he of M][']s going in bare...[end if]".

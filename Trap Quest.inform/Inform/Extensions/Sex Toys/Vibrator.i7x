@@ -42,12 +42,11 @@ To decide which number is the raw-masturbation-bonus of (C - a vibrator):
 To decide which number is the stimulation of (T - a vibrator) on (F - a body part):
 	decide on 4.
 
-To uniquely set up (C - a vibrator):
-	if C is discovered varied:
-		let R be a random number between 1 and 10;
-		if R < 3 and diaper quest is 0, now C is temptation;
-		if R is 3, now C is endurance;
-		if R is 4, now C is dominance.
+To set up magic attribute of (C - a vibrator):
+	let R be a random number between 1 and 10;
+	if R < 3 and diaper quest is 0, now C is temptation;
+	if R is 3, now C is endurance;
+	if R is 4, now C is dominance.
 
 purple-vibrator is a vibrator.
 Definition: purple-vibrator is purple themed: decide yes.
@@ -86,7 +85,7 @@ To compute periodic effect of (P - remote-controlled-vibrator):
 			otherwise:
 				let F be vagina;
 				if the player is possessing a penis, now F is penis;
-				say "Your [ShortDesc of P] whirrs away [if F is vagina]inside you[otherwise]around your [player-penis][end if]!";
+				say "Your [ShortDesc of P] whirs away [if F is vagina]inside you[otherwise]around your [player-penis][end if]!";
 				stimulate F from P;
 		if the player is not in a predicament room, increase the toy-charge of P by 1;
 	otherwise if the game-state of team-football-predicament is not 1:

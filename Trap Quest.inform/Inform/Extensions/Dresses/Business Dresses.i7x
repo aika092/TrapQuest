@@ -5,9 +5,6 @@ A business dress is a kind of overdress.
 To decide which number is the adult-influence of (C - a business dress):
 	decide on 2.
 
-To set up influence of (C - a business dress):
-	set up random-based influence of C.
-
 Part 1 - Polka Dot Business Dress
 
 A polka dot business dress is a kind of business dress. There is 1 polka dot business dress. A polka dot business dress is fully covering. The text-shortcut of polka dot business dress is "pol". The printed name of polka dot business dress is usually "[clothing-title-before]polka dot business dress[clothing-title-after]".

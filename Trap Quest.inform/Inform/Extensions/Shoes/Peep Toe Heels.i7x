@@ -33,15 +33,6 @@ To uniquely set up (C - a peep toe heels):
 	if C is pvc, now the text-shortcut of C is "ppt";
 	if C is satin, now the text-shortcut of C is "spt";
 	if C is leather, now the text-shortcut of C is "lpt";
-	let R be a random number between 1 and 8;
-	if C is cursed:
-		if R <= 2:
-			now C is posture training;
-		otherwise if R <= 4:
-			now C is stumbling;
-	otherwise:
-		if R is 1, now C is speed;
-		if R is 2, now C is kicking;
 	set up heel length of C.
 
 Peep Toe Heels ends here.

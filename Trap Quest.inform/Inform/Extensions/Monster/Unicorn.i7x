@@ -13,16 +13,20 @@ To say LongDickDesc of (M - unicorn):
 	otherwise say "short [manly-penis]".
 
 Definition: unicorn is willing to urinate:
-	if the class of the player matches the text "princess bride", decide no;
+	if unicorn is unbridaled, decide no;
 	if mythical creature fetish is 1, decide yes;
 	decide no.
 
 Definition: unicorn is willing to do oral:
-	if the class of the player matches the text "princess bride", decide no;
+	if unicorn is unbridaled, decide no;
 	decide yes.
 
 Definition: unicorn is willing to do anal:
-	if the class of the player matches the text "princess bride" and the player is possessing a vagina, decide no;
+	if the unicorn is unbridaled and the player is possessing a vagina, decide no;
+	decide yes.
+
+Definition: unicorn is willing to fluff:
+	if there is a monster penetrating a fuckhole, decide no;
 	decide yes.
 
 [Definition: unicorn is willing to masturbate: decide yes.]
@@ -98,14 +102,19 @@ To set up (M - unicorn):
 Definition: unicorn is uniquely unfriendly: [We can use this to easily specify when a monster is pissed off regardless of usual stats.]
 	if unicorn is friendly-fucking, decide no;
 	if unicorn is default uniquely unfriendly, decide yes;
-	if player-class matches the text "princess bride", decide yes;
+	if unicorn is unbridaled, decide yes;
 	decide no.
+
+unicorn can be unbridaled or bridaled. unicorn is bridaled.
 
 To compute perception of (M - unicorn):
 	let X be demon lord;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed]![otherwise].[end if]";
-	if player-class matches the text "princess bride":
+	if M is unbridaled:
+		say "[big he of M] has fury in [his of M] eyes.[line break][speech style of M]'[one of]YOU!'[or]YOOOUUU!'[in random order][roman type][line break]";
+	otherwise if player-class matches the text "princess bride":
 		say "[big he of M] has fury in [his of M] eyes.[line break][speech style of M]'My name is Unicorn Montoya. You stole my fiancé. Prepare to be creampied.'[roman type][line break]";
+		now M is unbridaled;
 		anger M;
 	otherwise if there is a worn xavier's cunt tattoo or X is mating:
 		say "[big he of M] snarls.[line break][speech style of M]'[one of]The demon lord is MINE. You can't have [him of X]!'[or]You think you can compete with me, but you can't. The demon lord wants only ME. ME!'[or]You'll regret you ever looked at the demon lord.'[at random][roman type][line break]";
@@ -156,12 +165,53 @@ To say SummoningFlav of (M - unicorn):
 Part 3 - Combat
 
 To check motion of (M - unicorn):
-	if player-class matches the text "princess bride" and the boredom of M <= 0, check seeking 1 of M;
+	if M is unbridaled and the boredom of M <= 0, check seeking 1 of M;
 	otherwise check default motion of M.
 
 To check attack of (M - unicorn):
-	say "[speech style of M]'My name is Unicorn Montoya. You stole my fiancé. Prepare to be creampied.'[roman type][line break]";
+	if M is unbridaled:
+		say "[speech style of M]'[one of][caps he of demon lord] WAS MINE, BITCH!'[or]NOBODY STEALS MY FIANCE'[in random order][roman type][line break]";
+	otherwise if player-class matches the text "princess bride":
+		say "[speech style of M]'My name is Unicorn Montoya. You stole my fiancé. Prepare to be creampied.'[roman type][line break]";
+		now M is unbridaled;
 	check default attack of M.
+
+unicorn can be unicorn-charged or not unicorn-charged. unicorn is not unicorn-charged.
+
+To compute damaging attack of (M - unicorn):
+	let T be the total magic power of the player;
+	let P be 0;
+	if M is unbridaled, now P is 1;
+	if M is unicorn-charged:
+		compute shooting attack of M;
+	otherwise if the player is the donator and a random number between 1 and 5 is 1 or (P is 1 and a random number between 1 and 3 is 1):
+		if the magic-fatigue of the player < T:
+			say "[BigNameDesc of M]'s horn glows with power as you feel magic being sucked out of you.";
+			let X be the difficulty of M / 2;
+			increase the magic-fatigue of the player by X;
+			now M is unicorn-charged;
+		otherwise if P is 1:
+			say "[BigNameDesc of M]'s horn glows with power as it sucks energy out of you! It hurts!";
+			let X be the difficulty of M;
+			FatigueUp X * 2;
+			BodyRuin 1;
+			now M is unicorn-charged;
+		otherwise:
+			compute striking attack of M;
+	otherwise:
+		compute striking attack of M.
+
+To compute shooting attack of (M - unicorn):
+	say "A beam of light shoots out of [NameDesc of M]'s horn!";
+	if the accuracy roll of M > the dexterity of the player:
+		let B be the painful-part of M;
+		say "The beam hits you [TargetName of B]! You feel a rush of stinging pain and tiredness!";
+		compute M hurting B;
+		FatigueUp 25;
+		PainUp 1;
+	otherwise:
+		say "It's fast, but somehow you're able to dodge it without being hit.";
+	now M is not unicorn-charged.
 
 Section 1 - Protect and Attack
 
@@ -274,7 +324,7 @@ To decide if (M - unicorn) is willing to creampie (F - asshole):
 	decide yes.
 
 To decide if (M - unicorn) is willing to creampie (F - vagina):
-	if player-class matches the text "princess bride", decide yes;
+	if M is unbridaled, decide yes;
 	if there is a worn xavier's cunt tattoo, decide no;[she respects her master]
 	if the player is pheromonal, decide yes;
 	if the class of the player is princess or the player is mating demon lord, decide yes;
@@ -339,7 +389,7 @@ To say MasturbationStartFlav of (M - unicorn):
 	say "[BigNameDesc of M] plants [his of M] foot on your [genitals].".
 
 To say MasturbationFlav of (M - unicorn):
-	if the player is female:
+	if the player is possessing a vagina:
 	otherwise:]
 
 Section 3 - Damage
@@ -502,7 +552,7 @@ To penetration dominate (M - unicorn):
 				now player-fucking is DOMINANT-NEUTRAL;
 			say AfterDominationComment 1 of M;
 		otherwise:[The unicorn is actually a huge slut]
-			say "You answer by way of spitting on your [sexual-player-penis], smirking at the angry face [he of M] makes as you slowly push your [SexShaft] into [his of M] [asshole]. [big he of M] flings curses and obscenities at you as you begin to fuck [him of M], stifled moans punctuating every word as [his of M] [DickDesc of M] bobs in time with your thrusts. [big his of M] voice quickly loses all coherence, reducing [him of M] to frustrated spluttering and grunting as you eagerly piston away. It's a little difficult to tell if [he of M]'s actually upset or not, so you decide to see if you can force another reaction out of [him of M]. You plant both hands on the ground, throwing your full weight against [him of M] as you drive every inch of your [sexual-player-penis] into [his of M] ass. [big his of M] eyes cross, and [he of M] grits [his of M] teeth in the midst of the merciless pounding, still trying to hold out. Unfortunately, you won't allow it. Your balls slap the nape of [his of M] ass as you relentlessly drill [his of M] prostate, forcing [him of M] to moan as [his of M] [asshole] starts clenching up around you. [big his of M] mouth slowly twists into a big, submissive 'O,' and [he of M] cries out in pleasure as [his of M] [DickDesc of M] shoots streamers of [semen] across [his of M] belly, chest, and face. Defeated, [he of M] stares up at you [if bukkake fetish is 1]with [his of M] own [semen] gluing one of [his of M] eyes shut [end if]as [he of M] finally accepts the pounding like the horny submissive [he of M] is. You ease off a little, making sure to enjoy yourself nice and fully before slamming your [sexual-player-penis] home, groaning as you pump [his of M] [asshole] full of fresh [semen].";
+			say "You answer by way of spitting on your [sexual-player-penis], smirking at the angry face [he of M] makes as you slowly push your [SexShaft] into [his of M] [asshole]. [big he of M] flings curses and obscenities at you as you begin to fuck [him of M], stifled moans punctuating every word as [his of M] [DickDesc of M] bobs in time with your thrusts. [big his of M] voice quickly loses all coherence, reducing [him of M] to frustrated spluttering and grunting as you eagerly piston away. It's a little difficult to tell if [he of M]'s actually upset or not, so you decide to see if you can force another reaction out of [him of M]. You plant both hands on the ground, throwing your full weight against [him of M] as you drive every inch of your [sexual-player-penis] into [his of M] ass. [big his of M] eyes cross, and [he of M] grits [his of M] teeth in the midst of the merciless pounding, still trying to hold out. Unfortunately, you won't allow it. Your [if the player is possessing a scrotum]balls slap the nape of[otherwise]hips slap[end if] [his of M] ass as you relentlessly drill [his of M] prostate, forcing [him of M] to moan as [his of M] [asshole] starts clenching up around you. [big his of M] mouth slowly twists into a big, submissive 'O,' and [he of M] cries out in pleasure as [his of M] [DickDesc of M] shoots streamers of [semen] across [his of M] belly, chest, and face. Defeated, [he of M] stares up at you [if bukkake fetish is 1]with [his of M] own [semen] gluing one of [his of M] eyes shut [end if]as [he of M] finally accepts the pounding like the horny submissive [he of M] is. You ease off a little, making sure to enjoy yourself nice and fully before slamming your [sexual-player-penis] home, groaning as you pump [his of M] [asshole] full of fresh [semen].";
 			orgasm;
 			increase the times-seeded of M by 1;
 			now player-fucking is DOMINANT-SUPER;
@@ -606,7 +656,18 @@ To say AssistanceRejected of (M - unicorn) with (N - a monster):
 	if M is unfriendly:
 		say "[speech style of M]'How can you ask me that after r-riling me up like this? How RUDE!'[roman type][line break]";
 	otherwise:
-		say "[speech style of M]'Me? Help you? You must be stupid.'[roman type][line break]".
+		if N is penetrating a fuckhole, say "[speech style of M]'WHAT?! A-as if I would ever risk my treasured purity!'[roman type][line break]";
+		otherwise say "[speech style of M]'Me? Help you? You must be stupid.'[roman type][line break]".
+
+To say FluffResponse of (M - unicorn) with (N - a monster):
+	say "[speech style of M]'[one of]Of course I'll help you... B-but I won't enjoy it!'[or]I can help out a little... O-only a little.'[in random order][roman type][line break]".
+
+To say NonFluffResponse of (M - unicorn) with (N - a monster):
+	let F be a random fuckhole penetrated by N;
+	say "[speech style of M]'Of course I'll... Ah. I-I have my vows to think about, so I'll have to help indirectly.'[roman type][line break][BigFuckerDesc of M]'s horn lights up, and [FuckerDesc of N]'s [if N is male][DickDesc of N][otherwise]punishment[end if] suddenly grows more bearable. Your [variable F] has been lubricated!";
+	let L be a random off-stage lubricant;
+	now the timer of L is a random number between 30 and 50;
+	now L is covering F.
 
 To say AttentionExceeded of (M - unicorn) with (N - a monster):
 	say "[speech style of M]'H-how dare you ask me to watch this! I'll have to punish you!'[roman type][line break]".
@@ -621,7 +682,7 @@ To say VanityAnnoyed of (M - unicorn):
 	say "[speech style of M]'Fine, but don't expect me to do it for very long.'[roman type][line break]".
 
 To say SubmissiveResponse of (M - unicorn):
-	say "[speech style of M]'Hmph. You're lucky I decided to satisfy you.'[roman type][line break]";
+	say "[speech style of M]'[one of]Hmph. You're lucky I decided to satisfy you.'[or]Oh, that? I already forgot about it. D-don't do it again.'[in random order][roman type][line break]";
 
 To say FirstResponse of (M - unicorn):
 	if the class of the player is princess:
@@ -640,7 +701,7 @@ To say WhereAnswer of (M - unicorn):
 	say "[speech style of M]'Does it matter? This place is nothing without a master to rule over it.'[roman type][line break]".
 
 To say WhoAnswer of (M - unicorn):
-	say "[speech style of M]'My name is Elwyn. Now stop flirting with me, I'm not interested. Not even a little. Hmph!'[roman type][line break]";
+	say "[speech style of M]'[one of]My master only ever called me [']unicorn['], so my name is unicorn.'[or]My name is [']None of your business!['] Now stop flirting with me, I'm not interested. Not even a little. Hmph!'[sticky random][roman type][line break]";
 
 To say StoryAnswer of (M - unicorn):
 	let X be demon lord;

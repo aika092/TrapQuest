@@ -54,12 +54,13 @@ To say ShortDesc of (S - which-sword):
 	say "sword".
 
 To say ExamineDesc of (S - which-sword):
-	say "A sword stuck in a stone, just like in the fairy tales you've heard. If you [bold type]take[roman type] it out, perhaps your destiny will become clear.".
+	say "A sword stuck in a stone, just like in the fairy tales you've heard. If you [bold type]take[roman type] it out, perhaps your destiny will become clear."
 
 Definition: which-sword is immune to change: decide yes.
 
 Check taking which-sword:
-	if there is a worn hand ready clothing, say "You try, but the hilt resists your touch. Maybe you need an open hand?" instead.
+	if there is a worn hand ready clothing, say "You try, but the hilt resists your touch. Maybe you need an open hand?" instead;
+	if the player is wrist bound behind, say "You can't pull out the sword while your hands are stuck behind your back." instead.
 
 Definition: an equippable is destiny-appropriate: decide no.
 Definition: an equippable is destiny-prioritised: decide no.
@@ -482,6 +483,7 @@ To compute periodic effect of (H - demon broadsword):
 					decrease the arousal of H by 2;
 				FatigueUp 30 - S;[the lower S is, the more fatigued you get]
 				now demon lord is penetrating face;
+				instantThroat demon lord;
 				BlowCount;
 				now demon lord is not penetrating face;
 				dislodge H;

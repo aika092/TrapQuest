@@ -30,6 +30,7 @@ Check pulling pullstring collar:
 	let W be a random wild horse penetrating asshole;
 	if W is a thing, try HorsePulling W instead;
 	if auto is 0 and the player is not able to manually use their hands, do nothing instead;
+	if auto is 0 and the player is wrist bound behind, do nothing instead;
 	if the player is silently able to manually speak and the noun is worn:
 		say "[if monster-puller is the player]You pull the ring and then you let go[otherwise]You yelp in surprise[end if], [one of]giving a gasp as you feel it start winding back into the collar, a shudder going through your body as your mouth opens all on its own, [or][stopping]and in a bubbly voice you hear yourself say:[line break][second custom style]";
 		let R be a random number between 2 and 6;

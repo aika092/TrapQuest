@@ -113,7 +113,7 @@ This is the vine boss ultimate victory attack rule:
 					say "[speech style of ex-princess]'No, no, no! Not like this!'[roman type][line break]Anything more that [he of ex-princess] might have wanted to say is cut off by a pair of vines finding their way into [his of ex-princess] mouth as others begin to undergo a scientific experiment to discover how many [his of ex-princess] cunt and asshole can each accommodate.[line break][speech style of ex-princess]'MMMMMMMMMMMMMMPH!'[roman type][line break]That's the last sound from [him of ex-princess] that you ever hear, as [his of ex-princess] body is raised into the air. You are temporarily released, dropped to the ground, as [NameDesc of ex-princess] is pulled into the belly of [NameDesc of vine boss], countless powerful vines still thrusting in and out as [he of ex-princess] disappears inside.";
 					destroy ex-princess;
 					now ex-princess is fucked-silly; [Just to make sure she definitely never re-spawns]
-					if there is a worn tattoo and the number of worn chest tattoo is 0:
+					if there is a worn tattoo and the number of worn breast tattoo is 0:
 						summon traitor tattoo;
 						say "The word 'traitor' appears on your chest, a lasting reminder of your ultimate betrayal!";
 				otherwise:

@@ -1,6 +1,6 @@
 Diaper Covers by Knickers begins here.
 
-diaper cover is a kind of clothing. The armour of diaper cover is 10. A diaper cover is usually manly. A diaper cover is usually crotch-intact. A diaper cover is usually polyester. A diaper cover is usually rare. A diaper cover is usually diaper-addiction-influencing.
+diaper cover is a kind of clothing. A diaper cover is usually manly. A diaper cover is usually crotch-intact. A diaper cover is usually polyester. A diaper cover is usually rare. A diaper cover is usually diaper-addiction-influencing.
 
 Definition: a diaper cover is baby themed: decide yes.
 Definition: a diaper cover is pink themed: decide yes.
@@ -15,6 +15,8 @@ Definition: a diaper cover is recipe specific: decide yes.
 To decide which number is the alchemy key of (C - a diaper cover):
 	if C is product, decide on 18;
 	decide on 0.
+To decide which number is the initial armour of (C - a diaper cover):
+	decide on 10.
 
 To decide which text is the RecipeDesc of (B - a diaper cover):
 	decide on "The recipe just says 'Pee-soaked underwear'.".
@@ -50,7 +52,6 @@ To say selfexamineuniquetitle of (K - a diaper cover):
 	say "diaper cover".
 
 To uniquely set up (K - a diaper cover):
-	repair K;
 	if diaper lover >= 1 and a random number between 1 and 8 is 1, now K is bed wetting.
 
 [

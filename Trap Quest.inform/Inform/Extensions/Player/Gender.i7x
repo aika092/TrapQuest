@@ -17,7 +17,7 @@ Definition: a person is presenting as female:
 	decide no.
 
 Definition: yourself is gendered female:
-	if the player is originally female or the player is female, decide yes;
+	if the player is originally female and transGender is 0, decide yes;
 	if the player is originally male and transGender is 1, decide yes;
 	decide no.
 Definition: yourself is gendered male:
@@ -37,11 +37,11 @@ This is what we do whenever the player has a sex change (from male to female).
 
 +!]
 To SexChange (P - a person):
-	if the player is male:
+	if the player is sexed male:
 		now the player is female;
 		say "Suddenly [if the thickness of hips < 4]your hips widen, [end if]you lose a few inches of height and your shoulders become a bit less broad[if diaper quest is 1]. A pair of breasts burst forth from your chest, completing your transformation[end if].";
 		if the thickness of hips < 4, HipUp 2;
-		say "[if transGender is 1][variable custom style]I've dreamed about the day I might get a real vagina. But I didn't expect it to happen like this...[otherwise if the bimbo of the player < 7][first custom style]No, no, no, no! This is so gross. I want my dick! I have to win this game and get back into my real body.[otherwise if the bimbo of the player < 10][first custom style]I never asked for this! Why is this happening to me? I guess my name is definitely [NameBimbo] now.[otherwise if the bimbo of the player < 14 or diaper quest is 1][second custom style][NameBimbo]... I like that name. Well this will be a new experience, but at least it should be fun.[otherwise][second custom style]This is amazing! Now I can fuck studs just like a real girly bimbo. Thanks so much Nintendolls! I can't wait to lose my virginity. *giggle*[end if][roman type][line break]";
+		say "[if the player is gendered female][variable custom style]I've dreamed about the day I might get a real vagina. But I didn't expect it to happen like this...[otherwise if the bimbo of the player < 7][first custom style]No, no, no, no! This is so gross. I want my dick! I have to win this game and get back into my real body.[otherwise if the bimbo of the player < 10][first custom style]I never asked for this! Why is this happening to me? I guess my name is definitely [NameBimbo] now.[otherwise if the bimbo of the player < 14 or diaper quest is 1][second custom style][NameBimbo]... I like that name. Well this will be a new experience, but at least it should be fun.[otherwise][second custom style]This is amazing! Now I can fuck studs just like a real girly bimbo. Thanks so much Nintendolls! I can't wait to lose my virginity. *giggle*[end if][roman type][line break]";
 		now the size of penis is 0;
 		now the real size of penis is -1;
 		now the size of scrotum is 0;

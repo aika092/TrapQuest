@@ -56,7 +56,7 @@ To compute perception of (M - a robobutler):
 	if the class of the player is maid:
 		say "[big he of M] seems to recognise you as a member of staff and leaves you alone.";
 		calm M;
-	otherwise if M is friendly:
+	otherwise if dominatrix-cage is grabbing the player or M is friendly:
 		if alcohol fetish is 1 and (alcohol > 0 or hungover > 0 or there is worn party themed wearthing):
 			serve alcohol from M;
 		otherwise if a random number between 0 and watersports fetish is 1:
@@ -127,7 +127,7 @@ Part 3 - Combat
 Section 1 - Attack
 
 To compute damaging attack of (M - a robobutler):
-	if the player is the donator and the difficulty of M > the starting difficulty of M and a random number between 1 and 3 is 1:
+	if the difficulty of M > the starting difficulty of M and a random number between 1 and 3 is 1:
 		compute stunning attack of M;
 	otherwise:
 		compute striking attack of M.

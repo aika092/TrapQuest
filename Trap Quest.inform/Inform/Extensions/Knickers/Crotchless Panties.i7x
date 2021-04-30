@@ -1,6 +1,6 @@
 Crotchless Panties by Knickers begins here.
 
-a crotchless-panties is a kind of knickers. The armour of crotchless-panties is 1. Understand "pair", "pair of", "crotchless", "panties" as crotchless-panties. a crotchless-panties is usually crotch-exposing. A crotchless-panties is usually transformation-rare. a crotchless-panties has a number called walkCharge.
+a crotchless-panties is a kind of knickers. Understand "pair", "pair of", "crotchless", "panties" as crotchless-panties. a crotchless-panties is usually crotch-exposing. A crotchless-panties is usually transformation-rare. a crotchless-panties has a number called walkCharge.
 
 Definition: a crotchless-panties is same-type:
 	if theme-share-target is knickers, decide yes;
@@ -9,6 +9,9 @@ Definition: a crotchless-panties is same-type:
 Definition: a crotchless-panties is fetish appropriate:
 	if diaper quest is 0, decide yes;
 	decide no.
+
+To decide which number is the initial armour of (C - a crotchless-panties):
+	decide on 1.
 
 To compute SelfExamineDesc of (K - a crotchless-panties):
 	say "A pair of crotchless panties does nothing to provide any modesty to your [ShortDesc of hips]. ";
@@ -101,7 +104,7 @@ Report going when the player is possessing a vagina and the player is upright an
 		passively stimulate vagina from C;
 		now the walkCharge of C is 0.
 
-cum dump's undergarment is a crotchless-panties. cum dump's undergarment is unique. The armour of cum dump's undergarment is 1. The printed name of cum dump's undergarment is usually "[clothing-title-before]unholy cum dump's undergarment[clothing-title-after]". Figure of unholy panties is the file "Items/Clothes/Lower/Underwear/Skimpy/Crotchless/crotchless6.png". Understand "unholy" as cum dump's undergarment. The text-shortcut of cum dump's undergarment is "uu".
+cum dump's undergarment is a crotchless-panties. cum dump's undergarment is unique. The printed name of cum dump's undergarment is usually "[clothing-title-before]unholy cum dump's undergarment[clothing-title-after]". Figure of unholy panties is the file "Items/Clothes/Lower/Underwear/Skimpy/Crotchless/crotchless6.png". Understand "unholy" as cum dump's undergarment. The text-shortcut of cum dump's undergarment is "uu".
 
 Definition: cum dump's undergarment is transformation-protected: decide yes.
 Definition: cum dump's undergarment is uncovered themed: decide yes.
@@ -158,11 +161,13 @@ To set up influence of (C - cum dump's undergarment):
 	now C is semen-addiction-influencing.
 
 
-meat-toilet-panties is a crotchless-panties. meat-toilet-panties is unique. The armour of meat-toilet-panties is 10. The printed name of meat-toilet-panties is "[clothing-title-before]meat toilet panties[clothing-title-after]". Understand "meat", "toilet", "panties" as meat-toilet-panties. The text-shortcut of meat-toilet-panties is "mtp".
+meat-toilet-panties is a crotchless-panties. meat-toilet-panties is unique. The printed name of meat-toilet-panties is "[clothing-title-before]meat toilet panties[clothing-title-after]". Understand "meat", "toilet", "panties" as meat-toilet-panties. The text-shortcut of meat-toilet-panties is "mtp".
 
 Definition: meat-toilet-panties is class-relevant:
 	if the class of the player is human toilet or the class of the player is cumdumpster, decide yes;
 	decide no.
+To decide which number is the initial armour of (C - meat-toilet-panties):
+	decide on 9.
 
 Figure of meat toilet panties closed is the file "Items/Clothes/Lower/Underwear/Skimpy/Crotchless/crotchless8a.png".
 Figure of meat toilet panties ripped is the file "Items/Clothes/Lower/Underwear/Skimpy/Crotchless/crotchless8b.png".

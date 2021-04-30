@@ -150,6 +150,15 @@ A theme blocking rule:
 A theme sharing rule (this is the cow matching rule):
 	if theme-target is cow themed and theme-share-target is cow themed, rule succeeds.
 The cow matching rule is listed in the interesting theme sharing rules.
+Definition: an object is bunny themed: [Is it something to do with bunnys]
+	decide no.
+A theme blocking rule:
+	if theme-target is bunny themed and the number of currently at least partially visible bunny themed wearthings > 1:
+		add "bunny themed" to interesting-themes-shared-list;
+		if the upgrade-target of theme-target is not bunny themed, increase interesting-themes-shared by 1.
+A theme sharing rule (this is the bunny matching rule):
+	if theme-target is bunny themed and theme-share-target is bunny themed, rule succeeds.
+The bunny matching rule is listed in the interesting theme sharing rules.
 Definition: an object is cat themed: [Is it something to do with cats]
 	decide no.
 A theme blocking rule:
@@ -854,7 +863,7 @@ To decide which number is whore theme bonus:
 A theme effect description rule:
 	if theme-target is whore themed:
 		let WTB be whore theme bonus;
-		if WTB > 0, say "As a reward for having [if WTB is 1]two[otherwise]several[end if] whoring themed items, you can feel that you are likely to get given [if WTB > 1]significantly [end if]more expensive jewellery when people pay you for sex! ".
+		if WTB > 0, say "As a reward for having [if WTB is 1]two[otherwise]several[end if] whoring themed items on display, you can feel that you are likely to get given [if WTB > 1]significantly [end if]more expensive jewellery when people pay you for sex! ".
 
 Section - Magic Themed
 
@@ -905,7 +914,7 @@ A theme effect description rule:
 A strength theme rule:
 	increase tempThemeBonus by white theme bonus.
 
-Section - White Themed
+Section - Black Themed
 
 Definition: an object is black themed: decide no.
 A theme blocking rule:
@@ -926,5 +935,47 @@ A theme effect description rule:
 		if BTB > 0, say "As a reward for wearing several black items, you feel [if BTB > 1]much [end if]more agile! ".
 A dexterity theme rule:
 	increase tempThemeBonus by black theme bonus.
+
+Section - Playing Card Themed
+
+Definition: an object is playing card themed: decide no.
+A theme blocking rule:
+	if theme-target is playing card themed and the number of currently at least partially visible playing card themed clothing > 1: [clothing not wearthing because there are loads of spade tattoos]
+		add "playing card" to interesting-themes-shared-list;
+		if the upgrade-target of theme-target is not playing card themed, increase interesting-themes-shared by 1.
+A theme sharing rule (this is the playing card matching rule):
+	if theme-target is playing card themed and theme-share-target is playing card themed, rule succeeds.
+The playing card matching rule is listed in the interesting theme sharing rules.
+[Player gets higher luck for each playing card themed thing worn after the first.]
+To decide which number is playing card theme bonus:
+	let N be the number of worn playing card themed wearthings;
+	if N > 1, decide on N - 1;
+	decide on 0.
+A theme effect description rule:
+	if theme-target is playing card themed and theme-target is worn:
+		let PCTB be playing card theme bonus;
+		if PCTB > 0, say "As a reward for wearing multiple playing card themed items, you feel [if PCTB > 2]much [end if]more lucky! ".
+
+Section - Fire Themed
+
+Definition: an object is fire themed:
+	if it is candle themed, decide yes;
+	decide no.
+A theme blocking rule:
+	if theme-target is fire themed and the number of currently at least partially visible fire themed wearthing > 1:
+		add "fire" to colour-themes-shared-list;
+		if the upgrade-target of theme-target is not fire themed, increase colour-themes-shared by 1.
+A theme sharing rule (this is the fire matching rule):
+	if theme-target is fire themed and theme-share-target is fire themed, rule succeeds.
+The fire matching rule is listed in the colour sharing rules.
+[Player gets higher luck for each fire themed thing worn after the first.]
+To decide which number is fire theme bonus:
+	let N be the number of currently at least partially visible fire themed wearthings;
+	if N > 1, decide on N - 1;
+	decide on 0.
+A theme effect description rule:
+	if theme-target is fire themed and theme-target is worn:
+		let FTB be fire theme bonus;
+		if FTB > 0, say "As a reward for wearing multiple fire themed items, you feel that any (uncursed) bombs you use will be [if FTB > 1]much, [end if]much more powerful! ".
 
 Themes ends here.

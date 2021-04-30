@@ -452,7 +452,7 @@ To SemenTasteAddictUp (X - a number):
 	if S > 0, say "You feel [if S > 1]significantly [end if]more [if the calculated semen taste addiction of the player > 13]addicted to[otherwise if the calculated semen taste addiction of the player > 6]accustomed to[otherwise]tolerant of[end if] the taste of [semen].".
 
 To SilentlySemenTasteAddictUp (X - a number):
-	if the latex-transformation of the player > 4 or diaper quest is 1, now X is 0;
+	if the latex-transformation of the player > 4 or diaper quest is 1 or skirted-maid-corset is worn, now X is 0;
 	while X > 0:
 		decrease X by 1;
 		if the raw semen taste addiction of the player < 20 and (watersports fetish is 1 or a random number between -1 and yellow theme bonus < 1): [When watersports is disabled, yellow items help suppress semen taste addiction gains]
@@ -593,8 +593,7 @@ Does the player love them some black cock?
 
 +!]
 Definition: yourself is queen of spades:
-	if interracial fetish is 0, decide no;
-	if the number of worn interracial themed wearthings > 1, decide yes;
+	if interracial fetish is 1 and the number of worn interracial themed wearthings > 1, decide yes;
 	decide no.
 
 Part 2 - Modify BBC Addiction
@@ -694,8 +693,7 @@ To UrineTasteAddictUp (X - a number):
 		if U > 0, say "You feel [if U > 1]significantly [end if]more [if the urine taste addiction of the player > 13]addicted to[otherwise if the urine taste addiction of the player > 6]accustomed to[otherwise]tolerant of[end if] the taste of [urine].".
 
 To SilentlyUrineTasteAddictUp (X - a number):
-	if watersports fetish is 0 or the latex-transformation of the player > 4:
-		now X is 0;
+	if watersports fetish is 0 or the latex-transformation of the player > 4 or skirted-maid-corset is worn, now X is 0;
 	while X > 0:
 		decrease X by 1;
 		if the raw urine taste addiction of the player < 20, increase the raw urine taste addiction of the player by 1.
@@ -765,8 +763,7 @@ To MilkTasteAddictUp (X - a number):
 		SilentlyMilkTasteAddictUp X.
 
 To SilentlyMilkTasteAddictUp (X - a number):
-	if the latex-transformation of the player > 4:
-		now X is 0;
+	if the latex-transformation of the player > 4 or (lactation fetish is 0 and diaper lover is 0) or skirted-maid-corset is worn, now X is 0;
 	while X > 0:
 		decrease X by 1;
 		if the raw milk taste addiction of the player < 20:

@@ -2,9 +2,6 @@ Rubber Dress by Dresses begins here.
 
 A rubber dress is a kind of overdress. A rubber dress is usually latex. A rubber dress is usually erect-nipple-exposing. [Latex dresses that aren't otherwise particularly special]
 
-To set up influence of (C - a rubber dress):
-	set up random-based influence of C.
-
 This is the remove inappropriate rubber dresses rule:
 	repeat with B running through rubber dress:
 		unless B is white rubber giant bow dress, now B is in Holding Pen.

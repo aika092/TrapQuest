@@ -1,12 +1,14 @@
 Diaper Framework by Knickers begins here.
 
-diaper is a kind of knickers. The armour of diaper is 11. a diaper is usually manly. a knickers has a number called mess. a knickers has a number called foreign-mess. The text-shortcut of diaper is "dp".
+diaper is a kind of knickers. a diaper is usually manly. a knickers has a number called mess. a knickers has a number called foreign-mess. The text-shortcut of diaper is "dp".
 
 To decide which number is the soak-limit of (C - a diaper):
 	decide on the default-soak-limit of C.
 To decide which number is the default-soak-limit of (C - a diaper):
 	decide on (the DQBulk of C + 2) * 4.
 Definition: a diaper is external fluid immune: decide yes.
+To decide which number is the initial armour of (C - a diaper):
+	decide on the soak-limit of C / 3.
 
 The printed name of a diaper is "[clothing-title-before][selfexamineuniquetitle of item described][clothing-title-after]".
 
@@ -679,7 +681,11 @@ To Drench (C - diaper-stack):
 	repeat with D running through the list of stacked diapers:
 		Drench D;
 	update diaper stack;
-	if C is worn, update appearance level.
+	if tough-shit is 0 and C is held:
+		if C is glued:
+			now C is not glued;
+			say "[BigNameDesc of C] is no longer covered in glue!";
+		if C is worn, update appearance level.
 
 To update diaper stack:
 	if diaper-stack is worn:

@@ -1,7 +1,7 @@
 Vines by Traps begins here.
 
-Figure of Vines Cutscene 2 is the file "Special/Cutscene/cutscene-vines2.png".
-Figure of Vines Cutscene 4 is the file "Special/Cutscene/cutscene-vines4.png".
+Figure of Vines Cutscene 2 is the file "Special/Cutscene/cutscene-vines2.jpg".
+Figure of Vines Cutscene 4 is the file "Special/Cutscene/cutscene-vines4.jpg".
 Figure of Vines Cutscene 6 is the file "Special/Cutscene/cutscene-vines6.jpg".
 
 This is the spawn initial woods vines rule:

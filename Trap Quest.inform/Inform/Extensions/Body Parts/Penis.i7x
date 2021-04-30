@@ -4,7 +4,7 @@ Part 1 - Definitions
 
 penis is a body part. penis is everywhere. The text-shortcut of penis is "penis".
 To say FullExamineDesc of (B - penis):
-	say "[if the player is male][ImageDesc of penis][TotalDesc of penis][PenisModesty][otherwise]You don't have a penis.[end if]".
+	say "[if the player is possessing a penis][ImageDesc of penis][TotalDesc of penis][PenisModesty][otherwise]You don't have a penis.[end if]".
 
 Understand "prick", "willy", "pecker", "clitty", "noodle", "dickie", "winky", "weeny", "cock", "dick", "bellend", "dong", "johnson", "wang", "weiner" as penis.
 
@@ -252,7 +252,7 @@ Definition: penis is erect-at-will:
 	if the player is very horny, increase A by 1;
 	increase A by the size of penis;[if you're bigger, it's easier to get erect]
 	let D be 0;
-	[###Selkie: Deleted by someone else? if the wanktime of the player > 100, decrease D by the wanktime of the player / 5;[if you came recently, it's harder to get an erection]]
+	[###Selkie: Deleted by someone else? if the wanktime of the player > 100, decrease D by the wanktime of the player / 5;[if you came recently, it's harder to get an erection] ###MG: I don't remember if it was me or Aika, but this was commented out around the time of the most recent chastity cage rework.]
 	decrease D by the penis-obedience of penis;[if you haven't been told to get an erection, it may be harder]
 	decrease D by the anal sex addiction of the player / 2;[your addiction to anal sex also interferes with your erections]
 	let R be a random number between A and D;
@@ -447,16 +447,16 @@ To say PenisSizeFlav (N - a number):
 	if N > 11, say "ridiculously huge 20 inch".
 
 To say PenisShaftFlav (N - a number):
-	if N is 1, say "clitoris-like pee pee";
-	if N is 2, say "micropenis";
+	if N is 1, say "clitoris-like pee pee";[less than 1]
+	if N is 2, say "micropenis";[1 inch]
 	if N is 3, say "pecker";
 	if N is 4, say "willy";
 	if N is 5, say "dick";
 	if N is 6, say "prick";
 	if N is 7, say "cock";
 	if N is 8, say "dong";
-	if N is 9, say "tool";[10]
-	if N > 9, say "monster".[12, 15, 20. 12 is natural max]
+	if N is 9, say "tool";[10 inch]
+	if N > 9, say "monster".[12 15, and 20 inches. 12 is natural max]
 
 To say SexShaft:
 	let S be a random worn strapon-panties;
@@ -472,12 +472,12 @@ To say TotalDesc of penis:
 		otherwise if there is pussy covering clothing:
 			say "You have a[if penis is penis-erect]n erect[end if] [ShortDesc of penis] and [ShortBallsDesc]. ";
 		otherwise:
-			if penis is penis-erect, say "Your [one of]erect[or]hard[or]stiff[at random] [ShortDesc of penis] stands at attention, and your [ShortBallsDesc] [if the size of penis > 5]sway freely[otherwise if the size of penis > 3]hang freely[otherwise]are barely noticeable[end if]. ";
-			otherwise say "Your soft [ShortDesc of penis] and [ShortBallsDesc] [if the size of penis > 5]sway freely. [otherwise if the size of penis > 3]hang freely. [otherwise]are barely noticeable. [end if]";
+			if penis is penis-erect, say "Your [one of]erect[or]hard[or]stiff[at random] [ShortDesc of penis] stands at attention, and your [ShortBallsDesc] [if the size of scrotum > 5]sway freely[otherwise if the size of scrotum > 3]hang freely[otherwise]are barely noticeable[end if]. ";
+			otherwise say "Your soft [ShortDesc of penis] and [ShortBallsDesc] [if the size of scrotum > 5]sway freely. [otherwise if the size of scrotum > 3]hang freely. [otherwise]are barely noticeable. [end if]";
 	otherwise if the player is sexed male:
 		say "A doll-like flat mound exists where your penis used to be[if watersports mechanics is 1]. There's just a tiny hole to allow you to pee[end if].".
 
-To say ShortBallsDesc:
+[To say ShortBallsDesc:
 	if the size of penis < 3:
 		say "internal testicles";
 	otherwise if the size of penis < 5:
@@ -485,7 +485,7 @@ To say ShortBallsDesc:
 	otherwise if the size of penis < 7:
 		say "average scrotum";
 	otherwise:
-		say "heavy, full balls".
+		say "heavy, full balls".]
 
 To say PenisModesty:
 	if penis is at least partially exposed:
@@ -503,6 +503,18 @@ Part 3 - Modify Penis Stats
 previous penis length is a number that varies.
 
 To PenisUp (X - a number):
+	OnlyPenisUp X;
+	if the player is not possessing a vagina or (the player is possessing a vagina and futanari fetish is 1):
+		let N be the remainder after dividing X by 2;
+		if N is 1:
+			if X is 1, now X is 1;
+			otherwise now X is (X - 1) / 2;[PenisUp 1 causes scrotum and penis to grow at the same rate, but higher values of X cause penis to grow faster.]
+		if previous penis length is 10:
+			ScrotumUp X;[only announce if no penis growth happened.]
+		otherwise:
+			SilentlyScrotumUp X.
+
+To OnlyPenisUp (X - a number):
 	now previous penis length is the size of penis;
 	if the player is not possessing a penis and (diaper quest is 0 and (choice in row 68 of the Table of Player Options is 0 or the player is not a june 2020 top donator)) or (diaper quest is 1 and the player is not a june 2020 diaper donator), now X is 0;
 	if cumlust tattoo is worn:
@@ -518,7 +530,7 @@ To PenisUp (X - a number):
 			say "Your monster of a [manly-penis] can't seem to grow any larger! You feel like a stud!";
 			dignify 50;
 		otherwise:
-			if the player is possessing a penis, say "You feel your penis grow into a ";
+			if the player is possessing a penis, say "You feel your penis grow into ";
 			otherwise say "Suddenly, you feel something growing just above your [vagina]. It's ";
 			while X > 0:
 				decrease X by 1;
@@ -538,8 +550,12 @@ To SilentlyPenisDown (X - a number):
 	PenisDown X;
 	now penis-flav is true.
 
-[X is not how much the penis shrinks, but how many times it does so]
 To PenisDown (X - a number):
+	OnlyPenisDown X;
+	ScrotumDown X.
+
+[X is not how much the penis shrinks, but how many times it does so]
+To OnlyPenisDown (X - a number):
 	now previous penis length is the size of penis;
 	let flav-said be 0;
 	if X > 0:

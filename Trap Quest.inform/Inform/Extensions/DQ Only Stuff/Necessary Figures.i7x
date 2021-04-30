@@ -6,12 +6,30 @@ To decide which figure-name is the monster-image of (M - an acolyte):
 
 Figure of bianca defeated is the file "NPCs/School/Teacher/teacher3c.png".
 
-Figure of demoness cutscene 15 is the file "Special/Cutscene/cutscene-demoness-dq-facesit1.png".
+Figure of demoness cutscene 15 is the file "Special/Cutscene/cutscene-demoness-dq-facesit1.jpg".
 Figure of detention chair is the file "Env/School/detentionchair2.jpg".
 
 Figure of dominatrix 1 is the file "NPCs/Hotel/Dominatrix/diapernatrix1.jpg".
 To decide which figure-name is the monster-image of (M - dominatrix):
 	decide on figure of dominatrix 1.
+Figure of dominatrix cage wrestler 1 is the file "Env/Hotel/cage3.jpg".
+Figure of dominatrix cage wrestler 2 is the file "Env/Hotel/cage4.jpg".
+Figure of dominatrix cage berri 1 is the file "Env/Hotel/cage5.jpg".
+Figure of dominatrix cage berri 2 is the file "Env/Hotel/cage6.jpg".
+Figure of dominatrix cage berri 3 is the file "Env/Hotel/cage7.jpg".
+Figure of dominatrix cage berri 4 is the file "Env/Hotel/cage8.jpg".
+To decide which figure-name is the examine-image of (C - dominatrix-cage):
+	let M be a random caged wrestler in the location of dominatrix-cage;
+	if M is monster:
+		if M is messy, decide on figure of dominatrix cage wrestler 2;
+		decide on figure of dominatrix cage wrestler 1;
+	if woman-player is caged and woman-player is in the location of dominatrix-cage:
+		if the mess of dominatrix-cage > 1:
+			if diaper messing >= 3, decide on figure of dominatrix cage berri 4;
+			decide on figure of dominatrix cage berri 3;
+		if woman-player is messy, decide on figure of dominatrix cage berri 2;
+		decide on figure of dominatrix cage berri 1;
+	decide on figure of dominatrix cage empty.
 
 Figure of elder altar is the file "Env/Mansion/altar1.jpg".
 
@@ -33,6 +51,8 @@ To decide which figure-name is the monster-image of (M - a ghost):
 	decide on figure of ghost 6.
 To decide which figure-name is the monster-image of (M - jismbodied ghost):
 	decide on figure of ghost 7.
+
+Figure of hotel toilet room 2 is the file "Map/Hotel/HotelBath3.png".
 
 Figure of IronMaidenBackground is the file "Map/maiden2.png".
 
@@ -67,15 +87,15 @@ To decide which figure-name is the examine-image of (T - pink smoke):
 	decide on figure of pink smoke 1.
 
 Figure of babhound is the file "NPCs/Mansion/Hound/hound3.png".
-Figure of Puppy Cutscene 1 is the file "Special/Cutscene/cutscene-puppy1.png".
-Figure of Puppy Cutscene 2 is the file "Special/Cutscene/cutscene-puppy2.png".
-Figure of Puppy Cutscene 3 is the file "Special/Cutscene/cutscene-puppy3.png".
-Figure of Puppy Cutscene 4 is the file "Special/Cutscene/cutscene-puppy4.png".
-Figure of Puppy Cutscene 5 is the file "Special/Cutscene/cutscene-puppy5.png".
-Figure of Puppy Cutscene 6 is the file "Special/Cutscene/cutscene-puppy6.png".
+Figure of Puppy Cutscene 1 is the file "Special/Cutscene/cutscene-puppy1.jpg".
+Figure of Puppy Cutscene 2 is the file "Special/Cutscene/cutscene-puppy2.jpg".
+Figure of Puppy Cutscene 3 is the file "Special/Cutscene/cutscene-puppy3.jpg".
+Figure of Puppy Cutscene 4 is the file "Special/Cutscene/cutscene-puppy4.jpg".
+Figure of Puppy Cutscene 5 is the file "Special/Cutscene/cutscene-puppy5.jpg".
+Figure of Puppy Cutscene 6 is the file "Special/Cutscene/cutscene-puppy6.jpg".
 
-Figure of Podium Cutscene 1 is the file "Special/Cutscene/cutscene-podium1.png".
-Figure of Podium Cutscene 2 is the file "Special/Cutscene/cutscene-podium2.png".
+Figure of Podium Cutscene 1 is the file "Special/Cutscene/cutscene-podium1.jpg".
+Figure of Podium Cutscene 2 is the file "Special/Cutscene/cutscene-podium2.jpg".
 
 Figure of quiz predicament is the file "Special/Cutscene/cutscene-quiz2.jpg".
 
@@ -125,8 +145,8 @@ To decide which figure-name is the examine-image of (T - urinal):
 Figure of Vibe Pose Predicament 1 is the file "Special/Cutscene/cutscene-vibe-pose3.jpg".
 Figure of Vibe Pose Predicament 2 is the file "Special/Cutscene/cutscene-vibe-pose4.jpg".
 
-Figure of Vines Cutscene 3a is the file "Special/Cutscene/cutscene-vines3a.png".
-Figure of Vines Cutscene 3b is the file "Special/Cutscene/cutscene-vines3b.png".
+Figure of Vines Cutscene 3a is the file "Special/Cutscene/cutscene-vines3a.jpg".
+Figure of Vines Cutscene 3b is the file "Special/Cutscene/cutscene-vines3b.jpg".
 
 Figure of cutscene-xavier-nightmare-diaper-clean is the file "Special/Cutscene/cutscene-xavier-nightmare-diaper1.jpg".
 Figure of cutscene-xavier-nightmare-diaper-messy is the file "Special/Cutscene/cutscene-xavier-nightmare-diaper2.jpg".

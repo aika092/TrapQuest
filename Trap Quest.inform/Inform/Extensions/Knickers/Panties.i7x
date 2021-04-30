@@ -16,10 +16,6 @@ To say TypeTitle of (C - a panties):
 To say selfexaminetitle of (T - a panties):
 	say "[one of]modest[or]comfy[at random] [selfexamineuniquetitle of T]".
 
-To uniquely set up (T - a panties):
-	now the damage of T is 0;
-	now the armour of T is a random number between 10 and 13.
-
 To decide which figure-name is clothing-image of (C - a panties):
 	decide on figure of panties 1.
 
@@ -90,9 +86,6 @@ Definition: white-breed-panties is fetish appropriate:
 Definition: white-breed-panties is pregnancy themed: decide yes.
 Definition: white-breed-panties is white themed: decide yes.
 To uniquely set up (T - white-breed-panties):
-	now the damage of T is 0;
-	now the armour of T is a random number between 10 and 13;
-	set up magic state of T;
 	if pregnancy fetish is 0, now T is unique. [This stops it spawning if it the correct fetish is not enabled.]
 Report wearing white-breed-panties:
 	compute early pregnancy eagerness.
@@ -173,9 +166,6 @@ Definition: black-diagram-panties is pregnancy themed: decide yes.
 Definition: black-diagram-panties is vagina themed: decide yes.
 Definition: black-diagram-panties is black themed: decide yes.
 To uniquely set up (T - black-diagram-panties):
-	now the damage of T is 0;
-	now the armour of T is a random number between 10 and 13;
-	set up magic state of T;
 	if pregnancy fetish is 0, now T is unique. [This stops it spawning if it the correct fetish is not enabled.]
 Report wearing black-diagram-panties:
 	compute early pregnancy eagerness.

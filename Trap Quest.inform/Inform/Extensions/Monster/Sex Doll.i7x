@@ -10,8 +10,8 @@ Definition: a sex doll is dungeon dwelling: decide yes.
 Figure of Male Sex Doll is the file "NPCs/Dungeon/SexDoll/sexdoll1.png".
 Figure of Female Sex Doll is the file "NPCs/Dungeon/SexDoll/sexdoll2.png".
 
-Figure of Sexdoll Cutscene 1 is the file "Special/Cutscene/cutscene-sexdoll-climax1.png".
-Figure of Sexdoll Cutscene 2 is the file "Special/Cutscene/cutscene-sexdoll-climax2.png".
+Figure of Sexdoll Cutscene 1 is the file "Special/Cutscene/cutscene-sexdoll-climax1.jpg".
+Figure of Sexdoll Cutscene 2 is the file "Special/Cutscene/cutscene-sexdoll-climax2.jpg".
 Figure of Sexdoll Cutscene 3 is the file "Special/Cutscene/cutscene-sexdoll-explode1.png".
 The text-shortcut of sex doll is "sd".
 

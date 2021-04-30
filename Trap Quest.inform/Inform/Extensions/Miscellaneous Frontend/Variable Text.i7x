@@ -162,8 +162,11 @@ To say fuckholes:
 	say "[if the player is possessing a vagina][vagina] and [end if][asshole]".
 
 To say load:
-	let A be the semen load of the player;
-	say "[if A < 3][one of]tiny[or]watery[or]small[purely at random] load[otherwise if A < 6][one of]hot[or]warm[or]average[at random] load[otherwise if A < 9][one of]thick[or]creamy[or]big[or]fat[purely at random] load[otherwise if A < 11][one of]huge[or]massive[or]ultra thick[purely at random] load[otherwise][one of]inhuman[or]insane[or]ridiculous[purely at random] load[end if]";
+	say load of the player.
+
+To say load of (M - a thing):
+	let A be the semen load of M;
+	say "[if A < 3][one of]tiny[or]watery[or]small[purely at random] load[otherwise if A < 6][one of]hot[or]warm[or]average[at random] load[otherwise if A < 9][one of]thick[or]creamy[or]big[or]fat[purely at random] load[otherwise if A < 11][one of]huge[or]massive[or]ultra thick[purely at random] load[otherwise][one of]inhuman[or]insane[or]ridiculous[purely at random] load[end if]".
 
 To say variable (P - a body part):
 	if P is asshole:
@@ -506,6 +509,22 @@ To say baby title of (M - a monster):
 		say "[one of]our little princess[or]princess pottypants[or]her royal padded highness[or]princess of the pampers[or]the royal waddler[or]her royal heinie[at random]";
 	otherwise:
 		say "[one of]my little trooper[or]our little bedwetter[or]little miss waddlebum[or]chubby-cheeks[or]little miss [if diaper messing >= 3]stinker[otherwise]pee-pee-pants[end if][or]Baby [NameBimbo][or][at random]".
+
+To say brotha of (M - a person):
+	if interracial fetish is 1:
+		if M is presenting as male, say "brotha";
+		otherwise say "sista";
+	otherwise:
+		if M is presenting as male, say "dude";
+		otherwise say "bitch".
+
+To say big brotha of (M - a person):
+	if interracial fetish is 1:
+		if M is presenting as male, say "Brotha";
+		otherwise say "Sista";
+	otherwise:
+		if M is presenting as male, say "Dude";
+		otherwise say "Bitch".
 
 To say slut school:
 	say "[if diaper quest is 1]Attitude[otherwise]Slut[end if] Academy".

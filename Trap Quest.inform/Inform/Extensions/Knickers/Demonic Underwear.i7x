@@ -1,6 +1,6 @@
 Demonic Underwear by Knickers begins here.
 
-tongue-panties is a knickers. tongue-panties is unique. tongue-panties is biological. The printed name of tongue-panties is "[clothing-title-before]tongue panties[clothing-title-after]". The text-shortcut of tongue-panties is "tgps". Understand "tongue", "panties" as tongue-panties. The armour of tongue-panties is 10.
+tongue-panties is a knickers. tongue-panties is unique. tongue-panties is biological. The printed name of tongue-panties is "[clothing-title-before]tongue panties[clothing-title-after]". The text-shortcut of tongue-panties is "tgps". Understand "tongue", "panties" as tongue-panties.
 
 Figure of white tongue panties is the file "Items/Clothes/Lower/Underwear/Special/tonguepanties1a.png".
 Figure of tonguing white tongue panties is the file "Items/Clothes/Lower/Underwear/Special/tonguepanties1b.png".
@@ -47,7 +47,7 @@ To compute periodic effect of (C - tongue-panties):
 		displace C.
 
 [The codpiece can be obtained in a couple ways. Sometimes crafting, sometimes as a reward from monsters.]
-Demon codpiece is a strapon-panties. Demon codpiece is unique. The armour of demon codpiece is 10. The printed name of demon codpiece is "[clothing-title-before]demon lord's codpiece[clothing-title-after]". The text-shortcut of demon codpiece is "dlj". demon codpiece is crotch-assless.[ demon codpiece is leather. demon codpiece is totally-exclusive.] Understand "lord", "lords", "lord's", "cod", "piece" as demon codpiece. demon codpiece has a number called charge. The charge of demon codpiece is 1.
+Demon codpiece is a strapon-panties. Demon codpiece is unique. The printed name of demon codpiece is "[clothing-title-before]demon lord's codpiece[clothing-title-after]". The text-shortcut of demon codpiece is "dlj". demon codpiece is crotch-assless.[ demon codpiece is leather. demon codpiece is totally-exclusive.] Understand "lord", "lords", "lord's", "cod", "piece" as demon codpiece. demon codpiece has a number called charge. The charge of demon codpiece is 1.
 
 Figure of demon codpiece is the file "Items/Clothes/Lower/Underwear/Special/codpiece1.png".
 
@@ -72,7 +72,7 @@ To say CodLoosenFlav of (K - demon codpiece):
 	say "The [printed name of demon codpiece] loosens, and the [PenisFlavour of demon codpiece] transforms back into a gemstone.[line break]";
 
 Definition: A demon codpiece (called P) is dildo-usage:
-	if the player is female and futanari fetish is 0, decide yes;
+	if the player is not possessing a penis and futanari fetish is 0, decide yes;
 	decide no.
 
 To say PenisFlavour of (K - demon codpiece):

@@ -68,12 +68,6 @@ Carry out mopping face:
 		humiliate (SEVERE-HUMILIATION * 2) - (MODERATE-HUMILIATION * (the thirst of the player + 2));[This is probably one of the least dignified things you could do, but it's less humiliating the thirstier you are]
 	suggest swallowing.
 
-To decide which number is total puddle:
-	let X be 0;
-	increase X by the urine-puddle of the location of the player;
-	increase X by the milk-puddle of the location of the player;
-	increase X by the semen-puddle of the location of the player;
-	decide on X.
 
 Carry out mopping pink-spraybottle:[TODO: breasts largeness 10+ will touch the ground and become soaked.]
 	allocate 6 seconds;

@@ -18,9 +18,15 @@ Understand "puddle", "pool", "liquid", "mess", "juice" as a room[ when the semen
 
 Book 1 Puddles
 
+
+To decide which number is total puddle:
+	decide on the total puddle of the location of the player.
+
+To decide which number is the total puddle of (R - a room):
+	decide on the urine-puddle of R + the milk-puddle of R + the semen-puddle of R.
+
 To decide which number is the slipperiness of (R - a room):
-	Let X be semen-puddle of R + urine-puddle of R + milk-puddle of R + sprinkle-puddle of R;
-	[if R is in the mansion, ]increase X by the slime-puddle of R;
+	Let X be the total puddle of R + sprinkle-puddle of R + the slime-puddle of R;
 	now X is X / 5;
 	if R is raining, increase X by 2;
 	if X > 8, decide on 8;

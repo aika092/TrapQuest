@@ -12,12 +12,7 @@ Check paying:
 	truncate jewellery to 8 entries;
 	let chosen jewellery be jewellery priced at X;
 	if the number of entries in chosen jewellery is 0, say "You don't have enough valuable gems to pay for that!" instead;
-	if shopkeeper is not in Dungeon41, say "You need a shopkeeper here to pay for something." instead;
-	if shopkeeper is mating:
-		repeat with C running through held store things:
-			now C is unowned;
-		allocate 2 seconds;
-		say "[speech style of shopkeeper]'What's mine is yours!'[roman type][line break]" instead.
+	if shopkeeper is not in Dungeon41, say "You need a shopkeeper here to pay for something." instead.
 
 Carry out paying:
 	let Z be a random off-stage clothing;
@@ -48,7 +43,7 @@ Carry out paying:
 		force inventory-focus redraw. [Forces redraw of inventory window]
 Understand "pay", "buy", "sell", "exchange", "purchase", "transact", "pay shopkeeper" as paying.
 
-Report taking store thing while the player is in Dungeon41 and Dungeon41 is guarded and shopkeeper is not mating and shopkeeper is interested and shopkeeper is friendly:
+Report taking store thing while the player is in Dungeon41 and Dungeon41 is guarded and shopkeeper is interested and shopkeeper is friendly:
 	let P be the price of the noun;
 	if the total wealth of the player < P:
 		if debuginfo > 1, say "[input-style]Total wealth: [Total wealth of the player]; Item cost: [P][roman type][line break]";

@@ -178,7 +178,7 @@ To compute monstermotion of (M - demon lord):
 		if N is monster:
 			now N is in the location of M;
 			distract N;
-			if M is in the location of the player, say " [BigNameDesc of M] points at the pile and blasts it with lightning.[line break][speech style of M]'[one of]ARISE, SERVANT!'[or]RISE AND CONTINUE SERVING ME!'[or]STOP PRETENDING TO BE BROKEN. ITS EMBARASSING FOR ALL OF US.'[or]GET BACK TO WORK.'[in random order][roman type][line break]The broken parts, as if spurred on by [his of M] command, float off the ground and reassemble themselves with blistering speed. Within moments, a brand new [ShortDesc of N] is sitting in front of [him of M].";
+			if M is in the location of the player, say " [BigNameDesc of M] points at the pile and blasts it with lightning.[line break][speech style of M]'[one of]ARISE, SERVANT!'[or]RISE AND CONTINUE SERVING ME!'[or]STOP PRETENDING TO BE BROKEN. IT'S EMBARRASSING FOR ALL OF US.'[or]GET BACK TO WORK.'[in random order][roman type][line break]The broken parts, as if spurred on by [his of M] command, float off the ground and reassemble themselves with blistering speed. Within moments, a brand new [ShortDesc of N] is sitting in front of [him of M].";
 			otherwise say "You hear a thunderclap, followed by the sound of gears turning somewhere else in the hotel.";
 		destroy O;
 	otherwise:
@@ -240,7 +240,7 @@ Section 1 - Attack
 The latex punishment rule of demon lord is usually the no latex punishment rule.
 
 To compute (M - demon lord) receiving (N - a number) damage from (X - a monster):
-	say "[AllyDamageFlav of X on M]";
+	say AllyDamageFlav of X on M;
 	say "[one of][BigNameDesc of M] seems immune to the attack![line break][first custom style]'You fool, your allies cannot harm me!'[roman type][line break][roman type][or][BigNameDesc of M] still seems to be immune to the [X]![stopping]".
 
 To decide which number is the condom resistance of (M - demon lord):

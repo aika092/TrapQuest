@@ -77,28 +77,69 @@ To say ShortDesc of (C - anchor collar):
 Definition: anchor collar is yellow themed: decide yes.
 Definition: anchor collar is swimming themed: decide yes.
 
-catbell is a neckwear. catbell is unique. catbell is leather.
+An animalbell is a kind of neckwear. An animalbell is unique. An animalbell is leather. An animalbell can be clanking.
+
+Understand "bell" as an animalbell.
+
+Definition: an animalbell is bell themed: decide yes.
+
+To decide which number is the stealth-influence of (C - an animalbell):
+	if C is clanking, decide on -12;
+	decide on 0.
+
+To set up influence of (C - an animalbell):
+	set up taste-based influence of C.
+
+To compute clank:
+	repeat with C running through worn cow themed animalbells:
+		say "[one of][or]Your [C] clanks loudly.[or]You are unable to prevent your [C] from making a huge racket![or][bold type]The loud clanking of your [ShortDesc of C] is likely to attract others to your location![roman type][line break][or]You softly curse at the noise your cowbell is making.[or]You wish you could stop your [C]'s ringing.[as decreasingly likely outcomes]";
+		now C is clanking.
+
+cowbelled is a humiliating situation.
+Definition: cowbelled (called A) is applicable:
+	if the player is not disgraced and there is a clanking animalbell, decide yes;
+	decide no.
+To reflect on (A - cowbelled):
+	say "[first custom style][one of]I can't believe I have a bell around my neck like an actual cow, heralding my arrival and guiding people to my location...[or]I've got to get rid of this bell, it's making it impossible to get around places without everyone following me![or]My cowbell is still clanking away... how embarrassing![stopping][roman type][line break]".
+
+Carry out going when a cow themed animalbell is worn:
+	if the player is upright or a random number between 1 and 5 is 1, compute clank.
+
+Report resisting when a cow themed animalbell is worn:
+	compute clank.
+
+Report submitting when a cow themed animalbell is worn:
+	if a random number between 1 and 3 is 1, compute clank.
+
+Report begging when a cow themed animalbell is worn:
+	if a random number between 1 and 3 is 1, compute clank.
+
+Report jumping when a cow themed animalbell is worn:
+	compute clank.
+
+An all later time based rule (this is the cowbell stops clanking rule):
+	repeat with A running through clanking animalbells:
+		now A is not clanking.
+
+catbell is an animalbell.
 
 Definition: catbell is class-relevant:
 	if the class of the player is catgirl, decide yes;
 	decide no.
 
-Understand "bell", "cat", "collar" as catbell.
+Understand "cat", "collar" as catbell.
 
 The printed name of catbell is "[clothing-title-before]cat collar[clothing-title-after]". The text-shortcut of catbell is "ca".
 
 To decide which number is the initial outrage of (C - catbell):
-	decide on 6.
+	decide on 4.
 To decide which number is the initial cringe of (C - catbell):
-	decide on 10.
+	decide on 6.
 To decide which number is the stealth-influence of (C - catbell):
 	decide on -8.
 
 To compute class set up of (C - catbell):
 	now C is speed.
-
-To set up influence of (C - catbell):
-	set up taste-based influence of C.
 
 Figure of catbell is the file "Items/Accessories/Neck/catbell1.png".
 
@@ -113,11 +154,8 @@ To say ShortDesc of (C - catbell):
 Definition: catbell is cat themed: decide yes.
 Definition: catbell is bow themed: decide yes.
 Definition: catbell is black themed: decide yes.
-Definition: catbell is bell themed: decide yes.
 
-cowbell is a neckwear. cowbell is unique. cowbell can be clanking.
-
-Understand "bell" as cowbell.
+cowbell is an animalbell.
 
 The printed name of cowbell is "[clothing-title-before]cowbell[clothing-title-after]". The text-shortcut of cowbell is "cob".
 
@@ -126,15 +164,10 @@ Definition: cowbell is class-relevant:
 	decide no.
 
 To decide which number is the initial outrage of (C - cowbell):
-	decide on 6.
-To decide which number is the stealth-influence of (C - cowbell):
-	decide on -12.
+	decide on 5.
 
 To say ClassSummonFlav of (C - cowbell):
 	say "You feel a coldness on your chest. You look down to see that [if cowbell is held]the cowbell has reappeared[otherwise]a cowbell has appeared[end if]!".
-
-To set up influence of (C - cowbell):
-	set up taste-based influence of C.
 
 Figure of cowbell is the file "Items/Accessories/Neck/cowbell1.png".
 
@@ -146,40 +179,40 @@ To say ClothingDesc of (C - cowbell):
 To say ShortDesc of (C - cowbell):
 	say "cowbell".
 
-Definition: a cowbell is cow themed: decide yes.
-Definition: a cowbell is white themed: decide yes.
-Definition: a cowbell is brown themed: decide yes.
-Definition: a cowbell is bell themed: decide yes.
+Definition: cowbell is cow themed: decide yes.
+Definition: cowbell is white themed: decide yes.
+Definition: cowbell is brown themed: decide yes.
 
-To compute clank:
-	if cowbell is worn:
-		say "[one of][or]Your [cowbell] clanks loudly.[or]You are unable to prevent your [cowbell] from making a huge racket![or][bold type]The loud clanking of your [ShortDesc of cowbell] is likely to attract others to your location![roman type][line break][or]You softly curse at the noise your cowbell is making.[or]You wish you could stop your cowbell's ringing.[as decreasingly likely outcomes]";
-		now cowbell is clanking.
+meowcowbell is an animalbell.
 
-cowbelled is a humiliating situation.
-Definition: cowbelled (called A) is applicable:
-	if the player is not disgraced and cowbell is clanking, decide yes;
+The printed name of meowcowbell is "[clothing-title-before]meow cow bell[clothing-title-after]". The text-shortcut of meowcowbell is "mcb". Understand "meow", "cow" as meowcowbell.
+
+Definition: meowcowbell is class-relevant:
+	if the class of the player is cowgirl or the class of the player is catgirl, decide yes;
 	decide no.
-To reflect on (A - cowbelled):
-	say "[first custom style][one of]I can't believe I have a bell around my neck like an actual cow, heralding my arrival and guiding people to my location...[or]I've got to get rid of this bell, it's making it impossible to get around places without everyone following me![or]My cowbell is still clanking away... how embarrassing![stopping][roman type][line break]".
 
-Carry out going when cowbell is worn:
-	if the player is upright or a random number between 1 and 5 is 1, compute clank.
+To decide which number is the initial outrage of (C - meowcowbell):
+	decide on 6.
 
-Report resisting when cowbell is worn:
-	compute clank.
+To say ClassSummonFlav of (C - meowcowbell):
+	say "You feel a coldness on your chest. You look down to see that [if meowcowbell is held]the [ShortDesc of C] has reappeared[otherwise]a half-cat, half-cow themed bell has appeared[end if]!".
 
-Report submitting when cowbell is worn:
-	if a random number between 1 and 3 is 1, compute clank.
+Figure of meowcowbell is the file "Items/Accessories/Neck/meowcowbell1.png".
 
-Report begging when cowbell is worn:
-	if a random number between 1 and 3 is 1, compute clank.
+To decide which figure-name is clothing-image of (C - meowcowbell):
+	decide on figure of meowcowbell.
 
-Report jumping when cowbell is worn:
-	compute clank.
+To say ClothingDesc of (C - meowcowbell):
+	say "This large shiny metal cowbell is connected to a brown collar. Instead of a single clanger on the inside, there are several small catbells. When worn, this bell makes lots of noise and makes it much easier for monsters to notice you and find you. You realise that [bold type]walking and resisting[roman type] will probably create a lot of noise whereas [bold type]crawling and submitting[roman type] will make it much more likely that you can avoid the bell ringing. However you can also sense it has the magic ability to prevent the wearer from rapidly gaining fatigue when their breasts are too full of milk. It also makes enough noise to help unfriendly monsters keep chasing you.".
+To say ShortDesc of (C - meowcowbell):
+	say "meow cow bell".
 
-An all later time based rule (this is the cowbell stops clanking rule):
-	now cowbell is not clanking.
+Definition: meowcowbell is cow themed: decide yes.
+Definition: meowcowbell is cat themed: decide yes.
+Definition: meowcowbell is brown themed: decide yes.
+Definition: meowcowbell is yellow themed: decide yes.
+Definition: meowcowbell is gem themed: decide yes.
+
 
 mystical amulet is neckwear. mystical amulet is manly. mystical amulet is unique. mystical amulet is metal. mystical amulet is in Dungeon36. Printed name of mystical amulet is "[clothing-title-before]mystical amulet[clothing-title-after]". The text-shortcut of mystical amulet is "mys".
 
@@ -273,6 +306,7 @@ Definition: soulstone (called S) is removable:
 	if S is not soul-embedded, decide yes;
 	decide no.
 Definition: soulstone is demonic: decide yes.
+Definition: soulstone is fire themed: decide yes.
 Definition: soulstone is orange themed: decide yes.
 Definition: soulstone is grey themed:
 	if the player is not soulless, decide yes;
@@ -310,9 +344,6 @@ To decide which number is the intelligence-influence of (C - a stethoscope):
 
 Check taking off a stethoscope:
 	if saved-flat-intelligence < the intelligence-influence of the noun + 1, say "As you try to take [the noun] off, you feel consciousness slipping from you. You decide to leave it on..." instead.
-
-[To uniquely set up (C - a stethoscope):
-	do nothing. redundant]
 
 Part 1 - Doctor Stethoscope
 

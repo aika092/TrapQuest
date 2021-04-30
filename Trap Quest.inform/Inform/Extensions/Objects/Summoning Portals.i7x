@@ -412,7 +412,8 @@ Check entering giant-statue:
 	allocate 2 seconds;
 	let V be 0;
 	if vine boss is alive or doomed is 5, now V is 1;
-	let R be a random number between 1 and 5;
+	let R be a random number between 1 and 4;
+	if the player is very horny, now R is 5;
 	if R is 1 and pregnancy fetish is 1:
 		if diaper quest is 0 and the player is female:
 			say "You feel a tingling sensation in your core as a wave of energy washes over you.";
@@ -645,7 +646,7 @@ To decide which object is the summonChoice of (S - mysterious-mummy):
 	decide on M.
 
 To say MummyColour of (S - mysterious-mummy):
-	unless S is active:
+	if S is active:
 		let M be the next-summon of S;
 		if M is acolyte:
 			say "purple";
@@ -670,7 +671,7 @@ To say PortalHint of (S - mysterious-mummy):
 		if M is acolyte: [cultist]
 			say "A squirming [man of a random acolyte] wrapped from head to toe in white linen, with a purple aura highlighting [his of a random acolyte] features. [big his of a random acolyte] arms are crossed in front of [his of a random acolyte] chest, but it looks like [his of a random acolyte] wrists are being held together by an invisible rope. There's nothing lewd about the way [he of a random acolyte]'s standing, but whenever you look at [him of a random acolyte], you can't help but feel like you're watching someone having sex.";
 		otherwise if M is gladiator: [gladiator]
-			say "A tall [man of a random gladiator] wrapped from head to toe in white linen, with a golden aura highlighting [his of a random gladiator] busty features. [if futanari fetish is 1 or lady fetish is 2]The cloth is distorted by a banana-like shape near [his of a random gladiator] crotch, which twitches slightly[otherwise]There is a dark spot near [his of a random gladiator] crotch, which grows slowly[end if] as [his of a random gladiator] visibly muscular arms struggle against their wrappings.";
+			say "A tall [man of a random gladiator] wrapped from head to toe in white linen, with a golden aura highlighting [his of a random gladiator] busty features. [if futanari fetish > 0 or lady fetish is 2]The cloth is distorted by a banana-like shape near [his of a random gladiator] crotch, which twitches slightly[otherwise]There is a dark spot near [his of a random gladiator] crotch, which grows slowly[end if] as [his of a random gladiator] visibly muscular arms struggle against their wrappings.";
 		otherwise if M is gargoyle or M is vampiress:
 			say "A feminine figure wrapped in white linen, [his of vampiress] features highlighted by a faint pink aura. There is a bat resting on one of [his of vampiress] shoulders.";
 		otherwise if M is mannequin: [mannequin]
@@ -693,7 +694,7 @@ To say ActiveWarning of (S - mysterious-mummy):
 		say "You hear the shuffling of fabric somewhere [if playerRegion is mansion]else [end if]in the mansion, and immediately have the feeling that something very [i]unclean[/i] is happening nearby.";
 	otherwise if M is gladiator: [gladiator]
 		let M be wild gladiator;
-		say "You hear glass shattering as a gladiator flies through a nearby window, completely nude, [if futanari fetish is 1]and with an all-too visible erection[otherwise]and with [semen] slowly dripping out of [his of M] [HoleDesc of M][end if]. Mannequins surround [him of M] as [he of M] struggles to get to [his of M] feet, and [he of M] fights them fiercely as they drag [him of M] toward the mummy. The gladiator screams as long strips of linen seize [him of M] all at once and in an instant [he of M] is completely bound from head to toe in white linen. A golden glow surrounds the mummy as its captive struggles against [his of M] bindings.";
+		say "You hear glass shattering as a gladiator flies through a nearby window, completely nude, [if futanari fetish > 0]and with an all-too visible erection[otherwise]and with [semen] slowly dripping out of [his of M] [HoleDesc of M][end if]. Mannequins surround [him of M] as [he of M] struggles to get to [his of M] feet, and [he of M] fights them fiercely as they drag [him of M] toward the mummy. The gladiator screams as long strips of linen seize [him of M] all at once and in an instant [he of M] is completely bound from head to toe in white linen. A golden glow surrounds the mummy as its captive struggles against [his of M] bindings.";
 	otherwise if M is acolyte: [cultist]
 		say "There's some scuffling outside as a hidden doorway near the back of the room opens, and two cultists come through, quickly working their way through the crowd of mannequins. They play a quick round of rock paper scissors, and the winner shoves the loser into the mummy, dashing away as it reaches out with several strips of frayed fabric. A deep purple glow begins to surround the mummy as it covers up its captive completely.";
 	otherwise if M is mannequin: [mannequin]
@@ -742,46 +743,37 @@ Carry out appeasing something with mysterious-mummy:
 		otherwise:
 			say "You place [NameDesc of the noun] in front of [NameDesc of the second noun], but nothing happens.".
 
-[TODO: update]
 Check entering mysterious-mummy:
 	if the player is immobile, say "Aren't you a bit tied up at the moment?" instead;
 	if the player is in danger, say "You would, but you are currently in a fight." instead;
 	allocate 2 seconds;
 	say "You step into the circle at the mummy's feet, and you swear you can hear a feminine voice giggling as it unravels, completely covering you with countless strips of frayed linen. [run paragraph on]";
-	[if the class of the player is cultist:
-		say "Your vision goes completely dark, and for a moment you feel as though you're floating in an endless abyss, completely surrounded by undulating tentacles.";
+	let R be a random number between 1 and 3;
+	if the player is very horny, now R is 4;
+	if R is 1:
+		say "Your vision is flooded with a green pallor, and for a moment, every one of your holes it forced wide open.";
+		if the player is possessing a vagina, gape vagina times 1;
+		gape asshole times 1;
+		SexAddictUp 2;
+	otherwise if R is 2:
+		say "Your vision is flooded with a deep, dark blue, and the fabric around your chest and hips suddenly grows much tighter.";
+		BustUp 1;
+		AssSwell 1;
 		strongHumiliate;
-		if there is an off-stage acolyte, now the next-summon of the noun is 1;
-	otherwise if the class of the player is vampire spawn or the class of the player is vixen:
-		say "Your vision is flooded by an image of your [italic type][if the class of the player is vampire spawn]sire[otherwise]jailer[end if][roman type], and for a moment you feel as though you are looking deeply into [his of vampiress] eyes.";
-		Arouse 3000;
-		if vampiress is off-stage, now the next-summon of the noun is 8;
-	otherwise if the class of the player is cheerleader or the class of the player is silicone queen:
-		say "Your vision is filled with faint images of makeup brushes and tubes of lipstick, and for a moment, you feel like you're in heaven.";
+	otherwise if R is 3:
+		say "Your vision is flooded with purple, and the fabric around your lips suddenly becomes tighter.";
+		LipsUp 1;
 		FaceUp 1;
-		if the number of off-stage mansion dwelling mannequins > 0, now the next-summon of the noun is 4;
-	otherwise if the class of the player is succubus or the class of the player is priestess:
-		say "Your vision is filled with pure flame, and for a moment, you feel only fear as you realise something is staring at you from beyond.";
-		if a random number between 1 and 2 is 1, DelicateUp 1;
-		if there is an off-stage demoness:
-			now the next-summon of the noun is 5;
-		otherwise if there is an off-stage hellhound:
-			now the next-summon of the noun is 7;
-	otherwise if the class of the player is puppygirl or the class of the player is catgirl:
-		say "Your vision goes completely dark, and for a moment you can feel [if watersports fetish is 1][urine] hitting your face[otherwise if bukkake fetish is 1][semen] hitting your face[otherwise]a strangely shaped erection smacking your face[end if].";
-		if a random number between 1 and 2 is 1:
-			if watersports fetish is 1, UrineTasteAddictUp 1;
-			otherwise SemenAddictUp 1;
-		if there is an off-stage hellhound, now the next-summon of the noun is 7;
-	otherwise if the class of the player is virgin warrior or there is a worn sword:
-		say "Your vision is filled by an image of a sword, and for a moment, you feel as though you could face anything.";
-		Dignify 50;
-		if there is an off-stage mansion dwelling gladiator, now the next-summon of the noun is 2;
+		IntDown 1;
+	if R is 4:
+		now the next-summon of mysterious-mummy is the summonChoice of mysterious-mummy;
+		say "Your vision is flooded with bright pink, and a wave of lust crashes over your body like a tidal wave. The candles flicker [MummyColour of the noun] as the linen unravels, but with your whole body thrumming with arousal, all that registers is that your hands have been freed up...";
+		now auto is 1;
+		if the player is very horny, try masturbating;
+		now auto is 0 instead;
 	otherwise:
-		say "Your vision is flooded with a green pallor, and for a moment, you feel as though you're being fucked in every hole by two [manly-penis]s at once.";
-		if a random number between 1 and 2 is 1:
-			SexAddictUp 1;
-		now the next-summon of the noun is 0;]
-	say "The candles at the mummy's feet turn [MummyColour of the noun] as the linen unravels, leaving you standing exactly where you where before." instead.
+		now the next-summon of mysterious-mummy is the summonChoice of mysterious-mummy;
+		say "The candles at the mummy's feet turn [MummyColour of the noun] as the linen unravels, leaving you standing exactly where you where before.";
+		ChargeUp mysterious-mummy by 100 instead.
 
 Summoning Portals ends here.

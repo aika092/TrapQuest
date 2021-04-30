@@ -63,6 +63,8 @@ To say MediumDesc of (C - infernal gem):
 
 Definition: infernal gem is demonic: decide yes.
 Definition: infernal gem is gem themed: decide yes.
+Definition: infernal gem is red themed: decide yes.
+Definition: infernal gem is fire themed: decide yes.
 
 To decide which number is the crafting key of (C - infernal gem):
 	decide on 45.
@@ -214,6 +216,7 @@ To decide which number is the crafting key of (C - pack of playing cards):
 
 Definition: pack of playing cards is immune to change: decide yes.
 Definition: pack of playing cards is party themed: decide yes.
+Definition: pack of playing cards is playing card themed: decide yes.
 
 To say ShortDesc of (C - pack of playing cards):
 	say "pack of playing cards".
@@ -288,6 +291,9 @@ To decide which number is the bartering value of (T - soul gem) for (M - a demon
 
 To decide which number is the bartering value of (T - soul gem) for (M - mechanic):
 	decide on 10.
+
+Definition: soul gem is blue themed: decide yes.
+Definition: soul gem is demonic: decide yes.
 
 To say MonsterOfferAcceptFlav of (M - mechanic) to (T - soul gem):
 	say "[speech style of M]'[one of]Holy shit! Is that pure?'[or]Where the FUCK did you find another one of those?'[stopping][roman type][line break]".

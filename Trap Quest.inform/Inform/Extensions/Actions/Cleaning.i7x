@@ -64,7 +64,8 @@ Check cleaning it with:[TODO: wiping into an open vessel]
 		otherwise:
 			say "You're a bit busy at the moment." instead;
 	if the noun is clothing, try rinsing the noun in the second noun instead;
-	if the noun is not body part, say "You can only clean a body part." instead;
+	if the noun is not body part, say "You can only clean a body part or clothing." instead;
+	if the player is wrist bound behind, say "You don't have the manual dexterity to do that while your hands are bound behind your back." instead;
 	if the second noun is pocketwipes and the noun is face:
 		if the make-up of face <= 0 and the semen coating of face <= 0, say "That won't do anything." instead;
 	otherwise if diaper quest is 1:
@@ -147,7 +148,7 @@ To 2Clean (P - a body part) with (C - a limb):
 
 Report cleaning it with when the second noun is clothing:
 	force inventory-focus redraw; [Forces redraw of inventory window]
-	if the second noun is store and Dungeon41 is guarded and shopkeeper is not mating:
+	if the second noun is store and Dungeon41 is guarded:
 		if shopkeeper is interested:
 			say "[speech style of shopkeeper]'Oi! I own that, don't use it as some kind of cum rag. GUARDS!'[roman type][line break]Looks like you're in trouble with the law!";
 			anger shopkeeper;

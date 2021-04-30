@@ -118,6 +118,7 @@ Carry out SmokeBombing a smoke bomb to a direction:
 		say "Oh no! The bomb itself must have been cursed! You must have created it with the wrong recipe...";
 		say "[bold type]You are still in the [location of the player].[roman type][line break]";
 	otherwise:
+		if fire theme bonus > a random number between 0 and 1, now the noun is blessed;
 		say "For a few moments, [if the number of person in the location of the player > 1]nobody can[otherwise]you can't[end if] see anything[if the noun is blessed and there is an interested monster in the location of the player]. Blessed magic dust settles around the room, distracting those who were paying attention to you[end if]!";
 		repeat with M running through interested monsters in the location of the player:
 			if the blind-status of M is -1:
@@ -172,6 +173,7 @@ Check throwing water-bomb at a monster:
 		otherwise appropriate-cutscene-display figure of water bomb cutscene 1;
 		CumFaceUp 20;
 	otherwise:
+		if fire theme bonus > a random number between 0 and 1, now the noun is blessed;
 		say "You launch the [water-bomb] at [NameDesc of the second noun], which hits [him of the second noun] right in [his of the second noun] [MonsterFaceDesc of the second noun]! The creamy viscous liquid goes everywhere, blinding [him of the second noun][if the cum-known of water-bomb is 0]. That's not water... it's definitely [semen][end if]!";
 		if the blind-status of the second noun is -1:
 			say "[big he of the second noun] doesn't seem to have any problems detecting where you are through the [semen]. [big he of the second noun] must be immune to being blinded!";
@@ -228,6 +230,7 @@ Check throwing energy-bomb at a monster:
 		now attack-type is 4;
 		let D be a random number between 18 and 28;
 		if the noun is blessed, increase D by 12;
+		increase D by fire theme bonus * 10;
 		damage (D * combatSpeed) on the second noun;
 		now latestCombatFocus is the second noun;
 	check stealing of the noun;
@@ -336,7 +339,7 @@ Check drinking time-bomb:
 			say "Your [ShortDesc of C] is on the ground next to you. ";
 			now C is in the location of the player;
 		if bukkake fetish is 1:
-			say "Your entire body and clothes is completely caked in [semen].";
+			say "Your entire body and clothes are completely caked in [semen].";
 			now the water-drench of hair is 0;
 			now the semen coating of hair is the largeness of hair;
 			now the semen coating of face is 10;
@@ -372,6 +375,7 @@ Check drinking time-bomb:
 			say "Everything feels weirdly... still.";
 		now timeBombTime is 3;
 		if the noun is blessed, now timeBombTime is 30;
+		increase timeBombTime by fire theme bonus * 3;
 	destroy the noun instead;
 	do nothing instead.
 
@@ -440,6 +444,7 @@ Check drinking nail-bomb:
 			if nail-bomb is bland or M is dangerous:
 				let D be a random number between 18 and 25;
 				if nail-bomb is blessed, increase D by 8;
+				increase D by fire theme bonus * 10;
 				damage (D * combatSpeed) on M;
 				now latestCombatFocus is M;
 	check stealing of the noun;

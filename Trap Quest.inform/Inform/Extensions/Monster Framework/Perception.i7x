@@ -66,7 +66,7 @@ To check perception of (M - a monster):
 						if topless temporary fetish > 0 and breasts is lewdly exposed:
 							decrease topless temporary fetish by 1;
 							if topless temporary fetish is 0, say "[bold type]Your brain finally seems satisfied that you've exposed your breasts to enough people. You will no longer lose intelligence from concealing your nipples.[roman type][line break]";
-							otherwise say "You [one of]can tell that you have made progress towards removing the curse that makes you desperate to keep your breasts exposed[or]have made more progress towards removing your topless fetish curse[cycling].";
+							otherwise say "You [one of]can tell you have made progress towards removing the curse that makes you desperate to keep your breasts exposed[or]have made more progress towards removing your topless fetish curse[cycling].";
 					if the times-met of M < 0, now the times-met of M is 0;
 					increase the times-met of M by 1;
 					if M is friendly human monster and breasts is exposed:
@@ -172,7 +172,6 @@ Chapter 2 - Aggro Framework
 Definition: a monster (called M) is aware: [Can it notice the player on its own?]
 	if M is woman-player and M is stranger, decide no;
 	if M is asleep or the boredom of M > 0, decide no;
-	if the player is too high to see, decide no;
 	if M is in the location of the player, decide yes;
 	decide no.
 
@@ -249,15 +248,17 @@ To compute sudden objectification of (M - a monster):
 		say "[one of][BigNameDesc of M] suddenly turns hostile[or]Something changes in the way [NameDesc of M] is looking at you, and you get the feeling [he of M]'s become hostile[at random]!".
 
 Definition: a monster (called M) is objectifying the player:
-	if diaper quest is 1, decide no;
-	if M is not interested or M is not in the location of the player or (M is bride-consort and there is a worn bouquet):
+	if diaper quest is 1 or M is not interested or (M is bride-consort and there is a worn bouquet):
 		now the objectification of M is 0;
 		decide no;
 	if the objectification of M is 1, decide yes;
-	if the class of the player is cheerleader, decide no;
+	if M is not in the location of the player or the class of the player is cheerleader:
+		now the objectification of M is 0;
+		decide no;
 	if the saved appearance of the player >= the bimbo tolerance of M:
 		now the objectification of M is 1;
 		decide yes;
+	now the objectification of M is 0;
 	decide no.
 
 [!<DecideWhichNumberIsTheBimboToleranceOfMonster>+
@@ -290,14 +291,17 @@ To compute sudden babification of (M - a monster):
 		say "[BigNameDesc of M] suddenly turns hostile!".
 
 Definition: a monster (called M) is babifying the player:
-	if diaper quest is 0, decide no;
-	if M is not interested or M is not in the location of the player:
+	if diaper quest is 0 or M is not interested:
 		now the babification of M is 0;
 		decide no;
 	if the babification of M is 1, decide yes;
+	if M is not in the location of the player:
+		now the babification of M is 0;
+		decide no;
 	if the saved cringe appearance of the player >= the bab tolerance of M:
 		now the babification of M is 1;
 		decide yes;
+	now the babification of M is 0;
 	decide no.
 
 [!<DecideWhichNumberIsTheBimboToleranceOfMonster>+

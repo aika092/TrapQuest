@@ -121,6 +121,10 @@ The printed name of anime superheroine top is "[clothing-title-before]anime supe
 
 Figure of anime heroine top is the file "Items/Clothes/Upper/Special/Hero/animeheroine1.png".
 
+Definition: anime superheroine top is class-relevant:
+	if the class of the player is magical girl or the class of the player is superhero or the class of the player is silicone queen, decide yes;
+	decide no.
+
 To decide which number is the initial cringe of (C - anime superheroine top):
 	decide on 3.
 

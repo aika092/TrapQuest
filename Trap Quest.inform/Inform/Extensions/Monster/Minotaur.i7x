@@ -198,6 +198,7 @@ Part 4 - Combat
 Section 1 - Attack
 
 Definition: minotaur (called M) is automatically tempted:
+	if M is wrangling a body part, decide yes;
 	if the bimbo of the player >= 20, decide yes;
 	if the appearance of the player > 7, decide yes;
 	if the player is pheromonal, decide yes;
@@ -211,7 +212,7 @@ Definition: minotaur (called M) is eager to slap:
 	decide no.
 
 The minotaur priority attack rules is a rulebook. The priority attack rules of minotaur is the minotaur priority attack rules.
-To compute interaction of (M - a minotaur):
+To compute interaction of (M - minotaur):
 	if M is caged:
 		if M is automatically tempted:
 			compute CagedMinotaurLusting of M;
@@ -245,7 +246,7 @@ To compute CagedMinotaurLusting of (M - minotaur):
 	if the swing-intensity of M < 0, now the swing-intensity of M is 0.
 
 To compute CagedMinotaurExplosion of (M - minotaur):
-	say "[BigNameDesc of M] roars as [he of M] slams [his of M] [LongDickDesc of M] between the bars of [his of M] cage, aiming the tip right at you as [his of M] giant balls, and then every inch of [his of M] thick, veiny shaft flex with primal power.";
+	say "[BigNameDesc of M] roars as [he of M] slams [his of M] [LongDickDesc of M] between the bars of [his of M] cage, aiming the tip right at you as [if M is a balls-haver][his of M] giant balls, followed by [end if]every inch of [his of M] thick, veiny shaft flex with primal power.";
 	let L be a random number between 2 and 4;
 	let D be a random number between 1 and the dexterity of the player;
 	if the player is pheromonal and (a random number between 1 and the intelligence of the player) < the blue-balls of M, now D is 0;[pheromonal? you're less likely to dodge]
@@ -345,7 +346,7 @@ To compute face grope of (M - minotaur):
 	if there is worn ringagged clothing:
 		say "[BigNameDesc of M] grinds [his of M] [cockhead of M] against your face, smearing your lips with sticky precum as [he of M] clumsily tries to shove [his of M] [DickDesc of M] into your open mouth.";
 	otherwise if the player is pheromonal or (the player is a nympho and the player is not feeling dominant):
-		say "[BigNameDesc of M] grinds [his of M] [LongDickDesc of M] against your face, breathing heavily as [if the player is pheromonal]your hormone-addled senses force you to[otherwise]You can't help but[end if] worship [his of M] balls and [one of]throbbing[or]pulsing[or]twitching[in random order] shaft with your tongue.";
+		say "[BigNameDesc of M] grinds [his of M] [LongDickDesc of M] against your face, breathing heavily as [if the player is pheromonal]your hormone-addled senses force you to[otherwise]You can't help but[end if] worship [his of M][if M is a balls-haver] balls and [end if][one of]throbbing[or]pulsing[or]twitching[in random order] shaft with your tongue.";
 		increase the blue-balls of M by 1;
 	otherwise:
 		say "[BigNameDesc of M] grinds [his of M] [cockhead of M] against your face, smearing your lips with thick, sticky precum.";
@@ -442,11 +443,11 @@ To say CreampieReactionFlav to (M - minotaur) in (F - vagina):
 	otherwise if the player is able to get pregnant:
 		say "[second custom style][if the bimbo of the player < 7][one of]That was so much [semen]...Please don't let me be pregnant.[or]So much...I hope I'm not pregnant.[at random][otherwise if the bimbo of the player < 12][one of]T-That was so much [semen]. [big he of M] really wanted me pregnant![or]So that's what it feels like to be bred. Did it take?[at random][otherwise][one of]So much [semen]...that means I'm probably preggers![or]Fuck, that was so much [semen]. I hope I'm knocked up.[at random][end if][roman type][line break]";
 	otherwise:
-		say "[second custom style][if the bimbo of the player < 7]I thought [he of M] would never stop...[otherwise if the bimbo of the player < 12]So much [semen]...where does it all come from...[otherwise]Those big balls must have been full. There's so much~[end if][roman type][line break]".
+		say "[second custom style][if the bimbo of the player < 7]I thought [he of M] would never stop...[otherwise if the bimbo of the player < 12]So much [semen]...where does it all come from...[otherwise if M is a balls-haver]Those big balls must have been full. There's so much~[otherwise]There's just so much~[end if][roman type][line break]".
 
 To say CreampieReactionFlav to (M - minotaur) in (F - asshole):
 	if M is not penetrating asshole:
-		say "[second custom style][if the bimbo of the player < 7]I thought [he of M] would never stop...[otherwise if the bimbo of the player < 12]So much [semen]...where does it all come from...[otherwise]Those big balls must have been full. There's so much~[end if][roman type][line break]";
+		say "[second custom style][if the bimbo of the player < 7]I thought [he of M] would never stop...[otherwise if the bimbo of the player < 12]So much [semen]...where does it all come from...[otherwise if M is a balls-haver]Those big balls must have been full. There's so much~[otherwise]There's just so much~[end if][roman type][line break]";
 	otherwise:
 		say "[second custom style][if the bimbo of the player < 7][one of]It isn't over? Come on....[or]I thought [he of M] was finished...[at random][otherwise if the bimbo of the player < 12][one of]OK, so it actually isn't over. Great...[or]After filling me with all that [semen], I thought [he of M]'d be finished...[at random][otherwise][one of]I kind of want to stay like this.[or]Aww, [he of M]'s tired. I shouldn't wake [him of M].[at random][end if][roman type][line break]".
 
@@ -458,7 +459,7 @@ To compute priestessBlessing of (M - minotaur):
 To compute fuckhole sex of (M - minotaur):
 	let F be a random fuckhole penetrated by M;
 	if the sex-length of M > 0:
-		if the sex-length of M is 1, say "[BigNameDesc of M] roars as you feel [if M is wrapped][one of]the condom starting to fill[or]cum spurting into the condom[or][his of M] [DickDesc of M] erupting into the condom[in random order][otherwise][one of][him of M] start to ejaculate[or]cum spurting into your [variable F] in waves[or][his of M] [DickDesc of M] erupt inside of you[or][his of M] balls begin emptying themselves inside of you[in random order][end if]! But [he of M][one of] doesn't stop fucking you.[or]'s still going![or] doesn't stop plowing you at all.[or] doesn't relent with [his of M] brutal pounding![at random]";
+		if the sex-length of M is 1, say "[BigNameDesc of M] roars as you feel [if M is wrapped][one of]the condom starting to fill[or]cum spurting into the condom[or][his of M] [DickDesc of M] erupting into the condom[in random order][otherwise][one of][him of M] start to ejaculate[or]cum spurting into your [variable F] in waves[or][his of M] [DickDesc of M] erupts inside of you[in random order][end if]! But [he of M][one of] doesn't stop fucking you.[or]'s still going![or] doesn't stop plowing you at all.[or] doesn't relent with [his of M] brutal pounding![at random]";
 		otherwise say "[one of][BigNameDesc of M] is brutally plowing away at your [variable F]![or][BigNameDesc of M] grunts primally as [he of M] pounds your poor [variable F]![or][BigNameDesc of M] growls hungrily as [his of M] [LongDickDesc of M] jack-hammers your [variable F].[or][BigNameDesc of M] holds you with a rigid death-grip as [he of M] slams in and out of your [variable F].[or][BigNameDesc of M] holds you down with an ironclad grip as [he of M] brutally pounds your [variable F]![or][BigNameDesc of M][']s massive [if mythical creature fetish is 1]furry [end if]nutsack slaps audibly against your taint as [he of M] brutally jack-hammers your [variable F].[in random order]";
 		decrease the sex-length of M by 1;
 		if the health of M > 10, decrease the health of M by 5 * combatSpeed;
@@ -505,10 +506,10 @@ This is the minotaur grabs both legs rule:
 	let M be current-monster;
 	if the critical-windup of M is 1 and M is wrangling a body part:
 		if the accuracy roll of M >= the dexterity of the player:
-			say "[BigNameDesc of M] grabs your other leg, [his of M] [DickDesc of M] growing harder and harder as [he of M] pulls you in close.";
+			say "[BigNameDesc of M] grabs your [if M is wrangling thighs]other leg[otherwise]legs[end if], [his of M] [DickDesc of M] growing harder and harder as [he of M] pulls you in close.";
 			increase the critical-windup of M by 1;
 		otherwise:
-			say "[BigNameDesc of M] tries to grab your other leg, but you manage to avoid it!";
+			say "[BigNameDesc of M] tries to grab your [if M is wrangling thighs]other leg[otherwise]legs[end if], but you manage to avoid it!";
 		rule succeeds;
 	otherwise if the critical-windup of M is 1:
 		now the critical-windup of M is 0.
@@ -636,6 +637,21 @@ To say AssholePenetrationFlav of (M - minotaur):
 
 To say VaginaPenetrationFlav of (M - minotaur):
 	say "[BigNameDesc of M] stares at your body and sniffs your [vagina], assessing you. [big he of M] seems to make up [his of M] mind that you are a suitable breeding partner and poises [his of M] [LongDickDesc of M] with the tip at the entrance to your [vagina]. [one of]With very little effort, [he of M] forces [his of M][or]With no effort at all, [he of M] shoves [his of M][or]Without the slightest hint of difficulty [he of M] rams [his of M][or]Without pausing, [he of M] forces [his of M][at random] giant [DickDesc of M] in, and starts fucking you vigorously. [if the sex-length of M is 0]Within seconds, [he of M] has started cumming inside you![otherwise if the class of the player is cowgirl and mythical creature fetish is 1]You find yourself mooing submissively as your [vagina] is instantly stretched beyond belief by [his of M] huge [LongDickDesc of M].[otherwise if pregnancy fetish is 1 and mythical creature fetish is 1]Your [vagina] is instantly - and painfully - stretched beyond belief.[one of][line break][variable custom style]Could I get pregnant from this bull?![roman type][line break][or][stopping][otherwise]Your [vagina] is instantly - and painfully - stretched beyond belief.[end if]".
+
+To compute default caged domination of (M - minotaur):
+	say EnslavedDominationFlav of M;
+	if the raw delicateness of the player > the EnslavedDominationThreshold of M:
+		say "You feel vaguely better about yourself, but mostly just a bit ambivalent.";
+	otherwise:
+		DelicateDown 1;
+	if the player is getting unlucky:
+		say "[BigNameDesc of M] reaches through the bars and manages to grab your arm!";
+		now M is wrangling arms.
+
+To compute unique teleportation to (R - Dungeon36):
+	if minotaur is in Dungeon36 and minotaur is caged:
+		now minotaur is wrangling arms;
+		say "You have appeared right next to the minotaur's cage! What rotten luck! [big he of minotaur] manages to grab your arm!".
 
 Section 2 - Damage
 

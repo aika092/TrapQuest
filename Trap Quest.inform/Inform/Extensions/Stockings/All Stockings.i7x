@@ -21,7 +21,7 @@ To decide which number is the hindrance-modifier of (S - a stockings):
 	decrease X by the magic-modifier of S;
 	decide on X.
 
-To uniquely set up (H - a stockings):
+To set up magic attribute of (H - a stockings):
 	let R be a random number between 1 and 7;
 	if R is 1, now the magic-type of H is confidence;
 	if R is 2, now the magic-type of H is endurance;
@@ -476,7 +476,7 @@ To decide which number is the dexterity-influence of (S - magical stockings):
 Definition: magical stockings is magic themed: decide yes.
 Definition: magical stockings is pink themed: decide yes.
 
-A heart stockings is a kind of stockings. There is 1 transformation-rare heart stockings. A heart stockings is usually mesh. The text-shortcut of heart stockings is "hbs". The printed name of heart stockings is usually "[clothing-title-before]pair of heart bow [clothing-material of the item described] stockings[clothing-title-after]". Understand "bow" as heart stockings.
+A heart stockings is a kind of stockings. There is 1 transformation-rare heart stockings. A heart stockings is usually mesh. The text-shortcut of heart stockings is "hbs". The printed name of heart stockings is usually "[clothing-title-before]pair of heart bow [clothing-material of the item described] stockings[clothing-title-after]". Understand "bow", "fishnet" as heart stockings.
 fishnet stockings is a stockings. fishnet stockings is transformation-rare. fishnet stockings is mesh. The text-shortcut of fishnet stockings is "fs". The printed name of fishnet stockings is "[clothing-title-before]pair of fishnet stockings[clothing-title-after]". Understand "fish", "net" as fishnet stockings.
 
 Definition: fishnet stockings is class-relevant:

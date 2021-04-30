@@ -49,7 +49,7 @@ Definition: pink-spraybottle is pink themed: decide yes.
 Definition: pink-spraybottle is fluid immune: decide yes.
 
 Check taking pink-spraybottle when pink-spraybottle is not held:
-	if the noun is not actually summonable, say "That requires a free hand." instead;
+	if the noun is not actually summonable, say "That requires your dominant hand to be free - you are currently holding [NameDesc of a random worn hand ready clothing]." instead;
 	if the class of the player is not maid:
 		if playerRegion is not school:
 			let H be a random worn headgear;
@@ -99,15 +99,20 @@ Carry out going when pink-spraybottle is worn:
 
 To compute (S - pink-spraybottle) breaking:
 	if a random number between 1 and the dexterity of the player < 5 or (a random number between 1 and the dexterity of the player < 8 and unlucky is 1):[There is a chance it doesn't break as long as it isn't cursed.]
-		say "You can't hold onto your spraybottle and it falls out of your hands, shattering the instant it touches the floor![line break][if the bimbo of the player < 10][line break][variable custom style][one of]Shit, something tells me I'm going to be in trouble with someone for this...[or]No, no, not again![stopping][otherwise][line break][second custom style][one of]Oopsie! I'm such a klutz sometimes![or]Teehee, it happened again! I guess I should go back to the mechanic for my [']punishment[']![stopping][end if][roman type][line break]";
-		now S is cloth;
-		now the charge of S is 0;
-		unless there is a worn cursed maid headdress, now S is cursed;
-		if mechanic is reactive:
-			say "[speech style of mechanic]'That's coming out of your pay-check you clumsy bitch!'[roman type][line break][BigNameDesc of mechanic] looks furious.";
-			now mechanic is interested;
-			anger mechanic;
-		if the work ethic of S > -100, now the work ethic of S is -100;
+		say "You can't hold onto your spraybottle and it falls out of your hands, shattering the instant it touches the floor!";
+		if S is blessed:
+			say "But then you watch as the blessed energy imbued in the bottle sparks to life, pulling all the shards back together until the spraybottle is as good as new![line break][variable custom style]Wow![roman type][line break]The blessing has now expired, but at least your bottle isn't broken.";
+			now S is bland;
+		otherwise:
+			say "[if the bimbo of the player < 10][line break][variable custom style][one of]Shit, something tells me I'm going to be in trouble with someone for this...[or]No, no, not again![stopping][otherwise][line break][second custom style][one of]Oopsie! I'm such a klutz sometimes![or]Teehee, it happened again! I guess I should go back to the mechanic for my [']punishment[']![stopping][end if][roman type][line break]";
+			now S is cloth;
+			now the charge of S is 0;
+			unless there is a worn cursed maid headdress, now S is cursed;
+			if mechanic is reactive:
+				say "[speech style of mechanic]'That's coming out of your pay-check you clumsy bitch!'[roman type][line break][BigNameDesc of mechanic] looks furious.";
+				now mechanic is interested;
+				anger mechanic;
+			if the work ethic of S > -100, now the work ethic of S is -100;
 	otherwise:
 		say "You almost drop your [ShortDesc of S], but with quick fingers, you thankfully manage to hold onto it.[one of][line break][variable custom style]Eek! If I had dropped it, it would have almost certainly broke![roman type][line break][or][stopping]".
 

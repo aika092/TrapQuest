@@ -21,7 +21,7 @@ Check rinsing it in:
 		if the noun is worn, say "You can't wash that out whilst wearing it!" instead;
 	if there is a lake monster in the location of the player, say "You can't safely do that with the tentacle monster still lurking in these waters." instead;
 	if the player is flying, say "You aren't even touching the ground!" instead;
-	if the player is immobile or there is a thing wrangling a body part, say "You're a bit immobile at the moment!" instead.
+	if the player is at least partially immobile, say "You're a bit immobile at the moment!" instead.
 
 Rule for supplying a missing noun while rinsing:
 	try showering the second noun.

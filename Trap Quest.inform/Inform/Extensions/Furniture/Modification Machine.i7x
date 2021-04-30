@@ -26,7 +26,7 @@ To compute furniture resting on (F - modification machine):
 	let R be a random number between 1 and 10;
 	if piercing-fetish is 1 and R < 6, now R is 1;
 	let P be a random eligible piercing;
-	if the player is male and (the size of penis <= min penis size or the real size of penis <= min penis size) and tg fetish >= 1 and a random number between 1 and 3 > 1:
+	if the player is sexed male and (the size of penis <= min penis size or the real size of penis <= min penis size) and tg fetish >= 1 and a random number between 1 and 3 > 1:
 		say "[bold type]A robotic contraption you hadn't noticed with a large sucker on the end shoots down over your crotch![roman type] You can't see what's happening but feel your insides behind your crotch twisting and turning and rearranging themselves[if the player is possessing a penis], and then you shriek in surprise and horror as you realise you can't feel your [player-penis][end if]! The sucker pulls back allowing you to realise that a brand new woman's [variable custom style][vagina][roman type] has taken its place. ";
 		SexChange the player;
 	otherwise if diaper quest is 0 and R <= 2 and P is actually summonable:

@@ -297,15 +297,32 @@ Carry out TQeating chocolate bar:
 		otherwise:
 			StomachFoodUp 5;
 		say "you feel a rumbling in your stomach and whimper as you feel the recent food you ate expand and double in bulk. Your belly swells to contain the huge load!";
-	otherwise if assfilled is 1:[possibly too severe for something that happens 100% of the time!]
-		say "[if the semen volume of belly is 0]you realise that the nanobots must have found a few leftover cells of [semen] in your belly as [end if]your innards explode outwards, filled with [if the semen volume of belly > 0]even more of [end if]the white gooey liquid!";
-		AssFill belly limit - the total squirtable fill of belly;
-	otherwise if a random number between 1 and 3 > 1 and the player is not top heavy:
-		say "you feel your chest swell outwards - some of the nanobots must have made their way to your [BreastDesc]!";
-		BustUp 4;
 	otherwise:
-		say "you feel your hips rumble and start to swell - some of the nanobots must have made their way to your butt!";
-		HipUp 1.
+		let LB be a list of body parts;
+		if the semen volume of belly > 0:
+			add asshole to LB;
+		otherwise if assfilled is true and the player is getting unlucky:
+			add asshole to LB;
+		if the womb volume of vagina > 0:
+			add vagina to LB;
+		otherwise if pussyfilled is true and the player is getting unlucky:
+			add vagina to LB;
+		if the number of entries in LB > 0:
+			if vagina is listed in LB:
+				if vagina is accepting womb semen and inhuman pregnancy >= 2:
+					let M be a random off-stage tentacle monster;
+					if M is monster, now M is inseminating vagina;
+				say "[if the womb volume of vagina is 0 and the semen volume of vagina is 0]you realise that the nanobots must have found a few leftover cells of [semen] in your [pussy] as [end if]your hole[if vagina is accepting womb semen], your uterus and Fallopian tubes are[otherwise] is[end if] filled to the brim with [if the semen volume of vagina > 0 or the womb volume of vagina > 0]even more of [end if][semen]![if the womb volume of vagina is 0][line break][GotUnluckyFlav][end if]";
+				PussyFill 25;
+			if asshole is listed in LB:
+				say "[if the semen volume of belly is 0]you realise that the nanobots must have found a few leftover cells of [semen] in your belly as [end if]your innards explode outwards, filled with [if the semen volume of belly > 0]even more of [end if]the white gooey liquid![if the semen volume of belly is 0][line break][GotUnluckyFlav][end if]";
+				AssFill belly limit - the total squirtable fill of belly;
+		otherwise if a random number between 1 and 3 > 1 and the player is not top heavy:
+			say "you feel your chest swell outwards - some of the nanobots must have made their way to your [BreastDesc]!";
+			BustUp 4;
+		otherwise:
+			say "you feel your hips rumble and start to swell - some of the nanobots must have made their way to your butt!";
+			HipUp 1.
 
 To compute (M - a robochef) cooking (I - chocolate bar):
 	let D be a random off-stage truffle;
@@ -318,6 +335,7 @@ To compute (M - a robochef) cooking (I - chocolate bar):
 A creme egg is a kind of candy. The text-shortcut of creme egg is "ce". There is 1 creme egg.
 To say ExamineDesc of (C - creme egg):
 	say "A small chocolate egg, still in its wrapper. A mystery filling awaits inside.".
+Definition: a creme egg is bunny themed: decide yes.
 
 Figure of creme egg is the file "Items/Collectibles/creme1.jpg".
 Figure of golden-creme-egg is the file "Items/Collectibles/creme2.jpg".

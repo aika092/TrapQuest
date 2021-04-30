@@ -206,7 +206,7 @@ To decide which number is the girth of (M - a monster):
 To decide which number is the base semen load of (M - a monster):
 	decide on the girth of M.
 
-To decide which number is the semen load of (M - a monster):
+To decide which number is the semen load of (M - a thing):
 	if the trophy-mode of ejaculate-trophy is 1, decide on (the girth of M * 2) + 5;
 	decide on the girth of M.
 
@@ -245,6 +245,7 @@ Definition: a monster is defeated rather than undefeated:
 
 Definition: a monster is messy:
 	if it is diaper-enslaved and the refractory-period of it <= (the messRefractoryLimit of it) and diaper messing >= 6 and playerRegion is not school, decide yes;
+	if it is caged and it is in the location of dominatrix-cage and the mess of dominatrix-cage > 0, decide yes;
 	decide no.
 
 Definition: a monster is scarable: decide yes. [Can this monster be made to flee? Mostly just overridden for bosses.]
@@ -267,6 +268,15 @@ Definition: a monster is throater:
 	decide no.
 To say silentThroat (M - a monster): [Shortcut to flag to the game that the NPC is deepthroating this turn]
 	increase the throating of M by 1.
+To instantThroat (M - a monster): [Deepthroat and check for gagging right away]
+	increase the throating of M by 1;
+	follow the do we puke rule.
+
+Definition: a monster (called M) is a balls-haver:
+	unless M is male, decide no;
+	if lady fetish is 2, decide yes;
+	if futanari fetish is 1, decide yes;[This is specifically futanari fetish "is 1", not "> 0"]
+	decide no.
 
 A monster has a list of things called banishItems.
 A monster has a list of things called taxableItems.
@@ -288,5 +298,11 @@ A game universe initialisation rule:
 
 [Flags a monster as having a soul or not having a soul.]
 A monster can be soul-stolen or not soul-stolen. A monster is usually not soul-stolen.
+A monster can be submission-assisting or not submission-assisting.
+Definition: a monster is willing to fluff: decide no.[available to help out the player during sex, without directly fucking the player.]
+Definition: a monster is willing to fluff right now:
+	decide no.
+	[if it is willing to fluff and the refractory-period of it < 0 and it is intelligent, decide yes;
+	decide no.]
 
 Monster Adjectives ends here.

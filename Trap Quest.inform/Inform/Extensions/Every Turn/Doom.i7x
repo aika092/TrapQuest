@@ -192,6 +192,7 @@ A later time based rule (this is the compute doom rule):
 			if a random number between 1 and 2 is 1 and wild gladiator is summon-available and wild gladiator is off-stage and wild gladiator is woods dwelling, now the next-summon of giant-statue is wild gladiator;
 			repeat with A running through alive unleashed acolytes:
 				DifficultyUp A by 1;
+			progress quest of doom-quest;
 		otherwise if doom counter > 300 and doomed is 1:
 			say "[bold type]You feel a strange sense of being watched, and the atmosphere begins to feel oddly humid. It is almost like something horrible is breathing down your neck.[roman type][line break]";
 			now doomed is 2;
@@ -201,12 +202,14 @@ A later time based rule (this is the compute doom rule):
 			if a random number between 1 and 3 is 1 and enlightened gladiator is summon-available and enlightened gladiator is off-stage and enlightened gladiator is mansion dwelling, now the next-summon of mysterious-mummy is enlightened gladiator;
 			repeat with A running through alive unleashed acolytes:
 				DifficultyUp A by 1;
+			progress quest of doom-quest;
 		otherwise if doom counter > 450 and doomed is 2:
 			say "[bold type]The air feels positively moist and somehow everything seems more unwholesome, an impressive feat given the content of the game normally.[roman type][line break]";
 			now doomed is 3;
 			if flower hairclip is worn, transform flower hairclip into spiked-tiara;
 			repeat with A running through alive unleashed acolytes:
 				DifficultyUp A by 1;
+			progress quest of doom-quest;
 		otherwise if doom counter > 600 and doomed is 3:
 			if the location of the player is not Mansion23:
 				say "[bold type]A horrible noise like a thousand screams of pure bliss echoes through the world itself, and the world itself takes on a soft pink cast for a moment. Something is drawing close to this world![roman type][line break]";
@@ -216,6 +219,7 @@ A later time based rule (this is the compute doom rule):
 			now the Pink Sphere is in Mansion23; [spawn the pink bubble scenery in mansion23]
 			repeat with A running through alive unleashed acolytes:
 				DifficultyUp A by 1;
+			progress quest of doom-quest;
 		otherwise if doom counter > 800 and doomed is 4:
 			if the location of the player is Mansion23:
 				if the class of the player is cultist:
@@ -228,6 +232,7 @@ A later time based rule (this is the compute doom rule):
 				otherwise:
 					say "[bold type]The world begins to shake and pink lightning crackles over every surface! You desperately try to avoid them, but you feel the energy wash over you before the effect settles down. Even still, there is a strange pink energy hanging in the air. One thing is certain: You have failed.[roman type][line break]";
 			resolve doom;
+			progress quest of doom-quest;
 		otherwise if a random number between 1 and (40 + (10 * MA)) is 1:
 			if debuginfo > 1:
 				update new acolytes;

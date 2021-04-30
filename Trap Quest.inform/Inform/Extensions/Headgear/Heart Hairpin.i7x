@@ -115,7 +115,7 @@ To check tentacle clear:
 			repeat with M running through LM:
 				if M is in the location of the player, remove M from LM;
 			if the number of entries in LM > 0:
-				say "[bold type]Your mind's eye flashes pictures of the tentaled enemies you have yet to banish from the [playerRegion][roman type] (that are not currently in the [location of the player]):[line break]";
+				say "[bold type]Your mind's eye flashes pictures of the tentacled enemies you have yet to banish from the [playerRegion][roman type] (that are not currently in the [location of the player]):[line break]";
 				repeat with M running through LM:
 					say "[BigNameDesc of M] (in the [location of M]).".
 

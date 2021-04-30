@@ -6,7 +6,7 @@ title	subtable	description	toggle
 "Reduce Maximum Breast Size ([MaxBreastSizeDesc] - [max breast size points] points used. [bonus breast cost].)"	--	--	max breast size rule
 "Reduce Maximum Ass Size ([MaxAssSizeDesc] - [max ass size points] points used)"	--	--	max ass size rule
 "Reduce Maximum Belly Size [if weight gain fetish is 1 or pregnancy fetish is 1 or inflation fetish is 1](Except [end if][if weight gain fetish is 1]fat[end if][if weight gain fetish is 1 and (pregnancy fetish is 1 or inflation fetish is 1)] and [end if][if pregnancy fetish is 1]pregnancy[end if][if pregnancy fetish is 1 and inflation fetish is 1] and [end if][if inflation fetish is 1]air inflation[end if][if weight gain fetish is 1 or pregnancy fetish is 1 or inflation fetish is 1])[end if] ([MaxBellySizeDesc] - [max belly size points] points used)"	--	--	max belly size rule
-"Futanari Content (Can biologically female people have penises? If disabled they'll have strapons instead) - [if futanari fetish is 1 and lady fetish is 2][bold type]enabled[roman type](for player only, since all NPC's are masculine)[otherwise if futanari fetish is 1][bold type]enabled[roman type][otherwise]disabled[end if]"	--	--	futanari fetish toggle rule
+"Futanari content (Can biologically female people have penises? If disabled, they'll have strapons instead) - [if futanari fetish > 0][bold type]enabled[roman type][otherwise]disabled[end if][if futanari fetish is 1] (WITH balls)[otherwise if futanari fetish is 2] (WITHOUT balls)[end if][if futanari fetish > 0 and lady fetish is 2] (player only, since all NPC's are masculine)[end if]"	--	--	futanari fetish rule
 "Increase Minimum Penis Size ([if the player is female]Disabled since player is female[otherwise if min penis size is 0]No penis - 0 points used. [bonus penis cost][otherwise if min penis size is 1]Less than 1 inch - 1 point used. [bonus penis cost][otherwise if min penis size is 2]1 inch - 1 point used. [bonus penis cost][otherwise][min penis size] inch - [min penis size points] points used. [bonus penis cost][end if][if the player is male and tg fetish >= 1]When this size is reached, TG can occur.[end if])"	--	--	min penis size rule
 "Flatchested until sex change ([if trap fetish is 0]Not enabled - costs 3 points to enable[otherwise]Enabled - 3 points used[end if])"	--	--	trap fetish toggle rule
 
@@ -84,9 +84,16 @@ This is the trap fetish reset rule:
 	now choice in row 34 of the Table of Player Options is 0.
 The trap fetish reset rule is listed in the reset rules.
 
-This is the futanari fetish toggle rule:
+[This is the futanari fetish toggle rule:
 	if futanari fetish is 0, now choice in row 68 of the Table of Player Options is 1;
-	otherwise now choice in row 68 of the Table of Player Options is 0.
+	otherwise now choice in row 68 of the Table of Player Options is 0.]
+
+This is the futanari fetish rule:
+	if futanari fetish < 2:
+		increase choice in row 68 of the Table of Player Options by 1;
+	otherwise:
+		now choice in row 68 of the Table of Player Options is 0.
+		
 
 [We don't really want this to reset each time, players probably want to stick with their selection]
 [This is the futanari fetish reset rule:

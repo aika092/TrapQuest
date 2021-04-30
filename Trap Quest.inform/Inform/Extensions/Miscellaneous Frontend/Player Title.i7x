@@ -156,12 +156,12 @@ To say TitleBimbo:
 				say " delicate flower";
 			otherwise if the player is possessing a vagina and the vaginalvirgin of the player is 0 and the analvirgin of the player is 1:
 				say " anal virgin";
-			otherwise if the size of penis > 7 and transGender is 0:
+			otherwise if the size of penis > 7 and the player is gendered male:
 				say " [one of]shemale[or]dickgirl[sticky random]";
 			otherwise:
 				if the delicateness of the player > 11 and diaper lover >= 1:
 					say " babygirl";
-				otherwise if transGender is 0 and (the size of penis > 4 or the player is a flatchested trap):
+				otherwise if the player is gendered male and (the size of penis > 4 or the player is a flatchested trap):
 					if the number of worn clothing > 4, say " cross-dressing";
 					say " trap";
 				otherwise:

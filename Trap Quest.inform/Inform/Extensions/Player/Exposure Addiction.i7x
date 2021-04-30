@@ -38,7 +38,7 @@ topless temporary fetish is a number that varies.
 
 To decide which number is topless-fetish:
 	if diaper quest is 1, decide on 0;
-	if topless temporary fetish > 0 or topless tattoo is worn, decide on 1;
+	if topless temporary fetish > 0 or topless tattoo is worn or black strap hood is worn, decide on 1;
 	otherwise decide on 0.
 
 Definition: a clothing (called C) is topless-fetish-disallowed:

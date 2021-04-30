@@ -22,9 +22,22 @@ the clothing "C."
 +!]
 To set up (C - a clothing):
 	if C is zippable, now C is crotch-zipped;
+	repair C;
+	set up armour of C;
 	set up influence of C;
 	set up magic state of C;
 	uniquely set up C.
+
+To set up armour of (C - a clothing):
+	now the damage of C is 0;
+	now the armour of C is the initial armour of C.
+
+To decide which number is the initial armour of (C - a clothing):
+	if C is unremovable, decide on 99;
+	if C is hobble-skirted or C is trousers, decide on 8;
+	if C is overdress, decide on 5;
+	if C is crotch covering, decide on the penis-capacity of C;
+	decide on 5.
 
 [!<UniquelySetUpClothing>+
 
@@ -60,11 +73,15 @@ To set up magic state of (C - a clothing):
 			increase the raw-magic-modifier of C by a random number between -1 and 1;
 			increase the raw-magic-modifier of C by a random number between -1 and 1;
 			increase the raw-magic-modifier of C by a random number between -1 and 1;
-		set up BUC of C.
+		set up BUC of C;
+		set up magic attribute of C.
 
 To set up BUC of (C - a clothing):
 	let R be a random number between (0 - unlucky) and 8;
 	if R <= 2, now C is cursed;
 	if R >= 7 and C is not cursed, now C is blessed.
+
+To set up magic attribute of (C - a clothing):
+	now C is blandness.
 
 Clothing Setup ends here.

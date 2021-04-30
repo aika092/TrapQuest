@@ -104,7 +104,11 @@ To PainUp (X - a number): [This function is anticipated to output some kind of f
 					now pain-balance is 0;
 				otherwise:
 					increase pain-balance by 1;
-		if X is 0, check accidental spitting;
+		if X is 0:
+			if spank-heart tattoo is worn and the player is able to orgasm and (the player is extremely horny or (the player is very horny and the player is getting unlucky)):
+				say "[bold type]Your [spank-heart tattoo][bold type] sends sparks of pleasure down to your crotch![roman type][line break][if the player is not extremely horny][GotUnluckyFlav][end if]";
+				vaginally orgasm shamefully;
+			check accidental spitting;
 	if highest delicateness < the delicateness of the player, now highest delicateness is the delicateness of the player.
 
 To DelicateUp (X - a number):

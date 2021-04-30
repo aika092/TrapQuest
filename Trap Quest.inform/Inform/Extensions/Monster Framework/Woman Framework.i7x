@@ -133,6 +133,7 @@ STATES:
 7: Just freed the player from bondage (or told them no)
 ==Anything below 10 can be interpreted as normal wandering and hijacked for a scene==
 
+26: DQ: After matron play scene.
 27: DQ: After matron fight scene.
 28: DQ: Changing station
 29: Just rescued from the vine boss hole
@@ -146,7 +147,7 @@ STATES:
 90: Appeared by being fucked by vines in the woods
 91: Appeared by being fucked by mechanic in the hotel
 92: Appeared to try the deepthroat discount challenge with the shopkeeper
-93: TQ: Appeared by being fucked by the dominatrix's anal predicament contraption; DQ: Appeared by being in the hotel urinal scene with the wrestler.
+93: Appeared in the dominatrix's predicament contraption
 94: Interacting with a hypno trap
 95: Released from the toilet
 96: Scene with hotel beds & patrons
@@ -154,15 +155,16 @@ STATES:
 98: DQ: Diaper pail
 99: DQ: Ass hook
 100: DQ: Matron fight scene
+101: DQ: Appeared by being in the hotel urinal scene with the wrestler.
 ]
 
 Definition: woman-player is summon appropriate: decide no. [Can she be randomly selected to be summoned?]
 Definition: woman-player is redeploy appropriate:
-	if it is not angered and it is summon-available and it is introduced and (it is off-stage or (the woman-status of it < 10 and it is not in the location of the player and it is not nearby)):
+	if it is not angered and it is summon-available and it is introduced and (it is off-stage or (the woman-status of it < 10 and it is not in the location of the player and it is not nearby and it is not caged)):
 		if the number of interested regional monsters is 0, decide yes;
 	decide no.
 Definition: woman-player is relaxed redeploy appropriate: [Allows for interested NPCs]
-	if it is not angered and it is summon-available and it is introduced and (it is off-stage or (the woman-status of it < 10 and it is not in the location of the player and it is not nearby)), decide yes;
+	if it is not angered and it is summon-available and it is introduced and (it is off-stage or (the woman-status of it < 10 and it is not in the location of the player and it is not nearby and it is not caged)), decide yes;
 	decide no.
 Definition: woman-player is deploy appropriate:
 	if it is off-stage and it is not angered and it is summon-available and it is introduced, decide yes;
@@ -176,6 +178,7 @@ To deploy (M - woman-player) with woman-status (V - a number):
 	now the sleep of M is 0;
 	now the boredom of M is 0;
 	now M is uninterested;
+	now M is unleashed;
 	if M is introduced and M is summon-available and (playerRegion is Dungeon or playerRegion is Woods or playerRegion is Hotel): [stops her spawning somewhere stupid like hole in the wall, iron maiden, blindfolded]
 		now the health of M is the maxhealth of M;
 		if V is 2:
@@ -203,7 +206,7 @@ A time based rule (this is the woman spawning rule):
 		while the delayed sluttification of woman-player < 0:
 			ImmediatewomanUnsluttify;
 			increase the delayed sluttification of woman-player by 1;
-	otherwise:
+	otherwise if woman-player is not caged:
 		if woman-player is not regional and (woman-player is not in WoodsBoss01 or playerRegion is not woods):
 			vanish woman-player;
 		otherwise if a random number between 1 and 40 is 1 or woman-player is asleep:
@@ -341,6 +344,7 @@ Report going when the location is Dungeon37 and the woman-bimbo of woman-player 
 			SexAddictDown 1;
 			DiaperAddictDown 1;
 			IntUp 1;
+		StomachUp 1;
 	otherwise:
 		say "[BigNameDesc of W] takes the vial back and bravely swigs it in a single gulp. ";
 		if a random number between 1 and 2 is 1:

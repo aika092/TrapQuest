@@ -17,18 +17,25 @@ A time based rule (this is the lactation rule):
 			let L be 50 - (R * 4);
 			if the remainder after dividing time-earnings by L < time-seconds:
 				let flav-said be 0;
-				if there is an ass covering milking basque:
+				if black strap hood is worn:
 					let previous-size be the largeness of belly;
 					Assfill 1 Milk;
 					if the largeness of belly > previous-size:
-						say "Your body has produced [if the milk volume of belly < 5]enough[otherwise]so much[end if] [milk] that you now have a [BellyDesc]![one of][line break][variable custom style]Wait... what?!?! What the hell is this basque doing to me? That's not how lactation is supposed to work.[roman type][line break][or][stopping]";
+						say "Your body has produced [if the milk volume of belly < 5]enough[otherwise]so much[end if] [milk] that you now have a [BellyDesc]![one of][line break][variable custom style]Wait... what?!?! What the hell is this hood doing to me? That's not how lactation is supposed to work.[roman type][line break][or][stopping]";
 						now flav-said is 1;
-				if white-milking-basque is not ass covering: [this way, cow print basque does both]
-					let previous-size be the largeness of breasts;
-					MilkUp 1;
-					if the largeness of breasts > previous-size:
-						say "Your body has produced [if the milk volume of breasts < 5]enough[otherwise]so much[end if] [milk] that you now have [BreastDesc]!";
-						now flav-said is 1;
+				otherwise:
+					if there is an ass covering milking basque:
+						let previous-size be the largeness of belly;
+						Assfill 1 Milk;
+						if the largeness of belly > previous-size:
+							say "Your body has produced [if the milk volume of belly < 5]enough[otherwise]so much[end if] [milk] that you now have a [BellyDesc]![one of][line break][variable custom style]Wait... what?!?! What the hell is this basque doing to me? That's not how lactation is supposed to work.[roman type][line break][or][stopping]";
+							now flav-said is 1;
+					if white-milking-basque is not ass covering: [this way, cow print basque does both]
+						let previous-size be the largeness of breasts;
+						MilkUp 1;
+						if the largeness of breasts > previous-size:
+							say "Your body has produced [if the milk volume of breasts < 5]enough[otherwise]so much[end if] [milk] that you now have [BreastDesc]!";
+							now flav-said is 1;
 				if a random number between 1 and 10 is 1 and the lactation rate of the player > 0:
 					say "You feel your [unless there is an ass covering milking basque]breasts['] [end if][milk] production rate [if R is 1]stop.[otherwise][one of]slow down[or]decrease[or]lower[in random order].[end if]";
 					decrease the lactation rate of the player by 1;
@@ -140,8 +147,12 @@ To trigger lactation:
 			now the plug size of milking harness is the openness of asshole;
 			say "[one of]You look down to try and work out exactly what this thing does...[line break][ExamineDesc of milking harness][or][stopping]";
 		otherwise if a random number from 4 to 50 - (30 * unlucky) < the lactation-count of the player and a2m fetish >= 2 and royal circlet is off-stage and royal circlet is actually summonable and yellow-pacifier is not worn:
-			say "[bold type]As you finish lactating, a silver circlet appears on your head.[line break][variable custom style]Why do I get the feeling that people are going to want my milk soon...[roman type][line break]";
-			summon royal circlet cursed;
+			if black strap hood is off-stage and there is worn black themed latex clothing and black strap hood is actually summonable:
+				say "[bold type]As you finish lactating, a black strap hood appears on your head.[line break][variable custom style]Why do I get the feeling that people are going to want my milk soon...[roman type][line break]";
+				summon black strap hood cursed;
+			otherwise:
+				say "[bold type]As you finish lactating, a silver circlet appears on your head.[line break][variable custom style]Why do I get the feeling that people are going to want my milk soon...[roman type][line break]";
+				summon royal circlet cursed;
 			now the lactation-count of the player is 0;
 		now last-lactated-time is earnings; [Record this: the idea is that the player will smell of milk for a while after lactating, and possibly exciting some monsters when they smell it.]
 		if N is gloryhole, progress quest of milking-quest;

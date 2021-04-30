@@ -376,7 +376,11 @@ To WaterEmpty (C - a clothing):
 To Drench (C - a clothing):
 	increase the water-soak of C by the soak-limit of C - the total-soak of C;
 	if C is diaper and the player is diaper aware, now the perceived-water-soak of C is the water-soak of C;
-	if C is worn, update appearance level.
+	if tough-shit is 0 and C is held:
+		if C is glued:
+			now C is not glued;
+			say "[BigNameDesc of C] is no longer covered in glue!";
+		if C is worn, update appearance level.
 
 [!<OnlyDestroyClothing>+
 

@@ -17,12 +17,6 @@ To say ClothingDesc of (C - a sandals):
 To say UniqueShortDesc of (C - a sandals):
 	say "wooden sandals".
 
-[To decide which number is the hindrance-modifier of (C - a sandals):
-	decide on 2.]
-
-To set up magic state of (C - a sandals):
-	do nothing.
-
 To uniquely set up (C - a sandals):
 	now the heel-height of C is 1.
 

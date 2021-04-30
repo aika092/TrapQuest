@@ -11,7 +11,7 @@ Definition: teacher-hannah is motionless-when-defeated: decide yes.
 The text-shortcut of teacher-hannah is "teha".
 
 Figure of babslave hannah is the file "NPCs/School/Teacher/teacher5c.png".
-Figure of Teacher Hannah Cutscene 1 is the file "Special/Cutscene/cutscene-hannah-bondage1.png".
+Figure of Teacher Hannah Cutscene 1 is the file "Special/Cutscene/cutscene-hannah-bondage1.jpg".
 
 To decide which figure-name is the monster-image of (M - teacher-hannah):
 	decide on figure of Teacher Hannah.
@@ -264,10 +264,14 @@ To compute teaching of (L - toy-lesson):
 					repeat with P running through LP:
 						say "[link][N]) [MediumDesc of P][as][N][end link][line break]";
 						increase N by 1;
+					say "[link]0) refuse[as]0[end link][line break]";
 					if the focus-window is g-present, display focus stuff;
 					let CLTR be the chosen letter - 48;
 					now CP is yourself;
-					if CLTR > 0 and CLTR <= the number of entries in LP:
+					if CLTR is 0:
+						say "You fold your arms, refusing to play their stupid game.";
+						now CP is the throne;
+					otherwise if CLTR > 0 and CLTR <= the number of entries in LP:
 						let P be entry CLTR in LP;
 						try examining P;
 						say "Choose [P]?";
@@ -276,37 +280,50 @@ To compute teaching of (L - toy-lesson):
 					if CP is yourself:
 						say "Input not understood. Please enter a number that corresponds to one of the toys.";
 						now CP is nothing;
-				let choseBiggest be 1;
-				repeat with P running through LP:
-					if size of P > the size of CP, now choseBiggest is 0;
-				if choseBiggest is 1:
-					repeat with STX running through students in the location of the player:
-						FavourUp STX;
-				if delayed fainting is 1:
-					do nothing;
-				otherwise if the size of CP > the insertableGirthAcceptance of asshole:
-					say "You try your best but it's just too big! You hang your head in shame as you put the [MediumDesc of CP] back onto the table. [BigNameDesc of M] shakes [his of M] head in disappointment.[line break][speech style of M]'I had higher expectations of you.'[roman type][line break]";
+				if CP is the throne:
+					let P be a random off-stage basic plug;
+					blandify and reveal P;
+					now P is worn by the player;
+					now P is penetrating asshole;
+					say "[speech style of M]'Well that's just fucking unacceptable. Seems like I'll have to do it for you.'[roman type][line break][BigNameDesc of M] folds [his of M] arms and shakes [his of M] head. [big he of M] holds out [his of M] hand, and a [P] appears in mid-air. Next, it shoots through the air towards you, like a guided missile that has set its sights on your [asshole].[line break]There's no time to react - it only takes a split second to zip over to you and fly up inside you!";
+					ruin asshole;
+					say "No lube, no delicateness, no mercy. You've just had a plug barrel up into your poor pucker at lightning speed. Suffice to say, this hurts. A lot.";
+					ruin asshole;
+					PainUp 1;
+					say "[BigNameDesc of M] narrows [his of M] eyes, sneering with satisfaction.[line break][speech style of M]'Zero entries in the raffle.'[roman type][line break]";
 					add 0 to LN;
-					if there is a worn tattoo and the number of worn crotch tattoo is 0:
-						if the player is female or fast tg is 3:
-							say "[BigNameDesc of M] touches the space above your [genitals] with a finger. [big his of M] finger is burning hot!";
-							PainUp 1;
-							summon measurement tattoo;
-							say "[speech style of M]'Since you want to try and get such big things inside you, this should help you manage it.'[roman type][line break]When [he of M] removes [his of M] finger, you have a new tattoo!";
-							try examining measurement tattoo;
-							if the player is male, SexChange the player;
 				otherwise:
-					blandify and reveal CP;
-					now CP is worn by the player;
-					say "You relax your [asshole] as much as you can to try and push the plug inside of you. ";
-					compute toyInsertion of CP into asshole;
-					now CP is glued;
-					remove CP from LP;
-					add the size of CP to LN;
-					say "[BigNameDesc of M] folds [his of M] arms with satisfaction.[line break][speech style of M]'Good job. You get [size of CP] [if size of CP is 1]entry[otherwise]entries[end if] in the raffle.'[roman type][line break]";
-					unless the player is broken:
-						say "Despite the perverse context, [NameDesc of M][']s praise significantly boosts your self-esteem.";
-						obsceneDignify;
+					let choseBiggest be 1;
+					repeat with P running through LP:
+						if size of P > the size of CP, now choseBiggest is 0;
+					if choseBiggest is 1:
+						repeat with STX running through students in the location of the player:
+							FavourUp STX;
+					if delayed fainting is 1:
+						do nothing;
+					otherwise if the size of CP > the insertableGirthAcceptance of asshole:
+						say "You try your best but it's just too big! You hang your head in shame as you put the [MediumDesc of CP] back onto the table. [BigNameDesc of M] shakes [his of M] head in disappointment.[line break][speech style of M]'I had higher expectations of you.'[roman type][line break]";
+						add 0 to LN;
+						if there is a worn tattoo and the number of worn crotch tattoo is 0:
+							if the player is possessing a vagina or fast tg is 3:
+								say "[BigNameDesc of M] touches the space above your [genitals] with a finger. [big his of M] finger is burning hot!";
+								PainUp 1;
+								summon measurement tattoo;
+								say "[speech style of M]'Since you want to try and get such big things inside you, this should help you manage it.'[roman type][line break]When [he of M] removes [his of M] finger, you have a new tattoo!";
+								try examining measurement tattoo;
+								if the player is sexed male, SexChange the player;
+					otherwise:
+						blandify and reveal CP;
+						now CP is worn by the player;
+						say "You relax your [asshole] as much as you can to try and push the plug inside of you. ";
+						compute toyInsertion of CP into asshole;
+						now CP is glued;
+						remove CP from LP;
+						add the size of CP to LN;
+						say "[BigNameDesc of M] folds [his of M] arms with satisfaction.[line break][speech style of M]'Good job. You get [size of CP] [if size of CP is 1]entry[otherwise]entries[end if] in the raffle.'[roman type][line break]";
+						unless the player is broken:
+							say "Despite the perverse context, [NameDesc of M][']s praise significantly boosts your self-esteem.";
+							obsceneDignify;
 			otherwise:
 				say "[speech style of M]'[student-name of ST], [one of]you're up[or]you're next[or]go ahead[then at random].'[roman type][line break]";
 				let STD be (the dedication of ST + (a random number between 0 and 2)) * 2;
@@ -335,6 +352,7 @@ To compute teaching of (L - toy-lesson):
 					destroy STP;
 		if delayed fainting < 1:
 			let winnersAnnounced be 0;
+			let ABC be the accessory-colour of armband;
 			let LS2 be a list of people;
 			let LN2 be a list of numbers;
 			say "After everyone has had their turn, ";
@@ -364,7 +382,7 @@ To compute teaching of (L - toy-lesson):
 						remove entry 1 from LN2;
 						add entry 1 from LS2 to LS;
 						remove entry 1 from LS2;
-					if armband is emerald or WST is student:
+					if armband is ABC or WST is student:
 						say "[BigNameDesc of M] shuffles the pieces of paper in [his of M] raffle box and then picks one. [big he of M] looks up with a smile.[line break][speech style of M]'Congratulations [if WST is yourself][NameBimbo][otherwise][student-name of WST][end if]! [one of]You're a winner today[or]Lucky you[or]Your name's on this one[at random].'[roman type][line break]";
 						if WST is yourself or WST is promotable student, say "[big he of M] snaps [his of M] fingers as [he of M] makes gesture towards [if WST is yourself]you[otherwise][him of WST][end if].";
 						if WST is student:
@@ -535,7 +553,9 @@ To compute teaching of (L - dress-lesson):
 		if the number of students in the location of the player > 0, say "Do you want to volunteer? ";
 		if the number of students in the location of the player is 0 or the player is bimbo consenting:
 			say "You raise your hand and then at [NameDesc of M][']s signal, you walk to the front of the class. [big he of M] then brushes [his of M] hand over [his of M] desk, making several various pieces of chalk fall to the floor around you.[line break][speech style of M]'Oh no [NameBimbo], how clumsy of you! Pick all those up at once!'[roman type][line break]You understand what is required of you - you are supposed to make sure you always bend at the waist and not at the knees. ";
-			if short skirts permanent fetish is 0 and (the player is proud or (the player is modest and the number of worn dense total protection knickers is 0)):
+			let bendOverDifficulty be a random number between 0 and 10000;
+			if the number of worn dense total protection knickers is 0, increase bendOverDifficulty by 8000;
+			if short skirts permanent fetish is 0 and the humiliation of the player < bendOverDifficulty:
 				say "You try your best, but as your back goes down and your butt becomes exposed to the class, you lose your nerve. This is too weird and embarrassing, to have all this attention on you as your [if the number of worn dense total protection knickers is 0]private parts become[otherwise]underwear becomes[end if] exposed! You can't bring yourself to go through with it, and end up bending your knees and quickly picking up the chalk the 'normal' way. Your cheeks flush red in shame, but you're not even sure if you feel most ashamed about the fact that you didn't manage to complete the task, or the fact that you almost did.[line break][speech style of M]'Very disappointing. Why volunteer when you're CLEARLY not ready to go through with this yet?! Well, [boy of the player], if you're so desperate to be done with this class, then I can make that happen. You should just be careful what you've wished for...'[roman type][line break][big he of M] shoves a hand up your skirt and grips a butt cheek, beginning to knead it like dough. You yelp in surprise [if the player is feeling dominant]and then grind your teeth with anger[otherwise]but don't dare move away from [him of M][end if]. You feel a bizarre, almost magical warmth emitting from [his of M] hands, and then a weird shiver overcomes your entire body.";
 				MagicPowerUp 2;
 				increase short skirts permanent fetish by 1;

@@ -32,7 +32,7 @@ This is the gape gloves prevent hand use rule:
 The gape gloves prevent hand use rule is listed in the hands restriction rules.
 
 Definition: gape-gloves is transformation-protected: decide yes.
-Definition: gape-gloves is revmoable: [let's prevent a game effect from ruining this predicament]
+Definition: gape-gloves is removable: [let's prevent a game effect from ruining this predicament]
 	if gape-gloves is glued, decide no;
 	decide yes.
 

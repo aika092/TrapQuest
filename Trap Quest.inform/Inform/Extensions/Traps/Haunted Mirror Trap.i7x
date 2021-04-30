@@ -65,7 +65,9 @@ To compute time decay of (T - a haunted mirror trap):
 
 To compute mirror:
 	now mirror-triggered is 1;
-	if a random number between 5 and the intelligence of the player < a random number between 5 and 15:
+	if the player is in Iron Maiden:
+		do nothing;
+	otherwise if a random number between 5 and the intelligence of the player < a random number between 5 and 15:
 		let M be a random acceptable mirror attack;
 		compute resolution of M;
 		if M is one-turn, say "You feel the possessing spirit lose control of your body as you finally manage to tear your eyes away from the mirror.";

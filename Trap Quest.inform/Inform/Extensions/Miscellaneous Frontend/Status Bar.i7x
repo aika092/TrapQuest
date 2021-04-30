@@ -85,7 +85,7 @@ left	central	right
 "[TitleBimbo]"	""	""
 "STR:[saved-flat-strength]/30 DEX:[saved-flat-dexterity]/30 INT:[saved-flat-intelligence]/30 TITS:[largeness of breasts]/[max breast size] BELLY:[largeness of belly]/[max belly size] HIPS:[thickness of hips]/[max ass size]"	""	""
 "[DebugLowResAppearance] DIGNITY:[humiliation of the player]/40000 SEX-ADDICTION:[sex addiction of the player]/20 DELICATENESS:[delicateness of the player]/20"	""	""
-"FATIGUE:[fatigue of the player] DAMAGE:[body soreness of the player]/10 ASS:[soreness of asshole]/10 [if the player is female]PUSSY:[soreness of vagina]/10 [end if]HYDRATION:[stomach-liquid of the player] FOOD:[stomach-food of the player][if the total magic power of the player > 0] MAGIC: [magic power of the player] / [total magic power of the player][end if]"	""	""
+"FATIGUE:[fatigue of the player] DAMAGE:[body soreness of the player]/10 ASS:[soreness of asshole]/10 [if the player is possessing a vagina]PUSSY:[soreness of vagina]/10 [end if]HYDRATION:[stomach-liquid of the player] FOOD:[stomach-food of the player][if the total magic power of the player > 0] MAGIC: [magic power of the player] / [total magic power of the player][end if]"	""	""
 "STATUS: [VagueInternalFeeling] SLAP DICE: 2d[saved-printed-slap-damage] KNEE DICE: 2d[saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK DICE: 2d[saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks]"	""	""
 
 To say caused by (N - a number):

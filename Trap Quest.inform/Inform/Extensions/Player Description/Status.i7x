@@ -86,10 +86,8 @@ To LickCount:
 
 To BlowCount:
 	increase the blow-count of the player by 1;
-	if the oralvirgin of the player is 1 and there is a live virginity taking thing penetrating face:
-		now the oralvirgin of the player is 0;
-		now oralvirginity-taker is a random live virginity taking thing penetrating face;
-		say "[bold type]You just lost your oral virginity![roman type][line break]";
+	let T be a random thing penetrating face;
+	if T is a thing, check oral virginity loss with T.
 
 To say SexStatsDesc:
 	if the blow-count of the player > 0:

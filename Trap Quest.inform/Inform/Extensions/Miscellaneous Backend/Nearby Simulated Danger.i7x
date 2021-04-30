@@ -55,6 +55,11 @@ Definition: a monster is combative:
 	if it is in the location of the player and it is dangerous, decide yes;
 	decide no.
 
+[Override this with a more detailed definition if your NPC can block while friendly.]
+Definition: a monster is combative-or-blocking:
+	if it is combative, decide yes;
+	decide no.
+
 Definition: yourself is in danger:
 	if there is a combative monster, decide yes;
 	decide no.

@@ -5,9 +5,6 @@ A shirt is a kind of overdress. A shirt is usually unskirted. A shirt is usually
 To decide which number is the initial outrage of (C - a shirt):
 	decide on 0.
 
-To set up influence of (C - a shirt):
-	set up random-based influence of C.
-
 This is the remove inappropriate shirts rule:
 	repeat with C running through shirts:
 		if C is I heart cum shirt, now C is in Holding Pen;

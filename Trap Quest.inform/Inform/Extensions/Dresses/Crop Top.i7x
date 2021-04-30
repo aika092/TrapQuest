@@ -1,6 +1,6 @@
 Crop Top by Dresses begins here.
 
-A crop top is a kind of overdress. A crop top is usually unskirted. A crop top is usually belly exposing. A crop top is usually sheer-when-wet. A crop top is usually erect-nipple-exposing. Understand "crop", "top" as crop top.
+A crop top is a kind of overdress. A crop top is usually unskirted. A crop top is usually belly exposing. A crop top is usually sheer-when-wet. A crop top is usually erect-nipple-exposing. A crop top is usually optional-top-displacable. Understand "crop", "top" as crop top.
 
 The printed name of crop top is usually "[clothing-title-before]crop top[clothing-title-after]".
 
@@ -16,13 +16,6 @@ To decide which number is the initial outrage of (C - a crop top):
 To set up influence of (C - a crop top):
 	set up stat-based influence of C.
 
-Definition: a crop top is optional-top-displacable:
-	if the largeness of breasts > 7, decide yes;
-	decide no.
-
-Definition: a crop top is top-displacable:
-	if it is not optional-top-displacable, decide yes;
-	decide no.
 
 To decide which object is the unique-upgrade-target of (C - a crop top):
 	if a random number between 1 and 2 is diaper quest, decide on a random off-stage transformation-eligible nightie;
@@ -43,7 +36,7 @@ Definition: milk crop top (called C) is fetish appropriate:
 	if lactation fetish is 1, decide yes;
 	decide no.
 
-To uniquely set up (C - milk crop top):
+To set up magic attribute of (C - milk crop top):
 	if lactation fetish is 1, now C is milk production.
 
 To decide which number is the initial outrage of (C - milk crop top):
@@ -284,7 +277,7 @@ To say ShortDesc of (C - gross tank top):
 
 Definition: gross tank top is black themed: decide yes.
 
-Part 9 - Plaid Tank Top
+Part 10 - Plaid Tank Top
 
 plaid tank top is a crop top. plaid tank top is dense. plaid tank top is high cut. The printed name of plaid tank top is "[clothing-title-before]plaid tank top[clothing-title-after]". The text-shortcut of plaid tank top is "pltt".
 
@@ -305,7 +298,7 @@ To say ShortDesc of (C - plaid tank top):
 Definition: plaid tank top is tartan themed: decide yes.
 Definition: plaid tank top is orange themed: decide yes.
 
-Part 10 - Rugged Top
+Part 11 - Rugged Top
 
 rugged-crop-top is a crop top. rugged-crop-top is dense. The printed name of rugged-crop-top is "[clothing-title-before]rugged crop top[clothing-title-after]". The text-shortcut of rugged-crop-top is "rgct". Understand "leopard", "rugged" as rugged-crop-top. rugged-crop-top is unique.
 
@@ -330,7 +323,7 @@ To say ShortDesc of (C - rugged-crop-top):
 To decide which object is the unique-upgrade-target of (C - rugged-crop-top):
 	if leopard print tube top is off-stage and diaper quest is 0, decide on leopard print tube top.
 
-Part 11 - Nipple Holes Crop Top
+Part 12 - Nipple Holes Crop Top
 
 nipples-crop-top is a crop top. nipples-crop-top is transformation-rare. nipples-crop-top is dense. nipples-crop-top is normally-nipple-exposing. The printed name of nipples-crop-top is "[clothing-title-before]nipple holes crop top[clothing-title-after]". The text-shortcut of nipples-crop-top is "nct". Figure of nipples-crop-top is the file "Items/Clothes/Upper/CropTops/croptop12.png". Understand "nipple", "holes" as nipples-crop-top.
 To decide which figure-name is clothing-image of (H - nipples-crop-top):
@@ -358,7 +351,7 @@ To construct unique buttons for (T - nipples-crop-top):
 		now the ButtonCommand entry is "adjust arms";
 		now the ButtonColour entry is lightModeFullGreen.
 
-Part 12 - Football Crop Top
+Part 13 - Football Crop Top
 
 football-crop-top is a crop top. football-crop-top is unique. football-crop-top is dense. football-crop-top is fully exposing. football-crop-top is only arm covering. The printed name of football-crop-top is "[clothing-title-before]football crop top[clothing-title-after]". The text-shortcut of football-crop-top is "fct". Figure of football-crop-top is the file "Items/Clothes/Upper/CropTops/croptop13.png". Understand "football" as football-crop-top.
 To decide which figure-name is clothing-image of (H - football-crop-top):
@@ -378,7 +371,7 @@ Definition: football-crop-top is white themed: decide yes.
 To decide which number is the initial outrage of (C - football-crop-top):
 	decide on 4.
 
-Part 13 - Underboob Sweater
+Part 14 - Underboob Sweater
 
 underboob sweater is a crop top. underboob sweater is very low cut. underboob sweater is only arm covering. underboob sweater is wool. underboob sweater is dense. underboob sweater is normally-nipple-covering. The printed name of underboob sweater is "[clothing-title-before]underboob sweater[clothing-title-after]". The text-shortcut of underboob sweater is "ubs".
 
@@ -469,7 +462,7 @@ To decide which figure-name is clothing-image of (C - free samples crop top):
 	decide on figure of free samples crop top.
 
 To say ClothingDesc of (C - free samples crop top):
-	say "A pink strap top with white frills that doesn't cover your belly, and says 'FREE SAMPLES' on the front in big letters. It's so thin that ".
+	say "A pink strap top with white frills that doesn't cover your belly, and says 'FREE SAMPLES' on the front in big letters. It's extremely thin.".
 
 To say ShortDesc of (C - free samples crop top):
 	say "pink crop top".
@@ -479,5 +472,55 @@ To say MediumDesc of (C - free samples crop top):
 Definition: free samples crop top is food themed: decide yes.
 Definition: free samples crop top is pink themed: decide yes.
 
+Part 18 - Heaven Can Wait Crop Top
+
+heaven crop top is a crop top. The printed name of heaven crop top is "[clothing-title-before]heaven can wait crop top[clothing-title-after]". The text-shortcut of heaven crop top is "hcwt". Understand "can wait" as heaven crop top.
+
+Figure of heaven crop top is the file "Items/Clothes/Upper/CropTops/croptop18.png".
+
+To decide which figure-name is clothing-image of (C - heaven crop top):
+	decide on figure of heaven crop top.
+
+To say ClothingDesc of (C - heaven crop top):
+	say "A blue strap top that doesn't cover your belly, which says 'HEAVEN CAN WAIT' on the front in red letters, along with a drawing of a cute half-devil half-angel with fiery butterfly wings.".
+
+To say ShortDesc of (C - heaven crop top):
+	say "blue crop top".
+To say MediumDesc of (C - heaven crop top):
+	say "blue 'heaven can wait' crop top".
+
+Definition: heaven crop top is demonic: decide yes.
+Definition: heaven crop top is fire themed: decide yes.
+Definition: heaven crop top is blue themed: decide yes.
+
+To decide which number is the initial outrage of (C - heaven crop top):
+	decide on 2.
+
+Part 19 - Flight Attendant Crop Top
+
+flight-attendant-top is a crop top. flight-attendant-top is unique. flight-attendant-top is only arm covering. flight-attendant-top is normally-nipple-covering. flight-attendant-top is neck covering. flight-attendant-top is low cut. The printed name of flight-attendant-top is "[clothing-title-before]flight attendant top[clothing-title-after]". The text-shortcut of flight-attendant-top is "fact". Understand "flight", "attendant" as flight-attendant-top.
+
+Figure of flight-attendant-top is the file "Items/Clothes/Upper/CropTops/croptop19.png".
+
+To decide which figure-name is clothing-image of (C - flight-attendant-top):
+	decide on figure of flight-attendant-top.
+
+Definition: flight-attendant-top is class-relevant:
+	if the class of the player is flight attendant, decide yes;
+	decide no.
+
+To say ClothingDesc of (C - flight-attendant-top):
+	say "A blue longsleeved top that doesn't cover the belly, and has a large cleavage window below the button-up collar, making it somehow look even more slutty and provocative than if it had no collar at all. Its magical power will allow the wearer to slap enemies without suffering any damage penalties from being almost weightless.".
+
+To say ShortDesc of (C - flight-attendant-top):
+	say "blue crop top".
+To say MediumDesc of (C - flight-attendant-top):
+	say "flight attendant's top".
+
+Definition: flight-attendant-top is inflation themed: decide yes.
+Definition: flight-attendant-top is blue themed: decide yes.
+
+To decide which number is the initial outrage of (C - flight-attendant-top):
+	decide on 3.
 
 Crop Top ends here.

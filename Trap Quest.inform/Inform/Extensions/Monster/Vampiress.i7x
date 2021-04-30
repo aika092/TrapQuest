@@ -339,7 +339,7 @@ To say SexSubmissionFlav of (M - vampiress):
 		otherwise if the oral sex addiction of the player < 4:
 			say "[one of]You slowly move your head back and forth, ashamed of what you've become and yet, for some reason, enjoying this action against your will.[or]You reluctantly suckle the vampiress's pulsating [DickDesc of M], finding the experience disturbingly delightful.[or]You bob your head back and forth, trying glare upward defiantly. Somehow, your body translates this into staring up lovingly.[or]You reluctantly but passionately suck the vampiress's [DickDesc of M], cheeks red with shame.[in random order]";
 		otherwise if the oral sex addiction of the player < 7:
-			say "[one of]You [if futanari fetish is 1 or lady fetish < 2]finger the vampiress's slit[otherwise]fondle the vampire's balls[end if] as you joyously suckle [his of M] [DickDesc of M].[or]You fellate [NameDesc of M] with restrained enthusiasm, getting more into this than you thought possible.[or]You bob your head back and forth, trying to convince yourself you're not enjoying it. Even you can't begin to believe your lies.[or]You slowly and obediently stroke the vampiress's [DickDesc of M] as you pull back and tease it with your tongue.[or]You move your head back and forth, dragging your tongue along the bottom of [his of M] [DickDesc of M].[in random order]";
+			say "[one of]You [if M is not a balls-haver]finger the vampiress's slit[otherwise]fondle the vampire's balls[end if] as you joyously suckle [his of M] [DickDesc of M].[or]You fellate [NameDesc of M] with restrained enthusiasm, getting more into this than you thought possible.[or]You bob your head back and forth, trying to convince yourself you're not enjoying it. Even you can't begin to believe your lies.[or]You slowly and obediently stroke the vampiress's [DickDesc of M] as you pull back and tease it with your tongue.[or]You move your head back and forth, dragging your tongue along the bottom of [his of M] [DickDesc of M].[in random order]";
 		otherwise:
 			say "[one of]You passionately pump the vampiress's [DickDesc of M] as you bob your head back and forth.[or]You fellate [NameDesc of M] with unrestrained enthusiasm.[or]You suck the vampiress's [DickDesc of M] like the hungry cumslut you are.[or]You aggressively fellate the vampiress, emitting muffled moans of contentment.[or]You gaze up at [NameDesc of M] lovingly as you eagerly pleasure [his of M] [DickDesc of M].[or]You enthusiastically pleasure [NameDesc of M] with your mouth and tongue.[or]You pucker your lips and finger [his of M] [vagina] as you hungrily suckle [his of M] [DickDesc of M].[in random order]";
 	otherwise:
@@ -494,7 +494,7 @@ To say NormalMouthPenetrationFlav of (M - vampiress):
 
 [The benefit of her happy reward is that you don't have to have a shameful orgasm]
 To compute happy reward of (M - vampiress):
-	if the player is able to get horny and the player is not barbie:
+	if the player is able to get horny and the player is not barbie and the number of things penetrating penis is 0:
 		let C be a random worn chastity bond;
 		say "[BigNameDesc of M][if C is clothing] reaches between your legs, prying off your [printed name of C] with a heavy crunch. [big he of M][end if] smiles at you as [he of M] [if the size of penis > 4]wraps [his of M] hand around your [ShortDesc of penis] and begins to pump[otherwise if the player is male]gently begins to tease your [ShortDesc of penis][otherwise if vagina is actually occupied]begins to tease your clit[otherwise]slips [his of M] fingers into your [vagina][end if]. You feel a sharp pressure in the back of your mind, and [if the player is female]your lips twist themselves into a big, submissive 'O' as orgasm crashes through your body. [BigNameDesc of M] catches your fluids in [his of M] hand, chuckling softly as licks your juices from [his of M] fingers[otherwise if the bimbo of the player < 6]you grit your teeth as your [player-penis] immediately explodes, coating [his of M] hand in fresh, creamy [semen]. [BigNameDesc of M] chuckles softly as [he of M] licks your load off [his of M] fingers[otherwise]your lips twist themselves into a big, submissive 'O' as your [player-penis] shoots several ropes of fresh, creamy [semen] directly into [his of M] hand. [BigNameDesc of M] chuckles softly as [he of M] licks your load off [his of M] fingers[end if].[line break][speech style of M]'I look forward to feeding from you again.'[roman type][line break]";
 		reset vampire hunger;
@@ -573,10 +573,19 @@ To say sexSubmitEmbarrassFlav of (M - vampiress) in (O - an orifice):
 To say sexSubmitSplitFlav of (M - vampiress) in (O - an orifice):
 	if there is a worn chastity bond:
 		say "You can feel [NameDesc of M][']s hands on your [genitals] as [he of M] [one of]pounds[or]plows[or]ruts[at random] your [asshole], separated by a layer of metal, but nonetheless *there* all the same. ";
-	otherwise if the player is male:
-		say "[if the size of penis < 4 and tg fetish >= 1][BigNameDesc of M] ruts you like a [italic type]QUEEN[roman type]. You can practically feel your [player-penis] slipping away.[otherwise if the size of penis < 4 and the player is possessing a penis and the bimbo of the player < 14][BigNameDesc of M] pounds your [asshole] hard and fast. You can't help feeling a little embarrassed by how [italic type]cute[roman type]your [ShortDesc of penis] compares to [hers of M].[otherwise if the size of penis < 4 and the player is possessing a penis][BigNameDesc of M] pounds your [asshole] hard and fast. You feel proud of how [italic type]cute[roman type] your [ShortDesc of penis] is compared to [hers of M].[otherwise if the bimbo of the player < 3][BigNameDesc of M][']s balls repeatedly slap your taint as [his of M] dick pistons in and out of your [asshole], as if to remind you how [italic type]pointless[roman type] it would be to resist [him of M].[otherwise if the bimbo of the player < 5]Shocks of pleasure ripple through your [manly-penis] as [he of M] pounds your [asshole]. And you thought it was humiliating [italic type]before[roman type]...[otherwise if the bimbo of the player < 7][BigNameDesc of M][']s [DickDesc of M] relentlessly pounds your sensitive prostate, reminding you how humiliating it is to get fucked like a common sex toy.[otherwise if the bimbo of the player < 9]Shocks of pleasure ripple through your [ShortDesc of penis] as [he of M] pounds your [asshole]. It's difficult to resist when it feels this good.[otherwise if the bimbo of the player < 10 and transGender is 0][BigNameDesc of M][']s [DickDesc of M] relentlessly pounds your sensitive prostate, reminding you that you're a [italic type]yummy[roman type] faggot for enjoying this.[otherwise if the bimbo of the player < 12]As [NameDesc of M] pistons in and out of your [asshole], [his of M] balls repeatedly slap your taint, as if to remind you how much you [italic type]obviously[roman type] love getting railed.[otherwise if the bimbo of the player < 14]As [NameDesc of M] pistons in and out of your [asshole], [his of M] balls repeatedly slap your taint, as if to remind you how much you LOVE getting fucked.[otherwise]Shocks of pleasure ripple through your [ShortDesc of penis] as [he of M] pounds your [asshole]. Phew, [he of M] sure knows how to show a girl a good time![end if]";
+		if the player is possessing a penis, passively stimulate penis from M;
+		otherwise passively stimulate vagina from M;
+	otherwise if the player is possessing a vagina:
+		say "[if the player is horny and vagina is actually occupied][BigNameDesc of M] fucks your [variable O] hard and fast, knowing without a shred of doubt how desperately wet you are.[otherwise if the player is horny][BigNameDesc of M] fucks your [variable O] hard and fast. [big he of M] pumps [his of M] fingers in and out of your [vagina], ensuring there's no hiding how wet you really are.[otherwise if vagina is actually occupied][BigNameDesc of M] teases your clit as [he of M] pounds your [variable O].[otherwise][BigNameDesc of M] gently pumps [his of M] fingers in and out of your [vagina], skilfully stimulating your most intimate reaches as [he of M] fiercely plows your [variable O].[end if]";
+		passively stimulate vagina from M;
+	otherwise if the player is possessing a penis:
+		if penis is penis-erect:
+			say "[BigNameDesc of M] pounds your [asshole] hard and fast, [if the size of penis < 4]diddling your rigid [sissy-penis] with [his of M] fingertips[otherwise]stroking your [player-penis] in rythm with [his of M] thrusts[end if]";
+		otherwise:
+			say "[BigNameDesc of M] pounds your [asshole] hard and fast, massaging your soft [player-penis] with [his of M] fingertips.";
+		passively stimulate penis from M;
 	otherwise:
-		say "[if the player is horny and vagina is actually occupied][BigNameDesc of M] fucks your [variable O] hard and fast, knowing without a shred of doubt how desperately wet you are.[otherwise if the player is horny][BigNameDesc of M] fucks your [variable O] hard and fast. [big he of M] pumps [his of M] fingers in and out of your [vagina], ensuring there's no hiding how wet you really are.[otherwise if vagina is actually occupied][BigNameDesc of M] teases your clit as [he of M] pounds your [variable O].[otherwise][BigNameDesc of M] gently pumps [his of M] fingers in and out of your [vagina], skilfully stimulating your most intimate reaches as [he of M] fiercely plows your [variable O].[end if]".
+		say "[BigNameDesc of M] ruts you like a [italic type]QUEEN[roman type], [his of M] [if M is a balls-haver]balls repeatedly slapping your taint[otherwise]hips repeatedly clapping your [AssDesc][end if].".
 
 To say (M - vampiress) mercy sex (N - a number):
 	let O be a random orifice penetrated by M;
@@ -679,7 +688,7 @@ To compute molesting attack of (M - vampiress):
 To compute striking attack of (M - vampiress):
 	let B be the painful-part of M;
 	if M is chain-tethering or the accuracy roll of M >= the dexterity of the player:
-		if M is chain-tethering, say "[BigNameDesc of M] yanks on the chain, leaving you with no ability to dodge as [he of M] rakes [his of M] clawed fingers across your [if B is face]face[otherwise if B is hips]ass[otherwise][printed name of B][end if]";
+		if M is chain-tethering, say "[BigNameDesc of M] yanks on the chain, leaving you with no ability to dodge as [he of M] rakes [his of M] clawed fingers across your [if B is face]face[otherwise if B is hips]ass[otherwise][printed name of B][end if].";
 		otherwise say StrikingSuccessFlav of M on B;
 		compute M striking B;
 		compute striking success effect of M on B;
@@ -960,8 +969,8 @@ To compute unique banishment of (M - vampiress):
 	let R be a random number between 0 and 5;
 	if  a random number between 1 and 3 is 3 and gem-strapon is off-stage:
 		now X is gem-strapon;
-	otherwise:
-		now X is a random off-stage gothic corset;
+	otherwise if gothic corset is off-stage:
+		now X is gothic corset;
 	if X is gem-strapon:
 		say "In their wake, you find a [X].";
 	otherwise if X is gothic corset:
@@ -1075,14 +1084,17 @@ To blowjob dominate (M - vampiress):[You 'feed' the vampiress]
 			say AfterDominationComment 0 of M;
 		orgasm;
 	otherwise if sexual-penis-length > 3:
-		say "You grab [NameDesc of M] by the wrists and push [him of M] to [his of M] knees. [big he of M] catches your eye as [he of M] [if C is clothing and C is not strapon-panties]pulls your [sexual-player-penis] out of your [printed name of C] and eagerly wraps [his of M] lips around your shaft. [otherwise if penis is penis-erect]eagerly wraps [his of M] lips around your rock-hard [SexShaft], fondling your balls as [his of M] tongue swirls around your tip. [otherwise]eagerly wraps [his of M] lips around your hardening [SexShaft], fondling your balls as [his of M] tongue swirls around the tip. [end if][big his of M] eye contact never wavers, and as tiny explosions of pleasure pass up and down your length, you realise how difficult it is to look away. [if R < 0]You lose yourself in [his of M] gaze as you fill [his of M] mouth with [semen], and lost you remain as [he of M] finishes [himself of M] off in [his of M] hands and gets to [his of M] feet. [otherwise]You snap out of it, too horny to wonder what just happened as you fill [his of M] mouth with your [semen].[end if][if R < 0 and face is not actually occupied][BigNameDesc of M] presents you with [his of M] sticky fingers, and you are immediately overcome with the urge to get them in your mouth, humming in satisfaction as you slurp off every last drop of [his of M] fluids[otherwise if R < 0 and bukkake fetish is 1]. [BigNameDesc of M] presents you with [his of M] sticky fingers, and you are immediately overcome with the urge to let [him of M] wipe them off on your face[end if].";
+		if the player is possessing a scrotum:
+			say "You grab [NameDesc of M] by the wrists and push [him of M] to [his of M] knees. [big he of M] catches your eye as [he of M] [if C is clothing and C is not strapon-panties]pulls your [sexual-player-penis] out of your [printed name of C] and eagerly wraps [his of M] lips around your shaft. [otherwise if penis is penis-erect]eagerly wraps [his of M] lips around your rock-hard [SexShaft], fondling your balls as [his of M] tongue swirls around your tip. [otherwise]eagerly wraps [his of M] lips around your hardening [SexShaft], fondling your balls as [his of M] tongue swirls around the tip. [end if][big his of M] eye contact never wavers, and as tiny explosions of pleasure pass up and down your length, you realise how difficult it is to look away. [if R < 0]You lose yourself in [his of M] gaze as you fill [his of M] mouth with [semen], and lost you remain as [he of M] finishes [himself of M] off in [his of M] hands and gets to [his of M] feet. [otherwise]You snap out of it, too horny to wonder what just happened as you fill [his of M] mouth with your [semen].[end if][if R < 0 and face is not actually occupied][BigNameDesc of M] presents you with [his of M] sticky fingers, and you are immediately overcome with the urge to get them in your mouth, humming in satisfaction as you slurp off every last drop of [his of M] fluids[otherwise if R < 0 and bukkake fetish is 1]. [BigNameDesc of M] presents you with [his of M] sticky fingers, and you are immediately overcome with the urge to let [him of M] wipe them off on your face[end if].";
+		otherwise:
+			say "You grab [NameDesc of M] by the wrists and push [him of M] to [his of M] knees. [big he of M] catches your eye as [he of M] [if C is clothing and C is not strapon-panties]pulls your [sexual-player-penis] out of your [printed name of C] and eagerly wraps [his of M] lips around your shaft. [otherwise if penis is penis-erect]eagerly wraps [his of M] lips around your rock-hard [SexShaft], stroking your taint as [his of M] tongue swirls around your tip. [otherwise]eagerly wraps [his of M] lips around your hardening [SexShaft], stroking your taint as [his of M] tongue swirls around the tip. [end if][big his of M] eye contact never wavers, and as tiny explosions of pleasure pass up and down your length, you realise how difficult it is to look away. [if R < 0]You lose yourself in [his of M] gaze as you fill [his of M] mouth with [semen], and lost you remain as [he of M] finishes [himself of M] off in [his of M] hands and gets to [his of M] feet. [otherwise]You snap out of it, too horny to wonder what just happened as you fill [his of M] mouth with your [semen].[end if][if R < 0 and face is not actually occupied][BigNameDesc of M] presents you with [his of M] sticky fingers, and you are immediately overcome with the urge to get them in your mouth, humming in satisfaction as you slurp off every last drop of [his of M] fluids[otherwise if R < 0 and bukkake fetish is 1]. [BigNameDesc of M] presents you with [his of M] sticky fingers, and you are immediately overcome with the urge to let [him of M] wipe them off on your face[end if].";
 		BlowGet;
 		if R < 0:
 			if face is not actually occupied:
-				if futanari fetish is 1 or lady fetish is 2, StomachSemenUp 1;
+				if futanari fetish > 0 or lady fetish is 2, StomachSemenUp 1;
 				otherwise SemenAddictUp 1;
 			otherwise:
-				if bukkake fetish is 1 and (futanari fetish is 1 or lady fetish is 2), CumFaceUp 1;
+				if bukkake fetish is 1 and (futanari fetish > 0 or lady fetish is 2), CumFaceUp 1;
 				otherwise SemenAddictUp 1;
 			orgasm M;
 			now player-fucking is DOMINANT-NEUTRAL;
@@ -1096,13 +1108,14 @@ To blowjob dominate (M - vampiress):[You 'feed' the vampiress]
 	otherwise:
 		if R < 0:
 			now player-fucking is DOMINANT-NEUTRAL;
-			if futanari fetish is 1 or lady fetish is 2:
+			if futanari fetish > 0 or lady fetish is 2:
 				say "You [NameDesc of M] push [him of M] to [his of M] knees, looking down at [him of M] hopefully as [he of M] delicately runs [his of M] fingertip along your [SexDesc of penis]. [big he of M] gazes back up at you, never breaking eye contact as [his of M] tongue flutters against your tiny [SexShaft]. It becomes increasingly hard to look away as your [sexual-player-penis] begins to spasm, and you lose yourself in [his of M] gaze as you cover [his of M] tongue with fresh [semen]. [BigNameDesc of M] swallows your [load] as [he of M] returns to [his of M] feet, and you are suddenly overcome with an urge to get on your knees [if face is not actually occupied]and wrap your lips around [his of M] [LongDickDesc of M]. You're not nearly as good as [he of M] is, but you try your best to please your mistress, and eventually [he of M] rewards you with a big load straight down your throat.[otherwise]wrap your hands around [his of M] [LongDickDesc of M]. You don't really see what's dominant about it, but it's exhilarating to pleasure your mistress, and eventually [he of M] rewards you with a big load all over your face.[end if]";
 				BlowGet;
 				if face is not actually occupied:
 					now M is penetrating face;
 					BlowCount;
 					StomachSemenUp the semen load of M;
+					instantThroat M;
 				otherwise if bukkake fetish is 1:
 					CumFaceUp the semen load of M;
 				otherwise:

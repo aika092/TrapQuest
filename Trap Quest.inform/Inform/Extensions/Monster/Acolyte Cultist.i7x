@@ -62,6 +62,8 @@ To say MediumDesc of (M - clairvoyant acolyte):
 
 Definition: clairvoyant acolyte is willing to do oral: decide yes.
 
+Definition: an acolyte is willing to fluff: decide yes.
+
 [TODO: update to reflect chant-duration]
 To say MonsterDesc of (M - an acolyte):
 	if diaper quest is 0, say "A veiled [man of M] in a sheer black robe. What you can see of [his of M] expression suggests [he of M][']s not exactly all there. Still, despite looking like [he of M] hasn't seen the sun in a few years [he of M] does seem to be in quite good shape and could be unexpectedly dangerous.";
@@ -391,7 +393,7 @@ This is the cult conversion rule:
 					satisfy M;
 					rule succeeds;
 				otherwise:
-					say "[line break][speech style of M]'You will be of use to us yet, nonbeliever!'[roman type][line break]";
+					say "[line break][speech style of M]'You will be of use to us yet, non-believer!'[roman type][line break]";
 					compute ritual dragging of M;
 					rule succeeds.
 
@@ -438,7 +440,7 @@ To compute erection orgasm of (M - an acolyte):
 [TODO: possibly consider more handling for the doom quest]
 To say ErectionLostFlav of (M - an acolyte):
 	let N be a random off-stage mindless acolyte;
-	if N is monster and doomed < 5:
+	if N is monster and doomed > 0 and doomed < 5:
 		say "[BigFuckerDesc of M] begins to laugh as your softening [ShortDesc of penis] slips out of [his of M] [HoleDesc of M].[line break][speech style of M]'[one of]The ritual is complete. Ha. Hahaha...'[or]HAHAHAH! AT LAST! At... last...'[or]The ritual is complete! Heehee! Heeheehee...'[or]Finally, I can join the blessed ones! At... last..'[in random order][roman type][line break][big his of M] voice trails off as [his of M] facial expression grows even more vacant, and [his of M] whole body is wreathed in purple light, [if lady fetish is 2]a tiny purple chastity cage materialises around [his of M] penis[otherwise if pregnancy fetish is 1][his of M] belly balloons up ridiculously[otherwise]clear fluid squirting out of [his of M] pussy[end if].";
 		increase doom counter by 50;
 		destroy M;
@@ -446,7 +448,7 @@ To say ErectionLostFlav of (M - an acolyte):
 		now N is in the location of the player;
 		now the times-submitted of M is 1;
 	otherwise:
-		say "[BigFuckerDesc of M] looks over [his of M] shoulder for the first time in quite a while as your softening [ShortDesc of penis] slips out of [his of M] [HoleDesc of M].[line break][speech style of M]'[if the class of the player is cultist][one of]The cult thanks you, [brother of the player]. We grow strong as one.'[or]Many thanks, [brother of the player]. As one, we grow strong.'[or]We have done it, [brother of the player]. The cult grows ever stronger!'[in random order][otherwise][one of]The cult grows stronger thanks to you, nonbeliever. You will join us. It is inevitable.'[or]The cult grows with every donation, nonbeliever. Join us.'[or]You donation is appreciated, but not enough, nonbeliever. Soon, you will join us. You have no choice.[in random order][end if][big he of M] [if the class of the player is cultist]holds eye contact with you for several seconds before climbing[otherwise]somehow smiles without disturbing [his of M] vacant facial expression, and climbs[end if] off you. Looks like [he of M]'s lost interest.";
+		say "[BigFuckerDesc of M] looks over [his of M] shoulder for the first time in quite a while as your softening [ShortDesc of penis] slips out of [his of M] [HoleDesc of M].[line break][speech style of M]'[if the class of the player is cultist][one of]The cult thanks you, [brother of the player]. We grow strong as one.'[or]Many thanks, [brother of the player]. As one, we grow strong.'[or]We have done it, [brother of the player]. The cult grows ever stronger!'[in random order][otherwise][one of]The cult grows stronger thanks to you, non-believer. You will join us. It is inevitable.'[or]The cult grows with every donation, non-believer. Join us.'[or]You donation is appreciated, but not enough, non-believer. Soon, you will join us. You have no choice.[in random order][end if][big he of M] [if the class of the player is cultist]holds eye contact with you for several seconds before climbing[otherwise]somehow smiles without disturbing [his of M] vacant facial expression, and climbs[end if] off you. Looks like [he of M]'s lost interest.";
 		SilentlyDifficultyUp M by 1;
 		Bore M.
 
@@ -454,17 +456,20 @@ To say ErectionNearingClimaxFlav of (M - an acolyte):
 	say "[BigFuckerDesc of M] begins to chant louder and louder as [he of M] bounces on your [player-penis]! [big his of M] ritual must be close to finishing!";
 
 To say ErectionClimaxFlav of (M - an acolyte):
-	say "Glowing purple symbols suddenly appear all over [FuckerDesc of M]'s body, and you faintly feel tentacles wrapping around your limbs. It only takes a moment for them to completely immobilize you![line break][speech style of M]'[one of]It is time,[or]The ritual is nearly complete[or]The time has come[in random order], [if the class of the player is cultist][brother of the player][otherwise]non-believer[end if]! [one of]Cum! Now!'[or]Release it all!'[or]Cum for the [great ones]!'[or]Ejaculate, now!'[in random order][roman type][line break]Without any way to move, your only choice is to [if the reaction of the player is 0]try to hold on[otherwise]hope you're able to finish[end if] as [FuckerDesc of M] speeds up!";
-	let N be doomed;
-	if N < 0, now N is 1;
-	stimulate penis times N;[If the player orgasms, the ejaculation has its own flavour.]
-	if refractoryperiod > 0:
+	if penis is not penis-erect:
 		say ErectionLostFlav of M;
 	otherwise:
-		say "Unfortunately, you aren't able to finish before the glowing symbols fade, and [FuckerDesc of M] slows down and comes to a stop.[line break][speech style of M]'[if the class of the player is cultist][one of]When one of us fails, all of us do, [brother of the player].'[or]We have shamed ourselves...'[or]We have failed, [brother of the player]...'[in random order][otherwise][one of]It seems I was mistaken about your purpose. Excuse me, I have to prepare.'[or]Only a non-believer like you would show the [great ones] such disrespect. Your true purpose only becomes clearer...'[or]Hmm. It seems you weren't suitable as donor after all.'[in random order][end if][roman type][line break][big he of M] climbs off you and begins to walk away without once looking over [his of M] shoulder.";
-		if the class of the player is cultist, FavourDown M by 1;
-		otherwise FavourDown M by N;
-		Bore M.
+		say "Glowing purple symbols suddenly appear all over [FuckerDesc of M]'s body, and you faintly feel tentacles wrapping around your limbs. It only takes a moment for them to completely immobilize you![line break][speech style of M]'[one of]It is time[or]The ritual is nearly complete[or]The time has come[in random order], [if the class of the player is cultist][brother of the player][otherwise]non-believer[end if]! [one of]Cum! Now!'[or]Release it all!'[or]Cum for the [great ones]!'[or]Ejaculate, now!'[in random order][roman type][line break]Without any way to move, your only choice is to [if the reaction of the player is 0]try to hold on[otherwise]hope you're able to finish[end if] as [FuckerDesc of M] speeds up!";
+		let N be doomed;
+		if N < 0, now N is 1;
+		stimulate penis times N;[If the player orgasms, the ejaculation has its own flavour.]
+		if refractoryperiod > 0:
+			say ErectionLostFlav of M;
+		otherwise:
+			say "Unfortunately, you aren't able to finish before the glowing symbols fade, and [FuckerDesc of M] slows down and comes to a stop.[line break][speech style of M]'[if the class of the player is cultist][one of]When one of us fails, all of us do, [brother of the player].'[or]We have shamed ourselves...'[or]We have failed, [brother of the player]...'[in random order][otherwise][one of]It seems I was mistaken about your purpose. Excuse me, I have to prepare.'[or]Only a non-believer like you would show the [great ones] such disrespect. Your true purpose only becomes clearer...'[or]Hmm. It seems you weren't suitable as donor after all.'[in random order][end if][roman type][line break][big he of M] climbs off you and begins to walk away without once looking over [his of M] shoulder.";
+			if the class of the player is cultist, FavourDown M by 1;
+			otherwise FavourDown M by N;
+			Bore M.
 
 Section 2 - DQ
 
@@ -810,7 +815,7 @@ To compute failed dominance punishment of (M - an acolyte):
 			now G is not penetrating vagina;
 			severeHumiliate;
 			Bore M;
-		otherwise if the player is male and the size of penis is min penis size and TG fetish > 0:[you get turned into a girl]
+		otherwise if the player is sexed male and the size of penis is min penis size and TG fetish > 0:[you get turned into a girl]
 			say "[speech style of herald]'Your body is totally like, [if pregnancy fetish is 1]ready to be moulded into a vessel for the spawn of [Azathot] and stuff[otherwise]powerless before the will of [Azathot][end if]!'[roman type][line break]You look down (or was it up) to see a [if interracial fetish is 1]big black tentacle[otherwise]huge white tentacle[end if] wrapping around your thigh, insistently rubbing its bulbous, shiny head against your [if the player is possessing a penis and interracial fetish is 1]inferior white [sissy-penis], forcing it to recede into your[otherwise if the player is possessing a penis]against your [ShortDesc of penis], forcing it to recede into your[otherwise]blank[end if] taint. The tentacle pushes harder, further, and deeper, simultaneously moulding your genitals into a brand new [vagina] and roughly deflowering it at the same time. Your mind goes blank in anticipation of what's to come. A lifetime of service to-[line break]You suddenly find yourself laying face up [if the location of the player is Woods23]on the altar[otherwise]on the ground[end if], your [ShortDesc of penis] and your purity gone without a trace.";
 			severeHumiliate;
 			SexChange the player;
@@ -912,13 +917,13 @@ To penetration dominate (M - an acolyte):
 	FuckGet;
 	now the body soreness of the player is 10;
 	say "The tentacles['] grip slowly fades, and you quickly return to your feet, trying to shake off what just happened.";
-	if doom counter > 0, increase doom counter by 50 + the size of penis;
+	if doomed > 0 and doomed < 5 and doom counter > 0, increase doom counter by 50 + the size of penis;
 	if the size of penis < 10 and the player is possessing a penis:
 		PenisUp 1;
 	otherwise:
 		say "Tingles pass through your body as your muscles suddenly grow in size.";
 		StrengthUp 1;
-	if M is mindless acolyte and doom counter > 0, increase doom counter by 50;
+	if M is mindless acolyte and doomed > 0 and doomed < 5 and doom counter > 0, increase doom counter by 50;
 	otherwise say AfterDominationComment 1 of M.
 
 To facesit dominate (M - an acolyte):[The cultist eats you out herself!]

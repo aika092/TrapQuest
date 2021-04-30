@@ -355,7 +355,7 @@ To compute vaginal sex of (M - bowsette):
 	say "[one of][M sex reaction][or][cycling]".
 
 To compute post climax effect of (M - bowsette) in (F - a body part):
-	if there is a worn tattoo and the number of worn ass tattoo is 0:
+	if there is a worn tattoo and the number of worn left-asscheek tattoo is 0 and the number of worn both-asscheeks tattoo is 0:
 		summon brainless bimbo tattoo;
 		say "You yelp as a red mark of a Turtle King appears on your ass cheek!";
 	if brainless bimbo tattoo is worn:

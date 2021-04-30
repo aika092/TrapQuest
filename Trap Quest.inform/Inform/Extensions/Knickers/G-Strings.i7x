@@ -19,10 +19,6 @@ To say TypeTitle of (G - a g-string):
 To say selfexaminetitle of (G - a g-string):
 	say "[one of]slutty[or]tiny[or]flimsy[at random] [selfexamineuniquetitle of G]".
 
-To uniquely set up (G - a g-string):
-	now the damage of G is 0;
-	now the armour of G is a random number between 1 and 3.
-
 To decide which figure-name is clothing-image of (C - a g-string):
 	decide on figure of g-string 1.
 

@@ -1,6 +1,6 @@
 Cutoffs by Knickers begins here.
 
-cutoffs is a kind of knickers. cutoffs is usually denim. cutoffs is usually totally-exclusive. The armour of cutoffs is 7. Understand "pair", "of" as cutoffs.
+cutoffs is a kind of knickers. cutoffs is usually denim. cutoffs is usually totally-exclusive. Understand "pair", "of" as cutoffs.
 
 Definition: a cutoffs is blue themed: decide yes.
 Definition: a cutoffs is rippable:
@@ -20,6 +20,8 @@ Definition: a cutoffs is uncovered themed: decide yes.
 
 To decide which number is the unique outrage of (C - a cutoffs):
 	decide on 2.
+To decide which number is the initial armour of (C - a cutoffs):
+	decide on the penis-capacity of C * 2.
 
 Part 1 - Neat Cutoffs
 
@@ -64,7 +66,7 @@ Figure of heart window cutoffs is the file "Items/Clothes/Lower/Underwear/Skimpy
 Definition: heart window cutoffs is transformation-protected: decide yes.
 Definition: heart window cutoffs is heart themed: decide yes.
 
-predicament-painted-cutoffs is a knickers. predicament-painted-cutoffs is unique. predicament-painted-cutoffs is crotch-exposing. The armour of predicament-painted-cutoffs is 1. The printed name of predicament-painted-cutoffs is "[clothing-title-before]painted cutoffs[clothing-title-after]". The text-shortcut of predicament-painted-cutoffs is "pcf". Understand "painted", "cutoffs" as predicament-painted-cutoffs.
+predicament-painted-cutoffs is a knickers. predicament-painted-cutoffs is unique. predicament-painted-cutoffs is crotch-exposing. The printed name of predicament-painted-cutoffs is "[clothing-title-before]painted cutoffs[clothing-title-after]". The text-shortcut of predicament-painted-cutoffs is "pcf". Understand "painted", "cutoffs" as predicament-painted-cutoffs.
 
 Definition: predicament-painted-cutoffs is hand-blocked:
 	if current-predicament is vibe-photo-predicament or (realisticArms is 1 and entry 1 in the armUses of arms is painted-vibrator-hands and entry 2 in the armUses of arms is painted-vibrator-hands), decide yes;

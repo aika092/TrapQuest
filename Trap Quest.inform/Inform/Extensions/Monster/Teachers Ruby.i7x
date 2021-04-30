@@ -55,13 +55,13 @@ To compute teaching of (L - eating-lesson):
 					if the player is consenting:
 						say "[if the player is overly full or the semen taste addiction of the player < 8]You force yourself to eat more of the gross slimy food.[otherwise if the semen taste addiction of the player < 14]You diligently swallow another mouthful of the slimy goop.[otherwise]You happily shovel down more of the delicious cum-covered mush![end if]";
 						if the player is overly full:
-							say "Forcing more food into your already full belly makes it cramp painfully.";
-							PainUp 1;
-						if diaper quest is 0:
-							StomachSemenUp 1;
-							StomachFoodUp 1;
-						otherwise:
-							StomachFoodUp 2;
+							if the flesh volume of belly > a random number between 1 and 9:
+								say "Your impressive gut manages to handle fitting a bit more food inside without hurting too badly.";
+							otherwise:
+								say "Forcing more food into your already full belly makes it cramp painfully.";
+								PainUp 1;
+						if diaper quest is 0, StomachSemenUp 1;
+						StomachFoodUp 1;
 					otherwise:
 						say "You refuse to try and force any more of the slimy stuff down!";
 						add yourself to E;

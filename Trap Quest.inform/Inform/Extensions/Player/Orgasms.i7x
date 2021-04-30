@@ -261,7 +261,7 @@ The condom of kings ejaculation rule is listed last in the ejaculation rules.
 This is the chastity cage ejaculation rule:
 	if there is a worn chastity cage:
 		let P be a random bottom level pee protection clothing worn by the player;
-		say "[one of]Your [player-penis] quivers pitifully as a stream of white [semen] dribbles out of your plastic chastity cage[or]Your [player-penis] twitches as hot [semen] leaks out of the hole in your plastic chastity cage[or]You can feel your [player-penis] twitching as warm [semen] streams out of your little plastic cage[in random order], [if P is clothing]and into your [printed name of P]. You shiver as your load trickles down your balls and over your skin.[otherwise]and into a shameful pool on the ground.[end if]";[this only happens from anal orgasms, so we can call it shameful!]
+		say "[one of]Your [player-penis] quivers pitifully as a stream of white [semen] dribbles out of your plastic chastity cage[or]Your [player-penis] twitches as hot [semen] leaks out of the hole in your plastic chastity cage[or]You can feel your [player-penis] twitching as warm [semen] streams out of your little plastic cage[in random order], [if P is clothing]and into your [printed name of P].[otherwise if the player is possessing a scrotum]You shiver as your load trickles down your balls and over your skin.[otherwise]and into a shameful pool on the ground.[end if]";[this only happens from anal orgasms, so we can call it shameful!]
 		compute ejaculation;
 		rule succeeds.
 The chastity cage ejaculation rule is listed last in the ejaculation rules.
@@ -288,7 +288,7 @@ This is the ejaculation into clothing rule:
 		if P is portal-pants:
 			say "Your [ShortDesc of penis] [if A < 3]quivers excitedly[otherwise]flexes powerfully[end if] as [if A < 3]a small amount of [semen] slowly dribbles from the tip[otherwise if A < 6]splurts warm [semen][otherwise if A < 8]drools its thick, creamy load[otherwise if A < 11]shoots several thick, creamy ropes[otherwise]shoots its almost inhuman load[end if][run paragraph on]";
 		otherwise if P is potentially penis covering:
-			say "[one of]Your [ShortDesc of penis] [if A < 3]quivers excitedly[otherwise]flexes powerfully[end if] as it [if A < 3]dribbles its small amount of [semen] into[otherwise if A < 6]splurts warm [semen] into[otherwise if A < 9]drools its thick, creamy load into[otherwise]floods your [printed name of a random bottom level pee protection clothing worn by the player] with its massive, creamy load.[end if][if A < 8] your [printed name of P].[end if][or]Your [ShortDesc of penis] [if A < 3]quivers from within your[otherwise]strains against your[end if] [printed name of a random bottom level pee protection clothing worn by the player], wiping your mind with pleasure [if P is fluid immune]as it coats the tough inner [clothing-material of P][otherwise]as it darkens the [clothing-material of P][end if] with a [if A < 3]pitifully tiny load[otherwise if A < 5]warm, gooey load[otherwise if A < 8]thick, creamy load[otherwise]massive load[end if], which [if P is fluid immune]slowly rolls down your balls.[otherwise]darkening the inner fabric[end if].[or]Your [ShortDesc of penis] spurts a [if A < 3]feeble load[otherwise if A < 5]warm load[otherwise if A < 9]thick load[otherwise]massive, creamy load[end if] into your [printed name of P], [if P is fluid immune] which hits the inner [clothing-material of P] and splashes back against your skin. You tremble as the slimy [semen] rolls down your shaft.[otherwise]which creates a noticeable dark spot in the [clothing-material of P].[end if][in random order]";
+			say "[one of]Your [ShortDesc of penis] [if A < 3]quivers excitedly[otherwise]flexes powerfully[end if] as it [if A < 3]dribbles its small amount of [semen] into[otherwise if A < 6]splurts warm [semen] into[otherwise if A < 9]drools its thick, creamy load into[otherwise]floods your [printed name of a random bottom level pee protection clothing worn by the player] with its massive, creamy load.[end if][if A < 8] your [printed name of P].[end if][or]Your [ShortDesc of penis] [if A < 3]quivers from within your[otherwise]strains against your[end if] [printed name of a random bottom level pee protection clothing worn by the player], wiping your mind with pleasure [if P is fluid immune]as it coats the tough inner [clothing-material of P][otherwise]as it darkens the [clothing-material of P][end if] with a [if A < 3]pitifully tiny load[otherwise if A < 5]warm, gooey load[otherwise if A < 8]thick, creamy load[otherwise]massive load[end if], which [if P is fluid immune]slowly rolls down your shaft[otherwise]darkening the inner fabric[end if].[or]Your [ShortDesc of penis] spurts a [if A < 3]feeble load[otherwise if A < 5]warm load[otherwise if A < 9]thick load[otherwise]massive, creamy load[end if] into your [printed name of P], [if P is fluid immune] which hits the inner [clothing-material of P] and splashes back against your skin. You tremble as the slimy [semen] rolls down your shaft.[otherwise]which creates a noticeable dark spot in the [clothing-material of P].[end if][in random order]";
 		otherwise:
 			say "Your [ShortDesc of penis] [if A < 3]quivers excitedly[otherwise]flexes powerfully[end if] as [if A < 3]a small amount of [semen] slowly dribbles[otherwise if A < 6]it drools warm [semen][otherwise if A < 9]it splurts out thick, creamy [semen], which oozes down your belly and [otherwise]shoots out several thick, creamy ropes, which ooze slowly down your belly and[end if] down your shaft, collecting in the waist band of your [printed name of a random bottom level pee protection clothing worn by the player], [if P is fluid immune]which doesn't absorb anything at all, allowing you to feel your slimy load dribble slowly over your skin[otherwise]which creates a noticeable dark spot in the fabric[end if].";
 		compute ejaculation;
@@ -427,6 +427,7 @@ This is the diaper orgasm resolution rule:
 			otherwise:
 				DiaperAddictUp 2;
 		otherwise if the number of worn diaper is 0 and the number of changing the player monsters grabbing the player is 0:
+			if diaper quest is 1, SexAddictUp 1;
 			DiaperAddictDown 1.
 The diaper orgasm resolution rule is listed last in the orgasm resolution rules.
 
@@ -434,13 +435,19 @@ This is the BBC orgasm resolution rule:
 	if interracial fetish is 1:
 		repeat with M running through monsters penetrating a body part:
 			if M is dark skinned:
-				if a random number between 3 and 12 > the raw bbc addiction of the player, BBCAddictUp 1;
+				if a random number between 2 and 12 > the raw bbc addiction of the player, BBCAddictUp 1;
+				if there is a worn tattoo:
+					let T be a random interracial themed drawable tattoo;
+					if T is tattoo:
+						say "[bold type]A [T] [bold type]shimmers into existence on your skin![roman type][line break]";
+						summon T;
+						try examining T;
 			otherwise if M is human:
 				if a random number between 1 and 4 < the raw bbc addiction of the player, BBCAddictDown 1.
 The BBC orgasm resolution rule is listed last in the orgasm resolution rules.
 
 This is the girls pee when they orgasm rule:
-	if the player is possessing a vagina and player-fucking is DOMINANT-NONE and (the bladder of the player > bladder-risky-level or the player is in WoodsBoss01) and player-urinating is 0:
+	if the player is possessing a vagina and player-fucking is DOMINANT-NONE and watersports mechanics is 1 and (the bladder of the player > bladder-risky-level or the player is in WoodsBoss01) and player-urinating is 0:
 		if the bladder of the player is 0, now the bladder of the player is 2;
 		now delayed urination is 2;
 		if the player is bursting, now delayed urination is 1;
@@ -468,7 +475,7 @@ This is the hentai orgasm resolution rule:
 The hentai orgasm resolution rule is listed last in the orgasm resolution rules.
 
 This is the ass expulsion from orgasm rule:
-	if asshole is not actually occupied and the total squirtable fill of belly > 0:
+	if asshole is not actually occupied and the total squirtable fill of belly > 0 and currently-squirting is 0:
 		say "As you cum, you can't help but let go of your anal sphincter!";
 		AssSquirt.
 The ass expulsion from orgasm rule is listed last in the orgasm resolution rules.

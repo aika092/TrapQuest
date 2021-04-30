@@ -1,46 +1,48 @@
 All Corsets by Corsets begins here.
 
-A ballet corset is a kind of corset. A ballet corset is usually top-exclusive. A ballet corset is usually pvc. A ballet corset is usually short. There is 1 transformation-rare ballet corset. A ballet corset is usually normally-nipple-covering. A ballet corset is usually average cut.
+ballet corset is a corset. ballet corset is top-exclusive. ballet corset is pvc. ballet corset is short. ballet corset is transformation-rare. ballet corset is normally-nipple-covering. ballet corset is average cut.
 
-The printed name of ballet corset is usually "[clothing-title-before]ballet corset[clothing-title-after]". The text-shortcut of ballet corset is "bcst".
+The text-shortcut of ballet corset is "bcst".
 
 Figure of ballet corset is the file "Items/Clothes/Upper/Corsets/balletcorset1.png".
 
-To decide which figure-name is clothing-image of (C - a ballet corset):
+To decide which figure-name is clothing-image of (C - ballet corset):
 	decide on figure of ballet corset.
 
-Definition: a ballet corset is pink themed: decide yes.
+Definition: ballet corset is pink themed: decide yes.
 
-To say ClothingDesc of (C - a ballet corset):
+To say ClothingDesc of (C - ballet corset):
 	say "A [unless the outrage of C is too humiliating][second custom style]super-cute[roman type][end if] pink overbust corset with an attached short frilly tutu.".
 
-To say ShortDesc of (C - a ballet corset):
+To say ShortDesc of (C - ballet corset):
+	say "ballet corset".
+To say MediumDesc of (C - ballet corset):
 	say "ballet corset".
 
-To decide which number is the initial outrage of (C - a ballet corset):
+To decide which number is the initial outrage of (C - ballet corset):
 	decide on 4.
 
-Definition: a ballet corset is ballet related: decide yes.
+Definition: ballet corset is ballet related: decide yes.
 
-Definition: a ballet corset is strut enabling:
+Definition: ballet corset is strut enabling:
 	if there is a worn thigh high ballet boots, decide yes;
 	decide no.
 
-Definition: a ballet corset is transformation-protected:
+Definition: ballet corset is transformation-protected:
 	if there is a worn thigh high ballet boots, decide yes;
 	decide no.
 
-Definition: a ballet corset is IcarusScienceAppropriate:
-	if it is actually summonable, decide yes;
+Definition: ballet corset is IcarusScienceAppropriate:
+	if ballet corset is actually summonable, decide yes;
 	decide no.
 
-To compute periodic effect of (C - a ballet corset):
+To compute periodic effect of (C - ballet corset):
 	if there is a worn thigh high ballet boots and the strut of the player is 0 and the player is upright:
 		say "You are [one of][or]once again [stopping]magically forced to walk with your hands above your head! [bold type]You are now strutting[one of], [roman type]which gives you increased dexterity but slowly increases humiliation.[or].[roman type][line break][stopping]";
 		cutshow figure of ballet cutscene for C;
 		now the strut of the player is 1.
 
-Check strutting when there is a worn ballet corset:
+Check strutting when ballet corset is worn:
 	if the strut of the player is 1 and there is a worn thigh high ballet boots, say "You can't stop strutting, you're being magically forced to by your ballet clothing!" instead.
 
 [!<ThePlayerCantSlapWhileBalletStruttingRule>+
@@ -54,7 +56,7 @@ This is the player can't slap while ballet strutting rule:
 		rule fails.
 The player can't slap while ballet strutting rule is listed in the ability to slap rules.
 
-A bat corset is a kind of corset. A bat corset is usually leather. A bat corset is unique. A bat corset is usually normally-nipple-covering. A bat corset is usually very low cut. Understand "bat", "corset" as a bat corset.
+A bat corset is a kind of corset. A bat corset is leather. A bat corset is unique. A bat corset is normally-nipple-covering. A bat corset is very low cut. Understand "bat", "corset" as a bat corset.
 Definition: a bat corset is fluid immune: decide yes.
 
 To decide which number is the dexterity-influence of (C - a bat corset):
@@ -72,16 +74,15 @@ To decide which number is the intelligence-influence of (C - a bat corset):
 	increase D by the magic-modifier of C;
 	decide on D.
 
-To uniquely set up (C - a bat corset):
-	do nothing. [It never gets a magic enhancement, unlike other corsets]
-
 To decide what number is the price of (C - a bat corset):
 	decide on 7.
 
 To say ShortDesc of (C - a bat corset):
 	say "bat corset".
+To say MediumDesc of (C - a bat corset):
+	say "bat corset".
 
-bat-shape-corset is a bat corset. bat-shape-corset is rare. The printed name of bat-shape-corset is "[clothing-title-before]bat corset[clothing-title-after]". The text-shortcut of bat corset is "bco".
+bat-shape-corset is a bat corset. bat-shape-corset is rare. The text-shortcut of bat corset is "bco".
 Definition: bat-shape-corset is black themed: decide yes.
 
 To decide which number is the initial outrage of (C - bat-shape-corset):
@@ -99,7 +100,7 @@ To decide which object is the unique-upgrade-target of (C - bat-shape-corset):
 	decide on slutty-bat-corset.
 
 
-bat-pattern-corset is a bat corset. bat-pattern-corset is high cut. The printed name of bat-pattern-corset is "[clothing-title-before]bat pattern corset[clothing-title-after]". The text-shortcut of bat-pattern-corset is "bpco". Understand "pattern" as bat-pattern-corset.
+bat-pattern-corset is a bat corset. bat-pattern-corset is high cut. The text-shortcut of bat-pattern-corset is "bpco".
 Definition: bat-pattern-corset is grey themed: decide yes.
 
 To decide which number is the initial outrage of (C - bat-pattern-corset):
@@ -118,11 +119,14 @@ Definition: bat-pattern-corset is transformation-protected:
 To decide which object is the unique-upgrade-target of (C - bat-pattern-corset):
 	decide on slutty-bat-corset.
 
+To say MediumDesc of (C - bat-pattern-corset):
+	say "bat pattern corset".
+Understand "pattern" as bat-pattern-corset.
 To say ClothingDesc of (C - bat-pattern-corset):
 	say "A cute grey overbust corset with a spooky pattern of bats, ghosts and candy on it. You can feel powerful magic flowing from it.".
 
 
-slutty-bat-corset is a bat corset. slutty-bat-corset is ridiculously low cut. slutty-bat-corset is top-exclusive. The printed name of slutty-bat-corset is "[clothing-title-before]nipple clamp bat corset[clothing-title-after]". The text-shortcut of slutty-bat-corset is "ncbc". Understand "nipple", "clamp" as slutty-bat-corset. slutty-bat-corset is normally-partially-nipple-covering. slutty-bat-corset is optional-top-displacable.
+slutty-bat-corset is a bat corset. slutty-bat-corset is ridiculously low cut. slutty-bat-corset is top-exclusive. The text-shortcut of slutty-bat-corset is "ncbc". slutty-bat-corset is normally-partially-nipple-covering. slutty-bat-corset is optional-top-displacable.
 Definition: slutty-bat-corset is grey themed: decide yes.
 Definition: slutty-bat-corset is not-top-displacable: decide no.
 
@@ -135,154 +139,228 @@ To decide which figure-name is clothing-image of (C - slutty-bat-corset):
 
 Definition: slutty-bat-corset is transformation-protected: decide yes.
 
+To say MediumDesc of (C - slutty-bat-corset):
+	say "nipple clamp bat corset".
+Understand "nipple", "clamp" as slutty-bat-corset.
 To say ClothingDesc of (C - slutty-bat-corset):
 	say "A cute grey underbust corset with a spooky pattern of bats, ghosts and candy on it. It has bat wings at the back and nipple clamps in the shape of small bats that come up via chains to semi-cover your nipples. You can feel powerful magic flowing from it.".
 
-A fetish corset is a kind of corset. A fetish corset is usually latex. A fetish corset is usually top-exclusive. A fetish corset is usually sheer. There is 1 transformation-rare fetish corset.
+bondage-corset is a corset. bondage-corset is leather. bondage-corset is transformation-rare. bondage-corset is normally-nipple-covering. bondage-corset is high cut. bondage-corset is top-displacable.
 
-The printed name of fetish corset is usually "[clothing-title-before]fetish corset[clothing-title-after]". The printed plural name of fetish corset is usually "[clothing-title-before]fetish corsets[clothing-title-after]". The text-shortcut of fetish corset is "fco".
+The text-shortcut of bondage-corset is "bdct".
 
-Definition: a fetish corset is yellow themed: decide yes.
+Figure of bondage-corset is the file "Items/Clothes/Upper/Corsets/bondagecorset1.png".
+To decide which figure-name is clothing-image of (C - bondage-corset):
+	decide on figure of bondage-corset.
+
+Definition: bondage-corset is black themed: decide yes.
+
+To say ClothingDesc of (C - bondage-corset):
+	say "A black leather overbust corset with a zip, tight buckle straps, and ringlets for bondage anchoring.".
+
+To say ShortDesc of (C - bondage-corset):
+	say "bondage corset".
+To say MediumDesc of (C - bondage-corset):
+	say "leather bondage corset".
+Understand "bondage" as bondage-corset.
+
+To decide which number is the initial outrage of (C - bondage-corset):
+	decide on 6.
+
+skirted-bondage-corset is a corset. skirted-bondage-corset is latex. skirted-bondage-corset is unique. skirted-bondage-corset is hobble-skirted. skirted-bondage-corset is crotch-skirted. skirted-bondage-corset is fully exposing. skirted-bondage-corset is neck covering. skirted-bondage-corset is enema-helping.
+
+The text-shortcut of skirted-bondage-corset is "sbct".
+
+Figure of skirted-bondage-corset is the file "Items/Clothes/Upper/Corsets/bondagecorset2.png".
+To decide which figure-name is clothing-image of (C - skirted-bondage-corset):
+	decide on figure of skirted-bondage-corset.
+
+Definition: skirted-bondage-corset is black themed: decide yes.
+Definition: skirted-bondage-corset is red themed: decide yes.
+
+To say ClothingDesc of (C - skirted-bondage-corset):
+	say "A black underbust corset with several tight buckle straps, connected to a long tight red latex skirt. The outfit also wraps round the back to finish up at the neck, while leaving your [BreastDesc] entirely exposed.".
+
+To say ShortDesc of (C - skirted-bondage-corset):
+	say "bondage corset".
+To say MediumDesc of (C - skirted-bondage-corset):
+	say "skirted bondage corset".
+Understand "skirted", "bondage" as skirted-bondage-corset.
+
+To decide which number is the initial outrage of (C - skirted-bondage-corset):
+	decide on 12.
+
+skirted-maid-corset is a corset. skirted-maid-corset is latex. skirted-maid-corset is unique. skirted-maid-corset is knee-length. skirted-maid-corset is fully exposing. skirted-maid-corset is neck covering. skirted-maid-corset is only arm covering.
+
+Definition: skirted-maid-corset is potentially-partially-bottom-layer-concealing: decide no. [doesn't cover the bottom at all thanks to apron window]
+
+The text-shortcut of skirted-maid-corset is "smct".
+
+Figure of skirted-maid-corset is the file "Items/Clothes/Upper/Corsets/bondagecorset3.png".
+To decide which figure-name is clothing-image of (C - skirted-maid-corset):
+	decide on figure of skirted-maid-corset.
+
+Definition: skirted-maid-corset is black themed: decide yes.
+
+To say ClothingDesc of (C - skirted-maid-corset):
+	say "A black latex underbust corset connected to a skirt with a completely transparent latex 'apron' at the front, providing a window through to your crotch. The outfit also wraps round the back to finish up at the neck, while leaving your [BreastDesc] entirely exposed. [bold type]You can sense that it magically prevents you from increasing your addiction to different tastes while worn.[roman type][line break]".
+
+To say ShortDesc of (C - skirted-maid-corset):
+	say "maid corset dress".
+To say MediumDesc of (C - skirted-maid-corset):
+	say "skirted maid corset".
+Understand "skirted", "maid" as skirted-maid-corset.
+
+To decide which number is the initial outrage of (C - skirted-maid-corset):
+	decide on 12.
+
+fetish corset is a corset. fetish corset is latex. fetish corset is top-exclusive. fetish corset is sheer. fetish corset is transformation-rare.
+
+The text-shortcut of fetish corset is "fco".
+
+Definition: fetish corset is yellow themed: decide yes.
 
 Figure of Fetish Corset is the file "Items/Clothes/Upper/Corsets/fetishcorset1.png".
 
-To decide which figure-name is clothing-image of (C - a fetish corset):
+To decide which figure-name is clothing-image of (C - fetish corset):
 	decide on figure of fetish corset.
 
-To say ClothingDesc of (C - a fetish corset):
+To say ClothingDesc of (C - fetish corset):
 	say "[if the outrage of C is too humiliating]An outrageous[otherwise]A[line break][second custom style]lush[roman type][line break][end if] translucent latex underbust corset with an extremely exaggerated shape and rubbery frills at the bottom. This must be designed to be worn exclusively at fetish events.".
 
-To say ShortDesc of (C - a fetish corset):
+To say ShortDesc of (C - fetish corset):
 	say "fetish corset".
+To say MediumDesc of (C - fetish corset):
+	say "latex fetish corset".
 
-To decide which number is the initial outrage of (C - a fetish corset):
+To decide which number is the initial outrage of (C - fetish corset):
 	decide on 7.
 
-A gothic corset is a kind of corset. A gothic corset is usually leather. There is 1 gothic corset.
+gothic corset is a corset. gothic corset is leather.
 
-Definition: a gothic corset is fluid immune: decide yes.
-Definition: a gothic corset is magic themed: decide yes.
-Definition: a gothic corset is red themed: decide yes.
+Definition: gothic corset is fluid immune: decide yes.
+Definition: gothic corset is magic themed: decide yes.
+Definition: gothic corset is red themed: decide yes.
 
-The printed name of gothic corset is usually "[clothing-title-before]gothic corset[clothing-title-after]". The printed plural name of gothic corset is usually "[clothing-title-before]gothic corsets[clothing-title-after]". The text-shortcut of gothic corset is "gco".
+The text-shortcut of gothic corset is "gco".
 
 Figure of Gothic Corset is the file "Items/Clothes/Upper/Corsets/gothiccorset1.png".
 
-To decide which figure-name is clothing-image of (C - a gothic corset):
+To decide which figure-name is clothing-image of (C - gothic corset):
 	decide on figure of gothic corset.
 
-To say ClothingDesc of (C - a gothic corset):
+To say ClothingDesc of (C - gothic corset):
 	say "A red and black leather underbust corset with a cross pattern.".
 
-To say ShortDesc of (C - a gothic corset):
+To say ShortDesc of (C - gothic corset):
 	say "gothic corset".
+To say MediumDesc of (C - gothic corset):
+	say "leather gothic corset".
 
-To decide which number is the initial outrage of (C - a gothic corset):
+To decide which number is the initial outrage of (C - gothic corset):
 	decide on 3.
 
-A black corset is a kind of corset. A black corset is usually leather. There is 1 black corset.
+black corset is a corset. black corset is leather.
 
-Definition: a black corset is fluid immune: decide yes.
-Definition: a black corset is black themed: decide yes.
+Definition: black corset is fluid immune: decide yes.
+Definition: black corset is black themed: decide yes.
 
 The text-shortcut of black corset is "lc".
 
 Figure of Leather Corset is the file "Items/Clothes/Upper/Corsets/leathercorset1.png".
 
-To decide which figure-name is clothing-image of (C - a black corset):
+To decide which figure-name is clothing-image of (C - black corset):
 	decide on figure of leather corset.
 
-To say ClothingDesc of (C - a black corset):
+To say ClothingDesc of (C - black corset):
 	say "A comfortable black underbust corset [if C is worn]that feels nice against your skin[otherwise]that looks expensive[end if].".
 
-To say ShortDesc of (C - a black corset):
-	say "leather corset".
+santa corset is a corset. santa corset is wool. santa corset is rare. santa corset is normally-nipple-covering. santa corset is top-exclusive. santa corset is average cut. santa corset is top-displacable.
 
-A santa corset is a kind of corset. A santa corset is usually wool. A santa corset is rare. A santa corset is usually normally-nipple-covering. A santa corset is usually top-exclusive. There is 1 santa corset. A santa corset is usually average cut. A santa corset is usually top-displacable.
-
-The printed name of santa corset is usually "[clothing-title-before]Santa corset[clothing-title-after]". The text-shortcut of santa corset is "san".
+The text-shortcut of santa corset is "san".
 
 Figure of santa corset is the file "Items/Clothes/Upper/Corsets/santacorset1.png".
 
-Definition: a santa corset is christmas themed: decide yes.
-Definition: a santa corset is red themed: decide yes.
+Definition: santa corset is christmas themed: decide yes.
+Definition: santa corset is red themed: decide yes.
 
-To decide which figure-name is clothing-image of (C - a santa corset):
+To decide which figure-name is clothing-image of (C - santa corset):
 	decide on figure of santa corset.
 
-To say ClothingDesc of (C - a santa corset):
+To say ShortDesc of (C - santa corset):
+	say "Santa corset".
+To say MediumDesc of (C - santa corset):
+	say "Santa corset".
+To say ClothingDesc of (C - santa corset):
 	say "A red overbust corset with fluffy white wool at the top and bottom, to reflect the festive nature of the item.[if C is worn][line break]It looks like it might be able to protect your breasts from injury.[end if]".
 
-To uniquely set up (C - a santa corset):
-	do nothing.[It never gets a magic enhancement.]
-
-To decide what number is the price of (C - a santa corset):
+To decide what number is the price of (C - santa corset):
 	decide on 6.
 
-To say ShortDesc of (C - a santa corset):
-	say "Santa corset".
 
-A pink corset is a kind of corset. A pink corset is usually satin. There is 1 pink corset. The text-shortcut of pink corset is "sco".
+pink corset is a corset. pink corset is satin. The text-shortcut of pink corset is "sco".
 
 Figure of Satin Corset is the file "Items/Clothes/Upper/Corsets/satincorset1.png".
 
-To decide which figure-name is clothing-image of (C - a pink corset):
+To decide which figure-name is clothing-image of (C - pink corset):
 	decide on figure of satin corset.
 
-To say ClothingDesc of (C - a pink corset):
+To say MediumDesc of (C - pink corset):
+	say "pink satin corset".
+To say ClothingDesc of (C - pink corset):
 	say "A neon pink satin underbust corset.".
 
-To say ShortDesc of (C - a pink corset):
-	say "satin corset".
+Definition: pink corset is pink themed: decide yes.
 
-Definition: a pink corset is pink themed: decide yes.
-
-To decide which number is the initial outrage of (C - a pink corset):
+To decide which number is the initial outrage of (C - pink corset):
 	decide on 4.
 
-A spike corset is a kind of corset. A spike corset is usually leather. A spike corset is rare. A spike corset is usually normally-nipple-covering. A spike corset is usually top-exclusive. There is 1 spike corset. A spike corset is usually low cut. A spike corset is usually spikey. [Seems too stiff to be displacable, even though that bust line is pretty low!]
+spike corset is a corset. spike corset is leather. spike corset is rare. spike corset is normally-nipple-covering. spike corset is top-exclusive. spike corset is low cut. spike corset is spikey. [Seems too stiff to be displacable, even though that bust line is pretty low!]
 
-The printed name of spike corset is usually "[clothing-title-before]spike corset[clothing-title-after]". The text-shortcut of spike corset is "spc".
+The text-shortcut of spike corset is "spc".
 
 Figure of spike corset is the file "Items/Clothes/Upper/Corsets/spikecorset1.png".
 
-To decide which figure-name is clothing-image of (C - a spike corset):
+To decide which figure-name is clothing-image of (C - spike corset):
 	decide on figure of spike corset.
 
-To say ClothingDesc of (C - a spike corset):
+To say ClothingDesc of (C - spike corset):
 	say "A black overbust corset with terrifying large metal spikes at the bust, and a low bust line to allow for a lot of cleavage.[if C is worn][line break]It looks like it would be a bad idea for enemies to attack your breasts now![end if]".
 
-To uniquely set up (C - a spike corset):
+To uniquely set up (C - spike corset):
 	if a random number between 1 and 2 is 1, now C is dominance.
 
-Definition: a spike corset is transformation-protected: decide yes.
+Definition: spike corset is transformation-protected: decide yes.
 
-To decide what number is the price of (C - a spike corset):
+To decide what number is the price of (C - spike corset):
 	decide on 6.
 
-To say ShortDesc of (C - a spike corset):
+To say ShortDesc of (C - spike corset):
+	say "spike corset".
+To say MediumDesc of (C - spike corset):
 	say "spike corset".
 
-Definition: a spike corset is black themed: decide yes.
+Definition: spike corset is black themed: decide yes.
 
-A vinyl corset is a kind of corset. A vinyl corset is usually pvc. A vinyl corset is transformation-rare. There is 1 vinyl corset.
+vinyl corset is a corset. vinyl corset is pvc. vinyl corset is transformation-rare.
 
-The printed name of vinyl corset is usually "[clothing-title-before]vinyl corset[clothing-title-after]". The printed plural name of vinyl corset is usually "[clothing-title-before]vinyl corsets[clothing-title-after]". The text-shortcut of vinyl corset is "vco".
+The text-shortcut of vinyl corset is "vco".
 
 Figure of Vinyl Corset is the file "Items/Clothes/Upper/Corsets/vinylcorset1.png".
 
-To decide which figure-name is clothing-image of (C - a vinyl corset):
+To decide which figure-name is clothing-image of (C - vinyl corset):
 	decide on figure of vinyl corset.
 
-To say ClothingDesc of (C - a vinyl corset):
+To say ShortDesc of (C - vinyl corset):
+	say "vinyl corset".
+To say MediumDesc of (C - vinyl corset):
+	say "vinyl corset".
+To say ClothingDesc of (C - vinyl corset):
 	say "[if the outrage of C is too humiliating]An outrageous[otherwise]A[line break][second custom style]gorgeous[roman type][line break][end if] black vinyl fetish underbust corset that clings tightly to the flesh to show off the wearer's curves.".
 
-To say ShortDesc of (C - a vinyl corset):
-	say "vinyl corset".
+Definition: vinyl corset is black themed: decide yes.
 
-Definition: a vinyl corset is black themed: decide yes.
-
-To decide which number is the initial outrage of (C - a vinyl corset):
+To decide which number is the initial outrage of (C - vinyl corset):
 	decide on 4.
 
 All Corsets ends here.

@@ -50,19 +50,19 @@ To compute periodic effect of (G - heavy-club):
 		now the charge-status of G is 0;
 		now G is in the location of the player;
 	otherwise if the player is horny:
-		if the charge-status of G > -1, say "[bold type]Your [printed name of G][bold type] softens up as you get turned on.[roman type]";
+		if the charge-status of G > -1, say "[bold type]Your [printed name of G][bold type] softens up as you get turned on.[roman type][line break]";
 		now the charge-status of G is -1;
 	otherwise if S < 3:
-		if the charge-status of G is -1, say "[bold type]Your [printed name of G][bold type] hardens up again.[roman type]";
-		if the charge-status of G > 0, say "[bold type]Your [printed name of G][bold type] loses its glow[roman type]";
+		if the charge-status of G is -1, say "[bold type]Your [printed name of G][bold type] hardens up again.[roman type][line break]";
+		if the charge-status of G > 0, say "[bold type]Your [printed name of G][bold type] loses all of its glow.[roman type][line break]";
 		now the charge-status of G is 0;
 	otherwise if S < 6:
-		if the charge-status of G < 1, say "[bold type]Your [printed name of G][bold type] begins to glow[roman type]";
-		if the charge-status of G > 1, say "[bold type]Your [printed name of G][bold type] loses its glow[roman type]";
+		if the charge-status of G < 1, say "[bold type]Your [printed name of G][bold type] begins to glow.[roman type][line break]";
+		if the charge-status of G > 1, say "[bold type]Your [printed name of G][bold type] loses some of its glow.[roman type][line break]";
 		now the charge-status of G is 1;
 	otherwise:
-		if the charge-status of G < 1, say "[bold type]Your [printed name of G][bold type] begins to glow strongly[roman type]";
-		if the charge-status of G < 1, say "[bold type]Your [printed name of G][bold type] begins to glow even brighter[roman type]";
+		if the charge-status of G < 1, say "[bold type]Your [printed name of G][bold type] begins to glow strongly.[roman type][line break]";
+		if the charge-status of G < 1, say "[bold type]Your [printed name of G][bold type] begins to glow even brighter.[roman type][line break]";
 		now the charge-status of G is 2.
 
 

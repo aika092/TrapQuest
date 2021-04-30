@@ -2,9 +2,8 @@ RoboBellboy by Monster begins here.
 
 A robobellboy is a kind of robot. Understand "bellboy", "bell", "boy" as robobellboy. A robobellboy is usually intelligent. The favour of a robobellboy is usually 11. The leftover-type of a robobellboy is usually 117. A robobellboy has a number called whore-intent.
 
-Figure of robobellboy is the file "NPCs/Hotel/Robot/robobellboy1.png".
-
-Figure of RoboBellboy Cutscene 1 is the file "Special/Cutscene/cutscene-robobellboy-perception1.png".
+Figure of robobellboy is the file "NPCs/Hotel/Robot/robobellboy1.jpg".
+Figure of RoboBellboy Perception 1 is the file "NPCs/Hotel/Robot/robobellboy-perception1.jpg".
 
 speedy robobellboy is a robobellboy. The text-shortcut of speedy robobellboy is "sbe".
 whirring robobellboy is a robobellboy. The text-shortcut of whirring robobellboy is "wbe".
@@ -92,7 +91,7 @@ To compute perception of (M - a robobellboy):
 		anger M;
 	otherwise if the class of the player is not catgirl and the class of the player is not puppygirl and (the number of worn crotch covering clothing is 0 or the number of worn breast covering clothing is 0):
 		say "[big his of M] eyes turn red.[line break][first custom style][unless the class of the player is succubus]'YOU REQUIRE CLOTHING. ALLOW ME TO ASSIST YOU.'[otherwise]'THE CREATOR CONSIDERS IT IMPROPER FOR [caps his of demon lord] SERVANTS TO BE NUDE. ALLOW ME TO ASSIST YOU.'[end if][roman type][line break]";
-		cutshow Figure of RoboBellboy Cutscene 1 for M;
+		cutshow Figure of RoboBellboy Perception 1 for M;
 		anger M;
 	otherwise:
 		say "[big he of M] appears to be completely uninterested in you and continues on [his of M] way.";
@@ -137,10 +136,10 @@ Part 3 - Combat
 Section 1 - Attack
 
 To compute damaging attack of (M - a robobellboy):
-	if the player is the donator and (the difficulty of M > the starting difficulty of M + 1 or M is senior robobellboy) and M is wrangling a body part:
+	if (the difficulty of M > the starting difficulty of M + 1 or M is senior robobellboy) and M is wrangling a body part:
 		compute shredding attack of M;
 	otherwise:
-		if the player is the donator and (the difficulty of M > the starting difficulty of M + 1 or M is senior robobellboy) and a random number between 1 and 5 is 1 and M is not wrangling a body part, compute grabbing attack of M;
+		if (the difficulty of M > the starting difficulty of M + 1 or M is senior robobellboy) and a random number between 1 and 5 is 1 and M is not wrangling a body part, compute grabbing attack of M;
 		otherwise compute striking attack of M.
 
 To compute shredding attack of (M - a robobellboy):
@@ -155,7 +154,7 @@ To compute shredding attack of (M - a robobellboy):
 		compute striking attack of M.
 
 To compute grabbing attack of (M - a robobellboy):
-	say "[speech style of M]'UNACCEPTABLE RESISTANCE DETECTED. INITIATING AUXILARY RESTRAINT PROTOCOL.'[roman type][line break][BigNameDesc of M]'s eyes flash as [he of M] rushes towards you! [run paragraph on]";
+	say "[speech style of M]'UNACCEPTABLE RESISTANCE DETECTED. INITIATING AUXILIARY RESTRAINT PROTOCOL.'[roman type][line break][BigNameDesc of M]'s eyes flash as [he of M] rushes towards you! [run paragraph on]";
 	if the accuracy roll of M >= the dexterity of the player:
 		say "You aren't quick enough to avoid [him of M], and [FuckerDesc of M] latches onto your leg!";
 		now M is wrangling thighs;
@@ -265,7 +264,7 @@ To compute bra forcing of (M - a robobellboy):
 		now C is a random off-stage super-slutty-bra clothing;
 		increase N by 1;
 	if C is actually summonable clothing:
-		if the player is the donator and the difficulty of M > the starting difficulty of M and a random number between 1 and 5 is 1 and C is gluable, now C is glued;
+		if the difficulty of M > the starting difficulty of M and a random number between 1 and 5 is 1 and C is gluable, now C is glued;
 		say "[BigNameDesc of M] opens up [his of M] chest compartment and pulls out a [ShortDesc of C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces the item onto your body, where it sticks to your skin like glue. [if C is glued]Unfortunately, [FuckerDesc of M] isn't satisfied with it being [italic type]like[roman type] glue, and applies a translucent adhesive to the garment before finally[otherwise]After this, [NameDesc of M] seems to be happy[end if] leaving you alone.";
 		summon C cursed with quest;
 		bore M;
@@ -288,7 +287,7 @@ To compute knickers forcing of (M - a robobellboy):
 		now C is a random off-stage super-slutty-knickers clothing;
 		increase N by 1;
 	if C is actually summonable clothing:
-		if the player is the donator and the difficulty of M > the starting difficulty of M and a random number between 1 and 5 is 1, now C is glued;
+		if the difficulty of M > the starting difficulty of M and a random number between 1 and 5 is 1, now C is glued;
 		say "[BigNameDesc of M] opens up [his of M] chest compartment and pulls out a [ShortDesc of C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces the item u, where it sticks to your skin like glue. [if C is glued]Unfortunately, [FuckerDesc of M] isn't satisfied with it being [italic type]like[roman type] glue, and applies a translucent adhesive to the garment before finally[otherwise]After this, [NameDesc of M] seems to be happy[end if] leaving you alone.";
 		summon C cursed with quest;
 		bore M;

@@ -6,6 +6,10 @@ Definition: an aeromancer is willing to do anal: decide yes.
 
 Definition: an aeromancer is willing to do vaginal: decide yes.
 
+Definition: an aeromancer is willing to fluff:
+	if there is a monster penetrating vagina, decide no;
+	decide yes.
+
 Definition: an aeromancer is wenchy: decide yes.
 
 To say ShortDesc of (M - an aeromancer):
@@ -679,6 +683,11 @@ To say ThreesomePrep of (M - an aeromancer) with (N - a monster) in (F - vagina)
 To say ThreesomePrep of (M - an aeromancer) with (N - a monster) in (F - asshole):
 	say "[BigNameDesc of M] stretches one arm towards you, giggling uncontrollably as [he of M] raises [his of M] wand above [his of M] head.".
 
+To say GrabbedPrep of (M - an aeromancer) with (G - a monster) in (F - vagina):
+	say ThreesomePrep of M with G in F.
+To say GrabbedPrep of (M - an aeromancer) with (G - a monster) in (F - asshole):
+	say ThreesomePrep of M with G in F.
+
 To say FoursomePrep of (M - an aeromancer) with (N - a monster) and (O - a monster) in (F - asshole):
 	say ThreesomePrep of M with O in F.
 
@@ -1072,7 +1081,7 @@ To compute tornado experiment of (M - an aeromancer):
 				UnannouncedSquirt semen on thighs by 1;
 			Satisfy M;
 		otherwise:
-			say "[line break][speech style of M]Oh Shi-![roman type] [BigNameDesc of M] suddenly loses control, screaming as [he of M] is pulled face first into the vortex and directly onto your rock hard cock. [big he of M] gags lewdly as your [ShortDesc of penis] slams into the back of [his of M] throat, which is that last little push that finally sends you over the edge. You groan as your cock unloads into [his of M] mouth, filling [his of M] belly with wave after wave of your [semen]. [big he of M] collapses in front of you, [if bukkake fetish is 1]lines of white rolling down [his of M] chin[otherwise]shivering[end if] as [he of M] clutches [his of M] heavily distended belly.";
+			say "[line break][speech style of M]Oh shi-![roman type] [BigNameDesc of M] suddenly loses control, screaming as [he of M] is pulled face first into the vortex and directly onto your rock hard cock. [big he of M] gags lewdly as your [ShortDesc of penis] slams into the back of [his of M] throat, which is that last little push that finally sends you over the edge. You groan as your cock unloads into [his of M] mouth, filling [his of M] belly with wave after wave of your [semen]. [big he of M] collapses in front of you, [if bukkake fetish is 1]lines of white rolling down [his of M] chin[otherwise]shivering[end if] as [he of M] clutches [his of M] heavily distended belly.";
 			BlowGet;
 			Bore M;
 		orgasm;

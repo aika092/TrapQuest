@@ -1,6 +1,6 @@
 Corsets Framework by Corsets begins here.
 
-A corset is a kind of clothing. The printed name of corset is usually "[clothing-title-before][clothing-material of the item described] corset[clothing-title-after]". The printed plural name of corset is usually "[clothing-title-before][clothing-material of the item described] corsets[clothing-title-after]". The text-shortcut of corset is "co". A corset is usually belly covering.
+A corset is a kind of clothing. The printed name of a corset is "[clothing-title-before][MediumDesc of item described][clothing-title-after]". The text-shortcut of corset is "co". A corset is belly covering. Understand "corset" as a corset.
 
 Definition: a corset is same-type:
 	if theme-share-target is corset, decide yes;
@@ -11,6 +11,8 @@ To compute SelfExamineDesc of (C - a corset):
 
 To say ShortDesc of (C - a corset):
 	say "corset".
+To say MediumDesc of (C - a corset):
+	say "[clothing-material of C] corset".
 
 To decide which number is the initial outrage of (C - a corset):
 	decide on 2.
@@ -19,7 +21,8 @@ To set up influence of (C - a corset):
 	set up random-based influence of C.
 
 To compute corset strain:
-	repeat with C running through worn corsets:
+	do nothing.
+	[repeat with C running through worn corsets:
 		compute corset strain of C.
 
 To compute corset strain of (C - a corset):
@@ -30,12 +33,12 @@ To compute corset strain of (C - a corset):
 	let B be the largeness fill of belly;
 	if B > F:
 		say "[bold type]Your [printed name of C] [bold type]rips and bursts under the pressure from your belly! [roman type]";
-		destroy C.
+		destroy C.]
 
 Report examining corsets:
 	if newbie tips is 1, say "[one of][item style]Corsets [if the number of worn corsets is 0]would [end if]help keep your belly in control, as large bellies can make movement difficult.[roman type][line break][or][stopping]".
 
-To uniquely set up (C - a corset):
+To set up magic attribute of (C - a corset):
 	let R be a random number between 1 and 7;
 	if R is 1, now the magic-type of C is confidence;
 	if R is 2, now the magic-type of C is endurance;
@@ -52,8 +55,7 @@ To restock (C - a corset):
 
 This is the setup starting corsets rule:
 	let C be a random corset;
-	repeat with N running from 1 to 3:
-		restock C.
+	restock C.
 The setup starting corsets rule is listed in the setup starting items rules.
 
 To decide which object is the unique-upgrade-target of (C - a corset):

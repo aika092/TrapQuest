@@ -44,10 +44,10 @@ To set up (M - nurse):
 To decide which number is the starting difficulty of (M - nurse):
 	decide on 5.
 
-Definition: nurse (called M) is dangerous:
-	if M is interested and M is awake and the boredom of M is 0 and the health of M > 0:
-		if M is unfriendly and (the scared of M is 0 or M is penetrating a body part or M is grabbing the player), decide yes;
-		if the boost-cooldown of M > 0 and the player is not tired and the body soreness of the player is 0 and the noun is south, decide yes;
+Definition: nurse (called M) is combative-or-blocking:
+	if M is in the location of the player:
+		if M is interested and M is awake and the boredom of M is 0 and the health of M > 0 and the boost-cooldown of M > 0 and the player is not tired and the body soreness of the player is 0 and the breast-enhancement of M <= 0, decide yes;
+		if M is dangerous, decide yes;
 	decide no.
 
 Definition: nurse is dismissable: decide no.
@@ -72,7 +72,7 @@ Definition: nurse (called M) is successfully blocking: [Do they succeed in a rol
 	decide no.
 
 To say MovementBlock of (M - nurse):
-	say "[BigNameDesc of M] stands into the doorway, completely blocking your path![line break][speech style of M]'No dear, you're not allowed back there unless you need to use the bed.'[roman type][line break]";
+	say "[BigNameDesc of M] stands into the doorway, completely blocking your path![if M is in School11 and the noun is south][line break][speech style of M]'No dear, you're not allowed back there unless you need to use the bed.'[roman type][line break][end if]";
 
 To say DamageReactHealthy of (M - nurse):
 	say "[BigNameDesc of M] easily takes the hit![line break][speech style of M]'[one of]Ooh!'[or]Oof!'[at random][roman type][line break]".
@@ -129,16 +129,19 @@ Definition: nurse (called M) is aware that the player needs a change:
 To compute student perception of (M - nurse):
 	if M is aware that the player needs a change:
 		compute diaper check of M;
-	otherwise if the breast-enhancement of M is 1:
-		say "[speech style of M]'Ah yes, I've been expecting you, [NameBimbo]. You're here for your breast enhancement, right? If so, [please] hop on the table in the med bay and I'll make sure you get what you need.'[roman type][line break]";
-	otherwise if the body soreness of the player > 0:
-		say "[speech style of M]'Oh no [honey of M], you look [if the body soreness of the player > 8]like you've been through the wars[otherwise if the body soreness of the player > 4]sore all over[otherwise]a little hurt[end if]! Why don't you come through to the med bay [one of]with me? I'm sure we can... make you better...'[or]so we can get your body changed back to the way it should be...'[stopping][roman type][line break]";
-	otherwise if the player is tired:
-		say "[speech style of M]'You look [if the player is not very tired]a little [end if]tired, [honey of M]. Want to come through to the medbay for a quick rest?'[roman type][line break]";
-	otherwise if the boost-cooldown of M <= 0:
-		say "[speech style of M]'Are you looking for a [']boost['], [honey of M]? If so, [please] hop on the table in the med bay and I'll make sure you get what you need.'[roman type][line break]";
 	otherwise:
-		say "[speech style of M]'Sorry [honey of M], but if I give you a [']boost['] too often then there'll be none left for anyone else. You'll have to come back [if the boost-cooldown of M < 50]soon[otherwise]later[end if].'[roman type][line break]".
+		if there is a worn diaper, compute diaper check of M; [She can check and then if you don't need a change she'll just continue normally]
+		if M is interested and M is friendly and M is not changing the player:
+			if the breast-enhancement of M > 0:
+				say "[speech style of M]'Ah yes, I've been expecting you, [NameBimbo]. You're here for your breast enhancement, right? If so, [please] hop on the table in the med bay and I'll make sure you get what you need.'[roman type][line break]";
+			otherwise if the body soreness of the player > 0:
+				say "[speech style of M]'Oh no [honey of M], you look [if the body soreness of the player > 8]like you've been through the wars[otherwise if the body soreness of the player > 4]sore all over[otherwise]a little hurt[end if]! Why don't you come through to the med bay [one of]with me? I'm sure we can... make you better...'[or]so we can get your body changed back to the way it should be...'[stopping][roman type][line break]";
+			otherwise if the player is tired:
+				say "[speech style of M]'You look [if the player is not very tired]a little [end if]tired, [honey of M]. Want to come through to the medbay for a quick rest?'[roman type][line break]";
+			otherwise if the boost-cooldown of M <= 0:
+				say "[speech style of M]'Are you looking for a [']boost['], [honey of M]? If so, [please] hop on the table in the med bay and I'll make sure you get what you need.'[roman type][line break]";
+			otherwise:
+				say "[speech style of M]'Sorry [honey of M], but if I give you a [']boost['] too often then there'll be none left for anyone else. You'll have to come back [if the boost-cooldown of M < 50]soon[otherwise]later[end if].'[roman type][line break]".
 
 To say FirstResponse of (M - a nurse):
 	say "[speech style of M]'[one of]Hello there. Have we met before, sweetie?'[or]Hey there sweetie. Are you a new student?'[or]Hello. You must be a new student.'[at random][roman type][line break]".
@@ -207,6 +210,11 @@ To compute facial climax of (M - nurse):
 	if lady fetish is 2, say "[BigNameDesc of M] grunts and shudders, a strong orgasm washing over [him of M]. Several droplets of clear precum hit your face as [his of M] [sissy-penis] desperately strains against its cage. You feel [if the oral sex addiction of the player > 6]even more eager to perform oral sex in the future[otherwise]somewhat more comfortable with the act of performing oral sex[end if].";
 	otherwise say "[BigNameDesc of M] grunts as [he of M] shudders, a strong orgasm washing over [him of M]. Your mouth and face soon feel even wetter than before as [his of M] girlcum joins [his of M] other juices on your face. You feel [if the oral sex addiction of the player > 6]even more eager to perform oral sex in the future[otherwise]somewhat more comfortable with the act of performing oral sex[end if].";
 	SilentlyOralSexAddictUp 1;
+	if there is a worn tattoo and the number of worn belly-tattoo is 0 and the player is getting unlucky:
+		say "There's a sudden mild burning sensation on your midriff as a new tattoo appears!";
+		summon best-seat tattoo;
+		try examining best-seat tattoo;
+		say GotUnluckyFlav;
 	say "[BigNameDesc of M] takes a few moments to recover and then plucks [his of M] [HoleDesc of M] from your mouth and nose, allowing you to breathe[if med bay bed is grabbing the player]. [big he of M] unbuckles the straps holding you down and allows you to leave[end if].";
 	dislodge med bay bed;
 	orgasm satisfy M;
@@ -237,6 +245,16 @@ To say ForcefeedPillDeclarationFlav of (M - nurse):
 
 To say DragFlav of (M - nurse) to (R - a room):
 	say "[BigNameDesc of M] lifts your entire body up with seemingly impossible strength and carries you in a fireman's hold [if the distance of R > 1]all the way [end if]to the [R]!".
+
+To say DiaperCheckFlav of (M - nurse):
+	let D be a random worn knickers;
+	say "Without even looking at you in the eyes first, [NameDesc of M] grabs the crotch of your [MediumDesc of D] with [his of M] right hand, pinching and squishing it to check if it's all dry.".
+
+To say DiaperCheckResultsDryFlav of (M - nurse):
+	say "[speech style of M]'All dry.'[roman type][line break][big he of M] straightens up to address you normally.".
+
+To say DiaperCheckResultsMostlyDryFlav of (M - nurse):
+	say "[speech style of M]'Not too wet yet.'[roman type][line break][big he of M] straightens up to address you normally.".
 
 To say DiaperChangeStart of (M - nurse):
 	unless M is in School12, drag to School12 by M;

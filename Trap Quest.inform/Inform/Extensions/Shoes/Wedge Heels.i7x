@@ -43,15 +43,6 @@ To uniquely set up (C - a wedge heels):
 	if C is pvc, now the text-shortcut of C is "pwh";
 	if C is satin, now the text-shortcut of C is "swh";
 	if C is leather, now the text-shortcut of C is "lwh";
-	let R be a random number between 1 and 8;
-	if C is cursed:
-		if R <= 2:
-			now C is posture training;
-		otherwise if R <= 4:
-			now C is stumbling;
-	otherwise:
-		if R is 1, now C is speed;
-		if R is 2, now C is kicking;
 	set up heel length of C;
 	increase the heel-height of C by 2.
 

@@ -20,8 +20,8 @@ Definition: chocolates bag is TQEdible: decide yes.
 chocolate-announced is a number that varies.
 
 Figure of chocolates bag is the file "Env/MultiFloor/DQChocolates1.png".
-Figure of chocolates cutscene 1 is the file "Special/Cutscene/DQChocolates1.png".
-Figure of chocolates cutscene 2 is the file "Special/Cutscene/DQChocolates2.png".
+Figure of chocolates cutscene 1 is the file "Special/Cutscene/DQChocolates1.jpg".
+Figure of chocolates cutscene 2 is the file "Special/Cutscene/DQChocolates2.jpg".
 
 A time based rule (this is the chocolates stalking rule):
 	if christmas content is 1:

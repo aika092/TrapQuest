@@ -143,6 +143,8 @@ To decide which number is the flat dexterity of the player:
 	repeat with C running through worn wearthings:
 		increase D by the dexterity-influence of C;
 	if the class of the player is cheerleader, increase D by the blondeness of hair;
+	if the class of the player is superhero, increase D by 3;
+	if the class of the player is cowgirl and the class of the player is catgirl, increase D by the stomach-milk of the player;
 	if the class of the player is latex fetish model:
 		let O be 0;
 		repeat with C running through worn latex clothing:
@@ -322,6 +324,7 @@ To decide which number is the luck of the player:
 	if luck-timer of luck-tincture > 0, increase L by 25;
 	if herald is alive and the class of the player is not cultist, decrease L by 25;
 	increase L by the number of in-play trophies;
+	increase L by playing card theme bonus;
 	decide on L.
 
 Definition: yourself is getting lucky:

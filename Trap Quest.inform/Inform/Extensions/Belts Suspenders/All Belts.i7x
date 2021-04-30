@@ -6,6 +6,8 @@ Definition: a belt is same-type:
 	if theme-share-target is belt, decide yes;
 	decide no.
 To decide which number is the default-soak-limit of (C - a belt): decide on 2.
+To set up influence of (C - a belt):
+	set up stat-based influence of C.
 
 Chapter - Wearability
 
@@ -23,7 +25,7 @@ To decide which number is the initial outrage of (C - a suspenders):
 	decide on 2.
 
 To uniquely set up (S - a suspenders):
-	now the raw-magic-modifier of S is 0.
+	now the raw-magic-modifier of S is 0. [enhanceable but always start at 0]
 
 To set up influence of (C - a suspenders):
 	set up random-based influence of C.

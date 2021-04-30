@@ -21,5 +21,6 @@ To compute periodic effect of (P - bunny tail plug):
 				heal F times 1.
 
 Definition: bunny tail plug is white themed: decide yes.
+Definition: bunny tail plug is bunny themed: decide yes.
 
 Bunny Tail Plug ends here.

@@ -3,10 +3,12 @@ Bunny Ears DQ by Headgear begins here.
 A bunny ears is a kind of headgear. Understand "pair", "of" as bunny ears. A bunny ears is usually dexterity-influencing.
 
 Definition: a bunny ears is transformation-protected: decide no.
+Definition: a bunny ears is bunny themed: decide yes.
 
 Part 1 - Bunny Waitress Ears
 
 bunny waitress ears is a bunny ears. bunny waitress ears has a number called service-ready.
+flight attendant hat is a headgear. flight attendant hat has a number called service-ready.
 
 To decide which number is the waitress bartering value of (T - a bottle) for (M - a monster):
 	decide on 0.
@@ -174,6 +176,7 @@ To say QuestTitle of (Q - trap-braving-quest):
 	say " (trap braving quest)".
 
 A chocolate egg is a kind of food. The printed name of chocolate egg is "[TQlink of item described]chocolate egg[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of chocolate egg is "[TQlink of item described]chocolate eggs[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of chocolate egg is "ceg". There are 8 chocolate egg.
+Definition: a chocolate egg is bunny themed: decide yes.
 To say ExamineDesc of (B - a chocolate egg):
 	say "A small chocolate Easter egg.".
 

@@ -1,12 +1,15 @@
 Going by Actions begins here.
 
 To say GoingSubduedFlav of (C - a clothing):
-	say "[StandSubduedFlav of C]".
+	say StandSubduedFlav of C.
 
 Check going when the player is at least partially monster stuck:
 	if the player is monster fucked:
 		if minotaur is penetrating a body part and minotaur is asleep, try waiting instead;
 	try resisting instead.
+
+Check going when the player is vine stuck:
+	say "The vines are holding you in place!" instead.
 
 Check going while the player is immobile:
 	if the player is subdued:
@@ -18,11 +21,6 @@ Check going while the player is immobile:
 	if the player is throne stuck, say "You are stuck on the throne!" instead;
 	if the player is horse stuck, say "You are stuck on a wooden horse!" instead;
 	if the player is bouncer stuck, say "You are stuck in the baby bouncer!" instead;
-	[if the player is at least partially monster stuck:
-		if the player is monster fucked:
-			if minotaur is penetrating a body part and minotaur is asleep, try waiting instead;
-		try resisting instead;]
-	if the player is vine stuck, say "The vines are holding you in place!" instead;
 	if the stickiness of the player > 0:
 		if the player is glue stuck:
 			compute glue escaping;
@@ -234,12 +232,13 @@ To decide which number is the crawling hindrance of the player:
 
 To decide which number is the movement bonus of the player:
 	let X be 0;
-	if the class of the player is catgirl or puppy mittens is worn:
-		increase X by the crawling hindrance of the player - the number of worn nudism-disabling clothing; [The more worn clothing, the worse this is]
-	if there are worn mittens and the player is prone:
-		increase X by the crawling hindrance of the player * 2;
+	if the player is prone:
+		if the class of the player is catgirl or puppy mittens is worn:
+			decrease X by the number of worn nudism-disabling clothing; [The more worn clothing, the worse this is]
+			if there are worn cat themed big-gloves or puppy mittens is worn, increase X by the crawling hindrance of the player * 2;
+		if there are worn mittens, increase X by the crawling hindrance of the player * 2;
 	if the player is upright and there is worn rollerskates, increase X by the crawling hindrance of the player;
-	repeat with S running through speed clothing worn by the player:
+	repeat with S running through worn speed clothing:
 		increase X by 3;
 	decide on X.
 
@@ -378,7 +377,7 @@ Check going:
 					compute TetherBust;
 		[Firstly, monsters each get a chance to block the player, this is only likely to happen if the player has low dexterity or lots of movement reductions.]
 		if (the noun is up or the noun is down) and golem is in the location of the player and golem is uninterested, check guaranteed perception of golem; [golem wakes up to block if present]
-		repeat with M running through combative monsters:
+		repeat with M running through combative-or-blocking monsters:
 			if M is successfully blocking:
 				allocate 2 seconds;
 				say "[another-turn-flavour] [MovementBlock of M]" instead; [In the 'successfully blocking check' we fill `another-turn-flavour` with the details of the main thing slowing the player down.]
@@ -391,8 +390,8 @@ Check going:
 				repeat with D running through worn posture training clothing:
 					increase the heel time of the player by 1;
 					unless D is cursed, increase the heel time of the player by 2;
-				[Computing heel skill experience: Queen of Hearts heels prevent this experience gain]
-				unless C is queen of hearts heels:
+				[Computing heel skill experience: Queen of Hearts / Spades heels prevent this experience gain]
+				unless C is queen-of-hearts heels or C is queen-of-spades heels:
 					let K be the heel-height of C - the raw heel skill of the player;
 					if C is platform heels, decrease K by 2;
 					if K < 1, now K is 1;
@@ -566,18 +565,14 @@ Carry out going while the player is in Dungeon41:
 	repeat with C running through held store things:
 		compute stealing of C;
 		if Dungeon41 is guarded:
-			if shopkeeper is not mating:
-				increase the stolen-aware of shopkeeper by 1;
-				if flav-said is 0, say "[BigNameDesc of shopkeeper] sees you trying to leave.[line break][first custom style]'[one of]Stop, thief!'[or]Guards! Guards! Arrest this thieving whore!'[or]Where do you think you're going with that, bitch?'[or]Oi, you haven't paid for that!'[purely at random][roman type][line break]An alarm bell rings throughout the whole dungeon. Looks like you're in trouble with the law!";
-				repeat with M running through alive royal guards:
-					deinterest M;
-					if M is asleep and M is in the location of the player, say "[BigNameDesc of M] hears the alarm and wakes up!";
-					now the sleep of M is 0;
-				now shopkeeper is interested;
-				anger shopkeeper;
-			otherwise:
-				if flav-said is 0, say "[first custom style]'The mother of my daughter can take what [he of the player] wants. I hope you find it useful!'[roman type][line break]";
-				now C is unowned;
+			increase the stolen-aware of shopkeeper by 1;
+			if flav-said is 0, say "[BigNameDesc of shopkeeper] sees you trying to leave.[line break][first custom style]'[one of]Stop, thief!'[or]Guards! Guards! Arrest this thieving whore!'[or]Where do you think you're going with that, bitch?'[or]Oi, you haven't paid for that!'[purely at random][roman type][line break]An alarm bell rings throughout the whole dungeon. Looks like you're in trouble with the law!";
+			repeat with M running through alive royal guards:
+				deinterest M;
+				if M is asleep and M is in the location of the player, say "[BigNameDesc of M] hears the alarm and wakes up!";
+				now the sleep of M is 0;
+			now shopkeeper is interested;
+			anger shopkeeper;
 			now flav-said is 1.
 
 Part 4 - Trap Triggers

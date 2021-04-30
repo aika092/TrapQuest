@@ -11,9 +11,6 @@ To compute SelfExamineDesc of (C - a basque):
 To say ShortDesc of (C - a basque):
 	say "modest basque".
 
-To uniquely set up (C - a basque):
-	repair C.[huh?]
-
 This is the remove inappropriate basques rule:
 	repeat with B running through basques:
 		now B is in Holding Pen.

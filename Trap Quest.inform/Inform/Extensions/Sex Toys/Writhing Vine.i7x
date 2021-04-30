@@ -1,6 +1,6 @@
 Writhing Vine by Sex Toys begins here.
 
-A writhing vine is a kind of dong. A writhing vine is usually unique. There is 1 writhing vine. The printed name of writhing vine is "[TQlink of item described]writhing vine[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of writhing vine is "wv". Figure of writhing vine is the file "Items/Collectibles/vine1.png". The size of a writhing vine is usually 2. Understand "living" as writhing vine. A writhing vine is biological.
+A writhing vine is a kind of dong. A writhing vine is unique. There is 1 writhing vine. The printed name of writhing vine is "[TQlink of item described]writhing vine[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of writhing vine is "wv". Figure of writhing vine is the file "Items/Collectibles/vine1.png". The size of a writhing vine is usually 2. Understand "living" as writhing vine. A writhing vine is biological.
 
 To decide which figure-name is the examine-image of (C - a writhing vine):
 	decide on figure of writhing vine.
@@ -18,9 +18,6 @@ To decide which number is the bartering value of (T - a writhing vine) for (M - 
 
 To say ShortDesc of (C - a writhing vine):
 	say "living vine".
-
-To uniquely set up (C - a writhing vine):
-	do nothing.
 
 To compute climax effect of (C - a writhing vine):
 	let F be a random orifice penetrated by C;

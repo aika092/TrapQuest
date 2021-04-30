@@ -66,6 +66,7 @@ Carry out crafting:
 			reset alchemy charge;
 			let H be a random worn blue scrunchie;
 			if H is clothing and playerRegion is not school, MagicPowerUp 1;
+			if heart hairpin is worn, class summon cheeky schoolgirl outfit;
 		otherwise:
 			if there is a product-highlighted thing:
 				say "Nothing happens.";

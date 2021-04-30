@@ -15,7 +15,7 @@ An all time based rule (this is the compute cum movements rule):
 		otherwise if R < the semen coating of belly and the semen coating of belly > 0:
 			compute belly cum dribbling;
 		otherwise if R < the semen coating of hips and the semen coating of hips > 0:
-			compute belly cum dribbling;
+			compute hips cum dribbling;
 		otherwise if R < the semen coating of thighs and the semen coating of thighs > 0:
 			say "Globs of [semen] drip from your [ShortDesc of thighs] onto the ground.[if the semen addiction of the player < 6][line break][first custom style]Yuck.[roman type][line break][end if]";
 			decrease the semen coating of thighs by 1;

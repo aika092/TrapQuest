@@ -394,7 +394,7 @@ To say ErectionUseFlav of (M - gargoyle):
 		say "[one of][BigNameDesc of M] pumps your [ShortDesc of penis] with [his of M] breasts, grunting ravenously as [his of M] tongue strokes your throbbing length.[or][BigNameDesc of M] drools as [his of M] tongue swirls around your tip, mixing with a bit of your own 'drool' to lubricate the [ShortDesc of penis] sandwiched between [his of M] jiggling breasts.[or][BigNameDesc of M] makes noisy slurping noises as [he of M] works your [ShortDesc of penis], lubricating [his of M] breasts with tiny bits of drool as they skilfully massage your shaft.[or][BigNameDesc of M][']s breasts bump your sack as [he of M] works your [manly-penis], torturing the tip with practised movements of [his of M] tongue and lips.[at random]";
 		cutshow Figure of gargoyle BJ 3 for M;
 	otherwise if the size of penis > 2:
-		say "[one of][BigNameDesc of M] slurps away at your [ShortDesc of penis], teasing your most sensitive parts with [his of M] tongue.[or][BigNameDesc of M] mercilessly pleasures you with [his of M] tongue, wings flapping excitedly as [his of M] lips fervently stroke the base of your [manly-penis].[or][BigNameDesc of M] sucks relentlessly, drool leaking out the side of [his of M] mouth as [he of M] lavishes you with expert stimulation from balls to tip.[or][BigNameDesc of M] hums as [he of M] suckles your [ShortDesc of penis], [if mythical creature fetish is 1]sounding very much like a starved animal in the middle of a meal[otherwise]as if your shaft were the most delicious thing in the entire world[end if].[or][BigNameDesc of M] swirls [his of M] tongue around your tip as [he of M] mercilessly pumps you with [his of M] lips.[at random]";
+		say "[one of][BigNameDesc of M] slurps away at your [ShortDesc of penis], teasing your most sensitive parts with [his of M] tongue.[or][BigNameDesc of M] mercilessly pleasures you with [his of M] tongue, wings flapping excitedly as [his of M] lips fervently stroke the base of your [manly-penis].[or][BigNameDesc of M] sucks relentlessly, drool leaking out the side of [his of M] mouth as [he of M] lavishes you with expert stimulation from [if the player is possessing a scrotum]balls[otherwise]base[end if] to tip.[or][BigNameDesc of M] hums as [he of M] suckles your [ShortDesc of penis], [if mythical creature fetish is 1]sounding very much like a starved animal in the middle of a meal[otherwise]as if your shaft were the most delicious thing in the entire world[end if].[or][BigNameDesc of M] swirls [his of M] tongue around your tip as [he of M] mercilessly pumps you with [his of M] lips.[at random]";
 		if lady fetish < 2, cutshow Figure of gargoyle BJ 4 for M;
 	otherwise:[doubt this will come up so it's mostly copypasta]
 		say "[one of][BigNameDesc of M] relentlessly teases your [ShortDesc of penis] with [his of M] tongue.[or][BigNameDesc of M] teases your [ShortDesc of penis] with the very tip of [his of M] tongue, as if stimulating a clitoris[or][BigNameDesc of M] pleasures you mercilessly with [his of M] tongue.[in random order]".
@@ -403,7 +403,7 @@ To say ErectionUseFlav of (M - gargoyle):
 TODO: maybe she stores it for the vampiress to harvest or stores it for herself to use on you when your penis gets too tiny.
 ]
 To compute erection orgasm of (M - gargoyle):
-	say "You can't take it anymore! Your back arches as your [player-penis] fires several thick ropes of [semen] directly into [NameDesc of M][']s mouth, and just as you think you're all tapped out, [one of]an incredibly pleasurable tingle passes through your balls and [his of M] eyes glow bright white[or]once again, you feel that terrible pleasurable feeling in your balls as [his of M] eyes glow bright white[stopping]. Your orgasm starts up again at three times the intensity, visibly ballooning [NameDesc of M][']s cheeks as [he of M] drains strength, energy, and every last drop of [semen] from your helpless body.";
+	say "You can't take it anymore! Your back arches as your [player-penis] fires several thick ropes of [semen] directly into [NameDesc of M][']s mouth, and just as you think you're all tapped out, [one of]an incredibly pleasurable tingle passes through your [if the player is possessing a scrotum]balls[otherwise]shaft[end if] and [his of M] eyes glow bright white[or]once again, you feel that terrible pleasurable feeling in your [if the player is possessing a scrotum]balls[otherwise]shaft[end if] as [his of M] eyes glow bright white[stopping]. Your orgasm starts up again at three times the intensity, visibly ballooning [NameDesc of M][']s cheeks as [he of M] drains strength, energy, and every last drop of [semen] from your helpless body.";
 	StrengthDown 2;
 	FatigueUp 20;
 	PenisDown 1;
@@ -467,7 +467,7 @@ To compute anal sex of (M - gargoyle):
 	if there is a lubricant covering asshole, increase L by 2;
 	if the reaction of the player is 0, decrease L by 1;
 	if the tail-depth of M is 0:
-		say "[one of]The tip of [FuckerDesc of M]'s tail continues to press against your tight sphincter[or][BigFuckerDesc of M] continues to push the tip of [his of M] tail against your sphincter.'[or][BigFuckerDesc of M] stares at you curiously as [he of M] continues trying to force open your sphincter with [his of M] tail[or][BigFuckerDesc of M] gives you a curious look as [his of M] tail continues pressing against your tight sphincter.[in random order]";
+		say "[one of]The tip of [FuckerDesc of M]'s tail continues to press against your tight sphincter[or][BigFuckerDesc of M] continues to push the tip of [his of M] tail against your sphincter.[or][BigFuckerDesc of M] stares at you curiously as [he of M] continues trying to force open your sphincter with [his of M] tail.[or][BigFuckerDesc of M] gives you a curious look as [his of M] tail continues pressing against your tight sphincter.[in random order]";
 		if L > the girth of M:
 			let N be a random number between 1 and 2;
 			if the openness of asshole is 1, now N is 1;
@@ -562,7 +562,7 @@ Definition: gargoyle (called M) is damageable:
 To compute the default taunting of (M - gargoyle):
 	say "[one of][BigNameDesc of M] watches in total silence.[or][BigNameDesc of M] simply watches, waiting. It's a little embarrassing, and you try to tell yourself that what you're doing is perfectly normal, really. Besides, it's not like [NameDesc of M] cares. Right?[cycling]".
 
-To compute (M - gargoyle) protecting against (X - a monster):[Default protection if not defined for the monster]
+To compute (M - gargoyle) protecting against (X - a monster):
 	if M is unleashed:
 		if X is vampiress and M is not unfriendly:
 			say "[BigNameDesc of M][']s eyes flash bright red, and [he of M] leaps between you and [NameDesc of X].";

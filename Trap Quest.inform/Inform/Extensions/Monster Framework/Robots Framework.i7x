@@ -198,6 +198,10 @@ To say CringeDisapprovalFlav of (M - a robot):
 To say GluePullAnnounceFlav of (M - a robot):
 	say "[speech style of M]'SUBJECT APPEARS IN NEED OF ASSISTANCE. ALLEGIANCE LEVEL... ACCEPTABLE. RESCUE ATTEMPT ROUTINE LOADING...'[roman type][line break]".
 
+To compute the cage stuck taunting of (M - a robot):
+	say "[BigNameDesc of M][']s eyes turn yellow.[line break][speech style of M]'ERROR: SUBJECT'S [']TIME OUT['] PROCEDURE CANNOT BE INTERRUPTED. WE HOPE YOU FIND YOUR STAY COMFORTABLE.'[roman type][line break]";
+	satisfy M.
+
 Part - DQ
 
 To say DiaperChangeStart of (M - a robot):

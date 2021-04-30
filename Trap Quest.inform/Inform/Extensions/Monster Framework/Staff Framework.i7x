@@ -173,7 +173,6 @@ To compute damage reaction of (M - a staff member):
 	otherwise:
 		say "[big he of M] screams even louder!".
 
-
 To say CombatProvokedReaction of (M - a staff member):
 	say "[big he of M] [if M is asleep]wakes up! [big he of M][end if][if armband is held]makes an arcane gesture, and a split second later your [MediumDesc of armband] has vanished![line break][speech style of M]'Traitor! You're going straight to the dungeons after this!'[roman type][line break][otherwise][one of]snarls in[or]growls with[at random] [one of]pain[or]frustration[or]anger[at random].[end if]";
 
@@ -495,12 +494,13 @@ To compute solo lesson of (M - staff member):
 		say ClothingDesc of armband.
 
 To compute gloryhole lesson of (M - staff member):
-	say "[speech style of M]'Let's test out your cocksucking skills.'[roman type][line break][BigNameDesc of M] leads you to the Changing Rooms, and forces you to your knees.";
+	say "[speech style of M]'Let's test your cocksucking skills.'[roman type][line break][BigNameDesc of M] leads you to the Changing Rooms, and forces you to your knees.";
 	now M is in School19;
 	teleport to School19;
 	now the stance of the player is 1;
-	say "Your face is brought near to the bottom hole, and suddenly a magic force grips you, and forces your mouth up against the hole. Within moments, a large [if the oral sex addiction of the player > 5]juicy [end if][manly-penis] is pushed through the hole and into your mouth. It is easily long enough to hit the back of your throat, causing you to gag[if the oral sex addiction of the player > 7] slightly[end if].";
+	say "Your face is brought near to the bottom hole, and suddenly a magic force grips you, pulling your mouth up against the hole. Within moments, a large [if the oral sex addiction of the player > 5]juicy [end if][manly-penis] pushes through, into your mouth. It's easily long enough to hit the back of your throat, causing you to gag[if the oral sex addiction of the player > 7] slightly[end if].";
 	now gloryhole is penetrating face;
+	now gloryhole is grabbing the player;
 	now busy is 1;
 	now the turns trapped of gloryhole is 0;
 	say "Do you want to resist? ";

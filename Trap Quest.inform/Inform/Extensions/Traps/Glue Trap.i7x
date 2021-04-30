@@ -447,7 +447,7 @@ To compute glue escaping:
 To say GluePullAnnounceFlav of (M - a monster):
 	say "[speech style of M]'You poor[one of], weak[or], helpless[or], foolish[or][at random] little thing. Let me see if I can [one of]get you free!'[or]help.'[at random][roman type][line break]".
 
-To compute glue-freeing by (M - a monster):
+To compute glue-freeing by (M - a thing):
 	if the stickiness of the player > 0:
 		let G be a random glue in the location of the player;
 		if M is aeromancer:

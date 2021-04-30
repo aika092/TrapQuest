@@ -1,14 +1,16 @@
 Swimsuit Framework by Dresses begins here.
 
-A swimsuit is a kind of underdress. A swimsuit is usually unskirted. A swimsuit is usually nylon. A swimsuit is usually bottom-exclusive. A swimsuit is usually optional-top-displacable. A swimsuit is usually erect-nipple-exposing. The text-shortcut of swimsuit is "ss".
+A swimsuit is a kind of underdress. A swimsuit is usually unskirted. A swimsuit is usually nylon. A swimsuit is usually bottom-exclusive. A swimsuit is usually optional-top-displacable. A swimsuit is usually erect-nipple-exposing. The text-shortcut of swimsuit is "ss". The printed name of a swimsuit is "[clothing-title-before][MediumDesc of item described][clothing-title-after]".
 
 To compute SelfExamineDesc of (C - a swimsuit):
 	say "A [ShortDesc of C] clings tightly to your body. ".
 
 To say ShortDesc of (C - a swimsuit):
 	say "swimsuit".
+To say MediumDesc of (C - a swimsuit):
+	say ShortDesc of C.
 
-To uniquely set up (C - a swimsuit):
+To set up magic attribute of (C - a swimsuit):
 	if a random number between 1 and 2 is 1, now C is dominance;
 	if a random number between 1 and 3 is 1, now C is protection.
 
@@ -19,11 +21,10 @@ Chapter - Monokini
 
 A monokini is a kind of swimsuit. A monokini is usually crotch-intact. Understand "onepiece", "swimsuit" as monokini. A monokini is usually top-displacable.
 
-To say ShortDesc of (C - a monokini):
-	say "swimsuit".
-
 To decide which number is the initial outrage of (C - a monokini):
 	decide on 3.
+To decide which number is the initial armour of (C - a monokini):
+	decide on 4.
 
 This is the remove inappropriate swimwear rule:
 	repeat with B running through monokini:
@@ -34,12 +35,14 @@ Chapter - Slutty Monokinis
 
 [There are a few different types of monokini, really just for transformation sequence handling.]
 
-A string monokini is a kind of monokini. The armour of string monokini is usually 2. A string monokini is normally-nipple-exposing. A string monokini is belly exposing. A string monokini is usually fully exposing. A string monokini is transformation-rare.
+A string monokini is a kind of monokini. A string monokini is normally-nipple-exposing. A string monokini is belly exposing. A string monokini is usually fully exposing. A string monokini is transformation-rare.
 To decide which object is the unique-upgrade-target of (C - a string monokini):
 	[if tutorial is 1, decide on nothing;]
 	decide on a random off-stage transformation-eligible colour-sharing slut monokini.
 To decide which number is the penis-capacity of (C - a string monokini):[what's the largest size of penis it can cover?]
 	decide on 1.
+To decide which number is the initial armour of (C - a string monokini):
+	decide on 2.
 
 A minimalist monokini is a kind of monokini. A minimalist monokini is usually very low cut.
 To decide which number is the initial outrage of (C - a minimalist monokini):

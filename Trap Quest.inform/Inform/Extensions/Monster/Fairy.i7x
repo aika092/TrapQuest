@@ -186,8 +186,7 @@ To compute protection of (M - a fairy):
 		if the player is flying:
 			deinterest M;
 		otherwise if X is M:
-			do nothing;
-			[say "";]
+			say "BUG - [NameDesc of M] tried to protect the player (flagged as in combat) but somehow found itself as the most reasonable target...";
 		otherwise:
 			compute M protecting against X.
 
@@ -313,7 +312,7 @@ This is the fairy anal rule:
 The fairy anal rule is listed in the butt slut eligibility rules.
 
 This is the fairy tries to shrink the penis of the player rule:
-	if the player is male and the size of penis > min penis size and a random number between 1 and 2 is 1:
+	if the player is possessing a penis and the size of penis > min penis size and a random number between 1 and 2 is 1:
 		say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your crotch as [he of current-monster] does. [big he of current-monster] turns and smirks.";
 		PenisDown 1;
 		rule succeeds.
@@ -863,7 +862,7 @@ To compute friendly drink of (M - a fairy):
 			increase the stomach-water of the player by 1;
 		if diaper quest is 1:
 			if the water volume of belly < belly limit - the total fill of belly, now the water volume of belly is belly limit - the total fill of belly;
-		otherwise if the player is male:
+		otherwise if the player is not possessing a vagina:
 			while the largeness of belly < 8 and the largeness of belly < max belly size:
 				assfill 1;
 		otherwise:

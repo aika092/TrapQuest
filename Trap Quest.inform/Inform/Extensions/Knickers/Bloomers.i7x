@@ -13,7 +13,10 @@ Definition: a bloomers is fetish appropriate:
 To set up influence of (C - a bloomers):
 	set up submissiveness-based influence of C.
 
-sissy-bloomers is a bloomers. sissy-bloomers is sheer. sissy-bloomers is nylon. The armour of sissy-bloomers is 3. The printed name of sissy-bloomers is "[clothing-title-before]pair of sheer nylon bloomers[clothing-title-after]". Understand "pair", "of", "sheer", "bloomers" as sissy-bloomers. The text-shortcut of sissy-bloomers is "bl".
+To decide which number is the initial armour of (C - a bloomers):
+	decide on 3.
+
+sissy-bloomers is a bloomers. sissy-bloomers is sheer. sissy-bloomers is nylon. The printed name of sissy-bloomers is "[clothing-title-before]pair of sheer nylon bloomers[clothing-title-after]". Understand "pair", "of", "sheer", "bloomers" as sissy-bloomers. The text-shortcut of sissy-bloomers is "bl".
 
 Figure of sissy-bloomers is the file "Items/Clothes/Lower/Underwear/Bloomers/bloomers1.png".
 
@@ -60,7 +63,7 @@ To say UniqueTitle of (K - crotchless bloomers):
 
 Figure of crotchless bloomers is the file "Items/Clothes/Lower/Underwear/Bloomers/bloomers2.png".
 
-To uniquely set up (C - crotchless bloomers):
+To set up magic attribute of (C - crotchless bloomers):
 	if a random number between 1 and 3 is 1, now C is protection.
 
 To decide which number is the initial outrage of (C - a crotchless bloomers):

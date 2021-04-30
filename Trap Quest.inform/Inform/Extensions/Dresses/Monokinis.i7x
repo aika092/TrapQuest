@@ -1,83 +1,109 @@
 Monokinis by Dresses begins here.
 
+Part 0 - Swimming Top
+
+swimming top is a swimsuit. swimming top is manly. swimming top is fully covering. The text-shortcut of swimming top is "swt". swimming top is not-top-displacable. swimming top is top-exclusive. swimming top is sheer-when-wet.
+
+Figure of swimming top dry is the file "Items/Clothes/Upper/Swimming/Tops/swimmingtop1.png". Figure of swimming top wet is the file "Items/Clothes/Upper/Swimming/Tops/swimmingtop2.png".
+
+To decide which figure-name is the clothing-image of (C - swimming top):
+	if C is actually dense, decide on figure of swimming top dry;
+	otherwise decide on figure of swimming top wet.
+
+To say ClothingDesc of (C - swimming top):
+	say "A short sleeved nylon top that is used for keeping warm during professional swimming. [if C is actually dense]But this one looks like it will likely get see-through if it ever gets too wet.[otherwise]It is soaking wet, and that means it has become very see-through.[end if]".
+
+To say ShortDesc of (C - swimming top):
+	say "swimming top".
+To say MediumDesc of (C - swimming top):
+	say "professional swimming top".
+Understand "professional" as swimming top.
+
+To decide which number is the initial outrage of (C - swimming top):
+	if C is actually dense, decide on 0;
+	if the largeness of breasts < 6, decide on the largeness of breasts;
+	decide on 6.
+
+Definition: swimming top is blue themed: decide yes.
+
+To decide which object is the unique-upgrade-target of (C - swimming top):
+	if C is actually sheer and white-monokini is off-stage, decide on white-monokini.
+
 Part 1 - White Monokini
 
-A white monokini is a kind of monokini. A white monokini is usually sheer-when-wet. There is 1 white monokini. A white monokini is fully covering. A white monokini is not-top-displacable. The text-shortcut of white monokini is "wmk".
+white-monokini is a monokini. white-monokini is sheer-when-wet. white-monokini is fully covering. white-monokini is not-top-displacable. The text-shortcut of white-monokini is "wmk".
 
-The printed name of white monokini is usually "[clothing-title-before]white onepiece swimsuit[clothing-title-after]".
+Figure of white-monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/monokini3.png".
 
-Figure of white monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/monokini3.png".
-
-To decide which number is the initial outrage of (C - a white monokini):
+To decide which number is the initial outrage of (C - white-monokini):
 	decide on 9.
 
-To decide which figure-name is clothing-image of (C - a white monokini):
-	decide on figure of white monokini.
+To decide which figure-name is clothing-image of (C - white-monokini):
+	decide on figure of white-monokini.
 
-To say ClothingDesc of (C - a white monokini):
+To say ClothingDesc of (C - white-monokini):
 	say "This tight fitting white onepiece swimsuit would be modest enough if it wasn't for the fact that it would go quite see-through as soon as it got wet. [if C is crotch-ripped]It has a rip at the crotch.[otherwise]At least it covers your crotch![end if]".
 
-To say ShortDesc of (C - a white monokini):
-	say "translucent swimsuit".
-To say MediumDesc of (C - a white monokini):
-	say "translucent white swimsuit".
+To say ShortDesc of (C - white-monokini):
+	say "white swimsuit".
+To say MediumDesc of (C - white-monokini):
+	say "white onepiece swimsuit".
+Understand "white", "onepiece", "swimsuit" as white-monokini.
 
-Definition: a white monokini is white themed: decide yes.
+Definition: white-monokini is white themed: decide yes.
 
 Part 2 - Green Monokini
 
-A green monokini is a kind of monokini. There is 1 green monokini. A green monokini is very low cut. The text-shortcut of green monokini is "gmk".
-
-The printed name of green monokini is usually "[clothing-title-before]green onepiece swimsuit[clothing-title-after]".
+green monokini is a monokini. green monokini is very low cut. The text-shortcut of green monokini is "gmk". Understand "onepiece", "swimsuit" as green monokini.
 
 Figure of green monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/monokini1.png".
 
 Definition: green monokini is yellow themed: decide yes.
 Definition: green monokini is green themed: decide yes.
 
-To decide which figure-name is clothing-image of (C - a green monokini):
+To decide which figure-name is clothing-image of (C - green monokini):
 	decide on figure of green monokini.
 
-To say ClothingDesc of (C - a green monokini):
+To say ClothingDesc of (C - green monokini):
 	say "This tight fitting onepiece swimsuit is a bit torn at the top to allow for extra large amounts of cleavage to be shown[if C is no protection], and at the crotch to allow entrance to anything that desires so[end if].".
 
-To say ShortDesc of (C - a green monokini):
+To say ShortDesc of (C - green monokini):
 	say "green swimsuit".
-To say MediumDesc of (C - a green monokini):
-	say "sexy torn green swimsuit".
+To say MediumDesc of (C - green monokini):
+	say "green onepiece swimsuit".
 
 Part 3 - Grey Monokini
 
-A grey monokini is a kind of monokini. There is 1 grey monokini. The text-shortcut of grey monokini is "grm".
+grey-monokini is a monokini. The text-shortcut of grey-monokini is "grm".
 
-The printed name of grey monokini is usually "[clothing-title-before]grey onepiece swimsuit[clothing-title-after]".
+Understand "grey", "onepiece", "swimsuit" as grey-monokini.
 
-Figure of grey monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/monokini2.png".
+Figure of grey-monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/monokini2.png".
 
-To decide which figure-name is clothing-image of (C - a grey monokini):
-	decide on figure of grey monokini.
+To decide which figure-name is clothing-image of (C - grey-monokini):
+	decide on figure of grey-monokini.
 
-To say ClothingDesc of (C - a grey monokini):
+To say ClothingDesc of (C - grey-monokini):
 	say "This tight fitting onepiece swimsuit is quite fashionable, [if C is crotch-ripped]but has a rip at the crotch[otherwise]showing off decent amounts of skin without being overly slutty[end if].".
 
-To say ShortDesc of (C - a grey monokini):
+To say ShortDesc of (C - grey-monokini):
 	say "grey swimsuit".
-To say MediumDesc of (C - a grey monokini):
-	say "fashionable grey swimsuit".
+To say MediumDesc of (C - grey-monokini):
+	say "grey onepiece swimsuit".
 
-To decide which object is the unique-upgrade-target of (C - a grey monokini):
+To decide which object is the unique-upgrade-target of (C - grey-monokini):
 	if tutorial is 1:
 		if diaper quest is 1, decide on a random teddybear playsuit;
 		otherwise decide on a random grey string monokini;
 	decide on nothing.
 
-Definition: a grey monokini is grey themed: decide yes.
+Definition: grey-monokini is grey themed: decide yes.
 
 Part 4 - Lolita Monokini
 
 lolita-monokini is a monokini. The text-shortcut of lolita-monokini is "fsm".
 
-The printed name of lolita-monokini is usually "[clothing-title-before]frilly swimsuit[clothing-title-after]". Understand "frilly" as lolita-monokini.
+Understand "frilly", "lolita", "fashion", "lolita-fashion" as lolita-monokini.
 
 Figure of lolita-monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/monokini4.png".
 
@@ -90,7 +116,7 @@ To say ClothingDesc of (C - lolita-monokini):
 To say ShortDesc of (C - lolita-monokini):
 	say "frilly swimsuit".
 To say MediumDesc of (C - lolita-monokini):
-	say "lolita-fashion swimsuit".
+	say "frilly lolita-fashion swimsuit".
 
 To decide which number is the initial cringe of (C - lolita-monokini):
 	decide on 3.
@@ -109,7 +135,7 @@ Part 5 - Turtle Swimsuit
 
 turtle-swimsuit is a monokini. turtle-swimsuit is transformation-rare. The text-shortcut of turtle-swimsuit is "tsm".
 
-The printed name of turtle-swimsuit is usually "[clothing-title-before]frilly swimsuit[clothing-title-after]". Understand "turtle" as turtle-swimsuit.
+Understand "frilly", "turtle", "babygirl" as turtle-swimsuit.
 
 Figure of turtle-swimsuit is the file "Items/Clothes/Upper/Swimming/Monokinis/monokini5.png".
 
@@ -140,30 +166,55 @@ To decide which object is the unique-upgrade-target of (C - turtle-swimsuit):
 
 Part 6 - Queen of Hearts Monokini
 
-queen of hearts monokini is a monokini. queen of hearts monokini is top-displacable. queen of hearts monokini is fully covering. The text-shortcut of white monokini is "qhmk".
-
-The printed name of queen of hearts monokini is usually "[clothing-title-before]white onepiece swimsuit[clothing-title-after]".
+queen-of-hearts monokini is a monokini. queen-of-hearts monokini is top-displacable. queen-of-hearts monokini is high cut. The text-shortcut of queen-of-hearts monokini is "qhmk". Understand "queen", "queen of", "hearts" as queen-of-hearts monokini.
 
 Figure of queen of hearts monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/monokini6.png".
 
-To decide which number is the initial outrage of (C - queen of hearts monokini):
-	decide on 1.
-
-To set up influence of (C - queen of hearts monokini):
-	now C is luck-influencing.
-
-To decide which figure-name is clothing-image of (C - queen of hearts monokini):
+To decide which figure-name is clothing-image of (C - queen-of-hearts monokini):
 	decide on figure of queen of hearts monokini.
 
-To say ClothingDesc of (C - queen of hearts monokini):
+To decide which number is the initial outrage of (C - queen-of-hearts monokini):
+	decide on 1.
+
+To set up influence of (C - queen-of-hearts monokini):
+	now C is luck-influencing.
+
+To say ClothingDesc of (C - queen-of-hearts monokini):
 	say "This tight fitting white onepiece swimsuit is decently modest except for a rather high cut at the legholes. A well-recognisable image of the queen of hearts is printed on the front.".
 
-To say ShortDesc of (C - queen of hearts monokini):
+To say ShortDesc of (C - queen-of-hearts monokini):
 	say "white swimsuit".
-To say MediumDesc of (C - queen of hearts monokini):
+To say MediumDesc of (C - queen-of-hearts monokini):
 	say "queen of hearts swimsuit".
 
-Definition: queen of hearts monokini is white themed: decide yes.
-Definition: queen of hearts monokini is party themed: decide yes.
+Definition: queen-of-hearts monokini is white themed: decide yes.
+Definition: queen-of-hearts monokini is playing card themed: decide yes.
+
+Part 7 - Queen of Spades Monokini
+
+queen-of-spades monokini is a monokini. queen-of-spades monokini is top-displacable. queen-of-spades monokini is unique. queen-of-spades monokini is high cut. queen-of-spades monokini is crotch-exposing. The text-shortcut of queen-of-spades monokini is "qsmk". Understand "queen", "queen of", "spades" as queen-of-spades monokini.
+
+Figure of queen of spades monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/monokini7.png".
+
+To decide which figure-name is clothing-image of (C - queen-of-spades monokini):
+	decide on figure of queen of spades monokini.
+
+To decide which number is the initial outrage of (C - queen-of-spades monokini):
+	decide on 4.
+
+To say ClothingDesc of (C - queen-of-spades monokini):
+	say "This tight fitting white onepiece swimsuit has a gap missing at the crotch, giving it a sexually provocative feel. A well-recognisable image of the queen of spades is printed on the front.".
+
+To say ShortDesc of (C - queen-of-spades monokini):
+	say "white swimsuit".
+To say MediumDesc of (C - queen-of-spades monokini):
+	say "queen of spades swimsuit".
+
+Definition: queen-of-spades monokini is white themed: decide yes.
+Definition: queen-of-spades monokini is playing card themed: decide yes.
+Definition: queen-of-spades monokini is interracial themed: decide yes.
+
+To decide which object is the unique-upgrade-target of (C - queen-of-hearts monokini):
+	decide on queen-of-spades monokini.
 
 Monokinis ends here.

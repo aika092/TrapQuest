@@ -17,10 +17,6 @@ To say TypeTitle of (T - a briefs):
 To say selfexaminetitle of (T - a briefs):
 	say "[one of]saucy[or]cheeky[at random] [selfexamineuniquetitle of T]".
 
-To uniquely set up (T - a briefs):
-	now the damage of T is 0;
-	now the armour of T is a random number between 7 and 10.
-
 To decide which figure-name is clothing-image of (C - briefs):
 	decide on figure of briefs 1.
 
@@ -84,6 +80,9 @@ To decide which figure-name is clothing-image of (C - red-anal-briefs):
 To decide which figure-name is clothing-image of (C - turquoise briefs):
 	decide on figure of briefs 18.
 
+To decide which figure-name is clothing-image of (C - pink-bbc briefs):
+	decide on figure of briefs special 2.
+
 white-briefs is a briefs. white-briefs is sheer. The text-shortcut of white-briefs is "whb". Understand "white" as white-briefs.
 To say selfexamineuniquetitle of (G - white-briefs):
 	say "pair of white briefs".
@@ -115,10 +114,7 @@ Definition: white-diagram briefs is fetish appropriate:
 Definition: white-diagram briefs is vagina themed: decide yes.
 Definition: white-diagram briefs is white themed: decide yes.
 To uniquely set up (T - a white-diagram briefs):
-	now the damage of T is 0;
-	now the armour of T is a random number between 7 and 10;
-	set up magic state of T;
-	if pregnancy fetish is 0, now T is unique. [This stops it spawning if it the correct fetish is not enabled.]
+	if pregnancy fetish is 0, now T is unique. [This stops it spawning if the correct fetish is not enabled.]
 Report wearing a white-diagram briefs:
 	compute early pregnancy eagerness.
 
@@ -294,6 +290,7 @@ Figure of briefs 15 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs15.p
 Figure of briefs 16 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs16.png".
 Figure of briefs 17 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs17.png".
 Figure of briefs 18 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs18.png".
+Figure of briefs special 2 is the file "Items/Clothes/Lower/Underwear/Briefs/briefsspecial2.png".
 
 [Below are from Lucas]
 
@@ -366,5 +363,20 @@ To say UniqueClothingDesc of (G - turquoise briefs):
 	say "A cute pair of bright blue polka-dot briefs, with a faint pattern of hearts all over.".
 Definition: turquoise briefs is heart themed: decide yes.
 Definition: turquoise briefs is blue themed: decide yes.
+
+pink-bbc briefs is a briefs. pink-bbc briefs is transformation-rare. The text-shortcut of pink-bbc briefs is "pbbc".
+Understand "pink", "built", "built for", "bbc" as pink-bbc briefs.
+To say selfexamineuniquetitle of (G - pink-bbc briefs):
+	say "pair of pink 'BUILT for BBC' briefs".
+To say UniqueClothingDesc of (G - pink-bbc briefs):
+	say "A cute pair of bright pink briefs, with the writing 'BUILT for BBC' and a queen of spades logo in a deeper pink on the front.".
+Definition: pink-bbc briefs is pink themed: decide yes.
+Definition: pink-bbc briefs is playing card themed: decide yes.
+Definition: pink-bbc briefs is interracial themed: decide yes.
+Definition: pink-bbc briefs is fetish appropriate:
+	if interracial fetish is 1, decide yes;
+	decide no.
+To decide which number is the unique outrage of (C - pink-bbc briefs):
+	decide on 2.
 
 Briefs ends here.

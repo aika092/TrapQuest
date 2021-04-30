@@ -245,6 +245,8 @@ To compute lakeClimax of (L - a lake monster):
 		AnnouncedSquirt semen on face by a random number between 7 and 10;
 		StomachSemenUp 4;
 		BlowCount;
+	if the m-state of L > 1:
+		follow the do we puke rule;
 	if the b-state of L is 1:
 		say "The tentacle in front of your chest spasms powerfully before painting your [BreastDesc] with layer upon layer of thick white sex-juice. The sticky substance clings to your flesh, dripping off incredibly slowly.";
 		AnnouncedSquirt semen on breasts by a random number between 7 and 10;

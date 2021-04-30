@@ -34,7 +34,7 @@ To compute turn (N - a number) of (M - a monster):
 		decrease the wrangle-bonus of M by 1;
 		if the wrangle-bonus of M is 0:
 			repeat with BP running through body parts wrangled by M:
-				say "[BigNameDesc of M][']s hold on your [BP] loosens, and you are able to wriggle free!";
+				say "[BigNameDesc of M][']s hold on your [BP] [one of]loosens[or]momentarily slips[or]briefly weakens[at random], and you are able to [one of]wriggle[or]pull[or]ease[or]slide[at random] free!";
 				now M is not wrangling BP;
 	now M is not trip-warned;
 	if M is seduced: [If the NPC got to its compute turn function, that means that the seduction failed (the NPC wasn't stalled) and we can exit the seduction minigame.]
@@ -119,6 +119,8 @@ To compute action (N - a number) of (M - a monster):
 	otherwise if M is not distracted and M is not caged and M is not guarding and (M is undefeated or M is not motionless-when-defeated):
 		if (the boredom of M is 0 and M is unleashed and (cowbell is clanking or the player is glued seductively or magnetism-timer > 0)) or M is messy, check seeking N of M;
 		otherwise check motion of M;
+	if M is submission-assisting:[TODO: handle problem where assisters randomly lose interest]
+		if M is not interested or the number of monsters penetrating a body part is 0, now M is not submission-assisting;
 	compute unique final action of M.
 
 Definition: a monster is motionless-when-defeated:

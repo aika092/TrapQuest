@@ -6,7 +6,16 @@ Definition: magic-beads is cursable: decide no.
 Definition: a magic-beads is blessable: decide no.
 Definition: a magic-beads is magic themed: decide yes.
 
+Figure of prayer beads is the file "Items/Accessories/Equippables/prayerbeads1.png".
+Figure of jinx beads is the file "Items/Accessories/Equippables/jinxbeads1.png".
+Figure of fire beads is the file "Items/Accessories/Equippables/firebeads1.png".
+
+
+
 prayer-beads is a magic-beads. prayer-beads is unique. Understand "prayer", "prayer beads" as prayer-beads. The text-shortcut of a prayer-beads is usually "pyb".
+
+To decide which figure-name is clothing-image of (C - prayer-beads):
+	decide on figure of prayer beads.
 
 Definition: prayer-beads is white themed: decide yes.
 
@@ -53,6 +62,9 @@ To compute attack effect of (E - prayer-beads):
 		dislodge ritual-beads.
 
 jinx-beads is a magic-beads. jinx-beads is unique. Understand "jinx", "jinx beads" as jinx-beads. The text-shortcut of jinx-beads is usually "jxb". jinx-beads has a number called jinx-charge.
+
+To decide which figure-name is clothing-image of (C - jinx-beads):
+	decide on figure of jinx beads.
 
 Definition: jinx-beads is black themed: decide yes.
 
@@ -116,6 +128,9 @@ fire-beads is a magic-beads. fire-beads is unique. Understand "fire", "fire bead
 
 To say ClothingDesc of (W - fire-beads):
 	say "A set of red and yellow beads connected by a flexible wire. It emits a hearth-like warmth.";
+
+To decide which figure-name is clothing-image of (C - fire-beads):
+	decide on figure of fire beads.
 
 Definition: fire-beads is demonic: decide yes.
 Definition: fire-beads is red themed: decide yes.

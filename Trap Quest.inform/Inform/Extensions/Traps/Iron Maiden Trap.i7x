@@ -22,7 +22,7 @@ To compute reset cooldown of (T - iron-maiden):
 	do nothing. [Just sticks around visible, triggered again by the haunted mirror trap]
 
 To say TQIronMaidenFlav:
-	say "[one of]You're trapped inside, your arms pointing vertically upwards above your head, unable to move a muscle! This must be some kind of Iron Maiden! In the pitch black darkness you feel some mysterious soft things pressing into your armpits. They flick left and right to a mechanical rhythm. You're being tickled by feathers! It's surprisingly erotic, being trapped in the pitch black with the steady physical stimuli[or]You're inside the Iron Maiden again! Once again the feathers press into your armpits. [stopping]There's probably nothing you can do but [bold type][TQlink]wait[TQdlink][roman type].".
+	say "[one of]You're trapped inside, your arms pointing vertically upwards above your head, unable to move a muscle! This must be some kind of Iron Maiden! In the pitch black darkness you feel some mysterious soft things pressing into your armpits. They flick left and right to a mechanical rhythm. You're being tickled by feathers! It's surprisingly erotic, being trapped in the pitch black with the steady physical stimuli. [or]You're inside the Iron Maiden again! Once again the feathers press into your armpits. [stopping]There's probably nothing you can do but [bold type][TQlink]wait[TQdlink][roman type].".
 
 To say DQIronMaidenFlav:
 	let D be a random worn diaper;
@@ -43,10 +43,11 @@ A time based rule (this is the iron-maiden-punishment rule):
 	if the player is in Iron Maiden:
 		let M be iron-maiden;
 		increase iron-maiden-turns by 1;
-		if iron-maiden-turns > a random number between 4 and 6:
+		if iron-maiden-turns > a random number between ((tough-shit * 4) + 8) and 12:
 			if M is penetrating face:
 				say "The [manly-penis] in your mouth shudders and then ejaculates! Your mouth is filled to the brim with [semen].";
 				FaceFill semen by 4;
+				OralSexAddictUp 1;
 			say "You hear a creak, and then a sliver of daylight appears above you. The two halves of the iron maiden creak apart, as the door slowly opens, releasing you[if M is penetrating a body part]. The ghost is nowhere to be seen[end if].[line break][variable custom style]Phew, I'm free![roman type][line break]";
 			increase the submission-count of the player by 1;
 			increase the sex-count of the player by 1;
@@ -67,7 +68,11 @@ A time based rule (this is the iron-maiden-punishment rule):
 			if diaper messing >= 3, compute soiling;
 		otherwise:
 			say "The feathers [one of]begin to [or][stopping]twist back and forth, tickling your armpits, making you [one of]shudder[or]wiggle and squirm[or]writhe around[then at random].";
-			stimulate arms from M;
+			passively stimulate arms from M times 3;
+			if the player is horny:
+				say "The ghostly hands eagerly finger your [BreastDesc] and [genitals]!";
+				stimulate breasts from M;
+				stimulate vagina from M;
 			let F be a random body part penetrated by M;
 			if F is face:
 				say "The phantom [manly-penis] in your mouth continues to [one of]fuck your face[or]use your throat as a fuck sock[or]energetically fuck your mouth[or]turn your mouth into its own personal onahole[in random order]!";
@@ -75,14 +80,14 @@ A time based rule (this is the iron-maiden-punishment rule):
 				say "The phantom [manly-penis] in your [variable F] continues to [one of]fuck you[or]thrust in and out[in random order]!";
 				ruin F;
 			otherwise if the player is possessing a vagina and the player is not pussy protected:
-				say "Suddenly, a bright green ghostly penis phases through the front of the Iron Maiden! Its tip is aligned directly with your [vagina]. There's no stopping it! Before you can do anything, it is pushing past your pussy lips. Depsite its supernatural ghostly nature, it feels very real as it penetrates deeper and deeper inside you, and then begins to fuck you. The only difference between this and a real penis is that this ghost [manly-penis], instead of feeling warm and alive, feels cold to the touch.";
+				say "Suddenly, a bright green ghostly penis phases through the front of the Iron Maiden! Its tip is aligned directly with your [vagina]. Trapped helpless as you are, there's no stopping it! Before you can do anything, it is pushing past your pussy lips. Despite its supernatural ghostly nature, it feels very real as it penetrates deeper and deeper inside you, and then begins to fuck you. The only difference between this and a real penis is that this ghost [manly-penis], instead of feeling warm and alive, feels cold to the touch.";
 				now M is penetrating vagina;
 				ruin vagina;
-				FuckCount;]
+				FuckCount;
 			otherwise if face is not actually occupied:
-				say "Suddenly, a bright green ghostly penis phases through the front of the Iron Maiden, right in front of your face! In this tight cramped prison, you can't even turn your head away! It pushes against your lips with increasing pressure until you are forced to let it inside. It immediately starts worming its way down into your throat until you are choking helplessly on its girth!";
+				say "Suddenly, a bright green ghostly penis phases through the front of the Iron Maiden, right in front of your face! Clamped inside this tight cramped prison, you can't even turn your head away! It pushes against your lips with increasing pressure until you are forced to let it inside. It immediately starts worming its way down into your throat until you are choking helplessly on its girth!";
 				now M is penetrating face;
-				BlowCount.
+				BlowCount.]
 
 To say IronMaidenTrapReactFlav of (M - a monster):
 	say LewdTrapReactFlav of M.

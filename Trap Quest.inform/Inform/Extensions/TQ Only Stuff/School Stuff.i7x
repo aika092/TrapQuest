@@ -35,132 +35,149 @@ To compute teaching of (L - kissing-lesson):
 		otherwise:
 			say "[BigNameDesc of M] spends a while thinking before speaking.[line break][speech style of M]'I do not zink you dezerve punishment... but I cannot grant you ze rank of emerald juzt yet. I vill leave you alone for today.'[roman type][line break]";
 	let KissRating be (the lips of face) + (the oral sex addiction of the player / 2);
-	say "[speech style of M]'Okay [NameBimbo], let'z zee vat you can do.[roman type][line break]You find yourself walking to the front until your face is inches from [teacher-name of M][']s.[big he of M] pouts and slightly opens [his of M] lips, revealing [his of M] waiting tongue. It looks like you could choose to make the first move - this would be rather embarrassing to do in front of all your classmates, but may well earn you brownie points with [teacher-name of M]. Do you make the first move?";
-	let tonguedPerson be the player;
-	if the player is consenting:
-		say "You close your eyes and move your face forward until your lips touch, tilting your head slightly to allow them to lock. [teacher-name of M] moans with satisfaction. [severeHumiliateReflect]You begin to push your tongue inside [teacher-name of M][']s mouth, surprising [him of M]. [big he of M] blocks with [his of M] own tongue, and they slither on top of each other for a few seconds as you fight to enter each other's mouths. The feeling of [his of M] tongue on yours [if the player is a bit horny]arouses you further[otherwise]turns you on a little[end if]. Eventually ";
-		if a random number between 1 and the delicateness of the player < 7:
-			say "[teacher-name of M] gives way, and allows your tongue to slip beyond [his of M] teeth.";
-			now tonguedPerson is M;
-			repeat with ST running through tryhard students in the location of the player:
-				FavourUp ST;
+	say "[speech style of M]'Okay [NameBimbo], let'z zee vat you can do.[roman type][line break]You find yourself walking to the front until your face is inches from [teacher-name of M][']s.[big he of M] pouts and slightly opens [his of M] lips, revealing [his of M] waiting tongue. It looks like you could choose to make the first move - this would be rather embarrassing to do in front of all your classmates, but may well earn you brownie points with [teacher-name of M]. ";
+	suggest swallowing;
+	if the total volume of face > 0:
+		say "You close your eyes and move your face forward until your lips touch, tilting your head slightly to allow them to lock. [teacher-name of M] moans with satisfaction... until you push your [MouthfulDesc] into [his of M] mouth, surprising [him of M]. [big he of M] pulls away, spluttering with panic for a moment until [he of M] manages to gather [his of M] wits. The class is gasping and snickering. You give [NameDesc of M] a sly smirk.";
+		if the player is getting unlucky:
+			say "[speech style of M]'DETENTION! DETENTION FOR YOU RIGHT NOW!'[roman type][line break]Uh-oh, looks like you caught [him of M] in a bad mood...[line break][GotUnluckyFlav]";
+			compute chair detention of M;
 		otherwise:
-			say "your bravery subsides and you relent, allowing your superior to explore the insides of your mouth.";
-			repeat with ST running through ditzy students in the location of the player:
-				FavourUp ST;
-		passively stimulate face from M times 2;
-		finally arouse the delayed arousal of the player;
-		update arousal;
-		DelicateDown 1;
-	otherwise:
-		say "[teacher-name of M] tuts at your hesitation and then grabs you by the back of your head, forcing your lips together in a seal, where [he of M] immediately forces [his of M] tongue into your mouth and towards your throat. With [his of M] tongue in your mouth, it definitely feels like [he of M] is in command. At least you feel like you managed to keep some self-respect intact by not being over-eager.";
-		Dignify 250;
-		repeat with ST running through innocent students in the location of the player:
-			FavourUp ST;
-	let endN be a random number between 6 and 9;
-	let N be 0;
-	let player-groped-level be -1;
-	while N >= 0 and N < endN:
-		increase N by 1;
-		let KR be player-groped-level + 2;
-		increase KissRating by a random number between 1 and KR;
-		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
-		say "[if tonguedPerson is the player][teacher-name of M][']s tongue is currently in your mouth - [he of M] has control[otherwise]Your tongue is currently in [his of M] mouth - you have control[end if]. [if player-groped-level >= 0 and tonguedPerson is the player][big he of M][otherwise if player-groped-level >= 0]But [he of M] already[end if] [if player-groped-level is 0]has [his of M] hands on your [AssDesc].[otherwise if player-groped-level is 1]has one hand on your [AssDesc] and one hand on your [BreastDesc].[otherwise if player-groped-level > 1]has one hand on your [BreastDesc] and the other on your [genitals]![end if][line break]";
-		set numerical response 1 to "pull away and end the kiss[if newbie tips is 1] (have you entertained [teacher-name of teacher-angela] enough to avoid punishment?)[end if]";
-		set numerical response 2 to "keep kissing[if newbie tips is 1 and tonguedPerson is the player and player-groped-level < 2] ([teacher-name of M] gets more handsy, increasing stimulation in future rounds)[otherwise if newbie tips is 1 and tonguedPerson is the player] ([teacher-name of M] deals double vaginal stimulation while you allow her to retain full control of the situation)[end if]";
-		if tonguedPerson is the player, set numerical response 3 to "try to regain control by pushing your tongue into [his of M] mouth[if newbie tips is 1 and player-groped-level < 2] (extra humiliation this turn to try and prevent [teacher-name of M] from getting more handsy)[otherwise if newbie tips is 1] (extra humiliation this turn but if you succeed in getting [his of M] tongue out of your mouth you'll significantly reduce overall stimulation)[end if]";
-		compute multiple choice question;
-		if player-numerical-response is 1:
-			now N is 10;
-			say "You wrestle free and step back.";
-		otherwise:
-			if tonguedPerson is M:
-				let RD be a random number between 1 and the dexterity of the player;
-				let RM be a random number between 1 and the difficulty of M;
-				if debuginfo > 0, say "[input-style]Tongue defence check: Dexterity (d[dexterity of the player]) = [RD] | [RM].5 = (d[difficulty of M]) [teacher-name of M] difficulty rating[roman type][line break]";
-				say "[teacher-name of M] [one of]uses [his of M] tongue to play with yours in [his of M] mouth[or]massages your tongue with [his of M] lips[or]lets you lick [his of M] lips[or]sucks your saliva off of your tongue[at random], ";
-				if RM >= RD:
-					say "but then when [he of M] senses an opening, [he of M] manages to shove your tongue back into your mouth and take control!";
-					now tonguedPerson is the player;
-				otherwise:
-					say "every now and then trying to push past, but not being able to find an opening.";
-				[passively stimulate face from M times 2;
-				check for arousal change;]
-			if player-numerical-response is 3:
-				say "Your tongues slither on top of each other for a few seconds as you fight to push [teacher-name of M][']s tongue back into [his of M] mouth. The feeling of [his of M] tongue on yours [if the player is a bit horny]arouses you further[otherwise]turns you on a little[end if], and the fact that your peers can see you eagerly leaning into the kiss makes you blush. ";
-				moderateHumiliate;
-				if player-groped-level is 1:
-					repeat with IST running through innocent students in the location of the player:
-						say "[one of][IST] can't believe that you're kissing [teacher-name of M] so passionately, considering how [he of M][']s treating your body like a piece of meat.[or][stopping]";
-						FavourDown IST;
-				let RS be a random number between 1 and the strength of the player;
-				let RM be a random number between 1 and the difficulty of M;
-				if debuginfo > 0, say "[input-style]Tongue wrestle check: Strength (d[strength of the player]) = [RS] | [RM].5 [teacher-name of M] difficulty rating[roman type][line break]";
-				if RS > RM:
-					say "[teacher-name of M] gives way, and your tongues are now touching in [his of M] mouth.";
-					now tonguedPerson is M;
-				otherwise:
-					say "[teacher-name of M] doesn't relent, and [his of M] tongue remains firmly inside your mouth.";
-				[passively stimulate face from M;
-				check for arousal change;]
-			if tonguedPerson is M:
-				say "[teacher-name of M] [if player-groped-level is -1]submits to your kiss, moaning enthusiastically[otherwise if player-groped-level is 0]lets you play with [his of M] tongue as [he of M] continues to knead your [AssDesc][otherwise if player-groped-level is 1]swirls [his of M] tongue with yours as [he of M] continues to fondle you[otherwise]submits to your oral probing and focuses on playing with your [genitals] and [BreastDesc][end if].";
-			otherwise:
-				say "[teacher-name of M] [if player-groped-level is -1]passionately explores your mouth with [his of M] tongue, making over-the-top kissing sounds[otherwise if player-groped-level is 0]continues to knead your [AssDesc] as [he of M] lovingly decorates your tongue with [his of M] saliva[otherwise if player-groped-level is 1]hums happily as [he of M] explores your mouth and gropes your body[otherwise]moans with pleasure as [he of M] idly tongues your mouth and focuses on playing with your [genitals] and [BreastDesc][end if].";
-			if player-groped-level >= 0:
-				say "You feel humiliated that you've let [him of M] [one of][or]continue to [stopping]touch you in front of your classmates! [if player-groped-level >= 2][severeHumiliateReflect][otherwise if player-groped-level >= 1][strongHumiliateReflect][otherwise][slightHumiliateReflect][end if]";
-			if player-groped-level >= 2:
-				repeat with IST running through innocent students in the location of the player:
-					FavourDown IST;
-			passively stimulate face from M;
-			if player-groped-level >= 0, passively stimulate hips from M;
-			if player-groped-level >= 1, passively stimulate breasts from M;
-			if player-groped-level >= 2:
-				passively stimulate vagina from M;
-				if tonguedPerson is the player, passively stimulate vagina from M; [it's double stimulation to let her tongue you as well]
-				if vagina is orgasming:
-					repeat with ST running through students in the location of the player:
-						FavourDown ST;
-					say "After you have finished squealing with pleasure into [teacher-name of M][']s mouth, [he of M] lets the kiss end.";
-					OralSexAddictUp 1;
-					now N is -1;
-			if (N is 1 or N > 2) and N < 9 and tonguedPerson is the player: [round 2 has no progression. balance attempt to make being entirely submissive less of a shit option]
-				increase player-groped-level by 1;
-				say "[teacher-name of M] [if player-groped-level is 0]grabs your [AssDesc] with both hands, with some force. You think you can hear some snickering from behind you[otherwise if player-groped-level is 1]moves one hand to your [BreastDesc] and begins to grope you[otherwise if player-groped-level is 2]moves the hand that was kneading your [AssDesc] to your [genitals], and begins playing with you down there[otherwise]keeps stroking you down below[end if]. ";
-			check for arousal change;
-	if N < 10: [Teacher pulls away]
-		say "Finally, [NameDesc of M] pulls away and lets go of you.";
-		increase KissRating by 10;
-	otherwise:
-		say "[teacher-name of M] [one of]tuts[or]harrumphs[in random order] with mild disappointment.";
-	if N >= 0:
-		say "[speech style of M]'[if KissRating < 4]That was abysmal[otherwise if KissRating < 6]That was rather poor[otherwise if KissRating < 8]I've had worse[otherwise if KissRating < 11 or N >= 10]Not bad at all[otherwise]Marvellous[end if]. ";
-		let RK be a random number between 8 and 13;
-		if RK > KissRating:
-			say "[if KissRating >= 6]But you can do[otherwise]You can do much[end if] better, I think. Especially with a little help...'[roman type][line break]";
-			if a random number between 1 and (2 + artificial enhancements fetish) > the lips of face:
-				say "[BigNameDesc of M] brings you forward for one more kiss. As your lips touch this time, you feel yours growing in size! By the time you've pulled away, they have changed from [LipDesc] to ";
-				increase the lips of face by 1; [Not using LipsUp on purpose]
-				say "[LipDesc]!";
-				display lips cutscene;
-			otherwise:
-				say "You can't see anything else happen, but something inside your brain seems... [if the oral sex addiction of the player < 5]less resistant to the idea of using[otherwise]more eager to use[end if] your mouth for pleasure.";
-				OralSexAddictUp 1;
-		if RK - 2 <= KissRating:
-			say "[if RK > KissRating][speech style of M]'Still[otherwise]Yes[end if], I think you've learned enough here.'[roman type][line break]";
+			say "[variable custom style]'You pulled away first!'[roman type][line break]You point out cheekily. [BigNameDesc of M] harrumps.[line break][speech style of M]'Very clever! I have never had a student bezt me in zis way. Fine, you can have your promotion.'[roman type][line break]";
 			now armband is emerald;
 			say "You watch as the ID card inside your armband transforms!";
-			if RK > KissRating:
-				now the armband-title of armband is "Kara";
-				now the armband-print of armband is "confident kisser";
-			otherwise:
-				now the armband-title of armband is "Kandi";
-				now the armband-print of armband is "keen kisser";
+			now the armband-title of armband is "Kara";
+			now the armband-print of armband is "conniving kisser";
 			say ClothingDesc of armband;
 			update students; [an important line which makes boring old students disappear and new cool ones appear]
-	otherwise: [player orgasmed]
-		say "[speech style of M]'You pushed yourzelf too far, it vould zeem, and embarrazzed yourzelf in front of ze whole claz. Next time, try to take more control. I zink ze humiliation you've juzt zuffered iz punishment enough though, don't you?'[roman type][line break]";
-	say "[big he of M] ushers you back to your seat and then addresses the whole class.[line break][speech style of M]'Zat iz it for today! Clazz dizmizzed!'[roman type][line break]";
+			say "[big he of M] ushers you back to your seat and then addresses the whole class.[line break][speech style of M]'Zat iz it for today! Clazz dizmizzed!'[roman type][line break]";
+	otherwise:
+		say "Do you make the first move?";
+		let tonguedPerson be the player;
+		if the player is consenting:
+			say "You close your eyes and move your face forward until your lips touch, tilting your head slightly to allow them to lock. [teacher-name of M] moans with satisfaction. [severeHumiliateReflect]You begin to push your tongue inside [teacher-name of M][']s mouth, surprising [him of M]. [big he of M] blocks with [his of M] own tongue, and they slither on top of each other for a few seconds as you fight to enter each other's mouths. The feeling of [his of M] tongue on yours [if the player is a bit horny]arouses you further[otherwise]turns you on a little[end if]. Eventually ";
+			if a random number between 1 and the delicateness of the player < 7:
+				say "[teacher-name of M] gives way, and allows your tongue to slip beyond [his of M] teeth.";
+				now tonguedPerson is M;
+				repeat with ST running through tryhard students in the location of the player:
+					FavourUp ST;
+			otherwise:
+				say "your bravery subsides and you relent, allowing your superior to explore the insides of your mouth.";
+				repeat with ST running through ditzy students in the location of the player:
+					FavourUp ST;
+			passively stimulate face from M times 2;
+			finally arouse the delayed arousal of the player;
+			update arousal;
+			DelicateDown 1;
+		otherwise:
+			say "[teacher-name of M] tuts at your hesitation and then grabs you by the back of your head, forcing your lips together in a seal, where [he of M] immediately forces [his of M] tongue into your mouth and towards your throat. With [his of M] tongue in your mouth, it definitely feels like [he of M] is in command. At least you feel like you managed to keep some self-respect intact by not being over-eager.";
+			Dignify 250;
+			repeat with ST running through innocent students in the location of the player:
+				FavourUp ST;
+		let endN be a random number between 6 and 9;
+		let N be 0;
+		let player-groped-level be -1;
+		while N >= 0 and N < endN:
+			increase N by 1;
+			let KR be player-groped-level + 2;
+			increase KissRating by a random number between 1 and KR;
+			reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+			say "[if tonguedPerson is the player][teacher-name of M][']s tongue is currently in your mouth - [he of M] has control[otherwise]Your tongue is currently in [his of M] mouth - you have control[end if]. [if player-groped-level >= 0 and tonguedPerson is the player][big he of M][otherwise if player-groped-level >= 0]But [he of M] already[end if] [if player-groped-level is 0]has [his of M] hands on your [AssDesc].[otherwise if player-groped-level is 1]has one hand on your [AssDesc] and one hand on your [BreastDesc].[otherwise if player-groped-level > 1]has one hand on your [BreastDesc] and the other on your [genitals]![end if][line break]";
+			set numerical response 1 to "pull away and end the kiss[if newbie tips is 1] (have you entertained [teacher-name of teacher-angela] enough to avoid punishment?)[end if]";
+			set numerical response 2 to "keep kissing[if newbie tips is 1 and tonguedPerson is the player and player-groped-level < 2] ([teacher-name of M] gets more handsy, increasing stimulation in future rounds)[otherwise if newbie tips is 1 and tonguedPerson is the player] ([teacher-name of M] deals double vaginal stimulation while you allow her to retain full control of the situation)[end if]";
+			if tonguedPerson is the player, set numerical response 3 to "try to regain control by pushing your tongue into [his of M] mouth[if newbie tips is 1 and player-groped-level < 2] (extra humiliation this turn to try and prevent [teacher-name of M] from getting more handsy)[otherwise if newbie tips is 1] (extra humiliation this turn but if you succeed in getting [his of M] tongue out of your mouth you'll significantly reduce overall stimulation)[end if]";
+			compute multiple choice question;
+			if player-numerical-response is 1:
+				now N is 10;
+				say "You wrestle free and step back.";
+			otherwise:
+				if tonguedPerson is M:
+					let RD be a random number between 1 and the dexterity of the player;
+					let RM be a random number between 1 and the difficulty of M;
+					if debuginfo > 0, say "[input-style]Tongue defence check: Dexterity (d[dexterity of the player]) = [RD] | [RM].5 = (d[difficulty of M]) [teacher-name of M] difficulty rating[roman type][line break]";
+					say "[teacher-name of M] [one of]uses [his of M] tongue to play with yours in [his of M] mouth[or]massages your tongue with [his of M] lips[or]lets you lick [his of M] lips[or]sucks your saliva off of your tongue[at random], ";
+					if RM >= RD:
+						say "but then when [he of M] senses an opening, [he of M] manages to shove your tongue back into your mouth and take control!";
+						now tonguedPerson is the player;
+					otherwise:
+						say "every now and then trying to push past, but not being able to find an opening.";
+					[passively stimulate face from M times 2;
+					check for arousal change;]
+				if player-numerical-response is 3:
+					say "Your tongues slither on top of each other for a few seconds as you fight to push [teacher-name of M][']s tongue back into [his of M] mouth. The feeling of [his of M] tongue on yours [if the player is a bit horny]arouses you further[otherwise]turns you on a little[end if], and the fact that your peers can see you eagerly leaning into the kiss makes you blush. ";
+					moderateHumiliate;
+					if player-groped-level is 1:
+						repeat with IST running through innocent students in the location of the player:
+							say "[one of][IST] can't believe that you're kissing [teacher-name of M] so passionately, considering how [he of M][']s treating your body like a piece of meat.[or][stopping]";
+							FavourDown IST;
+					let RS be a random number between 1 and the strength of the player;
+					let RM be a random number between 1 and the difficulty of M;
+					if debuginfo > 0, say "[input-style]Tongue wrestle check: Strength (d[strength of the player]) = [RS] | [RM].5 [teacher-name of M] difficulty rating[roman type][line break]";
+					if RS > RM:
+						say "[teacher-name of M] gives way, and your tongues are now touching in [his of M] mouth.";
+						now tonguedPerson is M;
+					otherwise:
+						say "[teacher-name of M] doesn't relent, and [his of M] tongue remains firmly inside your mouth.";
+					[passively stimulate face from M;
+					check for arousal change;]
+				if tonguedPerson is M:
+					say "[teacher-name of M] [if player-groped-level is -1]submits to your kiss, moaning enthusiastically[otherwise if player-groped-level is 0]lets you play with [his of M] tongue as [he of M] continues to knead your [AssDesc][otherwise if player-groped-level is 1]swirls [his of M] tongue with yours as [he of M] continues to fondle you[otherwise]submits to your oral probing and focuses on playing with your [genitals] and [BreastDesc][end if].";
+				otherwise:
+					say "[teacher-name of M] [if player-groped-level is -1]passionately explores your mouth with [his of M] tongue, making over-the-top kissing sounds[otherwise if player-groped-level is 0]continues to knead your [AssDesc] as [he of M] lovingly decorates your tongue with [his of M] saliva[otherwise if player-groped-level is 1]hums happily as [he of M] explores your mouth and gropes your body[otherwise]moans with pleasure as [he of M] idly tongues your mouth and focuses on playing with your [genitals] and [BreastDesc][end if].";
+				if player-groped-level >= 0:
+					say "You feel humiliated that you've let [him of M] [one of][or]continue to [stopping]touch you in front of your classmates! [if player-groped-level >= 2][severeHumiliateReflect][otherwise if player-groped-level >= 1][strongHumiliateReflect][otherwise][slightHumiliateReflect][end if]";
+				if player-groped-level >= 2:
+					repeat with IST running through innocent students in the location of the player:
+						FavourDown IST;
+				passively stimulate face from M;
+				if player-groped-level >= 0, passively stimulate hips from M;
+				if player-groped-level >= 1, passively stimulate breasts from M;
+				if player-groped-level >= 2:
+					passively stimulate vagina from M;
+					if tonguedPerson is the player, passively stimulate vagina from M; [it's double stimulation to let her tongue you as well]
+					if vagina is orgasming:
+						repeat with ST running through students in the location of the player:
+							FavourDown ST;
+						say "After you have finished squealing with pleasure into [teacher-name of M][']s mouth, [he of M] lets the kiss end.";
+						OralSexAddictUp 1;
+						now N is -1;
+				if (N is 1 or N > 2) and N < 9 and tonguedPerson is the player: [round 2 has no progression. balance attempt to make being entirely submissive less of a shit option]
+					increase player-groped-level by 1;
+					say "[teacher-name of M] [if player-groped-level is 0]grabs your [AssDesc] with both hands, with some force. You think you can hear some snickering from behind you[otherwise if player-groped-level is 1]moves one hand to your [BreastDesc] and begins to grope you[otherwise if player-groped-level is 2]moves the hand that was kneading your [AssDesc] to your [genitals], and begins playing with you down there[otherwise]keeps stroking you down below[end if]. ";
+				check for arousal change;
+		if N < 10: [Teacher pulls away]
+			say "Finally, [NameDesc of M] pulls away and lets go of you.";
+			increase KissRating by 10;
+		otherwise:
+			say "[teacher-name of M] [one of]tuts[or]harrumphs[in random order] with mild disappointment.";
+		if N >= 0:
+			say "[speech style of M]'[if KissRating < 4]That was abysmal[otherwise if KissRating < 6]That was rather poor[otherwise if KissRating < 8]I've had worse[otherwise if KissRating < 11 or N >= 10]Not bad at all[otherwise]Marvellous[end if]. ";
+			let RK be a random number between 8 and 13;
+			if RK > KissRating:
+				say "[if KissRating >= 6]But you can do[otherwise]You can do much[end if] better, I think. Especially with a little help...'[roman type][line break]";
+				if a random number between 1 and (2 + artificial enhancements fetish) > the lips of face:
+					say "[BigNameDesc of M] brings you forward for one more kiss. As your lips touch this time, you feel yours growing in size! By the time you've pulled away, they have changed from [LipDesc] to ";
+					increase the lips of face by 1; [Not using LipsUp on purpose]
+					say "[LipDesc]!";
+					display lips cutscene;
+				otherwise:
+					say "You can't see anything else happen, but something inside your brain seems... [if the oral sex addiction of the player < 5]less resistant to the idea of using[otherwise]more eager to use[end if] your mouth for pleasure.";
+					OralSexAddictUp 1;
+			if RK - 2 <= KissRating:
+				say "[if RK > KissRating][speech style of M]'Still[otherwise]Yes[end if], I think you've learned enough here.'[roman type][line break]";
+				now armband is emerald;
+				say "You watch as the ID card inside your armband transforms!";
+				if RK > KissRating:
+					now the armband-title of armband is "Kara";
+					now the armband-print of armband is "confident kisser";
+				otherwise:
+					now the armband-title of armband is "Kandi";
+					now the armband-print of armband is "keen kisser";
+				say ClothingDesc of armband;
+				update students; [an important line which makes boring old students disappear and new cool ones appear]
+		otherwise: [player orgasmed]
+			say "[speech style of M]'You pushed yourzelf too far, it vould zeem, and embarrazzed yourzelf in front of ze whole claz. Next time, try to take more control. I zink ze humiliation you've juzt zuffered iz punishment enough though, don't you?'[roman type][line break]";
+		say "[big he of M] ushers you back to your seat and then addresses the whole class.[line break][speech style of M]'Zat iz it for today! Clazz dizmizzed!'[roman type][line break]";
 	now bigGameLoop is 0;
 	conclude consenting.
 
@@ -384,11 +401,11 @@ Figure of roger is the file "NPCs/School/Teacher/teacher8a.png".
 Figure of slave roger is the file "NPCs/School/Teacher/teacher8b.png".
 
 To decide which figure-name is the monster-image of (M - teacher-rochelle):
-	if lady fetish is 1 or futanari fetish is 1, decide on figure of rochelle;
+	if lady fetish is 1 or futanari fetish > 0, decide on figure of rochelle;
 	decide on figure of roger.
 
 To decide which figure-name is the pacified-image of (M - teacher-rochelle):
-	if lady fetish is 1 or futanari fetish is 1, decide on figure of slave rochelle;
+	if lady fetish is 1 or futanari fetish > 0, decide on figure of slave rochelle;
 	decide on figure of slave roger.
 
 To decide which number is the girth of (M - teacher-rochelle):
@@ -399,7 +416,7 @@ To say LongDickDesc of (M - teacher-rochelle):
 
 To say MonsterDesc of (M - teacher-rochelle):
 	if M is pacified:
-		if lady fetish is 1 or futanari fetish is 1, say "This poor big-dicked futa has a unique chastity cage locked around [his of M] loins. It has a strict tight belt to keep it in place and to keep [his of M] pussy blocked off, and a large clear plastic cage to contain [his of M] [LongDickDesc of M]. The exact tight fit of the cage seems to be preventing [him of M] from losing [his of M] erection. But even if [he of M] fucks someone, [he of M][']s not going to be able to feel a thing. [big he of M] is also wearing some new piercings - two nipples piercings and a belly button piercing - connected by a gold chain, completing the 'sex slave' look[unless playerRegion is school]. [big his of M] butt is a raw shade of red - evidence of a recent rough spanking session[end if].";
+		if lady fetish is 1 or futanari fetish > 0, say "This poor big-dicked futa has a unique chastity cage locked around [his of M] loins. It has a strict tight belt to keep it in place and to keep [his of M] pussy blocked off, and a large clear plastic cage to contain [his of M] [LongDickDesc of M]. The exact tight fit of the cage seems to be preventing [him of M] from losing [his of M] erection. But even if [he of M] fucks someone, [he of M][']s not going to be able to feel a thing. [big he of M] is also wearing some new piercings - two nipples piercings and a belly button piercing - connected by a gold chain, completing the 'sex slave' look[unless playerRegion is school]. [big his of M] butt is a raw shade of red - evidence of a recent rough spanking session[end if].";
 		otherwise say "The cuffed ankles, wrists cuffed behind [his of M] back and the ballgag tightly strapped in [his of M] mouth are hardly noticeable thanks to the two huge pink ribbons that now constitute this big-dicked [man of M][']s only clothing. One is around [his of M] neck, the other around the base of [his of M] [LongDickDesc of M], mostly covering it. It would appear that either due to magic or just the sheer emasculation of [his of M] new appearance, [he of M] can no longer get hard.";
 	otherwise:
 		say "Even if [his of M] armband didn't make it clear that this grinning [man of M] is a teacher, there's no avoiding noticing [his of M] [LongDickDesc of M] swinging from [his of M] crotch. Its 9.5 inch length and equally impressive girth must put it in the top 1% of [manly-penis]s.".
@@ -1821,7 +1838,7 @@ To compute chess loss taunting of (M - a nasty student):
 				if CH is nothing:
 					say "[speech style of M]'[one of]'You really get off on piercings, I can tell. I bet you'd like me to attach a big heavy chain to these babies, yeah?'[or]'We're going to find a nice heavy chain to dangle and tug from your piercings.'[or]'It'd be hot if we could lead you around on a chain by these, wouldn't it?'[or]'You gonna beg me to chain you by these?'[or]'They class is working out what chains to get you, [NameBimbo].'[cycling][roman type][line break]";
 				otherwise:
-					say "[student-name of M] stares directly into your eyes as [he of M] takes hold of your [Shortdesc of CH] and [one of]jiggles it[or]uses it to tug your [BreastDesc] until they [BreastBounceDesc][or]tugs on it different directions, teasing your [BreastDesc][in random order]. [speech style of M]'[one of]'You really get off on piercings, I can tell. I bet you'd like me to attach a big heavy chain to these babies, yeah?'[or]'We're going to find a nice heavy chain to dangle and tug from your piercings.'[or]'It'd be hot if we could lead you around on a chain by these, wouldn't it?'[or]'You gonna beg me to chain you by these?'[cycling][roman type][line break]";
+					say "[student-name of M] stares directly into your eyes as [he of M] takes hold of your [ShortDesc of CH] and [one of]jiggles it[or]uses it to tug your [BreastDesc] until they [BreastBounceDesc][or]tugs on it different directions, teasing your [BreastDesc][in random order]. [speech style of M]'[one of]'You really get off on piercings, I can tell. I bet you'd like me to attach a big heavy chain to these babies, yeah?'[or]'We're going to find a nice heavy chain to dangle and tug from your piercings.'[or]'It'd be hot if we could lead you around on a chain by these, wouldn't it?'[or]'You gonna beg me to chain you by these?'[cycling][roman type][line break]";
 			say "[big he of M] smirks, bending down so you get a faceful of their breasts while [his of M] hands move out of sight between your thighs, and suddenly takes a possessive hold of your [genitals].";
 			if player is barbie:
 				say "[speech style of M]'[one of]O.M.G! I thought you were a normal girl, but you're really just a sexless Barbie doll pretending to be a real girl[or]'OMG! That's not girl-flat, that's *doll* flat! Ha ha ha! I was gonna offer to get you pierced down there, like I know you'd love - but what'd be the point? Oh my gawd! That's just so weak. I knew you were a loser, but that... I gotta go and tell everyone[or]Oh, that's just better and better - you're not even a real person, are you? You got nothin['] down there! How do you even pee? Ha ha ha[in random order]!'[roman type][line break]";
@@ -1848,7 +1865,7 @@ Figure of kaylee is the file "NPCs/School/Teacher/teacher10.jpg".
 Figure of karl is the file "NPCs/School/Teacher/teacher11.jpg".
 
 To decide which figure-name is the monster-image of (M - teacher-kaylee):
-	if lady fetish is 1 or futanari fetish is 1, decide on figure of kaylee;
+	if lady fetish is 1 or futanari fetish > 0, decide on figure of kaylee;
 	decide on figure of karl.
 
 To decide which number is the girth of (M - teacher-kaylee):
@@ -1858,7 +1875,7 @@ To say LongDickDesc of (M - teacher-kaylee):
 	say "long uncut [manly-penis]".
 
 To say MonsterDesc of (M - teacher-kaylee):
-	if lady fetish is 1 or futanari fetish is 1, say "This may be the most perfect, beautiful, youthful, healthy, and sexy [man of M] you've ever seen. [if the player is a pervert]Since[otherwise]You struggle to marry this with the fact that since[end if] [he of M][']s fully naked, you can see that [he of M] has a [LongDickDesc of M] swinging between [his of M] legs[if futanari fetish is 0] instead of a pussy[end if].";
+	if lady fetish is 1 or futanari fetish > 0, say "This may be the most perfect, beautiful, youthful, healthy, and sexy [man of M] you've ever seen. [if the player is a pervert]Since[otherwise]You struggle to marry this with the fact that since[end if] [he of M][']s fully naked, you can see that [he of M] has a [LongDickDesc of M] swinging between [his of M] legs[if futanari fetish is 0] instead of a pussy[end if].";
 	otherwise say "This naked [man of M]'s impossibly perfect abs and shockingly impressive muscles [if the player is gendered female or the player is a pervert]make you weak at the knees with sexual attraction every time you see [him of M].[otherwise]could attract even the straightest man.[line break][variable custom style]Wait, did I really just think that? I'm attracted to a dude?[roman type][line break][end if]".
 
 The teacher-name of teacher-kaylee is "Kaylee".

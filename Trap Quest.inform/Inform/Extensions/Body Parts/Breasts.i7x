@@ -301,18 +301,18 @@ Definition: yourself is top heavy:
 
 To decide which number is max breast size:
 	if diaper quest is 1, decide on 5;
-	if trap fetish is 1 and the player is male and the player is virtual, decide on 1;
+	if trap fetish is 1 and the player is sexed male and the player is virtual, decide on 1;
 	if there is a restricting salve covering breasts, decide on recent-breasts-largeness;
 	let Z be 11;
-	if extreme proportions fetish is 1, now Z is 20;
-	decrease Z by max breast size points;
-	decrease Z by choice in row 33 of the Table of Player Options;
+	let X be max breast size points + choice in row 33 of the Table of Player Options;
+	decrease Z by X;
+	if extreme proportions fetish is 1, now Z is 20 - (X * 2);
 	if Z < min breast size, decide on min breast size;
 	if Z > 1, decide on Z;
 	decide on 1.
 
 To decide which number is min breast size:
-	if the player is male, decide on 1;
+	if the player is sexed male, decide on 1;
 	decide on 1 + (starting body shape * 2).
 
 the breasts presentable rules is a rulebook.
@@ -770,7 +770,7 @@ To Bustup (X - a number):
 		if the largeness of breasts is 3:
 			if the bimbo of the player < 8, say "[one of][line break][first custom style][line break][if the player is sexed male]Yep, I'm definitely[otherwise]Wow, I'm[end if] growing boobs...[roman type][line break][or][stopping]";
 			otherwise say "[one of][line break][second custom style][line break]I can't wait to see what I look like with huge tits![roman type][line break][or][stopping]";
-			if the player is male, cutshow figure of body reaction 2 for breasts;
+			if the player is possessing a penis, cutshow figure of body reaction 2 for breasts;
 		if the largeness of breasts is 5:
 			if the bimbo of the player < 8, say "[one of][line break][first custom style][line break]Okay, these boobs are getting worryingly big now...[roman type][line break][or][stopping]";
 			otherwise say "[one of][line break][second custom style][line break]My boobs keep growing...[roman type][line break][or][stopping]";

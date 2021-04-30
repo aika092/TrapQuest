@@ -102,13 +102,13 @@ Definition: sexy-maid-outfit is bow themed: decide yes.
 
 Part 2 - Drooping Maid Outfit
 
-drooping-maid-outfit is a maid outfit. drooping-maid-outfit is very low cut. drooping-maid-outfit is short. The text-shortcut of drooping-maid-outfit is "mo2". The printed name of drooping-maid-outfit is "[clothing-title-before]drooping maid outfit[clothing-title-after]". Understand "drooping" as drooping-maid-outfit.
+drooping-maid-outfit is a maid outfit. drooping-maid-outfit is low cut. drooping-maid-outfit is short. The text-shortcut of drooping-maid-outfit is "mo2". The printed name of drooping-maid-outfit is "[clothing-title-before]drooping maid outfit[clothing-title-after]". Understand "drooping" as drooping-maid-outfit.
 
 To decide which figure-name is clothing-image of (C - drooping-maid-outfit):
 	decide on figure of maid outfit 2.
 
 To say ClothingDesc of (M - drooping-maid-outfit):
-	say "A black and white satin garment with black straps. With a simple ruffled apron, this would be an acceptable item if it wasn't for the extremely low cut of the top.".
+	say "A black and white satin garment with black straps. With a simple ruffled apron, this would be an acceptable item if it wasn't for the rather low cut of the top.".
 
 To decide which number is the initial outrage of (C - drooping-maid-outfit):
 	decide on 4.
@@ -148,14 +148,13 @@ To decide which figure-name is clothing-image of (C - fetish-maid-outfit):
 	decide on figure of maid outfit 4.
 
 To say ClothingDesc of (M - fetish-maid-outfit):
-	say "A black corset with ruffled lace barely constitutes as a dress. It's extremely tight, showing off your figure and glistening with shiny material.".
+	say "A black corset with ruffled lace barely constitutes as a dress. In fact, it's not a dress, it's more of a romper, since it has legholes rather than a skirt. It's extremely tight, showing off your figure and glistening with shiny material.".
 
 To decide which number is the initial outrage of (C - fetish-maid-outfit):
 	decide on 6.
 
-To uniquely set up (C - fetish-maid-outfit):
-	repair C;
-	now the armour of C is 6.
+To decide which number is the initial armour of (C - fetish-maid-outfit):
+	decide on 6.
 
 Definition: fetish-maid-outfit is black themed: decide yes.
 
@@ -198,9 +197,8 @@ To say ClothingDesc of (M - slutty-maid-outfit):
 To decide which number is the initial outrage of (C - slutty-maid-outfit):
 	decide on 8.
 
-To uniquely set up (C - slutty-maid-outfit):
-	repair C;
-	now the armour of C is 2.
+To decide which number is the initial armour of (C - slutty-maid-outfit):
+	decide on 2.
 
 Definition: slutty-maid-outfit is black themed: decide yes.
 Definition: slutty-maid-outfit is black-and-white themed: decide yes.
@@ -223,9 +221,8 @@ To say ClothingDesc of (M - V-shape-maid-outfit):
 To decide which number is the initial outrage of (C - V-shape-maid-outfit):
 	decide on 9.
 
-To uniquely set up (C - V-shape-maid-outfit):
-	now the armour of C is 4;
-	repair C.
+To decide which number is the initial armour of (C - V-shape-maid-outfit):
+	decide on 4.
 
 Definition: V-shape-maid-outfit is uniquely nipple exposing:
 	if the largeness of breasts > 6, decide yes;
@@ -251,9 +248,8 @@ To say ClothingDesc of (M - fishnet-maid-outfit):
 To decide which number is the initial outrage of (C - fishnet-maid-outfit):
 	decide on 10.
 
-To uniquely set up (C - fishnet-maid-outfit):
-	now the armour of C is 1;
-	repair C.
+To decide which number is the initial armour of (C - fishnet-maid-outfit):
+	decide on 1.
 
 Definition: fishnet-maid-outfit is black themed: decide yes.
 Definition: fishnet-maid-outfit is white themed: decide yes.
@@ -321,7 +317,7 @@ Part 11 - Black Latex Maid Outfit
 black-latex-maid-outfit is a maid outfit. black-latex-maid-outfit is fully exposing. black-latex-maid-outfit is neck covering. black-latex-maid-outfit is latex. The text-shortcut of black-latex-maid-outfit is "blmo". black-latex-maid-outfit is short. The printed name of black-latex-maid-outfit is "[clothing-title-before]black latex maid outfit[clothing-title-after]". Understand "black" as black-latex-maid-outfit.
 
 To decide which figure-name is clothing-image of (C - black-latex-maid-outfit):
-	decide on figure of maid outfit 11.
+	decide on figure of maid outfit 12.
 
 To say ClothingDesc of (M - black-latex-maid-outfit):
 	say "A black latex dress. A big cut-out section exposes the wearer's chest. Even more outrageously, the skirt has a big apron-shaped section that is completely see-through.".

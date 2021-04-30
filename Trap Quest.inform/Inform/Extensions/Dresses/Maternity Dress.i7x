@@ -56,7 +56,7 @@ To compute periodic effect of (M - a maternity dress):
 	increase the charge of M by 1;
 	if the charge of M > 500 / (unlucky + 1):
 		now the charge of M is 0;
-		let Y be a random off-stage plentiful yoga pants;
+		let Y be a random off-stage yoga pants;
 		if Y is actually summonable:
 			say "[bold type]A [ShortDesc of Y] appears on your lower half![roman type][line break]";
 			summon Y cursed with quest.
@@ -65,5 +65,17 @@ This is the remove inappropriate maternity dresses rule:
 	repeat with B running through maternity dresses:
 		now B is in Holding Pen.
 The remove inappropriate maternity dresses rule is listed in the diaper quest fix rules.
+
+To LiquidSoak (L - semen) On (C - a maternity dress):
+	SemenSoakUp C by 1;
+	if C is not cursed:
+		say "A dark glow surrounds your [ShortDesc of C] as the [semen] makes it become cursed!";
+		now C is cursed;
+		now C is sure.
+
+To decide which number is the slap damage improvement of (E - a maternity dress):
+	let S be the square root of (the womb volume of vagina + total egg count of vagina);
+	if the pregnancy of the player > 0 and shopkeeper is the father, increase S by 1;
+	decide on S.
 
 Maternity Dress ends here.

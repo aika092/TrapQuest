@@ -370,12 +370,12 @@ Definition: chess-lesson is lesson-appropriate:
 
 Figure of chess table is the file "Env/School/chesstable1.jpg".
 
-Figure of chess cutscene 1 is the file "Special/Cutscene/cutscene-chess1a.png".
-Figure of chess cutscene 2 is the file "Special/Cutscene/cutscene-chess2a.png".
-Figure of chess cutscene 2c is the file "Special/Cutscene/cutscene-chess2c.png".
-Figure of chess cutscene 2d is the file "Special/Cutscene/cutscene-chess2d.png".
-Figure of chess cutscene 3 is the file "Special/Cutscene/cutscene-chess3a.png".
-Figure of chess cutscene 4 is the file "Special/Cutscene/cutscene-chess4a.png".
+Figure of chess cutscene 1 is the file "Special/Cutscene/cutscene-chess1.jpg".
+Figure of chess cutscene 2 is the file "Special/Cutscene/cutscene-chess2.jpg".
+Figure of chess cutscene 2c is the file "Special/Cutscene/cutscene-chess2c.jpg".
+Figure of chess cutscene 2d is the file "Special/Cutscene/cutscene-chess2d.jpg".
+Figure of chess cutscene 3 is the file "Special/Cutscene/cutscene-chess3.jpg".
+Figure of chess cutscene 4 is the file "Special/Cutscene/cutscene-chess4.jpg".
 
 To render chess state:
 	if diaper messing < 3:

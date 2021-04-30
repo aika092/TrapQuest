@@ -32,6 +32,7 @@ To decide which number is the strength-influence of (C - blazing dress):
 	decide on 2.
 
 Definition: blazing dress is red themed: decide yes.
+Definition: blazing dress is fire themed: decide yes.
 Definition: blazing dress is demonic: decide yes.
 
 

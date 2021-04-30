@@ -370,7 +370,7 @@ To say FriendlyOralRequest of (M - a monster):
 	if M is male:
 		if the player is a nympho:
 			if semen is craved:
-				say "[second custom style]'[one of]Mm, please let me swallow your cum, big [boy of M]? I'm desperate for a taste...'[or]Hey big [boy of M]. Can you spare a load for me? I really need to wet my throat...'[or]Hey sexy. Why don't you let me have a taste of that creamy stuff you keep in your balls?'[or]Let me have a taste of your cum. I promise I'll work for it, big [boy of M]...'[in random order]";
+				say "[second custom style]'[one of]Mm, please let me swallow your cum, big [boy of M]? I'm desperate for a taste...'[or]Hey big [boy of M]. Can you spare a load for me? I really need to wet my throat...'[or]Hey sexy. Why don't you let me have a taste of [if M is a balls-haver]that creamy stuff you keep in your balls[otherwise]your sticky white stuff[end if]?'[or]Let me have a taste of your cum. I promise I'll work for it, big [boy of M]...'[in random order]";
 			otherwise if the oral sex addiction of the player < 4:
 				if the player is feeling dominant:
 					say "[variable custom style]'[one of]A little birdie told me that once you're used to it, sucking [manly-penis] becomes really fun. You're going to help me find out.'[or]Stand still, I want to play a game. I'm going to put your [manly-penis] in my mouth and tease it until you're completely at my mercy. But don't you care cum without my permission.'[in random order]";

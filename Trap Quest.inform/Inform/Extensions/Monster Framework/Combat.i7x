@@ -72,7 +72,16 @@ This is the continue sex rule:
 	follow the continue sex rules of current-monster;
 	if the rule succeeded:
 		let vm be a random video-monitor in the location of the player;
-		if vm is video-monitor and the video-caller of vm is not the throne and vm is not recording-disgrace, now vm is recording-disgrace;[if you willingly have sex, your friend disapproves.]
+		if vm is video-monitor and the video-caller of vm is not the throne:
+			if vm is not recording-disgrace: [if you willingly have sex, your friend disapproves.]
+				now vm is recording-disgrace;
+			if eye-mask is worn and current-monster is human intelligent monster and the video-event of vm is not "doing nothing special": [next turn, superheroes get unmasked and huge humiliation hit]
+				say "[BigNameDesc of current-monster] reaches up to your [eye-mask] and rips it from your body, exposing your real identity to the camera![line break][variable custom style]Nooooo![roman type][line break][obsceneHumiliateReflect]";
+				destroy eye-mask;
+				let P be the video-caller of vm;
+				if P is real-life patron:
+					say NewAppearanceReaction of P;
+					now P is friend-shocked;
 		rule succeeds.
 The continue sex rule is listed last in the monster attack rules. [Listed 1st]
 
@@ -604,6 +613,16 @@ The dildo stuck player taunting rule is listed last in the default taunting rule
 To compute the dildo stuck taunting of (M - a monster):
 	if a random number between 1 and 6 is 1, say "[BigNameDesc of M] continues to wait for you to get off the dildo.". [This should preferably be replaced for all monsters. Remember you can also use this function to have the monster interact with the player while they are stuck on the dildo.]
 
+This is the cage stuck player taunting rule:
+	if dominatrix-cage is grabbing the player:
+		compute the cage stuck taunting of current-monster;
+		rule succeeds.
+The cage stuck player taunting rule is listed last in the default taunting rules.
+
+To compute the cage stuck taunting of (M - a monster): [This should preferably be replaced for all monsters. Remember you can also use this function to have the monster interact with the player while they are stuck on the cage.]
+	if M is intelligent, say "[BigNameDesc of M] smirks at you, waves, then turns to leave you alone.";
+	satisfy M.
+
 This is the trap stuck player taunting rule:
 	if the player is trap stuck:
 		compute the default taunting of current-monster;
@@ -732,19 +751,19 @@ The monster convinced by player rule is listed last in the selecting an orifice 
 
 Definition: a body part is a potential target: decide no.
 
-Definition: face (called B) is a potential target:
+Definition: face is a potential target:
 	if current-monster is willing to do oral, decide yes;
 	decide no.
 
-Definition: vagina (called B) is a potential target:
+Definition: vagina is a potential target:
 	if current-monster is willing to do vaginal and the player is possessing a vagina, decide yes;
 	decide no.
 
-Definition: asshole (called B) is a potential target:
+Definition: asshole is a potential target:
 	if current-monster is willing to do anal, decide yes;
 	decide no.
 
-Definition: belly (called B) is a potential target: [Belly is used to target for urination. And since urination can just go on the face and doesn't need to go inside the mouth, we don't need to check 'reasonable target'.]
+Definition: belly is a potential target: [Belly is used to target for urination. And since urination can just go on the face and doesn't need to go inside the mouth, we don't need to check 'reasonable target'.]
 	if current-monster is willing to urinate and watersports fetish is 1 and the latex-transformation of the player <= 4, decide yes;
 	decide no.
 
@@ -947,7 +966,7 @@ To compute (M - a monster) removing (C - a thing): [This is used for removing in
 
 To compute (M - a monster) removing (C - a chastity bond):
 	if M is intelligent:
-		say "[BigNameDesc of M] [if C is locked]unlocks your [Shortdesc of C] and pulls it off.[otherwise]pulls off your [ShortDesc of C].[end if]";
+		say "[BigNameDesc of M] [if C is locked]unlocks your [ShortDesc of C] and pulls it off.[otherwise]pulls off your [ShortDesc of C].[end if]";
 		now M is carrying C;
 		now C is temporarily-removed;
 	otherwise:
@@ -1006,6 +1025,30 @@ To decide which number is the virility of (M - a monster):
 			if M is dark skinned, decide on (a random number between 3 and 5) + the trophy-mode of bbc-trophy;
 			otherwise decide on (a random number between 3 and 4) - the trophy-mode of bbc-trophy;
 	decide on a random number between 3 and 6.
+
+Definition: a monster is prematurable:
+	if it is male and it is intelligent, decide yes;
+	decide no.
+
+This is the whiteboy premature orgasm insertion rule:
+	if current-monster is not dark skinned and current-monster is prematurable and the player is queen of spades:
+		let QS be the number of worn interracial themed wearthings;
+		let QST be QS * (the trophy-mode of bbc-trophy + 1);
+		let DR be a random number between 1 and the difficulty of current-monster;
+		if debuginfo > 0, say "[input-style]Premature ejaculation avoidance check: [MediumDesc of current-monster] difficulty roll d[difficulty of current-monster] ([DR]) | ([QST].5) number of worn interracial items[if the trophy-mode of bbc-trophy is 1] (doubled from [QS] by BBC trophy effect)[end if][if the difficulty of current-monster is DR] - AUTOMATIC SUCCESS: highest possible roll[end if][roman type][line break]";
+		if DR < the difficulty of current-monster and DR <= QST:
+			say PrematureEjaculationFlav of current-monster;
+			SemenPuddleUp (the semen load of current-monster) in (the location of current-monster);
+			say PrematureEjaculationReactionFlav of current-monster;
+			orgasm bore current-monster;
+			say "Visibly embarrassed, [NameDesc of current-monster] begins to slink away.";
+			rule succeeds.
+The whiteboy premature orgasm insertion rule is listed first in the default monster insertion rules.
+
+To say PrematureEjaculationFlav of (M - a monster):
+	say "[BigNameDesc of M] [one of]moves [his of M] [manly-penis] into position[or]strokes [his of M] shaft a couple of times to prepare [himself of M][or]takes [his of M] [manly-penis] in one hand, preparing [himself of M][in random order]. Then, suddenly, [he of M] is ejaculating! [big his of M] [load of M] drips to the ground.".
+To say PrematureEjaculationReactionFlav of (M - a monster):
+	say "[speech style of M]'[one of]Wha? This never usually happens, I swear!'[or]Did I just... No way...'[or]I... Uh... You should consider this a warning.'[or]I... err... I've decided to be merciful to you this time and let you go.'[in random order][roman type][line break]".
 
 [!<ComputeUniquePenetrationEffectOfMonsterInBodypart>+
 
@@ -1068,7 +1111,7 @@ To compute (M - a monster) entering (F - a fuckhole):[Generic function that shou
 		compute unique penetration effect of M in F;
 		ruin F;
 	otherwise:
-		say "[BigNameDesc of M] sees that you are already occupied and loses interest";
+		say "[BigNameDesc of M] sees that you are already occupied and loses interest.";
 		Bore M.
 
 To compute (M - a monster) entering (F - asshole):
@@ -1375,17 +1418,20 @@ Definition: a monster is a wrangler: [Can it react to slap attacks with a wrangl
 
 To compute wrangle reaction of (M - a monster):
 	if M is a wrangler and M is not trip-warned and M is not wrangling a body part:
-		WrangleUp M;
-		let D be the dexterity of the player;
-		let MD be a random number between 1 and the difficulty of M;
-		let MDW be MD + the wrangle-bonus of M;
-		if debuginfo > 0, say "[input-style]Wrangle avoidance check: Player dexterity ([D]) | ([MDW].5) = ([MD]) d[D] [ShortDesc of M] dexterity roll + ([wrangle-bonus of M]) bonus from player slapping multiple times in a row[roman type][line break]";
-		if MDW >= D:
-			now M is wrangling arms;
-			say ArmWrangleSuccess of M;
-			now the wrangle-bonus of M is 10 - the square root of (a random number between 1 and 80); [turns until release]
+		if the wrangle-bonus of M > 0 or tough-shit is 1:
+			WrangleUp M;
+			let D be the dexterity of the player;
+			let MD be a random number between 1 and the difficulty of M;
+			let MDW be MD + the wrangle-bonus of M;
+			if debuginfo > 0, say "[input-style]Wrangle avoidance check: Player dexterity ([D]) | ([MDW].5) = ([MD]) d[D] [ShortDesc of M] dexterity roll + ([wrangle-bonus of M]) bonus from player slapping multiple times in a row[roman type][line break]";
+			if MDW >= D:
+				now M is wrangling arms;
+				say ArmWrangleSuccess of M;
+				now the wrangle-bonus of M is 10 - the square root of (a random number between 1 and 80); [turns until release]
+			otherwise:
+				say ArmWrangleFailure of M;
 		otherwise:
-			say ArmWrangleFailure of M.
+			WrangleUp M. [No chance of grabbing on the first slap]
 
 To WrangleUp (M - a monster):
 	increase the wrangle-bonus of M by 4 - combatSpeed.
@@ -1685,7 +1731,7 @@ To compute (P - a clothing) protecting (B - a body part) from (M - a monster):[d
 	otherwise:
 		compute M hurting B.
 
-To compute (P - a santa corset) protecting (B - breasts) from (M - a monster):
+To compute (P - santa corset) protecting (B - breasts) from (M - a monster):
 	if a random number between 2 and 22 > the largeness of breasts, say "The brunt of the blow is absorbed by your [printed name of P]!";
 	otherwise BodyRuin 2.
 
@@ -1754,6 +1800,7 @@ Handles a monster being damaged by another monster.
 
 +!]
 To compute (M - a monster) receiving (N - a number) damage from (X - a monster):
+	if debugmode > 1, say "computing [MediumDesc of M] receiving [N] damage from [MediumDesc of X].";
 	say AllyDamageFlav of X on M;
 	decrease the health of M by N;
 	if N > 0, now the wrangle-bonus of M is 0.

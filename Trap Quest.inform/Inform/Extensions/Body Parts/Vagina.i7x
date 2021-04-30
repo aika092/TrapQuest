@@ -131,7 +131,7 @@ Definition: yourself is possessing a vagina:
 Part 2 - Description
 
 To say ShortDesc of vagina:
-	if the player is female:
+	if the player is possessing a vagina:
 		if diaper quest is 0:
 			say "[PussyGape openness of vagina]";
 			if the latex-transformation of the player < 4:
@@ -166,7 +166,7 @@ To say PussyGape (N - a number):
 	if N is 10, say "impossibly stretched".
 
 To say TotalDesc of vagina:
-	if the player is female:
+	if the player is possessing a vagina:
 		if the openness of vagina < 2, say "Your virgin[if the vaginalvirgin of the player is 0]-like[end if] [vagina] ";
 		if the openness of vagina is 2, say "Your very tight [vagina] ";
 		if the openness of vagina is 3, say "Your tight [vagina] ";
@@ -295,6 +295,8 @@ The compulsory pussy expulsion rule is listed in the compulsory action rules.
 
 Chapter 3 - Contents and Pregnancy
 
+pussyfilled is initially false. [has the player ever had cum in their pussy?]
+
 [!<PussyFillX>+
 
 This function should be called whenever semen enters the player's vagina
@@ -308,6 +310,7 @@ To PussyFill (X - a number):
 		now X is 0;
 		compute condom filling of M;
 	if X > 0:
+		now pussyfilled is true;
 		if invigoration-timer of invigoration-elixir > 0 and the soreness of vagina > 0:
 			say "The lining of your [vagina] is somehow healed as the [semen] rushes in!";
 			if the soreness of vagina > X, decrease the soreness of vagina by X;

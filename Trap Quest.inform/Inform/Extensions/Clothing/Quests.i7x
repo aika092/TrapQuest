@@ -105,7 +105,7 @@ Report examining clothing:
 
 Report wearing clothing:
 	if the noun is worn cursed clothing:
-		say QuestFlav of the noun;
+		unless the quest of the noun is no-clothing-quest, say QuestFlav of the noun;
 		if newbie tips is 1 and the quest of the noun is not no-clothing-quest, say "[one of][newbie style]Newbie tip: Your item has a 'quest' attached to it! This means that if you perform the task outlined above, the curse will disappear and you'll be able to remove the item[if the quest of the noun is disappearing]. In fact, with this particular quest, the item will just disappear entirely. Other less common quests will simply decurse the item and also give you a special (usually slightly bad) effect every time you complete the quest, and it's up to you if it's worth it to keep wearing it[end if].[roman type][line break][or][stopping]".
 
 To say QuestTitle of (C - a clothing):
@@ -482,7 +482,7 @@ Part - Creampie Drinking Quest
 creampie-drinking-quest is a clothing-quest.
 
 Definition: creampie-drinking-quest is appropriate:
-	if diaper quest is 0, decide yes;
+	if a2m fetish >= 2, decide yes;
 	decide no.
 
 To decide what number is the quest-weighting of (Q - creampie-drinking-quest) for (C - a clothing):

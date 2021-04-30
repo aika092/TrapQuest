@@ -3,6 +3,7 @@ Bunny Outfit by Dresses begins here.
 A bunny outfit is a kind of overdress. A bunny outfit is usually crotch-intact. A bunny outfit is usually unique. A bunny outfit is usually totally-exclusive. A bunny outfit is usually unskirted. A bunny outfit is usually latex. A bunny outfit is usually low cut. A bunny outfit is usually top-displacable.
 
 Definition: a bunny outfit is uncovered themed: decide yes.
+Definition: a bunny outfit is bunny themed: decide yes.
 Definition: a bunny outfit is class-relevant:
 	if the class of the player is bunny, decide yes;
 	decide no.
@@ -14,9 +15,6 @@ To compute SelfExamineDesc of (C - a bunny outfit):
 
 To say ShortDesc of (C - a bunny outfit):
 	say "bunny outfit".
-
-To uniquely set up (C - a bunny outfit):
-	repair C.
 
 Part 1 - Bunny Waitress Outfit
 

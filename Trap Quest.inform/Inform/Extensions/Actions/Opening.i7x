@@ -13,7 +13,7 @@ Check opening a container:
 	if the player is drill stuck, say "You can't reach it while stuck on the drill." instead;
 	if the player is pole stuck, say "You can't reach it while stuck on the dildo." instead;
 	if the player is hook stuck, say "You can't reach it while stuck on the [if the player is anally hook stuck]ass [end if]hook." instead;
-	if the player is immobile or there is a thing wrangling a body part, say "Aren't you a bit busy?" instead;
+	if the player is at least partially immobile, say "Aren't you a bit busy?" instead;
 	if autoopen is 1, progress quest of trap-braving-quest;
 	if autoopen is 0 and the prevsearch of the noun is 2 or the prevsearch of the noun is 4:
 		say "Are you sure you want to open this trapped container? ";

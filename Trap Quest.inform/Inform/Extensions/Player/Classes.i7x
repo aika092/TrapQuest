@@ -84,7 +84,10 @@ a later time based rule (this is the explaining maid rule):
 This is the cowgirl class rule:
 	if (cow-ears is worn or cow-horns is worn):
 		if there is a worn cow print basque:
-			now player-class is "cow slave";
+			if meowcowbell is worn or meow cow claws is worn, now player-class is "meow cow slave";
+			otherwise now player-class is "cow slave";
+		otherwise if meowcowbell is worn or meow cow claws is worn:
+			now player-class is "meow cow";
 		otherwise if cow-horns is worn:
 			now player-class is "breeding cow";
 		otherwise:
@@ -93,7 +96,7 @@ This is the cowgirl class rule:
 The cowgirl class rule is listed in the player class rules.
 
 Definition: a text (called T) is cowgirl:
-	if T is "cowgirl" or T is "cow slave" or T is "breeding cow", decide yes;
+	if T matches the text "cow", decide yes;
 	decide no.
 
 [!<TheCowSlutRule>+
@@ -109,7 +112,7 @@ cowgirlExplained is initially false.
 a later time based rule (this is the explaining cowgirl rule):
 	if cowgirlExplained is false and the class of the player is cowgirl:
 		now cowgirlExplained is true;
-		say "[bold type]Now that you have become the 'cowgirl' class, you can sense that the more milk contained in your breasts, the more bonus strength you'll have, but the more milk contained and the more sensitive your breasts are, the less intelligence you'll have. Also, [men of shopkeeper] will be more likely to choose to fuck your tits (which can increase their sensitivity)[if diaper quest is 0]. Also, when horny, you will release pheromones that might attract certain mates[end if].[roman type][line break]";
+		say "[bold type]Now that you have become the 'cowgirl' class, you can sense that the more milk contained in your breasts, the more bonus strength you'll have, but the more milk contained and the more sensitive your breasts are, the less intelligence you'll have. Also, [men of shopkeeper] will be more likely to choose to fuck your tits (which can increase their sensitivity)[if diaper quest is 0]. Also, when horny, you will release pheromones that might attract certain mates[end if][if the class of the player is catgirl]. Also, since you are also a catgirl, you also get bonus dexterity the more milk is in your stomach[end if].[roman type][line break]";
 	otherwise if cowgirlExplained is true and the class of the player is not cowgirl:
 		now cowgirlExplained is false;
 		say "[bold type]Now that you are no longer the 'cowgirl' class, you can sense that the bonus strength you were receiving from having milk in your breasts and the penalty intelligence for having sensitive breasts has gone.[roman type][line break]".
@@ -312,7 +315,7 @@ This is the silicone queen class rule:
 		now player-class is "silicone queen";
 		if condoms dress is worn or giant condom is worn, now player-class is "walking condom";
 		if daddy issues dress is worn, now player-class is "plastic schoolgirl";
-		if anime superheroine top is worn, now player-class is "plastigirl";
+		if anime superheroine top is worn, now player-class is "magic plastigirl";
 		rule succeeds.
 The silicone queen class rule is listed in the player class rules.
 
@@ -333,9 +336,12 @@ This is the latex fetish model class rule:
 	if rubber-baby-bonnet is worn:
 		now player-class is "latex fetish baby";
 		rule succeeds;
+	if black strap hood is worn:
+		now player-class is "latex fetish slave";
+		rule succeeds;
 	if black hood is worn:
 		now player-class is "latex fetish model";
-		if black-latex-maid-outfit is worn, now the player-class is "latex fetish maid";
+		if black-latex-maid-outfit is worn or skirted-maid-corset is worn, now the player-class is "latex fetish maid";
 		rule succeeds.
 The latex fetish model class rule is listed in the player class rules.
 Definition: a text (called T) is latex fetish model:
@@ -372,18 +378,23 @@ a later time based rule (this is the explaining human toilet rule):
 
 This is the catgirl class rule:
 	if cat-ears is worn:
-		now player-class is "catgirl";
-		if exposing-magical-dress is worn, now the player-class is "magical neko";
+		if exposing-magical-dress is worn:
+			if meowcowbell is worn or meow cow claws is worn, now the player-class is "magical neko cow";
+			otherwise now the player-class is "magical neko";
+		otherwise if meowcowbell is worn or meow cow claws is worn:
+			now the player-class is "meow cow";
+		otherwise:
+			now player-class is "catgirl";
 		rule succeeds.
 The catgirl class rule is listed in the player class rules.
 
 [!<TextIsCatgirl>+
 
-Thanks to the magical neko multi-class, we have multiple different texts that need to be able to return true for the class of the player being catgirl.
+Thanks to the magical neko and meow cow multi-classes, we have multiple different texts that need to be able to return true for the class of the player being catgirl.
 
 +!]
 Definition: a text (called T) is catgirl:
-	if T matches the text "catgirl" or T matches the text "neko", decide yes;
+	if T matches the text "catgirl" or T matches the text "neko" or T matches the text "meow", decide yes;
 	decide no.
 
 catgirlExplained is initially false.
@@ -741,7 +752,7 @@ bunny-reminder is a number that varies.
 An all time based rule (this is the bunny reminder rule):
 	if the class of the player is bunny:
 		if bunny-reminder is 0:
-			say "[bold type]Now that you have become the 'bunny' class, become the 'bunny' class, you can sense that your dexterity will be significantly improved while you are outside in nature[if diaper quest is 0]. Also, when horny, you will release pheromones that might attract certain mates[end if].[roman type][line break]";
+			say "[bold type]Now that you have become the 'bunny' class, you can sense that your dexterity will be significantly improved while you are outside in nature[if diaper quest is 0]. Also, when horny, you will release pheromones that might attract certain mates[end if].[roman type][line break]";
 			if player-class is "bunny waitress", say "[bold type]Furthermore, you will now be able to offer drinks to humans.[roman type][line break]";
 			if playerRegion is Woods, now bunny-reminder is 2;
 			otherwise now bunny-reminder is 1;
@@ -755,6 +766,30 @@ An all time based rule (this is the bunny reminder rule):
 		now bunny-reminder is 0;
 		say "[bold type]Now that you are no longer the 'bunny' class, you can sense that you no longer get bonus dexterity from being outside.[roman type][line break]".
 
+This is the flight attendant class rule:
+	if flight attendant hat is worn:
+		now player-class is "flight attendant";
+		rule succeeds.
+The flight attendant class rule is listed in the player class rules.
+Definition: a text (called T) is flight attendant:
+	if T matches the text "attendant", decide yes;
+	decide no.
+flight-attendant-reminder is a number that varies.
+An all time based rule (this is the flight attendant reminder rule):
+	if the class of the player is flight attendant:
+		if flight-attendant-reminder is 0:
+			say "[bold type]Now that you have become the 'flight attendant' class, become the 'flight attendant' class, you can offer drinks to humans.[roman type][line break]";
+			if playerRegion is Hotel, now flight-attendant-reminder is 2;
+			otherwise now flight-attendant-reminder is 1;
+		otherwise if flight-attendant-reminder is 1 and playerRegion is Hotel:
+			say "[bold type]You feel your flight attendant reflexes improve while you are in the Hotel![roman type][line break]";
+			now flight-attendant-reminder is 2;
+		otherwise if flight-attendant-reminder is 2 and playerRegion is not Hotel:
+			say "[bold type]You feel your flight attendant reflexes disappear as you are no longer in the Hotel.[roman type][line break]";
+			now flight-attendant-reminder is 1;
+	otherwise if flight-attendant-reminder > 0:
+		now flight-attendant-reminder is 0;
+		say "[bold type]Now that you are no longer the 'flight attendant' class, you can sense that you no longer get bonus dexterity from being in the Hotel.[roman type][line break]".
 
 [!<TheCumdumpsterClassRule>+
 
@@ -795,8 +830,8 @@ This is the magical girl class rule:
 	if heart hairpin is worn:
 		now the player-class is "magical [boy of the player]";
 		if exposing-magical-dress is worn, now player-class is "magical neko";
-		if there is a worn schoolgirl outfit, now player-class is "magical schoolgirl";
-		if anime superheroine top is worn, now player-class is "plastigirl";
+		if there is a worn schoolgirl outfit or tartan tube top is worn, now player-class is "magical schoolgirl";
+		if anime superheroine top is worn, now player-class is "magic plastigirl";
 		rule succeeds.
 The magical girl class rule is listed in the player class rules.
 
@@ -806,7 +841,7 @@ Thanks to the various magical girl multi-classes, we have multiple different tex
 
 +!]
 Definition: a text is magical girl:
-	if it matches the text "magical" or it matches the text "plastigirl", decide yes;
+	if it matches the text "magical" or it is "magic plastigirl", decide yes;
 	decide no.
 
 magicalGirlExplained is initially false.
@@ -816,7 +851,37 @@ a later time based rule (this is the explaining magicalGirl rule):
 		say "[bold type]Now that you have become the 'magical girl' class, you can sense that you can summon a powerful wand to help you, but while wielding it, tentacle monsters will be much more capable of defeating you. However, if they make you orgasm, you might still be able to turn the tide. Also, tentacle monsters will drain magic from you when they ejaculate inside you.[roman type][line break]";
 	otherwise if magicalGirlExplained is true and the class of the player is not magical girl:
 		now magicalGirlExplained is false;
-		say "[bold type]Now that you are no longer the 'magical girl' class, you can sense that tentacle monsters will not drain magic from you when they ejaculate inside you.[roman type][line break]";
+		say "[bold type]Now that you are no longer the 'magical girl' class, you can sense that tentacle monsters will not drain magic from you when they ejaculate inside you.[roman type][line break]".
+
+[!<TheSuperheroClassRule>+
+
+The superhero class. Spawns just before a video call starts.
+
++!]
+This is the superhero class rule:
+	if eye-mask is worn:
+		now the player-class is "superhero[if the player is presenting as female]ine[end if]";
+		if anime superheroine top is worn, now player-class is "plastigirl";
+		rule succeeds.
+The superhero class rule is listed in the player class rules.
+
+[!<TextIsSuperhero>+
+
+Thanks to the various superhero multi-classes, we have multiple different texts that need to be able to return true for the class of the player being superhero.
+
++!]
+Definition: a text is superhero:
+	if it matches the text "superhero" or it matches the text "plastigirl", decide yes;
+	decide no.
+
+superheroExplained is initially false.
+a later time based rule (this is the explaining superhero rule):
+	if superheroExplained is false and the class of the player is superhero:
+		now superheroExplained is true;
+		say "[bold type]Now that you have become the 'superhero' class, you can sense that you have significantly improved speed.[roman type][line break]";
+	otherwise if superheroExplained is true and the class of the player is not superhero:
+		now superheroExplained is false;
+		say "[bold type]Now that you are no longer the 'superhero' class, you can sense that your speed has returned to normal.[roman type][line break]".
 
 [!<TheLatexClownClassRule>+
 

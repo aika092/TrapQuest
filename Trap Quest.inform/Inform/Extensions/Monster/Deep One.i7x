@@ -115,7 +115,7 @@ To compute damaging attack of (M - deep one):
 			compute stunning attack of M;
 		otherwise if R is 2:
 			compute summoning attack of M;
-		otherwise:[remnant of a more complicated setup, but its here just in case]
+		otherwise:[remnant of a more complicated setup, but it's here just in case]
 			compute striking attack of M;
 	otherwise:
 		compute striking attack of M.
@@ -124,7 +124,7 @@ To compute damaging attack of (M - deep one):
 To compute stunning attack of (M - deep one):
 	say "[BigNameDesc of M] emits a guttural croak that literally rumbles your surroundings.";
 	if the intelligence roll of M >= the intelligence of the player:
-		say "It takes you a second too long to realize that 'you' are included in 'your surroundings', and powerful vibrations travel up your legs [if doomed >= 5]temporarily stopping your movement and making[otherwise]and cause[end if] your crotch to explode with sensation!";
+		say "It takes you a second too long to realize that 'you' are included in 'your surroundings', and powerful vibrations travel up your legs [if doomed >= 5]temporarily stopping your movement and making your crotch [otherwise]and cause your crotch to [end if]explode with sensation!";
 		if doomed >= 5:
 			now another-turn-flavour is the substituted form of "Your legs are still trembling!";
 			now another-turn is 1;
@@ -192,7 +192,7 @@ To say CreampieFlav of (M - deep one) in (F - a fuckhole):
 			say "An odd tingling feeling spreads through your belly, and you sense [PregGrowth of the father] inside of you transforming into...something else.";
 			now the father is deep one;
 		otherwise:
-			say "An odd tingling feeling spreads through your belly, but...it seems to pass.";
+			say "An odd tingling feeling spreads through your belly, but... it seems to pass.";
 	otherwise:
 		say "[if the player is not ashamed]Fear pierces your body as you suddenly answer [his of M] call, croaking like some demented frog[otherwise if the player is not shameless]Confusion and disbelief assault your mind as you suddenly answer [his of M] call, croaking like a frog[otherwise]You immediately answer with a call of your own, croaking like an obedient little mate[end if] as [he of M] slowly pulls out and returns to [his of M] feet.";
 		severeHumiliate.

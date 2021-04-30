@@ -337,6 +337,8 @@ To Recover the Player:
 	now the urine coating of hair is 0;
 	now the water-drench of hair is 0;
 	now the semen coating of breasts is 0;
+	now the semen coating of hips is 0;
+	now the semen coating of belly is 0;
 	now the semen coating of thighs is 0;
 	now the air volume of breasts is 0;
 	[now the flesh volume of thighs is 0;
@@ -415,7 +417,7 @@ To Recover the Player:
 	now the raw largeness of hair is the real largeness of hair;
 	[now the fake largeness of hair is 0;]
 	now the size of penis is the real size of penis;
-	if the size of penis < min penis size and the player is male, now the size of penis is min penis size;
+	if the size of penis < min penis size and the player is sexed male, now the size of penis is min penis size;
 	now the size of scrotum is the real size of scrotum;
 	now the arousal of the player is 0;
 	if the latex-transformation of the player > 0:

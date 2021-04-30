@@ -242,7 +242,7 @@ Report plugging something with refreshment clothing:
 	if the number of lubricants covering the noun is 0:
 		let L be a random off-stage lubricant;
 		if L is lubricant:
-			if L is blessed or (L is uncursed and the player is male), now the timer of L is a random number between 100 and 150;
+			if L is blessed or (L is uncursed and the player is not possessing a vagina), now the timer of L is a random number between 100 and 150;
 			otherwise now the timer of L is a random number between 30 and 50;
 			now L is covering the noun;
 			say "As you move your hand away, a cool, slippery feeling in your [ShortDesc of noun] makes you realise it was just covered in lubricant! This must be a [if the second noun is plug]plug[otherwise if the second noun is dong]dildo[end if] of refreshment!".

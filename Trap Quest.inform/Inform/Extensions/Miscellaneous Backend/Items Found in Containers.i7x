@@ -50,7 +50,7 @@ Definition: a bra is containerOptimal:
 	if the number of containerRelevant bras > 1, decide no;
 	decide yes.
 Definition: a bra is containerAvailable:
-	if diaper quest is 1 and the player is male, decide no;
+	if diaper quest is 1 and the player is gendered male, decide no;
 	if the max size of it + the leniency of it < the largeness of breasts, decide no;
 	if it is off-stage, decide yes;
 	decide no.

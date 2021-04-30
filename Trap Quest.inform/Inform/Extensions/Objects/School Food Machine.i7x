@@ -2,6 +2,8 @@ School Food Machine by Objects begins here.
 
 food machine is a thing. The printed name of food machine is "[TQlink of item described]food machine[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of food machine is "fdm". food machine is in School17.
 
+Definition: food machine is immune to change: decide yes.
+
 To decide which figure-name is the examine-image of (C - food machine):
 	decide on Figure of school foodhall.
 

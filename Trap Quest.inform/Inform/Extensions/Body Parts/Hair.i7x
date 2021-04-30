@@ -232,7 +232,7 @@ To HairUp (X - a number):
 			decrease X by 1;
 			if the raw largeness of hair < max hair length:
 				now hair-fail is 0;
-				if (a random number between 1 and 4 > 1 and hairup-hist < 3) or hairup-hist < 1: [Hopefully this change should mitigate wonky RNG by limiting fail/win streaks with hairup-hist without invalidating it's original purpose of slowing hair growth.]
+				if (a random number between 1 and 4 > 1 and hairup-hist < 3) or hairup-hist < 1: [Hopefully this change should mitigate wonky RNG by limiting fail/win streaks with hairup-hist without invalidating its original purpose of slowing hair growth.]
 					increase the raw largeness of hair by 1;
 					increase hairup-hist by a random number between 1 and 2;
 				otherwise:

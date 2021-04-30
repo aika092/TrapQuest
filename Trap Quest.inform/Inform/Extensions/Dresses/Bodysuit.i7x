@@ -13,7 +13,7 @@ The remove inappropriate bodysuits rule is listed in the diaper quest fix rules.
 To decide which number is the initial outrage of (C - a bodysuit):
 	decide on 3.
 
-To uniquely set up (C - a bodysuit):
+To set up magic attribute of (C - a bodysuit):
 	if C is cursed:
 		if a random number between 1 and 2 is 1, now the magic-type of C is posture training;
 	otherwise:
@@ -205,9 +205,8 @@ To compute SelfExamineDesc of (C - sequins bodysuit):
 To decide which number is the initial outrage of (C - sequins bodysuit):
 	decide on 6.
 
-To uniquely set up (C - sequins bodysuit):
-	repair C;
-	now the armour of C is 6.
+To decide which number is the initial armour of (C - sequins bodysuit):
+	decide on 6.
 
 This is the remove inappropriate sequins bodysuit rule:
 	now sequins bodysuit is in Holding Pen.
@@ -225,9 +224,6 @@ A romper is a kind of bodysuit. A romper is usually leg covering.
 
 To set up magic state of (C - a romper):
 	now the raw-magic-modifier of C is 0.
-
-To set up influence of (C - a romper):
-	set up random-based influence of C.
 
 Definition: a romper is displacable: decide no.
 Definition: a romper is baby themed: decide yes.
@@ -485,6 +481,10 @@ Figure of superheroine outfit is the file "Items/Clothes/Upper/Special/Hero/Xher
 To decide which figure-name is clothing-image of (C - superheroine outfit):
 	decide on figure of superheroine outfit.
 
+Definition: superheroine outfit is class-relevant:
+	if the class of the player is superhero, decide yes;
+	decide no.
+
 To decide which number is the strength-influence of (C - superheroine outfit):
 	let S be -1;
 	increase S by the magic-modifier of C;
@@ -521,7 +521,7 @@ A catsuit is a kind of jumpsuit. A catsuit is usually latex. A catsuit is usuall
 To say ShortDesc of (C - a catsuit):
 	say "catsuit".
 
-To uniquely set up (C - a catsuit):
+To set up magic attribute of (C - a catsuit):
 	if C is cursed:
 		if a random number between 1 and 2 is 1, now the magic-type of C is posture training;
 	otherwise:
@@ -552,7 +552,7 @@ Definition: outrageous-catsuit (called A) is applicable:
 To reflect on (A - outrageous-catsuit):
 	let B be a random worn catsuit;
 	if the player is not a pervert:
-		say "[first custom style][one of]If anyone I know ever sees photos of me in this catsuit, [if the player is female]with my tits and [vagina] on full display, [end if]I will be so mortified that I will just curl up into a ball and die.[or]Everyone can see my [genitals]... this catsuit is just so pointless![stopping]";
+		say "[first custom style][one of]If anyone I know ever sees photos of me in this catsuit, [if the player is possessing a vagina]with my tits and [vagina] on full display, [end if]I will be so mortified that I will just curl up into a ball and die.[or]Everyone can see my [genitals]... this catsuit is just so pointless![stopping]";
 	otherwise if the dexterity-influence of B > 0 and the player is a pervert:
 		say "[second custom style][one of]I know this catsuit is completely outrageous, but I do somehow feel more flexible![or]This naughty catsuit just makes me feel so limber![stopping]";
 	otherwise:
@@ -720,7 +720,7 @@ To compute periodic effect of (L - a leotard):
 
 To decide which object is the unique-upgrade-target of (C - a leotard):
 	if a random number between 1 and 2 is 1 and C is not sexy blue leotard, decide on a random off-stage sexy blue leotard;
-	if diaper focus is 0, decide on a random off-stage ballet corset;
+	if diaper focus is 0 and ballet corset is off-stage, decide on ballet corset;
 	otherwise decide on a random off-stage teddybear playsuit.
 
 To compute SelfExamineDesc of (C - a leotard):

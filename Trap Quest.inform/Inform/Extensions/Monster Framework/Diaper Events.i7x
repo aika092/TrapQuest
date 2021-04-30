@@ -364,6 +364,11 @@ To compute diaper change of (M - a monster):
 		repeat with C running through worn crotch-displaced clothing:
 			compute M replacing C;
 		satisfy M;
+		let vm be a random video-monitor in the location of the player;
+		if vm is video-monitor and the video-caller of vm is not the throne and vm is not recording-disgrace:
+			now vm is recording-disgrace; [since diaper event is over by now, we need to set up the recorded event right away.]
+			let T be the substituted form of "having your diaper changed."; [note that the video-event always needs to be a present participle]
+			now the video-event of vm is T;
 		increase the times-changed of M by 1;
 		compute unique diaper change effect of M;
 		dislodge M;
@@ -708,6 +713,11 @@ To compute enema of (M - a monster):
 		replace any diapers;
 		replace any clothes;
 		say EnemaAfterFlav of M;
+		let vm be a random video-monitor in the location of the player;
+		if vm is video-monitor and the video-caller of vm is not the throne and vm is not recording-disgrace:
+			now vm is recording-disgrace; [since diaper event is over by now, we need to set up the recorded event right away.]
+			let T be the substituted form of "being given an enema."; [note that the video-event always needs to be a present participle]
+			now the video-event of vm is T;
 		satisfy M.
 
 To compute enema start of (M - a monster):
@@ -815,6 +825,11 @@ To compute forcefeed of (M - a monster):
 		say ForcefeedAftermath of M;
 		say ForcefeedAfterFlav of M;
 		replace any gags;
+		let vm be a random video-monitor in the location of the player;
+		if vm is video-monitor and the video-caller of vm is not the throne and vm is not recording-disgrace:
+			now vm is recording-disgrace; [since diaper event is over by now, we need to set up the recorded event right away.]
+			let T be the substituted form of "being fed like a baby."; [note that the video-event always needs to be a present participle]
+			now the video-event of vm is T;
 		if M is not grabbing the player, satisfy M. [this allows for us to have transitioned into another punishment during the aftermath]
 
 To compute forcefeed start of (M - a monster):
@@ -896,6 +911,11 @@ To compute suppository of (M - a monster):
 	unless M is grabbing the player:
 		replace any diapers;
 		replace any clothes;
+		let vm be a random video-monitor in the location of the player;
+		if vm is video-monitor and the video-caller of vm is not the throne and vm is not recording-disgrace:
+			now vm is recording-disgrace; [since diaper event is over by now, we need to set up the recorded event right away.]
+			let T be the substituted form of "having a suppository pushed into your bottom."; [note that the video-event always needs to be a present participle]
+			now the video-event of vm is T;
 		satisfy M. [Sometimes a suppository will combo straight into a diaper change, e.g. the adult baby slave]
 
 To compute suppository prep of (M - a monster):
@@ -921,10 +941,15 @@ Section - Confiscation
 
 To compute confiscate of (M - a monster):
 	let C be a random confiscatable clothing;
-	say "[ConfiscationDeclarationFlav of M on C]";
+	say ConfiscationDeclarationFlav of M on C;
 	compute M confiscating C;
-	say "[ConfiscationReaction of M on C]";
-	say "[ConfiscationAfterFlav of M on C]";
+	say ConfiscationReaction of M on C;
+	say ConfiscationAfterFlav of M on C;
+	let vm be a random video-monitor in the location of the player;
+	if vm is video-monitor and the video-caller of vm is not the throne and vm is not recording-disgrace:
+		now vm is recording-disgrace; [since diaper event is over by now, we need to set up the recorded event right away.]
+		let T be the substituted form of "having your adult clothes confiscated."; [note that the video-event always needs to be a present participle]
+		now the video-event of vm is T;
 	satisfy M.
 
 To say ConfiscationDeclarationFlav of (M - a monster) on (C - a clothing):
@@ -973,6 +998,11 @@ To compute babywear donation of (M - a monster):
 		compute M babywear donating C;
 		say BabywearDonationReaction of M on C;
 		say BabywearDonationAfterFlav of M on C;
+		let vm be a random video-monitor in the location of the player;
+		if vm is video-monitor and the video-caller of vm is not the throne and vm is not recording-disgrace:
+			now vm is recording-disgrace; [since diaper event is over by now, we need to set up the recorded event right away.]
+			let T be the substituted form of "being made to dress in baby clothing."; [note that the video-event always needs to be a present participle]
+			now the video-event of vm is T;
 		satisfy M;
 	otherwise:
 		say "BUG - couldn't find appropriate clothing to put on the player.".
@@ -1005,6 +1035,11 @@ To compute untidiness punishment of (M - a monster):
 	if diaper messing >= 7:
 		if there is a regional diaper pail:
 			compute diaper pail punishment of M;
+			let vm be a random video-monitor in the location of the player;
+			if vm is video-monitor and the video-caller of vm is not the throne and vm is not recording-disgrace:
+				now vm is recording-disgrace; [since diaper event is over by now, we need to set up the recorded event right away.]
+				let T be the substituted form of "being forced head-first into a disgusting diaper pail."; [note that the video-event always needs to be a present participle]
+				now the video-event of vm is T;
 			satisfy M;
 		otherwise:
 			compute diaper pail substitute punishment of M;

@@ -7,6 +7,8 @@ To compute SelfExamineDesc of (K - a plug panties):
 
 To decide which number is the initial outrage of (C - a plug panties):
 	decide on 1.
+To decide which number is the initial armour of (C - a plug panties):
+	decide on 15.
 
 To say Plug Size (N - a number) Desc:
 	if N is 1, say "";
@@ -26,7 +28,7 @@ To say selfexamineuniquetitle of (K - a plug panties):
 Chapter 1 Vibrating Plug Panties
 
 vibrating plug panties is a kind of plug panties.
-There are 2 unique ass plugging vagina plugging vibrating plug panties. The armour of vibrating plug panties is 12. The printed name of vibrating plug panties is usually "[clothing-title-before]pair of [clothing-material of item described] plug panties[clothing-title-after]". The printed plural name of vibrating plug panties is usually "[clothing-title-before]pairs of [clothing-material of item described] plug panties[clothing-title-after]". The text-shortcut of vibrating plug panties is "lpp". A vibrating plug panties has a number called charge.
+There are 2 unique ass plugging vagina plugging vibrating plug panties. The printed name of vibrating plug panties is usually "[clothing-title-before]pair of [clothing-material of item described] plug panties[clothing-title-after]". The printed plural name of vibrating plug panties is usually "[clothing-title-before]pairs of [clothing-material of item described] plug panties[clothing-title-after]". The text-shortcut of vibrating plug panties is "lpp". A vibrating plug panties has a number called charge.
 
 Definition: a vibrating plug panties is black themed: decide yes.
 
@@ -72,7 +74,7 @@ To compute periodic effect of (P - a vibrating plug panties):
 
 Chapter 2 Pump Plug Panties
 
-pump plug panties is a kind of plug panties. The printed name of pump plug panties is "[clothing-title-before]pair of [DongSize the plug size of item described] [clothing-material of item described] pump plug panties[clothing-title-after]". The text-shortcut of pump plug panties is "ppp". There is 1 unique ass plugging latex pump plug panties. The armour of pump plug panties is 11.
+pump plug panties is a kind of plug panties. The printed name of pump plug panties is "[clothing-title-before]pair of [DongSize the plug size of item described] [clothing-material of item described] pump plug panties[clothing-title-after]". The text-shortcut of pump plug panties is "ppp". There is 1 unique ass plugging latex pump plug panties.
 
 Definition: a pump plug panties is black themed: decide yes.
 Definition: a pump plug panties is inflation themed: decide yes.
@@ -98,7 +100,7 @@ Carry out kneeling when there is a worn pump plug panties:
 
 Chapter 3 WC plug panties
 
-WC-plug-panties is a plug panties. WC-plug-panties is unique. WC-plug-panties is ass plugging. WC-plug-panties is vagina plugging. The armour of WC-plug-panties is 12. The printed name of WC-plug-panties is "[clothing-title-before]pair of [clothing-material of item described] plug panties[clothing-title-after]". The text-shortcut of WC-plug-panties is "plp".
+WC-plug-panties is a plug panties. WC-plug-panties is unique. WC-plug-panties is ass plugging. WC-plug-panties is vagina plugging. The printed name of WC-plug-panties is "[clothing-title-before]pair of [clothing-material of item described] plug panties[clothing-title-after]". The text-shortcut of WC-plug-panties is "plp".
 
 Definition: WC-plug-panties is class-relevant:
 	if the class of the player is human toilet, decide yes;

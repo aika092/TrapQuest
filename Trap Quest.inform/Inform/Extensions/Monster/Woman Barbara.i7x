@@ -21,7 +21,7 @@ Figure of woman stool is the file "NPCs/MultiFloor/barbara/woman7.jpg".
 Figure of Barbara Cutscene 1 is the file "Special/Cutscene/cutscene-barbara-throne1.jpg".
 Figure of Barbara Cutscene 2 is the file "Special/Cutscene/cutscene-barbara-throne2.jpg".
 Figure of Barbara Cutscene 3 is the file "Special/Cutscene/cutscene-barbara-throne3.jpg".
-Figure of Barbara Cutscene 4 is the file "Special/Cutscene/cutscene-barbara-toilet1.png".
+Figure of Barbara Cutscene 4 is the file "Special/Cutscene/cutscene-barbara-toilet1.jpg".
 Figure of Barbara Cutscene 5 is the file "Special/Cutscene/cutscene-barbara-anal-contraption1.jpg".
 Figure of Barbara Cutscene 6 is the file "Special/Cutscene/cutscene-barbara-crafting1.jpg".
 Figure of Barbara Cutscene 7 is the file "Special/Cutscene/cutscene-barbara-crafting2.jpg".
@@ -443,7 +443,7 @@ Report going when the player is in Hotel37 and the dominatrix-contraption-scene 
 
 A time based rule (this is the anal contraption predicament rule):
 	if the woman-status of woman-player is 93 and the dominatrix-contraption-scene of woman-player <= 5 and woman-player is in the location of the player:
-		unless dominatrix is in the location of the player and dominatrix is dangerous:
+		unless dominatrix is combative or gape-gloves is worn: [second part shouldn't be necessary but apparently sometimes the game gets the first part wrong]
 			let W be woman-player;
 			increase the dominatrix-contraption-scene of W by 1;
 			if the dominatrix-contraption-scene of W is 1:
@@ -981,7 +981,10 @@ To compute (M - woman-player) protecting against (X - a monster):
 		compute patron interaction of M;
 	otherwise if the woman-status of M is 91 and X is mechanic:
 		if X is penetrating a body part:
-			say "[BigNameDesc of M] [one of]makes [himself of M] useful by sucking [NameDesc of X][']s balls[or]makes lewd slurping sounds as [he of M] massages [NameDesc of X][']s balls with [his of M] lips[or]stands upright and begins to worship [NameDesc of X][']s tongue in a long, loud French kiss[or][BigNameDesc of M] is still passionately kissing [NameDesc of X][stopping].";
+			if X is a balls-haver:
+				say "[BigNameDesc of M] [one of]makes [himself of M] useful by sucking [NameDesc of X][']s balls[or]makes lewd slurping sounds as [he of M] massages [NameDesc of X][']s balls with [his of M] lips[or]stands upright and begins to worship [NameDesc of X][']s tongue in a long, loud French kiss[or][BigNameDesc of M] is still passionately kissing [NameDesc of X][stopping].";
+			otherwise:
+				say "[BigNameDesc of M] [one of]makes [himself of M] useful by licking [NameDesc of X][']s taint[or]makes lewd slurping sounds as [he of M] massages [NameDesc of X][']s taint with [his of M] tongue[or]stands upright and begins to worship [NameDesc of X][']s tongue in a long, loud French kiss[or][BigNameDesc of M] is still passionately kissing [NameDesc of X][stopping].";
 	otherwise if the woman-status of M >= 80:
 		do nothing;[Barbara was spawned to get fucked, not fight.]
 	otherwise if the player is monster fucked:

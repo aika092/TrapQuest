@@ -440,7 +440,7 @@ To compute ass grope of (M - a person):
 
 To compute grope reaction of (M - a person):
 	if M is unintelligent monster:
-		say "[if the player is not a pervert]You [one of]squeal in shock, recoiling away as quickly as you can[or]squeak with dismay[cycling]![otherwise if the player is not a nympho]You [one of]can't help but shiver[or]squirm uncomfortably[cycling].[otherwise]You [one of]shiver with delight[or]squirm with pleasure[cycling].[end if]";
+		say "[if the player is not a pervert]You [one of]squeal in shock, recoiling as quickly as you can[or]squeak with dismay[cycling]![otherwise if the player is not a nympho]You [one of]can't help but shiver[or]squirm uncomfortably[cycling].[otherwise]You [one of]shiver with delight[or]squirm with pleasure[cycling].[end if]";
 	otherwise if the player is a nympho:
 		say "You shiver with arousal.";
 		if the player is able to speak, say "[second custom style]'[if the player is feeling submissive][one of]Thank you for giving my slutty body your attention, [stud of M].'[or]Thank you [stud of M]. Please feel free to fuck me whenever you want.'[or]Aah~! This disgusting whore is thankful for any and all attention!'[or]Oh thank you [stud of M]! I don't deserve such gentle treatment...'[in random order][otherwise if the player is not feeling dominant][one of]Oh is that it? I kind of thought you were going to fuck me...'[or]Oh my~! You know just how to touch me, [stud of M]!'[or]Oooh, is that your idea of foreplay, [stud of M]?'[or]Well aren't you quite the charmer!'[in random order][otherwise][one of]Is that a challenge? Don't expect me to go easy on you!'[or]Oh [stud of M], if we fuck, I'll be the one on top.'[or]Careful now, if you get me too worked up, you'll be the one that regrets it...'[in random order][end if][roman type][line break]";
@@ -672,6 +672,10 @@ To compute seduction choice of (M - a monster):
 		if turns-spent-seducing is 0, compute FirstTurnSeduceOralAnnounce of M;
 		if MCQ matches the text "soul", compute SeductionSoulOral of M;
 		otherwise compute SeductionOral of M;
+		if the oralvirgin of the player is 1:
+			now M is penetrating face;
+			check oral virginity loss with M;
+			now M is not penetrating face;
 		if the sex-length of M <= 0, compute SeductionOralClimax of M;
 		if the blue-balls of M >= the blue-balls-limit of M and a random number between 1 and 3 > 1 and face is an actual target:
 			now the selection-frustration of M is 0;
@@ -954,7 +958,7 @@ To compute SeductionSoulOral of (M - a monster):
 To compute SeductionOralClimax of (M - a monster):
 	now M is penetrating face;
 	follow the default facial climax rule.
-	[orgasm M. handled in the cleavage climax function]
+	[orgasm M. handled in the climax function]
 
 To compute StrongSexProgress of (M - a monster):
 	decrease the sex-length of M by 1;

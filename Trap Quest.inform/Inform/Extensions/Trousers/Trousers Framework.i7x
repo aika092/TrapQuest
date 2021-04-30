@@ -27,10 +27,6 @@ To decide which number is the initial outrage of (C - a trousers):
 To say ClothingDesc of (U - a trousers):
 	say "[UniqueClothingDesc of U][if U is worn]It [ModestyDesc of U][end if]".
 
-To uniquely set up (C - a trousers):
-	repair C;
-	now the raw-magic-modifier of C is 0.
-
 To set up influence of (C - a trousers):
 	set up random-based influence of C.
 

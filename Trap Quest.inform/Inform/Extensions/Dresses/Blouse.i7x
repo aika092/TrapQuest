@@ -62,9 +62,6 @@ To decide which number is the humiliation-influence of (O - a bodice):
 	increase B by the magic-modifier of O;
 	decide on B.
 
-To set up influence of (C - a bodice):
-	set up random-based influence of C.
-
 To decide which object is the unique-upgrade-target of (C - pink bodice):
 	if diaper quest is 1 and the number of worn skirts is 0, decide on a random patterned baby dress;
 	decide on nothing.

@@ -1,6 +1,6 @@
 Evening Dress by Dresses begins here.
 
-An evening dress is a kind of overdress. An evening dress is usually satin. An evening dress is usually transformation-rare. An evening dress is usually hobble-skirted. An evening dress is usually crotch-skirted. The armour of an evening dress is usually 7.
+An evening dress is a kind of overdress. An evening dress is usually satin. An evening dress is usually transformation-rare. An evening dress is usually hobble-skirted. An evening dress is usually crotch-skirted.
 
 The printed name of evening dress is usually "[clothing-title-before]evening dress[clothing-title-after]". The text-shortcut of evening dress is "ed".
 
@@ -16,7 +16,7 @@ To compute SelfExamineDesc of (O - an evening dress):
 To decide which number is the initial outrage of (C - an evening dress):
 	decide on 8.
 
-To uniquely set up (C - an evening dress):
+To set up magic attribute of (C - an evening dress):
 	if a random number between 1 and 2 is 1, now C is dominance.
 
 To set up influence of (C - an evening dress):

@@ -16,8 +16,7 @@ Check waiting:
 		say "Do you want to keep waiting until something changes? ";
 		if the player is in agreement, urinalwait instead;
 	otherwise if the player is in HoleInWall:
-		say "Do you want to keep waiting until something changes? ";
-		if the player is in agreement, holewait instead;
+		holewait instead;
 	otherwise if detention chair is grabbing the player:
 		say "Do you want to keep waiting until detention is over? ";
 		if the player is in agreement, detentionchairwait instead;

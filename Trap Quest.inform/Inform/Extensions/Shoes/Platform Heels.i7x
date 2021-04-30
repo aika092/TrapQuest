@@ -23,22 +23,12 @@ To decide which number is the kick-bonus of (H - a platform heels):
 	decide on S.
 
 To uniquely set up (C - a platform heels):
-	let R be a random number between 1 and 8;
-	if C is cursed:
-		if R <= 2:
-			now C is posture training;
-		otherwise if R <= 4:
-			now C is stumbling;
-	otherwise:
-		if R is 1, now C is speed;
-		if R is 2, now C is kicking;
 	set up heel length of C;
 	increase the heel-height of C by 2.
 
 To decide which object is the unique-upgrade-target of (C - a platform heels):
 	if the heel-height of C >= 6 and C is plentiful, decide on a random off-stage tall platform heels;
 	decide on nothing.
-
 
 pvc-platform-heels is a platform heels. pvc-platform-heels is pvc. The text-shortcut of pvc-platform-heels is "pph".
 
@@ -131,14 +121,16 @@ To uniquely set up (C - tongue-heels):
 
 A tall platform heels is a kind of platform heels. A tall platform heels is pvc. A tall platform heels is rare.
 
-To uniquely set up (C - a tall platform heels):
+To set up magic attribute of (C - a tall platform heels):
 	let R be a random number between 1 and 8;
 	if C is cursed:
 		if R <= 2:
 			now C is posture training;[They can't be stumbling]
 	otherwise:
 		if R is 1, now C is speed;
-		if R is 2, now C is kicking;
+		if R is 2, now C is kicking.
+
+To uniquely set up (C - a tall platform heels):
 	if a random number between 1 and 2 is 1, now the heel-height of C is 9;
 	otherwise now the heel-height of C is 10.
 

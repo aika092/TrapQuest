@@ -27,9 +27,13 @@ To decide which number is the kick damage of the player:
 	if the player is diaper kicking:
 		decrease A by 1;
 		if damage-explained > 1, say "-1 (diaper penalty) ";
-	if the player is zeroG:
-		if damage-explained > 1, say "[if A * -1 >= 0]+[end if][A * -1] (weightless) ";
-		now A is 0;
+	if flight-attendant-skirt is not worn:
+		if the player is zeroG:
+			if damage-explained > 1, say "[if A * -1 >= 0]+[end if][A * -1] (weightless) ";
+			now A is 0;
+		otherwise if the player is on tiptoes:
+			if damage-explained > 1, say "-2 (low weight) ";
+			decrease A by 2;
 	decide on A.
 
 permanent-kick-bonus is a number that varies.
@@ -78,10 +82,10 @@ Carry out kicking:
 		otherwise say "You kick [the noun] with your [printed name of H][if H is dildo-heels], and you can feel the glass dildo heels magically strengthen your kick![otherwise if H is stiletto heels], trying to get the spike of your heel to do some real damage![otherwise], hoping the heel will do some damage.[end if]";
 		damage A on the noun;
 	otherwise:
-		if the player is zeroG:
+		if the player is zeroG and flight-attendant-skirt is not worn:
 			say "Your body is weightless, meaning you can hardly get any force into your knee without sending yourself backwards.";
 			damage A on the noun;
-		otherwise if the weight of the player < 1:
+		otherwise if the player is on tiptoes and flight-attendant-skirt is not worn:
 			say "Your body is so light that you don't have the grounding to put your full strength into the attack.";
 			damage A on the noun;
 		otherwise if the player is diaper kicking:

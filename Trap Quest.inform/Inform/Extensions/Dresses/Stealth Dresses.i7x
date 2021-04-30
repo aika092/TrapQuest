@@ -2,7 +2,7 @@ Stealth Dresses by Dresses begins here.
 
 Part 1 - Kimono of Illusions
 
-illusory kimono is an overdress. illusory kimono is unique. illusory kimono is hobble-skirted. illusory kimono is crotch-skirted. The armour of illusory kimono is 6. illusory kimono is leg covering. illusory kimono is only arm covering. illusory kimono is fully covering. illusory kimono is silk.
+illusory kimono is an overdress. illusory kimono is unique. illusory kimono is hobble-skirted. illusory kimono is crotch-skirted. illusory kimono is leg covering. illusory kimono is only arm covering. illusory kimono is fully covering. illusory kimono is silk.
 The printed name of illusory kimono is "[clothing-title-before]kimono of illusions[clothing-title-after]". Understand "illusions", "of illusions" as illusory kimono. The text-shortcut of an illusory kimono is "koi".
 
 Definition: illusory kimono is fluid immune: decide yes.

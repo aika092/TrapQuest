@@ -453,8 +453,11 @@ Displayed after the player asks a monster for assistance whilst having rough sex
 @param <Monster>:<N> The monster currently having rough sex with the player
 
 +!]
-To say AssistanceResponse of (M - a monster) with (N - a monster):[TODO: monsters can "join" sex on your side or give you something to make it easier]
-	say AssistanceRejected of M with N.
+To say AssistanceResponse of (M - a monster) with (N - a monster):
+	if (M is guardian or (M is ally and the player is getting lucky)) and the rounds of sex left of N > 1:
+		say AssistanceAccepted of M with N;
+	otherwise:
+		say AssistanceRejected of M with N.
 
 [!<SayAssistanceRejectedOfMonsterWithMonster>+
 
@@ -470,6 +473,34 @@ To say AssistanceRejected of (M - a monster) with (N - a monster):
 	otherwise:
 		if M is not male, say "[speech style of M]'Help yourself, Skank.'[roman type][line break]";
 		otherwise say "[speech style of M]'No.'[roman type][line break]".
+
+[!<SayAssistanceRejectedOfMonsterWithMonster>+
+
+Displayed after the player asks a monster for assistance whilst having rough sex with another monster, and the first monster accepts.
+
+@param <Monster>:<M> The monster being greeted
+@param <Monster>:<N> The monster currently having rough sex with the player
+
++!]
+To say AssistanceAccepted of (M - a monster) with (N - a monster):
+	if M is willing to fluff right now and N is not tentacle monster:[They help by joining in.]
+		say FluffResponse of M with N;
+		compute M fluffing N;
+	otherwise:
+		say NonFluffResponse of M with N.[They help in a way that doesn't involve them joining in.]
+
+To say FluffResponse of (M - a monster) with (N - a monster):
+	say "[speech style of M]'I'll help, but you owe me for this!'[roman type][line break]".
+
+To say NonFluffResponse of (M - a monster) with (N - a monster):[moral support!]
+	say "[speech style of M]'You can get through this!'[roman type][line break][BigFuckerDesc of M] [one of]pats you on the back[or]gives you a thumbs-up[in random order] and immediately turns to leave. At least they support you...";
+	slightDignify;
+	Bore M;
+	now the scared of M is 15.
+
+To compute (M - a monster) fluffing (N - a monster):[they join in, help out, and continue helping until the sex is over.]
+	now M is submission-assisting;
+	compute submissive assistance of M with N.
 
 [!<SayAttentionGreetingToMonsterWithMonster>+
 
@@ -536,7 +567,6 @@ To say UnfriendlyGreeting to (M - a monster):
 	if the player is a sadist:
 		if the player is gendered male, say "'[one of]I can't wait to tear your [HoleDesc of M] up when I beat you.'[or]Just for this, I'm going in dry.'[or]I can't wait to make you gag on my [sexual-player-penis]!'[in random order]";
 		otherwise say "'[one of]I'm pissed off right now, but don't worry. You'll be making it up to me.'[or]Get ready for a long apology!'[or]I can't wait to show you what I have in store for you!'[in random order]";
-		say TauntResponse of M;
 	otherwise:
 		if the player is a masochist:
 			say "'[one of]We don't have to fight, do we? Couldn't we do... something else?'[or]Why hit me when you could be hitting me!'[or]I'd rather fuck than fight, really.'[or]All I need to do is get on my knees and you'll forgive me?'[or]Can't you forgive me? I can make it worth your while...'[or]Couldn't we solve this with sex? Why aren't we doing that?'[in random order]";
@@ -557,9 +587,9 @@ Displayed after the player taunts a monster. Depending on the monster's annoyanc
 
 +!]
 To say TauntResponse of (M - a monster):
-	FavourDown M;
-	let D be a random number between (the difficulty of M / 2) and 1;
-	if D < the dominance of the player and the times-dominated of M > the times-submitted of M:
+	if the times-dominated of M <= the times-submitted of M, FavourDown M by 2;
+	otherwise FavourDown M;
+	if the player is getting lucky:
 		compute taunt acceptance effect of M;
 		say TauntAccepted of M;
 	otherwise:
@@ -829,7 +859,7 @@ To say SubmissiveGreeting to (M - a monster):
 	let N be the times-submitted of M;
 	let P be N + 1;
 	if diaper quest is 1:
-		if the diaper addiction of the player > 8, say "'[one of]Hey there. Are you going to do that thing to me again?'[or]Hey there [daddy of M].'[or][if the player is diapered]Hey [daddy of M]. I wonder if my diaper needs checking[otherwise]Hey you. Remind me, what do you do to naughty babies who are being bad [boy of the player]s and not wearing diapers[end if]...'[at random]";
+		if the diaper addiction of the player > 8, say "'[one of]Hey there. Are you going to do that thing to me again?'[or]Hey there [daddy of M].[or][if the player is diapered]Hey [daddy of M]. I wonder if my diaper needs checking?'[otherwise]Hey you. Remind me, what do you do to naughty babies who are being bad [boy of the player]s and not wearing diapers...?'[end if][at random]";
 		otherwise say "'[one of]Uh-oh, it's you again...'[or]Why do we keep meeting at moments like this!'[or][if the player is diapered]Hi there. Yes I'm diapered. No I don't need you to check me[otherwise]Oh look, another [man of M] who's obsessed with making me wear a diaper[end if].'[at random]";
 	otherwise if the class of the player is princess and M is bride-consort:
 		say "'[one of][big royal-subject of M]. Our previous tryst was most satisfying, I will admit.'[or][big royal-subject of M]. Your status certainly belies your skill in the bedroom.'[or]Greetings, [royal-subject of M]. I would not mind it if you were to ravish me again at a later time.'[at random]";

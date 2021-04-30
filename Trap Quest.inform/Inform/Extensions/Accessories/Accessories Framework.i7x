@@ -26,10 +26,6 @@ To decide which number is the heaviness of (C - an accessory):
 
 Definition: an accessory is discovered varied: decide no.
 
-[Can't have this because it makes all jewellery get re-randomised upon being summoned]
-[To uniquely set up (A - an accessory):
-	unless A is immune to change or A is unique, now A is a random accessory-colour.]
-
 To say ClothingDesc of (A - an accessory):
 	if A is necklace:
 		if A is solid gold:

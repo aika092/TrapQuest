@@ -49,13 +49,13 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 					if the flesh volume of breasts + the silicone volume of breasts > the real flesh volume of breasts, increase the real flesh volume of breasts by 1;
 				set real breast size;
 			if the thickness of hips > the real thickness of hips, increase the real thickness of hips by 1;
-		if fast TG is 3 and the size of penis <= min penis size and the player is male:
+		if fast TG is 3 and the size of penis <= min penis size and the player is sexed male:
 			if tg-tracking > 0:
 				say DefaultSexChangeFlav;
 				sexchange the player;
 			otherwise:
 				increase tg-tracking by 1;
-		otherwise if the player is male and the size of penis < the real size of penis:
+		otherwise if the player is sexed male and the size of penis < the real size of penis:
 			if the real size of penis > min penis size:
 				decrease the real size of penis by 1;
 				if fast TG is 3 and the size of penis < the real size of penis, decrease the real size of penis by 1; [if your penis has shrunk a lot, this is going to happen even faster!]
@@ -173,7 +173,7 @@ To compute makeup decay:
 
 To compute orifice soreness decay:
 	if asshole is not actually occupied:
-		if the player is male:
+		if the player is not possessing a vagina:
 			heal asshole times 1;
 		otherwise:
 			if the soreness of asshole > the soreness of vagina or vagina is actually occupied:

@@ -166,21 +166,21 @@ Section 1 - Attack
 
 The robomaid priority attack rules is a rulebook. The priority attack rules of a robomaid is the robomaid priority attack rules.
 
-[After reaching +3 difficulty, the robomaid constantly emits aphrodesiacs]
+[After reaching +3 difficulty, the robomaid constantly emits aphrodisiacs]
 This is the robomaid haziness rule:
 	let M be current-monster;
-	if the player is the donator and the difficulty of M > the starting difficulty of M + 1:
+	if the difficulty of M > the starting difficulty of M + 1:
 		say "[one of]A haze of pink smoke follows [NameDesc of M] around as [he of M] moves.[or]Pink smoke follows [NameDesc of M] around in a haze.[or][BigNameDesc of M]'s movements are followed by a haze of pink smoke.[in random order] [one of]There's so much of it that you're forced to breathe some of it in.[or]You cough as you breathe it in.[or]You can't help breathing a bit of it in.[in random order]";
 		Arouse 100.
 The robomaid haziness rule is listed in the robomaid priority attack rules.
 
 To compute damaging attack of (M - a robomaid):
-	if the player is the donator and the difficulty of M > the starting difficulty of M and a random number between 1 and 3 is 1:
+	if the difficulty of M > the starting difficulty of M and a random number between 1 and 3 is 1:
 		compute molesting attack of M;
 	otherwise:
 		compute striking attack of M.
 
-[The robomaid puffs out aphrodesiac, avoided with intelligence.]
+[The robomaid puffs out aphrodisiac, avoided with intelligence.]
 To compute molesting attack of (M - a robomaid):
 	let D be the difficulty of M - the starting difficulty of M;
 	say "[BigNameDesc of M] puckers [his of M] mechanical lips, blowing out a [if D > 2]huge cloud[otherwise]cloud[end if] of pink smoke. [run paragraph on]";
@@ -193,7 +193,7 @@ To compute molesting attack of (M - a robomaid):
 	otherwise:
 		say "You notice that the smoke disperses really quickly, so you hold your breath just long enough to avoid breathing any of it in.".
 
-[The milkmaid sprays out an aphrodesiac, avoided with dexterity]
+[The milkmaid sprays out an aphrodisiac, avoided with dexterity]
 To compute molesting attack of (M - milkmaid):
 	if diaper quest is 0 or (lactation fetish is 1 and a random number between 1 and 2 is 1), say "[BigNameDesc of M] pushes [his of M] breasts together, forcing out twin streamers of pink liquid. [run paragraph on]";
 	otherwise say "[BigNameDesc of M] lifts [his of M] apron, aiming [his of M] [LongDickDesc of M] at you as it shoots out a spurt of pink liquid. [run paragraph on]";

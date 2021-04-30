@@ -49,7 +49,7 @@ To decide which number is the defaultDiaperHidingLength of (C - bitch bottoms):
 	decide on 2. [Can only hide the thinnest of diapers]
 
 
-buttockless pants is a kind of trousers. A buttockless pants is usually butt-windowed. A buttockless pants is manly. The armour of buttockless pants is 10. The printed name of buttockless pants is usually "[clothing-title-before][clothing-material of item described] buttockless pants[clothing-title-after]". The text-shortcut of buttockless pants is "bp". Figure of yellow buttockless pants is the file "Items/Clothes/Lower/Pants/Buttockless/buttocklesspants1.png". Figure of blue buttockless pants is the file "Items/Clothes/Lower/Pants/Buttockless/buttocklesspants2.png".
+buttockless pants is a kind of trousers. A buttockless pants is usually butt-windowed. A buttockless pants is manly. The printed name of buttockless pants is usually "[clothing-title-before][clothing-material of item described] buttockless pants[clothing-title-after]". The text-shortcut of buttockless pants is "bp". Figure of yellow buttockless pants is the file "Items/Clothes/Lower/Pants/Buttockless/buttocklesspants1.png". Figure of blue buttockless pants is the file "Items/Clothes/Lower/Pants/Buttockless/buttocklesspants2.png".
 
 To say ShortDesc of (Y - a buttockless pants):
 	say "pair of buttockless pants".
@@ -88,7 +88,7 @@ To decide which number is the initial outrage of (B - a yellow buttockless pants
 To decide which object is the unique-upgrade-target of (C - a yellow buttockless pants):
 	if the number of worn knickers is 0, decide on a random off-stage microshorts.
 
-exercise shorts is a kind of trousers. An exercise shorts is manly. An exercise shorts is usually leg exposing. The armour of an exercise shorts is 8. Understand "exercise", "shorts" as exercise shorts.
+exercise shorts is a kind of trousers. An exercise shorts is manly. An exercise shorts is usually leg exposing. Understand "exercise", "shorts" as exercise shorts.
 To say ShortDesc of (Y - an exercise shorts):
 	say "pair of exercise shorts".
 To decide which object is the unique-upgrade-target of (C - an exercise shorts):
@@ -146,7 +146,7 @@ To decide which number is the initial outrage of (C - grey-exercise-shorts):
 To decide which number is the defaultDiaperHidingLength of (C - grey-exercise-shorts):
 	decide on 0. [Can only hide normal underwear]
 
-jeans is a kind of trousers. A jeans is usually manly. There is 1 zippable denim jeans. The armour of jeans is 10. The printed name of jeans is usually "[clothing-title-before][clothing-material of item described] jeans[clothing-title-after]". The text-shortcut of jeans is "je". Figure of jeans is the file "Items/Clothes/Lower/Pants/Jeans/jeans1.png". Figure of jeans ripped is the file "Items/Clothes/Lower/Pants/Jeans/jeans2.png".
+jeans is a kind of trousers. A jeans is usually manly. There is 1 zippable denim jeans. The printed name of jeans is usually "[clothing-title-before][clothing-material of item described] jeans[clothing-title-after]". The text-shortcut of jeans is "je". Figure of jeans is the file "Items/Clothes/Lower/Pants/Jeans/jeans1.png". Figure of jeans ripped is the file "Items/Clothes/Lower/Pants/Jeans/jeans2.png".
 
 Definition: a jeans is blue themed: decide yes.
 
@@ -165,7 +165,7 @@ To decide which object is the unique-upgrade-target of (C - a jeans):
 	if the number of worn knickers is 0, decide on a random off-stage cutoffs;
 	decide on nothing.
 
-rubber trousers is a kind of trousers. There is 1 zippable latex rubber trousers. A rubber trousers is manly. The armour of rubber trousers is 10. The printed name of rubber trousers is usually "[clothing-title-before][clothing-material of item described] pants[clothing-title-after]". The text-shortcut of rubber trousers is "lp". Figure of rubber trousers is the file "Items/Clothes/Lower/Pants/latexpants1.png". Understand "pants" as rubber trousers.
+rubber trousers is a kind of trousers. There is 1 zippable latex rubber trousers. A rubber trousers is manly. The printed name of rubber trousers is usually "[clothing-title-before][clothing-material of item described] pants[clothing-title-after]". The text-shortcut of rubber trousers is "lp". Figure of rubber trousers is the file "Items/Clothes/Lower/Pants/latexpants1.png". Understand "pants" as rubber trousers.
 
 To decide which figure-name is clothing-image of (H - a rubber trousers):
 	decide on figure of rubber trousers.
@@ -183,10 +183,12 @@ The remove inappropriate trousers rule is listed in the diaper quest fix rules.
 
 Definition: a rubber trousers is purple themed: decide yes.
 
-leggings is a kind of trousers. a leggings is usually nylon. The armour of leggings is 2. Understand "leggings" as leggings.
+leggings is a kind of trousers. a leggings is usually nylon. Understand "leggings" as leggings.
 
 Definition: a leggings is unskirted themed: [Is it something that should not be worn at the same time as a skirt?]
 	decide no.
+To decide which number is the initial armour of (C - a leggings):
+	decide on 2.
 
 light-leggings is a leggings. The text-shortcut of light-leggings is "lnl". The printed name of light-leggings is "[clothing-title-before]light nylon leggings[clothing-title-after]". Understand "light" as light-leggings. light-leggings is sheer. light-leggings is transformation-rare. Figure of light leggings is the file "Items/Clothes/Lower/Pants/leggings1.png".
 Definition: light-leggings is sissifying: decide yes.
@@ -228,7 +230,7 @@ To decide which object is the unique-upgrade-target of (C - a leggings):
 	if diaper quest is 1, decide on a random off-stage baby bloomers;
 	decide on nothing.
 
-teddy bear pantyhose is a kind of trousers. There is 1 unique teddy bear pantyhose. The armour of teddy bear pantyhose is 6. The printed name of teddy bear pantyhose is usually "[clothing-title-before]teddy bear pantyhose[clothing-title-after]". The text-shortcut of teddy bear pantyhose is "tph". Figure of teddy bear pantyhose is the file "Items/Clothes/Lower/Pants/pantyhose1.png".
+teddy bear pantyhose is a kind of trousers. There is 1 unique teddy bear pantyhose. The printed name of teddy bear pantyhose is usually "[clothing-title-before]teddy bear pantyhose[clothing-title-after]". The text-shortcut of teddy bear pantyhose is "tph". Figure of teddy bear pantyhose is the file "Items/Clothes/Lower/Pants/pantyhose1.png".
 
 To decide which figure-name is clothing-image of (H - a teddy bear pantyhose):
 	decide on figure of teddy bear pantyhose.
@@ -241,6 +243,8 @@ To say ShortDesc of (Y - a teddy bear pantyhose):
 
 To decide which number is the initial cringe of (B - a teddy bear pantyhose):
 	decide on 10.
+To decide which number is the initial armour of (C - a teddy bear pantyhose):
+	decide on 6.
 
 Definition: a teddy bear pantyhose is fetish appropriate:
 	if diaper lover > 0, decide yes;
@@ -253,13 +257,13 @@ Definition: a teddy bear pantyhose is bear themed: decide yes.
 Definition: a teddy bear pantyhose is red themed: decide yes.
 Definition: a teddy bear pantyhose is potentially erection concealing: decide yes. [non-tight loins conceal erections]
 
-yoga pants is a kind of trousers. There is 1 rare yoga pants. The armour of yoga pants is 8. The printed name of yoga pants is usually "[clothing-title-before]yoga pants[clothing-title-after]". The text-shortcut of yoga pants is "yp". Figure of yoga pants is the file "Items/Clothes/Lower/Pants/Yoga/yogapants1.png". A yoga pants has a number called yoga-charge.
+yoga pants is a kind of trousers. There is 1 rare yoga pants. The printed name of yoga pants is usually "[clothing-title-before]yoga pants[clothing-title-after]". The text-shortcut of yoga pants is "yp". Figure of yoga pants is the file "Items/Clothes/Lower/Pants/Yoga/yogapants1.png". A yoga pants has a number called yoga-charge.
 
 To decide which figure-name is clothing-image of (H - a yoga pants):
 	decide on figure of yoga pants.
 
 To say UniqueClothingDesc of (Y - a yoga pants):
-	say "A loose fitting pair of yoga pants[if Y is worn] that make you feel much more in tune with your inner balance[end if].[if Y is crotch-ripped]There is a large rip at the crotch.[end if]".
+	say "A loose fitting pair of yoga pants that won't punish you for being worn at the same time as a skirt[if Y is worn] and that make you feel much more in tune with your inner balance[end if][if Y is crotch-ripped]. There is a large rip at the crotch[end if].".
 
 To say ShortDesc of (Y - a yoga pants):
 	say "pair of yoga pants".
@@ -277,7 +281,8 @@ To compute periodic effect of (C - a yoga pants):
 			say "You feel a pulse of warmth from your [ShortDesc of C] as your hips widen. You sense it's not happy you're wearing underwear at the same time...";
 			HipUp 1.
 
-Definition: a yoga pants is strut enabling:
+Definition: yoga pants is unskirted themed: decide no.
+Definition: yoga pants is strut enabling:
 	if it is blessed, decide yes;
 	decide no.
 

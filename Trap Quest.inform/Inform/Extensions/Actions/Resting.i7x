@@ -29,9 +29,10 @@ Carry out resting:
 				otherwise if the alert of the player is 1:
 					say "Your rest is interrupted by [NameDesc of M].";
 					break;
-	if there is a worn maternity dress and there is a worn yoga pants:
+	if there is a worn maternity dress and the pregnancy of the player > 0:
+		say "Somehow, your maternity dress is helping you with your pregnancy by healing your body as you rest. Magic!";
 		while the body soreness of the player > 0 and the alert of the player is 0:
-			say "[one of]Somehow, your clothing is helping heal your body as you rest! Magic![or]You continue to [if the largeness of breasts > 13]use your [BreastDesc] as pillows to [end if]rest.[stopping]";
+			say "You continue to [if the largeness of breasts > 13]use your [BreastDesc] as pillows to [end if]rest.";
 			allocate 6 seconds;
 			BodyHeal 1;
 			compute extra turn;

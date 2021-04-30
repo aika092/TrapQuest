@@ -510,7 +510,7 @@ To compute stunning attack of (M - a monster):
 				moderateHumiliate;
 				FatigueUp 20;
 				now another-turn-flavour is the substituted form of "You're still stuck imitating [FuckerDesc of M]'s pose!";
-				now another-turn is 1; [###Selkie: Any chance we could have this effect worsen so in the end the player has a good chance of autmatically adopting the pose again when feeling under threat?]
+				now another-turn is 1; [###Selkie: Any chance we could have this effect worsen so in the end the player has a good chance of automatically adopting the pose again when feeling under threat?]
 			otherwise:
 				say "You feel a strange tingling feeling in your joints as you are suddenly driven to imitate [his of M] pose, and you exhaust yourself a little trying to shake it off.";
 				FatigueUp 10;

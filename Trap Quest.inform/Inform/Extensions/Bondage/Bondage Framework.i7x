@@ -67,7 +67,4 @@ To say MonsterOfferAcceptFlav of (M - a dominatrix) to (T - a bondage):
 To say ShortDesc of (T - a bondage):
 	say "bondage".
 
-To uniquely set up (C - a bondage):
-	now the raw-magic-modifier of C is 0.
-
 Bondage Framework ends here.

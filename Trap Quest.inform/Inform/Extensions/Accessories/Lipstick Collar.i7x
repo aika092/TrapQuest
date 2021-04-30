@@ -11,7 +11,7 @@ To decide which number is the initial outrage of (C - lipstick collar):
 	decide on 5.
 
 To say ClothingDesc of (C - lipstick collar):
-	say "A leather collar with a red, lip shaped clasp in the front. Small hooks, like the kind you might attach a dog leash to, line the collar in a circle[if C is worn and diaper quest is 0]. The collar is somehow forcing you to push your lips out and half-close your eyelids in a sultry 'come-hither' look[otherwise if C is in Mansion16]. The phrase 'before the bite.' is cut into the leather on the inside. Strange[end if].".
+	say "A leather collar with a red, lip shaped clasp in the front. Small hooks, like the kind you might attach a dog leash to, line the collar in a circle[if C is worn and diaper quest is 0]. The collar is somehow forcing you to push your lips out and half-close your eyelids in a sultry 'come-hither' look[otherwise if C is in Mansion16]. The phrase 'before the bite' is cut into the leather on the inside. Strange[end if].".
 
 To say ShortDesc of (C - lipstick collar):
 	say "lipstick collar".

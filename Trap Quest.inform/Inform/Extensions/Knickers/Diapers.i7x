@@ -93,7 +93,7 @@ To say ClothingDesc of (C - purple-giant-diaper):
 	say "An excessively large purple adult diaper, with huge amounts of extra puffy padding and a polka dot pattern. It has three rows of girly frills at the back.".
 Definition: purple-giant-diaper is purple themed: decide yes.
 
-demon-diaper is a giant diaper. The text-shortcut of demon-diaper is "dmd". The armour of demon-diaper is 25. demon-diaper is unique. A demon-diaper has a number called dry-timer. Understand "pink", "demon" as demon-diaper.
+demon-diaper is a giant diaper. The text-shortcut of demon-diaper is "dmd". demon-diaper is unique. A demon-diaper has a number called dry-timer. Understand "pink", "demon" as demon-diaper.
 
 To decide which figure-name is clothing-image of (C - demon-diaper):
 	decide on figure of demon diaper.
@@ -130,7 +130,7 @@ Definition: demon-diaper is pink themed: decide yes.
 
 Chapter 3 Waddle Diaper
 
-waddle diaper is a kind of pullup diaper. A waddle diaper is pvc. The armour of a waddle diaper is 25. A waddle diaper is zippable. A waddle diaper is totally-exclusive. A waddle diaper is transformation-rare. A waddle diaper is womanly.
+waddle diaper is a kind of pullup diaper. A waddle diaper is pvc. A waddle diaper is zippable. A waddle diaper is totally-exclusive. A waddle diaper is transformation-rare. A waddle diaper is womanly.
 The DQFigure of waddle diaper is DQWaddle.
 Understand "waddle" as waddle diaper.
 To decide which number is the weight of (C - a waddle diaper):
@@ -513,7 +513,7 @@ To say ClothingDesc of (C - pink-small-diaper):
 
 Chapter 11 Training Pants
 
-A training pants is a kind of knickers. There is 1 unique training pants. The printed name of training pants is usually "[clothing-title-before]pair of [if the urine-soak of item described > 0 or the bimbo of the player > 4]training pants[otherwise]padded underwear[end if][clothing-title-after]". Understand "padded", "underwear", "pair", "pair of" as training pants. The text-shortcut of training pants is "pa". The armour of a training pants is usually 11.
+A training pants is a kind of knickers. There is 1 unique training pants. The printed name of training pants is usually "[clothing-title-before]pair of [if the urine-soak of item described > 0 or the bimbo of the player > 4]training pants[otherwise]padded underwear[end if][clothing-title-after]". Understand "padded", "underwear", "pair", "pair of" as training pants. The text-shortcut of training pants is "pa".
 
 To decide which number is the default-soak-limit of (C - a training pants):
 	decide on the penis-capacity of C * 2.
@@ -533,9 +533,10 @@ The DQFigure of training pants is usually DQTrainingPants.
 
 To decide which number is the initial outrage of (D - a training pants):
 	decide on 6.
-
 To decide which number is the initial cringe of (D - a training pants):
 	decide on 6.
+To decide which number is the initial armour of (C - a training pants):
+	decide on 11.
 
 To decide which number is the fluid cringe of (C - a training pants):
 	decide on (the semen-soak of C / 2) + (the urine-soak of C / 2) + (the milk-soak of C / 2).

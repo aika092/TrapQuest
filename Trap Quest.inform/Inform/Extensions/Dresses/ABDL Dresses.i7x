@@ -112,9 +112,8 @@ To say MediumDesc of (C - a teddybear playsuit):
 To decide which number is the initial cringe of (C - a teddybear playsuit):
 	decide on 8.
 
-To uniquely set up (C - a teddybear playsuit):
-	repair C;
-	now the armour of C is 8.
+To decide which number is the initial armour of (C - a teddybear playsuit):
+	decide on 8.
 
 Definition: a teddybear playsuit is ballet related: decide yes.
 Definition: a teddybear playsuit is bear themed: decide yes.
@@ -142,9 +141,8 @@ To say MediumDesc of (C - a waddle outfit):
 To decide which number is the initial cringe of (C - a waddle outfit):
 	decide on 16.
 
-To uniquely set up (C - a waddle outfit):
-	repair C;
-	now the armour of C is 15.
+To decide which number is the initial armour of (C - a waddle outfit):
+	decide on 15.
 
 Definition: a waddle outfit is pink themed: decide yes.
 

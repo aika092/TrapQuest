@@ -19,7 +19,7 @@ Check climbing something:
 	if the noun is not WoodsScenery03, say "How would that work?" instead;
 	if the player is prone, say "You need to be standing to climb a ladder." instead;
 	if the player is ankle bound, say "You can't climb the ladder with your ankles bound." instead;
-	if the player is immobile or there is a thing wrangling a body part, say "Aren't you a bit busy?" instead;
+	if the player is at least partially immobile, say "Aren't you a bit busy?" instead;
 	if the uses of WoodsScenery03 is 0, say "You've already seen what's through there, no need to look again." instead.
 
 [###Selkie: maybe one day extend this to operate across a few turns, where the player gets stuck as a fuckhole and something approaches from the other side: like a mannequin to adjust your face, or a denizen to use it; or something to climb the ladder behind you and make use of your other end? Even a fairy to play with your breasts: "Ooh, a cute cow has made herself ready for milking? So submissive!"]

@@ -600,7 +600,7 @@ To say FailedFacialDodge of (M - a monster):
 
 [!<SayUnavoidedFacialOfMonster>+
 
-Displays some flavour describing the player receiving a facial after a blowjob
+Displays some flavour describing the player accepting a facial after a blowjob
 
 @param <Monster>:<M> The monster having oral sex with the player
 
@@ -658,7 +658,7 @@ Displays some flavour describing the player spitting out a mouthful of semen aft
 To say VoluntarySpit of (M - a monster):
 	say "[if the bimbo of the player < 8][one of]You crinkle your nose and immediately spit [his of M] load onto the floor.[or]You glare up at [him of M] as you spit [his of M] [semen] out and into a puddle on the floor.[or]You stare daggers at [him of M] as you let [his of M] [semen] dribble out of your mouth and onto the floor.[or]You tremble, allowing your mouth to stay open as [semen] leaves your mouth in thick, gooey clumps.[in random order][otherwise if the bimbo of the player < 12][one of]You avoid [his of M] gaze as you spit [his of M] [semen] out of your mouth and into a puddle on the floor.[or]You hope [he of M] won't be too angry with you as you let the [semen] dribble out of your mouth and onto the floor.[or]You lean over, hoping [he of M] won't notice as you spit [his of M] load on the floor.[or]You hurriedly spit it out, uncomfortable with how good it felt to take it in your mouth like a slut.[in random order][otherwise][one of]You lean over, lewdly pressing your [BreastDesc] together as [his of M] [semen] falls out of your mouth in thick clumps.[or]You immediately spit [his of M] load onto the floor, opening your mouth wide as if to ask [him of M] to replace it.[or]You glance up at [him of M] as [semen] dribbles out of your mouth, silently begging [him of M] for punishment.[or]You gaze up at [him of M], massaging your [BreastDesc] as you allow [his of M] load to dribble out of your mouth and into a puddle on the floor.[in random order][end if]".
 
-[!<SayChestSpitOfMonster>+
+[!<SayForgivenessFlavOfMonster>+
 
 Displays some text describing a monster forgiving the player after disobeying them in some way. Triggered by the compute angry forgiveness function
 
@@ -1172,7 +1172,7 @@ Displays some text describing the player ejaculating whilst penetrating a monste
 
 @param <Monster>:<M> The monster occupying the player's penis
 +!]
-To compute erection orgasm of (M - a monster):
+To compute erection orgasm of (M - a thing):
 	follow the default ejaculation rule;
 	now penis is not penis-erect.[Although the above line is a default, and should be changed, this line should almost always be included, since automatic erection loss is skipped if anything is penetrating penis]
 
@@ -1296,7 +1296,12 @@ To compute ghost fleeing of (M - a monster):
 
 To compute (M - a monster) sleeping (N - a number) after sex:
 	now the sleep of M is N;
-	if newbie tips is 1, say sleeping tip.
+	if newbie tips is 1, say sleeping tip;
+	repeat with T running through temporarily-removed clothing held by M:
+		now T is in the location of the player;
+		now T is not temporarily-removed;
+		say "[BigNameDesc of M] is no longer holding onto your [T]!".
+
 
 [!<SayGangAnnounce>+
 

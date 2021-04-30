@@ -1,6 +1,6 @@
 Jelly Dildo by Sex Toys begins here.
 
-A jelldo is a kind of dong. There is 1 jelldo. The size of a jelldo is usually 4. The printed name of a jelldo is usually "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if]jelly dildo[clothing-title-after]". The text-shortcut of jelldo is "jd". Understand "jelly", "gel" as jelldo. A jelldo is usually pvc.
+A jelldo is a kind of dong. There is 1 jelldo. The size of a jelldo is usually 4. The printed name of a jelldo is usually "[clothing-title-before]jelly dildo[clothing-title-after]". The text-shortcut of jelldo is "jd". Understand "jelly", "gel" as jelldo. A jelldo is usually pvc.
 
 Figure of jelldo is the file "Items/Accessories/Toys/jelldo1.png".
 

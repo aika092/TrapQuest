@@ -67,7 +67,7 @@ To decide which number is the damage modifier of (H - a heels):
 		if the player is getting lucky:
 			now critical is 1;
 			decide on combat bonus;
-		if H is queen of hearts heels and the player is getting lucky: [Queen of Hearts heels get two attempts.]
+		if H is queen-of-hearts heels and the player is getting lucky: [Queen of Hearts heels get two attempts.]
 			now critical is 1;
 			decide on combat bonus;
 		decide on 0.
@@ -134,6 +134,20 @@ To set up heel length of (C - a heels):
 	if a random number between 1 and 2 is 1, increase P by 1;
 	if a random number between 1 and 2 is 1, increase P by 1;
 	now the heel-height of C is P.
+
+To set up magic attribute of (C - a heels):
+	let R be a random number between 1 and 8;
+	if C is cursed:
+		if R <= 2:
+			now C is posture training;
+		otherwise if R <= 4:
+			now C is stumbling;
+	otherwise:
+		if R is 1, now C is speed;
+		if R is 2, now C is kicking.
+
+To uniquely set up (C - a heels):
+	set up heel length of C.
 
 To say MonsterOfferRejectFlav of (M - a demoness) to (T - a heels):
 	say "[speech style of M]'Do I look like I have any need for another pair of heels?'[roman type][line break]".

@@ -145,8 +145,12 @@ To decide which text is himself of (M - hellhound):
 	decide on "[if mythical creature fetish is 1]itself[otherwise if lady fetish is 1]herself[otherwise]himself[end if]".
 
 To say LongDickDesc of (M - hellhound):
-	if mythical creatures fetish is 1, say "shiny red [DickDesc of M]";
+	if mythical creatures fetish is 1, say "[one of]slippery[or]slick[or]oily[in random order] canine [DickDesc of M]";
 	otherwise say "hard [DickDesc of M]".
+
+To say cockhead of (M - hellhound):
+	if mythical creatures fetish is 1, say "[one of]tapered[or]narrow[or]slender[in random order][if full-lady fetish is 1], plastic[otherwise] [one of]cockhead[or]tip[or]bellend[or]dicktip[in random order]";
+	otherwise say "[if full-lady fetish is 1]plastic [otherwise][one of]cockhead[or]tip[or]bellend[or]dicktip[in random order]".
 
 To say SummoningFlav of (M - hellhound):
 	if M is in the location of the player, say "The glow surrounding the mummy intensifies as a flaming rift tears open above it, and a dark shape charges through. The [printed name of M] emits a chilling howl, seizing the leash end of the collar with [his of M] teeth as the portal closes, and the mummy slowly returns to its feet.";
@@ -216,7 +220,7 @@ To compute perception of (M - hellhound):
 		say "[BigNameDesc of M] sniffs the air as a waft of your pheromones catches [his of M] attention. [big his of M] massive demon cock swells, and [he of M] turns towards you with visible aggression! [if mythical creature fetish is 1]You could swear you see [his of M] mouth form into a sinister smile[otherwise][big his of M] smile just got even wider[end if]...";
 	otherwise if pet collar is worn:
 		anger M;
-		say "[BigNameDesc of M] looks at your [pet collar] and seems to decide that this means you're [his of M] property. [he of M] turns towards you with visible aggression!";
+		say "[BigNameDesc of M] looks at your [pet collar] and seems to decide it means you're [his of M] property. [he of M] turns towards you with visible aggression!";
 	otherwise:
 		compute appearance assessment of M;
 		if M is friendly, bore M for 100 seconds;
@@ -257,10 +261,10 @@ To decide which number is the ass grope preference of (M - hellhound):
 	decide on -9999.
 
 To compute asshole grope of (M - hellhound):
-	say "[BigNameDesc of M] buries [his of M] nose in between your [AssDesc], sniffing your butthole[if mythical creature fetish is 1] with a big wet nose[end if]!".
+	say "[BigNameDesc of M] buries [his of M] snout in between your [AssDesc], sniffing your butthole[if mythical creature fetish is 1] with [his of M] big wet nose[end if]!".
 
 To compute face grope of (M - hellhound):
-	say "[BigNameDesc of M] licks your face with a wet sloppy tongue!".
+	say "[BigNameDesc of M] licks your face with [his of M] wet sloppy tongue!".
 
 To compute thighs grope of (M - hellhound):
 	say "[BigNameDesc of M] rubs [his of M] [if diaper quest is 1]padded[otherwise]exposed[end if] crotch up against your thigh!".
@@ -279,7 +283,7 @@ Part 3 - Combat
 Section 1 - Attack
 
 To compute damaging attack of (M - hellhound):
-	if a random number between 1 and 5 is 1 and the player is the donator and the health of M <= the maxhealth of M / 2:
+	if a random number between 1 and 5 is 1 and the health of M <= the maxhealth of M / 2:
 		compute shredding attack of M;
 	otherwise:
 		compute striking attack of M.
@@ -343,7 +347,7 @@ To compute fuckhole sex of (M - hellhound):
 		compute climax of M in F;
 		if M is knotted, now the sex-length of M is a random number between 2 and 5;
 	otherwise:
-		if mythical creature fetish is 1, say "[BigNameDesc of M] [one of]licks your face with a hot, slimy devil tongue as it continues to pound away at your [variable F][or]pistons away in your [variable F] with incredible speed[or]repeatedly drills into you, plundering the depths of your [variable F] with [his of M] slippery canine cock[in random order].";
+		if mythical creature fetish is 1, say "[BigNameDesc of M] [one of]licks your face with a hot, slimy devil tongue as [he of M] continues to pound away at your [variable F][or]pistons away in your [variable F] with incredible speed[or]repeatedly drills into you, plundering the depths of your [variable F] with [his of M] [LongDickDesc of M][in random order].";
 		otherwise say "[BigNameDesc of M] [one of]licks the back of your neck with [his of M] warm tongue as [he of M] continues to pound away at your [variable F][or]pistons away in your [variable F] with incredible speed[or]repeatedly drills into you, plundering the depths of your [variable F] with [his of M] [DickDesc of M][in random order].";
 		decrease the sex-length of M by 1;
 		if the reaction of the player > 0, say "[one of]You feel further humiliated by the fact that you are letting [him of M] fuck you.[or][or][or][cycling]";
@@ -492,26 +496,70 @@ This is the hellhound never convinced rule:
 	if presented-orifice is not nothing, say "[BigNameDesc of current-monster] shows no indication of being persuaded by your action.".
 The monster convinced rule of hellhound is usually the hellhound never convinced rule.
 
-To say AssholePenetrationFlav of (M - hellhound):
-	say FuckholePenetrationFlav of M.
-
-To say VaginaPenetrationFlav of (M - hellhound):
-	say FuckholePenetrationFlav of M.
-
 To set up sex length of (M - hellhound) in (B - a body part):
 	if the sex-length of M < 5, now the sex-length of M is a random number between 3 and 4;
 	if the sex-length of M > 5, now the sex-length of M is 5.
 
-To say FuckholePenetrationFlav of (M - hellhound):
-	let F be the chosen-orifice of M;
+To say GrabbedPrep of (M - hellhound) with (G - a monster) in (F - vagina):
+	say "[BigFuckerDesc of M] mounts you, pinning you down even further with [his of M] [if mythical creature fetish is 1]massive [end if]weight.".
+
+To say GrabbedPrep of (M - hellhound) with (G - a monster) in (F - asshole):
+	say GrabbedPrep of M with G in vagina.
+
+To say TwosomePrep of (M - hellhound) in (F - vagina):
+	say "Standing over you on all fours, [FuckerDesc of M] places [his of M] front [if mythical creature fetish is 0][']paws['][otherwise]paws[end if] over your hands, preventing you from moving at all. [if mythical creature fetish is 1]As if it would have mattered anyway - the demon is so heavy that all [he of M] had to do was put its weight on you! [end if]";
+
+To say TwosomePrep of (M - hellhound) in (F - asshole):
+	say TwosomePrep of M in vagina.
+
+To say ThreesomePrep of (M - hellhound) with (N - a monster) in (F - vagina):[Does this monster have something unique for double penetration, or do N and M interact in a special way? override this function]
+	if N is intelligent, say "The [N] flips you so your head is resting on [his of N] chest, holding you by the waist as [FuckerDesc of M] [if mythical creature fetish is 0]climbs onto your back[otherwise]drops [his of M] weight on top of you[end if].";
+	otherwise say "[BigFuckerDesc of M] adds [himself of M] to the pile, pinning you down even further under [his of M] weight.".
+
+To say ThreesomePrep of (M - hellhound) with (N - a monster) in (F - asshole):
+	say ThreesomePrep of M with N in vagina.
+
+To say SpitroastPrep of (M - hellhound) with (O - a monster) in (F - vagina):
+	say TwosomePrep of M in F;
+
+To say SpitroastPrep of (M - hellhound) with (O - a monster) in (F - asshole):
+	say TwosomePrep of M in F;
+
+To say FoursomePrep of (M - hellhound) with (N - a monster) and (O - a monster) in (F - vagina):
+	say "[BigFuckerDesc of M] adds [himself of M] to the pile, pinning you down even further under [his of M] weight.".
+
+To say FoursomePrep of (M - hellhound) with (N - a monster) and (O - a monster) in (F - vagina):
+	say "[BigFuckerDesc of M] adds [himself of M] to the pile, pinning you down even further under [his of M] weight.".
+
+To say AssholePenetrationFlav of (M - hellhound):
+	say PenPrep of M in asshole;
+	say "[one of][BigFuckerDesc of M] begins to thrust blindly, sending [his of M] [DickDesc of M] prodding[or]Once again, [FuckerDesc of M]'s [DickDesc of M] begins to blindly probe[stopping] between your [AssDesc]. No! You try to clench your cheeks shut, but [if mythical creature fetish is 1][his of M] shaft feels surprisingly oily and slippery[otherwise][he of M] doesn't seem disheartened at all[end if], and you have a bad feeling [one of]you know exactly how this is going to end[or]this is about to end the same way it did before[stopping]...";
 	now M is unknotted;
-	say "Standing over you on all fours, [NameDesc of M] places [his of M] front [if mythical creature fetish is 0][']paws['][otherwise]paws[end if] over your hands, preventing you from moving at all. [if mythical creature fetish is 1]As if it would have mattered anyway - the demon is so heavy that all [he of M] had to do was put its weight on you! [end if][BigNameDesc of M] thrusts blindly, sending [his of M] [DickDesc of M] prodding between your butt-cheeks. [one of]No! You clench your ass-cheeks, trying to deny [him of M] entrance, but [if mythical creature fetish is 0][NameDesc of M] does not seem to become disheartened as [he of M] just keeps on trying[otherwise]the long member feels surprisingly oily and slippery[end if], and you have a bad feeling you know where this is going to end...[or]Once again [he of M] probes blindly between your thighs...[stopping] You do not have to wait long before [he of M] comes across an opening, and sensing that victory is close, [NameDesc of M] begins pressing forward. You hear [him of M] howl as the tip of [his of M] [DickDesc of M] pierces into your [variable F], but you could swear that the howl somehow sounds like laughter.".
+	if the analvirgin of the player is 1:
+		say AnalDefloweringFlav of M;
+	otherwise:
+		say "You do not have to wait long before [he of M] finds [one of]what [he of M]'s looking for[or][his of M] target[or][his of M] mark[in random order], and sensing that victory is close, [FuckerDesc of M] begins pressing forward. You hear [him of M] howl as [his of M] [one of][cockhead of M] pierces[or][LongDickDesc of M] spears[or][LongDickDesc of M] pierces[or][cockhead of M] spears[in random order] into your [asshole], but you could swear that the howl somehow sounds like laughter.".
+
+To say AnalDefloweringFlav of (M - hellhound):
+	say "You do not have to wait long before [he of M] finds what [he of M]'s looking for, and sensing that victory is close, [FuckerDesc of M] begins pressing forward. [big his of M] [cockhead of M] forces open your sphincter almost excruciating slowness, as if savouring the act of taking your first time. Just when you think it might never end, [FuckerDesc of M] suddenly bears down with all of [his of M] weight, letting out a cruel howl as [he of M] forces every inch of [his of M] [LongDickDesc of M] in all at once!".
+
+To say VaginaPenetrationFlav of (M - hellhound):
+	say PenPrep of M in vagina;
+	say "[one of][BigFuckerDesc of M] begins to thrust blindly, sending [his of M] [DickDesc of M] prodding[or]Once again, [FuckerDesc of M]'s [DickDesc of M] begins to blindly probe[stopping] between your thighs. No! You try to close your legs, but [if mythical creature fetish is 1][his of M] shaft seems like its the perfect shape for getting into small openings[otherwise][he of M] doesn't seem disheartened at all[end if], and you have a bad feeling [one of]you know exactly how this is going to end[or]this is about to end the same way it did before[stopping]...";
+	now M is unknotted;
+	if the vaginalvirgin of the player is 1:
+		say VaginalDefloweringFlav of M;
+	otherwise:
+		say "You do not have to wait long before [one of]something hard brushes your labia[or]something hard suddenly pokes between your labia[or]something hard touches your outer folds[in random order], and sensing that victory is close, [FuckerDesc of M] begins pressing forward. You hear [him of M] howl as [his of M] [one of][cockhead of M] slides[or][LongDickDesc of M] pushes[or][LongDickDesc of M] slides[or][cockhead of M] pushes[in random order] into your [vagina], but you could swear that the howl somehow sounds like laughter.".
+
+To say VaginalDefloweringFlav of (M - hellhound):
+	say "You do not have to wait long before something hard brushes your labia, and sensing that victory is close, [FuckerDesc of M] begins pressing forward. [big his of M] [cockhead of M] is only briefly stopped by your hymen, easily tearing through it and removing your virginity forever. [big he of M] howls, but you could swear [he of M] was laughing as [his of M] [LongDickDesc of M] slides in.";
 
 This is the hellhound fills diaper rule:
 	let M be current-monster;
 	if the player is diaper focused:
 		let D be a random worn diaper;
-		say "[BigNameDesc of M] mounts you from behind, [his of M] [if mythical creature fetish is 1]canine [end if][DickDesc of M] struggling to find anything to penetrate thanks to your well-padded rear. Unable to make [his of M] way inside, [he of M] settles for humping against your [ShortDesc of D] while you lay there unable to move from under [his of M] immense weight. As [NameDesc of M][']s movements become more frantic, [his of M] [DickDesc of M] manages to slip into one of the leg-holes of your diaper. Stimulated by this sudden change in sensation, [NameDesc of M] ejaculates, coating your butt cheeks with [if mythical creature fetish is 1]canine[end if] [semen]. You hold still as [NameDesc of M] pulls away, leaving you with [his of M] musky seed seeping into your padding.";
+		say "[BigNameDesc of M] mounts you from behind, [his of M] [if mythical creature fetish is 1]canine [end if][DickDesc of M] struggling to find anything to penetrate thanks to your well-padded rear. Unable to make [his of M] way inside, [he of M] settles for humping against your [ShortDesc of D] while you lay there unable to move from under [his of M] immense weight. As [NameDesc of M][']s movements become more frantic, [his of M] [DickDesc of M] manages to slip into one of the leg-holes of your diaper. Stimulated by this sudden change in sensation, [NameDesc of M] ejaculates, coating your butt cheeks with [if mythical creature fetish is 1]canine [end if][semen]. You hold still as [NameDesc of M] pulls away, leaving you with [his of M] musky seed seeping into your padding.";
 		CumSoak 3 on D;
 		satisfy M;
 		rule succeeds.
