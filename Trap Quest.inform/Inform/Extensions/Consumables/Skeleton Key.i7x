@@ -21,14 +21,18 @@ Check unlocking:
 	if the noun is toilet and the human-toilet-scene of woman-player > 1, compute woman toilet release instead;
 	if the noun is not clothing, say "You can only try to unlock bondage." instead;
 	if the noun is not locked, say "It's [if the noun is worn cursed clothing]not kept on you with a physical lock, but with a magic curse[otherwise if the noun is worn glued clothing]not kept on you with a physical lock, but with some kind of strong glue[otherwise if the noun is bondage]already unlocked[otherwise]not locked on you[end if]." instead;
-	if skeleton key is not held, say "You don't have a key that fits that lock." instead;
+	if skeleton key is not held, say "You don't have a key that fits that lock[if skeleton key is in the location of the player] (you need to pick it up first)[end if]." instead;
 	if the player is in danger, say "You can't do that in the middle of combat!" instead.
 Carry out unlocking:
-	say "[if the noun is wrist bond]With some careful finger work, you[otherwise]You[end if] slot the key into the lock and twist. The lock clicks open! The key dissolves into dust.";
-	now the noun is unlocked;
-	check stealing of skeleton key;
-	destroy skeleton key;
-	allocate 6 seconds.
+	allocate 6 seconds;
+	if the player is getting unlucky:
+		say "You fumble with the lock and end up dropping the key on the floor! Oops, better try again! [GotUnluckyFlav]";
+		now skeleton key is in the location of the player;
+	otherwise:
+		say "[if the noun is wrist bond]With some careful finger work, you[otherwise]You[end if] slot the key into the lock and twist. The lock clicks open! The key dissolves into dust.";
+		now the noun is unlocked;
+		check stealing of skeleton key;
+		destroy skeleton key.
 Understand "unlock [something]", "unlock [something] with key" as unlocking.
 
 Check inserting an unlock-key into something:

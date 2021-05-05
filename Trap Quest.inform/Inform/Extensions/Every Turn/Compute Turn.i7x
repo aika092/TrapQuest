@@ -513,7 +513,7 @@ To Compute Instinctive Actions:
 	if another-turn is 0, follow the hypno triggers rules;
 	now hypno-trigger is "";
 	if another-turn is 0, Compute Compulsions;
-	if the player is in Dungeon31 and another-turn is 0, compute podium action;
+	if another-turn is 0 and the player is in Dungeon31, compute podium action;
 	if another-turn is 0, Compute Broken Actions.
 
 To Compute Compulsions:

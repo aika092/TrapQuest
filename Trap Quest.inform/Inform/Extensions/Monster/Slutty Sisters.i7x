@@ -433,14 +433,6 @@ Part 4 - Conversation
 
 Section 1 - Greeting
 
-To compute basic greeting to (M - a slutty sister):
-	[If the greet-window of M < 1 or M is not interested:
-		compute vanity greeting of M;
-	otherwise:
-		compute conventional greeting of M;]
-	if M is not interested:
-		check perception of M.
-
 To say FirstGreeting to (M - a slutty sister):
 	say "[if the bimbo of the player < 10][first custom style][end if]";
 	if the bimbo of the player < 5 and the player is gendered female:

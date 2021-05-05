@@ -845,9 +845,9 @@ Figure of queen-of-spades snowbunny crotch tattoo is the file "Items/Tats/tattoo
 To decide which figure-name is the examine-image of (T - queen-of-spades snowbunny crotch tattoo):
 	decide on figure of queen-of-spades snowbunny crotch tattoo.
 
-Figure of queen-of-spades snowbunny face tattoo is the file "Items/Tats/tattoo192.jpg".
-To decide which figure-name is the examine-image of (T - queen-of-spades snowbunny face tattoo):
-	decide on figure of queen-of-spades snowbunny face tattoo.
+Figure of queen of spades snowbunny facial tattoo is the file "Items/Tats/tattoo192.jpg".
+To decide which figure-name is the examine-image of (T - queen of spades snowbunny facial tattoo):
+	decide on figure of queen of spades snowbunny facial tattoo.
 
 Figure of queen-of-spades tribal tattoo is the file "Items/Tats/tattoo182.jpg".
 To decide which figure-name is the examine-image of (T - queen-of-spades tribal tattoo):

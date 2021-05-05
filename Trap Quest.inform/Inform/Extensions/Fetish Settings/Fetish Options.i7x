@@ -269,7 +269,7 @@ This is the alcohol random rule:
 The alcohol random rule is listed in the random mode rules.
 
 To decide which number is lady fetish:
-	if the player is not a top donator or diaper quest is 1, decide on 0;
+	if the player is not a top donator, decide on 0;
 	if choice in row 70 of the Table of Player Options <= 0, decide on 0;
 	otherwise decide on choice in row 70 of the Table of Player Options / 2.
 To decide which number is full-lady fetish:[lady fetish should come with a disclaimer that futa may be unavoidable. full-lady indicates that futa is off and lady fetish is on]

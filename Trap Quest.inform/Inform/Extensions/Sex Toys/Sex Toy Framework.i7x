@@ -228,7 +228,7 @@ To compute gripping of (I - a thing):
 				otherwise say "[if the bimbo of the player < 7][line break][first custom style]Holy shit, that felt pretty intense![otherwise if the bimbo of the player < 14][line break][variable custom style]I can't believe how good that made my [asshole] feel![otherwise][line break][second custom style]MM, I love that feeling![end if][roman type][line break]";
 			otherwise:
 				anally orgasm shamefully;
-			now I is not penetrating asshole;
+			dislodge I;
 			now I is in the location of the player;
 			if newbie tips is 1, say "[one of][newbie style]Toys won't fall out while you are on your knees.[roman type][line break][or][stopping]";
 			repeat with M running through reactive people:
@@ -256,7 +256,7 @@ To compute gripping of (I - a thing):
 				say "[if the bimbo of the player < 7][line break][first custom style]Holy shit, that felt pretty intense![otherwise if the bimbo of the player < 14][line break][variable custom style]I can't believe how good that made my [vagina] feel![otherwise][line break][second custom style]MM, I love that feeling![end if][roman type][line break]";
 			otherwise:
 				vaginally orgasm shamefully;
-			now I is not penetrating vagina;
+			dislodge I;
 			now I is in the location of the player;
 			repeat with M running through reactive people:
 				compute toy expulsion reaction of M;

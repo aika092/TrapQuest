@@ -102,7 +102,7 @@ To trigger (Y - a bukkake hose):
 	let X be 10 - (a random number between 6 and the dexterity of the player);
 	if X < 2, now X is 2;
 	if a random number between 0 and bukkake fetish is 1:
-		say "A hose hidden inside the container suddenly starts spraying out [semen]. It gets all over your face[if the largeness of breasts > 5] and [BreastDesc][end if]!";
+		say "A hose hidden inside the container suddenly starts spraying out [semen]. It gets all over your face[if the largeness of breasts > 5] and chest area[end if]!";
 		cutshow figure of hose cutscene 1 for face;
 		if the largeness of breasts > 5:
 			AnnouncedSquirt semen on face by X / 2;

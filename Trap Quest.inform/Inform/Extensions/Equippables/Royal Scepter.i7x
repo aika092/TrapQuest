@@ -23,7 +23,7 @@ To say ClothingDesc of (W - royal scepter):
 			if the refractory-period of M < 0 and the boredom of M <= 0:
 				say "[BigNameDesc of M] is bored and horny. This might be a good time to find a way to make [him of M] happy. ";
 				let D be up;
-				if playerRegion is Dungeon:
+				if M is not in the location of the player and playerRegion is Dungeon:
 					let L be the location of M;
 					now D is the best route from the location of the player to L through labyrinth rooms;
 				if D is a direction and D is not up, say "The shortest path to [him of M] from here is [bold type][D][roman type].";

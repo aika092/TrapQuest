@@ -7,6 +7,12 @@ last-turn-flight is a number that varies. last-turn-flight is 0.
 To compute flight:
 	follow the player class rules; [We want to make sure we know what the player class is]
 	if the player is flying, compute fatigue loss;
+	if the player is in Sky01:
+		repeat with T running through things in Sky01:
+			if T is not held and T is not a person and T is not a backdrop:
+				say "[BigNameDesc of T] falls down to the ground! ";
+				let L be a random placed discovered no-roof room;
+				say "It looks like it landed near the [L][if L is a haunted room] (in the Mansion)[end if].";
 	if last-turn-flight is 1 and the player is not flying, compute landing;
 	if last-turn-flight is 0 and the player is flying, compute takeoff.
 

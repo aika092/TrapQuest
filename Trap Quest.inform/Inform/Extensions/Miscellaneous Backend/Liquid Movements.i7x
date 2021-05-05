@@ -146,6 +146,7 @@ To display cumshot reaction to (N - a number): [displays an appropriate image fo
 		cutshow figure of cumshot reaction 2 for face;
 
 To UniqueSquirt (L - a liquid-object) On (C - Face) by (N - a number):
+	if debugmode > 1, say "[if inside-out is false]Squirting[otherwise]Expelling[end if] [N] units of [L] on face.";
 	let M be N / 2; [50% of the fluid (rounded down) is going to be redirected to headgear & hair]
 	if L is semen:
 		increase times-bukkaked by 1;
@@ -191,6 +192,7 @@ To UniqueSquirt (L - a liquid-object) On (C - Face) by (N - a number):
 		PuddleUp L by N.
 
 To UniqueSquirt (L - a liquid-object) On (C - Hair) by (N - a number):
+	if debugmode > 1, say "[if inside-out is false]Squirting[otherwise]Expelling[end if] [N] units of [L] on hair.";
 	let H be a random worn able to take more liquid headgear;
 	if inside-out is false and H is unsoaked headgear: [we have found a headgear to take half of the liquid hitting hair]
 		let M be N / 2; [headgear]
@@ -251,11 +253,19 @@ To decide which object is highest-cleavage-clothing:
 	decide on B.
 
 To UniqueSquirt (L - a liquid-object) On (C - Breasts) by (N - a number):
+	if debugmode > 1, say "[if inside-out is false]Squirting[otherwise]Expelling[end if] [N] units of [L] on breasts.";
 	if inside-out is false: [liquid is coming from the outside inwards]
 		let HC be highest-cleavage-clothing;
 		let HCC be the cleavageCover of HC;
+		if debugmode > 1, say "Cleavage cover of [HC] is [HCC].";
 		let M be N;
-		if the player is showing cleavage, now M is (N * HCC) / 8; [the amount blocked by clothing]
+		if the player is showing cleavage: [calculate the number of units blocked by clothing]
+			let CLVH be N * HCC;
+			now M is CLVH / 8; [cleavage cover is ranked out of 8]
+			if debugmode > 1, say "[M] units definitiely going to [HC]. Checking for leftover unit...";
+			now CLVH is the remainder after dividing CLVH by 8;
+			if a random number between 1 and 8 <= CLVH, increase M by 1; [randomise whether the borderline unit hits cleavage or clothing]
+			if debugmode > 1, say "A total of [M] units are redirected to [HC].";
 		if L is semen:
 			if lipstick collar is worn, increase N by 1;
 			if M > 0 and HC is unsoaked clothing:
@@ -312,6 +322,7 @@ To UniqueSquirt (L - a liquid-object) On (C - Breasts) by (N - a number):
 		PuddleUp L by N.
 
 To UniqueSquirt (L - a liquid-object) On (C - Belly) by (N - a number):
+	if debugmode > 1, say "[if inside-out is false]Squirting[otherwise]Expelling[end if] [N] units of [L] on belly.";
 	if inside-out is false: [liquid is coming from the outside inwards]
 		let BC be a random worn top level belly cover clothing;
 		if BC is unsoaked clothing:
@@ -347,6 +358,7 @@ To UniqueSquirt (L - a liquid-object) On (C - Belly) by (N - a number):
 		PuddleUp L by N.
 
 To UniqueSquirt (L - a liquid-object) On (C - Hips) by (N - a number):
+	if debugmode > 1, say "[if inside-out is false]Squirting[otherwise]Expelling[end if] [N] units of [L] on hips.";
 	if inside-out is false: [liquid is coming from the outside inwards]
 		let CC be a random worn top level crotch cover clothing;
 		let CCM be the hipModesty of CC; [ratio of ass covered...]
@@ -389,6 +401,7 @@ To UniqueSquirt (L - a liquid-object) On (C - Hips) by (N - a number):
 		PuddleUp L by N.
 
 To UniqueSquirt (L - a liquid-object) On (C - Thighs) by (N - a number):
+	if debugmode > 1, say "[if inside-out is false]Squirting[otherwise]Expelling[end if] [N] units of [L] on thighs.";
 	if inside-out is false: [liquid is coming from the outside inwards]
 		let TC be a random worn top level thigh cover clothing;
 		if TC is unsoaked clothing:

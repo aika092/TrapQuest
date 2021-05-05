@@ -131,7 +131,7 @@ To say QuestTitle of (Q - greet-quest):
 To progress quest of (Q - greet-quest):
 	increase the cheer-greets of Q by 1;
 	let S be a random worn headgear;
-	if the cheer-greets of Q < (a random number between 3 and 4) and S is headgear:
+	if the cheer-greets of Q < (a random number between 3 and 4) and S is headgear and the quest of S is Q:
 		say "Your [ShortDesc of S] pulses happily. Keep it up!";
 	otherwise:
 		now the cheer-greets of Q is 0;

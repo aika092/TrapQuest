@@ -304,6 +304,7 @@ To BraGrow (B - a bra): [Checks if the bra is cursed and if so it tries to grow 
 A bikini top is a kind of bra. A bikini top is usually nylon. A bikini top is usually optional-top-displacable. A bikini top is usually plentiful. A bikini top is usually low cut. A bikini top is usually erect-nipple-exposing. Understand "bikini", "top" as bikini top.
 
 The text-shortcut of bikini top is "bt".
+Definition: a bikini top is swimming themed: decide yes.
 
 Definition: a bikini top is same-type:
 	if theme-share-target is bikini top or (theme-share-target is bra and there is worn bikini bottoms), decide yes;
@@ -313,8 +314,7 @@ The min size of a bikini top is usually 2. The max size of a bikini top is usual
 
 A string bikini top is a kind of bikini top. The min size of a string bikini top is usually 20. The max size of a string bikini top is usually 20. A string bikini top is usually ridiculously low cut. A string bikini top is usually transformation-rare. [Essentially a string bikini top comes in one size fits all]
 
-Definition: a string bikini top is uncovered themed: decide yes.
-Definition: a string bikini top is swimming themed: decide yes.
+[Definition: a string bikini top is uncovered themed: decide yes.]
 
 To say CupDesc of (C - a string bikini top):
 	say "".

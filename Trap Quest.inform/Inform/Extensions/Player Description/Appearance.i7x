@@ -12,6 +12,8 @@ To say PerceivedBimboDesc:
 		say "You look very feminine, but not outrageous enough to call slutty.";
 	otherwise if P is 5:
 		say "You look very provocative; in a club setting you'd be followed around by a swarm of guys all night.";
+	otherwise if the player is naked and the make-up of face is 0:
+		say "You are naked. It would be inappropriate to stride around in your birthday suit.";
 	otherwise if P < 8:
 		say "Your appearance can be described as nothing except slutty - your attire is quite clearly a provocative statement.";
 	otherwise if P < 10:

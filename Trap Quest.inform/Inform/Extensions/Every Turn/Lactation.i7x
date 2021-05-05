@@ -83,6 +83,7 @@ To trigger lactation:
 		say "[bold type]";
 		let M be a random number from 1 to (the milk volume of breasts / 2);
 		if M < 2, now M is 2;
+		if the milk volume of breasts is 2, now M is 1;
 		let CGM be the the milk volume of breasts - the flesh volume of breasts;
 		if the class of the player is cowgirl and CGM < M, now M is CGM; [cowgirls stay at maximum fill and only expel the excess]
 		increase the lactation-count of the player by 1;

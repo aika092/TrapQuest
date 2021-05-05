@@ -227,7 +227,6 @@ To decide which number is halloween content:
 	decide on 1.
 
 To decide which number is futanari fetish:
-	if diaper quest is 1, decide on 0;
 	if lady fetish is 2, decide on 0;
 	decide on the choice in row 68 of the Table of Player Options.
 

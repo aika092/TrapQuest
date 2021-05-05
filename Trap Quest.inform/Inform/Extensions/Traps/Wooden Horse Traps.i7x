@@ -190,7 +190,7 @@ To trigger (Y - a wild horse):
 		say "A giant triangular block of wood with a horse head at the front shoots out from the ground beneath you, [if the player is prone]forcing you upright and [end if]pulling you up until your feet aren't touching the floor. The force of it on [NameDesc of G] causes you to gain some airtime after the horse reaches its full height, and you come tumbling down next to the horse.";
 		if seconds > 0 and the player is upright, try kneeling;
 		repeat with F running through fuckholes penetrated by G:
-			ruin G;
+			ruin F;
 	otherwise:
 		say "A giant triangular block of wood with a horse head at the front shoots out from the ground beneath you, [if the player is prone]forcing you upright and [end if]pulling you up until your feet aren't touching the floor. All of your weight is forced onto the top corner of this wooden 'horse' and more specifically onto your [if the player is possessing a vagina][vagina] and [end if][asshole]. You hear a pre-recorded whinny as the horse begins to 'gallop' through the clearing, each movement rubbing small grooves in the wood up against your crotch. [if the latex-transformation of the player > 3]Your rubbery crotch is unaffected by the weight on it. [otherwise if the player is diapered]The padding of your diaper is helping at bit but the pain is still unmanageable. [otherwise if the weight of the player < 5]Your light weight is helping at bit but the pain is still unmanageable. [otherwise if the weight of the player > 15]Your weight is making it even worse! [end if]You look at the plastic cord around its neck. Looks like you're going to have to tame this wild horse!";
 		now the stance of the player is 0;

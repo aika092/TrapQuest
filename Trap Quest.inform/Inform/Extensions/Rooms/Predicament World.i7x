@@ -242,10 +242,11 @@ Predicament-Pen is a room. [stored items that would make the predicament difficu
 predicamentPenList is a list of things that varies.
 predicamentWornList is a list of things that varies.
 To say PredicamentPenCheck:
-	repeat with C running through predicamentPenList:
-		if C is not in Predicament-Pen:
-			say "[C] missing from Predicament Pen!";
-			now C is in Predicament-Pen.
+	if tough-shit is 0:
+		repeat with C running through predicamentPenList:
+			if C is not in Predicament-Pen:
+				say "[C] missing from Predicament Pen!";
+				now C is in Predicament-Pen.
 
 Report going when the player is in Predicament20:
 	let abnormalClothingSituation be 0;
@@ -267,29 +268,32 @@ Report going when the player is in Predicament20:
 			dislodge C;
 			now C is in the location of the player;
 		otherwise:
-			now abnormalClothingSituation is 1;
-	repeat with C running through predicamentPenList:
-		say "[BigNameDesc of C] reappears on you! ";
-		if C is dress:
-			repeat with D running through worn dress:
-				say "[BigNameDesc of D] falls to the ground to make room for it.";
-				now D is in the location of the player;
-		now C is worn by the player;
-		if C is clothing:
-			layer C correctly;
-			now C is sure;
-			now C is identified;
-		if C is ass plugging clothing:
-			now C is penetrating asshole;
-		otherwise if C is vagina plugging clothing:
-			if the player is possessing a vagina, now C is penetrating vagina;
-		otherwise if C is insertable:
-			let F be asshole;
-			if (C is not plug or asshole is actually occupied) and the player is possessing a vagina, now F is vagina;
-			now C is penetrating F;
-		otherwise if C is gag:
-			if C is not ringagged, now C is penetrating face;
-		say line break;
+			if C is worn clothing and C is not piercing and C is not armband and C is not combat visor and C is not listed in predicamentPenList:
+				if debugmode > 0, say "The [C] is blocking the player wearing their outfit again.";
+				now abnormalClothingSituation is 1;
+	if tough-shit is 0:
+		repeat with C running through predicamentPenList:
+			say "[BigNameDesc of C] reappears on you! ";
+			if C is dress:
+				repeat with D running through worn dress:
+					say "[BigNameDesc of D] falls to the ground to make room for it.";
+					now D is in the location of the player;
+			now C is worn by the player;
+			if C is clothing:
+				layer C correctly;
+				now C is sure;
+				now C is identified;
+			if C is ass plugging clothing:
+				now C is penetrating asshole;
+			otherwise if C is vagina plugging clothing:
+				if the player is possessing a vagina, now C is penetrating vagina;
+			otherwise if C is insertable:
+				let F be asshole;
+				if (C is not plug or asshole is actually occupied) and the player is possessing a vagina, now F is vagina;
+				now C is penetrating F;
+			otherwise if C is gag:
+				if C is not ringagged, now C is penetrating face;
+			say line break;
 	truncate predicamentPenList to 0 entries;
 	if tough-shit is 0:
 		if the make-up of face is not predicamentSavedMakeUp:
@@ -547,7 +551,7 @@ To say FlashFlav of (M - a camera-bystander):
 	say HumiliateReflect (the appearance of the player * 30).
 
 To compute toy expulsion reaction of (M - a camera-bystander):
-	say "[BigNameDesc of M] leaps in surprise, but [his of M] camera is at the ready![italic type]CLICK! CLICK! CLICK! CLICK![roman type][line break]And then... a 'whoosh' sound as [he of M] sends the photo to who knows how many people![line break][strongHumiliateReflect]";
+	say "[BigNameDesc of M] leaps in surprise, but [his of M] camera is at the ready![line break][italic type]CLICK! CLICK! CLICK! CLICK![roman type][line break]And then... a 'whoosh' sound as [he of M] sends the photo to who knows how many people![line break][strongHumiliateReflect]";
 	now M is interested;
 	let T be "you in public, as a sex toy falls from your orifice to the ground below";
 	compute digital reputation damage T strength 16 quality (a random number between 1 and 3);
@@ -1492,7 +1496,7 @@ Definition: serving-tray-predicament is appropriate:
 	if the rank of the player is (2 + diaper quest) and the player is able to get horny, decide yes;
 	decide no.
 To set up bystanders for (P - serving-tray-predicament):
-	set up 29 bystanders.
+	set up 22 bystanders.
 
 To decide which text is PredicamentActivity of (P - serving-tray-predicament):
 	decide on "you giving out free cupcakes in humiliating attire in [if the player is in a park room]a public park[otherwise]your neighbourhood[end if]".
@@ -2882,27 +2886,35 @@ To execute (L - team-football-predicament):
 	summon grey-sneakers uncursed;
 	now football is in Park02;
 	set up predicament universe;
-	say "Suddenly, you find yourself standing outside the cubicles of a ladies['] toilets. [BigNameDesc of ST] is there with you, wearing some sort of slutty soccer gear. A padlock at the waist keeps [his of ST] very tight shorts stuck on, and a bump in front of [his of ST] crotch is a tell-tale sign that [he of ST] has some kind of vibrator fastened to [his of ST] genitals. [big his of ST] hands appear to be locked in goalkeeping gloves. You look down at yourself... you're wearing exactly the same outfit.[line break][variable custom style]Uh-oh.[roman type][line break]A voice comes from a hidden speaker.[paragraph break][first custom style]'WELCOME TO EXTRA CREDIT CLASS. [PredicamentRewardExplanation]THE DOORS TO YOUR HOUSES ARE CURRENTLY LOCKED. A FOOTBALL IS WAITING FOR YOU ON THE OTHER SIDE OF THE BATHROOM DOOR. WHEN THE FOOTBALL MOVES MORE THAN THIRTY FEET AWAY FROM ONE OF YOUR VIBRATORS, THAT PLAYER LOSES, THE GAME ENDS, AND THE DOORS UNLOCK. THE LOSER'S VIBRATOR WILL GET STUCK ON MAXIMUM POWER, AND SHOOT A LARGE LOAD OF WARM FRESH CUM INTO THE WEARER'S [if the player is possessing a vagina][caps cunt][otherwise]PANTS[end if]. MOVING YOUR FOOTBALL GLOVES TOO CLOSE TO THE BALL WILL RESULT IN IMMEDIATE LOSS. UNTIL THE GAME ENDS, THE CLOSER YOU GET TO THE BALL, THE STRONGER YOUR VIBRATOR WILL BUZZ. HAVE FUN!'[PredicamentRewardExplanationReaction][roman type][line break]You and [NameDesc of ST] look at each other. You know what you have to do.";
+	say "Suddenly, you find yourself standing outside the cubicles of a ladies['] toilets. [BigNameDesc of ST] is there with you, wearing some sort of slutty soccer gear. A padlock at the waist keeps [his of ST] very tight shorts stuck on, and a bump in front of [his of ST] crotch is a tell-tale sign that [he of ST] has some kind of vibrator fastened to [his of ST] genitals. [big his of ST] hands appear to be locked in goalkeeping gloves. You look down at yourself... you're wearing exactly the same outfit.[line break][variable custom style]Uh-oh.[roman type][line break]A voice comes from a hidden speaker.[paragraph break][first custom style]'WELCOME TO EXTRA CREDIT CLASS. [PredicamentRewardExplanation]A FOOTBALL IS WAITING FOR YOU ON THE OTHER SIDE OF THE BATHROOM DOOR. WHEN THE FOOTBALL MOVES MORE THAN THIRTY FEET AWAY FROM ONE OF YOUR VIBRATORS, THAT PLAYER LOSES, THE GAME ENDS, AND THE DOORS UNLOCK. THE LOSER'S VIBRATOR WILL GET STUCK ON MAXIMUM POWER, AND SHOOT A LARGE LOAD OF WARM FRESH CUM INTO THE WEARER'S [if the player is possessing a vagina][caps cunt][otherwise]PANTS[end if]. MOVING YOUR FOOTBALL GLOVES TOO CLOSE TO THE BALL WILL RESULT IN IMMEDIATE LOSS. UNTIL THE GAME ENDS, THE CLOSER YOU GET TO THE BALL, THE STRONGER YOUR VIBRATOR WILL BUZZ. THE KEYS TO YOUR CLOTHES ARE IN YOUR HOUSES. HAVE FUN!'[PredicamentRewardExplanationReaction][roman type][line break]You and [NameDesc of ST] look at each other. You know what you have to do.";
 	display entire map.
 
 An all later time based rule:
 	if current-predicament is team-football-predicament and the game-state of team-football-predicament is 0:
 		let FL be the location of football;
-		if (the player is not in Toilet02 or FL is not Park02) and the distance of FL > (a random number between 1 and 2):
+		if (the player is not in Toilet02 or FL is not Park02) and (the player is not in a predicament room or (the distance of FL > (a random number between 1 and 2))):
 			if debugmode > 0, say "Player in [location of the player] ([grid position of (the location of the player)]); Football in [FL] ([grid position of FL]). Distance is [distance of FL].";
 			let M be team-predicament-partner;
 			now the game-state of team-football-predicament is 2;
 			now the football-possessor of football is headmistress;
-			say "[bold type]Your vibrator plays a little sad tune and turns itself to maximum! The football has gotten too far away from you, and you've lost! [BigNameDesc of M] squeals with delight and runs for home as fast as [his of M] legs will carry [him of M]!";
-			HappinessUp M by 2;
-			say "You squeal in [horror the semen addiction of the player] as the vibrator begins spurting huge amounts of [semen] from its tip!";
-			if the player is possessing a vagina:
-				PussyFill 12;
-				if the pregnancy of the player is 0 and pregnancy fetish is 1: [Once pregnant you don't get any more potential fathers!]
-					let ULA be a random ultimate-lesson-actor;
-					now ULA is inseminating vagina;
-			otherwise:
-				AnnouncedExpel semen on football-hotpants by 12;
+			if remote-controlled-vibrator is held or remote-controlled-vibrator is in the location of the player, say "[bold type]Your vibrator plays a little sad tune and turns itself to maximum! The football has gotten too far away from you, and you've lost! ";
+			if the player is in a predicament room and the player is not in Predicament20:
+				say "[BigNameDesc of M] squeals with delight and runs for home as fast as [his of M] legs will carry [him of M]!";
+				HappinessUp M by 2;
+			if remote-controlled-vibrator is worn:
+				say "You squeal in [horror the semen addiction of the player] as the vibrator begins spurting huge amounts of [semen] from its tip!";
+				if remote-controlled-vibrator is penetrating vagina and the player is possessing a vagina:
+					PussyFill 12;
+					if the pregnancy of the player is 0 and pregnancy fetish is 1: [Once pregnant you don't get any more potential fathers!]
+						let ULA be a random ultimate-lesson-actor;
+						now ULA is inseminating vagina;
+				otherwise if remote-controlled-vibrator is penetrating asshole:
+					AssFill 12;
+				otherwise:
+					AnnouncedExpel semen on football-hotpants by 12;
+			otherwise if remote-controlled-vibrator is carried or remote-controlled-vibrator is in the location of the player:
+				say "You squeal in surprise as the vibrator begins spurting huge amounts of [semen] from its tip! The floor gets coated.";
+				SemenPuddleUp 12;
 			now M is in School02;
 		otherwise:
 			if the football-possessor of football is not a student, now football is not dribbled;
@@ -2920,7 +2932,7 @@ This is the football possession rule:
 	set numerical response 2 to "dribble in a direction";
 	set numerical response 3 to "kick the ball in a direction";
 	set numerical response 4 to "leave the ball behind and move in a direction";
-	set numerical response 5 to "leave the ball behind and step away";
+	set numerical response 5 to "step away from the ball but stay in the same location";
 	compute multiple choice question;
 	let FChoice be player-numerical-response;
 	if FChoice is 1:
@@ -3023,6 +3035,7 @@ To compute football movement of (M - a student):
 			if the student-stimulation of team-football-predicament > 10 + the dedication of M:
 				let R be a random number between 1 and (the number of entries in the Nviables of L);
 				let D be entry R in the Nviables of L;
+				if L is Predicament19 and D is east, now D is west; [can't dribble it into the house]
 				let RD be the room D from L;
 				say "[BigNameDesc of M] kicks the football towards [if the player is in RD]you[otherwise]the [D][end if]!";
 				now football is in RD;
@@ -3033,6 +3046,7 @@ To compute football movement of (M - a student):
 				if R >= 0:
 					let R be a random number between 1 and (the number of entries in the Nviables of L);
 					let D be entry R in the Nviables of L;
+					if L is Predicament19 and D is east, now D is west; [can't kick it into the house]
 					let RD be the room D from L;
 					say "[BigNameDesc of M] dribbles the football[if the player is not in RD and the player is not in L] towards the [D][end if]!";
 					try M going D;
@@ -3093,8 +3107,8 @@ This is the lose football possession from orgasm rule:
 		now the football-possessor of football is headmistress.
 The lose football possession from orgasm rule is listed last in the orgasm resolution rules.
 
-Check going east when the player is in Predicament19:
-	if current-predicament is team-football-predicament and the game-state of team-football-predicament is 0, say "The door is locked! You need to wait until the football game is over..." instead.
+[Check going east when the player is in Predicament19:
+	if current-predicament is team-football-predicament and the game-state of team-football-predicament is 0, say "The door is locked! You need to wait until the football game is over..." instead.]
 
 water-fountain-predicament is a predicament.
 Definition: water-fountain-predicament is appropriate:

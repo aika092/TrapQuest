@@ -1723,6 +1723,8 @@ To decide which object is the concealer of (T - marker chest tattoo):
 To decide which object is the at least partial concealer of (T - marker chest tattoo):
 	if T is listed in the armUses of arms, decide on arms;
 	decide on a random worn not-see-through actually breast covering clothing.
+To compute inking effect of (T - marker chest tattoo):
+	now the text-shortcut of T is the substituted form of "[tattoo-title of T]".
 
 measurement tattoo is a crotch tattoo. The tattoo-title of measurement tattoo is "measurement".
 Definition: measurement tattoo is drawable:
@@ -2270,20 +2272,20 @@ Definition: queen-of-spades snowbunny crotch tattoo is interracial themed: decid
 Definition: queen-of-spades snowbunny crotch tattoo is playing card themed: decide yes.
 Definition: queen-of-spades snowbunny crotch tattoo is bunny themed: decide yes.
 
-queen-of-spades snowbunny face tattoo is a face-tattoo. The tattoo-title of queen-of-spades snowbunny face tattoo is "queen of spades snowbunny face".
-Definition: queen-of-spades snowbunny face tattoo is drawable:
+queen of spades snowbunny facial tattoo is a face-tattoo. The tattoo-title of queen of spades snowbunny facial tattoo is "queen of spades snowbunny facial".
+Definition: queen of spades snowbunny facial tattoo is drawable:
 	if there is a worn face-tattoo or interracial fetish is 0, decide no;
 	decide yes.
-Definition: queen-of-spades snowbunny face tattoo is eligible:
+Definition: queen of spades snowbunny facial tattoo is eligible:
 	if the noun is interracial themed or the noun is playing card themed or the noun is bunny themed, decide yes;
 	decide no.
-To say tattoo-desc of (T - queen-of-spades snowbunny face tattoo):
+To say tattoo-desc of (T - queen of spades snowbunny facial tattoo):
 	say "A black spade symbol with a white bunny in the middle is inked right on your cheek!".
-To decide which number is the initial outrage of (T - queen-of-spades snowbunny face tattoo):
+To decide which number is the initial outrage of (T - queen of spades snowbunny facial tattoo):
 	decide on 5.
-Definition: queen-of-spades snowbunny face tattoo is interracial themed: decide yes.
-Definition: queen-of-spades snowbunny face tattoo is playing card themed: decide yes.
-Definition: queen-of-spades snowbunny face tattoo is bunny themed: decide yes.
+Definition: queen of spades snowbunny facial tattoo is interracial themed: decide yes.
+Definition: queen of spades snowbunny facial tattoo is playing card themed: decide yes.
+Definition: queen of spades snowbunny facial tattoo is bunny themed: decide yes.
 
 queen-of-spades tribal tattoo is a crotch tattoo. The tattoo-title of queen-of-spades tribal tattoo is "queen of spades tribal".
 Definition: queen-of-spades tribal tattoo is drawable:

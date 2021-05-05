@@ -12,9 +12,11 @@ Check squirting:
 	if the noun is not penetrating an orifice:
 		say "This will empty the [noun] onto the ground, is that what you want? ";
 		if the player is consenting:
+			allocate 6 seconds;
 			say "You empty the contents of the [ShortDesc of the noun] onto the ground.";
 			dump the noun;
-			allocate 6 seconds instead;
+			if the fill-colour of the noun is creamy or the fill-colour of the noun is golden or the fill-colour of the noun is white or the fill-colour of the noun is murky, compute spraybottle punishment;
+			do nothing instead;
 		otherwise:
 			say "You change your mind." instead;
 	if the latex-transformation of the player > 4 and the fill-colour of the noun is not creamy and the fill-colour of the noun is not golden and the fill-colour of the noun is not white:

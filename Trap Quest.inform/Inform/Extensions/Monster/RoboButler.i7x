@@ -273,16 +273,6 @@ Part 4 - Conversation
 
 Section 1 - Greeting
 
-[To compute basic greeting to (M - a robobutler):
-	if M is interested:
-		say VanityGreeting to M;
-	otherwise:
-		if the times-met of M < 2, say FirstGreeting to M;
-		otherwise say RepeatGreeting to M;
-		unless the class of the player is maid:
-			now the boredom of M is 0;
-			compute correct perception of M.]
-
 To say FirstResponse of (M - a robobutler):
 	if the class of the player is maid:
 		say "[first custom style]'GREETINGS, COLLEAGUE. GET BACK TO WORK.'[roman type][line break]";

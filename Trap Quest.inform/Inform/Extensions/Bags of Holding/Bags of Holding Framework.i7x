@@ -332,6 +332,12 @@ To execute (E - bag-feeding-discipline) on (C - a thing):
 		BodyRuin 1;
 		PainUp 1.
 
+bag-feeding-negative is a bag-feeding-effect.
+To execute (E - bag-feeding-negative) on (C - a thing):
+	if C is identified and the raw-magic-modifier of C < 0:
+		say "Your bag reacts to the negative magic modifier of the [C]. You feel like some of the good luck you've saved up has faded away...";
+		increase the raw luck of the player by the raw-magic-modifier of C * 3.
+
 bag-feeding-pee-time is a bag-feeding-effect.
 To execute (E - bag-feeding-pee-time) on (C - a thing):
 	if the player is bursting and the player is not fake bursting and C is yellow themed:

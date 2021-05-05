@@ -416,16 +416,6 @@ Part 4 - Conversation
 
 Section 1 - Greeting
 
-[To compute basic greeting to (M - a robomaid):
-	if M is interested:
-		say VanityGreeting to M;
-	otherwise:
-		if the times-met of M < 2, say FirstGreeting to M;
-		otherwise say RepeatGreeting to M;
-		unless the class of the player is maid:
-			now the boredom of M is 0;
-			compute correct perception of M.]
-
 To say FirstResponse of (M - a robomaid):
 	if the class of the player is maid:
 		say "[first custom style]'GREETINGS, [caps boy of the player]FRIEND. YOU SEEM BUSY. GOODBYE.'[roman type][line break]";

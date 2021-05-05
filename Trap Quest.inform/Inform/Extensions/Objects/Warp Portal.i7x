@@ -96,13 +96,14 @@ To set up predicament status:
 					increase the stolen-strength of C by 1;
 					decrease the raw strength of the player by 1;
 				now C is in Predicament20;
-				add C to predicamentWornList;
+				unless C is plentiful accessory, add C to predicamentWornList;
 			otherwise if C is listed in LC or (tough-shit is 0 and C is not armband and C is not combat visor):
 				dislodge C;
 				now C is in Predicament-Pen;
 				add C to predicamentPenList;
 			otherwise:
 				now C is predicament-fixed;
+				add C to predicamentPenList;
 		otherwise if C is not worn:
 			dislodge C;
 			now C is in Predicament20;

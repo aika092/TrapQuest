@@ -11,12 +11,15 @@ Check extracting something with:
 	if the doses of the noun > 0:
 		say "Are you sure you wish to empty your [noun] of its current contents? ";
 		if the player is consenting:
+			allocate 1 seconds;
 			say "You empty the contents of the [ShortDesc of the noun] onto the ground.";
 			dump the noun;
+			if the fill-colour of the noun is creamy or the fill-colour of the noun is golden or the fill-colour of the noun is white or the fill-colour of the noun is murky, compute spraybottle punishment;
 		otherwise:
 			say "You change your mind." instead.
 
 Carry out extracting something with:
+	allocate 5 seconds;
 	now the fill-colour of the noun is the fill-colour of the second noun;
 	if the second noun is player-origin, now the noun is player-origin;
 	otherwise now the noun is monster-origin;
@@ -29,8 +32,7 @@ Carry out extracting something with:
 	if the fill-colour of the second noun is creamy, compute father material of the second noun into the noun;
 	if the second noun is can:
 		say "You discard the empty [ShortDesc of the second noun].";
-		destroy the second noun;
-	allocate 6 seconds.
+		destroy the second noun.
 
 Report extracting something with:
 	say ExtractFlav of the noun;

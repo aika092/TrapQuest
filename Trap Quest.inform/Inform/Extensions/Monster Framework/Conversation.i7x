@@ -83,6 +83,7 @@ To execute (T - talk-greet) for (M - a monster):
 		if M is unintelligent: [Dumb monsters use a special greeting function]
 			say MuteGreetResponse of M;
 		otherwise:
+			if M is uninterested intelligent raunchy unfriendly monster, progress quest of greet-quest;
 			compute basic greeting to M;
 	increase the greeted-count of M by 1;
 	now the greet-window of M is -1.
