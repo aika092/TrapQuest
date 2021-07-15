@@ -117,7 +117,7 @@ To compute action (N - a number) of (M - a monster):
 				otherwise:
 					if playerRegion is not school and M is threatening and M is regional, progress quest of nice-quest;
 	otherwise if M is not distracted and M is not caged and M is not guarding and (M is undefeated or M is not motionless-when-defeated):
-		if (the boredom of M is 0 and M is unleashed and (cowbell is clanking or the player is glued seductively or magnetism-timer > 0)) or M is messy, check seeking N of M;
+		if (the boredom of M is 0 and M is unleashed and (cowbell is clanking or the player is glued seductively or clothing is bsounding or magnetism-timer > 0)) or M is messy, check seeking N of M;
 		otherwise check motion of M;
 	if M is submission-assisting:[TODO: handle problem where assisters randomly lose interest]
 		if M is not interested or the number of monsters penetrating a body part is 0, now M is not submission-assisting;
