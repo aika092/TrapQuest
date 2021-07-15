@@ -36,6 +36,7 @@ To say ClothesDescription:
 		compute SelfExamineDesc of B;
 	repeat with O running through worn overdresses:
 		compute SelfExamineDesc of O;
+		If O is audibly jiggling, say "Your [ShortDesc of O] is vocalizing the [BreastBounceDesc] of your [ShortDescBreasts]. ";
 	repeat with S running through worn skirts:
 		compute SelfExamineDesc of S;
 	if a random stethoscope is worn by the player, say "You have a fancy looking stethoscope hanging around your neck. ";
