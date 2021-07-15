@@ -1,6 +1,6 @@
 Cheerleader Outfit by Dresses begins here.
 
-A cheerleader outfit is a kind of overdress. A cheerleader outfit is unique. A cheerleader outfit is usually short. Understand "cheer", "leader" as cheerleader outfit.
+A cheerleader outfit is a kind of overdress. A cheerleader outfit is unique. A cheerleader outfit is usually short. A cheerleader outfit is usually audibly jiggling. Understand "cheer", "leader" as cheerleader outfit.
 
 Definition: a cheerleader outfit is class-relevant:
 	if the class of the player is cheerleader, decide yes;
