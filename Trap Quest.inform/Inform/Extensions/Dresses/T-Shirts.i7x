@@ -33,7 +33,7 @@ Part 1 - Boobies T-shirt
 A Boobies T-shirt is a kind of T-shirt. A Boobies T-shirt is usually plentiful. The printed name of Boobies T-shirt is usually "[clothing-title-before]Boobies T-shirt[clothing-title-after]". The text-shortcut of Boobies T-shirt is "bbt".
 Definition: a boobies T-shirt is boob themed: decide yes.
 
-Figure of Boobies T-shirt is the file "Items/Clothes/Upper/Shirts/tshirt0.png".
+Figure of Boobies T-shirt is the file "Items/Clothes/Upper/Shirts/tshirt1.png".
 
 There is 1 Boobies T-shirt.
 
@@ -50,41 +50,6 @@ To say MediumDesc of (C - a Boobies T-shirt):
 
 To decide which number is the initial outrage of (C - a Boobies T-shirt):
 	decide on 1.
-
-Part 2 - Gang Bang Girl T-shirt
-
-gang-bang-girl T-shirt is a T-shirt. The printed name of gang-bang-girl T-shirt is usually "[clothing-title-before]Gang Bang Girl T-shirt[clothing-title-after]". The text-shortcut of gang-bang-girl T-shirt is "ggt". Understand "gang", "bang", "girl" as gang-bang-girl T-shirt.
-
-Definition: gang-bang-girl T-shirt is interracial themed: decide yes.
-
-Figure of gang-bang-girl T-shirt is the file "Items/Clothes/Upper/Shirts/tshirt1.png".
-
-To decide which figure-name is clothing-image of (C - gang-bang-girl T-shirt):
-	decide on figure of gang-bang-girl T-shirt.
-
-To say ClothingDesc of (C - gang-bang-girl T-shirt):
-	say "This normal white T-shirt has the phrase 'Gang Bang Girl' in large letters on it, accompanied by a female symbol surrounded by male symbols.".
-
-To say MediumDesc of (C - gang-bang-girl T-shirt):
-	say "'gang bang girl' T-shirt".
-
-Definition: gang-bang-girl T-shirt is anal sex themed: decide yes.
-Definition: gang-bang-girl T-shirt is oral sex themed: decide yes.
-Definition: gang-bang-girl T-shirt is vagina themed: decide yes.
-Definition: gang-bang-girl T-shirt is white themed: decide yes.
-
-To decide which number is the initial outrage of (C - gang-bang-girl T-shirt):
-	decide on 4.
-
-outrageous-gang-bang-shirt is a humiliating situation.
-Definition: outrageous-gang-bang-shirt (called A) is applicable:
-	if gang-bang-girl T-shirt is worn and the player is not disgraced and the outrage of gang-bang-girl T-shirt is too humiliating, decide yes;
-	decide no.
-To reflect on (A - outrageous-gang-bang-shirt):
-	say "[variable custom style]I really shouldn't be wearing this T-shirt... if I get forced into some kind of gang bang situation right now, I don't think my mind would survive... never mind my [if the player is possessing a vagina][vagina][otherwise][asshole][end if]![roman type][line break]".
-
-To decide which number is the initial outrage of (C - gang-bang-girl T-shirt):
-	decide on 9.
 
 Part 3 - Gender Bender T-shirt
 
@@ -155,34 +120,6 @@ Definition: an I love my wet nappies T-shirt is fetish appropriate:
 Definition: an I love my wet nappies T-shirt is baby themed: decide yes.
 Definition: an I love my wet nappies T-shirt is white themed: decide yes.
 Definition: an I love my wet nappies T-shirt is pin themed: decide yes. [Is it something related to safety pins?]
-
-Part 5 - I Wish These Were Brains T-shirt
-
-An I wish these were brains T-shirt is a kind of T-shirt. The printed name of I wish these were brains T-shirt is usually "[clothing-title-before]I wish these were brains T-shirt[clothing-title-after]". The text-shortcut of I wish these were brains T-shirt is "wwt".
-
-Definition: an I wish these were brains T-shirt is boob themed: decide yes.
-Definition: an I wish these were brains T-shirt is white themed: decide yes.
-
-Figure of I wish these were brains T-shirt is the file "Items/Clothes/Upper/Shirts/tshirt4.png".
-
-There is 1 I wish these were brains T-shirt.
-
-To decide which figure-name is clothing-image of (C - an I wish these were brains T-shirt):
-	decide on figure of I wish these were brains T-shirt.
-
-To say ClothingDesc of (C - an I wish these were brains T-shirt):
-	say "This unisex T-shirt has the words 'I wish these were brains' in large letters on the chest.".
-
-To say MediumDesc of (C - an I wish these were brains T-shirt):
-	say "'I wish these were brains' T-shirt".
-
-To decide which number is the initial outrage of (C - an I wish these were brains T-shirt):
-	decide on 6.
-
-To decide which number is the intelligence-influence of (C - an I wish these were brains T-shirt):
-	let D be 2 + the magic-modifier of C;
-	decrease D by the largeness of breasts / 3;
-	decide on D.
 
 Part 6 - Birth Control is for Sissies T-shirt
 
@@ -388,7 +325,7 @@ To decide which figure-name is clothing-image of (C - an ahegao T-shirt):
 There is 1 ahegao T-shirt.
 
 To say ClothingDesc of (C - an ahegao T-shirt):
-	say "This colourful T-shirt is covered in drawings of women's faces in the middle of mind blowing orgasms. Some of them have [semen] in their mouths[if bukkake fetish is 1] or on their faces[end if].".
+	say "This colourful T-shirt is covered in drawings of women's faces in the middle of mind blowing orgasms, eyes rolled back with [semen] on their outstretched tongues[if bukkake fetish is 1] and on their faces[end if].".
 
 To say ShortDesc of (C - an ahegao T-shirt):
 	say "ahegao T-shirt".

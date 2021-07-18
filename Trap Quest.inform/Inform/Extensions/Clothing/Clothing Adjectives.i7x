@@ -171,7 +171,9 @@ Definition: a clothing (called C) is actually avoidable rather than actually una
 Can this be ripped at the crotch?
 
 +!]
-Definition: a clothing is rippable: decide no.
+Definition: a clothing is rippable:
+	if it is crotch-zipped, decide yes;
+	decide no.
 
 Clothing can be not-enema-helping or enema-helping. Clothing is usually not-enema-helping.
 Clothing can be crotch-normal or crotch-assless. Clothing is usually crotch-normal.

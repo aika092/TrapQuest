@@ -2,6 +2,9 @@ Students Amicable by Monster begins here.
 
 An amicable student is a kind of student. Understand "friendly" as an amicable student.
 
+Definition: an amicable student is unfriendly rather than friendly:
+	decide no.
+
 To say MediumDesc of (M - an amicable student):
 	say "friendly [rank-colour of M] student [student-name of M]".
 

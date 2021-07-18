@@ -38,7 +38,7 @@ To compute unique periodic effect of (H - avatar-headpiece):
 	if the charge of H >= a random number between 30 and 55:
 		now the charge of H is 0;
 		if the humiliation of the player > HUMILIATION-PROUD and the blackfire of H is 0:
-			say "You feel a weak pressure in your chest as your master's presence shifts around inside you. Something, somewhere seems to click, and a wave of pleasure passes through your body as two ominous clouds of burning motes appear around your hands.  You hear the voice of your master inside your head.[line break][first custom style]'Did that feel good, [NameBimbo]? Now that your vessel has begun to adapt, my power is starting to manifest. You and I will only grow more powerful from here.'[roman type][line break]";
+			say "You feel a weak pressure in your chest as your master's presence shifts around inside you. Something, somewhere seems to click, and a wave of pleasure passes through your body as two ominous clouds of burning motes appear around your hands. You hear the voice of your master inside your head.[line break][first custom style]'Did that feel good, [NameBimbo]? Now that your vessel has begun to adapt, my power is starting to manifest. You and I will only grow more powerful from here.'[roman type][line break]";
 			Arouse 500;
 			now the blackfire of H is 1;
 		otherwise if the humiliation of the player > HUMILIATION-MODEST and the blackfire of H is 1:

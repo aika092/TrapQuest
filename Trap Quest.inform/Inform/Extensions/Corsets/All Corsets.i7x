@@ -226,7 +226,7 @@ To decide which figure-name is clothing-image of (C - fetish corset):
 	decide on figure of fetish corset.
 
 To say ClothingDesc of (C - fetish corset):
-	say "[if the outrage of C is too humiliating]An outrageous[otherwise]A[line break][second custom style]lush[roman type][line break][end if] translucent latex underbust corset with an extremely exaggerated shape and rubbery frills at the bottom. This must be designed to be worn exclusively at fetish events.".
+	say "[if the outrage of C is too humiliating]An outrageous[otherwise]A [second custom style]lush[roman type][end if] translucent latex underbust corset with an extremely exaggerated shape and rubbery frills at the bottom. This must be designed to be worn exclusively at fetish events.".
 
 To say ShortDesc of (C - fetish corset):
 	say "fetish corset".

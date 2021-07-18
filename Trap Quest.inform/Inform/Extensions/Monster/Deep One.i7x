@@ -20,7 +20,7 @@ To say MediumDesc of (M - deep one):
 	say "deep one".
 
 To say MonsterDesc of (M - deep one):
-	say "The creature before you resembles nothing so much as a horrible cross between fish, frog, and [man of M]. [big his of M] grey-blue skin is moist and lightly covered in scales, and [he of M] reeks of the sea. In spite of [his of M] hunched gait, you can tell [he of M] is quite tall and terribly strong. [if diaper quest is 0][big his of M] size extends to more than just height, the most human part of the creature is the huge, throbbing [DickDesc of M] between [his of M] legs. [end if][big he of M] has the air of human-level intelligence.".
+	say "The creature before you resembles nothing so much as a horrible cross between fish, frog, and [man of M]. [big his of M] grey-blue skin is moist and lightly covered in scales, and [he of M] reeks of the sea. In spite of [his of M] hunched gait, you can tell [he of M] is quite tall and terribly strong. [if diaper quest is 0][big his of M] insane size even extends to the throbbing [DickDesc of M] between [his of M] legs, which is somehow the most human-looking part of [him of M]. [end if][big he of M] has the air of human-level intelligence.".
 
 To say MonsterComment of (M - deep one):
 	if diaper quest is 0:
@@ -78,6 +78,9 @@ Definition: deep one is willing to do titfucks: decide no.
 
 Definition: deep one is able to remove cursed plugs: decide yes.
 
+To say LongDickDesc of (M - deep one):
+	say "[one of]lubricated[or][if full-lady fetish is 1]finned[otherwise]grey[end if][or]slimy[in random order] [DickDesc of M]".
+
 Part 1 - Perception
 
 To compute perception of (M - deep one):
@@ -109,7 +112,7 @@ Part 2 - Combat
 Section 1 - Attack
 
 To compute damaging attack of (M - deep one):
-	if a random number between 1 and 5 is 1 and the player is a february 2021 top donator:[Or whatever is the most recent]
+	if a random number between 1 and 5 is 1 and the player is the donator:[Or whatever is the most recent]
 		let R be a random number between 1 and 2;
 		if R is 1:
 			compute stunning attack of M;
@@ -154,8 +157,8 @@ To compute summoning attack of (M - deep one):
 		FatigueUp the difficulty of M + (doomed * 2);
 		stimulate vagina from herald;
 	otherwise:
-		if doomed > 5 or the accuracy roll of M >= the dexterity of the player:
-			if doomed > 5, say "You know something is about to happen, but before you can react, you are suddenly struck by a bolt of pink lightning! ";
+		if doomed >= 5 or the accuracy roll of M >= the dexterity of the player:
+			if doomed >= 5, say "You know something is about to happen, but before you can react, you are suddenly struck by a bolt of pink lightning! ";
 			otherwise say "You immediately realize that something is about to happen, but you're still unprepared to be struck by a bolt of pink lightning! You feel terribly tired and yet also horny at the same time!";
 			FatigueUp (doomed * 2);
 			stimulate vagina from herald;
@@ -184,6 +187,9 @@ To decide if (M - deep one) is willing to creampie (F - asshole):
 	if the class of the player is cultist:
 		if the reaction of the player is not 1, decide no;
 	decide yes.
+
+To say sexDumbFlav of (M - deep one) in (F - a fuckhole):
+	say "[one of]Droplets of viscous slime hit your back as [FuckerDesc of M] pounds your [variable F]![or][BigFuckerDesc of M] continues to plow your [variable F].[or][BigFuckerDesc of M]'s fishy stench assaults your sinuses as [his of M] [LongDickDesc of M] assaults your [variable F]![or][BigFuckerDesc of M]'s [LongDickDesc of M] slides in and out of your [variable F]![or][BigFuckerDesc of M] emits horrible noises as [he of M] roughly pounds away at your [variable F]![or]Horrifying croaks rumble from [FuckerDesc of M]'s throat as [his of M] [LongDickDesc of M] slams in and out of your [variable F].[in random order]".
 
 To say CreampieFlav of (M - deep one) in (F - a fuckhole):
 	say "[one of][BigNameDesc of M] makes a deep, guttural noise, slamming [his of M] [DickDesc of M] home as [he of M] fills your [variable F] with [semen]![or]A deep, guttural noise comes from [NameDesc of M][']s throat as [he of M] ejaculates deep inside your [variable F].[or]You hear a deep, guttural noise from behind you as [NameDesc of M] ejaculates, filling your [variable F] with [semen].[or][BigNameDesc of M] tightens [his of M] grip, emitting a deep, guttural noise as [his of M] [semen] explodes into your [variable F]![at random] [run paragraph on]";

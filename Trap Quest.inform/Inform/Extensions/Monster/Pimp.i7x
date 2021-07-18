@@ -21,7 +21,7 @@ Definition: pimp is able to remove cursed plugs: decide yes.
 Definition: pimp is butt slut immune: decide yes.
 
 Definition: pimp is wenchy:
-	if the player is a February 2021 top donator:
+	if the player is the donator:
 		decide yes;
 	decide no.
 
@@ -355,7 +355,7 @@ To say DominanceFailure of (M - pimp):
 
 To compute failed dominance punishment of (M - pimp):
 	if the player is getting unlucky:
-		say "Unfortunately for you, the second strike either way, and you yelp in pain as the back of [his of M] hand connects with the other side of your face.[line break][speech style of M]'[one of]If there's anything I hate, its uppity [bitch]es like you.'[or]You've got some NERVE, [bitch]!'[in random order][roman type][line break]";
+		say "Unfortunately for you, the second strike comes either way, and you yelp in pain as the back of [his of M] hand connects with the other side of your face.[line break][speech style of M]'[one of]If there's anything I hate, its uppity [bitch]es like you.'[or]You've got some NERVE, [bitch]!'[in random order][roman type][line break]";
 		PainUp 2;
 	otherwise:
 		say "[line break][speech style of M]'[one of]The ONLY time I kneel for whores is when I'm fucking 'em from behind!'[or]I SHOULD slap you again for even trying that shit, but I have a better idea.'[in random order][roman type][line break]";

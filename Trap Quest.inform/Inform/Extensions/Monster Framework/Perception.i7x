@@ -579,7 +579,7 @@ Definition: a person is sluttily dressed:
 		if AL - 4 is too humiliating:
 			say "[one of][mortifiedOutfit on AT][or] and [if AT is asshole]catches a glimpse of[otherwise if AT is body part]can see[otherwise]can easily see[end if] your [MediumDesc of AT], making you [blush 10 * AL][purely at random]";
 		otherwise:
-			say ", which [one of]makes you feel a little uneasy [if AT is worn clothing and AT is not equippable]in[otherwise]with[end if] your [MediumDesc of AT][or]causes you to wince with shyness[or]makes your cheeks flush[or]makes you blush shyly[or]makes you [if AT is headgear]think about the impression your [ShortDesc of AT] must be giving[otherwise]look down towards your [ShortDesc of AT] bashfully[end if][in random order]";
+			say ", which [one of]makes you feel a little uneasy [if AT is worn clothing and AT is not equippable]in[otherwise]with[end if] your [if AT is exposed body part]exposed [otherwise if AT is at least partially exposed body part]partially exposed [end if][MediumDesc of AT][or]causes you to wince with shyness[or]makes your cheeks flush[or]makes you blush shyly[or]makes you [if AT is headgear]think about the impression your [ShortDesc of AT] must be giving[otherwise if AT is exposed body part]think about the impression your exposed [ShortDesc of AT] must be giving[otherwise if AT is at least partially exposed body part]think about the impression your partially exposed [ShortDesc of AT] must be giving[otherwise]look down towards your [ShortDesc of AT] bashfully[end if][in random order]";
 			humiliate 10 * AL;
 		decide yes;
 	decrease shocked-monsters by 1; [if we're deciding no, then we remove the shocked monster count]

@@ -514,7 +514,7 @@ To compute forced womb egg laying:
 	repeat with P running through things penetrating vagina:
 		say "[BigNameDesc of P] is pushed out of the way!";
 		dislodge P;
-	repeat with C running through pussy covering clothing:
+	repeat with C running through pussy covering unskirted clothing:
 		if C is displacable:
 			say "[BigNameDesc of C] is pushed out of the way!";
 			displace C;

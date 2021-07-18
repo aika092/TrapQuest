@@ -283,6 +283,7 @@ Check kicking mechanic when the traitor-hypno of hypno-lesson > 0 and the woman-
 An all later time based rule (this is the mechanic finishes with woman rule):
 	if the woman-status of woman-player is 91 and the mechanic-scene of woman-player <= 3 and mechanic is not in the location of the player:
 		increase the mechanic-scene of woman-player by 1;
+		if mechanic is not in the location of woman-player, now the mechanic-scene of woman-player is 4;
 		if the mechanic-scene of woman-player is 4:
 			now mechanic is unleashed;
 			now woman-player is unleashed;

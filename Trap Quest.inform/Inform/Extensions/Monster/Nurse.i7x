@@ -65,10 +65,11 @@ To bore (M - nurse) for (N - a number) seconds:
 		now the boredom of M is N.
 
 Definition: nurse (called M) is successfully blocking: [Do they succeed in a roll to stop the player moving]
-	if the noun is south and M is in School11, decide yes; [The nurse always blocks the entrance into the med bay if she is 'dangerous' - either you're fighting her or she's not willing to give you another 'boost'.]
-	let R be (a random number from 1 to the difficulty of M * 2) + the movement reduction of the player; [When we check the movement reduction of the player for the first time in a round, if it is significant, it outputs text explaining why the player is struggling to move away from the monster.]
-	if debuginfo > 0, say "[input-style][ShortDesc of M][']s movement block check: player movement penalty ([movement reduction of the player]) + block skill d[difficulty of M * 2] ([R - the movement reduction of the player]) = [R] | ([the dexterity of the player].5) dexterity[roman type][line break]";
-	if R > the dexterity of the player, decide yes;
+	if the noun is south and M is in School11, decide yes; [The nurse always blocks the entrance into the med bay successfully.]
+	if M is dangerous:
+		let R be (a random number from 1 to the difficulty of M * 2) + the movement reduction of the player; [When we check the movement reduction of the player for the first time in a round, if it is significant, it outputs text explaining why the player is struggling to move away from the monster.]
+		if debuginfo > 0, say "[input-style][ShortDesc of M][']s movement block check: player movement penalty ([movement reduction of the player]) + block skill d[difficulty of M * 2] ([R - the movement reduction of the player]) = [R] | ([the dexterity of the player].5) dexterity[roman type][line break]";
+		if R > the dexterity of the player, decide yes;
 	decide no.
 
 To say MovementBlock of (M - nurse):

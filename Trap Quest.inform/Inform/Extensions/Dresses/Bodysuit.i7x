@@ -435,6 +435,8 @@ To say ClothingDesc of (C - rubber-jumpsuit):
 	say "A cream coloured translucent skin-tight suit that stretches up to the neck and down to the feet. The suit clings to the body to make sure it hides none of its curves, and it has a zipper at the crotch. Frills at the neck prevent the wearing of any other neckwear. The rubbery nature of the suit and the long arms ending in latex gloves mean it would take a long time to take on and off...".
 
 To say ShortDesc of (O - rubber-jumpsuit):
+	say "latex bodysuit".
+To say MediumDesc of (O - rubber-jumpsuit):
 	say "skin hugging cream latex bodysuit".
 
 Part - Full Body Baby Romper
@@ -469,6 +471,31 @@ To decide which number is the initial outrage of (C - full body babyromper):
 
 To decide which number is the initial cringe of (C - full body babyromper):
 	decide on 12.
+
+Part - Wrestler Suit
+
+wrestler-jumpsuit is a jumpsuit. wrestler-jumpsuit is latex. wrestler-jumpsuit is manly. The text-shortcut of wrestler-jumpsuit is "wbs". Understand "wrestler", "bodysuit" as wrestler-jumpsuit.
+
+Definition: wrestler-jumpsuit is class-relevant:
+	if the class of the player is latex fetish model or the class of the player is superhero, decide yes;
+	decide no.
+
+The printed name of wrestler-jumpsuit is "[clothing-title-before]wrestler bodysuit[clothing-title-after]".
+
+Figure of wrestler suit is the file "Items/Clothes/Upper/Latex/wrestlersuit1.png".
+
+To decide which figure-name is clothing-image of (C - wrestler-jumpsuit):
+	decide on figure of wrestler suit.
+
+To say ClothingDesc of (C - wrestler-jumpsuit):
+	say "A black and purple skin-tight suit that stretches up to the neck and down to the feet. The suit clings to the body to make sure it hides none of its curves, and it has a zipper at the crotch. The rubbery nature of the suit and the long arms ending in latex gloves mean it would take a long time to take on and off[if C is worn]. You can sense that it is helping you hold back orgasm when you [bold type]resist[roman type][end if].".
+
+To say ShortDesc of (O - wrestler-jumpsuit):
+	say "wrestler suit".
+
+Definition: wrestler-jumpsuit is black themed: decide yes.
+Definition: wrestler-jumpsuit is purple themed: decide yes.
+Definition: wrestler-jumpsuit is exercise themed: decide yes.
 
 Part - Superheroine Outfit
 
@@ -709,11 +736,10 @@ To compute periodic effect of (L - a leotard):
 	increase the charge of L by 1;
 	if the charge of L > 200:
 		now the charge of L is 0;
-		let H be a random off-stage ballet heels;
 		let S be a random off-stage plentiful ballet shoes;
-		if H is actually summonable and the raw heel skill of the player > 5:
+		if ballet heels is off-stage and the raw heel skill of the player > 5 and ballet heels is actually summonable:
 			say "[bold type]Your leotard glows powerfully, and extremely high heeled ballet shoes appear on your feet[if the player is upright]. You feel yourself forced to stand on tip-toes! Uh-oh...[otherwise].[end if][roman type][line break]";
-			summon H cursed with quest;
+			summon ballet heels cursed with quest;
 		otherwise if S is actually summonable:
 			say "[bold type]Your leotard glows softly, and ballet shoes appear on your feet[if the player is upright]. You feel yourself forced to stand on tip-toes![otherwise].[end if][roman type][line break]";
 			summon S cursed with quest.

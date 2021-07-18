@@ -120,7 +120,8 @@ To compute action (N - a number) of (M - a monster):
 		if (the boredom of M is 0 and M is unleashed and (cowbell is clanking or the player is glued seductively or magnetism-timer > 0)) or M is messy, check seeking N of M;
 		otherwise check motion of M;
 	if M is submission-assisting:[TODO: handle problem where assisters randomly lose interest]
-		if M is not interested or the number of monsters penetrating a body part is 0, now M is not submission-assisting;
+		if M is not interested or M is not in the location of the player or the number of combative monsters in the location of the player is 0:
+			now M is not submission-assisting;
 	compute unique final action of M.
 
 Definition: a monster is motionless-when-defeated:

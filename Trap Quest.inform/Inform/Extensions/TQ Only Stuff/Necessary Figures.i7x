@@ -20,7 +20,7 @@ To decide which figure-name is Figure of IronMaidenBackground:
 	otherwise:
 		if iron-maiden is penetrating face, decide on Figure of IronMaidenBackgroundB;
 		otherwise decide on Figure of IronMaidenBackgroundA.
-Figure of demon lord is the file "NPCs/Bosses/xavier2.png".
+Figure of demon lord is the file "NPCs/Bosses/Xavier/xavier2.png".
 Figure of modification machine is the file "Env/Hotel/modmachine1.png".
 Figure of slavehound is the file "NPCs/Mansion/Hound/hound2.png".
 
@@ -66,9 +66,9 @@ Figure of dominatrix 1 is the file "NPCs/Hotel/Dominatrix/dominatrix1.png".
 Figure of dominatrix 2 is the file "NPCs/Hotel/Dominatrix/dominatrix2.png".
 Figure of dominatrix 3 is the file "NPCs/Hotel/Dominatrix/dominatrix3.png".
 
-Figure of dominatrix cage wrestler is the file "Env/Hotel/cage2.jpg".
+Figure of dominatrix cage wrestler 1 is the file "Env/Hotel/cage2.jpg".
 To decide which figure-name is the examine-image of (C - dominatrix-cage):
-	if there is a caged wrestler in the location of dominatrix-cage, decide on figure of dominatrix cage wrestler;
+	if there is a caged wrestler in the location of dominatrix-cage, decide on figure of dominatrix cage wrestler 1;
 	decide on figure of dominatrix cage empty.
 
 Figure of Dominatrix Cutscene 4 is the file "NPCs/Hotel/Dominatrix/cutscene-dominatrix-peg1.png".
@@ -146,12 +146,12 @@ To decide which figure-name is the anal-sex-monster-image of (M - a ghost):
 To get creampie image of (M - a ghost) in (F - a fuckhole):
 	cutshow figure of ghost 2 creampie cutscene for M.
 
-Figure of Guard Cutscene 2 is the file "Special/Cutscene/cutscene-guard-sex1.png".
-Figure of Guard Cutscene 3 is the file "Special/Cutscene/cutscene-guard-climax1.png".
-Figure of Guard Cutscene 4 is the file "Special/Cutscene/cutscene-guard-climax2.png".
-Figure of Guard Cutscene 5 is the file "Special/Cutscene/cutscene-guard-climax3.png".
-Figure of Guard Cutscene 6 is the file "Special/Cutscene/cutscene-guard-climax4.png".
-Figure of Guard Cutscene 7 is the file "Special/Cutscene/cutscene-guard-sex2.png".
+Figure of Guard Cutscene 2 is the file "NPCs/Dungeon/Guard/cutscene-guard-sex1.png".
+Figure of Guard Cutscene 3 is the file "NPCs/Dungeon/Guard/cutscene-guard-climax1.png".
+Figure of Guard Cutscene 4 is the file "NPCs/Dungeon/Guard/cutscene-guard-climax2.png".
+Figure of Guard Cutscene 5 is the file "NPCs/Dungeon/Guard/cutscene-guard-climax3.png".
+Figure of Guard Cutscene 6 is the file "NPCs/Dungeon/Guard/cutscene-guard-climax4.png".
+Figure of Guard Cutscene 7 is the file "NPCs/Dungeon/Guard/cutscene-guard-sex2.png".
 
 Figure of Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator1b.jpg".
 Figure of Futanari Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator2.jpg".
@@ -189,6 +189,9 @@ Figure of Wild Gladiator Cutscene 5 is the file "NPCs/MultiFloor/Gladiator/Cutsc
 
 Figure of caged urinal princess is the file "NPCs/MultiFloor/Princess/cage1.jpg".
 Figure of caged urinal princess piss is the file "NPCs/MultiFloor/Princess/cage2.jpg".
+Figure of dark princess 1 is the file "NPCs/MultiFloor/Princess/darkprincess1.jpg".
+Figure of dark princess 2 is the file "NPCs/MultiFloor/Princess/darkprincess2.jpg".
+Figure of princess final battle plug is the file "NPCs/MultiFloor/Princess/cutscene-princess-final-battle4b.jpg".
 
 Figure of Teacher Hannah is the file "NPCs/School/Teacher/teacher5b.png".
 Figure of Slave Hannah is the file "NPCs/School/Teacher/teacher5d.png".
@@ -298,7 +301,7 @@ To decide which figure-name is the pacified-image of (M - a wrestler):
 	if M is fucked-silly, decide on figure of Wrestler Fucked Silly;
 	decide on figure of Missing NPC.
 
-Figure of Xavier Cutscene 2 is the file "Special/Cutscene/cutscene-xavier-fuck1.png".
+Figure of Xavier Cutscene 2 is the file "NPCs/Bosses/Xavier/cutscene-xavier-fuck1.png".
 
 Part - Clothing
 
@@ -500,7 +503,7 @@ Figure of Vine Boss Cutscene 2 is the file "Special/Cutscene/cutscene-vineboss2.
 Figure of water bomb is the file "Items/Collectibles/bomb2.png".
 Figure of water bomb cutscene 1 is the file "Special/Cutscene/cutscene-water-bomb-explode1.png".
 Figure of water bomb cutscene 2 is the file "Special/Cutscene/cutscene-water-bomb-explode2.png".
-Figure of Wench Cutscene 5 is the file "Special/Cutscene/cutscene-wench-fuck1.png".
+Figure of Wench Cutscene 5 is the file "NPCs/Dungeon/Wench/cutscene-wench-fuck1.png".
 
 Figure of Xmas tentacle cutscene 1 is the file "Special/Cutscene/cutscene-xmas-tentacle1.png".
 

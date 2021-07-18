@@ -246,7 +246,7 @@ To compute drunken adventure:
 		say "You wake up lying face down in the Throne Room, dizzy and confused, and with a pounding headache that is making it difficult to think properly.[line break][variable custom style]What the hell [one of]happened[or]did I do this time[stopping]?[roman type][line break]";
 		let condoms-used be 0;
 		if diaper quest is 0:
-			if there is worn condom pinnable clothing and a random number between 1 and 2 is 1:
+			if condom fetish is 1 and there is worn condom pinnable clothing and a random number between 1 and 2 is 1:
 				now condoms-used is the number of worn condom pinnable clothing;
 				say "As if to answer your question, you realise that there are now ";
 				repeat with C running through worn condom pinnable clothing:

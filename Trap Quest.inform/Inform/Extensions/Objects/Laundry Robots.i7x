@@ -146,8 +146,8 @@ A later time based rule (this is the robo vacuum cleaner rule):
 				if collecting is face:
 					say "The tube delivers the [variable L] directly into your mouth!";
 					if M > 0, FaceFill milk by M;
-					if U > 0, FaceFill urine by M;
-					if S > 0, FaceFill semen by M;
+					if U > 0, FaceFill urine by U;
+					if S > 0, FaceFill semen by S;
 					increase puddle-sucks of robo vacuum cleaner by 1;
 				otherwise if collecting is bottle:
 					if the doses of collecting > 0, say "You dump the [PotionType of collecting] out onto the floor. ";

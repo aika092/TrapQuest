@@ -485,7 +485,7 @@ To compute penis grope of (M - a tentacle monster):
 	say "[BigNameDesc of M] [one of]deftly[or]quickly[in random order] [one of]snakes[or]shoots[or]sneaks[in random order] a tentacle [if S is clothing and S is not C]up under your [ShortDesc of S][otherwise]toward your crotch[end if] and [one of]strokes[or]rubs[or]tickles[or]flicks[in random order] your [player-penis][if C is clothing] through your [ShortDesc of C][end if]!".
 
 To compute belly grope of (M - a tentacle monster):
-	say "[BigNameDesc of M] uses a tentacle to [one of]tenderly[or]almost lovingly[or]patronisingly[in random order] [one of]caress[or]stroke[in random order] your [ShortDesc of belly][if there is worn belly covering clothing] through your [ShortDesc of random worn belly covering clothing][end if].[if M is wet-tentacle-monster and bukkake fetish is 1] [big his of M] [cockhead of M] leaves a trail of stick [semen] in its wake.[end if]";
+	say "[BigNameDesc of M] uses a tentacle to [one of]tenderly[or]almost lovingly[or]patronisingly[in random order] [one of]caress[or]stroke[in random order] your [ShortDesc of belly][if there is worn belly covering clothing] through your [ShortDesc of random worn belly covering clothing][end if].[if M is wet-tentacle-monster and bukkake fetish is 1] [big his of M] [cockhead of M] leaves a trail of sticky [semen] in its wake.[end if]";
 	if M is wet-tentacle-monster and bukkake fetish is 1:
 		AnnouncedSquirt semen on belly by 1.
 

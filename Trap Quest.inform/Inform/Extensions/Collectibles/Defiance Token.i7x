@@ -27,10 +27,10 @@ To compute mass collectible reward of (T - a defiance token):
 	if NM > 0:
 		if the player is possessing a penis:
 			PenisUp NM;
-		otherwise if diaper quest is 0 and choice in row 68 of the Table of Player Options is 0:
-			say "DEV NOTE: The player would grow a penis, but they can't because futanari is disabled. Another feature will replace this soon.";
-		otherwise if (diaper quest is 0 and the player is not a june 2020 top donator) or (diaper quest is 1 and the player is not a june 2020 diaper donator):
+		otherwise if the player is a top donator:
 			say "DEV NOTE: The player would grow a penis, but this is alpha tester content at the moment until it has undergone more testing and improvement.";
+		otherwise if choice in row 68 of the Table of Player Options is 0:
+			say "DEV NOTE: The player would grow a penis, but they can't because futanari is disabled. Another feature will replace this soon.";
 		otherwise:
 			PenisUp NM;
 	repeat with X running through held defiance tokens:

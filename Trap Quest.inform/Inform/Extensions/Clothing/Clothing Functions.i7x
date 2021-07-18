@@ -417,6 +417,8 @@ To only destroy (C - clothing):
 	now C is not temporarily-removed;
 	repeat with M running through monsters:
 		now M is not rejecting C;
+	repeat with K running through specific-keys covering C:
+		destroy K;
 	late uniquely destroy C; [some stuff needs to happen after cleaning etc.]
 	if C is headgear and C is not held and C is not in the location of the player: [headgear that is destroyed off-stage shouldn't be added to the list of recycled headgear]
 		remove C from play;

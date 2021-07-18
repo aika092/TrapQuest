@@ -122,7 +122,7 @@ Definition: drooping-maid-outfit is white themed: decide yes.
 
 Part 3 - Cheap Maid Outfit
 
-cheap-maid-outfit is a maid outfit. cheap-maid-outfit is pvc. cheap-maid-outfit is short. The text-shortcut of cheap-maid-outfit is "mo3". The printed name of cheap-maid-outfit is  "[clothing-title-before]cheap maid outfit[clothing-title-after]". Understand "cheap" as cheap-maid-outfit.
+cheap-maid-outfit is a maid outfit. cheap-maid-outfit is pvc. cheap-maid-outfit is short. The text-shortcut of cheap-maid-outfit is "mo3". The printed name of cheap-maid-outfit is "[clothing-title-before]cheap maid outfit[clothing-title-after]". Understand "cheap" as cheap-maid-outfit.
 
 To decide which figure-name is clothing-image of (C - cheap-maid-outfit):
 	decide on figure of maid outfit 3.

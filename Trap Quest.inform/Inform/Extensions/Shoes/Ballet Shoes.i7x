@@ -50,7 +50,8 @@ To decide which object is the unique-upgrade-target of (C - a ballet shoes):
 	if there is a worn diaper, decide on a random off-stage baby booties;
 	if diaper quest is 0 and the number of worn ballet related wearthings > 1, decide on a random off-stage thigh high ballet boots;
 	if the player is gendered male, decide on a random off-stage sissy ballet boots;
-	decide on a random off-stage ballet heels.
+	if ballet heels is off-stage, decide on ballet heels;
+	decide on nothing.
 
 This is the ballet shoes fix rule:
 	repeat with C running through ballet shoes:
@@ -60,6 +61,10 @@ The ballet shoes fix rule is listed in the diaper quest fix rules.
 Part 2 - Sissy Ballet Boots
 
 A sissy ballet boots is a kind of ballet shoes. A sissy ballet boots is usually unique. A sissy ballet boots is usually pvc.
+
+Definition: a sissy ballet boots is class-relevant: [elsewise they get overwritten by the baby bonnet during the latex prisoner setup]
+	if the player is actually an adult baby, decide yes;
+	decide no.
 
 To decide which figure-name is the clothing-image of (H - a sissy ballet boots):
 	decide on the figure of sissy ballet boots.

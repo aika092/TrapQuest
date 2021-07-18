@@ -35,12 +35,7 @@ To Execute Fainting:
 	let OL be the location of the player;
 	if the player is in WoodsBoss01, now the player is in Woods16;
 	if the player is in a linkedroom, now the player is in the source-room of the location of the player;
-	[if the player is in UrinalBlindfolded, now the player is in Hotel31;]
 	if the player is in DiamondLessonBlindfolded, now the player is in School12;
-	[if the player is in Iron Maiden, now the player is in the location of a random iron-maiden;
-	if the player is in HoleInWall, now the player is in the location of hole-in-wall;
-	if the player is in DiaperPail, now the player is in the location of most-recent-pail;
-	if the player is in MimicCrib, now the player is in the location of memic;]
 	if the player is in a predicament room:
 		now the player is in School01;
 		repeat with T running through things in Predicament20:
@@ -505,7 +500,7 @@ To say LeftoverDesc (N - 100):
 5 - Dildo pole hits on head
 6 - Fatigue + ass hook
 7 - Unable to jump from dildo
-8 - Completely immobile
+8 - generic suffocation
 9 - wench suffocation
 10 - belly overflow
 11 - throne specific belly overflow
@@ -515,6 +510,7 @@ To say LeftoverDesc (N - 100):
 16 - Vine Boss
 17 - Full Cum Addiction
 18 - Misc Orifice Soreness
+22 - Nintendoll suffocation
 23 - Drowned
 ]
 
@@ -586,7 +582,8 @@ To say FaintingFlav (N - 6):
 To say FaintingFlav (N - 7):
 	say "'[one of]Wow, what an unusual way to go! It's not very difficult to jump off that dildo you know, your body must have been pretty heavy from all those shape adjustments, or were you stuck on some high heels that prevented you from jumping at all? Let's see if this reset helps...'[or]Absolutely awful. How could you let that happen to you again? Come on, try again now. And this time, learn from your mistakes...'[stopping]".
 
-[8 unused]
+To say FaintingFlav (N - 8):
+	say "'[one of]Hmm, perhaps you bit off a bit more than you could chew there! If you needed to breathe that badly, all you needed to do was make her cum.'[or]You suffocated again?! You're hopeless!'[stopping]".
 
 To say FaintingFlav (N - 9):
 	say "'[one of]Not going to lie, that was your own fault entirely. Don't provoke that girl unless you're sure you can take her. Back in you go, and this time, be less aggressive...'[or]You lost another fight with the wench?! Did you not learn? Come on, try again now. And this time, learn from your mistakes...'[stopping]".

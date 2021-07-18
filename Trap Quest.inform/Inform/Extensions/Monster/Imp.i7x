@@ -16,10 +16,19 @@ Definition: an imp is summoningRelevant: decide no. [Doesn't count towards the n
 
 An imp has a number called imp-rudeness. The imp-rudeness of an imp is usually 0. [determines the chances of imp leaving after being attacked]
 
-Figure of imp 1 is the file "NPCs/MultiFloor/imp1.png".
+Figure of imp 1 is the file "NPCs/MultiFloor/Imp/imp1.jpg".
+Figure of imp 2 is the file "NPCs/MultiFloor/Imp/imp2.jpg".
+Figure of imp cutsene 1 is the file "NPCs/MultiFloor/Imp/cutscene-imp-fuck1.jpg".
+Figure of imp cutsene 2 is the file "NPCs/MultiFloor/Imp/cutscene-imp-preg1.jpg".
 
 To decide which figure-name is the monster-image of (M - an imp):
 	decide on figure of imp 1.
+To decide which figure-name is the unfriendly-monster-image of (M - an imp):
+	decide on figure of imp 2.
+
+To decide which figure-name is the sex-profile of (M - an imp):
+	if M is penetrating a body part, decide on Figure of imp cutsene 1;
+	decide on figure of Missing NPC. [Defaults back to the non-sex stuff.]
 
 To say ShortDesc of (M - an imp):
 	say "imp".
@@ -77,7 +86,7 @@ To say MonsterComment of (M - an imp):
 			otherwise say "[variable custom style][one of][big he of M] may look weak, but that's because all [his of M] strength is below the waist. I should get below [his of M] waist too![or]A good bodyguard has your back. A perfect bodyguard has your butt. Thank you![or][big he of M] follows me everywhere because he needs me. For sex.[in random order]";
 	otherwise if the class of the player is priestess:
 		if M is player-brood, say "An angry voice sounds in your head.[second custom style]Disgraced Sister, [one of]you should not feel familial love toward such a being. Drive it away at once![or]you have brought this vile creature into being. It is your responsibility.[or]you must not succumb to such a being. You must escape before you are defiled again![in random order]";
-		otherwise  say "A panicked voice sounds in your head.[second custom style]Lost Sister, [one of]your holy power is useless against such a being! Drive it away!'[or][if M is penetrating a body part]you must not submit to this vile assault! Resist, sister! You must resist!'[otherwise if U is 1]that is a vile, corrupted existence. You must not let it defile you!'[otherwise]that is a vile, corrupted being. You must never trust it.'[end if][or]you have become snarled in a web of darkness. You must seek help!'[in random order]";
+		otherwise say "A panicked voice sounds in your head.[second custom style]Lost Sister, [one of]your holy power is useless against such a being! Drive it away!'[or][if M is penetrating a body part]you must not submit to this vile assault! Resist, sister! You must resist!'[otherwise if U is 1]that is a vile, corrupted existence. You must not let it defile you!'[otherwise]that is a vile, corrupted being. You must never trust it.'[end if][or]you have become snarled in a web of darkness. You must seek help!'[in random order]";
 	otherwise if the bimbo of the player < 7:
 		if the player is gendered male, say "[first custom style][one of][if U is 1][big he of M]'s looking at me like I look at chicks![otherwise][big he of M] looks weak, but that's better than nothing.[end if][or][big he of M] [if U is 1]probably can't keep dodging forever.[otherwise]seems a little scummy, but who doesn't?[end if][or]How do I get rid of this [if M is presenting as male]guy[otherwise]chick[end if]?[in random order]";
 		otherwise say "[first custom style][one of][if U is 1]Stop looking at me like that, you BRUTE![otherwise]What's [he of M] planning?[end if][or][if U is 1]Why am I surprised it betrayed me?[otherwise]I can smell the entitlement from here. News flash: I won't be fucking you.[end if][or]Stop following me![in random order]";

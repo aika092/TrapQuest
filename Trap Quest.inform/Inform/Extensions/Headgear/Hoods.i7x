@@ -1,6 +1,6 @@
 Hoods by Headgear begins here.
 
-A hood is a kind of headgear. A hood is usually latex. A hood is usually manly.  A hood is usually oral-sex-addiction-influencing.
+A hood is a kind of headgear. A hood is usually latex. A hood is usually manly. A hood is usually oral-sex-addiction-influencing.
 
 Definition: a hood is ringagged: decide yes.
 

@@ -329,9 +329,6 @@ To compute perception of (M - a student):
 		compute detention chair tease of M;
 	otherwise if armband is worn:
 		unless there is an active assembly:
-			if M is amicable student and M is unfriendly:
-				say "You see [him of M] frown, and it looks like [he of M][']s about to say something angry, but then decides to forgive you instead.";
-				calm M;
 			if M is friendly:
 				compute student perception of M;
 			otherwise:
@@ -470,7 +467,7 @@ To FavourUp (M - a student) by (N - a number):
 To RespectUp (M - a student) by (N - a number): [This is the same mechanically as favour but with different flavour]
 	if N > 0 and M is alive:
 		increase the favour of M by N;
-		say "You can tell that [BigNameDesc of M] [one of]is impressed with you[or]has [if M is not acquaintance]regained some[otherwise]gained[end if] respect for you[or]is happy with what [he of M] sees[or]approves[in random order].".
+		say "You can tell that [NameDesc of M] [one of]is impressed with you[or]has [if M is not acquaintance]regained some[otherwise]gained[end if] respect for you[or]is happy with what [he of M] sees[or]approves[in random order].".
 
 To FavourDown (M - a student) by (N - a number):
 	RespectDown M by N.
@@ -480,7 +477,7 @@ To RespectDown (M - a student) by (N - a number): [This is the same mechanically
 	if the class of the player is cheerleader and a random number between 1 and 2 is 1, decrease N by 1;
 	if N > 0 and M is alive:
 		decrease the favour of M by N;
-		say "You can tell that [BigNameDesc of M] [if M is friendly][one of]is unimpressed with you[or]has lost respect for you[or]is disgusted by what [he of M] sees[in random order][otherwise][one of]is utterly appalled by what [he of M] sees[or]has lost all respect for you[or]is deeply disgusted by you[in random order][end if].".
+		say "You can tell that [NameDesc of M] [if M is amicable student][one of]is feeling sorry for you[or]is pitying you[in random order][otherwise if M is friendly][one of]is unimpressed with you[or]has lost respect for you[or]is disgusted by what [he of M] sees[in random order][otherwise][one of]is utterly appalled by what [he of M] sees[or]has lost all respect for you[or]is deeply disgusted by you[in random order][end if].".
 
 To HappinessUp (M - a student):
 	HappinessUp M by 1.
@@ -488,7 +485,7 @@ To HappinessUp (M - a student):
 To HappinessUp (M - a student) by (N - a number): [This is the same mechanically as favour but with different flavour]
 	if N > 0 and M is alive:
 		increase the favour of M by N;
-		say "You can tell that [BigNameDesc of M] is [if M is not acquaintance][one of]pleased by that[or]trying to hide a smile[in random order][otherwise][one of]smiling about that[or]happy with you[in random order][end if].".
+		say "You can tell that [NameDesc of M] is [if M is not acquaintance][one of]pleased by that[or]trying to hide a smile[in random order][otherwise][one of]smiling about that[or]happy with you[in random order][end if].".
 
 To HappinessDown (M - a student):
 	HappinessDown M by 1.
@@ -497,10 +494,15 @@ To HappinessDown (M - a student) by (N - a number): [This is the same mechanical
 	if the class of the player is cheerleader and a random number between 1 and 2 is 1, decrease N by 1;
 	if N > 0 and M is alive:
 		decrease the favour of M by N;
-		say "You can tell that [BigNameDesc of M] is [if M is friendly][one of]not happy[or]irritated[or]frustrated[in random order][otherwise][one of]pissed off[or]furious[or]angry[in random order] with you[end if].".
+		say "You can tell that [NameDesc of M] is [if M is amicable student][one of]a little disappointed[or]a tad vexed[in random order][otherwise if M is friendly][one of]not happy[or]irritated[or]frustrated[in random order][otherwise][one of]pissed off[or]furious[or]angry[in random order] with you[end if].".
 
-To FavourDown (M - an amicable student) by (N - a number):
-	do nothing.
+To CheerUp (M - a student):
+	CheerUp M by 1.
+
+To CheerUp (M - a student) by (N - a number): [This is the same mechanically as favour but with different flavour. Mainly for when the student pulls pranks or similar]
+	if N > 0 and M is alive:
+		increase the favour of M by N;
+		say "You can tell that [NameDesc of M] [if M is not acquaintance][one of]is feeling a bit better now[or]has cheered up a little bit[in random order][otherwise][one of]is even happier now[or]is feeling cheerful, thanks to that[in random order][end if].".
 
 To FavourDown (M - a student) by (N - a number) with consequences:
 	if M is alive:
@@ -509,9 +511,6 @@ To FavourDown (M - a student) by (N - a number) with consequences:
 		decrease the favour of M by N;
 		if P is 0 and M is unfriendly: [monster was friendly but now is unfriendly]
 			distract M.
-
-To HappinessDown (M - an amicable student) by (N - a number):
-	do nothing.
 
 To say BecomesAggressive of (M - a student):
 	compute bully perception of M.
@@ -658,7 +657,16 @@ Definition: student-bully-food-hall is appropriate:
 To compute punishment of (P - student-bully-food-hall):
 	compute food hall bullying of current-monster.
 
-student-bully-swimming-pool is a diaper punishment. The priority of student-bully-swimming-pool is 5.
+student-bully-toilet-key is a diaper punishment. The priority of student-bully-toilet-key is 5.
+Definition: student-bully-toilet-key is appropriate:
+	if current-monster is student and academy-toilet-key is held, decide yes;
+	decide no.
+To compute punishment of (P - student-bully-toilet-key):
+	say "[speech style of current-monster]'I'm taking this, and you're NEVER having it back!'[roman type][line break][BigNameDesc of current-monster] takes the key for the toilets!";
+	now academy-toilet-key is carried by current-monster;
+	satisfy current-monster.
+
+student-bully-swimming-pool is a diaper punishment. The priority of student-bully-swimming-pool is 4.
 Definition: student-bully-swimming-pool is appropriate:
 	if current-monster is student and the player is not at least partially immobile and the player is not flying and the rank of the player >= the entry-rank of School20 and the current-rank of current-monster >= the entry-rank of School20 and the semen coating of thighs < 9 and the number of staff member in School20 is 0, decide yes;
 	decide no.
@@ -723,6 +731,7 @@ Check going when the player is in School19:
 student-bully-swirlie is a diaper punishment. The priority of student-bully-swirlie is 3.
 Definition: student-bully-swirlie is appropriate:
 	if current-monster is not student, decide no;
+	if locked-toilets is true, decide no;
 	if there is worn wet knickers or the location of the player is toilets, decide yes;
 	decide no.
 To compute punishment of (P - student-bully-swirlie):
@@ -749,8 +758,16 @@ To compute swirlie of (M - a monster):
 	compute crowd jeering of M;
 	let ST be a random unfriendly nasty student in the location of M;
 	if ST is student and ST is not M:
-		say "[BigNameDesc of ST] takes the opportunity to kick you right in the [genitals]. Tears appear in your eyes and are immediately washed away by the toilet water.";
-		PainUp 2;
+		if watersports fetish is 1:
+			say "[BigNameDesc of ST] takes the opportunity to squat above the toilet and urinate, pissing straight down onto your hair and the back of your neck. The toilet water quickly gets mixed with [his of ST] [urine], and still [NameDesc of M] holds your face in it.";
+			let N be the largeness of hair - (the semen coating of hair + the urine coating of hair + the water-drench of hair);
+			if N < 1, now N is 1;
+			AnnouncedSquirt urine on hair by N;
+			severeHumiliate;
+			UrineTasteAddictUp 1;
+		otherwise:
+			say "[BigNameDesc of ST] takes the opportunity to kick you right in the [genitals]. Tears appear in your eyes and are immediately washed away by the toilet water.";
+			PainUp 2;
 		satisfy ST;
 		compute room leaving of ST;
 	let swirlieResisting be 0;
@@ -833,18 +850,23 @@ To compute default bullying of (M - a student):
 
 bully-plug is a bully-action.
 Definition: bully-plug is eligible:
-	if there is an embodied thing penetrating asshole, decide no;
+	if there is an embodied thing penetrating asshole and (the player is not possessing a vagina or there is an embodied thing penetrating vagina), decide no;
 	if asshole is exposed and the current-rank of current-monster > 1, decide yes;
 	decide no.
 To execute (A - bully-plug):
 	let P be a random thing penetrating asshole;
-	if P is clothing:
+	if P is clothing and (the player is not possessing a vagina or there is an embodied thing penetrating vagina):
 		say "[speech style of current-monster]'Why do you have that in your ass? It obviously doesn't fit you, tryhard [bitch].'[roman type][line break][BigNameDesc of current-monster] smacks your ass, making sure [his of current-monster] palm connects with [NameDesc of P] so you feel it all the way inside your [asshole].";
 	otherwise:
 		now P is a random off-stage plentiful dong;
-		let pN be the openness of asshole - size of P;
-		say "[speech style of current-monster]'You look like you need something hard to work on for a little while.'[roman type][line break][BigNameDesc of current-monster] pulls out a [ShortDesc of P], [if pN < 0]laughing cruelly at your whimper of pain as [he of current-monster] roughly forces it into your [asshole][otherwise if pN < 3]slamming it into your [asshole][end if] and harshly swats your ass. [big his of current-monster] palm makes full contact with the bottom of the [ShortDesc of P], making you feel it all the way inside.";
-		summon P uncursed;
+		let F be asshole;
+		if the player is possessing a vagina and vagina is exposed and the number of embodied things penetrating vagina is 0:
+			if a random number between 1 and 3 > 1 or there is an embodied thing penetrating asshole, now F is vagina;
+		let pN be the openness of F - size of P;
+		say "[speech style of current-monster]'You look like you need something hard to work on for a little while.'[roman type][line break][BigNameDesc of current-monster] pulls out a [ShortDesc of P], and then takes a small tube of some kind of glue and coats the shaft. [big he of current-monster] [if pN < 0]laughs cruelly at your whimper of pain as [he of current-monster] roughly forces it into your [variable F][otherwise if pN < 3]slams it into your [variable F][end if] and harshly swats your ass. [big his of current-monster] palm makes full contact with the bottom of the [ShortDesc of P], making you feel it all the way inside.";
+		if F is vagina, summon P uncursed vaginally;
+		otherwise summon P uncursed;
+		now P is glued;
 	ruin asshole times 2.
 
 bully-piss is a bully-action.
@@ -905,6 +927,75 @@ Definition: bully-donate is eligible:
 To execute (A - bully-confiscate):
 	compute punishment of donate babywear.
 
+bully-gloryhole is a bully-action.
+Definition: bully-gloryhole is eligible:
+	if the rank of the player >= 3 and gloryhole is in School19 and face is not actually occupied, decide yes;
+	decide no.
+To execute (A - bully-gloryhole):
+	compute gloryhole lesson of current-monster.
+
+bully-schoolgirl is a bully-action.
+Definition: bully-schoolgirl is eligible:
+	if there is a worn schoolgirl outfit:
+		if diaper quest is 0 and minimalist schoolgirl outfit is off-stage, decide yes;
+		if diaper quest is 1 and gingham schoolgirl outfit is off-stage, decide yes;
+	decide no.
+To execute (A - bully-schoolgirl):
+	let C be a random worn schoolgirl outfit;
+	say "[BigNameDesc of current-monster] scoffs.[line break][speech style of current-monster]'You think that outfit is appropriate for a [boy of the player] like you? I don't think so.'[roman type][line break][big he of current-monster] rips off your [ShortDesc of C]!";
+	destroy C;
+	if diaper quest is 0, now C is minimalist schoolgirl outfit;
+	otherwise now C is gingham schoolgirl outfit;
+	say "[speech style of current-monster]'You should wear something like this!'[roman type][line break][big he of current-monster] forces you to wear a [MediumDesc of C]!";
+	summon C uncursed;
+	say "And [he of current-monster][']s not finished with you yet! [big he of current-monster] takes the collar of [NameDesc of C] and coats the inside with a tube of glue. Now it's stuck to you - you won't be able to remove it until you can peel away the glued collar!";
+	now C is glued.
+
+
+bully-lock-heels is a bully-action.
+Definition: bully-lock-heels is eligible:
+	if bondage protection is 1 or there is worn shoes or ballet heels is on-stage, decide no;
+	if there is an off-stage specific-key, decide yes;
+	decide no.
+To execute (A - bully-lock-heels):
+	summon ballet heels uncursed;
+	say "[BigNameDesc of current-monster] makes you wear a [ballet heels]!";
+	let K be a random off-stage specific-key;
+	compute current-monster locking ballet heels with K.
+
+bully-lock-gag is a bully-action.
+Definition: bully-lock-gag is eligible:
+	if bondage protection is 1 or face is actually occupied, decide no;
+	if there is an off-stage specific-key, decide yes;
+	decide no.
+To execute (A - bully-lock-gag):
+	let G be lip gag;
+	if diaper quest is 1:
+		say "[speech style of current-monster]'A dumb baby like you needs one of these!'[roman type][line break]";
+		now G is yellow-pacifier;
+	otherwise:
+		say "[speech style of current-monster]'You should smile more!'[roman type][line break]";
+	summon G uncursed;
+	say "[BigNameDesc of current-monster] makes you wear a [G][if G is pacifier] that has been threaded onto a bondage strap[end if]!";
+	let K be a random off-stage specific-key;
+	compute current-monster locking G with K.
+
+bully-sharpie is a bully-action.
+Definition: bully-sharpie is eligible:
+	if the number of worn tattoos is 0 or marker chest tattoo is worn or there is worn not-top-displacable actually breast covering clothing, decide no;
+	decide yes.
+To execute (A - bully-sharpie):
+	let C be a random worn actually breast covering clothing;
+	say "[BigNameDesc of current-monster] takes out a permanent marker, [if C is clothing]pulls up your [ShortDesc of C], [end if]and writes something on your chest!";
+	summon marker chest tattoo;
+	if weight gain fetish is 1 and current-monster is nasty student:
+		now the tattoo-title of marker chest tattoo is "DISGUSTING FAT UGLY PIG";
+		now the tattoo-outrage of marker chest tattoo is 14;
+	otherwise:
+		now the tattoo-title of marker chest tattoo is the substituted form of "[if diaper lover > 0 or lactation fetish is 1]Mommy's Milkers[otherwise]I HAVE NO TITS[end if]";
+		now the tattoo-outrage of marker chest tattoo is 7;
+	say "[speech style of current-monster]'There you go, now you look like the trashy [if diaper quest is 0]whore[otherwise]submissive[end if] you're destined to be!'[roman type][line break]".
+
 To say angry punishment insult of (M - a student):
 	say "[speech style of M]'Your outfit is fucking ugly.'[roman type][line break]".
 
@@ -921,6 +1012,94 @@ To compute food hall bullying of (M - a student):
 	say "[BigNameDesc of M] takes the cup and [one of]takes a long gleeful gulp[or]sips it delicately as if it contains a fine nectar[in random order].[line break][speech style of M]'[one of]Ah, the sweet taste of karma[or]This tastes so much better when my clit isn't sore from sitting on that thing[or]Delicious. Good [boy of the player][in random order].'[roman type][line break]";
 	compute crowd boredom of M;
 	satisfy M.
+
+Part - Pranks
+
+To compute unique interaction of (M - a ditzy student):
+	let F be the aggro limit of M - the favour of M; [gets larger the more she is angry with the player]
+	if a random number between 1 and 20 >= F:
+		compute default prank of M.
+
+a prank-action is a kind of object.
+Definition: a prank-action is eligible: decide yes.
+To execute (A - a prank-action):
+	do nothing.
+
+To compute default prank of (M - a student):
+	now current-monster is M;
+	let A be a random eligible prank-action;
+	if A is nothing or there is a staff member in the location of M:
+		do nothing;
+	otherwise:
+		execute A;
+		CheerUp M.
+
+prank-wedgie is a prank-action.
+Definition: prank-wedgie is eligible:
+	let K be a random worn knickers;
+	if K is undies or K is bikini bottoms:
+		repeat with C running through worn crotch covering clothing:
+			if C is not K and C is not trousers, decide no; [everything except trousers prevents wedgies]
+		decide yes;
+	decide no.
+To execute (A - prank-wedgie):
+	let K be a random worn knickers;
+	say "[speech style of current-monster]'WEDGIE!!!'[roman type][line break][BigNameDesc of current-monster] has taken advantage of a moment you weren't looking to sneak behind you and tug at the back of your [ShortDesc of K]. They ride up into your buttcrack. ";
+	if the damage of K >= a random number between 0 and the armour of K:
+		say "[big he of current-monster] pulls so hard at the [clothing-material of K] that it rips in two! Your [K] are destroyed.";
+		destroy K;
+		say "[speech style of current-monster]'Whoopsie, haha, I don't know my own strength!'[roman type][line break]";
+	otherwise:
+		say "It damages the [clothing-material of K], and it really hurts!";
+		PainUp 1;
+		damage K.
+
+prank-kancho is a prank-action.
+Definition: prank-kancho is eligible:
+	if there is rigid ass covering clothing, decide no;
+	if there is an embodied thing penetrating asshole, decide no;
+	decide yes.
+To execute (P - prank-kancho):
+	let C be a random top level ass protection clothing;
+	let A be a random thing penetrating asshole;
+	say "[speech style of current-monster]'KANCHO!!!'[roman type][line break][BigNameDesc of current-monster] has taken advantage of a moment you weren't looking to sneak behind you and prod the index and midle fingers of each hand against your [asshole] as quickly and powerfully as [he of current-monster] can. ";
+	if A is a thing:
+		say "[big his of current-monster] fingertips thump into [NameDesc of A], sending a powerful jolt deep inside you!";
+		ruin asshole;
+		if A is not currently at least partially visible, say "[speech style of current-monster]'Whoa, you've got a [ShortDesc of A] in your ass? Slut alert, haha!'[roman type][line break]";
+	otherwise if C is a clothing:
+		say "[big his of current-monster] fingertips jam into your sphincter through the [clothing-material of C] of your [ShortDesc of C], triggering a sharp but short-lived pain in your backside.";
+		PainUp 1;
+	otherwise:
+		say "With no barrier between [his of current-monster] fingers and your [asshole], they shoot right up inside you, with serious strength and speed. The sensation is both painful and intense!";
+		PainUp 1;
+		now current-monster is penetrating asshole;
+		ruin asshole;
+		dislodge current-monster;
+		say "[BigNameDesc of current-monster] quickly removes [his of current-monster] fingers from your [asshole], cackling to [himself of current-monster].[line break][speech style of current-monster]'Gotcha good, didn't I?'[roman type][line break]".
+
+prank-photo is a prank-action.
+Definition: prank-photo is eligible:
+	let A be the appearance of the player;
+	if diaper quest is 1, now A is the cringe appearance of the player;
+	if A > 5 and A < 20 - the favour of current-monster, decide yes;
+	decide no.
+To execute (P - prank-photo):
+	let A be the appearance of the player;
+	say "Suddenly, [current-monster] puts [his of current-monster] arm over your shoulder.[line break][speech style of current-monster]'Say cheese!'[roman type][line break][BigNameDesc of current-monster] has taken a quick photograph of you both with her smartphone.[line break][if the player is modest][variable custom style]What?! No, not while I look like this![line break][end if][speech style of current-monster]'I just couldn't resist taking a selfie with you when you look so [if diaper quest is 1]cute[otherwise if A < 10]cute and slutty[otherwise]utterly whorish[end if] like this!'[roman type][line break]Before you can object, [NameDesc of current-monster] has uploaded the photo of you both somewhere[line break][variable custom style]Wait, was that to the REAL Internet? How many people will see it?![line break][speech style of current-monster]'I bet this one gets lots of upvotes!'[roman type][line break][BigNameDesc of current-monster] giggles happily.";
+	let T be "in a selfie with your fellow student [student-name of current-monster]";
+	if diaper quest is 1 and the appearance of the player < the cringe appearance of the player, now A is the cringe appearance of the player;
+	compute digital reputation damage T strength (A) quality (a random number between 1 and 2).
+
+prank-condom is a prank-action.
+Definition: prank-condom is eligible:
+	if condom fetish is 1 and the current-rank of current-monster > 1 and there is worn condom pinnable currently uncovered clothing, decide yes;
+	decide no.
+To execute (A - prank-condom):
+	let C be a random worn condom pinnable currently uncovered clothing;
+	let N be the current-rank of current-monster - 1;
+	say "[speech style of current-monster]'Gotcha!'[roman type][line break][BigNameDesc of current-monster] has taken advantage of a moment you weren't looking to sneak up to you and pin [if N is 1]a used condom[otherwise][N] used condoms[end if] to your [ShortDesc of C][one of]! Due to the rules of this weird universe, it now can't be removed without biting it, which causes you to get a mouthful of the [semen] inside...[or].[stopping]";
+	increase the used condoms of C by N.
 
 Part - Damage
 

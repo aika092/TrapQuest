@@ -10,6 +10,7 @@ To say ExamineDesc of (B - a pocketwipes):
 	say "A small blue packet containing a few wet wipes. [if diaper messing > 3]It looks like there's enough for one diaper change, or you[otherwise]You[end if] could use them to wipe make up away[if diaper quest is 0], or wipe cum off of your body[end if].".
 
 Definition: a pocketwipes is shop-eligible: decide yes.
+Definition: a pocketwipes is never-in-bag: decide yes.
 
 To decide which number is the outrage of (C - a pocketwipes):
 	decide on 1.

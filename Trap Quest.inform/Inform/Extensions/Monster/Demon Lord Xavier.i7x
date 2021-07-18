@@ -10,11 +10,13 @@ Understand "xavier" as demon lord.
 
 The text-shortcut of demon lord is "xa".
 
-Figure of Demon Lady is the file "NPCs/Bosses/xavier3.png".
-Figure of Xavier Cutscene 1 is the file "Special/Cutscene/cutscene-xavier-event1.png".
+Figure of Demon Lady is the file "NPCs/Bosses/Xavier/xavier3.png".
+Figure of Xavier Cutscene 1 is the file "NPCs/Bosses/Xavier/cutscene-xavier-event1.png".
+Figure of Demon Lord Interested is the file "NPCs/Bosses/Xavier/cutscene-xavier-interact1.jpg".
 
 To decide which figure-name is the monster-image of (M - demon lord):
 	if lady fetish is 1, decide on figure of demon lady;
+	if M is interested, decide on figure of demon lord interested;
 	decide on figure of demon lord.
 
 To say ShortDesc of (M - demon lord):
@@ -91,11 +93,11 @@ To set up (M - demon lord):
 	reset M;
 	now the monstersetup of M is 1;
 	add infernal gem to the banishItems of M, if absent;
-	now the raw difficulty of M is the starting difficulty of M + (the charge of demon codpiece * 2);
+	now the raw difficulty of M is the starting difficulty of M + the charge of demon codpiece;
 	now the health of M is the maxhealth of M.
 
 To decide which number is the starting difficulty of (M - demon lord):
-	decide on 12.
+	decide on 18.
 
 To unseal xavier from (M - a monster):
 	now demon lord is in the location of M;
@@ -199,6 +201,8 @@ To compute perception of (M - demon lord):
 		if there is worn perceived unmessed knickers, compute state check of a random worn messed knickers;
 	otherwise if the player is soulless and the player-class is not succubus:
 		say "[first custom style]'YOU WILL SERVE AS AN IDEAL VESSEL FOR ONE OF MY SERVANTS! KNEEL AND PREPARE YOURSELF!'[roman type]";
+	otherwise if ex-princess is unconcerned and ex-princess is alive and the number of monsters in the location of the player is 1 and ((diaper quest is 0 and the player is a june 2021 top donator) or (diaper quest is 1 and the player is a june 2021 diaper donator)):
+		commence final battle;
 	otherwise if vaginalvirgin of the player is 1 and the player is possessing a vagina:
 		say "[first custom style]'[one of]YOU CANNOT RESIST ME, FOOLISH [caps boy of the player]!'[or]I WILL BE THE FIRST TO IMPALE YOU ON MY MIGHTY COCK, VIRGIN!'[or]I LOVE CHERRIES!'[or]SUBMIT YOURSELF, [caps boy of the player]! YOU CANNOT PROTECT YOUR VIRGINITY FROM ME!'[at random][roman type][line break]";
 	otherwise if the class of the player is princess:
@@ -233,6 +237,13 @@ To compute (M - demon lord) stomping (N - a monster):
 	otherwise:
 		say "[BigNameDesc of M] is glitching, it doesn't know how to deal with [NameDesc of N]! Report this bug!".
 
+To compute (M - demon lord) stomping (N - ex-princess):
+	if N is guarding:
+		compute final battle;
+	otherwise if N is unleashed and N is uninterested:
+		say "[speech style of M]'PRINCESS! ASSIST ME!'[roman type][line break][BigNameDesc of M] roars.";
+		check guaranteed perception of N.
+
 Part 3 - Combat
 
 Section 1 - Attack
@@ -249,10 +260,12 @@ To decide which number is the condom resistance of (M - demon lord):
 The xavier priority attack rules is a rulebook. The priority attack rules of demon lord is usually the xavier priority attack rules.
 
 [Demon Transformation]
-The unique punishment rule of demon lord is usually the demon transformation rule.
-This is the demon transformation rule:
+The unique punishment rule of demon lord is usually the demon final-battle-or-transformation rule.
+This is the demon final-battle-or-transformation rule:
 	let M be current-monster;
-	if the player is soulless and the player-class is not the succubus:
+	if ex-princess is in the location of M and ex-princess is guarding:
+		compute final battle; [probably won't ever happen because the stomp code should catch the princess, but just in case...]
+	otherwise if the player is soulless and the player-class is not the succubus:
 		say "The demon lord pulls out a strange swirling gem and roughly grabs you, holding you in place. [big he of M] then suddenly plunges the stone between your breasts, and you are overcome with a mixture of agony and ecstasy as a pair of horns pushes out of your head![line break][first custom style]'NOW YOU SERVE ME, SLAVE! BLOAT YOURSELF WITH THE SOULS OF THESE FOOLS AND PREPARE TO RENDER YOURSELF UNTO ME AT MY WHIM!'";
 		compute succubus transformation;
 		bore M;
@@ -262,16 +275,16 @@ This is the demon transformation rule:
 		summon pentagram tattoo.
 
 This is the xavier prioritises defeating others rule:
-	let A be the number of undefeated awake not infernal monsters in the location of current-monster;[he should ignore demonic monsters like imps]
-	if A > 1:[1 is going to be xavier himself]
+	let A be the number of undefeated awake monsters in the location of current-monster - the number of undefeated awake infernal monsters in the location of current-monster; [he should ignore demonic monsters like imps]
+	if A > 0:
 		MonsterStomp current-monster;
 		rule succeeds.
 The xavier prioritises defeating others rule is listed last in the xavier priority attack rules.
 
 To MonsterStomp (M - demon lord):
 	let stomped be 0;
-	repeat with N running through undefeated awake not infernal monsters in the location of M:
-		if stomped is 0 and N is not penetrating a body part and N is not grabbing the player and N is not M:
+	repeat with N running through undefeated awake monsters in the location of M:
+		if stomped is 0 and N is not infernal and N is not penetrating a body part and N is not grabbing the player:
 			compute M stomping N;
 			now stomped is 1.
 
@@ -313,7 +326,7 @@ To say CondomRejectFlav of (M - demon lord):
 				now M is seduction-refused;[makes him damageable and kicks you out of the seduction scene.]
 			otherwise:
 				say CondomForceFailFlav of M;
-				compute angry punishment of M;
+				consider angry punishment of M;
 	otherwise:
 		say "Looks like [he of M]'s going in bare...".
 
@@ -687,7 +700,367 @@ To compute punishment of (P - xavier-nightmare-belt):
 		try urinating;
 	if M is interested, satisfy M.
 
-Section 4 - Damage
+Section 4 - Final Battle
+
+A final-battle-object is a kind of object. A final-battle-object has a number called uses.
+Definition: a final-battle-object is eligible:
+	if the uses of it is 0, decide yes;
+	decide no.
+Definition: a final-battle-object is appropriate: decide yes.
+
+final-battle-magic-clash is a final-battle-object.
+Definition: final-battle-magic-clash is appropriate: decide no.
+
+current-final-battle-object is an object that varies.
+
+To compute princess attack before (F - a final-battle-object):
+	say "[speech style of ex-princess]'I [if diaper quest is 1][one of]am a pathetic little pisspot[or]deserve to be degraded[or]need thicker padding or I'm gonna leak[or]cum when I wet myself[or]am a naughty little minx in need of a good hard spanking[in random order][otherwise][one of]was born to be bred[or]deserve to drink nothing but cum[or]am a pathetic little fuckpuppet[or]need a good rough fisting[or]want my holes to be wrecked beyond recognition[in random order][end if]!'[roman type][line break]After shouting the incantation, [NameDesc of ex-princess] [one of]blasts [NameDesc of demon lord] with a ray of freezing cold[or]pierces [NameDesc of demon lord] with a beam of holy energy[or]conjures an explosive blast right underneath [NameDesc of demon lord][']s feet[or]summons a tornado around [NameDesc of demon lord], ripping shreds out of [his of demon lord] skin[or]manifests a miniscule singularity, warping spacetime near [NameDesc of demon lord] and rending [his of demon lord] flesh[in random order]! [BigNameDesc of demon lord] roars in pain.";
+	decrease the health of demon lord by the maxhealth of demon lord / 5;
+	if the health of demon lord > 0, say "[speech style of demon lord]'[one of]TASTE MY WRATH[or]FUCK YOU, YOU VILE [if diaper quest is 1]THING[otherwise]WHORE[end if][or]I WILL MAKE YOU REGRET THIS[in random order]!'[roman type][line break]".
+To commence (F - a final-battle-object):
+	say "ERROR: a final battle object is missing its commencement function!".
+To execute (F - a final-battle-object):
+	say "[BigNameDesc of demon lord] and [NameDesc of ex-princess] fire magical energy blasts at each other! They both expend a significant amount of magical energy, and both of them take some damage.";
+	decrease the health of demon lord by the maxhealth of demon lord / 8;
+	decrease the health of ex-princess by the maxhealth of ex-princess / 8.
+
+final-battle-wand-curse is a final-battle-object.
+Definition: final-battle-wand-curse is appropriate: decide no.
+To execute (F - final-battle-wand-curse):
+	decrease the health of ex-princess by the maxhealth of ex-princess / 12;
+	say "[BigNameDesc of demon lord] is busy using one hand to maintain [his of demon lord] curse on [NameDesc of ex-princess][']s wand.[paragraph break][BigNameDesc of ex-princess] can't stop masturbating [himself of ex-princess] with [his of ex-princess] wand! [one of][big he of ex-princess] tries to speak to you in between lewd moans.[line break][speech style of ex-princess]'C-can't fight like this... [NameBimbo]... I need your help!'[roman type][line break][or][line break][speech style of ex-princess]'[one of]Cumming[or]Can't stop cumming[or]Another one! Fuck[then at random]!'[roman type][line break][BigNameDesc of ex-princess] [one of]quivers as [he of ex-princess] cums[or]shivers with bliss[or]shakes all over[or][if diaper quest is 1]audibly squirts into [his of ex-princess] diaper[otherwise]squirts, soaking [his of ex-princess] panties[end if][stopping].[stopping][line break]You can [bold type]pull[roman type] [him of ex-princess] to help [him of ex-princess] out[one of] of this tricky situation[or][stopping].".
+Check pulling ex-princess when ex-princess is guarding and current-final-battle-object is final-battle-wand-curse:
+	if the player is immobile, say "You're a bit tied up right now!" instead;
+	let E be a random worn hand ready clothing;
+	if E is clothing and E is not cursed and E is not locked, say "You'll need to drop [NameDesc of E] first, so that you have a free hand." instead;
+	allocate 6 seconds;
+	say "You run over to [NameDesc of ex-princess] and try to yank the wand out of [his of ex-princess] hand!";
+	if E is clothing:
+		say "Your [E] drops to the ground, and your hand clasps around [NameDesc of royal scepter]!";
+		now E is in the location of the player;
+	summon royal scepter uncursed;
+	now royal scepter is cursed;
+	now the quest of royal scepter is cursed-orgasm-quest;
+	say "Instantly [NameDesc of ex-princess] is able to release the wand and return to battling [NameDesc of demon lord]. But now you find yourself in the same position as [NameDesc of ex-princess], forced to masturbate yourself with the wand!";
+	now current-final-battle-object is final-battle-magic-clash; [this object has concluded]
+	now another-turn is 1;
+	now another-turn-stored-action is masturbating;
+	do nothing instead.
+
+Check masturbating when royal scepter is worn cursed clothing:
+	if the quest of royal scepter is cursed-orgasm-quest:
+		allocate 6 seconds;
+		say "You can't stop yourself from bringing [NameDesc of royal scepter] to your [genitals]! The powerful magic buzzing sends you straight into a powerful climax.";
+		if the player is possessing a vagina, trigger shameful orgasm of vagina;
+		otherwise trigger shameful orgasm of penis;
+		progress quest of cursed-orgasm-quest.
+
+final-battle-stunned is a final-battle-object.
+Definition: final-battle-stunned is appropriate: decide no.
+To execute (F - final-battle-stunned):
+	say "For a moment, [NameDesc of ex-princess] is too exhausted to move. [BigNameDesc of demon lord] takes the opportunity to leap forward and slash at [NameDesc of ex-princess] with [his of demon lord] tail. [BigNameDesc of ex-princess] shrieks in pain as [he of ex-princess] is slashed by the sharp spike at the tip!";
+	decrease the health of ex-princess by the maxhealth of ex-princess / 8;
+	now current-final-battle-object is final-battle-magic-clash. [this object has concluded]
+
+final-battle-imp-piss is a final-battle-object. final-battle-imp-piss has a number called suffocation.
+Definition: final-battle-imp-piss is appropriate:
+	if watersports fetish is 1, decide yes;
+	decide no.
+To commence (F - final-battle-imp-piss):
+	say "[BigNameDesc of demon lord] raises a hand to the sky, extends a finger, and makes a circular motion. A portal opens in the air above [NameDesc of ex-princess][']s head! Suddenly, four magical golden chains shoot out of the portal and clank into place just above [NameDesc of ex-princess][']s golden hair, connected to... a small glass box?! [NameDesc of ex-princess][']s head is now encased in a transparent box, open at the top. The box is fixed in place by the chains and so [he of ex-princess] can't move from the spot.[line break][speech style of demon lord]'Oooh, lookie here!'[roman type][line break]An imp is peeking its head through the portal, and is soon joined by several more.[line break][speech style of demon lord]'A human toilet, just for us!'[roman type][line break]Another snickers, as they all whip out their [manly-penis]s.[line break][speech style of ex-princess]'Don't you dare... glaaargh!'[roman type][line break][BigNameDesc of ex-princess][']s words are turned into a panicked gargle as several streams of hot infernal [urine] spray onto [his of ex-princess] hair and face. The box begins to fill up, from the bottom.[line break][speech style of demon lord]'I WONDER, PRINCESS, CAN I KEEP THIS PORTAL STABLE FOR LONG ENOUGH THAT YOU DROWN IN IMP PISS? ONLY ONE WAY TO FIND OUT! HAHAHA!'[roman type][line break][BigNameDesc of demon lord][']s mocking call makes the situation clear enough. At some point [his of demon lord] portal will disappear and then [NameDesc of ex-princess] will be saved. But if [he of demon lord] can hold it open for long enough, then [NameDesc of ex-princess] will drown in the [urine]. Perhaps [he of ex-princess] can buy [himself of ex-princess] some time if [he of ex-princess] drinks some.[paragraph break]Or if you drink some...";
+	execute F.
+To execute (F - final-battle-imp-piss):
+	say "[BigNameDesc of demon lord] is busy focusing on maintaining [his of demon lord] portal. Meanwhile, [urine] rains down from the crowd of imps above, filling [NameDesc of ex-princess][']s box.[line break]The box is currently full up to [his of ex-princess] [if the uses of F is 1]chin[otherwise if the uses of F is 2]mouth[otherwise if the uses of F is 3]nose[otherwise if the uses of F is 4]eyes[otherwise if the uses of F is 5]forehead[otherwise]hair[end if][if the uses of F >= 3] - [bold type][he of ex-princess] can't breathe![roman type][line break][otherwise]. [end if][if the uses of F > 1][BigNameDesc of ex-princess] [one of]tries to swallow as much as [he of ex-princess] can, but it's still coming in faster than [he of ex-princess] can drink it![or]keeps trying to drink as much as [he of ex-princess] can.[stopping][otherwise][line break][end if]";
+	if the uses of F is 1:
+		say "[speech style of ex-princess]'Oh god... [NameBimbo] is there any way you could find it within yourself to help me do this?'[roman type][line break][BigNameDesc of ex-princess] manifests a long bendy straw which leads from the pissbox down to you. This way, you can help suck the piss out of the box and keep the level low.";
+		now player-numerical-response is 0;
+	otherwise:
+		if the player is immobile or the player is flying or another-turn is 1:
+			now player-numerical-response is 0;
+		otherwise:
+			reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+			set numerical response 1 to "suck [urine] through the straw, spitting as you go (slower)";
+			set numerical response 2 to "suck [urine] through the straw, swallowing as you go (faster)";
+			set numerical response 0 to "do something else";
+			compute multiple choice question;
+		if player-numerical-response is 1:
+			say "You take the straw and suck up a big mouthful of [urine]. Pulling back, you spit it out onto the floor.";
+			UrinePuddleUp 4;
+			if a random number between 1 and 2 is 1, decrease the uses of F by 1;
+			if a random number between 1 and 20 > the raw urine taste addiction of the player, SlowUrineTasteAddictUp 1;
+			now another-turn is 1;
+		otherwise if player-numerical-response is 2:
+			say "You take the straw and suck up two big mouthfuls of [urine], gulping down each as soon as your mouth is full.";
+			StomachUrineUp 6;
+			decrease the uses of F by 1;
+			if the uses of F > a random number between 1 and 5, decrease the uses of F by 1;
+			if a random number between 1 and 20 > the raw urine taste addiction of the player, UrineTasteAddictUp 1;
+			now another-turn is 1;
+	if the uses of F < 3:
+		say "[if player-numerical-response > 0]Thanks to your help, [NameDesc of ex-princess][otherwise][BigNameDesc of ex-princess][end if] can breathe normally this turn!";
+		if the suffocation of F > 0, decrease the suffocation of F by 1;
+	otherwise:
+		if player-numerical-response > 0, say "[BigNameDesc of ex-princess] is still forced to hold [his of ex-princess] breath!";
+		increase the suffocation of F by 1;
+		if the suffocation of F >= (the health of ex-princess * 10) / the maxhealth of ex-princess:
+			say "All of a sudden, you see a torrent of bubbles explode from [NameDesc of ex-princess][']s mouth - [he of ex-princess] has lost consciousness!";
+			now the health of ex-princess is -100;
+	if the health of ex-princess <= 0 or a random number between 1 and 5 is 1:
+		say "[bold type]The portal shimmers, and then instantly vanishes! [roman type]The box and chains disappear, and the remaining [urine] cascades downwards over [NameDesc of ex-princess][']s body. [if the health of ex-princess < 0][big he of ex-princess] collapses to the ground[otherwise]coughs and splutters and spits up [urine]. [BigNameDesc of demon lord] snarls.[line break][speech style of demon lord]'YOU SURVIVED?!'[roman type][line break][end if]";
+		now current-final-battle-object is final-battle-magic-clash. [this object has concluded]
+
+
+final-battle-pit is a final-battle-object.
+To commence (F - final-battle-pit):
+	say "[BigNameDesc of demon lord] places both hands flat on the ground. In the next moment, the ground under [NameDesc of ex-princess][']s feet disappears! Just as [he of ex-princess] starts to fall, [he of ex-princess] manages to conjure a golden rope connected to the ceiling, which [he of ex-princess] clings onto for dear life. Well, not so much dear life, as dear sanity. Beneath [him of ex-princess] is the biggest, deepest pit full of [if diaper quest is 0][semen][otherwise if diaper messing >= 7]used messy diapers[otherwise]used diapers[end if] in the world.[line break][speech style of demon lord]'NICE SAVE, BUT YOU CAN'T HOLD ON FOREVER! THE PIT WILL REMAIN UNTIL MY HANDS MOVE OR UNTIL SOMEONE FALLS IN! HAHAHA!'[roman type][line break][speech style of ex-princess]'Fuck. ...[NameBimbo]! Please help me!'[roman type][line break]";
+	execute F.
+To execute (F - final-battle-pit):
+	say "[BigNameDesc of demon lord] is keeping the magic pit of [if diaper quest is 0][semen][otherwise]diapers[end if] open by keeping both of [his of demon lord] hands pressed to the ground. [BigNameDesc of ex-princess] is clinging onto [his of ex-princess] golden rope for dear life, and there's no telling how long [he of ex-princess] can hold on for!";
+	if the player is immobile or the player is flying or another-turn is 1:
+		now player-numerical-response is 0;
+	otherwise:
+		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+		set numerical response 1 to "try to pull one of [NameDesc of demon lord][']s hands off of the ground (difficult strength check)";
+		set numerical response 2 to "jump into the pit, sacrificing yourself";
+		set numerical response 0 to "do something else";
+		compute multiple choice question;
+	if player-numerical-response is 1:
+		say "You grab hold of one of [NameDesc of demon lord][']s arms and pull with all your might!";
+		let R be a random number between 5 and (100 - (10 * the uses of F));
+		if debuginfo > 0, say "[input-style]Xavier focus check: RNG(5~[100 - (10 * the uses of F)]) = [R] | [strength of the player].5[roman type][line break]";
+		if the strength of the player >= R:
+			say "Amazingly, you actually manage to make [his of demon lord] huge arm move a fraction of an inch! Still, this is enough to break [his of demon lord] connection to [his of demon lord] spell. The pit disappears, and [NameDesc of ex-princess] can step onto the ground safely![line break][speech style of demon lord]'NO! CURSE YOU! HOW DARE YOU-'[roman type][line break]";
+			now current-final-battle-object is final-battle-magic-clash; [this object has concluded]
+		otherwise:
+			say "[BigNameDesc of demon lord] laughs at you.[line break][speech style of demon lord]'[one of]IS THIS REALLY YOUR LAST HOPE, PRINCESS? THIS WEAKLING?!'[or]FOOL, YOUR STRENGTH IS NO MATCH FOR MINE!'[or]YOUR SIDEKICK IS A TENACIOUS ONE, I'LL GIVE [caps him of the player] THAT!'[or]PITIFUL!'[stopping][roman type][line break]";
+		now another-turn is 1;
+	otherwise if player-numerical-response is 2:
+		say "You close your eyes, pinch your nose, and leap.[line break][speech style of demon lord]'NO! WHAT A WASTE OF A POWERFUL SPELL!'[roman type][line break]The hotel's floor, or rather the pit's ceiling, closes up behind you. You plunge into the impossibly large mass of [if diaper quest is 0][semen][otherwise]diapers[end if] and are immediately engulfed. There's nothing but [if diaper quest is 0][semen][otherwise if diaper messing >= 7]shit-filled diapers[otherwise][urine]-soaked plastic[end if] in every direction. Your senses are overwhelmed, and you feel yourself begin to suffocate.";
+		DelicateUp 1;
+		if diaper quest is 1:
+			DiaperAddictUp 1;
+		otherwise:
+			SemenAddictUp 2;
+		now current-final-battle-object is final-battle-magic-clash; [this object has concluded]
+		now another-turn is 1;
+		now another-turn-flavour is "And then suddenly, you're falling again, and after half a second you hand with a thud back in the [location of the player]. Perhaps after [NameDesc of demon lord] stopped focusing on keeping the pit in existence, the pocket dimension began to deteriorate until you were spat back out into the [']real world[']?";
+	if current-final-battle-object is F:
+		let R be a random number between 1 and 10;
+		if debuginfo > 0, say "[input-style]Princess holding check: d10 ([R]) | [uses of F - 1].5[roman type][line break]";
+		if a random number between 1 and 10 < the uses of F:
+			say "[speech style of ex-princess]'No...'[roman type][line break][BigNameDesc of ex-princess][']s grip fails and [he of ex-princess] falls into the pit, disappearing instantly into the depths of the [if diaper quest is 0][semen][otherwise if diaper messing >= 7]shit-filled diapers[otherwise][urine]-soaked plastic[end if].[line break][if the player is able to speak][variable custom style]'No!'[roman type][line break][end if]The reality of [NameDesc of ex-princess][']s fate is too much for you. With strength you didn't know you had, you grab hold of one of [NameDesc of demon lord][']s arms and pull with all your might! Either because [he of demon lord] was too distracted by [his of demon lord] moment of triumph, or because you have dug so deep, you manage to move [his of demon lord] hand and break [his of demon lord] magic connection! The pit suddenly disappears, and [NameDesc of ex-princess] reappears on the floor of the hotel room, gasping for air!";
+			decrease the health of ex-princess by the maxhealth of ex-princess / 3;
+			now current-final-battle-object is final-battle-magic-clash. [this object has concluded]
+
+
+final-battle-food is a final-battle-object.
+To commence (F - final-battle-food):
+	say "[BigNameDesc of demon lord] points a hand towards the doorway, and then swings it round to [his of demon lord] front, pointing it directly at [NameDesc of ex-princess]. A few seconds later, several pieces of dessert, and two huge [if diaper quest is 1]baby [end if]bottles of [milk] come flying towards [him of ex-princess]. [NameDesc of ex-princess] manages to catch the two bottles with [his of ex-princess] hands, and prevent them being able to get any closer, but the food is all heading straight for [his of ex-princess] face, clearly intent on force-feeding itself to [him of ex-princess]![line break][speech style of demon lord]'EVERY MOUTHFUL IS LACED WITH A STRONG APHRODESIAC! ENJOY! HAHAHA!'[roman type][line break]";
+	execute F.
+To execute (F - final-battle-food):
+	say "[speech style of demon lord]'AND TAKE THIS!'[roman type][line break][BigNameDesc of demon lord] shoots a red bolt of electricity at [NameDesc of ex-princess], intent on painfully shocking [him of ex-princess]!";
+	if the player is immobile or the player is flying or another-turn is 1:
+		now player-numerical-response is 0;
+	otherwise:
+		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+		set numerical response 1 to "step in front of the electic bolt";
+		set numerical response 2 to "eat one of the foods so [NameDesc of ex-princess] doesn't have to";
+		set numerical response 0 to "do something else";
+		compute multiple choice question;
+	if player-numerical-response is 1:
+		say "You step in front of the red bolt, taking the hit for [NameDesc of ex-princess]. The electric shock wracks your body with pain!";
+		BodyRuin 1;
+		PainUp 1;
+		now another-turn is 1;
+		now another-turn-flavour is "It takes you a few moments to recover from the shock.";
+	otherwise:
+		say "[BigNameDesc of ex-princess] is momentarily engulfed by painful red electricity. [big he of ex-princess] screams in pain!";
+		decrease the health of ex-princess by the maxhealth of ex-princess / 10;
+	if the health of ex-princess > 0:
+		if player-numerical-response is 2:
+			say "You take one of the poisoned desserts and force it into your mouth, swallowing it as quickly as you can! Immediately you can feel the toxin taking effect, sending your arousal skyrocketing upwards...";
+			StomachFoodUp 1;
+			Arouse 3000;
+			increase the uses of F by 1;
+			now another-turn is 1;
+		if the uses of F < 5, say "[BigNameDesc of ex-princess] is forced to eat on of the desserts. After [he of ex-princess] gulps it down, you hear [him of ex-princess] let out a lewd moan... it sounds like [he of ex-princess] is yearning for some attention down below, but [he of ex-princess] is fighting the urge to touch [himself of ex-princess] as best as [he of ex-princess] can.";
+	if the uses of F >= 5:
+		say "Finally finished being forcefed the food, [NameDesc of ex-princess] is able to focus on the milk bottles. [big he of ex-princess] pulls them to [his of ex-princess] chest and squeezes them tightly with all [his of ex-princess] might, causing the [milk] to erupt from the tips like two fountains. Soon the bottles are empty, and they fall to the ground, inert.";
+		now current-final-battle-object is final-battle-magic-clash. [this object has concluded]
+
+
+final-battle-plug is a final-battle-object.
+To commence (F - final-battle-plug):
+	say "[BigNameDesc of demon lord] clicks [his of demon lord] fingers, and [NameDesc of ex-princess][']s [if diaper quest is 1]diaper[otherwise]pair of white panties[end if] falls to the ground.[line break][speech style of ex-princess]'What are you...'[roman type][line break][BigNameDesc of ex-princess] begins to ask, but then the question starts to answer itself. A huge spiralling purple plug[if diaper messing >= 3], somewhat reminiscent of a huge piece of poop,[end if] appears underneath [him of ex-princess] with a magic glow about it. At the same time, a magic glow appears around [his of ex-princess] loins.[line break][speech style of ex-princess]'Oh god, I can feel the curse from here... Oh no...'[roman type][line break]Seemingly outside of [his of ex-princess] control, [NameDesc of ex-princess] begins to pick up the plug, and move it towards [his of ex-princess] asshole.[line break][speech style of demon lord]'HAHAHA! THAT'S RIGHT! THIS SPECIAL PLUG WILL SEVERELY WEAKEN THE WEARER, BOTH INSIDE AND OUT! BUT GOOD LUCK FIGHTING AGAINST YOUR HAND. AS LONG AS YOU CAN SEE IT, YOU WILL STRUGGLE TO RESIST IT!'[roman type][line break]";
+	execute F.
+To execute (F - final-battle-plug):
+	if the uses of F < a random number between 2 and 3:
+		say "[speech style of ex-princess]'N-no!'[roman type][line break][BigNameDesc of ex-princess] is doing [his of ex-princess] best to resist the magic forcing [him of ex-princess] to put in the plug, but [he of ex-princess] won't last long...";
+	otherwise:
+		say "[speech style of ex-princess]'Gaaah!'[roman type][line break][BigNameDesc of ex-princess] makes an exasperated noise of despair as [he of ex-princess] shoves the huge plug inside [his of ex-princess] asshole, and then replaces [his of ex-princess] [if diaper quest is 1]diaper[otherwise]panties[end if] over the top. You can't see it, but you know it's there, and it's making [him of ex-princess] significantly weaker. It's probably massively distracting, too.";
+		now current-final-battle-object is final-battle-stunned; [this object has concluded with a stun on the princess]
+	say "[speech style of demon lord]'AND TAKE THIS!'[roman type][line break][BigNameDesc of demon lord] shoots a red bolt of electricity at [NameDesc of ex-princess], intent on painfully shocking [him of ex-princess]!";
+	if the player is immobile or the player is flying or another-turn is 1:
+		now player-numerical-response is 0;
+	otherwise:
+		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+		set numerical response 1 to "step in front of the electic bolt";
+		if current-final-battle-object is F and asshole is not actually occupied and the number of ass covering undisplacable unzippable usually unautoremovable clothing is 0, set numerical response 2 to "wear the plug so [NameDesc of ex-princess] doesn't have to";
+		set numerical response 0 to "do something else";
+		compute multiple choice question;
+	if player-numerical-response is 1:
+		say "You step in front of the red bolt, taking the hit for [NameDesc of ex-princess]. The electric shock wracks your body with pain!";
+		BodyRuin 1;
+		PainUp 1;
+		now another-turn is 1;
+		now another-turn-flavour is "It takes you a few moments to recover from the shock.";
+	otherwise:
+		say "[BigNameDesc of ex-princess] is momentarily engulfed by painful red electricity. [big he of ex-princess] screams in pain!";
+		decrease the health of ex-princess by the maxhealth of ex-princess / 10;
+	if the health of ex-princess > 0 and player-numerical-response is 2:
+		say "You snatch the plug out of [NameDesc of ex-princess][']s hand, and before anyone can object, you force it up into your own [asshole].";
+		let P be a random prostate massager plug;
+		summon P cursed with quest;
+		now P is strength-influencing;
+		now the raw-magic-modifier of P is -4;
+		now the size of P is 7;
+		compute insertionRuin of P into asshole;
+		say "[speech style of ex-princess]'[NameBimbo]! You... You didn't have to do that...'[roman type][line break]Despite what [he of ex-princess] is saying, you can tell that [he of ex-princess] is extremely grateful.";
+		now current-final-battle-object is final-battle-magic-clash; [this object has concluded]
+		now another-turn is 1.
+
+
+final-battle-inflation is a final-battle-object.
+Definition: final-battle-inflation is appropriate:
+	if diaper quest is 1 or inflation fetish is 1, decide yes;
+	decide no.
+To commence (F - final-battle-inflation):
+	say "[BigNameDesc of demon lord] puts [his of demon lord] fingers to [his of demon lord] forehead, and shoots a beam of magical energy at [NameDesc of ex-princess][']s [if diaper quest is 1]diaper[otherwise]hips[end if]![line break][speech style of ex-princess]'What are you...'[roman type][line break][BigNameDesc of ex-princess] begins to ask, but then the question starts to answer itself. Her [if diaper quest is 1]diaper[otherwise]hips[end if] begin to inflate, ballooning rapidly in size with some kind of lighter-than-air gas. How do you know it's lighter than air? Because [NameDesc of ex-princess][']s [if diaper quest is 1]diaper[otherwise]ass cheeks[end if] have begun to lift [him of ex-princess] up in the air like a helium balloon, turning [him of ex-princess] upside down in the process.[line break][speech style of ex-princess]'Woah woah woah!'[roman type][line break]Soon only [NameDesc of ex-princess][']s dangling hair is touching the ground. In this position, [he of ex-princess] is very vulnerable. [BigNameDesc of demon lord] begins to walk towards [NameDesc of ex-princess], clearly planning to do some up-close-and-personal damage.";
+	if diaper quest is 1, alwayscutshow Figure of princess final battle inflation for ex-princess;
+	if the player is immobile or the player is flying or another-turn is 1:
+		now player-numerical-response is 0;
+	otherwise:
+		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+		set numerical response 1 to "step in front of the magic beam";
+		if current-final-battle-object is F and asshole is not actually occupied and the number of ass covering undisplacable unzippable usually unautoremovable clothing is 0, set numerical response 2 to "try and grab [NameDesc of ex-princess] and help ground [him of ex-princess]";
+		set numerical response 0 to "do something else";
+		compute multiple choice question;
+	if player-numerical-response is 1:
+		say "You step in front of the beam, taking the full force of the inflation blast. ";
+		if diaper quest is 1:
+			let K be a random worn knickers;
+			if K is waddle diaper:
+				say "Nothing seems to happen! Hooray!";
+			otherwise:
+				let W be a random off-stage waddle diaper;
+				if W is nothing, now W is pink-waddle-diaper;
+				if K is knickers:
+					transform K into W;
+				otherwise:
+					summon W cursed with quest;
+		otherwise:
+			say "Your entire body balloons outwards as you are filled with a lighter-than-air gas!";
+			BustInflate 10;
+			AssInflate 10;
+			Assfill 20 air;
+	if player-numerical-response is 2:
+		say "You grab [NameDesc of ex-princess], adding your weight to [hers of ex-princess].";
+		if the player is getting unlucky:
+			say "Unfortunately, [his of ex-princess] weight is distributed even more unevenly than you anticipated, and as [he of ex-princess] spins in the air, you lose your grip! [GotUnluckyFlav]";
+			now player-numerical-response is 0;
+	if player-numerical-response is 0:
+		say "[BigNameDesc of demon lord] connects with a powerful shoulder barge, right into [NameDesc of ex-princess][']s upside-down upper body. [big he of ex-princess] is sent spinning and flying wildly, and [he of ex-princess] ends up smacking [his of ex-princess] head painfully against the ceiling. Then, with a loud rubber whining sound, [he of ex-princess] rapidly deflates. Suddenly significantly heavier than air, [he of ex-princess] returns to the ground with another painful thud.";
+		decrease the health of ex-princess by the maxhealth of ex-princess / 4;
+	otherwise:
+		say "Most of [his of ex-princess] body is pulled to the ground, and [NameDesc of demon lord][']s running shoulder barge only grazes [him of 	ex-princess], doing minimal damage.";
+		decrease the health of ex-princess by the maxhealth of ex-princess / 20;
+	now current-final-battle-object is final-battle-magic-clash. [this object has concluded]
+
+
+final-battle-harness is a final-battle-object.
+Definition: final-battle-harness is appropriate:
+	if diaper lover is 1 and purple-baby-reins is not worn, decide yes;
+	decide no.
+To commence (F - final-battle-harness):
+	say "[BigNameDesc of demon lord] makes an intricate hand motion. A set of purple straps manifests itself in front of [him of demon lord], and then begins to fly towards [NameDesc of ex-princess][line break][speech style of ex-princess]'Oh shit!'[roman type][line break][BigNameDesc of ex-princess] tries to flee around the room, but the straps keep following [him of ex-princess]![paragraph break]...You could probably jump in front of the straps['] path, and block them, if you wanted to...[line break]...Do you want to?";
+	if the player is consenting:
+		let O be a random worn overdress;
+		if O is clothing:
+			say "As you jump in front of the purple straps, and they touch your skin, your [O] bursts into purple flames and disappears!";
+			destroy O;
+		summon purple-baby-reins locked;
+		say "Moments later, the straps have wrapped themselves around your body, and a padlock has slotted into place. You are now wearing a [purple-baby-reins]!";
+		now current-final-battle-object is final-battle-magic-clash; [this object has concluded]
+	otherwise:
+		say "Eventually, the straps catch up to [NameDesc of ex-princess]. As they touch [him of ex-princess], [his of ex-princess] royal dress bursts into purple flames and disappears! Moments later, the straps have wrapped themselves around your body, and a padlock has slotted into place. [big he of ex-princess] is now wearing a set of purple baby reins!";
+	execute F.
+To execute (F - final-battle-harness):
+	say "[BigNameDesc of demon lord] laughs as [he of demon lord] makes another intricate hand gesture.[line break][speech style of demon lord]'[one of]UNLIMITED... POWER[or]SQUIRM[or]FEEL THE PAIN![cycling]'[roman type][line break][BigNameDesc of ex-princess][']s new purple baby reins light up with yellow electricity. [big he of ex-princess] [one of]squeals[or]screams[or]wails[stopping] in pain!";
+	decrease the health of ex-princess by the maxhealth of ex-princess / 12;
+	if the uses of F >= 3:
+		say "[speech style of ex-princess]'I call upon the power of [if diaper quest is 1]pee-pee[otherwise]pussy[end if]!'[roman type][line break][BigNameDesc of ex-princess] shouts the incantation for a spell that rips the reins from [his of ex-princess] body, and replaces it with a copy of [his of ex-princess] usual royal dress. After using this spell, [he of ex-princess] looks very fatigued.[line break][speech style of ex-princess]'What a... waste... of magic...'[roman type][line break]";
+		now current-final-battle-object is final-battle-stunned. [this object has concluded with a STUN]
+
+
+To commence final battle:
+	repeat with F running through final-battle-objects:
+		now the uses of F is 0;
+	now current-final-battle-object is final-battle-wand-curse;
+	now ex-princess is in the location of the player;
+	now ex-princess is guarding;
+	if the times-met of ex-princess < 2, now the times-met of ex-princess is 2;
+	now ex-princess is interested;
+	now the health of ex-princess is the maxhealth of ex-princess;
+	now flaming-wall is in the location of the player;
+	anger demon lord;
+	say "[BigNameDesc of demon lord] looks straight past you, to the person standing behind you.[line break][speech style of ex-princess]'Xavier.'[roman type][line break][BigNameDesc of ex-princess] is there, brandishing [his of ex-princess] wand. [BigNameDesc of demon lord] laughs, [his of demon lord] booming voice echoing throughout the entire hotel.[line break][speech style of demon lord]'PRINCESS! LONG HAVE I WAITED FOR THIS DAY. THE DAY I GET MY REVENGE!'[roman type][line break][BigNameDesc of demon lord] clicks [his of demon lord] fingers and a ring of fire appears around the three of you. Meanwhile, [NameDesc of ex-princess] wastes no time in beginning the incantation for [his of ex-princess] first spell.[line break][speech style of ex-princess]'I love to cum my brains out!'[roman type][line break]Several arcs of bright blue lightning shoot across the air towards [NameDesc of demon lord].[line break][speech style of demon lord]'OH, HOW APPROPRIATE!'[roman type][line break][BigNameDesc of demon lord] somehow catches the lightning in [his of demon lord] hand, and sends demonic energy back through the current and into [NameDesc of ex-princess][']s wand. Immediately you see a dark cloud forming around it as the curse takes hold.[line break][speech style of ex-princess]'Shit!'[roman type][line break]You see [NameDesc of ex-princess] move to drop [his of ex-princess] wand, but it's too late. It is glued to [his of ex-princess] hand now, and has taken on a life of its own, forcing [NameDesc of ex-princess] to press it against [his of ex-princess] own crotch and masturbate [himself of ex-princess] with powerful vibrations.[paragraph break]Meanwhile, you are still standing there, in the middle of this fight between giants, completely ignored.";
+
+To compute final battle:
+	if (diaper quest is 0 and the player is a june 2021 top donator) or (diaper quest is 1 and the player is a june 2021 diaper donator):
+		if current-final-battle-object is final-battle-magic-clash:
+			let F be a random eligible appropriate final-battle-object;
+			if F is final-battle-object:
+				now current-final-battle-object is F;
+				compute princess attack before current-final-battle-object;
+				if the health of demon lord > 0:
+					increase the uses of current-final-battle-object by 1;
+					commence current-final-battle-object;
+			otherwise:
+				increase the uses of current-final-battle-object by 1;
+				execute current-final-battle-object;
+		otherwise:
+			increase the uses of current-final-battle-object by 1;
+			execute current-final-battle-object;
+		if the health of demon lord <= 0 and the health of demon lord < the health of ex-princess:
+			if the health of ex-princess <= 0, now the health of ex-princess is 1;
+			say "[BigNameDesc of demon lord][']s strength falters, and [he of demon lord] falls down onto one knee.[line break][speech style of ex-princess]'It's curtains for you, Xavier. Lacy, gentle wafting curtains...'[line break][speech style of demon lord]'NO! NOT AGAIN! I CAN'T HAVE BEEN DEFEATED AGAIN!'[roman type][line break][BigNameDesc of ex-princess] summons [his of ex-princess] royal scepter back to [his of ex-princess] hand.[line break][speech style of ex-princess]'From when you came, you shall remain, until you are complete again!'[line break][speech style of demon lord]'NOOOOOOO!'[roman type][line break][BigNameDesc of demon lord][']s screams gradually fade away to nothingness as [he of demon lord] disappears from this plane.";
+			now royal scepter is carried by ex-princess;
+			compute banishment of demon lord;
+			if there is a barrier in the location of the player, say "The walls of flame surrounding you all suddenly die out.";
+			repeat with B running through barriers in the location of the player:
+				destroy B;
+			say "[BigNameDesc of ex-princess] turns to you.[line break][speech style of ex-princess]'Thank you for your help, with all my heart. I could not have defeated [him of demon lord] without you. I shall see you back in my Dungeon.'[roman type][line break][BigNameDesc of ex-princess] raises [his of ex-princess] wand.[line break][speech style of ex-princess]'I love it up the bum!'[roman type][line break]And with that incantation, [he of ex-princess] disappears.";
+			now ex-princess is unconcerned;
+			now ex-princess is in Dungeon11;
+		otherwise if the health of ex-princess <= 0:
+			now ex-princess is unleashed;
+			now ex-princess is unintelligent;
+			if futanari fetish > 0 and diaper quest is 0, now ex-princess is male;
+			deinterest ex-princess;
+			now the health of ex-princess is the maxhealth of ex-princess;
+			say "[if the health of ex-princess > -100][speech style of ex-princess]'No... This can't... Aaah!'[roman type][line break][end if]A final blast of red magic from [NameDesc of demon lord] engulfs [NameDesc of ex-princess], and [he of ex-princess] collapses to the ground in agony. When [he of ex-princess], [he of ex-princess] is... different.";
+			try examining ex-princess;
+			say "[speech style of demon lord]'BAHAHAHAHA! I DID IT! I DEFEATED THE BITCH! PRINCESS, WHO IS YOUR MASTER?'[roman type][line break][BigNameDesc of ex-princess] replies immediately, in a high pitched and yet somehow equally sinister voice.[line break][speech style of ex-princess]'You are, my lord!'[line break][speech style of demon lord]'GOOD, GOOD! AND WHAT DOES A LOYAL PET DO FOR [caps his of ex-princess] MASTER?'[line break][speech style of ex-princess]'Break [his of demon lord] enemies!'[line break][speech style of demon lord]'GOOD ANSWER! THEN WHY DON'T YOU START WITH THE SLUT WHO BROUGHT YOU HERE IN THE FIRST PLACE?'[roman type][line break][BigNameDesc of demon lord] gestures towards you.";
+			check guaranteed perception of ex-princess;
+			say "[speech style of demon lord]'I SHALL LEAVE YOU TO BECOME ACQUAINTED WITH YOUR NEW PRINCESS! BAHAHAHAHA!!!'[roman type][line break]";
+			satisfy demon lord;
+			if there is a barrier in the location of the player, say "The walls of flame surrounding you all suddenly die out.";
+			repeat with B running through barriers in the location of the player:
+				destroy B;
+			compute mandatory room leaving of demon lord;
+
+
+Section 5 - Damage
 
 Definition: demon lord (called M) is damageable:
 	if M is wrapped, decide yes;[he has a latex allergy!]

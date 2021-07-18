@@ -393,6 +393,13 @@ To retrieve TG options:
 		carry out the displaying activity;
 		clear the screen.
 
+To retrieve condom options:
+	if diaper quest is 0: [This doesn't award points and refers to the player's penis size so it comes after the benefit options.]
+		clear the screen;
+		now the current menu is the Table of Condom Options;
+		carry out the displaying activity;
+		clear the screen.
+
 To fix starting stats:
 	now the raw strength of the player is the starting strength of the player;
 	now the raw dexterity of the player is the starting dexterity of the player;

@@ -292,7 +292,7 @@ To check forgiveness of (M - unicorn):
 	if the class of the player is priestess and a random number between (the blue-balls of M * -1) and (the charisma of the player * 10) >= 10:
 		compute angry forgiveness of M;
 	otherwise:
-		compute angry punishment of M.
+		consider angry punishment of M.
 
 To say ForgivenessFlav of (M - unicorn):
 	say "[BigNameDesc of M] seems a little disappointed.".
@@ -415,6 +415,11 @@ To compute unique banishment of (M - unicorn):
 		now D is in the location of the player;
 		say "The horn on [his of M] head detaches, rolling in a small arc along the ground.";
 		compute autotaking D.
+
+To compute kneeling reaction of (M - unicorn):
+	say "[one of][BigNameDesc of M][']s pulls down [his of M] panties, revealing a rapidly hardening [DickDesc of M][or][BigFuckerDesc of M]'s cheeks redden as [he of M] pops [his of M] boner out of [his of M] panties.[or][BigFuckerDesc of M] pops [his of M] [LongDickDesc of M] out of [his of M] panties, breathing heavily.[or][BigFuckerDesc of M]'s [LongDickDesc of M] practically jumps out of [his of M] panties as [he of M] pulls them down and walks up to you.[in random order][line break][speech style of M]'[one of]I-I can't look the other way for slut like you.'[or]I-I suppose I have no choice.'[or]S-so you've finally given yourself over to your... d-dirty, s-sexy desires?'[or]Yes! N-no longer will you prounce around with your... dirty... *sexy* body.'[or]You're going to t-take responsibility, aren't you?'[or]You're p-plotting something! I-I'll have to stop you in any way I can, e-even at the risk of my chastity![in random order][roman type][line break]";
+	if the player is not shameless, say " You shiver with shame.";
+	strongHumiliate.
 
 Section 4 - Dominant Sex
 
@@ -669,6 +674,25 @@ To say NonFluffResponse of (M - unicorn) with (N - a monster):
 	now the timer of L is a random number between 30 and 50;
 	now L is covering F.
 
+To compute vaginal assistance from (S - unicorn) with (D - a monster):
+	if a random number between 1 and 2 is 1 and S is not unfriendly:
+		say "[BigFuckerDesc of S] kneels [one of]over you, holding [his of S] mouth open, allowing [NameDesc of D] [if D is male]fuck[otherwise]abuse[end if] your [vagina] and [his of S] face alternately.[or]next to you, periodically slurping your juices off [FuckerDesc of D]'s [DickDesc of D] as [he of D] [if D is male]fucks[otherwise]uses[end if] your [vagina].[in random order]";
+		if the sex-length of D > 0, decrease the sex-length of D by 1;
+	otherwise:
+		compute generic assistance from S with D.
+
+To compute anal assistance from (S - unicorn) with (D - a monster):
+	if a random number between 1 and 2 is 1:
+		if S is not unfriendly:
+			if a2m fetish > 1, say "[BigFuckerDesc of S] kneels [one of]over you, holding [his of S] mouth open, allowing [NameDesc of D] [if D is male]fuck[otherwise]abuse[end if] your [asshole] and [his of S] face alternately.[or]next to you, allowing [FuckerDesc of D] to periodically pull out and [if D is male]fuck[otherwise]use[end if] [his of S] face.[in random order]";
+			otherwise say "[BigFuckerDesc of S] kneels [one of]over you, periodically adding spit for extra lube as [NameDesc of D] to abuses your [asshole] and [his of S] face alternately.[or]next to you, periodically leaning in and spitting between your asscheeks to add extra lube for [NameDesc of D].[in random order]";
+		otherwise:
+			say "[BigNameDesc of S] kneels over you, holding your cheeks open so [NameDesc of D] can [if D is male]fuck your [asshole] even harder[otherwise]ruin your [asshole] even more[end if]!";
+			ruin asshole;
+		if the sex-length of D > 0, decrease the sex-length of D by 1;
+	otherwise:
+		compute generic assistance from S with D.
+
 To say AttentionExceeded of (M - unicorn) with (N - a monster):
 	say "[speech style of M]'H-how dare you ask me to watch this! I'll have to punish you!'[roman type][line break]".
 
@@ -704,12 +728,10 @@ To say WhoAnswer of (M - unicorn):
 	say "[speech style of M]'[one of]My master only ever called me [']unicorn['], so my name is unicorn.'[or]My name is [']None of your business!['] Now stop flirting with me, I'm not interested. Not even a little. Hmph!'[sticky random][roman type][line break]";
 
 To say StoryAnswer of (M - unicorn):
-	let X be demon lord;
-	say "[speech style of M]'[one of]I am waiting for the day when I am reunited with my true love.'[or]I have taken a vow of anal chastity in the name of my true love. One day we will be together again.'[or]An evil princess trapped the love of my life in an amulet and then fled. [if X is alive]I know [he of X] will return for me one day[otherwise]One day, I'll get revenge on that ugly bitch[end if]...'[or]I am waiting for the day when I will once again feel my darling master's touch. It's been so long...'[at random][roman type][line break]";
+	say "[speech style of M]'[one of]I am waiting for the day when I am reunited with my true love.'[or]I have taken a vow of anal chastity in the name of my true love. One day we will be together again.'[or]An evil princess trapped the love of my life in an amulet and then fled. [if demon lord is alive]I know [he of demon lord] will return for me one day[otherwise]One day, I'll get revenge on that ugly bitch[end if]...'[or]I am waiting for the day when I will once again feel my darling master's touch. It's been so long...'[at random][roman type][line break]";
 
 To say EscapeAnswer of (M - unicorn):
-	let X be demon lord;
-	say "[speech style of M]'[one of]There's a mansion somewhere nearby. But... last time I went there, I met a very forward undead. I wouldn't recommend it[or]There's a hotel nearby, but stay away from the owner. [big he of X]'s spoken for[at random].'[roman type][line break]".
+	say "[speech style of M]'[one of]There's a mansion somewhere nearby. But... last time I went there, I met a very forward undead. I wouldn't recommend it[or]There's a hotel nearby, but stay away from the owner. [big he of demon lord]'s spoken for[at random].'[roman type][line break]".
 
 To say AdviceAnswer of (M - unicorn):
 	say "[speech style of M]'[one of]Don't put so much stock in condoms. Sometimes they break, and some men simply prefer unprotected sex. If you ask me, they deserve it.'[or]The mechanic in the hotel is cunning in addition to being [if lady fetish is 1]very beautiful[otherwise]handsome[end if]. You would be a fool for trying to outsmart [him of mechanic].'[or]The patrons in the hotel are rather rude, but they will offer you money in exchange for your services. If you aren't saving yourself for anyone, you could take advantage...'[or]Some sex toys are enchanted. Be sure to wear them properly to make full use of their magic.'[at random][roman type][line break]".

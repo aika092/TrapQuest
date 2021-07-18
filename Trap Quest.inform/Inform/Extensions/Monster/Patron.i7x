@@ -1,6 +1,6 @@
 Patron by Monster begins here.
 
-A patron is a kind of monster. A patron is usually intelligent. A patron is male. A patron can be pissed off. A patron is usually not pissed off. The raw difficulty of a patron is usually 3. A patron has an object called wanking-target. A patron can be trickdone or not trickdone. A patron is usually not trickdone.
+A patron is a kind of monster. A patron is intelligent. A patron is male. A patron can be pissed off. The raw difficulty of a patron is 3. A patron has an object called wanking-target. A patron can be trickdone or not trickdone. A patron is usually not trickdone.
 
 Definition: a patron is dark skinned: decide yes.
 Definition: a patron is raunchy: decide yes.
@@ -11,6 +11,13 @@ Definition: a patron is generic-appropriate: decide yes.
 Definition: a patron is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 Definition: a patron is permanently banishable: decide no. [Can come back once banished]
 Definition: a patron is seducable: decide no. [Way too complicated]
+
+To decide which number is the default favour of (M - a patron): [for a patron, favour determines how much they value having sex with you. It goes up from positive encounters and seeing stuff of you posted online.]
+	decide on 15.
+To FavourDown (M - a patron) by (N - a number):
+	if N > 0:
+		decrease the favour of M by N;
+		if M is in the location of the player, say "You get the impression that [NameDesc of M] [one of]is umimpressed with you[or]didn't like that[or]will be inclined to pay you less in the future[in random order].".
 
 Figure of white inexperienced patron is the file "NPCs/Hotel/Patron/patron1.png".
 Figure of black inexperienced patron is the file "NPCs/Hotel/Patron/patron2.png".
@@ -215,6 +222,9 @@ A time based rule (this is the patron encountering rule):
 			otherwise if diaper quest is 1 and the player is in Hotel38 and the human-toilet-scene of woman-player is 2:
 				let P be a random off-stage generic-appropriate patron;
 				compute patronMeeting of toilet with P;
+			otherwise if diaper quest is 0 and dominatrix-cage is grabbing the player:
+				let P be a random off-stage generic-appropriate patron;
+				compute patronMeeting of dominatrix-cage with P;
 			otherwise if diaper quest is 0 and resting is 0 and the number of on-stage patrons is 0:
 				let P be a random off-stage generic-appropriate patron;
 				let M be a random monster in the location of the player;
@@ -246,10 +256,43 @@ A time based rule (this is the patron encountering rule):
 			say "[input-style]Patron wandering check: ([patronTime] turns) --> [if patronTime <= 15]automatic failure (under 16)[otherwise]d[patronTime] ([R]) | 15.5[end if][roman type][line break]";
 		increase patronTime by 1.
 
+To compute patronMeeting of (M - dominatrix-cage) with (P - a patron):
+	if debuginfo > 1, say "[input-style]Patron is meeting [NameDesc of M].[roman type][line break]";
+	say "[BigNameDesc of P] wanders into the room! ";
+	if dominatrix is in the location of M, say "[big he of P] looks at you and then turns to [NameDesc of dominatrix].[line break][one of][speech style of P]'Nice! Is [he of the player] up for rent?'[line break][speech style of dominatrix]'For this slut, a sapphire ring is fine[or][speech style of dominatrix]'One sapphire ring[stopping].'[roman type][line break][BigNameDesc of P] hands a sapphire ring to [NameDesc of dominatrix] and then turns to you.";
+	otherwise say "[big he of P] [one of]spots[or]looks at[stopping] you and grins.";
+	say "[he of P] whips out [his of P] [DickDesc of P] and pushes it through the bars of the cage, pointing at your face.";
+	if a random number between 1 and 2 is watersports fetish:
+		say "[big he of P] doesn't even bother to talk to you at all. [big he of P] just lets loose, pissing on your face as if it was the most normal thing in the world.";
+		FacePiss from P;
+	otherwise if face is actually occupied or P is inexperienced patron:
+		say "[if face is actually occupied][big he of P][otherwise]Rather than even bothering to give you an option, [he of P] just[end if] starts masturbating, enjoying your look of [horror the semen addiction of the player] as [he of P] quickly brings [himself of P] to a happy grunting orgasm, emptying [his of P] balls over your face. In this cramped space, there's no option to move away from the ropes of [semen] [he of P] is ejaculating on you.";
+		if bukkake fetish is 1, AnnouncedSquirt semen on face by the semen load of P;
+		otherwise moderateHumiliate;
+	otherwise:
+		say "[speech style of P]'Suck it.'[roman type][line break][big he of P] orders you, bluntly. Do you suck [his of P] [manly-penis]?";
+		if the player is bimbo consenting:
+			say "You open your mouth and take [him of P] inside. With [his of P] hips already pressed against the bars, it's up to you to do all of the work, inching your head back and forth in the cramped space you have to work with. It takes a little time, but eventually you end up with your prize: A mouthful of [semen][if P is dickhead patron]. [BigNameDesc of P] doesn't even bother to say anything to you afterwards. [big he of P] just wipes [his of P] [manly-penis] on your nose and then wanders off.[otherwise].[line break][speech style of P]'[one of]That was just what I needed[or]Good job[or]Good slut[or]What a good little whore this one is[or]I wish I had a blowjob slave like this one at home[or]Yep, that was definitely worth it[in random order].'[roman type][line break][end if]";
+			now P is penetrating face;
+			BlowCount;
+			slightHumiliate;
+			FaceFill semen by the semen load of P;
+			orgasm P;
+			dislodge P;
+			increase the employee-record of senior robobellboy by 1;
+			if a random number between 2 and 10 > the bbc addiction of the player, BBCAddictUp 1;
+			suggest swallowing;
+		otherwise:
+			say "[speech style of P]'Ugh, greedy bitch.'[roman type][line break][big he of P] looks pissed off. You have a feeling [he of P] won't be kind to you if you meet each other again. [big he of P] pulls [his of P] [manly-penis] back out of the cage and starts masturbating, enjoying your look of [horror the semen addiction of the player] as [he of P] unloads [his of P] balls all over your face.";
+			if bukkake fetish is 1, AnnouncedSquirt semen on face by the semen load of P;
+			otherwise moderateHumiliate;
+			compute angry punishment of P.
+
+
 To compute patronMeeting of (M - toilet) with (P - a patron):
 	if debuginfo > 1, say "[input-style]Patron is meeting [NameDesc of M].[roman type][line break]";
 	let patronBarter be 0;
-	if toilet-key is in Holding Pen and the human-toilet-scene of woman-player > 1 and the player is able to speak:
+	if human-toilet-key is in Holding Pen and the human-toilet-scene of woman-player > 1 and the player is able to speak:
 		say "[BigNameDesc of P] wanders into the room! You see [him of P] toying with the key for the toilet bondage in one of [his of P] hands. Do you beg [him of P] for the key? ";
 		if the player is consenting:
 			now patronBarter is 1;
@@ -269,16 +312,16 @@ To compute patronMeeting of (M - toilet) with (P - a patron):
 					say "[BigNameDesc of P] just laughs.[line break][speech style of P]'Pathetic. That shows how much you actually care about your friend.'[roman type][line break]";
 				otherwise:
 					say "[BigNameDesc of P] smiles widely.[line break][speech style of P]'Wow, calm down slut, you didn't have to gobble it down quite so greedily, you know! Drinking piss is nothing to be proud of. What a perfect pair of pathetic toilet sluts you two make. Anyway, as promised, here's the key[if freedom tattoo is drawable]... but here's a little secret. If you put this in the chute in the inspiration room, it'll give you a magic tattoo that will make you much faster. And if you choose to do that, instead of rescuing [him of woman-player]... nobody except me and the toilet over there will ever know. I'll leave the decision up to you[end if].'[roman type][line break]";
-					now toilet-key is in the location of the player;
-					compute autotaking toilet-key;
+					now human-toilet-key is in the location of the player;
+					compute autotaking human-toilet-key;
 			otherwise:
 				say "[BigNameDesc of P] looks at you and thinks for a moment, rubbing [his of P] chin with amusement.[line break][speech style of P]'Okay, if you make yourself cum with this in your friend's place, I'll give you the key.'[roman type][line break][big he of P] has whipped out a vibrating magic wand and is offering it to you! Do you masturbate with the vibrating wand? ";
 				if the player is bimbo consenting:
 					say "[BigNameDesc of P] smiles widely as you press the powerful vibrator against your crotch.[line break][speech style of P]'Wow, calm down you pervert, you didn't have to grab it off me quite so eagerly, you know! Masturbating in front of strangers is nothing to be proud of.'[roman type][line break]You burn red with shame as you pleasure yourself in front of [him of P]. But no matter how humiliated you feel, that doesn't stop what happens next.";
 					vaginally orgasm shamefully;
 					say "[speech style of P]'Hahaha, what a show! As promised, here's the key[if freedom tattoo is drawable]... but here's a little secret. If you put this in the chute in the inspiration room, it'll give you a magic tattoo that will make you much faster. And if you choose to do that, instead of rescuing [him of woman-player]... nobody except me and Potty-Face over there will ever know. I'll leave the decision up to you[end if].'[roman type][line break]"; [###Selkie: this would be a fun place for a random chance of a camera snapshot followed by a further taunt.]
-					now toilet-key is in the location of the player;
-					compute autotaking toilet-key;
+					now human-toilet-key is in the location of the player;
+					compute autotaking human-toilet-key;
 				otherwise:
 					say "[BigNameDesc of P] just laughs.[line break][speech style of P]'Pathetic. That shows how much you actually care about your friend.'[roman type][line break]Turning to [NameDesc of woman-player], ";
 					now patronBarter is 0;
@@ -346,6 +389,7 @@ To compute patronMeeting of (M - a dominatrix) with (P - a patron):
 		otherwise say "A [MediumDesc of P] walks into the room, notices you, and immediately leaves without saying anything.";
 		FavourDown M;
 		FavourDown P;[You cock-blocked him!]
+		say "You can tell that [he of P] was slightly annoyed with you.";
 	otherwise:
 		if M is in the location of the player:
 			say "A [MediumDesc of P] walks into the room and offers [NameDesc of M] a piece of jewellery. [big he of M] snatches it from [him of P], smirking as [he of M] drags [NameDesc of P] out of the room.";
@@ -517,8 +561,10 @@ To compute perception of (M - a patron):
 	if the class of the player is living sex doll:
 		if M is real-life patron, say NewNameReact of M;
 		otherwise say "[speech style of M]'Oh, I didn't realise this was that new sex doll facility I've heard about. Awesome!'[roman type][line break]";
-	otherwise if M is mating:
-		say "[speech style of M]'Hey I know you, you're the whore I creampied earlier. I hope you didn't get knocked up, did you?[if the player is flying][line break]And what are you doing up there?!'[otherwise]'[end if][roman type][line break]";
+	otherwise if the number of patrons in the location of the player is 1:
+		compute internet assessment of M;
+	[otherwise if M is mating:
+		say "[speech style of M]'Hey I know you, you're the whore I creampied earlier. I hope you didn't get knocked up, did you?'[roman type][line break]";]
 	if the chosen-orifice of M is nothing:
 		say "[speech style of M]'Hmm, looks like you're a little tied up right now. [if the number of patrons in the location of the player > 1]We'll[otherwise]I'll[end if] come back later.'[roman type][line break]The [if the number of patrons in the location of the player > 1]guys all leave the way they[otherwise]patron leaves the way [he of M][end if] came.";
 		repeat with N running through patrons in the location of the player:
@@ -608,6 +654,25 @@ To compute DQ perception of (M - a patron):
 		if there is worn perceived unmessed knickers, compute state check of a random worn messed knickers;
 	otherwise:
 		say "[speech style of M]'[one of]I assume that this is the right room, and you are the adult baby slave for hire, yes? Good.'[or][daddytitle of M]'s home, honey! Are you ready to play?'[stopping][roman type][line break]".
+
+To compute internet assessment of (M - a patron):
+	let PD be the public disgrace of the player;
+	if PD > a random number between 0 and (350 * the favour of M):
+		choose a random row in the Table of Published Disgraces;
+		let T be the published entry;
+		let W be "";
+		if T is text and T matches the regular expression "\w*\.\w\w\w":
+			now W is text matching regular expression;
+		if W is "": [no website given]
+			if the favour of M > the default favour of M, say "[speech style of M]'[one of]I saw your latest stuff online. It was great.'[or]You're, like, famous online, you know that?'[or]It's so cool to get to [if diaper quest is 1]do this with an ABDL personality[otherwise]have sex with a slut[end if] who's famous online like you!'[in random order][roman type][line break]";
+			otherwise say "[speech style of M]'[one of]I've definitely seen you online before, haven't I?'[or]You're, like, famous online, you know that?'[or]Aren't you that exhibitionist who's been getting posted a lot online recently?!'[in random order][roman type][line break]";
+		otherwise:
+			if the favour of M > the default favour of M, say "[speech style of M]'[one of]I saw the latest post of you on [W]. You looked amazing!'[or]I can't believe I'm getting to experience this with the most popular [boy of the player] on [W]!'[or]I'm so excited, none of my mates will believe I'm getting to do this with the most popular [boy of the player] from [W]!'[or]Did you know you're, like, the most viewed [boy of the player] on [W] at the moment?'[in random order][roman type][line break]";
+			otherwise say "[speech style of M]'[one of]I think I've seen you somewhere before... Wait, are you that [boy of the player] in the thing I saw on [W]?!'[or]This is the [boy of the player] from [W]! I'm sure of it!'[or]Wow, you look just like this [boy of the player] I've seen in some pretty crazy stuff on [W]!'[in random order][roman type][line break]";
+		repeat with P running through patrons in the location of the player:
+			FavourUp P;
+		say "You can tell that [if diaper quest is 1]fetish play[otherwise]sex[end if] with you just got more valuable in [if the number of patrons in the location of the player > 2]all their[otherwise if the number of patrons in the location of the player is 2]both of their[otherwise][NameDesc of M][']s[end if] eyes.".
+
 
 Part 3 - Motion
 
@@ -1174,13 +1239,15 @@ To compute payment of (M - a patron):
 			let C be a random worn wearthing;
 			if the player is hotel employed:
 				repeat with N running from 1 to 10: [We give the RNG several chances to not look at something boring like a ring.]
-					if the initial outrage of C <= 3, now C is a random worn wearthing;
+					if diaper quest is 0:
+						if the initial outrage of C <= 3, now C is a random worn wearthing;
+					if diaper quest is 1:
+						if the initial cringe of C <= 3, now C is a random worn wearthing;
 				let O be the initial outrage of C;
-				if O > a random number between 8 and 16:
-					loot M;
-					if dropped-item is a thing:
-						say "[BigNameDesc of M] pauses, and then [one of]drops[or]tosses[or]places[purely at random] a[if dropped-item is emerald plentiful accessory]n[end if] [dropped-item] next to it.";
-						say "[speech style of M]'[if C is tattoo and the number of worn tattoos is 1]Your tattoo is[otherwise if C is tattoo]Your tattoos are[otherwise]That [ShortDesc of C][line break][speech style of M] you're [one of]wearing[or]sporting[or]showing yourself off in[as decreasingly likely outcomes] is[end if] pretty [if O > a random number between 13 and 16]fucking outrageous[otherwise]damn sexy[end if], [one of]so here's something extra as a tip[or]you deserve extra[or]I think you've earned this much[or]you deserve a reward[or]here's something towards your next sexy purchase[or]and I'm feeling generous[at random].'[roman type][line break]";
+				if diaper quest is 1, now O is the initial cringe of C;
+				if O >= the favour of M - 6:
+					say "[speech style of M]'[if C is tattoo and the number of worn tattoos is 1]Your tattoo is[otherwise if C is tattoo]Your tattoos are[otherwise]That [ShortDesc of C][line break][speech style of M] you're [one of]wearing[or]sporting[or]showing yourself off in[as decreasingly likely outcomes] is[end if] pretty [if O > a random number between 13 and 16]fucking outrageous[otherwise]damn sexy[end if]. I might pay you even more next time.'[roman type][line break]";
+					FavourUp M;
 				if the player is hotel employed, increase the employee-record of senior robobellboy by 1;[Until you start a training regimen, you can only earn strikes]
 		say "[BigNameDesc of M] leaves the way [he of M] came.";
 		destroy M;
@@ -1304,20 +1371,21 @@ To say ResistedOralCreampie of (M - a patron):
 	say "[one of][BigNameDesc of M] holds you down as [he of M] floods your mouth with a nice big load of [tasted-semen].[or][BigNameDesc of M] continues to fuck your mouth even as [he of M] reaches orgasm and you begin to taste [his of M] salty [semen].[or][BigNameDesc of M] explodes into your mouth, filling it with the [semen-adjective] taste of [semen]. Thin strands of drool still connect [his of M] [DickDesc of M] to your lips as [he of M] pulls out.[or][BigNameDesc of M] groans, tightening [his of M] grip as [he of M] begins to ejaculate, holding you down until your mouth has been thoroughly and completely filled with [tasted-semen].[or][BigNameDesc of M] groans as [he of M] goes over the edge. [if the semen taste addiction of the player < 8]You yelp indignantly as [he of M] paints your tongue with rope after rope of [tasted-semen].[otherwise if the semen taste addiction of the player < 12]You taste every single rope of [tasted-semen] [he of M] fires off into your mouth.[otherwise]You flatten your tongue against [his of M] opening, thoroughly tasting every last drip of [tasted-semen] shot into your mouth.[end if][in random order]".
 
 To say SwallowDemand of (M - a patron):
-	say "[speech style of M][one of]'You better swallow that, or I'm not paying.'[or]'Swallow like a good whore now.'[or]'Drink it down, [slut].'[or]'I expect you to swallow that, obviously.'[or]'Yeah, bitch, drink it up like a good girl now.'[in random order][roman type][line break]".
-
+	say "[speech style of M][one of]'You better swallow that.'[or]'Swallow like a good whore now.'[or]'Drink it down, [slut].'[or]'I expect you to swallow that, obviously.'[or]'Yeah, bitch, drink it up like a good girl now.'[in random order][roman type][line break]".
 
 To compute disgusting spit reaction of (M - a patron):
 	if M is dickhead patron, say "[BigNameDesc of M] [one of]growls[or]recoils[in random order].[line break][speech style of M]'You're getting [if the urine volume of face > 0 and the semen volume of face > 0][one of]urine[or]piss[or]cum[purely at random][otherwise if the urine volume of face > 0][one of]urine[or]piss[in random order][otherwise]cum[end if] on the bed! [one of]Disgusting[or]Ew![or]Gross![in random order]!'[roman type][line break][if the urine volume of face > 0][strongHumiliateReflect][otherwise][moderateHumiliateReflect][end if]";
 	if M is experienced patron, say "[BigNameDesc of M] [one of]frowns[or]scoffs[in random order].[line break][speech style of M]'You're getting [if the urine volume of face > 0 and the semen volume of face > 0][one of]urine[or]piss[or]cum[purely at random][otherwise if the urine volume of face > 0][one of]urine[or]piss[in random order][otherwise]cum[end if] on the bed! [one of]Disgusting[or]Ew![or]Gross![in random order]!'[roman type][line break][if the urine volume of face > 0][strongHumiliateReflect][otherwise][moderateHumiliateReflect][end if]";
 	if M is inexperienced patron, say "[BigNameDesc of M] [one of]gasps[or]almost chokes[in random order] in shock.[line break][speech style of M]'[one of]Is [he of the player] supposed to spit like that?'[or]Isn't [he of the player] supposed to swallow?'[in random order]!'[roman type][line break][if the urine volume of face > 0][strongHumiliateReflect][otherwise][moderateHumiliateReflect][end if]";
-	FavourDown M with consequences.
+	FavourDown M.
 
 To compute disgusting spit reaction of (M - gross patron):
 	say "[BigNameDesc of M] [one of]chuckles[or]grins[in random order].[line break][speech style of M]'Was that [if the urine volume of face > 0 and the semen volume of face > 0][one of]urine[or]piss[or]cum[purely at random][otherwise if the urine volume of face > 0][one of]urine[or]piss[in random order][otherwise]cum[end if]? [one of]What a messy girl![or]That's nasty, baby![or]Nasty, just how I like it[in random order]!'[roman type][line break][if the urine volume of face > 0][strongHumiliateReflect][otherwise][moderateHumiliateReflect][end if]".
 
+To consider angry punishment of (M - a patron):
+	compute angry punishment of M.
 To compute angry punishment of (M - a patron):
-	now M is pissed off.
+	FavourDown M.
 
 To compute sexBegging of (M - a patron) in (F - a fuckhole):
 	let C be 0;
@@ -1773,24 +1841,25 @@ To decide which number is the sexPaymentBase of (M - a monster):
 	decide on 0.
 To decide which number is the sexPaymentBase of (M - an experienced patron):
 	decide on 1.
+To decide which number is the sexPaymentBase of (M - an inexperienced patron):
+	decide on -1.
 
 To loot (M - a patron):
 	let A be a random off-stage plentiful accessory;
 	if the class of the player is santa's little helper, now A is a random off-stage christmas gift;
 	if A is plentiful accessory:
 		now A is sapphire;
-		let N be the sexPaymentBase of M;
-		let J be a random number between N and whore theme bonus;
-		if J is 1:
-			now A is emerald;
-		otherwise if J is 2:
-			now A is ruby;
-		otherwise if J is 3:
-			now A is pink diamond;
-		otherwise if J is 4:
+		let J be the sexPaymentBase of M + whore theme bonus + the favour of M - the default favour of M;
+		if J > 10:
+			now A is solid gold;
+		otherwise if J > 7:
 			now A is pure diamond;
 		otherwise if J > 4:
-			now A is solid gold;
+			now A is pink diamond;
+		otherwise if J > 2:
+			now A is ruby;
+		otherwise if J > 0:
+			now A is emerald;
 		set shortcut of A;
 	now A is in the location of the player;
 	now dropped-item is A.

@@ -91,6 +91,16 @@ To set up predicament status:
 		if C is worn:
 			if C is clothing and C is removable and C is not headgear and C is not combat visor and C is not armband and C is not listed in LC:
 				dislodge C;
+				if C is diaper-stack:
+					let N be 1;
+					repeat with D running through the list of stacked diapers:
+						if N > 1: [diapers above the first go straight home]
+							now D is in Predicament20;
+						otherwise: [bottom diaper is the one you count as wearing]
+							now C is D;
+						increase N by 1;
+					now diaper-stack is in Holding Pen;
+					now the list of stacked diapers is { };
 				if C is cursed and the raw strength of the player > 1:
 					say "[bold type]As your [ShortDesc of C] is removed, you feel the curse steal some [one of]of your strength! You probably can only recover the strength by wearing it again after you get it back...[or]more of your strength.[stopping][roman type][line break]";
 					increase the stolen-strength of C by 1;

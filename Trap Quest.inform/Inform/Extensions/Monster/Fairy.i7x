@@ -177,11 +177,9 @@ To say LewdTrapReactFlav of (M - a fairy):
 Part 3 - Protection
 
 To compute protection of (M - a fairy):
-	if the boredom of M <= 0:
-		say "Suddenly a naughty grin appears on the face of [NameDesc of M]. It looks like [he of M]'s bored of being friendly...";
-	otherwise if the player is in danger:
+	if the player is in danger:
 		let X be M;
-		repeat with U running through dangerous monsters in the location of the player:
+		repeat with U running through combative monsters:
 			now X is U;
 		if the player is flying:
 			deinterest M;

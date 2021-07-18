@@ -171,7 +171,7 @@ Just a note: I double checked my spelling dictionary, which includes American sp
 To say MakeUpDesc:
 	if the make-up of face is 0, say "is essentially make-up free";
 	if the make-up of face is 1, say "is decorated with some make-up, as if you were going out for the night";
-	if the make-up of face is 2, say "is covered in a large amount of make-up,[one of] giving you a face that demands attention[or] drawing attention to your face[purely at random]";
+	if the make-up of face is 2, say "is covered in a large amount of make-up,[one of] giving you a face that demands attention[or] drawing attention to your face[purely at random][if the make-up of face is 2 and the makeupskill of the player is 1], and temporarily giving you a [bold type]huge boost to your charisma[roman type][end if]";
 	if the make-up of face is 3:
 		if diaper quest is 1:
 			if permanent makeup is 1, say "is covered in heavy kawaii make-up with white hearts on the cheeks and is fixed in a vacant expression";

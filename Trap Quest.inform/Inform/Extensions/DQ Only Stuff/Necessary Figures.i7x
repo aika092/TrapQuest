@@ -163,6 +163,12 @@ To decide which figure-name is the pacified-image of (M - a royal guard):
 
 Figure of caged pail princess is the file "NPCs/MultiFloor/Princess/cage7.jpg".
 Figure of caged pail princess messy is the file "NPCs/MultiFloor/Princess/cage6.jpg".
+Figure of dark princess 1 is the file "NPCs/MultiFloor/Princess/darkprincess3.jpg".
+Figure of dark princess 2 is the file "NPCs/MultiFloor/Princess/darkprincess4.jpg".
+Figure of dark princess 3 is the file "NPCs/MultiFloor/Princess/darkprincess5.jpg".
+Figure of dark princess 4 is the file "NPCs/MultiFloor/Princess/darkprincess6.jpg".
+Figure of dark princess 5 is the file "NPCs/MultiFloor/Princess/darkprincess7.jpg".
+Figure of princess final battle plug is the file "NPCs/MultiFloor/Princess/cutscene-princess-final-battle4a.jpg".
 
 To decide which figure-name is the clothing-image of (C - runic headband):
 	decide on figure of runic headband.

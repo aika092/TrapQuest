@@ -3,6 +3,8 @@ Make Up Kit by Consumables begins here.
 A make up kit is a kind of collectible. There are 3 make up kits. The printed name of make up kit is "[TQlink of item described]make up kit[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of make up kit is "[TQlink of item described]make up kits[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of make up kit is "mk". Understand "makeup", "makeup kit" as make up kit.
 Figure of make up kit is the file "Items/Collectibles/makeup1.png".
 
+make up time is a number that varies.
+
 To decide which figure-name is the examine-image of (C - a make up kit):
 	decide on figure of make up kit.
 
@@ -50,11 +52,20 @@ Check brushing something with:
 	if the player is not able to manually use manual dexterity, do nothing instead.
 
 Carry out brushing something with:
-	allocate 6 seconds;
-	say "You use the mirror to help you apply a[if the make-up of face > 1]nother[end if] layer of make up. You feel more [if diaper quest is 1]grown up[otherwise]charismatic[end if][if the make-up of face > 1], but also less dignified[end if]. You discard the used [noun].";
-	check stealing of the noun;
-	destroy the noun;
-	FaceUp 1.
+	reset multiple choice questions;
+	let MU be the make-up of face;
+	repeat with N running from MU to 3:
+		if N is MU, set numerical response N to "Don't add any make up";
+		otherwise set numerical response N to the substituted form of "[if N is 1]Add a light touch of make up[otherwise if N is 2 and the makeupskill of the player is 1]Add a provocative amount of make up (and get a large temporary boost to charisma!)[otherwise if N is 2]Add a provocative amount of make up[otherwise if diaper quest is 0]Paint yourself like a whore[otherwise]Paint yourself in over-the-top make up[end if]";
+	compute multiple choice question;
+	say "[if the make-up of face is MU]You change your mind, and do nothing. Your[otherwise]You get to work, and when you are finished your[end if] face [MakeUpDesc].";
+	unless the make-up of face < 3 and the printed name of the chosen numerical response matches the text "any":
+		allocate 6 seconds;
+		say "You use the mirror to help you apply a[if the make-up of face > 1]nother[end if] layer of make up. You feel more [if diaper quest is 1]grown up[otherwise]charismatic[end if][if the make-up of face > 1], but also less dignified[end if]. You discard the used [noun].";
+		check stealing of the noun;
+		destroy the noun;
+		now make up time is earnings;
+		FaceUp player-numerical-response - MU.
 
 Definition: a make up kit is oral sex themed: decide yes.
 

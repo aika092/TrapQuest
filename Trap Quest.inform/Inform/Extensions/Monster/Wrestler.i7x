@@ -103,6 +103,7 @@ To set up (M - a wrestler):
 	add piece-of-rubber to the taxableItems of M, if absent;
 	let W be a random ben wa balls;
 	add W to the taxableItems of M, if absent;
+	if diaper quest is 0, add wrestler-jumpsuit to the banishItems of M, if absent;
 	now the health of M is the maxhealth of M.
 
 To decide which number is the starting difficulty of (M - a wrestler):
@@ -963,6 +964,9 @@ To say PityOfferResponse of (M - a wrestler):
 To say BanishForceFlav of (M - a wrestler):
 	say "You point towards the west. [BigNameDesc of M] hangs [his of M] head in disappointment before turning and beginning to crawl away.[line break][speech style of M]'I guess it was almost time for me to go home for the night anyway...'[roman type][line break]".
 
+To say BanishDropFlav of (C - wrestler-jumpsuit) from (M - a wrestler):
+	say "[speech style of M]'I won't be needing this until tomorrow. You can borrow it, if you like.'[roman type][line break][BigNameDesc of M] strips out of [his of M] tight catsuit and leaves it behind.".
+
 To say TaxReturnDismay of (M - a wrestler):
 	say "[speech style of M]'How boring. I was hoping the punishment for losing would be a little more... intimate.'[roman type][line break]".
 
@@ -1127,6 +1131,31 @@ Part 5 - Conversation
 
 To compute loot dropping of (P - a ben wa balls) by (M - a wrestler):
 	say "[speech style of M]'FINE! I'll give you my favourite toy.'[roman type][line break][BigNameDesc of M] unzips [his of M] bodysuit and pulls a [P] out of [his of P] asshole.[line break][speech style of M]'Happy now?'[roman type][line break]".
+
+talk-wrestler-cage is a talk-object.
+
+To consider (T - talk-wrestler-cage) for (M - a monster):
+	if M is wrestler and M is caged and M is in Hotel37:
+		now the printed name of T is the substituted form of "[variable custom style]'Are you okay inside this tiny cage?'[roman type][line break]";
+		set next numerical response to the substituted form of "[printed name of T]".
+
+To execute (T - talk-wrestler-cage) for (M - a monster):
+	if there is worn headgear or M is buddy or the player is not able to speak or there is worn unremovable dress:
+		say "[speech style of M]'I'll survive. Don't worry about me, cutie!'[roman type][line break][BigNameDesc of M] tries to sound positive and keep a brave face but [his of M] voice exposes how uncomfortable [he of M] is.";
+	otherwise:
+		say "[speech style of M]'Ahh, I'll survive, but if you don't mind reading that enscription on the wall over there, it would really help me out.'[roman type][line break]The enscription on the wall [he of M][']s pointing to says [']Mutanretla Menimoh[']. Do you read it out loud?";
+		if the player is consenting:
+			repeat with C running through worn removable clothing:
+				now C is in the location of the player;
+			say "[variable custom style]'Mutanretla Menimoh.'[roman type][line break]Suddenly and instantly, your vision shifts and your body tucks up into a crouch. [if the player is upright]Standing[otherwise]Kneeling[end if] in front of you, outside the bars of the cage, wearing your clothes, is [NameDesc of M]. You are looking at [him of M]... from inside the cage. Wearing [his of M] outfit.";
+			summon wrestler-jumpsuit uncursed;
+			summon wrestler-hood cursed;
+			say "[BigNameDesc of M] looks at you with a vindictive and gleeful expression.[line break][speech style of M]'Oh wow, it really worked! Thanks for the clothes, too, but I don't love these.'[roman type][line break][BigNameDesc of M] begins to remove your clothes, leaving them on the floor in front of you. [big he of M] just smiles at your protests.[line break][speech style of M]'Hey now, easy come, easy go, wouldn't you say? Speaking of which, I've gotta go. I'm leaving the Hotel for the day, but maybe I'll see you tomorrow!'[roman type][line break][big he of M] leaves you in the cage, and you get the feeling you won't be seeing [him of M] again.";
+			compute banishment of M;
+			now dominatrix-cage is grabbing the player;
+			now the stance of the player is 1;
+		otherwise:
+			say "You reluctantly ask what it does. [big he of M] just shrugs.[line break][speech style of M]'[big he of dominatrix] just said it would help.'[roman type][line break]".
 
 Section 1 - Greeting
 

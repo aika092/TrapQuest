@@ -82,7 +82,7 @@ The beginning of a video call looks something like this:
 
 [represents the first part of the friend's greeting for the player]
 To say NewAppearanceReaction of (M - a real-life patron):
-	if eye-mask is worn:
+	if domino-mask is worn:
 		say "[speech style of M]'This is a weird pop-up. What the hell sort of livestream is this? A cosplay superhero battle?'[roman type][line break]";
 	otherwise:
 		let P be the appearance of the player;
@@ -145,7 +145,7 @@ To say FriendReaction of (M - a real-life patron) to (A - a humiliating situatio
 
 [Second part of the friend's greeting. Can change slightly depending on what monsters are around.]
 To say NewCircumstanceReaction of (M - a real-life patron):
-	if eye-mask is not worn:
+	if domino-mask is not worn:
 		let N be a random combative monster;
 		if N is patron and diaper quest is 0:
 			say "[one of][if M is friend-shocked]I thought the developers were lying when they told me you were about to whore yourself out, but the truth is right here in front of me.'[otherwise]You wouldn't believe what the developers told me. They actually said you were whoring yourself out for this guy. That isn't true, right?'[end if][or][if M is friend-shocked]Are you whoring yourself AGAIN?'[otherwise]This prostitution thing isn't funny, you know.'[end if][at random][roman type][line break]";
@@ -164,7 +164,7 @@ To say NewCircumstanceReaction of (M - a real-life patron):
 
 [Displays player's response to whatever their friend says in NewCircumstanceReaction]
 To say FriendRespond to (M - a real-life patron):
-	if eye-mask is not worn:
+	if domino-mask is not worn:
 		let N be a random combative monster;
 		if N is patron and diaper quest is 0:
 			if the player is able to speak:
@@ -181,15 +181,16 @@ To compute (M - a real-life patron) protecting against (X - a monster):
 	if M is in the location of the player:
 		do nothing;[for now]
 	otherwise if there is a monster penetrating a body part or there is a monster grabbing the player:
-		if X is penetrating a body part:
-			if eye-mask is worn, say MaskedSexObserve of M with X;
+		if X is penetrating a body part or (diaper quest is 1 and X is grabbing the player):
+			if domino-mask is worn, say MaskedSexObserve of M with X;
 			otherwise say SexObserve of M with X;
 		otherwise:
 			let N be a random monster penetrating a body part;
-			if eye-mask is worn, say MaskedSexObserve of M with N;
+			if N is nothing, now N is a random monster grabbing the player;
+			if domino-mask is worn, say MaskedSexObserve of M with N;
 			otherwise say SexObserve of M with N;
 	otherwise:
-		if eye-mask is worn, say MaskedFightObserve of M with X;
+		if domino-mask is worn, say MaskedFightObserve of M with X;
 		otherwise say FightObserve of M with X.
 
 To say BaseObservationFlav of (M - a real-life patron):

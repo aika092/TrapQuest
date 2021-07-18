@@ -103,6 +103,9 @@ Definition: a clothing (called C) is usually autoremovable: [Can it be removed o
 	now autoremove is false;
 	now autolayerremove is false;
 	decide no.
+Definition: a clothing (called C) is usually unautoremovable: [Opposite of above]
+	if C is usually autoremovable, decide no;
+	decide yes.
 
 This is the not wearing rule:
 	if wearing-target is not worn:

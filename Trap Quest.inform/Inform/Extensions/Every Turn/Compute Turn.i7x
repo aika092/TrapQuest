@@ -11,7 +11,10 @@ This is the no-stored-action rule:
 	continue the action.
 another-turn-rules is a list of rules that varies. [if we have another turn, is there a rule we should follow instead of the player's action]
 another-turn-action is a rule that varies. another-turn-action is the no-stored-action rule. [if we have another turn, is there a rule we should follow as an automatic action]
+another-turn-stored-action is an action that varies.
+another-turn-previous-stored-action is an action that varies.
 time-turns is a number that varies. [just lets us count how many turns have passed]
+
 
 The compulsory action rules is a rulebook. [Things that MUST happen like continued urination and expulsion]
 
@@ -76,12 +79,19 @@ To run the engine:
 			add R to LR;
 		let A be another-turn-action;
 		now another-turn-action is the no-stored-action rule;
+		let AC be a stored action;
+		if another-turn-stored-action is not waiting:
+			unless another-turn-previous-stored-action is another-turn-stored-action, now AC is another-turn-stored-action; [this should defend against infinite loops where the player keeps trying over and over to do something they can't]
+			now another-turn-previous-stored-action is another-turn-stored-action;
+			now another-turn-stored-action is waiting;
 		truncate another-turn-rules to 0 entries; [This is the only safe moment to truncate the entries - just after we have loaded the rules and before we execute them.]
 		if AT is 1:
 			if the number of entries in LR > 0:
 				repeat with R running through LR:
 					follow R; [This way, if the stored rule demands another turn, and adds another stored rule in, we don't truncate away that rule too early.]
-			otherwise: [no compulsory rules so we can do the stored automatic action]
+			otherwise if AC is not waiting: [no compulsory rules so we can do the stored action]
+				try AC;
+			otherwise: [no compulsory rules or stored action so we can do the stored rule]
 				follow A;
 			if the player is live fucked and wanking is 0:
 				let M be a random live thing penetrating a body part;
@@ -457,8 +467,7 @@ To compute player kneeling:
 	if the player is able to breathe and detention chair is not grabbing the player:
 		compute fatigue loss;
 	if the player is not vine fucked, compute vines kneeling;
-	otherwise compute vines fucking;
-	compute pink smoke.
+	otherwise compute vines fucking.
 
 To decide which number is fatigue bonus:
 	decide on 20.
@@ -476,38 +485,108 @@ To compute fatigue loss:
 		now the fatigue of the player is 0;
 		if the body soreness of the player < 10, say "Your legs feel [if the body soreness of the player is 0]completely rested[otherwise]ready to go[end if].".
 
-To compute pink smoke:
-	if the location of the player is smoky and the player is not flying and the player is able to breathe and the number of aeromancer penetrating a body part is 0:
-		let R be a random number between 1 and 12;
-		if the player is not able to breathe, now R is 0;
-		if diaper quest is 1:
-			if the player is possessing a penis and a random number between 1 and 3 is 1, now R is 7; [penis shrink]
-			otherwise now R is 1; [arousal]
-		if the player is in School34 and a random number between 1 and 8 > 1, now R is 1; [arousal]
-		if (the player is a flatchested trap or (diaper quest is 1 and the player is possessing a penis)) and R > 6:
-			say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room.";
-			PenisDown 1;
-		otherwise if R > 6 and diaper quest is 0:
-			say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room. [unless the player is top heavy][one of][or]It feels a little more difficult to breathe.[or]Your boobs visibly grow.[or]Your chest expands outwards![as decreasingly likely outcomes][end if]";
-			Bustup 1;
-		otherwise if R is 6:
-			say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room. [unless the blondeness of hair is 3]Your hair feels tingly.[end if]";
-			HairBlondeUp 1;
-		otherwise if R is 5:
-			say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room. [unless the redness of hair is 3]Your hair feels strange.[end if]";
-			HairRedUp 1;
-		otherwise if R is 0:
-			say "[one of]You would be breathing in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] in this room, but you can't breathe at the moment![or][stopping]";
-		otherwise:
-			say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room. [if the player is a bit horny][line break][otherwise]You feel all tingly inside.[end if]";
-			arouse 1000.
-
+The player has a number called suffocation.
 The breathing blocking rules is a rulebook.
+The breathing blocking decision rules is a rulebook.
+The breathing consequences rules is a rulebook.
+breathing-this-turn is initially true.
 
-Definition: a person (called P) is able to breathe:
+Definition: yourself is able to breathe:
+	if breathing-this-turn is false, decide no;
 	follow the breathing blocking rules;
 	if the rule succeeded, decide no;
 	decide yes.
+Definition: yourself is breathing this turn:
+	if the player is not able to breathe, decide no; [if the player isn't able to breathe, we don't need to ask them if they want to breathe]
+	follow the breathing blocking decision rules;
+	if breathing-this-turn is false: [this is how we tepmorarily flagged that there's a potential reason not to breathe]
+		say "Do you want to hold your breath?";
+		if the player is consenting, decide no;
+		now breathing-this-turn is true;
+		follow the breathing consequences rules;
+	decide yes.
+
+A breathing blocking rule (this is the can't breathe during deepthroat rule):
+	if there is a throater thing penetrating face, rule succeeds.
+
+To decide which number is the suffocation limit of the player:
+	if the player is a trained hooker, decide on 10;
+	decide on 8.
+
+Definition: yourself is able to faint from suffocation:
+	if diaper quest is 1 or (sex fainting is 0 and bulging-slutty-sister is not penetrating face), decide no;
+	decide yes.
+
+An all later time based rule (this is the breathe or suffocate rule):
+	if the player is not breathing this turn, say "You [if the suffocation of the player > 0]continue to [end if]hold your breath.";
+	if the player is able to breathe:
+		if the suffocation of the player > 0:
+			let M be a random monster penetrating face;
+			if M is monster:
+				say "You manage to breathe just enough oxygen around [NameDesc of M] to keep further suffocation at bay[one of], but you can't sufficiently breathe to recover any additional breath![or].[stopping]";
+			otherwise:
+				decrease the suffocation of the player by 1;
+				if the suffocation of the player <= 0, say "You have regained all your oxygen and are now able to breathe normally again.";
+				otherwise say "You are able to take a gasp of fresh air! Thank goodness! You feel a little better, but are still [if the suffocation of the player > 2][bold type]seriously[roman type] [otherwise if the suffocation of the player is 1]a little [end if]weakened from being out of breath.";
+	otherwise if the suffocation of the player >= the suffocation limit of the player:
+		if the player is able to faint from suffocation:
+			say "After giving a final frantic wiggle[if there is a monster penetrating face or there is a monster grabbing the player] to try and escape[end if], your brain gives up. You [if watersports mechanics is 1]wet yourself and then [end if]pass out.";
+			if watersports mechanics is 1, UrinePuddleUp 3;
+			now delayed fainting is 1;
+			now the fainting reason of the player is 8;
+			if there is a wench penetrating face, now the fainting reason of the player is 9;
+			if bulging-slutty-sister is penetrating face, now the fainting reason of the player is 22;
+		otherwise:
+			say "Your lungs burn as your lack of oxygen [one of]becomes painful[or]continues to hurt you[stopping].";
+			PainUp 1;
+	otherwise:
+		say "[if the suffocation of the player is 0][bold type]You are currently unable to breathe. [roman type]Until you find a way to breathe again, your strength and ability to think straight will gradually leave you, and you will eventually pass out.[otherwise if the suffocation of the player < the suffocation limit of the player - 5]You[one of]r body is slowly being starved of oxygen, since you[or][cycling] are still holding your breath.[otherwise if the suffocation of the player < the suffocation limit of the player - 4][one of]As you continue to be starved of oxygen, you[or]You[cycling] feel the burning in your throat and the cloudiness in your head rising.[otherwise if the suffocation of the player is the suffocation limit of the player - 3][bold type]Your vision starts to go blurry.[roman type][line break][otherwise if the suffocation of the player is the suffocation limit of the player - 2 and the player is able to faint from suffocation][bold type]Your lungs are on fire and your eyes roll into the back of your head as you prepare to lose consciousness.[roman type][line break][otherwise if the suffocation of the player is the suffocation limit of the player - 2][bold type]Your lungs are on fire and your eyes roll into the back of your head.[roman type][line break][otherwise if the player is able to faint from suffocation][bold type]Your vision goes white as you reach the brink. Your consciousness is slipping away.[roman type][line break][otherwise]Your vision is going white and your lungs are empty of oxygen. [bold type]From now on, every turn you can't breathe will cause you serious pain.[roman type][line break][end if]";
+		increase the suffocation of the player by 1;
+		let M be a random monster penetrating face;
+		if M is nothing, now M is a random monster grabbing the player;
+		if M is nothing, now M is a random monster penetrating a body part;
+		if M is monster, compute extra suffocation of M.
+
+To compute extra suffocation of (M - a monster):
+	let R be a random number between -2 and the reaction of the player;
+	if debuginfo > 0, say "[input-style]Additional suffocation (from [MediumDesc of M]) avoidance check: RNG between -2 and player reaction ([reaction of the player]) = [R] | -0.5[roman type][line break]";
+	if R < 0:
+		increase the suffocation of the player by 1;
+		say "[bold type][if the reaction of the player is 0]All your struggling and the[otherwise]The[end if] intensity of [NameDesc of M][']s acts cause your body to use up even more oxygen![roman type][line break]".
+
+A breathing blocking decision rule (this is the consider breathing pink smoke rule):
+	if the player is prone and the location of the player is smoky and the player is not flying and the number of aeromancer penetrating a body part is 0:
+		say "You are kneeling in pink smoke. ";
+		now breathing-this-turn is false.
+
+A breathing consequences rule (this is the consequences for breathing pink smoke rule):
+	if the player is prone and the location of the player is smoky and the player is not flying and the number of aeromancer penetrating a body part is 0:
+		compute pink smoke.
+
+To compute pink smoke:
+	let R be a random number between 1 and 12;
+	if the player is not able to breathe, now R is 0;
+	if diaper quest is 1:
+		if the player is possessing a penis and a random number between 1 and 3 is 1, now R is 7; [penis shrink]
+		otherwise now R is 1; [arousal]
+	if the player is in School34 and a random number between 1 and 8 > 1, now R is 1; [arousal]
+	if (the player is a flatchested trap or (diaper quest is 1 and the player is possessing a penis)) and R > 6:
+		say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room.";
+		PenisDown 1;
+	otherwise if R > 6 and diaper quest is 0:
+		say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room. [unless the player is top heavy][one of][or]It feels a little more difficult to breathe.[or]Your boobs visibly grow.[or]Your chest expands outwards![as decreasingly likely outcomes][end if]";
+		Bustup 1;
+	otherwise if R is 6:
+		say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room. [unless the blondeness of hair is 3]Your hair feels tingly.[end if]";
+		HairBlondeUp 1;
+	otherwise if R is 5:
+		say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room. [unless the redness of hair is 3]Your hair feels strange.[end if]";
+		HairRedUp 1;
+	otherwise if R is 0:
+		say "[one of]You would be breathing in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] in this room, but you can't breathe at the moment![or][stopping]";
+	otherwise:
+		say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room. [if the player is a bit horny][line break][otherwise]You feel all tingly inside.[end if]";
+		arouse 1000.
 
 To Compute Instinctive Actions:
 	if another-turn is 0, follow the hypno triggers rules;
@@ -517,51 +596,57 @@ To Compute Instinctive Actions:
 	if another-turn is 0, Compute Broken Actions.
 
 To Compute Compulsions:
-	now autodrink is 1;
-	let B be a random held actually drinkable bottle;
-	if drinkme tattoo is worn and B is bottle and the player is not almost too full and a random number between 1 and 10 is 1 and the player is not in danger and the player is able to drink and the class of the player is not bunny and (the class of the player is not royal slave or the fill-type of B <= highest-cursed): [Need to make sure that royal slaves and bunny waitresses don't just drink all their stock]
-		say "Your 'drink me' tattoo sends irresistible urges to your brain and you find yourself mindlessly bringing the [ShortDesc of B] to your lips!";
-		try drinking B;
+	let CND be a random carried candy;
+	if CND is candy and the trophy-mode of candy-trophy is 1 and the number of worn gags is 0 and the player is able to eat and the player is able to use their hands:
+		now another-turn-stored-action is eating CND;
+		now another-turn-flavour is "The [candy-trophy][']s magical effect compels you to try and eat [NameDesc of CND]!";
 		now another-turn is 1;
-	otherwise if there is a carried throbbing-tentacle:
-		let P be a random carried throbbing-tentacle;
-		say "You feel the Master gently throbbing in your hands, so much smarter and more worthy than you. You reverently place him once again in front of your hole.[line break][first custom style]'It is good that you understand your place, slave. I will return now to my place of honour.'[roman type][line break]The Master once again worms its way into your [if the player is not possessing a vagina][asshole][otherwise][vagina][end if]!";
-		repeat with C running through worn top level protection clothing:
-			destroy C;
-		repeat with D running through worn clothing:
-			if D is penetrating a fuckhole:
-				destroy D;
-		now P is worn by the player;
-		if the player is not possessing a vagina:
-			now P is penetrating asshole;
-		otherwise:
-			now P is penetrating vagina;
-		now another-turn is 1;
-	otherwise if there is a throbbing-tentacle in the location of the player and the number of interested unfriendly monsters in the location of the player is 0:
-		let P be a random throbbing-tentacle in the location of the player;
-		say "You see the Master sitting, forlorn, on the ground. You find it so hard to think without him inside you, and you gently and reverently pick him up and place him once again in front of your hole.[line break][first custom style]'It is good that you understand your place, slave. I will return now to my place of honour.'[roman type][line break]The Master once again worms its way into your [if the player is not possessing a vagina][asshole][otherwise][vagina][end if]!";
-		repeat with C running through worn top level protection clothing:
-			destroy C;
-		repeat with D running through worn clothing:
-			if D is penetrating a fuckhole:
-				destroy D;
-		now P is worn by the player;
-		if the player is not possessing a vagina:
-			now P is penetrating asshole;
-		otherwise:
-			now P is penetrating vagina;
-		now another-turn is 1;
-	now autodrink is 0;
-	if the player is broken and cultist veil is in the location of the player and cultist veil is actually summonable:
-		say "You see a black veil and suddenly feel so ashamed that your worthless face is on display, as though you were a person and not simply a selection of holes to be used. You silently lift the veil over your face, as is proper.";
-		summon cultist veil;
-		now another-turn is 1;
-	if the traitor-hypno of hypno-lesson > 0:
-		if ex-princess is in the location of the player and ex-princess is caged and diaper quest is 0 and watersports fetish is 1 and the player is not incontinent and the player is desperate to pee and the player is able to use a urinal:
-			decrease the traitor-hypno of hypno-lesson by 1;
-			say "Something inside you urges you to [second custom style]help your friend[roman type].";
-			compute urinal use;
-			now another-turn is 1.
+	otherwise:
+		now autodrink is 1;
+		let B be a random held actually drinkable bottle;
+		if drinkme tattoo is worn and B is bottle and the player is not almost too full and a random number between 1 and 10 is 1 and the player is not in danger and the player is able to drink and the class of the player is not bunny and (the class of the player is not royal slave or the fill-type of B <= highest-cursed): [Need to make sure that royal slaves and bunny waitresses don't just drink all their stock]
+			say "Your 'drink me' tattoo sends irresistible urges to your brain and you find yourself mindlessly bringing the [ShortDesc of B] to your lips!";
+			try drinking B;
+			now another-turn is 1;
+		otherwise if there is a carried throbbing-tentacle:
+			let P be a random carried throbbing-tentacle;
+			say "You feel the Master gently throbbing in your hands, so much smarter and more worthy than you. You reverently place him once again in front of your hole.[line break][first custom style]'It is good that you understand your place, slave. I will return now to my place of honour.'[roman type][line break]The Master once again worms its way into your [if the player is not possessing a vagina][asshole][otherwise][vagina][end if]!";
+			repeat with C running through worn top level protection clothing:
+				destroy C;
+			repeat with D running through worn clothing:
+				if D is penetrating a fuckhole:
+					destroy D;
+			now P is worn by the player;
+			if the player is not possessing a vagina:
+				now P is penetrating asshole;
+			otherwise:
+				now P is penetrating vagina;
+			now another-turn is 1;
+		otherwise if there is a throbbing-tentacle in the location of the player and the number of interested unfriendly monsters in the location of the player is 0:
+			let P be a random throbbing-tentacle in the location of the player;
+			say "You see the Master sitting, forlorn, on the ground. You find it so hard to think without him inside you, and you gently and reverently pick him up and place him once again in front of your hole.[line break][first custom style]'It is good that you understand your place, slave. I will return now to my place of honour.'[roman type][line break]The Master once again worms its way into your [if the player is not possessing a vagina][asshole][otherwise][vagina][end if]!";
+			repeat with C running through worn top level protection clothing:
+				destroy C;
+			repeat with D running through worn clothing:
+				if D is penetrating a fuckhole:
+					destroy D;
+			now P is worn by the player;
+			if the player is not possessing a vagina:
+				now P is penetrating asshole;
+			otherwise:
+				now P is penetrating vagina;
+			now another-turn is 1;
+		now autodrink is 0;
+		if the player is broken and cultist veil is in the location of the player and cultist veil is actually summonable:
+			say "You see a black veil and suddenly feel so ashamed that your worthless face is on display, as though you were a person and not simply a selection of holes to be used. You silently lift the veil over your face, as is proper.";
+			summon cultist veil;
+			now another-turn is 1;
+		if the traitor-hypno of hypno-lesson > 0:
+			if ex-princess is in the location of the player and ex-princess is caged and diaper quest is 0 and watersports fetish is 1 and the player is not incontinent and the player is desperate to pee and the player is able to use a urinal:
+				decrease the traitor-hypno of hypno-lesson by 1;
+				say "Something inside you urges you to [second custom style]help your friend[roman type].";
+				compute urinal use;
+				now another-turn is 1.
 
 This is the broken automatic submission rule:
 	let M be a random willing to shag right now reactive monster;
@@ -828,14 +913,15 @@ To Reset Flags:
 	repeat with M running through monsters:
 		now M is not moved;
 		now M is not seeked;
-	repeat with M running through monsters:
 		now M is not stalled;
+		if M is wrangling arms and M is pacified, now M is not wrangling arms;
 	vary stickman counters;
 	now feeding bowls is in Hotel18; [The inbuilt shit within I6 means all edible items must be portable to work. This way, even if the player picks it up, it goes back down on the floor immediately.]
 	now food machine is in School17; [same for the school food machine]
 	if surrendered is 1 and the player is not in danger, now surrendered is 0;
 	now the travel-direction of the player is up;
 	now the travel-opposite of the player is down;
+	now breathing-this-turn is true;
 	repeat with C running through worn clothing:
 		now the upgrade-target of C is nothing;
 	repeat with F running through fuckholes:

@@ -46,7 +46,7 @@ To FacePiss from (M - an object):
 				say "[first custom style]'[one of]Ungrateful brat[or]You can't even be a urinal properly[or]Useless whore[or]Disrespectful bitch[or]Oh my, you disobedient wench[or]Gross, you let some get on my shoes you [cunt][in random order]!'[roman type][line break]The anonymous man [one of]slaps you in the face[or]kicks you in the belly[or]painfully twists your nipples[at random] as punishment.";
 				PainUp 1;
 			otherwise if M is intelligent monster:
-				compute angry punishment of M;
+				consider angry punishment of M;
 			if vm is video-monitor and the video-caller of vm is not the throne and vm is not recording-disgrace:
 				now vm is recording-disgrace;[since sex is probably over by now, we need to set up the recorded event right away.]
 				let T be the substituted form of "getting showered in [urine].";
@@ -268,7 +268,7 @@ Displays some text when a condom successfully catches a monster's load during or
 
 +!]
 To say OralCondomPieFlav of (M - a monster):
-	say "[one of][BigFuckerDesc of M] tightens [his of M] grip, hissing through [his of M] teeth as [his of M] condom fills with warmth.[or][BigFuckerDesc of M][']s [DickDesc of M] throbs powerfully, firing off load after load of warm [semen] into the condom.[or][BigFuckerDesc of M] forces you all the way down, groaning as [he of M] fills the condom with [his of M] load.[or][silentThroat M][BigFuckerDesc of M] pulls you down as [he of M] begins to ejaculate, [his of M] balls slapping your chin as the condom swells to contain [his of M] big load.[or][silentThroat M][BigFuckerDesc of M] buries [his of M] [DickDesc of M] as far into your mouth as it will go, jet after jet of [semen] rushing into the increasingly bloated condom[or][silentThroat M][BigFuckerDesc of M] forces [his of M] length down your throat, groaning as the condom fills with [his of M] load.[or][silentThroat M][BigFuckerDesc of M] forces you to take [his of M] [DickDesc of M] all the way to the hilt. You can do nothing but wait helplessly as [he of M] thoroughly empties [his of M] load into the condom.[or][BigFuckerDesc of M] forces you down as [his of M] [DickDesc of M] spasms, slightly stretching the condom with [his of M] load.[in random order]".
+	say "[one of][BigFuckerDesc of M] tightens [his of M] grip, hissing through [his of M] teeth as [his of M] condom fills with warmth.[or][BigFuckerDesc of M][']s [DickDesc of M] throbs powerfully, firing off load after load of warm [semen] into the condom.[or][BigFuckerDesc of M] forces you all the way down, groaning as [he of M] fills the condom with [his of M] load.[or][silentThroat M][BigFuckerDesc of M] pulls you down as [he of M] begins to ejaculate, [his of M] [if M is a balls-haver]balls slapping your chin[otherwise]thighs gripping your face[end if] as the condom swells to contain [his of M] big load.[or][silentThroat M][BigFuckerDesc of M] buries [his of M] [DickDesc of M] as far into your mouth as it will go, jet after jet of [semen] rushing into the increasingly bloated condom[or][silentThroat M][BigFuckerDesc of M] forces [his of M] length down your throat, groaning as the condom fills with [his of M] load.[or][silentThroat M][BigFuckerDesc of M] forces you to take [his of M] [DickDesc of M] all the way to the hilt. You can do nothing but wait helplessly as [he of M] thoroughly empties [his of M] load into the condom.[or][BigFuckerDesc of M] forces you down as [his of M] [DickDesc of M] spasms, slightly stretching the condom with [his of M] load.[in random order]".
 
 [!<ComputeFacialDodgingOfMonster>+
 
@@ -283,6 +283,14 @@ To compute facial dodging of (M - a monster):
 		compute successful facial dodging of M;
 	otherwise:
 		compute failed facial dodging of M.
+
+To compute assisted facial dodging of (M - a monster) with (subs - a number):
+	say FacialBrokenFree of M;
+	get failed facial dodge image for M;
+	say AssistedFailedFacialDodge of M with subs;[can't be dodged]
+	CumFaceUp the semen load of M;
+	UnannouncedSquirt semen on breasts by 1;
+	check forgiveness of M.
 
 [facials are harder to dodge the more you like the feeling of semen]
 Definition: a monster (called M) is aiming a bukkake:
@@ -300,7 +308,7 @@ To compute successful facial dodging of (M - a monster):
 	get successful facial dodge image for M;
 	say SuccessfulFacialDodge of M;
 	SemenPuddleUp the semen load of M;
-	compute angry punishment of M.
+	consider angry punishment of M.
 
 [!<GetSuccessfulFacialDodgeImageOfMonster>+
 
@@ -346,7 +354,14 @@ To compute facial accepting of (M - a monster):
 	get facial accepting image for M;
 	say UnavoidedFacial of M;
 	CumFaceUp the semen load of M;
-	humiliate 200;
+	severeHumiliate;
+	compute happy oral sex reward of M.
+
+To compute assisted facial accepting of (M - a monster) with (subs - a number):
+	get facial accepting image for M;
+	say AssistedUnavoidedFacial of M with subs;
+	CumFaceUp 1;
+	moderateHumiliate;
 	compute happy oral sex reward of M.
 
 [!<GetFacialAcceptingImageOfMonster>+
@@ -405,6 +420,16 @@ To compute merciful oral creampie of (M - a monster):
 	say SubmittedOralCreampie of M;
 	compute default oral creampie of M.
 
+To compute assisted nonmerciful oral creampie of (M - a monster) with (subs - a number):
+	say AssistedResistedOralCreampie of M with subs;
+	compute default oral creampie of M.
+
+To compute assisted merciful oral creampie of (M - a monster) with (subs - a number):
+	say AssistedSubmittedOralCreampie of M with subs;
+	get oral creampie image for M;
+	FaceFill semen by (the semen load of M);
+	compute happy oral sex reward of M.[you don't have to swallow]
+
 [!<GetOralCreampieImageOfMonster>+
 
 This function can display a relevant image when the player receives an oral creampie. Does nothing by default
@@ -425,6 +450,13 @@ This function is called whenever a monster is not willing to bukkake the player,
 To compute deepthroat creampie of (M - a monster):
 	get deepthroat creampie image for M;
 	say DeepthroatCreampie of M;
+	increase the throating of M by 1;
+	StomachSemenUp the semen load of M;
+	compute happy oral sex reward of M.
+
+To compute assisted deepthroat creampie of (M - a monster) with (subs - a number):
+	get deepthroat creampie image for M;
+	say AssistedDeepthroatCreampie of M with subs;
 	increase the throating of M by 1;
 	StomachSemenUp the semen load of M;
 	compute happy oral sex reward of M.
@@ -541,7 +573,7 @@ This function is called whenever a monster ejaculates in the player's mouth, the
 To compute voluntary spitting of (M - a monster):
 	say VoluntarySpit of M;
 	compute silent spitting;
-	compute angry punishment of M.
+	consider angry punishment of M.
 
 [!<CheckForgivenessOfMonster>+
 
@@ -556,7 +588,7 @@ To check forgiveness of (M - a monster):
 	if R > 5:
 		compute angry forgiveness of M;
 	otherwise:
-		compute angry punishment of M.
+		consider angry punishment of M.
 
 [!<ComputeAngryForgivenessOfMonster>+
 
@@ -706,8 +738,8 @@ Displays some text describing the player deepthroating a monster as they ejacula
 @param <Monster>:<M> The monster having oral sex with the player
 
 +!]
-To say DefaultDeepthroatCreampie of (M - a monster):
-	say "[one of][BigFuckerDesc of M] tightens [his of M] grip, hissing through [his of M] teeth as [he of M] cums straight down your throat.[or][BigFuckerDesc of M][']s [DickDesc of M] throbs powerfully, firing off load after load of warm [semen] down your throat.[or][BigFuckerDesc of M] forces you all the way down, groaning as [he of M] ejaculates straight down your throat.[or][BigFuckerDesc of M] pulls you down as [he of M] begins to ejaculate, [his of M] balls slapping your chin as [his of M] load rushes down your throat.[or][BigFuckerDesc of M] buries [his of M] [DickDesc of M] as far into your mouth as it will go, jet after jet of [semen] pinging into the back of your throat.[or][BigFuckerDesc of M] forces [his of M] length down your throat, groaning as [he of M] fills your belly with a decent load.[or][BigFuckerDesc of M] forces you to take [his of M] [DickDesc of M] all the way to the hilt. You can do nothing but wait helplessly as [he of M] pumps [his of M] load directly into your belly.[or][if the semen taste addiction of the player < 7][BigFuckerDesc of M] forces you all the way down as [he of M] begins to ejaculate. There's nothing you can do but swallow as [his of M] [DickDesc of M] pumps [semen] directly into your mouth.[otherwise if the semen taste addiction of the player < 12][BigFuckerDesc of M] forces you all the way down as [he of M] begins to ejaculate. You obediently swallow as [his of M] [DickDesc of M] pumps [semen] directly into your mouth.[otherwise][BigFuckerDesc of M] forces you all the way down as [he of M] begins to ejaculate. You happily swallow as [his of M] [DickDesc of M] pumps [semen] directly into your mouth.[end if][or][if the semen taste addiction of the player < 7][BigFuckerDesc of M] forces [his of M] [DickDesc of M] deeper and deeper into your mouth, grunting as your lips hit [his of M] balls. Your eyes widen in horror as they empty themselves straight down your throat.[otherwise if the semen taste addiction of the player < 12][BigFuckerDesc of M] forces [his of M] [DickDesc of M] deeper and deeper into your mouth, grunting as your lips hit [his of M] balls. Your eyes widen as they empty themselves straight down your throat.[otherwise][BigFuckerDesc of M] forces [his of M] [DickDesc of M] deeper and deeper into your mouth, grunting as your lips hit [his of M] balls. You emit a muffled moan as they empty themselves straight down your throat.[end if][in random order]".
+To say DefaultDeepthroatCreampie of (M - a monster):[TODO: update for balls presence]
+	say "[one of][BigFuckerDesc of M] tightens [his of M] grip, hissing through [his of M] teeth as [he of M] cums straight down your throat.[or][BigFuckerDesc of M][']s [DickDesc of M] throbs powerfully, firing off load after load of warm [semen] down your throat.[or][BigFuckerDesc of M] forces you all the way down, groaning as [he of M] ejaculates straight down your throat.[or][BigFuckerDesc of M] pulls you down as [he of M] begins to ejaculate, [his of M] [if M is a balls-haver]balls slapping your chin[otherwise]thighs gripping your face[end if] as [his of M] load rushes down your throat.[or][BigFuckerDesc of M] buries [his of M] [DickDesc of M] as far into your mouth as it will go, jet after jet of [semen] pinging into the back of your throat.[or][BigFuckerDesc of M] forces [his of M] length down your throat, groaning as [he of M] fills your belly with a decent load.[or][BigFuckerDesc of M] forces you to take [his of M] [DickDesc of M] all the way to the hilt. You can do nothing but wait helplessly as [he of M] pumps [his of M] load directly into your belly.[or][if the semen taste addiction of the player < 7][BigFuckerDesc of M] forces you all the way down as [he of M] begins to ejaculate. There's nothing you can do but swallow as [his of M] [DickDesc of M] pumps [semen] directly into your mouth.[otherwise if the semen taste addiction of the player < 12][BigFuckerDesc of M] forces you all the way down as [he of M] begins to ejaculate. You obediently swallow as [his of M] [DickDesc of M] pumps [semen] directly into your mouth.[otherwise][BigFuckerDesc of M] forces you all the way down as [he of M] begins to ejaculate. You happily swallow as [his of M] [DickDesc of M] pumps [semen] directly into your mouth.[end if][or][if the semen taste addiction of the player < 7][BigFuckerDesc of M] forces [his of M] [DickDesc of M] deeper and deeper into your mouth, grunting as your lips hit [his of M] balls. Your eyes widen in horror as they empty themselves straight down your throat.[otherwise if the semen taste addiction of the player < 12][BigFuckerDesc of M] forces [his of M] [DickDesc of M] deeper and deeper into your mouth, grunting as your lips hit [his of M] balls. Your eyes widen as they empty themselves straight down your throat.[otherwise][BigFuckerDesc of M] forces [his of M] [DickDesc of M] deeper and deeper into your mouth, grunting as your lips hit [his of M] balls. You emit a muffled moan as they empty themselves straight down your throat.[end if][in random order]".
 
 [!<SayOralResistingOfMonster>+
 
@@ -809,9 +841,26 @@ Displays some text describing a monster telling the player they have to swallow
 To say SwallowDemand of (M - a monster):
 	say "[BigNameDesc of M] gives you a stern look. It's clear that [he of M] wants you to swallow the [semen].".
 
+[!<CheckAngryPunishmentOfMonster>+
+
+This function is called when the player potentially makes a monster angry in some way, like disobeying an order to swallow cum. It might called 'compute angry punishment' below.
+
+@param <Monster>:<M> A monster the player pissed off
+
++!]
+To consider angry punishment of (M - a monster):
+	let N be a random number between 1 and 20;
+	if N >= the favour of M:
+		compute angry punishment of M;
+	otherwise:
+		say AngryForgiveness of M.
+
+To say AngryForgiveness of (M - a monster):
+	if M is intelligent, say "[one of][speech style of M]'Disappointing.'[roman type][line break][or][speech style of M]'How rude.'[roman type][line break][or][speech style of M]'Hmph.'[roman type][line break][or][BigNameDesc of M] wrinkles [his of M] nose but doesn't say anything.[or][BigNameDesc of M] tuts with disappointment.[or][BigNameDesc of M] doesn't seem impressed.[in random order]".
+
 [!<ComputeAngryPunishmentOfMonster>+
 
-This function is called when the player makes a monster angry in some way, like disobeying an order
+This function is called when the player makes a monster angry in some way, like disobeying an important instruction.
 
 @param <Monster>:<M> A monster the player pissed off
 

@@ -1240,4 +1240,16 @@ To say QuestFlav of (Q - vaginal-addict-quest):
 To say QuestTitle of (Q - vaginal-addict-quest):
 	say " (vaginal sex quest)".
 
+Part - Cursed Orgasm Quest
+
+cursed-orgasm-quest is a clothing-quest.
+
+Definition: cursed-orgasm-quest is appropriate: decide no. [only appears in final battle]
+
+To say QuestFlav of (Q - cursed-orgasm-quest):
+	say "You sense that it wants you to masturbate yourself with it until you orgasm.".
+
+To say QuestTitle of (Q - cursed-orgasm-quest):
+	say " (cursed orgasm quest)".
+
 Quests ends here.

@@ -109,7 +109,7 @@ Definition: anal-slut tattoo is drawable:
 	if there is a worn lower back tattoo, decide no;
 	decide yes.
 Definition: anal-slut tattoo is eligible:
-	if the noun is ass plugging clothing or the noun is anal sex themed or the noun is plug or the noun is gang-bang-girl T-shirt, decide yes;
+	if the noun is ass plugging clothing or the noun is anal sex themed or the noun is plug or the noun is gang-bang-girl vest top, decide yes;
 	decide no.
 To say tattoo-desc of (T - anal-slut tattoo):
 	say "You have a tramp stamp tattoo on your lower back that says the words 'Anal Slut'. You can feel it somehow preventing you from suggesting anything except anal sex.".
@@ -1077,7 +1077,7 @@ Definition: drinkme tattoo is magic themed: decide yes.
 
 dumb baby tattoo is a thigh-tattoo. The tattoo-title of dumb baby tattoo is "dumb baby".
 To say tattoo-desc of (T - dumb baby tattoo):
-	say "The words 'dumb baby' are written onto your leg with red Sharpie.".
+	say "The words 'dumb baby' are written onto your leg with in red writing.".
 To decide which number is the intelligence-influence of (T - dumb baby tattoo):
 	decide on -1.
 To decide which number is the initial cringe of (T - dumb baby tattoo):
@@ -1458,7 +1458,7 @@ Definition: i-suck tattoo is eligible:
 To decide which figure-name is the examine-image of (T - i-suck tattoo):
 	decide on figure of i-suck tattoo.
 To say tattoo-desc of (T - i-suck tattoo):
-	say "The words 'I suck' are written on your arm with red Sharpie.".
+	say "The words 'I suck' are written on your arm with in red writing.".
 To decide which number is the dexterity-influence of (T - i-suck tattoo):
 	decide on -1.
 To decide which number is the initial outrage of (T - i-suck tattoo):
@@ -1666,7 +1666,7 @@ To decide which number is the initial outrage of (T - lock-it tattoo):
 
 loser tattoo is a body tattoo. The tattoo-title of loser tattoo is "loser".
 To say tattoo-desc of (T - loser tattoo):
-	say "The word 'Loser' is written on your shoulder and neck area with red Sharpie.".
+	say "The word 'Loser' is written on your shoulder and neck area in red writing.".
 To decide which object is the concealer of (T - loser tattoo):
 	let C be a random worn actually dense neck covering clothing;
 	unless C is accessory, decide on C;
@@ -1742,7 +1742,7 @@ The measurement tattoo pussy slut rule is listed in the pussy slut eligibility r
 mushbutt tattoo is a chest tattoo. The tattoo-title of mushbutt tattoo is "mushbutt".
 Definition: mushbutt tattoo is drawable: decide no.
 To say tattoo-desc of (T - mushbutt tattoo):
-	say "The word 'mushbutt' is written on your chest with red Sharpie[unless there is a worn perceived messed knickers]. It would probably be a lot more humiliating to have this written on you if you were messy[end if].".
+	say "The word 'mushbutt' is written on your chest with in red writing[unless there is a worn perceived messed knickers]. It would probably be a lot more humiliating to have this written on you if you were messy[end if].".
 To decide which number is the initial cringe of (T - mushbutt tattoo):
 	if there is worn messed knickers, decide on 20;
 	decide on 5.
@@ -2679,7 +2679,7 @@ To say tattoo-desc of (T - spit first tattoo):
 
 stinker tattoo is an arm-tattoo. The tattoo-title of stinker tattoo is "stinker".
 To say tattoo-desc of (T - stinker tattoo):
-	say "The word 'stinker' is written on your arm with red Sharpie[unless there is a worn perceived messed knickers]. It would probably be a lot more humiliating to have this written on you if you were messy[end if].".
+	say "The word 'stinker' is written on your arm with in red writing[unless there is a worn perceived messed knickers]. It would probably be a lot more humiliating to have this written on you if you were messy[end if].".
 To decide which number is the initial cringe of (T - stinker tattoo):
 	if there is worn messed knickers, decide on 9;
 	decide on 4.

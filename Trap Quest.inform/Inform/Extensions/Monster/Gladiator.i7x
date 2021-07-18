@@ -323,6 +323,88 @@ To compute delay of (M - a gladiator):
 	otherwise:
 		say "[BigNameDesc of M] [if the player is prone]stands over you, one foot either side of your face[otherwise]holds back from [his of M] next attack[end if].[line break][speech style of M]'[if the health of M < the maxhealth of M]You have been defeated. [end if]Now submit to your superior.'[roman type][line break]".
 
+Definition: a gladiator (called M) is distracted:
+	if the refractory-period of M < 0 and M is reactive:
+		let N be a random undefeated awake wench in the location of M;
+		if N is nothing, let N be a random undefeated awake aeromancer in the location of M;
+		if N is nothing, let N be a random undefeated awake royal guard in the location of M;
+		if N is wench and (N is uninterested or N is friendly):
+			compute M npcBattling N;
+		if N is aeromancer and (N is uninterested or N is friendly):
+			compute M npcBattling N;
+		if N is royal guard and (N is uninterested or N is friendly):
+			compute M npcBattling N;
+
+To compute (M - a gladiator) npcBattling (N - a wench):
+	say "[BigNameDesc of M][']s eyes are drawn [if M is interested]away from you [end if]to [NameDesc of N].[line break][speech style of M]'The battlefield holds pity for no-one. Prepare yourself.'[roman type][line break][speech style of N]'[one of]Fuck off.'[or]Like I need advice from YOU!'[or]How about we don't?'[in random order][roman type][line break][BigFuckerDesc of N] turns to leave, but [FuckerDesc of M] swings at [him of N] with [his of M] [if M is swordless]fist! [otherwise]sword! [end if][run paragraph on]";
+	if M is male:
+		say "[BigFuckerDesc of N] isn't fast enough to avoid the strike, and [if M is swordless][FuckerDesc of M]'s fist hits [him of N] under the ribs[otherwise]the flat of [FuckerDesc of M]'s sword hits [him of N] across the chest[end if], sending [him of N] falling to the floor.[line break][speech style of M]'Hmph. You don't want to be trained, yet can't even dodge an attack of that level. What should I do instead, I wonder?'[roman type][line break][BigFuckerDesc of N] stares at [him of M] for a second before letting out a resigned sigh and spreading [his of N] legs. [BigFuckerDesc of M] unclips [his of M] loincloth, [if M is swordless]grabbing [FuckerDesc of N]'s waist[otherwise]tossing [his of M] weapon away[end if] as [he of M] slides [his of M] [LongDickDesc of M] into [FuckerDesc of N]'s [HoleDesc of N]. Several gasping and moaning filled seconds later, [FuckerDesc of M] pulls out and walks away, leaving [FuckerDesc of N] with fresh [semen] pooling between [his of N] legs.[line break][speech style of M]'[if lady fetish is 2]I thought [he of M] wasn't into that sort of thing!'[otherwise]Where did [he of M] even GET a [DickDesc of M]?!'[end if][roman type][line break]";
+		if a2m fetish > 1, now the creampieTimer of N is the semen load of M * 100;
+		satisfy M;
+		DifficultyUp M by 1;
+		DifficultyUp N by 1;
+		compute mandatory room leaving of M;
+	otherwise:
+		say "[BigFuckerDesc of N] isn't fast enough to avoid the strike, and [if M is swordless][FuckerDesc of M]'s fist hits [him of N] under the ribs[otherwise]the flat of [FuckerDesc of M]'s sword hits [him of N] across the chest[end if], sending [him of N] falling to the floor.[line break][speech style of M]'Hmph. As I thought, you can't even dodge something of that level.'[roman type][line break][BigFuckerDesc of M] turns to leave, and after a moment, [FuckerDesc of N] follows suit. You have a feeling that when you see them again, both will be stronger.";
+		bore M;
+		compute mandatory room leaving of M;
+		compute mandatory room leaving of N;
+		now the scared of N is 10;
+		DifficultyUp M by 1;
+		DifficultyUp N by 1;
+	now the refractory-period of M is the refractory-time of M;
+
+To compute (M - a gladiator) npcBattling (N - an aeromancer):
+	say "[BigNameDesc of M][']s eyes are drawn [if M is interested]away from you [end if]to [NameDesc of N].[line break][speech style of M]'[if M is wild gladiator]Hm. It is time to earn your keep, [boy of N].'[otherwise]I can stay silent no longer. You are over-reliant on that weapon.'[end if][roman type][line break][speech style of N]'[one of]Wind your own business! No, wait, that doesn't work out loud...'[or]I don't know weather I like your tone!'[in random order][roman type][line break][BigFuckerDesc of N] immediately swings [his of M] wand at [FuckerDesc of M], and [if lady fetish is 2]a red welt appears on his face[otherwise][his of M] breasts jiggle[end if] as [he of M] is hit by a whip made of air [run paragraph on]";
+	if a random number between 1 and 2 is 1:
+		say "- but [he of M] isn't deterred! Shrugging off a second and third attack, [FuckerDesc of M] leaps at [FuckerDesc of N] and tackles [him of N] to the ground. Just before [FuckerDesc of M] can disarm [him of N], [FuckerDesc of N] massages [his of N] wand between [his of N] [ChestDesc of N], causing them to explode outwards with enough force to send [FuckerDesc of M] flying! [line break][speech style of M]'[if M is wild gladiator]Hm. I suppose I can wait for now.'[otherwise][one of]So, you had such an ability... I see was mistaken.'[or]You have not mastered that ability, but I will leave you be for now.'[stopping][end if][roman type][line break][BigFuckerDesc of M] gets up, and as if nothing had happened, walks out of the room.";
+		now the refractory-period of M is 30;
+		compute mandatory room leaving of M;
+	otherwise if M is male:
+		say "- but that isn't nearly enough to stop [him of M]! [BigFuckerDesc of M] deftly avoids the next attack, circling behind [FuckerDesc of N] and tackling [him of N] to the ground. [big he of N] grunts as [his of N] wand is knocked out of [his of N] hand and rolls [if M is wild gladiator]into the bushes.[otherwise]out of the room.[end if][line break][speech style of M]'It is time to train.'[roman type][line break][BigFuckerdesc of M] [if lady fetish is 2]pulls down [FuckerDesc of N]'s pants[otherwise]lifts [FuckerDesc of N]'s skirt[end if] and stuffs [his of M] [LongDickDesc of M] into [his of N] asshole. Several ass claps later, [FuckerDesc of M] pulls out and blows [his of M] load on [FuckerDesc of N]'s back. [line break][speech style of M]'[if M is wild gladiator]I am satisfied, for now. Begone.'[otherwise]This is *huff* a good place to stop. Let us continue later.'[end if][roman type][line break][BigFuckerDesc of N] scowls at [him of M], crawling off in the direction of [his of N] wand.";
+		satisfy M;
+		DifficultyUp M by 1;
+		DifficultyUp N by 1;
+		compute mandatory room leaving of N;
+		now the refractory-period of M is the refractory-time of M;
+	otherwise:
+		say "- but that isn't nearly enough to stop [him of M]! [BigFuckerDesc of M] tackles [FuckerDesc of N] to the ground, wrenching the wand out of [his of N] hand and throwing it [if M is wild gladiator]into the bushes.[otherwise]out of the room.[end if][line break][speech style of M]'Train. I will only be harder on you from here on.'[roman type][line break][BigFuckerDesc of M] turns to leave, and after a moment, [FuckerDesc of N] follows suit. You have a feeling that when you see them again, both will be stronger.";
+		bore M;
+		bore N;
+		compute mandatory room leaving of M;
+		compute mandatory room leaving of N;
+		now the scared of N is 10;
+		DifficultyUp M by 1;
+		DifficultyUp N by 1;
+		now the refractory-period of M is the refractory-time of M.
+
+To compute (M - a gladiator) npcBattling (N - a royal guard):
+	say "[BigNameDesc of M][']s suddenly turns to [NameDesc of N].[line break][speech style of M]'[one of]You there, [boy of N]! You clearly need help becoming a true woman!'[or]Are you not embarassed of those tiny breasts?! You need my help!'[in random order][roman type][line break][big he of M] pulls out a bottle of pink liquid. [run paragraph on]";
+	if a random number between 1 and 2 is 1:
+		say "[BigFuckerDesc of N] avoids [FuckerDesc of M]'s lunge and quickly knocks the bottle out of [his of M] hand. The contents spill everywhere.[line break][speech style of M]'I'm only trying to help, you idiot!'[roman type][line break][BigFuckerDesc of M] storms off!";
+		bore M;
+		compute mandatory room leaving of M;
+	otherwise if M is male:
+		say "[BigFuckerDesc of N] immediately bats the potion out of [his of M] hand, but [FuckerDesc of M] isn't deterred. [big he of M] sweeps [FuckerDesc of N]'s legs and pins [him of N] to the floor, pumping [his of M] [LongDickDesc of M] as [FuckerDesc of N] struggles against [his of M] grip. [big he of N] puts in a valiant effort, but in the end there is nothing [he of N] can do as [FuckerDesc of M] wrings out a thick, creamy load all over [his of N] face.[line break][speech style of N]'You surprised me. I suppose I can stop going easy on you.'[roman type][line break][BigFuckerDesc of M] releases [FuckerDesc of N] and turns to leave. After a moment, [FuckerDesc of N] follows suit. You have a feeling that when you see them again, both will be stronger.";
+		bore M;
+		bore N;
+		compute mandatory room leaving of N;
+		compute mandatory room leaving of M;
+		now the scared of N is 10;
+		DifficultyUp M by 1;
+		DifficultyUp N by 1;
+		now the refractory-period of M is the refractory-time of M;
+	otherwise:[she forces some potion down his throat, then he crawls off.]
+		say "[line break][speech style of N]'Stop! This is against the law-!'[roman type][line break][BigFuckerDesc of N] tries to put up a fight, but after a brief struggle, [FuckerDesc of M] successfully pins [him of N] down and forces the open end of the bottle into [his of N] mouth. A tiny rill of pink fluid dribbles down [FuckerDesc of N]'s chin as [if N is presenting as male][he of N] suddenly grows breasts![otherwise][his of N] breasts suddenly grow![end if][line break][speech style of M]'Hm. I'll have to get something stronger...'[roman type][line break][BigFuckerDesc of M] releases [FuckerDesc of N] and turns to leave. After a moment, [FuckerDesc of N] follows suit. You have a feeling that when you see them again, both will be stronger.";
+		satisfy M;
+		bore N;
+		compute mandatory room leaving of N;
+		compute mandatory room leaving of M;
+		now the scared of N is 10;
+		DifficultyUp M by 1;
+		DifficultyUp N by 1;
+	now the refractory-period of M is the refractory-time of M.
+
 Part 2 - Perception
 
 Definition: a gladiator (called M) is uniquely unfriendly:
@@ -803,6 +885,9 @@ This is the gladiator smoke rule:
 		rule succeeds.
 The gladiator smoke rule is listed last in the gladiator unique punishment rules.
 
+To compute extra suffocation of (M - a gladiator):
+	say "[one of][BigNameDesc of M] seems unbothered by the fact that you're holding your breath.[line break][speech style of M]'I've got all day.'[roman type][line break][or][stopping]". [no extra suffocation because she's just patiently waiting for you to breathe]
+
 To say DragArrival of (M - a gladiator) to (R - a room):
 	cutshow figure of gladiator cutscene 12 for M;
 	if M is enlightened gladiator:
@@ -1027,6 +1112,17 @@ To say angry punishment insult of (M - a gladiator):
 		say "[BigNameDesc of M] snarls.[line break]";
 	otherwise:
 		say "[speech style of M]'You still wish to test my wrath?!'[roman type][line break]".
+
+To compute angry punishment of (M - a gladiator):
+	say angry punishment insult of M;
+	if M is not friendly-fucking and (M is not seduced or M is unfriendly):
+		if bondage protection is 0 and nipple-ring bikini top is off-stage and nipple-ring bikini top is actually summonable:
+			summon nipple-ring bikini top uncursed;
+			say "[BigNameDesc of M] makes you wear a [nipple-ring bikini top]!";
+			let K be a random off-stage specific-key;
+			compute M locking nipple-ring bikini top with K;
+		otherwise:
+			compute default angry punishment of M.
 
 To say angry punishment clothing destruction of (M - a gladiator) on (C - a clothing):
 	if player-fucking is not DOMINANT-FAILURE:

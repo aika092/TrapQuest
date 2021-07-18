@@ -45,6 +45,12 @@ To summon (P - a sex toy) cursed vaginally:
 	summon P vaginally;
 	now P is cursed.
 
+To summon (P - a sex toy) uncursed vaginally:
+	summon P vaginally;
+	now the raw-magic-modifier of P is 0;
+	now P is blandness;
+	now P is bland.
+
 To summon (C - a clothing) uncursed:
 	summon C;
 	now the raw-magic-modifier of C is 0;

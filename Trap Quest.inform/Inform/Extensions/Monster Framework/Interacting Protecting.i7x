@@ -18,25 +18,31 @@ To compute interaction of (M - a monster):
 		if N is monster:
 			compute submissive assistance of M with N;
 		otherwise:
-			compute protection of M;
-			now M is not submission-assisting;
-	if M is undefeated and M is not caged, compute protection of M.
+			if the number of combative monsters in the location of the player < 1:
+				now M is not submission-assisting;
+				compute assistance resolution of M;
+	otherwise if M is undefeated and M is not caged and the player is in danger:
+		compute protection of M;
+	otherwise:
+		compute unique interaction of M.
+
+To compute unique interaction of (M - a monster):
+	do nothing.
 
 To compute protection of (M - a monster): [You can define this for your monster if you want it to act hugely differently]
-	if the player is in danger:
-		let X be M;
-		let LX be the list of combative monsters;
-		if debugmode > 1, say "combative monsters: [LX].";
-		now X is entry 1 in LX;
-		if the player is flying:
-			distract M;
-		otherwise if X is M:
-			say "BUG - [NameDesc of M] tried to protect the player (flagged as in combat) but somehow found itself as the most reasonable target...";
-		otherwise if X is seduced: [monsters don't get involved or keep attacking enemies while you're seducing]
-			do nothing;
-		otherwise:
-			if debugmode > 1, say "calling protection of [MediumDesc of M] against [MediumDesc of X].";
-			compute M protecting against X.
+	let X be M;
+	let LX be the list of combative monsters;
+	if debugmode > 1, say "combative monsters: [LX].";
+	now X is entry 1 in LX;
+	if the player is flying:
+		distract M;
+	otherwise if X is M:
+		say "BUG - [NameDesc of M] tried to protect the player (flagged as in combat) but somehow found itself as the most reasonable target...";
+	otherwise if X is seduced: [monsters don't get involved or keep attacking enemies while you're seducing]
+		do nothing;
+	otherwise:
+		if debugmode > 1, say "calling protection of [MediumDesc of M] against [MediumDesc of X].";
+		compute M protecting against X.
 
 To compute (M - a monster) protecting against (X - a monster):
 	if debugmode > 1, say "called protection of [MediumDesc of M] against [MediumDesc of X].";
@@ -82,6 +88,13 @@ To compute submissive assistance of (M - a monster) with (N - a monster):
 	otherwise:
 		compute generic assistance from M with N;
 
+To compute assistance resolution of (M - a monster):
+	if M is unfriendly:
+		say "[BigNameDesc of M] [one of]glares at you as [he of M] stands[or]points at you before getting[or]glowers at you as [he of M] gets[or]stares at you while standing[in random order] back up.[line break][speech style of M]'[one of]You'll regret getting me involved.'[or]Nice job roping me into that.'[or]You fucking owe me now.'[in random order][roman type][line break]";
+	otherwise:
+		say "[BigNameDesc of M] [one of]sighs as [he of M] stands[or]stands[or]glances at you as [he of M] gets[or]gets up slowly[in random order] back up.[line break][speech style of M]'[one of]I guess that's over with.'[or]We're done, right?'[or]You don't need my help anymore, right?'[in random order][roman type][line break]";
+	Bore M.
+
 [d = dominant, s = submissive]
 To compute oral assistance from (S - a monster) with (D - a monster):
 	if S is unfriendly:
@@ -97,8 +110,8 @@ To compute oral assistance from (S - a monster) with (D - a monster):
 			if the sex-length of D > 1, decrease the sex-length of D by 1;
 		otherwise:
 			compute boobs assistance from S with D.
-		
-	
+
+
 To compute boobs assistance from (S - a monster) with (D - a monster):
 	if a2m fetish > 1:
 		say "[BigNameDesc of S] [one of]submissively[or]diligently[or]quietly[or]obediently[or]greedily[at random] [one of]tongues[or]eats out[in random order] [NameDesc of D][']s asshole";
@@ -125,7 +138,7 @@ To compute anal assistance from (S - a monster) with (D - a monster):
 		otherwise:
 			say "[BigNameDesc of S] kneels over you, holding your cheeks open so [NameDesc of D] can [if D is male]fuck your [asshole] even harder[otherwise]ruin your [asshole] even more[end if]!";
 			ruin asshole;
-		if the sex-length of D > 0, decrease the sex-length of D by 1;	
+		if the sex-length of D > 0, decrease the sex-length of D by 1;
 	otherwise if a random number between 1 and 2 is 1 and S is female:
 		say "[BigNameDesc of S] kneels over you, holding [his of S] ass cheeks open, allowing [NameDesc of D] to fuck your [asshole] and [if lady fetish is 1][hers of S][otherwise][his of S] [asshole][end if] alternately.";
 		if the sex-length of D > 0, decrease the sex-length of D by 1;
@@ -139,5 +152,55 @@ To compute generic assistance from (S - a monster) with (D - a monster):
 	otherwise:
 		say "[one of][BigNameDesc of S] kisses [NameDesc of D] passionately, groping [his of D] [ChestDesc of D] for good measure.[or][BigNameDesc of S] allows [NameDesc of D] to grope [him of S], passionately kissing [him of D] as [he of D] does.[in random order]";
 		if the sex-length of D > 0, decrease the sex-length of D by 1.
+
+To say AssistedFailedFacialDodge of (M - a monster) with (subs - a number):
+	let N be a random unfriendly submission-assisting monster in the location of the player;
+	unless N is monster, now N is a random submission-assisting monster in the location of the player;
+	say "Unfortunately, [if subs > 1]the others are[otherwise][FuckerDesc of N] is[end if] right there to grab you and hold you still as [if subs > 1][he of M][otherwise][FuckerDesc of M][end if] ejaculates all over your face and [ShortDesc of breasts].".
+
+To say AssistedUnavoidedFacial of (M - a monster) with (subs - a number):
+	let N be a random unfriendly submission-assisting monster in the location of the player;
+	unless N is monster, now N is a random submission-assisting monster in the location of the player;
+	say "[if subs > 1]The others crowd in around you[otherwise][BigFuckerDesc of N] puts [his of N] face up next to yours[end if] as [NameDesc of M] pushes you off and ejaculates all over your faces.".
+
+To say AssistedDeepthroatCreampie of (M - a monster) with (subs - a number):
+	let N be a random unfriendly submission-assisting monster in the location of the player;
+	unless N is monster, now N is a random submission-assisting monster in the location of the player;
+	say "[if subs is 1][BigFuckerDesc of N] holds[otherwise]The others hold[end if] your head down as [NameDesc of M] goes over the edge, keeping your [if M is a balls-haver]lips in full contact with [his of M] balls[otherwise]nose in full contact with [his of M] pelvis[end if] as [his of M] [semen] shoots straight down your throat.";
+
+To say AssistedResistedOralCreampie of (M - a monster) with (subs - a number):
+	let N be a random unfriendly submission-assisting monster in the location of the player;
+	unless N is monster, now N is a random submission-assisting monster in the location of the player;
+	say "[if subs is 1][BigFuckerDesc of N] pushes[otherwise]The others push[end if] you down as [NameDesc of M] goes over the edge, [if subs > 1]their combined[otherwise][his of N][end if] strength ensuring that every drop of [if subs > 1][his of M][otherwise][FuckerDesc of M]'s[end if] thick, slimy load shoots out in your mouth.";
+
+To say AssistedSubmittedOralCreampie of (M - a monster) with (subs - a number):
+	let N be a random unfriendly submission-assisting monster in the location of the player;
+	unless N is monster, now N is a random submission-assisting monster in the location of the player;
+	say "[BigNameDesc of M] groans in pleasure as [he of M] explodes into your mouth, painting your tongue with rope after rope of thick, slimy [semen]. [if subs > 1]The others hold[otherwise][BigFuckerDesc of N] holds[end if] you tightly, leaning in when [FuckerDesc of M] finally allows you to pull off, and eagerly [if subs > 1]push their tongues[otherwise]thrusts [his of N] tongue[end if] into your cum-filled mouth. You [if the semen taste addiction of the player < 5]decide it could be worse, and [end if]help make a show of playing with [his of M] load before swallowing what didn't end up in [if subs > 1]their mouths[otherwise][his of N] mouth[end if] or on [if bukkake fetish is 1]your chin[otherwise]the floor[end if].";
+
+To compute default facial climax for (M - a monster):
+	TimesSubmittedUp M by 1;
+	BlowCount;
+	if M is male:[should always be true, but better safe than sorry]
+		if M is wrapped:
+			compute wrapped climax of M in face;
+		otherwise if bukkake fetish is 1 and M is willing to bukkake:[cumshot outside]
+			if the reaction of the player is 0:[Player rolls to see if they avoid a facial]
+				compute facial dodging of M;
+			otherwise: [the player submitted]
+				compute facial accepting of M;
+		otherwise:[Internal cumshot]
+			if player-gagging is true:
+				compute deepthroat creampie of M;
+			otherwise if the reaction of the player is 0:
+				compute oral creampie of M;
+			otherwise if M is willing to tongue creampie:
+				compute merciful oral creampie of M;
+			otherwise:[submitted, deepthroat]
+				compute deepthroat creampie of M;
+		compute post climax effect of M in face;
+	if the rounds of sex left of M <= 0:[if rounds of sex left > 0, it means the monster wants an extra round]
+		if M is interested, orgasm satisfy M;[dislodges him automatically]
+		otherwise orgasm dislodge M.
 
 Interacting Protecting ends here.

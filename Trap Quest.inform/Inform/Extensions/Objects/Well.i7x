@@ -154,7 +154,7 @@ To compute WellPurifying for offer (N - a number) with roll (R - a number):
 	if R is 2:
 		let C be a random worn demonic clothing;
 		unless C is clothing, now C is a random worn cursed clothing;
-		if (C is unremovable) or (C is demonic clothing and N < 25) or (C is clothing and N < 10) or C is not clothing:
+		if (C is demonic clothing and N < 25) or (C is clothing and N < 10) or C is not clothing:
 			if N < 100, say "Rejected... Taint... Powerful...[roman type][line break]The voice echoes in your head as light gathers around the well and slowly dissipates.";
 			otherwise increase R by 1;
 		otherwise:

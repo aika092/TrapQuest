@@ -56,7 +56,7 @@ Definition: a mindless acolyte (called M) is willing to charm snakes:[If she's s
 
 clairvoyant acolyte is an acolyte. The text-shortcut of clairvoyant acolyte is "clc".
 Definition: clairvoyant acolyte is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
-clairvoyant acolyte has a number called suffocation. Understand "seer", "voyant", "clair" as clairvoyant acolyte.
+Understand "seer", "voyant", "clair" as clairvoyant acolyte.
 To say MediumDesc of (M - clairvoyant acolyte):
 	say "clairvoyant cultist".
 
@@ -1069,25 +1069,10 @@ To say PresentFriendlyRejectionFlav of (M - clairvoyant acolyte):
 The unique punishment rule of the clairvoyant acolyte is the default unique punishment rule.
 
 To compute facial sex of (M - clairvoyant acolyte):
-	increase the suffocation of M by 3;
-	if the body soreness of the player + the suffocation of M >= 17:
-		say "[BigNameDesc of M] continues to torture you with [his of M] crotch. You really need to breathe soon! You are so exhausted there is nothing you can do, you struggle weakly but [his of M] ass cheeks and [vagina] are completely preventing you from breathing. You pass out.";
-		now delayed fainting is 1;
-		now the fainting reason of the player is 9;
-	otherwise:
-		if bukkake fetish is 1:
-			say "[one of]A large glob of [semen] leaks out of [his of M] ass and onto your face.[or]Warm [semen] seeps out of [his of M] asshole and onto your face.[or]Thick [semen] slowly trickles out of [his of M] asshole, rolling down the side of your nose and over your cheeks.[or]A fat wad of [semen] leaks out of [his of M] butt and plops wetly onto your face.[or][semen] oozes out of [his of M] gaping butthole, pooling on your face.[or]Thick [semen] dribbles out of [his of M] butt, rolling down your cheeks.[in random order][if the semen addiction of the player < 7][line break][speech style of M]How disgusting![roman type][line break][end if][line break]";
-			CumFaceUp 1;
-		compute facesit sex of M;
-		[let D be a random worn messed knickers; Weird bug was happening that forced this to be commented, apparently
-		if D is clothing:
-			say "[BigNameDesc of M] [one of]tentatively feels the warmth of[or]gently puts pressure against[stopping] your [if D is perceived messed]messy [end if][ShortDesc of D] with [his of M] hands.[line break][speech style of M]'[one of]Oh my god, how disgusting! This must be weird for you as well, right? Because it's fucking weird for me.'[or][DiaperHumiliation of M][stopping][roman type][line break]";
-			if there is worn perceived unmessed knickers, compute state check of a random worn messed knickers;
-		otherwise if there is a worn diaper:
-			say "[BigNameDesc of M] lovingly rubs your diaper[one of] from [his of M] advantageous position[or][stopping].[line break][speech style of M]'[one of]What's this? Why are you wearing a nappy, honey? Are you having potty problems?'[or][DiaperHumiliation of M][stopping][roman type][line break]";
-			humiliate 200;
-			arouse 300;]
-		say "[if the body soreness of the player + the suffocation of M < 8]You are still holding your breath.[otherwise if the suffocation of M < 12]You are running out of breath![otherwise]You still can't breathe. You're going to faint any second now![end if]".
+	if bukkake fetish is 1:
+		say "[one of]A large glob of [semen] leaks out of [his of M] ass and onto your face.[or]Warm [semen] seeps out of [his of M] asshole and onto your face.[or]Thick [semen] slowly trickles out of [his of M] asshole, rolling down the side of your nose and over your cheeks.[or]A fat wad of [semen] leaks out of [his of M] butt and plops wetly onto your face.[or][semen] oozes out of [his of M] gaping butthole, pooling on your face.[or]Thick [semen] dribbles out of [his of M] butt, rolling down your cheeks.[in random order][if the semen addiction of the player < 7][line break][speech style of M]How disgusting![roman type][line break][end if][line break]";
+		CumFaceUp 1;
+	compute facesit sex of M.
 
 To say FacesitResisting of (M - clairvoyant acolyte):
 	say "[one of]You refuse to let [him of M] use you as [his of M] own personal cleaning service, or whatever it is [he of M] wants from you. [or]You keep your mouth shut, valuing your dignity over your ability to breathe. [or]You spitefully purse your lips, wanting to make sure [he of M] gets as little out of it as possible. [or]You keep your mouth shut. At least if you pass out, you'll still have some dignity. [in random order][BigNameDesc of M] keeps grinding on your face anyway!";
@@ -1141,7 +1126,6 @@ To compute (M - clairvoyant acolyte) entering mouth:
 		if presented-orifice is face or the player is subdued or M is friendly-fucking, now B is 0; [If the player is consenting, she flips you automatically]
 		if debuginfo > 0, say "[input-style]Cultist flip check: [if presented-orifice is face]player presented mouth = automatic success[otherwise if the player is subdued]player subdued by held clothing = automatic success[otherwise if M is friendly-fucking]player initiated sex = automatic success[otherwise]flip skill ([difficulty of M * 3]) ==> RNG([difficulty of M * 3]~27) = [R] | [B * 1].5 = ([weight of the player].5) weight + ([strength of the player / 3]) strength[end if][roman type][line break]";
 		if R > B:
-			now the suffocation of M is 0;
 			if presented-orifice is face or M is friendly-fucking, say "You let [him of M], and [he of M] immediately sits on your face. ";
 			otherwise say "[big he of M] succeeds, and immediately sits on your face. ";
 			say MouthPenetrationFlav of M;

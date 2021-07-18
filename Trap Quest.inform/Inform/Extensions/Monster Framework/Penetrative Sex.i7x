@@ -591,7 +591,7 @@ To say FriendlyVeryLooseVaginaPenetrationFlav of (M - a monster):
 
 Chapter 2 - Continue Sex
 
-[!<ComputeSexDumbOfMonsterInFuckhole>+
+[!<ComputeSexSexDollOfMonsterInFuckhole>+
 
 Handles any soreness gain and flavour text created by a monster during a turn of penetrative sex when the player is a living sex doll
 
@@ -602,7 +602,7 @@ Handles any soreness gain and flavour text created by a monster during a turn of
 To compute sexSexDoll of (M - a monster) in (F - a fuckhole):
 	say sexDollFlav of M in F.
 
-[!<SaySexDollSexOfMonsterInFuckhole>+
+[!<SaySexDollFlavOfMonsterInFuckhole>+
 
 Displays some text describing ongoing sex when the player is a living sex doll
 
@@ -1051,7 +1051,13 @@ Displays some text describing a monster "M" inseminating a fuckhole "F"
 
 +!]
 To say CreampieFlav of (M - a monster) in (F - a fuckhole):
-	say "[if M is intelligent and M is in the location of the player][line break][speech style of M]'[one of]Ugh... yes!'[or]Take it all, now!'[or]Yes, yes, fucking take this!'[or]I'm cumming inside you, [bitch]!'[or]Oh trust me, you're going to be able to feel this!'[in random order][roman type][line break][end if][BigFuckerDesc of M] [if M is in the location of the player][one of]ejaculates deep inside[or]releases [his of M] load inside[or]growls as [he of M] finishes, filling[or]hisses with pleasure as [his of M] [semen] pumps into[or]pants happily and bottoms out as [he of M] shoots blast after blast of warm [semen] into[in random order][otherwise][one of]ejaculates deep inside[or]releases [his of M] load inside[or]bottoms out as [he of M] shoots blast after blast of warm [semen] into[in random order][end if] your [variable F]!".
+	let subs be the number of submission-assisting monsters in the location of the player;
+	if subs > 0:
+		let N be a random submission-assisting monster in the location of M;
+		if M is intelligent and M is in the location of the player, say "[line break][speech style of M]'[one of]Ugh... yes!'[or]Come on, you sluts!'[or]Yes, yes, fucking take this!'[or]I'm cumming inside [if subs > 1]all of you[otherwise]both of you[end if] [bitch]es!'[or]Trust me, [if subs > 1]all of you get[otherwise]both of you get[end if] some of this!'[in random order][roman type][line break]";
+		say "[BigFuckerDesc of M] [if M is in the location of the player][one of]ejaculates deep inside[or]releases [his of M] load inside[or]growls as [he of M] finishes, filling[or]hisses with pleasure as [his of M] [semen] pumps into[or]pants happily and bottoms out as [he of M] shoots blast after blast of warm [semen] into[in random order][otherwise][one of]ejaculates deep inside[or]releases [his of M] load inside[or]bottoms out as [he of M] shoots blast after blast of warm [semen] into[in random order][end if] your [variable F] before pulling out and repeating the same process with [if subs > 1][FuckerDesc of N] and the others.[otherwise][FuckerDesc of N].[end if]";
+	otherwise:
+		say "[if M is intelligent and M is in the location of the player][line break][speech style of M]'[one of]Ugh... yes!'[or]Take it all, now!'[or]Yes, yes, fucking take this!'[or]I'm cumming inside you, [bitch]!'[or]Oh trust me, you're going to be able to feel this!'[in random order][roman type][line break][end if][BigFuckerDesc of M] [if M is in the location of the player][one of]ejaculates deep inside[or]releases [his of M] load inside[or]growls as [he of M] finishes, filling[or]hisses with pleasure as [his of M] [semen] pumps into[or]pants happily and bottoms out as [he of M] shoots blast after blast of warm [semen] into[in random order][otherwise][one of]ejaculates deep inside[or]releases [his of M] load inside[or]bottoms out as [he of M] shoots blast after blast of warm [semen] into[in random order][end if] your [variable F]!".
 
 [!<SayCreampieReactionFlavToMonsterInFuckhole>+
 
@@ -1109,7 +1115,9 @@ Displays some text describing a monster "M" pulling out of a fuckhole "F" and pu
 
 +!]
 To say MessyPullOutFlav of (M - a monster) in (F - a fuckhole):
-	say "[BigFuckerDesc of M] pulls out and sprays your crotch with [semen]".
+	let subs be the number of submission-assisting monsters in the location of the player;
+	let N be a random submission-assisting monster in the location of M;
+	say "[BigFuckerDesc of M] pulls out and sprays [if subs > 1]you and the others' crotches[otherwise if subs > 0]you and [FuckerDesc of N]'s crotches[otherwise]your crotch[end if] with [semen]".
 
 To get orgasm image of (M - a monster) in (F - a fuckhole):
 	do nothing.

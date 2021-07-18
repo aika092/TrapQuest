@@ -7,35 +7,15 @@ Figure of Needle Cutscene 4 is the file "Special/Cutscene/cutscene-dart-hips1.pn
 Figure of Needle Cutscene 5 is the file "Special/Cutscene/cutscene-dart-hips2.png".
 Figure of Needle Cutscene 6 is the file "Special/Cutscene/cutscene-dart-hips3.png".
 
-A needle trap is a kind of trap. There are 22 potentially pressure potentially sticky potentially click potentially wire needle traps.
+A needle trap is a kind of trap. There are 4 potentially pressure potentially sticky potentially click potentially wire needle traps.
 
-This is the spawn initial dungeon needle traps rule:
-	repeat with N running from 1 to 4:
-		let R be a random trappable placed labyrinth room;
-		let T be a random off-stage needle trap;
-		unless there is a needle trap in R, deploy T in R.
-The spawn initial dungeon needle traps rule is listed first in the set up dungeon traps rules.
 
 This is the spawn initial woods needle traps rule:
-	repeat with N running from 1 to 3:
+	repeat with N running from 1 to 4:
 		let R be a random trappable placed jungle room;
 		let T be a random off-stage needle trap;
 		unless there is a needle trap in R, deploy T in R.
 The spawn initial woods needle traps rule is listed first in the set up woods traps rules.
-
-This is the spawn initial hotel needle traps rule:
-	repeat with N running from 1 to 2:
-		let R be a random trappable placed modern room;
-		let T be a random off-stage needle trap;
-		unless there is a needle trap in R, deploy T in R.
-The spawn initial hotel needle traps rule is listed first in the set up hotel traps rules.
-
-This is the spawn initial mansion needle traps rule:
-	repeat with N running from 1 to 2:
-		let R be a random trappable placed haunted room;
-		let T be a random off-stage needle trap;
-		unless there is a needle trap in R, deploy T in R.
-The spawn initial mansion needle traps rule is listed first in the set up mansion traps rules.
 
 To trigger (Y - a needle trap):
 	now Y is not untriggered;
@@ -199,5 +179,171 @@ To NeedleDelicateUp:
 
 To say NeedleTrapReactFlav of (M - a monster):
 	say TriggeredTrapReactFlav of M.
+
+
+Part - Rune Trap
+
+A rune trap is a kind of trap. A rune trap is potentially pressure. The printed name of a rune trap is "[TQlink of item described]magic rune pressure plate trap[TQxlink of item described][verb-desc of item described]". Understand "magic rune", "pressure", "plate" as a rune trap. The text-shortcut of a rune trap is usually "rt".
+
+To say ExamineDesc of (T - a rune trap):
+	say "This paving stone had a magic rune implanted in it, which triggered when you stepped on it. Stepping on it again when it's already in this revealed state doesn't do anything.".
+
+To decide which figure-name is the triggered-image of (T - a rune trap):
+	decide on the examine-image of T.
+
+This is the spawn initial dungeon rune traps rule:
+	repeat with T running through off-stage fetish appropriate rune traps:
+		let failsafe be 50;
+		while failsafe > 0:
+			decrease failsafe by 1;
+			let R be a random trappable placed labyrinth room;
+			unless there is a rune trap in R or there is a pressure trap in R, deploy T in R.
+The spawn initial dungeon rune traps rule is listed first in the set up dungeon traps rules.
+
+To trigger (Y - a rune trap):
+	now the player-motion of the player is 0;
+	now the reset-timer of Y is 250;
+	now Y is not untriggered;
+	now Y is revealed;
+	cutshow the triggered-image of Y for Y;
+	say "A magic rune appears on the stone slab! ";
+	compute unique trigger of Y;
+	compute trap reaction of Y.
+
+To compute trap reaction of (Y - a rune trap):
+	repeat with M running through reactive monsters:
+		say RuneTrapReactFlav of M.
+
+To compute unique trigger of (Y - a rune trap):
+	say "But nothing happens. Weird! This must be a buggy trap.".
+
+To say RuneTrapReactFlav of (M - a monster):
+	say TriggeredTrapReactFlav of M.
+
+breasts-rune-trap is a rune trap.
+
+Definition: breasts-rune-trap is fetish appropriate:
+	if max breast size is 1, decide no;
+	if diaper quest is 0 or lactation fetish is 1, decide yes;
+	decide no.
+
+Figure of breasts rune trap is the file "Env/Dungeon/rune2a.jpg".
+Figure of breasts rune trap triggered is the file "Env/Dungeon/rune2b.jpg".
+
+To decide which figure-name is the examine-image of (T - breasts-rune-trap):
+	decide on Figure of breasts rune trap.
+To decide which figure-name is the triggered-image of (T - breasts-rune-trap):
+	decide on Figure of breasts rune trap triggered.
+
+To compute unique trigger of (Y - breasts-rune-trap):
+	if the player is not top heavy:
+		say "The magic surges to your breasts, causing them to swell!";
+		BustUp 3;
+	if lactation fetish is 1:
+		if the milk volume of breasts < the milk capacity of breasts and the milk volume of breasts >= the milk capacity of breasts / 2 and the latex-transformation of the player <= 5:
+			say "Your [BreastDesc] suddenly feel very heavy. You can tell they're absolutely full to the brim with milk!";
+			MilkUp the milk capacity of breasts - the milk volume of breasts;
+		otherwise:
+			say "They feel more active: you can tell that your [if the lactation rate of the player > 0][BreastDesc] will produce milk faster now[otherwise]have started to produce milk over time[end if]!";
+			increase the lactation rate of the player by 1.
+
+balloon-rune-trap is a rune trap.
+
+Definition: balloon-rune-trap is fetish appropriate:
+	if inflation fetish is 1, decide yes;
+	decide no.
+
+Figure of balloon rune trap is the file "Env/Dungeon/rune1a.jpg".
+Figure of balloon rune trap triggered is the file "Env/Dungeon/rune1b.jpg".
+
+To decide which figure-name is the examine-image of (T - balloon-rune-trap):
+	decide on Figure of balloon rune trap.
+To decide which figure-name is the triggered-image of (T - balloon-rune-trap):
+	decide on Figure of balloon rune trap triggered.
+
+To compute unique trigger of (Y - balloon-rune-trap):
+	if tough-shit is 1:
+		say "Your entire body balloons outwards as you are filled with a lighter-than-air gas!";
+		BustInflate 10;
+		AssInflate 10;
+		Assfill 20 air;
+	otherwise:
+		let R be a random number between 1 and 3;
+		if R is 1 and the player is not top heavy:
+			say "Your chest balloons outwards as it is filled with a lighter-than-air gas!";
+			BustInflate 10;
+		otherwise if R is 2 and the player is not bottom heavy:
+			say "Your ass balloons outwards as it is filled with a lighter-than-air gas!";
+			AssInflate 10;
+		otherwise:
+			say "Your belly balloons outwards as it is filled with a lighter-than-air gas!";
+			Assfill 20 air.
+
+To compute trap reaction of (Y - balloon-rune-trap):
+	repeat with M running through reactive monsters:
+		say BalloonRuneTrapReactFlav of M.
+
+To say BalloonRuneTrapReactFlav of (M - a monster):
+	say RuneTrapReactFlav of M.
+
+fatigue-rune-trap is a rune trap.
+
+Figure of fatigue rune trap is the file "Env/Dungeon/rune4a.jpg".
+Figure of fatigue rune trap triggered is the file "Env/Dungeon/rune4b.jpg".
+
+To decide which figure-name is the examine-image of (T - fatigue-rune-trap):
+	decide on Figure of fatigue rune trap.
+To decide which figure-name is the triggered-image of (T - fatigue-rune-trap):
+	decide on Figure of fatigue rune trap triggered.
+
+To compute unique trigger of (Y - fatigue-rune-trap):
+	if tough-shit is 1:
+		say "Your body is completely drained of energy[if the magic-fatigue of the player < the total magic power of the player] and magic[end if]! Uh-oh...";
+		now the fatigue of the player is the buckle threshold of the player;
+		now the magic-fatigue of the player is the total magic power of the player;
+	otherwise:
+		say "Your body is drained of lots of energy[if the magic-fatigue of the player < the total magic power of the player] and have lost some magical energy[end if]! Uh-oh...";
+		FatigueUp the buckle threshold of the player / 2;
+		if the fatigue of the player > the buckle threshold of the player, now the fatigue of the player is the buckle threshold of the player;
+		increase the magic-fatigue of the player by 1 + (the total magic power of the player / 2). [We don't need to worry about this going over-the-top as this is handled at the start of MagicPowerRefresh]
+
+shrink-rune-trap is a rune trap.
+
+Figure of shrink rune trap is the file "Env/Dungeon/rune3a.jpg".
+Figure of shrink rune trap triggered is the file "Env/Dungeon/rune3b.jpg".
+
+To decide which figure-name is the examine-image of (T - shrink-rune-trap):
+	decide on Figure of shrink rune trap.
+To decide which figure-name is the triggered-image of (T - shrink-rune-trap):
+	decide on Figure of shrink rune trap triggered.
+
+To compute unique trigger of (Y - shrink-rune-trap):
+	if the size of penis > min penis size:
+		PenisDown 1;
+	otherwise:
+		say "You feel your muscles shrinking, reducing in bulk! You feel a bit weaker...";
+		StrengthDown 1.
+
+polymorph-rune-trap is a rune trap.
+
+Definition: polymorph-rune-trap is fetish appropriate:
+	if unlucky is 1, decide yes;
+	decide no.
+
+Figure of polymorph rune trap is the file "Env/Dungeon/rune5a.jpg".
+Figure of polymorph rune trap triggered is the file "Env/Dungeon/rune5b.jpg".
+
+To decide which figure-name is the examine-image of (T - polymorph-rune-trap):
+	decide on Figure of polymorph rune trap.
+To decide which figure-name is the triggered-image of (T - polymorph-rune-trap):
+	decide on Figure of polymorph rune trap triggered.
+
+To compute unique trigger of (Y - polymorph-rune-trap):
+	let C be a random upgradable clothing;
+	if C is clothing:
+		potentially transform C;
+	otherwise:
+		say "Nothing seems to happen. Odd...".
+
 
 Needle Trap ends here.

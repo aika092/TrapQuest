@@ -344,9 +344,9 @@ Check going:
 					say "There is currently an uncovered haunted mirror in that room. Are you sure you want to try and go that way? ";
 					unless the player is in agreement, say "You change your mind." instead;
 		if areYouSure is 1:
-			repeat with ST running through futanari slutty sisters in L:
-				unless ST is asleep or ST is off-stage or the wealth of the player < 20:
-					say "You can see [if the number of alive slutty sisters > 1]the two [boy of ST]s[otherwise]one of the [boy of ST]s[end if] who put you into the virtual reality capsule in that room. You'll probably have to fight them. [if the player is prone][bold type]You are currently on your knees, which usually seems to result in fights not going your way.[roman type] [end if]Are you sure you want to try and go that way? ";
+			if futanari-slutty-sister is in L:
+				unless futanari-slutty-sister is asleep or futanari-slutty-sister is off-stage or the wealth of the player < 20:
+					say "You can see [if the number of alive slutty sisters > 1]the two [boy of futanari-slutty-sister]s[otherwise]one of the [boy of futanari-slutty-sister]s[end if] who put you into the virtual reality capsule in that room. You'll probably have to fight them. [if the player is prone][bold type]You are currently on your knees, which usually seems to result in fights not going your way.[roman type] [end if]Are you sure you want to try and go that way? ";
 					unless the player is bimbo consenting, say "You change your mind." instead;
 		if areYouSure is 1 and robomatron is alive and robomatron is in L and robomatron is awake and the wealth of the player >= 20:
 			say "You can see a large scary robot dressed like a nanny. You'll probably have to fight it. [if the player is prone][bold type]You are currently on your knees, which usually seems to result in fights not going your way.[roman type] [end if]Are you sure you want to try and go that way? ";
@@ -380,7 +380,7 @@ Check going:
 		repeat with M running through combative-or-blocking monsters:
 			if M is successfully blocking:
 				allocate 2 seconds;
-				say "[another-turn-flavour] [MovementBlock of M]" instead; [In the 'successfully blocking check' we fill `another-turn-flavour` with the details of the main thing slowing the player down.]
+				say "[another-turn-flavour] [MovementBlock of M]" instead; [In the 'successfully blocking' check we fill `another-turn-flavour` with the details of the main thing slowing the player down.]
 		[All these checks only take place if the player is WALKING as opposed to crawling.]
 		if the player is upright:
 			[Here we increase heel experience. NB even if the player falls over, they still gain heel experience.]

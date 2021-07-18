@@ -63,7 +63,7 @@ choice
 1 [diaper messing]
 -1 [tough-shit]
 0 [backgrounds]
-0 [UNUSED]
+0 [condom fetish]
 0 [UNUSED]
 0 [UNUSED]
 0 [secret: tattoos]
@@ -182,6 +182,10 @@ To decide which number is roleplay fetish:
 	if diaper quest is 1, decide on 0;
 	decide on choice in row 47 of the Table of Player Options.
 
+To decide which number is condom fetish:
+	if diaper quest is 1, decide on 0;
+	decide on the choice in row 53 of the Table of Player Options.
+
 To decide which number is tattoo-fetish:
 	if diaper quest is 1, decide on 0;
 	decide on the choice in row 56 of the Table of Player Options.
@@ -209,8 +213,7 @@ To decide which number is bondage protection:
 
 To decide which number is christmas content:
 	if the player is not a top donator, decide on 0;
-	if choice in row 65 of the Table of Player Options < 2, decide on 1; [override last year's setting]
-	decide on 0.
+	decide on choice in row 65 of the Table of Player Options.
 
 To decide which number is easter content:
 	if the player is not a top donator or diaper quest is 0, decide on 0;
@@ -325,6 +328,7 @@ To decide which number is positive points count:
 	increase X by natural brightness;
 	increase X by starting body shape * 2;
 	increase X by a2m fetish * 2;
+	increase X by condom fetish;
 	decide on X.
 
 To decide which number is diaper points:

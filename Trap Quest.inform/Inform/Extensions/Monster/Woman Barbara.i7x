@@ -582,7 +582,7 @@ To check woman toilet:
 
 To compute woman toilet release:
 	let K be skeleton key;
-	if toilet-key is held and (K is nothing or forbidden-key is not toilet-key), now K is toilet-key;
+	if human-toilet-key is held and (K is nothing or forbidden-key is not human-toilet-key), now K is human-toilet-key;
 	if K is held:
 		if forbidden-key is K:
 			say "Something deep in your brain won't let you use [NameDesc of K] to save [NameDesc of woman-player].";

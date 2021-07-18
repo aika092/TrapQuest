@@ -1,6 +1,6 @@
 Wench by Monster begins here.
 
-A wench is a kind of monster. A wench is usually intelligent. A wench is usually female. A wench has a number called suffocation. The wench has a number called guard-obedience. The leftover-type of a wench is usually 102. A wench has a number called creampieTimer.
+A wench is a kind of monster. A wench is intelligent. The wench has a number called guard-obedience. The leftover-type of a wench is 102. A wench has a number called creampieTimer.
 
 A horny-wench is a kind of wench.
 
@@ -29,30 +29,31 @@ Figure of kidnapped wench is the file "NPCs/Dungeon/Wench/wench1.png".
 Figure of lost wench is the file "NPCs/Dungeon/Wench/wench2.png".
 Figure of creampied wench is the file "NPCs/Dungeon/Wench/wench3.png".
 Figure of horny wench is the file "NPCs/Dungeon/Wench/wench4.png".
+Figure of male wench is the file "NPCs/Dungeon/Wench/wench5.png".
 
-Figure of Wench Interact 1 is the file "Special/Cutscene/cutscene-wench-interact1.png".
-Figure of Wench Interact 2 is the file "Special/Cutscene/cutscene-wench-interact2.png".
-Figure of Wench Interact 3 is the file "Special/Cutscene/cutscene-wench-interact3.png".
-Figure of Wench Interact 4 is the file "Special/Cutscene/cutscene-wench-interact4.png".
-Figure of Wench Interact 5 is the file "Special/Cutscene/cutscene-wench-interact5.png".
-Figure of Wench Interact 6 is the file "Special/Cutscene/cutscene-wench-interact6.png".
-Figure of Wench Interact 7 is the file "Special/Cutscene/cutscene-wench-interact7.png".
-Figure of Wench Interact 8 is the file "Special/Cutscene/cutscene-wench-interact8.png".
-Figure of Wench Interact 9 is the file "Special/Cutscene/cutscene-wench-interact9.png".
-Figure of Wench Interact 10 is the file "Special/Cutscene/cutscene-wench-interact10.png".
-Figure of Wench Interact 11 is the file "Special/Cutscene/cutscene-wench-interact11.png".
-Figure of Wench Interact 12 is the file "Special/Cutscene/cutscene-wench-interact12.png".
-Figure of Wench Interact 13 is the file "Special/Cutscene/cutscene-wench-interact13.png".
-Figure of Wench Interact 14 is the file "Special/Cutscene/cutscene-wench-interact14.png".
+Figure of Wench Interact 1 is the file "NPCs/Dungeon/Wench/cutscene-wench-interact1.png".
+Figure of Wench Interact 2 is the file "NPCs/Dungeon/Wench/cutscene-wench-interact2.png".
+Figure of Wench Interact 3 is the file "NPCs/Dungeon/Wench/cutscene-wench-interact3.png".
+Figure of Wench Interact 4 is the file "NPCs/Dungeon/Wench/cutscene-wench-interact4.png".
+Figure of Wench Interact 5 is the file "NPCs/Dungeon/Wench/cutscene-wench-interact5.png".
+Figure of Wench Interact 6 is the file "NPCs/Dungeon/Wench/cutscene-wench-interact6.png".
+Figure of Wench Interact 7 is the file "NPCs/Dungeon/Wench/cutscene-wench-interact7.png".
+Figure of Wench Interact 8 is the file "NPCs/Dungeon/Wench/cutscene-wench-interact8.png".
+Figure of Wench Interact 9 is the file "NPCs/Dungeon/Wench/cutscene-wench-interact9.png".
+Figure of Wench Interact 10 is the file "NPCs/Dungeon/Wench/cutscene-wench-interact10.png".
+Figure of Wench Interact 11 is the file "NPCs/Dungeon/Wench/cutscene-wench-interact11.png".
+Figure of Wench Interact 12 is the file "NPCs/Dungeon/Wench/cutscene-wench-interact12.png".
+Figure of Wench Interact 13 is the file "NPCs/Dungeon/Wench/cutscene-wench-interact13.png".
+Figure of Wench Interact 14 is the file "NPCs/Dungeon/Wench/cutscene-wench-interact14.png".
 
-Figure of Wench Cutscene 1 is the file "Special/Cutscene/cutscene-wench-climax1.png".
-[Figure of Wench Cutscene 2 is the file "Special/Cutscene/cutscene-wench-sex1.png".]
-Figure of Wench Cutscene 3 is the file "Special/Cutscene/cutscene-wench-steal1.png".
-Figure of Wench Cutscene 4 is the file "Special/Cutscene/cutscene-wench-skill1.png".
+Figure of Wench Cutscene 1 is the file "NPCs/Dungeon/Wench/cutscene-wench-climax1.png".
+[Figure of Wench Cutscene 2 is the file "NPCs/Dungeon/Wench/cutscene-wench-sex1.png".]
+Figure of Wench Cutscene 3 is the file "NPCs/Dungeon/Wench/cutscene-wench-steal1.png".
+Figure of Wench Cutscene 4 is the file "NPCs/Dungeon/Wench/cutscene-wench-skill1.png".
 [Number 5 is used for cultist too, so has been moved to the TQ / DQ separated image definitions files]
-Figure of Wench Cutscene 6 is the file "Special/Cutscene/cutscene-wench-fuck2.png".
-Figure of Wench Cutscene 7 is the file "Special/Cutscene/cutscene-wench-fuck3.png".
-Figure of Wench Cutscene 8 is the file "Special/Cutscene/cutscene-wench-drink1.png".
+Figure of Wench Cutscene 6 is the file "NPCs/Dungeon/Wench/cutscene-wench-fuck2.png".
+Figure of Wench Cutscene 7 is the file "NPCs/Dungeon/Wench/cutscene-wench-fuck3.png".
+Figure of Wench Cutscene 8 is the file "NPCs/Dungeon/Wench/cutscene-wench-drink1.png".
 
 To decide which figure-name is the monster-image of (M - a creampied wench):
 	decide on figure of creampied wench.
@@ -84,10 +85,10 @@ To say MonsterDesc of (M - a wench):
 	let C be the creampieTimer of M;
 	if M is horny-wench:
 		if bukkake fetish is 1:
-			say "This [man of M] has a glazed look in [his of M] eye, and from [his of M] [if lady fetish is 2]tiny penis and jizz-coated figure[otherwise]voluptuous, jizz-coated figure[end if], [he of M]'s definitely the type you'd expect to be passed around down here. [big he of M] is wearing a white blouse, which is unbuttoned and completely soaked in [if C > 0]the same pearly white stuff running out of [his of M] [HoleDesc of M]. With one hand constantly between [his of M] legs, vigorously working [his of M] [semen] loaded[otherwise]pearlier, whiter stuff. One of [his of M] hands is constantly between [his of M] legs,  vigorously working [his of M][end if] [HoleDesc of M] as [he of M] wanders around with a bow-legged stride."; [not sure desperate wenches can steal, so left panty bits out]
+			say "This [man of M] has a glazed look in [his of M] eye, and from [his of M] [if lady fetish is 2]tiny caged penis and jizz-coated figure[otherwise]voluptuous, jizz-coated figure[end if], [he of M][']s definitely the type you'd expect to be passed around down here. [big he of M] is wearing a white blouse, which is unbuttoned and completely soaked in [if C > 0]the same pearly white stuff running out of [his of M] [HoleDesc of M]. With one hand constantly between [his of M] legs, vigorously working [his of M] [semen] loaded[otherwise]pearlier, whiter stuff. One of [his of M] hands is constantly between [his of M] legs, vigorously working [his of M][end if] [HoleDesc of M] as [he of M] wanders around with a bow-legged stride."; [not sure desperate wenches can steal, so left panty bits out]
 		otherwise:
-			if C > 0, say "This [man of M] has a glazed look in [his of M] eye, a [if lady fetish is 2]tiny penis[otherwise]voluptuous figure[end if], and both hands buried in [his of M] crotch. [big his of M] beach blonde hair and white blouse, which appears to have been rather forcefully unbuttoned, are both soaked and plastered to [his of M] body. [if K is clothing]The [ShortDesc of K] [he of M] took from you (displaced for convenience) have a large dark spot where [semen] has drooled out of [his of M] [HoleDesc of M].[otherwise]The lower half of [his of M] body has nothing covering it at all, leaving [his of M] worn out, [semen]-drooling [HoleDesc of M] on full display.[end if]";
-			otherwise say "This [man of M] has a glazed look in [his of M] eye, a [if lady fetish is 2]tiny penis[otherwise]voluptuous figure[end if], and both hands buried in [his of M] crotch. [big his of M] beach blonde hair and white blouse, which appears to have been rather forcefully unbuttoned, are both soaked and plastered to [his of M] body. [if K is clothing]The [ShortDesc of K] [he of M] took from you (displaced for convenience) offer a small amount of modesty for [his of M] lower body.[otherwise]The lower half of [his of M] body has nothing covering it at all, leaving [his of M] worn out, [HoleDesc of M] on full display.[end if]";
+			if C > 0, say "This [man of M] has a glazed look in [his of M] eye, a [if lady fetish is 2]tiny caged penis[otherwise]voluptuous figure[end if], and both hands buried in [his of M] crotch. [big his of M] beach blonde hair and white blouse, which appears to have been rather forcefully unbuttoned, are both soaked and plastered to [his of M] body. [if K is clothing]The [ShortDesc of K] [he of M] took from you (displaced for convenience) have a large dark spot where [semen] has drooled out of [his of M] [HoleDesc of M].[otherwise]The lower half of [his of M] body has nothing covering it at all, leaving [his of M] worn out, [semen]-drooling [HoleDesc of M] on full display.[end if]";
+			otherwise say "This [man of M] has a glazed look in [his of M] eye, a [if lady fetish is 2]tiny caged penis[otherwise]voluptuous figure[end if], and both hands buried in [his of M] crotch. [big his of M] beach blonde hair and white blouse, which appears to have been rather forcefully unbuttoned, are both soaked and plastered to [his of M] body. [if K is clothing]The [ShortDesc of K] [he of M] took from you (displaced for convenience) offer a small amount of modesty for [his of M] lower body.[otherwise]The lower half of [his of M] body has nothing covering it at all, leaving [his of M] worn out, [HoleDesc of M] on full display.[end if]";
 	otherwise if M is kidnapped wench:
 		if bukkake fetish is 1:
 			if lady fetish is 2:
@@ -115,7 +116,7 @@ To say MonsterDesc of (M - a wench):
 			otherwise say "This [man of M] is wearing a white blouse, which looks like it was pulled open rather roughly to expose [his of M] breasts. [big he of M] is [if K is clothing]also wearing a [ShortDesc of K], pulled aside,[otherwise]otherwise completely naked,[end if][if C > 0] with [semen] dribbling freely from [his of M][otherwise]leaving [him of M] with an[end if] exposed [vagina] and [asshole]. [big his of M] hair has been drawn back into a beach blonde ponytail, and the look on [his of M] heavily decorated face is somewhere between arousal and total exhaustion.".
 
 To say MonsterComment of (M - a wench):
-	say "[line break][variable custom style][if the bimbo of the player < 5 and the player is gendered male][one of]Man, I'd fuck the shit out of that chick! Looks like somebody already beat me to it though...[or][big he of M]'s hot, but I don't like sloppy seconds.[stopping][otherwise if the bimbo of the player < 5][one of]Oh god, what happened to this [man of M]? Is that going to happen to me?[or]So that's how [men of M] are treated here. Disgusting.[stopping][otherwise if the bimbo of the player < 8][one of][big he of M] looks kind of weak. I'd probably win any fight with [him of M].[or]I don't think it would be hard to beat [him of M] in a fight.[in random order][otherwise if the bimbo of the player < 11][one of]Thinking of what must have happened to [him of M] so far is exciting! I should probably stop...[or]Am I going to end up like that? Doesn't seem that bad, really.[or][big he of M] looks like [he of M] could really use some clothes.[in random order][otherwise if pregnancy fetish is 1]Hee hee, I bet [he of M]'ll get pregnant from having all that cum in [his of M] pussy.[otherwise if the bimbo of the player < 14][one of][big he of M] looks like [he of M]'s had a lot of fun here.[or][big he of M] looks like [he of M] knows how to party![in random order][otherwise][one of]Maybe [he of M]'s another player. If I help [him of M] get out, maybe [he of M]'ll fuck me as a reward![or][big he of M] looks like [he of M] knows how to PARTY![stopping][end if][roman type][line break]".
+	say "[line break][variable custom style][if the bimbo of the player < 5 and the player is gendered male and lady fetish < 2][one of]Man, I'd fuck the shit out of that chick! Looks like somebody already beat me to it though...[or][big he of M]'s hot, but I don't like sloppy seconds.[stopping][otherwise if the bimbo of the player < 5][one of]Oh god, what happened to this [man of M]? Is that going to happen to me?[or]So that's how [men of M] are treated here. Disgusting.[stopping][otherwise if the bimbo of the player < 8][one of][big he of M] looks kind of weak. I'd probably win any fight with [him of M].[or]I don't think it would be hard to beat [him of M] in a fight.[in random order][otherwise if the bimbo of the player < 11][one of]Thinking of what must have happened to [him of M] so far is exciting! I should probably stop...[or]Am I going to end up like that? Doesn't seem that bad, really.[or][big he of M] looks like [he of M] could really use some clothes.[in random order][otherwise if pregnancy fetish is 1]Hee hee, I bet [he of M][']ll get pregnant from having all that cum in [his of M] pussy.[otherwise if the bimbo of the player < 14][one of][big he of M] looks like [he of M][']s had a lot of fun here.[or][big he of M] looks like [he of M] knows how to party![in random order][otherwise][one of]Maybe [he of M]'s another player. If I help [him of M] get out, maybe [he of M][']ll fuck me as a reward![or][big he of M] looks like [he of M] knows how to PARTY![stopping][end if][roman type][line break]".
 
 To set up (M - a wench):
 	reset M;
@@ -200,6 +201,11 @@ To say LewdTrapReactFlav of (M - a wench):
 	say "[BigNameDesc of M] [one of]blushes[or]turns red[or]is getting more turned on[at random].[line break][speech style of M]'[one of]I didn't realise you liked it that much.'[or]You're really enjoying yourself, huh?'[or]Are you having fun? You're making it rather tempting to join you.'[in random order][roman type][line break]";
 	moderateHumiliate;
 	FavourDown M with consequences.
+To say RuneTrapReactFlav of (M - a wench):
+	if M is unfriendly:
+		say "[BigNameDesc of M] giggles.[line break][speech style of M]'I stepped on that one earlier. It's much more funny when someone else does it!'p[roman type][line break]";
+	otherwise:
+		say "[BigNameDesc of M] reaches a hand out.[line break][speech style of M]'WAIT! Don't step on tha... too late.'[roman type][line break]".
 
 Part 2 - Perception
 
@@ -399,8 +405,8 @@ This is the obedient wench rule:
 					if W is horny-wench, say "[line break][speech style of W]'[one of]Let's do it together!'[or]We can handle this as a team!'[or]You're as horny as I am, aren't you?'[or]Submit! That's the only way we get to cum!'[at random][roman type][line break]";
 					otherwise say "[line break][speech style of W]'[one of]I'm not getting punished alone!'[or]No weaseling out of it, whore!'[or]You're going down with me!'[or]We're in this together, you fucking slut!'[at random][roman type][line break]";
 					if R > B, silently try kneeling;
-					if the player is prone, say "[BigNameDesc of W] grabs [one of]by the wrists[or]from behind[at random] by the wrists, dragging you down with [him of M]!";
-					otherwise say "[BigNameDesc of W] grabs you [one of]by the wrists[or]from behind[at random], but you shake [him of M] off before [he of M] can drag you down with [him of M]";
+					if the player is prone, say "[BigNameDesc of W] grabs you [one of]by the wrists[or]from behind[at random], dragging you down with [him of W]!";
+					otherwise say "[BigNameDesc of W] grabs you [one of]by the wrists[or]from behind[at random], but you shake [him of W] off before [he of W] can drag you down with [him of W]";
 				otherwise:
 					say "[BigNameDesc of W] [one of]obediently[or]instantly[or]silently[or]immediately[in random order] drops to the ground, and lying face down, assumes [one of]a submissive position with [his of W] hands behind [his of W] head, like a prisoner[or]the position[stopping].";
 			rule succeeds;
@@ -577,25 +583,18 @@ To compute hug attack of (M - a wench):
 		say "You duck away from [him of M]!".
 
 To compute facial sex of (M - a wench):
-	increase the suffocation of M by 3;
-	if the body soreness of the player + the suffocation of M >= 17:
-		say "[BigNameDesc of M] continues to torture you with [his of M] crotch. You really need to breathe soon, but [bold type]you are so exhausted there is nothing you can do! You struggle weakly, but [his of M] ass cheeks[if the creampieTimer of M > 0] and [HoleDesc of M][otherwise], [HoleDesc of M], and the unending stream of [semen][end if] are completely preventing you from breathing. You pass out.[roman type][line break]";
-		now delayed fainting is 1;
-		now the fainting reason of the player is 9;
-	otherwise:
-		if bukkake fetish is 1 and lady fetish < 2 and a2m fetish > 1:[]
-			say "[one of]A large glob of [semen] leaks out of [his of M] ass and onto your face.[or]Warm [semen] seeps out of [his of M] asshole and onto your face.[or]Thick [semen] slowly trickles out of [his of M] asshole, rolling down the side of your nose and over your cheeks.[or]A fat wad of [semen] leaks out of [his of M] butt and plops wetly onto your face.[or][semen] oozes out of [his of M] gaping butthole, pooling on your face.[or]Thick [semen] dribbles out of [his of M] butt, rolling down your cheeks.[in random order][if the semen addiction of the player < 7][line break][first custom style]How disgusting![roman type][line break][end if][line break]";
-			CumFaceUp 1;
-		compute facesit sex of M;
-		let D be a random worn messed knickers;
-		if D is clothing:
-			say "[BigNameDesc of M] [one of]tentatively feels the warmth of[or]gently puts pressure against[stopping] your [if D is perceived messed]messy [end if][ShortDesc of D] with [his of M] hands.[line break][speech style of M]'[one of]Oh my god, how disgusting! This must be weird for you as well, right? Because it's fucking weird for me.'[or][DiaperHumiliation of M][stopping][roman type][line break]";
-			if there is worn perceived unmessed knickers, compute state check of a random worn messed knickers;
-		otherwise if there is a worn diaper:
-			say "[BigNameDesc of M] lovingly rubs your diaper[one of] from [his of M] advantageous position[or][stopping].[line break][speech style of M]'[one of]What's this? Why are you wearing a nappy, honey? Are you having potty problems?'[or][DiaperHumiliation of M][stopping][roman type][line break]";
-			humiliate 200;
-			passively stimulate vagina from M;
-		say "[if the body soreness of the player + the suffocation of M < 8]You are still holding your breath.[otherwise if the suffocation of M < 12]You are running out of breath![otherwise]You still can't breathe. You're going to faint any second now![end if]".
+	if bukkake fetish is 1 and lady fetish < 2 and a2m fetish > 1:[]
+		say "[one of]A large glob of [semen] leaks out of [his of M] ass and onto your face.[or]Warm [semen] seeps out of [his of M] asshole and onto your face.[or]Thick [semen] slowly trickles out of [his of M] asshole, rolling down the side of your nose and over your cheeks.[or]A fat wad of [semen] leaks out of [his of M] butt and plops wetly onto your face.[or][semen] oozes out of [his of M] gaping butthole, pooling on your face.[or]Thick [semen] dribbles out of [his of M] butt, rolling down your cheeks.[in random order][if the semen addiction of the player < 7][line break][first custom style]How disgusting![roman type][line break][end if][line break]";
+		CumFaceUp 1;
+	compute facesit sex of M;
+	let D be a random worn messed knickers;
+	if D is clothing:
+		say "[BigNameDesc of M] [one of]tentatively feels the warmth of[or]gently puts pressure against[stopping] your [if D is perceived messed]messy [end if][ShortDesc of D] with [his of M] hands.[line break][speech style of M]'[one of]Oh my god, how disgusting! This must be weird for you as well, right? Because it's fucking weird for me.'[or][DiaperHumiliation of M][stopping][roman type][line break]";
+		if there is worn perceived unmessed knickers, compute state check of a random worn messed knickers;
+	otherwise if there is a worn diaper:
+		say "[BigNameDesc of M] lovingly rubs your diaper[one of] from [his of M] advantageous position[or][stopping].[line break][speech style of M]'[one of]What's this? Why are you wearing a nappy, honey? Are you having potty problems?'[or][DiaperHumiliation of M][stopping][roman type][line break]";
+		humiliate 200;
+		passively stimulate vagina from M.
 
 To say FacesitResisting of (M - a wench):
 	say "[one of]You refuse to let [him of M] use you as [his of M] own personal [if the creampieTimer of M > 0]cleaning service[otherwise]sex toy[end if]. [or]You keep your mouth shut, valuing your dignity over your ability to breathe. [or]You spitefully purse your lips, wanting to make sure [he of M] gets a little out of it as possible. [or]You keep your mouth shut. At least if you pass out, you'll still have some dignity. [in random order]".
@@ -612,7 +611,7 @@ To say FacesitSubmissionResponse of (M - a wench):
 
 To say NearingClimaxFacesit of (M - a wench):
 	say FacesitSubmissionResponse of M;
-	cutshow figure of wench cutscene 5 for M.
+	if lady fetish < 2, cutshow figure of wench cutscene 5 for M.
 
 To say DiaperHumiliation of (M - a wench):
 	let D be a random worn diaper;
@@ -704,7 +703,6 @@ To compute (M - a wench) entering mouth:
 			say "[BigNameDesc of M] tries to roll you over onto your back!";
 		if M is flipping the player:
 			set up sex length of M in face;
-			now the suffocation of M is 0;[This is what we use to track how many turns the wench has been forcing the player to hold their breath.]
 			say CommencingFacesitFlav of M;
 			if bukkake fetish is 1 and lady fetish < 2 and a2m fetish > 1:
 				say "A large glob of [semen] leaks out of [his of M] ass and onto your face.[if the semen addiction of the player < 7][line break][first custom style]How disgusting![roman type][line break][end if][line break]";
@@ -1007,7 +1005,18 @@ To compute failed dominance punishment of (M - a wench):
 		now another-turn is 1.
 
 To say angry punishment insult of (M - a wench):
-	say "[speech style of M]'I can actually see myself trying something like this on you, so...'[roman type][line break]";
+	say "[speech style of M]'I can actually see myself trying something like this on you, so...'[roman type][line break]".
+
+To compute angry punishment of (M - a wench):
+	say angry punishment insult of M;
+	if M is not friendly-fucking and (M is not seduced or M is unfriendly):
+		if bondage protection is 0 and heart-collar is off-stage and heart-collar is actually summonable:
+			summon heart-collar uncursed;
+			say "[BigNameDesc of M] makes you wear a [heart-collar]!";
+			let K be a random off-stage specific-key;
+			compute M locking heart-collar with K;
+		otherwise:
+			compute default angry punishment of M.
 
 To say angry punishment clothing destruction of (M - a wench) on (C - a clothing):
 	say "[speech style of M]'Let's see how YOU like walking around with your [if C is actually breast covering and the largeness of breasts > 3]tits out!'[otherwise if C is ass covering][fuckholes] on display!'[otherwise]body on display!'[end if][roman type][line break]".
@@ -1389,7 +1398,7 @@ Section 2 - Questioning
 
 To compute teaching of (M - a wench):
 	say "[speech style of M]'Want me to show you how to properly deepthroat a cock? Not only will it help you when getting face-fucked but sometimes you could do it of your own accord if you'd rather not get fucked properly!'[roman type][line break]";
-	cutshow figure of wench cutscene 4 for M;
+	if lady fetish < 2, cutshow figure of wench cutscene 4 for M;
 	teach deepthroating.
 
 To say WhereAnswer of (M - a wench):

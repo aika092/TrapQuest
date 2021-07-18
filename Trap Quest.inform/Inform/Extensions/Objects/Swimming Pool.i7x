@@ -206,7 +206,7 @@ To compute treasure diving in (WB - swimming-pool) at (L - a number):
 					now F is carried by the player;
 				otherwise:
 					say "Your fingers find a hard object around the size of a quarter, and you unsuccessfully try to pry it off the bottom before running out of air and returning to the surface empty-handed.";
-			otherwise if N < 16:[condom]
+			otherwise if N < 16 and condom fetish is 1:[condom]
 				let S be a random worn condom pinnable clothing;
 				if string-belt is worn, now S is string-belt;
 				if S is clothing and the player is getting unlucky:[It's a condom "leech"]

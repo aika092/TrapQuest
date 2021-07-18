@@ -11,8 +11,8 @@ title	subtable	description	toggle
 
 This is the christmas content toggle rule:
 	if the player is a top donator:
-		if the choice in row 65 of the Table of Player Options < 2, now the choice in row 65 of the Table of Player Options is 2; [this DISABLES it]
-		otherwise now the choice in row 65 of the Table of Player Options is 0. [this enables it]
+		if the choice in row 65 of the Table of Player Options < 1, now the choice in row 65 of the Table of Player Options is 1;
+		otherwise now the choice in row 65 of the Table of Player Options is 0.
 
 This is the easter content toggle rule:
 	if the player is a top donator:

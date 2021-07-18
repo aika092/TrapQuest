@@ -8,21 +8,24 @@ Definition: a royal guard is father material: decide yes.
 
 Definition: a royal guard is raunchy: decide yes.
 
-Figure of Royal Guard is the file "NPCs/Dungeon/royalguard1.png".
-Figure of Female Royal Guard is the file "NPCs/Dungeon/royalguard2.png".
-Figure of Prison Guard is the file "NPCs/Dungeon/prisonguard1.png".
+Figure of Royal Guard is the file "NPCs/Dungeon/Guard/royalguard1.png".
+Figure of Female Royal Guard is the file "NPCs/Dungeon/Guard/royalguard2.png".
+Figure of Prison Guard 1 is the file "NPCs/Dungeon/Guard/prisonguard1.jpg".
+Figure of Prison Guard 2 is the file "NPCs/Dungeon/Guard/prisonguard2.jpg".
 
-Figure of Guard Interact 1 is the file "Special/Cutscene/cutscene-guard-interact1.png".
-Figure of Guard Interact 2 is the file "Special/Cutscene/cutscene-guard-interact2.png".
-Figure of Guard Interact 3 is the file "Special/Cutscene/cutscene-guard-interact3.png".
-Figure of Guard Interact 4 is the file "Special/Cutscene/cutscene-guard-interact4.png".
-Figure of Guard Interact 5 is the file "Special/Cutscene/cutscene-guard-interact5.png".
+Figure of Guard Interact 1 is the file "NPCs/Dungeon/Guard/cutscene-guard-interact1.png".
+Figure of Guard Interact 2 is the file "NPCs/Dungeon/Guard/cutscene-guard-interact2.png".
+Figure of Guard Interact 3 is the file "NPCs/Dungeon/Guard/cutscene-guard-interact3.png".
+Figure of Guard Interact 4 is the file "NPCs/Dungeon/Guard/cutscene-guard-interact4.png".
+Figure of Guard Interact 5 is the file "NPCs/Dungeon/Guard/cutscene-guard-interact5.png".
 
-Figure of Guard Cutscene 1 is the file "Special/Cutscene/cutscene-guard-skill1.png".
+Figure of Guard Cutscene 1 is the file "NPCs/Dungeon/Guard/cutscene-guard-skill1.png".
 
 To decide which figure-name is the monster-image of (M - a royal guard):
 	if lady fetish is 1, decide on figure of female royal guard;
-	if M is prison guard, decide on figure of prison guard;
+	if M is prison guard:
+		if M is interested, decide on figure of prison guard 2;
+		decide on figure of prison guard 1;
 	decide on figure of royal guard.
 
 To decide which figure-name is the vaginal-sex-monster-image of (M - a royal guard):
@@ -249,6 +252,7 @@ Definition: a royal guard (called M) is distracted:
 	if the refractory-period of M < 0 and the class of the player is not princess and M is reactive:
 		let N be a random undefeated awake explorer in the location of M;
 		if N is nothing, let N be a random undefeated awake wench in the location of M;
+		if N is nothing, let N be a random messy adult baby slave in the location of M;
 		if N is nothing and diaper quest is 0, let N be a random awake gladiator in the location of M;
 		if N is wench and (N is uninterested or N is friendly):
 			say "[BigNameDesc of M][']s eyes are drawn [if M is interested]away from you [end if]to [NameDesc of N]. [big he of M] grabs [him of N] by the hair and pushes [him of N] onto [his of N] knees.[line break][speech style of M]'[one of]Back for more punishment, I see[or]If you still haven't left these halls, you must really want this[or]I do not approve of your appearance, wench[in random order].'[roman type][line break]Freeing [his of M] [LongDickDesc of M], [NameDesc of M] forces it into [NameDesc of N][']s [if N is penetrating face]mouth[otherwise][one of]mouth[or][HoleDesc of N][or]asshole[purely at random][end if] before [he of N] can even begin to protest. Several awkward moan-filled seconds later, [NameDesc of N] is discarded onto the stone floor, panting, with a fresh load of [semen] oozing out of [his of N] abused orifice.";
@@ -259,6 +263,28 @@ Definition: a royal guard (called M) is distracted:
 			compute mandatory room leaving of M;
 			if N is interested:
 				say "[BigNameDesc of N] begins to ease [himself of N] back to [his of N] feet.[line break][speech style of N]'[one of]I'm sorry you had to see that[or]I'm beginning to lose track of how many times that's happened[or]At least [he of M] didn't take too long[or]Another day, another dicking. I guess it truly never ends down here[in random order].'[roman type][line break]";
+			otherwise if the boredom of N <= 0:
+				compute mandatory room leaving of N;
+			decide yes;
+		if N is adult baby slave and (N is defeated or N is uninterested or N is friendly):
+			say "[BigNameDesc of M][']s eyes are drawn [if M is interested]away from you [end if]to [NameDesc of N]. [big he of M] grabs [him of N] by the arm.[line break][speech style of M]'Good goddess! You need a change.'[line break][speech style of N]'Nu-uh, I don't need a change, I'm totally fine as I- HEY!'[roman type][line break]Forcing [NameDesc of N] onto [his of N] back, [NameDesc of M] sets about untaping [NameDesc of N][']s diaper, wiping [him of N] down, and changing [him of N] out of [his of N] messy nappy, despite [his of N] protests.";
+			now the messTimer of M is a random number between -25 and 25;
+			let SD be a random off-stage soiled-diaper;
+			if SD is soiled-diaper and diaper messing >= 6:
+				now SD is in the location of the player;
+				now the diaper-origin of SD is the substituted form of "[MediumDesc of N][']s diaper";
+				say "[BigNameDesc of M] drops the [SD] onto the ground, and then speaks to both of you.[line break][speech style of M]'One of you get rid of this for me. I don't care who.'[roman type][line break]";
+			otherwise:
+				say "[speech style of M]'All done, little Miss Fusspot.'[line break][speech style of N]'Meanie!'[roman type][line break]";
+			satisfy M;
+			DifficultyUp M by 1;
+			compute mandatory room leaving of M;
+			if SD is soiled-diaper:
+				say "[BigNameDesc of N] begins to ease [himself of N] back to [his of N] feet. [big he of N] looks at [NameDesc of SD] and wrinkles [his of N] nose.[line break][speech style of N]'I'll leave you to get rid of that. Don't worry, I'll make sure to tell anyone that I see that it was yours!'[roman type][line break][big he of N] pulls one of [his of N] eyes wide open with [his of N] fingers and sticks [his of N] tongue out at you as [he of N] leaves.";
+				bore N;
+				compute mandatory room leaving of N;
+			otherwise if N is interested:
+				say "[BigNameDesc of N] begins to ease [himself of N] back to [his of N] feet.[line break][speech style of N]'That guy's such a jerk.'[roman type][line break]";
 			otherwise if the boredom of N <= 0:
 				compute mandatory room leaving of N;
 			decide yes;
@@ -401,7 +427,7 @@ To compute thighs grope of (M - a royal guard):
 	let S be a random worn skirted crotch-in-place clothing;
 	say "[BigNameDesc of M] [if S is clothing and S is not C]moves a hand up under your [ShortDesc of S] and [end if][one of]strokes[or]rubs[in random order] your thigh[if C is clothing] through your [ShortDesc of C][end if]!".
 To say ThighsGropeFlav of (M - a royal guard):
-	say "[speech style of M]'[one of]Is this what you want, child? Because this is the sort of attention you will receive from the residents of these parts if you walk around dressed like a [whore]. Consider this a warning, I do not want to have to arrest you for public indecency.'[or]You are tempting a [man of M] the crown, wench. I can only be pushed so far before I will be forced to take these criminal matters into my own hands...'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]Is this what you want, [boy of the player]? Because this is the sort of attention you will receive from the residents of these parts if you walk around dressed like a [whore]. Consider this a warning, I do not want to have to arrest you for public indecency.'[or]You are tempting a [man of M] the crown, wench. I can only be pushed so far before I will be forced to take these criminal matters into my own hands...'[in random order][roman type][line break]".
 
 To compute ass grope of (M - a royal guard):
 	let C be the concealer of hips;
@@ -493,9 +519,12 @@ To display interaction of (M - a royal guard):
 	otherwise:
 		alwayscutshow figure of guard interact 5 for M.
 
+To display interaction of (M - prison guard):
+	do nothing.
+
 To compute jailor perception of (M - a royal guard):
 	if the sentence of M > 0:
-		say "[speech style of M]'Your sentence is not yet over, child[if the sentence of M <= 1]. But you should look for me again very soon[otherwise if the sentence of M <= 2]. But you should find me again soon[end if].'[roman type][line break]";
+		say "[speech style of M]'Your sentence is not yet over, [boy of the player][if the sentence of M <= 1]. But you should look for me again very soon[otherwise if the sentence of M <= 2]. But you should find me again soon[end if].'[roman type][line break]";
 		if M is unfriendly, say "[BigNameDesc of M] strokes [his of M] chin.[line break][speech style of M]'And in the meantime, I think you need further [']discipline[']...'[roman type][line break]";
 	otherwise:
 		say "[first custom style]'I guess it is time you were released.'[roman type][line break]";
@@ -732,15 +761,16 @@ To say SexSubmissionFlav of (M - a royal guard):
 		say "[variable custom style][one of][if the relevant sex addiction of M > 12 and the player is able to speak]'Fuck me, stud!'[otherwise if the relevant sex addiction of M > 12 and the player is able to make sounds][muffled sounds][otherwise if the vaginalvirgin of the player is 1 and the player is possessing a vagina]At least I still have my virginity.[otherwise]Maybe if I relax, this will hurt less?[end if][or][if the relevant sex addiction of M > 10]This feels too good![otherwise if the relevant sex addiction of M > 5]Why am I letting [him of M] do this? Am I a whore?[otherwise]It still hurts![end if][or][if the relevant sex addiction of M > 13 and the player is able to speak]'That feels good! Go faster!'[otherwise if the relevant sex addiction of M > 13 and the player is able to make sounds][muffled sounds][otherwise if the relevant sex addiction of M > 8]Maybe I really am a slut?[otherwise]Let this be over quickly...[end if][or][if the player is able to make sounds][muffled sounds][otherwise if the relevant sex addiction of M > 14 and the player is able to speak]'Harder!'[otherwise if the relevant sex addiction of M > 14]I kind of wish [he of M]'d go even harder![otherwise if M is not penetrating vagina and the player is possessing a vagina]At least [he of M]'s not using my [vagina]...[otherwise if the relevant sex addiction of M > 6]Am I actually enjoying this?[otherwise]Oh just please finish fast! My [vagina] can't take much more.[end if][purely at random][roman type][line break]".
 
 To say SexResistFlav of (M - a royal guard):
-	if M is penetrating breasts:
-		do nothing;
+	if M is penetrating a fuckhole:
+		say "[if the relevant sex addiction of M < a random number between 8 and 13][one of]You struggle against [his of M] strong grip, but remain in place.[or]You attempt to crawl away, but [his of M] grip is just too strong![or]You squirm, attempting to loosen [his of M] grip, but with no success.[or]You try to kick back at [him of M] with your legs, only managing to get your foot caught in [his of M] cloak.[in random order][otherwise][one of]You resist, but your heart isn't really in it.[or]You kick back at [him of M] but it's more playful than violent.[in random order][end if]";
+	otherwise if M is penetrating a body part:
+		say "[one of]You struggle against [his of M] strong grip, but [his of M] [DickDesc of M] remains where it is.[or]You attempt to jerk away, but [his of M] grip is just too strong![or]You try to [if there is worn wrist-bound-behind clothing]pull[otherwise]push [FuckerDesc of M][end if] away, but [his of M] hold on your head is too strong.[or]You [if there is worn wrist-bound-behind]squirm[otherwise]beat on [FuckerDesc of M]'s thighs[end if] in a futile attempt to break [his of M] grip.[in random order]";
 	otherwise:
-		if M is penetrating a fuckhole and diaper quest is 0, say "[if the relevant sex addiction of M < a random number between 8 and 13][one of]You try to squirm away from the guard, accidentally guiding [his of M] [DickDesc of M] into a tender spot. You freeze with pain.[or]You struggle against [his of M] strong grip, but remain in place.[or]You attempt to crawl away, but the guard makes sure you stay in place.[or]You squirm, attempting to loosen [his of M] grip, but with no success.[or]You try to kick back at [him of M] with your legs, only managing to get your foot caught in [his of M] cloak.[in random order][otherwise][one of]You resist the guard and try to escape but your heart isn't really in it.[or]You kick back at [him of M] but it's more playful than violent.[in random order][end if]";
-		otherwise say "[if the relevant sex addiction of M < a random number between 8 and 13][one of]You struggle against [his of M] strong grip, but remain in place.[or]You attempt to crawl away, but the guard makes sure you stay in place.[or]You squirm, attempting to loosen [his of M] grip, but with no success.[or]You try to push [NameDesc of M] away with your hands, but [his of M] hold on your head is too strong.[in random order][otherwise][one of]You resist the guard and try to escape but your heart isn't really in it.[or]You grasp [his of M] thighs and try to push away more playful than violent.[or]You hold still and force the guard to do all the work.[in random order][end if]";
-		if the player is able to speak:
-			say "[variable custom style]'[one of][if the relevant sex addiction of M > 13]Work for it, stud!'[otherwise if the class of the player is princess]Aren't you supposed to protect me?!'[otherwise]Hey! Somebody help me!'[end if][or][if the bimbo of the player > 10]You're so strong!'[otherwise if the bimbo of the player > 5]Let go of me!'[otherwise]Stop it, you brute!'[end if][or][if the delicateness of the player > 13]This is fun!'[otherwise if the delicateness of the player > 7]You're being too rough!'[otherwise]What the fuck, dude?!'[end if][purely at random][roman type][line break]";
-		otherwise if the player is able to make sounds:
-			say "[variable custom style][muffled sounds][roman type][line break]".
+		say DefaultResistFlav of M;
+	if the player is able to speak:
+		say "[variable custom style]'[one of][if the relevant sex addiction of M > 13]Work for it, stud!'[otherwise if the class of the player is princess]Aren't you supposed to protect me?!'[otherwise]Hey! Somebody help me!'[end if][or][if the bimbo of the player > 10]You're so strong!'[otherwise if the bimbo of the player > 5]Let go of me!'[otherwise]Stop it, you brute!'[end if][or][if the delicateness of the player > 13]This is fun!'[otherwise if the delicateness of the player > 7]You're being too rough!'[otherwise]What the fuck, dude?!'[end if][purely at random][roman type][line break]";
+	otherwise if the player is able to make sounds:
+		say "[variable custom style][muffled sounds][roman type][line break]".
 
 Chapter 1 - Attack
 
@@ -1080,49 +1110,17 @@ To say ThreesomePrep of (M - a royal guard) with (N - a royal guard) in (F - vag
 
 [TODO: guard foursome, possibly]
 
-To compute facial climax of (M - a royal guard):
-	TimesSubmittedUp M by 1;
-	let N be nothing;
-	let cW be 0;
-	let cU be 0;
-	repeat with W running through submission-assisting monsters in the location of the player:
-		if the guard-obedience of W is 1:
-			increase cW by 1;
-			if W is unfriendly, increase cU by 1;
-	if cW > 0:
-		if cU > 0, now N is a random unfriendly submission-assisting monster in the location of the player;
-		otherwise now N is a random submission-assisting monster in the location of the player;
-	if cW > 0 and M is unwrapped:
-		if bukkake fetish is 1 and a random number between 1 and 2 is 1 and the player is not a blowjob slut:
-			if the reaction of the player is 0 and cU > 0:
-				say "You manage to force [NameDesc of M] to let go before [he of M] can cum, but [if cU > 1]the others are[otherwise][FuckerDesc of N] is[end if] right there to grab you and hold you still as [he of M] ejaculates all over your face and [ShortDesc of breasts].";
-				AnnouncedSquirt semen on face by 3;
-				UnannouncedSquirt semen on breasts by 1;
-			otherwise:
-				say "[if cW > 1]The others crowd in around you[otherwise][BigFuckerDesc of N] puts [his of N] face up next to yours[end if] as [NameDesc of M] pushes you off and ejaculates all over your faces.";
-				AnnouncedSquirt semen on face by 1;
-		otherwise:
-			if the reaction of the player is 0 and cU > 0:
-				say "[if cU is 1][BigFuckerDesc of N] pushes[otherwise]The others push[end if] you down as [NameDesc of M] goes over the edge, [if cU > 0]their combined[otherwise][his of N][end if] strength ensuring not only that you get a full mouthful of [his of M] thick, slimy load, but also that you have no choice but to swallow as it shoots down your throat.";
-				StomachSemenUp the semen load of M;
-			otherwise:
-				say "[BigNameDesc of M] groans in pleasure as [he of M] explodes into your mouth, painting your tongue with rope after rope of thick, slimy [semen]. [if cW > 1]The others hold[otherwise][BigFuckerDesc of N] holds[end if] you tightly, leaning in when [he of M] finally allows you to pull off, and eagerly [if cW > 1]push their tongues[otherwise]thrusts [his of N] tongue[end if] into your cum-filled mouth. You [if the semen taste addiction of the player < 5]decide it could be worse, and [end if]help make a show of playing with [his of M] load before swallowing what didn't end up in [if cW > 1]their mouths[otherwise][his of N] mouth[end if] or on [if bukkake fetish is 1]your chin[otherwise]the floor[end if].";
-				StomachSemenUp 1;
-				if bukkake fetish is 1, CumFaceUp 1;
-				otherwise SemenPuddleUp 1;
-		if the reaction of the player > 0:
-			repeat with W running through wenches in the location of the player:
-				if the guard-obedience of W is 1:
-					increase the favour of W by 1;
-		orgasm satisfy M;
-	otherwise:
-		compute default facial climax for M.
-
 To compute angry punishment of (M - a royal guard):[Royal guards will always punish you if you struggle, unless you're a princess.]
 	if the class of the player is not princess:
 		say angry punishment insult of M;
 		if M is not friendly-fucking and (M is not seduced or M is unfriendly):
-			compute default angry punishment of M.
+			if bondage protection is 0 and bondage-corset is off-stage and bondage-corset is actually summonable:
+				summon bondage-corset uncursed;
+				say "[BigNameDesc of M] makes you wear a [bondage-corset]!";
+				let K be a random off-stage specific-key;
+				compute M locking bondage-corset with K;
+			otherwise:
+				compute default angry punishment of M.
 
 To say angry punishment insult of (M - a royal guard):
 	say "[speech style of M][one of]'How dare you! This will not go unpunished!'[or]'Ungrateful wench! You will learn to value my mercy!'[or]'You ungrateful slut!'[or]'Do not believe for a moment that this will go unpunished!'[or]'Shameful whore! You will learn to respect my mercy!'[or]'Disrespectful harlot!'[in random order][roman type][line break]".

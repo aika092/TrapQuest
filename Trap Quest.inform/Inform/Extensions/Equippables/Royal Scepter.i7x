@@ -203,8 +203,8 @@ To punish infidelity:
 		now C is cursed;
 		now the quest of C is vaginal-addict-quest;
 		transform C into sheer-open-front-skirt;
-		say "A 'gang bang girl' T-shirt appears on your body!";
-		summon gang-bang-girl T-shirt cursed with quest;
+		say "A 'gang bang girl' vest top appears on your body!";
+		summon gang-bang-girl vest top cursed with quest;
 	if the number of worn chest tattoo is 0 and there is a worn tattoo:
 		summon unfaithful tattoo;
 		say "You feel a searing pain as the word 'UNFAITHFUL' burns itself into your chest in big red letters.";

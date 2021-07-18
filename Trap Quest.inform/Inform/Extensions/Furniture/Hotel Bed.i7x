@@ -85,15 +85,16 @@ To compute PatronSpawning of (F - a hotel bed):
 				set up M;
 		now R is the number of patrons in the location of the player;
 		if R > 3, say "[first custom style]'Hey everyone, get in here!'[roman type][line break]";
+	let M be a random patron in the location of the player;
 	say "[one of]A[or]Once again the[stopping] hidden door opens from the opposite wall, and you [one of]are shocked as you watch[or]watch[stopping] ";
 	if R is 1:
-		let M be a random patron in the location of the player;
 		say "a [if M is gross patron]short, tubby[otherwise if M is inexperienced patron]young, excited[otherwise if M is experienced patron]rich looking, older[otherwise]middle aged[end if] man walk through into the room.";
 	otherwise:
 		say "[R] men walk through into the room.";
 	now neighbour finder is the location of the player;
 	say "[one of]At the same time, [if the number of N-viable directions is 1]a solid metal shutter slams across the doorway of the room. It has[otherwise]solid metal shutters slam across the doorways of the room. They each have[end if] 'MODESTY BARRIER' printed on in big letters, and means that you can't escape.[or]Once again the [if the number of N-viable directions is 1]'Modesty Barrier' comes[otherwise]'Modesty Barriers' come[end if] down, preventing your escape.[stopping]";
 	if R > 2, say "[if the player is a nympho][second custom style]Ooh yay! The more the merrier![otherwise if the sex addiction of the player < 4 + (R * 2)][variable custom style]Oh crap, that's way too many...[otherwise][variable custom style]I hope I can please them all...[end if][roman type][line break]";
-	now a random modesty shutter is in the location of the player.
+	now a random modesty shutter is in the location of the player;
+	if R > 1 and the class of the player is not living sex doll, compute internet assessment of M. [This only happens once per group so it needs to happen here for groups.]
 
 Hotel Bed ends here.

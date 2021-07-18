@@ -144,6 +144,7 @@ Check BabChanging it with:
 	if the second noun is not a clean diaper and the second noun is not a diaper bag of holding and the second noun is not a baby diaper bag of holding, say "You would need a clean diaper or diaper bag to do that, not the [NameDesc of the second noun]." instead;
 	if the second noun is worn diaper, say "You would need to take that off first." instead;
 	if the noun is not messy and (the noun is not woman-player or diaper quest is 0), say "[big he of the noun] isn't [if the noun is defeated]in need of[otherwise]likely to let you do[end if] that." instead;
+	if the noun is undefeated and the noun is not woman-player, say "[big he of the noun] isn't likely to let you do that." instead;
 	if playerRegion is School, say "That would be a waste of time. [big he of the noun] would just mess [himself of the noun] again almost instantly." instead;
 	if the player is immobile or the player is in danger, say "You're a bit busy." instead;
 	if the player is not able to use manual dexterity, say "Your limited manual dexterity makes this impractical." instead.

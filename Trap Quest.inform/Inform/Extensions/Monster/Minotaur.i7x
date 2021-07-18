@@ -3,15 +3,15 @@ Minotaur by Monster begins here.
 minotaur is a dungeon boss. minotaur is male. The leftover-type of minotaur is 107. minotaur has a number called nutting-turns. The nutting-turns of minotaur is usually 0. minotaur has a number called swing-intensity.
 
 minotaur is in Dungeon36. minotaur is caged.
-Figure of minotaur is the file "NPCs/Bosses/Minotaur/minotaur1.png". Figure of minotaur caged is the file "NPCs/Bosses/Minotaur/minotaur2.png". Figure of hulk is the file "NPCs/Bosses/Minotaur/hulk1.png".
+Figure of minotaur is the file "NPCs/Bosses/Minotaur/minotaur1.png". Figure of minotaur caged is the file "NPCs/Bosses/Minotaur/minotaur2.png". Figure of hulk is the file "NPCs/Bosses/Minotaur/hulk1.jpg".
 
-Figure of Minotaur Cutscene 1 is the file "Special/Cutscene/cutscene-minotaur-stomp1.png".
-Figure of Minotaur Cutscene 2 is the file "Special/Cutscene/cutscene-minotaur-sleep1.png".
-Figure of Minotaur Cutscene 3 is the file "Special/Cutscene/cutscene-minotaur-fuck1.png".
-Figure of Minotaur Cutscene 4 is the file "Special/Cutscene/cutscene-minotaur-fuck2.png".
-Figure of Minotaur Cutscene 5 is the file "Special/Cutscene/cutscene-minotaur-climax1.png".
-Figure of Minotaur Cutscene 6 is the file "Special/Cutscene/cutscene-minotaur-splash1.png".
-Figure of Minotaur Cutscene 7 is the file "Special/Cutscene/cutscene-minotaur-ready1.png".
+Figure of Minotaur Cutscene 1 is the file "NPCs/Bosses/Minotaur/cutscene-minotaur-stomp1.png".
+Figure of Minotaur Cutscene 2 is the file "NPCs/Bosses/Minotaur/cutscene-minotaur-sleep1.png".
+Figure of Minotaur Cutscene 3 is the file "NPCs/Bosses/Minotaur/cutscene-minotaur-fuck1.png".
+Figure of Minotaur Cutscene 4 is the file "NPCs/Bosses/Minotaur/cutscene-minotaur-fuck2.png".
+Figure of Minotaur Cutscene 5 is the file "NPCs/Bosses/Minotaur/cutscene-minotaur-climax1.png".
+Figure of Minotaur Cutscene 6 is the file "NPCs/Bosses/Minotaur/cutscene-minotaur-splash1.png".
+Figure of Minotaur Cutscene 7 is the file "NPCs/Bosses/Minotaur/cutscene-minotaur-ready1.png".
 
 To decide which figure-name is the monster-image of (M - minotaur):
 	if lady fetish is 1, decide on figure of missing NPC;

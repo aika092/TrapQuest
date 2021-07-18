@@ -352,7 +352,7 @@ To say DamageReactSubmissive of (M - witch):
 	say "[BigNameDesc of M] staggers as [he of M] takes the hit, seeming to take extra care not to turn [his of M] back towards you.".
 
 To compute (M - witch) slinking away:
-	say "Touching the altar with both hands, [he of M] is able to [if the health of M >= the maxhealth of M]soothe [his of M] anger[otherwise]quickly return to full health[end if]. [big he of M] looks a lot more calm.";
+	say "[if M is in Woods20]Touching the altar with both hands[otherwise]Quickly casting a spell[end if], [he of M] is able to [if the health of M >= the maxhealth of M]soothe [his of M] anger[otherwise]quickly return to full health[end if]. [big he of M] looks a lot more calm.";
 	calm M;
 	now M is unconcerned;
 	now the health of M is the maxhealth of M.
@@ -573,6 +573,11 @@ To say AssistanceRejected of (M - witch) with (N - a monster):
 To say FluffResponse of (M - witch) with (N - a monster):
 	say "[speech style of M]'...you only live once, I guess.'[roman type][line break]".
 
+To compute bystanderDelay from (M - a monster) to (N - witch):
+	say "[line break][speech style of M]'You, [ShortDesc of N]! Don't act like you aren't involved. Get on your knees!'[roman type][line break][speech style of N]'...whatever.'[roman type][line break][BigNameDesc of N] rolls [his of N] eyes as [FuckerDesc of M] forces [him of N] to kneel down next to you.";
+	FavourDown N by 2;
+	now M is submission-assisting.
+
 Section 2 - Questioning
 
 To say WhoQuestion of (M - witch):
@@ -618,19 +623,23 @@ To compute teaching of (M - witch):
 		otherwise:
 			say "[speech style of M]'You're not the first to ever want my secrets, you know. Are you willing to entertain me a little first?'[roman type][line break]";
 			if the player is consenting:
-				now the witch-target of M is a random on-stage monster;
+				now the witch-target of M is witch;
 				while the witch-target of M is M:
 					now the witch-target of M is a random on-stage monster;
 					let W be the witch-target of M;
 					if W is student or W is staff member or W is ex-princess, now the witch-target of M is M;
-				say "[BigNameDesc of M] chuckles, muttering a short incantation under [his of M] breath.[speech style of M]'Alright then. Find [NameDesc of witch-target][speech style of M] and kill [him of witch-target]. I'll know when you've succeeded.'[roman type][line break]";
+				say "[BigNameDesc of M] chuckles, muttering a short incantation under [his of M] breath.[speech style of M]'Alright then. Find [NameDesc of witch-target][speech style of M] and banish [him of witch-target]. I'll know when you've succeeded.'[roman type][line break]";
 				SilentlyDifficultyUp witch-target by 5;
 			otherwise:
 				say "[speech style of M]'Then fuck off. [big please] and thank you!'[roman type][line break]".
 
 [using the default advice question]
 To say AdviceAnswer of (M - witch):
-	say "[speech style of M]'[if the pregnancy of the player > 0]Keep your legs closed, [one of]skank[or]whore[at random].[otherwise][one of]Fairies are fucking annoying, but tag is one of their favourite games. They're not bothered if you win.'[or]Demonesses are lot of a things. Sadistic. Nosey. Arrogant. Fucking bitches... But they're actually pretty limited as a guest in the mortal world. If one uses up a large chunk of [his of a random demoness] power, you can just run away.'[or]Personally, I think the vines liven up this place, but if you're tired of them, keep this in mind. They aren't connected to any aboveground plant.'[or]As an altar witch, I'm not allowed to wear underwear, but you are. A good pair of panties can help you out in more ways than one.'[or]If a vampire is ever giving you trouble, just stuff a stake up their ass.'[at random][end if][roman type][line break]".
+	if M is unbitchy:
+		say "[speech style of M]'[if the pregnancy of the player > 0]Keep your legs closed, [one of]skank[or]whore[at random].'[otherwise]Just because I'm not trying to fuck you doesn't mean I want to be mates. Do you mind?'[end if][roman type][line break]";
+	otherwise:
+		let D be a random demoness;
+		say "[speech style of M]'[one of]Fairies are fucking annoying, but tag is one of their favourite games. They're not bothered if you win.'[or]As guests in the mortal world, a demonesses will be banished from this world the moment [he of D] runs out of magical power. You can also keep them here if you use a little of your magic power, but I don't recommend that unless you enjoy their company.'[or]Personally, I think the vines liven up this place, but if you're tired of them, keep this in mind. They aren't connected to any aboveground plant.'[or]As an altar witch, I'm not allowed to wear underwear, but you are. A good pair of panties can help you out in more ways than one.'[or]If a vampire is ever giving you trouble, just stuff a stake up their ass. Wood is best.'[or]Ghosts can't stand blessed items.'[or]The horn of a unicorn has all sorts of uses.'[or]If you see any imps, get rid of them immediately. Trust me.'[in random order][roman type][line break]".
 
 Section 3 - Drink Requesting
 

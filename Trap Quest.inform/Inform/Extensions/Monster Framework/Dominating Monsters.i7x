@@ -25,9 +25,12 @@ To compute banish drop of (C - a thing) from (M - a monster):
 	if C is off-stage:
 		now C is in the location of the player;
 		if C is plentiful accessory, compute appraisal of C from M;
-		say "[BigNameDesc of M] left [NameDesc of C] behind.";
+		say BanishDropFlav of C from M;
 		increase the loot dropped of M by 1;
 		if C is not equippable, compute autotaking C. [equippables would go straight into the hand which could be harsh]
+
+To say BanishDropFlav of (C - a thing) from (M - a monster):
+	say "[BigNameDesc of M] left [NameDesc of C] behind.".
 
 To compute (M - a monster) slinking away:
 	say SlinkAwayFlav of M;
@@ -527,8 +530,8 @@ To compute dominating (M - a monster):
 			say CodLoosenFlav of J;
 			follow the demon junk reward rule;
 		let H be rugged-headband;
-		if the player is the donator, progress quest of domination-quest;
-		if the times-dominated of M >= 2 and the player is the donator:
+		progress quest of domination-quest;
+		if the times-dominated of M >= 2:
 			if H is off-stage and H is actually summonable:
 				say "You feel your hair being tousled as a [MediumDesc of H] materialises on your head.";
 				summon H cursed with quest;
@@ -554,7 +557,7 @@ To compute dominating (M - a monster):
 			replace M after domination;
 		repeat with N running through reactive monsters:
 			if N is not M, say DominationFailedReaction of N to M;
-		if the player is the donator, progress quest of domination-quest;
+		progress quest of domination-quest;
 	unless M is combative, now the health of M is the maxhealth of M; [They'll always go back to max HP after a fuck]
 	now player-fucking is DOMINANT-NONE;
 	now player-fuckchoice is FUCK-NONE.

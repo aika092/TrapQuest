@@ -1146,16 +1146,16 @@ To compute friendly drink of (M - shopkeeper):
 		say "A glint appears in [his of M] eye.[line break][speech style of M]'Hmm, I have a proposition for you. I'll give you a glass of water, but only if you do something for me. I've got loads of these latex plug panties that are not selling because the girls are all worried that it's going to hurt, or whatever. So I'll give you some water, and these panties for free, if you can walk around in them for me, to, you know, show any other potential customers that it's fun and not torture! What do you say? [roman type][line break]";
 		if the player is bimbo consenting:
 			now the effect of L is 2;
-			summon L;
-			if a random number between 1 and 5 > 3, now L is cursed;
+			summon L uncursed;
 			allocate 6 seconds;
-			now L is sure;
-			say "[speech style of M]'Haha, excellent, well here's your drink, and let me just slip these on you...'[roman type][line break]You feel refreshed! But then the shopkeeper gets busy with your end of the deal. The latex is pulled up your legs and the [if the player is not possessing a vagina]plug goes[otherwise]plugs go[end if] in. [if L is cursed]As soon as it's fully in, it immediately starts vibrating! You can tell by the shopkeeper's face [he of M] has no idea what's going on.[line break][speech style of M]'Hmm, I've never seen that happen before. How weird. Oh well, all the more to enjoy, right?'[roman type][line break]It would appear that these panties are cursed![otherwise]Luckily [he of M] never made a deal for how long you had to wear them, so you guess you can just take them off whenever you want?[end if]";
+			say "[speech style of M]'Haha, excellent, well here's your drink, and let me just slip these on you...'[roman type][line break]You feel refreshed! But then the shopkeeper gets busy with your end of the deal. The latex is pulled up your legs and the [if the player is not possessing a vagina]plug goes[otherwise]plugs go[end if] in.";
 			while the player is thirsty:
 				StomachUp 1;
 			StomachUp 2;
 			ruin asshole;
 			if the player is possessing a vagina, ruin vagina;
+			let K be a random off-stage specific-key;
+			compute M locking L with K;
 		otherwise:
 			say "[speech style of M]'That's too bad. Well, good luck with finding a drink!'[roman type][line break]";
 	otherwise:
@@ -1163,6 +1163,12 @@ To compute friendly drink of (M - shopkeeper):
 		while the player is thirsty:
 			StomachUp 1;
 		StomachUp 1.
+
+To say LockDeclarationFlav of (M - a shopkeeper) for (C - a vibrating plug panties):
+	say "[speech style of M]'Now of course, I need some assurances that you'll actually wear this for a while...'[roman type][line break]".
+
+To say LockCommentFlav of (M - a shopkeeper) for (C - a vibrating plug panties):
+	say "[speech style of M]'I guess we never did quite agree how long you should wear this for now, did we? That was silly of you. I guess we'll have to see if I'm ever feeling particularly kind...'[roman type][line break]".
 
 To compute unfriendly drink of (M - shopkeeper):
 	say "The shopkeeper ignores your question.".

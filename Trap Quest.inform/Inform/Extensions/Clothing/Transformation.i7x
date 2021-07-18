@@ -201,6 +201,7 @@ To compute (C - a clothing) inheriting from (D - a clothing):
 	if D is messed knickers and C is soilable knickers:
 		now the mess of C is the mess of D;
 		if D is diaper and C is diaper, now the perceived-mess of C is the perceived-mess of D;
+		otherwise now the perceived-mess of C is the mess of C;
 	if C is fluid vulnerable and the soak-limit of D > 0:
 		now the semen-soak of C is (the semen-soak of D * the soak-limit of C) / the soak-limit of D;
 		now the milk-soak of C is (the milk-soak of D * the soak-limit of C) / the soak-limit of D;

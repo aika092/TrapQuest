@@ -6,13 +6,16 @@ To say ExamineDesc of (C - a camera trap):
 	say "A modern looking camera is embedded in a wall at ankle height. It is pointing upwards and looks like it could take some extremely high resolution images.".
 
 This is the spawn initial hotel camera traps rule:
-	repeat with N running from 1 to 8:
+	repeat with N running from 1 to 6:
 		let R be a random trappable placed modern room;
-		while there is a camera trap in R:
+		let failsafe be 0;
+		while there is a camera trap in R and failsafe < 70:
 			now R is a random trappable placed modern room;
-		let T be a random off-stage camera trap;
-		deploy T in R;
-		if N > 4, now T is triggerless.
+			increase failsafe by 1;
+		if failsafe < 70:
+			let T be a random off-stage camera trap;
+			deploy T in R;
+			if N > 4, now T is triggerless.
 The spawn initial hotel camera traps rule is listed last in the set up hotel traps rules.
 
 [!<CameraTrap>@<SayEnvironmentDesc>+
@@ -735,7 +738,7 @@ To compute title of (P - an expulsion poster):
 		otherwise if the old-overdress of P is priestess outfit:
 			if P is in the hotel, now the title of P is "HOLY COW!";
 			otherwise now the title of P is "That's what [he of P] gets for leaving [his of P] post at the dungeon altar.";
-		otherwise if the old-overdress of P is gang-bang-girl T-shirt:
+		otherwise if the old-overdress of P is gang-bang-girl vest top:
 			if P is in the hotel, now the title of P is "GANG BANG BITCH";
 			otherwise now the title of P is "A very appropriate T-shirt.";
 		otherwise if the old-overdress of P is fertility outfit:

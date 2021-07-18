@@ -103,7 +103,7 @@ Check kneeing egg:
 Check kicking egg:
 	try attacking the noun instead.
 Check dropping egg:
-	if the location of the player is toilets:
+	if the location of the player is toilets and (locked-toilets is false or the player is not in School10 or academy-toilet-key is held):
 		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 		set numerical response 1 to "drop [NameDesc of the noun] on the ground";
 		set numerical response 2 to "flush [NameDesc of the noun] down the toilet";

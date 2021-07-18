@@ -45,7 +45,7 @@ Figure of YesNoBackground3B is the file "Special/Buttons/YesNo/DQ3B.png".
 Figure of YesNoBackground4A is the file "Special/Buttons/YesNo/DQ4A.png".
 Figure of YesNoBackground4B is the file "Special/Buttons/YesNo/DQ4B.png".
 Figure of HoleInWallBackground is the file "Map/hole2.png".
-Figure of demon lord is the file "NPCs/Bosses/xavier1.png".
+Figure of demon lord is the file "NPCs/Bosses/Xavier/xavier1.png".
 Figure of modification machine is the file "Env/Hotel/modmachine2.png".
 Figure of slavehound is the file "NPCs/Mansion/Hound/hound3.png".
 
@@ -103,7 +103,7 @@ robomaid is a kind of monster.
 golem is a monster.
 gargoyle is a monster.
 unicorn is a monster.
-A slutty sister is a kind of monster. A bulging slutty sister is a kind of slutty sister. A futanari slutty sister is a kind of slutty sister.
+A slutty sister is a kind of monster. bulging-slutty-sister is a slutty sister. futanari-slutty-sister is a slutty sister.
 Icarus is a monster.
 A facehugger is a kind of monster.
 An ultimate-lesson-actor is a kind of monster.
@@ -170,6 +170,8 @@ To progress quest of (Q - whore-exposing-quest) for (M - a monster):
 
 To check clutch replacement:
 	do nothing.
+
+A hugger-gag is a kind of ballgag. A hugger-panties is a kind of knickers.
 
 Figure of Jammy Messy Loading Animation Frame 1 is the file "Special/Animations/JammyLoading/frame_000001.jpeg".
 Figure of Jammy Messy Loading Animation Frame 4 is the file "Special/Animations/JammyLoading/frame_000004.jpeg".

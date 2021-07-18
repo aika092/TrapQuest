@@ -234,7 +234,7 @@ Definition: a monster is threatening rather than non-threatening:
 	if it is unleashed or it is guarding, decide yes;
 	decide no. [non-threatening can't attack the player (but might be unfriendly and caged)]
 Definition: a monster is attack-threatening: [monsters that are NOT attack-threatening skip the 'compute attack' function.]
-	if it is threatening and it is unfriendly, decide yes;
+	if it is threatening and it is unfriendly and it is not submission-assisting, decide yes;
 	decide no.
 Definition: a monster is pacified rather than unpacified:
 	if it is non-threatening and it is not caged, decide yes;
@@ -301,8 +301,7 @@ A monster can be soul-stolen or not soul-stolen. A monster is usually not soul-s
 A monster can be submission-assisting or not submission-assisting.
 Definition: a monster is willing to fluff: decide no.[available to help out the player during sex, without directly fucking the player.]
 Definition: a monster is willing to fluff right now:
+	if it is willing to fluff and the refractory-period of it < 0 and it is intelligent, decide yes;
 	decide no.
-	[if it is willing to fluff and the refractory-period of it < 0 and it is intelligent, decide yes;
-	decide no.]
 
 Monster Adjectives ends here.

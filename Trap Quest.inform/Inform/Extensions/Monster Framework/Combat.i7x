@@ -18,10 +18,27 @@ To check default attack of (M - a monster):
 
 To compute correct delay of (M - a monster): [Default behaviour of delayed monster]
 	if diaper quest is 1, compute DQ delay of M;
-	otherwise compute delay of M.
+	otherwise:
+		if M is male and M is intelligent and the number of interested friendly monsters in the location of M > 0, compute group delay of M;
+		otherwise compute delay of M.
 
 To compute DQ delay of (M - a monster):
 	say "[BigNameDesc of M] doesn't do anything, as if waiting to see what you do next.".
+
+[Friendly monsters can get roped into whatever "M" is about to do to you.]
+To compute group delay of (M - a monster):
+	let C be 0;
+	repeat with N running through interested friendly willing to fluff monsters in the location of M:
+		if a random number between 1 and 2 is 1:
+			compute bystanderDelay from M to N;
+			increase C by 1;
+	if C is 0:
+		compute delay of M.
+
+To compute bystanderDelay from (M - a monster) to (N - a monster):
+	say "[line break][speech style of M]'You, [ShortDesc of N]! [one of]Don't act like you aren't involved.[or]Don't think I can't see you![or]Don't pretend this doesn't involve you![or]You're [his of the player] friend, aren't you?[in random order] Get on your knees!'[roman type][line break][speech style of N]'[one of]This is all YOUR fault!'[or]Just my luck...'[or]But I'm not the one who-... UGH!'[in random order][roman type][line break][BigNameDesc of N] [one of]stares daggers[or]glares[or]snarls[or]scowls[in random order] at you as [FuckerDesc of M] forces [him of N] to kneel down next to you.";
+	FavourDown N by 2;
+	now N is submission-assisting.
 
 To compute delay of (M - a monster):
 	say "[BigNameDesc of M] doesn't do anything, as if waiting to see what you do next.".
@@ -75,9 +92,9 @@ This is the continue sex rule:
 		if vm is video-monitor and the video-caller of vm is not the throne:
 			if vm is not recording-disgrace: [if you willingly have sex, your friend disapproves.]
 				now vm is recording-disgrace;
-			if eye-mask is worn and current-monster is human intelligent monster and the video-event of vm is not "doing nothing special": [next turn, superheroes get unmasked and huge humiliation hit]
-				say "[BigNameDesc of current-monster] reaches up to your [eye-mask] and rips it from your body, exposing your real identity to the camera![line break][variable custom style]Nooooo![roman type][line break][obsceneHumiliateReflect]";
-				destroy eye-mask;
+			if domino-mask is worn and current-monster is human intelligent monster and the video-event of vm is not "doing nothing special": [next turn, superheroes get unmasked and huge humiliation hit]
+				say "[BigNameDesc of current-monster] reaches up to your [domino-mask] and rips it from your body, exposing your real identity to the camera![line break][variable custom style]Nooooo![roman type][line break][obsceneHumiliateReflect]";
+				destroy domino-mask;
 				let P be the video-caller of vm;
 				if P is real-life patron:
 					say NewAppearanceReaction of P;
@@ -296,15 +313,22 @@ To compute default facial climax for (M - a monster):
 	TimesSubmittedUp M by 1;
 	BlowCount;
 	if M is male:[should always be true, but better safe than sorry]
+		let subs be 0;
+		repeat with N running through submission-assisting monsters in the location of the player:
+			increase subs by 1;
 		if M is wrapped:
 			compute wrapped climax of M in face;
 		otherwise if bukkake fetish is 1 and M is willing to bukkake:[cumshot outside]
-			if the reaction of the player is 0:[Player rolls to see if they avoid a facial]
+			if subs > 0:
+				compute assisted facial of M with subs;
+			otherwise if the reaction of the player is 0:[Player rolls to see if they avoid a facial]
 				compute facial dodging of M;
 			otherwise: [the player submitted]
 				compute facial accepting of M;
 		otherwise:[Internal cumshot]
-			if player-gagging is true:
+			if subs > 0:
+				compute assisted oral creampie of M with subs;
+			otherwise if player-gagging is true:
 				compute deepthroat creampie of M;
 			otherwise if the reaction of the player is 0:
 				compute oral creampie of M;
@@ -320,6 +344,22 @@ To compute default facial climax for (M - a monster):
 Definition: a monster is willing to tongue creampie:
 	if the favour of it > a random number between 0 and (the aggro limit of it + 5), decide yes;
 	decide no. [Cums on the player's tongue instead of down their throat]
+
+To compute assisted facial of (M - a monster) with (subs - a number):
+	if the reaction of the player is 0:
+		compute assisted facial dodging of M with subs;
+	otherwise:
+		compute assisted facial accepting of M with subs.
+
+To compute assisted oral creampie of (M - a monster) with (subs - a number):
+	if player-gagging is true or the number of unfriendly submission-assisting monsters in the location of the player > 0:
+		compute assisted deepthroat creampie of M with subs;
+	otherwise if the reaction of the player is 0:
+		compute assisted nonmerciful oral creampie of M with subs;
+	otherwise if M is willing to tongue creampie:
+		compute assisted merciful oral creampie of M with subs;
+	otherwise:
+		compute assisted deepthroat creampie of M with subs.
 
 [!<ComputeClimaxOfMonsterInFuckhole>+
 
@@ -1400,14 +1440,14 @@ Determines the strength of a monster for an action.
 +!]
 To decide which number is the strength roll of (M - a monster):
 	let D be the difficulty of M + (a random number between 1 and 6) + (a random number between 1 and 6);
-	let S be the strength of the player + the weight of the player;
-	[if debugmode is 1, say "Player [S] | [D].5 [ShortDesc of M][line break]";]
+	[let S be the strength of the player + the weight of the player;
+	if debugmode is 1, say "Player [S] | [D].5 [ShortDesc of M][line break]";]
 	decide on D.
 
 To decide which number is the intelligence roll of (M - a monster):
 	let D be the difficulty of M + (a random number between 1 and 6) + (a random number between 1 and 6);
-	let S be the intelligence of the player;
-	[if debugmode is 1, say "Player [S] | [D].5 [ShortDesc of M][line break]";]
+	[let S be the intelligence of the player;
+	if debugmode is 1, say "Player [S] | [D].5 [ShortDesc of M][line break]";]
 	decide on D.
 
 A monster has a number called wrangle-bonus. [the number of times it has been slapped in a row]
@@ -1774,7 +1814,7 @@ Handles a monster being damaged after attacking a body part that is covered by a
 +!]
 To compute (S - a clothing) damaging (M - a monster):
 	if S is spikey:
-		say "[BigNameDesc of M], hitting your [printed name of S], [if M is male and M is intelligent and M is not futanari slutty sister]cries out in pain as the spikes cut into his hand[otherwise]recoils in pain from the spikes[end if]!";
+		say "[BigNameDesc of M], hitting your [printed name of S], [if M is male and M is intelligent and M is not futanari-slutty-sister]cries out in pain as the spikes cut into his hand[otherwise]recoils in pain from the spikes[end if]!";
 		if S is a striped top and the poison-status of M is 0:
 			say "After striking you, [NameDesc of M] takes on an unhealthy shade of green!";
 			now the poison-status of M is 3;

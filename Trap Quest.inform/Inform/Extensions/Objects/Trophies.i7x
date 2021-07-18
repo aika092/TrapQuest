@@ -248,4 +248,48 @@ Carry out TrophySwitching magic-trophy:
 		say "The trophy's glow changes from green to red. You can tell that [bold type]you once again will need to spend more magic power to cast spells, but the trophy will not summon things into your belly each time you do.[roman type][line break]";
 		now the trophy-mode of magic-trophy is 0.
 
+candy-trophy is a trophy. The printed name of candy-trophy is "[TQlink of item described]candy trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of candy-trophy is "cndt". Understand "candy" as candy-trophy.
+
+Figure of candy trophy is the file "Env/School/trophy10.png".
+To decide which figure-name is the examine-image of (C - candy-trophy):
+	decide on figure of candy trophy.
+
+To say ExamineDesc of (T - candy-trophy):
+	say "This trophy is the bust of a woman licking a lollipop.";
+	if the trophy-mode of T is 1, say "green glow, and you can feel that all candy heals you a bit when eaten, but you will always eat any candy you have as soon as physically possible!";
+	otherwise say "red glow, which allows you to sense that its magical powers to make all candy heal you a bit, but also make you always automatically eat candy as soon as possible, are inactive.".
+
+Carry out TrophySwitching candy-trophy:
+	say "You rub the trophy[if the player is wrist bound behind] with your nose[end if]. ";
+	if the trophy-mode of candy-trophy is 0:
+		say "The trophy's glow changes from red to green. You can tell that from now on, [bold type]eating candy heals you a little, but all candy eating happens immediately and automatically.[roman type][line break]";
+		now the trophy-mode of candy-trophy is 1;
+	otherwise:
+		say "The trophy's glow changes from green to red. You can tell that [bold type]you can once again choose when you eat your candy, but it will no longer all give you bonus healing.[roman type][line break]";
+		now the trophy-mode of candy-trophy is 0.
+
+fat-trophy is a trophy. The printed name of fat-trophy is "[TQlink of item described]fat trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of fat-trophy is "fatt". Understand "fat" as fat-trophy.
+
+Figure of fat trophy is the file "Env/School/trophy11.png".
+To decide which figure-name is the examine-image of (C - fat-trophy):
+	decide on figure of fat trophy.
+
+Definition: fat-trophy is fetish appropriate:
+	if weight gain fetish is 1, decide yes;
+	decide no.
+
+To say ExamineDesc of (T - fat-trophy):
+	say "This trophy is made in the shape of a chubby woman lifting up a dumbell.";
+	if the trophy-mode of T is 1, say "green glow, and you can feel that exercise will no longer burn fat, but instead all go straight to building muscle!";
+	otherwise say "red glow, which allows you to sense that exercising will currently burn fat over building muscle unless you're very skinny.".
+
+Carry out TrophySwitching fat-trophy:
+	say "You rub the trophy[if the player is wrist bound behind] with your nose[end if]. ";
+	if the trophy-mode of fat-trophy is 0:
+		say "The trophy's glow changes from red to green. You can tell that from now on, [bold type]exercise will no longer burn fat, but instead all go straight to building muscle.[roman type][line break]";
+		now the trophy-mode of fat-trophy is 1;
+	otherwise:
+		say "The trophy's glow changes from green to red. You can tell that [bold type]exercise will now only build muscles if there is no excess fat left to burn.[roman type][line break]";
+		now the trophy-mode of fat-trophy is 0.
+
 Trophies ends here.
