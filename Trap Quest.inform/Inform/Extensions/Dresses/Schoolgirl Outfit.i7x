@@ -1,6 +1,6 @@
 Schoolgirl Outfit by Dresses begins here.
 
-A schoolgirl outfit is a kind of overdress. A schoolgirl outfit is unique. A schoolgirl outfit is usually neck covering. A schoolgirl outfit is usually short. A schoolgirl outfit is usually belly exposing. A schoolgirl outfit is usually not-top-displacable.
+A schoolgirl outfit is a kind of overdress. A schoolgirl outfit is unique. A schoolgirl outfit is usually neck covering. A schoolgirl outfit is usually short. A schoolgirl outfit is usually belly exposing. A schoolgirl outfit is usually audibly jiggling. A schoolgirl outfit is usually not-top-displacable.
 
 Definition: a schoolgirl outfit is class-relevant:
 	if the class of the player is schoolgirl and (diaper quest is 1 or the player is pigtailed), decide yes;
