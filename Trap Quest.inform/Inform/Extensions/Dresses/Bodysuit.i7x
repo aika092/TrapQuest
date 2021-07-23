@@ -644,7 +644,7 @@ Definition: black-catsuit is black themed: decide yes.
 
 Part 3 - WC Catsuit
 
-WC catsuit is a catsuit. WC catsuit is arm exposing. The printed name of WC catsuit is "[clothing-title-before]latex human toilet catsuit[clothing-title-after]". Understand "human", "toilet" as WC catsuit. WC catsuit is unique. The text-shortcut of WC catsuit is "wcs". WC catsuit is oral-sex-addiction-influencing.
+WC catsuit is a catsuit. WC catsuit is arm exposing. The printed name of WC catsuit is "[clothing-title-before]latex human toilet catsuit[clothing-title-after]". Understand "human", "human toilet" as WC catsuit. WC catsuit is unique. The text-shortcut of WC catsuit is "wcs". WC catsuit is oral-sex-addiction-influencing.
 
 Definition: WC catsuit is class-relevant:
 	if the class of the player is human toilet, decide yes;

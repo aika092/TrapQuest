@@ -242,11 +242,12 @@ Predicament-Pen is a room. [stored items that would make the predicament difficu
 predicamentPenList is a list of things that varies.
 predicamentWornList is a list of things that varies.
 To say PredicamentPenCheck:
-	if tough-shit is 0:
+	do nothing.
+	[if tough-shit is 0:
 		repeat with C running through predicamentPenList:
 			if C is not in Predicament-Pen:
 				say "[C] missing from Predicament Pen!";
-				now C is in Predicament-Pen.
+				now C is in Predicament-Pen.]
 
 Report going when the player is in Predicament20:
 	let abnormalClothingSituation be 0;
@@ -271,8 +272,8 @@ Report going when the player is in Predicament20:
 			if C is worn clothing and C is not piercing and C is not armband and C is not combat visor and C is not listed in predicamentPenList:
 				if debugmode > 0, say "The [C] is blocking the player wearing their outfit again.";
 				now abnormalClothingSituation is 1;
-	if tough-shit is 0:
-		repeat with C running through predicamentPenList:
+	repeat with C running through predicamentPenList:
+		if C is not worn and C is not in a predicament room: [if it's in a predicament room then it's something the player was wearing at the start of the predicament and then dropped]
 			say "[BigNameDesc of C] reappears on you! ";
 			if C is dress:
 				repeat with D running through worn dress:

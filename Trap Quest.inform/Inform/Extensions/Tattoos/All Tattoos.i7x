@@ -2163,20 +2163,20 @@ Definition: put-it-in-my-butt tattoo is anal sex themed: decide yes.
 
 Book - Q Tattoos
 
-queen-of-spades belly tattoo is a belly-tattoo. The tattoo-title of queen-of-spades belly tattoo is "queen of spades belly".
-Definition: queen-of-spades belly tattoo is drawable:
+queen-of-spades belly-tattoo is a belly-tattoo. The tattoo-title of queen-of-spades belly-tattoo is "queen of spades belly".
+Definition: queen-of-spades belly-tattoo is drawable:
 	if interracial fetish is 0 or there is a worn belly-tattoo, decide no;
 	decide yes.
-Definition: queen-of-spades belly tattoo is eligible:
+Definition: queen-of-spades belly-tattoo is eligible:
 	if the noun is interracial themed or the noun is playing card themed or the noun is royalty themed, decide yes;
 	decide no.
-To say tattoo-desc of (T - queen-of-spades belly tattoo):
+To say tattoo-desc of (T - queen-of-spades belly-tattoo):
 	say "A huge black spade symbol and the word 'QUEEN' is tattooed on your belly.".
-To decide which number is the initial outrage of (T - queen-of-spades belly tattoo):
+To decide which number is the initial outrage of (T - queen-of-spades belly-tattoo):
 	decide on 4.
-Definition: queen-of-spades belly tattoo is interracial themed: decide yes.
-Definition: queen-of-spades belly tattoo is playing card themed: decide yes.
-Definition: queen-of-spades belly tattoo is royalty themed: decide yes.
+Definition: queen-of-spades belly-tattoo is interracial themed: decide yes.
+Definition: queen-of-spades belly-tattoo is playing card themed: decide yes.
+Definition: queen-of-spades belly-tattoo is royalty themed: decide yes.
 
 queen-of-spades bunny tattoo is a right-breast tattoo. The tattoo-title of queen-of-spades bunny tattoo is "queen of spades bunny".
 Definition: queen-of-spades bunny tattoo is drawable:

@@ -23,11 +23,11 @@ Figure of princess final battle inflation is the file "NPCs/MultiFloor/Princess/
 Figure of princess final battle harness is the file "NPCs/MultiFloor/Princess/cutscene-princess-final-battle6.jpg".
 
 
-
 To decide which figure-name is the monster-image of (M - ex-princess):
 	if M is unleashed: [dark princess]
 		if M is male, decide on figure of dark princess 2;
 		if diaper quest is 0, decide on figure of dark princess 1;
+		if M is penetrating face, decide on figure of princess final battle final chance;
 		if diaper messing < 7:
 			if M is interested, decide on figure of dark princess 2;
 			decide on figure of dark princess 1;
@@ -48,6 +48,7 @@ To decide which figure-name is the monster-image of (M - ex-princess):
 		if current-final-battle-object is final-battle-food, decide on Figure of princess final battle food;
 		if current-final-battle-object is final-battle-plug, decide on Figure of princess final battle plug;
 		if current-final-battle-object is final-battle-harness, decide on Figure of princess final battle harness;
+		if current-final-battle-object is final-battle-final-chance, decide on figure of princess final battle final chance;
 	if (M is in School35 and glittery-wand is carried by M and glittery-wand is cursed) or (M is guarding and current-final-battle-object is final-battle-wand-curse):
 		if diaper lover > 0, decide on figure of original diapered princess combat;
 		decide on figure of original princess combat;
@@ -238,8 +239,7 @@ A breathing blocking decision rule (this is the consider breathing through princ
 A breathing consequences rule (this is the consequences for breathing through princess padding rule):
 	if diaper quest is 1 and ex-princess is penetrating face:
 		say "You are forced to smell the pungent aroma of [NameDesc of ex-princess][']s [if ex-princess is messy]stinky[otherwise][urine]-soaked[end if] diaper.";
-		if ex-princess is messy, DelicateUp 1;
-		DiaperAddictUp 1.
+		if ex-princess is messy or a random number between 1 and 20 >= the raw delicateness of the player, DelicateUp 1.
 
 To say MouthPenetrationFlav of (M - ex-princess):
 	if M is male:
@@ -250,10 +250,27 @@ To say MouthPenetrationFlav of (M - ex-princess):
 		if sex-length of M < 3, now sex-length of M is 2.
 
 To compute facial sex of (M - ex-princess):
-	if M is male:
+	if diaper quest is 1:
+		compute diaper facesit sex of M;
+	otherwise if M is male:
 		compute default facial sex of M;
 	otherwise:
 		compute facesit sex of M.
+
+To compute diaper facesit sex of (M - ex-princess):
+	if the reaction of the player > 0, humiliate 200;
+	TimesSubmittedUp M by 1;
+	decrease the sex-length of M by 1;
+	if the diaper addiction of the player >= 10:
+		let N be the diaper addiction of the player / 5;
+		passively stimulate face from M times N;
+	if the reaction of the player > 0:
+		say "[one of]You lie still and save your energy[or]You don't attempt to escape from your position underneath [his of ex-princess] diapered bottom[or]You try to relax and accept what is happening to you[in random order]. [moderateHumiliateReflect]";
+	otherwise:
+		say "[one of]You refuse to sit still as you are degraded like this! You struggle, failing to push [him of M] off you as [he of M] bounces [his of M] padded behind on your face. [or]You continue trying to fight [him of M], failing miserably to do any damage as [he of M] continues to grind [his of M] diapered bottom against you. [or]You simply won't give in! You throw your head from side to side, trying to get out. [or]You flail helplessly with your arms and legs! At least it proves to anyone watching that you're not happy about what's happening... [in random order]";
+	if there is a worn diaper:
+		say "[BigNameDesc of M] [one of]thoroughly rubs and mashes[or]cackles as [he of M] squishes [his of M] hands down on the outside of[or]massages[stopping] your [if there is a worn perceived messed diaper]messy [end if]diaper with [his of M] hands.";
+		stimulate vagina from M.
 
 The princess continue sex rules is a rulebook. The continue sex rules of ex-princess is the princess continue sex rules.
 
@@ -879,9 +896,14 @@ Definition: ex-princess (called M) is distracted:
 	decide no.
 
 Definition: ex-princess is messy:
-	if it is unconcerned and the refractory-period of it <= (the messRefractoryLimit of it) and diaper messing >= 7, decide yes;
-	if it is unleashed and diaper quest is 1 and diaper messing >= 7 and (it is grabbing the player or it is penetrating face), decide yes;
+	if diaper quest is 1 or diaper messing >= 7:
+		if it is unconcerned and the refractory-period of it <= (the messRefractoryLimit of it), decide yes;
+		if it is unleashed and (it is grabbing the player or it is penetrating face or (it is uninterested and the boredom of it > 0)), decide yes;
 	decide no.
+
+To compute boredom reset of (M - ex-princess):
+	if M is in the location of the player, say "[BigNameDesc of M][']s diaper magically cleans itself.";
+	now the boredom of M is 0.
 
 To say SuddenMessFlav of (M - ex-princess):
 	say "[speech style of M]'Oh crap, here we go again...'[roman type][line break][BigNameDesc of M] grimaces and quickly adopts a squatting stance. Then you hear the loud sound of [his of M] butthole rasping and squelching as [he of M] fills [his of M] huge diaper.";

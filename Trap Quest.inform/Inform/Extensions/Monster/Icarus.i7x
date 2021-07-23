@@ -116,6 +116,9 @@ To say BecomesAggressive of (M - Icarus):
 To compute sudden objectification of (M - Icarus):
 	say "Something seems to change in the way [NameDesc of M] is looking at you.[line break][speech style of M]'[one of]I can probably get away with a quick bang before the boss notices[or]Well now you just look too hot to leave alone[or]Damn, you look ready for fucking, don't you? Even if I get disciplined for this, I think it'll be worth it[in random order]...'[roman type][line break]".
 
+To decide which number is the groping threshold of (M - Icarus):
+	decide on a random number between 16 and 30.
+
 To compute appearance assessment of (M - Icarus):
 	if M is outrage disapproving:
 		FavourDown M by 1;

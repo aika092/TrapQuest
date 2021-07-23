@@ -1074,6 +1074,7 @@ throne-quest is a clothing-quest.
 
 To decide what number is the quest-weighting of (Q - throne-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
+	if earnings is starting-earnings, decide on 0; [this way the bondage starting option doesn't cause items with a trivial curse]
 	if the number of worn headgear is 0, decide on 6;
 	decide on 1.
 

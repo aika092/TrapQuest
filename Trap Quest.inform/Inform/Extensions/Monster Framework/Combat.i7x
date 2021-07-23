@@ -663,6 +663,27 @@ To compute the cage stuck taunting of (M - a monster): [This should preferably b
 	if M is intelligent, say "[BigNameDesc of M] smirks at you, waves, then turns to leave you alone.";
 	satisfy M.
 
+Definition: a monster (called M) is willing to cage trap stuck punish:
+	if diaper quest is 0 and there is an actual target body part, decide yes;
+	if diaper quest is 1 and M is willing to forcefeed and face is not occupied, decide yes;
+	decide no.
+
+This is the cage trap stuck player taunting rule:
+	if there is a triggered cage trap in the location of the player:
+		if (the number of worn stuck clothing + the number of stuck body parts is 0) or current-monster is not willing to cage trap stuck punish: [if nothing is stuck, the player is too deep inside the cage to be punished. but if something is stuck, that means that the player's head is poking out of the cage.]
+			compute the cage trap stuck taunting of current-monster;
+			rule succeeds;
+		otherwise if diaper quest is 1: [for TQ we just continue resolving punishment normally - the `reasonable target` definition makes sure to only allow face and breasts to be selected]
+			compute the dq cage trap stuck punishment of current-monster;
+			rule succeeds.
+The cage trap stuck player taunting rule is listed last in the default taunting rules.
+
+To compute the cage trap stuck taunting of (M - a monster):
+	compute the busy waiting of M.
+
+To compute the dq cage trap stuck punishment of (M - a monster):
+	compute forcefeed of M.
+
 This is the trap stuck player taunting rule:
 	if the player is trap stuck:
 		compute the default taunting of current-monster;
@@ -822,6 +843,8 @@ Definition: a body part (called B) is a reasonable target:
 	[If you want the monster to ignore buttslut and/or be able to take out plugs, you'll need to define the correct functions for your monster.]
 	if B is not a potential target, decide no; [First we check, is it a potential target? (see above)]
 	if debugmode > 1, say "[ShortDesc of B] is a potential target...[line break]";
+	if there is a triggered cage trap in the location of the player:
+		unless (B is face or B is breasts or B is belly) and the number of worn stuck clothing + the number of stuck body parts is 0, decide no; [when trapped by a cage trap, the only parts accessible are your face and breasts, and that's only when you are stuck halfway out]
 	if B is fuckhole:
 		let C be a random worn top level ass protection clothing;
 		if B is vagina, let C be a random worn top level protection clothing;

@@ -57,6 +57,7 @@ When play begins:
 			retrieve diaper options;
 			retrieve toilet allowance options;
 			retrieve silicone milk options;
+			retrieve condom options;
 			retrieve slow random options; [At this point, the player can choose to have the rest randomised, which sets quick start to 1]
 		if quick start is 1 or quick start is 2:
 			follow the random mode rules;

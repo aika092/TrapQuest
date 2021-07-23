@@ -150,8 +150,9 @@ To compute action (N - a number) of (M - a facehugger):
 					increase facehuggers-fucked by 1;
 					destroy M;
 		otherwise if M is wrangling thighs:
-			let C be a random currently uncovered tearable skirted clothing;
-			if C is nothing, now C is a random currently uncovered tearable crotch covering clothing;
+			let C be a random pussy covering tearable skirted clothing;
+			if C is nothing, now C is a random currently uncovered tearable knickers;
+			if C is nothing, now C is a random currently uncovered tearable pussy covering clothing;
 			if C is clothing:
 				say "[BigNameDesc of M] shoots acid at your [C]!";
 				if C is pussy covering and C is rippable:
@@ -164,14 +165,17 @@ To compute action (N - a number) of (M - a facehugger):
 				say "[BigNameDesc of M] crawls up your leg and latches itself against your [vagina]! You can feel it inserting its ovipositor inside of you as it settles into place as your new 'underwear'. Uh-oh...";
 				summon crotch-hugger;
 				now crotch-hugger is glued;
+				destroy M;
 			otherwise if ass-hugger is off-stage and ass-hugger is actually summonable:
 				say "[BigNameDesc of M] crawls up your leg and latches itself against your [asshole]! You can feel it inserting its ovipositor inside of you as it settles into place as your new 'underwear'. Uh-oh...";
 				summon ass-hugger;
 				now ass-hugger is glued;
+				destroy M;
 			otherwise if hugger-gag is off-stage and hugger-gag is actually summonable:
 				say "[BigNameDesc of M] crawls up your body and latches itself onto your face! You can feel it inserting its ovipositor into your mouth as it settles into place as a sort-of 'gag'. Uh-oh...";
 				summon hugger-gag;
 				now hugger-gag is glued;
+				destroy M;
 		otherwise:
 			say "[BigNameDesc of M] leaps at you, trying to latch onto your thigh!";
 			let D be a random number between 1 and the dexterity of the player;
@@ -269,7 +273,7 @@ To compute periodic effect of (P - hugger-gag):
 				only destroy P;
 
 Definition: hugger-gag is fetish appropriate: decide no. [Never appears randomly]
-Definition: hugger-gag is throater: decide yes.
+[Definition: hugger-gag is throater: decide yes.] [This is too imbalanced now that throating triggers suffocation]
 
 To decide which number is the girth of (A - hugger-gag):
 	decide on 1.

@@ -5,6 +5,8 @@ Definition: a monster is simulated:
 	if it is interested or it is in the location of the player or it is regional, decide yes;
 	decide no.
 
+friendly-guys is a list of monsters that varies.
+
 timedebug is a number that varies. timedebug is 0.
 
 To compute monsters:
@@ -98,6 +100,7 @@ To compute action (N - a number) of (M - a monster):
 		if M is in the location of the player or M is grabbing the player or M is penetrating a body part:
 			if N is 1:
 				if M is penetrating a body part or M is grabbing the player or M is attack-threatening:
+					check aggression change of M; [Is this NPC aggressive this turn, when they weren't at the start of the turn?]
 					check attack of M;
 				otherwise if M is not distracted:
 					if M is undefeated and M is friendly:
@@ -107,22 +110,27 @@ To compute action (N - a number) of (M - a monster):
 		otherwise:
 			if M is unfriendly:
 				check seeking N of M;
-				if M is in the location of the player and M is uniquely unfriendly and M is normally annoyed, resolve sudden appearance change of M; [While the NPC isn't allowed a full perception round when moving, they should still output text for their automatic reassessment of the player if already interested.]
-				otherwise check chase boredom of M;
+				if M is not in the location of the player, check chase boredom of M;
 			otherwise:
 				compute friendly boredom of M; [Potentially make them bored]
 				if M is interested:
 					check seeking N of M;
-					if M is in the location of the player and M is undefeated, check disapproval of M;
+					if M is in the location of the player and M is undefeated:
+						check disapproval of M;
+						check aggression change of M; [Is this NPC aggressive this turn, when they weren't at the start of the turn?]
 				otherwise:
 					if playerRegion is not school and M is threatening and M is regional, progress quest of nice-quest;
 	otherwise if M is not distracted and M is not caged and M is not guarding and (M is undefeated or M is not motionless-when-defeated):
-		if (the boredom of M is 0 and M is unleashed and (cowbell is clanking or the player is glued seductively or magnetism-timer > 0)) or M is messy, check seeking N of M;
+		if (the boredom of M is 0 and M is unleashed and M is location-attracted) or M is messy, check seeking N of M;
 		otherwise check motion of M;
 	if M is submission-assisting:[TODO: handle problem where assisters randomly lose interest]
 		if M is not interested or M is not in the location of the player or the number of combative monsters in the location of the player is 0:
 			now M is not submission-assisting;
 	compute unique final action of M.
+
+Definition: a monster is location-attracted:
+	if cowbell is clanking or the player is glued seductively or magnetism-timer > 0 or there is a triggered cage trap in the location of the player, decide yes;
+	decide no.
 
 Definition: a monster is motionless-when-defeated:
 	if it is fucked-silly, decide yes;
@@ -134,7 +142,7 @@ To check chase boredom of (M - a monster):
 To check default chase boredom of (M - a monster):
 	let D be 15; [Every turn the monster (after seeking) is not in the location of the player, there's a 1 in 15 chance of them getting bored.]
 	if catbell is worn, increase D by 30;
-	if the player is pheromonal and M is musky, increase D by 15;[beast monsters follow you longer]
+	if M is musky and the player is pheromonal, increase D by 15;[beast monsters follow you longer]
 	if M is not in the location of the player and (M is guarding or M is caged or a random number from 1 to D is 1), compute chase boredom of M.
 
 To compute chase boredom of (M - a monster):

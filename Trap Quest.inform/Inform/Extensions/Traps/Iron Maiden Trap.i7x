@@ -112,14 +112,17 @@ To say ExamineDesc of (C - a cage trap):
 
 To trigger (Y - a cage trap):
 	if the player is not in danger:
-		say "[bold type]With a loud CRASH, a metal cage falls from a tree and surrounds you! [roman type]That noise might attract others to this location...";
+		say "[bold type]With a loud CRASH, a metal cage falls from a tree and surrounds you! [if the player is upright]You are forced down onto your knees. [roman type]That noise might have attracted others to this location...";
 		now Y is not untriggered;
 		now Y is triggered;
 		now Y is revealed;
 		now the reset-timer of Y is 30;
-		now magnetism-timer is 20;;
+		now the stance of the player is 1;
 		repeat with M running through reactive monsters:
 			say TriggeredTrapReactFlav of M.
+
+Check standing when there is a triggered cage trap in the location:
+	say "The cage isn't tall enough to let you stand fully upright!" instead.
 
 To compute reset cooldown of (T - a cage trap):
 	if the reset-timer of T <= time-seconds or the player is in danger:

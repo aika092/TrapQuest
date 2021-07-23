@@ -376,8 +376,9 @@ To compute teaching of (L - make-up-lesson):
 			say "[speech style of M]'You must chooze. I can make the lipztick permanent, or...'[roman type][line break][big he of M] lets an unspoken threat dangle in the air.[paragraph break]Ask [him of M] to make the make up permanent?";
 			if the player is consenting:
 				say "[BigNameDesc of M] smiles a wide, severe smile, and waves [his of M] hands. You feel some magic passing from [his of M] fingertips into your skin. You immediately know that the lipstick is now permanent. But also, you do feel somewhat magical yourself.[line break][speech style of M]'Zis vas ze right choice. Now remember to use zis before our next lesson.'[roman type][line break][BigNameDesc of M] returns your make up kit.";
-				summon T;
-				MagicPowerUp 1;
+				if T is drawable:
+					summon T;
+					MagicPowerUp 1;
 			otherwise:
 				say "[BigNameDesc of M] frowns at your reluctance.[line break][speech style of M]'Useless bitch.'[roman type][line break][big he of M] flicks you painfully on your forehead.";
 				PainUp 1;

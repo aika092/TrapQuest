@@ -331,7 +331,7 @@ A breathing consequences rule (this is the consequences for breathing through AB
 	let M be a random adult baby slave penetrating face;
 	if M is monster:
 		say "You are forced to smell the pungent aroma of [NameDesc of M][']s soiled diaper.";
-		DiaperAddictUp 1.
+		if M is messy or a random number between 1 and 20 >= the raw delicateness of the player, DelicateUp 1.
 
 To compute (M - an adult baby slave) entering mouth:
 	if milking is 1:
@@ -361,7 +361,7 @@ To compute (M - an adult baby slave) entering mouth:
 To say MouthPenetrationFlav of (M - an adult baby slave):
 	say "[BigNameDesc of M] rolls you onto your back and sits on your face, burying it in layers of padding and plastic, adjusting [himself of M] to get comfortable on top of you, crinkling all the while. You can't breathe![line break][speech style of M]'[if diaper messing >= 6 and M is not messy][one of]Just to warn you, I need to poop. So I wouldn't take too long to make me cum down there if I were you...'[or]By the way, if you don't play ball, I might just mess myself while sitting on your face.'[in random order][otherwise][one of]You ready?'[or]This is gonna be fun!'[or]Your face feels pretty good against my diaper...'[in random order][end if][roman type][line break]".
 
-To compute diaper sit of (M - an adult baby slave):
+To compute diaper sit of (M - a monster):
 	say "You won't be able to breath except through [his of M] padding until [he of M][']s finished with you!";
 	if sex-length of M < 3, now sex-length of M is 2;
 	now M is filling face.
@@ -369,18 +369,18 @@ To compute diaper sit of (M - an adult baby slave):
 To compute facial sex of (M - an adult baby slave):
 	if the reaction of the player > 0, humiliate 200;
 	TimesSubmittedUp M by 1;
-	if the diaper addiction of the player > 11, arouse 200;
-	if the diaper addiction of the player > 14, arouse 150;
-	if the diaper addiction of the player > 17, arouse 150;
+	if the diaper addiction of the player >= 10:
+		let N be the diaper addiction of the player / 5;
+		passively stimulate face from M times N;
 	if the reaction of the player > 0:
-		say "[one of]You nuzzle the adult baby's diaper, doing your best to stimulate [him of M] through [his of M] padding and are rewarded with several moans and a speedier grind.[or]You press your nose deeply into [his of M] padding and rub where you imagine [his of M] engorged clit must be. The ecstatic response you receive would suggest that your guess was spot on.[or]As you do your best to speed along this process, several squirts of urine spray into [his of M] diaper, vibrating against your face and filling your nostrils with the scent of pee.[or]You try to focus on the sweet scent of the baby powder wafting into your nose as you do your best to rub your face against the adult baby's diaper in such a way to make [him of M] cum.[or]You deliver a series of quick kisses to [his of M] diapered groin, causing the [boy of M] above you to pant heavily.[or][if diaper messing >= 7]As you rub your face into [his of M] diaper, [he of M] releases a smelly bout of flatulence which enters your nose and causes you to momentarily struggle, seeming only to turn [him of M] on more. You'd better hurry up or that might not be the end of it![end if][or][if diaper messing >= 7]As you become lost in the [boy of M]'s cute squeals of pleasure as you passionately kiss [his of M] genitals through [his of M] diaper, you quickly come back to reality as you hear [him of M] grunt and feel a load of smelly mush push [his of M] diaper outward against your face. You gag and struggle as the garment continues to fill but ultimately find yourself unable to gain the leverage to overcome [him of M]. You simply accept your fate and continue your work as [he of M] giggles between moans, humping your face with [his of M] dirty diaper.[end if][in random order]";
+		say "[one of]You nuzzle the adult baby's diaper, doing your best to stimulate [him of M] through [his of M] padding and are rewarded with several moans and a speedier grind.[or]You press your nose deeply into [his of M] padding and rub where you imagine [his of M] engorged clit must be. The ecstatic response you receive would suggest that your guess was spot on.[or]As you do your best to speed along this process, several squirts of urine spray into [his of M] diaper, vibrating against your face and filling your nostrils with the scent of pee.[or]You try to focus on the sweet scent of the baby powder wafting into your nose as you do your best to rub your face against the adult baby's diaper in such a way to make [him of M] cum.[or]You deliver a series of quick kisses to [his of M] diapered groin, causing the [boy of M] above you to pant heavily.[in random order] [moderateHumiliateReflect]";
 		decrease the sex-length of M by 1;
-		if a random number between 1 and 3 > 1, DiaperAddictUp 1;
-	if the reaction of the player is 0:
+		SlowSexAddictUp 1;
+	otherwise:
 		say "[one of]You refuse to sit still as you are degraded like this! You struggle, failing to push [him of M] off you as [he of M] bounces [his of M] padded behind on your face. [or]You continue trying to fight [him of M], failing miserably to do any damage as [he of M] continues to grind [his of M] diapered bottom against you. [or]The only stimulation [he of M]'s going to get from you is pushing and muffled yelling! [or]You simply won't give in! At least if you pass out, you'll be able to look at yourself in the mirror. [in random order]";
-		if diaper messing >= 6 and M is not messy and the player is getting unlucky:
+		if diaper messing >= 7 and M is not messy and the player is getting unlucky:
 			now the messTimer of M is 120;
-			say "[line break][speech style of M]'I did warn you what I'd do if you didn't help me cum...'[roman type][line break][BigNameDesc of M] stays true to [his of M] threat - [he of M] clenches [his of M] fists and purposefully unloads a large load of poop into [his of M] diaper, right on top of your face. You can literally feel it through the plastic as it exits [him of M], the gross mushy stuff oozing against your face through the plastic as it spreads throughout [his of M] padding.[if the diaper addiction of the player < 20][line break][variable custom style]GROSS!!![roman type][line break][end if]";
+			say "[line break][one of][speech style of M]'I did warn you what I'd do if you didn't help me cum...'[roman type][line break][BigNameDesc of M] stays true to [his of M] threat - [he of M] clenches [his of M] fists and purposefully unloads a large load of poop into [his of M] diaper, right on top of your face. You can literally feel it through the plastic as it exits [him of M], the gross mushy stuff oozing against your face through the plastic as it spreads throughout [his of M] padding.[if the diaper addiction of the player < 20][line break][variable custom style]GROSS!!![roman type][line break][end if][or]You zone out and try to think about anything except the feeling of [NameDesc of M][']s genitals through [his of M] diaper, but you quickly come back to reality as you hear [him of M] grunt and feel a load of smelly mush push [his of M] diaper outward against your face. You gag and struggle as the garment continues to fill but ultimately find yourself unable to gain the leverage to overcome [him of M]. You simply accept your fate as [he of M] giggles between moans, humping your face with [his of M] dirty diaper. Perhaps you should have heeded [his of M] warning after all.[in random order]";
 			DelicateUp 1;
 		otherwise:
 			if a random number between 1 and 3 > 1:
@@ -391,14 +391,9 @@ To compute facial sex of (M - an adult baby slave):
 	if there is a worn diaper:
 		if there is a worn perceived messed diaper:
 			say "[BigNameDesc of M] [one of]thoroughly rubs and mashes[or]lovingly massages[stopping] your messy diaper with [his of M] hands.[line break][speech style of M]'[one of]Do you like wearing messy diapers too? I thought I was alone in that!'[or]Don't you love the way they squish when they're dirty?'[or]Is it weird that I like the scent of your messy nappy?'[or]Got any more in your bowels? I think it'd be pretty hot if we messed our diapers at the same time, especially while I sit on your face.'[stopping][roman type][line break]";
-			humiliate 300;
-			stimulate vagina from M;
-			DiaperAddictUp 1;
 		otherwise:
 			say "[BigNameDesc of M] lovingly rubs your diaper[one of] from [his of M] advantageous position[or][stopping].[line break][speech style of M]'[one of]I love how nice the outside of a nappy feels against my skin... What do you think?'[or]Do you think you could use your nappy for me? Pretty [please] with sugar on top?'[or]You know, it would make me really happy if you used your diaper for me...'[or]You know, I might cum faster if you use your diaper... That would be a pretty big turn-on.'[or]If you get stuck here forever and ever, I'll let you be my little [brother of the player].'[stopping][roman type][line break]";
-			humiliate 200;
-			stimulate vagina from M;
-			if a random number between 1 and 3 is 1, DiaperAddictUp 1.
+		stimulate vagina from M.
 
 To compute facial climax of (M - an adult baby slave):
 	if the reaction of the player > 0, humiliate 200;
@@ -533,7 +528,7 @@ The adult baby slave extra continue sex check rule is listed in the adult baby s
 
 diaper-facesit is a diaper punishment. The priority of diaper-facesit is 2.
 Definition: diaper-facesit is appropriate:
-	if current-monster is not adult baby slave, decide no;
+	if current-monster is not adult baby slave and (current-monster is not ex-princess or ex-princess is not unleashed), decide no;
 	if current-monster is penetrating face, decide yes;
 	if the player is immobile, decide no;
 	decide yes.

@@ -328,6 +328,8 @@ To compute ritual dragging of (M - an acolyte):
 	if the location of M is the target-room of M:
 		if the wind-up of M is 1, now the wind-up of M is a random number between -1 and 0;[if you broke her grip, she might reconsider 'fainting' you]
 		say "[BigNameDesc of M] grabs you and drags you closer to the altar.";
+		now current-monster is M;
+		compute punishment of cultist-altar-force;
 	otherwise:
 		drag to the target-room of M by M;
 		now M is grabbing the player.
@@ -369,7 +371,7 @@ This is the cult conversion rule:
 			if the player is at least partially immobile:[she waits until you are free]
 				say "[one of][BigNameDesc of M] chants feverishly to [himself of M][or][BigNameDesc of M] fervently whispers to [himself of M][or][BigNameDesc of M] continues [his of M] hushed chanting[then at random].";
 			otherwise if the class of the player is cultist:
-				if a random number between 1 and 4 < doomed and (the player is able to get pregnant or the player is not possessing a vagina or pregnancy fetish is 0):[The close doomed is to 5, the more likely she is to drag off fellow cultists.]
+				if the charge of elder altar <= 0 and a random number between 1 and 4 < doomed and (the player is able to get pregnant or the player is not possessing a vagina or pregnancy fetish is 0):[The close doomed is to 5, the more likely she is to drag off fellow cultists.]
 					say "[line break][speech style of M]'We do not have time for such outbursts, [brother of the player]! You must become a vessel for the [great ones]!'[roman type][line break]";
 					now the wind-up of M is -1;
 					compute ritual dragging of M;
@@ -381,7 +383,7 @@ This is the cult conversion rule:
 					satisfy M;
 				rule succeeds;
 			otherwise:
-				if the player is possessing a penis and M is willing to charm snakes and (penis is penis-erect or doomed < a random number between 1 and 4 or presented-orifice is penis or chosen-orifice of M is penis):
+				if the charge of elder altar <= 0 and the player is possessing a penis and M is willing to charm snakes and (penis is penis-erect or doomed < a random number between 1 and 4 or presented-orifice is penis or chosen-orifice of M is penis):
 					do nothing;[She'll see if she's able to fuck you]
 				otherwise if the player is able to get pregnant or the player is not possessing a vagina or pregnancy fetish is 0:
 					say "[line break][speech style of M]'[one of]Rejoice, non-believer! You, too shall serve as a vessel for the power of the [great ones]!'[or]Your duty as vessel is not yet over, non-believer!'[stopping][roman type][line break]";
@@ -418,7 +420,7 @@ To compute unerect taunting of (M - an acolyte):
 		moderateHumiliate;
 		now penis is penis-erect;[the flavour works better if we do this first.]
 		compute M mounting erection;
-	otherwise if M is unfriendly:
+	otherwise if the charge of elder altar <= 0 and M is unfriendly:
 		say "Moments go by in complete silence, save for [FuckerDesc of M]'s hushed chanting, as [he of M] waits for any sign of life from your [player-penis]. You realize your time is up when [FuckerDesc of M]'s attention suddenly shifts away from your junk.[line break][speech style of M]'[one of]Yes. We should have known...'[or]So, useless after all...'[or]Hm. We should make up for lost time...'[or]How disrespectful. You will be made to make up for this...'[in random order][roman type][line break]";
 		compute ritual dragging of M;[she goes for plan B]
 	otherwise:
@@ -489,10 +491,15 @@ To compute punishment of (P - cultist-altar-force):
 		now the target-room of M is Mansion23;
 		if delayed stand is 0:
 			if the location of the player is the target-room of M:
-				say "[BigNameDesc of M] forces you onto the altar![line break][speech style of M]'[if M is intelligent]I envy you for the pure fulfilment you will achieve when the [great one] fills you with its [']blessing['].'[otherwise]The [great ones]...'[end if][roman type][line break]";
-				ElderOffer;
-				force commence doom;
-				satisfy M for 600 seconds;
+				say "[BigNameDesc of M] forces you onto the altar!";
+				if the charge of elder altar <= 0:
+					say "[speech style of M]'[if M is intelligent]I envy you for the pure fulfilment you will achieve when the [great one] fills you with its [']blessing['].'[otherwise]The [great ones]...'[end if][roman type][line break]";
+					ElderOffer;
+					force commence doom;
+					satisfy M for 600 seconds;
+				otherwise:
+					say "Nothing happens.[line break][speech style of M]'[if M is intelligent]Curses! We shall have to perform the ritual later...'[otherwise]The [great ones] slumber...'[end if][roman type][line break][BigNameDesc of M] loses interest in you for now.";
+					bore M;
 			otherwise:
 				drag to the target-room of M by M.
 

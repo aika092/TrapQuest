@@ -192,6 +192,23 @@ Figure of caged urinal princess piss is the file "NPCs/MultiFloor/Princess/cage2
 Figure of dark princess 1 is the file "NPCs/MultiFloor/Princess/darkprincess1.jpg".
 Figure of dark princess 2 is the file "NPCs/MultiFloor/Princess/darkprincess2.jpg".
 Figure of princess final battle plug is the file "NPCs/MultiFloor/Princess/cutscene-princess-final-battle4b.jpg".
+Figure of princess final battle victory is the file "NPCs/MultiFloor/Princess/cutscene-princess-final-battle7b.jpg".
+
+Figure of dark princess final battle defeat 1 is the file "NPCs/MultiFloor/Princess/cutscene-dark-princess-final-battle2a.png".
+Figure of dark princess final battle defeat 2 is the file "NPCs/MultiFloor/Princess/cutscene-dark-princess-final-battle2b.png".
+Figure of dark princess final battle defeat 3 is the file "NPCs/MultiFloor/Princess/cutscene-dark-princess-final-battle2c.png".
+Figure of dark princess final battle defeat 4 is the file "NPCs/MultiFloor/Princess/cutscene-dark-princess-final-battle2d.png".
+Figure of dark princess final battle defeat 5 is the file "NPCs/MultiFloor/Princess/cutscene-dark-princess-final-battle2e.png".
+Figure of dark princess final battle defeat 6 is the file "NPCs/MultiFloor/Princess/cutscene-dark-princess-final-battle2f.png".
+To decide which figure-name is figure of princess final battle final chance:
+	if extreme proportions fetish is 1:
+		if the uses of final-battle-final-chance is 1, decide on Figure of dark princess final battle defeat 2;
+		if the uses of final-battle-final-chance is 2, decide on Figure of dark princess final battle defeat 4;
+		decide on Figure of dark princess final battle defeat 5;
+	otherwise:
+		if the uses of final-battle-final-chance is 1, decide on Figure of dark princess final battle defeat 1;
+		if the uses of final-battle-final-chance is 2, decide on Figure of dark princess final battle defeat 2;
+		decide on Figure of dark princess final battle defeat 3.
 
 Figure of Teacher Hannah is the file "NPCs/School/Teacher/teacher5b.png".
 Figure of Slave Hannah is the file "NPCs/School/Teacher/teacher5d.png".
@@ -824,9 +841,9 @@ Figure of put-it-in-my-butt tattoo is the file "Items/Tats/tattoo79.jpg".
 To decide which figure-name is the examine-image of (T - put-it-in-my-butt tattoo):
 	decide on figure of put-it-in-my-butt tattoo.
 
-Figure of queen-of-spades belly tattoo is the file "Items/Tats/tattoo197.jpg".
-To decide which figure-name is the examine-image of (T - queen-of-spades belly tattoo):
-	decide on figure of queen-of-spades belly tattoo.
+Figure of queen-of-spades belly-tattoo is the file "Items/Tats/tattoo197.jpg".
+To decide which figure-name is the examine-image of (T - queen-of-spades belly-tattoo):
+	decide on figure of queen-of-spades belly-tattoo.
 
 Figure of queen-of-spades bunny tattoo is the file "Items/Tats/tattoo184.jpg".
 To decide which figure-name is the examine-image of (T - queen-of-spades bunny tattoo):

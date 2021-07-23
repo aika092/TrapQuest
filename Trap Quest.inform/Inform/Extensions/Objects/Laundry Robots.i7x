@@ -210,7 +210,8 @@ A later time based rule (this is the robo vacuum cleaner rule):
 					drag to R2 by robo vacuum cleaner;
 				otherwise:
 					dislodge robo vacuum cleaner;
-					now robo vacuum cleaner is in R2.
+					now robo vacuum cleaner is in R2;
+	if robo vacuum cleaner is not in the location of the player and robo vacuum cleaner is penetrating a body part, dislodge robo vacuum cleaner. [Sometimes it was getting into weird states where it was still penetrating face even though it had moved on]
 
 To say DragFlav of (M - robo vacuum cleaner) to (R - a room):
 	say "".

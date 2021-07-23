@@ -54,6 +54,9 @@ To allocate (N - a number) seconds:
 		purge NPC icons;
 		if acceleration-timer of acceleration-tincture > 0, now N is 1; [everything happens fast]
 		if seconds is 0:
+			truncate friendly-guys to 0 entries;
+			repeat with M running through interested monsters in the location of the player:
+				if M is friendly, add M to friendly-guys;
 			zero the focus-link-table;
 			if debugmode > 1, say "Zeroing focus stuff and allocating [N] seconds.";
 			zero focus stuff; [We've just been told that we're going to need to run the engine. Let's empty the lists of images to display and begin building it anew.]
@@ -81,7 +84,8 @@ To run the engine:
 		now another-turn-action is the no-stored-action rule;
 		let AC be a stored action;
 		if another-turn-stored-action is not waiting:
-			unless another-turn-previous-stored-action is another-turn-stored-action, now AC is another-turn-stored-action; [this should defend against infinite loops where the player keeps trying over and over to do something they can't]
+			if another-turn-previous-stored-action is another-turn-stored-action, now AC is waiting;
+			otherwise now AC is another-turn-stored-action; [this should defend against infinite loops where the player keeps trying over and over to do something they can't]
 			now another-turn-previous-stored-action is another-turn-stored-action;
 			now another-turn-stored-action is waiting;
 		truncate another-turn-rules to 0 entries; [This is the only safe moment to truncate the entries - just after we have loaded the rules and before we execute them.]
@@ -498,6 +502,9 @@ Definition: yourself is able to breathe:
 	decide yes.
 Definition: yourself is breathing this turn:
 	if the player is not able to breathe, decide no; [if the player isn't able to breathe, we don't need to ask them if they want to breathe]
+	if the suffocation of the player >= the suffocation limit of the player:
+		say "You can't bring yourself to hold your breath for any longer!";
+		decide yes;
 	follow the breathing blocking decision rules;
 	if breathing-this-turn is false: [this is how we tepmorarily flagged that there's a potential reason not to breathe]
 		say "Do you want to hold your breath?";
@@ -675,7 +682,7 @@ This is the broken automatic submission rule:
 			bore M;
 			compute mandatory room leaving of M;
 	otherwise:
-		say "BUG - tried to submit to an NPC but it was no longer there.".
+		if debugmode > 0, say "WARNING - tried to submit to an NPC but it was no longer there.".
 
 This is the broken statue suck rule:
 	say "You see the statue with a hollow penis and [if the semen taste addiction of the player < 10]realise you are just too thirsty to resist[otherwise if the semen taste addiction of the player < 14]understand what you need to do to quench your thirst[otherwise]your eyes light up as you realise how you can quench your thirst[end if]. [if the player is upright]You get on your knees. [end if]";

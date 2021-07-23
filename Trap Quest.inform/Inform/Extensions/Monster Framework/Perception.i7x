@@ -135,6 +135,14 @@ To reset orifice selection of (M - a monster):
 To compute DQ perception of (M - a monster):
 	compute perception of M.
 
+To check aggression change of (M - a monster):
+	if M is listed in friendly-guys and M is unfriendly, resolve aggression change of M.
+
+To resolve aggression change of (M - a monster):
+	if M is listed in friendly-guys, remove M from friendly-guys;
+	now M is interested;
+	say BecomesAggressive of M.
+
 To resolve sudden appearance change of (M - a monster):
 	if the babification of M is 1 and the previous-babification of M is 0:
 		compute sudden babification of M; [The NPC is now unfriendly, because the player's appearance has changed. We need to make this obvious to the player by making them say something.]
@@ -513,12 +521,8 @@ To FavourUp (M - a monster) by (N - a number):
 
 To FavourDown (M - a monster) by (N - a number) with consequences:
 	if M is alive:
-		let P be 0;
-		if M is unfriendly, now P is 1;
 		FavourDown M by N;
-		if P is 0 and M is unfriendly: [monster was friendly but now is unfriendly]
-			now M is interested;
-			say BecomesAggressive of M.
+		check aggression change of M;
 
 To FavourDown (M - a monster) by (N - a number):
 	if latest-top-malfunction is not 0 and M is reactive, now latest-top-malfunction is earnings; [If an intelligent interested NPC has lost favour with the player for whatever reason that probably means they would have seen a nip slip if one existed. So we'll say one didn't exist.]

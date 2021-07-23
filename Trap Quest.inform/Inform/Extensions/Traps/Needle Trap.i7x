@@ -245,7 +245,10 @@ To compute unique trigger of (Y - breasts-rune-trap):
 			MilkUp the milk capacity of breasts - the milk volume of breasts;
 		otherwise:
 			say "They feel more active: you can tell that your [if the lactation rate of the player > 0][BreastDesc] will produce milk faster now[otherwise]have started to produce milk over time[end if]!";
-			increase the lactation rate of the player by 1.
+			increase the lactation rate of the player by 1;
+	otherwise if the player is not bottom heavy:
+		say "The magic rushes through your hips, making them widen!";
+		HipUp 1.
 
 balloon-rune-trap is a rune trap.
 
@@ -339,7 +342,7 @@ To decide which figure-name is the triggered-image of (T - polymorph-rune-trap):
 	decide on Figure of polymorph rune trap triggered.
 
 To compute unique trigger of (Y - polymorph-rune-trap):
-	let C be a random upgradable clothing;
+	let C be a random worn upgradable clothing;
 	if C is clothing:
 		potentially transform C;
 	otherwise:

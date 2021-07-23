@@ -19,7 +19,7 @@ To decide which figure-name is the examine-image of (C - a rocking horse):
 To say ExamineDesc of (C - a rocking horse):
 	say "A large wooden rocking horse, made for an adult but fashioned like a child's one would be, in white, purple and pink, with a princess-style backrest and armrests[if C is grabbing the player]. Some magic force is keeping you stuck to the saddle, it looks like you're going to have to [bold type]rock[roman type] until it lets you off[end if].".
 
-There are 3 potentially pressure potentially sticky rocking horses.
+There are 2 potentially pressure potentially sticky rocking horses.
 
 [!<YourselfIsRockerStuck>+
 
@@ -73,7 +73,17 @@ Carry out rocking:
 	say "You rock back and forth. ";
 	allocate 6 seconds;
 	decrease the TrapNo of Y by 1;
-	if the player is not diapered:
+	if the TrapNo of Y <= 0:
+		say "The magic binding on the saddle seems to disappear! You are able to climb off successfully. [one of]As you lift yourself off, you magically feel fully healed! Wow![or]Once again, you feel fully healed![stopping]";
+		now the soreness of asshole is 0;
+		now the tolerated of asshole is 0;
+		if the player is possessing a vagina:
+			now the soreness of vagina is 0;
+			now the tolerated of vagina is 0;
+		now the body soreness of the player is 0;
+		now the fatigue of the player is 0;
+		now Y is not grabbing the player;
+	otherwise if the player is not diapered:
 		let K be a random worn knickers;
 		if K is knickers:
 			say "As you rock, you feel your [ShortDesc of K] getting lighter and lighter. You look down just in time to witness it fade from existence!";
@@ -84,7 +94,7 @@ Carry out rocking:
 				say "As you rock, you feel your butt pushed slightly upwards by soft padding as a [ShortDesc of D] appears on you!";
 				summon D cursed with quest;
 				cutshow figure of Rocking Horse Cutscene for Y;
-	otherwise if the TrapNo of Y > 0:
+	otherwise:
 		let R be a random number from 1 to 5;
 		if R is 1:
 			say "A mechanical xylophone [one of][or]once again [stopping]plays a short lullaby tune from somewhere within the horse.";
@@ -93,17 +103,7 @@ Carry out rocking:
 			increase the raw delicateness of the player by 1; [The player wasn't in pain so we don't trigger the main function with all the pain reflection flavour]
 		otherwise:
 			say "The saddle vibrates, [if the player is not a bit horny]gently [end if]stimulating you through your diaper.";
-			stimulate vagina from Y;
-	otherwise:
-		say "The magic binding on the saddle seems to disappear! You are able to climb off successfully. [one of]As you lift yourself off, you magically feel fully healed! Wow![or]Once again, you feel fully healed![stopping]";
-		now the soreness of asshole is 0;
-		now the tolerated of asshole is 0;
-		if the player is possessing a vagina:
-			now the soreness of vagina is 0;
-			now the tolerated of vagina is 0;
-		now the body soreness of the player is 0;
-		now the fatigue of the player is 0;
-		now Y is not grabbing the player.
+			stimulate vagina from Y.
 
 Report rocking:
 	repeat with M running through reactive monsters:

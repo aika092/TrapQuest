@@ -534,6 +534,11 @@ To say NastyTrapReactFlav of (M - a student):
 		say "[BigNameDesc of M] [one of]makes a disgusted sound[or]almost chokes in surprise[or]grimaces[at random].[line break][speech style of M]'[one of]Yuck.'[or]How could you let that happen to you? Do you have no shame?'[or]Oh my lord! What a disgrace.'[in random order][roman type][line break]";
 		FavourDown M with consequences.
 
+To check attack of (M - a student):
+	let ST be a random friendly staff member in the location of the player;
+	if ST is monster and the number of interested unfriendly staff members in the location of the player is 0, say "[BigNameDesc of M] wants to attack you, but [he of M] is waiting until [NameDesc of ST] [if ST is interested]loses interest and [end if]leaves the room...";
+	otherwise check default attack of M.
+
 Part - Protection
 
 To compute (M - a student) protecting against (X - a monster):
@@ -1017,19 +1022,21 @@ Part - Pranks
 
 To compute unique interaction of (M - a ditzy student):
 	let F be the aggro limit of M - the favour of M; [gets larger the more she is angry with the player]
-	if a random number between 1 and 20 >= F:
+	let R be a random number between 1 and 20;
+	if debuginfo > 0, say "[input-style][MediumDesc of M] prank check: [student-name of M] anger ([F]) | ([R].5) d20[roman type][line break]";
+	if F > R:
 		compute default prank of M.
 
 a prank-action is a kind of object.
 Definition: a prank-action is eligible: decide yes.
 To execute (A - a prank-action):
-	do nothing.
+	say "BUG - chosen prank action has no execution function.".
 
 To compute default prank of (M - a student):
 	now current-monster is M;
 	let A be a random eligible prank-action;
 	if A is nothing or there is a staff member in the location of M:
-		do nothing;
+		if debuginfo > 0, say "[input-style]Prank action fails ([if there is a staff member in the location of M]nearby staff member[otherwise]no eligible prank action could be found[end if]!)[roman type][line break]";
 	otherwise:
 		execute A;
 		CheerUp M.
@@ -1062,7 +1069,7 @@ Definition: prank-kancho is eligible:
 To execute (P - prank-kancho):
 	let C be a random top level ass protection clothing;
 	let A be a random thing penetrating asshole;
-	say "[speech style of current-monster]'KANCHO!!!'[roman type][line break][BigNameDesc of current-monster] has taken advantage of a moment you weren't looking to sneak behind you and prod the index and midle fingers of each hand against your [asshole] as quickly and powerfully as [he of current-monster] can. ";
+	say "[speech style of current-monster]'KANCHO!!!'[roman type][line break][BigNameDesc of current-monster] has taken advantage of a moment you weren't looking to sneak behind you and prod the index and middle fingers of each hand against your [asshole] as quickly and powerfully as [he of current-monster] can. ";
 	if A is a thing:
 		say "[big his of current-monster] fingertips thump into [NameDesc of A], sending a powerful jolt deep inside you!";
 		ruin asshole;
@@ -1080,8 +1087,9 @@ To execute (P - prank-kancho):
 
 prank-photo is a prank-action.
 Definition: prank-photo is eligible:
-	let A be the appearance of the player;
-	if diaper quest is 1, now A is the cringe appearance of the player;
+	let A be 0;
+	if diaper quest is 0, now A is the appearance of the player;
+	otherwise now A is the cringe appearance of the player;
 	if A > 5 and A < 20 - the favour of current-monster, decide yes;
 	decide no.
 To execute (P - prank-photo):

@@ -401,7 +401,8 @@ To decide which number is the initial outrage of (C - no-bra-no-panties T-Shirt)
 
 To compute periodic effect of (C - no-bra-no-panties T-Shirt):
 	repeat with K running through worn removable knickers:
-		say "Your [C] shudders, and you feel your [K] shimmer and disappear!";
-		destroy K.
+		unless K is diaper:
+			say "Your [C] shudders, and you feel your [K] shimmer and disappear!";
+			destroy K.
 
 T-Shirts ends here.

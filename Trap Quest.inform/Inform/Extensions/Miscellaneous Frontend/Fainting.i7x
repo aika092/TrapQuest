@@ -165,7 +165,7 @@ Some things don't get reset when the player faints.
 
 +!]
 Definition: a thing (called I) is immune to change:
-	if I is worn by the player or I is carried by the player or I is in the location of the player or I is in pink wardrobe or I is in HoleInWall or I is penetrating a body part or I is store thing or I is in a pedestal, decide yes;
+	if I is held or I is in the location of the player or I is in pink wardrobe or I is in HoleInWall or I is penetrating a body part or I is store or I is in a pedestal or I is in Predicament-Pen, decide yes;
 	if I is in School15:
 		if I is predicament-fixed clothing, decide yes;
 	decide no.
@@ -340,6 +340,9 @@ To Recover the Player:
 	now the flesh volume of arms is 0;
 	now the flesh volume of belly is 0;]
 	now the squirt timer of belly is 0;
+	now the suffocation of the player is 0;
+	repeat with C running through throater things penetrating face:
+		only destroy C; [otherwise the suffocation continues]
 	now the throne is not filling asshole;
 	now the throne is not untriggered;
 	now the throne is not triggered;

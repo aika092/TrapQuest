@@ -161,7 +161,7 @@ To set up influence of (C - cum dump's undergarment):
 	now C is semen-addiction-influencing.
 
 
-meat-toilet-panties is a crotchless-panties. meat-toilet-panties is unique. The printed name of meat-toilet-panties is "[clothing-title-before]meat toilet panties[clothing-title-after]". Understand "meat", "toilet", "panties" as meat-toilet-panties. The text-shortcut of meat-toilet-panties is "mtp".
+meat-toilet-panties is a crotchless-panties. meat-toilet-panties is unique. The printed name of meat-toilet-panties is "[clothing-title-before]meat toilet panties[clothing-title-after]". Understand "meat", "meat toilet", "panties" as meat-toilet-panties. The text-shortcut of meat-toilet-panties is "mtp".
 
 Definition: meat-toilet-panties is class-relevant:
 	if the class of the player is human toilet or the class of the player is cumdumpster, decide yes;

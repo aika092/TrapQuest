@@ -89,14 +89,19 @@ Check going east while the player is in Hotel01:
 	try going down instead.
 
 Report going up:
+	update player region;
 	if map images > 0, display entire map;
-	repeat with C running through in-play clothing:
-		if C is not immune to change and C is not regional, destroy C.
+	compute clothing cleanup.
 
 Report going down:
+	update player region;
 	if map images > 0, display entire map;
+	compute clothing cleanup.
+
+To compute clothing cleanup:
 	repeat with C running through in-play clothing:
-		if C is not immune to change and C is not regional, destroy C.
+		if C is not immune to change and C is not held by an alive person and C is not regional, destroy C.
+
 
 Part 1 - Movement Hindrance Definitions
 

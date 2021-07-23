@@ -104,9 +104,5 @@ Definition: a thing (called T) is loaded:
 To update player region:
 	let R be the currentRegion of the player;
 	if R is not noRegion, now playerRegion is R.
-Report going up:
-	update player region.
-Report going down:
-	update player region.
 
 Nearby Simulated Danger ends here.

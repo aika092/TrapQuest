@@ -3,7 +3,11 @@ Minotaur by Monster begins here.
 minotaur is a dungeon boss. minotaur is male. The leftover-type of minotaur is 107. minotaur has a number called nutting-turns. The nutting-turns of minotaur is usually 0. minotaur has a number called swing-intensity.
 
 minotaur is in Dungeon36. minotaur is caged.
-Figure of minotaur is the file "NPCs/Bosses/Minotaur/minotaur1.png". Figure of minotaur caged is the file "NPCs/Bosses/Minotaur/minotaur2.png". Figure of hulk is the file "NPCs/Bosses/Minotaur/hulk1.jpg".
+Figure of minotaur is the file "NPCs/Bosses/Minotaur/minotaur1.png".
+Figure of minotaur caged is the file "NPCs/Bosses/Minotaur/minotaur2.png".
+Figure of female minotaur is the file "NPCs/Bosses/Minotaur/minotaur3.png".
+Figure of hulk is the file "NPCs/Bosses/Minotaur/hulk1.jpg".
+Figure of female hulk is the file "NPCs/Bosses/Minotaur/hulk2.png".
 
 Figure of Minotaur Cutscene 1 is the file "NPCs/Bosses/Minotaur/cutscene-minotaur-stomp1.png".
 Figure of Minotaur Cutscene 2 is the file "NPCs/Bosses/Minotaur/cutscene-minotaur-sleep1.png".
@@ -14,12 +18,13 @@ Figure of Minotaur Cutscene 6 is the file "NPCs/Bosses/Minotaur/cutscene-minotau
 Figure of Minotaur Cutscene 7 is the file "NPCs/Bosses/Minotaur/cutscene-minotaur-ready1.png".
 
 To decide which figure-name is the monster-image of (M - minotaur):
-	if lady fetish is 1, decide on figure of missing NPC;
 	if mythical creature fetish is 1:
+		if lady fetish is 1, decide on figure of female minotaur;
 		if M is penetrating a body part and M is asleep, decide on figure of minotaur cutscene 2;
 		if M is caged, decide on figure of minotaur caged;
 		otherwise decide on figure of minotaur;
 	otherwise:
+		if lady fetish is 1, decide on figure of female hulk;
 		decide on figure of hulk;
 To decide which figure-name is the anal-sex-monster-image of (M - minotaur):
 	if lady fetish is 0 and mythical creature fetish is 1, decide on figure of minotaur cutscene 3;

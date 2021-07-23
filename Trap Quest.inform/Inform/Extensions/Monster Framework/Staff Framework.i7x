@@ -131,8 +131,10 @@ To compute (M - a staff member) protecting against (X - a monster):
 
 To compute interaction of (M - a staff member):
 	if M is undefeated and M is not caged:
-		if armband is not worn and there is fucked-silly alive staff member, compute M protecting against headmistress; [There's a rebellion afoot!]
-		otherwise compute protection of M.
+		if armband is not worn and there is fucked-silly alive staff member:
+			compute M protecting against headmistress; [There's a rebellion afoot!]
+		otherwise if the player is in danger:
+			compute protection of M.
 
 To compute (M - a staff member) protecting against (X - nurse): [The nurse assaults the player on the bed, and this shouldn't upset the staff!]
 	if armband is not worn, compute M protecting against headmistress. [There's a rebellion afoot!]
@@ -608,6 +610,7 @@ To conclude (A - an assembly):
 		regionally place ST;
 		now the boredom of ST is 0;
 		if ST is unfriendly, deinterest ST;
+		otherwise distract ST;
 		now ST is unleashed;
 	now the assemblyTime of A is 0.
 
@@ -831,13 +834,13 @@ To check school toilet supervision:
 
 missing-key-assembly is an assembly.
 Definition: missing-key-assembly is eligible:
-	if headmistress is alive and headmistress is undefeated and academy-toilet-key is on-stage and academy-toilet-key is not held by headmistress, decide yes;
+	if locked-toilets is true and headmistress is alive and headmistress is undefeated and academy-toilet-key is on-stage and academy-toilet-key is not carried by headmistress, decide yes;
 	decide no.
 
 To say AssemblyStartFlav of (A - missing-key-assembly):
 	say "As you stumble through the warp portal, you find yourself in the assembly hall. The other students are already here. [BigNameDesc of headmistress] addresses you directly.".
 
-To execute (A - locked-toilets-assembly):
+To execute (A - missing-key-assembly):
 	say "[speech style of headmistress]'There you are! Everyone, this is the [boy of the player] I gave the key to, and [he of the player] never returned it, and the reason we've all got bladders filled to bursting. I'm going to have to make new locks, and a new key, and find a way to remove the existing locks. Meanwhile, [NameBimbo] will be spending some time in the dungeon, reflecting on the consequences of [his of the player] negligence!'[roman type][line break]";
 	now academy-toilet-key is carried by headmistress;
 	compute headmistress dungeon locking.

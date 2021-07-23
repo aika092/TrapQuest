@@ -185,7 +185,7 @@ To punish shameful male orgasm:
 	otherwise:
 		say "[one of]You expected to feel a bit light-headed after, but you don't. [or][stopping]Your [random worn chastity cage] pulses softly.";
 	if diaper quest is 1, progress quest of asshole-presenting-quest;
-	if the player is gendered male and the penetrativevirgin of the player is 1 and pink sissy bow is off-stage and pink sissy bow is actually summonable and (asshole is actually occupied or there is worn sissifying clothing):
+	if the player is gendered male and the penetrativevirgin of the player is 1 and pink sissy bow is off-stage and the player is not in a predicament room and pink sissy bow is actually summonable and (asshole is actually occupied or there is worn sissifying clothing):
 		summon pink sissy bow cursed;
 		say "Suddenly, a [MediumDesc of pink sissy bow] appears in your hair! Clearly you've been acting too much like a sissy...".
 
