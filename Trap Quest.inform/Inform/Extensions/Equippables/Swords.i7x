@@ -379,6 +379,14 @@ To compute survival reward of (C - gladiator-sword):
 	say "The [MediumDesc of C] suddenly gains several pounds of extra weight, significantly weighing you down.";
 	BurdenUp C by 5.
 
+This is the gladiator sword wants puppies to breathe rule:
+	if gladiator-sword is worn and wearing-target is not fully exposing and wearing-target is not chestless:
+		if summoning is 0 and autowear is false, say "Your sword arm actively prevents you from putting on your [ShortDesc of wearing-target]! Looks like your [ShortDesc of gladiator-sword] wants your chest to stay uncovered!";
+		rule fails.
+The gladiator sword wants puppies to breathe rule is listed in the bra wearability rules.
+The gladiator sword wants puppies to breathe rule is listed in the underdress wearability rules.
+The gladiator sword wants puppies to breathe rule is listed in the overdress wearability rules.
+
 Section 4 - Demon Broadsword
 
 [The more you attack with the demon broadsword the hornier it will get. Let its arousal reach 7 and it will transform into a giant dildo that likes to fuck you every so often.]

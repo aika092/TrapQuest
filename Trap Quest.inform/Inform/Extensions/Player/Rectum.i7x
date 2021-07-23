@@ -98,6 +98,7 @@ Checks if a player is messy and really unhappy about it.
 
 +!]
 Definition: yourself is upset about mess:
+	if there is a messy monster penetrating face and the diaper addiction of the player < 20, decide yes;
 	let D be a random worn perceived messed diaper;
 	if (the location of the player is nonstandard and (there is a carried soiled-diaper or there is a soiled-diaper in the location of the player or there is a messed knickers in the location of the player or there is a carried messed knickers)) or turnsWithSoiledDiaper > 2 * (the square root of the diaper addiction of the player):
 		decide yes;

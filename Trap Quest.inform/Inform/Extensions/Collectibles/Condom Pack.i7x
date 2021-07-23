@@ -134,7 +134,7 @@ Definition: a monster is condom-preferring:
 	decide no.
 
 To compute condom request choice of (M - a monster):
-	if M is unwrapped:
+	if M is unwrapped and condom fetish is 1:
 		if M is intelligent:
 			if M is condom-preferring and M is convinced to wear a condom:
 				say AutomaticCondomFlav of M;

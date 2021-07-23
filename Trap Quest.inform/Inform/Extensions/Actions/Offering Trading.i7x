@@ -9,6 +9,7 @@ To decide what number is the charisma-influence of (C - a temptation clothing):
 To decide which number is the charisma of the player:
 	let X be 0;
 	increase X by the make-up of face;
+	if the make-up of face is 2 and the makeupskill of the player is 1 and make up time - earnings < 1000, increase X by 5;
 	increase X by gem theme bonus * 2;
 	repeat with C running through worn wearthings:
 		increase X by the charisma-influence of C;
@@ -52,11 +53,13 @@ Understand "offer [something] to [something]", "trade [something] with [somethin
 
 To say OfferFlav of (T - a thing):
 	if the player is able to speak:
-		say "[variable custom style][if the second noun is unfriendly]'Please, take this instead!'[otherwise]'Would you be interested in this?'[end if][roman type][line break]";
+		say "[variable custom style][if the second noun is unfriendly]'Please, take this instead!'[otherwise][FriendlyOfferFlav of T][end if][roman type][line break]";
 	otherwise if the player is able to make sounds:
 		say "[variable custom style][muffled sounds][roman type][line break]";
 	otherwise:
 		say "You hold the item up to the [second noun].".
+To say FriendlyOfferFlav of (T - a thing):
+	say "'Would you be interested in this?'".
 
 Part - Monsters Reaction
 

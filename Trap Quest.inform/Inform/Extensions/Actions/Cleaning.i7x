@@ -163,6 +163,7 @@ To clean (C - a clothing):
 
 To fully clean (C - a clothing):
 	WaterEmpty C;
+	if C is knickers, MessSet C to 0;
 	clean C.
 
 Cleaning ends here.

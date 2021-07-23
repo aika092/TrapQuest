@@ -38,6 +38,7 @@ title	subtable	description	toggle
 "Watersports (urine drinking) - 3 points ([if choice in row 7 of the Table of Player Options is -1]never[otherwise if choice in row 7 of the Table of Player Options is 0]not now[otherwise if choice in row 7 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	watersports fetish toggle rule
 "Alcohol - 2 points ([if the player is not a top donator]bab testers only for now![otherwise if choice in row 69 of the Table of Player Options is -1]never[otherwise if choice in row 69 of the Table of Player Options is 0]not now[otherwise if choice in row 69 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	alcohol fetish toggle rule
 "NPC gender preference (changes the description of some NPCs - but most alternate images don't exist yet!): ([if lady fetish is 0]No preference[otherwise if lady fetish is 1]Feminine NPCs only[otherwise]Masculine NPCs only[end if] [if the remainder after dividing choice in row 70 of the Table of Player Options by 2 is 0]never randomise[otherwise]for now, but can be randomised[end if] - [if the player is a top donator]free[otherwise]bab testers only for now[end if])"	--	--	lady fetish toggle rule
+"Can the player become a futanari? [if the player is not a top donator]bab testers only for now[otherwise if choice in row 68 of the Table of Player Options > 0][bold type]enabled[roman type][otherwise]disabled[end if]"	--	--	futanari fetish rule
 "Male-to-female sex change - 2 points ([if choice in row 1 of the Table of Player Options is 1]Disabled since the player is female[otherwise if choice in row 10 of the Table of Player Options is -1]never[otherwise if choice in row 10 of the Table of Player Options is 0]not now[otherwise if choice in row 10 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	TG fetish toggle rule
 "ENABLE SEASONAL CONTENT"	Table of Festive Options	--	--
 [DO NOT PUT ANY OPTIONS BELOW THE SEASONAL CONTENT ROW - they will not appear for non-alpha testers. Put them above the seasonal row instead.]
@@ -284,5 +285,25 @@ The starting body shape nightmare rule is listed in the nightmare mode rules.
 This is the lady random rule:
 	if the remainder after dividing choice in row 70 of the Table of Player Options by 2 is 1, now choice in row 70 of the Table of Player Options is ((a random number between 0 and 2) * 2) + 1.
 The lady random rule is listed in the random mode rules.
+
+This is the futanari fetish rule:
+	if choice in row 68 of the Table of Player Options is 0 or (lady fetish < 2 and choice in row 68 of the Table of Player Options < 2):
+		increase choice in row 68 of the Table of Player Options by 1;
+	otherwise:
+		now choice in row 68 of the Table of Player Options is 0.
+
+
+Table of Condom Options
+title	subtable	description	toggle
+"I don't want people to use condoms unless I ask them to (disables a significant amount of times that you would end up with used condoms pinned to your clothes without a chance to prevent it)."	--	--	condom hater rule
+"People should use condoms whenever they like! (+1 point)"	--	--	condom lover rule
+
+This is the condom hater rule:
+	now choice in row 53 of the Table of Player Options is 0;
+	follow quit rule.
+
+This is the condom lover rule:
+	now choice in row 53 of the Table of Player Options is 1;
+	follow quit rule.
 
 Fetish Options ends here.

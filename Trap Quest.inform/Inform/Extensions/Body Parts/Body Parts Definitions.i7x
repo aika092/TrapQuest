@@ -177,7 +177,7 @@ To say RuinedFlav of (F - a fuckhole):
 
 To check soreness fainting of (F - a fuckhole):
 	let M be a random monster penetrating F;
-	if (sex fainting is 1 or there is a futanari slutty sister penetrating F) and there is an embodied thing penetrating F:
+	if (sex fainting is 1 or futanari-slutty-sister is penetrating F) and there is an embodied thing penetrating F:
 		let N be the raw anal sex addiction of the player;
 		if F is vagina, now N is the raw vaginal sex addiction of the player;
 		if the tolerated of F <= N / 2:

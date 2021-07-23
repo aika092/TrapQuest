@@ -78,7 +78,7 @@ predicamentJustDone is initially true. [We only want one 'extra credit' predicam
 predicamentSavedMakeUp is a number that varies.
 
 To set up predicament status:
-	let LC be a list of things;
+	let LC be a list of things; [the list of clothing that MUST be automatically removed at the start of the predicament AND automatically replaced at the end]
 	repeat with C running through worn clothing:
 		if C is headgear:
 			add C to LC;
@@ -89,19 +89,29 @@ To set up predicament status:
 		if C is clothing and (C is worn or C is not diaper): [held used diapers don't get refreshed]
 			fully clean C;
 		if C is worn:
-			if C is clothing and C is removable and C is not headgear and C is not combat visor and C is not armband and C is not listed in LC:
+			if C is clothing and C is removable and C is not combat visor and C is not armband and C is not listed in LC: [this removable worn stuff goes to the final room, and the player will be offered to automatically rewear it all]
 				dislodge C;
+				if C is diaper-stack:
+					let N be 1;
+					repeat with D running through the list of stacked diapers:
+						if N > 1: [diapers above the first go straight home]
+							now D is in Predicament20;
+						otherwise: [bottom diaper is the one you count as wearing]
+							now C is D;
+						increase N by 1;
+					now diaper-stack is in Holding Pen;
+					now the list of stacked diapers is { };
 				if C is cursed and the raw strength of the player > 1:
 					say "[bold type]As your [ShortDesc of C] is removed, you feel the curse steal some [one of]of your strength! You probably can only recover the strength by wearing it again after you get it back...[or]more of your strength.[stopping][roman type][line break]";
 					increase the stolen-strength of C by 1;
 					decrease the raw strength of the player by 1;
 				now C is in Predicament20;
 				unless C is plentiful accessory, add C to predicamentWornList;
-			otherwise if C is listed in LC or (tough-shit is 0 and C is not armband and C is not combat visor):
+			otherwise if tough-shit is 0 or C is listed in LC or (C is clothing and C is not piercing and C is not combat visor and C is not armband): [anything else (except combat visor and armband) will automatically reappear at the final room. The difference with Game Hates You (tough-shit) is that tattoos & piercings will stay on the player for the duration of the predicament]
 				dislodge C;
 				now C is in Predicament-Pen;
 				add C to predicamentPenList;
-			otherwise:
+			otherwise: [Anything else stays on you. We add it to predicamentPenList so that we can track what the player was wearing originally, so that we can detect abnormal clothing situations (i.e. when the player obtained predicament-fixed clothing during the predicament)]
 				now C is predicament-fixed;
 				add C to predicamentPenList;
 		otherwise if C is not worn:
@@ -310,6 +320,7 @@ To teleport via (W - a warp portal):
 		update player region;
 		now the location of the player is discovered;
 		display entire map;
-		say "As you go through the portal, you appear in the [location of the player][one of]! There is an identical green portal in this room too, to allow you to go back and forth![or]![stopping]".
+		say "As you go through the portal, you appear in the [location of the player][one of]! There is an identical green portal in this room too, to allow you to go back and forth![or]![stopping]";
+	compute clothing cleanup.
 
 Warp Portal ends here.

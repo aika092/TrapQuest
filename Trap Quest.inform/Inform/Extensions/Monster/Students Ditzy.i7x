@@ -2,6 +2,9 @@ Students Ditzy by Monster begins here.
 
 A ditzy student is a kind of student. Understand "ditzy" as a ditzy student.
 
+Definition: a ditzy student is unfriendly rather than friendly:
+	decide no.
+
 To say MediumDesc of (M - a ditzy student):
 	say "ditzy [rank-colour of M] student [student-name of M]".
 

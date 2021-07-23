@@ -26,6 +26,11 @@ Definition: yourself is monster fucked:
 	if there is a monster penetrating a body part, decide yes;
 	decide no.
 
+[Override this with a more detailed definition if your NPC can block while friendly.]
+Definition: a monster is combative-or-blocking:
+	if it is combative, decide yes;
+	decide no.
+
 Definition: a monster (called M) is successfully blocking: [Do they succeed in a roll to stop the player moving]
 	if M is not blocker, decide no;
 	let D be the difficulty of M * 2;

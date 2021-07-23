@@ -265,6 +265,10 @@ To decide which figure-name is clothing-image of (C - brown-button-diaper):
 To say selfexamineuniquetitle of (K - brown-button-diaper):
 	say "brown bunny diaper".
 Definition: brown-button-diaper is brown themed: decide yes.
+Definition: brown-button-diaper is bunny themed: decide yes.
+Definition: brown-button-diaper is class-relevant:
+	if the class of the player is bunny, decide yes;
+	decide no.
 To say ClothingDesc of (C - brown-button-diaper):
 	say "A reasonably thick brown diaper that does up with pink buttons to seal the tabs. The white cottontail on the back makes it rather obvious what the theme of the diaper is. There's no special pattern.".
 To decide which number is the unique outrage of (C - brown-button-diaper):

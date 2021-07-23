@@ -131,8 +131,10 @@ To compute (M - a staff member) protecting against (X - a monster):
 
 To compute interaction of (M - a staff member):
 	if M is undefeated and M is not caged:
-		if armband is not worn and there is fucked-silly alive staff member, compute M protecting against headmistress; [There's a rebellion afoot!]
-		otherwise compute protection of M.
+		if armband is not worn and there is fucked-silly alive staff member:
+			compute M protecting against headmistress; [There's a rebellion afoot!]
+		otherwise if the player is in danger:
+			compute protection of M.
 
 To compute (M - a staff member) protecting against (X - nurse): [The nurse assaults the player on the bed, and this shouldn't upset the staff!]
 	if armband is not worn, compute M protecting against headmistress. [There's a rebellion afoot!]
@@ -301,6 +303,22 @@ To say DismissalResponseStalker of (M - a staff member):
 
 To say DismissalResponseDefault of (M - a staff member):
 	say "[speech style of M]'I beg your pardon, young one?! I will tell you when you're allowed to proceed unsupervised in these halls[if M is not interested]. Now run along before I change my mind[end if].'[roman type][line break]".
+
+talk-teacher-toilet is a talk-object.
+
+To consider (T - talk-teacher-toilet) for (M - a monster):
+	if M is teacher and locked-toilets is true and academy-toilet-key is held and M is friendly:
+		now the printed name of T is the substituted form of "[variable custom style]'[if the player is proud]I can't believe I'm saying this, but would you please accompany me so that I can use the toilet?'[otherwise if the diaper addiction of the player < 5]Please could you supervise me while I use the toilet?'[otherwise]Please can you help me use the potty?'[end if][roman type][line break]";
+		set next numerical response to the substituted form of "[printed name of T]".
+
+To execute (T - talk-teacher-toilet) for (M - a monster):
+	say "[speech style of M]'[one of]Of course[or]Okay but make it quick, I'm busy[or]Hurry up then, let's go[in random order].'[roman type][line break]";
+	now M is interested;
+	now the friendly boredom of M is 0.
+
+To decide which number is the seek roll of (M - a teacher):
+	if academy-toilet-key is held and M is friendly, decide on 1; [100% chance to follow you to toilet if necessary]
+	decide on a random number between 0 and 3. [Most monsters have a 75% chance of successfully moving.]
 
 Part - Lessons
 
@@ -493,31 +511,39 @@ To compute solo lesson of (M - staff member):
 		now the armband-print of armband is "solo student";
 		say ClothingDesc of armband.
 
-To compute gloryhole lesson of (M - staff member):
-	say "[speech style of M]'Let's test your cocksucking skills.'[roman type][line break][BigNameDesc of M] leads you to the Changing Rooms, and forces you to your knees.";
-	now M is in School19;
-	teleport to School19;
+To compute gloryhole lesson of (M - a monster):
+	say "[speech style of M]'[if M is staff member]Let's test your cocksucking skills[otherwise]This is where a worthless piece of shit like you belongs[end if].'[roman type][line break][BigNameDesc of M] leads you to the Changing Rooms, and forces you to your knees.";
+	drag to School19 by M;
 	now the stance of the player is 1;
 	say "Your face is brought near to the bottom hole, and suddenly a magic force grips you, pulling your mouth up against the hole. Within moments, a large [if the oral sex addiction of the player > 5]juicy [end if][manly-penis] pushes through, into your mouth. It's easily long enough to hit the back of your throat, causing you to gag[if the oral sex addiction of the player > 7] slightly[end if].";
 	now gloryhole is penetrating face;
 	now gloryhole is grabbing the player;
 	now busy is 1;
 	now the turns trapped of gloryhole is 0;
+	if M is student, say "[speech style of M]'Don't you dare resist, now, you cock-hungry slut.'[roman type][line break]";
 	say "Do you want to resist? ";
 	if the player is consenting:
 		try resisting;
-		say "[speech style of M]'A poor choice. I see you're not ready for promotion after all.'[roman type][line break]";
+		if M is student:
+			say "[BigNameDesc of M] growls.[line break][speech style of M]'You still don't get it, do you? I'm going to keep making your life miserable until you learn your proper place.'[roman type][line break]";
+			HappinessDown M;
+		otherwise:
+			say "[speech style of M]'A poor choice. I see you're not ready for promotion after all.'[roman type][line break]";
 	otherwise:
 		try submitting;
-		say "[speech style of M]'Well done, [he of shopkeeper] seems to like you. I've seen enough already to know you deserve this.'[roman type][line break][BigNameDesc of M] waves a hand in your direction.";
-		now armband is pink diamond;
-		say "You watch as the ID card inside your armband transforms!";
-		now the armband-title of armband is "Gloria";
-		now the armband-print of armband is "gloryhole guzzler";
-		say ClothingDesc of armband;
-	say "[speech style of M]'Have fun now!'[roman type][line break]";
-	satisfy M;
-	compute mandatory room leaving of M.
+		if M is staff member:
+			say "[speech style of M]'Well done, [he of shopkeeper] seems to like you. I've seen enough already to know you deserve this.'[roman type][line break][BigNameDesc of M] waves a hand in your direction.";
+			now armband is pink diamond;
+			say "You watch as the ID card inside your armband transforms!";
+			now the armband-title of armband is "Gloria";
+			now the armband-print of armband is "gloryhole guzzler";
+			say ClothingDesc of armband;
+		otherwise:
+			say "[BigNameDesc of M] laughs at you.[line break][speech style of M]'I knew it. You're such a slut.'[roman type][line break][moderateHumiliateReflect][line break][speech style of M]'Have fun now!'[roman type][line break]";
+	if M is staff member: [student's `satisfy` function is called in the `compute default bullying` function]
+		say "[speech style of M]'Have fun now!'[roman type][line break]";
+		satisfy M;
+	try M going south.
 
 
 
@@ -584,6 +610,7 @@ To conclude (A - an assembly):
 		regionally place ST;
 		now the boredom of ST is 0;
 		if ST is unfriendly, deinterest ST;
+		otherwise distract ST;
 		now ST is unleashed;
 	now the assemblyTime of A is 0.
 
@@ -707,6 +734,118 @@ To execute (A - new-fuckhole-assembly):
 	if the fuckhole-rule of school-fuckhole >= 4, now the buttcondoms of school-fuckhole is 1;
 	say "[speech style of headmistress]'I've... ah... recently... [']acquired['] a new fuckhole. It shall be replacing the gloryholes in the changing rooms. You must only use it once per visit to the school. Anyone caught breaking the usage rules will be punished.'[roman type][line break][big he of headmistress] thinks for a moment, and then says[line break][speech style of headmistress][FuckholeRuleDesc][roman type][line break]".
 
+locked-toilets is initially false.
+locked-toilets-assembly is an assembly.
+Definition: locked-toilets-assembly is eligible:
+	if headmistress is alive and headmistress is undefeated and watersports mechanics is 1 and (diaper quest is 0 and the player is a june 2021 top donator) or (diaper quest is 1 and the player is a june 2021 diaper donator):
+		repeat with R running through academic rooms:
+			if the urine-puddle of R > 0, decide yes;
+	decide no.
+
+To say AssemblyStartFlav of (A - locked-toilets-assembly):
+	say "As you stumble through the warp portal, you find yourself in the assembly hall. The other students are already here. [BigNameDesc of headmistress] addresses the crowd.".
+
+To execute (A - locked-toilets-assembly):
+	now locked-toilets is true;
+	now headmistress is carrying academy-toilet-key;
+	let L be School01;
+	repeat with R running through academic rooms:
+		if the urine-puddle of R > 0, now L is R;
+	say "[speech style of headmistress]'It has come to my attention that a puddle of urine was found in the [L]. It would appear that the pupils in this school are in need of some serious bladder training. Therefore, henceforth, until we determine once and for all which of you can hold in your pee and which of you are naughty wetters, using the toilet is a privilege. The toilets will be locked, and you will have to come to me to ask for the key to use them. Furthermore, you must bring a teacher with you when you use the toilet, to act as a witness and to retrieve the toilet key when you are finished. Is that clear?'[roman type][line break]Everyone murmurs assent. Twirling the solitary toilet key on its key ring around [his of headmistress] index finger, [NameDesc of headmistress] marches from the hall.".
+
+To check school toilet supervision:
+	let M be a random undefeated staff member in the location of the player;
+	if M is monster:
+		say "[speech style of M]'Now remember to lock it up again, and then give the key back to the [ShortDesc of headmistress].'[roman type][line break]";
+		satisfy M;
+	otherwise:
+		now M is a random undefeated staff member in School05;
+		if M is nothing:
+			repeat with X running through on-stage undefeated staff members:
+				if (X is in School04 or X is in School06 or X is in School16) and a random number between 1 and 2 is 1:
+					now M is X;
+		if M is a monster:
+			if M is not in School05, now M is in School05;
+			try M going south;
+			say "[M] has caught you using the toilet![line break][speech style of M]'What's this?! You know you aren't allowed to use the toilet without supervision! It's detention for you!'[roman type][line break]";
+			compute detention of M;
+		otherwise:
+			let M be a random student in the location of the player;
+			if M is nothing, let M be a random student in School05;
+			if M is nothing:
+				repeat with X running through on-stage students:
+					if (X is in School04 or X is in School06 or X is in School16) and a random number between 1 and 2 is 1:
+						now M is X;
+			if M is monster:
+				if M is not in the location of the player and M is not in School05, now M is in School05;
+				if M is in School05:
+					try M going south;
+					say "[M] has caught you using the toilet!";
+				otherwise:
+					say "[M]'s eyes widen!";
+				let D be the dedication of M;
+				if D > 1: [caught in the act]
+					FavourDown M;
+					now M is interested;
+					if M is friendly:
+						say "[speech style of M]'You're supposed to have a teacher supervising you to do that!'[roman type][line break]";
+					otherwise:
+						let X be a random alive unleashed teacher;
+						if X is a monster:
+							say "[big he of M] tuts.[line break][speech style of M]'Naughty naughty, breaking the rules. I think you need punishing. Get on your knees and put your head in the toilet, or I'm calling a teacher!'[roman type][line break]Do you let [him of M] bully you?";
+							if the player is consenting:
+								now the stance of the player is 1;
+								compute swirlie of M;
+							otherwise:
+								now X is in the location of the player;
+								say "[speech style of M]'MISS! MISS! Come quick! [NameBimbo] is using the toilet without a teacher!!!'[roman type][line break]Before you have time to lock the toilet back up, [X] has come running and caught you red handed with the key in your hand and the recently flushed toilet behind you.[line break][speech style of M]'It's detenion for you, you naughty minx!'[roman type][line break]";
+								compute detention of X;
+				otherwise: [needs to pee too]
+					now M is interested;
+					if M is friendly:
+						say "[speech style of M]'You have the key?! Please, I need to go too!'[roman type][line break]";
+						reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+						set numerical response 1 to "Let [him of M] have the key.";
+						set numerical response 2 to "Let [him of M] use the toilet, but keep the key and force [him of M] to use the toilet in front of you.";
+						set numerical response 3 to "Refuse to let [him of M] use the toilet.";
+						if player-numerical-response is 1:
+							now academy-toilet-key is carried by M;
+							say "[speech style of M]'Thank you so much!'[roman type][line break][big he of M] takes the key, and you turn to make a quick exit to the north.";
+							now another-turn-stored-action is going north;
+							now another-turn is 1;
+							HappinessUp M by 1;
+						otherwise if player-numerical-response is 2:
+							say "[speech style of M]'This is so embarrassing...'[roman type][line break][BigNameDesc of M] whines, but allows you to watch as [he of M] sits on the toilet and tinkles away. Causing [him of M] humiliation makes you feel better about yourself.";
+							strongDignify;
+							let X be M;
+							repeat with Z running through on-stage undefeated staff members:
+								if Z is in School04 or Z is in School06 or Z is in School16, now X is Z;
+							if X is teacher and there is an appropriate eligible team-predicament:
+								now X is in School05;
+								try X going south;
+								say "[X] has caught [NameDesc of M] using the toilet![line break][speech style of X]'What's this?! You know you aren't allowed to use the toilet without supervision! And [NameBimbo], what are you doing holding the key? You're both in on this, aren't you! It's detention for you both!'[line break][speech style of M]'What?! No, please no!'[roman type][line break]But there's nothing [NameDesc of M] can do to prevent [himself of M] from being dragged out into the hallway and towards the reception, along with you.";
+								compute detention joint predicament of X with M;
+						otherwise:
+							HappinessDown M by 2;
+							if M is unfriendly:
+								say "[speech style of M]'Fuck you! I'll just have to take it then!'[roman type][line break]";
+							otherwise:
+								say "[speech style of M]'You're so mean! I'm going to wet myself!!!'[roman type][line break]".
+
+missing-key-assembly is an assembly.
+Definition: missing-key-assembly is eligible:
+	if locked-toilets is true and headmistress is alive and headmistress is undefeated and academy-toilet-key is on-stage and academy-toilet-key is not carried by headmistress, decide yes;
+	decide no.
+
+To say AssemblyStartFlav of (A - missing-key-assembly):
+	say "As you stumble through the warp portal, you find yourself in the assembly hall. The other students are already here. [BigNameDesc of headmistress] addresses you directly.".
+
+To execute (A - missing-key-assembly):
+	say "[speech style of headmistress]'There you are! Everyone, this is the [boy of the player] I gave the key to, and [he of the player] never returned it, and the reason we've all got bladders filled to bursting. I'm going to have to make new locks, and a new key, and find a way to remove the existing locks. Meanwhile, [NameBimbo] will be spending some time in the dungeon, reflecting on the consequences of [his of the player] negligence!'[roman type][line break]";
+	now academy-toilet-key is carried by headmistress;
+	compute headmistress dungeon locking.
+
+
 Part - Detention
 
 [Now part of the compute swimming in swimming pool function.
@@ -735,31 +874,8 @@ To compute detention of (M - a staff member):
 	otherwise if ST is student and there is an appropriate eligible team-predicament:
 		say "[BigNameDesc of M] looks from you, to [NameDesc of ST], then back at you.[line break][speech style of M]'I think you two need some time together, so that you can learn to co-exist peacefully...'[roman type][line break]";
 		now specificDetention is 1;
-		now ST is in School01;
-		drag to School01 by M;
-		now team-predicament-partner is ST;
-		let P be a random appropriate team-predicament;
-		now current-predicament is P;
-		say "[paragraph break]The warp portal's destination is set to the Extra Credit Zone, and then [NameDesc of team-predicament-partner] is pushed into the warp portal alongside you! You're both going in at the same time!";
-		[now the destination of W is the Dungeon;]
-		display entire map;
-		say "As you go through the portal, you feel your clothing stolen away by some invisible forces!";
-		set up predicament status;
-		now team-predicament-partner is interested;
-		update appearance level;
-		now the latest-appearance of team-predicament-partner is the appearance of the player;
-		if diaper quest is 1, now the latest-cringe of team-predicament-partner is the cringe appearance of the player;
-		now turnsWithSoiledDiaper is 0;
-		now the printed name of Predicament01 is "Abandoned Warehouse";
-		repeat with R running through predicament rooms:
-			totally clean R;
-		if the body soreness of the player > 4, now the body soreness of the player is 4;
-		execute P;
-		set up predicament clothing for P;
-		increase the times-completed of P by 1;
-		now temporaryYesNoBackground is Figure of small image;
-		[now predicamentJustDone is true;] [We should probably still let the player jump back in for a trophy if they want to]
-	otherwise if class-time < (lessonFrequency * -3):
+		compute detention joint predicament of M with ST;
+	otherwise if the player is in a lecture academic room and class-time < (lessonFrequency * -3):
 		say LateDetention of M;
 	otherwise:
 		say GenericDetention of M;
@@ -781,6 +897,32 @@ To compute punishment of (P - a dq-staff-detention):
 Definition: a dq-staff-detention (called P) is appropriate:
 	if current-monster is staff member, decide yes;
 	decide no.
+
+To compute detention joint predicament of (M - a monster) with (ST - a student):
+	now ST is in School01;
+	drag to School01 by M;
+	now team-predicament-partner is ST;
+	let P be a random appropriate team-predicament;
+	now current-predicament is P;
+	say "[paragraph break]The warp portal's destination is set to the Extra Credit Zone, and then [NameDesc of team-predicament-partner] is pushed into the warp portal alongside you! You're both going in at the same time!";
+	[now the destination of W is the Dungeon;]
+	display entire map;
+	say "As you go through the portal, you feel your clothing stolen away by some invisible forces!";
+	set up predicament status;
+	now team-predicament-partner is interested;
+	update appearance level;
+	now the latest-appearance of team-predicament-partner is the appearance of the player;
+	if diaper quest is 1, now the latest-cringe of team-predicament-partner is the cringe appearance of the player;
+	now turnsWithSoiledDiaper is 0;
+	now the printed name of Predicament01 is "Abandoned Warehouse";
+	repeat with R running through predicament rooms:
+		totally clean R;
+	if the body soreness of the player > 4, now the body soreness of the player is 4;
+	execute P;
+	set up predicament clothing for P;
+	increase the times-completed of P by 1;
+	now temporaryYesNoBackground is Figure of small image;
+	[now predicamentJustDone is true;] [We should probably still let the player jump back in for a trophy if they want to]
 
 Section - Chair Detention
 

@@ -69,6 +69,20 @@ To say SummoningFlav of (M - a robobellboy):
 To say LeftoverDesc (N - 117):
 		say "There is a pile of mangled nuts and bolts here that used to be a fully functional robobellboy.[line break]".
 
+To compute the cage stuck taunting of (M - a robobellboy):
+	let SD be a random off-stage soiled-diaper;
+	if diaper messing >= 6:
+		let N be 0;
+		while N < 4 and SD is soiled-diaper:
+			increase N by 1;
+			now SD is in the location of the player;
+			now SD is a random off-stage soiled-diaper;
+			say "[BigNameDesc of M][']s eyes turn a dark purple as [he of M] looks at you.[line break][speech style of M]'TREASURED MEMBER, WE BELIEVE YOU ACCIDENTALLY DISCARDED [if N is 1]THIS[otherwise]THESE[end if]. WE ARE RETURNING [if N is 1]IT[otherwise]THEM[end if] TO YOU FREE OF CHARGE.'[roman type][line break][BigNameDesc of M] opens its chest compartment and drops [if N is 1]a [SD][otherwise][N] soiled diapers[end if] on the ground in front of you. From inside the cage, you can't move them, but you can certainly smell them.";
+			if the player is able to speak, say "[variable custom style]'[if the diaper addiction of the player > 10]Um, those[otherwise]Hey, what the hell?! Those[end if] aren't mine!'[roman type][line break]You protest, but [he of M] ignores you.";
+			satisfy M;
+	otherwise:
+		compute default cage stuck taunting of M.
+
 Part 2 - Perception
 
 To compute perception of (M - a robobellboy):

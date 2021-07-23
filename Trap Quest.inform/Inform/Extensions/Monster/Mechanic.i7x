@@ -376,7 +376,7 @@ To compute xavier reward of (M - mechanic):
 		IntUp 4;
 
 This is the mechanic strips princess rule:
-	if diaper quest is 0 and (the class of the player is "princess" or the class of the player is "virgin warrior princess") and bride-consort is throne and the player is a december 2020 top donator:
+	if diaper quest is 0 and (the class of the player is "princess" or the class of the player is "deepthroat princess" or the class of the player is "trained fuck princess" or the class of the player is "virgin warrior princess") and bride-consort is throne and the player is a december 2020 top donator:
 		let H be a random worn headgear;
 		say "[speech style of current-monster]'At long last, release shall be mine. To dispel your magic, I need simply make you my bride...'[roman type][line break][big he of current-monster] touches your [ShortDesc of H].";
 		transform H into tiara-veil;
@@ -969,7 +969,7 @@ To check vaginal dominate entrance of (M - a mechanic) for (J - a thing):
 	if R < 0:[immediate loss]
 		if debugmode > 0, say "[bold type]FAILED![roman type][line break]";
 		now player-fucking is DOMINANT-SHAMEFUL;
-		say "You lick your lips in anticipation of how good it's going to feel to have [him of M] inside you, hungrily eyeing [his of M] [DickDesc of M] as you lower yourself into [his of M] lap. [BigNameDesc of M] immediately grabs you by the wrists, [if J is clothing]knocking the [ShortDesc of J] out of your hand as [he of M] easily wrestles[otherwise]and easily wrestles[end if] you over onto your back.[line break][speech style of M]'Don't worry, bitch, I'll get you some dick. Hang on...'[roman type][line break]";
+		say "You lick your lips in anticipation of how good it's going to feel to have [him of M] inside you, hungrily eyeing [his of M] [DickDesc of M] as you lower yourself into [his of M] lap. [BigNameDesc of M] immediately grabs you by the wrists[if J is clothing], knocking the [ShortDesc of J] out of your hand as [he of M] easily wrestles[otherwise] and easily wrestles[end if] you over onto your back.[line break][speech style of M]'Don't worry, bitch, I'll get you some dick. Hang on...'[roman type][line break]";
 		unless J is throne, now J is in the location of the player;
 		if J is amulet:[if you want to steal the amulet, you actually need to dominate him properly]
 			say "[big he of M] snatches the [ShortDesc of J] off the floor and puts it around [his of M] neck. [big he of M] seems invigorated, roughly [if G < -1]forcing[otherwise]slamming[end if] [his of M] [DickDesc of M] into your [vagina] and eagerly beginning to thrust. ";
@@ -1351,7 +1351,7 @@ To say AfterDominationComment (N - a number) of (M - mechanic):
 			if the employee-record of senior robobellboy < 0, increase the employee-record of senior robobellboy by 1;
 			say "[speech style of M]'[one of]Good fuck, but I don't know if I'd hire you.'[or]That was fun, but if this were an interview, I'd say you didn't bring your A-game.'[or]That felt good, but if you were trying to impress me with your acting, you're going to need to do better.'[at random][roman type][line break]";
 	otherwise if N is 3:[the player had the option to clean him off and didn't]
-		compute angry punishment of M;
+		consider angry punishment of M;
 	otherwise if N is 4:[the player stole the amulet]
 		say "[speech style of M]'[one of]This is not over. I will have my amulet one way or another.'[or]You can't even unleash the amulet's full power. It was foolish to take it.'[or]You think you've won, but you haven't. I WILL have my amulet.'[or]You are a fool to think you can truly steal that from me.'[at random][roman type][line break]";
 	otherwise if N is 5:[the player stole the wrench]

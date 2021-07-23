@@ -163,6 +163,18 @@ To decide which figure-name is the pacified-image of (M - a royal guard):
 
 Figure of caged pail princess is the file "NPCs/MultiFloor/Princess/cage7.jpg".
 Figure of caged pail princess messy is the file "NPCs/MultiFloor/Princess/cage6.jpg".
+Figure of dark princess 1 is the file "NPCs/MultiFloor/Princess/darkprincess3.jpg".
+Figure of dark princess 2 is the file "NPCs/MultiFloor/Princess/darkprincess4.jpg".
+Figure of dark princess 3 is the file "NPCs/MultiFloor/Princess/darkprincess5.jpg".
+Figure of dark princess 4 is the file "NPCs/MultiFloor/Princess/darkprincess6.jpg".
+Figure of dark princess 5 is the file "NPCs/MultiFloor/Princess/darkprincess7.jpg".
+Figure of princess final battle plug is the file "NPCs/MultiFloor/Princess/cutscene-princess-final-battle4a.jpg".
+Figure of princess final battle victory is the file "NPCs/MultiFloor/Princess/cutscene-princess-final-battle7a.jpg".
+Figure of dark princess final battle defeat clean is the file "NPCs/MultiFloor/Princess/cutscene-dark-princess-final-battle1a.jpg".
+Figure of dark princess final battle defeat messy is the file "NPCs/MultiFloor/Princess/cutscene-dark-princess-final-battle1b.jpg".
+To decide which figure-name is figure of princess final battle final chance:
+	if diaper messing >= 7 and (the uses of final-battle-final-chance >= 2 or ex-princess is penetrating face), decide on Figure of dark princess final battle defeat messy;
+	otherwise decide on Figure of dark princess final battle defeat clean.
 
 To decide which figure-name is the clothing-image of (C - runic headband):
 	decide on figure of runic headband.

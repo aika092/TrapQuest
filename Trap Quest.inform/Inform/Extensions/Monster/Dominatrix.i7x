@@ -200,6 +200,7 @@ To compute sex resist anger of (M - dominatrix):
 Part 2 - Perception
 
 Definition: dominatrix (called M) is objectifying the player:
+	if wrestler-hood is worn, decide yes;
 	if the class of the player is cheerleader, decide no;
 	if the woman-status of woman-player is 93 and the dominatrix-contraption-scene of woman-player <= 5 and woman-player is in the location of the player, decide no;
 	if the slave-status of M < -3, decide no;
@@ -223,9 +224,14 @@ To compute correct perception of (M - dominatrix):
 To compute perception of (M - dominatrix):
 	if the disappointment of M > 1, now the strap-on girth of M is the disappointment of M;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";[We shouldn't need a linebreak here because punctuation inside text-based if-clauses cause an automatic line break]
-	if the woman-status of woman-player is 93 and the dominatrix-contraption-scene of woman-player <= 5 and woman-player is in the location of the player:
+	if wrestler-hood is worn:
+		say "[speech style of M]'There you are, [if watersports fetish is 1]Toilet[otherwise]Slave[end if].'[roman type][line break]";
+	otherwise if the woman-status of woman-player is 93 and the dominatrix-contraption-scene of woman-player <= 5 and woman-player is in the location of the player:
 		say "[BigNameDesc of M] grins.[line break][speech style of M]'Enjoying the show?'[roman type][line break]";
 		calm M;
+	otherwise if wrestler-jumpsuit is worn and wrestler-hood is off-stage and wrestler-hood is actually summonable:
+		say "[speech style of M]'Did you lose your hood, [if watersports fetish is 1]Toilet[otherwise]Slave[end if]? You are supposed to always wear one of these while in my presence.'[roman type][line break][BigNameDesc of M] puts a wrestler hood on you, to match your outfit!";
+		summon wrestler-hood cursed with quest;
 	otherwise if the class of the player is living sex doll:
 		say "It doesn't look like [he of M]'s interested in you.";
 		bore M;
@@ -366,8 +372,12 @@ To say DragArrival of (M - dominatrix) to (R - a room):
 
 To compute torturing of (M - dominatrix):
 	say "[speech style of M]'[if the health of M < the maxhealth of M]You are going to learn a tough lesson in why you don't fight back against your superiors, whore.'[otherwise]You clearly need some [']education['] so that you can lean how to obey.'[end if][roman type][line break]";
-	if a random number between 1 and 2 is 1 or there is a worn messed knickers or there is a demon lord in the location of M, compute whipping of M;
-	otherwise compute stocks paddling of M.
+	if a random number between 1 and 3 is 1:
+		compute angry punishment of M; [at the time of coding, this leads to being put in the cage if possbible.]
+	otherwise if a random number between 1 and 2 is 1 or there is a worn messed knickers or there is a demon lord in the location of M:
+		compute whipping of M;
+	otherwise:
+		compute stocks paddling of M.
 
 To TimesSubmittedUp (M - dominatrix):
 	increase the times-submitted of M by 1;
@@ -653,7 +663,8 @@ To compute unique climax of (M - dominatrix) in (F - asshole):
 		otherwise:
 			say "[speech style of M]'I must say, slave, I'm impressed. You took that fucking like a real champ. As a reward, I'll make sure I have a brand new toy to try out on you next time you see me.'[roman type][line break]";
 			now the disappointment of M is the strap-on girth of M + 2;
-		bore M.
+		bore M;
+	if the disappointment of M is not 1, progress quest of dominatrix-quest.
 
 Check going when dominatrix is in the location of the player:
 	if the disappointment of dominatrix > 1, now the strap-on girth of dominatrix is the disappointment of dominatrix. [Increase the strapon size if appropriate]
@@ -846,6 +857,7 @@ To say DamageReactWeak of (M - dominatrix):
 	say "The dominatrix swears as [he of M] struggles to maintain [his of M] balance!".
 
 To compute unique banishment of (M - dominatrix):
+	progress quest of dominatrix-quest;
 	let X be a random off-stage strapon-dildo;
 	if the strap-on girth of M >= 6 and mythical creature fetish is 1, now X is a random off-stage equine-strapon;
 	if X is clothing:
@@ -1395,7 +1407,7 @@ To compute angry punishment of (M - dominatrix):
 		say "[speech style of M]'You need a [']Time Out['] to think about what you've done.'[roman type][line break][BigNameDesc of M] opens the door of [NameDesc of dominatrix-cage] and forces you inside, locking it behind you!";
 		now dominatrix-cage is grabbing the player;
 		now the stance of the player is 1;
-		now the cage-time of dominatrix-cage is 300;
+		now the cage-time of dominatrix-cage is 200;
 	otherwise:
 		say angry punishment insult of M;
 		if M is not friendly-fucking and (M is not seduced or M is unfriendly):
@@ -1408,7 +1420,7 @@ To compute the cage stuck taunting of (M - dominatrix):
 To compute unique teleportation to (R - Hotel37):
 	if the number of caged monsters in Hotel37 is 0 and the number of embodied things penetrating a body part is 0 and the number of things grabbing the player is 0:
 		now dominatrix-cage is grabbing the player;
-		now the cage-time of dominatrix-cage is 300;
+		now the cage-time of dominatrix-cage is 200;
 		now the stance of the player is 1;
 		say "You have appeared inside [NameDesc of dominatrix-cage], and the door is locked! What rotten luck!";
 		if dominatrix is alive:

@@ -20,6 +20,43 @@ To Set Up The Dungeon:
 			wait until loading animation pauses;
 		otherwise:
 			render buffered stuff;
+	[position Dungeon01 at <1,14,13>;
+	position Dungeon02 at <1,15,12>;
+	position Dungeon04 at <1,14,11>;
+	position Dungeon06 at <1,15,13>;
+	position Dungeon07 at <1,15,11>;
+	position Dungeon08 at <1,16,13>;
+	position Dungeon09 at <1,16,11>;
+	position Dungeon03 at <1,16,12>;
+	position Dungeon05 at <1,14,14>;
+	position Dungeon14 at <1,16,10>;
+	position Dungeon13 at <1,17,10>;
+	position Dungeon15 at <1,17,11>;
+	position Dungeon16 at <1,16,9>;
+	position Dungeon17 at <1,17,9>;
+	position Dungeon18 at <1,18,9>;
+	position Dungeon19 at <1,18,11>;
+	position Dungeon20 at <1,18,10>;
+	position Dungeon21 at <1,17,12>;
+	position Dungeon22 at <1,17,13>;
+	position Dungeon23 at <1,16,14>;
+	position Dungeon24 at <1,19,9>;
+	position Dungeon25 at <1,18,8>;
+	position Dungeon27 at <1,18,12>;
+	position Dungeon28 at <1,17,8>;
+	position Dungeon29 at <1,16,8>;
+	position Dungeon30 at <1,15,9>;
+	position Dungeon31 at <1,15,10>;
+	position Dungeon33 at <1,13,11>;
+	position Dungeon34 at <1,12,11>;
+	position Dungeon35 at <1,19,12>;
+	position Dungeon36 at <1,11,11>;
+	position Dungeon37 at <1,10,11>;
+	position Dungeon38 at <1,9,11>;
+	position Dungeon39 at <1,8,11>;
+	position Dungeon40 at <1,7,11>;
+	position Dungeon41 at <1,15,14>;
+	position Stairwell01 at <1,14,10>;]
 	while the number of unplaced rooms in The Dungeon > 5:
 		Scramble Dungeon;
 		if the number of unplaced rooms in The Dungeon > 5 or Stairwell01 is unplaced or Dungeon28 is unplaced or Dungeon41 is unplaced:

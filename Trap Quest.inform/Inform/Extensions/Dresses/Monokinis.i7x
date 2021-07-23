@@ -65,7 +65,7 @@ To decide which figure-name is clothing-image of (C - green monokini):
 	decide on figure of green monokini.
 
 To say ClothingDesc of (C - green monokini):
-	say "This tight fitting onepiece swimsuit is a bit torn at the top to allow for extra large amounts of cleavage to be shown[if C is no protection], and at the crotch to allow entrance to anything that desires so[end if].".
+	say "This tight fitting onepiece swimsuit is rather low cut, allowing for extra large amounts of cleavage to be shown[if C is crotch-ripped], and at the crotch to allow entrance to anything that desires so[end if].".
 
 To say ShortDesc of (C - green monokini):
 	say "green swimsuit".

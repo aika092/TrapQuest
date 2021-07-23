@@ -376,7 +376,7 @@ hole-gatling-fuck is hole-in-wall punishment.
 Definition: hole-gatling-fuck is appropriate:
 	if diaper focus is 0 and there is ass covering untearable clothing, decide no;
 	if the player-reaction of the player is not resisting, decide no;
-	if hole-in-wall-turns + hole-in-wall-resists > a random number between 11 and 30, decide yes;
+	if hole-in-wall-turns + (hole-in-wall-resists * 3) > a random number between 11 and 30, decide yes;
 	decide no.
 hole-in-wall has a number called gatling-girth.
 To decide which number is the girth of (H - hole-in-wall):

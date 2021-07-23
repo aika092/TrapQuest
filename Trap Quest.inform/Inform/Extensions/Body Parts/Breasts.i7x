@@ -862,12 +862,7 @@ To Milkup (X - a number):
 	if the milk volume of breasts >= the milk capacity of breasts and a random number between 1 and 2 is 1 and (the milk volume of breasts > 5 or the player is top heavy), say "[one of][variable custom style]I really need a [if the bimbo of the player > 5]good [end if]milking![roman type][line break][or][or][cycling]".
 
 To 2Milkup:
-	let X be 0;
-	if fast breast expansion is 0 and extreme proportions fetish is 0, now X is 1;
-	if fast breast expansion is 0 and extreme proportions fetish is 1, now X is a random number from 1 to 2;
-	if fast breast expansion is 1 and extreme proportions fetish is 0, now X is a random number from 1 to 2;
-	if fast breast expansion is 1 and extreme proportions fetish is 1, now X is 2;
-	increase the milk volume of breasts by X;
+	increase the milk volume of breasts by 1;
 	compute bra strain;
 
 To MilkDown (X - a number):

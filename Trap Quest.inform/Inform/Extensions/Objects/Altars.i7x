@@ -233,6 +233,16 @@ Carry out praying something with:
 	otherwise if the second noun is the hotel altar:
 		DevilPray the noun.
 
+
+To compute unique teleportation to (R - Mansion23):
+	unless the player is flying:
+		say "You have appeared in mid-air a few inches above the dark altar! Uh-oh. You fall down onto it!";
+		if the charge of elder altar <= 0:
+			ElderOffer;
+			force commence doom;
+		otherwise:
+			say "Nothing happens.".
+
 [!<AltarPrayThing>+
 
 Determines how the dungeon altar will handle an item, "T", that has been placed on it
@@ -549,14 +559,14 @@ To ElderEmpower (T - flower hairclip):
 
 To ElderEmpower (T - runic headband):
 	let R be ritual-beads;
-	if R is actually summonable and R is off-stage and the player is the donator:
+	if R is actually summonable and R is off-stage:
 		say "You feel your [asshole] being forced open as a [ShortDesc of R] materialises in your ass.";
 		summon R cursed;
 		reset elder altar.
 
 To ElderEmpower (T - a cultist veil):
 	let R be ritual-beads;
-	if R is actually summonable and R is off-stage and the player is the donator:
+	if R is actually summonable and R is off-stage:
 		say "You feel your [asshole] being forced open as a [ShortDesc of R] materialises in your ass.";
 		summon R;
 		now R is cursed;

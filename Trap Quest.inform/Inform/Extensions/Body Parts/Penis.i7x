@@ -148,7 +148,10 @@ Determines whether a piece of clothing can cover the player's penis. Does NOT ch
 Definition: a clothing (called C) is potentially penis covering:
 	if C is skirted crotch-in-place clothing:
 		if there is pussy covering unskirted clothing, decide yes; [your penis is propped up, so it's concealed by all skirts.]
-		if the size of penis <= the penis-capacity of C, decide yes; [if the skirt is long enough, it protects you]
+		if penis is penis-erect:[erect penises are twice as hard to cover]
+			if the size of penis <= the penis-capacity of C / 2, decide yes;
+		otherwise:
+			if the size of penis <= the penis-capacity of C, decide yes; [if the skirt is long enough, it protects you]
 	otherwise if C is potentially pussy covering clothing:
 		if the size of penis <= the penis-capacity of C, decide yes;
 	decide no.
@@ -161,6 +164,7 @@ Definition: a diaper is potentially erection concealing: decide yes.
 Definition: a clothing is potentially penis concealing:
 	if it is actually dense and it is potentially penis covering and (penis is not penis-erect or the size of penis < 3 or it is potentially erection concealing), decide yes;
 	decide no.
+[Erections can show up as "tents" in skirts or dresses or even less discretely for some tighter clothing. However, as long as the player's penis isn't sticking all the way out (making it uncovered) then the clothing should still count as partial concealment.]
 Definition: a clothing is potentially at least partially penis concealing:
 	if it is not see-through and it is potentially penis covering, decide yes;
 	decide no.
@@ -503,8 +507,8 @@ Part 3 - Modify Penis Stats
 previous penis length is a number that varies.
 
 To PenisUp (X - a number):
-	OnlyPenisUp X;
 	if the player is not possessing a vagina or (the player is possessing a vagina and futanari fetish is 1):
+		OnlyPenisUp X;
 		let N be the remainder after dividing X by 2;
 		if N is 1:
 			if X is 1, now X is 1;
@@ -516,7 +520,7 @@ To PenisUp (X - a number):
 
 To OnlyPenisUp (X - a number):
 	now previous penis length is the size of penis;
-	if the player is not possessing a penis and (diaper quest is 0 and (choice in row 68 of the Table of Player Options is 0 or the player is not a june 2020 top donator)) or (diaper quest is 1 and the player is not a june 2020 diaper donator), now X is 0;
+	if the player is not possessing a penis and (choice in row 68 of the Table of Player Options is 0 or the player is not a top donator), now X is 0;
 	if cumlust tattoo is worn:
 		SemenTasteAddictUp X;
 		now X is 0;

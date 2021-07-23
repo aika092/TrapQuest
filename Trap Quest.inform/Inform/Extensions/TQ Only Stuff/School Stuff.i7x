@@ -453,7 +453,7 @@ To compute FriendlySexRelease of (M - teacher-rochelle):
 	if M is willing to let go:
 		say "[BigNameDesc of M] pulls out in a huff.";
 		dislodge M;
-		compute angry punishment of M;
+		consider angry punishment of M;
 		satisfy M;
 	otherwise:
 		say FriendlySexReleaseRefusalFlav of M.
@@ -1031,7 +1031,7 @@ To compute teaching of (L - swimming-lesson):
 		decrease eventTimer by 1;
 		if eventTimer is 0 and the number of entries in LInPool > 0: [Something crazy happens.]
 			say "[bold type]Suddenly the lights turn red and a loud klaxon starts blaring. The timed event that [teacher-name of M] talked about is happening![roman type][line break]";
-			if CPS is clothing and a random number between 1 and 5 > 2: [Swimming condoms]
+			if condom fetish is 1 and CPS is clothing and a random number between 1 and 5 > 2: [Swimming condoms]
 				now poolCrazyEvent is 2;
 				say "And then it happens: A sea of unused condoms, not in wrappers, rain from the ceiling. They land in the pool all over, and then begin swimming blindly around like leeches, filling up with [semen] from the pool as they move. ";
 				if yourself is listed in LInPool and the number of entries in LInPool is 1: [Player is the only person in the pool]
@@ -1272,7 +1272,7 @@ To render chess state:
 
 To compute teaching of (L - chess-lesson):
 	let M be the lesson-teacher of L;
-	say "[speech style of M]'The headmistress [one of]has told me it's time for another game of high-stakes speed chess in front of the whole school. I need two brave pink diamond students who can handle some really humiliating situations and are willing to risk becoming the most disrespected person in the entire school[or]still wants [his of headmistress] speed chess event[stopping]. Are any of you up for the challenge?'[roman type][line break][BigNameDesc of M] holds [his of M] hands together, waiting patiently[one of] as [his of M] eyes rove across each member of the student body in turn. You feel a pressure to volunteer as his gaze moves closer and closer to you.  You want to look away but feel paralysed.  What if there's a punishment for avoiding [his of M] knowing stare?[or]. Once again you feel paralysed as his gaze sweeps the student body.[stopping]";
+	say "[speech style of M]'The headmistress [one of]has told me it's time for another game of high-stakes speed chess in front of the whole school. I need two brave pink diamond students who can handle some really humiliating situations and are willing to risk becoming the most disrespected person in the entire school[or]still wants [his of headmistress] speed chess event[stopping]. Are any of you up for the challenge?'[roman type][line break][BigNameDesc of M] holds [his of M] hands together, waiting patiently[one of] as [his of M] eyes rove across each member of the student body in turn. You feel a pressure to volunteer as his gaze moves closer and closer to you. You want to look away but feel paralysed. What if there's a punishment for avoiding [his of M] knowing stare?[or]. Once again you feel paralysed as his gaze sweeps the student body.[stopping]";
 	let ST be a random promotable student in the location of the player;
 	if ST is nothing, now ST is a random student in the location of the player;
 	say "After a couple of moments [NameDesc of ST] rises to [his of ST] feet, audibly gulping but with a serious and determined expression on [his of ST] face. But nobody else seems willing to join [him of ST]. It looks like this 'high-stakes speed chess' game is only going to happen if you volunteer to be [NameDesc of ST][']s opponent. Do you take up the challenge? ";

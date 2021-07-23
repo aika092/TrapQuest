@@ -16,9 +16,9 @@ A later time based rule:
 				let P be a random slutty sister;
 				if diaper quest is 1 or a random number between 1 and 5 > 1:
 					now P is a random real-life patron;[Friend from outside the game]
-					if eye-mask is off-stage and eye-mask is actually summonable and there is a male human intelligent combative monster:
-						say "An [eye-mask] appears on your face!";
-						summon eye-mask cursed;
+					if domino-mask is off-stage and domino-mask is actually summonable and there is a male human intelligent combative monster:
+						say "An [domino-mask] appears on your face!";
+						summon domino-mask cursed;
 						say "[variable custom style]I'm... I'm a superhero[if the player is gendered female]ine[end if]?[roman type][line break]";
 						repeat with M running through male human intelligent combative monsters:
 							say "You suddenly notice that [NameDesc of M] is also wearing an eye mask[one of]! But the sinister sneer on [his of M] face suggests that [he of M] is no hero[or]! You're outnumbered by villains[or][stopping]...";
@@ -69,7 +69,7 @@ To CheckActivation of (C - a video-monitor):
 To beginCall of (C - a video-monitor):
 	let M be the video-caller of C;
 	now the currentlyOn of C is 1;
-	say "[bold type]Suddenly, you hear the sound of your computer making a video call. [roman type]You look up with a start and see that yes indeed, your PC monitor is now wide awake, and with that green calling symbol over a blue background. Moments later, the video call is answered, and [if M is slutty sister]the face of one of the slutty sisters who put you in this game, along with the faces of several unfamiliar people in suits. [otherwise][FriendStatus of M][end if][NewAppearanceReaction of M][NewCircumstanceReaction of M][FriendRespond to M]".
+	say "[bold type]Suddenly, you hear the sound of your computer making a video call. [roman type]You look up with a start and see that yes indeed, your PC monitor is now wide awake, and with that green calling symbol over a blue background. Moments later, the video call is answered, and [if M is slutty sister]the face of one of the Nintendolls who put you in this game, along with the faces of several unfamiliar people in suits. [otherwise][FriendStatus of M][end if][NewAppearanceReaction of M][NewCircumstanceReaction of M][FriendRespond to M]".
 
 To say FriendStatus of (M - a monster):[The status of your friend could potentially change]
 	say "the face of your [RelationDesc of M] [MediumDesc of M] is staring back at you. ";
@@ -158,7 +158,7 @@ To compute (M - a slutty sister) protecting against (X - a monster):
 		say FightObserve of M with X.
 
 To say BaseObservationFlav of (M - a slutty sister):
-	say "The slutty sister and the executives continue to watch [one of]you[or]the action[at random].".
+	say "The Nintendoll and the executives continue to watch [one of]you[or]the action[at random].".
 
 To say FightObserve of (M - a slutty sister) with (N - a monster):
 	if the player is prone, say "[speech style of M]'[one of]Once the player is on their knees, that's when the fun REALLY begins. Teehee.'[or]After the subject's fuck or flight response kicks in, all we need to do is restrict their options a little bit, and voila, it's a porno!'[or]See, gentlemen? I told you!'[or]Of course, the pain the subject feels is real, but as you're about to see, so is the pleasure.'[or]Remember, stakeholders: The subject has a safe-word [he of the player] can use to stop the stimulation at any time. Keep that in mind as you watch what happens next.'[at random][roman type][line break][moderateHumiliateReflect]";
@@ -195,7 +195,7 @@ To compute disgraceful event of (C - a video-monitor):
 
 To compute endCall of (C - a video-monitor):
 	let M be the video-caller of C;
-	if eye-mask is worn:
+	if domino-mask is worn:
 		compute HangUpMasked of C with M;
 	otherwise if the video-event of C is not "doing nothing special":
 		if M is real-life patron:
@@ -213,7 +213,7 @@ To compute reset of (C - a video-monitor):
 	now the call-cooldown of C is 300.
 
 To compute HangUpDisgraced of (C - a video-monitor) with (M - a slutty sister):
-	say "[second custom style]'*Great* job, [NameBimbo]! Our investors here think that footage was good enough for a commercial release, so look forward to seeing it once we've got it uploaded. That will be all for now!'[roman type][line break][strongHumiliateReflect]The slutty sister hangs up the call, and the [MediumDesc of C] turns off.";
+	say "[second custom style]'*Great* job, [NameBimbo]! Our investors here think that footage was good enough for a commercial release, so look forward to seeing it once we've got it uploaded. That will be all for now!'[roman type][line break][strongHumiliateReflect]The Nintendoll hangs up the call, and the [MediumDesc of C] turns off.";
 	if the number of blank rows in the Table of Published Disgraces > 0:
 		choose a blank row in Table of Published Disgraces;
 		now the content entry is the substituted form of "an HD video of you [the video-event of C]";
@@ -226,7 +226,7 @@ To compute HangUpDisgraced of (C - a video-monitor) with (M - a slutty sister):
 		now the timestamp entry is earnings.
 
 To compute HangUpUndisgraced of (C - a video-monitor) with (M - a slutty sister):
-	say "[second custom style]'Alright, good job, [NameBimbo]. That will be all for now!'[roman type][line break]The slutty sister hangs up the call, and the [MediumDesc of C] turns off.".
+	say "[second custom style]'Alright, good job, [NameBimbo]. That will be all for now!'[roman type][line break]The Nintendoll hangs up the call, and the [MediumDesc of C] turns off.".
 
 To compute HangUpMasked of (C - a video-monitor) with (M - a monster):
 	if the video-event of C is not "doing nothing special":
@@ -262,7 +262,7 @@ To decide which figure-name is the examine-image of (C - pc-monitor):
 
 To say ExamineDesc of (C - pc-monitor):
 	let V be the video-caller of C;
-	say "A monitor sits on the desk at the end of your room. [if the video-caller of C is the throne]It is currently displaying [SlideDesc (currentSlide of C)][otherwise if V is slutty sister]You are currently in a video call with a slutty sister and several executives.[otherwise]You are currently in a video call with [MediumDesc of V], your [RelationDesc of V].[end if]".
+	say "A monitor sits on the desk at the end of your room. [if the video-caller of C is the throne]It is currently displaying [SlideDesc (currentSlide of C)][otherwise if V is slutty sister]You are currently in a video call with a Nintendoll and several executives.[otherwise]You are currently in a video call with [MediumDesc of V], your [RelationDesc of V].[end if]".
 
 [No humiliation gain, just flavour]
 To say SlideDesc (N - a number):
@@ -278,7 +278,7 @@ To say HumiliatingSlideDesc (N - a number):
 To beginCall of (C - pc-monitor):
 	let M be the video-caller of C;
 	now the currentlyOn of C is 1;
-	say "[bold type]Suddenly, you hear the sound of your computer making a video call. [roman type]You look up with a start and see that yes indeed, your PC monitor is now wide awake, and with that green calling symbol over a blue background. Moments later, the video call is answered, and [if M is slutty sister]the face of one of the slutty sisters who put you in this game, along with several unfamiliar people in suits appear. [otherwise][FriendStatus of M][end if][NewAppearanceReaction of M][NewCircumstanceReaction of M][FriendRespond to M]".
+	say "[bold type]Suddenly, you hear the sound of your computer making a video call. [roman type]You look up with a start and see that yes indeed, your PC monitor is now wide awake, and with that green calling symbol over a blue background. Moments later, the video call is answered, and [if M is slutty sister]the face of one of the Nintendolls who put you in this game, along with several unfamiliar people in suits appear. [otherwise][FriendStatus of M][end if][NewAppearanceReaction of M][NewCircumstanceReaction of M][FriendRespond to M]".
 
 [There is a pc-monitor in Mansion02. ]
 
@@ -299,7 +299,7 @@ doom quest failed
 ]
 
 To say ExamineDesc of (C - a crystal-monitor):
-	say "A flat sheet of magic crystal, which reminds you of a computer monitor. [if the video-caller of C is a slutty sister]It is currently hosting a video call with one of the slutty sisters who put you in this game.[otherwise if the video-caller of C is not the throne]It is currently hosting a video call with your [RelationDesc of the video-caller of C] [MediumDesc of the video-caller of C].[otherwise if the currentlyOn of C > 0]It has come to life, emitting tiny pink and white sparks as a blurry image flickers on the surface. It's too unfocused for you to make anything out.[otherwise]It looks inert, but maybe it will respond to a powerful source of magic?[end if]".
+	say "A flat sheet of magic crystal, which reminds you of a computer monitor. [if the video-caller of C is a slutty sister]It is currently hosting a video call with one of the Nintendolls who put you in this game.[otherwise if the video-caller of C is not the throne]It is currently hosting a video call with your [RelationDesc of the video-caller of C] [MediumDesc of the video-caller of C].[otherwise if the currentlyOn of C > 0]It has come to life, emitting tiny pink and white sparks as a blurry image flickers on the surface. It's too unfocused for you to make anything out.[otherwise]It looks inert, but maybe it will respond to a powerful source of magic?[end if]".
 
 [The ancient monitor is only on if ]
 
@@ -309,7 +309,7 @@ Definition: a crystal-monitor is video-callable:
 
 To beginCall of (C - crystal-monitor):
 	let M be the video-caller of C;
-	say "[bold type]Suddenly, you hear the sound of a video call coming from the magical computer. [roman type]You look over at the monitor, and see the flickering image on the screen has changed to a green calling symbol over a blue background. Moments later, the video call is answered, and [if M is slutty sister]the face of one of the slutty sisters who put you in this game, along with several unfamiliar people in suits appear. [otherwise][FriendStatus of M][end if][NewAppearanceReaction of M][NewCircumstanceReaction of M][FriendRespond to M]".
+	say "[bold type]Suddenly, you hear the sound of a video call coming from the magical computer. [roman type]You look over at the monitor, and see the flickering image on the screen has changed to a green calling symbol over a blue background. Moments later, the video call is answered, and [if M is slutty sister]the face of one of the Nintendolls who put you in this game, along with several unfamiliar people in suits appear. [otherwise][FriendStatus of M][end if][NewAppearanceReaction of M][NewCircumstanceReaction of M][FriendRespond to M]".
 
 Section - Security screens
 

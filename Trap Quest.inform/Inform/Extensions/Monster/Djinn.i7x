@@ -150,6 +150,11 @@ To decide which number is the bimbo tolerance of (M - djinn):
 	if interracial fetish is 1, decide on 13;
 	decide on 16.
 
+To compute kneeling reaction of (M - djinn):
+	say "[BigNameDesc of M] crosses [his of M] many arms.[line break][speech style of M]'[one of]So, you have finally come to your senses.'[or]You are only a mortal, I suppose.'[or]Quitting while ahead? Suprising, for a mortal.'[or]So even mortals can recognize battles they cannot win.'[at random][roman type][line break]";
+	if the player is not shameless, say " You shiver with shame.";
+	strongHumiliate.
+
 Part 3 - Djinn Wishing
 
 To compute djinn wishing of (M - a monster):

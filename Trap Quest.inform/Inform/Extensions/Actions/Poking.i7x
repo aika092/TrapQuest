@@ -17,9 +17,11 @@ To compute poking of (M - a monster):
 	say "You poke [NameDesc of the noun][if handU is 0] with your nose[end if].";
 	if the noun is awake or the noun is defeated:
 		now the boredom of the noun is 0;
-		FavourDown the noun;
+		if the noun is not student, FavourDown the noun with consequences;
 		if the noun is interested:
-			say "[BigNameDesc of the noun] [if the noun is intelligent and the noun is unfriendly]is unaffected[otherwise if the noun is intelligent]seems confused but doesn't say anything[otherwise]ignores you[end if].";
+			if the noun is student and the noun is friendly:
+				HappinessDown the noun;
+				if the noun is unfriendly, distract the noun;
 		otherwise if the noun is defeated:
 			if the noun is awake:
 				say "[BigNameDesc of the noun] is now [if the noun is fucked-silly]somewhat aware of your presence[otherwise]paying attention to you[end if].";
@@ -34,7 +36,7 @@ To compute poking of (M - a monster):
 					say "[BigNameDesc of the noun] is now paying attention to you.";
 					now woman-player is interested;
 			otherwise:
-				compute correct perception of the noun;
+				check guaranteed perception of the noun;
 	otherwise:
 		say "[BigNameDesc of M] wakes up, startled!";
 		now the sleep of M is 0;

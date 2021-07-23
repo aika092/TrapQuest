@@ -48,10 +48,13 @@ Definition: demon horns is black themed:
 
 Chapter - Class Outfit
 
-Definition: demon horns (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
+[
+###MG: The soulstone and demon horns have an opposite relationship in comparison to most other class items. The soulstone has to be removed before the demon horns are removed.
+Definition: demon horns (called C) is removal-blocking:
 	if soulstone is worn and C is wearing-target, decide yes;
 	if wearing-target is soulstone, decide yes;
 	decide no.
+]
 
 Definition: demon horns is removable:
 	if soulstone is worn, decide no;

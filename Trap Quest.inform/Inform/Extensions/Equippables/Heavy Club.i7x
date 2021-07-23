@@ -43,9 +43,7 @@ To decide which number is the slap damage improvement of (W - heavy-club):
 
 To compute periodic effect of (G - heavy-club):
 	let S be the body soreness of the player;
-	if the player is not the donator:
-		do nothing;
-	otherwise if rugged-headband is not worn:
+	if rugged-headband is not worn:
 		say "[bold type]You aren't strong enough to carry the [printed name of G][bold type]! It falls out of your hands with a resounding thud.[roman type][line break]";
 		now the charge-status of G is 0;
 		now G is in the location of the player;

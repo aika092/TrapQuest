@@ -33,12 +33,20 @@ To teleport to (R - a room):
 		if T is held, say "[bold type][BigNameDesc of T] [bold type]is ripped from your hands by an invisible force, and in your mind's eye you can see that it has been taken to the 'Trophy Hall'![roman type][line break]";
 		now T is in School31;
 	if the player is glue stuck, compute raw glue escaping a random glue in the location of the player with 1;[this may be causing lag]
-	now the player is in R;
+	if iron-maiden is in R:
+		now the player is in Iron Maiden;
+		say "Everything goes dark. Your arms are trapped in an arched position above your head. There's cushioning all around you. Wait... Are you... are you back in the Iron Maiden?![line break][variable custom style]Oh no![roman type][line break]";
+		now iron-maiden is not untriggered;
+		now iron-maiden is revealed;
+		now iron-maiden is expired;
+		now iron-maiden-turns is 0;
+	otherwise:
+		now the player is in R;
 	zero focus stuff; [Location has changed so we need to empty the location window]
 	now the location of the player is discovered;
 	update player region;
 	if map images > 0, display entire map;
-	compute unique teleportation to R.
+	if player-dragger is not yourself, compute unique teleportation to R.
 
 To drag to (R - a room) by (M - a thing):[TODO: player can't be dragged when stuck unless the circumstances are special.]
 	compute glue-freeing by M;

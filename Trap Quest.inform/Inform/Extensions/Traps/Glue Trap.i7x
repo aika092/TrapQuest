@@ -588,7 +588,7 @@ To compute the mutation effects of (G - a glue):
 					otherwise if X is 3:
 						now C is a random off-stage black rubber skirt;
 					otherwise if X is 4:
-						now C is a random off-stage ballet heels;
+						if ballet heels is off-stage, now C is ballet heels;
 					otherwise if X is 5 and black-catsuit is off-stage:
 						now C is black-catsuit;
 					otherwise if X is 6 and black fetish hobble dress is off-stage:
@@ -852,22 +852,40 @@ Carry out tearing off worn clothing:
 			now C is not glued;
 			now glueTries is 0;
 		otherwise:
-			say "You get more of it free before the pain gets too much. You should keep trying a bit later!";
+			if C is hugger-gag or C is hugger-panties:
+				say "You get more of it free before it gets too excited. You should keep trying a bit later!";
+				increase the charge of C by 4;
+			otherwise:
+				say "You get more of it free before the pain gets too much. You should keep trying a bit later!";
 			now gluePainThreshold is the delicateness of the player + 2;
 			increase glueTries by 1;
 	otherwise:
-		say "You are unable to peel it gently enough to get the item off without it tugging at your skin this time. Ouch! That hurts, and it's tearing the [ShortDesc of C].";
+		if C is hugger-panties or C is hugger-gag:
+			say "You are unable to peel it off gently enough to get the creature to let go without agitating it, and every moment you spend touching it just seems to make it fuck you even harder!";
+			increase the charge of C by 4;
+		otherwise:
+			say "You are unable to peel it gently enough to get the item off without it tugging at your skin this time. Ouch! That hurts, and it's tearing the [ShortDesc of C].";
 		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 		set numerical response 1 to "decide to try to remove it gently again a bit later[if newbie tips is 1] (dexterity based chance each time)[end if]";
-		if newbie tips is 1, set numerical response 2 to "try to remove it with brute strength (causes pain[if C is crotch-intact or C is crotch-zipped or C is crotch-skirted] and a chance of ripping each time, but guaranteed to unstick the glue within a few tries[end if])";
-		otherwise set numerical response 2 to "try to remove it with brute strength";
+		if C is hugger-panties or C is hugger-gag:
+			if newbie tips is 1, set numerical response 2 to "try to remove it with brute strength (causes pain and will make it excited, but guaranteed to make it let go within a few tries)";
+			otherwise set numerical response 2 to "try to remove it with brute strength";
+		otherwise:
+			if newbie tips is 1, set numerical response 2 to "try to remove it with brute strength (causes pain[if C is crotch-intact or C is crotch-zipped or C is crotch-skirted] and a chance of ripping each time[end if], but guaranteed to unstick the glue within a few tries)";
+			otherwise set numerical response 2 to "try to remove it with brute strength";
 		compute multiple choice question;
 		if player-numerical-response is 2:
 			say "Ouch! That really hurt!";
 			PainUp 1;
 			repeat with F running through fuckholes penetrated by the noun:
 				ruin F;
-			if C is not rigid:
+			if C is hugger-gag or C is hugger-panties:
+				say "The creature goes into a frenzy!";
+				let N be 0;
+				while C is worn and N < 6:
+					increase N by 1;
+					compute periodic effect of C;
+			otherwise if C is not rigid:
 				if C is crotch-intact or C is crotch-zipped or C is crotch-skirted:
 					say "Oh... and the glue had adhered so strongly you hear a tearing sound...";
 					if C is rippable:
@@ -876,6 +894,8 @@ Carry out tearing off worn clothing:
 					otherwise:
 						say "You damage the [C].";
 						damage C;
+			unless C is worn:
+				do nothing;[Facehugger can fall off by itself]
 			if glueTries > 2 or a random number between 1 and 5 <= glueTries:
 				say "But yes! You managed to carefully tear the [ShortDesc of C] free.";
 				now C is not glued;

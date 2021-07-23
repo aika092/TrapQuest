@@ -333,6 +333,9 @@ a later time based rule (this is the explaining silicone rule):
 		say "[bold type]Now that you are no longer the 'silicone queen' class, you sense that the bonus dexterity from having large plastic breasts has left you.[roman type][line break]".
 
 This is the latex fetish model class rule:
+	if wrestler-hood is worn:
+		now player-class is "latex fetish wrestler";
+		rule succeeds;
 	if rubber-baby-bonnet is worn:
 		now player-class is "latex fetish baby";
 		rule succeeds;
@@ -364,7 +367,8 @@ This is the human toilet class rule:
 		rule succeeds.
 The human toilet class rule is listed in the player class rules.
 Definition: a text (called T) is human toilet:
-	if T matches the text "toilet", decide yes;
+	if watersports fetish is 0, decide no;
+	if T matches the text "toilet" or T matches the text "wrestler", decide yes;
 	decide no.
 
 toiletExplained is initially false.
@@ -859,7 +863,7 @@ The superhero class. Spawns just before a video call starts.
 
 +!]
 This is the superhero class rule:
-	if eye-mask is worn:
+	if domino-mask is worn:
 		now the player-class is "superhero[if the player is presenting as female]ine[end if]";
 		if anime superheroine top is worn, now player-class is "plastigirl";
 		rule succeeds.
@@ -871,7 +875,7 @@ Thanks to the various superhero multi-classes, we have multiple different texts 
 
 +!]
 Definition: a text is superhero:
-	if it matches the text "superhero" or it matches the text "plastigirl", decide yes;
+	if it matches the text "superhero" or it matches the text "plastigirl" or it matches the text "wrestler", decide yes;
 	decide no.
 
 superheroExplained is initially false.

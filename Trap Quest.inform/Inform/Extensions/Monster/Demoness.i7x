@@ -1467,9 +1467,9 @@ To compute (M - a demoness) pulling out of (F - vagina):
 		otherwise compute M cleanly pulling out of F;
 	otherwise:
 		get clean pull out image of M in F;
-		say "You struggling pays off and [NameDesc of M]'s [DickDesc of M] pops out of your [vagina] at just the right moment, causing [his of M] [semen] to shoot out all over the ground.";
+		say "You struggling pays off and [NameDesc of M][']s [DickDesc of M] pops out of your [vagina] at just the right moment, causing [his of M] [semen] to shoot out all over the ground.";
 		SemenPuddleUp the semen load of M;
-		compute angry punishment of M.
+		consider angry punishment of M.
 
 To say MessyPullOutFlav of (M - a demoness) in (F - vagina):
 	say "[BigNameDesc of M] pulls out and immediately jams [his of M] [manly-penis] in your [asshole], flooding it with [semen] in only a few short pumps. [if the excitement of M > 3]It's thick, hot and in seemingly endless supply, thoroughly coating the inside of your belly as [he of M] pulls out with a hearty sigh[otherwise]It's thick and very hot, coating the inside of your belly in a warmth that lasts long after [he of M] pulls out[end if].".

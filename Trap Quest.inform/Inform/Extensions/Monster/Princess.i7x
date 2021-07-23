@@ -4,6 +4,9 @@ ex-princess is a monster. ex-princess is intelligent. ex-princess is caged. ex-p
 
 ex-princess has a number called princess-power.
 
+To say speech style of (M - ex-princess):
+	say second custom style.
+
 The text-shortcut of ex-princess is "pri".
 Figure of original princess is the file "NPCs/MultiFloor/Princess/princess1.jpg".
 Figure of original diapered princess is the file "NPCs/MultiFloor/Princess/princess2.jpg".
@@ -13,7 +16,25 @@ Figure of original princess combat is the file "NPCs/MultiFloor/Princess/princes
 Figure of original diapered princess combat is the file "NPCs/MultiFloor/Princess/princess6.jpg".
 Figure of temporary caged princess is the file "NPCs/MultiFloor/Princess/cage5.jpg".
 
+Figure of princess final battle piss box is the file "NPCs/MultiFloor/Princess/cutscene-princess-final-battle1.jpg".
+Figure of princess final battle pit is the file "NPCs/MultiFloor/Princess/cutscene-princess-final-battle2.jpg".
+Figure of princess final battle food is the file "NPCs/MultiFloor/Princess/cutscene-princess-final-battle3.jpg".
+Figure of princess final battle inflation is the file "NPCs/MultiFloor/Princess/cutscene-princess-final-battle5.jpg".
+Figure of princess final battle harness is the file "NPCs/MultiFloor/Princess/cutscene-princess-final-battle6.jpg".
+
+
 To decide which figure-name is the monster-image of (M - ex-princess):
+	if M is unleashed: [dark princess]
+		if M is male, decide on figure of dark princess 2;
+		if diaper quest is 0, decide on figure of dark princess 1;
+		if M is penetrating face, decide on figure of princess final battle final chance;
+		if diaper messing < 7:
+			if M is interested, decide on figure of dark princess 2;
+			decide on figure of dark princess 1;
+		otherwise:
+			if M is messy, decide on figure of dark princess 5;
+			if M is interested, decide on figure of dark princess 4;
+			decide on figure of dark princess 3;
 	if M is caged:
 		if diaper quest is 1:
 			if diaper messing >= 7, decide on figure of caged pail princess messy;
@@ -21,7 +42,14 @@ To decide which figure-name is the monster-image of (M - ex-princess):
 		if watersports fetish is 0, decide on figure of temporary caged princess;
 		if the current-torment of M > 0, decide on figure of caged urinal princess piss;
 		decide on figure of caged urinal princess;
-	if M is in School35 and glittery-wand is carried by M and glittery-wand is cursed:
+	if M is guarding:
+		if current-final-battle-object is final-battle-imp-piss, decide on Figure of princess final battle piss box;
+		if current-final-battle-object is final-battle-pit, decide on Figure of princess final battle pit;
+		if current-final-battle-object is final-battle-food, decide on Figure of princess final battle food;
+		if current-final-battle-object is final-battle-plug, decide on Figure of princess final battle plug;
+		if current-final-battle-object is final-battle-harness, decide on Figure of princess final battle harness;
+		if current-final-battle-object is final-battle-final-chance, decide on figure of princess final battle final chance;
+	if (M is in School35 and glittery-wand is carried by M and glittery-wand is cursed) or (M is guarding and current-final-battle-object is final-battle-wand-curse):
 		if diaper lover > 0, decide on figure of original diapered princess combat;
 		decide on figure of original princess combat;
 	if diaper lover > 0, decide on figure of original diapered princess;
@@ -35,7 +63,7 @@ To say ShortDesc of (M - ex-princess):
 	say "princess".
 
 To say MediumDesc of (M - ex-princess):
-	say "[if M is caged]imprisoned[otherwise if M is defeated]enslaved[otherwise]original[end if] princess".
+	say "[if M is caged]imprisoned[otherwise if M is defeated]enslaved[otherwise if M is unleashed]dark[otherwise]original[end if] princess".
 
 To say MonsterDesc of (M - ex-princess):
 	if M is caged:
@@ -63,11 +91,21 @@ To say MonsterDesc of (M - ex-princess):
 	otherwise if M is defeated:
 		if M is diaper-enslaved, say "The [man of M] who used to be a proud powerful [ShortDesc of M] has been reduced to a long haired baby-bottle sucking bimbo, who wanders the school aimlessly with a calm vacant look on [his of M] face.";
 		otherwise say "The princess has lost all power and all will to fight back against [his of M] captors. [big he of M] lies on [his of M] back, fully naked except for [his of M] tiara, [his of M] hands magically stuck to [his of M] asscheeks, unable to remove [his of M] knees from behind [his of M] shoulders, making it look like [he of M][']s begging anyone and everyone [he of M] sees to ruin [his of M] asshole. [big his of M] buttcheeks have been magically enhanced, and are now triple the size they first were when you met [him of M].";
+	otherwise if M is unleashed: [dark princess]
+		say "This is not the princess you first met. Unfortunately, [he of M] is gone forever. Left behind is this corrupted, dark form. [big he of M] has red hair and a purple and black dress in the same style as [his of M] old pink dress, with a parting at the front which draws your eyes to [his of M] crotch. ";
+		if M is male:
+			say "Here, a huge thick [if lady fetish < 2]futa [end if]cock swings side to side menacingly, dripping precum from the massive balls dangling behind it.";
+		otherwise if diaper quest is 0:
+			say "[big his of M] pussy is dripping wet with excitement, creating a little pitter-patter sound as [his of M] vaginal juices gradually create a little puddle between [his of M] feet.";
+		otherwise if diaper messing < 7:
+			say "[big he of M] is [if M is interested]diapered, and you can tell from the large yellow stain that it is soak to capacity with [urine][otherwise]in a fresh plain diaper[end if].";
+		otherwise:
+			say "[big he of M] is in a giant diaper, [if M is messy]full to the brim with inhuman amounts of stinking shit which has stained the entire garment a dark shade of brown[otherwise if M is interested]and you can tell from the large yellow stain that it is soak to capacity with [urine][otherwise]plain whte but stupidly thick, and as far as you can tell, currently unused[end if].";
 	otherwise:
 		say "The original princess that rules the dungeons of Bimbacia wears a regal pink silk dress, with a very low neckline and a skirt with a deep slit at the front. [big his of M] outfit seems to be magically fixed to this exact appearance, and no matter how much [he of M] pulls, the skirt of the dress refuses to be pulled any further forward than [his of M] sides, meaning that [his of M] [if diaper lover > 0]heavily diapered crotch[otherwise]bare pussy[end if] is kept fully visible from the front at all times.".
 
 To say MonsterComment of (M - ex-princess):
-	say "[line break][variable custom style][one of][big he of M] looks important. I wonder if [he of M] would reward me if I helped break [him of M] out of here...[or]Poor thing is still trapped here. Are they going to keep [him of M] here like this forever?[stopping][roman type][line break]".
+	if M is caged, say "[line break][variable custom style][one of][big he of M] looks important. I wonder if [he of M] would reward me if I helped break [him of M] out of here...[or]Poor thing is still trapped here. Are they going to keep [him of M] here like this forever?[stopping][roman type][line break]".
 
 To set up (M - ex-princess):
 	now the monstersetup of M is 1;
@@ -85,7 +123,9 @@ Definition: ex-princess is able to remove cursed plugs: decide yes.
 
 Definition: ex-princess is butt slut immune: decide yes.
 
-Definition: ex-princess is uniquely unfriendly: decide no.
+Definition: ex-princess is uniquely unfriendly:
+	if it is unleashed, decide yes; [dark princess]
+	decide no.
 
 To decide which number is the aggro limit of (M - an ex-princess): [The number at which they turn unfriendly]
 	decide on -999999.
@@ -103,7 +143,10 @@ To decide which number is the bab tolerance of (M - ex-princess):
 To compute perception of (M - ex-princess):
 	now M is interested;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]"; [The output for clothing humiliation takes place within the 'sluttily dressed' check.]
-	if the times-met of M is 0:
+	if M is unleashed:
+		if diaper quest is 1, say "A loud hiss fills the room, as [he of M] audibly fills [his of M] diaper to the brim with highly concentrated [urine]. As the tell-tale yellow stain spreads across the white plastic, an sadistic smile spreads across [his of M] face.";
+		say "[speech style of M]'HEHEHEHEHE!'[roman type][line break][big his of M] laugh sounds completely deranged, but there's clearly something still working correctly in [his of M] mind, because [he of M] adopts a combat stance and prepares to pounce.";
+	otherwise if the times-met of M is 0:
 		say "[big his of M] voice is dry, cracked and very quiet.[line break][speech style of M]'[if the class of the player is princess]Don't tell me... they're replacing me with you?! How cruel. Unless... could it be... my throne sent you here? [otherwise if there is a student in the location of the player]Have you come here to torment me? Or deep down, do you have kind hearts? [otherwise]Have you come here to torment me or are you another innocent? [end if][big please]... if you can... find a way to get me out of here, before it's too late...'[roman type][line break]";
 		if prison guard is not in the dungeon, summon prison guard in the dungeon;
 	otherwise if M is caged:
@@ -153,7 +196,7 @@ To compute (M - ex-princess) protecting against (X - a monster):
 		destroy X;
 	otherwise if M is unconcerned and the player is upright:
 		compute M standard fighting against X;
-	otherwise:
+	otherwise if X is not demon lord:
 		compute default protecting of M.
 
 To compute (M - ex-princess) standard fighting against (X - a royal guard):
@@ -182,6 +225,63 @@ To compute (M - a monster) stomping (N - ex-princess): [TODO: Different interact
 		compute mandatory room leaving of N;
 		now N is moved;
 		now the health of M is 1.
+
+This is the princess facesitting prevents breathing rule:
+	if diaper quest is 0 and ex-princess is female and ex-princess is penetrating face, decide yes;
+	decide no.
+The princess facesitting prevents breathing rule is listed in the breathing blocking rules.
+
+A breathing blocking decision rule (this is the consider breathing through princess padding rule):
+	if diaper quest is 1 and ex-princess is penetrating face:
+		say "Your nose and mouth is engulfed in [NameDesc of ex-princess][']s [if ex-princess is messy]messy[otherwise]soggy[end if] padding. ";
+		now breathing-this-turn is false.
+
+A breathing consequences rule (this is the consequences for breathing through princess padding rule):
+	if diaper quest is 1 and ex-princess is penetrating face:
+		say "You are forced to smell the pungent aroma of [NameDesc of ex-princess][']s [if ex-princess is messy]stinky[otherwise][urine]-soaked[end if] diaper.";
+		if ex-princess is messy or a random number between 1 and 20 >= the raw delicateness of the player, DelicateUp 1.
+
+To say MouthPenetrationFlav of (M - ex-princess):
+	if M is male:
+		say DefaultMouthPenetrationFlav of M;
+	otherwise:
+		say "[BigNameDesc of M] effortlessly rolls you onto your back and engulfs your face with [his of M] [if diaper quest is 1]padded [end if]crotch. You won't be able to breathe except through [his of M] padding until [he of M] is finished with you!";
+		if diaper messing >= 7, say "And then the worst thing imaginable happens. As soon as [NameDesc of M] has made [himself of M] comfortable on your face, [he of M] unleashes hell from [his of M] bowels. A fountain of rancid filth spews from [his of M] pooper, bubbling and gurgling noisily as it quickly spreads to fill every inch of [his of M] diaper.";
+		if sex-length of M < 3, now sex-length of M is 2.
+
+To compute facial sex of (M - ex-princess):
+	if diaper quest is 1:
+		compute diaper facesit sex of M;
+	otherwise if M is male:
+		compute default facial sex of M;
+	otherwise:
+		compute facesit sex of M.
+
+To compute diaper facesit sex of (M - ex-princess):
+	if the reaction of the player > 0, humiliate 200;
+	TimesSubmittedUp M by 1;
+	decrease the sex-length of M by 1;
+	if the diaper addiction of the player >= 10:
+		let N be the diaper addiction of the player / 5;
+		passively stimulate face from M times N;
+	if the reaction of the player > 0:
+		say "[one of]You lie still and save your energy[or]You don't attempt to escape from your position underneath [his of ex-princess] diapered bottom[or]You try to relax and accept what is happening to you[in random order]. [moderateHumiliateReflect]";
+	otherwise:
+		say "[one of]You refuse to sit still as you are degraded like this! You struggle, failing to push [him of M] off you as [he of M] bounces [his of M] padded behind on your face. [or]You continue trying to fight [him of M], failing miserably to do any damage as [he of M] continues to grind [his of M] diapered bottom against you. [or]You simply won't give in! You throw your head from side to side, trying to get out. [or]You flail helplessly with your arms and legs! At least it proves to anyone watching that you're not happy about what's happening... [in random order]";
+	if there is a worn diaper:
+		say "[BigNameDesc of M] [one of]thoroughly rubs and mashes[or]cackles as [he of M] squishes [his of M] hands down on the outside of[or]massages[stopping] your [if there is a worn perceived messed diaper]messy [end if]diaper with [his of M] hands.";
+		stimulate vagina from M.
+
+The princess continue sex rules is a rulebook. The continue sex rules of ex-princess is the princess continue sex rules.
+
+This is the princess extra continue sex check rule:
+	follow the check normal continue sex stuff rule;
+	if the rule succeeded, rule succeeds;
+	if current-monster is penetrating face:
+		compute punishment of diaper-facesit;
+		rule succeeds.
+The princess extra continue sex check rule is listed in the princess continue sex rules.
+
 
 Part 4 - Conversation
 
@@ -215,7 +315,7 @@ To say SubmissiveResponse of (M - ex-princess):
 Section 2 - Questioning
 
 Definition: ex-princess is fluff-question-appropriate:
-	if it is not caged and it is undefeated and princess-rewarded is true, decide yes;
+	if it is not caged and it is not unleashed and it is undefeated and princess-rewarded is true, decide yes;
 	decide no.
 
 talk-princess-question is a talk-object. ex-princess has a number called question-sequence.
@@ -300,7 +400,7 @@ To say AdviceQuestion of (M - ex-princess):
 	if playerRegion is mansion:
 		if vampiress is alive, now B is vampiress;
 		if herald is alive, now B is herald;
-	if B is a slutty sister, say "[variable custom style]'How do I defeat the slutty sisters?'[roman type][line break]";
+	if B is a slutty sister, say "[variable custom style]'How do I defeat the Nintendolls?'[roman type][line break]";
 	otherwise say "[variable custom style]'How do I defeat the [ShortDesc of B]?'[roman type][line break]".
 
 To say AdviceAnswer of (M - ex-princess):
@@ -392,12 +492,12 @@ To compute friendly drink of (M - ex-princess):
 		say "[BigNameDesc of M] acts as if [he of M] didn't even hear you.".
 
 To compute unfriendly drink of (M - ex-princess):
-	say "[speech style of M]'Do I look like I'm in a situation where I can be helping others?'[roman type][line break]";
+	say "[speech style of M]'Do I look like I'm [if M is unleashed]going to help you[otherwise]in a situation where I can be helping others[end if]?'[roman type][line break]";
 	now M is interested;
 	now the boredom of M is 0.
 
 Definition: ex-princess is willing to give snacks:
-	if it is not caged and it is not defeated, decide yes;
+	if it is not caged and it is not unleashed and it is not defeated, decide yes;
 	decide no.
 
 Part 5 - Trading
@@ -474,113 +574,114 @@ To compute resolution of (M - ex-princess) taking (T - skeleton key):
 				now the stance of the player is 0;
 
 Check going while ex-princess is guarding:
-	if ex-princess is in the location of the player, say "If you leave [NameDesc of ex-princess] here, [he of ex-princess] might get captured again. You should see this through to the end." instead.
+	if ex-princess is in the location of the player, say "If you leave [NameDesc of ex-princess] here, [he of ex-princess] might get defeated and captured again. You should see this through to the end." instead.
 
 An all later time based rule (this is the school rescue fight rule):
 	if ex-princess is guarding:
 		let M be ex-princess;
 		let R be the location of M;
-		let SMN be the number of alive unleashed staff members + the number of alive guarding staff members;
-		if SMN > 0:
-			if the number of undefeated staff members in the location of M > 0 and (M is not in the location of the player or the player is prone):
-				let N be a random unleashed staff member in the location of M;
-				if M is in the location of the player:
-					say "[speech style of N]'[one of]That's enough. This rebellion is over[or]This is the end[or]Stay down[stopping].'[roman type][line break][BigNameDesc of N] makes a few arcane gestures and ropes of light begin to fly at you and [NameDesc of M].";
-					if a random number between 1 and 8 < the princess-power of M:
-						let T be the substituted form of "I [one of][if interracial fetish is 1]am a [WhiteSub] whose life is dedicated to serving [BlackCock][otherwise]I am a filthy whore whose life is dedicated to serving [manly-penis][end if][or]am a worthless object, my only purpose is to keep my [cunt] warm and ready[or]spend my weekends guzzling [if watersports fetish is 1]piss[otherwise]cock-snot[end if] in men's public toilets[or]am a disgusting fraud of a Princess who fucks [GrossMates][or]need more cum in my [pussy][if pregnancy fetish is 1]! Fuck a baby into me[end if][in random order]";
-						if diaper quest is 1, now T is the substituted form of "I [one of]am dedicated to [if diaper messing >= 3]pooping in Pampers[otherwise]only using diapers[end if] for the rest of my life[or]spend my weekends guzzling [if watersports fetish is 1]piss[otherwise][milk][end if] from my mommy[or]am a worthless baby who can't even make it to the potty in time[or]am a disgusting fraud of a Princess who gets turned on by being treated like a baby[or]need my Mommy[in random order]";
-						say "[speech style of M]'[one of]No[or]I can't go back[or]Not yet[stopping]!'[roman type][line break][BigNameDesc of M] raises [his of M] wand and points it at you. You hear [him of M] reciting the incantation to cast a spell.[line break][speech style of M]'[T]!'[roman type][line break]";
-						if T matches the text "dedicated":
-							say "You feel your body fully heal[if the player is prone], and are raised back to your feet[end if]! But at what cost? You feel significant physical power leaving your body, and you doubt it will return after the fight is done.";
-							BodyHeal 10;
-							StrengthDown 4; [Deliberately harsh.]
-							DexDown 4;
-						otherwise if T matches the text "worthless":
-							say "You feel your body fully heal[if the player is prone], and are raised back to your feet[end if]! But, oh, bad luck: the magic ricochets off of all of your clothing, surrounding it with negative energy!";
-							BodyHeal 10;
-							repeat with C running through worn cursable clothing:
-								decrease the raw-magic-modifier of C by 1;
-						otherwise if T matches the text "guzzling":
-							say "You feel your body mostly heal[if the player is prone], and are raised back to your feet[end if]! But the magic ricochets off of all of your clothing!";
-							BodyHeal 8;
-							repeat with C running through worn transformable clothing:
-								potentially transform C;
-						otherwise if T matches the text "fraud":
-							say "You feel your body significantly heal[if the player is prone], and are raised back to your feet[end if]! But it also feels like there's a dark cloud hanging over you now, like you're going to find yourself getting very unlucky for a while!";
-							BodyHeal 7;
-							decrease the raw luck of the player by 15;
-						otherwise:
-							say "You feel your body slightly heal[if the player is prone], and are raised back to your feet[end if]!";
-							BodyHeal 5;
-						now the stance of the player is 0;
-						now the fatigue of the player is 0;
-						decrease the princess-power of M by 2;
-						if M is carrying royal scepter and the number of undefeated staff members in the location of M > 1 and the princess-power of M >= 10: [should be the first two times]
-							say "[speech style of M]'And fuck you.'[roman type][line break]";
-							compute M enslaving N;
-					otherwise:
-						say "Moments later you are both bound in magical rope, and [NameDesc of M][']s wand has been ripped from [his of M] grip. ";
-						let PSM be the number of pacified staff members in the location of the player;
-						if PSM > 0, say "[BigNameDesc of N] releases [his of N] bound comrade[if PSM > 1]s[end if].";
-				if M is not in the location of the player or the player is prone:
-					repeat with SM running through monsters in the school:
-						now SM is unleashed;
-						unless SM is N or SM is M, regionally place SM;
-					if diaper focus > 0, now M is diaper-enslaved;
-					otherwise now M is sex-enslaved;
-					now M is in School34;
-					compute N dungeon locking;
-		if M is guarding:
-			now the health of M is 1;
-			repeat with SM running through fucked-silly staff members in the location of M:
-				compute M enslaving SM;
-			if headmistress is in the location of M and headmistress is unleashed and (glittery-wand is not carried by M or glittery-wand is not cursed): [Princess fights headmistress herself]
-				compute M enslaving headmistress;
-				if headmistress is in the location of the player and headmistress is not unleashed, say MonsterDesc of headmistress;
-			let NUSM be the number of undefeated staff members in the location of M;
-			if NUSM < a random number between 1 and 2: [A new NPC joins the fray]
-				let LSM be the list of alive guarding staff members;
-				if the number of entries in LSM > 0:
-					sort LSM in random order;
-					let SM be entry 1 in LSM;
-					now SM is unleashed;
-					now SM is in School33;
-					now SM is interested;
-					try SM going north;
-			if the number of undefeated staff members in the location of M is 0:
-				if M is in the location of the player:
-					say "[BigNameDesc of M] folds [his of M] hands in triumph.[line break][speech style of M]'It is done. I have dreamed of this moment for such a long time!'[roman type][line break]With a wave of [his of M] hands, everyone else, including [himself of M], is teleported away.";
-				now M is in Dungeon11;
-				let LN be the list of monsters in the school;
-				let NLN be 1;
-				repeat with N running through LN:
-					if N is defeated:
-						dislodge N;
-						if N is headmistress:
-							now N is in Dungeon11;
-						otherwise if N is receptionist:
-							now N is in School01;
-						otherwise if N is nurse:
-							now N is in School12;
-						otherwise:
-							let PHR be a random unbossed placed haunted room;
-							let PMR be a random unbossed placed modern room;
-							if PHR is a room and the remainder after dividing NLN by 3 is 1:
-								now N is in PHR;
-							otherwise if PMR is a room and the remainder after dividing NLN by 3 is 2:
-								now N is in PMR;
+		if playerRegion is school:
+			let SMN be the number of alive unleashed staff members + the number of alive guarding staff members;
+			if SMN > 0:
+				if the number of undefeated staff members in the location of M > 0 and (M is not in the location of the player or the player is prone):
+					let N be a random unleashed staff member in the location of M;
+					if M is in the location of the player:
+						say "[speech style of N]'[one of]That's enough. This rebellion is over[or]This is the end[or]Stay down[stopping].'[roman type][line break][BigNameDesc of N] makes a few arcane gestures and ropes of light begin to fly at you and [NameDesc of M].";
+						if a random number between 1 and 8 < the princess-power of M:
+							let T be the substituted form of "I [one of][if interracial fetish is 1]am a [WhiteSub] whose life is dedicated to serving [BlackCock][otherwise]I am a filthy whore whose life is dedicated to serving [manly-penis][end if][or]am a worthless object, my only purpose is to keep my [cunt] warm and ready[or]spend my weekends guzzling [if watersports fetish is 1]piss[otherwise]cock-snot[end if] in men's public toilets[or]am a disgusting fraud of a Princess who fucks [GrossMates][or]need more cum in my [pussy][if pregnancy fetish is 1]! Fuck a baby into me[end if][in random order]";
+							if diaper quest is 1, now T is the substituted form of "I [one of]am dedicated to [if diaper messing >= 3]pooping in Pampers[otherwise]only using diapers[end if] for the rest of my life[or]spend my weekends guzzling [if watersports fetish is 1]piss[otherwise][milk][end if] from my mommy[or]am a worthless baby who can't even make it to the potty in time[or]am a disgusting fraud of a Princess who gets turned on by being treated like a baby[or]need my Mommy[in random order]";
+							say "[speech style of M]'[one of]No[or]I can't go back[or]Not yet[stopping]!'[roman type][line break][BigNameDesc of M] raises [his of M] wand and points it at you. You hear [him of M] reciting the incantation to cast a spell.[line break][speech style of M]'[T]!'[roman type][line break]";
+							if T matches the text "dedicated":
+								say "You feel your body fully heal[if the player is prone], and are raised back to your feet[end if]! But at what cost? You feel significant physical power leaving your body, and you doubt it will return after the fight is done.";
+								BodyHeal 10;
+								StrengthDown 4; [Deliberately harsh.]
+								DexDown 4;
+							otherwise if T matches the text "worthless":
+								say "You feel your body fully heal[if the player is prone], and are raised back to your feet[end if]! But, oh, bad luck: the magic ricochets off of all of your clothing, surrounding it with negative energy!";
+								BodyHeal 10;
+								repeat with C running through worn cursable clothing:
+									decrease the raw-magic-modifier of C by 1;
+							otherwise if T matches the text "guzzling":
+								say "You feel your body mostly heal[if the player is prone], and are raised back to your feet[end if]! But the magic ricochets off of all of your clothing!";
+								BodyHeal 8;
+								repeat with C running through worn transformable clothing:
+									potentially transform C;
+							otherwise if T matches the text "fraud":
+								say "You feel your body significantly heal[if the player is prone], and are raised back to your feet[end if]! But it also feels like there's a dark cloud hanging over you now, like you're going to find yourself getting very unlucky for a while!";
+								BodyHeal 7;
+								decrease the raw luck of the player by 15;
 							otherwise:
-								now N is in a random unbossed placed labyrinth room;
-							increase NLN by 1;
-					otherwise:
-						destroy N;
-				now M is unconcerned;
-				now the raw difficulty of M is 99;
-				now M is uninterested;
-				now the refractory-period of M is the messRefractoryLimit of M + 40;
-				now the boredom of M is 0;
-				repeat with H running through worn tiara:
-					destroy H.
+								say "You feel your body slightly heal[if the player is prone], and are raised back to your feet[end if]!";
+								BodyHeal 5;
+							now the stance of the player is 0;
+							now the fatigue of the player is 0;
+							decrease the princess-power of M by 2;
+							if M is carrying royal scepter and the number of undefeated staff members in the location of M > 1 and the princess-power of M >= 10: [should be the first two times]
+								say "[speech style of M]'And fuck you.'[roman type][line break]";
+								compute M enslaving N;
+						otherwise:
+							say "Moments later you are both bound in magical rope, and [NameDesc of M][']s wand has been ripped from [his of M] grip. ";
+							let PSM be the number of pacified staff members in the location of the player;
+							if PSM > 0, say "[BigNameDesc of N] releases [his of N] bound comrade[if PSM > 1]s[end if].";
+					if M is not in the location of the player or the player is prone:
+						repeat with SM running through monsters in the school:
+							now SM is unleashed;
+							unless SM is N or SM is M, regionally place SM;
+						if diaper focus > 0, now M is diaper-enslaved;
+						otherwise now M is sex-enslaved;
+						now M is in School34;
+						compute N dungeon locking;
+			if M is guarding:
+				now the health of M is 1;
+				repeat with SM running through fucked-silly staff members in the location of M:
+					compute M enslaving SM;
+				if headmistress is in the location of M and headmistress is unleashed and (glittery-wand is not carried by M or glittery-wand is not cursed): [Princess fights headmistress herself]
+					compute M enslaving headmistress;
+					if headmistress is in the location of the player and headmistress is not unleashed, say MonsterDesc of headmistress;
+				let NUSM be the number of undefeated staff members in the location of M;
+				if NUSM < a random number between 1 and 2: [A new NPC joins the fray]
+					let LSM be the list of alive guarding staff members;
+					if the number of entries in LSM > 0:
+						sort LSM in random order;
+						let SM be entry 1 in LSM;
+						now SM is unleashed;
+						now SM is in School33;
+						now SM is interested;
+						try SM going north;
+				if the number of undefeated staff members in the location of M is 0:
+					if M is in the location of the player:
+						say "[BigNameDesc of M] folds [his of M] hands in triumph.[line break][speech style of M]'It is done. I have dreamed of this moment for such a long time!'[roman type][line break]With a wave of [his of M] hands, everyone else, including [himself of M], is teleported away.";
+					now M is in Dungeon11;
+					let LN be the list of monsters in the school;
+					let NLN be 1;
+					repeat with N running through LN:
+						if N is defeated:
+							dislodge N;
+							if N is headmistress:
+								now N is in Dungeon11;
+							otherwise if N is receptionist:
+								now N is in School01;
+							otherwise if N is nurse:
+								now N is in School12;
+							otherwise:
+								let PHR be a random unbossed placed haunted room;
+								let PMR be a random unbossed placed modern room;
+								if PHR is a room and the remainder after dividing NLN by 3 is 1:
+									now N is in PHR;
+								otherwise if PMR is a room and the remainder after dividing NLN by 3 is 2:
+									now N is in PMR;
+								otherwise:
+									now N is in a random unbossed placed labyrinth room;
+								increase NLN by 1;
+						otherwise:
+							destroy N;
+					now M is unconcerned;
+					now the raw difficulty of M is 99;
+					now M is uninterested;
+					now the refractory-period of M is the messRefractoryLimit of M + 40;
+					now the boredom of M is 0;
+					repeat with H running through worn tiara:
+						destroy H.
 
 To compute (M - ex-princess) enslaving (N - a monster):
 	if diaper quest is 1 or a random number between 0 and diaper lover > 0, now N is diaper-enslaved;
@@ -713,7 +814,13 @@ To construct unique buttons for (T - ex-princess):
 				now the ButtonImage entry is Figure of ToiletButton;
 				now the ButtonCommand entry is "use urinal";
 				now the ButtonColour entry is lightModeFullGreen;
-				if the player is prone, now the ButtonColour entry is lightModeFullYellow. [turn yellow - player needs to stand]
+				if the player is prone, now the ButtonColour entry is lightModeFullYellow; [turn yellow - player needs to stand]
+		if T is guarding and current-final-battle-object is final-battle-wand-curse:
+			choose a blank row in the Table of Buttons;
+			now the ButtonImage entry is Figure of TakeAllButton;
+			now the ButtonCommand entry is "pull [text-shortcut of ex-princess]";
+			now the ButtonColour entry is lightModeFullGreen;
+			if the player is immobile, now the ButtonColour entry is lightModeFullRed; [turn red - player immobile]
 
 Check pushing ex-princess when ex-princess is caged:
 	allocate 2 seconds;
@@ -739,7 +846,7 @@ To compute toilet reaction of (M - ex-princess):
 		increase the current-torment of M by 60;
 		repeat with ST running through students in the location of the player:
 			FavourUp ST;
-	otherwise:
+	otherwise if M is not unleashed:
 		say "[BigNameDesc of M] frowns but politely looks the other way.".
 
 An all later time based rule (this is the caged princess torture continues rule):
@@ -789,8 +896,14 @@ Definition: ex-princess (called M) is distracted:
 	decide no.
 
 Definition: ex-princess is messy:
-	if it is unconcerned and the refractory-period of it <= (the messRefractoryLimit of it) and diaper messing >= 7, decide yes;
+	if diaper quest is 1 or diaper messing >= 7:
+		if it is unconcerned and the refractory-period of it <= (the messRefractoryLimit of it), decide yes;
+		if it is unleashed and (it is grabbing the player or it is penetrating face or (it is uninterested and the boredom of it > 0)), decide yes;
 	decide no.
+
+To compute boredom reset of (M - ex-princess):
+	if M is in the location of the player, say "[BigNameDesc of M][']s diaper magically cleans itself.";
+	now the boredom of M is 0.
 
 To say SuddenMessFlav of (M - ex-princess):
 	say "[speech style of M]'Oh crap, here we go again...'[roman type][line break][BigNameDesc of M] grimaces and quickly adopts a squatting stance. Then you hear the loud sound of [his of M] butthole rasping and squelching as [he of M] fills [his of M] huge diaper.";
@@ -814,9 +927,9 @@ To compute ChangeRequest of (M - ex-princess):
 			say "You wrinkle your nose and step away from [him of M]. [big he of M] looks crestfallen and frustrated.[line break][speech style of M]'...Fine. I won't force you. But don't expect me to be able to help you while I'm stuck like this.'[roman type][line break]".
 
 To compute diaper mess reaction of (M - ex-princess):
-	say "[BigNameDesc of M] looks at you with a caring smile.".
+	if M is unconcerned, say "[BigNameDesc of M] looks at you with a caring smile.".
 
 To compute MasturbationReaction of (M - ex-princess):
-	say "[BigNameDesc of M] looks at you with a mildly interested smile.".
+	if M is unconcerned, say "[BigNameDesc of M] looks at you with a mildly interested smile.".
 
 Princess ends here.

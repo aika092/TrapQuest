@@ -170,12 +170,13 @@ To compute hip fat burning:
 	if the flesh volume of hips > 0:
 		let F be (200 - (exercise theme bonus * 40)) - (the flesh volume of hips * 10);
 		let R be (a random number between 20 and F) + a random number between 20 and F;
-		if debuginfo > 0, say "[input-style]Butt weight loss check: butt exercise count ([fat-burning of hips].5) | [R] = 2d[F - 19]+19 <= [F] = 200 - ([flesh volume of hips * 10]) ass fat[roman type][line break]";
+		if debuginfo > 0 and the trophy-mode of fat-trophy is 0, say "[input-style]Butt weight loss check: butt exercise count ([fat-burning of hips].5) | [R] = 2d[F - 19]+19 <= [F] = 200 - ([flesh volume of hips * 10]) ass fat[roman type][line break]";
 		if R <= the fat-burning of hips:
-			say "Your recent exercise has reduced the size of your ass!";
-			if debuginfo > 0, say "[input-style]Exercise result: butt fatness [flesh volume of hips] -> ";
-			FatAssDown 1;
-			if debuginfo > 0, say "[flesh volume of hips][roman type][line break]";
+			if R <= the fat-burning of arms:
+				say "Your recent exercise has reduced the size of your ass!";
+				if debuginfo > 0, say "[input-style]Exercise result: butt fatness [flesh volume of hips] -> ";
+				FatAssDown 1;
+				if debuginfo > 0, say "[flesh volume of hips][roman type][line break]";
 			now the fat-burning of hips is 0.
 
 To decide which number is the total volume of hips:

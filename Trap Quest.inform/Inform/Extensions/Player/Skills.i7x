@@ -22,6 +22,7 @@ The player has a number called fuckskill.
 The player has a number called buttskill.
 The player has a number called divinationskill.
 The player has a number called zapskill.
+The player has a number called makeupskill.
 
 Part 1 - Mercy
 
@@ -430,6 +431,29 @@ This is the skilltime list rule:
 	if the skillCooldown of the player > 0, say "You've recently learned a skill and need to wait a while before you can ask someone else to teach you another one.";
 	otherwise say "You're ready for another person to teach you a new skill.".
 The skilltime list rule is listed in the skill listing rules.
+
+Part 20 - Make Up Skill
+
+To teach makeupskill:
+	if the makeupskill of the player is 0:
+		say "Do you pay close attention to the instructions?";
+		if the player is consenting:
+			say "[bold type]**You have learned how to apply impressive make up!**[line break]From now on, you'll have extra increased charisma for a while after using a make up kit to give yourself a moderate but not over-the-top amount of make up.[if newbie tips is 1][one of][line break][newbie style]Newbie Tip: Charisma helps you convince NPCs to do things. This could be getting them to give you something nice in return when you gift them an item, or it could be convincing them to be more gentle with you. Make up increases charisma, and this new ability increases it even more![or][stopping][end if][roman type][line break]";
+			now the makeupskill of the player is 1;
+			reset skill cooldown;
+		otherwise:
+			say "You decide that there are probably more important skills to learn in this place, and you plan to save your concentration for those.";
+	otherwise:
+		say "You've already learned how to properly apply make up.".
+
+This is the makeupskill list rule:
+	if the makeupskill of the player is 1, say "You are skilled at applying make up.".
+The makeupskill list rule is listed in the skill listing rules.
+
+This is the makeupskill learn rule:
+	if the makeupskill of the player is 0, say "You have extra increased charisma for a while after applying a moderate amount of make up.";
+	now the makeupskill of the player is 1.
+The makeupskill learn rule is listed in the skill cheating rules.
 
 Memorising is an action applying to one thing.
 Check memorising:

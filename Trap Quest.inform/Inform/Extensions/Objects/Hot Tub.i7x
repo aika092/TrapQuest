@@ -34,7 +34,7 @@ To compute swimming in (H - hot-tub):
 			now swimming is 0;
 		otherwise:
 			say "You keep relaxing in the tub.";
-			if a random number between 1 and 4 < swim-turns:[a teacher might show up!]
+			if a random number between 0 and 4 < swim-turns:[a teacher might show up!]
 				let M be a random alive male teacher;
 				if diaper quest is 1, now M is a random alive teacher;
 				if M is monster and M is not in the location of the player and armband is worn and the refractory-period of M < 0:
@@ -42,17 +42,18 @@ To compute swimming in (H - hot-tub):
 					now M is interested;
 					calm M;
 					say "[BigNameDesc of M] turns up at the door![line break][speech style of M]'I thought I might find you here. Don't mind if I join you!'[roman type][line break][big he of M] is soon seated next to you in the tub, [his of M] wandering hands and fingers soon probing and groping you.";
-			if diaper quest is 1:
+			if diaper quest is 1 or there is a worn diaper:
 				let N be a random interested teacher in the location of the player;
 				if N is monster:
-					say "[line break][speech style of N]'Wearing a diaper in the tub? What a naughty [boy of the player]. Do you like the feeling of all that soggy squishy padding against your no-no?'[roman type][line break][BigNameDesc of N] starts to move [his of N] hand towards your crotch. It looks like you're going to have to decide whether or not to let [him of N] play with you...[line break]Do you let [his of N] masturbate you through your soaked padding? ";
+					if there is a worn diaper, say "[line break][speech style of N]'Wearing a diaper in the tub? What a kinky [boy of the player] you are. Do you like the feeling of all that soggy squishy padding against your no-no?'[roman type][line break][BigNameDesc of N] starts to move [his of N] hand towards your crotch. It looks like you're going to have to decide whether or not to let [him of N] play with you...[line break]Do you let [his of N] masturbate you through your soaked padding? ";
+					otherwise say "[line break][speech style of N]'Not wearing a diaper? What a shame. But on the other hand, if there's no padding in the way... What's to stop me from doing this?'[roman type][line break][BigNameDesc of N] starts to move [his of N] hand towards your crotch. It looks like you're going to have to decide whether or not to let [him of N] play with you...[line break]Do you let [his of N] masturbate you? ";
 					if the player is bimbo consenting:
 						compute masturbation of N;
-						now swimming is 0;
 					otherwise:
-						compute angry punishment of N;
-						satisfy N;
-						now swimming is 0;
+						consider angry punishment of N;
+						say "[BigNameDesc of N] turns away, having lost interest in you for now.";
+						bore N;
+					now swimming is 0;
 			otherwise:
 				let N be a random interested male teacher in the location of the player;
 				if N is monster and a random number between 2 and 4 < swim-turns:
@@ -65,9 +66,10 @@ To compute swimming in (H - hot-tub):
 						now current-monster is N;
 						follow the monster mouth insertion rules;
 					otherwise:
-						say "[speech style of N]'Then get the fuck out of my hot tub!'[roman type][line break][BigNameDesc of N] looks furious.";
-						compute angry punishment of N;
-						satisfy N;
+						say "[speech style of N]'Then get the fuck out of my hot tub!'[roman type][line break][BigNameDesc of N] snaps.";
+						consider angry punishment of N;
+						say "[BigNameDesc of N] turns away, having lost interest in you for now.";
+						bore N;
 					now swimming is 0;
 			say "[line break]";
 		if swimming is 1:
@@ -75,38 +77,5 @@ To compute swimming in (H - hot-tub):
 			increase swim-turns by 1;
 	allocate 12 + (3 * swim-turns) seconds;[after everything]
 	display entire map.
-
-[To compute showering (H - hot-tub):
-	say "Your time in the water leaves you feeling completely refreshed!";
-	now the fatigue of the player is 0;
-	BodyHeal 10;
-	let M be a random alive male teacher;
-	if diaper quest is 1, now M is a random alive teacher;
-	if M is monster and the refractory-period of M < 0 and armband is worn and face is not actually occupied and M is not in the location of the player:
-		if diaper quest is 0:
-			now M is in the location of the player;
-			now M is interested;
-			calm M;
-			say "Just as you're ready to get out, [NameDesc of M] turns up at the door![line break][speech style of M]'I thought I might find you here. Don't mind if I join you!'[roman type][line break][big he of M] is soon seated next to you in the tub, [his of M] wandering hands and fingers soon probing and groping you.[line break][speech style of M]'While we're both here, let's see how your blowjob skills are coming along, eh?'[roman type][line break]It looks like you're going to have to decide whether or not to accept the rather blunt proposal...[line break]Do you suck [his of M] [DickDesc of M]? ";
-			if the player is bimbo consenting:
-				now presented-orifice is face;
-				now the chosen-orifice of M is presented-orifice;
-				now M is friendly-fucking;
-				FavourUp M by the sex desire of M;
-				now current-monster is M;
-				follow the monster mouth insertion rules;
-			otherwise:
-				compute angry punishment of M;
-				satisfy M;
-		otherwise if the player is diapered:
-			now M is in the location of the player;
-			now M is interested;
-			calm M;
-			say "Just as you're ready to get out, [NameDesc of M] turns up at the door![line break][speech style of M]'I thought I might find you here. Don't mind if I join you!'[roman type][line break][big he of M] is soon seated next to you in the tub, [his of M] wandering hands and fingers soon probing and groping you.[line break][speech style of M]'Wearing a diaper in the pool? What a naughty [boy of the player]. Do you like the feeling of all that soggy squishy padding against your no-no?'[roman type][line break][BigNameDesc of M] starts to move [his of M] hand towards your crotch. It looks like you're going to have to decide whether or not to let [him of M] play with you...[line break]Do you let [his of M] masturbate you through your soaked padding? ";
-			if the player is bimbo consenting:
-				compute masturbation of M;
-			otherwise:
-				compute angry punishment of M;
-				satisfy M.]
 
 Hot Tub ends here.

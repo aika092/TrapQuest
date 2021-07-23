@@ -198,4 +198,96 @@ To say AdviceAnswer of (M - a headmistress):
 To compute teaching of (M - a headmistress):
 	say "[speech style of M]'I have my [ShortDesc of M] duties to take care of. Ask a teacher if you would like a lesson.'[roman type][line break]".
 
+talk-headmistress-toilet is a talk-object.
+headmistress-toilet-ban is initially false.
+
+To consider (T - talk-headmistress-toilet) for (M - a monster):
+	if M is headmistress and locked-toilets is true and academy-toilet-key is not held and M is friendly:
+		now the printed name of T is the substituted form of "[variable custom style]'[if the delicateness of the player < 5]I need to use the toilet.'[otherwise if the delicateness of the player < 10]Please could I have the key to the toilets?'[otherwise if the delicateness of the player < 15]Please may I have permission to use the toilets?'[otherwise if diaper lover > 0]Miss, please can I have permission to use the big potty? Pretty please?'[otherwise]This lowly student begs permission to use the toilets...'[end if][roman type][line break]";
+		set next numerical response to the substituted form of "[printed name of T]".
+
+To execute (T - talk-headmistress-toilet) for (M - a monster):
+	if headmistress-toilet-ban is true:
+		say "[BigNameDesc of M] narrows [his of M] eyes.[line break][speech style of M]'As I said before, your toilet privileges have been revoked. End of discussion.'[roman type][line break]";
+	otherwise:
+		let no-toilet-rank be 5;
+		if diaper quest is 1 or watersports fetish is 0, now no-toilet-rank is 4;
+		let able-to-pee be 1;
+		repeat with C running through pee covering undisplacable unzippable clothing:
+			if able-to-pee is 1 and C is not usually autoremovable, now able-to-pee is 0;
+		if the rank of the player >= no-toilet-rank:
+			say "[BigNameDesc of M] looks at your armband and then shakes [his of M] head.[line break][speech style of M]'[one of]As of today, I have decided that [or][stopping][if no-toilet-rank is 4]Pink [end if]Diamond and higher ranked students are not allowed to use the toilets. [if no-toilet-rank is 4]If you want to pee, use a diaper like a good little baby slave[otherwise]At your high rank, you and your peers should be learning to be human toilets yourselves. You can pee in each others['] mouths, or wait until you get home[end if].'[roman type][line break]";
+		otherwise if academy-toilet-key is not carried by M:
+			say "[BigNameDesc of M] shrugs.[line break][speech style of M]'The key has not yet been returned to me. One of your fellow students must have it. You'll have to wait, or go find them.'[roman type][line break]";
+		otherwise if able-to-pee is 0:
+			say "[BigNameDesc of M] raises an eyebrow.[line break][speech style of M]'How would you manage that, considering what you're wearing?'[roman type][line break]";
+		otherwise:
+			let R be a random number between 1 and the rank of the player;
+			if R > 2:
+				say "[BigNameDesc of M] gives you an evil smirk.[line break][speech style of M]'If you want to pee so badly, you'll do it right here, in front of me.'[roman type][line break][big he of M] retrieves a large glass fishbowl, and places it on the ground in front of you.[line break][speech style of M]'Go on. Whenever you're ready.'[roman type][line break]Do you pee in the bowl in front of [NameDesc of M]?";
+				if the player is consenting:
+					let fishbowl-fill be the bladder of the player;
+					if fishbowl-fill >= 6 - (the humiliation of the player / 10000):
+						say "You [if there is pee covering clothing and the player is possessing a penis]get out your [player-penis] and [otherwise if there is pee covering clothing]expose your [vagina] and [end if]squat. With an excruciatingly loud tinkling sound, your [urine] flows down into the bowl. It's deeply humiliating. [strongHumiliateReflect][line break][speech style of M]'Good [boy of the player].'[roman type][line break][big he of M] coos, with an air of dominance.";
+						now the bladder of the player is 0;
+						if a random number between 1 and 2 is watersports fetish:
+							say "[BigNameDesc of M] picks up the fishbowl and offers it to you. It looks like it's filled with about [fishbowl-fill] sips of [urine].[line break][speech style of M]'Now drink it.'[roman type][line break][big he of M] doesn't sound like [he of M][']s messing around.";
+							let FF be fishbowl-fill;
+							let FFR be 0;
+							while FF > 0 and FFR is 0:
+								say "There [if FF is 1]is 1 sip[otherwise]are [FF] sips[end if] of [urine] remaining. Take a sip?";
+								if the player is consenting:
+									say "You slurp up some more of your [urine].";
+									FaceFill urine by 2;
+									decrease FF by 1;
+									if the total volume of face > 2, suggest swallowing;
+								otherwise:
+									say "You shake your head in refusal.";
+									now FFR is 1;
+							if FF >= a random number between 1 and fishbowl-fill:
+								say "[line break][speech style of M]'That was not a request!'[roman type][line break][BigNameDesc of M] throws the fishbowl at your face!";
+								AnnouncedSquirt urine on hair by fishbowl-fill;
+								UrineTasteAddictUp 1;
+								say severeHumiliateReflect;
+							otherwise:
+								if FF > 0, say "[BigNameDesc of M] wrinkles [his of M] nose.[line break][speech style of M]'I suppose that will do. You may go!'[roman type][line break]";
+								otherwise say "[BigNameDesc of M] smirks.[line break][speech style of M]'Very good [boy of the player].'[roman type][line break]";
+						otherwise:
+							say "[BigNameDesc of M] puts the fishbowl inside a large drawer in [his of M] desk. Then [he of M] looks at you, and raises [his of M] eyebrows with impatience.[line break][speech style of M]'You can go now!'[roman type][line break]";
+					otherwise:
+						say "You try your best but you can't make yourself pee in front of [him of M].[line break][variable custom style]'I, um, I can't go...'[roman type][line break]You say weakly. [BigNameDesc of M] narrows [his of M] eyes.[line break][speech style of M]'Oh that's convenient, because I've just decided to revoke your toilet privileges... indefinitely.'[roman type][line break]";
+						now headmistress-toilet-ban is true;
+				otherwise:
+					say "[variable custom style]'I've, err, changed my mind. I don't need to go after all!'[roman type][line break]You say weakly. [BigNameDesc of M] narrows [his of M] eyes.[line break][speech style of M]'Oh that's convenient, because I've just decided to revoke your toilet privileges... indefinitely.'[roman type][line break]";
+					now headmistress-toilet-ban is true;
+			otherwise if R is 2:
+				say "[BigNameDesc of M] tilts [his of M] head.[line break][speech style of M]'Show me you can hold it first.'[roman type][line break][big he of M] points a finger at you, and shoots some kind of magic ray at you. Suddenly, you're completely paralysed. [big he of M] keeps you like that for several minutes, sitting there and watching you[if the player is bursting] as you fight to hold onto your bladder[end if].";
+				compute bladder growth;
+				if delayed urination is 1:
+					say "It's no good, you can't hold it!";
+					let K be a random worn knickers;
+					if diaper lover > 0 and K is not diaper and K is not unremovable knickers:
+						say "[speech style of M]'Don't you dare soil my office!'[roman type][line break]Just before it starts, [NameDesc of M] summons a thick diaper on you[if K is knickers], destroying your [ShortDesc of K] in the process[end if]!";
+						if K is knickers, destroy K;
+						let D be a random off-stage giant diaper;
+						if D is nothing, now D is a random giant diaper;
+						summon D cursed with quest;
+					try urinating;
+					say "[BigNameDesc of M] shakes [his of M] head.[line break][speech style of M]'Pathetic.'[roman type][line break]";
+					if watersports fetish is 1 and the urine-puddle of the location of M > 0:
+						say "[BigNameDesc of M] shoves your face into the puddle of [urine] on the floor.[line break][speech style of M]'Look what you did, you filthy slut!'[roman type][line break]The strong smell of your [urine] rushes into your nostrils, and when [NameDesc of M] pulls you back up, your cheek and nose now have a little pee on them.";
+						UrineTasteAddictUp 1;
+					say "[speech style of M]'Get out of my sight.'[roman type][line break][BigNameDesc of M] spits.";
+				otherwise:
+					say "[BigNameDesc of M] nods, and releases you from the magic paralysis.[line break][speech style of M]'Good. Okay, here you go.'[roman type][line break]";
+					compute key drop of M;
+			otherwise:
+				say "[BigNameDesc of M] smiles.[line break][speech style of M]'Sure. Remember to get a teacher to supervise you.'[roman type][line break]";
+				compute key drop of M.
+
+To compute key drop of (M - headmistress):
+	say "[big he of M] [if the player is in School08]placed the key on [his of M] desk[otherwise]tosses the key over to you.";
+	now academy-toilet-key is in the location of the player;
+	compute autotaking academy-toilet-key.
+
 Headmistress ends here.

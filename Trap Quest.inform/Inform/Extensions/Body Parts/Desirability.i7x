@@ -995,6 +995,10 @@ To compute soulSucking from (M - a monster):
 	unless (the player is craving souls or a random number between 1 and 2 is 1):
 		if the soul addiction of the player < 10, increase the soul addiction of the player by 1;
 	now cold souly is 0;
+	let S be soulstone;
+	if S is not soul-embedded and the player is soulless:
+		say "Your soulstone shivers as it once again merges with your skin.";
+		now S is soul-embedded;
 	progress quest of soul-consume-quest.
 
 Desirability ends here.

@@ -225,8 +225,8 @@ Definition: a living belt of sturdiness is product: decide yes.
 To decide which number is the alchemy key of (C - living belt of sturdiness):
 	decide on 19.
 
-Definition: a clothing (called C) is thrusting:
-	if C is living belt of sturdiness and C is penetrating a fuckhole and the player is upright and the player is horny, decide yes;
+Definition: living belt of sturdiness (called C) is thrusting:
+	if C is penetrating a fuckhole and the player is upright and the player is horny, decide yes;
 	decide no.
 
 To decide which number is the girth of (I - the living belt of sturdiness):

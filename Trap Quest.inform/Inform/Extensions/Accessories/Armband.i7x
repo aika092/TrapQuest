@@ -4,9 +4,13 @@ armband is an accessory. armband is unique. armband is plastic. armband has an i
 
 The printed name of armband is usually "[TQlink of item described][item style][accessory-colour of the item described] armband[clothing-title-after]".
 
-Figure of armband is the file "Items/Accessories/Arm/armband1.png".
+Figure of armband 1 is the file "Items/Accessories/Arm/armband1.png".
+Figure of armband 2 is the file "Items/Accessories/Arm/armband2.png".
+Figure of armband 3 is the file "Items/Accessories/Arm/armband3.png".
+Figure of armband 4 is the file "Items/Accessories/Arm/armband4.png".
+Figure of armband 5 is the file "Items/Accessories/Arm/armband5.png".
+Figure of armband 6 is the file "Items/Accessories/Arm/armband6.png".
 
-Definition: armband is pink themed: decide yes.
 Definition: armband is cursable: decide no.
 
 To say ShortDesc of (C - armband):
@@ -16,7 +20,12 @@ To say MediumDesc of (C - armband):
 	say "'[armband-print of C]' [ShortDesc of C]".
 
 To decide which figure-name is the clothing-image of (C - armband):
-	decide on figure of armband.
+	if armband is sapphire, decide on figure of armband 1;
+	if armband is emerald, decide on figure of armband 2;
+	if armband is ruby, decide on figure of armband 3;
+	if armband is pink diamond, decide on figure of armband 4;
+	if armband is pure diamond, decide on figure of armband 5;
+	decide on figure of armband 6.
 
 To say ClothingDesc of (C - armband):
 	if the armband-print of C is "new recruit", say "A neon pink armband with a clear plastic sleeve which you would expect to be used to hold an ID card. It does have a card inside, but instead of a photo of yourself there are just the words 'NEW RECRUIT' in big bumpy letters that look like they are made out of [accessory-colour of C].";
@@ -50,14 +59,33 @@ To say rank-colour of (N - a number):
 	otherwise:
 		say "solid gold".
 
-Report taking off armband[ when playerRegion is School]:
+Definition: armband is blue themed:
+	if armband is sapphire, decide yes;
+	decide no.
+Definition: armband is green themed:
+	if armband is emerald, decide yes;
+	decide no.
+Definition: armband is red themed:
+	if armband is ruby, decide yes;
+	decide no.
+Definition: armband is pink themed:
+	if armband is pink diamond, decide yes;
+	decide no.
+Definition: armband is white themed:
+	if armband is pure diamond, decide yes;
+	decide no.
+Definition: armband is yellow themed:
+	if armband is solid gold, decide yes;
+	decide no.
+
+Report taking off armband:
 	now armband is in Holding Pen;
 	say "As you remove the armband you watch it disintegrate into nothingness. Uh-oh, there's no going back now...";
 	repeat with M running through reactive students:
 		compute nonstudent perception of M;
 	repeat with M running through reactive staff members:
 		compute nonstudent perception of M;
-	display entire map. [Some arrows might turn green]
+	if playerRegion is school, display entire map. [Some arrows might turn green]
 
 Carry out wearing armband:
 	say "You place the armband around your left bicep and strap it tight.";
@@ -77,7 +105,6 @@ Check going:
 	if armband is worn and playerRegion is School:
 		let D be the noun;
 		let R be the room D from the location of the player;
-		[say "[location of the player] has entry level [entry-rank of the location of the player]; [R] has entry level [entry-rank of R]; player has rank [rank of the player].";]
 		if the entry-rank of the location of the player < the entry-rank of R and the entry-rank of R > the rank of the player:
 			say "As you try to touch the door, your armband shoots a powerful jolt of electricity down your arm![one of][line break][variable custom style]I guess I'm not allowed to go through here yet...[roman type][line break][or][stopping]" instead.
 

@@ -30,9 +30,12 @@ Definition: a candy (called C) is top tier:
 	decide no.
 
 Carry out TQeating candy:
+	allocate 6 seconds;
 	destroy the noun;
 	StomachFoodUp 2;
-	allocate 6 seconds.
+	if the body soreness of the player > 0 and the trophy-mode of candy-trophy is 1:
+		say "You feel the magical power of the candy trophy healing your body!";
+		BodyHeal 2.
 
 To say DevourFlav of (C - a candy):
 	say "You unwrap the [C] and [if the player is in danger]devour it as quickly as you can[otherwise if the fat-weight of the player > 28]greedily stuff the entire thing into your mouth, immediately swallowing it whole[otherwise if the fat-weight of the player > 12]speedily devour the sweet[otherwise]consume the sweet slowly, savouring the taste[end if]. ".

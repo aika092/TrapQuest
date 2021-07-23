@@ -350,57 +350,73 @@ To compute teaching of (L - make-up-lesson):
 		promote P;
 		say "You watch as [his of P] sapphire ID card turns into an emerald one, and [he of P] is now '[student-name of P] the [student-print of P]'. [big he of P] grins widely and then prances out of the room.";
 		compute mandatory room leaving of P;
-		say "[speech style of M]'You vill now practize ze art of make up on yourzelves. If you vant to be promoted at ze ztart of ze next clazz, zen be bold!'[roman type][line break]You are each given a make up kit and a mirror.";
-		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
-		let MU be the make-up of face;
-		repeat with N running from MU to 3:
-			if N is MU, set numerical response N to "Don't add any make up";
-			otherwise set numerical response N to the substituted form of "[if N is 1]Add a light touch of make up[otherwise if N is 2]Add a provocative amount of make up[otherwise if diaper quest is 0]Paint yourself like a whore[otherwise]Paint yourself in over-the-top make up[end if]";
-		compute multiple choice question;
-		FaceUp player-numerical-response - MU;
-		say "[if the make-up of face is MU]You do nothing. Your[otherwise]You get to work, and when you are finished your[end if] face [MakeUpDesc].";
-		if player-numerical-response is 3:
-			repeat with ST running through innocent students in the location of the player:
-				FavourDown ST;
-		otherwise if the make-up of face < 2:
-			repeat with ST running through tryhard students in the location of the player:
-				FavourDown ST;
-			if the make-up of face is 0:
-				repeat with ST running through ditzy students in the location of the player:
+		if there is a held make up kit and the make-up of face < 2:
+			say "[BigNameDesc of M] turns to you.[line break][speech style of M]'Vat is zis? Vy are you ztill holding zis, razer zan uzing it?!'[roman type][line break][big he of M] holds up your make up kit.[line break][speech style of M]'If you von't put it on your lipz, how about here?!'[roman type][line break]";
+			let T be i-suck tattoo;
+			if i-suck tattoo is drawable:
+				say "[BigNameDesc of M] writes 'I suck' on your arm with red lipstick!";
+			otherwise if diaper quest is 1 and dumb baby tattoo is drawable:
+				say "[BigNameDesc of M] writes 'dumb baby' on your leg with red lipstick!";
+				now T is dumb baby tattoo;
+			otherwise if loser tattoo is drawable:
+				say "[BigNameDesc of M] writes 'loser' on your neck with red lipstick!";
+				now T is loser tattoo;
+			otherwise if diaper messing >= 3 and mushbutt tattoo is drawable:
+				say "[BigNameDesc of M] writes 'mushbutt' on your chest with red lipstick!";
+				now T is mushbutt tattoo;
+			otherwise if diaper messing >= 3 and stinker tattoo is drawable:
+				say "[BigNameDesc of M] writes 'stinker' on your arm with red lipstick!";
+				now T is stinker tattoo;
+			otherwise if diaper quest is 0 and whore-mouth tattoo is drawable:
+				say "[BigNameDesc of M] writes 'WHORE' on your face with red lipstick!";
+				now T is whore-mouth tattoo;
+			otherwise:
+				say "[BigNameDesc of M] writes 'I suck' on your arm with red lipstick!";
+			try examining T;
+			say "[speech style of M]'You must chooze. I can make the lipztick permanent, or...'[roman type][line break][big he of M] lets an unspoken threat dangle in the air.[paragraph break]Ask [him of M] to make the make up permanent?";
+			if the player is consenting:
+				say "[BigNameDesc of M] smiles a wide, severe smile, and waves [his of M] hands. You feel some magic passing from [his of M] fingertips into your skin. You immediately know that the lipstick is now permanent. But also, you do feel somewhat magical yourself.[line break][speech style of M]'Zis vas ze right choice. Now remember to use zis before our next lesson.'[roman type][line break][BigNameDesc of M] returns your make up kit.";
+				if T is drawable:
+					summon T;
+					MagicPowerUp 1;
+			otherwise:
+				say "[BigNameDesc of M] frowns at your reluctance.[line break][speech style of M]'Useless bitch.'[roman type][line break][big he of M] flicks you painfully on your forehead.";
+				PainUp 1;
+				IntDown 1;
+				say "It feels slightly harder to think.";
+		otherwise:
+			say "[BigNameDesc of M] shows you all a few tricks for making your make up extra-glamorous.";
+			if the skillCooldown of the player > 0 and the makeupskill of the player is 0, say "Unfortunately, you've recently learned a skill and need to wait a while before learning another one.";
+			otherwise teach makeupskill;
+			[say "[speech style of M]'You vill now practize ze art of make up on yourzelves. If you vant to be promoted at ze ztart of ze next clazz, zen be bold!'[roman type][line break]You are each given a make up kit and a mirror.";
+			reset multiple choice questions;
+			let MU be the make-up of face;
+			repeat with N running from MU to 3:
+				if N is MU, set numerical response N to "Don't add any make up";
+				otherwise set numerical response N to the substituted form of "[if N is 1]Add a light touch of make up[otherwise if N is 2]Add a provocative amount of make up[otherwise if diaper quest is 0]Paint yourself like a whore[otherwise]Paint yourself in over-the-top make up[end if]";
+			compute multiple choice question;
+			FaceUp player-numerical-response - MU;
+			say "[if the make-up of face is MU]You do nothing. Your[otherwise]You get to work, and when you are finished your[end if] face [MakeUpDesc].";
+			if player-numerical-response is 3:
+				repeat with ST running through innocent students in the location of the player:
 					FavourDown ST;
-		[repeat with ST running through students in the location of the player:
-			now the lessonInt1 of ST is (the dedication of ST + 1) / 2;
-			say "[BigNameDesc of ST] [if the lessonInt1 of ST <= 0]is too timid to do anything to [his of ST] face at all[otherwise if the lessonInt1 of ST is 1][one of]adds only the tiniest amount of make up[or]works on [his of ST] lipstick but nothing else[or]adds a light touch of blusher to [his of ST] cheeks[in random order][otherwise if the lessonInt1 of ST is 2][one of]works hard on [his of ST] eyes and contours to create a rather strikingly beautiful appearance[or]works on [his of ST] lips and eyelashes, and ends up looking rather sexy[or]applies an even layer of foundation and then a dash of blusher on top[in random order][otherwise]coats [his of ST] visage with layers upon layers of make up until [he of ST] looks rather ridiculous[end if].";]
-		say "[BigNameDesc of M] comes over to assess everyone's handiwork. [big he of M] raises [his of M] eyebrows when [he of M] looks at yours.";
-		if the make-up of face < 3 and the printed name of the chosen numerical response matches the text "any": [no make up added]
-			say "[speech style of M]'No change?! Zis won't do. Not in my clazz!'[roman type][line break]";
-			if lipstick collar is actually summonable:
-				summon lipstick collar locked;
-				say "[BigNameDesc of M] produces a collar with a pair of lips at the front, and locks it around your neck![line break][speech style of M]'Zis will teach you not to refuse my teaching!'[roman type][line break]";
-		otherwise:
-			say "[speech style of M]'[if the make-up of face >= 3]Bah! This lookz like little child tried to create it. Although I zuppoze I did inztruct you to be bold, hmm?'[otherwise if the make-up of face is 2]Zis is exzellent! Marvey-yeuh! Bravo. But iz it bold enough? Hmm.'[otherwise]Bah, zis iz boring. Perhaps you are lacking in ze confidenze to graduate zis clazz any time zoon.'[end if][roman type][line break]";
-		[let PP be the player;
-		repeat with ST running through students in the location of the player:
-			if ST is promotable and (the lessonInt1 of ST >= the make-up of face or (the lessonInt1 of ST is the make-up of face and a random number between 1 and 2 is 1)), now PP is ST;
-		say "[BigNameDesc of M] turns to face the class and points [his of M] finger directly at [YouDesc of PP].[line break][speech style of M]'You are the boldezt.'[roman type][line break]";
-		if PP is student:
-			promote PP;
-			say "You watch as [his of PP] sapphire ID card turns into an emerald one, and [he of PP] is now '[student-name of PP] the [student-print of PP]'.";
-		otherwise:
-			now armband is emerald;
-			say "You watch as the ID card inside your armband transforms!";
-			now the armband-title of armband is "Belle";
-			now the armband-print of armband is "bold beauty";
-			say ClothingDesc of armband;
-			repeat with STTH running through students in the location of the player:
-				if the lessonInt1 of STTH >= the make-up of face:
-					HappinessDown STTH;
-				otherwise if STTH is ditzy student:
-					FavourUp STTH;
-			update students;] [an important line which makes boring old students disappear and new cool ones appear]
+			otherwise if the make-up of face < 2:
+				repeat with ST running through tryhard students in the location of the player:
+					FavourDown ST;
+				if the make-up of face is 0:
+					repeat with ST running through ditzy students in the location of the player:
+						FavourDown ST;
+			say "[BigNameDesc of M] comes over to assess everyone's handiwork. [big he of M] raises [his of M] eyebrows when [he of M] looks at yours.";
+			if the make-up of face < 3 and the printed name of the chosen numerical response matches the text "any":
+				say "[speech style of M]'No change?! Zis won't do. Not in my clazz!'[roman type][line break]";
+				if lipstick collar is actually summonable:
+					summon lipstick collar locked;
+					say "[BigNameDesc of M] produces a collar with a pair of lips at the front, and locks it around your neck![line break][speech style of M]'Zis will teach you not to refuse my teaching!'[roman type][line break]";
+			otherwise:
+				say "[speech style of M]'[if the make-up of face >= 3]Bah! This lookz like little child tried to create it. Although I zuppoze I did inztruct you to be bold, hmm?'[otherwise if the make-up of face is 2]Zis is exzellent! Marvey-yeuh! Bravo. But iz it bold enough? Hmm.'[otherwise]Bah, zis iz boring. Perhaps you are lacking in ze confidenze to graduate zis clazz any time zoon.'[end if][roman type][line break]";]
 	if P is not the player:
 		let MP be a random off-stage make up kit;
-		if MP is a thing:
+		if MP is a thing and the number of held make up kit is 0:
 			say "[BigNameDesc of M] hands [if P is student]each of [end if]you a small make up kit.[line break][speech style of M]'For you to practize viz at home.'[roman type][line break]";
 			now MP is carried by the player;
 			now focused-thing is MP;

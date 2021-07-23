@@ -334,7 +334,7 @@ To execute (E - bag-feeding-discipline) on (C - a thing):
 
 bag-feeding-negative is a bag-feeding-effect.
 To execute (E - bag-feeding-negative) on (C - a thing):
-	if C is identified and the raw-magic-modifier of C < 0:
+	if C is identified clothing and the raw-magic-modifier of C < 0:
 		say "Your bag reacts to the negative magic modifier of the [C]. You feel like some of the good luck you've saved up has faded away...";
 		increase the raw luck of the player by the raw-magic-modifier of C * 3.
 

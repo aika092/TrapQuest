@@ -61,7 +61,9 @@ Definition: yourself is able to cool down:
 	if aroused-turns > 0 and the player is not grossed out and the player is not perturbed, decide no;
 	if there is worn steel collar, decide no;
 	if there is a worn prostate massager plug, decide no;
-	if there is a worn thrusting living belt of sturdiness, decide no;
+	if there is a worn living belt of sturdiness:
+		if living belt of sturdiness is thrusting, decide no;
+	if there is a worn hugger-gag or there is a worn hugger-panties, decide no;
 	if bride-consort is monster and the class of the player is princess and the refractory-period of bride-consort is 0 and bride-consort is awake, decide no;
 	decide yes.
 

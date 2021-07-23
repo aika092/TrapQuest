@@ -27,7 +27,7 @@ overflowed is a number that varies.
 [Is the player peeing into a body of water?]
 water-peeing is initially false.
 
-toilet is a backdrop. Understand "potty", "throne", "bathroom" as toilet. The text-shortcut of toilet is "toilet". Figure of toilet is the file "Env/MultiFloor/toilet1.png". Figure of school toilets is the file "Env/School/toilets1.jpg".
+toilet is a backdrop. Understand "potty", "throne", "bathroom" as toilet. The text-shortcut of toilet is "toilet". Figure of toilet is the file "Env/MultiFloor/toilet1.png". Figure of school toilets is the file "Env/School/toilets1.jpg". Figure of school toilets locked is the file "Env/School/toilets2.jpg".
 urinal is a backdrop. Understand "potty", "urinals", "bathroom" as urinal. The text-shortcut of urinal is "urinal".
 
 To say ExamineDesc of (T - toilet):
@@ -38,7 +38,9 @@ To say ExamineDesc of (T - urinal):
 
 To decide which figure-name is the examine-image of (T - toilet):
 	if the player is in the location of ex-princess and ex-princess is caged, decide on examine-image of ex-princess;
-	if playerRegion is school and the player is not in a predicament room, decide on figure of school toilets;
+	if playerRegion is school and the player is not in a predicament room:
+		if locked-toilets is true, decide on figure of school toilets locked;
+		otherwise decide on figure of school toilets;
 	if diaper quest is 1 and the player is in Hotel38 and the human-toilet-scene of woman-player is 2, decide on figure of human toilet;
 	if diaper quest is 0 and the player is in Hotel38 and watersports fetish is 1 and a2m fetish >= 2 and the human-toilet-scene of woman-player is not 1, decide on figure of human toilet;
 	if diaper quest is 0 and the player is in Toilet01, decide on figure of male toilet;
@@ -95,6 +97,7 @@ Definition: yourself is able to use a toilet:
 
 Definition: yourself is potentially able to use a toilet:
 	if diaper quest is 1 and watersports fetish is 0 and the player is in Hotel38 and the human-toilet-scene of woman-player is 2, decide no; [can't use Berri without watersports enabled!]
+	if locked-toilets is true and the player is in School10 and academy-toilet-key is not held, decide no; [toilet is locked]
 	if the player is upright and the location of the player is toilets, decide yes;
 	decide no.
 
@@ -118,6 +121,7 @@ Check toileting:
 	if the noun is not toilet and the noun is not urinal, say "This verb is for using the toilet." instead;
 	if the player is prone, say "You can only do that while on two feet." instead;
 	if the player is immobile or the player is in danger or the player is flying, say "Aren't you a bit busy?" instead;
+	if locked-toilets is true and the player is in School10 and academy-toilet-key is not held, say "You don't have the key!" instead;
 	let PC be a random worn pee covering undisplacable clothing;
 	let AC be a random ass covering undisplacable clothing;
 	if the player is able to use the toilet past their diaper:
@@ -259,6 +263,7 @@ To compute toilet use:
 	if seconds is 0, allocate 6 seconds;
 	let too be "";
 	let initialBladder be the bladder of the player;
+	if the location of the player is School10 and locked-toilets is true and academy-toilet-key is held, say "You unlock the toilet lid with the key.";
 	if watersports mechanics is 1 and (the number of pee covering undisplacable clothing is 0 or the player is able to use the toilet past their diaper):
 		if the bladder of the player > 0:
 			let C be a random pee covering clothing;
@@ -331,7 +336,7 @@ To compute toilet use:
 			say "As you finish your business, you suddenly feel a burst of energy rush from the seat of the potty to your head. ";
 			let H be a random off-stage rubber-baby-bonnet;
 			if H is actually summonable:
-				say "Before you know it, your head is surrounded by soft silky fabric. You're now wearing a large pink baby's bonnet!";
+				say "Before you know it, your head and mouth are encased in rubber. You're now wearing a pink latex baby's bonnet!";
 				summon H cursed;
 			otherwise if no-panties-fetish is 0:
 				now no-panties permanent fetish is 1;
@@ -366,7 +371,9 @@ To compute toilet use:
 				say "Suddenly a bright light flashes from the potty throne. When your vision is restored, you see a [ShortDesc of C] on the floor in front of you.[line break][variable custom style]Maybe this is [if the player is diapered]my reward for being properly diapered[otherwise]what the throne thinks I should be wearing?[end if][roman type][line break]";
 				now C is in the location of the player;
 				compute autotaking C;
-	if toiletJustUsed is true, check woman toilet.
+	if toiletJustUsed is true:
+		check woman toilet;
+		if locked-toilets is true, check school toilet supervision.
 
 To compute urinal use:
 	if seconds is 0, allocate 6 seconds;

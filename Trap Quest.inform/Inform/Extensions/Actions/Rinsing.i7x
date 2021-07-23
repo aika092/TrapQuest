@@ -50,12 +50,14 @@ To compute clothesRinsing of (C - a clothing) in (T - a thing):
 		pollute S;
 	clean C;
 	Drench C;
-	now C is not glued.
+	if C is not hugger-panties and C is not hugger-gag, now C is not glued.
 
 To compute bodyRinsing of (B - a body part) in (T - a thing):[TODO: change so it pollutes the pool again]
-	if T is DungeonScenery03, increase the semen-sniffing of a random lake monster by the semen coating of B * 40;
+	increase tracked-semen by the semen coating of B;
+	if T is DungeonScenery03, increase the semen-sniffing of a random lake monster by tracked-semen * 40;
 	now the semen coating of B is 0;
 	if B is hair:
+		increase tracked-semen by the urine coating of hair / 2;
 		now the urine coating of hair is 0;
 		now the water-drench of hair is the largeness of hair;
 		repeat with H running through worn headgear:

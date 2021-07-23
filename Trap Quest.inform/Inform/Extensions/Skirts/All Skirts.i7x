@@ -580,7 +580,7 @@ To decide which number is the initial outrage of (C - a punishment skirt):
 To decide which object is the unique-upgrade-target of (C - a punishment skirt):
 	if the number of worn overdress is 0 and diaper quest is 0, decide on a random off-stage discovered varied hobble-skirted butt-windowed fetish appropriate overdress.
 
-latex-backless-hobble-skirt is a punishment skirt. Printed name of latex-backless-hobble-skirt is "[clothing-title-before]latex backless hobble skirt[clothing-title-after]". The text-shortcut of latex-backless-hobble-skirt is "hs".  Understand "backless", "hobble" as latex-backless-hobble-skirt.
+latex-backless-hobble-skirt is a punishment skirt. Printed name of latex-backless-hobble-skirt is "[clothing-title-before]latex backless hobble skirt[clothing-title-after]". The text-shortcut of latex-backless-hobble-skirt is "hs". Understand "backless", "hobble" as latex-backless-hobble-skirt.
 
 Figure of latex-backless-hobble-skirt is the file "Items/Clothes/Lower/Skirts/punishmentskirt1.jpg".
 To decide which figure-name is clothing-image of (C - latex-backless-hobble-skirt):

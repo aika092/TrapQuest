@@ -24,12 +24,13 @@ To compute arm fat burning:
 	if the flesh volume of arms > 0:
 		let F be (200 - (exercise theme bonus * 40)) - (the flesh volume of arms * 10);
 		let R be (a random number between 20 and F) + a random number between 20 and F;
-		if debuginfo > 0, say "[input-style]Arm weight loss check: arm exercise count ([fat-burning of arms].5) | [R] = 2d[F - 19]+19 <= [F] = 200 - ([flesh volume of arms * 10]) arm fat[roman type][line break]";
+		if debuginfo > 0 and the trophy-mode of fat-trophy is 0, say "[input-style]Arm weight loss check: arm exercise count ([fat-burning of arms].5) | [R] = 2d[F - 19]+19 <= [F] = 200 - ([flesh volume of arms * 10]) arm fat[roman type][line break]";
 		if R <= the fat-burning of arms:
-			say "Your recent exercise has burned some fat from your arms!";
-			if debuginfo > 0, say "[input-style]Exercise result: arm fatness [flesh volume of arms] -> ";
-			FatArmsDown 1;
-			if debuginfo > 0, say "[flesh volume of arms][roman type][line break]";
+			if the trophy-mode of fat-trophy is 0:
+				say "Your recent exercise has burned some fat from your arms!";
+				if debuginfo > 0, say "[input-style]Exercise result: arm fatness [flesh volume of arms] -> ";
+				FatArmsDown 1;
+				if debuginfo > 0, say "[flesh volume of arms][roman type][line break]";
 			now the fat-burning of arms is 0.
 
 To decide which object is the at least partial concealer of (A - arms):

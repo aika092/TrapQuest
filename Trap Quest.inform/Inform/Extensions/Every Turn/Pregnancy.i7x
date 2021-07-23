@@ -257,6 +257,7 @@ To compute infernal birth:
 		if X > 3, now X is 3;
 		compute pregnancy clothing displacement;
 		say "[PregFlav]You are overcome by a terrible feeling of dread as you begin to give birth to the evil creature[if X > 1]s[end if] growing inside of you. The process of delivering the [if X > 1]first [end if ]baby is incredibly long and painful, and you almost pass out a few times from the pain. [if X is 1]Finally, your red-skinned devil offspring is born, apparently fully aware and fully adult as [he of M] hops to [his of M] feet. Seeing your offspring all grown up like this fills you with a deep sense of fulfilment, although it's difficult to look past [his of M] nasty, lecherous expression[otherwise]The first red-skinned devil is born fully adult and fully aware, immediately jumping into action to assist in delivering [his of M] siblings. With [his of M] help, giving birth to [his of M] sibling passes much more smoothly, and a few minutes later, [X] infernal children are standing before you. Seeing your offspring all grown up like this fills you with a deep sense of fulfilment, although its difficult to look past the nasty, lecherous expressions on their faces[end if].";
+		cutshow Figure of imp cutsene 2 for belly;
 		StrengthUp 1;
 		DexUp 1;
 		DelicateUp 2;
@@ -295,7 +296,7 @@ To say PregnancyBugFlav:
 
 To check for extreme pregnancies:
 	if inhuman pregnancy >= 3 and the father is not the throne: [Super-pregnancies are go]
-		if the father is a minotaur or the father is vines or the father is lake monster or the father is living belt of sturdiness or the father is hellhound or the father is demon lord or the father is facehugger or the father is elder altar or the father is djinn or the father is tentacle monster or the father is centaur:
+		if the father is a minotaur or the father is vines or the father is lake monster or the father is clothing or the father is hellhound or the father is demon lord or the father is facehugger or the father is elder altar or the father is djinn or the father is tentacle monster or the father is centaur:
 			now the womb volume of vagina is 31;
 		if the father is creampie pole trap and (tentacle fetish is 1 or the player is getting unlucky):
 			now the womb volume of vagina is 31;

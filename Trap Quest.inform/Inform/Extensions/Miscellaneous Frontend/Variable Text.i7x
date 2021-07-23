@@ -248,7 +248,8 @@ To say buttcheeks:
 		say "[one of]bum[or]bum-bum[or]tooshie[as decreasingly likely outcomes]".
 
 To say semen-adjective:
-	if the semen addiction of the player + 3 <= the semen taste addiction of the player and the semen addiction of the player - 3 >= the semen taste addiction of the player, say "[if the semen taste addiction of the player < 3]appalling [otherwise if the semen taste addiction of the player < 5]disgusting [otherwise if the semen taste addiction of the player < 8]unpleasant [otherwise if the semen taste addiction of the player < 10]strange [otherwise if the semen taste addiction of the player < 13]strangely pleasant [otherwise if the semen taste addiction of the player < 17][one of]delicious[or]tasty[at random] [otherwise][one of]heavenly[or]yummy[at random] [end if]". [if the semen addictions are too far apart this may not make sense]
+	if the semen addiction of the player + 3 <= the semen taste addiction of the player and the semen addiction of the player - 3 >= the semen taste addiction of the player, say "[if the semen taste addiction of the player < 3]appalling [otherwise if the semen taste addiction of the player < 5]disgusting [otherwise if the semen taste addiction of the player < 8]unpleasant [otherwise if the semen taste addiction of the player < 10]strange [otherwise if the semen taste addiction of the player < 13]strangely pleasant [otherwise if the semen taste addiction of the player < 17][one of]delicious[or]tasty[at random] [otherwise][one of]heavenly[or]yummy[at random] [end if]"; [if the semen addictions are too far apart this may not make sense]
+	otherwise say "salty ".
 
 To say semen:
 	if the class of the player is santa's little helper:

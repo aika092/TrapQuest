@@ -168,7 +168,7 @@ This is the belly covering clothing can't have an exclusive clash rule:
 The belly covering clothing can't have an exclusive clash rule is listed in the global wearability rules.		[TODO more specific top exclusive corset rule]
 
 This is the crotch covering clothing can't have an exclusive clash rule:
-	if wearing-target is crotch covering clothing and wearing-target is not chastity bond and (wearing-target is not not-exclusive diaper or summoning is 0): [NPCs can ignore some exclusivity rules when diapering the player]
+	if wearing-target is crotch covering clothing and wearing-target is not chastity bond and wearing-target is not not-exclusive diaper: [normal diapers ignore exclusivity rules]
 		repeat with C running through worn crotch covering clothing:
 			unless C is not-exclusive diaper or C is chastity bond:
 				if wearing-target is exclusive or C is exclusive:

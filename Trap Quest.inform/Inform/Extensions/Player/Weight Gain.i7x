@@ -121,7 +121,7 @@ An all time based rule (this is the training rule):
 	let MD be milk-exercise-bonus;
 	if MD > 10, now MD is 10;
 	let FBT be (40 - (exercise theme bonus * 40)) + ((the raw dexterity of the player + the raw strength of the player) * (25 - MD));
-	if the flesh volume of thighs > 0 or the flesh volume of belly > 0:
+	if the trophy-mode of fat-trophy is 0 and (the flesh volume of thighs > 0 or the flesh volume of belly > 0):
 		if debuginfo > 1, say "[input-style]Exercise check: exercise count ([fat-burning of the player]) | (400) exercise target[if exercise theme bonus > 0] (minus exercise theme bonus of [exercise theme bonus * 40])[end if][roman type][line break]";
 		if the fat-burning of the player > (400 - (exercise theme bonus * 40)):
 			while the fat-burning of the player > 0:
@@ -148,9 +148,9 @@ An all time based rule (this is the training rule):
 		otherwise if the raw strength of the player < 20 + MD:
 			say "[bold type]Your recent exercise has helped you stay fit![roman type] You can tell that you're a bit stronger now.";
 			StrengthUp 1;
-		otherwise:
+		otherwise if the trophy-mode of fat-trophy is 0:
 			say "[bold type]You feel extremely proud of your tip top athletic shape![roman type]";
-			dignify 2000;
+			dignify 1000;
 		now the fat-burning of the player is 0;
 		decrease milk-exercise-bonus by 1.
 

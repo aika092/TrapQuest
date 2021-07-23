@@ -189,6 +189,10 @@ Definition: an aeromancer (called M) is distracted:
 			decide yes;
 	decide no.
 
+To say BalloonRuneTrapReactFlav of (M - an aeromancer):
+	say "[BigNameDesc of M] lights up with joy.[line break][speech style of M]'Ooh, how glorious! How wonderful! Such curves! Such beauty! You've made my day!'[roman type][line break]";
+	FavourUp M.
+
 Part 2 - Perception
 
 Definition: an aeromancer (called M) is outrage disapproving:

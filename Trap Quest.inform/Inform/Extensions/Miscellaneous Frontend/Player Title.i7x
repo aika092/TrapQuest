@@ -147,7 +147,7 @@ To say TitleBimbo:
 		otherwise if the virgin bonus of the player <= -2:
 			say " [one of]fallen[or]disgraced[sticky random] ex-warrior";
 		otherwise if there is a worn T-shirt:
-			if gang-bang-girl T-shirt is worn, say " gang bang girl";
+			if gang-bang-girl vest top is worn, say " gang bang girl";
 			if there is a worn gender bender T-shirt, say " gender bender";
 		otherwise if the bimbo of the player < 11:
 			if the bimbo of the player < 5 or submissive sex addict is 1:

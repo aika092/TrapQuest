@@ -232,7 +232,8 @@ To compute unique banishment of (M - centaur):
 Section 3 - Punishments
 
 To compute kneeling reaction of (M - centaur):
-	say "[BigNameDesc of M][']s lower half looms over you, [his of M] [LongDickDesc of M] drooling precum as [he of M] moves closer to you[if the player is not shameless]. You shiver with shame[end if].";
+	say "[one of][BigNameDesc of M][']s lower half looms over you, [his of M] [LongDickDesc of M] drooling precum as [he of M] moves closer to you[or]A long strand of precum hangs from [NameDesc of M]'s [LongDickDesc of M] as [he of M] slowly moves closer[or][BigNameDesc of M]'s [LongDickDesc of M] swings as [he of M] trots up close to you.[or][line break][speech style of M]'Its a shame you gave up, but I guess that means more energy left for fucking!'[roman type][line break][BigNameDesc of M] grins[or][line break][speech style of M]'Let me know what you want, sexy.'[roman type][line break][BigNameDesc of M]'s [LongDickDesc of M] swings as [he of M] comes closer[in random order]";
+	if the player is not shameless, say " You shiver with shame.";
 	strongHumiliate.
 
 To say PissDrinkThreat of (M - centaur):
@@ -347,7 +348,7 @@ To compute cleavage climax of (M - centaur):
 	otherwise orgasm dislodge M.
 
 To say CleavageClimaxFlav of (M - centaur):
-	if M is wrapped, say "[BigNameDesc of M]'s [DickDesc of M] [one of]throbs[or]spasms[or]stiffens[in random order] as it fills the condom a creamy blast of [semen]. The rubber straining visibly as it captures another, struggling for split second before finally bursting as a third, fourth and fifth shot explode out in rapid succession. Tiny flecks of [semen] and shredded condom splatter your hair and [BreastDesc] as [his of M] load hits your face.";
+	if M is wrapped, say "[BigNameDesc of M]'s [DickDesc of M] [one of]throbs[or]spasms[or]stiffens[in random order] as it fills the condom a creamy blast of [semen]. The rubber strains visibly as it captures another, struggling for split second before finally bursting as a third, fourth and fifth shot explode out in rapid succession. Tiny flecks of [semen] and shredded condom splatter your hair and [BreastDesc] as [his of M] load hits your face.";
 	otherwise say "[one of][BigFuckerDesc of M]'s [DickDesc of M] throbs powerfully as [he of M] cums, covering your face, hair and chest (mostly your face) with thick shotgun blasts of fresh [semen].[or][BigFuckerDesc of M] groans as [his of M] [DickDesc of M] spasms, blasting your face, hair, face, [BreastDesc], face, face and especially your face with thick, sticky [semen].[or]The [LongDickDesc of M] between your [BreastDesc] stiffens before [semen] explodes out of [his of M] opening. [big his of M] load mostly hits your face, splattering your hair and [BreastDesc] with tiny white droplets[in random order]".
 
 To say GrabbedPrep of (M - centaur) with (G - a monster) in (F - asshole):

@@ -57,6 +57,7 @@ When play begins:
 			retrieve diaper options;
 			retrieve toilet allowance options;
 			retrieve silicone milk options;
+			retrieve condom options;
 			retrieve slow random options; [At this point, the player can choose to have the rest randomised, which sets quick start to 1]
 		if quick start is 1 or quick start is 2:
 			follow the random mode rules;
@@ -390,6 +391,13 @@ To retrieve TG options:
 	if tg fetish >= 1 and the player is male: [This doesn't award points and refers to the player's penis size so it comes after the benefit options.]
 		clear the screen;
 		now the current menu is the Table of TG Options;
+		carry out the displaying activity;
+		clear the screen.
+
+To retrieve condom options:
+	if diaper quest is 0: [This doesn't award points and refers to the player's penis size so it comes after the benefit options.]
+		clear the screen;
+		now the current menu is the Table of Condom Options;
 		carry out the displaying activity;
 		clear the screen.
 

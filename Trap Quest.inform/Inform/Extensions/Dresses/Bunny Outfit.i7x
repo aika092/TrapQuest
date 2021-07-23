@@ -129,7 +129,7 @@ Definition: cream rubber bunny outfit is white themed: decide yes.
 
 Part 5 - DQ Bunny Outfit
 
-dq bunny outfit is a bunny outfit. dq bunny outfit is fully covering. The printed name of dq bunny outfit is "[clothing-title-before]bunny outfit[clothing-title-after]". The text-shortcut of dq bunny outfit is "bo".
+dq bunny outfit is a bunny outfit. dq bunny outfit is fully covering. dq bunny outfit is not-exclusive. The printed name of dq bunny outfit is "[clothing-title-before]bunny outfit[clothing-title-after]". The text-shortcut of dq bunny outfit is "bo".
 
 Figure of dq bunny outfit is the file "Items/Clothes/Upper/Special/Bunny/bunny4.png".
 
@@ -157,7 +157,7 @@ Definition: dq bunny outfit is potentially erection concealing: decide yes. [non
 
 Part 6 - Bunny Dress
 
-bunny dress is a bunny outfit. bunny dress is no-crotch. bunny dress is short. bunny dress is high cut. bunny dress is rare.
+bunny dress is a bunny outfit. bunny dress is no-crotch. bunny dress is short. bunny dress is not-exclusive. bunny dress is high cut. bunny dress is rare.
 
 The printed name of bunny dress is "[clothing-title-before]bunny dress[clothing-title-after]". The text-shortcut of bunny dress is "bnyd".
 

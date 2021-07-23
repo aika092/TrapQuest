@@ -156,12 +156,13 @@ To compute scared reduction of (M - a monster):
 To compute boredom reduction of (M - a monster):
 	if the boredom of M > 0:
 		decrease the boredom of M by seconds;
-		if the boredom of M <= 0:
-			now the boredom of M is 0;
+		if the boredom of M <= 0, compute boredom reset of M;
 	if the waitress-boredom of M > 0:
 		decrease the waitress-boredom of M by seconds;
-		if the waitress-boredom of M <= 0:
-			now the waitress-boredom of M is 0.
+		if the waitress-boredom of M <= 0, now the waitress-boredom of M is 0.
+
+To compute boredom reset of (M - a monster):
+	now the boredom of M is 0.
 
 To compute sleep reduction of (M - a monster):
 	if M is asleep:

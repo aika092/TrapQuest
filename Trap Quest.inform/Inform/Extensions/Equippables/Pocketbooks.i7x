@@ -283,7 +283,7 @@ To compute studying (N - a number) of (M - a monster):
 	if the class of the player is schoolgirl, decrease C by the number of worn scrunchies;
 	if N is 0:[sex]
 		if M is notebook-studied:
-			say "A yellow bolt shoots out of the [printed name of G] disappears into [NameDesc of M][']s chest. [big his of M] expression changes slightly, and somehow you know [he of M] looks more favourably on you now.";
+			say "A yellow bolt shoots out of the [printed name of G] and disappears into [NameDesc of M][']s chest. [big his of M] expression changes slightly, and somehow you know [he of M] looks more favourably on you now.";
 			FavourUp M by 1;
 		if a random number between 0 and the times-submitted of M < C:
 			say "The [printed name of G] shivers, as if a draft were passing through its pages. Looks like it wants to know more about [NameDesc of M]!";

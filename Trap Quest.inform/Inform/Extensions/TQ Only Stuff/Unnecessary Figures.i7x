@@ -47,6 +47,13 @@ To decide which figure-name is Figure of Podium Cutscene 1:
 To decide which figure-name is Figure of Podium Cutscene 2:
 	decide on figure of small image.
 
+To decide which figure-name is Figure of Dark Princess 3:
+	decide on figure of small image.
+To decide which figure-name is Figure of Dark Princess 4:
+	decide on figure of small image.
+To decide which figure-name is Figure of Dark Princess 5:
+	decide on figure of small image.
+
 To decide which figure-name is Figure of Vines Cutscene 3a:
 	decide on figure of small image.
 To decide which figure-name is Figure of Vines Cutscene 3b:
