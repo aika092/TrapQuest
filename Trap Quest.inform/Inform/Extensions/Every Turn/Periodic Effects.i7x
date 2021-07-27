@@ -220,40 +220,36 @@ A time based rule (this is the audible jiggles rule):
 		repeat with C running through worn AJC:
 			now AJC is C;
 		
-		To decide which number is the stealth influence of (C - a clothing)
-			if C is bsounding, decide on -6;
-			decide on 0;
-		
-		To compute bsound:
-			repeat with C running through AJC:
-				say "Your [ShortDesc of C] accompanies the bounces of your [BreastDesc] with soft boings and wobbles.[or] Your [C] is ensuring that every [BreastBounceDesc] your [RealBreastDesc]. [or]You are unable to prevent your [C] from letting everyone know each bounce of your [BreastDesc]![or][bold type]The jiggling of your [BreastDesc] is likely to attract others to your location![roman type][line break][or] The noises your [ShortDesc of C] is making signals exactly where you are .[or]You wish you could stop your [C] from detailing your breasts as they [BreastBounceDesc] .[as decreasingly likely outcomes]";
-			now C is bsounding.
+	To compute bsound:
+		repeat with C running through worn AJC:
+				say "Your [ShortDesc of C] accompanies the bounces of your [BreastDesc] with boings and wobbles.[or] Your [C] is ensuring that every [BreastBounceDesc] of your [RealBreastDesc] is accompanied with silly sound effects. [or]You are unable to prevent your [C] from announcing each bounce of your [BreastDesc]![or][bold type]The clap of your [BreastDesc] keeps alerting enemies![roman type][line break][or]The magical emphasis on your [ShortDesc of C] movement is signaling exactly where you are![or]You wish you could stop your [C] from detailing every sway of your breasts.[as decreasingly likely outcomes]";
+				now C is bsounding.
 			
-		bsounding is a humilating situation.
-		Definition: bsounding (Called A) is applicable:
-			if the player is not disgraced and there is a bsound, decide yes;
-			decide no.
-		To reflect on (A - bsound):
-			say "[first custom style][one of] Who had the bright idea to make clothing that announced every wobble of these damned orbs?! [or]I've got to get dump this [C]. It's impossible to get any long lasting privacy with these stupid boings and twangs![or]Do these [ShortDesc of C] run out of batteries? How humiliating![stopping][roman type][line break]".	
+	bsoundingHS is a humilating situation.
+	Definition: bsoundingHS (Called A) is applicable:
+		if the player is not disgraced and there is a worn bsounding clothing, decide yes;
+		decide no.
+	To reflect on (A - bsoundingHS):
+		say "[first custom style][one of] Who had the bright idea to make clothing that announced every wobble of these damned orbs?! [or]I've got to get dump this [C]. It's impossible to get any long lasting privacy with these stupid boings and twangs![or]Do these [ShortDesc of C] run out of energy? How humiliating![stopping][roman type][line break]".	
 		
-		Carry out going when there is a worn AJC:
-			if the player is upright or a random number between 1 and 5 is 1, compute bsound.
+	Carry out going when there is a worn AJC:
+		if the player is upright or a random number between 1 and 5 is 1, compute bsound.
 
-			Report resisting when there is a worn AJC:
-				compute bsound.
+	Report resisting when there is a worn AJC:
+		compute bsound.
 
-			Report submitting when there is a worn AJC:
-				if a random number between 1 and 3 is 1, compute bsound.
+	Report submitting when there is a worn AJC:
+		if a random number between 1 and 3 is 1, compute bsound.
 
-			Report begging when there is a worn AJC:
-				if a random number between 1 and 3 is 1, compute bsound.
+	Report begging when there is a worn AJC:
+		if a random number between 1 and 3 is 1, compute bsound.
 
-			Report jumping when there is a worn AJC:
-				compute bsound.
+	Report jumping when there is a worn AJC:
+		compute bsound.
 
-			An all later time based rule (this is the clothes stops bsounding rule):
-				repeat with A running through bsounding clothing:
-					now A is not bsounding;
+	An all later time based rule (this is the clothes stops bsounding rule):
+		repeat with A running through bsounding clothing:
+			now A is not bsounding;
 
 A time based rule (this is the dressup rule):
 	if a random number between 1 and 100 < 2 + unlucky:
