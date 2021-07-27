@@ -232,7 +232,7 @@ Report wearing kicking clothing:
 Report wearing speed clothing:
 	say "A rush of energy flows through you. Your legs feel great[if the noun is unidentified]. This must be a magic [ShortDesc of the noun][end if]!".
 
-Report wearing audibly jiggling clothing:
+Report wearing audible jiggles clothing:
 	say "A twang escapes your clothing as you finish putting it on. Startling, your [BreastDesc] let out shakey wibbles as you step back. Since when were your breasts audible?"
 
 Report wearing temptation clothing:
