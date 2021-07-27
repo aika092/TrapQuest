@@ -227,9 +227,9 @@ bsoundingHS is a humilating situation.
 Definition: bsoundingHS (Called A) is applicable:
 	if the player is not disgraced and there is a worn bsounding clothing, decide yes;
 		decide no.
-	To reflect on (A - bsoundingHS):
-		say "[first custom style][one of] Who had the bright idea to make clothing that announced every wobble of these damned orbs?! [or]I've got to get dump this [C]. It's impossible to get any long lasting privacy with these stupid boings and twangs![or]Do these [ShortDesc of C] run out of energy? How humiliating![stopping][roman type][line break]".	
-		
+To reflect on (A - bsoundingHS):
+	say "[first custom style][one of] Who had the bright idea to make clothing that announced every wobble of these damned orbs?! [or]I've got to get dump this [C]. It's impossible to get any long lasting privacy with these stupid boings and twangs![or]Do these [ShortDesc of C] run out of energy? How humiliating![stopping][roman type][line break]".	
+	
 Carry out going when there is a worn audible jiggles clothing:
 	if the player is upright or a random number between 1 and 5 is 1, compute bsound.
 
