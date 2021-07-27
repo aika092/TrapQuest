@@ -11,10 +11,12 @@ Definition: a schoolgirl outfit is class-transformation-protected:
 	decide no.
 
 To compute class set up of (C - a schoolgirl outfit):
-	now C is audible jiggles;
 	now C is intelligence-influencing;
 	if tentacle-quest is appropriate, now the quest of C is tentacle-quest;
 	now the raw-magic-modifier of C is 2.
+
+To compute post transformation effect of (C - a schoolgirl outfit):
+	if a random number between 1 and 20 < the largeness of breasts, now C is audible jiggles.
 
 To compute SelfExamineDesc of (C - a schoolgirl outfit):
 	say "You are wearing a [MediumDesc of C]. ";
