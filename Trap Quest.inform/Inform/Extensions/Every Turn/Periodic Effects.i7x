@@ -210,23 +210,23 @@ To compute stat healing:
 A time based rule (this is the audible jiggling rule):
 	if a random number between 1 and 100 < 50 + unlucky:
 		if debugmode > 0, say "AUDIBLE CHECK. ";
-		let audibly jiggling clothing be nothing;
+		let AJC be nothing;
 		repeat with C running through worn cursed blandness clothing:
-			if C is overdress or C is bikini top or C is bra:
+			if C is overdress or C is bra:
 				If C is chestless or fully exposing, decide on 0;
-				If the largeness of breasts <= 2,decide on 0;
+				If the largeness of breasts <= 2, decide on 0;
 				if C is overdress and support of (C - a bra) is >= 2, decide on 0;
 				if C is plentiful or rare and a random number between 1 and 3 is 2, now audible jiggling clothing is C;
-		repeat with C running through worn audible jiggling clothing:
-			now audibly jiggling clothing is C;
+		repeat with C running through worn AJC:
+			now AJC is C;
 		
 		To decide which number is the stealth influence of (C - a clothing)
 			if C is bsounding, decide on -6;
 			decide on 0;
 		
 		To compute bsound:
-			repeat with C running through audibly jiggling clothing:
-				say "Your [ShortDesc of C] accompanies the bounces of your [ShortDescBreasts] with soft boings and wobbles.[or] Your [C] is ensuring that every [BreastBounceDesc] your [RealBreastDesc]. [or]You are unable to prevent your [C] from letting everyone know each bounce of your [ShortDescBreasts]![or][bold type]The jiggling of your [ShortDescBreasts] is likely to attract others to your location![roman type][line break][or] The noises your [ShortDesc of C] is making signals exactly where you are .[or]You wish you could stop your [C] from detailing your breasts as they [BreastBounceDesc] .[as decreasingly likely outcomes]";
+			repeat with C running through AJC:
+				say "Your [ShortDesc of C] accompanies the bounces of your [BreastDesc] with soft boings and wobbles.[or] Your [C] is ensuring that every [BreastBounceDesc] your [RealBreastDesc]. [or]You are unable to prevent your [C] from letting everyone know each bounce of your [BreastDesc]![or][bold type]The jiggling of your [BreastDesc] is likely to attract others to your location![roman type][line break][or] The noises your [ShortDesc of C] is making signals exactly where you are .[or]You wish you could stop your [C] from detailing your breasts as they [BreastBounceDesc] .[as decreasingly likely outcomes]";
 			now C is bsounding.
 			
 		bsounding is a humilating situation.
@@ -236,19 +236,19 @@ A time based rule (this is the audible jiggling rule):
 		To reflect on (A - bsound):
 			say "[first custom style][one of] Who had the bright idea to make clothing that announced every wobble of these damned orbs?! [or]I've got to get dump this [C]. It's impossible to get any long lasting privacy with these stupid boings and twangs![or]Do these [ShortDesc of C] run out of batteries? How humiliating![stopping][roman type][line break]".	
 		
-		Carry out going when there is a worn audibly jiggling clothing:
+		Carry out going when there is a worn AJC:
 			if the player is upright or a random number between 1 and 5 is 1, compute bsound.
 
-			Report resisting when there is a worn audibly jiggling clothing:
+			Report resisting when there is a worn AJC:
 				compute bsound.
 
-			Report submitting when there is a worn audibly jiggling clothing:
+			Report submitting when there is a worn AJC:
 				if a random number between 1 and 3 is 1, compute bsound.
 
-			Report begging when there is a worn audibly jiggling clothing:
+			Report begging when there is a worn AJC:
 				if a random number between 1 and 3 is 1, compute bsound.
 
-			Report jumping when there is a worn audibly jiggling clothing:
+			Report jumping when there is a worn AJC:
 				compute bsound.
 
 			An all later time based rule (this is the clothes stops bsounding rule):
