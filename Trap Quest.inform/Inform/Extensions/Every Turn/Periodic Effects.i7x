@@ -207,7 +207,7 @@ To compute stat healing:
 		decrease temp_int_dam by 1;
 		say "[bold type]You feel as though your mind is slightly clearer![roman type]";
 
-A time based rule (this is the audible jiggling rule):
+A time based rule (this is the audible jiggles rule):
 	if a random number between 1 and 100 < 50 + unlucky:
 		if debugmode > 0, say "AUDIBLE CHECK. ";
 		let AJC be nothing;
@@ -215,8 +215,8 @@ A time based rule (this is the audible jiggling rule):
 			if C is overdress or C is bra:
 				If C is chestless or fully exposing, decide on 0;
 				If the largeness of breasts <= 2, decide on 0;
-				if C is overdress and support of (C - a bra) is >= 2, decide on 0;
-				if C is plentiful or rare and a random number between 1 and 3 is 2, now audible jiggling clothing is C;
+				if C is bra and the support of C >= 2, decide on 0;
+				if (C is plentiful or C is rare) and a random number between 1 and 3 is 2, now AJC is C;
 		repeat with C running through worn AJC:
 			now AJC is C;
 		
