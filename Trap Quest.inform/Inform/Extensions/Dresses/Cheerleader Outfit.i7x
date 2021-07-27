@@ -1,6 +1,6 @@
 Cheerleader Outfit by Dresses begins here.
 
-A cheerleader outfit is a kind of overdress. A cheerleader outfit is unique. A cheerleader outfit is usually short. A cheerleader outfit is usually audibly jiggling. Understand "cheer", "leader" as cheerleader outfit.
+A cheerleader outfit is a kind of overdress. A cheerleader outfit is unique. A cheerleader outfit is usually short. Understand "cheer", "leader" as cheerleader outfit.
 
 Definition: a cheerleader outfit is class-relevant:
 	if the class of the player is cheerleader, decide yes;
@@ -10,6 +10,7 @@ To say ClassSummonFlav of (C - a cheerleader outfit):
 	say "[bold type]A [ShortDesc of C] appears on you![line break][if the mercyskill of the player is 0]You suddenly feel like you could get away with anything! It's like the consequences of your actions... just aren't as important as they used to be.[end if]".
 
 To compute class set up of (C - a cheerleader outfit):
+	now C is audible jiggles;
 	now the raw-magic-modifier of C is the total volume of hips / 4.
 
 To say ShortDesc of (C - a cheerleader outfit):
