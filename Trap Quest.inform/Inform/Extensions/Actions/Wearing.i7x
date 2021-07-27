@@ -233,7 +233,7 @@ Report wearing speed clothing:
 	say "A rush of energy flows through you. Your legs feel great[if the noun is unidentified]. This must be a magic [ShortDesc of the noun][end if]!".
 
 Report wearing audibly jiggling clothing:
-	say "A twang escapes your clothing as you finish putting it on. Startling, your [ShortDescBreasts] let out shakey wibbles as you step back. Since when were your breasts audible?"
+	say "A twang escapes your clothing as you finish putting it on. Startling, your [BreastDesc] let out shakey wibbles as you step back. Since when were your breasts audible?"
 
 Report wearing temptation clothing:
 	say "As you finish putting it on, you find yourself happily [if the noun is skirt or the largeness of breasts < 3]sticking your ass out provocatively behind you, as if trying to tempt others to make a move on you[otherwise]puffing your chest out as far as possible and pushing your shoulders back, as if trying to show off your cleavage as much as possible[end if]. [if the bimbo of the player < 13]You can't bring yourself to feel bad about it though, it feels so natural to you all of a sudden. [end if][if the noun is bra]This is a bra of temptation![otherwise if the noun is skirt]This is a skirt of temptation![otherwise][line break][end if]".
