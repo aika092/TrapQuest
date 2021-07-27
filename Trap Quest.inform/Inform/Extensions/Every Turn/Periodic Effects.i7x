@@ -207,7 +207,7 @@ To compute stat healing:
 		decrease temp_int_dam by 1;
 		say "[bold type]You feel as though your mind is slightly clearer![roman type]";
 
-A time based rule (this is the audible jiggles rule):
+A time based rule (this is the compute jiggles rule):
 	if a random number between 1 and 100 < 50 + unlucky:
 		if debugmode > 0, say "AUDIBLE CHECK. ";
 		let B be a random worn bra;
@@ -221,36 +221,36 @@ A time based rule (this is the audible jiggles rule):
 		repeat with C running through worn AJC:
 			now AJC is C;
 		
-	To compute bsound:
-		repeat with C running through worn AJC:
-				say "Your [ShortDesc of C] accompanies the bounces of your [BreastDesc] with boings and wobbles.[or] Your [C] is ensuring that every [BreastBounceDesc] of your [RealBreastDesc] is accompanied with silly sound effects. [or]You are unable to prevent your [C] from announcing each bounce of your [BreastDesc]![or][bold type]The clap of your [BreastDesc] keeps alerting enemies![roman type][line break][or]The magical emphasis on your [ShortDesc of C] movement is signaling exactly where you are![or]You wish you could stop your [C] from detailing every sway of your breasts.[as decreasingly likely outcomes]";
-				now C is bsounding.
+To compute bsound:
+	repeat with C running through worn audible jiggles clothing:
+		say "Your [ShortDesc of C] accompanies the bounces of your [BreastDesc] with boings and wobbles.[or] Your [C] is ensuring that every [BreastBounceDesc] of your [RealBreastDesc] is accompanied with silly sound effects. [or]You are unable to prevent your [C] from announcing each bounce of your [BreastDesc]![or][bold type]The clap of your [BreastDesc] keeps alerting enemies![roman type][line break][or]The magical emphasis on your [ShortDesc of C] movement is signaling exactly where you are![or]You wish you could stop your [C] from detailing every sway of your breasts.[as decreasingly likely outcomes]";
+		now C is bsounding.
 			
-	bsoundingHS is a humilating situation.
-	Definition: bsoundingHS (Called A) is applicable:
-		if the player is not disgraced and there is a worn bsounding clothing, decide yes;
+bsoundingHS is a humilating situation.
+Definition: bsoundingHS (Called A) is applicable:
+	if the player is not disgraced and there is a worn bsounding clothing, decide yes;
 		decide no.
 	To reflect on (A - bsoundingHS):
 		say "[first custom style][one of] Who had the bright idea to make clothing that announced every wobble of these damned orbs?! [or]I've got to get dump this [C]. It's impossible to get any long lasting privacy with these stupid boings and twangs![or]Do these [ShortDesc of C] run out of energy? How humiliating![stopping][roman type][line break]".	
 		
-	Carry out going when there is a worn AJC:
-		if the player is upright or a random number between 1 and 5 is 1, compute bsound.
+Carry out going when there is a worn audible jiggles clothing:
+	if the player is upright or a random number between 1 and 5 is 1, compute bsound.
 
-	Report resisting when there is a worn AJC:
-		compute bsound.
+Report resisting when there is a worn audible jiggles clothing:
+	compute bsound.
 
-	Report submitting when there is a worn AJC:
-		if a random number between 1 and 3 is 1, compute bsound.
+Report submitting when there is a worn audible jiggles clothing:
+	if a random number between 1 and 3 is 1, compute bsound.
 
-	Report begging when there is a worn AJC:
-		if a random number between 1 and 3 is 1, compute bsound.
+Report begging when there is a worn audible jiggles clothing:
+	if a random number between 1 and 3 is 1, compute bsound.
 
-	Report jumping when there is a worn AJC:
-		compute bsound.
+Report jumping when there is a worn audible jiggles clothing:
+	compute bsound.
 
-	An all later time based rule (this is the clothes stops bsounding rule):
-		repeat with A running through bsounding clothing:
-			now A is not bsounding;
+An all later time based rule (this is the clothes stops bsounding rule):
+	repeat with A running through bsounding clothing:
+		now A is not bsounding;
 
 A time based rule (this is the dressup rule):
 	if a random number between 1 and 100 < 2 + unlucky:
