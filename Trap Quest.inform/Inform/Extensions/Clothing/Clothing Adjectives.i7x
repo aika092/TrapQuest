@@ -362,6 +362,7 @@ To decide which number is the stealth-influence of (C - a clothing):
 	let N be 0;
 	if C is nudism-disabling and C is actually dense, decrease N by 1;
 	if C is gem themed, decrease N by 1;
+	if C is bsounding, decrease N by 6;
 	decide on N.
 Definition: a clothing is stealthy:
 	if the stealth-influence of it > 0, decide yes;
