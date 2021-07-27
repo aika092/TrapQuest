@@ -210,12 +210,13 @@ To compute stat healing:
 A time based rule (this is the audible jiggles rule):
 	if a random number between 1 and 100 < 50 + unlucky:
 		if debugmode > 0, say "AUDIBLE CHECK. ";
+		let B be a random worn bra;
 		let AJC be nothing;
 		repeat with C running through worn cursed blandness clothing:
 			if C is overdress or C is bra:
 				If C is chestless or fully exposing, decide on 0;
 				If the largeness of breasts <= 2, decide on 0;
-				if C is bra and the support of C >= 2, decide on 0;
+				if B is bra and the support of B >= 2, decide on 0;
 				if (C is plentiful or C is rare) and a random number between 1 and 3 is 2, now AJC is C;
 		repeat with C running through worn AJC:
 			now AJC is C;
