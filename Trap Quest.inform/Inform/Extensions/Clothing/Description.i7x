@@ -213,8 +213,8 @@ Report examining breast covering clothing:
 To say selfexamineuniquetitle of (C - a clothing):
 	say "[ShortDesc of C]".
 
-Report examining worn audibly jiggling clothing:
-	say "You can hear how this item emphasizes every movement of your [ShortDescBreasts]."
+Report examining worn audible jiggling clothing:
+	say "Some sort of in-built magic effect is making this item emphasize the sounds your [BreastDesc] make as they move, making them loud and somewhat comical. It makes you feel like you're in some kind of bizarre cartoon!".
 
 Report examining clothing:
 	if the noun is super-short:
