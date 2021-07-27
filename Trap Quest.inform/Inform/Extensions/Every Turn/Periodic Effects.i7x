@@ -245,10 +245,6 @@ Report begging when there is a worn audible jiggles clothing:
 Report jumping when there is a worn audible jiggles clothing:
 	compute bsound.
 
-An all later time based rule (this is the clothes stops bsounding rule):
-	repeat with A running through bsounding clothing:
-		now A is not bsounding;
-
 A time based rule (this is the dressup rule):
 	if a random number between 1 and 100 < 2 + unlucky:
 		if debugmode > 0, say "DRESSUP CHECK. ";
