@@ -208,15 +208,16 @@ To compute stat healing:
 		say "[bold type]You feel as though your mind is slightly clearer![roman type]";
 
 A time based rule (this is the compute jiggles rule):
-	if a random number between 1 and 100 < 50 + unlucky:
+	if a random number between 1 and 100 < 2 + unlucky:
 		if debugmode > 0, say "AUDIBLE CHECK. ";
 		let B be a random worn bra;
 		unless there is worn audible jiggles clothing or the largeness of breasts <= 2 or (B is bra and the support of B >= 2):
 			let AJC be nothing;
 			repeat with C running through worn cursed blandness ridiculously low cut or higher clothing: [ridiculously low cut or higher clothing is essentially any clothing that's not chestless or fully exposing]
+				if (C is plentiful or C is rare) and a random number between 1 and 3 is 2, now AJC is C;
 			if AJC is clothing:
 				now AJC is audible jiggles;
-					say "Your [ShortDesc of C] boinks and pings as your [BreastDesc] move! Must be some sort of magic."   
+				say "Your [ShortDesc of C] boinks and pings as your [BreastDesc] move! Must be some sort of magic."   
 		
 To compute bsound:
 	repeat with C running through worn audible jiggles clothing:
