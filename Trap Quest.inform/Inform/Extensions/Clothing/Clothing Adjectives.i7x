@@ -270,7 +270,7 @@ Is the player unable to move because some clothing is stuck?
 Definition: yourself is clothing stuck:
 	if there is worn stuck clothing, decide yes;
 	decide no.
-Clothing can be bsounding. Clothing is usually not bsounding. 
+Clothing can be bsounding. Clothing is usually not bsounding.
 Clothing can be glued or unglued. Clothing is usually unglued.
 Clothing can be womanly or manly. Clothing is usually womanly. [Manly clothing is anything that is not specifically something only women should wear. E.g. a T-shirt]
 Clothing can be restart immune. Clothing is usually not restart immune. [This means it won't disappear or change when the map is reset.]

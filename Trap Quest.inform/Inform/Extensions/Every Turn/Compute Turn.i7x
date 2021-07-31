@@ -940,7 +940,7 @@ To Reset Flags:
 		if being-fucked is 0, now the buildup of F is 0;
 	if the rawness of penis > 0 and wanking is 0 and the number of things penetrating penis is 0 and the number of things penetrating vagina is 0:
 		RawDown penis.
-	
+
 To say other tips:
 	if the player is not immobile and the body soreness of the player > 6 and the player is prone, say "[one of][newbie style]Newbie tip: You're quite sore, so you should look out for furniture to rest on, which will heal you. If you can't find any, you can always rest on the royal bed in the starting room, but this will increase your sex addiction, so it's best used as a last resort.[roman type][line break][or][stopping]";
 	if the player is not immobile and the soreness of asshole > 6 or the soreness of vagina > 6, say "[one of][newbie style]Newbie tip: Your hole is quite sore. It'll slowly go down over time, but you can heal it a bit instantly with lubricant. Also, you can drink from the statue in the statue hall to heal loads instantly, but don't do this too much - every time you do, you'll have to swallow some semen, and too much will make you become addicted.[roman type][line break][or][stopping]";

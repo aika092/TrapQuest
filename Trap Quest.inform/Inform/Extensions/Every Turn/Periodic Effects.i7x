@@ -217,20 +217,15 @@ A time based rule (this is the compute jiggles rule):
 				if (C is plentiful or C is rare) and a random number between 1 and 3 is 2, now AJC is C;
 			if AJC is clothing:
 				now AJC is audible jiggles;
-				say "Your [ShortDesc of C] boinks and pings as your [BreastDesc] move! Must be some sort of magic."   
-		
+				say "[bold type]Your [ShortDesc of AJC] boinks and pings as your [BreastDesc] move! [roman type]This must be some sort of cursed magic...".
+
 To compute bsound:
 	repeat with C running through worn audible jiggles clothing:
-		say "Your [ShortDesc of C] accompanies the bounces of your [BreastDesc] with boings and wobbles.[or] Your [C] is ensuring that every [BreastBounceDesc] of your [RealBreastDesc] is accompanied with silly sound effects. [or]You are unable to prevent your [C] from announcing each bounce of your [BreastDesc]![or][bold type]The clap of your [BreastDesc] keeps alerting enemies![roman type][line break][or]The magical emphasis on your [ShortDesc of C] movement is signaling exactly where you are![or]You wish you could stop your [C] from detailing every sway of your breasts.[as decreasingly likely outcomes]";
+		say "[one of]Your [ShortDesc of C] accompanies the bounces of your [BreastDesc] with boings and wobbles.[or]Your [C] is ensuring that every [BreastBounceDesc] of your [RealBreastDesc] is accompanied with silly sound effects.[or]You are unable to prevent your [C] from announcing each bounce of your [BreastDesc]![or][bold type]The clap of your [BreastDesc] keeps alerting enemies![roman type][line break][or]The magical emphasis on your [ShortDesc of C] movement is signaling exactly where you are![or]You wish you could stop your [C] from detailing every sway of your breasts.[then at random]";
 		now C is bsounding.
-			
-bsoundingHS is a humilating situation.
-Definition: bsoundingHS (Called A) is applicable:
-	if the player is not disgraced and there is a worn bsounding clothing, decide yes;
-		decide no.
-To reflect on (A - bsoundingHS):
-	say "[first custom style][one of] Who had the bright idea to make clothing that announced every wobble of these damned orbs?! [or]I've got to get dump this [C]. It's impossible to get any long lasting privacy with these stupid boings and twangs![or]Do these [ShortDesc of C] run out of energy? How humiliating![stopping][roman type][line break]".	
-	
+
+
+
 Carry out going when there is a worn audible jiggles clothing:
 	if the player is upright or a random number between 1 and 5 is 1, compute bsound.
 
