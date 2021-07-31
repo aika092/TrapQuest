@@ -16,7 +16,9 @@ To compute class set up of (C - a schoolgirl outfit):
 	now the raw-magic-modifier of C is 2.
 
 To compute post transformation effect of (C - a schoolgirl outfit):
-	if a random number between 1 and 20 < the largeness of breasts, now C is audible jiggles.
+	if C is blandness and a random number between 3 and 20 < the largeness of breasts:
+		now C is audible jiggles;
+		say "[bold type]You can hear a loud BOING sound every time your [BreastDesc] wobble. [roman type]This must be a [C]!".
 
 To compute SelfExamineDesc of (C - a schoolgirl outfit):
 	say "You are wearing a [MediumDesc of C]. ";
