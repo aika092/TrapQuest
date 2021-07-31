@@ -10,7 +10,13 @@ To say ClassSummonFlav of (C - a cheerleader outfit):
 	say "[bold type]A [ShortDesc of C] appears on you![line break][if the mercyskill of the player is 0]You suddenly feel like you could get away with anything! It's like the consequences of your actions... just aren't as important as they used to be.[end if]".
 
 To compute class set up of (C - a cheerleader outfit):
+	if a random number between 4 and max breast size <= the largeness of breasts, now C is audible jiggles;
 	now the raw-magic-modifier of C is the total volume of hips / 4.
+
+To compute post transformation effect of (C - a cheerleader outfit):
+	if C is blandness and a random number between 4 and max breast size <= the largeness of breasts:
+		now C is audible jiggles;
+		say "[bold type]You can hear a loud BOING sound every time your [BreastDesc] wobble. [roman type]This must be a [C]!".
 
 To say ShortDesc of (C - a cheerleader outfit):
 	say "cheerleader outfit".

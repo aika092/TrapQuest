@@ -165,6 +165,8 @@ Clothes will sometimes have special effects, which you won't discover until you 
 
 [bold type]Temptation:[roman type] increases bimbo, and gives you a chance to accidentally seduce a friendly monster when talking to it, making it unfriendly.
 
+[bold  type]Audible Jiggles: [roman type] Lets enemies know where you are.
+
 [bold type]Absorption:[roman type] self cleaning if stained with bodily fluids.
 
 [bold type]Dressup:[roman type] Spawns cursed super slutty useless clothing on you.

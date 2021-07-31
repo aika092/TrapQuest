@@ -129,7 +129,7 @@ To compute action (N - a number) of (M - a monster):
 	compute unique final action of M.
 
 Definition: a monster is location-attracted:
-	if cowbell is clanking or the player is glued seductively or magnetism-timer > 0 or there is a triggered cage trap in the location of the player, decide yes;
+	if cowbell is clanking or the player is glued seductively or magnetism-timer > 0 or there is worn bsounding clothing or there is a triggered cage trap in the location of the player, decide yes;
 	decide no.
 
 Definition: a monster is motionless-when-defeated:

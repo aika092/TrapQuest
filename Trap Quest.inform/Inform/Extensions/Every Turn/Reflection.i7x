@@ -247,6 +247,14 @@ Definition: visible-erection is applicable:
 To reflect on (A - visible-erection):
 	say "[variable custom style]'[one of]Everyone can see my boner...This is so embarrassing.'[or]I can't believe I have a boner. Someone's going to think I'm actually enjoying this...'[in random order][roman type]".
 
+bsoundingHS is a humiliating situation.
+Definition: bsoundingHS is applicable:
+	if the player is not disgraced and there is a worn bsounding clothing, decide yes;
+	decide no.
+To reflect on (A - bsoundingHS):
+	let C be a random worn bsounding clothing;
+	say "[first custom style][one of]Who had the bright idea to make clothing that announced every wobble of these damned orbs?![or]I've got to get dump this [ShortDesc of C]. It's impossible to get any long lasting privacy with these stupid boings and twangs![or]Does this [ShortDesc of C] ever run out of magical energy? These sounds are so humiliating![stopping][roman type][line break]".
+
 To say FriendReaction of (M - a real-life patron) to (A - visible-erection):[BIG TODO]
 	say "... [one of]So you ARE enjoying this. [or]Oh, so this IS exciting for you. [in random order]".
 

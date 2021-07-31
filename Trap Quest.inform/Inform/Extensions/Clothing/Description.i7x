@@ -213,6 +213,9 @@ Report examining breast covering clothing:
 To say selfexamineuniquetitle of (C - a clothing):
 	say "[ShortDesc of C]".
 
+Report examining worn audible jiggles clothing:
+	say "Some sort of in-built magic effect is making this item emphasize the sounds your [BreastDesc] make as they move, making them loud and somewhat comical. It makes you feel like you're in some kind of bizarre cartoon!".
+
 Report examining clothing:
 	if the noun is super-short:
 		say "The skirt is so super short that you[unless the noun is worn][']ll still be completely exposed even when wearing it.[otherwise][']re still completely exposed.[end if] [if the humiliation of the player > HUMILIATION-DISGRACED + 3500 and the outrage of the noun is not too humiliating and diaper quest is 0][line break][second custom style]Which is exactly what I want![roman type][line break]";

@@ -118,6 +118,7 @@ Definition: tartan tube top is class-relevant:
 	decide no.
 
 To compute class set up of (C - tartan tube top):
+	if a random number between 4 and max breast size <= the largeness of breasts, now C is audible jiggles;
 	now C is intelligence-influencing;
 	now the raw-magic-modifier of C is 1.
 

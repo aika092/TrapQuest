@@ -898,6 +898,8 @@ An all later time based rule (this is the pain drain cooldown rule):
 testing-val is a number that varies.
 
 To Reset Flags:
+	repeat with A running through bsounding clothing:
+		now A is not bsounding;
 	if refractoryperiod > 0:
 		decrease refractoryperiod by 1;
 		now aroused-turns is 0; [The player can keep gaining arousal after orgasms. But then some of it will rather quickly drop off after sex ends, if she successfully orgasmed.]

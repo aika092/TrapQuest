@@ -508,6 +508,7 @@ The player trips on lever rule is listed in the clumsiness rules.
 
 Carry Out Going (this is the monsters-go-next rule):
 	if seconds is 3 or seconds is 6:
+		if the player is upright or a random number between 1 and 5 is 1, compute bsound; [putting this here to make sure it always happens before NPCs move]
 		if the player is in a predicament room:
 			repeat with M running through alive bystanders:
 				compute movement of M;

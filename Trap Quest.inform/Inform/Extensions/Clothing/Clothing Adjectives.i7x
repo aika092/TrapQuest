@@ -253,7 +253,7 @@ Clothing can be ass plugging. Clothing is usually not ass plugging.
 Clothing can be vagina plugging. Clothing is usually not vagina plugging.
 Clothing has a number called plug size. The plug size of clothing is usually 0.
 Clothing can be purity. Clothing is usually not purity. [Means they care about your virginity.]
-A Magic-type is a kind of value. The magic-types are blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, stumbling, provocation, exposure, and hostility. Clothing has a magic-type. The magic-type of clothing is usually blandness.
+A Magic-type is a kind of value. The magic-types are blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, stumbling, provocation, exposure, audible jiggles, and hostility. Clothing has a magic-type. The magic-type of clothing is usually blandness.
 Magic-ID is a kind of value. The magic-IDs are unidentified and identified. Clothing has a Magic-ID. The Magic-ID of clothing is usually unidentified.
 Clothing has a number called raw-magic-modifier. The raw-magic-modifier of clothing is usually 0.
 To decide which number is the penis-capacity of (C - a clothing):[what's the largest size of penis it can cover?]
@@ -270,6 +270,7 @@ Is the player unable to move because some clothing is stuck?
 Definition: yourself is clothing stuck:
 	if there is worn stuck clothing, decide yes;
 	decide no.
+Clothing can be bsounding. Clothing is usually not bsounding.
 Clothing can be glued or unglued. Clothing is usually unglued.
 Clothing can be womanly or manly. Clothing is usually womanly. [Manly clothing is anything that is not specifically something only women should wear. E.g. a T-shirt]
 Clothing can be restart immune. Clothing is usually not restart immune. [This means it won't disappear or change when the map is reset.]
@@ -361,6 +362,7 @@ To decide which number is the stealth-influence of (C - a clothing):
 	let N be 0;
 	if C is nudism-disabling and C is actually dense, decrease N by 1;
 	if C is gem themed, decrease N by 1;
+	if C is bsounding, decrease N by 6;
 	decide on N.
 Definition: a clothing is stealthy:
 	if the stealth-influence of it > 0, decide yes;
