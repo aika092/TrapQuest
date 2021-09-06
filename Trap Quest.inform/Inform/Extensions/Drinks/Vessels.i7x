@@ -34,6 +34,8 @@ Has special effects with the waitress bunny class.
 
 @!]
 A waitress vessel is a kind of vessel.
+Definition: a wearthing is waitress-enabling: decide no. [Does this item mean that the player can serve drinks to humans?]
+service-ready is initially false.
 Definition: a waitress vessel is party themed: decide yes.
 Definition: a waitress vessel is pink themed: decide yes.
 Definition: a bottle (called T) is serve-ready:
@@ -45,11 +47,11 @@ Definition: a bottle is probably-serve-ready:
 	decide no.
 
 Definition: a bottle (called T) is player-serve-ready:
-	if (the class of the player is bunny and bunny waitress ears is worn) or there is worn serving-bondage or the class of the player is "cafe maid", decide yes;
+	if there is a worn waitress-enabling wearthing, decide yes;
 	if the class of the player is royal slave and the fill-colour of T is white, decide yes;
 	decide no.
 
-A vessel can be open topped.
+A vessel can be tight topped, open topped, lid topped (this is the vessel-top-type property).
 The doses of a vessel is usually 0.
 
 Definition: a vessel is basic loot:
@@ -72,18 +74,6 @@ This is the remove inappropriate vessels rule:
 	now squirt dildo is in Holding Pen;
 	if diaper messing < 3, now novelty mug is in Holding Pen.
 The remove inappropriate vessels rule is listed in the diaper quest fix rules.
-
-To decide which number is vessel-count:
-	let X be 0;
-	repeat with V running through vessels held by the player:
-		increase X by 1;
-	decide on X.
-
-To decide which number is open-topped-vessel-count:
-	let X be 0;
-	repeat with V running through open topped vessels held by the player:
-		increase X by 1;
-	decide on X.
 
 To say ShortDesc of (B - a vessel):
 	if the doses of B is 0, say "empty ";
@@ -115,7 +105,7 @@ Definition: squirt dildo is penis themed: decide yes.
 To decide which number is the initial outrage of (V - squirt dildo):
 	decide on 14.
 
-baby's bottle is a vessel. The max-doses of baby's bottle is 3. The printed name of baby's bottle is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]baby's bottle[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of baby's bottle is "bab". Figure of baby's bottle is the file "Items/Accessories/Vessels/babybottle1.png".
+baby's bottle is a vessel. baby's bottle is lid topped. The max-doses of baby's bottle is 3. The printed name of baby's bottle is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]baby's bottle[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of baby's bottle is "bab". Figure of baby's bottle is the file "Items/Accessories/Vessels/babybottle1.png".
 To decide which figure-name is the examine-image of (V - baby's bottle):
 	decide on the figure of baby's bottle.
 Definition: baby's bottle is pregnancy themed: decide yes.
@@ -376,7 +366,7 @@ To decide which number is the initial outrage of (V - a novelty mug):
 To decide which number is the initial cringe of (V - a novelty mug):
 	decide on 6.
 
-teapot is a vessel. The max-doses of teapot is 2. The printed name of teapot is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]teapot[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of teapot is "tp".
+teapot is a vessel. teapot is lid topped. The max-doses of teapot is 2. The printed name of teapot is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]teapot[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of teapot is "tp".
 Figure of penis teapot is the file "Items/Accessories/Vessels/teapot1.png".
 Figure of kitty teapot is the file "Items/Accessories/Vessels/teapot2.png".
 To decide which figure-name is the examine-image of (V - teapot):

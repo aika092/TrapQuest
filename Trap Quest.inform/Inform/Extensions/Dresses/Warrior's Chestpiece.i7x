@@ -297,10 +297,9 @@ Definition: virgin princess outfit is class-transformation-protected:
 
 Definition: virgin princess outfit is gem themed: decide yes.
 Definition: virgin princess outfit is white themed: decide yes.
-Definition: virgin princess outfit is potentially vagina covering:
-	if the player is not possessing a vagina and it is potentially pussy covering, decide yes;
-	decide no. [On women, this item doesn't fully conceal the vagina]
 To decide which number is the penis-capacity of (H - virgin princess outfit):
 	decide on 2.
+To decide which number is the crotch-tightness of (H - virgin princess outfit):
+	decide on 5.
 
 Warrior's Chestpiece ends here.

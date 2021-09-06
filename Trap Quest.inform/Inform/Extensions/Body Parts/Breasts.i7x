@@ -319,7 +319,7 @@ the breasts presentable rules is a rulebook.
 the presentable rules of breasts is usually the breasts presentable rules.
 
 This is the breasts too tiny for titfuck rule:
-	if the largeness of breasts < 5:
+	if the largeness of breasts < 5 and presenting-receiver is not demoness:
 		if auto is 0, say "Your [BreastDesc] are too small to provide a good titfuck.";
 		rule fails.
 The breasts too tiny for titfuck rule is listed in the breasts presentable rules.
@@ -345,11 +345,14 @@ This is the too horny to present breasts rule:
 		if auto is 0 or there is an actually presentable fuckhole: [The automatic action rule does not care if you are horny, unless a fuckhole is actually presentable as well.]
 			if the player is very horny and the sensitivity of breasts < 11:
 				if auto is 0, say "You are too aroused and your [if the player is not possessing a vagina][asshole] is[otherwise][vagina] and [asshole] are[end if] begging to be fucked; you can't bring yourself to do that!";
-				rule fails;
-			if the semen addiction of the player < 6 and bukkake fetish is 1:
-				if auto is 0, say "The thought of getting [semen] over your [BreastDesc] is just too gross, you can't bring yourself to offer that!";
 				rule fails.
 The too horny to present breasts rule is listed in the breasts presentable rules.
+
+This is the too gross to present breasts rule:
+	if bukkake fetish is 1 and auto is 0 and (the player is not horny or there is an actually presentable fuckhole) and the semen addiction of the player < 6 and presenting-receiver is not demoness:
+		say "The thought of getting [semen] over your [BreastDesc] is just too gross; you can't bring yourself to offer that!";
+		rule fails.
+The too gross to present breasts rule is listed in the breasts presentable rules.
 
 breasts-blinded is a number that varies.
 
@@ -830,7 +833,7 @@ To 2Bustdown:
 		if boobshrinkflav is 0, say "[if the faint count of the player is 0]Your boobs refuse to shrink. [one of]What could that mean?[or][stopping][otherwise]Your boobs refuse to shrink. [one of]Oh dear, that must mean your real world breasts have now grown to this size![or]They won't go smaller than your real world size![stopping][end if]";
 		now boobshrinkflav is 1;
 	otherwise:
-		decrease the flesh volume of breasts by 1;
+		decrease the flesh volume of breasts by 1.
 
 To decide which number is the milk capacity of (B - breasts):
 	let F be the flesh volume of breasts * 2;
@@ -863,12 +866,12 @@ To Milkup (X - a number):
 
 To 2Milkup:
 	increase the milk volume of breasts by 1;
-	compute bra strain;
+	compute bra strain.
 
 To MilkDown (X - a number):
 	while X > 0:
 		decrease X by 1;
-		2Milkdown;
+		2Milkdown.
 
 To 2Milkdown:
 	if the milk volume of breasts > 0:
@@ -897,7 +900,7 @@ To BustInflate (X - a number):
 To BustDeflate (X - a number):
 	while X > 0:
 		decrease X by 1;
-		if the air volume of breasts > 0, decrease the air volume of breasts by 1;
+		if the air volume of breasts > 0, decrease the air volume of breasts by 1.
 
 To BustImplantsUp (X - a number):
 	if the player is a flatchested trap, now X is 0;
@@ -929,6 +932,11 @@ To BustImplantsUp (X - a number):
 				if C is a thing and L is a thing, transform C into L;
 			otherwise if C is a thing and the substituted form of player-class exactly matches the text "magical girl": [has to be exactly this class and not any cross-class]
 				transform C into anime superheroine top;
+			otherwise if playdude bunny waitress ears is worn and the class of the player is "bunny": [no cross-class yet]
+				transform playdude bunny waitress ears into rubber-bunny-waitress-ears;
+				class summon rubber-bunny-waitress-outfit; [will be blocked if a class-relevant outfit is already worn]
+				let M be a random worn overdress;
+				if rubber-bunny-waitress-outfit is not held and M is a removable overdress, transform M into rubber-bunny-waitress-outfit;
 	compute bra strain;
 	update appearance level;
 	progress quest of bust-up-quest;
@@ -950,7 +958,7 @@ To stimulate (X - breasts):
 			if the sensitivity of breasts > 20:
 				say "[one of]The nerves in your breasts explode with sensation! [if the player is possessing a vagina]Your [vagina] gushes with pleasure.[otherwise if the player is possessing a penis]Your [player-penis] twitches rapidly.[end if][or]Your entire body shudders with pleasure.[or]Sparks of pure euphoria fly through your brain.[or]Your super sensitive tits cause you to moan with pleasure.[at random]";
 			otherwise if the sensitivity of breasts > 10:
-				say "[one of]Your breasts feel amazing. [if the player is herm]Your [vagina] gets wetter and your [player-penis] stirs gently.[otherwise if the player is possessing a vagina]Your [vagina] gets wetter.[otherwise if the player is possessing a penis]Your [player-penis] stirs gently.[end if][or][or][or]You close your eyes and shiver. it feels so good![or][or][or]Your super sensitive tits cause you to moan with pleasure.[or][or][or]You [if the player is not able to masturbate]wish you could masturbate![otherwise]can't help but gently play with yourself, eyes rolling to the back of your head with pleasure.[end if][or][stopping]";
+				say "[one of]Your breasts feel amazing. [if the player is herm]Your [vagina] gets wetter and your [player-penis] stirs gently.[otherwise if the player is possessing a vagina]Your [vagina] gets wetter.[otherwise if the player is possessing a penis]Your [player-penis] stirs gently.[end if][or][or][or]You close your eyes and shiver. it feels so good![or][or][or]Your super sensitive tits cause you to moan with pleasure.[or][or][or]You [if the player is not able to automatically masturbate]wish you could masturbate![otherwise]can't help but gently play with yourself, eyes rolling to the back of your head with pleasure.[end if][or][stopping]";
 			otherwise:
 				say "[one of]It actually feels quite pleasurable for you.[or][or][or]You realise you are breathing heavily. Are your breasts somehow getting more sensitive?[or][or][or]You let out an involuntary whimper. It actually feels good![or][or][or]You shiver as a wave of sexual pleasure flows through you.[or][stopping]".
 

@@ -179,7 +179,7 @@ To decide which object is the banish-item of (M - a mannequin):
 To decide which object is the banish-item of (M - lingerie-clad mannequin):
 	decide on anal-beads-plug-panties.
 To decide which object is the banish-item of (M - skater mannequin):
-	decide on blue-wheeled white-rollerskates.
+	decide on white-rollerskates.
 
 To set up (M - a mannequin):
 	reset M;

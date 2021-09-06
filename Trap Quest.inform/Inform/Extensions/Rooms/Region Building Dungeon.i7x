@@ -77,9 +77,6 @@ To Set Up The Dungeon:
 	repeat with M running through alive monsters:
 		while the location of M is an unplaced room in the Dungeon:
 			now M is in a random sandy room;
-	repeat with N running from 1 to 7:
-		let G be a random placed sandy room;
-		unless there is a tank in G, deploy tank in G;
 	repeat with K running through kneeling stools in The Dungeon:
 		now K is off-stage;
 		now K is bland;
@@ -89,7 +86,17 @@ To Set Up The Dungeon:
 	if weight gain fetish is 1:
 		now a random off-stage kneeling stool is in a random sandy unrelaxing placed room;
 		now a random kneeling stool in The Dungeon is cursed;
-	if lactation fetish is 1, now dungeon-milking-bench is in a random sandy unrelaxing placed room;
+	if lactation fetish is 1:
+		now dungeon-milking-bench is in a random sandy unrelaxing placed room;
+		let MT be a random milk-tank in Holding Pen;
+		if MT is milk-tank and the number of milk-tanks in the location of dungeon-milking-bench is 0, now MT is in the location of dungeon-milking-bench;
+	repeat with N running from 1 to 7:
+		let G be a random placed sandy room;
+		let failsafe be 50;
+		while there is a dispenser in G and failsafe > 0:
+			now G is a random placed sandy room;
+			decrease failsafe by 1;
+		unless there is a dispenser in G, deploy tank in G;
 	repeat with G running through important rooms in The Dungeon:
 		unless G is the location of the player:
 			let Y be a random treasure chest in Holding Pen;

@@ -152,10 +152,10 @@ To compute swimming in (WB - WoodsScenery01):
 		compute multiple choice question;
 		say "[line break]What should you do next?";
 		let CNR be the chosen numerical response;
-		if the printed name of CNR is "get out":
+		if the CNR is "get out":
 			say "You climb out of the river.";
 			now swimming is 0;
-		otherwise if the printed name of CNR is "swim toward waterfall":
+		otherwise if the CNR is "swim toward waterfall":
 			say "You take a deep breath and begin swimming against the current.";
 			compute normal swimming check in WB;
 			let DC be 40;
@@ -178,7 +178,7 @@ To compute swimming in (WB - WoodsScenery01):
 			otherwise:
 				say "You try to swim toward the waterfall, but the current is just too strong, and it drags you even further down the river.";
 				increase swim-location by 1;
-		otherwise if the printed name of CNR is "swim toward edge":
+		otherwise if the CNR is "swim toward edge":
 			say "You take a deep breath and begin swimming against the current.";[The player will potentially rest here, so we defer the fatigue until the end.]
 			let DC be 50;
 			if the waterfall-timer of WB > 0, increase DC by 30;
@@ -199,11 +199,11 @@ To compute swimming in (WB - WoodsScenery01):
 				say "You try swim to the edge, but the current is just too strong, and it pushes you further down the river.";
 				compute normal swimming check in WB;
 				increase swim-location by 1;
-		otherwise if the printed name of CNR is "ride the current":
+		otherwise if the CNR is "ride the current":
 			say "You allow the current to carry you down the river.";
 			compute easy swimming check in WB;
 			increase swim-location by 1;[always succeeds]
-		otherwise if the printed name of CNR is "dive":
+		otherwise if the CNR is "dive":
 			say "You dive below the surface.";
 			compute difficult swimming check in WB;
 			compute treasure diving in WB at L;
@@ -218,11 +218,11 @@ To compute swimming in (WB - WoodsScenery01):
 			otherwise:
 				say "[line break]While you're underwater, the current pushes you much further down the river.";
 				increase swim-location by 2;
-		otherwise if the printed name of CNR is "hold on":
+		otherwise if the CNR is "hold on":
 			compute bathing;
 			say "You hold onto the rocks as the force of the waterfall crashes down above you. You feel a little less fatigued.";
 			FatigueDown 5;
-		otherwise if the printed name of CNR is "slow the current":
+		otherwise if the CNR is "slow the current":
 			if M is worn by the player:
 				say "The slimegirl sticks a translucent appendage out of your butt and reaches into the waterfall. You hear a *click*, and a metal grate extends out above you, robbing the current of more than half its force.";
 			otherwise:
@@ -459,7 +459,7 @@ Carry out talking slimegirl:
 		compute multiple choice question;
 		if player-numerical-response is 1:
 			allocate 3 seconds;
-			say "[variable custom style][numerical-response-1][roman type][line break]";
+			say "[variable custom style][chosen numerical response][roman type][line break]";
 			say "It doesn't seem like [NameDesc of slimegirl] [if slimegirl is uninterested]knows that you're speaking to [him of slimegirl][otherwise]can understand you[end if].";
 	otherwise:
 		set numerical response 1 to the substituted form of "[variable custom style]'Hello[if slimegirl is worn], can you hear me in there[end if]?'[roman type][line break]";

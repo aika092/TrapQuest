@@ -376,7 +376,6 @@ Are there clothes on the Wonderfuller model?
 
 +!]
 To decide which number is wonderfuller clothing:
-	if the player is not the donator, decide on 0;
 	decide on choice in row 37 of the Table of Settings.
 
 [!<DecideWhichNumberIsPreviousSupporterID>+
@@ -664,7 +663,7 @@ title	subtable	description	toggle
 "Save and Restore buttons[if SaveLoadPreference is 1] (these still won't show if you've chosen roguelike saving): ON[otherwise]: OFF[end if]"	--	--	SaveLoadPreference toggle rule
 "[if GUI layout is 1]Inline Image Cutscenes[otherwise]Keep all cutscene images in Location Window[end if]: [if image cutscenes is 0]NO CUTSCENES[otherwise if GUI layout is 0 and image cutscenes is 1]NO[otherwise]YES[end if]"	--	--	image cutscenes toggle rule
 "Animated graphical elements: [if animationsEnabled is 1]ON[otherwise]OFF[end if]"	--	--	animationsEnabled toggle rule
-"Visible humiliating tattoos shown in Location Window [if tattoo vision is 1]ON[otherwise]OFF[end if]"	--	--	tattoo vision toggle rule
+"Visible humiliating tattoos shown in Location Window: [if tattoo vision is 1]ON[otherwise]OFF[end if]"	--	--	tattoo vision toggle rule
 "Dark mode (Compatible with WinGit; you just need to go into Git>Options and invert the colours for the main window manually; the exact brown RGB value is 24,13,1): [if darkMode is 1]ON[otherwise if darkMode is 2]GRAPHICAL WINDOWS ONLY[otherwise]OFF[end if]"	--	--	darkMode toggle rule
 
 To say InterfaceStyleOptions:

@@ -100,20 +100,20 @@ A later time based rule (this is the robo vacuum cleaner rule):
 				if face is not actually occupied, set numerical response 1 to "put the other end of the tube in your mouth";
 				if robo vacuum cleaner is penetrating face, set numerical response 1 to "keep the other end of the tube in your mouth";
 				let LV be a list of things;
-				repeat with V running through carried open topped vessels:
-					add V to LV;
+				repeat with V running through carried vessels:
+					if V is not tight topped, add V to LV;
 				truncate LV to 8 entries;
 				repeat with V running through LV:
 					set next numerical response to "direct the tube into the [ShortDesc of V][if the doses of V > 0] (You'll lose its current contents of [PotionType of V])[end if]";
 				compute multiple choice question;
 				if player-numerical-response is 0:
 					now robo vacuum cleaner is not penetrating face;
-				otherwise if the printed name of the chosen numerical response matches the text "other end of the tube in your mouth":
+				otherwise if the chosen numerical response matches the text "other end of the tube in your mouth":
 					if robo vacuum cleaner is not penetrating face, say "You push the other end of the tube past your [LipDesc], ready to catch the liquid in your mouth[if black hood is worn and black hood is not blessed]. As soon as it's inside, you feel it sealing itself into place against the ring gag of your [black hood] - it won't let you remove it![otherwise].[end if]";
 					now robo vacuum cleaner is penetrating face;
 				otherwise:
 					let LN be player-numerical-response;
-					if the printed name of numerical-response-1 matches the text "other end of the tube in your mouth", decrease LN by 1;
+					if (the chosen numerical response of 1) matches the text "other end of the tube in your mouth", decrease LN by 1;
 					now collecting is entry LN in LV;
 			if robo vacuum cleaner is penetrating face, now collecting is face;
 			if collecting is a thing:

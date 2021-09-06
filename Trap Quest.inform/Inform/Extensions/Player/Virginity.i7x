@@ -150,29 +150,34 @@ Definition: yourself is a sissy:
 	decide no.
 
 To virginpunish:
-	if virgincursed > 0 and transGender is 0:
+	if virgincursed > 0 and transGender is 0 and the player is not in a predicament room and the player is gendered male:
 		let S be a random off-stage sissifying transformation-eligible actually summonable clothing;
-		if S is clothing:
+		if S is clothing and virgincursed < 3:
 			say VirginFlav;
 			say "[bold type]As if reacting to your feelings, you suddenly feel a [ShortDesc of S] appear on you![line break][variable custom style][one of]Uh-oh...[or]This is making me feel like a pathetic [sissy slut]...[or]Even more [sissy] clothing?![stopping][roman type][line break]";
 			summon S cursed with quest;
 			now the raw-magic-modifier of S is the number of worn sissifying clothing - 2;
 			announce sissification;
-		otherwise if the size of penis > min penis size:
+		otherwise if the mystical size of penis > min penis size:
 			say VirginFlav;
-			PenisDown 1;
-		otherwise if the player is possessing a penis:
+			SpecialPenisDown 1; [#LXorDD]
+		otherwise if the player is possessing a penis and the number of worn chastity bonds is 0:
 			say VirginFlav;
-			let C be a random off-stage chastity cage;
+			let C be a random off-stage fetish appropriate chastity cage;
 			if C is actually summonable:
 				say "[bold type]As if reacting to your feelings, you suddenly feel a [ShortDesc of C] [bold type]appear on you![line break][variable custom style]How am I ever supposed to lose my virginity now? I'm stuck like this forever...[roman type][line break]";
 				summon C locked;
 		otherwise if the raw sex addiction of the player < 15 and the raw sex addiction of the player < the raw delicateness of the player:
 			say VirginFlav;
-			if the raw anal sex addiction of the player <= the raw sex addiction of the player / 2, AnalSexAddictUp 1;
-			otherwise SexAddictUp 1;
+			if the raw anal sex addiction of the player <= the raw sex addiction of the player / 2:
+				say "You start to daydream about [manly-penis] filling your [asshole] and smashing your [one of]prostate[or]sissy button[stopping]. [line break][variable custom style][if the bimbo of the player < 10]Maybe I'll try anal again? It's not so bad and it made me cum really hard last time...[otherwise]I should find some [manly-penis] to pound my [asshole] till my [sissy-penis] squirts, I don't deserve to cum like a boy![end if][roman type][line break]";
+				AnalSexAddictUp 1;
+			otherwise:
+				say "You start to daydream about all kinds of humiliating and kinky sexual scenerios.[line break][variable custom style][if the bimbo of the player < 8]I guess if a chick is hot enough I would let her peg me[otherwise if the bimbo of the player < 12]You know all this submissive sex isn't so bad, [manly-penis] gets me so hot and bothered thinking about it[otherwise]I belong on my knees with my [sissy-penis] ignored, my [asshole] plugged, and my mouth full of [manly-penis][end if].[roman type][line break]";
+				SexAddictUp 1;
 		otherwise if the raw delicateness of the player < 15:
 			say VirginFlav;
+			say "You suddenly feel less able to stand up to the monsters you meet in this game.[line break][variable custom style]Maybe it's easier if I just [if the bimbo of the player < 10]do whatever I'm told![otherwise]fuck and suck till I'm a mindless whore and my [sissy-penis] is forgotten![end if][roman type][line break]";
 			DelicateUp 1.
 
 To announce sissification:
@@ -206,7 +211,11 @@ To virginremovecurse:
 	now virgincursed is 0.
 
 To say VirginFlav:
-	say "[bold type]Another wave of [if the humiliation of the player < 40000]shame[otherwise]the curse[end if] flows through you as you [one of][or]once again [stopping]find yourself thinking about your embarrassing virginity. [roman type]".
+	if virgincursed < 3:
+		say "[bold type]Another wave of [if the player is not broken]shame[otherwise]the curse[end if] flows through you as you [one of][or]once again [stopping]find yourself thinking about your embarrassing virginity.[roman type][line break]";
+	otherwise:
+		say "[bold type]Another wave of arousal flows through your mind you as you're reminded about your [if the player is not broken]embarrassing virginity.[otherwise]status as a virgin submissive slut.[end if][roman type][line break]";
+
 
 Part 3 - Virginity Taking Things
 

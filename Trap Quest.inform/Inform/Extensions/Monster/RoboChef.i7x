@@ -215,7 +215,7 @@ To compute condom filling of (M - a robochef):
 	progress quest of condom-creampie-quest.
 
 To say CondomAcceptFlav of (M - a robochef):
-	say "[line break][first custom style]'PROCESSING REQUEST FOR BAGGED LUNCH... SUCCESSFUL.'[roman type] [BigNameDesc of M][']s glass penis retracts into [his of M] body, replacing itself with a black rubber dildo of the same size.".
+	say "[line break][first custom style]'PROCESSING REQUEST FOR BAGGED LUNCH... SUCCESSFUL.'[roman type][line break][BigNameDesc of M][']s glass penis retracts into [his of M] body, replacing itself with a black rubber dildo of the same size.".
 
 Chapter 2 - DQ
 

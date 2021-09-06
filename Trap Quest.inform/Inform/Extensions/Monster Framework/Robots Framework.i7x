@@ -145,7 +145,7 @@ To say FriendlyFoodRefuseFlav of (M - a robot):
 	say "[speech style of M]'ERROR: EXISTING FOOD DETECTED.'[roman type][line break]".
 
 To say FriendlyFoodAgreeFlav of (M - a robot):
-	say "[speech style of M]'REQUEST UNDERSTOOD. DEPLOYING EMERGENCY MEAL.'[roman type]".
+	say "[speech style of M]'REQUEST UNDERSTOOD. DEPLOYING EMERGENCY MEAL.'[roman type][line break]".
 
 To say FriendlyFoodApologiseFlav of (M - a robot):
 	say "[FriendlyFoodEmptyFlav of M]".

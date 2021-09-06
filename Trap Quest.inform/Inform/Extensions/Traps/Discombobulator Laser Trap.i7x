@@ -42,9 +42,16 @@ To trigger (Y - a discombobulator laser trap):
 			if C is not worn:
 				repeat with M running through reactive monsters:
 					say SuddenTransformTrapReactFlav of M;
-		otherwise:
+		otherwise if artificial enhancements fetish is 0 and the latex-transformation of the player is 0: [#LXorDD: No silicone or similar plumping up unless they're amenable to 'plastic'.]
 			say "It hits your skin directly, making you feel weaker...";
 			StrengthDown 1;
+		otherwise: [#LXorDD: they're amenable to 'plastic'.]
+			if diaper quest is 1, now X is a random number between 1 and 2; [i.e. limited to breasts or belly.]
+			otherwise now X is a random number between 1 and 4;
+			say "It hits your [LatexFlav]skin directly!";
+			if ArtificialUp 4 options with override X is 0:
+				say "It shivers through you, making you feel weaker.";
+				StrengthDown 1;
 	otherwise:
 		say "With lightning reflexes, you avoid the path of the laser ray.".
 

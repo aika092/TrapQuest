@@ -63,6 +63,13 @@ To decide which figure-name is clothing-image of (C - light-pink-lace-thong):
 To decide which figure-name is clothing-image of (C - grey-thong):
 	decide on figure of thong 14.
 
+To decide which figure-name is clothing-image of (C - black-lace-thong):
+	if C is monified, decide on figure of thong 15 money;
+	decide on figure of thong 15.
+
+To decide which figure-name is clothing-image of (C - heart-strap-thong):
+	decide on figure of thong 16.
+
 white-thong is a thong. white-thong is sheer-when-wet. The text-shortcut of white-thong is "wth".
 To say selfexamineuniquetitle of (G - white-thong):
 	say "white 'OOPS' thong".
@@ -113,6 +120,8 @@ Definition: purple-thong is fetish appropriate:
 	decide no.
 Definition: purple-thong is penis themed: decide yes.
 Definition: purple-thong is purple themed: decide yes.
+To decide which number is the crotch-tightness of (C - purple-thong):
+	decide on 4.
 
 red-thong is a thong. The text-shortcut of red-thong is "rdt".
 To say selfexamineuniquetitle of (G - red-thong):
@@ -126,6 +135,8 @@ Definition: red-thong is fetish appropriate:
 	if diaper quest is 0, decide yes;
 	decide no.
 Definition: red-thong is red themed: decide yes.
+To decide which number is the crotch-tightness of (C - red-thong):
+	decide on 4.
 
 black-thong is a thong. The text-shortcut of black-thong is "bth". Understand "black" as black-thong.
 To say selfexamineuniquetitle of (G - black-thong):
@@ -147,6 +158,8 @@ To say selfexamineuniquetitle of (G - silver-thong):
 To say UniqueClothingDesc of (G - silver-thong):
 	say "A super tiny silver thong.".
 Definition: silver-thong is silver themed: decide yes.
+To decide which number is the crotch-tightness of (C - silver-thong):
+	decide on 4.
 
 green-thong is a thong. The text-shortcut of green-thong is "gth". Understand "green" as green-thong.
 To say selfexamineuniquetitle of (G - green-thong):
@@ -154,6 +167,55 @@ To say selfexamineuniquetitle of (G - green-thong):
 To say UniqueClothingDesc of (G - green-thong):
 	say "A basic skimpy green thong.".
 Definition: green-thong is green themed: decide yes.
+To decide which number is the crotch-tightness of (C - green-thong):
+	decide on 4.
+
+black-lace-thong is a thong. black-lace-thong is unique. black-lace-thong is silk. The text-shortcut of black-lace-thong is "blth". Understand "black", "lace" as black-lace-thong.
+black-lace-thong can be monified.
+Definition: black-lace-thong is whore themed:
+	if black-lace-thong is monified, decide yes;
+	decide no.
+To say selfexamineuniquetitle of (G - black-lace-thong):
+	say "black lace thong".
+To say UniqueClothingDesc of (G - black-lace-thong):
+	say "A sexy black thong with a waistband that's low at the front and high at the back to excentuate the wearer's hips[if G is monified]. Several paper bills are sewn into the crotch section in a manner that makes it look like they have been tucked in[end if].".
+Definition: black-lace-thong is black themed: decide yes.
+Definition: black-lace-thong is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
+To decide which number is the unique outrage of (C - black-lace-thong):
+	if C is monified, decide on 5;
+	decide on 1.
+Definition: black-lace-thong is upgradable:
+	if it is not monified, decide yes;
+	decide no.
+Definition: black-lace-thong is transformation-protected:
+	if it is not upgradable, decide yes;
+	decide no.
+Definition: black-lace-thong is disintegration-protected: decide yes.
+Definition: black-lace-thong is loop-safe-upgradable:
+	if it is upgradable, decide yes;
+	decide no.
+Definition: black-lace-thong is transformation-theme-blockable: decide no. [It doesn't care about the theme it shares with other items.]
+To decide which object is the unique-upgrade-target of (C - black-lace-thong):
+	decide on C.
+To transform (C - black-lace-thong):
+	say "Paper bills appear on the thong, sewn on and completely unremovable, but looking as though they've just been tucked into the front!";
+	now C is monified.
+
+heart-strap-thong is a thong. heart-strap-thong is transformation-rare. heart-strap-thong is leather. The text-shortcut of heart-strap-thong is "hsth". Understand "heart", "strap" as heart-strap-thong.
+To say selfexamineuniquetitle of (G - heart-strap-thong):
+	say "heart strap thong".
+To say UniqueClothingDesc of (G - heart-strap-thong):
+	say "Pink leather straps frame the wearer's loins but hide little. The wearer's genitals remain barely concealed behind a strategically placed heart.".
+Definition: heart-strap-thong is pink themed: decide yes.
+Definition: heart-strap-thong is heart themed: decide yes.
+To decide which number is the penis-capacity of (K - heart-strap-thong):
+	decide on 2.
+To decide which number is the unique outrage of (K - heart-strap-thong):
+	decide on 3.
+To decide which number is the crotch-tightness of (C - heart-strap-thong):
+	decide on 1. [can't cause cameltoes]
 
 Figure of thong 1 is the file "Items/Clothes/Lower/Underwear/Skimpy/Thongs/thong1.png".
 Figure of thong 2 is the file "Items/Clothes/Lower/Underwear/Skimpy/Thongs/thong2.png".
@@ -163,6 +225,9 @@ Figure of thong 5 is the file "Items/Clothes/Lower/Underwear/Skimpy/Thongs/thong
 Figure of thong 6 is the file "Items/Clothes/Lower/Underwear/Skimpy/Thongs/thong6.png".
 Figure of thong 7 is the file "Items/Clothes/Lower/Underwear/Skimpy/Thongs/thong7.png".
 Figure of thong 8 is the file "Items/Clothes/Lower/Underwear/Skimpy/Thongs/thong8.png".
+Figure of thong 15 is the file "Items/Clothes/Lower/Underwear/Skimpy/Thongs/thong15a.png".
+Figure of thong 15 money is the file "Items/Clothes/Lower/Underwear/Skimpy/Thongs/thong15b.png".
+Figure of thong 16 is the file "Items/Clothes/Lower/Underwear/Skimpy/Thongs/thong16.png".
 
 [Below are from Lucas]
 
@@ -174,6 +239,10 @@ To say UniqueClothingDesc of (G - white-polka-dot thong):
 Understand "polka", "dot", "white" as white-polka-dot thong.
 Definition: white-polka-dot thong is bow themed: decide yes.
 Definition: white-polka-dot thong is white themed: decide yes.
+To decide which number is the crotch-tightness of (C - white-polka-dot thong):
+	decide on 4.
+To decide which number is the penis-capacity of (C - white-polka-dot thong):
+	decide on 2.
 
 flirty-blue-thong is a thong. The text-shortcut of flirty-blue-thong is "fbt". Understand "flirty", "blue" as flirty-blue-thong.
 To say selfexamineuniquetitle of (G - flirty-blue-thong):

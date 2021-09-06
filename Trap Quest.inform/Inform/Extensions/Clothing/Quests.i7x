@@ -273,7 +273,7 @@ To say QuestTitle of (Q - chest-exposing-quest):
 	say " (topless greeting quest)".
 
 To progress quest of (Q - chest-exposing-quest) from (M - a monster):
-	unless M is the latest-monster of Q or the player is in a predicament room or playerRegion is not school:
+	unless M is the latest-monster of Q or the player is in a predicament room or playerRegion is school:
 		increase the greet-count of Q by 1;
 		now the latest-monster of Q is M;
 		repeat with C running through worn cursed clothing:

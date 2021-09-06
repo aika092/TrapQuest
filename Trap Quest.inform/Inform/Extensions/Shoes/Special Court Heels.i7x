@@ -79,11 +79,6 @@ To decide which number is the unique outrage of (C - queen-of-hearts heels):
 To decide which number is the hindrance-modifier of (C - queen-of-hearts heels):
 	decide on 0.
 
-To decide which number is the luck-influence of (C - queen-of-hearts heels):
-	if C is cursed, decide on -1;
-	if C is blessed, decide on 5;
-	decide on 1.
-
 To say UniqueShortDesc of (C - queen-of-hearts heels):
 	say "queen of hearts heels".
 

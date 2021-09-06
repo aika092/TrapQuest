@@ -3,9 +3,6 @@ Offering Trading by Actions begins here.
 To decide what number is the charisma-influence of (C - a thing):
 	decide on 0.
 
-To decide what number is the charisma-influence of (C - a temptation clothing):
-	decide on 1.
-
 To decide which number is the charisma of the player:
 	let X be 0;
 	increase X by the make-up of face;
@@ -13,6 +10,7 @@ To decide which number is the charisma of the player:
 	increase X by gem theme bonus * 2;
 	repeat with C running through worn wearthings:
 		increase X by the charisma-influence of C;
+		if C is temptation clothing, increase X by 1;
 	if the class of the player is cheerleader, increase X by 2;
 	if the class of the player is succubus:
 		if demon horns is cursed, increase X by 1;
@@ -128,8 +126,12 @@ To compute resolution of (M - a monster) taking (T - a thing):
 
 To compute final resolution of (M - a monster) taking (T - a thing):
 	if M is taxable, add T to the taxableItems of M;
-	if T is clothing, now M is carrying T;
-	otherwise destroy T.
+	if T is players-detached-dick:
+		compute handing over detached dick to M; [#LXorDD]
+	otherwise if T is clothing:
+		now M is carrying T;
+	otherwise:
+		destroy T.
 
 To say OfferThanksFlav of (M - a monster) for (T - a thing):
 	if the bartering value of T for M > 2, say "[speech style of M]'Thanks a lot for this!'[roman type][line break]".

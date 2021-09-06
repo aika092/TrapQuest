@@ -29,9 +29,14 @@ To say ClothingDesc of (O - bunny waitress outfit):
 	say "This classic black sexy waitress outfit has a low cut bust and a V-shaped crotch and a white fluffy cottontail[if background-waitress is 0]. It makes the wearer better at avoiding spilling drinks[end if].".
 
 To say ShortDesc of (C - bunny waitress outfit):
+	say "bunny outfit".
+To say MediumDesc of (C - bunny waitress outfit):
 	say "bunny waitress outfit".
 
 To compute class set up of (C - bunny waitress outfit):
+	compute default bunny outfit class set up of C.
+
+To compute default bunny outfit class set up of (C - a clothing):
 	set up taste-based influence of C;
 	now the raw-magic-modifier of C is the square root of (the largeness of breasts + the total volume of hips);
 	let W be a random off-stage waitress vessel;
@@ -51,6 +56,8 @@ To decide which object is the unique-upgrade-target of (C - bunny waitress outfi
 
 Definition: bunny waitress outfit is black themed: decide yes.
 Definition: bunny waitress outfit is party themed: decide yes.
+To decide which number is the crotch-tightness of (C - bunny waitress outfit):
+	decide on 3.
 
 
 Part 2 - Black Latex Bunny Outfit
@@ -70,6 +77,8 @@ To say ShortDesc of (C - black rubber bunny outfit):
 
 To decide which number is the initial outrage of (C - black rubber bunny outfit):
 	decide on 6.
+To decide which number is the crotch-tightness of (C - black rubber bunny outfit):
+	decide on 4.
 
 Definition: black rubber bunny outfit is black themed: decide yes.
 Definition: black rubber bunny outfit is party themed: decide yes.
@@ -121,6 +130,8 @@ To say ShortDesc of (C - cream rubber bunny outfit):
 
 To decide which number is the initial outrage of (C - cream rubber bunny outfit):
 	decide on 7.
+To decide which number is the crotch-tightness of (C - cream rubber bunny outfit):
+	decide on 3.
 
 To compute class set up of (C - cream rubber bunny outfit):
 	now the raw-magic-modifier of C is 1.
@@ -135,9 +146,10 @@ Figure of dq bunny outfit is the file "Items/Clothes/Upper/Special/Bunny/bunny4.
 
 To decide which number is the initial outrage of (C - dq bunny outfit):
 	decide on 0.
-
 To decide which number is the initial cringe of (C - dq bunny outfit):
 	decide on 6.
+To decide which number is the crotch-tightness of (C - dq bunny outfit):
+	decide on 0.
 
 To compute class set up of (C - a dq bunny outfit):
 	now the raw-magic-modifier of C is 1.

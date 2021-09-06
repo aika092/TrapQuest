@@ -12,6 +12,17 @@ To check default motion of (M - a monster):
 				if M is in the location of the player, say "[BigNameDesc of M] picks up [NameDesc of D] with a disgusted look on [his of M] face.";
 				now D is carried by M;
 				now the boredom of M is 0;
+		if players-detached-dick is in the location of M: [#LXorDD]
+			let X be 0;
+			if M is aeromancer:
+				now X is the latex-transformation of the player / 2; [They're more interested the more TF-ed you are]
+			otherwise if M is djinn:
+				now X is 3;
+			otherwise if M is intelligent:
+				increase X by 1;
+			if a random number between 1 and 10 < X:
+				compute handing over detached dick to M;
+				say "You feel something grab your detached dick[if the player is in the location of M], right in front of you, just before you can grab it[otherwise] - wherever that may be. Wah![end if]";
 	compute monstermotion of M;
 	now M is moved.
 

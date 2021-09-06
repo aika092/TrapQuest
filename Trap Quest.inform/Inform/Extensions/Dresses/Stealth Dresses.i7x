@@ -44,6 +44,8 @@ Definition: commando outfit is fetish appropriate:
 	decide no.
 Definition: commando outfit is green themed: decide yes.
 Definition: commando outfit is displacable: decide no.
+To decide which number is the crotch-tightness of (C - commando outfit):
+	decide on 3.
 
 Figure of commando outfit is the file "Items/Clothes/Upper/Special/commando1.png".
 

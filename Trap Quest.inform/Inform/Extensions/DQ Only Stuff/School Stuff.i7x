@@ -475,7 +475,7 @@ To compute teaching of (L - chess-lesson):
 
 [The playing chess rules is a rulebook.]
 
-chess-move is an indexed text that varies.
+chess-move is a text that varies.
 chess-move-choice is a number that varies.
 chess-lesson has a number called defensive-move.
 
@@ -822,7 +822,7 @@ To compute chess move input:
 	set numerical response 0 to "look";
 	compute multiple choice question;
 	let CNR be the chosen numerical response;
-	now chess-move is the printed name of CNR;
+	now chess-move is CNR;
 	if chess-move is "look":
 		now chess-move-choice is 0; [allow it to happen]
 		try looking;

@@ -313,7 +313,7 @@ To compute unique periodic effect of (M - dominatrix):
 			repeat with SD running through on-stage soiled-diaper:
 				if SD is in a modern room and SD is not carried:
 					now SD is carried by M;
-		 if M is dominatrix-equipped and (M is not unfriendly or M is uninterested):[after combat is over, she puts the toys away]
+		if M is dominatrix-equipped and (M is not unfriendly or M is uninterested):[after combat is over, she puts the toys away]
 			if the player is in Hotel37, say "[BigFuckerDesc of M] [if M is carrying whip-of-domination]returns the whip and the large riding crop[otherwise]returns the large riding crop[end if] to the rack on the wall.";
 			now M is not dominatrix-equipped;
 			if M is carrying whip-of-domination, now whip-of-domination is in Hotel37.[the whip gets left in the room]
@@ -550,7 +550,7 @@ To compute happy dom reward of (M - dominatrix):
 	FavourUp M by 1;
 	increase the slave-status of M by 1;
 	if the frustration of M < -1 and the number of cots in the location of the player is 0:
-		say "[BigNameDesc of M] tilts your face upward as [he of M] gently removes [his of M] [DickDesc of M].[line break][speech style of M]'As always, you're a good little sub. Tell you what. I'll set up a cot for you right here in my dungeon, and you can use it anytime as long as you're willing to keep reminding your mistress why [he of M] keeps rewarding you.'[roman type] [BigNameDesc of M] walks off to one corner of the room and pulls out a tiny bed.";
+		say "[BigNameDesc of M] tilts your face upward as [he of M] gently removes [his of M] [DickDesc of M].[line break][speech style of M]'As always, you're a good little sub. Tell you what. I'll set up a cot for you right here in my dungeon, and you can use it anytime as long as you're willing to keep reminding your mistress why [he of M] keeps rewarding you.'[roman type][line break][BigNameDesc of M] walks off to one corner of the room and pulls out a tiny bed.";
 		now a random cot is in the location of the player;
 	otherwise if M is penetrating face:
 		let C be a random off-stage candy;
@@ -609,6 +609,7 @@ To compute anal sex of (M - dominatrix):
 				say "[BigNameDesc of M] tuts and shakes [his of M] head in disapproval.[line break][speech style of M]'Did I say you could cum? I didn't think so. Well, I guess this just shows you aren't ready to be treated any differently.'[roman type][line break]";
 				now the disappointment of M is 1.
 
+
 To compute sexResist of (M - dominatrix) in (F - a fuckhole):
 	say "You try to get away, but [he of M]'s much too strong for you.[one of]If anything, your struggles have just made the fucking even more brutal on your poor [asshole].[or]Instead, [he of M] seems to be taking the disobedience as motivation to fuck you even harder![or][or][at random]".[Friendly sex dominatrix has either let go or started torturing the player by now.]
 
@@ -629,10 +630,10 @@ To compute MasturbationReaction of (M - dominatrix):
 	if M is penetrating asshole and M is not friendly-fucking:
 		let W be a random off-stage wrist bond;
 		if W is actually summonable:
-			say "[line break][speech style of M]'Sorry, did I give you permission to touch yourself?'[roman type][BigNameDesc of M] grabs your wrists and forcibly binds them together with a [printed name of W].";
+			say "[line break][speech style of M]'Sorry, did I give you permission to touch yourself?'[roman type][line break][BigNameDesc of M] grabs your wrists and forcibly binds them together with a [printed name of W].";
 			now W is wrist-bound-behind;
 		otherwise:
-			say "[line break][speech style of M]'Sorry, did I give you permission to touch yourself?'[roman type] [BigNameDesc of M] grabs your wrist and yanks it away from your crotch.";
+			say "[line break][speech style of M]'Sorry, did I give you permission to touch yourself?'[roman type][line break][BigNameDesc of M] grabs your wrist and yanks it away from your crotch.";
 			FavourDown M;
 		say "[bold type]Your masturbation session has been interrupted![roman type][line break]";
 		follow the masturbation ended rule;
@@ -654,6 +655,24 @@ To compute unique climax of (M - dominatrix) in (F - asshole):
 	otherwise if M is interested:
 		if the disappointment of M is 1:
 			say "[speech style of M]'Next time, I expect you to control yourself and only orgasm if instructed.'[roman type][line break]";
+			if the bimbo of the player > 7 and the player is possessing a penis:
+				if there is a worn chastity bond:
+					unless there is worn ass plugging clothing:
+						say "[BigNameDesc of M] grabs your caged [sissy-penis] and coos.[line break][speech style of M]'Hmm, you have a lot of audacity disobeying me [if the player is a sissy]sissy[otherwise]slave[end if]. I guess the cage won't be enough, your slutty hole also needs training'[roman type][line break]";
+						let P be a random off-stage basic plug;
+						if P is plug:
+							[now the size of P is the openness of asshole + 2;
+							if the size of CP> 10, now the size of P is 10;]
+							say "[big he of M] holds you firmly by the balls as [he of M] slides the lubed head of a [ShortDesc of P] past your sphincter and into your [asshole].[line break][speech style of M]'There we go, stuffed and locked like a good [if the player is a sissy]sissy[otherwise]slave[end if]!'[roman type][line break]";
+							summon P cursed with quest;
+							say FullExamineDesc of P;
+				otherwise:
+					let H be a random off-stage fetish appropriate chastity cage;
+					if H is a chastity cage:
+						say "[BigNameDesc of M] grabs your now limp [sissy-penis] and coos.[line break][speech style of M]'I think I know the problem, a lack of dicipline. All my disobedient [if the player is a sissy]sissies[otherwise]slaves[end if] are caged.'[roman type][line break]";
+						say "[big he of M] holds you by the balls firmly as [he of M] squishes your soft [sissy-penis] into a chastity cage, locking it into place with an audible *click*.[line break][speech style of M]'That's better. No more diddling your [sissy-penis]!'[roman type][line break]";
+						summon H locked;
+						say FullExamineDesc of H;
 		otherwise if the disappointment of M is -1:
 			if focus band is off-stage:
 				say "[speech style of M]'You are the perfect fuck toy, you know that? I think you need a reward. Here, take this. It'll help you focus your mind on what's important.'[roman type][line break][BigNameDesc of M] drops a black band on the floor next to you.[line break][speech style of M]'The magic in this focus band will help you resist orgasm for as long as possible, and so you should be able to fuck for longer before fainting.'[roman type][line break]";
@@ -747,7 +766,7 @@ To say PresentFriendlyRejectionFlav of (M - dominatrix):
 
 To compute FriendlySexRelease of (M - dominatrix):
 	if M is not willing to let go:
-		say "[speech style of M]'You know what? I'm sick of letting you waste my time.'[roman type] [BigNameDesc of M] pulls out, looking very pissed off.";
+		say "[speech style of M]'You know what? I'm sick of letting you waste my time.'[roman type][line break][BigNameDesc of M] pulls out, looking very pissed off.";
 		now M is not penetrating face;
 		now M is not friendly-fucking;
 		anger M;
@@ -758,7 +777,7 @@ To compute FriendlySexRelease of (M - dominatrix):
 		dislodge M.
 
 To say FriendlySexReleaseSpeech of (M - dominatrix):
-	say "[speech style of M]Whatever, it's your money you're wasting.'[roman type] ".
+	say "[speech style of M]Whatever, it's your money you're wasting.'[roman type][line break]".
 
 To say ErectionDemand of (M - dominatrix):
 	if M is friendly-fucking or presented-orifice is penis:
@@ -973,9 +992,9 @@ To decide which number is the dominationtype of (M - dominatrix) using (F - peni
 	compute multiple choice question;
 	let CNR be the chosen numerical response;
 	let C be 0;
-	if the printed name of CNR is "Go for a blowjob", now C is FUCK-BLOWJOB;
-	if the printed name of CNR is "Go for penetration", now C is FUCK-PENETRATION;
-	if the printed name of CNR is "Settle for whatever":
+	if the CNR is "Go for a blowjob", now C is FUCK-BLOWJOB;
+	if the CNR is "Go for penetration", now C is FUCK-PENETRATION;
+	if the CNR is "Settle for whatever":
 		if a random number between 1 and 2 is 1, now C is FUCK-BLOWJOB;
 		otherwise now C is FUCK-PENETRATION;
 	decide on C.
@@ -1102,7 +1121,7 @@ To say DominanceFailure of (M - dominatrix):
 To compute failed dominance punishment of (M - dominatrix):
 	increase the slave-status of M by 1;[she sees you as more of a slave]
 	let H be nothing;
-	if the player is possessing a penis, now H is a random off-stage chastity cage;
+	if the player is possessing a penis, now H is a random off-stage fetish appropriate chastity cage;
 	otherwise now H is chastity-belt;
 	if M is not in Hotel37, now H is nothing;[She can only do this when in her dungeon]
 	if the player is getting very unlucky and (player-fucker is penis or (the player is possessing a vagina and vagina is not actually occupied)) and H is off-stage clothing:
@@ -1236,14 +1255,14 @@ To say FriendlyPartnerGreeting to (M - dominatrix):
 			if the player is feeling submissive:[player is a masochist]
 				say "[second custom style]'[one of]Yes! Fuck me, [literalMistress of M]!'[or]Yes, [literalMistress of M]! Harder, Harder![or]Oooh! Fuuuck!'[or]Yes! Use me, [literalMistress of M]!'[or]Use me!'[at random][roman type][line break]";
 			otherwise:
-				say "[second custom style]'[one of]Am I doing a good job?'[or]I'm being a good slave, aren't I?'[at random][roman type]";
+				say "[second custom style]'[one of]Am I doing a good job?'[or]I'm being a good slave, aren't I?'[at random][roman type][line break]";
 		Arouse 100;
 		say EnthusiasmResponse of M;
 	otherwise:
 		if the player is feeling dominant:
-			say "[first custom style]'[one of]This is confidential, right?'[or]You won't tell anyone about this, right?'[or]You'll keep this a secret, right?'[at random][roman type]";
+			say "[first custom style]'[one of]This is confidential, right?'[or]You won't tell anyone about this, right?'[or]You'll keep this a secret, right?'[at random][roman type][line break]";
 		otherwise:
-			say "[variable custom style]'[one of]Just so you know, I don't exactly want to become a slave permanently.'[or]And remember, you can't tell ANYONE about this...'[or]This is just a business transaction! N-nothing more, OK?'[at random][roman type]";
+			say "[variable custom style]'[one of]Just so you know, I don't exactly want to become a slave permanently.'[or]And remember, you can't tell ANYONE about this...'[or]This is just a business transaction! N-nothing more, OK?'[at random][roman type][line break]";
 
 To say MildAnnoyedResponse of (M - dominatrix):
 	let P be a random patron in the location of M;
@@ -1343,7 +1362,7 @@ Definition: dominatrix-cage is immune to change: decide yes.
 Definition: dominatrix is distracted:
 	let M be a random unleashed wrestler in Hotel37;
 	if M is monster:
-		if the player is in Hotel37 and dominatrix is in Hotel37 and dominatrix-cage is in Hotel37 and the number of caged monsters in Hotel37 is 0 and dominatrix-cage is not grabbing the player and the player is an april 2021 top donator:
+		if the player is in Hotel37 and dominatrix is in Hotel37 and dominatrix-cage is in Hotel37 and the number of caged monsters in Hotel37 is 0 and dominatrix-cage is not grabbing the player and ((diaper quest is 0 and the player is an april 2021 top donator) or (diaper quest is 1 and the player is an april 2021 diaper donator)):
 			if M is uninterested or M is friendly:
 				say "[speech style of dominatrix]'[WrestlerNickname], I think you've been having too much fun recently. It's time for you to remember your place. Get in.'[line break][speech style of M]'*sniff* Yes [big literalMistress of dominatrix]...'[roman type][line break]";
 				compute dominatrix caging of M;
@@ -1352,7 +1371,7 @@ Definition: dominatrix is distracted:
 				say "[speech style of dominatrix]'Okay, I'll deal with you in a moment. But first - [WrestlerNickname], you forget your place. What are you?'[line break][speech style of M]'*sniff* A s-submissive s-slave, [big literalMistress of dominatrix]...'[line break][speech style of dominatrix]'That's right. And where do submissive slaves go when they've been naughty?'[line break][speech style of M]'Aaaah... Oh no... In their cage, [big literalMistress of dominatrix]...'[roman type][line break]";
 				compute dominatrix caging of M;
 				decide yes;
-		otherwise if dominatrix is in Hotel37 and dominatrix is uninterested and dominatrix-cage is in Hotel37 and the number of caged monsters in Hotel37 is 0 and the player is an april 2021 top donator and the player is not in Hotel37:
+		otherwise if dominatrix is in Hotel37 and dominatrix is uninterested and dominatrix-cage is in Hotel37 and the number of caged monsters in Hotel37 is 0 and ((diaper quest is 0 and the player is an april 2021 top donator) or (diaper quest is 1 and the player is an april 2021 diaper donator)) and the player is not in Hotel37:
 			compute dominatrix caging of M;
 			decide yes;
 	decide no.

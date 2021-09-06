@@ -66,6 +66,8 @@ floral negligee is an underdress. floral negligee is crotch-intact. floral negli
 
 To decide which number is the initial outrage of (C - floral negligee):
 	decide on 3.
+To decide which number is the crotch-tightness of (C - floral negligee):
+	decide on 3.
 
 Definition: floral negligee is fetish appropriate:
 	if diaper quest is 0, decide yes;

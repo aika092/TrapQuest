@@ -418,9 +418,9 @@ Check entering giant-statue:
 		if diaper quest is 0 and the player is female:
 			say "You feel a tingling sensation in your core as a wave of energy washes over you.";
 			increase the pregnancy rate of the player by 1 + V;
-		otherwise if diaper quest is 0 and the size of penis > min penis size:
-			SilentlyPenisDown 1 + V;
-			say "A wave of energy washes over you as your penis shrinks into a [ShortDesc of penis].";
+		otherwise if diaper quest is 0 and the mystical size of penis > min penis size:
+			SilentlySpecialPenisDown 1 + V; [#LXorDD]
+			say "A wave of energy washes over you as your penis shrinks into a [mystical ShortDesc of penis].";
 		otherwise:
 			now R is 5;
 	otherwise if R is 2:
@@ -488,7 +488,7 @@ Carry out appeasing something with giant-statue:
 
 Chapter 3 - Teleportation Pad
 
-The teleportation-pad is in Hotel41. The teleportation-pad is a summoning portal. The printed name of teleportation-pad is "[TQlink of item described]teleportation pad[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "teleportation", "pad" as teleportation-pad. The text-shortcut of teleportation-pad is "ted".
+The teleportation-pad is a summoning portal. The teleportation-pad is in Hotel41. The printed name of teleportation-pad is "[TQlink of item described]teleportation pad[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "teleportation", "pad" as teleportation-pad. The text-shortcut of teleportation-pad is "ted".
 
 Figure of teleportation pad is the file "Env/Hotel/teleportationpad1.jpg".
 
@@ -606,7 +606,7 @@ Carry out appeasing something with teleportation-pad:
 
 Chapter 4 - Mysterious Mummy
 
-The mysterious-mummy is in Mansion14. The mysterious-mummy is a summoning portal. The printed name of mysterious-mummy is "[TQlink of item described][MummyType of the item described] mummy[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "mysterious", "mystery", "mummy" as mysterious-mummy. The text-shortcut of mysterious-mummy is "mym". mysterious-mummy has a number called cult-cooldown. The cult-cooldown of mysterious-mummy is usually 0.
+The mysterious-mummy is a summoning portal. The mysterious-mummy is in Mansion14. The printed name of mysterious-mummy is "[TQlink of item described][MummyType of the item described] mummy[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "mysterious", "mystery", "mummy" as mysterious-mummy. The text-shortcut of mysterious-mummy is "mym". mysterious-mummy has a number called cult-cooldown. The cult-cooldown of mysterious-mummy is usually 0.
 
 To decide which figure-name is the examine-image of (C - mysterious-mummy):
 	decide on Figure of mansion mummy room.

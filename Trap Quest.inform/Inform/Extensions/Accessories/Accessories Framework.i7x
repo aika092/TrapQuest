@@ -72,7 +72,7 @@ An all later time based rule:
 	repeat with A running through worn plentiful accessory:
 		check shortcut of A.
 
-To decide which indexed text is metal-shortcut of (A - an accessory):
+To decide which text is metal-shortcut of (A - an accessory):
 	if A is emerald, decide on "e";
 	if A is ruby, decide on "r";
 	if A is solid gold, decide on "g";
@@ -80,7 +80,7 @@ To decide which indexed text is metal-shortcut of (A - an accessory):
 	if A is pure diamond, decide on "d";
 	decide on "s".
 
-To decide which indexed text is jewellery-shortcut of (A - an accessory):
+To decide which text is jewellery-shortcut of (A - an accessory):
 	if A is necklace, decide on "n";
 	if A is bracelet, decide on "b";
 	decide on "r".

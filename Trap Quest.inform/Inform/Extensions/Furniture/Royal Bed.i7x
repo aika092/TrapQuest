@@ -40,8 +40,8 @@ To compute furniture resting on (F - the royal bed):
 			now a random worn nightie is cursed;
 		otherwise:
 			say "As you lie there, you feel yourself lose control of your bladder.[line break][variable custom style]Yuck![roman type][line break]";
-		if there is worn bottom level pee protection clothing:
-			let K be a random worn bottom level pee protection clothing;
+		if there is bottom level pee protection clothing:
+			let K be a random bottom level pee protection clothing;
 			let flav-said be 0;
 			PissSoak the bladder of the player on K;
 			now the bladder of the player is 0;
@@ -51,7 +51,7 @@ To compute furniture resting on (F - the royal bed):
 	otherwise if N is actually summonable and the player is getting unlucky:
 		if the bladder of the player > 1 and diaper lover >= 1:
 			say "As you lie there, you become aware of a warm wet feeling below you. You've wet yourself![line break][variable custom style]Oh my god, how embarrassing![line break][bold type]As you get up, feeling fully refreshed, a sheer nightie shimmers into being around your body.[line break][variable custom style]What is this about?![roman type][line break]";
-			if there is worn bottom level pee protection clothing, PissSoak the bladder of the player on a random worn bottom level pee protection clothing;
+			if there is bottom level pee protection clothing, PissSoak the bladder of the player on a random bottom level pee protection clothing;
 			now the bladder of the player is 0;
 			now N is bed wetting;
 		otherwise:
@@ -59,8 +59,8 @@ To compute furniture resting on (F - the royal bed):
 		summon N cursed with quest;
 	otherwise:
 		say "You instantly feel fully healed! Magic! ";
-		if the size of penis > min penis size and the size of penis > 10 - the delicateness of the player:
-			PenisDown 1;
+		if the mystical size of penis > min penis size and the mystical size of penis > 10 - the delicateness of the player:
+			SpecialPenisDown 1; [#LXorDD]
 		otherwise if the delicateness of the player < the sex addiction of the player:
 			increase the raw delicateness of the player by 1;
 			say "But you do feel a bit more[one of]... fragile?[or] delicate.[stopping]";

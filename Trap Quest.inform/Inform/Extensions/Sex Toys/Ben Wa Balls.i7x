@@ -13,7 +13,7 @@ To say ClothingDesc of (C - ben wa balls):
 To say ShortDesc of (C - ben wa balls):
 	say "ben wa balls".
 
-To compute periodic effect of (C - ben wa balls):
+To compute periodic expansion effect of (C - ben wa balls):
 	increase the toy-charge of C by 1;
 	if the remainder after dividing the toy-charge of C by 12 is 0:
 		let F be a random fuckhole penetrated by C;

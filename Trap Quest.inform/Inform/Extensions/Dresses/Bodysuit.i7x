@@ -5,6 +5,8 @@ A bodysuit is a kind of underdress. A bodysuit is fully covering. A bodysuit is 
 This is the remove inappropriate bodysuits rule:
 	repeat with B running through catsuits:
 		now B is in Holding Pen;
+	now tight-green-romper is in Holding Pen;
+	now tight-grey-romper is in Holding Pen;
 	now plugsuit is in Holding Pen;
 	now superheroine outfit is in Holding Pen;
 	now rubber-jumpsuit is in Holding Pen.
@@ -27,6 +29,36 @@ To say ShortDesc of (C - a bodysuit):
 	say "bodysuit".
 To say MediumDesc of (C - a bodysuit):
 	say "bodysuit".
+
+
+Part - unicorn-playsuit
+
+unicorn-playsuit is a bodysuit. unicorn-playsuit is bottom-exclusive. unicorn-playsuit is average cut. The printed name of unicorn-playsuit is "[clothing-title-before]unicorn playsuit[clothing-title-after]". The text-shortcut of unicorn-playsuit is "upst". Understand "unicorn", "playsuit" as unicorn-playsuit.
+
+Definition: unicorn-playsuit is displacable: decide no.
+Definition: unicorn-playsuit is pink themed: decide yes.
+Definition: unicorn-playsuit is horse themed: decide yes.
+Definition: unicorn-playsuit is floral themed: decide yes.
+
+Figure of unicorn playsuit is the file "Items/Clothes/Upper/Rompers/romper10.png".
+
+To decide which figure-name is clothing-image of (C - unicorn-playsuit):
+	decide on figure of unicorn playsuit.
+
+To say ClothingDesc of (C - unicorn-playsuit):
+	say "A pink, skin-tight one-piece playsuit. The suit clings to the body to make sure it hides none of its curves. It has a playful pattern of unicorns and rainbows and flowers on it.".
+
+To say ShortDesc of (C - unicorn-playsuit):
+	say "playsuit".
+To say MediumDesc of (C - unicorn-playsuit):
+	say "pink unicorn playsuit".
+
+To decide which number is the initial outrage of (C - unicorn-playsuit):
+	decide on 5.
+To decide which number is the initial cringe of (C - unicorn-playsuit):
+	decide on 4.
+To decide which number is the crotch-tightness of (C - unicorn-playsuit):
+	decide on 5.
 
 Part - Tongue Suit
 
@@ -117,14 +149,15 @@ purple rubber bodysuit has a number called bottom-transform.
 Definition: purple rubber bodysuit is breast hiding:
 	if the top-transform of it > 0, decide yes;
 	decide no.
-Definition: purple rubber bodysuit is potentially vagina covering:
-	if the bottom-transform of it is 0 or (the player is not possessing a vagina and it is potentially pussy covering), decide yes;
-	decide no. [On women, this item gives a cameltoe once transformed once]
 
 To decide which number is the initial outrage of (C - purple rubber bodysuit):
 	let X be 2 + (5 * the top-transform of C);
-	if the bottom-transform of C > 1, increase X by 2 * the bottom-transform of C;
+	if the bottom-transform of C > 1, increase X by the bottom-transform of C;
 	decide on X.
+
+To decide which number is the crotch-tightness of (C - purple rubber bodysuit):
+	if the bottom-transform of C > 0, decide on 5;
+	decide on 2.
 
 To decide which number is the sex-addiction-influence of (C - purple rubber bodysuit):
 	if the bottom-transform of C >= 3, decide on 3;
@@ -157,7 +190,7 @@ To transform (C - purple rubber bodysuit):
 		if the player is not possessing a vagina:
 			say "[DefaultSexchangeFlav]";
 			SexChange the player;
-		say "[BigNameDesc of C] tightens around your [vagina] until your puffy pussy lips can clearly be seen in the form of a big fat cameltoe![line break][variable custom style][if the player is disgraced]How lewd![otherwise]You can't be serious!!![end if][roman type][line break]";
+		say "[BigNameDesc of C] tightens around your [vagina] until your [LabiaDesc] can clearly be seen in the form of a big fat cameltoe![line break][variable custom style][if the player is disgraced]How lewd![otherwise]You can't be serious!!![end if][roman type][line break]";
 	otherwise if pregnancy fetish is 1 and the pregnancy of the player is 0 and the bottom-transform of C < 3:
 		increase the bottom-transform of C by 1;
 		if the bottom-transform of C is 2, say "The belly section of [NameDesc of C] morphs until it looks like a nine-months-pregnant belly! It's completely fake, of course, but nobody looking at you will know that - it'll instead look like you're carrying around a child and ready to pop![line break][variable custom style][if the player is proud]No! I don't want people to think I'm pregnant![otherwise if the player is not disgraced]Being pregnant isn't that shameful, but combined with the cameltoe it makes me look like a shameful whore...[otherwise]All the fun of looking like I'm knocked up with none of the baggage, I guess![end if][roman type][line break]";
@@ -220,16 +253,18 @@ Definition: sequins bodysuit is star themed: decide yes.
 
 Volume - Romper
 
-A romper is a kind of bodysuit. A romper is usually leg covering.
+A romper is a kind of bodysuit. A romper is usually leg covering. Understand "romper" as a romper.
 
 To set up magic state of (C - a romper):
 	now the raw-magic-modifier of C is 0.
 
 Definition: a romper is displacable: decide no.
-Definition: a romper is baby themed: decide yes.
 Definition: a romper is potentially erection concealing:
 	if it is baby themed, decide yes;
 	decide no. [non-tight loins conceal erections]
+
+To decide which number is the crotch-tightness of (C - a romper):
+	decide on 0. [hardly touches the vulva]
 
 Part 1 - Busy Patterned Romper
 
@@ -250,12 +285,13 @@ To say MediumDesc of (C - a busy patterned romper):
 
 To decide which number is the initial outrage of (C - a busy patterned romper):
 	decide on 3.
+To decide which number is the crotch-tightness of (C - a busy patterned romper):
+	decide on 2.
 
 To decide which object is the unique-upgrade-target of (C - a busy patterned romper):
 	if diaper quest is 1 and a random number between 1 and 2 is 1, decide on a random off-stage pink baby romper;
 	decide on a random off-stage plaid skimpy romper.
 
-Definition: a busy patterned romper is baby themed: decide no.
 Definition: a busy patterned romper is black themed: decide yes.
 Definition: a busy patterned romper is white themed: decide yes.
 
@@ -287,6 +323,7 @@ To decide which object is the unique-upgrade-target of (C - a pink baby romper):
 	decide on a random off-stage cupcake baby romper.
 
 Definition: a pink baby romper is pink themed: decide yes.
+Definition: a pink baby romper is baby themed: decide yes.
 
 Part 3 - Cupcake Baby Romper
 
@@ -317,6 +354,7 @@ To decide which object is the unique-upgrade-target of (C - a cupcake baby rompe
 
 Definition: a cupcake baby romper is food themed: decide yes.
 Definition: a cupcake baby romper is pink themed: decide yes.
+Definition: a cupcake baby romper is baby themed: decide yes.
 
 Part 4 - Yellow Baby Romper
 
@@ -346,6 +384,7 @@ To decide which number is the initial cringe of (C - a yellow baby romper):
 Definition: a yellow baby romper is end of transformation chain: decide yes.
 Definition: a yellow baby romper is babywear: decide yes.
 Definition: a yellow baby romper is yellow themed: decide yes.
+Definition: a yellow baby romper is baby themed: decide yes.
 
 Part 5 - Pink Hooded Romper
 
@@ -399,15 +438,71 @@ To say ShortDesc of (C - plaid skimpy romper):
 
 To decide which number is the initial outrage of (C - plaid skimpy romper):
 	decide on 4.
-
 To decide which number is the adult-influence of (C - plaid skimpy romper):
 	decide on 3.
+To decide which number is the crotch-tightness of (C - plaid skimpy romper):
+	decide on 2.
 
 Definition: plaid skimpy romper is displacable: decide yes.
-Definition: plaid skimpy romper is baby themed: decide no.
 
 To decide which object is the unique-upgrade-target of (C - plaid skimpy romper):
 	if diaper quest is 1, decide on a random off-stage yellow baby romper;
+	decide on nothing.
+
+Part - Tight Green Romper
+
+tight-green-romper is a romper. tight-green-romper is leg exposing. tight-green-romper is bottom-exclusive. tight-green-romper is average cut. tight-green-romper is normally-partially-nipple-covering. The text-shortcut of tight-green-romper is "tgr". The printed name of tight-green-romper is "[clothing-title-before]tight green romper[clothing-title-after]". Understand "tight", "green" as tight-green-romper.
+
+Definition: tight-green-romper is green themed: decide yes.
+
+Figure of tight-green-romper is the file "Items/Clothes/Upper/Rompers/romper8.png".
+
+To decide which figure-name is clothing-image of (C - tight-green-romper):
+	decide on figure of tight-green-romper.
+
+To say ClothingDesc of (C - tight-green-romper):
+	say "This longsleeved green romper is so figure-hugging that it can't even hide the contours of [if C is worn]your[otherwise]the wearer's[end if] nipples or crotch.".
+
+To say ShortDesc of (C - tight-green-romper):
+	say "tight green romper".
+
+To decide which number is the initial outrage of (C - tight-green-romper):
+	decide on 5.
+To decide which number is the adult-influence of (C - tight-green-romper):
+	decide on 1.
+To decide which number is the crotch-tightness of (C - tight-green-romper):
+	decide on 5.
+
+To decide which object is the unique-upgrade-target of (C - tight-green-romper):
+	if diaper quest is 0, decide on lycra-bodysuit;
+	decide on nothing.
+
+Part - Tight Grey Romper
+
+tight-grey-romper is a romper. tight-grey-romper is bottom-exclusive. tight-grey-romper is leg exposing. tight-grey-romper is arm exposing. tight-grey-romper is average cut. tight-grey-romper is normally-partially-nipple-covering. The text-shortcut of tight-grey-romper is "tgyr". The printed name of tight-grey-romper is "[clothing-title-before]tight grey romper[clothing-title-after]". Understand "tight", "grey" as tight-grey-romper.
+
+Definition: tight-grey-romper is grey themed: decide yes.
+
+Figure of tight-grey-romper is the file "Items/Clothes/Upper/Rompers/romper9.png".
+
+To decide which figure-name is clothing-image of (C - tight-grey-romper):
+	decide on figure of tight-grey-romper.
+
+To say ClothingDesc of (C - tight-grey-romper):
+	say "This longsleeved grey romper is so figure-hugging that it can't even hide the contours of [if C is worn]your[otherwise]the wearer's[end if] nipples or crotch.".
+
+To say ShortDesc of (C - tight-grey-romper):
+	say "tight grey romper".
+
+To decide which number is the initial outrage of (C - tight-grey-romper):
+	decide on 5.
+To decide which number is the adult-influence of (C - tight-grey-romper):
+	decide on 1.
+To decide which number is the crotch-tightness of (C - tight-grey-romper):
+	decide on 5.
+
+To decide which object is the unique-upgrade-target of (C - tight-green-romper):
+	if diaper quest is 0, decide on lycra-bodysuit;
 	decide on nothing.
 
 Volume - Jumpsuit
@@ -422,9 +517,8 @@ To compute SelfExamineDesc of (C - a jumpsuit):
 
 Part - Latex Bodysuit
 
-The printed name of rubber-jumpsuit is "[clothing-title-before]latex bodysuit[clothing-title-after]".
-
-rubber-jumpsuit is a jumpsuit. rubber-jumpsuit is sheer. rubber-jumpsuit is neck covering. rubber-jumpsuit is latex. rubber-jumpsuit is manly. The text-shortcut of rubber-jumpsuit is "lab". Understand "bodysuit" as rubber-jumpsuit.
+rubber-jumpsuit is a jumpsuit. The printed name of rubber-jumpsuit is "[clothing-title-before]latex bodysuit[clothing-title-after]".
+rubber-jumpsuit is sheer. rubber-jumpsuit is neck covering. rubber-jumpsuit is latex. rubber-jumpsuit is manly. The text-shortcut of rubber-jumpsuit is "lab". Understand "bodysuit" as rubber-jumpsuit.
 
 Figure of latex bodysuit 1 is the file "Items/Clothes/Upper/Latex/bodysuit1.png".
 
@@ -728,9 +822,6 @@ To decide which number is the heel-skill-influence of (O - a leotard):
 	increase X by the magic-modifier of O;
 	decide on X.
 
-To set up influence of (C - a leotard):
-	set up submissiveness-based influence of C.
-
 To compute periodic effect of (L - a leotard):
 	[ballerina stuff]
 	increase the charge of L by 1;
@@ -754,6 +845,8 @@ To compute SelfExamineDesc of (C - a leotard):
 
 To decide which number is the initial outrage of (C - a leotard):
 	decide on 3.
+To decide which number is the crotch-tightness of (C - a leotard):
+	decide on 3.
 
 A pink leotard is a kind of leotard.
 
@@ -775,6 +868,8 @@ To say ClothingDesc of (C - a pink leotard):
 
 Definition: a pink leotard is pink themed: decide yes.
 Definition: a pink leotard is potentially erection concealing: decide yes. [frills conceal erections]
+To decide which number is the crotch-tightness of (C - a pink leotard):
+	decide on 0.  [frills conceal cameltoes]
 
 
 A sexy blue leotard is a kind of leotard.

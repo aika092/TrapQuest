@@ -208,7 +208,7 @@ To compute facial sex of (M - a nurse):
 To compute facial climax of (M - nurse):
 	TimesSubmittedUp M by 1;
 	LickCount;
-	if lady fetish is 2, say "[BigNameDesc of M] grunts and shudders, a strong orgasm washing over [him of M]. Several droplets of clear precum hit your face as [his of M] [sissy-penis] desperately strains against its cage. You feel [if the oral sex addiction of the player > 6]even more eager to perform oral sex in the future[otherwise]somewhat more comfortable with the act of performing oral sex[end if].";
+	if lady fetish is 2, say "[BigNameDesc of M] grunts and shudders, a strong orgasm washing over [him of M]. Several droplets of clear precum hit your face as [his of M] [DickDesc of M] desperately strains against its cage. You feel [if the oral sex addiction of the player > 6]even more eager to perform oral sex in the future[otherwise]somewhat more comfortable with the act of performing oral sex[end if].";
 	otherwise say "[BigNameDesc of M] grunts as [he of M] shudders, a strong orgasm washing over [him of M]. Your mouth and face soon feel even wetter than before as [his of M] girlcum joins [his of M] other juices on your face. You feel [if the oral sex addiction of the player > 6]even more eager to perform oral sex in the future[otherwise]somewhat more comfortable with the act of performing oral sex[end if].";
 	SilentlyOralSexAddictUp 1;
 	if there is a worn tattoo and the number of worn belly-tattoo is 0 and the player is getting unlucky:

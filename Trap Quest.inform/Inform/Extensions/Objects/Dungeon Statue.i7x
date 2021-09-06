@@ -1,7 +1,7 @@
 Dungeon Statue by Objects begins here.
 
 DungeonScenery01 is a thing. DungeonScenery01 is in Dungeon10. DungeonScenery01 is not portable. The printed name of DungeonScenery01 is "[TQlink of item described]statue[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "statue", "man", "penis", "woman", "nipple" as DungeonScenery01. DungeonScenery01 has a number called doses. The doses of DungeonScenery01 is usually 1. Figure of DungeonScenery01 is the file "Env/Dungeon/statue1.png". The text-shortcut of DungeonScenery01 is "sta".
-DungeonScenery01b is scenery. DungeonScenery01b is in Dungeon10. The printed name of DungeonScenery01b is "statue". Understand "statues" as DungeonScenery01b.
+DungeonScenery01b is a thing. DungeonScenery01b is scenery. DungeonScenery01b is in Dungeon10. The printed name of DungeonScenery01b is "statue". Understand "statues" as DungeonScenery01b.
 Figure of DungeonScenery01d is the file "Env/Dungeon/statue4.png".
 
 To decide which figure-name is the examine-image of (C - DungeonScenery01):

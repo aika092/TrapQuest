@@ -597,7 +597,7 @@ This is the wrestler friendly convinced rule:
 				say "[speech style of M]'Oh. Well, this should be fun at least!'[roman type][line break][big he of M] rubs [if lady fetish is 2][himself of M] through the cage[otherwise][his of M] clit[end if] as [he of M] begins to pee in your face!";
 				FacePiss from M;
 			otherwise:
-				say "[speech style of M]'Oh well. I'll be up for it if you change your mind!'[roman type]";
+				say "[speech style of M]'Oh well. I'll be up for it if you change your mind!'[roman type][line break]";
 	otherwise if presented-orifice is a reasonable target:
 		now the chosen-orifice of M is presented-orifice;
 		say PresentFriendlyAcceptanceFlav of M;
@@ -657,7 +657,7 @@ To compute facial sex of (M - a wrestler):
 
 To say OralResisting of (M - a wrestler):
 	if lady fetish is 2:
-		say "[one of]You refuse to pleasure [NameDesc of M].[or]You keep your tongue in your mouth, away from [NameDesc of M][']s caged genitals.[or]You neglect the caged [sissy-penis] before you.[or]You keep your mouth tightly closed, unwilling to pleasure [NameDesc of M].[at random][line break]";
+		say "[one of]You refuse to pleasure [NameDesc of M].[or]You keep your tongue in your mouth, away from [NameDesc of M][']s caged genitals.[or]You neglect the caged [DickDesc of M] before you.[or]You keep your mouth tightly closed, unwilling to pleasure [NameDesc of M].[at random][line break]";
 	otherwise:
 		say "[one of]You refuse to lick out [NameDesc of M].[or]You refuse to pleasure [NameDesc of M].[or]You keep your tongue in your mouth, away from [NameDesc of M][']s pussy.[or]You neglect the needy pussy in front of you.[or]You keep your mouth tightly closed, unwilling to pleasure [NameDesc of M].[at random][line break]".
 
@@ -667,7 +667,7 @@ To say SexSubmissionFlav of (M - a wrestler):
 		say "[one of]You lie still and endure the punishment.[or]You submit to being used as a plaything.[or]You don't resist [his of M] punishment.[purely at random]";
 	otherwise:
 		if lady fetish is 2:
-			say "[one of]You press your tongue into the opening in [NameDesc of M][']s cage, taking in the taste of [his of M] precum[or]You roll your tongue around the base of [NameDesc of M][']s [sissy-penis], trying to tease out an orgasm![or]You stroke [NameDesc of M][']s balls with your tongue as your [LipDesc] bump [his of M] cage.[or][NameDesc of M][']s cage rests on your nose as you [if the oral sex addiction of the player > 5]happily[otherwise]hesitantly[end if] suckle [his of M] balls.[or]You take [NameDesc of M][']s cage fully into your mouth and swirl around your tongue, [if the oral sex addiction of the player > 6]eagerly[otherwise]dutifully[end if] slurping up [his of M] precum.[at random]";
+			say "[one of]You press your tongue into the opening in [NameDesc of M][']s cage, taking in the taste of [his of M] precum[or]You roll your tongue around the base of [NameDesc of M][']s [DickDesc of M], trying to tease out an orgasm![or]You stroke [NameDesc of M][']s balls with your tongue as your [LipDesc] bump [his of M] cage.[or][NameDesc of M][']s cage rests on your nose as you [if the oral sex addiction of the player > 5]happily[otherwise]hesitantly[end if] suckle [his of M] balls.[or]You take [NameDesc of M][']s cage fully into your mouth and swirl around your tongue, [if the oral sex addiction of the player > 6]eagerly[otherwise]dutifully[end if] slurping up [his of M] precum.[at random]";
 		otherwise:
 			say "[one of]You dig your tongue into [NameDesc of M][']s pussy, taking in [his of M] feminine smell and taste[or]You roll the tip of your tongue around [NameDesc of M][']s clit, trying to tease out an orgasm![or]You stroke [NameDesc of M][']s labia with your tongue as your [LipDesc] bump [his of M] clit.[or]You [if the oral sex addiction of the player > 5]happily[otherwise]hesitantly[end if] stroke [his of M] delicate folds with your tongue.[or]You push your tongue into [NameDesc of M][']s [vagina], [if the oral sex addiction of the player > 6]eagerly[otherwise]dutifully[end if] licking up [his of M] feminine moisture.[at random]".
 
@@ -1043,8 +1043,8 @@ To compute unique dominance reward of (M - a wrestler):[She doesn't increase her
 	DelicateDown 1.
 
 To say AfterDominationComment (N - a number) of (M - a wrestler):
-	if N is 1, say "[speech style of M]'[one of]Thanks for the yummy piss!'[or]Thanks for making me your toilet!'[or]I love toilet time...'[at random][roman type]";
-	if N is 2, say "[speech style of M]'[one of]You should come see my [literalMistress of dominatrix] sometime![or]There's no way I'm gonna let myself lose to you again! Get ready, hot stuff!'[or]Let's see if you can beat me like that next time, sexy!'[at random][roman type]".
+	if N is 1, say "[speech style of M]'[one of]Thanks for the yummy piss!'[or]Thanks for making me your toilet!'[or]I love toilet time...'[at random][roman type][line break]";
+	if N is 2, say "[speech style of M]'[one of]You should come see my [literalMistress of dominatrix] sometime![or]There's no way I'm gonna let myself lose to you again! Get ready, hot stuff!'[or]Let's see if you can beat me like that next time, sexy!'[at random][roman type][line break]".
 
 To say DominanceFailure of (M - a wrestler):
 	say "You grapple with [NameDesc of M] until [he of M] overpowers you and pins you on the ground underneath [him of M].";
@@ -1201,10 +1201,10 @@ To say MildAnnoyedResponse of (M - a wrestler):
 	alwayscutshow figure of wrestler interact 10 for M.
 
 To say AnnoyedResponse of (M - a wrestler):
-	say "[speech style of M]'[one of]Stop being such a sore loser!'[or]Shut up, you're being such a bad sport!'[or]Are you ever going to stop complaining?!'[at random][roman type]".
+	say "[speech style of M]'[one of]Stop being such a sore loser!'[or]Shut up, you're being such a bad sport!'[or]Are you ever going to stop complaining?!'[at random][roman type][line break]".
 
 To compute annoyed punishment of (M - a wrestler):
-	say "[speech style of M]'[one of]Ooh, you are SO going to regret this.'[or]Haha, I'm so going to get you later.'[at random][roman type]";
+	say "[speech style of M]'[one of]Ooh, you are SO going to regret this.'[or]Haha, I'm so going to get you later.'[at random][roman type][line break]";
 	SilentlyDifficultyUp M by 2.
 
 Section 2 - Questioning

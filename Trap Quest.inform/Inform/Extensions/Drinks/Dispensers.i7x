@@ -53,6 +53,7 @@ Does the player know what type of drink it is?
 Definition: a tank (called B) is known-potion:
 	if the Known corresponding to an Magic of the fill-type of B in the Table of Drinks is 1, decide yes;
 	decide no.
+Definition: a milk-tank is known-potion: decide yes.
 
 [!<Dispenser>@<KnownCursedPotion>+
 
@@ -63,13 +64,9 @@ Definition: a dispenser (called B) is known-cursed-potion:
 	if B is known-potion and the fill-type of B >= lowest-cursed and the fill-type of B <= highest-cursed, decide yes;
 	decide no.
 
-[!<Tank>@
+To say FullnessDesc of (D - a dispenser):
+	say "[if the doses of D <= 0]completely empty[otherwise if the doses of D is 1]non-empty[otherwise if the doses of D is 2]less empty[otherwise if the doses of D is 3]nearly half full[otherwise if the doses of D is 4]half full[otherwise if the doses of D is 5]over halfway full[otherwise if the doses of D is 6]mostly full[otherwise if the doses of D is 7]nearly full[otherwise]completely full[end if]";
 
-REQUIRES COMMENTING
-
-@inherits <Dispenser>
-
-@!]
 A tank is a kind of dispenser. 1 tank is in Dungeon12. 7 tanks are in Holding Pen. Figure of tank is the file "Env/Dungeon/tank1.png".
 The printed name of a tank is usually "[TQlink of item described][if the doses of item described > 0][fill-colour of the item described][otherwise]empty[end if] tank[if the fill-type of item described is remembered and the doses of item described > 0] ([FillName the fill-type of item described])[end if][shortcut-desc][TQxlink of item described]". The text-shortcut of a tank is usually "ta". Understand the fill-colour property as describing a tank when the doses of item described > 0.
 
@@ -95,17 +92,49 @@ To say MediumDesc of (T - a tank):
 To say ExamineDesc of (D - a tank):
 	if the doses of D > 0:
 		let X be the fill-type of D;
-		say "A small glass tank set in the stone wall about 5 feet off the ground, with a gap above it. You can reach into it if you stretch your arm but you can't drink from it directly. [if the doses of D < 3]The nearly empty tank contains [end if][if the doses of D is 3]The mostly empty tank contains [end if][if the doses of D is 4]The half full tank contains [end if][if the doses of D is 5]The over halfway full tank contains [end if][if the doses of D is 6]The mostly full tank contains [end if][if the doses of D is 7]The nearly full tank contains [end if][if the doses of D is 8]The tank is completely full of [end if][if X is remembered][FillName X].[otherwise]a [appearance corresponding to an Magic of X in the Table of Drinks] liquid.[end if]";
+		say "A small glass tank set in the stone wall about 5 feet off the ground, with a gap above it. You can reach into it if you stretch your arm but you can't drink from it directly. The [FullnessDesc of D] tank contains [if X is remembered][FillName X].[otherwise]a [appearance corresponding to an Magic of X in the Table of Drinks] liquid.[end if]";
 	otherwise:
 		say "A glass tank set in the stone wall about 5 feet off the ground, with a gap above it. You can reach into it if you stretch your arm but you can't drink from it directly. It is empty anyway.".
 
-[!<Bucket>@
+A milk-tank is a kind of dispenser. The fill-colour of a milk-tank is white. 2 milk-tanks are in Holding Pen.
+The printed name of a milk-tank is "[TQlink of item described][MediumDesc of item described][shortcut-desc][TQxlink of item described]". The text-shortcut of a milk-tank is usually "ta". Understand "milk", "tank" as milk-tank.
 
-REQUIRES COMMENTING
+Definition: a milk-tank is immune to change: decide yes.
 
-@inherits <Dispenser>
+To decide which figure-name is the examine-image of (C - a milk-tank):
+	decide on figure of tank.
 
-@!]
+To BackgroundRender (T - a milk-tank) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
+	let D be the doses of T;
+	if D > 0: [Numbers will need changing if the dimensions of the original image file changes]
+		if D > 8, now D is 8;
+		let liquidHeight be (122 * D) / 8;
+		let blockReduction be ((142 - liquidHeight) * DY) / 200;
+		increase Y1 by blockReduction;
+		decrease DY by blockReduction;
+		draw a rectangle TQcolour of fill-colour of T in the current focus window at X1 by Y1 with size DX by DY.
+
+To say ShortDesc of (T - a milk-tank):
+	say "milk tank".
+
+To say MediumDesc of (T - a milk-tank):
+	say "[FullnessDesc of T] milk tank".
+
+To say ExamineDesc of (D - a milk-tank):
+	if the doses of D > 0:
+		say "A small glass tank set in the stone wall about 5 feet off the ground, with a gap above it. You can reach into it if you stretch your arm but you can't drink from it directly. The [FullnessDesc of D] tank contains [milk].";
+	otherwise:
+		say "A glass tank set in the stone wall about 5 feet off the ground, with a gap above it. You can reach into it if you stretch your arm but you can't drink from it directly. It is empty anyway.".
+
+Report going up:
+	unless the player is in a predicament room:
+		repeat with MT running through milk-tanks:
+			DoseDown MT by 2.
+Report going down:
+	unless the player is in a predicament room:
+		repeat with MT running through milk-tanks:
+			DoseDown MT by 2.
+
 A bucket is a kind of dispenser. 8 buckets are in Holding Pen. Figure of bucket is the file "Env/Forest/bucket1.png". The printed name of bucket is "[TQlink of item described][if the doses of item described <= 0]empty [end if]bucket[shortcut-desc][TQxlink of item described]". The text-shortcut of a bucket is usually "bu".
 
 To decide which figure-name is the examine-image of (C - a bucket):
@@ -116,15 +145,6 @@ To say ExamineDesc of (C - a bucket):
 
 To say ShortDesc of (C - a bucket):
 	say "bucket".
-
-[!<RefillDispenser>+
-
-Assigns a fill colour to a dispenser based on the value of its integer argument.
-
-@param<Dispenser>:<C> A dispenser, to be assigned a fill-colour
-@param<Integer>:<N> A number representing a fill-colour
-
-!]
 
 To refill (C - a dispenser) with (N - a number):
 	if N is 1:
@@ -180,15 +200,24 @@ Handles the setup process of all instances of the dispenser class, starting by a
 +!]
 To Set Up Dispensers:
 	let N be a random number between 1 and 15;
-	repeat with D running through all dispensers:
-		refill D with N;
-		SetDose D to a random number between 2 + bonus liquid and 8;
-		if D is alchemical vat, SetDose D to 5;
-		increase N by 1;
-		if N is 16, now N is 1;
+	repeat with D running through dispensers:
+		if D is alchemical vat:
+			SetDose D to 5;
+		otherwise if D is milk-tank:
+			DoseEmpty D;
+		otherwise:
+			refill D with N;
+			SetDose D to a random number between 2 + bonus liquid and 8;
+			increase N by 1;
+			if N is 16, now N is 1;
 	repeat with D running through dispensers in Dungeon12:
 		now the fill-colour of D is magenta;
-		SetDose D to 1.
+		SetDose D to 1;
+	if lactation fetish is 1:
+		let MT be a random milk-tank in Holding Pen;
+		if MT is milk-tank and the number of milk-tanks in the location of dungeon-milking-bench is 0, now MT is in the location of dungeon-milking-bench;
+		let MT be a random milk-tank in Holding Pen;
+		if MT is milk-tank and the number of milk-tanks in the location of mansion-milking-bench is 0, now MT is in the location of mansion-milking-bench;
 
 [The vat is a unique dispenser that periodically refills itself with a new liquid. TODO: make the vat less busted]
 alchemical vat is a dispenser. alchemical vat is in Mansion19. Understand "murky" as alchemical vat when the doses of the item described > 0.

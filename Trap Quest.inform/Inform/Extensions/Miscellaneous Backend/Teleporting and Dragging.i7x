@@ -46,7 +46,7 @@ To teleport to (R - a room):
 	now the location of the player is discovered;
 	update player region;
 	if map images > 0, display entire map;
-	if player-dragger is not yourself, compute unique teleportation to R.
+	if player-dragger is yourself, compute unique teleportation to R.
 
 To drag to (R - a room) by (M - a thing):[TODO: player can't be dragged when stuck unless the circumstances are special.]
 	compute glue-freeing by M;

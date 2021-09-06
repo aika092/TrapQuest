@@ -17,31 +17,43 @@ This is the spawn initial woods needle traps rule:
 		unless there is a needle trap in R, deploy T in R.
 The spawn initial woods needle traps rule is listed first in the set up woods traps rules.
 
+[The idea is that if the player is (nearly?) an inflated sex doll, the needles change into suction cup darts that somehow stick on and magically infuse their effect, rather than risking puncturing you.]
+To say needle:
+	if the latex-transformation of the player > 6, say "suction cup dart";
+	otherwise say "needle".
+
 To trigger (Y - a needle trap):
+	let X be 0;
 	now Y is not untriggered;
-	now Y is not untriggered;
+	now Y is triggered;
 	now the reset-timer of Y is 250;
 	let C be a random worn drinkable condom pinned clothing;
 	if bukkake fetish is 1 and C is clothing and the player is getting unlucky:
-		say "A tiny needle shoots out of [if playerRegion is Dungeon]the stone wall[otherwise if playerRegion is Woods]a tree[otherwise]a tiny hole in the wall[end if] and towards your [ShortDesc of C]! By sheer bad luck, the needle strikes [if the used condoms of C > 1]one of the condoms[otherwise]the condom[end if] pinned to it. It ruptures and bursts!";
+		say "A tiny [needle] shoots out of [if playerRegion is Dungeon]the stone wall[otherwise if playerRegion is Woods]a tree[otherwise]a tiny hole in the wall[end if] and towards your [ShortDesc of C]! By sheer bad luck, the dart strikes [if the used condoms of C > 1]one of the condoms[otherwise]the condom[end if] pinned to it. It ruptures and bursts!";
 		if the used condoms of C > 0:
 			increase the empty condoms of C by 1;
 			decrease the used condoms of C by 1;
 		UnannouncedSquirt semen on C by 4;
 		say GotUnluckyFlav;
 	otherwise:
-		let X be a random number between 1 and 3;
+		now X is a random number between 1 and 99;
 		let target-body-part be nothing;
-		if X is 1:
+		if X < 25:
 			now target-body-part is breasts;
-		otherwise if X is 2:
+		otherwise if X < 50:
 			now target-body-part is belly;
 			if lactation fetish is 1 and diaper lover is 0, now target-body-part is breasts;
-		otherwise:
+		otherwise if X < 75:
 			now target-body-part is hips;
-		if the latex-transformation of the player > 0, now target-body-part is breasts;
+		otherwise if X < 87:
+			now target-body-part is face; [Which will mean lips]
+		otherwise:
+			if the player is possessing a vagina:
+				now target-body-part is vagina;
+			otherwise: [We'll PenisDown, so no need to check if players-dick-is-detached is 0]
+				now target-body-part is penis;
 		if the player is a flatchested trap or the player is prone or diaper quest is 1 or tutorial is 1, now target-body-part is hips;
-		say "A tiny needle shoots out of [if playerRegion is Dungeon]the stone wall[otherwise if playerRegion is Woods]a tree[otherwise]a tiny hole in the wall[end if] and towards your [if target-body-part is breasts][BreastDesc][otherwise if target-body-part is belly]side[otherwise if the player is prone]butt cheek[otherwise]hip[end if]. ";
+		say "A tiny [needle] shoots out of [if playerRegion is Dungeon]the stone wall[otherwise if playerRegion is Woods]a tree[otherwise]a tiny hole in the wall[end if] and towards your [if target-body-part is breasts][BreastDesc][otherwise if target-body-part is belly]side[otherwise if the player is prone]butt cheek[otherwise if target-body-part is hips]hip[otherwise if target-body-part is face][LipDesc][otherwise if target-body-part is vagina][vagina][otherwise][penis][end if]. ";
 		compute Y injecting into target-body-part;
 		repeat with M running through reactive monsters:
 			say NeedleTrapReactFlav of M.
@@ -69,19 +81,19 @@ To compute (Y - a needle trap) injecting into (X - breasts):
 		now needle-blocker is a random worn ridiculously low cut or higher currently uncovered clothing; [Top layer takes priority]
 	[R being 1 is an automatic hit]
 	if needle-blocker is clothing:
-		say "The needle is blocked by your [ShortDesc of needle-blocker]! Phew!";
+		say "The dart is blocked by your [ShortDesc of needle-blocker]! Phew!";
 	otherwise if the latex-transformation of the player > 0 or inflation fetish is 1 and a random number between 1 and 2 is 1:
-		say "Owww, that really hurt! You watch the large balloon at the back end of the needle empty a lot of air into your breasts.[unless the player is top heavy]They inflate as if they were also made of stretchy rubber![end if]";
+		say "Owww, that really hurt! You watch the large balloon at the back end of the dart empty a lot of air into your breasts.[unless the player is top heavy]They inflate as if they were also made of stretchy rubber![end if]";
 		BustInflate a random number between 4 and 6;
 		cutscene needle breasts;
 		NeedleDelicateUp;
 	otherwise if lactation fetish is 1 and a random number between 1 and 2 is 1:
-		say "Owww, that really hurt! You watch the capsule at the end of the needle empty a mysterious serum into your breasts. [one of]They feel more... active.[or]They feel more... productive.[or]Your lactation rate has been increased again![stopping]";
+		say "Owww, that really hurt! You watch the capsule at the end of the dart empty a mysterious serum into your breasts. [one of]They feel more... active.[or]They feel more... productive.[or]Your lactation rate has been increased again![stopping]";
 		increase the lactation rate of the player by 1;
 		cutscene needle breasts;
 		NeedleDelicateUp;
 	otherwise if lactation fetish is 1:
-		say "Owww, that really hurt! You watch the capsule at the end of the needle empty what looks like a lot of [milk] into your breasts.[unless the player is top heavy]They visibly swell.[end if]";
+		say "Owww, that really hurt! You watch the capsule at the end of the dart empty what looks like a lot of [milk] into your breasts.[unless the player is top heavy]They visibly swell.[end if]";
 		Milkup a random number between 2 and 4;
 		cutscene needle breasts;
 		NeedleDelicateUp;
@@ -103,7 +115,7 @@ To compute (Y - a needle trap) injecting into (X - belly):
 	let needle-blocker be nothing;
 	if 1 <= the number of worn belly covering clothing, now needle-blocker is a random worn belly covering currently uncovered clothing;
 	if needle-blocker is clothing:
-		say "The needle is blocked by your [ShortDesc of needle-blocker]! Phew!";
+		say "The dart is blocked by your [ShortDesc of needle-blocker]! Phew!";
 	otherwise if diaper lover > 0:
 		say "You feel weirdly numb on the inside. Whatever you were injected with has made you temporarily incontinent![line break][variable custom style]Uh-oh...[roman type][line break]";
 		increase temporary-incontinence by 2;
@@ -123,13 +135,13 @@ To compute (Y - a needle trap) injecting into (X - hips):
 		repeat with C running through worn crotch-in-place crotch covering clothing:
 			if a random number between 0 and the armour of C > 5, now needle-blocker is C;
 	if needle-blocker is clothing and tutorial is 0:
-		say "The needle is blocked by your [ShortDesc of needle-blocker]! Phew!";
+		say "The dart is blocked by your [ShortDesc of needle-blocker]! Phew!";
 	otherwise if tutorial is 0 and fast TG is 3 and the size of penis <= min penis size and the player is possessing a penis:
 		say "Owww, that really hurt! Your [AssDesc] and [ShortDesc of penis] glow pink for a moment. ";
 		PenisDown 1;
 	otherwise if diaper quest is 1:
 		if a random number between 1 and 2 is 1 and tutorial is 0:
-			say "Owww, that really hurt! You watch the large balloon at the back end of the needle empty a lot of liquid into your body[one of]. That can't be good...[or].[stopping]";
+			say "Owww, that really hurt! You watch the large balloon at the back end of the dart empty a lot of liquid into your body[one of]. That can't be good...[or].[stopping]";
 			BladderUp 5;
 			if rectum > 0, increase rectum by 2;
 			cutscene needle hips;
@@ -140,7 +152,7 @@ To compute (Y - a needle trap) injecting into (X - hips):
 			cutscene needle hips;
 			NeedleDelicateUp;
 	otherwise if inflation fetish is 1 and a random number between 1 and 2 is 1 and tutorial is 0:
-		say "Owww, that really hurt! You watch the large balloon at the back end of the needle empty a lot of air into your ass cheeks. They inflate as if they were also made of stretchy rubber!";
+		say "Owww, that really hurt! You watch the large balloon at the back end of the dart empty a lot of air into your ass cheeks. They inflate as if they were also made of stretchy rubber!";
 		AssInflate a random number between 4 and 6;
 		cutscene needle hips;
 		NeedleDelicateUp;
@@ -174,6 +186,61 @@ Definition: a clothing (called C) is short or shorter:
 	if C is knee-length or longer, decide no;
 	decide yes.
 
+To compute (Y - a needle trap) injecting into (X - face): [Lips, actually.]
+	if diaper quest is 1:
+		if a random number between 1 and 2 is 1 and tutorial is 0:
+			say "Owww, that really hurt! The large balloon at the back end of the dart suddenly pumps a lot of liquid straight down your throat[one of]. That can't be good...[or].[stopping]";
+			BladderUp 5;
+			NeedleDelicateUp;
+		otherwise:
+			say "It jabs you right in the cheek. Owww, that really hurt! And yet you can [one of]feel whatever it injected into you making you feel hotter and more flustered...[or]still feel the injected aphrodisiac making you hornier![stopping]";
+			Arouse 2500;
+			NeedleDelicateUp;
+	otherwise:
+		say "At the last minute the needle splits into two, to jab both your upper and lower lips. Both empty their contents at the same time. Ye-ow, that really stung!";
+		NeedleDelicateUp;
+		LipsUp 1.
+
+[#LXorDD. Intended just for injecting into the groin: penis or labia]
+To compute (Y - a needle trap) injecting into (X - body part):
+	let needle-blocker be nothing;
+	if the player is upright:
+		let R be a random number between 1 and 3;
+		repeat with C running through worn skirted clothing:
+			if R is 3, now needle-blocker is C;
+			if C is knee-length or longer and C is crotch-in-place, now needle-blocker is C;
+	if needle-blocker is nothing:
+		repeat with C running through worn crotch-in-place crotch covering clothing:
+			if a random number between 0 and the armour of C > 5, now needle-blocker is C;
+	if needle-blocker is clothing and tutorial is 0:
+		say "The dart is blocked by your [ShortDesc of needle-blocker]! Phew!";
+	otherwise if diaper quest is 1:
+		if a random number between 1 and 2 is 1 and tutorial is 0:
+			say "Owww, that really hurt! You watch the large balloon at the back end of the dart empty a lot of liquid into your body[one of]. That can't be good...[or].[stopping]";
+			BladderUp 5;
+			if rectum > 0, increase rectum by 2;
+			cutscene needle hips;
+			NeedleDelicateUp;
+		otherwise:
+			say "Owww, that really hurt! And yet you can [one of]feel whatever it injected into you making you feel hotter and more flustered...[or]still feel the injected aphrodisiac making you hornier![stopping]";
+			Arouse 2500;
+			cutscene needle hips;
+			NeedleDelicateUp;
+	otherwise if X is vagina:
+		say "Owww, that stings, burning like menthol on your sensitive [vagina] lips! You stare down at your crotch, at a cluster of smaller needles that have injected you all over down there!";
+		LabiaUp 1 with comment;
+		NeedleDelicateUp;
+	otherwise if X is penis:
+		if [tutorial is 0 and fast TG is 3 and the size of penis <= min penis size and] the player is possessing a penis:
+			say "Owww! It hit you right in the [penis]! Your [ShortDesc of penis] glows pink for a moment. ";
+		otherwise if the player is somehow possessing a penis: [This can happen if their dick was stolen]
+			say "Ouch! It hit you right in your empty crotch, which glows pink for a moment. ";
+		SpecialPenisDown 1; [#LXorDD]
+	otherwise:
+		say "Owww, that really hurt!! You take it out and notice an empty capsule at the end you're holding. Looks like it injected something into your [printed name of X]. How weird.";
+		NeedleDelicateUp.
+
+
 To NeedleDelicateUp:
 	if a random number between the delicateness of the player and 10 < 9, PainUp 1.
 
@@ -202,7 +269,7 @@ The spawn initial dungeon rune traps rule is listed first in the set up dungeon 
 
 To trigger (Y - a rune trap):
 	now the player-motion of the player is 0;
-	now the reset-timer of Y is 250;
+	now the reset-timer of Y is 650;
 	now Y is not untriggered;
 	now Y is revealed;
 	cutshow the triggered-image of Y for Y;
@@ -310,22 +377,21 @@ To compute unique trigger of (Y - fatigue-rune-trap):
 		if the fatigue of the player > the buckle threshold of the player, now the fatigue of the player is the buckle threshold of the player;
 		increase the magic-fatigue of the player by 1 + (the total magic power of the player / 2). [We don't need to worry about this going over-the-top as this is handled at the start of MagicPowerRefresh]
 
-shrink-rune-trap is a rune trap.
+genitals-rune-trap is a rune trap.
 
 Figure of shrink rune trap is the file "Env/Dungeon/rune3a.jpg".
 Figure of shrink rune trap triggered is the file "Env/Dungeon/rune3b.jpg".
 
-To decide which figure-name is the examine-image of (T - shrink-rune-trap):
+To decide which figure-name is the examine-image of (T - genitals-rune-trap):
 	decide on Figure of shrink rune trap.
-To decide which figure-name is the triggered-image of (T - shrink-rune-trap):
+To decide which figure-name is the triggered-image of (T - genitals-rune-trap):
 	decide on Figure of shrink rune trap triggered.
 
-To compute unique trigger of (Y - shrink-rune-trap):
+To compute unique trigger of (Y - genitals-rune-trap):
 	if the size of penis > min penis size:
 		PenisDown 1;
 	otherwise:
-		say "You feel your muscles shrinking, reducing in bulk! You feel a bit weaker...";
-		StrengthDown 1.
+		LabiaUp 1 with comment.
 
 polymorph-rune-trap is a rune trap.
 

@@ -14,15 +14,15 @@ To decide which number is the saved cringe appearance of the player:
 To decide which number is the adult-influence of (C - a thing):
 	decide on 0.
 
-To decide which number is the adult-influence of (C - a maturity clothing):
-	decide on 1.
-
 To decide which number is the adult appearance of the player:
 	let B be 0;
 	increase B by the make-up of face;
 	if breasts is showing cleavage, increase B by 1;
 	repeat with C running through worn wearthings:
-		if C is currently visible, increase B by the adult-influence of C;
+		if the adult-influence of C is not 0 or C is maturity clothing:
+			if C is maturity clothing or C is currently visible:
+				increase B by the adult-influence of C;
+				if C is maturity clothing, increase B by 1;
 	decide on B.
 
 [!<cringeTarget:Thing>*

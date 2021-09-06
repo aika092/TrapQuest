@@ -33,7 +33,7 @@ To compute periodic effect of (C - portal gag):
 			say "[bold type][one of]You can't help but[or]Once again you[stopping] accidentally stimulate yourself with your tongue![roman type][line break]";
 			if the player is possessing a penis:
 				stimulate penis from face;
-				if penis is pushed over the edge, penis orgasm shamefully;[####Selkie: surely this should be penile orgasm? ###MG: Indeed!]
+				if penis is pushed over the edge, penis orgasm shamefully;
 			otherwise:
 				stimulate vagina from face;
 				if vagina is pushed over the edge, vaginally orgasm shamefully;

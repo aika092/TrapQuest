@@ -181,17 +181,17 @@ unicorn can be unicorn-charged or not unicorn-charged. unicorn is not unicorn-ch
 To compute damaging attack of (M - unicorn):
 	let T be the total magic power of the player;
 	let P be 0;
-	if M is unbridaled, now P is 1;
+	if M is unbridaled, now P is 2;
 	if M is unicorn-charged:
 		compute shooting attack of M;
-	otherwise if the player is the donator and a random number between 1 and 5 is 1 or (P is 1 and a random number between 1 and 3 is 1):
+	otherwise if the player is the donator and a random number between 1 and (5 - P) is 1:
 		if the magic-fatigue of the player < T:
-			say "[BigNameDesc of M]'s horn glows with power as you feel magic being sucked out of you.";
+			say "[BigNameDesc of M][']s horn glows with power as you feel magic being sucked out of you.";
 			let X be the difficulty of M / 2;
 			increase the magic-fatigue of the player by X;
 			now M is unicorn-charged;
-		otherwise if P is 1:
-			say "[BigNameDesc of M]'s horn glows with power as it sucks energy out of you! It hurts!";
+		otherwise if P > 0:
+			say "[BigNameDesc of M][']s horn glows with power as it sucks energy out of you! It hurts!";
 			let X be the difficulty of M;
 			FatigueUp X * 2;
 			BodyRuin 1;

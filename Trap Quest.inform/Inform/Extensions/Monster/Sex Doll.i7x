@@ -65,7 +65,7 @@ To say SexDollGender of (M - a sex doll):
 		say "female dildo".
 
 Understand "male" as a sex doll when the item described is creamfilled-sex-doll.
-Understand "female", "strapon" as a sex doll when the item described is not airfilled-sex-doll.
+Understand "female", "strapon" as a sex doll when the item described is airfilled-sex-doll.
 
 [
 Cum filled:

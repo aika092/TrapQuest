@@ -18,6 +18,7 @@ To say ClothingDesc of (H - domino-mask):
 	say "This black domino mask covers only the areas around your eyes, but for some reason you feel confident that this will adequately conceal your identity.".
 
 Definition: domino-mask is magic themed: decide no. [usually zappable things are magic themed]
+Definition: domino-mask is hand ready: decide no. [usually zap ready things are flagged as hand ready]
 
 To decide which number is the zap damage improvement of (W - domino-mask):
 	decide on 5 + the charge of domino-mask + the magic-modifier of domino-mask.

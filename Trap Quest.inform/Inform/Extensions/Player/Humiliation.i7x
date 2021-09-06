@@ -221,12 +221,6 @@ The player has a number called delayed humiliation.
 To decide which number is the humiliation-influence of (C - a wearthing):
 	decide on 0.
 
-[Blouses, gown of purity and confidence items slightly lower the strength of the humiliation]
-To decide which number is the humiliation-influence of (C - a confidence clothing):
-	let B be 1;
-	increase B by the magic-modifier of C;
-	decide on B.
-
 [!<HumiliateX>+
 
 The humiliation function multiplies whatever number is plugged into it, so the same event is less humiliating if it occurs when the player is shameless rather than proud. A humiliate 100 at 0 humiliation humiliates 450. At 10000 humiliation it humiliates 400. At 20000 humiliation it humiliates 350. At 30000 humiliation it humiliates 300 and at 40000 humiliation it humiliates 250. As such, any number plugged into this function from anywhere is larger than it seems.
@@ -236,8 +230,9 @@ Once the humiliation amount is decided, the number is passed to the delayed humi
 +!]
 To humiliate (X - a number):
 	let B be 0;
-	repeat with C running through worn clothing:
+	repeat with C running through worn wearthings:
 		increase B by the humiliation-influence of C;
+		if C is confidence clothing, increase B by the magic-modifier of C + 1;
 	while 10 - B < 0:
 		decrease B by 1;
 	let H be (X * (35000 + ((10 - B) * 1000) - (the humiliation of the player / 2))) / 15000;

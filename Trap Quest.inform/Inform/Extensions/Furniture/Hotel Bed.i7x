@@ -60,8 +60,6 @@ To compute rest ending of (F - HotelBedCollar):
 		say "[bold type]You squawk in surprise as a tight collar appears around your neck![roman type] Feeling around you can find absolutely no latch or way to remove it, but at the back there is a ripcord you can pull. Do you dare pull it, or do you leave it alone?!";
 		summon pullstring collar.
 
-HotelBedPatrons is a kind of hotel bed.
-
 HotelBedPatrons is a kind of hotel bed. There are 2 HotelBedPatrons. 1 HotelBedPatrons is in Hotel39. [The printed name of HotelBedPatrons is "[TQlink of item described][if item described is unencountered]hotel bed[otherwise if diaper quest is 1]professional baby slave hotel bed[otherwise]brothel hotel bed[end if][TQxlink of item described][shortcut-desc][verb-desc of item described]".]
 
 patronbed uses is a number that varies.

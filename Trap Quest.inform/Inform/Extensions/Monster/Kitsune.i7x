@@ -163,19 +163,24 @@ To compute KitsuneReveal of (M - kitsune):
 	now the vanish timer of M is 10;
 	FavourUp M by 1. [the kitsune likes playing hide and seek with you]
 
-To say FirstResponse of (M - kitsune):
+To execute (T - talk-greet) for (M - kitsune):
+	if breasts is exposed, progress quest of chest-exposing-quest from M;
 	if the target-disguise of M is M:
-		say "[speech style of M]'Hey there. Feeling lucky?'[roman type][line break]";
-		alwayscutshow figure of kitsune interact 2 for M;
+		compute basic greeting to M;
+		increase the greeted-count of M by 1;
+		now the greet-window of M is -1;
 	otherwise:
-		compute KitsuneReveal of M.
+		say "[BigNameDesc of M] suddenly performs a 360 degrees twirl!";
+		reveal disguise of M;
+		say "[speech style of M]'Surprise, it was me all along! [one of]Next time, be more aggressive! Rawr!'[or]You're not very good at slap-tag, are you?'[stopping][roman type][line break][BigNameDesc of M] giggles and vanishes in a puff of pink smoke!";
+		focus-consider M;
+		regionally place M;
+		set up disguise of M;
+		now the vanish timer of M is 0.
 
-To say RepeatResponse of (M - kitsune):
-	if the target-disguise of M is M:
-		say "[speech style of M]'How do you feel about changing your luck?'[roman type][line break]";
-		alwayscutshow figure of kitsune interact 2 for M;
-	otherwise:
-		compute KitsuneReveal of M.
+To compute basic greeting to (M - kitsune):
+	say "[speech style of M]'[one of]Hey there. Feeling lucky[or]How do you feel about changing your luck[stopping]?'[roman type][line break]";
+	alwayscutshow figure of kitsune interact 2 for M.
 
 Section 2 - Questioning
 

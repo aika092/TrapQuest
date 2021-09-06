@@ -407,7 +407,7 @@ To say ErectionDemand of (M - an acolyte):
 		say "[BigNameDesc of M] clasps [his of M] hands.[line break][speech style of M]'[one of]If you are a worthy donor, your organ will soon throb with the power of the [great ones].'[or]If you are worthy of being spared, your organ will become engorged with the power of the [great ones].'[or]You may yet have a purpose to the [great ones]. If their power hardens your sacred organ, all will become clear...'[in random order][roman type][line break][big he of M]'s still looking off into space, but you can tell [he of M]'s paying close attention to your [player-penis].";
 
 To say ErectionPenetrationFlav of (M - an acolyte):
-	say "[BigFuckerDesc of M] [if penis is penis-erect]completes a brief chant[otherwise]waits until your [player-penis] starts showing signs of life[end if] before turning around and bending over, giving you a full view of [his of M] [if lady fetish is 2]lubricated fuckhole[otherwise]wet cunt[end if] as [he of M] uses a small brush to draw strange symbols on your [ShortBallsDesc], shaft, and abdomen, in that order.[line break][speech style of M]'[one of]At last. The ritual can begin.'[or]The preparations are complete. Let us commence.'[or]It is time. We must begin.'[in random order][roman type][line break]Without another word, [FuckerDesc of M] lowers [himself of M] into your lap and slides your [ShortDesc of penis] into [his of M] [HoleDesc of M].";
+	say "[BigFuckerDesc of M] [if penis is penis-erect]completes a brief chant[otherwise]waits until your [player-penis] starts showing signs of life[end if] before turning around and bending over, giving you a full view of [his of M] [if lady fetish is 2]lubricated fuckhole[otherwise]wet cunt[end if] as [he of M] uses a small brush to draw strange symbols on your [ShortDesc of scrotum], shaft, and abdomen, in that order.[line break][speech style of M]'[one of]At last. The ritual can begin.'[or]The preparations are complete. Let us commence.'[or]It is time. We must begin.'[in random order][roman type][line break]Without another word, [FuckerDesc of M] lowers [himself of M] into your lap and slides your [ShortDesc of penis] into [his of M] [HoleDesc of M].";
 
 To compute unerect taunting of (M - an acolyte):
 	let H be the humiliation of the player / 8000;
@@ -768,7 +768,7 @@ To compute friendly drink of (M - an acolyte):
 		StomachUp 2;
 		humiliate MODERATE-HUMILIATION;
 	otherwise:
-		say "[speech style of M]'Sorry, but only true servants of the [great ones] would [']appreciate['] what I have to offer you.'[roman type]";
+		say "[speech style of M]'Sorry, but only true servants of the [great ones] would [']appreciate['] what I have to offer you.'[roman type][line break]";
 	bore M;
 	say "[line break]".
 
@@ -925,8 +925,8 @@ To penetration dominate (M - an acolyte):
 	now the body soreness of the player is 10;
 	say "The tentacles['] grip slowly fades, and you quickly return to your feet, trying to shake off what just happened.";
 	if doomed > 0 and doomed < 5 and doom counter > 0, increase doom counter by 50 + the size of penis;
-	if the size of penis < 10 and the player is possessing a penis:
-		PenisUp 1;
+	if the mystical size of penis < 10 and the player is somehow possessing a penis:
+		SpecialPenisUp 1; [#LXorDD]
 	otherwise:
 		say "Tingles pass through your body as your muscles suddenly grow in size.";
 		StrengthUp 1;
@@ -1001,7 +1001,7 @@ To compute (M - clairvoyant acolyte) protecting against (X - a monster):
 	if X is acolyte or the class of the player is cultist:
 		say "[if the class of the player is cultist and X is acolyte][line break][speech style of M]'There is no point in fighting amongst ourselves... the rise of the [great ones] is inevitable...'[roman type][line break][BigNameDesc of M] doesn't seem to want to get involved![otherwise][line break][speech style of M]'Resisting is useless, non-believer. The [great ones] will rise. It is... inevitable.'[roman type][line break]";
 	otherwise:
-		say "[speech style of M]'Your petty squabbles are nothing compared to the might of the [great ones]...'[roman type]";
+		say "[speech style of M]'Your petty squabbles are nothing compared to the might of the [great ones]...'[roman type][line break]";
 	distract M.
 
 To compute unique periodic effect of (M - a clairvoyant acolyte):
@@ -1023,7 +1023,7 @@ To say MercyReaction of (M - clairvoyant acolyte):
 
 To compute kneeling reaction of (M - clairvoyant acolyte):
 	say "[one of][BigNameDesc of M] walks over to you, eyes rolling beneath [his of M] veil as [semen] leaks freely from [his of M] [vagina].[or][BigNameDesc of M] traces strange symbols in the air as [he of M] strides over to you, only tangentially aware of the steadily increasing flow of [semen] from [his of M] already [semen] packed [vagina].[or]A colour creeps back into [NameDesc of M][']s skin as [he of M] calmly glides over to you, more and more turned on by [his of M] imminent 'missionary' work.[or][BigNameDesc of M] begins to chant under [his of M] breath, magically stemming the flow of leftover [semen] down [his of M] legs as [he of M] bears down on you.[or][BigNameDesc of M] looms over you, [his of M] cum dripping pussy level with your head. [big his of M] face is directed upward, and [he of M]'s wobbling slightly, as if looking at something [he of M] cannot quite see.[in random order][line break]";
-	say "[speech style of M][one of]The blessed seed of the [great ones] will fertilise your mind...'[or]When you have tasted their seed, your mind will grow open for the [great ones]...'[or]The [great ones] blessed me with their seed... this is my responsibility...'[at random][roman type]";
+	say "[speech style of M][one of]The blessed seed of the [great ones] will fertilise your mind...'[or]When you have tasted their seed, your mind will grow open for the [great ones]...'[or]The [great ones] blessed me with their seed... this is my responsibility...'[at random][roman type][line break]";
 	strongHumiliate.
 
 To say waitingflav of (M - clairvoyant acolyte):
@@ -1103,7 +1103,7 @@ To compute unique facesit climax effect of (M - clairvoyant acolyte):
 	orgasm bore M.
 
 To say FacesitClimaxFlav of (M - clairvoyant acolyte):
-	say "You hear a sigh and then a moan and then a screaming orgasm come from above. Feminine sex juices flood [if the reaction of the player > 0]into your mouth[otherwise]onto your face[end if], and a strange 'blocked' feeling falls over your senses. You feel some part of you fading, draining faster and faster into a place you mind cannot reach, until your senses seem to fade completely and... return. [BigNameDesc of M] watches you[if M is in mansion02], perched on the bed[otherwise] calmly[end if].[line break][speech style of M]'[one of]How was it?'[or]Did you see it?'[or]Have you heard it?'[or]Did they touch you?'[or]Their power is great...'[at random][roman type].".
+	say "You hear a sigh and then a moan and then a screaming orgasm come from above. Feminine sex juices flood [if the reaction of the player > 0]into your mouth[otherwise]onto your face[end if], and a strange 'blocked' feeling falls over your senses. You feel some part of you fading, draining faster and faster into a place you mind cannot reach, until your senses seem to fade completely and... return. [BigNameDesc of M] watches you[if M is in mansion02], perched on the bed[otherwise] calmly[end if].[line break][speech style of M]'[one of]How was it?'[or]Did you see it?'[or]Have you heard it?'[or]Did they touch you?'[or]Their power is great...'[at random][roman type][line break]".
 
 This is the seer facesitting prevents breathing rule:
 	if there is clairvoyant acolyte penetrating face, decide yes;

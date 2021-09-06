@@ -17,7 +17,7 @@ To say ClothingDesc of (C - a sandals):
 To say UniqueShortDesc of (C - a sandals):
 	say "wooden sandals".
 
-To uniquely set up (C - a sandals):
+To set up heel length of (C - a sandals):
 	now the heel-height of C is 1.
 
 Definition: a sandals is rigid: decide yes.

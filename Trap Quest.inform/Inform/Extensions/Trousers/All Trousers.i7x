@@ -45,8 +45,8 @@ Definition: bitch bottoms is heart themed: decide yes.
 Definition: bitch bottoms is dog themed: decide yes.
 To decide which number is the initial outrage of (C - bitch bottoms):
 	decide on 4.
-To decide which number is the defaultDiaperHidingLength of (C - bitch bottoms):
-	decide on 2. [Can only hide the thinnest of diapers]
+To decide which number is the crotch-tightness of (C - bitch bottoms):
+	decide on 2.
 
 
 buttockless pants is a kind of trousers. A buttockless pants is usually butt-windowed. A buttockless pants is manly. The printed name of buttockless pants is usually "[clothing-title-before][clothing-material of item described] buttockless pants[clothing-title-after]". The text-shortcut of buttockless pants is "bp". Figure of yellow buttockless pants is the file "Items/Clothes/Lower/Pants/Buttockless/buttocklesspants1.png". Figure of blue buttockless pants is the file "Items/Clothes/Lower/Pants/Buttockless/buttocklesspants2.png".
@@ -111,8 +111,8 @@ To say MediumDesc of (Y - black-exercise-shorts):
 Definition: black-exercise-shorts is black themed: decide yes.
 To decide which number is the initial outrage of (C - black-exercise-shorts):
 	decide on 1.
-To decide which number is the defaultDiaperHidingLength of (C - black-exercise-shorts):
-	decide on 0. [Can only hide normal underwear]
+To decide which number is the crotch-tightness of (C - black-exercise-shorts):
+	decide on 3.
 
 blue-exercise-shorts is an exercise shorts. blue-exercise-shorts is rare.
 The printed name of blue-exercise-shorts is "[clothing-title-before]loose blue exercise shorts[clothing-title-after]". Understand "loose", "blue" as blue-exercise-shorts. The text-shortcut of blue-exercise-shorts is "lbes".
@@ -126,8 +126,8 @@ To say MediumDesc of (Y - blue-exercise-shorts):
 Definition: blue-exercise-shorts is blue themed: decide yes.
 To decide which number is the initial outrage of (C - blue-exercise-shorts):
 	decide on 1.
-To decide which number is the defaultDiaperHidingLength of (C - blue-exercise-shorts):
-	decide on 2. [Can only hide the thinnest of diapers]
+To decide which number is the crotch-tightness of (C - blue-exercise-shorts):
+	decide on 2.
 
 grey-exercise-shorts is an exercise shorts.
 The printed name of grey-exercise-shorts is "[clothing-title-before]tight grey exercise shorts[clothing-title-after]". Understand "tight", "grey" as grey-exercise-shorts. The text-shortcut of grey-exercise-shorts is "tges".
@@ -141,28 +141,84 @@ To say MediumDesc of (Y - grey-exercise-shorts):
 Definition: grey-exercise-shorts is grey themed: decide yes.
 Definition: grey-exercise-shorts is layer-concealing: decide no. [It doesn't prevent things layered underneath it from being seen]
 Definition: grey-exercise-shorts is partially-layer-concealing: decide yes. [However it does partially cover things layered underneath it]
+To decide which number is the crotch-tightness of (C - grey-exercise-shorts):
+	decide on 3.
 To decide which number is the initial outrage of (C - grey-exercise-shorts):
 	decide on 3.
-To decide which number is the defaultDiaperHidingLength of (C - grey-exercise-shorts):
-	decide on 0. [Can only hide normal underwear]
 
-jeans is a kind of trousers. A jeans is usually manly. There is 1 zippable denim jeans. The printed name of jeans is usually "[clothing-title-before][clothing-material of item described] jeans[clothing-title-after]". The text-shortcut of jeans is "je". Figure of jeans is the file "Items/Clothes/Lower/Pants/jeans1.png".
+sheer-exercise-shorts is an exercise shorts. sheer-exercise-shorts is sheer.
+The printed name of sheer-exercise-shorts is "[clothing-title-before]sheer exercise shorts[clothing-title-after]". Understand "sheer" as sheer-exercise-shorts. The text-shortcut of sheer-exercise-shorts is "ses".
+Figure of sheer exercise shorts is the file "Items/Clothes/Lower/Pants/exerciseshorts4.png".
+To decide which figure-name is clothing-image of (H - sheer-exercise-shorts):
+	decide on figure of sheer exercise shorts.
+To say UniqueClothingDesc of (Y - sheer-exercise-shorts):
+	say "A pair of tight sheer exercise shorts. It [if Y is worn]rides[otherwise]will ride[end if] very low on your hips, exposing the top of your butt crack.".
+To say MediumDesc of (Y - sheer-exercise-shorts):
+	say "pair of tight sheer exercise shorts".
+Definition: sheer-exercise-shorts is layer-concealing: decide no. [It doesn't prevent things layered underneath it from being seen]
+Definition: sheer-exercise-shorts is partially-layer-concealing: decide yes. [However it does partially cover things layered underneath it]
+To decide which number is the crotch-tightness of (C - sheer-exercise-shorts):
+	decide on 4.
+To decide which number is the initial outrage of (C - sheer-exercise-shorts):
+	decide on 5.
+
+tight-blue-exercise-shorts is an exercise shorts. tight-blue-exercise-shorts is bottom-exclusive.
+The printed name of tight-blue-exercise-shorts is "[clothing-title-before]tight blue exercise shorts[clothing-title-after]". Understand "tight", "blue" as tight-blue-exercise-shorts. The text-shortcut of tight-blue-exercise-shorts is "tbes".
+Figure of tight blue exercise shorts is the file "Items/Clothes/Lower/Pants/exerciseshorts5.png".
+To decide which figure-name is clothing-image of (H - tight-blue-exercise-shorts):
+	decide on figure of tight blue exercise shorts.
+To say UniqueClothingDesc of (Y - tight-blue-exercise-shorts):
+	say "A pair of supertight blue exercise shorts. It [if Y is worn]rides[otherwise]will ride[end if] high on your hips, but [if Y is worn]also digs[otherwise]will also dig[end if] into your crotch.".
+To say MediumDesc of (Y - tight-blue-exercise-shorts):
+	say "pair of tight blue exercise shorts".
+To decide which number is the crotch-tightness of (C - tight-blue-exercise-shorts):
+	decide on 5.
+To decide which number is the initial outrage of (C - tight-blue-exercise-shorts):
+	decide on 2.
+
+jeans is a kind of trousers. A jeans is usually manly. A jeans is denim. Understand "jeans" as jeans.
 
 Definition: a jeans is blue themed: decide yes.
-
-To decide which figure-name is clothing-image of (H - a jeans):
-	decide on figure of jeans.
-
-To say UniqueClothingDesc of (J - a jeans):
-	say "A pair of tight fitting denim jeans with a [if J is crotch-unzipped]open zip[otherwise if J is crotch-ripped]ripped hole[otherwise if J is zippable]convenient zip[otherwise]layer of protective denim[end if] at the crotch.[if J is zippable and diaper quest is 0]The zip goes all the way up the back to potentially allow anal access.[otherwise if J is zippable]The zip goes all the way up the back to allow for easy diaper checks and changes.[end if]".
-
 To say ShortDesc of (Y - a jeans):
-	say "pair of zip up jeans".
+	say "jeans".
 
 To decide which object is the unique-upgrade-target of (C - a jeans):
 	if there is a worn diaper, decide on a random off-stage blue buttockless pants;
 	if the number of worn knickers is 0, decide on a random off-stage cutoffs;
 	decide on nothing.
+
+full-zip-jeans is a jeans. full-zip-jeans is zippable. The printed name of full-zip-jeans is "[clothing-title-before]zip-up jeans[clothing-title-after]". The text-shortcut of full-zip-jeans is "zje". Understand "zip-up" as full-zip-jeans.
+
+Figure of full zip jeans is the file "Items/Clothes/Lower/Pants/jeans1.png".
+To decide which figure-name is clothing-image of (H - full-zip-jeans):
+	decide on figure of full zip jeans.
+
+To say UniqueClothingDesc of (J - full-zip-jeans):
+	say "A pair of tight fitting denim jeans with a [if J is crotch-unzipped]open zip[otherwise if J is crotch-ripped]ripped hole[otherwise if J is zippable]convenient zip[otherwise]layer of protective denim[end if] at the crotch.[if J is zippable and diaper quest is 0]The zip goes all the way up the back to potentially allow anal access.[otherwise if J is zippable]The zip goes all the way up the back to allow for easy diaper checks and changes.[end if]".
+
+To say MediumDesc of (Y - full-zip-jeans):
+	say "pair of zip up jeans".
+
+V-crotch-jeans is a jeans. The printed name of V-crotch-jeans is "[clothing-title-before]V-crotch jeans[clothing-title-after]". The text-shortcut of V-crotch-jeans is "vje". Understand "V-crotch" as V-crotch-jeans.
+
+Definition: V-crotch-jeans is fetish appropriate:
+	if diaper quest is 1, decide no;
+	decide yes.
+
+Figure of V-crotch jeans is the file "Items/Clothes/Lower/Pants/jeans2.png".
+To decide which figure-name is clothing-image of (H - V-crotch-jeans):
+	decide on figure of V-crotch jeans.
+
+To say UniqueClothingDesc of (J - V-crotch-jeans):
+	say "A pair of tight fitting denim jeans with an extremely low-cut waist at the front, which dips down with a V-shape to expose [if J is worn]your[otherwise]the wearer's[end if] mons pubis[if J is crotch-ripped]. It is ripped at the crotch[end if].".
+
+To say MediumDesc of (Y - V-crotch-jeans):
+	say "pair of V-crotch jeans".
+
+To decide which number is the initial outrage of (C - V-crotch-jeans):
+	decide on 4.
+
+Definition: V-crotch-jeans is potentially-bottom-layer-concealing: decide no. [Doesn't fully conceal underwear]
 
 rubber trousers is a kind of trousers. There is 1 zippable latex rubber trousers. A rubber trousers is manly. The printed name of rubber trousers is usually "[clothing-title-before][clothing-material of item described] pants[clothing-title-after]". The text-shortcut of rubber trousers is "lp". Figure of rubber trousers is the file "Items/Clothes/Lower/Pants/latexpants1.png". Understand "pants" as rubber trousers.
 
@@ -175,12 +231,12 @@ To say UniqueClothingDesc of (J - a rubber trousers):
 To say ShortDesc of (Y - a rubber trousers):
 	say "pair of zip up latex pants".
 
-This is the remove inappropriate trousers rule:
-	repeat with B running through rubber trousers:
-		now B is in Holding Pen.
-The remove inappropriate trousers rule is listed in the diaper quest fix rules.
-
+To decide which number is the crotch-tightness of (C - a rubber trousers):
+	decide on 2.
 Definition: a rubber trousers is purple themed: decide yes.
+Definition: a rubber trousers is fetish appropriate:
+	if diaper quest is 1, decide no;
+	decide yes.
 
 leggings is a kind of trousers. a leggings is usually nylon. Understand "leggings" as leggings.
 
@@ -204,6 +260,8 @@ To decide which number is the initial outrage of (B - light-leggings):
 	decide on 2.
 To decide which number is the initial cringe of (B - light-leggings):
 	decide on 4.
+To decide which number is the crotch-tightness of (C - light-leggings):
+	decide on 1.
 
 dark-leggings is a leggings. The text-shortcut of dark-leggings is "dnl". The printed name of dark-leggings is "[clothing-title-before]dark nylon leggings[clothing-title-after]". Understand "dark" as dark-leggings. Figure of dark leggings is the file "Items/Clothes/Lower/Pants/leggings2.png".
 Definition: dark-leggings is brown themed: decide yes.
@@ -219,6 +277,8 @@ To decide which number is the initial outrage of (B - dark-leggings):
 	decide on 2.
 To decide which number is the initial cringe of (B - dark-leggings):
 	decide on 1.
+To decide which number is the crotch-tightness of (C - dark-leggings):
+	decide on 2.
 Definition: dark-leggings is layer-concealing: decide no.
 Definition: dark-leggings is partially-layer-concealing: decide yes.
 
@@ -244,6 +304,8 @@ To decide which number is the initial cringe of (B - a teddy bear pantyhose):
 	decide on 10.
 To decide which number is the initial armour of (C - a teddy bear pantyhose):
 	decide on 6.
+To decide which number is the crotch-tightness of (C - a teddy bear pantyhose):
+	decide on 0.
 
 Definition: a teddy bear pantyhose is fetish appropriate:
 	if diaper lover > 0, decide yes;
@@ -257,6 +319,9 @@ Definition: a teddy bear pantyhose is red themed: decide yes.
 Definition: a teddy bear pantyhose is potentially erection concealing: decide yes. [non-tight loins conceal erections]
 
 yoga pants is a kind of trousers. There is 1 rare yoga pants. The printed name of yoga pants is usually "[clothing-title-before]yoga pants[clothing-title-after]". The text-shortcut of yoga pants is "yp". Figure of yoga pants is the file "Items/Clothes/Lower/Pants/Yoga/yogapants1.png". A yoga pants has a number called yoga-charge.
+
+To decide which number is the crotch-tightness of (C - a yoga pants):
+	decide on 3.
 
 To decide which figure-name is clothing-image of (H - a yoga pants):
 	decide on figure of yoga pants.

@@ -14,6 +14,10 @@ To decide which number is the initial outrage of (C - a ribbon dress):
 	decide on 13.
 To decide which number is the initial armour of (C - a ribbon dress):
 	decide on 2.
+To decide which number is the crotch-tightness of (C - a ribbon dress):
+	decide on 4.
+To decide which number is the penis-capacity of (C - a ribbon dress):
+	decide on 2.
 
 To say ShortDesc of (C - a ribbon dress):
 	say "red ribbons".

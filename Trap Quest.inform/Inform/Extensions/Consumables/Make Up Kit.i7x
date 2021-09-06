@@ -56,16 +56,19 @@ Carry out brushing something with:
 	let MU be the make-up of face;
 	repeat with N running from MU to 3:
 		if N is MU, set numerical response N to "Don't add any make up";
-		otherwise set numerical response N to the substituted form of "[if N is 1]Add a light touch of make up[otherwise if N is 2 and the makeupskill of the player is 1]Add a provocative amount of make up (and get a large temporary boost to charisma!)[otherwise if N is 2]Add a provocative amount of make up[otherwise if diaper quest is 0]Paint yourself like a whore[otherwise]Paint yourself in over-the-top make up[end if]";
+		otherwise set numerical response N to the substituted form of "[if N is 1]Add a light touch of make up[otherwise if N is 2 and the makeupskill of the player is 1]Add a provocative amount of make up (and get a large temporary extra boost to charisma!)[otherwise if N is 2]Add a provocative amount of make up[otherwise if diaper quest is 0]Paint yourself like a whore[otherwise]Paint yourself in over-the-top make up[end if]";
 	compute multiple choice question;
-	say "[if the make-up of face is MU]You change your mind, and do nothing. Your[otherwise]You get to work, and when you are finished your[end if] face [MakeUpDesc].";
-	unless the make-up of face < 3 and the printed name of the chosen numerical response matches the text "any":
+	say "[if the make-up of face is MU][otherwise]You get to work, and when you are finished your[end if] ";
+	if the chosen numerical response matches the text "any":
+		say "You change your mind, and do nothing. Your face [MakeUpDesc].";
+	otherwise:
 		allocate 6 seconds;
-		say "You use the mirror to help you apply a[if the make-up of face > 1]nother[end if] layer of make up. You feel more [if diaper quest is 1]grown up[otherwise]charismatic[end if][if the make-up of face > 1], but also less dignified[end if]. You discard the used [noun].";
+		say "You use the mirror to help you apply a[if the make-up of face > 0]nother[end if] layer of make up. ";
+		FaceUp player-numerical-response - MU;
+		say "When you are finished, your face [MakeUpDesc]. You feel more [if diaper quest is 1]grown up[otherwise]charismatic[end if][if the make-up of face > 1], but also less dignified[end if]. [if the make-up of face is 2 and the makeupskill of the player is 1]In fact, thanks to how skilled you are at applying make up, you now feel SUPER charismatic! You get the feeling that this will last for a decent long while, or until your make up level changes. [end if]You discard the used [noun].";
 		check stealing of the noun;
 		destroy the noun;
 		now make up time is earnings;
-		FaceUp player-numerical-response - MU.
 
 Definition: a make up kit is oral sex themed: decide yes.
 

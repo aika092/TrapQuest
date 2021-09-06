@@ -15,7 +15,7 @@ To say ClassSummonFlav of (C - a silicone dress):
 	if the silicone volume of breasts is 0 and the player is not top heavy:
 		let B be the largeness of breasts;
 		while B is the largeness of breasts:
-			BustImplantsUp 1;
+			BustImplantsUp 1; [Replaces any air with silicone.]
 		say "[bold type]You feel and hear your tits expanding like stretchy rubber until they are [BreastDesc]![roman type] Touching and feeling them, you can definitely feel tight, less squishy areas below the nipple. Somehow, your new dress has summoned breast implants inside of your boobs!";
 	if the total weighty volume of hips < max ass size and the silicone volume of hips is 0:
 		AssImplantsUp 1;
@@ -52,16 +52,53 @@ To set up influence of (C - a silicone dress):
 To say ShortDesc of (C - a silicone dress):
 	say "rubber minidress".
 
+[#LXorDD:
+ Try to increase the size of artificial enhancements, within a range:
+ 1: breasts
+ 2: ass
+ 3: lips
+ 4: labia
+ If O is 1, 2, 3, or 4, that option is selected
+ Otherwise a random choice within the nominated range of choices is made.
+ Returns the number of the body part if it 'improved' something, otherwise 0.
+]
+To decide which number is ArtificialUp (R - a number) options with override (O - a number):
+	let N be O;
+	if N is 0, now N is a random number between 1 and R;
+	if N is 1 and the player is not top heavy and the silicone volume of breasts < 20:
+		say "[if the silicone volume of breasts is 0][bold type]You feel and hear your tits expanding like stretchy rubber until they are [BreastDesc]![roman type] Touching and feeling them, you can definitely feel tight, less squishy areas below the nipple. Somehow, your new dress has summoned breast implants inside of your boobs![otherwise]You feel your breast implants slightly increase in size.[end if]";
+		BustImplantsUp 1 + extreme proportions fetish;
+		decide on 1;
+	if R is 1 or (N is 1 and O is not 0): [Only fall through if allowable.]
+		decide on 0;
+	if N <= 2 and the total weighty volume of hips < max ass size and the silicone volume of hips > 0:
+		say "You feel your ass implants slightly increase in size.";
+		AssImplantsUp 1 + extreme proportions fetish;
+		decide on 2;
+	if R is 2 or (N is 2 and O is not 0): [Only fall through if allowable.]
+		decide on 0;
+	if N <= 3 and lips of face < max lip size:
+		say "You feel your lips tingle and swell, like [one of]collagen has been teleported [italic type]inside[roman type] them[or]a bee just stung them[or]you just had collagen injections[or]the cells just put on a mad growth spurt[or]someone just gave you a fat lip[at random], plumping them up.";
+		LipsUp 1;
+		decide on 3;
+	if R is 3 or (N is 3 and O is not 0): [Only fall through if allowable.]
+		decide on 0;
+	if player is possessing a vagina and labia plumpness of the vagina < max labia plumpness:
+		say "There's a sudden intense warmth and [italic type]activity[roman type] in your [vagina], making you gasp and bite your lip as you sense parts of your female anatomy swell up, growing [one of]puffy[or]even puffier[or]puffier still[stopping]. You can feel [one of]parts of you[or]your labia[or]the lips of your [vagina][or]those succulent [']petals['][at random] [one of]plump up[or]rub together[or]rubbing against one another[or]grow larger[at random].";
+		LabiaUp 1;
+		decide on 4;
+	otherwise:
+		say "There's a pink glow and weird feeling in your [mystical-player-penis] that alternates hot and cold, a kind of buzzing and suction, and a feeling of [one of]cells draining away[or]shrinkage[or]lessening[or]internal drainage[or]loss[at random]. The glow fades... and you feel you have, too, somehow.";
+		SpecialPenisDown 1;
+		decide on 4;
+	decide on 0.
+
 To compute periodic effect of (R - a silicone dress):
 	increase the charge of R by 1;
 	if the charge of R > 100 / (unlucky + 1):
 		now the charge of R is 0;
-		if a random number between 1 and 2 is 1 and the player is not top heavy and the silicone volume of breasts < 20:
-			say "[if the silicone volume of breasts is 0][bold type]You feel and hear your tits expanding like stretchy rubber until they are [BreastDesc]![roman type] Touching and feeling them, you can definitely feel tight, less squishy areas below the nipple. Somehow, your new dress has summoned breast implants inside of your boobs![otherwise]You feel your breast implants slightly increase in size.[end if]";
-			BustImplantsUp 1 + extreme proportions fetish;
-		otherwise if the total weighty volume of hips < max ass size and the silicone volume of hips > 0:
-			say "You feel your ass implants slightly increase in size.";
-			AssImplantsUp 1 + extreme proportions fetish.
+		if ArtificialUp 2 options with override 0 is 0:
+			say "You feel an odd ripple through your body, but nothing seems to happen.".
 
 To UniquePinkWardrobeUnclash (C - a silicone dress):
 	repeat with O running through worn removable breast covering clothing:
@@ -165,5 +202,32 @@ To say MediumDesc of (C - giant condom):
 
 To decide which number is the initial outrage of (C - giant condom):
 	decide on 14.
+
+rubber-bunny-waitress-outfit is a growing silicone dress. rubber-bunny-waitress-outfit is unskirted. rubber-bunny-waitress-outfit is crotch-intact. rubber-bunny-waitress-outfit is totally-exclusive.
+
+The printed name of rubber-bunny-waitress-outfit is "[clothing-title-before]latex bunny waitress outfit[clothing-title-after]". The text-shortcut of rubber-bunny-waitress-outfit is "lbwo". Understand "bunny", "waitress", "outfit" as rubber-bunny-waitress-outfit.
+
+Definition: rubber-bunny-waitress-outfit is class-relevant:
+	if the class of the player is silicone queen or the class of the player is bunny, decide yes;
+	decide no.
+
+Figure of rubber-bunny-waitress-outfit is the file "Items/Clothes/Upper/Latex/rubberdress3.png".
+
+To decide which figure-name is clothing-image of (C - rubber-bunny-waitress-outfit):
+	decide on figure of rubber-bunny-waitress-outfit.
+
+To say ClothingDesc of (C - rubber-bunny-waitress-outfit):
+	say "This fetishy take on a classic sexy waitress outfit has the usual black satin replaced with shiny pink latex. A V-shaped crotch and a white fluffy cottontail completes the garment[if background-waitress is 0]. It makes the wearer better at avoiding spilling drinks[end if].".
+
+To say ShortDesc of (C - rubber-bunny-waitress-outfit):
+	say "bunny outfit".
+To say MediumDesc of (C - rubber-bunny-waitress-outfit):
+	say "latex bunny waitress outfit".
+
+To compute class set up of (C - rubber-bunny-waitress-outfit):
+	compute default bunny outfit class set up of C.
+
+Definition: rubber-bunny-waitress-outfit is pink themed: decide yes.
+Definition: rubber-bunny-waitress-outfit is party themed: decide yes.
 
 Plastic Themed Dresses ends here.

@@ -94,7 +94,9 @@ To compute (M - a monster) stomping (N - a monster):
 giant wasp is a kind of monster.
 newborn-wasp is an object that varies.
 wasp-honey-timer is a number that varies. wasp-poison-timer is a number that varies.
-aeromancer is a kind of monster. an aeromancer has a number called balloon. an aeromancer can be wand-empowered.
+aeromancer is a kind of monster. an aeromancer has a number called balloon. an aeromancer can be wand-empowered. an aeromancer can be ballooned.
+To compute aeromancer science of (M - a monster):
+	do nothing.
 tentacle monster is a kind of monster. durable-tentacle-monster is a tentacle monster. A tentacle monster can be newborn, large, massive (this is the tentacle-size property). A tentacle monster has a number called evolved.
 To compute tentacle birth:
 	do nothing.
@@ -118,7 +120,7 @@ Include Woman Berri by Monster.
 A bukkake trap door is a kind of trap. A bukkake hose is a kind of trap.
 A dildo trap is a kind of trap. A dildo pole trap is a kind of dildo trap. A drill pole trap is a kind of dildo trap. A creampie pole trap is a kind of dildo trap. A ghostly dildo pole trap is a kind of dildo trap.
 
-A milking bench is a kind of furniture. dungeon-milking-bench is a milking bench. mansion-milking-bench is a milking bench. a milking bench has a number called units collected. A dildo rocking stool is a kind of furniture.
+A milking bench is a kind of furniture. dungeon-milking-bench is a milking bench. mansion-milking-bench is a milking bench. A dildo rocking stool is a kind of furniture.
 
 To compute orgasm resolution of (R - a dildo trap):
 	do nothing.

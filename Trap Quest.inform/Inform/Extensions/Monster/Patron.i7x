@@ -28,23 +28,37 @@ Figure of black gross patron is the file "NPCs/Hotel/Patron/patron6.png".
 Figure of white dickhead patron is the file "NPCs/Hotel/Patron/patron7.png".
 Figure of black dickhead patron is the file "NPCs/Hotel/Patron/patron8.png".
 
+Figure of femme white inexperienced patron is the file "NPCs/Hotel/Patron/patron1b.png".
+Figure of femme black inexperienced patron is the file "NPCs/Hotel/Patron/patron2b.png".
+Figure of femme white experienced patron is the file "NPCs/Hotel/Patron/patron3b.png".
+Figure of femme black experienced patron is the file "NPCs/Hotel/Patron/patron4b.png".
+Figure of femme white experienced patron cropped is the file "NPCs/Hotel/Patron/patron3c.png".
+Figure of femme black experienced patron cropped is the file "NPCs/Hotel/Patron/patron4c.png".
+Figure of femme white gross patron is the file "NPCs/Hotel/Patron/patron5b.png".
+Figure of femme black gross patron is the file "NPCs/Hotel/Patron/patron6b.png".
+Figure of femme white dickhead patron is the file "NPCs/Hotel/Patron/patron7b.png".
+Figure of femme black dickhead patron is the file "NPCs/Hotel/Patron/patron8b.png".
+
 To say ShortDesc of (M - a patron):
 	say "patron".
 
 To say MonsterDesc of (M - a patron):
-	if diaper quest is 0, say "A [man of M], naked from the waist down, who is [if the girth of item described < 3]less than [otherwise if the girth of item described > 3]more than [end if]averagely endowed for an adult male. [big he of M] is clearly expecting some paid company tonight. ";
+	if diaper quest is 0, say "A [man of M], naked from the waist down, who is [if the girth of M < 3]less than [otherwise if the girth of M > 3]more than [end if]averagely endowed for an adult male. [big he of M] is clearly expecting some paid company tonight. ";
 	say PatronDesc of M;
 
 An inexperienced patron is a kind of patron.
 eager patron is an inexperienced patron. impatient patron is an inexperienced patron. The text-shortcut of eager patron is "epa". The text-shortcut of impatient patron is "ipa".
 To decide which figure-name is the monster-image of (M - an inexperienced patron):
+	if lady fetish is 1:
+		if M is eager patron or interracial fetish is 1, decide on figure of femme black inexperienced patron;
+		otherwise decide on figure of femme white inexperienced patron;
 	if M is eager patron or interracial fetish is 1, decide on figure of black inexperienced patron;
 	otherwise decide on figure of white inexperienced patron.
-To say PatronDesc of (M - an inexperienced patron):[TODO: change for lady fetish]
+To say PatronDesc of (M - an inexperienced patron):
 	say "This particular [if lady fetish is 1]girl[otherwise]guy[end if] looks like [he of M]'s in [his of M] early twenties, and is very over-eager.[line break]".
 
 To say MonsterComment of (M - an inexperienced patron):
-	say "[if item described is penetrating a body part and the relevant sex addiction of item described < 4][first custom style]Well I hope that means [he of M]'ll cum quickly...[otherwise if item described is penetrating a body part][variable custom style][big he of M]'s clearly nowhere near as experienced as me![otherwise][variable custom style]Maybe [he of M]'s a virgin?[end if][roman type][line break]".
+	say "[if M is penetrating a body part and the relevant sex addiction of M < 4][first custom style]Well I hope that means [he of M]'ll cum quickly...[otherwise if M is penetrating a body part][variable custom style][big he of M]'s clearly nowhere near as experienced as me![otherwise][variable custom style]Maybe [he of M]'s a virgin?[end if][roman type][line break]".
 
 To say MediumDesc of (M - eager patron):
 	say "eager patron".
@@ -54,6 +68,12 @@ To say MediumDesc of (M - impatient patron):
 An experienced patron is a kind of patron.
 well dressed patron is an experienced patron. A suited patron is an experienced patron. The text-shortcut of well dressed patron is "wdp". The text-shortcut of suited patron is "spa".
 To decide which figure-name is the monster-image of (M - an experienced patron):
+	if lady fetish is 1:
+		if diaper quest is 1:
+			if M is well dressed patron, decide on figure of femme black experienced patron cropped;
+			otherwise decide on figure of femme white experienced patron cropped;
+		if M is well dressed patron or interracial fetish is 1, decide on figure of femme black experienced patron;
+		otherwise decide on figure of femme white experienced patron;
 	if M is well dressed patron or interracial fetish is 1, decide on figure of black experienced patron;
 	otherwise decide on figure of white experienced patron.
 To say PatronDesc of (M - an experienced patron):
@@ -68,27 +88,31 @@ To say MediumDesc of (M - suited patron):
 	say "suited patron".
 
 A gross patron is a kind of patron.
-chubby patron is a gross patron. hairy patron is a gross patron. The text-shortcut of chubby patron is "cpa". The text-shortcut of hairy patron is "hpa".
+chubby patron is a gross patron. hairy patron is a gross patron. The text-shortcut of chubby patron is "cpa". The text-shortcut of hairy patron is "hpa". Understand "chunky" as hairy patron when lady fetish is 1.
 To decide which number is the girth of (M - gross patron):
 	decide on 2.
 To say LongDickDesc of (M - a gross patron):
 	if full-lady fetish is 1, say "ribbed strap-on dildo";
 	otherwise say "uncut [DickDesc of M]".
 To decide which figure-name is the monster-image of (M - a gross patron):
+	if lady fetish is 1:
+		if M is hairy patron or interracial fetish is 1, decide on figure of femme black gross patron;
+		otherwise decide on figure of femme white gross patron;
 	if M is hairy patron or interracial fetish is 1, decide on figure of black gross patron;
 	otherwise decide on figure of white gross patron.
 To say PatronDesc of (M - a gross patron):
 	if lady fetish is 1:
-		say "This particular [man of M] is [if M is hairy patron]heavily pregnant[otherwise]quite overweight[end if], [his of M] belly hanging out of [his of M] shirt and [his of M] big, [if M is hairy patron]lactating breasts[otherwise]heavy breasts[end if] fully visible.";
+		[say "This particular [man of M] is [if M is hairy patron]heavily pregnant[otherwise]quite overweight[end if], [his of M] belly hanging out of [his of M] shirt and [his of M] big, [if M is hairy patron]lactating breasts[otherwise]heavy breasts[end if] fully visible.";] [good idea but not what I got the art to look like in the end]
+		say "This particular [man of M] is quite overweight, [his of M] chunk belly and flabby tits fully visible, hanging out of [his of M] open shirt.";
 	otherwise:
-		say "This particular [man of M] is quite overweight, [his of M] [if M is hairy patron]hairy [end if]belly hangs out from [his of M] shirt and [his of M] gross [if item described is hairy patron]hairy[otherwise]flabby[end if] chest is fully visible.[line break]".
+		say "This particular [man of M] is quite overweight, [his of M] [if M is hairy patron]hairy [end if]belly hangs out from [his of M] shirt and [his of M] gross [if M is hairy patron]hairy[otherwise]flabby[end if] chest is fully visible.[line break]".
 To say MonsterComment of (M - a gross patron):
-	if lady fetish is not 1:
-		say "[if item described is penetrating a body part and the relevant sex addiction of item described < 4][first custom style]Oh my god, [he of M]'s so gross![otherwise if the sex addiction of the player < 7][variable custom style]I do NOT want to go anywhere near [his of M] [DickDesc of M]![otherwise if the humiliation of the player < 27500][variable custom style][big he of M]'s pretty gross.[otherwise][variable custom style][big he of M]'s disgusting, I'm disgusting. We make a perfect match.[end if][roman type][line break]".
+	if lady fetish is 1, say "[if M is penetrating a body part and the relevant sex addiction of M < 4][first custom style]It feels really degrading to be used by a chick like this![otherwise if the sex addiction of the player < 7][variable custom style]I do NOT want to go anywhere near [his of M] [DickDesc of M]![otherwise if the humiliation of the player < 27500][variable custom style][big he of M]'s pretty gross.[otherwise][variable custom style][big he of M]'s not more disgusting than me.[end if][roman type][line break]";
+	otherwise say "[if M is penetrating a body part and the relevant sex addiction of M < 4][first custom style]Oh my god, [he of M]'s so gross![otherwise if the sex addiction of the player < 7][variable custom style]I do NOT want to go anywhere near [his of M] [DickDesc of M]![otherwise if the humiliation of the player < 27500][variable custom style][big he of M]'s pretty gross.[otherwise][variable custom style][big he of M]'s disgusting, I'm disgusting. We make a perfect match.[end if][roman type][line break]".
 To say MediumDesc of (M - chubby patron):
 	say "chubby patron".
 To say MediumDesc of (M - hairy patron):
-	if lady fetish is 1, say "pregnant patron";
+	if lady fetish is 1, say "chunky patron";
 	otherwise say "hairy patron".
 
 A dickhead patron is a kind of patron.
@@ -96,12 +120,16 @@ menacing patron is a dickhead patron. sneering patron is a dickhead patron. The 
 To decide which number is the girth of (M - dickhead patron):
 	decide on 4.
 To decide which figure-name is the monster-image of (M - a dickhead patron):
+	if lady fetish is 1:
+		if M is menacing patron or interracial fetish is 1, decide on figure of femme black dickhead patron;
+		otherwise decide on figure of femme white dickhead patron;
 	if M is menacing patron or interracial fetish is 1, decide on figure of black dickhead patron;
 	otherwise decide on figure of white dickhead patron.
 To say PatronDesc of (M - a dickhead patron):
-	say "This particular [man of M] stares at you with narrow eyes. It looks like [he of M]'s both aroused and disgusted by you.[line break]".
+	say "This particular [man of M] stares at you with vindictive eyes. It looks like [if lady fetish is 1]she's the type to enjoy being rough in the bedroom[otherwise][he of M]'s both aroused and disgusted by you[end if].".
 To say MonsterComment of (M - a dickhead patron):
-	say "[if the player is not a pervert][first custom style]I'm just disgusted.[otherwise if the humiliation of the player > 31500][variable custom style]I'm disgusted by me too.[otherwise if the sex addiction of the player > 12][second custom style]I'm just aroused![otherwise][variable custom style]The feeling is mutual![end if][roman type][line break]";
+	if lady fetish is 1, say "[if the player is not a pervert][first custom style]So she's a pervert AND an asshole.[otherwise if the player is not a nympho][variable custom style]Rough sex can be fun, but she doesn't have to be a dick about it.[otherwise if the player is feeling submissive][second custom style]THe irony is, I'd let her treat me like a piece of shit for free![otherwise][second custom style]If she's paying, she's more than welcome to treat me like a piece of trash![end if][roman type][line break]";
+	otherwise say "[if the player is not a pervert][first custom style]I'm just disgusted.[otherwise if the humiliation of the player > 31500][variable custom style]I'm disgusted by me too.[otherwise if the sex addiction of the player > 12][second custom style]I'm just aroused![otherwise][variable custom style]The feeling is mutual![end if][roman type][line break]";
 To say MediumDesc of (M - menacing patron):
 	say "menacing patron".
 To say MediumDesc of (M - sneering patron):
@@ -130,8 +158,7 @@ To say LongDickDesc of (M - a patron):
 	say "[if interracial fetish is 1]black[otherwise]hard[end if] [DickDesc of M]".
 
 To say HoleDesc of (M - a patron):
-	if lady fetish is 1, say "[vagina]";
-	otherwise say "[asshole]";
+	say asshole.
 
 To decide which number is the base semen load of (M - a patron):
 	decide on 2.
@@ -211,9 +238,9 @@ A time based rule (this is the patron encountering rule):
 			if debuginfo > 1, say "[input-style]Patron wandering check: ([patronTime] turns) --> d[patronTime] ([R]) | 15.5[roman type][line break]";
 			now patronTime is 0;
 			let H be a random hotel bed in the location of the player;
-			if the player is the donator and a2m fetish >= 2 and H is a thing and the number of monsters in the location of the player is 0 and woman-player is in the hotel and the patron-scene-done of woman-player is 0 and woman-player is friendly and the woman-status of woman-player < 10:
+			if the player is the donator and a2m fetish >= 2 and H is a thing and the number of monsters in the location of the player is 0 and woman-player is in the hotel and the patron-scene-done of woman-player is 0 and woman-player is friendly and the woman-status of woman-player < 10 and the player is getting unlucky:
 				now woman-player is in the location of the player;
-				say "[BigNameDesc of woman-player] wanders into the room. [if woman-player is uninterested][big he of woman-player] seems happy to see you![line break][speech style of woman-player]'Oh [NameBimbo], fancy bumping into you here! I was just checking out the... wait, what's that sound?'[roman type][end if][line break]";
+				say "[BigNameDesc of woman-player] wanders into the room. [if woman-player is uninterested][big he of woman-player] seems happy to see you![line break][speech style of woman-player]'Oh [NameBimbo], fancy bumping into you here! I was just checking out the... wait, what's that sound?'[roman type][end if][line break][GotUnluckyFlav]";
 			if H is a thing and the number of monsters in the location of the player is 0:
 				compute PatronSpawning of H;[sometimes beds will just activate]
 				now the alert of the player is 1;
@@ -1249,6 +1276,12 @@ To compute payment of (M - a patron):
 					say "[speech style of M]'[if C is tattoo and the number of worn tattoos is 1]Your tattoo is[otherwise if C is tattoo]Your tattoos are[otherwise]That [ShortDesc of C][line break][speech style of M] you're [one of]wearing[or]sporting[or]showing yourself off in[as decreasingly likely outcomes] is[end if] pretty [if O > a random number between 13 and 16]fucking outrageous[otherwise]damn sexy[end if]. I might pay you even more next time.'[roman type][line break]";
 					FavourUp M;
 				if the player is hotel employed, increase the employee-record of senior robobellboy by 1;[Until you start a training regimen, you can only earn strikes]
+				if black-lace-bra is worn and black-lace-bra is upgradable:
+					transform black-lace-bra;
+				otherwise if black-lace-thong is worn and black-lace-thong is upgradable:
+					transform black-lace-thong;
+				otherwise if black-lace-stockings is worn and black-lace-stockings is upgradable:
+					transform black-lace-stockings;
 		say "[BigNameDesc of M] leaves the way [he of M] came.";
 		destroy M;
 		if M is seduced, finally destroy M. [Can't wait until the end of the round to do this, or the seduction code will just continue!]
@@ -1550,13 +1583,13 @@ To say VeryLooseAssholePenetrationFlav of (M - a patron):
 	say LessLooseAssholePenetrationFlav of M.
 
 To say TitfuckForceFlav of (M - a patron):
-	say "[speech style of M][one of]'This is going to take forever if you don't help me finish!'[or][or]'Why are you being so reluctant?'[or][or]'Come on, help me out here, use your hands to squeeze them together!'[or][or]'[if M is dickhead patron]Come on, isn't this the whole reason you have such big tits?'[otherwise]Calm down honey, I'm not going to hurt you.'[end if][then at random][roman type]".
+	say "[speech style of M][one of]'This is going to take forever if you don't help me finish!'[or][or]'Why are you being so reluctant?'[or][or]'Come on, help me out here, use your hands to squeeze them together!'[or][or]'[if M is dickhead patron]Come on, isn't this the whole reason you have such big tits?'[otherwise]Calm down honey, I'm not going to hurt you.'[end if][then at random][roman type][line break]".
 
 To say TitfuckForceFlav of (M - an experienced patron):
-	say "[speech style of M][one of]'You are aware that I won't pay if you don't make me cum, right?'[or][or]'Will you just do your job already?'[or][or]'Are you forgetting you're on the clock right now, whore?'[then at random][roman type]".
+	say "[speech style of M][one of]'You are aware that I won't pay if you don't make me cum, right?'[or][or]'Will you just do your job already?'[or][or]'Are you forgetting you're on the clock right now, whore?'[then at random][roman type][line break]".
 
 To say TitfuckForceFlav of (M - a gross patron):
-	say "[speech style of M][one of]'Don't women with big boobs usually love stuff like this?'[or][or]'You know, it would be hotter if you jiggled your tits for me a little bit.'[or][or]'Come on, help me out here, use your hands to squeeze them together!'[then at random][roman type]".
+	say "[speech style of M][one of]'Don't women with big boobs usually love stuff like this?'[or][or]'You know, it would be hotter if you jiggled your tits for me a little bit.'[or][or]'Come on, help me out here, use your hands to squeeze them together!'[then at random][roman type][line break]".
 
 To say TitfuckReceiveFlav of (M - a patron):
 	if the reaction of the player is 2, say M mercy sex 0;
@@ -1564,11 +1597,11 @@ To say TitfuckReceiveFlav of (M - a patron):
 
 To say TitfuckReceiveFlav of (M - an experienced patron):
 	if the reaction of the player is 2, say M mercy sex 0;
-	otherwise say "[speech style of M][one of]'Nice job, whore.'[or][or]'I suppose anyone could figure out how to use these [if the largeness of breasts > 14]stupidly [end if][if the largeness of breasts > 8]massive[otherwise]big[end if] fuckpillows!'[or][or]'Keep going like that.'[or][or]'That's right, earn that money.'[then at random][roman type]".
+	otherwise say "[speech style of M][one of]'Nice job, whore.'[or][or]'I suppose anyone could figure out how to use these [if the largeness of breasts > 14]stupidly [end if][if the largeness of breasts > 8]massive[otherwise]big[end if] fuckpillows!'[or][or]'Keep going like that.'[or][or]'That's right, earn that money.'[then at random][roman type][line break]".
 
 To say TitfuckReceiveFlav of (M - a dickhead patron):
 	if the reaction of the player is 2, say M mercy sex 0;
-	otherwise say "[speech style of M][one of]'Yeah, keep that up!'[or][or]'Haha, yes, now I understand why [if interracial fetish is 1]this bitch got[otherwise]you have[end if] these [if the largeness of breasts > 14]stupidly [end if][if the largeness of breasts > 8]massive[otherwise]big[end if] fuckpillows!'[or][or]'I bet this would even more fun if I smacked these funbags around a little bit, huh?'[or][or]'Unf, yes, keep [if interracial fetish is 1]that shit UP[otherwise]it up[end if]!'[then at random][roman type]".
+	otherwise say "[speech style of M][one of]'Yeah, keep that up!'[or][or]'Haha, yes, now I understand why [if interracial fetish is 1]this bitch got[otherwise]you have[end if] these [if the largeness of breasts > 14]stupidly [end if][if the largeness of breasts > 8]massive[otherwise]big[end if] fuckpillows!'[or][or]'I bet this would even more fun if I smacked these funbags around a little bit, huh?'[or][or]'Unf, yes, keep [if interracial fetish is 1]that shit UP[otherwise]it up[end if]!'[then at random][roman type][line break]".
 
 To say (M - a patron) submission sex (N - a number):
 	let F be a random fuckhole penetrated by M;
@@ -1748,7 +1781,7 @@ Definition: a patron (called M) is willing to masturbate:
 	decide no.
 
 To say MasturbationDeclarationFlav of (M - a patron):
-	say "[speech style of M]'[one of]Oh, good, I see you're diapered like a baby should be. I guess you deserve a little reward[or]Lie down baby, [daddytitle of M] is going to make you feel good today[stopping]...'[roman type] ".
+	say "[speech style of M]'[one of]Oh, good, I see you're diapered like a baby should be. I guess you deserve a little reward[or]Lie down baby, [daddytitle of M] is going to make you feel good today[stopping]...'[roman type][line break]".
 
 To say MasturbationStartFlav of (M - a patron):
 	say "[BigNameDesc of M] leads you to lie on the bed on your back, with your head comfortably on the pillow. [big he of M] places one hand lovingly on your [if the largeness of breasts > 2][BreastDesc][otherwise]tummy[end if] and [his of M] other hand over [if there is a worn diaper]the crotch of your diaper[otherwise if the player is female]your [vagina][otherwise]your [ShortDesc of penis][end if]!".
@@ -1765,10 +1798,10 @@ To say SpankingStartFlav of (M - a patron):
 	say "[BigNameDesc of M] pushes your face down into the mattress, leaving your butt high in the air.".
 
 To say SpankingDeclarationFlav of (M - a patron):
-	say "[speech style of M]'[one of][if M is pissed off]Well well well, it looks like the tables have turned. Do you have any regrets?'[otherwise]I trust you've been trained in how to properly receive a spanking.'[end if][or]Oh yes, you know what time it is!'[cycling][roman type] ".
+	say "[speech style of M]'[one of][if M is pissed off]Well well well, it looks like the tables have turned. Do you have any regrets?'[otherwise]I trust you've been trained in how to properly receive a spanking.'[end if][or]Oh yes, you know what time it is!'[cycling][roman type][line break]".
 
 To say SpankingMercyRejectionFlav of (M - a patron):
-	say "[speech style of M]'[if M is pissed off]There's no chance of that, you little brat!'[otherwise]No no baby, I'm determined to get my money's worth today. You'll take what you're given.'[end if][roman type] [BigNameDesc of M] has an evil smile on [his of M] face.".
+	say "[speech style of M]'[if M is pissed off]There's no chance of that, you little brat!'[otherwise]No no baby, I'm determined to get my money's worth today. You'll take what you're given.'[end if][roman type][line break][BigNameDesc of M] has an evil smile on [his of M] face.".
 
 To say SoftSpankingFlav of (M - a patron):
 	say "[BigNameDesc of M][']s resolve weakens, and then [he of M] delivers just a few weak blows to your [buttcheeks] with [his of M] hand. [if there is a worn diaper]Your [random worn diaper] softens the blows even further, so that they just feel like gentle pats. [end if][line break][speech style of M]'Well I guess I'll let you off this time, but that was really boring.'[roman type][line break][BigNameDesc of M] lets you go.";
@@ -2018,7 +2051,7 @@ To penetration dominate (M - a patron):[dickhead patron]
 		store M after tricks;
 	otherwise:
 		if debugmode > 0, say "[bold type]FAILED[roman type][line break]";
-		say "You try to push [NameDesc of M] onto the bed, but [he of M] won't have it![line break][speech style of M]'If anyone's about to get fucked like a slut, it's YOU, bitch!'[roman type]".
+		say "You try to push [NameDesc of M] onto the bed, but [he of M] won't have it![line break][speech style of M]'If anyone's about to get fucked like a slut, it's YOU, bitch!'[roman type][line break]".
 
 To watersports dominate (M - a patron):[no chance of backfiring]
 	let C be a random bottom level protection clothing;
@@ -2440,9 +2473,7 @@ Definition: crimson patron is generic-appropriate:
 	if the altar-intensity of hotel altar > 0 or demon lord is alive, decide yes;
 	decide no.
 
-Definition: crimson patron is father material:
-	if the player is the donator, decide yes;
-	decide no.
+Definition: crimson patron is father material: decide yes.
 
 To say PregGrowth of (M - crimson patron):
 	say "the demon spawn".

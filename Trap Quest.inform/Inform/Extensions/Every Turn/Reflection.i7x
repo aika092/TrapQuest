@@ -75,7 +75,7 @@ To say FriendReaction of (M - a real-life patron) to (A - huge-tits):[TODO: mayb
 	if the class of the player is succubus:
 		say GenericSituationReaction of M;
 	otherwise if the player is originally male:
-		say "Your chest looks really different, but those [BreastDesc] go well with your [AssDesc].[if the player is not possessing a penis] But dude, why does your front look so flat? [otherwise if size of the penis < 6] And did you make them shrink your dick, too? That's sick! [otherwise if size of the penis > 8] And have you stuffed your crotch, or are you playing this game so you can pretend your dick is bigger? [end if]";
+		say "Your chest looks really different, but those [BreastDesc] go well with your [AssDesc].[if the player is not possessing a penis] But dude, why does your [one of][']package['][or]groin[or]crotch[in random order] look so flat? [otherwise if size of the penis < 6] And did you make them shrink your dick, too? That's sick! [otherwise if size of the penis > 8] And have you stuffed your crotch, or are you playing this game so you can pretend your dick is bigger? [end if]";
 	otherwise:
 		say "Your chest looks different, but [if M is nemesis-friend]those [BreastDesc] fit you a lot better than those tiny bee-stings you used to have. [otherwise]those [BreastDesc] might suit you better. [end if]";
 
@@ -234,7 +234,7 @@ Definition: glazed-body (called A) is applicable:
 	decide no.
 To reflect on (A - glazed-body):
 	let F be a random glazed body part;
-	say "[variable custom style]'[one of]I can't believe I'm walking around with [semen] all over my [if the number of glazed body parts is 1][printed name of F][otherwise]body[end if]! I'm such a disgrace....'[or]There's [semen] actually [if the number of glazed body parts is 1]on my [printed name of F][otherwise]all over my body[end if]...This is so disgusting!'[or]There's no way there's really [semen] all over my [if the number of glazed body parts is 1][printed name of F][otherwise]body[end if]There's no way. There's no fucking way...'[in random order][roman type]".
+	say "[variable custom style][one of]I can't believe I'm walking around with [semen] all over my [if the number of glazed body parts is 1][printed name of F][otherwise]body[end if]! I'm such a disgrace....[or]There's [semen] actually [if the number of glazed body parts is 1]on my [printed name of F][otherwise]all over my body[end if]...This is so disgusting![or]There's no way there's really [semen] all over my [if the number of glazed body parts is 1][printed name of F][otherwise]body[end if]There's no way. There's no fucking way...[in random order][roman type][line break]".
 
 To say FriendReaction of (M - a real-life patron) to (A - glazed-body):
 	let F be a random glazed body part;
@@ -245,7 +245,7 @@ Definition: visible-erection is applicable:
 	if the size of penis > 2 and penis is exposed and penis is penis-erect and the player is modest, decide yes;
 	decide no.
 To reflect on (A - visible-erection):
-	say "[variable custom style]'[one of]Everyone can see my boner...This is so embarrassing.'[or]I can't believe I have a boner. Someone's going to think I'm actually enjoying this...'[in random order][roman type]".
+	say "[variable custom style][one of]Everyone can see my boner...This is so embarrassing.[or]I can't believe I have a boner. Someone's going to think I'm actually enjoying this...[in random order][roman type][line break]".
 
 bsoundingHS is a humiliating situation.
 Definition: bsoundingHS is applicable:

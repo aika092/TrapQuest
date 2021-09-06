@@ -9,7 +9,7 @@ REQUIRES COMMENTING
 @inherits <Fuckhole>
 
 @!]
-vagina is a fuckhole. vagina is everywhere. Understand "pussy", "fuckhole", "cunt", "fanny", "snatch", "muffin", "cum dump" as vagina. Understand "womb", "vulva", "cherry", "kitty", "slit", "clunge", "honey pot", "baby maker" as vagina when the player is possessing a vagina. The text-shortcut of vagina is "vagina".
+vagina is a fuckhole. vagina is everywhere. Understand "pussy", "fuckhole", "cunt", "fanny", "snatch", "muffin", "cum dump" as vagina. Understand "womb", "vulva", "cherry", "kitty", "slit", "clunge", "honey pot", "baby maker" , "crotch", "groin" as vagina when the player is possessing a vagina. The text-shortcut of vagina is "vagina".
 
 To say FullExamineDesc of (B - vagina):
 	say "[if the player is possessing a vagina][ImageDesc of vagina][TotalDesc of vagina][VaginaModesty][otherwise if the bimbo of the player > 6][description of asshole][otherwise]You don't have a vagina.[end if]".
@@ -19,6 +19,7 @@ Vagina has a number called womb volume.
 Vagina has a number called small egg count.
 Vagina has a number called medium egg count.
 Vagina has a number called large egg count.
+Vagina has a number called labia plumpness.
 
 To decide which number is the total volume of (F - vagina):
 	decide on the total semen volume of F + the total egg volume of F.
@@ -36,6 +37,35 @@ To decide which number is the total felchable volume of (F - vagina): [man I lov
 	if the pregnancy of the player > 0, decide on the semen volume of F;
 	otherwise decide on the total semen volume of F.
 
+To decide which number is max labia plumpness:
+	if diaper quest is 1, decide on 0;
+	decide on 2 + artificial enhancements fetish.
+
+To LabiaUp (X - a number):
+	while X > 0:
+		decrease X by 1;
+		if the labia plumpness of vagina < max labia plumpness:
+			increase the labia plumpness of vagina by 1;
+			[if X is 0:
+				display labia cutscene;[Could have some nice cameltoes here.]]
+	update appearance level.
+
+[ LabiaUp, and make a comment about them swelling up.]
+To LabiaUp (X - a number) with comment:
+	let increased be 0;
+	while X > 0:
+		decrease X by 1;
+		if the labia plumpness of vagina < max labia plumpness:
+			increase the labia plumpness of vagina by 1;
+			increase increased by 1;
+			if X is 0:
+				[display labia cutscene;[Could have some nice cameltoes here.]]
+				say "You feel your [one of]labia[or]pussy lips[or]lady bits[or]coochie's lips[or][']flower petals['][at random] [one of]swell up[or]plump up[or]puff up[at random][if increased > 1] - a whole lot! - now[otherwise],[end if] tingling. ";
+				say TotalDesc of vagina;
+				update appearance level;
+	if increased is 0:
+		say "You feel your [vagina] tingle, but apparently you've already attained maximum cameltoe.".
+
 [Can it be accessed right now with nothing blocking it?]
 Definition: vagina is undefended:
 	if vagina is actually occupied or the player is pussy protected or the player is not possessing a vagina, decide no;
@@ -51,10 +81,24 @@ Definition: vagina is at least partially exposed:
 	if the concealer of vagina is a thing, decide no;
 	decide yes.
 
+To decide which number is current cameltoe: [0 means no cameltoe, 1 means slight cameltoe, 2 means full cameltoe]
+	if the player is not possessing a vagina, decide on 0;
+	if vagina is exposed or vagina is not at least partially exposed, decide on 0;
+	if there is worn actually dense potentially pussy covering clothing: [There's dense pussy covering clothing! So if it wasn't for the cameltoe effect, vagina wouldn't be visible at all. So we know we have a cameltoe.]
+		if there is at least slightly cameltoe blocking clothing, decide on 1; [something worn is blocking full cameltoes]
+		decide on 2;
+	decide on 0.
+Definition: vagina is slightly cameltoed:
+	if current cameltoe is 1, decide yes;
+	decide no.
+Definition: vagina is cameltoed:
+	if current cameltoe is 2, decide yes;
+	decide no.
+
 To decide which object is the concealer of (V - vagina):
 	if water-fountain is penetrating asshole, decide on water-fountain;
-	let C be a random worn potentially vagina covering clothing;
-	decide on C.
+	repeat with C running through worn potentially vagina covering clothing:
+		decide on C.
 
 To decide which object is the at least partial concealer of (V - vagina):
 	if water-fountain is penetrating asshole, decide on water-fountain;
@@ -64,7 +108,7 @@ To decide which object is the at least partial concealer of (V - vagina):
 	decide on C.
 
 Definition: a clothing (called C) is potentially vagina covering:
-	if C is actually dense potentially pussy covering clothing, decide yes;[if it protects your pussy, it must be covering it.]
+	if C is actually dense potentially pussy covering potentially cameltoe blocking clothing, decide yes;
 	if C is actually dense skirt-covering-crotch clothing, decide yes;
 	decide no.
 
@@ -128,6 +172,11 @@ Definition: yourself is possessing a vagina:
 	if the openness of vagina > -1, decide yes;
 	decide no.
 
+[#LXorDD Only needed when reversing a M2F sex change.]
+To devagina the player:
+	now the player is male;
+	now the openness of vagina is -1.
+
 Part 2 - Description
 
 To say ShortDesc of vagina:
@@ -142,7 +191,7 @@ To say ShortDesc of vagina:
 				otherwise:
 					say " ";
 			otherwise:
-				say ", numb ";
+				say ", [one of]tingly[or]sensitive[at random] "; [#LXorDD]
 		say "[vagina]".
 
 [!<SayMediumDescOfVagina>+
@@ -167,16 +216,22 @@ To say PussyGape (N - a number):
 
 To say TotalDesc of vagina:
 	if the player is possessing a vagina:
-		if the openness of vagina < 2, say "Your virgin[if the vaginalvirgin of the player is 0]-like[end if] [vagina] ";
-		if the openness of vagina is 2, say "Your very tight [vagina] ";
-		if the openness of vagina is 3, say "Your tight [vagina] ";
-		if the openness of vagina is 4, say "Your slightly aroused [vagina] ";
-		if the openness of vagina is 5, say "Your relatively aroused and loose [vagina] ";
-		if the openness of vagina is 6, say "Your aroused and open [vagina] ";
-		if the openness of vagina is 7, say "Your very loose and wet [vagina] ";
-		if the openness of vagina is 8, say "Your extremely loose [vagina] ";
-		if the openness of vagina is 9, say "Your gaping wide [vagina] [if the semen volume of vagina > 7 and pregnancy fetish is 1]seems close to childbirth and [end if]";
-		if the openness of vagina is 10, say "Your impossibly stretched [vagina] [if the semen volume of vagina > 7 and pregnancy fetish is 1]seems ready for childbirth and [end if]";
+		let plump be ""; [#LXorDD]
+		if the labia plumpness of vagina is:
+			-- 0: do nothing;
+			-- 1: now plump is ", with its [LatexFlav][one of]pouting[or]plumped up[or][']enhanced['][or][']improved['][at random] [one of]coochie[or]pussy lips[or]labia[as decreasingly likely outcomes],";
+			-- 2: now plump is ", its [LatexFlav][one of]pussy lips[or]labia[as decreasingly likely outcomes] [one of]inflated[or]exaggerated[or]bee-stung[at random] and pouting,";
+			-- otherwise: now plump is ", its [one of]obscenely swollen [LatexFlav]lips a magnet for every eye[or]two swollen [LatexFlav]lips like fat sausages[or]swollen folds rubbing together at every movement[or]bulging [LatexFlav]folds begging for attention[or]worthy of any porn star[at random], ";
+		if the openness of vagina < 2, say "Your virgin[if the vaginalvirgin of the player is 0]-like[end if] [vagina][plump] ";
+		if the openness of vagina is 2, say "Your very tight [vagina][plump] ";
+		if the openness of vagina is 3, say "Your tight [vagina][plump] ";
+		if the openness of vagina is 4, say "Your slightly aroused [vagina][plump] ";
+		if the openness of vagina is 5, say "Your relatively aroused and loose [vagina][plump] ";
+		if the openness of vagina is 6, say "Your aroused and open [vagina][plump] ";
+		if the openness of vagina is 7, say "Your very loose and wet [vagina][plump] ";
+		if the openness of vagina is 8, say "Your extremely loose [vagina][plump] ";
+		if the openness of vagina is 9, say "Your gaping wide [vagina][plump] [if the semen volume of vagina > 7 and pregnancy fetish is 1]seems close to childbirth and [end if]";
+		if the openness of vagina is 10, say "Your impossibly stretched [vagina][plump] [if the semen volume of vagina > 7 and pregnancy fetish is 1]seems ready for childbirth and [end if]";
 		if the latex-transformation of the player < 4:
 			if the soreness of vagina is 0, say "feels fine. ";
 			if the soreness of vagina is 1, say "feels almost completely fine. ";
@@ -190,7 +245,7 @@ To say TotalDesc of vagina:
 			if the soreness of vagina is 9, say "feels ruined. ";
 			if the soreness of vagina is 10, say "feels completely destroyed. It is so sensitive, it hurts just to touch it. ";
 		otherwise:
-			say "feels numb. ";
+			say "feels [LatexFlav]but [one of]at least as sensitive as ever[or]still tingly[or]deliciously sensitive[or][i]nice[/i] to touch[at random][if the soreness of vagina > 4], despite the [one of]heavy use it's seen[or]fun abuse it's taken[or]the pounding it's welcomed[or]fun times it's seen[at random][end if]. "; [#LXorDD]
 		if the semen volume of vagina > 0, say "It [if the semen volume of vagina > 4]is completely full of [semen][otherwise]has some [semen] in it[end if]. ";
 		if the pregnancy of the player >= 3:
 			let EN be the total egg count of vagina;
@@ -200,6 +255,21 @@ To say TotalDesc of vagina:
 			otherwise say "[if the womb volume of vagina > 3]A huge amount of[otherwise]Some[end if] [semen] has made it into your [if pregnancy fetish is 1 and the pregnancy of the player is 0]fertile [end if]womb. ";
 		if there is a lubricant covering vagina, say "It is dripping with slippery [lubricant]. ".
 
+[ COMMENTED OUT
+#LXorDD: some fragments that might turn into something useful by Aika's hand:
+
+say "It [if C is a thing]can't be seen thanks to [NameDesc of C][otherwise]is partially concealed by [NameDesc of P][end if][if C is not a thing and the labia plumpness of the vagina > 1], [one of]especially given[or]largely due to[at random] your [LatexFlav][one of]inflated[or]exaggerated[or]plumped up[or]bulging[or]swollen[at random] [one of]coochie[or]pussy lips[or]labia[as decreasingly likely outcomes][end if]. ";
+
+say "[if the labia plumpness of the vagina > 1]Thanks to your [LatexFlav][one of]inflated[or]exaggerated[or][']enhanced['][or][']improved['][at random] [one of]coochie[or]pussy lips[or]labia[as decreasingly likely outcomes], it's[otherwise if the labia plumpness of the vagina > 0]Thanks to your [LatexFlav][one of]plumped up[or][']enhanced['][or][']improved['][at random] [one of]coochie[or]pussy lips[or]labia[as decreasingly likely outcomes], it's[otherwise]It is[end if] clearly visible through your [ShortDesc of W][if the labia plumpness of the vagina > 1], [one of]bulging in a lush, swollen[or]swollen into an obscene[or]plumped up into a magnetic[at random] porn star style cameltoe[otherwise if the labia plumpness of the vagina > 0][one of]bulging in a swollen[or]swollen into a prominent[or]plumped up into an eye-catching[at random] cameltoe[end if].";
+]
+
+To say LabiaDesc:
+	if the labia plumpness of vagina is:
+		-- 0: say "[one of]labia[or]pussy lips[in random order]";
+		-- 1: say "[one of]pouting[or]plumped up[at random] [one of]pussy lips[or]labia[as decreasingly likely outcomes]";
+		-- 2: say "[one of]inflated[or]exaggerated[or]bee-stung[at random] and pouting [one of]pussy lips[or]labia[as decreasingly likely outcomes]";
+		-- otherwise: say "[one of]obscenely swollen pussy lips[or]fat sausage-like pussy lips[or]bulging pussy folds[in random order]";
+
 To say VaginaModesty:
 	if vagina is lewdly exposed:
 		if there is a pussy covering clothing:
@@ -208,15 +278,19 @@ To say VaginaModesty:
 		otherwise if vagina is not actually occupied:
 			say "It is completely unprotected. ";
 	otherwise:
-		let P be the at least partial concealer of vagina;
 		let C be the concealer of vagina;
-		say "It [if C is a thing]can't be seen thanks to [NameDesc of C][otherwise]is partially concealed by [NameDesc of P][end if]. ";
+		if C is a thing:
+			say "It can't be seen thanks to [NameDesc of C]. ";
+		otherwise:
+			now C is the at least partial concealer of vagina;
+			let CC be current cameltoe;
+			say "It [if CC is 1]can be slightly made out, thanks to a slight cameltoe through your [NameDesc of C][otherwise if CC is 2]is creating an extremely prominent cameltoe through [NameDesc of C][otherwise]is partially concealed by [NameDesc of C][end if]. ";
 	if vagina is actually occupied:
 		let P be a random thing penetrating vagina;
 		if P is monster:
 			say "It is currently being pounded by [FuckerDesc of P].";
 		otherwise:
-			say "It is currently the [if the girth of P > the openness of vagina]snug [end if]home of [FuckerDesc of P].".
+			say "It is currently [if P is players-detached-dick and the size of players-detached-dick is 0]being magically stimulated by[otherwise if the girth of P > the openness of vagina]the snug home of[otherwise]the home of[end if] [FuckerDesc of P].".
 
 Part 3 - Modify Vagina Stats
 
@@ -277,7 +351,7 @@ Chapter 2 - Expulsion
 continued-pussy-expulsion is initially false.
 
 This is the continued pussy expulsion rule:
-	say "[bold type]You [if the vaginal sex addiction of the player * 1000 > 9000 - the arousal of the player]don't move, lost in pleasure[otherwise]are unable to move[end if][roman type] as [semen] [if continued-pussy-expulsion is true]continues to flood[otherwise]floods[end if] out of your [vagina] and [if there is a worn bottom level pee protection clothing and bukkake fetish is 1]onto your [ShortDesc of random worn bottom level pee protection clothing][otherwise if the player is prone]onto the ground[otherwise]splatters all over your thighs[end if].";
+	say "[bold type]You [if the vaginal sex addiction of the player * 1000 > 9000 - the arousal of the player]don't move, lost in pleasure[otherwise]are unable to move[end if][roman type] as [semen] [if continued-pussy-expulsion is true]continues to flood[otherwise]floods[end if] out of your [vagina] and [if there is a bottom level pee protection clothing and bukkake fetish is 1]onto your [ShortDesc of random bottom level pee protection clothing][otherwise if the player is prone]onto the ground[otherwise]splatters all over your thighs[end if].";
 	if continued-pussy-expulsion is false: [We only say reflection flavour once, on the first turn of the expulsion]
 		say "[variable custom style][if the semen addiction of the player > 14 and pregnancy fetish is 1 and the pregnancy of the player is 0][second custom style][one of]Omigod I hope I get pregnant![or]Nooo, stay inside me and help me get pregnant![or]Oh no, what a waste! Stay inside me, I need to get pregnant first![in random order][otherwise if the semen addiction of the player > 14][second custom style][one of]Nooo, I want it to stay inside me![or]Unf, it feels so good to be so full of [semen]![or]I wish I could have plugged myself in time, to keep it all inside me...[cycling][otherwise if the pregnancy of the player > 0][one of]No wonder I got pregnant, if this is how I allow my [vagina] to be treated...[or]If I keep getting creampies like this, I'm going to be perpetually pregnant for the rest of my life...[cycling][otherwise if the semen addiction of the player > 7 and pregnancy fetish is 1][one of]If I keep this up, I'm at a real risk of getting knocked up.[or]Oh geez, I'm practically certain to get pregnant now, aren't I?[or]Oh my, I'm practically begging to get knocked up, aren't I?[cycling][otherwise if the semen addiction of the player > 7][one of]Why does this feel so good?![or]Unf, I can't believe how good this feels...[or]I could get addicted to this feeling...[cycling][otherwise if pregnancy fetish is 1][one of]No, no no... I can't allow this to happen and more, I'll get knocked up for sure![or]Oh no, please tell me I haven't got pregnant from this...[or]There's so much! Gross! Get it out of me![or]Please say nothing got into my womb...![in random order][otherwise][one of]There's so much! Gross! Get it out of me![or]Yuck yuck yuck yuck![or]You can't be serious?! There's so much![or]What the hell? This can't be real...[in random order][end if][roman type][line break]";
 	ruin vagina; [This needs to go before PussySquirt in order for the stimulation to be calculated properly]

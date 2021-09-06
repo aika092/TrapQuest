@@ -2099,6 +2099,56 @@ To compute unique setup of (T - IntroCAnimation):
 		fill T from Figure of IntroC20 to -20;
 		fill T from Figure of IntroC00 to 41.
 
+Figure of Enema Milk Drink frame 01 is the file "Special/Animations/Epilogue Enema Milk Drink/frame1.jpg".
+Figure of Enema Milk Drink frame 02 is the file "Special/Animations/Epilogue Enema Milk Drink/frame2.jpg".
+Figure of Enema Milk Drink frame 03 is the file "Special/Animations/Epilogue Enema Milk Drink/frame3.jpg".
+Figure of Enema Milk Drink frame 04 is the file "Special/Animations/Epilogue Enema Milk Drink/frame4.jpg".
+Figure of Enema Milk Drink frame 05 is the file "Special/Animations/Epilogue Enema Milk Drink/frame5.jpg".
+Figure of Enema Milk Drink frame 06 is the file "Special/Animations/Epilogue Enema Milk Drink/frame6.jpg".
+Figure of Enema Milk Drink frame 07 is the file "Special/Animations/Epilogue Enema Milk Drink/frame7.jpg".
+Figure of Enema Milk Drink frame 08 is the file "Special/Animations/Epilogue Enema Milk Drink/frame8.jpg".
+Figure of Enema Milk Drink frame 09 is the file "Special/Animations/Epilogue Enema Milk Drink/frame9.jpg".
+Figure of Enema Milk Drink frame 10 is the file "Special/Animations/Epilogue Enema Milk Drink/frame10.jpg".
+Figure of Enema Milk Drink frame 11 is the file "Special/Animations/Epilogue Enema Milk Drink/frame11.jpg".
+Figure of Enema Milk Drink frame 12 is the file "Special/Animations/Epilogue Enema Milk Drink/frame12.jpg".
+Figure of Enema Milk Drink frame 13 is the file "Special/Animations/Epilogue Enema Milk Drink/frame13.jpg".
+Figure of Enema Milk Drink frame 14 is the file "Special/Animations/Epilogue Enema Milk Drink/frame14.jpg".
+Figure of Enema Milk Drink frame 15 is the file "Special/Animations/Epilogue Enema Milk Drink/frame15.jpg".
+Figure of Enema Milk Drink frame 16 is the file "Special/Animations/Epilogue Enema Milk Drink/frame16.jpg".
+Figure of Enema Milk Drink frame 17 is the file "Special/Animations/Epilogue Enema Milk Drink/frame17.jpg".
+Figure of Enema Milk Drink frame 18 is the file "Special/Animations/Epilogue Enema Milk Drink/frame18.jpg".
+Figure of Enema Milk Drink frame 19 is the file "Special/Animations/Epilogue Enema Milk Drink/frame19.jpg".
+Figure of Enema Milk Drink frame 20 is the file "Special/Animations/Epilogue Enema Milk Drink/frame20.jpg".
+Figure of Enema Milk Drink frame 21 is the file "Special/Animations/Epilogue Enema Milk Drink/frame21.jpg".
+Figure of Enema Milk Drink frame 22 is the file "Special/Animations/Epilogue Enema Milk Drink/frame22.jpg".
+Figure of Enema Milk Drink frame 23 is the file "Special/Animations/Epilogue Enema Milk Drink/frame23.jpg".
+Figure of Enema Milk Drink frame 24 is the file "Special/Animations/Epilogue Enema Milk Drink/frame24.jpg".
+
+When play begins: [this does less 'damage' to the compiler than explicitly defining the image-reel as a large list]
+	add Figure of Enema Milk Drink frame 01 to the image-reel of EnemaMilkDrinkAnimation;
+	add Figure of Enema Milk Drink frame 02 to the image-reel of EnemaMilkDrinkAnimation;
+	add Figure of Enema Milk Drink frame 03 to the image-reel of EnemaMilkDrinkAnimation;
+	add Figure of Enema Milk Drink frame 04 to the image-reel of EnemaMilkDrinkAnimation;
+	add Figure of Enema Milk Drink frame 05 to the image-reel of EnemaMilkDrinkAnimation;
+	add Figure of Enema Milk Drink frame 06 to the image-reel of EnemaMilkDrinkAnimation;
+	add Figure of Enema Milk Drink frame 07 to the image-reel of EnemaMilkDrinkAnimation;
+	add Figure of Enema Milk Drink frame 08 to the image-reel of EnemaMilkDrinkAnimation;
+	add Figure of Enema Milk Drink frame 09 to the image-reel of EnemaMilkDrinkAnimation;
+	add Figure of Enema Milk Drink frame 10 to the image-reel of EnemaMilkDrinkAnimation;
+	add Figure of Enema Milk Drink frame 11 to the image-reel of EnemaMilkDrinkAnimation;
+	add Figure of Enema Milk Drink frame 12 to the image-reel of EnemaMilkDrinkAnimation;
+	add Figure of Enema Milk Drink frame 13 to the image-reel of EnemaMilkDrinkAnimation;
+	add Figure of Enema Milk Drink frame 14 to the image-reel of EnemaMilkDrinkAnimation;
+	add Figure of Enema Milk Drink frame 15 to the image-reel of EnemaMilkDrinkAnimation;
+	add Figure of Enema Milk Drink frame 16 to the image-reel of EnemaMilkDrinkAnimation;
+	add Figure of Enema Milk Drink frame 17 to the image-reel of EnemaMilkDrinkAnimation;
+	add Figure of Enema Milk Drink frame 18 to the image-reel of EnemaMilkDrinkAnimation;
+	add Figure of Enema Milk Drink frame 19 to the image-reel of EnemaMilkDrinkAnimation;
+	add Figure of Enema Milk Drink frame 20 to the image-reel of EnemaMilkDrinkAnimation;
+	add Figure of Enema Milk Drink frame 21 to the image-reel of EnemaMilkDrinkAnimation;
+	add Figure of Enema Milk Drink frame 22 to the image-reel of EnemaMilkDrinkAnimation;
+	add Figure of Enema Milk Drink frame 23 to the image-reel of EnemaMilkDrinkAnimation;
+	add Figure of Enema Milk Drink frame 24 to the image-reel of EnemaMilkDrinkAnimation.
 
 
 Necessary Figures ends here.

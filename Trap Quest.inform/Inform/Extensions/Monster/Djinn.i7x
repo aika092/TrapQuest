@@ -1,6 +1,6 @@
 Djinn by Monster begins here.
 
-djinn is a monster. djinn is intelligent. The leftover-type of djinn is 113. djinn has a number called wish history. djinn is airborne. djinn is male.
+djinn is a monster. djinn is intelligent. The leftover-type of djinn is 113. djinn has a number called wish history. djinn is airborne. djinn is male. djinn is a-dick-detacher. djinn is a-dick-reattacher. [#LXorDD]
 
 Definition: djinn is father material: decide yes.
 
@@ -166,6 +166,7 @@ To compute djinn wishing of (M - a monster):
 	set next numerical response to "wish for blessings";
 	set next numerical response to "wish for sanity";
 	set next numerical response to "wish for safety";
+	if diaper quest is 0, set next numerical response to "wish to be bigger";
 	if diaper quest is 0 and the class of the player is adventurer:
 		let C be a random worn currently uncovered dress;
 		if C is clothing and the outrage of C > 5 and purple rubber bodysuit is fetish appropriate, set next numerical response to "wish for less lewd clothing";
@@ -176,7 +177,7 @@ To compute djinn wishing of (M - a monster):
 	set next numerical response to "wish for nothing";
 	compute multiple choice question;
 	let CNR be the chosen numerical response;
-	if the printed name of CNR is "wish for strength":
+	if CNR is "wish for strength":
 		say "[BigNameDesc of M] unfolds [his of M] folded arms and waves them at your body.[line break][speech style of M]'I shall give you stronger muscles...'[roman type][line break]You feel your muscles grow!";
 		StrengthUp 1;
 		if diaper quest is 1:
@@ -189,7 +190,7 @@ To compute djinn wishing of (M - a monster):
 			say "[speech style of M]'...and a stronger craving for my cock!'[roman type][line break]";
 			if the player is possessing a vagina, VaginalSexAddictUp 1;
 			otherwise AnalSexAddictUp 1;
-	otherwise if the printed name of CNR is "wish for dexterity":
+	otherwise if CNR is "wish for dexterity":
 		say "[BigNameDesc of M] unfolds [his of M] folded arms and waves them at your body.[line break][speech style of M]'I shall make you faster at running...'[roman type][line break]You feel more agile!";
 		DexUp 1;
 		say "[speech style of M]'...and also faster at cumming.'[roman type][line break]";
@@ -202,7 +203,7 @@ To compute djinn wishing of (M - a monster):
 			summon normal clit piercing cursed with persistent quest;
 		otherwise:
 			SexAddictUp 1;
-	otherwise if the printed name of CNR is "wish for blessings":
+	otherwise if CNR is "wish for blessings":
 		say "[BigNameDesc of M] unfolds [his of M] folded arms and waves them at your body.";
 		let LC be the list of worn blessable clothing;
 		repeat with C running through LC:
@@ -210,23 +211,56 @@ To compute djinn wishing of (M - a monster):
 			bless C;
 			if C is transformable, potentially transform C;
 		if the number of entries in LC is 0, say "[speech style of M]'Hmm, looks like you didn't have anything I could actually bless. Not my problem though.'[roman type][line break]";
-	otherwise if the printed name of CNR is "wish for sanity":
+	otherwise if CNR is "wish for sanity":
 		say "[line break][speech style of M]'I shall fulfill your wish, but to remove memories like this may take some knowledge with it...'[roman type][line break][BigNameDesc of M] unfolds [his of M] folded arms and waves them at your head. You feel calmed, but also find it slightly more difficult to think.";
 		SexAddictDown 1;
 		SemenAddictDown 1;
 		DelicateDown 1;
 		Dignify 1000;
 		IntDown 1;
-	otherwise if the printed name of CNR is "wish for safety":
+	otherwise if CNR is "wish for safety":
 		say "[BigNameDesc of M] unfolds [his of M] folded arms and waves them at your body.";
 		teleport to Dungeon12;
-	otherwise if the printed name of CNR is "wish for less lewd clothing":
+	otherwise if CNR is "wish to be bigger": [#LXorDD I'm nost sure if this is what MG meant by suggesting a bad wish, but added it as a possibility via a change of mind when assuming a request to "be bigger" happens to be correctly interpreted as growing the dick, not something else, and then sometimes just being mean.]
+		say "[BigNameDesc of M] unfolds [his of M] arms and waves [his of M] hands at your [run paragraph on]";
+		let ok be 0;
+		let W be a random number between 1 and 4;
+		if player is somehow possessing a penis and W is 1:
+			say "[mystical-player-penis]";
+			now ok is 1;
+			SpecialPenisUp 1;
+			say "You now have a [mystical-player-penis]!";
+			if a random number between 1 and 3 is 1 and penis-is-detachable by M using 3:
+				say "You're smiling at the change, ";
+				compute detach-players-dick by M using 3;
+		otherwise if W is 2:
+			say "[LipDesc].";
+			if ArtificialUp 4 options with override 3 > 0: [3: lips]
+				now ok is 1;
+		otherwise if W is 3:
+			say "rear.";
+			now ok is 1;
+			FatassUp 1;
+			say "You now have [AssDesc]!";
+		if ok is 0 and W is 2 and player is possessing a vagina:
+			say "Frowning, he waves a second time, this time at your [vagina].";
+			if ArtificialUp 4 options with override 4 > 0: [4: labia]
+				now ok is 1;
+		if W is 4 or ok is 0: [So this can catch failed 'up's, too]
+			if W is 4:
+				say "[BreastDesc].";
+			otherwise:
+				say "Looking annoyed, he gestures peremptorily at your [BreastDesc].";
+			BustUp 1;
+			now ok is 1;
+			say "You now have [BreastDesc]!";
+	otherwise if CNR is "wish for less lewd clothing":
 		say "[BigNameDesc of M] unfolds [his of M] folded arms and waves them at your body.[line break][speech style of M]'How lewd your appearance becomes will depend on how much care you take.'[roman type][line break]";
 		PinkWardrobeUnclash purple rubber bodysuit;
 		summon purple rubber bodysuit cursed with quest;
-	otherwise if the printed name of CNR is "wish for nothing":
+	otherwise if CNR is "wish for nothing":
 		say "[speech style of M]'Wow, what a way to waste your wish.'[roman type][line break]";
-	otherwise if the printed name of CNR matches the text "suck":
+	otherwise if CNR matches the text "suck":
 		if the player is upright:
 			now auto is 1;
 			try kneeling;
@@ -236,7 +270,7 @@ To compute djinn wishing of (M - a monster):
 		now the refractory-period of M is 0;
 		now presented-orifice is face;
 		check consensual submissive sex of M;
-	otherwise if the printed name of CNR is "wish for a spanking":
+	otherwise if CNR is "wish for a spanking":
 		if the player is upright:
 			now auto is 1;
 			try kneeling;
@@ -245,7 +279,7 @@ To compute djinn wishing of (M - a monster):
 		now the player-reaction of the player is submitting;
 		anger M;
 		compute spanking of M;
-	otherwise if the printed name of CNR is "wish for a diaper change":
+	otherwise if CNR is "wish for a diaper change":
 		if there is a worn diaper or there is a worn messed knickers:
 			let D be a random worn knickers;
 			say "[BigNameDesc of M] unfolds [his of M] folded arms and waves them at your [printed name of D].";[Maybe have Djinn punish by adding locking plastic panties, with key given to matron?]
@@ -832,23 +866,24 @@ To compute failed dominance punishment of (M - djinn):
 [The djinn steals your dick and then uses it to fuck you]
 To failed dominance penis punish of (M - djinn):
 	let S be a random worn dildo-usage strapon-panties;
+	if players-dick-is-detached > 0, now S is players-detached-dick; [#LXorDD: Just borrow it temporarily]
 	let F be asshole;
 	if the player is possessing a vagina, now F is vagina;
 	if tg fetish is 1 and F is asshole, now F is vagina;
 	let O be the size of penis - the openness of F;
 	say "A moment later, you find yourself lying in a huge bed with beautiful canopy curtains and decadently soft silk sheets. You sit up, and see that not only are you completely naked in a stranger's bed, [if the player is female]your [printed name of S] has completely disappeared[otherwise if tg fetish is 1]your penis has completely disappeared, leaving a brand new [vagina] in its place[otherwise]your [SexDesc of penis] has completely disappeared, leaving a strange patch of glittering darkness in its place[end if]. Signs of movement in your peripheral vision leave you with no time to feel shocked, and you look over just as a dark-skinned [man of M] with the perfectly sculpted [if M is presenting as male]chest, abs, and jawline of a god[otherwise]breasts, hips and musculature of a goddess[end if] parts the bed curtains. Your breath is temporarily stolen away by [his of M] gorgeous figure, but you're brought back to your senses by a single flaw, right there [if full-lady fetish is 1 or S is worn]hanging from a harness between [his of M] legs[otherwise]between[end if] [his of M] legs.[line break][speech style of M]'A submissive slut, just your type. Now, about the other part of your wish...'[roman type][line break]The [man of M] gives you a bewitching smile, climbing into bed with you and easily shrugging off your resistance as [he of M] [if F is vagina]spreads your legs.[otherwise]flips you over and spreads your asscheeks.[end if]";
 	if sexual-penis-length > 8:
-		say "[line break][speech style of M]'Hm. It's a little big, but I suppose that's not my problem.'[roman type][line break]The [man of M] muses, climbing into bed with you and easily shrugging off your resistance as [he of M] lines up *your problem* [if F is vagina]between your legs[otherwise]between your cheeks[end if]. Now that you're on the business end, you can't help but appreciate how massive your [SexDesc of penis] looks, and [if O < 0]as it slides into[otherwise if O < 4]as it slowly enters[otherwise if O < 8]as it slowly forces its way into[otherwise]as it slowly forces its way into[end if] your [variable F], you get to appreciate how massive it feels as well. It completely swallows up all the space inside you, and the [man of M] takes care to maximize that feeling, [his of M] beautiful muscles rippling as [he of M] fucks you with slow, deep thrusts. You belt out long, heavy moans, your whole body shivering as your nerve endings struggle to parse the incredibly intense, yet gentle fucking. Shame wells up from your core as you realise how painful this might have been if [italic type]you[roman type] were doing the fucking, and as your back arches and your toes curl, you find yourself thinking you deserve to have a much smaller [sexual-player-penis].";
+		say "[line break][speech style of M]'Hm. It's a little big, but I suppose that's not my problem.'[roman type][line break]The [man of M] muses, lining up *your problem*  with your [variable F]. Now that you're on the business end, you can't help but appreciate how massive your [SexDesc of penis] looks, and [if O < 0]as it slides into[otherwise if O < 4]as it slowly enters[otherwise if O < 8]as it slowly forces its way into[otherwise]as it slowly forces its way into[end if], you get to appreciate how massive it feels as well. It completely swallows up all the space inside you, and the [man of M] takes care to maximize that feeling, [his of M] beautiful muscles rippling as [he of M] fucks you with slow, deep thrusts. You belt out long, heavy moans, your whole body shivering as your nerve endings struggle to parse the incredibly intense, yet gentle fucking. Shame wells up from your core as you realise how painful this might have been if [italic type]you[roman type] were doing the fucking, and as your back arches and your toes curl, you find yourself thinking you deserve to have a much smaller [sexual-player-penis].";
 		if F is vagina, vaginally orgasm shamefully;
 		otherwise anally orgasm shamefully;
 		say "The [man of M] slams '[his of M]' [sexual-player-penis] home in the exact moment that you cum, emitting a thoroughly perfect groan as [he of M] floods your [variable F] with a huge load. [big he of M] chuckles as [he of M] pulls out, waving [his of M] hands as smoke closes in around you once again.";
 	otherwise if sexual-penis-length > 5:
-		say "[line break][speech style of M]'The size is good, but nothing feels better than *your own tool*, wouldn't you agree?'[roman type][line break]The [man of M] muses, climbing into bed with you and easily shrugging off your resistance as [he of M] lines up [italic type]your tool[roman type] [if F is vagina]between your legs[otherwise]between your cheeks[end if]. [if O < -3]You find yourself wishing you were a little bigger as you're penetrated[otherwise if O < 0]You can't help but sigh as you're slowly penetrated by[otherwise if O < 3]You can't stifle a sigh as you slowly stretch to accommodate[otherwise]You grit your teeth as you slowly stretch to accommodate[end if] your own [SexDesc of penis], and the flawless [man of M] on top of you slowly begins to thrust. Even if the [sexual-player-penis] doesn't belong to [him of M], [his of M] technique is as perfect as [his of M] body, and every single thrust feels as though it were crafted by heaven. You moan desperately as you try to hold on, hoping against hope that [he of M] won't actually force you to cum from your own [sexual-player-penis], but it's no use. You clench your fists and curl your toes as you go over the edge.";
+		say "[line break][speech style of M]'The size is good, but nothing feels better than *your own tool*, wouldn't you agree?'[roman type][line break]The [man of M] muses, lining up [italic type]your tool[roman type] with your [variable F]. [if O < -3]You find yourself wishing you were a little bigger as you're penetrated[otherwise if O < 0]You can't help but sigh as you're slowly penetrated by[otherwise if O < 3]You can't stifle a sigh as you slowly stretch to accommodate[otherwise]You grit your teeth as you slowly stretch to accommodate[end if] your own [SexDesc of penis] and the flawless [man of M] on top of you slowly begins to thrust. Even if the [sexual-player-penis] doesn't belong to [him of M], [his of M] technique is as perfect as [his of M] body, and every single thrust feels as though it were crafted by heaven. You moan desperately as you try to hold on, hoping against hope that [he of M] won't actually force you to cum from your own [sexual-player-penis], but it's no use. You clench your fists and curl your toes as you go over the edge.";
 		if F is vagina, vaginally orgasm shamefully;
 		otherwise anally orgasm shamefully;
 		say "The [man of M] slams '[his of M]' [sexual-player-penis] home in the exact moment that you cum, emitting a thoroughly perfect groan as [he of M] fills your [variable F] with a big load. [big he of M] chuckles as [he of M] pulls out, waving [his of M] hands as smoke closes in around you once again.";
 	otherwise if sexual-penis-length > 3:
-		say "[line break][speech style of M]'Hm. It's a bit small, but that isn't an issue for me, is it?'[roman type][line break]The [man of M] muses, climbing into bed with you and easily shrugging off your resistance as [he of M] lines up *your issue* [if F is vagina]between your legs[otherwise]between your cheeks[end if]. [if O < -6]You can't help wishing you were a little bigger as you are penetrated[otherwise if O < -3]You find yourself wishing you were a little bigger as you are penetrated[otherwise if O < 0]You can't help but sigh as you are slowly penetrated by[otherwise]You can't stifle a sigh as you slowly stretch to accommodate[end if] your own [SexDesc of penis], and the flawless [man of M] on top of you slowly begins to thrust. Even if the [sexual-player-penis] doesn't belong to [him of M], [his of M] technique is as perfect as [his of M] body, and every single thrust feels as though it were crafted by heaven. You moan desperately as you try to hold on, hoping against hope that [he of M] won't actually force you to cum from your own [sexual-player-penis], but it's no use. You clench your fists and curl your toes as you go over the edge.";
+		say "[line break][speech style of M]'Hm. It's a bit small, but that isn't an issue for me, is it?'[roman type][line break]The [man of M] muses, climbing into bed with you and easily shrugging off your resistance as [he of M] lines up *your issue*  with your [variable F]. [if O < -6]You can't help wishing you were a little bigger as you are penetrated[otherwise if O < -3]You find yourself wishing you were a little bigger as you are penetrated[otherwise if O < 0]You can't help but sigh as you are slowly penetrated by[otherwise]You can't stifle a sigh as you slowly stretch to accommodate[end if] your own [SexDesc of penis] and the flawless [man of M] on top of you slowly begins to thrust. Even if the [sexual-player-penis] doesn't belong to [him of M], [his of M] technique is as perfect as [his of M] body, and every single thrust feels as though it were crafted by heaven. You moan desperately as you try to hold on, hoping against hope that [he of M] won't actually force you to cum from your own [sexual-player-penis], but it's no use. You clench your fists and curl your toes as you go over the edge.";
 		if F is vagina, vaginally orgasm shamefully;
 		otherwise anally orgasm shamefully;
 		say "The [man of M] slams '[his of M]' [sexual-player-penis] home in the exact moment that you cum, emitting a thoroughly perfect groan as [he of M] shoots several spurts of [semen] into your [variable F]. [big he of M] chuckles as [he of M] pulls out, waving [his of M] hands as smoke closes in around you once again.";
@@ -862,7 +897,12 @@ To failed dominance penis punish of (M - djinn):
 			say GotUnluckyFlav;
 		otherwise:
 			say "You find yourself back in [the location of the player], your [SexDesc of penis] back where it belongs.";
-			PenisDown 1;
+			[#LXorDD]
+			if penis-is-detachable by M using 3:
+				say "[one of][variable custom style]Uh oh...[roman type][line break]Something about the way [he of M] is looking at you has you worried, though. You start trying to move away[or][variable custom style]Oh no, not again![roman type][line break]You've barely had time to think that[stopping], ";
+				compute detach-players-dick by M using 3;
+			otherwise:
+				SpecialPenisDown 1; [#LXorDD]
 	otherwise:
 		say "You find yourself back in [the location of the player], [semen] leaking out of your [if the player is possessing a vagina][vagina][otherwise][asshole][end if] and your [SexDesc of penis] back where it belongs.";
 		now M is penetrating F;
@@ -873,6 +913,10 @@ To failed dominance penis punish of (M - djinn):
 		if sexual-penis-length > 3:
 			if the player is possessing a vagina, FuckCount;
 			otherwise AnalCount;
+		[#LXorDD]
+		if tough-shit is 1 and penis-is-detachable by M using 3:
+			say "You're flushed and panting, and deeply humiliated, [one of]but at least that's over with and he can't do anything worse, you're thinking[or]once again. You're about to try to distract him[stopping], ";
+			compute detach-players-dick by M using 3;
 	Bore M.[he already fucked you, so he doesn't do it again]
 
 [The djinn becomes the submissive slut]
@@ -979,21 +1023,27 @@ To say AfterDominationComment (N - a number) of (M - djinn):
 		if the player is possessing a penis, set next numerical response to "wish for a bigger dick";
 		compute multiple choice question;
 		let CNR be the chosen numerical response;
-		if the printed name of CNR is "wish for relief":
+		if CNR is "wish for relief":
 			say "[BigNameDesc of M] nods, waving [his of M] arms at your body! You feel a lot better.";
 			now the arousal of the player is 0;
 			now the soreness of F is 0;
-		otherwise if the printed name of CNR is "wish for cleanup":
+		otherwise if CNR is "wish for cleanup":
 			let F be player-fucker;
 			say "[BigNameDesc of M] nods, waving [his of M] arms at your body! Your [variable F] feels cleaner!";
 			if F is vagina, now the semen volume of F is 0;
 			otherwise now the semen volume of belly is 0;
-		otherwise if the printed name of CNR is "wish for tightness":
+		otherwise if CNR is "wish for tightness":
 			say "[BigNameDesc of M] nods, waving [his of M] arms at your body! [if the openness of F > 1]Your [variable F] feels tighter.[otherwise]Nothing seems to happen.[end if]";
 			if the openness of F > 1, decrease the openness of F by 1;
-		otherwise if the printed name of CNR is "wish for a bigger dick":
-			say "[BigNameDesc of M] nods, waving [his of M] arms at your body! [if the size of penis < 10]Your [player-penis] grows longer![otherwise]Nothing seems to happen.[end if]";
-			PenisUp 1;
+		otherwise if CNR is "wish for a bigger dick":
+			if the player is possessing a vagina:
+				say "[BigNameDesc of M] looks very pointedly at your [vagina].[line break][speech style of M]'[one of]I'm only a djinn, not a miracle worker![or]There ARE limits, female human![or]Some miracles are too ludicrous for even a djinn as powerful as *I* to work, foolish mortal.[at random] But never fear, I understand the real intent behind your poorly-worded wish.'[roman type][line break]";
+				LabiaUp 1 with comment;
+			otherwise:
+				let X be the mystical size of penis;
+				SpecialPenisUp 1; [#LXorDD]
+				let Y be the mystical size of penis;
+				say "[BigNameDesc of M] nods, waving [his of M] arms at your body! [if Y > X]Your [mystical-player-penis] grows longer![otherwise if X is Y]Nothing seems to happen.[otherwise][line break][speech style of M]'How strange. Your [mystical-player-penis] appears to have reduced to [Y] inches. Clearly it was defective.'[roman type][end if][line break]";
 		otherwise:
 			say "[BigNameDesc of M] rolls [his of M] eyes.";
 			if M is unfriendly, calm M;
@@ -1037,13 +1087,16 @@ To say AssistanceRejected of (M - djinn) with (N - a monster):
 	say "[speech style of M]'Remember, I do not care about you. You are not important to me. Why would I help you?'[roman type][line break]".
 
 To say UnAnnoyedResponse of (M - djinn):
-	say "[speech style of M]'[one of]Yes! Now, you understand!'[or]Yes, your mind is in the right place!'[at random][roman type]";
+	say "[speech style of M]'[one of]Yes! Now, you understand!'[or]Yes, your mind is in the right place!'[at random][roman type][line break]";
 
 To say MildAnnoyedResponse of (M - djinn):
-	say "[speech style of M]'[one of]Do you never stop talking?!'[or]Your job is to serve, not talk.'[at random][roman type]".
+	say "[speech style of M]'[one of]Do you never stop talking?!'[or]Your job is to serve, not talk.'[at random][roman type][line break]".
 
 To say TauntRejected of (M - djinn):
-	say "[speech style of M]'Haha. Very interesting!'[roman type][line break][BigNameDesc of M] seems to be putting even more effort into fighting you.".
+	if players-dick-is-detached > 0 and the player is not possessing a vagina and a random number between 1 and 2 is 1: [#LXorDD. Just a bit of amusing? humiliation.]
+		say "[BigNameDesc of M] [one of]smirks[or]glances[or]frowns[at random] at your groin.[line break][one of]It's interesting that you humans lose their dicks like they do their baby teeth. When do you expect yours to grow back in? Will it be bigger than your baby one?[or]I see you've lost your baby dick. When do you expect your adult one to grow in?[or]It must be a relief to have finally lost your baby dick, but it seems your adult one is taking a long time to grow.[or]Are you worried by how long it's taking for your adult dick to grow in?[or]Do adult dicks hurt when they grow back in?[or]Did you know it when your baby dick fell off? Or was it too small to really notice it happeningd?[or]Did you notice when your baby dick fell off? Will the adult one be bigger?[at random][line break]";
+	otherwise:
+		say "[speech style of M]'Haha. Very interesting!'[roman type][line break][BigNameDesc of M] seems to be putting even more effort into fighting you.".
 
 To say PleadRejected of (M - djinn):
 	say "[speech style of M]'Quiet, [please].'[roman type][line break]".

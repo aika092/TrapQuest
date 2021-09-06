@@ -414,8 +414,6 @@ To decide which number is the lewdness of (P - a shameful orgasm poster):
 
 Chapter 3 Masturbation Poster
 
-A masturbation poster is a kind of poster.
-
 A masturbation poster is a kind of poster. A masturbation poster has an object called old-stimulant. A masturbation poster has an object called old-monster. There are 10 masturbation posters.
 
 To compute title of (P - a masturbation poster):
@@ -518,7 +516,7 @@ There are 10 wetting posters.
 
 To compute unique variables of (P - a wetting poster):
 	now the old-humiliation of P is the humiliation of the player;
-	let K be a random worn bottom level pee protection clothing;
+	let K be a random bottom level pee protection clothing;
 	if K is clothing, now the urination-target of P is K;
 	otherwise now the urination-target of P is the location of the player.
 

@@ -16,6 +16,7 @@ To say ShortDesc of (C - a unicorn-horn):
 	say "unicorn's horn".
 
 Definition: a unicorn-horn is magic themed: decide yes.
+Definition: a unicorn-horn is horse themed: decide yes.
 
 To decide which number is the bartering value of (T - a unicorn-horn) for (M - a monster):
 	decide on 10.

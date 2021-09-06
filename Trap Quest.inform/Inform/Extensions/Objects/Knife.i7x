@@ -98,14 +98,14 @@ Carry out knifing:
 	otherwise:
 		if the second noun is equippable:
 			say "Your [ShortDesc of the second noun] refuses to cut through the [clothing-material of the noun]. Maybe you need to cut it with something more specialised...";
-		otherwise if (the noun is bondage and the noun is not ballgag and the noun is not blessed) or the noun is unremovable:
-			say "The [clothing-material of the noun] material is too tough, the knife can't cut through it![line break][variable custom style]Perhaps if it was blessed?[roman type][line break]";
+		otherwise if (the noun is bondage and the noun is not ballgag and the noun is not blessed) or (the noun is unremovable and the noun is not blessed piercing):
+			say "The [clothing-material of the noun] material is too tough, the knife can't cut through it![if the noun is not unremovable or the noun is piercing][line break][variable custom style]Perhaps if it was blessed?[roman type][line break][end if]";
 		otherwise if the noun is cursed and strongCurses is 1 and the noun is not headgear:
 			say "The knife can't seem to cut through the curse! You'll need to [if the quest of the noun is no-clothing-quest]find an altar to give it a quest[otherwise]complete its quest first[end if].";
 		otherwise if the charge of the second noun > 0:
 			say "The knife seems to be completely dull at the moment! You give up.";
 		otherwise:
-			say "You force the knife under and through the [clothing-material of the noun] material of the [noun] and slice straight through it as if it were made of butter! It is completely destroyed! The knife loses its glow[if newbie tips is 1][one of]. Maybe it needs to recharge?[or].[stopping][otherwise].[end if]";
+			say "You force the knife under and through the [clothing-material of the noun] material of the [noun] and slice straight through it as if it were made of butter. It is completely destroyed! The knife loses its glow[if newbie tips is 1][one of]. Maybe it needs to recharge?[or].[stopping][otherwise].[end if]";
 			now the charge of the second noun is 500;
 			destroy the noun;
 			now the noun is in Holding Pen. [stop it spawning again]

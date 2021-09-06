@@ -101,6 +101,7 @@ This is the sex doll can't wear new clothes rule:
 		rule fails.
 The sex doll can't wear new clothes rule is listed in the global wearability rules.
 
+
 This is the purity for virgins rule:
 	if wearing-target is purity clothing and the vaginalvirgin of the player is 0:
 		if summoning is 0 and autowear is false, say "[BigNameDesc of wearing-target] resists you! Perhaps its aura of purity prevents it being worn by sluts who have shamefully lost their virginity...";
@@ -165,7 +166,9 @@ This is the belly covering clothing can't have an exclusive clash rule:
 				if summoning is 1 and (wearing-target is top-exclusive or C is bottom-exclusive):
 					check that wearing-target usually goes under C;
 					if the rule succeeded, rule fails.
-The belly covering clothing can't have an exclusive clash rule is listed in the global wearability rules.		[TODO more specific top exclusive corset rule]
+
+[TODO more specific top exclusive corset rule]
+The belly covering clothing can't have an exclusive clash rule is listed in the global wearability rules.
 
 This is the crotch covering clothing can't have an exclusive clash rule:
 	if wearing-target is crotch covering clothing and wearing-target is not chastity bond and wearing-target is not not-exclusive diaper: [normal diapers ignore exclusivity rules]

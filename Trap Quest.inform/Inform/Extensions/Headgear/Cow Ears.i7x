@@ -85,7 +85,7 @@ To uniquely set up (C - cow-ears):
 	now the quest of C is milking-quest.
 
 To say QuestFlav of (Q - milking-quest):
-	say "You sense it wants you to get milked, but only after your breasts have completely filled up, or when there's enough to create an extra large can of milk.".
+	say "You sense it wants you to get milked, but only after your breasts have completely filled up, or when there's enough to completely fill up the tank connected to the milker.".
 
 To say QuestTitle of (Q - milking-quest):
 	say " (milking quest)".
@@ -101,7 +101,8 @@ To decide which number is the dexterity-influence of (C - cow-ears):
 To progress quest of (Q - milking-quest):
 	let M be a random milking bench in the location of the player;
 	if M is nothing, now M is dungeon-milking-bench;
-	if the ready-for-milking of Q > 0 or the units collected of M > 3:
+	let MT be a random milk-tank in the location of M;
+	if the ready-for-milking of Q > 0 or doses of MT >= 8:
 		now the ready-for-milking of milking-quest is 0;
 		repeat with C running through worn clothing:
 			if the quest of C is Q:

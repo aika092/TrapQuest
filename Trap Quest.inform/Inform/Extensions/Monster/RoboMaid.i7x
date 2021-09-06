@@ -63,14 +63,14 @@ To say DragArrival of (M - a robomaid) to (R - a room):
 	if P > 0:
 		say "[speech style of M]'TRANSPORT PROTOCOL COMPLETE. SENSORS INDICATE WE ARE ALONE. ERROR, UNCAUGHT INHIBITIONS EXCEPTION. I CAN'T HOLD BACK, [robogreeting of M].'[roman type][line break]You make [if the player is disgraced]excruciating[otherwise]smouldering[end if] eye contact with [if P is 1][NameDesc of a random patron in R][otherwise]a few of the patrons[end if] as [NameDesc of M] pins you against a wall with [his of M] strangely supple metal body.";
 	otherwise:
-		say "[speech style of M]'TRANSPORT PROTOCOL COMPLETE.'[roman type]".
+		say "[speech style of M]'TRANSPORT PROTOCOL COMPLETE.'[roman type][line break]".
 
 To say DragArrival of (M - a milkmaid) to (R - a room):
 	let P be the number of patrons in R;
 	if P > 0:
 		say "[speech style of M]'TRANSPORT PROTOCOL COMPLETE. HEY THERE, [if P > 0]PLURAL [end if]BIG [caps boy of a random patron]. EXECUTING PERFORMANCE SEQUENCE.'[roman type][line break]You make [if the player is disgraced]excruciating[otherwise]smouldering[end if] eye contact with [if P is 1][NameDesc of a random patron in R][otherwise]a few of the patrons[end if] as [NameDesc of M] lays you down on the ground and climbs on top of you.";
 	otherwise:
-		say "[speech style of M]'TRANSPORT PROTOCOL COMPLETE.'[roman type]".
+		say "[speech style of M]'TRANSPORT PROTOCOL COMPLETE.'[roman type][line break]".
 
 To say ShortDesc of (M - a robomaid):
 	say "robomaid".
@@ -140,6 +140,7 @@ To compute perception of (M - a robomaid):
 		say "[big his of M] eyes turn red and [he of M] spins towards you.[line break][speech style of M]'[if the player is hotel employed]COWORKER[otherwise]FREELANCER[end if] DETECTED. PUBLICITY STUNT PROGRAM INITIATED.'[roman type][line break]".
 
 To compute perception of (M - a milkmaid):
+	say "[BigNameDesc of M] notices you!";
 	if the player is hotel employed:
 		if breasts is lewdly exposed or there is a worn trainee bra:
 			say "[big he of M] glides towards you, addressing you in a monotone.[line break][speech style of M]HEY [caps boy of the player]FRIEND. YOU HAVE SOMETHING ON YOUR CHEST. TITS. TEEHEE. TEEHEE.[roman type][line break][big he of M] seems to abruptly lose interest.";

@@ -179,8 +179,13 @@ To say SubduedGrabFlav of (C - clitoris lead):
 	say "[variable custom style][if the delicateness of the player < 8]Fuck, fuck, fuck, get off!!![otherwise if the delicateness of the player < 14]Eek that's way too sensitive! I can't move a muscle![otherwise]Oopsie, caught again![end if][roman type][line break]".
 
 Check taking off clitoris lead:
-	[###Selkie: it would be nice to add some text here if the piercing is not blessed, saying stuff like "... but the attempt to remove it has aroused you further" and increasing the sensitivity of the vagina]
-	say "That's permanently welded onto your clitoris piercing!" instead.
+	say "That's permanently welded onto your clitoris piercing!";
+	if the player is not able to use their hands:
+		say "Besides, it's hardly like you can even get at it now with your hands.";
+	otherwise if it is not blessed:
+		say "But [one of]the tugging on[or]your fumbling with[at random] the [one of]lead[or]piercing[or]fastening[or]clip[at random] as you tried to remove it from your sensitive [one of]clit[or]nub[or]bud[or]button[as decreasingly likely outcomes] [one of]has made it stiffen under your fingers,[or]has you biting your lip at the sensations of your slick, sensitive tip,[or]sends an illicit thrill through you, making you squirm,[or]feels [i]so good[/i],[or]makes you flush as you feel yourself moisten down there, and[at random] arousing you more.[one of] You shiver in reaction, your eyes rolling up for a moment, your tongue roving over your [LipDesc].[or]You find yourself shaking from the sensations, your nipples crinkled up in pleasure.[or]You wonder whether you're doing this just because it feels so good?[or][line break][variable custom style]Mmm, so good![roman type][line break][stopping]";
+		arouse 100;
+	do nothing instead.
 
 Section 1 Wearability
 
@@ -242,8 +247,13 @@ To decide which object is the at least partial concealer of (C - a clitoris pier
 	decide on the at least partial concealer of vagina.
 
 Check taking off clitoris piercing:
-	[###Selkie: it would be nice to add some text here if the piercing is not blessed, saying stuff like "... but your hopeless fumbling with it has aroused you further" and increasing the sensitivity of the vagina]
-	say "That's permanently welded into your [if the bimbo of the player < 10]poor sensitive [end if]clit!" instead.
+	say "That's permanently welded into your [if the bimbo of the player < 10]poor sensitive [end if]clit!";
+	if the player is not able to use their hands:
+		say "Besides, it's not like you even [i]could[/i] do that right now, with your hands.";
+	otherwise if it is not blessed:
+		say "But [one of]your tugging on[or]your fumbling with[or]your attempts to dislodge[at random] the [one of][printed name of the noun][or]piercing[or]fiendish jewellery[or][']decoration['][at random] as you tried to remove it from your sensitive [one of]clit[or]nub[or]bud[or]button[as decreasingly likely outcomes] [one of]has made it stiffen under your fingers,[or]has you biting your lip at the sensations of your slick, sensitive tip,[or]sends an illicit thrill through you, making you squirm,[or]feels [i]so good[/i],[or]makes you flush as you feel yourself moisten down there, and[at random] arousing you more.[one of] You shiver in reaction, your eyes rolling up for a moment, your tongue roving over your [LipDesc].[or] You find yourself shaking from the sensations, your nipples crinkled up in pleasure.[or] You wonder whether you're doing this just because it feels so good?[or][line break][variable custom style]Mmm, so good![roman type][line break][or][line break][first custom style]Mmm, I think I'm enjoying this.[roman type][line break][stopping]";
+		arouse 100;
+	do nothing instead.
 
 To decide which object is the potential-upgrade-target of (C - normal clit piercing):
 	decide on slut clit piercing.

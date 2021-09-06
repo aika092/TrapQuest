@@ -196,45 +196,7 @@ Definition: hole-spank is appropriate: decide yes.
 To compute punishment of (P - hole-spank):
 	now the priority of P is 1;
 	say "Suddenly you feel a hand groping your butt![line break][variable custom style][if the delicateness of the player < 8]What the fuck, let go of me! [otherwise]Who's this? [end if][roman type][line break]All of a sudden the anonymous hand pulls back, and comes down hard with a spank! Two, three, four, five, six! Your rear is assaulted by a series of blows.";
-	if the latex-transformation of the player > 5:
-		say "You hardly feel anything thanks to your rubbery butt cheeks.";
-	otherwise:
-		let pain-factor be 4;
-		if there is worn ass plugging clothing:
-			let K be a random worn ass plugging clothing;
-			say "The plug[if K is vagina plugging]s[end if] inside of you [if K is jelldo]block[otherwise]send[end if][if K is not vagina plugging]s[end if] the vibrations of the spank [if K is jelldo]from ruining your[otherwise]deep inside your[end if] [if K is vagina plugging][fuckholes][otherwise][asshole][end if]. Ouch!";
-			if K is vagina plugging, ruin vagina times 2;
-			if K is not jelldo, ruin asshole times 2;
-		repeat with K running through ass covering clothing:
-			decrease pain-factor by a random number between 0 and 1;
-		let D be a random worn diaper;
-		if D is diaper:
-			if D is perceived messed:
-				say "[one of]The gross squishiness of your messy diaper being spanked makes you cringe and shudder as it oozes around your loins.[or][or][cycling]";
-				humiliate 150;
-				DelicateUp 1;
-				now pain-factor is 0;
-			otherwise:
-				decrease pain-factor by 2;
-		if a random number between 0 and 2 < pain-factor:
-			say "The spanks [if the number of ass covering clothing is 0]collide painfully with your bare ass cheeks[otherwise]still [one of]hurt[or]make you squeal[or]cause you to whimper[at random], even through your clothing[end if]. ";
-			PainUp 1;
-		otherwise:
-			if there is ass covering clothing, say "Thanks to your [if there is a worn diaper]diaper[otherwise][random top level ass protection clothing][end if], you manage to tolerate the [one of]pain[or]punishment[cycling].";
-			otherwise say "You suffer through the pain silently.";
-		let I be the incontinence of the player;
-		if diaper lover <= 0, now I is 3;
-		let TB be the total squirtable fill of belly;
-		if TB > 0 and the player is able to expel and a random number between (15 - I) and 15 < TB + (pain-factor * 3) and the latex-transformation of the player < 5 and currently-squirting is 0:
-			say "The pain of the spanking episode causes you to expel your [enema].";
-			asssquirt;
-		otherwise if diaper messing >= 4 and I > a random number between 1 and (7 - pain-factor) and the player is full and asshole is not actually occupied and there is a worn total protection soilable knickers:
-			say "The pain from the spanking causes you to lose control of your sphincter!";
-			compute messing;
-		otherwise if I > a random number between 1 and (7 - pain-factor) and the bladder of the player > 4 and the delicateness of the player > 8:
-			say "The pain of the spanking episode causes you to involuntarily wet yourself.";
-			now delayed urination is 1;
-			try urinating;
+	compute strength 4 spanking;
 	say "Just as suddenly as he or she began, the mysterious spanker stops. [one of]You wonder if they've gone, or whether they're still there, silently watching you.[or]You listen, but can't hear anyone. Are they still there?[or]You listen for footsteps, but hear nothing. Are they there, watching? Or did they simply walk off and leave you, still stuck?[or]You think - [italic type]hope[roman type] - they've gone.[at random]".
 
 hole-wank is hole-in-wall punishment.

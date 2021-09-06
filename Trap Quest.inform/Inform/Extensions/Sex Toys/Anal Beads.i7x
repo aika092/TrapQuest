@@ -39,7 +39,7 @@ To decide which object is the at least partial concealer of (S - an anal beads):
 			if O is potentially at least partially vagina covering clothing, decide on O;
 	decide on nothing.
 
-To compute periodic effect of (C - an expansion anal beads):
+To compute periodic expansion effect of (C - an anal beads):
 	increase the toy-charge of C by 1;
 	if the toy-charge of C > 40:
 		now the toy-charge of C is 0;
@@ -47,13 +47,13 @@ To compute periodic effect of (C - an expansion anal beads):
 			say "Your [ShortDesc of C] grows, and another bead forces itself into your [asshole]";
 			increase the notches of C by 1;
 			increase the notch-taken of C by 1;
-			if the player is possessing a penis, PenisUp 1;
+			if the player is somehow possessing a penis, SpecialPenisUp 1; [#LXorDD]
 		otherwise if the size of C < 10:
 			say "Your [ShortDesc of C] drastically increases in size!";
 			increase the size of C by 1;
 			let F be a random fuckhole penetrated by C;
 			if the size of C > the openness of F, Ruin F;
-			if the player is possessing a penis, PenisUp 1.
+			if the player is somehow possessing a penis, SpecialPenisUp 1. [#LXorDD]
 
 Figure of anal beads 0 is the file "Items/Accessories/Toys/analbeads0.jpg".
 Figure of anal beads 1 is the file "Items/Accessories/Toys/analbeads1.jpg".

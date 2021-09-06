@@ -26,7 +26,7 @@ To decide which number is the girth of (M - bowsette):
 crown-timer is a number that varies.
 
 To compute unique unsimulated periodic effect of (M - fairy-witch):
-	if crown-timer >= 0 and the player is an august 2020 top donator and the times-met of M > 0 and M is not in the location of the player and playerRegion is not school:
+	if crown-timer >= 0 and the player is the donator and the times-met of M > 0 and M is not in the location of the player and playerRegion is not school:
 		let X be a random intelligent interested undefeated awake human monster in the location of the player;
 		if X is monster:
 			if X is not grabbing the player and X is not penetrating a body part:
@@ -97,8 +97,7 @@ Check bowsettificating:
 	if debugmode is 0, say "This command only works in debug mode." instead;
 	if playerRegion is school, say "You can't do this to someone in the school." instead;
 	if the noun is not intelligent interested undefeated awake monster, say "Your target must be intelligent, interested, undefeated and awake." instead;
-	if the noun is fairy-witch, say "You can't target the fairy witch with this as she is the one who does the transforming." instead;
-	if the player is not a august 2020 top donator, say Latest Debug Needed instead.
+	if the noun is fairy-witch, say "You can't target the fairy witch with this as she is the one who does the transforming." instead.
 Carry out bowsettificating:
 	allocate 3 seconds;
 	check bowsettification of the noun.

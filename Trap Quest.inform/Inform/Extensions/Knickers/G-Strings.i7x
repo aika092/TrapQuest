@@ -10,6 +10,8 @@ The printed name of g-string is "[clothing-title-before][selfexamineuniquetitle 
 
 To decide which number is the penis-capacity of (C - a g-string):
 	decide on 0.
+To decide which number is the crotch-tightness of (C - a g-string):
+	decide on 4.
 To decide which number is the hipModesty of (C - a g-string):
 	decide on 1.
 
@@ -79,6 +81,8 @@ To say UniqueClothingDesc of (G - purple-g-string):
 	say "A sexy purple g-string. The front is mostly see-through and the ass string and waist band are quite frilly.".
 To decide which number is the penis-capacity of (G - purple-g-string):
 	decide on 6.
+To decide which number is the crotch-tightness of (C - purple-g-string):
+	decide on 3.
 Definition: purple-g-string is purple themed: decide yes.
 
 red-g-string is a g-string. The text-shortcut of red-g-string is "rgs". Understand "red" as red-g-string.
@@ -88,13 +92,15 @@ To say UniqueClothingDesc of (G - red-g-string):
 	say "A very basic and skimpy red g-string.".
 Definition: red-g-string is red themed: decide yes.
 
-black-g-string is a g-string. The text-shortcut of black- g-string is "bgs". Understand "black" as black-g-string.
+black-g-string is a g-string. The text-shortcut of black-g-string is "bgs". Understand "black" as black-g-string.
 To say selfexamineuniquetitle of (G - black-g-string):
 	say "black g-string".
 To say UniqueClothingDesc of (G - black-g-string):
 	say "A basic skimpy black g-string.".
 To decide which number is the penis-capacity of (G - black-g-string):
 	decide on 6.
+To decide which number is the crotch-tightness of (C - black-g-string):
+	decide on 3.
 Definition: black-g-string is black themed: decide yes.
 
 blue-g-string is a g-string. The text-shortcut of blue-g-string is "blg". Understand "blue", "bikini" as blue-g-string.
@@ -140,6 +146,8 @@ To say UniqueClothingDesc of (G - green-lace-g-string):
 	say "A lacy green g-string, with a cute bow on the front and a flirty keyhole design on the back.".
 To decide which number is the penis-capacity of (G - green-lace-g-string):
 	decide on 6.
+To decide which number is the crotch-tightness of (C - green-lace-g-string):
+	decide on 3.
 Definition: green-lace-g-string is bow themed: decide yes.
 Definition: green-lace-g-string is green themed: decide yes.
 
@@ -150,6 +158,8 @@ To say UniqueClothingDesc of (G - pink-sequin-g-string):
 	say "pink-sequin-g-string, with the words 'BE MINE' sequinned on the front. The black and pink waistband strings make for a cute, sexy look.".
 To decide which number is the penis-capacity of (G - pink-sequin-g-string):
 	decide on 6.
+To decide which number is the crotch-tightness of (C - pink-sequin-g-string):
+	decide on 3.
 Definition: pink-sequin-g-string is gem themed: decide yes.
 Definition: pink-sequin-g-string is pink themed: decide yes.
 

@@ -4,7 +4,7 @@ Part - Fixed Definitions
 
 A supporter is a kind of monster. A supporter is usually intelligent. Understand "player" as a supporter. The text-shortcut of a supporter is usually "sptr".
 
-A supporter has an indexed text called supporter-name. Understand the supporter-name property as describing a supporter.
+A supporter has a text called supporter-name. Understand the supporter-name property as describing a supporter.
 
 A supporter can be strapped. [Are they a lady wearing a strap-on?]
 
@@ -549,7 +549,7 @@ To compute MasturbationReaction of (M - a supporter):
 			if M is friendly-fucking:
 				say "[BigNameDesc of M] grins, and starts thrusting even faster.";
 			otherwise:
-				say "[BigNameDesc of M] [if M is penetrating a fuckhole]spanks[otherwise]slaps[end if] you angrily.[line break][first custom style]'Did I give you permission to do that? This is supposed to be a punishment!'[roman type][line break]";
+				say "[BigNameDesc of M] [if M is penetrating a fuckhole]spanks[otherwise]slaps[end if] you angrily.[line break][speech style of M]'Did I give you permission to do that? This is supposed to be a punishment!'[roman type][line break]";
 				PainUp 1;
 				say "[bold type]Your masturbation session has been interrupted![roman type][line break]";
 				follow the masturbation ended rule;
@@ -559,10 +559,10 @@ To compute MasturbationReaction of (M - a supporter):
 			anger M.
 
 To say EnemaFloorReactionFlav of (M - a supporter): [When the player squirts an anal creampie / enema onto the ground in front of the NPC]
-	say "[BigNameDesc of M] [if M is interested]looks disgusted[otherwise]turns to look at you with an expression of disgust[end if].[line break][speech style of M]'Why would you do that in front of me?! You trashy skank!'[roman type][line break][if the humiliation of the player < HUMILIATION-DISGRACED + 1000][one of]You turn a bright shade of red[or]You blush brightly with shame[or]You shiver with self-consciousness[or]You turn red-faced with shame[in random order].[end if]".
+	say "[BigNameDesc of M] [if M is interested]looks disgusted[otherwise]turns to look at you with an expression of disgust[end if].[line break][speech style of M]'Why would you do that in front of me?! You trashy skank!'[roman type][line break][moderateHumiliateReflect]".
 
 To say EnemaReactionFlav of (M - a supporter) into (C - a clothing): [When the player squirts an anal creampie / enema into worn clothing in front of the NPC]
-	say "[BigNameDesc of M] [if M is interested]looks disgusted[otherwise]turns to look at you with an expression of disgust[end if].[line break][speech style of M]'Into your own briefs?! Have you absolutely no shame or class?!'[roman type][line break][if the humiliation of the player < HUMILIATION-DISGRACED + 1000][one of]You turn a bright shade of red[or]You blush brightly with shame[or]You shiver with self-consciousness[or]You turn red-faced with shame[in random order].[end if]".
+	say "[BigNameDesc of M] [if M is interested]looks disgusted[otherwise]turns to look at you with an expression of disgust[end if].[line break][speech style of M]'Into your own [ShortDesc of C]?! Have you absolutely no shame or class?!'[roman type][line break][moderateHumiliateReflect]".
 
 [###SUPPORTERS WITH A PENIS ONLY###]
 

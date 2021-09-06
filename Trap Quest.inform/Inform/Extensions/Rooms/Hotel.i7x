@@ -117,7 +117,7 @@ Check going when HotelScenery01 is in the location of the player:
 Report going when HotelScenery01 is in the location of the player:
 	force inventory-focus redraw. [This forces the inventory window to redraw]
 
-HotelScenery04 is scenery. HotelScenery04 is in Hotel19. The printed name of HotelScenery04 is "sink". Understand "water", "basin" as HotelScenery04. The text-shortcut of HotelScenery04 is "sink". Figure of kitchen sink is the file "Env/Hotel/sink1.png".
+HotelScenery04 is a thing. HotelScenery04 is scenery. HotelScenery04 is in Hotel19. The printed name of HotelScenery04 is "sink". Understand "water", "basin" as HotelScenery04. The text-shortcut of HotelScenery04 is "sink". Figure of kitchen sink is the file "Env/Hotel/sink1.png".
 To say ExamineDesc of (C - HotelScenery04):
 	say "A large sink[one of].[or] that you could use to wash clothing.[stopping]".
 To decide which figure-name is the examine-image of (C - HotelScenery04):

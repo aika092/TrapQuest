@@ -11,6 +11,7 @@ Definition: A thing is insertable:
 
 Definition: a sex toy (called S) is actually summonable:
 	if S is on-stage, decide no;
+	if S is players-detached-dick and players-dick-is-detached is not 0, decide yes;
 	if S is part of something, decide no;
 	if the size of S is 0, decide no;
 	if asshole is actually occupied, decide no;
@@ -116,7 +117,7 @@ To uniquely set up (C - a sex toy):
 	if the size of C is 0, now the size of C is a random number between 1 and 10;
 	if C is plug and C is not unique and C is blandness and the size of C < 4 and a random number between 1 and 4 is 1, now C is expansion.
 
-To compute periodic effect of (C - an expansion clothing):
+To compute periodic expansion effect of (C - a sex toy):
 	increase the toy-charge of C by 1;
 	if the size of C < 10 and the toy-charge of C > 40:
 		now the toy-charge of C is 0;
@@ -124,7 +125,7 @@ To compute periodic effect of (C - an expansion clothing):
 		let F be a random fuckhole penetrated by C;
 		if the size of C > the openness of F, Ruin F;
 		say "Your [ShortDesc of C] drastically increases in size![if the size of C > the openness of F] You feel your [variable F] stretching painfully to accommodate the enlarged intruder[otherwise] You feel the [clothing-material of C] pressing much tighter against the inside of your [variable F][end if].";
-		if the player is possessing a penis and the size of penis < the size of C, PenisUp 1.[expansion clothing will slowly increase penis size for male players]
+		if the player is somehow possessing a penis and the mystical size of penis < the size of C, SpecialPenisUp 1.[expansion clothing will slowly increase penis size for male players] [#LXorDD]
 
 To compute periodic effect of (C - a rejuvenation clothing):
 	increase the toy-charge of C by 1;
@@ -181,6 +182,7 @@ To decide which number is the grip of (I - an insertable thing):
 		if there is a lubricant covering asshole, decrease X by 5;
 	if I is plug, increase X by the girth of I * 3;
 	otherwise increase X by the girth of I;
+	if I is players-detached-dick and the size of I is 0, now X is 5; [#LXorDD: It's a stick-on decal with the drawing of a dick on it.]
 	decide on X.
 
 To decide which number is the girth of (I - a thing):
@@ -203,9 +205,14 @@ analGripCount is a number that varies.
 To compute gripping of (I - a thing):
 	let G be the grip of I;
 	let R be a random number between 0 and G * G * 3;
+	[#LXorDD: For the case of wearing the stick-on 0-sized penis decal, it's too fiddly to bother add a whole 'It peels off and flutters to the ground' or 'the stick on decal magically somehow fills your [orifice]' thing, so instead we'll kludge this special case and say the player is just pretending. I also suspect if it isn't counted as being held 'inside' long enough this might loop forever, too. So we pretend everything is proceeding normally.]
+	let pretence be "The";
+	if I is players-detached-dick and the size of I is 0, now pretence is "You pretend that your";
 	if the player is upright and (nun-dress is not worn or nun-dress is not wrist-bound-behind) and (current-predicament is not team-girlfriends-predicament or the player is not in a predicament room):
-		if debuginfo > 1 and ((I is penetrating asshole and the player is not ass protected) or (I is penetrating vagina and the player is not pussy protected)), say "[input-style][ShortDesc of I] gripping check: Grip value ([G]) squared * 3 = [G * G * 3]; RNG (0~[G * G * 3]) = [R] | 9.5 Required grip strength[roman type][line break]";
-		if I is penetrating asshole and the player is not ass protected and G < 10 and R <= 0:
+		if debuginfo > 1 and ((I is penetrating asshole and the player is not ass protected) or (I is penetrating vagina and the player is not pussy protected)), say "[input-style][ShortDesc of I] gripping check: Grip value ([G]) squared * 3 = [G * G * 3]; RNG (0~[G * G * 3]) = [R] | 9.5 Required grip strength (and pretence text is '[pretence]')[roman type][line break]";
+		if I is players-detached-dick and the size of I is 0:
+			do nothing; [so, avoid the falls 'out' check]
+		otherwise if I is penetrating asshole and the player is not ass protected and G < 10 and R <= 0:
 			if G <= 0:
 				say "The [printed name of I] slips right back out of your [asshole] and drops to the ground.";
 			otherwise if G is 1:
@@ -264,7 +271,7 @@ To compute gripping of (I - a thing):
 		increase analGripCount by 1;
 		if the player is in an unbossed predicament room, increase analGripCount by 5;
 		if analGripCount > 33 - ((the girth of I - the openness of asshole) * 3):
-			say "The [ShortDesc of I] [one of]rubs against the inside of[or]puts pressure on[in random order] your [asshole][if the player is a bit horny], making you even more aroused[end if]!";
+			say "[pretence] [ShortDesc of I] [one of]rubs against the inside of[or]puts pressure on[in random order] your [asshole][if the player is a bit horny], making you even more aroused[end if]!";
 			passively stimulate asshole from I;
 			if the girth of I > the openness of asshole and diaper quest is 0:
 				let open be the openness of asshole;
@@ -276,7 +283,7 @@ To compute gripping of (I - a thing):
 		increase vaginalGripCount by 1;
 		if the player is in an unbossed predicament room, increase vaginalGripCount by 5;
 		if vaginalGripCount > 23 - ((the girth of I - the openness of vagina) * 2):
-			say "The [ShortDesc of I] [one of]rubs against the inside of[or]puts pressure on[in random order] your [vagina][if the player is a bit horny], making you even more aroused[end if]!";
+			say "[pretence] [ShortDesc of I] [one of]rubs against the inside of[or]puts pressure on[in random order] your [vagina][if the player is a bit horny], making you even more aroused[end if]!";
 			passively stimulate vagina from I;
 			if the girth of I > the openness of vagina and diaper quest is 0:
 				let open be the openness of vagina;

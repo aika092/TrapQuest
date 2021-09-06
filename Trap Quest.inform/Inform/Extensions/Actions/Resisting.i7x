@@ -182,8 +182,10 @@ To say DQResistFlav of (M - a monster):
 	otherwise if M is spanking the player:
 		now spankContinue is the spankExtension of M;
 		say DQSpankResistFlav of M;
-		if spankContinue is 1, say DQSpankResistExtensionFlav of M;
-		otherwise say DQSpankResistReactionFlav of M;
+		if spankContinue is 1:
+			say DQSpankResistExtensionFlav of M;
+		otherwise:
+			say DQSpankResistReactionFlav of M;
 	otherwise if M is enema-filling the player:
 		say DQEnemaResistFlav of M;
 		say DQEnemaResistReactionFlav of M;

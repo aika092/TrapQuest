@@ -480,44 +480,7 @@ To compute spanking of (M - a monster):
 		if C is displacable clothing and M is eager to enhance the spanking:
 			compute M spank displacing C;
 		say SpankingFlav of M;
-		let pain-factor be the spank strength of M;
-		if there is worn ass plugging clothing:
-			let K be a random worn ass plugging clothing;
-			say "The plug[if K is vagina plugging]s[end if] inside of you [if K is jelldo]block[otherwise]send[end if][if K is not vagina plugging]s[end if] the vibrations of the spank [if K is jelldo]from ruining your[otherwise]deep inside your[end if] [if K is vagina plugging][fuckholes][otherwise][asshole][end if]. Ouch!";
-			if K is vagina plugging and K is not jelldo, ruin vagina times 2;
-			if K is not jelldo, ruin asshole times 2;
-		repeat with K running through ass covering clothing:
-			let R be a random number between 0 and 1;
-			if R is 1:
-				[say "Your [K] manages to soften the blows a [one of]tiny bit[or]little[or]small amount[in random order]. ";]
-				decrease pain-factor by 1;
-		let D be a random worn diaper;
-		if D is diaper:
-			if D is messed:
-				say "[one of]The gross squishiness of your messy diaper being spanked makes you cringe and shudder as it oozes around your loins.[or][or][cycling]";
-				humiliate 150;
-				DelicateUp 1;
-				now pain-factor is 0;
-			otherwise:
-				decrease pain-factor by 2;
-		if the reaction of the player > 0, decrease pain-factor by 1;
-		if a random number between 0 and 2 < pain-factor:
-			say "The spanks [if the number of ass covering clothing is 0]collide painfully with your bare ass cheeks[otherwise]still [one of]hurt[or]make you squeal[or]cause you to whimper[at random], even through your clothing[end if]. ";
-			PainUp 1;
-		otherwise:
-			if there is ass covering clothing, say "Thanks to your [if there is a worn diaper]diaper[otherwise][random top level ass protection clothing][end if], you manage to tolerate the [one of]pain[or]punishment[cycling].";
-			otherwise say "You suffer through the pain silently.";
-		let TB be the total squirtable fill of belly;
-		if TB > 0 and the player is able to expel and a random number between (15 - the incontinence of the player) and 15 < TB + (pain-factor * 3) and the latex-transformation of the player < 5 and currently-squirting is 0:
-			say "The pain of the spanking episode causes you to expel your [enema].";
-			asssquirt;
-		otherwise if the incontinence of the player > a random number between 1 and (7 - pain-factor) and the player is full and asshole is not actually occupied and there is a worn total protection soilable knickers:
-			say "The pain from the spanking causes you to lose control of your sphincter!";
-			compute messing;
-		otherwise if the incontinence of the player > (a random number between 1 and (7 - pain-factor)) and the bladder of the player > (bladder-risky-level / 2) and the delicateness of the player > 8:
-			say "The pain of the spanking episode causes you to involuntarily wet yourself.";
-			now delayed urination is 1;
-			try urinating;
+		compute strength (the spank strength of M) spanking;
 		if spankContinue is 1, increase the sex-length of M by 1;
 		now spankContinue is 0;
 	decrease the sex-length of M by 1;
@@ -582,7 +545,12 @@ To say SpankingAftermath of (M - a monster):
 	say "[if the delicateness of the player > 14]By the end of your spanking you are bawling your eyes out, begging [him of M] to stop and pleading with [him of M] to give you another chance to be a good little [boy of the player][otherwise if the delicateness of the player > 8]By the end of your spanking you are crying your eyes out, begging [him of M] to [one of]stop[or]be merciful[at random][otherwise]You are unable to prevent a solitary tear from escaping your eye as you [one of]grit your teeth and try to[or]struggle to[or]try your best to[or]focus your mind to help[at random] tolerate the lingering pain[end if].".
 
 To say SpankingAfterFlav of (M - a monster):
-	say "After this [he of M] seems satisfied, and gives you a cheeky kiss on your sore [if asshole is lewdly exposed]butt cheek[otherwise if there is a worn diaper]bottom through your padding[otherwise]bottom[end if] before leaving you to recover.".
+	if diaper messing is 3 and there is worn messed knickers:
+		do nothing;
+	otherwise if there is worn messed knickers:
+		say "[if M is intelligent][speech style of M]'[one of]You can find someone else to change you - I'm done with you for now[or]I think you deserve to stew in that mess for a little while longer[or]It's almost as if you like being messy. Fine, I'm leaving you like that[in random order].'[roman type][line break][end if][BigNamedesc of M] seems satisfied and leaves you alone to recover.";
+	otherwise:
+		say "After this [he of M] seems satisfied, and gives you a cheeky kiss on your sore [if asshole is lewdly exposed]butt cheek[otherwise if there is a worn diaper]bottom through your padding[otherwise]bottom[end if] before leaving you to recover.".
 
 To say SpankingReactionFlav of (M - a monster):
 	if a random number between 1 and 3 > 1 and the player is able to speak:

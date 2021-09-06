@@ -30,7 +30,7 @@ Section - Restart the timer after undoing
 
 [The state of the timer is not automatically saved with the game state, so we must start a timer after undoing at the same speed it was running when the game state was saved.]
 
-The immediately undo rule response (E) is "[@ reset the Glulx timer][bracket]Previous turn undone.[close bracket][if the player is a top donator][@ reset window setting][@ resolve graphics windows mayhem][@ fix window overhang][end if]".
+The immediately undo rule response (E) is "[@ reset the Glulx timer][bracket]Previous turn undone.[close bracket][if the player is the donator][@ reset window setting][@ resolve graphics windows mayhem][@ fix window overhang][end if]".
 
 To reset window setting:
 	now previousGUILayout is -1.
@@ -257,12 +257,20 @@ To compute animation of (T - an animation track):
 				now the frame-tick of T is 1;
 				let X be the current-frame of T;
 				let img be entry X of the image-reel of T;
+				if debugmode > 2:
+					let CW be the current focus window;
+					focus the main window;
+					say "Current focus window is [CW]. Animation target window is [target-window of T].";
+					focus CW;
 				if T is frameOverriding: [This means it's an image that needs a flat colour drawn behind it each time]
 					if T is imageRedrawing: [This means it's an image in a focus window so we need to redraw the box and the item and icons each time]
 						draw a rectangle animationColour of T in the target-window of T at backgroundX2 of T by backgroundY2 of T with size backgroundW2 of T by backgroundH2 of T; [draw a (usually) white box behind everything except buttons]
 						display the image backgroundF of T in the target-window of T at backgroundX of T by backgroundY of T with dimensions backgroundW of T by backgroundH of T;
 						draw a box backgroundC of T in the target-window of T from backgroundX of T by backgroundY of T to (backgroundX of T + backgroundW of T) by (backgroundY of T + backgroundH of T) with backgroundT of T pixel line-weight, inset;
+						let CW be the current focus window;
+						focus the target-window of T; [elsewise the IconRender will render any icons listed the animated one in the focused window, which is usually the main window]
 						IconRender backgroundThing of T at backgroundX3 of T by backgroundY3 of T with dimensions backgroundW3 of T by backgroundH3 of T;
+						focus CW; [bring the focus back where we expect to avoid bugs]
 					otherwise:
 						draw a rectangle animationColour of T in the target-window of T at animX of T by animY of T with size animW of T by animH of T; [draw a (usually) white box behind it]
 						display the image img in the target-window of T at animX of T by animY of T with dimensions animW of T by animH of T;
@@ -294,9 +302,11 @@ To compute animation of (T - an animation track):
 To decide which object is the TQAnimTrack of (F - a figure-name):
 	decide on nothing.
 
+An icon animation track is a kind of animation track.
+
 Figure of AnimatedRaiseSkirtButtonLight is the file "Special/Buttons/lightMode/skirt3.png".
 Figure of AnimatedRaiseSkirtButtonDark is the file "Special/Buttons/darkMode/skirt3.png".
-skirtDisplacedAnimation is an animation track. skirtDisplacedAnimation is g-looping.
+skirtDisplacedAnimation is an icon animation track. skirtDisplacedAnimation is g-looping.
 To decide which object is the TQAnimTrack of (F - Figure of RaiseSkirtButtonLight):
 	decide on skirtDisplacedAnimation.
 To decide which object is the TQAnimTrack of (F - Figure of RaiseSkirtButtonDark):
@@ -307,7 +317,7 @@ To uniquely set up (T - skirtDisplacedAnimation):
 	otherwise add Figure of AnimatedRaiseSkirtButtonLight to the image-reel of T;
 	add Figure of RaiseSkirtButton to the image-reel of T.
 
-pantsUnzippedAnimation is an animation track. pantsUnzippedAnimation is g-looping.
+pantsUnzippedAnimation is an icon animation track. pantsUnzippedAnimation is g-looping.
 To decide which object is the TQAnimTrack of (F - Figure of UnzipButtonLight):
 	decide on pantsUnzippedAnimation.
 To decide which object is the TQAnimTrack of (F - Figure of UnzipButtonDark):
@@ -317,7 +327,7 @@ To uniquely set up (T - pantsUnzippedAnimation):
 	add Figure of UnzipButton to the image-reel of T;
 	add Figure of ZipButton to the image-reel of T.
 
-pantsDisplacedAnimation is an animation track. pantsDisplacedAnimation is g-looping.
+pantsDisplacedAnimation is an icon animation track. pantsDisplacedAnimation is g-looping.
 To decide which object is the TQAnimTrack of (F - Figure of DisplaceButtonLight):
 	decide on pantsDisplacedAnimation.
 To decide which object is the TQAnimTrack of (F - Figure of DisplaceButtonDark):
@@ -331,7 +341,7 @@ Figure of AnimatedAlarmIconLight2 is the file "Special/Buttons/lightMode/alarm2.
 Figure of AnimatedAlarmIconLight3 is the file "Special/Buttons/lightMode/alarm3.png".
 Figure of AnimatedAlarmIconDark2 is the file "Special/Buttons/darkMode/alarm2.png".
 Figure of AnimatedAlarmIconDark3 is the file "Special/Buttons/darkMode/alarm3.png".
-alarmAnimation is an animation track. alarmAnimation is g-looping.
+alarmAnimation is an icon animation track. alarmAnimation is g-looping.
 To decide which object is the TQAnimTrack of (F - Figure of AlarmIconLight):
 	decide on alarmAnimation.
 To decide which object is the TQAnimTrack of (F - Figure of AlarmIconDark):
@@ -351,7 +361,7 @@ Figure of AnimatedSirenIcon1 is the file "Special/Animations/Siren/frame1.png".
 Figure of AnimatedSirenIcon2 is the file "Special/Animations/Siren/frame2.png".
 Figure of AnimatedSirenIcon3 is the file "Special/Animations/Siren/frame3.png".
 Figure of AnimatedSirenIcon4 is the file "Special/Animations/Siren/frame4.png".
-sirenAnimation is an animation track. sirenAnimation is g-looping. The image-reel of sirenAnimation is {Figure of AnimatedSirenIcon1, Figure of AnimatedSirenIcon2, Figure of AnimatedSirenIcon3, Figure of AnimatedSirenIcon4}.
+sirenAnimation is an icon animation track. sirenAnimation is g-looping. The image-reel of sirenAnimation is {Figure of AnimatedSirenIcon1, Figure of AnimatedSirenIcon2, Figure of AnimatedSirenIcon3, Figure of AnimatedSirenIcon4}.
 To decide which object is the TQAnimTrack of (F - Figure of EatButtonLight):
 	decide on sirenAnimation.
 To decide which object is the TQAnimTrack of (F - Figure of EatButtonDark):

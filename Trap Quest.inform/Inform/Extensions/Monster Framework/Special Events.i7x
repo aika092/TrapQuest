@@ -90,8 +90,9 @@ To decide which object is the juice-collector of (L - a liquid-object):
 	let collecting be nothing;
 	unless the player is not able to use their hands:
 		let LV be a list of things;
-		repeat with V running through carried open topped vessels:
-			unless the doses of V >= the max-doses of V and (diaper quest is 1 or V is monster-origin) and ((L is urine and the fill-colour of V is golden) or (L is milk and the fill-colour of V is white) or (L is murkwater and the fill-colour of V is murky)), add V to LV; [vessels that satisfy these conditions, there would be no point in refilling with new stuff]
+		repeat with V running through carried vessels:
+			if V is not tight topped:
+				unless the doses of V >= the max-doses of V and (diaper quest is 1 or V is monster-origin) and ((L is urine and the fill-colour of V is golden) or (L is milk and the fill-colour of V is white) or (L is murkwater and the fill-colour of V is murky)), add V to LV; [vessels that satisfy these conditions, there would be no point in refilling with new stuff]
 		if the number of entries in LV > 0:
 			reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 			truncate LV to 9 entries;
@@ -1308,15 +1309,15 @@ A time based rule (this is the musk horniness rule):
 			arouse 150.
 
 To compute phero submission to (M - a monster):
-	if M is musky and mythical creature fetish is 1 and a random number between 3 and 7 > the intelligence of the player:
+	if M is musky and mythical creature fetish is 1 and a random number between 3 and 7 > the intelligence of the player and M is not penetrating a body part and M is not grabbing the player:
 		now auto is 1;
 		let B be a random actually presentable body part;
 		if B is not vagina and vagina is actually presentable and M is male and M is willing to do vaginal, now B is vagina;
 		if B is not asshole and asshole is actually presentable and M is male and M is willing to do anal, now B is asshole;
-		if B is not breasts and the class of the player is cowgirl and M is male and M is willing to do titfucks, now B is breasts;
+		if B is not breasts and breasts is actually presentable and the class of the player is cowgirl and M is male and M is willing to do titfucks, now B is breasts;
 		now auto is 0;
 		if B is body part:
-			say "You can't take it anymore! You immediately [if the player is upright]drop to your knees[otherwise]crawl over[end if] and present yourself for [if pregnancy fetish is 1 and B is vagina]breeding[otherwise]the use of this virile stud[end if].";
+			say "You can't take it any more! You immediately [if the player is upright]drop to your knees[otherwise]crawl over[end if] and present yourself for [if pregnancy fetish is 1 and B is vagina]breeding[otherwise]the use of this virile stud[end if].";
 			compute silent surrender to M;
 			if the player is prone, try direct-presenting B to M.
 
@@ -1367,5 +1368,81 @@ To say GangAnnounce:
 	otherwise if O is monster and (A is live thing or V is live thing):
 		if debugmode > 0, say "((Fucked by [O] and [if A is live thing][A][otherwise][V][end if]))";
 		say "[line break][bold type]You're being spit roasted![roman type][line break]".
+
+To compute strength (pain-factor - a number) spanking:
+	if the latex-transformation of the player > 5:
+		say "You hardly feel anything thanks to your rubbery butt cheeks.";
+	otherwise:
+		repeat with K running through ass covering clothing:
+			decrease pain-factor by a random number between 0 and 1;
+		let D be a random worn diaper;
+		if D is diaper:
+			if D is perceived messed:
+				say "[one of]The gross squishiness of your messy diaper being spanked makes you cringe and shudder as it oozes around your loins.[or][or][cycling]";
+				moderateHumiliate;
+				decrease pain-factor by 1;
+			if diaper-stack is worn, now pain-factor is 0;
+			decrease pain-factor by (the DQBulk of D + 2) / 2;
+		if a random number between 0 and 2 < pain-factor:
+			say "The spanks [if the number of ass covering clothing is 0]collide painfully with your bare ass cheeks[otherwise]still [one of]hurt[or]make you squeal[or]cause you to whimper[at random], even through your clothing[end if]. ";
+			PainUp 1;
+		otherwise:
+			if there is ass covering clothing, say "Thanks to your [if diaper-stack is worn or the DQBulk of the player > 3]extra-thick padding[otherwise if D is diaper]layer of padding[otherwise][random top level ass protection clothing][end if], you manage to tolerate the [one of]pain[or]punishment[cycling].";
+			otherwise say "You suffer through the pain silently.";
+		if pain-factor < 0 and there is a worn diaper and the diaper addiction of the player < the delicateness of the player:
+			say "You find yourself feeling [if the player is feeling submissive]extremely [otherwise if the player is feeling dominant]a tad [end if][one of]grateful[or]thankful[or]relieved[in random order] that you [one of]are padded[or]wearing a padded diaper[or]so well-padded down there[or]diapered[in random order]!";
+			SilentlyDiaperAddictUp 1;
+		if there is worn ass plugging clothing:
+			let K be a random worn ass plugging clothing;
+			say "The plug[if K is vagina plugging]s[end if] inside of you [if K is jelldo]block[otherwise]send[end if][if K is not vagina plugging]s[end if] the vibrations of the spank [if K is jelldo]from ruining your[otherwise]deep inside your[end if] [if K is vagina plugging][fuckholes][otherwise][asshole][end if]. ";
+			if pain-factor > 0 and K is not jelldo:
+				say "Ouch!";
+				if K is vagina plugging, ruin vagina times (the square root of pain-factor);
+				ruin asshole times (the square root of pain-factor);
+			otherwise:
+				say "[if K is jelldo]The soft jelly material[otherwise]It[end if] feels good!";
+				if K is vagina plugging, stimulate vagina from K;
+				stimulate asshole from K.
+
+[Does the player let out a little squirt, or perhaps even a full enema?]
+To check sudden squirt with reason (T - a text):
+	check enema holding with reason T; [handles both full enema loss and little squirts]
+	if player-just-enema-leaked is false, check pee leaking with reason T.
+
+[Does the player let out everything or maybe just a little squirt?]
+To check sudden spit and expulsion with reason (T - a text):
+	check accidental spitting with reason T;
+	check sudden expulsion with reason T.
+
+[Does the player let out everything or maybe just a little squirt?]
+To check sudden expulsion with reason (T - a text):
+	check accidental spitting with reason T;
+	check enema holding with reason T; [handles both full enema loss and little squirts]
+	if player-just-enema-leaked is false:
+		if T matches the text "orgasm", now hasMessedNow is false;
+		otherwise check real messing with reason T;
+		if hasMessedNow is false:
+			if T matches the text "orgasm":
+				if the player is possessing a vagina and player-fucking is DOMINANT-NONE and watersports mechanics is 1, check pee pressure with reason T; [player can't pee while cumming in many circumstances]
+			otherwise:
+				check pee pressure with reason T. [handles both full peeing and little leaks]
+
+To compute sudden squirt into (K - an object) disapproval:
+	if K is clothing:
+		update appearance level;
+		repeat with P running through people in the location of the player:
+			unless P is uninterested bystander or P is combative monster, check disapproval of P;
+	otherwise:
+		repeat with P running through reactive people:
+			compute sudden floor squirt disapproval of P.
+
+To compute sudden floor squirt disapproval of (P - a person):
+	do nothing.
+To compute sudden floor squirt disapproval of (P - a bystander):
+	compute squirting perception of P.
+To compute sudden floor squirt disapproval of (M - a monster):
+	if diaper quest is 1, compute cringe disapproval of M;
+	otherwise compute disapproval of M.
+	
 
 Special Events ends here.

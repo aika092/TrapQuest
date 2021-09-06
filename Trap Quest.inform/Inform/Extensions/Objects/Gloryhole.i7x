@@ -144,7 +144,7 @@ To compute gloryhole blowjob receipt:
 		now gloryhole is blowjob portal;
 		now the player-reaction of the player is submitting;
 		say "You gasp in shock as [one of]a strangely familiar [ShortDesc of penis] is forced into your mouth! As the [player-penis] pushes past your lips, you feel a pair of lips move around your own. Then, as your tongue touches the base of the [player-penis], you feel a tongue touch the base of your own.[line break][variable custom style]Wait a minute... I'm sucking my own [player-penis]! How [if the bimbo of the player < 9]awful[otherwise if the bimbo of the player < 13]weird[otherwise]cool[end if]![roman type][line break][or]your [ShortDesc of penis] once again enters your own mouth.[stopping][GotUnluckyFlav]You [if the bimbo of the player < 10]can't help but [end if]moan as your own mouth starts to stimulate you, and [one of][if the sex addiction of the player < 8]since the magic of the gloryhole clearly isn't going to let you go until you've finished[otherwise]unable to resist the pleasure[end if],[or]once again[stopping] you [if the oral sex addiction of the player < 4]reluctantly [end if]get to work.";
-		say "[one of][variable custom style]How weird is this![roman type][line break][or][stopping][if the oral sex addiction of the player < 4][one of]But although you start off reluctantly sucking your own [player-penis], you're soon telling yourself that it's not so much you're sucking a [manly-penis], as you've just found a new way to wank, right?[line break][variable custom style]I mean, how different is this to those guys who are so flexible they can bend over and suck their own [manly-penis]s? It's not like this is training me to enjoy sucking [manly-penis]s, ha ha![roman type][line break][or][stopping][otherwise][one of]It doesn't take long, though, before you're really getting into this! It's like having the perfect blowjob partner: you can imagine your [player-penis] is being swallowed whole by some hot bitch who can magically read your mind to know exactly what you'd like done at any instant.[line break][variable custom style]Mmm, like that![roman type][line break]You wrap your tongue around the tip, rasping it up against the sensitive underside, and feel your [ShortBallsDesc] throb in reaction.[line break][variable custom style]Yeah, bitch, just like that![roman type][line break]You hum, making your [player-penis] vibrate deliciously. You suck harder, and feel more blood rush into the fleshy rod jabbing into your mouth, stiffening it even further.[line break][variable custom style]Wow, sucking [manly-penis]s is fun![roman type][line break]You start to really get into the sensation of the silken-smooth, stiff staff thrusting into your mouth.[or][stopping][end if]";
+		say "[one of][variable custom style]How weird is this![roman type][line break][or][stopping][if the oral sex addiction of the player < 4][one of]But although you start off reluctantly sucking your own [player-penis], you're soon telling yourself that it's not so much you're sucking a [manly-penis], as you've just found a new way to wank, right?[line break][variable custom style]I mean, how different is this to those guys who are so flexible they can bend over and suck their own [manly-penis]s? It's not like this is training me to enjoy sucking [manly-penis]s, ha ha![roman type][line break][or][stopping][otherwise][one of]It doesn't take long, though, before you're really getting into this! It's like having the perfect blowjob partner: you can imagine your [player-penis] is being swallowed whole by some hot bitch who can magically read your mind to know exactly what you'd like done at any instant.[line break][variable custom style]Mmm, like that![roman type][line break]You wrap your tongue around the tip, rasping it up against the sensitive underside, and feel your [ShortDesc of scrotum] throb in reaction.[line break][variable custom style]Yeah, bitch, just like that![roman type][line break]You hum, making your [player-penis] vibrate deliciously. You suck harder, and feel more blood rush into the fleshy rod jabbing into your mouth, stiffening it even further.[line break][variable custom style]Wow, sucking [manly-penis]s is fun![roman type][line break]You start to really get into the sensation of the silken-smooth, stiff staff thrusting into your mouth.[or][stopping][end if]";
 		if the size of penis < 4:
 			say "Your [player-penis] slips and slides comfortably around inside your mouth. It's like a little swizzle-stick, a small candy that you can push and prod and poke around to your heart's content. It's so small it's easy to manoeuvre, even stiff as it is and at its full but minuscule erection! You certainly don't have to worry about gagging on [italic type]this[roman type] cute little thing! But then it occurs to you that this is [italic type]your[roman type] dick, and you feel yourself blush in shame.";
 			moderateHumiliate;
@@ -176,6 +176,9 @@ To compute gloryhole upper blowjob:
 	now busy is 1;
 	now gloryhole is upper oral;
 	now gloryhole is gloryunwrapped;
+	[#LXorDD]
+	if the player is possessing a penis and (the player is getting unlucky or a random number between 1 and 1 is 1), now gloryhole is a-dick-detacher;
+	say "Uh-oh, ####Selkie forgot to make something less certain: now you're in trouble!";
 	say GloryHoleSuction;
 	say "You hear a playful feminine giggle as the pair of soft lips [if the player is possessing a penis]close around your [ShortDesc of penis][otherwise if the player is possessing a vagina]press against your labia[end if]. But then a split second later, the mouth disappears! You know something is up but it's too late. You watch in [horror (the oral sex addiction of the player * 2)] as a large [manly-penis] advances through the upper hole, sealing your [LipDesc] around it as it [if the oral sex addiction of the player < 12]forces[otherwise]pushes[end if] them apart. The penis begins thrusting in and out of your mouth.";
 	now gloryhole is penetrating face;
@@ -200,10 +203,15 @@ To compute gloryhole genital modification:
 		say "[if C is chastity cage]Before you can react, someone on the other end of the hole has forced something rigid around your [ShortDesc of penis]! The suction stops and you pull back to find that you are now wearing a [C]![otherwise][GloryHoleSuction]While you are stuck, you can feel somebody reach through the hole and start pushing sections of metal against your hips. Within moments, a full female chastity belt has been locked on to your body. The suction stops and you are able to step backwards and properly inspect your new attire[end if]![line break][variable custom style][if the anal sex addiction of the player < 3]What the fuck?![otherwise if the anal sex addiction of the player < 5]Nooooo![otherwise if the anal sex addiction of the player < 7]I don't deserve this, do I?![otherwise if diaper lover is 1]Uh-oh, it looks like I'm going to have to get my cummies with my [asshole] now![otherwise]Looks like I'm going to have to get my orgasms with my [asshole] now! Sounds like fun![end if][roman type][line break]";
 	otherwise:
 		if the player is possessing a penis:
-			say "Somebody slaps your [ShortDesc of penis] painfully!";
-			PainUp 1;
-			PenisDown 1;
-			say "You reflexively pull back.";
+			if gloryhole is a-dick-detacher and penis-is-detachable by gloryhole using 1: [#LXorDD]
+				say "You're enjoying both the sensations and the feeling of dominance";
+				compute detach-players-dick by gloryhole using 1;
+				say GotUnluckyFlav;
+			otherwise:
+				say "Somebody slaps your [ShortDesc of penis] painfully!";
+				PainUp 1;
+				PenisDown 1;
+				say "You reflexively pull back.";
 		otherwise:
 			say "Somebody flicks your clitoris painfully! You pull it back out, but the [if the sex addiction of the player < 10]shocking [end if]experience has made you more submissive.";
 			PainUp 2;
@@ -247,6 +255,11 @@ To say SexSubmissionFlav of (G - a gloryhole):
 
 [This will only happen if the player has a different type of orgasm while getting sucked, e.g. by inserting something in their butt]
 To compute erection orgasm of (M - gloryhole):
+	if M is a-dick-detacher and penis-is-detachable by M using 1: [#LXorDD]
+		say "[one of]Panting, you thrust one last time [or]You feel the [semen] about to burst forth[or][line break][variable custom style]Yes, yes![roman type][line break]You're just about to explode [at random]";
+		compute detach-players-dick by M using 1;
+		compute gloryhole dislodging;
+		stop;
 	say "You feel the girl keep her mouth wrapped around your [player-penis] to catch your [if the size of penis > 4]entire [otherwise if the size of the penis < 3]tiny[end if]load, and then swallow it all in one [if the size of penis > 7]large gulp[otherwise if the size of the penis < 3]small sip[otherwise]swallow[end if]. The lips remove themselves from your member and then the magical force keeping you pressed to the wall disappears, allowing you to leave. You slowly pull your [player-penis] out of the hole.";
 	if the size of the penis < 3:
 		say "[one of]The amused look she gives you make your cheeks turn bright pink.[or]She smirks and holds up her pinkie finger, giving it a little wiggle. Once again you feel your cheeks burning.[or]She purses her lips in a [italic type]tiny[roman type] air-kiss.[stopping]";

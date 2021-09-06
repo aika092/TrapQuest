@@ -116,8 +116,8 @@ Definition: a student (called M) is rank-relevant:
 	if max-rank of M > the rank of the player, decide yes;
 	decide no.
 
-A student has an indexed text called student-name. The student-name of a student is usually "Anonymous".
-A student has an indexed text called student-print. The student-print of a student is usually "student".
+A student has a text called student-name. The student-name of a student is usually "Anonymous".
+A student has a text called student-print. The student-print of a student is usually "student".
 
 Understand the student-name property as describing a student.
 
@@ -215,6 +215,7 @@ To optimise students: [happens just before class starts]
 
 
 To update students: [happens after the player is promoted]
+	force clothing-focus redraw; [armband has changed colour]
 	if the rank of the player is 2:
 		set up rank two students;
 	if the rank of the player is 3:

@@ -23,6 +23,9 @@ A monokini is a kind of swimsuit. A monokini is usually crotch-intact. Understan
 
 To decide which number is the initial outrage of (C - a monokini):
 	decide on 3.
+To decide which number is the crotch-tightness of (C - a monokini):
+	if C is crotch-intact, decide on 3;
+	decide on 0.
 To decide which number is the initial armour of (C - a monokini):
 	decide on 4.
 

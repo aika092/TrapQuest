@@ -234,6 +234,9 @@ To decide which number is the EnslavedDominationThreshold of (M - teacher-seraph
 	decide on 8.
 
 tits-lesson is a lesson. The lesson-teacher of tits-lesson is teacher-seraphina.
+Definition: tits-lesson is lesson-appropriate:
+	if the player is top heavy and the largeness of breasts < 6, decide no;
+	decide yes.
 
 To compute teaching of (L - tits-lesson):
 	let M be the lesson-teacher of L;
@@ -859,26 +862,26 @@ To compute teaching of (L - swimming-lesson):
 			set next numerical response to "wait";
 			compute multiple choice question;
 			let CNR be the chosen numerical response;
-			if the printed name of CNR matches the text "swim":
+			if the CNR matches the text "swim":
 				let D be a random number between 1 and ((the dexterity of the player / 10) + (the number of worn swimming themed wearthing * 2));
 				if D > 1 and playerWeight > 0, decrease D by 1;
 				say "You make [if D <= 1]slow[otherwise if D is 2]decent[otherwise if D is 3]excellent[otherwise]rapid[end if] progress towards the shallow end[if playerWeight > 0], [one of]hampered by the heavy weight in your hand[or]slowed down by the weight[purely at random][end if].";
 				increase playerDistance by D;
 				if playerDistance >= 10, say "[bold type]You make it to the end of the pool![roman type][line break]";
-			otherwise if the printed name of CNR matches the text "wipe":
+			otherwise if the CNR matches the text "wipe":
 				say "You spend some time clearing the thick goop from your eyes so you can see more clearly again.";
 				remove yourself from LCumBlinded;
 				now the semen coating of face is 8; [greater than 8 causes the cum blinded status icon]
-			otherwise if the printed name of CNR matches the text "dive":
+			otherwise if the CNR matches the text "dive":
 				add yourself to LWeightDivers;
-			otherwise if the printed name of CNR matches the text "drop":
+			otherwise if the CNR matches the text "drop":
 				let WeightName be entry playerWeight of LWeights;
 				say "You drop [if WeightName is yourself]your[otherwise][NameDesc of WeightName][']s[end if] weight back into the pool, freeing your hands.";
 				if WeightName is student:
 					if WeightName is listed in LCumBlinded, say "[BigNameDesc of WeightName] doesn't seem to notice that you've dropped [his of WeightName] weight, probably because of all the sticky [semen] plastered across [his of WeightName] eyes.";
 					otherwise HappinessDown WeightName by 2; [If they can see, they're upset that you've dropped the weight back down]
 				now playerWeight is 0;
-			otherwise if the printed name of CNR matches the text "Get out":
+			otherwise if the CNR matches the text "Get out":
 				remove yourself from LInPool;
 				add yourself to LOutOfPool;
 				say "You heave yourself out of the pool[if yourself is listed in LCumBlinded] and begin wiping the [semen] from your eyes[end if].";
@@ -994,6 +997,7 @@ To compute teaching of (L - swimming-lesson):
 			otherwise:
 				if ST is yourself:
 					say "You flip your body downwards and [if the player is listed in LCumBlinded]once again [end if]submerge yourself in search of a weight. You quickly find one, returning to the surface to gasp for air and inspect your prize.";
+					now playerWeight is 0;
 				otherwise:
 					say "[BigNameDesc of ST] dives for a weight! ";
 					if ST is listed in LCumBlinded:
@@ -1343,7 +1347,7 @@ To compute teaching of (L - chess-lesson):
 
 [The playing chess rules is a rulebook.]
 
-chess-move is an indexed text that varies.
+chess-move is a text that varies.
 chess-move-choice is a number that varies.
 chess-lesson has a number called defensive-move.
 
@@ -1639,7 +1643,7 @@ To compute chess move input:
 	set numerical response 0 to "look";
 	compute multiple choice question;
 	let CNR be the chosen numerical response;
-	now chess-move is the printed name of CNR;
+	now chess-move is CNR;
 	if chess-move is "look":
 		now chess-move-choice is 0; [allow it to happen]
 		try looking;
@@ -1776,6 +1780,8 @@ To compute chess loss punishment:
 	if ST is promotable, promote ST;
 	say "[speech style of M]'And now, it's punishment time!'[roman type][line break]The rest of the student body begins to file out of the hall, as your fishbowl quickly fills up to the brim with [if watersports fetish is 1][urine][otherwise][semen][end if], and then the fucking machine ramps up its speed until it's brutally pumping your [variable F] at a rapid rate! [BigNameDesc of M] speaks again.[line break][speech style of M]'Now, let's allow [NameBimbo] to sit and... [']stew['] on [his of the player] failings! Nobody is allowed to release [him of the player], understand? Okay, assembly is over!'[roman type][line break]";
 	summon fishbowl-hat locked;
+	if watersports fetish is 1, now fishbowl-hat is fishbowl-urine;
+	otherwise now fishbowl-hat is fishbowl-cum;
 	repeat with X running through monsters in the location of the player:
 		distract X;
 		compute mandatory room leaving of X;
@@ -1966,39 +1972,91 @@ To say FuckingDesc of (M - an ultimate-lesson-actor):
 To say MonsterDesc of (M - an ultimate-lesson-actor):
 	say "Who knows what this [man of M] looks like. You know nothing about [him of M][if the player is not in a predicament room], other than [he of M] clearly is a high ranking member of this institution[end if]. You'll probably never find out who [he of M] is.".
 To compute action (N - a number) of (M - an ultimate-lesson-actor):
-	if M is in a predicament room and M is penetrating face:
-		if a random number between 1 and 3 > 1:
-			say "[one of]You bob your head up and down, [if the humiliation of the player < 10000]eyes screwed shut in shame[otherwise if the sex addiction of the player < 10]eyes closed[otherwise]looking up at the art of the fireman's hunky body[end if] as you submissively polish [his of M] shaft[or]You make [if the oral sex addiction of the player < 4]quiet[otherwise if the oral sex addiction of the player < 6]distinct[otherwise]exaggerated[end if] slurping noises as you suck [FuckerDesc of M][']s cock, [if the oral sex addiction of the player < 3]determined to get this over and done with as soon as possible[otherwise if the oral sex addiction of the player < 5]determined to get [him of M] off as soon as possible[otherwise]determined to get [him of M] shooting off in your mouth as soon as possible[end if][or][BigFuckerDesc of M] thrusts back and forth through the gloryhole to complement the [if the oral sex addiction of the player > 5]enthusiastic [otherwise if the oral sex addiction of the player < 4]slow [end if]bobbing of your head[or][BigFuckerDesc of M] holds [himself of M] completely still, [if the sex addiction of the player < 7]forcing[otherwise if the oral sex addiction of the player < 6]encouraging[otherwise]allowing[end if] you to do all the work[or][BigFuckerDesc of M] grunts in pleasure as your tongue runs over the head of [his of M] [manly-penis][or][BigFuckerDesc of M] chuckles to [himself of M] as you submissively pleasure [his of M] [manly-penis] with your mouth[in random order][if current-predicament is gloryhole-predicament]. [one of]You can't stop thinking about how everything is being recorded, and your cheeks burn.[or][stopping][otherwise].[end if]";
-		otherwise:
-			BlowCount;
-			if M is wrapped:
-				say "[one of][BigFuckerDesc of M] pushes forward as far as [he of M] can go, hissing through [his of M] teeth as [his of M] condom fills with warmth.[or][BigFuckerDesc of M][']s [DickDesc of M] throbs powerfully, firing off load after load of warm [semen] into the condom.[in random order]";
-				if lycra-bodysuit is in Toilet01:
-					say "After [he of M] pulls away, you hear [him of M] fumbling with the condom for a few moments.";
-					increase the used condoms of lycra-bodysuit by 1;
-				orgasm M;
+	if M is in a predicament room:
+		if current-predicament is gloryhole-key-predicament and gloryhole-key-predicament is ass-to-mouth-agreed and the sex-length of M > 0:
+			if M is penetrating face:
 				dislodge M;
-				now M is not wrapped;
-			otherwise if [current-predicament is nun-walk-predicament and ]player-gagging is false:
-				say "[BigFuckerDesc of M] grunts as [he of M] fills your mouth with [his of M] salty load.";
-				FaceFill semen by the semen load of M;
-				orgasm M;
-				if the player is in Toilet02 and current-predicament is gloryhole-predicament and the semen-spat of gloryhole-predicament is 0, say "[bold type]If you spit it out, you will be penalised.[roman type][line break]";
-				if current-predicament is gloryhole-predicament, suggest swallowing;
-			otherwise: [Deepthroat cumshot]
-				compute deepthroat creampie of M;
-			if current-predicament is gloryhole-predicament:
-				increase the cocks-sucked of gloryhole-predicament by 1;
-				if id-poster is in Toilet01 and the remainder after dividing the cocks-sucked of gloryhole-predicament by 2 is 0, say "[speech style of M]'[one of]Thanks a lot[or]Good job[in random order], [NameBimbo].'[line break][variable custom style][one of]'Wait what?! How do you know my name?!'[or]How does [he of M] know my name?! What can [he of M] see on [his of M] side of the wall?![stopping][roman type][line break]";
-				say "With [one of]an ashamed[or]a satisfied[or]a giddy[purely at random] noise, [NameDesc of M] pulls [his of M] [manly-penis] back through the hole and quickly [one of]leaves[or]makes [himself of M] scarce[or]flees the scene[in random order].[line break][variable custom style]That's [cocks-sucked of gloryhole-predicament] down[if the cocks-sucked of gloryhole-predicament is 1]. I could go retrieve my key now, but unless I suck four more [manly-penis]s, the CCTV footage of what I just did will be uploaded to the internet and sent to my friends...[otherwise if the cocks-sucked of gloryhole-predicament < 5]...[otherwise]. I'm done![end if][roman type][line break]";
+				now M is penetrating asshole;
+				say "[one of]After finishing cleaning off[or]After you're done hoovering up the sordid mix of saliva and butt-juice from[or]When you've finished sucking it all off[in random order] [NameDesc of M][']s [manly-penis], you turn around [one of]to return [his of M] [manly-penis] to the depths of your [asshole][or]and inch your [asshole] back onto [his of M] [manly-penis][or]to once again impale yourself on [his of M] length[or]and push [his of M] [manly-penis] back into your [asshole], one inch at a time[then at random]. [one of]Once [he of M][']s back inside[or]After [he of M][']s bottomed out inside you once again[cycling], you [one of]resume the anal sex, moving your hips back and forth along [his of M] length[or]recommence bouncing up and down on [his of M] meaty dick[or]get to work coating [his of M] head and shaft with the taste of your ass once more[then at random].";
+				ruin asshole;
 			otherwise:
-				say "With [one of]an ashamed[or]a satisfied[or]a giddy[purely at random] noise, [NameDesc of M] pulls [his of M] [manly-penis] back through the hole and quickly [one of]leaves[or]makes [himself of M] scarce[or]flees the scene[in random order].[if current-predicament is nun-walk-predicament and the semen volume of face < 4 and the semen volume of face > 0][line break][variable custom style]I've got some cum now... but is it enough to make sure I still have some left if I accidentally lose some on the way home?[roman type][line break][end if]";
-			destroy M.
+				dislodge M;
+				now M is penetrating face;
+				say "[one of]You pull forward, allowing [NameDesc of M][']s [manly-penis] to fall out of your [asshole] with a soft 'pop'[or]You gently ease [NameDesc of M][']s thick shaft out of your [asshole][in random order], [one of]and then turn around to approach it with your face[or]before turning around[in random order]. [if the player is a nympho][one of]Secretly excited about the depravity of it all, [or]You fight back a strong desire to touch yourself as [or]You lick your lips greedily before[or]Salivating with anticipation, [in random order][otherwise if the player is a pervert][one of]You lick your lips nervously before [or]You force yourself not to hesitate before [or]Holding your breath, [or]Doing your best not to think too hard about what you're doing, [in random order][otherwise][one of]Doing your best to suppress your revulsion, [or]You fight back the urge to retch as [or]Holding your breath and pinching your nose, [or]Desperately trying not to think about what you're doing, [in random order][end if]you [one of]envelop the recently-sodomising stick with your [LipDesc][or]get to work sucking your own ass juices off this anonymous [man of M][']s [manly-penis][or]get to work licking up your own ass sweat[or]start to slurp the bitter wetness off [his of M] bulbous tip[or]use your mouth and tongue to clean off [his of M] [manly-penis][in random order]. [strongHumiliateReflect]";
+		otherwise if M is penetrating face:
+			if a random number between 1 and 3 > 1:
+				say "[one of]You bob your head up and down, [if the humiliation of the player < 10000]eyes screwed shut in shame[otherwise if the sex addiction of the player < 10 or current-predicament is gloryhole-key-predicament]eyes closed[otherwise]looking up at the art of the fireman's hunky body[end if] as you submissively polish [his of M] shaft[or]You make [if the oral sex addiction of the player < 4]quiet[otherwise if the oral sex addiction of the player < 6]distinct[otherwise]exaggerated[end if] slurping noises as you suck [FuckerDesc of M][']s [manly-penis], [if the oral sex addiction of the player < 3]determined to get this over and done with as soon as possible[otherwise if the oral sex addiction of the player < 5]determined to get [him of M] off as soon as possible[otherwise]determined to get [him of M] shooting off in your mouth as soon as possible[end if][or][BigFuckerDesc of M] thrusts back and forth through the gloryhole to complement the [if the oral sex addiction of the player > 5]enthusiastic [otherwise if the oral sex addiction of the player < 4]slow [end if]bobbing of your head[or][BigFuckerDesc of M] holds [himself of M] completely still, [if the sex addiction of the player < 7]forcing[otherwise if the oral sex addiction of the player < 6]encouraging[otherwise]allowing[end if] you to do all the work[or][BigFuckerDesc of M] grunts in pleasure as your tongue runs over the head of [his of M] [manly-penis][or][BigFuckerDesc of M] chuckles to [himself of M] as you submissively pleasure [his of M] [manly-penis] with your mouth[in random order][if current-predicament is gloryhole-predicament]. [one of]You can't stop thinking about how everything is being recorded, and your cheeks burn.[or][stopping][otherwise].[end if]";
+			otherwise:
+				BlowCount;
+				if M is wrapped:
+					say "[one of][BigFuckerDesc of M] pushes forward as far as [he of M] can go, hissing through [his of M] teeth as [his of M] condom fills with warmth.[or][BigFuckerDesc of M][']s [DickDesc of M] throbs powerfully, firing off load after load of warm [semen] into the condom.[in random order]";
+					if lycra-bodysuit is in Toilet01:
+						say "After [he of M] pulls away, you hear [him of M] fumbling with the condom for a few moments.";
+						increase the used condoms of lycra-bodysuit by 1;
+					orgasm M;
+					dislodge M;
+					now M is not wrapped;
+				otherwise if [current-predicament is nun-walk-predicament and ]player-gagging is false:
+					say "[BigFuckerDesc of M] grunts as [he of M] fills your mouth with [his of M] salty load.";
+					FaceFill semen by the semen load of M;
+					orgasm M;
+					if the player is in Toilet02 and current-predicament is gloryhole-predicament and the semen-spat of gloryhole-predicament is 0, say "[bold type]If you spit it out, you will be penalised.[roman type][line break]";
+					if current-predicament is gloryhole-predicament, suggest swallowing;
+					if current-predicament is gloryhole-key-predicament:
+						if the keys-agreed of gloryhole-key-predicament > 0 and a random number between 1 and 2 is 1:
+							say "[speech style of M]'Swallow it. Or the deal's off.'[roman type][line break]";
+							reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+							set numerical response 1 to "swallow";
+							set numerical response 2 to "pretend to swallow";
+							set numerical response 3 to "refuse to swallow";
+							compute multiple choice question;
+							if player-numerical-response is 1:
+								compute swallowing;
+							otherwise if player-numerical-response is 2:
+								say "You do your best to make an exaggerated gulping sound.";
+								if a random number between 1 and 3 is 1:
+									say "[speech style of M]'I can tell that was fake, you naughty slut. That's it, you get nothing.'[roman type][line break]";
+									now the keys-agreed of gloryhole-key-predicament is 0;
+								otherwise:
+									now player-numerical-response is 1;
+							otherwise if player-numerical-response is 3:
+								say "[variable custom style]'Uh-uh.'[roman type][line break]You make it clear that this would be a step too far for you.[line break][speech style of M]'Fine. [if the keys-agreed of gloryhole-key-predicament is 1]But you just lost your rights to this key[otherwise]But for that, instead of [the keys-agreed of gloryhole-key-predicament] keys, I'm only going to give you [the keys-agreed of gloryhole-key-predicament - 1][end if].'[roman type][line break]";
+								decrease the keys-agreed of gloryhole-key-predicament by 1;
+				otherwise: [Deepthroat cumshot]
+					compute deepthroat creampie of M;
+				if current-predicament is gloryhole-predicament:
+					increase the cocks-sucked of gloryhole-predicament by 1;
+					if id-poster is in Toilet01 and the remainder after dividing the cocks-sucked of gloryhole-predicament by 2 is 0, say "[speech style of M]'[one of]Thanks a lot[or]Good job[in random order], [NameBimbo].'[line break][variable custom style][one of]'Wait what?! How do you know my name?!'[or]How does [he of M] know my name?! What can [he of M] see on [his of M] side of the wall?![stopping][roman type][line break]";
+					say "With [one of]an ashamed[or]a satisfied[or]a giddy[purely at random] noise, [NameDesc of M] pulls [his of M] [manly-penis] back through the hole and quickly [one of]leaves[or]makes [himself of M] scarce[or]flees the scene[in random order].[line break][variable custom style]That's [cocks-sucked of gloryhole-predicament] down[if the cocks-sucked of gloryhole-predicament is 1]. I could go retrieve my key now, but unless I suck four more [manly-penis]s, the CCTV footage of what I just did will be uploaded to the internet and sent to my friends...[otherwise if the cocks-sucked of gloryhole-predicament < 5]...[otherwise]. I'm done![end if][roman type][line break]";
+				otherwise if current-predicament is gloryhole-key-predicament:
+					if gloryhole-key-predicament is ass-to-mouth-agreed:
+						AnalSexAddictUp 1;
+						now gloryhole-key-predicament is not ass-to-mouth-agreed;
+					compute gloryhole key resolution of M;
+				otherwise:
+					say "With [one of]an ashamed[or]a satisfied[or]a giddy[purely at random] noise, [NameDesc of M] pulls [his of M] [manly-penis] back through the hole and quickly [one of]leaves[or]makes [himself of M] scarce[or]flees the scene[in random order].[if current-predicament is nun-walk-predicament and the semen volume of face < 4 and the semen volume of face > 0][line break][variable custom style]I've got some cum now... but is it enough to make sure I still have some left if I accidentally lose some on the way home?[roman type][line break][end if]";
+				destroy M;
+		otherwise if M is penetrating a fuckhole: [currently only gloryhole-key-predicament]
+			let F be a random fuckhole penetrated by M;
+			if the sex-length of M > 0:
+				say "[one of]You slowly move your hips back and forward, [if the humiliation of the player < 10000]eyes screwed shut in shame[otherwise]looking down at the ground[end if] as you ride [FuckerDesc of M][']s [manly-penis][or]You breathe heavily as you pleasure [FuckerDesc of M][']s [manly-penis] with your [variable F][or][BigFuckerDesc of M] thrusts back and forth through the gloryhole to complement the [if the relevant sex addiction of the player > 5]enthusiastic [otherwise if the relevant sex addiction of the player < 4]slow [end if] movement of your [variable F][or][BigFuckerDesc of M] holds [himself of M] completely still, [if the sex addiction of the player < 7]forcing[otherwise if the relevant sex addiction of the player < 6]encouraging[otherwise]allowing[end if] you to do all the work with your [variable F][or][BigFuckerDesc of M] sighs with delight at the feeling of your [variable F] around [his of M] [manly-penis][or][BigFuckerDesc of M] is not holding back [his of M] sexual groans and grunts as [he of M] enjoys the feeling of [his of M] [manly-penis] moving in and out of your [variable F][in random order].";
+				ruin F;
+				decrease the sex-length of M by 1;
+			otherwise:
+				if F is vagina, FuckCount;
+				otherwise AnalCount;
+				say CreampieFlav of M in F;
+				compute M finishing in F;
+				if gloryhole-key-predicament is ass-to-mouth-agreed:
+					OralSexAddictUp 1;
+					now gloryhole-key-predicament is not ass-to-mouth-agreed;
+				compute gloryhole key resolution of M;
+				destroy M.
 To say FriendlySexResistFlav of (M - an ultimate-lesson-actor):
-	say "[if the player is able to make sounds][variable custom style][muffled sounds][roman type][line break][end if]";
-	say "Fed up, you pull away from [NameDesc of M][']s [manly-penis], coughing and spluttering as you do.".
+	say "[if M is not penetrating face][variable custom style]'[one of]I can't take any more[or]Screw this[stopping]!'[roman type][line break][otherwise if the player is able to make sounds][variable custom style][muffled sounds][roman type][line break][end if]";
+	say "Fed up, you pull away from [NameDesc of M][']s [manly-penis][if M is penetrating face], coughing and spluttering as you do[end if].".
 To compute FriendlySexRelease of (M - an ultimate-lesson-actor):
-	say "[BigNameDesc of M] makes [one of]a disappointed[or]a frustrated[or]an annoyed[in random order] sound and then leaves.[line break][MissedGloryholeCock]";
+	say "[BigNameDesc of M] makes [one of]a disappointed[or]a frustrated[or]an annoyed[in random order] sound[if current-predicament is gloryhole-predicament] and then leaves[end if].[line break][MissedGloryholeCock]";
 	dislodge M;
 	destroy M.
 To check perception of (M - an ultimate-lesson-actor):
@@ -2465,7 +2523,7 @@ To decide which figure-name is the monster-image of (M - student-minnie):
 	decide on figure of minnie.
 
 To say MonsterDesc of (M - student-minnie):
-	say "This tall leggy blonde is wearing, well, [he of M] might as well be wearing nothing at all! [big his of M] nipples are covered by tiny purple sequins pasties shaped like hearts and similar red hearts [if the current-rank of M is 3 and lady fetish is 2]barely cover [his of M] tiny [sissy-penis] and balls[otherwise if lady fetish is 2]don't even cover [his of M] crotch properly, leaving [his of M] tiny balls completely visible[otherwise if the current-rank of M is 3]barely cover [his of M] pussy[otherwise]don't even cover [his of M] pussy properly, obscuring [his of M] clit but leaving [his of M] labia fully visible[end if]. [big he of M] has sexy 3 inch red stiletto heels, a pierced belly, and a big friendly smile on [his of M] face. [big he of M] looks extremely comfortable with [his of M] striking appearance - from [his of M] posture and gait [if the current-rank of M is 3]you're almost concerned [he of M] has completely forgotten what [he of M][']s wearing[otherwise]it's very clear that [he of M] absolutely loves looking like this[end if]!".
+	say "This tall leggy blonde is wearing, well, [he of M] might as well be wearing nothing at all! [big his of M] nipples are covered by tiny purple sequins pasties shaped like hearts and similar red hearts [if the current-rank of M is 3 and lady fetish is 2]barely cover [his of M] tiny [DickDesc of M] and balls[otherwise if lady fetish is 2]don't even cover [his of M] crotch properly, leaving [his of M] tiny balls completely visible[otherwise if the current-rank of M is 3]barely cover [his of M] pussy[otherwise]don't even cover [his of M] pussy properly, obscuring [his of M] clit but leaving [his of M] labia fully visible[end if]. [big he of M] has sexy 3 inch red stiletto heels, a pierced belly, and a big friendly smile on [his of M] face. [big he of M] looks extremely comfortable with [his of M] striking appearance - from [his of M] posture and gait [if the current-rank of M is 3]you're almost concerned [he of M] has completely forgotten what [he of M][']s wearing[otherwise]it's very clear that [he of M] absolutely loves looking like this[end if]!".
 
 The min-rank of student-minnie is 3.
 The current-rank of student-minnie is 3.
@@ -2877,7 +2935,7 @@ To decide which figure-name is the monster-image of (M - student-katya):
 
 To say MonsterDesc of (M - student-katya):
 	if lady fetish is 2:
-		say "This platinum blonde [man of M] has the perfect sissy body shape[if the current-rank of M > 2 and artificial enhancements fetish is 1] including visibly silicone-enhanced asscheeks and a flawless nose job[end if], and [he of M] seems very comfortable in [his of M] own skin. [if the current-rank of M < 4][big his of M] face doesn't match [his of M] fuckdoll body though - [he of M] looks rather rebellious and level-headed, not the vacant sex-addled look you might expect[otherwise][big his of M] face now displays a much more vacant expression - one of submission and humility[end if]. [if the current-rank of M is 1]A white schoolgirl blouse clings to [his of M] svelte upper torso and [his of M] pink tartan miniskirt is so short you can see a peek of [his of M] skimpy panties when you're on your knees. [big he of M] stands impeccably balanced on [his of M] tall black stiletto heels as if [he of M] was born in them[otherwise if the current-rank of M is 2][big his of M] long-sleeved white leather jacket is fully unbuttoned, exposing [his of M] tartan patterned bra. [big his of M] tiny white microshorts hug [his of M] figure so tightly they almost look like they're painted on[otherwise if the current-rank of M is 3][big he of M]'s wearing nothing except a pair of purple low-rise silk briefs and matching half-cup bra which leaves most of [his of M] body on display[otherwise if the current-rank of M is 4][big he of M][']s [one of]now [or][stopping]wearing a sheer pink negligee over [his of M] svelte chest, so see-through it covers nothing. It matches [his of M] skimpy g-string which is so tiny that even [his of M] tiny [sissy-penis] is in danger of popping out when [he of M] isn't using [his of M] hands to hold it in. Through the negligee you can see that [his of M] nipples have been covered by crosses of black type that read 'FUCK ME!' in big white letters[otherwise][big he of M] is completely naked, aside from a tiny purple chastity cage, and has a completely vacant expression - it looks like [he of M][']s struggling to think clearly[end if].";
+		say "This platinum blonde [man of M] has the perfect sissy body shape[if the current-rank of M > 2 and artificial enhancements fetish is 1] including visibly silicone-enhanced asscheeks and a flawless nose job[end if], and [he of M] seems very comfortable in [his of M] own skin. [if the current-rank of M < 4][big his of M] face doesn't match [his of M] fuckdoll body though - [he of M] looks rather rebellious and level-headed, not the vacant sex-addled look you might expect[otherwise][big his of M] face now displays a much more vacant expression - one of submission and humility[end if]. [if the current-rank of M is 1]A white schoolgirl blouse clings to [his of M] svelte upper torso and [his of M] pink tartan miniskirt is so short you can see a peek of [his of M] skimpy panties when you're on your knees. [big he of M] stands impeccably balanced on [his of M] tall black stiletto heels as if [he of M] was born in them[otherwise if the current-rank of M is 2][big his of M] long-sleeved white leather jacket is fully unbuttoned, exposing [his of M] tartan patterned bra. [big his of M] tiny white microshorts hug [his of M] figure so tightly they almost look like they're painted on[otherwise if the current-rank of M is 3][big he of M]'s wearing nothing except a pair of purple low-rise silk briefs and matching half-cup bra which leaves most of [his of M] body on display[otherwise if the current-rank of M is 4][big he of M][']s [one of]now [or][stopping]wearing a sheer pink negligee over [his of M] svelte chest, so see-through it covers nothing. It matches [his of M] skimpy g-string which is so tiny that even [his of M] tiny [DickDesc of M] is in danger of popping out when [he of M] isn't using [his of M] hands to hold it in. Through the negligee you can see that [his of M] nipples have been covered by crosses of black type that read 'FUCK ME!' in big white letters[otherwise][big he of M] is completely naked, aside from a tiny purple chastity cage, and has a completely vacant expression - it looks like [he of M][']s struggling to think clearly[end if].";
 	otherwise:
 		say "This platinum blonde [man of M] has the perfect bimbo body shape[if the current-rank of M > 2 and artificial enhancements fetish is 1] including visibly silicone-enhanced fuckballs and a flawless nose job[end if], and [he of M] seems very comfortable in [his of M] own skin. [if the current-rank of M < 4][big his of M] face doesn't match [his of M] fuckdoll body though - [he of M] looks rather rebellious and level-headed, not the vacant sex-addled look you might expect[otherwise][big his of M] face now displays a much more vacant expression - one of submission and humility[end if]. [if the current-rank of M is 1]A white schoolgirl blouse tightly stretches over [his of M] seemingly spherical C-cup tits, and [his of M] pink tartan miniskirt is so short you can see a peek of [his of M] skimpy panties when you're on your knees. [big he of M] stands impeccably balanced on [his of M] tall black stiletto heels as if [he of M] was born in them[otherwise if the current-rank of M is 2][big his of M] long-sleeved white leather jacket is fully unbuttoned, exposing [his of M] tartan patterned bra and round C-cup fuckballs. [big his of M] tiny white microshorts hug [his of M] figure so tightly they almost look like they're painted on[otherwise if the current-rank of M is 3][big he of M][']s wearing nothing except a pair of purple low-rise silk briefs and matching half-cup bra which leaves most of [his of M] D-cup titty flesh on display[otherwise if the current-rank of M is 4][big he of M][']s [one of]now [or][stopping]wearing a sheer pink negligee over [his of M] D-cup tits which is so see-through it covers nothing. It matches [his of M] skimpy g-string which is so tiny you can spy the edges of [his of M] pussy when [he of M] isn't covering it with [his of M] hands. Through the negligee you can see that [his of M] nipples have been covered by crosses of black type that read 'FUCK ME!' in big white letters[otherwise][big he of M] is completely naked and has a completely vacant expression - it looks like [he of M][']s struggling to think clearly[end if].".
 
@@ -2953,7 +3011,7 @@ To decide which figure-name is the monster-image of (M - student-darla):
 	decide on figure of darla.
 
 To say MonsterDesc of (M - student-darla):
-	say "This tall babe looks like the pinnacle of traditional western beauty. [big his of M] perfect skinny body is covered only by a lovely pink negligee with criss-crossing straps down the front which leave [if lady fetish is 2][his of M] toned belly on display, and the tiny bulge of [his of M] [sissy-penis] just shy of popping out[otherwise]most of [his of M] toned belly and C-cup breasts on show[end if]. [big he of M] is holding up [his of M] thick flowing locks of golden hair and looking at you with meanness in [his of M] eyes.".
+	say "This tall babe looks like the pinnacle of traditional western beauty. [big his of M] perfect skinny body is covered only by a lovely pink negligee with criss-crossing straps down the front which leave [if lady fetish is 2][his of M] toned belly on display, and the tiny bulge of [his of M] [DickDesc of M] just shy of popping out[otherwise]most of [his of M] toned belly and C-cup breasts on show[end if]. [big he of M] is holding up [his of M] thick flowing locks of golden hair and looking at you with meanness in [his of M] eyes.".
 
 The min-rank of student-darla is 2.
 The max-rank of student-darla is 3.

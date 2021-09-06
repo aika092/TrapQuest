@@ -204,7 +204,7 @@ Section 1 - Protect and Attack
 The latex punishment rule of pimp is usually the no latex punishment rule.
 
 This is the pimp uses portals rule:
-	if diaper quest is 0 and the player is an august 2020 top donator and patronbed uses > 0 and the health of pimp <= the maxhealth of pimp:
+	if diaper quest is 0 and the player is the donator and patronbed uses > 0 and the health of pimp <= the maxhealth of pimp:
 		if portal-hotpants is worn: [player has tried to fight the pimp again when the player is already portaled]
 			if the player is in Hotel44 and asshole is not actually occupied:
 				say "[speech style of pimp]'BIG mistake, [cunt]!'[roman type][line break][BigNameDesc of pimp] turns to the statue which currently hosts your genitalia, and takes the largest butt plug you've ever seen. Before you can stop [him of pimp], [he of pimp] shoves it into your [asshole]!";
@@ -557,13 +557,13 @@ To say SubmissiveResponse of (M - pimp):
 	say "[speech style of M]'[one of]That's the spirit, baby!'[or]Keep that up and I might just make you my bottom bitch.'[at random][roman type][line break]".
 
 To say UnAnnoyedResponse of (M - pimp):
-	say "[speech style of M]'[one of]That's right! Earn those dollas![or]Earn that paycheck, bitch!'[or]You're makin BANK tonight!'[at random][roman type]".
+	say "[speech style of M]'[one of]That's right! Earn those dollas![or]Earn that paycheck, bitch!'[or]You're makin BANK tonight!'[at random][roman type][line break]".
 
 To say MildAnnoyedResponse of (M - pimp):
-	say "[speech style of M]'[one of]Oh shut up.'[or]Bitches should be fucked, NOT heard.'[or]If you have time to talk you have time to moan, bitch.'[at random][roman type]".
+	say "[speech style of M]'[one of]Oh shut up.'[or]Bitches should be fucked, NOT heard.'[or]If you have time to talk you have time to moan, bitch.'[at random][roman type][line break]".
 
 To say AnnoyedResponse of (M - pimp):
-	say "[speech style of M]'[one of]Bitch, I SAID shut up.'[or]Shut the fuck up, bitch!'[or]You betta shut your ass up, bitch.'[at random][roman type]".
+	say "[speech style of M]'[one of]Bitch, I SAID shut up.'[or]Shut the fuck up, bitch!'[or]You betta shut your ass up, bitch.'[at random][roman type][line break]".
 
 To say TauntRejected of (M - pimp):
 	say "[speech style of M]'[one of]You better stop runnin that mouth, bitch.'[or]I'm warning you, bitch. I don't let anyone run their fuckin['] mouth to me.'[or]You sure that's what you wanted to say, bitch?'[at random][roman type][line break][BigNameDesc of M] seems even more determined to beat you!".

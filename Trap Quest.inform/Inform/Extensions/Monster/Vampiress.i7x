@@ -221,7 +221,7 @@ To compute appearance assessment of (M - vampiress):
 			FavourDown M by 1;
 	otherwise if M is friendly:
 		if the class of the player is faerie:
-			say "[speech style of M]'[one of]Unfortunately this mansion is mine, darling. Begone, I will tolerate no more of your kind. Unless you plan to feed me.'[or]Oh. There are always more of you. Begone, or I will feed upon you.'[or]Begone, I have no interest if you cannot be turned. Don't make me get the broom.'[at random][roman type]";
+			say "[speech style of M]'[one of]Unfortunately this mansion is mine, darling. Begone, I will tolerate no more of your kind. Unless you plan to feed me.'[or]Oh. There are always more of you. Begone, or I will feed upon you.'[or]Begone, I have no interest if you cannot be turned. Don't make me get the broom.'[at random][roman type][line break]";
 			FavourDown M by 2;
 		otherwise if the number of glazed body parts > 0:
 			if the player is live fucked:
@@ -446,7 +446,7 @@ To compute condom success of (M - vampiress) in (F - a fuckhole):
 		humiliate 200;
 		StomachSemenUp the semen load of M;
 	otherwise:
-		say "[speech style of M]'[if the number of worn ballgags > 0]What's that dear? You can't? Just think what you're missing out on, darling. Think hard...'[otherwise if R > the semen taste addiction of the player]Wait a moment, darling, what am I saying? You are not ready for my seed now, but you WILL be...'[otherwise]Oh my. But aren't you hungry?'[end if][roman type] The condom disappears from [his of M] hand in a flash of mesmerising purple flames, and you feel a strange tickle in the back of your throat as vivid images of being face-fucked by [NameDesc of M] fill your mind. [big he of M] blows you a kiss, eyes glowing brightly as [he of M] straightens up and begins to walk away.";
+		say "[speech style of M]'[if the number of worn ballgags > 0]What's that dear? You can't? Just think what you're missing out on, darling. Think hard...'[otherwise if R > the semen taste addiction of the player]Wait a moment, darling, what am I saying? You are not ready for my seed now, but you WILL be...'[otherwise]Oh my. But aren't you hungry?'[end if][roman type][line break]The condom disappears from [his of M] hand in a flash of mesmerising purple flames, and you feel a strange tickle in the back of your throat as vivid images of being face-fucked by [NameDesc of M] fill your mind. [big he of M] blows you a kiss, eyes glowing brightly as [he of M] straightens up and begins to walk away.";
 		OralSexAddictUp 1;
 	if refractoryperiod > 0, SilentlyDifficultyUp M by 1.
 
@@ -540,7 +540,7 @@ To compute angry forgiveness of (M - vampiress):
 	say "[BigNameDesc of M] chuckles softy, clenching one hand into a fist and holding your head with the other. [if asshole is actually occupied]Even though [he of M] isn't touching it directly, you can feel [his of M] fingers around your anal ring, gently teasing you as a strong pressure builds in your mind[otherwise]Even though [he of M] isn't touching it directly, you still feel [his of M] fingers slip through your anal ring, gently stroking you from the inside as strong pressure builds up in your mind[end if]. [if the bimbo of the player < 6]Your lips twist into a submissive 'O'[otherwise]You grit your teeth[end if] as a wave of pleasure passes through your body, immediately bringing you to the edge.";
 	anally orgasm shamefully;
 	reset vampire hunger;
-	say "[BigNameDesc of M] scoops up some of your fluids and eagerly licks them off [his of M] fingers.[line break][speech style of M]'Alright, that will be all. I'll feed again later.[roman type][line break]";
+	say "[BigNameDesc of M] scoops up some of your fluids and eagerly licks them off [his of M] fingers.[line break][speech style of M]'Alright, that will be all. I'll feed again later.'[roman type][line break]";
 	FavourUp M by 2.
 
 To say (M - vampiress) sex reaction:

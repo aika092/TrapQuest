@@ -21,7 +21,7 @@ Figure of princess final battle pit is the file "NPCs/MultiFloor/Princess/cutsce
 Figure of princess final battle food is the file "NPCs/MultiFloor/Princess/cutscene-princess-final-battle3.jpg".
 Figure of princess final battle inflation is the file "NPCs/MultiFloor/Princess/cutscene-princess-final-battle5.jpg".
 Figure of princess final battle harness is the file "NPCs/MultiFloor/Princess/cutscene-princess-final-battle6.jpg".
-
+Figure of princess final battle scan is the file "NPCs/MultiFloor/Princess/cutscene-princess-final-battle8.jpg".
 
 To decide which figure-name is the monster-image of (M - ex-princess):
 	if M is unleashed: [dark princess]
@@ -49,6 +49,7 @@ To decide which figure-name is the monster-image of (M - ex-princess):
 		if current-final-battle-object is final-battle-plug, decide on Figure of princess final battle plug;
 		if current-final-battle-object is final-battle-harness, decide on Figure of princess final battle harness;
 		if current-final-battle-object is final-battle-final-chance, decide on figure of princess final battle final chance;
+		if current-final-battle-object is final-battle-scan and final-battle-scan is not pose-swapped, decide on figure of princess final battle scan;
 	if (M is in School35 and glittery-wand is carried by M and glittery-wand is cursed) or (M is guarding and current-final-battle-object is final-battle-wand-curse):
 		if diaper lover > 0, decide on figure of original diapered princess combat;
 		decide on figure of original princess combat;
@@ -96,16 +97,21 @@ To say MonsterDesc of (M - ex-princess):
 		if M is male:
 			say "Here, a huge thick [if lady fetish < 2]futa [end if]cock swings side to side menacingly, dripping precum from the massive balls dangling behind it.";
 		otherwise if diaper quest is 0:
-			say "[big his of M] pussy is dripping wet with excitement, creating a little pitter-patter sound as [his of M] vaginal juices gradually create a little puddle between [his of M] feet.";
+			if lady fetish is 2, say "[big his of M] caged clitty is dripping with excitement, creating a little pitter-patter sound as [his of M] sissy juices gradually create a little puddle between [his of M] feet.";
+			otherwise say "[big his of M] pussy is dripping wet with excitement, creating a little pitter-patter sound as [his of M] vaginal juices gradually create a little puddle between [his of M] feet.";
 		otherwise if diaper messing < 7:
 			say "[big he of M] is [if M is interested]diapered, and you can tell from the large yellow stain that it is soak to capacity with [urine][otherwise]in a fresh plain diaper[end if].";
 		otherwise:
 			say "[big he of M] is in a giant diaper, [if M is messy]full to the brim with inhuman amounts of stinking shit which has stained the entire garment a dark shade of brown[otherwise if M is interested]and you can tell from the large yellow stain that it is soak to capacity with [urine][otherwise]plain whte but stupidly thick, and as far as you can tell, currently unused[end if].";
 	otherwise:
-		say "The original princess that rules the dungeons of Bimbacia wears a regal pink silk dress, with a very low neckline and a skirt with a deep slit at the front. [big his of M] outfit seems to be magically fixed to this exact appearance, and no matter how much [he of M] pulls, the skirt of the dress refuses to be pulled any further forward than [his of M] sides, meaning that [his of M] [if diaper lover > 0]heavily diapered crotch[otherwise]bare pussy[end if] is kept fully visible from the front at all times.".
+		say "The original princess that rules the dungeons of Bimbacia wears a regal pink silk dress, with a very low neckline and a skirt with a deep slit at the front. [big his of M] outfit seems to be magically fixed to this exact appearance, and no matter how much [he of M] pulls, the skirt of the dress refuses to be pulled any further forward than [his of M] sides, meaning that [his of M] [if diaper lover > 0]heavily diapered crotch[otherwise if lady fetish is 2]caged penis[otherwise]bare pussy[end if] is kept fully visible from the front at all times.".
 
 To say MonsterComment of (M - ex-princess):
 	if M is caged, say "[line break][variable custom style][one of][big he of M] looks important. I wonder if [he of M] would reward me if I helped break [him of M] out of here...[or]Poor thing is still trapped here. Are they going to keep [him of M] here like this forever?[stopping][roman type][line break]".
+
+Definition: ex-princess is presenting as male:
+	if lady fetish is 2, decide yes;
+	decide no.
 
 To set up (M - ex-princess):
 	now the monstersetup of M is 1;
@@ -231,10 +237,10 @@ This is the princess facesitting prevents breathing rule:
 	decide no.
 The princess facesitting prevents breathing rule is listed in the breathing blocking rules.
 
-A breathing blocking decision rule (this is the consider breathing through princess padding rule):
+[A breathing blocking decision rule (this is the consider breathing through princess padding rule):
 	if diaper quest is 1 and ex-princess is penetrating face:
 		say "Your nose and mouth is engulfed in [NameDesc of ex-princess][']s [if ex-princess is messy]messy[otherwise]soggy[end if] padding. ";
-		now breathing-this-turn is false.
+		now breathing-this-turn is false.]
 
 A breathing consequences rule (this is the consequences for breathing through princess padding rule):
 	if diaper quest is 1 and ex-princess is penetrating face:
@@ -245,7 +251,7 @@ To say MouthPenetrationFlav of (M - ex-princess):
 	if M is male:
 		say DefaultMouthPenetrationFlav of M;
 	otherwise:
-		say "[BigNameDesc of M] effortlessly rolls you onto your back and engulfs your face with [his of M] [if diaper quest is 1]padded [end if]crotch. You won't be able to breathe except through [his of M] padding until [he of M] is finished with you!";
+		say "[BigNameDesc of M] effortlessly rolls you onto your back and engulfs your face with [his of M] [if diaper quest is 1]padded [end if]crotch. You won't be able to breathe except through [his of M] padding until [he of M] is finished with you! (You might want to consider using [bold type]['][link]hold breath[end link]['][roman type])";
 		if diaper messing >= 7, say "And then the worst thing imaginable happens. As soon as [NameDesc of M] has made [himself of M] comfortable on your face, [he of M] unleashes hell from [his of M] bowels. A fountain of rancid filth spews from [his of M] pooper, bubbling and gurgling noisily as it quickly spreads to fill every inch of [his of M] diaper.";
 		if sex-length of M < 3, now sex-length of M is 2.
 
@@ -733,8 +739,8 @@ An all later time based rule (this is the asscum annie rule):
 				say "[BigNameDesc of ex-princess] squeaks as [his of ex-princess] belly fills up with [semen].[line break][speech style of ex-princess]'[one of]I can't hold it!'[or]Not again...'[or]Ergh... so gross...'[or]It's coming out! Don't look!'[then at random][roman type][line break]With a lewd squelch, [semen] starts to spurt out of [his of ex-princess] butthole. ";
 				let semen-caught be 0;
 				if the player is able to use their hands:
-					repeat with B running through carried open topped vessels:
-						if semen-caught is 0:
+					repeat with B running through carried vessels:
+						if semen-caught is 0 and B is not tight topped:
 							say "Collect the [semen] in the [ShortDesc of B]?[if B is non-empty] You'll have to dump its current contents of [PotionType of B].[end if]";
 							if the player is consenting:
 								dump B;

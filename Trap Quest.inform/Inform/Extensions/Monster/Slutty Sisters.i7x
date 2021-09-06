@@ -174,6 +174,11 @@ To compute sleep reduction of (M - a slutty sister):
 To compute labour to (M - a slutty sister):
 	say DefaultBirthScene.
 
+To compute fatherhood to (M - a slutty sister): [if alive, do not change the status of the slutty sister]
+	if M is not alive:
+		say DefaultBirthScene;
+		if debugmode is 1, say "The father was [M], but [he of M] was dead.".
+
 To compute diaper mess reaction of (M - a slutty sister):
 	do nothing.
 To compute diaper mess reaction of (M - futanari-slutty-sister): [Need to make sure she doesn't leave the room and also that she can still fuck the player]
@@ -325,8 +330,8 @@ To say FacesitSubmissionResponse of (M - bulging-slutty-sister):
 			if the belly contents of M <= 0, say "The flow of [semen] seems to slow down and then dry up. [if the semen taste addiction of the player < 8]Hopefully[otherwise if the semen taste addiction of the player < 14 or the stomach of the player >= 10]Maybe[otherwise]Oh no,[end if] that's the last of it?[if the sex-length of M > 0][line break][BigNameDesc of M] continues to ride your face. It looks like you're not going to be allowed to breathe until you've made [him of M] cum![end if]";
 			otherwise say "[if SL <= 1]You only get through a small[otherwise if SL is 2]You manage to consume a decent[otherwise]You are able to bring yourself to guzzle down a huge[end if] amount of [semen] this turn.";
 	otherwise:
-		if a2m fetish >= 1, say "You [one of]flick your tongue along [NameDesc of M][']s [if lady fetish is 2][sissy-penis][otherwise]clit[end if], causing a squeak of satisfaction from the [boy of M] above.[or]give the outside of [NameDesc of M][']s asshole a passionate French kiss, which makes [him of M] writhe around on top of you with pleasure.[or]force your tongue as far as it can go into [NameDesc of M][']s asshole, and [he of M] responds by shuddering in pleasure.[or]You explore the depths of [NameDesc of M][']s [HoleDesc of M] with your tongue, pushing it in as deep as you can. [big he of M] groans with pleasure.[in random order]";
-		otherwise say "You [one of]flick your tongue along [NameDesc of M][']s [if lady fetish is 2][sissy-penis][otherwise]clit[end if], causing a squeak of satisfaction from the [boy of M] above.[or]give [if lady fetish is 2][NameDesc of M][']s [manly-penis][otherwise]the outside of [NameDesc of M][']s pussy[end if] a passionate French kiss, which makes [him of M] writhe around on top of you with pleasure.[or]force your tongue as far as it can go [if lady fetish is 2]along [NameDesc of M][']s shaft[otherwise]into [NameDesc of M][']s pussy[end if], and [he of M] responds by shuddering in pleasure.[in random order]".
+		if a2m fetish >= 1, say "You [one of]flick your tongue along [NameDesc of M][']s [if lady fetish is 2][DickDesc of M][otherwise]clit[end if], causing a squeak of satisfaction from the [boy of M] above.[or]give the outside of [NameDesc of M][']s asshole a passionate French kiss, which makes [him of M] writhe around on top of you with pleasure.[or]force your tongue as far as it can go into [NameDesc of M][']s asshole, and [he of M] responds by shuddering in pleasure.[or]You explore the depths of [NameDesc of M][']s [HoleDesc of M] with your tongue, pushing it in as deep as you can. [big he of M] groans with pleasure.[in random order]";
+		otherwise say "You [one of]flick your tongue along [NameDesc of M][']s [if lady fetish is 2][DickDesc of M][otherwise]clit[end if], causing a squeak of satisfaction from the [boy of M] above.[or]give [if lady fetish is 2][NameDesc of M][']s [manly-penis][otherwise]the outside of [NameDesc of M][']s pussy[end if] a passionate French kiss, which makes [him of M] writhe around on top of you with pleasure.[or]force your tongue as far as it can go [if lady fetish is 2]along [NameDesc of M][']s shaft[otherwise]into [NameDesc of M][']s pussy[end if], and [he of M] responds by shuddering in pleasure.[in random order]".
 
 To say NearingClimaxFacesit of (M - bulging-slutty-sister):
 	say FacesitSubmissionResponse of M;
@@ -374,12 +379,12 @@ To compute vaginal sex of (M - futanari-slutty-sister):
 To compute unique climax of (M - futanari-slutty-sister) in (F - asshole):
 	compute creampie of M in F;
 	now the sleep of M is 300;
-	if delayed fainting is 0, say "[speech style of M]'Ugh, you win... I'm done. Phew...'[roman type] [BigNameDesc of M] collapses onto [his of M] ass, [his of M] [DickDesc of M] quickly going limp as [he of M] pulls out.".
+	if delayed fainting is 0, say "[speech style of M]'Ugh, you win... I'm done. Phew...'[roman type][line break][BigNameDesc of M] collapses onto [his of M] ass, [his of M] [DickDesc of M] quickly going limp as [he of M] pulls out.".
 
 To compute unique climax of (M - futanari-slutty-sister) in (F - vagina):
 	compute creampie of M in F;
 	now the sleep of M is 300;
-	if delayed fainting is 0, say "[speech style of M]'Ugh, you win... I'm done. Phew...'[roman type] [BigNameDesc of M] collapses onto [his of M] ass, [his of M] [DickDesc of M] quickly going limp as [he of M] pulls out.".
+	if delayed fainting is 0, say "[speech style of M]'Ugh, you win... I'm done. Phew...'[roman type][line break][BigNameDesc of M] collapses onto [his of M] ass, [his of M] [DickDesc of M] quickly going limp as [he of M] pulls out.".
 
 To say CreampieFlav of (M - futanari-slutty-sister) in (F - a fuckhole):
 	say "[speech style of M]'Unf... So [if the openness of F < 8]tight, so [end if]good! Aaah!'[roman type][line break][BigNameDesc of M][if futanari fetish is 0][']s strapon starts pumping synthetic [semen][otherwise] starts to ejaculate[end if] deep inside your [variable F]! It feels like there's a powerful hosepipe shoved inside your belly!";

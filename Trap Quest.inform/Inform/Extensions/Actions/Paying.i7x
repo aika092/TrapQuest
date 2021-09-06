@@ -14,6 +14,13 @@ Check paying:
 	if the number of entries in chosen jewellery is 0, say "You don't have enough valuable gems to pay for that!" instead;
 	if shopkeeper is not in Dungeon41, say "You need a shopkeeper here to pay for something." instead.
 
+To say FriendlyPaymentReceivedFlav of (T - a thing):
+	say "[speech style of shopkeeper]'Thank you for your business!'[roman type][line break]You exchange the jewellery for the [printed name of T].".
+
+To say UnfriendlyPaymentReceivedFlav of (T - a thing):
+	say "[speech style of shopkeeper]'Damn right you'll pay for that!'[roman type][line break]You hand over the jewellery for the [printed name of T].";
+
+
 Carry out paying:
 	let Z be a random off-stage clothing;
 	repeat with C running through held store things:
@@ -38,8 +45,8 @@ Carry out paying:
 		repeat with J running through chosen jewellery:
 			only destroy J;
 		now Z is unowned;
-		if shopkeeper is in Dungeon41 and shopkeeper is friendly, say "[speech style of shopkeeper]'Thank you for your business!'[roman type][line break]You exchange the jewels for the [printed name of Z].";
-		otherwise say "[speech style of shopkeeper]'Damn right you'll pay for that!'[roman type][line break]You hand over the jewels for the [printed name of Z].";
+		if shopkeeper is in Dungeon41 and shopkeeper is friendly, say FriendlyPaymentReceivedFlav of Z;
+		otherwise say UnfriendlyPaymentReceivedFlav of Z;
 		force inventory-focus redraw. [Forces redraw of inventory window]
 Understand "pay", "buy", "sell", "exchange", "purchase", "transact", "pay shopkeeper" as paying.
 

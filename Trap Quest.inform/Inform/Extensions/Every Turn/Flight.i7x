@@ -40,9 +40,9 @@ To compute takeoff:
 		now the player is in Sky01;
 	if flight attendant hat is worn:
 		compute takeoff of flight attendant hat;
-	otherwise if bunny waitress ears is worn:
+	otherwise if playdude bunny waitress ears is worn:
 		follow the player class rules;
-		transform bunny waitress ears into flight attendant hat;
+		transform playdude bunny waitress ears into flight attendant hat;
 		let BO be a random worn bunny outfit;
 		if BO is clothing:
 			transform BO into flight-attendant-top;

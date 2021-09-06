@@ -180,7 +180,7 @@ Carry out BagFeeding it to:
 	destroy the noun;
 	now the hunger of the second noun is 0;
 	now the hunger-declared of the second noun is 0;
-	force inventory-focus redraw. [This forces the inventory window to redraw]
+	force clothing-focus redraw. [the hungry icon needs to disappear]
 
 Understand "feed [something] to [something]" as BagFeeding it to.
 
@@ -301,8 +301,8 @@ To execute (E - bag-feeding-sex-themes) on (C - a thing):
 		let B be a random worn bag of holding;
 		if B is penis themed and C is penis themed:
 			say "Your [MediumDesc of B][']s [manly-penis] theme synergises with the theme of the [MediumDesc of C]! ";
-			if the size of penis > min penis size:
-				PenisDown 1;
+			if the mystical size of penis > min penis size: [#LXorDD]
+				SpecialPenisDown 1;
 			otherwise:
 				say "You feel a bit more [if the player is a pervert]perverted[otherwise]willing to consider deviant ideas[end if]...";
 				SexAddictUp 1;
@@ -419,6 +419,8 @@ To compute school periodic effect of (B - enema-backpack):
 		now B is enema-released;
 		say "[bold type]A quiet 'click' sound heralds the backpack releasing its enema! [roman type]Before you can do anything your [asshole] has been filled with a huge amount of water!!![line break][variable custom style]Ugh... so much...[roman type][line break]";
 		AssFill 20 with water;
+		now entry 1 in the armUses of arms is the player;
+		now entry 2 in the armUses of arms is the player;
 	otherwise if B is not enema-released and the player is not in a park room:
 		appropriate-cutscene-display figure of diaper grope predicament cutscene.
 

@@ -611,7 +611,14 @@ Displays some text describing ongoing sex when the player is a living sex doll
 
 +!]
 To say sexDollFlav of (M - a monster) in (F - a fuckhole):
-	say "As [FuckerDesc of M] continues to use your [variable F] [one of]you feel your rubberised cheeks burn brighter still, and try to clamp your lips shut on your guttural but squeaky grunts and moans - but all you manage is a subtle flexing of the now round orifice, and the silken rasping of the manly tool through your tightly-gripping [if F is asshole]rosebud[otherwise]cunt[end if] feels [italic type]so[roman type] good that, try as you might, you just keep squealing like a small stuck piglet[or][BigFuckerDesc of M] continues to use your super loose [variable F]![or]You continue to squeal as [FuckerDesc of M] fucks your [variable F]![cycling].".
+	let relish-it be "[one of]relish it[or]take as much pleasure in return[or]take equal pleasure[or]enjoy it just as much[or]revel in the sensations[or]enjoy it equally[at random]";
+	let oro be "[LipDesc]";
+	if F is:
+	[-- face: now oro is "[LipDesc]";]
+	-- asshole: now oro is "[one of]rosebud[or]corn hole[or][asshole][at random]";
+	-- vagina: now oro is "[vagina]";
+	-- otherwise: now oro is "[printed name of F]";
+	say "As [FuckerDesc of M] continues to [one of]use[or]plow[or]plunder[or]ravage[or]work[at random] your [one of]all-too-available[or]receptive[or]apparently-eager[or]readily accessible[at random] [variable F] [one of]you feel your rubberised cheeks burn brighter still, and try to clamp your lips shut on your guttural but squeaky grunts and moans - but all you manage is a subtle flexing of the now round orifice, and the silken rasping of the manly tool through your tightly-gripping [oro] feels [italic type]so[roman type] good that, try as you might, you just keep squealing like a small stuck piglet.[or]you're jolted forward and back like the [LatexFlav]toy you are.[or]you're jolted forward and back like a helpless sex doll.[or]you can't help wondering how you got into such a fix. Impaled and used, moaning and groaning as others take their pleasure from your [LatexFlav][oro]. Would it be better, or worse, if you yourself didn't [relish-it]?[or]you shiver and shudder, trying not to delight in the feeling of being helpless and manhandled, your [LatexFlav][oro] just a cock-sleeve to give others pleasure. Though a part of you adds, [first custom style]and me, too![roman type][or]your tossed back and forth like a toy boat on some savage sexual sea, trapped and bound by unbreakable mooring ropes as you thrash about in ecstatic torment.[or]you continue to jolt forwards and back from [his of M] thrusting.[or]you continue to squeal as [he of M] fucks you![cycling]".
 
 [!<ComputeSexDumbOfMonsterInFuckhole>+
 
@@ -1117,7 +1124,7 @@ Displays some text describing a monster "M" pulling out of a fuckhole "F" and pu
 To say MessyPullOutFlav of (M - a monster) in (F - a fuckhole):
 	let subs be the number of submission-assisting monsters in the location of the player;
 	let N be a random submission-assisting monster in the location of M;
-	say "[BigFuckerDesc of M] pulls out and sprays [if subs > 1]you and the others' crotches[otherwise if subs > 0]you and [FuckerDesc of N]'s crotches[otherwise]your crotch[end if] with [semen]".
+	say "[BigFuckerDesc of M] pulls out and sprays [if subs > 1]you and the others' crotches[otherwise if subs > 0]you and [FuckerDesc of N]'s crotches[otherwise]your crotch[end if] with [semen].".
 
 To get orgasm image of (M - a monster) in (F - a fuckhole):
 	do nothing.

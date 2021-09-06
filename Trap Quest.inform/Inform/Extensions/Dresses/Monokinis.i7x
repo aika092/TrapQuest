@@ -72,32 +72,32 @@ To say ShortDesc of (C - green monokini):
 To say MediumDesc of (C - green monokini):
 	say "green onepiece swimsuit".
 
-Part 3 - Grey Monokini
+Part 3 - Navy Monokini
 
-grey-monokini is a monokini. The text-shortcut of grey-monokini is "grm".
+navy-monokini is a monokini. The text-shortcut of navy-monokini is "nvm".
 
-Understand "grey", "onepiece", "swimsuit" as grey-monokini.
+Understand "navy", "onepiece", "swimsuit" as navy-monokini.
 
-Figure of grey-monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/monokini2.png".
+Figure of navy-monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/monokini2.png".
 
-To decide which figure-name is clothing-image of (C - grey-monokini):
-	decide on figure of grey-monokini.
+To decide which figure-name is clothing-image of (C - navy-monokini):
+	decide on figure of navy-monokini.
 
-To say ClothingDesc of (C - grey-monokini):
+To say ClothingDesc of (C - navy-monokini):
 	say "This tight fitting onepiece swimsuit is quite fashionable, [if C is crotch-ripped]but has a rip at the crotch[otherwise]showing off decent amounts of skin without being overly slutty[end if].".
 
-To say ShortDesc of (C - grey-monokini):
-	say "grey swimsuit".
-To say MediumDesc of (C - grey-monokini):
-	say "grey onepiece swimsuit".
+To say ShortDesc of (C - navy-monokini):
+	say "navy swimsuit".
+To say MediumDesc of (C - navy-monokini):
+	say "navy onepiece swimsuit".
 
-To decide which object is the unique-upgrade-target of (C - grey-monokini):
+To decide which object is the unique-upgrade-target of (C - navy-monokini):
 	if tutorial is 1:
 		if diaper quest is 1, decide on a random teddybear playsuit;
 		otherwise decide on a random grey string monokini;
 	decide on nothing.
 
-Definition: grey-monokini is grey themed: decide yes.
+Definition: navy-monokini is blue themed: decide yes.
 
 Part 4 - Lolita Monokini
 

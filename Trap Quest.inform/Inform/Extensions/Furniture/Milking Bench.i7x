@@ -6,7 +6,8 @@ mansion-milking-bench is a milking bench.
 dungeon-milking-bench is a milking bench.
 Definition: mansion-milking-bench is immune to change: decide yes.
 A game universe initialisation rule:
-	if lactation fetish is 1, now mansion-milking-bench is in Mansion06.
+	if lactation fetish is 1:
+		now mansion-milking-bench is in Mansion06.
 
 To decide which figure-name is the examine-image of (C - a milking bench):
 	decide on figure of milking bench.
@@ -53,15 +54,24 @@ To compute furniture resting on (M - a milking bench):
 	now the stance of the player is 1;
 	now the alert of the player is 0;
 	if the milk volume of breasts > 0 and milking-allowed >= 1:
+		let MT be a random milk-tank in the location of M;
 		say "The suckers leap up and latch onto your [milk] filled [BreastDesc]!";
 		if the largeness of breasts <= 11, cutshow figure of milking bench cutscene 1 for M;
 		otherwise cutshow figure of milking bench cutscene 2 for M;
 		now milking is 1;
-		while milking is 1 and the player is in the location of M and (the fatigue of the player > 0 or (the milk volume of breasts > 0 and the units collected of M < 20)): [The player can stop being milked by the game setting milking to 0]
+		let MPT be 1; [units of milk collected. increases by 1 every turn]
+		while milking is 1 and delayed fainting is 0 and the player is in the location of M and (the fatigue of the player > 0 or the milk volume of breasts > 0): [The player can stop being milked by the game setting milking to 0]
 			say "[if the alert of the player is 1]The suckers are latched so strongly onto your [BreastDesc] that you can't do anything about your compromising position! [end if]You [one of][or]continue to [stopping]get milked on the bench.";
 			allocate 4 seconds;
-			MilkDown 1;
-			increase the units collected of M by 1;
+			if MPT < the milk volume of breasts, increase the units collected of M by MPT;
+			otherwise increase the units collected of M by the milk volume of breasts;
+			MilkDown MPT;
+			increase MPT by 1;
+			while the units collected of M >= 4:
+				decrease the units collected of M by 4;
+				if the doses of MT < 8:
+					increase the doses of MT by 1;
+					say "[BigNameDesc of MT] is now [FullnessDesc of MT].";
 			if cow-ears is off-stage and cow-ears is actually summonable and a random number between 1 and 40 - (20 * unlucky) is 1:
 				say "As you are getting milked, a headband with fake cow ears appears on your head. You let out a soft involuntary [variable custom style]'moo'[roman type].";
 				summon cow-ears cursed;
@@ -71,7 +81,7 @@ To compute furniture resting on (M - a milking bench):
 				say "A [ShortDesc of cow print basque] shimmers into place over your body!";
 			compute extra turn;
 			if the alert of the player is 0, compute monster detection;
-		while the body soreness of the player > 0 and milking is 1 and the player is in the location of M:
+		while the body soreness of the player > 0 and delayed fainting is 0 and milking is 1 and the player is in the location of M:
 			say "[if the alert of the player is 1]The suckers are latched so strongly onto your [BreastDesc] that you can't do anything about your compromising position! [end if]You [one of][or]continue to [stopping]get milked on the bench.";
 			allocate 6 seconds;
 			compute extra turn;
@@ -81,16 +91,6 @@ To compute furniture resting on (M - a milking bench):
 		if M is in the location of the player:
 			say "The machine finally stops milking you.";
 			if the alert of the player is 0, say "[if the bimbo of the player < 11][line break][first custom style]I feel so much better![otherwise][line break][second custom style]I'm full of energy again. Yum![end if][roman type][line break]";
-		let B be a random off-stage can;
-		if B is can and the units collected of M > 0:
-			now B is in the location of M;
-			now the fill-colour of B is white;
-			[now the text-shortcut of B is "whc";]
-			now the max-doses of B is (the units collected of M + 3) / 4;
-			now the units collected of M is the max-doses of B; [This is for easily tracking the quest limit]
-			DoseFill B;
-			say "It spits out a [printed name of B].";
-			compute autotaking B;
 		progress quest of milking-quest;
 		now resting is 0;
 		if the alert of the player is 0, try standing;
@@ -110,7 +110,7 @@ To compute furniture resting on (M - a milking bench):
 			TopReplace C;
 	repeat with C running through temporarily-displaced clothing: [This should happen even if the player is in danger]
 		now C is not temporarily-displaced;
-	now the units collected of M is 0;
+	[now the units collected of M is 0;] [it can save units for next time]
 	now resting is 0.
 
 To say RestingDesc of (F - a milking bench):

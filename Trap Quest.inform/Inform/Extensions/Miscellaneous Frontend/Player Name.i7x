@@ -513,7 +513,7 @@ The File of Male Character (owned by another project) is called "malenames".
 The File of Female Character (owned by another project) is called "femalenames".
 
 Table of Custom Male Name
-Name (indexed text)
+Name (text)
 "Undefined Name 1"
 "Undefined Name 2"
 "Undefined Name 3"
@@ -522,7 +522,7 @@ Name (indexed text)
 "Undefined Name 6"
 
 Table of Custom Female Name
-Name (indexed text)
+Name (text)
 "Undefined Name 1"
 "Undefined Name 2"
 "Undefined Name 3"

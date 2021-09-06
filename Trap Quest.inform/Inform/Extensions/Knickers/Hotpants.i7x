@@ -3,7 +3,9 @@ Hotpants by Knickers begins here.
 A hotpants is a kind of knickers. Understand "pair", "pair of", "hot", "pants", "hotpants" as a hotpants.
 
 To decide which number is the penis-capacity of (H - a hotpants):
-	decide on 6.
+	decide on 3.
+To decide which number is the crotch-tightness of (C - a hotpants):
+	decide on 4.
 
 Definition: a hotpants is displacable: decide yes.
 Definition: a hotpants is rippable:

@@ -4,9 +4,11 @@ Part 1 - Definitions
 
 penis is a body part. penis is everywhere. The text-shortcut of penis is "penis".
 To say FullExamineDesc of (B - penis):
-	say "[if the player is possessing a penis][ImageDesc of penis][TotalDesc of penis][PenisModesty][otherwise]You don't have a penis.[end if]".
+	say "[if the player is possessing a penis][ImageDesc of penis][TotalDesc of penis][PenisModesty][otherwise if the player is not possessing a vagina][TotalDesc of penis][otherwise]You don't have a penis.[end if]". [The use of TPD when they have no penis and no vagina catches the doll-like mound case handled by TPD at size 0]
 
 Understand "prick", "willy", "pecker", "clitty", "noodle", "dickie", "winky", "weeny", "cock", "dick", "bellend", "dong", "johnson", "wang", "weiner" as penis.
+Understand "crotch", "groin" as vagina when the player is possessing a vagina.
+Understand "crotch", "groin" as penis when the player is not possessing a vagina.
 
 penis has a number called size. the size of penis is usually 0.
 
@@ -238,7 +240,8 @@ penis can be penis-erect or not penis-erect. penis is not penis-erect.
 
 [Some things prevent the player from getting erections]
 Definition: penis is able to get erect:
-	if the player is not possessing a penis, decide no;
+	[#LXorDD I think it now makes sense to handle a detached penis becoming erect here.]
+	if the player is not possessing a penis and the players-dick-is-detached is 0, decide no;
 	if penis is penis-erect, decide yes;
 	if there is a worn chastity cage, decide no;
 	if broken-clitty tattoo is worn, decide no;
@@ -250,6 +253,7 @@ Definition: penis is able to get erect:
 Definition: penis is erect-at-will:
 	if penis is not able to get erect, decide no;
 	if the player is extremely horny, decide yes;
+	if there is a worn portal-cock-ring, decide yes; [#LXorDD]
 	let A be 1;
 	if the player is a bit horny, increase A by 1;[You get erect easier if you are horny]
 	if the player is horny, increase A by 1;
@@ -321,39 +325,39 @@ To compute sudden erection chance (X - a number):
 			say "[line break]";
 			if penis is exposed:
 				if the size of penis > 3:
-					say "[line break]Your [ShortDesc of penis] [harden]s into a very obvious erection.";
+					say "[line break]Your [mystical ShortDesc of penis] [harden]s into a very obvious erection.";
 				otherwise:
-					say "[line break]Your [ShortDesc of penis] [harden]s into a very embarrassing, albeit subtle, erection.";
+					say "[line break]Your [mystical ShortDesc of penis] [harden]s into a very embarrassing, albeit subtle, erection.";
 			otherwise if penis is at least partially exposed:
 				if S2 is clothing:
 					if S2 is metal:
-						say "Your [ShortDesc of penis] [harden]s into an erection, which presses against the inside of your [ShortDesc of S2].";
+						say "Your [mystical ShortDesc of penis] [harden]s into an erection, which presses against the inside of your [ShortDesc of S2].";
 					otherwise if S2 is potentially erection concealing:
-						say "Your [ShortDesc of penis] [harden]s into an erection, which is thankfully not very obvious thanks to your [ShortDesc of S2].";
+						say "Your [mystical ShortDesc of penis] [harden]s into an erection, which is thankfully not very obvious thanks to your [ShortDesc of S2].";
 					otherwise:
-						say "Your [ShortDesc of penis] [harden]s into an erection, which forms a very obvious tent under your [ShortDesc of S2].";
+						say "Your [mystical ShortDesc of penis] [harden]s into an erection, which forms a very obvious tent under your [ShortDesc of S2].";
 				otherwise if K2 is clothing:
 					if K2 is potentially erection concealing:
-						say "[line break]You feel your [ShortDesc of penis] [harden]ing into an erection, which is thankfully not obvious thanks to your [ShortDesc of K2].";
+						say "[line break]You feel your [mystical ShortDesc of penis] [harden]ing into an erection, which is thankfully not obvious thanks to your [ShortDesc of K2].";
 					otherwise:
-						say "[line break]Your [ShortDesc of penis] [harden]s into an erection, which forms a very obvious tent in your [ShortDesc of K2].";
+						say "[line break]Your [mystical ShortDesc of penis] [harden]s into an erection, which forms a very obvious tent in your [ShortDesc of K2].";
 				otherwise if S1 is clothing:
-					say "Your [ShortDesc of penis] [harden]s into an erection, still visible through your [ShortDesc of S1][if K1 is clothing] and [ShortDesc of K1][end if].";
+					say "Your [mystical ShortDesc of penis] [harden]s into an erection, still visible through your [ShortDesc of S1][if K1 is clothing] and [ShortDesc of K1][end if].";
 				otherwise if K1 is clothing:
-					say "Your [ShortDesc of penis] [harden]s into an erection, still visible through your [ShortDesc of K1].";
+					say "Your [mystical ShortDesc of penis] [harden]s into an erection, still visible through your [ShortDesc of K1].";
 			otherwise:
 				if S2 is clothing:
 					let K3 be a random pussy covering unskirted clothing;
-					say "Your feel your [ShortDesc of penis] [harden]ing into an erection, but [if K3 is knickers]thanks to your [ShortDesc of K3], [end if]it remains concealed under your [ShortDesc of S2].";
+					say "Your feel your [mystical ShortDesc of penis] [harden]ing into an erection, but [if K3 is knickers]thanks to your [ShortDesc of K3], [end if]it remains concealed under your [ShortDesc of S2].";
 				otherwise:
 					let K3 be a random worn potentially penis concealing clothing;
-					say "Your feel your [ShortDesc of penis] [harden]ing into an erection[if K3 is clothing], still concealed under your [ShortDesc of K3][end if].".
+					say "Your feel your [mystical ShortDesc of penis] [harden]ing into an erection[if K3 is clothing], still concealed under your [ShortDesc of K3][end if].".
 
 [Whenever the player cools off from arousal, they will lose their erection]
 To compute erection decay:
 	if condom of kings is worn and condom of kings is uncursed, do nothing;
 	if ghost-strapon is worn and the size of penis < the strap-length of ghost-strapon, do nothing;
-	say "[line break][bold type]Your [ShortDesc of penis] softens.[roman type][line break]";
+	say "[line break][bold type]Your [mystical ShortDesc of penis] softens.[roman type][line break]";
 	now penis is not penis-erect.
 
 Section 3 - Presenting
@@ -376,16 +380,13 @@ The penis occupied rule is listed in the penis presentable rules.
 
 This is the penis doesn't exist rule:
 	if the player is not possessing a penis:
-		if auto is 0, say "You don't have a penis.";
+		if auto is 0:
+			if the player is not possessing a vagina:
+				say "You have no penis, just a doll-like mound.";
+			otherwise:
+				say "You don't have a penis.";
 		rule fails.
 The penis doesn't exist rule is listed in the penis presentable rules.
-
-[When the donator lock comes off, this rule must be removed]
-[This is the penis in beta rule:
-	if the player is not the donator:
-		if auto is 0, say "This feature is currently in beta. Wait until it comes out!";
-		rule fails.
-The penis in beta rule is listed in the penis presentable rules.]
 
 This is the monster doesn't do penetration rule:
 	if auto > 0 and ((presenting-receiver is monster and presenting-receiver is not willing to charm snakes) or the number of willing to charm snakes monsters in the location of the player is 0), rule fails.
@@ -472,24 +473,14 @@ To say SexShaft:
 To say TotalDesc of penis:
 	if the player is possessing a penis:
 		if there is a worn chastity cage:
-			say "Your [ShortDesc of penis] and [ShortBallsDesc] are kept soft and locked away inside a chastity cage. ";
+			say "Your [ShortDesc of penis] and [ShortDesc of scrotum] are kept soft and locked away inside a chastity cage. ";
 		otherwise if there is pussy covering clothing:
-			say "You have a[if penis is penis-erect]n erect[end if] [ShortDesc of penis] and [ShortBallsDesc]. ";
+			say "You have a[if penis is penis-erect]n erect[end if] [ShortDesc of penis] and [ShortDesc of scrotum]. ";
 		otherwise:
-			if penis is penis-erect, say "Your [one of]erect[or]hard[or]stiff[at random] [ShortDesc of penis] stands at attention, and your [ShortBallsDesc] [if the size of scrotum > 5]sway freely[otherwise if the size of scrotum > 3]hang freely[otherwise]are barely noticeable[end if]. ";
-			otherwise say "Your soft [ShortDesc of penis] and [ShortBallsDesc] [if the size of scrotum > 5]sway freely. [otherwise if the size of scrotum > 3]hang freely. [otherwise]are barely noticeable. [end if]";
+			if penis is penis-erect, say "Your [one of]erect[or]hard[or]stiff[at random] [ShortDesc of penis] stands at attention, and your [ShortDesc of scrotum] [if the size of scrotum > 5]sway freely[otherwise if the size of scrotum > 3]hang freely[otherwise]are barely noticeable[end if]. ";
+			otherwise say "Your soft [ShortDesc of penis] and [ShortDesc of scrotum] [if the size of scrotum > 5]sway freely. [otherwise if the size of scrotum > 3]hang freely. [otherwise]are barely noticeable. [end if]";
 	otherwise if the player is sexed male:
-		say "A doll-like flat mound exists where your penis used to be[if watersports mechanics is 1]. There's just a tiny hole to allow you to pee[end if].".
-
-[To say ShortBallsDesc:
-	if the size of penis < 3:
-		say "internal testicles";
-	otherwise if the size of penis < 5:
-		say "small, tight ball sac";
-	otherwise if the size of penis < 7:
-		say "average scrotum";
-	otherwise:
-		say "heavy, full balls".]
+		say "A doll-like flat mound exists where your penis and balls used to be[if players-dick-is-detached is 1 and players-detached-dick is held by the player] attached to you: and you know exactly where they are right now[otherwise if players-dick-is-detached is 1 and players-detached-dick is somewhere-here] attached to you: and you hope you're about to get them back[otherwise if players-dick-is-detached is 1] attached to you: [one of]you're not sure where they are now[or]they've been stolen[or]you need to get them back[at random][end if][if watersports mechanics is 1]. There's just a tiny hole to allow you to pee[end if].". [#LXordDD]
 
 To say PenisModesty:
 	if penis is at least partially exposed:
@@ -506,6 +497,9 @@ Part 3 - Modify Penis Stats
 
 previous penis length is a number that varies.
 
+[ PenisUp(X)
+#LXorDD:
+For the detached dick case, since it can be grown or shrunk while detached, and since these functions are quite involved, rather than copying and modifying them, I'm trying to reuse them: I temporarily set the penis and scrotum sizes back to those of the detached dick before calling these, and back to zero immediately after, and adding some code in here to handle the special case of the detached dick.]
 To PenisUp (X - a number):
 	if the player is not possessing a vagina or (the player is possessing a vagina and futanari fetish is 1):
 		OnlyPenisUp X;
@@ -518,8 +512,12 @@ To PenisUp (X - a number):
 		otherwise:
 			SilentlyScrotumUp X.
 
+[#LXorDD Selkie has added a new TG situation here:
+If Game Hates You AND you have a detached dick AND it's at maximum size AND if TG fetish is on AND if the latex transformation > 5.
+If TG fetish is not on, the balloon can burst leaving you at size 0.
+Is that main condition too kind - should it _really_ require Game Hates You?]
 To OnlyPenisUp (X - a number):
-	now previous penis length is the size of penis;
+	now previous penis length is the mystical size of penis;
 	if the player is not possessing a penis and (choice in row 68 of the Table of Player Options is 0 or the player is not a top donator), now X is 0;
 	if cumlust tattoo is worn:
 		SemenTasteAddictUp X;
@@ -531,11 +529,40 @@ To OnlyPenisUp (X - a number):
 		say "Your [ShortDesc of metal-cage] is preventing your [player-penis] from getting any larger!";
 	if X > 0:
 		if the size of penis >= 10:
-			say "Your monster of a [manly-penis] can't seem to grow any larger! You feel like a stud!";
-			dignify 50;
+			if players-dick-is-detached is 0: [#LXorDD]
+				say "Your monster of a [manly-penis] can't seem to grow any larger! You feel like a stud!";
+				dignify 50;
+			otherwise: [#LXorDD This is all new]
+				let sense be "feel";
+				if players-detached-dick is in the location of the player, now sense is "see";
+				say "You [sense] your stolen monster of a [manly-penis] try to grow even larger, ";
+				if the latex-transformation of the player > 5:
+					if the size of penis < 12:
+						say "swelling even bigger, its [LatexFlav] stretching dangerously. It's starting to hurt, like it could pop![line break][variable custom style]I need to get it reattached, and sooner rather than later![roman type][line break]";
+						increase the size of penis by 1;
+					otherwise:
+						if tough-shit is 0 or TG fetish is 0:
+							say "but can't seem to grow any further.";
+						otherwise:
+							say "its [LatexFlav]skin expanding until it's translucent, and a sharp stab of pain runs through you.[line break]At the last moment the pain vanishes... into a scary numbness. But your eyes widen as it keeps stretching, until horror explodes - as does your [manly-penis], bursting into a million pieces!";
+							now the size of players-detached-dick is -1;
+							if TG fetish > 0 and the player is not possessing a vagina:
+								SexChange the player;
+							otherwise:
+								[####Selkie: is this right? Or should it be set to Min Penis Size, and add a comment about a meagre stub remaining?]
+								now the size of penis is 0;
+								now the size of scrotum is 0;
+				otherwise if the latex-transformation of the player > 0:
+					say "and you [sense] its [LatexFlav]skin try to stretch, but it's just not elastic enough.";
+				otherwise:
+					say "but it feels like it can't.";
 		otherwise:
-			if the player is possessing a penis, say "You feel your penis grow into ";
-			otherwise say "Suddenly, you feel something growing just above your [vagina]. It's ";
+			if players-dick-is-detached > 0:
+				say "You feel your detached penis grow into "; [#LXorDD This is mainly to cover the possibility of it being detached and a flat disc, i.e. zero sized. I'm just being defensive]
+			otherwise if the player is possessing a penis:
+				say "You feel your penis grow into ";
+			otherwise:
+				say "Suddenly, you feel something growing just above your [vagina]. It's ";
 			while X > 0:
 				decrease X by 1;
 				if the size of penis < 10, increase the size of penis by 1;
@@ -543,9 +570,10 @@ To OnlyPenisUp (X - a number):
 			if the size of penis is 8, cutshow figure of body reaction 3 for penis;
 			if the size of penis is 9, cutshow figure of body reaction 8 for penis;
 			if the size of penis is 10, cutshow figure of body reaction 9 for penis;
-	let C be a random worn strapon-panties;[TODO: flavour for the player's dick popping out of too-small underwear]
-	if C is clothing and previous penis length < the strap-length of C and the size of penis >= the strap-length of C:
-		say PenisHarden of C.
+	if players-dick-is-detached is 0: [#LXorDD Any worn clothes will only affect the penis if it's attached.]
+		let C be a random worn strapon-panties;[TODO: flavour for the player's dick popping out of too-small underwear]
+		if C is clothing and previous penis length < the strap-length of C and the size of penis >= the strap-length of C:
+			say PenisHarden of C.
 
 penis-flav is initially true.
 
@@ -564,7 +592,7 @@ To OnlyPenisDown (X - a number):
 	let flav-said be 0;
 	if X > 0:
 		if the player is male and the size of penis <= min penis size:
-			if penis-flav is true, say "You feel a strange pang in your crotch... you feel that your penis tried to shrink even further, but [if the player is not possessing a penis]since you have nothing left, it can't[otherwise if the size of penis < 4]it's so tiny that it can't get any smaller[otherwise]something prevents it[end if]!";
+			if penis-flav is true, say "You feel a strange pang in your crotch... you feel that your penis[if players-dick-is-detached > 0 and players-detached-dick is not in the location of the player], wherever it may be, [end if]tried to shrink even further, but [if the player is not possessing a penis]since you have nothing left, it can't[otherwise if the size of penis < 4]it's so tiny that it can't get any smaller[otherwise]something prevents it[end if]!";
 			now X is 0;
 		while X > 0:
 			decrease X by 1;
@@ -579,11 +607,14 @@ To OnlyPenisDown (X - a number):
 		if penis-flav is true:
 			if the player is male and previous penis length <= min penis size and fast tg is 3:
 				say DefaultSexChangeFlav;
-				sexchange the player;
+				SexChange the player;
 			otherwise if the size of penis < previous penis length:
-				if penis-flav is true, say "Your [one of]penis[or]dick[cycling] [if previous penis length > the size of penis + 2]shrivels[otherwise]shrinks[end if] into a [ShortDesc of penis].";
-			let C be a random worn strapon-panties;
-			if C is clothing and previous penis length >= the strap-length of C and the size of penis < the strap-length of C, say PenisSoften of C.
+				let feeling be "Some place, somewhere, you can feel your"; [#LXorDD]
+				if players-detached-dick is somewhere-here, now feeling is "Your";
+				if penis-flav is true, say "[feeling] [one of]penis[or]dick[cycling] [if previous penis length > the size of penis + 2]shrivels[otherwise]shrinks[end if] into a [ShortDesc of penis].";
+			if players-dick-is-detached is 0: [#LXorDD Any worn clothes will only affect the penis if it's attached.]
+				let C be a random worn strapon-panties;
+				if C is clothing and previous penis length >= the strap-length of C and the size of penis < the strap-length of C, say PenisSoften of C.
 
 Section - Image for graphics window
 

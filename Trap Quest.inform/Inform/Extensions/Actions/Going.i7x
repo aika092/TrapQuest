@@ -325,6 +325,7 @@ Part 3 - Main Going Function
 
 [This is a long function because the order of considerations is quite important here!]
 Check going:
+	if the noun is not a direction, say "This verb is used by specifying a direction: north, east, south, west, up or down." instead;
 	now the player-motion of the player is 1; [Until we decide the player has failed to move, they are assumed to have succeeded at moving]
 	now the location of the player is discovered; [Just in case it didn't become discovered on the way in]
 	[Going is a resisting activity.]
@@ -423,13 +424,12 @@ Check going:
 		[All these checks only take place if the player is CRAWLING as opposed to walking.]
 		if the player is prone:
 			[We want to warn the player if they're going to crawl into a room they previously triggered a pink smoke trap in.]
-			if trap warning is 1:
-				if the noun is a direction: [We do this just in case the player says "go wardrobe" or something retarded like that.]
-					if the room noun from the location of the player is smoky:
-						say "There is [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in that room, and you are on your knees. Are you sure you want to try and crawl that way? ";
-						unless the player is in agreement:
-							allocate 0 seconds; [Because we set it to 3 seconds earlier, if this isn't here then the player loses a turn.]
-							say "You change your mind." instead;
+			if trap warning is 1 and player-breathing is true:
+				if the room noun from the location of the player is smoky:
+					say "There is [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in that room, and you are on your knees. Are you sure you want to try and crawl that way? ";
+					unless the player is in agreement:
+						allocate 0 seconds; [Because we set it to 3 seconds earlier, if this isn't here then the player loses a turn.]
+						say "You change your mind." instead;
 			let B2 be (the weight of breasts + (the weight of belly * 3) + the weight of hips) / 5; [the weight of belly is the main limiting factor when trying to crawl.]
 			if the pregnancy of the player > 0 and S <= (B2 / 2) + 1, now S is (B2 / 2) + 3; [Pregnant players should not be prevented from ever moving since the pregnancy may have no other way of actually coming out other than a change in location]
 			allocate 6 seconds;
@@ -474,7 +474,7 @@ Check going:
 	let W be a random warp portal in the location of the player;
 	if W is warp portal and the noun is the covered-direction of W:
 		if playerRegion is dungeon and location of hotel portal is not discovered and location of mansion portal is not discovered and class-time < 1000 and class-time > 0 and armband is worn and armband is not solid gold and the player is the donator:
-			say "Your armband hasn't beeped yet. If you enter the school before it's beeped even once, even if you take a lesson, you won't be able to access the Extra Credit Zone. Are you sure you want to enter the school early?";
+			say "Your armband hasn't beeped yet. If you enter the school before it's beeped even once, even if you take a lesson, you won't be able to access the Extra Credit Zone. Are you sure you want to enter the academy early?";
 			if the player is not consenting:
 				now seconds is 0;
 				say "Action cancelled." instead;
@@ -483,7 +483,13 @@ Check going:
 			say "You stretch and strain towards the portal, and finally feel it take a grip on you!";
 			compute raw glue escaping a random glue in the location of the player with 1;
 		teleport via W instead;
-		do nothing instead. [Shouldn't be necessary but it is. Go figure.]
+		do nothing instead; [Shouldn't be necessary but it is. Go figure.]
+	[#LXorDD]
+	if players-dick-is-detached > 0 and a random number between 1 and 50 is 1:
+		say "[if players-detached-dick is in Dungeon41]You get a brief sensation of someone wiping your detached dick and then putting it back down[otherwise if players-detached-dick is pick-uppable]You feel a brief, faint vibration in your detached dick, like it's lying on the ground and something just walked past it[otherwise]You feel[one of][or], once again,[stopping] [one of][or]a sudden sensation from [at random]your missing dick, feeling someone - or some[i]thing[/i] - handling it. You feel it being [one of]slapped a couple of times against some hard surface[or]submerged in water and waved about[or]roughly wiped down[or]waved around and waggled[at random], and then [one of]tossed up in the air and caught[or]slapped against flesh[or]slapped against something leathery[or]struck against something small that squishes against it which is then picked off[or]it dipped in something warm, stirring it around, then withdrawn and licked all over[or]something warm and wet envelops it, sliding up and down over it for seconds and then minutes[as decreasingly likely outcomes]. Then it's wrapped up... and then nothing.";
+		swap dick in; [So there's a penis there while the function runs]
+		passively stimulate penis;
+		swap dick out. [and switch it back out]
 
 The clumsiness rules is a rulebook.
 
@@ -683,26 +689,25 @@ Definition: yourself is walking past a pressure trap:
 
 To Test A Pressure Trap:
 	let B be the largeness of breasts;
-	if the player is upright:
+	if there is worn sandals:
+		do nothing;
+	otherwise if the player is upright:
 		say "[bold type]You feel the stone slab underneath your feet depress as you step on it...[roman type][line break]";
 		trigger a pressure trap;
 	otherwise:
-		let A be a random number between 1 and the dexterity of the player;
+		[let A be a random number between 1 and the dexterity of the player;
 		let B be a random number between 1 and the dexterity of the player;
 		let R be A + B;
 		if debuginfo > 0, say "[input-style]Pressure plate reaction check: dexterity d[dexterity of the player] ([A]) + dexterity d[dexterity of the player] ([B * 1]) ";
-		if there is a worn sandals:
-			increase R by 4;
-			if debuginfo > 0, say "+ sandals bonus (4) ";
 		if debuginfo > 0, say "= [R] | (13.5) pressure pad difficulty[roman type][line break]";
-		if R > 13:
-			say "[bold type]As you crawl your hand touches a stone slab that starts to depress, but you quickly avoid putting too much of your weight onto the slab, avoiding triggering the trap.[roman type][line break]";
-			if B > 16:
-				say " However, as your [BreastDesc] crosses the pressure pad, their weight manages to trigger the trap! Whoops![line break]";
-				trigger a pressure trap;
-		otherwise:
+		if R > 13:]
+		say "[bold type]As you crawl your hand touches a stone slab that starts to depress, but you quickly avoid putting too much of your weight onto the slab, avoiding triggering the trap.[roman type][line break]";
+		if B > 16:
+			say " However, as your [BreastDesc] crosses the pressure pad, their weight manages to trigger the trap! Whoops![line break]";
+			trigger a pressure trap;
+		[otherwise:
 			say "[bold type]As you crawl your hand touches a stone slab that starts to depress.[roman type] You fail to react in time and trigger a trap![line break]";
-			trigger a pressure trap.
+			trigger a pressure trap.]
 
 To Trigger A Pressure Trap:
 	let N be 0;

@@ -379,7 +379,7 @@ To compute (M - a gladiator) npcBattling (N - an aeromancer):
 		now the refractory-period of M is the refractory-time of M.
 
 To compute (M - a gladiator) npcBattling (N - a royal guard):
-	say "[BigNameDesc of M][']s suddenly turns to [NameDesc of N].[line break][speech style of M]'[one of]You there, [boy of N]! You clearly need help becoming a true woman!'[or]Are you not embarassed of those tiny breasts?! You need my help!'[in random order][roman type][line break][big he of M] pulls out a bottle of pink liquid. [run paragraph on]";
+	say "[BigNameDesc of M] suddenly turns to [NameDesc of N].[line break][speech style of M]'[one of]You there, [boy of N]! You clearly need help becoming a true woman!'[or]Are you not embarassed of those tiny breasts?! You need my help!'[in random order][roman type][line break][big he of M] pulls out a bottle of pink liquid. [run paragraph on]";
 	if a random number between 1 and 2 is 1:
 		say "[BigFuckerDesc of N] avoids [FuckerDesc of M]'s lunge and quickly knocks the bottle out of [his of M] hand. The contents spill everywhere.[line break][speech style of M]'I'm only trying to help, you idiot!'[roman type][line break][BigFuckerDesc of M] storms off!";
 		bore M;
@@ -904,7 +904,7 @@ To say DragArrival of (M - a gladiator) to (R - Dungeon33):
 
 To say PresentAcceptanceFlav of (M - a gladiator):
 	if presented-orifice is penis, say "[speech style of M]'You are challenging me? Ha. Hahaha... Did you expect me to refuse?'[roman type][line break][BigNameDesc of M] seems convinced by your request!";
-	otherwise say "[speech style of M]'[one of]Eager to show me what a whore you really are? Be my guest.'[or]I am going to enjoy this...'[stopping][roman type] [BigNameDesc of M] seems convinced by your request!".
+	otherwise say "[speech style of M]'[one of]Eager to show me what a whore you really are? Be my guest.'[or]I am going to enjoy this...'[stopping][roman type][line break][BigNameDesc of M] seems convinced by your request!".
 
 To say StrikingFlav of (M - a gladiator) on (B - a body part):
 	if M is swordless, say "[BigNameDesc of M] smacks you [TargetName of B]! ";
@@ -1473,9 +1473,9 @@ To decide which number is the dominationtype of (M - a gladiator) using (F - pen
 	compute multiple choice question;
 	let CNR be the chosen numerical response;
 	let C be 0;
-	if the printed name of CNR is "Go for a blowjob", now C is FUCK-BLOWJOB;
-	if the printed name of CNR is "Go for penetration", now C is FUCK-PENETRATION;
-	if the printed name of CNR is "Settle for whatever":
+	if the CNR is "Go for a blowjob", now C is FUCK-BLOWJOB;
+	if the CNR is "Go for penetration", now C is FUCK-PENETRATION;
+	if the CNR is "Settle for whatever":
 		if a random number between 1 and 2 is 1, now C is FUCK-BLOWJOB;
 		otherwise now C is FUCK-PENETRATION;
 	decide on C.
@@ -1496,12 +1496,12 @@ To decide which number is the dominationtype of (M - a gladiator) using (F - a f
 	compute multiple choice question;
 	let CNR be the chosen numerical response;
 	let C be 0;
-	if the printed name of CNR is "Try facesitting", now C is FUCK-FACESIT;
-	if the printed name of CNR is "Try riding", now C is FUCK-RIDE;
-	if the printed name of CNR is "Settle for whatever":
+	if the CNR is "Try facesitting", now C is FUCK-FACESIT;
+	if the CNR is "Try riding", now C is FUCK-RIDE;
+	if the CNR is "Settle for whatever":
 		if a random number between 1 and 2 is 1, now C is FUCK-FACESIT;
 		otherwise now C is FUCK-RIDE;
-	if the printed name of CNR is "Try riding with a condom":
+	if the CNR is "Try riding with a condom":
 		say CondomManualFlav of M;
 		now M is wrapped;
 		now C is FUCK-RIDE;
@@ -1592,7 +1592,7 @@ To penetration dominate (M - a gladiator):
 To compute unique dominance reward of (M - a gladiator):
 	if player-fuckchoice is FUCK-RIDE, compute power bottom reward of M;
 	otherwise:[meaning that you used a strapon/penis]
-		if the player is possessing a penis, PenisUp 1;
+		if the player is somehow possessing a penis, SpecialPenisUp 1; [#LXorDD]
 		otherwise DelicateDown 1;
 	DelicateDown 1.
 
@@ -1841,17 +1841,17 @@ To anal penetration dominate (M - a gladiator):
 
 To say AfterDominationComment (N - a number) of (M - a gladiator):
 	if N is 4:[you rode her, but decided to skip a creampie]
-		say "[speech style of M]'[one of]I would have done the same. Next time, warrior.[or]A winner must not have regrets. Next time, warrior.'[or]You did defeat me, after all. Next time, warrior.'[in random order][roman type]";
+		say "[speech style of M]'[one of]I would have done the same. Next time, warrior.'[or]A winner must not have regrets. Next time, warrior.'[or]You did defeat me, after all. Next time, warrior.'[in random order][roman type][line break]";
 	otherwise if the player is gendered female and N < 4:[she's more cordial with women]
-		say "[speech style of M]'[one of]I will defeat you next time. Or, I will honour you again as the better warrior'[or].'[or]I am glad I lost to you and not some disgusting man. However, I will not lose again.[at random][roman type]";
+		say "[speech style of M]'[one of]I will defeat you next time. Or, I will honour you again as the better warrior.'[or]I am glad I lost to you and not some disgusting man. However, I will not lose again.'[at random][roman type][line break]";
 	otherwise if N is 3:[you pissed her off]
-		say "[speech style of M]'[one of]I will make sure you feel all that I have felt.'[or]Fool. You should have killed me.'[or]I wonder, will you remember this moment when I have beaten you?'[at random][roman type][big he of M] laughs coldly.";
+		say "[speech style of M]'[one of]I will make sure you feel all that I have felt.'[or]Fool. You should have killed me.'[or]I wonder, will you remember this moment when I have beaten you?'[at random][roman type][line break][big he of M] laughs coldly.";
 	otherwise if N is 2:[she got one over on you or she's neutral about it]
-		say "[speech style of M]'[one of]Hmph. The battle is never over.'[or]Did you enjoy that, warrior?'[or]Next time, don't let your guard down.'[at random][roman type]";
+		say "[speech style of M]'[one of]Hmph. The battle is never over.'[or]Did you enjoy that, warrior?'[or]Next time, don't let your guard down.'[at random][roman type][line break]";
 	otherwise if N is 1:[SPH]
 		say "[line break][speech style of M]'You will not be this lucky next time we meet. For your sake, I hope you've made something of that pitiful thing you call a manhood by then.'[roman type][line break]";
 	otherwise:[she had fun!]
-		say "[speech style of M]'[one of]T-this will go differently next time...[or]I hope y-you enjoyed that. B-beating me will not be so easy next time...'[or][if player-fucker is penis]Dicking[otherwise]Fucking[end if] me-... Beating me will not be so easy next time.'[in random order][roman type]";
+		say "[speech style of M]'[one of]T-this will go differently next time...'[or]I hope y-you enjoyed that. B-beating me will not be so easy next time...'[or][if player-fucker is penis]Dicking[otherwise]Fucking[end if] me-... Beating me will not be so easy next time.'[in random order][roman type][line break]";
 
 Part 4 - Conversation
 
@@ -1922,10 +1922,10 @@ To say UnAnnoyedResponse of (M - a gladiator):
 	say "[speech style of M]'[one of]Take it, whore!'[or]How does it feel when I punish you, whore!'[or][if the player is gendered male]How does it feel to get fucked by a [man of M]?'[otherwise]I said you would pay!'[end if][at random][roman type][line break]";
 
 To say MildAnnoyedResponse of (M - a gladiator):
-	say "[speech style of M]'[one of]You disgust me!'[or]Silence, whore!'[or]Gaah! Silence, NOW!'[at random][roman type]";
+	say "[speech style of M]'[one of]You disgust me!'[or]Silence, whore!'[or]Gaah! Silence, NOW!'[at random][roman type][line break]";
 
 To say AnnoyedResponse of (M - a gladiator):
-	say "[speech style of M]'[one of]BE SILENT!'[or]SHUT UP, WHORE!'[or]SHUT! UP!'[at random][roman type]";
+	say "[speech style of M]'[one of]BE SILENT!'[or]SHUT UP, WHORE!'[or]SHUT! UP!'[at random][roman type][line break]";
 
 To say InvitationAccepted of (M - a gladiator) with (N - a monster):
 	if M is male:
@@ -2072,7 +2072,7 @@ To compute unfriendly drink of (M - a gladiator):
 	otherwise:
 		if the player is a flatchested trap:
 			say "[if M is uninterested]You spot a [M]! You beg[him of M][otherwise]You can't control yourself - you beg [NameDesc of M][end if] to give you something to drink. [big he of M] grins and pulls out a small flask. You snatch it from [him of M] and down it in one. You feel much less thirsty, and are about to thank [him of M], but suddenly you feel your crotch rumble. ";
-			PenisDown 1;
+			SpecialPenisDown 1; [#LXorDD]
 			say "The gladiator laughs heartily then seems to lose interest.";
 		otherwise:
 			say "[if M is uninterested]You spot a [M]! You beg [him of M][otherwise]You can't control yourself - you beg [NameDesc of M][end if] to give you something to drink. [big he of M] grins and pulls out a small flask. You snatch it from [him of M] and down it in one. You feel much less thirsty, and are about to thank [him of M], but suddenly you feel your chest rumble. You watch [if the bimbo of the player < 7]in horror [end if]as your breasts visibly grow in front of you. The gladiator laughs heartily then seems to lose interest.";
@@ -2236,7 +2236,7 @@ To compute kneeling reaction of (M - enlightened gladiator):
 	strongHumiliate.
 
 To say UnfriendlyResponse of (M - enlightened gladiator):
-	say "[speech style of M]'Get on your knees so I can teach you!'[roman type]";
+	say "[speech style of M]'Get on your knees so I can teach you!'[roman type][line break]";
 
 To say PrepTaunt of (M - enlightened gladiator) in (F - asshole):
 	do nothing.
@@ -2331,9 +2331,9 @@ To compute appearance assessment of (M - wild gladiator):
 			calm M;
 	otherwise if M is uniquely unfriendly:[no need to determine flight since the wild gladiator is in the woods.]
 		if breasts is not lewdly exposed:
-			say "[speech style of M]'[one of]You there, I challenge you. Defeat me or become my prize!'[or]I challenge you, slut. Defend yourself or become my prize!'[stopping][roman type]";
+			say "[speech style of M]'[one of]You there, I challenge you. Defeat me or become my prize!'[or]I challenge you, slut. Defend yourself or become my prize!'[stopping][roman type][line break]";
 		otherwise if the largeness of breasts > 3:
-			say "[speech style of M]'[one of]Hmmph. Do you think yourself a warrior, with those breasts you display so proudly? Prove yourself. Fight me.'[or]You have yet to prove yourself! You have no right to display those breasts so proudly!'[stopping][roman type]";
+			say "[speech style of M]'[one of]Hmmph. Do you think yourself a warrior, with those breasts you display so proudly? Prove yourself. Fight me.'[or]You have yet to prove yourself! You have no right to display those breasts so proudly!'[stopping][roman type][line break]";
 		otherwise:
 			say "[speech style of M]'[one of]How dare you display such a pitiful chest so proudly! Face me, whelp.'[or]Still you have no shame? I will not allow you to flaunt such a Spartan chest!'[at random]";
 	otherwise if the breast-happy of M is 1:
@@ -2455,7 +2455,7 @@ To compute failed dominance punishment of (M - wild gladiator):
 		say GotLuckyFlav;
 		Bore M;
 	otherwise:
-		say "[speech style of M]'There is no such thing as partial victory. You lost. May the jungle determine your fate.'[roman type] [BigNameDesc of M] seems to lose interest you and begins walking away, but it seems like the game still has more in store for you!";
+		say "[speech style of M]'There is no such thing as partial victory. You lost. May the jungle determine your fate.'[roman type][line break][BigNameDesc of M] seems to lose interest you and begins walking away, but it seems like the game still has more in store for you!";
 		compute sissification;
 		Bore M.
 

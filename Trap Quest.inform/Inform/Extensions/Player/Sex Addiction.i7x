@@ -22,15 +22,13 @@ To decide which number is the sex-addiction-influence of (C - a clothing):
 	if diaper quest is 0, decide on the bimbo-influence of C;
 	decide on 0.
 
-To decide which number is the sex-addiction-influence of (C - a temptation clothing):
-	let S be 2;
-	decrease S by the magic-modifier of C;
-	decide on S.
-
 To decide which number is the calculated sex addiction of the player:
 	let S be the raw sex addiction of the player;
 	repeat with C running through worn wearthings:
 		increase S by the sex-addiction-influence of C;
+		if C is temptation clothing:
+			let TMPT be 2 - the magic-modifier of C;
+			if TMPT > 0, increase S by TMPT;
 	if submissive sex addict is 1, increase S by 8;
 	if slimegirl is worn:
 		let I be the intensity of slimegirl;
@@ -347,6 +345,7 @@ To decide which number is the calculated oral sex addiction of the player:
 	if submissive sex addict is 1, increase S by 3;
 	repeat with C running through worn wearthings:
 		increase S by the oral-sex-addiction-influence of C;
+	[#LXorDD: considered the idea that enlarged lips are also more pleasurable, but discarded it at least for now.]
 	if S > 10, decide on 10;
 	if S < 1, decide on 1;
 	decide on S.
@@ -449,7 +448,9 @@ To SemenTasteAddictUp (X - a number):
 	let S be the calculated semen taste addiction of the player;
 	SilentlySemenTasteAddictUp X;
 	let S be the calculated semen taste addiction of the player - S;
-	if S > 0, say "You feel [if S > 1]significantly [end if]more [if the calculated semen taste addiction of the player > 13]addicted to[otherwise if the calculated semen taste addiction of the player > 6]accustomed to[otherwise]tolerant of[end if] the taste of [semen].".
+	if S > 0:
+		say "You feel [if S > 1]significantly [end if]more [if the calculated semen taste addiction of the player > 13]addicted to[otherwise if the calculated semen taste addiction of the player > 6]accustomed to[otherwise]tolerant of[end if] the taste of [semen].";
+		if the semen volume of face > 0, progress quest of mouthful-quest;
 
 To SilentlySemenTasteAddictUp (X - a number):
 	if the latex-transformation of the player > 4 or diaper quest is 1 or skirted-maid-corset is worn, now X is 0;

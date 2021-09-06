@@ -5,7 +5,7 @@ Altars by Objects begins here.
 The dungeon altar allows the player to remove curses from their clothes and obtain the priestess class. It becomes inactive after being used, and it recharges when the player kills monsters, when monsters grow bored, and when the player has sex with an enemy as the priestess. trying to use the altar while it is inactive will result in some sort of punishment.
 
 @!]
-The dungeon altar is in Dungeon28. The dungeon altar is not portable. The dungeon altar has a number called charge. The charge of the dungeon altar is usually -200. The printed name of dungeon altar is "[TQlink of item described]altar[shortcut-desc] [GlowDesc of the item described][TQxlink of item described][verb-desc of item described]". The indefinite article of the dungeon altar is "an". The text-shortcut of dungeon altar is "al". Figure of dungeon altar is the file "Env/Dungeon/altar1.jpg". Figure of dungeon altar cutscene is the file "Special/Cutscene/cutscene-altar-pray1.jpg".
+The dungeon altar is a thing. The dungeon altar is in Dungeon28. The dungeon altar is not portable. The dungeon altar has a number called charge. The charge of the dungeon altar is usually -200. The printed name of dungeon altar is "[TQlink of item described]altar[shortcut-desc] [GlowDesc of the item described][TQxlink of item described][verb-desc of item described]". The indefinite article of the dungeon altar is "an". The text-shortcut of dungeon altar is "al". Figure of dungeon altar is the file "Env/Dungeon/altar1.jpg". Figure of dungeon altar cutscene is the file "Special/Cutscene/cutscene-altar-pray1.jpg".
 
 To say GlowDesc of (A - dungeon altar):
 	say "([if the class of the player is priestess and the charge of A > 0]unsafe[otherwise if the class of the player is priestess]safe[otherwise if the charge of A < -150]glowing strongly[otherwise if the charge of A < 100]glowing softly[otherwise]not glowing[end if])";
@@ -29,7 +29,7 @@ Report going when the player is in Dungeon28:
 The woods altar allows the player to randomly bless or uncurse items in exchange for a piece of jewellery. This altar is unique because it does not have a charge, and only jewellery can be placed on it.
 
 @!]
-The woods altar is in Woods20. The woods altar is not portable. The printed name of woods altar is "[TQlink of item described]small altar[if witch is bitchy and witch is in Woods20 and the altar-uses of witch is 1] (1 use remaining)[otherwise if witch is bitchy and witch is in Woods20] ([altar-uses of witch] uses remaining)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". Understand "small" as the woods altar. The text-shortcut of woods altar is "al".
+The woods altar is a thing. The woods altar is in Woods20. The woods altar is not portable. The printed name of woods altar is "[TQlink of item described]small altar[if witch is bitchy and witch is in Woods20 and the altar-uses of witch is 1] (1 use remaining)[otherwise if witch is bitchy and witch is in Woods20] ([altar-uses of witch] uses remaining)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". Understand "small" as the woods altar. The text-shortcut of woods altar is "al".
 
 Figure of woods altar 0 is the file "Env/Forest/altar1.jpg".
 Figure of woods altar 1 is the file "Env/Forest/altar2.jpg".
@@ -55,7 +55,7 @@ To say ExamineDesc of (C - woods altar):
 The elder altar gains charge when items are placed on the altar, and loses charge when the player uses the special invoking verb learned from the necronomicon.
 
 @!]
-The elder altar is in Mansion23. The elder altar is not portable. The printed name of elder altar is "[TQlink of item described]dark altar[shortcut-desc][if the charge of item described <= 0] (glowing)[otherwise] (not glowing)[end if][TQxlink of item described][verb-desc of item described]". Understand "dark" as the elder altar. The indefinite article of the elder altar is "an". The elder altar has a number called charge. The text-shortcut of elder altar is "al".
+The elder altar is a thing. The elder altar is in Mansion23. The elder altar is not portable. The printed name of elder altar is "[TQlink of item described]dark altar[shortcut-desc][if the charge of item described <= 0] (glowing)[otherwise] (not glowing)[end if][TQxlink of item described][verb-desc of item described]". Understand "dark" as the elder altar. The indefinite article of the elder altar is "an". The elder altar has a number called charge. The text-shortcut of elder altar is "al".
 Figure of elder altar cock is the file "Env/Mansion/cumcock1.jpg".
 
 To decide which figure-name is the examine-image of (C - elder altar):
@@ -74,7 +74,7 @@ To say ExamineDesc of (C - elder altar):
 The hotel altar allows the player to gain unique demon-themed benefits in exchange for punishments. The more the altar is used, the better the benefit and the worse the punishment. The hotel altar gains charge when used and loses charge when the player kills a monster or when a monster grows bored. It also loses charge when the player has sex with an infernal monster as a worshipper.
 
 @!]
-The hotel altar is in Hotel35. The hotel altar is not portable. The printed name of hotel altar is "[TQlink of item described]golden altar[shortcut-desc] [GlowDesc of the item described][TQxlink of item described][verb-desc of item described]". Understand "golden", "gold" as the hotel altar. The hotel altar has a number called charge. The charge of the hotel altar is usually 0. The text-shortcut of hotel altar is "al". The hotel altar has a number called altar-intensity.
+The hotel altar is a thing. The hotel altar is in Hotel35. The hotel altar is not portable. The printed name of hotel altar is "[TQlink of item described]golden altar[shortcut-desc] [GlowDesc of the item described][TQxlink of item described][verb-desc of item described]". Understand "golden", "gold" as the hotel altar. The hotel altar has a number called charge. The charge of the hotel altar is usually 0. The text-shortcut of hotel altar is "al". The hotel altar has a number called altar-intensity.
 
 To say GlowDesc of (A - hotel altar):
 	let N be the altar-intensity of A;
@@ -378,10 +378,10 @@ To AltarPray (P - a person):
 			say "About half the length of your hair is magically chopped off!";
 			HairCut to the largeness of hair / 2;
 			break;
-		if R is 8 and the size of penis < 10 and the player is possessing a penis:
+		if R is 8 and the mystical size of penis < 10 and the player is somehow possessing a penis:
 			say "You feel more virile!";
-			PenisUp 1;
-			if the size of penis is previous penis length, SexAddictDown 2;
+			SpecialPenisUp 1; [#LXorDD]
+			if the mystical size of penis is previous penis length, SexAddictDown 2;
 			break;
 		if R is 9:
 			if there is a worn tattoo and angel tattoo is not worn:

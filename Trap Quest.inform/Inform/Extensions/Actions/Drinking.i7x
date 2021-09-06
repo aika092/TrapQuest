@@ -255,6 +255,8 @@ Carry Out Spitting:
 	let collecting be nothing;
 	if the total volume of face > 0 and the player is not flying and the player is not in a nonstandard room and the player is not immobile and the player is not in danger:
 		let LV be a list of things;
+		repeat with V running through carried lid topped vessels:
+			add V to LV;
 		repeat with V running through carried open topped vessels:
 			add V to LV;
 		if the player is upright:

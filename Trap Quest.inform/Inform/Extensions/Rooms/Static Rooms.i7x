@@ -23,7 +23,7 @@ Definition: Capsule is nonstandard: decide yes.
 To say unique-verb-desc of (T - a big red button):
 	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say " [link][bracket]push[close bracket][as]push [text-shortcut of T][end link]".
 
-In Capsule is a big red button. The big red button is not portable. The printed name of big red button is "[TQlink of item described]big red button[TQxlink of item described][verb-desc of item described]". The text-shortcut of big red button is "brb".
+The big red button is a thing. The big red button is in Capsule. The big red button is not portable. The printed name of big red button is "[TQlink of item described]big red button[TQxlink of item described][verb-desc of item described]". The text-shortcut of big red button is "brb".
 To say ExamineDesc of (C - big red button):
 	say "It says 'Power On' above this button. I guess there's only one thing to do...".
 

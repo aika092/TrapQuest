@@ -40,7 +40,7 @@ To decide which figure-name is the examine-image of (C - mystical wardrobe):
 	decide on figure of mysticalwardrobe.
 
 To say ExamineDesc of (C - mystical wardrobe):
-	say "An ornate mystical wardrobe. Who knows what would happen if you opened this.".
+	say "An ornate mystical wardrobe. A variety of drawings adorn the front, from crop tops and short skirts, to handcuffs and anal toys, to babydoll dresses and fishnet stockings, to animal masks. Who knows what would happen if you opened this.[if newbie tips is 1][one of][line break]The wardrobe triggers any headgear you're wearing to re-summon the rest of your class outfit, if possible.[roman type][line break][or][stopping][end if]".
 
 Figure of mysticalwardrobe is the file "Env/Mansion/wardrobe1.jpg".
 

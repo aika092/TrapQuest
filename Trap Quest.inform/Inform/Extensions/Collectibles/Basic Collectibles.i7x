@@ -303,7 +303,7 @@ To say MonsterTakeFlav of (M - mechanic) for (T - soul gem):
 	if the xavier-power of M < 3:
 		say "[speech style of M]'[one of]Phew! I feel great! [or]WOOO! Fuck yeah! [at random]I won't forget this!'[roman type][line break]";
 	otherwise if the xavier-power of M < 4:
-		say "[speech style of M]'Yeah! I feel POWERFUL now! Hahaha! In fact, I'm actually feeling generous!'[roman type]";
+		say "[speech style of M]'Yeah! I feel POWERFUL now! Hahaha! In fact, I'm actually feeling generous!'[roman type][line break]";
 	otherwise:
 		say "[BigNameDesc of M] crushes the [T] into a sparkling powder and knocks it back.[line break][speech style of M]Yeah... YEAH! I can feel it now! The POWER running through my veins! Yes! Behold my true form, unleashed again upon this MORTAL PLANE!'[roman type][line break]".
 
@@ -348,6 +348,7 @@ To say MonsterOfferRejectFlav of (M - witch) to (T - soul gem):
 			say "[BigNameDesc of M] frowns.[line break][speech style of M]'I can't return a soul to someone who already has one. I'm not even sure how you GOT that.'[roman type][line break]";
 		otherwise:
 			say "[BigNameDesc of M] completely ignores the [T].";
+		now M is not rejecting T.[makes sure the witch is always willing to put the gem back in even after refusing to take it beforehand.]
 
 To say MonsterOfferAcceptFlav of (M - witch) to (T - soul gem):
 	say "[speech style of M]'So you want me to put this back in, huh? Fine. It's not like I have anything better to do.'[roman type][line break]".
@@ -482,6 +483,7 @@ To decide which number is the bartering value of (T - horseshoe) for (M - a supp
 	decide on 2.
 To say MonsterOfferAcceptFlav of (M - a supporter) to (T - horseshoe):
 	say "[speech style of M]'This makes a good lucky charm. Cheers.'[roman type][line break]".
+Definition: horseshoe is horse themed: decide yes.
 
 Section - Birthday Card
 
@@ -583,6 +585,7 @@ To decide which number is the bartering value of (T - romance-novel) for (M - a 
 	decide on 2.
 To say MonsterOfferAcceptFlav of (M - a monster) to (T - romance-novel):
 	say "[speech style of M]'Ugh, so tacky! I will, erm, confiscate it from you and make sure it is properly disposed of. Why are you looking at me like that?'[roman type][line break]".
+Definition: romance-novel is book themed: decide yes.
 
 Section - VIP Card
 

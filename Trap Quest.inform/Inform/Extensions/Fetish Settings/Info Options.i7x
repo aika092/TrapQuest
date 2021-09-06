@@ -97,7 +97,7 @@ After reading a command when setting-info > 0 (this is the custom flavour choosi
 		say "Choose a binary gender for this person. (the current entry is [PlatonicGender]):[line break]";[TODO; process multiple choice?!?!]
 		compute multiple choice question;
 		let CNR be the chosen numerical response;
-		now name in row 16 of the Table of Info Options is the printed name of CNR;
+		now name in row 16 of the Table of Info Options is CNR;
 		say "Enter a name for this person (the current entry is [PlatonicName]): ";
 	otherwise if setting-info is 3:
 		if PCD is 0, now name in row 1 of the Table of Info Options is the player's command in title case;
@@ -120,7 +120,7 @@ After reading a command when setting-info > 0 (this is the custom flavour choosi
 		say "Choose the kind of equipment would this person use in the bedroom (the current entry is [PlatonicEquipment]):[line break]";
 		compute multiple choice question;
 		let CNR be the chosen numerical response;
-		now name in row 17 of the Table of Info Options is the printed name of CNR;
+		now name in row 17 of the Table of Info Options is CNR;
 		say "Next, enter a type of person who you wouldn't get along with, for example maybe it's your 'bully' or 'ex-roommate' or 'upstairs neighbour' or 'rival' (the current entry is [NemesisRole]): ";
 	otherwise if setting-info is 7:
 		if PCD is 0, now name in row 11 of the Table of Info Options is the player's command in lower case;
@@ -130,7 +130,7 @@ After reading a command when setting-info > 0 (this is the custom flavour choosi
 		say "Choose a binary gender for this person. (the current entry is [NemesisGender]):[line break]";[TODO; process multiple choice?!?!]
 		compute multiple choice question;
 		let CNR be the chosen numerical response;
-		now name in row 18 of the Table of Info Options is the printed name of CNR;
+		now name in row 18 of the Table of Info Options is CNR;
 		say "Enter a name for this person (the current entry is [NemesisName]):[line break]";
 	otherwise if setting-info is 8:
 		if PCD is 0, now name in row 10 of the Table of Info Options is the player's command in lower case;
@@ -144,7 +144,7 @@ After reading a command when setting-info > 0 (this is the custom flavour choosi
 		say "Choose the kind of equipment would this person use in the bedroom (the current entry is [NemesisEquipment]):[line break]";
 		compute multiple choice question;
 		let CNR be the chosen numerical response;
-		now name in row 19 of the Table of Info Options is the printed name of CNR;
+		now name in row 19 of the Table of Info Options is CNR;
 		say "Next, enter a type of person it wouldn't be weird to masturbate to, for example maybe it's your 'crush' or 'hot coworker' or 'yoga instructor' (the current entry is [FanciedRole]): ";
 	otherwise if setting-info is 9:
 		if PCD is 0, now name in row 13 of the Table of Info Options is the player's command in lower case;
@@ -154,7 +154,7 @@ After reading a command when setting-info > 0 (this is the custom flavour choosi
 		say "Choose a binary gender for this person. (the current entry is [FanciedGender]):[line break]";[TODO; process multiple choice?!?!]
 		compute multiple choice question;
 		let CNR be the chosen numerical response;
-		now name in row 20 of the Table of Info Options is the printed name of CNR;
+		now name in row 20 of the Table of Info Options is CNR;
 		say "Enter a name for this person (the current entry is [FanciedName]): ";
 	otherwise if setting-info is 10:
 		if PCD is 0, now name in row 12 of the Table of Info Options is the player's command in lower case;
@@ -168,7 +168,7 @@ After reading a command when setting-info > 0 (this is the custom flavour choosi
 		say "Choose the kind of equipment would this person use in the bedroom (the current entry is [FanciedEquipment]):[line break]";
 		compute multiple choice question;
 		let CNR be the chosen numerical response;
-		now name in row 21 of the Table of Info Options is the printed name of CNR;
+		now name in row 21 of the Table of Info Options is CNR;
 		say "Next, enter a type of person you normally wouldn't know very well, for example maybe it's your 'mailman' or 'quiet coworker' or 'old classmate' or 'bus driver' (the current entry is [DistantRole]): ";
 	otherwise if setting-info is 11:
 		if PCD is 0, now name in row 15 of the Table of Info Options is the player's command in lower case;
@@ -178,7 +178,7 @@ After reading a command when setting-info > 0 (this is the custom flavour choosi
 		say "Choose either a binary gender for this person. (the current entry is [DistantGender]):[line break]";[TODO; process multiple choice?!?!]
 		compute multiple choice question;
 		let CNR be the chosen numerical response;
-		now name in row 22 of the Table of Info Options is the printed name of CNR;
+		now name in row 22 of the Table of Info Options is CNR;
 		say "Enter a name for this person (the current entry is [DistantName]): ";
 	otherwise if setting-info is 12:
 		if PCD is 0, now name in row 14 of the Table of Info Options is the player's command in lower case;
@@ -192,7 +192,7 @@ After reading a command when setting-info > 0 (this is the custom flavour choosi
 		say "Choose the kind of equipment would this person use in the bedroom (the current entry is [DistantEquipment]):[line break]";
 		compute multiple choice question;
 		let CNR be the chosen numerical response;
-		now name in row 23 of the Table of Info Options is the printed name of CNR;
+		now name in row 23 of the Table of Info Options is CNR;
 		say "Next, enter a living thing that would be humiliating to have sex with (the current entry is [GrossMate]): ";
 	otherwise if setting-info is 13:
 		if PCD is 0, now name in row 6 of the Table of Info Options is the player's command in lower case;

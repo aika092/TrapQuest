@@ -115,7 +115,7 @@ To set up junk room:
 		now D is predicament-fixed.
 
 Report taking clothing:
-	if the player is in School15, now the noun is predicament-normal.
+	if the player is in School15, now the noun is predicament-normal. [Items sent to Junk Room from Predicament World are set to predicament-fixed to make them immune to change while they reside there.]
 
 
 Region Building School ends here.

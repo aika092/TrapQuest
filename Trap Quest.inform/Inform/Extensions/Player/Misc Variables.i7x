@@ -117,8 +117,6 @@ Incontinence is a number that varies.
 
 Delayed Stand is a number that varies. Delayed Stand is 0.
 
-Delayed Urination is a number that varies. Delayed Urination is 0.
-
 Delayed Fainting is a number that varies. Delayed Fainting is 0.
 
 Starting-earnings is a number that varies. Starting-earnings is 999999.

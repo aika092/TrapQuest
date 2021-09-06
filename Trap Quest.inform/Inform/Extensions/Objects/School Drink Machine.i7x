@@ -43,9 +43,10 @@ To compute drink-machine filling of (V - a vessel):
 	if the doses of V < the max-doses of V:
 		say "The [ShortDesc of V] is filled with [if V is empty]a[otherwise]another[end if] mouthful of [fill-colour of V] liquid.";
 		increase the doses of V by 1;
+		force inventory-focus redraw;
 
 To compute sybian sitting:
-	let K be a random worn bottom level pee protection clothing;
+	let K be a random bottom level pee protection clothing;
 	say "You straddle the large vibrator[if K is clothing], the protruding nub pushing into your [genitals] through your [MediumDesc of K][otherwise if the player is possessing a vagina], allowing the silicone nub to sink into the entrance of your [vagina][end if]. As your weight presses down it clicks into action, the powerful mechanism sending superfast vibrations directly into your sensitive crotch. At the same time, the nozzle dispenses its [if diaper quest is 1][milk][otherwise]soda[end if].";
 	stimulate vagina from drink-machine.
 

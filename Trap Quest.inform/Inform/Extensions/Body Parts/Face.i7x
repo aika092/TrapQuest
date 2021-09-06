@@ -379,14 +379,18 @@ To suggest swallowing with (L - a liquid-object) consequences: [If the player do
 			SlowSemenTasteAddictUp 1.
 
 To check accidental spitting:
-	let T be the total volume of face;
-	if T > 0 and face is not actually occupied:
+	check accidental spitting with reason "".
+
+To check accidental spitting with reason (T - a text):
+	let TVF be the total volume of face;
+	if TVF > 0 and face is not actually occupied:
 		if the player is getting lucky:
 			say "You manage to hold in your [MouthfulDesc]. [GotLuckyFlav]";
 		otherwise:
-			say "[bold type]You are about to lose control and automatically spit out [if T > 1]some of [end if]your [MouthfulDesc]![roman type][line break]";
+			if T is "", say "[bold type]You are about to lose control and automatically spit out [if TVF > 1]some of [end if]your [MouthfulDesc]![roman type][line break]";
+			otherwise say "[bold type][T] your lips begin to loosen - you're about to lose [if TVF > 1]some of [end if]your [MouthfulDesc]![roman type][line break]";
 			reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
-			set numerical response 1 to "just [if T is 1]let it out[otherwise]try to hold as much in as possible[end if]";
+			set numerical response 1 to "just [if TVF is 1]let it out[otherwise]try to hold as much in as possible[end if]";
 			set numerical response 2 to "swallow it instead";
 			compute multiple choice question;
 			if player-numerical-response is 2:
@@ -605,7 +609,6 @@ An all time based rule (this is the player gets used to the taste rule):
 		let A be tasteAddictionFlatInterval + (the semen taste addiction of the player * tasteAddictionInterval);
 		if the remainder after dividing time-earnings by A < time-seconds:
 			SlowSemenTasteAddictUp 1;
-			if slowSemenTasteAddiction is 0, progress quest of mouthful-quest;
 	if the milk volume of face > 0:
 		let A be tasteAddictionFlatInterval + (the milk taste addiction of the player * tasteAddictionInterval);
 		if the remainder after dividing time-earnings by A < time-seconds:

@@ -313,65 +313,35 @@ Part 3 - Multiple Choice
 
 player-numerical-response is a number that varies.
 
-A numerical-response is a kind of thing.
+numerical-responses is a list of texts that varies. numerical-responses is {"","","","","","","","","",""}.
 
-numerical-response-1 is a numerical-response.
-To decide which number is the numerical-response-value of (N - numerical-response-1):
-	decide on 1.
-numerical-response-2 is a numerical-response.
-To decide which number is the numerical-response-value of (N - numerical-response-2):
-	decide on 2.
-numerical-response-3 is a numerical-response.
-To decide which number is the numerical-response-value of (N - numerical-response-3):
-	decide on 3.
-numerical-response-4 is a numerical-response.
-To decide which number is the numerical-response-value of (N - numerical-response-4):
-	decide on 4.
-numerical-response-5 is a numerical-response.
-To decide which number is the numerical-response-value of (N - numerical-response-5):
-	decide on 5.
-numerical-response-6 is a numerical-response.
-To decide which number is the numerical-response-value of (N - numerical-response-6):
-	decide on 6.
-numerical-response-7 is a numerical-response.
-To decide which number is the numerical-response-value of (N - numerical-response-7):
-	decide on 7.
-numerical-response-8 is a numerical-response.
-To decide which number is the numerical-response-value of (N - numerical-response-8):
-	decide on 8.
-numerical-response-9 is a numerical-response.
-To decide which number is the numerical-response-value of (N - numerical-response-9):
-	decide on 9.
-numerical-response-0 is a numerical-response.
-To decide which number is the numerical-response-value of (N - numerical-response-0):
-	decide on 0.
+To decide which text is the chosen numerical response of (N - a number):
+	if N is 0, now N is 10;
+	if the number of entries in numerical-responses < N, decide on "";
+	decide on entry N in numerical-responses.
 
-To decide which object is the chosen numerical response of (N - a number):
-	repeat with R running through numerical-response:
-		if the numerical-response-value of R is N, decide on R.
-
-To decide which object is the chosen numerical response:
+To decide which text is chosen numerical response:
 	decide on the chosen numerical response of player-numerical-response.
 
 To set next numerical response to (T - a text):
-	repeat with R running through numerical-response:
-		if the printed name of R is "":
-			now the printed name of R is T;
+	repeat with N running from 1 to 10:
+		if entry N in numerical-responses is "":
+			now entry N in numerical-responses is T;
 			break.
 
 To set numerical response (N - a number) to (T - a text):
-	repeat with R running through numerical-response:
-		if the numerical-response-value of R is N, now the printed name of R is T.
+	if N is 0, now N is 10;
+	now entry N in numerical-responses is T.
 
 To compute multiple choice question:
 	let inputNumber be 0;
 	let validAnswer be 0;
 	while validAnswer is 0:
 		now currentlyConsenting is true;
-		repeat with R running through numerical-response:
-			if the printed name of R is not "":
-				let N be the numerical-response-value of R;
-				say "[link][N]) [R][as][N][end link][line break]";
+		repeat with E running from 1 to 10:
+			let N be E;
+			if N is 10, now N is 0;
+			if entry E in numerical-responses is not "", say "[link][N]) [entry E in numerical-responses][as][N][end link][line break]";
 		if gameover-flag is 0:
 			display focus stuff;
 			if the player is virtual, display stuff;
@@ -379,16 +349,20 @@ To compute multiple choice question:
 			render YesNoBackground;
 		now inputNumber is the chosen letter;
 		decrease inputNumber by 48; [convert key ID to integer]
+		let INM be inputNumber;
+		if INM is 0, now INM is 10;
 		say line break;
-		repeat with R running through numerical-response:
-			if the printed name of R is not "" and inputNumber is the numerical-response-value of R, now validAnswer is 1;
-		if validAnswer is 0, say "Input not understood. Please choose a valid number.";
+		if INM > 0 and INM <= the number of entries in numerical-responses and entry INM in numerical-responses is not "", now validAnswer is 1;
+		otherwise say "Input not understood. Please choose a valid number.";
 	now player-numerical-response is inputNumber;
 	conclude consenting. [refreshes the map window]
 
 To reset multiple choice questions:
-	repeat with R running through numerical-response:
-		now the printed name of R is "".
+	[now numerical-responses is {"","","","","","","","","",""};] [this doesn't work because Inform is shit]
+	truncate numerical-responses to 0 entries;
+	repeat with N running from 1 to 10:
+		add "" to numerical-responses;
+	if debugmode > 1, say "Numerical responses: [numerical-responses].".
 
 Part 4 - VerbDescs
 
@@ -633,7 +607,7 @@ To compute smart links:
 	if the player is prone and pink-spraybottle is worn and the milk-puddle of the location of the player + the semen-puddle of the location of the player + the urine-puddle of the location of the player >= 1, say "[link]clean mess[end link] ";
 	if the player is in Dungeon35 or the player is in Woods05 or the player is in Mansion25 or the player is in School21:
 		if there is worn dirty clothing or the semen coating of hair > 0 or the semen coating of face > 0 or the semen coating of breasts > 0 or the semen coating of belly > 0 or the semen coating of thighs > 0 or (diaper quest is 1 and the make-up of face > 0) or the player is in School21, say "[link]enter water[end link] ";
-	say "[if the total squirtable fill of belly > 0 and the player is able to expel][link]expel[end link] [end if][if the player is bursting][link]pee[end link] [end if][if the player is horny and the player is able to masturbate][link]wank[end link] [end if][if (the player is monster fucked or there is a live thing grabbing the player or there is a live thing wrangling a body part) and the player is broken][link]submit[end link] [otherwise if the player is monster fucked or there is a live thing grabbing the player][link]submit[end link] [link]resist[end link] [otherwise if there is a live thing wrangling a body part][link]escape[end link] [end if][link]look[end link]";
+	say "[if the total squirtable fill of belly > 0 and the player is able to expel][link]expel[end link] [end if][if the player is bursting][link]pee[end link] [end if][if the player is horny and the player is able to automatically masturbate][link]wank[end link] [end if][if (the player is monster fucked or there is a live thing grabbing the player or there is a live thing wrangling a body part) and the player is broken][link]submit[end link] [otherwise if the player is monster fucked or there is a live thing grabbing the player][link]submit[end link] [link]resist[end link] [otherwise if there is a live thing wrangling a body part][link]escape[end link] [end if][link]look[end link]";
 	if inline hyperlinks >= 3 and the player is not immobile:
 		say "[line break]";
 		if diaper quest is 0:

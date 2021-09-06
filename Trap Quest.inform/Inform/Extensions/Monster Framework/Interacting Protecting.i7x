@@ -18,9 +18,15 @@ To compute interaction of (M - a monster):
 		if N is monster:
 			compute submissive assistance of M with N;
 		otherwise:
-			if the number of combative monsters in the location of the player < 1:
+			if the player is not in danger:
 				now M is not submission-assisting;
 				compute assistance resolution of M;
+			otherwise if players-detached-dick is in the location of the player and a random number between 1 and 10 is 1 and M is detached-dick-desiring: [#LXorDD]
+				say "Suddenly [printed name of M] goes still, [his of M] eyes fixed on a point on the ground. Then [he of M] reaches out and picks up your detached dick.";
+				compute handing over detached dick to M;
+				if M is intelligent and a random number between 1 and 3 is 1:
+					say "[speech style of M]'Good grief: you turned your dick into a dildo? That's sick!'[roman type][line break]";
+					FavourDown M by 2 with consequences;
 	otherwise if M is undefeated and M is not caged and the player is in danger:
 		compute protection of M;
 	otherwise:
@@ -178,29 +184,5 @@ To say AssistedSubmittedOralCreampie of (M - a monster) with (subs - a number):
 	unless N is monster, now N is a random submission-assisting monster in the location of the player;
 	say "[BigNameDesc of M] groans in pleasure as [he of M] explodes into your mouth, painting your tongue with rope after rope of thick, slimy [semen]. [if subs > 1]The others hold[otherwise][BigFuckerDesc of N] holds[end if] you tightly, leaning in when [FuckerDesc of M] finally allows you to pull off, and eagerly [if subs > 1]push their tongues[otherwise]thrusts [his of N] tongue[end if] into your cum-filled mouth. You [if the semen taste addiction of the player < 5]decide it could be worse, and [end if]help make a show of playing with [his of M] load before swallowing what didn't end up in [if subs > 1]their mouths[otherwise][his of N] mouth[end if] or on [if bukkake fetish is 1]your chin[otherwise]the floor[end if].";
 
-To compute default facial climax for (M - a monster):
-	TimesSubmittedUp M by 1;
-	BlowCount;
-	if M is male:[should always be true, but better safe than sorry]
-		if M is wrapped:
-			compute wrapped climax of M in face;
-		otherwise if bukkake fetish is 1 and M is willing to bukkake:[cumshot outside]
-			if the reaction of the player is 0:[Player rolls to see if they avoid a facial]
-				compute facial dodging of M;
-			otherwise: [the player submitted]
-				compute facial accepting of M;
-		otherwise:[Internal cumshot]
-			if player-gagging is true:
-				compute deepthroat creampie of M;
-			otherwise if the reaction of the player is 0:
-				compute oral creampie of M;
-			otherwise if M is willing to tongue creampie:
-				compute merciful oral creampie of M;
-			otherwise:[submitted, deepthroat]
-				compute deepthroat creampie of M;
-		compute post climax effect of M in face;
-	if the rounds of sex left of M <= 0:[if rounds of sex left > 0, it means the monster wants an extra round]
-		if M is interested, orgasm satisfy M;[dislodges him automatically]
-		otherwise orgasm dislodge M.
 
 Interacting Protecting ends here.

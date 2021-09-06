@@ -66,7 +66,7 @@ To compute periodic effect of (G - heavy-club):
 
 kraken bell is an equippable. kraken bell is slap ready. kraken bell is metal. kraken bell is unique. The printed name of kraken bell is "[TQlink of item described]kraken bell[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of kraken bell is "kbe".
 
-Figure of kraken bell is the file "Items/Accessories/Equippables/bell1.jpg".
+Figure of kraken bell is the file "Items/Accessories/Equippables/bell1.png".
 
 To decide which figure-name is the examine-image of (B - kraken bell):
 	decide on figure of kraken bell.

@@ -36,7 +36,16 @@ Check plugging something with:
 			if the second noun is anal beads and the second noun is worn, say "There's just no way [if the girth of the second noun > the openness of the noun + 5]more of them would fit[otherwise]you could bring yourself to try and push any more of them into your poor [variable noun][end if] while your [variable noun] is this sore!" instead;
 			otherwise say "There's just no way [if the girth of the second noun > the openness of the noun + 5]it would fit, it's way too big[otherwise]you could bring yourself to try and push something so big inside of your poor [variable noun][end if][if noun is anal beads] while your [variable noun] is this sore[end if]!" instead;
 		otherwise:
-			say "You relax your [variable noun] as much as you can to try and push the [ShortDesc of the second noun] inside of you.".
+			if the second noun is players-detached-dick: [#LXorDD]
+				say "[one of]You can hardly believe you're about to use your own [DetachedPenis] on yourself - yet at the same time, just from the pleasurable feelings from your fingers rubbing it that shiver up through you, you can hardly wait to do so![or]Once again you're about to use your own [DetachedPenis] to doubly pleasure yourself. Doubly, because you get to feel both the penetration, and being penetrated at the same time. You squirm in anticipation.[or]You can hardly wait for the doubled feelings of pleasure, fucker and fuckee at the same time![or][variable custom style]'Ooh, yeah, do me [NameBimbo], while I do you!'[roman type][line break][or][variable custom style]Yum, double pleasure coming up![roman type][stopping][line break]";
+				if the size of the second noun is 0:
+					say "[one of]You delicately stick the penis decal just above your [ShortDesc of the noun], and as hoped for, feel it warm up and tingle, as if you'd really inserted an actual dick. Albeit a tiny one.[or]You stick the dick decal above your [ShortDesc of the noun] and feel the pleasure begin again.[stopping]";
+				otherwise if the size of the second noun < 3:
+					say "You bite your lip, partly in humiliation at just how small your [ShortDesc of the second noun] is, but mainly from the delightfully doubled sensation.";
+				otherwise if the size of the second noun > 8:
+					say "You relax your [variable noun] as much as you can to try and push your own [ShortDesc of the second noun] inside yourself, eyes fluttering from the doubled pleasure.";
+			otherwise:
+				say "You relax your [variable noun] as much as you can to try and push the [ShortDesc of the second noun] inside of you.".
 
 Carry out plugging something with:
 	allocate arm use;
@@ -59,6 +68,11 @@ To compute uniqueToyInsertion of (S - a thing) into (F - a fuckhole):
 	do nothing.
 
 To compute insertionRuin of (S - a thing) into (F - a fuckhole):
+	if the size of S is 0 and S is players-detached-dick:
+		if players-dick-is-detached is 2: [#LXorDD: when it's 2, it's stuck to the bottom of a normal dildo]
+			say "Of course you can't insert the penis decal, so you reverse it and instead use the normal-sized dildo it's stuck to the base of.";
+		otherwise:
+			say "You can't actually insert the penis decal, but you press the thin disc down just below your [variable F], where it sticks nicely, sending little tingles through you in a kind of ghostly echo of penetration." instead;
 	if the girth of S > the openness of F - 4:
 		say "The [MediumDesc of S] [if the girth of S > the openness of F + 1]is so large compared to the openness of your [variable F] that it makes you a bit sore just putting[otherwise]stimulates you as you put[end if] it in.";
 		ruin F;
@@ -82,7 +96,14 @@ Check unplugging something:
 		if the noun is worn:
 			now the noun is sure;
 			say "It refuses to budge, it's like it's glued inside! It must be cursed..." instead;
-	if the latex-transformation of the player is 8, say "You don't have the manual dexterity to do that!" instead;
+	[#LXorDD NB this also makes it harder for a mostly-latex-transformed player from extracting a plug, especially their own detached dick, from pussy or arse? It's addressed by some changes to check unplugging.]
+	if the latex-transformation of the player > 5: [#LXorDD]
+		if the latex-transformation of the player is 8:
+			say "[one of]You can't even feel whether you're touching it, and you don't manage this time.[or]You think you've got a grip on it, but without thumbs, you're not sure you can apply enough pressure. Ugh: your doll hands slip off it.[or]You just don't have the manual dexterity to do that![stopping]";
+			allocate 4 seconds instead;
+		otherwise if a random number between 3 and 8 > the latex-transformation of the player:
+			say "[one of]Your rubbery, numbed fingers lose their grip[or]You didn't manage to get a proper grip with your plastic-y fingers[or]Oops, you think it slipped from your grip[at random] this time.";
+			allocate 4 seconds instead;
 	if the noun is penetrating asshole and the player is ass protected, say "You need to get your [random bottom level ass protection clothing] out of the way first." instead;
 	if (the noun is penetrating vagina or the noun is penetrating penis) and the player is pussy protected, say "You need to get your [random bottom level protection clothing] out of the way first." instead;
 	if the noun is glued, try tearing off the noun instead;

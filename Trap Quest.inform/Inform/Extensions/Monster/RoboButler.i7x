@@ -191,7 +191,7 @@ This is the robobutler punishment rule:
 				drag to the location of N by M;
 			satisfy M for 500 seconds;
 			if N is mechanic, say "[speech style of M]'Looks like there's a lesson in order, then.'[roman type][line break]";
-			otherwise say "[speech style of M]'I WILL REFORM YOU ON MY COCK!'[roman type]";
+			otherwise say "[speech style of M]'I WILL REFORM YOU ON MY COCK!'[roman type][line break]";
 			anger N;
 			now N is interested;
 		otherwise:

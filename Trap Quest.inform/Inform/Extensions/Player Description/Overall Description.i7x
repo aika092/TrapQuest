@@ -21,19 +21,30 @@ To say PlayerDescription:
 	otherwise say "[TotalDesc of hair]";
 	say "[TotalDesc of face][TotalDesc of breasts][TotalDesc of arms]";
 	say "Below this [TotalDesc of Belly][TotalDesc of hips][TotalDesc of thighs]";
-	say "[if the player is possessing a penis][TotalDesc of penis][end if][if the player is possessing a vagina][TotalDesc of vagina][end if][TotalDesc of asshole]".
+	[Was:
+	say "[if the player is possessing a penis][TotalDesc of penis][end if][if the player is possessing a vagina][TotalDesc of vagina][end if][TotalDesc of asshole]".] [#LXorDD]
+	if the latex-transformation of the player > 2, say "Your [LatexFlav]skin [if the latex-transformation of the player > 7]is now explained: [one of]this darned game has transformed you into a sex doll![or]you've been turned into one of this stupid game's sex dolls![or]there's no difference you can see between you now and one of the stupid sex dolls roaming around.[or]you look like a dumb sex-doll![or]people might mistake you for just another sex doll.[at random][otherwise]has you [one of]a little worried[or]more than a little concerned[or]feeling worried[or]a little nervous[at random] about just what that means.[end if]";
+	[#LXorDD Note that if the player has no penis AND no vagina, they have a doll-like mound and TotalDesc of penis covers that case.]
+	say "[if the player is possessing a penis or the player is not possessing a vagina][TotalDesc of penis][end if][if the player is possessing a vagina][TotalDesc of vagina][end if][if the player is possessing a penis and the player is possessing a vagina]That's right: you now have both a [penis] AND a [vagina]. You're a futa![line break][TotalDesc of asshole]";
+	if players-dick-is-detached > 0:
+		if player is carrying players-detached-dick:
+			say "[first custom style]Now I need to find some way, or someone, to reattach my penis before I lose it again![roman type][line break]";
+		otherwise if player is wearing players-detached-dick:
+			say "[one of][first custom style]I need to get my [DetachedPenis] to someone who knows how to reattach it! Hopefully, I can keep it safe by, uh, hiding it away like I have.[roman type][or][first custom style]Now to get my [DetachedPenis] to someone magical, who can reattach it! They won't mind I've, uh, kept it safe inside me the way I have, right?[roman type][at random][line break]";
+		otherwise:
+			say "[first custom style]I need to get my penis back, and somehow reattach it![roman type][line break]".
 
 To say ClothesDescription:
 	if the player is naked:
 		say "You are completely naked. [if the bimbo of the player > 6 and diaper quest is 1][line break][variable custom style]I'm going to get in trouble![roman type][line break][otherwise if the humiliation of the player > 15000 and the humiliation of the player < 40000][line break][second custom style]How naughty![roman type][line break][end if]";
-	if the latex-transformation of the player >= 7:
-		say "You are not able to speak due to your latex mouth being kept in a permanent O-shape";
 	if cowbell is worn:
 		say "A loud clanging accompanies your movement thanks to a cowbell attached to your neck. ";
+	if the latex-transformation of the player >= 7: [#LXorDD]
+		say "You are not able to speak due to your latex mouth being kept in a permanent O-shape.[line break]";
+	repeat with B running through worn bondage: [#LXorDD Moved this up one in case you're gagged and the doll, as they flow well together.]
+		compute SelfExamineDesc of B;
 	repeat with S running through worn shoes:
 		compute SelfExamineDesc of S;
-	repeat with B running through worn bondage:
-		compute SelfExamineDesc of B;
 	repeat with O running through worn overdresses:
 		compute SelfExamineDesc of O;
 		if O is audible jiggles and the largeness of breasts > 1, say "Your [ShortDesc of O] is vocalizing the sound your [BreastDesc] make as they [BreastBounceDesc].";

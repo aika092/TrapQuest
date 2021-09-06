@@ -86,7 +86,7 @@ To say ShortDesc of (H - a strapon-dildo):
 
 To say UniqueClothingDesc of (K - strapon-dildo):
 	if K is not dildo-usage:
-		say "A leather pouch with the Nintendolls logo printed along the front, along with a large number '[strap-length of K].' [if K is worn and the player is possessing a scrotum]It cradles your [ShortBallsDesc], gently stimulating them with the tiny nodes covering its inner surface.[otherwise if K is worn]It cradles your taint, gently stimulating it with tiny nodes covering its inner surface.[otherwise]The inside of it is covered in tiny silver nodes.[end if]";
+		say "A leather pouch with the Nintendolls logo printed along the front, along with a large number '[strap-length of K].' [if K is worn and the player is possessing a scrotum]It cradles your [ShortDesc of scrotum], gently stimulating them with the tiny nodes covering its inner surface.[otherwise if K is worn]It cradles your taint, gently stimulating it with tiny nodes covering its inner surface.[otherwise]The inside of it is covered in tiny silver nodes.[end if]";
 	otherwise if the player is possessing a penis:
 		say "A leather pouch with a [PenisSizeFlav the strap-length of K] silicone dildo mounted on the front. [if K is worn]Tiny metal nodes are passing a gentle current into your [ShortDesc of penis], transmitting sensation from the fake penis and forcing your real one to remain completely soft[otherwise]The inside of it is covered in tiny silver nodes[end if].";
 	otherwise:

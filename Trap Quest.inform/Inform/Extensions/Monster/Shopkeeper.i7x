@@ -1,5 +1,7 @@
 Shopkeeper by Monster begins here.
 
+[Note that payments to the shopkeeper are handled by Actions/Paying.i7x]
+
 shopkeeper is a monster. shopkeeper is male. shopkeeper is intelligent. The leftover-type of shopkeeper is 108. shopkeeper has a number called stolen-aware.
 
 Definition: shopkeeper is willing to urinate: decide yes.
@@ -194,13 +196,13 @@ To compute (M - shopkeeper) using sex doll (N - 1):
 	[shopkeeper new sex scene with female doll]
 	say "[if the player is not a nympho and the player is feeling dominant]You try to turn and back out, but [NameDesc of M] doesn't even notice your paltry escape attempt, one hand gripping your stiff but slender forearm and towing you[otherwise][BigNameDesc of M] tows you[end if] effortlessly back behind the counter, not even noticing as you bump against the clothing racks, and bounce off. [big he of M] leans forward, looking you carefully in the face, as one large finger reaches out to trace the swollen round orifice that your glistening plastic lips now make. [if MPlug is not nothing][line break][speech style of M]'A sex doll with a [printed name of MPlug], eh? Kinky! I wonder if I should remove it?'[roman type][line break][end if]";
 	say "[one of]But then [he of M] frowns, as if puzzled.[line break][speech style of M]'You look familiar, somehow...'[roman type][line break][or][line break][speech style of M]'You still remind me of someone, though...'[roman type][line break][stopping][line break]";
-	say "[one of]You nod, hoping [he of M]'ll have some way of fixing you, and try to tell [him of M],[line break][variable custom style]Yes, it's me, [NameBimbo]![roman type][line break]But you're kind of horrified afresh when the sound that emerges is a kind of sexy girlish moan - like a girl who's desperate for sex - rather than the words in your head![line break][speech style of M]'What does it mean when you nod like that? You want to give me a blowjob, is that what you're programmed for?'[roman type][line break][or][stopping]"; [Might this be a good place to give the player a chance to do something?]
+	say "[one of]You nod, hoping [he of M][']ll have some way of fixing you, and try to tell [him of M],[line break][variable custom style]Yes, it's me, [NameBimbo]![roman type][line break]But you're kind of horrified afresh when the sound that emerges is a kind of sexy girlish moan - like a girl who's desperate for sex - rather than the words in your head![line break][speech style of M]'What does it mean when you nod like that? You want to give me a blowjob, is that what you're programmed for?'[roman type][line break][or][stopping]"; [Might this be a good place to give the player a chance to do something?]
 	say "[if the oral sex addiction of the player < 3]Your eyes widen in horror at the thought - or they would if you could change your expression any more from its permanently-surprised 'O' of 'Please fuck my mouth' - and you freeze, not wanting to make any further head movements that [he of M] might misinterpret. Nor any more attempts at speech, judging by the delighted grin that last emanated from your voice-box! [end if][big he of M] watches you, one eyebrow raised as if [he of M]'s hoping for a response from sex-doll you, [his of M] expression changing to one of mild disappointment at your doll-like inertness.[line break]";
-	say "[speech style of M]'[one of]Damn! I thought they must have improved the doll-program: for a moment there, it looked like you were going to struggle, or something.'[roman type] [big he of M] gives your inflated arm a squeeze and shakes you.[line break][speech style of M]'Are you sure you don't want to squirm and try to run away? Hmm?'[or]Aww, it's more fun when they struggle. Oh well, this'll do for now!'[stopping][roman type][line break]";
+	say "[speech style of M]'[one of]Damn! I thought they must have improved the doll-program: for a moment there, it looked like you were going to struggle, or something.'[roman type][line break][big he of M] gives your inflated arm a squeeze and shakes you.[line break][speech style of M]'Are you sure you don't want to squirm and try to run away? Hmm?'[or]Aww, it's more fun when they struggle. Oh well, this'll do for now!'[stopping][roman type][line break]";
 	say "[if the oral sex addiction of the player < 4]You stay perfectly still, hoping [he of M] might grow bored and let you go, all too aware of your perfectly made up face and inviting lips gaping vulnerably open. [end if]You sneak a look down at [his of M] groin, and blink in [horror the oral sex addiction of the player * 2] at the sight of the enormous cock straining up, pointing like a huge magnetised dowsing-rod at your [BreastDesc]. You look back up, and [if the humiliation of the player < 175000]cringe when you [end if]see a slow smile dawn on [his of M] face, and realise [he of M] watched you stare down at [his of M] quivering cock, and then back up to meet [his of M] gaze.";
 	say "[speech style of M]'[one of]Huh: that's new, and strangely appealing. Like you're desperate for my cock, but don't want to admit it, right? Hmm... '[or]Am I experiencing deja vu, or can you not get enough of looking at my cock?'[stopping][roman type][line break]";
 	say "[big he of M] flips one brightly-coloured nipple, and the surprise makes you squeak out in that voice that sounds like Barbie moaning with her mouth stuffed full of... something or other. [big he of M] grins, [his of M] fingers moving to the other nipple and gives it a fierce squeeze and then tugs on it, once again forcing a girlish moan from you before you can gather your resistance. [big he of M] doesn't let go, though - instead, pulling harder on the nipple, and you watch in some fright - and a toe-curling shock of pleasure - as your rubbery skin stretches out impossibly, drawing your boob into something of a sharpened peak, behind it. Then [he of M] lets go, and your nipple [']twangs['] back into place, just as perkily erect as before. Except now it's throbbing with an intense pleasure.";
-	say "[speech style of M]'[one of]Responsive little thing, aren't you?'[or]That never gets old!'[stopping][roman type] [big he of M] turns you round, and back, [if asshole is not actually occupied and vagina is not actually occupied]seemingly careless of the hand gripping you by pussy and taint, [end if]as [he of M] [one of]considers the orifices on offer, like a gourmet surveying a range of desserts, wondering which to pick. Briefly, [his of M] hand grips you around the throat, turning you this way and that.[line break][speech style of M]'Hmm, maybe I could suggest they could add some kind of pull-string to tug on while you're being used, so you could tell me how much you're enjoying my massive dick!'[roman type][line break]Finally, though, [he of M] seems to make up [his of M] mind, and stands up[or]once again considers the orifices on offer[stopping].";
+	say "[speech style of M]'[one of]Responsive little thing, aren't you?'[or]That never gets old!'[stopping][roman type][line break][big he of M] turns you round, and back, [if asshole is not actually occupied and vagina is not actually occupied]seemingly careless of the hand gripping you by pussy and taint, [end if]as [he of M] [one of]considers the orifices on offer, like a gourmet surveying a range of desserts, wondering which to pick. Briefly, [his of M] hand grips you around the throat, turning you this way and that.[line break][speech style of M]'Hmm, maybe I could suggest they could add some kind of pull-string to tug on while you're being used, so you could tell me how much you're enjoying my massive dick!'[roman type][line break]Finally, though, [he of M] seems to make up [his of M] mind, and stands up[or]once again considers the orifices on offer[stopping].";
 	now the stance of the player is 1;
 	now current-monster is M;
 	follow the sex attempt rules.
@@ -209,7 +211,7 @@ To compute (M - shopkeeper) using sex doll (N - 2):
 	let MPlug be a random thing penetrating face;
 	let APlug be a random thing penetrating asshole;
 	if the player is not possessing a penis:
-		say "[speech style of M]'With those [BreastDesc], I kind of assumed you'd be anatomically correct, but maybe they designed you for patrons who are into Barbie dolls, eh?'[roman type] [he of M] muses aloud, with an amused grin.[line break][speech style of M]'Never mind, baby, you've still got a couple of openings for a willing partner, eh?'[roman type][line break]One hand around the back of your neck presses you forward, so you seem to nod in agreement.[line break]";
+		say "[speech style of M]'With those [BreastDesc], I kind of assumed you'd be anatomically correct, but maybe they designed you for patrons who are into Barbie dolls, eh?'[roman type][line break][he of M] muses aloud, with an amused grin.[line break][speech style of M]'Never mind, baby, you've still got a couple of openings for a willing partner, eh?'[roman type][line break]One hand around the back of your neck presses you forward, so you seem to nod in agreement.[line break]";
 	otherwise if size of the penis < 4:
 		say "[big his of M] eyes drift down to your groin, and [he of M] frowns, in a kind of puzzled way, shaking [his of M] head. Before you realise what [he of M]'s doing, [he of M] slips one hand between your spread-open thighs and with just the tip of one finger, bends your [genitals] back, then releases it so it [if size of the penis > 2]*sproings* back upright with a tiny quiver.[line break][speech style of M]'Man, that's small. I'm trying to decide if that's a plus-sized clitoris or the smallest damn prick I've ever seen! I guess it's been designed as some kind of miniature carry-handle, not as something for actual penetration. Weird.'[roman type][line break][otherwise]pops back into place like a tiny button.[line break][speech style of M]'Cute clit, girl, even if it is a bit swollen. Looks like it'd be sensitive if it wasn't rubber. But where's your [pussy] got to, baby momma? Or don't you and Ken go in for that kind of stuff?'[roman type][line break][he of M] leers.[end if]";
 	otherwise if asshole is not actually occupied and vagina is not actually occupied:
@@ -288,8 +290,11 @@ To compute perception of (M - shopkeeper):
 		if the waitress bartering value of BBB for M > 0, now PSRB is BBB; [Let's make sure we choose one the shopkeeper actually likes if able. E.g. no semen.]
 	now M is interested;
 	if the class of the player is living sex doll:
-		if the player is female, compute M using sex doll 1;
-		otherwise compute M using sex doll 2;
+		if the refractory-period of M > 0: [He could fuck you each turn, otherwise.]
+			if the player is female, compute M using sex doll 1;
+			otherwise compute M using sex doll 2;
+		otherwise:
+			say "[speech style of M]'I know you can't really understand me, but if you wait a while I'm sure I'll be ready to use you again soon.'[roman type][line break]";
 	otherwise if PSRB is bottle and the waitress-boredom of M <= 0 and M is not uniquely unfriendly and the waitress bartering value of PSRB for M > 0:
 		say "[if the outrage tolerance of M <= the saved appearance of the player][big he of M] seems aroused by your presence but doesn't act aggressively. [end if][big he of M] briefly glances at your [PSRB].";
 		calm M;
@@ -298,7 +303,7 @@ To compute perception of (M - shopkeeper):
 		anger M;
 		increase the stolen-aware of M by 1;
 	otherwise if player is stealthy:
-		say "[speech style of M]'[one of]Hey, what are you doing in here! Don't think I'm going to just let you steal from my shop!'[or]Who do you think you're fooling coming into my shop like that? Get out of my shop, thief!'[or]Hey! I can tell you're a thief just by looking at you, so leave my shop right now or face the consequences!'[at random][roman type]";
+		say "[speech style of M]'[one of]Hey, what are you doing in here! Don't think I'm going to just let you steal from my shop!'[or]Who do you think you're fooling coming into my shop like that? Get out of my shop, thief!'[or]Hey! I can tell you're a thief just by looking at you, so leave my shop right now or face the consequences!'[at random][roman type][line break]";
 		anger M;
 	otherwise if the class of the player is princess:
 		let J be a random off-stage ring;
@@ -337,7 +342,7 @@ To compute perception of (M - shopkeeper):
 	otherwise if M is unfriendly and total stolen value > 0:
 		say "[speech style of M]'There you are, thief! Now I've got you!'[if the player is flying][line break]'Well, at least when you get down from there...'[end if][roman type][line break]";
 	otherwise if M is unfriendly:
-		say "[speech style of M]'I think you still need to be taught some better manners!'[roman type] Uh-oh...";
+		say "[speech style of M]'I think you still need to be taught some better manners!'[roman type][line break]Uh-oh...";
 	otherwise:
 		say "[speech style of M]'I should go back to the shop.'[roman type][line break]";
 		send M home;
@@ -533,7 +538,7 @@ To say DeepthroatCreampie of (M - shopkeeper):
 
 To satisfy (M - shopkeeper) for (N - a number) seconds:
 	if M is interested:
-		bore M for N seconds;
+		if the player is not in Dungeon41, bore M for N seconds;
 		FavourUp M;
 		if M is in the location of the player and M is awake:
 			say SatisfiedFlav of M;
@@ -608,15 +613,15 @@ To say CreampieFlav of (M - shopkeeper) in (F - vagina):
 		say "You're vaguely aware you've been hearing some hot chick squealing and squeaking and grunting without words for a long, long time, and then finally fireworks are exploding through your mind and body. When next you come to your senses, you can feel [semen] dripping down your thighs and [NameDesc of M] watching you with one eyebrow raised in smug amusement.";
 		AnnouncedSquirt semen on thighs by 2;
 	otherwise:
-		say "[speech style of M]'Fuck, this is so good! [one of]I haven't properly fucked anyone in way too long...'[or]Don't worry, I've still got lots of jizz left for you...'[stopping][roman type] [BigNameDesc of M] loses control over [himself of M] and orgasms, burying [his of M] entire length inside of you and releasing [his of M] hot load. You can almost hear it flowing inside of you.[line break][speech style of M]'[if the reaction of the player is 2 or the class of the player is cheerleader]Sorry about that, to be fair I didn't mean to come inside you. [otherwise if the class of the player is living sex doll]Wow, you are one amazing sex doll. I hope you come back here again soon!'[otherwise if sissy black cock whore tattoo is worn][one of]Congratulations, you're at least good for one thing, getting bred by [BlackCock]. What do you want, a gold star? Now piss off and come[or]Come[stopping] back when you're ready for more [BlackCock], slut.'[otherwise if M is friendly-fucking]That was fucking amazing. Feel free to ask me to do that again any time!'[otherwise]I hope you learned your lesson.'[end if][roman type][line break]".
+		say "[speech style of M]'Fuck, this is so good! [one of]I haven't properly fucked anyone in way too long...'[or]Don't worry, I've still got lots of jizz left for you...'[stopping][roman type][line break][BigNameDesc of M] loses control over [himself of M] and orgasms, burying [his of M] entire length inside of you and releasing [his of M] hot load. You can almost hear it flowing inside of you.[line break][speech style of M]'[if the reaction of the player is 2 or the class of the player is cheerleader]Sorry about that, to be fair I didn't mean to come inside you. [otherwise if the class of the player is living sex doll]Wow, you are one amazing sex doll. I hope you come back here again soon!'[otherwise if sissy black cock whore tattoo is worn][one of]Congratulations, you're at least good for one thing, getting bred by [BlackCock]. What do you want, a gold star? Now piss off and come[or]Come[stopping] back when you're ready for more [BlackCock], slut.'[otherwise if M is friendly-fucking]That was fucking amazing. Feel free to ask me to do that again any time!'[otherwise]I hope you learned your lesson.'[end if][roman type][line break]".
 
 To say CreampieFlav of (M - shopkeeper) in (F - asshole):
 	if the class of the player is living sex doll:
 		say "[BigNameDesc of M][']s hands suddenly leave your hips, [if the player is possessing a vagina and vagina is not actually occupied]one descending onto your pussy to help you thrust your [AssDesc] back against its impaling shaft, while [his of M] other arm presses[otherwise]pressing[end if] across the small of your back so you're held immobile and utterly helpless as [his of M] hips start jack-hammering with insane speed. Moments later, you and [he of M] both explode in a huge crescendo of ecstasy, and you feel jet after jet after jet spurting inside you, with the characteristic sound of water spraying against balloon-tight rubber.";
-		say "[speech style of M]'Whoah!'[roman type], [he of M] exclaims, pulling [his of M] dick free with a cartoonish rubber squeak, your puckered flange squee-geeing [his of M] dick clean of [semen].[line break][speech style of M]'Man, that was the best one yet! The sounds this new model makes really add something special to the experience. I wonder if I could convince them to let me add you to my product line? I could even give demonstrations, to potential customers. What say, [']doll[']?'[roman type][line break]";
+		say "[speech style of M]'Whoah!'[roman type][line break][he of M] exclaims, pulling [his of M] dick free with a cartoonish rubber squeak, your puckered flange squee-geeing [his of M] dick clean of [semen].[line break][speech style of M]'Man, that was the best one yet! The sounds this new model makes really add something special to the experience. I wonder if I could convince them to let me add you to my product line? I could even give demonstrations to potential customers. What say, [']doll[']?'[roman type][line break]";
 		say "[big he of M] leers at you, and you wonder whether [he of M] might [italic type]really[roman type] decide to keep you here![line break][variable custom style]Then again, would that be so bad?[roman type][line break]Part of you wonders about the possibility of hanging around, maybe poking [him of M] again? After all, you have other orifices your new friend could play with.[line break]";
 	otherwise:
-		say "[speech style of M]'Fuck, this is so good! [one of]I haven't properly fucked anyone in way too long...'[or]Don't worry, I've still got lots of jizz left for you...'[stopping][roman type] [BigNameDesc of M] loses control over [himself of M] and orgasms, burying [his of M] entire length in you and releasing [his of M] hot load. You can almost hear it flowing inside you.[line break][speech style of M]'[if the reaction of the player is 2 or the class of the player is cheerleader]Sorry about that, to be fair I didn't mean to come inside you. [otherwise if the class of the player is living sex doll]Wow, you are one amazing sex doll. I hope you come back here again soon!'[otherwise if sissy black cock whore tattoo is worn][one of]Congratulations, you're at least good for one thing, getting bred by [BlackCock]. What do you want, a gold star? Now piss off and come[or]Come[stopping] back when you're ready for more [BlackCock], slut.'[otherwise if M is friendly-fucking]That was fucking amazing. Feel free to ask me to do that again any time!'[otherwise]I hope you learned your lesson.'[end if][roman type][line break]".
+		say "[speech style of M]'Fuck, this is so good! [one of]I haven't properly fucked anyone in way too long...'[or]Don't worry, I've still got lots of jizz left for you...'[stopping][roman type][line break][BigNameDesc of M] loses control over [himself of M] and orgasms, burying [his of M] entire length in you and releasing [his of M] hot load. You can almost hear it flowing inside you.[line break][speech style of M]'[if the reaction of the player is 2 or the class of the player is cheerleader]Sorry about that, to be fair I didn't mean to come inside you. [otherwise if the class of the player is living sex doll]Wow, you are one amazing sex doll. I hope you come back here again soon!'[otherwise if sissy black cock whore tattoo is worn][one of]Congratulations, you're at least good for one thing, getting bred by [BlackCock]. What do you want, a gold star? Now piss off and come[or]Come[stopping] back when you're ready for more [BlackCock], slut.'[otherwise if M is friendly-fucking]That was fucking amazing. Feel free to ask me to do that again any time!'[otherwise]I hope you learned your lesson.'[end if][roman type][line break]".
 
 To compute post climax effect of (M - shopkeeper) in (F - a fuckhole):
 	if M is friendly, say "[line break][speech style of M]'That was awesome! Feel free to return to the shop if you start feeling horny, I'm down to fuck you anytime!'[roman type][line break]";
@@ -642,7 +647,7 @@ To decide if (M - shopkeeper) is willing to creampie (F - vagina):
 	decide yes.
 
 To say PullOutFlav of (M - shopkeeper) in (F - a fuckhole):
-	say "[speech style of M]'Since you've been so much fun, I'll let you off - I won't [if F is vagina and the player is able to get pregnant]risk getting you pregnant[otherwise]come inside you[end if]!'[roman type] [BigNameDesc of M] suddenly pulls out and ejaculates over the stone floor. [line break][speech style of M]'I hope you learned your lesson though.'[roman type][line break]".
+	say "[speech style of M]'Since you've been so much fun, I'll let you off - I won't [if F is vagina and the player is able to get pregnant]risk getting you pregnant[otherwise]come inside you[end if]!'[roman type][line break][BigNameDesc of M] suddenly pulls out and ejaculates over the stone floor. [line break][speech style of M]'I hope you learned your lesson though.'[roman type][line break]".
 
 To compute sexResist of (M - shopkeeper) in (F - a fuckhole):
 	say M rough sex 0;
@@ -706,7 +711,7 @@ To compute cleavage climax of (M - shopkeeper):
 		say "[big he of M] begins taunting you as [he of M] thrusts harder, and suddenly [if M is wrapped][he of M] rips the condom off of [his of M] [manly-penis] and [end if]ropey gobs of [semen] are jetting up between your breasts, liberally coating your face and some splashing across your cleavage and onto the generous swell of your chest.";
 		AnnouncedSquirt semen on face by the semen load of M / 2;
 		UnannouncedSquirt semen on breasts by the semen load of M / 2;
-		say "[speech style of M]'Not bad!'[roman type] [big he of M] grips the back of your neck and briefly, shockingly, and casually, thrusts [his of M] dick into your rounded mouth and uses your lips to scrape off the remaining juice from [his of M] rod, then releases you.[line break][speech style of M]'Yeah, this new model gets three thumbs up from me!'[roman type][line break]";
+		say "[speech style of M]'Not bad!'[roman type][line break][big he of M] grips the back of your neck and briefly, shockingly, and casually, thrusts [his of M] dick into your rounded mouth and uses your lips to scrape off the remaining juice from [his of M] rod, then releases you.[line break][speech style of M]'Yeah, this new model gets three thumbs up from me!'[roman type][line break]";
 	otherwise:
 		say "[if the titfuck addiction of the player < 6]You lay still and let [him of M] thrust in and out of your [BreastDesc][otherwise]You use your hands to squeeze your [BreastDesc] together and rub them up and down [his of M] throbbing shaft[end if] until [he of M] climaxes, [if M is wrapped]ripping the condom off of [his of M] [manly-penis] and [end if]spraying [his of M] [semen] all over your tits.[line break]";
 		AnnouncedSquirt semen on breasts by the semen load of M;
@@ -1030,7 +1035,7 @@ To say MildAnnoyedResponse of (M - shopkeeper):
 		otherwise say UnAnnoyedResponse of M.
 
 To say AnnoyedResponse of (M - shopkeeper):
-	say "[speech style of M]'[one of]You're really talkative, aren't you...'[or]You sure do have a lot to say...'[or]Another one liner...'[at random][roman type]".
+	say "[speech style of M]'[one of]You're really talkative, aren't you...'[or]You sure do have a lot to say...'[or]Another one liner...'[at random][roman type][line break]".
 
 To compute annoyed punishment of (M - shopkeeper):
 	let B be a random off-stage fetish appropriate gag;
@@ -1432,6 +1437,7 @@ Section 7 - Shop Maintenance
 [!<ThingIsShopEligible>+
 
 Is this something that can appear in the shop?
+###Selkie: Does that mean, during region setup, or whether it can ever be put there?
 
 +!]
 Definition: a thing is shop-eligible: decide no.

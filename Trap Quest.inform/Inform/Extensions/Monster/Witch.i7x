@@ -1,6 +1,7 @@
 Witch by Monster begins here.
 
 witch is a monster. witch is intelligent. witch has a number called altar-uses. The altar-uses of a witch is 2. witch is unconcerned. witch has a number called curse-quest. witch can be bitchy or unbitchy. witch is bitchy.
+witch is a-dick-reattacher.
 
 witch is in Woods20. Understand "sneering" as witch. The text-shortcut of witch is "wi". A witch has a number called altar-questioned. A witch has a number called doom-warned. The doom-warned of a witch is usually 0.
 
@@ -91,37 +92,56 @@ Definition: witch is objectifying the player: decide no.
 Definition: witch is babifying the player: decide no.
 
 To compute perception of (M - witch):
+	let noticed be 0; [#LXorDD: I've restructured this a bit so if the player has multiple curses in operation, the witch will talk about and even help for several of them, starting with the most important.]
 	now the altar-questioned of M is 0;
 	if the witch-target of M is off-stage and the witch-target of M is not the throne and the witch-target-state of M > -1:
 		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'I saw everything through my crystal ball. Your form was a little off, but it was still pretty entertaining. I'm happy to give you anything you need![roman type][line break]";
+		now noticed is 1;
 		calm M;
 		now the witch-target-state of M is -1;
 		now M is unbitchy;
 	otherwise if M is unleashed:
 		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'You again! [if M is in Dungeon20]I can't believe you had the nerve to come back here!'[otherwise]Come here, you little slut!'[end if][roman type][line break]";
 		anger M;
-	otherwise if doom counter > 0 and the doom-warned of M is 0 and the player-class is not cultist:
-		say "[BigNameDesc of M] notices you and seems actually concerned for once.[line break][speech style of M]'I can't believe I'm saying this but thank Goddess you're here, something terrible is happening in that old mansion nearby! The cult there is trying to summon one of their dread gods. I know how to stop them, but I'm not allowed to leave this altar so it's going to have to fall to you. Now, what you'll need is very simple. You need to get together a bell, book, and candle, and then say a simple incantation. I'll teach you... scratch that, I've no confidence in your ability to remember this. Take these notes. They might help with the other items as well.'[roman type][line break]";
+		stop;
+	if doom counter > 0 and the doom-warned of M is 0 and the player-class is not cultist:
+		say "[BigNameDesc of M] notices you and seems [one of]troubled[or]actually concerned for once[stopping].[line break][speech style of M]'I can't believe I'm saying this but thank Goddess you're here, something terrible is happening in that old mansion nearby! The cult there is trying to summon one of their dread gods. I know how to stop them, but I'm not allowed to leave this altar so it's going to have to fall to you. Now, what you'll need is very simple. You need to get together a bell, book, and candle, and then say a simple incantation. I'll teach you... scratch that, I've no confidence in your ability to remember this. Take these notes. They might help with the other items as well.'[roman type][line break]";
+		now noticed is 2;
 		now the doom-warned of M is 1;
 		now doom notes is in the location of the player;
 		compute autotaking doom notes;
 		calm M;
-	otherwise if the latex-transformation of the player > 0:
+	if the latex-transformation of the player > 0:
 		if the curse-quest of M is 0 or the curse-quest of M >= 3:
-			say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of][if the latex-transformation of the player < 7]Merlin's Cock, I can feel that magic from a mile away. You've been cursed with a powerful latex transformation spell, and it won't be long before you're an almost mindless sex doll! Look, I can[otherwise]Oh my, you've been turned into a sex doll haven't you? Can you still hear me in there? If you can understand me, I can still[end if] cure this for you[or]Merlin's Cock, have you been affected by the rare latex curse again? Of course I can help you again sweetie[stopping], but first I need you to bring me a fae mushroom...'[roman type][line break]";
+			if noticed is 0:
+				say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break]";
+			now noticed is 2;
+			say "[speech style of M]'[one of][if the latex-transformation of the player < 7]Merlin's Cock, I can feel that magic from a mile away. You've been cursed with a powerful latex transformation spell, and it won't be long before you're an almost mindless sex doll! Look, I can[otherwise]Oh my, you've been turned into a sex doll haven't you? Can you still hear me in there? If you can understand me, I can still[end if] cure this for you[or]Merlin's Cock, have you been affected by the rare latex curse again? Of course I can help you again sweetie[stopping], but first I need you to bring me a fae mushroom...'[roman type][line break]";
 			now the curse-quest of M is 1;
 		otherwise if the curse-quest of M is 1:
 			say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'So, did you get that fae mushroom I need?'[roman type][line break]";
+			mention and maybe reattach dick by M;
 		otherwise:
 			say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'So, did you get that recipe I need?'[roman type][line break]";
+			mention and maybe reattach dick by M;
 		calm M;
+	if players-dick-is-detached > 0: [#LXorDD]
+		if noticed is 0:
+			say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break]";
+		now noticed is 2;
+		mention and maybe reattach dick by M;
 	otherwise if M is unbitchy:
 		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'Hey, you! Good to see you again. I hope you're having a fun adventure!'[roman type][line break]";
 		calm M;
 	otherwise if the class of the player is vixen:
-		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]Don't think I can't see through that ridiculous disguise you fucking bitch. You didn't pay me the last time you used my altar!'[or]There's no way I'm letting you off the hook now, bitch!'[stopping][roman type][line break]";
+		if noticed is 0:
+			say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break]";
+			now noticed is 1;
+		say "[speech style of M]'[one of]Don't think I can't see through that ridiculous disguise you fucking bitch. You didn't pay me the last time you used my altar!'[or]There's no way I'm letting you off the hook now, bitch!'[stopping][roman type][line break]";
+		if noticed is 2:
+			say "[speech style of M]'The only reason I'm helping you is because you're such a hopeless loser.'[roman type][line break]";
 		anger M;
-	otherwise:
+	otherwise if noticed is 0:
 		say "[one of][WitchInitialGreeting of M][or][BigNameDesc of M] looks up[if the player is sluttily dressed]. [otherwise]! [end if][big he of M] doesn't say anything but it looks like [he of M]'s paying attention to you now.[stopping]";
 		calm M.
 

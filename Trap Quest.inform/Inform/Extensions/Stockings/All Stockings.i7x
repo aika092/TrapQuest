@@ -398,7 +398,7 @@ Definition: bow-stockings is white themed: decide yes.
 
 A black rubber stockings is a kind of stockings. There is 1 transformation-rare black rubber stockings. A black rubber stockings is usually latex. A black rubber stockings is usually dense. The text-shortcut of black rubber stockings is "bls". The printed name of black rubber stockings is usually "[clothing-title-before]pair of black [clothing-material of the item described] stockings[clothing-title-after]".
 black-and-orange rubber stockings is a stockings. black-and-orange rubber stockings is transformation-rare. black-and-orange rubber stockings is latex. black-and-orange rubber stockings is dense. The text-shortcut of black-and-orange rubber stockings is "bols". The printed name of black-and-orange rubber stockings is "[clothing-title-before]pair of black and orange [clothing-material of the item described] stockings[clothing-title-after]".
-A red rubber stockings is a kind of stockings. There is 1 red transformation-rare rubber stockings. A red rubber stockings is usually latex. A red rubber stockings is usually dense. The text-shortcut of red rubber stockings is "rls". The printed name of red rubber stockings is usually "[clothing-title-before]pair of red [clothing-material of the item described] stockings[clothing-title-after]".
+A red rubber stockings is a kind of stockings. There is 1 transformation-rare red rubber stockings. A red rubber stockings is usually latex. A red rubber stockings is usually dense. The text-shortcut of red rubber stockings is "rls". The printed name of red rubber stockings is usually "[clothing-title-before]pair of red [clothing-material of the item described] stockings[clothing-title-after]".
 
 To say ShortDesc of (C - a red rubber stockings):
 	say "latex stockings".
@@ -715,5 +715,47 @@ To decide which number is the initial outrage of (C - tongue-stockings):
 To decide which object is the unique-upgrade-target of (C - a stockings):
 	if diaper quest is 0 and there is a worn demonic wearthing and tongue-stockings is off-stage, decide on tongue-stockings;
 	decide on nothing.
+
+black-lace-stockings is a stockings. black-lace-stockings is unique. black-lace-stockings is silk. black-lace-stockings is dense. The printed name of black-lace-stockings is "[clothing-title-before]black lace stockings[clothing-title-after]". The text-shortcut of black-lace-stockings is "blsk". Understand "black", "lace", "stockings" as black-lace-stockings.
+black-lace-stockings can be monified.
+
+Figure of black lace stockings is the file "Items/Clothes/Lower/Legs/stripperstockings1.png".
+Figure of black lace stockings money is the file "Items/Clothes/Lower/Legs/stripperstockings2.png".
+
+To decide which figure-name is the clothing-image of (C - black-lace-stockings):
+	if C is monified, decide on figure of black lace stockings money;
+	decide on figure of black lace stockings.
+
+To say ClothingDesc of (C - black-lace-stockings):
+	say "A pair of sexy black stockings with frills at the thighs[if C is monified]. Several paper bills are sewn into the frilly section in a manner that makes it look like they have been tucked in[end if].".
+
+To say ShortDesc of (C - black-lace-stockings):
+	say "pair of black lace stockings".
+
+Definition: black-lace-stockings is whore themed:
+	if black-lace-stockings is monified, decide yes;
+	decide no.
+Definition: black-lace-stockings is black themed: decide yes.
+
+To decide which number is the initial outrage of (C - black-lace-stockings):
+	if C is monified, decide on 7;
+	decide on 2.
+
+Definition: black-lace-stockings is upgradable:
+	if it is not monified, decide yes;
+	decide no.
+Definition: black-lace-stockings is transformation-protected:
+	if it is not upgradable, decide yes;
+	decide no.
+Definition: black-lace-stockings is disintegration-protected: decide yes.
+Definition: black-lace-stockings is loop-safe-upgradable:
+	if it is upgradable, decide yes;
+	decide no.
+Definition: black-lace-stockings is transformation-theme-blockable: decide no. [It doesn't care about the theme it shares with other items.]
+To decide which object is the unique-upgrade-target of (C - black-lace-stockings):
+	decide on C.
+To transform (C - black-lace-stockings):
+	say "Paper bills appear on the stockings, sewn on and completely unremovable, but looking as though they've just been tucked into the tops!";
+	now C is monified.
 
 All Stockings ends here.

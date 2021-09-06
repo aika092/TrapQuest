@@ -4,6 +4,8 @@ A basque is a kind of overdress. A basque is usually crotch-intact. A basque is 
 
 To decide which number is the initial outrage of (C - a basque):
 	decide on 2.
+To decide which number is the crotch-tightness of (C - a basque):
+	decide on 3.
 
 To compute SelfExamineDesc of (C - a basque):
 	say "A [ShortDesc of C] keeps your body's shape looking and feeling smooth.".

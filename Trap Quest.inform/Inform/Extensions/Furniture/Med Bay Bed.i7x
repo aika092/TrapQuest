@@ -2,7 +2,7 @@ Med Bay Bed by Furniture begins here.
 
 med bay bed is furniture. The printed name of med bay bed is "[TQlink of item described]med bay bed[TQxlink of item described][shortcut-desc][verb-desc of item described]". med bay bed is in School12. med bay bed has a number called charge. The text-shortcut of med bay bed is "med".
 
-Figure of med bay bed is the file "Env/School/medbaybed1.png".
+Figure of med bay bed is the file "Env/School/medbaybed1.jpg".
 
 Definition: med bay bed is immune to change: decide yes.
 
@@ -10,7 +10,7 @@ To decide which figure-name is the examine-image of (C - med bay bed):
 	decide on figure of med bay bed.
 
 To say ExamineDesc of (C - med bay bed):
-	say "What looks like a huge torture contraption, with several [if diaper quest is 1]nozzles[otherwise]phallic shaped insertables and shockers[end if] and spanking implements attached by metal arms to a gynaecologist's chair. Knowing this game, there's probably a chance of something good happening, and a bigger chance of something [if the bimbo of the player < 15]not so good[otherwise]FUN[end if] happening.".
+	say "A pink hospital bed with a comfy, flexible mattress. It would look almost inviting if it wasn't for the tough leather restraints, and the forboding looking medical items... and sex toys... hanging on the nearby hooks.".
 
 To compute furniture resting on (F - med bay bed):
 	say "You lie down on the bed. ";
@@ -19,7 +19,7 @@ To compute furniture resting on (F - med bay bed):
 	if nurse is defeated or nurse is not in the location of F:
 		compute normal rest of F;
 	otherwise:
-		say "[BigNameDesc of nurse] makes quick work of pushing your wrists down into the pink straps which immediately click into place[one of], seemingly automatically[or][stopping]. ";
+		say "[BigNameDesc of nurse] makes quick work of pushing your wrists and ankles down into the leather straps and locking you in place. ";
 		now F is grabbing the player;
 		if nurse is aware that the player needs a change:
 			anger nurse;

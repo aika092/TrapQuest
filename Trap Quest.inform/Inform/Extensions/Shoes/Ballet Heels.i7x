@@ -1,6 +1,6 @@
 Ballet Heels by Shoes begins here.
 
-ballet heels is a stiletto heels. ballet heels is latex. ballet heels is unique. The heel-height of ballet heels is 8.
+ballet heels is a stiletto heels. ballet heels is latex. ballet heels is unique. The heel-height of ballet heels is 7.
 
 The printed name of ballet heels is "[clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch ballet heels[clothing-title-after]". The text-shortcut of ballet heels is "bh".
 
@@ -29,5 +29,8 @@ To say ClothingDesc of (C - ballet heels):
 	say "[SteadinessDesc of C]".
 
 Definition: ballet heels is ballet related: decide yes.
+
+To set up heel length of (C - ballet heels):
+	now the heel-height of C is 7.
 
 Ballet Heels ends here.

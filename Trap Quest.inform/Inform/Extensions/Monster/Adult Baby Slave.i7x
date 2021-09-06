@@ -321,11 +321,11 @@ To say waitingflav of (M - an adult baby slave):
 	otherwise:
 		say "[one of]You find yourself getting aroused purely form the idea of feeling [his of M] diaper on your face.[or]You wait obediently, more than happy to feel the rustle of [his of M] nappy against your face.[or][line break][variable custom style]'You can put that nappy on my face any time honey, but please don't stay so long that you make me faint.'[roman type][line break][or][line break][variable custom style]'Are you planning to use that whilst you're on top of me? That could be hot.'[roman type][line break][or]You can't wait to have that unique nappy smell filling your nostrils.[in random order]".
 
-A breathing blocking decision rule (this is the consider breathing through ABS padding rule):
+[A breathing blocking decision rule (this is the consider breathing through ABS padding rule):
 	let M be a random adult baby slave penetrating face;
 	if M is monster:
 		say "Your nose and mouth is engulfed in [NameDesc of M][']s padding. ";
-		now breathing-this-turn is false.
+		now breathing-this-turn is false.]
 
 A breathing consequences rule (this is the consequences for breathing through ABS padding rule):
 	let M be a random adult baby slave penetrating face;
@@ -362,7 +362,7 @@ To say MouthPenetrationFlav of (M - an adult baby slave):
 	say "[BigNameDesc of M] rolls you onto your back and sits on your face, burying it in layers of padding and plastic, adjusting [himself of M] to get comfortable on top of you, crinkling all the while. You can't breathe![line break][speech style of M]'[if diaper messing >= 6 and M is not messy][one of]Just to warn you, I need to poop. So I wouldn't take too long to make me cum down there if I were you...'[or]By the way, if you don't play ball, I might just mess myself while sitting on your face.'[in random order][otherwise][one of]You ready?'[or]This is gonna be fun!'[or]Your face feels pretty good against my diaper...'[in random order][end if][roman type][line break]".
 
 To compute diaper sit of (M - a monster):
-	say "You won't be able to breath except through [his of M] padding until [he of M][']s finished with you!";
+	say "You won't be able to breathe except through [his of M] padding until [he of M][']s finished with you! (You might want to consider using [bold type]['][link]hold breath[end link]['][roman type])";
 	if sex-length of M < 3, now sex-length of M is 2;
 	now M is filling face.
 

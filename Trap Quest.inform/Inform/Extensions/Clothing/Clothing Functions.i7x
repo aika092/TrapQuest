@@ -397,6 +397,8 @@ To only destroy (C - clothing):
 	now the used condoms of C is 0;
 	now the empty condoms of C is 0;
 	now the stolen-strength of C is 0;
+	now the augmentation-charging-time of C is 40;
+	now the augmentation-grow-charge of C is 0;
 	fully clean C;
 	dislodge C;
 	repair C;

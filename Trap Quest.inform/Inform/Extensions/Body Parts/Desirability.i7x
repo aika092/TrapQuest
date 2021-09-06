@@ -586,7 +586,7 @@ To compute seduction choice of (M - a monster):
 				decrease E by 1;
 			set next numerical response to "[T]";
 	compute multiple choice question;
-	let MCQ be the printed name of the chosen numerical response;
+	let MCQ be the chosen numerical response;
 	if player-numerical-response is 0:
 		if seconds is 6 and the number of seduced reactive monsters is 1:
 			allocate 0 seconds; [This should just cancel the action]

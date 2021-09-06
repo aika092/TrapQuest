@@ -31,6 +31,8 @@ Oh, so this is how time works! So "seconds" represents how many seconds of the c
 	if the player is virtual, display stuff.
 +!]
 Every turn:
+	[repeat with IAT running through g-animated icon animation tracks:
+		cease animation of IAT;] [might be necessary to avoid bugs, we'll see]
 	if seconds > 0, run the engine;
 	compute options;
 	if the player is virtual or (tutorial is 1 and the graphics-window is g-present):
@@ -84,8 +86,11 @@ To run the engine:
 		now another-turn-action is the no-stored-action rule;
 		let AC be a stored action;
 		if another-turn-stored-action is not waiting:
-			if another-turn-previous-stored-action is another-turn-stored-action, now AC is waiting;
-			otherwise now AC is another-turn-stored-action; [this should defend against infinite loops where the player keeps trying over and over to do something they can't]
+			if another-turn-previous-stored-action is another-turn-stored-action:
+				now AC is waiting;
+				if the number of entries in LR is 0 and A is the no-stored-action rule, now AT is 0; [we actually don't have any good reason to skip the turn any more]
+			otherwise:
+				now AC is another-turn-stored-action; [this should defend against infinite loops where the player keeps trying over and over to do something they can't]
 			now another-turn-previous-stored-action is another-turn-stored-action;
 			now another-turn-stored-action is waiting;
 		truncate another-turn-rules to 0 entries; [This is the only safe moment to truncate the entries - just after we have loaded the rules and before we execute them.]
@@ -105,6 +110,9 @@ To run the engine:
 					say "[if the player-reaction of the player is resisting]Keep resisting[otherwise]Do you want to resist[end if]? ";
 					if the player is consenting, try resisting;
 					otherwise try submitting;
+			if player-breathing is false:
+				say "Keep holding your breath? ";
+				if the player is not consenting, try ManuallyBreathing;
 	display entire map.
 
 map-turn-stall is initially 0. [How many extra turns do we replace the map image with the temporary map image? For when we want to push a cutscene image to the map window but time is moving forward.]
@@ -241,6 +249,7 @@ To compute turn:
 	otherwise: [failsafe]
 		now earnings is 999999;
 	compute MonsterSetUpFix;
+	if the player is not breathing this turn, say "You [if the suffocation of the player > 0]continue to [end if]hold your breath.";
 	compute flight; [Flight stuff must go first and last - the concept is it's checking if anything that happened caused the player to start flying.]
 	if lagdebug is true:
 		say "Computing player [if the player is upright]standing[otherwise]kneeling[end if].";
@@ -356,12 +365,6 @@ Definition: yourself (called Y) is very tired:
 To decide which number is the fatigue-influence of (C - a wearthing):
 	decide on 0.
 
-To decide which number is the fatigue-influence of (C - an endurance clothing):
-	let F be -1;
-	decrease F by the magic-modifier of C;
-	if C is blessed, decrease F by 1; [an extra 1]
-	decide on F.
-
 To compute player standing:
 	now resting is 0;
 	if the largeness of belly > 3 or the largeness of breasts > 16 or dungeon chains is worn or black hood is worn or (the ready-for-milking of milking-quest is 1 and the milk volume of breasts > 10 and cowbell is not worn)[ or there is worn heels], compute upright fatigue gain; [We only gain fatigue while standing for very big bodies or when wearing heels. Other fatigue gain comes from walking around and kicking.]
@@ -434,9 +437,10 @@ To compute player standing:
 To compute upright fatigue gain:
 	let W be fatigue weight;
 	let H be 2 + the hindrance of the player; [the hindrance of the player increases the more the player is unstable in high heels]
-	repeat with C running through worn clothing:
+	repeat with C running through worn wearthings:
 		[say "Fatigue influence of [C] is [fatigue-influence of C].";]
 		increase W by the fatigue-influence of C;
+		if C is endurance clothing, decrease W by the magic-modifier of C + 2;
 	now W is (W * H) / 4;
 	if W > the strength of the player * 5, now W is the strength of the player * 5; [Any player of any weight should be able to stand up for at least 25 rounds]
 	if W <= 0 and the player is not flying, now W is 1;
@@ -491,26 +495,39 @@ To compute fatigue loss:
 
 The player has a number called suffocation.
 The breathing blocking rules is a rulebook.
-The breathing blocking decision rules is a rulebook.
+[The breathing blocking decision rules is a rulebook.]
 The breathing consequences rules is a rulebook.
-breathing-this-turn is initially true.
+[breathing-this-turn is initially true.]
+player-breathing is initially true.
+ManuallyBreathing is an action applying to nothing.
+Carry out ManuallyBreathing:
+	if player-breathing is false:
+		say "You will now [bold type]breathe normally[roman type] when time moves forward.";
+		now player-breathing is true;
+	otherwise:
+		say "You will now try to [bold type]hold your breath[roman type]  when time moves forward until you use the [bold type]breathe[roman type] command or run out of oxygen.";
+		now player-breathing is false.
+Understand "breath", "breathe", "hold breath", "hold my breath", "hold breathe", "hold my breathe" as ManuallyBreathing.
 
 Definition: yourself is able to breathe:
-	if breathing-this-turn is false, decide no;
+	if player-breathing is false, decide no;
 	follow the breathing blocking rules;
 	if the rule succeeded, decide no;
 	decide yes.
 Definition: yourself is breathing this turn:
-	if the player is not able to breathe, decide no; [if the player isn't able to breathe, we don't need to ask them if they want to breathe]
+	follow the breathing blocking rules;
+	if the rule succeeded, decide no;
 	if the suffocation of the player >= the suffocation limit of the player:
 		say "You can't bring yourself to hold your breath for any longer!";
+		now player-breathing is true;
 		decide yes;
-	follow the breathing blocking decision rules;
-	if breathing-this-turn is false: [this is how we tepmorarily flagged that there's a potential reason not to breathe]
+	if player-breathing is false, decide no;
+	[follow the breathing blocking decision rules;
+	if breathing-this-turn is false:
 		say "Do you want to hold your breath?";
 		if the player is consenting, decide no;
 		now breathing-this-turn is true;
-		follow the breathing consequences rules;
+		follow the breathing consequences rules;]
 	decide yes.
 
 A breathing blocking rule (this is the can't breathe during deepthroat rule):
@@ -525,7 +542,6 @@ Definition: yourself is able to faint from suffocation:
 	decide yes.
 
 An all later time based rule (this is the breathe or suffocate rule):
-	if the player is not breathing this turn, say "You [if the suffocation of the player > 0]continue to [end if]hold your breath.";
 	if the player is able to breathe:
 		if the suffocation of the player > 0:
 			let M be a random monster penetrating face;
@@ -534,7 +550,8 @@ An all later time based rule (this is the breathe or suffocate rule):
 			otherwise:
 				decrease the suffocation of the player by 1;
 				if the suffocation of the player <= 0, say "You have regained all your oxygen and are now able to breathe normally again.";
-				otherwise say "You are able to take a gasp of fresh air! Thank goodness! You feel a little better, but are still [if the suffocation of the player > 2][bold type]seriously[roman type] [otherwise if the suffocation of the player is 1]a little [end if]weakened from being out of breath.";
+				otherwise say "[one of]You are able to take a gasp of fresh air! Thank goodness! [or]You breathe quickly through an open mouth. [or]You breathe heavily. [stopping]You feel a little better, but are still [if the suffocation of the player > 2][bold type]seriously[roman type] [otherwise if the suffocation of the player is 1]a little [end if]weakened from being out of breath.";
+		follow the breathing consequences rules;
 	otherwise if the suffocation of the player >= the suffocation limit of the player:
 		if the player is able to faint from suffocation:
 			say "After giving a final frantic wiggle[if there is a monster penetrating face or there is a monster grabbing the player] to try and escape[end if], your brain gives up. You [if watersports mechanics is 1]wet yourself and then [end if]pass out.";
@@ -547,7 +564,7 @@ An all later time based rule (this is the breathe or suffocate rule):
 			say "Your lungs burn as your lack of oxygen [one of]becomes painful[or]continues to hurt you[stopping].";
 			PainUp 1;
 	otherwise:
-		say "[if the suffocation of the player is 0][bold type]You are currently unable to breathe. [roman type]Until you find a way to breathe again, your strength and ability to think straight will gradually leave you, and you will eventually pass out.[otherwise if the suffocation of the player < the suffocation limit of the player - 5]You[one of]r body is slowly being starved of oxygen, since you[or][cycling] are still holding your breath.[otherwise if the suffocation of the player < the suffocation limit of the player - 4][one of]As you continue to be starved of oxygen, you[or]You[cycling] feel the burning in your throat and the cloudiness in your head rising.[otherwise if the suffocation of the player is the suffocation limit of the player - 3][bold type]Your vision starts to go blurry.[roman type][line break][otherwise if the suffocation of the player is the suffocation limit of the player - 2 and the player is able to faint from suffocation][bold type]Your lungs are on fire and your eyes roll into the back of your head as you prepare to lose consciousness.[roman type][line break][otherwise if the suffocation of the player is the suffocation limit of the player - 2][bold type]Your lungs are on fire and your eyes roll into the back of your head.[roman type][line break][otherwise if the player is able to faint from suffocation][bold type]Your vision goes white as you reach the brink. Your consciousness is slipping away.[roman type][line break][otherwise]Your vision is going white and your lungs are empty of oxygen. [bold type]From now on, every turn you can't breathe will cause you serious pain.[roman type][line break][end if]";
+		say "[if the suffocation of the player is 0 and player-breathing is false][bold type]You are currently holding your breath. [roman type]Until you choose to breathe again, your strength and ability to think straight will gradually leave you.[otherwise if the suffocation of the player is 0][bold type]You are currently unable to breathe. [roman type]Until you find a way to breathe again, your strength and ability to think straight will gradually leave you, and you will eventually pass out.[otherwise if the suffocation of the player < the suffocation limit of the player - 5]You[one of]r body is slowly being starved of oxygen, since you[or][cycling] are still holding your breath.[otherwise if the suffocation of the player < the suffocation limit of the player - 4][one of]As you continue to be starved of oxygen, you[or]You[cycling] feel the burning in your throat and the cloudiness in your head rising.[otherwise if the suffocation of the player is the suffocation limit of the player - 3][bold type]Your vision starts to go blurry.[roman type][line break][otherwise if the suffocation of the player is the suffocation limit of the player - 2 and the player is able to faint from suffocation][bold type]Your lungs are on fire and your eyes roll into the back of your head as you prepare to lose consciousness.[roman type][line break][otherwise if the suffocation of the player is the suffocation limit of the player - 2][bold type]Your lungs are on fire and your eyes roll into the back of your head.[roman type][line break][otherwise if the player is able to faint from suffocation][bold type]Your vision goes white as you reach the brink. Your consciousness is slipping away.[roman type][line break][otherwise]Your vision is going white and your lungs are empty of oxygen. [bold type]From now on, every turn you can't breathe will cause you serious pain.[roman type][line break][end if]";
 		increase the suffocation of the player by 1;
 		let M be a random monster penetrating face;
 		if M is nothing, now M is a random monster grabbing the player;
@@ -561,10 +578,10 @@ To compute extra suffocation of (M - a monster):
 		increase the suffocation of the player by 1;
 		say "[bold type][if the reaction of the player is 0]All your struggling and the[otherwise]The[end if] intensity of [NameDesc of M][']s acts cause your body to use up even more oxygen![roman type][line break]".
 
-A breathing blocking decision rule (this is the consider breathing pink smoke rule):
+[A breathing blocking decision rule (this is the consider breathing pink smoke rule):
 	if the player is prone and the location of the player is smoky and the player is not flying and the number of aeromancer penetrating a body part is 0:
 		say "You are kneeling in pink smoke. ";
-		now breathing-this-turn is false.
+		now breathing-this-turn is false.]
 
 A breathing consequences rule (this is the consequences for breathing pink smoke rule):
 	if the player is prone and the location of the player is smoky and the player is not flying and the number of aeromancer penetrating a body part is 0:
@@ -577,9 +594,9 @@ To compute pink smoke:
 		if the player is possessing a penis and a random number between 1 and 3 is 1, now R is 7; [penis shrink]
 		otherwise now R is 1; [arousal]
 	if the player is in School34 and a random number between 1 and 8 > 1, now R is 1; [arousal]
-	if (the player is a flatchested trap or (diaper quest is 1 and the player is possessing a penis)) and R > 6:
+	if (the player is a flatchested trap or (diaper quest is 1 and the player is somehow possessing a penis)) and R > 6:
 		say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room.";
-		PenisDown 1;
+		SpecialPenisDown 1;
 	otherwise if R > 6 and diaper quest is 0:
 		say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room. [unless the player is top heavy][one of][or]It feels a little more difficult to breathe.[or]Your boobs visibly grow.[or]Your chest expands outwards![as decreasingly likely outcomes][end if]";
 		Bustup 1;
@@ -593,7 +610,8 @@ To compute pink smoke:
 		say "[one of]You would be breathing in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] in this room, but you can't breathe at the moment![or][stopping]";
 	otherwise:
 		say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room. [if the player is a bit horny][line break][otherwise]You feel all tingly inside.[end if]";
-		arouse 1000.
+		arouse 1000;
+	if R is not 0, say "(You might want to consider using [bold type]['][link]hold breath[end link]['][roman type])".
 
 To Compute Instinctive Actions:
 	if another-turn is 0, follow the hypno triggers rules;
@@ -603,8 +621,9 @@ To Compute Instinctive Actions:
 	if another-turn is 0, Compute Broken Actions.
 
 To Compute Compulsions:
-	let CND be a random carried candy;
-	if CND is candy and the trophy-mode of candy-trophy is 1 and the number of worn gags is 0 and the player is able to eat and the player is able to use their hands:
+	let CNDL be the list of carried candy;
+	if the number of entries in CNDL > 0 and the trophy-mode of candy-trophy is 1 and the number of worn gags is 0 and the player is able to eat and the player is able to use their hands:
+		let CND be entry 1 in CNDL;
 		now another-turn-stored-action is eating CND;
 		now another-turn-flavour is "The [candy-trophy][']s magical effect compels you to try and eat [NameDesc of CND]!";
 		now another-turn is 1;
@@ -930,7 +949,7 @@ To Reset Flags:
 	if surrendered is 1 and the player is not in danger, now surrendered is 0;
 	now the travel-direction of the player is up;
 	now the travel-opposite of the player is down;
-	now breathing-this-turn is true;
+	[now breathing-this-turn is true;]
 	repeat with C running through worn clothing:
 		now the upgrade-target of C is nothing;
 	repeat with F running through fuckholes:

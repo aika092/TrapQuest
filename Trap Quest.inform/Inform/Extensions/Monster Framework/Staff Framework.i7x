@@ -184,6 +184,8 @@ To say BanishFleeFlav of (M - a staff member):
 To compute banishment of (M - a staff member):
 	now M is fucked-silly;
 	now the health of M is 1;
+	[-- First, if the person has it, drop an intensely personal item --]
+	compute maybe drop dick by M;
 	if there are things carried by M:
 		say "Your [list of things carried by M] [if the number of things carried by M > 1]are[otherwise]is[end if] also left behind.";
 		repeat with K running through things carried by M:
@@ -242,7 +244,7 @@ To compute friendly drink of (M - a staff member):
 
 Part - Teachers
 
-A teacher is a kind of staff member. A teacher has an indexed text called teacher-name. Understand the teacher-name property as describing a teacher.
+A teacher is a kind of staff member. A teacher has a text called teacher-name. Understand the teacher-name property as describing a teacher.
 Definition: a teacher is motionless-when-defeated: decide no.
 
 A sapphire-teacher is a kind of teacher. Understand "sapphire" as a sapphire-teacher.
@@ -714,7 +716,7 @@ To execute (A - student-furious-assembly):
 
 new-fuckhole-assembly is an assembly.
 Definition: new-fuckhole-assembly is eligible:
-	if headmistress is alive and headmistress is undefeated and most-recent-furious is a student and gloryhole is on-stage and the player is possessing a penis and the player is an august 2020 top donator, decide yes;
+	if headmistress is alive and headmistress is undefeated and most-recent-furious is a student and gloryhole is on-stage and the player is possessing a penis and the player is the donator, decide yes;
 	decide no.
 
 To say AssemblyStartFlav of (A - new-fuckhole-assembly):

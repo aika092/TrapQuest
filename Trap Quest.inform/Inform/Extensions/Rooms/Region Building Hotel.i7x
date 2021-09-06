@@ -52,6 +52,10 @@ To Set Up The Hotel:
 	if diaper quest is 1 and the player is an october 2020 diaper donator:
 		destroy laundry robots;
 		now hotel changing station is in Hotel20;
+	if diaper quest is 0:
+		if black-lace-bra is off-stage, now black-lace-bra is in Hotel20;
+		if black-lace-thong is off-stage, now black-lace-thong is in Hotel20;
+		if black-lace-stockings is off-stage, now black-lace-stockings is in Hotel20;
 	follow the set up hotel traps rules;
 	if debugmode > 0, say "Finished setting up traps.";
 	repeat with M running through alive monsters in the hotel:

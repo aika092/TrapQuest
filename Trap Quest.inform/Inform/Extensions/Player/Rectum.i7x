@@ -162,87 +162,104 @@ We check whether the player needs to go, and whether they go automatically.
 
 +!]
 To check real messing:
-	let messAware be 0; [Can the player sense their fullness]
-	let canMessNow be 0; [Is the player physically able to go]
-	let shouldMessNow be 0; [Does the player's body want to go]
-	let willMessNow be 0; [Has the player lost control?]
-	let hasMessedNow be 0;
-	if the player is feeling full, now messAware is 1;
-	if rectum > 1 and there is a worn total protection soilable knickers and asshole is not actually occupied and the number of live things penetrating vagina is 0 and (the number of things grabbing the player is 0 or diaper quest is 1), now canMessNow is 1;
-	if the player is incontinent and the player is full:
-		now shouldMessNow is 1;
-		if canMessNow is 1, now willMessNow is 1; [no need for a die roll if the player is incontinent]
-	otherwise:
-		let hold-strength be (a random number between 11 and 13) + (a random number between -1 and 1);
-		let I be hold-strength - (incontinence + suppository);
-		if debuginfo > 0 and canMessNow is 1 and rectum > 1, say "[input-style]Mess self-control check: d5+9 ([hold-strength]) - incontinence ([incontinence]) - laxative effects ([suppository]) = [I + 0][if I < 4]; minimum 4[end if] | ([rectum].5) rectum volume[roman type][line break]";
-		if I < 4, now I is 4;
-		if rectum >= I and canMessNow is 1, now willMessNow is 1;
-		if rectum >= I - 6, now shouldMessNow is 1;
-	if messAware is 1:
-		say "[one of][bold type][or][stopping][one of]Your tummy rumbles ominously[or]Your stomach gurgles as it processes more food[or]Your belly churns loudly as it continues to digest its contents[or]Your bowels emit a low growl as the contents are moved towards the exit[then at random].[one of][line break][variable custom style]That can't be a good sign[if the player is not incontinent]. I'm starting to feel like I need to go number two[end if]...[or][stopping][roman type][line break]";
-	if shouldMessNow is 1:
-		if canMessNow is 1 and messAware is 1:
-			say "[bold type]Your body is trying to go number two![roman type] Do you want to try and hold it in? ";
-			if the player is reverse bimbo consenting:
-				if willMessNow is 1:
-					if the incontinence of the player + suppository < 5, say "You try to hold it in but you start to cramp, and the pain is too much! ";
-					otherwise say "You try to hold it in but the pressure is too much and your control over your rectal muscles is too weak! ";
-					if the raw delicateness of the player < 20 and incontinence < the max-incontinence of the player:
-						say "You could push forward with sheer force of will, but it will hurt and might even affect your long term continence. Would you like to dig deep and really hold on? ";
-						let F be temporaryYesNoBackground;
-						if the player is reverse bimbo consenting:
-							now shouldMessNow is 0;
-							now willMessNow is 0;
-							say "You grit your teeth and clench your eyes and manage to hold on through the excruciating cramps.";
-							PainUp 1;
-							if the player is getting unlucky:
-								increase incontinence by 1;
-								say "Your control over your anal sphincter feels permanently weakened. [GotUnluckyFlav]";
-						now temporaryYesNoBackground is F;
-					if shouldMessNow is 1:
-						if the incontinence of the player + suppository < 5, say "[if the player is a nympho]You give up and let go, crossing your eyes and sticking your tongue out as you wait for the intense feelings to wash over you[otherwise if the player is a pervert]You just don't have the willpower. You gasp with feigned surprise as you allow your sphincter to lose control[otherwise]You clench your fists and strain with all your might but it's all in vain - the cramps win over and you feel yourself begin to push, even though you don't really want to[end if].";
-						otherwise say "[if the player is a nympho]You hear yourself moaning lewdly as that weirdly delicious feeling of the shamefulness of your lack of control washes over you[otherwise if the player is a pervert or the diaper addiction of the player > 7]You gasp with genuine surprise as your sphincter loses control[otherwise]You shriek with horror as you feel yourself begin to go completely against your will[end if].";
-						now hasMessedNow is 1;
-						compute messing;
+	check real messing with reason "".
+
+hasMessedNow is initially false.
+
+[If we have any text T that means that something has caused the player to flinch / be surprised / etc. and they lose the opportunity to try and hold it in]
+To check real messing with reason (T - a text):
+	if rectum > 0:
+		let messAware be 0; [Can the player sense their fullness]
+		let canMessNow be 0; [Is the player physically able to go]
+		let shouldMessNow be 0; [Does the player's body want to go]
+		let willMessNow be 0; [Has the player lost control?]
+		now hasMessedNow is false;
+		if the player is feeling full, now messAware is 1;
+		if rectum > 1 and there is a worn total protection soilable knickers and asshole is not actually occupied and the number of live things penetrating vagina is 0 and (the number of things grabbing the player is 0 or diaper quest is 1), now canMessNow is 1;
+		if the player is incontinent and the player is full:
+			now shouldMessNow is 1;
+			if canMessNow is 1, now willMessNow is 1; [no need for a die roll if the player is incontinent]
+		otherwise:
+			let hold-strength be (a random number between 11 and 13) + (a random number between -1 and 1);
+			let I be hold-strength - (incontinence + suppository);
+			if T is "", increase I by 2; [improved hold strength while nothing crazy is happening]
+			if debuginfo > 0 and canMessNow is 1 and rectum > 1:
+				if T is "", say "[input-style]Mess self-control check: d5+11 ([hold-strength]) - incontinence ([incontinence]) - laxative effects ([suppository]) = [I + 0][if I < 4]; minimum 4[end if] | ([rectum].5) rectum volume[roman type][line break]";
+				otherwise say "[input-style]Sudden mess self-control check: d5+9 ([hold-strength]) - incontinence ([incontinence]) - laxative effects ([suppository]) = [I + 0][if I < 4]; minimum 4[end if] | ([rectum].5) rectum volume[roman type][line break]";
+			if I < 4, now I is 4;
+			if rectum >= I and canMessNow is 1, now willMessNow is 1;
+			if rectum >= I - 6, now shouldMessNow is 1;
+		if messAware is 1 and T is "":
+			say "[one of][bold type][or][stopping][one of]Your tummy rumbles ominously[or]Your stomach gurgles as it processes more food[or]Your belly churns loudly as it continues to digest its contents[or]Your bowels emit a low growl as the contents are moved towards the exit[then at random].[one of][line break][variable custom style]That can't be a good sign[if the player is not incontinent]. I'm starting to feel like I need to go number two[end if]...[or][stopping][roman type][line break]";
+		if shouldMessNow is 1:
+			if canMessNow is 1 and messAware is 1:
+				if T is "", say "[bold type]Your body is trying to go number two![roman type] Do you want to try and hold it in? ";
+				if T is not "" or the player is reverse bimbo consenting:
+					if willMessNow is 1:
+						if T is "":
+							if the incontinence of the player + suppository < 5, say "You try to hold it in but you start to cramp, and the pain is too much! ";
+							otherwise say "You try to hold it in but the pressure is too much and your control over your rectal muscles is too weak! ";
+							if the raw delicateness of the player < 20 and incontinence < the max-incontinence of the player:
+								say "You could push forward with sheer force of will, but it will hurt and might even affect your long term continence. Would you like to dig deep and really hold on? ";
+								let F be temporaryYesNoBackground;
+								if the player is reverse bimbo consenting:
+									now shouldMessNow is 0;
+									now willMessNow is 0;
+									say "You grit your teeth and clench your eyes and manage to hold on through the excruciating cramps.";
+									PainUp 1;
+									if the player is getting unlucky:
+										increase incontinence by 1;
+										say "Your control over your anal sphincter feels permanently weakened. [GotUnluckyFlav]";
+								now temporaryYesNoBackground is F;
+						if shouldMessNow is 1:
+							if T is not "":
+								say "[bold type][T] you [if the player is a nympho]hear yourself moaning lewdly as that weirdly delicious feeling of the shamefulness of your lack of control washes over you[otherwise if the player is a pervert or the diaper addiction of the player > 7]gasp with genuine surprise as your sphincter loses control[otherwise]shriek with horror as you feel yourself begin to go completely against your will[end if].[roman type][line break]";
+							otherwise if the incontinence of the player + suppository < 5:
+								say "[if the player is a nympho]You give up and let go, crossing your eyes and sticking your tongue out as you wait for the intense feelings to wash over you[otherwise if the player is a pervert]You just don't have the willpower. You gasp with feigned surprise as you allow your sphincter to lose control[otherwise]You clench your fists and strain with all your might but it's all in vain - the cramps win over and you feel yourself begin to push, even though you don't really want to[end if].";
+							otherwise:
+								say "[if the player is a nympho]You hear yourself moaning lewdly as that weirdly delicious feeling of the shamefulness of your lack of control washes over you[otherwise if the player is a pervert or the diaper addiction of the player > 7]You gasp with genuine surprise as your sphincter loses control[otherwise]You shriek with horror as you feel yourself begin to go completely against your will[end if].";
+							now hasMessedNow is true;
+							compute messing;
+					otherwise if T is "":
+						say "You manage to hold it in for now.";
+						if the implant of pledge-lesson-mess is 1:
+							say "Magic ripples through your belly as the curse you got from [NameDesc of lesson-teacher of pledge-lesson] activates. Your belly bulges as the bulk inside grows to massive proportions!";
+							increase rectum by 20;
+							let K be a random worn uncursed knickers;
+							if K is knickers, fully curse K;
 				otherwise:
-					say "You manage to hold it in for now.";
-					if the implant of pledge-lesson-mess is 1:
-						say "Magic ripples through your belly as the curse you got from [NameDesc of lesson-teacher of pledge-lesson] activates. Your belly bulges as the bulk inside grows to massive proportions!";
-						increase rectum by 20;
-						let K be a random worn uncursed knickers;
-						if K is knickers, fully curse K;
-			otherwise:
-				now hasMessedNow is 1;
-				now voluntarySquatting is 1;
-				compute messing;
-		if hasMessedNow is 0:
-			if willMessNow is 1:
-				let D be a random worn diaper;
-				if the player is diaper aware or D is not diaper:
-					say "All of a sudden, you feel your rectal muscles spasming and you have absolutely no control as it begins to empty itself of its contents! ";
+					now hasMessedNow is true;
+					now voluntarySquatting is 1;
 					compute messing;
-				otherwise:
-					StealthMessUp D by rectum;
-					now rectum is 1;
-			otherwise if messAware is 1 and shouldMessNow is 1:
-				let D be a random eligible diaper;
-				if the number of worn soilable knickers is 0 and diaper focus is 1 and D is diaper and asshole is not actually occupied and the location of the player is not toilets and the location of the player is not urinals and the player is not in a predicament room:
-					say "As if reacting to your tummy, ";
-					let K be a random worn knickers;
-					if K is knickers:
-						say "your [ShortDesc of K] suddenly morphs into ";
-						only destroy K;
+			if hasMessedNow is false:
+				if willMessNow is 1:
+					let D be a random worn diaper;
+					if the player is diaper aware or D is not diaper:
+						say "All of a sudden, you feel your rectal muscles spasming and you have absolutely no control as it begins to empty itself of its contents! ";
+						compute messing;
 					otherwise:
-						say "your loins are suddenly surrounded by ";
-					say "a [ShortDesc of D]![one of][line break][variable custom style][if the delicateness of the player < 14]Oh my god, the game is trying to make me mess myself...[otherwise]At least now I have a toilet to go in. Thank you game![end if][roman type][line break][or][stopping]";
-					summon D cursed with quest;
-				otherwise if suppository > 0 or a random number between 1 and 5 is 1:
-					say "Your tummy cramps [if rectum + suppository < 8]painfully[otherwise]brutally[end if][if the player is upright and the number of worn stuck clothing is 0], forcing you onto your knees[end if]. You feel a desperate need to [if the diaper addiction of the player < 12]find a toilet[otherwise if the player is diapered]use your diaper[otherwise]use a diaper[end if].";
-					if the player is upright and the number of worn stuck clothing is 0, try kneeling;
-					if rectum + suppository >= 8:
-						say "It takes you several moments to recover.";
-						now another-turn is 1.
+						StealthMessUp D by rectum;
+						now rectum is 1;
+				otherwise if messAware is 1 and shouldMessNow is 1:
+					let D be a random eligible diaper;
+					if T is "" and the number of worn soilable knickers is 0 and diaper focus is 1 and D is diaper and asshole is not actually occupied and the location of the player is not toilets and the location of the player is not urinals and the player is not in a predicament room:
+						say "As if reacting to your tummy, ";
+						let K be a random worn knickers;
+						if K is knickers:
+							say "your [ShortDesc of K] suddenly morphs into ";
+							only destroy K;
+						otherwise:
+							say "your loins are suddenly surrounded by ";
+						say "a [ShortDesc of D]![one of][line break][variable custom style][if the delicateness of the player < 14]Oh my god, the game is trying to make me mess myself...[otherwise]At least now I have a toilet to go in. Thank you game![end if][roman type][line break][or][stopping]";
+						summon D cursed with quest;
+					otherwise if T is not "" or suppository > 0 or a random number between 1 and 5 is 1:
+						if T is "", say "[bold type]Your ";
+						otherwise say "[bold type][T] your ";
+						say "tummy cramps [if rectum + suppository < 8]painfully[otherwise]brutally[end if][if the player is upright and the number of worn stuck clothing is 0], forcing you onto your knees[end if]. You feel a desperate need to [if the diaper addiction of the player < 12]find a toilet[otherwise if the player is diapered]use your diaper[otherwise]use a diaper[end if].[roman type][line break]";
+						if the player is upright and the number of worn stuck clothing is 0, try kneeling;
+						if rectum + suppository >= 8:
+							say "It takes you several moments to recover.";
+							now another-turn is 1.
 
 [!<ComputeMessing>+
 
@@ -293,6 +310,7 @@ To compute messing:
 		if matron is alive, now the boredom of matron is 0; [Next time she sees the player she should probably pay attention!]
 		allocate 6 seconds;
 		if voluntarySquatting is 0, progress quest of adult-baby-quest;
+		now voluntarySquatting is 0;
 		now diaper-reaction-said is true;
 		now another-turn is 1.
 

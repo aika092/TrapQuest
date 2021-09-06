@@ -20,23 +20,21 @@ To compute announcements:
 			say "Looking for more ways to reduce the game lag? Once you get used to how the various different objects can be interacted with, I'd strongly recommend switching your 'Button Layout' to Popup Buttons. You can do this from the GUI settings submenu at any point. Doing this lets the images render a bit larger, because there's no space reserved for buttons, and also makes the game go faster as the engine has to think about several less images each turn.[paragraph break]Or, I can make the change for you now. Would you like to try out the Popup Buttons setting? ";
 			if the player is consenting, now choice in row 51 of the Table of Settings is 1;
 			now choice in row 53 of Table of Settings is 3;
-		otherwise if announcements seen < 5 and combat-visor-hidden is 0:
+		otherwise if announcements seen < 5 and combat-visor-hidden is 0 and (combatvisor is 1 or the player is the donator):
 			clear the screen;
-			if (announcements seen is 3 and the player is the donator) or announcements seen is 4:
-				say "There's a new setting that hides the combat visor from your worn inventory to prevent clutter, but still treats it as worn. It's in the Image Settings, or, I can make the change for you now. Would you like to hide the combat visor when worn? ";
-				if the player is consenting, now choice in row 54 of the Table of Settings is 1;
-			if announcements seen is 4 or the player is the donator, now choice in row 53 of Table of Settings is 5;
-			otherwise now choice in row 53 of Table of Settings is 4;
+			say "There's a new setting that hides the combat visor from your worn inventory to reduce clutter, but still treats it as worn. It's in the Image Settings, or, I can make the change for you now. Would you like to hide the combat visor when worn? ";
+			if the player is consenting, now choice in row 54 of the Table of Settings is 1;
+			now choice in row 53 of Table of Settings is 5;
 		otherwise if announcements seen < 6 and image cutscenes is 1 and GUI layout is 0:
 			clear the screen;
 			say "The new recommended setting for image cutscenes is that they all appear in the location window. This is because even if they appear rather small at first, they can now be clicked on and examined in order to push a zoomed-in version to the map window. This is especially advised for anyone playing on a monitor that's not particularly high resolution, as cutscene images in the main window can only be cropped, not resized. Would you like me to make that setting change for you now? ";
 			if the player is consenting, now choice in row 29 of the Table of Settings is 2;
-			now choice in row 53 of Table of Settings is 5;
+			now choice in row 53 of Table of Settings is 6;
 		otherwise if announcements seen < 7 and GUI layout is 0:
 			if tattoo vision is 0:
 				clear the screen;
 				say "You can now have tattoos appear in the Location Window when they are both visible and outrageous enough to be currently contributing to your overall appearance rating. However this is currently disabled. Would you like to enable it now? ";
 				if the player is consenting, now choice in row 30 of the Table of Settings is 1;
-			now choice in row 53 of Table of Settings is 6;
+			now choice in row 53 of Table of Settings is 7;
 
 Announcements ends here.

@@ -62,6 +62,11 @@ To Execute Fainting:
 	if sex-changed is 1 and tg fetish >= 1:
 		if the faint count of the player is 0, say "[First Time TG Fainting Story]";
 		otherwise say "[TG Fainting Story]";
+		if the player is gendered male:
+			say "You didn't ask to be changed like this, but knowing how hard it would be to change back, you find yourself wondering... wouldn't it be best if you identified as a woman from now on?";
+			if the player is bimbo consenting:
+				say "You decide to give up on being a man once and for all, since it's obvious now that you were only pretending to be one.";
+				now choice in row 79 of the Table of Player Options is 1;[permanently switches the player to feminine pronouns]
 		now sex-changed is 2;
 	otherwise:
 		say "[if the faint count of the player is 0][First Time Fainting Story][otherwise][Next Time Fainting Story][end if]";
@@ -226,7 +231,7 @@ To Recover Collectibles:
 	repeat with C running through on-stage recipes:
 		unless C is immune to change, destroy C;
 	repeat with C running through on-stage lubricant:
-		unless C is immune to change, destroy C.
+		unless C is immune to change, destroy C;
 	now the pink pill is held by the player.
 
 To Recover Drinks:
@@ -347,7 +352,7 @@ To Recover the Player:
 	now the throne is not untriggered;
 	now the throne is not triggered;
 	MilkPuddleUp the milk volume of breasts / 2;
-	now the milk volume of breasts is the lactation rate of the player;
+	now the milk volume of breasts is the square root of the lactation rate of the player;
 	now the lactation rate of the player is 0;
 	now the air volume of belly is 0; [always deflate belly of air even if ass is plugged]
 	let AP be a random thing penetrating asshole;
@@ -392,7 +397,7 @@ To Recover the Player:
 	now the stomach-urine of the player is 0;
 	now the stomach-food of the player is 2;
 	if the bladder of the player + the delayed bladder of the player > 0 and watersports mechanics is 1:
-		let P be a random worn bottom level pee protection clothing;
+		let P be a random bottom level pee protection clothing;
 		if P is clothing:
 			if P is fluid vulnerable, UrineSoakUp P by the bladder of the player + the delayed bladder of the player;
 		otherwise:

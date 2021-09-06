@@ -117,7 +117,7 @@ To unseal xavier from (M - a monster):
 			say "[big he of M] is looking upwards, and doesn't seem to be talking to anyone in particular. You realise this might be a sensible moment to try and make a quick exit...";
 		progress quest of insanity-quest;
 	otherwise:
-		say "You feel a burst of heat, and something [b]very powerful[/b] shakes the earth.";
+		say "You feel a burst of heat, and something [b]very powerful[/b] shakes the Earth.";
 	if bride-consort is M, now bride-consort is demon lord;
 	finally destroy M.
 
@@ -200,15 +200,15 @@ To compute perception of (M - demon lord):
 		bore M;
 		if there is worn perceived unmessed knickers, compute state check of a random worn messed knickers;
 	otherwise if the player is soulless and the player-class is not succubus:
-		say "[first custom style]'YOU WILL SERVE AS AN IDEAL VESSEL FOR ONE OF MY SERVANTS! KNEEL AND PREPARE YOURSELF!'[roman type]";
+		say "[first custom style]'YOU WILL SERVE AS AN IDEAL VESSEL FOR ONE OF MY SERVANTS! KNEEL AND PREPARE YOURSELF!'[roman type][line break]";
 	otherwise if ex-princess is unconcerned and ex-princess is alive and the number of monsters in the location of the player is 1 and ((diaper quest is 0 and the player is a june 2021 top donator) or (diaper quest is 1 and the player is a june 2021 diaper donator)):
 		commence final battle;
 	otherwise if vaginalvirgin of the player is 1 and the player is possessing a vagina:
 		say "[first custom style]'[one of]YOU CANNOT RESIST ME, FOOLISH [caps boy of the player]!'[or]I WILL BE THE FIRST TO IMPALE YOU ON MY MIGHTY COCK, VIRGIN!'[or]I LOVE CHERRIES!'[or]SUBMIT YOURSELF, [caps boy of the player]! YOU CANNOT PROTECT YOUR VIRGINITY FROM ME!'[at random][roman type][line break]";
 	otherwise if the class of the player is princess:
-		say "[first custom style]'[one of]HAHAHA! FOOLISH PRINCESS! YOUR KINGDOM WILL BE MY COCKSLEEVE FOR ETERNITY AND SO WILL YOU!'[or][if pregnancy fetish is 1 and the player is possessing a vagina and the pregnancy of the player is 1]SUBMIT, PRINCESS! YOUR BLOODLINE WILL BE TAINTED WITH MY SEED!'[otherwise]YOU CAN RUN NO LONGER, PRINCESS! I WILL FILL YOU WITH MY TAINTED SEED!'[end if][at random][roman type]";
+		say "[first custom style]'[one of]HAHAHA! FOOLISH PRINCESS! YOUR KINGDOM WILL BE MY COCKSLEEVE FOR ETERNITY AND SO WILL YOU!'[or][if pregnancy fetish is 1 and the player is possessing a vagina and the pregnancy of the player is 1]SUBMIT, PRINCESS! YOUR BLOODLINE WILL BE TAINTED WITH MY SEED!'[otherwise]YOU CAN RUN NO LONGER, PRINCESS! I WILL FILL YOU WITH MY TAINTED SEED!'[end if][at random][roman type][line break]";
 	otherwise if the player-class is succubus and M is mating and pentagram tattoo is not worn:
-		say "[first custom style]'CONCUBINE! I HAVE PREPARED A GIFT FITTING YOUR STATUS!'[roman type]";
+		say "[first custom style]'CONCUBINE! I HAVE PREPARED A GIFT FITTING YOUR STATUS!'[roman type][line break]";
 	otherwise:
 		say "[first custom style]'YOU! GET ON YOUR KNEES AND PRESENT [if pregnancy fetish is 1 and the player is possessing a vagina and the pregnancy of the player is 0]YOUR [caps cunt] TO CONCEIVE AND CARRY MY HEIR[otherwise]YOURSELF BEFORE YOUR [one of]NEW [or][stopping]MASTER[end if].'[roman type][line break]";
 		if the class of the player is succubus or the class of the player is worshipper and the player is upright:
@@ -219,8 +219,10 @@ To compute DQ perception of (M - demon lord):
 	now M is interested;
 	anger M;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
-	if the class of the player is princess:
-		say "[first custom style]'PRINCESS! YOU DARE SHOW YOUR FACE HERE? YOU WILL SUBMIT TO ME!'[roman type]";
+	if ex-princess is unconcerned and ex-princess is alive and the number of monsters in the location of the player is 1 and ((diaper quest is 0 and the player is a june 2021 top donator) or (diaper quest is 1 and the player is a june 2021 diaper donator)):
+		commence final battle;
+	otherwise if the class of the player is princess:
+		say "[first custom style]'PRINCESS! YOU DARE SHOW YOUR FACE HERE? YOU WILL SUBMIT TO ME!'[roman type][line break]";
 	otherwise:
 		say "[first custom style]'YOU! GET ON YOUR KNEES AND PRESENT YOURSELF BEFORE YOUR [one of]NEW [or][stopping]MASTER.'[roman type][line break]".
 
@@ -292,14 +294,14 @@ The monster fucked taunting rule of demon lord is usually the xavier replaces th
 This is the xavier replaces the monster rule:
 	if diaper quest is 0:
 		let M be current-monster;
-		let N be a random monster penetrating a fuckhole;
-		if there is a monster penetrating asshole, now N is a random monster penetrating asshole; [This is the one who's important to get rid of since this is where we're going.]
-		say "[BigNameDesc of M] kicks the [N] out of the way, and takes over! [big he of M] sticks [his of M] giant [DickDesc of M] in your [asshole], and starts pounding you mercilessly! Fuck!";
-		now the sex-length of M is 2;
-		now the chosen-orifice of M is asshole;
-		destroy N;[TODO: update]
-		now M is penetrating asshole;
-		ruin asshole.
+		let N be a random monster penetrating asshole;[This is the one who's important to get rid of since this is where we're going.]
+		if N is monster:
+			say "[BigNameDesc of M] kicks the [N] out of the way, and takes over! [big he of M] sticks [his of M] giant [DickDesc of M] in your [asshole], and starts pounding you mercilessly! Fuck!";
+			now the sex-length of M is 2;
+			now the chosen-orifice of M is asshole;
+			destroy N;[TODO: update]
+			now M is penetrating asshole;
+			ruin asshole.
 
 To compute the orifice choosing of (M - demon lord):
 	if pregnancy fetish is 1 and the pregnancy of the player is 0 and vagina is an actual target:
@@ -312,7 +314,7 @@ To compute (M - demon lord) removing (P - an anal beads):
 	destroy P.
 
 To say CondomRejectFlav of (M - demon lord):
-	say "[speech style of M]'[one of]FOOL! I HAVE A LATEX ALLERGY[or]NO! IT DOESN'T FEEL AS GOOD[or]I GO BAREBACK IN EVERY HOLE, MORTAL[or]FOOLISH MORTAL! I AM TOO BIG FOR CONDOMS[then at random]!'[roman type]";
+	say "[speech style of M]'[one of]FOOL! I HAVE A LATEX ALLERGY[or]NO! IT DOESN'T FEEL AS GOOD[or]I GO BAREBACK IN EVERY HOLE, MORTAL[or]FOOLISH MORTAL! I AM TOO BIG FOR CONDOMS[then at random]!'[roman type][line break]";
 	if the player is able to use manual dexterity:
 		say "You might be able to force [him of M] to wear a condom, but there might be consequences if you fail. Do you try anyway?";
 		if the player is reverse bimbo consenting:
@@ -404,7 +406,8 @@ To decide if (M - demon lord) is losing wrapper in (F - a fuckhole):
 	if the girth of M >= the openness of F:[being tight increases your chances of escaping!]
 		if the player is getting lucky, decide no;
 	otherwise:
-		if the player is getting very lucky, decide yes.
+		if the player is getting very lucky, decide no;
+	decide yes.
 
 To compute condom failure of (M - demon lord) in (F - a fuckhole):
 	say CondomFailFlav of M in F;
@@ -425,6 +428,7 @@ To decide if (M - demon lord) is willing to creampie (F - a fuckhole):
 	if the reaction of the player is 0:
 		if the class of the player is priestess or a random number between 1 and 2 is 1, decrease W by 5;
 	if W > 10, decide yes;
+	if the number of live things penetrating a body part > 0, decide yes;[can't go flying if there are other people helping to hold you in place]
 	decide no.
 
 To say CreampieFlav of (M - demon lord) in (O - a fuckhole):
@@ -451,7 +455,7 @@ To say PullOutFlav of (M - demon lord) in (O - a fuckhole):
 	say "[one of][BigNameDesc of M] roars with pleasure as [his of M] [DickDesc of M] spasms powerfully, literally flooding your [variable O] with a huge explosion of [semen]! The force of it is so immense that it literally forces you up and off [his of M] shaft, sending you flying across the room![or][BigNameDesc of M] ejaculates with incredible force, instantly filling your [variable O] with [semen]. You feel yourself lifting off as [his of M] orgasm continues, and with one last powerful spurt you go flying across the room![or][BigNameDesc of M][']s [DickDesc of M] spasms as it fills your [variable O] with just one spurt of [semen], ejaculating with such force that you can literally feel yourself lifting off. All it takes is one last powerful spurt to send you flying across the room![at random] You smack into the opposite wall, [semen] gushing out of your gaping hole as [NameDesc of M] gets to [his of M] feet.".
 
 To say MessyPullOutFlav of (M - demon lord) in (O - a fuckhole):
-	say "[one of][BigNameDesc of M] roars with pleasure as [his of M] [DickDesc of M] spasms powerfully, literally flooding your [variable O] with a huge explosion of [semen]! The force of it is so immense that it literally forces you up and off [his of M] shaft, sending you flying across the room![or][BigNameDesc of M] ejaculates with incredible force, instantly filling your [variable O] with [semen]. You feel yourself lifting off as [his of M] orgasm continues, and with one last powerful spurt you go flying across the room![or][BigNameDesc of M][']s [DickDesc of M] spasms as it fills your [variable O] with just one spurt of [semen], ejaculating with such force that you can literally feel yourself lifting off. All it takes is one last powerful spurt to send you flying across the room![at random] You smack into the opposite wall, [semen] cascading down your legs as [NameDesc of M] gets to [his of M] feet.".
+	say "[one of][BigNameDesc of M] roars with pleasure as [his of M] [DickDesc of M] spasms powerfully, literally flooding your [variable O] with a huge explosion of [semen]! The force of it is so immense that it literally lifts you up and off [his of M] shaft, sending you flying across the room![or][BigNameDesc of M] ejaculates with incredible force, instantly filling your [variable O] with [semen]. You feel yourself lifting off as [his of M] orgasm continues, and with one last powerful spurt you go flying across the room![or][BigNameDesc of M][']s [DickDesc of M] spasms as it fills your [variable O] with just one spurt of [semen], ejaculating with such force that you can literally feel yourself lifting off. All it takes is one last powerful spurt to send you flying across the room![at random] You smack into the opposite wall, [semen] cascading down your legs as [NameDesc of M] gets to [his of M] feet.".
 
 To say StrikingSuccessFlav of (M - demon lord) on (B - a body part):
 	say "[BigNameDesc of M] strikes you [TargetName of B] with a large claw! Ouch!!";
@@ -1003,6 +1007,53 @@ To execute (F - final-battle-harness):
 	if the uses of F >= 3:
 		say "[speech style of ex-princess]'I call upon the power of [if diaper quest is 1]pee-pee[otherwise]pussy[end if]!'[roman type][line break][BigNameDesc of ex-princess] shouts the incantation for a spell that rips the reins from [his of ex-princess] body, and replaces it with a copy of [his of ex-princess] usual royal dress. After using this spell, [he of ex-princess] looks very fatigued.[line break][speech style of ex-princess]'What a... waste... of magic...'[roman type][line break]";
 		now current-final-battle-object is final-battle-stunned. [this object has concluded with a STUN]
+
+
+final-battle-scan is a final-battle-object. final-battle-scan can be pose-swapped.
+Definition: final-battle-scan is appropriate:
+	if diaper lover is 1, decide yes;
+	decide no.
+To commence (F - final-battle-scan):
+	say "[BigNameDesc of demon lord] makes for one wall and slams on a hidden button. There's a loud whirring, and then a football-sized metal sphere flies into the room, before speaking in a robotic voice.[line break][first custom style]'SPREAD LEGS SQUATTING PEACE SIGN SMILE POSE ENFORCEMENT ROUTINE INITIATED. PARTY BALL WILL RELEASE PUNISHMENT HIGH-POWERED CONCUSSIVE ENERGY BLAST UNLESS POSE IS DETECTED IN FIVE... FOUR... THREE...[line break][speech style of ex-princess]'No!'[roman type][line break][BigNameDesc of ex-princess] interrupts the bizaree machine by adopting the pose it seems to be demanding - [he of ex-princess] spreads [his of ex-princess] legs, squats down low, raises [his of ex-princess] hands into two peace signs, and puts on a forced smile. [big he of ex-princess] looks absolutely ridiculous - which is likely the point, you suppose - and is also rendered unable to speak or move while [he of ex-princess] holds the pose... leaving [him of ex-princess] completely vulnerable to [NameDesc of demon lord][']s next attacks. Meanwhile, the robot-drone-thing begins making robotic laughter sounds and taking flash photos of [NameDesc of ex-princess], presumably immediately uploading these photos to several sites on the Internet.[paragraph break]...It seems likely that the robot will only do its nasty energy blast thing if it can't find anyone in the room in that humiliating pose. You could probably assume the pose yourself, and by doing so free up [NameDesc of ex-princess] to keep fighting. But it would be so humiliating... and what if the images really did end up on the Internet?!";
+	execute F.
+To execute (F - final-battle-scan):
+	reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+	set numerical response 1 to "[if F is not pose-swapped]force [NameDesc of ex-princess] to maintain the pose[otherwise]stop holding the pose[end if]";
+	set numerical response 2 to "[if F is not pose-swapped]take over[otherwise]keep[end if] holding the humiliating pose";
+	compute multiple choice question;
+	if player-numerical-response is 1:
+		if F is not pose-swapped:
+			say "[BigNameDesc of demon lord] laughs as [he of demon lord] makes another intricate hand gesture.[line break][speech style of demon lord]'[one of]YOU'RE AT MY MERCY NOW[or]BURN[stopping]!'[roman type][line break][BigNameDesc of ex-princess][']s body light up with infernal green fire. [big he of ex-princess] [one of]squeals[or]screams[or]wails[stopping] in pain!";
+			decrease the health of ex-princess by the maxhealth of ex-princess / 12;
+		otherwise:
+			say "As soon as you even stop smiling, the metal sphere immediately reacts.[line break][first custom style]'DETONATE.'[roman type][line break]The device turns bright white, essentially turning into some sort of giant flash-bang. Before you know what's hit you, you're unable to see, hear or even think properly. And when you do begin to regain your vision, you see that [NameDesc of ex-princess] got caught even more off-guard than you, and is still completely disorentated.";
+			decrease the health of ex-princess by the maxhealth of ex-princess / 12;
+			now current-final-battle-object is final-battle-stunned; [this object has concluded with a STUN]
+	otherwise:
+		if F is not pose-swapped:
+			say "You assume the position, spreading your legs, squatting down low, holding up peace signs and forcing a smile. Instantly, [NameDesc of ex-princess] leaps back into action, able to bat away [NameDesc of demon lord][']s attempt at offensive spells.";
+			now F is pose-swapped;
+		otherwise:
+			say "You hold the ridiculous peace-sign squat pose, turning more red with every passing second. [BigNameDesc of ex-princess] and [NameDesc of demon lord] are locked in an even battle of offensive and defensive spellcasts.";
+		let T be "In your deep squatting position, your body feels twice as desperate to go let loose, and";
+		check sudden expulsion with reason T;
+		say "The hovering sphere plays a robotic laughing track while taking several flash photos of you. Little sound effects sound exactly like the sound your phone makes when you upload a file to the Internet.";
+		let RPT be "holding an extremely low squat while smiling and holding up peace signs";
+		let RPS be 4;
+		if player-just-leaked is true or delayed urination is 1:
+			now RPT is "[RPT] while peeing yourself";
+			increase RPS by 2;
+		if player-just-enema-leaked is true:
+			now RPT is "[RPT] while squirting liquid out your butthole";
+			increase RPS by 3;
+		if hasMessedNow is true:
+			now RPT is "[RPT] while visibly messing yourself";
+			increase RPS by 4;
+		compute digital reputation damage RPT strength RPS quality 2;
+		compute digital reputation damage RPT strength RPS quality 2;
+	if the uses of F >= 3:
+		say "[first custom style]'BATTERY LOW... RETURNING TO DOCKING STATION.'[roman type][line break]Just as quickly and efficiently as it had arrived, the robot-drone-sphere-thing flies away, leaving you all alone and removing the threat of its energy detonation attack.[line break][variable custom style]Phew![roman type][line break]";
+		now current-final-battle-object is final-battle-magic-clash. [this object has concluded]
 
 
 

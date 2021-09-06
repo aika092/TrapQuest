@@ -60,11 +60,12 @@ To decide which number is the unique outrage of (C - heart window cutoffs):
 	decide on 5.
 
 To say ClothingDesc of (K - heart window cutoffs):
-	say "Denim shorts with a heart shaped hole at the back and front that exposes [if K is worn]your[otherwise]the wearer's[end if] [genitals].".
+	say "Denim shorts with a heart shaped hole at the back that partially exposes [if K is worn]your[otherwise]the wearer's[end if] [genitals].".
 Figure of heart window cutoffs is the file "Items/Clothes/Lower/Underwear/Skimpy/Cutoffs/cutoffs3.png".
 
 Definition: heart window cutoffs is transformation-protected: decide yes.
 Definition: heart window cutoffs is heart themed: decide yes.
+Definition: heart window cutoffs is potentially vagina covering: decide no. [doesn't fully cover genitals (but still partially does)]
 
 predicament-painted-cutoffs is a knickers. predicament-painted-cutoffs is unique. predicament-painted-cutoffs is crotch-exposing. The printed name of predicament-painted-cutoffs is "[clothing-title-before]painted cutoffs[clothing-title-after]". The text-shortcut of predicament-painted-cutoffs is "pcf". Understand "painted", "cutoffs" as predicament-painted-cutoffs.
 

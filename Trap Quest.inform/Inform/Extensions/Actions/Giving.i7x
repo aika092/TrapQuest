@@ -51,7 +51,7 @@ Check giving:
 			otherwise:
 				say "After [he of the second noun][']s finished, [he of the second noun] frowns.[line break][second custom style]'[one of]This is pretty bland, you know. I bet you just [if the fill-colour of the noun is golden]pissed directly into this cup[otherwise]used your own bodily fluids[end if], didn't you? This only gets you 1 use of the altar. Sorry but really I want something actually interesting, something that took some kinky act for you to collect. Go find someone else's cum or piss and then I'll properly reward you. Or at the very least, at least use a squirt dildo to stew this in your butthole for a bit first, that might add a little flavour.'[or]Boring and bland again. Only worth 1 use of the altar, I'm afraid.'[stopping][roman type][line break]";
 				increase the altar-uses of the second noun by 1;
-			if (the class of the player is bunny and bunny waitress ears is worn) or there is worn serving-bondage or the class of the player is "cafe maid" or (the class of the player is royal slave and the noun is monster-origin and the fill-colour of the noun is white), compute waitress resolution of the second noun taking the noun;
+			if there is a worn waitress-enabling wearthing or (the class of the player is royal slave and the noun is monster-origin and the fill-colour of the noun is white), compute waitress resolution of the second noun taking the noun;
 			DoseEmpty the noun;
 			do nothing instead;
 		otherwise if the noun is diaper:
@@ -94,7 +94,17 @@ Check giving:
 			allocate 6 seconds;
 			destroy the noun instead;
 			do nothing instead;
+		otherwise if the noun is players-detached-dick: [#LXorDD]
+			if player is wearing players-detached-dick:
+				say "[Big he of the second noun] slowly tilts [his of the second noun] head to one side, eyeing your detached dick stuffed inside you. [speech style of the second noun]'Wow, lazy, much? You expect me to take that out for you, too?'[roman type][line break]";
+				humiliate 100;
+				compute restoration of dick by the second noun;
+			otherwise if player is carrying players-detached-dick:
+				say "[Big he of the second noun] sniffs at it, sniggers, and [if the size of the noun < 4]pops it in and out of [his of the second noun] mouth a few times, [his of the second noun] tongue flicking it[otherwise if the size of the noun > 8]manages to force it down [his of the second noun] throat in a feat of sword-swallowing, before gasping as [he of the second noun] extracts it with a loud [']pop['][otherwise]swallows it and sucks, [his of the second noun] cheeks hollowing out as [he of the second noun] sucks at it, [his of the second noun] tongue curling around the shaft[end if], which makes you stagger at the strong burst of sensation.[line break][speech style of the second noun]'Don't get any ideas: I have to, er, attune to it for the restoration.'[roman type][line break]";
+				stimulate penis from the second noun;
+				compute restoration of dick by the second noun;
 		otherwise:
+			[#LXorDD]
 			if the curse-quest of the second noun is 1 and the noun is fae mushroom:
 				remove the noun from play;
 				say "[second custom style]'Great work! But I'm afraid I need something else as well. Somewhere in this world, there's a scroll which contains the instructions for the ritual required to remove the curse. If you can find that, and bring it back here, then I can do the rest[one of]. Maybe it's being kept in some kind of library?'[or].'[stopping][roman type][line break]";
@@ -102,6 +112,7 @@ Check giving:
 				now a random recipe for latex curse reversal is in Hotel25;
 				now the second noun is interested instead;
 			otherwise if the curse-quest of the second noun is 2 and the noun is recipe for latex curse reversal:
+				[Note that LatexCurseRemoval also clears the curse.]
 				say "[second custom style]'Nice, you got it! All right leave the rest to me...'[roman type][line break]The [second noun] takes the recipe and studies it carefully, muttering words you don't understand whilst stirring the mushroom into some kind of murky liquid. With a hum and a wave of [his of the second noun] wand, you feel the curse leaving you! [LatexCurseRemoval][line break][second custom style]'[one of]You know that was the most interesting thing I've had to do this century, I've been DYING of boredom here. You're all right kid. Feel[or]You should probably be more careful in the future, or eventually we'll run out of mushrooms to turn you back. See you around baby - you should still feel[stopping] free to come by any time if you want to use my altar.'[roman type][line break]";
 				now the second noun is unbitchy;
 				now the curse-quest of the second noun is 3 instead;

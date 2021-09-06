@@ -1,6 +1,6 @@
 Throne by Objects begins here.
 
-The throne is in Dungeon11. The printed name of throne is "[TQlink of item described]throne[TQxlink of item described][shortcut-desc][verb-desc of item described]". The throne is a trap. The throne is not portable. The throne is not triggered. The throne is untriggered. The throne is revealed. Understand "bind", "binds", "tentacle", "tentacles" as the throne. The throne has a number called charge. The charge of the throne is usually 0. The throne has a number called turns. The throne can be untransformed or transformed. The throne is untransformed. The throne has a number called timesSat. The text-shortcut of throne is "thr".
+The throne is a trap. The throne is in Dungeon11. The printed name of throne is "[TQlink of item described]throne[TQxlink of item described][shortcut-desc][verb-desc of item described]". The throne is not portable. The throne is not triggered. The throne is untriggered. The throne is revealed. Understand "bind", "binds", "tentacle", "tentacles" as the throne. The throne has a number called charge. The charge of the throne is usually 0. The throne has a number called turns. The throne can be untransformed or transformed. The throne is untransformed. The throne has a number called timesSat. The text-shortcut of throne is "thr".
 
 To decide which figure-name is the examine-image of (C - throne):
 	if C is penetrating asshole:

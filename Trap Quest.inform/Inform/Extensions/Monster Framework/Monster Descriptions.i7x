@@ -141,7 +141,9 @@ After examining a monster:
 			say "[BigNameDesc of noun] looks near defeat.";
 		otherwise if the health of the noun < the maxhealth of the noun / 2:
 			say "[BigNameDesc of noun] seems to be quite injured.";
-	if the noun is wrapped, say "[BigNameDesc of noun] is wearing a condom around [his of the noun] [manly-penis].".
+	if the noun is wrapped, say "[BigNameDesc of noun] is wearing a condom around [his of the noun] [manly-penis].";
+	if players-dick-is-detached > 0: [#LXorDD]
+		say its-got-my-dick for the noun.
 
 To say FavourDesc of (M - a monster):
 	let O be a random body part penetrated by M;

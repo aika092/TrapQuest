@@ -120,4 +120,9 @@ The printed name of house-key is "[TQlink of item described]house key[shortcut-d
 To say ExamineDesc of (B - house-key):
 	say "This small key unlocks your front door.".
 
+bike-lock-key is an unlock-key.
+The printed name of bike-lock-key is "[TQlink of item described]bike lock key[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of bike-lock-key is "blkey". Understand "bike", "lock", "lock key" as bike-lock-key.
+To say ExamineDesc of (B - bike-lock-key):
+	say "This small key unlocks the bike lock in the women's toilets.".
+
 Skeleton Key ends here.

@@ -468,8 +468,8 @@ To say EnslavedDominationFlav of (M - teacher-bianca):
 	say "[big he of M] makes no move to clean it up.";
 	let collecting be nothing;
 	let LV be a list of things;
-	repeat with V running through carried open topped vessels:
-		unless the fill-colour of V is creamy and the doses of V >= the max-doses of V, add V to LV;
+	repeat with V running through carried vessels:
+		unless V is tight topped or (the fill-colour of V is creamy and the doses of V >= the max-doses of V), add V to LV;
 	if the number of entries in LV > 0:
 		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 		truncate LV to 9 entries;

@@ -21,7 +21,7 @@ To decide which figure-name is the pacified-image of (M - teacher-serenity):
 
 To say MonsterDesc of (M - teacher-serenity):
 	if M is sex-enslaved:
-		say "[BigNameDesc of M] has had the fabric of [his of M] dress removed, leaving [him of M] with little more than a belt, and [his of M] top pulled down beneath [his of M] breasts. [big his of M] exposed nipples are tortured by connected nipple clamps, which [he of M] can't remove because [his of M] wrists are bound behind [his of M] back. [big his of M] [if lady fetish is 2]caged [sissy-penis][otherwise]pussy[end if] is kept constantly stimulated by a vibrating wand, strapped to one thigh. A ballgag sits in [his of M] mouth and a nose hook makes sure [he of M] looks much uglier than before. [big his of M] chunky heels have been further elongated to make them more difficult to constantly stand on, and locked on with padlocks. A nose hook and ballgag completes the humiliating look.";
+		say "[BigNameDesc of M] has had the fabric of [his of M] dress removed, leaving [him of M] with little more than a belt, and [his of M] top pulled down beneath [his of M] breasts. [big his of M] exposed nipples are tortured by connected nipple clamps, which [he of M] can't remove because [his of M] wrists are bound behind [his of M] back. [big his of M] [if lady fetish is 2]caged [DickDesc of M][otherwise]pussy[end if] is kept constantly stimulated by a vibrating wand, strapped to one thigh. A ballgag sits in [his of M] mouth and a nose hook makes sure [he of M] looks much uglier than before. [big his of M] chunky heels have been further elongated to make them more difficult to constantly stand on, and locked on with padlocks. A nose hook and ballgag completes the humiliating look.";
 	otherwise if M is diaper-enslaved:
 		say "[BigNameDesc of M][']s comfortable chunky heels have been replaced by an ingeniously evil combination of rollerskates and ankle spreader bar. [big he of M] has to constantly wave [his of M] arms to remain even vaguely balanced! An ironic fate considering [his of M] previous pride in [his of M] balance in heels. Meanwhile, [his of M] top and skirt have been replaced by a yellow babydoll leotard and a very thick diaper, and a pacifier on a string around [his of M] neck, completing the diaper-slave look.";
 	otherwise:
@@ -407,7 +407,7 @@ To compute teaching of (L - make-up-lesson):
 					repeat with ST running through ditzy students in the location of the player:
 						FavourDown ST;
 			say "[BigNameDesc of M] comes over to assess everyone's handiwork. [big he of M] raises [his of M] eyebrows when [he of M] looks at yours.";
-			if the make-up of face < 3 and the printed name of the chosen numerical response matches the text "any":
+			if the make-up of face < 3 and the chosen numerical response matches the text "any":
 				say "[speech style of M]'No change?! Zis won't do. Not in my clazz!'[roman type][line break]";
 				if lipstick collar is actually summonable:
 					summon lipstick collar locked;

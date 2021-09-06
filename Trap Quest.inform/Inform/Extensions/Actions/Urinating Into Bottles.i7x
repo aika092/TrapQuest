@@ -7,7 +7,7 @@ Check PeeBottling:[TODO: compatible with parched pedestal]
 	if the player is immobile or the player is in danger, say "You're a bit busy right now!" instead;
 	if the player is not disgraced and there is a reactive monster and debugmode is 0, say "You consider yourself too dignified to do that in front of someone right now. Peeing on the floor would be humiliating enough." instead;
 	unless the noun is a vessel or the noun is a pedestal, say "How would you pee into that?" instead;
-	if the noun is a vessel and the noun is not open topped, say "You can only pee into open-topped containers." instead;
+	if the noun is a vessel and the noun is tight topped, say "You can only pee into open-topped containers." instead;
 	if the noun is erect pedestal, say "There's no opening where you can pee." instead;
 	if the player is prone, say "You can only do that when standing." instead;
 	if there is worn pee covering clothing:

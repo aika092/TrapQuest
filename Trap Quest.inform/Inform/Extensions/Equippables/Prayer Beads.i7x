@@ -124,7 +124,7 @@ To uniquely set up (C - jinx-beads):
 A magic consequences rule (this is the jinx beads magic rule):
 	if jinx-beads is worn, compute jinx of jinx-beads.
 
-fire-beads is a magic-beads. fire-beads is unique. Understand "fire", "fire beads" as fire-beads. The text-shortcut of fire beads is usually "frb".
+fire-beads is a magic-beads. fire-beads is unique. Understand "fire", "fire beads" as fire-beads. The text-shortcut of fire-beads is "frb".
 
 To say ClothingDesc of (W - fire-beads):
 	say "A set of red and yellow beads connected by a flexible wire. It emits a hearth-like warmth.";

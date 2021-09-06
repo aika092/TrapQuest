@@ -28,17 +28,17 @@ To compute mopdipping:
 		let U be the urine-puddle of the location of the player;
 		let M be the milk-puddle of the location of the player;
 		let TBP be a random top level breasts protection clothing;
-		if TBP is liquid-soak-appropriate clothing or (bukkake fetish is 1 and S > 0):
+		if (S is 0 and TBP is clothing) or (S > 0 and (TBP is not clothing or TBP is semen-soak-appropriate clothing)):
 			say "Your chest touches the floor as you clean, and when you sit up, it takes some of the mess with it.";
-			if U > 0:
+			if U > 0 and TBP is clothing:
 				UnannouncedSquirt urine on TBP by 1;
 				decrease the urine-puddle of the location of the player by 1;
-			if M > 0:
+			if M > 0 and TBP is clothing:
 				UnannouncedSquirt milk on TBP by 1;
 				decrease the milk-puddle of the location of the player by 1;
 			if S > 0:
-				if TBP is liquid-soak-appropriate clothing, UnannouncedSquirt semen on TBP by 1;
-				otherwise UnannouncedSquirt semen on breasts by 1; [putting this last, the cum will still stick even if there's other stuff on the floor, rather than be washed away]
+				if TBP is clothing, UnannouncedSquirt semen on TBP by 1;
+				otherwise UnannouncedSquirt semen on breasts by 1;
 				decrease the semen-puddle of the location of the player by 1.
 
 Carry out mopping face:

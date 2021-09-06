@@ -178,9 +178,9 @@ To punish shameful male orgasm:
 		say "The fact that this is happening as you shudder through yet another shameful orgasm [if the player is not a pervert]merely rubs salt in the wound[otherwise]makes the process feel immensely submissive and pleasurable[end if], as if confirming that you deserve this.";
 		sexchange the player;
 	otherwise if the number of worn chastity cages is 0 or a random number between 1 and 5 > 3:
-		if the size of penis > min penis size and the latex-transformation of the player <= 3:
-			SilentlyPenisDown 1;
-			say "The shameful nature of your orgasm makes [one of]your feel less masculine. You look down and see that you now have[or]your [player-penis] shrink into[stopping] a [ShortDesc of penis].";
+		if the mystical size of penis > min penis size and the latex-transformation of the player <= 3:
+			SilentlySpecialPenisDown 1; [#LXorDD]
+			say "The shameful nature of your orgasm makes [one of]your feel less masculine. You look down and see that you now have[or]your [player-penis] shrink into[stopping] a [mystical ShortDesc of penis].";
 		slowSexAddictUp 1 + the number of live things penetrating face;
 	otherwise:
 		say "[one of]You expected to feel a bit light-headed after, but you don't. [or][stopping]Your [random worn chastity cage] pulses softly.";
@@ -351,19 +351,24 @@ To compute ejaculation:
 		otherwise:
 			AnnouncedExpel semen on P by A;
 	otherwise:
-		SemenPuddleUp the size of penis.
+		SemenPuddleUp the size of penis;
+	compute maybe detached dick ejaculation. [#LXorDD]
 
 This is the penis softens after ejaculation rule:
 	if penis is penis-erect:
 		let P be a random bottom level pee protection clothing worn by the player;
 		if there is a live thing penetrating penis:[we let the flavour handle that, since there's a chance we might not want the player going soft yet. ]
 			do nothing;
-		otherwise if P is clothing and penis is exposed:
-			say "Your [ShortDesc of penis] softens enough to slip back into your [ShortDesc of P].";
-			now penis is not penis-erect;
 		otherwise:
-			say "Your [ShortDesc of penis] slowly softens.";
-			now penis is not penis-erect.
+			[#LXorDD Cock rings give a 2/3 chance of staying erect]
+			if there is a worn portal-cock-ring and (a random number between 1 and 3 > 1):
+				say cock ring effect of portal-cock-ring;
+			otherwise if P is clothing and penis is exposed:
+				say "Your [ShortDesc of penis] softens enough to slip back into your [ShortDesc of P].";
+				now penis is not penis-erect;
+			otherwise:
+				say "Your [ShortDesc of penis] slowly softens.";
+				now penis is not penis-erect.
 The penis softens after ejaculation rule is listed last in the orgasm resolution rules.
 
 This is the orgasm stops masturbation resolution rule:
@@ -446,18 +451,19 @@ This is the BBC orgasm resolution rule:
 				if a random number between 1 and 4 < the raw bbc addiction of the player, BBCAddictDown 1.
 The BBC orgasm resolution rule is listed last in the orgasm resolution rules.
 
-This is the girls pee when they orgasm rule:
+[This is the girls pee when they orgasm rule:
 	if the player is possessing a vagina and player-fucking is DOMINANT-NONE and watersports mechanics is 1 and (the bladder of the player > bladder-risky-level or the player is in WoodsBoss01) and player-urinating is 0:
 		if the bladder of the player is 0, now the bladder of the player is 2;
 		now delayed urination is 2;
 		if the player is bursting, now delayed urination is 1;
 		say "As you cum, you [if the player is bursting]can't help but let go of your bladder too[otherwise]find yourself peeing at the same time[end if]!";
 		try urinating.
-The girls pee when they orgasm rule is listed last in the orgasm resolution rules.
+The girls pee when they orgasm rule is listed last in the orgasm resolution rules.]
 
-This is the players spit when they orgasm rule:
-	check accidental spitting.
-The players spit when they orgasm rule is listed last in the orgasm resolution rules.
+This is the players expel things when they orgasm rule:
+	let T be the substituted form of "As you [one of]shudder in [or][cycling]orgasm,";
+	check sudden spit and expulsion with reason T.
+The players expel things when they orgasm rule is listed last in the orgasm resolution rules.
 
 This is the hentai orgasm resolution rule:
 	if the milk volume of breasts > 4 and the player is not in a predicament room and the class of the player is not cowgirl and the class of the player is not royal slave:[###maybe have this influenced by breast sensitivity]
@@ -544,6 +550,12 @@ To decide which number is the sensitivity of (F - vagina):
 		increase S by the vaginal sensitivity influence of C;
 	if the soreness of vagina > 5, increase S by 1;
 	if the soreness of vagina > 8, increase S by 1;
+	if the labia plumpness of the vagina > 0:
+		[#LXorDD: sensitivity is usually small: typically less than 3.]
+		if the labia plumpness of the vagina > 1:
+			increase S by (the labia plumpness of the vagina - 1);
+		otherwise if a random number between 1 and 2 is 1:
+			increase S by 1;
 	decide on S.
 
 Definition: a person is unable to orgasm so soon rather than able to orgasm so soon:

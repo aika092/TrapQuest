@@ -3,16 +3,21 @@ Dominating Monsters by Monster Framework begins here.
 Definition: a monster is permanently banishable: [Can't be summoned again once banished]
 	if it is intelligent, decide yes;
 	decide no.
+
 To compute banishment of (M - a monster):
 	compute unique banishment of M;
+	[-- First, if the monster has it, drop an intensely personal item --]
+	compute maybe drop dick by M;
+	[-- Now drop the less 'personal' stuff --]
 	if there are things carried by M:
-		if M is in the location of the player, say "Your [list of things carried by M] [if the number of things carried by M > 1]are[otherwise]is[end if] also left behind.";
+		if M is in the location of the player, say "The [list of things carried by M] [if the number of things carried by M > 1]are[otherwise]is[end if] also left behind.";
 		repeat with K running through things carried by M:
 			now K is in the location of M;
 			if M is in the location of the player, compute autotaking K;
 	if M is in the location of the player and there is a worn notebook, compute studying 1 of M;
 	destroy M;
 	if M is permanently banishable, now M is permanently banished.
+
 To compute unique banishment of (M - a monster):
 	do nothing.
 To compute auto banished loot of (M - a monster):
@@ -231,7 +236,7 @@ To compute defeat of (M - a monster):
 					repeat with X running through LT:
 						set next numerical response to X;
 					compute multiple choice question;
-					now T is the printed name of chosen numerical response;
+					now T is chosen numerical response;
 			if T is BT:
 				compute forced banishment of M;
 				let J be a random worn demon codpiece;
@@ -314,6 +319,7 @@ Definition: asshole (called F) is available:
 	decide yes.
 
 Definition: vagina (called F) is available:
+	if the player is not possessing a vagina, decide no;
 	if F is actually occupied, decide no;
 	if the player is pussy protected, decide no;
 	decide yes.
@@ -392,7 +398,8 @@ Check dominating:
 	let vm be a random video-monitor in the location of the player;[too annoying to deal with, so it's not allowed.]
 	if vm is a video-monitor and the video-caller of vm is not the throne, say "You decide against it. You don't want to give your audience the wrong idea." instead;
 	if the noun is woman-player and the woman-status of woman-player is 80, compute PlayerWomanStoolFuck instead;
-	if the latex-transformation of the player >= 6, say "You wouldn't feel anything from it, so you don't see the point." instead;
+	[#LXorDD ####Selkie: actually, doing this while a latex doll can cause dick-detachment; and if the player is female, then I'm planning a sex doll usage, too.]
+	[if the latex-transformation of the player >= 6, say "You wouldn't feel anything from it, so you don't see the point." instead;]
 	if the player is prone, say "That would be a little hard to do from your knees." instead;
 	if the noun is sex-enslaved and the player is the donator, compute enslaved domination of the noun instead;
 	if the noun is caged and the player is an april 2021 top donator, compute caged domination of the noun instead;
@@ -423,14 +430,25 @@ Check dominating:
 	if player-fucker is penis:[Now that the part we want to use is selected, validate]
 		if there is a worn condom of kings, say "You wouldn't feel anything from it, so you don't see the point." instead;
 		if S is clothing:[dildo-usage determines whether the player's dick is sticking out of the strapon]
+			[####Selkie: here too, I'd like a possibility of the monster engulfing the player's dick, detaching it, and then removing the cage and chuckling. But that's not possible I feel if it's a vagina in chastity? I think...?]
 			if there is a worn chastity bond or there is a worn restricting research airhancer:
-				say "Your [if there is a worn chastity bond][printed name of a random worn chastity bond] pulses[otherwise][printed name of a random research airhancer] flashes several times[end if], and your [SexDesc of penis] immediately loses all rigidity. Looks like you need to try something else...";
-				if S is demon codpiece, say CodLoosenFlav of S instead;
-				otherwise do nothing instead;
+				say "Your [if there is a worn chastity bond][printed name of a random worn chastity bond] pulses[otherwise][printed name of a random research airhancer] flashes several times[end if], and your [SexDesc of penis] ";
+				if the noun is a-non-detacher: [#LXorDD]
+					say "immediately loses all rigidity. Looks like you need to try something else...";
+					if S is demon codpiece, say CodLoosenFlav of S instead;
+					otherwise do nothing instead;
+				otherwise:
+					say "stiffens painfully inside its bondage: so much so that you think you can have your way with [he of the noun]! Although [NameDesc of the noun] doesn't look as threatened as you'd expect.";
+					now detach-likelihood is 10;
 		otherwise:
 			if there is a undisplacable pussy covering clothing, say "You'll have to find a way to remove your [printed name of a random undisplacable pussy covering clothing] first." instead;
-			if there is a worn chastity bond, say "You'll have to find a way to get out of your chastity cage first!" instead;
-			if there is a worn restricting research airhancer, say "Your [ShortDesc of penis] can't get hard enough to dominate [i]anyone[/i]. You'll need to deactivate your [printed name of a random research airhancer] first." instead;
+			if the noun is a-non-detacher: [#LXorDD]
+				if there is a worn chastity bond, say "You'll have to find a way to get out of your chastity cage first!" instead;
+				if there is a worn restricting research airhancer, say "Your [ShortDesc of penis] can't get hard enough to dominate [i]anyone[/i]. You'll need to deactivate your [printed name of a random research airhancer] first." instead;
+			otherwise:
+				now detach-likelihood is 10;
+				if there is a worn chastity bond, say "Ha! You're go to use your chastity cage itself to fuck [him of the noun]!";
+				if there is a worn restricting research airhancer, say "Despite your [ShortDesc of penis] nestling softly inside this blasted [printed name of a random research airhancer], you reckon you can use [i]it[/i] to show [him of the noun] who's boss!";
 	otherwise if player-fucker is vagina:
 		if there is undisplacable pussy covering clothing, say "You'll have to remove your [printed name of a random undisplacable pussy covering clothing] first." instead;
 		if chastity-belt is worn, say "You'll have to find a way to get out of your chastity first!" instead;
@@ -443,8 +461,12 @@ Check dominating:
 		if M is not the noun, compute domination interference of (M) for (the noun);
 		if player-fucking is DOMINANT-FAILURE, now player-fucking is DOMINANT-NONE instead;
 	if player-fucker is penis and S is not clothing and penis is not erect-at-will and penis is not penis-erect:
-		say "Your [ShortDesc of penis] remains completely soft, so you can't do anything with it. Maybe you should try again to see if it will wake up?";
-		allocate 2 seconds instead.[If you can't get hard, it wastes some time]
+		if the noun is a-non-detacher: [#LXorDD]
+			say "Your [ShortDesc of penis] remains completely soft, so you can't do anything with it. Maybe you should try again to see if it will wake up?";
+			allocate 2 seconds instead;[If you can't get hard, it wastes some time]
+		otherwise:
+			now detach-likelihood is 10;
+			say "Although your [ShortDesc of penis] remains completely soft, [he of the noun] looks strangely willing to comply with your obvious desire.".
 
 To compute domination interference of (M - a monster) for (N - a monster):
 	if M is dangerous:
@@ -486,7 +508,7 @@ To decide which number is the dominationtype of (M - a monster) using (F - a bod
 				say "Do you want to use protection?";
 				compute multiple choice question;
 				let CNR be the chosen numerical response;
-				if the printed name of CNR is "Try riding with a condom":
+				if CNR is "Try riding with a condom":
 					say CondomManualFlav of M;
 					now M is wrapped;
 			decide on FUCK-RIDE;
@@ -767,13 +789,13 @@ To say PowerBottomComment of (M - a monster):
 		say "You give [NameDesc of M] a smouldering look, hopefully conveying how [if the bimbo of the player < 6]dominant you are even though you're about to sit on [his of M] [DickDesc of M][otherwise if the bimbo of the player < 12]compromising this situation is for [him of M] and [his of M] [DickDesc of M][otherwise]much you want to sit on [his of M] [DickDesc of M][end if].";
 	otherwise if the bimbo of the player < 6:
 		if the player is gendered male:
-			say "[first custom style]'[one of]I don't care how it looks, I've fucking earned this. Your dick is MINE.'[or][if the size of penis > the girth of M]Good thing I'm so much bigger than you, otherwise I might be worried this would hurt!'[otherwise if the player is possessing a penis]You think you're so fucking great because you're bigger than me? Better not be a quick-shot.'[end if][or]Now, *I* get to stick your dick in me.'[at random][roman type]";
+			say "[first custom style]'[one of]I don't care how it looks, I've fucking earned this. Your dick is MINE.'[or][if the size of penis > the girth of M]Good thing I'm so much bigger than you, otherwise I might be worried this would hurt!'[otherwise if the player is possessing a penis]You think you're so fucking great because you're bigger than me? Better not be a quick-shot.'[end if][or]Now, *I* get to stick your dick in me.'[at random][roman type][line break]";
 		otherwise:
-			say "[first custom style]'[one of]Oh we're going to fuck, but you're not going to be doing the fucking.'[or]This time, you're MY fucktoy.'[or]That didn't go the way you'd hoped, now did it?'[at random][roman type]";
+			say "[first custom style]'[one of]Oh we're going to fuck, but you're not going to be doing the fucking.'[or]This time, you're MY fucktoy.'[or]That didn't go the way you'd hoped, now did it?'[at random][roman type][line break]";
 	otherwise if the bimbo of the player < 12:
-		say "[variable custom style]'[one of]I'm going to be on top this time.'[or]I hope you're not a quick-shot, sweetie.'[or]So, are you excited? You get to be the fucktoy now!'[at random][roman type]";
+		say "[variable custom style]'[one of]I'm going to be on top this time.'[or]I hope you're not a quick-shot, sweetie.'[or]So, are you excited? You get to be the fucktoy now!'[at random][roman type][line break]";
 	otherwise:
-		say "[second custom style]'[one of]Are you ready, sugar?'[or]So, stud, why don't we get down to business?'[or]Don't worry baby, I'll do everything.'[or]Don't worry about a thing, honey, you're in [NameBimbo][']s hands.'[at random][roman type]".
+		say "[second custom style]'[one of]Are you ready, sugar?'[or]So, stud, why don't we get down to business?'[or]Don't worry baby, I'll do everything.'[or]Don't worry about a thing, honey, you're in [NameBimbo][']s hands.'[at random][roman type][line break]".
 
 [!<ComputePowerBottomRewardOfMonster>+
 
@@ -1047,11 +1069,14 @@ computeSissification is called whenever the monster doesn't have another punishm
 
 +!]
 To compute sissification:
-	let S be a random off-stage sissifying actually summonable fetish appropriate clothing;
-	if the player is gendered male and pink sissy bow is off-stage and pink sissy bow is actually summonable:
+	let S be nothing;
+	if the player is not in a predicament room:
+		unless pink sissy bow is worn, now S is pink sissy bow;
+		otherwise now S is a random off-stage sissifying actually summonable fetish appropriate clothing;
+	if the player is gendered male and S is pink bow and pink sissy bow is off-stage and pink sissy bow is actually summonable:
 		say "[bold type]A silky pink bow appears in your hair![line break][variable custom style][if the bimbo of the player < 5]Is this bullshit game trying to tell me I'd make more sense as a girl?[otherwise]I get it... only a girl would have trouble doing something like that...[end if][roman type][line break]";
 		summon pink sissy bow cursed;
-	otherwise if pink sissy bow is worn and S is clothing:
+	otherwise if S is clothing and S is not pink bow:
 		say "[bold type]As if reacting to your lack of dominance, you suddenly feel a [ShortDesc of S] [bold type]appear on you![line break][variable custom style][one of]Uh-oh...[or]This is making me feel like a pathetic [sissy]...[or]Even more [sissy] clothing?![stopping][roman type][line break]";
 		summon S cursed;
 		announce sissification;

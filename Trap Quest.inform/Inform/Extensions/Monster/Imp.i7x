@@ -6,9 +6,7 @@ Definition: an imp is willing to urinate:
 	if it is unfriendly, decide yes;
 	decide no.
 
-Definition: an imp is father material:
-	if the player is the donator, decide yes;
-	decide no.
+Definition: an imp is father material: decide yes.
 
 Definition: an imp is raunchy: decide yes.
 
@@ -18,15 +16,19 @@ An imp has a number called imp-rudeness. The imp-rudeness of an imp is usually 0
 
 Figure of imp 1 is the file "NPCs/MultiFloor/Imp/imp1.jpg".
 Figure of imp 2 is the file "NPCs/MultiFloor/Imp/imp2.jpg".
+Figure of imp 3 is the file "NPCs/MultiFloor/Imp/imp3.png".
 Figure of imp cutsene 1 is the file "NPCs/MultiFloor/Imp/cutscene-imp-fuck1.jpg".
 Figure of imp cutsene 2 is the file "NPCs/MultiFloor/Imp/cutscene-imp-preg1.jpg".
 
 To decide which figure-name is the monster-image of (M - an imp):
+	if lady fetish is 1, decide on Figure of imp 3;
 	decide on figure of imp 1.
 To decide which figure-name is the unfriendly-monster-image of (M - an imp):
+	if lady fetish is 1, decide on Figure of imp 3;
 	decide on figure of imp 2.
 
 To decide which figure-name is the sex-profile of (M - an imp):
+	if lady fetish is 1, decide on Figure of imp 3;
 	if M is penetrating a body part, decide on Figure of imp cutsene 1;
 	decide on figure of Missing NPC. [Defaults back to the non-sex stuff.]
 
@@ -64,7 +66,7 @@ Definition: an imp is infernal: decide yes.
 
 To say MonsterDesc of (M - an imp):
 	if diaper quest is 0:
-		say "A tiny, naked [man of M] with red skin. [if full-lady fetish is 1][big his of M] breasts are quite large for [his of M] size, as is the strap-on dildo sticking out of the harness around [his of M] waist[otherwise if lady fetish is 1][big his of M] breasts are quite large for [his of M] size, as is the [manly-penis] hanging between [his of M] legs[otherwise]The [manly-penis] hanging between [his of M] legs is huge for [his of M] size[end if], and [if the intelligence of the player > 5]from the way [he of M]'s looking at you, it isn't hard to tell where [he of M][']d like to put it[otherwise]you have a lot of trouble focusing long enough to keep yourself from staring[end if]. For some reason you don't feel too self-conscious about [him of M] seeing you in humiliating situations - it's probably because [he of M] doesn't feel very human, and doesn't seem to be at all interested in what you're up to at any given moment. [if the imp-rudeness of M > 3][big he of M] has become more and more irritable[otherwise if the imp-rudeness of M > 1][big he of M] feels like [he of M] is growing impatient faster than before[otherwise if the imp-rudeness of M > 0][big he of M] seems to be getting more and more bored following you around everywhere[otherwise if M is friendly]You get the feeling that [he of M] could turn on you at any time[otherwise][big he of M] hasn't been very loyal to you[end if]...";
+		say "A tiny, naked [man of M] with red skin. [if full-lady fetish is 1][big his of M] breasts aren't particularly large for [his of M] size, but the strap-on dildo sticking out of the harness around [his of M] waist sure is[otherwise if lady fetish is 1][big his of M] breasts aren't particularly large for [his of M] size, but the [manly-penis] hanging between [his of M] legs sure is[otherwise]The [manly-penis] hanging between [his of M] legs is huge for [his of M] size[end if], and [if the intelligence of the player > 5]from the way [he of M]'s looking at you, it isn't hard to tell where [he of M][']d like to put it[otherwise]you have a lot of trouble focusing long enough to keep yourself from staring[end if]. For some reason you don't feel too self-conscious about [him of M] seeing you in humiliating situations - it's probably because [he of M] doesn't feel very human, and doesn't seem to be at all interested in what you're up to at any given moment. [if the imp-rudeness of M > 3][big he of M] has become more and more irritable[otherwise if the imp-rudeness of M > 1][big he of M] feels like [he of M] is growing impatient faster than before[otherwise if the imp-rudeness of M > 0][big he of M] seems to be getting more and more bored following you around everywhere[otherwise if M is friendly]You get the feeling that [he of M] could turn on you at any time[otherwise][big he of M] hasn't been very loyal to you[end if]...";
 	otherwise:
 		say "A tiny, red-skinned [man of M] dressed in rags. [unless M is unfriendly]You get the feeling that [he of M] could turn on you at any time[otherwise][big he of M] hasn't been very loyal to you[end if]...".
 
@@ -187,9 +189,9 @@ To check consensual submissive sex of (M - an imp):
 					now N is interested;
 					let B be a random reasonable target body part;
 					if B is body part:
-						now the chosen-orifice of M is B;
+						now the chosen-orifice of N is B;
 						say "[BigNameDesc of N] seems to think [he of N][']s been invited to join in!";
-						follow the insertion rules of M;
+						follow the insertion rules of N;
 					otherwise:
 						say "[BigNameDesc of N] begins masturbating in your direction!";
 						if bukkake fetish is 1:
@@ -198,7 +200,7 @@ To check consensual submissive sex of (M - an imp):
 							say "[big he of N] quickly climaxes, spraying [his of N] hot [semen] [one of]across[or]all over[or]liberally across[in random order] your [printed name of B].";
 							AnnouncedSquirt semen on B by (the semen load of N);
 						otherwise:
-							say "[big he of N] quickly climaxes, spraying [his of M] semen on the ground!";
+							say "[big he of N] quickly climaxes, spraying [his of N] semen on the ground!";
 							SemenPuddleUp the semen load of N;
 						orgasm N;
 				if N is not penetrating a body part, now N is not friendly-fucking; [Make sure this flag doesn't linger when it's not supposed to]

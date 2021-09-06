@@ -53,7 +53,8 @@ To SexChange (P - a person):
 		if diaper quest is 1, configure DQ female proportions;
 		now sex-changed is 1;
 		repeat with C running through worn clothing:
-			SexChange C.
+			SexChange C;
+		compute detached dick bonus SexChange effects.
 
 [say "[if the bimbo of the player < 7][line break][first custom style]No, no, no, NO! I can't believe I let this happen again! I HATE this game![otherwise if the bimbo of the player < 10][first custom style]I should have known this would happen again! Maybe I should just accept it this time...[otherwise if the bimbo of the player < 14 or diaper quest is 1][line break][second custom style]So... Here I go again, huh? Well, I already squandered my second chance, so I might as well go with it.[otherwise][second custom style]Yes! I'm finally back in my real body! Thanks so much Nintendolls! Maybe this time, I'll even lose my virginity! *giggle*[end if][roman type][line break]";]
 
@@ -73,7 +74,10 @@ To ReverseSexChange (P - a person):
 			now the flesh volume of breasts is min breast size;
 			now the real flesh volume of breasts is min breast size + the silicone volume of breasts;
 		let C be chastity-belt;
-		if C is worn, transform C into a random off-stage chastity cage;
+		if C is worn:
+			let CC be a random off-stage fetish appropriate chastity cage;
+			if CC is a chastity cage, transform C into CC;
+			otherwise destroy C;
 		now the size of penis is min penis size;
 		now the real size of penis is min penis size;
 		if penisvirginity-taker is the throne, now the penetrativevirgin of the player is 1;

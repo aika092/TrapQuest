@@ -403,12 +403,15 @@ A red microskirt is a kind of microskirt. There is 1 latex red microskirt. Print
 Definition: a red microskirt is red themed: decide yes.
 A white microskirt is a kind of microskirt. There is 1 latex white microskirt. Printed name of white microskirt is "[clothing-title-before]white latex microskirt[clothing-title-after]". Figure of white microskirt is the file "Items/Clothes/Lower/Skirts/Micro/microskirt5.png". The text-shortcut of white microskirt is "wms".
 Definition: a white microskirt is white themed: decide yes.
-tartan microskirt is a microskirt. Printed name of tartan microskirt is "[clothing-title-before]tartan microskirt[clothing-title-after]". The text-shortcut of tartan microskirt is "tms". Figure of tartan microskirt is the file "Items/Clothes/Lower/Skirts/Micro/microskirt2.png".
-Definition: tartan microskirt is class-relevant:
+A tartan microskirt is a kind of microskirt.
+Definition: a tartan microskirt is class-relevant:
 	if the class of the player is schoolgirl and the player is not pigtailed, decide yes;
 	decide no.
-Definition: tartan microskirt is tartan themed: decide yes.
-Definition: tartan microskirt is brown themed: decide yes.
+Definition: a tartan microskirt is tartan themed: decide yes.
+brown tartan microskirt is a tartan microskirt. The printed name of brown tartan microskirt is "[clothing-title-before]brown tartan microskirt[clothing-title-after]". The text-shortcut of brown tartan microskirt is "btms". Figure of brown tartan microskirt is the file "Items/Clothes/Lower/Skirts/Micro/microskirt2.png".
+Definition: brown tartan microskirt is brown themed: decide yes.
+orange tartan microskirt is a tartan microskirt. The printed name of orange tartan microskirt is "[clothing-title-before]orange tartan microskirt[clothing-title-after]". The text-shortcut of orange tartan microskirt is "btms". Figure of orange tartan microskirt is the file "Items/Clothes/Lower/Skirts/Micro/microskirt2.png".
+Definition: orange tartan microskirt is orange themed: decide yes.
 A pink microskirt is a kind of microskirt. There is 1 pink microskirt. Printed name of pink microskirt is "[clothing-title-before]pink microskirt[clothing-title-after]". The text-shortcut of pink microskirt is "pms". Figure of pink microskirt is the file "Items/Clothes/Lower/Skirts/Micro/microskirt3.png".
 Definition: a pink microskirt is tartan themed: decide yes.
 Definition: a pink microskirt is pink themed: decide yes.
@@ -427,8 +430,10 @@ To decide which figure-name is clothing-image of (C - a white microskirt):
 	decide on figure of white microskirt.
 To say ClothingDesc of (C - a white microskirt):
 	say "This white latex skirt is only crotch high. [one of]Really, it should be called a belt.[or]Only the sluttiest of girls would wear this, especially without anything else underneath.[or]It conceals absolutely nothing![at random]".
-To decide which figure-name is clothing-image of (C - a tartan microskirt):
-	decide on figure of tartan microskirt.
+To decide which figure-name is clothing-image of (C - brown tartan microskirt):
+	decide on figure of brown tartan microskirt.
+To decide which figure-name is clothing-image of (C - orange tartan microskirt):
+	decide on figure of orange tartan microskirt.
 To say ClothingDesc of (C - a tartan microskirt):
 	say "This tartan skirt is only crotch high. [one of]Really, it should be called a belt.[or]Only the sluttiest of girls would wear this, especially without anything else underneath.[or]It conceals absolutely nothing![at random]".
 To decide which figure-name is clothing-image of (C - a pink microskirt):
@@ -500,7 +505,7 @@ To decide which number is the initial outrage of (C - a miniskirt):
 	decide on 2.
 
 To decide which object is the unique-upgrade-target of (C - tartan miniskirt):
-	decide on tartan microskirt.
+	decide on orange tartan microskirt.
 
 Definition: tartan miniskirt is tartan themed: decide yes.
 Definition: tartan miniskirt is orange themed: decide yes.

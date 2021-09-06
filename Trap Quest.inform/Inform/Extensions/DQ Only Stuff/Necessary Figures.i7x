@@ -10,7 +10,9 @@ Figure of demoness cutscene 15 is the file "Special/Cutscene/cutscene-demoness-d
 Figure of detention chair is the file "Env/School/detentionchair2.jpg".
 
 Figure of dominatrix 1 is the file "NPCs/Hotel/Dominatrix/diapernatrix1.jpg".
+Figure of diapernatrix cutscene 1 is the file "NPCs/Hotel/Dominatrix/cutscene-dominatrix-bottle1.jpg".
 To decide which figure-name is the monster-image of (M - dominatrix):
+	if M is feeding the player, decide on figure of diapernatrix cutscene 1;
 	decide on figure of dominatrix 1.
 Figure of dominatrix cage wrestler 1 is the file "Env/Hotel/cage3.jpg".
 Figure of dominatrix cage wrestler 2 is the file "Env/Hotel/cage4.jpg".

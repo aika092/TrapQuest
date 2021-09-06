@@ -1,6 +1,6 @@
 Aeromancer by Monster begins here.
 
-An aeromancer is a kind of monster. An aeromancer is intelligent. The leftover-type of an aeromancer is usually 113. An aeromancer has a number called science requests. An aeromancer has a number called science history. An aeromancer has a number called inflation-choice. An aeromancer has a number called times-seeded.
+An aeromancer is a kind of monster. An aeromancer is intelligent. The leftover-type of an aeromancer is usually 113. An aeromancer has a number called science requests. An aeromancer has a number called science history. An aeromancer has a number called inflation-choice. An aeromancer has a number called times-seeded. An aeromancer is a-dick-detacher. An aeromancer is a-dick-reattacher. [#LXorDD]
 
 Definition: an aeromancer is willing to do anal: decide yes.
 
@@ -199,12 +199,14 @@ Definition: an aeromancer (called M) is outrage disapproving:
 	if the player is exposed and the class of the player is not faerie, decide yes;
 	decide no.
 
-To check disapproval of (M - an aeromancer):
-	let A be the appearance of the player;
-	let L be the latest-appearance of M;
-	now the latest-appearance of M is A;
-	if A > L and M is outrage disapproving, compute disapproval of M;
-	if M is cringe disapproving, compute cringe disapproval of M.
+To check default disapproval of (M - an aeromancer): [needs to be special because the aeromancer specifically cares about parts on display and not appearance rating]
+	if M is interested:
+		let A be the appearance of the player;
+		let L be the latest-appearance of M;
+		now the latest-appearance of M is A;
+		if A > L and M is outrage disapproving, compute disapproval of M;
+	otherwise:
+		check perception of M. [The monster is given an extra chance to assess the player's appearance.]
 
 To say DisapprovalFlav of (M - an aeromancer):
 	say "[BigNameDesc of M] licks [his of M] lips.[line break][speech style of M]'I can see your [if there is an at least partially lewdly exposed fuckhole or penis is at least partially lewdly exposed]bits[otherwise]nips[end if] now, you know. Isn't that pretty much an invitation?'[roman type][line break]".
@@ -235,9 +237,9 @@ To compute appearance assessment of (M - an aeromancer):
 			alwayscutshow figure of aeromancer interact 5 for M;
 		otherwise:
 			if the class of the player is faerie:
-				say "[speech style of M]'[if the science requests of M > 0]You know, my experiments are really fun! I know you'd love helping if you gave me a chance. Help out before I decide to show you what you've been missing?'[otherwise if the science history of M > 0]Ah, just the fairy I wanted to see! Help me with another experiment!'[otherwise]Hey, want to try out something fun? That's what you fairies are into, right?'[end if][roman type] ";
+				say "[speech style of M]'[if the science requests of M > 0]You know, my experiments are really fun! I know you'd love helping if you gave me a chance. Help out before I decide to show you what you've been missing?'[otherwise if the science history of M > 0]Ah, just the fairy I wanted to see! Help me with another experiment!'[otherwise]Hey, want to try out something fun? That's what you fairies are into, right?'[end if][roman type][line break]";
 			otherwise:
-				say "[speech style of M]'[if the science requests of M > 0]You know, you should really consider my request. Before I decide my experiments are a little less... optional. Come on, surely you'll let me try a new spell out on you?'[otherwise if the science history of M > 0]Hey, fancy helping me out with some more science?'[otherwise]Hey, would you like to help me out with an experiment?'[end if][roman type] ";
+				say "[speech style of M]'[if the science requests of M > 0]You know, you should really consider my request. Before I decide my experiments are a little less... optional. Come on, surely you'll let me try a new spell out on you?'[otherwise if the science history of M > 0]Hey, fancy helping me out with some more science?'[otherwise]Hey, would you like to help me out with an experiment?'[end if][roman type][line break]";
 				if the science requests of M is 0:
 					alwayscutshow figure of aeromancer interact 6 for M;
 				otherwise if the science requests of M is 1:
@@ -364,8 +366,9 @@ To compute aeromancer science of (M - an aeromancer):
 
 Part 4 - Combat
 
+[We never called this function, so it's been removed.
 Definition: an aeromancer (called M) is actually interested:
-	unless M is unfriendly, decide no.[The aeromancer is interested for the purposes of accepting a presentation, but not for anything else.]
+	unless M is unfriendly, decide no.]
 
 To say SexSubmissionFlav of (M - an aeromancer): [this is customised because I rewrote the scene so the player is floating a couple feet off the ground.]
 	let F be a random fuckhole penetrated by M;
@@ -549,13 +552,19 @@ To compute (M - an aeromancer) finishing in (F - vagina):
 
 This is the aeromancer tries to curse the player rule:
 	if there is a sex doll penetrating a body part and the latex-transformation of the player is 0 and inflation fetish is 1:
-		say "[BigNameDesc of current-monster] sees what the doll is doing to you and chuckles sadistically.[line break][speech style of current-monster]'[one of]I've been waiting to try this spell out...'[or]Ooh, another slut I can help make their hobby into a full time occupation. Lucky you!'[stopping][roman type][line break]You feel [his of current-monster] magic flow from [him of current-monster] to the doll, and then from the doll to you. [one of]You feel different, but you can't put your finger on why. Maybe you feel a tiny bit... numb?[or]Once again you've been inflicted with the latex doll transformation curse![stopping]";
+		say "[BigNameDesc of current-monster] sees what the doll is doing to you and chuckles sadistically.[line break][speech style of current-monster]'[one of]I've been waiting to try this spell out, especially now I've improved it!'[or]Ooh, another slut I can help make their hobby into a full time occupation. Lucky you! I hope you like my new and improved spell.'[stopping][roman type][line break]You feel [his of current-monster] magic flow from [him of current-monster] to the doll, and then from the doll to you. [LatexTransformClue]"; [#LXorDD]
 		now the latex-transformation of the player is 1;
 		bore current-monster for 800 seconds;
 		now the inflation-choice of current-monster is 2;
 		rule succeeds;
 	otherwise:
-		compute the default taunting of current-monster;
+		let T be desired science tier of current-monster; [#LXorDD]
+		if debugmode > 0, say "[input style]Computed desired science tier of [Printed name of current-monster] as [T] in aeromancer curses check.[line break]";
+		if T > 2:
+			say DefaultSpecialScienceFlavour;
+			compute aeromancer science tier T of current-monster;
+		otherwise:
+			compute the default taunting of current-monster;
 		rule succeeds.
 The monster fucked taunting rule of an aeromancer is usually the aeromancer tries to curse the player rule.
 
@@ -590,6 +599,15 @@ To compute the default taunting of (M - an aeromancer):
 		AssFill 3 Air.
 
 The aeromancer unique punishment rules is a rulebook. The unique punishment rule of an aeromancer is usually the aeromancer unique punishment rules.
+
+This is the aeromancer special science experiments rule: [#LXorDD]
+	let T be desired science tier of current-monster;
+	if debugmode > 0, say "[input style]Computed desired science tier of [Printed name of current-monster] as [T] in aeromancer special science experiments rule.[line break]";
+	if T > 2:
+		say DefaultSpecialScienceFlavour;
+		compute aeromancer science tier T of current-monster;
+		rule succeeds.
+The aeromancer special science experiments rule is listed in the aeromancer unique punishment rules.
 
 This is the aeromancer wind barrier rule:
 	let M be current-monster;
@@ -833,9 +851,9 @@ To decide which number is the dominationtype of (M - an aeromancer) using (F - p
 	compute multiple choice question;
 	let CNR be the chosen numerical response;
 	let C be 0;
-	if the printed name of CNR is "Go for a blowjob", now C is FUCK-BLOWJOB;
-	if the printed name of CNR is "Go for penetration", now C is FUCK-PENETRATION;
-	if the printed name of CNR is "Settle for whatever":
+	if the CNR is "Go for a blowjob", now C is FUCK-BLOWJOB;
+	if the CNR is "Go for penetration", now C is FUCK-PENETRATION;
+	if the CNR is "Settle for whatever":
 		if a random number between 1 and 2 is 1, now C is FUCK-BLOWJOB;
 		otherwise now C is FUCK-PENETRATION;
 	decide on C.
@@ -1067,7 +1085,7 @@ To compute failed dominance punishment of (M - an aeromancer):
 			compute tornado experiment of M;
 		say GotUnluckyFlav;
 	otherwise:
-		say "[speech style of M]'This experiment-... You won't believe-... Ugh. You threw off my train of thought. I'll be back.'[roman type]";
+		say "[speech style of M]'This experiment-... You won't believe-... Ugh. You threw off my train of thought. I'll be back.'[roman type][line break]";
 		compute sissification;
 	Bore M.
 
@@ -1132,7 +1150,7 @@ To say AttentionResponse of (M - an aeromancer) with (N - a monster):
 	alwayscutshow figure of aeromancer interact 2 for M.
 
 To say UnAnnoyedResponse of (M - an aeromancer):
-	say "[speech style of M]'[one of]You just inspired me to come up with another pun!'[or]You're distracting me, but luckily I already finished my next pun.'[or]That's nice. More importantly, I came up with more puns!'[at random][roman type]";
+	say "[speech style of M]'[one of]You just inspired me to come up with another pun!'[or]You're distracting me, but luckily I already finished my next pun.'[or]That's nice. More importantly, I came up with more puns!'[at random][roman type][line break]";
 
 To say MildAnnoyedResponse of (M - an aeromancer):
 	say "[speech style of M]'[one of]That's nice. Now be quiet, I need to come up with another pun.[or]Cool, now be quiet, I'm thinking of another pun.'[or]Shh, I'm thinking of more puns.'[at random][roman type][line break]";
@@ -1300,7 +1318,7 @@ To compute aeromancer science of (M - confident aeromancer):
 		say "Your head feels a bit more giddy!";
 		OralSexAddictUp 1;
 		SexAddictUp 1;
-	say "[speech style of M]'[one of]Whew, that was awesome!'[or]Thanks for your help.'[or]Interesting...'[or]Well that was unexpected...'[or]Curiouser and curiouser.'[in random order][roman type] [BigNameDesc of M] [one of]jots a short note[or]smirks at you and writes just a word or two[or]makes a quick note[or]writes a scribble[at random] in [his of M] pocket book and then closes it.".
+	say "[speech style of M]'[one of]Whew, that was awesome!'[or]Thanks for your help.'[or]Interesting...'[or]Well that was unexpected...'[or]Curiouser and curiouser.'[in random order][roman type][line break][BigNameDesc of M] [one of]jots a short note[or]smirks at you and writes just a word or two[or]makes a quick note[or]writes a scribble[at random] in [his of M] pocket book and then closes it.".
 
 To compute unique climax of (M - confident aeromancer) in (F - asshole):
 	AnalCount;
@@ -1322,7 +1340,7 @@ To say TwosomePrep of (M - confident aeromancer) in (F - asshole):
 [CURRENTLY UNUSED]
 [To say FuckholePenetrationFlav of (M - confident aeromancer):
 	say "[BigNameDesc of M] stretches out [his of M] arms and hands towards you. You yelp as you are suddenly forced several feet off the ground by a powerful gust of wind. Cackling with glee, the aeromancer uses [his of M] mastery of air to buffet you from one end of the [if M is in the Woods]clearing[otherwise]room[end if] to the other, eventually leaving you suspended in the centre, at just above waist height. [big he of M] takes a couple of steps forward, barely containing [his of M] mirth as you [if the relevant sex addiction of M < 7]desperately try but fail to get purchase on the ground below[otherwise]look up at [him of M] in wide-eyed anticipation[end if].";
-	say "[speech style of M]'[one of]So, now that you've had some HANG time, I think you're ready for some WANG time!'[or]Uh-oh, looks like a pretty strong breeze coming in from the south!'[or]Round and round [if the player is gendered female]she goes, how she got that slutty[otherwise if the player is a sissy]she goes! How she became such a sissy[otherwise]he goes! How hard a fucking can he take[end if], nobody knows!'[or]The wind told me to tell you something! You're a slut! Hahahaha!'[in random order][roman type]".]
+	say "[speech style of M]'[one of]So, now that you've had some HANG time, I think you're ready for some WANG time!'[or]Uh-oh, looks like a pretty strong breeze coming in from the south!'[or]Round and round [if the player is gendered female]she goes, how she got that slutty[otherwise if the player is a sissy]she goes! How she became such a sissy[otherwise]he goes! How hard a fucking can he take[end if], nobody knows!'[or]The wind told me to tell you something! You're a slut! Hahahaha!'[in random order][roman type][line break]".]
 
 To say PenetrationFlav of (M - confident aeromancer) in (F - asshole):
 	say "The aeromancer raises [his of M] wand, which glows brightly as the air around you compresses itself into a massive, disembodied [manly-penis], only visible from the sheer speed at which it shoots up your [asshole]. Shrieking gusts of wind lash at your skin and clothes as the magical sex organ begins to ruthlessly fuck you.".

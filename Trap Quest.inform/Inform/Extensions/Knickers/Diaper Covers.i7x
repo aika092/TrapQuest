@@ -17,6 +17,8 @@ To decide which number is the alchemy key of (C - a diaper cover):
 	decide on 0.
 To decide which number is the initial armour of (C - a diaper cover):
 	decide on 10.
+To decide which number is the crotch-tightness of (C - a diaper cover):
+	decide on 0.
 
 To decide which text is the RecipeDesc of (B - a diaper cover):
 	decide on "The recipe just says 'Pee-soaked underwear'.".

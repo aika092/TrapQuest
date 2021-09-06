@@ -381,14 +381,17 @@ Checks to see if a monster is currently disapproving of the player's appearance.
 
 +!]
 To check disapproval of (M - a monster):
-	if the last-interaction of M is 0:
-		if M is interested:
-			if M is cringe disapproving:
-				compute cringe disapproval of M;
-			otherwise if M is outrage disapproving:
-				compute disapproval of M;
-		otherwise:
-			check perception of M.[The monster is given an extra chance to assess the player's appearance.]
+	if the last-interaction of M is 0: [we're not in some antagonistic combat situation]
+		check default disapproval of M.
+
+To check default disapproval of (M - a monster):
+	if M is interested:
+		if M is cringe disapproving:
+			compute cringe disapproval of M;
+		otherwise if M is outrage disapproving:
+			compute disapproval of M;
+	otherwise:
+		check perception of M.[The monster is given an extra chance to assess the player's appearance.]
 
 [!<ComputeDisapprovalOfMonster>+
 

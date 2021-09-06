@@ -134,19 +134,7 @@ To decide which number is bladder-difficulty: [The higher this number (i.e. the 
 	decide on -20.
 
 To compute bladder growth:
-	let I be bladder-risky-level;
-	let B be bladder-bursting-level; [difference between bladder and risky level]
-	let resting-wetter be 0;
-	if resting is 1 and (there is a worn bed wetting clothing or bed-wetter tattoo is worn) and the bladder of the player > 2, now resting-wetter is 3;
-	if the player is in Iron Maiden, now resting-wetter is 5;
-	if B >= 0 or resting-wetter > 0:
-		if resting-wetter > 0 and B < resting-wetter, now B is resting-wetter; [bed wetters always have a high chance of wetting while resting]
-		let R be (a random number between bladder-difficulty and B) + (a random number between bladder-difficulty and B);
-		if debuginfo > 1, say "[input-style]Automatic wetting check: [if resting-wetter > 0 and B is resting-wetter]magic bed wetting effect ([resting-wetter])[otherwise]bladder ([bladder of the player]) - continence rating ([I]) = [B][end if] ---> RNG([bladder-difficulty] ~ [B]) + RNG([bladder-difficulty] ~ [B]) = [R] | positive number[roman type][line break]";
-		if R > 0 and the bladder of the player > 0:
-			now delayed urination is 1;
-		otherwise if the player is bursting and (R is 0 or the remainder after dividing time-earnings by 120 < time-seconds): [Once every now and then we reward the player for holding it while it's risky]
-			progress quest of bursting-quest;
+	check full wetting;
 	if xavier-throat-link is 1 and the delayed bladder of the player > 0:
 		bladderup (1 + xavier-belt-link) * the delayed bladder of the player;
 		now the delayed bladder of the player is 0;

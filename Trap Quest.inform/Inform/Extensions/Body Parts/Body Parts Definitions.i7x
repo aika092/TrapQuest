@@ -118,6 +118,10 @@ Definition: a fuckhole (called F) is at least partially lewdly exposed:
 	decide no.
 
 To decide which number is the at least partially lewdly exposed outrage of (F - a fuckhole):
+	if F is vagina:
+		let CC be current cameltoe; [only calculate it once]
+		if CC is 1, decide on 5;
+		if CC is 2, decide on 7;
 	let O be 9;
 	if F is asshole and the semen volume of belly > 0, increase O by 2;
 	if F is vagina and the semen volume of vagina > 0, increase O by 2;

@@ -62,7 +62,7 @@ Definition: longsleeved cheerleader outfit is red themed: decide yes.
 
 Part 2 - Supershort Cheerleader Outfit
 
-supershort cheerleader outfit is a cheerleader outfit. supershort cheerleader outfit is super-short.
+supershort cheerleader outfit is a cheerleader outfit. supershort cheerleader outfit is super-short. supershort cheerleader outfit is belly exposing.
 
 The printed name of supershort cheerleader outfit is "[clothing-title-before]supershort cheerleader outfit[clothing-title-after]". The text-shortcut of supershort cheerleader outfit is "scho".
 
@@ -85,7 +85,7 @@ Definition: supershort cheerleader outfit is white themed:
 
 To say ClothingDesc of (C - supershort cheerleader outfit):
 	if diaper quest is 1, say "This white cheerleader one-piece dress covers very little skin.";
-	otherwise say "This blue cheerleader outfit has a ridiculously short skirt.".
+	otherwise say "This blue cheerleader outfit consists of a vest top and a ridiculously short skirt. They seem intrinsically tied to each other - you find it's impossible to wear or remove one without the other.".
 
 To say TransformReaction of (C - supershort cheerleader outfit):
 	if the outrage of C is too humiliating:

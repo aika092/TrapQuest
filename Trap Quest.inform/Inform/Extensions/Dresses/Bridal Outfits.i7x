@@ -109,6 +109,8 @@ To say ClothingDesc of (C - slutty bridal dress):
 
 To decide which number is the initial outrage of (C - slutty bridal dress):
 	decide on 9.
+To decide which number is the crotch-tightness of (C - slutty bridal dress):
+	decide on 4.
 
 
 princess bride dress is a bridal dress. princess bride dress is finger covering. princess bride dress is neck covering. princess bride dress is totally-exclusive. princess bride dress is sheer. The text-shortcut of princess bride dress is "pbrd".

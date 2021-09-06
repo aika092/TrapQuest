@@ -10,7 +10,7 @@ Definition: royal scepter is class-relevant:
 	if the class of the player is princess, decide yes;
 	decide no.
 
-Figure of royal scepter is the file "Items/Accessories/Equippables/scepter1.jpg".
+Figure of royal scepter is the file "Items/Accessories/Equippables/scepter1.png".
 
 To decide which figure-name is the clothing-image of (R - royal scepter):
 	decide on figure of royal scepter.

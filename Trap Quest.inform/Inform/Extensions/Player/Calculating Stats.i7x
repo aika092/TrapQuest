@@ -182,6 +182,8 @@ To decide which number is the flat dexterity of the player:
 	decrease D by the suffocation of the player;
 	if temp_dex_dam > 0, decrease D by temp_dex_dam;
 	now D is (D * (5 - alcohol-level)) / 5;
+	if the latex-transformation of the player > 6: [#LXorDD]
+		decrease D by (the latex-transformation of the player - 6);
 	if D < 0, decide on 0;
 	if D > 30, decide on 30;
 	decide on D.

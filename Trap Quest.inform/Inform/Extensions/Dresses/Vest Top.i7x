@@ -159,10 +159,10 @@ To decide which number is the initial outrage of (C - gang-bang-girl vest top):
 
 Part 6 - I Wish These Were Brains T-shirt
 
-brains vest top is a vest top. The printed name of brains vest top is usually "[clothing-title-before]I wish these were brains vest top[clothing-title-after]". The text-shortcut of brains vest top is "wwt". Understand "I wish these were", "wish" as brains vest top.
+brains vest top is a vest top. The printed name of brains vest top is "[clothing-title-before]I wish these were brains vest top[clothing-title-after]". The text-shortcut of brains vest top is "wwt". Understand "I wish these were", "wish" as brains vest top.
 
-Definition: an brains vest top is boob themed: decide yes.
-Definition: an brains vest top is white themed: decide yes.
+Definition: brains vest top is boob themed: decide yes.
+Definition: brains vest top is white themed: decide yes.
 
 Figure of brains vest top is the file "Items/Clothes/Upper/Vests/vest6.png".
 
@@ -170,7 +170,7 @@ To decide which figure-name is clothing-image of (C - brains vest top):
 	decide on figure of brains vest top.
 
 To say ClothingDesc of (C - brains vest top):
-	say "This vest top has the words 'I wish these were brains' in large letters on the chest.".
+	say "This white vest top has the words 'I wish these were brains' in large letters on the chest.".
 
 To say MediumDesc of (C - brains vest top):
 	say "'I wish these were brains' vest top".
@@ -182,5 +182,27 @@ To decide which number is the intelligence-influence of (C - brains vest top):
 	let D be 2 + the magic-modifier of C;
 	decrease D by the largeness of breasts / 3;
 	decide on D.
+
+Part 7 - Rope Bunny Vest Top
+
+rope bunny vest top is a vest top. The printed name of rope bunny vest top is "[clothing-title-before]rope bunny vest top[clothing-title-after]". The text-shortcut of rope bunny vest top is "rbvt".
+
+Definition: rope bunny vest top is bunny themed: decide yes.
+Definition: rope bunny vest top is heart themed: decide yes.
+Definition: rope bunny vest top is black themed: decide yes.
+
+Figure of rope bunny vest top is the file "Items/Clothes/Upper/Vests/vest7.png".
+
+To decide which figure-name is clothing-image of (C - rope bunny vest top):
+	decide on figure of rope bunny vest top.
+
+To say ClothingDesc of (C - rope bunny vest top):
+	say "This black vest top has the words 'ROPE Bunny' in large pink letters on the chest, with little love hearts.".
+
+To say MediumDesc of (C - rope bunny vest top):
+	say "'Rope Bunny' vest top".
+
+To decide which number is the initial outrage of (C - rope bunny vest top):
+	decide on 2.
 
 Vest Top ends here.

@@ -3,13 +3,15 @@ Serving Table by Bondage begins here.
 serving-bondage is a kind of bondage. The text-shortcut of serving-bondage is "svt".
 The clothingFocusPriority of serving-bondage is -2.
 
+Definition: serving-bondage is waitress-enabling: decide yes.
+
 Definition: a serving-bondage is actually summonable: decide no. [Shouldn't be selected randomly as a bondage to summon]
 
 Definition: a serving-bondage is drink themed: decide yes.
 To decide which number is the initial outrage of (C - a serving-bondage):
-	decide on 9.
+	decide on 4.
 Check drinking a waitress vessel when a serving-bondage is worn:
-	say "You can't reach it!" instead.
+	unless the class of the player is "cafe maid", say "You can't reach it, because you can't raise it higher than the serving table you're wearing!" instead.
 
 To compute periodic effect of (C - a serving-bondage):
 	if the number of alive royal guards is 0, follow the spawn initial royal guard rule; [the player can always find a friendly guard to serve drinks]

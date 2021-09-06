@@ -1,6 +1,6 @@
 Throbbing Tentacle by Sex Toys begins here.
 
-A throbbing-tentacle is a kind of dong. There is 1 unique throbbing-tentacle. A throbbing-tentacle is ass plugging. A throbbing-tentacle is vagina plugging. The size of a throbbing-tentacle is usually 8. Understand "throbbing" as throbbing-tentacle. The printed name of throbbing-tentacle is "[TQlink of item described][item style]The Master[clothing-title-after]". The text-shortcut of throbbing tentacle is "tt". Understand "throbbing", "tentacle", "master" as throbbing-tentacle. A throbbing-tentacle is usually biological.
+A throbbing-tentacle is a kind of dong. There is 1 unique throbbing-tentacle. A throbbing-tentacle is ass plugging. A throbbing-tentacle is vagina plugging. The size of a throbbing-tentacle is usually 8. Understand "throbbing" as throbbing-tentacle. The printed name of throbbing-tentacle is "[TQlink of item described][item style]The Master[clothing-title-after]". The text-shortcut of throbbing-tentacle is "tt". Understand "throbbing", "tentacle", "master" as throbbing-tentacle. A throbbing-tentacle is usually biological.
 
 To say NameDesc of (C - a throbbing-tentacle):
 	say "[input-style][FuckerDesc of C][roman type]".

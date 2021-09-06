@@ -50,7 +50,7 @@ collar-latex-cursed is a number that varies.
 To compute periodic effect of (C - fuckdoll collar):
 	if inflation fetish is 1 and the latex-transformation of the player is 0 and collar-latex-cursed is 0:
 		now collar-latex-cursed is 1;
-		say "[bold type]You feel different[roman type], but you can't put your finger on why. Maybe you feel a tiny bit... numb?";
+		say LatexTransformClue; [#LXorDD]
 		now the latex-transformation of the player is 1.
 
 

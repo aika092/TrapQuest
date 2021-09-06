@@ -190,16 +190,33 @@ To say variable (L - a liquid-object):
 	otherwise:
 		say "[L]".
 
+[
+    Selkie thinks that:
+
+    - 'manly-penis' is just for referring to a dick in general.
+    - (so player-manly-penis is now provided for the player's 'manly penis')
+    - sissy-penis is intended for downplaying the player's penis
+    - vagina is intended for the player's vagina
+    - player-penis is intended for adaptively referring to player-penis
+    - hence Selkie has changed player-penis to now use the new
+      player-manly-penis instead of the previous manly-penis.
+    - plain-sissy-penis is for bare sissy penis terms, player or monster
+    - DickDesc of monster now uses appropriate terms when it's sissy-ish
+]
 To say player-penis:
-	say "[if the size of penis < 5][sissy-penis][otherwise][manly-penis][end if]".
+	say "[if the size of penis < 5][sissy-penis][otherwise][player-manly-penis][end if]".
+
+To say plain-sissy-penis:
+	say "[one of]prick[or]willy[or]pecker[or]clitty[or]noodle[or]dickie[or]winky[or]weeny[as decreasingly likely outcomes]".
 
 To say sissy-penis:
+	say LatexFlav with " "; [#LXorDD]
 	if the player is barbie:
 		say "[one of]smooth groin[or]sexless mound[or]smooth stretch of skin[at random]"; [I avoided using doll-like here so we can further qualify this with "doll-like", elsewhere]
 	otherwise if the class of the player is santa's little helper:
 		say "little candy cane";
 	otherwise:
-		say "[one of]prick[or]willy[or]pecker[or]clitty[or]noodle[or]dickie[or]winky[or]weeny[as decreasingly likely outcomes]".
+		say plain-sissy-penis.
 
 To say manly-penis:
 	if the class of the player is santa's little helper:
@@ -207,7 +224,12 @@ To say manly-penis:
 	otherwise:
 		say "[one of]cock[or]dick[cycling]".
 
+To say player-manly-penis:
+	say LatexFlav with " "; [#LXorDD]
+	say manly-penis.
+
 To say vagina:
+	say LatexFlav with " "; [#LXorDD]
 	if the raw intelligence of the player < 5 and diaper lover >= 1:
 		say "[one of]pussy[or]cherry[or]kitty[or]no-no[or]muffin[as decreasingly likely outcomes]";
 	otherwise if the bimbo of the player < 8 or diaper quest is 1:
@@ -217,12 +239,12 @@ To say vagina:
 	otherwise:
 		say "[one of]cunt[or]snatch[or]pussy[or]cunt[or]main cum dump[or][if pregnancy fetish is 1]baby maker[otherwise]main fuckhole[end if][or]pussy[or]clunge[as decreasingly likely outcomes]".
 
-To say asshole:
+To say asshole: [#LXorDD: I don't add the LatexFlav here because it might be a little repetitive, and also because you could only see the sheen by looking in a mirror.]
 	if the player is gendered male:
 		if the raw intelligence of the player < 5 and diaper lover >= 1:
 			say "[one of]bum[or]butt[or]no-no[or]muffin[as decreasingly likely outcomes]";
 		otherwise if the bimbo of the player < 8 or diaper quest is 1:
-			say "[one of]ass[or]anus[or]hole[or]backdoor[if diaper quest is 0] entrance[end if][or]rear [if diaper quest is 1]exit[otherwise]entrance[end if][as decreasingly likely outcomes]";
+			say "[one of]ass[or]anus[or]hole[or]rosebud[or]backdoor[if diaper quest is 0] entrance[end if][or]rear [if diaper quest is 1]exit[otherwise]entrance[end if][as decreasingly likely outcomes]";
 		otherwise if the bimbo of the player < 14:
 			say "[one of]ass[or]asshole[or]fuckhole[or]boypussy[as decreasingly likely outcomes]";
 		otherwise:
@@ -430,8 +452,14 @@ General purpose method of referring to a monster, "M"'s penis
 
 +!]
 To say DickDesc of (M - a monster):
-	if full-lady fetish is 1, say "strap-on";
-	otherwise say manly-penis.
+	if full-lady fetish is 1:
+		say "strap-on";
+	otherwise if M is fairy:
+		say "[one of]miniature[or]minuscule[or]mini[at random]";
+	otherwise if lady fetish is 2:
+		say plain-sissy-penis;
+	otherwise:
+		say manly-penis.
 
 [!<SayLongDickDescOfMonster>+
 
@@ -439,8 +467,12 @@ Specific method of referring to a monster "M"'s penis. Should only be used every
 
 +!]
 To say LongDickDesc of (M - a monster):
-	if full-lady fetish is 1, say "strap-on dildo";
-	otherwise say "hard [manly-penis]".
+	if full-lady fetish is 1:
+		say "strap-on dildo";
+	otherwise if M is fairy:
+		say "tiny, locked-away penis";
+	otherwise: [There's no 'if lady fetish is 2' case here since full-lady fetish is 1 means that lady fetish is 1 and futanari fetish is 0.]
+		say "hard [manly-penis]".
 
 To say HoleDesc of (M - a monster):
 	if M is presenting as male, say "asshole";

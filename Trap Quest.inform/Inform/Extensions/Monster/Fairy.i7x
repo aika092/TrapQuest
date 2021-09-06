@@ -59,7 +59,7 @@ To say MonsterDesc of (M - a fairy):
 		say "A fairy.";
 	otherwise:
 		if lady fetish is 2:
-			say "A tiny [if M is blue-fairy]blue[otherwise if M is fairy-witch]green[otherwise]pink[end if] skinned fairy, about twice the size of your fist. [big he of M] has four wings, [if M is blue-fairy]long, flowing blue[otherwise if M is fairy-witch]braided green[otherwise]cropped pink[end if] hair, and no clothing to speak of. [big he of M] has a thin, wispy body and [his of M] although it's hard to tell thanks to [his of M] erratic movements, [his of M] [sissy-penis] is locked up in a tiny dark-[if M is blue-fairy]blue[otherwise if M is fairy-witch]green[otherwise]pink[end if] cage.";
+			say "A tiny [if M is blue-fairy]blue[otherwise if M is fairy-witch]green[otherwise]pink[end if] skinned fairy, about twice the size of your fist. [big he of M] has four wings, [if M is blue-fairy]long, flowing blue[otherwise if M is fairy-witch]braided green[otherwise]cropped pink[end if] hair, and no clothing to speak of. [big he of M] has a thin, wispy body and [his of M] although it's hard to tell thanks to [his of M] erratic movements, [his of M] [DickDesc of M] is locked up in a tiny dark-[if M is blue-fairy]blue[otherwise if M is fairy-witch]green[otherwise]pink[end if] cage.";
 		otherwise:
 			say "A tiny [if M is blue-fairy]blue[otherwise if M is fairy-witch]green[otherwise]pink[end if] skinned fairy, about twice the size of your fist. [big he of M] has four wings, [if M is blue-fairy]long, flowing blue[otherwise if M is fairy-witch]braided green[otherwise]cropped pink[end if] hair, and no clothing to speak of. [big his of M] breasts are big for [his of M] size, probably about a [if M is fairy-witch]GG[otherwise]D[end if] cup for a normal sized [man of M], and [his of M] [if pregnancy fetish is 1]heavy, pregnant[otherwise]large, full[end if] belly doesn't seem to slow down [his of M] erratic, unpredictable movements at all.".
 
@@ -256,6 +256,8 @@ This is the fairy plays diaper quest rule:
 			potentially transform C;
 		otherwise if there are worn heels and a random number between 1 and 2 is 1:
 			compute fairy meddling on thighs;
+		otherwise if belly is fairy targetable:
+			compute fairy meddling on belly;
 		otherwise:
 			compute fairy meddling on vagina;
 		satisfy current-monster;
@@ -310,9 +312,9 @@ This is the fairy anal rule:
 The fairy anal rule is listed in the butt slut eligibility rules.
 
 This is the fairy tries to shrink the penis of the player rule:
-	if the player is possessing a penis and the size of penis > min penis size and a random number between 1 and 2 is 1:
+	if the player is somehow possessing a penis and the mystical size of penis > min penis size and a random number between 1 and 2 is 1:
 		say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your crotch as [he of current-monster] does. [big he of current-monster] turns and smirks.";
-		PenisDown 1;
+		SpecialPenisDown 1; [#LXorDD]
 		rule succeeds.
 The fairy tries to shrink the penis of the player rule is listed last in the fairy attack rules.
 
@@ -469,7 +471,7 @@ To compute fairySuckling of (M - a fairy):
 	cutshow figure of fairy cutscene 9 for M;
 	say "[if FairySuckled is 1]Abruptly[otherwise if FairySuckled < 4]Once again[otherwise if FairySuckled < 6]All too soon[otherwise]As usual[end if], [he of M] releases your nipple, which [one of]springs forth from [his of M] mouth, quiveringly erect and with an angry red colour[or]pops free, achingly erect, and vividly red[or]springs up, firm and erect and tender, and an angry red[at random].[line break]";
 	if FairySuckled is 1:
-		say "But before you can properly gather your wits, [he of M] darts to your other nipple! This time the look in [his of M] eye is more than just a wicked gleam. It's perfectly clear [he of M] knows that [italic type]you[roman type] know just how much under [his of M] tiny thumb [he of M] has you, once [he of M] has your nipple in [his of M] mouth. But while you're still forming that thought, [his of M] eyes burn into yours as if to say [italic type]'You may be bigger than me, but you're putty in my tiny hands.'[roman type] [big he of M] latches onto your other poor teat and your eyes roll helplessly back in your head - again!";
+		say "But before you can properly gather your wits, [he of M] darts to your other nipple! This time the look in [his of M] eye is more than just a wicked gleam. It's perfectly clear [he of M] knows that [italic type]you[roman type] know just how much under [his of M] tiny thumb [he of M] has you, once [he of M] has your nipple in [his of M] mouth. But while you're still forming that thought, [his of M] eyes burn into yours as if to say [italic type]'You may be bigger than me, but you're putty in my tiny hands.'[roman type][line break][big he of M] latches onto your other poor teat and your eyes roll helplessly back in your head - again!";
 	otherwise:
 		if sex addiction of the player > 8 :
 			say "You know it will feel so good that you don't really even [italic type]try[roman type] to stop [his of M] swooping in.";
@@ -522,9 +524,13 @@ Definition: belly (called XXX) is fairy targetable:
 To compute fairy meddling on (XXX - belly):
 	say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your belly as [he of current-monster] does. [big he of current-monster] turns and smirks as your belly rumbles[unless there is a worn corset], and visibly swells in front of your eyes[end if].";
 	now current-monster is penetrating asshole; [Required for semen source tracking]
-	if weight gain fetish is 1 and the flesh volume of belly < 9, increase the flesh volume of belly by 2;
-	otherwise AssFill 4;
+	if weight gain fetish is 1 and the flesh volume of belly < 9:
+		increase the flesh volume of belly by 2;
+	otherwise:
+		AssFill 4;
 	now current-monster is not penetrating asshole;
+	let T be "The fairy's magic seems to further disturb your body -";
+	check sudden squirt with reason T;
 	if the largeness of belly > 6, cutshow figure of fairy cutscene 7 for current-monster;
 	otherwise cutshow figure of fairy cutscene 3 for current-monster.
 Definition: face (called XXX) is fairy targetable:
@@ -731,7 +737,7 @@ To say TauntRejected of (M - a fairy):
 Section 2 - Questioning
 
 To say TeachQuestion of (M - a fairy):
-	if bellyskill is 1 and the pregnancy of the player is 1, say "[variable custom style]'[one of]Do you have any idea who the father is?'[or]Hey, can you tell me who the father is, by any chance?'[or]Can you tell me what's growing inside me?'[at random][roman type] You gesture at your [BellyDesc].";
+	if bellyskill is 1 and the pregnancy of the player is 1, say "[variable custom style]'[one of]Do you have any idea who the father is?'[or]Hey, can you tell me who the father is, by any chance?'[or]Can you tell me what's growing inside me?'[at random][roman type][line break]You gesture at your [BellyDesc].";
 	otherwise say "[variable custom style]'Can you teach me anything useful?'[roman type][line break]".
 
 To compute teaching of (M - a fairy):
@@ -748,16 +754,16 @@ To say PregnancyAssessment of (M - a fairy):
 		say "[speech style of M]'Hee hee! I'm going to be a [daddytitle of M]!'[roman type][line break]";
 		alwayscutshow figure of fairy interact 7 for M;
 	otherwise if the father is tentacle monster or the father is lake monster or the father is vines or the father is living belt of sturdiness or the father is creampie pole trap:
-		say "[speech style of M]'Oooh, how kinky!'[roman type] [big he of M] looks up at you and starts giggling uncontrollably. What could that mean?";
+		say "[speech style of M]'Oooh, how kinky!'[roman type][line break][big he of M] looks up at you and starts giggling uncontrollably. What could that mean?";
 		alwayscutshow figure of fairy interact 5 for M;
 	otherwise if the father is royal guard or the father is unicorn:
-		say "[speech style of M]'Ooh, You're a lucky girl.'[roman type] You don't really feel like that was helpful...";
+		say "[speech style of M]'Ooh, You're a lucky girl.'[roman type][line break]You don't really feel like that was helpful...";
 		alwayscutshow figure of fairy interact 7 for M;
 	otherwise if the father is sex doll:
-		say "[speech style of M]'Oooh... I don't want to spoil the surprise for you.'[roman type] That's helpful...";
+		say "[speech style of M]'Oooh... I don't want to spoil the surprise for you.'[roman type][line break]That's helpful...";
 		alwayscutshow figure of fairy interact 7 for M;
 	otherwise if the father is shopkeeper or the father is mechanic or the father is gladiator:
-		say "[speech style of M]'Whoever the daddy is, they must be big and strong!'[roman type] You don't really feel like that was helpful...";
+		say "[speech style of M]'Whoever the daddy is, they must be big and strong!'[roman type][line break]You don't really feel like that was helpful...";
 		alwayscutshow figure of fairy interact 7 for M;
 	otherwise if the father is minotaur or the father is demon lord:
 		say "[big he of M] recoils as if [he of M] just got hit in the face. [big he of M] takes it in stride and immediately begins giggling.[line break][speech style of M]'Hee hee, I think you know already.'[roman type][line break]You don't really feel like that was helpful...";
@@ -766,26 +772,26 @@ To say PregnancyAssessment of (M - a fairy):
 		say "[big he of M] looks up at you with a giggle.[line break][speech style of M]'It's a secret!'[roman type][line break]That's helpful...";
 		alwayscutshow figure of fairy interact 7 for M;
 	otherwise:
-		say "[speech style of M]'Who knows! Teehee!'[roman type] That's helpful...";
+		say "[speech style of M]'Who knows! Teehee!'[roman type][line break]That's helpful...";
 		alwayscutshow figure of fairy interact 7 for M;
 	say "[line break]".
 
 To say PregnancyAssessment of (M - fairy-witch):
 	say "[BigNameDesc of M] puts [his of M] face up against your belly, listening intently.";
 	if M is the father:
-		say "[speech style of M]'It's definitely mine, heehee!'[roman type]";
+		say "[speech style of M]'It's definitely mine, heehee!'[roman type][line break]";
 		alwayscutshow figure of fairy interact 7 for M;
 	otherwise if the father is tentacle monster or the father is lake monster or the father is vines or the father is living belt of sturdiness or the father is sex doll or the father is deep one:
-		say "[speech style of M]'Well, the daddy definitely isn't a human. Does that help?'[roman type]";
+		say "[speech style of M]'Well, the daddy definitely isn't a human. Does that help?'[roman type][line break]";
 		alwayscutshow figure of fairy interact 7 for M;
 	otherwise if the father is a creampie pole trap:
-		say "[speech style of M]'I don't know, could be anything! How fun!'[roman type]";
+		say "[speech style of M]'I don't know, could be anything! How fun!'[roman type][line break]";
 		alwayscutshow figure of fairy interact 7 for M;
 	otherwise if the father is royal guard or the father is gladiator or the father is centaur:
-		say "[speech style of M]'Um, I think the daddy definitely likes weapons. Does that help?'[roman type]";
+		say "[speech style of M]'Um, I think the daddy definitely likes weapons. Does that help?'[roman type][line break]";
 		alwayscutshow figure of fairy interact 7 for M;
 	otherwise if the father is unicorn:
-		say "[speech style of M]'The daddy definitely wasn't a demon. I think. Is that helpful?'[roman type]";
+		say "[speech style of M]'The daddy definitely wasn't a demon. I think. Is that helpful?'[roman type][line break]";
 		alwayscutshow figure of fairy interact 7 for M;
 	otherwise if the father is minotaur:
 		say "[big he of M] recoils, as if [he of M] just got hit in the face.[line break][speech style of M]'The daddy is definitely big and tough. Is that helpful?'[roman type][line break]";
@@ -797,14 +803,14 @@ To say PregnancyAssessment of (M - fairy-witch):
 		say "[line break][speech style of M]'Teehee. It's obviously a fairy!'[roman type][line break]";
 		alwayscutshow figure of fairy interact 7 for M;
 	otherwise:
-		say "[speech style of M]'Well, it was definitely a human. Does that help?'[roman type]";
+		say "[speech style of M]'Well, it was definitely a human. Does that help?'[roman type][line break]";
 		alwayscutshow figure of fairy interact 7 for M;
 	say "[line break]".
 
 To say PregnancyAssessment of (M - blue-fairy):
 	say "[BigNameDesc of M] puts [his of M] face up against your belly, listening intently.";
 	if the father is fairy:
-		say "[speech style of M]'Uuuuummm, I think it's a fairy?'[roman type]";
+		say "[speech style of M]'Uuuuummm, I think it's a fairy?'[roman type][line break]";
 		alwayscutshow figure of fairy interact 11 for M;
 	otherwise if the father is mansion dwelling:
 		say "[big he of M] shivers.[speech style of M]It sounds like the daddy lives somewhere really spooky!'[roman type][line break]";

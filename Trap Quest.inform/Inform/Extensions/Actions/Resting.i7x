@@ -8,6 +8,7 @@ Check resting:
 	if the player is immobile, say "Aren't you a bit busy?" instead;
 	if the fatigue of the player is 0, say "[if the body soreness of the player is 0]You feel completely fine.[otherwise]You're not fatigued at the moment, just injured. You're going to need to find somewhere specific to rest to heal your injuries.[end if]" instead;
 	if the player is upright, say "You can only rest while kneeling." instead;
+	if player-breathing is false, say "You can't rest if you're holding your breath!" instead;
 	say "Stay still until you feel completely refreshed? ";
 	unless the player is in agreement, say "You change your mind." instead.
 

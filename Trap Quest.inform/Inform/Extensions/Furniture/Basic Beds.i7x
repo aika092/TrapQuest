@@ -196,7 +196,7 @@ To decide which figure-name is the examine-image of (C - a cot):
 To compute furniture resting on (F - a cot):
 	let M be a random alive dominatrix in the location of the player;
 	if M is a monster and the number of alive monsters in the location of the player < 2:
-		say "[speech style of M]'Rest up, I have some work for you to do once you're finished up.'[roman type] [BigNameDesc of M] presses a small button on a remote, and a modesty shutter slams across the doorway of the room.";
+		say "[speech style of M]'Rest up, I have some work for you to do once you're finished up.'[roman type][line break][BigNameDesc of M] presses a small button on a remote, and a modesty shutter slams across the doorway of the room.";
 		now a random modesty shutter is in the location of the player;
 	compute normal rest of F.
 

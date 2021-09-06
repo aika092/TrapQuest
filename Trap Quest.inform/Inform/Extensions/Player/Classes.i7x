@@ -718,8 +718,10 @@ a later time based rule (this is the explaining faerie rule):
 This is the bunny class rule:
 	if there is a worn bunny ears:
 		now player-class is "bunny";
-		if bunny waitress ears is worn:
+		if playdude bunny waitress ears is worn:
 			now player-class is "bunny waitress";
+		otherwise if rubber-bunny-waitress-ears is worn:
+			now the player-class is "plastic bunny waitress";
 		otherwise if bunny tail plug is worn:
 			now the player-class is "fertile bunny";
 		rule succeeds.

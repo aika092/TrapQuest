@@ -7,7 +7,9 @@ Definition: a microshorts is rippable:
 	if it is destructible, decide yes;
 	decide no.
 To decide which number is the penis-capacity of (H - a microshorts):
-	decide on 6.
+	decide on 3.
+To decide which number is the crotch-tightness of (C - a microshorts):
+	decide on 4.
 
 To compute SelfExamineDesc of (K - a microshorts):
 	say "A pair of ridiculously skimpy microshorts covers very little of your [ShortDesc of hips]. ".

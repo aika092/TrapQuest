@@ -20,9 +20,10 @@ To say MediumDesc of (C - a onesie):
 To decide which number is the initial outrage of (C - a onesie):
 	if diaper quest is 0, decide on the initial cringe of C;
 	decide on 0.
-
 To decide which number is the initial cringe of (C - a onesie):
 	decide on 7.
+To decide which number is the crotch-tightness of (C - a onesie):
+	decide on 0.
 
 To decide which number is the heel-skill-influence of (O - a onesie):
 	let X be -2;

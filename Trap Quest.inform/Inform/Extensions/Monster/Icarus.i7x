@@ -224,7 +224,7 @@ Definition: bondage-ribbons (called C) is IcarusScienceAppropriate:
 	if the player is not wrist bound and C is actually summonable, decide yes;
 	decide no.
 
-Figure of bondage ribbons is the file "Items/Clothes/Upper/Dresses/Christmas/bondageribbons1.jpg".
+Figure of bondage ribbons is the file "Items/Clothes/Upper/Dresses/Christmas/bondageribbons1.png".
 Figure of bondage ribbons full is the file "Items/Clothes/Upper/Dresses/Christmas/bondageribbons2.jpg".
 
 To decide which figure-name is clothing-image of (C - bondage-ribbons):
@@ -584,7 +584,7 @@ Definition: Icarus is willing to give snacks:
 	decide no.
 
 To say FriendlyFoodAgreeFlav of (M - Icarus):
-	say "[speech style of M]'Why not. It is Christmas, after all!'[roman type]".
+	say "[speech style of M]'Why not. It is Christmas, after all!'[roman type][line break]".
 
 To compute unfriendly food of (M - Icarus):
 	say "[speech style of M]'You seem to have misunderstood the current nature of our relationship...'[roman type][line break]";

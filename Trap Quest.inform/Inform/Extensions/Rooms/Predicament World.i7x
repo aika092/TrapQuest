@@ -154,9 +154,9 @@ Park24 is a park room. The grid position of Park24 is <8,17,3>. Park24 is east o
 To decide which number is the concealment of (R - Park24):
 	decide on 4.
 
-Toilet01 is a bossed predicament room. Toilet01 is toilets. The printed name of Toilet01 is "Men's Toilets". Toilet01 is below Park02. The grid position of Toilet01 is <7,17,8>.
+Toilet01 is a predicament room. Toilet01 is toilets. The printed name of Toilet01 is "Men's Toilets". Toilet01 is below Park02. The grid position of Toilet01 is <7,17,8>.
 Definition: Toilet01 is nonstandard: decide yes.
-Toilet02 is a bossed predicament room. Toilet02 is toilets. The printed name of Toilet02 is "Women's Toilets". Toilet02 is above Park02. The grid position of Toilet02 is <9,17,8>.
+Toilet02 is a predicament room. Toilet02 is toilets. The printed name of Toilet02 is "Women's Toilets". Toilet02 is above Park02. The grid position of Toilet02 is <9,17,8>.
 Definition: Toilet02 is nonstandard: decide yes.
 male-gloryhole is a thing. male-gloryhole is not portable. The printed name of male-gloryhole is "[TQlink of item described]gloryhole[TQxlink of item described]". The text-shortcut of male-gloryhole is "gl". Understand "gloryhole" as male-gloryhole.
 Figure of male gloryhole is the file "Env/School/gloryhole1.jpg".
@@ -175,10 +175,14 @@ Check entering male-gloryhole:
 
 female-gloryhole is a thing. female-gloryhole is not portable. The printed name of female-gloryhole is "[TQlink of item described]gloryhole[TQxlink of item described][if inline hyperlinks >= 2][link][bracket]knock[close bracket][as]knock on [text-shortcut of item described][end link][end if]". The text-shortcut of female-gloryhole is "gl". Understand "gloryhole", "wall" as female-gloryhole.
 Figure of female gloryhole is the file "Env/School/gloryhole2.jpg".
+Figure of female gloryhole key scene is the file "Env/School/gloryhole4.jpg".
 To decide which figure-name is the examine-image of (G - female-gloryhole):
+	if current-predicament is gloryhole-key-predicament, decide on figure of female gloryhole key scene;
 	decide on figure of female gloryhole.
 To say ExamineDesc of (G - female-gloryhole):
-	say "The west wall of the public toilets has a hole in the wall, the perfect size to fit a [manly-penis] through. The men's toilets are on the other side. There's some impressive wall art of a very hunky fireman, positioned so that the hole is where his penis should be. Several empowering quips have been scrawled over the walls, including 'Be Who You Want To Be' and 'You Are Beautiful No Matter What They Say!'[line break][if the player is not a pervert][first custom style]How... modern.[otherwise][variable custom style]Yeah! Girl power![end if][roman type][line break]Writing to the bottom right hand side of the gloryhole instructs a willing lady to 'Knock for Cock'.".
+	say "The west wall of the public toilets has a hole in the wall, the perfect size to fit a [manly-penis] through. The men's toilets are on the other side. ";
+	if current-predicament is gloryhole-key-predicament, say line break;
+	otherwise say "There's some impressive wall art of a very hunky fireman, positioned so that the hole is where his penis should be. Several empowering quips have been scrawled over the walls, including 'Be Who You Want To Be' and 'You Are Beautiful No Matter What They Say!'[line break][if the player is not a pervert][first custom style]How... modern.[otherwise][variable custom style]Yeah! Girl power![end if][roman type][line break]Writing to the bottom right hand side of the gloryhole instructs a willing lady to 'Knock for Cock'.".
 Check climbing female-gloryhole:
 	try entering female-gloryhole instead.
 Check entering female-gloryhole:
@@ -230,12 +234,25 @@ To compute predicament map reveal:
 		now map-zoom is 3;
 		repeat with R running through predicament rooms:
 			unless R is Predicament20, now R is discovered;
+		if current-predicament is gloryhole-key-predicament: [two women are in the queue outside]
+			let LBS be the list of female camera-bystanders;
+			sort LBS in random order;
+			truncate LBS to 2 entries;
+			repeat with M running through LBS:
+				now M is in the location of the player;
+				now M is moved; [stops them moving instantly]
+				now M is interested;
+				compute perception of M;
+			let M be entry 1 in LBS;
+			try M going up;
 		[display entire map.]
 
 Report going when the player is in a bathroom predicament room:
 	now map-zoom is 1.
 
-Report going when the player is in Park02:
+Report going down when the player is in Park02:
+	now map-zoom is 3.
+Report going up when the player is in Park02:
 	now map-zoom is 3.
 
 Predicament-Pen is a room. [stored items that would make the predicament difficult]
@@ -256,8 +273,10 @@ Report going when the player is in Predicament20:
 		if C is clothing and (the raw-magic-modifier of C > 0 or C is not blandness):
 			if C is held or C is in the location of the player:
 				say "[BigNameDesc of C] fades away! [bold type]You can tell that it has been sent to the 'Junk Room'.[roman type][line break]";
+			dislodge C;
 			now C is in School15;
-			now C is predicament-fixed;
+			now C is predicament-fixed; [This makes it immune to change while it resides in the Junk Room. Other junk room items are reset when the player faints etc.]
+			now C is not stuck;
 		otherwise:
 			if C is held or C is in the location of the player:
 				say "[BigNameDesc of C] fades into nothingness!";
@@ -397,12 +416,17 @@ To compute movement of (M - a bystander):
 			if A is up or A is not a direction or R > 1:
 				now R is 3; [We use this to flag that the NPC is no longer choosing to walk towards the central park]
 				let LA be the list of N-viable directions; [This is how we randomise an APPROPRIATE direction for M to walk in]
+				if M is in Park02:
+					if M is male and the number of people in Toilet01 is 0, add down to LA;
+					if M is female and the number of people in Toilet02 is 0, add up to LA;
+				if M is in Toilet01, add up to LA;
+				if M is in Toilet02, add down to LA;
 				sort LA in random order;
 				if debugmode > 1, say "List of N-viable directions: [LA].";
 				repeat with D running through LA:
 					now bystander-room-target is the room D from neighbour finder;
 					if debugmode > 1, say "Considering [D] ([bystander-room-target]): ";
-					if M is target-room-happy:
+					if M is target-room-happy or D is up or D is down:
 						now A is D;
 						if debugmode > 1, say "Chosen!";
 						break;
@@ -498,8 +522,8 @@ To compute squirting perception of (M - a bystander):
 To say EnemaFloorReactionFlav of (M - a bystander):
 	compute squirting perception of M.
 
-To check disapproval of (M - a person):
-	say "BUG: Tried to check disapproval of [M] but nothing is coded for this person.".
+To check disapproval of (M - a person): [Should be rare. Perhaps sometimes the slimegirl seeing you leak pee]
+	say "[BigNameDesc of M] widens [his of M] eyes and then blinks at you. [slightHumiliateReflect]".
 
 To check disapproval of (M - a bystander):
 	if M is interested:
@@ -1708,7 +1732,7 @@ To decide which text is the maths-punishment-description of (M - new-ass-tattoo)
 To maths-execute (M - new-ass-tattoo):
 	say "You hear the [man of shopkeeper] chuckle and pull the lid off of a permanent marker. And then you feel [him of shopkeeper] write 'just the tip' on your ass![line break][variable custom style]Really?![roman type][line break]";
 	summon just the tip tattoo;
-	now just the tip tattoo is predicament-normal;
+	now just the tip tattoo is predicament-fixed;
 	say "The [man of shopkeeper] leaves the way [he of shopkeeper] came, taking the pen with [him of shopkeeper].".
 
 new-ankle-tattoo is a maths-sex-predicament-punishment.
@@ -1721,7 +1745,7 @@ To maths-execute (M - new-ankle-tattoo):
 	say "You hear the [if diaper quest is 0][man of shopkeeper] think to [himself of shopkeeper] carefully[otherwise]robotic arm whirr into action[end if] and then you hear a tattoo needle being turned on![line break][variable custom style]Uh-oh...[roman type][line break]The needle brings stinging pain with it as it engages with your ankle.";
 	PainUp 1;
 	summon spank-me-heart tattoo;
-	now spank-me-heart tattoo is predicament-normal;
+	now spank-me-heart tattoo is predicament-fixed;
 	say "A few minutes later, you have a brand new tattoo.";
 	try examining spank-me-heart tattoo;
 	say "[variable custom style]No way... and this is permanent??[roman type][line break]";
@@ -1877,7 +1901,7 @@ To execute (TEP - team-enema-predicament):
 	now the player is in Predicament01;
 	now temporaryYesNoBackground is Figure of team enema predicament;
 	let M be team-predicament-partner;
-	say "Your stomach gurgles horribly. You look around... you're in a very small room, with... what the hell?! [BigNameDesc of M] is bound on [his of M] back on top of a bench, completely unable to move thanks to wrist and thigh bindings. You're both naked. Underneath the grated floor below your feet is what appears to be two sets of clothes. A ring gag in [NameDesc of M][']s mouth keeps it wide and open, pointing towards the ceiling. A robotic voice speaks over some kind of tannoy.[line break][first custom style]'WELCOME TO THE PINK DIAMOND [']EXTRA CREDIT['] CLASS. [if diaper quest is 0]BOTH YOUR BELLIES HAVE BEEN FILLED WITH A VOLUMINOUS SEMEN ENEMA. [end if]IN FIVE MINUTES THE DOOR and YOUR BONDAGE WILL UNLOCK, AND THE CLOTHES BENEATH THE GROUND WILL BE RELEASED. YOUR [if diaper quest is 0]BELLIES [end if][if watersports fetish is 1 and diaper quest is 1]AND [end if][if watersports fetish is 1]BLADDERS [end if]WILL NEED TO BE HELD, OR... OTHERWISE INGESTED... TO PREVENT YOUR CLOTHES FROM BECOMING SOILED.[paragraph break]'GOOD LUCK. YOUR TIME STARTS NOW.'[paragraph break][variable custom style]Uh-oh...[roman type][line break]";
+	say "Your stomach gurgles horribly. You look around... you're in a very small room, with... what the hell?! [BigNameDesc of M] is bound on [his of M] back on top of a bench, completely unable to move thanks to wrist and thigh bindings. You're both naked. Underneath the grated floor below your feet is what appears to be two sets of clothes. A ring gag in [NameDesc of M][']s mouth keeps it wide and open, pointing towards the ceiling. A robotic voice speaks over some kind of tannoy.[line break][first custom style]'WELCOME TO THE PINK DIAMOND [']EXTRA CREDIT['] CLASS. [if diaper quest is 0]BOTH YOUR BELLIES HAVE BEEN FILLED WITH A VOLUMINOUS SEMEN ENEMA. [end if]IN FIVE MINUTES THE DOOR AND YOUR BONDAGE WILL UNLOCK, AND THE CLOTHES BENEATH THE GROUND WILL BE RELEASED. YOUR [if diaper quest is 0]BELLIES [end if][if watersports fetish is 1 and diaper quest is 1]AND [end if][if watersports fetish is 1]BLADDERS [end if]WILL NEED TO BE HELD, OR... OTHERWISE INGESTED... TO PREVENT YOUR CLOTHES FROM BECOMING SOILED.[paragraph break]'GOOD LUCK. YOUR TIME STARTS NOW.'[paragraph break][variable custom style]Uh-oh...[roman type][line break]";
 	let T be 300;
 	if diaper quest is 0, now the semen volume of belly is 30;
 	if watersports fetish is 1 and the bladder of the player < bladder-risky-level, now the bladder of the player is bladder-risky-level;
@@ -1895,7 +1919,7 @@ To execute (TEP - team-enema-predicament):
 			if the player is consenting:
 				now the squirt timer of belly is 1;
 			otherwise:
-				compute enema holding;
+				check enema holding;
 			if the squirt timer of belly > 0:
 				now the squirt timer of belly is 0;
 				say "You can choose to position your [asshole] over [NameDesc of M][']s mouth, if you wish, to force [him of M] to drink it rather than it going down onto your outfits. Do you squat over [NameDesc of M][']s mouth? ";
@@ -2871,6 +2895,7 @@ To execute (L - team-football-predicament):
 	now Toilet02 is discovered;
 	now Toilet02 is seen;
 	now the player is in Toilet02;
+	now map-zoom is 1;
 	now skeleton key is in Predicament20;
 	summon football-hotpants locked;
 	now football-hotpants is predicament-fixed;
@@ -3158,7 +3183,9 @@ Report standing when water-fountain is penetrating asshole:
 	repeat with M running through uninterested bystanders in the location of the player:
 		now M is interested;
 		compute perception of M;
-	if the total squirtable fill of belly >= 0 and the player is able to automatically expel, now the holding strain of belly is (belly strain balance * 2) - 1. [As soon as time ticks forward the player will get a kick of enema cramp]
+	if the total squirtable fill of belly >= 0 and the player is able to automatically expel, now the holding strain of belly is (belly strain balance * 2) - 1;
+	let T be the substituted form of "The wide enema nozzle has left your butthole feeling momentarily weakened,";
+	check enema holding with reason T.
 
 Carry out kneeling when water-fountain is in the location of the player:
 	say "Sit back down on the enema nozzle?";
@@ -3254,7 +3281,17 @@ Check going down when the player is in Park02:
 		if the player is consenting, try going up instead;
 	otherwise if diaper quest is 1 and the number of worn locked crotch covering clothing is 0:
 		say "This will go into the men's room. [if Toilet02 is seen]The diaper changing station is in the women's room[otherwise]You have a thought that perhaps the women's room is more likely to have diaper changing facilities[end if]. Go to the women's toilets instead? ";
-		if the player is consenting, try going up instead.
+		if the player is consenting, try going up instead;
+	let P be a random person in Toilet01;
+	if P is a person:
+		allocate 2 seconds;
+		say "You try the door, but it's locked. Someone's in there!" instead.
+
+Check going up when the player is in Park02:
+	let P be a random person in Toilet02;
+	if P is a person:
+		allocate 2 seconds;
+		say "You try the door, but it's locked. Someone's in there!" instead.
 
 Report going when the player is in Toilet01:
 	if id-poster is in Toilet01 and id-poster is not held:
@@ -3393,7 +3430,7 @@ Check attacking female-gloryhole:
 	say "You knock on the wall next to the gloryhole.";
 	let M be a random ultimate-lesson-actor in the location of the player;
 	if M is monster:
-		let OT be a random number between -1 and 5;
+		let OT be a random number between 1 and 5;
 		let T be OT;
 		let TX be T + a random number between -1 and 1;
 		say "The [man of M] on the other side of the wall [if TX <= 1]seems intrigued.[line break][speech style of M]'Oh, is somebody hungry?'[otherwise if TX is 2]seems curious.[line break][speech style of M]'Oh, is somebody there?'[otherwise if TX is 3]seems cautious.[line break][speech style of M]'Who's there?'[otherwise if TX is 4]seems hesitant.[line break][speech style of M]'You're not a dude, are you?'[otherwise]seems reluctant.[line break][speech style of M]'This can't be for real...'[end if][roman type][line break]";
@@ -3466,7 +3503,15 @@ Check attacking female-gloryhole:
 To say MissedGloryholeCock:
 	if current-predicament is gloryhole-predicament:
 		increase the cocks-missed of gloryhole-predicament by 1;
-		say "[variable custom style][if the cocks-missed of gloryhole-predicament is 1]That's one I've failed to give a blowjob to. I guess that was my only freebie...[otherwise if the cocks-missed of gloryhole-predicament is 2]That's a second [man of shopkeeper] I've failed to give a blowjob to. That means I've gained a punishment point...[otherwise]That's [cocks-missed of gloryhole-predicament] [men of shopkeeper] I've failed to give a blowjob to. That means I've gained another punishment point...[end if][roman type][line break]".
+		say "[variable custom style][if the cocks-missed of gloryhole-predicament is 1]That's one I've failed to give a blowjob to. I guess that was my only freebie...[otherwise if the cocks-missed of gloryhole-predicament is 2]That's a second [man of shopkeeper] I've failed to give a blowjob to. That means I've gained a punishment point...[otherwise]That's [cocks-missed of gloryhole-predicament] [men of shopkeeper] I've failed to give a blowjob to. That means I've gained another punishment point...[end if][roman type][line break]";
+	otherwise if current-predicament is gloryhole-key-predicament:
+		say "[first custom style]'Suit yourself.'[roman type][line break]";
+		if the keys-agreed of gloryhole-key-predicament > 0:
+			say "[big he of shopkeeper] leaves without giving you any keys.";
+		otherwise:
+			now the keys-tried of gloryhole-key-predicament is -1;
+			say "[first custom style]'Suit yourself.'[roman type][line break]You can hear [him of shopkeeper] flushing the keys down the toilet, and then leaving. You have failed, and will have to leave naked.";
+		now the keys-agreed of gloryhole-key-predicament is 0.
 
 nun-walk-predicament is a predicament.
 Definition: nun-walk-predicament is appropriate:
@@ -3993,26 +4038,26 @@ To execute (TSLP - team-scissor-lift-predicament):
 				set next numerical response to "throw the closest used diaper off the platform ([LDWW] LBS)";
 			compute multiple choice question;
 			now PNR is player-numerical-response;
-			if the printed name of the chosen numerical response matches the text "eat some":
+			if the chosen numerical response matches the text "eat some":
 				say "You eat your fill of [if diaper lover > 0]diuretic baby food puree[otherwise][semen]-glazed snacks[end if], and now feel comfortably full.";
 				if diaper lover is 0, SemenTasteAddictUp 1;
 				otherwise increase the bladder of the player by (8 - the stomach-food of the player) / 2;
 				now the stomach-food of the player is 8;
 				now hunger-override is false;
-			otherwise if the printed name of the chosen numerical response matches the text "drink some":
+			otherwise if the chosen numerical response matches the text "drink some":
 				say "You take one of the sports bottles and drink the [if watersports fetish is 1][urine][otherwise]whole thing[end if].";
 				if watersports fetish is 1, StomachUrineUp (8 - the stomach-liquid of the player);
 				otherwise StomachUp (8 - the stomach-liquid of the player);
-			otherwise if the printed name of the chosen numerical response matches the text "bottle":
+			otherwise if the chosen numerical response matches the text "bottle":
 				say "You take one of the baby bottles and drink the [milk].";
 				StomachMilkUp (8 - the stomach-liquid of the player);
-			otherwise if the printed name of the chosen numerical response matches the text "urinate":
+			otherwise if the chosen numerical response matches the text "urinate":
 				now nowUrinating is true;
-			otherwise if the printed name of the chosen numerical response matches the text "expel":
+			otherwise if the chosen numerical response matches the text "expel":
 				now nowExpelling is true;
-			otherwise if the printed name of the chosen numerical response matches the text "mess":
+			otherwise if the chosen numerical response matches the text "mess":
 				now nowMessing is true;
-			otherwise if the printed name of the chosen numerical response matches the text "your diaper":
+			otherwise if the chosen numerical response matches the text "your diaper":
 				if D is dirty diaper:
 					say "You lie on your back and close your eyes as [student-name of M] uses the changing items available to clean you up and change your diaper. The used [if D is messed]messy [end if]diaper is stuck up on the platform with you!";
 					let SD be a random off-stage soiled-diaper;
@@ -4030,10 +4075,10 @@ To execute (TSLP - team-scissor-lift-predicament):
 							DiaperPrint SD from D;
 							now SD is in the location of the player;
 				now purple-medium-diaper is in the location of the player;
-			otherwise if the printed name of the chosen numerical response matches the text "put on":
+			otherwise if the chosen numerical response matches the text "put on":
 				summon purple-medium-diaper uncursed;
 				say "You put on a clean [MediumDesc of purple-medium-diaper].";
-			otherwise if the printed name of the chosen numerical response matches the text "platform":
+			otherwise if the chosen numerical response matches the text "platform":
 				let SD be a random soiled-diaper in the location of the player;
 				destroy SD;
 				let SDN be the number of soiled-diaper in the location of the player;
@@ -4452,5 +4497,168 @@ To execute (TSLP - team-scissor-lift-predicament):
 	repeat with BY running through bystanders:
 		now BY is uninterested;
 	now hunger-override is false.
+
+
+
+gloryhole-key-predicament is a predicament. gloryhole-key-predicament has a number called keys-agreed. gloryhole-key-predicament has a number called keys-tried. gloryhole-key-predicament has a number called keys-needed. gloryhole-key-predicament can be ass-to-mouth-agreed. Understand "gholekpd" as gloryhole-key-predicament.
+
+Definition: gloryhole-key-predicament is appropriate:
+	if diaper quest is 0 and the rank of the player is 3 and the player is an august 2021 top donator, decide yes;
+	decide no.
+
+To say PredicamentDescription of (P - gloryhole-key-predicament):
+	say "I'm currently in an Extra Credit lesson where I need to suck cocks in the women's toilets in return for keys, hoping to soon get the right key for the bike lock preventing me from taking the swimsuit with me, and then get back to my home while avoiding as many bystanders as possible from noticing me.".
+
+To execute (P - gloryhole-key-predicament):
+	blandify and reveal navy-monokini;
+	now navy-monokini is in Toilet02;
+	now navy-monokini is stuck;
+	now the player is in Toilet02;
+	now map-zoom is 1;
+	now the keys-needed of P is (a random number between 1 and 8) + the square root of the bimbo of the player;
+	now bike-lock-key is in Toilet01;
+	set up 29 bystanders;
+	say "You find yourself in a dingy women's public toilets, completely naked. On one wall, a gloryhole is glaringly obvious. Anchored to the single toilet stall with a strong bicycle lock is a blue swimsuit. A robotic voice is speaking to you from some hidden speaker:[paragraph break][first custom style]'WELCOME TO EXTRA CREDIT CLASS. [PredicamentRewardExplanation]YOU ARE FREE TO UNLOCK THE DOOR AND LEAVE AT ANY TIME, BUT THE KEY TO THE BIKE LOCK IS AMONGST SEVERAL OTHER KEYS ON THE TABLE IN THE MEN'S TOILET, ON THE OTHER SIDE OF THE GLORYHOLE. INSTRUCTIONS IN THE MEN'S TOILETS RECOMMEND THAT ATTENDEES ARE TO PAY YOU FOR SEXUAL SERVICES WITH KEYS. YOU ARE IN A PARK CLOSE TO YOUR HOME. YOU MUST RETURN HOME TO COMPLETE THE PREDICAMENT.'[PredicamentRewardExplanationReaction][roman type][line break]And then, you hear female voices from outside the bathroom, beyond the locked door.[line break][second custom style]'Ummm... Hello? There's a line out here, you know!'[roman type][line break]Uh-oh, there's already people waiting outside. There's absolutely no way to leave the women's toilets without being seen, and potentially photographed, by who knows how many people...".
+
+An all later time based rule:
+	if current-predicament is gloryhole-key-predicament and the player is in Toilet02 and navy-monokini is in Toilet02 and navy-monokini is stuck and bike-lock-key is in Toilet01 and the number of ultimate-lesson-actor in Toilet02 is 0:
+		if a random number between 1 and 2 is 1:
+			let M be a random ultimate-lesson-actor;
+			set up M;
+			now M is in Toilet02;
+			say "[bold type]Through the hole, you can hear someone enter the men's bathroom, and presumably read the instructions.[roman type][line break][speech style of M]'Hello?'[one of][roman type][line break]There's absolutely no point in pretending not to be there, so you reply.[or][stopping][line break][variable custom style]'Hi...'[roman type][line break]";
+			let MPatience be a random number between 1 and 4;
+			let MPatienceFuzz be MPatience + a random number between -1 and 1;
+			let sexActList be {"suck my [manly-penis]"};
+			if the player is possessing a vagina, add "let me fuck your pussy" to sexActList;
+			add "let me fuck your asshole" to sexActList;
+			if watersports fetish is 1, add "drink my piss" to sexActList;
+			if a2m fetish > 0, add "repeatedly put my [manly-penis] in your ass then clean it off with your mouth" to sexActList;
+			let MNastiness be a random number between 1 and the number of entries in sexActList;
+			now the keys-agreed of gloryhole-key-predicament is a random number between 1 and 2;
+			say "[speech style of M]'[if MPatienceFuzz <= a random number between -1 and 0]I'm going to have me some fun with you, whore. [otherwise if MPatienceFuzz <= a random number between 1 and 5]Well well well. Sounds like you're at my mercy, doesn't it. [otherwise if MPatienceFuzz <= 2]Looks like I've found myself a slut in a predicament, haha! [otherwise if MPatienceFuzz is 3]Oh, this is bad news for you, but I guess it's my lucky day! [otherwise if MPatienceFuzz is 4]Hmm, what should I do... [otherwise]I'm sorry to ask this of you, but... [end if]";
+			while MPatience > 0:
+				say "I'll give you [if the keys-agreed of gloryhole-key-predicament > 1][the keys-agreed of gloryhole-key-predicament] keys[otherwise]a key[end if] if you [entry MNastiness in sexActList].'[roman type][line break]";
+				reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+				set numerical response 1 to "agree";
+				set numerical response 2 to "demand more keys";
+				set numerical response 3 to "[if MNastiness is 1]outright refuse[otherwise]tell him that's too nasty[end if]";
+				compute multiple choice question;
+				if player-numerical-response is 1:
+					now MPatience is -100; [this is how we flag that the player agreed]
+				otherwise if player-numerical-response is 2:
+					say "[variable custom style]'[one of]Make it [the keys-agreed of gloryhole-key-predicament + 1] keys and I'll think about it[or]That's worth at least [the keys-agreed of gloryhole-key-predicament + 1] keys[or]You'll need to offer more keys if you want that[or]Come on, offer more keys than that[or]If I'm really going to do that, you're going to have to give me more keys[or]You can't expect me to do that for only [if the keys-agreed of gloryhole-key-predicament is 1]a single key[otherwise][the keys-agreed of gloryhole-key-predicament] keys[end if][in random order].'[roman type][line break]";
+					decrease MPatience by 1;
+					if MPatience > 0:
+						say "[BigNameDesc of M] [one of]clicks [his of M] tongue[or]snorts[or]grunts[in random order].[line break][speech style of M]'[one of]Fine. [or]Whatever. [or]Sure. [or]Okay. [in random order]";
+						increase the keys-agreed of gloryhole-key-predicament by 1;
+				otherwise if player-numerical-response is 3:
+					say "[variable custom style]'[one of]No way[or]You've got to be kidding[or]Fuck off[or]Come on[or]Seriously now[in random order], [if MNastiness is 1]I'm not touching your [manly-penis] at all. Just give me the keys like a decent human being[otherwise][one of]there's no way I'm doing that. Think of something else[or]I'm not doing anything that nasty[or]you're dreaming, I don't do that kind of thing[or]that's too gross[or]please don't make me do that[or]there's got to be something less disgusting that I can do for you[in random order][end if].'[roman type][line break]";
+					decrease MPatience by 1;
+					if MNastiness is 1, now MPatience is 0;
+					if MPatience > 0:
+						if a random number between 1 and 2 is 1:
+							say "[BigNameDesc of M] [one of]hums in thought[or]chuckles[or]tuts[in random order].[line break][speech style of M]'[one of]Fair enough. [or]Can't blame a guy for trying. [or]Oh well. Don't ask, don't get. [or]Perhaps that would be too much to ask. [in random order]";
+							if MNastiness is 3 and watersports fetish is 0 and the player is not possessing a vagina, now MNastiness is 1;
+							otherwise decrease MNastiness by 1;
+						otherwise:
+							say "[BigNameDesc of M] [one of]is silent for a moment[or]pauses before replying[or]whines impatiently[in random order].[line break][speech style of M]'[one of]But I really want you to. [or]The way I see it, I have all the power here. You'll do what I want you to. [or]But that's what I want. [or]Come on, it won't be that bad. You might even enjoy it. [in random order]";
+				if MPatience is 0:
+					if the keys-agreed of gloryhole-key-predicament is 1, now the keys-agreed of gloryhole-key-predicament is 0;
+					otherwise now the keys-agreed of gloryhole-key-predicament is 1;
+					say "[BigNameDesc of M] [one of]slams the wall[or]growls[or]snarls[in random order].[line break][speech style of M]'[one of]Fuck this[or]Screw this[or]My patience has run out[or]I'm not going to stand here and negotiate all day[in random order]. Either you ";
+					if entry MNastiness in sexActList matches the text "suck":
+						say "[one of]wrap your whore lips around my fat [manly-penis][or]get to work polishing my shaft[or]worship my [manly-penis] with your mouth[in random order] ";
+					otherwise if entry MNastiness in sexActList matches the text "pussy":
+						say "[one of]slide that slutty little pussy onto my shaft[or]ease that cute little cunt over my [manly-penis][in random order] ";
+					otherwise if entry MNastiness in sexActList matches the text "asshole":
+						say "[one of]milk my [manly-penis] with your tight little asshole[or]let me fill your guts with my jizz[in random order] ";
+					otherwise if entry MNastiness in sexActList matches the text "piss":
+						say "[one of]guzzle my piss like a good [boy of the player][or]suck the piss out of my dick like a straw like an obedient little whore[in random order] ";
+					otherwise:
+						say "[one of]go ass-to-mouth on my [manly-penis] like a dirty fucking toilet whore[or]keep sucking your own ass-juices off my [manly-penis] until I blow my load[in random order] ";
+					say "[if the keys-agreed of gloryhole-key-predicament is 1]in return for ONE key[otherwise]for FREE[end if] or I will [one of]flush all these keys down the loo[or]take all the keys with me[in random order].'[roman type][line break]";
+					reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+					set numerical response 1 to "agree to the reduced offer";
+					set numerical response 2 to "refuse!";
+					compute multiple choice question;
+					if player-numerical-response is 1:
+						now MPatience is -100; [this is how we flag that the player agreed]
+					otherwise:
+						say "[variable custom style]'Fuck you, you bastard!'[line break][speech style of M]'Suit yourself.'[roman type][line break]You hear [him of M] gathering up all the keys and then... [he of M]'s gone.";
+						destroy bike-lock-key;
+						destroy M;
+			if MPatience is -100:
+				now M is unwrapped;
+				say "[variable custom style]'[one of]...Okay[or]It's a deal, then[or]Fine[or]Ugh, okay[in random order].'[line break][speech style of M]'[one of]Sweet[or]Oh yeah[or]Fuck yeah[in random order]!'[roman type][line break]Moments later, a [manly-penis] appears through the hole, and it's time for you to get to work.";
+				let T be the substituted form of "[one of]Woah, this is really happening!'[or]Wow, what a slut.'[or]Good [boy of the player].'[or]Yes!'[cycling]";
+				if entry MNastiness in sexActList matches the text "suck":
+					say "You [if the player is upright]get on your knees and [end if]accept the [manly-penis] into your mouth.[line break][speech style of M]'[T][roman type][line break]";
+					now the stance of the player is 1;
+					calm M;
+					now M is interested;
+					now M is penetrating face;
+					now M is friendly-fucking;
+				otherwise if entry MNastiness in sexActList matches the text "pussy":
+					say "You [if the player is upright]get on your knees and [end if]turn around to mount the [manly-penis] with your [vagina].[line break][speech style of M]'[T][roman type][line break]";
+					now the stance of the player is 1;
+					calm M;
+					now M is interested;
+					now M is penetrating vagina;
+					now M is friendly-fucking;
+					set up sex length of M in vagina;
+				otherwise if entry MNastiness in sexActList matches the text "asshole":
+					say "You [if the player is upright]get on your knees and [end if]turn around to ease the [manly-penis] into your [asshole].[line break][speech style of M]'[T][roman type][line break]";
+					now the stance of the player is 1;
+					calm M;
+					now M is interested;
+					now M is penetrating asshole;
+					now M is friendly-fucking;
+					set up sex length of M in asshole;
+				otherwise if entry MNastiness in sexActList matches the text "piss":
+					say "You [if the player is upright]get on your knees and [end if]wrap your mouth around the tip of [his of M] [manly-penis].[line break][speech style of M]'[T][roman type][line break]";
+					now the stance of the player is 1;
+					calm M;
+					now M is interested;
+					now M is penetrating face;
+					FaceFill urine by a random number between 7 and 14;
+					compute gloryhole key resolution of M;
+					destroy M;
+				otherwise:
+					say "You [if the player is upright]get on your knees and [end if]turn around to ease the [manly-penis] into your [asshole].[line break][speech style of M]'[T][roman type][line break]";
+					now the stance of the player is 1;
+					calm M;
+					now M is interested;
+					now M is penetrating asshole;
+					now M is friendly-fucking;
+					now gloryhole-key-predicament is ass-to-mouth-agreed;
+					set up sex length of M in asshole;
+		otherwise:
+			say "You hear a voice from outside.[line break][second custom style]'[one of]Excuse me, I'm waiting!'[or]Is anyone even in there?!'[or]Finish up before I piss myself!'[or]You're taking forever!'[or]What's the hold up?!'[or]Are you okay in there?!'[in random order][roman type][line break]".
+
+To compute gloryhole key resolution of (M - an ultimate-lesson-actor):
+	if the keys-agreed of gloryhole-key-predicament is 0:
+		say "[BigNameDesc of M] chuckles to [himself of M], and then leaves without saying another word.";
+	otherwise if the player is getting very unlucky:
+		say "[BigNameDesc of M] cackles to [himself of M].[line break][speech style of M]'Later, bitch!'[roman type][line break][big he of M] purposefully leaves without honouring [his of M] end of the agreement. [GotUnluckyFlav]";
+	otherwise:
+		say "[BigNameDesc of M] removes [his of M] [manly-penis] and then passes [if the keys-agreed of gloryhole-key-predicament > 1][the keys-agreed of gloryhole-key-predicament] keys[otherwise]a single key[end if] through the gloryhole.[line break][speech style of M]'[one of]That was awesome[or]That was fun[or]I enjoyed that[or]There you go[or]Here you go, as agreed[or]Good luck[in random order].'[roman type][line break]You hear [NameDesc of M] leave the way [he of M] came.";
+		while navy-monokini is stuck and the keys-agreed of gloryhole-key-predicament > 0:
+			say "You try [one of]a[or]another[or]yet another[stopping] key in the bike lock. ";
+			increase the keys-tried of gloryhole-key-predicament by 1;
+			decrease the keys-agreed of gloryhole-key-predicament by 1;
+			if the keys-tried of gloryhole-key-predicament >= the keys-needed of gloryhole-key-predicament:
+				say "It slides in and clicks open. You've done it - [NameDesc of navy-monokini] is yours!";
+				now navy-monokini is not stuck;
+				now bike-lock-key is carried by the player;
+			otherwise:
+				say "[one of]It won't fit inside the lock at all! [or]It won't go further than part of the way inside. [or]It goes all the way in, but won't turn. [purely at random][one of]Damn[or]Rats[or]Drat[in random order]!".
+
+Report going up when the player is in Toilet02:
+	if current-predicament is gloryhole-key-predicament and navy-monokini is stuck and bike-lock-key is held:
+		say "[bold type]You are able to use the bike lock key to unlock the swimsuit.[roman type][line break]Hooray!";
+		now navy-monokini is not stuck.
+
+
 
 Predicament World ends here.

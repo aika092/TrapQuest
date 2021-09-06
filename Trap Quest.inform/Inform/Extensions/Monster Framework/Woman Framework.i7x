@@ -15,11 +15,11 @@ woman-player has a number called woman-status.
 woman-player has a number called woman-bimbo. the woman-bimbo of woman-player is 2.
 woman-player has a number called woman-old-bimbo. the woman-old-bimbo of woman-player is 2.
 
-woman-player has an indexed text called current-title. Understand the current-title property as describing woman-player. The current-title of woman-player is "Player".
-woman-player has an indexed text called old-title. Understand the old-title property as describing woman-player. The old-title of woman-player is "Player".
+woman-player has a text called current-title. Understand the current-title property as describing woman-player. The current-title of woman-player is "Player".
+woman-player has a text called old-title. Understand the old-title property as describing woman-player. The old-title of woman-player is "Player".
 
-woman-player has an indexed text called current-name. Understand the current-name property as describing woman-player.
-woman-player has an indexed text called old-name. Understand the old-name property as describing woman-player.
+woman-player has a text called current-name. Understand the current-name property as describing woman-player.
+woman-player has a text called old-name. Understand the old-name property as describing woman-player.
 
 Understand "mysterious", "woman" as woman-player.
 The text-shortcut of woman-player is "wo".

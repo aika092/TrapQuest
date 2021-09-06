@@ -90,7 +90,6 @@ To set up predicament status:
 			fully clean C;
 		if C is worn:
 			if C is clothing and C is removable and C is not combat visor and C is not armband and C is not listed in LC: [this removable worn stuff goes to the final room, and the player will be offered to automatically rewear it all]
-				dislodge C;
 				if C is diaper-stack:
 					let N be 1;
 					repeat with D running through the list of stacked diapers:
@@ -107,6 +106,7 @@ To set up predicament status:
 					decrease the raw strength of the player by 1;
 				now C is in Predicament20;
 				unless C is plentiful accessory, add C to predicamentWornList;
+				dislodge C;
 			otherwise if tough-shit is 0 or C is listed in LC or (C is clothing and C is not piercing and C is not combat visor and C is not armband): [anything else (except combat visor and armband) will automatically reappear at the final room. The difference with Game Hates You (tough-shit) is that tattoos & piercings will stay on the player for the duration of the predicament]
 				dislodge C;
 				now C is in Predicament-Pen;
@@ -182,10 +182,10 @@ To teleport via (W - a warp portal):
 		increase NOptions by 1;
 		if newbie tips is 1, say "[one of][newbie style]Newbie tip: The Extra Credit zone puts you in a predicament where you could lose a lot of dignity and 'real world reputation' (the latter of which is only relevant for epilogues). Cursed clothing (except headgear) will be removed but will cost you 1 strength if you don't put it back on after you complete the task. [if tough-shit is 0]Other things like tattoos and make up will disappear for the duration of the predicament and reappear at the end. [end if]You will earn one 'trophy' which gives you the option to tweak a rule of the game universe and also gives you a permanent +1 to luck rolls. Finally, each time you go into the predicament zone, one of each type of crafting token will be lying on the floor somewhere in the region. So if you happen to stumble across any, you can often nab yourself that extra bonus. Or if you're brave, you could even go searching for them...[roman type][line break][or][stopping]";
 	if NOptions is 0, say "BUG! Player was able to enter a warp portal with zero viable exits...";
-	unless playerRegion is not school or the printed name of (the chosen numerical response of NOptions) matches the text "Extra" or the player is not the donator, say "[line break][newbie style]You are currently unable to access the Extra Credit Zone because [if ex-princess is unconcerned]the Princess has purged the Academy of its staff[otherwise if predicamentJustDone is true and (class-time <= 0 or class-time is 1000)]you haven't gone to a normal class yet[otherwise if predicamentJustDone is true]you haven't spent enough time in the main game world since your most recent extra credit session[otherwise if the number of appropriate eligible predicaments is 0]there are no more predicaments coded for the combination of your current rank, sex, and fetish selection[otherwise if the latex-transformation of the player > 0 or black hood is worn]it wouldn't interact well with your rubbery state[otherwise if (class-time is 1000 or class-time < 0) and armband is worn and armband is not solid gold and there is an alive undefeated correctly-ranked teacher]you need to go to class before you can apply for extra credit[otherwise if there is worn locked clothing]you are wearing locked clothing[otherwise if there is worn glued clothing]you are wearing glued clothing[otherwise]something you are currently wearing (not including headgear) is flagged as not being appropriate to remove (perhaps something with the curse quest of wearing it until your next lesson)[end if].[roman type][line break]";
+	unless playerRegion is not school or the chosen numerical response of NOptions matches the text "Extra" or the player is not the donator, say "[line break][newbie style]You are currently unable to access the Extra Credit Zone because [if ex-princess is unconcerned]the Princess has purged the Academy of its staff[otherwise if predicamentJustDone is true and (class-time <= 0 or class-time is 1000)]you haven't gone to a normal class yet[otherwise if predicamentJustDone is true]you haven't spent enough time in the main game world since your most recent extra credit session[otherwise if the number of appropriate eligible predicaments is 0]there are no more predicaments coded for the combination of your current rank, sex, and fetish selection[otherwise if the latex-transformation of the player > 0 or black hood is worn]it wouldn't interact well with your rubbery state[otherwise if (class-time is 1000 or class-time < 0) and armband is worn and armband is not solid gold and there is an alive undefeated correctly-ranked teacher]you need to go to class before you can apply for extra credit[otherwise if there is worn locked clothing]you are wearing locked clothing[otherwise if there is worn glued clothing]you are wearing glued clothing[otherwise]something you are currently wearing (not including headgear) is flagged as not being appropriate to remove (perhaps something with the curse quest of wearing it until your next lesson)[end if].[roman type][line break]";
 	if NOptions > 1, compute multiple choice question;
 	otherwise now player-numerical-response is 1;
-	let T be the printed name of chosen numerical response;
+	let T be chosen numerical response;
 	if T matches the text "Dungeon":
 		now the destination of W is the Dungeon;
 	otherwise if T matches the text "Academy" or T matches the text "Extra":
@@ -319,8 +319,10 @@ To teleport via (W - a warp portal):
 		if NPF is 1, now D is next-portal-forbidden;
 		update player region;
 		now the location of the player is discovered;
+		repeat with MT running through milk-tanks:
+			DoseDown MT by 2;
 		display entire map;
-		say "As you go through the portal, you appear in the [location of the player][one of]! There is an identical green portal in this room too, to allow you to go back and forth![or]![stopping]";
+		say "As you go through the portal, you appear in the [location of the player][one of]! There is an identical green portal in this room too, to allow you to go back and forth[or][stopping]!";
 	compute clothing cleanup.
 
 Warp Portal ends here.

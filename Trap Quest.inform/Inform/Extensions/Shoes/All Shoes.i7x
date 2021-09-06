@@ -23,9 +23,6 @@ To decide which number is the initial cringe of (C - a sneakers):
 To say ClothingDesc of (C - a sneakers):
 	say "A pair of sneakers[if the player is presenting as male]. Probably meant for women, but it's not super obvious[end if].".
 
-To decide which object is the potential-upgrade-target of (C - a sneakers):
-	decide on a random off-stage white rollerskates.
-
 grey-sneakers is a sneakers. The printed name of grey-sneakers is "[clothing-title-before]pair of grey sneakers[clothing-title-after]". The text-shortcut of grey-sneakers is "grs".
 
 Definition: grey-sneakers is grey themed: decide yes.
@@ -35,7 +32,11 @@ Figure of grey-sneakers is the file "Items/Clothes/Lower/Feet/sneakers1.png".
 To decide which figure-name is the clothing-image of (C - grey-sneakers):
 	decide on figure of grey-sneakers.
 
-rollerskates is a kind of shoes. A rollerskates is manly. Understand "rollerskates", "skates" as rollerskates.
+A rollerskates is a kind of shoes. A rollerskates is transformation-rare. Understand "rollerskates", "skates" as rollerskates.
+
+Definition: a rollerskates is same-type:
+	if theme-share-target is rollerskates or theme-share-target is sneakers, decide yes;
+	decide no.
 
 To say ShoeType of (S - a rollerskates):
 	say "rollerskates".
@@ -123,76 +124,84 @@ After going when there are worn rollerskates:
 	if (the noun is up or the noun is down) and map images > 0, display entire map.
 ]
 
-white rollerskates is a kind of rollerskates. Understand "white" as white rollerskates.
+white-rollerskates is a rollerskates. The printed name of white-rollerskates is "[clothing-title-before]pair of white rollerskates[clothing-title-after]". The text-shortcut of white-rollerskates is "wrsk". Understand "white" as white-rollerskates.
 
-Definition: a white rollerskates is white themed: decide yes.
+Figure of white-rollerskates is the file "Items/Clothes/Lower/Feet/Rollerskates/skates1.png".
 
-To say ClothingDesc of (C - a white rollerskates):
-	say "A pair of white rollerskates with [if C is red-wheeled white-rollerskates]red wheels[otherwise if C is pink-wheeled white-rollerskates]pink wheels[otherwise]blue wheels[end if]. [SteadinessDesc of C]".
+To decide which figure-name is the clothing-image of (C - white-rollerskates):
+	decide on figure of white-rollerskates.
 
-To decide which object is the potential-upgrade-target of (C - a white rollerskates):
-	decide on a random off-stage nonwhite rollerskates.
+Definition: white-rollerskates is white themed: decide yes.
+Definition: white-rollerskates is pink themed: decide yes.
 
-Part 1 - Red Wheeled
+To say ClothingDesc of (C - white-rollerskates):
+	say "A pair of white rollerskates with pink wheels. [SteadinessDesc of C]".
 
-red-wheeled white-rollerskates is a white rollerskates. The printed name of red-wheeled white-rollerskates is "[clothing-title-before]pair of red wheeled white rollerskates[clothing-title-after]". The text-shortcut of red-wheeled white-rollerskates is "rwwr".
+red-rollerskates is a rollerskates. The printed name of red-rollerskates is "[clothing-title-before]pair of red rollerskates[clothing-title-after]". The text-shortcut of red-rollerskates is "rrsk". Understand "red" as red-rollerskates.
 
-Definition: red-wheeled white-rollerskates is red themed: decide yes.
+Figure of red-rollerskates is the file "Items/Clothes/Lower/Feet/Rollerskates/skates2.png".
 
-Figure of red-wheeled white-rollerskates is the file "Items/Clothes/Lower/Feet/Rollerskates/whiteskates1.png".
+To decide which figure-name is the clothing-image of (C - red-rollerskates):
+	decide on figure of red-rollerskates.
 
-To decide which figure-name is the clothing-image of (C - red-wheeled white-rollerskates):
-	decide on figure of red-wheeled white-rollerskates.
+red-rollerskates is manly. red-rollerskates is plentiful.
+Definition: red-rollerskates is red themed: decide yes.
+Definition: red-rollerskates is black themed: decide yes.
+To decide which number is the initial outrage of (C - red-rollerskates):
+	if diaper quest is 1, decide on 0;
+	decide on 1.
+To decide which number is the initial cringe of (C - red-rollerskates):
+	decide on 2.
 
-Part 2 - Blue Wheeled
+To say ClothingDesc of (C - red-rollerskates):
+	say "A pair of red rollerskates with black wheels. [SteadinessDesc of C]".
 
-blue-wheeled white-rollerskates is a white rollerskates. The printed name of blue-wheeled white-rollerskates is "[clothing-title-before]pair of blue wheeled white rollerskates[clothing-title-after]". The text-shortcut of blue-wheeled white-rollerskates is "bwwr".
+pink-rollerskates is a rollerskates. The printed name of pink-rollerskates is "[clothing-title-before]pair of pink rollerskates[clothing-title-after]". The text-shortcut of pink-rollerskates is "prsk". Understand "pink" as pink-rollerskates.
 
-Definition: blue-wheeled white-rollerskates is blue themed: decide yes.
-
-Figure of blue-wheeled white-rollerskates is the file "Items/Clothes/Lower/Feet/Rollerskates/whiteskates2.png".
-
-To decide which figure-name is the clothing-image of (C - blue-wheeled white-rollerskates):
-	decide on figure of blue-wheeled white-rollerskates.
-
-Part 3 - Pink Wheeled
-
-pink-wheeled white-rollerskates is a white rollerskates. pink-wheeled white-rollerskates is womanly. The printed name of pink-wheeled white-rollerskates is "[clothing-title-before]pair of pink wheeled white rollerskates[clothing-title-after]". The text-shortcut of pink-wheeled white-rollerskates is "pwwr".
-
-Definition: pink-wheeled white-rollerskates is pink themed: decide yes.
-
-Figure of pink-wheeled white-rollerskates is the file "Items/Clothes/Lower/Feet/Rollerskates/whiteskates3.png".
-
-To decide which figure-name is the clothing-image of (C - pink-wheeled white-rollerskates):
-	decide on figure of pink-wheeled white-rollerskates.
-
-nonwhite rollerskates is a kind of rollerskates. a nonwhite rollerskates is usually unique.
-
-To say ClothingDesc of (C - a nonwhite rollerskates):
-	say "These [if C is pink-rollerskates]pink[otherwise]red[end if] rollerskates are made even more eye-catching and girly thanks to their colour. [SteadinessDesc of C]".
-
-Part 1 - Pink Rollerskates
-
-pink-rollerskates is a nonwhite rollerskates. pink-rollerskates is womanly. Understand "pink" as pink-rollerskates. The printed name of pink-rollerskates is "[clothing-title-before]pair of pink rollerskates[clothing-title-after]". The text-shortcut of pink-rollerskates is "pnkr".
-
-Figure of pink-rollerskates is the file "Items/Clothes/Lower/Feet/Rollerskates/pinkskates1.png".
+Figure of pink-rollerskates is the file "Items/Clothes/Lower/Feet/Rollerskates/skates3.png".
 
 To decide which figure-name is the clothing-image of (C - pink-rollerskates):
 	decide on figure of pink-rollerskates.
 
 Definition: pink-rollerskates is pink themed: decide yes.
 
-Part 2 - Red Rollerskates
+To say ClothingDesc of (C - pink-rollerskates):
+	say "A pair of pink rollerskates with pink wheels. [SteadinessDesc of C]".
 
-black-wheeled red-rollerskates is a nonwhite rollerskates. Understand "black", "wheeled", "red" as black-wheeled red-rollerskates. The printed name of black-wheeled red-rollerskates is "[clothing-title-before]pair of black wheeled red rollerskates[clothing-title-after]". The text-shortcut of black-wheeled red-rollerskates is "bwrr".
+ultra-pink-rollerskates is a rollerskates. The printed name of ultra-pink-rollerskates is "[clothing-title-before]pair of ultra pink rollerskates[clothing-title-after]". The text-shortcut of ultra-pink-rollerskates is "ursk". Understand "ultra", "pink" as ultra-pink-rollerskates.
 
-Figure of black-wheeled red-rollerskates is the file "Items/Clothes/Lower/Feet/Rollerskates/redskates1.png".
+Figure of ultra-pink-rollerskates is the file "Items/Clothes/Lower/Feet/Rollerskates/skates4.png".
 
-Definition: black-wheeled red-rollerskates is red themed: decide yes.
-Definition: black-wheeled red-rollerskates is black themed: decide yes.
+To decide which figure-name is the clothing-image of (C - ultra-pink-rollerskates):
+	decide on figure of ultra-pink-rollerskates.
 
-To decide which figure-name is the clothing-image of (C - black-wheeled red-rollerskates):
-	decide on figure of black-wheeled red-rollerskates.
+Definition: ultra-pink-rollerskates is pink themed: decide yes.
+To decide which number is the initial outrage of (C - ultra-pink-rollerskates):
+	if diaper quest is 1, decide on 0;
+	decide on 3.
+
+To say ClothingDesc of (C - ultra-pink-rollerskates):
+	say "A pair of vibrant ultra pink rollerskates with pink wheels. [SteadinessDesc of C]".
+
+blue-and-pink-rollerskates is a rollerskates. The printed name of blue-and-pink-rollerskates is "[clothing-title-before]pair of blue and pink rollerskates[clothing-title-after]". The text-shortcut of blue-and-pink-rollerskates is "brsk". Understand "blue", "blue and", "pink" as blue-and-pink-rollerskates.
+
+Figure of blue-and-pink-rollerskates is the file "Items/Clothes/Lower/Feet/Rollerskates/skates5.png".
+
+To decide which figure-name is the clothing-image of (C - blue-and-pink-rollerskates):
+	decide on figure of blue-and-pink-rollerskates.
+
+Definition: blue-and-pink-rollerskates is pink themed: decide yes.
+Definition: blue-and-pink-rollerskates is blue themed: decide yes.
+To decide which number is the initial outrage of (C - blue-and-pink-rollerskates):
+	if diaper quest is 1, decide on 0;
+	decide on 3.
+To decide which number is the initial cringe of (C - blue-and-pink-rollerskates):
+	decide on 4.
+
+To say ClothingDesc of (C - blue-and-pink-rollerskates):
+	say "A pair of vibrant ultra pink rollerskates with two pink wheels and two blue wheels. The laces and straps are also blue. [SteadinessDesc of C]".
+
+
 
 
 All Shoes ends here.

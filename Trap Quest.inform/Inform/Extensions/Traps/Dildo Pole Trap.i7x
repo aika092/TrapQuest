@@ -192,7 +192,7 @@ To compute DollObservation humiliation:
 		[Could test for friendly or unfriendly in the taunting function]
 		compute the dildo stuck taunting of M;
 		if M is friendly:
-			if the player is modest, say "[one of]You hope [he of M] won't think less of you.[or][variable custom style]How embarrassing![variable custom style][or]You sense [he of M] losing respect for you.[or]How bad would it be if they let your friends watch through the eyes of these NPCs?[or]Mild disgust curdles [his of M] expression.[or][big he of M] looks highly unimpressed by your shameful display.[in random order]";
+			if the player is modest, say "[one of]You hope [he of M] won't think less of you.[or][variable custom style]How embarrassing![roman type][or]You sense [he of M] losing respect for you.[or]How bad would it be if they let your friends watch through the eyes of these NPCs?[or]Mild disgust curdles [his of M] expression.[or][big he of M] looks highly unimpressed by your shameful display.[in random order]";
 			otherwise say "[one of][variable custom style]I wonder if [he of M] is enjoying the show?[roman type][line break][or][variable custom style]What does [he of M] want?[roman type][line break][or][big his of M] disgust actually makes the experience more exciting.[or][big he of M] shakes [his of M] head at your lewd display.[in random order]";
 			FavourDown M;
 		moderateHumiliate;
@@ -240,6 +240,7 @@ Check resisting when doll-stuck-num > 0:
 
 dildoJumpSucceeded is initially true.
 
+[The player can get off (heh) by jumping off; otherwise if they cum, the dildo retracts and frees them.]
 To Jump From The Dildo:
 	if doll-stuck-num > 0:
 		say "How? Your feet aren't even touching the ground. You [doll-stuck].";
@@ -250,12 +251,15 @@ To Jump From The Dildo:
 	compute upright fatigue gain;
 	let Y be a random trap penetrating a fuckhole;
 	let H be a random worn hindrance-enabling shoes;
+	let O be a random fuckhole penetrated by Y;
 	if the player is clothing stuck:
 		let C be a random stuck clothing worn by the player;
 		if C is cursed:
 			say "Your [ShortDesc of C] [if C is shoes]are[otherwise]is[end if] stuck, stopping you from jumping off the dildo!";
 		otherwise:
 			say "You can't jump because your [printed name of C] is stuck in place.";
+		say "[one of]But you refuse to give up! Your [printed name of C] force you to have to make the tiniest of movements, so you try to inch yourself off the dildo.[or]But you keep trying.[stopping] [one of]You gingerly make a tiny jump[if H is shoes] in your high heels[end if], pumping the dildo into your [variable O].[or]You once again jerk upwards, feeling the dildo slip a little way out, then back in again.[or]You give another little jump, biting your lip from the exquisite sensation as you try real hard to get off. Um... Like, jump off.[or]You think you almost jiggled up high enough to get free that time.[or]You wobble [if H is shoes]in your [printed name of H] [end if]as the dildo plunges back into your [variable O]. Mngh![then at random]";
+		ruin O;
 	otherwise if H is shoes or (dildoJumpSucceeded is true and clumsy is 1 and a random number between 0 and 1 < clumsy april fools):
 		let D be the dexterity of the player;
 		let W be the weight of the player;
@@ -318,7 +322,7 @@ If the player can't faint, then we need to find another way of them getting off 
 
 +!]
 To compute automatic jump success of (Y - a trap):
-	say "Your high heels force you to have to make the tiniest of movements as inch yourself off the dildo, slowly fucking yourself raw.";
+	say "Your high heels force you to have to make the tiniest of movements as you inch yourself off the dildo, slowly fucking yourself raw.";
 	now the soreness of a random fuckhole penetrated by Y is 10;
 	now busy is 0;
 	dislodge Y;

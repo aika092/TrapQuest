@@ -414,37 +414,40 @@ Chapter 3 - Ass Filling
 assfilled is initially false. [has the player ever had cum in their butt?]
 
 To Assfill (X - a number):
-	if lipstick collar is worn, increase X by 1;
-	let M be a random wrapped monster penetrating asshole;
-	if M is monster:
-		now X is 0;
-		compute condom filling of M;
+	if diaper quest is 1:
+		AssFill X water;
 	otherwise:
-		compute father material of asshole;
-		now assfilled is true;
-	if invigoration-timer of invigoration-elixir > 0 and the soreness of asshole > 0 and X > 0:
-		say "As the [semen] rushes through your system into your [BellyDesc], the lining of your [asshole] is somehow healed!";
-		if the soreness of asshole > X, decrease the soreness of asshole by X;
-		otherwise now the soreness of asshole is 0;
-		now the tolerated of asshole is 0;
-	if cum dump's undergarment is worn and the body soreness of the player > 0 and X > 1:
-		say "As the [semen] rushes through your system into your [BellyDesc], you feel your body somehow being healed!";
-		if the body soreness of the player > X / 2, decrease the body soreness of the player by X / 2;
-		otherwise now the body soreness of the player is 0;
-	if slimegirl is worn:
-		say "The [semen] flowing into your [asshole] is consumed by [NameDesc of slimegirl]! [big he of slimegirl] communicates with you telepathically.";
-		say "[second custom style]'[one of]Yum[or]Ooh, hooray[or]Yippee[or]Ooh, goodie[at random][if the hunger of slimegirl > 2]! I feel better now...'[otherwise]!'[end if][roman type][line break]";
-		now the hunger of slimegirl is 0;
-		if the intensity of slimegirl > 0:
-			say "You feel the negative effects of [NameDesc of slimegirl] on your mental state fade away.";
-			now the intensity of slimegirl is 0;
-		now the timetaken of slimegirl is 0;
-		now X is 0;
-	if a random number between 0 and 5 < X, SemenAddictUp 1;
-	while X > 0:
-		increase the semen volume of belly by 1;
-		decrease X by 1;
-	overflow.
+		if lipstick collar is worn, increase X by 1;
+		let M be a random wrapped monster penetrating asshole;
+		if M is monster:
+			now X is 0;
+			compute condom filling of M;
+		otherwise:
+			compute father material of asshole;
+			now assfilled is true;
+		if invigoration-timer of invigoration-elixir > 0 and the soreness of asshole > 0 and X > 0:
+			say "As the [semen] rushes through your system into your [BellyDesc], the lining of your [asshole] is somehow healed!";
+			if the soreness of asshole > X, decrease the soreness of asshole by X;
+			otherwise now the soreness of asshole is 0;
+			now the tolerated of asshole is 0;
+		if cum dump's undergarment is worn and the body soreness of the player > 0 and X > 1:
+			say "As the [semen] rushes through your system into your [BellyDesc], you feel your body somehow being healed!";
+			if the body soreness of the player > X / 2, decrease the body soreness of the player by X / 2;
+			otherwise now the body soreness of the player is 0;
+		if slimegirl is worn:
+			say "The [semen] flowing into your [asshole] is consumed by [NameDesc of slimegirl]! [big he of slimegirl] communicates with you telepathically.";
+			say "[second custom style]'[one of]Yum[or]Ooh, hooray[or]Yippee[or]Ooh, goodie[at random][if the hunger of slimegirl > 2]! I feel better now...'[otherwise]!'[end if][roman type][line break]";
+			now the hunger of slimegirl is 0;
+			if the intensity of slimegirl > 0:
+				say "You feel the negative effects of [NameDesc of slimegirl] on your mental state fade away.";
+				now the intensity of slimegirl is 0;
+			now the timetaken of slimegirl is 0;
+			now X is 0;
+		if a random number between 0 and 5 < X, SemenAddictUp 1;
+		while X > 0:
+			increase the semen volume of belly by 1;
+			decrease X by 1;
+		overflow.
 
 To Assfill (X - a number) with (L - semen):
 	Assfill X.
@@ -528,6 +531,7 @@ To AssSquirt:
 	[This makes sure that the game doesn't start counting down to another expulsion whilst one is still happening]
 	reset all monster reactions;
 	now currently-squirting is 1;
+	now player-just-enema-leaked is true;
 	now the squirt timer of belly is -1;
 	now small-egg-count is 0;
 	now medium-egg-count is 0;
@@ -709,9 +713,12 @@ To AssSquirt:
 			if liquid-total > 0:
 				[On the first round, we check if the player wants to collect some in a vessel, and output some unique flavour text.]
 				if turn-count is 0 or collecting is a thing:
-					if debugmode is 1, say "there are [open-topped-vessel-count] open topped vessels held by the player.";
+					if debugmode is 1, say "there are [number of carried open topped vessels] open topped vessels and [number of carried lid topped vessels] lid topped vessels carried by the player.";
 					if the player is not flying and the player is not in a nonstandard room and collecting is nothing and the player is not ass protected and the player is not immobile and the player is not in danger and (water-count < liquid-total):
 						let LV be a list of things;
+						if voluntarySquatting is 1:
+							repeat with V running through carried lid topped vessels:
+								add V to LV;
 						repeat with V running through carried open topped vessels:
 							add V to LV;
 						[if the number of entries in LV > 1:
@@ -748,7 +755,7 @@ To AssSquirt:
 					otherwise:
 						say "You [if voluntarySquatting is 1]close your eyes[otherwise]freeze still on the spot[end if] as you expel ";
 					say "a [if liquid-total > 6]huge [cascade][otherwise]few squirts[end if] of ";
-					if urine-count is 0 and semen-count is 0 and milk-count is 0, say "[if diaper messing >= 3 and rectum > 1][one of]murky[or]lumpy[in random order] brown water[otherwise if there is a worn total protection diaper]enema water[otherwise]clear water[end if] ";
+					if urine-count is 0 and semen-count is 0 and milk-count is 0, say "[if diaper messing >= 3 and rectum > 1][one of]murky[or]lumpy[in random order] brown water[otherwise if diaper messing >= 3]enema water[otherwise]clear water[end if] ";
 					otherwise say "[if urine-count > 0 and semen-count > 0 and milk-count > 0]what must be a disgraceful mix of [urine], [milk] and [semen][otherwise if urine-count > 0 and semen-count > 0]what seems like a mix of [urine] and [semen][otherwise if urine-count > 0 and milk-count > 0]what seems like a mix of [urine] and [milk][otherwise if milk-count > 0 and semen-count > 0]what seems like a mix of [milk] and [semen][otherwise if urine-count > 0][urine][otherwise if semen-count > 0][semen][otherwise if milk-count > 0][milk][otherwise]BUG - can't find any liquid. Report this bug please[end if], directly from your [asshole] ";
 					say "[if the player is ass protected]into [NameDesc of random worn bottom level ass protection clothing][otherwise if collecting is a thing and collecting is not yourself]into [NameDesc of collecting][otherwise]onto your [ShortDesc of thighs][end if].";
 					if there is a worn total protection diaper and the player is full and diaper messing >= 3:
@@ -920,6 +927,7 @@ To AssSquirt:
 				say "[bold type]Your [ShortDesc of royal circlet] [bold type]shakes angrily at you expelling the milk before it has finished brewing, and you feel more stiff.[roman type][line break]";
 				DexDown 1;
 	now currently-squirting is 0;
+	now voluntarySquatting is 0;
 	if the semen volume of belly is 0, cancel father material of asshole.
 
 To say EggBeginsFlav:
@@ -1155,7 +1163,7 @@ To compute enema floor reaction of (M - a person):
 			distract M.
 
 To say EnemaFloorReactionFlav of (M - a person):
-	if M is intelligent, say "[BigNameDesc of M] [if M is interested]seems unimpressed[otherwise]turns to look at you[end if].[line break][speech style of M]'Disgusting[if M is unfriendly monster and diaper quest is 1]. You need further punishment[end if].'[roman type][line break][if the humiliation of the player < HUMILIATION-DISGRACED + 1000][one of]You turn a bright shade of red[or]You blush brightly with shame[or]You shiver with self-consciousness[or]You turn red-faced with shame[in random order].[end if]".
+	if M is intelligent, say "[BigNameDesc of M] [if M is interested]seems unimpressed[otherwise]turns to look at you[end if].[line break][speech style of M]'Disgusting[if M is unfriendly monster and diaper quest is 1]. You need further punishment[end if].'[roman type][line break][moderateHumiliateReflect]".
 
 To compute enema reaction of (M - a person) into (C - a clothing):
 	compute enema floor reaction of M.

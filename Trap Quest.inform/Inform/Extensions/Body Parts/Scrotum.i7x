@@ -115,12 +115,12 @@ REQUIRES COMMENTING
 To decide which number is cumLoad:
 	decide on the size of scrotum.
 
-[!<SayShortBallsDesc>+
+[!<SayShortDescOfScrotum>+
 
 REQUIRES COMMENTING
 
 +!]
-To say ShortBallsDesc:
+To say ShortDesc of (B - scrotum):
 	if the size of scrotum <= 0:
 		say "internal testicles";
 	otherwise if the size of scrotum < 3:
@@ -138,7 +138,7 @@ REQUIRES COMMENTING
 
 +!]
 Definition: yourself is possessing a scrotum:
-	if the player is sexed male and the size of scrotum is not 0, decide yes;
+	if the player is possessing a penis and the size of scrotum is not 0, decide yes;
 	decide no.
 
 To say ScrotumModesty:

@@ -58,6 +58,9 @@ To decide which figure-name is clothing-image of (C - pale-panties):
 To decide which figure-name is clothing-image of (C - pink-kitty-panties):
 	decide on figure of panties 10.
 
+To decide which figure-name is clothing-image of (C - blue-thirsty-panties):
+	decide on figure of panties 11.
+
 white-panties is a panties. white-panties is sheer-when-wet. The text-shortcut of white-panties is "whp".
 To say selfexamineuniquetitle of (G - white-panties):
 	say "pair of white 'SPANK ME' panties".
@@ -174,7 +177,7 @@ To compute early pregnancy eagerness:
 		if the player is not possessing a vagina, say "Somewhere deep down, something clicks, and you realise you wish you could get pregnant and have babies.";
 		otherwise say "[if the pregnancy of the player is 0]You can almost hear your womb cry out for something to fill it![otherwise]You feel an energetic kick from your stomach. Wow, the baby is growing fast![end if]";
 		if the pregnancy rate of the player is 1, now the pregnancy rate of the player is 2;
-		if the size of penis > min penis size, PenisDown 1.
+		if the mystical size of penis > min penis size, SpecialPenisDown 1. [#LXorDD]
 
 blue-panties is a panties. The text-shortcut of blue-panties is "bpa".
 To say selfexamineuniquetitle of (G - blue-panties):
@@ -221,6 +224,16 @@ To say UniqueClothingDesc of (G - pink-kitty-panties):
 Definition: pink-kitty-panties is cat themed: decide yes.
 Definition: pink-kitty-panties is pink themed: decide yes.
 
+blue-thirsty-panties is a panties. Understand "blue", "thirsty" as blue-thirsty-panties. The text-shortcut of blue-thirsty-panties is "thp".
+To say selfexamineuniquetitle of (G - blue-thirsty-panties):
+	say "pair of blue thirsty panties".
+To say UniqueClothingDesc of (G - blue-thirsty-panties):
+	say "This pair of blue panties has the word 'Thirsty' printed on it, fashioned in a way where the letters look like they are made of a runny white liquid.".
+Definition: blue-thirsty-panties is semen themed: decide yes.
+Definition: blue-thirsty-panties is blue themed: decide yes.
+To decide which number is the unique outrage of (C - blue-thirsty-panties):
+	decide on 2.
+
 Figure of panties 1 is the file "Items/Clothes/Lower/Underwear/Panties/panties1.png".
 Figure of panties special 1 is the file "Items/Clothes/Lower/Underwear/Panties/pantiesspecial1.png".
 Figure of panties 2 is the file "Items/Clothes/Lower/Underwear/Panties/panties2.png".
@@ -234,5 +247,6 @@ Figure of panties 7 is the file "Items/Clothes/Lower/Underwear/Panties/panties7.
 Figure of panties 8 is the file "Items/Clothes/Lower/Underwear/Panties/panties8.png".
 Figure of panties 9 is the file "Items/Clothes/Lower/Underwear/Panties/panties9.png".
 Figure of panties 10 is the file "Items/Clothes/Lower/Underwear/Panties/panties10.png".
+Figure of panties 11 is the file "Items/Clothes/Lower/Underwear/Panties/panties11.png".
 
 Panties ends here.

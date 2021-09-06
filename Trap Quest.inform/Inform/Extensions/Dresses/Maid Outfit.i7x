@@ -152,7 +152,8 @@ To say ClothingDesc of (M - fetish-maid-outfit):
 
 To decide which number is the initial outrage of (C - fetish-maid-outfit):
 	decide on 6.
-
+To decide which number is the crotch-tightness of (C - fetish-maid-outfit):
+	decide on 3.
 To decide which number is the initial armour of (C - fetish-maid-outfit):
 	decide on 6.
 
@@ -220,7 +221,8 @@ To say ClothingDesc of (M - V-shape-maid-outfit):
 
 To decide which number is the initial outrage of (C - V-shape-maid-outfit):
 	decide on 9.
-
+To decide which number is the crotch-tightness of (C - V-shape-maid-outfit):
+	decide on 4.
 To decide which number is the initial armour of (C - V-shape-maid-outfit):
 	decide on 4.
 

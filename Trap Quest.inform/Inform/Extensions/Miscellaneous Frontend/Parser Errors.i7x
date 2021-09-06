@@ -13,7 +13,7 @@ Rule for printing a parser error when the latest parser error is the didn't unde
 	if the bimbo of the player > 12, say "[second custom style]I'm such a dumb slut I can't even write words in my head properly! I should probably try again, I guess.[roman type][line break]" instead;
 	otherwise say "I didn't understand that phrase." instead.
 
-Last error is indexed text that varies. The last error is "derp".
+Last error is a text that varies. The last error is "derp".
 
 Rule for printing a parser error when the latest parser error is the not a verb I recognise error:
 	now the last error is the player's command;

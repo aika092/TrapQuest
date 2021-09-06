@@ -1,62 +1,41 @@
 Bunny Ears TQ by Headgear begins here.
 
-A bunny ears is a kind of headgear. Understand "pair", "of" as bunny ears. A bunny ears is blondeness-positive. A bunny ears is brightness-positive. A bunny ears is usually hair growing. A bunny ears is usually dexterity-influencing.
+A bunny ears is a kind of headgear. Understand "pair", "pair of", "bunny", "ears" as bunny ears. A bunny ears is blondeness-positive. A bunny ears is brightness-positive. A bunny ears is usually hair growing. A bunny ears is usually dexterity-influencing.
 
 Definition: a bunny ears is transformation-protected: decide no.
 Definition: a bunny ears is bunny themed: decide yes.
 
 Part 1 - Bunny Waitress Ears
 
-bunny waitress ears is a bunny ears. bunny waitress ears is satin. bunny waitress ears has a number called service-ready.
+A bunny waitress ears is a kind of bunny ears.
 
-Definition: bunny waitress ears is fluid immune: decide no.
+Definition: a bunny waitress ears is waitress-enabling: decide yes.
 
-Figure of bunny waitress ears is the file "Items/Accessories/Head/bunnyears1.png".
-
-The printed name of bunny waitress ears is "[clothing-title-before]pair of bunny ears[clothing-title-after]". The text-shortcut of bunny waitress ears is "bne".
-
-To decide which figure-name is the clothing-image of (C - bunny waitress ears):
-	decide on figure of bunny waitress ears.
-
-To say ClothingDesc of (H - bunny waitress ears):
-	say "A pair of fake bunny waitress ears on a headband, with a frilly piece of fabric between the ears.".
-
-To say ShortDesc of (H - bunny waitress ears):
-	say "fake bunny waitress ears".
-
-To compute SelfExamineDesc of (H - bunny waitress ears):
-	let X be the largeness of hair;
-	say "You are wearing a pair of fake bunny ears on top of your [ShortDesc of hair]. ".
-
-Definition: bunny waitress ears is black themed: decide yes.
-
-To decide which object is the unique-upgrade-target of (C - bunny waitress ears):
-	if egg laying fetish is 0, decide on nothing; [TODO: change]
-	if the total egg fill of belly > 0, decide on a random off-stage rubber bunny ears;
-	decide on nothing.
+To say ShortDesc of (H - a bunny waitress ears):
+	say "bunny ears".
 
 To decide which number is the intelligence-influence of (C - a bunny waitress ears):
 	let I be the magic-modifier of C;
-	if the service-ready of C > 0, increase I by 3;
+	if service-ready is true, increase I by 3;
 	decide on I.
 
 To compute unique periodic effect of (C - bunny waitress ears):
 	let G be a random held champagne-glass;
 	let CG be a random held cocktail-glass;
 	if G is empty bottle or CG is empty bottle:
-		if the service-ready of C is 1:
+		if service-ready is true:
 			say "[bold type]The bonus intelligence-enhancing effect of your bunny ears has ended.[roman type][line break]";
-			now the service-ready of C is 0;
+			now service-ready is false;
 	otherwise if G is bottle or CG is bottle:
-		if the service-ready of C is 0:
+		if service-ready is false:
 			say "[bold type]You can feel your bunny ears making you much [smarter][one of]![line break][variable custom style]Wow, I feel amazing while carrying around [if G is bottle and CG is bottle]these drinks[otherwise]this drink[end if], just like a good bunny waitress![roman type][line break][or] again![stopping][roman type][line break]";
-			now the service-ready of C is 1.
+			now service-ready is true.
 
 To decide which number is the waitress bartering value of (T - a bottle) for (M - a monster):
 	if M is intelligent and M is human and M is friendly and T is non-empty:
 		if the class of the player is royal slave and the fill-colour of T is white:
 			decide on 5;
-		if (the class of the player is bunny and bunny waitress ears is worn) or there is worn serving-bondage or the class of the player is "cafe maid":
+		if there is a worn waitress-enabling wearthing:
 			if the fill-colour of T is golden or the fill-colour of T is murky or the fill-colour of T is creamy:
 				if M is female, decide on 2;
 			otherwise:
@@ -65,7 +44,7 @@ To decide which number is the waitress bartering value of (T - a bottle) for (M 
 
 To say OfferFlav of (T - a waitress vessel):
 	if the player is able to speak:
-		say "[if the second noun is unfriendly][variable custom style]'Please, take this instead!'[otherwise if bunny waitress ears is worn and T is non-empty][variable custom style]'Would you care for a drink?'[otherwise if the class of the player is royal slave][variable custom style]'Please accept this freshly brewed milk as a gift from the Princess.'[otherwise][variable custom style]'Would you be interested in this?'[end if][roman type][line break]";
+		say "[if the second noun is unfriendly][variable custom style]'Please, take this instead!'[otherwise if there is worn waitress-enabling wearthing and T is non-empty][variable custom style]'Would you care for a drink?'[otherwise if the class of the player is royal slave][variable custom style]'Please accept this freshly brewed milk as a gift from the Princess.'[otherwise][variable custom style]'Would you be interested in this?'[end if][roman type][line break]";
 	otherwise if the player is able to make sounds:
 		say "[variable custom style][muffled sounds][roman type][line break]";
 	otherwise:
@@ -167,7 +146,7 @@ To compute service spill punishment:
 		transform black maid headdress into cafe maid headdress;
 		let O be a random worn overdress;
 		if O is clothing and O is not cafe-maid-outfit, transform O into cafe-maid-outfit;
-	otherwise if bondage protection is 1 or the class of the player is bunny or the class of the player is "cafe maid":
+	otherwise if bondage protection is 1 or there is a worn waitress-enabling wearthing:
 		if the total weighty volume of hips < the largeness of breasts and the player is not bottom heavy:
 			say "You feel your butt expanding [if the silicone volume of hips > 0]with more silicone [otherwise if artificial enhancements fetish is 1]with silicone implants [end if]as punishment[if the class of the player is bunny][one of] for being a clumsy waitress[or][stopping][end if]!";
 			if artificial enhancements fetish is 1, AssImplantsUp 2;
@@ -177,14 +156,72 @@ To compute service spill punishment:
 			if artificial enhancements fetish is 1, BustImplantsUp 4;
 			otherwise BustUp 4.
 
-Chapter - Class Outfit
 
-To compute class outfit of (H - bunny waitress ears):
+playdude bunny waitress ears is a bunny waitress ears. playdude bunny waitress ears is satin.
+
+Definition: playdude bunny waitress ears is fluid immune: decide no.
+
+Figure of playdude bunny waitress ears is the file "Items/Accessories/Head/bunnyears1.png".
+
+The printed name of playdude bunny waitress ears is "[clothing-title-before]pair of bunny ears[clothing-title-after]". The text-shortcut of playdude bunny waitress ears is "bne".
+
+To decide which figure-name is the clothing-image of (C - playdude bunny waitress ears):
+	decide on figure of playdude bunny waitress ears.
+
+To say ClothingDesc of (H - playdude bunny waitress ears):
+	say "A pair of fake bunny waitress ears on a headband, with a frilly piece of fabric between the ears.".
+
+To say MediumDesc of (H - playdude bunny waitress ears):
+	say "fake bunny waitress ears".
+
+To compute SelfExamineDesc of (H - playdude bunny waitress ears):
+	let X be the largeness of hair;
+	say "You are wearing a pair of fake bunny ears on top of your [ShortDesc of hair]. ".
+
+Definition: playdude bunny waitress ears is black themed: decide yes.
+
+To decide which object is the unique-upgrade-target of (C - playdude bunny waitress ears):
+	if egg laying fetish is 0, decide on nothing; [TODO: change]
+	if the total egg fill of belly > 0, decide on a random off-stage rubber bunny ears;
+	decide on nothing.
+
+Section - Class Outfit
+
+To compute class outfit of (H - playdude bunny waitress ears):
 	class summon bunny waitress outfit.
+
+
+rubber-bunny-waitress-ears is a bunny waitress ears. rubber-bunny-waitress-ears is latex.
+
+Figure of rubber-bunny-waitress-ears is the file "Items/Accessories/Head/bunnyears4.png".
+
+The printed name of rubber-bunny-waitress-ears is "[clothing-title-before]pair of latex bunny ears[clothing-title-after]". The text-shortcut of rubber-bunny-waitress-ears is "lbne".
+
+To decide which figure-name is the clothing-image of (C - rubber-bunny-waitress-ears):
+	decide on figure of rubber-bunny-waitress-ears.
+
+To say ClothingDesc of (H - rubber-bunny-waitress-ears):
+	say "A pair of fake latex bunny waitress ears on a headband.".
+
+To say MediumDesc of (H - rubber-bunny-waitress-ears):
+	say "latex bunny waitress ears".
+
+To compute SelfExamineDesc of (H - rubber-bunny-waitress-ears):
+	let X be the largeness of hair;
+	say "You are wearing a pair of latex bunny ears on top of your [ShortDesc of hair]. ".
+
+Definition: rubber-bunny-waitress-ears is pink themed: decide yes.
+Definition: rubber-bunny-waitress-ears is white themed: decide yes.
+
+Section - Class Outfit
+
+To compute class outfit of (H - rubber-bunny-waitress-ears):
+	class summon rubber-bunny-waitress-outfit.
+
 
 Chapter - Flight Attendant Hat
 
-flight attendant hat is a headgear. flight attendant hat is blondeness-positive. flight attendant hat is brightness-positive. flight attendant hat is hair growing. flight attendant hat is dexterity-influencing. flight attendant hat is nylon. flight attendant hat has a number called service-ready.
+flight attendant hat is a headgear. flight attendant hat is blondeness-positive. flight attendant hat is brightness-positive. flight attendant hat is hair growing. flight attendant hat is dexterity-influencing. flight attendant hat is nylon.
 
 Definition: flight attendant hat is inflation themed: decide yes.
 Definition: flight attendant hat is fluid immune: decide no.
@@ -216,7 +253,7 @@ To decide which number is the heaviness of (H - flight attendant hat):
 
 To decide which number is the intelligence-influence of (C - flight attendant hat):
 	let I be the magic-modifier of C;
-	if the service-ready of C > 0, increase I by 3;
+	if service-ready is true, increase I by 3;
 	decide on I.
 
 To compute class outfit of (H - flight attendant hat):
@@ -227,13 +264,13 @@ To compute unique periodic effect of (C - flight attendant hat):
 	let G be a random held champagne-glass;
 	let CG be a random held cocktail-glass;
 	if G is empty bottle or CG is empty bottle:
-		if the service-ready of C is 1:
+		if service-ready is true:
 			say "[bold type]The bonus intelligence-enhancing effect of your hat has ended.[roman type][line break]";
-			now the service-ready of C is 0;
+			now service-ready is false;
 	otherwise if G is bottle or CG is bottle:
-		if the service-ready of C is 0:
+		if service-ready is false:
 			say "[bold type]You can feel your flight attendant hat making you much [smarter][one of]![line break][variable custom style]Wow, I feel amazing while carrying around [if G is bottle and CG is bottle]these drinks[otherwise]this drink[end if], just like a good air hostess![roman type][line break][or] again![stopping][roman type][line break]";
-			now the service-ready of C is 1;
+			now service-ready is true;
 	if C is latex and the player is not zeroG and the player is not flying:
 		say "[bold type]You're no longer weightless! Your [ShortDesc of C] returns to its normal nylon form and loses the balloon cord.[roman type][line break]";
 		now C is nylon;
@@ -256,8 +293,7 @@ Chapter - Quest
 bunny-waitress-quest is a headgear-clothing-quest. bunny-waitress-quest has a number called serve-count.
 
 To compute unique recycling of (C - a bunny waitress ears):
-	now the serve-count of bunny-waitress-quest is 0;
-	now waitress-dips is 0.
+	now the serve-count of bunny-waitress-quest is 0.
 
 To uniquely set up (C - bunny waitress ears):
 	now the quest of C is bunny-waitress-quest.

@@ -64,6 +64,7 @@ To compute standard decanting of (D - a dispenser):
 	allocate 6 seconds;
 	say DecantingFlav of the noun;
 	now the fill-colour of the noun is fill-colour of the second noun;
+	now the noun is player-origin;
 	if the doses of the second noun > the max-doses of the noun:
 		DoseFill the noun;
 		DoseDown the second noun by the max-doses of the noun;
@@ -96,7 +97,7 @@ Report decanting something with:
 	if the fill-colour of the second noun is creamy:
 		compute father material of the second noun into the noun;
 	if diaper quest is 0 and tutorial is 0:
-		if the noun is waitress vessel and (the number of worn headgear is 0 or black maid headdress is worn):
+		if the noun is waitress vessel and (the number of worn headgear is 0 or black maid headdress is worn or rubber top hat is worn):
 			increase waitress-dips by 1;
 			unless the noun is cocktail-glass:
 				if waitress-dips is 1, say "You reflect on how you must look, holding a weird [ShortDesc of the noun] like a girly socialite[if the bimbo of the player < 5]. You're not sure that the look is really how you'd like to be seen[end if].";
@@ -109,12 +110,21 @@ Report decanting something with:
 				let M be a random worn overdress;
 				if cafe-maid-outfit is not held and M is a removable overdress, transform M into cafe-maid-outfit;
 				class summon cafe maid stockings;
+				now waitress-dips is 0;
+			otherwise if rubber top hat is worn and the class of the player is "silicone queen": [no cross-class yet]
+				transform rubber top hat into rubber-bunny-waitress-ears;
+				class summon rubber-bunny-waitress-outfit; [will be blocked if a class-relevant outfit is already worn]
+				let M be a random worn overdress;
+				if rubber-bunny-waitress-outfit is not held and M is a removable overdress, transform M into rubber-bunny-waitress-outfit;
+				now waitress-dips is 0;
 			otherwise if inflation fetish is 1 and the player is on tiptoes and flight attendant hat is off-stage and flight attendant hat is actually summonable:
 				say "[bold type]Suddenly a [ShortDesc of flight attendant hat] appears on your head![line break][variable custom style][if the bimbo of the player < 10]What, are they trying to make me serve drinks rather than drink them myself?[otherwise]Haha, I get it, it's because I'm almost lighter than air![end if][roman type][line break]";
 				summon flight attendant hat cursed;
-			otherwise if bunny waitress ears is off-stage and bunny waitress ears is actually summonable:
-				say "[bold type]Suddenly [ShortDesc of bunny waitress ears] appear on your head![line break][variable custom style][if the bimbo of the player < 10]What, are they trying to make me look like a bunny waitress?[otherwise]Haha, it's like I'm a bunny waitress![end if][roman type][line break]";
-				summon bunny waitress ears cursed;
+				now waitress-dips is 0;
+			otherwise if playdude bunny waitress ears is off-stage and playdude bunny waitress ears is actually summonable:
+				say "[bold type]Suddenly [ShortDesc of playdude bunny waitress ears] appear on your head![line break][variable custom style][if the bimbo of the player < 10]What, are they trying to make me look like a bunny waitress?[otherwise]Haha, it's like I'm a bunny waitress![end if][roman type][line break]";
+				summon playdude bunny waitress ears cursed;
+				now waitress-dips is 0;
 	repeat with T running through all untriggered swing traps in the location of the player:
 		now focused-thing is T;
 		trigger T.

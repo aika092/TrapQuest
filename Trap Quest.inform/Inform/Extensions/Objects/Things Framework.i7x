@@ -1,6 +1,6 @@
 Things Framework by Objects begins here.
 
-A thing has an indexed text called a text-shortcut. Understand the text-shortcut property as describing a thing.
+A thing has a text called a text-shortcut. Understand the text-shortcut property as describing a thing.
 
 Part - Price and Ownership
 
@@ -50,7 +50,7 @@ To decide what number is the price of (C - a clothing):
 	if C is skirt:
 		now X is 4;
 	if C is accessory:
-		if C is not plentiful, decide on 0;
+		if C is not plentiful, decide on X;
 		if C is ring, now X is 1;
 		if C is bracelet, now X is 2;
 		if C is necklace, now X is 4;

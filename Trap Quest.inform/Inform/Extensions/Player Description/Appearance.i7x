@@ -12,14 +12,16 @@ To say PerceivedBimboDesc:
 		say "You look very feminine, but not outrageous enough to call slutty.";
 	otherwise if P is 5:
 		say "You look very provocative; in a club setting you'd be followed around by a swarm of guys all night.";
-	otherwise if the player is naked and the make-up of face is 0:
+	otherwise if the player is naked and the player is in Dungeon12: [This probably indicates they're at the start of the game.]
 		say "You are naked. It would be inappropriate to stride around in your birthday suit.";
+	otherwise if the player is naked:
+		say "You are naked[if the make-up of face is 0].[otherwise] - although your face [MakeUpDesc], that doesn't really count as clothes, right?[end if] [if the player is a pervert][one of]It's kind of fun[or]You feel quite daring,[or]It's quite exciting[at random][otherwise]It's rather inappropriate[end if] to be striding around in your birthday suit.";
 	otherwise if P < 8:
 		say "Your appearance can be described as nothing except slutty - your attire is quite clearly a provocative statement.";
 	otherwise if P < 10:
 		say "You look like a dolled up bimbo, like one might expect a porn star or stripper to look like before things get going.";
 	otherwise if P < 12:
-		say "Your appearance is so ridiculously sexualised that anybody look at you would be forced to assume you are some kind of crazed sex addict.";
+		say "Your appearance is so ridiculously sexualised that anybody looking at you would be forced to assume you are some kind of crazed sex addict.";
 	otherwise if P < 14:
 		say "You look like a pornstar might after she's finished a scene and hasn't yet cleaned up.";
 	otherwise if P < 16:

@@ -52,7 +52,8 @@ To decide which number is the outrage of (C - a lubricant):
 	decide on 7.
 
 To decide which number is the outrage of (C - a sex toy):
-	decide on 10 + the girth of C.
+	if C is players-detached-dick, decide on 15; [#LXorDD]
+	otherwise decide on 10 + the girth of C.
 
 To decide which number is the fluid outrage of (C - a clothing):
 	decide on the fluid cringe of C.

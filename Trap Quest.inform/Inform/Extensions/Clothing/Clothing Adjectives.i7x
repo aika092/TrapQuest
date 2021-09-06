@@ -9,7 +9,7 @@ REQUIRES COMMENTING
 @!]
 A wearthing is a kind of thing.
 
-A wearthing can be predicament-normal, predicament-temporary or predicament-fixed (this is the predicament-persistence property). A wearthing is usually predicament-normal. [Anything predicament-temporary is removed at the end of a predicament.]
+A wearthing can be predicament-normal, predicament-temporary or predicament-fixed (this is the predicament-persistence property). A wearthing is usually predicament-normal. [AFTER initial predicament execution, anything not predicament-fixed gets set to predicament-temporary. Anything predicament-temporary is removed at the end of a predicament. NB this means that if a wearthing is summoned DURING initial predicament execution, it must be manually set to predicament-fixed.]
 
 [!<Clothing>@
 
@@ -253,7 +253,7 @@ Clothing can be ass plugging. Clothing is usually not ass plugging.
 Clothing can be vagina plugging. Clothing is usually not vagina plugging.
 Clothing has a number called plug size. The plug size of clothing is usually 0.
 Clothing can be purity. Clothing is usually not purity. [Means they care about your virginity.]
-A Magic-type is a kind of value. The magic-types are blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, stumbling, provocation, exposure, audible jiggles, and hostility. Clothing has a magic-type. The magic-type of clothing is usually blandness.
+A Magic-type is a kind of value. The magic-types are blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, stumbling, provocation, exposure, audible jiggles, augmentation and hostility. Clothing has a magic-type. The magic-type of clothing is usually blandness.
 Magic-ID is a kind of value. The magic-IDs are unidentified and identified. Clothing has a Magic-ID. The Magic-ID of clothing is usually unidentified.
 Clothing has a number called raw-magic-modifier. The raw-magic-modifier of clothing is usually 0.
 To decide which number is the penis-capacity of (C - a clothing):[what's the largest size of penis it can cover?]
@@ -261,6 +261,40 @@ To decide which number is the penis-capacity of (C - a clothing):[what's the lar
 		if the player is upright or C is not worn, decide on the skirtLength of C * 2;
 		otherwise decide on the skirtLength of C - 2;
 	decide on 10.
+To decide which number is the crotch-tightness of (C - a clothing): [the higher the number, the more tight, which gets closer to cameltoe. labia plumpness is added to this. 4+ increases outrage in certain circumstances. 5 is cameltoe city, and counts as partially exposed.]
+	if C is potentially pussy covering:
+		if C is rigid, decide on 0;
+		if C is denim, decide on 1;
+		decide on 2;
+	decide on 0.
+To decide which number is the crotch-tightness of (C - a knickers):
+	if C is rigid or C is denim, decide on 1;
+	decide on 3.
+Definition: a clothing is at least slightly cameltoe creating:
+	if the crotch-tightness of it + the labia plumpness of vagina >= 4, decide yes;
+	decide no.
+Definition: a clothing is cameltoe creating:
+	if the crotch-tightness of it + the labia plumpness of vagina >= 5, decide yes;
+	decide no.
+Definition: a clothing is always cameltoe creating:
+	if the crotch-tightness of it >= 5, decide yes;
+	decide no.
+Definition: a clothing is potentially cameltoe blocking:
+	if it is actually dense potentially pussy covering clothing and it is not at least slightly cameltoe creating, decide yes;
+	if it is actually dense skirt-covering-crotch clothing, decide yes;
+	decide no.
+Definition: a clothing is cameltoe blocking:
+	if it is worn and it is potentially cameltoe blocking, decide yes;
+	decide no.
+Definition: a clothing is potentially at least slightly cameltoe blocking:
+	if it is actually dense potentially pussy covering clothing and it is not cameltoe creating, decide yes;
+	if it is actually dense skirt-covering-crotch clothing, decide yes;
+	decide no.
+Definition: a clothing is at least slightly cameltoe blocking:
+	if it is worn and it is potentially at least slightly cameltoe blocking, decide yes;
+	decide no.
+
+
 Clothing can be stuck. Clothing is usually not stuck.
 [!<YourselfIsClothingStuck>+
 
@@ -271,6 +305,7 @@ Definition: yourself is clothing stuck:
 	if there is worn stuck clothing, decide yes;
 	decide no.
 Clothing can be bsounding. Clothing is usually not bsounding.
+A clothing has a number called augmentation-grow-charge. A clothing has a number called augmentation-charging-time.
 Clothing can be glued or unglued. Clothing is usually unglued.
 Clothing can be womanly or manly. Clothing is usually womanly. [Manly clothing is anything that is not specifically something only women should wear. E.g. a T-shirt]
 Clothing can be restart immune. Clothing is usually not restart immune. [This means it won't disappear or change when the map is reset.]

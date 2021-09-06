@@ -37,7 +37,7 @@ This is the egg stuffing rule:
 			increase remainingN by the number of carried large eggs;
 			now remainingV is remainingN * 4;
 			now V is 4;
-		let T be an indexed text;
+		let T be a text;
 		let T be the player's command;
 		let N be the numerical value of T;
 		if N > 0 and V * N <= BL:

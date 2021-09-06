@@ -3,6 +3,9 @@ Maid Headdress by Headgear begins here.
 A maid headdress is a kind of headgear. A maid headdress is usually brightness-negative. A maid headdress is usually hair growing. A maid headdress is womanly. The text-shortcut of maid headdress is "mhd". A maid headdress is usually strength-influencing. A maid headdress is usually roleplay.
 
 Definition: a maid headdress is white themed: decide yes.
+Definition: a maid headdress is waitress-enabling:
+	if cafe-maid-outfit is worn, decide yes;
+	decide no.
 Definition: a maid headdress is disintegration-protected:
 	if the class of the player is maid, decide yes;
 	decide no.

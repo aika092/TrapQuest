@@ -29,9 +29,9 @@ Report wearing undies:
 		if the thickness of hips < max hip size and a random number between 1 and 2 is 1:
 			say "You feel [NameDesc of the noun] try to grow your hips to make your buttocks even less concealed!";
 			HipUp 1;
-		otherwise if the noun is not potentially penis covering and the size of penis > min penis size:
-			say "You feel [NameDesc of the noun] try to shrink your [ShortDesc of penis] to make it better able to conceal it!";
-			PenisDown 1;
+		otherwise if the noun is not potentially penis covering and the mystical size of penis > min penis size: [#LXorDD]
+			say "You feel [NameDesc of the noun] try to shrink your [mystical-player-penis] to make it better able to conceal it!"; [#LXorDD]
+			SpecialPenisDown 1; [#LXorDD]
 
 To decide which object is the unique-upgrade-target of (C - an undies):
 	if diaper quest is 1 and there is a worn demonic wearthing and tongue-panties is off-stage, decide on tongue-panties;

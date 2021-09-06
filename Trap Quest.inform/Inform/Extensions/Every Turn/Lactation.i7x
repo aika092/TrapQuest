@@ -13,8 +13,9 @@ A time based rule (this is the lactation rule):
 			if C is abyssal tattoo and the class of the player is cowgirl, increase R by 2;
 		if the latex-transformation of the player > 5 or there is a worn pasties, now R is 0;
 		if R > 0:
-			if R > 10, now R is 10;
-			let L be 50 - (R * 4);
+			if R >= 100, now R is 10;
+			otherwise now R is the square root of R;
+			let L be 60 - (R * 4);
 			if the remainder after dividing time-earnings by L < time-seconds:
 				let flav-said be 0;
 				if black strap hood is worn:
@@ -104,10 +105,10 @@ To trigger lactation:
 			AssFill M Milk;
 		otherwise if N is clothing:
 			if M is 1:
-				say "A few drops of [milk] leak from your [BreastDesc] and [if N is bra]into the cups of[otherwise]onto[end if] your [ShortDesc of N][if N is not liquid-soak-appropriate].[end if][roman type][line break]";
+				say "A few drops of [milk] leak from your [BreastDesc] and [if N is bra]into the cups of[otherwise]onto[end if] your [ShortDesc of N].[roman type][line break]";
 			otherwise:
-				if M < 10, say "Milk flows from your nipples and [if N is somewhat fluid vulnerable]noticeably stains[otherwise]onto[end if] [if N is bra]the cups of [end if]your [ShortDesc of N][if N is not liquid-soak-appropriate].[end if][roman type][line break]";
-				otherwise say "Your [BreastDesc] powerfully squirt [milk] into your [ShortDesc of N][if N is not liquid-soak-appropriate].[end if][roman type][line break]";
+				if M < 10, say "Milk flows from your nipples and [if N is somewhat fluid vulnerable]noticeably stains[otherwise]onto[end if] [if N is bra]the cups of [end if]your [ShortDesc of N].[roman type][line break]";
+				otherwise say "Your [BreastDesc] powerfully squirt [milk] into your [ShortDesc of N].[roman type][line break]";
 			MilkDown M;
 			AnnouncedExpel milk on N by M;
 		otherwise if N is gloryhole:

@@ -191,6 +191,9 @@ To decide which number is the diaperHidingLength of (C - a clothing):
 	decide on the defaultDiaperHidingLength of C.
 
 To decide which number is the defaultDiaperHidingLength of (C - a clothing):
+	let CT be the crotch-tightness of C;
+	if CT > 2, decide on 0;  [Can only hide normal underwear]
+	if CT is 2, decide on 2;  [Can only hide the thinnest of diapers]
 	decide on 4.
 
 Definition: a clothing (called C) is diaper hiding:

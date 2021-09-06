@@ -104,17 +104,17 @@ To compute swimming in (S - sacred-pool):
 		say "[line break]What should you do next?";
 		compute multiple choice question;
 		let CNR be the chosen numerical response;
-		if the printed name of CNR is "get out":
+		if CNR is "get out":
 			say "You climb out of the pool.";
 			now swimming is 0;
-		otherwise if the printed name of CNR is "swim in place":
+		otherwise if CNR is "swim in place":
 			say "You swim in place.";
 			compute easy swimming check in S;
-		otherwise if the printed name of CNR is "swim toward shallow end":
+		otherwise if CNR is "swim toward shallow end":
 			say "You swim toward the shallow end of the pool.";
 			compute normal swimming check in S;
 			decrease swim-location by 1;
-		otherwise if the printed name of CNR is "swim toward statue":
+		otherwise if CNR is "swim toward statue":
 			say "You swim toward the statue at the edge of the pool.";
 			compute normal swimming check in S;
 			increase swim-location by 1;

@@ -65,7 +65,7 @@ To LiquidSoak (L - water) On (C - a clothing):
 [The SQUIRT function is the triage function we should ALWAYS call FIRST when liquid comes near it. The function should be able to determine itself whether the object is eligible for being considered for soaking based on liquid type and fetish settings.]
 To SilentSquirt (L - a liquid-object) On (C - an object) by (N - a number):
 	now C is soaked;
-	unless C is not thighs and bukkake fetish is 0 and L is not water, UniqueSquirt L on C by N. [only thighs accept cum when bukkake fetish is disabled]
+	if C is thighs or bukkake fetish is 1 or L is water, UniqueSquirt L on C by N. [only thighs accept cum when bukkake fetish is disabled]
 
 [This version of the SQUIRT function is for when the liquid has already hit somewhere else and is now continuing its journey elsewhere, going from the OUTSIDE inwards.]
 To ContinuedSquirt (L - a liquid-object) On (C - an object) by (N - a number):
@@ -110,13 +110,13 @@ To UnannouncedExpel (L - a liquid-object) On (C - an object) by (N - a number):
 	reset soak flavour.
 
 
-[A clothing is LIQUID SOAK APPROPRIATE if the liquid is something that should be able to soak into it based on current FETISH selection. We do not care about waterproofing here.]
-Definition: a clothing is liquid-soak-appropriate:
+[Bukkake fetish being disabled prevents most clothes from getting stained with semen, but not urine or milk. We do not care about waterproofing here.]
+Definition: a clothing is semen-soak-appropriate:
 	if it is crotch covering or bukkake fetish is 1, decide yes;
 	decide no.
 
 To SilentSquirt (L - a liquid-object) On (C - a clothing) by (N - a number):
-	if L is water or C is liquid-soak-appropriate: [water can soak everything even when bukkake is disabled]
+	if (L is not semen and L is not murkwater) or C is semen-soak-appropriate: [water can soak everything even when bukkake is disabled]
 		now C is soaked; [this item has been squirt functioned this liquid movement]
 		if C is worn:
 			force clothing-focus redraw; [the clothing window might need refreshing to stay accurate]
@@ -425,7 +425,7 @@ To UniqueSquirt (L - a liquid-object) On (C - Thighs) by (N - a number):
 				now the semen coating of C is 0;
 	if N > 0:
 		let LC be a random worn bottom level leg cover clothing;
-		if LC is nothing, now LC is a random worn shoes;
+		if LC is nothing and the player is upright, now LC is a random worn shoes;
 		if LC is unsoaked clothing:
 			say "[announced L] flows down your legs into your [ShortDesc of LC].";
 			ContinuedDribble L on LC by N;

@@ -50,6 +50,8 @@ To repeated set up (M - an explorer):
 	now the raw difficulty of M is (4 - the explorer-bimbo of M) * 2;
 	now the health of M is the maxhealth of M;
 	if the explorer-bimbo of M > 2:
+		[-- First, if they have it, drop an intensely personal item --]
+		compute maybe drop dick by M;
 		if there are things carried by M:
 			if M is in the location of the player, say "Your [list of things carried by M] [if the number of things carried by M > 1]are[otherwise]is[end if] also left behind."; [Aika explained that any items carried by an NPC must originally have come from you.]
 			repeat with K running through things carried by M:

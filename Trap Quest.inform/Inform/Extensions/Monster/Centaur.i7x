@@ -53,6 +53,9 @@ Definition: centaur is musky: decide yes.
 Definition: centaur is a tripper: decide no.
 Definition: centaur is father material: decide yes.
 Definition: centaur is throater: decide yes.
+Definition: centaur is wenchy:
+	if the player is a June 2021 top donator, decide yes;
+	decide no.
 
 To say LongDickDesc of (M - centaur):
 	say "massive 2-foot equine [DickDesc of M]".
@@ -627,6 +630,122 @@ To say MildAnnoyedResponse of (M - centaur):
 
 To say AnnoyedResponse of (M - centaur):
 	say "[speech style of M]'[one of]By the gods, will you shut up?'[or]You're being really annoying right now!'[or]Are you ever going to shut up?!'[at random][roman type][line break]".
+
+To decide which number is the dominationtype of (M - centaur) using (F - penis):
+	decide on FUCK-UNIQUE.
+
+To say DominanceSuccess of (M - centaur):
+	if player-fucker is penis:
+		handjob dominate M;
+	otherwise:
+		tease dominate M;
+	Bore M.
+
+To handjob dominate (M - centaur):
+	let C be a random bottom level protection clothing;
+	say "You wrench the sword out of [NameDesc of M]'s hand and throw it into the bushes. [big he of M] moves as if you walk past you, but stops when you hold out your hand in front of [him of M] and [if C is not clothing or C is strapon-panties]point to the [SexDesc of penis] between your legs[otherwise]pull your [SexDesc of penis] out of your [printed name of C][end if].";
+	if the sexual-penis-length > 8:
+		say "[line break][speech style of M]'Oh, that's... almost as big as mine? But, heh, it doesn't look the same! A-am I staring...?'[roman type][line break][big he of M] trails off, awkardly. You helpfully grab [his of M] wrist and firmly guide [his of M] hand onto your [if penis is penis-erect]rock hard[otherwise]hardening[end if] junk, which [he of M] tentatively begins to stroke. A couple moments later [he of M] has dropped to [his of M] knees and [if lady fetish is 2]shrugged[otherwise]popped [his of M] breasts[end if] out of [his of M] armor, humming a little as [he of M] takes the head of your [sexual-player-penis] into [his of M] mouth. Working your balls with one hand and pumping your [SexShaft] with the other, [he of M] quickly and efficiently brings you to orgasm, a sigh of relief filtering out of [his of M] nose as you flood [his of M] mouth with your [load].";
+		orgasm;
+		BlowGet;
+		strongDignify;
+		say AfterDominationComment 1 of M;
+	otherwise if the sexual-penis-length > 4:
+		say "[line break][speech style of M]'Whoa, that's small! Its probably average for your species, though. Oh, uh, didn't mean to stare.'[roman type][line break][big he of M] mutters, averting [his of M] eyes. Ignoring the 'small' comment, you helpfully grab [his of M] wrist and gently guide [his of M] hand onto your [if penis is penis-erect]hard[otherwise]stiffening[end if] junk, which [he of M] tentatively begins to stroke. [big his of M] movements quickly grow more confident, shifting from fast to slow, and from soft to hard as [he of M] [if lady fetish is 2]shrugs[otherwise]pops [his of M] breasts[end if] out of [his of M] armor. It isn't long before [his of M] stroking techniques start to feel a little TOO adventurous, but before you're able to protest, [he of M] suddenly grabs you and forces you [if lady fetish is 2]into [his of M] muscular embrace. [otherwise]into [his of M] cleavage. [end if]Breaking away from [his of M] large frame proves to be useless, and after struggling for a little while, you are left with no choice but focus on making sure it doesn't get any worse. A little while later, you emit a short, frustrated grunt as [FuckerDesc of M] finally wrings out your [load] into [his of M] waiting hands.";
+		orgasm;
+		slightDignify;
+		now player-fucking is DOMINANT-NEUTRAL;
+		say AfterDominationComment 1 of M;
+	otherwise:
+		say "[line break][speech style of M]'WOW, that is TINY! Is that size normal for your species? I've gotta touch it!'[roman type][line break]Without waiting for permission, [he of M] grabs your [if penis is penis-erect]desperately hard[otherwise]soft, useless[end if] [sexual-player-penis] and begins to play with it! You try to push [him of M] away, but [he of M] ignores you on account of [his of M] large frame, cruelly forcing you to moan as [he of M] relentlessly palms, squeezes, rubs and fondles your pint-sized [SexShaft] no matter how hard you try to stop [him of M].[line break][speech style of M]'[if penis is penis-erect]There's no way it's meant to be this small. I bet you're a[otherwise]It's barely even functional! What a[end if] freak!'[roman type][line break]The word 'freak' bounces around inside your head as [he of M] grinds [his of M] thumb against your cockhead, and you shudder with pleasure as your [if penis is penis-erect][SexDesc of penis] spits[otherwise]soft [SexDesc of penis] drools[end if] out its [load].";
+		orgasm;
+		moderateHumiliate;
+		now player-fucking is DOMINANT-SHAMEFUL;
+		say AfterDominationComment 2 of M;
+
+To watersports dominate (M - centaur):
+	let C be a random bottom level protection clothing;
+	say "You knock the sword out of [NameDesc of M]'s hand, staring [him of M] down as you [if the player is not possessing a penis or C is not clothing or C is strapon-panties]widen your stance and fondle your [genitals]. [otherwise]pull out your [SexDesc of penis]. [end if][big he of M] frowns.[line break][speech style of M]'[one of]I don't appreciate you acting all high and mighty like this, but I'm the foreigner here, so I'll let it slide[or]You don't have any right to look at me that way, but since I'm the foreigner, I'll accept it just this once[in random order].'[roman type][line break][big he of M] drops to [his of M] knees, grumbling as [he of M] [if lady fetish is 2]shrugs[otherwise]pops [his of M] breasts[end if] out of [his of M] armor. You take a small step forward and emit an exaggerated sigh as you release your hold on your bladder.[run paragraph on]";
+	if sexual-penis-length > 8:
+		say "[big he of M] reflexively closes [his of M] eyes as your golden stream hits [him of M] on the forehead, and [he of M] slumps a little as your urine slowly flows down [his of M] face, chest, and stomach.";
+		severeDignify;
+		say AfterDominationComment 5 of M;
+	otherwise if sexual-penis-length > 3:
+		say "[big he of M] flinches a little as your golden stream hits [him of M] between [his of M] [if lady fetish is 2]pecs[otherwise]boobs[end if] and flows down [his of M] torso. Ideally, you would have humiliated [him of M] by dousing [his of M] face, but even on [his of M] knees [he of M]'s so tall that your aim doesn't reach any higher than the bottom of [his of M] chin.";
+		strongDignify;
+		say AfterDominationComment 5 of M;
+	otherwise:
+		say "[big he of M] cocks [his of M] eyebrow as your golden stream hits [him of M] in the torso and flows off [his of M] stomach. It clearly isn't having the humiliating effect that you imagined, but [if sexual-penis-length > 0]your [Sexdesc of penis] is so small that[otherwise]but even on [his of M] knees [he of M]'s so tall that[end if] it can't be helped.";
+		now player-fucking is DOMINANT-NEUTRAL;
+		moderateDignify;
+		say AfterDominationComment 6 of M.
+
+To decide which number is the dominationtype of (M - centaur) using (F - a fuckhole):
+	decide on FUCK-UNIQUE.
+
+To say VaginaRideDesc of (M - centaur):
+	say "Tease [him of M] with your [vagina].".
+
+To say AssRideDesc of (M - centaur):
+	say "Tease [him of M] with your [asshole].".
+
+To tease dominate (M - centaur):
+	let F be player-fucker;
+	say "Ducking under [NameDesc of M]'s next strike, you dive under [his of M] body and grab [his of M] [LongDickDesc of M], which responds with a very appreciative throb.[line break][speech style of M]'Oh, so you just couldn't wait? Heheh, go right ahead, slut!'[roman type][line break]Slut, huh? You chuckle to yourself as you press [his of M] flat, precum-drooling tip [if F is vagina]to your entrance and begin to grind against[otherwise]between your cheeks and begin to push back against[end if] [him of M]. Slowly. Teasingly. Just hard enough for it to feel like you might let [him of M] enter you, but just soft enough that its obvious you won't.[line break][speech style of M]'[one of]Put it in already!'[or]Hurry up!'[or]What are you waiting for? Put it in!'[in random order][roman type][line break][BigFuckerDesc of M]'s hooves impatiently paw at the ground as it slowly dawns on [him of M] that [if the times-submitted of M > 0]this is a punishment, not a reward[otherwise]this is a reward for you, not for [him of M][end if], [his of M] frustration mounting with every throb of [his of M] [DickDesc of M]. You [if F is vagina]grind [him of M][otherwise]push back[end if] even harder, relishing your total power over [him of M] as your [if F is vagina]labia lips part[otherwise]sphincter parts[end if] around [his of M] [cockhead of M]. [run paragraph on]";
+	let R be the semi-dominance roll for M;
+	if R >= 0:
+		if debugmode > 0, say "[bold type]PASSED[roman type][line break]";
+		say "Thinking its [his of M] chance, [FuckerDesc of M] lurches forward, but you pull back just as fast, allowing [his of M] shaft to harmlessly glide between [if F is vagina]your lips. [otherwise]between your cheeks. [end if]Deciding not to risk things going differently if [he of M] tries again, you give [his of M] junk a playful tap and crawl out from under [him of M].";
+		strongDignify;
+		passively stimulate F from M;
+		say AfterDominationComment 3 of M;
+	otherwise:
+		if debugmode > 0, say "[bold type]FAILED[roman type][line break]";
+		say "Unfortunately, your power isn't as 'total' as you thought, and [FuckerDesc of M] lurches forward at the perfect moment, forcing your [variable F] wide open as [his of M] [DickDesc of M] slides in. The first few inches are followed by several more, your efforts to hold [him of M] back only seeming to set [him of M] off. And off [he of M] goes, [his of M] whole shaft spasming as [he of M] blasts hot [semen] into your [variable F]. You have no choice but to simply lie there in defeat as [he of M] thoroughly empties the thick, creamy contents of [his of M] balls into your [if F is vagina]womb.[otherwise]belly.[end if]";
+		now M is penetrating F;
+		strongHumiliate;
+		ruin F;
+		compute M finishing in F;
+		now player-fucking is DOMINANT-NEUTRAL;
+		say AfterDominationComment 4 of M;
+
+To say AfterDominationComment (N - a number) of (M - centaur):
+	if N is 6:
+		say "[speech style of M]'[one of]Normally the sub is the one that gets marked, but since you're a different species and all... I bet this means you want me to destroy your [if the player is possessing a vagina]pussy[otherwise]ass[end if] as much as I do! Heh, I'll be back later, sexy!'[or]Wow, so in your species its the sub that does the scent marking... Well, that's fine by me! I'll come back and tear up your [if the player is possessing a vagina]cunt[otherwise]ass[end if] after I catch my breath!'[in random order][roman type]";
+	otherwise if N is 5:
+		say "[speech style of M]'[one of]Your species does scent marking too, eh... Even so, I'm not a sub. You'll be learning that soon enough.'[or]So it was scent marking... Well, you'll be learning soon enough that I'm nobody's sub.'[in random order][roman type]";
+	otherwise if N is 4:[ruined tease]
+		say "[speech style of M]'[one of]I'm not sure I like this [']tantric sex['] thing, if I'm being honest. Let's do it the normal way next time, ok?'[or]It was ok at the end, I guess, but I don't think I like the teasing. Do it normally next time, ok sexy?'[in random order][roman type]";
+	otherwise if N is 3:[you pissed her off]
+		say "[speech style of M]'[one of]Ok, maybe I deserved that a little, but I'm still getting you back for that.'[or]You're leaving me hanging?! Wow, you turned out to be a bitch!'[or]If this is a revenge thing, then I get it. Still, FUCK YOU!'[at random][roman type]";
+	otherwise if N is 2:
+		say "[speech style of M]'[one of]Wow, is it embarassing to cum like that? Heh, I bet there are tons of fun ways I can embarass you then. Just you wait.'[or]It shouldn't be that easy to make you cum... Well, whatever. Next time we meet, I'll make you cum with something other than my hand!'[in random order][roman type]";
+	otherwise:
+		say "[line break][speech style of M]'[one of]Ok, curiousity sated. Next time let's do things the normal way.'[or]That was pretty exotic, but real sex is more fun. Be ready for me, ok?'[or]Well, that's other species for you. Why don't I give you a taste of my junk next time?'[in random order][roman type][line break]".
+
+To say DominationEscapeFlav of (M - centaur):
+	say "[BigNameDesc of M] trots away as soon as [he of M] has the strength.";
+
+To say DominanceFailure of (M - centaur):
+	say "You wrench the sword out of [NameDesc of M]'s hand and throw it into the bushes. [big he of M] blinks, and after a moment of holding eye contact with you, [he of M] suddenly bashes you with [his of M] shield! [big his of M] enormous shadow falls over you as you land on the ground.".
+
+To compute failed dominance punishment of (M - centaur):
+	let F be vagina;
+	if the player is not possessing a vagina, now F is asshole;
+	if the player is pheromonal and F is exposed:
+		say "[line break][speech style of M]'You really got my blood pumping with that all that foreplay, [if the player is presenting as female]miss[otherwise]mister[end if] [player-class]. By the GODDESS I'm hard... I can't wait any longer!'[roman type][line break][big he of M] mounts you, sighing as [he of M] forces [his of M] [LongDickDesc of M] into your [variable F]";
+		now M is penetrating F;
+		ruin F;
+		set up sex length of M in F;
+		now another-turn-flavour is the substituted form of "[BigFuckerDesc of M] keeps thrusting!";
+		now another-turn is 1;
+	otherwise if the player is getting lucky and the class of the player is not worshipper and the class of the player is not succubus:
+		say "[line break][speech style of M]'That was fun, but I've got something to do, so destroying your little [variable F] can wait. See you!'[roman type][line break][big he of M] walks away.";
+		Bore M;
+	otherwise:
+		say "[line break][speech style of M]'[if the class of the player is worshipper or the class of the player is succubus]It takes more than that to defeat a knight! Now brace yourself, scum!'[otherwise]I can't wait to fuck you. I'm so hard...'[end if][roman type][line break][big he of M] steps over you, completely boxing you in!";
+		now another-turn-flavour is the substituted form of "[BigFuckerDesc of M] continues to stand over you!";
+		now another-turn is 1.
 
 Section 2 - Questioning
 

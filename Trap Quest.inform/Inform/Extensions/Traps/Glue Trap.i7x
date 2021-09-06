@@ -530,10 +530,10 @@ To compute the mutation effects of (G - a glue):
 					say "The fumes of the glue are strong, making you feel dizzy, interfering with your... those things that happen in your head... thoughts! Yeah, with your, um... what?";
 					IntDown 1;
 				otherwise:
-					if the size of penis > min penis size:
-						say "The penetrating fumes burn at your crotch, sending a tingle through your groin. You feel your [ShortDesc of penis] tingling... ";
-						SilentlyPenisDown 1;
-						say "You [if the size of penis < 2]stare in [one of]dismay[or]shock[or]stunned disbelief[or]horror[at random][otherwise]grimace[end if] at your now [ShortDesc of penis].";
+					if the mystical size of penis > min penis size:
+						say "The penetrating fumes burn at your crotch, sending a tingle through your groin. You feel your [mystical ShortDesc of penis] tingling... ";
+						SilentlySpecialPenisDown 1; [#LXorDD]
+						say "You [if the mystical size of penis < 2]stare in [one of]dismay[or]shock[or]stunned disbelief[or]horror[at random][otherwise]grimace[end if][if players-detached-dick is somewhere-here], somehow sensing your[otherwise] at your now[end if] [mystical ShortDesc of penis].";
 					otherwise:
 						if plastic-is-fantastic dress is actually summonable:
 							compute GlueMorphingInto of G to plastic-is-fantastic dress;
@@ -570,7 +570,10 @@ To compute the mutation effects of (G - a glue):
 					say "A weird shiver runs through you, a sense of [i]needing[/i] something... [if M is nothing]You feel desperately lonely here[otherwise]Your heart beats a little faster as you stare hopefully up at the [printed name of M][end if].";
 					RandomAddictUp 1;
 			otherwise if X is 3:
-				PenisDown 1;
+				if the player is somehow possessing a penis:
+					SpecialPenisDown 1; [#LXorDD]
+				otherwise if player is possessing a vagina:
+					LabiaUp 1 with comment;
 		otherwise if the active-colour of G is blackish: [###TODO: Use X to add further blackish-plausible options here.]
 			now X is a random number between 1 and 3;
 			if the class of the player is latex fetish model:
@@ -631,13 +634,15 @@ To compute the mutation effects of (G - a glue):
 				otherwise if lactation fetish is 1 or extreme proportions fetish is 1:
 					increase the lactation rate of the player by 2;
 					say "You feel the fumes penetrate your [BreastDesc], which flush with an inner warmth.";
-				otherwise if TG fetish >= 1 and the size of penis > min penis size:
-					PenisDown 1;
+				otherwise if TG fetish >= 1 and the mystical size of penis > min penis size:
+					SpecialPenisDown 1; [#LXorDD]
 				otherwise if artificial enhancements fetish is 1 and extreme proportions fetish is 1:
 					say "You feel a burn as tiny tendrils of the glue penetrate your flesh, oozing [i]inside[/i] you! You see the glue shrink... and yourself swell!";
 					BustImplantsUp 1;
 					AssImplantsUp 1;
 					decrease the stickiness of the player by 2;
+				otherwise if player is possessing a vagina:
+					LabiaUp 1 with comment;
 		[This test is mainly here to ensure that if there was some mutation effect, it "costs" the glue by weakening the bond. Some glue effects explicitly decrease the stickiness, like when it morphs into clothing or silicone implants. It's coded as a test of ">=" instead of "is" just in case somehow stickiness got worse!
 		This is to help free the player if for some reason they're stuck and can't get out.]
 		if the stickiness of the player >= StartS:

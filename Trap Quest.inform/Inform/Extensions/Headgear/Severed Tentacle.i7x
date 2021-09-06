@@ -92,7 +92,7 @@ Check taking off severed-tentacle:
 		increase the domination of mind flayer by 2;
 		say "Your will wavers, and your hand trembles as the tentacle's voice rings out in your head. [first custom style]'You will not be rid of me, thrall. I think you should be punished for this insolence. Now obey me. ";
 		if the asshole is not lewdly exposed or breasts is not lewdly exposed or (vagina is not lewdly exposed and the player is possessing a vagina):
-			say "You need no clothing. Tear it off.'[roman type]";
+			say "You need no clothing. Tear it off.'[roman type][line break]";
 			let C be a random worn nipple covering clothing;
 			unless C is clothing, now C is a random worn top level protection clothing;
 			if C is clothing:
@@ -101,12 +101,12 @@ Check taking off severed-tentacle:
 			try waiting instead;
 		otherwise if there is an interested intelligent monster in the location of the player and the player is not immobile:
 			let M be a random interested intelligent monster in the location of the player;
-			say "Show [NameDesc of M] what a [whore] you really are.'[roman type]";
+			say "Show [NameDesc of M] what a [whore] you really are.'[roman type][line break]";
 			try kneeling;
 			if the player is possessing a vagina, try presenting vagina instead;
 			otherwise try presenting asshole instead;
 		otherwise:
-			say "Feel your hunger grow. Sate it with [manly-penis].'[roman type]";
+			say "Feel your hunger grow. Sate it with [manly-penis].'[roman type][line break]";
 			SexAddictUp 2;
 			OralSexAddictUp 2;
 			try waiting instead.

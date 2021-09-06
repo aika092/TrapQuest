@@ -163,10 +163,8 @@ To say ClothingDesc of (C - cameltoe-priestess-outfit):
 
 To decide which number is the initial outrage of (C - cameltoe-priestess-outfit):
 	decide on 3.
-
-Definition: cameltoe-priestess-outfit is potentially vagina covering:
-	if the player is not possessing a vagina and it is potentially pussy covering, decide yes;
-	decide no. [On women, this item doesn't fully conceal the vagina]
+To decide which number is the crotch-tightness of (C - cameltoe-priestess-outfit):
+	decide on 5.
 To decide which number is the penis-capacity of (H - cameltoe-priestess-outfit):
 	decide on 2.
 To decide which object is the unique-upgrade-target of (C - cameltoe-priestess-outfit):

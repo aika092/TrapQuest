@@ -216,7 +216,7 @@ Carry out LongWaiting:
 
 This is the longwait setting rule:
 	if stat-to-set is "wait":
-		let T be an indexed text;
+		let T be a text;
 		let T be the player's command;
 		let N be the numerical value of T;
 		if N > 0:

@@ -1,10 +1,18 @@
 Conversation by Monster Framework begins here.
 
 A talk-object is a kind of thing.
+The printed name of a talk-object is "". [#LXorDD: Just to make Selkie's latex doll struggle easier to code.]
+
 To consider (T - a talk-object) for (M - a monster):
 	do nothing.
 To execute (T - a talk-object) for (M - a monster):
 	do nothing.
+
+[ [#LXorDD: This would be the normal way to achieve this, but I want to try with a more direct intervention just in the more conversational function below.]
+This is the latex transformation prevents speech rule:
+	if the latex-transformation of the player < 8, rule fails.
+The latex transformation prevents speech rule is listed in the player speech rules.
+]
 
 To compute multiple choice conversation of (M - a monster):
 	reset multiple choice questions;
@@ -14,7 +22,7 @@ To compute multiple choice conversation of (M - a monster):
 		compute multiple choice question;
 		if player-numerical-response is 1:
 			allocate 3 seconds;
-			say "[variable custom style][numerical-response-1][roman type][line break]";
+			say "[variable custom style][chosen numerical response][roman type][line break]";
 			compute gagged response of M;
 	otherwise if M is uninterested or (M is woman-player and M is stranger):
 		consider talk-greet for M;
@@ -22,15 +30,41 @@ To compute multiple choice conversation of (M - a monster):
 		compute multiple choice question;
 		if player-numerical-response is 1:
 			allocate 4 seconds;
-			say "[variable custom style][numerical-response-1][roman type][line break]";
+			say "[variable custom style][chosen numerical response][roman type][line break]";
 			execute talk-greet for M;
 		now the printed name of talk-greet is "";
 	otherwise:
+		let N be 0;
 		repeat with T running through talk-objects:
 			consider T for M;
+			let TXT be the substituted form of "[printed name of T]";
+			if TXT is not "": [Before setting (initial) printed name of talk-object to "" I had to test for: unless TXT matches the text "talk-"]
+				increase N by 1;
+				[if debugmode > 1, say "Added ['][printed name of T][run paragraph on]['] as question [N].[line break]";]
 		set numerical response 0 to "cancel";
 		compute multiple choice question;
-		if player-numerical-response is not 0, compute chosen conversation of M.
+		if M is intelligent and the latex-transformation of the player >= 7 and player-numerical-response is not 0: [#LXorDD: As per LATEX TRANSFORMATION GUIDELINES: at 7 they can't talk: I've tweaked it so that at level 7 they can't talk intelligibly, at 8, they are unintelligible.]
+			if the latex-transformation of the player is 8:
+				if M is not witch:
+					say "[one of][BigNameDesc of M] tilts [his of M] head, shaking [his of M] head at your unintelligible response[or][BigNameDesc of M] looks puzzled by the sounds you're making[or]It looks like [NameDesc of M] is surprised by the inarticulate noises you produce[at random].[if M is intelligent][one of] [speech style of M]'Weird. It's almost like this sex doll is trying to talk to me.'[roman type][line break][or][speech style of M]'Huh, a new kind of doll that can almost talk.'[roman type][line break][or][speech style of M]'Sorry, I don't speak balloon-animal.'[roman type][line break][or][speech style of M]'Ugh. It'd be less creepy if they actually programmed this new kind of doll with some cute phrases, like [']Please fuck me.[']'[roman type][line break][or][speech style of M]'What's that, Slutty - [']Timmy's fallen in the well![']? Are you some kind of fuckdoll sidekick? That's different.'[roman type][line break][or][speech style of M]'Do you want to follow me? Are you meant to be my rubberdoll sidekick? I guess you can follow me around if you want to.'[roman type][line break][as decreasingly likely outcomes][end if]";
+				otherwise:
+					say "[one of][BigNameDesc of M] tilts [his of M] head, shaking [his of M] head at your unintelligible response[or][BigNameDesc of M] looks genuinely puzzled by the sounds you're making[at random].[one of] [speech style of M]'Look, there's no point trying to talk, you silly sex doll. Go and find the ingredients I told you about to reverse that curse.'[roman type][line break][or][speech style of M]'Fae mushroom; recipe for the curse reversal.'[roman type][line break][or][speech style of M]'You're making as much sense as a squeaky bath toy. Just go and get the things I told you to, like a good little doll.'[roman type][line break][or][speech style of M]'I'd advise you not to make those noises around other people, dolly: they'll probably think you're saying [']Fuck this sex doll.[']'[roman type][line break][in random order]";
+			otherwise:
+				say "[one of][BigNameDesc of M] tilts [his of M] head, trying to interpret your barely-intelligible response[or][BigNameDesc of M] struggles to interpret the sounds you're making[or]It looks like [NameDesc of M] is struggling to understand you[at random].";
+				if a random number between the latex-transformation of the player and 8 is 8:
+					[So a 1-in-2 chance since they're TF 7.]
+					[if debugmode > 1, say "Number of entries in multiple choice question is [N][line break]";]
+					now player-numerical-response is a random number between 1 and N; [They can be correctly understood by chance!]
+					let S be the chosen numerical response;
+					[I would prefer to say: replace the text "\"" in S with "'" but I'm not sure you can escape "?]
+					replace character number 1 in S with "[']";
+					now N is the number of characters in S;
+					replace character number N in S with "[']";
+					say "[one of][speech style of M]'You said [S].'[roman type][line break][or][S] Got it.'[roman type][line break][or][speech style of M]'I think you said [S]. Well...'[roman type][line break][at random]";
+				compute chosen conversation of M;
+		otherwise if player-numerical-response is not 0:
+			[if debugmode > 1, say "About to compute chosen conversation for response to question [player-numerical-response][line break]";]
+			compute chosen conversation of M.
 
 To compute gagged response of (M - a monster):
 	say "It doesn't seem like [NameDesc of M] [if M is uninterested]knows that you're speaking to [him of M][otherwise]can understand you[end if].".
@@ -38,19 +72,19 @@ To compute gagged response of (M - a monster):
 To compute chosen conversation of (M - a monster):
 	let B be a random number from 1 to 4;
 	if the class of the player is cheerleader, decrease B by 1;
-	if M is intelligent and the player is seductive and (diaper quest is 1 or M is actually seducable) and B < 2: [Bimbo greetings supersede the normal greeting function]
+	if M is intelligent and the player is seductive and (diaper quest is 1 or M is actually seducable) and B < 2: [Bimbo greetings override the normal talking function]
 		allocate 4 seconds;
 		say BimboSeduce of M;
 		if M is friendly, compute BimboSeduced of M;
 	otherwise:
-		let TXT be the printed name of the chosen numerical response;
+		let TXT be the chosen numerical response;
 		if debugmode > 1, say "TXT is: [TXT][line break]";
 		repeat with T running through talk-objects:
 			if debugmode > 1, say "Checking against: [printed name of T][line break]";
 			if TXT is not "" and the printed name of T matches the text TXT:
 				allocate 4 seconds;
 				say "[variable custom style][TXT][roman type][line break]";
-				now TXT is "";
+				now TXT is ""; [makes sure there's no more matches somehow and means that the interpreter doesn't need to waste any more time doing any more complex string comparisons]
 				execute T for M;
 			otherwise:
 				if debugmode > 1, say "No match found.";
@@ -1216,7 +1250,7 @@ To say FriendlyFoodRefuseFlav of (M - a monster):
 	say "[speech style of M]'Seems to me that you have food of your own. Why don't you eat that first?'[roman type][line break]".
 
 To say FriendlyFoodAgreeFlav of (M - a monster):
-	say "[speech style of M]'I guess you can have this.'[roman type]".
+	say "[speech style of M]'I guess you can have this.'[roman type][line break]".
 
 To say FriendlyFoodEmptyFlav of (M - a monster):
 	say "[speech style of M]'I do not have anything for you.'[roman type][line break]".

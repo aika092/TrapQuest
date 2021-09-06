@@ -1,8 +1,8 @@
 Mimic by Objects begins here.
 
-memic is a container. memic is openable. memic is closed. memic is not portable. The printed name of memic is "[if the mimic-disguise of memic is memic][TQlink of item described]mimic[shortcut-desc][TQxlink of item described][verb-desc of item described][otherwise][mimic-disguise of memic][end if]". memic is in Holding Pen. A memic has a number called mimic-boredom. memic is untrappable. A memic has an indexed text called the mimicName. Understand the mimicName property as describing memic. Understand "mimic" as memic. [The memic is purposefully named 'memic' to throw people off. However, that's kind of a legacy feature, since the advent of the character window.]
+memic is a container. memic is openable. memic is closed. memic is not portable. The printed name of memic is "[if the mimic-disguise of memic is memic][TQlink of item described]mimic[shortcut-desc][TQxlink of item described][verb-desc of item described][otherwise][mimic-disguise of memic][end if]". memic is in Holding Pen. A memic has a number called mimic-boredom. memic is not trappable. A memic has a text called the mimicName. Understand the mimicName property as describing memic. Understand "mimic" as memic. [The memic is purposefully named 'memic' to throw people off. However, that's kind of a legacy feature, since the advent of the character window.]
 
-To decide which indexed text is the next-text-shortcut of (M - memic):
+To decide which text is the next-text-shortcut of (M - memic):
 	unless the mimic-disguise of M is memic, decide on the text-shortcut of the mimic-disguise of M;
 	decide on "mim".
 
@@ -158,20 +158,20 @@ To compute mimic teasing (N - 4):[friendly mimic; messes with player penis size,
 		let Ab be a random worn plug;
 		unless Ab is plug, now Ab is a random off-stage plug;
 		[if there is a worn plug, ]
-		say " and more shadows emerge from the trunk and envelop your crotch, rapidly stroking your [ShortDesc of penis] as they creep on past your [ShortDesc of hips]";
-		if P > the size of penis and there is a worn plug:
-			PenisUp P - the size of penis;
-			say "You can feel your [printed name of Ab] shuddering inside you, rapidly losing mass as your penis begins to grow, lengthening rapidly into a [ShortDesc of penis]!";
+		say " and more shadows emerge from the trunk and envelop your crotch, rapidly stroking your [mystical-player-penis] as they creep on past your [ShortDesc of hips]";
+		if P > the mystical size of penis and there is a worn plug:
+			SpecialPenisUp P - the mystical size of penis; [#LXorDD]
+			say "You can feel your [printed name of Ab] shuddering inside you, rapidly losing mass as your penis begins to grow, lengthening rapidly into a [mystical ShortDesc of penis]!";
 			now the size of Ab is 1;
 		otherwise:
 			if Ab is plug and Ab is actually summonable:
-				SilentlyPenisDown P;
-				say "You feel something enter your [asshole] as your body begins reacting to the intense stimulation, growing [if P is 1]a full inch[otherwise if P is 2]two full inches[otherwise if P is 3]one, two, three full inches[otherwise]one, two, three full inches, and then rapidly bulging to a full [P][end if] as your penis rapidly shrinks down into a [ShortDesc of penis].";
+				SilentlySpecialPenisDown P; [#LXorDD]
+				say "You feel something enter your [asshole] as your body begins reacting to the intense stimulation, growing [if P is 1]a full inch[otherwise if P is 2]two full inches[otherwise if P is 3]one, two, three full inches[otherwise]one, two, three full inches, and then rapidly bulging to a full [P][end if] as your penis rapidly shrinks down into a [mystical ShortDesc of penis].";
 				now the size of Ab is P;
 				summon Ab;
 			otherwise:
-				SilentlyPenisDown P;
-				say "Your penis rapidly shrinks down into a [ShortDesc of penis] as the mimic pries open your [asshole], looking you dead in the eye as it fills you with [if P is 1]a nice big shot of warm fluid[otherwise if P is 2]a few shots of warm fluid[otherwise]several shots of warm fluid[end if].";
+				SilentlySpecialPenisDown P; [#LXorDD]
+				say "Your penis rapidly shrinks down into a [mystical ShortDesc of penis] as the mimic pries open your [asshole], looking you dead in the eye as it fills you with [if P is 1]a nice big shot of warm fluid[otherwise if P is 2]a few shots of warm fluid[otherwise]several shots of warm fluid[end if].";
 				AssFill P;
 	otherwise:
 		let V be the openness of vagina;

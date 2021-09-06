@@ -88,15 +88,12 @@ This is the golem merging rule:
 		if rubber top hat is off-stage and rubber top hat is actually summonable:
 			say "You're now wearing a small pink latex top hat!";
 			summon rubber top hat cursed;
-		otherwise if the player is not top heavy:
+		if the player is not top heavy:
 			say "Your chest feels strange and you look down in horror to see your breasts have expanded. [if the silicone volume of breasts is 0]Apparently you have breast implants now![otherwise]Your breast implants are even bigger![end if]";
 			BustImplantsUp 4;
-		otherwise if the flesh volume of hips + the silicone volume of hips < max ass size:
+		if the flesh volume of hips + the silicone volume of hips < max ass size:
 			say "Your ass feels strange and you look down in horror to see it's expanded. [if the silicone volume of hips is 0]Apparently you have silicone implants in it now![otherwise]Your butt implants are even bigger than they used to be![end if]";
-			AssImplantsUp 4;
-		if the lips of face < 3:
-			say "Your lips feel suddenly uncomfortable, and you can tell they've grown in size.";
-			LipsUp 1;
+			AssImplantsUp 3;
 	otherwise:
 		If the player is not top heavy:
 			say "Your chest feels suddenly heavier...";
@@ -106,6 +103,9 @@ This is the golem merging rule:
 			HipUp 4;
 		say "Your muscles feel a bit stiff...";
 		DexDown 2;
+	if the lips of face < max lip size:
+		say "Your lips feel suddenly uncomfortable, and you can tell they've grown in size.";
+		LipsUp 1;
 	destroy golem;
 	rule succeeds.
 

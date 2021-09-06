@@ -98,12 +98,12 @@ To decide which figure-name is the examine-image of (C - WoodsScenery01):
 
 [woodsscenery02 is a statue]
 
-WoodsScenery04 is a scenery. WoodsScenery04 is in Woods27. Understand "well", "brick", "wishing well" as WoodsScenery04.
+WoodsScenery04 is a thing. WoodsScenery04 is scenery. WoodsScenery04 is in Woods27. Understand "well", "brick", "wishing well" as WoodsScenery04.
 
 To say ExamineDesc of (C - WoodsScenery04):
 	say "A dilapidated brick well.".
 
-WoodsScenery05 is a scenery. WoodsScenery05 is in Woods31. Understand "statue", "women", "woman", "statues" as WoodsScenery05.
+WoodsScenery05 is a thing. WoodsScenery05 is scenery. WoodsScenery05 is in Woods31. Understand "statue", "women", "woman", "statues" as WoodsScenery05.
 
 To say ExamineDesc of (C - WoodsScenery05):
 	say "A pair of [if diaper quest is 1]diapered [otherwise if pregnancy fetish is 1]pregnant [end if] women carved out of stone, with [if vine boss is alive]green vines wrapping up their bodies like ropes.[otherwise]with their arms positioned to cover up their bodies.[end if]".

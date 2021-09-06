@@ -80,4 +80,9 @@ The hobble skirt trousers top level clash rule is listed in the trousers wearabi
 
 trousers removability rules is a rulebook. The removability rules of trousers is usually trousers removability rules.
 
+This is the remove inappropriate trousers rule:
+	repeat with B running through trousers:
+		if B is not fetish appropriate, now B is in Holding Pen.
+The remove inappropriate trousers rule is listed in the diaper quest fix rules.
+
 Trousers Framework ends here.

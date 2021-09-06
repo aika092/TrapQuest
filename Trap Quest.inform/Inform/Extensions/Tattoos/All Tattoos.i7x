@@ -2871,7 +2871,7 @@ To decide which object is the at least partial concealer of (T - thorny tattoo):
 To decide which number is the initial outrage of (T - thorny tattoo):
 	decide on 2.
 
-titties out tattoo is a belly-tattoo. The tattoo-title of titties out is "when in doubt titties out".
+titties out tattoo is a belly-tattoo. The tattoo-title of titties out tattoo is "when in doubt titties out".
 Figure of titties out tattoo is the file "Items/Tats/tattoo162.jpg".
 To decide which figure-name is the examine-image of (T - titties out tattoo):
 	decide on figure of titties out tattoo.
@@ -3001,7 +3001,7 @@ To decide which number is the initial outrage of (T - unfaithful tattoo):
 unicorn-horn-finger tattoo is a body tattoo. The tattoo-title of unicorn-horn-finger tattoo is "unicorn horn finger".
 Figure of unicorn-horn-finger tattoo is the file "Items/Tats/tattoo62.jpg".
 Definition: unicorn-horn-finger tattoo is eligible:
-	if the noun is gloves or the noun is magic themed or the noun is fairy-wand or the noun is royal scepter or the noun is purity clothing or the noun is horn or the noun is magic lamp or the noun is bow themed or the noun is horseshoe, decide yes;
+	if the noun is gloves or the noun is magic themed or the noun is fairy-wand or the noun is royal scepter or the noun is purity clothing or the noun is horn or the noun is magic lamp or the noun is bow themed or the noun is horse themed, decide yes;
 	decide no.
 To decide which figure-name is the examine-image of (T - unicorn-horn-finger tattoo):
 	decide on figure of unicorn-horn-finger tattoo.
@@ -3021,6 +3021,7 @@ To decide which number is the initial cringe of (T - unicorn-horn-finger tattoo)
 	decide on 4.
 Definition: unicorn-horn-finger tattoo is magic themed: decide yes.
 Definition: unicorn-horn-finger tattoo is bow themed: decide yes.
+Definition: unicorn-horn-finger tattoo is horse themed: decide yes.
 
 Book - V Tattoos
 

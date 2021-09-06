@@ -18,9 +18,7 @@ WellWishing is an action applying to one thing.
 
 Check WellWishing:
 	unless the location of the player is Woods27, say "You'd probably need a wishing well to do that." instead;
-	if the noun is bottle:
-		unless the noun is open topped, say "It probably makes more sense to try that with something that has an open top." instead;
-		if the doses of the noun < 1, say "But it's empty?" instead;
+	if the noun is bottle and the doses of the noun < 1, say "But it's empty?" instead;
 	otherwise if the noun is not a plentiful accessory:
 		unless the noun is infernal gem, say "It probably makes more sense to use something like jewellery." instead;
 	[otherwise:
@@ -41,7 +39,7 @@ Carry out WellWishing:
 	set next numerical response to "just donate";
 	set next numerical response to "don't make a wish";
 	compute multiple choice question;
-	let MCQ be the printed name of the chosen numerical response;
+	let MCQ be the chosen numerical response;
 	if MCQ matches the text "make":[cancel]
 		say "You decide against it." instead;
 	otherwise if MCQ matches the text "purification":
@@ -64,6 +62,7 @@ Carry out WellWishing:
 			otherwise now potion-value is a random number between 2 and 4;
 		increase offer-value by potion-value * the doses of the noun;
 		DoseEmpty the noun;
+		if the noun is can, destroy the noun;
 	otherwise:
 		say "You toss the [ShortDesc of the noun] into the well. A satisfying plunk can be heard as it hits the water at the bottom. An ephemeral voice speaks inside your head.";
 		if the noun is plentiful accessory:
@@ -188,6 +187,16 @@ To compute WellPurifying for offer (N - a number) with roll (R - a number):
 			if N < 100, say "Rejected... Toxins... Embedded...[roman type][line break]The voice echoes in your head as light gathers around the well and slowly dissipates.";
 			otherwise increase R by 1;
 	if R is 5:
+		if (the virgin bonus of the player < 0 or (virgincursed > 0 and the player is gendered male)) and N > 75:
+			say "Accepted... Shame... Counseled...[roman type][line break]The voice echoes in your head as your mind instantly adapts to the shame of [if virgincursed > 0 and the player is possessing a penis]losing your anal virginity first[otherwise]losing your precious virginity[end if]. [if the player is not shameless]Your sense of dignity feels like it's dropped to its lowest point ever, but at least your shame won't bring you down anymore![end if]";
+			ultraHumiliate;[enough to push you down a humiliation level]
+			now the virgin bonus of the player is 0;
+			if the player is gendered male, now virgincursed is 0;
+			now wish-done is 1;
+		otherwise:
+			if N < 100, say "Rejected... Shame... Inherent...[roman type][line break]The voice echoes in your head as light gathers around the well and slowly dissipates.";
+			otherwise increase R by 1;
+	if R is 6:
 		say "Accepted... Corruption... Purified...[roman type][line break]The voice echoes in your head as a wave of clarity passes through you.";
 		SexAddictDown 1;
 		now the stored-offerings of wishing well is 0;

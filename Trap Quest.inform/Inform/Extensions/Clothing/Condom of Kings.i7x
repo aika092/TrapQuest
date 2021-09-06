@@ -71,12 +71,12 @@ To compute periodic effect of (C - a condom of kings):
 		say "Your [printed name of C] falls to the ground, now made useless!";
 		remove C from play;
 	otherwise if C is creamfilled or C is cursed:
-		if a random number between -1 and 250 < the size of penis and the size of penis > min penis size:
+		if a random number between -1 and 250 < the mystical size of penis and the mystical size of penis > min penis size:
 			say "You feel your [printed name of C] shrink your [ShortDesc of penis]!";
-			PenisDown 1;
+			SpecialPenisDown 1; [#LXorDD]
 	otherwise:
-		if a random number between -250 and 13 > the size of penis and the size of penis < 10:
-			PenisUp 1.
+		if a random number between -250 and 13 > the mystical size of penis and the mystical size of penis < 10:
+			SpecialPenisUp 1. [#LXorDD]
 
 Definition: a condom of kings is stealable: decide no.
 

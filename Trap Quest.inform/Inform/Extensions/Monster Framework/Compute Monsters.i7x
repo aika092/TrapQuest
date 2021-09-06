@@ -55,9 +55,9 @@ To compute turn (N - a number) of (M - a monster):
 			if M is uninterested, now monster-engaged is 0;
 			check perception of M;
 			if debugmode > 1, say "Finished checking perception.";
-			if M is in the location of the player and M is undefeated and M is not penetrating a body part and M is not grabbing the player and M is friendly and (M is interested or N is 1):
+		[	if M is in the location of the player and M is undefeated and M is not penetrating a body part and M is not grabbing the player and M is friendly and (M is interested or N is 1):
 				if debugmode > 1, say "Checking disapproval...";
-				check disapproval of M;
+				check disapproval of M;] [Aika: no idea when I put this here. Doesn't make sense to be here and also in compute action below. Also an NPC should never check disapproval if it's not interested]
 			if M is interested and monster-engaged is 0, now N is 3; [The monster doesn't get an action if it detected the player in the perception round this turn.]
 		if M is student and M is in a predicament room:
 			unless N is 2, compute football movement of M; [football moves don't happen at the same time as the player moving, they happen later]
@@ -126,6 +126,7 @@ To compute action (N - a number) of (M - a monster):
 	if M is submission-assisting:[TODO: handle problem where assisters randomly lose interest]
 		if M is not interested or M is not in the location of the player or the number of combative monsters in the location of the player is 0:
 			now M is not submission-assisting;
+	compute maybe donate dick to shop by M; [#LXorDD]
 	compute unique final action of M.
 
 Definition: a monster is location-attracted:

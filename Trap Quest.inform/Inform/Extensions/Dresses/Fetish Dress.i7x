@@ -282,7 +282,7 @@ Definition: assless-fetish-dress is red themed: decide yes.
 
 Part 10 - Pink Translucent Latex Dress
 
-pink translucent fetish dress is a fetish dress. pink translucent fetish dress is sheer. pink translucent fetish dress is high cut. The text-shortcut of translucent fetish dress is "ptld".
+pink translucent fetish dress is a fetish dress. pink translucent fetish dress is sheer. pink translucent fetish dress is high cut. The text-shortcut of pink translucent fetish dress is "ptld".
 
 To say MediumDesc of (C - pink translucent fetish dress):
 	say "pink translucent latex fetish dress".

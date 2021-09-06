@@ -165,8 +165,9 @@ Carry out wearing clothing:
 
 Report wearing something (this is the identify-magic-state rule):
 	if the noun is wearthing:
-		now the magic-ID of the noun is identified;
-		now the curse-ID of the noun is sure;
+		unless the noun is portal-cock-ring: [#LXorDD: its magic effect doesn't usually trigger upon first wearing.]
+			now the magic-ID of the noun is identified;
+			now the curse-ID of the noun is sure;
 		if newbie tips is 1 and the noun is cursed and tutorial is 0, say "[one of][newbie style]Newbie tip: Uh-oh, this item is cursed! That means that you won't be able to take it off on your own. You need to find an altar to get it blessed. There is one somewhere in the Dungeon, and one in the Woods. The one in the Dungeon works on a simple timer, you can use it about once every 5 minutes of in-game time; and all you need to do is [']place['] the item you want blessed onto the altar. The one in the woods works very differently, as you'll find out when you speak to the witch that guards it! [bold type]Headgear[newbie style] work differently - there's no way to decurse them except for with their class quest. If you really can't succeed at the quest, try the knife in the hotel region.[roman type][line break][or][stopping]".
 The identify-magic-state rule is listed last in the report wearing rulebook.
 

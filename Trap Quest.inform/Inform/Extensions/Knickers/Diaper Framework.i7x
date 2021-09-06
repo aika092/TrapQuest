@@ -9,6 +9,8 @@ To decide which number is the default-soak-limit of (C - a diaper):
 Definition: a diaper is external fluid immune: decide yes.
 To decide which number is the initial armour of (C - a diaper):
 	decide on the soak-limit of C / 3.
+To decide which number is the crotch-tightness of (C - a diaper):
+	decide on 0.
 
 The printed name of a diaper is "[clothing-title-before][selfexamineuniquetitle of item described][clothing-title-after]".
 
@@ -199,8 +201,6 @@ disposable diaper is a kind of diaper.
 Definition: a disposable diaper is crotch-pullup: decide no.
 pullup diaper is a kind of diaper.
 
-The DQFigure of diaper is usually DQMedium.
-
 To compute SelfExamineDesc of (K - a diaper):
 	say "A large puffy adult diaper completely covers your [ShortDesc of hips]. ".
 
@@ -226,7 +226,8 @@ To decide which number is the initial outrage of (C - a diaper):
 	decide on the initial cringe of C.
 
 To decide which number is the initial cringe of (C - a diaper):
-	let O be 3 + the DQBulk of C + the unique outrage of C;
+	let O be 3 + the DQBulk of C;
+	increase O by the unique outrage of C;
 	decide on O.
 
 To decide which number is the unique outrage of (C - a diaper):
@@ -417,7 +418,9 @@ To MessDown (K - a knickers) by (N - a number):
 
 To MessSet (K - a knickers) to (N - a number):
 	now the mess of K is N;
-	if K is diaper, now the perceived-mess of K is the mess of K.
+	if K is diaper:
+		if N is 0, now the foreign-mess of K is 0;
+		now the perceived-mess of K is the mess of K.
 
 Part - Stack of Diapers
 
@@ -662,6 +665,7 @@ To MessSet (K - diaper-stack) to (N - a number):
 			now the mess of C is 0;
 			now the perceived-mess of C is 0;
 			now the foreign-mess of C is 0;
+		now the foreign-mess of K is 0;
 	now the mess of K is N;
 	now the perceived-mess of K is the mess of K.
 
@@ -740,6 +744,8 @@ Check wearing store diaper:
 
 A DQClothing is a kind of object. NoDQImage is a DQClothing. A knickers has a DQClothing called the DQFigure. The DQFigure of a knickers is usually DQBlackPants.
 DQCloth is a DQClothing. DQGiant is a DQClothing. DQHuge is a DQClothing. DQLarge is a DQClothing. DQMedium is a DQClothing. DQMoosive is a DQClothing. DQSmall is a DQClothing. DQVelcro is a DQClothing. DQBunny is a DQClothing. DQWaddle is a DQClothing. DQWhitePants is a DQClothing. DQBlackPants is a DQClothing. DQPinkPants is a DQClothing. DQPullups is a DQClothing. DQTrainingPants is a DQClothing. DQRubber is a DQClothing.
+
+The DQFigure of diaper is usually DQMedium.
 
 To decide which number is the DQBulk of (D - a DQClothing):
 	decide on 0.

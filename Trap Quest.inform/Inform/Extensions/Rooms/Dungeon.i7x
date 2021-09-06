@@ -97,7 +97,7 @@ Dungeon40 is a sandy labyrinth room. The printed name of Dungeon40 is "Circular 
 
 Dungeon41 is a mandatory untrappable labyrinth room. The printed name of Dungeon41 is "Dungeon Shop". "The shop you emerge in would fit into nearly any fantasy RPG, with lines of products sitting on wooden shelves, and with their prices neatly stencilled onto wooden plaques sitting beneath them. All manner of goods are sold here, all at the behest of the massive shopkeeper.". The shape of Dungeon41 is L1/0-0-0-0-1-0.
 
-DungeonScenery02 is scenery. DungeonScenery02 is in Dungeon15. The printed name of DungeonScenery02 is "Ditch". Understand "swimming", "pool", "swimming pool", "ditch" as DungeonScenery02. Instead of entering DungeonScenery02, say "There's nothing interesting down there.".
+DungeonScenery02 is a thing. DungeonScenery02 is scenery. DungeonScenery02 is in Dungeon15. The printed name of DungeonScenery02 is "Ditch". Understand "swimming", "pool", "swimming pool", "ditch" as DungeonScenery02. Instead of entering DungeonScenery02, say "There's nothing interesting down there.".
 
 To say ExamineDesc of (C - DungeonScenery02):
 	say "There is a large ditch here, which looks like it once held water for people to swim in. [one of]It's completely empty now though.[or]There's no point going in there.[stopping]".
@@ -124,11 +124,11 @@ To say ExamineDesc of (T - DungeonScenery03):
 The minotaur's cage.
 
 *!]
-DungeonScenery04 is scenery. DungeonScenery04 is in Dungeon36. The printed name of DungeonScenery04 is "Cage". Understand "cage", "prison" as DungeonScenery04.
+DungeonScenery04 is a thing. DungeonScenery04 is scenery. DungeonScenery04 is in Dungeon36. The printed name of DungeonScenery04 is "Cage". Understand "cage", "prison" as DungeonScenery04.
 To say ExamineDesc of (C - DungeonScenery04):
 	say "A large metal cage. [if there is an alive caged dungeon boss]The entrance to the cage is locked, and appears to be opened by an automatic mechanism. Inside there is an angry looking monster. He snarls at you.[otherwise]The cage is open and empty.[end if]".
 
-DungeonScenery05 is scenery. DungeonScenery05 is in Dungeon12. The printed name of DungeonScenery05 is "Photo". Understand "photo", "picture", "frame" as DungeonScenery05.
+DungeonScenery05 is a thing. DungeonScenery05 is scenery. DungeonScenery05 is in Dungeon12. The printed name of DungeonScenery05 is "Photo". Understand "photo", "picture", "frame" as DungeonScenery05.
 To say ExamineDesc of (C - DungeonScenery05):
 	say "[if the faint count of the player is 0]A pink photo frame. There is currently no picture in the frame.[otherwise]The photo within the pink frame shows you[RealDesc][end if]".
 
@@ -160,6 +160,6 @@ Check pushing DungeonScenery06:
 
 Stairwell01 is a mandatory labyrinth room. The printed name of Stairwell01 is "Stone Stairwell". [Stairwell01 is east of Dungeon02.] "Before you even emerge in the room, you can feel that it is different. The air is lighter and there is natural lighting; could it be a way out? Sure enough, you discover a stone staircase leading up and out of the dungeon to whatever wonders and wilderness await you above the dungeon complex.". The shape of Stairwell01 is L1/1-0-1-1-1-1.
 
-The Dungeon is a region. Dungeon01, Dungeon02, Dungeon03, Dungeon04, Dungeon05, Dungeon06, Dungeon07, Dungeon08, Dungeon09, Dungeon10, Dungeon11, Dungeon12, Dungeon13, Dungeon14, Dungeon15, Dungeon16, Dungeon17, Dungeon18, Dungeon19, Dungeon20, Dungeon21, Dungeon22, Dungeon23, Dungeon24, Dungeon25, [Dungeon26,] Dungeon27, Dungeon28, Dungeon29, Dungeon30, Dungeon31, Dungeon32, Dungeon33, Dungeon34, Dungeon35, Dungeon36, Dungeon37, Dungeon38, Dungeon39, Dungeon40, Dungeon41, Stairwell01 are in The Dungeon.
+The Dungeon is a region. Dungeon01, Dungeon02, Dungeon03, Dungeon04, Dungeon05, Dungeon06, Dungeon07, Dungeon08, Dungeon09, Dungeon10, Dungeon11, Dungeon12, Dungeon13, Dungeon14, Dungeon15, Dungeon16, Dungeon17, Dungeon18, Dungeon19, Dungeon20, Dungeon21, Dungeon22, Dungeon23, Dungeon24, Dungeon25, Dungeon27, Dungeon28, Dungeon29, Dungeon30, Dungeon31, Dungeon32, Dungeon33, Dungeon34, Dungeon35, Dungeon36, Dungeon37, Dungeon38, Dungeon39, Dungeon40, Dungeon41, Stairwell01 are in The Dungeon.
 
 Dungeon ends here.

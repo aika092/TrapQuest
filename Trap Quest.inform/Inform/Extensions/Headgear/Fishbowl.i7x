@@ -12,7 +12,7 @@ Definition: fishbowl is blessable: decide no.
 To compute drinking (X - fishbowl):
 	unless the fill-type of X > highest-cursed, compute cursed drinking X.
 
-fishbowl-hat is a headgear. fishbowl-hat is glass. Understand "fish", "bowl", "fishbowl" as fishbowl-hat. fishbowl-hat can be betrayal.
+fishbowl-hat is a headgear. fishbowl-hat is glass. Understand "fish", "bowl", "fishbowl" as fishbowl-hat. fishbowl-hat can be fishbowl-cum, fishbowl-urine, or betrayal (this is the fishbowl-hat-type property).
 The printed name of fishbowl-hat is "[clothing-title-before]fishbowl[clothing-title-after]". The text-shortcut of fishbowl-hat is "fshb".
 
 To set up influence of (C - fishbowl-hat):
@@ -30,10 +30,14 @@ To decide which number is the initial outrage of (C - fishbowl-hat):
 	if C is betrayal, decide on 11;
 	decide on 7.
 
-Figure of upside down fishbowl is the file "Items/Accessories/Head/bowl1.jpg".
+Figure of upside down fishbowl cum is the file "Items/Accessories/Head/bowl1.jpg".
+Figure of upside down fishbowl traitor is the file "Items/Accessories/Head/bowl2.png".
+Figure of upside down fishbowl urine is the file "Items/Accessories/Head/bowl3.png".
 
 To decide which figure-name is the clothing-image of (C - fishbowl-hat):
-	decide on figure of upside down fishbowl.
+	if C is betrayal, decide on figure of upside down fishbowl traitor;
+	if C is fishbowl-urine, decide on figure of upside down fishbowl urine;
+	decide on figure of upside down fishbowl cum.
 
 To say ClothingDesc of (H - fishbowl-hat):
 	say "This glass bowl [if H is worn]sits upside down on your head. It [end if]still has the dregs of the [if the fill-colour of fishbowl is murky][urine] and [end if][semen] that was collected during your gangbang session with [NameDesc of woman-player][if H is betrayal]. It has the words 'WHORE TRAITOR' written in red Sharpie across the front, to let everyone know you have no honour even amongst your own kind[end if].".

@@ -2,7 +2,7 @@ Slutty Monokinis by Dresses begins here.
 
 Part 1 - Yellow String Monokini
 
-A yellow string monokini is a kind of string monokini. A yellow string monokini is usually see-through. There is 1 yellow string monokini. The text-shortcut of yellow string monokini is "ymk".
+A yellow string monokini is a kind of string monokini. A yellow string monokini is fully exposing. There is 1 yellow string monokini. The text-shortcut of yellow string monokini is "ymk".
 
 The printed name of yellow string monokini is usually "[clothing-title-before]yellow string swimsuit[clothing-title-after]".
 
@@ -14,6 +14,10 @@ Figure of yellow string monokini is the file "Items/Clothes/Upper/Swimming/Monok
 
 To decide which number is the initial outrage of (C - a yellow string monokini):
 	decide on 11.
+To decide which number is the penis-capacity of (C - a yellow string monokini):
+	decide on 0.
+Definition: a yellow string monokini is potentially vagina covering: decide no.
+Definition: a yellow string monokini is potentially at least partially vagina covering: decide no.
 
 To decide which figure-name is clothing-image of (C - a yellow string monokini):
 	decide on figure of yellow string monokini.
@@ -67,6 +71,9 @@ To say MediumDesc of (C - a grey string monokini):
 	say "practically non-existent string swimsuit".
 
 Definition: a grey string monokini is grey themed: decide yes.
+
+To decide which number is the crotch-tightness of (C - a grey string monokini):
+	decide on 4.
 
 Part 4 - Black String Monokini
 
@@ -161,6 +168,8 @@ To say MediumDesc of (C - a blue minimalist monokini):
 	say "blue skimpy swimsuit".
 
 Definition: a blue minimalist monokini is blue themed: decide yes.
+To decide which number is the crotch-tightness of (C - a blue minimalist monokini):
+	decide on 4.
 
 Part 8 - Pink Strap Monokini
 
@@ -271,6 +280,8 @@ To set up influence of (C - a white string cameltoe monokini):
 	now C is titfuck-addiction-influencing.
 
 Definition: a white string cameltoe monokini is white themed: decide yes.
+To decide which number is the crotch-tightness of (C - white string cameltoe monokini):
+	decide on 5.
 
 Part 13 - Red and White Strap Monokini
 

@@ -6,6 +6,8 @@ To decide which number is the penis-capacity of (K - crotch rope):
 	decide on 0.
 To decide which number is the initial armour of (C - crotch rope):
 	decide on 15.
+To decide which number is the crotch-tightness of (C - crotch rope):
+	decide on 5.
 
 Definition: crotch rope is displacable: decide no.
 Definition: crotch rope is black themed: decide yes.
@@ -27,7 +29,7 @@ To say ShortDesc of (K - crotch rope):
 	say "crotch rope".
 
 To decide which number is the initial outrage of (C - crotch rope):
-	decide on the lewdly exposed outrage of vagina - 1.
+	decide on 7.
 
 To set up influence of (C - crotch rope):
 	now C is anal-sex-addiction-influencing.

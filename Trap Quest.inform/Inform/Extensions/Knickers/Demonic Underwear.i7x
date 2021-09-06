@@ -135,8 +135,8 @@ This is the demon junk punishment rule:
 	[if the player is female, now F is 1;]
 	let J be a random worn demon codpiece;
 	say "Your [printed name of J] tightens painfully and the gem lights up, [one of]as if reacting in disapproval of your actions[or]once again showing its opinion of your actions[stopping]!";
-	if the size of penis > min penis size:
-		PenisDown the charge of J;
+	if the mystical size of penis > min penis size:
+		SpecialPenisDown the charge of J; [#LXorDD]
 	otherwise if the raw dexterity of the player + the raw strength of the player > 6:
 		if a random number between 1 and 2 is 1:
 			StrengthDown the charge of J;

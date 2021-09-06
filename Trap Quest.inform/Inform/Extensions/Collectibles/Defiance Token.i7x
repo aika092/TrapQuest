@@ -26,13 +26,13 @@ To compute mass collectible reward of (T - a defiance token):
 		DelicateDown N;
 	if NM > 0:
 		if the player is possessing a penis:
-			PenisUp NM;
-		otherwise if the player is a top donator:
+			SpecialPenisUp NM;
+		otherwise if the player is not a top donator:
 			say "DEV NOTE: The player would grow a penis, but this is alpha tester content at the moment until it has undergone more testing and improvement.";
 		otherwise if choice in row 68 of the Table of Player Options is 0:
 			say "DEV NOTE: The player would grow a penis, but they can't because futanari is disabled. Another feature will replace this soon.";
 		otherwise:
-			PenisUp NM;
+			SpecialPenisUp NM; [#LXorDD]
 	repeat with X running through held defiance tokens:
 		destroy X;
 	reset alchemy charge.

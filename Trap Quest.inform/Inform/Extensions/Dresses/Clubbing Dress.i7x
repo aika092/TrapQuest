@@ -61,7 +61,7 @@ Definition: a pink clubbing dress is pink themed: decide yes.
 
 Part 2 - Long Pink Dress
 
-pink cocktail dress is a clubbing dress. pink cocktail dress is hobble-skirted. pink cocktail dress is crotch-skirted. There is 1 pink cocktail dress. Figure of pink cocktail dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress2.png". The text-shortcut of pink cocktail dress is "lpcd". Understand "long" as pink cocktail dress.
+pink cocktail dress is a clubbing dress. pink cocktail dress is hobble-skirted. pink cocktail dress is crotch-skirted. Figure of pink cocktail dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress2.png". The text-shortcut of pink cocktail dress is "lpcd". Understand "long" as pink cocktail dress.
 
 To decide which figure-name is clothing-image of (C - pink cocktail dress):
 	decide on figure of pink cocktail dress.

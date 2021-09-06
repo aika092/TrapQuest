@@ -125,7 +125,7 @@ To say ShortDesc of asshole:
 			otherwise:
 				say " ";
 		otherwise:
-			say ", numb ";
+			say ", [one of]oddly[or]strangely[or]curiously|suspiciously[at random] tingly "; [#LXorDD was: 'numb']
 	say "[asshole]".
 
 [!<SayMediumDescOfAsshole>+
@@ -189,7 +189,7 @@ To say AssholeModesty:
 		if P is monster:
 			say "It is currently being pounded by [FuckerDesc of P].";
 		otherwise:
-			say "It is currently the [if the girth of P > the openness of asshole]snug [end if]home of [FuckerDesc of P].".
+			say "It is currently [if P is players-detached-dick and the size of players-detached-dick is 0]being magically stimulated by[otherwise if the girth of P > the openness of asshole]the snug home of[otherwise]the home of[end if] [FuckerDesc of P].".
 
 To say RealGapeDesc:
 	say "Your asshole is [AssGape real openness of asshole][if the player is possessing a vagina] and your pussy is [PussyGape real openness of vagina]".
@@ -229,12 +229,13 @@ To gape (A - asshole) times (X - a number):
 	if virgincursed > 1:
 		if virgincursed is 2:
 			say "[bold type]You realise that losing your anal virginity is made even more shameful by the fact that you have yet to lose your REAL virginity. You've been fucked before you fucked anyone else! [roman type]The realisation crushes your spirit and your body shivers involuntarily. The game seems to detect these feelings.";
-			PenisDown 1;
+			SpecialPenisDown 1; [#LXorDD]
+			now virgincursed is 1;
 			say "Something tells you that until you have real, dominant sex, you are going to keep being punished by the game, spiralling towards a fucktoy plaything for the monsters of this world...";
-		otherwise:[i thought it was weird you would sometimes not a message like this on losing your anal virginity first, so I wrote this to clarify things.]
-			say "[bold type]You realise you've been fucked before you fucked anyone else, and [if the bimbo of the player < 10]surprisingly[otherwise]unsurprisingly[end if], you already feel yourself accepting it.[line break][variable custom style]'Anal is probably way better anyway. Who cares?'[roman type][line break]";
-			PenisDown 1;
-		now virgincursed is 1.
+		otherwise if virgincursed is 3:[Idea being that the PC is already open to submissive anal sex etc so the explicit frilly emasculating sissy theme doesn't really make sense.]
+			say "[bold type]You realise you've been fucked before you fucked anyone else, and [if the bimbo of the player < 10]surprisingly[otherwise]unsurprisingly[end if], you already feel yourself accepting it.[line break][variable custom style]Anal is probably way better anyway. Who cares?[roman type][line break]";
+			now virgincursed is 4;
+			SpecialPenisDown 1; [#LXorDD]
 
 To AssClose (X - a number):
 	now the previous openness of asshole is the openness of asshole;

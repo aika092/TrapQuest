@@ -1,6 +1,6 @@
 Giant Wasp by Monster begins here.
 
-A giant wasp is a kind of monster. A giant wasp is usually airborne. A giant wasp can be flying. A giant wasp is usually not flying. A giant wasp is usually neuter. The poison-status of a giant wasp is -1. A giant wasp has a number called fertilisation-cooldown.
+A giant wasp is a kind of monster. A giant wasp is usually airborne. A giant wasp can be flying. A giant wasp is usually not flying. A giant wasp is usually neuter. The poison-status of a giant wasp is -1. A giant wasp has a number called fertilisation-cooldown. A giant wasp is detached-dick-ignoring.
 
 Definition: a giant wasp is virginity taking: decide yes. [an ovipositor is a kind of sex organ]
 Definition: a giant wasp is willing to do anal: decide yes.
@@ -567,9 +567,9 @@ To compute (M - domesticated wasp) protecting against (X - a monster):
 
 To compute SelectionFailure of (M - domesticated wasp):
 	say "[BigNameDesc of M] finds itself unable to use you how it planned, but the rider seems to have an idea! ";
-	if the player is possessing a penis and the size of penis > min penis size:
+	if the player is somehow possessing a penis and the mystical size of penis > min penis size:
 		say "[big he of fairy-witch] fires several bolts of pink magic toward your crotch.";
-		PenisDown 1;
+		SpecialPenisDown 1; [#LXorDD]
 	otherwise:
 		say "[big he of fairy-witch] fires several bolts of red magic toward your ass, which cause your skin to tingle as [his of fairy-witch] magic painfully gapes your [asshole].";
 		ruin asshole;

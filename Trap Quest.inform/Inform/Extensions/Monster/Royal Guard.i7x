@@ -230,7 +230,7 @@ To compute MasturbationReaction of (M - a royal guard):
 			if M is friendly-fucking:
 				say "[BigNameDesc of M] grins, and starts thrusting even faster.";
 			otherwise:
-				say "[BigNameDesc of M] [if M is penetrating a fuckhole]spanks[otherwise]slaps[end if] you angrily.[line break][first custom style]'Did I give you permission to do that? This is supposed to be a punishment!'[roman type][line break]";
+				say "[BigNameDesc of M] [if M is penetrating a fuckhole]spanks[otherwise]slaps[end if] you angrily.[line break][speech style of M]'Did I give you permission to do that? This is supposed to be a punishment!'[roman type][line break]";
 				PainUp 1;
 				say "[bold type]Your masturbation session has been interrupted![roman type][line break]";
 				follow the masturbation ended rule;
@@ -238,7 +238,7 @@ To compute MasturbationReaction of (M - a royal guard):
 			if the class of the player is princess:
 				say "[BigNameDesc of M] looks away politely and begins to wander off.";
 			otherwise:
-				say "[BigNameDesc of M] frowns.[line break][first custom style]'[if M is acquaintance]Ahem! I am supposed to arrest people who do such vile things in these walls. I will not forget this breach of my trust[otherwise]Disgusting! I should arrest you on the spot[end if].'[roman type][line break][big he of M] turns to leave.";
+				say "[BigNameDesc of M] frowns.[line break][speech style of M]'[if M is acquaintance]Ahem! I am supposed to arrest people who do such vile things in these walls. I will not forget this breach of my trust[otherwise]Disgusting! I should arrest you on the spot[end if].'[roman type][line break][big he of M] turns to leave.";
 				FavourDown M by 2;
 			bore M.
 
@@ -311,7 +311,7 @@ Definition: a royal guard (called M) is distracted:
 To compute (M - a royal guard) npcBattling (N - a gladiator):
 	let U be 0;
 	if N is undefeated:
-		say "[BigNameDesc of M][']s eyes are drawn [if M is interested]away from you [end if]to [NameDesc of N].[line break][speech style of M]'[one of]I do not approve of your appearance, wench. Get on your knees, or I will be forced to make you[or]You there, wench. Such a lascivious display is against the law. Get on your knees and receive your punishment[or]You cannot walk these halls with such an appearance, wench. Get on your knees. Now[in random order].'[roman type][line break][big he of M] narrows [his of M] eyes at [FuckerDesc of N], who slowly turns to look at [him of N].[line break][speech style of N]'Ha. [one of]A true woman kneels for noone.'[or]Me? Kneel to you? A real woman does not kneel.'[or]I will never kneel to any man, especially not you.'[in random order][roman type][line break]";
+		say "[BigNameDesc of M][']s eyes are drawn [if M is interested]away from you [end if]to [NameDesc of N].[line break][speech style of M]'[one of]I do not approve of your appearance, wench. Get on your knees, or I will be forced to make you[or]You there, wench. Such a lascivious display is against the law. Get on your knees and receive your punishment[or]You cannot walk these halls with such an appearance, wench. Get on your knees. Now[in random order].'[roman type][line break][big he of M] narrows [his of M] eyes at [FuckerDesc of N], who slowly turns to look at [him of M].[line break][speech style of N]'Ha. [one of]A true woman kneels for noone.'[or]Me? Kneel to you? A real woman does not kneel.'[or]I will never kneel to any man, especially not you.'[in random order][roman type][line break]";
 		if a random number between 1 and 2 is 1:[guard loses]
 			say "[BigFuckerDesc of M] grabs [FuckerDesc of N] by the wrist and [if N is swordless]tries to wrench the sword out of [his of N] hand[otherwise]tries to smack [him of N][end if], but [FuckerDesc of N] reacts quickly and strikes [him of M] in the chest.[line break][speech style of M]'[one of]Oof-!'[or]Unh-!'[in random order][roman type][line break][FuckerDesc of M] immediately releases [him of N] and runs off before [FuckerDesc of N] can retaliate!";
 			now the refractory-period of M is 50;[so he doesn't try again immediately]
@@ -980,7 +980,7 @@ The royal guard arresting a criminal rule is listed last in the royal guard uniq
 [TODO: any submissive wenches get dragged along with you.]
 This is the royal guard incarcerating a criminal rule:
 	let M be current-monster;
-	if the number of barriers in the location of the player is 0 and Dungeon03 is placed and (M is prison guard or (shopkeeper is off-stage and shopkeeper is unfriendly)):[the prison guard always takes you to the cell]
+	if the number of barriers in the location of the player is 0 and Dungeon03 is placed and ((M is prison guard and the class of the player is not princess) or (shopkeeper is off-stage and shopkeeper is unfriendly)):[the prison guard always takes you to the cell]
 		if milking is 0 and the player is not at least partially monster stuck and the location of the player is not Dungeon41:[if you're busy, he'll wait.]
 			if the location of the player is not Dungeon03:
 				drag to Dungeon03 by M;
@@ -1062,7 +1062,7 @@ To compute happy reward of (M - a royal guard):
 			say "[big he of M] pulls out a handkerchief as [his of M] cock softens, [his of M] breathing still heavy as [he of M] wipes the creamy remnants of [his of M] load from your cleavage.[line break][speech style of M]'[if the class of the player is princess]It was an honour to be your consort, my liege. I will serve you any time[otherwise]I appreciate your service. Now go in peace[end if].'[roman type][line break]";
 			now the semen coating of breasts is 0;
 		otherwise if M is penetrating face:
-			say "[speech style of M][if the class of the player is princess]'Thank you, your highness. I will fight for you to the very end!'[otherwise]'As expected, the [whore] makes a good cocksucker.'[end if][roman type]";
+			say "[speech style of M][if the class of the player is princess]'Thank you, your highness. I will fight for you to the very end!'[otherwise]'As expected, the [whore] makes a good cocksucker.'[end if][roman type][line break]";
 			if the class of the player is princess, now the blue-balls of M is -1. [negative score here means he will fight harder for you. even against other guards.]
 
 To say TwosomePrep of (M - a royal guard) in (F - asshole):
@@ -1440,7 +1440,7 @@ To say FriendlySexReleaseRefusalSpeech of (M - a royal guard):
 		let B be a random off-stage small ballgag;
 		if B is nothing, now B is a random off-stage large ballgag;
 		if B is ballgag, summon B locked;
-		say "[speech style of M]'[one of]My apologies, princess, but I have been waiting too long for this moment.'[or]I can't hold back now that I've had a taste of your body, my princess.'[or]Today, princess, you work for me.'[or]My apologies, princess, but I have watched you flaunt your whorish body for long enough.'[at random][roman type] ";
+		say "[speech style of M]'[one of]My apologies, princess, but I have been waiting too long for this moment.'[or]I can't hold back now that I've had a taste of your body, my princess.'[or]Today, princess, you work for me.'[or]My apologies, princess, but I have watched you flaunt your whorish body for long enough.'[at random][roman type][line break]";
 		if B is ballgag, say "[BigNameDesc of M] fishes out a ballgag and fastens it to your mouth[if the relevant sex addiction of M < 8], silencing your indignant protests[end if]. ";
 		say "It doesn't seem like [he of M] intends to follow your orders anymore...";
 		anger M;
@@ -1451,10 +1451,10 @@ To say FriendlySexReleaseRefusalSpeech of (M - a royal guard):
 To say FriendlySexReleaseFlav of (M - a royal guard):
 	let F be a random body part penetrated by M;
 	if the bimbo of the player < 6 and the class of the player is princess:
-		say "[speech style of M]'[one of]Of course, milady.'[or]Ah, at once my liege.'[or]Mm. As you wish, princess.'[or]My apologies if I was rough, princess.'[at random][roman type] [BigNameDesc of M] gently removes [his of M] [DickDesc of M] from your [F].";
+		say "[speech style of M]'[one of]Of course, milady.'[or]Ah, at once my liege.'[or]Mm. As you wish, princess.'[or]My apologies if I was rough, princess.'[at random][roman type][line break][BigNameDesc of M] gently removes [his of M] [DickDesc of M] from your [F].";
 		[The M does not consider himself getting blue balls from this]
 	otherwise:
-		say "[speech style of M]'[one of]Very well, but know this. I will not be tantalised again.'[or]I will let you go this time. Do not tantalise me again in the future.[or]Fine. Do not tantalise me again, wench.'[at random][roman type] [BigNameDesc of M] removes [his of M] [DickDesc of M] from your [F].".
+		say "[speech style of M]'[one of]Very well, but know this. I will not be tantalised again.'[or]I will let you go this time. Do not tantalise me again in the future.[or]Fine. Do not tantalise me again, wench.'[at random][roman type][line break][BigNameDesc of M] removes [his of M] [DickDesc of M] from your [F].".
 
 To say RewardFlav of (M - a royal guard) for (T - a thing):
 	say "[speech style of M]'[if the class of the player is princess]A gift for my liege[otherwise][one of]Royal guards are not allowed to give out gifts, but... [or][stopping]Whoops, I dropped this! Clumsy me[end if].'[roman type][line break][BigNameDesc of M] puts a [T] on the ground in front of you, and winks.".
@@ -1563,9 +1563,9 @@ To say SubmissiveResponse of (M - a royal guard):
 
 To say UnAnnoyedResponse of (M - a royal guard):
 	if the class of the player is princess:
-		say "[speech style of M]'Princess-!'[roman type]";
+		say "[speech style of M]'Princess-!'[roman type][line break]";
 	otherwise:
-		say "[speech style of M]'Ha, disgusting!'[roman type]".
+		say "[speech style of M]'Ha, disgusting!'[roman type][line break]".
 
 To say MildAnnoyedResponse of (M - a royal guard):
 	if the class of the player is princess:
@@ -1574,7 +1574,7 @@ To say MildAnnoyedResponse of (M - a royal guard):
 		say "[speech style of M]'[one of]I will use your body whether you like it or not!'[or]Your body is mine to use as I see fit!'[or]Perhaps next time you will think before you provoke me!'[at random][roman type][line break]".
 
 To say AnnoyedResponse of (M - a royal guard):
-	say "[speech style of M]'[one of]Silence, now!'[or]Be SILENT!'[or]Be quiet, wench!'[at random][roman type]".
+	say "[speech style of M]'[one of]Silence, now!'[or]Be SILENT!'[or]Be quiet, wench!'[at random][roman type][line break]".
 
 To say TauntAccepted of (M - a royal guard):
 	if the class of the player is princess:
@@ -1668,7 +1668,7 @@ To compute friendly drink of (M - a royal guard):
 
 To compute unfriendly drink of (M - a royal guard):
 	if M is penetrating a body part:
-		say "[speech style of M]'I would, but you see, I'm a bit too busy filling your other end!'[roman type]";
+		say "[speech style of M]'I would, but you see, I'm a bit too busy filling your other end!'[roman type][line break]";
 	otherwise:
 		say "[if the thirst of the player is 5 and the player is upright]You are so thirsty that you drop to your knees and beg[otherwise if the thirst of the player is 5]You are so thirsty that you beg [him of M] find any way to quench your thirst[otherwise if the player is upright]You drop to your knees and beg[end if]. ";
 		now the stance of the player is 1;
@@ -1682,7 +1682,7 @@ Section 4 - Food Requesting
 Definition: a royal guard is willing to give snacks: decide yes.
 
 To say FriendlyFoodAgreeFlav of (M - a royal guard):
-	say "[speech style of M]'[if the class of the player is princess]Of course, Princess.'[otherwise]I don't like to encourage begging, but I hate to see people starving. You can have this.'[end if][roman type]".
+	say "[speech style of M]'[if the class of the player is princess]Of course, Princess.'[otherwise]I don't like to encourage begging, but I hate to see people starving. You can have this.'[end if][roman type][line break]".
 
 To say FriendlyFoodEmptyFlav of (M - a royal guard):
 	say "[speech style of M]'[if the class of the player is princess]I'm sorry Princess, I have nothing left.'[otherwise]I do not have anything for you.'[end if][roman type][line break]".

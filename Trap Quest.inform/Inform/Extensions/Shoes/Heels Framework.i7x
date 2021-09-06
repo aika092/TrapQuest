@@ -12,7 +12,7 @@ Definition: a heels is fluid immune: decide yes.
 
 Understand the heel-height property as describing a heels. Understand "heel", "inch" as heels. The printed plural name of heels is usually "[TQlink of item described][item style]pairs of heels[roman type]". The text-shortcut of heels is "he".
 
-stiletto heels is a kind of heels. boots is a kind of heels. platform heels is a kind of heels.
+stiletto heels is a kind of heels. boots is a kind of heels.
 Understand "boot", "boots" as boots.
 
 To decide which number is the initial cringe of (C - a shoes):
@@ -156,7 +156,10 @@ To decide which object is the unique-upgrade-target of (C - a heels):
 	if diaper quest is 0 and there is a worn demonic wearthing and tongue-heels is off-stage, decide on tongue-heels;
 	if diaper quest is 1 and the heel-height of C < 2, decide on a random off-stage mary janes;
 	if there is a worn diaper, decide on a random off-stage baby booties;
-	if there is a currently visible exercise themed wearthing and the heel-height of C < (2 + diaper quest), decide on a random off-stage white rollerskates.
+	if there is a currently visible exercise themed wearthing and the heel-height of C < (2 + diaper quest):
+		if C is white themed, decide on white-rollerskates;
+		if C is pink themed, decide on pink-rollerskates;
+		decide on red-rollerskates.
 
 To potentially transform (C - a heels):
 	if C is upgradable:

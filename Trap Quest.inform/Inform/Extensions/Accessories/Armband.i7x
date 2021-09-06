@@ -1,6 +1,6 @@
 Armband by Accessories begins here.
 
-armband is an accessory. armband is unique. armband is plastic. armband has an indexed text called armband-title. armband has an indexed text called armband-print. The text-shortcut of armband is "armb".
+armband is an accessory. armband is unique. armband is plastic. armband has a text called armband-title. armband has a text called armband-print. The text-shortcut of armband is "armb".
 
 The printed name of armband is usually "[TQlink of item described][item style][accessory-colour of the item described] armband[clothing-title-after]".
 
@@ -31,7 +31,7 @@ To say ClothingDesc of (C - armband):
 	if the armband-print of C is "new recruit", say "A neon pink armband with a clear plastic sleeve which you would expect to be used to hold an ID card. It does have a card inside, but instead of a photo of yourself there are just the words 'NEW RECRUIT' in big bumpy letters that look like they are made out of [accessory-colour of C].";
 	otherwise say "A neon pink armband with a clear plastic sleeve. The card inside reads the words '[NameBimbo] the [armband-print of C]' in big bumpy letters that look like they are made out of [accessory-colour of C].".
 
-To decide which indexed text is jewellery-shortcut of (A - armband):
+To decide which text is jewellery-shortcut of (A - armband):
 	decide on "ab".
 
 To decide which number is the rank of (Y - yourself):

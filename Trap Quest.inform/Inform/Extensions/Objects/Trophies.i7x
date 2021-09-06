@@ -51,7 +51,7 @@ To decide which figure-name is the examine-image of (C - bbc-trophy):
 	decide on figure of bbc trophy.
 
 To say ExamineDesc of (T - bbc-trophy):
-	say "This heavy metal trophy depicts a huge thick black [manly-penis] with a much smaller, limp white [sissy-penis] coiled around its base, dribbling its premature ejaculation. It is surrounded by a mystical [if the trophy-mode of T is 1]green glow, and you can feel that it is actively enhancing black virility whilst dampening white virility[otherwise]red glow, which allows you to sense that its powers of enhancing black virility whilst dampening white virility are currently inactive[end if].".
+	say "This heavy metal trophy depicts a huge thick black [manly-penis] with a much smaller, limp white [plain-sissy-penis] coiled around its base, dribbling its premature ejaculation. It is surrounded by a mystical [if the trophy-mode of T is 1]green glow, and you can feel that it is actively enhancing black virility whilst dampening white virility[otherwise]red glow, which allows you to sense that its powers of enhancing black virility whilst dampening white virility are currently inactive[end if].".
 
 Definition: bbc-trophy is fetish appropriate:
 	if interracial fetish is 1, decide yes;
@@ -192,6 +192,9 @@ Carry out TrophySwitching ejaculate-trophy:
 		now the trophy-mode of ejaculate-trophy is 0.
 
 diaper-trophy is a trophy. The printed name of diaper-trophy is "[TQlink of item described]diaper trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of diaper-trophy is "dipt". Understand "diaper" as diaper-trophy.
+Figure of diaper trophy is the file "Env/School/trophy12.png".
+To decide which figure-name is the examine-image of (C - diaper-trophy):
+	decide on figure of diaper trophy.
 
 Definition: diaper-trophy is fetish appropriate:
 	if diaper quest is 1, decide yes;

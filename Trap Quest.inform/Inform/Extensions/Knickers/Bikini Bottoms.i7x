@@ -6,6 +6,9 @@ To decide which number is the penis-capacity of (C - a bikini bottoms):
 	decide on 6.
 To decide which number is the initial armour of (C - a bikini bottoms):
 	decide on 8.
+To decide which number is the hipModesty of (C - a bikini bottoms):
+	if C is crotch-exposing, decide on 1;
+	decide on 4.
 
 Definition: a bikini bottoms is displacable: decide yes.
 Definition: a bikini bottoms is swimming themed: decide yes.
@@ -107,6 +110,8 @@ To decide which number is the penis-capacity of (H - pink bikini bottoms):
 	decide on 1.
 To decide which number is the initial armour of (C - pink bikini bottoms):
 	decide on 3.
+To decide which number is the hipModesty of (C - pink bikini bottoms):
+	decide on 1.
 
 To decide which object is the potential-upgrade-target of (H - pink bikini bottoms):
 	decide on a random off-stage crotchless bikini bottoms.
@@ -214,5 +219,31 @@ Definition: leopard print bikini bottoms is leopard themed: decide yes.
 Definition: leopard print bikini bottoms is black themed: decide yes.
 Definition: leopard print bikini bottoms is rippable: decide yes.
 Definition: leopard print bikini bottoms is crotch-pullup: decide no.
+
+[swimming bottoms]
+
+swimming bottoms is a bikini bottoms. swimming bottoms is rare. The printed name of swimming bottoms is "[clothing-title-before]pair of skimpy swimming bottoms[clothing-title-after]". The text-shortcut of swimming bottoms is "swmb". Understand "skimpy" as swimming bottoms.
+
+To compute SelfExamineDesc of (K - swimming bottoms):
+	say "A pair of skimpy swimming bottoms leaves lots of your [ShortDesc of hips] exposed. ";
+
+To say selfexamineuniquetitle of (K - swimming bottoms):
+	say "pair of skimpy swimming bottoms".
+
+Figure of swimming bottoms 1 is the file "Items/Clothes/Lower/Underwear/Skimpy/Bikini/swimmingbottoms1.png".
+To decide which figure-name is clothing-image of (C - swimming bottoms):
+	decide on figure of swimming bottoms 1.
+
+To say ClothingDesc of (K - swimming bottoms):
+	say "A set of grey swimming bottoms. They look professional an optimised for swimming, but also have a section missing on each side of the hip, to expose more skin than is necessary.".
+
+Definition: swimming bottoms is grey themed: decide yes.
+Definition: swimming bottoms is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
+To decide which number is the hipModesty of (C - swimming bottoms):
+	decide on 3.
+To uniquely set up (C - swimming bottoms):
+	now C is speed.
 
 Bikini Bottoms ends here.

@@ -321,8 +321,8 @@ Definition: matron (called M) is diaper change chastity cummies rewarding:
 	decide no.
 
 To compute diaper change chastity cummies reward of (M - matron):
-	if the player is presenting as male, say "[speech style of M]'[one of]Oh you poor thing, are you struggling to get your cummies while locked into that thing? Don't worry dear, I'll help you have your squirt squirt like a good sissy girl.'[or]Time for your girly squirt squirt, for being such a good sissy!'[stopping][roman type] [BigNameDesc of M] sticks [if the openness of asshole < 4][his of M] index finger[otherwise if the openness of asshole < 9]two fingers[otherwise]four fingers[end if] into your [ShortDesc of asshole] and carefully fingers you, deliberately putting pressure on your prostate. ";
-	otherwise say "[speech style of M]'[one of]I be you're being starved of your cummies locked away behind that thing, aren't you? Well don't worry, I know just the trick, there's another hole we can use...'[or]Time for your anal squirt squirt, for being such a good baby!'[stopping][roman type] [BigNameDesc of M] sticks [if the openness of asshole < 4][his of M] index finger[otherwise if the openness of asshole < 9]two fingers[otherwise]four fingers[end if] into your [ShortDesc of asshole] and carefully fingers you, deliberately putting pressure on your G-spot. ";
+	if the player is presenting as male, say "[speech style of M]'[one of]Oh you poor thing, are you struggling to get your cummies while locked into that thing? Don't worry dear, I'll help you have your squirt squirt like a good sissy girl.'[or]Time for your girly squirt squirt, for being such a good sissy!'[stopping][roman type][line break][BigNameDesc of M] sticks [if the openness of asshole < 4][his of M] index finger[otherwise if the openness of asshole < 9]two fingers[otherwise]four fingers[end if] into your [ShortDesc of asshole] and carefully fingers you, deliberately putting pressure on your prostate. ";
+	otherwise say "[speech style of M]'[one of]I be you're being starved of your cummies locked away behind that thing, aren't you? Well don't worry, I know just the trick, there's another hole we can use...'[or]Time for your anal squirt squirt, for being such a good baby!'[stopping][roman type][line break][BigNameDesc of M] sticks [if the openness of asshole < 4][his of M] index finger[otherwise if the openness of asshole < 9]two fingers[otherwise]four fingers[end if] into your [ShortDesc of asshole] and carefully fingers you, deliberately putting pressure on your G-spot. ";
 	say "[big his of M] professional skill is evident, as you very quickly feel a certain warmth rising...";
 	now M is penetrating asshole;
 	anally orgasm shamefully;
@@ -362,7 +362,7 @@ To compute unique diaper change effect of (M - matron):
 			if the potty-training-asked of M is 0:
 				say "[speech style of M]'You've been such a good little [if the player is presenting as female]baby girl[otherwise]sissy baby[end if] for me, how would you like to try being potty trained?' [roman type]";
 				if the player is consenting and the diaper addiction of the player < 17:
-					say "[speech style of M]'Wonderful!'[roman type][line break]The matron pulls out a potty training chart, writing '[if the player is presenting as male]Sissy[end if] Princess Pottypants ([NameBimbo])' in the name section before pinning it to the wall.[line break][speech style of M]'You know, you're the only pathetic diaper [if diaper messing >= 3]messing [otherwise]wetting [end if][if the player is presenting as male]sissy [otherwise]girl [end if]who has been good enough to earn this!'[roman type] [big he of M] adds with a smile, before pulling out a giant, pink, plastic training potty, placing it below the chart.[line break][speech style of M]'Now, here are the rules. If you manage to use the potty 5 times in a row without having any accidents, you'll earn your way to training pants. If you manage to use the potty 10 times in a row without accidents after earning training pants, you'll get to wear big girl panties! However, if you have 10 accidents in a row after earning training pants, or 20 total, you'll be demoted back to diapers. Similarly, if you have 5 accidents in a row after earning big girl panties, or 10 total, you'll be demoted back to training pants. [if diaper messing >= 3]Messy accidents count as 2 for demotions. [end if]Good luck baby!'[roman type][line break]";
+					say "[speech style of M]'Wonderful!'[roman type][line break]The matron pulls out a potty training chart, writing '[if the player is presenting as male]Sissy[end if] Princess Pottypants ([NameBimbo])' in the name section before pinning it to the wall.[line break][speech style of M]'You know, you're the only pathetic diaper [if diaper messing >= 3]messing [otherwise]wetting [end if][if the player is presenting as male]sissy [otherwise]girl [end if]who has been good enough to earn this!'[roman type][line break][big he of M] adds with a smile, before pulling out a giant, pink, plastic training potty, placing it below the chart.[line break][speech style of M]'Now, here are the rules. If you manage to use the potty 5 times in a row without having any accidents, you'll earn your way to training pants. If you manage to use the potty 10 times in a row without accidents after earning training pants, you'll get to wear big girl panties! However, if you have 10 accidents in a row after earning training pants, or 20 total, you'll be demoted back to diapers. Similarly, if you have 5 accidents in a row after earning big girl panties, or 10 total, you'll be demoted back to training pants. [if diaper messing >= 3]Messy accidents count as 2 for demotions. [end if]Good luck baby!'[roman type][line break]";
 					now the potty-training of M is 1;
 					now the potty-training-asked of M is 1;
 				otherwise if the player is consenting:
@@ -375,7 +375,7 @@ To compute unique diaper change effect of (M - matron):
 					say "[speech style of M]'My offer to start potty training you still stands, baby.'[roman type][line break]Do you accept [his of M] offer? ";
 					if the player is bimbo consenting:
 						if the diaper addiction of the player < 17:
-							say "[speech style of M]'Wonderful!'[roman type][line break]The matron pulls out a potty training chart, writing '[if the player is presenting as male]Sissy[end if] Princess Pottypants ([NameBimbo])' in the name section before pinning it to the wall.[line break][speech style of M]'You know, you're the only pathetic diaper [if diaper messing >= 3]messing[otherwise]wetting[end if] [if the player is presenting as male]sissy[otherwise]girl[end if] who has been good enough to earn this!'[roman type] [big he of M] adds with a smile, before pulling out a giant, pink, plastic training potty, placing it below the chart.[line break][speech style of M]'Now, here are the rules. If you manage to use the potty 5 times in a row without having any accidents, you'll earn your way to training pants. If you manage to use the potty 10 times in a row without accidents after earning training pants, you'll get to wear big girl panties! However, if you have 10 accidents in a row after earning training pants, or 20 total, you'll be demoted back to diapers. Similarly, if you have 5 accidents in a row after earning big girl panties, or 10 total, you'll be demoted back to training pants. [if diaper messing >= 3]Messy accidents count as 2 for demotions. [end if]Good luck baby!'[roman type][line break]";
+							say "[speech style of M]'Wonderful!'[roman type][line break]The matron pulls out a potty training chart, writing '[if the player is presenting as male]Sissy[end if] Princess Pottypants ([NameBimbo])' in the name section before pinning it to the wall.[line break][speech style of M]'You know, you're the only pathetic diaper [if diaper messing >= 3]messing[otherwise]wetting[end if] [if the player is presenting as male]sissy[otherwise]girl[end if] who has been good enough to earn this!'[roman type][line break][big he of M] adds with a smile, before pulling out a giant, pink, plastic training potty, placing it below the chart.[line break][speech style of M]'Now, here are the rules. If you manage to use the potty 5 times in a row without having any accidents, you'll earn your way to training pants. If you manage to use the potty 10 times in a row without accidents after earning training pants, you'll get to wear big girl panties! However, if you have 10 accidents in a row after earning training pants, or 20 total, you'll be demoted back to diapers. Similarly, if you have 5 accidents in a row after earning big girl panties, or 10 total, you'll be demoted back to training pants. [if diaper messing >= 3]Messy accidents count as 2 for demotions. [end if]Good luck baby!'[roman type][line break]";
 							now the potty-training of M is 1;
 							now the potty-training-asked of M is 1;
 						otherwise:
@@ -466,7 +466,7 @@ To compute forcefeed round (N - 2) of (M - matron):
 	StomachFoodUp 1.
 
 To compute forcefeed round (N - 1) of (M - matron):
-	say "[speech style of M]'Come on you messy baby, time for your sippy cup.'[roman type] Before you can react, a toddler's drinking cup is shoved into your mouth, and you are sipping down a mystery liquid that tastes a lot like fruit juice, but a bit more sour. [if incontinence < 5]Your stomach feels a little off...[otherwise if the diaper addiction of the player > 12]For a moment you almost forget you're not just a big baby.[otherwise]You feel the liquid enter your belly, and your bladder relax.[end if][line break]";
+	say "[speech style of M]'Come on you messy baby, time for your sippy cup.'[roman type][line break]Before you can react, a toddler's drinking cup is shoved into your mouth, and you are sipping down a mystery liquid that tastes a lot like fruit juice, but a bit more sour. [if incontinence < 5]Your stomach feels a little off...[otherwise if the diaper addiction of the player > 12]For a moment you almost forget you're not just a big baby.[otherwise]You feel the liquid enter your belly, and your bladder relax.[end if][line break]";
 	let B be a random off-stage bib;
 	if B is bib and the player is an adult baby:
 		summon B cursed;
@@ -637,19 +637,19 @@ To say FriendlyPartnerGreeting to (M - matron):
 		if the player is feeling submissive:[player is a masochist]
 			say "[second custom style]'[one of]Hee hee!'[or]This is fun!'[at random][roman type][line break]";
 		otherwise:
-			say "[second custom style]'[one of]I'm being good, aren't I?'[or]Am I a good girl?'[at random][roman type]";
+			say "[second custom style]'[one of]I'm being good, aren't I?'[or]Am I a good girl?'[at random][roman type][line break]";
 	otherwise:
 		if the player is feeling dominant:
-			if the player is gendered male, say "[first custom style]'Don't tell anybody about this!'[roman type]";
-			otherwise say "[first custom style]'Just so you know, this is a one time thing.'[roman type]";
+			if the player is gendered male, say "[first custom style]'Don't tell anybody about this!'[roman type][line break]";
+			otherwise say "[first custom style]'Just so you know, this is a one time thing.'[roman type][line break]";
 		otherwise:
-			say "[variable custom style]'[one of]This is just a one-time thing... unless I get really hungry, or something.'[or]And remember, you can't tell ANYONE about this...'[at random][roman type]".
+			say "[variable custom style]'[one of]This is just a one-time thing... unless I get really hungry, or something.'[or]And remember, you can't tell ANYONE about this...'[at random][roman type][line break]".
 
 To say SubmissiveResponse of (M - matron):
 	say "[speech style of M]'[one of]Hey there snookums. Are you hungry?'[or]Hi there! You sound hungry!'[or]Hi there cutie patootie!'[at random][roman type][line break]".
 
 To say UnAnnoyedResponse of (M - matron):
-	say "[speech style of M]'You're being so good!'[roman type]";
+	say "[speech style of M]'You're being so good!'[roman type][line break]";
 
 To say MildAnnoyedResponse of (M - matron):
 	say "[speech style of M]'[one of]That's enough, snookums!'[or]OK, that's enough now!'[at random][roman type][line break]".

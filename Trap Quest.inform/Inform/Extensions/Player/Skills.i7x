@@ -299,14 +299,14 @@ Part 15 - Milk Skill
 
 To teach milkskill:
 	if the milkskill of the player is 0 and lactation fetish is 1:
-		say "[second custom style]'Well, if you have large enough breasts, have you ever considered that you could pull them up to your mouth and drink the [milk] from them? It's healthy and natural!'[line break]";
-		say "[bold type]You've learned how to drink from your own breasts! By typing 'drink breasts' you can now consume [milk] from your breasts as long as they are big enough and your nipples are easily accessed. This can quench your thirst and make exercise more effective, but is quite a humiliating act to perform![roman type]";
+		say "[second custom style]'Well, if you have large enough breasts, have you ever considered that you could pull them up to your mouth and drink the [milk] from them? It's healthy and natural!'[roman type][line break]";
+		say "[bold type]You've learned how to drink from your own breasts! By typing 'drink breasts' you can now consume [milk] from your breasts as long as they are big enough and your nipples are easily accessed. This can quench your thirst and make exercise more effective, but is quite a humiliating act to perform![roman type][line break]";
 		now the milkskill of the player is 1;
 		reset skill cooldown;
 	otherwise if the milkskill of the player is 1:
-		say "[second custom style]'Nope, sorry, I've taught you the only useful thing I know!'[roman type]";
+		say "[second custom style]'Nope, sorry, I've taught you the only useful thing I know!'[roman type][line break]";
 	otherwise:
-		say "[second custom style]'Nope, sorry, judging from your sexual preferences I can't think of anything you'd want to know about!'[roman type]".
+		say "[second custom style]'Nope, sorry, judging from your sexual preferences I can't think of anything you'd want to know about!'[roman type][line break]".
 
 This is the milkskill list rule:
 	if the milkskill of the player is 1, say "You know how to drink from your own breasts.".

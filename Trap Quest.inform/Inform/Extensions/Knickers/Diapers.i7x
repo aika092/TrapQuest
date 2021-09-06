@@ -521,7 +521,8 @@ A training pants is a kind of knickers. There is 1 unique training pants. The pr
 
 To decide which number is the default-soak-limit of (C - a training pants):
 	decide on the penis-capacity of C * 2.
-
+To decide which number is the crotch-tightness of (C - a training pants):
+	decide on 0.
 To decide which figure-name is clothing-image of (C - a training pants):
 	decide on figure of training pants.
 

@@ -12,11 +12,6 @@ To decide which number is the delicateness-influence of (C - a clothing):
 		decide on S;
 	decide on 0.
 
-To decide which number is the delicateness-influence of (C - a dominance clothing):
-	let S be 4;
-	increase S by the magic-modifier of C;
-	decide on (S * -1).
-
 To decide which number is the delicateness of the player:
 	if the class of the player is living sex doll, decide on 1;
 	if the player is broken and mindbreak protection is 0, decide on 20;
@@ -25,6 +20,7 @@ To decide which number is the delicateness of the player:
 	if the womb volume of vagina >= 30 and the class of the player is not fertility goddess, increase S by 3;
 	repeat with C running through worn wearthings:
 		increase S by the delicateness-influence of C;
+		if C is dominance clothing, decrease S by 3 + the magic-modifier of C;
 	if there is a craved liquid-object:
 		if there is a desperately craved liquid-object, decrease S by 3;
 		otherwise decrease S by 2;
@@ -108,7 +104,8 @@ To PainUp (X - a number): [This function is anticipated to output some kind of f
 			if spank-heart tattoo is worn and the player is able to orgasm and (the player is extremely horny or (the player is very horny and the player is getting unlucky)):
 				say "[bold type]Your [spank-heart tattoo][bold type] sends sparks of pleasure down to your crotch![roman type][line break][if the player is not extremely horny][GotUnluckyFlav][end if]";
 				vaginally orgasm shamefully;
-			check accidental spitting;
+			let T be the substituted form of "As you [one of]recoil[or]flinch[or]tense up[in random order] with pain,";
+			check sudden spit and expulsion with reason T;
 	if highest delicateness < the delicateness of the player, now highest delicateness is the delicateness of the player.
 
 To DelicateUp (X - a number):

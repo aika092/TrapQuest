@@ -1,6 +1,6 @@
 Ghost by Monster begins here.
 
-A ghost is a kind of monster. A ghost has a number called bank. A ghost has a number called wind-up. The wind-up of a ghost is usually 0. The poison-status of a ghost is -1. A ghost can be phased or unphased. A ghost is male. A ghost is neuter. The blind-status of a ghost is -1.
+A ghost is a kind of monster. A ghost has a number called bank. A ghost has a number called wind-up. The wind-up of a ghost is usually 0. The poison-status of a ghost is -1. A ghost can be phased or unphased. A ghost is male. A ghost is neuter. The blind-status of a ghost is -1. A ghost is detached-dick-ignoring.
 
 Definition: a ghost is willing to do titfucks: decide no.
 
@@ -390,9 +390,9 @@ Section 3 - Continue and Finish Sex
 Definition: a ghost (called M) is able to remove cursed plugs: [Can the monster remove all plugs & gags?]
 	decide yes.
 
-The ghost end of sex rules is a rulebook. The end-of-sex-rules of a ghost is usually the ghost end of sex rules.
+The ghost-end-of-sex-rules is a rulebook. The end-of-sex-rules of a ghost is usually the ghost-end-of-sex-rules.
 
-The reset chosen orifice rule is listed first in the ghost end of sex rules.
+The reset chosen orifice rule is listed first in the ghost-end-of-sex-rules.
 
 To finish possession of (T - a thing) in (O - an orifice):
 	unless O is actually occupied or current-monster is unintelligent:
@@ -404,7 +404,7 @@ This is the ghost facial climax rule:
 	if current-monster is penetrating face, compute facial climax of current-monster;
 	repeat with G running through ballgags carried by current-monster:
 		finish possession of G in face.
-The ghost facial climax rule is listed in the ghost end of sex rules.
+The ghost facial climax rule is listed in the ghost-end-of-sex-rules.
 
 To say NearingClimaxOral of (M - a ghost):
 	if M is jismbodied ghost or M is ghostly tentacle, say "[one of]You can feel [FuckerDesc of M] start twitching in your mouth[or][BigFuckerDesc of M] moves more and more rapidly[or][BigFuckerDesc of M] noticeably thickens[in random order]. [big he of M] must be [one of]close[or]ready to cum[or]close to finishing[at random]!";
@@ -453,13 +453,12 @@ To say DeepthroatCreampie of (M - a ghost):
 		say "[one of][or][BigNameDesc of M] throbs powerfully, firing off load after load of [one of]cold[or]chill[or]icy[at random] [semen] straight down your throat.[or][BigNameDesc of M] shoots long ropes of [semen] directly into your mouth, which arc down your throat with perfect accuracy.[or][BigNameDesc of M] pushes itself fully into your mouth, throbbing subtly as it paints the back of your throat with wave after wave of chillingly cold [semen].[or][if the semen taste addiction of the player < 8]You do your best to keep your tongue flat as [NameDesc of M] shoots down your throat, making sure you don't have to taste any [semen] on its way down.[otherwise if the semen taste addiction of the player < 12]You gently stroke the underside of [NameDesc of M] ascool [semen] spurts down your throat, knowing it's better if you avoid tasting it at all[otherwise]You skillfully rub the underside of [NameDesc of M] with your tongue as cool [semen] shoots down your throat, determined to coax out the biggest load you can.[end if][in random order]";
 	otherwise:
 		say "[one of][BigFuckerDesc of M] tightens [his of M] grip, flickering as several shots of ice cold [semen] hit the back of your throat.[or][BigFuckerDesc of M][']s [DickDesc of M] throbs powerfully, firing off load after load of cool [semen] down your throat.[or][BigFuckerDesc of M] forces you all the way down, holding you with [his of M] icy grip as [he of M] ejaculates straight down your throat.[or][BigFuckerDesc of M] pulls you down as [he of M] begins to ejaculate, [his of M] [if M is a balls-haver]balls slapping your chin[otherwise]thighs gripping your face[end if] as [his of M] freezing cold load rushes down your throat.[or][BigFuckerDesc of M] buries [his of M] [DickDesc of M] as far into your mouth as it will go, jet after jet of frigid [semen] pinging into the back of your throat.[or][if the semen taste addiction of the player < 7][BigFuckerDesc of M] forces you all the way down as [he of M] begins to ejaculate. There's nothing you can do but swallow as [his of M] [DickDesc of M] pumps ice cold [semen] directly into your belly.[otherwise if the semen taste addiction of the player < 12][BigFuckerDesc of M] forces you all the way down as [he of M] begins to ejaculate. You obediently swallow as [his of M] [DickDesc of M] pumps ice cold [semen] directly into your belly.[otherwise][BigFuckerDesc of M] forces you all the way down as [he of M] begins to ejaculate. You happily swallow as [his of M] [DickDesc of M] pumps ice cold [semen] directly into your mouth.[end if][in random order]".
-		
 
 This is the ghost anal climax rule:
 	if current-monster is penetrating asshole, compute anal climax of current-monster;
 	repeat with G running through sex toys carried by current-monster:
 		finish possession of G in asshole.
-The ghost anal climax rule is listed in the ghost end of sex rules.
+The ghost anal climax rule is listed in the ghost-end-of-sex-rules.
 
 To finish possession of (T - a sex toy) in (O - an orifice):
 	unless O is actually occupied or current-monster is unintelligent:
@@ -472,7 +471,7 @@ This is the ghost vaginal climax rule:
 	if current-monster is penetrating vagina, compute vaginal climax of current-monster;
 	repeat with G running through sex toys carried by current-monster:
 		finish possession of G in vagina.
-The ghost vaginal climax rule is listed in the ghost end of sex rules.
+The ghost vaginal climax rule is listed in the ghost-end-of-sex-rules.
 
 To compute unique climax of (M - a ghost) in (F - a fuckhole):
 	say CreampieFlav of M in F;

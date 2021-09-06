@@ -172,18 +172,8 @@ To fill in legacy table blanks:
 	unless there is a choice in row 51 of the Table of Player Options, now choice in row 51 of Table of Player Options is 0;
 	unless there is a choice in row 52 of the Table of Player Options, now choice in row 52 of Table of Player Options is 0;
 	unless there is a choice in row 53 of the Table of Player Options, now choice in row 53 of Table of Player Options is 0;
-	[fix old background options]
-	if choice in row 53 of the Table of Player Options is 1:
-		now choice in row 53 of the Table of Player Options is 0;
-		now choice in row 52 of the Table of Player Options is 2;
 	unless there is a choice in row 54 of the Table of Player Options, now choice in row 54 of Table of Player Options is 0;
-	if choice in row 54 of the Table of Player Options is 1:
-		now choice in row 54 of the Table of Player Options is 0;
-		now choice in row 52 of the Table of Player Options is 3;
 	unless there is a choice in row 55 of the Table of Player Options, now choice in row 55 of Table of Player Options is 0;
-	if choice in row 55 of the Table of Player Options is 1:
-		now choice in row 55 of the Table of Player Options is 0;
-		now choice in row 52 of the Table of Player Options is 4;
 	unless there is a choice in row 56 of the Table of Player Options, now choice in row 56 of Table of Player Options is 0;
 	unless there is a choice in row 57 of the Table of Player Options, now choice in row 57 of Table of Player Options is 0;
 	unless there is a choice in row 58 of the Table of Player Options, now choice in row 58 of Table of Player Options is 0;
@@ -242,7 +232,7 @@ To correct table entries:
 		blank out the whole row;
 		choose the row with a toggle of custom name rule in the Table of Female Name Diaper Quest Options;
 		blank out the whole row;
-	if the player is not a top donator:
+	if the player is not the donator:
 		choose the row with a toggle of simulated internet toggle rule in the Table of Optional Text Settings;
 		blank out the whole row;
 	if diaper quest is 0:

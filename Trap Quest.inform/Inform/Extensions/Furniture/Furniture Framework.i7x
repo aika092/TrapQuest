@@ -2,7 +2,7 @@ Furniture Framework by Furniture begins here.
 
 Furniture is a kind of thing. Furniture is not portable. Furniture has a magic-curse. The magic-curse of furniture is usually bland. Furniture can be permanent fixture. Furniture is usually permanent fixture.
 
-Report going when there is furniture in the location [of the player ]and newbie tips is 1:
+Report going when there is furniture in the location and newbie tips is 1:
 	unless the player is in a predicament room, say "[one of][newbie style]Newbie tip: There's an item of furniture in this room. Pay close attention to where these are - when you take physical damage from fights[if the body soreness of the player > 0] (for example you are hurt right now)[end if], you'll need to 'rest on' the furniture in order to heal up. However, when you do this, your exercise count will go back down to 0. While your exercise count is high, you'll sometimes [if weight gain fetish is 1]burn fat or [end if]gain strength or dexterity.[roman type][line break][or][stopping]".
 
 Section 1 - Furniture Verb
@@ -21,6 +21,7 @@ Check entering furniture:
 		otherwise:
 			if the player is upset about sitting in mess, say "[variable custom style]There's no way I'm resting until I've [if the bimbo of the player < 10]got[otherwise]been[end if] changed.[roman type][line break]" instead;
 			say "[variable custom style]There's no way I can rest with this awful smell.[roman type][line break]" instead;
+	if player-breathing is false, say "You can't rest if you're holding your breath!" instead;
 	if the noun is hammock:
 		if there are revealed aggressive vines in the location of the player and the player is prone, say "You can't kneel on the hammock like that while these threatening vines are nearby! Try standing first?" instead;
 		say "Rest on the hammock until you feel completely better? ";

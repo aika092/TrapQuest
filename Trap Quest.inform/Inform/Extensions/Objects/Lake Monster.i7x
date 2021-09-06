@@ -396,11 +396,11 @@ To compute swimming in (WB - DungeonScenery03):
 			say "[line break]What should you do next?";
 			compute multiple choice question;
 			let CNR be the chosen numerical response;
-			if the printed name of CNR is "get out":
+			if the CNR is "get out":
 				now swimming is 0;
 				now M is not lake-stalking;
 				say "You swim to the shore of the [if M is in the location of the player and M is lake-stalking]lake, just barely evading the reach of the monster's tentacles as you pull yourself out.[otherwise]lake and pull yourself out.[end if]";
-			otherwise if the printed name of CNR is "rest":
+			otherwise if the CNR is "rest":
 				if M is lake-stalking:
 					say "You rest your body against the edge of the cave and begin to catch your breath. It's at that moment that you feel something slimy brush against your leg, and look down just in time to see a thick, octopus-like tentacle curling around your ankle. It yanks you out of the cave with incredible strength, dragging you underwater without giving you a chance to escape. The slimy tentacle keeps its grip on your ankle as it slowly slides around and up your leg.";
 					compute lake tentacle gangbang of M;
@@ -408,7 +408,7 @@ To compute swimming in (WB - DungeonScenery03):
 				otherwise:
 					say "You rest your body against the edge of the cave and catch your breath. It's a little difficult to rest here, but after a few minutes, you feel less fatigued.";
 					FatigueDown 5;
-			otherwise if the printed name of CNR is "dive":
+			otherwise if the CNR is "dive":
 				say "You dive below the surface.";
 				compute difficult swimming check in WB;
 				if M is lake-stalking and the swim-location of M is S:
@@ -417,7 +417,7 @@ To compute swimming in (WB - DungeonScenery03):
 					now swimming is 0;
 				otherwise:
 					compute treasure diving in WB at swim-location;
-			otherwise if the printed name of CNR is "head for shore" or the printed name of CNR is "swim out of cave":
+			otherwise if the CNR is "head for shore" or the CNR is "swim out of cave":
 				if M is in the location of the player:
 					if the swim-location of M < S, say "You swim straight for the monster.";[It's rare, but possible that the monster will be between you and the shore.]
 					otherwise say "You swim away from the monster.";
@@ -426,7 +426,7 @@ To compute swimming in (WB - DungeonScenery03):
 					otherwise say "You kick your legs as you swim back into shallow waters.";
 				compute normal swimming check in WB;
 				decrease swim-location by 1;
-			otherwise if the printed name of CNR is "swim further out" or the printed name of CNR is "swim into cave":
+			otherwise if the CNR is "swim further out" or the CNR is "swim into cave":
 				if M is in the location of the player:
 					if the swim-location of M > S, say "You swim straight for the monster.";
 					otherwise say "You swim away from the monster.";

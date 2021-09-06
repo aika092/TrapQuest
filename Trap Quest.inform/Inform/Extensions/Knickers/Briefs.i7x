@@ -229,11 +229,10 @@ blue-cameltoe briefs is a briefs. The text-shortcut of blue-cameltoe briefs is "
 To say selfexamineuniquetitle of (G - blue-cameltoe briefs):
 	say "pair of blue cameltoe briefs".
 To say UniqueClothingDesc of (G - blue-cameltoe briefs):
-	say "A pair of low cut pale blue briefs that would give a female wearer a very visible cameltoe.".
+	say "A pair of low cut pale blue briefs that would give a female wearer a visible cameltoe.".
 Definition: blue-cameltoe briefs is blue themed: decide yes.
-Definition: blue-cameltoe briefs is potentially vagina covering:
-	if the player is not possessing a vagina and it is potentially pussy covering, decide yes;
-	decide no. [On women, this item doesn't fully conceal the vagina]
+To decide which number is the crotch-tightness of (C - blue-cameltoe briefs):
+	decide on 4.
 To decide which number is the penis-capacity of (H - blue-cameltoe briefs):
 	decide on 2.
 To decide which object is the potential-upgrade-target of (H - blue-cameltoe briefs):

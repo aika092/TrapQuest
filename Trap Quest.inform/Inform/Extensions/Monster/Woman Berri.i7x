@@ -523,7 +523,7 @@ Chapter - Dominatrix Contraption Scene
 
 Understand "fucking", "machine", "box", "pink dildo", "rope", "ropes", "pulley", "pulleys", "spring", "springs", "glue", "glove", "gloves" as woman-player when the woman-status of woman-player is 93.
 
-Report going when the player is in Hotel37 and the dominatrix-contraption-scene of woman-player is 0 and the player is an august 2020 diaper donator and the woman-bimbo of woman-player is 4 and (diaper messing >= 3 or watersports fetish is 1):
+Report going when the player is in Hotel37 and the dominatrix-contraption-scene of woman-player is 0 and the woman-bimbo of woman-player is 4 and (diaper messing >= 3 or watersports fetish is 1):
 	if debugmode is 1, say "Checking if berri can appear.";
 	if dominatrix is not in the location of the player and dominatrix is alive and woman-player is relaxed redeploy appropriate:
 		deploy woman-player with woman-status 93;

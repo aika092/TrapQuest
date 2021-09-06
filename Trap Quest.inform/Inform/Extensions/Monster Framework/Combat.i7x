@@ -708,6 +708,20 @@ The monster punishment rules is a rulebook.
 
 This is the monster punishment rule:
 	if the player is prone:
+		[#LXorDD. Normally a 1 in 10 chance that even a dick detacher will try to detach rather than do their usual punishment. But if provoked beforehand, it can be as high as a 12 in 20 chance (60%).]
+		if current-monster is a-dick-detacher and tough-shit is 1 and (detach-likelihood + a random number between 1 and 20) > 18:
+			now detach-likelihood is 0;
+			let method be 0;
+			if penis-is-detachable by current-monster using 2:
+				now method is 2;
+			otherwise if penis-is-detachable by current-monster using 3:
+				now method is 3;
+			otherwise if penis-is-detachable by current-monster using 1:
+				now method is 1;
+			if method > 0:
+				say "[BigNameDesc of current-monster] doesn't move. You've just started wondering if [he of current-monster] is about to show mercy, ";
+				compute detach-players-dick by current-monster using method;
+				rule succeeds;
 		follow the monster punishment rules;
 		if the rule succeeded, rule succeeds.
 The monster punishment rule is listed last in the monster attack rules. [Listed 4th]
@@ -725,10 +739,20 @@ This is the default latex punishment rule:
 		if current-monster is an intelligent human monster and the player is not top heavy:
 			say LatexPunishmentFlav of current-monster;
 			BustInflate 2;
+		otherwise if current-monster is an aeromancer: [#LXorDD]
+			let T be desired science tier of current-monster;
+			if T > 2:
+				say DefaultSpecialScienceFlavour;
+				compute aeromancer science tier T of current-monster;
+			otherwise:
+				compute SelectionFrustrated of current-monster;
 		otherwise:
 			compute SelectionFrustrated of current-monster;
 		bore current-monster for 600 seconds;
 		rule succeeds.
+
+To say DefaultSpecialScienceFlavour:
+	say "[speech style of current-monster]'[one of]OOh, a subject for my exp-AIR-iments!'[or]You look ready for another blast.'[or]Don't look worried, I'm sure you'll breeze through this procedure.'[or]Ah, back to provide more FAN service, I see?'[or]Here we AIR again!'[or]Oh look, my favourite volunt-AIR!'[stopping][roman type][line break]".
 
 To say LatexPunishmentFlav of (M - a monster):
 	say "[BigNameDesc of M] brings one of your nipples to [his of M] mouth, and blows powerfully for a few seconds. Your rubber tits inflate [one of]in front of your eyes[or]even larger[stopping]!".
@@ -1628,10 +1652,9 @@ Chooses which part of the body this monster will attack. Certain body parts can'
 
 +!]
 To decide which body part is the painful-part of (M - a monster):
-	let B be a random body part;
-	if B is a fuckhole or B is penis or B is scrotum, now B is hips;
-	if B is hair, now B is face;
-	decide on B.
+	let LB be {face, breasts, belly, hips, thighs, arms};
+	let N be a random number between 1 and the number of entries in LB;
+	decide on entry N in LB.
 
 [!<ToComputeStrikingAttackOfMonster>
 
@@ -1756,6 +1779,8 @@ To compute (M - a monster) striking (B - thighs):
 
 To compute (M - a monster) striking (B - face):
 	compute M hurting B;
+	let T be "The impact on your cheek disturbs the liquid inside your mouth, and";
+	check accidental spitting with reason T;
 	if wasp-antennae is worn and total-wasps > 50:
 		say "Your antennae are clipped by the blow, which causes you even more pain!";
 		BodyRuin 1.
@@ -1766,9 +1791,8 @@ To compute (M - a monster) striking (B - belly):
 		compute P protecting B from M;
 	otherwise:
 		compute M hurting B;
-		if the player is able to expel and a random number between -6 and the total squirtable fill of belly > 0 and the latex-transformation of the player < 5 and currently-squirting is 0:
-			say "The hit puts pressure on the contents of your belly, and causes you to momentarily lose control of your sphincter!";
-			AssSquirt.
+		let T be "The hit puts pressure on your belly, and";
+		check sudden squirt with reason T.
 
 [!<ToComputeClothingProtectingBodyPartFromMonster>
 

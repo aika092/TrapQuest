@@ -124,8 +124,9 @@ Definition: outrageous-gag (called A) is applicable:
 	decide no.
 To reflect on (A - outrageous-gag):
 	let G be a random worn gag;
-	if G is small ballgag, say "[variable custom style]I can't even talk with this ballgag in my mouth, and it's making me drool everywhere. Yuck!";
-	if G is large ballgag or G is huge ballgag, say "[variable custom style][if the intelligence of the player < 9]Ow ow ow, this ballgag is making my jaw ache! Get it off![otherwise]I can't even talk with this ballgag in my mouth, and it's making me drool everywhere. Yuck![end if]";
+	let Its-making-me-drool be "I can't even talk with this ballgag in my mouth[if the latex-transformation of the player < 8], and it's making me drool everywhere. Yuck![otherwise] - [one of]not that I even can make words anymore with this stupid doll mouth.[or]not that I can form words with this stupid stuck-in-an-[']O[']-shape mouth.[or]not that I can even talk while this stupid curse has turned me into a darn doll![or]not that I could talk even if it was removed. Wah![at random][end if]"; [#LXorDD]
+	if G is small ballgag, say "[variable custom style][Its-making-me-drool]";
+	if G is large ballgag or G is huge ballgag, say "[variable custom style][if the intelligence of the player < 9]Ow ow ow, this ballgag is making my jaw ache! Get it off![otherwise][Its-making-me-drool][end if]";
 	if G is cock pacifier, say "[variable custom style][if the oral sex addiction of the player > 6]I guess it's pretty embarrassing to have this fake [manly-penis] in my mouth, but at least it keeps me hydrated! Yum![otherwise]This [manly-penis] pacifier is so humiliating. Not only can everyone see that I've got a pacifier in my mouth, but while it's in my mouth I'm basically permanently sucking [manly-penis]![end if]";
 	if G is opengag, say "[variable custom style]I can't even talk with this gag in my mouth, and it makes me look like I'm always ready to suck dick. Yuck!";
 	say "[roman type][line break]".

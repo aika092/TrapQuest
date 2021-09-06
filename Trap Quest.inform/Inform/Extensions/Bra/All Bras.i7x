@@ -53,21 +53,25 @@ To decide which number is the initial outrage of (C - a wonder bra):
 To decide which number is the adult-influence of (C - a wonder bra):
 	decide on 1.
 
-An exercise bra is a kind of bra. A beige exercise bra is a kind of exercise bra. A greyish exercise bra is a kind of exercise bra. A sexy exercise bra is a kind of exercise bra.
+An exercise bra is a kind of bra. A beige exercise bra is a kind of exercise bra. A greyish exercise bra is a kind of exercise bra. A sexy exercise bra is a kind of exercise bra. A tight blue exercise bra is a kind of exercise bra.
 
 Figure of exercise bra is the file "Items/Clothes/Upper/Bras/exercisebra1.png".
 Figure of greyish exercise bra is the file "Items/Clothes/Upper/Bras/exercisebra3.png".
 Figure of greyish exercise bra full is the file "Items/Clothes/Upper/Bras/exercisebra3.png".
 Figure of sexy exercise bra is the file "Items/Clothes/Upper/Bras/exercisebra2.png".
+Figure of tight blue exercise bra is the file "Items/Clothes/Upper/Bras/exercisebra5.png".
 
 There is 1 beige exercise bra. The text-shortcut of beige exercise bra is "ebr".
-There is 1 transformation-rare greyish exercise bra. The text-shortcut of greyish exercise bra is "gbr". There is 1 unique sexy exercise bra. The text-shortcut of sexy exercise bra is "sbr".
+There is 1 transformation-rare greyish exercise bra. The text-shortcut of greyish exercise bra is "gbr".
+There is 1 unique sexy exercise bra. The text-shortcut of sexy exercise bra is "sbr".
+There is 1 transformation-rare tight blue exercise bra. A tight blue exercise bra is normally-partially-nipple-covering. The text-shortcut of tight blue exercise bra is "tbbr".
 
 The min size of an exercise bra is usually 4. The max size of an exercise bra is usually 10. The support of an exercise bra is usually 4. An exercise bra is high cut.
 
 Definition: an exercise bra is exercise themed: decide yes.
 Definition: a greyish exercise bra is grey themed: decide yes.
-Definition: a sexy exercise bra is black themed: decide yes.
+Definition: a sexy exercise bra is blue themed: decide yes.
+Definition: a tight blue exercise bra is blue themed: decide yes.
 
 To decide which figure-name is clothing-image of (C - an exercise bra):
 	decide on figure of exercise bra.
@@ -77,6 +81,8 @@ To decide which figure-name is icarus-clothing-image of (C - a greyish exercise 
 	decide on figure of greyish exercise bra full.
 To decide which figure-name is clothing-image of (C - a sexy exercise bra):
 	decide on figure of sexy exercise bra.
+To decide which figure-name is clothing-image of (C - a tight blue exercise bra):
+	decide on figure of tight blue exercise bra.
 
 To say ShortDesc of (B - an exercise bra):
 	say "exercise bra".
@@ -93,6 +99,9 @@ To say selfexaminetitle of (B - a greyish exercise bra):
 To say selfexaminetitle of (B - a sexy exercise bra):
 	say "blue provocative exercise bra".
 
+To say selfexaminetitle of (B - a tight blue exercise bra):
+	say "tight blue exercise bra".
+
 To say ClothingDesc of (C - a beige exercise bra):
 	say "A secure beige [selfexaminetitle of C], which regulates the bouncing of breasts during exercise and helps reduce the strain on the back.".
 
@@ -100,7 +109,10 @@ To say ClothingDesc of (C - a greyish exercise bra):
 	say "A tight greyish [selfexaminetitle of C], which regulates the bouncing of breasts during exercise and helps reduce the strain on the back. Its low cut allows it to expose a lot of cleavage - it would be very eye-catching to watch the wearer's boobs jiggle and bounce at the gym.".
 
 To say ClothingDesc of (C - a sexy exercise bra):
-	say "A stretchy blue [selfexaminetitle of C], which regulates the bouncing of breasts during exercise and helps reduce the strain on the back. It's made of several separated strips of fabric, revealing a lot of breast flesh.".
+	say "A stretchy [selfexaminetitle of C], which regulates the bouncing of breasts during exercise and helps reduce the strain on the back. It's made of several separated strips of fabric, revealing a lot of breast flesh.".
+
+To say ClothingDesc of (C - a tight blue exercise bra):
+	say "A [selfexaminetitle of C], which regulates the bouncing of breasts during exercise and helps reduce the strain on the back. The fabric is too thin, though...".
 
 To decide which number is the dexterity-influence of (C - an exercise bra):
 	let D be 1;
@@ -116,6 +128,9 @@ To decide which number is the initial outrage of (C - a greyish exercise bra):
 To decide which number is the initial outrage of (C - a sexy exercise bra):
 	decide on 3.
 
+To decide which number is the initial outrage of (C - a tight blue exercise bra):
+	decide on 4.
+
 To decide which object is the unique-upgrade-target of (C - a beige exercise bra):
 	if pregnancy fetish is 1 and a random number between 1 and 2 is 1, decide on a random off-stage maternity bra;
 	if there is an off-stage greyish exercise bra, decide on a random off-stage greyish exercise bra;
@@ -124,6 +139,9 @@ To decide which object is the unique-upgrade-target of (C - a beige exercise bra
 
 To decide which object is the unique-upgrade-target of (C - a greyish exercise bra):
 	decide on a random off-stage sexy exercise bra.
+
+To decide which object is the unique-upgrade-target of (C - a sexy exercise bra):
+	decide on a random off-stage tight blue exercise bra.
 
 Definition: a greyish exercise bra is IcarusScienceAppropriate:
 	if it is actually summonable, decide yes;
@@ -652,7 +670,7 @@ To compute class set up of (C - acolyte-chestpiece):
 Definition: acolyte-chestpiece is demonic: decide yes.
 Definition: acolyte-chestpiece is yellow themed: decide yes.
 
-Figure of acolyte chestpiece is the file "Items/Clothes/Upper/Bras/cuplessbra2.jpg".
+Figure of acolyte chestpiece is the file "Items/Clothes/Upper/Bras/cuplessbra2.png".
 
 To decide which figure-name is clothing-image of (C - acolyte-chestpiece):
 	decide on figure of acolyte chestpiece.
@@ -765,5 +783,70 @@ To compute school periodic effect of (C - portal-bra):
 To say StealthPortalSexFlav:
 	let P be a random reactive person;
 	if P is a person, say "[one of][variable custom style]What would [FuckerDesc of P][variable custom style] say if [he of P] knew what was happening to me right now?[roman type][line break][or][or][cycling]".
+
+black-lace-bra is a bra. black-lace-bra is unique. black-lace-bra is silk. The printed name of black-lace-bra is "[clothing-title-before]black lacy bra[clothing-title-after]". The text-shortcut of black-lace-bra is "blcb". Understand "black", "lacy", "bra" as black-lace-bra. The min size of black-lace-bra is 1. The max size of black-lace-bra is 14. The support of black-lace-bra is 2. black-lace-bra is low cut. black-lace-bra is optional-top-displacable.
+
+black-lace-bra can be monified.
+Definition: black-lace-bra is whore themed:
+	if black-lace-bra is monified, decide yes;
+	decide no.
+
+Figure of black lace bra is the file "Items/Clothes/Upper/Bras/stripperbra1.png".
+Figure of black lace bra money is the file "Items/Clothes/Upper/Bras/stripperbra2.png".
+To decide which figure-name is clothing-image of (C - black-lace-bra):
+	if C is monified, decide on figure of black lace bra money;
+	decide on figure of black lace bra.
+
+To say ClothingDesc of (K - black-lace-bra):
+	say "A sexy black bra with narrow cups that spill out a lot of cleavage[if K is monified]. Several paper bills are sewn into the cups in a manner that makes it look like they have been tucked in[end if].".
+
+To compute SelfExamineDesc of (K - black-lace-bra):
+	say ClothingDesc of K.
+
+To say ShortDesc of (K - black-lace-bra):
+	say "lacy bra".
+
+To decide which number is the initial outrage of (C - black-lace-bra):
+	if C is monified, decide on 8;
+	decide on 3.
+
+Definition: black-lace-bra is upgradable:
+	if it is not monified, decide yes;
+	decide no.
+Definition: black-lace-bra is transformation-protected:
+	if it is not upgradable, decide yes;
+	decide no.
+Definition: black-lace-bra is disintegration-protected: decide yes.
+Definition: black-lace-bra is loop-safe-upgradable:
+	if it is upgradable, decide yes;
+	decide no.
+Definition: black-lace-bra is transformation-theme-blockable: decide no. [It doesn't care about the theme it shares with other items.]
+To decide which object is the unique-upgrade-target of (C - black-lace-bra):
+	decide on C.
+To transform (C - black-lace-bra):
+	say "Paper bills appear on the bra, sewn on and completely unremovable, but looking as though they've just been tucked into the cups!";
+	now C is monified.
+
+heart-strap-bra is a bra. heart-strap-bra is transformation-rare. heart-strap-bra is leather. The printed name of heart-strap-bra is "[clothing-title-before]heart strap bra[clothing-title-after]". The text-shortcut of heart-strap-bra is "hsb". Understand "heart", "strap", "bra" as heart-strap-bra. The min size of heart-strap-bra is 1. The max size of heart-strap-bra is 18. The support of heart-strap-bra is 1. heart-strap-bra is very low cut. heart-strap-bra is optional-top-displacable.
+
+To say ClothingDesc of (K - heart-strap-bra):
+	say "Pink leather straps in the shape of bra cups expose most of the wearer's breast flesh, but protect the nipples with strategically placed love-hearts.".
+
+To compute SelfExamineDesc of (K - heart-strap-bra):
+	say ClothingDesc of K.
+
+To say ShortDesc of (K - heart-strap-bra):
+	say "heart strap bra".
+
+Figure of Heart Strap Bra is the file "Items/Clothes/Upper/Bras/heartbra1.png".
+
+To decide which figure-name is clothing-image of (C - heart-strap-bra):
+	decide on figure of Heart Strap Bra.
+
+Definition: heart-strap-bra is pink themed: decide yes.
+Definition: heart-strap-bra is heart themed: decide yes.
+
+To decide which number is the initial outrage of (C - heart-strap-bra):
+	decide on 6.
 
 All Bras ends here.
