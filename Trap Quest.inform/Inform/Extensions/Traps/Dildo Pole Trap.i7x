@@ -266,7 +266,7 @@ To Jump From The Dildo:
 		let Hi be 0;
 		if (dildoJumpSucceeded is false or clumsy is 0), let Hi be the hindrance of H + (W / 5);
 		let M be a random dangerous royal guard in the location of the player;
-		if M is royal guard and the player is not monster fucked and the player is female:
+		if M is royal guard and the player is not monster fucked and the player is possessing a vagina:
 			say "Before you can manage to make the jump, [NameDesc of M] has [one of]walked up to you and [or][stopping]taken hold of your waist. Uh-oh...";
 		otherwise if dildoJumpSucceeded is true and clumsy is 1:
 			compute jump bounce of Y;

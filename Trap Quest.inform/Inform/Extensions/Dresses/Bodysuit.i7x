@@ -266,6 +266,10 @@ Definition: a romper is potentially erection concealing:
 To decide which number is the crotch-tightness of (C - a romper):
 	decide on 0. [hardly touches the vulva]
 
+Definition: a romper is unskirted themed:
+	if it is baby themed, decide yes;
+	decide no.
+
 Part 1 - Busy Patterned Romper
 
 A busy patterned romper is a kind of romper. There is 1 busy patterned romper. The text-shortcut of busy patterned romper is "bpr". The printed name of busy patterned romper is usually "[clothing-title-before]busy patterned romper[clothing-title-after]".
@@ -568,7 +572,7 @@ To decide which number is the initial cringe of (C - full body babyromper):
 
 Part - Wrestler Suit
 
-wrestler-jumpsuit is a jumpsuit. wrestler-jumpsuit is latex. wrestler-jumpsuit is manly. The text-shortcut of wrestler-jumpsuit is "wbs". Understand "wrestler", "bodysuit" as wrestler-jumpsuit.
+wrestler-jumpsuit is a jumpsuit. wrestler-jumpsuit is latex. wrestler-jumpsuit is unique. wrestler-jumpsuit is manly. The text-shortcut of wrestler-jumpsuit is "wbs". Understand "wrestler", "bodysuit" as wrestler-jumpsuit.
 
 Definition: wrestler-jumpsuit is class-relevant:
 	if the class of the player is latex fetish model or the class of the player is superhero, decide yes;

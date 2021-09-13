@@ -17,7 +17,7 @@ To decide which number is the outrage of (C - a pocketwipes):
 To decide which number is the cringe of (C - a pocketwipes):
 	decide on 3.
 To decide which number is the original price of (C - a pocketwipes):
-	decide on 2.
+	decide on 1.
 
 To decide which number is the crafting key of (C - a pocketwipes):
 	decide on 56.

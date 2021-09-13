@@ -265,42 +265,47 @@ To initialise latex prisoner:
 	let L be a random latex transformation-eligible heels;
 	if diaper quest is 1, now L is a random sissy ballet boots;
 	if L is actually summonable clothing, summon L;
-	let L be a random latex transformation-eligible bra;
-	if diaper quest is 1, now L is rubber mittens;
-	if L is actually summonable clothing, summon L;
+	if diaper quest is 0:
+		let L be a random latex transformation-eligible bra;
+		if L is actually summonable clothing, summon L;
+	if rubber mittens is actually summonable clothing, summon rubber mittens;
 	let L be a random off-stage vibrating plug panties;
 	if diaper quest is 1, now L is a random rubber diaper;
 	if L is actually summonable clothing, summon L;
-	let L be a random black rubber stockings;
-	if diaper quest is 1, now L is rubber-baby-bonnet;
-	if L is actually summonable clothing, summon L;
+	if diaper quest is 0:
+		let BRS be a random black rubber stockings;
+		if BRS is actually summonable, summon BRS;
+	if diaper quest is 1, summon rubber-baby-bonnet uncursed;
 	let L be black-catsuit;
 	if diaper quest is 1, now L is a random rubber jacket;
 	if L is actually summonable clothing, summon L;
 	if black hood is actually summonable, summon black hood cursed;
-	repeat with C running through worn latex clothing:
-		if C is discovered varied:
-			if a random number between 1 and 4 is 1, now the raw-magic-modifier of C is -1;
-			otherwise now the raw-magic-modifier of C is 0;
-		now C is identified;
-		now C is sure;
-		now C is unowned;
-		if C is not headgear:
-			now C is bland;
-			if C is heels:
-				now C is posture training;
-				now the heel-height of C is 2;
-				compute quest of C;
-			otherwise if C is vibrating plug panties:
-				now the damage of C is 7;
-			otherwise if C is rubber mittens:
-				do nothing;
-			now C is glued;
-		if C is overdress:
-			layer C correctly;
-			if C is posture training, now C is blandness;
+	repeat with C running through worn clothing:
+		if C is latex or C is pvc:
+			if C is discovered varied:
+				if a random number between 1 and 4 is 1, now the raw-magic-modifier of C is -1;
+				otherwise now the raw-magic-modifier of C is 0;
+			now C is identified;
+			now C is sure;
+			now C is unowned;
+			if C is not headgear:
+				now C is bland;
+				if C is heels:
+					now C is posture training;
+					now the heel-height of C is 2;
+					compute quest of C;
+				otherwise if C is vibrating plug panties:
+					now the damage of C is 7;
+				if C is rubber mittens:
+					now the glue timer of C is a random number between 230 and 250;
+				otherwise:
+					now the glue timer of C is a random number between 425 and 500;
+			if C is overdress:
+				layer C correctly;
+				if C is posture training, now C is blandness;
 	if rubber-baby-bonnet is worn:
 		now rubber-baby-bonnet is cursed;
+		now the quest of rubber-baby-bonnet is just-wait-quest;
 	if there is worn vibrating plug panties:
 		ruin asshole;
 		if the player is possessing a vagina, ruin vagina.
@@ -436,6 +441,7 @@ To Scramble Items:
 	Set Up Clothing;
 	Set Up Collectibles;
 	Set Up Bras;
+	set up store;
 	follow the setup starting items rules;
 	sort Standard Item Pen in random order.
 

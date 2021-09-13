@@ -439,7 +439,7 @@ To penetration dominate (M - witch):
 	repeat with X running through held blessable things:
 		increase bless-count by 1;
 	if sexual-penis-length > 8:
-		say "pushing your [SexDesc of penis] in with no lubrication. [if T is worn]The tattoo emits a faint glow as [NameDesc of M][otherwise][BigNameDesc of M][end if] screeches in pain, and you enjoy the intense feelings around your shaft as [he of M] desperately pleads for you to stop.[line break][speech style of M]'[big please], [caps please], it's too much! I'll do anything! I'll even bless your items!'[roman type][line break]Do you stop?";
+		say "pushing your [SexDesc of penis] in with no lubrication. [if T is worn]The tattoo emits a faint glow as [NameDesc of M][otherwise][BigNameDesc of M][end if] screeches in pain, and you enjoy the intense feelings around your shaft as [he of M] desperately pleads for you to stop.[line break][speech style of M]'Please, [caps please], it's too much! I'll do anything! I'll even bless your items!'[roman type][line break]Do you stop?";
 		if bless-count > 0 and the player is consenting:
 			now player-fucking is DOMINANT-NEUTRAL;
 			compute domination blessing of M at bless-count;
@@ -475,7 +475,7 @@ To penetration dominate (M - witch):
 			FavourDown M by 1;
 			AnalGet;
 	otherwise:
-		say "pushing your [SexDesc of penis] in with no lubrication. [if T is worn]The tattoo emits a faint glow as [NameDesc of M][otherwise][BigNameDesc of M][end if] winces in pain, and you enjoy intense feelings around your shaft for a couple seconds before [he of M] turns around and tells you to pull out.[line break][speech style of M]'Look, I know how hard it can be when your [sexual-player-penis] is that small, but this is as far as you go. Still, I'm willing to help you if you apologize for earlier.'[roman type][line break]Do you apologize?";
+		say "pushing your [SexDesc of penis] in with no lubrication. [if T is worn]The tattoo emits a faint glow as [NameDesc of M][otherwise][BigNameDesc of M][end if] winces in pain, and you enjoy intense feelings around your shaft for a couple seconds before [he of M] turns around and tells you to pull out.[line break][speech style of M]'Look, I know how hard it can be when your [sexual-player-penis] is that small, but this is as far as you go. Still, I'm willing to help you if you apologise for earlier.'[roman type][line break]Do you apologise?";
 		if the player is bimbo consenting:
 			now player-fucking is DOMINANT-SHAMEFUL;
 			say "[line break][speech style of M]'Good [boy of the player].'[roman type][line break][big he of M] spits in [his of M] hand and begins to gently tease your [sexual-player-penis]. It isn't skilful by any means, but it's more than enough for a super sensitive clitty like yours. You come almost immediately, emitting a wavering moan as you fill [his of M] hand with your [load].[line break][speech style of M]'Don't do anything like that again, got it?'[roman type][line break]With that [he of M] stands up, makes a few intricate hand gestures, and vanishes.";
@@ -655,11 +655,10 @@ To compute teaching of (M - witch):
 
 [using the default advice question]
 To say AdviceAnswer of (M - witch):
-	if M is unbitchy:
+	if M is bitchy:
 		say "[speech style of M]'[if the pregnancy of the player > 0]Keep your legs closed, [one of]skank[or]whore[at random].'[otherwise]Just because I'm not trying to fuck you doesn't mean I want to be mates. Do you mind?'[end if][roman type][line break]";
 	otherwise:
-		let D be a random demoness;
-		say "[speech style of M]'[one of]Fairies are fucking annoying, but tag is one of their favourite games. They're not bothered if you win.'[or]As guests in the mortal world, a demonesses will be banished from this world the moment [he of D] runs out of magical power. You can also keep them here if you use a little of your magic power, but I don't recommend that unless you enjoy their company.'[or]Personally, I think the vines liven up this place, but if you're tired of them, keep this in mind. They aren't connected to any aboveground plant.'[or]As an altar witch, I'm not allowed to wear underwear, but you are. A good pair of panties can help you out in more ways than one.'[or]If a vampire is ever giving you trouble, just stuff a stake up their ass. Wood is best.'[or]Ghosts can't stand blessed items.'[or]The horn of a unicorn has all sorts of uses.'[or]If you see any imps, get rid of them immediately. Trust me.'[in random order][roman type][line break]".
+		say "[speech style of M]'[one of]Fairies are fucking annoying, but tag is one of their favourite games. They're not bothered if you win.'[or]As guests in the mortal world, demonesses will be banished from this world the moment they run out of magical power. You can also keep them here if you use a little of your magic power, but I don't recommend that unless you enjoy their company.'[or]Personally, I think the vines liven up this place, but if you're tired of them, keep this in mind. They aren't connected to any aboveground plant.'[or]As an altar witch, I'm not allowed to wear underwear, but you are. A good pair of panties can help you out in more ways than one.'[or]If a vampire is ever giving you trouble, just stuff a stake up their ass. Wood is best.'[or]Ghosts can't stand blessed items.'[or]The horn of a unicorn has all sorts of uses.'[or]If you see any imps, get rid of them immediately. Trust me.'[in random order][roman type][line break]".
 
 Section 3 - Drink Requesting
 

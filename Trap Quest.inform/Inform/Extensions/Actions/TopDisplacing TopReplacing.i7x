@@ -17,6 +17,7 @@ Check TopDisplacing:
 	if the latex-transformation of the player is 8, say "You don't have the manual dexterity to do that!" instead;
 	if the noun is not-top-displacable and the noun is overdress, say "That's not the sort of item of clothing that can be displaced." instead;
 	if the noun is not-top-displacable, say "That's [if the noun is top-ripped]already shredded to bits so there's no point displacing it[otherwise]too stiff to displace[end if]." instead;
+	if the noun is glued, say "It's glued in place!" instead;
 	[if the noun is cursed, say "The curse on this item prevents it from budging at all!" instead;]
 	repeat with C running through worn top level covering clothing:
 		if the top-layer of C > the top-layer of the noun, say "You would need to displace or remove your [C] first." instead;

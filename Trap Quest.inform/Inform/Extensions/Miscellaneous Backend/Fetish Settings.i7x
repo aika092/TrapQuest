@@ -294,7 +294,7 @@ To decide which number is positive points count:
 	if diaper quest is 1, increase X by 10;
 	if bukkake fetish is 1, increase X by 7;
 	if pregnancy fetish is 1, increase X by pregnancy points;
-	if inhuman pregnancy >= 2 and (the player is female or tg fetish >= 1), increase X by inhuman pregnancy - 1;
+	if inhuman pregnancy >= 2 and (the player is possessing a vagina or tg fetish >= 1), increase X by inhuman pregnancy - 1;
 	if lactation fetish is 1, increase X by 5;
 	if watersports fetish is 1, increase X by 3;
 	if diaper lover >= 1 and diaper quest is 0, increase X by diaper points;

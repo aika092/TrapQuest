@@ -961,10 +961,10 @@ babyExplained is initially false.
 a later time based rule (this is the explaining baby rule):
 	if babyExplained is false and the player is actually an adult baby:
 		now babyExplained is true;
-		say "[bold type]Now that you have become the 'adult baby' class, you feel much less grossed out by, well, gross things. Also, you sense that wearing mittens might enable you to move really fast while on your knees.[roman type][line break]";
+		say "[bold type]Now that you have become the 'adult baby' class, you feel much less grossed out by, well, gross things, and you will be able to maintain your focus even when desperate to use the toilet. Also, you sense that wearing mittens might enable you to move really fast while on your knees.[roman type][line break]";
 	otherwise if babyExplained is true and the player is not actually an adult baby:
 		now babyExplained is false;
-		say "[bold type]Now that you are no longer the 'adult baby' class, you feel your attitude to gross things returning to normal.[roman type][line break]".
+		say "[bold type]Now that you are no longer the 'adult baby' class, you feel your attitude to gross things and ability to focus while desperate for the loo returning to normal.[roman type][line break]".
 
 [!<TheHookerInTrainingClassRule>+
 

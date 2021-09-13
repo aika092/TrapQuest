@@ -93,7 +93,7 @@ To say DollColour of (M - an airfilled-sex-doll):
 	say "[if M is wandering sex doll]silver[otherwise if M is mindless sex doll]gold[otherwise if M is puppetlike sex doll]brown[otherwise if M is uncanny sex doll]red[end if]".
 
 To say DollColour of (M - a creamfilled-sex-doll):
-	say "[if M is creepy sex doll]black[otherwise if M is expressionless sex doll]yellow[otherwise if M is animated sex doll]gray[otherwise if M is zombielike sex doll]red[end if]";
+	say "[if M is creepy sex doll]black[otherwise if M is expressionless sex doll]yellow[otherwise if M is animated sex doll]grey[otherwise if M is zombielike sex doll]red[end if]";
 
 To say MonsterDesc of (M - a sex doll):
 	if M is creamfilled-sex-doll:

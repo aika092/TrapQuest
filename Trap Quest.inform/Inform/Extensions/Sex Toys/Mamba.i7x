@@ -23,7 +23,7 @@ To say ShortDesc of (C - a mamba):
 	say "black mamba".
 
 To decide which number is the original price of (C - a mamba):
-	decide on 2.
+	decide on 1.
 
 To decide which number is the raw-masturbation-bonus of (C - a mamba):
 	if interracial fetish is 1, decide on 2;

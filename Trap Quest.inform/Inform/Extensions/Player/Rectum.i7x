@@ -52,7 +52,7 @@ Does the player feel like they need to go number 2?
 
 +!]
 Definition: yourself is feeling full:
-	if the player is full and ((the player is not incontinent and failed potty training tattoo is not worn) or suppository > 0), decide yes;
+	if the player is full and ((the player is not incontinent and failed potty training tattoo is not worn) or suppository > 0 or there is worn desperation clothing), decide yes;
 	decide no.
 
 To decide which number is expelColour:
@@ -76,6 +76,7 @@ To decide which number is expelColour:
 
 fullness-time is a number that varies.
 To decide which number is fullness-penalty:
+	if there is a worn baby bonnet, decide on 0;
 	decide on fullness-time / 25.
 
 [!<FullnessCausesIntelligenceLossRule>+
@@ -87,7 +88,9 @@ An all later time based rule (this is the fullness causes intelligence loss rule
 	let F be fullness-penalty;
 	if the player is feeling full:
 		increase fullness-time by 1;
-		if fullness-penalty > F, say "[bold type][if F is 0]The pressure on your bowels is [one of][or]once again [stopping]making it difficult to concentrate. [roman type]Your intelligence is slightly lowered until you go number two.[otherwise]The pressure on your bowels has grown even larger, further reducing your intelligence until you relieve yourself.[roman type][line break][end if]";
+		if the remainder after dividing fullness-time by 25 is 0:
+			if there is a worn baby bonnet,	say "The pressure on your bowels has [if fullness-time > 25]further [end if]increased, but your baby bonnet is helping you handle the sensations without getting distracted.";
+			otherwise say "[bold type][if F is 0]The pressure on your bowels is [one of][or]once again [stopping]making it difficult to concentrate. [roman type]Your intelligence is slightly lowered until you go number two.[otherwise]The pressure on your bowels has grown even larger, further reducing your intelligence until you relieve yourself.[roman type][line break][end if]";
 	otherwise:
 		now fullness-time is 0;
 		if F > 0, say "Now that your bowels are empty, your ability to concentrate improves and your intelligence returns.".
@@ -154,7 +157,7 @@ To compute soiling:
 		unless current-predicament is team-quiz-predicament and the questionFails of team-quiz-predicament < 2, check real messing.
 
 To decide which number is rectum-risky-level:
-	decide on 10 - (incontinence + suppository).
+	decide on 10 - (incontinence + suppository + the number of worn desperation clothing).
 
 [!<CheckRealMessing>+
 
@@ -169,35 +172,38 @@ hasMessedNow is initially false.
 [If we have any text T that means that something has caused the player to flinch / be surprised / etc. and they lose the opportunity to try and hold it in]
 To check real messing with reason (T - a text):
 	if rectum > 0:
-		let messAware be 0; [Can the player sense their fullness]
+		let desperationCount be the number of worn desperation clothing;
+		let messAware be 0; [1: Can the player sense their fullness and 2: can they try to hold it in]
 		let canMessNow be 0; [Is the player physically able to go]
 		let shouldMessNow be 0; [Does the player's body want to go]
 		let willMessNow be 0; [Has the player lost control?]
 		now hasMessedNow is false;
-		if the player is feeling full, now messAware is 1;
+		if the player is feeling full:
+			now messAware is 1;
+			if there is a worn baby bonnet or intelligence of the player > a random number between 0 and 7, now messAware is 2;
 		if rectum > 1 and there is a worn total protection soilable knickers and asshole is not actually occupied and the number of live things penetrating vagina is 0 and (the number of things grabbing the player is 0 or diaper quest is 1), now canMessNow is 1;
 		if the player is incontinent and the player is full:
 			now shouldMessNow is 1;
 			if canMessNow is 1, now willMessNow is 1; [no need for a die roll if the player is incontinent]
 		otherwise:
 			let hold-strength be (a random number between 11 and 13) + (a random number between -1 and 1);
-			let I be hold-strength - (incontinence + suppository);
+			let I be hold-strength - (incontinence + suppository + desperationCount);
 			if T is "", increase I by 2; [improved hold strength while nothing crazy is happening]
 			if debuginfo > 0 and canMessNow is 1 and rectum > 1:
-				if T is "", say "[input-style]Mess self-control check: d5+11 ([hold-strength]) - incontinence ([incontinence]) - laxative effects ([suppository]) = [I + 0][if I < 4]; minimum 4[end if] | ([rectum].5) rectum volume[roman type][line break]";
-				otherwise say "[input-style]Sudden mess self-control check: d5+9 ([hold-strength]) - incontinence ([incontinence]) - laxative effects ([suppository]) = [I + 0][if I < 4]; minimum 4[end if] | ([rectum].5) rectum volume[roman type][line break]";
+				if T is "", say "[input-style]Mess self-control check: d5+11 ([hold-strength]) - incontinence ([incontinence]) - laxative effects ([suppository + desperationCount]) = [I + 0][if I < 4]; minimum 4[end if] | ([rectum].5) rectum volume[roman type][line break]";
+				otherwise say "[input-style]Sudden mess self-control check: d5+9 ([hold-strength]) - incontinence ([incontinence]) - laxative effects ([suppository + desperationCount]) = [I + 0][if I < 4]; minimum 4[end if] | ([rectum].5) rectum volume[roman type][line break]";
 			if I < 4, now I is 4;
 			if rectum >= I and canMessNow is 1, now willMessNow is 1;
 			if rectum >= I - 6, now shouldMessNow is 1;
-		if messAware is 1 and T is "":
+		if messAware > 0 and T is "":
 			say "[one of][bold type][or][stopping][one of]Your tummy rumbles ominously[or]Your stomach gurgles as it processes more food[or]Your belly churns loudly as it continues to digest its contents[or]Your bowels emit a low growl as the contents are moved towards the exit[then at random].[one of][line break][variable custom style]That can't be a good sign[if the player is not incontinent]. I'm starting to feel like I need to go number two[end if]...[or][stopping][roman type][line break]";
 		if shouldMessNow is 1:
-			if canMessNow is 1 and messAware is 1:
-				if T is "", say "[bold type]Your body is trying to go number two![roman type] Do you want to try and hold it in? ";
-				if T is not "" or the player is reverse bimbo consenting:
+			if canMessNow is 1 and messAware > 0:
+				if messAware > 1 and T is "", say "[bold type]Your body is trying to go number two![roman type] Do you want to try and hold it in? ";
+				if messAware > 1 and (T is not "" or the player is reverse bimbo consenting):
 					if willMessNow is 1:
 						if T is "":
-							if the incontinence of the player + suppository < 5, say "You try to hold it in but you start to cramp, and the pain is too much! ";
+							if the incontinence of the player + suppository + desperationCount < 5, say "You try to hold it in but you start to cramp, and the pain is too much! ";
 							otherwise say "You try to hold it in but the pressure is too much and your control over your rectal muscles is too weak! ";
 							if the raw delicateness of the player < 20 and incontinence < the max-incontinence of the player:
 								say "You could push forward with sheer force of will, but it will hurt and might even affect your long term continence. Would you like to dig deep and really hold on? ";
@@ -214,7 +220,7 @@ To check real messing with reason (T - a text):
 						if shouldMessNow is 1:
 							if T is not "":
 								say "[bold type][T] you [if the player is a nympho]hear yourself moaning lewdly as that weirdly delicious feeling of the shamefulness of your lack of control washes over you[otherwise if the player is a pervert or the diaper addiction of the player > 7]gasp with genuine surprise as your sphincter loses control[otherwise]shriek with horror as you feel yourself begin to go completely against your will[end if].[roman type][line break]";
-							otherwise if the incontinence of the player + suppository < 5:
+							otherwise if the incontinence of the player + suppository + desperationCount < 5:
 								say "[if the player is a nympho]You give up and let go, crossing your eyes and sticking your tongue out as you wait for the intense feelings to wash over you[otherwise if the player is a pervert]You just don't have the willpower. You gasp with feigned surprise as you allow your sphincter to lose control[otherwise]You clench your fists and strain with all your might but it's all in vain - the cramps win over and you feel yourself begin to push, even though you don't really want to[end if].";
 							otherwise:
 								say "[if the player is a nympho]You hear yourself moaning lewdly as that weirdly delicious feeling of the shamefulness of your lack of control washes over you[otherwise if the player is a pervert or the diaper addiction of the player > 7]You gasp with genuine surprise as your sphincter loses control[otherwise]You shriek with horror as you feel yourself begin to go completely against your will[end if].";
@@ -230,6 +236,7 @@ To check real messing with reason (T - a text):
 				otherwise:
 					now hasMessedNow is true;
 					now voluntarySquatting is 1;
+					if messAware <= 1, say "[if the intelligence of the player < 4]Your mind is so foggy[otherwise]You are so distracted thinking about other things[end if] that by the time you realise that you have instinctively reacted to your desperate need to use the toilet by squatting and pushing, it's already happening.";
 					compute messing;
 			if hasMessedNow is false:
 				if willMessNow is 1:
@@ -252,12 +259,12 @@ To check real messing with reason (T - a text):
 							say "your loins are suddenly surrounded by ";
 						say "a [ShortDesc of D]![one of][line break][variable custom style][if the delicateness of the player < 14]Oh my god, the game is trying to make me mess myself...[otherwise]At least now I have a toilet to go in. Thank you game![end if][roman type][line break][or][stopping]";
 						summon D cursed with quest;
-					otherwise if T is not "" or suppository > 0 or a random number between 1 and 5 is 1:
+					otherwise if suppository + desperationCount > 0 or a random number between 1 and 5 is 1 or T is not "":
 						if T is "", say "[bold type]Your ";
 						otherwise say "[bold type][T] your ";
 						say "tummy cramps [if rectum + suppository < 8]painfully[otherwise]brutally[end if][if the player is upright and the number of worn stuck clothing is 0], forcing you onto your knees[end if]. You feel a desperate need to [if the diaper addiction of the player < 12]find a toilet[otherwise if the player is diapered]use your diaper[otherwise]use a diaper[end if].[roman type][line break]";
 						if the player is upright and the number of worn stuck clothing is 0, try kneeling;
-						if rectum + suppository >= 8:
+						if rectum + suppository + desperationCount >= 8:
 							say "It takes you several moments to recover.";
 							now another-turn is 1.
 
@@ -449,7 +456,9 @@ Check messing:
 	otherwise if the location of the player is toilets:
 		say "[variable custom style]I can't use the toilet right now.[roman type][line break]" instead;
 	if the number of worn total protection soilable knickers is 0, say "[variable custom style]I have no safe way to do that. [if the diaper addiction of the player >= 8 and the diaper addiction of the player <= 16 and (the humiliation of the player >= 30000 or the number of intelligent monsters in the location of the player is 0)]I guess if I was wearing a diaper...[roman type][line break]" instead;
-	if the diaper addiction of the player < 4 and suppository is 0, say "[variable custom style]I can't bring myself to do that on purpose.[roman type][line break]" instead;
+	if the diaper addiction of the player < 4 and suppository is 0 and the number of worn desperation clothing is 0:
+		if debugmode is 0, say "[variable custom style]I can't bring myself to do that on purpose.[roman type][line break]" instead;
+		otherwise say "If debug was disabled, player would refuse to do this.";
 	[unless diaper messing >= 4 or (there is a worn total protection diaper and the player is not immobile and the player is not in danger and there is a willing to change diapers monster in the location of the player), say "Something tells you that if you did this, there would be no way to immediately get changed.[line break][variable custom style]I should wait until I'm in a room with someone who's willing to change me.[roman type][line break]" instead;]
 	if the humiliation of the player < 20000 and there is an intelligent awake monster in the location of the player and the diaper addiction of the player < 15:
 		if debugmode > 0, say "If debug mode was disabled, the player would refuse.";

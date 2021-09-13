@@ -3,8 +3,7 @@ Clothing Setup by Clothing begins here.
 To Set Up Clothing:
 	if tutorial is 0:
 		repeat with C running through clothing:
-			if C is not immune to change, set up C;
-		set up store.
+			if C is not immune to change, set up C.
 
 To decurse (C - a clothing):
 	if C is cursed, silently bless C;
@@ -82,6 +81,7 @@ To set up BUC of (C - a clothing):
 	if R >= 7 and C is not cursed, now C is blessed.
 
 To set up magic attribute of (C - a clothing):
-	now C is blandness.
+	now C is blandness;
+	if a random number between 1 and 10 is unlucky, now C is provocation.
 
 Clothing Setup ends here.

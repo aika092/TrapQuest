@@ -134,7 +134,7 @@ Whatever is the player's current sex organ (i.e. no including asshole)
 
 +!]
 To say genitals:
-	if the player is possessing a penis and the player is possessing a vagina:
+	if the player is herm:
 		say "[player-penis] and [vagina]";
 	otherwise if the player is possessing a vagina:
 		say vagina;
@@ -419,20 +419,20 @@ To decide which text is big himself of (M - a thing):
 To decide which text is caps himself of (M - a thing):
 	decide on himself of M in upper case.
 
-To decide which text is father of (M - a thing):
+To decide which text is fathertext of (M - a thing):
 	decide on "parent".
 
-To decide which text is father of (M - yourself):
+To decide which text is fathertext of (M - yourself):
 	decide on "[if M is presenting as female]mother[otherwise]father[end if]".
 
-To decide which text is father of (M - a person):
+To decide which text is fathertext of (M - a person):
 	decide on "[if M is neuter]parent[otherwise if M is presenting as female]mother[otherwise]father[end if]".
 
-To decide which text is big father of (M - a thing):
-	decide on father of M in title case.
+To decide which text is big fathertext of (M - a thing):
+	decide on fathertext of M in title case.
 
-To decide which text is caps father of (M - a thing):
-	decide on father of M in upper case.
+To decide which text is caps fathertext of (M - a thing):
+	decide on fathertext of M in upper case.
 
 To decide which text is brother of (M - a thing):
 	decide on "sibling".
@@ -445,6 +445,18 @@ To decide which text is big brother of (M - a thing):
 
 To decide which text is caps brother of (M - a thing):
 	decide on brother of M in upper case.
+
+To decide which text is son of (M - a thing):
+	decide on "child".
+
+To decide which text is son of (M - a person):
+	decide on "[if M is neuter]child[otherwise if M is presenting as female]daughter[otherwise]son[end if]".
+
+To decide which text is big son of (M - a thing):
+	decide on son of M in title case.
+
+To decide which text is caps son of (M - a thing):
+	decide on son of M in upper case.
 
 [!<SayDickDescOfMonster>+
 
@@ -498,6 +510,12 @@ To say daddytitle of (M - a monster):
 		say "Daddy";
 	otherwise:
 		say "Mommy".
+
+To say caps daddytitle of (M - a monster):
+	if M is presenting as male:
+		say "DADDY";
+	otherwise:
+		say "MOMMY".
 
 To say royal-subject of (M - a monster):
 	if M is bride-consort:
@@ -681,8 +699,18 @@ To say great one:
 	if player-hypno-great is 1:
 		now hypno-trigger is "great one".
 
+To say caps great one:
+	say "GREAT ONE";
+	if player-hypno-great is 1:
+		now hypno-trigger is "great one".
+
 To say great ones:
 	say "Great Ones";
+	if player-hypno-great is 1:
+		now hypno-trigger is "great one".
+
+To say caps great ones:
+	say "GREAT ONES";
 	if player-hypno-great is 1:
 		now hypno-trigger is "great one".
 

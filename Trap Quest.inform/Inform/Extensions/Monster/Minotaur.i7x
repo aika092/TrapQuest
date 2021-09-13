@@ -56,7 +56,7 @@ To say LongDickDesc of (M - a minotaur):
 		otherwise say "15 inch penis".
 
 To say MonsterDesc of (M - minotaur):
-	if mythical creature fetish is 1, say "A naked bull-[man of M] with rippling muscles covering [his of M] entire body. [big his of M] face is bestial, covered in thick [one of]auburn[or]gold[or]black[or]brown[or]ashen[sticky random] fur, with big flat nostrils and beady black eyes. Two long gray horns extend from just above [his of M] floppy bovine ears, one of which is pierced with a small [one of]brass[or]iron[or]gold[or]onyx[sticky random] ring. [big he of M] is seething with rage, [his of M] wide shoulders covered in a fine sheen of sweat and [if lady fetish is 1][his of M] heavy bosom[otherwise][his of M] thick barrel chest[end if] heaves with every breath. Between [his of M] legs is a fully erect, [LongDickDesc of M], which twitches and throbs as if it could blow at any time.";
+	if mythical creature fetish is 1, say "A naked bull-[man of M] with rippling muscles covering [his of M] entire body. [big his of M] face is bestial, covered in thick [one of]auburn[or]gold[or]black[or]brown[or]ashen[sticky random] fur, with big flat nostrils and beady black eyes. Two long grey horns extend from just above [his of M] floppy bovine ears, one of which is pierced with a small [one of]brass[or]iron[or]gold[or]onyx[sticky random] ring. [big he of M] is seething with rage, [his of M] wide shoulders covered in a fine sheen of sweat and [if lady fetish is 1][his of M] heavy bosom[otherwise][his of M] thick barrel chest[end if] heaves with every breath. Between [his of M] legs is a fully erect, [LongDickDesc of M], which twitches and throbs as if it could blow at any time.";
 	otherwise say "A naked hulk of a [man of M] with rippling muscles covering [his of M] entire body. [big he of M] looks like the result of some mad science experiment gone wrong. [big he of M] is seething with rage, [his of M] wide shoulders covered in a fine sheen of sweat and [if lady fetish is 1][his of M] heavy bosom[otherwise][his of M] thick barrel chest[end if] heaving with every breath. Between [his of M] legs is a fully erect [LongDickDesc of M], which twitches and throbs as if it could blow at any time.";
 	if M is caged, say DungeonBossCageDesc of M.
 
@@ -256,7 +256,7 @@ To compute CagedMinotaurExplosion of (M - minotaur):
 	let D be a random number between 1 and the dexterity of the player;
 	if the player is pheromonal and (a random number between 1 and the intelligence of the player) < the blue-balls of M, now D is 0;[pheromonal? you're less likely to dodge]
 	if D < the blue-balls of M and bukkake fetish is 1:
-		say "You're too late to realize that's your cue to dodge, and half a second later, an explosion of hot [semen] hits you directly in the [if the player is prone]face, [otherwise]chest, knocking you over and [end if]sending you flying into the opposite wall.";
+		say "You're too late to realise that's your cue to dodge, and half a second later, an explosion of hot [semen] hits you directly in the [if the player is prone]face, [otherwise]chest, knocking you over and [end if]sending you flying into the opposite wall.";
 		if lady fetish is 0 and mythical creature fetish is 1, cutshow figure of minotaur cutscene 6 for M;
 		if the player is prone:
 			CumFaceUp 2;
@@ -268,7 +268,7 @@ To compute CagedMinotaurExplosion of (M - minotaur):
 		now another-turn is 1;
 		now another-turn-flavour is "The wind is knocked out of you!";
 	otherwise:
-		say "You somehow realize that's your cue to dodge, and half a second later, you narrowly avoid an explosion of hot [semen] hitting you directly in the [if the player is prone]face[otherwise]chest[end if]. [BigFuckerDesc of M] steps away from the edge of the cage, apparently satisfied for now.";
+		say "You somehow realise that's your cue to dodge, and half a second later, you narrowly avoid an explosion of hot [semen] hitting you directly in the [if the player is prone]face[otherwise]chest[end if]. [BigFuckerDesc of M] steps away from the edge of the cage, apparently satisfied for now.";
 		SemenPuddleUp L;
 	now the blue-balls of M is -5.
 
@@ -277,7 +277,7 @@ To say CagedMinotaurThrustFlav of (M - minotaur):
 
 To say CagedMinotaurSwingFlav of (M - minotaur):
 	let N be the swing-intensity of M;
-	say "[BigNameDesc of M] [one of]bang [his of M] fists against the side of the cage[or]throws [his of M] weight against the side of the cage[or]slams against the bars of the cage[or]throws [himself of M] at the side of the cage[in random order], [if N <= 0]causing it to swing slightly back and forth[otherwise if N is 1]causing it to slowly swing a few centimeters back and forth[otherwise if N is 2]causing it to steadily swing a few inches back and forth[otherwise if N is 3]causing it to swing a few feet in either direction[otherwise if N is 4]causing it to steadily swing several feet back and forth[otherwise]swinging the cage in a huge arc covering most of the room[end if]".
+	say "[BigNameDesc of M] [one of]bang [his of M] fists against the side of the cage[or]throws [his of M] weight against the side of the cage[or]slams against the bars of the cage[or]throws [himself of M] at the side of the cage[in random order], [if N <= 0]causing it to swing slightly back and forth[otherwise if N is 1]causing it to slowly swing a few centimetres back and forth[otherwise if N is 2]causing it to steadily swing a few inches back and forth[otherwise if N is 3]causing it to swing a few feet in either direction[otherwise if N is 4]causing it to steadily swing several feet back and forth[otherwise]swinging the cage in a huge arc covering most of the room[end if]".
 
 To compute CagedMinotaurGrabbing of (M - minotaur):
 	say "[BigNameDesc of M] [one of]thrusts [his of M] arm through a gap in[or]reaches through the bars in[or]tries to grab you through the bars of[or]pushes [his of M] arms through the gaps in[in random order] [his of M] cage!";
@@ -295,7 +295,7 @@ To compute CagedMinotaurGrabbing of (M - minotaur):
 To compute CagedMinotaurMolesting of (M - minotaur):
 	if the blue-balls of M > a random number between 4 and 9:[NUT]
 		if the largeness of breasts < 6 and the thickness of hips < 5 and asshole is undefended:[If you fit into the cage, you faint, since the cum bloating would mean you couldn't get out.]
-			say "[if the reaction of the player is 0][BigNameDesc of M] shrugs off your attempts to struggle[otherwise][BigNameDesc of M] breathes heavily[end if] as [he of M] pulls your arm even further through the gap between the bars, which is just wide enough to let [him of M] drag in your shoulder, followed by your head, neck, chest, hips, knees, and finally your feet. You [if the sex addiction of the player < 5]curse[otherwise]thank nintendolls for[end if] your petite frame as [FuckerDesc of M] pulls you all the way into the cage and effortlessly pins you down with [his of M] huge limbs. [big his of M] 'smallest' limb is rock-hard, throbbing, and drooling precum as [he of M] lifts your legs and aligns [his of M] [cockhead of M] with your exposed asshole. Knowing there's nothing more you can do at this point, you [if the reaction of the player is 0]stop struggling and [end if]grit your teeth as [he of M] slams right in. You faint.";
+			say "[if the reaction of the player is 0][BigNameDesc of M] shrugs off your attempts to struggle[otherwise][BigNameDesc of M] breathes heavily[end if] as [he of M] pulls your arm even further through the gap between the bars, which is just wide enough to let [him of M] drag in your shoulder, followed by your head, neck, chest, hips, knees, and finally your feet. You [if the sex addiction of the player < 5]curse[otherwise]thank Nintendolls for[end if] your petite frame as [FuckerDesc of M] pulls you all the way into the cage and effortlessly pins you down with [his of M] huge limbs. [big his of M] 'smallest' limb is rock-hard, throbbing, and drooling precum as [he of M] lifts your legs and aligns [his of M] [cockhead of M] with your exposed asshole. Knowing there's nothing more you can do at this point, you [if the reaction of the player is 0]stop struggling and [end if]grit your teeth as [he of M] slams right in. You faint.";
 			now delayed fainting is 1;
 			now the fainting reason of the player is 24;
 		otherwise:
@@ -465,7 +465,7 @@ To compute fuckhole sex of (M - minotaur):
 	let F be a random fuckhole penetrated by M;
 	if the sex-length of M > 0:
 		if the sex-length of M is 1, say "[BigNameDesc of M] roars as you feel [if M is wrapped][one of]the condom starting to fill[or]cum spurting into the condom[or][his of M] [DickDesc of M] erupting into the condom[in random order][otherwise][one of][him of M] start to ejaculate[or]cum spurting into your [variable F] in waves[or][his of M] [DickDesc of M] erupts inside of you[in random order][end if]! But [he of M][one of] doesn't stop fucking you.[or]'s still going![or] doesn't stop plowing you at all.[or] doesn't relent with [his of M] brutal pounding![at random]";
-		otherwise say "[one of][BigNameDesc of M] is brutally plowing away at your [variable F]![or][BigNameDesc of M] grunts primally as [he of M] pounds your poor [variable F]![or][BigNameDesc of M] growls hungrily as [his of M] [LongDickDesc of M] jack-hammers your [variable F].[or][BigNameDesc of M] holds you with a rigid death-grip as [he of M] slams in and out of your [variable F].[or][BigNameDesc of M] holds you down with an ironclad grip as [he of M] brutally pounds your [variable F]![or][BigNameDesc of M][']s massive [if mythical creature fetish is 1]furry [end if]nutsack slaps audibly against your taint as [he of M] brutally jack-hammers your [variable F].[in random order]";
+		otherwise say "[one of][BigNameDesc of M] is brutally plowing away at your [variable F]![or][BigNameDesc of M] grunts primally as [he of M] pounds your poor [variable F]![or][BigNameDesc of M] growls hungrily as [his of M] [LongDickDesc of M] jack-hammers your [variable F].[or][BigNameDesc of M] holds you with a rigid death-grip as [he of M] slams in and out of your [variable F].[or][BigNameDesc of M] holds you down with an ironclad grip as [he of M] brutally pounds your [variable F]![or][BigNameDesc of M][']s [if mythical creature fetish is 1 and M is balls-haver]massive furry nutsack[otherwise if M is balls-haver]massive nutsack[otherwise]upper thighs[end if] slaps audibly against your taint as [he of M] brutally jack-hammers your [variable F].[in random order]";
 		decrease the sex-length of M by 1;
 		if the health of M > 10, decrease the health of M by 5 * combatSpeed;
 	otherwise:

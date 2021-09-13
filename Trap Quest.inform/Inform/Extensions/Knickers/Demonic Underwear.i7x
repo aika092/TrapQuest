@@ -132,7 +132,7 @@ This is the demon junk reward rule:
 
 This is the demon junk punishment rule:
 	let F be a random number between 1 and 3;
-	[if the player is female, now F is 1;]
+	[if the player is possessing a vagina, now F is 1;]
 	let J be a random worn demon codpiece;
 	say "Your [printed name of J] tightens painfully and the gem lights up, [one of]as if reacting in disapproval of your actions[or]once again showing its opinion of your actions[stopping]!";
 	if the mystical size of penis > min penis size:

@@ -71,7 +71,11 @@ To trigger (Y - a magic dust trap):
 		otherwise:
 			say "It gets all over your [ShortDesc of C], which starts to shimmer!";
 			potentially transform C;
-			if C is not worn:
+			if C is worn:
+				if diaper messing >= 4 and C is blandness and C is cursable:
+					now C is desperation;
+					say "But it has gained a new magical effect...  You can sense that it is slowly secreting a laxative, quickening the rate at which you feel desperate to have a bowel movement. Uh-oh...";
+			otherwise:
 				repeat with M running through reactive monsters:
 					say SuddenTransformTrapReactFlav of M;
 		identify glitter;

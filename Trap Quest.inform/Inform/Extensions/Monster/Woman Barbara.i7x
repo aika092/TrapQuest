@@ -138,7 +138,7 @@ To decide which number is the zap damage improvement of (W - magic pistol):
 	decide on -99.
 
 To say PistolStomachSemen:
-	say "[one of]You are shocked to feel your stomach emptying of [semen]! [or][stopping]".
+	say "[one of]You are shocked to feel your stomach emptying of [semen]! [if the semen volume of belly > 0](but the [semen] in your intestines is still there). [end if][or][stopping]".
 
 To compute attack of (W - magic pistol) at (M - a monster):
 	say "You aim the [ShortDesc of W] at [NameDesc of M] and pull the trigger. ";
@@ -157,6 +157,19 @@ To compute (M - minotaur) stomping (N - woman-player):
 		let L be a random off-stage leftover;
 		now L is in the location of M;
 		now the leftover-type of L is the leftover-type of N;
+		destroy N;
+	otherwise:
+		vanish N.
+
+To compute (M - demon lord) stomping (N - woman-player):
+	if M is in the location of the player:
+		if diaper quest is 1:
+			say "[BigNameDesc of M] makes an intricate gesture with [his of M] hands. A red portal appears underneath [NameDesc of N]! [big he of N] shrieks as [he of N] is slowly pulled into the demon realm.[line break][speech style of M]'HAHAHA! TELL MY FAMILY I SAID HELLO, AND THAT YOU ARE TO BE THEIR NEW DOLL PLAYTHING! BAHAHAHA!'[line break][speech style of N]'Nooo! I don't want to be a diapered plaything for demons! Somebody save me!'[roman type][line break]Just it's too late. The portal closes behind [him of N], and just like that, [NameDesc of N] is gone.";
+		otherwise:
+			say "[BigNameDesc of M] grabs [NameDesc of N] by the ankles. [big he of N] shrieks as [he of N] is slowly impaled onto the waiting [LongDickDesc of M]. It takes only a few thrusts for [him of M] to start cumming - you can tell because [his of N] belly expands at an alarming rate. An impossible amount of [semen] fills [him of N] up and with one last wail you see [his of N] sounds cut off by the [semen] flying out of [his of N] mouth. [big he of N] soon loses consciousness and [NameDesc of M] discards [his of N] body. [big he of N] lands on [his of N] back with [his of N] belly covering most of [his of N] body.";
+			let L be a random off-stage leftover;
+			now L is in the location of M;
+			now the leftover-type of L is the leftover-type of N;
 		destroy N;
 	otherwise:
 		vanish N.
@@ -415,7 +428,7 @@ This is the mechanic facefucks barbara rule:
 			now J is solid gold;
 			set shortcut of J;
 			now J is in the location of the player;
-			say "[BigNameDesc of M] moans as [he of M] cums, [his of M] ropes of [semen] making [NameDesc of W] choke as it rebounds and spurts out the sides of [his of W] mouth. [big he of M] removes [his of M] [Dickdesc of M] and begins to clean it off by wiping it all over [NameDesc of W][']s forehead. But [he of W] is looking directly at you, with dismay in [his of W] eyes.[line break][speech style of W]'Really?'[roman type][line break]That's all [he of W] manages before [he of W] passes out. [BigNameDesc of M] drops the [J] in front of you.[line break][speech style of M]'Money well spent.'[roman type][line break]";
+			say "[BigNameDesc of M] moans as [he of M] cums, [his of M] ropes of [semen] making [NameDesc of W] choke as it rebounds and spurts out the sides of [his of W] mouth. [big he of M] removes [his of M] [DickDesc of M] and begins to clean it off by wiping it all over [NameDesc of W][']s forehead. But [he of W] is looking directly at you, with dismay in [his of W] eyes.[line break][speech style of W]'Really?'[roman type][line break]That's all [he of W] manages before [he of W] passes out. [BigNameDesc of M] drops the [J] in front of you.[line break][speech style of M]'Money well spent.'[roman type][line break]";
 			now the latest-appearance of M is the appearance of the player; [to stop him suddenly noticing the player and deciding to bang]
 			satisfy mechanic;
 			DifficultyUp mechanic by 1;
@@ -536,7 +549,7 @@ To compute DominatrixInterruption:
 		now the stance of the player is 1;
 		now M is penetrating asshole;
 		summon gape-gloves;
-		now gape-gloves is glued;
+		gluify gape-gloves;
 		now gape-gloves is wrist-bound-behind.
 
 Check resisting when dominatrix is penetrating asshole and woman-player is in the location and the woman-status of woman-player is 93 and woman-player is awake:
@@ -690,7 +703,7 @@ To compute patron interaction of (W - woman-player):
 				let F be a random body part penetrated by M;
 				say "[BigNameDesc of W] submissively licks [NameDesc of M][']s [one of]asshole[or]testicles[or]taint[in random order] as [he of M] uses your [variable F].";
 			otherwise:
-				say "[one of][BigNameDesc of W] takes [NameDesc of M][']s ball-sack into [his of W] mouth as [he of W] pleasures [him of M] with [his of W] hand[or][BigNameDesc of W] jacks [NameDesc of M] off with both hands[or][BigNameDesc of W] strokes [NameDesc of M][']s [manly-penis] with one hand, while gently sucking the tip[in random order]. When [he of M] begins to grunt, [NameDesc of W] points [his of M] [manly-penis] towards the bowl and begins pumping twice as hard until [he of M] spurts [his of M] entire load into the bowl.";
+				say "[one of][BigNameDesc of W] takes [NameDesc of M][']s [if M is balls-haver]ballsack[otherwise]shaft[end if] into [his of W] mouth as [he of W] pleasures [him of M] with [his of W] hand[or][BigNameDesc of W] jacks [NameDesc of M] off with both hands[or][BigNameDesc of W] strokes [NameDesc of M][']s [manly-penis] with one hand, while gently sucking the tip[in random order]. When [he of M] begins to grunt, [NameDesc of W] points [his of M] [manly-penis] towards the bowl and begins pumping twice as hard until [he of M] spurts [his of M] entire load into the bowl.";
 				if the fill-colour of fishbowl is golden, now the fill-colour of fishbowl is murky;
 				if the fill-colour of fishbowl is not murky, now the fill-colour of fishbowl is creamy;
 				DoseUp fishbowl by the semen load of M;
@@ -1286,7 +1299,7 @@ To compute friendly food of (M - woman-player):
 		say FriendlyFoodApologiseFlav of M.
 
 To compute woman cum drink offer:
-	say "[speech style of woman-player]'I've been saving some tasty cum in my [if a2m fetish > 2]ass[otherwise]pussy[end if] if you want some!'[roman type][line break]";
+	say "[speech style of woman-player]'I've been saving some [tasty] cum in my [if a2m fetish > 2]ass[otherwise][pussy][end if] if you want some!'[roman type][line break]";
 	if the semen taste addiction of the player < 4:
 		say "You can't bring yourself to even begin to consider that offer.";
 	otherwise:

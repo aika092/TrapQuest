@@ -39,7 +39,7 @@ To say EnslavedDominationFlav of (M - teacher-serenity):
 		otherwise:
 			say "Holding your [player-penis] up against [his of M] well-lubricated snatch, you are dismayed to find that you can't seem to get hard right now. Slightly disheartened, you settle for teasing [him of M] by rubbing the tip up and down [his of M] slit until [he of M][']s practically begging to be railed, and then backing away while laughing mockingly.";
 	otherwise:
-		say "Pressing a button on [his of M] wand vibe sets it temporarily to maximum speed. You watch with a sly smile as [he of M] squeaks first with shock and then with trepidation and then finally with intense euphoria as a full-body orgasm sends [his of M] clattering to the ground in a pile of sweat and [boy of M]cum. The vibrator is still going at maximum power and won't return back down to its usual setting for a few minutes. [big he of M] just writhes around on the ground, unable to speak, move or think.";
+		say "Pressing a button on [his of M] wand vibe sets it temporarily to maximum speed. You watch with a sly smile as [he of M] squeaks first with shock and then with trepidation and then finally with intense euphoria as a full-body orgasm sends [him of M] clattering to the ground in a pile of sweat and [if M is female]girl[end if]cum. The vibrator is still going at maximum power and won't return back down to its usual setting for a few minutes. [big he of M] just writhes around on the ground, unable to speak, move, or think.";
 		now the sleep of M is 120.
 
 To decide which number is the EnslavedDominationThreshold of (M - teacher-serenity):
@@ -283,7 +283,7 @@ To say MonsterDesc of (M - teacher-angela):
 		if M is sex-enslaved:
 			say "[BigNameDesc of M][']s face looks a lot less special with no make up except for some cheap pink lipstick to match [his of M] slutty pink stockings. All the rest of [his of M] clothes have gone. Each stocking has the controls to a wired vibrator clipped to the top, one going to the [if lady fetish is 2]vibrating chastity cage around [his of M] [manly-penis][otherwise]vibe in [his of M] pussy[end if], and the other to the vibe in [his of M] ass. Given the orgasm-addled, vacant expression on [his of M] face, it's difficult to tell if [he of M] is somehow unable or just unwilling to remove the vibrators or turn them off.";
 		otherwise if M is diaper-enslaved:
-			say "[BigNameDesc of M][']s make up has gone from [']refined goddess['] to [']naughty kid who found [his of M] mother's make up set[']. And yet, even though [his of M] dignified dress and underwear has been replaced with nothing but baby mittens, a bib and a rather giant diaper, [his of M] face is one of empty-headed bliss. [big his of M] bright pink bib reads 'Mittens, Sins and Diaper Pins'.";
+			say "[BigNameDesc of M][']s make up has gone from [']refined goddess['] to [']naughty kid who found [his of M] mother's make up set[']. And yet, even though [his of M] dignified dress and underwear has been replaced with nothing but baby mittens, a bib and a rather giant diaper, [his of M] face is one of empty-headed bliss. [big his of M] bright pink bib reads 'Mittens, Sins, and Diaper Pins'.";
 		say "It would also appear that it's now impossible for [him of M] to stand up straight - [he of M][']s stuck in that same 90 degrees bent over position that [he of M] used to love so much - but it feels like it has very different implications now[if M is diaper-enslaved and diaper messing >= 3]. It looks like [he of M][']s constantly trying to mess [himself of M][end if].";
 	otherwise:
 		say "Clad in [his of M] tight purple latex dress, this [man of M] looks very elegant, provocative and proud. [big his of M] face is immaculately made up with deep red lips and very striking eyes. [big his of M] medium length brown hair sits stiffly on [his of M] shoulders and [he of M] tends to lean forward over [his of M] students,to give them an eyeful of both [his of M] expertly made up face[if lady fetish < 2] and impressive cleavage, left visible thanks to the low cut of [his of M] dress[end if].".
@@ -294,7 +294,7 @@ To say WhoAnswer of (M - teacher-angela):
 	say "[speech style of M]'I should clearly be teaching you not to azk ztupid queztionz!'[roman type][line break]".
 
 To say WhereAnswer of (M - teacher-angela):
-	say "[speech style of M]'[if the rank of the player <= 1]Geez, you're pretty far gone, aren't you.'[otherwise]Rankz are earned, and not without effort. It iz important you realise zat.'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]Geez, you're pretty far gone, aren't you.'[otherwise]Rankz are earned, and not without effort. It iz important you realize zat.'[end if][roman type][line break]".
 
 To say EscapeAnswer of (M - teacher-angela):
 	say "[speech style of M]'Vouldn't you like to know?'[roman type][line break]".
@@ -353,21 +353,21 @@ To compute teaching of (L - make-up-lesson):
 		if there is a held make up kit and the make-up of face < 2:
 			say "[BigNameDesc of M] turns to you.[line break][speech style of M]'Vat is zis? Vy are you ztill holding zis, razer zan uzing it?!'[roman type][line break][big he of M] holds up your make up kit.[line break][speech style of M]'If you von't put it on your lipz, how about here?!'[roman type][line break]";
 			let T be i-suck tattoo;
-			if i-suck tattoo is drawable:
+			if i-suck tattoo is not worn:
 				say "[BigNameDesc of M] writes 'I suck' on your arm with red lipstick!";
-			otherwise if diaper quest is 1 and dumb baby tattoo is drawable:
+			otherwise if diaper quest is 1 and dumb baby tattoo is not worn:
 				say "[BigNameDesc of M] writes 'dumb baby' on your leg with red lipstick!";
 				now T is dumb baby tattoo;
-			otherwise if loser tattoo is drawable:
+			otherwise if loser tattoo is not worn:
 				say "[BigNameDesc of M] writes 'loser' on your neck with red lipstick!";
 				now T is loser tattoo;
-			otherwise if diaper messing >= 3 and mushbutt tattoo is drawable:
+			otherwise if diaper messing >= 3 and mushbutt tattoo is not worn:
 				say "[BigNameDesc of M] writes 'mushbutt' on your chest with red lipstick!";
 				now T is mushbutt tattoo;
-			otherwise if diaper messing >= 3 and stinker tattoo is drawable:
+			otherwise if diaper messing >= 3 and stinker tattoo is not worn:
 				say "[BigNameDesc of M] writes 'stinker' on your arm with red lipstick!";
 				now T is stinker tattoo;
-			otherwise if diaper quest is 0 and whore-mouth tattoo is drawable:
+			otherwise if diaper quest is 0 and whore-mouth tattoo is not worn:
 				say "[BigNameDesc of M] writes 'WHORE' on your face with red lipstick!";
 				now T is whore-mouth tattoo;
 			otherwise:
@@ -375,10 +375,12 @@ To compute teaching of (L - make-up-lesson):
 			try examining T;
 			say "[speech style of M]'You must chooze. I can make the lipztick permanent, or...'[roman type][line break][big he of M] lets an unspoken threat dangle in the air.[paragraph break]Ask [him of M] to make the make up permanent?";
 			if the player is consenting:
-				say "[BigNameDesc of M] smiles a wide, severe smile, and waves [his of M] hands. You feel some magic passing from [his of M] fingertips into your skin. You immediately know that the lipstick is now permanent. But also, you do feel somewhat magical yourself.[line break][speech style of M]'Zis vas ze right choice. Now remember to use zis before our next lesson.'[roman type][line break][BigNameDesc of M] returns your make up kit.";
-				if T is drawable:
+				if T is not worn:
+					say "[BigNameDesc of M] smiles a wide, severe smile, and waves [his of M] hands. You feel some magic passing from [his of M] fingertips into your skin. You immediately know that the lipstick is now permanent. But also, you do feel somewhat magical yourself.[line break][speech style of M]'Zis vas ze right choice. Now remember to use zis before our next lesson.'[roman type][line break][BigNameDesc of M] returns your make up kit.";
 					summon T;
 					MagicPowerUp 1;
+				otherwise:
+					say "[BigNameDesc of M] smiles a wide, severe smile, and waves [his of M] hands... but then nothing happens. [big he of M] frowns.[line break][speech style of M]'You are already covered in too many ztupid tattooz! I cannot do zis to you.'[roman type][line break]";
 			otherwise:
 				say "[BigNameDesc of M] frowns at your reluctance.[line break][speech style of M]'Useless bitch.'[roman type][line break][big he of M] flicks you painfully on your forehead.";
 				PainUp 1;

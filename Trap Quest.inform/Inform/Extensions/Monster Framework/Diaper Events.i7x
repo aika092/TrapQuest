@@ -65,7 +65,7 @@ To compute diaper check of (M - a monster):
 		say DiaperCheckResultsFlav of M;
 		if diaper messing is 3 and D is messed:
 			compute instant change of M;
-		otherwise if M is aware that the player needs a change:
+		otherwise if M is eager to change diapers:
 			if the delicateness of the player < 12, say "Submit to the diaper change? [one of](Refusing will probably make [him of M] angry) [or][stopping]";
 			if the delicateness of the player >= 12 or the player is bimbo consenting:
 				compute diaper change of M;
@@ -106,18 +106,29 @@ To say DiaperCheckResultsFlav of (M - a monster):
 	let D be a random worn knickers;
 	if D is diaper-stack and D is not messed, now D is entry (number of entries in the list of stacked diapers) in the list of stacked diapers;
 	if M is aware that the player needs a change:
-		if D is messed:
-			say DiaperCheckResultsMessedFlav of M;
-			if D is perceived unmessed diaper:
-				process state perception of D;
-				say "It's only now that [he of M] has pointed it out that you can feel it - you have indeed messed yourself without even realising it!";
-			say DiaperCheckResultsMessedReactionFlav of M;
-		otherwise if D is crotch-ripped diaper:
-			say DiaperCheckResultsTornFlav of M;
+		if M is eager to change diapers:
+			if D is messed:
+				say DiaperCheckResultsMessedFlav of M;
+				if D is perceived unmessed diaper:
+					process state perception of D;
+					say "It's only now that [he of M] has pointed it out that you can feel it - you have indeed messed yourself without even realising it!";
+				say DiaperCheckResultsMessedReactionFlav of M;
+			otherwise if D is crotch-ripped diaper:
+				say DiaperCheckResultsTornFlav of M;
+			otherwise:
+				say DiaperCheckResultsWetFlav of M;
+				if D is perceived dry diaper, compute DiaperCheckWetReveal of M to D;
+				say DiaperCheckResultsWetReactionFlav of M;
 		otherwise:
-			say DiaperCheckResultsWetFlav of M;
-			if D is perceived dry diaper, compute DiaperCheckWetReveal of M to D;
-			say DiaperCheckResultsWetReactionFlav of M;
+			say DiaperCheckResultsNoChangeFlav of M;
+			if D is messed:
+				if D is perceived unmessed diaper:
+					process state perception of D;
+					say "It's only now that [he of M] has pointed it out that you can feel it - you have indeed messed yourself without even realising it!";
+				say DiaperCheckResultsMessedReactionFlav of M;
+			otherwise:
+				if D is perceived dry diaper, compute DiaperCheckWetReveal of M to D;
+				say DiaperCheckResultsWetReactionFlav of M;
 	otherwise if D is wet:
 		say DiaperCheckResultsMostlyDryFlav of M;
 		if D is perceived dry diaper, compute DiaperCheckWetReveal of M to D;
@@ -132,6 +143,11 @@ To say DiaperCheckResultsFlav of (M - a monster):
 					decrease the diaper-duration of M by 1;
 				otherwise if the diaper-duration of M is 1:
 					now the diaper-duration of M is 0.
+
+To say DiaperCheckResultsNoChangeFlav of (M - a monster):
+	let D be a random worn knickers;
+	if the player is stacked-but-outerly-dry, say "[speech style of M]'[if D is messed knickers]Well, while I can smell you from here, the fact of the matter is that your diapers can still hold a whole lot more. This outer one is still completely dry!'[otherwise]Hmm, well this outer diaper is dry at least, so even if you are wet somewhere in there, it'll be a long time before you leak.'[end if][roman type][line break]";
+	otherwise say "[speech style of M]'[if D is messed knickers]Look at you, stinky pants! Still, for some reason, I don't feel like letting you have a clean one yet. Why don't you stew in that thing for a while longer, haha!'[otherwise if D is diaper]Oh, that feels nice. Don't you think it feels nice? I do. In fact, I think you should stay like this.'[otherwise]How... disappointing.'[end if][roman type][line break]".
 
 To say DiaperCheckResultsMessedFlav of (M - a monster):
 	let D be a random worn knickers;
@@ -548,7 +564,7 @@ To say SpankingAfterFlav of (M - a monster):
 	if diaper messing is 3 and there is worn messed knickers:
 		do nothing;
 	otherwise if there is worn messed knickers:
-		say "[if M is intelligent][speech style of M]'[one of]You can find someone else to change you - I'm done with you for now[or]I think you deserve to stew in that mess for a little while longer[or]It's almost as if you like being messy. Fine, I'm leaving you like that[in random order].'[roman type][line break][end if][BigNamedesc of M] seems satisfied and leaves you alone to recover.";
+		say "[if M is intelligent][speech style of M]'[one of]You can find someone else to change you - I'm done with you for now[or]I think you deserve to stew in that mess for a little while longer[or]It's almost as if you like being messy. Fine, I'm leaving you like that[in random order].'[roman type][line break][end if][BigNameDesc of M] seems satisfied and leaves you alone to recover.";
 	otherwise:
 		say "After this [he of M] seems satisfied, and gives you a cheeky kiss on your sore [if asshole is lewdly exposed]butt cheek[otherwise if there is a worn diaper]bottom through your padding[otherwise]bottom[end if] before leaving you to recover.".
 
@@ -865,7 +881,7 @@ To say ForcefeedAftermath of (M - a monster):
 	say "After you're finished, [he of M] lifts you off of [his of M] lap and drops you down onto the floor on your [buttcheeks].".
 
 To say ForcefeedAfterFlav of (M - a monster):
-	say "[speech style of M]'[one of]What a good [boy of the player]! Off you trot now!'[or]There you go, all nice and full now I'm sure?'[or]That was tasty, wasn't it? Good [boy of the player].'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]What a good [boy of the player]! Off you trot now!'[or]There you go, all nice and full now I'm sure?'[or]That was [tasty], wasn't it? Good [boy of the player].'[in random order][roman type][line break]".
 
 Section - Suppository
 

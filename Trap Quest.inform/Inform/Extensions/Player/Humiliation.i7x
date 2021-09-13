@@ -474,8 +474,10 @@ To decide which text is ReputationAttire:
 	let AF be "";
 	if face is listed in the armUses of arms, now AF is " and an arm trying to conceal your face";
 	if breasts is exposed:
-		if (the player is possessing a penis and penis is exposed) or (the player is possessing a vagina and vagina is exposed):
-			decide on "with your chest and [if the player is possessing a penis][ShortDesc of penis][otherwise if the player is possessing a vagina][vagina][end if] on full display[AF]";
+		if (the player is possessing a penis and penis is exposed) and (the player is possessing a vagina and vagina is exposed):
+			decide on "with your chest, [ShortDesc of penis], and [vagina] on full display[AF]";
+		otherwise if (the player is possessing a penis and penis is exposed) or (the player is possessing a vagina and vagina is exposed):
+			decide on "with your chest and [if the player is possessing a penis and penis is exposed][ShortDesc of penis][otherwise if the player is possessing a vagina and vagina is exposed][vagina][end if] on full display[AF]";
 		otherwise:
 			decide on "topless, with a [ShortDesc of C][if C is not actually dense clothing] partially covering your [genitals][end if][AF]";
 	otherwise:

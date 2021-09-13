@@ -1,6 +1,6 @@
 Gape Gloves by Equippables begins here.
 
-gape-gloves is a gloves. gape-gloves is unique. gape-gloves is glued. gape-gloves is latex. gape-gloves is anal-sex-addiction-influencing. Understand "gape", "gloves" as gape-gloves.
+gape-gloves is a gloves. gape-gloves is unique. gape-gloves is latex. gape-gloves is anal-sex-addiction-influencing. Understand "gape", "gloves" as gape-gloves.
 The printed name of gape-gloves is "[clothing-title-before]pair of latex gape gloves[clothing-title-after]". Figure of gape-gloves is the file "Items/Accessories/Equippables/gloves1.jpg". The text-shortcut of gape-gloves is "ggl".
 To decide which figure-name is clothing-image of (C - gape-gloves):
 	decide on figure of gape-gloves.
@@ -14,6 +14,9 @@ To decide which number is the slap damage improvement of (W - gape-gloves):
 
 Definition: gape-gloves is anal sex themed: decide yes.
 Definition: gape-gloves is white themed: decide yes.
+
+To uniquely set up (W - gape-gloves):
+	gluify W.
 
 To say ShortDesc of (W - gape-gloves):
 	say "gloves".

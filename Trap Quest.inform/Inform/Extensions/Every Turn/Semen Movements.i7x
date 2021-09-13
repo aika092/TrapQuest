@@ -209,10 +209,11 @@ To compute enema leaking with reason (T - a text):
 			if K is clothing, now CK is the concealer of K;
 			if CK is clothing and K is not currently visible, now K is CK;
 			if K is clothing, now KSK is the total-soak of K;
+			let P be a random thing penetrating asshole;
 			say "[T] [one of]your sphincter momentarily spasms[or]you lose control of your sphincter for a split second[or]your sphincter spasms on its own[in random order] and [one of]a little bit of[or]a small squirt of[in random order] ";
 			if urine-count is 0 and semen-count is 0 and milk-count is 0, say "[if diaper messing >= 3]enema water[otherwise]clear water[end if] ";
 			otherwise say "[if urine-count > 0 and semen-count > 0 and milk-count > 0]what must be a disgraceful mix of [urine], [milk] and [semen][otherwise if urine-count > 0 and semen-count > 0]what seems like a mix of [urine] and [semen][otherwise if urine-count > 0 and milk-count > 0]what seems like a mix of [urine] and [milk][otherwise if milk-count > 0 and semen-count > 0]what seems like a mix of [milk] and [semen][otherwise if urine-count > 0][urine][otherwise if semen-count > 0][semen][otherwise if milk-count > 0][milk][otherwise]BUG - can't find any liquid. Report this bug please[end if] ";
-			say "[one of]escapes[or]spills out[or]comes out[at random]";
+			say "[one of]escapes[or]spills out[or]comes out[at random][if P is a thing] around the sides of [NameDesc of P][end if]";
 			if C is clothing:
 				say " into [NameDesc of C]. ";
 			otherwise:

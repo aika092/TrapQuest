@@ -199,8 +199,8 @@ To decide which number is the unique outrage of (C - green-briefs):
 	decide on 1.
 To decide which number is the luck-influence of (C - green-briefs):
 	decide on 5.
-To decide which number is the original price of (C - green-briefs):
-	decide on 10.
+To decide which number is the unique price of (C - green-briefs):
+	decide on 1.
 Definition: green-briefs is green themed: decide yes.
 
 grey-briefs is a briefs. The text-shortcut of grey-briefs is "grb".

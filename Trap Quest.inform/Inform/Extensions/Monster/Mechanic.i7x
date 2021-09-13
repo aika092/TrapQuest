@@ -108,7 +108,7 @@ To say PregGrowth of (M - mechanic):
 To compute labour to (M - mechanic):
 	if M is regional and M is alive:
 		compute pregnancy clothing displacement;
-		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue! [big he of M][end if] kneels down on one knee and delivers the human baby, which immediately starts crying loudly. [big he of M] takes it into [his of M] arms and begins to cradle it.[line break][first custom style]'Ssshh, hush there, everything is okay, I'm your daddy little one!'[roman type][line break][big he of M] looks at you.[line break][first custom style]'[if the father is mating]A wonderful addition to our family.[otherwise]My first child. How magical - I will remember this moment for ever.'[roman type][line break]Without giving you a chance to react, never mind reply, [he of M] leaves you to recover from your ordeal.";
+		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue! [big he of M][end if] kneels down on one knee and delivers the human baby, which immediately starts crying loudly. [big he of M] takes it into [his of M] arms and begins to cradle it.[line break][first custom style]'Ssshh, hush there, everything is okay, I'm your [daddytitle of M], little one!'[roman type][line break][big he of M] looks at you.[line break][first custom style]'[if the father is mating]A wonderful addition to our family.[otherwise]My first child. How magical - I will remember this moment for ever.'[roman type][line break]Without giving you a chance to react, never mind reply, [he of M] leaves you to recover from your ordeal.";
 		if the father is in the location of the player:
 			say "For some reason, you are filled with a sense of deep fulfilment. You feel great!";
 			StrengthUp 1;
@@ -528,11 +528,11 @@ To compute (M - mechanic) messily pulling out of (F - a fuckhole):
 To say MessyPullOutFlav of (M - mechanic) in (F - a fuckhole):
 	say "[BigNameDesc of M] suddenly slows down and pulls out.";
 	if the class of the player is worshipper:
-		say "[line break][speech style of M]'[one of]I bet you're dying to find out what your [if F is vagina]pussy[otherwise]ass[end if] tastes like.'[or]You're fine with [if F is vagina]tasting your own pussy[otherwise]ass to mouth[end if], right?'[in random order][roman type][line break]";
+		say "[line break][speech style of M]'[one of]I bet you're dying to find out what your [if F is vagina][pussy][otherwise]ass[end if] tastes like.'[or]You're fine with [if F is vagina]tasting your own [pussy][otherwise]ass to mouth[end if], right?'[in random order][roman type][line break]";
 	otherwise if the class of the player is priestess:
 		say "[line break][speech style of M]'[one of]Alright, I won't cum inside you. There's more than one way to defile uppity priestesses, after all.'[or]Ok, priestess, I don't have to creampie you. After all, I have other ways of defiling you.'[in random order][roman type][line break]";
 	otherwise:
-		say "[line break][speech style of M]'[one of]Alright, I'll give your [if F is vagina]pussy[otherwise]ass[end if] a break. But [if M is infernal]I've been really full of energy recently, so we'll have to keep going.'[otherwise]I'm not about to let you blue-ball me, though.'[end if][or]Getting bored, are we? Me too.'[or]Tired already? Hmm, I guess I should make things more interesting.'[in random order][roman type][line break]";
+		say "[line break][speech style of M]'[one of]Alright, I'll give your [if F is vagina][pussy][otherwise]ass[end if] a break. But [if M is infernal]I've been really full of energy recently, so we'll have to keep going.'[otherwise]I'm not about to let you blue-ball me, though.'[end if][or]Getting bored, are we? Me too.'[or]Tired already? Hmm, I guess I should make things more interesting.'[in random order][roman type][line break]";
 	say "[big he of M] walks round to your face, casually grabbing a handful of your hair and dragging your head towards [his of M] [LongDickDesc of M]. You are given only a moment to contemplate whether avoiding a creampie is really worse than tasting your own [variable F] before [he of M] makes the decision for you, shoving [his of M] [DickDesc of M] into your mouth and beginning to thrust.[unless M is infernal] [GotUnluckyFlav][end if]".
 
 To say PullOutFlav of (M - mechanic) in (F - a fuckhole):
@@ -543,7 +543,7 @@ To compute happy reward of (M - mechanic):
 	if M is friendly-fucking:
 		let T be a random tiara;
 		if M is carrying T:
-			say "[line break][speech style of M]'[one of]Alright [']princess['], I guess you've earned this back.'[or]OK I feel better now. Maybe next time you'll bring the old princess and make it a threesome.'[or]Fuck, that was good. Here's your garbage back.'[or]I like you loads more than the old princess. Take it.'[at random][roman type][line break][BigNamedesc of M] hands you the [ShortDesc of T].";
+			say "[line break][speech style of M]'[one of]Alright [']princess['], I guess you've earned this back.'[or]OK I feel better now. Maybe next time you'll bring the old princess and make it a threesome.'[or]Fuck, that was good. Here's your garbage back.'[or]I like you loads more than the old princess. Take it.'[at random][roman type][line break][BigNameDesc of M] hands you the [ShortDesc of T].";
 			now T is carried by the player;
 		otherwise if M is carrying pink-spraybottle:
 			now pink-spraybottle is spray;

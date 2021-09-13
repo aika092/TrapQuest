@@ -415,7 +415,7 @@ Check entering giant-statue:
 	let R be a random number between 1 and 4;
 	if the player is very horny, now R is 5;
 	if R is 1 and pregnancy fetish is 1:
-		if diaper quest is 0 and the player is female:
+		if diaper quest is 0 and the player is possessing a vagina:
 			say "You feel a tingling sensation in your core as a wave of energy washes over you.";
 			increase the pregnancy rate of the player by 1 + V;
 		otherwise if diaper quest is 0 and the mystical size of penis > min penis size:

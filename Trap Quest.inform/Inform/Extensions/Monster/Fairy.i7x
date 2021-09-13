@@ -376,9 +376,9 @@ To compute fairy meddling on (XXX - breasts):
 			if cow-ears is off-stage and cow-ears is actually summonable and a random number between 1 and 3 is 1:
 				say "[bold type]A pair of fake cow ears materialise on your head.[roman type][line break]";
 				summon cow-ears cursed;
-				now the lactation-count of the player is 0;
+				now the lactation count of breasts is 0;
 			otherwise:
-				increase the lactation rate of the player by a random number between 1 and 3.
+				increase the lactation rate of breasts by a random number between 1 and 3.
 
 To compute fairySuckling of (M - a fairy):
 	let fM be a random number from 1 to the milk volume of breasts;
@@ -481,7 +481,7 @@ To compute fairySuckling of (M - a fairy):
 	if there is a worn cow piercing or there is a worn nipple chain:
 		say "[big his of M] tiny hands are jerking at [italic type]this[roman type] nipple's piercing, even as [his of M] mouth stretches over your rosebud, and [his of M] lips press down right to the edge of the heavy metal as [he of M] begins sucking vigorously. Between [his of M] suckling at your tit, and [his of M] tugging at the piercing, small lightning bolts of pleasure jolt and judder through you. You have the feeling that something a little magical just happened: your [BreastDesc] feel... [italic type]milkier[roman type]. Ooh - sexy!";
 		passively stimulate breasts from M;
-		increase the lactation rate of the player by 2; [Cowgirls get even milkier!]
+		increase the lactation rate of breasts by 2; [Cowgirls get even milkier!]
 	if FairySuckled is 1:
 		say "When you regain your senses, [NameDesc of M] is fluttering smugly above you and just out of reach, watching you as if considering doing more. Both your nipples now feel like signal flares crying out for you or [italic type]anyone[roman type] to... No! You're worried that if anything touched them right now, you'd come on the spot.";
 	otherwise if FairySuckled is 2:
@@ -490,7 +490,7 @@ To compute fairySuckling of (M - a fairy):
 		say "[one of]Your breasts feel emptier, but you worry that [his of M] feeding is somehow making your body think you're breastfeeding a child! [italic type]Is [he of M] training me to lactate?[roman type][or][BigNameDesc of M] belches prettily, watching you with satisfaction, and you feel a funny sort of [italic type]echo[roman type] ripple through the flesh deep inside your [BreastDesc].[at random][line break]";
 	stimulate breasts from M;
 	MilkDown fM;
-	increase the lactation rate of the player by fM / 2;
+	increase the lactation rate of breasts by fM / 2;
 	say "[if FairySuckled > 1]Once again, as you waken from the pleasure-daze, your breasts feel less swollen with [milk], but at the same time... maybe a bit more [italic type]tingly[roman type] inside?[otherwise]You're not sure how much time has passed, but apart from feeling like you've just been through some mind-blanking oxytocin high, nothing much seems to have changed. [italic type]At least my breasts aren't aching inside so much, any more![roman type][line break][end if]".
 
 Definition: hips (called XXX) is fairy targetable:

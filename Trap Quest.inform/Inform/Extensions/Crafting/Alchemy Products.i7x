@@ -34,7 +34,7 @@ To decide which number is the bartering value of (T - an alchemy product) for (M
 	decide on 3.
 
 To decide what number is the original price of (C - an alchemy product):
-	decide on 4.
+	decide on 3.
 
 To say MonsterOfferAcceptFlav of (M - witch) to (T - an alchemy product):
 	say "[BigNameDesc of M] gingerly takes it from you.[line break][speech style of M]'[if T is unsure]You couldn't even be bothered to identify it? Well, I guess I can pawn this off to some unsuspecting adventurer in the future. I'll take it[otherwise if T is cursed]Don't you think I have enough cursed [ShortDesc of T]s? No, no, I'll take it, just don't expect me to be over the moon or anything[otherwise if T is blessed]Wow, I haven't seen a blessed one of these in decades! I mean... not that I'm that old! Forget I said anything! Anyway, yes, thank you, I'll definitely take this off of your hands[otherwise]Nice, looks like it's in good condition too. Thanks[end if].'[roman type][line break]".
@@ -132,7 +132,7 @@ Carry out SmokeBombing a smoke bomb to a direction:
 		try going the second noun.
 
 To decide what number is the original price of (C - a smoke bomb):
-	decide on 2.
+	decide on 1.
 
 Section 2 - Water Bomb
 
@@ -778,7 +778,7 @@ To decide which number is the alchemy key of (A - bull-strength-potion):
 	decide on 12.
 
 To decide what number is the original price of (A - bull-strength-potion):
-	decide on 6.
+	decide on 4.
 
 This is the potion of bull strength specific recipe rule:
 	if bull-strength-potion is fetish appropriate:
@@ -814,7 +814,7 @@ Carry out quaffing bull-strength-potion:
 	if lactation fetish is 1 and cow-ears is off-stage and cow-ears is actually summonable:
 		say "[bold type]A pair of fake cow ears materialise on your head.[roman type][line break]";
 		summon cow-ears cursed;
-		now the lactation-count of the player is 0.
+		now the lactation count of breasts is 0.
 
 Section 5 Space Mead
 
@@ -1063,7 +1063,7 @@ Carry Out PowderRubbing escape-powder on a thing:
 	say "You sprinkle the powder onto the [ShortDesc of the second noun]. ";
 	if the noun is cursed:
 		say "Instead of removing it, you feel it stick to you more firmly[if the second noun is not glued]. It is now glued[end if]! Darn, that must mean the powder itself must have been cursed! You must have created it with the wrong recipe...";
-		now the second noun is glued;
+		gluify the second noun;
 		force clothing-focus redraw; [This forces the clothing window to redraw]
 		now unlockGo is 0;
 	if unlockGo is 1 and the second noun is locked:
@@ -1073,7 +1073,7 @@ Carry Out PowderRubbing escape-powder on a thing:
 	if unlockGo is 1 and the second noun is glued:
 		unless the noun is blessed, now unlockGo is 0;
 		say "With a quiet hiss, the glue disappears!";
-		now the second noun is not glued;
+		ungluify the second noun;
 	if unlockGo is 1 or the second noun is not cursed:
 		say "With a flash of silver it is suddenly no longer on your body but instead in your [if there is a worn bag of holding][ShortDesc of a random worn bag of holding][otherwise]hands[end if]!";
 		dislodge the second noun;
@@ -1314,7 +1314,7 @@ To say ShortDesc of (T - a tincture):
 Definition: a tincture is drink themed: decide yes.
 
 To decide what number is the original price of (A - a tincture):
-	decide on 7.
+	decide on 4.
 
 Figure of tincture is the file "Items/Collectibles/tincture1.png".
 To decide which figure-name is the examine-image of (V - a tincture):
@@ -1409,9 +1409,9 @@ An all time based rule (this is the acceleration tincture decay rule):
 			if the stomach of the player > 1 and the thirst of the player < 5:
 				stomachdown 1;
 				if watersports mechanics is 1, increase the delayed bladder of the player by 1;
-			if the lactation rate of the player > 1:
+			if the lactation rate of breasts > 1:
 				MilkUp 1;
-			if the lactation rate of the player is 1 and a random number between 1 and 2 is 1:
+			if the lactation rate of breasts is 1 and a random number between 1 and 2 is 1:
 				MilkUp 1;
 			if the womb volume of vagina > 1 and acceleration-timer of acceleration-tincture < 48 and the player is able to get pregnant and the number of family things > 0:
 				say ConceptionFlav;

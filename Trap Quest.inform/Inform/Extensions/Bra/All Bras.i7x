@@ -485,7 +485,7 @@ To decide which figure-name is clothing-image of (C - a pasties):
 To say ClothingDesc of (C - a pasties):
 	if C is worn and C is cursed and there is a worn cursed catsuit, say "These red latex stickers expose your [BreastDesc] as much as possible, clinging perfectly to your nipples and connecting to the rest of your catsuit with four impossibly thin strands of latex. [run paragraph on]";
 	otherwise say "These red latex stickers [if item described is worn]expose your [BreastDesc] as much as possible, clinging seamlessly to your nipples[otherwise]would barely do anything to cover the wearer's [BreastDesc], only providing a small amount of 'modesty' to the wearer's nipples[end if]. [run paragraph on]";
-	if the lactation rate of the player > 0 and C is worn, say "It is completely preventing you from lactating at all.".
+	if the lactation rate of breasts > 0 and C is worn, say "It is completely preventing you from lactating at all.".
 
 Definition: a pasties is red themed: decide yes.
 
@@ -508,7 +508,7 @@ To decide which figure-name is clothing-image of (C - tassels):
 To say ClothingDesc of (C - tassels):
 	if C is worn and C is cursed and there is a worn cursed catsuit, say "A pair of white nipple caps with four strands of thin latex connecting them to the rest of your catsuit, and nylon tassels hanging from the ends of the caps. Your [BreastDesc] are otherwise left completely exposed. [run paragraph on]";
 	otherwise say "A pair of white nipple caps with [if C is worn]nylon tassels hanging from the centre, as if to provide handlebars for your [BreastDesc], which are otherwise completely exposed[otherwise]nylon tassels attached in the centre, as if to provide handles for the wearer's breasts, which would otherwise be completely exposed[end if]. [run paragraph on]";
-	if the lactation rate of the player > 0 and C is worn, say "It is completely preventing you from lactating at all.".
+	if the lactation rate of breasts > 0 and C is worn, say "It is completely preventing you from lactating at all.".
 
 Definition: tassels is end of transformation chain: decide yes.
 
@@ -644,7 +644,7 @@ To compute periodic effect of (C - a trainee bra):[remember that training-progre
 				say "Your [printed name of C] [if the training-progress of C < 1]tightens and emits a short tone[otherwise]emits [the training-progress of C + 1] short tones, tightening slightly each time[end if]. The flexible lining of the bra begins to vibrate, secreting a warm fluid that it simultaneously massages into your [BreastDesc]. It feels way better than it has any right to, and when it finally stops, you're sure your chest is a lot more sensitive than it used to be.";
 				increase the raw sensitivity of breasts by 1;
 				TitFuckAddictUp 1;
-				if lactation fetish is 1, increase the lactation rate of the player by 1;
+				if lactation fetish is 1, increase the lactation rate of breasts by 1;
 				arouse 100 + (the sensitivity of breasts * 10);
 				increase the training-progress of C by 1;
 		otherwise:
@@ -652,7 +652,7 @@ To compute periodic effect of (C - a trainee bra):[remember that training-progre
 			increase the training-progress of C by 1;
 			if the training-progress of C < 1, BustUp 1;
 			otherwise BustUp the training-progress of C;
-			if lactation fetish is 1, increase the lactation rate of the player by 1;
+			if lactation fetish is 1, increase the lactation rate of breasts by 1;
 			if the training-progress of C >= 3:
 				now the training-progress of C is 0;
 				destroy C;

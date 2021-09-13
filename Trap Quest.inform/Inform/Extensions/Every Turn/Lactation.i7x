@@ -2,7 +2,7 @@ Lactation by Every Turn begins here.
 
 A time based rule (this is the lactation rule):
 	if lactation fetish > 0:
-		let R be the lactation rate of the player;
+		let R be the lactation rate of breasts;
 		repeat with C running through worn wearthing:
 			if C is milk production clothing:
 				increase R by 1;
@@ -29,7 +29,7 @@ A time based rule (this is the lactation rule):
 						let previous-size be the largeness of belly;
 						Assfill 1 Milk;
 						if the largeness of belly > previous-size:
-							say "Your body has produced [if the milk volume of belly < 5]enough[otherwise]so much[end if] [milk] that you now have a [BellyDesc]![one of][line break][variable custom style]Wait... what?!?! What the hell is this basque doing to me? That's not how lactation is supposed to work.[roman type][line break][or][stopping]";
+							say "Your body has produced [if the milk volume of belly < 5]enough[otherwise]so much[end if] [milk] that you now have a [BellyDesc]![one of][line break][variable custom style]Wait... what?! What the hell is this basque doing to me? That's not how lactation is supposed to work.[roman type][line break][or][stopping]";
 							now flav-said is 1;
 					if white-milking-basque is not ass covering: [this way, cow print basque does both]
 						let previous-size be the largeness of breasts;
@@ -37,11 +37,11 @@ A time based rule (this is the lactation rule):
 						if the largeness of breasts > previous-size:
 							say "Your body has produced [if the milk volume of breasts < 5]enough[otherwise]so much[end if] [milk] that you now have [BreastDesc]!";
 							now flav-said is 1;
-				if a random number between 1 and 10 is 1 and the lactation rate of the player > 0:
+				if a random number between 1 and 10 is 1 and the lactation rate of breasts > 0:
 					say "You feel your [unless there is an ass covering milking basque]breasts['] [end if][milk] production rate [if R is 1]stop.[otherwise][one of]slow down[or]decrease[or]lower[in random order].[end if]";
-					decrease the lactation rate of the player by 1;
+					decrease the lactation rate of breasts by 1;
 		if the milk volume of breasts > 0:
-			if the lactation rate of the player > 3: [Selkie. (Incidentally: I put this comment in front of the "if" on this line, and Inform got confused.)]
+			if the lactation rate of breasts > 3: [Selkie. (Incidentally: I put this comment in front of the "if" on this line, and Inform got confused.)]
 				if a random number between 1 and 70 is 1: [Added because it was saying this too often]
 					say "[one of]Your [BreastDesc] feel active.[or]Your breasts feel strangely warm.[or]Your [BreastDesc] feel kind of tight, or intense... kind of... busy?[or]There's a funny tingling in your boobs.[or]A funny sort of quiver, deep inside your breasts, makes you stop and stare at your [BreastDesc].[or]You stare at your breasts, certain that - just for a moment - you felt liquid moving inside them![at random] ";
 					if FairySuckled > 3 and a random number between 1 and 2 is 1 :
@@ -87,8 +87,8 @@ To trigger lactation:
 		if the milk volume of breasts is 2, now M is 1;
 		let CGM be the the milk volume of breasts - the flesh volume of breasts;
 		if the class of the player is cowgirl and CGM < M, now M is CGM; [cowgirls stay at maximum fill and only expel the excess]
-		increase the lactation-count of the player by 1;
-		if lactation-count of the player is 1:
+		increase the lactation count of breasts by 1;
+		if lactation count of breasts is 1:
 			say "You feel a strange tingle in your chest... a feeling like... something weird is going on. Your nipples perk up and feel strangely sensitive. The feeling intensifies, and then with a shock you stare at your chest as you work out what's happening.[line break]";
 			if the player is sexed male:
 				say "[variable custom style]This is not possible! What the hell is this crazy game doing to me?![roman type][line break]";
@@ -117,18 +117,18 @@ To trigger lactation:
 				MilkDown 1;
 				if a random number between 1 and 4 is 1:
 					say "A strange shivery feeling tingles through your chest.";
-					increase the lactation rate of the player by 1;
+					increase the lactation rate of breasts by 1;
 			otherwise: [Selkie: when I started the line below "[Milk] starts...", that entire block of text came out in bold (and Milk was not capitalised). So I changed it to just say "Milk starts..."]
 				if M < 10, say "Milk starts jetting from your nipples into the suction cups of the [printed name of N]. You hear a recording of a cow mooing, playing from somewhere right by your head, so that if anyone were looking at you they'd think you were the one mooing in pleasure. Ohhh - how mean! You shiver [if the humiliation of the player > 11]in delight [end if]and wonder if somehow this situation might be somehow making you more cow-like? But they wouldn't be that mean, would they?";
 				otherwise say "Your [BreastDesc] powerfully squirt [milk] into the suction cups of the [printed name of N]. You feel the pressure easing from your swollen udders, and combined with the wonderful feeling of the exciting suction on your tender and sucked-erect teats, and the [milk] squirting from them, you feel a heat growing in your loins.[line break][variable custom style]This is actually pretty wonderful![roman type][line break]It goes on for a long time, and you feel yourself getting hornier, and find yourself pressing your thighs together, trying to squeeze out a little bit more pleasure from your tingling groin. [one of][line break][variable custom style]Wow, this is really giving my milk ducts a workout! Imagine if they were like other muscles, and... oohhh... the more I work them, the better they get at doing their job?[if the bimbo of the player > 14] I sure hope it does![roman type][line break][otherwise]You sure hope not. The idea of [italic type]your[roman type] breasts giving milk is just awful![end if][or][line break][variable custom style]It's like an exercise machine for my milky boobs![roman type][line break][or]You feel a curious burning sensation, spread out deep inside your boobs - it reminds you of growing pains, when you were a teen.[or]You imagine your poor milk ducts, being filled and emptied, over and over.[or]Your milk glands definitely feel [italic type]healthier.[roman type][stopping][line break]";
 				let tempM be M;
 				MilkDown tempM;
 				if tempM < 4:
-					increase the lactation rate of the player by 2;
+					increase the lactation rate of breasts by 2;
 					arouse 50;
 					humiliate 50;
 				otherwise:
-					increase the lactation rate of the player by 4;
+					increase the lactation rate of breasts by 4;
 					arouse 200;
 					humiliate 100;
 		otherwise:
@@ -142,20 +142,20 @@ To trigger lactation:
 				otherwise say "Your [BreastDesc] powerfully squirt [milk] onto the floor.[roman type][line break]";
 				MilkDown M;
 				MilkPuddleUp M;
-		if a random number from 6 to 50 - (20 * unlucky) < the lactation-count of the player and milking harness is actually summonable and royal circlet is not worn and yellow-pacifier is not worn:
+		if a random number from 6 to 50 - (20 * unlucky) < the lactation count of breasts and milking harness is actually summonable and royal circlet is not worn and yellow-pacifier is not worn:
 			say "[bold type]As you finish lactating, a plug connected to some tubing and suction cups [italic type]shunks[bold type] into place around you.[roman type] You feel your loins encased in latex and your nipples pulled outwards by a suction force.";
 			summon milking harness cursed with quest;
-			now the lactation-count of the player is 0;
+			now the lactation count of breasts is 0;
 			now the plug size of milking harness is the openness of asshole;
 			say "[one of]You look down to try and work out exactly what this thing does...[line break][ExamineDesc of milking harness][or][stopping]";
-		otherwise if a random number from 4 to 50 - (30 * unlucky) < the lactation-count of the player and a2m fetish >= 2 and royal circlet is off-stage and royal circlet is actually summonable and yellow-pacifier is not worn:
+		otherwise if a random number from 4 to 50 - (30 * unlucky) < the lactation count of breasts and a2m fetish >= 2 and royal circlet is off-stage and royal circlet is actually summonable and yellow-pacifier is not worn:
 			if black strap hood is off-stage and there is worn black themed latex clothing and black strap hood is actually summonable:
 				say "[bold type]As you finish lactating, a black strap hood appears on your head.[line break][variable custom style]Why do I get the feeling that people are going to want my milk soon...[roman type][line break]";
 				summon black strap hood cursed;
 			otherwise:
 				say "[bold type]As you finish lactating, a silver circlet appears on your head.[line break][variable custom style]Why do I get the feeling that people are going to want my milk soon...[roman type][line break]";
 				summon royal circlet cursed;
-			now the lactation-count of the player is 0;
+			now the lactation count of breasts is 0;
 		now last-lactated-time is earnings; [Record this: the idea is that the player will smell of milk for a while after lactating, and possibly exciting some monsters when they smell it.]
 		if N is gloryhole, progress quest of milking-quest;
 		otherwise now the ready-for-milking of milking-quest is 1.

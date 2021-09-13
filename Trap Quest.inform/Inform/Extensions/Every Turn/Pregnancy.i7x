@@ -257,7 +257,7 @@ To compute infernal birth:
 		if X > 3, now X is 3;
 		compute pregnancy clothing displacement;
 		say "[PregFlav]You are overcome by a terrible feeling of dread as you begin to give birth to the evil creature[if X > 1]s[end if] growing inside of you. The process of delivering the [if X > 1]first [end if ]baby is incredibly long and painful, and you almost pass out a few times from the pain. [if X is 1]Finally, your red-skinned devil offspring is born, apparently fully aware and fully adult as [he of M] hops to [his of M] feet. Seeing your offspring all grown up like this fills you with a deep sense of fulfilment, although it's difficult to look past [his of M] nasty, lecherous expression[otherwise]The first red-skinned devil is born fully adult and fully aware, immediately jumping into action to assist in delivering [his of M] siblings. With [his of M] help, giving birth to [his of M] sibling passes much more smoothly, and a few minutes later, [X] infernal children are standing before you. Seeing your offspring all grown up like this fills you with a deep sense of fulfilment, although its difficult to look past the nasty, lecherous expressions on their faces[end if].";
-		cutshow Figure of imp cutsene 2 for belly;
+		cutshow Figure of imp cutscene 2 for belly;
 		StrengthUp 1;
 		DexUp 1;
 		DelicateUp 2;
@@ -330,7 +330,7 @@ To compute pregnancy annoyance:
 		otherwise if the womb volume of vagina >= 25 and a random number between 1 and 8 is 1:
 			say "You feel your pregnancy making your [BreastDesc] become more engorged and [if lactation fetish is 1]their lactation rate increasing[otherwise]sensitive[end if]!";
 			BustUp 1;
-			if lactation fetish is 1, increase the lactation rate of the player by 1;
+			if lactation fetish is 1, increase the lactation rate of breasts by 1;
 			otherwise BreastsSensitivityUp 1;
 		otherwise if a random number between 1 and 5 is 1 and the player is not very horny:
 			say "[bold type]Your pregnancy-hormone-addled brain randomly and spontaneously flares up with arousal.[one of][or][line break][variable custom style]This is crazy, it feels like I want sex all the time at the moment...[or][stopping][roman type][line break]";

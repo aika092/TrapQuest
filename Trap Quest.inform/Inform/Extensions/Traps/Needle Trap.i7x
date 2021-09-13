@@ -89,7 +89,7 @@ To compute (Y - a needle trap) injecting into (X - breasts):
 		NeedleDelicateUp;
 	otherwise if lactation fetish is 1 and a random number between 1 and 2 is 1:
 		say "Owww, that really hurt! You watch the capsule at the end of the dart empty a mysterious serum into your breasts. [one of]They feel more... active.[or]They feel more... productive.[or]Your lactation rate has been increased again![stopping]";
-		increase the lactation rate of the player by 1;
+		increase the lactation rate of breasts by 1;
 		cutscene needle breasts;
 		NeedleDelicateUp;
 	otherwise if lactation fetish is 1:
@@ -311,8 +311,8 @@ To compute unique trigger of (Y - breasts-rune-trap):
 			say "Your [BreastDesc] suddenly feel very heavy. You can tell they're absolutely full to the brim with milk!";
 			MilkUp the milk capacity of breasts - the milk volume of breasts;
 		otherwise:
-			say "They feel more active: you can tell that your [if the lactation rate of the player > 0][BreastDesc] will produce milk faster now[otherwise]have started to produce milk over time[end if]!";
-			increase the lactation rate of the player by 1;
+			say "They feel more active: you can tell that your [if the lactation rate of breasts > 0][BreastDesc] will produce milk faster now[otherwise]have started to produce milk over time[end if]!";
+			increase the lactation rate of breasts by 1;
 	otherwise if the player is not bottom heavy:
 		say "The magic rushes through your hips, making them widen!";
 		HipUp 1.

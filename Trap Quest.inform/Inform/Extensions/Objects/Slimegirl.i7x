@@ -88,8 +88,8 @@ An all time based rule (this is the compute slimegirl rule):
 						say "You feel [NameDesc of M] widening your hips, to make you more tempting to potential partners.";
 						HipUp 1;
 				if lactation fetish is 1:
-					say "You feel some kind of toxin flowing through your body, which makes you feel all giddy, and almost euphoric. [if the lactation rate of the player > 0]You can feel your lactation rate increasing[otherwise]You can feel your breasts start to produce [milk][end if].";
-					increase the lactation rate of the player by 1;
+					say "You feel some kind of toxin flowing through your body, which makes you feel all giddy, and almost euphoric. [if the lactation rate of breasts > 0]You can feel your lactation rate increasing[otherwise]You can feel your breasts start to produce [milk][end if].";
+					increase the lactation rate of breasts by 1;
 			otherwise if the hunger of M is 7:
 				increase the hunger of M by 1;
 				say "[bold type][BigNameDesc of M] [bold type]telepathically communicates with you.[line break][second custom style]'[one of]Okay I give up, I guess you're really not going to feed me. Will you at least take me back to my pool? I'll die if you leave me in here...'[or]Okay okay I give up again! [big please] take me back to my pool?'[stopping][roman type][line break]";
@@ -99,8 +99,8 @@ An all time based rule (this is the compute slimegirl rule):
 				say "[bold type][BigNameDesc of M] [bold type]telepathically communicates with you.[line break][second custom style]'[one of]Either feed me or let me out!!! I'm going to starve!'[or]I won't let you starve me to death!'[or]You bitch, let me out!'[or]Let me out of here, you fucking whore!'[in random order][roman type][line break]";
 				now the intensity of M is 2;
 				if lactation fetish is 1:
-					say "You feel some kind of toxin flowing through your body, which makes you feel all giddy, and almost euphoric. [if the lactation rate of the player > 0]You can feel your lactation rate increasing[otherwise]You can feel your breasts start to produce [milk][end if].";
-					increase the lactation rate of the player by 1;
+					say "You feel some kind of toxin flowing through your body, which makes you feel all giddy, and almost euphoric. [if the lactation rate of breasts > 0]You can feel your lactation rate increasing[otherwise]You can feel your breasts start to produce [milk][end if].";
+					increase the lactation rate of breasts by 1;
 				if watersports mechanics is 1:
 					BladderUp 1;
 				if a random number between 1 and 2 is 1:
@@ -224,9 +224,9 @@ To compute swimming in (WB - WoodsScenery01):
 			FatigueDown 5;
 		otherwise if the CNR is "slow the current":
 			if M is worn by the player:
-				say "The slimegirl sticks a translucent appendage out of your butt and reaches into the waterfall. You hear a *click*, and a metal grate extends out above you, robbing the current of more than half its force.";
+				say "The slime[boy of M] sticks a translucent appendage out of your butt and reaches into the waterfall. You hear a *click*, and a metal grate extends out above you, robbing the current of more than half its force.";
 			otherwise:
-				say "The slimegirl sticks a translucent arm through the waterfall, and you hear a *click*. A metal grate extends out above you, robbing the current of more than half of its force.";
+				say "The slime[boy of M] sticks a translucent arm through the waterfall, and you hear a *click*. A metal grate extends out above you, robbing the current of more than half of its force.";
 			now the waterfall-timer of WB is 50;
 		say "[line break]";
 		if swimming is 1:
@@ -273,17 +273,17 @@ To compute slimegirl meeting in (WB - WoodsScenery01):
 	let M be slimegirl;
 	if B > 0:
 		if M is in the location of the player:
-			say "The slimegirl gives you an expectant look.[line break][second custom style]'[one of]Sooo, can I clean you up?'[or]Hm. I am so hungry. If ONLY I had some jism to eat.'[or]Hey there precious food source- I mean...yeah, precious foodsource. Let me eat that cum.'[in random order][roman type][line break]Do you want to feed the slimegirl?";
+			say "The slime[boy of M] gives you an expectant look.[line break][second custom style]'[one of]Sooo, can I clean you up?'[or]Hm. I am so hungry. If ONLY I had some jism to eat.'[or]Hey there precious food source- I mean...yeah, precious foodsource. Let me eat that cum.'[in random order][roman type][line break]Do you want to feed the slime[boy of M]?";
 		otherwise if the hunger of M is not -999:
-			say "A humanoid monster completely made out of liquid leaps out of the water and onto a nearby rock.[line break][second custom style]'[one of]Hey human, are you willing to sacrifice any of that bukkake? If you share, I'll slow down this river for you!'[or]Hey, human, want to make a deal? Let me lick you clean and I'll slow down this river for you. Sounds really great, right? Riiight?[or]Hey human, I bet you wish you could safely dive in this river. I can make it much safer in exchange for all that cum you're wearing! Think about it!'[in random order][roman type][line break]Do you want to feed the slimegirl?";
+			say "A humanoid monster completely made out of liquid leaps out of the water and onto a nearby rock.[line break][second custom style]'[one of]Hey human, are you willing to sacrifice any of that bukkake? If you share, I'll slow down this river for you!'[or]Hey, human, want to make a deal? Let me lick you clean and I'll slow down this river for you. Sounds really great, right? Riiight?[or]Hey human, I bet you wish you could safely dive in this river. I can make it much safer in exchange for all that cum you're wearing! Think about it!'[in random order][roman type][line break]Do you want to feed the slime[boy of M]?";
 			now M is in the location of the player;
 	otherwise:
 		if M is in the location of the player:
-			if bukkake fetish is 1, say "The slimegirl glances at you.[line break][second custom style]'[one of]Oh, you're clean already...'[or]Oh don't mind me. Just a starving spermavore over here. Don't mind me~'[or]Oh. You looked pretty tasty when you got in....'[in random order][roman type][line break]";
-			otherwise say "The slimegirl gives you an expectant look.[line break][second custom style]'[one of]Sooo, did you bring me anything?'[or]Hm. I am so hungry. Wow I sure would be happy if only I had some food!'[or]Hey there precious food source- I mean...yeah, precious foodsource. Feed me.'[in random order][roman type][line break][if F > 0]Do you want to feed the slimegirl?";
+			if bukkake fetish is 1, say "The slime[boy of M] glances at you.[line break][second custom style]'[one of]Oh, you're clean already...'[or]Oh don't mind me. Just a starving spermavore over here. Don't mind me~'[or]Oh. You looked pretty [tasty] when you got in....'[in random order][roman type][line break]";
+			otherwise say "The slime[boy of M] gives you an expectant look.[line break][second custom style]'[one of]Sooo, did you bring me anything?'[or]Hm. I am so hungry. Wow I sure would be happy if only I had some food!'[or]Hey there precious food source- I mean...yeah, precious foodsource. Feed me.'[in random order][roman type][line break][if F > 0]Do you want to feed the slime[boy of M]?";
 		otherwise if bukkake fetish is 0 and the hunger of M is not -999:[if bukkake is enabled, she only shows up if you have cum on your body somewhere]
 			if F > a random number between 2 and 10:
-				say "A humanoid monster completely made out of liquid leaps out of the water and onto a nearby rock.[line break][second custom style]'[one of]Foodmonger- I mean, human! You have food, don't you? If you give me some, I'll slow down this river for you!'[or]Hey, human, want to make a deal? Give me a tasty morsel and I'll slow down this river for you. Sounds really great, right? Riiight?[or]Hey human, I bet you wish you could safely dive in this river. I can make it much safer in exchange for a tiny morsel of food!'[in random order][roman type][line break]Do you want to feed the slimegirl?";
+				say "A humanoid monster completely made out of liquid leaps out of the water and onto a nearby rock.[line break][second custom style]'[one of]Foodmonger- I mean, human! You have food, don't you? If you give me some, I'll slow down this river for you!'[or]Hey, human, want to make a deal? Give me a [tasty] morsel and I'll slow down this river for you. Sounds really great, right? Riiight?[or]Hey human, I bet you wish you could safely dive in this river. I can make it much safer in exchange for a tiny morsel of food!'[in random order][roman type][line break]Do you want to feed the slime[boy of M]?";
 				now M is in the location of the player;
 	if M is in the location of the player and F + B > 0:
 		if the player is consenting:
@@ -334,8 +334,14 @@ To compute slimegirl engulfing in (WB - WoodsScenery01):
 			WombEmpty the womb volume of vagina;
 	if the semen volume of belly > 0 and asshole is not actually occupied and the player is not ass protected:
 		say "[BigNameDesc of M] moves down to your [asshole], and licks with increased vigour. It feels incredible!";
-		increase S by 1;
 		stimulate asshole from M;
+		increase S by the semen volume of belly;
+		if the semen volume of belly > 1:
+			say "[BigNameDesc of M] forms a seal with [his of M] lips against your [asshole] and begins sucking. The strength of [his of M] sucking is enough to begin to force all the [semen] out of it! The sensation of having your anal creampie sucked out of you is extremely stimulating.";
+			stimulate asshole from M;
+			if the semen volume of belly < the total fill of belly:
+				say "Thanks to some impressive skill, or possibly magic, while [he of M] has now sucked all the [semen] out of your belly, the rest of the stuff in there remains.";
+		now the semen volume of belly is 0;
 	if bukkake fetish is 1, say "[big he of M] continues licking you up and down until all the [semen] you had on you is gone. Everywhere [he of M] licks gives you a little tingle of pleasure.";
 	repeat with B running through body parts:
 		increase S by the semen coating of B;
@@ -348,7 +354,7 @@ To compute slimegirl engulfing in (WB - WoodsScenery01):
 		now the waterfall-timer of WB is -1;
 
 To compute slimegirl frustration in (WB - WoodsScenery01):
-	say "The slimegirl pouts.[line break][second custom style]'[one of]Oh, well I wasn't really THAT hungry.'[or]I expected that. Humans are SELFISH after all.'[or]Oops! Looks like I mistook you for a generous person. Sorry~'[in random order][roman type][line break]";
+	say "The slime[boy of slimegirl] pouts.[line break][second custom style]'[one of]Oh, well I wasn't really THAT hungry.'[or]I expected that. Humans are SELFISH after all.'[or]Oops! Looks like I mistook you for a generous person. Sorry~'[in random order][roman type][line break]";
 	decrease the slime-favour of slimegirl by 5.
 
 slimegirl has a number called slime-quest.
@@ -365,7 +371,7 @@ To compute slimegirl hitching a ride from (WB - WoodsScenery01):
 		let S be the swimming challenge of the player;
 		now R is a random number between S and the dexterity of the player;
 		let D be the dexterity of the player;
-		if debuginfo > 0, say "[input-style]Escape from slimegirl check: swimming challenge (S), dexterity ([D]) -> RNG([S]~[D]) = [R] | (7.5) slimegirl invasion skill[roman type][line break]";
+		if debuginfo > 0, say "[input-style]Escape from slime[boy of M] check: swimming challenge (S), dexterity ([D]) -> RNG([S]~[D]) = [R] | (7.5) slime[boy of M] invasion skill[roman type][line break]";
 		now the waterfall-timer of WB is -2;
 	otherwise:
 		now R is -9999;
@@ -382,7 +388,7 @@ To compute slimegirl hitching a ride from (WB - WoodsScenery01):
 		now M is worn by the player;
 		now the semen volume of belly is 0;
 		cancel father material of asshole;
-		say "[if the largeness of belly > 3][big his of M] residence inside your belly means that you now have a[PermanentBelly] [BellyDesc][otherwise if there is a worn corset]You can tell that if your weren't wearing a corset, the presence of the slimegirl would be distending your belly[otherwise]Your belly now feels very heavy, even though it's not showing any signs of distension[end if].";
+		say "[if the largeness of belly > 3][big his of M] residence inside your belly means that you now have a[PermanentBelly] [BellyDesc][otherwise if there is a worn corset]You can tell that if your weren't wearing a corset, the presence of the slime[boy of M] would be distending your belly[otherwise]Your belly now feels very heavy, even though it's not showing any signs of distension[end if].";
 	otherwise:
 		say "You leap into the water before [he of M] can go any further, and use the strong current to quickly carry yourself out of [his of M] reach.[line break][second custom style]'No, wait, come back! Awww...'[roman type][line break]";
 

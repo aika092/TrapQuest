@@ -119,7 +119,7 @@ To compute cursed drinking (X - baby's bottle):
 		say "your [ShortDesc of X] shimmers and a diaper appears around your loins!";
 		summon D cursed with quest;
 	otherwise if diaper lover >= 1 and incontinence < 5 and incontinence < the max-incontinence of the player:
-		say "you feel a weird twang internally, just behind your [if the player is possessing a penis][ShortDesc of penis][otherwise if the player is possessing a vagina][vagina][end if], where your bladder should be.[if the bimbo of the player < 8][one of][line break][variable custom style]That can't be good...[roman type][line break][or][stopping][end if]";
+		say "you feel a weird twang internally, just behind your [if the player is herm][ShortDesc of penis] and [vagina][otherwise if the player is possessing a penis][ShortDesc of penis][otherwise if the player is possessing a vagina][vagina][otherwise]crotch[end if], where your bladder should be.[if the bimbo of the player < 8][one of][line break][variable custom style]That can't be good...[roman type][line break][or][stopping][end if]";
 		increase incontinence by 1;
 	otherwise:
 		say "a fuzzy feeling enters your head, and it's harder to concentrate.";
@@ -353,7 +353,7 @@ To compute cursed drinking (X - novelty mug):
 				milkUp R;
 				say "You feel your [BreastDesc] slightly swell.";
 			otherwise:
-				increase the lactation rate of the player by 2;
+				increase the lactation rate of breasts by 2;
 				say "Your [BreastDesc] feel tingly.";
 		otherwise if the player is a flatchested trap or a random number between 1 and 3 is 1:
 			BreastsSensitivityUp 1;
@@ -386,7 +386,7 @@ To compute cursed drinking (X - teapot):
 	if diaper quest is 1:
 		if there is a worn tattoo and teapot tattoo is not worn and a random number between 1 and 3 is 1:
 			summon teapot tattoo;
-			say "[bold type]A new tattoo appears on your leg![roman type][line break]";
+			say "[bold type]A new tattoo appears on your arm![roman type][line break]";
 			try examining teapot tattoo;
 		otherwise:
 			say "[one of]As you drink the liquid, you find yourself shivering on the spot. You somehow[or]Once again you[stopping] feel a little smaller, and a little more [if the diaper addiction of the player > 10]excited[otherwise]comfortable[end if] [if there is a worn diaper]wearing your diaper[otherwise]with the thought of wearing diapers[end if].";

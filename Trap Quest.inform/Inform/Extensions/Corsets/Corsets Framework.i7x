@@ -39,11 +39,12 @@ Report examining corsets:
 	if newbie tips is 1, say "[one of][item style]Corsets [if the number of worn corsets is 0]would [end if]help keep your belly in control, as large bellies can make movement difficult.[roman type][line break][or][stopping]".
 
 To set up magic attribute of (C - a corset):
-	let R be a random number between 1 and 7;
-	if R is 1, now the magic-type of C is confidence;
-	if R is 2, now the magic-type of C is endurance;
-	if R is 3, now the magic-type of C is posture training;
-	if R is 4, now the magic-type of C is constriction;
+	let R be a random number between 1 and 9;
+	if R is 1, now C is confidence;
+	if R is 2, now C is endurance;
+	if R is 3, now C is posture training;
+	if R is 4, now C is constriction;
+	if R is 5, now C is provocation;
 	if R is 3 or R is 4, curse C.
 
 To restock (C - a corset):

@@ -1086,7 +1086,7 @@ Displays some text when the player is penetrated orally by a friendly male monst
 +!]
 To say FriendlyMouthPenetrationFlav of (M - a monster):
 	if the sex addiction of the player < 5 or the oral sex addiction of the player < 3:
-		say "[one of][if the player is not wrist bound]You gingerly grab [FuckerDesc of M]'s [Dickdesc of M], trying not to wretch as you slide it between your lips.[otherwise]You force yourself not to jerk back as [FuckerDesc of M] places [his of M] hands on your shoulders, shuddering with disgust as [his of M] [LongDickDesc of M] slides between your lips.[end if][or]You wrap your lips around [FuckerDesc of M]'s [DickDesc of M], forcing yourself not to pull back as [he of M] places [his of M] hands on either side of your head.[or]You force yourself to lean forward, screwing your eyes shut as [FuckerDesc of M]'s throbbing penis slides into your mouth.[or][if the largeness of breasts > 5][BigFuckerDesc of M] fondles your [BreastDesc], leaving [his of M] [DickDesc of M] to stare you in the face. It's everything you can do not to angrily smack [his of M] hands away as [his of M] hardness slides between your lips.[otherwise][BigFuckerDesc of M] pushes [his of M] [DickDesc of M] into your open mouth, grinning down at you as you force yourself not to jerk out of [his of M] grip.[end if][or][BigFuckerDesc of M] shoves [his of M] [DickDesc of M] into your open mouth. Your cheeks burn with shame as you slowly begin to suck.[or][BigFuckerDesc of M] pushes [his of M] [DickDesc of M] into your mouth and begins to guide your head back and forth. You lower your eyes, ashamed.[in random order]";
+		say "[one of][if the player is not wrist bound]You gingerly grab [FuckerDesc of M]'s [DickDesc of M], trying not to wretch as you slide it between your lips.[otherwise]You force yourself not to jerk back as [FuckerDesc of M] places [his of M] hands on your shoulders, shuddering with disgust as [his of M] [LongDickDesc of M] slides between your lips.[end if][or]You wrap your lips around [FuckerDesc of M]'s [DickDesc of M], forcing yourself not to pull back as [he of M] places [his of M] hands on either side of your head.[or]You force yourself to lean forward, screwing your eyes shut as [FuckerDesc of M]'s throbbing penis slides into your mouth.[or][if the largeness of breasts > 5][BigFuckerDesc of M] fondles your [BreastDesc], leaving [his of M] [DickDesc of M] to stare you in the face. It's everything you can do not to angrily smack [his of M] hands away as [his of M] hardness slides between your lips.[otherwise][BigFuckerDesc of M] pushes [his of M] [DickDesc of M] into your open mouth, grinning down at you as you force yourself not to jerk out of [his of M] grip.[end if][or][BigFuckerDesc of M] shoves [his of M] [DickDesc of M] into your open mouth. Your cheeks burn with shame as you slowly begin to suck.[or][BigFuckerDesc of M] pushes [his of M] [DickDesc of M] into your mouth and begins to guide your head back and forth. You lower your eyes, ashamed.[in random order]";
 	otherwise if the oral sex addiction of the player < 7:
 		say "[one of][BigFuckerDesc of M] shoves [his of M] [DickDesc of M] into your open mouth and begins to guide your head back and forth. You hesitantly take your place as [his of M] obedient little cocksucker.[or][BigFuckerDesc of M] pushes [his of M] [DickDesc of M] into your open mouth. You push aside your misgivings and eagerly begin to suck.[or]You give [FuckerDesc of M]'s [DickDesc of M] an experimental lick, furtively glancing up at [him of M] as you allow it to slide into your mouth.[or][if the player is not wrist bound]You give the [DickDesc of M] in front of you a few hesitant tugs, embarrassment colouring your cheeks as [FuckerDesc of M] pushes [his of M] member into your open mouth.[otherwise]You shiver with what you pretend is disgust as [FuckerDesc of M] places [his of M] hands on your shoulders, pushing every inch of [his of M] firm, [DickDesc of M] into your open mouth.[end if][or]You lean forward, gingerly wrapping your lips around [FuckerDesc of M]'s [DickDesc of M] before you start getting second thoughts. [if M is unfriendly]Just as they set in, a firm hand grabs the back of your head, assuring you that you're in this until [he of M] decides you're finished.[end if][or][if the largeness of breasts > 5][BigFuckerDesc of M] fondles your [BreastDesc], leaving [his of M] [DickDesc of M] to stare you in the face. You look up at [him of M], and obediently lean forward as [his of M] hardness slides between your lips.[otherwise][BigFuckerDesc of M] pushes [his of M] [DickDesc of M] into your open mouth, ruffling your [ShortDesc of hair] as you hesitantly, but obediently begin to suck.[end if][or][BigFuckerDesc of M] shoves [his of M] [DickDesc of M] into your open mouth. Without too much of a second thought, you slowly begin to suck.[in random order]";
 	otherwise:
@@ -1284,7 +1284,7 @@ A time based rule (this is the musk horniness rule):
 		now the arousal of the player is 8000;[the cowgirl is instantly horny in the same room as the minotaur, no matter what]
 		if lactation fetish is 1:
 			say "You feel [one of]an odd shiver[or]a feeling of warmth[or]a warm glow[at random] in your chest.";
-			increase the lactation rate of the player by 1;
+			increase the lactation rate of breasts by 1;
 		now phero-horny-charge is 0;
 	otherwise if the player is pheromonal and there is a musky monster in the location of the player:
 		let M be a random musky monster in the location of the player;
@@ -1297,7 +1297,7 @@ A time based rule (this is the musk horniness rule):
 			arouse 300;
 			[if lactation fetish is 1:
 				say "You feel [one of]an odd shiver[or]a feeling of warmth[or]a warm glow[at random] in your chest and for some reason [one of]find your attention caught by your nipples[or]picture a baby held to your [BreastDesc][or]licking your lips[at random].";
-				increase the lactation rate of the player by 1;] [would happen every turn they stayed in the room lol]
+				increase the lactation rate of breasts by 1;] [would happen every turn they stayed in the room lol]
 	otherwise if playerRegion is dungeon and minotaur is alive and the player is pheromonal:
 		increase phero-horny-charge by 1;
 		if phero-horny-charge > 20:
@@ -1305,7 +1305,7 @@ A time based rule (this is the musk horniness rule):
 			say "[bold type][one of]You catch a whiff of a heavy, masculine scent and start to feel a little more turned on[or]The same masculine scent tickles your nose, and you feel yourself getting more turned on[or]Another whiff of masculine musk temporarily arrests your senses, and you get a little more turned on[stopping].[roman type]";
 			if lactation fetish is 1:
 				say "You feel [one of]an odd shiver[or]a feeling of warmth[or]a warm glow[at random] in your chest.";
-				increase the lactation rate of the player by 1;
+				increase the lactation rate of breasts by 1;
 			arouse 150.
 
 To compute phero submission to (M - a monster):
@@ -1443,6 +1443,6 @@ To compute sudden floor squirt disapproval of (P - a bystander):
 To compute sudden floor squirt disapproval of (M - a monster):
 	if diaper quest is 1, compute cringe disapproval of M;
 	otherwise compute disapproval of M.
-	
+
 
 Special Events ends here.

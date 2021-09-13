@@ -154,7 +154,7 @@ To decide which number is the flat dexterity of the player:
 		increase D by O / 4;
 	if the player is blinded, decrease D by 2;
 	decrease D by the bondage dexterity penalty of the player;
-	if the player is bursting and the bladder of the player > 6, decrease D by (the bladder of the player - 6);
+	if the player is bursting and the bladder of the player > 6 and the number of worn baby bonnets is 0, decrease D by (the bladder of the player - 6);
 	if the strut of the player is 1 and there is a worn heels and the player is upright, increase D by 3;
 	if the player is a bit horny, increase D by 2;
 	if the player is horny, increase D by 1;
@@ -241,8 +241,9 @@ To decide which number is the flat intelligence of the player:
 	if the class of the player is priestess, increase I by 2;
 	repeat with T running through worn wearthings:
 		increase I by the intelligence-influence of T;
-	decrease I by the incidents of enema-int-loss;
-	decrease I by fullness-penalty;
+	unless there is a worn baby bonnet:
+		decrease I by the incidents of enema-int-loss;
+		decrease I by fullness-penalty;
 	if there is a desperately craved liquid-object:
 		decrease I by 4;
 	otherwise if there is a craved liquid-object:

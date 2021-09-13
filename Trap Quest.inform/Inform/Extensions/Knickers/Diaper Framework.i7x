@@ -16,10 +16,6 @@ The printed name of a diaper is "[clothing-title-before][selfexamineuniquetitle 
 
 A diaper has a number called perceived-urine-soak. A diaper has a number called perceived-milk-soak. A diaper has a number called perceived-water-soak. A diaper has a number called perceived-semen-soak. A diaper has a number called perceived-mess.
 
-Definition: yourself is diaper aware: [Do they always know the state of their diaper?]
-	if failed potty training tattoo is worn or the incontinence of the player >= 10 or the diaper addiction of the player >= 20, decide no;
-	decide yes.
-
 To uniquely destroy (C - a diaper):
 	now the perceived-mess of C is 0;
 	now the perceived-urine-soak of C is 0;
@@ -434,6 +430,12 @@ To decide which number is the default-soak-limit of (C - diaper-stack):
 The list of stacked diapers is a list of clothing that varies.
 
 Definition: diaper-stack is transformation-protected: decide yes.
+Definition: yourself is stacked-but-outerly-dry:
+	if diaper-stack is worn:
+		let E be the number of entries in the list of stacked diapers;
+		let D be entry E in the list of stacked diapers;
+		if D is dry and D is unmessed, decide yes;
+	decide no.
 
 To diaperStackStart with (C - a clothing):
 	if diaper-stack is worn:
@@ -687,7 +689,7 @@ To Drench (C - diaper-stack):
 	update diaper stack;
 	if tough-shit is 0 and C is held:
 		if C is glued:
-			now C is not glued;
+			ungluify C;
 			say "[BigNameDesc of C] is no longer covered in glue!";
 		if C is worn, update appearance level.
 

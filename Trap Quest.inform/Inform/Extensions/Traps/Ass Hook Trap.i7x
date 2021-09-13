@@ -66,10 +66,18 @@ To trigger (Y - an ass hook):
 			say "hooks into your [ShortDesc of O], pulling it up and ripping it from you! Your [O] is destroyed.";
 			destroy O;
 		otherwise if O is knee-length clothing and O is displacable clothing:
-			say "hooks into your [ShortDesc of O], pulling it up and revealing what's underneath!";
-			displace O;
-			repeat with M running through reactive monsters:
-				compute curtsey reaction of M;
+			say "hooks into your [ShortDesc of O], ";
+			if O is glued:
+				say "trying to pull it up! But it's glued to you, and so ends up ripping off, extremely painfully!";
+				destroy O;
+				repeat with M running through reactive monsters:
+					compute curtsey reaction of M;
+				PainUp 2;
+			otherwise:
+				say "pulling it up and revealing what's underneath!";
+				displace O;
+				repeat with M running through reactive monsters:
+					compute curtsey reaction of M;
 		otherwise if K is currently uncovered unskirted clothing:
 			if K is diaper:
 				say "tries to hook into your [ShortDesc of K], but the padded material is too thick for it to be able to pull the material into a wedgie.";

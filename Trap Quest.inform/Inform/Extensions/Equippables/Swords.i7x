@@ -88,7 +88,7 @@ sword-of-purity is a sword. sword-of-purity is purity.
 The printed name of sword-of-purity is "[clothing-title-before]sword of purity[clothing-title-after]". Understand "of purity", "purity" as sword-of-purity.
 
 To say ClothingDesc of (S - sword-of-purity):
-	say "A gleaming silver sword, instilled with the power of purity. Holy energy emanates from the blade, as if the sword itself were comprised of pure, holy power. [bold type]The power seems to become stronger the more your body is exposed. [roman type][if S is worn]Just holding it in your hand makes you feel incredibly powerful, but no matter the angle, the light reflecting off the blade seems to cast a spotlight on your [vagina], as if to remind enemies where the power comes from... and how to defeat it.[otherwise]It's clearly quite powerful, but something tells you that if you ever lose while wielding this sword...[end if]";
+	say "A gleaming silver sword, instilled with the power of purity. Holy energy emanates from the blade, as if the sword itself were comprised of pure, holy power. [bold type]The power seems to become stronger the more different parts of your body are exposed. [roman type][if S is worn]Just holding it in your hand makes you feel incredibly powerful, but no matter the angle, the light reflecting off the blade seems to cast a spotlight on your [vagina], as if to remind enemies where the power comes from... and how to defeat it.[otherwise]It's clearly quite powerful, but something tells you that if you ever lose while wielding this sword...[end if]";
 	if S is worn:
 		say "Your current body part exposure status is:[line break]";
 		repeat with BP running through body parts:
@@ -114,10 +114,10 @@ Definition: sword-of-purity is fetish appropriate:
 	decide no.
 
 Definition: sword-of-purity is destiny-appropriate:
-	if the class of the player is not succubus and ((the player is female and the vaginalvirgin of the player is 1) or (the player is male and fast tg >= 3)), decide yes;
+	if the class of the player is not succubus and ((the player is possessing a vagina and the vaginalvirgin of the player is 1) or (the player is not possessing a vagina and fast tg >= 3)), decide yes;
 	decide no.
 Definition: sword-of-purity is destiny-prioritised:
-	if the player is female and (background-pure is 1 or flower hairclip is worn or the class of the player is virgin warrior or the class of the player is "princess") and the vaginalvirgin of the player is 1 and the class of the player is not succubus, decide yes;
+	if the player is possessing a vagina and (background-pure is 1 or flower hairclip is worn or the class of the player is virgin warrior or the class of the player is "princess") and the vaginalvirgin of the player is 1 and the class of the player is not succubus, decide yes;
 	decide no.
 
 [!<TheSwordOfPurityPussySlutRule>+
@@ -131,8 +131,9 @@ The sword-of-purity pussy slut rule is listed in the pussy slut eligibility rule
 
 To decide which number is the slap damage improvement of (W - sword-of-purity):
 	let X be the number of at least partially exposed body parts - 5; [for a maximum of +4 (or +5 for a futa)]
+	if vagina is not at least partially exposed and current cameltoe > 0, increase X by 1; [close enough]
 	if there is a worn warrior chestpiece and breasts is not at least partially exposed, increase X by 1; [close enough]
-	if gown-of-purity is worn, increase X by 2;
+	if gown-of-purity is worn, increase X by 1;
 	if there is a worn tiara, increase X by 1;
 	increase X by the magic-modifier of W;
 	decide on X.
@@ -149,7 +150,7 @@ To compute attack effect of (W - sword-of-purity):
 To compute sword destiny of (S - sword-of-purity):
 	try examining S;
 	say "You have been deemed pure and worthy! You feel its power flowing through you. You should try using your [bold type]slap[roman type] attack on enemies!";
-	if the player is male and tg fetish >= 1:
+	if the player is sexed male and tg fetish >= 1:
 		say DefaultSexchangeFlav;
 		SexChange the player;
 	now virginity-valued is 1;
@@ -176,7 +177,7 @@ To compute sword destiny of (S - sword-of-purity):
 		appropriate-cutscene-display figure of purity sword cutscene with priority 3.
 
 [Check taking sword-of-purity:
-	if the player is male and tg fetish is 0:
+	if the player is sexed male and tg fetish is 0:
 		say "BUG - the sword-of-purity shouldn't have spawned with your fetish options. Please report this to Aika!" instead;
 	otherwise if diaper focus is 1 and the player is diapered and the noun is in Woods26:
 		let R be a random rattle;
@@ -686,7 +687,7 @@ voidblade is a sword.
 The printed name of voidblade is "[clothing-title-before]voidblade[clothing-title-after]". The text-shortcut of voidblade is "vdb". Understand "void", "blade" as voidblade.
 
 To say ClothingDesc of (S - voidblade):
-	say "The blade of this sword seems to be made of pure darkness, with a swirling sea of pink motes floating in it. When you look at it, you somehow think of the [great one]s, and you know its power comes from surrendering that which does not venerate them.".
+	say "The blade of this sword seems to be made of pure darkness, with a swirling sea of pink motes floating in it. When you look at it, you somehow think of the [great ones], and you know its power comes from surrendering that which does not venerate them.".
 
 To compute attack of (W - voidblade) at (M - a monster):
 	say "The [printed name of W] seems to slice through reality itself as it arcs towards [NameDesc of M]!".

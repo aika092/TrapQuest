@@ -168,9 +168,9 @@ Carry out unplugging anal beads:
 
 To compute (M - a monster) removing (C - an anal beads):
 	let F be a random fuckhole penetrated by C;
-	if M is intelligent:
+	if M is intelligent or M is minotaur:
 		let R be a random number between 3 and the notch-taken of C;
-		if the notch-taken of C > 2, now the notch-taken of C is 3;
+		if the notch-taken of C < R or M is minotaur, now R is the notch-taken of C;
 		say "[BigNameDesc of M] pulls hard on the cord connected to your [printed name of C], [if R > 1]forcing [R] beads out of your [variable F] in rapid succession.[otherwise]yanking the remaining bead from your [variable F] with little effort.[end if]";
 		decrease the notch-taken of C by R;
 		if the notch-taken of C <= 0:

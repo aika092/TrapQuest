@@ -412,7 +412,7 @@ To compute teaching of (L - chess-lesson):
 		say "You stand up.";
 		repeat with FST running through students in the location of the player:
 			unless ST is FST, FavourUp FST;
-		say "[BigNameDesc of M] smiles warmly.[line break][speech style of M]'Oh, well volunteered! The headmistress will be so pleased. You'll both need one of these, and I'm afraid you're not allowed any other clothing.'[roman type][line break]";
+		say "[BigNameDesc of M] smiles warmly.[line break][speech style of M]'Oh, well volunteered! The headmistress will be so [please]d. You'll both need one of these, and I'm afraid you're not allowed any other clothing.'[roman type][line break]";
 		repeat with C running through worn stealable clothing:
 			unless C is plentiful accessory:
 				say "[BigNameDesc of M] confiscates your [ShortDesc of C]!";
@@ -1211,7 +1211,7 @@ To compute teaching of (L - enema-race-lesson):
 			otherwise:
 				say "[speech style of M]'As for you, [NameBimbo], your punishment is that you're going to have to sit in that nasty mess you've made for a while.'[roman type][line break]With a wave of [NameDesc of M][']s hand, your diaper becomes stuck to you with glue!";
 				let D be a random worn diaper;
-				now D is glued;
+				gluify D;
 				if the wont-change of nurse < 3, now the wont-change of nurse is 3;
 			say "[speech style of M]'Well, that's all she wrote for this enema race! Class is now dismissed!'[roman type][line break]";
 		now the fatigue of the player is the buckle threshold of the player;
@@ -1470,7 +1470,7 @@ To compute teaching of (L - dodgeball-lesson):
 			now D2 is a random huge diaper;
 		if the mess of D >= 100:
 			only destroy D2;
-			now D2 is glued;
+			gluify D2;
 			diaperAdd D2;
 			if the wont-change of nurse < 3, now the wont-change of nurse is 3;
 		say "With a smirk, [he of M] snaps [his of M] fingers, and a second equally thick diaper magically appears [if the DQBulk of D2 >= the DQBulk of D]over[otherwise]under[end if] [if the mess of D >= 100]your first! A quick tug tells you what you deep down already knew - they're glued to you[otherwise]the top of the diapers of everyone who was eliminated from the game[end if].[line break][speech style of M]'I think you all need a bit more time in your shameful situations to really come to terms with what it means to be such a loser. And don't think you can just run off to the nurse and get a change, I'll be telling [him of nurse] that you're all on [his of nurse] [']no changes['] list.'[roman type][line break]";

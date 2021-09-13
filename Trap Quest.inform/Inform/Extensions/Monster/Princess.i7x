@@ -10,6 +10,8 @@ To say speech style of (M - ex-princess):
 The text-shortcut of ex-princess is "pri".
 Figure of original princess is the file "NPCs/MultiFloor/Princess/princess1.jpg".
 Figure of original diapered princess is the file "NPCs/MultiFloor/Princess/princess2.jpg".
+Figure of original diapered princess wet masturbating is the file "NPCs/MultiFloor/Princess/princess7a.jpg".
+Figure of original diapered princess wet masturbating confident is the file "NPCs/MultiFloor/Princess/princess7b.jpg".
 Figure of enslaved princess is the file "NPCs/MultiFloor/Princess/princess3.jpg".
 Figure of enslaved diapered princess is the file "NPCs/MultiFloor/Princess/princess4.jpg".
 Figure of original princess combat is the file "NPCs/MultiFloor/Princess/princess5.jpg".
@@ -53,7 +55,9 @@ To decide which figure-name is the monster-image of (M - ex-princess):
 	if (M is in School35 and glittery-wand is carried by M and glittery-wand is cursed) or (M is guarding and current-final-battle-object is final-battle-wand-curse):
 		if diaper lover > 0, decide on figure of original diapered princess combat;
 		decide on figure of original princess combat;
-	if diaper lover > 0, decide on figure of original diapered princess;
+	if diaper lover > 0:
+		if M is messy and M is in Dungeon11, decide on Figure of original diapered princess wet masturbating;
+		decide on figure of original diapered princess;
 	decide on figure of original princess;
 
 To decide which figure-name is the pacified-image of (M - ex-princess):
@@ -100,9 +104,9 @@ To say MonsterDesc of (M - ex-princess):
 			if lady fetish is 2, say "[big his of M] caged clitty is dripping with excitement, creating a little pitter-patter sound as [his of M] sissy juices gradually create a little puddle between [his of M] feet.";
 			otherwise say "[big his of M] pussy is dripping wet with excitement, creating a little pitter-patter sound as [his of M] vaginal juices gradually create a little puddle between [his of M] feet.";
 		otherwise if diaper messing < 7:
-			say "[big he of M] is [if M is interested]diapered, and you can tell from the large yellow stain that it is soak to capacity with [urine][otherwise]in a fresh plain diaper[end if].";
+			say "[big he of M] is [if M is interested]diapered, and you can tell from the large yellow stain that it is soaked to capacity with [urine][otherwise]in a fresh plain diaper[end if].";
 		otherwise:
-			say "[big he of M] is in a giant diaper, [if M is messy]full to the brim with inhuman amounts of stinking shit which has stained the entire garment a dark shade of brown[otherwise if M is interested]and you can tell from the large yellow stain that it is soak to capacity with [urine][otherwise]plain whte but stupidly thick, and as far as you can tell, currently unused[end if].";
+			say "[big he of M] is in a giant diaper, [if M is messy]full to the brim with inhuman amounts of stinking shit which has stained the entire garment a dark shade of brown[otherwise if M is interested]and you can tell from the large yellow stain that it is soaked to capacity with [urine][otherwise]plain white but stupidly thick, and as far as you can tell, currently unused[end if].";
 	otherwise:
 		say "The original princess that rules the dungeons of Bimbacia wears a regal pink silk dress, with a very low neckline and a skirt with a deep slit at the front. [big his of M] outfit seems to be magically fixed to this exact appearance, and no matter how much [he of M] pulls, the skirt of the dress refuses to be pulled any further forward than [his of M] sides, meaning that [his of M] [if diaper lover > 0]heavily diapered crotch[otherwise if lady fetish is 2]caged penis[otherwise]bare pussy[end if] is kept fully visible from the front at all times.".
 
@@ -137,6 +141,19 @@ To decide which number is the aggro limit of (M - an ex-princess): [The number a
 	decide on -999999.
 
 Definition: ex-princess is motionless-when-defeated: decide yes.
+
+To check motion of (M - ex-princess):
+	if M is unconcerned and M is messy and M is in a labyrinth room:
+		let D be the best route from the location of M to Dungeon11;
+		if D is a direction, try M going D;
+	otherwise:
+		check default motion of M.
+
+To check seeking (N - a number) of (M - ex-princess):
+	if M is unconcerned and M is messy and M is in Dungeon11:
+		if the player is not in Dungeon11, bore M;
+	otherwise:
+		check default seeking N of M.
 
 Part 1 - Perception
 
@@ -192,13 +209,16 @@ To compute interaction of (M - ex-princess):
 			repeat with C running through worn clothing:
 				if the quest of C is tentacle-research-quest:
 					compute quest completion of tentacle-research-quest on C;
+		otherwise if M is messy and M is in Dungeon11:
+			say "[BigNameDesc of M] continues to press [his of M] vibrating wand into the front of [his of M] soiled diaper.[line break][speech style of M]'Please... [one of]you stupid curse... just let me cum...'[or]just once...'[or]I really need to cum... and get a change!'[or]I hate this smell!'[cycling][roman type][line break]";
+			compute ChangeRequestDecision of M.
 
 To compute (M - ex-princess) protecting against (X - a monster):
 	if M is in the school:
 		if glittery-wand is not carried by M or glittery-wand is not cursed, say "[BigNameDesc of M] [one of]seems to have used the last of [his of M] energy for now, and can't help you fight.[or]is panting heavily.[or]is still too out-of-breath to help.[or]continues panting heavily, trying to recover [his of M] breath.[or]continues panting heavily.[or]seems to be trying to gather enough magical energy for more spells![or]continues panting heavily.[stopping]";
 		otherwise say "[BigNameDesc of M] [one of]is being forced to masturbate [himself of M] with the cursed wand![or]continues to fervently press the vibrating wand into [his of M] clit, no matter how much [he of M] tries to stop it with [his of M] other arm.[or]pushes the head of the cursed vibrating wand into [his of M] clit and makes small circles.[or]moans with a mixture of passion and despair as [he of M] brings [himself of M] closer to the bring with the powerful wand.[or]screams out as [he of M] has a powerful orgasm from the vibrating wand on [his of M] clit.[or]can't stop stimulating [his of M] clit, even after coming down from [his of M] orgasmic high![or]shudders as [his of M] oversensitive clit receives further vibrating punishment.[cycling]";
 	otherwise if X is facehugger:
-		say "[speech style of M]'Ugh[one of], please don't tell me this place is infested with these things[or][stopping].'[roman type][line break][BigNameDesc of M] points [his of M] wand at [NameDesc of X], and zaps it with some kind of laser. And a moment later, [NameDesc of X] is no more.";
+		say "[speech style of M]'Ugh[one of], [please] don't tell me this place is infested with these things[or][stopping].'[roman type][line break][BigNameDesc of M] points [his of M] wand at [NameDesc of X], and zaps it with some kind of laser. And a moment later, [NameDesc of X] is no more.";
 		destroy X;
 	otherwise if M is unconcerned and the player is upright:
 		compute M standard fighting against X;
@@ -244,7 +264,7 @@ The princess facesitting prevents breathing rule is listed in the breathing bloc
 
 A breathing consequences rule (this is the consequences for breathing through princess padding rule):
 	if diaper quest is 1 and ex-princess is penetrating face:
-		say "You are forced to smell the pungent aroma of [NameDesc of ex-princess][']s [if ex-princess is messy]stinky[otherwise][urine]-soaked[end if] diaper.";
+		say "You are forced to smell the pungent aroma of [NameDesc of ex-princess][']s [if ex-princess is messy and diaper messing >= 7]stinky[otherwise][urine]-soaked[end if] diaper.";
 		if ex-princess is messy or a random number between 1 and 20 >= the raw delicateness of the player, DelicateUp 1.
 
 To say MouthPenetrationFlav of (M - ex-princess):
@@ -387,7 +407,7 @@ To say StoryAnswer of (M - ex-princess):
 		if mb is vampiress:
 			say "[speech style of M]'This mansion looked a lot cleaner when I created it. This is why you can't trust management to an undead.'[roman type][line break]";
 		otherwise:
-			say "[speech style of M]'This mansion [first custom style]BELONGS TO THE GREAT ONES. SOON, OTHER PLACES WILL FALL.'[roman type][line break]".
+			say "[speech style of M]'This mansion [first custom style]BELONGS TO THE [caps great ones]. SOON, OTHER PLACES WILL FALL.'[roman type][line break]".
 
 Definition: ex-princess is escape-question-appropriate: decide no. [Princess can have over 9 questions now, we need to drop a couple]
 [To say EscapeAnswer of (M - ex-princess):
@@ -789,7 +809,7 @@ An all later time based rule (this is the fannie facerub rule):
 		if ex-princess is in the location of the player:
 			let D be a random dirty diaper;
 			if D is diaper:
-				say "[BigNameDesc of ex-princess] groans as [he of ex-princess] can't help but rub [his of ex-princess] face into the seat of your diaper.[line break][speech style of ex-princess]'[one of]I can't stop myself... Noooo!'[or]I'm sorry, I'm so sorry!'[or]Eurgh, this is so disgusting!'[or][if the player is in School34]This is your fault, how could you let them defeat us?! I'm gong to be stuck doing this for centuries...'[otherwise]Please move away from me, don't make me do this!'[end if][or]I can't believe I'm doing this...'[or]Why me? Why me???'[or]Why did I even create this place? Did I secretly... Eurgh... Want this all along?'[or]No. No. It's too disgusting! Make it stop!'[or]Euuuuurgh, yuck yuck yuck...'[or]Ugh, the smell!'[then at random][roman type][line break]";
+				say "[BigNameDesc of ex-princess] groans as [he of ex-princess] can't help but rub [his of ex-princess] face into the seat of your diaper.[line break][speech style of ex-princess]'[one of]I can't stop myself... Noooo!'[or]I'm sorry, I'm so sorry!'[or]Eurgh, this is so disgusting!'[or][if the player is in School34]This is your fault, how could you let them defeat us?! I'm gong to be stuck doing this for centuries...'[otherwise][big please] move away from me, don't make me do this!'[end if][or]I can't believe I'm doing this...'[or]Why me? Why me???'[or]Why did I even create this place? Did I secretly... Eurgh... Want this all along?'[or]No. No. It's too disgusting! Make it stop!'[or]Euuuuurgh, yuck yuck yuck...'[or]Ugh, the smell!'[then at random][roman type][line break]";
 				ruin vagina;
 				compute state check of D;
 			if the current-torment of ex-princess <= 0:
@@ -895,7 +915,7 @@ Definition: ex-princess (called M) is distracted:
 	if M is unconcerned and headmistress is in the location of M and M is in the location of the player and the teaseTimer of headmistress <= 0:
 		let E be a random vibe-wand held by M;
 		if E is nothing, now E is royal scepter;
-		say "[speech style of M]'[one of]I'm going to pay you back for every single time you forced me to cum, bitch[or]Found you again[stopping]!'[roman type][line break]Suddenly, [NameDesc of M] steps behind [NameDesc of headmistress] and pushes the head of [his of M] [ShortDesc of E] up against [NameDesc of headmistress][']s snatch.[line break][speech style of headmistress]'Oh Lo!'[roman type][line break][BigNameDesc of headmistress] groans, trying to keep [his of headmistress] tongue out of [his of headmistress] mouth as the powerful magical artifact between [his of headmistress] legs begins to vibrate, sending incomparably powerful vibrations directly into [his of headmistress] delicate sex.[line break][speech style of M]'[one of]Cum for me, slave[or]Come on slut, I know you've got another one in you[stopping].'[roman type][line break][BigNameDesc of M] teases [him of headmistress].[paragraph break][speech style of headmistress]'GGGGAAAAH!'[roman type][line break][BigNameDesc of headmistress] yells as [he of headmistress] cums, [his of headmistress] knees buckling as the sensations overwhelm [him of headmistress]. [big he of headmistress] ends up face down on the floor, shuddering in pleasure, still holding [his of headmistress] tongue out of [his of headmistress] mouth to avoid being shocked, which means that [he of headmistress][']s effectively licking the dirty floor.[line break][speech style of M]'[one of]Pathetic[or]And remember, if you lose count of how many times I've done this, we start again from zero[in random order].'[roman type][line break]You can't help but find the sight of this very arousing.";
+		say "[speech style of M]'[one of]I'm going to pay you back for every single time you forced me to cum, bitch[or]Found you again[stopping]!'[roman type][line break]Suddenly, [NameDesc of M] steps behind [NameDesc of headmistress] and pushes the head of [his of M] [ShortDesc of E] up against [NameDesc of headmistress][']s snatch.[line break][speech style of headmistress]'Oh Lo!'[roman type][line break][BigNameDesc of headmistress] groans, trying to keep [his of headmistress] tongue out of [his of headmistress] mouth as the powerful magical artefact between [his of headmistress] legs begins to vibrate, sending incomparably powerful vibrations directly into [his of headmistress] delicate sex.[line break][speech style of M]'[one of]Cum for me, slave[or]Come on slut, I know you've got another one in you[stopping].'[roman type][line break][BigNameDesc of M] teases [him of headmistress].[paragraph break][speech style of headmistress]'GGGGAAAAH!'[roman type][line break][BigNameDesc of headmistress] yells as [he of headmistress] cums, [his of headmistress] knees buckling as the sensations overwhelm [him of headmistress]. [big he of headmistress] ends up face down on the floor, shuddering in pleasure, still holding [his of headmistress] tongue out of [his of headmistress] mouth to avoid being shocked, which means that [he of headmistress][']s effectively licking the dirty floor.[line break][speech style of M]'[one of]Pathetic[or]And remember, if you lose count of how many times I've done this, we start again from zero[in random order].'[roman type][line break]You can't help but find the sight of this very arousing.";
 		Arouse 2000;
 		now the teaseTimer of headmistress is 50;
 		decide yes;
@@ -905,32 +925,56 @@ Definition: ex-princess is messy:
 	if diaper quest is 1 or diaper messing >= 7:
 		if it is unconcerned and the refractory-period of it <= (the messRefractoryLimit of it), decide yes;
 		if it is unleashed and (it is grabbing the player or it is penetrating face or (it is uninterested and the boredom of it > 0)), decide yes;
+		if it is diaper-enslaved and the current-torment of it <= 0, decide yes;
+	decide no.
+Definition: ex-princess (called M) is just messing:
+	if M is unconcerned and M is messy and the refractory-period of M + 4 > the messRefractoryLimit of M, decide yes;
 	decide no.
 
 To compute boredom reset of (M - ex-princess):
-	if M is in the location of the player, say "[BigNameDesc of M][']s diaper magically cleans itself.";
+	if M is unleashed and M is in the location of the player, say "[BigNameDesc of M][']s diaper magically cleans itself.";
 	now the boredom of M is 0.
 
+To compute mess moment of (M - ex-princess):
+	if M is in the location of the player:
+		say SuddenMessFlav of M;
+	otherwise if M is unconcerned:
+		bore M;
+		now M is in Dungeon11.
+
 To say SuddenMessFlav of (M - ex-princess):
-	say "[speech style of M]'Oh crap, here we go again...'[roman type][line break][BigNameDesc of M] grimaces and quickly adopts a squatting stance. Then you hear the loud sound of [his of M] butthole rasping and squelching as [he of M] fills [his of M] huge diaper.";
-	if M is interested:
-		compute ChangeRequest of M;
-	otherwise:
-		check perception of M.
+	say "[speech style of M]'Oh crap, here we go again...'[roman type][line break][BigNameDesc of M] grimaces and quickly adopts a squatting stance. Then you hear the loud sound of [if diaper messing >= 7][his of M] butthole rasping and squelching[otherwise]liquid hissing[end if] as [he of M] fills [his of M] huge diaper.";
+	if M is unconcerned:
+		if M is interested:
+			if M is in Dungeon11:
+				say "[BigNameDesc of M] sits on [his of M] throne.[line break][speech style of M]'Thanks to this stupid curse, this diaper never comes off. There's only one way to make it clean itself...'[roman type][line break][BigNameDesc of M] presses [his of M] wand into the front of [his of M] padding.[line break][speech style of M]'And that's for me to have an orgasm...'[roman type][line break]The magic wand begins vibrating, and while [he of M] begins by trying to do [his of M] best to hide it, [NameDesc of M][']s face soon becomes one of poorly concealed pleasure.";
+				cutshow Figure of original diapered princess wet masturbating confident for M;
+			compute ChangeRequest of M;
+		otherwise:
+			check perception of M.
 
 To compute ChangeRequest of (M - ex-princess):
 	if the player is not in danger and the player is not immobile:
-		say "[BigNameDesc of M] looks at you bashfully.[line break][speech style of M]'I'm sorry to ask this of you[one of], but... it seems that I've been cursed to only get a change when someone else makes me... makes me cum... by letting me grind on their face. No matter what I try, I haven't managed to reverse the curse yet. Would you... would you let me... I'm really sorry to ask this of you, but... would you let me use your face[or] again, but is there any chance you'd be willing to let me use your face so that I can get a change[stopping]?'[roman type][line break]Let [NameDesc of M] grind [his of M] messy diaper on your face until [he of M] cums?";
-		if the player is consenting:
-			if the player is upright:
-				say "[bold type]You get on your knees.[roman type][line break]";
-				now the stance of the player is 1;
-			say "[BigNameDesc of M] smiles with shy appreciation as [he of M] mounts your nose with the front of [his of M] diaper. The strong smell hits your nostrils as [he of M] begins to grind away. It's not a short process for [him of M] to build all the way to climax, and so by the time [he of M] finally does reach [his of M] peak, your nostrils and airways have been fully drenched in [his of M] shameful scent.";
-			now the refractory-period of M is a random number between 0 and 200;
-			DelicateUp 1;
-			SexAddictUp 1;
-		otherwise:
-			say "You wrinkle your nose and step away from [him of M]. [big he of M] looks crestfallen and frustrated.[line break][speech style of M]'...Fine. I won't force you. But don't expect me to be able to help you while I'm stuck like this.'[roman type][line break]".
+		say "[BigNameDesc of M] looks at you bashfully.[line break][speech style of M]'[if M is in Dungeon11]This blasted curse is fighting against me... stopping me from being able to make myself cum... [end if]I'm sorry to ask this of you[one of], [if M is not in Dungeon11]but... it seems that I've been cursed to only get a change when someone else makes me... makes me cum... by letting me grind on their face. No matter what I try, I haven't managed to reverse the curse yet. Would you... would you let me... I'm really sorry to ask this of you, [end if]but... would you let me use your face[or] again, but is there any chance you'd be willing to let me use your face so that I can get a change[stopping]?'[roman type][line break]";
+		compute ChangeRequestDecision of M.
+
+To compute ChangeRequestDecision of (M - ex-princess):
+	say "Let [NameDesc of M] grind [his of M] [if diaper messing >= 7]messy[otherwise]piss-soaked[end if] diaper on your face until [he of M] cums?";
+	if the player is consenting:
+		if the player is upright:
+			say "[bold type]You get on your knees.[roman type][line break]";
+			now the stance of the player is 1;
+		say "[BigNameDesc of M] smiles with shy appreciation as [he of M] mounts your nose with the front of [his of M] diaper. The strong smell hits your nostrils as [he of M] begins to grind away. It's not a short process for [him of M] to build all the way to climax, and so by the time [he of M] finally does reach [his of M] peak, your nostrils and airways have been fully drenched in [his of M] shameful scent.";
+		now the refractory-period of M is a random number between 0 and 200;
+		DelicateUp 1;
+		SexAddictUp 1;
+	otherwise if M is not in Dungeon11:
+		say "You wrinkle your nose and step away from [him of M]. [big he of M] looks crestfallen and frustrated.[line break][speech style of M]'...Fine. I won't force you. But don't expect me to be able to help you while I'm stuck like this.'[roman type][line break][big he of M] waddles away from you, towards the Throne Room.";
+		bore M;
+		now M is in Dungeon11;
+	otherwise:
+		say "You make no move to help [him of M], [one of]leaving[or]continuing to leave[stopping] [him of M] with [his of M] frustration.".
+
 
 To compute diaper mess reaction of (M - ex-princess):
 	if M is unconcerned, say "[BigNameDesc of M] looks at you with a caring smile.".

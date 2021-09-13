@@ -492,7 +492,7 @@ To compute non penetration dominate of (M - pimp):
 
 To watersports dominate (M - a pimp):
 	let C be a random bottom level protection clothing;
-	say "You grab the pimp by the front of [his of M] shirt and throw [him of M] to the ground. [line break][speech style of M]'Ugh-! Stupid ho, you better be ready to-..'[roman type][line break][big he of M] trails off as you [if C is clothing]pull aside your [printed name of C][otherwise if the player is possessing a penis]wrap your hand around your [ShortDesc of penis][otherwise]reach down and spread your nether lips[end if] and [he of M] realizes what you're about to do.[line break][speech style of M]'...pay. You better be ready to pay, up front. That's the only way I let you use me as a target.'[roman type][line break][big he of M] holds [his of M] hand out expectantly.";
+	say "You grab the pimp by the front of [his of M] shirt and throw [him of M] to the ground. [line break][speech style of M]'Ugh-! Stupid ho, you better be ready to-..'[roman type][line break][big he of M] trails off as you [if C is clothing]pull aside your [printed name of C][otherwise if the player is possessing a penis]wrap your hand around your [ShortDesc of penis][otherwise]reach down and spread your nether lips[end if] and [he of M] realises what you're about to do.[line break][speech style of M]'...pay. You better be ready to pay, up front. That's the only way I let you use me as a target.'[roman type][line break][big he of M] holds [his of M] hand out expectantly.";
 	let LA be a list of things;
 	repeat with A running through worn plentiful accessories:
 		add A to LA;

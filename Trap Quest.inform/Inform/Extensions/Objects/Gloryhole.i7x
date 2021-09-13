@@ -169,7 +169,7 @@ To compute gloryhole cunnilingus receipt:
 	now busy is 1;
 	now gloryhole is normal glory hole;
 	say GloryHoleSuction;
-	say "The soft warms lips press against your labia and then you feel something warm and soft snaking between your folds. It's a tongue! You moan as the anonymous mouth gets to work, licking up and down and inside your [vagina].";
+	say "The soft warm lips press against your labia and then you feel something warm and soft snaking between your folds. It's a tongue! You moan as the anonymous mouth gets to work, licking up and down and inside your [vagina].";
 	arouse 500.
 
 To compute gloryhole upper blowjob:
@@ -260,7 +260,7 @@ To compute erection orgasm of (M - gloryhole):
 		compute detach-players-dick by M using 1;
 		compute gloryhole dislodging;
 		stop;
-	say "You feel the girl keep her mouth wrapped around your [player-penis] to catch your [if the size of penis > 4]entire [otherwise if the size of the penis < 3]tiny[end if]load, and then swallow it all in one [if the size of penis > 7]large gulp[otherwise if the size of the penis < 3]small sip[otherwise]swallow[end if]. The lips remove themselves from your member and then the magical force keeping you pressed to the wall disappears, allowing you to leave. You slowly pull your [player-penis] out of the hole.";
+	say "You feel the girl keep her mouth wrapped around your [player-penis] to catch your [if the semen load of the player > 4]entire [otherwise if the semen load of the player < 3]tiny[end if]load, and then swallow it all in one [if the semen load of the player > 7]large gulp[otherwise if the semen load of the player < 3]small sip[otherwise]swallow[end if]. The lips remove themselves from your member and then the magical force keeping you pressed to the wall disappears, allowing you to leave. You slowly pull your [player-penis] out of the hole.";
 	if the size of the penis < 3:
 		say "[one of]The amused look she gives you make your cheeks turn bright pink.[or]She smirks and holds up her pinkie finger, giving it a little wiggle. Once again you feel your cheeks burning.[or]She purses her lips in a [italic type]tiny[roman type] air-kiss.[stopping]";
 		SlightHumiliate;
@@ -290,7 +290,7 @@ An all time based rule (this is the compute gloryhole rule):
 							say "For several seconds, nothing happens. Then you feel a tongue flick past the end of your [player-penis]. It freezes, then slowly slides down, tracing a line directly below it, probing at the place where your ball-sac [italic type]used[roman type] to be. You hear a woman giggle.[line break][variable custom style]'You poor sod, I really thought some bitch had shoved her vag up here for a lapping, but you're actually a guy, aren't you? Normally I'd have no chance of reaching your tiny nubbin, but the Nintendolls R&D department planned for this unlikely event. Hang on...'[roman type][line break]You feel her tongue withdraw, then something oily and circular presses forwards against your mostly-smooth mound, and suddenly a powerful humming starts and the suction increases ten-fold! You feel your tiny clitoris swell and bulge, almost painfully. It reminds you of what your erections [italic type]used[roman type] to feel like. At least, until the girl snorts in disbelief.[line break][variable custom style]'Wow, that's much bigger now - it must be the size of a cigarette butt! Looks pretty red though, babe - I hope your tender little raspberry isn't going to burst!'[roman type][line break]";
 							humiliate 400;
 						otherwise:
-							say "You feel the girl keep her mouth wrapped around your [player-penis] to catch your [if the size of penis > 4]entire [otherwise if the size of the penis < 3]tiny[end if]load, and then swallow it all in one [if the size of penis > 7]large gulp[otherwise if the size of the penis < 3]small sip[otherwise]swallow[end if]. The lips remove themselves from your member and then the magical force keeping you pressed to the wall disappears, allowing you to leave. You slowly pull your [player-penis] out of the hole.";
+							say "You feel the girl keep her mouth wrapped around your [player-penis] to catch your [if the semen load of the player > 4]entire [otherwise if the semen load of the player < 3]tiny[end if]load, and then swallow it all in one [if the semen load of the player > 7]large gulp[otherwise if the semen load of the player < 3]small sip[otherwise]swallow[end if]. The lips remove themselves from your member and then the magical force keeping you pressed to the wall disappears, allowing you to leave. You slowly pull your [player-penis] out of the hole.";
 							BlowGet;
 							DelicateDown 1;
 						say "You shudder as the sensations [if the size of penis < 3]immediately [end if]bring you to a powerful climax.";

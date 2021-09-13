@@ -27,6 +27,10 @@ Breasts has a number called previous largeness.
 
 Breasts has a number called real largeness.
 
+Breasts has a number called lactation rate.
+
+Breasts has a number called lactation count.
+
 
 To decide which number is the at least partially lewdly exposed outrage of (B - breasts):
 	decide on 8.
@@ -501,7 +505,7 @@ To say BreastBounceDesc:
 	if X is 12, say "wobble and sway";
 	if X is 13, say "plunge and bounce";
 	if X is 14, say "quake and wobble";
-	if X is 15, say "wobble like mountains of jello";
+	if X is 15, say "wobble like mountains of Jello";
 	if X is 16, say "bungee jump";
 	if X is 17, say "bounce comically";
 	if X is 18, say "oscillate moon-like, making you sway";
@@ -524,7 +528,7 @@ To say BreastBouncingDesc:
 	if X is 12, say "wobbling and swaying";
 	if X is 13, say "plunging and bouncing";
 	if X is 14, say "quaking and wobbling";
-	if X is 15, say "wobbling like jello mountains";
+	if X is 15, say "wobbling like Jello mountains";
 	if X is 16, say "bungee jumping";
 	if X is 17, say "bouncing comically";
 	if X is 18, say "oscillating moon-like, making you sway";
@@ -636,7 +640,7 @@ To say BreastFillDesc:
 		say "They are ballooned with a massive amount of air. ".
 
 To say BreastLactationRate:
-	let R be the lactation rate of the player;
+	let R be the lactation rate of breasts;
 	if R > 0, say "The [if R < 2]sporadic tingling[otherwise if R < 4]occasional itch[otherwise if R < 6]recurrent tickling[otherwise if R < 8]persistent prickling[otherwise]incessant throbbing[end if] in your [if the largeness of breasts < 5][one of]breasts[or]boobs[or]tits[in random order][otherwise][one of]titties[or]jugs[or]udders[in random order][end if] warns you when you're about to [if R < 3]leak a few drops of milk[otherwise if R < 5]squirt your next cup of cream[otherwise if R < 7]pour your next pint of dairy[otherwise if R < 9]start spraying quarts of moo juice[otherwise]gush another gallon of nipple nectar[end if]. ".
 
 To say BreastWeight:
@@ -876,7 +880,7 @@ To MilkDown (X - a number):
 To 2Milkdown:
 	if the milk volume of breasts > 0:
 		decrease the milk volume of breasts by 1;
-		increase the lactation-count of the player by 1;
+		increase the lactation count of breasts by 1;
 
 To BustInflate (X - a number):
 	if the number of worn research airhancers > 0, increase X by 1;
@@ -932,7 +936,7 @@ To BustImplantsUp (X - a number):
 				if C is a thing and L is a thing, transform C into L;
 			otherwise if C is a thing and the substituted form of player-class exactly matches the text "magical girl": [has to be exactly this class and not any cross-class]
 				transform C into anime superheroine top;
-			otherwise if playdude bunny waitress ears is worn and the class of the player is "bunny": [no cross-class yet]
+			otherwise if playdude bunny waitress ears is worn and the class of the player is "bunny waitress": [no cross-class yet]
 				transform playdude bunny waitress ears into rubber-bunny-waitress-ears;
 				class summon rubber-bunny-waitress-outfit; [will be blocked if a class-relevant outfit is already worn]
 				let M be a random worn overdress;
@@ -956,9 +960,9 @@ To stimulate (X - breasts):
 		arouse (the square root of (the sensitivity of breasts * 500)) * 10;
 		if breastStimulationFlavAllowed is true:
 			if the sensitivity of breasts > 20:
-				say "[one of]The nerves in your breasts explode with sensation! [if the player is possessing a vagina]Your [vagina] gushes with pleasure.[otherwise if the player is possessing a penis]Your [player-penis] twitches rapidly.[end if][or]Your entire body shudders with pleasure.[or]Sparks of pure euphoria fly through your brain.[or]Your super sensitive tits cause you to moan with pleasure.[at random]";
+				say "[one of]The nerves in your breasts explode with sensation! [if the player is herm]Your [vagina] gushes with pleasure and your [player-penis] twitches rapidly.[otherwise if the player is possessing a vagina]Your [vagina] gushes with pleasure.[otherwise if the player is possessing a penis]Your [player-penis] twitches rapidly.[otherwise]Your skin feels scorching hot.[end if][or]Your entire body shudders with pleasure.[or]Sparks of pure euphoria fly through your brain.[or]Your super sensitive tits cause you to moan with pleasure.[at random]";
 			otherwise if the sensitivity of breasts > 10:
-				say "[one of]Your breasts feel amazing. [if the player is herm]Your [vagina] gets wetter and your [player-penis] stirs gently.[otherwise if the player is possessing a vagina]Your [vagina] gets wetter.[otherwise if the player is possessing a penis]Your [player-penis] stirs gently.[end if][or][or][or]You close your eyes and shiver. it feels so good![or][or][or]Your super sensitive tits cause you to moan with pleasure.[or][or][or]You [if the player is not able to automatically masturbate]wish you could masturbate![otherwise]can't help but gently play with yourself, eyes rolling to the back of your head with pleasure.[end if][or][stopping]";
+				say "[one of]Your breasts feel amazing. [if the player is herm]Your [vagina] gets wetter and your [player-penis] stirs gently.[otherwise if the player is possessing a vagina]Your [vagina] gets wetter.[otherwise if the player is possessing a penis]Your [player-penis] stirs gently.[otherwise]Your skin feels warmer.[end if][or][or][or]You close your eyes and shiver. it feels so good![or][or][or]Your super sensitive tits cause you to moan with pleasure.[or][or][or]You [if the player is not able to automatically masturbate]wish you could masturbate![otherwise]can't help but gently play with yourself, eyes rolling to the back of your head with pleasure.[end if][or][stopping]";
 			otherwise:
 				say "[one of]It actually feels quite pleasurable for you.[or][or][or]You realise you are breathing heavily. Are your breasts somehow getting more sensitive?[or][or][or]You let out an involuntary whimper. It actually feels good![or][or][or]You shiver as a wave of sexual pleasure flows through you.[or][stopping]".
 

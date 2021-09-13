@@ -210,10 +210,10 @@ To compute priestessBlessing of (M - a monster):
 			increase the charge of the dungeon altar by 30;
 		otherwise:
 			if ritual-beads is worn:
-				say "You can feel a surge in your holy aura, and a voice appears in your head: [line break][second custom style]'[if the vaginalvirgin of the player is 1 and the player is female]Noble[otherwise]Dutiful[end if] Sister, your sacred rite [if the notches of ritual-beads < 6]has only just begun! Remember, [otherwise if the notches of ritual-beads < 10]is nearly complete! Remember, [otherwise]is complete, but [end if]there is always more work to be done!'[roman type][line break]";
+				say "You can feel a surge in your holy aura, and a voice appears in your head: [line break][second custom style]'[if the vaginalvirgin of the player is 1 and the player is possessing a vagina]Noble[otherwise]Dutiful[end if] Sister, your sacred rite [if the notches of ritual-beads < 6]has only just begun! Remember, [otherwise if the notches of ritual-beads < 10]is nearly complete! Remember, [otherwise]is complete, but [end if]there is always more work to be done!'[roman type][line break]";
 				heal asshole times (the soreness of asshole / 5);
 			otherwise:
-				say "You can feel a surge in your holy aura and a voice appears in your head: '[if the vaginalvirgin of the player is 1 and the player is female]Noble[otherwise]Dutiful[end if] Sister, there is still more work to be done!'";
+				say "You can feel a surge in your holy aura and a voice appears in your head: '[if the vaginalvirgin of the player is 1 and the player is possessing a vagina]Noble[otherwise]Dutiful[end if] Sister, there is still more work to be done!'";
 			decrease the charge of the dungeon altar by 150;
 			if M is penetrating vagina and runic headband is not purity, heal vagina times (the soreness of vagina / 5);
 	if M is infernal, RitualUp 2;[demons are bad for altar charge, but good for rituals]
@@ -592,7 +592,7 @@ To compute erection sex of (M - a monster):
 		compute post climax effect of M in penis;
 	otherwise:
 		decrease the sex-length of M by 1;
-		stimulate penis from M;[special flavour for orgasms will trigger after normal flavor is shown.]
+		stimulate penis from M;[special flavour for orgasms will trigger after normal flavour is shown.]
 		say "[one of][M sex reaction][or][cycling]".
 
 To compute post climax effect of (M - a monster) in (B - penis):[Note that this is not necessarily a "climax", just the end of the sex]
@@ -752,7 +752,7 @@ This is the default latex punishment rule:
 		rule succeeds.
 
 To say DefaultSpecialScienceFlavour:
-	say "[speech style of current-monster]'[one of]OOh, a subject for my exp-AIR-iments!'[or]You look ready for another blast.'[or]Don't look worried, I'm sure you'll breeze through this procedure.'[or]Ah, back to provide more FAN service, I see?'[or]Here we AIR again!'[or]Oh look, my favourite volunt-AIR!'[stopping][roman type][line break]".
+	say "[speech style of current-monster]'[one of]Ooh, a subject for my exp-AIR-iments!'[or]You look ready for another blast.'[or]Don't look worried, I'm sure you'll breeze through this procedure.'[or]Ah, back to provide more FAN service, I see?'[or]Here we AIR again!'[or]Oh look, my favourite volunt-AIR!'[stopping][roman type][line break]".
 
 To say LatexPunishmentFlav of (M - a monster):
 	say "[BigNameDesc of M] brings one of your nipples to [his of M] mouth, and blows powerfully for a few seconds. Your rubber tits inflate [one of]in front of your eyes[or]even larger[stopping]!".

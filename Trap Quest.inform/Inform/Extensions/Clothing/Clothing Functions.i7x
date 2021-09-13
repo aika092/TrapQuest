@@ -378,7 +378,7 @@ To Drench (C - a clothing):
 	if C is diaper and the player is diaper aware, now the perceived-water-soak of C is the water-soak of C;
 	if tough-shit is 0 and C is held:
 		if C is glued:
-			now C is not glued;
+			ungluify C;
 			say "[BigNameDesc of C] is no longer covered in glue!";
 		if C is worn, update appearance level.
 
@@ -404,7 +404,7 @@ To only destroy (C - clothing):
 	repair C;
 	if C is crotch-unzipped, now C is crotch-zipped;
 	now C is not stuck;
-	now C is not glued;
+	ungluify C;
 	now C is unlocked;
 	if C is strut enabling and C is worn and the strut of the player is 1 and the strutskill of the player is 0 and the number of worn strut enabling clothing is 1, now the strut of the player is 0;
 	unless C is headgear, now C is bland; [The state of headgear is important and shouldn't be reset]

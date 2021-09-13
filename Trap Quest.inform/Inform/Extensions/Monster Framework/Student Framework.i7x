@@ -18,6 +18,7 @@ A student has a number called student-diaper-state.
 Definition: a student is messy:
 	if diaper quest is 1 and the student-diaper-state of it >= 2 and diaper messing >= 3, decide yes;
 	decide no.
+Definition: a student is just messing: decide no.
 To LessonReset (M - a student):
 	now the lessonInt1 of M is 0;
 	now the lessonInt2 of M is 0;
@@ -872,7 +873,7 @@ To execute (A - bully-plug):
 		say "[speech style of current-monster]'You look like you need something hard to work on for a little while.'[roman type][line break][BigNameDesc of current-monster] pulls out a [ShortDesc of P], and then takes a small tube of some kind of glue and coats the shaft. [big he of current-monster] [if pN < 0]laughs cruelly at your whimper of pain as [he of current-monster] roughly forces it into your [variable F][otherwise if pN < 3]slams it into your [variable F][end if] and harshly swats your ass. [big his of current-monster] palm makes full contact with the bottom of the [ShortDesc of P], making you feel it all the way inside.";
 		if F is vagina, summon P uncursed vaginally;
 		otherwise summon P uncursed;
-		now P is glued;
+		gluify P;
 	ruin asshole times 2.
 
 bully-piss is a bully-action.
@@ -955,7 +956,7 @@ To execute (A - bully-schoolgirl):
 	say "[speech style of current-monster]'You should wear something like this!'[roman type][line break][big he of current-monster] forces you to wear a [MediumDesc of C]!";
 	summon C uncursed;
 	say "And [he of current-monster][']s not finished with you yet! [big he of current-monster] takes the collar of [NameDesc of C] and coats the inside with a tube of glue. Now it's stuck to you - you won't be able to remove it until you can peel away the glued collar!";
-	now C is glued.
+	gluify C.
 
 
 bully-lock-heels is a bully-action.
@@ -1095,7 +1096,7 @@ Definition: prank-photo is eligible:
 	decide no.
 To execute (P - prank-photo):
 	let A be the appearance of the player;
-	say "Suddenly, [current-monster] puts [his of current-monster] arm over your shoulder.[line break][speech style of current-monster]'Say cheese!'[roman type][line break][BigNameDesc of current-monster] has taken a quick photograph of you both with her smartphone.[line break][if the player is modest][variable custom style]What?! No, not while I look like this![line break][end if][speech style of current-monster]'I just couldn't resist taking a selfie with you when you look so [if diaper quest is 1]cute[otherwise if A < 10]cute and slutty[otherwise]utterly whorish[end if] like this!'[roman type][line break]Before you can object, [NameDesc of current-monster] has uploaded the photo of you both somewhere[line break][variable custom style]Wait, was that to the REAL Internet? How many people will see it?![line break][speech style of current-monster]'I bet this one gets lots of upvotes!'[roman type][line break][BigNameDesc of current-monster] giggles happily.";
+	say "Suddenly, [current-monster] puts [his of current-monster] arm over your shoulder.[line break][speech style of current-monster]'Say cheese!'[roman type][line break][BigNameDesc of current-monster] has taken a quick photograph of you both with her smartphone.[line break][if the player is modest][variable custom style]What?! No, not while I look like this![line break][end if][speech style of current-monster]'I just couldn't resist taking a selfie with you when you look so [if diaper quest is 1]cute[otherwise if A < 10]cute and slutty[otherwise]utterly whorish[end if] like this!'[roman type][line break]Before you can object, [NameDesc of current-monster] has uploaded the photo of you both somewhere.[line break][variable custom style]Wait, was that to the REAL Internet? How many people will see it?![line break][speech style of current-monster]'I bet this one gets lots of upvotes!'[roman type][line break][BigNameDesc of current-monster] giggles happily.";
 	let T be "in a selfie with your fellow student [student-name of current-monster]";
 	if diaper quest is 1 and the appearance of the player < the cringe appearance of the player, now A is the cringe appearance of the player;
 	compute digital reputation damage T strength (A) quality (a random number between 1 and 2).
@@ -1107,7 +1108,7 @@ Definition: prank-condom is eligible:
 To execute (A - prank-condom):
 	let C be a random worn condom pinnable currently uncovered clothing;
 	let N be the current-rank of current-monster - 1;
-	say "[speech style of current-monster]'Gotcha!'[roman type][line break][BigNameDesc of current-monster] has taken advantage of a moment you weren't looking to sneak up to you and pin [if N is 1]a used condom[otherwise][N] used condoms[end if] to your [ShortDesc of C][one of]! Due to the rules of this weird universe, it now can't be removed without biting it, which causes you to get a mouthful of the [semen] inside...[or].[stopping]";
+	say "[speech style of current-monster]'Gotcha!'[roman type][line break][BigNameDesc of current-monster] has taken advantage of a moment you weren't looking to sneak up to you and pin [if N is 1]a used condom[otherwise][N] used condoms[end if] to your [ShortDesc of C][one of]! Due to the rules of this weird universe, it now can't be removed without biting it, which will cause you to get a mouthful of the [semen] inside...[or].[stopping]";
 	increase the used condoms of C by N.
 
 Part - Damage

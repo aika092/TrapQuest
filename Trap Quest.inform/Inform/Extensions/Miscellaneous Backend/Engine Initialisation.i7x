@@ -322,7 +322,7 @@ To retrieve fetish options:
 	clear the screen.
 
 To retrieve pregnancy options:
-	if pregnancy fetish is 1 and (the player is female or tg fetish >= 1):
+	if pregnancy fetish is 1 and (the player is possessing a vagina or tg fetish >= 1):
 		now the current menu is the Table of Pregnancy Options;
 		carry out the displaying activity;
 		clear the screen;
@@ -330,7 +330,7 @@ To retrieve pregnancy options:
 		now the choice in row 20 of the Table of Player Options is 0.
 
 To retrieve slow pregnancy options:
-	if pregnancy fetish is 1 and (the player is female or tg fetish >= 1):
+	if pregnancy fetish is 1 and (the player is possessing a vagina or tg fetish >= 1):
 		now the current menu is the Table of Slow Pregnancy Options;
 		carry out the displaying activity;
 		clear the screen;

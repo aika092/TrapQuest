@@ -6,13 +6,12 @@ The hands restriction rules is a rulebook.
 
 Definition: yourself is able to manually use their hands:
 	now manual hands attempt is 1;
-	if the player is able to use their hands:
-		now manual hands attempt is 0;
-		decide yes;
-	now manual hands attempt is 0;
-	decide no.
+	follow the hands restriction rules;
+	if rule failed, decide no;
+	decide yes.
 
 Definition: yourself is able to use their hands:
+	now manual hands attempt is 0;
 	follow the hands restriction rules;
 	if the rule failed, decide no;
 	decide yes.
@@ -68,22 +67,20 @@ The living sex doll can't use hands rule is listed first in the hands restrictio
 
 The manual dexterity restriction rules is a rulebook.
 
-Definition: yourself is able to use manual dexterity:
+Definition: yourself is able to use manual dexterity: [automatic check, so we do not want a bespoke text output from this function explaining why they are unable to use manual dexterity]
+	now manual hands attempt is 0; [unnecessary because this is done at the start of the check directly below, but just in case]
 	if the player is not able to use their hands, decide no;
 	[more rules restricting manual dexterity go here]
+	follow the manual dexterity restriction rules;
+	if the rule failed, decide no;
 	decide yes.
 
 Definition: yourself is able to manually use manual dexterity: [play manually inputted command, so we can have a bespoke text output from this function explaining why they are unable to use manual dexterity]
+	if the player is not able to manually use their hands, decide no;
 	now manual hands attempt is 1;
-	if the player is able to use manual dexterity:
-		now manual hands attempt is 0;
-		decide yes;
 	follow the manual dexterity restriction rules;
-	if the rule failed:
-		now manual hands attempt is 0;
-		decide no;
-	now manual hands attempt is 0;
-	decide no.
+	if the rule failed, decide no;
+	decide yes.
 
 [!<TheHandUseRequiredForMasturbationRule>+
 

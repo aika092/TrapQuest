@@ -16,10 +16,11 @@ Check going when there is a barrier in the location of the player:
 
 An all later time based rule (this is the barriers raising rule):
 	repeat with B running through on-stage barriers:
-		compute raising of B.
+		check raising of B.
 
-To compute raising of (B - a barrier):
+To check raising of (B - a barrier):
 	if (the number of dangerous monsters in the location of B is 0) or the player is not in the location of B:
+		if debugmode > 0, say "Location of barrier: [location of B]. Location of player: [location of player]. Dangerous monsters: [list of dangerous monsters in the location of B].";
 		now neighbour finder is the location of B;
 		if the location of the player is neighbour finder or the location of the player is next door, say OpeningFlav of B;
 		destroy B.
@@ -36,7 +37,7 @@ REQUIRES COMMENTING
 @!]
 A modesty shutter is a kind of barrier. There is 1 modesty shutter.
 
-To compute raising of (B - a modesty shutter):
+To check raising of (B - a modesty shutter):
 	if (the number of patrons in the location of B is 0 and dominatrix is not in the location of the player) or the player is not in the location of B:
 		now neighbour finder is the location of B;
 		if the location of the player is neighbour finder or the location of the player is next door, say "[bold type]The metal modesty shutter noisily opens, allowing you [if the player is in neighbour finder]to leave[otherwise]to enter[end if] the room.[roman type][line break]";
@@ -91,7 +92,7 @@ To say OpeningFlav of (B - prison-bars):
 
 [cell-door is a barrier.
 
-To compute raising of (B - cell-door):
+To check raising of (B - cell-door):
 	if (the number of interested unfriendly monsters in the location of the player is 0) or the player is not in the location of B:
 		now neighbour finder is the location of B;
 		if the location of the player is neighbour finder or the location of the player is next door, say "[bold type]The cell door creaks open, allowing you [if the player is in neighbour finder]to leave[otherwise]to enter[end if] the cell.[roman type][line break]";
@@ -99,7 +100,7 @@ To compute raising of (B - cell-door):
 
 shack-door is a barrier.
 
-To compute raising of (B - shack-door):
+To check raising of (B - shack-door):
 	if (the number of interested unfriendly monsters in the location of the player is 0) or the player is not in the location of B:
 		now neighbour finder is the location of B;
 		if the location of the player is neighbour finder or the location of the player is next door, say "[bold type]The door swings open, allowing you [if the player is in neighbour finder]to leave[otherwise]to enter[end if] the shack.[roman type][line break]";

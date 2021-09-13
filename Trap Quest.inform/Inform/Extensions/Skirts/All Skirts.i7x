@@ -223,7 +223,9 @@ To decide which figure-name is clothing-image of (C - gown-of-purity):
 	decide on figure of gown of purity.
 
 To say ClothingDesc of (C - gown-of-purity):
-	say "Calling this item of clothing a gown is a bit of a misnomer, since it does not cover one's torso. Instead the fabric of the gown hangs down from an ornate belt, providing modesty for your legs from anyone looking at you from the side or back, but not the front. The fabric is a brilliant white which shines with an almost impossible brightness, as if it had its own light source. In this way it seems to represent an unlikely harmony of purity and exhibitionism[if sword-of-purity is worn]. [bold type]You can feel its power resonating with your [sword-of-purity], significantly increasing its power[roman type][end if].".
+	say "Calling this item of clothing a gown is a bit of a misnomer, since it does not cover one's torso. Instead the fabric of the gown hangs down from an ornate belt, providing modesty for your legs from anyone looking at you from the side or back, but not the front. The fabric is a brilliant white which shines with an almost impossible brightness, as if it had its own light source. In this way it seems to represent an unlikely harmony of purity and exhibitionism";
+	if C is worn, say "[if sword-of-purity is worn]. [bold type]You can feel its power resonating with your [sword-of-purity], [roman type]increasing its power[end if][if sword-of-purity is worn and asshole is not at least partially exposed], making up for the fact that it conceals your [asshole] from view[end if].";
+	otherwise say ".".
 
 To compute SelfExamineDesc of (Y - gown-of-purity):
 	say "Pure white fabric flows down the sides of your legs from a belt, concealing nothing useful at all. ".
@@ -271,7 +273,7 @@ To decide which figure-name is clothing-image of (C - avatar-silks):
 	decide on figure of gown of purity.
 
 To say ClothingDesc of (C - avatar-silks):
-	say "This garment is made up of a gold and black waist band with several sheets of long, silky fabric attached. Each piece of fabric is transparent, but darkly colored enough to barely conceal details behind it. The nature of the garment [if C is worn]exposes some of your[otherwise]would expose the wearer's[end if] thighs and help make movement easy.".
+	say "This garment is made up of a gold and black waist band with several sheets of long, silky fabric attached. Each piece of fabric is transparent, but darkly coloured enough to barely conceal details behind it. The nature of the garment [if C is worn]exposes some of your[otherwise]would expose the wearer's[end if] thighs and help make movement easy.".
 
 To compute SelfExamineDesc of (Y - avatar-silks):
 	say "Strips of black silk hang from your waist, exposing some thigh.".
@@ -724,7 +726,7 @@ To compute cupcake perception of (M - a bystander):
 
 To say CupcakeExplanation of (M - a bystander):
 	if diaper quest is 1:
-		say "[one of][line break][speech style of M]'Oh, dressed like that, you must be advertising for Cozy Cribs and Cupcakes, right? That new combined nursery-and-cafe that's opening? Still, you're very brave to come out here like that. Some people might get the wrong idea...'[roman type][line break][or][or][line break][speech style of M]'Funny costume. Must be pretty embarrassing for you, though?'[roman type][line break][or][stopping]";
+		say "[one of][line break][speech style of M]'Oh, dressed like that, you must be advertising for Cosy Cribs and Cupcakes, right? That new combined nursery-and-cafe that's opening? Still, you're very brave to come out here like that. Some people might get the wrong idea...'[roman type][line break][or][or][line break][speech style of M]'Funny costume. Must be pretty embarrassing for you, though?'[roman type][line break][or][stopping]";
 	otherwise if the appearance of the player > the outrage tolerance of M:
 		say "[line break][one of][speech style of M]'Outrageous costume. But they look so tasty, I can't resist.'[roman type][line break][or][speech style of M]'I'm still taking one.'[roman type][line break][stopping]".
 

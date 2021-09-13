@@ -22,7 +22,7 @@ To check default motion of (M - a monster):
 				increase X by 1;
 			if a random number between 1 and 10 < X:
 				compute handing over detached dick to M;
-				say "You feel something grab your detached dick[if the player is in the location of M], right in front of you, just before you can grab it[otherwise] - wherever that may be. Wah![end if]";
+				say "You feel something grab your detached dick[if the player is in the location of M], right in front of you, just before you can![otherwise] - wherever that may be. Wah![end if]";
 	compute monstermotion of M;
 	now M is moved.
 
@@ -83,6 +83,9 @@ To say AttractionWorry of (N - a monster):
 					say "Thankfully, the smell of the glue has faded".
 
 To check seeking (N - a number) of (M - a monster):
+	check default seeking N of M.
+
+To check default seeking (N - a number) of (M - a monster):
 	[If N is 2, we need to flag that the monster has had its movement for the round and does not get to act again.]
 	if M is unleashed or M is unconcerned:
 		if M is regional:
@@ -205,14 +208,21 @@ To MonsterHeal (M - a monster) by (N - a number):
 To decide which number is the messRefractoryLimit of (M - a monster):
 	decide on -800.
 
+Definition: a monster (called M) is just messing:
+	if M is messy and the refractory-period of M + 4 > the messRefractoryLimit of M, decide yes;
+	decide no.
+
 To compute periodic recovery of (M - a monster):
 	unless the class of the player is princess and M is asleep, decrease the refractory-period of M by 4;
-	if M is messy and the refractory-period of M + 4 > the messRefractoryLimit of M:
-		if M is in the location of the player, say SuddenMessFlav of M;
+	if M is just messing:
+		compute mess moment of M;
 	otherwise if the class of the player is princess and bride-consort is M:
 		if the refractory-period of M <= 0:
 			if the refractory-period of M > -4, say "A strange tingle passes through your body[if the player is very horny], and you suddenly find yourself stricken with need[end if] as thoughts of the [bride-consort] begin to swirl around inside your head. Somehow, you know you won't be able to satisfy yourself at all until you see to [his of M] needs.[line break][variable custom style][if the player is not a pervert]Ugh, it's not my job to get anyone off! Stop messing with my head, game![otherwise if the sex addiction of the player < 12]I guess I should go see [him of M] quick so I can get it over with.[otherwise]Looks like [he of M] needs my help. I don't want to keep [him of M] waiting![end if][roman type][line break]";
 			Arouse 10.[The princess will get a little hornier every turn her consort goes unsatisfied]
+
+To compute mess moment of (M - a monster):
+	if M is in the location of the player, say SuddenMessFlav of M.
 
 To say SuddenMessFlav of (M - a monster):
 	say "[speech style of M]'Hnnnng...'[roman type][line break]All of a sudden, [NameDesc of M][']s belly grumbles and then you hear a cacophony of awful sounds as [he of M] fills [his of M] diaper.[line break][variable custom style][one of]Oh come on! So I guess I'm supposed to change [him of M]?[or]Uh-oh. Somebody needs a change...[stopping][roman type][line break]".

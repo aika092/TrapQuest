@@ -278,7 +278,7 @@ To compute bra forcing of (M - a robobellboy):
 		now C is a random off-stage super-slutty-bra clothing;
 		increase N by 1;
 	if C is actually summonable clothing:
-		if the difficulty of M > the starting difficulty of M and a random number between 1 and 5 is 1 and C is gluable, now C is glued;
+		if the difficulty of M > the starting difficulty of M and a random number between 1 and 5 is 1 and C is gluable, gluify C;
 		say "[BigNameDesc of M] opens up [his of M] chest compartment and pulls out a [ShortDesc of C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces the item onto your body, where it sticks to your skin like glue. [if C is glued]Unfortunately, [FuckerDesc of M] isn't satisfied with it being [italic type]like[roman type] glue, and applies a translucent adhesive to the garment before finally[otherwise]After this, [NameDesc of M] seems to be happy[end if] leaving you alone.";
 		summon C cursed with quest;
 		bore M;
@@ -301,7 +301,7 @@ To compute knickers forcing of (M - a robobellboy):
 		now C is a random off-stage super-slutty-knickers clothing;
 		increase N by 1;
 	if C is actually summonable clothing:
-		if the difficulty of M > the starting difficulty of M and a random number between 1 and 5 is 1, now C is glued;
+		if the difficulty of M > the starting difficulty of M and a random number between 1 and 5 is 1, gluify C;
 		say "[BigNameDesc of M] opens up [his of M] chest compartment and pulls out a [ShortDesc of C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces the item u, where it sticks to your skin like glue. [if C is glued]Unfortunately, [FuckerDesc of M] isn't satisfied with it being [italic type]like[roman type] glue, and applies a translucent adhesive to the garment before finally[otherwise]After this, [NameDesc of M] seems to be happy[end if] leaving you alone.";
 		summon C cursed with quest;
 		bore M;

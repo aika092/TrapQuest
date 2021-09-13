@@ -17,8 +17,8 @@ An imp has a number called imp-rudeness. The imp-rudeness of an imp is usually 0
 Figure of imp 1 is the file "NPCs/MultiFloor/Imp/imp1.jpg".
 Figure of imp 2 is the file "NPCs/MultiFloor/Imp/imp2.jpg".
 Figure of imp 3 is the file "NPCs/MultiFloor/Imp/imp3.png".
-Figure of imp cutsene 1 is the file "NPCs/MultiFloor/Imp/cutscene-imp-fuck1.jpg".
-Figure of imp cutsene 2 is the file "NPCs/MultiFloor/Imp/cutscene-imp-preg1.jpg".
+Figure of imp cutscene 1 is the file "NPCs/MultiFloor/Imp/cutscene-imp-fuck1.jpg".
+Figure of imp cutscene 2 is the file "NPCs/MultiFloor/Imp/cutscene-imp-preg1.jpg".
 
 To decide which figure-name is the monster-image of (M - an imp):
 	if lady fetish is 1, decide on Figure of imp 3;
@@ -29,7 +29,7 @@ To decide which figure-name is the unfriendly-monster-image of (M - an imp):
 
 To decide which figure-name is the sex-profile of (M - an imp):
 	if lady fetish is 1, decide on Figure of imp 3;
-	if M is penetrating a body part, decide on Figure of imp cutsene 1;
+	if M is penetrating a body part, decide on Figure of imp cutscene 1;
 	decide on figure of Missing NPC. [Defaults back to the non-sex stuff.]
 
 To say ShortDesc of (M - an imp):

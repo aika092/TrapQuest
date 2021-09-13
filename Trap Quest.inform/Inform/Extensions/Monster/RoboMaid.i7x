@@ -120,13 +120,13 @@ To compute perception of (M - a robomaid):
 		say "[big his of M] eyes turn red and [he of M] spins toward you.[line break][speech style of M]'BURGLAR DETECTED! PUBLICITY STUNT PROGRAM INITIATED!'[roman type][line break]";
 		anger M;
 	otherwise if M is friendly:
-		say "It glides towards you, striking a provocative pose as [he of M] addresses you in a monotone.[line break][speech style of M]'FLIRTATION PROGRAM CLASS ['][robogreeting of M]['] initiated. HEY, [robogreeting of M]. DOES THIS [one of]MAKE MY BOSOM UNIT LOOK BIG[or]SKIRT REVEAL SUFFICIENT CUSHIONING UNIT[or]POSE ACCENTUATE MY MONEY-SHOT APPARATUS[at random]?[roman type][line break][if the player is able to speak]Say yes?[end if]";
+		say "[big he of M] glides towards you, striking a provocative pose as [he of M] addresses you in a monotone.[line break][speech style of M]'FLIRTATION PROGRAM CLASS ['][robogreeting of M]['] initiated. HEY, [robogreeting of M]. DOES THIS [one of]MAKE MY BOSOM UNIT LOOK BIG[or]SKIRT REVEAL SUFFICIENT CUSHIONING UNIT[or]POSE ACCENTUATE MY MONEY-SHOT APPARATUS[at random]?[roman type][line break][if the player is able to speak]Say yes?[end if]";
 		if the player is consenting and the player is able to speak and the refractory-period of M < 0:
 			if the player is not hotel employed:
 				say "[big his of M] eyes turn green, and [he of M] points unsubtly toward a slot between [his of M] breasts, labelled [']PAYMENT['].";
 				FavourDown M;
 			otherwise:
-				say "[big his of M] eyes turn green.[line break][speech style of M]'THANKS. GIRLFRIEND.'[roman type][line break]";
+				say "[big his of M] eyes turn green.[line break][speech style of M]'THANKS. [caps boy of the player]FRIEND.'[roman type][line break]";
 			now the refractory-period of M is the refractory-time of M;
 		otherwise:
 			if the player is not hotel employed:
@@ -189,7 +189,7 @@ To compute molesting attack of (M - a robomaid):
 		say "You don't need to breathe, so it doesn't affect you.";
 	otherwise if there is a worn ringagged clothing or (the intelligence roll of M >= the intelligence of the player):
 		if there is a worn ringagged clothing, say "With no way of closing your mouth, you are forced to breathe in a good amount of it. You cough as the heat of new arousal quickly spreads out from your core.";
-		otherwise say "It takes you a couple seconds to realize that you probably shouldn't breathe it in, and you cough as you feel the heat of new arousal spreading out from your core.";
+		otherwise say "It takes you a couple seconds to realise that you probably shouldn't breathe it in, and you cough as you feel the heat of new arousal spreading out from your core.";
 		Arouse 200;
 	otherwise:
 		say "You notice that the smoke disperses really quickly, so you hold your breath just long enough to avoid breathing any of it in.".

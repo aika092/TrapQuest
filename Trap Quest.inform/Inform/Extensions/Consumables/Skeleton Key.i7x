@@ -39,7 +39,7 @@ To say LockFlav of (M - a monster) for (C - a clothing):
 To say LockAfterFlav of (M - a monster) for (C - a clothing):
 	say "[BigNameDesc of M] keeps the key!".
 To say LockCommentFlav of (M - a monster) for (C - a clothing):
-	if M is intelligent, say "[speech style of M]'[one of]I guess you're at my mercy now, aren't you?'[or]If you ever want to be let out, you better start acting right.'[in random order][roman type][line break]".
+	if M is intelligent, say "[speech style of M]'[one of]I guess you're at my mercy now, aren't you?'[or]If you ever want to be let out, you'd better start acting right.'[in random order][roman type][line break]".
 
 skeleton key is an unlock-key. The printed name of skeleton key is "[TQlink of item described]skeleton key[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of skeleton key is "skey". The tradability of a skeleton key is 17. [ally]
 

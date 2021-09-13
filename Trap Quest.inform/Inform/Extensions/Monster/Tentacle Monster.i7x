@@ -668,11 +668,11 @@ This is the tentacle monster climaxes rule:
 	if M is not massive:
 		SilentlyDifficultyUp M by 3;
 	say "[BigNameDesc of M] [one of]seems to stop[or]once again stops[stopping] moving as its tentacles rest peacefully on the ground and its single eye closes.[unless M is massive][line break][one of]It appears to have entered some kind of dormant state. You watch with silent awe as it[or]The monster[stopping] smoothly but rapidly grows in size until its main body is [end if][if M is newborn]as big as yours, and its many tentacles have thickened to the width of a small bottle.[otherwise if M is large]as big as a car, and its multitude of tentacles have thickened to the width of your forearm.[otherwise][one of]Much to your relief it doesn't seem to grow any larger.[or][stopping][end if]";
-	if magical-maid-outfit is worn and (M is not massive or (inhuman pregnancy >= 2 and the player is female)):
+	if magical-maid-outfit is worn and (M is not massive or (inhuman pregnancy >= 2 and the player is possessing a vagina)):
 		SizeRankUp M;
 		say "[bold type]Just as you are about to begin to crawl away, you feel some magic drain from your [magical-maid-outfit], and it wakes up again![line break][variable custom style][one of]What?![or]I can't... I'll break...[stopping][roman type][line break]";
 		MagicPowerDown 1;
-		if inhuman pregnancy >= 2 and the player is female:
+		if inhuman pregnancy >= 2 and the player is possessing a vagina:
 			say "With renewed vigour it leaps into action once again, and within seconds is filling all of your holes and molesting you anew. Before you know it, a second barrage of [semen] is coating you and filling you to the brim. More magic ebbs and flows from [NameDesc of magical-maid-outfit] into [NameDesc of M], enabling [him of M] to recommence fucking you over and over and over again, pumping you full of its potent [semen] until eventually you white out.";
 			now delayed fainting is 1;
 			now the fainting reason of the player is 18;
@@ -694,7 +694,7 @@ This is the tentacle monster climaxes rule:
 				if heart hairpin is actually summonable:
 					say "[bold type]Suddenly, you feel a small weight in your hair. A hair clip in the shape of a heart has appeared! You feel a wave of shame come over you... You doubt you'll be very good at this job, judging by how things have been going so far.[roman type][line break]";
 					summon heart hairpin cursed;
-					if the player is male and (fast tg is 3 or (the size of penis <= min penis size and tg fetish > 0)):
+					if the player is sexed male and (fast tg is 3 or (the size of penis <= min penis size and tg fetish > 0)):
 						say "Your whole body suddenly goes numb, then is filled with an almost electric tingle. You feel terrible wrenching from your insides that you're sure should hurt, but you just don't seem to be able to feel much of anything right now. The tingling comes to a focus in your crotch, filling you with a sense of terrible foreboding. [if the player is possessing a penis]As feeling comes back to you, you reach down and can immediately tell you're missing something kind of notable: your [player-penis]![otherwise]As feeling comes back to you, you reach down with a sense of foreboding.[end if] It seems whatever magic made that hair clip appear has decided you'd be better off as a girl...";
 						SexChange the player;
 			if the class of the player is "silicone queen": [has to be exactly this class and not any cross-class]

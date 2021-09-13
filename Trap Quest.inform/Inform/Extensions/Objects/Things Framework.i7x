@@ -12,6 +12,8 @@ To say ownership-desc of (T - a thing):
 
 To decide what number is the original price of (C - a thing):
 	decide on 0.
+To decide what number is the unique price of (C - a thing):
+	decide on 0.
 
 To decide what number is the price of (C - a thing):
 	let X be the original price of C;
@@ -21,7 +23,9 @@ To decide what number is the price of (C - a thing):
 	decide on X.
 
 To decide what number is the original price of (C - a clothing):
-	let X be 3 - ((the initial outrage of C) / 4);
+	let X be the unique price of C;
+	if diaper quest is 0, decrease X by (the initial outrage of C) / 4;
+	otherwise decrease X by (the initial cringe of C) / 4;
 	if C is layer-concealing and (C is dense or C is sheer-when-wet):
 		if C is potentially-top-layer-concealing:
 			if C is normally-nipple-covering or C is erect-nipple-exposing:
@@ -40,15 +44,11 @@ To decide what number is the original price of (C - a clothing):
 			increase X by 2;
 		otherwise if C is pussy protection:
 			increase X by 1;
-	if C is rare, increase X by 2;
+	if C is rare, increase X by 1;
 	decide on X.
 
 To decide what number is the price of (C - a clothing):
 	let X be the original price of C;
-	if C is trousers:
-		now X is 9;
-	if C is skirt:
-		now X is 4;
 	if C is accessory:
 		if C is not plentiful, decide on X;
 		if C is ring, now X is 1;

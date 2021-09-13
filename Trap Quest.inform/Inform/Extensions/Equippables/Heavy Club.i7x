@@ -93,7 +93,7 @@ To say MonsterOfferAcceptFlav of (M - deep one) to (T - kraken bell):
 To decide which number is the bartering value of (T - kraken bell) for (M - an acolyte):
 	decide on 5.
 To say MonsterOfferAcceptFlav of (M - an acolyte) to (T - kraken bell):
-	say "[speech style of M]'We shall use it to rouse the Great Ones from their slumber!'[roman type][line break]".
+	say "[speech style of M]'We shall use it to rouse the [great ones] from their slumber!'[roman type][line break]".
 To say MonsterOfferRejectFlav of (M - herald) to (T - kraken bell):
 	say "[speech style of M]'Thank you for the offer, but this is no longer necessary.'[roman type][line break]".
 

@@ -253,7 +253,7 @@ Clothing can be ass plugging. Clothing is usually not ass plugging.
 Clothing can be vagina plugging. Clothing is usually not vagina plugging.
 Clothing has a number called plug size. The plug size of clothing is usually 0.
 Clothing can be purity. Clothing is usually not purity. [Means they care about your virginity.]
-A Magic-type is a kind of value. The magic-types are blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, stumbling, provocation, exposure, audible jiggles, augmentation and hostility. Clothing has a magic-type. The magic-type of clothing is usually blandness.
+A Magic-type is a kind of value. The magic-types are blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, stumbling, provocation, exposure, audible jiggles, desperation, augmentation and hostility. Clothing has a magic-type. The magic-type of clothing is usually blandness.
 Magic-ID is a kind of value. The magic-IDs are unidentified and identified. Clothing has a Magic-ID. The Magic-ID of clothing is usually unidentified.
 Clothing has a number called raw-magic-modifier. The raw-magic-modifier of clothing is usually 0.
 To decide which number is the penis-capacity of (C - a clothing):[what's the largest size of penis it can cover?]
@@ -304,9 +304,9 @@ Is the player unable to move because some clothing is stuck?
 Definition: yourself is clothing stuck:
 	if there is worn stuck clothing, decide yes;
 	decide no.
+Clothing has a number called glue timer.
 Clothing can be bsounding. Clothing is usually not bsounding.
 A clothing has a number called augmentation-grow-charge. A clothing has a number called augmentation-charging-time.
-Clothing can be glued or unglued. Clothing is usually unglued.
 Clothing can be womanly or manly. Clothing is usually womanly. [Manly clothing is anything that is not specifically something only women should wear. E.g. a T-shirt]
 Clothing can be restart immune. Clothing is usually not restart immune. [This means it won't disappear or change when the map is reset.]
 Clothing can be spikey. A clothing is usually not spikey.
@@ -467,7 +467,7 @@ To compute dq nip slip reaction of (M - a monster):
 To say NipSlipSeenFlav of (M - a monster):
 	say "[speech style of M]'[one of]Err, I can see your nipple.'[or]Are you aware your nipple is on show?'[or]Nip-slip alert.'[in random order][roman type][line break]".
 To say DQNipSlipSeenFlav of (M - a monster):
-	say "[speech style of M]'[one of]Err, I can see your nipple. [or]Are you aware your nipple is on show? [purely at random][one of]Adults should not allow themselves to be exposed like this in public.'[or]Would you please put it away!'[or]Being unable to dress yourself properly is not a good sign of [maturity].'[at random][roman type][line break]".
+	say "[speech style of M]'[one of]Err, I can see your nipple. [or]Are you aware your nipple is on show? [purely at random][one of]Adults should not allow themselves to be exposed like this in public.'[or]Would you [please] put it away!'[or]Being unable to dress yourself properly is not a good sign of [maturity].'[at random][roman type][line break]".
 An all time based rule (this is the malfunction checking rule):
 	if saved-flat-intelligence > a random number between 1 and 350: [Do this check first as it is less computationally expensive]
 		if another-turn is 0 and the player is not immobile and the player is not in danger:

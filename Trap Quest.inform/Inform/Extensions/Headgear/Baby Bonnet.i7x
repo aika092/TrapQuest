@@ -19,8 +19,10 @@ Part - Class Outfit
 To compute class outfit of (H - a baby bonnet):
 	class summon little dinosaur onesie;
 	class summon rubber mittens;
-	class summon yellow-pacifier;
-	class summon pink-baby-booties.
+	gluify rubber mittens;
+	unless H is rubber-baby-bonnet, class summon yellow-pacifier;
+	class summon pink-baby-booties;
+	gluify pink-baby-booties.
 
 Part - Quest
 
@@ -49,7 +51,7 @@ To decide which figure-name is the clothing-image of (C - victorian-baby-bonnet)
 	decide on figure of victorian baby bonnet.
 
 To say ClothingDesc of (H - victorian-baby-bonnet):
-	say "A Victorian style pink baby bonnet, that covers the top, back and sides of your head.".
+	say "A Victorian style pink baby bonnet, that covers the top, back and sides of your head[if H is worn]. You can sense that it is helping you remain focused and flexible, even when plagued by distracting sensations of toilet desperation[end if].".
 
 To decide which object is the unique-upgrade-target of (H - victorian-baby-bonnet):
 	decide on rubber-baby-bonnet.
@@ -65,7 +67,7 @@ To decide which figure-name is the clothing-image of (C - rubber-baby-bonnet):
 	decide on figure of rubber baby bonnet.
 
 To say ClothingDesc of (H - rubber-baby-bonnet):
-	say "A fetish-focused pink baby bonnet made of rubber, that covers the top, back and sides of your head, as well as your mouth.".
+	say "A fetish-focused pink baby bonnet made of rubber, that covers the top, back and sides of your head, as well as your mouth[if H is worn]. It somehow magically prevents you from speaking, but not from drinking or eating. You can sense that it is helping you remain focused and flexible, even when plagued by distracting sensations of toilet desperation[end if].".
 
 This is the rubber baby bonnet prevents speech rule:
 	if rubber-baby-bonnet is worn, rule fails.

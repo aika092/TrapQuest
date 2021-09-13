@@ -765,7 +765,7 @@ To compute dark reward of (T - ritual-beads):
 			now the urine-soak of C is 0;
 			now the milk-soak of C is 0;
 			now the water-soak of C is 0;
-			if C is glued, now C is unglued;
+			if C is glued, ungluify C;
 		repeat with B running through body parts:
 			now the semen coating of B is 0;
 			if B is hair, now the urine coating of B is 0;

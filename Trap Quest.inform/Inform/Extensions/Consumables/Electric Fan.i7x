@@ -138,6 +138,6 @@ Definition: an electric fan is inflation themed: decide yes.
 Definition: an electric fan is shop-eligible: decide yes.
 
 To decide which number is the original price of (C - an electric fan):
-	decide on 3.
+	decide on 2.
 
 Electric Fan ends here.

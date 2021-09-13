@@ -43,7 +43,7 @@ To compute teaching of (L - kissing-lesson):
 			say "[speech style of M]'DETENTION! DETENTION FOR YOU RIGHT NOW!'[roman type][line break]Uh-oh, looks like you caught [him of M] in a bad mood...[line break][GotUnluckyFlav]";
 			compute chair detention of M;
 		otherwise:
-			say "[variable custom style]'You pulled away first!'[roman type][line break]You point out cheekily. [BigNameDesc of M] harrumps.[line break][speech style of M]'Very clever! I have never had a student bezt me in zis way. Fine, you can have your promotion.'[roman type][line break]";
+			say "[variable custom style]'You pulled away first!'[roman type][line break]You point out cheekily. [BigNameDesc of M] harrumphs.[line break][speech style of M]'Very clever! I have never had a student bezt me in zis way. Fine, you can have your promotion.'[roman type][line break]";
 			now armband is emerald;
 			say "You watch as the ID card inside your armband transforms!";
 			now the armband-title of armband is "Kara";
@@ -481,7 +481,7 @@ To compute teaching of (L - practical-lesson):
 	let DL be teacher-rochelle;
 	now DL is in the location of the player;
 	say "[if TL is not DL][speech style of TL]'For this lesson, I am going to need some help from Teacher [teacher-name of DL].'[roman type][line break]You watch as [NameDesc of DL] enters the room, joining [NameDesc of TL] at the front.[line break][end if][speech style of TL]'Today we will be learning about how by being especially filthy, you can better service cocks and win the hearts of your Masters.'[roman type][line break]";
-	say "[BigNameDesc of DL] gently strokes [his of DL] [DickDesc of DL], and you all watch as it slowly hardens, growing even larger in size.[line break][speech style of TL]'The rules are simple: each of you need to get in line and one by one you will do your best to pleasure the [manly-penis]. Up to [bold type]three people[speech style of TL] can get promoted: the person that makes it cum, the slut who I think acted the filthiest, and the person who used the most different parts of their body. EXCEPT hand-jobs, which are for prudes. [if a2m fetish is 0]The special rule for today is that no anal sex is allowed[otherwise]And remember, no ass-to-vag, okay? That's unhealthy[end if]. Finally, [bold type]each time you perform a sexual act but fail to convince me that you're enjoying it, you'll get a punishment. [speech style of TL]Your Masters aren't going to be pleased if they can tell you heart isn't really in it.'[roman type][line break]And with that [he of TL] sorts you into a random order, which ends up having you at the front. You're going to have to go first, it would seem...";
+	say "[BigNameDesc of DL] gently strokes [his of DL] [DickDesc of DL], and you all watch as it slowly hardens, growing even larger in size.[line break][speech style of TL]'The rules are simple: each of you need to get in line and one by one you will do your best to pleasure the [manly-penis]. Up to [bold type]three people[speech style of TL] can get promoted: the person that makes it cum, the slut who I think acted the filthiest, and the person who used the most different parts of their body. EXCEPT hand-jobs, which are for prudes. [if a2m fetish is 0]The special rule for today is that no anal sex is allowed[otherwise]And remember, no ass-to-vag, okay? That's unhealthy[end if]. Finally, [bold type]each time you perform a sexual act but fail to convince me that you're enjoying it, you'll get a punishment. [speech style of TL]Your Masters aren't going to be [please]d if they can tell you heart isn't really in it.'[roman type][line break]And with that [he of TL] sorts you into a random order, which ends up having you at the front. You're going to have to go first, it would seem...";
 	repeat with W running through worn wrist locking clothing:
 		say "With a click of [his of DL] fingers, your [ShortDesc of W] falls to the ground.";
 		now W is in the location of the player;
@@ -803,7 +803,7 @@ To compute teaching of (L - swimming-lesson):
 			repeat with C running through worn nudism-disabling removable clothing:
 				unless C is armband or C is bag of holding or C is plentiful accessory or C is headgear, now C is in the location of the player;
 			summon SM uncursed;
-			now SM is glued;
+			gluify SM;
 			say "You put on [NameDesc of SM], and feel the glue sealing it to your skin.";
 			force immediate clothing-focus redraw;
 	say "[BigNameDesc of M] gets you to line up in front of the edge of the pool.[line break][speech style of M]'On your marks, get set, GO!'[roman type][line break]";
@@ -1285,7 +1285,7 @@ To compute teaching of (L - chess-lesson):
 		say "You stand.";
 		repeat with FST running through students in the location of the player:
 			unless ST is FST, FavourUp FST;
-		say "[BigNameDesc of M] smiles warmly.[line break][speech style of M]'Oh, well volunteered! The headmistress will be so pleased. First, I'll need your clothing.'[roman type][line break]";
+		say "[BigNameDesc of M] smiles warmly.[line break][speech style of M]'Oh, well volunteered! The headmistress will be so [please]d. First, I'll need your clothing.'[roman type][line break]";
 		repeat with C running through worn stealable clothing:
 			unless C is plentiful accessory:
 				say "[BigNameDesc of M] confiscates your [ShortDesc of C]!";
@@ -1983,6 +1983,7 @@ To compute action (N - a number) of (M - an ultimate-lesson-actor):
 				dislodge M;
 				now M is penetrating face;
 				say "[one of]You pull forward, allowing [NameDesc of M][']s [manly-penis] to fall out of your [asshole] with a soft 'pop'[or]You gently ease [NameDesc of M][']s thick shaft out of your [asshole][in random order], [one of]and then turn around to approach it with your face[or]before turning around[in random order]. [if the player is a nympho][one of]Secretly excited about the depravity of it all, [or]You fight back a strong desire to touch yourself as [or]You lick your lips greedily before[or]Salivating with anticipation, [in random order][otherwise if the player is a pervert][one of]You lick your lips nervously before [or]You force yourself not to hesitate before [or]Holding your breath, [or]Doing your best not to think too hard about what you're doing, [in random order][otherwise][one of]Doing your best to suppress your revulsion, [or]You fight back the urge to retch as [or]Holding your breath and pinching your nose, [or]Desperately trying not to think about what you're doing, [in random order][end if]you [one of]envelop the recently-sodomising stick with your [LipDesc][or]get to work sucking your own ass juices off this anonymous [man of M][']s [manly-penis][or]get to work licking up your own ass sweat[or]start to slurp the bitter wetness off [his of M] bulbous tip[or]use your mouth and tongue to clean off [his of M] [manly-penis][in random order]. [strongHumiliateReflect]";
+			decrease the sex-length of M by 1;
 		otherwise if M is penetrating face:
 			if a random number between 1 and 3 > 1:
 				say "[one of]You bob your head up and down, [if the humiliation of the player < 10000]eyes screwed shut in shame[otherwise if the sex addiction of the player < 10 or current-predicament is gloryhole-key-predicament]eyes closed[otherwise]looking up at the art of the fireman's hunky body[end if] as you submissively polish [his of M] shaft[or]You make [if the oral sex addiction of the player < 4]quiet[otherwise if the oral sex addiction of the player < 6]distinct[otherwise]exaggerated[end if] slurping noises as you suck [FuckerDesc of M][']s [manly-penis], [if the oral sex addiction of the player < 3]determined to get this over and done with as soon as possible[otherwise if the oral sex addiction of the player < 5]determined to get [him of M] off as soon as possible[otherwise]determined to get [him of M] shooting off in your mouth as soon as possible[end if][or][BigFuckerDesc of M] thrusts back and forth through the gloryhole to complement the [if the oral sex addiction of the player > 5]enthusiastic [otherwise if the oral sex addiction of the player < 4]slow [end if]bobbing of your head[or][BigFuckerDesc of M] holds [himself of M] completely still, [if the sex addiction of the player < 7]forcing[otherwise if the oral sex addiction of the player < 6]encouraging[otherwise]allowing[end if] you to do all the work[or][BigFuckerDesc of M] grunts in pleasure as your tongue runs over the head of [his of M] [manly-penis][or][BigFuckerDesc of M] chuckles to [himself of M] as you submissively pleasure [his of M] [manly-penis] with your mouth[in random order][if current-predicament is gloryhole-predicament]. [one of]You can't stop thinking about how everything is being recorded, and your cheeks burn.[or][stopping][otherwise].[end if]";

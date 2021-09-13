@@ -71,10 +71,6 @@ The player has a number called bladder.
 
 The player has a number called delayed bladder.
 
-The player has a number called lactation rate.
-
-The player has a number called lactation-count.
-
 The player has a number called latex-transformation.
 
 The player has a number called extra lives. The extra lives of the player is usually 3.

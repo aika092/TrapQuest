@@ -16,7 +16,7 @@ Check climbing podium:
 Check entering podium:
 	if the player is immobile, say "Aren't you a bit tied up at the moment?" instead;
 	if the player is in danger, say "You would, but you are currently in a fight." instead;
-	if the player is not able to use manual dexterity, say "You don't have the manual dexterity needed to climb up there." instead;
+	[if the player is not able to use manual dexterity, say "You don't have the manual dexterity needed to climb up there." instead;]
 	if the player is prone, say "You would need to be standing up." instead;[now we can assume the player can get onto the podium]
 	allocate 6 seconds;
 	if the player is a december 2020 top donator and the class of the player is bride and bride-consort is an alive undefeated monster:
@@ -43,7 +43,7 @@ Check entering podium:
 			progress quest of podium-quest;
 		otherwise:
 			say "You want to have a wedding ceremony but you realise you can't do that without a wedding dress[if the number of carried bridal dress is 0]! Perhaps there is a [bold type]magic wardrobe[roman type] somewhere that would enable you to reclaim your wedding outfit[end if].";
-	otherwise if diaper quest is 0 and the player is a december 2020 top donator and floral bridal veil is off-stage and the player is female and the vaginalvirgin of the player is 1 and floral bridal veil is actually summonable:
+	otherwise if diaper quest is 0 and the player is a december 2020 top donator and floral bridal veil is off-stage and the player is possessing a vagina and the vaginalvirgin of the player is 1 and floral bridal veil is actually summonable:
 		say "You find yourself dreaming of a wedding ceremony. You are the bride, holding a bouquet of flowers, as some noble [man of shopkeeper] dedicates [his of shopkeeper] life to you in front of the world.[line break][variable custom style]That wouldn't be so bad.[roman type][line break]As if reacting to your thoughts, a [MediumDesc of floral bridal veil] appears on your head!";
 		summon floral bridal veil cursed;
 		progress quest of podium-quest;

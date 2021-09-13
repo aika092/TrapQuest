@@ -111,7 +111,7 @@ To compute action (N - a number) of (M - a facehugger):
 					say "Without the use of your hands[one of] you can only squirm helplessly as you feel something [i]thick[/i] force open your [variable O][or] it's like you're welcoming the invasive penetration of your [variable O][or] you try to squeeze your muscles to prevent the muscular penetration... fruitlessly[or] you shiver helplessly as you feel [i]something[/i] gape your [variable O] wide, throbbing as it does[in random order].";
 				if C is clothing and the player is getting unlucky:
 					summon C;
-					now C is glued;
+					gluify C;
 				if O is asshole:
 					if egg laying fetish is 1:
 						say "It pumps several eggs inside of your belly!";
@@ -164,17 +164,17 @@ To compute action (N - a number) of (M - a facehugger):
 			otherwise if the player is possessing a vagina and crotch-hugger is off-stage and crotch-hugger is actually summonable:
 				say "[BigNameDesc of M] crawls up your leg and latches itself against your [vagina]! You can feel it inserting its ovipositor inside of you as it settles into place as your new 'underwear'. Uh-oh...";
 				summon crotch-hugger;
-				now crotch-hugger is glued;
+				gluify crotch-hugger;
 				destroy M;
 			otherwise if ass-hugger is off-stage and ass-hugger is actually summonable:
 				say "[BigNameDesc of M] crawls up your leg and latches itself against your [asshole]! You can feel it inserting its ovipositor inside of you as it settles into place as your new 'underwear'. Uh-oh...";
 				summon ass-hugger;
-				now ass-hugger is glued;
+				gluify ass-hugger;
 				destroy M;
 			otherwise if hugger-gag is off-stage and hugger-gag is actually summonable:
 				say "[BigNameDesc of M] crawls up your body and latches itself onto your face! You can feel it inserting its ovipositor into your mouth as it settles into place as a sort-of 'gag'. Uh-oh...";
 				summon hugger-gag;
-				now hugger-gag is glued;
+				gluify hugger-gag;
 				destroy M;
 		otherwise:
 			say "[BigNameDesc of M] leaps at you, trying to latch onto your thigh!";
@@ -235,6 +235,11 @@ To loot (M - a facehugger):
 
 hugger-gag is a ballgag. hugger-gag is unique. a hugger-gag is biological. The printed name of hugger-gag is "[clothing-title-before]facehugging facehugger[clothing-title-after]". The text-shortcut of hugger-gag is "fhg". Understand "face", "hugging", "facehugging" as hugger-gag. A hugger-gag has a number called charge.
 
+Definition: hugger-gag is transformation-proteted: decide yes.
+Report taking off hugger-gag:
+	say "You discard the inert facehugger, and it drops to the ground, lifeless.";
+	only destroy the noun.
+
 To say ShortDesc of (C - hugger-gag):
 	say "facehugging facehugger".
 
@@ -250,7 +255,7 @@ To say ShortDesc of (C - hugger-gag):
 	say "facehugger".
 
 To say ClothingDesc of (C - hugger-gag):
-	say "This weird insect-like monster has used its strong legs to attach itself to your face! It's currently fucking your face with some bizzare alien organ!".
+	say "This weird insect-like monster has used its strong legs to attach itself to your face! It's currently fucking your face with some bizarre alien organ!".
 
 To compute periodic effect of (P - hugger-gag):
 	let N be 4;
@@ -258,7 +263,7 @@ To compute periodic effect of (P - hugger-gag):
 	let interval be N * 3;
 	let X be the remainder after dividing the charge of P by interval;
 	if X is 0:
-		say "[one of]The facehugger rythmically thrusts its bizzare organ down your throat![or]The facehugger fucks your throat with its throbbing organ![or]The facehugger rams its pulsating organ down your throat![or]The facehugger repeatedly invades your throat with its pulsating organ![in random order]";
+		say "[one of]The facehugger rhythmically thrusts its bizarre organ down your throat![or]The facehugger fucks your throat with its throbbing organ![or]The facehugger rams its pulsating organ down your throat![or]The facehugger repeatedly invades your throat with its pulsating organ![in random order]";
 		if a random number between 2 and 5 < (the charge of P / interval):
 			if super gag reflex < 2, follow the do we puke rule;[Instead of ruining face, we check for puke]
 			let F be 0;
@@ -279,6 +284,11 @@ To decide which number is the girth of (A - hugger-gag):
 	decide on 1.
 
 A hugger-panties is a kind of knickers. Understand "hugging" as hugger-panties. The plug size of a hugger-panties is 1. A hugger-panties is biological. A hugger-panties has a number called charge.
+
+Definition: a hugger-panties is transformation-proteted: decide yes.
+Report taking off a hugger-panties:
+	say "You discard the inert facehugger, and it drops to the ground, lifeless.";
+	only destroy the noun.
 
 To decide which figure-name is the clothing-image of (M - a hugger-panties):
 	decide on Figure of facehugger cutscene 4.
@@ -301,7 +311,7 @@ Definition: a hugger-panties is rigid: decide yes.
 crotch-hugger is a hugger-panties. crotch-hugger is unique. crotch-hugger is vagina plugging. The printed name of crotch-hugger is "[clothing-title-before]crotchhugging facehugger[clothing-title-after]". The text-shortcut of crotch-hugger is "chg". Understand "crotch", "crotchhugging" as crotch-hugger. crotch-hugger is crotch-assless.
 
 To say ClothingDesc of (C - crotch-hugger):
-	say "This weird insect-like monster has used its strong legs to attach itself to your crotch! It's currently fucking your [vagina] with some bizzare alien organ!".
+	say "This weird insect-like monster has used its strong legs to attach itself to your crotch! It's currently fucking your [vagina] with some bizarre alien organ!".
 
 To compute periodic effect of (P - crotch-hugger):
 	let N be 4;
@@ -309,7 +319,7 @@ To compute periodic effect of (P - crotch-hugger):
 	let interval be N * 3;
 	let X be the remainder after dividing the charge of P by interval;
 	if X is 0:
-		say "[one of]The facehugger rythmically thrusts its [if egg laying fetish is 1]ovipositor[otherwise]bizzare organ[end if] in and out of your [vagina]![or]The facehugger fucks your [vagina] with its throbbing [if egg laying fetish is 1]ovipositor[otherwise]organ[end if]![or]The facehugger rams its pulsating organ in and out of your [vagina]![or]The facehugger repeatedly invades your [vagina] with its pulsating organ![in random order]";
+		say "[one of]The facehugger rhythmically thrusts its [if egg laying fetish is 1]ovipositor[otherwise]bizarre organ[end if] in and out of your [vagina]![or]The facehugger fucks your [vagina] with its throbbing [if egg laying fetish is 1]ovipositor[otherwise]organ[end if]![or]The facehugger rams its pulsating organ in and out of your [vagina]![or]The facehugger repeatedly invades your [vagina] with its pulsating organ![in random order]";
 		if a random number between 2 and 5 < (the charge of P / interval):
 			ruin vagina;
 			let F be 0;
@@ -330,7 +340,7 @@ To compute periodic effect of (P - crotch-hugger):
 ass-hugger is a hugger-panties. ass-hugger is unique. ass-hugger is ass plugging. The printed name of ass-hugger is "[clothing-title-before]asshugging facehugger[clothing-title-after]". The text-shortcut of ass-hugger is "chg". Understand "asshugging" as ass-hugger. ass-hugger is crotch-exposing.
 
 To say ClothingDesc of (C - ass-hugger):
-	say "This weird insect-like monster has used its strong legs to attach itself to your butt! It's currently fucking your [asshole] with some bizzare alien organ!".
+	say "This weird insect-like monster has used its strong legs to attach itself to your butt! It's currently fucking your [asshole] with some bizarre alien organ!".
 
 To compute periodic effect of (P - ass-hugger):
 	let N be 4;
@@ -338,7 +348,7 @@ To compute periodic effect of (P - ass-hugger):
 	let interval be N * 3;
 	let X be the remainder after dividing the charge of P by interval;
 	if X is 0:
-		say "[one of]The facehugger rythmically thrusts its [if egg laying fetish is 1]ovipositor[otherwise]bizzare organ[end if] in and out of your [asshole]![or]The facehugger fucks your [asshole] with its throbbing [if egg laying fetish is 1]ovipositor[otherwise]organ[end if]![or]The facehugger rams its pulsating organ in and out of your [asshole]![or]The facehugger repeatedly invades your [asshole] with its pulsating organ![in random order]";
+		say "[one of]The facehugger rhythmically thrusts its [if egg laying fetish is 1]ovipositor[otherwise]bizarre organ[end if] in and out of your [asshole]![or]The facehugger fucks your [asshole] with its throbbing [if egg laying fetish is 1]ovipositor[otherwise]organ[end if]![or]The facehugger rams its pulsating organ in and out of your [asshole]![or]The facehugger repeatedly invades your [asshole] with its pulsating organ![in random order]";
 		if a random number between 2 and 5 < (the charge of P / interval):
 			ruin asshole;
 			let F be 0;

@@ -262,7 +262,7 @@ To UniqueSquirt (L - a liquid-object) On (C - Breasts) by (N - a number):
 		if the player is showing cleavage: [calculate the number of units blocked by clothing]
 			let CLVH be N * HCC;
 			now M is CLVH / 8; [cleavage cover is ranked out of 8]
-			if debugmode > 1, say "[M] units definitiely going to [HC]. Checking for leftover unit...";
+			if debugmode > 1, say "[M] units definitely going to [HC]. Checking for leftover unit...";
 			now CLVH is the remainder after dividing CLVH by 8;
 			if a random number between 1 and 8 <= CLVH, increase M by 1; [randomise whether the borderline unit hits cleavage or clothing]
 			if debugmode > 1, say "A total of [M] units are redirected to [HC].";

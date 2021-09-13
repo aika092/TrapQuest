@@ -98,13 +98,13 @@ To reflect on (A - huge-hips):
 
 huge-belly is a humiliating situation.
 Definition: huge-belly (called A) is applicable:
-	if the player is modest and the semen addiction of the player < 9 and (the pregnancy of the player > 0 or (the player is male and pregnancy fetish is 1 and the largeness of belly > 5)), decide yes;
+	if the player is modest and the semen addiction of the player < 9 and (the pregnancy of the player > 0 or (the player is not possessing a vagina and pregnancy fetish is 1 and the largeness of belly > 5)), decide yes;
 	decide no.
 To reflect on (A - huge-belly):
 	if the largeness of belly > the bimbo of the player + 4:
-		say "[if the player is male]You look down at your [BellyDesc] and [one of]realise how fucked up your situation really is[or]wonder if this is what it feels like to be pregnant[or]feel a shiver of shame go down your spine[in random order].[otherwise if the largeness of belly > 4]You put a hand on your [BellyDesc].[line break][variable custom style][one of]I can definitely feel kicking.[or]I just can't believe I got myself knocked up so quickly.[or]I don't want to give birth...[in random order][roman type][line break][otherwise]You put a hand on your [BellyDesc].[line break][first custom style][one of]Was that just me or did I just feel kicking??[or]Can I get pregnant in this game??[or]Please don't tell me this means what I think it means...[in random order][roman type][line break][end if]";
+		say "[if the player is not possessing a vagina]You look down at your [BellyDesc] and [one of]realise how fucked up your situation really is[or]wonder if this is what it feels like to be pregnant[or]feel a shiver of shame go down your spine[in random order].[otherwise if the largeness of belly > 4]You put a hand on your [BellyDesc].[line break][variable custom style][one of]I can definitely feel kicking.[or]I just can't believe I got myself knocked up so quickly.[or]I don't want to give birth...[in random order][roman type][line break][otherwise]You put a hand on your [BellyDesc].[line break][first custom style][one of]Was that just me or did I just feel kicking??[or]Can I get pregnant in this game??[or]Please don't tell me this means what I think it means...[in random order][roman type][line break][end if]";
 	otherwise:
-		say "[if the player is male]You look down at your [BellyDesc] and [one of]realise how ridiculous your situation really is[or]are suddenly very thankful that you can't get pregnant[or]quiver as you think about how large it might be able to grow to in this game[in random order].[otherwise]You put a hand on your [BellyDesc].[line break][first custom style][one of]So this is what it's like to feel pregnant? How humiliating...[or]Please don't grow any more...[or]I mustn't let anything else cum inside me![in random order][roman type][line break][end if]".
+		say "[if the player is not possessing a vagina]You look down at your [BellyDesc] and [one of]realise how ridiculous your situation really is[or]are suddenly very thankful that you can't get pregnant[or]quiver as you think about how large it might be able to grow to in this game[in random order].[otherwise]You put a hand on your [BellyDesc].[line break][first custom style][one of]So this is what it's like to feel pregnant? How humiliating...[or]Please don't grow any more...[or]I mustn't let anything else cum inside me![in random order][roman type][line break][end if]".
 
 To say FriendReaction of (M - a real-life patron) to (A - huge-belly):
 	if the pregnancy of the player is 1:
@@ -253,7 +253,7 @@ Definition: bsoundingHS is applicable:
 	decide no.
 To reflect on (A - bsoundingHS):
 	let C be a random worn bsounding clothing;
-	say "[first custom style][one of]Who had the bright idea to make clothing that announced every wobble of these damned orbs?![or]I've got to get dump this [ShortDesc of C]. It's impossible to get any long lasting privacy with these stupid boings and twangs![or]Does this [ShortDesc of C] ever run out of magical energy? These sounds are so humiliating![stopping][roman type][line break]".
+	say "[first custom style][one of]Who had the bright idea to make clothing that announced every wobble of these damned orbs?![or]I've got to get rid of this [ShortDesc of C]. It's impossible to get any long lasting privacy with these stupid boings and twangs![or]Does this [ShortDesc of C] ever run out of magical energy? These sounds are so humiliating![stopping][roman type][line break]".
 
 To say FriendReaction of (M - a real-life patron) to (A - visible-erection):[BIG TODO]
 	say "... [one of]So you ARE enjoying this. [or]Oh, so this IS exciting for you. [in random order]".

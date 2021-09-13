@@ -209,7 +209,7 @@ To decide which number is the zap damage improvement of (W - magic pistol):
 	decide on -99.
 
 To say PistolStomachLiquid:
-	say "[one of]You are shocked to feel your stomach emptying of liquid! [or][stopping]".
+	say "[one of]You are shocked to feel your stomach emptying of liquid! [if the total squirtable fill of belly > 0](but the liquid in your intestines is still there). [end if][or][stopping]".
 
 To compute attack of (W - magic pistol) at (M - a monster):
 	say "You aim the [ShortDesc of W] at [NameDesc of M] and pull the trigger. ";
@@ -473,7 +473,7 @@ Report going when the player is in Hotel21 and Hotel21 is not discovered:
 		now woman-player is in the location of the player;
 		now woman-player is interested;
 		resolve diaper use of woman-player;
-		say "The straps holding [NameDesc of woman-player] in place then unlock themselves, releasing [him of woman-player].[line break][speech style of woman-player]'Please... can we just pretend that never happened...'[roman type][line break]".
+		say "The straps holding [NameDesc of woman-player] in place then unlock themselves, releasing [him of woman-player].[line break][speech style of woman-player]'[big please]... can we just pretend that never happened...'[roman type][line break]".
 
 Chapter - Mechanic Scene
 
@@ -724,7 +724,7 @@ Report going when the ass-hook-scene of woman-player is 0 and the player is a de
 		now the ass-hook-scene of woman-player is 1;
 		now woman-player is in the location of the player;
 		now woman-player is interested;
-		say "As you arrive here you see [NameDesc of woman-player] is stuck in the middle of the room, the back of [his of woman-player] white panties caught by the hook on a rope that you encountered earlier. The hook has pulled [his of woman-player] panties into a hard and painful wedgie! [big he of woman-player] tries to loosen the hook with one hand, but clearly will need to use both of [his of woman-player] hands to have any chance of success. But [his of woman-player] other hand is busy holding onto [his of woman-player] water pistol, and [he of woman-player] doesn't seem willing to drop it.[line break][speech style of woman-player]'Oh, [NameBimbo]! Please, it hurts so much... can you get me free?'[roman type][line break]".
+		say "As you arrive here you see [NameDesc of woman-player] is stuck in the middle of the room, the back of [his of woman-player] white panties caught by the hook on a rope that you encountered earlier. The hook has pulled [his of woman-player] panties into a hard and painful wedgie! [big he of woman-player] tries to loosen the hook with one hand, but clearly will need to use both of [his of woman-player] hands to have any chance of success. But [his of woman-player] other hand is busy holding onto [his of woman-player] water pistol, and [he of woman-player] doesn't seem willing to drop it.[line break][speech style of woman-player]'Oh, [NameBimbo]! [big please], it hurts so much... can you get me free?'[roman type][line break]".
 
 A time based rule (this is the berri ass hook rule):
 	if the woman-status of woman-player is 99 and woman-player is alive:
@@ -794,7 +794,7 @@ A time based rule (this is the berri ass hook rule):
 					say "[BigNameDesc of woman-player] screams with frustration and pain as [he of woman-player] wets [himself of woman-player] through [his of woman-player] wedgie! [big his of woman-player] panties are soaked, and a big yellow puddle forms between [his of woman-player] feet.";
 					PuddleUp urine by 15;
 				otherwise if the ass-hook-scene of woman-player < 4 and woman-player is not unfriendly:
-					say "[speech style of woman-player]'[one of]Please save me [NameBimbo], I really need the toilet[or]Please, I can't hold it much longer[or]I can't hold it[stopping]!'[roman type][line break]";
+					say "[speech style of woman-player]'[one of][big please] save me [NameBimbo], I really need the toilet[or][big please], I can't hold it much longer[or]I can't hold it[stopping]!'[roman type][line break]";
 				if guard-arrives is true or (M is royal guard and the player is getting unlucky):
 					now M is in the location of the player;
 					say "[speech style of M]'What's all this then?'[roman type][line break][BigNameDesc of M] has arrived in the [location of the player]. [big he of M] stares at [NameDesc of woman-player] with an outraged look on [his of M] face.[line break][speech style of M]'DISGUSTING! [if the ass-hook-scene of woman-player < 4]Adult [men of woman-player] do not walk around flashing their genitals to the world[otherwise]You are clearly wearing the wrong underwear, [child of M][end if].'[roman type][line break]Grabbing [NameDesc of woman-player] with one strong arm, [NameDesc of M] relieves [him of woman-player] of all [his of woman-player] clothing in front of you, and busies [himself of M] with dressing [NameDesc of woman-player] in a new outfit, starting with a medium thickness disposable diaper. Within just a few moments, [NameDesc of woman-player] looks quite different.";
@@ -830,10 +830,10 @@ A time based rule (this is the berri changing station rule):
 			increase the changing-station-scene of woman-player by 1;
 			if woman-player is in the location of the player:
 				if the changing-station-scene of woman-player <= 2:
-					say "[BigNameDesc of woman-player] gives you what looks like a pained smile.[line break][speech style of woman-player]'Um... would you mind please coming back later?'[roman type][line break]";
+					say "[BigNameDesc of woman-player] gives you what looks like a pained smile.[line break][speech style of woman-player]'Um... would you mind [please] coming back later?'[roman type][line break]";
 					cutshow figure of berri cutscene 7 for woman-player;
 				otherwise if the changing-station-scene of woman-player is 3:
-					say "[BigNameDesc of woman-player] whimpers to [himself of woman-player]. [big he of woman-player] seems to be... shaking?[line break][speech style of woman-player]'N-No... Please, I don't want to let [him of the player] see... it would be too embarrassing...'[roman type][line break]";
+					say "[BigNameDesc of woman-player] whimpers to [himself of woman-player]. [big he of woman-player] seems to be... shaking?[line break][speech style of woman-player]'N-No... [big please], I don't want to let [him of the player] see... it would be too embarrassing...'[roman type][line break]";
 					cutshow figure of berri cutscene 7 for woman-player;
 				otherwise:
 					say "[BigNameDesc of woman-player][']s face turns red and [his of woman-player] body starts to spasm.[line break][speech style of woman-player]'Cccccccccc... CUMMING! I'm cumming! Oh god, I'm cumming in a diaper...'[roman type][line break][big he of woman-player] seems to have been holding back for as long as humanly possible, but now that [his of woman-player] orgasm is overtaking [him of woman-player], [he of woman-player] can't hold it back any longer. [big he of woman-player] throws [his of woman-player] body back and forth as [he of woman-player] shakes uncontrollably, cumming [his of woman-player] brains out.[paragraph break]Finally [his of woman-player] [']episode['] dies down. The robotic arms pull [NameDesc of woman-player][']s dungarees back into place and then retract, and [he of woman-player] is released from [his of woman-player] wrist bondage. The door opens, and [he of woman-player] stumbles out, looking fatigued and humiliated.[line break][speech style of woman-player]'I'm so sorry you had to see that. I'm so embarrassed...'[roman type][line break]";

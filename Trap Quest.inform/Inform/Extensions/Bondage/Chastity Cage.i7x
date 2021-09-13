@@ -214,7 +214,7 @@ To say ClothingDesc of (C - nub-cage):
 		say ChastityComment of C;
 
 To say HumiliatingDesc of (C - nub-cage):
-	if the bimbo of the player > 11, say "[variable custom style][one of]Fuck it's so hot that my [sissy-penis] is so tiny and broken, every time I think of [manly-penis] I start leaking.[or]The only fucking i'll be doing from now on is with my sissy mouth or [asshole].[or]My [sissy-penis] and tiny balls are only for my superior's enjoyment now, if I want to cum I need to find some big [manly-penis] to help me.[or]I could never satisfy a women with my [sissy-penis] anyway, maybe I could find a [if lady fetish is 2]giant [manly-penis] to rail[otherwise]hot mistress to squeeze my sissy balls and peg[end if] my [asshole].[or]Ahhh no matter how long I wear this thing it still squeezes and makes my [sissy-penis] leak.[or]The longer I wear this cage, the more broken my [sissy-penis] gets, and the more I realise my place in life is on my knees worshiping giant [manly-penis][if bukkake fetish is 1] or slurping some stud's delicious [semen] from a superior woman's [vagina][end if].[in random order][roman type][line break]".
+	if the bimbo of the player > 11, say "[variable custom style][one of]Fuck it's so hot that my [sissy-penis] is so tiny and broken, every time I think of [manly-penis] I start leaking.[or]The only fucking I'll be doing from now on is with my sissy mouth or [asshole].[or]My [sissy-penis] [if the player is possessing a scrotum]and tiny balls are[otherwise]is[end if] only for my superior's enjoyment now, if I want to cum I need to find some big [manly-penis] to help me.[or]I could never satisfy a woman with my [sissy-penis] anyway, maybe I could find a [if lady fetish is 2]giant [manly-penis] to rail[otherwise if the player is possessing a scrotum]hot mistress to squeeze my sissy balls and peg[otherwise]hot mistress to peg[end if] my [asshole].[or]Ahhh, no matter how long I wear this thing it still squeezes and makes my [sissy-penis] leak.[or]The longer I wear this cage, the more broken my [sissy-penis] gets, and the more I realise my place in life is on my knees worshipping giant [manly-penis][if bukkake fetish is 1] or slurping some stud's delicious [semen] from a superior woman's [vagina][end if].[in random order][roman type][line break]".
 
 To decide which figure-name is clothing-image of (C - a nub-cage):
 	decide on figure of male chastity cage nub.
@@ -238,7 +238,7 @@ To compute periodic effect of (C - nub-cage):
 				say "Your [ShortDesc of C] starts to squeeze and vibrate, but your [sissy-penis] can only leak in its tiny prison!";
 				say HumiliatingDesc of C;
 			otherwise:
-				say "[one of][bold type]Your [ShortDesc of C] has already completely broken your [sissy-penis]. But it still occasionally vibrates to remind you of that fact![roman type][line break][or]Your [ShortDesc of C] suddently vibrates again, stimulating your [sissy-penis].[stopping]";
+				say "[one of][bold type]Your [ShortDesc of C] has already completely broken your [sissy-penis]. But it still occasionally vibrates to remind you of that fact![roman type][line break][or]Your [ShortDesc of C] suddenly vibrates again, stimulating your [sissy-penis].[stopping]";
 				passively stimulate penis from C;
 				say HumiliatingDesc of C;
 			now the nub-charge of nub-cage is 0;

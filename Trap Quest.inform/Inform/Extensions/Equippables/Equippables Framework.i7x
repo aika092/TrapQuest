@@ -64,6 +64,13 @@ To decide which number is the slap damage improvement of (G - a big-gloves):
 	if G is blessed, decide on 0;
 	decide on -1.
 
+This is the big-gloves prevent manual dexterity rule:
+	let C be a random worn big-gloves;
+	if C is big-gloves:
+		if manual hands attempt is 1, say "[BigNameDesc of C] is preventing you from having the manual dexterity to do that.";
+		rule fails.
+The big-gloves prevent manual dexterity rule is listed in the manual dexterity restriction rules.
+
 tongue-gloves is a gloves. tongue-gloves is unique. tongue-gloves is biological. The printed name of tongue-gloves is "[clothing-title-before]tongue gloves[clothing-title-after]". The text-shortcut of tongue-gloves is "tgvs". Understand "tongue", "gloves" as tongue-gloves.
 
 Figure of white tongue gloves is the file "Items/Accessories/Equippables/tonguegloves1a.png".

@@ -8,7 +8,7 @@ To decide which number is the initial outrage of (C - a handbag of holding):
 	decide on 0.
 
 To decide which number is the original price of (C - a handbag of holding):
-	decide on 15.
+	decide on 9.
 
 Part 1 - Spike Skull Handbag of Holding
 

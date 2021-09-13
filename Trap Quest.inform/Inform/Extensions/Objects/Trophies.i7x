@@ -176,7 +176,7 @@ To decide which figure-name is the examine-image of (C - ejaculate-trophy):
 	decide on figure of ejaculate trophy.
 
 Definition: ejaculate-trophy is fetish appropriate:
-	if ((the player is female or TG fetish > 0) and pregnancy fetish is 1) or bukkake fetish is 1, decide yes;
+	if ((the player is possessing a vagina or TG fetish > 0) and pregnancy fetish is 1) or bukkake fetish is 1, decide yes;
 	decide no.
 
 To say ExamineDesc of (T - ejaculate-trophy):

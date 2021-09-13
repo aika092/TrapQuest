@@ -28,12 +28,6 @@ To compute attack of (W - a mittens) at (M - a monster):
 To say ShortDesc of (W - a mittens):
 	say "pair of mittens".
 
-This is the mittens prevent manual dexterity rule:
-	if there are worn mittens:
-		if manual hands attempt is 1, say "Your [random worn mittens] mean you don't have the manual dexterity to do that.";
-		rule fails.
-The mittens prevent manual dexterity rule is listed in the manual dexterity restriction rules.
-
 To say BabywearDonationDeclarationFlav of (M - a monster) on (C - a mittens):
 	if M is intelligent, say "[speech style of M]'[if the health of M < the maxhealth of M]It seems like we need to keep you from being too dangerous[otherwise]Babies don't need their hands, since they should be letting the grown-ups take care of them[end if].'[roman type][line break]".
 

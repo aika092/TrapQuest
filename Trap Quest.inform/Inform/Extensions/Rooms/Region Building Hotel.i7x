@@ -61,8 +61,26 @@ To Set Up The Hotel:
 	repeat with M running through alive monsters in the hotel:
 		if the location of M is not placed, now M is in a random placed modern room;
 	[let N1 be the regionalMonsterCount of the Hotel;]
+	let LM be a list of monsters;
+	[Here we set LM to be a list of one of each of the different types of monsters that can spawn]
+	let LMM be the list of off-stage hotel dwelling summon appropriate monsters;
+	if the number of entries in LMM > 0:
+		sort LMM in random order; [so it's not the same variants at the start of every game]
+		repeat with M running through LMM:
+			let T1 be the substituted form of "[ShortDesc of M]";
+			let uniqueM be true;
+			repeat with N running through alive hotel dwelling summoningRelevant monsters:
+				let T2 be the substituted form of "[ShortDesc of N]";
+				if T1 matches the text T2, now uniqueM is false;
+			if uniqueM is true:
+				repeat with N running through LM:
+					let T2 be the substituted form of "[ShortDesc of N]";
+					if T1 matches the text T2, now uniqueM is false;
+			if uniqueM is true, add M to LM;
 	repeat with N2 running from 1 to startingRegionalMonsterCount:
-		let M be a random hotel prioritised monster;
+		let M be nothing;
+		if the number of entries in LM > 0, now M is entry 1 in LM;
+		otherwise now M is a random hotel prioritised monster;
 		if M is not monster, now M is a random off-stage hotel dwelling monster;
 		if M is monster:
 			set up M;

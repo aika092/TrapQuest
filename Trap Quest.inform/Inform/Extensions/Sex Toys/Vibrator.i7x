@@ -36,7 +36,7 @@ To compute periodic effect of (P - a vibrator):
 			if P is cursed, arouse 200.
 
 To decide which number is the original price of (C - a vibrator):
-	decide on 4.
+	decide on 2.
 To decide which number is the raw-masturbation-bonus of (C - a vibrator):
 	decide on 3.
 To decide which number is the stimulation of (T - a vibrator) on (F - a body part):

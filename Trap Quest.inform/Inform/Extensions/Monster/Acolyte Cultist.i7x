@@ -237,7 +237,7 @@ To compute perception of (M - an acolyte):
 	otherwise if the pregnancy of the player > 0:
 		say "[speech style of M]'Have you been blessed? You should report downstairs for your veil, it is improper that you maintain individuality.'[roman type][line break]";
 		calm M;
-	otherwise if the player is female and the pregnancy of the player is 0 and pregnancy fetish is 1:
+	otherwise if the player is possessing a vagina and the pregnancy of the player is 0 and pregnancy fetish is 1:
 		say "[speech style of M]'An unbeliever, here! You too must serve the [great ones] with your [if diaper quest is 0]body[otherwise if diaper messing >= 3]bowels[otherwise]bladder[end if]!'[roman type][line break]";
 		anger M;
 	otherwise:
@@ -280,7 +280,7 @@ To compute diaper mess reaction of (M - an acolyte):
 	if voluntarySquatting is 1, humiliate 600.
 
 To say ToiletPeeReaction of (M - an acolyte):
-	say "[BigNameDesc of M] cocks [his of M] head with apparent distaste.[line break][speech style of M]'[if the class of the player is cultist]Fool! How are you serving the Great Ones by doing that?!'[otherwise]This is not how we do things around here. You will learn...'[end if][roman type][line break]".
+	say "[BigNameDesc of M] cocks [his of M] head with apparent distaste.[line break][speech style of M]'[if the class of the player is cultist]Fool! How are you serving the [great ones] by doing that?!'[otherwise]This is not how we do things around here. You will learn...'[end if][roman type][line break]".
 
 To say GroundPeeReaction of (M - an acolyte):
 	if M is intelligent:
@@ -421,10 +421,10 @@ To compute unerect taunting of (M - an acolyte):
 		now penis is penis-erect;[the flavour works better if we do this first.]
 		compute M mounting erection;
 	otherwise if the charge of elder altar <= 0 and M is unfriendly:
-		say "Moments go by in complete silence, save for [FuckerDesc of M]'s hushed chanting, as [he of M] waits for any sign of life from your [player-penis]. You realize your time is up when [FuckerDesc of M]'s attention suddenly shifts away from your junk.[line break][speech style of M]'[one of]Yes. We should have known...'[or]So, useless after all...'[or]Hm. We should make up for lost time...'[or]How disrespectful. You will be made to make up for this...'[in random order][roman type][line break]";
+		say "Moments go by in complete silence, save for [FuckerDesc of M]'s hushed chanting, as [he of M] waits for any sign of life from your [player-penis]. You realise your time is up when [FuckerDesc of M]'s attention suddenly shifts away from your junk.[line break][speech style of M]'[one of]Yes. We should have known...'[or]So, useless after all...'[or]Hm. We should make up for lost time...'[or]How disrespectful. You will be made to make up for this...'[in random order][roman type][line break]";
 		compute ritual dragging of M;[she goes for plan B]
 	otherwise:
-		say "Moments go by in complete silence, save for [FuckerDesc of M]'s hushed chanting, as [he of M] waits for any sign of life from your [player-penis]. You realize your time is up when [FuckerDesc of M]'s attention suddenly shifts away from your junk.[line break][speech style of M]'[one of]It seems... the ritual will have to be postponed.'[or]This is embarrassing for the both of us.'[or]...you're taking too long.'[in random order][roman type][line break][big he of M] turns around in a huff.";
+		say "Moments go by in complete silence, save for [FuckerDesc of M]'s hushed chanting, as [he of M] waits for any sign of life from your [player-penis]. You realise your time is up when [FuckerDesc of M]'s attention suddenly shifts away from your junk.[line break][speech style of M]'[one of]It seems... the ritual will have to be postponed.'[or]This is embarrassing for the both of us.'[or]...you're taking too long.'[in random order][roman type][line break][big he of M] turns around in a huff.";
 		FavourDown M by 2;
 		Bore M.
 
@@ -526,16 +526,27 @@ To compute standard damage of (M - a mindless acolyte):
 			say "The grotesque fish-man seems to take offence at your actions!";
 			now deep one is interested;
 			now deep one is unleashed;
+	otherwise if the times-encountered of deep one is 0:
+		now deep one is unleashed;
+		now deep one is interested;
+		now deep one is in the location of the player;
+		say "An ominous shape appears from behind [if the player is in Mansion23]the altar[otherwise]the cultist[end if]! It seems a horrible creature has come to defend [him of M]!";
 	otherwise:
+		say "You hear a furious roar from another part of the mansion! [BigFuckerDesc of deep one] is on [his of deep one] way!";
 		if deep one is alive:
-			say "You hear a furious roar from another part of the mansion! [BigFuckerDesc of deep one] is on [his of deep one] way!";
 			now deep one is unleashed;
 			now deep one is interested;
 		otherwise:
-			say "An ominous shape appears from behind [if the player is in Mansion23]the altar[otherwise]the cultist[end if]! It seems a horrible creature has come to defend [him of M]!";
 			set up deep one;
 			now deep one is unleashed;
-			now deep one is in the location of the player.
+			let DOR be Mansion01;
+			let D be 0;
+			repeat with R running through discovered unbossed haunted rooms:
+				let X be the distance of R from the location of the player;
+				if X > D:
+					now D is X;
+					now DOR is R;
+			now deep one is in DOR. [the furthest away room]
 
 To say DamageReactHealthy of (M - an acolyte):
 	say "[big he of M] doesn't seem to notice any injury!".
@@ -914,11 +925,11 @@ To penetration dominate (M - an acolyte):
 		moderateHumiliate;
 		now player-fucking is DOMINANT-NEUTRAL;
 	otherwise if F is a thing:
-		say "You feel a strong push from the tentacle near your asshole, forcing you wide open as [NameDesc of M][']s legs wrap around your waist. Your [if the player is possessing a scrotum]balls tighten as it presses insistently against your prostate[otherwise]muscles tighten as it fills you[end if], and you emit a muffled groan as pleasure builds and builds, finally coming to an explosive head as your [SexDesc of penis] fills [NameDesc of M]'s [HoleDesc of M] with your [load]. You can feel the tentacle pulsating wildly, but although it's as humiliating as being inseminated, strangely, it feels like nothing is actually being left inside you.";
+		say "You feel a strong push from the tentacle near your asshole, forcing you wide open as [NameDesc of M][']s legs wrap around your waist. Your [if the player is possessing a scrotum and the player is sexed male]balls tighten as it presses insistently against your prostate[otherwise]muscles tighten as it fills you[end if], and you emit a muffled groan as pleasure builds and builds, finally coming to an explosive head as your [SexDesc of penis] fills [NameDesc of M]'s [HoleDesc of M] with your [load]. You can feel the tentacle pulsating wildly, but although it's as humiliating as being inseminated, strangely, it feels like nothing is actually being left inside you.";
 		strongHumiliate;
 		now player-fucking is DOMINANT-NEUTRAL;
 	otherwise:
-		say "Your mouth is forced into a submissive O-shape as an invisible tentacle forces its way in, and a strong push from the tentacle near your asshole plugs you up from the other side too, totally flipping the power hierarchy upside down. You feel an insistent pressure [if the player is possessing a penis]against your prostate[otherwise]inside[end if] as [NameDesc of M][']s legs wrap around your waist, and you feel your [if the player is possessing a scrotum]balls[otherwise]muscles[end if] tightening as a half-involuntary orgasm boils up from your loins. Waves of pleasure roll through your body as your [SexDesc of penis] explodes, filling [NameDesc of M][']s [HoleDesc of M] with your [load]. You feel the tentacles pulsating wildly as your mouth is flooded with the unmistakable taste of [semen], but strangely, there isn't actually anything there.";
+		say "Your mouth is forced into a submissive O-shape as an invisible tentacle forces its way in, and a strong push from the tentacle near your asshole plugs you up from the other side too, totally flipping the power hierarchy upside down. You feel an insistent pressure [if the player is sexed male]against your prostate[otherwise]inside[end if] as [NameDesc of M][']s legs wrap around your waist, and you feel your [if the player is possessing a scrotum]balls[otherwise]muscles[end if] tightening as a half-involuntary orgasm boils up from your loins. Waves of pleasure roll through your body as your [SexDesc of penis] explodes, filling [NameDesc of M][']s [HoleDesc of M] with your [load]. You feel the tentacles pulsating wildly as your mouth is flooded with the unmistakable taste of [semen], but strangely, there isn't actually anything there.";
 		severeHumiliate;
 		now player-fucking is DOMINANT-SHAMEFUL;
 	FuckGet;
@@ -946,7 +957,7 @@ To facesit dominate (M - an acolyte):[The cultist eats you out herself!]
 		say "Not that you have any idea what [he of M]'s talking about, but you decide not to waste your chance, so you join [him of M] on the ground and wait expectantly.";
 		if belly liquid types > 1:
 			now refractoryperiod is 0;
-			say "[big he of M] crawls behind you, causing you to gasp as [he of M] spreads your [AssDesc] and thrusts [his of M] tongue into your [asshole], stretching your sphincter pleasurably as [he of M] begins to explore your delicate anal passage. [big his of M] nails dig into your [AssDesc] as the horrid mixture of bodily fluids trapped inside you touches [his of M] tongue. You hear a blood-curdling slurping noise as [his of M] lips suddenly flatten around your hole, and [his of M] tongue begins moving around inside of you with such reach and dexterity that you're forced to wonder if it's still attached to a human. The violation doesn't stop there, [his of M] grip tightening as [his of M] tongue begins to relentlessly stroke your prostate, causing you to shiver with equal parts fear and pleasure as you accept the inevitable.[line break]";
+			say "[big he of M] crawls behind you, causing you to gasp as [he of M] spreads your [AssDesc] and thrusts [his of M] tongue into your [asshole], stretching your sphincter pleasurably as [he of M] begins to explore your delicate anal passage. [big his of M] nails dig into your [AssDesc] as the horrid mixture of bodily fluids trapped inside you touches [his of M] tongue. You hear a blood-curdling slurping noise as [his of M] lips suddenly flatten around your hole, and [his of M] tongue begins moving around inside of you with such reach and dexterity that you're forced to wonder if it's still attached to a human. The violation doesn't stop there, [his of M] grip tightening as [his of M] tongue begins to relentlessly stroke your [if the player is sexed male]prostate[otherwise]inner walls[end if], causing you to shiver with equal parts fear and pleasure as you accept the inevitable.[line break]";
 			now player-fucking is DOMINANT-NONE;
 			anally orgasm shamefully;
 			say "[line break]Satisfied, [big he of M] finally removes [his of M] tongue and swallows the last of your anal contents in one gulp. At least you got clean...";

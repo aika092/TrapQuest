@@ -145,7 +145,7 @@ To compute stunning attack of (M - deep one):
 		let C be a random worn removable cursable gluable wearthings;
 		if C is clothing and C is not glued:
 			say "Some of the slime lands on your [ShortDesc of C], causing it to adhere to you like glue!";
-			now C is glued;
+			gluify C;
 			force clothing-focus redraw;
 	otherwise:
 		say "You narrowly avoid being hit.";]
@@ -204,10 +204,10 @@ To say CreampieFlav of (M - deep one) in (F - a fuckhole):
 		severeHumiliate.
 
 To say MessyPullOutFlav of (M - deep one) in (F - a fuckhole):
-	say "[one of][BigNamedesc of M] suddenly pulls out, spraying your [variable F] with [semen].[or][BigNameDesc of M] suddenly decides to pull out, spraying your [variable F] with fresh [semen].[or][BigNameDesc of M] suddenly decides not to creampie you, allowing [his of M] load to spray out all over your [variable F].[at random]".
+	say "[one of][BigNameDesc of M] suddenly pulls out, spraying your [variable F] with [semen].[or][BigNameDesc of M] suddenly decides to pull out, spraying your [variable F] with fresh [semen].[or][BigNameDesc of M] suddenly decides not to creampie you, allowing [his of M] load to spray out all over your [variable F].[at random]".
 
 To say PullOutFlav of (M - deep one) in (F - a fuckhole):
-	say "[one of][BigNamedesc of M] suddenly pulls out, spraying [his of M] [semen] all over the floor.[or][BigNameDesc of M] suddenly decides to pull out, allowing [his of M] [semen] to shoot out on the floor.[or][BigNameDesc of M] suddenly decides not to pull out, allowing [his of M] load to shoot out on the floor.[at random]".
+	say "[one of][BigNameDesc of M] suddenly pulls out, spraying [his of M] [semen] all over the floor.[or][BigNameDesc of M] suddenly decides to pull out, allowing [his of M] [semen] to shoot out on the floor.[or][BigNameDesc of M] suddenly decides not to pull out, allowing [his of M] load to shoot out on the floor.[at random]".
 
 To say CondomPieFlav of (M - deep one) in (F - a fuckhole):
 	say "[one of][BigNameDesc of M] makes a deep, guttural noise, slamming [his of M] [DickDesc of M] home as [he of M] fills the condom with [semen].[or]A deep, guttural noise comes from [NameDesc of M][']s throat as [he of M] ejaculates into the condom![or]You hear a deep, guttural noise from behind you as [NameDesc of M] ejaculates, filling the condom with fresh [semen].[or][BigNameDesc of M] tightens [his of M] grip, emitting a deep, guttural noise as [his of M] [semen] slowly fills the condom.[at random] [if the player is not ashamed]Fear pierces your body as you suddenly answer [his of M] call, croaking like some demented frog[otherwise if the player is not shameless]Confusion and disbelief assault your mind as you suddenly answer [his of M] call, croaking like a frog[otherwise]You immediately answer with a call of your own, croaking like an obedient little mate[end if] as [he of M] pulls out and returns to [his of M] feet.";
@@ -257,6 +257,14 @@ To say BanishFleeFlav of (M - deep one):
 
 To compute unique banishment of (M - deep one):
 	increase the times-encountered of M by 1.
+
+
+To bore (M - deep one) for (N - a number) seconds:
+	dislodge M;
+	compute common boredom of M for N seconds;
+	now M is uninterested;
+	now the boredom of M is N;
+	now the raw difficulty of M is the starting difficulty of M - the times-encountered of M.
 
 To compute domination interference of (M - a deep one) for (N - a monster):
 	if N is acolyte:

@@ -406,7 +406,7 @@ To compute (M - a mannequin) entering anally:
 		if there is a worn chastity-belt:
 			say "[big he of M] holds you still with [his of M] other hand. It's like [he of M]'s trying to force an anal orgasm out of you!";
 		otherwise if the player is possessing a penis:
-			say "[big he of M] [if there is a worn chastity cage]grasps your testicles with [his of M] other hand, delicately massaging them as [his of M] faux-knuckles bump against your cage. [otherwise if the size of penis > 3]grabs your [ShortDesc of penis] with [his of M] other hand and skilfully begins stroking away. [otherwise]delicately teasing your [ShortDesc of penis] with [his of M] fingertips. [end if][big he of M]'s trying to force an orgasm out of you!";
+			say "[big he of M] [if there is a worn chastity cage and the player is possessing a scrotum]grasps your testicles with [his of M] other hand, delicately massaging them as [his of M] faux-knuckles bump against your cage. [otherwise if there is a worn chastity cage]rubs your cage with [his of M] other hand. [otherwise if the size of penis > 3]grabs your [ShortDesc of penis] with [his of M] other hand and skilfully begins stroking away. [otherwise]delicately teasing your [ShortDesc of penis] with [his of M] fingertips. [end if][big he of M]'s trying to force an orgasm out of you!";
 		otherwise if the player is possessing a vagina:
 			say "[unless the player is pussy protected]With [his of M] other hand [he of M] starts expertly pinching and rubbing your clitoris. [end if][big he of M]'s trying to force an orgasm out of you!";
 		otherwise:

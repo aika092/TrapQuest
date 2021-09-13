@@ -139,8 +139,8 @@ To compute interaction of (M - a staff member):
 To compute (M - a staff member) protecting against (X - nurse): [The nurse assaults the player on the bed, and this shouldn't upset the staff!]
 	if armband is not worn, compute M protecting against headmistress. [There's a rebellion afoot!]
 
-To compute (M - a staff member) seeking (D - a direction): [Staff members don't stalk the player around the school.]
-	if M is friendly and the player is not in danger:
+To compute (M - a staff member) seeking (D - a direction): [Staff members don't stalk the player around the school in normal circumstances.]
+	if (academy-toilet-key is not held or M is not teacher) and M is friendly and the player is not in danger:
 		distract M;
 	otherwise:
 		try M going D;
@@ -437,18 +437,24 @@ To compute potential lesson:
 				try looking;
 				display focus stuff;
 				render buffered stuff;
-				if the wont-change of nurse > 0, decrease the wont-change of nurse by 1;
-				if predicamentJustDone is true and (class-time is 1000 or class-time < 0), now predicamentJustDone is false;
+				compute early lesson progression stuff;
 				compute teaching of chosen-lesson;
-				increase totalLessonCount by 1;
-				now class-time is lessonFrequency;
-				[let B be (the rank of the player * 3) - the bimbo of the player;
-				if B > 0, increase class-time by B * 60;] [Lessons are spaced further apart if the player isn't slutty enough for them]
-				if the breast-enhancement of nurse is not 0:
-					decrease the breast-enhancement of nurse by 1; [If the player has had a lesson since they were instructed to get a breast enhancement, this should end that side-quest.]
-					if the breast-enhancement of nurse is 0, say "[bold type]You realise that you should now be able to visit the nurse again without [him of the nurse] giving you a breast enhancement.[roman type][line break]";
+				compute late lesson progression stuff;
 			otherwise:
 				say "Your rank is [accessory-colour of armband], so there's no lesson for you here.".
+
+To compute early lesson progression stuff:
+	if the wont-change of nurse > 0, decrease the wont-change of nurse by 1;
+	if predicamentJustDone is true and (class-time is 1000 or class-time < 0), now predicamentJustDone is false.
+
+To compute late lesson progression stuff:
+	increase totalLessonCount by 1;
+	now class-time is lessonFrequency;
+	[let B be (the rank of the player * 3) - the bimbo of the player;
+	if B > 0, increase class-time by B * 60;] [Lessons are spaced further apart if the player isn't slutty enough for them]
+	if the breast-enhancement of nurse is not 0:
+		decrease the breast-enhancement of nurse by 1; [If the player has had a lesson since they were instructed to get a breast enhancement, this should end that side-quest.]
+		if the breast-enhancement of nurse is 0, say "[bold type]You realise that you should now be able to visit the nurse again without [him of the nurse] giving you a breast enhancement.[roman type][line break]".
 
 To compute teaching of (L - an object):
 	say "BUG - Tried to compute teaching of [L], but it doesn't exist.".
@@ -488,7 +494,9 @@ To compute solo lesson:
 	otherwise if M is yourself:
 		say "Your rank is [accessory-colour of armband], so there's no lesson for you here.";
 	otherwise:
-		compute solo lesson of M.
+		compute early lesson progression stuff;
+		compute solo lesson of M;
+		compute late lesson progression stuff.
 
 To compute solo lesson of (M - staff member):
 	repeat with X running through monsters in lesson-room:
@@ -739,7 +747,7 @@ To execute (A - new-fuckhole-assembly):
 locked-toilets is initially false.
 locked-toilets-assembly is an assembly.
 Definition: locked-toilets-assembly is eligible:
-	if headmistress is alive and headmistress is undefeated and watersports mechanics is 1 and (diaper quest is 0 and the player is a june 2021 top donator) or (diaper quest is 1 and the player is a june 2021 diaper donator):
+	if locked-toilets is false and headmistress is alive and headmistress is undefeated and watersports mechanics is 1 and (diaper quest is 0 and the player is a june 2021 top donator) or (diaper quest is 1 and the player is a june 2021 diaper donator):
 		repeat with R running through academic rooms:
 			if the urine-puddle of R > 0, decide yes;
 	decide no.
@@ -754,6 +762,23 @@ To execute (A - locked-toilets-assembly):
 	repeat with R running through academic rooms:
 		if the urine-puddle of R > 0, now L is R;
 	say "[speech style of headmistress]'It has come to my attention that a puddle of urine was found in the [L]. It would appear that the pupils in this school are in need of some serious bladder training. Therefore, henceforth, until we determine once and for all which of you can hold in your pee and which of you are naughty wetters, using the toilet is a privilege. The toilets will be locked, and you will have to come to me to ask for the key to use them. Furthermore, you must bring a teacher with you when you use the toilet, to act as a witness and to retrieve the toilet key when you are finished. Is that clear?'[roman type][line break]Everyone murmurs assent. Twirling the solitary toilet key on its key ring around [his of headmistress] index finger, [NameDesc of headmistress] marches from the hall.".
+
+Report going when the player is in School10:
+	if locked-toilets is false and watersports mechanics is 1: [this is how we get a urine puddle in the first place]
+		let ST be a random student in School10;
+		if ST is nothing, now ST is a random student in School05;
+		if ST is student and the current-rank of ST > a random number between 1 and 2:
+			if ST is ditzy student or (diaper quest is 1 and ST is innocent student) or (diaper quest is 0 and ST is nasty student):
+				if ST is in School05, try ST going south;
+				if ST is innocent student:
+					say "[BigNameDesc of ST] is rushing to remove [his of ST] clothes.[line break][speech style of ST]'No no no no no!'[roman type][line break][BigNameDesc of ST] hasn't made it in time, and soils [himself of ST]. There's so much pee that some leaks through the legholes to the ground. [big he of ST] clenches [his of ST] eyes shut and looks away from you.[line break][speech style of ST]'This never happened, okay?'[roman type][line break]";
+				otherwise if ST is nasty student:
+					say "[BigNameDesc of ST] pulls [his of ST] pussy-flaps open and bucks [his of ST] hips towards you as [he of ST] unleashes a big stream of piss onto the floor.[line break][speech style of ST]'Clean that up me, skank.'[roman type][line break][big he of ST] gives you the middle finger and turns back towards the door.";
+				otherwise:
+					say "[BigNameDesc of ST] suddenly starts urinating. There's so much that it [if diaper quest is 1]leaks and [end if]flows down to the ground, creating a big puddle. [BigNameDesc of ST] just shrugs.[line break][speech style of ST]'Oh well!'[roman type][line break][big he of ST] gives you a shameless, carefree grin and turns to leave.";
+				UrinePuddleUp 6;
+				distract ST;
+				now ST is moved.
 
 To check school toilet supervision:
 	let M be a random undefeated staff member in the location of the player;
@@ -800,12 +825,12 @@ To check school toilet supervision:
 								compute swirlie of M;
 							otherwise:
 								now X is in the location of the player;
-								say "[speech style of M]'MISS! MISS! Come quick! [NameBimbo] is using the toilet without a teacher!!!'[roman type][line break]Before you have time to lock the toilet back up, [X] has come running and caught you red handed with the key in your hand and the recently flushed toilet behind you.[line break][speech style of M]'It's detenion for you, you naughty minx!'[roman type][line break]";
+								say "[speech style of M]'MISS! MISS! Come quick! [NameBimbo] is using the toilet without a teacher!'[roman type][line break]Before you have time to lock the toilet back up, [X] has come running and caught you red-handed holding the key, with the recently flushed toilet behind you.[line break][speech style of M]'It's detention for you, you naughty minx!'[roman type][line break]";
 								compute detention of X;
 				otherwise: [needs to pee too]
 					now M is interested;
 					if M is friendly:
-						say "[speech style of M]'You have the key?! Please, I need to go too!'[roman type][line break]";
+						say "[speech style of M]'You have the key?! [big please], I need to go too!'[roman type][line break]";
 						reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 						set numerical response 1 to "Let [him of M] have the key.";
 						set numerical response 2 to "Let [him of M] use the toilet, but keep the key and force [him of M] to use the toilet in front of you.";
@@ -825,7 +850,7 @@ To check school toilet supervision:
 							if X is teacher and there is an appropriate eligible team-predicament:
 								now X is in School05;
 								try X going south;
-								say "[X] has caught [NameDesc of M] using the toilet![line break][speech style of X]'What's this?! You know you aren't allowed to use the toilet without supervision! And [NameBimbo], what are you doing holding the key? You're both in on this, aren't you! It's detention for you both!'[line break][speech style of M]'What?! No, please no!'[roman type][line break]But there's nothing [NameDesc of M] can do to prevent [himself of M] from being dragged out into the hallway and towards the reception, along with you.";
+								say "[X] has caught [NameDesc of M] using the toilet![line break][speech style of X]'What's this?! You know you aren't allowed to use the toilet without supervision! And [NameBimbo], what are you doing holding the key? You're both in on this, aren't you! It's detention for you both!'[line break][speech style of M]'What?! No, [please] no!'[roman type][line break]But there's nothing [NameDesc of M] can do to prevent [himself of M] from being dragged out into the hallway and towards the reception, along with you.";
 								compute detention joint predicament of X with M;
 						otherwise:
 							HappinessDown M by 2;
@@ -1089,7 +1114,7 @@ To compute remedial detention of (M - a staff member):
 	drag to School13 by M;
 	say "[speech style of M]'[if the health of M < the maxhealth of M]Clearly you need extra curriculum if you believe you have the time to be aggressive with teachers[otherwise]If you can't get to class on time then you'll have to catch up the hard way[end if]. Sit.'[roman type][line break][big he of M] points to the chair in the centre of the room.";
 	say "[if the delicateness of the player > 10]You crawl over to the [detention chair] and pull yourself into it[otherwise if the delicateness of the player > 4][BigNameDesc of M] drags you over to the [detention chair] and waits as you obediently pull yourself into it[otherwise][BigNameDesc of M] drags you over to the [detention chair], cruelly pinching your ear until you pull yourself into it[end if]. [big he of M] quickly straps you in place as a giant screen slowly lowers from the ceiling.[line break][speech style of M]'[one of]This is an advanced class, for YOUR benefit. Pay attention.[or]Pay attention this time.'[stopping][roman type][line break][big he of M] slides a pair of headphones into place over your ears, quickly leaving the room as the screen flickers to life and a [one of]syncopated[or]familiar[stopping] rhythm begins playing.";
-	if diaper quest is 0, say "A large, well-lit room fades onto the screen, and the music's volume slowly rises as a gorgeous [if tg fetish > 0]transsexual [end if]pornstar struts in from out of frame, wearing a form-fitting latex dress.[line break][first custom style]'Welcome to my classroom, students. Shut off your minds and let your bodies pay attention, girls.'[roman type][line break]The pulsing, rhythmic effect of the music creates a hypnotic swirling effect that burns itself into your vision, and you suddenly realise how [if the player is possessing a penis]hard[otherwise if the player is possessing a vagina]wet[otherwise]horny[end if] you've gotten as the screen fades to black and 'Chapter 1' appears in the centre of the frame. You have no choice but to fight off the hypnosis until you're released!";
+	if diaper quest is 0, say "A large, well-lit room fades onto the screen, and the music's volume slowly rises as a gorgeous [if tg fetish > 0]transsexual [end if]pornstar struts in from out of frame, wearing a form-fitting latex dress.[line break][first custom style]'Welcome to my classroom, students. Shut off your minds and let your bodies pay attention, girls.'[roman type][line break]The pulsing, rhythmic effect of the music creates a hypnotic swirling effect that burns itself into your vision, and you suddenly realise how [if the player is solely possessing a penis]hard[otherwise if the player is solely possessing a vagina]wet[otherwise]horny[end if] you've gotten as the screen fades to black and 'Chapter 1' appears in the centre of the frame. You have no choice but to fight off the hypnosis until you're released!";
 	otherwise say "PLACEHOLDER";
 	compute mandatory room leaving of M;
 	now M is in Holding Pen;

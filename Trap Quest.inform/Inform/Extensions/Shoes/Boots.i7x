@@ -78,7 +78,7 @@ To say UniqueShortDesc of (H - a thigh high boots):
 To decide which number is the unique outrage of (C - a thigh high boots):
 	decide on 1.
 
-latex-thigh-high-boots is a thigh high boots. The text-shortcut of latex-thigh-high-boots is "lth".
+latex-thigh-high-boots is a thigh high boots. latex-thigh-high-boots is latex. The text-shortcut of latex-thigh-high-boots is "lth".
 
 Figure of latex thigh boots is the file "Items/Clothes/Lower/Feet/Boots/thighboots1.png".
 

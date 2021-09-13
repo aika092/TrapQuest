@@ -29,7 +29,8 @@ To compute unique recycling of (C - flower hairclip):
 
 To compute class outfit of (H - flower hairclip):
 	class summon reinforced warrior chestpiece;
-	class summon gown-of-purity.
+	class summon gown-of-purity;
+	LabiaUp 1 with comment.
 
 To compute virginity-loss of (H - flower hairclip):
 	say "As the [H] falls from your hair, you feel [if the virgin bonus of the player < 0]even more of [end if]your strength ripped from you.";

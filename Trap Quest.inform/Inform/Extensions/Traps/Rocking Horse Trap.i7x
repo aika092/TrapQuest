@@ -44,10 +44,9 @@ To trigger (Y - a rocking horse):
 	now Y is revealed;
 	if Y is grabbing the player:
 		say "You clamber up onto the rocking horse[if the body soreness of the player > 0] to rest and recover[end if]. ";
-		let T be a random off-stage tiara;
-		if T is actually summonable:
-			summon T cursed;
-			say "As you do, a [ShortDesc of T] appears on your head!";
+		if silver-tiara is actually summonable and silver-tiara is off-stage:
+			summon silver-tiara cursed;
+			say "As you do, a [ShortDesc of silver-tiara] appears on your head!";
 	otherwise:
 		say "A giant large wooden rocking horse shoots out from the ground beneath you, [if the player is prone]forcing you upright and [end if]pulling you up until your feet aren't touching the floor. ";
 	say "Some kind of magic force seems to keep your butt glued to the saddle! Looks like you're going to have to [bold type]rock[roman type] yourself until it's happy to let you down!";

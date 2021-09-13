@@ -30,6 +30,16 @@ To uniquely set up (S - a suspenders):
 To set up influence of (C - a suspenders):
 	set up random-based influence of C.
 
+To set up magic attribute of (H - a suspenders):
+	let R be a random number between 1 and 7;
+	if R is 1:
+		now H is speed;
+		if a random number between 0 and diaper quest is 1, now H is maturity;
+	if R is 2, now H is dominance;
+	if R is 4 and diaper lover > 0:
+		now H is bed wetting;
+		curse H.
+
 To restock (C - a suspenders):
 	let B be a random basic loot suspenders;
 	if B is suspenders:
@@ -194,7 +204,7 @@ Definition: demon belt is demonic: decide yes.
 Definition: demon belt is black themed: decide yes.
 
 To decide which number is the original price of (C - demon belt):
-	decide on 10.
+	decide on 5.
 
 living belt of sturdiness is a belt. living belt of sturdiness is unique. living belt of sturdiness is biological. The printed name of living belt of sturdiness is "[clothing-title-before]living belt of sturdiness[clothing-title-after]". The text-shortcut of living belt of sturdiness is "lbs".
 

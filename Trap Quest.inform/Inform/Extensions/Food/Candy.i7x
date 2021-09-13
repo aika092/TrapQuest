@@ -29,6 +29,11 @@ Definition: a candy (called C) is low tier:
 Definition: a candy (called C) is top tier:
 	decide no.
 
+To decide which number is the tradability of (C - a candy):
+	if C is low tier, decide on 1;
+	if C is top tier, decide on 9;
+	decide on 3.
+
 Carry out TQeating candy:
 	allocate 6 seconds;
 	destroy the noun;

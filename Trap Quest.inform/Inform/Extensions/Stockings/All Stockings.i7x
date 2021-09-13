@@ -23,10 +23,14 @@ To decide which number is the hindrance-modifier of (S - a stockings):
 
 To set up magic attribute of (H - a stockings):
 	let R be a random number between 1 and 7;
-	if R is 1, now the magic-type of H is confidence;
-	if R is 2, now the magic-type of H is endurance;
-	if R is 3, now the magic-type of H is posture training;
-	if R is 4, now the magic-type of H is stumbling;
+	if R is 1, now H is confidence;
+	if R is 2, now H is endurance;
+	if R is 3:
+		now H is posture training;
+		if diaper messing >= 4 and a random number between 1 and 2 is 1, now H is desperation;
+	if R is 4:
+		now H is stumbling;
+		if diaper lover > 0 and a random number between 1 and 2 is 1, now H is respiration;
 	if R is 3 or R is 4, curse H.
 
 To set up magic state of (C - a stockings): [Less variance than most items]

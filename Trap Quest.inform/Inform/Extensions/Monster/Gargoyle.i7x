@@ -391,7 +391,7 @@ To say ErectionForceFlav of (M - gargoyle):
 
 To say ErectionUseFlav of (M - gargoyle):
 	if the size of penis > 8 and lady fetish < 2:[boobjob!]
-		say "[one of][BigNameDesc of M] pumps your [ShortDesc of penis] with [his of M] breasts, grunting ravenously as [his of M] tongue strokes your throbbing length.[or][BigNameDesc of M] drools as [his of M] tongue swirls around your tip, mixing with a bit of your own 'drool' to lubricate the [ShortDesc of penis] sandwiched between [his of M] jiggling breasts.[or][BigNameDesc of M] makes noisy slurping noises as [he of M] works your [ShortDesc of penis], lubricating [his of M] breasts with tiny bits of drool as they skilfully massage your shaft.[or][BigNameDesc of M][']s breasts bump your sack as [he of M] works your [manly-penis], torturing the tip with practised movements of [his of M] tongue and lips.[at random]";
+		say "[one of][BigNameDesc of M] pumps your [ShortDesc of penis] with [his of M] breasts, grunting ravenously as [his of M] tongue strokes your throbbing length.[or][BigNameDesc of M] drools as [his of M] tongue swirls around your tip, mixing with a bit of your own 'drool' to lubricate the [ShortDesc of penis] sandwiched between [his of M] jiggling breasts.[or][BigNameDesc of M] makes noisy slurping noises as [he of M] works your [ShortDesc of penis], lubricating [his of M] breasts with tiny bits of drool as they skilfully massage your shaft.[or][BigNameDesc of M][']s breasts [if the player is possessing a scrotum]bump your sack[otherwise]encircle your shaft[end if] as [he of M] works your [manly-penis], torturing the tip with practised movements of [his of M] tongue and lips.[at random]";
 		cutshow Figure of gargoyle BJ 3 for M;
 	otherwise if the size of penis > 2:
 		say "[one of][BigNameDesc of M] slurps away at your [ShortDesc of penis], teasing your most sensitive parts with [his of M] tongue.[or][BigNameDesc of M] mercilessly pleasures you with [his of M] tongue, wings flapping excitedly as [his of M] lips fervently stroke the base of your [manly-penis].[or][BigNameDesc of M] sucks relentlessly, drool leaking out the side of [his of M] mouth as [he of M] lavishes you with expert stimulation from [if the player is possessing a scrotum]balls[otherwise]base[end if] to tip.[or][BigNameDesc of M] hums as [he of M] suckles your [ShortDesc of penis], [if mythical creature fetish is 1]sounding very much like a starved animal in the middle of a meal[otherwise]as if your shaft were the most delicious thing in the entire world[end if].[or][BigNameDesc of M] swirls [his of M] tongue around your tip as [he of M] mercilessly pumps you with [his of M] lips.[at random]";
@@ -439,7 +439,7 @@ To say FriendlyAssholePenetrationFlav of (M - gargoyle):
 
 To say AssholePenetrationFlav of (M - gargoyle):
 	let OF be the openness of asshole - the girth of M;
-	say "[BigNameDesc of M] jumps ontop of you, [his of M] [if lady fetish is 2]muscular torso[otherwise]huge breasts[end if] pressing against your body as [his of M] scaly tail slithers between your legs.";
+	say "[BigNameDesc of M] jumps on top of you, [his of M] [if lady fetish is 2]muscular torso[otherwise]huge breasts[end if] pressing against your body as [his of M] scaly tail slithers between your legs.";
 	now the tail-depth of M is 0;
 	now M is penetrating asshole;
 	if the class of the player is living sex doll:
@@ -486,13 +486,13 @@ To compute anal sex of (M - gargoyle):
 			increase the tail-depth of M by N;
 			say "[big he of M] speeds up little by little, [if N is 1]pushing a few more inches up your [asshole] as [he of M] begins to fuck you for real.[otherwise][his of M] tail thoroughly filling up your [asshole] as [he of M] begins to fuck you for real.[end if]";
 	otherwise if the tail-depth of M is 3:
-		say "[one of][BigFuckerDesc of M] vigorously pumps [his of M] tail in and out of your [asshole].[or][BigFuckerDesc of M] continues to plow your [asshole] with [his of M] powerful tail.[or]The tip of [FuckerDesc of M]'s tail [if the player is possessing a penis]taps your prostate[otherwise]teases you from the inside[end if] as [he of M] thrusts in and out of your [asshole].[in random order]";
+		say "[one of][BigFuckerDesc of M] vigorously pumps [his of M] tail in and out of your [asshole].[or][BigFuckerDesc of M] continues to plow your [asshole] with [his of M] powerful tail.[or]The tip of [FuckerDesc of M]'s tail [if the player is sexed male]taps your prostate[otherwise]teases you from the inside[end if] as [he of M] thrusts in and out of your [asshole].[in random order]";
 		if L > the girth of M:
 			let N be a random number between 1 and 2;
 			increase the tail-depth of M by N;
 			say "More and more of [his of M] tail enters you with every thrust, [if N is 1]slowly but surely filling up your [asshole] completely,[otherwise]and even when the pounding stops going deeper, it still gets harder. Way harder.[end if]";
 	otherwise if the tail-depth of M is 4:
-		say "[one of]You can feel [FuckerDesc of M]'s tail reaching deep into your [asshole] as [he of M] pounds you with powerful thrusts.[or][BigFuckerDesc of M]'s tail continues to plow your [asshole] with deep thrusts.[or][BigFuckerDesc of M]'s tail [if the player is possessing a penis]massages your prostate[otherwise]strokes you from the inside[end if] as [he of M] thrusts it in and out of your [asshole].[or][BigFuckerDesc of M]'s tail [if the player is possessing a penis]rubs against your prostate[otherwise]strokes you from the inside[end if] as [he of M] pumps it in and out of your [asshole].[in random order]";
+		say "[one of]You can feel [FuckerDesc of M]'s tail reaching deep into your [asshole] as [he of M] pounds you with powerful thrusts.[or][BigFuckerDesc of M]'s tail continues to plow your [asshole] with deep thrusts.[or][BigFuckerDesc of M]'s tail [if the player is sexed male]massages your prostate[otherwise]strokes you from the inside[end if] as [he of M] thrusts it in and out of your [asshole].[or][BigFuckerDesc of M]'s tail [if the player is sexed male]rubs against your prostate[otherwise]strokes you from the inside[end if] as [he of M] pumps it in and out of your [asshole].[in random order]";
 		if L > the girth of M:
 			now the tail-depth of M is 5;
 			say "[big his of M] tail finally stops pushing deeper, but continues to pound you harder and harder. [big he of M]'s really enjoying [himself of M] now!";
@@ -507,7 +507,7 @@ To say sexDollFlav of (M - gargoyle) in (F - asshole):
 	say "[one of]Your [asshole] squeals like a stuck piglet as [FuckerDesc of M] fucks you with [his of M] tail[or]Your [asshole] squeaks ridiculously as [FuckerDesc of M] fucks you with [his of M] tail.[or][BigFuckerDesc of M] produces faint squeaking noises as [he of M] pumps [his of M] tail in and out of your rubberised [asshole].[in random order]".
 
 To say sexDumbFlav of (M - gargoyle) in (F - asshole):
-	say "[one of][BigFuckerDesc of M] fiercely slams [his of M] tail in and out of your [asshole]![or][BigFuckerDesc of M]'s tail [if the player is possessing a penis]mercilessly tortures your prostate[otherwise]grinds against your inner walls[end if] as [he of M] slams it in and out of your [asshole]![or][if lady fetish is 2][BigFuckerDesc of M]'s muscles ripple[otherwise][BigFuckerDesc of M]'s breasts jiggle[end if] as [he of M] slams [his of M] tail in and out of your [asshole]![in random order]".
+	say "[one of][BigFuckerDesc of M] fiercely slams [his of M] tail in and out of your [asshole]![or][BigFuckerDesc of M]'s tail [if the player is sexed male]mercilessly tortures your prostate[otherwise]grinds against your inner walls[end if] as [he of M] slams it in and out of your [asshole]![or][if lady fetish is 2][BigFuckerDesc of M]'s muscles ripple[otherwise][BigFuckerDesc of M]'s breasts jiggle[end if] as [he of M] slams [his of M] tail in and out of your [asshole]![in random order]".
 
 To say sexDumbNearingClimax of (M - gargoyle) in (F - asshole):
 	say "[BigFuckerDesc of M] seems to be slowing down... Is [he of M] getting bored?".

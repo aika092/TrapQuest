@@ -120,7 +120,10 @@ To set up magic attribute of (B - a bra):
 	if R is 3:
 		now B is temptation;
 		if diaper quest is 1, now B is respiration;
-	if R is 4 and lactation fetish is 1, now B is milk production;
+	if R is 4:
+		if diaper messing >= 4, now B is desperation;
+		if lactation fetish is 1, now B is milk production;
+	if R is 5 and the initial outrage of B < 5, now B is provocation;
 	if R > 6 and B is fully exposing, now B is protection;
 	if R is 3 or R is 4, now B is cursed;
 	if B is uncovered themed and a random number between 1 and 10 is 1:
@@ -333,7 +336,7 @@ To say ShortDesc of (B - a bikini top):
 	say "bikini top".
 
 To decide which object is the unique-upgrade-target of (C - a bikini top):
-	if cow print bikini top is off-stage and the lactation rate of the player > a random number between 0 and 4, decide on cow print bikini top;
+	if cow print bikini top is off-stage and the lactation rate of breasts > a random number between 0 and 4, decide on cow print bikini top;
 	decide on nothing.
 
 Bra Framework ends here.

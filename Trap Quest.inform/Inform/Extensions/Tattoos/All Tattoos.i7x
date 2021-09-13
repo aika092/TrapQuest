@@ -431,14 +431,14 @@ Definition: black hole tattoo is drawable:
 	if it is eligible, decide yes;
 	decide no.
 Definition: black hole tattoo is eligible:
-	if interracial fetish is 1 and the player is female and (the noun is interracial themed or the noun is vagina themed), decide yes;
-	if (interracial fetish is 0 or the player is male) and the noun is food themed, decide yes;
+	if interracial fetish is 1 and the player is possessing a vagina and (the noun is interracial themed or the noun is vagina themed), decide yes;
+	if (interracial fetish is 0 or the player is not possessing a vagina) and the noun is food themed, decide yes;
 	decide no.
 To say tattoo-desc of (T - black hole tattoo):
-	say "[if the player is female and interracial fetish is 1]The words [i]black hole[/i] are tattooed above your belly button, with a large arrow pointing toward your crotch. You feel like it's making the point that your [vagina] should be used exclusively for black cock![otherwise]The words [i]black hole[/i] are tattooed on your belly, with small arrows pointing to your belly button, indicating that you're a very enthusiastic eater.[end if]".
+	say "[if the player is possessing a vagina and interracial fetish is 1]The words [i]black hole[/i] are tattooed above your belly button, with a large arrow pointing toward your crotch. You feel like it's making the point that your [vagina] should be used exclusively for black cock![otherwise]The words [i]black hole[/i] are tattooed on your belly, with small arrows pointing to your belly button, indicating that you're a very enthusiastic eater.[end if]".
 
 Definition: black hole tattoo is interracial themed:
-	if the player is female, decide yes;
+	if the player is possessing a vagina, decide yes;
 	decide no.
 To decide which object is the concealer of (T - black hole tattoo):
 	decide on a random worn actually dense belly covering clothing.
@@ -1521,9 +1521,9 @@ Definition: in-this-together tattoo is anal sex themed: decide yes.
 Book - J Tattoos
 
 jack-of-spades tattoo is a crotch tattoo. The tattoo-title of jack-of-spades tattoo is "jack of spades".
-Definition: a jack-of-spades tattoo is drawable:
+Definition: jack-of-spades tattoo is drawable:
 	if there is a worn crotch tattoo, decide no;
-	if interracial fetish is 0 or TG fetish > 0 or the player is female, decide no;
+	if interracial fetish is 0 or TG fetish > 0 or the player is possessing a vagina, decide no;
 	decide yes.
 Definition: jack-of-spades tattoo is eligible:
 	if the noun is interracial themed or the noun is chastity bond or the noun is sissifying clothing, decide yes;
@@ -2110,7 +2110,7 @@ To decide which number is the delicateness-influence of (T - property-tattoo):
 pull-to-choke tattoo is a body tattoo. The tattoo-title of pull-to-choke tattoo is "pull to choke".
 Definition: pull-to-choke tattoo is drawable:
 	if diaper quest is 1 or pull-to-choke tattoo is worn, decide no;
-	if the player is female, decide yes;
+	if the player is possessing a vagina, decide yes;
 	decide no.
 Definition: pull-to-choke tattoo is eligible:
 	if the noun is necklace or the noun is neckwear, decide yes;
@@ -2311,9 +2311,9 @@ Definition: refugees welcome tattoo is eligible:
 	if the noun is interracial themed, decide yes;
 	decide no.
 To say tattoo-desc of (T - refugees welcome tattoo):
-	say "The words 'refugees welcome' are inked above your [genitals][if the player is not possessing a vagina]. It doesn't seem to do much right now[otherwise if T is not currently visible]. It feels like it wants to be kept on display[end if].[line break][variable custom style][if the bbc addiction of the player < 6]That's a political statement, right? Not a fetish thing. Oh god...[otherwise if the bbc addiction of the player < 9]I love [BlackCock] as much as the next [boy of the player], but that's still a pretty insensitive slogan...[otherwise]The more the merrier![end if][roman type][line break]".
+	say "The words 'refugees welcome' are inked on your left breast.[line break][variable custom style][if the bbc addiction of the player < 6]That's a political statement, right? Not a fetish thing. Oh god...[otherwise if the bbc addiction of the player < 9]I love [BlackCock] as much as the next [boy of the player], but that's still a pretty insensitive slogan...[otherwise]The more the merrier![end if][roman type][line break]".
 To decide which number is the initial outrage of (T - refugees welcome tattoo):
-	decide on 4.
+	decide on 7.
 Definition: refugees welcome tattoo is interracial themed: decide yes.
 
 respect the pussy tattoo is a crotch tattoo. The tattoo-title of respect the pussy tattoo is "respect the pussy".
@@ -2521,7 +2521,7 @@ slut for black cock tattoo is a crotch tattoo. The tattoo-title of slut for blac
 Definition: slut for black cock tattoo is drawable:
 	if there is a worn crotch tattoo, decide no;
 	if interracial fetish is 0, decide no;
-	if the player is female, decide yes;
+	if the player is possessing a vagina, decide yes;
 	decide no.
 Definition: slut for black cock tattoo is eligible:
 	if the noun is interracial themed or the noun is penis themed, decide yes;
@@ -3026,7 +3026,7 @@ Definition: unicorn-horn-finger tattoo is horse themed: decide yes.
 Book - V Tattoos
 
 VIP pussy tattoo is a crotch tattoo. The tattoo-title of VIP pussy tattoo is "VIP pussy".
-Definition: a VIP pussy tattoo is drawable:
+Definition: VIP pussy tattoo is drawable:
 	if there is a worn crotch tattoo, decide no;
 	if diaper quest is 1, decide no;
 	if the player is not possessing a vagina and TG fetish is 0, decide no;

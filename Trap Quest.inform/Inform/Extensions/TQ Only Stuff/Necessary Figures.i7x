@@ -632,7 +632,7 @@ To decide which figure-name is the examine-image of (T - black cock only tattoo)
 Figure of black hole belly-tattoo is the file "Items/Tats/tattoo105.jpg".
 Figure of black hole tattoo is the file "Items/Tats/tattoo106.jpg".
 To decide which figure-name is the examine-image of (T - black hole tattoo):
-	if the player is female and interracial fetish is 1, decide on figure of black hole tattoo;
+	if the player is possessing a vagina and interracial fetish is 1, decide on figure of black hole tattoo;
 	decide on figure of black hole belly-tattoo.
 
 Figure of black owned tattoo is the file "Items/Tats/tattoo53.jpg".

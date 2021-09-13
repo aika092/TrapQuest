@@ -88,6 +88,10 @@ Definition: yourself is possessing a penis:
 	if the size of penis > 0, decide yes;
 	decide no.
 
+Definition: yourself is solely possessing a penis:
+	if the player is possessing a penis and the player is not possessing a vagina, decide yes;
+	decide no.
+
 Definition: yourself is really possessing a penis:
 	if the real size of penis > 0, decide yes;
 	decide no.
@@ -166,7 +170,7 @@ Definition: a diaper is potentially erection concealing: decide yes.
 Definition: a clothing is potentially penis concealing:
 	if it is actually dense and it is potentially penis covering and (penis is not penis-erect or the size of penis < 3 or it is potentially erection concealing), decide yes;
 	decide no.
-[Erections can show up as "tents" in skirts or dresses or even less discretely for some tighter clothing. However, as long as the player's penis isn't sticking all the way out (making it uncovered) then the clothing should still count as partial concealment.]
+[Erections can show up as "tents" in skirts or dresses or even less discreetly for some tighter clothing. However, as long as the player's penis isn't sticking all the way out (making it uncovered) then the clothing should still count as partial concealment.]
 Definition: a clothing is potentially at least partially penis concealing:
 	if it is not see-through and it is potentially penis covering, decide yes;
 	decide no.
@@ -260,7 +264,7 @@ Definition: penis is erect-at-will:
 	if the player is very horny, increase A by 1;
 	increase A by the size of penis;[if you're bigger, it's easier to get erect]
 	let D be 0;
-	[###Selkie: Deleted by someone else? if the wanktime of the player > 100, decrease D by the wanktime of the player / 5;[if you came recently, it's harder to get an erection] ###MG: I don't remember if it was me or Aika, but this was commented out around the time of the most recent chastity cage rework.]
+	[if the wanktime of the player > 100, decrease D by the wanktime of the player / 5;[if you came recently, it's harder to get an erection] This was commented out around the time of the most recent chastity cage rework.]
 	decrease D by the penis-obedience of penis;[if you haven't been told to get an erection, it may be harder]
 	decrease D by the anal sex addiction of the player / 2;[your addiction to anal sex also interferes with your erections]
 	let R be a random number between A and D;
@@ -480,7 +484,7 @@ To say TotalDesc of penis:
 			if penis is penis-erect, say "Your [one of]erect[or]hard[or]stiff[at random] [ShortDesc of penis] stands at attention, and your [ShortDesc of scrotum] [if the size of scrotum > 5]sway freely[otherwise if the size of scrotum > 3]hang freely[otherwise]are barely noticeable[end if]. ";
 			otherwise say "Your soft [ShortDesc of penis] and [ShortDesc of scrotum] [if the size of scrotum > 5]sway freely. [otherwise if the size of scrotum > 3]hang freely. [otherwise]are barely noticeable. [end if]";
 	otherwise if the player is sexed male:
-		say "A doll-like flat mound exists where your penis and balls used to be[if players-dick-is-detached is 1 and players-detached-dick is held by the player] attached to you: and you know exactly where they are right now[otherwise if players-dick-is-detached is 1 and players-detached-dick is somewhere-here] attached to you: and you hope you're about to get them back[otherwise if players-dick-is-detached is 1] attached to you: [one of]you're not sure where they are now[or]they've been stolen[or]you need to get them back[at random][end if][if watersports mechanics is 1]. There's just a tiny hole to allow you to pee[end if].". [#LXordDD]
+		say "A doll-like flat mound exists where your penis and balls used to be[if players-dick-is-detached is 1 and players-detached-dick is held by the player] attached to you: and you know exactly where they are right now[otherwise if players-dick-is-detached is 1 and players-detached-dick is somewhere-here] attached to you: and you hope you're about to get them back[otherwise if players-dick-is-detached is 1] attached to you: [one of]you're not sure where they are now[or]they've been stolen[or]you need to get them back[at random][end if][if watersports mechanics is 1]. There's just a tiny hole to allow you to pee[end if].". [#LXorDD]
 
 To say PenisModesty:
 	if penis is at least partially exposed:
@@ -591,7 +595,7 @@ To OnlyPenisDown (X - a number):
 	now previous penis length is the size of penis;
 	let flav-said be 0;
 	if X > 0:
-		if the player is male and the size of penis <= min penis size:
+		if the player is sexed male and the size of penis <= min penis size:
 			if penis-flav is true, say "You feel a strange pang in your crotch... you feel that your penis[if players-dick-is-detached > 0 and players-detached-dick is not in the location of the player], wherever it may be, [end if]tried to shrink even further, but [if the player is not possessing a penis]since you have nothing left, it can't[otherwise if the size of penis < 4]it's so tiny that it can't get any smaller[otherwise]something prevents it[end if]!";
 			now X is 0;
 		while X > 0:
@@ -610,7 +614,7 @@ To OnlyPenisDown (X - a number):
 				SexChange the player;
 			otherwise if the size of penis < previous penis length:
 				let feeling be "Some place, somewhere, you can feel your"; [#LXorDD]
-				if players-detached-dick is somewhere-here, now feeling is "Your";
+				if players-dick-is-detached is 0 or players-detached-dick is somewhere-here, now feeling is "Your";
 				if penis-flav is true, say "[feeling] [one of]penis[or]dick[cycling] [if previous penis length > the size of penis + 2]shrivels[otherwise]shrinks[end if] into a [ShortDesc of penis].";
 			if players-dick-is-detached is 0: [#LXorDD Any worn clothes will only affect the penis if it's attached.]
 				let C be a random worn strapon-panties;

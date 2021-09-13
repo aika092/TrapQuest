@@ -224,7 +224,11 @@ To UnidentifiablePosterReaction of (M - a monster) with (P - a poster):
 	humiliate the lewdness of a random poster in the location of the player.
 
 To say PosterGenitals of (P - a poster):
-	if genitals visible of P is 1 or asshole visible of P is 1, say "Your [if genitals visible of P is 1 and old-penis of P is 1][PenisFlavour old-penislength of P][otherwise if genitals visible of P is 1 and the old-vagina of P is 1][vagina][end if][if genitals visible of P is 1 and asshole visible of P is 1] and [end if][if asshole visible of P is 1][asshole][end if] [if genitals visible of P is 1 and asshole visible of P is 1]are[otherwise]is[end if] fully visible. ".
+	if genitals visible of P is 1 and asshole visible of P is 1:
+		say "Your [if old-penis of P is 1 and old-vagina of P is 1][PenisFlavour old-penislength of P], [vagina],[otherwise if old-penis of P is 1][PenisFlavour old-penislength of P][otherwise if old-vagina of P is 1][vagina][end if] and [asshole] are fully visible. ";
+	otherwise if genitals visible of P is 1 or asshole visible of P is 1:
+		say "Your [if genitals visible of P is 1 and old-penis of P is 1 and old-vagina of P is 1][PenisFlavour old-penislength of P] and [vagina][otherwise if genitals visible of P is 1 and old-penis of P is 1][PenisFlavour old-penislength of P][otherwise if genitals visible of P is 1 and the old-vagina of P is 1][vagina][otherwise if asshole visible of P is 1][asshole][end if] [if genitals visible of P is 1 and old-penis of P is 1 and old-vagina of P is 1]are[otherwise]is[end if] fully visible. ".
+
 
 To say PosterCum of (P - a poster):
 	if old-cumface of P > 0, say "Your face is [if old-cumface of P > 7]caked[otherwise if old-cumface of P > 3]covered[otherwise]splattered[end if] with [semen].";
@@ -281,7 +285,10 @@ To say ExamineDesc of (C - an upskirt poster):
 	if old-father of C is a thing and old-belly of C > 3:
 		say "You are visibly pregnant[if the pregnancy of the player is 0] with [PregGrowth of old-father of C] inside your[otherwise]with a[end if] [if old-belly of C > 5]giant[otherwise]large[end if] belly.";
 	if old-skirt of C is clothing or old-overdress of C is skirted clothing, say "[if old-skirt of C is clothing]Due to your compromising position, your [ShortDesc of old-skirt of C] does nothing to protect your modesty. [otherwise]You are wearing a [ShortDesc of old-overdress of C]. However it does nothing to protect your modesty. [end if]";
-	if genitals visible of C is 1 or asshole visible of C is 1, say "Your [if genitals visible of C is 1 and old-penis of C is 1][PenisFlavour old-penislength of C][otherwise if genitals visible of C is 1 and old-vagina of C is 1][vagina][end if][if genitals visible of C is 1 and asshole visible of C is 1] and [end if][if asshole visible of C is 1][asshole][end if] [if genitals visible of C is 1 and asshole visible of C is 1]are[otherwise]is[end if] fully visible. ";
+	if genitals visible of C is 1 and asshole visible of C is 1:
+		say "Your [if old-penis of C is 1 and old-vagina of C is 1][PenisFlavour old-penislength of C], [vagina],[otherwise if old-penis of C is 1][PenisFlavour old-penislength of C][otherwise if genitals visible of C is 1 and old-vagina of C is 1][vagina][end if] and [asshole] are fully visible. ";
+	otherwise if genitals visible of C is 1 or asshole visible of C is 1:
+		say "Your [if genitals visible of C is 1 and old-penis of C is 1 and old-vagina of C is 1][PenisFlavour old-penislength of C] and [vagina][otherwise if genitals visible of C is 1 and old-penis of C is 1][PenisFlavour old-penislength of C][otherwise if genitals visible of C is 1 and old-vagina of C is 1][vagina][otherwise if asshole visible of C is 1][asshole][end if] [if genitals visible of C is 1 and old-penis of C is 1 and old-vagina of C is 1]are[otherwise]is[end if] fully visible. ";
 	if old-trousers of C is clothing or old-knickers of C is clothing:
 		say "You are wearing a ";
 		if old-trousers of C is clothing:

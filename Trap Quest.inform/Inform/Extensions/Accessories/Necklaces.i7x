@@ -287,7 +287,7 @@ Definition: necktie is tartan themed: decide yes.
 Definition: necktie is pink themed: decide yes.
 
 
-soulstone is a neckwear. Printed name of soulstone is "[clothing-title-before]soulstone[clothing-title-after]". The text-shortcut of soulstone is "so". Understand "swirling", "gem", "amulet", "soul", "stone" as soulstone. soulstone can be soul-embedded or not soul-embedded. soulstone is soul-embedded.
+soulstone is a neckwear. soulstone is unique. Printed name of soulstone is "[clothing-title-before]soulstone[clothing-title-after]". The text-shortcut of soulstone is "so". Understand "swirling", "gem", "amulet", "soul", "stone" as soulstone. soulstone can be soul-embedded or not soul-embedded. soulstone is soul-embedded.
 
 Figure of soulstone is the file "Items/Accessories/Neck/soulstone1.png".
 Figure of embedded soulstone is the file "Items/Accessories/Neck/soulstone2.png".

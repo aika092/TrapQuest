@@ -714,7 +714,7 @@ Section - Unskirted Themed
 Definition: a thing is unskirted themed: decide no. [Is it something that should not be worn at the same time as a skirt?]
 
 Definition: a trousers is unskirted themed: decide yes.
-Definition: a dress is unskirted themed:
+Definition: an overdress is unskirted themed:
 	if it is not no-crotch and it is not skirted, decide yes;
 	decide no.
 

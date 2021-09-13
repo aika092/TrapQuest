@@ -51,7 +51,7 @@ To compute unique recycling of (C - cow-ears):
 To compute class outfit of (H - a cow ears):
 	if the class of the player is catgirl:
 		compute meowcowification;
-	otherwise if the lactation-count of the player >= 10:
+	otherwise if the lactation count of breasts >= 10:
 		class summon cow print basque;
 		now the quest of H is milk-serve-quest;
 	otherwise:

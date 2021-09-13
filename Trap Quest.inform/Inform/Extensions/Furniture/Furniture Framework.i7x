@@ -289,32 +289,44 @@ To compute furniture resting on (G - an automated changing station):
 			if K is locked:
 				now diaperChangeAllowed is 0;
 				say "Nothing happens. Perhaps the robots don't have a way to deal with the lock.";
+		if diaperChangeAllowed is 1:
+			if K is glue:
+				now diaperChangeAllowed is 0;
+				say "Nothing happens. Perhaps the robots don't have a way to deal with the glue.";
 	if diaperChangeAllowed is 1:
-		let D be plain-largish-diaper;
-		if K is knickers:
-			fully clean K;
-			if D is not K, silently transform K into D;
+		if there is a worn currently uncovered diaper and plain-largish-diaper is off-stage and plain-largish-diaper is DQBulkier and the player is getting unlucky:
+			say "Instead of first removing your old diaper, the robotic arms just immediately begin to add the new diaper on top.[line break][second custom style]'ERROR, ERROR, ERROR. DIAPER MISALIGNED. APPLYING SEALANT.'[roman type][line break]A polite female robotic voice speaks loudly and calmly from a speaker above you. Then robotic arms ending in nozzles descend, forcing their way underneath your layers of padding, to apply glue to each layer.";
+			DiaperAdd plain-largish-diaper;
+			gluify diaper-stack;
+			repeat with D running through the list of stacked diapers:
+				gluify D;
+			say "When the wristcuffs release you and the door opens, you are now wearing a [diaper-stack].";
 		otherwise:
-			summon D uncursed;
-		if the player is in a predicament room, now D is predicament-temporary;
-		say "The wristcuffs constrict themselves until you are locked in place. Robotic arms immediately get to work [if K is knickers]removing your [ShortDesc of K] [end if][if K is dirty knickers]and wiping you down [end if]";
-		if the player is not in a predicament room and the player is getting unlucky:
-			say "and... huh?! It seems the robotic arms have decided to do something else before putting a new diaper on you!";
-			let R be a random number between 1 and 3;
-			if R is 1 and asshole is not actually occupied:
-				say "You feel your [asshole] being invaded by an enema nozzle![line break][variable custom style]Uh-oh.[roman type][line break]There's absolutely nothing you can do as your belly is turned into a container for a pint of ice-cold water!";
-				AssFill 10 water;
-			otherwise if R is 2 and the player is able to orgasm:
-				say "A vibrating wand is pressed against your [genitals]! Your arousal quickly goes through the roof as the powerful toy works its magic. You [if the player is not a pervert]hold off for as long as you can but [end if]soon find yourself reaching a shuddering climax!";
-				now player-fucking is DOMINANT-DOMINANT; [prevents ejaculation from being handled]
-				vaginally orgasm shamefully;
-				now player-fucking is DOMINANT-NONE;
+			let D be plain-largish-diaper;
+			if K is knickers:
+				fully clean K;
+				if D is not K, silently transform K into D;
 			otherwise:
-				say "You feel a prick in your side as one of the arms injects you with a needle. What was that?! You feel all... numb... inside. Like you can't feel your bladder?! It seems like [bold type]the changing station has just rendered you temporarily incontinent.[roman type][line break]";
-				increase temporary-incontinence by 2;
-			say "[GotUnluckyFlav][line break]At least the arms seem to be finished with their fun for now. The claws reach down for a clean diaper ";
-		say "and before you know it you are wearing a dry [MediumDesc of D]! The wristcuffs release you and the door opens.";
-		if K is diaper, DiaperAddictUp 1.
+				summon D uncursed;
+			if the player is in a predicament room, now D is predicament-temporary;
+			say "The wristcuffs constrict themselves until you are locked in place. Robotic arms immediately get to work [if K is knickers]removing your [ShortDesc of K] [end if][if K is dirty knickers]and wiping you down [end if]";
+			if the player is not in a predicament room and the player is getting unlucky:
+				say "and... huh?! It seems the robotic arms have decided to do something else before putting a new diaper on you!";
+				let R be a random number between 1 and 3;
+				if R is 1 and asshole is not actually occupied:
+					say "You feel your [asshole] being invaded by an enema nozzle![line break][variable custom style]Uh-oh.[roman type][line break]There's absolutely nothing you can do as your belly is turned into a container for a pint of ice-cold water!";
+					AssFill 10 water;
+				otherwise if R is 2 and the player is able to orgasm:
+					say "A vibrating wand is pressed against your [genitals]! Your arousal quickly goes through the roof as the powerful toy works its magic. You [if the player is not a pervert]hold off for as long as you can but [end if]soon find yourself reaching a shuddering climax!";
+					now player-fucking is DOMINANT-DOMINANT; [prevents ejaculation from being handled]
+					vaginally orgasm shamefully;
+					now player-fucking is DOMINANT-NONE;
+				otherwise:
+					say "You feel a prick in your side as one of the arms injects you with a needle. What was that?! You feel all... numb... inside. Like you can't feel your bladder?! It seems like [bold type]the changing station has just rendered you temporarily incontinent.[roman type][line break]";
+					increase temporary-incontinence by 2;
+				say "[GotUnluckyFlav][line break]At least the arms seem to be finished with their fun for now. The claws reach down for a clean diaper ";
+			say "and before you know it you are wearing a dry [MediumDesc of D]! The wristcuffs release you and the door opens.";
+			if K is diaper, DiaperAddictUp 1.
 
 
 Furniture Framework ends here.

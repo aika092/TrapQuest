@@ -264,12 +264,12 @@ To say SatisfiedFlav of (M - bowsette):
 	say "[BigNameDesc of M] licks [his of M] lips in satisfaction and loses interest.".
 
 To compute kneeling reaction of (M - bowsette):
-	if the temperament of M is 0:[angery]
+	if the temperament of M is 0:[angry]
 		say "[one of][BigNameDesc of M]'s swaggers up to you, spitting out a tiny puff of fire.[or][BigNameDesc of M] grins.[line break][speech style of M]'Ready for my revenge?'[roman type][line break][or][BigNameDesc of M] grins.[line break][speech style of M]'Payback time, slut.'[roman type][line break][or][BigNameDesc of M] swaggers forward, stroking [his of M] hardening [DickDesc of M].[in random order]";
 	otherwise if the temperament of M is 1:[whoreny]
 		say "[one of][BigNameDesc of M]'s licking [his of M] lips as [he of M] stomps up to you.[or][BigNameDesc of M] smirks.[line break][speech style of M]'Ready, cutie?'[roman type][line break][or][BigNameDesc of M] smirks.[line break][speech style of M]'Time to thank you for this body you gave me!'[roman type][line break][or][BigNameDesc of M] steps forward, licking you all over with [his of M] eyes.[in random order]";
 	otherwise:[happy; shouldn't come up too often]
-		say "[one of][BigNameDesc of M]'s prances up to you, pumping a hardening [DickDesc of M].[or][BigNameDesc of M] smiles.[line break][speech style of M]'This will be over before you know it!'[roman type][line break][or][BigNameDesc of M] smiles.[line break][speech style of M]'Lets both enjoy this!'[roman type][line break][in random order]";
+		say "[one of][BigNameDesc of M]'s prances up to you, pumping a hardening [DickDesc of M].[or][BigNameDesc of M] smiles.[line break][speech style of M]'This will be over before you know it!'[roman type][line break][or][BigNameDesc of M] smiles.[line break][speech style of M]'Let's both enjoy this!'[roman type][line break][in random order]";
 	if the player is not shameless, say " You shiver with shame.";
 	strongHumiliate.
 

@@ -303,7 +303,7 @@ To say VagueCringeHumiliation:
 To say VagueCringeAppearance:
 	let B be the saved cringe appearance of the player;
 	if B <= 3:
-		say "[if the player is presenting as male]Man[otherwise if the player is male and the largeness of breasts < 3]Trap[otherwise]Woman[end if]";
+		say "[if the player is presenting as male]Man[otherwise if the player is possessing a penis and the largeness of breasts < 3]Trap[otherwise]Woman[end if]";
 	otherwise if the player is naked and B < 10:
 		say "Nudist";
 	otherwise if B < 6 and the player is presenting as male and (the number of worn clothing - the number of worn manly clothing > 0) and the diaper addiction of the player < 3:

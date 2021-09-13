@@ -146,7 +146,7 @@ To trigger (Y - a glue trap):
 		let C be a random worn removable cursable gluable wearthings;
 		if C is clothing and C is not glued clothing:
 			say "Your [C] is now stuck to you with glue!";
-			now C is glued;
+			gluify C;
 			force clothing-focus redraw;
 		if tough-shit is 1:
 			now G is in the location of the player;
@@ -470,7 +470,7 @@ To compute GlueMorphingInto of (G - a glue) to (C - a clothing):
 		summon C cursed;
 	otherwise:
 		summon C;
-		now C is glued;
+		gluify C;
 	say "The [active-colour of G] glue suddenly starts spreading out across you, rippling as a change runs through it. Before your eyes it transforms into a [printed name of C], tightly wrapping you!";
 	decrease the stickiness of the player by 1;
 	if the stickiness of the player < 1:
@@ -615,7 +615,7 @@ To compute the mutation effects of (G - a glue):
 			if lactation fetish is 0 and X is 1, increase X by a random number between 1 and 2;
 			if X is 1:
 				say "[bold type]Your [BreastDesc] feel more active...[roman type][line break]";
-				increase the lactation rate of the player by 1;
+				increase the lactation rate of breasts by 1;
 			otherwise if X is 2:
 				if the semen taste addiction of the player < 20:
 					say "[one of]You suddenly realise what this glue's interesting smell reminds you of: semen![or]It really does smell like [semen]![stopping] The aroma seems to send tingles from your nose up into your brain. [if the semen taste addiction of the player < 4]Yuk![otherwise if the semen taste addiction of the player < 7]Hmm.[otherwise][one of]You[or]Once again, you[stopping] find yourself licking your lips...[end if]";
@@ -632,7 +632,7 @@ To compute the mutation effects of (G - a glue):
 						if the stomach-water of the player > 0, decrease the stomach-water of the player by 1;
 						SlowUrineTasteAddictUp 1;
 				otherwise if lactation fetish is 1 or extreme proportions fetish is 1:
-					increase the lactation rate of the player by 2;
+					increase the lactation rate of breasts by 2;
 					say "You feel the fumes penetrate your [BreastDesc], which flush with an inner warmth.";
 				otherwise if TG fetish >= 1 and the mystical size of penis > min penis size:
 					SpecialPenisDown 1; [#LXorDD]
@@ -709,7 +709,7 @@ Each time they rub the glue on clothes, the player gets less stuck.
 []
 To compute GlueClothing (C - a clothing) with (G - a glue):
 	allocate 6 seconds;
-	now C is glued;
+	gluify C;
 	if C is worn:
 		if C is diaper:
 			say "[one of]There's a crinkling sound as the glue spreads under your diaper, shrinking the plastic slightly. You feel the edges adhere to your skin, and your eyes widen as you realise what that means - when you need to change them...?[or]You feel glue seep under the elasticated edge of your [ShortDesc of C] and tighten against your skin. Uh-oh![or]There's a crinkly, rustling sound as the glue melts into the [ShortDesc of C], bonding it to your flesh.[i]Now[/i] how will it come off?[as decreasingly likely outcomes]";
@@ -785,7 +785,7 @@ Check GlueRubbing:
 				try GlueRubbing C on the second noun instead;
 [
 		if B is not clothing or B is accessory:
-			say "Now the [B] is glued to you!";
+			say "gluify the [B] to you!";
 			glue B;
 ]
 	if glue-strength of the second noun is 0, destroy the second noun.
@@ -826,14 +826,6 @@ To compute glued reaction of (M - a monster):
 	otherwise:
 		compute correct kneeling reaction of M.
 
-gluePainThreshold is a number that varies.
-glueTries is a number that varies.
-
-A time based rule (this is the glue pain threshold rule):
-	if gluePainThreshold > 0:
-		decrease gluePainThreshold by 1;
-		if gluePainThreshold is 0 and there is worn glued clothing, say "[bold type]You feel brave enough to try and pull the glue off again.[roman type][line break]".
-
 [!<CheckTearingOffWornClothing>+
 
 Used to try to tear off glued worn clothing. If the player is strong enough, they can tear it free - but it will damage the clothing. Tearing it off will also hurt them. They have a chance of doing it without tearing the cloth or hurting themselves if they're dexterous enough. Checks for hands being tied so the clothing is out of reach should have been called before this function, so we don't need to re-test any of that.
@@ -842,76 +834,50 @@ Used to try to tear off glued worn clothing. If the player is strong enough, the
 +!]
 Check tearing off:
 	if the noun is not worn glued clothing, say "That's not [if the noun is not clothing]something you can tear off[otherwise if the noun is not worn]worn[otherwise]glued[end if]." instead;
-	if gluePainThreshold > 0, say "Ow, ow, ow! It hurts too much, the pain is bringing tears to your eyes! You'll have to wait a bit longer before trying this again." instead.
+	if the player is not able to manually use manual dexterity, do nothing instead.
+	[if gluePainThreshold > 0, say "Ow, ow, ow! It hurts too much, the pain is bringing tears to your eyes! You'll have to wait a bit longer before trying this again." instead.]
+
+To decide which number is the glue threshold of (C - a clothing):
+	decide on 450.
+
+To gluify (C - a clothing):
+	now the glue timer of C is the glue threshold of C.
+To ungluify (C - a clothing):
+	now the glue timer of C is 0.
+
+Definition: a clothing is glued rather than unglued:
+	if the glue timer of it > 0, decide yes;
+	decide no.
+
+A time based rule (this is the glue time tick rule):
+	repeat with C running through glued clothing:
+		decrease the glue timer of C by time-seconds;
+		if the glue timer of C <= 0:
+			now the glue timer of C is 0;
+			if C is held or C is in the location of the player:
+				say "[bold type]The glue [if C is worn]holding [NameDesc of C] to you has degraded and disappeared. It's no longer stuck to you![otherwise]that was on [NameDesc of C] has dried up.[end if][roman type][line break]".
 
 Carry out tearing off worn clothing:
 	let C be the noun;
-	allocate 3 seconds;
-	say "You start tugging at the [C]...";
+	allocate 6 seconds;
+	say "You start tugging at the [C]... ";
 	let R be a random number between 1 and 20;
 	if debuginfo > 0, say "[input-style]Glue tugging check: Dexterity ([dexterity of the player].5) | ([R]) d20 Difficulty[roman type][line break]";
-	if the dexterity of the player >= R:
-		[Simulate pulling it free a bit by probability]
-		if a random number between 1 and 4 is 1:
-			say "Finally! You managed to carefully tear the [ShortDesc of C] free.";
-			now C is not glued;
-			now glueTries is 0;
-		otherwise:
-			if C is hugger-gag or C is hugger-panties:
-				say "You get more of it free before it gets too excited. You should keep trying a bit later!";
-				increase the charge of C by 4;
-			otherwise:
-				say "You get more of it free before the pain gets too much. You should keep trying a bit later!";
-			now gluePainThreshold is the delicateness of the player + 2;
-			increase glueTries by 1;
+	decrease the glue timer of C by 100;
+	if the dexterity of the player < R:
+		say "You struggle to do it delicately enough, and end up hurting yourself!";
+		PainUp 1;
+	if the glue timer of C < 0:
+		say "Finally! You managed to carefully tear the [ShortDesc of C] free.";
+		now the glue timer of C is 0;
 	otherwise:
-		if C is hugger-panties or C is hugger-gag:
-			say "You are unable to peel it off gently enough to get the creature to let go without agitating it, and every moment you spend touching it just seems to make it fuck you even harder!";
-			increase the charge of C by 4;
-		otherwise:
-			say "You are unable to peel it gently enough to get the item off without it tugging at your skin this time. Ouch! That hurts, and it's tearing the [ShortDesc of C].";
-		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
-		set numerical response 1 to "decide to try to remove it gently again a bit later[if newbie tips is 1] (dexterity based chance each time)[end if]";
-		if C is hugger-panties or C is hugger-gag:
-			if newbie tips is 1, set numerical response 2 to "try to remove it with brute strength (causes pain and will make it excited, but guaranteed to make it let go within a few tries)";
-			otherwise set numerical response 2 to "try to remove it with brute strength";
-		otherwise:
-			if newbie tips is 1, set numerical response 2 to "try to remove it with brute strength (causes pain[if C is crotch-intact or C is crotch-zipped or C is crotch-skirted] and a chance of ripping each time[end if], but guaranteed to unstick the glue within a few tries)";
-			otherwise set numerical response 2 to "try to remove it with brute strength";
-		compute multiple choice question;
-		if player-numerical-response is 2:
-			say "Ouch! That really hurt!";
-			PainUp 1;
-			repeat with F running through fuckholes penetrated by the noun:
-				ruin F;
-			if C is hugger-gag or C is hugger-panties:
-				say "The creature goes into a frenzy!";
-				let N be 0;
-				while C is worn and N < 6:
-					increase N by 1;
-					compute periodic effect of C;
-			otherwise if C is not rigid:
-				if C is crotch-intact or C is crotch-zipped or C is crotch-skirted:
-					say "Oh... and the glue had adhered so strongly you hear a tearing sound...";
-					if C is rippable:
-						rip C;
-						say "You have accidentally managed to create a hole at the crotch of your [C]!";
-					otherwise:
-						say "You damage the [C].";
-						damage C;
-			unless C is worn:
-				do nothing;[Facehugger can fall off by itself]
-			if glueTries > 2 or a random number between 1 and 5 <= glueTries:
-				say "But yes! You managed to carefully tear the [ShortDesc of C] free.";
-				now C is not glued;
-				now glueTries is 0;
-			otherwise:
-				say "You only manage to get a little bit more of it free, and you have really hurt yourself. You decide that you're not going to try again for a little while!";
-				now gluePainThreshold is the delicateness of the player + 9;
-				increase glueTries by 1;
-		otherwise:
-			now gluePainThreshold is the delicateness of the player + 2;
-			say "[if the delicateness of the player > 10]Fearing the pain, you stop.[end if]".
+		say "You get more of it free, but there's still [if the glue timer of C < 100]a little bit stuck[otherwise if the glue timer of C < 200]some of it stuck[otherwise]a lot more of it to go[end if].";
+		if C is hugger-gag or C is hugger-panties:
+			say "The creature goes into a frenzy!";
+			let N be 0;
+			while C is worn and N < 3:
+				increase N by 1;
+				compute periodic effect of C.
 
 Check pulling glue:
 	if the player is glue stuck, try standing instead.

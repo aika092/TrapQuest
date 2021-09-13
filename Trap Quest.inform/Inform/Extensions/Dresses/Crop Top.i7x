@@ -510,7 +510,7 @@ Definition: flight-attendant-top is class-relevant:
 	decide no.
 
 To say ClothingDesc of (C - flight-attendant-top):
-	say "A blue longsleeved top that doesn't cover the belly, and has a large cleavage window below the button-up collar, making it somehow look even more slutty and provocative than if it had no collar at all. Its magical power will allow the wearer to slap enemies without suffering any damage penalties from being almost weightless.".
+	say "A blue long-sleeved top that doesn't cover the belly, and has a large cleavage window below the button-up collar, making it somehow look even more slutty and provocative than if it had no collar at all. Its magical power will allow the wearer to slap enemies without suffering any damage penalties from being almost weightless.".
 
 To say ShortDesc of (C - flight-attendant-top):
 	say "blue crop top".

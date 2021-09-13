@@ -96,11 +96,11 @@ Check giving:
 			do nothing instead;
 		otherwise if the noun is players-detached-dick: [#LXorDD]
 			if player is wearing players-detached-dick:
-				say "[Big he of the second noun] slowly tilts [his of the second noun] head to one side, eyeing your detached dick stuffed inside you. [speech style of the second noun]'Wow, lazy, much? You expect me to take that out for you, too?'[roman type][line break]";
+				say "[big he of the second noun] slowly tilts [his of the second noun] head to one side, eyeing your detached dick stuffed inside you. [speech style of the second noun]'Wow, lazy, much? You expect me to take that out for you, too?'[roman type][line break]";
 				humiliate 100;
 				compute restoration of dick by the second noun;
 			otherwise if player is carrying players-detached-dick:
-				say "[Big he of the second noun] sniffs at it, sniggers, and [if the size of the noun < 4]pops it in and out of [his of the second noun] mouth a few times, [his of the second noun] tongue flicking it[otherwise if the size of the noun > 8]manages to force it down [his of the second noun] throat in a feat of sword-swallowing, before gasping as [he of the second noun] extracts it with a loud [']pop['][otherwise]swallows it and sucks, [his of the second noun] cheeks hollowing out as [he of the second noun] sucks at it, [his of the second noun] tongue curling around the shaft[end if], which makes you stagger at the strong burst of sensation.[line break][speech style of the second noun]'Don't get any ideas: I have to, er, attune to it for the restoration.'[roman type][line break]";
+				say "[big he of the second noun] sniffs at it, sniggers, and [if the size of the noun < 4]pops it in and out of [his of the second noun] mouth a few times, [his of the second noun] tongue flicking it[otherwise if the size of the noun > 8]manages to force it down [his of the second noun] throat in a feat of sword-swallowing, before gasping as [he of the second noun] extracts it with a loud [']pop['][otherwise]swallows it and sucks, [his of the second noun] cheeks hollowing out as [he of the second noun] sucks at it, [his of the second noun] tongue curling around the shaft[end if], which makes you stagger at the strong burst of sensation.[line break][speech style of the second noun]'Don't get any ideas: I have to, er, attune to it for the restoration.'[roman type][line break]";
 				stimulate penis from the second noun;
 				compute restoration of dick by the second noun;
 		otherwise:

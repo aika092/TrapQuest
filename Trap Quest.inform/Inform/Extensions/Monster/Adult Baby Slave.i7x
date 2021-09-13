@@ -8,38 +8,38 @@ Definition: an adult baby slave is willing to do oral: decide yes.
 
 Definition: an adult baby slave is raunchy: decide yes.
 
-Figure of AABS is the file "NPCs/MultiFloor/BabySlave/AABS.png". Figure of BABS is the file "NPCs/MultiFloor/BabySlave/BABS.png".
+Figure of angelic adult baby slave is the file "NPCs/MultiFloor/BabySlave/abs1.jpg". Figure of bratty adult baby slave is the file "NPCs/MultiFloor/BabySlave/abs2.jpg".
 
 To decide which figure-name is the monster-image of (M - angelic adult baby slave):
-	decide on the Figure of AABS.
+	decide on Figure of angelic adult baby slave.
 
 To decide which figure-name is the monster-image of (M - bratty adult baby slave):
-	decide on the figure of BABS.
+	decide on the figure of bratty adult baby slave.
 
 To say ShortDesc of (M - an adult baby slave):
-	say "adult baby slave".
+	say "adult baby".
 
 angelic adult baby slave is an adult baby slave. Understand "angel" as angelic adult baby slave. The text-shortcut of angelic adult baby slave is "abs".
 To say MediumDesc of (M - angelic adult baby slave):
-	say "angelic adult baby slave".
+	say "angelic adult baby".
 
-Definition: an angelic adult baby slave is dungeon dwelling:
+Definition: angelic adult baby slave is dungeon dwelling:
 	if diaper lover is 1, decide yes;
 	decide no.
 
 bratty adult baby slave is an adult baby slave. Understand "brat" as bratty adult baby slave. The text-shortcut of bratty adult baby slave is "bbs".
 To say MediumDesc of (M - bratty adult baby slave):
-	say "bratty adult baby slave".
+	say "bratty adult baby".
 
-Definition: an bratty adult baby slave is hotel dwelling:
+Definition: bratty adult baby slave is hotel dwelling:
 	if diaper lover is 1, decide yes;
 	decide no.
 
-To say MonsterDesc of (M - an adult baby slave):
-	if M is angelic adult baby slave:
-		say "This [man of M] adorns a thick, sagging adult diaper and white and pink baseball tee with a cartoon monkey on the front. [big his of M] light brown hair hangs tied in pigtails with purple ribbons. [big his of M] expression is playful but part of you can't help but fear that a tantrum is only one wrong move and a moment away.";
-	otherwise if M is bratty adult baby slave:
-		say "This [man of M] adorns a thick, cloth diaper encased within a pair of babyish plastic panties and a short, ruffled dress emblazoned with images of a cartoon cat. [big he of M] wears a look that tells you that the slightest provocation could easily set [him of M] off, triggering what could be the biggest tantrum of all time.".
+To say MonsterDesc of (M - angelic adult baby slave):
+	say "This [man of M] adorns a thick, adult diaper with a nuclear symbol on the front and back, andcute pink top with a cat skull on the front, simultaneously cute and quirky. [big his of M] brown hair with teal highlights has two cute bunches towards the back. Other than a diaper, the two big tell-tale signs of this [man of M][']s preferred lifestyle are the pacifier-shaped earrings and the black neckerchief that has the word 'BABY' on it. You notice that [he of M] has a pack of bubblegum strapped to one thigh. [big his of M] expression is playful but part of you can't help but fear that a tantrum is only one wrong move and a moment away.";
+
+To say MonsterDesc of (M - bratty adult baby slave):
+	say "This [man of M] adorns a thick, cloth diaper bulging through a pair of pink shorts. On [his of M] upper half. [he of M] is wearing a black hoody and red back-pack. On [his of M] bottom half, [he of M][']s gone for fishnet stockings and chunky pink boots with white laces. [big he of M] wears a look that tells you that the slightest provocation could easily set [him of M] off, triggering what could be the biggest tantrum of all time.".
 
 To say MonsterComment of (M - an adult baby slave):
 	say "[variable custom style][if the bimbo of the player < 5 and the player is gendered male][big he of M]'d be really hot if [he of M] wasn't dressed like a baby... [otherwise if the bimbo of the player > 12][line break][second custom style][big he of M]'s so cute! I wish I was that cute! [end if][if the diaper addiction of the player < 3]I wonder what it would take to get [him of M] to take [his of M] diaper off.[otherwise if the diaper addiction of the player > 14]I want to feel [his of M] diaper on my face.[otherwise if the diaper addiction of the player > 10]I bet we could have tons of fun playing together.[otherwise if the diaper addiction of the player > 6]I wonder if [he of M] wants to play.[otherwise]Diapers are so gross.[end if][roman type][line break]".
@@ -47,6 +47,9 @@ To say MonsterComment of (M - an adult baby slave):
 To set up (M - an adult baby slave):
 	reset M;
 	now the monstersetup of M is 1;
+	if M is angelic adult baby slave:
+		add bubblegum to the taxableItems of M;
+		add bubblegum to the tradableItems of M;
 	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M.
 
@@ -75,7 +78,7 @@ To compute unique periodic effect of (M - an adult baby slave):
 		now the peeTimer of M is 0;
 	if diaper messing >= 6:
 		increase the messTimer of M by 1;
-		if the messTimer of M is 120 and M is in the location of the player, say "All of a sudden, [NameDesc of M] scrunches [his of M] eyes shut, gruns, and fills [his of M] diaper with a heap of stinking shit.[line break][speech style of M]'That was a big one. I feel so much better now...'[roman type][line break][big he of M] coos, not at all ashamed about what just happened.".
+		if the messTimer of M is 120 and M is in the location of the player, say "All of a sudden, [NameDesc of M] scrunches [his of M] eyes shut, grunts, and fills [his of M] diaper with a heap of stinking shit.[line break][speech style of M]'That was a big one. I feel so much better now...'[roman type][line break][big he of M] coos, not at all ashamed about what just happened.".
 
 Part 1 - Misc Flavour
 
@@ -181,10 +184,10 @@ To compute perception of (M - an adult baby slave):
 	otherwise if M is top-wardrobe-malfunctioning:
 		compute dq nip slip reaction of M;
 	otherwise if the player is an adult baby:
-		say "[speech style of M]'Oh my god! You're just too cute! Mommy has to see you later!'[one of][line break][variable custom style]Mommy?[or][stopping][roman type][line break]";
+		say "[speech style of M]'Oh my god! You're just too cute! [daddytitle of matron] has to see you later!'[one of][line break][variable custom style][daddytitle of matron]?[or][stopping][roman type][line break]";
 		FavourUp M by 3;
 	otherwise if there is a currently visible waddle diaper:
-		say "[big he of M] looks you up and down and smiles.[line break][speech style of M]'Wow! I'm so jealous of your waddle diaper! I should ask mommy to put me in one!'[roman type][line break]";
+		say "[big he of M] looks you up and down and smiles.[line break][speech style of M]'Wow! I'm so jealous of your waddle diaper! I should ask [daddytitle of matron] to put me in one!'[roman type][line break]";
 		FavourUp M by 2;
 	otherwise if there is a currently visible cat themed diaper:
 		say "[big he of M] looks you up and down and smiles.[line break][speech style of M]'Your kitty diaper is adorable! I wish mine was so pretty!'[roman type][line break]";
@@ -221,7 +224,7 @@ This is the adult baby slave gets bored rule:
 
 To say GroundPeeReaction of (M - a bratty adult baby slave):
 	if M is friendly or M is uninterested:
-		say "[speech style of M]'That's naughty! If you can't control your pee, you obviously need diapers! Let's see what mommy has to say about this!'[roman type][line break]";
+		say "[speech style of M]'That's naughty! If you can't control your pee, you obviously need diapers! Let's see what [daddytitle of matron] has to say about this!'[roman type][line break]";
 		now M is interested;
 		now current-monster is M;
 		now the ToMatron of M is 1;
@@ -359,7 +362,7 @@ To compute (M - an adult baby slave) entering mouth:
 				bore M for 600 seconds.
 
 To say MouthPenetrationFlav of (M - an adult baby slave):
-	say "[BigNameDesc of M] rolls you onto your back and sits on your face, burying it in layers of padding and plastic, adjusting [himself of M] to get comfortable on top of you, crinkling all the while. You can't breathe![line break][speech style of M]'[if diaper messing >= 6 and M is not messy][one of]Just to warn you, I need to poop. So I wouldn't take too long to make me cum down there if I were you...'[or]By the way, if you don't play ball, I might just mess myself while sitting on your face.'[in random order][otherwise][one of]You ready?'[or]This is gonna be fun!'[or]Your face feels pretty good against my diaper...'[in random order][end if][roman type][line break]".
+	say "[BigNameDesc of M] rolls you onto your back[if M is bratty adult baby slave], pulls down [his of M] shorts,[end if] and sits on your face, burying it in layers of padding and plastic, adjusting [himself of M] to get comfortable on top of you, crinkling all the while. You can't breathe![line break][speech style of M]'[if diaper messing >= 6 and M is not messy][one of]Just to warn you, I need to poop. So I wouldn't take too long to make me cum down there if I were you...'[or]By the way, if you don't play ball, I might just mess myself while sitting on your face.'[in random order][otherwise][one of]You ready?'[or]This is gonna be fun!'[or]Your face feels pretty good against my diaper...'[in random order][end if][roman type][line break]".
 
 To compute diaper sit of (M - a monster):
 	say "You won't be able to breathe except through [his of M] padding until [he of M][']s finished with you! (You might want to consider using [bold type]['][link]hold breath[end link]['][roman type])";

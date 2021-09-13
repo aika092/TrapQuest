@@ -46,7 +46,7 @@ Definition: a monster is father material:[This means the monster can father chil
 [The first value mentioned becomes the default. Because a monster is a kind of animal which is a kind of person, we also set the default (un)intelligence of a monster here too.]
 A person can be intelligent or unintelligent. A monster is usually unintelligent. [Essentially, can they speak English?; TODO: definition]
 [This is redundant we believe, so Selkie has commented it out.
-A monster can be intelligent.  A monster is usually unintelligent. [Essentially, can they speak English?]
+A monster can be intelligent. A monster is usually unintelligent. [Essentially, can they speak English?]
 ]
 [A monster is an animal, which is a subclass of a person, and a person can be intelligent or unintelligent.]
 A monster is usually female. [Male = Do they have a sex organ that can ejaculate semen?]
@@ -308,9 +308,9 @@ Definition: a monster is willing to fluff right now:
 	if it is willing to fluff and the refractory-period of it < 0 and it is intelligent, decide yes;
 	decide no.
 
-[#LX0rDD]
+[#LXorDD]
 A monster can be a-dick-detacher or a-non-detacher. A monster is usually a-non-detacher. [These (rare few) monsters can detach the player's dick. At present: djinn, aeromancer.]
-A monster can be a-dick-reattacher or a-non-reattacher. A monster is usually a-non-reattacher. [These (rare few) monsters can reattach the player's dick. At present: djinn, aeromancer, witch.] 
+A monster can be a-dick-reattacher or a-non-reattacher. A monster is usually a-non-reattacher. [These (rare few) monsters can reattach the player's dick. At present: djinn, aeromancer, witch.]
 A monster can be detached-dick-desiring or detached-dick-ignoring. A monster is usually detached-dick-desiring. [Most monsters are willing to take a player's detached dick if they see it lying around. Several though are not. At present: ghosts, giant wasps.]
 
 Monster Adjectives ends here.

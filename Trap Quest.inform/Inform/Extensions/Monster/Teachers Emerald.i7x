@@ -317,7 +317,7 @@ To compute teaching of (L - toy-lesson):
 						now CP is worn by the player;
 						say "You relax your [asshole] as much as you can to try and push the plug inside of you. ";
 						compute toyInsertion of CP into asshole;
-						now CP is glued;
+						gluify CP;
 						remove CP from LP;
 						add the size of CP to LN;
 						say "[BigNameDesc of M] folds [his of M] arms with satisfaction.[line break][speech style of M]'Good job. You get [size of CP] [if size of CP is 1]entry[otherwise]entries[end if] in the raffle.'[roman type][line break]";
@@ -522,14 +522,14 @@ To compute teaching of (L - dress-lesson):
 		allocate 12 seconds;
 		update students; [an important line which makes boring old students disappear and new cool ones appear]
 	otherwise if C is hobble-skirted clothing:
-		say "[speech style of M]'You.'[roman type][line break][NameDesc of M] points a finger directly at you. You can't help but gulp.[line break][speech style of M]'That skirt is much too long! You can't use it for flashing your underwear properly at all! No, you'll have to keep using your hands to expose yourself. But we can't just trust you to do that now, can we? No, I think we need some kind of guarantee. Come up to the front now, [NameBimbo].'[roman type][line break]You sheepishly obey. As soon as you reach [him of M], [he of M] holds your head still between both [his of M] hands and stares directly into your eyes.[line break][speech style of M]'Do you know what a curtsey is, little one? Yes you do. Well I think you will feel a lot more like curtsying politely to people in the future, won't you?'[roman type][line break][big his of M] fierce gaze penetrates deep down into your soul and you feel some kind of magic entering your body through the connection. Your mind feels foggy and you feel something like a switch click in your brain.[line break][speech style of M]'Yes, I think you will.'[roman type][line break][M] lets go of you and the fog begins to clear. You notice that [NameDesc of M] looks very tired and is breathing rather heavily.";
+		say "[speech style of M]'You.'[roman type][line break][NameDesc of M] points a finger directly at you. You can't help but gulp.[line break][speech style of M]'That skirt is much too long! You can't use it for flashing your underwear properly at all! No, you'll have to keep using your hands to expose yourself. But we can't just trust you to do that now, can we? No, I think we need some kind of guarantee. Come up to the front now, [NameBimbo].'[roman type][line break]You sheepishly obey. As soon as you reach [him of M], [he of M] holds your head still between both [his of M] hands and stares directly into your eyes.[line break][speech style of M]'Do you know what a curtsey is, little one? Yes you do. Well I think you will feel a lot more like curtseying politely to people in the future, won't you?'[roman type][line break][big his of M] fierce gaze penetrates deep down into your soul and you feel some kind of magic entering your body through the connection. Your mind feels foggy and you feel something like a switch click in your brain.[line break][speech style of M]'Yes, I think you will.'[roman type][line break][M] lets go of you and the fog begins to clear. You notice that [NameDesc of M] looks very tired and is breathing rather heavily.";
 		now hypno-curtsey-trigger is 1;
 		MagicPowerUp 2;
 		say "[speech style of M]'Congratulations [NameBimbo], you're now a professional curtseyer, even if you don't realise it yet.'[roman type][line break][NameDesc of M] looks away from you, then looks back, pretending to notice you for the first time. You instinctively rise to your feet and perform a perfect curtsey, exposing [if there is worn total protection knickers]your underwear[otherwise]yourself[end if] to the room.[line break][speech style of M]'Yes, I see your new [']talent['] has taken its proper hold. In that case, there is nothing more I need to teach you.'[roman type][line break]";
 		now armband is ruby;
 		say "You watch as the ID card inside your armband transforms!";
 		now the armband-title of armband is "Curiosity";
-		now the armband-print of armband is "curtsying courtesan";
+		now the armband-print of armband is "curtseying courtesan";
 		say ClothingDesc of armband;
 		update students; [an important line which makes boring old students disappear and new cool ones appear]
 		say "[speech style of M]'I'm afraid that's going to have to be the end of the class for today. Dismissed.'[roman type][line break][big he of M] makes for the door, as gracefully as [he of M] can.";

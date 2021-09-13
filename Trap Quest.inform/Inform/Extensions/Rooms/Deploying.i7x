@@ -33,7 +33,7 @@ To choose direction of (T - a trap):
 
 To deploy tank in (G - a room):
 	if debugmode is 1, say "Deploying a tank in [printed name of G][paragraph break]";
-	let R be a random number between 1 and 3 - unlucky;
+	let R be a random number between 1 and 3 - tough-shit;
 	if R is 1:
 		now a random off-stage paddle trap is in G;
 		if debugmode is 1, say "The tank is trapped with a paddle trap.[paragraph break]";

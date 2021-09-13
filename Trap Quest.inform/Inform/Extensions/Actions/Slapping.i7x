@@ -157,7 +157,7 @@ currentZapper is a thing that varies. currentZapper is yourself.
 
 [!<CarryOutZapping>+
 
-The second portion of the "Zapping" action, which executes calculates damage based on any zap ready wearbles.
+The second portion of the "Zapping" action, which executes calculates damage based on any zap ready wearables.
 
 +!]
 Carry out zapping it with:

@@ -105,7 +105,7 @@ Carry out WellWishing:
 		say "A call for aid...";
 	otherwise:
 		say "A potential offering...";
-	[Alright, we know how much the offering is worth. Lets try granting a wish]
+	[Alright, we know how much the offering is worth. Let's try granting a wish]
 	if wish-type is 0:
 		if offer-value < 1:
 			say "Rejected...[roman type][line break]The voice echoes in your head as light gathers around the well and slowly dissipates.";
@@ -188,7 +188,7 @@ To compute WellPurifying for offer (N - a number) with roll (R - a number):
 			otherwise increase R by 1;
 	if R is 5:
 		if (the virgin bonus of the player < 0 or (virgincursed > 0 and the player is gendered male)) and N > 75:
-			say "Accepted... Shame... Counseled...[roman type][line break]The voice echoes in your head as your mind instantly adapts to the shame of [if virgincursed > 0 and the player is possessing a penis]losing your anal virginity first[otherwise]losing your precious virginity[end if]. [if the player is not shameless]Your sense of dignity feels like it's dropped to its lowest point ever, but at least your shame won't bring you down anymore![end if]";
+			say "Accepted... Shame... Counselled...[roman type][line break]The voice echoes in your head as your mind instantly adapts to the shame of [if virgincursed > 0 and the player is possessing a penis]losing your anal virginity first[otherwise]losing your precious virginity[end if]. [if the player is not shameless]Your sense of dignity feels like it's dropped to its lowest point ever, but at least your shame won't bring you down anymore![end if]";
 			ultraHumiliate;[enough to push you down a humiliation level]
 			now the virgin bonus of the player is 0;
 			if the player is gendered male, now virgincursed is 0;

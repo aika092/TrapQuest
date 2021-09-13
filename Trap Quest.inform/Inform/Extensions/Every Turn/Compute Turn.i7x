@@ -77,7 +77,8 @@ To run the engine:
 		if debugmode > 1, say "Engine run complete. Another-turn is set to [another-turn]. The number of entries in the another-turn-rules list is [number of entries in another-turn-rules].";
 		now AT is another-turn;
 		now another-turn is 0;
-		if AT is 1 and another-turn-flavour is not "" and the number of entries in another-turn-rules is 0, say "[bold type][another-turn-flavour][roman type][line break]"; [If we have other stored-action reasons for the extra turn, no need to give the player additional reasons why there was a delayed turn.]
+		let ATflav be "";
+		if AT is 1 and another-turn-flavour is not "" and the number of entries in another-turn-rules is 0, now ATflav is another-turn-flavour; [If we have other stored-action reasons for the extra turn, no need to give the player additional reasons why there was a delayed turn.]
 		now another-turn-flavour is "";
 		let LR be a list of rules;
 		repeat with R running through another-turn-rules:
@@ -88,13 +89,16 @@ To run the engine:
 		if another-turn-stored-action is not waiting:
 			if another-turn-previous-stored-action is another-turn-stored-action:
 				now AC is waiting;
-				if the number of entries in LR is 0 and A is the no-stored-action rule, now AT is 0; [we actually don't have any good reason to skip the turn any more]
+				if the number of entries in LR is 0 and A is the no-stored-action rule: [we actually don't have any good reason to skip the turn any more]
+					now AT is 0;
+					now ATflav is "";
 			otherwise:
 				now AC is another-turn-stored-action; [this should defend against infinite loops where the player keeps trying over and over to do something they can't]
 			now another-turn-previous-stored-action is another-turn-stored-action;
 			now another-turn-stored-action is waiting;
 		truncate another-turn-rules to 0 entries; [This is the only safe moment to truncate the entries - just after we have loaded the rules and before we execute them.]
 		if AT is 1:
+			if ATflav is not "", say "[bold type][ATflav][roman type][line break]";
 			if the number of entries in LR > 0:
 				repeat with R running through LR:
 					follow R; [This way, if the stored rule demands another turn, and adds another stored rule in, we don't truncate away that rule too early.]
@@ -397,7 +401,7 @@ To compute player standing:
 									now the saved-item of magical-maid-outfit is O;
 						transform MO into magical-maid-outfit;
 						now the charge of magical-maid-outfit is a random number between 10 and 40;
-						if the player is male and (fast tg is 3 or (the size of penis <= min penis size and tg fetish > 0)):
+						if the player is sexed male and (fast tg is 3 or (the size of penis <= min penis size and tg fetish > 0)):
 							say "Your whole body suddenly goes numb, then is filled with an almost electric tingle. You feel terrible wrenching from your insides that you're sure should hurt, but you just don't seem to be able to feel much of anything right now. The tingling comes to a focus in your crotch, filling you with a sense of terrible foreboding. [if the player is possessing a penis]As feeling comes back to you, you reach down and can immediately tell you're missing something kind of notable: your [player-penis]![otherwise]As feeling comes back to you, you reach down with a sense of foreboding.[end if] It seems whatever magic made that outfit appear has decided you'd be better off as a girl...";
 							SexChange the player;
 						update appearance level;
@@ -505,7 +509,7 @@ Carry out ManuallyBreathing:
 		say "You will now [bold type]breathe normally[roman type] when time moves forward.";
 		now player-breathing is true;
 	otherwise:
-		say "You will now try to [bold type]hold your breath[roman type]  when time moves forward until you use the [bold type]breathe[roman type] command or run out of oxygen.";
+		say "You will now try to [bold type]hold your breath[roman type] when time moves forward until you use the [bold type]breathe[roman type] command or run out of oxygen.";
 		now player-breathing is false.
 Understand "breath", "breathe", "hold breath", "hold my breath", "hold breathe", "hold my breathe" as ManuallyBreathing.
 
@@ -518,7 +522,7 @@ Definition: yourself is breathing this turn:
 	follow the breathing blocking rules;
 	if the rule succeeded, decide no;
 	if the suffocation of the player >= the suffocation limit of the player:
-		say "You can't bring yourself to hold your breath for any longer!";
+		say "You can't bring yourself to hold your breath any longer!";
 		now player-breathing is true;
 		decide yes;
 	if player-breathing is false, decide no;
@@ -546,7 +550,7 @@ An all later time based rule (this is the breathe or suffocate rule):
 		if the suffocation of the player > 0:
 			let M be a random monster penetrating face;
 			if M is monster:
-				say "You manage to breathe just enough oxygen around [NameDesc of M] to keep further suffocation at bay[one of], but you can't sufficiently breathe to recover any additional breath![or].[stopping]";
+				say "You manage to suck in just enough oxygen around [NameDesc of M] to keep further suffocation at bay[one of], but you can't sufficiently breathe to recover any additional breath![or].[stopping]";
 			otherwise:
 				decrease the suffocation of the player by 1;
 				if the suffocation of the player <= 0, say "You have regained all your oxygen and are now able to breathe normally again.";
@@ -564,7 +568,7 @@ An all later time based rule (this is the breathe or suffocate rule):
 			say "Your lungs burn as your lack of oxygen [one of]becomes painful[or]continues to hurt you[stopping].";
 			PainUp 1;
 	otherwise:
-		say "[if the suffocation of the player is 0 and player-breathing is false][bold type]You are currently holding your breath. [roman type]Until you choose to breathe again, your strength and ability to think straight will gradually leave you.[otherwise if the suffocation of the player is 0][bold type]You are currently unable to breathe. [roman type]Until you find a way to breathe again, your strength and ability to think straight will gradually leave you, and you will eventually pass out.[otherwise if the suffocation of the player < the suffocation limit of the player - 5]You[one of]r body is slowly being starved of oxygen, since you[or][cycling] are still holding your breath.[otherwise if the suffocation of the player < the suffocation limit of the player - 4][one of]As you continue to be starved of oxygen, you[or]You[cycling] feel the burning in your throat and the cloudiness in your head rising.[otherwise if the suffocation of the player is the suffocation limit of the player - 3][bold type]Your vision starts to go blurry.[roman type][line break][otherwise if the suffocation of the player is the suffocation limit of the player - 2 and the player is able to faint from suffocation][bold type]Your lungs are on fire and your eyes roll into the back of your head as you prepare to lose consciousness.[roman type][line break][otherwise if the suffocation of the player is the suffocation limit of the player - 2][bold type]Your lungs are on fire and your eyes roll into the back of your head.[roman type][line break][otherwise if the player is able to faint from suffocation][bold type]Your vision goes white as you reach the brink. Your consciousness is slipping away.[roman type][line break][otherwise]Your vision is going white and your lungs are empty of oxygen. [bold type]From now on, every turn you can't breathe will cause you serious pain.[roman type][line break][end if]";
+		say "[if the suffocation of the player is 0 and player-breathing is false][bold type]You are currently holding your breath. [roman type]Until you choose to breathe again, your strength and ability to think straight will gradually leave you.[otherwise if the suffocation of the player is 0][bold type]You are currently unable to breathe. [roman type]Until you find a way to breathe again, your strength and ability to think straight will gradually leave you, and you will eventually pass out.[otherwise if the suffocation of the player < the suffocation limit of the player - 5]You[one of]r body is slowly being starved of oxygen, since you[or][cycling] are still holding your breath.[otherwise if the suffocation of the player < the suffocation limit of the player - 4][one of]As you continue to be starved of oxygen, you[or]You[cycling] feel the burning in your throat and the cloudiness in your head rising.[otherwise if the suffocation of the player is the suffocation limit of the player - 3][bold type]Your vision starts to go blurry.[roman type][line break][otherwise if the suffocation of the player is the suffocation limit of the player - 2 and the player is able to faint from suffocation][bold type]Your lungs are on fire and your eyes roll into the back of your head as you start to lose consciousness.[roman type][line break][otherwise if the suffocation of the player is the suffocation limit of the player - 2][bold type]Your lungs are on fire and your eyes roll into the back of your head.[roman type][line break][otherwise if the player is able to faint from suffocation][bold type]Your vision goes white as you reach the brink. Your consciousness is slipping away.[roman type][line break][otherwise]Your vision is going white and your lungs are empty of oxygen. [bold type]From now on, every turn you can't breathe will cause you serious pain.[roman type][line break][end if]";
 		increase the suffocation of the player by 1;
 		let M be a random monster penetrating face;
 		if M is nothing, now M is a random monster grabbing the player;
@@ -674,6 +678,9 @@ To Compute Compulsions:
 				compute urinal use;
 				now another-turn is 1.
 
+Report TQEating candy:
+	now another-turn-stored-action is waiting. [This is a little hacky but allows the player to automatically eat the same candy twice in a row in super unusual circumstances, rather than falsely triggering the failsafe that stops the game getting into a loop with the player trying to eat the same candy every turn but being actually unable to.]
+
 This is the broken automatic submission rule:
 	let M be a random willing to shag right now reactive monster;
 	if M is monster:
@@ -731,7 +738,7 @@ The hypno triggers rules is a rulebook.
 
 This is the great ones hypno rule:
 	if hypno-trigger is "great one" and player-hypno-great is 1:
-		say "Just thinking about the [great one]s makes you feel how powerless you are in comparison to them!";
+		say "Just thinking about the [great ones] makes you feel how powerless you are in comparison to them!";
 		humiliate 20.
 The great ones hypno rule is listed in the hypno triggers rules.
 

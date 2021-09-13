@@ -11,6 +11,9 @@ Definition: a pacifier is discovered varied: decide no.
 Definition: a baby pacifier is fetish appropriate:
 	if diaper lover > 0, decide yes;
 	decide no.
+Definition: a baby pacifier is shop-eligible:
+	if it is fetish appropriate and the initial cringe of it < 10, decide yes;
+	decide no.
 
 Definition: a baby pacifier is baby themed: [Is it something that only an adult baby fetishist would have?]
 	decide yes.
@@ -77,6 +80,8 @@ To decide which number is the initial cringe of (C - a pacifier):
 
 To decide which number is the initial cringe of (C - a pink pacifier):
 	decide on 9.
+To set up unique shop state of (C - a pink pacifier):
+	now C is suppression.
 
 To decide which number is the initial cringe of (C - a ghost pacifier):
 	decide on 10.
@@ -143,6 +148,8 @@ To decide which number is the strength-influence of (C - a tiger pacifier):
 	let S be 2;
 	increase S by the magic-modifier of C;
 	decide on S.
+To decide which number is the original price of (C - a tiger pacifier):
+	decide on 5.
 
 To decide which number is the intelligence-influence of (C - a pacifier):
 	decide on 0.

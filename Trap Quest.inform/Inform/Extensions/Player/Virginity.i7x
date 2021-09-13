@@ -173,7 +173,7 @@ To virginpunish:
 				say "You start to daydream about [manly-penis] filling your [asshole] and smashing your [one of]prostate[or]sissy button[stopping]. [line break][variable custom style][if the bimbo of the player < 10]Maybe I'll try anal again? It's not so bad and it made me cum really hard last time...[otherwise]I should find some [manly-penis] to pound my [asshole] till my [sissy-penis] squirts, I don't deserve to cum like a boy![end if][roman type][line break]";
 				AnalSexAddictUp 1;
 			otherwise:
-				say "You start to daydream about all kinds of humiliating and kinky sexual scenerios.[line break][variable custom style][if the bimbo of the player < 8]I guess if a chick is hot enough I would let her peg me[otherwise if the bimbo of the player < 12]You know all this submissive sex isn't so bad, [manly-penis] gets me so hot and bothered thinking about it[otherwise]I belong on my knees with my [sissy-penis] ignored, my [asshole] plugged, and my mouth full of [manly-penis][end if].[roman type][line break]";
+				say "You start to daydream about all kinds of humiliating and kinky sexual scenarios.[line break][variable custom style][if the bimbo of the player < 8]I guess if a chick is hot enough I would let her peg me[otherwise if the bimbo of the player < 12]You know all this submissive sex isn't so bad, [manly-penis] gets me so hot and bothered thinking about it[otherwise]I belong on my knees with my [sissy-penis] ignored, my [asshole] plugged, and my mouth full of [manly-penis][end if].[roman type][line break]";
 				SexAddictUp 1;
 		otherwise if the raw delicateness of the player < 15:
 			say VirginFlav;

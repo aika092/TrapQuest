@@ -40,6 +40,7 @@ Definition: a monster (called M) is eager to change diapers:
 	if there is a soiled-diaper carried by M or the health of M < the maxhealth of M, decide no;
 	if the class of the player is priestess, decide no;
 	if there is worn unmessed unremovable knickers, decide no;
+	if the player is stacked-but-outerly-dry, decide no;
 	if M is aware that the player needs a change, decide yes;
 	if M is aware that a diapering is possible, decide yes;
 	decide no.

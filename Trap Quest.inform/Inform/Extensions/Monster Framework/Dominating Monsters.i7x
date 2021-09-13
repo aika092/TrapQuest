@@ -15,6 +15,7 @@ To compute banishment of (M - a monster):
 			now K is in the location of M;
 			if M is in the location of the player, compute autotaking K;
 	if M is in the location of the player and there is a worn notebook, compute studying 1 of M;
+	if the health of M <= 0, compute defeat reward of M; [so this doesn't include when an NPC banishes themselves, e.g. sex dolls detonating]
 	destroy M;
 	if M is permanently banishable, now M is permanently banished.
 
@@ -36,6 +37,13 @@ To compute banish drop of (C - a thing) from (M - a monster):
 
 To say BanishDropFlav of (C - a thing) from (M - a monster):
 	say "[BigNameDesc of M] left [NameDesc of C] behind.".
+
+To compute defeat reward of (M - a monster):
+	if the player is not broken:
+		let H be the humiliation of the player;
+		dignify 1000 + (the difficulty of M * 100);
+		if the humiliation of the player is 0, say "You feel very satisfied and proud of yourself[if H > 0]. In fact you feel like you respect yourself just as much as you did when you first entered the game[end if].";
+		otherwise say "[if the humiliation of the player < H]You feel proud of yourself! Some of your self-respect returns to you.[end if]".
 
 To compute (M - a monster) slinking away:
 	say SlinkAwayFlav of M;
@@ -198,17 +206,18 @@ To compute defeat of (M - a monster):
 		compute automatic banishment of M;
 	otherwise if the player is in danger:
 		compute M slinking away;
+		compute defeat reward of M;
 	otherwise:
 		let LT be a list of texts;
-		let BT be the substituted form of "[BanishDesc of M]";
+		let BT be the substituted form of "[BanishDesc of M] (self-respect increase)";
 		let TT be the substituted form of "[TaxDesc of M]";
-		let PT be the substituted form of "[PityDesc of M]";
-		let PeT be the substituted form of "[PenisFuckDesc of M]";
-		let AT be the substituted form of "[AssRideDesc of M]";
-		let VT be the substituted form of "[VaginaRideDesc of M]";
-		let PiT be the substituted form of "[PissFuckDesc of M]";
-		let DT be the substituted form of "[DiaperRideDesc of M]";
-		let UT be the substituted form of "[UniqueFuckDesc of M]";
+		let PT be the substituted form of "[PityDesc of M] (relationship increase)";
+		let PeT be the substituted form of "[PenisFuckDesc of M] (attempt at dominance increase)";
+		let AT be the substituted form of "[AssRideDesc of M] (attempt at dominance increase)";
+		let VT be the substituted form of "[VaginaRideDesc of M] (attempt at dominance increase)";
+		let PiT be the substituted form of "[PissFuckDesc of M] (attempt at dominance increase; relieve bladder)";
+		let DT be the substituted form of "[DiaperRideDesc of M] (attempt at dominance increase)";
+		let UT be the substituted form of "[UniqueFuckDesc of M] (attempt at dominance increase)";
 		if the player-class is avatar and M is intelligent and M is not infernal and M is not soul-stolen, add "Steal [his of M] soul" to LT;
 		if M is banishable, add BT to LT;
 		if M is taxable, add TT to LT;
@@ -398,7 +407,7 @@ Check dominating:
 	let vm be a random video-monitor in the location of the player;[too annoying to deal with, so it's not allowed.]
 	if vm is a video-monitor and the video-caller of vm is not the throne, say "You decide against it. You don't want to give your audience the wrong idea." instead;
 	if the noun is woman-player and the woman-status of woman-player is 80, compute PlayerWomanStoolFuck instead;
-	[#LXorDD ####Selkie: actually, doing this while a latex doll can cause dick-detachment; and if the player is female, then I'm planning a sex doll usage, too.]
+	[#LXorDD Selkie: actually, doing this while a latex doll can cause dick-detachment; and if the player is female, then there's a sex doll usage, too.]
 	[if the latex-transformation of the player >= 6, say "You wouldn't feel anything from it, so you don't see the point." instead;]
 	if the player is prone, say "That would be a little hard to do from your knees." instead;
 	if the noun is sex-enslaved and the player is the donator, compute enslaved domination of the noun instead;
@@ -789,7 +798,7 @@ To say PowerBottomComment of (M - a monster):
 		say "You give [NameDesc of M] a smouldering look, hopefully conveying how [if the bimbo of the player < 6]dominant you are even though you're about to sit on [his of M] [DickDesc of M][otherwise if the bimbo of the player < 12]compromising this situation is for [him of M] and [his of M] [DickDesc of M][otherwise]much you want to sit on [his of M] [DickDesc of M][end if].";
 	otherwise if the bimbo of the player < 6:
 		if the player is gendered male:
-			say "[first custom style]'[one of]I don't care how it looks, I've fucking earned this. Your dick is MINE.'[or][if the size of penis > the girth of M]Good thing I'm so much bigger than you, otherwise I might be worried this would hurt!'[otherwise if the player is possessing a penis]You think you're so fucking great because you're bigger than me? Better not be a quick-shot.'[end if][or]Now, *I* get to stick your dick in me.'[at random][roman type][line break]";
+			say "[first custom style]'[one of]I don't care how it looks, I've fucking earned this. Your dick is MINE.'[or][if the size of penis > the girth of M]Good thing I'm so much bigger than you, otherwise I might be worried this would hurt!'[otherwise if the player is possessing a penis]You think you're so fucking great because you're bigger than me? Better not be a quick-shot.'[otherwise]You've got a dick. Let's see if you actually know how to use it.'[end if][or]Now, *I* get to stick your dick in me.'[at random][roman type][line break]";
 		otherwise:
 			say "[first custom style]'[one of]Oh we're going to fuck, but you're not going to be doing the fucking.'[or]This time, you're MY fucktoy.'[or]That didn't go the way you'd hoped, now did it?'[at random][roman type][line break]";
 	otherwise if the bimbo of the player < 12:

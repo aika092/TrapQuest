@@ -280,7 +280,7 @@ To compute appearance assessment of (M - platonic-friend):
 	say "[line break][variable custom style]'[one of][MediumDesc of M]?! What are YOU doing here?'[roman type][line break][speech style of M]'Well [NameBimbo], at first I was pretty disappointed when I found out what a whore you turned out to be, but when I thought about it, I realised it suits you. I've paid a lot of money to come here and make sure you don't try to back out of this new lifestyle you've chosen.'[roman type][line break][or][MediumDesc of M], this is-'[roman type][line break][speech style of M]'Enough, [NameBimbo]. You wanted to be a whore, and it doesn't matter what whores have to say.'[roman type][line break][stopping]".
 
 To say PrepTaunt of (M - platonic-friend) in (F - asshole):
-	say "[speech style of M]'Lets try anal this time.'[roman type][line break]".
+	say "[speech style of M]'Let's try anal this time.'[roman type][line break]".
 
 To say PrepTaunt of (M - platonic-friend) in (F - vagina):
 	say "[speech style of M]'I'll start in just a second, [NameBimbo].'[roman type][line break]".

@@ -320,8 +320,8 @@ To say CondomForceFailFlav of (M - a giant wasp):
 To decide which number is the condom resistance of (M - a giant wasp):
 	decide on 99.[Default 100% success]
 
-To say CondomRejectFlav of (M - a domesticated wasp):
-	say "The wasp rider [one of]scoffs[or]snorts[or]rolls [his of fairy-witch] eyes[at random].[line break][speech style of fairy-witch]'The big guy doesn't use protection, toots.'[roman type][line break]".
+To say CondomRejectFlav of (M - domesticated wasp):
+	say "The wasp rider [one of]scoffs[or]snorts[or]rolls [his of M] eyes[at random].[line break][speech style of M]'The big guy doesn't use protection, toots.'[roman type][line break]".
 
 To set up sex length of (M - a giant wasp) in (B - asshole):
 	set up sex length 4 of M in B.
@@ -387,7 +387,7 @@ Part 6 - Variants
 
 Section 1 - Domesticated wasp
 
-domesticated wasp is a mundane-wasp. The text-shortcut of domesticated wasp is "lwsp". domesticated wasp is intelligent. Understand "rider", "wasp rider", "fairy" as domesticated wasp.
+domesticated wasp is a mundane-wasp. The text-shortcut of domesticated wasp is "lwsp". domesticated wasp is intelligent. domesticated wasp is not neuter. Understand "rider", "wasp rider", "fairy" as domesticated wasp.
 
 To say MediumDesc of (M - domesticated wasp):
 	say "[ParentDesc of M] wasp rider".
@@ -444,10 +444,10 @@ To say MonsterFailedTripFlav of (M - domesticated wasp):
 To compute delay of (M - domesticated wasp):
 	say "The wasp rider pulls back on [NameDesc of M][']s reins[line break][speech style of fairy-witch]'[one of]Let's see [him of the player] beg. Heheh.'[or]So, should [he of M] violate you anally or anally?'[or][big he of M]'s about to breed your starfish! Why don't you show it to [him of M]?'[or]Wait. I want to see [him of the player] ask for it.'[or]Show it to [him of M], loser. Show [him of M].'[in random order][roman type][line break]".
 
-To say PrepTaunt of (M - a domesticated wasp) in (F - asshole):
+To say PrepTaunt of (M - domesticated wasp) in (F - asshole):
 	say "[line break][speech style of fairy-witch]'[one of]Here comes the fun part. Get it? [']Part?[']'[or]That's right. [big he of the player]'s all yours!'[or]Get ready loser, it's breeding time.'[or]I'd do it, but it just won't fit. Thanks a lot, loser!'[or]I like to watch.'[at random][roman type][line break]";
 
-To compute (M - a giant wasp) fathering (W - a domesticated wasp):
+To compute (M - a giant wasp) fathering (W - domesticated wasp):
 	say "[BigNameDesc of M] swoops down and lands next to the egg. A different phallic appendage protrudes itself from the wasp's underbelly and it drips a few drops of a mostly clear liquid onto the egg. You watch, paralysed with awe and fear, as the white egg changes colour to light brown, doubles in size, and then just as quickly, starts to crack. Within seconds, a familiar looking larva has emerged from the egg. The older wasp is suddenly hit in the side with a pink bolt of energy, and it flees as a tiny fairy with [his of fairy-witch] hair drawn back into a ponytail bursts from the bushes. [big he of fairy-witch] sprinkles the young wasp with a handful of glittering dust as [he of fairy-witch] wraps a pair of fibrous reins around [his of W] head, causing [him of W] to go through the entire metamorphosis a normal wasp goes through in [his of W] youth, but in the span of only a few seconds. The fairy seems too absorbed with [his of fairy-witch] new mount to care about you.";
 	now W is in the location of M;
 	newbornSetup W;

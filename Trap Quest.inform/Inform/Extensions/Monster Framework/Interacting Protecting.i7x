@@ -177,7 +177,7 @@ To say AssistedDeepthroatCreampie of (M - a monster) with (subs - a number):
 To say AssistedResistedOralCreampie of (M - a monster) with (subs - a number):
 	let N be a random unfriendly submission-assisting monster in the location of the player;
 	unless N is monster, now N is a random submission-assisting monster in the location of the player;
-	say "[if subs is 1][BigFuckerDesc of N] pushes[otherwise]The others push[end if] you down as [NameDesc of M] goes over the edge, [if subs > 1]their combined[otherwise][his of N][end if] strength ensuring that every drop of [if subs > 1][his of M][otherwise][FuckerDesc of M]'s[end if] thick, slimy load shoots out in your mouth.";
+	say "[if subs is 1][BigFuckerDesc of N] pushes[otherwise]The others push[end if] you down as [NameDesc of M] goes over the edge, [if subs > 1]their combined[otherwise][his of N][end if] strength ensuring that every drop of [if subs > 1][his of M][otherwise][FuckerDesc of M]'s[end if] thick, slimy load shoots out into your mouth.";
 
 To say AssistedSubmittedOralCreampie of (M - a monster) with (subs - a number):
 	let N be a random unfriendly submission-assisting monster in the location of the player;

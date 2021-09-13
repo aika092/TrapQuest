@@ -186,8 +186,8 @@ To compute (C - a clothing) inheriting from (D - a clothing):
 	otherwise now C is unidentified;
 	if D is stuck, now C is stuck;
 	otherwise now C is not stuck;
-	if D is glued, now C is glued;
-	otherwise now C is unglued;
+	if D is glued, gluify C;
+	otherwise ungluify C;
 	if (C is ass plugging and D is ass plugging) or (C is vagina plugging and D is vagina plugging), now the plug size of C is the plug size of D;
 	repeat with B running through body parts:
 		if D is penetrating B:

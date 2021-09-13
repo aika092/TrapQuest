@@ -1109,10 +1109,12 @@ A team-predicament is a kind of predicament.
 team-predicament-partner is an object that varies.
 Definition: a predicament is appropriate: decide no.
 Definition: yourself is predicament-ready:
-	if the latex-transformation of the player > 0 or black hood is worn, decide no;
+	if the latex-transformation of the player > 0, decide no;
+	let H be a random worn headgear;
+	if H is headgear and the quest of H is just-wait-quest, decide no;
 	if (class-time is 1000 or class-time < 0) and armband is worn and armband is not solid gold and there is an alive undefeated correctly-ranked teacher, decide no; [ready for class]
-	if there is worn locked clothing, decide no;
 	repeat with C running through worn clothing:
+		if C is locked, decide no;
 		if C is unremovable and C is not piercing and C is not fake-nails and tough-shit is 1, decide no;
 		if C is glued, decide no;
 		if C is christmas dress and the class of the player is santa's little helper, decide no;
@@ -2435,7 +2437,7 @@ To execute (L - smoothie-predicament):
 	summon pink-huge-diaper uncursed;
 	now pink-huge-diaper is locked;
 	now the player is in Predicament03;
-	if tough-shit is 0, now rectum is 1;
+	if tough-shit is 0 and rectum > 1, now rectum is 1;
 	now the stomach-food of the player is 1;
 	now the stomach-water of the player is 3;
 	now the bladder of the player is 1;
@@ -2602,13 +2604,13 @@ To execute (L - photo-display-predicament):
 		let T be "collared, naked, and drinking [semen] via a tube gag";
 		let A be 15;
 		if player-numerical-response is 1:
-			say "You block both funnels with your hands. The men whoop, laugh and make obscene gestures as they take photos of your [ShortDesc of breasts] and [if the player is possessing a penis][ShortDesc of penis][otherwise if the player is possessing a vagina][vagina][end if]. [strongHumiliateReflect]";
+			say "You block both funnels with your hands. The men whoop, laugh and make obscene gestures as they take photos of your [ShortDesc of breasts] and [if the player is herm]dual genitals[otherwise if the player is possessing a penis][ShortDesc of penis][otherwise if the player is possessing a vagina][vagina][otherwise]featureless crotch[end if]. [strongHumiliateReflect]";
 			now T is "collared, naked, and holding your arms up above your body instead of protecting your modesty";
 			now SB is 2;
 			now SD is 0;
 		otherwise if player-numerical-response is 2:
 			say "You hold one hand in front of your crotch and block the left hand funnel with your other hand. The men make entertained sounds as they take photos of your [ShortDesc of breasts]. [moderateHumiliateReflect]";
-			now T is "collared, naked, and holding one hand over your [if the player is possessing a penis][ShortDesc of penis][otherwise if the player is possessing a vagina][vagina][end if]";
+			now T is "collared, naked, and holding one hand over your [if the player is herm][genitals][otherwise if the player is possessing a penis][ShortDesc of penis][otherwise if the player is possessing a vagina][vagina][otherwise]groin[end if]";
 			now A is 9;
 			now SB is 1;
 			now SD is 1;
@@ -2839,7 +2841,7 @@ To execute (L - diaper-grope-predicament):
 	now the defaultRightTarget of arms is hair;
 	now entry 1 in the armUses of arms is hair;
 	now entry 2 in the armUses of arms is hair;
-	now rectum is 6;
+	if rectum > 0, now rectum is 6;
 	summon enema-backpack locked;
 	summon grope-me-skirt;
 	summon plain-medium-diaper uncursed;
@@ -3456,13 +3458,13 @@ Check attacking female-gloryhole:
 			if the player is able to speak, say "You whisper quietly through the hole.[line break][variable custom style]'[one of]Psst. Hi.'[or]Hello?'[or]Hey, over here...'[in random order][roman type][line break]";
 			otherwise say "You make an [variable custom style]'Mhmm'[roman type] sound.";
 		otherwise if player-numerical-response is 2:
-			say "You try to make your tone of voice as friendly and feminine as possible.[line break][variable custom style]'Hey there, [stud of M]...'[roman type][line break]";
+			say "You try to make your tone of voice as friendly and feminine as possible.[line break][variable custom style]'Hey there, [stud of M]...'[roman type][line break][slightHumiliateReflect]";
 		otherwise if player-numerical-response is 3:
-			say "You try to keep your voice from wavering as you make the proposition.[line break][variable custom style]'[one of]I'm here to give you a blowjob!'[or]Want a BJ?'[or]Come on, you know what this is for. Let me suck you off!'[in random order][roman type][line break]";
+			say "You try to keep your voice from wavering as you make the proposition.[line break][variable custom style]'[one of]I'm here to give you a blowjob!'[or]Want a BJ?'[or]Come on, you know what this is for. Let me suck you off!'[in random order][roman type][line break][moderateHumiliateReflect]";
 		otherwise if player-numerical-response is 4:
-			say "You try to keep your voice soft and submissive.[line break][variable custom style]'[one of]Please could I give you a blowjob?'[or]Will you please let me suck you off?'[or]I'm here to make you cum, if you'll allow me...'[in random order][roman type][line break]";
+			say "You try to keep your voice soft and submissive.[line break][variable custom style]'[one of]Please could I give you a blowjob?'[or]Will you please let me suck you off?'[or]I'm here to make you cum, if you'll allow me...'[in random order][roman type][line break][strongHumiliateReflect]";
 		otherwise if player-numerical-response is 5:
-			say "You make your voice as high pitched and girly as possible.[line break][variable custom style]'Please [stud of M], [one of]can I please taste your yummy [manly-penis]?'[or]I'm desperate to suck on your big [manly-penis] and drink your cum...'[or]I'm a [manly-penis]-addicted slut and I just really need your [manly-penis] straight away! Pleeeease let me taste it!'[in random order][roman type][line break]";
+			say "You make your voice as high pitched and girly as possible.[line break][variable custom style]'Please [stud of M], [one of]can I please taste your yummy [manly-penis]?'[or]I'm desperate to suck on your big [manly-penis] and drink your cum...'[or]I'm a [manly-penis]-addicted slut and I just really need your [manly-penis] straight away! Pleeeease let me taste it!'[in random order][roman type][line break][severeHumiliateReflect]";
 		if T <= 0:
 			if current-predicament is not nun-walk-predicament and a random number between 1 and 2 is 1, now M is wrapped;
 			otherwise now M is unwrapped;

@@ -38,7 +38,6 @@ To decide which number is the total felchable volume of (F - vagina): [man I lov
 	otherwise decide on the total semen volume of F.
 
 To decide which number is max labia plumpness:
-	if diaper quest is 1, decide on 0;
 	decide on 2 + artificial enhancements fetish.
 
 To LabiaUp (X - a number):
@@ -60,9 +59,9 @@ To LabiaUp (X - a number) with comment:
 			increase increased by 1;
 			if X is 0:
 				[display labia cutscene;[Could have some nice cameltoes here.]]
-				say "You feel your [one of]labia[or]pussy lips[or]lady bits[or]coochie's lips[or][']flower petals['][at random] [one of]swell up[or]plump up[or]puff up[at random][if increased > 1] - a whole lot! - now[otherwise],[end if] tingling. ";
-				say TotalDesc of vagina;
+				say "You feel your [one of]labia[or]pussy lips[or]lady bits[or]coochie's lips[or][']flower petals['][at random] [one of]swell up[or]plump up[or]puff up[at random][if increased > 1] - a whole lot! - now[otherwise],[end if] tingling.";
 				update appearance level;
+				try examining vagina;
 	if increased is 0:
 		say "You feel your [vagina] tingle, but apparently you've already attained maximum cameltoe.".
 
@@ -170,6 +169,10 @@ To decide which number is the desire of (B - vagina):
 
 Definition: yourself is possessing a vagina:
 	if the openness of vagina > -1, decide yes;
+	decide no.
+
+Definition: yourself is solely possessing a vagina:
+	if the player is possessing a vagina and the player is not possessing a penis, decide yes;
 	decide no.
 
 [#LXorDD Only needed when reversing a M2F sex change.]

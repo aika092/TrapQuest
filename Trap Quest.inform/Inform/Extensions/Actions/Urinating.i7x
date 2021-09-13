@@ -377,7 +377,7 @@ To compute toilet use:
 				compute autotaking C;
 	if toiletJustUsed is true:
 		check woman toilet;
-		if locked-toilets is true, check school toilet supervision.
+		if locked-toilets is true and the player is in School10, check school toilet supervision.
 
 To compute urinal use:
 	if seconds is 0, allocate 6 seconds;
@@ -762,119 +762,70 @@ To check (L - a liquid-object) maidification:
 		otherwise if (there is a worn maid headdress or (black maid headdress is off-stage and black maid headdress is not listed in the list of headgear recycling and black maid headdress is actually summonable)):
 			compute maidification of pink-spraybottle.
 
-[How high will the game allow incontinence to go?]
-To decide which number is the max-incontinence of the player:
-	decide on 10 - (incontinence protection * 2).
+To check pee leaking:
+	check pee leaking with reason "".
 
-temporary-incontinence is a number that varies.
-To progress temporary incontinence:
-	if temporary-incontinence > 0:
-		let DA be 0;
-		if the player is diaper aware, now DA is 1;
-		decrease temporary-incontinence by 1;
-		if temporary-incontinence is 0 and the incontinence of the player < the max-incontinence of the player:
-			say "[bold type]You feel that the magic curse that was making you completely incontinent has finally lifted![line break][variable custom style]I can feel my bladder again![roman type][line break]";
-			if DA is 0 and the player is diaper aware: [Player has regained the ability to detect when they urinate into a diaper]
-				let C be a random worn diaper;
-				if C is diaper, compute awakened state check of C.
+player-just-leaked is initially false.
+To check pee leaking with reason (T - a text):
+	now player-just-leaked is false;
+	if diaper lover > 0 and the player is not incontinent:
+		let B be the bladder of the player;
+		let I be bladder-squirty-level;
+		if B > I:
+			decrease B by I;
+			let R be a random number between bladder-difficulty and B;
+			if debuginfo > 0, say "[input-style]Pee leak check: bladder ([bladder of the player]) - continence rating ([I]) = [B] ---> RNG([bladder-difficulty] ~ [B]) = [R] | positive number[roman type][line break]";
+			if R > 0:
+				now player-just-leaked is true;
+				compute pee leaking with reason T;
 
-To decide which number is the incontinence of the player:
-	if temporary-incontinence > 0, decide on the max-incontinence of the player;
-	let I be incontinence;
-	increase I by the number of worn bed wetting clothing;
-	if diaper lover > 0:
-		repeat with K running through worn knickers:
-			decrease I by the magic-modifier of K;
-	if I > the max-incontinence of the player, decide on the max-incontinence of the player;
-	decide on I.
+To compute pee leaking with reason (T - a text):
+	if the bladder of the player > 0:
+		let KSK be -1;
+		let K be a random bottom level pee protection clothing;
+		let CK be nothing;
+		if K is clothing, now CK is the concealer of K;
+		if CK is clothing and K is not currently visible, now K is CK;
+		if K is clothing, now KSK is the total-soak of K;
+		say bold type;
+		if T is "", say "[one of]You spontaneously leak a little pee[or]All of a sudden, your bladder spasms and you squirt out a little wee[or]Completely beyond your control, your [if the player is possessing a penis][player-penis][otherwise]bladder[end if] lets out a squirt of pee[in random order]. ";
+		otherwise say "[T] [one of]you squirt out a little bit of pee[or]you leak a little squirt of pee[or]your bladder muscles tense and accidentally let out a little pee[in random order]. ";
+		say roman type;
+		if K is clothing, AnnouncedExpel urine on K by 1;
+		otherwise AnnouncedExpel urine on thighs by 1;
+		decrease the bladder of the player by 1;
+		if KSK is 0 and the total-soak of K > 0, say "There is now a visible [if K is diaper]yellow patch[otherwise]stain[end if] in the front of your [ShortDesc of K].";
+		compute sudden squirt into K disapproval.
 
-[!<YourselfIsIncontinent>+
+To check full wetting:
+	check full wetting with reason "".
 
-This is essentially the highest level of incontinence that matters, because at this level all control is taken away from the player.
+To check full wetting with reason (T - a text):
+	if the player is incontinent and (temporary-incontinence is 0 or incontinence >= 8): [every single unit of pee immediately gets peed out unless it's temporary incontinence]
+		if the bladder of the player > 0, now delayed urination is 1;
+	otherwise:
+		let I be bladder-risky-level;
+		let B be bladder-bursting-level; [difference between bladder and risky level]
+		let resting-wetter be 0;
+		if resting is 1 and (there is a worn bed wetting clothing or bed-wetter tattoo is worn) and the bladder of the player > 2, now resting-wetter is 3;
+		if the player is in Iron Maiden, now resting-wetter is 5;
+		if B >= 0 or resting-wetter > 0:
+			if resting-wetter > 0 and B < resting-wetter, now B is resting-wetter; [bed wetters always have a high chance of wetting while resting]
+			let R be (a random number between bladder-difficulty and B) + (a random number between bladder-difficulty and B);
+			if debuginfo > 1, say "[input-style]Automatic wetting check: [if resting-wetter > 0 and B is resting-wetter]magic bed wetting effect ([resting-wetter])[otherwise]bladder ([bladder of the player]) - continence rating ([I]) = [B][end if] ---> RNG([bladder-difficulty] ~ [B]) + RNG([bladder-difficulty] ~ [B]) = [R] | positive number[roman type][line break]";
+			if R > 0 and the bladder of the player > 0:
+				now delayed urination is 1;
+				now delayed urination flav is T;
+			otherwise if the player is bursting and (R is 0 or the remainder after dividing time-earnings by 120 < time-seconds): [Once every now and then we reward the player for holding it while it's risky]
+				progress quest of bursting-quest.
 
-+!]
-Definition: yourself is incontinent:
-	if the incontinence of the player >= 8, decide yes;
-	decide no.
+To check pee pressure:
+	check pee pressure with reason "".
 
-[The level of bladder at which the player has a chance to squirt out a bit of pee when surprised / distracted]
-To decide which number is bladder-squirty-level:
-	let N be 7;
-	decrease N by the incontinence of the player;
-	decrease N by the womb volume of vagina / 10; [pregnancy makes you need to go more]
-	increase N by yellow theme bonus;
-	if N < 1, decide on 1;
-	decide on N.
-
-[The level of bladder at which the player has a chance to just spontaneously wet themselves]
-To decide which number is bladder-risky-level:
-	let N be 12;
-	decrease N by the incontinence of the player;
-	decrease N by the womb volume of vagina / 10; [pregnancy makes you need to go more]
-	increase N by yellow theme bonus;
-	if N < 4, decide on 4;
-	decide on N.
-
-[As bladder rises further above bladder-risky-level, the player is more likely to wet themselves each turn]
-To decide which number is bladder-bursting-level:
-	decide on the bladder of the player - bladder-risky-level.
-
-[!<YourselfIsDesperateToPee>+
-
-Does the player need to pee?
-
-+!]
-Definition: yourself is desperate to pee:
-	if tutorial is 1, decide no;
-	if the latex-transformation of the player > 4, decide no;
-	if the bladder of the player > 3, decide yes;
-	decide no.
-
-[!<YourselfIsBursting>+
-
-Can the player tell they need to pee?
-
-+!]
-Definition: yourself is bursting:
-	if the player is incontinent or failed potty training tattoo is worn, decide no;
-	if the player is fake bursting, decide yes;
-	if the player is desperate to pee and the bladder of the player >= 6, decide yes;
-	decide no.
-
-[!<YourselfIsFakeBursting>+
-
-Does the player have something telling them they need to pee even when they actually don't?
-
-+!]
-Definition: yourself is fake bursting:
-	if diaper lover > 0 and there is a worn prostate massager plug, decide yes;
-	decide no.
-
-[!<YourselfIsReallyBursting>+
-
-Is the player at risk of wetting themselves (and aware)?
-
-+!]
-Definition: yourself is really bursting:
-	if the player is bursting and bladder-bursting-level > 0, decide yes;
-	decide no.
-
-To decide which number is burstingColour:
-	[unless the player is bursting, decide on 16777215;] [white] [unnecessary because the only time this is used we have already checked that the player is bursting]
-	if failed potty training tattoo is worn, decide on 16777215; [white]
-	if the player is fake bursting, decide on lightModeFullRed; [red]
-	let R-component be 255;
-	let G-component be 0;
-	let B-component be 0;
-	if the player is really bursting: [gradually go from pale red to red]
-		now G-component is 128 - (bladder-bursting-level * 32);
-		if G-component < 0, now G-component is 0;
-		now B-component is G-component;
-	otherwise: [gradually go from green to pale red]
-		now R-component is (255 * the bladder of the player) / bladder-risky-level;
-		now B-component is R-component / 2;
-		now G-component is 255 - B-component;
-	decide on (R-component * 65536) + (G-component * 256) + B-component.
+To check pee pressure with reason (T - a text):
+	if player-urinating is 0:
+		check full wetting with reason T;
+		if delayed urination is 0, check pee leaking with reason T.
 
 To check pee leaking:
 	check pee leaking with reason "".
@@ -1170,10 +1121,11 @@ This is the compulsory urination rule:
 		if the player is diapered and (the player is not bursting or the player is incontinent): [The player can be bursting and incontinent at the same time thanks to the prostate plug]
 			let D be a random worn diaper;
 			if the bladder of the player > 0 and the urine-soak of D + the bladder of the player <= the soak-limit of D: [The player always notices properly if the diaper overflows.]
+				let bladder-before be the bladder of the player;
 				let urine-before be the urine-soak of D;
 				StealthUrineSoakUp D by the bladder of the player;
 				now the bladder of the player is 0;
-				if the player is diaper aware or wetting-valued > 3:
+				if (bladder-before > 1 and the player is diaper aware) or wetting-valued > 3:
 					if delayed urination flav is "", say "A ";
 					otherwise say "[delayed urination flav] a";
 					say "warm wet feeling lets you know that you just [one of]used[or]went number one in[or]peed in[or]wet[at random] your diaper.[line break][variable custom style][if the diaper addiction of the player < 8][one of]Oh shit![or]Oh crap! Not again...[stopping][otherwise if the diaper addiction of the player < 12][one of]Uh-oh.[or]Oh dear, it looks like I really am incontinent![stopping][otherwise][one of]Wearing this diaper means I never have to worry about my bladder![or]This is great! I just need to make sure I don't run out of diapers.[or]It feels nice and warm![or]Thank you Mr. Diaper![or]I can't imagine life without diapers![then at random][end if][roman type][line break]";
@@ -1182,12 +1134,19 @@ This is the compulsory urination rule:
 						say "Your [D] glows softly. Something tells you it is now making you even more incontinent!";
 						now D is bed wetting;
 					DiaperAddictUp 1;
-				otherwise:
+					progress quest of bursting-quest;
+					progress quest of adult-baby-quest;
+				otherwise if bladder-before > 1:
 					SilentlyDiaperAddictUp 1;
-				progress quest of adult-baby-quest;
+					progress quest of bursting-quest;
+					progress quest of adult-baby-quest;
+				otherwise:
+					say "You can feel that your diaper is [one of]slightly[or]a little[or]a tad[or]a tiny bit[in random order] [one of]heavier[or]wetter[or]more soggy[in random order] than before.";
+					if the total-soak of D >= the soak-limit of D:
+						progress quest of bursting-quest;
+						progress quest of adult-baby-quest;
 				if diaper quest is 1 and the total-soak of D >= the soak-limit of D, progress quest of priestess-service-quest;
 				if D is not currently visible and there is an intelligent monster in the location of the player, progress quest of stealth-diaper-quest;
-				progress quest of bursting-quest;
 				if rattle is worn and the raw-magic-modifier of rattle < 4:
 					say "Your rattle glows blue for a moment! It feels more powerful.";
 					now the raw-magic-modifier of rattle is 4;

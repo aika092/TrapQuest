@@ -50,7 +50,13 @@ To compute clothesRinsing of (C - a clothing) in (T - a thing):
 		pollute S;
 	clean C;
 	Drench C;
-	if C is not hugger-panties and C is not hugger-gag, now C is not glued.
+	if C is glued and C is not hugger-panties and C is not hugger-gag:
+		decrease the glue timer of C by 50;
+		if the glue timer of C > 0:
+			say "The glue on [NameDesc of C] is rapidly weakening!";
+		otherwise:
+			now the glue timer of C is 0;
+			say "The glue on [NameDesc of C] has completely degraded[if C is worn]. It's no longer stuck to you![otherwise].[end if]";
 
 To compute bodyRinsing of (B - a body part) in (T - a thing):[TODO: change so it pollutes the pool again]
 	increase tracked-semen by the semen coating of B;

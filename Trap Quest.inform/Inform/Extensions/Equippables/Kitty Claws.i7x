@@ -88,6 +88,6 @@ To compute attack of (W - meow cow claws) at (M - a monster):
 Definition: meow cow claws is cat themed: decide yes.
 Definition: meow cow claws is cow themed: decide yes.
 Definition: meow cow claws is black themed: decide yes.
-Definition: meow cow claws is white themed:	decide yes.
+Definition: meow cow claws is white themed: decide yes.
 
 Kitty Claws ends here.

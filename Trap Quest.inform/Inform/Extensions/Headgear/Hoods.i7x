@@ -34,7 +34,7 @@ To decide which number is the dexterity-influence of (H - a hood):
 	decide on D.
 
 To decide which number is the initial outrage of (C - a hood):
-	decide on 13.
+	decide on 5.
 
 Carry out wearing hood:
 	if the player is not gagged and the noun is ringagged, say "Your mouth is forced wide open by the gag ring.";
@@ -137,24 +137,25 @@ To compute persistent reward of (Q - just-wait-quest) on (C - a clothing):
 		compute generic class reward of Q on C.
 
 Report wearing clothing when black hood is worn:
-	unless the noun is plentiful accessory or the noun is black hood, compute just-wait-reset.
+	unless the noun is plentiful accessory or the noun is black hood, compute just-wait-punish.
 
 Report taking off clothing when black hood is worn:
-	unless the noun is plentiful accessory, compute just-wait-reset.
+	unless the noun is plentiful accessory, compute just-wait-punish.
 
 Report knifing clothing with a thing when black hood is worn:
-	if the noun is not worn, compute just-wait-reset.
+	if the noun is not worn, compute just-wait-punish.
 
-To compute just-wait-reset:
-	now the wait-count of just-wait-quest is 0;
+To compute just-wait-punish:
+	decrease the wait-count of just-wait-quest by 15;
+	if the wait-count of just-wait-quest < 0, now the wait-count of just-wait-quest is 0;
 	if the quest of black hood is just-wait-quest:
 		if black hood is bland:
 			now black hood is cursed;
-			say "[bold type]Your [ShortDesc of black hood] curses itself as punishment for you changing your outfit![roman type][line break]";
+			say "[bold type]Your [ShortDesc of black hood] curses itself as punishment for you changing your outfit![roman type] And you can feel that it will be slightly longer until the quest is considered complete.";
 		otherwise:
 			now black hood is stumbling;
 			decrease the raw-magic-modifier of black hood by 1;
-			say "[bold type]Your [ShortDesc of black hood] becomes a [black hood] as punishment for you changing your outfit![roman type][line break]".
+			say "[bold type]Your [ShortDesc of black hood] becomes a [black hood] as punishment for you changing your outfit![roman type] And you can feel that it will be slightly longer until the quest is considered complete.".
 
 To uniquely destroy (C - black hood):
 	let L be the number of worn latex clothing;

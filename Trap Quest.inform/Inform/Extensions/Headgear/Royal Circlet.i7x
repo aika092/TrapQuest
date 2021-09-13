@@ -56,9 +56,9 @@ To compute periodic effect of (H - royal circlet):
 	if B is clothing and the number of embodied things penetrating a fuckhole is 0:
 		say "Your [ShortDesc of H] shines brightly, and your [ShortDesc of B] magically repairs itself.";
 		repair B;
-	otherwise if there is a worn milking basque and the lactation rate of the player < a random number between -50 and 5:
+	otherwise if there is a worn milking basque and the lactation rate of breasts < a random number between -50 and 5:
 		say "[bold type]Your [ShortDesc of H] feels warm, and moments later your [BreastDesc] feel more active...[roman type][line break]";
-		increase the lactation rate of the player by 1.
+		increase the lactation rate of breasts by 1.
 
 Chapter - Quest
 
