@@ -33,6 +33,7 @@ To decide which number is the tolerance of (F - a fuckhole):
 		increase T by the relaxskill of the player * 2;
 	repeat with C running through worn wearthings:
 		increase T by the soreness-influence of C;
+		if C is elasticity clothing, increase T by 3;
 	if the latex-transformation of the player > 3, increase T by 100;
 	decide on T.
 

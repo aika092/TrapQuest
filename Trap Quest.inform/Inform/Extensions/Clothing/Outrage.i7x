@@ -36,25 +36,6 @@ To decide which number is the unworn outrage of (C - a clothing):
 	if O > 20, now O is 20;
 	decide on O.
 
-To decide which number is the outrage of (C - a vessel):
-	if C is squirt dildo:
-		decide on 11;
-	otherwise if C is baby's bottle:
-		decide on 8;
-	otherwise if C is novelty mug:
-		decide on 6;
-	otherwise if C is cocktail-glass:
-		decide on 3;
-	otherwise:
-		decide on 0.
-
-To decide which number is the outrage of (C - a lubricant):
-	decide on 7.
-
-To decide which number is the outrage of (C - a sex toy):
-	if C is players-detached-dick, decide on 15; [#LXorDD]
-	otherwise decide on 10 + the girth of C.
-
 To decide which number is the fluid outrage of (C - a clothing):
 	decide on the fluid cringe of C.
 

@@ -208,10 +208,10 @@ To compute spell outrageousness reaction of (M - a monster) to (S - a magic-spel
 			otherwise compute cringe disapproval of M.
 
 A game universe initialisation rule:
+	choose a blank row in the Table of Possible Incantations;
+	now the phrase entry is "love to cum";
+	now the naughtiness entry is 4;
 	if diaper quest is 0:
-		choose a blank row in the Table of Possible Incantations;
-		now the phrase entry is "love to cum";
-		now the naughtiness entry is 4;
 		choose a blank row in the Table of Possible Incantations;
 		now the phrase entry is "love having anal orgasms";
 		now the naughtiness entry is 6;
@@ -302,6 +302,9 @@ A game universe initialisation rule:
 		choose a blank row in the Table of Possible Incantations;
 		now the phrase entry is "want my mommy";
 		now the naughtiness entry is 5;
+		choose a blank row in the Table of Possible Incantations;
+		now the phrase entry is "need to go tinkles";
+		now the naughtiness entry is 3;
 		choose a blank row in the Table of Possible Incantations;
 		now the phrase entry is "have my squirt-squirt cummies inside my Pampies";
 		now the naughtiness entry is 13;

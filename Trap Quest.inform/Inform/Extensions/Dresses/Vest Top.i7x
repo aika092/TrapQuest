@@ -149,13 +149,10 @@ To decide which number is the initial outrage of (C - gang-bang-girl vest top):
 
 outrageous-gang-bang-vest is a humiliating situation.
 Definition: outrageous-gang-bang-vest is applicable:
-	if gang-bang-girl vest top is worn and the player is not disgraced and the outrage of gang-bang-girl vest top is too humiliating, decide yes;
+	if gang-bang-girl vest top is worn and the outrage of gang-bang-girl vest top is too humiliating, decide yes;
 	decide no.
 To reflect on (A - outrageous-gang-bang-vest):
 	say "[variable custom style]I really shouldn't be wearing this vest top... if I get forced into some kind of gang bang situation right now, I don't think my mind would survive... never mind my [if the player is possessing a vagina][vagina][otherwise][asshole][end if]![roman type][line break]".
-
-To decide which number is the initial outrage of (C - gang-bang-girl vest top):
-	decide on 9.
 
 Part 6 - I Wish These Were Brains T-shirt
 

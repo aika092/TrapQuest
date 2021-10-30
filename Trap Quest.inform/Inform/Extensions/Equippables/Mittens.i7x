@@ -31,7 +31,8 @@ To say ShortDesc of (W - a mittens):
 To say BabywearDonationDeclarationFlav of (M - a monster) on (C - a mittens):
 	if M is intelligent, say "[speech style of M]'[if the health of M < the maxhealth of M]It seems like we need to keep you from being too dangerous[otherwise]Babies don't need their hands, since they should be letting the grown-ups take care of them[end if].'[roman type][line break]".
 
-rubber mittens is a mittens. rubber mittens is latex. The printed name of rubber mittens is "[clothing-title-before]pair of latex mittens[clothing-title-after]". Figure of rubber mittens is the file "Items/Accessories/Equippables/mittens1.png". The text-shortcut of rubber mittens is "lmi".
+rubber mittens is a mittens. rubber mittens is latex. The printed name of rubber mittens is "[clothing-title-before]pair of pink latex mittens[clothing-title-after]". Figure of rubber mittens is the file "Items/Accessories/Equippables/mittens1.png". The text-shortcut of rubber mittens is "lmi". Understand "pink" as rubber mittens.
+black rubber mittens is a mittens. black rubber mittens is latex. The printed name of black rubber mittens is "[clothing-title-before]pair of black latex mittens[clothing-title-after]". Figure of black rubber mittens is the file "Items/Accessories/Equippables/mittens6.png". The text-shortcut of black rubber mittens is "bkmi".
 blue rubber mittens is a mittens. blue rubber mittens is latex. The printed name of blue rubber mittens is "[clothing-title-before]pair of blue latex mittens[clothing-title-after]". Figure of blue rubber mittens is the file "Items/Accessories/Equippables/mittens4.png". The text-shortcut of blue rubber mittens is "blmi".
 inflated rubber mittens is a mittens. inflated rubber mittens is latex. The printed name of inflated rubber mittens is "[clothing-title-before]pair of inflated latex mittens[clothing-title-after]". Figure of inflated rubber mittens is the file "Items/Accessories/Equippables/mittens3.png". The text-shortcut of inflated rubber mittens is "ilmi".
 teddy bear mittens is a mittens. The printed name of teddy bear mittens is "[clothing-title-before]pair of teddy bear mittens[clothing-title-after]". Figure of teddy bear mittens is the file "Items/Accessories/Equippables/mittens2.png". The text-shortcut of teddy bear mittens is "tmi".
@@ -43,6 +44,9 @@ Definition: christmas mittens is class-relevant:
 
 To decide which figure-name is clothing-image of (C - rubber mittens):
 	decide on figure of rubber mittens.
+
+To decide which figure-name is clothing-image of (C - black rubber mittens):
+	decide on figure of black rubber mittens.
 
 To decide which figure-name is clothing-image of (C - blue rubber mittens):
 	decide on figure of blue rubber mittens.
@@ -58,6 +62,10 @@ To decide which figure-name is clothing-image of (C - christmas mittens):
 
 To say ClothingDesc of (W - rubber mittens):
 	say "A pair of large pink latex mittens. You lose some manual dexterity and some slapping power from wearing them.";
+	if the player is an adult baby and W is worn, say "You feel much, much better at running away from monsters whilst on your knees.".
+
+To say ClothingDesc of (W - black rubber mittens):
+	say "A pair of large black latex mittens. You lose some manual dexterity and some slapping power from wearing them.";
 	if the player is an adult baby and W is worn, say "You feel much, much better at running away from monsters whilst on your knees.".
 
 To say ClothingDesc of (W - blue rubber mittens):
@@ -83,7 +91,8 @@ To say ClothingDesc of (W - christmas mittens):
 	if the player is an adult baby and W is worn, say "You feel much, much better at running away from monsters whilst on your knees.".
 
 Definition: rubber mittens is pink themed: decide yes.
-Definition: rubber mittens is blue themed: decide yes.
+Definition: black rubber mittens is black themed: decide yes.
+Definition: blue rubber mittens is blue themed: decide yes.
 
 teddy bear mittens is womanly.
 Definition: teddy bear mittens is bear themed: decide yes.

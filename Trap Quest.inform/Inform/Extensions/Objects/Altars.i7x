@@ -890,6 +890,15 @@ To DevilPray (P - a person):
 	otherwise if R is 0 and gold-tiara is off-stage and gold-tiara is actually summonable:[having sex with a demon at least once will give the player the worshipper headgear]
 		say "The statue's face seems to grin as a golden tiara materialises on your head.";
 		summon gold-tiara cursed;
+	otherwise if mechanic is alive and (the class of the player is "princess" or the class of the player is "deepthroat princess" or the class of the player is "trained fuck princess" or the class of the player is "virgin warrior princess") and bride-consort is throne and the player is a december 2020 top donator:
+		let H be a random worn headgear;
+		transform H into tiara-veil;
+		now the quest of H is betrothal-quest;
+		now bride-consort is mechanic;
+		let C be a random worn removable overdress;
+		if C is a thing, WardrobeVanish C; [this would prevent the class summon below]
+		class summon princess bride dress;
+		now R is 0;
 	otherwise if R is 1:[summon a demonic item. The item has a better modifier and less chance of a bad enchantment if the modifier is low]
 		let C be a random off-stage demonic clothing;
 		if C is actually summonable:

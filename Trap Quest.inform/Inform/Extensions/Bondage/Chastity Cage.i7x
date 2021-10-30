@@ -75,6 +75,11 @@ To say ShortDesc of (C - a chastity cage):
 	say "chastity cage".
 
 Definition: a chastity cage is sissifying: decide yes.
+Definition: a chastity cage is transformation-protected: decide no.
+
+To decide which object is the unique-upgrade-target of (C - a chastity cage):
+	unless C is nub-cage, decide on nub-cage;
+	decide on nothing.
 
 To decide which number is the delicateness-influence of (C - a chastity cage):
 	decide on 1.
@@ -202,6 +207,7 @@ To say ClothingDesc of (C - latex-cage):
 nub-cage is a chastity cage. Understand "nub" as nub-cage. a nub-cage has a number called nub-charge. The text-shortcut of nub-cage is "nuc".
 
 Definition: a nub-cage is fetish appropriate: decide no.
+Definition: a nub-cage is transformation-protected: decide yes.
 
 To compute post transformation effect of (C - nub-cage):
 	now the size of C is the size of penis.

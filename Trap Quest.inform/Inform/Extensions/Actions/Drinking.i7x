@@ -117,7 +117,7 @@ Definition: yourself (called Y) is able to drink:
 			decide no;
 	if face is actually occupied:
 		let T be a random thing penetrating face;
-		if T is cursed cock pacifier:
+		if T is cock pacifier and T is cursed:
 			unless the drinking-target is cock pacifier:
 				if autodrink is 0, say "The cock pacifier is so tightly connected to your face that there's no way you can drink anything else with it on!";
 				decide no;

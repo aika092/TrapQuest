@@ -9,7 +9,13 @@ To compute announcements:
 			now choice in row 50 of the Table of Settings is 0;
 		now choice in row 53 of Table of Settings is 1;
 	if tutorial is 0:
-		if announcements seen < 2:
+		if halloween content is 0:
+			clear the screen;
+			say "Happy Halloween! This is the Halloween release, but Halloween mode (where you start in the mansion as a trick-or-treater and have to explore, find and eat some candy before you can leave) is currently disabled. Would you like to enable it now? [if quick start > 0](This will cause you do perform a full [']Normal Start['] - Quick Start and Random Start are not compatible with the halloween setup.) [end if]";
+			if the player is consenting:
+				now choice in row 80 of the Table of Player Options is 3;
+				now quick start is 0;
+		otherwise if announcements seen < 2:
 			clear the screen;
 			say "For your information: When you go for a 'Normal Start', lots of fetish settings can now be swapped between 'never', 'not now', 'yes this time' and 'always' as opposed to just 'enabled' and 'disabled'. The reason for this is that you are being encouraged to customise potential future 'Random Start' runs. What this means is that when an option is set to 'not now' or 'yes this time', it will be randomly set to enabled or disabled each time you choose Random Start. All other settings will remain as you have previously configured them. So if for example you always want TG Fetish enabled but never want watersports fetish enabled and you want everything else to be randomised and surprise you, that is now possible.[line break][bold type]Press any key to continue.[roman type][line break]";
 			let C be the chosen letter;

@@ -18,14 +18,14 @@ Definition: a baby pacifier is shop-eligible:
 Definition: a baby pacifier is baby themed: [Is it something that only an adult baby fetishist would have?]
 	decide yes.
 
-A cock pacifier is a kind of pacifier. There is 1 unique cock pacifier. The printed name of cock pacifier is "[clothing-title-before]cock pacifier[clothing-title-after]". The text-shortcut of cock pacifier is "cpc".
-Definition: a cock pacifier is fetish appropriate:
+cock pacifier is a pacifier. cock pacifier is unique. The printed name of cock pacifier is "[clothing-title-before]cock pacifier[clothing-title-after]". The text-shortcut of cock pacifier is "cpc".
+Definition: cock pacifier is fetish appropriate:
 	if diaper quest is 0, decide yes;
 	decide no.
-Definition: a cock pacifier is drink themed: decide yes.
-Definition: a cock pacifier is oral sex themed: decide yes.
-Definition: a cock pacifier is penis themed: decide yes.
-Definition: a cock pacifier is red themed: decide yes.
+Definition: cock pacifier is drink themed: decide yes.
+Definition: cock pacifier is oral sex themed: decide yes.
+Definition: cock pacifier is penis themed: decide yes.
+Definition: cock pacifier is red themed: decide yes.
 A baby pacifier is a kind of pacifier.
 A pink pacifier is a kind of baby pacifier. There is 1 pink pacifier. The printed name of pink pacifier is "[clothing-title-before]pink pacifier[clothing-title-after]". The text-shortcut of pink pacifier is "ppa".
 Definition: a pink pacifier is pink themed: decide yes.
@@ -49,7 +49,7 @@ Definition: a ghost pacifier is transformation-protected:
 
 To say ShortDesc of (P - a pacifier):
 	say "pacifier".
-To say ShortDesc of (P - a cock pacifier):
+To say ShortDesc of (P - cock pacifier):
 	say "cock pacifier".
 To say ShortDesc of (P - a sparkly princess pacifier):
 	say "sparkly princess pacifier".
@@ -113,7 +113,7 @@ Figure of yellow pacifier is the file "Items/Accessories/Head/pacifier3.png".
 Figure of sparkly princess pacifier is the file "Items/Accessories/Head/pacifier4.png".
 Figure of ghost pacifier is the file "Items/Accessories/Head/pacifier5.png".
 
-To decide which figure-name is clothing-image of (C - a cock pacifier):
+To decide which figure-name is clothing-image of (C - cock pacifier):
 	decide on figure of cock pacifier.
 To decide which figure-name is clothing-image of (C - a pink pacifier):
 	decide on figure of pink pacifier.
@@ -126,7 +126,7 @@ To decide which figure-name is clothing-image of (C - a sparkly princess pacifie
 To decide which figure-name is clothing-image of (C - a ghost pacifier):
 	decide on figure of ghost pacifier.
 
-To say ClothingDesc of (C - a cock pacifier):
+To say ClothingDesc of (C - cock pacifier):
 	say "This pacifier has a penis shaped sucker, [if the oral sex addiction of the player < 7]to further humiliate the wearer[otherwise]to keep you happy by letting you practise sucking [manly-penis] all the time.[end if]".
 
 To say ClothingDesc of (C - a pink pacifier):
@@ -158,13 +158,11 @@ Report examining pacifier when diaper quest is 1:
 	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Pacifiers increase your slow arousal reduction over time while worn, and enable decreases in arousal even on turns when you're also gaining arousal (useful if something is slowly stimulating you over time). But of course they're rather embarrassing for an adult to be wearing.[roman type][line break][or][stopping]".
 
 To compute periodic effect of (P - a pacifier):
-	if diaper quest is 0 and the thirst of the player >= 5 and P is not cock pacifier:
-		let C be a random off-stage cock pacifier;
-		if C is cock pacifier:
-			say "[bold type]Your [ShortDesc of P] [bold type]morphs in your mouth, turning into a [ShortDesc of C]! As the cock forms in your mouth, it squirts a shot of [semen] down your throat.";
-			only destroy P;
-			summon C cursed with quest;
-			StomachSemenUp 1.
+	if diaper quest is 0 and the thirst of the player >= 5 and cock pacifier is off-stage:
+		say "[bold type]Your [ShortDesc of P] [bold type]morphs in your mouth, turning into a [ShortDesc of cock pacifier]! As the cock forms in your mouth, it squirts a shot of [semen] down your throat.";
+		only destroy P;
+		summon cock pacifier cursed with quest;
+		StomachSemenUp 1.
 
 A diaper quest fix rule:
 	now yellow-pacifier is plentiful.

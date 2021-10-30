@@ -9,6 +9,10 @@ Definition: an undies is same-type:
 	if theme-share-target is undies, decide yes;
 	decide no.
 
+To set up magic attribute of (C - an undies):
+	let R be a random number between 1 and 8;
+	if R is 2, now C is elasticity.
+
 To say UniqueClothingDesc of (U - an undies):
 	say "A [selfexaminetitle of U]. ".
 

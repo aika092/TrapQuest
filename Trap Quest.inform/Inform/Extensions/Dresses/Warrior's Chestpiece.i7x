@@ -273,11 +273,11 @@ To compute virginity-loss of (H - virgin magical girl outfit):
 
 Part 8 - Virgin Princess Outfit
 
-virgin princess outfit is an immodest warrior chestpiece. virgin princess outfit is belly exposing. virgin princess outfit is neck covering. virgin princess outfit is unskirted. virgin princess outfit is crotch-intact. virgin princess outfit is optional-top-displacable. virgin princess outfit is ridiculously low cut. virgin princess outfit is totally-exclusive. virgin princess outfit is normally-partially-nipple-covering.
+virgin princess outfit is an immodest warrior chestpiece. virgin princess outfit is silk. virgin princess outfit is belly exposing. virgin princess outfit is neck covering. virgin princess outfit is unskirted. virgin princess outfit is crotch-intact. virgin princess outfit is optional-top-displacable. virgin princess outfit is ridiculously low cut. virgin princess outfit is totally-exclusive. virgin princess outfit is normally-partially-nipple-covering.
 
 Figure of virgin princess outfit is the file "Items/Clothes/Upper/Special/Warrior/princess1.png".
 
-The printed name of virgin princess outfit is usually "[clothing-title-before]virgin princess outfit[clothing-title-after]". The text-shortcut of virgin princess outfit is "vpro".
+The printed name of virgin princess outfit is "[clothing-title-before]virgin princess outfit[clothing-title-after]". The text-shortcut of virgin princess outfit is "vpro".
 
 To decide which figure-name is clothing-image of (C - virgin princess outfit):
 	decide on figure of virgin princess outfit.
@@ -291,12 +291,18 @@ To say ShortDesc of (C - virgin princess outfit):
 To decide which number is the initial outrage of (C - virgin princess outfit):
 	decide on 6.
 
-Definition: virgin princess outfit is class-transformation-protected:
+Definition: virgin princess outfit is class-relevant:
 	if the class of the player is virgin warrior or the class of the player is princess, decide yes;
 	decide no.
+To compute class set up of (C - virgin princess outfit):
+	now C is blessed;
+	now C is strength-influencing;
+	now the raw-magic-modifier of C is 3.
 
 Definition: virgin princess outfit is gem themed: decide yes.
 Definition: virgin princess outfit is white themed: decide yes.
+Definition: virgin princess outfit is displacable: decide yes.
+
 To decide which number is the penis-capacity of (H - virgin princess outfit):
 	decide on 2.
 To decide which number is the crotch-tightness of (H - virgin princess outfit):

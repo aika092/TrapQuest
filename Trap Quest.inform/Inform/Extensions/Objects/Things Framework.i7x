@@ -201,10 +201,10 @@ To say NameDesc of (Y - yourself):
 To say BigNameDesc of (Y - yourself):
 	say NameBimbo.
 
-To say NameDesc of (C - a monster):
+To say NameDesc of (C - a person):
 	say "the [input-style][MediumDesc of C][roman type]".
 
-To say BigNameDesc of (C - a monster):
+To say BigNameDesc of (C - a person):
 	say "The [input-style][MediumDesc of C][roman type]".
 
 [Show the image in the main window if the player has requested so]

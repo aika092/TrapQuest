@@ -93,8 +93,24 @@ To decide which room is the room at (grid ref - a spatial coordinate):
 		if the grid position of M is grid ref, decide on M;
 	repeat with M running through rooms in the School:
 		if the grid position of M is grid ref and M is not Toilet01 and M is not Toilet02, decide on M;
-	repeat with M running through rooms in the tutorialarea:
-		if the grid position of M is grid ref, decide on M;
+	repeat with R running through rooms in the tutorialarea:
+		if the grid position of R is grid ref, decide on R;
+	decide on Solid Rock.
+
+[Used for drawing maps, which should only happen when you're in that region]
+To decide which room is the regional room at (grid ref - a spatial coordinate):
+	if grid ref is <0,0,0>, decide on Solid Rock;
+	if the player is in Toilet01 and the grid position of Toilet01 is grid ref, decide on Toilet01;
+	if the player is in Toilet02 and the grid position of Toilet02 is grid ref, decide on Toilet02;
+	if tutorial is 1:
+		repeat with R running through rooms in the tutorialarea:
+			if the grid position of R is grid ref, decide on R;
+	otherwise if the player is in a painting-room:
+		repeat with R running through painting-rooms:
+			if the grid position of R is grid ref, decide on R;
+	otherwise:
+		repeat with R running through rooms in playerRegion:
+			if the grid position of R is grid ref and R is not Toilet01 and R is not Toilet02, decide on R;
 	decide on Solid Rock.
 
 [Check going to Solid Rock:

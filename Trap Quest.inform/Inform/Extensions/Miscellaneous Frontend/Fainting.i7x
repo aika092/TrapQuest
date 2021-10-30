@@ -210,10 +210,9 @@ To Recover Clothing:
 			only destroy I;
 		if I is worn yoga pants:
 			if I is cursed:
-				let G be a random off-stage cock pacifier;
-				if G is actually summonable:
-					summon G cursed;
-					say "[bold type]As you are being warped back into the game, you feel your mouth filled with a [ShortDesc of G][bold type]![roman type] Somehow you know this is the doing of your [ShortDesc of I]...";
+				if cock pacifier is off-stage and cock pacifier is actually summonable:
+					summon cock pacifier cursed;
+					say "[bold type]As you are being warped back into the game, you feel your mouth filled with a [ShortDesc of cock pacifier][bold type]![roman type] Somehow you know this is the doing of your [ShortDesc of I]...";
 			otherwise:
 				now I is cursed;
 		if I is worn store thing, compute stealing of I.
@@ -296,6 +295,7 @@ To Recover Rooms:
 			change the D exit of R to Solid Rock;
 	repeat with R running through haunted rooms:
 		now Neighbour Finder is R;
+		now R is not discovered;
 		unless R is the location of the player, totally clean R;
 		[if R is Mansion00:
 			if the location of the player is R, now the player is in Mansion01;]

@@ -192,6 +192,9 @@ To say ClothesPeeReaction of (M - hellhound):
 To say ToiletPeeReaction of (M - hellhound):
 	say GroundPeeReaction of M.
 
+To say ToiletReactionFlav of (M - hellhound):
+	say GroundPeeReaction of M.
+
 To compute diaper mess reaction of (M - hellhound):
 	if diaper quest is 1:
 		say "You see [NameDesc of M][']s eyes glaze over with arousal.[line break][speech style of M]'Awoo...'[roman type][line break]It looks like [he of M] wants to play...";
@@ -298,15 +301,15 @@ To compute shredding attack of (M - hellhound):
 		say "The fireball hits you [TargetName of B]! Ouch!";
 		BodyRuin 2.
 
-To say StrikingFlav of (M - a wench) on (B - a body part):
+To say StrikingFlav of (M - hellhound) on (B - a body part):
 	if mythical creature fetish is 1, say "[BigNameDesc of M] [one of]charges at you![or]takes a few steps back and charges at you![or]charges at you with [his of M] huge frame[in random order]";
 	otherwise say "[BigNameDesc of M] tries to headbutt you!".
 
-To say StrikingSuccessFlav of (M - a wench) on (B - a body part):
+To say StrikingSuccessFlav of (M - hellhound) on (B - a body part):
 	say StrikingFlav of M on B;
 	say "[big he of M] connects with your [if B is face]face[otherwise][printed name of B][end if]!".
 
-To say StrikingFailureFlav of (M - a wench) on (B - a body part):
+To say StrikingFailureFlav of (M - hellhound) on (B - a body part):
 	say StrikingFlav of M on B;
 	say "[big he of M] nearly connects, but you move out of the way just in time.".
 
@@ -528,7 +531,7 @@ To say SpitroastPrep of (M - hellhound) with (O - a monster) in (F - asshole):
 To say FoursomePrep of (M - hellhound) with (N - a monster) and (O - a monster) in (F - vagina):
 	say "[BigFuckerDesc of M] adds [himself of M] to the pile, pinning you down even further under [his of M] weight.".
 
-To say FoursomePrep of (M - hellhound) with (N - a monster) and (O - a monster) in (F - vagina):
+To say FoursomePrep of (M - hellhound) with (N - a monster) and (O - a monster) in (F - asshole):
 	say "[BigFuckerDesc of M] adds [himself of M] to the pile, pinning you down even further under [his of M] weight.".
 
 To say AssholePenetrationFlav of (M - hellhound):

@@ -10,6 +10,8 @@ Definition: mechanic is raunchy: decide yes.
 
 Definition: mechanic is wenchy: decide yes.
 
+Definition: mechanic is permanently banishable: decide no.
+
 mechanic has a number called xavier-power. The xavier-power of mechanic is usually 0.[running counter of how much "demon juice" the mechanic has stored up. At five or more xavier-power he transforms]
 
 mechanic has a number called power-stolen. The power-stolen of mechanic is usually 0.[essentially a flag that determines whether the mystical amulet was destroyed on the elder altar]
@@ -675,9 +677,14 @@ To say DamageReactSubmissive of (M - mechanic):
 To say BanishForceFlav of (M - mechanic):
 	say "You point towards the rear of the hotel, clearly demanding [he of M] leaves. ".
 
+To say BanishFleeFlav of (M - a mechanic):
+	say "[speech style of M]'Oh mark my words, I'll be back.'[roman type][line break][BigNameDesc of M] threatens, as [he of M] takes [his of M] leave.".
+
 To compute unique banishment of (M - a mechanic):
-	say "What happens next you were not expecting - a red pentagram appears on the floor underneath [him of M], and it sort of looks like the floor is melting where the pentagram sits. [BigNameDesc of M] begins to sink down through the pentagram. [big he of M] tries to resist but there's nothing [he of M] can do to stop [himself of M] from being dragged into what looks like hell.[line break][speech style of M]'N-no, so... close... Curse you[if the class of the player is succubus]r... betrayal[end if]...'[roman type][line break]";
-	if gladiatorcurse is 1, uncurse gladiators.[You don't have to unleash the mechanic to purify the gladiators]
+	if there is worn demonic wearthing:
+		say "What happens next it looks like neither of you were expecting - a red pentagram appears on the floor underneath [him of M], and it sort of looks like the floor is melting where the pentagram sits. [BigNameDesc of M] begins to sink down through the pentagram.[line break][speech style of M]'Wait what? How?!'[roman type][line break][big he of M] tries to resist but there's nothing [he of M] can do to stop [himself of M] from being dragged into what looks like hell.[line break][speech style of M]'N-no, so... close... Curse you[if the class of the player is succubus]r... betrayal[end if]...'[roman type][line break]";
+		if gladiatorcurse is 1, uncurse gladiators;[You don't have to unleash the mechanic to purify the gladiators]
+		now M is permanently banished.
 
 To say TaxDesc of (M - mechanic):
 	say "Demand [if there is a worn steel collar]you remove the steel collar[otherwise]an item[end if] in return for mercy.".

@@ -155,18 +155,6 @@ Part 1 - Misc Flavour
 To say BecomesBoredFlav of (M - a mindless acolyte):
 	say "".
 
-To say ToiletReactionFlav of (M - an acolyte):
-	say "[BigNameDesc of M] doesn't even flinch, as if watching you use the toilet is completely normal to [him of M].".
-
-To say GroundPeeReaction of (M - an acolyte):
-	if M is intelligent:
-		say "[speech style of M]'You would dare defile this sacred ground?!'[roman type][line break]";
-		FavourDown M with consequences.
-
-To say ClothesPeeReaction of (M - an acolyte):
-	if M is interested, say "You feel like you know that [NameDesc of M] is smirking under [his of M] veil, but you can't actually see it.";
-	otherwise say "[BigNameDesc of M] doesn't look at you directly or say anything, so it's hard to gauge [his of M] reaction.".
-
 To compute unique periodic effect of (M - an acolyte):
 	let R be the location of M;
 	if R is garlic and a random number between 1 and 7 is 1:
@@ -279,12 +267,11 @@ To compute diaper mess reaction of (M - an acolyte):
 	humiliate 200;
 	if voluntarySquatting is 1, humiliate 600.
 
-To say ToiletPeeReaction of (M - an acolyte):
-	say "[BigNameDesc of M] cocks [his of M] head with apparent distaste.[line break][speech style of M]'[if the class of the player is cultist]Fool! How are you serving the [great ones] by doing that?!'[otherwise]This is not how we do things around here. You will learn...'[end if][roman type][line break]".
+To say ToiletReactionFlav of (M - an acolyte):
+	say "[BigNameDesc of M] doesn't even flinch, as if watching you use the toilet is completely normal to [him of M].".
 
-To say GroundPeeReaction of (M - an acolyte):
-	if M is intelligent:
-		say ToiletPeeReaction of M.
+To say WaterBodyPeeReaction of (M - an acolyte):
+	say "[BigNameDesc of M] cocks [his of M] head with apparent distaste.[line break][speech style of M]'[if the class of the player is cultist]Fool! How are you serving the [great ones] by doing that?!'[otherwise]This is not how we do things around here. You will learn...'[end if][roman type][line break]".
 
 To say ClothesPeeReaction of (M - an acolyte):
 	say "[BigNameDesc of M][']s head snaps round to focus on your loins.[line break][speech style of M]'[if the class of the player is cultist][big brother of the player][otherwise]Heathen[end if], you appear to be [if diaper lover > 0]missing your most important garment[otherwise]leaking[end if]...'[roman type][line break]".
@@ -1007,6 +994,9 @@ To bore (M - clairvoyant acolyte):
 To say PresentFriendlyAcceptanceFlav of (M - clairvoyant acolyte):
 	say "[speech style of M]'[one of]So, you wish to hear the prophecy...'[or]I admire your dedication...'[stopping][roman type][line break]".
 
+To say PresentFriendlyRejectionFlav of (M - clairvoyant acolyte):
+	say "[speech style of M]'If you ask me, your mind is open enough already.'[roman type][line break]".
+
 To compute (M - clairvoyant acolyte) protecting against (X - a monster):
 	[if doomed is 5, clairvoyant acolyte delivers you to the herald.]
 	if X is acolyte or the class of the player is cultist:
@@ -1076,13 +1066,6 @@ To compute standard damage of (M - clairvoyant acolyte):
 			now deep one is interested;
 			now deep one is moved;
 		compute defeat of M.
-
-To say PresentFriendlyAcceptanceFlav of (M - clairvoyant acolyte):
-	say "[speech style of M]'[one of]I cannot deny you.'[or]You need only ask.'[at random][roman type][line break]".
-
-To say PresentFriendlyRejectionFlav of (M - clairvoyant acolyte):
-	if presented-orifice is a potential target:
-		say "[speech style of M]'If you ask me, your mind is open enough already.'[roman type][line break]".
 
 The unique punishment rule of the clairvoyant acolyte is the default unique punishment rule.
 

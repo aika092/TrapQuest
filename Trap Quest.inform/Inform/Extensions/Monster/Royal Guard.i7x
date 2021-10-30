@@ -255,17 +255,25 @@ Definition: a royal guard (called M) is distracted:
 		if N is nothing, let N be a random messy adult baby slave in the location of M;
 		if N is nothing and diaper quest is 0, let N be a random awake gladiator in the location of M;
 		if N is wench and (N is uninterested or N is friendly):
-			say "[BigNameDesc of M][']s eyes are drawn [if M is interested]away from you [end if]to [NameDesc of N]. [big he of M] grabs [him of N] by the hair and pushes [him of N] onto [his of N] knees.[line break][speech style of M]'[one of]Back for more punishment, I see[or]If you still haven't left these halls, you must really want this[or]I do not approve of your appearance, wench[in random order].'[roman type][line break]Freeing [his of M] [LongDickDesc of M], [NameDesc of M] forces it into [NameDesc of N][']s [if N is penetrating face]mouth[otherwise][one of]mouth[or][HoleDesc of N][or]asshole[purely at random][end if] before [he of N] can even begin to protest. Several awkward moan-filled seconds later, [NameDesc of N] is discarded onto the stone floor, panting, with a fresh load of [semen] oozing out of [his of N] abused orifice.";
-			if a2m fetish > 1, now the creampieTimer of N is the semen load of M * 100;
-			now the refractory-period of M is the refractory-time of M;
-			satisfy M;
-			DifficultyUp M by 1;
-			compute mandatory room leaving of M;
-			if N is interested:
-				say "[BigNameDesc of N] begins to ease [himself of N] back to [his of N] feet.[line break][speech style of N]'[one of]I'm sorry you had to see that[or]I'm beginning to lose track of how many times that's happened[or]At least [he of M] didn't take too long[or]Another day, another dicking. I guess it truly never ends down here[in random order].'[roman type][line break]";
-			otherwise if the boredom of N <= 0:
-				compute mandatory room leaving of N;
-			decide yes;
+			if N is QoS wench:
+				say "[BigNameDesc of M][']s eyes are drawn [if M is interested]away from you [end if]to [NameDesc of N]. [big he of M] moves to grab [him of N], but [NameDesc of N] makes a disgusted sound and side-steps [NameDesc of M][']s reaching hand. As [he of N] does, [he of N] flicks [NameDesc of M] in the groin.[line break][speech style of M]'Fuck off pin-dick, I have no interest in your gross little worm!'[roman type][line break].";
+				say PrematureEjaculationFlav of M;
+				say PrematureEjaculationReactionFlav of M;
+				orgasm bore M;
+				say "Visibly embarrassed by [his of M] sexual inadequacy, [NameDesc of M] begins to slink away.";
+				compute mandatory room leaving of M;
+			otherwise:
+				say "[BigNameDesc of M][']s eyes are drawn [if M is interested]away from you [end if]to [NameDesc of N]. [big he of M] grabs [him of N] by the hair and pushes [him of N] onto [his of N] knees.[line break][speech style of M]'[one of]Back for more punishment, I see[or]If you still haven't left these halls, you must really want this[or]I do not approve of your appearance, wench[in random order].'[roman type][line break]Freeing [his of M] [LongDickDesc of M], [NameDesc of M] forces it into [NameDesc of N][']s [if N is penetrating face]mouth[otherwise][one of]mouth[or][HoleDesc of N][or]asshole[purely at random][end if] before [he of N] can even begin to protest. Several awkward moan-filled seconds later, [NameDesc of N] is discarded onto the stone floor, panting, with a fresh load of [semen] oozing out of [his of N] abused orifice.";
+				if a2m fetish > 1, now the creampieTimer of N is the semen load of M * 100;
+				now the refractory-period of M is the refractory-time of M;
+				satisfy M;
+				DifficultyUp M by 1;
+				compute mandatory room leaving of M;
+				if N is interested:
+					say "[BigNameDesc of N] begins to ease [himself of N] back to [his of N] feet.[line break][speech style of N]'[one of]I'm sorry you had to see that[or]I'm beginning to lose track of how many times that's happened[or]At least [he of M] didn't take too long[or]Another day, another dicking. I guess it truly never ends down here[in random order].'[roman type][line break]";
+				otherwise if the boredom of N <= 0:
+					compute mandatory room leaving of N;
+					decide yes;
 		if N is adult baby slave and (N is defeated or N is uninterested or N is friendly):
 			say "[BigNameDesc of M][']s eyes are drawn [if M is interested]away from you [end if]to [NameDesc of N]. [big he of M] grabs [him of N] by the arm.[line break][speech style of M]'Good goddess! You need a change.'[line break][speech style of N]'Nu-uh, I don't need a change, I'm totally fine as I- HEY!'[roman type][line break]Forcing [NameDesc of N] onto [his of N] back, [NameDesc of M] sets about untaping [NameDesc of N][']s diaper, wiping [him of N] down, and changing [him of N] out of [his of N] messy nappy, despite [his of N] protests.";
 			now the messTimer of N is a random number between -25 and 25;
@@ -1323,18 +1331,6 @@ To compute damage reaction of (M - a royal guard):
 		now the sleep of M is 0;
 		now the sex-length of M is a random number between 4 and 5;
 		say "[big he of M] wakes up, and angrily looks around for the cause of this rude awakening! ".
-
-To compute damage reaction of (M - a royal guard):
-	if M is uninterested or M is friendly:
-		say CombatProvokedReaction of M;
-		if the sleep of M > 0:
-			now the sleep of M is 0;
-			now the sex-length of M is a random number between 4 and 5;
-		otherwise:
-			now the sex-length of M is a random number between 2 and 3;
-	otherwise:
-		say DamageReaction (the health of M) of M;
-		if a random number between 1 and 3 is 1, increase the sex-length of M by 1.
 
 To say CombatProvokedReaction of (M - a royal guard):
 	if the sleep of M > 0:

@@ -1550,11 +1550,6 @@ To say FoursomePrep of (M - a patron) with (N - a monster) and (O - a monster) i
 	if B is patron, say "[BigNameDesc of M] temporarily stops, lifting your leg for [NameDesc of N] as [he of M] slips underneath you. Unfortunately, [NameDesc of O] and [NameDesc of B] don't give you a break, continuing to thrust as [NameDesc of N] pushes apart your asscheeks.";
 	otherwise say "[BigNameDesc of M] and [NameDesc of O] temporarily stop, helping [NameDesc of N] flip you over and pull you into [his of N] lap. The break is only momentarily, and they go right back to thrusting as [NameDesc of N] lines up [his of N] tip with your [asshole].".
 
-To say FoursomePrep of (M - a patron) with (N - a monster) and (O - a monster) in (F - asshole):
-	let B be a random patron penetrating breasts;
-	if B is patron, say "[BigNameDesc of N] temporarily stops, lifting your leg for [NameDesc of M] as [he of M] slips underneath you. Unfortunately, [NameDesc of O] and [NameDesc of B] don't give you a break, continuing to thrust as [NameDesc of N] pushes apart your asscheeks.";
-	otherwise say "[BigNameDesc of N] and [NameDesc of O] temporarily stop, helping [NameDesc of M] flip you over and pull you into [his of M] lap. The break is only momentary, and they go right back to thrusting as [NameDesc of M] lines up [his of M] tip with your [one of]soon to be filled[or]unfilled[or]still empty[at random] [asshole].".
-
 To say PrepTaunt of (M - an inexperienced patron) in (F - asshole):
 	say "[speech style of M]'[one of]I can't believe I'm really going to get to fuck your butthole!'[or]My [DickDesc of M][']s about to go in, I hope you're ready!'[or]I've always wanted to try it Greek style!'[in random order][roman type][line break]".
 
@@ -1629,7 +1624,7 @@ To say (M - a dickhead patron) nomercy sex (N - a number):
 	say "[speech style of M][one of]'Haha! Your suffering is music to my ears.'[or]'I will do nothing of the sort.'[or]'It's funny that you think I care.'[or]'I'm the customer here, I'll do what I want.'[in random order][roman type][line break]";
 	say SexSubmissionFlav of M;
 
-To say OralResisting of (M - a monster):[handled by sexresistFlav]
+To say OralResisting of (M - a patron):[handled by sexresistFlav]
 	do nothing.
 
 To say OralResistingResponse of (M - a patron):

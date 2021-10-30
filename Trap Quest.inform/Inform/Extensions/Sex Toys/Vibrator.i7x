@@ -8,7 +8,7 @@ To decide which figure-name is clothing-image of (C - a vibrator):
 
 To say ShortDesc of (C - a vibrator):
 	say "vibrator".
-To say ClothingDesc of (C - purple-vibrator):
+To say ClothingDesc of (C - a vibrator):
 	say "A vibrating dildo[if C is worn]. Its vibrations are slowly driving you insane![otherwise].[end if]".
 
 To compute school periodic effect of (V - a vibrator):
@@ -57,8 +57,8 @@ remote-controlled-vibrator is a vibrator. remote-controlled-vibrator is unique.
 To decide which number is the stimulation of (T - remote-controlled-vibrator) on (F - a body part):
 	if current-predicament is team-girlfriends-predicament, decide on 8;
 	decide on 3.
-Figure of remote controlled vibrator 1 is the file "Items/Accessories/Toys/vibrator2.jpg".
-Figure of remote controlled vibrator 2 is the file "Items/Accessories/Toys/vibrator3.jpg".
+Figure of remote controlled vibrator 1 is the file "Items/Accessories/Toys/vibrator2.png".
+Figure of remote controlled vibrator 2 is the file "Items/Accessories/Toys/vibrator3.png".
 To decide which figure-name is clothing-image of (C - remote-controlled-vibrator):
 	if the player is male, decide on figure of remote controlled vibrator 2;
 	decide on figure of remote controlled vibrator 1.

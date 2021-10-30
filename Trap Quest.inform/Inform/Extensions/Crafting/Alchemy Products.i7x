@@ -926,6 +926,7 @@ Check PowderRubbing:
 	if the second noun is not clothing, say "Powder should be applied to clothing." instead.
 
 Carry Out PowderRubbing:
+	allocate 6 seconds;
 	check stealing of the noun;
 	destroy the noun.
 

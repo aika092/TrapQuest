@@ -103,7 +103,13 @@ The printed name of academy-toilet-key is "[TQlink of item described]academy toi
 To say ExamineDesc of (B - academy-toilet-key):
 	say "This key unlocks the padlocks in the academy's toilets.".
 To decide which number is the bartering value of (K - academy-toilet-key) to (M - headmistress):
-	decide on 1.
+	decide on 99.
+To compute resolution of (M - headmistress) taking (T - academy-toilet-key):
+	if M is unfriendly:
+		say MonsterTakeFlav of M to T;
+		satisfy M;
+	otherwise:
+		say MonsterTakeFlav of M to T.
 To say FriendlyOfferFlav of (T - academy-toilet-key):
 	say "'I'm all done now.'".
 To say MonsterOfferAcceptFlav of (M - headmistress) to (T - academy-toilet-key):

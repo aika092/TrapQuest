@@ -3,6 +3,7 @@ Shopkeeper by Monster begins here.
 [Note that payments to the shopkeeper are handled by Actions/Paying.i7x]
 
 shopkeeper is a monster. shopkeeper is male. shopkeeper is intelligent. The leftover-type of shopkeeper is 108. shopkeeper has a number called stolen-aware.
+shopkeeper has a number called BBCTrainingQuest . The BBCTrainingQuest of shopkeeper is usually 0.
 
 Definition: shopkeeper is willing to urinate: decide yes.
 
@@ -87,6 +88,7 @@ Definition: shopkeeper (called M) is willing to shag:
 	if M is awake and the scared of M is 0 and the boredom of M < 120 and M is threatening, decide yes;
 	decide no.
 
+
 To say PregGrowth of (M - shopkeeper):
 	say "the shopkeeper's [child]".
 
@@ -166,9 +168,6 @@ To say GroundPeeReaction of (M - shopkeeper):
 	otherwise:
 		say "[speech style of M]'Hmph. At least it's not in my shop. I hate it when people pee in my shop.'[roman type][line break]".
 
-To say MonsterOfferRejectFlav of (M - shopkeeper) to (T - a thing):
-	say "[BigNameDesc of M] frowns.[line break][speech style of M]'[if total stolen value > 0]Not good enough. Either [bold type]pay[speech style of M] me properly or accept your punishment.'[otherwise if convincing power > 0 and M is unfriendly]You're not going to get let off that easy.'[otherwise]Why the hell would I want that?'[end if][roman type][line break]".
-
 To say BecomesBoredFlav of (M - shopkeeper):
 	say "[BigNameDesc of M] seems to lose interest in you for now.".
 
@@ -180,11 +179,20 @@ Definition: shopkeeper (called M) is distracted:
 	if the refractory-period of M < 0 and M is reactive:
 		let N be a random undefeated wench in the location of M;
 		if N is monster and (N is uninterested or N is friendly):
-			say "[BigNameDesc of M] looks [if M is interested]straight past you [end if]at [NameDesc of N]. [big he of M] takes out a sapphire ring and begins to spin it around the tip of one finger. [big he of M] whistles at [NameDesc of N] like someone might whistle at a dog. [BigNameDesc of N] rolls [his of N] eyes.[line break][speech style of N]'Ugh, okay, fine.'[roman type][line break][BigNameDesc of N] gets down on four limbs and start panting like a dog, slowly crawling over to [NameDesc of M] as [he of N] does. [BigNameDesc of M] is now stroking [himself of M], watching [NameDesc of N] as [he of N] crawls towards [him of M] and muttering perverse things like[line break][speech style of M]'Good [boy of N], come to [daddytitle of M]. Come get your din-dins.'[roman type][line break]under [his of M] breath. When [NameDesc of N] reaches [NameDesc of M][']s feet, [he of N] rises up onto [his of N] knees and begins barking like a puppy, presenting [his of N] palms as if begging for money.[line break][speech style of M]'Yessss...'[roman type][line break][BigNameDesc of M] groans with pleasure as [he of M] cums, covering [NameDesc of N][']s face, tongue and palms with [his of M] impressive load. All the time, [NameDesc of N] keeps barking like an obedient dog.[line break]When [NameDesc of M] is done, [he of M] takes the sapphire ring and throws it out of the doorway.[line break][speech style of M]'Go fetch!'[roman type][line break]With two final obedient barks, [NameDesc of N] returns to all fours and gallops out of the room, chasing [his of N] hard-earned prize.";
-			compute refractoryReset of M;
-			if N is interested, bore N;
-			compute mandatory room leaving of N;
-			decide yes;
+			if N is QoS wench or bbc-training of N >= 2:
+				say "[BigNameDesc of M] looks [if M is interested]straight past you [end if]at [NameDesc of N]. [big he of M] takes out [his of M] [BlackCock] and begins to massage [himself of M]. [big he of M] looks [NameDesc of N] with unrestrained lust as [he of M] becomes fully errect. [BigNameDesc of N] licks [his of N] lips hungrily.[line break][speech style of N]'Mhm, yes [daddytitle of M].'[roman type][line break][BigNameDesc of N] gets down on four limbs beneath [him of M] and starts worshipping [his of M] balls. [BigNameDesc of M] is now stroking [himself of M], watching [NameDesc of N] as [he of N] swallows [his of M] nuts and licks the base of [his of M] [LongDickDesc of M].[line break][speech style of M]'Come swallow this cock.'[roman type][line break][BigNameDesc of M] growls under [his of M] breath. [BigNameDesc of N] grabs [NameDesc of M][']s ass, [he of N] rises up onto [his of N] knees and swallows [his of M] big black [manly-penis] to the hilt. [BigNameDesc of N] is clearly good at this, as about 30 seconds later [NameDesc of M] scrunches [his of M] nose, clearly trying to hold back. [line break][speech style of M]'Yes let me paint your face, you nasty slut.'[roman type][line break][BigNameDesc of M] groans with pleasure as [he of M] cums, covering [NameDesc of N][']s face, tongue and chest with [his of M] impressive load. [BigNameDesc of N] opens [his of N] lips as wide as possible to catch as much [semen] as [he of N] can, lewdly showing [NameDesc of M] [his of N] mouth full of [semen] before swallowing it all and licking [his of N] lips.[line break]With [NameDesc of M] done, [he of N] kisses the tip of [his of M] [LongDickDesc of M] and swallows it down to the base one last time.[line break][speech style of N]'Thanks for the cum [daddytitle of shopkeeper]!'[roman type][line break][if N is QoS wench]With a wink, [NameDesc of N] skips out of the room, with [semen] running down [his of N] chest.[otherwise][BigNameDesc of N] stays with [his of N] [daddytitle of M] - clearly [he of N]'s now dedicated to serving the shopkeeper.";
+				compute refractoryReset of M;
+				if N is interested, bore N;
+				if N is QoS wench, compute mandatory room leaving of N;
+				bbc-trainingUp N by 1;
+				decide yes;
+			otherwise:
+				say "[BigNameDesc of M] looks [if M is interested]straight past you [end if]at [NameDesc of N]. [big he of M] takes out a sapphire ring and begins to spin it around the tip of one finger. [big he of M] whistles at [NameDesc of N] like someone might whistle at a dog. [BigNameDesc of N] rolls [his of N] eyes.[line break][speech style of N]'Ugh, okay, fine.'[roman type][line break][BigNameDesc of N] gets down on four limbs and start panting like a dog, slowly crawling over to [NameDesc of M] as [he of N] does. [BigNameDesc of M] is now stroking [himself of M], watching [NameDesc of N] as [he of N] crawls towards [him of M] and muttering perverse things like[line break][speech style of M]'Good [boy of N], come to [daddytitle of M]. Come get your din-dins.'[roman type][line break]under [his of M] breath. When [NameDesc of N] reaches [NameDesc of M][']s feet, [he of N] rises up onto [his of N] knees and begins barking like a puppy, presenting [his of N] palms as if begging for money.[line break][speech style of M]'Yessss...'[roman type][line break][BigNameDesc of M] groans with pleasure as [he of M] cums, covering [NameDesc of N][']s face, tongue and palms with [his of M] impressive load. All the time, [NameDesc of N] keeps barking like an obedient dog.[line break]When [NameDesc of M] is done, [he of M] takes the sapphire ring and throws it out of the doorway.[line break][speech style of M]'Go fetch!'[roman type][line break]With two final obedient barks, [NameDesc of N] returns to all fours and gallops out of the room, chasing [his of N] hard-earned prize.";
+				compute refractoryReset of M;
+				if N is interested, bore N;
+				compute mandatory room leaving of N;
+				bbc-trainingUp N by 2;
+				decide yes;
 	decide no.
 
 To compute (M - shopkeeper) using sex doll (N - 1):
@@ -364,7 +372,30 @@ To compute appearance assessment of (M - shopkeeper):
 		if diaper quest is 1, compute dq nip slip reaction of M;
 		otherwise compute tq nip slip reaction of M;
 	otherwise:
-		say "[speech style of M]'Welcome to the [if M is in the Dungeon]Dungeon [end if]clothes shop! If you have any jewellery to pay with, feel free to look around. Don't you dare leave the shop without [bold type]pay[speech style of M]ing for something, though.'[roman type][line break]".
+		say "[speech style of M]'Welcome to the [if M is in the Dungeon]Dungeon [end if]clothes shop! If you have any jewellery to pay with, feel free to look around. Don't you dare leave the shop without [bold type]pay[speech style of M]ing for something, though.'[roman type][line break]";
+	if M is friendly:
+		compute deliveryRequest of M.
+
+To compute deliveryRequest of (M - shopkeeper):
+	let N be a random alive wench;
+	unless N is nothing:
+		if BBCTrainingQuest of M is 1:
+			say "[line break][speech style of M]'Hey, don't forget to give the wench that collar!'[roman type][line break]";
+		if BBCTrainingQuest of M is 0 and BBC collar is off-stage:
+			let C be BBC collar;
+			say "[line break][speech style of M]'Hey, could you do me a favour and hand this [ShortDesc of C] to the [ShortDesc of N]? There's payment in it for you if you can ensure it gets to [him of N] safely.'[roman type][line break]";
+			now C is in the location of the player;
+			compute autotaking C;
+			now BBCTrainingQuest of M is 1;
+		if BBCTrainingQuest of M is 2 and there is an off-stage ring:
+			let D be a random off-stage ring;
+			now D is sapphire;
+			set shortcut of D;
+			say "[line break][big he of M] sees you enter the room and tosses you a sapphire ring.[line break][speech style of M]'Thanks for delivering that collar, we're breaking that slut in right now!'[roman type][line break]";
+			now D is in the location of the player;
+			compute autotaking D;
+			now BBCTrainingQuest of M is 3;
+
 
 To compute friendly boredom of (M - shopkeeper):
 	if the player is not in the location of M, now M is uninterested.

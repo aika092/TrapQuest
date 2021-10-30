@@ -85,7 +85,6 @@ This is the egg stuffing rule:
 				if S is large egg, wombfill N large eggs;
 		otherwise:
 			say "[if N is 0]Action cancelled[otherwise if N <= remainingN]You won't be able to fit that many inside you[otherwise]You don't have that many nearby[end if].";
-			reject the player's command;
 		now stat-to-set is "";
 		change the text of the player's command to "finish setting".
 The egg stuffing rule is listed in the statsetting rules.

@@ -41,7 +41,6 @@ Include Unicorn by Monster.
 Include Slutty Sisters by Monster.
 Include Icarus by Monster.
 Include Centaur by Monster.
-Include Bowsette by Monster.
 Include Woman Barbara by Monster.
 Include TQ Monster Variants by TQ Only Stuff.
 

@@ -84,7 +84,10 @@ To decide which number is the difficulty of (M - an explorer):
 Definition: an explorer is too intimidating: decide no.
 
 To compute monstermotion of (M - an explorer):
-	do nothing.
+	if the explorer-bimbo of M >= 2 and the scared of M <= 0:
+		repeated set up M;
+	otherwise:
+		compute room leaving of M.
 
 To compute (M - a monster) stomping (N - an explorer):
 	if M is in the location of the player, say "[BigNameDesc of M] fucks [BigNameDesc of N]. By the time [he of M] has finished, [NameDesc of N] is left exhausted in a puddle of juices. From the look on [his of N] face, [his of N] mind has left the building.";
@@ -111,12 +114,6 @@ To compute eek reaction of (M - an explorer):
 	now the scared of M is 100;
 	now the boredom of M is 0;
 	permanently anger M.
-
-To compute monstermotion of (M - an explorer):
-	if the explorer-bimbo of M >= 2 and the scared of M <= 0:
-		repeated set up M;
-	otherwise:
-		compute room leaving of M.
 
 Section 3 - Damage
 

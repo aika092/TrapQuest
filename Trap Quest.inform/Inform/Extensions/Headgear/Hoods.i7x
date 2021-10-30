@@ -137,13 +137,13 @@ To compute persistent reward of (Q - just-wait-quest) on (C - a clothing):
 		compute generic class reward of Q on C.
 
 Report wearing clothing when black hood is worn:
-	unless the noun is plentiful accessory or the noun is black hood, compute just-wait-punish.
+	if the noun is nudism-disabling, compute just-wait-punish.
 
 Report taking off clothing when black hood is worn:
-	unless the noun is plentiful accessory, compute just-wait-punish.
+	if the noun is nudism-disabling, compute just-wait-punish.
 
 Report knifing clothing with a thing when black hood is worn:
-	if the noun is not worn, compute just-wait-punish.
+	if the noun is not worn and the noun is nudism-disabling, compute just-wait-punish. [i.e. the knifing was successful]
 
 To compute just-wait-punish:
 	decrease the wait-count of just-wait-quest by 15;

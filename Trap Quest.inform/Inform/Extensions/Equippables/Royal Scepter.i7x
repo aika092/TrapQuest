@@ -2,6 +2,10 @@ Royal Scepter by Equippables begins here.
 
 royal scepter is a vibe-wand. royal scepter is manly. royal scepter is plastic. royal scepter has a number called charge. The charge of royal scepter is 1. The text-shortcut of royal scepter is "rs".
 
+royal scepter can be blacked.
+
+The printed name of royal scepter is "[clothing-title-before][MediumDesc of royal scepter][if the charge of royal scepter >= 16] (very highly charged)[otherwise if the charge of royal scepter >= 4] (highly charged)[otherwise if the charge of royal scepter > 0] (slightly charged)[end if][clothing-title-after]".
+
 To compute class set up of (C - royal scepter):
 	now the charge of C is 25;
 	say "[bold type]Suddenly a [MediumDesc of C] appears in your hand! The sphere at the top shines brightly! It feels like it has some magic power that will decay over time.[roman type][line break]".
@@ -11,17 +15,20 @@ Definition: royal scepter is class-relevant:
 	decide no.
 
 Figure of royal scepter is the file "Items/Accessories/Equippables/scepter1.png".
+Figure of royal scepter blacked is the file "Items/Accessories/Equippables/scepter2.png".
 
 To decide which figure-name is the clothing-image of (R - royal scepter):
+	if R is blacked, decide on figure of royal scepter blacked;
 	decide on figure of royal scepter.
 
 To say ClothingDesc of (W - royal scepter):
-	say "A gold and pink wand vibrator, with opaque crystal ball set into the top underneath a golden crown. ";
+	if W is blacked, say "A white and black wand vibrator with a gem-encrused spade shape set into the top underneath a crown. [if tiara-of-spades is worn]Thanks to its synergy with your [tiara-of-spades], you can sense that whenever you satisfy a [BlackCock], it will gain significant magic power. [otherwise if there is a worn tiara]Perhaps if you had a more appropriate tiara, your wand would unlock some even more powerful abilities. You have a picture in your head, of you pleasuring [NameDesc of shopkeeper] while a poor jealous guard watches... [end if]";
+	otherwise say "A gold and pink wand vibrator, with opaque crystal ball set into the top underneath a golden crown. ";
 	if diaper quest is 0:
 		say "You can see the tasks in need of your attention.";
 		repeat with M running through alive undefeated royal guards:
 			if the refractory-period of M < 0 and the boredom of M <= 0:
-				say "[BigNameDesc of M] is bored and horny. This might be a good time to find a way to make [him of M] happy. ";
+				say "[BigNameDesc of M] is bored and horny. This might be a good time to find a way to [if W is blacked]tease [him of M][otherwise]make [him of M] happy[end if]. ";
 				let D be up;
 				if M is not in the location of the player and playerRegion is Dungeon:
 					let L be the location of M;
@@ -58,10 +65,13 @@ To say ClothingDesc of (W - royal scepter):
 			if D is a direction and D is not up, say "The shortest path to [him of M] from here is [bold type][D][roman type].";
 			otherwise say line break;
 	otherwise:
-		say "The ball seems to shine brightly when you're in a used diaper - it has the power to help you change yourself!".
+		say "The ball seems to shine brightly when you're in a used diaper - it has the power to help you change yourself!";
+	say "You can sense that the strength of its magic attacks is tied to your self-esteem.[line break][BigNameDesc of W] currently has [if the charge of W >= 16]an incredible amount of[otherwise if the charge of W >= 4]a lot of[otherwise if the charge of W > 0]a small amount of[otherwise]no[end if] stored magical energy, and so your magical attacks with it will be [if the charge of W >= 16]extremely powerful[otherwise if the charge of W >= 4]very[otherwise if the charge of W > 0]slightly more[otherwise]no more[end if] powerful than normal.".
 
 To say ShortDesc of (W - royal scepter):
 	say "royal scepter".
+To say MediumDesc of (W - royal scepter):
+	say "royal [if W is blacked]spades [end if]scepter".
 
 To decide which number is the zap damage improvement of (W - royal scepter):
 	let X be MagicPowerDamage + the magic-modifier of W - (the humiliation of the player / 10000);
@@ -81,7 +91,7 @@ To decide which number is the initial outrage of (E - royal scepter):
 	decide on 2.
 
 To compute periodic effect of (E - royal scepter):
-	if a random number between the charge of royal scepter and 45 >= 45, decrease the charge of royal scepter by 1.
+	if the charge of royal scepter > 0 and a random number between the charge of royal scepter and 20 >= 20, decrease the charge of royal scepter by 1.
 
 A bouquet is a kind of equippable. A bouquet is slap ready. A bouquet is biological.
 

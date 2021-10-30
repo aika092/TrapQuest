@@ -38,11 +38,6 @@ To compute SelfExamineDesc of (H - cow-ears):
 	let X be the largeness of hair;
 	say "You are wearing a pair of [ShortDesc of H] on top of your [ShortDesc of hair]. ".
 
-To compute unique periodic effect of (H - cow-ears):
-	if the temporary-milked-bonus of H > 0:
-		decrease temporary-milked-bonus of H by 1;
-		if temporary-milked-bonus of H <= 0, say "[bold type]The temporary dexterity boost you had from recently getting milked has ended.[roman type][line break]".
-
 Chapter - Class Outfit
 
 To compute unique recycling of (C - cow-ears):
@@ -72,7 +67,10 @@ To compute unique periodic effect of (C - cow-ears):
 				now D is in pink wardrobe;
 		summon P cursed;
 		now P is milk production;
-		if T is actually summonable, summon T.
+		if T is actually summonable, summon T;
+	if the temporary-milked-bonus of C > 0:
+		decrease temporary-milked-bonus of C by 1;
+		if temporary-milked-bonus of C <= 0, say "[bold type]The temporary dexterity boost you had from recently getting milked has ended.[roman type][line break]".
 
 Chapter - Quest
 

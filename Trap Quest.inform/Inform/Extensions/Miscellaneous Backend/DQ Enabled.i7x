@@ -80,10 +80,13 @@ To decide which figure-name is YesNoBackground:
 Include DQ Monster Variants by DQ Only Stuff.
 Include School Stuff by DQ Only Stuff.
 
-a wench is a kind of monster. a horny-wench is a kind of wench. a wench has a number called creampieTimer.
+a wench is a kind of monster. a horny-wench is a kind of wench. a wench has a number called creampieTimer. a wench has a number called bbc-training.
 To compute (M - a monster) WenchReceiving (C - a clothing):
 	do nothing.
 To reset submissive wenches:
+	do nothing.
+QoS wench is a wench.
+To bbc-trainingUp (M - a wench) by (N - a number):
 	do nothing.
 
 A sex doll is a kind of monster.
@@ -148,7 +151,7 @@ an ultra slutty bag of holding is a kind of bag of holding.
 dirty little whore sack of holding is a bag of holding.
 
 gape-gloves is a gloves. The printed name of gape-gloves is "gape gloves".
-bondage-ribbons is a dress.
+bondage-ribbons is a dress. bondage-ribbons is unique.
 
 A bridal veil is a kind of headgear. floral bridal veil is a bridal veil.
 betrothal-quest is a headgear-clothing-quest. betrothal-quest has a truth state called ceremony. betrothal-quest has a truth state called consummation.

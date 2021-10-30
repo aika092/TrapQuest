@@ -355,7 +355,7 @@ To compute grabbing attack of (M - a gargoyle):
 	otherwise:
 		say "You feel [his of M] [if lady fetish is 2]muscular torso[otherwise]soft breasts[end if] press up against your back, and quickly jump away from [him of M] before [he of M] latches on.".
 
-To say ErectionDemand of (M - a monster):
+To say ErectionDemand of (M - gargoyle):
 	say "[BigNameDesc of M][']s wings flap excitedly as [his of M] eyes eagerly focus on your crotch, and you get the sense that [he of M]'s waiting for you to get hard.".
 
 To say ErectionPenetrationFlav of (M - gargoyle):

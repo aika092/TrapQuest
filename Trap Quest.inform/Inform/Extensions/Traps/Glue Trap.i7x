@@ -97,9 +97,6 @@ To say ExamineDesc of (C - a glue trap):
 		otherwise:
 			say "Mounted on the [one of]wall[or]low ceiling[or]the floor[stopping] here is an electronic panel with some kind of... sensor, maybe...? with a gnarled knob that looks like the overhead air-vent you get in the cabin of a commercial airliner.".
 
-To say EnvironmentDesc of (Y - a glue trap):
-	say "There's a [if the Y is organic]mossy kind of... rock...? with a faint seam[otherwise]rounded knob poking from a gnarled, circular nut[end if] here.";
-
 Definition: a glue is too boring: decide no.
 
 Definition: a glue is stealable: decide no.

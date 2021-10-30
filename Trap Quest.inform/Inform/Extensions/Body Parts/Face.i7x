@@ -31,15 +31,6 @@ Definition: face is undefended:
 the face presentable rules is a rulebook.
 the presentable rules of face is usually the face presentable rules.
 
-To decide which object is the concealer of (F - face):
-	decide on a random worn actually dense hood.
-
-To decide which object is the at least partial concealer of (F - face):
-	if face is listed in the armUses of arms, decide on arms;
-	if there is a worn not-see-through hood, decide on a random worn not-see-through hood;
-	if cultist veil is worn, decide on cultist veil;
-	decide on nothing.
-
 This is the face occupied rule:
 	if face is actually occupied:
 		if auto is 0, say "Your mouth is a bit full already, don't you think?";
@@ -72,9 +63,11 @@ Definition: face is lewdly exposed:
 To decide which object is the concealer of (T - face):
 	decide on a random worn actually dense hood.
 
-To decide which object is the at least partial concealer of (T - face):
-	if thighs is listed in the armUses of arms, decide on arms;
-	decide on a random worn not-see-through hood.
+To decide which object is the at least partial concealer of (F - face):
+	if face is listed in the armUses of arms, decide on arms;
+	if there is a worn not-see-through hood, decide on a random worn not-see-through hood;
+	if cultist veil is worn, decide on cultist veil;
+	decide on nothing.
 
 To decide which number is the lewdly exposed outrage of (F - face):
 	if diaper quest is 1 and the make-up of face >= 3, decide on 2;

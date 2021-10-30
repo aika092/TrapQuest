@@ -453,11 +453,11 @@ To decide which number is the damage modifier of (T - a thing): [Check for any b
 To compute slaying bonus of (T - a thing):
 	do nothing.
 
-To compute slaying bonus of (M - a monster):
+[To compute slaying bonus of (M - a monster):
 	if a random number between 0 and (20 - the delicateness of the player) < the difficulty of M and the delicateness of the player > 1:
 		say "Your self-confidence has grown!";
 		if the delicateness of the player > 20 - the difficulty of M, DelicateDown 1;
-		DelicateDown 1.
+		DelicateDown 1.]
 
 To compute failed damage of (M - a monster):
 	do nothing.

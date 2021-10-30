@@ -550,6 +550,7 @@ Definition: a training pants is fetish appropriate:
 	if diaper lover > 0, decide yes;
 	decide no.
 Definition: a training pants is purple themed: decide yes.
+Definition: a training pants is displacable: decide yes.
 
 sexy training pants is a kind of training pants. The printed name of sexy training pants is usually "[clothing-title-before]pair of sexy [if the urine-soak of item described > 0 or the bimbo of the player > 4]training pants[otherwise]padded underwear[end if][clothing-title-after]". There is 1 unique sexy training pants.
 The text-shortcut of sexy training pants is "sxt".

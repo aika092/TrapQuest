@@ -931,7 +931,7 @@ bully-donate is a bully-action.
 Definition: bully-donate is eligible:
 	if diaper quest is 1 and current-monster is able to donate babywear, decide yes;
 	decide no.
-To execute (A - bully-confiscate):
+To execute (A - bully-donate):
 	compute punishment of donate babywear.
 
 bully-gloryhole is a bully-action.
@@ -1185,7 +1185,7 @@ To decide which number is the DismissalPowerToilet of (M - a student):
 To say DismissalResponseToilet of (M - a student):
 	say "[speech style of M]'[if M is interested]Nu-uh. If you're going to go, you're going to have to let me watch[otherwise if diaper quest is 0]Bo-oring. Fine[otherwise]Fine. But you should really think about using diapers, it'll make the teachers more happy with you[end if].'[roman type][line break]".
 
-To say ToiletPeeReaction of (M - a student):
+To say ToiletReactionFlav of (M - a student):
 	if diaper quest is 0:
 		say "[BigNameDesc of M] touches [himself of M] as [he of M] watches.[line break][speech style of M]'[one of]I don't know why I find this so hot, but I do. What's wrong with me[or]Are you getting off on the fact that I'm watching you[or]Do you know how hot you look right now[in random order]?'[roman type][line break][moderateHumiliateReflect]";
 	otherwise if the diaper-duration of headmistress > 0:

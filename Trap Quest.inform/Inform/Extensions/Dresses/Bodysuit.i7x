@@ -505,10 +505,6 @@ To decide which number is the adult-influence of (C - tight-grey-romper):
 To decide which number is the crotch-tightness of (C - tight-grey-romper):
 	decide on 5.
 
-To decide which object is the unique-upgrade-target of (C - tight-green-romper):
-	if diaper quest is 0, decide on lycra-bodysuit;
-	decide on nothing.
-
 Volume - Jumpsuit
 
 A jumpsuit is a kind of bodysuit. A jumpsuit is usually leg covering. A jumpsuit is usually only arm covering. A jumpsuit is usually zippable. A jumpsuit is usually top-exclusive.
@@ -648,9 +644,11 @@ To say ShortDesc of (C - a catsuit):
 
 To set up magic attribute of (C - a catsuit):
 	if C is cursed:
-		if a random number between 1 and 2 is 1, now the magic-type of C is posture training;
+		if a random number between 1 and 2 is 1, now C is posture training;
 	otherwise:
-		if a random number between 1 and 3 is 1, now the magic-type of C is speed.
+		let R be a random number between 1 and 3;
+		if R is 2, now C is elasticity;
+		if R is 3, now C is speed.
 
 To decide which number is the dexterity-influence of (C - a catsuit):
 	let D be 0;
@@ -852,7 +850,7 @@ To decide which number is the initial outrage of (C - a leotard):
 To decide which number is the crotch-tightness of (C - a leotard):
 	decide on 3.
 
-A pink leotard is a kind of leotard.
+A pink leotard is a kind of leotard. A pink leotard is top-exclusive.
 
 The printed name of pink leotard is usually "[clothing-title-before]pink leotard[clothing-title-after]". The text-shortcut of pink leotard is "ple".
 

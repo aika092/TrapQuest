@@ -2,7 +2,7 @@ Unicorn Horn by Sex Toys begins here.
 
 A unicorn-horn is a kind of dong. The printed name of unicorn-horn is "[TQlink of item described]unicorn horn[shortcut-desc][TQxlink of item described][verb-desc of item described]". A unicorn-horn is unique. A unicorn-horn is biological. There is 1 unicorn-horn. The size of a unicorn-horn is usually 4.
 
-Figure of unicorn horn is the file "Items/Accessories/Toys/horn1.jpg".
+Figure of unicorn horn is the file "Items/Accessories/Toys/horn1.png".
 
 To decide which figure-name is the clothing-image of (C - unicorn-horn):
 	decide on figure of unicorn horn.

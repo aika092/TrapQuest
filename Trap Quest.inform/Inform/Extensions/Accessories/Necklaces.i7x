@@ -371,7 +371,13 @@ To decide which object is the unique-upgrade-target of (C - a doctor stethoscope
 	decide on a random cock stethoscope.
 
 Report wearing a doctor stethoscope: [When you craft with the wrong recipe, it becomes the lewd form immediately.]
-	if the noun is cursed and the noun is upgradable, potentially transform the noun.
+	if the noun is cursed and the noun is upgradable:
+		potentially transform the noun;
+		let C be a random worn cock stethoscope;
+		if C is cock stethoscope:
+			now C is sure;
+			now C is identified;
+			compute summoned quest of C.
 
 Part 2 - Cock Stethoscope
 

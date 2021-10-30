@@ -86,7 +86,7 @@ To say GroundPeeReaction of (M - a robot):
 	anger M;
 	now M is diaper-committed.
 
-To say ToiletPeeReaction of (M - a robot):
+To say ToiletReactionFlav of (M - a robot):
 	say "[speech style of M]'[one of]THANK YOU FOR USING THE PROPER TOILET FACILITIES[or]WE APPRECIATE YOU NOT MAKING A MESS ON THE FLOOR[cycling].'[roman type][line break]".
 
 To say ClothesPeeReaction of (M - a robot):

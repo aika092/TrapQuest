@@ -280,7 +280,7 @@ To decide which number is the DismissalPowerToilet of (M - a staff member):
 To say DismissalResponseToilet of (M - a staff member):
 	say "[speech style of M]'[if M is interested]Oh come on dear, I don't think you're responsible enough to be allowed to do that unsupervised[otherwise if diaper quest is 0]You should work on your exhibitionism. Peeing in front of people can be very exciting, you know[otherwise]Okay, well done on making it to the potty in time, darling[end if].'[roman type][line break]".
 
-To say ToiletPeeReaction of (M - a staff member):
+To say ToiletReactionFlav of (M - a staff member):
 	if diaper quest is 0:
 		say "[BigNameDesc of M] touches [himself of M] as [he of M] watches.[line break][speech style of M]'[one of]Adorable[or]There's a good little exhibitionist[or]How lewd[in random order].'[roman type][line break]";
 	otherwise if the diaper-duration of headmistress > 0:

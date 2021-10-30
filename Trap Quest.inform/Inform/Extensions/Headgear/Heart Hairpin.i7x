@@ -120,7 +120,7 @@ To check tentacle clear:
 					say "[BigNameDesc of M] (in the [location of M]).".
 
 
-To compute generic first time class reward of (Q - a clothing-quest) on (C - a clothing):
+To compute generic first time class reward of (Q - tentacle-research-quest) on (C - a clothing):
 	let D be a random off-stage ring;
 	if D is ring:
 		if there is a regional tentacle-breeder, now D is sapphire;

@@ -735,7 +735,7 @@ To say PenetrationFlav of (M - an aeromancer) in (F - vagina):
 To say FriendlyPenetrationFlav of (M - an aeromancer) in (F - asshole):
 	say "The air around you compresses itself into shimmering tentacles, which take turns slapping your [AssDesc] as they shoot one by one into your [asshole].".
 
-To say FriendlyPenetrationFlav of (M - an aeromancer) in (F - asshole):
+To say FriendlyPenetrationFlav of (M - an aeromancer) in (F - vagina):
 	say "The air around you compresses itself into shimmering tentacles, which immediately shoot into your [vagina].".
 
 Definition: an aeromancer is willing to let go: decide no.

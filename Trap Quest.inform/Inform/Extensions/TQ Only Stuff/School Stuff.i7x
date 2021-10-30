@@ -470,7 +470,7 @@ To compute labour to (M - teacher-rochelle):
 
 To say EnslavedDominationFlav of (M - teacher-rochelle):
 	say "You grab [NameDesc of M] by the [manly-penis] and pull [him of M] into you. [if the player is able to speak][variable custom style]'Not so tough now, are you? Wimp.'[roman type][line break][otherwise]You stare into [his of M] eyes to let [him of M] know who's in charge. [end if][big he of M] just whimpers timidly and makes sure not to move lest [his of M] member accidentally get pulled so hard it hurts.".
-To decide which number is the EnslavedDominationThreshold of (M - teacher-angela):
+To decide which number is the EnslavedDominationThreshold of (M - teacher-rochelle):
 	decide on 13.
 
 practical-lesson is a lesson. The lesson-teacher of practical-lesson is teacher-hyacinthe.
@@ -1832,30 +1832,37 @@ To compute chess loss taunting of (M - a nasty student):
 		summon marker chest tattoo;
 		now the tattoo-title of marker chest tattoo is "DISGUSTING FAT UGLY PIG";
 		now the tattoo-outrage of marker chest tattoo is 14;
-	otherwise: [###Selkie: this might be better moved out into a piercing-taunt function that could be used in multiple places?]
-		if piercing-fetish is 1 and a random number between 1 and 2 is 1:
-			let N be a random worn nipple piercing;
-			let C be a random worn clit piercing;
-			if N is nothing:
-				say "[speech style of M]'[one of]'You know, these nipples really need to be pierced, don't they? What's that? You want me to ask the nurse to pierce them for you while you're waiting here?'[or]What? Did that noise mean you want me to find a piercing gun and 'decorate' your slutty nipples?'[or]'When I pierce these nipples, do you want me to suck them first?'[or]'For your piercing, blink once for each gauge of thickness you want?'[or]'When we pierce these nips, blink if you want us to attach a chain between them too.'[cycling][roman type][line break][big he of M] [one of]tugs and twists[or]disdainfully flicks[or]tweaks[or]teases[in random order] your nipples.";
-			otherwise:
-				say "[big he of M] [one of]tugs and twists[or]disdainfully flicks[or]tweaks[or]teases[in random order] your [ShortDesc of N], toying with them till they darken and stiffen.";
-				let CH be a random worn nipple chain;
-				if CH is nothing:
-					say "[speech style of M]'[one of]'You really get off on piercings, I can tell. I bet you'd like me to attach a big heavy chain to these babies, yeah?'[or]'We're going to find a nice heavy chain to dangle and tug from your piercings.'[or]'It'd be hot if we could lead you around on a chain by these, wouldn't it?'[or]'You gonna beg me to chain you by these?'[or]'They class is working out what chains to get you, [NameBimbo].'[cycling][roman type][line break]";
-				otherwise:
-					say "[student-name of M] stares directly into your eyes as [he of M] takes hold of your [ShortDesc of CH] and [one of]jiggles it[or]uses it to tug your [BreastDesc] until they [BreastBounceDesc][or]tugs on it different directions, teasing your [BreastDesc][in random order]. [speech style of M]'[one of]'You really get off on piercings, I can tell. I bet you'd like me to attach a big heavy chain to these babies, yeah?'[or]'We're going to find a nice heavy chain to dangle and tug from your piercings.'[or]'It'd be hot if we could lead you around on a chain by these, wouldn't it?'[or]'You gonna beg me to chain you by these?'[cycling][roman type][line break]";
-			say "[big he of M] smirks, bending down so you get a faceful of their breasts while [his of M] hands move out of sight between your thighs, and suddenly takes a possessive hold of your [genitals].";
-			if player is barbie:
-				say "[speech style of M]'[one of]O.M.G! I thought you were a normal girl, but you're really just a sexless Barbie doll pretending to be a real girl[or]'OMG! That's not girl-flat, that's *doll* flat! Ha ha ha! I was gonna offer to get you pierced down there, like I know you'd love - but what'd be the point? Oh my gawd! That's just so weak. I knew you were a loser, but that... I gotta go and tell everyone[or]Oh, that's just better and better - you're not even a real person, are you? You got nothin['] down there! How do you even pee? Ha ha ha[in random order]!'[roman type][line break]";
-			otherwise if C is nothing:
-				say "[speech style of M]'I bet you'd like us to pierce you down here, too? Maybe fit a chain or a leash to lead you around by your clitty?'[roman type][line break]";
-			otherwise:
-				say "[big he of M] tugs on your [ClothingDesc of C], grinning wickedly at the sound you make. [speech style of M]'Yeah, you're loving this, you subby little [sissy slut].'[roman type][line break]";
-			arouse 100;
+	otherwise if bottom level lactation cover is rigid clothing:
+		say "[BigNameDesc of M] simply comes up to you and pinches your skin, making you squeal in pain!";
+		PainUp 1;
+	otherwise:
+		compute piercing taunt of M.
+
+[###Selkie: this might be better moved out into a piercing-taunt function that could be used in multiple places?]
+To compute piercing taunt of (M - a monster):
+	if piercing-fetish is 1 and a random number between 1 and 2 is 1:
+		let N be a random worn nipple piercing;
+		let C be a random worn clit piercing;
+		if N is nothing:
+			say "[speech style of M]'[one of]'You know, these nipples really need to be pierced, don't they? What's that? You want me to ask the nurse to pierce them for you while you're waiting here?'[or]What? Did that noise mean you want me to find a piercing gun and 'decorate' your slutty nipples?'[or]'When I pierce these nipples, do you want me to suck them first?'[or]'For your piercing, blink once for each gauge of thickness you want?'[or]'When we pierce these nips, blink if you want us to attach a chain between them too.'[cycling][roman type][line break][big he of M] [one of]tugs and twists[or]disdainfully flicks[or]tweaks[or]teases[in random order] your nipples.";
 		otherwise:
-			say "[speech style of M]'[one of]Ooh, look what I've found, all alone and with nobody to protect [him of the player].'[or]What did I hear you just say? Pinch my nipples? That's a weird request, but okay.'[or]'Still here, with your fat nipples all stiff?'[or]'Everyone's trying to work out if you lost because you're stupid, or because you *wanted* to be stuck here like this afterwards.'[cycling][roman type][line break][big he of M] ignores your whining pleas for mercy as [he of M] grabs your nipples with pincer grips and twists them painfully.";
-		PainUp 1.
+			say "[big he of M] [one of]tugs and twists[or]disdainfully flicks[or]tweaks[or]teases[in random order] your [ShortDesc of N], toying with them till they darken and stiffen.";
+			let CH be a random worn nipple chain;
+			if CH is nothing:
+				say "[speech style of M]'[one of]'You really get off on piercings, I can tell. I bet you'd like me to attach a big heavy chain to these babies, yeah?'[or]'We're going to find a nice heavy chain to dangle and tug from your piercings.'[or]'It'd be hot if we could lead you around on a chain by these, wouldn't it?'[or]'You gonna beg me to chain you by these?'[or]'They class is working out what chains to get you, [NameBimbo].'[cycling][roman type][line break]";
+			otherwise:
+				say "[student-name of M] stares directly into your eyes as [he of M] takes hold of your [ShortDesc of CH] and [one of]jiggles it[or]uses it to tug your [BreastDesc] until they [BreastBounceDesc][or]tugs on it different directions, teasing your [BreastDesc][in random order]. [speech style of M]'[one of]'You really get off on piercings, I can tell. I bet you'd like me to attach a big heavy chain to these babies, yeah?'[or]'We're going to find a nice heavy chain to dangle and tug from your piercings.'[or]'It'd be hot if we could lead you around on a chain by these, wouldn't it?'[or]'You gonna beg me to chain you by these?'[cycling][roman type][line break]";
+		say "[big he of M] smirks, bending down so you get a faceful of their breasts while [his of M] hands move out of sight between your thighs, and suddenly takes a possessive hold of your [genitals].";
+		if player is barbie:
+			say "[speech style of M]'[one of]O.M.G! I thought you were a normal girl, but you're really just a sexless Barbie doll pretending to be a real girl[or]'OMG! That's not girl-flat, that's *doll* flat! Ha ha ha! I was gonna offer to get you pierced down there, like I know you'd love - but what'd be the point? Oh my gawd! That's just so weak. I knew you were a loser, but that... I gotta go and tell everyone[or]Oh, that's just better and better - you're not even a real person, are you? You got nothin['] down there! How do you even pee? Ha ha ha[in random order]!'[roman type][line break]";
+		otherwise if C is nothing:
+			say "[speech style of M]'I bet you'd like us to pierce you down here, too? Maybe fit a chain or a leash to lead you around by your clitty?'[roman type][line break]";
+		otherwise:
+			say "[big he of M] tugs on your [ClothingDesc of C], grinning wickedly at the sound you make. [speech style of M]'Yeah, you're loving this, you subby little [sissy slut].'[roman type][line break]";
+		arouse 100;
+	otherwise:
+		say "[speech style of M]'[one of]Ooh, look what I've found, all alone and with nobody to protect [him of the player].'[or]What did I hear you just say? Pinch my nipples? That's a weird request, but okay.'[or]'Still here, with your fat nipples all stiff?'[or]'Everyone's trying to work out if you lost because you're stupid, or because you *wanted* to be stuck here like this afterwards.'[cycling][roman type][line break][big he of M] ignores your whining pleas for mercy as [he of M] grabs your nipples with pincer grips and twists them painfully.";
+	PainUp 1.
 
 [Part - Kaylee / Karl
 

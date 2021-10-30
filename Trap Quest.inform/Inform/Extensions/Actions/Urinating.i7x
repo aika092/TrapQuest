@@ -101,6 +101,7 @@ Definition: yourself is able to use a toilet:
 Definition: yourself is potentially able to use a toilet:
 	if diaper quest is 1 and watersports fetish is 0 and the player is in Hotel38 and the human-toilet-scene of woman-player is 2, decide no; [can't use Berri without watersports enabled!]
 	if locked-toilets is true and the player is in School10 and academy-toilet-key is not held, decide no; [toilet is locked]
+	if diaper lover > 0 and the times-terrorized of toilet-monster > 1 and the number of intelligent friendly monsters in the location of the player is 0, decide no; [scared of toilets]
 	if the player is upright and the location of the player is toilets, decide yes;
 	decide no.
 
@@ -148,7 +149,8 @@ Check toileting:
 				say "You [if watersports mechanics is 1]can't pee in the toilet because of your [ShortDesc of PC] and you [end if]don't need to expel anything from your [asshole]." instead;
 			otherwise if watersports mechanics is 1 and P is not a thing and AC is not a clothing:
 				say "If you sit on the toilet and push, you might accidentally wet your [ShortDesc of PC] at the same time. Do you want to risk it?";
-				if the player is not consenting, say "Action cancelled." instead.
+				if the player is not consenting, say "Action cancelled." instead;
+		if diaper lover > 0 and the times-terrorized of toilet-monster > 1 and the number of intelligent friendly monsters in the location of the player is 0, say "After your traumatizing experience with [NameDesc of toilet-monster], you're too scared to use the toilet all by yourself!" instead.
 
 Carry out toileting:
 	if the location of the player is toilets:
@@ -438,7 +440,7 @@ To compute toilet reaction of (M - a monster):
 
 To say ToiletReactionFlav of (M - a monster):
 	if M is friendly, say "[BigNameDesc of M] politely looks away.";
-	otherwise say "[BigNameDesc of M] stares at you, frowning.".
+	otherwise say "[BigNameDesc of M] stares at you[if M is human], frowning[end if].".
 
 Carry out urinating:
 	start urination.
@@ -827,68 +829,6 @@ To check pee pressure with reason (T - a text):
 		check full wetting with reason T;
 		if delayed urination is 0, check pee leaking with reason T.
 
-To check pee leaking:
-	check pee leaking with reason "".
-
-player-just-leaked is initially false.
-To check pee leaking with reason (T - a text):
-	now player-just-leaked is false;
-	if diaper lover > 0 and the player is not incontinent:
-		let B be the bladder of the player;
-		let I be bladder-squirty-level;
-		if B > I:
-			decrease B by I;
-			let R be a random number between bladder-difficulty and B;
-			if debuginfo > 0, say "[input-style]Pee leak check: bladder ([bladder of the player]) - continence rating ([I]) = [B] ---> RNG([bladder-difficulty] ~ [B]) = [R] | positive number[roman type][line break]";
-			if R > 0:
-				now player-just-leaked is true;
-				compute pee leaking with reason T;
-
-To compute pee leaking with reason (T - a text):
-	if the bladder of the player > 0:
-		let KSK be -1;
-		let K be a random bottom level pee protection clothing;
-		let CK be nothing;
-		if K is clothing, now CK is the concealer of K;
-		if CK is clothing and K is not currently visible, now K is CK;
-		if K is clothing, now KSK is the total-soak of K;
-		say bold type;
-		if T is "", say "[one of]You spontaneously leak a little pee[or]All of a sudden, your bladder spasms and you squirt out a little wee[or]Completely beyond your control, your [if the player is possessing a penis][player-penis][otherwise]bladder[end if] lets out a squirt of pee[in random order]. ";
-		otherwise say "[T] [one of]you squirt out a little bit of pee[or]you leak a little squirt of pee[or]your bladder muscles tense and accidentally let out a little pee[in random order]. ";
-		say roman type;
-		if K is clothing, AnnouncedExpel urine on K by 1;
-		otherwise AnnouncedExpel urine on thighs by 1;
-		decrease the bladder of the player by 1;
-		if KSK is 0 and the total-soak of K > 0, say "There is now a visible [if K is diaper]yellow patch[otherwise]stain[end if] in the front of your [ShortDesc of K].";
-		compute sudden squirt into K disapproval.
-
-To check full wetting:
-	check full wetting with reason "".
-
-To check full wetting with reason (T - a text):
-	let I be bladder-risky-level;
-	let B be bladder-bursting-level; [difference between bladder and risky level]
-	let resting-wetter be 0;
-	if resting is 1 and (there is a worn bed wetting clothing or bed-wetter tattoo is worn) and the bladder of the player > 2, now resting-wetter is 3;
-	if the player is in Iron Maiden, now resting-wetter is 5;
-	if B >= 0 or resting-wetter > 0:
-		if resting-wetter > 0 and B < resting-wetter, now B is resting-wetter; [bed wetters always have a high chance of wetting while resting]
-		let R be (a random number between bladder-difficulty and B) + (a random number between bladder-difficulty and B);
-		if debuginfo > 1, say "[input-style]Automatic wetting check: [if resting-wetter > 0 and B is resting-wetter]magic bed wetting effect ([resting-wetter])[otherwise]bladder ([bladder of the player]) - continence rating ([I]) = [B][end if] ---> RNG([bladder-difficulty] ~ [B]) + RNG([bladder-difficulty] ~ [B]) = [R] | positive number[roman type][line break]";
-		if R > 0 and the bladder of the player > 0:
-			now delayed urination is 1;
-			now delayed urination flav is T;
-		otherwise if the player is bursting and (R is 0 or the remainder after dividing time-earnings by 120 < time-seconds): [Once every now and then we reward the player for holding it while it's risky]
-			progress quest of bursting-quest.
-
-To check pee pressure:
-	check pee pressure with reason "".
-
-To check pee pressure with reason (T - a text):
-	if player-urinating is 0:
-		check full wetting with reason T;
-		if delayed urination is 0, check pee leaking with reason T.
-
 Definition: yourself is able to use a body of water:
 	if delayed urination is 1 or the player is pee protected, decide no;
 	if there is a lake monster in the location of the player, decide no;
@@ -905,24 +845,23 @@ Pee Reaction Numbers:
 
 [!<SayPeeReaction0>+
 
-Non-humiliating urination into toilet or body of water
+Urination into body of water
 
 +!]
 To say PeeReaction (N - 0):
 	let M be a random reactive monster;
 	if M is monster:
-		say ToiletPeeDeclaration of M;
+		say WaterBodyPeeDeclaration of M;
 		repeat with Z running through reactive monsters:
 			humiliate 100;
-			say ToiletPeeReaction of Z;
+			say WaterBodyPeeReaction of Z;
 	otherwise:
 		say "You sigh pleasantly, and now feel much more comfortable.".
 
-To say ToiletPeeDeclaration of (M - a monster):
-	[###Selkie: used to be 22500, not 24000 - 2000]
-	say "[if the humiliation of the player < HUMILIATION-DISGRACED - 2000]You squirm uncomfortably, not used to anyone watching you, never mind [NameDesc of M].[otherwise]You hang your head submissively, not looking [NameDesc of M] in the eyes.[end if]".
+To say WaterBodyPeeDeclaration of (M - a monster):
+	say "[if the player is not disgraced]You squirm uncomfortably, not used to anyone watching you, never mind [NameDesc of M].[otherwise]You hang your head submissively, not looking [NameDesc of M] in the eyes.[end if]".
 
-To say ToiletPeeReaction of (M - a monster):
+To say WaterBodyPeeReaction of (M - a monster):
 	say "[BigNameDesc of M] frowns with distaste.[line break][speech style of M]'[one of]Disgusting[or]Gross[or]Ugh[in random order]! [one of][if M is interested]You couldn't wait until we had parted ways[otherwise]I can't believe you'd do that with me standing here... Did you think I was deaf or something[end if][or]Do you enjoy peeing in front of [if M is buddy]friends[otherwise]strangers[end if] or something[or]I'm standing right here, and you just start going to the toilet like that[in random order]?!'[roman type][line break]";
 	unless M is staff member, FavourDown M with consequences.
 

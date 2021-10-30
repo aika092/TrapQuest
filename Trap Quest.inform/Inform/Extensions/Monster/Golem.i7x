@@ -74,11 +74,6 @@ To compute perception of (M - golem):
 	anger M;
 	say "The golem turns to face you almost mechanically and yet with unsettling grace[one of]. [big he of M] seems to be blocking the path forward, you'll need to deal with [him of M] to move on[or][stopping]. [CombatProvokedReaction of M]".
 
-To compute (M - a monster) stomping (N - golem):
-	if M is in the location of the player, say "[BigNameDesc of M] holds the [N] with two powerful fists and pulls apart with impossible strength. The [N] splits into two! The pieces fall to the ground and then disappear.";
-	otherwise say "You hear a very loud ripping sound!";
-	destroy N.
-
 The unique punishment rule of golem is usually the golem merging rule.
 This is the golem merging rule:
 	if the player is prone, say "You cringe on the ground as the creature approaches you. [if artificial enhancements fetish is 1]You realise [he of golem] isn't stopping as [he of golem] moves towards you, and finally presses up against you! [big his of golem] cold fluid body engulfs you for a terrible instant before suddenly vanishing! Your relief quickly turns to dread at wondering what [he of golem] might have done to you...[otherwise]The creature embraces you in its mismatched arms, and your body suddenly feels warm! A feeling of horrible dread comes over you all of a sudden and your vision blacks out for a moment. When you come to, you are alone.[end if][line break]";

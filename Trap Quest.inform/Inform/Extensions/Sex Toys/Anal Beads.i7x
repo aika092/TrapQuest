@@ -44,28 +44,28 @@ To compute periodic expansion effect of (C - an anal beads):
 	if the toy-charge of C > 40:
 		now the toy-charge of C is 0;
 		if a random number between 4 and 10 > the notches of C:
-			say "Your [ShortDesc of C] grows, and another bead forces itself into your [asshole]";
+			say "[bold type]Your [C] grows, and another bead forces itself into your [asshole]![roman type][line break]";
 			increase the notches of C by 1;
 			increase the notch-taken of C by 1;
 			if the player is somehow possessing a penis, SpecialPenisUp 1; [#LXorDD]
 		otherwise if the size of C < 10:
-			say "Your [ShortDesc of C] drastically increases in size!";
+			say "[bold type]Your [C] increases in size while inside you![roman type][line break]";
 			increase the size of C by 1;
 			let F be a random fuckhole penetrated by C;
 			if the size of C > the openness of F, Ruin F;
 			if the player is somehow possessing a penis, SpecialPenisUp 1. [#LXorDD]
 
-Figure of anal beads 0 is the file "Items/Accessories/Toys/analbeads0.jpg".
-Figure of anal beads 1 is the file "Items/Accessories/Toys/analbeads1.jpg".
-Figure of anal beads 2 is the file "Items/Accessories/Toys/analbeads2.jpg".
-Figure of anal beads 3 is the file "Items/Accessories/Toys/analbeads3.jpg".
-Figure of anal beads 4 is the file "Items/Accessories/Toys/analbeads4.jpg".
-Figure of anal beads 5 is the file "Items/Accessories/Toys/analbeads5.jpg".
-Figure of anal beads 6 is the file "Items/Accessories/Toys/analbeads6.jpg".
-Figure of anal beads 7 is the file "Items/Accessories/Toys/analbeads7.jpg".
-Figure of anal beads 8 is the file "Items/Accessories/Toys/analbeads8.jpg".
-Figure of anal beads 9 is the file "Items/Accessories/Toys/analbeads9.jpg".
-Figure of anal beads 10 is the file "Items/Accessories/Toys/analbeads10.jpg".
+Figure of anal beads 0 is the file "Items/Accessories/Toys/analbeads0.png".
+Figure of anal beads 1 is the file "Items/Accessories/Toys/analbeads1.png".
+Figure of anal beads 2 is the file "Items/Accessories/Toys/analbeads2.png".
+Figure of anal beads 3 is the file "Items/Accessories/Toys/analbeads3.png".
+Figure of anal beads 4 is the file "Items/Accessories/Toys/analbeads4.png".
+Figure of anal beads 5 is the file "Items/Accessories/Toys/analbeads5.png".
+Figure of anal beads 6 is the file "Items/Accessories/Toys/analbeads6.png".
+Figure of anal beads 7 is the file "Items/Accessories/Toys/analbeads7.png".
+Figure of anal beads 8 is the file "Items/Accessories/Toys/analbeads8.png".
+Figure of anal beads 9 is the file "Items/Accessories/Toys/analbeads9.png".
+Figure of anal beads 10 is the file "Items/Accessories/Toys/analbeads10.png".
 
 To decide which figure-name is clothing-image of (C - an anal beads):
 	let N be the notches of C - the notch-taken of C;

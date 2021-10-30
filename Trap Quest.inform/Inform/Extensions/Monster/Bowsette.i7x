@@ -17,7 +17,13 @@ Definition: bowsette is dark skinned:
 	decide no.
 
 To decide which number is the starting difficulty of (M - bowsette):
+	if the bowsette-origin of M is M, decide on 13;
 	decide on the starting difficulty of the bowsette-origin of M + 3.
+
+To decide which number is the initial maxhealth of (M - bowsette):
+	let X be 10;
+	increase X by (the difficulty of M * 10) / 3;
+	decide on X.
 
 To decide which number is the girth of (M - bowsette):
 	if the temperament of M is 0, decide on 3;
@@ -139,7 +145,7 @@ To say BigFuckerDesc of (M - bowsette):
 	say FuckerDesc of M.
 
 To say MonsterDesc of (M - bowsette):
-	say "This half-turtle-half-princess used to be [NameDesc of bowsette-origin of M]. [big he of M] has [if the temperament of M is 0]red hair and brown skin[otherwise]blonde hair and pale skin[end if]. [big he of M] is wearing a black dress and a crown with a mushroom inside it on [his of M] head. A subtle cloud of smoke flows from [his of M] mouth as [he of M] breathes.".
+	say "This half-turtle-half-princess [if the bowsette-origin of M is not M]used to be [NameDesc of bowsette-origin of M]. [big he of M] [end if]has [if the temperament of M is 0]red hair and brown skin[otherwise]blonde hair and pale skin[end if]. [big he of M] is wearing a black dress and a crown with a mushroom inside it on [his of M] head. A subtle cloud of smoke flows from [his of M] mouth as [he of M] breathes.".
 
 Figure of happy bowsette is the file "NPCs/MultiFloor/Bowsette/bowsette1a.jpg".
 Figure of angry bowsette is the file "NPCs/MultiFloor/Bowsette/bowsette1b.jpg".
@@ -161,11 +167,6 @@ Figure of happy bowsette kneel cutscene is the file "NPCs/MultiFloor/Bowsette/cu
 
 Figure of happy bowsette fire cutscene is the file "NPCs/MultiFloor/Bowsette/cutscene-bowsette-3a.jpg".
 Figure of angry bowsette furious cutscene is the file "NPCs/MultiFloor/Bowsette/cutscene-bowsette-3b.jpg".
-
-To compute kneeling reaction of (M - bowsette):
-	say "[BigNameDesc of M] takes a step closer, [his of M] erect [LongDickDesc of M] poking out from underneath [his of M] dress[if the player is not shameless]. You shiver with shame[end if].";
-	if the temperament of M > 0, cutshow figure of happy bowsette kneel cutscene for M;
-	strongHumiliate.
 
 To decide which figure-name is the monster-image of (M - bowsette):
 	if the temperament of M > 0, decide on figure of happy bowsette;
@@ -224,6 +225,7 @@ Definition: bowsette is normally guardian:
 Definition: bowsette is uniquely unfriendly:
 	if bowsette is friendly-fucking, decide no;
 	if the temperament of bowsette is 0, decide yes;
+	if bowsette is in a painting-room, decide yes;
 	if bowsette is default uniquely unfriendly, decide yes;
 	decide no.
 
@@ -233,10 +235,22 @@ To compute perception of (M - bowsette):
 		say "[big he of M] roars.[line break][speech style of M]'[one of]Turn me back into a human, you [cunt]!'[or]Find a way to transform me back, you [cunt]!'[or]I'll never forgive you!'[then at random][roman type][line break]";
 		anger M;
 	otherwise if M is unfriendly:
-		say "[big he of M] growls.[line break][speech style of M]'[one of][if the temperament of M is 1]This new form makes me want to fuck all the time[otherwise]I'm horny, and you're looking fine[end if]!'[or]Time to show you how a Turtle Princess treats skanky [slut]s!'[or]I wanna fuck. RAWR!'[then at random][roman type][line break]";
+		say "[big he of M] growls.[line break][speech style of M]'[one of][if M is in a painting-room]Tough luck, Mario-I mean [NameBimbo]! The Princess isn't here...Gwa ha ha[otherwise if diaper quest is 1]Come here, little [boy of the player], and I'll help [']fix['] your plumbing[otherwise if the temperament of M is 1]This new form makes me want to fuck all the time[otherwise]I'm horny, and you're looking fine[end if]!'[or]Time to show you how a Turtle Princess treats skanky [slut]s!'[or]I wanna fuck. RAWR!'[then at random][roman type][line break]";
 	otherwise:
-		compute appearance assessment of M;
+		if diaper quest is 1, compute dq appearance assessment of M;
+		otherwise compute appearance assessment of M;
 		if M is unfriendly, compute sudden objectification of M.
+
+To compute dq appearance assessment of (M - bowsette):
+	if there is a worn currently visible messed knickers:
+		say "[speech style of M]'Hahaha, what a plumbing disaster you've had down there!'[roman type][line break]";
+	otherwise if the cringe appearance of the player > the cringe tolerance of M:
+		FavourDown M by 2;
+		say "[speech style of M]'Ugh, the way you looks reminds me of the last time a literal baby beat me in a Kart Race. How humiliating!'[roman type][line break]";
+	otherwise if the player is top-wardrobe-malfunctioning:
+		compute dq nip slip reaction of M;
+	otherwise:
+		say "[speech style of M]'Greetings, traveller. It is me, your one and only Turtle Princess, Bowsette.'[roman type][line break]".
 
 To compute appearance assessment of (M - bowsette):
 	if there is a worn currently visible messed knickers:
@@ -258,7 +272,10 @@ To compute appearance assessment of (M - bowsette):
 	otherwise if the player is top-wardrobe-malfunctioning:
 		compute tq nip slip reaction of M;
 	otherwise:
-		say "[speech style of M]'Greetings, traveller. I hope your visit to these regions has been engaging?'[roman type][line break]".
+		say "[speech style of M]'Greetings, traveller. It is me, your one and only Turtle Princess, Bowsette.'[roman type][line break]".
+
+To compute sudden objectification of (M - bowsette):
+	say "Something seems to change in the way [NameDesc of M] is looking at you.[line break][speech style of M]'In fact, I think it's time to [']fix['] your [']plumbing[']...'[roman type][line break]".
 
 To say SatisfiedFlav of (M - bowsette):
 	say "[BigNameDesc of M] licks [his of M] lips in satisfaction and loses interest.".
@@ -271,6 +288,7 @@ To compute kneeling reaction of (M - bowsette):
 	otherwise:[happy; shouldn't come up too often]
 		say "[one of][BigNameDesc of M]'s prances up to you, pumping a hardening [DickDesc of M].[or][BigNameDesc of M] smiles.[line break][speech style of M]'This will be over before you know it!'[roman type][line break][or][BigNameDesc of M] smiles.[line break][speech style of M]'Let's both enjoy this!'[roman type][line break][in random order]";
 	if the player is not shameless, say " You shiver with shame.";
+	if the temperament of M > 0, cutshow figure of happy bowsette kneel cutscene for M;
 	strongHumiliate.
 
 Part 3 - Combat
@@ -291,7 +309,7 @@ To compute (M - bowsette) protecting against (X - a monster):
 		say "[one of][BigNameDesc of M] watches with an entertained look on [his of M] face.[or][or][cycling]";
 
 To say PissDrinkThreat of (M - bowsette):
-	say "[speech style of M]'Turtle Toilet Time!'[roman type][line break] seems to promise a punishment if you don't let some in your mouth.".
+	say "[speech style of M]'Turtle Toilet Time!'[roman type][line break][BigNameDesc of M] seems to promise a punishment if you don't let some in your mouth.".
 
 To say UrinationFlav of (M - a bowsette):
 	say "[BigNameDesc of M] holds [his of M] [LongDickDesc of M] inches away from your face, growling with satisfaction as a stream of [urine] flows from the tip.[if the player is modest and the urine taste addiction of the player < 7][line break][variable custom style][line break]This can't be happening[one of].[or] again![stopping][roman type][line break][end if]".
@@ -371,6 +389,29 @@ To compute post climax effect of (M - bowsette) in (F - a body part):
 		increase the stolen-intelligence of brainless bimbo tattoo by 1;
 		say "You feel the [brainless bimbo tattoo] reducing your intelligence[one of][or] even more[stopping]!".
 
+Section 2 - DQ
+
+Definition: bowsette is willing to forcefeed:
+	if watersports fetish is 1, decide yes;
+	decide no
+
+bowsette-dq-punishments is a diaper punishment. The priority of bowsette-dq-punishments is 2.
+
+Definition: bowsette-dq-punishments (called P) is appropriate:
+	if current-monster is bowsette, decide yes;
+	decide no.
+
+To compute punishment of (P - bowsette-dq-punishments):
+	say "[BigNameDesc of bowsette] punches the air, and an invisible cube, hovering in mid-air, suddenly becomes visible where [he of bowsette] punched. There is a question mark icon on each side. Next, a giant purple mushroom appears from the top, and begins to somehow glide along the upper surface as if dragged by an invisible force, and then drops to the ground once it is progressed to the edge of the cube. From here, it begins to travel in a straight line towards you.[line break][speech style of bowsette]'Hold still now...'[roman type][line break][BigNameDesc of bowsette] holds you in place and prevents you from moving as the mushroom approaches you. When it finally touches you, there's a weird digital sound effect, and it just disappears. What has it done to you?!";
+	let R be a random number between 1 and 2;
+	if R is 1:
+		say "You realise that you can no longer feel your bladder[if diaper messing >= 3] or bowels[end if].[line break][variable custom style][if the player is able to speak]'How long is this going to last?!'[line break][speech style of bowsette]'Oh for a good few accidents...'[otherwise]How long is this going to last?![end if][roman type][line break]";
+		increase temporary-incontinence by 3;
+	otherwise:
+		say "You feel less strong...";
+		StrengthDown 1;
+	satisfy bowsette.
+
 Section 3 - Damage
 
 To say DamageReactHealthy of (M - bowsette):
@@ -385,8 +426,23 @@ To say DamageReactTired of (M - bowsette):
 To say DamageReactWeak of (M - bowsette):
 	say "[big he of M] squeals, struggling to maintain [his of M] balance!".
 
+Definition: bowsette is automatically banishable: [Will this NPC automatically resolve their disappearance rather than giving the player options on what to do?]
+	if bowsette is in a painting-room, decide yes;
+	decide no.
+
 To say BanishForceFlav of (M - bowsette):
-	say "You flick [his of M] nose threateningly. [BigNameDesc of M] lets out a final offended [speech style of M]'Rawr!'[roman type], and begins to flee!".
+	say "You flick [his of M] nose threateningly.[line break][speech style of M]'Grr! I was a bit careless. This is not as I had planned...but I still how the power of the Stars, and I still have a hot round peach. Bwa ha ha! You'll get no more Stars from me! I'm not finished with you yet, but I'll let you go for now. You'll pay for this... later!'[roman type][line break] [BigNameDesc of M] lets out a final offended [speech style of M]'Rawr!'[roman type], and begins to flee!".
+
+To standard loot (M - bowsette):
+	let X be a random off-stage plentiful accessory;
+	unless X is nothing:
+		now X is solid gold;
+		set shortcut of X;
+		blandify and reveal X;
+		now X is in the location of the player;
+		compute loot dropping of X by M;
+		increase the loot dropped of M by 1;
+		compute autotaking X.
 
 Part 4 - Conversation
 
@@ -403,16 +459,19 @@ To say RepeatResponse of (M - bowsette):
 	say FirstResponse of M.
 
 To compute teaching of (M - bowsette):
-	say "[speech style of M]'I can't remember much of what I knew before I was turned into a Turtle Princess.'[roman type][line break]".
+	say "[speech style of M]'I [if the bowsette-origin of M is bowsette]know you're frightened, but if you knew just why you're here, your fear would just be heightened. So let's just say... Ignorance Is Bliss[otherwise]can't remember much of what I knew before I was turned into a Turtle Princess[end if].'[roman type][line break]".
 
 To say WhereAnswer of (M - bowsette):
 	say "[speech style of M]'This is a kingdom that is ruled over by a long-forgotten princess. Strange, I have a weird urge to... take it over.'[roman type][line break]".
 
 To say WhoAnswer of (M - bowsette): [###Selkie: I failed to think of a lewd teenage mutant ninja nephew joke for here]
-	say "[speech style of M]'I'm a Turtle Princess, but as you know, I wasn't always this way.'[roman type][line break]";
+	say "[speech style of M]'I'm a Turtle Princess, [if the bowsette-origin of M is bowsette]as you've seen, a little slow and a little green, but on the whole I'd say, super-duper[otherwise]but as you know, I wasn't always this way[end if].'[roman type][line break]";
 
 To say StoryAnswer of (M - bowsette):
-	say "[speech style of M]'Don't pretend you don't remember how I ended up this way...'[roman type][line break]";
+	say "[speech style of M]'[if the bowsette-origin of M is bowsette]With my magic book I will shower those clumsy lizards with my power
+Until Dinosaur Land is nothing but fossil fuel!
+My only problem with these spells is that I know not what they tell
+So every hex leaves me perplexed and all I want are those plumbing fools[otherwise]Don't pretend you don't remember how I ended up this way[end if]...'[roman type][line break]";
 
 To say EscapeAnswer of (M - bowsette):
 	say "[speech style of M]'You don't want to stay here with me?'[roman type][line break]".

@@ -209,8 +209,7 @@ To say ClothingDesc of (C - present outfit):
 
 To say ShortDesc of (C - present outfit):
 	say "present outfit".
-
-To say ShortDesc of (C - present outfit):
+To say MediumDesc of (C - present outfit):
 	say "golden Christmas present outfit".
 
 To decide which number is the initial outrage of (C - present outfit):
@@ -243,8 +242,7 @@ To say ClothingDesc of (C - candy cane outfit):
 
 To say ShortDesc of (C - candy cane outfit):
 	say "candy cane outfit".
-
-To say ShortDesc of (C - candy cane outfit):
+To say MediumDesc of (C - candy cane outfit):
 	say "slutty candy cane outfit".
 
 To decide which number is the initial outrage of (C - candy cane outfit):

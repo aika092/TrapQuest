@@ -161,7 +161,16 @@ This function runs any code that needs to be executed whenever the player finish
 +!]
 To orgasm (M - a monster):
 	if M is penetrating face and M is male, progress quest of naughty-quest;
-	if M is dark skinned and M is penetrating a fuckhole, BBCAddictUp 1;
+	if M is dark skinned:
+		if M is penetrating a fuckhole, BBCAddictUp 1;
+		if royal scepter is worn:
+			if royal scepter is not blacked:
+				say "Your [royal scepter] transforms ";
+				now royal scepter is blacked;
+				say "into a [royal scepter]![line break][ClothingDesc of royal scepter]";
+			if tiara-of-spades is worn:
+				say "[BigNameDesc of royal scepter] is filled with renewed magical power!";
+				if the charge of royal scepter < 30, now the charge of royal scepter is 30;
 	if ritual-beads is worn or runic headband is worn:
 		if runic headband is purity or M is penetrating vagina, compute priestessBlessing of M;
 	if the class of the player is worshipper and M is infernal, compute demonBoon of M;

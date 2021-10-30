@@ -350,9 +350,6 @@ To say MonsterOfferRejectFlav of (M - witch) to (T - soul gem):
 			say "[BigNameDesc of M] completely ignores the [T].";
 		now M is not rejecting T.[makes sure the witch is always willing to put the gem back in even after refusing to take it beforehand.]
 
-To say MonsterOfferAcceptFlav of (M - witch) to (T - soul gem):
-	say "[speech style of M]'So you want me to put this back in, huh? Fine. It's not like I have anything better to do.'[roman type][line break]".
-
 To compute final resolution of (M - witch) taking (T - soul gem):
 	XavierUp M by 3;
 	destroy T.

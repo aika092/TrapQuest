@@ -25,6 +25,8 @@ To teleport to (R - a room):
 		unless T is ghostly tentacle or T is player-dragger, dislodge T;
 	repeat with T running through things wrangling a body part:
 		unless T is ghostly tentacle or T is player-dragger, dislodge T;
+	repeat with C running through stuck body parts:
+		now C is not stuck;
 	repeat with C running through held store things:
 		compute stealing of C;
 		if shopkeeper is interested and the shopkeeper is in the location of the player, increase the stolen-aware of shopkeeper by 1;

@@ -217,6 +217,20 @@ To decide which number is the unique outrage of (K - heart-strap-thong):
 To decide which number is the crotch-tightness of (C - heart-strap-thong):
 	decide on 1. [can't cause cameltoes]
 
+spades-strap-thong is a thong. spades-strap-thong is transformation-rare. spades-strap-thong is leather. The text-shortcut of spades-strap-thong is "ssth". Understand "spades", "strap" as spades-strap-thong.
+To say selfexamineuniquetitle of (G - spades-strap-thong):
+	say "spades strap thong".
+To say UniqueClothingDesc of (G - spades-strap-thong):
+	say "Black leather straps frame the wearer's loins but hide little. The wearer's genitals remain barely concealed behind a strategically placed spade.".
+Definition: spades-strap-thong is white themed: decide yes.
+Definition: spades-strap-thong is interracial themed: decide yes.
+To decide which number is the penis-capacity of (K - spades-strap-thong):
+	decide on 2.
+To decide which number is the unique outrage of (K - spades-strap-thong):
+	decide on 3.
+To decide which number is the crotch-tightness of (C - spades-strap-thong):
+	decide on 1. [can't cause cameltoes]
+
 Figure of thong 1 is the file "Items/Clothes/Lower/Underwear/Skimpy/Thongs/thong1.png".
 Figure of thong 2 is the file "Items/Clothes/Lower/Underwear/Skimpy/Thongs/thong2.png".
 Figure of thong 3 is the file "Items/Clothes/Lower/Underwear/Skimpy/Thongs/thong3.png".
@@ -228,6 +242,7 @@ Figure of thong 8 is the file "Items/Clothes/Lower/Underwear/Skimpy/Thongs/thong
 Figure of thong 15 is the file "Items/Clothes/Lower/Underwear/Skimpy/Thongs/thong15a.png".
 Figure of thong 15 money is the file "Items/Clothes/Lower/Underwear/Skimpy/Thongs/thong15b.png".
 Figure of thong 16 is the file "Items/Clothes/Lower/Underwear/Skimpy/Thongs/thong16.png".
+Figure of thong 17 is the file "Items/Clothes/Lower/Underwear/Skimpy/Thongs/thong17.png".
 
 [Below are from Lucas]
 

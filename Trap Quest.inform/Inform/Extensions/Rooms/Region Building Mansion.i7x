@@ -94,6 +94,16 @@ To Set Up The Mansion:
 		say "Setting up pedestals complete.";
 		wait 1000 ms before continuing;
 	now a random master bed is in Mansion16;
+	let MR be the list of placed haunted rooms;
+	let PT be the list of fetish appropriate paintings;
+	sort MR in random order;
+	repeat with R running through MR:
+		if the number of entries in PT > 0:
+			let L be the room north from R;
+			if L is Solid Rock:
+				let P be entry 1 in PT;
+				now P is in R;
+				remove P from PT;
 	lock pedestals;
 	if debugmode is 0 and loading scenes is 1, clear the screen;
 	progress quest of new-region-quest.

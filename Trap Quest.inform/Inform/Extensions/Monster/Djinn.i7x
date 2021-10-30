@@ -194,7 +194,10 @@ To compute djinn wishing of (M - a monster):
 		say "[BigNameDesc of M] unfolds [his of M] folded arms and waves them at your body.[line break][speech style of M]'I shall make you faster at running...'[roman type][line break]You feel more agile!";
 		DexUp 1;
 		say "[speech style of M]'...and also faster at cumming.'[roman type][line break]";
-		if there is a worn tattoo and the number of worn asshole-tattoo is 0:
+		if diaper quest is 1:
+			SexAddictUp 1;
+			Arouse 4000;
+		otherwise if there is a worn tattoo and the number of worn asshole-tattoo is 0:
 			let T be a random asshole-tattoo;
 			summon T;
 			say "A [T] is seared into existence around your [asshole]!";
@@ -299,13 +302,6 @@ To compute djinn wishing of (M - a monster):
 			summon E cursed with quest;
 	otherwise:
 		say "ERROR: unable to properly process that wish. Please report this as a bug!".
-
-To say SpankingDeclarationFlav of (M - djinn):
-	say "[speech style of M]'Heh, I had a feeling you would choose wisely. I'm going to enjoy this.'[roman type][line break]".
-
-To say SpankingAfterFlav of (M - djinn):
-	say "[BigNameDesc of M] releases you.[line break][speech style of M]'It was a wise decision to not make an enemy of me.'[roman type][line break]";
-	now the favour of M is the default favour of M.
 
 Definition: djinn is distracted:
 	if djinn is in the location of the player:
@@ -750,8 +746,7 @@ To say SpankingStartFlav of (M - djinn):
 	say "[BigNameDesc of M] holds you still with some mystical force!".
 
 To say SpankingAfterFlav of (M - djinn):
-	say "After this [he of M] seems satisfied and folds both sets of arms while chuckling deeply.";
-	calm M. [The djinni was unfriendly during the wished spanking and is now just friendly again.]
+	say "After this [he of M] seems satisfied and folds both sets of arms while chuckling deeply.".
 
 Definition: djinn is willing to confiscate: decide yes.
 

@@ -244,15 +244,18 @@ To compute BimboSeduced of (M - a monster):
 		anger M;
 		now the boredom of M is 0;
 	otherwise if diaper quest is 0 and M is actually seducable:
-		repeat with N running through monsters in the location of the player:
-			now N is stalled;
-		now M is seduced;
-		set up sex length of M in asshole;
-		if the class of the player is cheerleader, increase the blue-balls of M by 4; [They really want to fuck a cheerleader!]
-		now turns-spent-seducing is 0;
-		now another-turn is 1;
-		add the core seduction rule to another-turn-rules;
-		say "Completely out of your own control, you find yourself grinding your [AssDesc] up against [NameDesc of M][']s crotch. Suddenly, your control over your own body returns to you, but it's clear that [NameDesc of M] wants more...";
+		if royal scepter is worn and royal scepter is blacked and M is a friendly royal guard:
+			compute princess guard tease of M;
+		otherwise:
+			repeat with N running through monsters in the location of the player:
+				now N is stalled;
+			now M is seduced;
+			set up sex length of M in asshole;
+			if the class of the player is cheerleader, increase the blue-balls of M by 4; [They really want to fuck a cheerleader!]
+			now turns-spent-seducing is 0;
+			now another-turn is 1;
+			add the core seduction rule to another-turn-rules;
+			say "Completely out of your own control, you find yourself grinding your [AssDesc] up against [NameDesc of M][']s crotch. Suddenly, your control over your own body returns to you, but it's clear that [NameDesc of M] wants more...";
 	otherwise:
 		say "Something seems to suddenly switch in [NameDesc of M][']s head and [his of M] [if M is friendly]friendly[otherwise]idle[end if] smile changes into a devilish grin. Uh-oh...[line break][variable custom style]Was it something I said?![roman type][line break]";
 		anger M;

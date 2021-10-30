@@ -604,7 +604,8 @@ To compute forced womb egg laying:
 	compute womb egg laying;
 
 To compute womb egg laying:
-	if the player is pussy protected or vagina is actually occupied:
+	let C be a random pussy covering unskirted clothing;
+	if C is clothing or vagina is actually occupied:
 		say "BUG - game tried to make the player lay eggs when the exit wasn't clear. Please report this to Aika!";
 	otherwise:
 		say "All of a sudden, the eggs inside your womb rush out of you, roughly stimulating your [vagina] on the way out!";

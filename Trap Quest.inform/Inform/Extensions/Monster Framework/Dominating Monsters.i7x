@@ -204,78 +204,81 @@ To say DefeatBrink of (M - a monster):
 To compute defeat of (M - a monster):
 	if M is automatically banishable:
 		compute automatic banishment of M;
-	otherwise if the player is in danger:
-		compute M slinking away;
-		compute defeat reward of M;
 	otherwise:
-		let LT be a list of texts;
-		let BT be the substituted form of "[BanishDesc of M] (self-respect increase)";
-		let TT be the substituted form of "[TaxDesc of M]";
-		let PT be the substituted form of "[PityDesc of M] (relationship increase)";
-		let PeT be the substituted form of "[PenisFuckDesc of M] (attempt at dominance increase)";
-		let AT be the substituted form of "[AssRideDesc of M] (attempt at dominance increase)";
-		let VT be the substituted form of "[VaginaRideDesc of M] (attempt at dominance increase)";
-		let PiT be the substituted form of "[PissFuckDesc of M] (attempt at dominance increase; relieve bladder)";
-		let DT be the substituted form of "[DiaperRideDesc of M] (attempt at dominance increase)";
-		let UT be the substituted form of "[UniqueFuckDesc of M] (attempt at dominance increase)";
-		if the player-class is avatar and M is intelligent and M is not infernal and M is not soul-stolen, add "Steal [his of M] soul" to LT;
-		if M is banishable, add BT to LT;
-		if M is taxable, add TT to LT;
-		if M is pitiable, add PT to LT;
-		let vm be a random video-monitor in the location of the player;[too annoying to deal with, so it's not allowed.]
-		if the latex-transformation of the player < 6 and (vm is not video-monitor or the video-caller of vm is the throne) and (the player is not feeling submissive or the player is a nympho):
-			if M is penis-fuckable and the player is penis-fuckable, add PeT to LT;
-			if M is vagina-rideable and the player is vagina-rideable, add VT to LT;
-			if M is ass-rideable and the player is ass-rideable, add AT to LT;
-			if M is piss-fuckable and the player is piss-fuckable, add PiT to LT;
-			if M is diaper-rideable and the player is diaper-rideable, add DT to LT;
-			if M is uniquely-fuckable, add UT to LT;
-		if the number of entries in LT is 0:
-			compute automatic banishment of M;
+		let DM be the list of combative monsters;
+		if M is listed in DM, remove M from DM;
+		if the number of entries in DM > 0: [player is still in combat]
+			compute M slinking away;
+			compute defeat reward of M;
 		otherwise:
-			let T be entry 1 in LT;
-			if the number of entries in LT is 1 and T is not BT and T is not TT and T is not PT, add PT to LT; [If we're giving the player only one option, to fuck the NPC, there should also be an option to leave it alone...]
-			if the number of entries in LT > 1:
-				if let it die tattoo is worn and the player is getting unlucky:
-					say "You feel your 'let it die' tattoo stiffening your resolve.";
-					now T is BT;
-				otherwise:
-					say DefeatBrink of M;
-					reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
-					repeat with X running through LT:
-						set next numerical response to X;
-					compute multiple choice question;
-					now T is chosen numerical response;
-			if T is BT:
-				compute forced banishment of M;
-				let J be a random worn demon codpiece;
-				if the number of entries in LT > 1 and J is clothing and M is wenchy, follow the demon junk punishment rule;
-			otherwise if T is TT:
-				compute taxing of M;
-			otherwise if T is PT:
-				compute pitying of M;
-			otherwise if T is PeT:
-				now player-fucker is penis;
-				compute dominating M;
-			otherwise if T is VT:
-				now player-fucker is vagina;
-				compute dominating M;
-			otherwise if T is AT:
-				now player-fucker is asshole;
-				compute dominating M;
-			otherwise if T is PiT:
-				now player-fucker is belly;
-				compute dominating M;
-			otherwise if T is DT:
-				now player-fucker is thighs;
-				compute dominating M;
-			otherwise if T is UT:
-				now player-fucker is face;
-				compute dominating M;
-			otherwise if T matches the text "soul":
-				compute soulStealing from M;
+			let LT be a list of texts;
+			let BT be the substituted form of "[if newbie tips is 1](self-respect increase) [end if][BanishDesc of M]";
+			let TT be the substituted form of "[TaxDesc of M]";
+			let PT be the substituted form of "[if newbie tips is 1](relationship increase) [end if][PityDesc of M]";
+			let PeT be the substituted form of "[if newbie tips is 1](attempt at dominance increase) [end if][PenisFuckDesc of M]";
+			let AT be the substituted form of "[if newbie tips is 1](attempt at dominance increase) [end if][AssRideDesc of M]";
+			let VT be the substituted form of "[if newbie tips is 1](attempt at dominance increase) [end if][VaginaRideDesc of M]";
+			let PiT be the substituted form of "[if newbie tips is 1](attempt at dominance increase; relieve bladder) [end if][PissFuckDesc of M]";
+			let DT be the substituted form of "[if newbie tips is 1](attempt at dominance increase; optionally use diaper) [end if][DiaperRideDesc of M]";
+			let UT be the substituted form of "[if newbie tips is 1](attempt at dominance increase) [end if][UniqueFuckDesc of M]";
+			if the player-class is avatar and M is intelligent and M is not infernal and M is not soul-stolen, add "Steal [his of M] soul" to LT;
+			if M is banishable, add BT to LT;
+			if M is taxable, add TT to LT;
+			if M is pitiable, add PT to LT;
+			let vm be a random video-monitor in the location of the player;[too annoying to deal with, so it's not allowed.]
+			if the latex-transformation of the player < 6 and (vm is not video-monitor or the video-caller of vm is the throne) and (the player is not feeling submissive or the player is a nympho):
+				if M is penis-fuckable and the player is penis-fuckable, add PeT to LT;
+				if M is vagina-rideable and the player is vagina-rideable, add VT to LT;
+				if M is ass-rideable and the player is ass-rideable, add AT to LT;
+				if M is piss-fuckable and the player is piss-fuckable, add PiT to LT;
+				if M is diaper-rideable and the player is diaper-rideable, add DT to LT;
+				if M is uniquely-fuckable, add UT to LT;
+			if the number of entries in LT is 0:
+				compute automatic banishment of M;
 			otherwise:
-				say "BUG: Unable to understand defeat choice.".
+				let T be entry 1 in LT;
+				if the number of entries in LT is 1 and T is not BT and T is not TT and T is not PT, add PT to LT; [If we're giving the player only one option, to fuck the NPC, there should also be an option to leave it alone...]
+				if the number of entries in LT > 1:
+					if let it die tattoo is worn and the player is getting unlucky:
+						say "You feel your 'let it die' tattoo stiffening your resolve.";
+						now T is BT;
+					otherwise:
+						say DefeatBrink of M;
+						reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+						repeat with X running through LT:
+							set next numerical response to X;
+						compute multiple choice question;
+						now T is chosen numerical response;
+				if T is BT:
+					compute forced banishment of M;
+					let J be a random worn demon codpiece;
+					if the number of entries in LT > 1 and J is clothing and M is wenchy, follow the demon junk punishment rule;
+				otherwise if T is TT:
+					compute taxing of M;
+				otherwise if T is PT:
+					compute pitying of M;
+				otherwise if T is PeT:
+					now player-fucker is penis;
+					compute dominating M;
+				otherwise if T is VT:
+					now player-fucker is vagina;
+					compute dominating M;
+				otherwise if T is AT:
+					now player-fucker is asshole;
+					compute dominating M;
+				otherwise if T is PiT:
+					now player-fucker is belly;
+					compute dominating M;
+				otherwise if T is DT:
+					now player-fucker is thighs;
+					compute dominating M;
+				otherwise if T is UT:
+					now player-fucker is face;
+					compute dominating M;
+				otherwise if T matches the text "soul":
+					compute soulStealing from M;
+				otherwise:
+					say "BUG: Unable to understand defeat choice.".
 
 To compute soulStealing from (M - a monster):
 	increase the total-souls of the player by 1;[Checks how many souls the player has pulled out, total.]

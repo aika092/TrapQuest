@@ -61,7 +61,7 @@ Check taking pink-spraybottle when pink-spraybottle is not held:
 				say "You don't feel all that interested in cleaning duty right now[if there is worn headgear], while you're wearing the [ShortDesc of a random worn headgear][otherwise if the number of worn maid headdress is 0], you're not a maid[end if]. You leave the [ShortDesc of noun] where it is." instead.
 
 To compute maidification of (C - a clothing):
-	if C is actually summonable:
+	if tutorial is 0 and C is actually summonable:
 		say "A [C] appears [if C is hand ready]in your hand[otherwise]on you[end if]! It looks like some kind of magic force is demanding that you clean up after you own messes!";
 		let H be a random worn headgear;
 		unless H is maid headdress:

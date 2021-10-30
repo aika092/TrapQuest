@@ -336,14 +336,31 @@ Definition: a gladiator (called M) is distracted:
 			compute M npcBattling N;
 
 To compute (M - a gladiator) npcBattling (N - a wench):
-	say "[BigNameDesc of M][']s eyes are drawn [if M is interested]away from you [end if]to [NameDesc of N].[line break][speech style of M]'The battlefield holds pity for no-one. Prepare yourself.'[roman type][line break][speech style of N]'[one of]Fuck off.'[or]Like I need advice from YOU!'[or]How about we don't?'[in random order][roman type][line break][BigFuckerDesc of N] turns to leave, but [FuckerDesc of M] swings at [him of N] with [his of M] [if M is swordless]fist! [otherwise]sword! [end if][run paragraph on]";
+	If N is QoS wench:
+		say "[BigNameDesc of M][']s eyes are drawn [if M is interested]away from you [end if]to [NameDesc of N].[line break][speech style of M]'Ah you look like a fine breeding slave harlot, come service me.'[roman type][line break][speech style of N]'[one of]Yes goddess.'[or]Anything for my queen!'[or]How can this slut be of service?'[in random order][roman type][line break][BigFuckerDesc of N] gets on [his of N] knees whilst [if M is male]spreading [his of N] cheeks apart, clearly ready for some rough breeding[otherwise]sticking [his of N] tongue out lewdly, clearly ready to orally service [FuckerDesc of M][end if][run paragraph on]! ";
+	otherwise:
+		say "[BigNameDesc of M][']s eyes are drawn [if M is interested]away from you [end if]to [NameDesc of N].[line break][speech style of M]'The battlefield holds pity for no-one. Prepare yourself.'[roman type][line break][speech style of N]'[one of]Fuck off.'[or]Like I need advice from YOU!'[or]How about we don't?'[in random order][roman type][line break][BigFuckerDesc of N] turns to leave, but [FuckerDesc of M] swings at [him of N] with [his of M] [if M is swordless]fist[otherwise]sword[end if][run paragraph on]! ";
 	if M is male:
-		say "[BigFuckerDesc of N] isn't fast enough to avoid the strike, and [if M is swordless][FuckerDesc of M]'s fist hits [him of N] under the ribs[otherwise]the flat of [FuckerDesc of M]'s sword hits [him of N] across the chest[end if], sending [him of N] falling to the floor.[line break][speech style of M]'Hmph. You don't want to be trained, yet can't even dodge an attack of that level. What should I do instead, I wonder?'[roman type][line break][BigFuckerDesc of N] stares at [him of M] for a second before letting out a resigned sigh and spreading [his of N] legs. [BigFuckerDesc of M] unclips [his of M] loincloth, [if M is swordless]grabbing [FuckerDesc of N]'s waist[otherwise]tossing [his of M] weapon away[end if] as [he of M] slides [his of M] [LongDickDesc of M] into [FuckerDesc of N]'s [HoleDesc of N]. Several gasping and moaning filled seconds later, [FuckerDesc of M] pulls out and walks away, leaving [FuckerDesc of N] with fresh [semen] pooling between [his of N] legs.[line break][speech style of M]'[if lady fetish is 2]I thought [he of M] wasn't into that sort of thing!'[otherwise]Where did [he of M] even GET a [DickDesc of M]?!'[end if][roman type][line break]";
-		if a2m fetish > 1, now the creampieTimer of N is the semen load of M * 100;
+		if N is QoS Wench:
+			say "[BigFuckerDesc of N] moans with anticipation as [BigFuckerDesc of M] unclips [his of M] loincloth, grabbing [FuckerDesc of N][']s waist as [he of M] slides [his of M] [LongDickDesc of M] into [FuckerDesc of N]'s [HoleDesc of N]. Several gasping and moaning filled seconds later, [FuckerDesc of M] pulls out and walks away, leaving [FuckerDesc of N] satisfied with fresh [semen] pooling between [his of N] legs.[line break][speech style of M]'[if lady fetish is 2]I thought [he of M] wasn't into that sort of thing!'[otherwise]Where did [he of M] even GET a [DickDesc of M]?'[end if][roman type][line break]";
+			if a2m fetish > 1, now the creampieTimer of N is the semen load of M * 100;
+		otherwise:
+			say "[BigFuckerDesc of N] isn't fast enough to avoid the strike, and [if M is swordless][FuckerDesc of M]'s fist hits [him of N] under the ribs[otherwise]the flat of [FuckerDesc of M]'s sword hits [him of N] across the chest[end if], sending [him of N] falling to the floor.[line break][speech style of M]'Hmph. You don't want to be trained, yet can't even dodge an attack of that level. What should I do instead, I wonder?'[roman type][line break][BigFuckerDesc of N] stares at [him of M] for a second before letting out a resigned sigh and spreading [his of N] legs. [BigFuckerDesc of M] unclips [his of M] loincloth, [if M is swordless]grabbing [FuckerDesc of N]'s waist[otherwise]tossing [his of M] weapon away[end if] as [he of M] slides [his of M] [LongDickDesc of M] into [FuckerDesc of N]'s [HoleDesc of N]. Several gasping and moaning filled seconds later, [FuckerDesc of M] pulls out and walks away, leaving [FuckerDesc of N] with fresh [semen] pooling between [his of N] legs.[line break][speech style of M]'[if lady fetish is 2]I thought [he of M] wasn't into that sort of thing!'[otherwise]Where did [he of M] even GET a [DickDesc of M]?!'[end if][roman type][line break]";
+			if a2m fetish > 1, now the creampieTimer of N is the semen load of M * 100;
+			bbc-trainingUp N by 1;
 		satisfy M;
 		DifficultyUp M by 1;
 		DifficultyUp N by 1;
 		compute mandatory room leaving of M;
+	otherwise if N is QoS wench and lady fetish < 2:
+		if futanari fetish > 0:
+			say "[BigFuckerDesc of N] eagerly starts to worship [BigFuckerDesc of M][']s pussy. [BigFuckerDesc of M] is clearly enjoying this, as [his of M] thighs quiver as [he of M] orgasms quickly. However, [FuckerDesc of N] shows no signs of slowing down and [NameDesc of M] starts to look panicked. Suddenly you see [NameDesc of M] start to convulse through waves of euphoria as [he of M] grows a [BlackCock]![line break][speech style of M]'Harlot, what you have done?!'[roman type][line break][speech style of N]'I grew you a yummy [BlackCock]! Let me know when you're nice and backed up and I will drain those balls dry!'[roman type][line break]";
+		otherwise:
+			say "[BigFuckerDesc of N] eagerly starts to worship [BigFuckerDesc of M][']s pussy. [BigFuckerDesc of M] is clearly enjoying this, as [his of M] thighs quiver as [he of M] orgasms quickly. However, [FuckerDesc of N] shows no signs of slowing down and [NameDesc of M] starts to look panicked. Suddenly you see [NameDesc of M] start to convulse through waves of euphoria and squirts all over [his of N]'s face. [line break][speech style of M]'Harlot, makes for a good oral slave!'[roman type][line break][speech style of N]'Let me know when you need servicing again mistress!'[roman type][line break]";
+		DifficultyUp M by 1;
+		DifficultyUp N by 1;
+		if futanari fetish > 0, cutshow figure of gladiator cutscene 1 for M;
+		now M is male;
 	otherwise:
 		say "[BigFuckerDesc of N] isn't fast enough to avoid the strike, and [if M is swordless][FuckerDesc of M]'s fist hits [him of N] under the ribs[otherwise]the flat of [FuckerDesc of M]'s sword hits [him of N] across the chest[end if], sending [him of N] falling to the floor.[line break][speech style of M]'Hmph. As I thought, you can't even dodge something of that level.'[roman type][line break][BigFuckerDesc of M] turns to leave, and after a moment, [FuckerDesc of N] follows suit. You have a feeling that when you see them again, both will be stronger.";
 		bore M;
@@ -352,7 +369,7 @@ To compute (M - a gladiator) npcBattling (N - a wench):
 		now the scared of N is 10;
 		DifficultyUp M by 1;
 		DifficultyUp N by 1;
-	now the refractory-period of M is the refractory-time of M;
+	now the refractory-period of M is the refractory-time of M.
 
 To compute (M - a gladiator) npcBattling (N - an aeromancer):
 	say "[BigNameDesc of M][']s eyes are drawn [if M is interested]away from you [end if]to [NameDesc of N].[line break][speech style of M]'[if M is wild gladiator]Hm. It is time to earn your keep, [boy of N].'[otherwise]I can stay silent no longer. You are over-reliant on that weapon.'[end if][roman type][line break][speech style of N]'[one of]Wind your own business! No, wait, that doesn't work out loud...'[or]I don't know weather I like your tone!'[in random order][roman type][line break][BigFuckerDesc of N] immediately swings [his of M] wand at [FuckerDesc of M], and [if lady fetish is 2]a red welt appears on his face[otherwise][his of M] breasts jiggle[end if] as [he of M] is hit by a whip made of air [run paragraph on]";
@@ -2310,9 +2327,6 @@ Definition: wild gladiator (called M) is uniquely unfriendly:
 	if breasts is lewdly exposed, decide yes;
 	decide no. [If your breasts are exposed, she assumes you're a gladiator/gladiator hopeful and attacks]
 
-To say SummoningFlav of (M - wild gladiator):
-	say "You hear leaves rustling from somewhere nearby.".
-
 To compute appearance assessment of (M - wild gladiator):
 	if the player is a flatchested trap:
 		if M is uniquely unfriendly:
@@ -2420,7 +2434,7 @@ To decide which number is the condom resistance of (M - wild gladiator):
 To say CondomPieFlav of (M - wild gladiator) in (F - a fuckhole):
 	say "[BigNameDesc of M] grunts, tightening [his of M] grip as the condom begins to fill up with warm [semen]. [big he of M] continues fucking you until [his of M] supply of [semen] has been completely and thoroughly emptied inside of it.[line break][speech style of M]'[one of]Hmph. I meant to break it.'[or]So, it didn't break. A pity.'[in random order][roman type][line break]You feel [his of M] hands squeeze your hips as [he of M] pulls out and carefully peels the condom off.".
 
-To say CondomFailFlav of (M - enlightened gladiator) in (F - a fuckhole):
+To say CondomFailFlav of (M - wild gladiator) in (F - a fuckhole):
 	say "[BigNameDesc of M] roars with pleasure as warm [semen] begins spurting into you. [if the semen addiction of the player < 5]You immediately realise something is wrong, and so does [he of M], from the way [he of M] suddenly[otherwise if the semen addiction of the player < 11]It takes you a split second to realise something is wrong, so at first you don't realise why [he of M][otherwise]You're so in love with the feeling of taking [his of M] hot load that you don't realise something is strange until [he of M][end if] tightens [his of M] grip. [if the semen addiction of the player >= 11]Luckily, there's[otherwise]There's[end if] nothing you can do about the apparently broken condom as [he of M] continues to fuck you, only stopping when [his of M] [load] has been completely emptied into your [variable F].[line break][speech style of M]'[one of]Even your condom submits to me.'[or]As always, I receive my just due.'[or]Protection is useless. I cannot be denied.'[in random order][roman type][line break][big he of M] slaps your ass as [he of M] pulls out.".
 
 To say angry punishment clothing destruction of (M - wild gladiator) on (C - a clothing):

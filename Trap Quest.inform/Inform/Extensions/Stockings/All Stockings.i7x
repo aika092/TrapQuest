@@ -218,7 +218,9 @@ To compute class set up of (C - bunny stockings):
 	now the raw-magic-modifier of C is 1.
 
 Definition: bunny stockings is black themed: decide yes.
-Definition: bunny stockings is unskirted themed: decide yes.
+Definition: bunny stockings is unskirted themed:
+	if reverse bunny outfit is worn, decide yes;
+	decide no.
 
 Definition: bunny stockings is fetish appropriate:
 	if diaper quest is 0, decide yes;
@@ -761,5 +763,32 @@ To decide which object is the unique-upgrade-target of (C - black-lace-stockings
 To transform (C - black-lace-stockings):
 	say "Paper bills appear on the stockings, sewn on and completely unremovable, but looking as though they've just been tucked into the tops!";
 	now C is monified.
+
+queen-of-spades-stockings is a stockings. queen-of-spades-stockings is unique. queen-of-spades-stockings is silk. queen-of-spades-stockings is dense. The printed name of queen-of-spades-stockings is "[clothing-title-before]queen of spades stockings[clothing-title-after]". The text-shortcut of queen-of-spades-stockings is "qssk". Understand "queen", "of spades", "spades", "stockings" as queen-of-spades-stockings.
+
+Definition: queen-of-spades-stockings is class-relevant:
+	if the class of the player is princess, decide yes;
+	decide no.
+
+Figure of queen of spades stockings is the file "Items/Clothes/Lower/Legs/queenofspadesstockings1.png".
+
+To decide which figure-name is the clothing-image of (C - queen-of-spades-stockings):
+	decide on figure of queen of spades stockings.
+
+To say ClothingDesc of (C - queen-of-spades-stockings):
+	say "A pair of tall white stockings have a pattern of black spades at the frill at the top. You sense it has the power to occasionally empower your knees against white [men of shopkeeper].".
+
+To say ShortDesc of (C - queen-of-spades-stockings):
+	say "pair of white stockings".
+To say MediumDesc of (C - queen-of-spades-stockings):
+	say "pair of white Queen of Spades stockings".
+
+Definition: queen-of-spades-stockings is white themed: decide yes.
+Definition: queen-of-spades-stockings is playing card themed: decide yes.
+Definition: queen-of-spades-stockings is interracial themed: decide yes.
+
+To decide which number is the initial outrage of (C - queen-of-spades-stockings):
+	decide on 2.
+
 
 All Stockings ends here.

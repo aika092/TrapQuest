@@ -849,4 +849,27 @@ Definition: heart-strap-bra is heart themed: decide yes.
 To decide which number is the initial outrage of (C - heart-strap-bra):
 	decide on 6.
 
+spades-strap-bra is a bra. spades-strap-bra is transformation-rare. spades-strap-bra is leather. The printed name of spades-strap-bra is "[clothing-title-before]spades strap bra[clothing-title-after]". The text-shortcut of spades-strap-bra is "sstb". Understand "spades", "strap", "bra" as spades-strap-bra. The min size of spades-strap-bra is 1. The max size of spades-strap-bra is 18. The support of spades-strap-bra is 1. spades-strap-bra is very low cut. spades-strap-bra is optional-top-displacable.
+
+To say ClothingDesc of (K - spades-strap-bra):
+	say "White leather straps in the shape of bra cups expose most of the wearer's cleavage, but protect the nipples with strategically placed black spades.[if interracial fetish is 1] It also heavily implies the wearer is exclusively into [BlackCock].[end if]".
+
+To compute SelfExamineDesc of (K - spades-strap-bra):
+	say ClothingDesc of K.
+
+To say ShortDesc of (K - spades-strap-bra):
+	say "spades strap bra".
+
+Figure of Spades Strap Bra is the file "Items/Clothes/Upper/Bras/spadesbra1.png".
+
+To decide which figure-name is clothing-image of (C - spades-strap-bra):
+	decide on figure of Spades Strap Bra.
+
+Definition: spades-strap-bra is white themed: decide yes.
+Definition: spades-strap-bra is interracial themed: decide yes.
+
+To decide which number is the initial outrage of (C - spades-strap-bra):
+	decide on 6.
+
+
 All Bras ends here.

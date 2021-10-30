@@ -41,7 +41,7 @@ Ready to fight the player, or already fighting / fucking.
 
 +!]
 Definition: a monster (called M) is dangerous:
-	if M is interested and M is threatening and M is awake[ and the boredom of M is 0 and the health of M > 0] and M is unfriendly and M is not submission-assisting:
+	if M is interested and M is not dying and M is threatening and M is awake[ and the boredom of M is 0 and the health of M > 0] and M is unfriendly and M is not submission-assisting:
 		if the scared of M is 0 or M is not scarable or M is penetrating a body part:
 			decide yes;
 	decide no.

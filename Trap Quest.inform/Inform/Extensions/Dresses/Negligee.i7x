@@ -86,4 +86,5 @@ To decide which figure-name is clothing-image of (C - floral negligee):
 To say ClothingDesc of (C - floral negligee):
 	say "This sexy item of high-waisted lingerie has a floral pattern. It feels rather delicate.".
 
+
 Negligee ends here.

@@ -88,7 +88,7 @@ To say BlessBlessFlav of (B - a bottle):
 		say "A flash of blue and gold surrounds the [ShortDesc of B] for an instant. It must now be blessed!";
 		now B is sure.
 
-To say BlessBlandFlav of (B - a thing):
+To say BlessBlandFlav of (B - a bottle):
 	if B is in the location of the player:
 		say "A flash of blue surrounds the [ShortDesc of B] as a black aura seems to fizzle away. It must have been uncursed!";
 		now B is sure.

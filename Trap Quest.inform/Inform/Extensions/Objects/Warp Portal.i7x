@@ -248,7 +248,6 @@ To teleport via (W - a warp portal):
 		display entire map;
 		let L be the list of eligible appropriate predicaments;
 		say "As you go through the portal, you feel your clothing stolen away by some invisible forces![one of][line break][variable custom style]This isn't like before?![roman type][line break][or][stopping][if debugmode > 0][line break]List of appropriate predicaments: [L][line break][end if]";
-		set up predicament status;
 		let P be nothing;
 		if the number of entries in L > 0:
 			sort L in random order;
@@ -256,35 +255,36 @@ To teleport via (W - a warp portal):
 			if debugmode > 0, say "selected [P].";
 		otherwise:
 			if debugmode > 0, say "The list of appropriate predicaments was empty, which must mean that we calculated that there was an available team predicament. Fingers crossed that was right...";
-		if team-predicament-partner is not student and receptionist is in the location of the player:
+		if (P is nothing or team-predicament-partner is not student) and receptionist is in the location of the player:
 			let ST be a random student in the location of the player;
 			if ST is student:
 				now team-predicament-partner is ST;
 				if there is an eligible appropriate team-predicament and (the number of entries in L is 0 or a random number between 1 and 4 > 1):
 					now P is a random eligible appropriate team-predicament;
 					if debugmode > 0, say "After reconsidering joint predicament options and seeing [ST] in the reception area, selected [P].";
-		otherwise if team-predicament-partner is student:
-			if there is an eligible appropriate team-predicament and (the number of entries in L is 0 or a random number between 1 and 4 > 1), now P is a random eligible appropriate team-predicament;
-			if debugmode > 0, say "After reconsidering joint predicament options, selected [P].";
-		if P is team-predicament:
-			say "[paragraph break]Behind [NameDesc of team-predicament-partner], [NameDesc of receptionist] casually struts up and then plants a foot on [NameDesc of team-predicament-partner][']s back![line break][speech style of team-predicament-partner]'What?! No wait-!'[roman type][line break][BigNameDesc of receptionist] kicks forward, and [NameDesc of team-predicament-partner] is pushed into the warp portal alongside you! You're both going in at the same time!";
-			now team-predicament-partner is interested;
-			update appearance level;
-			now the latest-appearance of team-predicament-partner is the appearance of the player;
-			if diaper quest is 1, now the latest-cringe of team-predicament-partner is the cringe appearance of the player;
-		let TP be a random off-stage fetish appropriate trophy;
-		if TP is trophy, now TP is in Predicament20;
-		now current-predicament is P;
-		now turnsWithSoiledDiaper is 0;
-		if the body soreness of the player > 4, now the body soreness of the player is 4;
-		now the printed name of Predicament01 is "Abandoned Warehouse";
-		repeat with R running through predicament rooms:
-			totally clean R;
-		execute P;
-		set up predicament clothing for P;
-		increase the times-completed of P by 1;
-		now temporaryYesNoBackground is Figure of small image;
-		now predicamentJustDone is true;
+		if P is nothing:
+			say "BUG: tried to set up an extra credit lesson but suddenly none were avaiable. Oopsie. Please report a bug with the following info:[line break]Receptionist: [unless receptionist is in the location of the player]not [end if]available.[line break]nearby students: [list of students in the location of the player].[line break]Chosen predicament partner: [team-predicament-partner].[line break]List of appropriate predicaments before receptionist check: [L].[line break]List of appropriate predicaments after receptionist check: [the list of eligible appropriate predicaments].";
+		otherwise:
+			set up predicament status;
+			if P is team-predicament:
+				say "[paragraph break]Behind [NameDesc of team-predicament-partner], [NameDesc of receptionist] casually struts up and then plants a foot on [NameDesc of team-predicament-partner][']s back![line break][speech style of team-predicament-partner]'What?! No wait-!'[roman type][line break][BigNameDesc of receptionist] kicks forward, and [NameDesc of team-predicament-partner] is pushed into the warp portal alongside you! You're both going in at the same time!";
+				now team-predicament-partner is interested;
+				update appearance level;
+				now the latest-appearance of team-predicament-partner is the appearance of the player;
+				if diaper quest is 1, now the latest-cringe of team-predicament-partner is the cringe appearance of the player;
+			let TP be a random off-stage fetish appropriate trophy;
+			if TP is trophy, now TP is in Predicament20;
+			now current-predicament is P;
+			now turnsWithSoiledDiaper is 0;
+			if the body soreness of the player > 4, now the body soreness of the player is 4;
+			now the printed name of Predicament01 is "Abandoned Warehouse";
+			repeat with R running through predicament rooms:
+				totally clean R;
+			execute P;
+			set up predicament clothing for P;
+			increase the times-completed of P by 1;
+			now temporaryYesNoBackground is Figure of small image;
+			now predicamentJustDone is true;
 	otherwise if D is school portal:
 		if receptionist is alive and receptionist is not in School01, now receptionist is in School01;
 		if armband is worn and armband is not solid gold and there is an alive undefeated correctly-ranked teacher and the armband-print of armband is not "new recruit":

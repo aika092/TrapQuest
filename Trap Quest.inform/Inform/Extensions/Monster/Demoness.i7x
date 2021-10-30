@@ -1630,9 +1630,6 @@ To compute diaper pail substitute punishment of (M - a demoness):
 	compute soiled diaper dropping of M;
 	compute punishment of demoness-facesit.
 
-To compute punishment of (P - demoness-plug):
-	compute prostate plugging of current-monster.
-
 Definition: a demoness is willing to change diapers: decide yes.
 
 To say DiaperChangeStart of (M - demoness):
@@ -2120,7 +2117,7 @@ To compute (M - abyssal demoness) entering anally:
 	now M is penetrating asshole;
 	if the soreness of asshole < 10, ruin asshole.]
 
-To say SummoningFlav of (M - a demoness):
+To say SummoningFlav of (M - abyssal demoness):
 	if M is in the location of the player, say "The air around you grows unbearably cold and hot at the same time, as the mummy's wrappings darken, as if rapidly soaking up water. An [M] comes into view as the old fabric slowly unravels, laughing cruelly as the soggy cloth struggles to reform behind [him of M].";
 	otherwise say "You hear the sound of inhuman laughter.".
 

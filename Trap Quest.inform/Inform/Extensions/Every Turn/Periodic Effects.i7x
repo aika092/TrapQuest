@@ -282,7 +282,9 @@ Report jumping:
 	compute bsound.
 
 A time based rule (this is the dressup rule):
-	if a random number between 1 and 100 < 2 + unlucky:
+	let N be 2 + unlucky;
+	if pink-and-blue translucent fetish dress is worn, increase N by 4;
+	if a random number between 1 and 100 < N:
 		if debugmode > 0, say "DRESSUP CHECK. ";
 		let dressup-clothing be nothing;
 		repeat with C running through worn cursed blandness clothing:
@@ -322,42 +324,45 @@ A time based rule (this is the dressup rule):
 			unless C is nothing:
 				summon C cursed with quest;
 				if dressup-clothing is blandness or dressup-clothing is unidentified:
-					say "Your [ShortDesc of dressup-clothing] seems to quickly vibrate, as if it is responsible for this!";
+					say "Your [ShortDesc of dressup-clothing] [if pink-and-blue translucent fetish dress is worn]and [ShortDesc of pink-and-blue translucent fetish dress] seem[otherwise]seems[end if] to quickly vibrate, as if responsible for this!";
 					now dressup-clothing is dressup;
 					now dressup-clothing is identified;
 					say "It must be a [ShortDesc of dressup-clothing] of dressup!";
 				otherwise:
-					say "Once again your [ShortDesc of dressup-clothing] vibrates quickly, as if proud of its accomplishment.";
+					say "Once again your [ShortDesc of dressup-clothing] [if pink-and-blue translucent fetish dress is worn]and [ShortDesc of pink-and-blue translucent fetish dress] vibrate[otherwise]vibrates[end if] quickly, as if proud.";
 		otherwise if debugmode > 0:
 			say "No dressup eligible clothing found.";
-	otherwise if there is a worn possession clothing and a random number between 1 and 40 < 2 + unlucky + the number of worn possession clothing:
-		let molested be 0;
+	otherwise if there is a worn possession clothing and a random number between 1 and 40 < N + the number of worn possession clothing:
 		let H be a random worn possession clothing;[TODO: breast covering]
-		if H is crotch covering:
-			if the player is possessing a vagina:
-				if vagina is not actually occupied and (asshole is actually occupied or a random number between 1 and 3 > 1):
-					say "[bold type]You shriek as a pair of [one of]thick, manly[or]thin, feminine[or]dexterous, long-nailed[or][if mythical creature fetish is 1]bestial, clawed[otherwise]fluid, warmth-less[end if][at random] fingers plunge into your [vagina], unnaturally distorting your [ShortDesc of H] as it casts an ominous glow over your inner thighs. [roman type]Shivers run up your spine as the clammy digits stroke your inner walls, unceremoniously violating you[if the number of monsters in the location of the player > 0] in full view of [NameDesc of a random monster in the location of the player][otherwise] without so much as a second's warning[end if]. You can only claw helplessly at the possessed [clothing-material of H] until it stops, pleasure, humiliation, and raw [if the bimbo of the player < 14]terror[otherwise]exhilaration[end if] bubbling up from your loins at having your clothes treat you [one of]as nothing but a toy to be used[or]like their personal sex guinea pig[or]as nothing but a simple plaything[at random].";
-					ruin vagina;
-					now molested is 1;
-			otherwise:
-				if the size of penis > a random number between 3 and 12:
-					say "[bold type]You yelp as a [one of]rough, manly[or]soft, feminine[or][if mythical creature fetish is 1]bestial, clawed[otherwise]cold, warmth-less[end if][at random] hand wraps itself around your [ShortDesc of penis], unnaturally distorting your [ShortDesc of H] as it casts an ominous glow over your inner thighs. [roman type]Shivers run up your spine as the clammy fingers firmly pump you from tip to shaft, as if trying to literally feed your junk back into your body. You can only claw helplessly at the possessed [clothing-material of H] until it stops, pleasure, humiliation, and raw [if the bimbo of the player < 14]terror[otherwise]exhilaration[end if] bubbling up from your loins at having your clothes treat you [one of]as nothing but a toy to be used[or]like their personal sex guinea pig[or]as nothing but a simple plaything[at random].";
-					PenisDown 1;
-					stimulate penis from H;
-					now molested is 1;
-			if molested is 0 and asshole is not actually occupied:
-				say "[bold type]You start and look over your shoulder as something cool and wet prods your sphincter. [roman type]Your [ShortDesc of H] distort unnaturally, casting an ominous glow over your inner thighs as a dexterous tongue pushes through your anal ring. It mercilessly probes your sensitive little hole, knowing you can only claw helplessly at the possessed [clothing-material of H] until [italic type]it[roman type] decides to stop. Pleasure, [if the bimbo of the player < 14]terror[otherwise]exhilaration[end if], and humiliation at being tortured by your own clothing roil inside of you until it finally wiggles out of your [asshole].";
+		let LB be a list of body parts;
+		if H is crotch-in-place and (H is short or longer or H is crotch covering):
+			if asshole is not actually occupied, add asshole to LB;
+			if the player is possessing a vagina and vagina is not actually occupied, add vagina to LB;
+			if the player is possessing a penis, add penis to LB;
+		if H is breast covering and H is top-placed, add breasts to LB;
+		if the number of entries in LB > 0:
+			let R be a random number between 1 and the number of entries in LB;
+			let F be entry 1 in LB;
+			if F is vagina:
+				say "[bold type]You shriek as a pair of [one of]thick, manly[or]thin, feminine[or]dexterous, long-nailed[or][if mythical creature fetish is 1]bestial, clawed[otherwise]fluid, warmth-less[end if][at random] fingers plunge into your [vagina], unnaturally distorting your [ShortDesc of H] as it casts an ominous glow over your inner thighs. [roman type]Shivers run up your spine as the clammy digits stroke your inner walls, unceremoniously violating you[if the number of monsters in the location of the player > 0] in full view of [NameDesc of a random monster in the location of the player][otherwise] without so much as a second's warning[end if]. You can only claw helplessly at the possessed [clothing-material of H] material until it stops, pleasure, humiliation, and raw [if the bimbo of the player < 14]terror[otherwise]exhilaration[end if] bubbling up from your loins at having your clothes treat you [one of]as nothing but a toy to be used[or]like their personal sex guinea pig[or]as nothing but a simple plaything[at random].";
+				ruin vagina;
+			otherwise if F is penis:
+				say "[bold type]You yelp as a [one of]rough, manly[or]soft, feminine[or][if mythical creature fetish is 1]bestial, clawed[otherwise]cold, warmth-less[end if][at random] hand wraps itself around your [ShortDesc of penis], unnaturally distorting your [ShortDesc of H] as it casts an ominous glow over your inner thighs. [roman type]Shivers run up your spine as the clammy fingers firmly pump you from tip to shaft, as if trying to literally feed your junk back into your body. You can only claw helplessly at the possessed [clothing-material of H] material until it stops, pleasure, humiliation, and raw [if the bimbo of the player < 14]terror[otherwise]exhilaration[end if] bubbling up from your loins at having your clothes treat you [one of]as nothing but a toy to be used[or]like their personal sex guinea pig[or]as nothing but a simple plaything[at random].";
+				PenisDown 1;
+				stimulate penis from H;
+			otherwise if F is asshole:
+				say "[bold type]You start and look over your shoulder as something cool and wet prods your sphincter. [roman type]Your [ShortDesc of H] distort unnaturally, casting an ominous glow over your inner thighs as a dexterous tongue pushes through your anal ring. It mercilessly probes your sensitive little hole, knowing you can only claw helplessly at the possessed [clothing-material of H] material until [italic type]it[roman type] decides to stop. Pleasure, [if the bimbo of the player < 14]terror[otherwise]exhilaration[end if], and humiliation at being tortured by your own clothing roil inside of you until it finally wiggles out of your [asshole].";
 				stimulate asshole from H;
+			otherwise if F is breasts:
+				say "[bold type]You yelp in surprise as you feel two hands groping at your [BreastDesc]. Looking down, you see that your chest is being squeezed by your own [ShortDesc of H]! [roman type]Two subtle handprints can be seen within the [clothing-material of H] material itself, first kneading your flesh, and then focusing in to pinch at your nipples. There's nothing you can do but endure it as your possessed garment turns your body into its personal plaything.";
+				stimulate breasts from H;
 		otherwise:
 			let R be a random number between 1 and 3;
 			let P be face;
 			if H is belly covering and R is 1, let P be belly;
-			otherwise increase R by 1;
-			if H is not chestless and R is 2, let P be breasts;
-			otherwise increase R by 1;
-			unless H is no-crotch and R is 3, let P be hips;
-			say "[bold type]Your [ShortDesc of H] lights up as unseen hands grab your [ShortDesc of P], distorting the [clothing-material of H] material unnaturally as they mischievously grope the tender skin underneath. [roman type][one of]You're being molested by your own clothing![or]You can't help feeling strangely, intimately exposed to your clothes themselves, now you know they can mess with you any time![at random]";
-			if P is breasts, stimulate breasts.
+			if H is crotch covering and R is 2, let P be hips;
+			say "[bold type]Your [ShortDesc of H] lights up as unseen hands grab your [variable P], distorting the [clothing-material of H] material unnaturally as they mischievously grope the tender skin underneath. [roman type][one of]You're being molested by your own clothing![or]You can't help feeling strangely, intimately exposed to your clothes themselves, now you know they can mess with you any time![at random]";
+			stimulate P from H.
 
 [If the player doesn't properly fit in their clothes, there is a chance of the clothing becoming displaced without input from the player.]
 [A time based rule (this is the wardrobe malfunction rule):

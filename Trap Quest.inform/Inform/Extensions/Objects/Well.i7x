@@ -298,9 +298,9 @@ To compute WellItems for offer (N - a number) with roll (R - a number):
 			now the stored-offerings of wishing well is 0;
 			now wish-done is 1;
 	if R is 2:
-		let P be pure totem;
+		let P be a random pure totem;
 		let E be a random worn hand ready equippable;
-		if N < 50 or P is off-stage or E is clothing:
+		if N < 50 or P is on-stage or E is clothing:
 			if N < 100, say "Rejected... Temperance... Hidden...[roman type][line break]The voice echoes in your head as light gathers around the well and slowly dissipates.";
 			otherwise increase R by 1;
 		otherwise:

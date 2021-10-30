@@ -497,7 +497,8 @@ Check seducing:
 	if tutorial is 1, say "This verb lets you try to take control of sex with the NPC. It isn't available during the tutorial because it would mess things up." instead;
 	if the noun is seduction-refused, say "You already tried that!" instead;
 	if the noun is not seducable, say "This isn't the type of character you can seduce." instead;
-	if the noun is not actually seducable, say "It looks like [he of the noun] isn't in the right state to consider such an invitation." instead.
+	if the noun is not actually seducable, say "It looks like [he of the noun] isn't in the right state to consider such an invitation." instead;
+	if royal scepter is worn and royal scepter is blacked and the noun is an interested friendly royal guard, compute princess guard tease of the noun instead.
 Carry out seducing:
 	allocate 6 seconds;
 	now the noun is seduced;

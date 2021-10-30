@@ -281,11 +281,9 @@ To check that (C - a bra) usually goes under (D - a corset):
 	rule succeeds.
 
 To check that (C - a dress) usually goes under (D - a bra):
-	if C is bottom-exclusive and (C is underdress or the number of worn underdress is 0), rule succeeds;
 	rule fails.
 
 To check that (C - a bra) usually goes under (D - a dress):
-	if D is bottom-exclusive, rule fails;
 	rule succeeds.
 
 To check that (C - a dress) usually goes under (D - a corset):

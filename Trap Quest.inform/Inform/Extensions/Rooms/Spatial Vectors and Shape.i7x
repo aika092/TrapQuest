@@ -1,6 +1,6 @@
 Spatial Vectors and Shape by Rooms begins here.
 
-A spatial coordinate is a kind of value. <9,24,24> specifies a spatial coordinate with parts maze level, easting (without leading zeros), northing (without leading zeros).
+A spatial coordinate is a kind of value. <99,24,24> specifies a spatial coordinate with parts maze level (without leading zeros), easting (without leading zeros), northing (without leading zeros).
 
 A room has a spatial coordinate called grid position.
 
@@ -41,12 +41,12 @@ Definition: A direction (called D) is compass vectorial:
 
 To decide which spatial coordinate is the vector sum of (V1 - a spatial coordinate) and (V2 - a spatial coordinate):
 	let L be the maze level part of V1 plus the maze level part of V2;
-	let L be the remainder after dividing L by 10;
+	[let L be the remainder after dividing L by 10;]
 	let E be the easting part of V1 plus the easting part of V2;
 	let E be the remainder after dividing E by 25;
 	let N be the northing part of V1 plus the northing part of V2;
 	let N be the remainder after dividing N by 25;
-	if L is 0 or L is 9, decide on <0,0,0>;
+	[if L is 0 or L is 9, decide on <0,0,0>;]
 	if E is 0 or E is 24, decide on <0,0,0>;
 	if N is 0 or N is 24, decide on <0,0,0>;
 	let the sum be the spatial coordinate with maze level part L easting part E northing part N;
@@ -54,7 +54,8 @@ To decide which spatial coordinate is the vector sum of (V1 - a spatial coordina
 
 To decide which spatial coordinate is the vector difference of (V1 - a spatial coordinate) and (V2 - a spatial coordinate):
 	let L be the maze level part of V1 minus the maze level part of V2;
-	let L be the remainder after dividing L by 10;
+	[let L be the remainder after dividing L by 10;]
+	if L < 0, now L is L * -1;
 	let E be the easting part of V1 minus the easting part of V2;
 	let E be the remainder after dividing E by 25;
 	let N be the northing part of V1 minus the northing part of V2;

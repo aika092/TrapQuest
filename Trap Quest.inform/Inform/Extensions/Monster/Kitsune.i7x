@@ -242,11 +242,10 @@ To compute offer reward of (M - kitsune) for (T - a thing):
 		compute autotaking fox ears;
 	otherwise if the favour of M > 13 and the special-gifted of M is 1:
 		say "[speech style of M]'Hmm, something else interesting. How about these sandals, only slightly used?'[roman type][line break]";
-		let D be a random sandals;
-		now D is in the location of M;
+		now wooden-sandals is in the location of M;
 		say "A pair of wooden sandals appears on the ground!";
 		now the special-gifted of M is 2;
-		compute autotaking D;
+		compute autotaking wooden-sandals;
 	otherwise if the favour of M > 18 and the special-gifted of M is 2:
 		say "[speech style of M]'You could use some class. Have this!'[roman type][line break]";
 		now illusory kimono is in the location of M;

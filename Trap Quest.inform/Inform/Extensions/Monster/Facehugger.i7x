@@ -240,9 +240,6 @@ Report taking off hugger-gag:
 	say "You discard the inert facehugger, and it drops to the ground, lifeless.";
 	only destroy the noun.
 
-To say ShortDesc of (C - hugger-gag):
-	say "facehugging facehugger".
-
 [Figure of bit gag is the file "Items/Accessories/Head/bitgag1.jpg".]
 
 [Definition: a hugger-gag (called S) is removable:
@@ -253,6 +250,8 @@ To decide which figure-name is the clothing-image of (M - hugger-gag):
 
 To say ShortDesc of (C - hugger-gag):
 	say "facehugger".
+To say MediumDesc of (C - hugger-gag):
+	say "facehugging facehugger".
 
 To say ClothingDesc of (C - hugger-gag):
 	say "This weird insect-like monster has used its strong legs to attach itself to your face! It's currently fucking your face with some bizarre alien organ!".

@@ -60,7 +60,7 @@ To compute (M - a monster) considering (T - a bottle):
 			say "[BigNameDesc of M] turns away.[line break][speech style of M]'I'm not thirsty at the moment.'[roman type][line break]";
 		otherwise:
 			now autodrink is 1;
-			if the class of the player is bunny and (T is not sure or (T is cursed and T is sure) or the Known corresponding to an Magic of the fill-type of T in the Table of Drinks is 0 or the fill-type of T >= lowest-cursed) and (alcohol fetish is 1 or a random number between 1 and 2 is 1) and the player is able to drink:
+			if (the class of the player is bunny or the class of the player is flight attendant) and (T is not sure or (T is cursed and T is sure) or the Known corresponding to an Magic of the fill-type of T in the Table of Drinks is 0 or the fill-type of T >= lowest-cursed) and (alcohol fetish is 1 or a random number between 1 and 2 is 1) and the player is able to drink:
 				say "[WaitressOfferSuspiciousFlav of M to T]Do you take a sip of the [MediumDesc of T]? ";
 				if the player is bimbo consenting:
 					compute drinking T;
@@ -225,6 +225,7 @@ flight attendant hat is a headgear. flight attendant hat is blondeness-positive.
 
 Definition: flight attendant hat is inflation themed: decide yes.
 Definition: flight attendant hat is fluid immune: decide no.
+Definition: flight attendant hat is waitress-enabling: decide yes.
 
 Figure of flight attendant hat is the file "Items/Accessories/Head/flightattendant1.png".
 Figure of inflated flight attendant hat is the file "Items/Accessories/Head/flightattendant2.png".

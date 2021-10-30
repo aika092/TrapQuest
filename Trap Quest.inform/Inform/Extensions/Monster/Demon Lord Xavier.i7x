@@ -119,7 +119,8 @@ To unseal xavier from (M - a monster):
 	otherwise:
 		say "You feel a burst of heat, and something [b]very powerful[/b] shakes the Earth.";
 	if bride-consort is M, now bride-consort is demon lord;
-	finally destroy M.
+	finally destroy M;
+	now M is permanently banished.
 
 To say PregGrowth of (M - demon lord):
 	say "Xavier's [child]".

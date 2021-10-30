@@ -334,7 +334,7 @@ To say ClothingDesc of (C - wood-dong):
 To uniquely set up (C - wood-dong):
 	do nothing.[never has an enchantment]
 
-Figure of wooden dildo is the file "Items/Accessories/Toys/woodendildo1.jpg".
+Figure of wooden dildo is the file "Items/Accessories/Toys/woodendildo1.png".
 
 To decide which figure-name is the clothing-image of (C - wood-dong):
 	decide on figure of wooden dildo.

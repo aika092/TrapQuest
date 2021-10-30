@@ -3,7 +3,7 @@ Festive Options by Fetish Settings begins here.
 Table of Festive Options
 title	subtable	description	toggle
 "[roman type]Return to Main Menu (shortcut: press Q)"	--	--	quit rule
-"Halloween content: ([if the player is not a top donator]alpha testers only outside of the Halloween release![otherwise if halloween content is 0]disabled[otherwise][bold type]enabled[roman type][end if])"	--	--	halloween content toggle rule
+"Halloween content: ([if halloween content is 0]disabled[otherwise][bold type]enabled[roman type][end if])"	--	--	halloween content toggle rule
 "Christmas content: ([if the player is not a top donator]alpha testers only outside of the Christmas release![otherwise if christmas content is 0]disabled[otherwise][bold type]enabled[roman type][end if])"	--	--	christmas content toggle rule
 "April Fools content: ([if the player is not a top donator]alpha testers only outside of the April 1st release![otherwise if april fools content is 0]disabled[otherwise][bold type]enabled[roman type][end if])"	--	--	april fools content toggle rule
 "Easter content: ([if the player is not a top donator]alpha testers only outside of the Easter release![otherwise if easter content is 0]disabled[otherwise][bold type]enabled[roman type][end if])"	--	--	easter content toggle rule
@@ -25,9 +25,9 @@ This is the april fools content toggle rule:
 		otherwise now the choice in row 67 of the Table of Player Options is -1.
 
 This is the halloween content toggle rule:
-	if the player is a top donator:
-		if the choice in row 80 of the Table of Player Options < 2, now the choice in row 80 of the Table of Player Options is 3; [this enables it]
-		otherwise now the choice in row 80 of the Table of Player Options is 0. [this disables it]
+	[if the player is a top donator:]
+	if the choice in row 80 of the Table of Player Options < 2, now the choice in row 80 of the Table of Player Options is 3; [this enables it]
+	otherwise now the choice in row 80 of the Table of Player Options is 0. [this disables it]
 
 Definition: a clothing is halloween themed: decide no.
 

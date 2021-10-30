@@ -1,10 +1,11 @@
 Strapon by Knickers begins here.
 
 A strapon-panties is a kind of knickers. The printed name of strapon-panties is "[clothing-title-before][PenisFlavour of item described][clothing-title-after]". Understand "strapon", "dildo", "strap on", "strap-on" as strapon-panties. A strapon-panties has a number called strap-length. A strapon-panties is usually totally-exclusive. A strapon-panties is usually leather. A strapon-panties is crotch-assless.
+
 Definition: a strapon-panties is penis themed: decide yes.
 Definition: a strapon-panties is fluid vulnerable: decide no.
 
-Figure of strapon-panties is the file "Items/Accessories/Toys/strapon1.jpg".
+Figure of strapon-panties is the file "Items/Accessories/Toys/strapon1.png".
 
 To decide which figure-name is clothing-image of (C - strapon-panties):
 	decide on figure of strapon-panties.
@@ -14,6 +15,10 @@ To say selfexamineuniquetitle of (K - a strapon-panties):
 
 To uniquely set up (C - a strapon-panties):
 	now the strap-length of C is a random number between 4 and 6.
+
+To set up magic attribute of (C - a strapon-panties):
+	let R be a random number between 1 and 3;
+	if R is 1, now C is dominance.
 
 Definition: a strapon-panties (called P) is fetish appropriate:
 	if diaper quest is 0, decide yes;
@@ -95,7 +100,7 @@ To say UniqueClothingDesc of (K - strapon-dildo):
 Chapter 2 - Equine Strapon
 
 An equine-strapon is a kind of strapon-panties. An equine-strapon is usually unique. The text-shortcut of an equine-strapon is "eqsd". There are 2 equine-strapons. Understand "equine", "horse", "harness" as equine-strapon.
-Figure of equine-strapon is the file "Items/Accessories/Toys/strapon3.jpg".
+Figure of equine-strapon is the file "Items/Accessories/Toys/strapon3.png".
 To decide which figure-name is the examine-image of (H - an equine-strapon):
 	decide on figure of equine-strapon.
 
@@ -140,7 +145,7 @@ Chapter 3 - Gemstone Strapon
 
 Gem-strapon is a strapon-panties. The text-shortcut of gem-strapon is "gspd". Gem-strapon is rare. Understand "thong", "gem", "encrusted", "gem-encrusted", "gem encrusted" as a gem-strapon. Gem-strapon is silk.
 
-Figure of gem-strapon is the file "Items/Accessories/Toys/strapon2.jpg".
+Figure of gem-strapon is the file "Items/Accessories/Toys/strapon2.png".
 To decide which figure-name is the examine-image of (H - gem-strapon):
 	decide on figure of gem-strapon.
 
@@ -210,7 +215,7 @@ Chapter 4 - Ghost Strapon
 
 Ghost-strapon is a strapon-panties. The text-shortcut of ghost-strapon is "ghpd". ghost-strapon is totally-exclusive. Ghost-strapon is unique. Understand "pair", "pair of", "crotchless", "panties", "goth", "ghost", "ghostly" as ghost-strapon. Ghost-strapon is crotch-exposing. Ghost-strapon is satin.
 
-Figure of ghost-strapon is the file "Items/Accessories/Toys/strapon4.jpg".
+Figure of ghost-strapon is the file "Items/Accessories/Toys/strapon4.png".
 To decide which figure-name is the examine-image of (H - ghost-strapon):
 	decide on figure of ghost-strapon.
 

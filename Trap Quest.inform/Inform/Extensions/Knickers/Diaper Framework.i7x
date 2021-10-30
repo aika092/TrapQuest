@@ -749,9 +749,6 @@ DQCloth is a DQClothing. DQGiant is a DQClothing. DQHuge is a DQClothing. DQLarg
 
 The DQFigure of diaper is usually DQMedium.
 
-To decide which number is the DQBulk of (D - a DQClothing):
-	decide on 0.
-
 To decide which number is the DQBulk of (D - a knickers):
 	decide on the DQBulk of the DQFigure of D.
 

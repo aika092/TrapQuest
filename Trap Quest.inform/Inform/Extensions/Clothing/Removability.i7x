@@ -40,6 +40,7 @@ This definition determines whether or not an item can be conventionally "destroy
 +!]
 Definition: a thing (called C) is destructible:
 	if C is metal, decide no;
+	if C is possession clothing, decide no; [spooky magic ghost clothing]
 	decide yes.
 Definition: a thing is indestructible:
 	if it is not destructible, decide yes;
@@ -149,7 +150,7 @@ This is the locked unremovable rule:
 The locked unremovable rule is listed in the global removability rules.
 
 This is the immobile unremovable rule:
-	if summoning is 0 and the player is immobile and (the wearing-target is not shoes or the player is not dildo stuck):
+	if summoning is 0 and the player is immobile and wearing-target is not plentiful accessory and (wearing-target is not shoes or the player is not dildo stuck):
 		if autoremove is false, say "You're a bit tied up at the moment!";
 		rule fails.
 The immobile unremovable rule is listed in the global removability rules.

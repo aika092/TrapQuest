@@ -80,6 +80,8 @@ To Start The Machine:
 		now C is cursed;
 		now C is provocation;
 		now the raw-magic-modifier of C is a random number between 1 and 3;
+		let SM be a random space mead;
+		now SM is in the location of the player;
 		say "[second custom style]Ding Dong![roman type][line break]The giant manor house's doorbell sounds surprisingly cheerful and welcoming considering how scary the place looks from the outside. And yet, when the door opens, it opens with a creepy creak like you might expect from such an old and grand door. The [man of vampiress] who greets you has red eyes and very, very pale skin. [big he of vampiress] looks at your bare chest.[line break][if the player is sexed female][speech style of vampiress]'Nice tits.'[roman type][line break][end if]You look down and see that half of your outfit is for some reason on the ground in front of you instead of covering your chest![line break][variable custom style]'Trick or treat[if diaper lover > 0]! And, erm, could I use your bathroom?'[otherwise]!'[end if][roman type][line break]You say automatically, without thinking. [if diaper lover > 0]It's true - you really really do need the loo. [end if]The [man of vampiress] licks [his of vampiress] lips.[line break][speech style of vampiress]'[if diaper lover > 0]Why of course you can sweetie. Come on in...'[otherwise]Why not both?'[end if][roman type][line break][big he of vampiress] offers seductively, before ushering you inside.[line break][speech style of vampiress]'I did have some candy for you but my house is so big that I've lost it all somewhere around here. Why don't you have a little look around and see if you can find it all? There should be [bold type]three pieces of candy[roman type] [speech style of vampiress]for you to find. Feel free to eat it all when you find it.'[roman type][line break]You also notice a [C] on the ground nearby. You sense that wearing it should make you feel much more powerful! Intriguing...";
 		if diaper lover > 0, now the bladder of the player is 8;
 		if diaper messing >= 3, now rectum is 11;
@@ -268,14 +270,16 @@ To initialise latex prisoner:
 	if diaper quest is 0:
 		let L be a random latex transformation-eligible bra;
 		if L is actually summonable clothing, summon L;
-	if rubber mittens is actually summonable clothing, summon rubber mittens;
+	let L be black rubber mittens;
+	if diaper quest is 1, now L is rubber mittens;
+	if L is actually summonable clothing, summon L;
 	let L be a random off-stage vibrating plug panties;
 	if diaper quest is 1, now L is a random rubber diaper;
 	if L is actually summonable clothing, summon L;
 	if diaper quest is 0:
 		let BRS be a random black rubber stockings;
 		if BRS is actually summonable, summon BRS;
-	if diaper quest is 1, summon rubber-baby-bonnet uncursed;
+	if diaper quest is 1 and rubber-baby-bonnet is actually summonable, summon rubber-baby-bonnet uncursed;
 	let L be black-catsuit;
 	if diaper quest is 1, now L is a random rubber jacket;
 	if L is actually summonable clothing, summon L;

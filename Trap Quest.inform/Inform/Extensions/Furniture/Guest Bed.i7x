@@ -47,7 +47,7 @@ By default, calls the UniqueFurnitureNormalEffect function
 @param <Furniture>:<F> The furniture the player is resting on
 
 +!]
-To compute unique fatigue effect of (F - a furniture):
+To compute unique fatigue effect of (F - a guest bed):
 	if F is tended, humiliate 6 + the song of F.
 
 [!<computeUniqueFurnitureSorenessEffect>+

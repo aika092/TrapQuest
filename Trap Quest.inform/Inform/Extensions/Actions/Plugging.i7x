@@ -60,8 +60,8 @@ Carry out plugging something with:
 	if the second noun is clothing, now the second noun is identified.
 
 To compute toyInsertion of (S - a thing) into (F - a fuckhole):
-	compute insertionRuin of S into F;
 	now S is penetrating F;
+	compute insertionRuin of S into F;
 	compute uniqueToyInsertion of S into F.
 
 To compute uniqueToyInsertion of (S - a thing) into (F - a fuckhole):

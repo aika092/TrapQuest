@@ -24,7 +24,7 @@ Definition: a fae mushroom is flower themed: decide yes.
 
 MushroomEating is an action applying to one thing.
 Check mushroomeating:
-	if the player is trap stuck or the player is vine stuck or a random lake monster is penetrating an orifice, say "For some reason, something inside of you is telling you that this would be a horrible idea." instead.
+	if the player is trap stuck or the player is vine stuck or a random lake monster is penetrating an orifice or the player is in a painting-room, say "For some reason, something inside of you is telling you that this would be a horrible idea." instead.
 Carry out mushroomeating:
 	allocate 6 seconds;
 	let target-teleport be Dungeon12;

@@ -390,8 +390,10 @@ To decide which figure-name is the triggered-image of (T - genitals-rune-trap):
 To compute unique trigger of (Y - genitals-rune-trap):
 	if the size of penis > min penis size:
 		PenisDown 1;
-	otherwise:
-		LabiaUp 1 with comment.
+	otherwise if the player is possessing a vagina:
+		LabiaUp 1 with comment;
+	otherwise if TG fetish is 1 or TG fetish is 3:
+		SexChange the player.
 
 polymorph-rune-trap is a rune trap.
 

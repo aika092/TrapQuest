@@ -496,9 +496,6 @@ To say MasturbationStartFlav of (M - an adult baby slave):
 To say MasturbationAfterFlav of (M - an adult baby slave):
 	say "After this [he of M] seems satisfied, and stands up.[line break][if the player is a bit horny][MasturbationTeaseFlav of M][end if]".
 
-To say MasturbationAfterFlav of (M - an adult baby slave):
-	say "After this [he of M] seems satisfied, and stands up.[if the player is a bit horny][MasturbationTeaseFlav of M][end if]".
-
 To say DQMasturbationResistReactionFlav of (M - an adult baby slave):
 	say "[BigNameDesc of M] giggles.[line break][speech style of M]'[one of]Hehe, you're like the BEST horsey ride ever, giddy up diaper butt!'[or]Does that mean I'm doing it right? Ohh I'll rub HARDER then!'[or]You're gonna make a creamie, you're gunna make a creaamie!'[or]Ya know silly, if you keep rocking like that... I'm gonna go potty!'[or]Hehehe, I can barely feel you! You're bad at this game!'[in random order][roman type][line break]".
 
@@ -562,9 +559,6 @@ Definition: an adult baby slave (called M) is eager to feed to master:
 	unless playerRegion is Hotel and N is monster and the ToMatron of M >= 0, decide no;
 	if the ToMatron of M is 1 or the times-met of N < 1, decide yes;
 	decide no.
-
-To compute punishment of (P - adult-baby-matron-drag):
-	follow the adult baby slave shows you to mommy rule.
 
 To say SuppositoryDeclarationFlav of (M - an adult baby slave):
 	say "[if presented-orifice is asshole or M is friendly-fucking]You stick your ass out in the direction of [NameDesc of M], waiting to see[otherwise][BigNameDesc of M] has a very evil look in [his of M] eyes, and you are concerned about[end if] what [he of M] has in mind. ".

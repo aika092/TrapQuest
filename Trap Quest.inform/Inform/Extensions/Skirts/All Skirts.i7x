@@ -848,5 +848,33 @@ To say ClothingDesc of (C - flight-attendant-skirt):
 	say "A short blue flight attendant's skirt, with yellow laces all the way down at each side, exposing some hip. Its magical power will allow the wearer to knee and kick enemies without suffering any damage penalties from being almost weightless.".
 
 
+queen-of-spades-skirt is a skirt. queen-of-spades-skirt is unique. queen-of-spades-skirt is silk. queen-of-spades-skirt is short. The printed name of queen-of-spades-skirt is "[clothing-title-before]queen of spades skirt[clothing-title-after]". The text-shortcut of queen-of-spades-skirt is "qss". Understand "queen", "of spades", "spades" as queen-of-spades-skirt.
+Figure of queen-of-spades-skirt is the file "Items/Clothes/Lower/Skirts/queenofspades1.png".
+To decide which figure-name is clothing-image of (H - queen-of-spades-skirt):
+	decide on figure of queen-of-spades-skirt.
+
+Definition: queen-of-spades-skirt is class-relevant:
+	if the class of the player is princess, decide yes;
+	decide no.
+
+Definition: queen-of-spades-skirt is black themed: decide yes.
+Definition: queen-of-spades-skirt is white themed: decide yes.
+Definition: queen-of-spades-skirt is royalty themed: decide yes.
+Definition: queen-of-spades-skirt is playing card themed: decide yes.
+Definition: queen-of-spades-skirt is interracial themed: decide yes.
+
+Definition: queen-of-spades-skirt is layer-concealing: decide no.
+Definition: queen-of-spades-skirt is partially-layer-concealing: decide yes.
+Definition: queen-of-spades-skirt is potentially vagina covering: decide no. [Only partially vagina and layer concealing]
+
+To say MediumDesc of (C - queen-of-spades-skirt):
+	say "queen of spades skirt".
+To say ClothingDesc of (C - queen-of-spades-skirt):
+	say "A frilly black and white skirt that is so short that the slightest flutter exposes everything. It has a big black spade in the middle, signifying a love of [BlackCock].".
+
+To compute class set up of (C - queen-of-spades-skirt):
+	now C is temptation;
+	now C is luck-influencing;
+	now the raw-magic-modifier of C is 3.
 
 All Skirts ends here.

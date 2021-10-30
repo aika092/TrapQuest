@@ -82,7 +82,7 @@ This is the long wait thirst rule:
 	if the thirst of the player > old-thirst and the player is thirsty:
 		if debugmode > 1, say "Stopped for thirst.";
 		rule fails;
-	if there is a worn cock pacifier and the thirst of the player < old-thirst:
+	if cock pacifier is worn and the thirst of the player < old-thirst:
 		if debugmode > 1, say "Stopped for cock pacifier.";
 		rule fails.
 The long wait thirst rule is listed in the long wait rules.
@@ -224,7 +224,6 @@ This is the longwait setting rule:
 		otherwise:
 			say "Input not understood.";
 			now longWaitTurns is 0;
-			reject the player's command;
 		now stat-to-set is "";
 		change the text of the player's command to "finish setting";
 		if longWaitTurns > 0:

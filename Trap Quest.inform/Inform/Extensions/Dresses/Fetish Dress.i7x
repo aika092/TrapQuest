@@ -14,6 +14,8 @@ Figure of Latex Dress 7 is the file "Items/Clothes/Upper/Latex/latexdress7.png".
 Figure of Latex Dress 8 is the file "Items/Clothes/Upper/Latex/latexdress8.png".
 Figure of Latex Dress 9 is the file "Items/Clothes/Upper/Latex/latexdress9.png".
 Figure of Latex Dress 10 is the file "Items/Clothes/Upper/Latex/latexdress10.png".
+Figure of Latex Dress 11 is the file "Items/Clothes/Upper/Latex/latexdress11a.png".
+Figure of Latex Dress 11 gloves is the file "Items/Clothes/Upper/Latex/latexdress11b.png".
 
 To compute SelfExamineDesc of (O - a fetish dress):
 	say "A [ShortDesc of O] clings tightly to your body, showing off your curves[if the largeness of breasts > 4] and ample cleavage[end if]. ".
@@ -298,6 +300,28 @@ To decide which number is the initial outrage of (C - pink translucent fetish dr
 
 Definition: pink translucent fetish dress is pink themed: decide yes.
 Definition: pink translucent fetish dress is bow themed: decide yes.
+
+Part 11 - Pink and Blue Translucent Latex Dress
+
+pink-and-blue translucent fetish dress is a fetish dress. pink-and-blue translucent fetish dress is unique. pink-and-blue translucent fetish dress is short. pink-and-blue translucent fetish dress is slap ready. pink-and-blue translucent fetish dress is sheer. pink-and-blue translucent fetish dress is high cut. The text-shortcut of pink-and-blue translucent fetish dress is "pbld". Understand "pink", "and blue", "blue" as pink-and-blue translucent fetish dress.
+
+To say MediumDesc of (C - pink-and-blue translucent fetish dress):
+	say "pink and blue translucent latex fetish dress".
+
+To decide which figure-name is clothing-image of (C - pink-and-blue translucent fetish dress):
+	if C is not worn and C is in a painting-room, decide on Figure of dress painting flying;
+	if C is hand ready, decide on figure of latex dress 11 gloves;
+	decide on figure of latex dress 11.
+
+To say ClothingDesc of (O - pink-and-blue translucent fetish dress):
+	say "A translucent pink latex dress with blue bows and frills that give it a 'babydoll' feel. While the cleavage line is rather modest, this is a bit of a moot point since it's partially transparent[if O is hand ready]. It comes with matching gloves that you can't seem to remove without also removing the dress[end if].".
+
+To decide which number is the initial outrage of (C - pink-and-blue translucent fetish dress):
+	decide on 6.
+
+Definition: pink-and-blue translucent fetish dress is pink themed: decide yes.
+Definition: pink-and-blue translucent fetish dress is bow themed: decide yes.
+Definition: pink-and-blue translucent fetish dress is class-relevant: decide yes. [It's not that easy to get rid of!]
 
 
 Part 100 - Fetish Baby Dress

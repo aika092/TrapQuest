@@ -513,6 +513,10 @@ Carry out ManuallyBreathing:
 		now player-breathing is false.
 Understand "breath", "breathe", "hold breath", "hold my breath", "hold breathe", "hold my breathe" as ManuallyBreathing.
 
+Definition: yourself is needing to breathe:
+	if the class of the player is living sex doll, decide no;
+	decide yes.
+
 Definition: yourself is able to breathe:
 	if player-breathing is false, decide no;
 	follow the breathing blocking rules;
@@ -538,49 +542,52 @@ A breathing blocking rule (this is the can't breathe during deepthroat rule):
 	if there is a throater thing penetrating face, rule succeeds.
 
 To decide which number is the suffocation limit of the player:
+	if the player is not needing to breathe, decide on 999999;
 	if the player is a trained hooker, decide on 10;
 	decide on 8.
 
 Definition: yourself is able to faint from suffocation:
-	if diaper quest is 1 or (sex fainting is 0 and bulging-slutty-sister is not penetrating face), decide no;
+	if diaper quest is 1 or the player is not needing to breathe or (sex fainting is 0 and bulging-slutty-sister is not penetrating face), decide no;
 	decide yes.
 
 An all later time based rule (this is the breathe or suffocate rule):
-	if the player is able to breathe:
-		if the suffocation of the player > 0:
-			let M be a random monster penetrating face;
-			if M is monster:
-				say "You manage to suck in just enough oxygen around [NameDesc of M] to keep further suffocation at bay[one of], but you can't sufficiently breathe to recover any additional breath![or].[stopping]";
+	if the player is needing to breathe:
+		if the player is able to breathe:
+			if the suffocation of the player > 0:
+				let M be a random monster penetrating face;
+				if M is monster:
+					say "You manage to suck in just enough oxygen around [NameDesc of M] to keep further suffocation at bay[one of], but you can't sufficiently breathe to recover any additional breath![or].[stopping]";
+				otherwise:
+					decrease the suffocation of the player by 1;
+					if the suffocation of the player <= 0, say "You have regained all your oxygen and are now able to breathe normally again.";
+					otherwise say "[one of]You are able to take a gasp of fresh air! Thank goodness! [or]You breathe quickly through an open mouth. [or]You breathe heavily. [stopping]You feel a little better, but are still [if the suffocation of the player > 2][bold type]seriously[roman type] [otherwise if the suffocation of the player is 1]a little [end if]weakened from being out of breath.";
+			follow the breathing consequences rules;
+		otherwise if the suffocation of the player >= the suffocation limit of the player:
+			if the player is able to faint from suffocation:
+				say "After giving a final frantic wiggle[if there is a monster penetrating face or there is a monster grabbing the player] to try and escape[end if], your brain gives up. You [if watersports mechanics is 1]wet yourself and then [end if]pass out.";
+				if watersports mechanics is 1, UrinePuddleUp 3;
+				now delayed fainting is 1;
+				now the fainting reason of the player is 8;
+				if there is a wench penetrating face, now the fainting reason of the player is 9;
+				if bulging-slutty-sister is penetrating face, now the fainting reason of the player is 22;
 			otherwise:
-				decrease the suffocation of the player by 1;
-				if the suffocation of the player <= 0, say "You have regained all your oxygen and are now able to breathe normally again.";
-				otherwise say "[one of]You are able to take a gasp of fresh air! Thank goodness! [or]You breathe quickly through an open mouth. [or]You breathe heavily. [stopping]You feel a little better, but are still [if the suffocation of the player > 2][bold type]seriously[roman type] [otherwise if the suffocation of the player is 1]a little [end if]weakened from being out of breath.";
-		follow the breathing consequences rules;
-	otherwise if the suffocation of the player >= the suffocation limit of the player:
-		if the player is able to faint from suffocation:
-			say "After giving a final frantic wiggle[if there is a monster penetrating face or there is a monster grabbing the player] to try and escape[end if], your brain gives up. You [if watersports mechanics is 1]wet yourself and then [end if]pass out.";
-			if watersports mechanics is 1, UrinePuddleUp 3;
-			now delayed fainting is 1;
-			now the fainting reason of the player is 8;
-			if there is a wench penetrating face, now the fainting reason of the player is 9;
-			if bulging-slutty-sister is penetrating face, now the fainting reason of the player is 22;
+				say "Your lungs burn as your lack of oxygen [one of]becomes painful[or]continues to hurt you[stopping].";
+				PainUp 1;
 		otherwise:
-			say "Your lungs burn as your lack of oxygen [one of]becomes painful[or]continues to hurt you[stopping].";
-			PainUp 1;
-	otherwise:
-		say "[if the suffocation of the player is 0 and player-breathing is false][bold type]You are currently holding your breath. [roman type]Until you choose to breathe again, your strength and ability to think straight will gradually leave you.[otherwise if the suffocation of the player is 0][bold type]You are currently unable to breathe. [roman type]Until you find a way to breathe again, your strength and ability to think straight will gradually leave you, and you will eventually pass out.[otherwise if the suffocation of the player < the suffocation limit of the player - 5]You[one of]r body is slowly being starved of oxygen, since you[or][cycling] are still holding your breath.[otherwise if the suffocation of the player < the suffocation limit of the player - 4][one of]As you continue to be starved of oxygen, you[or]You[cycling] feel the burning in your throat and the cloudiness in your head rising.[otherwise if the suffocation of the player is the suffocation limit of the player - 3][bold type]Your vision starts to go blurry.[roman type][line break][otherwise if the suffocation of the player is the suffocation limit of the player - 2 and the player is able to faint from suffocation][bold type]Your lungs are on fire and your eyes roll into the back of your head as you start to lose consciousness.[roman type][line break][otherwise if the suffocation of the player is the suffocation limit of the player - 2][bold type]Your lungs are on fire and your eyes roll into the back of your head.[roman type][line break][otherwise if the player is able to faint from suffocation][bold type]Your vision goes white as you reach the brink. Your consciousness is slipping away.[roman type][line break][otherwise]Your vision is going white and your lungs are empty of oxygen. [bold type]From now on, every turn you can't breathe will cause you serious pain.[roman type][line break][end if]";
-		increase the suffocation of the player by 1;
-		let M be a random monster penetrating face;
-		if M is nothing, now M is a random monster grabbing the player;
-		if M is nothing, now M is a random monster penetrating a body part;
-		if M is monster, compute extra suffocation of M.
+			say "[if the suffocation of the player is 0 and player-breathing is false][bold type]You are currently holding your breath. [roman type]Until you choose to breathe again, your strength and ability to think straight will gradually leave you.[otherwise if the suffocation of the player is 0][bold type]You are currently unable to breathe. [roman type]Until you find a way to breathe again, your strength and ability to think straight will gradually leave you, and you will eventually pass out.[otherwise if the suffocation of the player < the suffocation limit of the player - 5]You[one of]r body is slowly being starved of oxygen, since you[or][cycling] are still holding your breath.[otherwise if the suffocation of the player < the suffocation limit of the player - 4][one of]As you continue to be starved of oxygen, you[or]You[cycling] feel the burning in your throat and the cloudiness in your head rising.[otherwise if the suffocation of the player is the suffocation limit of the player - 3][bold type]Your vision starts to go blurry.[roman type][line break][otherwise if the suffocation of the player is the suffocation limit of the player - 2 and the player is able to faint from suffocation][bold type]Your lungs are on fire and your eyes roll into the back of your head as you start to lose consciousness.[roman type][line break][otherwise if the suffocation of the player is the suffocation limit of the player - 2][bold type]Your lungs are on fire and your eyes roll into the back of your head.[roman type][line break][otherwise if the player is able to faint from suffocation][bold type]Your vision goes white as you reach the brink. Your consciousness is slipping away.[roman type][line break][otherwise]Your vision is going white and your lungs are empty of oxygen. [bold type]From now on, every turn you can't breathe will cause you serious pain.[roman type][line break][end if]";
+			increase the suffocation of the player by 1;
+			let M be a random monster penetrating face;
+			if M is nothing, now M is a random monster grabbing the player;
+			if M is nothing, now M is a random monster penetrating a body part;
+			if M is monster, compute extra suffocation of M.
 
 To compute extra suffocation of (M - a monster):
-	let R be a random number between -2 and the reaction of the player;
-	if debuginfo > 0, say "[input-style]Additional suffocation (from [MediumDesc of M]) avoidance check: RNG between -2 and player reaction ([reaction of the player]) = [R] | -0.5[roman type][line break]";
-	if R < 0:
-		increase the suffocation of the player by 1;
-		say "[bold type][if the reaction of the player is 0]All your struggling and the[otherwise]The[end if] intensity of [NameDesc of M][']s acts cause your body to use up even more oxygen![roman type][line break]".
+	if the player is needing to breathe:
+		let R be a random number between -2 and the reaction of the player;
+		if debuginfo > 0, say "[input-style]Additional suffocation (from [MediumDesc of M]) avoidance check: RNG between -2 and player reaction ([reaction of the player]) = [R] | -0.5[roman type][line break]";
+		if R < 0:
+			increase the suffocation of the player by 1;
+			say "[bold type][if the reaction of the player is 0]All your struggling and the[otherwise]The[end if] intensity of [NameDesc of M][']s acts cause your body to use up even more oxygen![roman type][line break]".
 
 [A breathing blocking decision rule (this is the consider breathing pink smoke rule):
 	if the player is prone and the location of the player is smoky and the player is not flying and the number of aeromancer penetrating a body part is 0:

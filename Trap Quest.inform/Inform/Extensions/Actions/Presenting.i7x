@@ -137,6 +137,7 @@ Check direct-presenting something to:
 	if the second noun is not monster, say "You're going to present your [noun] to that how exactly?" instead;
 	if the second noun is uninterested and (the boredom of the second noun is 0 or the second noun is unfriendly), say "You should probably get [his of the second noun] attention first. Maybe try [bold type]greet[roman type]ing [him of the second noun]." instead; [We are happy for the player to present to uninterested NPCs only if the NPC is friendly and not just about to notice the player]
 	now presenting-receiver is the second noun;
+	if royal scepter is worn and royal scepter is blacked and the second noun is a friendly royal guard, compute princess guard tease of the second noun instead;
 	unless the noun is actually presentable, do nothing instead;
 	if the player is upright and the second noun is unfriendly, say "You should kneel first." instead.
 
@@ -285,8 +286,20 @@ Carry out direct-presenting something to:
 				now presented-orifice is penis;
 				humiliate (SEVERE-HUMILIATION - STRONG-HUMILIATION);
 		if there is a worn demon codpiece, follow the demon junk punishment rule;
-		if the second noun is friendly, check consensual submissive sex of the second noun;
-		if the noun is fuckhole and the second noun is dark skinned male monster, progress quest of interracial-sex-quest;
+		if the second noun is friendly:
+			check consensual submissive sex of the second noun;
+			if there is a worn tiara and tiara-of-spades is not worn and the second noun is a dark skinned male intelligent monster and the second noun is penetrating a body part:
+				let M be a random royal guard in the location of the player;
+				if M is a monster and M is not penetrating a body part:
+					say "Suddenly, [NameDesc of M] actually notices what's going on.[line break][speech style of M]'Princess! You... I... I thought we... I mean... This is... This is totally inappropriate! For a woman of your standing... and complexion... to be doing that with a black [man of the second noun]! I must demand that you stop this at once!'[roman type][paragraph break][BigNameDesc of second noun] responds with a chuckle.[line break][speech style of second noun]'Come off it, you little beta cuck. Watch what your princess can do with a proper sized [manly-penis].'[roman type][line break][BigNameDesc of M] looks like [he of M] wants to make a move to break you and [NameDesc of the second noun] apart, but some sort of pain or discomfort in [his of M] crotch is distracting [him of M]. [big he of M] clutches desperately at [his of M] genitals, and has a twisted expression on [his of M] face.[line break][speech style of M]'My Princess... My love... She is being violated by a disgusting [BlackCock]! I must save her! I must stop this! I must... Hnnngaah!'[roman type][line break]Not one of the three of you can really believe it's actually happening, but [NameDesc of M] is very clearly filling [his of M] pants with [his of M] load, having just suffered an extremely humiliating premature ejaculation.[line break][speech style of M]'No! This is... Unthinkable! Unjustifiable! I...'[roman type][paragraph break][BigNameDesc of second noun] smirks.[line break][speech style of second noun]'Tell me, Princess, is that the sort of [manly-penis] you love? The type that cums before [he of M] even pulls it out of [his of M] pants? Or do you prefer 10 inches of rock hard black meat?'[roman type][line break]You don't even get a chance to consider how to answer before your clothing answers for you.";
+					check tiara-of-spades transformation;
+					say "[BigNameDesc of second noun] laughs.[line break][speech style of second noun]'See? She's the Princess of Black Cock now. So why don't you fuck off back to your quarters and stroke your little worm to the thought of your beloved Princess worshipping [BlackCock].'[paragraph break][speech style of M]'My Princess... I'm sorry.'[roman type][line break][BigNameDesc of M] chokes, as [he of M] flees from the scene.";
+					compute mandatory room leaving of M;
+					bore M;
+					now the scared of M is 12;
+		if the noun is fuckhole and the second noun is dark skinned male monster:
+			progress quest of interracial-sex-quest;
+			if the bbc addiction of the player >= 6, check tiara-of-spades transformation;
 		if the noun is asshole and the second noun is male monster, progress quest of asshole-presenting-quest;
 		check immobility;
 		if the player is not in danger and the player is not immobile:

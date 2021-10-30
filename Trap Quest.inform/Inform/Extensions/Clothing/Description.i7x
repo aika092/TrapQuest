@@ -219,6 +219,12 @@ Report examining breast covering clothing:
 To say selfexamineuniquetitle of (C - a clothing):
 	say "[ShortDesc of C]".
 
+Report examining worn hostility clothing:
+	say "Its magical enhancement empowers your attacks!".
+
+Report examining worn elasticity clothing:
+	say "Its magical enhancement makes you much better at accomodating large insertions without suffering from too much discomfort!".
+
 Report examining worn audible jiggles clothing:
 	say "Some sort of in-built magic effect is making this item emphasize the sounds your [BreastDesc] make as they move, making them loud and somewhat comical. It makes you feel like you're in some kind of bizarre cartoon!".
 
@@ -316,11 +322,11 @@ To say PlayerThoughts of (C - a clothing):
 	otherwise if the number of worn clothing is 0 and earnings > starting-earnings - 250 and the player is gendered male and the bimbo of the player < 4:
 		say "[first custom style][one of][if the outrage of C - 9 is too humiliating]Heh, what sort of chick would be caught dead in this?[otherwise]I hope I find someone to wear this![end if][or]Wait a minute, is this supposed to be for ME to wear?!?![or]Surely this isn't meant for me, right?[stopping][roman type][line break]";
 	otherwise if C is short-skirt-disallowed:
-		say "[variable custom style]I feel [if C is worn]extremely uncomfortable in this, I can feel it sapping my strength[otherwise]like my body doesn't want me to wear this[end if]... I think it is because of my new fetish for short skirts![roman type][line break]";
+		say "[variable custom style]I feel [if C is worn]extremely uncomfortable in this, I can feel it sapping my intelligence[otherwise]like my body doesn't want me to wear this[end if]... I think it is because of my new fetish for short skirts![roman type][line break]";
 	otherwise if C is no-panties-disallowed knickers:
-		say "[variable custom style]I feel [if C is worn]extremely uncomfortable in this, I can feel it sapping my strength[otherwise]instinctively like I don't want to wear this[end if]... I think it is because of my [if the class of the player is faerie]new role as a faerie[otherwise if diaper lover >= 1]new fetish for diapers[otherwise]new fetish for not wearing underwear[end if]![roman type][line break]";
+		say "[variable custom style]I feel [if C is worn]extremely uncomfortable in this, I can feel it sapping my intelligence[otherwise]instinctively like I don't want to wear this[end if]... I think it is because of my [if the class of the player is faerie]new role as a faerie[otherwise if diaper lover >= 1]new fetish for diapers[otherwise]new fetish for not wearing underwear[end if]![roman type][line break]";
 	otherwise if C is worn and C is nipple covering clothing and the player is fighting against topless:
-		say "[variable custom style]I feel extremely uncomfortable in this, I can feel it sapping my strength... I think it is because of my new fetish for being topless![roman type][line break]";
+		say "[variable custom style]I feel extremely uncomfortable in this, I can feel it sapping my intelligence... I think it is because of my new fetish for being topless![roman type][line break]";
 	otherwise if diaper quest is 1 and (the cringe of C is too humiliating) and (the cringe of C >= the outrage of C):
 		if C is too cringeworthy:
 			if C is equippable:

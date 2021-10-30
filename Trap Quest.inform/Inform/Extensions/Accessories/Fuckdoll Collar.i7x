@@ -120,4 +120,43 @@ This is the collar titfuck rule:
 	if spike-collar is worn or fuckdoll collar is worn, increase the desirability of breasts by 5.
 The collar titfuck rule is listed in the tit slut eligibility rules.
 
+
+BBC Collar is a submissive collar. The Printed name of BBC collar is "[clothing-title-before]BBC collar[clothing-title-after]". The text-shortcut of BBC collar is "bbcc".
+
+To decide which number is the initial outrage of (C - BBC collar):
+	decide on 8.
+
+To decide which number is the bbc-sex-addiction-influence of (C - BBC collar):
+	let S be 1;
+	decrease S by the magic-modifier of C; [Positive magic = subtracted sex addiction]
+	decide on S.
+
+Figure of BBC collar is the file "Items/Accessories/Neck/collar9.png".
+
+To decide which figure-name is clothing-image of (C - BBC collar):
+	decide on figure of BBC collar.
+
+To say ClothingDesc of (C - a BBC collar):
+	say "This white leather collar has the letters 'BBC' printed on the front in metal letters.".
+
+To say ShortDesc of (C - a BBC collar):
+	say "BBC collar".
+
+To decide which number is the bartering value of (T - BBC collar) for (M - a wrestler):
+	decide on 2.
+
+To decide which number is the bartering value of (T - BBC collar) for (M - a wench):
+	decide on 4.
+
+To decide which number is the bartering value of (T - BBC collar) for (M - a dominatrix):
+	decide on 2.
+
+Definition: BBC collar is transformation-protected:
+	decide yes.
+
+
+Definition: BBC collar is interracial themed: decide yes.
+Definition: BBC collar is white themed: decide yes.
+
+
 Fuckdoll Collar ends here.

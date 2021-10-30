@@ -20,6 +20,8 @@ Definition: a wench is willing to charm snakes:
 	if diaper quest is 1, decide no;
 	decide yes.
 
+a wench has a number called bbc-training. The bbc-training of wench is usually 0.[This acts as a running-counter for the summoning of the QoS Wench]
+
 To say ShortDesc of (M - a wench):
 	say "wench".
 
@@ -75,10 +77,10 @@ To say MediumDesc of (M - lost wench):
 kidnapped wench is a wench. The text-shortcut of kidnapped wench is "kwe".
 To say MediumDesc of (M - kidnapped wench):
 	say "kidnapped wench".
-
 desperate wench is a horny-wench. The text-shortcut of desperate wench is "dwe".
 To say MediumDesc of (M - desperate wench):
 	say "desperate wench".
+
 
 To say MonsterDesc of (M - a wench):
 	let K be a random knickers carried by M;
@@ -113,7 +115,14 @@ To say MonsterDesc of (M - a wench):
 				otherwise say "This [man of M] is wearing a white blouse, which looks like it was pulled open rather roughly to expose [his of M] breasts. [big he of M] is completely naked, [if K is clothing]aside from a [ShortDesc of K] that have been pulled aside, [end if]leaving you sure that there isn't an inch of [his of M] body that isn't plastered with pearly white [semen]. The only clean part of [him of M] is [his of M] face, which is caked with heavy makeup that's been smudged in only a few places. [big his of M] hair has been drawn back into a beach blonde ponytail, and the look on [his of M] face is somewhere between arousal and total exhaustion.";
 		otherwise:
 			if lady fetish is 2, say "This [man of M] is wearing a white blouse with a bra underneath it. [big he of M] is [if K is clothing]also wearing a [ShortDesc of K], pulled aside,[otherwise]otherwise completely naked,[end if][if C > 0] with [semen] dribbling freely from [his of M][otherwise]leaving [him of M] with an[end if] exposed asshole. [big he of M] has the words 'SISSY SLUT' tattooed across [his of M] cheek, and [his of M] long, beach blonde ponytail and heavily decorated face leave the impression that this 'sissy slut' is back from a night on the town.";
-			otherwise say "This [man of M] is wearing a white blouse, which looks like it was pulled open rather roughly to expose [his of M] breasts. [big he of M] is [if K is clothing]also wearing a [ShortDesc of K], pulled aside,[otherwise]otherwise completely naked,[end if][if C > 0] with [semen] dribbling freely from [his of M][otherwise]leaving [him of M] with an[end if] exposed [vagina] and [asshole]. [big his of M] hair has been drawn back into a beach blonde ponytail, and the look on [his of M] heavily decorated face is somewhere between arousal and total exhaustion.".
+			otherwise say "This [man of M] is wearing a white blouse, which looks like it was pulled open rather roughly to expose [his of M] breasts. [big he of M] is [if K is clothing]also wearing a [ShortDesc of K], pulled aside,[otherwise]otherwise completely naked,[end if][if C > 0] with [semen] dribbling freely from [his of M][otherwise]leaving [him of M] with an[end if] exposed [vagina] and [asshole]. [big his of M] hair has been drawn back into a beach blonde ponytail, and the look on [his of M] heavily decorated face is somewhere between arousal and total exhaustion.";
+	if bbc-training of M > 0:
+		if bbc-training of M is 1:
+			say "This [man of M] also has a small discreet [']Queen of Spades['] tattoo on [his of M] ankle.";
+		otherwise if bbc-training of M is 2:
+			say "This [man of M] also has several BBC fetish tattoos over [his of M] body. You can make out an upper back tattoo saying [']PROPERTY OF BBC['] through [his of M] transparent blouse.";
+		otherwise:
+			say "This [man of M] is also completely covered in BBC fetish tattoos, including a vine with spade shaped leaves snaking up [his of M] thigh. Somewhat disturbingly, the tattoo seems to be alive as it slowly grows new leaves on [his of M] body. Clearly [he of M] is struggling to keep it together as each new leaf seems to send a shockwave of pleasure through [his of M] body!".
 
 To say MonsterComment of (M - a wench):
 	say "[line break][variable custom style][if the bimbo of the player < 5 and the player is gendered male and lady fetish < 2][one of]Man, I'd fuck the shit out of that chick! Looks like somebody already beat me to it though...[or][big he of M]'s hot, but I don't like sloppy seconds.[stopping][otherwise if the bimbo of the player < 5][one of]Oh god, what happened to this [man of M]? Is that going to happen to me?[or]So that's how [men of M] are treated here. Disgusting.[stopping][otherwise if the bimbo of the player < 8][one of][big he of M] looks kind of weak. I'd probably win any fight with [him of M].[or]I don't think it would be hard to beat [him of M] in a fight.[in random order][otherwise if the bimbo of the player < 11][one of]Thinking of what must have happened to [him of M] so far is exciting! I should probably stop...[or]Am I going to end up like that? Doesn't seem that bad, really.[or][big he of M] looks like [he of M] could really use some clothes.[in random order][otherwise if pregnancy fetish is 1]Hee hee, I bet [he of M][']ll get pregnant from having all that cum in [his of M] pussy.[otherwise if the bimbo of the player < 14][one of][big he of M] looks like [he of M][']s had a lot of fun here.[or][big he of M] looks like [he of M] knows how to party![in random order][otherwise][one of]Maybe [he of M]'s another player. If I help [him of M] get out, maybe [he of M][']ll fuck me as a reward![or][big he of M] looks like [he of M] knows how to PARTY![stopping][end if][roman type][line break]".
@@ -141,6 +150,7 @@ To set up (M - a horny-wench):
 	now the raw difficulty of M is the starting difficulty of M + 1;
 	if a2m fetish > 1, now the creampieTimer of M is 550;
 	now the health of M is the maxhealth of M.
+
 
 To decide which number is the starting difficulty of (M - a wench):
 	decide on 4.
@@ -171,7 +181,7 @@ To say SummoningFlav of (M - a wench):
 		otherwise say "You hear the sound of [one of]moaning[or]squelching[or]wet footsteps[purely at random] coming from another part of the dungeon.".
 
 To say PresentFriendlyAcceptanceFlav of (M - a wench):
-	say "[speech style of M]'[one of]I'm not going to refuse a request like that... thank you so much!'[or]Wow, you really are a cum addict aren't you? Well, I'm not going to stop you!'[stopping][roman type][line break]".
+	say "[speech style of M]'[one of]I'm not going to refuse a request like that... thank you so much!'[or]Wow, you really are a cum addict aren't you? Well, I'm not going to stop you!'[stopping][roman type][line break]";
 
 To say DiaperReaction of (M - a wench):
 	if there is a currently visible diaper or the player is shameless:
@@ -238,14 +248,20 @@ To compute appearance assessment of (M - a wench):
 	otherwise if the appearance of the player > the outrage tolerance of M or M is unfriendly:
 		FavourDown M;
 		if M is unfriendly:
-			say "[speech style of M]'[one of]I think it's time to remind you that you're my bitch.'[or]You again! You want some more, huh?'[in random order][roman type][line break]";
+			say "[speech style of M][one of]'I think it's time to remind you [if M is QoS wench]that you're the property of [BlackCock]![otherwise]that you're my bitch.[end if]'[or]'You again! You want some more, huh?'[in random order][roman type][line break]";
 			alwayscutshow figure of wench interact 9 for M;
 		otherwise if M is groping:
 			compute grope of M;
 		otherwise if M is buddy:
-			say "[speech style of M]'[one of]Oh... hi. You're not seriously planning on wandering around here like that are you? You look even worse than me.'[or]Oh hey there! Wow... you're sure looking rather... provocative. Don't tell me you like this place?'[in random order][roman type][line break]";
+			if M is QoS wench:
+				say "[speech style of M]'[one of]Guuurl you look like you're ready to fuck. Should I introduce you to the shopkeeper? [big his of shopkeeper] [BlackCock] hits all my favourite spots mngh.'[or]Mmm I know a few guys that would love a piece of that ass hun. Let me know if you're up for a good time...'[in random order][roman type][line break]";
+			otherwise:
+				say "[speech style of M]'[one of]Oh... hi. You're not seriously planning on wandering around here like that are you? You look even worse than me.'[or]Oh hey there! Wow... you're sure looking rather... provocative. Don't tell me you like this place?'[in random order][roman type][line break]";
 		otherwise:
-			say "[speech style of M]'[one of]Oh gosh, you look so... lewd. You're making me feel funny... down there...'[or]Wow. If even a brave adventurer like you looks like that, maybe we should all just give up and screw each other until we're mindless bimbos...'[in random order][roman type][line break]";
+			if M is QoS wench:
+				say "[speech style of M]'[one of]You'll be sucking on a [BlackCock] soon babe, I'll take care of that.'[or]You know I could help you prepare to take a [BlackCock] if you like, I have some seriously large black dildos to keep my holes fit for [daddytitle of shopkeeper]!'[in random order][roman type][line break]";
+			otherwise:
+				say "[speech style of M]'[one of]Oh gosh, you look so... lewd. You're making me feel funny... down there...'[or]Wow. If even a brave adventurer like you looks like that, maybe we should all just give up and screw each other until we're mindless bimbos...'[in random order][roman type][line break]";
 	otherwise if the player is top-wardrobe-malfunctioning:
 		compute tq nip slip reaction of M;
 	otherwise if the class of the player is barbarian:
@@ -330,6 +346,18 @@ To compute (M - a wench) protecting against (X - a monster):
 			compute M standard fighting against X;
 		otherwise:
 			compute default protecting of M;
+	otherwise if X is male and x is intelligent and X is not penetrating a body part and M is QoS wench:
+		if X is dark skinned:
+			say "[speech style of M]'You should like totally be on your knees for [NameDesc of X] right now!'[roman type][line break][BigNameDesc of M] turns on you.";
+			anger M;
+		otherwise:
+			say "[speech style of M]'Fuck off pin-dick, we're not interested!'[roman type][line break].";
+			say PrematureEjaculationFlav of X;
+			say PrematureEjaculationReactionFlav of X;
+			orgasm bore X;
+			say "Visibly embarrassed, [NameDesc of X] begins to slink away.";
+			compute mandatory room leaving of X;
+			say "[speech style of M]'Erggh now that gross loser is gone, let's go have some fun bestie!'[roman type].";
 	otherwise if X is male or X is unintelligent or the player is at least partially monster stuck:
 		say "[speech style of M]'Eek!'[roman type][line break][BigNameDesc of M] turns tail and runs for safety, abandoning you.";
 		alwayscutshow figure of wench interact 11 for M;
@@ -537,6 +565,124 @@ To (M - a wench) steals (K - a knickers):
 		calm M;
 		now the scared of M is 75.
 
+The wench unique punish rules is a rulebook.
+This is the wench unique punishment rule:
+	follow the wench unique punish rules;
+	if the rule succeeded, rule succeeds.
+The unique punishment rule of a wench is usually the wench unique punishment rule.
+
+
+This is the wench shares you with BBC rule:
+	let M be current-monster;
+	let N be a random alive awake undefeated shopkeeper;
+	if M is QoS wench:
+		if N is monster and the refractory-period of N is 0 and the BBC addiction of the player > a random number between 1 and 6:
+			let Q be Dungeon41;
+			if Q is not the location of M:
+				say "[speech style of M]'Let's go find some [BlackCock], girlfriend!'[roman type][line break]";
+				drag to Q by M;
+			if N is in Q:
+				say "[speech style of M]'[big literalMistress of N], I've made a girlfriend! [big he of the player] wants to help me suck your [BlackCock].'[line break]";
+				if the player is able to speak, say "[variable custom style]'[if the bimbo of the player < 8]No I don't!'[otherwise]Who are you?'[end if]";
+				otherwise say "[variable custom style][if the bimbo of the player < 8]If I could speak I could tell [him of N] it's all a big mistake!![otherwise]Who is [he of N]?[end if]";
+				say "[roman type][line break]";
+				say "[BigNameDesc of M] sneaks up behind you and pushes you to your knees in front of [NameDesc of N], and then starts to nibble on your ear[line break].";
+				if bondage protection is 0 and BBC Collar is off-stage and BBC Collar is actually summonable:
+					Say "Suddenly you feel [NameDesc of M] slip something around your neck and secure it in place with the click of a lock.[line break]";
+					summon BBC Collar locked;
+				check tiara-of-spades transformation;
+				if N is friendly or N is uninterested:
+					now the boredom of N is 0;
+					Anger N;
+					compute correct perception of N;
+				bore M;
+				compute monstermotion of M;
+			otherwise:
+				say "[speech style of M]'Oh, [he of N][']s not here. That's unusual. Oh well, I guess we can wait for [him of M] here. I've got an idea of something we can do to pass the time...'[roman type][line break]";
+				anger M;
+			rule succeeds.
+The wench shares you with BBC rule is listed last in the wench unique punish rules.
+
+This is the wench lets BBC take over rule:
+	let M be current-monster;
+	if M is QoS wench:
+		if there is a dark skinned combative monster:
+			say "[speech style of M]'Oh sweetie looks like you're about to get lucky. I'll give you some privacy, make sure you tell me all about it later.'[roman type][line break]";
+			bore current-monster;
+			compute monstermotion of M;
+			rule succeeds.
+The wench lets BBC take over rule is listed first in the wench unique punish rules.
+
+[wench corruption to QoS wench]
+to BBC brainwash (M - a wench) with (A - a submissive collar):
+	let A be a random held submissive collar;
+	let M be a random undefeated wench in the location of the player;
+	if the location of the player is not dungeon41:
+		if interracial fetish is 1 and A is a thing:
+			say "[BigFuckerDesc of M] suddenly snatches the [A] from you.[line break][speech style of M]'Haha bitch, this is mine now!'[roman type][line break]Seemingly quite pleased with [himself of M], [he of M] puts the collar on.";
+			now BBCTrainingQuest of shopkeeper is 2;
+			if bbc-training of M >= 4:
+				unseal QoS wench from M;
+			otherwise:
+				say "[BigFuckerDesc of M] looks quite smug with [his of M] new [ShortDesc of A] before a green portal suddenly opens behind [his of M], and [NameDesc of shopkeeper] walks through![line break][speech style of shopkeeper]'Wow, you really are just a greedy slut aren't you? Lucky for you, I'm in need of a 'personal attendant' who can serve my [']needs['].'[roman type][line break][BigFuckerDesc of shopkeeper] grins and gestures to [his of shopkeeper] [LongDickDesc of shopkeeper].[line break][speech style of M]'No way pig, I'll never touch your fucking di...'[roman type][line break]Before [he of M] can finish [his of M] sentence, [NameDesc of shopkeeper] effortlessly takes [NameDesc of M] into [his of shopkeeper] arms, presses [his of M] legs behind [his of M] head, and impales [NameDesc of M] on [his of shopkeeper] waiting [LongDickDesc of shopkeeper]. [BigFuckerDesc of M] looks to be in complete shock as [NameDesc of shopkeeper] pistons in and out of [his of M] [if lady fetish is 2]gripping anal ring[otherwise]dripping wet cunt[end if]. It's clearly not all bad as [he of M] starts to howl and moan like a pornstar. [BigFuckerDesc of M] suddenly seems to tense up before [his of M]'s wracked by an intense orgasm.[line break][speech style of M]'Oh fuck, oh fuck...so good... Yes yes yes fuck the shit out off me!'[roman type][line break]Strangely, you see a black spade tattoo appear under [his of M] left cheek as [he of M] orgasms yet again. This process repeats itself, as a tattoo reading [']BLACK COCK ONLY['] appears on [his of M] pubic mound. Seemingly satisfied with [NameDesc of M][']s rapidly deteriorating mental and physical state, [FuckerDesc of shopkeeper] puts the thoroughly stretched out and babbling [ShortDesc of M] down on the floor.[line break][speech style of shopkeeper]'If you want more of this dick, you know where to find me slut.'[roman type][line break][BigFuckerDesc of shopkeeper] leaves through the portal [he of M] came through and it closes behind [him of shopkeeper].[line break][speech style of M]'Wait, [daddytitle of shopkeeper]...need [BlackCock]..need your cum inside me.'[roman type][line break]Exhausted, [FuckerDesc of M] passes out on the floor.";
+				bbc-trainingUp M by 2;
+				bore M;
+				compute M sleeping 400 after sex;
+			now QoS wench is carrying A.
+
+To compute brainWashedGreeting of (M - a wench):
+	unless bbc-training of M is 0:
+		if bbc-training of M <= 2:
+			say "[line break][speech style of M]'[one of]You haven't seen any [BlackCock] around have you? I just can't stop thinking about it.'[or]Do you think the [shopkeeper] would like it if I trained away my gag reflex? I think that's kinda hot to be honest.'[or]Hey, lets go see the [ShortDesc of shopkeeper] together, I need to go shopping.'[as decreasingly likely outcomes][roman type][line break]";
+		otherwise:
+			say "[line break][speech style of M]'[one of]Oh fuck I need a [BlackCock] in me so badly, you haven't seen any around have you?'[or]Do you like my new tattoos? Everytime I please [daddytitle of shopkeeper] I get another!'[or]Hey, lets go see the [ShortDesc of shopkeeper] together, I need to get fucked by the huge [BlackCock] again.'[as decreasingly likely outcomes][roman type][line break]";
+
+To bbc-trainingUp (M - a wench) by (N - a number):
+	if interracial fetish is 1:
+		increase the bbc-training of M by N;
+		if the bbc-training of M > 4, unseal QoS wench from M.
+
+To unseal QoS wench from (M - a monster):
+	set up QoS wench;
+	repeat with T running through things held by M:
+		now T is carried by QoS wench;
+	if M is in the location of the player:
+		if location of the player is dungeon41:
+			say "[BigNameDesc of shopkeeper] snaps [his of shopkeeper] fingers at the [ShortDesc of M] and gestures at [his of shopkeeper] hardening [BlackCock]. [BigFuckerDesc of M] perks up at this noise and immediately begins to orally worship [his of shopkeeper] [manly-penis]. [line break][speech style of shopkeeper]'Damn bitch, you're getting really good at this, you deserve a promotion! From now on, you're my top bitch.' [line break][speech style of M]'Oh yes [daddytitle of shopkeeper], I won't let you down.'[roman type][line break][BigNameDesc of shopkeeper] sends the [ShortDesc of M] into a small changing room at the back of the shop, swatting [his of M] rear as [he of M] passes by. [line break][speech style of shopkeeper]'Just put the clothes on from the box in the corner, your fat ass will look great in that.'[roman type][line break][BigFuckerDesc of M] giggles at this remark and closes the curtains to the cubicle. A short time later [he of M] emerges in a [if lady fetish is 2]queen of spades singlet[otherwise]white tube top[end if], white stripper heel pumps, and a red miniskirt that barely conceals [his of M][if lady fetish is 2] tiny pink chastity cage[otherwise] tiny g-string[end if]. [line break][speech style of M]'How do you like me in this [daddytitle of shopkeeper]?'[roman type][line break][BigNameDesc of shopkeeper] smiles and brings the [ShortDesc of M] in close before whispering in [his of M] ear. The wench looks puzzled for a moment before breaking out into an evil grin.[line break][speech style of M]'Gotcha [daddytitle of shopkeeper], I will go show the other whores their place beneath black dick.'";
+		otherwise:
+			say "Suddenly a green portal opens up behind [NameDesc of M]! Two muscular black arms grab [him of M] from behind and pull [him of M] in! [line break][speech style of M][if bbc-training of M < 3]'Ahhh help me!'[otherwise]'Oh my god, your [BlackCock] is so huge!'[end if][roman type][line break]The portal then disappears, leaving no trace of the wench behind!";
+	now QoS wench is in dungeon41;
+	finally destroy M.
+
+To decide which number is the bartering value of (T - a submissive collar) for (M - wench):
+	decide on 99 * interracial fetish.
+
+To compute monstermotion of (M - a wench):
+	if QoS wench is not alive and shopkeeper is alive:
+		if the bbc-training of M < 2 and M is in Dungeon41:
+			compute room leaving of M;
+		otherwise if bbc-training of M > 2 and M is in the location of the player:
+			if M is in Dungeon41:
+				say "[speech style of M]'I'm staying right here so I can worship [daddytitle of shopkeeper]'s perfect [BlackCock]. I don't care if that makes me a slut, I need [daddytitle of shopkeeper]'s [semen] inside me right now.[roman type][line break]";
+			otherwise:
+				say "[speech style of M]'Ugh I can't live without [daddytitle of shopkeeper]'s perfect [BlackCock] any more. I don't care if that makes me a slut, I need [daddytitle of shopkeeper]'s [semen] inside me right now.'[roman type][line break][BigNameDesc of M] walks off to the [the best route from location to Dungeon41], presumably to go serve beneath [his of M] [daddytitle of shopkeeper].";
+				now M is in Dungeon41;
+	otherwise:
+		compute room leaving of M.
+
+To check seeking (N - a number) of (M - a wench):
+	if the bbc-training of M > 2 and M is in Dungeon41 and shopkeeper is alive:
+		if the player is not in the location of M, deinterest M;
+	otherwise:
+		check default seeking N of M.
+
+To compute (M - a wench) considering (T - a submissive collar):
+	say "[BigNameDesc of M][']s eyes are fixed to the [ShortDesc of T] in your hands.[line break][speech style of M]'Oh my god that is so cute! I saw this in the dungeon shop earlier and couldn't forget about it. The shopkeeper told me it wasn't for sale, and had to be earned or something like that...'[roman type][line break]";
+	BBC brainwash M with T.
+
+To say DragArrival of (M - a wench) to (R - Dungeon41):
+	say "[speech style of M]'Here we are!'[line break][variable custom style][one of][if the bimbo of the player < 8]Oh the shop, are we going to go shopping together?[otherwise]Why are we here I wonder?[end if][or][if the bbc addiction of the player < 4]Oh no, not sure my [asshole] is up for this![otherwise]Looks like I'm going to be sucking on [BlackCock] again![end if][stopping][roman type][line break]".
+
 To compute damaging attack of (M - a wench):
 	compute striking attack of M;
 	let D be the difficulty of M - the starting difficulty of M;
@@ -655,21 +801,25 @@ To compute the dildo stuck taunting of (M - a wench):
 	compute the default taunting of M.
 
 This is the wench monster fucked taunting rule:
-	let P be a random wench filling face;
+	let P be a random monster penetrating a body part;
 	let M be current-monster;
 	if there are desirable knickers and M is not objectifying the player:
 		ClothingSteal M;
-	if P is wench and the difficulty of M - the starting difficulty of M >= 2 or the difficulty of P - the starting difficulty of P >= 2:
+	if M is QoS wench and P is dark skinned Monster:
+		If P is male:
+			say "[speech style of M]'Ohhh yes you worship that [BlackCock]. If [he of P] is nice enough to let you suck [big his of P] lovely [manly-penis], make sure you swallow it all.'[line break]";
+		otherwise:
+			say "[BigNameDesc of P] smiles as [he of M] sees you kneeling submissively beneath [BigNameDesc of P].[line break][speech style of M]'Stay on your knees for your queen bitch.'[roman type][line break]";
+	if sex fainting is 1 and P is wench and P is penetrating face and (the difficulty of M - the starting difficulty of M >= 2 or the difficulty of P - the starting difficulty of P >= 2):
 		say "[BigNameDesc of M] laughs at your situation with the other wench.[line break]'You enjoying that down there, bitch?'[line break]The [if lady fetish is 2]twink[otherwise][boy of M][end if] walks over to your bottom half and [if the player is possessing a penis]starts expertly jacking you off. [otherwise if the player is not possessing a vagina]starts licking your nipples and stroking your inner thighs. [otherwise]starts expertly fingering your pussy. [end if]The added arousal is making you need to breathe even more desperately! You can't hold back, and you have a strong orgasm and black out.";
 		now delayed fainting is 1;
 		now the fainting reason of the player is 9;
 		rule succeeds;
 	otherwise if M is not horny-wench:
-		let P be a random monster penetrating a body part;
-		say "[BigNameDesc of M], seeing the [P], squeals and starts running away.";
+		say "[BigNameDesc of M],[if M is QoS wench] seeing the [P] gives you a wink and saunters off.[otherwise] seeing the [P], squeals and starts running away.[end if]";
 		calm M;
 		distract M;
-		now the scared of M is 60;
+		if M is not QoS wench, now the scared of M is 60;
 		rule succeeds.
 The monster fucked taunting rule of a wench is usually the wench monster fucked taunting rule.
 
@@ -679,11 +829,17 @@ This is the wench monster convinced rule:
 		say "[if M is not horny-wench][BigNameDesc of M] sees your request and grins.[line break][speech style of M]'Haha, okay, you asked for it, here I come!'[otherwise][BigNameDesc of M] sees your request and smiles.[line break][speech style of M]'I knew you would see things my way!'[end if][roman type][line break]";
 		now the chosen-orifice of current-monster is face;
 		rule succeeds;
-	otherwise if presented-orifice is penis and (M is friendly or the charisma of the player - the times-dominated of M > 0 or M is horny-wench):
-		if M is not horny-wench, say "[BigNameDesc of M] scoffs.[line break][speech style of M]'[one of]Fine. [if the size of penis < 4]Must be your lucy day, shrimp dick.'[otherwise]Today is your lucky day.'[end if][or]Sure, whatever.'[or]As long as you don't forget this is about ME.'[in random order][roman type][line break]";
-		otherwise say "[BigNameDesc of M] sees your request and smiles.[line break][speech style of M]'[one of]Perfect!'[or]I thought you'd never ask![or]YES.'[in random order][roman type][line break]";
-		now the chosen-orifice of current-monster is penis;
-		rule succeeds;
+	otherwise if presented-orifice is penis and (M is friendly or the charisma of the player - the times-dominated of M > 0 or M is horny-wench or M is QoS wench):
+		if M is QoS wench:
+			say "[BigNameDesc of M] looks at your [sissy-penis] with disgust.[line break][speech style of M]'[one of]Ewwww. [if the size of penis < 4]Now way am I going anywhere near that shrimp dick.'[otherwise]You might not have the smallest [sissy-penis] I have ever seen, but it's no [BlackCock].'[end if][or]Sweetie you know I don't fuck premature ejaculators.'[or]No hun you'd do a better job taking [BlackCock] or eating me out, fucking just isn't for betas like you.'[in random order][roman type][line break]";
+			now the chosen-orifice of current-monster is face;
+			rule fails;
+		otherwise if M is horny-wench:
+			say "[BigNameDesc of M] sees your request and smiles.[line break][speech style of M]'[one of]Perfect!'[or]I thought you'd never ask!'[or]YES.'[in random order][roman type][line break]";
+			now the chosen-orifice of current-monster is penis;
+			rule succeeds;
+		otherwise:
+			say "[BigNameDesc of M] scoffs.[line break][speech style of M]'[one of]Fine. [if the size of penis < 4]Must be your lucky day, shrimp dick.'[otherwise]Today is your lucky day.'[end if][or]Sure, whatever.'[or]As long as you don't forget this is about ME.'[in random order][roman type][line break]";
 	otherwise if presented-orifice is not nothing:
 		say "[if M is not horny-wench][BigNameDesc of M] sees your request and shakes [his of M] head.[line break][speech style of M]'If I'm going to fuck you, I'll be using your mouth!'[otherwise][BigNameDesc of M] sees your request and frowns.[line break][speech style of M]'Did you not hear what I said? I need you to lick me out!'[end if][roman type][line break]";
 		now the chosen-orifice of current-monster is face;
@@ -781,7 +937,9 @@ To set up sex length of (M - a wench) in (B - penis):
 	set up sex length N of M in B.
 
 To say ErectionDemand of (M - a wench):
-	if M is friendly-fucking or presented-orifice is penis:
+	if M is QoS wench:
+		say "[BigNameDesc of M] stares down at your flaccid [player-penis] dismissively.[line break][speech style of M]'[one of]Does this thing even get hard? It better be at least 12 inches or I'm really not interested.'[or]Wow, what a suprise, the beta can't get hard, maybe you'd prefer to be sucking my strapon instead?'[or]Come on shrimp dick, I could use a laugh, let's see how big you are.'[at random][roman type][line break]";
+	otherwise if M is friendly-fucking or presented-orifice is penis:
 		say "[BigNameDesc of M] stares down at your flaccid [player-penis] while fingering [himself of M].[line break][speech style of M]'[one of]Why aren't you hard? Hurry up.'[or]Wow, you aren't even hard... fix that.'[or]What's the matter? Get hard.'[at random][roman type][line break]";
 	otherwise:
 		say "[BigNameDesc of M] stares down at your flaccid [player-penis] while fingering [himself of M].[line break][speech style of M]'[one of]Want to hear a joke? [if the size of penis < 4]That tiny thing you call a dick! Luckily for you, if it's capable of getting hard I'm gonna fuck you.'[otherwise]Your dick is huge, and you still fucking lost to me. Now get hard for me.'[end if][or]If you get hard for me, I'll let you fuck me, but I don't know if your [player-penis] is even capable of that. [if M is presenting as male]Mine certainly doesn't.'[otherwise]After all, it's attached to a [sissy slut] like you.'[end if][or]Get hard. I'm not giving up this chance to finally be on top.'[or][if the creampieTimer of M > 0]Want a taste of [FuckerDesc of a random alive royal guard]'s sloppy seconds? [otherwise]Want a taste of this [HoleDesc of M]? [end if]Not really asking you, FYI. Either you get hard in the next ten seconds or you are literally going to taste it.'[in random order][roman type][line break]".
@@ -843,7 +1001,10 @@ To say ErectionLostFlav of (M - a wench):
 	now the sex-length of M is 0;
 	if M is unfriendly: [Now she sits on your face.]
 		if face is not actually occupied:
-			say "[BigNameDesc of M] cups a hand to [his of M] [HoleDesc of M] as [he of M] climbs off of you.[line break][speech style of M]'I'm having too much fun to stop now, so... [one of]why don't you have some dinner?'[or]why don't I feed you? I've got your favourite right here.'[or]why don't I give you something to eat? You've got to be hungry...'[in random order][roman type][line break]";
+			if M is QoS wench:
+				say "[BigNameDesc of M] giggles as [he of M] watches your limp [sissy-penis].[line break][speech style of M]'Well I didn't expect much more from a beta. [one of]Don't worry about your [sissy-penis]; we can use my nice strapon.'[or]Ever deepthroated a BBC? Well you're about to deepthroat mine.'[or]All right hun let's practice your deepthroat skills instead.'[in random order][roman type][line break]";
+			otherwise:
+				say "[BigNameDesc of M] cups a hand to [his of M] [HoleDesc of M] as [he of M] climbs off of you.[line break][speech style of M]'I'm having too much fun to stop now, so... [one of]why don't you have some dinner?'[or]why don't I feed you? I've got your favourite right here.'[or]why don't I give you something to eat? You've got to be hungry...'[in random order][roman type][line break]";
 			now chosen-orifice of M is face;
 			now another-turn-flavour is the substituted form of "[BigFuckerDesc of M] holds you in place.";
 			now another-turn is 1;
@@ -1333,6 +1494,7 @@ To say MonsterOfferRejectFlav of (M - a wench) to (T - an overdress):
 To say MonsterOfferAcceptFlav of (M - a wench) to (T - an overdress):
 	say "[BigNameDesc of M][']s eyes light up.[line break][speech style of M]'Oh wow! Thank you! With this maybe people will treat me like less of a whore. ...I guess I should wait to put it on until after I've gotten cleaned up.'[roman type][line break]".
 
+
 Part 2 - Conversation
 
 Section 1 - Greeting
@@ -1346,7 +1508,9 @@ To say FirstResponse of (M - a wench):
 		say "[speech style of M]'[one of]Let's stick together. If your dick is that tiny you probably can't defend yourself on your own.'[or]Wow, your dick is really tiny. Do you want me to protect you or something?'[or]Stick with me. You obviously can't protect yourself if you have a shrimpy thing like that.'[at random][roman type][line break]";
 	otherwise:
 		say "[speech style of M]'[one of]I hope you don't mind if we stick together. I'm scared.'[or]It's scary in here. Let's stick together.'[at random][roman type][line break]";
-	alwayscutshow figure of wench interact 12 for M.
+	alwayscutshow figure of wench interact 12 for M;
+	compute brainWashedGreeting of M.
+
 
 To say RepeatResponse of (M - a wench):
 	if M is unfriendly:
@@ -1366,7 +1530,8 @@ To say RepeatResponse of (M - a wench):
 		alwayscutshow figure of wench interact 14 for M;
 	otherwise:
 		say "[speech style of M]'[one of]I hope you don't mind me staying close. I'm scared.'[or]Do you mind if I stay close? I'm scared.'[or]I used to be an adventurer like you, but then I took a cumshot to the ass.'[as decreasingly likely outcomes][roman type][line break]";
-		alwayscutshow figure of wench interact 12 for M.
+		alwayscutshow figure of wench interact 12 for M;
+		compute brainWashedGreeting of M.
 
 To say InvitationAccepted of (M - a wench) with (N - a monster):
 	say "[speech style of M]'Don't worry, I'll have a turn when [he of N] finishes.'[roman type][line break]";
@@ -1557,5 +1722,185 @@ To compute patronMeeting of (M - workaholic wench) with (P - a patron):
 		if a2m fetish > 1, now the creampieTimer of M is the semen load of P * 100;
 	SemenPuddleUp 1 in (the location of M);
 	if the refractory-period of M < 0, now the refractory-period of M is 0.
+
+QoS wench is a wench. The text-shortcut of QoS wench is "qosw".
+To say MediumDesc of (M - QoS wench):
+	say "QoS wench".
+
+Definition: QoS wench is dungeon dwelling: [can she spawn randomly?]
+	if the bbc addiction of the player > 5, decide yes;
+	decide no.
+
+Figure of QoS wench is the file "NPCs/Dungeon/Wench/qos1.png".
+Figure of QoS wench condoms is the file "NPCs/Dungeon/Wench/qos2.png".
+Figure of QoS wench male is the file "NPCs/Dungeon/Wench/qos3.png".
+Figure of QoS wench male condoms is the file "NPCs/Dungeon/Wench/qos4.png".
+
+To decide which figure-name is the monster-image of (M - QoS wench):
+	if lady fetish is 2:
+		if playerRegion is hotel, decide on Figure of QoS wench male condoms;
+		otherwise decide on Figure of QoS wench male;
+	otherwise:
+		if playerRegion is hotel, decide on Figure of QoS wench condoms;
+		otherwise decide on Figure of QoS wench.
+
+To alwayscutshow (F - a figure-name) for (M - QoS wench):
+	do nothing. [no special cutscene images]
+
+Definition: QoS wench is willing to do oral: decide yes.
+Definition: QoS wench is throater: decide yes.
+Definition: QoS wench is willing to do anal: decide yes.
+Definition: QoS wench is willing to charm snakes:
+    if there is a worn chastity bond, decide no;
+    decide yes.
+QoS wench has a number called strap-on girth. The strap-on girth of QoS wench is 7.
+
+To set up (M - QoS wench):
+	reset M;
+	now the monstersetup of M is 1;
+	now the raw difficulty of M is the starting difficulty of M + 4;
+	now the guard-obedience of M is 0;
+	if a2m fetish > 1, now the creampieTimer of M is 550;
+	now the health of M is the maxhealth of M.
+
+To say MonsterDesc of (M - QoS wench):
+	say "This [man of M] is completely covered in several BBC fetish tattoos. [big his of M] skin is pale, and [his of M] beach blonde hair is in pigtails. [big he of M] has the body figure of a [if lady fetish < 2]stacked [end if]athletic goddess, although the collar around [his of M] neck and the big black cock-shaped edible treat [he of M][']s munching on make it clear that [his of M]'s only interested in [BlackCock]. Everything [he of M]'s wearing, including even [his of M] watch and clutch purse, are coordinated, and share a Queen of Spades theme[if playerRegion is hotel]. A large collection of used, cumfilled condoms are pinned to [his of M] microskirt[end if][if lady fetish is 1]. [big his of M] tiny penis is peeking out from underneath [his of M] super-short red microskirt, safely locked away in a pink chastity cage. [big he of M] doesn't seem upset about this at all - it looks like [he of M] is a fervent believer that white cocks should be locked away, and black cocks should be worshipped all day[end if].";
+
+To decide which number is the girth of (M - QoS wench):
+	if woman-player is in the location of the player and the woman-status of woman-player is 93 and woman-player is awake, decide on 5;
+	decide on the strap-on girth of M.[This is strap-on girth.]
+
+To say DickDesc of (M - a QoS wench):
+	say "strap-on";
+
+To say LongDickDesc of (M - a QoS wench):
+	say "10-inch black strapon".
+
+To say StrapOnDesc of (M - QoS wench):
+	say "a very large black strap-on dildo, probably 8 inches thick and 10 inches long. It's made to be as realistic as possible with an engorged head and veins snaking all the way down its length".
+
+To compute facial sex of (M - QoS wench):
+	say "[one of][BigNameDesc of M] aggressively fucks your throat with [his of M] [LongDickDesc of M].[or][BigNameDesc of M][']s hips slam into your face, [his of M] [LongDickDesc of M] repeatedly striking the back of your throat.[or][BigNameDesc of M] slams [his of M] [LongDickDesc of M] in and out of your mouth, forcing you to make a lewd gagging noise with every thrust.[or][BigNameDesc of M] wears a wide grin, mercilessly ramming [his of M] [LongDickDesc of M] down your throat.[or]You can't help making a lot of noise as [NameDesc of M] slams [his of M] [LongDickDesc of M] into the back of your throat.[in random order]";
+	decrease the sex-length of M by 1.
+
+To compute facial climax of (M - QoS wench):
+	say "[BigNameDesc of M] pulls out of your mouth and slaps your cheek with the head of [his of M] [LongDickDesc of M].[line break][speech style of M]'What a good BBC slut you are hun!'[roman type][line break]";
+	OralSexAddictup 1;
+	compute QoS obedience reward of M;
+	satisfy M.
+
+To say SexResistFlav of (M - QoS wench):
+	if M is penetrating face and M is not friendly-fucking:
+		say "[variable custom style]'Mngggggghhhhh!'[roman type][line break]You squirm in discomfort as the head of [his of M]'s strapon is rammed down your throat yet again!";
+	otherwise if M is penetrating asshole:
+		say "[if the anal sex addiction of the player < 3][one of]You fight back against [NameDesc of M], desperate to break out of [his of M] grip.[or]You struggle as much as you can. Orgasming is the last thing on your mind![or]You try to throw [NameDesc of M] off, but [he of M]'s too strong![or]You move away from [NameDesc of M] as [he of M] pushes into you, to try to minimise the impact of [his of M] thrusts.[in random order][otherwise if the anal sex addiction of the player < 5][one of]You fight back against [NameDesc of M], desperate not to let [him of M] win and make you orgasm![or]You move away from [NameDesc of M] as [he of M] pushes into you, to try to minimise the impact of [his of M] thrusts.[or]You grit your teeth together and try to wiggle away.[in random order][otherwise][one of]You playfully wiggle away from [NameDesc of M], making it more difficult for [him of M] to fuck you properly.[or]You hold still, refusing to join in your butt love session properly.[or]You hold still, concentrating on trying not to cum.[in random order][end if]";
+	otherwise:
+		say "You struggle in vain to free yourself!";
+
+To compute kneeling reaction of (M - QoS wench):
+	say "[BigNameDesc of M] [one of]raises an eyebrow[or]smiles knowingly[or]grins[at random].[line break][speech style of M]'[one of]If you feel a rush right now, that's your body telling you that you belong on your knees beneath a [BlackCock].'[or]Feeling properly submissive to [BlackCock] now? Good, I like it when my girlfriends know what a good time is.'[or]Through playing games? Ready to worship [BlackCock]?'[or]I only put this cock of mine in holes that belong to BBC, slave. So, why don't you show me how you'd treat a black god?'[in random order][roman type][line break][strongHumiliateReflect]";
+
+To say PresentFriendlyAcceptanceFlav of (M - QoS wench):
+	say "[speech style of M]'[one of]I'm going to get you soooo addicted to [BlackCock] and everything that comes from it!'[or]You're not worthy of servicing [BlackCock], but don't worry hun, you can taste their [semen] from my [asshole]!'[stopping][roman type][line break]".
+
+To say MouthPenetrationFlav of (M - QoS wench):
+	say "[BigNameDesc of M] places one hand on the top of your head and another on the base of [his of M] [manly-penis], forcing you to stay still as [he of M] pushes every inch of [his of M] [LongDickDesc of M] into your mouth. You can't help but make lewd gagging noises as the engorged head of [his of M] black [DickDesc of M] begins to slide down your throat.".
+
+To compute QoS obedience reward of (M - QoS wench):
+	FavourUp M by 1;
+	let C be a random interracial themed drawable tattoo;
+	if C is tattoo and there is a worn tattoo and a random number between 1 and 2 is 1:
+		say "[speech style of M]'I have to say, you took that [BlackCock] like a real whore. Here, take this to show those yummy chocolate boys you're up for [BlackCock].[roman type][line break]";
+		say "[BigNameDesc of M] takes out what looks to be a temporary tattoo and slaps it on you before you can react!";
+		summon C;
+		try examining C;
+	otherwise:
+		let C be a random transformation-eligible interracial themed clothing;
+		if C is clothing:
+			say "[BigNameDesc of M] tilts your face upward as [he of M] gently pulls [his of M] [DickDesc of M] out of your mouth.[line break][speech style of M]'I have to say, I'm impressed with how much [BlackCock] I can stuff down your throat. I might have to bring you along to my next fuck date with the shopkeeper after a performance like that! Here, take this hun, it'll help keep those white boys in line.'[roman type][line break]";
+			say "[BigNameDesc of M] hands you the [C].";
+			now C is in the location of the player;
+			compute autotaking C;
+		otherwise:
+			say "[speech style of M]'Hmm that's odd, looks like I have nothing for you. See you later hun![roman type][line break]";
+
+To compute anal sex of (M - QoS wench):
+	if the reaction of the player is 0:
+		compute sexResist of M in asshole;
+	otherwise:
+		compute sexSubmit of M in asshole;
+		if the reaction of the player is 2, decrease the sex-length of M by 1;
+		ruin asshole;
+	decrease the sex-length of M by 1;
+	if M is not friendly-fucking:
+		if refractoryperiod > 2:
+			say "[BigNameDesc of M] bites [his of M] lip and spanks your [AssDesc].[line break][speech style of M]'Did you cum nice and hard for my [LongDickDesc of M]? See hun, I told you that [BlackCock] is simply the best, just wait til I find you a real black [daddytitle of shopkeeper].'[roman type][line break]";
+			BBCAddictUp 1.
+
+To compute sexResist of (M - QoS wench) in (F - a fuckhole):
+	say "You try to get away, but [he of M]'s much too strong for you.[one of][line break]If anything, your struggles have just made the fucking even more brutal on your poor [asshole].[or][line break]Instead, [he of M] seems to be taking the disobedience as motivation to fuck you even harder![or][or][at random]".
+
+To compute sexSubmit of (M - a QoS wench) in (F - a fuckhole):
+	if the sex-length of M is 1 and the player is able to get horny and M is not friendly-fucking and tough-shit is 1:
+		say "[BigNameDesc of M] starts pumping even faster.[line break][speech style of M]'Cum, slut, cum for BBC now!'[roman type][line break][if the player is not a pervert]As much as you try to stop yourself, the feeling in your [asshole] is too intense and you can't help but obey [his of M] command![otherwise]You feel the pressure building inside of you and gleefully comply![end if]";
+		anally orgasm shamefully;
+		heal asshole times 2; [To prevent fainting]
+		FavourUp M;
+	otherwise:
+		say "[BigNameDesc of M] continues to powerfully pummel away with [his of M] [LongDickDesc of M]. [one of]You can very clearly feel the realistic contours of [his of M] rubber [BlackCock] as it rubs mercilessly against the sensitive walls of your [asshole].[or][Big he of M] alternates between gyrating [his of M] hips and long strokes so the broad head of [his of M] strapon stretches out the entrace to your [asshole]![or][line break][variable custom style]Oof![roman type][line break][or][line break][variable custom style]Aaah![roman type][line break][or][line break][variable custom style]Fucccck![roman type][line break][or]Even though you're the only one whose nether regions are being stimulated, it's clear [he of M]'s deriving a lot of sexual pleasure from the situation.[or][line break][speech style of M]'Good girl!'[roman type][line break][then at random]";
+		ruin asshole;
+		if M is friendly-fucking and refractoryperiod > 0:
+			compute anal climax of M.
+
+To compute unique climax of (M - QoS wench) in (F - asshole):
+	say "[BigNameDesc of M][if M is not friendly-fucking], satisfied,[end if] slowly removes [his of M] [DickDesc of M] from your [ShortDesc of asshole].";
+	if M is friendly-fucking:
+		say "[speech style of M]'OK, that's a good taste of what a real [BlackCock] feels like. Soon I'll take you to see [daddytitle of shopkeeper].'[roman type][line break][BigNameDesc of M] loses interest.";
+	otherwise:
+		say "[speech style of M]'Ooh, you are a good snowbunny aren't you? Here let me give you something to help you attract those yummy [BlackCock]s!'[roman type][line break][BigNameDesc of M] traces [his of M] index finger around the rim of your [asshole] before slipping what feels like a small pill deep inside you! You feel a fizzling inside of you and your hips swell in response![line break]";
+		HipUp 1;
+	now the sex-length of M is 0;
+
+To compute (M - a QoS wench) demanding erection:
+	say "[BigFuckerDesc of M] holds you down firmly as [he of M] pulls out a small tape measure.[line break][speech style of M]'All right hun let's see how you measure up. Sure would be a shame if your [sissy-penis] is too small to be of any use to anyone.'[roman type][line break]";
+	let C be a random off-stage fetish appropriate chastity cage;
+	if the size of penis < 4 and bondage protection is 0 and C is a thing and there is an off-stage specific-key:
+		let K be a random off-stage specific-key;
+		say "[speech style of M]'Pft well I don't need a tape measure to see what needs to be done here. I'm doing you a favour hun, having a [BlackCock] dominate you is simply the best, you just need to taste it. And you're not getting out of this cage for a long time because I'll be keeping the key nice and safe for you!'[roman type][line break]";
+		say "[BigFuckerDesc of M] grabs your [sissy-penis] and crams it into the [ShortDesc of C]!";
+		summon C uncursed;
+		compute M locking C with K;
+		say "[BigFuckerDesc of M] gives the head of your now caged [sissy-penis] a kiss before sauntering off.";
+		Bore M;
+	otherwise if the size of penis < 8 and condom fetish is 1:
+		if the face is not actually occupied:
+			say "[BigFuckerDesc of M] raises an eyebrow as your [player-penis] falls painfully short of the 8 inch mark.[line break][speech style of M]'Hun, you're small but not that small... yet. Tell you what sweetie, you suck all the thick fertile cum from this condom of my favourite bull and we can forget all about that little problem between your legs.'[roman type][line break][BigFuckerDesc of M] dangles the [second custom style]bulging purple condom[roman type] over your face whilst stroking your [sissy-penis]. [Big he of M] then tips the contents of the condom into [his of M] mouth, sucking it empty. You don't have much time to react before [BigFuckerDesc of M] kisses you deeply as [he of M] pumps your [sissy-penis] faster and faster. You [if the semen taste addiction of the player > 6]eagerly swallow down the [semen] as [he of M] force feeds it to you, blushing hard whilst cumswapping with [FuckerDesc of M].[otherwise]gag as [FuckerDesc of M] force feeds you a huge load of [semen]. [BigFuckerDesc of M] pinches your nose and out of desperation to breathe, you start swallowing down the thick load of cum.[end if] Once you've swallowed down all of the [semen], [FuckerDesc of M] pumps your [ShortDesc of penis] even faster until you cum![line break][roman type]";
+			penis orgasm shamefully;
+			StomachSemenUp 3;
+			say "[speech style of M]'Wow you clearly enjoyed that! Soon I'll take you to [daddytitle of shopkeeper] to give you a fresh load of [semen] all over your face. See you later babe.'[roman type][line break]";
+			Bore M;
+	otherwise if the size of penis < 8 and the size of penis > min penis size:
+		say "[BigFuckerDesc of M] raises an eyebrow as your [sissy-penis] falls painfully short of the 8 inch mark.[line break][speech style of M] 'Hun, you're small but not that small... yet. Tell you what sweetie, since we all know you're destined to be a submissive slut anyway, let me help you along!'[roman type][line break][BigFuckerDesc of M] pulls out what looks to be a small tube of moisturiser from [his of M] handbag. [BigFuckerDesc of M] then rubs it all over your [sissy-penis]. It tingles plesently, but to your [horror the delicateness of the player] your [sissy-penis] starts to shrink![line break][speech style of M]'Better be careful hun, get too much smaller and I [if bondage protection is 0]will lock away that little worm forever[otherwise]will stretch out that little asshole with my big black strapon[end if]. See ya later hun.'[line break][roman type]";
+		penisdown 1;
+		SilentlyDelicateUp 1;
+		Bore M;
+	otherwise:
+		if condom of kings is worn and condom of kings is not cursed:
+			say "[BigFuckerDesc of M] starts to hungrily worship your [manly-penis].[line break][speech style of M]'How's my favourite stud going? Remember keep this on til you become at least 14 inches long. If you cum before then, it will just show you're not worthy of this juicy ass! Come see again me when you're even bigger...[line break][roman type]";
+			passively stimulate penis from M;
+			Bore M;
+		otherwise if condom of kings is not worn:
+			let H be a random condom of kings;
+			say "[speech style of M]'Well not half bad there stud. Here baby let me give you something fit for a big [boy of the player] like you.'[roman type][line break][BigFuckerDesc of M] licks the head of your [manly-penis] and swallows you to the hilt before spitting on your [penis] like the nastiest kind of pornstar. [BigFuckerDesc of M] suddenly pulls out a purple condom, takes it between [his of M] lips rolls it down the shaft of your [manly-penis] before deepthroating you again![line break][speech style of M]'Now this is a magical condom hun, make sure you hold back like a real stud and it'll make you even bigger.'[roman type][line break]";
+			summon H;
+			passively stimulate penis from M;
+			say "[BigFuckerDesc of M], seemingly satisfied with [his of m]'s work, saunters off.";
+			Bore M;
+		otherwise:
+			say "[BigFuckerDesc of M] giggles at the sad sight of your [sissy-penis].[line break][speech style of M]'Looks like you're a true submissive[if the player is gendered male] sissy[end if] slut after all. Don't worry hun, I will soon break you into all the pleasures that [BlackCock] can bring you!'[line break][roman type]";
+			anger M.
+
+
+
 
 Wench ends here.

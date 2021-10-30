@@ -3049,7 +3049,7 @@ Definition: virgin void tattoo is drawable:
 	if it is not worn and diaper quest is 0 and it is eligible and black hole tattoo is not worn, decide yes;
 	decide no.
 Definition: virgin void tattoo is eligible:
-	if the player is not possessing a vagina or the vaginalvirgin of the player is 1, decide no;
+	if the player is not possessing a vagina, decide no;
 	if the noun is clothing:
 		if the noun is crotch covering and the noun is no protection, decide yes;
 	if the noun is condom of kings or the noun is pregnancy themed or the noun is purity clothing or the noun is chastity bond or the noun is vagina themed, decide yes;

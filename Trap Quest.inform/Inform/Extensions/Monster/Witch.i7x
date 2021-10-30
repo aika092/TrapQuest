@@ -227,7 +227,18 @@ To compute witchsummoning (M - a giant wasp):
 	now M is interested;
 	anger M.
 
-The latex punishment rule of witch is usually the no latex punishment rule.
+This is the witch latex punishment rule:
+	let M be current-monster;
+	if minotaur is alive:
+		say "[speech style of M]'I know of someone who could do with letting off some steam with a sex doll!'[roman type][line break]";
+		teleport to the location of minotaur;
+	otherwise:
+		say "[speech style of M]'Sex dolls belong in a bedroom!'[roman type][line break]";
+		let L be a random placed guest modern room;
+		if L is nothing, now L is Dungeon06;
+		teleport to L;
+	satisfy M.
+The latex punishment rule of witch is the witch latex punishment rule.
 
 This is the witch is satisfied once the player is boned rule:
 	if the player is monster fucked or the player is vine fucked:

@@ -1,6 +1,6 @@
 Heels Framework by Shoes begins here.
 
-heels is a kind of shoes. A heels have a number called heel-height.
+heels is a kind of shoes. A heels is usually leather. A heels have a number called heel-height.
 
 To say ShoeType of (S - a heels):
 	say "heels".

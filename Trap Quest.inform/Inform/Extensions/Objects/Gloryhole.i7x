@@ -2,6 +2,8 @@ Gloryhole by Objects begins here.
 
 gloryhole is a thing. gloryhole is not portable. The printed name of gloryhole is "[TQlink of item described]double gloryhole[TQxlink of item described][shortcut-desc][verb-desc of item described]". The text-shortcut of gloryhole is "gl". Understand "double", "glory", "hole" as gloryhole.
 
+gloryhole can be a-dick-detacher or a-non-detacher. gloryhole is a-non-detacher.
+
 Figure of gloryhole is the file "Env/School/gloryhole3a.jpg".
 Figure of empty gloryhole is the file "Env/School/gloryhole3b.jpg".
 Figure of top gloryhole is the file "Env/School/gloryhole3c.jpg".
@@ -177,8 +179,7 @@ To compute gloryhole upper blowjob:
 	now gloryhole is upper oral;
 	now gloryhole is gloryunwrapped;
 	[#LXorDD]
-	if the player is possessing a penis and (the player is getting unlucky or a random number between 1 and 1 is 1), now gloryhole is a-dick-detacher;
-	say "Uh-oh, ####Selkie forgot to make something less certain: now you're in trouble!";
+	if the player is possessing a penis and the player is getting unlucky, now gloryhole is a-dick-detacher;
 	say GloryHoleSuction;
 	say "You hear a playful feminine giggle as the pair of soft lips [if the player is possessing a penis]close around your [ShortDesc of penis][otherwise if the player is possessing a vagina]press against your labia[end if]. But then a split second later, the mouth disappears! You know something is up but it's too late. You watch in [horror (the oral sex addiction of the player * 2)] as a large [manly-penis] advances through the upper hole, sealing your [LipDesc] around it as it [if the oral sex addiction of the player < 12]forces[otherwise]pushes[end if] them apart. The penis begins thrusting in and out of your mouth.";
 	now gloryhole is penetrating face;

@@ -214,10 +214,12 @@ To Set Up Dispensers:
 		now the fill-colour of D is magenta;
 		SetDose D to 1;
 	if lactation fetish is 1:
-		let MT be a random milk-tank in Holding Pen;
-		if MT is milk-tank and the number of milk-tanks in the location of dungeon-milking-bench is 0, now MT is in the location of dungeon-milking-bench;
-		let MT be a random milk-tank in Holding Pen;
-		if MT is milk-tank and the number of milk-tanks in the location of mansion-milking-bench is 0, now MT is in the location of mansion-milking-bench;
+		if dungeon-milking-bench is on-stage:
+			let MT be a random milk-tank in Holding Pen;
+			if MT is milk-tank and the number of milk-tanks in the location of dungeon-milking-bench is 0, now MT is in the location of dungeon-milking-bench;
+		if mansion-milking-bench is on-stage:
+			let MT be a random milk-tank in Holding Pen;
+			if MT is milk-tank and the number of milk-tanks in the location of mansion-milking-bench is 0, now MT is in the location of mansion-milking-bench;
 
 [The vat is a unique dispenser that periodically refills itself with a new liquid. TODO: make the vat less busted]
 alchemical vat is a dispenser. alchemical vat is in Mansion19. Understand "murky" as alchemical vat when the doses of the item described > 0.

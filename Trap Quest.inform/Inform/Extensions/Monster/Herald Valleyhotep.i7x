@@ -135,7 +135,7 @@ Definition: herald is distracted:
 
 Section 2 - Damage
 
-To say CombatProvokedReaction of (M - a mannequin):
+To say CombatProvokedReaction of (M - herald):
 	say "[speech style of M]'That was, like, not a good idea.'[roman type][line break]".
 
 To say DamageReaction (N - a number) of (M - herald):

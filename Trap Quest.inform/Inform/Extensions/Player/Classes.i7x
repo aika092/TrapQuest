@@ -23,11 +23,13 @@ trick-or-treater is a text that varies. trick-or-treater is "trick or treater".
 
 This is the princess class rule:
 	let H be a random worn tiara;
-	if H is a worn tiara:
+	if H is a tiara:
 		now player-class is "princess";
-		if tiara-veil is worn:
+		if H is tiara-veil:
 			now player-class is "princess bride";
 			if bridal garter is worn, now player-class is "cumdumpster princess bride";
+		otherwise if H is tiara-of-spades:
+			now player-class is "princess of spades";
 		otherwise if the quest of H is virginity-retention-quest:
 			now player-class is "virgin warrior princess";
 		otherwise if deepthroat princess crop top is worn:

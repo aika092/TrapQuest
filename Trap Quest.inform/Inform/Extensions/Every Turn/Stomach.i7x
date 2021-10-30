@@ -115,7 +115,7 @@ To compute hunger and thirst:
 			say "[bold type]Your throat is feeling pretty dry, you should really drink [if there is a desperately craved liquid-object]some [variable random desperately craved liquid-object][otherwise if there is a craved liquid-object]some [variable random craved liquid-object][otherwise if the player is taste obsessed]some [variable random highest addicted liquid liquid-object][otherwise]something[end if]![roman type][line break]";
 		otherwise if the thirst of the player is 5:
 			say "[bold type]You are dying to drink [if the player is taste engulfed]some [variable random highest addicted liquid liquid-object][otherwise]something, anything[end if]![roman type][line break]";
-		if there is a worn cock pacifier and the thirst of the player > 2:
+		if cock pacifier is worn and the thirst of the player > 2:
 			let C be a random worn cock pacifier;
 			say "[one of]As if it can tell you're getting thirsty[or]Right on cue[stopping], you feel your [printed name of C] twitching, like it's about to ejaculate!";
 			let X be 6;
@@ -233,6 +233,7 @@ hunger-override is initially false.
 
 Definition: yourself is hungry:
 	if hunger-override is true, decide yes;
+	if the player is overly full, decide no;
 	if chess table is grabbing the player or the player is in a predicament room, decide no;
 	if the stomach-food of the player is 0 and active hunger mechanics is 1, decide yes;
 	decide no.

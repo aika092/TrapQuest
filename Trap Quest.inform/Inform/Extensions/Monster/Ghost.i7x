@@ -216,6 +216,9 @@ To compute DQ perception of (M - a ghost):
 
 Part 2 - Combat
 
+To say TripChanceFlav of (M - a ghost):
+	say "". [no warning]
+
 Section 1 - Protection
 
 To compute (M - a ghost) protecting against (X - a monster):
@@ -336,7 +339,9 @@ To say OralSubmissionResponse of (M - a ghost):
 	say "[one of]You stay still as [NameDesc of M] thrusts in and out of your mouth [if D < 8]terrified to resist[otherwise]shivering with excitement[end if].[or]You [if D < 9]fearfully[otherwise if D < 12]hesitantly[otherwise]eagerly[end if] bob your head back and forth, obediently polishing the disembodied cock in your mouth.[or]You make quiet slurping noises as [NameDesc of M] fucks your mouth, [if D < 7]fearful of what it might do if you try to resist[otherwise if the oral sex addiction of the player < 5]disgusted at what you're allowing it to do[otherwise]obediently stroking the underside with your tongue[end if].[or][silentThroat M][BigNameDesc of M] eagerly thrusts in and out of your mouth, more than tangible enough to gag you every time it rams into the back of your throat.[or][silentThroat M][BigNameDesc of M] thrusts vigorously, taking full advantage of your submissive attitude to repeatedly slam into the back of your throat.[at random]";
 
 To say NearingClimaxOral of (M - a ghost):
-	say "[one of][BigNameDesc of M] seems to be speeding up![or][BigNameDesc of M] thrusts faster and faster with no regard for your reaction.[or]The space between [NameDesc of M][']s thrusts gets smaller with every passing moment![in random order] It must be close!".
+	if M is jismbodied ghost or M is ghostly tentacle, say "[one of]You can feel [FuckerDesc of M] start twitching in your mouth[or][BigFuckerDesc of M] moves more and more rapidly[or][BigFuckerDesc of M] noticeably thickens[in random order]. ";
+	otherwise say "[one of]You can feel [FuckerDesc of M]'s [DickDesc of M] start twitching in your mouth[or][BigFuckerDesc of M] begins to move more and more rapidly[in random order]. ";
+	say "[big he of M] must be [one of]close[or]ready to cum[or]close to finishing[at random]!".
 
 To compute (M - a ghost) attacking (C - a clothing):
 	if C is blessed and M is jismbodied ghost:
@@ -405,10 +410,6 @@ This is the ghost facial climax rule:
 	repeat with G running through ballgags carried by current-monster:
 		finish possession of G in face.
 The ghost facial climax rule is listed in the ghost-end-of-sex-rules.
-
-To say NearingClimaxOral of (M - a ghost):
-	if M is jismbodied ghost or M is ghostly tentacle, say "[one of]You can feel [FuckerDesc of M] start twitching in your mouth[or][BigFuckerDesc of M] moves more and more rapidly[or][BigFuckerDesc of M] noticeably thickens[in random order]. [big he of M] must be [one of]close[or]ready to cum[or]close to finishing[at random]!";
-	otherwise say "[one of]You can feel [FuckerDesc of M]'s [DickDesc of M] start twitching in your mouth[or][BigFuckerDesc of M] begins to move more and more rapidly[or][BigFuckerDesc of M]'s grip on your head noticeably tightens[in random order]. [big he of M] must be [one of]close[or]ready to cum[or]close to finishing[at random]!".
 
 Definition: a ghost (called M) is aiming a bukkake:
 	decide yes.[ghosts have homing jizz]
@@ -600,7 +601,7 @@ To compute (C - a clothing) damaging (M - a ghost):
 
 To compute striking success effect of (M - jismbodied ghost) on (B - a body part):
 	if bukkake fetish is 1:
-		say "[BigNameDesc of M] leaves a glob of [semen] behind on your [B]";
+		say "[BigNameDesc of M] leaves a glob of [semen] behind on your [B].";
 		AnnouncedSquirt semen on B by 1.
 
 Part 2 - DQ

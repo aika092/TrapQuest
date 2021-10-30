@@ -63,25 +63,30 @@ Carry out kneeing:
 	now attack-type is 2;
 	reset submitted monsters;
 	increase the fat-burning of the player by 30;
-	now damage-explained is debuginfo;
-	let A be the knee damage of the player;
-	if damage-explained > 0, say "[if damage-explained > 1][close bracket] = [A]; [otherwise][input-style]Knee attack: [A] [end if]";
-	decrease A by knee-fatigue;
-	if knee-fatigue > 0 and damage-explained > 0, say "-[knee-fatigue] (knee fatigue)";
-	if damage-explained > 0, say "[roman type][line break]";
-	now knee-fatigue-delay is 2;
-	increase knee-fatigue by 1;
-	if the player is zeroG and flight-attendant-skirt is not worn:
-		say "Your body is weightless, meaning you can hardly get any force into your knee without sending yourself backwards.";
-	otherwise if the player is on tiptoes and flight-attendant-skirt is not worn:
-		say "Your body is so light that you don't have the grounding to put your full strength into the attack.";
-	otherwise if the player is diaper kicking:
-		say "Your displeasure at wearing a soggy diaper slightly hampers the power of your knee.";
+	if the noun is human intelligent male monster and the noun is not dark skinned and queen-of-spades-stockings is worn and the player is getting very lucky:
+		say "Your [queen-of-spades-stockings] guide your knee to the perfect hit, right into [NameDesc of the noun][']s crotch. Not only does [he of the noun] buckle over with pain, but [he of the noun] also groans as [he of the noun] suffers an embarrassing spontaneous ejaculation, right there in front of you. [GotLuckyFlav]";
+		compute defeat of the noun;
+		compute upright fatigue gain;
 	otherwise:
-		say "You knee [NameDesc of the noun] with all your might.";
-	damage A on the noun;
-	compute upright fatigue gain;
-	if there is a worn hostility clothing, compute hostileDamage;
+		now damage-explained is debuginfo;
+		let A be the knee damage of the player;
+		if damage-explained > 0, say "[if damage-explained > 1][close bracket] = [A]; [otherwise][input-style]Knee attack: [A] [end if]";
+		decrease A by knee-fatigue;
+		if knee-fatigue > 0 and damage-explained > 0, say "-[knee-fatigue] (knee fatigue)";
+		if damage-explained > 0, say "[roman type][line break]";
+		now knee-fatigue-delay is 2;
+		increase knee-fatigue by 1;
+		if the player is zeroG and flight-attendant-skirt is not worn:
+			say "Your body is weightless, meaning you can hardly get any force into your knee without sending yourself backwards.";
+		otherwise if the player is on tiptoes and flight-attendant-skirt is not worn:
+			say "Your body is so light that you don't have the grounding to put your full strength into the attack.";
+		otherwise if the player is diaper kicking:
+			say "Your displeasure at wearing a soggy diaper slightly hampers the power of your knee.";
+		otherwise:
+			say "You knee [NameDesc of the noun] with all your might.";
+		damage A on the noun;
+		compute upright fatigue gain;
+		if there is a worn hostility clothing, compute hostileDamage;
 	reset submitted monsters. [Otherwise kneeling makes them delayed]
 Understand "knee [something]", "kn [something]" as kneeing.
 

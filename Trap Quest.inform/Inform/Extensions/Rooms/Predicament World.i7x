@@ -363,9 +363,6 @@ Report going when the player is in Predicament20:
 To say EndGameFlav of (P - a predicament):
 	say "".
 
-To say speech style of (M - a person):
-	say first custom style.
-
 A bystander is a kind of person. A bystander can be uninterested or interested. A bystander can be moved. The printed name of a bystander is "[TQlink of item described]bystander[TQxlink of item described][shortcut-desc][verb-desc of item described]".
 [What's the most lewd they've seen the player this time?]
 A bystander has a number called worst-appearance.

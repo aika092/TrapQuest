@@ -282,7 +282,7 @@ To compute diaper change of (M - a monster):
 			otherwise if current-diaper is diaper and M is willing to double diapers and M is eager to double diapers and (current-diaper is unmessed or diaper messing >= 4):
 				if new-diaper is not a DQBulkier diaper, now new-diaper is a random eligible plentiful DQBulkier disposable diaper;
 				if new-diaper is not a diaper, now new-diaper is a random plentiful DQBulkier disposable diaper;
-				if new-diaper is diaper:
+				if new-diaper is diaper and new-diaper is not current-diaper:
 					say DoubleDiaperFlav of M;
 					blandify and reveal new-diaper; [clean and reset it]
 					if M is double diaper locking:

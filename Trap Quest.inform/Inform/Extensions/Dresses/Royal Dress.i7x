@@ -21,6 +21,7 @@ To say ShortDesc of (O - a royal dress):
 Figure of Royal Dress 1 is the file "Items/Clothes/Upper/Dresses/Royal/royaldress1.png".
 Figure of Royal Dress 2 is the file "Items/Clothes/Upper/Dresses/Royal/royaldress2.png".
 Figure of Royal Dress 3 is the file "Items/Clothes/Upper/Dresses/Royal/royaldress3.png".
+Figure of Royal Dress 4 is the file "Items/Clothes/Upper/Dresses/Royal/royaldress4.png".
 
 To decide which number is the intelligence-influence of (O - a royal dress):
 	let I be 1;
@@ -103,5 +104,50 @@ To transform (D - a clothing) into (C - baby royal dress):
 	say "a [C][bold type] in front of your eyes![roman type] ";
 	cutshow figure of princess diaper cutscene 1 for C;
 	say "[TransformReaction of C]".
+
+
+Part 3 - Queen of Spades Dress
+
+queen-of-spades-dress is a royal dress. queen-of-spades-dress is bottom-exclusive. queen-of-spades-dress is crotch-exposing. queen-of-spades-dress is unskirted. queen-of-spades-dress is low cut. queen-of-spades-dress is normally-nipple-exposing. The text-shortcut of queen-of-spades-dress is "qsd".
+
+The printed name of queen-of-spades-dress is "[clothing-title-before]queen of spades dress[clothing-title-after]". Understand "queen", "of spades", "spades", "dress" as queen-of-spades-dress.
+
+To decide which number is the initial outrage of (C - queen-of-spades-dress):
+	decide on 6.
+
+Definition: queen-of-spades-dress is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
+
+To say ShortDesc of (C - queen-of-spades-dress):
+	say "queen of spades dress".
+To say MediumDesc of (C - queen-of-spades-dress):
+	say "completely exposing queen of spades dress".
+
+To decide which figure-name is clothing-image of (C - queen-of-spades-dress):
+	decide on figure of royal dress 4.
+
+To say ClothingDesc of (C - queen-of-spades-dress):
+	say "This 'dress' is really just some extremely eroticand exposing negligee, with a [']queen of spades['] theme, and spade-shaped nipple holes. It ties at the hips, allowing [if C is worn]your[otherwise]the wearer's[end if] crotch to remain fully accessible. Despite all this, it still feels somewhat regal.".
+
+Definition: queen-of-spades-dress is pink themed: decide no.
+Definition: queen-of-spades-dress is white themed: decide yes.
+Definition: queen-of-spades-dress is black themed: decide yes.
+Definition: queen-of-spades-dress is playing card themed: decide yes.
+Definition: queen-of-spades-dress is interracial themed: decide yes.
+Definition: queen-of-spades-dress is unskirted themed: decide no.
+
+To compute class set up of (C - queen-of-spades-dress):
+	now C is elasticity;
+	now C is luck-influencing;
+	now the raw-magic-modifier of C is 2.
+
+To compute periodic effect of (C - queen-of-spades-dress):
+	if C is not temptation:
+		let SK be a random worn skirt;
+		if SK is nothing, let SK be a random worn trousers;
+		if SK is clothing and SK is not queen-of-spades-skirt:
+			say "[bold type][BigNameDesc of C] [bold type]rumbles angrily, and its magical enhancement changes to 'temptation'!";
+			now C is temptation.
 
 Royal Dress ends here.

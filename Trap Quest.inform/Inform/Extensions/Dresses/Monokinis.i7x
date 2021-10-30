@@ -194,6 +194,9 @@ Part 7 - Queen of Spades Monokini
 
 queen-of-spades monokini is a monokini. queen-of-spades monokini is top-displacable. queen-of-spades monokini is unique. queen-of-spades monokini is high cut. queen-of-spades monokini is crotch-exposing. The text-shortcut of queen-of-spades monokini is "qsmk". Understand "queen", "queen of", "spades" as queen-of-spades monokini.
 
+To set up magic attribute of (C - queen-of-spades monokini):
+	now C is elasticity.
+
 Figure of queen of spades monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/monokini7.png".
 
 To decide which figure-name is clothing-image of (C - queen-of-spades monokini):

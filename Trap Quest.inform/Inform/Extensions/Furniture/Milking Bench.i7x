@@ -21,6 +21,7 @@ Figure of milking bench cutscene 2 is the file "Special/Cutscene/cutscene-milkin
 
 To compute furniture resting on (M - a milking bench):
 	let milking-allowed be 1;
+	let milking-increased-doses be false;
 	if there is worn not-top-displacable milking unflappable actually nipple covering clothing or the class of the player is living sex doll:
 		now milking-allowed is 0;
 	otherwise if the milk volume of breasts >= 0 and there is worn actually nipple covering clothing and the player is able to use their hands and the player is not wrist bound behind:
@@ -69,6 +70,7 @@ To compute furniture resting on (M - a milking bench):
 			increase MPT by 1;
 			while the units collected of M >= 4:
 				decrease the units collected of M by 4;
+				now milking-increased-doses is true;
 				if the doses of MT < 8:
 					increase the doses of MT by 1;
 					say "[BigNameDesc of MT] is now [FullnessDesc of MT].";
@@ -77,6 +79,10 @@ To compute furniture resting on (M - a milking bench):
 				summon cow-ears cursed;
 			otherwise if the class of the player is royal slave and cow print basque is not worn:
 				class summon cow print basque;
+				if cow print basque is not worn:
+					let D be a random worn dress;
+					if D is nothing, now D is a random worn breast covering clothing;
+					if D is clothing, silently transform D into cow print basque;
 				TopDisplace cow print basque;
 				say "A [ShortDesc of cow print basque] shimmers into place over your body!";
 			compute extra turn;
@@ -89,7 +95,7 @@ To compute furniture resting on (M - a milking bench):
 			BodyHeal 1;
 		now milking is 0;
 		if M is in the location of the player:
-			say "The machine finally stops milking you.";
+			say "The machine finally stops milking you[if milking-increased-doses is false]. There wasn't enough milk to significantly increase the level of the fluid in the milk tank, but your small contribution will surely be taken into account the next time you get milked[end if].";
 			if the alert of the player is 0, say "[if the bimbo of the player < 11][line break][first custom style]I feel so much better![otherwise][line break][second custom style]I'm full of energy again. Yum![end if][roman type][line break]";
 		progress quest of milking-quest;
 		now resting is 0;

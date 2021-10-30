@@ -128,7 +128,7 @@ To say SummoningFlav of (M - a wrestler):
 	otherwise:
 		say "You hear the sound of squeaky rubber clothing coming from another part of the hotel.".
 
-To say ToiletPeeReaction of (M - a wrestler):
+To say ToiletReactionFlav of (M - a wrestler):
 	say "[BigNameDesc of M] licks [his of M] lips.[line break][speech style of M]'[if watersports fetish is 1]You know, it's unusual getting to watch someone else pee without me being on my knees underneath them[otherwise]Is the big [boy of the player] trying to prove [he of the player] doesn't need diapers? How adorable[end if]!'[roman type][line break]".
 
 To IdentifiablePosterReaction of (M - a wrestler):

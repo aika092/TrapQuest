@@ -61,7 +61,7 @@ To say LongDickDesc of (M - centaur):
 	say "massive 2-foot equine [DickDesc of M]".
 
 To say DickDesc of (M - centaur):
-	if lady fetish is 2 or futanari fetish is 1, say manly-penis;
+	if lady fetish is 2 or futanari fetish > 0, say manly-penis;
 	otherwise say "strap-on".
 
 To say cockhead of (M - centaur):

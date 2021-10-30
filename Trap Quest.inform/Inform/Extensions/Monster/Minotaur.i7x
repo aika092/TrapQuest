@@ -603,10 +603,6 @@ To compute (M - minotaur) attacking (C - a clothing):
 		say "[BigNameDesc of M] rips off your [printed name of C]!";
 		destroy C.
 
-To compute (M - minotaur) attacking (C - a clothing):
-	say "[BigNameDesc of M] tears off your [printed name of C]!";
-	destroy C.
-
 To compute (M - minotaur) removing (X - a thing):
 	say "[BigNameDesc of M] forcefully and roughly pulls the [printed name of X] out of your [asshole] and drops it on the ground!";
 	now X is in the location of the player;

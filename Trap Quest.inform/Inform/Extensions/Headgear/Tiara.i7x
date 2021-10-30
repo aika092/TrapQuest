@@ -63,6 +63,26 @@ To uniquely set up (C - silver-tiara):
 	if diaper quest is 1, now the quest of C is stealth-diaper-quest;
 	otherwise now the quest of C is royal-quest.
 
+To compute generic first time class reward of (Q - unlock-quest) on (C - a clothing):
+	let D be a random off-stage ring;
+	if D is ring:
+		now D is sapphire;
+		set shortcut of D;
+		if D is actually summonable:
+			summon D;
+		otherwise:
+			now D is in the location of the player;
+		say "summoning a [MediumDesc of D] [if D is worn]straight onto your finger[otherwise]right in front of you[end if]!";
+	otherwise:
+		compute generic second time class reward of Q on C.
+
+To compute unique periodic effect of (H - silver-tiara):
+	if the quest of H is royal-quest and the player is in Dungeon36 and the minotaur-checked of royal-quest is false:
+		say "You look at the cage, and see that [if minotaur is not caged or minotaur is not in Dungeon36][NameDesc of minotaur] is no longer in its cage! Oh no![otherwise if mystical amulet is in Dungeon36]the amulet is still here, safe and sound.[otherwise]the amulet has gone missing! This is bad news![end if]";
+		now the minotaur-checked of royal-quest is true;
+		progress quest of royal-quest;
+	if the quest of H is unlock-quest and H is cursed and the number of worn locked clothing is 0, progress quest of unlock-quest.
+
 To say QuestFlav of (Q - royal-quest):
 	say "You sense it wants you to fulfill some royal duties. A royal scepter could probably help with this.".
 
@@ -87,25 +107,8 @@ To say QuestFlav of (Q - unlock-quest):
 To say QuestTitle of (Q - unlock-quest):
 	say " (bondage escape quest)".
 
-To compute generic first time class reward of (Q - unlock-quest) on (C - a clothing):
-	let D be a random off-stage ring;
-	if D is ring:
-		now D is sapphire;
-		set shortcut of D;
-		if D is actually summonable:
-			summon D;
-		otherwise:
-			now D is in the location of the player;
-		say "summoning a [MediumDesc of D] [if D is worn]straight onto your finger[otherwise]right in front of you[end if]!";
-	otherwise:
-		compute generic second time class reward of Q on C.
 
-To compute unique periodic effect of (H - silver-tiara):
-	if the quest of H is royal-quest and the player is in Dungeon36 and the minotaur-checked of royal-quest is false:
-		say "You look at the cage, and see that [if minotaur is not caged or minotaur is not in Dungeon36][NameDesc of minotaur] is no longer in its cage! Oh no![otherwise if mystical amulet is in Dungeon36]the amulet is still here, safe and sound.[otherwise]the amulet has gone missing! This is bad news![end if]";
-		now the minotaur-checked of royal-quest is true;
-		progress quest of royal-quest;
-	if the quest of H is unlock-quest and H is cursed and the number of worn locked clothing is 0, progress quest of unlock-quest.
+
 
 
 tiara-veil is a tiara.
@@ -138,27 +141,62 @@ To compute unique periodic effect of (H - tiara-veil):
 	if mechanic is alive, now bride-consort is mechanic;
 	otherwise now bride-consort is demon lord.
 
-Chapter - Quest
-
 To uniquely set up (C - tiara-veil):
 	now the quest of C is betrothal-quest.
 
-To say QuestFlav of (Q - royal-quest):
-	say "You sense it wants you to fulfill some royal duties. A royal scepter could probably help with this.".
 
-To say QuestTitle of (Q - royal-quest):
-	say " (royal duties quest)".
 
-To progress quest of (Q - royal-quest):
-	repeat with C running through worn clothing:
-		if the quest of C is Q:
-			increase duties-performed of Q by 1;
-			increase the charge of royal scepter by 10;
-			if duties-performed of Q > 3:
-				compute quest completion of Q on C;
-				now the duties-performed of Q is 0;
-			otherwise:
-				say "Your [ShortDesc of C] shudders with pride. But there's more work to do!";
-			class summon royal scepter.
+tiara-of-spades is a tiara.
+
+The printed name of tiara-of-spades is "[clothing-title-before]tiara of spades[clothing-title-after]". The text-shortcut of tiara-of-spades is "tos". Understand "spades", "of spades" as tiara-of-spades.
+
+Figure of tiara-of-spades is the file "Items/Accessories/Head/royaltiara4.png".
+
+Definition: tiara-of-spades is roleplay: decide no.
+
+To decide which figure-name is the clothing-image of (C - tiara-of-spades):
+	decide on figure of tiara-of-spades.
+
+To say ClothingDesc of (H - tiara-of-spades):
+	say "This silver royal tiara is adorned with spades which indicates the wearer is a total slut for [BlackCock].".
+
+To say MediumDesc of (H - tiara-of-spades):
+	say "interacial fetish tiara".
+
+Definition: tiara-of-spades is gem themed: decide yes.
+Definition: tiara-of-spades is grey themed: decide yes.
+Definition: tiara-of-spades is interracial themed: decide yes.
+Definition: tiara-of-spades is playing card themed: decide yes.
+
+To compute class outfit of (H - tiara-of-spades):
+	[class summon BBC Collar;]
+	class summon queen-of-spades-dress;
+	class summon queen-of-spades-skirt;
+	class summon queen-of-spades-stockings;
+	class summon queen-of-spades-sandals.
+
+To check tiara-of-spades transformation:
+	let H be a random worn tiara;
+	if H is tiara and H is not tiara-of-spades:
+		say "Your [ShortDesc of H] vibrates as you get closer and closer to [BlackCock]. A more powerful magic is taking control!.";
+		let R be a random worn royal dress;
+		if R is royal dress and R is not queen-of-spades-dress:
+			repeat with O running through worn clothing: [remove all underwear]
+				if O is not R and O is removable and (O is breast covering or O is belly covering or O is crotch covering):
+					check that O usually goes under queen-of-spades-dress;
+					if the rule succeeded:
+						WardrobeVanish O;
+			transform R into queen-of-spades-dress;
+		transform H into tiara-of-spades.
+
+To compute princess guard tease of (M - a royal guard):
+	allocate 6 seconds;
+	say "[BigNameDesc of tiara-of-spades] sends an irresistable suggestion through your body, and you find yourself placing a hand on [NameDesc of M][']s crotch.[line break][if the player is able to speak][variable custom style]'Think you've got what it takes to satify me?'[roman type][line break][end if]";
+	if the refractory-period of M > 0:
+		say "[BigNameDesc of M] hesitantly feels down at [his of M] crotch, and finds that it is soft, and as much as [he of M] wills it, it doesn't seem to be getting hard right now.[line break][speech style of M]'I am sorry to disappoint you, your Highness, but I don't believe that I can be of service right now...'[roman type][paragraph break][if the player is able to speak][variable custom style]'[one of]Ugh, you are walking, talking evidence of why white women prefer black [men of M].'[or]Pathetic.'[stopping][roman type][line break][BigNameDesc of M] hangs [his of M] head in shame.";
+	otherwise:
+		say "[BigNameDesc of M] is breathing heavily, and [his of M] pupils are dilated.[line break][speech style of M]'Please, your Majesty, it would be my honour to... to...'[roman type][line break]You give [his of M] crotch a quick teasing squeeze... and then [NameDesc of M][']s eyes go crossed and [he of M] makes a groaning sound. [big his of M] hips buck forward and back, and [he of M] is clearly cumming inside [his of M] pants.[paragraph break][if the player is able to speak][variable custom style]'[one of]White [men of M] are so cute. Did you really think you would ever get to be with someone like me, with that little worm? Finish dribbling your little pathetic load into your breaches, and then get out of my sight.'[or]Pathetic.'[stopping][roman type][line break]";
+		orgasm M;
+		compute M slinking away.
 
 Tiara ends here.

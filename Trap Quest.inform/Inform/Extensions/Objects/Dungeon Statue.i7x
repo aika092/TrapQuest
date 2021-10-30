@@ -54,10 +54,9 @@ Carry out drinking DungeonScenery01:
 		MagicPowerRefresh 6;
 	otherwise:
 		say "[if the thirst of the player > 2]Except for feeling less thirsty, you[otherwise]You[end if] don't feel any different.[line break][if the semen taste addiction of the player < 8][line break][first custom style]Did anything good happen? [one of]I can't believe I just swallowed that.[or]I came back for more. Am I really turning into a slut?[stopping][otherwise if the semen taste addiction of the player > 11][line break][second custom style]Did anything good happen? Oh well, at least it was yummy.[end if][roman type][line break]";
-	let P be a random off-stage cock pacifier;
-	if (a random number between 2 and 10) + (a random number between 2 and 10) < the semen taste addiction of the player and P is actually summonable:
+	if (a random number between 2 and 10) + (a random number between 2 and 10) < the semen taste addiction of the player and cock pacifier is off-stage and cock pacifier is actually summonable:
 		say "As you pull your mouth away from the statue's penis, whilst your mouth is still in its submissive 'O' shape, you feel a new phallic object slip into the vacant space. Even though you can't see anything, you feel the small member as it slides along your tongue, and you can feel that it's definitely shaped like a penis, but it's not quite as hard as an actual manly [manly-penis] would be. Raising your hands to your mouth, you feel a little handle in front of a large flat circular section. It's a pacifier! A [if the bimbo of the player < 8]hopeful[otherwise]half-hearted[end if] tug on the handle [if the bimbo of the player < 8]reveals[otherwise]confirms[end if] what you had already started to suspect - you can't remove it...[line break][variable custom style]Maybe this is the game's way of telling me I'm getting an oral fixation...?[roman type][line break]";
-		summon P cursed with quest.
+		summon cock pacifier cursed with quest.
 
 Whacking is an action applying to one thing.
 Check whacking:

@@ -246,6 +246,7 @@ To compute punishment of (P - hole-strip):
 	otherwise:
 		say "yank it off of you, pushing it through the hole[one of] so that you can see what you're now missing[or][stopping]!";
 		now C is in the location of the player;
+		dislodge C;
 	say "[variable custom style][if the humiliation of the player < 18500]Oh god, how embarrassing![otherwise]Hey, that's mean![end if][roman type][line break]";
 	if there is a worn top level protection clothing and a random number between 1 and 2 is 1, now the priority of P is 2.
 

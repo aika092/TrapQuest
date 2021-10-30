@@ -1,6 +1,6 @@
 Striped Top by Dresses begins here.
 
-A striped top is a kind of overdress. A striped top is usually unskirted. A striped top is usually biological. A striped top is usually unique. A striped top is usually belly exposing. There is 1 striped top.
+A striped top is a kind of overdress. A striped top is usually unskirted. A striped top is usually biological. A striped top is usually unique. There is 1 striped top.
 
 The printed name of striped top is usually "[clothing-title-before]striped top[clothing-title-after]". The text-shortcut of striped top is "stt".
 
