@@ -568,8 +568,8 @@ This is the student obeys teacher rule:
 	if S is monster:
 		if the teacher-obedience of N is 1:
 			rule succeeds;
-		otherwise if S is friendly and the health of N < the maxhealth of N:
-			say "[BigNameDesc of S] yells angrily.[line break][speech style of S]'NO FIGHTING! BOTH OF YOU DOWN ON THE GROUND, NOW!'[roman type][line break]";
+		otherwise if the health of N < the maxhealth of N:
+			if S is friendly, say "[BigNameDesc of S] yells angrily.[line break][speech style of S]'NO FIGHTING! BOTH OF YOU DOWN ON THE GROUND, NOW!'[roman type][line break]";
 			repeat with M running through staff members in the location of the player:
 				anger M;
 				now M is interested;
@@ -771,7 +771,7 @@ To compute swirlie of (M - a monster):
 			if N < 1, now N is 1;
 			AnnouncedSquirt urine on hair by N;
 			severeHumiliate;
-			UrineTasteAddictUp 1;
+			compute addictive tasting of urine;
 		otherwise:
 			say "[BigNameDesc of ST] takes the opportunity to kick you right in the [genitals]. Tears appear in your eyes and are immediately washed away by the toilet water.";
 			PainUp 2;
@@ -1096,7 +1096,7 @@ Definition: prank-photo is eligible:
 	decide no.
 To execute (P - prank-photo):
 	let A be the appearance of the player;
-	say "Suddenly, [current-monster] puts [his of current-monster] arm over your shoulder.[line break][speech style of current-monster]'Say cheese!'[roman type][line break][BigNameDesc of current-monster] has taken a quick photograph of you both with her smartphone.[line break][if the player is modest][variable custom style]What?! No, not while I look like this![line break][end if][speech style of current-monster]'I just couldn't resist taking a selfie with you when you look so [if diaper quest is 1]cute[otherwise if A < 10]cute and slutty[otherwise]utterly whorish[end if] like this!'[roman type][line break]Before you can object, [NameDesc of current-monster] has uploaded the photo of you both somewhere.[line break][variable custom style]Wait, was that to the REAL Internet? How many people will see it?![line break][speech style of current-monster]'I bet this one gets lots of upvotes!'[roman type][line break][BigNameDesc of current-monster] giggles happily.";
+	say "Suddenly, [current-monster] puts [his of current-monster] arm over your shoulder.[line break][speech style of current-monster]'Say cheese!'[roman type][line break][BigNameDesc of current-monster] has taken a quick photograph of you both with [his of current-monster] smartphone.[line break][if the player is modest][variable custom style]What?! No, not while I look like this![line break][end if][speech style of current-monster]'I just couldn't resist taking a selfie with you when you look so [if diaper quest is 1]cute[otherwise if A < 10]cute and slutty[otherwise]utterly whorish[end if] like this!'[roman type][line break]Before you can object, [NameDesc of current-monster] has uploaded the photo of you both somewhere.[line break][variable custom style]Wait, was that to the REAL Internet? How many people will see it?![line break][speech style of current-monster]'I bet this one gets lots of upvotes!'[roman type][line break][BigNameDesc of current-monster] giggles happily.";
 	let T be "in a selfie with your fellow student [student-name of current-monster]";
 	if diaper quest is 1 and the appearance of the player < the cringe appearance of the player, now A is the cringe appearance of the player;
 	compute digital reputation damage T strength (A) quality (a random number between 1 and 2).

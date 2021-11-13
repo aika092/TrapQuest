@@ -53,4 +53,26 @@ To say QuestFlav of (Q - betrothal-quest):
 To say QuestTitle of (Q - betrothal-quest):
 	say " (marriage quest)".
 
+To compute generic first time class reward of (Q - betrothal-quest) on (C - a clothing):
+	say "making you feel flushed with arousal, and making your [vagina] pulse with a desire to be bred!";
+	arouse 3000.
+
+To decide which number is the vaginal-sex-addiction-influence of (C - a bridal veil):
+	if C is cursed, decide on -1;
+	if C is blessed, decide on 0;
+	decide on 5.
+
+To compute second first time class reward of (Q - betrothal-quest) on (C - a clothing):
+	let D be a random off-stage necklace;
+	if D is necklace:
+		now D is pure diamond;
+		set shortcut of D;
+		if D is actually summonable:
+			summon D;
+		otherwise:
+			now D is in the location of the player;
+		say "summoning a [MediumDesc of D] [if D is worn]straight onto your neck[otherwise]right in front of you[end if]!";
+	otherwise:
+		compute generic class reward of Q on C.
+
 Bridal Veils ends here.

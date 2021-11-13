@@ -133,6 +133,9 @@ To decide which figure-name is the examine-image of (M - a monster):
 	unless F is figure of Missing NPC, decide on F;
 	decide on the non-sex-profile of M.
 
+Report examining a monster:
+	if the noun is carrying players-detached-dick, say "[one of]Your dick-sense tells you [he of the noun]'s got yours[or][big he of the noun]'s got your dick[or][big he of the noun]'s got your mother-flipping dick[or][big his of the noun] smirk says he's got your dick[in random order]!".
+
 After examining a monster:
 	unless the noun is unintelligent or the noun is robot:
 		say "[FavourDesc of the noun]";

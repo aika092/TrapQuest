@@ -618,7 +618,7 @@ Chapter - Diaper Pail Scene
 
 woman-player has a number called pail-scene.
 
-Report going when there is a diaper pail in the location and the pail-scene of woman-player is 0 and the player is an october 2020 diaper donator and the woman-bimbo of woman-player is 4:
+Report going when there is a diaper pail in the location and the pail-scene of woman-player is 0 and the woman-bimbo of woman-player is 4:
 	if debugmode is 1, say "Checking if berri can appear.";
 	let M be a random regional monster carrying a soiled-diaper;
 	if woman-player is relaxed redeploy appropriate and M is monster:

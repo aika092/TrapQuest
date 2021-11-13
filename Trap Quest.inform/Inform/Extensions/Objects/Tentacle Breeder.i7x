@@ -121,12 +121,8 @@ Carry out purifying tentacle-breeder:
 			if C is a thing and the number of worn underdress is 0, transform C into anime superheroine top;
 	if playerRegion is Dungeon, progress quest of royal-quest.
 
-Definition: a tentacle-breeder is loaded:
-	if it is regional, decide yes;
-	decide no. [Tentacle breeders only summon tentacle monsters when the player is nearby]
-
 To compute summoning check of (T - a tentacle-breeder):
-	if the total magic power of the player > 0:
+	if the total magic power of the player > 0 and T is regional:
 		decrease the charge of T by time-seconds;
 		if the charge of T < 1:
 			let M be the summonChoice of T;

@@ -10,7 +10,7 @@ Understand "prick", "willy", "pecker", "clitty", "noodle", "dickie", "winky", "w
 Understand "crotch", "groin" as vagina when the player is possessing a vagina.
 Understand "crotch", "groin" as penis when the player is not possessing a vagina.
 
-penis has a number called size. the size of penis is usually 0.
+penis has a number called size. The size of penis is usually 0.
 
 penis has a number called real size. The real size of penis is usually 0.
 
@@ -442,30 +442,32 @@ To say PenisFlavour (N - a number):
 		otherwise say "[PenisSizeFlav N] [PenisShaftFlav N]".
 
 To say PenisSizeFlav (N - a number):
-	if N is 1, say "less than 1 inch";
-	if N is 2, say "1 inch";
-	if N is 3, say "worthless 3 inch";
-	if N is 4, say "tiny 4 inch";
-	if N is 5, say "small 5 inch";
-	if N is 6, say "average 6 inch";
-	if N is 7, say "above average 7 inch";
-	if N is 8, say "large 8 inch";
-	if N is 9, say "giant 10 inch";
-	if N is 10, say "huge 12 inch";[natural max. beyond here is strapon territory]
-	if N is 11, say "massive 15 inch";
-	if N > 11, say "ridiculously huge 20 inch".
+	if N is:
+		-- 1: say "less than 1 inch";
+		-- 2: say "1 inch";
+		-- 3: say "worthless 3 inch";
+		-- 4: say "tiny 4 inch";
+		-- 5: say "small 5 inch";
+		-- 6: say "average 6 inch";
+		-- 7: say "above average 7 inch";
+		-- 8: say "large 8 inch";
+		-- 9: say "giant 10 inch";
+		-- 10: say "huge 12 inch";[natural max. beyond here is strapon territory]
+		-- 11: say "massive 15 inch";
+		-- otherwise: say "ridiculously huge 20 inch".
 
 To say PenisShaftFlav (N - a number):
-	if N is 1, say "clitoris-like pee pee";[less than 1]
-	if N is 2, say "micropenis";[1 inch]
-	if N is 3, say "pecker";
-	if N is 4, say "willy";
-	if N is 5, say "dick";
-	if N is 6, say "prick";
-	if N is 7, say "cock";
-	if N is 8, say "dong";
-	if N is 9, say "tool";[10 inch]
-	if N > 9, say "monster".[12 15, and 20 inches. 12 is natural max]
+	if N is:
+		-- 1: say "clitoris-like pee pee";[less than 1]
+		-- 2: say "micropenis";[1 inch]
+		-- 3: say "pecker";
+		-- 4: say "willy";
+		-- 5: say "dick";
+		-- 6: say "prick";
+		-- 7: say "cock";
+		-- 8: say "dong";
+		-- 9: say "tool";[10 inch]
+		-- otherwise: say "monster".[12 15, and 20 inches. 12 is natural max]
 
 To say SexShaft:
 	let S be a random worn strapon-panties;
@@ -495,7 +497,19 @@ To say PenisModesty:
 			say "You have no clothing covering it. ";
 	otherwise if the player is possessing a penis:
 		let W be the concealer of penis;
-		say "It can't be seen thanks to the [ShortDesc of W]. ".
+		say "It can't be seen thanks to the [ShortDesc of W]. ";
+	if penis is actually occupied:
+		let P be a random thing penetrating penis;
+		if P is gargoyle:
+			say "It is currently inside [FuckerDesc of P]'s mouth.";
+		otherwise if P is dominatrix:
+			say "It is currently inside [FuckerDesc of P]'s cocksleeve.";
+		otherwise:
+			say "It is currently inside [FuckerDesc of P]'s [HoleDesc of P].";
+	if the player is a penis slut and the player is possessing a penis:
+		let P be a random thing penetrating penis;
+		if P is monster, say "Monsters are definitely paying extra attention to it.";
+		otherwise say "You have a feeling that monsters are paying extra attention to it.".
 
 Part 3 - Modify Penis Stats
 
@@ -516,12 +530,21 @@ To PenisUp (X - a number):
 		otherwise:
 			SilentlyScrotumUp X.
 
-[#LXorDD Selkie has added a new TG situation here:
-If Game Hates You AND you have a detached dick AND it's at maximum size AND if TG fetish is on AND if the latex transformation > 5.
-If TG fetish is not on, the balloon can burst leaving you at size 0.
-Is that main condition too kind - should it _really_ require Game Hates You?]
+[#LXorDD 
+  NOTE:
+    This function can increase detached dicks via the SpecialPenisUp or DetachedPenisUp functions, which first swap the dick back in as far as the code is concerned, then calls PenisUp, then swaps it back out.
+    In other words, don't use the 'mystical size of the penis' here, just use 'the size of the penis'.
+
+As of Sept 2021 there's a new TG situation here:
+    If your dick is at maximum size AND if the latex transformation > 5, it's possible to grow your dick above the normal maximum size of 10.
+    But it hurts and you get a warning that it might pop.
+    Once at size 12, there's a 2 in 3 chance it will pop each time it tries to grow bigger still.
+    If TG fetish is on and it bursts, you can then change sex.
+    If TG fetish is not on and it bursts, it leaves you at size 0.
+]
 To OnlyPenisUp (X - a number):
-	now previous penis length is the mystical size of penis;
+	now previous penis length is the size of penis;
+	[row 68 of the Table of Player Options = futanari fetish: 0, 1, or 2]
 	if the player is not possessing a penis and (choice in row 68 of the Table of Player Options is 0 or the player is not a top donator), now X is 0;
 	if cumlust tattoo is worn:
 		SemenTasteAddictUp X;
@@ -532,35 +555,39 @@ To OnlyPenisUp (X - a number):
 		now X is 0;
 		say "Your [ShortDesc of metal-cage] is preventing your [player-penis] from getting any larger!";
 	if X > 0:
-		if the size of penis >= 10:
-			if players-dick-is-detached is 0: [#LXorDD]
-				say "Your monster of a [manly-penis] can't seem to grow any larger! You feel like a stud!";
-				dignify 50;
-			otherwise: [#LXorDD This is all new]
-				let sense be "feel";
-				if players-detached-dick is in the location of the player, now sense is "see";
-				say "You [sense] your stolen monster of a [manly-penis] try to grow even larger, ";
-				if the latex-transformation of the player > 5:
-					if the size of penis < 12:
-						say "swelling even bigger, its [LatexFlav] stretching dangerously. It's starting to hurt, like it could pop![line break][variable custom style]I need to get it reattached, and sooner rather than later![roman type][line break]";
-						increase the size of penis by 1;
+		[We're now allowing penis size to increase above the max of 9, a 10" cock, if they're latex-TFed enough, but if they try to grow over 12 they'll burst. This used to happen only if their penis was detached AND they were latex TFed.]
+		let sense be "feel";
+		if players-dick-is-detached > 0:
+			if players-detached-dick is in the location of the player, now sense is "see";
+		if the size of penis >= 9:
+			if (the latex-transformation of the player - 5) >= (the size of penis - 9): [If LHS of 1, 2, or 3 > RHS of 1 or 2, they're rubbery enough to try to grow, and maybe burst!]
+				say "You [sense] your [if players-dick-is-detached > 0]stolen [end if]monster of a [manly-penis] try to grow even larger, ";
+				if the size of penis < 12:
+					say "swelling even bigger, its [LatexFlav]skin stretching dangerously. It's starting to hurt, like it could pop![run paragraph on][if the size of penis >= 11] Seriously, you [sense] its skin thinning, reminding you of an over-stretched balloon.[end if][if players-dick-is-detached > 0][line break][variable custom style]I need to get it reattached, and sooner rather than later![roman type][end if][line break]";
+					increase the size of penis by 1;
+					say "It's now a [ShortDesc of penis]!";
+				otherwise: [They've inflated to size 12 and trying to grow larger. Let's give them a 1 in 3 chance they don't pop.]
+					if a random number between 1 and 3 is 1:
+						say "and its [LatexFlav]skin [i]really[/i] hurts as it strains against itself. Then the pain eases as it stops trying to grow any further. [one of]You feel you had a lucky escape.[or]It felt like it almost popped, that time![or]For a second or two you were sure it was going to burst like a balloon.[in random order]";
 					otherwise:
-						if tough-shit is 0 or TG fetish is 0:
-							say "but can't seem to grow any further.";
-						otherwise:
-							say "its [LatexFlav]skin expanding until it's translucent, and a sharp stab of pain runs through you.[line break]At the last moment the pain vanishes... into a scary numbness. But your eyes widen as it keeps stretching, until horror explodes - as does your [manly-penis], bursting into a million pieces!";
+						say "its [LatexFlav]skin expanding until it's translucent, and a sharp stab of pain runs through you.[line break]At the last moment the pain vanishes... into a scary numbness. But your eyes widen as it keeps stretching, until the horror you're feeling explodes - as does your [manly-penis], bursting into a million pieces![line break]You stare in utter shock and shame, wide-eyed, not quite believing what just happened.[line break][variable custom style]My dick just exploded. My magnificent, awesome dick. It just literally blew up![roman type][line break]You're utterly stunned. Flabbergasted.[variable custom style]At least it didn't hurt, at the end.[roman type][line break]That traitorous little thought only makes the humiliation of the event burn even stronger. Something also tells you that you won't be able to reassemble the tiny rubbery pieces of your burst dick, to reattach it. You sense it's gone for good. Wah!";
+						if players-dick-is-detached > 0:
+							uniquely destroy players-detached-dick;
 							now the size of players-detached-dick is -1;
-							if TG fetish > 0 and the player is not possessing a vagina:
-								SexChange the player;
-							otherwise:
-								[####Selkie: is this right? Or should it be set to Min Penis Size, and add a comment about a meagre stub remaining?]
-								now the size of penis is 0;
-								now the size of scrotum is 0;
-				otherwise if the latex-transformation of the player > 0:
-					say "and you [sense] its [LatexFlav]skin try to stretch, but it's just not elastic enough.";
+						humiliate SEVERE-HUMILIATION;
+						if TG fetish > 0 and the player is not possessing a vagina:
+							SexChange the player;
+						otherwise:
+							[Selkie: this is right. We don't set it to Min Penis Size and remark on the meagre stub remaining.]
+							now the size of penis is 0;
+							now the size of scrotum is 0;
+			otherwise: [They're at or over max penis size, but not elastic enough to grow]
+				if the latex-transformation of the player > 0:
+					say "Your monster of a [manly-penis] tries to swell even larger, but it can't. [one of]It's just not stretchy enough.[or]It'd have to be more rubbery for that to be possible.[or]It'd need to be more elastic.[or]Your [LatexFlav]skin does make you wonder whether it's completely out of the question. Hmm...[or]You  [sense] its [LatexFlav]skin try to stretch, but it's just not elastic enough.[in random order]";
 				otherwise:
-					say "but it feels like it can't.";
-		otherwise:
+					say "Your monster of a [manly-penis] can't seem to grow any larger! You feel like a stud!";
+				dignify 50;
+		otherwise: [dick is < 9, which is 10"]
 			if players-dick-is-detached > 0:
 				say "You feel your detached penis grow into "; [#LXorDD This is mainly to cover the possibility of it being detached and a flat disc, i.e. zero sized. I'm just being defensive]
 			otherwise if the player is possessing a penis:
@@ -581,6 +608,8 @@ To OnlyPenisUp (X - a number):
 
 penis-flav is initially true.
 
+[This function is to be used when we don't want text output, it could be because we're in the middle of outputing some text. So this turns off the text output when the sexchange happens.
+NB: that means if you use this function and it reduces the penis size below the minimum at which sexchange should normally occur, then sexchange won't happen unless the player somehow increases it so there's a chance the penis will cross that borderline a second time.]
 To SilentlyPenisDown (X - a number):
 	now penis-flav is false;
 	PenisDown X;
@@ -593,10 +622,10 @@ To PenisDown (X - a number):
 [X is not how much the penis shrinks, but how many times it does so]
 To OnlyPenisDown (X - a number):
 	now previous penis length is the size of penis;
-	let flav-said be 0;
+	[let flav-said be 0; [###Selkie: flav-said is not used here]]
 	if X > 0:
 		if the player is sexed male and the size of penis <= min penis size:
-			if penis-flav is true, say "You feel a strange pang in your crotch... you feel that your penis[if players-dick-is-detached > 0 and players-detached-dick is not in the location of the player], wherever it may be, [end if]tried to shrink even further, but [if the player is not possessing a penis]since you have nothing left, it can't[otherwise if the size of penis < 4]it's so tiny that it can't get any smaller[otherwise]something prevents it[end if]!";
+			if penis-flav is true, say "You feel a strange pang in your crotch... you feel that your penis[if players-dick-is-detached > 0 and players-detached-dick is not in the location of the player], wherever it may be,[end if] tried to shrink even further, but [if the player is not possessing a penis]since you have nothing left, it can't[otherwise if the size of penis < 4]it's so tiny that it can't get any smaller[otherwise]something prevents it[end if]!";
 			now X is 0;
 		while X > 0:
 			decrease X by 1;

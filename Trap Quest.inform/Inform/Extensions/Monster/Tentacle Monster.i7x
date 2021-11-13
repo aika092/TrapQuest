@@ -5,17 +5,12 @@ Tentacle monster is a kind of monster. A tentacle monster is neuter. A tentacle 
 A tentacle monster can be newborn, large, massive (this is the tentacle-size property). Understand the tentacle-size property as describing a tentacle monster. A tentacle monster has a number called evolved.
 
 Definition: a tentacle monster is willing to do vaginal: decide yes.
-
 Definition: a tentacle monster is willing to do anal: decide yes.
-
 Definition: a tentacle monster is willing to do oral: decide yes.
-
 Definition: a tentacle monster is willing to do titfucks: decide yes.
-
 Definition: a tentacle monster is virginity taking: decide yes.
-
 Definition: a tentacle monster is father material: decide yes.
-
+Definition: a tentacle monster is egg-fathering: decide yes.
 Definition: a tentacle monster is throater: decide yes.
 
 Definition: a tentacle monster is summoningRelevant:
@@ -311,10 +306,13 @@ Definition: a tentacle monster is butt slut immune: decide yes.
 
 To say SummoningFlav of (M - a tentacle monster):
 	let S be a random tentacle-breeder in the location of the player;
-	distract M;
-	if inhuman pregnancy >= 2, say "[bold type]You [if S is player-breeder]watch as your previous self gives birth to a grey mass of tentacles with a loud squelch. The newborn tentacle monster looks around, blinking with a single giant eye as it takes in its new surroundings[otherwise if S is tentacle-breeder]watch as the girl stuck to the wall gives birth to a grey mass of tentacles with a loud squelch. The newborn tentacle monster looks around, blinking with a single giant eye as it takes in its new surroundings[otherwise]hear a loud squelch and mindless moaning coming from nearby[end if]![roman type][line break]";
-	otherwise say "[bold type]You [if S is tentacle-breeder]watch as the hole in the flesh in the wall widens, and a ball of grey flesh drops out to the ground. The newly spawned tentacle monster looks at you with its single eye before scuttling off into the distance[otherwise]hear a loud squelch coming from nearby[end if]![roman type][line break]";
-	compute mandatory room leaving of M.
+	if M is alive:
+		distract M;
+		if inhuman pregnancy >= 2, say "[bold type]You [if S is player-breeder]watch as your previous self gives birth to a grey mass of tentacles with a loud squelch. The newborn tentacle monster looks around, blinking with a single giant eye as it takes in its new surroundings[otherwise if S is tentacle-breeder]watch as the girl stuck to the wall gives birth to a grey mass of tentacles with a loud squelch. The newborn tentacle monster looks around, blinking with a single giant eye as it takes in its new surroundings[otherwise]hear a loud squelch and mindless moaning coming from nearby[end if]![roman type][line break]";
+		otherwise say "[bold type]You [if S is tentacle-breeder]watch as the hole in the flesh in the wall widens, and a ball of grey flesh drops out to the ground. The newly spawned tentacle monster looks at you with its single eye before scuttling off into the distance[otherwise]hear a loud squelch coming from nearby[end if]![roman type][line break]";
+		compute mandatory room leaving of M;
+	otherwise:
+		say "BUG - [NameDesc of M] was supposed to be summoned but it wasn't successful.".
 
 To compute (M - demon lord) stomping (N - a tentacle monster):
 	if M is in the location of the player, say "With a flick of [his of M] finger, [NameDesc of N] bursts into flames and quickly disappears in a puff of smoke.";
@@ -719,8 +717,8 @@ To say CondomPinFlav of (M - a tentacle monster) on (C - a clothing):
 To say CondomPinReactionFlav of (M - a tentacle monster) on (C - a clothing):
 	do nothing.
 
+[Each orifice has this check individually, but M stays "wrapped" until the sex is over.]
 To decide if (M - a tentacle monster) is losing wrapper in (F - a fuckhole):
-	if M is penetrating vagina and F is asshole, decide no; [Otherwise the vaginal condom automatically fails afterwards because the asshole one failed which doesn't make much sense]
 	if F is vagina and the class of the player is priestess, decide no;
 	if M is massive and a random number between 1 and 4 > 1, decide yes;
 	if M is large and a random number between 1 and 4 > 2, decide yes;
@@ -728,22 +726,29 @@ To decide if (M - a tentacle monster) is losing wrapper in (F - a fuckhole):
 	decide no.
 
 To decide if (M - a tentacle monster) is willing to creampie (F - a fuckhole):
-	if the reaction of the player is 0 and the class of the player is not schoolgirl:
+	if the class of the player is schoolgirl, decide yes;
+	if F is vagina and the player is a pussy slut, decide yes;
+	if F is asshole and the player is a butt slut, decide yes;
+	if the reaction of the player is 0:
 		if M is massive and a random number between 1 and 6 is 1, decide no;[1 in 6]
 		if M is large and a random number between 1 and 3 is 1, decide no;[1 in 3]
-		if M is newborn and a random number between 1 and 3 > 1, decide no;[2 out of 3]
+		if M is newborn, decide no;[always]
 	decide yes.
 
 To compute vaginal climax of (M - a tentacle monster):
 	if egg laying fetish is 1 and the class of the player is not priestess:
-		say "A warm, hard lumpy feeling lets you know you're feeling the tentacle in your [vagina] filling you up with several alien eggs[if M is wrapped], carrying the tattered remnants of the condom with it as it pulls out[otherwise] before pulling out[end if].";
-		if M is wrapped, now M is unwrapped;
+		say "A warm, hard lumpy feeling lets you know the tentacle in your [vagina] filling you up with several alien eggs[if M is wrapped], carrying the tattered remnants of the condom with it as it pulls out[otherwise] before pulling out[end if].";
+		let wrapCheck be 0;
+		if M is wrapped:
+			now wrapCheck is 1;
+			now M is unwrapped;
 		if M is newborn:
 			WombFill the semen load of M small eggs;
 		otherwise if M is large:
 			WombFill the semen load of M medium eggs;
 		otherwise:
 			WombFill (the semen load of M / 2) - 1 large eggs;
+		if wrapCheck is 1, now M is wrapped;
 	otherwise if M is wrapped:
 		if M is losing wrapper in vagina:
 			say "The tentacle in your [vagina] pumps its potent load into the condom, which holds for an instant before bursting, flooding the deepest recesses of your womb with [semen].";
@@ -776,13 +781,17 @@ To say CreampieReactionFlav to (M - a tentacle monster) in (F - vagina):
 To compute anal climax of (M - a tentacle monster):
 	if egg laying fetish is 1:
 		say "A warm, hard lumpy feeling lets you know you're feeling the tentacle in your [asshole] filling you up with several alien eggs[if M is wrapped], carrying the tattered remnants of the condom with it as it pulls out[otherwise] before pulling out[end if].";
-		if M is wrapped, now M is unwrapped;
+		let wrapCheck be 0;
+		if M is wrapped:
+			now wrapCheck is 1;
+			now M is unwrapped;
 		if M is newborn:
 			AssFill the semen load of M small eggs;
 		otherwise if M is large:
 			AssFill the semen load of M medium eggs;
 		otherwise:
 			AssFill (the semen load of M / 2) - 1 large eggs;
+		if wrapCheck is 1, now M is wrapped;
 	otherwise:
 		if M is wrapped:
 			if M is losing wrapper in asshole:
@@ -811,7 +820,9 @@ To compute facial climax of (M - a tentacle monster):
 	if M is wrapped:
 		if M is losing wrapper in face:
 			say "The condom in your mouth bursts, forcing you to gulp salty [semen].";
+			now M is unwrapped;
 			StomachSemenUp the semen load of M;
+			now M is wrapped;
 		otherwise:
 			say "The condom in your mouth bulges[if M is massive] obscenely[end if] with [NameDesc of M][']s load, but manages to resist the strain. ";
 			compute condom filling of M;
@@ -831,10 +842,10 @@ To decide if (M - a tentacle monster) is losing wrapper in (F - face):
 	decide no.[newborns never break the condom]
 
 Definition: a tentacle monster (called M) is willing to bukkake:
-	if the reaction of the player is 0:
+	if the reaction of the player is 0 and the player is not a blowjob slut:
 		if M is massive and a random number between 1 and 6 is 1, decide yes;[1 in 6]
 		if M is large and a random number between 1 and 3 is 1, decide yes;[1 in 3]
-		if M is newborn and a random number between 1 and 3 > 1, decide yes;[2 out of 3]
+		if M is newborn, decide yes;[2 out of 3]
 	decide no.
 
 To say StrikingSuccessFlav of (M - a tentacle monster) on (B - a body part):

@@ -299,7 +299,7 @@ To compute perception of (M - shopkeeper):
 	now M is interested;
 	if the class of the player is living sex doll:
 		if the refractory-period of M > 0: [He could fuck you each turn, otherwise.]
-			if the player is female, compute M using sex doll 1;
+			if the player is possessing a vagina, compute M using sex doll 1;
 			otherwise compute M using sex doll 2;
 		otherwise:
 			say "[speech style of M]'I know you can't really understand me, but if you wait a while I'm sure I'll be ready to use you again soon.'[roman type][line break]";
@@ -664,17 +664,12 @@ To compute post climax effect of (M - shopkeeper) in (F - a fuckhole):
 		try examining T;
 		say "[variable custom style]Holy shit. [if the outrage of T is too humiliating]I have to keep this covered up. There's no way I can let anyone see such a nasty tattoo.[end if][roman type][line break]".
 
-To decide if (M - shopkeeper) is willing to creampie (F - asshole):
-	if the class of the player is cheerleader, decide yes;
-	if the reaction of the player is 2:
-		if a random number between 1 and 2 is 1, decide yes;
-		decide no;
-	decide yes.
-
-To decide if (M - shopkeeper) is willing to creampie (F - vagina):
+To decide if (M - shopkeeper) is willing to creampie (F - a fuckhole):
+	if F is asshole and the player is a butt slut, decide yes;
+	if F is vagina and the player is a pussy slut, decide yes;
 	if the reaction of the player is 2 or the class of the player is cheerleader:
-		if a random number between 1 and 4 is 1, decide yes;
-		decide no;
+		if a random number between 1 and the charisma of the player > 1, decide no;
+		decide yes;
 	decide yes.
 
 To say PullOutFlav of (M - shopkeeper) in (F - a fuckhole):
@@ -807,11 +802,13 @@ To compute happy reward of (M - shopkeeper):
 			if the favour of M - the aggro limit of M > a random number between 1 and the price of C:
 				now C is unowned;
 				say "[speech style of M]'That was incredible! Go on, take the [ShortDesc of C], it's yours. And [please] do come again!'[roman type][line break]";
+				check black lace transformation;
 			otherwise:
 				say "[speech style of M]'That was good, but the [ShortDesc of C] is worth too much I'm afraid. But feel free to try and earn more credit points again in the future!'[roman type][line break]";
 		otherwise if the blue-balls of M <= 0:
 			say "[speech style of M]'That was incredible! [one of]In fact, I think I'll knock some off my prices just to make sure you give me another visit.'[or]Discount is still on, just so you know!'[stopping][roman type][line break]";
-			if the blue-balls of M is 0, now the blue-balls of M is -1.
+			if the blue-balls of M is 0, now the blue-balls of M is -1;
+			check black lace transformation.
 
 This is the shopkeeper punishes diaper rule:
 	if (there is a worn stolen diaper or there is a carried stolen diaper) and the number of worn unowned diapers is 0:
@@ -1232,7 +1229,7 @@ To blowjob dominate (M - shopkeeper):[TODO: incorporate a bj here]
 		severeDignify;
 		passively stimulate penis from M;
 	otherwise:
-		say "[big he of M] shrugs out of your grip and hops to [his of M] feet, putting [his of M] [LongDickDesc of M] level with your [sexual-player-penis]. The difference is [if interracial fetish is 1]literally [end if]like night and day.[line break][speech style of M]'Sorry, but you can't dominate me with a dick like that. Don't worry, it will grow if you treat it right. In fact, I can help you if you need some visualisation.'[roman type][line break][big his of M] words sting, but [one of]you're intrigued at [his of M] proposal[or][big his of M] words haven't lost their sting, but you know from experience that [his of M] treatment works[stopping]. You watch as [he of M] slowly strokes [his of M] [DickDesc of M], which hardens slowly as [he of M] moves behind you. Feeling [him of M] thrust between your legs is pretty concerning, but your apprehensiveness disappears as [his of M] thick shaft peeks out underneath your real one. It's as huge as ever, and just imagining what it would feel like to have that [i]beast[/i] growing from your body is great for your self esteem. You thank [him of M] as [he of M] steps away.";
+		say "[big he of M] shrugs out of your grip and hops to [his of M] feet, putting [his of M] [LongDickDesc of M] level with your [sexual-player-penis]. The difference is [if interracial fetish is 1]literally [end if]like night and day.[line break][speech style of M]'Sorry, but you can't dominate me with a dick like that. Don't worry, it will grow if you treat it right. I can help you if you need some visualisation.'[roman type][line break][big his of M] words sting, but [one of]you're intrigued at [his of M] proposal[or][big his of M] words haven't lost their sting, but you know from experience that [his of M] treatment works[stopping]. You watch as [he of M] slowly strokes [his of M] [DickDesc of M], which hardens slowly as [he of M] moves behind you. Feeling [him of M] thrust between your legs is pretty concerning, but your apprehensiveness disappears as [his of M] thick shaft peeks out underneath your real one. It's as huge as ever, and just imagining what it would feel like to have that [i]beast[/i] growing from your body is great for your self esteem. You thank [him of M] as [he of M] steps away.";
 		now player-fucking is DOMINANT-NEUTRAL;
 		moderateDignify;
 		passively stimulate penis from M times 2.

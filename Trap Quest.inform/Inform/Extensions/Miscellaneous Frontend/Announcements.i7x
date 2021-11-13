@@ -9,13 +9,14 @@ To compute announcements:
 			now choice in row 50 of the Table of Settings is 0;
 		now choice in row 53 of Table of Settings is 1;
 	if tutorial is 0:
-		if halloween content is 0:
+		[if halloween content is 0:
 			clear the screen;
 			say "Happy Halloween! This is the Halloween release, but Halloween mode (where you start in the mansion as a trick-or-treater and have to explore, find and eat some candy before you can leave) is currently disabled. Would you like to enable it now? [if quick start > 0](This will cause you do perform a full [']Normal Start['] - Quick Start and Random Start are not compatible with the halloween setup.) [end if]";
 			if the player is consenting:
 				now choice in row 80 of the Table of Player Options is 3;
 				now quick start is 0;
-		otherwise if announcements seen < 2:
+		otherwise if announcements seen < 2:]
+		if announcements seen < 2:
 			clear the screen;
 			say "For your information: When you go for a 'Normal Start', lots of fetish settings can now be swapped between 'never', 'not now', 'yes this time' and 'always' as opposed to just 'enabled' and 'disabled'. The reason for this is that you are being encouraged to customise potential future 'Random Start' runs. What this means is that when an option is set to 'not now' or 'yes this time', it will be randomly set to enabled or disabled each time you choose Random Start. All other settings will remain as you have previously configured them. So if for example you always want TG Fetish enabled but never want watersports fetish enabled and you want everything else to be randomised and surprise you, that is now possible.[line break][bold type]Press any key to continue.[roman type][line break]";
 			let C be the chosen letter;
@@ -42,5 +43,15 @@ To compute announcements:
 				say "You can now have tattoos appear in the Location Window when they are both visible and outrageous enough to be currently contributing to your overall appearance rating. However this is currently disabled. Would you like to enable it now? ";
 				if the player is consenting, now choice in row 30 of the Table of Settings is 1;
 			now choice in row 53 of Table of Settings is 7;
+		otherwise if announcements seen < 8:
+			clear the screen;
+			say "Please note that a new status bar configuration was added, a sort-of medium point in between the least compact and the second least compact (the new one is now called 'NORMAL'.) In doing this, the numbers needed to be rearranged, and so now it's likely that your status bar configuration may have changed. For most of you (the people using the fully graphical GUI), it's recommended to be on the MINIMAL configuration. Would you like me to set it that way for you now? ";
+			if the player is consenting:
+				now choice in row 19 of the Table of Settings is 3;
+			otherwise:
+				say "Okay, well just remember you can change it at any time in the game settings, even in the middle of a playthrough.[line break][bold type]Press any key to continue.[roman type][line break]";
+				let C be the chosen letter;
+				increase C by 1;
+			now choice in row 53 of Table of Settings is 8;
 
 Announcements ends here.

@@ -189,7 +189,14 @@ To say AssholeModesty:
 		if P is monster:
 			say "It is currently being pounded by [FuckerDesc of P].";
 		otherwise:
-			say "It is currently [if P is players-detached-dick and the size of players-detached-dick is 0]being magically stimulated by[otherwise if the girth of P > the openness of asshole]the snug home of[otherwise]the home of[end if] [FuckerDesc of P].".
+			say "It is currently [if P is players-detached-dick and the size of players-detached-dick is 0]being magically stimulated by[otherwise if the girth of P > the openness of asshole]the snug home of[otherwise]the home of[end if] [FuckerDesc of P].";
+	if the player is a butt slut:
+		let P be a random thing penetrating asshole;
+		if P is a monster and P is male:
+			say "You have a feeling that no matter what you do, you're going to be creampied.";
+		otherwise:
+			if P is monster, say "Monsters are definitely paying extra attention to it.";
+			otherwise say "You have a feeling that monsters are paying extra attention to it.".
 
 To say RealGapeDesc:
 	say "Your asshole is [AssGape real openness of asshole][if the player is possessing a vagina] and your pussy is [PussyGape real openness of vagina]".

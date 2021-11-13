@@ -59,7 +59,8 @@ To First Time Search (X - a container):
 		if there is a worn stethoscope, now the prevsearch of X is 3;
 		otherwise now the prevsearch of X is 1;
 	if the prevsearch of X is 4 and a random number between 1 and 5 is 1, HairBlondeDown 1;
-	if the prevsearch of X is 2 and a random number between 1 and 5 is 1, HairBlondeDown 1.
+	if the prevsearch of X is 2 and a random number between 1 and 5 is 1, HairBlondeDown 1;
+	check regular humiliating situation.
 
 To Second Time Search (X - a container):
 	if there is a worn stethoscope:
@@ -100,6 +101,7 @@ To Second Time Search (X - a container):
 				say "You still can't seem to find any traps, so it's probably safe?";
 				now the prevsearch of X is 3;
 			if the prevsearch of X is 4 and a random number between 1 and 5 is 1, HairBlondeDown 1;
+			check regular humiliating situation;
 	otherwise:
 		if the prevsearch of X is 1 or the prevsearch of X is 3, say "You have already searched that. You found nothing.";
 		otherwise say "You have already searched that. You found a [ShortDesc of trigger-target of X]!".

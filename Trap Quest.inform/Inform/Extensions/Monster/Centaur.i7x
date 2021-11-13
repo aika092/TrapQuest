@@ -518,7 +518,7 @@ To decide if (M - centaur) is willing to creampie (F - vagina):
 	if the reaction of the player is 0:
 		let C be 4;
 		if the player is pheromonal, decrease C by 2;
-		if the player is a pussy slut, decrease C by 1;
+		if the player is a pussy slut, decrease C by 2;
 		if a random number between 1 and C > 1, decide no;
 	decide yes.
 
@@ -526,7 +526,7 @@ To decide if (M - centaur) is willing to creampie (F - asshole):
 	if the class of the player is worshipper or the class of the player is succubus, decide yes;
 	if the reaction of the player is 0:
 		let C be 4;
-		if the player is a butt slut, decrease C by 1;
+		if the player is a butt slut, decrease C by 2;
 		if a random number between 1 and C > 1, decide no;
 	decide yes.
 

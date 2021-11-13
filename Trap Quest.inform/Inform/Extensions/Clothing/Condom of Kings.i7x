@@ -41,9 +41,8 @@ Definition: a condom of kings is fetish appropriate:
 	decide yes.]
 
 Check wearing condom of kings:
-	if the player is female, say "Only a [if the bimbo of the player > 10]sexy [end if]man could wear this." instead;
-	if the player is not possessing a penis, say "Only [if transGender is 1]someone with a penis[otherwise]a real man[end if] could wear this." instead;
-	if the size of penis < 4, say "Your [ShortDesc of penis] is too small, it would never stay on. " instead;
+	if the player is not possessing a penis, say "Only [if transGender is 1]someone with a penis[otherwise if the bimbo of the player > 10 and the player is gendered female]a sexy man[otherwise if the player is gendered female]a man[otherwise]a real man[end if] could wear this." instead;
+	if the size of penis < 4, say "Your [ShortDesc of penis] is too small; it would never stay on. " instead;
 	repeat with C running through clothing worn by the player:
 		if C is pussy covering:
 			say "Your [printed name of C] are in the way." instead.

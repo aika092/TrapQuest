@@ -1558,7 +1558,7 @@ To say LeftoverDesc (N - 209):
 	say "The bloated, cumfilled and unconscious body of [supporter-name of supporter-elluria] is on the ground here.[line break]".
 
 To say MonsterDesc of (M - supporter-elluria):
-	say "This goat-hooved, horned, purple-skinned lady stands, or rather hovers, at 5 foot 10 inches. Her white hair, huge black wings, long powerful devil tail, black eyes, black nipples and... thick [girth of M] inch cock make it clear that this is no ordinary lady. No, she's some kind of infernal or demon, probably a succubus judging from her thin waist, wide hips, juicy butt-cheeks and sizable, impossibly perky chest. Pink runic markings cover most of her naked body, breaking her breasts and thighs as if emphasising her curves and inviting your eyes towards them. On the back of one hand the run almost looks like a pink love-heart, and on the other, a swirling line encapsulates her middle finger. This likely empowers her magical spells. You get the impression that she is used to being on top in whatever intimate relationships she finds herself in.".
+	say "This goat-hooved, horned, purple-skinned lady stands, or rather hovers, at 5 foot 10 inches. [big his of M] white hair, huge black wings, long powerful devil tail, black eyes, black nipples and... thick [girth of M] inch cock make it clear that this is no ordinary lady. No, [he of M]'s some kind of infernal or demon, probably a succubus judging from [his of M] thin waist, wide hips, juicy butt-cheeks and sizable, impossibly perky chest. Pink runic markings cover most of [his of M] naked body, breaking [his of M] breasts and thighs as if emphasising [his of M] curves and inviting your eyes towards them. On the back of one hand the run almost looks like a pink love-heart, and on the other, a swirling line encapsulates [his of M] middle finger. This likely empowers [his of M] magical spells. You get the impression that [he of M] is used to being on top in whatever intimate relationships [he of M] finds [himself of M] in.".
 
 Section - Incremental Changes
 
@@ -1749,7 +1749,7 @@ To compute facial climax of (M - supporter-elluria):
 		if EF is asshole, assfill (the girth of M) medium eggs;
 		otherwise wombfill (the girth of M) medium eggs;
 		now M is not penetrating EF;
-		say "Just as [he of M] is finally done filling you with eggs, [his of M] balls reach bursting point.";
+		say "Just as [he of M] is finally done filling you with eggs, [his of M] balls reach their bursting point.";
 	compute default facial climax for M;
 
 [Titfucks]
@@ -1758,6 +1758,8 @@ To say BreastsPenetrationFlav of (M - supporter-elluria):
 	say "[BigNameDesc of M] takes [his of M] [DickDesc of M] and moves it towards your chest. You watch in silence as [he of M] pushes forward, using the tight gap in between your boobs as a makeshift fuckhole.[line break][speech style of M]'I guess it's not a hole in the conventional sense, but it still feels wonderful.'[roman type][line break]".
 
 [Vaginal & Anal]
+
+Definition: supporter-elluria is egg-fathering: decide yes.
 
 To say CreampieFlav of (M - supporter-elluria) in (F - a fuckhole):
 	let EF be a random available fuckhole;

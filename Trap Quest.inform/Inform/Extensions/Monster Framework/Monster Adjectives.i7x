@@ -65,6 +65,10 @@ A monster can be summon-available or permanently banished. A monster is usually 
 Definition: a monster is summon appropriate:
 	if it is summon-available and it is summoningRelevant, decide yes;
 	decide no. [Can it be randomly selected to be summoned?]
+A monster has a number called time-alive. [How long has it been hanging around recently]
+Definition: a monster is willing to have time out: [Will it sometimes go off-stage for a while, to allow a different NPC to spawn]
+	if it is intelligent and it is summoningRelevant, decide yes;
+	decide no.
 
 [These adjectives describe what regions a monster is allowed to spawn in, via the spawning trap and summoning portals.]
 Definition: a monster is dungeon dwelling: decide no.

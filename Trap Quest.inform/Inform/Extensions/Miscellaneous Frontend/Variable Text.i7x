@@ -147,8 +147,8 @@ To say genitals:
 			say sissy-penis.
 
 To say real-genitals:
-	if the player is female, say vagina;
-	if the player is male:
+	if the player is possessing a vagina, say vagina;
+	if the player is possessing a penis:
 		if the real size of penis > 5:
 			say manly-penis;
 		otherwise:
@@ -156,7 +156,7 @@ To say real-genitals:
 
 To say player-crotch:
 	if the player is barbie, say "[asshole]";
-	otherwise say "[if the player is female][vagina][otherwise if the size of penis > 5][manly-penis][otherwise][sissy-penis][end if] and [asshole]".
+	otherwise say "[if the player is possessing a vagina][vagina][otherwise if the size of penis > 5][manly-penis][otherwise if the player is possessing a penis][sissy-penis][end if] and [asshole]".
 
 To say fuckholes:
 	say "[if the player is possessing a vagina][vagina] and [end if][asshole]".

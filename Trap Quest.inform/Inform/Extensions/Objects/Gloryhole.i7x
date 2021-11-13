@@ -150,7 +150,7 @@ To compute gloryhole blowjob receipt:
 		if the size of penis < 4:
 			say "Your [player-penis] slips and slides comfortably around inside your mouth. It's like a little swizzle-stick, a small candy that you can push and prod and poke around to your heart's content. It's so small it's easy to manoeuvre, even stiff as it is and at its full but minuscule erection! You certainly don't have to worry about gagging on [italic type]this[roman type] cute little thing! But then it occurs to you that this is [italic type]your[roman type] dick, and you feel yourself blush in shame.";
 			moderateHumiliate;
-		otherwise if the size of the penis < 8:
+		otherwise if the size of penis < 8:
 			say "The [player-penis] pushes against the back of your throat, and you suddenly feel the urge to see if you can deep throat it! Eagerly, you angle your head so it slides deep into your gullet. For a moment you start to gag, but since you're in total control of every movement, it's not too scary or threatening, and you find you're able to relax your throat without much effort. And then you really start to get into it.[line break][variable custom style]Yeah, go bitch, swallow that sword![roman type][line break]";
 		otherwise:
 			say "You thought it was kind of cool, having a [ShortDesc of penis], but being on the receiving end as it shoves its way into your mouth, so fat and long and broad that you have to strain to fit it in, is even better! And then some stupid, evil part of you wonders about deep-throating, and you feel your hips instinctively slam forward to impale the bitch-mouth that's timidly swallowing your sword. The doubled-up sensation - the prick in your mouth, and the mouth wrapped tightly around your prick - confuses you, but the pleasure that's coming from your [player-penis] somehow overrules the panic you feel at having your mouth so stuffed, and you feel simultaneously exultant at forcing your way into this timid opening, and horrified at the massive invading rod abusing you!";
@@ -213,7 +213,7 @@ To compute gloryhole genital modification:
 				PainUp 1;
 				PenisDown 1;
 				say "You reflexively pull back.";
-		otherwise:
+		otherwise if the player is possessing a vagina:
 			say "Somebody flicks your clitoris painfully! You pull it back out, but the [if the sex addiction of the player < 10]shocking [end if]experience has made you more submissive.";
 			PainUp 2;
 	compute gloryhole dislodging.
@@ -262,7 +262,7 @@ To compute erection orgasm of (M - gloryhole):
 		compute gloryhole dislodging;
 		stop;
 	say "You feel the girl keep her mouth wrapped around your [player-penis] to catch your [if the semen load of the player > 4]entire [otherwise if the semen load of the player < 3]tiny[end if]load, and then swallow it all in one [if the semen load of the player > 7]large gulp[otherwise if the semen load of the player < 3]small sip[otherwise]swallow[end if]. The lips remove themselves from your member and then the magical force keeping you pressed to the wall disappears, allowing you to leave. You slowly pull your [player-penis] out of the hole.";
-	if the size of the penis < 3:
+	if the size of penis < 3:
 		say "[one of]The amused look she gives you make your cheeks turn bright pink.[or]She smirks and holds up her pinkie finger, giving it a little wiggle. Once again you feel your cheeks burning.[or]She purses her lips in a [italic type]tiny[roman type] air-kiss.[stopping]";
 		SlightHumiliate;
 	BlowGet;
@@ -286,9 +286,9 @@ An all time based rule (this is the compute gloryhole rule):
 							[Selkie: I don't know a suitable punishment - ideas?
 							Aika observes, though: it should never happen anyway; unless the player gets breast-milked the game will refuse to let a penis-less male character use the gloryhole whilst standing.]
 							say "You feel something weird happen at your groin - but you're not sure what!"; [They strap on a fake baby-dick you can't remove? Tattoo? Draw a pussy?]
-						otherwise if the size of the penis is 1:
+						otherwise if the size of penis is 1:
 							now tinyDickGrabbed is 1;
-							say "For several seconds, nothing happens. Then you feel a tongue flick past the end of your [player-penis]. It freezes, then slowly slides down, tracing a line directly below it, probing at the place where your ball-sac [italic type]used[roman type] to be. You hear a woman giggle.[line break][variable custom style]'You poor sod, I really thought some bitch had shoved her vag up here for a lapping, but you're actually a guy, aren't you? Normally I'd have no chance of reaching your tiny nubbin, but the Nintendolls R&D department planned for this unlikely event. Hang on...'[roman type][line break]You feel her tongue withdraw, then something oily and circular presses forwards against your mostly-smooth mound, and suddenly a powerful humming starts and the suction increases ten-fold! You feel your tiny clitoris swell and bulge, almost painfully. It reminds you of what your erections [italic type]used[roman type] to feel like. At least, until the girl snorts in disbelief.[line break][variable custom style]'Wow, that's much bigger now - it must be the size of a cigarette butt! Looks pretty red though, babe - I hope your tender little raspberry isn't going to burst!'[roman type][line break]";
+							say "For several seconds, nothing happens. Then you feel a tongue flick past the end of your [player-penis]. It freezes, then slowly slides down, tracing a line directly below it, probing at the place where your ballsack [italic type]used[roman type] to be. You hear a woman giggle.[line break][variable custom style]'You poor sod, I really thought some bitch had shoved her vag up here for a lapping, but you're actually a guy, aren't you? Normally I'd have no chance of reaching your tiny nubbin, but the Nintendolls R&D department planned for this unlikely event. Hang on...'[roman type][line break]You feel her tongue withdraw, then something oily and circular presses forwards against your mostly-smooth mound, and suddenly a powerful humming starts and the suction increases ten-fold! You feel your tiny clitoris swell and bulge, almost painfully. It reminds you of what your erections [italic type]used[roman type] to feel like. At least, until the girl snorts in disbelief.[line break][variable custom style]'Wow, that's much bigger now - it must be the size of a cigarette butt! Looks pretty red though, babe - I hope your tender little raspberry isn't going to burst!'[roman type][line break]";
 							humiliate 400;
 						otherwise:
 							say "You feel the girl keep her mouth wrapped around your [player-penis] to catch your [if the semen load of the player > 4]entire [otherwise if the semen load of the player < 3]tiny[end if]load, and then swallow it all in one [if the semen load of the player > 7]large gulp[otherwise if the semen load of the player < 3]small sip[otherwise]swallow[end if]. The lips remove themselves from your member and then the magical force keeping you pressed to the wall disappears, allowing you to leave. You slowly pull your [player-penis] out of the hole.";

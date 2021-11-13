@@ -48,6 +48,8 @@ To decide which number is the entry-rank of (R - School15):
 School16 is an academic room. The printed name of School16 is "Assembly Hall". "A raised podium with a microphone at the front of the room makes it clear that this is an assembly hall, but the lack of other furniture makes it seem rather eerie and... clinical.". The shape of School16 is L5/0-0-0-0-1-0. The grid position of School16 is <5,13,7>. School16 is north of School05.
 School17 is an academic room. The printed name of School17 is "Food Hall". "This room has large machine taking up most of the room with [ExamineDesc of food machine]". The shape of School17 is L5/0-0-1-0-1-0. The grid position of School17 is <5,12,7>. School17 is north of School02.
 School18 is a lecture academic room. The printed name of School18 is "Emerald Classroom". "This 'classroom' has rows of desks but no chairs. The walls are adorned with motifs of spanking equipment, bondage and fetishwear.". The shape of School18 is L5/0-0-0-0-1-0. The grid position of School18 is <5,11,7>. School18 is north of School03.
+To decide which number is the entry-rank of (R - School18):
+	decide on 2.
 School19 is an academic room. The printed name of School19 is "Changing Rooms". "This room has a few hooks to hang up clothing and not much else. A door to the west says 'Swimming Pool' on it[if gloryhole is in School19]. You blink in surprise as you look at the north wall. [ExamineDesc of gloryhole]Considering the nature of this school, it doesn't feel particularly out of place[end if].". The shape of School19 is L5/0-0-0-0-1-1. The grid position of School19 is <5,10,7>. School19 is north of School04.
 To decide which number is the entry-rank of (R - School19):
 	decide on 1.
@@ -203,7 +205,7 @@ To say DungeonDrinkFlav of (M - a monster):
 	say "[speech style of M]'You won't be needing these.'[roman type][line break][BigNameDesc of M] confiscates all of your [if there is held TQedible thing]food[end if][if there is held TQedible thing and there is held bottle] and [end if][if the number of held bottle >= 2]drinks[otherwise if there is held bottle]drink[end if]!".
 
 To say DungeonLockLeaveFlav of (M - a monster):
-	say "With that [he of M] turns to leave you alone.".
+	say "With that, [he of M] turns to leave you alone.".
 
 To compute dungeon long term challenge of (M - a monster):
 	if ex-princess is sex-enslaved and ex-princess is in School34:
@@ -330,12 +332,24 @@ To execute (T - dungeon-food-test):
 dungeon-degradation-test is a dungeon-test.
 To execute (T - dungeon-degradation-test):
 	let M be dungeon-test-monster;
-	say "[speech style of M]'What are you?'[roman type][line break]It looks like [he of M] wants you to admit your inferiority. Can you bring yourself to do it? ";
-	if the player is bimbo consenting:
-		say "[variable custom style]'[if the humiliation of the player > 30000][one of]A pathetic useless worm[or]A good-for-nothing slave[or]Whatever my superiors tell me I am[in random order][otherwise if diaper quest is 1][one of]A baby slave[or]An incontinent diaper slave[or]Your loyal baby servant, [daddy of M][or]A perverted diaper addict[in random order][otherwise][one of]A cock-hungry slut[or]A shameless nympho[or]A brainless bimbo[or]A set of fuckholes[in random order][end if].'[roman type][line break]You [blush 600] as you say the words. [BigNameDesc of M] seems satisfied.";
+	say "[speech style of M]'What are you?'[roman type][line break]It looks like [he of M] wants you to admit your inferiority. What can you bring yourself to say[one of]? The more extreme your statement, the more chance you have of satisfying [him of M], but the more damaging it will be to your self-esteem.[or]?[stopping]";
+	reset multiple choice questions;
+	set numerical response 1 to "A [one of]pervert[or][if diaper quest is 1]diaper slave[otherwise]whore[end if][or]bitch[at random]";
+	set numerical response 2 to "[if diaper quest is 1]A [one of]helpless[or]dumb[or]big[at random] baby[otherwise]A [one of]shameless nympho[or]brainless bimbo[or]cock-hungry slut[at random]";
+	set numerical response 3 to "Your [one of]loyal[or]obedient[or]dedicated[cycling] [if diaper quest is 1][one of]padded[or]diaper dependent[in random order] [otherwise][end if][if watersports fetish is 1 and diaper quest is 1][one of]toilet[or]urinal[or]baby slave[in random order][otherwise if watersports fetish is 1][one of]toilet[or]urinal[or]slave[in random order][otherwise if diaper quest is 0][one of]cumdumpster[or]slave[or]servant[in random order][otherwise if diaper quest is 1]baby slave[otherwise]slave[end if]";
+	set numerical response 4 to "A [one of]disgusting[or]disgraceful[or]pathetic[at random], [one of]worthless[or]useless[or]good-for-nothing[ at random][if diaper quest is 1 and diaper messing >= 3][one of]pottypants[or]panty pooper[or]stinker[at random][otherwise if diaper quest is 1][one of]pottypants[or]bedwetter[or]peepot[at random][otherwise if the player is possessing a vagina][one of]set of fuckholes[or]cocksleeve[or]cuntwarmer[at random][otherwise][one of]fuckdoll[or]worm[or]cunt[at random][end if]";
+	set numerical response 0 to "refuse to answer";
+	compute multiple choice question;
+	let R be a random number between 1 and 6;
+	if player-numerical-response > 0:
+		say "[variable custom style]'[chosen numerical response].'[roman type][line break]You [blush 300 * player-numerical-response] as you speak.";
+		increase player-numerical-response by 3;
+		if debuginfo > 0, say "[input-style]Successful self-degradation check: Degradation rating ([player-numerical-response]) | [R].5 = (d6) [ShortDesc of M] mood[roman type][line break]";
+	if player-numerical-response > R:
+		say "[BigNameDesc of M] seems satisfied.";
 		increase dungeon-favour by 1;
 	otherwise:
-		say "[big he of M] frowns at your silence.[line break][speech style of M]'Disappointing. Clearly your stay hasn't been long enough yet.'[roman type][line break]".
+		say "[big he of M] [if player-numerical-response is 0]frowns at your silence[otherwise]tilts [his of M] head to the side, looking underwhelmed[end if].[line break][speech style of M]'Disappointing. [if player-numerical-response is 0]Clearly your stay hasn't been long enough yet[otherwise]Perhaps you need to stay in here a bit longer[end if].'[roman type][line break]".
 
 dungeon-oral-test is a dungeon-test.
 Definition: dungeon-oral-test is eligible:

@@ -548,7 +548,7 @@ To say AnalDefloweringFlav of (M - hellhound):
 
 To say VaginaPenetrationFlav of (M - hellhound):
 	say PenPrep of M in vagina;
-	say "[one of][BigFuckerDesc of M] begins to thrust blindly, sending [his of M] [DickDesc of M] prodding[or]Once again, [FuckerDesc of M]'s [DickDesc of M] begins to blindly probe[stopping] between your thighs. No! You try to close your legs, but [if mythical creature fetish is 1][his of M] shaft seems like its the perfect shape for getting into small openings[otherwise][he of M] doesn't seem disheartened at all[end if], and you have a bad feeling [one of]you know exactly how this is going to end[or]this is about to end the same way it did before[stopping]...";
+	say "[one of][BigFuckerDesc of M] begins to thrust blindly, sending [his of M] [DickDesc of M] prodding[or]Once again, [FuckerDesc of M]'s [DickDesc of M] begins to blindly probe[stopping] between your thighs. No! You try to close your legs, but [if mythical creature fetish is 1][his of M] shaft seems like it's the perfect shape for getting into small openings[otherwise][he of M] doesn't seem disheartened at all[end if], and you have a bad feeling [one of]you know exactly how this is going to end[or]this is about to end the same way it did before[stopping]...";
 	now M is unknotted;
 	if the vaginalvirgin of the player is 1:
 		say VaginalDefloweringFlav of M;

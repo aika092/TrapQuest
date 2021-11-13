@@ -27,6 +27,7 @@ Figure of Maid Outfit 9 is the file "Items/Clothes/Upper/Special/Maid/maid9.png"
 Figure of Maid Outfit 10 is the file "Items/Clothes/Upper/Special/Maid/maid10.png".
 Figure of Maid Outfit 11 is the file "Items/Clothes/Upper/Special/Maid/maid11.png".
 Figure of Maid Outfit 12 is the file "Items/Clothes/Upper/Special/Maid/maid12.png".
+Figure of Maid Outfit 13 is the file "Items/Clothes/Upper/Special/Maid/maid13.png".
 
 To decide which number is the strength-influence of (C - a maid outfit):
 	let S be 1;
@@ -314,7 +315,7 @@ Definition: cafe-maid-outfit is transformation-protected:
 	if the class of the player is maid, decide yes;
 	decide no.
 
-Part 11 - Black Latex Maid Outfit
+Part 12 - Black Latex Maid Outfit
 
 black-latex-maid-outfit is a maid outfit. black-latex-maid-outfit is fully exposing. black-latex-maid-outfit is neck covering. black-latex-maid-outfit is latex. The text-shortcut of black-latex-maid-outfit is "blmo". black-latex-maid-outfit is short. The printed name of black-latex-maid-outfit is "[clothing-title-before]black latex maid outfit[clothing-title-after]". Understand "black" as black-latex-maid-outfit.
 
@@ -342,6 +343,27 @@ Definition: black-latex-maid-outfit is transformation-protected:
 	decide no.
 Definition: black-latex-maid-outfit is class-relevant:
 	if the class of the player is latex fetish model, decide yes;
+	decide no.
+
+
+Part 13 - Milkmaid Outfit
+
+milkmaid-outfit is a maid outfit. milkmaid-outfit is very low cut. milkmaid-outfit is neck covering. milkmaid-outfit is totally-exclusive. milkmaid-outfit is only arm covering. milkmaid-outfit is nylon. milkmaid-outfit is unskirted. milkmaid-outfit is belly exposing. The printed name of milkmaid-outfit is "[clothing-title-before]milkmaid outfit[clothing-title-after]". Understand "milkmaid" as milkmaid-outfit. The text-shortcut of milkmaid-outfit is "mmo".
+
+To decide which figure-name is clothing-image of (C - milkmaid-outfit):
+	decide on figure of maid outfit 13.
+
+To say ClothingDesc of (M - milkmaid-outfit):
+	say "This cow print outfit is really just a micro bikini top with connected arms and connected neck frills, complete with a large noisy cowbell.".
+
+To decide which number is the initial outrage of (C - milkmaid-outfit):
+	decide on 6.
+Definition: milkmaid-outfit is black themed: decide yes.
+Definition: milkmaid-outfit is white themed: decide yes.
+Definition: milkmaid-outfit is cow themed: decide yes.
+Definition: milkmaid-outfit is cowbelled: decide yes.
+Definition: milkmaid-outfit is class-relevant:
+	if the class of the player is maid or the class of the player is cowgirl, decide yes;
 	decide no.
 
 Maid Outfit ends here.

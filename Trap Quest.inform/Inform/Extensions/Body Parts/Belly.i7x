@@ -14,8 +14,11 @@ belly has a number called urine volume.
 belly has a number called milk volume.
 belly has a number called air volume.
 belly has a number called small egg count.
+belly has a list of things called small-egg-origins.
 belly has a number called medium egg count.
+belly has a list of things called medium-egg-origins.
 belly has a number called large egg count.
+belly has a list of things called large-egg-origins.
 
 The player has a number called stomach-water. The stomach-water of the player is 5.
 The player has a number called stomach-semen.
@@ -456,12 +459,16 @@ To assfill (X - a number) small eggs:
 	while X > 0:
 		decrease X by 1;
 		increase the small egg count of belly by 1;
+		let M be a random egg-fathering thing penetrating asshole;
+		if M is a thing, add M to the small-egg-origins of belly;
 	overflow;
 
 To assfill (X - a number) medium eggs:
 	while X > 0:
 		decrease X by 1;
 		increase the medium egg count of belly by 1;
+		let M be a random egg-fathering thing penetrating asshole;
+		if M is a thing, add M to the medium-egg-origins of belly;
 	if carrot daggers is worn and carrot daggers is not blessed and there is a live thing penetrating asshole:
 		bless carrot daggers;
 		say "You sense that your [ShortDesc of carrot daggers] have become more powerful!";
@@ -471,6 +478,8 @@ To assfill (X - a number) large eggs:
 	while X > 0:
 		decrease X by 1;
 		increase the large egg count of belly by 1;
+		let M be a random egg-fathering thing penetrating asshole;
+		if M is a thing, add M to the large-egg-origins of belly;
 	overflow;
 
 To Assfill (X - a number) urine:
@@ -936,12 +945,17 @@ To say EggBeginsFlav:
 To lay (X - a number) small eggs:
 	if X < 10, say "[if X is 1]one[otherwise]one, then another[end if][if X > 2], then a third[end if][if X > 3], then a fourth[line break][variable custom style](woah!)[roman type][line break][end if][if X > 4], then a fifth[end if][if X > 5], then a sixth[line break][variable custom style](how many?!)[roman type][line break][end if][if X > 6], then a seventh[end if][if X > 7], then an eighth[line break][variable custom style](holy shit...)[roman type][line break][end if][if X > 8], then a ninth[end if] [MediumDesc of a random small egg] slowly emerges from your ever loosening [asshole], making a quiet 'plop' sound as [if X is 1]it[otherwise]each[end if] comes out.";
 	otherwise say "smallish [ShortDesc of a random small egg]s one by one plop from your [asshole]. By the time it's finished, [X] have popped out.";
-	if X > 2 and the latex-transformation of the player < 3:
-		say "The movement of each one forcefully stimulates the inside of your ass, which feels incredible but also makes you quite sore.";
+	if the latex-transformation of the player < 3:
+		say "The movement [if X > 1]of each one [end if]forcefully stimulates the inside of your ass.";
 		let E be a random small egg;
 		now E is penetrating asshole; [For size calculations]
-		ruin asshole times X;
+		ruin asshole times the square root of X;
 		now E is not penetrating asshole;
+	let M be nothing;
+	let EO be the number of entries in the small-egg-origins of belly;
+	if EO > 0:
+		now M is entry EO in the small-egg-origins of belly;
+		truncate the small-egg-origins of belly to EO - 1 entries;
 	let D be a random worn total protection diaper;
 	if D is diaper:
 		say "The [ShortDesc of a random small egg][if X > 1]s crack[otherwise] cracks[end if] inside your diaper, leaving a nasty slimy, soggy feeling! The pieces of shell seem to somehow dissolve away.";
@@ -963,6 +977,7 @@ To lay (X - a number) small eggs:
 			let S be a random available small egg;
 			now S is in L;
 			now S is laid;
+			now the egg-origin of S is M;
 			if a random number between 1 and 4 is 1, now the hatching of S is 1;
 		if egg laying fetish is 0:
 			appropriate-cutscene-display figure of egg laying 8;
@@ -974,12 +989,17 @@ To lay (X - a number) small eggs:
 To lay (X - a number) medium eggs:
 	if X < 10, say "[if X is 1]one[otherwise]one, then another[end if][if X > 2], then a third [variable custom style](owww!)[roman type][end if][if X > 3], then a fourth[end if][if X > 4], then a fifth[end if][if X > 5], then a sixth[line break][variable custom style](my poor [asshole] can't survive much more of this...)[roman type][line break][end if][if X > 6], then a seventh[end if][if X > 7], then an eighth[line break][variable custom style](there's no way this was all inside me...)[roman type][line break][end if][if X > 8], then a ninth[end if] full sized egg slowly emerges from your ever loosening [asshole], making a quiet 'plop' sound as [if X is 1]it[otherwise]each[end if] comes out.";
 	otherwise say "Full sized chicken-like eggs one by one force their way from your [asshole]. There are so many that you quickly lose count, it's at least ten but you really have no idea.";
-	if X > 1 and the latex-transformation of the player < 3:
-		say "The eggs are much too big to be passed comfortably, and the ordeal inevitably stimulates your ass just as much as a good rough fucking would.";
+	if the latex-transformation of the player < 3:
+		say "The [if X > 1]eggs are[otherwise]egg is[end if] much too big to be passed comfortably, and the ordeal inevitably stimulates your ass just as much as anal sex would.";
 		let E be a random medium egg;
 		now E is penetrating asshole; [For size calculations]
-		ruin asshole times X;
+		ruin asshole times the square root of X;
 		now E is not penetrating asshole;
+	let M be nothing;
+	let EO be the number of entries in the medium-egg-origins of belly;
+	if EO > 0:
+		now M is entry EO in the medium-egg-origins of belly;
+		truncate the medium-egg-origins of belly to EO - 1 entries;
 	let D be a random worn total protection diaper;
 	if D is diaper:
 		say "The egg[if X > 1]s crack[otherwise] cracks[end if] inside your diaper, leaving a nasty slimy, soggy feeling! The pieces of shell seem to somehow dissolve away.";
@@ -1001,6 +1021,7 @@ To lay (X - a number) medium eggs:
 			let S be a random available medium egg;
 			now S is in L;
 			now S is laid;
+			now the egg-origin of S is M;
 			if a random number between 1 and 4 is 1, now the hatching of S is 1;
 		if the semen volume of belly > 6:
 			appropriate-cutscene-display figure of egg laying 5;
@@ -1024,6 +1045,11 @@ To lay (X - a number) large eggs:
 	now E is penetrating asshole; [For size calculations]
 	ruin asshole times X;
 	now E is not penetrating asshole;
+	let M be nothing;
+	let EO be the number of entries in the large-egg-origins of belly;
+	if EO > 0:
+		now M is entry EO in the large-egg-origins of belly;
+		truncate the large-egg-origins of belly to EO - 1 entries;
 	let D be a random worn total protection diaper;
 	if D is diaper:
 		say "The egg[if X > 1]s crack[otherwise] cracks[end if] inside your diaper, leaving a nasty slimy, soggy feeling! The pieces of shell seem to somehow dissolve away.";
@@ -1045,6 +1071,7 @@ To lay (X - a number) large eggs:
 			let S be a random available large egg;
 			now S is in L;
 			now S is laid;
+			now the egg-origin of S is M;
 			if a random number between 1 and 4 is 1, now the hatching of S is 1.
 
 To Egg Rip (C - a clothing):

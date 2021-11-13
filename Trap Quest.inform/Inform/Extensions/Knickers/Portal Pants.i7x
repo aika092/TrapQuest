@@ -41,7 +41,6 @@ To SilentSquirt (L - a liquid-object) On (C - portal-pants) by (N - a number):
 	if N > 0:
 		if inside-out is true:
 			say "[announced L] disappears through the portal.";
-			PuddleUp L by N in Hotel44;
 			if portal gag is worn:
 				say "The [L] flows out of the [portal gag] and into your mouth!";
 				now N is (N + 1) / 2;
@@ -167,5 +166,97 @@ Definition: portal-hotpants is pants pee refusal inducing:
 			say "[first custom style]I can't bring myself to do that! The pimp [if Hotel44 is not nearby]and who knows how many other people [end if]will be watching![roman type][line break]";
 		decide yes;
 	decide no.
+
+
+giant-teddy is a knickers. giant-teddy is unique. giant-teddy is polyester. giant-teddy is crotch-assless. giant-teddy is belly covering. giant-teddy is fully covering. The printed name of giant-teddy is "[clothing-title-before]giant teddy[clothing-title-after]". The text-shortcut of giant-teddy is "gt". Understand "giant", "teddy" as giant-teddy.
+
+Definition: giant-teddy is displacable: decide no.
+
+To compute SelfExamineDesc of (K - giant-teddy):
+	say "A giant teddy bear with a hole at the back for your [player-penis] is pressed against the front of your body. ";
+
+Figure of giant teddy is the file "Items/Clothes/Lower/Underwear/Special/teddy1.jpg".
+Figure of giant teddy diapered is the file "Items/Clothes/Lower/Underwear/Special/teddy2.jpg".
+Figure of giant teddy cutscene is the file "Items/Clothes/Lower/Underwear/Special/teddy3.jpg".
+Figure of giant teddy diapered cutscene is the file "Items/Clothes/Lower/Underwear/Special/teddy4.jpg".
+
+To decide which figure-name is clothing-image of (C - giant-teddy):
+	if watersports fetish is 1, decide on figure of giant teddy;
+	decide on figure of giant teddy diapered.
+
+To say ClothingDesc of (K - giant-teddy):
+	say "This giant teddy bear has an in-built fleshlight where its bottom should be, and a pacifier with a large bulbous teat stuck to the back of its head. It's so heavy that you can only hold it up properly by keeping your arms arms under its armpits, holding the large teat in your mouth, and keeping your [player-penis] in the hole at the bottom. If any of it comes out, not only will you be exposed to the world, but you won't be able to get it back in place.";
+	if K is worn:
+		if watersports fetish is 0 or diaper quest is 0, say "The battery powered fleshlight is fervently masturbating you. ";
+		if watersports fetish is 1, say "The bear also has a hidden internal mechanism that pumps anything that comes out of your [player-penis] into your mouth...";
+		otherwise say "The bear also has a hidden internal mechanism that slowly forcefeeds you warm [milk] through your mouth, and anything that comes out of your player-penis will soak into the bear's diaper. But it's already very full, so will probably leak if you wet yourself...";
+
+To say selfexamineuniquetitle of (K - giant-teddy):
+	say "giant teddy bear".
+
+To say ShortDesc of (K - giant-teddy):
+	say "teddy bear".
+
+To decide which number is the initial cringe of (C - giant-teddy):
+	decide on 5.
+
+To decide which number is the wornArmsRequired of (C - giant-teddy):
+	decide on 2.
+
+To compute school periodic effect of (C - giant-teddy):
+	if the player is prone:
+		say "[bold type]Now that you are on your knees, [NameDesc of C] falls down to the ground.[roman type][line break]";
+		dislodge C;
+		now C is in the location of the player;
+	otherwise:
+		if watersports fetish is 1, cutshow figure of giant teddy cutscene;
+		otherwise cutshow figure of giant teddy diapered cutscene;
+		if watersports fetish is 0 or diaper quest is 0:
+			say "[BigNameDesc of C] masturbates your [player-penis].";
+			stimulate penis from C;
+		if watersports fetish is 0 and diaper quest is 1:
+			say "[BigNameDesc of C] squirts a bit of [milk] into your mouth.";
+			FaceFill milk by 1.
+
+To SilentSquirt (L - a liquid-object) On (C - giant-teddy) by (N - a number):
+	if N > 0:
+		if inside-out is true:
+			if watersports fetish is 1:
+				say "[announced L] is pumped up through the inside of the teddy, and into your mouth!";
+				now N is (N + 1) / 2;
+				if L is semen or (L is murkwater and diaper quest is 0):
+					say "[variable custom style][if the semen taste addiction of the player < 7][one of]Yuck, yuck, yuck![or]Gross...[in random order][otherwise if the semen taste addiction of the player < 14][one of]Salty...[or]Whoops, not again...[then at random][otherwise][one of]Good sissies should always swallow their own cum...[or]Delicious![or]Yum![stopping][end if][roman type][line break]";
+				otherwise if L is urine:
+					say "[variable custom style][if the urine taste addiction of the player < 7][one of]Disgusting![or]How awful![or]Yuck yuck yuck![or]Gross!!![in random order][otherwise if the urine taste addiction of the player < 14][one of]Eurgh...[or]I'm like Bear Grylls... haha.[or]It's less bad than somebody else's piss, I guess.[in random order][otherwise][one of]Why does it taste so good?![or]I can't get enough of the taste of my own pee![or]Yummy![stopping][end if][roman type][line break]";
+				FaceFill L by N;
+			otherwise:
+				say "[announced L] flows through into the teddy's diaper.";
+				if N > 3:
+					say "There's too much! It leaks out the sides of the teddy's legholes.";
+					PuddleUp L by N;
+					repeat with M running through reactive bystanders:
+						compute squirting perception of M;
+				otherwise:
+					say "Thankfully, none leaks out the side... this time.";
+		otherwise:
+			if thighs is unsoaked, say "[announced L] flows down to your thighs.";
+			ContinuedDribble L on Thighs by N.
+
+Check taking giant-teddy:
+	say "It's too heavy!" instead.
+Check wearing giant-teddy:
+	say "It's too heavy!" instead.
+Report taking off giant-teddy:
+	say "It's too heavy! It falls to the ground.";
+	now giant-teddy is in the location of the player.
+
+This is the giant teddy prevents hand use rule:
+	if giant-teddy is worn:
+		if manual hands attempt is 1, say "[variable custom style]I can't do that whilst holding onto the teddy bear![roman type][line break]";
+		rule fails.
+The giant teddy prevents hand use rule is listed in the hands restriction rules.
+
+To decide which number is the stimulation of (D - giant-teddy) on (F - a body part):
+	decide on 2.
 
 Portal Pants ends here.

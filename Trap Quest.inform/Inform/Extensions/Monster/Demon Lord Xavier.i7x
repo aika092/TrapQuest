@@ -3,8 +3,8 @@ Demon Lord Xavier by Monster begins here.
 demon lord is a monster. demon lord is intelligent. demon lord is male. The poison-status of demon lord is -1.
 
 Definition: demon lord is father material: decide yes.
-
 Definition: demon lord is raunchy: decide yes.
+Definition: demon lord is willing to have time out: decide no.
 
 Understand "xavier" as demon lord.
 
@@ -119,6 +119,7 @@ To unseal xavier from (M - a monster):
 	otherwise:
 		say "You feel a burst of heat, and something [b]very powerful[/b] shakes the Earth.";
 	if bride-consort is M, now bride-consort is demon lord;
+	if M is carrying mystical amulet, now demon lord is carrying mystical amulet;
 	finally destroy M;
 	now M is permanently banished.
 
@@ -421,13 +422,12 @@ To say CondomPieFlav of (M - demon lord) in (F - a fuckhole):
 	say "[BigNameDesc of M] [one of]roars with pleasure, stretching the condom like a water balloon with the sheer force of [his of M] ejaculation[or]groans in pleasure, ejaculating with such force that the condom immediately begins stretching like a water balloon[or]balloons the condom with [his of M] load, roaring with pleasure as the insane force of [his of M] ejaculation causes it to stretch[at random]. The latex inches up [his of M] length as it struggles to contain [his of M] huge load, allowing you to feel every throb of [his of M] [DickDesc of M] that much more intimately than the last as the condom comes closer and closer to coming off completely. By some stroke of [if the semen addiction of the player > 6]bad [end if]luck, [one of][his of M] orgasm dies down just as the condom is about to overflow, and [he of M] begins to pull out[or][he of M] starts to pull out just as it's about to overflow[or]it doesn't overflow, and [his of M] [semen] stays safely behind a layer of latex as [he of M] pulls out[at random]. [big he of M] seems to lose interest.".
 
 To say CondomFailFlav of (M - demon lord) in (O - a fuckhole):
-	say "[BigNameDesc of M] [one of]roars with pleasure, pushing the condom further and further off [his of M] [DickDesc of M] with the sheer force of [his of M] ejaculation[or]groans in pleasure, ejaculating with such force that condom is slowly dragged further and further off [his of M] [DickDesc of M][or]balloons the condom with [his of M] load, roaring with pleasure as the insane force of [his of M] ejaculation pushes it further and further off [his of M] [DickDesc of M][at random]. You feel every throb that much more intimately than the last, [one of]knowing it's far too late to escape[or]held too tightly to escape[or]completely pinned under [his of M] weight[at random] as a final, powerful spurt forces the condom off completely! [big he of M] laughs powerfully as [one of]your unprotected [variable O] floods with [his of M] [semen], which leaks[or][his of M] load explodes into your [variable O], flooding it with fresh [semen], which leaks[or][his of M] [semen] coats the inside of your [variable O], leaking[at random] out slowly as [he of M] pulls out.".
+	say "[BigNameDesc of M] [one of]roars with pleasure, stretching the condom like a water balloon with the sheer force of [his of M] ejaculation[or]groans in pleasure, ejaculating with such force that the condom immediately begins stretching like a water balloon[or]balloons the condom with [his of M] load, roaring with pleasure as the insane force of [his of M] ejaculation causes it to stretch[at random]. The latex inches up [his of M] length as it struggles to contain [his of M] huge load, allowing you to feel every throb of [his of M] [DickDesc of M] that much more intimately than the last as the latex comes closer and closer to coming off completely. You [if the semen addiction of the player > 8]coo[otherwise]whimper[end if], [one of]knowing it's far too late to escape[or]held far too tightly to escape[or]completely pinned under [his of M] weight[at random] as a final, powerful spurt forces the condom off completely! [big he of M] laughs powerfully as the impossibly strecthed prophylactic floods your [variable O] in reverse, coating every inch of your inner walls and sending the rest cascading down the sides of your legs.".
 
 To decide if (M - demon lord) is willing to creampie (F - a fuckhole):
 	let W be a random number between the weight of the player and 0;
 	increase W by the difficulty of M;
-	if the reaction of the player is 0:
-		if the class of the player is priestess or a random number between 1 and 2 is 1, decrease W by 5;
+	if the reaction of the player is 0 or the class of the player is priestess, decrease W by 5;
 	if W > 10, decide yes;
 	if the number of live things penetrating a body part > 0, decide yes;[can't go flying if there are other people helping to hold you in place]
 	decide no.
@@ -481,7 +481,7 @@ To compute (M - demon lord) hurting (B - face):
 	otherwise BodyRuin 2.
 
 To say MouthPenetrationFlav of (M - demon lord):
-	say "[BigNameDesc of M] grabs you by your neck and calmly forces your mouth onto [his of M] [DickDesc of M]. Your mouth is forced to stretch almost impossibly wide as [he of M] forces [his of M] massive demon tool down into your throat.[line break][speech style of M]'[if the player is diaper focused][one of]I HAVE DECIDED TO ALLOW YOU TO REMAIN IN YOUR PADDING, INSTEAD YOUR FACE WILL BE USED AS MY FUCKHOLE.'[or]THAT'S IT, TAKE IT ALL, YOU DIAPERED WEAKLING!'[stopping][otherwise]Yes, that's it, take it all, you whore!'[end if][roman type][line break]".
+	say "[BigNameDesc of M] grabs you by your neck and calmly forces your mouth onto [his of M] [DickDesc of M]. Your mouth is forced to stretch almost impossibly wide as [he of M] forces [his of M] massive demon tool down into your throat.[line break][speech style of M]'[if the player is diaper focused][one of]I HAVE DECIDED TO ALLOW YOU TO REMAIN IN YOUR PADDING, INSTEAD YOUR FACE WILL BE USED AS MY FUCKHOLE.'[or]THAT'S IT, TAKE IT ALL, YOU DIAPERED WEAKLING!'[stopping][otherwise]YES, YES! TAKE IT ALL YOU MORTAL WHORE!'[end if][roman type][line break]".
 
 To say NearingClimaxOral of (M - demon lord):
 	say "[speech style of M]'GRAAAAAH!'[roman type][line break][BigNameDesc of M] is about to blow!".
@@ -759,8 +759,10 @@ Check masturbating when royal scepter is worn cursed clothing:
 	if the quest of royal scepter is cursed-orgasm-quest:
 		allocate 6 seconds;
 		say "You can't stop yourself from bringing [NameDesc of royal scepter] to your [genitals]! The powerful magic buzzing sends you straight into a powerful climax.";
-		if the player is possessing a vagina, trigger shameful orgasm of vagina;
-		otherwise trigger shameful orgasm of penis;
+		if the player is possessing a vagina:
+			trigger shameful orgasm of vagina;
+		otherwise if the player is possessing a penis:
+			trigger shameful orgasm of penis;
 		progress quest of cursed-orgasm-quest.
 
 final-battle-stunned is a final-battle-object.
@@ -775,12 +777,12 @@ Definition: final-battle-imp-piss is appropriate:
 	if watersports fetish is 1, decide yes;
 	decide no.
 To commence (F - final-battle-imp-piss):
-	say "[BigNameDesc of demon lord] raises a hand to the sky, extends a finger, and makes a circular motion. A portal opens in the air above [NameDesc of ex-princess][']s head! Suddenly, four magical golden chains shoot out of the portal and clank into place just above [NameDesc of ex-princess][']s golden hair, connected to... a small glass box?! [NameDesc of ex-princess][']s head is now encased in a transparent box, open at the top. The box is fixed in place by the chains and so [he of ex-princess] can't move from the spot.[line break][speech style of demon lord]'Oooh, lookie here!'[roman type][line break]An imp is peeking its head through the portal, and is soon joined by several more.[line break][speech style of demon lord]'A human toilet, just for us!'[roman type][line break]Another snickers, as they all whip out their [manly-penis]s.[line break][speech style of ex-princess]'Don't you dare... glaaargh!'[roman type][line break][BigNameDesc of ex-princess][']s words are turned into a panicked gargle as several streams of hot infernal [urine] spray onto [his of ex-princess] hair and face. The box begins to fill up, from the bottom.[line break][speech style of demon lord]'I WONDER, PRINCESS, CAN I KEEP THIS PORTAL STABLE FOR LONG ENOUGH THAT YOU DROWN IN IMP PISS? ONLY ONE WAY TO FIND OUT! HAHAHA!'[roman type][line break][BigNameDesc of demon lord][']s mocking call makes the situation clear enough. At some point [his of demon lord] portal will disappear and then [NameDesc of ex-princess] will be saved. But if [he of demon lord] can hold it open for long enough, then [NameDesc of ex-princess] will drown in the [urine]. Perhaps [he of ex-princess] can buy [himself of ex-princess] some time if [he of ex-princess] drinks some.[paragraph break]Or if you drink some...";
+	say "[BigNameDesc of demon lord] raises a hand to the sky, extends a finger, and makes a circular motion. A portal opens in the air above [NameDesc of ex-princess][']s head! Suddenly, four magical golden chains shoot out of the portal and clank into place just above [NameDesc of ex-princess][']s golden hair, connected to... a small glass box?! [NameDesc of ex-princess][']s head is now encased in a transparent box, open at the top. The box is fixed in place by the chains and so [he of ex-princess] can't move from the spot.[line break][speech style of demon lord]'Oooh, lookie here!'[roman type][line break]An imp is peeking [his of a random imp] head through the portal, and is soon joined by several more.[line break][speech style of demon lord]'A human toilet, just for us!'[roman type][line break]Another snickers, as they all whip out their [manly-penis]s.[line break][speech style of ex-princess]'Don't you dare... glaaargh!'[roman type][line break][BigNameDesc of ex-princess][']s words are turned into a panicked gargle as several streams of hot infernal [urine] spray onto [his of ex-princess] hair and face. The box begins to fill up, from the bottom.[line break][speech style of demon lord]'I WONDER, PRINCESS, CAN I KEEP THIS PORTAL STABLE FOR LONG ENOUGH THAT YOU DROWN IN IMP PISS? ONLY ONE WAY TO FIND OUT! HAHAHA!'[roman type][line break][BigNameDesc of demon lord][']s mocking call makes the situation clear enough. At some point [his of demon lord] portal will disappear and then [NameDesc of ex-princess] will be saved. But if [he of demon lord] can hold it open for long enough, then [NameDesc of ex-princess] will drown in the [urine]. Perhaps [he of ex-princess] can buy [himself of ex-princess] some time if [he of ex-princess] drinks some.[paragraph break]Or if you drink some...";
 	execute F.
 To execute (F - final-battle-imp-piss):
 	say "[BigNameDesc of demon lord] is busy focusing on maintaining [his of demon lord] portal. Meanwhile, [urine] rains down from the crowd of imps above, filling [NameDesc of ex-princess][']s box.[line break]The box is currently full up to [his of ex-princess] [if the uses of F is 1]chin[otherwise if the uses of F is 2]mouth[otherwise if the uses of F is 3]nose[otherwise if the uses of F is 4]eyes[otherwise if the uses of F is 5]forehead[otherwise]hair[end if][if the uses of F >= 3] - [bold type][he of ex-princess] can't breathe![roman type][line break][otherwise]. [end if][if the uses of F > 1][BigNameDesc of ex-princess] [one of]tries to swallow as much as [he of ex-princess] can, but it's still coming in faster than [he of ex-princess] can drink it![or]keeps trying to drink as much as [he of ex-princess] can.[stopping][otherwise][line break][end if]";
 	if the uses of F is 1:
-		say "[speech style of ex-princess]'Oh god... [NameBimbo] is there any way you could find it within yourself to help me do this?'[roman type][line break][BigNameDesc of ex-princess] manifests a long bendy straw which leads from the pissbox down to you. This way, you can help suck the piss out of the box and keep the level low.";
+		say "[speech style of ex-princess]'Oh god... [NameBimbo], is there any way you could find it within yourself to help me do this?'[roman type][line break][BigNameDesc of ex-princess] manifests a long bendy straw which leads from the pissbox down to you. This way, you can help suck the piss out of the box and keep the level low.";
 		now player-numerical-response is 0;
 	otherwise:
 		if the player is immobile or the player is flying or another-turn is 1:
@@ -795,14 +797,14 @@ To execute (F - final-battle-imp-piss):
 			say "You take the straw and suck up a big mouthful of [urine]. Pulling back, you spit it out onto the floor.";
 			UrinePuddleUp 4;
 			if a random number between 1 and 2 is 1, decrease the uses of F by 1;
-			if a random number between 1 and 20 > the raw urine taste addiction of the player, SlowUrineTasteAddictUp 1;
+			if a random number between 1 and 20 > the raw urine taste addiction of the player, compute slightly addictive tasting of urine;
 			now another-turn is 1;
 		otherwise if player-numerical-response is 2:
 			say "You take the straw and suck up two big mouthfuls of [urine], gulping down each as soon as your mouth is full.";
 			StomachUrineUp 6;
 			decrease the uses of F by 1;
 			if the uses of F > a random number between 1 and 5, decrease the uses of F by 1;
-			if a random number between 1 and 20 > the raw urine taste addiction of the player, UrineTasteAddictUp 1;
+			if a random number between 1 and 20 > the raw urine taste addiction of the player, compute addictive tasting of urine;
 			now another-turn is 1;
 	if the uses of F < 3:
 		say "[if player-numerical-response > 0]Thanks to your help, [NameDesc of ex-princess][otherwise][BigNameDesc of ex-princess][end if] can breathe normally this turn!";
@@ -1211,7 +1213,9 @@ To say DamageReactWeak of (M - demon lord):
 Definition: demon lord is automatically banishable: decide yes.
 
 To say BanishFleeFlav of (M - demon lord):
-	say "[first custom style]'NOOOO! HOW CAN THIS BE?'[roman type][line break]A tiny red gem appears below [NameDesc of M][']s feet, and [his of M] body is slowly but surely sucked into the stone, until nothing remains. You have won!".
+	if M is carrying mystical amulet, say "[first custom style]'NOOOO! HOW CAN THIS BEEEEeeeee....'[roman type][line break][BigNameDesc of M] screams as [his of M] entire body is slowly but surely stucked into the amulet around [his of M] neck! The amulet hangs in the air for a split second before it explodes, nothing remaining of the demon lord except the giant red stone that clatters to your feet. You have won!";
+	otherwise say "[first custom style]'NOOOO! HOW CAN THIS BEEEEeeeee....'[roman type][line break][BigNameDesc of M] screams as a giant red gem appears in [his of M] chest, slowly but surely sucking in [his of M] body until nothing remains. The gem hangs in the air for a second before clattering harmlessly to your feet. You have won!";
+	if M is carrying mystical amulet, only destroy mystical amulet.
 
 To compute unique banishment of (M - demon lord):
 	if gladiatorcurse is 1, uncurse gladiators;

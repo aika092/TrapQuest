@@ -64,8 +64,14 @@ To decide which number is food-period:
 	decide on stomach-period.
 	[decide on stomach-period * (2 - diaper quest).] [Food is digested faster in diaper quest]
 
+Definition: yourself is digesting: [sometimes we don't want digestion to happen]
+	if the player is in a predicament room:
+		if the player is in Predicament20 or the player is in Predicament19 or the player is in Toilet01 or the player is in Toilet02, decide no; [The Safe Rooms of the predicament world should not let you stall out your bodily functions]
+		if current-predicament is team-blowjob-race-predicament and the player is in Predicament01, decide no; [Time passes as normal in this predicament and takes a while - too long for us to use normal stomach timings]
+	decide yes.
+
 An all time based rule (this is the compute stomach rule):
-	if the player is not in Predicament20 and the player is not in Predicament19 and the player is not in Toilet01 and the player is not in Toilet02: [The Safe Rooms of the predicament world should not let you stall out your bodily functions]
+	if the player is digesting:
 		compute corset strain;
 		if playerRegion is not school:
 			repeat with L running through liquid-objects:

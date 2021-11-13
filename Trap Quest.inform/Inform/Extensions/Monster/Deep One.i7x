@@ -177,7 +177,7 @@ To decide if (M - deep one) is willing to creampie (F - vagina):
 			if the reaction of the player is not 1, decide no;[he may be ugly, but he's a good listener]
 		decide yes;
 	otherwise:
-		if the player is pheromonal, decide yes;
+		if the player is pheromonal or the player is a pussy slut, decide yes;
 		if the class of the player is cultist:
 			if the reaction of the player is not 1, decide no;
 		if a random number between 1 and 4 is 1, decide yes;
@@ -185,7 +185,7 @@ To decide if (M - deep one) is willing to creampie (F - vagina):
 
 To decide if (M - deep one) is willing to creampie (F - asshole):
 	if the class of the player is cultist:
-		if the reaction of the player is not 1, decide no;
+		if the reaction of the player is not 1 and the player is not a butt slut, decide no;
 	decide yes.
 
 To say sexDumbFlav of (M - deep one) in (F - a fuckhole):

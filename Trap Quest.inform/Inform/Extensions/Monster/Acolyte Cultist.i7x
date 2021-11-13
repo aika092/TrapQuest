@@ -554,11 +554,19 @@ Definition: an acolyte is automatically banishable:
 	if it is unconcerned or it is guarding, decide yes;
 	decide no.
 
+To say BanishFleeFlav of (M - an acolyte):
+	if M is intelligent:
+		say "[speech style of M]'[Azathot] will show me no mercy for this. You have doomed me! DOOMED!'[roman type][line break]";
+	otherwise:
+		say "[BigNameDesc of M] is broken from [his of M] trance.[line break][speech style of M]'Huh? [one of]Where am I[or]What am I doing[or]Who am I[stopping]? Eeeeek!'[roman type][line break]";
+	say "[BigNameDesc of M] flees towards the mansion entrance, likely never to be seen again.".
+
 To compute unique banishment of (M - an acolyte):
-	let B be a random off-stage space mead;
-	if B is a thing:
-		say "[BigNameDesc of M] left behind a [ShortDesc of B]!";
-		compute autotaking B.
+	if M is intelligent:
+		let B be a random off-stage space mead;
+		if B is a thing:
+			say "[BigNameDesc of M] left behind a [ShortDesc of B]!";
+			compute autotaking B.
 
 The acolyte priority attack rules is a rulebook. The priority attack rules of an acolyte is usually the acolyte priority attack rules.
 
@@ -811,7 +819,7 @@ To compute failed dominance punishment of (M - an acolyte):
 	let H be herald;
 	say "Your vision fades, and you suddenly find yourself in a bubblegum pink void that extends on in every direction. The sounds and sensations of sex echo all around you as you struggle to make sense of where you are, and you find yourself face to face with a pair of red, almond-shaped eyes as a [if the times-met of H > 1]familiar[otherwise]unfamiliar[end if] voice fills every fibre of your being.";
 	if the player is getting very unlucky:[all of these outcomes are kind of severe]
-		if the player is able to get pregnant and the player is female and the player is souled:[your "soul" is creampied]
+		if the player is able to get pregnant and the player is possessing a vagina and the player is souled:[your "soul" is creampied]
 			say "[speech style of H]'[one of]OK, so like, [Azathot] is about to bust a nut inside your soul.'[or]Um, [Azathot] says your soul is like, hurting for a squirting.'[or][Azathot] is totally going to make your soul ovulate or something. '[at random][line break]You look down (or was it up) to see a [if interracial fetish is 1]big black tentacle[otherwise]huge white tentacle[end if] wrapping around your thigh, rubbing its bulbous, shiny head between your lips before sliding its way into your [if interracial fetish is 1]white [vagina]. [otherwise][vagina]. [end if]Your mind goes blank as you are overtaken by the essence of the Great Ones, and you finally realise your true purpose is-[line break]You suddenly find yourself laying face up [if the location of the player is Woods23]on the altar[otherwise]on the ground[end if], the feeling of [semen] very fresh on your mind.";
 			SemenAddictUp 1;
 			let G be ghostly tentacle;
@@ -841,7 +849,7 @@ To compute failed dominance punishment of (M - an acolyte):
 
 [To compute failed dominance punishment of (M - an acolyte):
 	let R be a random number between 1 and 2;
-	if the player is female and the pregnancy of the player is 0:
+	if the player is possessing a vagina and the pregnancy of the player is 0:
 		now another-turn-flavour is "[BigNameDesc of M] chants under [his of M] breath, colour creeping back into [his of M] cheeks as [his of M] creampied [vagina] looms over you.";
 		now another-turn is 1;
 	otherwise if the player is getting unlucky:[She summons a ghost]
@@ -920,6 +928,7 @@ To penetration dominate (M - an acolyte):
 		severeHumiliate;
 		now player-fucking is DOMINANT-SHAMEFUL;
 	FuckGet;
+	orgasm;
 	now the body soreness of the player is 10;
 	say "The tentacles['] grip slowly fades, and you quickly return to your feet, trying to shake off what just happened.";
 	if doomed > 0 and doomed < 5 and doom counter > 0, increase doom counter by 50 + the size of penis;

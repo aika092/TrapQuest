@@ -107,14 +107,6 @@ To decide which number is min scrotum size:
 	if min scrotum size points is 0, decide on diaper quest;
 	decide on min scrotum size points + diaper quest + micro-choice.
 
-[!<DecideWhichNumberIsCumLoad>+
-
-REQUIRES COMMENTING
-
-+!]
-To decide which number is cumLoad:
-	decide on the size of scrotum.
-
 [!<SayShortDescOfScrotum>+
 
 REQUIRES COMMENTING

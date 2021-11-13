@@ -612,7 +612,7 @@ To compute (M - minotaur) removing (X - a thing):
 To decide if (M - minotaur) is willing to creampie (F - a vagina):
 	if the player is not possessing a vagina, decide no;
 	if pregnancy fetish is 0 or the pregnancy of the player is not 0, decide no;
-	if the player is pheromonal, decide yes;
+	if the player is pheromonal or the player is a pussy slut, decide yes;
 	if the thickness of hips > 6 - a random number between 1 and the pregnancy rate of the player, decide yes;
 	decide no.
 
@@ -640,7 +640,7 @@ To say VaginaPenetrationFlav of (M - minotaur):
 	say "[BigNameDesc of M] stares at your body and sniffs your [vagina], assessing you. [big he of M] seems to make up [his of M] mind that you are a suitable breeding partner and poises [his of M] [LongDickDesc of M] with the tip at the entrance to your [vagina]. [one of]With very little effort, [he of M] forces [his of M][or]With no effort at all, [he of M] shoves [his of M][or]Without the slightest hint of difficulty [he of M] rams [his of M][or]Without pausing, [he of M] forces [his of M][at random] giant [DickDesc of M] in, and starts fucking you vigorously. [if the sex-length of M is 0]Within seconds, [he of M] has started cumming inside you![otherwise if the class of the player is cowgirl and mythical creature fetish is 1]You find yourself mooing submissively as your [vagina] is instantly stretched beyond belief by [his of M] huge [LongDickDesc of M].[otherwise if pregnancy fetish is 1 and mythical creature fetish is 1]Your [vagina] is instantly - and painfully - stretched beyond belief.[one of][line break][variable custom style]Could I get pregnant from this bull?![roman type][line break][or][stopping][otherwise]Your [vagina] is instantly - and painfully - stretched beyond belief.[end if]".
 
 To compute default caged domination of (M - minotaur):
-	say EnslavedDominationFlav of M;
+	say CagedDominationFlav of M;
 	if the raw delicateness of the player > the EnslavedDominationThreshold of M:
 		say "You feel vaguely better about yourself, but mostly just a bit ambivalent.";
 	otherwise:

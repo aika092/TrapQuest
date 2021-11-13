@@ -1,9 +1,11 @@
 Eggs by Collectibles begins here.
 
 An egg is a kind of collectible. An egg can be laid. An egg is usually not laid.
+An egg has an object called the egg-origin. [Where did the egg come from?]
 An egg can be shuddering. [Has the player seen it shudder?]
 
 Definition: an egg is insertable: decide yes.
+Definition: a thing is egg-fathering: decide no.
 
 To construct normal icons for (T - an egg):
 	now IconTarget is T;
@@ -40,37 +42,47 @@ This is the egg stuffing rule:
 		let T be a text;
 		let T be the player's command;
 		let N be the numerical value of T;
+		let F be asshole;
+		if stat-to-set matches the text "vagina":
+			now F is vagina;
+			now BL is 999;
+		let FF be F;
+		if FF is asshole, now FF is belly;
 		if N > 0 and V * N <= BL:
 			let N2 be N;
 			if S is small egg:
 				repeat with E running through carried small eggs:
 					if N2 > 0:
+						if the egg-origin of E is a thing, add the egg-origin of E to the small-egg-origins of FF;
 						destroy E;
 						decrease N2 by 1;
 				repeat with E running through small eggs in the location of the player:
 					if N2 > 0:
+						if the egg-origin of E is a thing, add the egg-origin of E to the small-egg-origins of FF;
 						destroy E;
 						decrease N2 by 1;
 			if S is medium egg:
 				repeat with E running through carried medium eggs:
 					if N2 > 0:
+						if the egg-origin of E is a thing, add the egg-origin of E to the medium-egg-origins of FF;
 						destroy E;
 						decrease N2 by 1;
 				repeat with E running through medium eggs in the location of the player:
 					if N2 > 0:
+						if the egg-origin of E is a thing, add the egg-origin of E to the medium-egg-origins of FF;
 						destroy E;
 						decrease N2 by 1;
 			if S is large egg:
 				repeat with E running through carried large eggs:
 					if N2 > 0:
+						if the egg-origin of E is a thing, add the egg-origin of E to the large-egg-origins of FF;
 						destroy E;
 						decrease N2 by 1;
 				repeat with E running through large eggs in the location of the player:
 					if N2 > 0:
+						if the egg-origin of E is a thing, add the egg-origin of E to the large-egg-origins of FF;
 						destroy E;
 						decrease N2 by 1;
-			let F be asshole;
-			if stat-to-set matches the text "vagina", now F is vagina;
 			allocate 6 seconds;
 			if F is vagina, say "Thanks to your cervix already being painfully stretched by its contents, you manage to push [if N > 1][N] more [ShortDesc of S]s[otherwise]another [ShortDesc of S][end if] through it and into your womb.";
 			compute insertionRuin of S into F;
@@ -132,6 +144,7 @@ To compute flushing of (E - a thing):
 
 To uniquely destroy (E - an egg):
 	now the hatching of E is 0;
+	now the egg-origin of E is nothing;
 	now E is not shuddering;
 	now E is not laid.
 
@@ -143,7 +156,7 @@ A later time based rule (this is the hatchtime rule):
 To compute hatchtime of (E - an egg):
 	increase the hatching of E by a random number between 1 and 2;
 	if E is held or E is in the location of the player:
-		if the remainder after dividing the hatching of E by 30 is 0:
+		if the remainder after dividing the hatching of E by 30 is 0 and the egg-origin of E is a thing:
 			now E is shuddering;
 			say "[BigNameDesc of E] shudders[one of]. Is there something alive inside?![or].[stopping]";
 			if E is carried, force inventory-focus redraw;
@@ -151,13 +164,41 @@ To compute hatchtime of (E - an egg):
 		compute hatch of E.
 
 To compute hatch of (E - an egg):
-	let L be a random off-stage larva;
-	if L is larva:
-		if E is held or E is in the location of the player, say "[BigNameDesc of E] cracks open, and a maggot-like tentacle larva worms its way out.[one of][line break][variable custom style]Gross![roman type][line break][or][stopping]";
-		now L is in the location of E;
-		larvaShortcutAssign L;
+	if the egg-origin of E is tentacle monster or the egg-origin of E is lake monster or the egg-origin of E is facehugger or the egg-origin of E is hugger-panties or the egg-origin of E is hugger-gag:
+		compute tentacle hatch of E;
+	otherwise if the egg-origin of E is carrot daggers or the egg-origin of E is a bunny ears:
+		compute bunny hatch of E;
+	otherwise if the egg-origin of E is the throne:
+		compute throne hatch of E;
 	otherwise:
-		if E is held or E is in the location of the player, say "[BigNameDesc of E] fizzles into nothingness.";
+		compute default hatch of E.
+
+To compute tentacle hatch of (E - an egg):
+	compute default hatch of E.
+
+To compute throne hatch of (E - an egg): [TODO: do something interesting here. NB this is both eggs from the throne and also eggs from the magic trophy]
+	compute default hatch of E.
+
+To compute bunny hatch of (E - an egg):
+	if E is held or E is in the location of the player, say "[BigNameDesc of E] cracks open, and [one of]the tiniest, cutest little bunny rabbit you've ever seen[or]another tiny little bunny rabbit[stopping] pops out and hops away. [BigNameDesc of E] fizzles into nothingness.";
+	destroy E.
+
+To compute default hatch of (E - an egg):
+	let flav-said be 0;
+	let totalLarvae be 1;
+	if E is medium egg, now totalLarvae is 2;
+	if E is large egg, now totalLarvae is 4;
+	while totalLarvae > 0:
+		decrease totalLarvae by 1;
+		let L be a random off-stage larva;
+		if L is larva:
+			if flav-said is 0:
+				if E is held or E is in the location of the player, say "[BigNameDesc of E] cracks open, and [if E is large egg]four maggot-like larvae worm their[otherwise if E is medium egg]two maggot-like larvae worm their[otherwise]a maggot-like larva worms its[end if] way out.[one of][line break][variable custom style]Gross![roman type][line break][or][stopping]";
+				now flav-said is 1;
+			now L is in the location of E;
+			now the egg-origin of L is the egg-origin of E;
+			larvaShortcutAssign L;
+	if E is held or E is in the location of the player, say "[BigNameDesc of E] fizzles into nothingness.";
 	destroy E.
 
 Definition: a small egg (called D) is available:
@@ -203,7 +244,7 @@ To decide which figure-name is the examine-image of (C - a medium egg):
 	decide on figure of medium egg.
 To say ExamineDesc of (B - a medium egg):
 	say "This looks exactly like you'd expect a large chicken egg to look like[if the class of the player is santa's little helper], except it is made of chocolate[end if][if B is laid]. You laid it out of your own body[end if].".
-To compute hatch of (E - a medium egg):
+To compute tentacle hatch of (E - a medium egg):
 	let M be a random off-stage facehugger;
 	if M is monster:
 		summon M in playerRegion;
@@ -222,7 +263,7 @@ To decide which figure-name is the examine-image of (C - a large egg):
 	decide on figure of large egg.
 To say ExamineDesc of (B - a large egg):
 	say "This huge bird style egg is at least twice the size of your average chicken egg. It looks more like what you'd expect a small ostrich egg or small dinosaur egg to look like[if the class of the player is santa's little helper], except it is made of chocolate[end if]![if B is laid][line break]You laid it out of your own body, although now looking at its size you can hardly believe it.[end if]".
-To compute hatch of (E - a large egg):
+To compute tentacle hatch of (E - a large egg):
 	let M be a random off-stage tentacle monster;
 	if M is monster:
 		summon M in playerRegion;
@@ -273,11 +314,13 @@ When play begins:
 		now the text-shortcut of E is substituted form of "le[eggShortcutCount]";
 		increase eggShortcutCount by 1.
 
-A larva is a kind of person. A larva is neuter. The printed name of larva is "[TQlink of item described]tentacle larva[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of larva is "[TQlink of item described]tentacle larvae[shortcut-desc][TQxlink of item described][verb-desc of item described]". There are 15 larva. Figure of larva is the file "Items/Collectibles/larva1.png". Understand "tentacle", "larvae" as larva. The text-shortcut of a larva is "lva". A larva has a number called larva-growth.
+A larva is a kind of person. A larva is neuter. The printed name of larva is "[TQlink of item described][OriginDesc of item described]larva[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of larva is "[TQlink of item described][OriginDesc of item described]larvae[shortcut-desc][TQxlink of item described][verb-desc of item described]". There are 15 larva. Figure of larva is the file "Items/Collectibles/larva1.png". Understand "tentacle", "larvae" as larva. The text-shortcut of a larva is "lva". A larva has a number called larva-growth. A larva has an object called the egg-origin.
 To decide which figure-name is the examine-image of (C - a larva):
 	decide on figure of larva.
 To say ExamineDesc of (B - a larva):
 	say "A small maggot-like creature. You could easily destroy it.".
+To say OriginDesc of (B - a larva):
+	if the egg-origin of B is a thing, say "[ShortDesc of the egg-origin of B] ".
 A later time based rule (this is the larvae growth rule):
 	repeat with M running through on-stage larva:
 		increase the larva-growth of M by a random number between 0 and 2;
@@ -287,15 +330,22 @@ A later time based rule (this is the larvae growth rule):
 				let D be a random N-viable direction;
 				let R be the room D from Neighbour Finder;
 				if R is not the location of the player, now M is in R;
-			if the semen-puddle of the location of M > 0 or the larva-growth of M >= 100:
-				let TM be a random off-stage tentacle monster;
+			if the semen-puddle of the location of M > 0 or the larva-growth of M >= 300:
+				let TM be a random off-stage facehugger;
+				if the egg-origin of M is giant wasp, now TM is a random hatchable giant wasp;
+				if the egg-origin of M is facehugger or the egg-origin of M is hugger-panties or the egg-origin of M is hugger-gag, now TM is a random off-stage tentacle monster;
 				if TM is monster:
 					summon TM in playerRegion;
 					if TM is nonexistent and TM is on-stage, set up TM;
 					now TM is in the location of M;
-					if M is in the location of the player, say "[bold type][BigNameDesc of M][bold type] squirms [if the larva-growth of M >= 100]violently[otherwise]towards the puddle, where it coats itself in the [semen][end if]. You watch with [horror] as it rapidly grows in size, until [NameDesc of TM][bold type] is standing in front of you.";
-					if the larva-growth of M < 100, decrease the semen-puddle of the location of M by 1;
+					if M is in the location of the player, say "[bold type][BigNameDesc of M][bold type] squirms [if the larva-growth of M >= 300]violently[otherwise]towards the puddle, where it coats itself in the [semen][end if]. You watch with [horror] as it rapidly grows in size, until [NameDesc of TM][bold type] is standing in front of you.";
+					if the larva-growth of M < 300, decrease the semen-puddle of the location of M by 1;
 					destroy M.
+
+Definition: a giant wasp is hatchable:
+	if it is woods dwelling, decide no;
+	if it is off-stage, decide yes;
+	decide no.
 
 larvaShortcutCount is initially 1.
 To larvaShortcutAssign (C - a larva):

@@ -684,7 +684,7 @@ To say skirtTrayVibratorPower:
 To say ClothingDesc of (C - skirt-tray-vibrator):
 	let CR be the max-cakes of C - the cakes-taken of C;
 	if diaper quest is 0, say "This purple skirt is connected to a serving tray with [if CR is 1]one small cupcake remaining[otherwise if CR < the max-cakes of C][CR] small cupcakes remaining[otherwise][CR] small cupcakes[end if] on it. A rigid metal pole at the rear of the serving tray goes through a discreet hole at the front of the skirt and to a vibrator. To wear the skirt, you [if C is not worn]would [end if]have to hold the serving tray in front of you and [if C is worn]keep[otherwise]put[end if] the [if the player is not possessing a penis]rabbit vibrator inside your [vagina][otherwise]vibrating tip up against your [ShortDesc of penis][end if][run paragraph on]";
-	otherwise say "A red vibrator is connected via a small rigid pole to a serving tray with [if CR is 1]one small cupcake remaining[otherwise if CR < the max-cakes of C][CR] small cupcakes remaining[otherwise][CR] small cupcakes[end if] on it. [if the player is female]The pole goes through the hole in your diaper, so the vibrator is on the inside[otherwise]The tip of the pole is made of soft sex toy material and is attached to the front of your diaper[end if]. To wear the diaper, you have to continue to hold the serving tray in front of you and [if C is worn]keep[otherwise]put[end if] the [if the player is female]rabbit vibrator inside your [vagina][otherwise]vibrating tip up against your [ShortDesc of penis][end if][run paragraph on]";
+	otherwise say "A red vibrator is connected via a small rigid pole to a serving tray with [if CR is 1]one small cupcake remaining[otherwise if CR < the max-cakes of C][CR] small cupcakes remaining[otherwise][CR] small cupcakes[end if] on it. [if the player is female]The pole goes through the hole in your diaper, so the vibrator is on the inside[otherwise]The tip of the pole is made of soft sex toy material and is attached to the front of your diaper[end if]. To wear the diaper, you have to continue to hold the serving tray in front of you and [if C is worn]keep[otherwise]put[end if] the [if the player is possessing a vagina]rabbit vibrator inside your [vagina][otherwise if the player is possessing a penis]vibrating tip up against your [ShortDesc of penis][end if][run paragraph on]";
 	say "[if the cakes-taken of C >= the max-cakes of C or the charge of C > 0]. It is currently vibrating[skirtTrayVibratorPower]![otherwise].[end if]".
 
 To decide which number is the stimulation of (D - skirt-tray-vibrator) on (B - a body part):
@@ -876,5 +876,28 @@ To compute class set up of (C - queen-of-spades-skirt):
 	now C is temptation;
 	now C is luck-influencing;
 	now the raw-magic-modifier of C is 3.
+
+milkmaid-apron-skirt is a skirt. milkmaid-apron-skirt is unique. milkmaid-apron-skirt is polyester. milkmaid-apron-skirt is knee-length. The printed name of milkmaid-apron-skirt is "[clothing-title-before]milkmaid apron skirt[clothing-title-after]". The text-shortcut of milkmaid-apron-skirt is "mmas". Understand "milkmaid", "apron" as milkmaid-apron-skirt.
+Figure of milkmaid-apron-skirt is the file "Items/Clothes/Lower/Skirts/apron1.png".
+To decide which figure-name is clothing-image of (H - milkmaid-apron-skirt):
+	decide on figure of milkmaid-apron-skirt.
+
+Definition: milkmaid-apron-skirt is class-relevant:
+	if the class of the player is maid or the class of the player is cowgirl, decide yes;
+	decide no.
+
+Definition: milkmaid-apron-skirt is black themed: decide yes.
+Definition: milkmaid-apron-skirt is white themed: decide yes.
+Definition: milkmaid-apron-skirt is cow themed: decide yes.
+
+To say MediumDesc of (C - milkmaid-apron-skirt):
+	say "milkmaid apron skirt".
+To say ClothingDesc of (C - milkmaid-apron-skirt):
+	say "A long frilly black and white cow print skirt with a maid waitress's apron sewn onto the front.".
+
+To compute class set up of (C - milkmaid-apron-skirt):
+	now C is absorption;
+	now C is titfuck-addiction-influencing;
+	now the raw-magic-modifier of C is 2.
 
 All Skirts ends here.

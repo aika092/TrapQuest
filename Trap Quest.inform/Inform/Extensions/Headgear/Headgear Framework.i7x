@@ -429,6 +429,8 @@ Definition: a clothing (called C) is class summonable:
 			if O is unremovable or O is class-relevant, decide no;
 		repeat with O running through worn vagina plugging clothing:
 			if O is unremovable or O is class-relevant, decide no;
+		if C is vagina plugging and the player is possessing a vagina and vagina is actually occupied, decide no;
+		if C is ass plugging and asshole is actually occupied, decide no;
 	if C is trousers:
 		repeat with O running through worn trousers:
 			if O is unremovable or O is class-relevant, decide no;

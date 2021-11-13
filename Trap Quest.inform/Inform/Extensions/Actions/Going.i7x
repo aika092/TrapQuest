@@ -88,6 +88,33 @@ Carry out going up (this is the mansion-setup rule):
 Check going east while the player is in Hotel01:
 	try going down instead.
 
+Carry out going (this is the changing-region-makes-monsters-have-time-out rule):
+	if the noun is up or the noun is down, check monster time out. [player region updates happens in Report phase, so this will happen to the region the player is leaving.]
+
+To check monster time out:
+	if playerRegion is not school and doomed < 5 and the number of regionalRelevant monsters >= the regionalMonsterCount of playerRegion:
+		let LM be the list of alive willing to have time out regional monsters;
+		let E be the number of entries in LM;
+		if E > 0: [choose the monster that's been alive the longest]
+			sort LM in random order;
+			let TA be 0;
+			let M be entry 1 in LM;
+			repeat with N running from 1 to E:
+				let NM be entry N of LM;
+				if the time-alive of NM > TA:
+					now M is NM;
+					now TA is the time-alive of NM;
+			compute time out of M.
+
+To compute time out of (M - a monster):
+	if debugmode > 0, say "[input-style][BigNameDesc of M][input-style] was chosen to take a break from the region, and has been moved off-stage.[roman type][line break]";
+	now the time-alive of M is 1;
+	remove M from play;
+	if playerRegion is Dungeon, add M to dungeon-leavers-list;
+	if playerRegion is Woods, add M to woods-leavers-list;
+	if playerRegion is Hotel, add M to hotel-leavers-list;
+	if playerRegion is Mansion, add M to mansion-leavers-list.
+
 Report going up:
 	update player region;
 	if map images > 0, display entire map;
@@ -162,6 +189,11 @@ To decide which number is the movement reduction of the player:
 		if movement-reduction-flav-said is false:
 			now movement-reduction-flav-said is true;
 			now T is the substituted form of "Your [ShortDesc of a random worn ball-and-chain] is severely hindering your movement!";
+	if giant-teddy is worn:
+		increase X by 8;
+		if movement-reduction-flav-said is false:
+			now movement-reduction-flav-said is true;
+			now T is the substituted form of "Your extremely heavy [MediumDesc of giant-teddy] is significantly slowing down your movement!";
 	if quiz-partner is worn:
 		increase X by 6;
 		if movement-reduction-flav-said is false:
@@ -424,10 +456,16 @@ Check going:
 		[All these checks only take place if the player is CRAWLING as opposed to walking.]
 		if the player is prone:
 			[We want to warn the player if they're going to crawl into a room they previously triggered a pink smoke trap in.]
-			if trap warning is 1 and player-breathing is true:
+			if trap warning is 1 and the player is needing to breathe and the player is able to breathe:
 				if the room noun from the location of the player is smoky:
-					say "There is [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in that room, and you are on your knees. Are you sure you want to try and crawl that way? ";
-					unless the player is in agreement:
+					say "There is [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in that room, and you are on your knees...";
+					reset multiple choice questions;
+					set numerical response 1 to "Continue crawling and breathing";
+					set numerical response 2 to "Continue crawling, and start to hold your breath";
+					set numerical response 3 to "Cancel the action";
+					compute multiple choice question;
+					if player-numerical-response is 2, try ManuallyBreathing;
+					if player-numerical-response is 3:
 						allocate 0 seconds; [Because we set it to 3 seconds earlier, if this isn't here then the player loses a turn.]
 						say "You change your mind." instead;
 			let B2 be (the weight of breasts + (the weight of belly * 3) + the weight of hips) / 5; [the weight of belly is the main limiting factor when trying to crawl.]

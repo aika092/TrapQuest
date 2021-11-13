@@ -17,8 +17,11 @@ To say FullExamineDesc of (B - vagina):
 Vagina has a number called semen volume.
 Vagina has a number called womb volume.
 Vagina has a number called small egg count.
+Vagina has a list of things called small-egg-origins.
 Vagina has a number called medium egg count.
+Vagina has a list of things called medium-egg-origins.
 Vagina has a number called large egg count.
+Vagina has a list of things called large-egg-origins.
 Vagina has a number called labia plumpness.
 
 To decide which number is the total volume of (F - vagina):
@@ -167,6 +170,11 @@ How much does the player want this body part to be used?
 To decide which number is the desire of (B - vagina):
 	decide on the vaginal sex addiction of the player.
 
+[having plump lips makes monsters want to fuck you more.]
+This is the plumpness pussy slut rule:
+	increase the desirability of vagina by (the labia plumpness of vagina * 3).
+The plumpness pussy slut rule is listed in the pussy slut eligibility rules.
+
 Definition: yourself is possessing a vagina:
 	if the openness of vagina > -1, decide yes;
 	decide no.
@@ -224,7 +232,7 @@ To say TotalDesc of vagina:
 			-- 0: do nothing;
 			-- 1: now plump is ", with its [LatexFlav][one of]pouting[or]plumped up[or][']enhanced['][or][']improved['][at random] [one of]coochie[or]pussy lips[or]labia[as decreasingly likely outcomes],";
 			-- 2: now plump is ", its [LatexFlav][one of]pussy lips[or]labia[as decreasingly likely outcomes] [one of]inflated[or]exaggerated[or]bee-stung[at random] and pouting,";
-			-- otherwise: now plump is ", its [one of]obscenely swollen [LatexFlav]lips a magnet for every eye[or]two swollen [LatexFlav]lips like fat sausages[or]swollen folds rubbing together at every movement[or]bulging [LatexFlav]folds begging for attention[or]worthy of any porn star[at random], ";
+			-- otherwise: now plump is ", its [one of]obscenely swollen [LatexFlav]lips a magnet for every eye[or]two swollen [LatexFlav]lips like fat sausages[or]swollen folds rubbing together at every movement[or]bulging [LatexFlav]folds begging for attention[or]engorged lips worthy of any porn star[at random], ";
 		if the openness of vagina < 2, say "Your virgin[if the vaginalvirgin of the player is 0]-like[end if] [vagina][plump] ";
 		if the openness of vagina is 2, say "Your very tight [vagina][plump] ";
 		if the openness of vagina is 3, say "Your tight [vagina][plump] ";
@@ -287,13 +295,20 @@ To say VaginaModesty:
 		otherwise:
 			now C is the at least partial concealer of vagina;
 			let CC be current cameltoe;
-			say "It [if CC is 1]can be slightly made out, thanks to a slight cameltoe through your [NameDesc of C][otherwise if CC is 2]is creating an extremely prominent cameltoe through [NameDesc of C][otherwise]is partially concealed by [NameDesc of C][end if]. ";
+			say "It [if CC is 1]can be slightly made out, thanks to a slight cameltoe through your [NameDesc of C][otherwise if CC is 2]is creating an extremely prominent cameltoe through [NameDesc of C][otherwise if C is clothing]is partially concealed by [NameDesc of C][end if]. ";
 	if vagina is actually occupied:
 		let P be a random thing penetrating vagina;
 		if P is monster:
 			say "It is currently being pounded by [FuckerDesc of P].";
 		otherwise:
-			say "It is currently [if P is players-detached-dick and the size of players-detached-dick is 0]being magically stimulated by[otherwise if the girth of P > the openness of vagina]the snug home of[otherwise]the home of[end if] [FuckerDesc of P].".
+			say "It is currently [if P is players-detached-dick and the size of players-detached-dick is 0]being magically stimulated by[otherwise if the girth of P > the openness of vagina]the snug home of[otherwise]the home of[end if] [FuckerDesc of P].";
+	if the player is a pussy slut:
+		let P be a random thing penetrating vagina;
+		if P is a monster and P is male:
+			say "You have a feeling that no matter what you do, you're going to be creampied.";
+		otherwise:
+			if P is monster, say "Monsters are definitely paying extra attention to it.";
+			otherwise say "You have a feeling that monsters are paying extra attention to it.".
 
 Part 3 - Modify Vagina Stats
 
@@ -569,16 +584,25 @@ To wombfill (X - a number) small eggs:
 	while X > 0:
 		decrease X by 1;
 		increase the small egg count of vagina by 1;
+		let M be a random egg-fathering thing penetrating vagina;
+		if M is a thing, add M to the small-egg-origins of vagina;
 	EggPregCheck.
 To wombfill (X - a number) medium eggs:
 	while X > 0:
 		decrease X by 1;
 		increase the medium egg count of vagina by 1;
+		let M be a random egg-fathering thing penetrating vagina;
+		if M is a thing, add M to the medium-egg-origins of vagina;
+	if carrot daggers is worn and carrot daggers is not blessed and there is a live thing penetrating vagina:
+		bless carrot daggers;
+		say "You sense that your [ShortDesc of carrot daggers] have become more powerful!";
 	EggPregCheck.
 To wombfill (X - a number) large eggs:
 	while X > 0:
 		decrease X by 1;
 		increase the large egg count of vagina by 1;
+		let M be a random egg-fathering thing penetrating vagina;
+		if M is a thing, add M to the large-egg-origins of vagina;
 	EggPregCheck.
 To EggPregCheck:
 	if the pregnancy of the player > 0 and the pregnancy of the player < 3: [If the player is already pregnant then we need to get rid of these eggs instantly.]
@@ -615,6 +639,12 @@ To compute womb egg laying:
 			if E is egg:
 				now E is in the location of the player;
 				now E is laid;
+				let EO be the number of entries in the small-egg-origins of vagina;
+				if EO > 0:
+					now the egg-origin of E is entry EO in the small-egg-origins of vagina;
+					truncate the small-egg-origins of vagina to EO - 1 entries;
+				otherwise:
+					now the egg-origin of E is nothing;
 				if a random number between 1 and 5 is 1, now the hatching of E is 1;
 				if the pregnancy of the player is 3 and a random number between 1 and 4 is 1, now the hatching of E is a random number between 100 and 130;
 				if the remainder after dividing small egg count of vagina by 3 is 0: [1 ruin for 3 eggs]
@@ -627,6 +657,12 @@ To compute womb egg laying:
 			if E is egg:
 				now E is in the location of the player;
 				now E is laid;
+				let EO be the number of entries in the medium-egg-origins of vagina;
+				if EO > 0:
+					now the egg-origin of E is entry EO in the medium-egg-origins of vagina;
+					truncate the medium-egg-origins of vagina to EO - 1 entries;
+				otherwise:
+					now the egg-origin of E is nothing;
 				if a random number between 1 and 5 is 1, now the hatching of E is 1;
 				if the pregnancy of the player is 3 and a random number between 1 and 4 is 1, now the hatching of E is a random number between 100 and 130;
 				if the remainder after dividing medium egg count of vagina by 2 is 0: [1 ruin for 2 eggs]
@@ -639,6 +675,12 @@ To compute womb egg laying:
 			if E is egg:
 				now E is in the location of the player;
 				now E is laid;
+				let EO be the number of entries in the large-egg-origins of vagina;
+				if EO > 0:
+					now the egg-origin of E is entry EO in the large-egg-origins of vagina;
+					truncate the large-egg-origins of vagina to EO - 1 entries;
+				otherwise:
+					now the egg-origin of E is nothing;
 				if a random number between 1 and 5 is 1, now the hatching of E is 1;
 				if the pregnancy of the player is 3 and a random number between 1 and 4 is 1, now the hatching of E is a random number between 100 and 130;
 				now E is penetrating vagina;

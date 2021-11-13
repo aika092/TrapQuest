@@ -2,13 +2,19 @@ Status Bar by Miscellaneous Frontend begins here.
 
 Rule for constructing the status line:
 	if the player is virtual or the player is in an introductory room:
-		if choice in row 19 of Table of Settings is 2:
+		if new status line is 4:
+			fill status bar with Table of Empty Status;
+		otherwise if new status line is 3:
 			fill status bar with Table of Minimal Status;
 		otherwise if debuginfo > 0:
 			fill status bar with Table of Debug Low Res Status;
 		otherwise:
-			if choice in row 19 of Table of Settings is 1 or diaper quest is 1, fill status bar with Table of Low Res Status;
-			otherwise fill status bar with Table of High Res Status;
+			if new status line is 2 or diaper quest is 1:
+				fill status bar with Table of Low Res Status;
+			otherwise if new status line is 1:
+				fill status bar with Table of Medium Res Status;
+			otherwise:
+				fill status bar with Table of High Res Status;
 	otherwise:
 		fill status bar with Table of Empty Status;
 	rule succeeds.
@@ -19,6 +25,13 @@ Table of High Res Status
 left	central	right
 "[TitleBimbo]"	""	""
 "[MainStatsBar]"	"[HighResBarSecondRow]"	""
+"[HighResBarThirdRow]"	"[HighResBarFourthRow]"	""
+
+Table of Medium Res Status
+left	central	right
+"[TitleBimbo]"	""	""
+"[TQDQ Appearance]"	""	""
+"[MainStatsBar]"	"[HighResBarSecondRowNoAppearance]"	""
 "[HighResBarThirdRow]"	"[HighResBarFourthRow]"	""
 
 Table of Low Res Status
@@ -44,6 +57,9 @@ To say MainStatsBar:
 
 To say HighResBarSecondRow:
 	say "STATUS: [VagueInternalFeeling]   [TQDQ Appearance] [VagueDignity]   SLAP: [saved-printed-slap-damage] KNEE: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks][if the total magic power of the player > 0] MAGIC: [magic power of the player] / [total magic power of the player][end if]".
+
+To say HighResBarSecondRowNoAppearance:
+	say "STATUS: [VagueInternalFeeling]   [VagueDignity]   SLAP: [saved-printed-slap-damage] KNEE: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks][if the total magic power of the player > 0] MAGIC: [magic power of the player] / [total magic power of the player][end if]".
 
 To say MinimalBarSecondRow:
 	say "[MainStatsBar] SLAP: [saved-printed-slap-damage] KNEE: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks][if the total magic power of the player > 0] MAGIC: [magic power of the player] / [total magic power of the player][end if]".

@@ -137,8 +137,16 @@ Definition: a bondage is gluable: decide no.
 To trigger (Y - a glue trap):
 	let G be a random off-stage glue;
 	if G is glue:
-		let TG be "[if tough-shit is 1][active-colour of G][otherwise]pinkish[end if]";
-		say "As if sensing your proximity, [if Y is organic]a nearby squishy-looking rock splits down the middle with a wet ripping sound and a [TG] mass explodes from it all over you![otherwise]there's a click and a brief humming sound as a nozzle overhead spins open, instantly spraying a thick mass of sticky [TG] glue at you![end if]";
+		let R be a random number between 1 and (10 + diaper quest);
+		if R <= 4 and diaper quest is 0:
+			now the active-colour of G is pinkish;
+		otherwise if R <= (7 - diaper quest):
+			now the active-colour of G is yellowish;
+		otherwise if R <= 9 or diaper quest is 1:
+			now the active-colour of G is blackish;
+		otherwise:
+			now the active-colour of G is whiteish;
+		say "As if sensing your proximity, [if Y is organic]a nearby squishy-looking rock splits down the middle with a wet ripping sound and a [active-colour of G] mass explodes from it all over you![otherwise]there's a click and a brief humming sound as a nozzle overhead spins open, instantly spraying a thick mass of sticky [active-colour of G] glue at you![end if]";
 		if tough-shit is 0, cutshow Figure of Glue Cutscene 1;
 		let C be a random worn removable cursable gluable wearthings;
 		if C is clothing and C is not glued clothing:
@@ -148,15 +156,6 @@ To trigger (Y - a glue trap):
 		if tough-shit is 1:
 			now G is in the location of the player;
 			now the times-stuck of G is 0;
-			let R be a random number between 1 and (10 + diaper quest);
-			if R <= 4 and diaper quest is 0:
-				now the active-colour of G is pinkish;
-			otherwise if R <= (7 - diaper quest):
-				now the active-colour of G is yellowish;
-			otherwise if R <= 9 or diaper quest is 1:
-				now the active-colour of G is blackish;
-			otherwise:
-				now the active-colour of G is whiteish;
 			now Y is not untriggered;
 			now Y is triggered;
 			now Y is revealed;

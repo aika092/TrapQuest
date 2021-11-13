@@ -14,7 +14,8 @@ The spawn initial woods vines rule is listed in the set up woods traps rules.
 vine are a kind of trap. The printed name of vine is "[TQlink]vine[TQxlink of item described][verb-desc of item described]". There are 16 revealed vines. Understand "living", "vine", "vines" as vines when item described is in the location of the player. The printed plural name of vines is "vines". Figure of vines is the file "Env/Forest/vines1.png". The text-shortcut of a vine is "vin". A vine has a number called vine-condoms. The vine-condoms of a vine is usually 0.
 
 Definition: a vine is father material: decide yes.
-Definition: A vine is live: decide yes.
+Definition: a vine is egg-fathering: decide yes.
+Definition: a vine is live: decide yes.
 
 To decide which number is the girth of (V - a vine):
 	decide on 2 * (1 + the TrapNo of V).

@@ -344,7 +344,10 @@ To compute cursed drinking (X - novelty mug):
 			increase suppository by 1;
 		otherwise:
 			say "It tastes like [one of]milk, but somehow you know something isn't right. It's too tangy and... sweet? This must be human[or]tangy[stopping] breast milk...";
-			SlowMilkTasteAddictUp 1;
+			FaceFill milk by 1;
+			if there is a milking bench in the location of the player:
+				if (the class of the player is cowgirl and the class of the player is not catgirl) or (the class of the player is catgirl and the class of the player is not cowgirl), compute meowcowification;
+			suggest swallowing with milk consequences;
 	otherwise:
 		say "It tastes like milk, but somehow you know something isn't right. ";
 		if lactation fetish is 1:

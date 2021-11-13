@@ -350,9 +350,9 @@ Carry Out Spitting:
 		if the semen-spat of gloryhole-predicament is 1, say "[variable custom style]I'm going to have earned a penalty point from doing that.[roman type][line break]".
 Understand "spit", "spit on ground", "spit on the ground", "spit on floor", "spit on the floor" as spitting.
 This is the automatic spitting rule:
-	if the semen volume of face > 0 and the semen taste addiction of the player is 1, SemenTasteAddictUp 1;
-	if the urine volume of face > 0 and the urine taste addiction of the player is 1, UrineTasteAddictUp 1;
-	if the milk volume of face > 0 and the milk taste addiction of the player is 1, MilkTasteAddictUp 1;
+	if the semen volume of face > 0 and the semen taste addiction of the player is 1, compute addictive tasting of semen;
+	if the urine volume of face > 0 and the urine taste addiction of the player is 1, compute addictive tasting of urine;
+	if the milk volume of face > 0 and the milk taste addiction of the player is 1, compute addictive tasting of milk;
 	try spitting.
 
 Drinking ends here.

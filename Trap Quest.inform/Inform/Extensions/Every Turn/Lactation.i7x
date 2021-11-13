@@ -50,16 +50,21 @@ A time based rule (this is the lactation rule):
 			let L be 120;
 			if the class of the player is cowgirl, now L is 240;
 			decrease L by M * 2; [The more milk there is, the higher chance of lactation]
-			if there is a worn pasties, now L is 1;[lactation shouldn't happen when the player is wearing pasties]
-			if (the class of the player is not cowgirl or (the class of the player is royal slave and there is a worn crotch-in-place top-placed milking basque)) and a random number between 0 and L <= 0: [We want to allow the cow slave class to still regularly lactate when the milking basque is in place]
+			if (the class of the player is not cowgirl or the class of the player is maid or (the class of the player is royal slave and there is a worn crotch-in-place top-placed milking basque)) and the number of worn pasties is 0 and a random number between 0 and L <= 0: [We want to allow the cow slave class to still regularly lactate when the milking basque is in place] [lactation shouldn't happen when the player is wearing pasties]
 				trigger lactation;
-			otherwise if the milk volume of breasts >= the flesh volume of breasts:
+				if the class of the player matches the text "milkmaid" and milkmaid-apron-skirt is worn and M >= the flesh volume of breasts:
+					say "[bold type]As punishment for letting your breasts get so full without getting milked, your [MediumDesc of milkmaid-apron-skirt] vanishes![line break][variable custom style]Eek![roman type][line break]";
+					only destroy milkmaid-apron-skirt;
+			otherwise if M >= the milk capacity of breasts:
 				if the ready-for-milking of milking-quest is 0:
 					let quest-2b-milked be nothing;
 					repeat with C running through worn clothing:
 						if the quest of C is milking-quest, now quest-2b-milked is C;
-					say "[bold type]Your breasts are now completely full of milk[if quest-2b-milked is clothing]. Your [ShortDesc of quest-2b-milked] fills you with a desire to find somewhere to get milked[end if][if the milk volume of breasts > 10]. Until you do, your heavy breasts will make you become fatigued much faster while standing[end if][if the milk volume of breasts > 10 and cowbell is worn] - or rather they would if it weren't for the magic effect of your cowbell[end if].[roman type][line break]";
-				now the ready-for-milking of milking-quest is 1.
+					say "[bold type]Your breasts are now completely full of milk[if quest-2b-milked is clothing]. Your [ShortDesc of quest-2b-milked] fills you with a desire to find somewhere to get milked[end if][if the milk volume of breasts > 10]. Until you do, your heavy breasts will make you become fatigued much faster while standing[end if][if the milk volume of breasts > 10 and there is worn cowbelled clothing] - or rather they would if it weren't for the magic effect of your cowbell[end if].[roman type][line break]";
+				now the ready-for-milking of milking-quest is 1;
+		if the ready-for-milking of milking-quest is 1 and the milk volume of breasts < (the milk capacity of breasts * 2) / 3: [In some random happenstances where milk leaves a cowgirl's breasts, this might be necessary]
+			say "[bold type]Your breasts are no longer completely full of milk[if the milk volume of breasts > 10 and the number of worn cowbelled clothing is 0] - you will no longer become fatigued much faster while standing[end if].[roman type][line break]";
+			now the ready-for-milking of milking-quest is 0.
 
 To decide which number is milkingColour:
 	let R-component be 255;

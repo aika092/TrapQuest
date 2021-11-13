@@ -864,7 +864,7 @@ To compute PlayerWomanStoolFuck:
 		let W be woman-player;
 		increase the delayed sluttification of W by 1;
 		say "You push your [ShortDesc of PF] into [NameDesc of W][']s gaping butthole. ";
-		if PF is penis, say "Your [MediumDesc of penis] [if the size of penis < 5]is feels extremely slim in comparison to the huge width that [his of W] sphincter has been stretched out to[otherwise if the size of penis < 8]finds it all too easy to fit inside the poor [man of W][']s cavernous fuckhole[otherwise]slides in with ease, which evidences just how horribly stretched poor [NameDesc of W][']s sphincter has become[end if][if ungape is 0], and as you feel the contours of [his of W] distended ring with your fingers, you find yourself severely doubting that it'll ever return to proper tightness again[end if]. ";
+		if PF is penis, say "Your [SexDesc of penis] [if sexual-penis-length < 5]is feels extremely slim in comparison to the huge width that [his of W] sphincter has been stretched out to[otherwise if sexual-penis-length < 8]finds it all too easy to fit inside the poor [man of W][']s cavernous fuckhole[otherwise]slides in with ease, which evidences just how horribly stretched poor [NameDesc of W][']s sphincter has become[end if][if ungape is 0], and as you feel the contours of [his of W] distended ring with your fingers, you find yourself severely doubting that it'll ever return to proper tightness again[end if]. ";
 		AnalGet;
 		say "You enjoy [if PF is penis]the sensations of [end if]plundering [NameDesc of W][']s slack sex chute, testing out various speeds and depths, listening to [his of W] mewls of distress and pleasure until you ";
 		if PF is penis:

@@ -146,10 +146,20 @@ Definition: herald is automatically banishable: decide yes.
 
 To say BanishFleeFlav of (M - herald):
 	say "[BigNameDesc of M][']s corporeal form begins to flicker and fade![line break][speech style of M]'What the [if diaper quest is 1]shit[otherwise]dick[end if]? I guess you win this time... [first custom style]BUT NEXT TIME, YOU AND THIS WORLD WILL FALL BEFORE THE MIGHT OF THE OLD ONES...'[roman type][line break]";
-	now M is bossdefeated.
+	now M is bossdefeated;
+	now doom counter is -1;
+	now doomed is -1;
+	progress quest of ritual-quest;
+	let X be a random off-stage plentiful necklace;
+	unless X is nothing:
+		now X is in the location of the player;
+		now X is pure diamond;
+		set shortcut of X;
+		say "You watch with glee as a [printed name of X] shimmers into existence at your feet!";
+		compute autotaking X;
 
 To loot (M - herald):
-	let X be a random off-stage plentiful necklace;
+	let X be a random off-stage ring;
 	unless X is nothing:
 		now X is in the location of the player;
 		now X is solid gold;

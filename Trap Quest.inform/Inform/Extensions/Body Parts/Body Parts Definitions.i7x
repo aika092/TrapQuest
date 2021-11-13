@@ -84,6 +84,9 @@ a fuckhole has a number called previous openness.
 
 a fuckhole has a number called buildup.
 
+To decide which number is the insertableGirthAcceptance of (F - a body part):
+	decide on 99.
+
 To decide which number is the insertableGirthAcceptance of (F - a fuckhole):
 	if there is worn elasticity clothing, decide on 99;
 	let T be 2 + diaper quest + ungape;

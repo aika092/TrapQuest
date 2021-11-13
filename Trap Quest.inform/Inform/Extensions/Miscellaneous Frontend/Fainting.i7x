@@ -132,7 +132,7 @@ To Execute Fainting:
 			if Newly-tattooed is 1:
 				say "Your lower back feels sore, and when you look you realise you've had the word 'PROPERTY' tattooed on your back! Oh no!";
 				now Newly-tattooed is 0;
-			if inhuman pregnancy is 2 and tentacled is 1 and the player is female:
+			if inhuman pregnancy is 2 and tentacled is 1 and the player is possessing a vagina:
 				now tentacled is 0;
 				now player-breeder is in the location of the player;
 				say "You see a suspiciously familiar body wrapped up by tentacles and stuck to the wall. Oh dear...";
@@ -430,7 +430,7 @@ To Recover the Player:
 			let F be a random fae mushroom;
 			unless F is in-play, now F is in Woods01;
 		otherwise:
-			now the latex-transformation of the player is 0;
+			carry out LatexCurseRemoval;
 	[Now we give the player some stats back]
 	if the raw strength of the player < the starting strength of the player, now the raw strength of the player is the starting strength of the player;
 	if the raw dexterity of the player < the starting dexterity of the player, now the raw dexterity of the player is the starting dexterity of the player;

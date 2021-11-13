@@ -365,7 +365,7 @@ To say WhereAnswer of (M - ex-princess):
 		let hb be mechanic;
 		if demon lord is alive or demon lord is bossdefeated, now hb is demon lord;
 		if hb is mechanic:
-			say "[speech style of M]'This is Xavier's pleasure hotel. [if hb is alive]If [he of hb] asks you for an amulet, you must never bring it to [him of hb]. There's no telling how powerful [he of hb] would become...'[otherwise]It was unfortunate that [he of hb] had to die, but it is what [he of hb] deserved.'[end if][roman type][line break]";
+			say "[speech style of M]'This is Xavier's pleasure hotel. [if hb is alive]If [he of hb] asks you for an amulet, you must never bring it to [him of hb]. There's no telling how powerful [he of hb] would become...'[otherwise]It was unfortunate that [he of hb] had to banished, but it is what [he of hb] deserved.'[end if][roman type][line break]";
 		otherwise:
 			say "[speech style of M]'This is the demon Xavier's pleasure hotel. [if hb is alive]Was [he of hb] this powerful before I sealed [him of hb]? Maybe I've grown weaker...'[otherwise]I'm not sure how you managed to defeat [him of hb]...'[end if][roman type][line break]";
 	otherwise if playerRegion is woods:
@@ -433,14 +433,14 @@ To say AdviceAnswer of (M - ex-princess):
 	if playerRegion is dungeon:
 		if minotaur is alive:
 			let db be minotaur;
-			say "[speech style of M]'[big he of db] may be strong, but [he of db] tires easily. If you exhaust [him of db] first, [he of db] will die quickly.'[roman type][line break]";
+			say "[speech style of M]'[big he of db] may be strong, but [he of db] tires easily. If you exhaust [him of db] first, [he of db] will fall quickly.'[roman type][line break]";
 		otherwise if boogeymonster is alive:
 			let bm be boogeymonster;
 			say "[speech style of M]'You must ignore [his of bm] evil visions and fight [him of bm] head on.'[roman type][line break]";
 	otherwise if playerRegion is hotel:
 		if demon lord is alive:
 			let dl be demon lord;
-			say "[speech style of M]'It will be difficult. [big he of dl] is immune to physical weapons, so if you don't have a magic weapon, you will need a blessing from the gods. If you can't manage that, [he of M] does have another weakness, but... it isn't worth the risk.'[roman type][line break]";[he's also weak to demonic items. And condoms. Which does she mean?]
+			say "[speech style of M]'It will be difficult. [big he of dl] is immune to physical weapons, so if you don't have a magic weapon, you will need a blessing from the gods. If you can't manage that, [he of dl] does have another weakness, but... it isn't worth the risk.'[roman type][line break]";[he's also weak to demonic items. And condoms. Which does she mean?]
 		otherwise if mechanic is alive:
 			let mec be mechanic;
 			say "[speech style of M]'If you can separate [him of mec] from [his of mec] wrench, [he of mec] will be greatly weakened. After that, [he of mec] will be just like anyone else.'[roman type][line break]";
@@ -451,7 +451,7 @@ To say AdviceAnswer of (M - ex-princess):
 			say "[speech style of M]'I...don't know. I have never seen that thing before.'[roman type][line break]";
 		otherwise if vampiress is alive:
 			let mb be vampiress;
-			say "[speech style of M]'Is [he of M] really that bad? ...There are two ways to defeat [him of mb]. The safe way is to just not let [him of mb] feed, and [he of mb] will eventually grow weak and starve. The risky way is to take a stake and jam it right up [his of mb] ass. Yeah, [his of mb] weakness is anal in more ways than one.'[roman type][line break]";
+			say "[speech style of M]'Is [he of mb] really that bad? ...There are two ways to defeat [him of mb]. The safe way is to just not let [him of mb] feed, and [he of mb] will eventually grow weak and starve. The risky way is to take a stake and jam it right up [his of mb] ass. Yeah, [his of mb] weakness is anal in more ways than one.'[roman type][line break]";
 	otherwise:
 		say "[speech style of M]'Their magic is strong enough to prevent even me entering their room, so you should be prepared to face them alone. Both of them are warriors of exceptional physical and sexual might. It's possible you will defeat them in combat, but to be safe, you should also have a strategy for taking them on in the bedroom.'[roman type][line break]".
 

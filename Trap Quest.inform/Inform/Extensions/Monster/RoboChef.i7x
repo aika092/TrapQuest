@@ -31,18 +31,17 @@ To set up (M - a robochef):
 To decide which number is the starting difficulty of (M - robochef):
 	decide on 8.
 
-To decide which number is the girth of (M - a robochef):
+To decide which number is the girth of (M - robochef):
 	decide on 4.
 
-Definition: a robochef is willing to do oral: decide no.
-
-Definition: a robochef is willing to do vaginal: decide no.
-
-Definition: a robochef is willing to do titfucks: decide no.
+Definition: robochef is willing to do oral: decide no.
+Definition: robochef is willing to do vaginal: decide no.
+Definition: robochef is willing to do titfucks: decide no.
+Definition: robochef is willing to have time out: decide no.
 
 Part 1 - Misc Flavour
 
-To say SummoningFlav of (M - a robochef):
+To say SummoningFlav of (M - robochef):
 	if M is in the location of the player:
 		let P be a random patron;
 		say "The teleporter emits a definitive sounding hum, and light fills the room as a large, [if lady fetish is 1]vase[otherwise]barrel[end if] shaped robot materialises on the pad.[line break][first custom style]'CULINARY WORK SEQUENCE COMMENCING.'[roman type][line break]";

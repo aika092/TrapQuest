@@ -486,7 +486,7 @@ To say WaitingFlav of (M - a demoness):
 	otherwise if the anal sex addiction of the player < 7:
 		say "[one of]You bite your lip, embarrassed by your own excitement.[or]You wait obediently, but only because [NameDesc of M] is really threatening you.[or]A small part of you seems to get a rush out of following [his of M] orders.[line break][first custom style]'Just don't get me too dirty, all right?'[roman type][line break][or][line break][first custom style]'It's just sex. Don't get too into it.'[roman type][line break][or][if the player is gendered male]You try to stifle some decidedly 'submissive' thoughts.[otherwise]You focus on keeping your hands away from your [vagina].[end if][or][line break][second custom style]'[if the size of penis < 5]Does my [sissy-penis] not bother you?[otherwise if the player is possessing a penis]Does my [manly-penis] not bother you?'[otherwise]Am I a slut for letting [him of M] do what [he of M] wants?'[end if][roman type][line break][or][if the player is gendered male]You can't help but feel excited at the thought of [NameDesc of M] treating you like [he of M] is.[otherwise][line break][variable custom style]'You'll be gentle, right?'[end if][roman type][line break][in random order]";
 	otherwise:
-		say "[one of]You feel thoroughly ready to get fucked any way the demoness pleases.[or][line break][second custom style]'I'll do anything for you, sexy.'[roman type][line break][or][line break][second custom style]'We're both horny, so do whatever you want to me. I'm sure I'll like it.'[roman type][line break][or][line break][second custom style]'It feels good anywhere!'[roman type][line break][or][line break][second custom style]'Don't be afraid to be rough, baby. I love a rough fuck!'[roman type][line break][or][line break][second custom style]'[if the size of penis > 3]I hope [he of M] doesn't mind my small [manly-penis]!'[otherwise]I'm a [man of the player], so my opinion doesn't matter, hee hee!'[end if][roman type][line break][or][if the player is gendered male]Hee hee, [he of M]'s going to make me sore![otherwise]You jill yourself vigorously, eager to be used like the slutty tart you are.[end if][roman type][line break][or][line break][second custom style][if the player is gendered male]I'm the submissive [sissy slut], so I should wait to find out what [he of M] wants most.[otherwise]I really feel like getting fucked in my pussy, but [he of M]'s the dominant so [he of M] should choose.[end if][roman type][line break][or][line break][second custom style]'I don't know what I want, teehee!'[roman type][line break][or][line break][second custom style][big he of M]'s the dominant, [he of M] should choose.[roman type][line break][or][line break][second custom style]'I'm always up for a good fuck, doesn't matter what type it is!'[roman type][line break][in random order]".
+		say "[one of]You feel thoroughly ready to get fucked any way the demoness pleases.[or][line break][second custom style]'I'll do anything for you, sexy.'[roman type][line break][or][line break][second custom style]'We're both horny, so do whatever you want to me. I'm sure I'll like it.'[roman type][line break][or][line break][second custom style]'It feels good anywhere!'[roman type][line break][or][line break][second custom style]'Don't be afraid to be rough, baby. I love a rough fuck!'[roman type][line break][or][line break][second custom style]'[if the size of penis > 3]I hope [he of M] doesn't mind my small [manly-penis]!'[otherwise]I'm a [man of the player], so my opinion doesn't matter, hee hee!'[end if][roman type][line break][or][if the player is gendered male]Hee hee, [he of M]'s going to make me sore![otherwise]You jill yourself vigorously, eager to be used like the slutty tart you are.[end if][roman type][line break][or][line break][second custom style][if the player is gendered male]I'm the submissive [sissy slut], so I should wait to find out what [he of M] wants most.[otherwise if the player is possessing a vagina]I really feel like getting fucked in my pussy, but [he of M]'s the dominant so [he of M] should choose.[end if][roman type][line break][or][line break][second custom style]'I don't know what I want, teehee!'[roman type][line break][or][line break][second custom style][big he of M]'s the dominant, [he of M] should choose.[roman type][line break][or][line break][second custom style]'I'm always up for a good fuck, doesn't matter what type it is!'[roman type][line break][in random order]".
 
 To say SexSubmissionFlav of (M - a demoness):
 	if diaper quest is 0:[TODO: fix this for futa sex]
@@ -566,8 +566,8 @@ To say ErectionLostFlav of (M - a demoness):[shouldn't really happen, but maybe 
 		now another-turn is 1;
 	otherwise:
 		say "[BigNameDesc of M] looks down with a slightly surprised look on [his of M] face.[line break][speech style of M]'[one of]Oh. Well, I got what I wanted, so it doesn't matter.'[or]You went soft? Eh, who cares. I still got MY reward.'[or]Huh? That's strange, but hey, I still got mine.'[at random][roman type][line break][big he of M] climbs off you without another word and immediately loses interest.";
-		if the raw sex addiction of the player < 20, SexAddictUp 1;
-		if the raw semen taste addiction of the player < 20, SemenTasteAddictUp 1;
+		SexAddictUp 1;
+		SemenTasteAddictUp 1;
 		FavourDown M by 1;
 		Bore M;
 		now the sex-length of M is 0.
@@ -1125,26 +1125,26 @@ To compute facial climax of (M - a demoness):
 	TimesSubmittedUp M by 1;
 	BlowCount;
 	if futanari fetish is 0:[This means the demoness is having a tentacle facefuck you as part of your deal, and it always finishes in your mouth.]
-		say SuccessfulFacialDodge of M;
+		say "[BigNameDesc of M] grabs the tentacle as it tenses, pushing it in as deep as it can go as [one of]spurt after spurt[or]gush after gush[or]a huge amount of[at random] [tasted-semen] [one of]rushes[or]shoots[at random] down your throat, keeping it there until your gag reflex subsides and every last drop of its demonic seed has settled fully in your belly.";
 		compute happy oral sex reward of M;
 		now M is not penetrating face;
 		StomachSemenUp the semen load of M;
 	otherwise if the reaction of the player is 0:
-		if bukkake fetish is 1 and a random number between 1 and 2 is 1 and the player is not a blowjob slut:
+		if M is willing to bukkake:
 			compute failed facial dodging of M;
 		otherwise if player-gagging is false:
 			compute oral creampie of M;
 		otherwise:
 			compute deepthroat creampie of M;
 	otherwise:
-		if bukkake fetish is 1 and a random number between 1 and 2 is 1 and the player is not a blowjob slut:
+		if M is willing to bukkake:
 			compute facial accepting of M;
 		otherwise:
 			compute deepthroat creampie of M;
 	orgasm satisfy M.
 
 Definition: a demoness (called M) is willing to bukkake:
-	if the player is not a blowjob slut or M is power-peaked, decide no;
+	if the player is a blowjob slut or M is power-peaked, decide no;
 	if bukkake fetish is 1 and a random number between 1 and 2 is 1, decide yes;
 	decide no.
 
@@ -1159,9 +1159,6 @@ To compute failed facial dodging of (M - a demoness):
 	say FailedFacialDodge of M;[demoness is too fast for you to dodge]
 	CumFaceUp the semen load of M;
 	check forgiveness of M.
-
-To say SuccessfulFacialDodge of (M - a demoness):
-	say "[BigNameDesc of M] grabs the tentacle as it tenses, pushing it in as deep as it can go as [one of]spurt after spurt[or]gush after gush[or]a huge amount of[at random] [tasted-semen] [one of]rushes[or]shoots[at random] down your throat, keeping it there until your gag reflex subsides and every last drop of its demonic seed has settled fully in your belly.".
 
 To say FailedFacialDodge of (M - a demoness):
 	say "[one of][BigNameDesc of M] grabs you again with inhuman speed, [his of M] [manly-penis] bobbing in your face as it paints you with rope after rope of sticky white [semen].[or][BigNameDesc of M] catches you with inhuman speed, forcing you to sit still as [he of M] ejaculates all over your face.[or][BigNameDesc of M] catches you with seemingly inhuman reflexes, groaning as [his of M] [manly-penis] unleashes its massive load all over your face.[or][BigNameDesc of M] catches you in an instant, cackling as [he of M] shoots rope after rope of sticky white [semen] all over your face.[or][BigNameDesc of M] catches you almost instantly, leaving you to [if the semen addiction of the player < 8]struggle in vain as [he of M] unloads all over your face.[otherwise if the semen addiction of the player < 12]half-heartedly struggle as [he of M] unloads all over your face.[otherwise]giggle to yourself as [he of M] unloads all over your face.[end if][at random]".
@@ -1223,6 +1220,7 @@ To compute happy reward of (M - a demoness):
 			now A is 0;
 		SexAddictUp 1;
 		SemenTasteAddictUp 1;
+		check black lace transformation;
 		FavourUp M by A.
 
 To say ForgivenessFlav of (M - a demoness):
@@ -1232,8 +1230,8 @@ To say ForgivenessFlav of (M - a demoness):
 To compute angry punishment of (M - a demoness):
 	if M is friendly-fucking:
 		say "[speech style of M]'Oh well, I got what I wanted anyway. Hahahaha!'[roman type][line break][BigNameDesc of M] disappears in a burst of flames.[line break]";
-		if the raw sex addiction of the player < 20, SexAddictUp 1;
-		if the raw semen taste addiction of the player < 20, SemenTasteAddictUp 1;
+		SexAddictUp 1;
+		SemenTasteAddictUp 1;
 		FavourDown M by 1;
 	otherwise:
 		say "[speech style of M]'Ingrate!'[roman type][line break][BigNameDesc of M] rakes [his of M] nails across your face.";
@@ -1426,15 +1424,19 @@ To compute unprotected climax of (M - a demoness) in (F - fuckhole):
 
 To compute soul creampie of (M - a demoness) in (F - vagina):
 	if futanari fetish > 0 or lady fetish is 2:
-		say "[BigNameDesc of M] speeds up, attacking your clit with two ominously glowing fingertips. Impossibly strong waves of pleasure overwhelm your senses, and a climax hits you like a wall of bricks as [semen] floods your [vagina] for the first time in your life.[line break][speech style of M]'Could you feel that, baby? I just fucked that juicy soul straight out of your body, and you just let it happen! HAHAHA! I HOPE IT WAS WORTH IT!'[roman type][line break][big he of M] pulls out, [his of M] [DickDesc of M] softening as [he of M] holds up a bright blue gemstone. The waves of pleasure slowly begin to fade, and [if the virgin bonus of the player < 0]a feeling of unimaginable shame[otherwise]a strong feeling of emptiness[end if] settles heavily in your chest.";
+		say "[BigNameDesc of M] speeds up, attacking your clit with two ominously glowing fingertips. Impossibly strong waves of pleasure overwhelm your senses, and a climax hits you like a wall of bricks as [semen] floods your [vagina] for the first time in your life.";
+		vaginally orgasm shamefully;[This is repeated below, but the flavor output looks better this way.]
+		compute M finishing in vagina;
+		say "[line break][speech style of M]'Could you feel that, baby? I just fucked that juicy soul straight out of your body, and you just let it happen! HAHAHA! I HOPE IT WAS WORTH IT!'[roman type][line break][big he of M] pulls out, [his of M] [DickDesc of M] softening as [he of M] holds up a bright blue gemstone. The waves of pleasure slowly begin to fade, and [if the virgin bonus of the player < 0]a feeling of unimaginable shame[otherwise]a strong feeling of emptiness[end if] settles heavily in your chest.";
 	otherwise:
-		say "The tentacle slams itself in as far as it can go, huge bulges passing along its length as [NameDesc of M] attacks your clit with two ominously glowing fingertips. Impossibly strong waves of pleasure overwhelm your senses, and a climax hits you like a wall of bricks as [semen] floods your [vagina] for the first time in your life.[line break][speech style of M]'Could you feel that, baby? [big he of a random tentacle monster] just fucked that juicy soul straight out of your body, and you just let it happen! HAHAHA! I HOPE IT WAS WORTH IT!'[roman type][line break][big he of M] holds up a bright blue gemstone, rolling it between [his of M] fingers as the tentacle slowly pulls out. The waves of pleasure slowly begin to fade, and [if the virgin bonus of the player < 0]a feeling of unimaginable shame[otherwise]a strong feeling of emptiness[end if] settles heavily in your chest.";
-	vaginally orgasm shamefully;
+		say "The tentacle slams itself in as far as it can go, huge bulges passing along its length as [NameDesc of M] attacks your clit with two ominously glowing fingertips. Impossibly strong waves of pleasure overwhelm your senses, and a climax hits you like a wall of bricks as [semen] floods your [vagina] for the first time in your life.";
+		vaginally orgasm shamefully;
+		compute M finishing in vagina;
+		say "[line break][speech style of M]'Could you feel that, baby? [big he of a random tentacle monster] just fucked that juicy soul straight out of your body, and you just let it happen! HAHAHA! I HOPE IT WAS WORTH IT!'[roman type][line break][big he of M] holds up a bright blue gemstone, rolling it between [his of M] fingers as the tentacle slowly pulls out. The waves of pleasure slowly begin to fade, and [if the virgin bonus of the player < 0]a feeling of unimaginable shame[otherwise]a strong feeling of emptiness[end if] settles heavily in your chest.";
 	compute M taking soul;
 	IntUp 3;
 	DexUp 3;
-	StrengthUp 3;
-	compute M finishing in vagina.
+	StrengthUp 3.
 
 To compute pregnancy creampie of (M - a demoness) in (F - vagina):
 	if lady fetish is 2 or futanari fetish > 0:
@@ -1524,7 +1526,7 @@ To say DamageReactSubmissive of (M - a demoness):
 
 [If the player has magical power, there is a chance the demoness will stay around]
 Definition: a demoness is automatically banishable:
-	if the magic-power of the player > 0, decide no;
+	if the magic power of the player >= 2 and the divinationskill of the player is 1, decide no;
 	decide yes.
 
 Definition: a demoness is taxable:
@@ -1532,14 +1534,12 @@ Definition: a demoness is taxable:
 
 [If the player has magic power, they can make the demoness stick around]
 To say DefeatBrink of (M - a demoness):
-	say "You feel magic welling up in your body as [NameDesc of M] falls to the floor, defeated. [big his of M] body flickers as [his of M] essence tries to return to [his of M] home dimension. If you use up some of your magic, you may be able to interfere with [him of M].";
+	say "You sense [NameDesc of M]'s essence dispersing, no doubt returning to [his of M] home dimension. If you use up some of your own magic, you might be able to stabilise it...";
 
 To say BanishDesc of (M - a demoness):
 	say "Just let [him of M] go.".
 To compute forced banishment of (M - a demoness):
-	say "[BigNameDesc of M][']s essence is sucked back into [his of M] home dimension.";
-	compute banished loot of M;
-	compute banishment of M.
+	compute automatic banishment of M.
 
 To say BanishFleeFlav of (M - a demoness):
 	say "[BigNameDesc of M] screams as [he of M] falls to the floor, and then you watch as [his of M] essence is sucked back into [his of M] home dimension.";
@@ -1871,11 +1871,11 @@ To compute failed dominance punishment of (M - a demoness):
 	if the player is getting very unlucky and (the class of the player is priestess or the player is not able to speak or the times-dominated of M > the times-submitted of M):[summons imps to gangbang you]
 		let N be a random imp;
 		let C be the number of undefended orifices;
-		say "[speech style of M]'You have a big heart for a mortal. I have to repay you somehow, but hmmmm, I can't think of anything. This won't do.'[roman type][line break][BigNameDesc of M] whistles sharply and at least a dozen tiny red [if lady fetish is 1]women[otherwise]men[end if] stampede [if playerRegion is Woods]out of the under brush[otherwise]through the door[end if] and form a loose circle around you.[line break][speech style of M]'While I think about it, would you mind entertaining my associates for a little while?'[roman type][line break]The imps don't waste any time crowding in around you, [unless there is a worn wrist bond]tying your hands behind your back[otherwise]holding you down[end if] and [if C is 1]moving your clothing out of the way[otherwise]snickering mischievously[end if] as they grope and fondle your body.";
+		say "[speech style of M]'You have a big heart for a mortal. I have to repay you somehow, but hmmmm, I can't think of anything. This won't do.'[roman type][line break][BigNameDesc of M] whistles sharply and at least a dozen tiny red [men of N] stampede [if playerRegion is Woods]out of the under brush[otherwise]through the door[end if] and form a loose circle around you.[line break][speech style of M]'While I think about it, would you mind entertaining my associates for a little while?'[roman type][line break]The imps don't waste any time crowding in around you, [unless there is a worn wrist bond]tying your hands behind your back[otherwise]holding you down[end if] and [if C is 1]moving your clothing out of the way[otherwise]snickering mischievously[end if] as they grope and fondle your body.";
 		if lady fetish is 1:
-			say "It's [if the player is gendered male]exciting[otherwise]almost comforting[end if] to be surrounded by so many women, but as the first imp presents her wet, needy pussy, it becomes totally clear that in any hierarchy among them you're the definitive bottom. The taste of the first cunt is quickly replaced by a second, and a third after that. Your [if the delicateness of the player + the oral sex addiction of the player < 5]reluctance certainly[otherwise]eager obedience[end if] doesn't seem to affect anything, mischievous giggling filling your ears as the imps treat you as nothing but a simple plaything. Exploratory fingers enter your holes, followed by dildos, tongues, even vines they've pulled out of the ground!";
+			say "It's [if the player is gendered male]exciting[otherwise]almost comforting[end if] to be surrounded by so many [men of N], but as the first imp presents [his of N] wet, needy pussy, it becomes totally clear that in any hierarchy among them you're the definitive bottom. The taste of the first cunt is quickly replaced by a second, and a third after that. Your [if the delicateness of the player + the oral sex addiction of the player < 5]reluctance certainly[otherwise]eager obedience[end if] doesn't seem to affect anything, mischievous giggling filling your ears as the imps treat you as nothing but a simple plaything. Exploratory fingers enter your holes, followed by dildos, tongues, even vines they've pulled out of the ground!";
 		otherwise:
-			say "Being surrounded by so many naked men almost makes you feel special, but as the first imp slides his [LongDickDesc of N] into your mouth, it becomes totally clear that they see you as nothing more than a cheap cocksleeve. There's little time to breathe or even swallow after the first imp is finished, another one immediately takes [his of N] place. [if the player is not possessing a vagina]Your [asshole] isn't[otherwise]Your holes aren't[end if] exempt from the treatment, and the imps take turns racing each other to see which end they can fill faster.";
+			say "Being surrounded by so many naked [men of N] almost makes you feel special, but as the first imp slides [his of N] [LongDickDesc of N] into your mouth, it becomes totally clear that they see you as nothing more than a cheap cocksleeve. There's little time to breathe or even swallow after the first imp is finished, as another one immediately takes [his of N] place. [if the player is not possessing a vagina]Your [asshole] isn't[otherwise]Your holes aren't[end if] exempt from the treatment, and the imps take turns racing each other to see which end they can fill faster.";
 		let X be 5;
 		if the player is possessing a vagina, increase the fuck-count of the player by X;
 		increase the anal-count of the player by X;

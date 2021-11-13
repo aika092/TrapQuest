@@ -18,7 +18,8 @@ WellWishing is an action applying to one thing.
 
 Check WellWishing:
 	unless the location of the player is Woods27, say "You'd probably need a wishing well to do that." instead;
-	if the noun is bottle and the doses of the noun < 1, say "But it's empty?" instead;
+	if the noun is bottle:
+		if the doses of the noun < 1, say "But it's empty?" instead;
 	otherwise if the noun is not a plentiful accessory:
 		unless the noun is infernal gem, say "It probably makes more sense to use something like jewellery." instead;
 	[otherwise:

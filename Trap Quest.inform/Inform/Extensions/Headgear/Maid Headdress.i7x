@@ -188,4 +188,38 @@ To decide which number is the initial cringe of (C - cafe maid headdress):
 
 Definition: cafe maid headdress is bear themed: decide yes.
 
+Part 3 - Milkmaid Headdress
+
+milkmaid headdress is a maid headdress. Figure of milkmaid headdress is the file "Items/Accessories/Head/maidheaddress3.png". The text-shortcut of milkmaid headdress is "mmh". milkmaid headdress is strength-influencing. milkmaid headdress is not roleplay.
+
+The printed name of milkmaid headdress is "[clothing-title-before]milkmaid headdress[clothing-title-after]".
+
+To decide which figure-name is the clothing-image of (C - milkmaid headdress):
+	decide on figure of milkmaid headdress.
+
+To say ClothingDesc of (H - milkmaid headdress):
+	say "This cow print hair-band has black satin ribbons and white ruffled lace, but also fake cow ears.".
+
+To say ShortDesc of (H - milkmaid headdress):
+	say "milkmaid headdress".
+
+To compute SelfExamineDesc of (H - milkmaid headdress):
+	let X be the largeness of hair;
+	say "You are wearing a [ShortDesc of H] on top of your [ShortDesc of hair]. ";
+
+Definition: milkmaid headdress is cow themed: decide yes.
+Definition: milkmaid headdress is waitress-enabling: decide yes.
+
+To uniquely set up (C - milkmaid headdress):
+	now C is milk production;
+	now the quest of C is milk-serve-quest.
+
+To compute class outfit of (H - milkmaid headdress):
+	class summon milkmaid-outfit;
+	class summon milkmaid bikini bottoms;
+	class summon milkmaid-apron-skirt;
+	class summon milkmaid stockings;
+	class summon leather-peep-toe-heels.
+
+
 Maid Headdress ends here.

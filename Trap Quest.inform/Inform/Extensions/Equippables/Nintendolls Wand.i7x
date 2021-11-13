@@ -1,6 +1,6 @@
 Nintendolls Wand by Equippables begins here.
 
-nintendolls-wand is a vibe-wand. nintendolls-wand is rare. The printed name of nintendolls-wand is "[clothing-title-before]nintendolls wand[clothing-title-after]". The text-shortcut of nintendolls-wand is "vw". Understand "nintendolls", "nintendoll" as nintendolls-wand.
+nintendolls-wand is a vibe-wand. nintendolls-wand is rare. The printed name of nintendolls-wand is "[clothing-title-before]Nintendolls wand[clothing-title-after]". The text-shortcut of nintendolls-wand is "vw". Understand "nintendolls", "nintendoll" as nintendolls-wand.
 
 Figure of nintendolls wand is the file "Items/Accessories/Equippables/wand1.png".
 
@@ -13,7 +13,7 @@ To decide which number is the original price of (C - nintendolls-wand):
 	decide on 3.
 
 To say ShortDesc of (W - nintendolls-wand):
-	say "nintendolls wand".
+	say "Nintendolls wand".
 
 To say ClothingDesc of (W - nintendolls-wand):
 	say "A pink wand vibrator. The word 'Nintendolls' is printed on one side in large letters.".

@@ -239,10 +239,6 @@ Figure of teapot tattoo is the file "Items/Tats/tattoo72.jpg".
 To decide which figure-name is the examine-image of (T - teapot tattoo):
 	decide on figure of teapot tattoo.
 
-Figure of ABDL finger tattoo is the file "Items/Tats/tattoo61.jpg".
-To decide which figure-name is the examine-image of (T - ABDL finger tattoo):
-	decide on figure of ABDL finger tattoo.
-
 Figure of walking teddy bear tattoo is the file "Items/Tats/tattoo99.jpg".
 To decide which figure-name is the examine-image of (T - walking teddy bear tattoo):
 	decide on figure of walking teddy bear tattoo.

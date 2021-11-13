@@ -481,7 +481,7 @@ To compute teaching of (L - practical-lesson):
 	let DL be teacher-rochelle;
 	now DL is in the location of the player;
 	say "[if TL is not DL][speech style of TL]'For this lesson, I am going to need some help from Teacher [teacher-name of DL].'[roman type][line break]You watch as [NameDesc of DL] enters the room, joining [NameDesc of TL] at the front.[line break][end if][speech style of TL]'Today we will be learning about how by being especially filthy, you can better service cocks and win the hearts of your Masters.'[roman type][line break]";
-	say "[BigNameDesc of DL] gently strokes [his of DL] [DickDesc of DL], and you all watch as it slowly hardens, growing even larger in size.[line break][speech style of TL]'The rules are simple: each of you need to get in line and one by one you will do your best to pleasure the [manly-penis]. Up to [bold type]three people[speech style of TL] can get promoted: the person that makes it cum, the slut who I think acted the filthiest, and the person who used the most different parts of their body. EXCEPT hand-jobs, which are for prudes. [if a2m fetish is 0]The special rule for today is that no anal sex is allowed[otherwise]And remember, no ass-to-vag, okay? That's unhealthy[end if]. Finally, [bold type]each time you perform a sexual act but fail to convince me that you're enjoying it, you'll get a punishment. [speech style of TL]Your Masters aren't going to be [please]d if they can tell you heart isn't really in it.'[roman type][line break]And with that [he of TL] sorts you into a random order, which ends up having you at the front. You're going to have to go first, it would seem...";
+	say "[BigNameDesc of DL] gently strokes [his of DL] [DickDesc of DL], and you all watch as it slowly hardens, growing even larger in size.[line break][speech style of TL]'The rules are simple: each of you need to get in line and one by one you will do your best to pleasure the [manly-penis]. Up to [bold type]three people[speech style of TL] can get promoted: the person that makes it cum, the slut who I think acted the filthiest, and the person who used the most different parts of their body. EXCEPT hand-jobs, which are for prudes. [if a2m fetish is 0]The special rule for today is that no anal sex is allowed[otherwise]And remember, no ass-to-vag, okay? That's unhealthy[end if]. Finally, [bold type]each time you perform a sexual act but fail to convince me that you're enjoying it, you'll get a punishment. [speech style of TL]Your Masters aren't going to be [please]d if they can tell you heart isn't really in it.'[roman type][line break]And with that, [he of TL] sorts you into a random order, which ends up having you at the front. You're going to have to go first, it would seem...";
 	repeat with W running through worn wrist locking clothing:
 		say "With a click of [his of DL] fingers, your [ShortDesc of W] falls to the ground.";
 		now W is in the location of the player;
@@ -1035,7 +1035,7 @@ To compute teaching of (L - swimming-lesson):
 		decrease eventTimer by 1;
 		if eventTimer is 0 and the number of entries in LInPool > 0: [Something crazy happens.]
 			say "[bold type]Suddenly the lights turn red and a loud klaxon starts blaring. The timed event that [teacher-name of M] talked about is happening![roman type][line break]";
-			if condom fetish is 1 and CPS is clothing and a random number between 1 and 5 > 2: [Swimming condoms]
+			if condom fetish is 1 and CPS is clothing and a random number between 1 and 4 > 1: [Swimming condoms]
 				now poolCrazyEvent is 2;
 				say "And then it happens: A sea of unused condoms, not in wrappers, rain from the ceiling. They land in the pool all over, and then begin swimming blindly around like leeches, filling up with [semen] from the pool as they move. ";
 				if yourself is listed in LInPool and the number of entries in LInPool is 1: [Player is the only person in the pool]
@@ -2233,7 +2233,7 @@ To compute anal torture of (M - an ultimate-lesson-actor):
 				say "Your face is guided down to the dogbowl. Do you eat the banana and cum that has just been in your ass? ";
 				if the player is bimbo consenting:
 					say "You push your face down and begin to slurp up the mushy stuff; the strong tangy flavours of banana, [semen] and ass coating your tongue. [severeHumiliateReflect]";
-					SlowSemenTasteAddictUp 1;
+					StomachSemenUp 1;
 					StomachFoodUp 1;
 				otherwise:
 					say "You refuse to eat the disgusting stuff.";

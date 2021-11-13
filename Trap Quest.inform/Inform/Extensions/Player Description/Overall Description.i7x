@@ -37,7 +37,7 @@ To say PlayerDescription:
 To say ClothesDescription:
 	if the player is naked:
 		say "You are completely naked. [if the bimbo of the player > 6 and diaper quest is 1][line break][variable custom style]I'm going to get in trouble![roman type][line break][otherwise if the humiliation of the player > 15000 and the humiliation of the player < 40000][line break][second custom style]How naughty![roman type][line break][end if]";
-	if cowbell is worn:
+	if there is a worn cowbelled clothing:
 		say "A loud clanging accompanies your movement thanks to a cowbell attached to your neck. ";
 	if the latex-transformation of the player >= 7: [#LXorDD]
 		say "You are not able to speak due to your latex mouth being kept in a permanent O-shape.[line break]";

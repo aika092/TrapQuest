@@ -84,32 +84,42 @@ To summon (M - a monster):
 	if M is nonexistent and M is on-stage, set up M.
 
 To summon (M - a monster) in (D - the dungeon):
-	while M is off-stage or M is nearby or M is in the location of the player or M is in Dungeon12 or M is in Dungeon11 or M is in Dungeon10:
+	let failsafe be 0;
+	while failsafe < 50 and (M is off-stage or M is in the location of the player or M is in Dungeon12 or M is in Dungeon11 or M is in Dungeon10 or M is nearby):
+		increase failsafe by 1;
 		now M is in a random placed unbossed labyrinth room;
 		if M is nonexistent and the number of placed labyrinth rooms is the number of discovered labyrinth rooms, SilentlyDifficultyUp M by 5.
 
 To summon (M - a monster) in (D - the woods):
 	if the number of placed unbossed jungle rooms > 1:
-		while M is off-stage or M is nearby or M is in the location of the player or M is in Woods01:
+		let failsafe be 0;
+		while failsafe < 50 and (M is off-stage or M is in the location of the player or M is in Woods01 or M is nearby):
+			increase failsafe by 1;
 			now M is in a random placed unbossed jungle room;
 			if M is nonexistent and the number of placed jungle rooms is the number of discovered jungle rooms, SilentlyDifficultyUp M by 5.
 
 To summon (M - a monster) in (D - the hotel):
 	if the number of placed unbossed modern rooms > 1:
-		while M is off-stage or M is nearby or M is in the location of the player or M is in Hotel01:
+		let failsafe be 0;
+		while failsafe < 50 and (M is off-stage or M is in the location of the player or M is in Hotel01 or M is nearby):
+			increase failsafe by 1;
 			now M is in a random placed unbossed modern room;
 			if M is nonexistent and the number of placed modern rooms is the number of discovered modern rooms, SilentlyDifficultyUp M by 5.
 
 To summon (M - a monster) in (D - the mansion):
 	if the number of placed unbossed haunted rooms > 1:
-		while M is off-stage or M is nearby or M is in the location of the player or M is in Mansion01:
+		let failsafe be 0;
+		while failsafe < 50 and (M is off-stage or M is in the location of the player or M is in Mansion01 or M is nearby):
+			increase failsafe by 1;
 			now M is in a random placed unbossed haunted room.
 			[if the number of placed haunted rooms is the number of discovered haunted rooms, SilentlyDifficultyUp M by 5.]
 
 [Most NPCs aren't allowed in the school]
 To summon (M - a monster) in (D - the school):
 	if M is student or M is staff member:
-		while M is off-stage or M is nearby or M is in the location of the player or the entry-rank of (the location of M) > the current-rank of M:
+		let failsafe be 0;
+		while failsafe < 50 and (M is off-stage or M is nearby or M is in the location of the player or the entry-rank of (the location of M) > the current-rank of M):
+			increase failsafe by 1;
 			now M is in a random academic room;
 	otherwise:
 		if Hotel01 is discovered and a random number from 1 to 2 is 1, summon M in the hotel;

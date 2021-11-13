@@ -235,7 +235,7 @@ To compute periodic effect of (C - nub-cage):
 	otherwise:
 		increase the nub-charge of nub-cage by 1;
 		if the nub-charge of nub-cage > a random number between 15 and 25:
-			if the size of the penis > min penis size:
+			if the size of penis > min penis size:
 				say "Your [ShortDesc of C] starts to squeeze your [sissy-penis] down even smaller!";
 				passively stimulate penis from C;
 				PenisDown 1;

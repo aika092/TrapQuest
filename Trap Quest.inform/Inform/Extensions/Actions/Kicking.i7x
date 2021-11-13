@@ -50,7 +50,6 @@ An all time based rule (this is the kick fatigue recovery rule):
 Kicking is an action applying to one thing.
 
 Check kicking:
-	if the noun is container, try MimicInvestigating the noun instead;
 	if the noun is lake monster, say "You can't reach it from here." instead;
 	if the noun is not a monster, say "Err, why would you do that?" instead;
 	if the player is in a predicament room, say "This is neither the time nor the place for violence." instead;

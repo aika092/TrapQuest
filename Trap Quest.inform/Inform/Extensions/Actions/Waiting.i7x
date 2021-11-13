@@ -32,8 +32,8 @@ Check waiting:
 					ruin asshole;
 			if M is awake:
 				say "[BigNameDesc of M] pulls out of you with the loudest, wettest slurping sound as [his of M] still semi-hard schlong, breaking its airtight seal. [big he of M] seems to assume you are unconscious, and wanders off to search for other victims.";
-				bore M for 50 seconds;
 				regionally place M;
+				bore M;
 				display entire map;
 		otherwise:
 			try submitting instead.

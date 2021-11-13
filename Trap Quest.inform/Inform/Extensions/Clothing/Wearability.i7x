@@ -63,6 +63,7 @@ Definition: a clothing (called C) is reasonable when outrageous:
 
 Definition: a clothing (called C) is reasonable when cringeworthy:
 	if the player is in a predicament room, decide yes;
+	if C is class-relevant, decide yes;
 	if C is crotch-intact knickers, decide yes;
 	if the stolen-strength of C > 0, decide yes;
 	if ((C is short or C is super-short) and short skirts permanent fetish > 0) or (C is knickers and no-panties permanent fetish > 0), decide yes;

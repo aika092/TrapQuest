@@ -141,7 +141,7 @@ To vaginally orgasm shamefully:
 		follow the drilldo orgasm resolution rule;
 	otherwise if the player is male:
 		penis orgasm shamefully;[Unless the player is futa, we treat vaginal orgasms as penis-based.]
-	otherwise:
+	otherwise if the player is possessing a vagina:
 		increase vaginal-orgasms by 1;
 		say VaginalOrgasmFlav;
 		if interracial fetish is 1 and there is a dark skinned male monster penetrating vagina, say "[one of][if the sex addiction of the player < 6][line break][first custom style]I can't believe I just came from a black [manly-penis]...[otherwise if the raw sex addiction of the player < 11][line break][variable custom style]I just came all over a black [manly-penis]... I didn't know it would feel so good.[otherwise][line break][second custom style]Oh my god, black [manly-penis] is the best. I want more![end if][or][if the sex addiction of the player < 6][first custom style]What is it about black [manly-penis] that makes me cum, even when I don't want to?![otherwise if the sex addiction of the player < 9][first custom style]If this keeps happening, I know I won't be able to stop myself from genuinely enjoying getting railed by big black [manly-penis]. [second custom style]I might be enjoying it already...[otherwise if the sex addiction of the player < 12][variable custom style]I only cum this hard when it's a black [manly-penis]![otherwise][second custom style]That felt so FUCKING good! I need even more black [manly-penis]![end if][stopping][roman type][line break]";
@@ -233,15 +233,17 @@ This is the ejaculation handled separately for fucking NPCs rule:
 The ejaculation handled separately for fucking NPCs rule is listed first in the ejaculation rules.
 
 This is the latex dolls don't ejaculate rule:
-	if the latex-transformation of the player >= 3, rule fails.
+	if the latex-transformation of the player >= 5, rule fails. [#LXorDD: Allow them to ejaculate until they can also no longer eat or drink or pee.]
 The latex dolls don't ejaculate rule is listed first in the ejaculation rules.
 
 This is the girls don't jizz semen rule:
-	if the player is not possessing a penis, rule succeeds.
+	if the player is not possessing a penis:
+		unless players-detached-dick is somewhere-here: [#LXorDD: NB latexness rule has already been checked, as this one is last.]
+			rule succeeds.
 The girls don't jizz semen rule is listed last in the ejaculation rules.
 
 This is the lack of penis for ejaculation rule:
-	if the player is not possessing a penis:
+	unless the player is somehow possessing a penis: [#LXorDD: detached dicks can ejaculate.]
 		if the player is sexed male, say "You would have ejaculated, but you no longer have a penis.";
 		rule fails.
 The lack of penis for ejaculation rule is listed last in the ejaculation rules.
@@ -250,7 +252,7 @@ This is the condom of kings ejaculation rule:
 	let C be a random worn condom of kings;
 	if C is condom of kings:
 		let A be the semen load of the player;
-		say "[one of]Your [ShortDesc of penis] [if A < 3]dribbles a small amount of [semen][otherwise if A < 5]shoots warm [semen][otherwise if A < 9]shoots several strings of warm [semen][otherwise]fires rope after rope of potent [semen][end if] into your [printed name of a random condom of kings worn by the player].[or]Your [ShortDesc of penis] [if A < 3]twitches pitifully as it fills your[otherwise if A < 6]throbs powerfully as it fills your[otherwise]flexes as it floods your[end if] [printed name of a random condom of kings worn by the player] with a [if A < 3]feeble[otherwise if A < 5]warm[otherwise if A < 8]thick, creamy[otherwise]massive[end if] load[at random].";
+		say "[one of]Your [mystical ShortDesc of penis] [if A < 3]dribbles a small amount of [semen][otherwise if A < 5]shoots warm [semen][otherwise if A < 9]shoots several strings of warm [semen][otherwise]fires rope after rope of potent [semen][end if] into your [printed name of a random condom of kings worn by the player].[or]Your [mystical ShortDesc of penis] [if A < 3]twitches pitifully as it fills your[otherwise if A < 6]throbs powerfully as it fills your[otherwise]flexes as it floods your[end if] [printed name of a random condom of kings worn by the player] with a [if A < 3]feeble[otherwise if A < 5]warm[otherwise if A < 8]thick, creamy[otherwise]massive[end if] load[at random].";
 		now C is creamfilled;
 		if C is not cursed:
 			say "The opening of the condom suddenly tightens, as if reacting to the shamefulness of your orgasm! You watch[if the bimbo of the player < 5] with horror[otherwise], intrigued[end if] as a wave of bright pink spreads out from the emblem on the tip, overriding the aura of pride and manliness with overpowering shame. It's cursed!";
@@ -277,7 +279,7 @@ The penetration ejaculation rule is listed last in the ejaculation rules.
 This is the football game ejaculation rule:
 	if remote-controlled-vibrator is worn:
 		let A be the semen load of the player;
-		say "Your [ShortDesc of penis] [if A < 3]quivers excitedly[otherwise]flexes powerfully[end if] as [if A < 3]a small amount of [semen] slowly dribbles from the tip[otherwise if A < 6]splurts warm [semen][otherwise if A < 8]drools its thick, creamy load[otherwise if A < 11]shoots several thick, creamy ropes[otherwise]shoots its almost inhuman load[end if] into [NameDesc of remote-controlled-vibrator].";
+		say "Your [mystical ShortDesc of penis] [if A < 3]quivers excitedly[otherwise]flexes powerfully[end if] as [if A < 3]a small amount of [semen] slowly dribbles from the tip[otherwise if A < 6]splurts warm [semen][otherwise if A < 8]drools its thick, creamy load[otherwise if A < 11]shoots several thick, creamy ropes[otherwise]shoots its almost inhuman load[end if] into [NameDesc of remote-controlled-vibrator].";
 		rule succeeds.
 The football game ejaculation rule is listed last in the ejaculation rules.
 
@@ -286,11 +288,11 @@ This is the ejaculation into clothing rule:
 	let P be a random bottom level pee protection clothing worn by the player;
 	if P is clothing:
 		if P is portal-pants:
-			say "Your [ShortDesc of penis] [if A < 3]quivers excitedly[otherwise]flexes powerfully[end if] as [if A < 3]a small amount of [semen] slowly dribbles from the tip[otherwise if A < 6]splurts warm [semen][otherwise if A < 8]drools its thick, creamy load[otherwise if A < 11]shoots several thick, creamy ropes[otherwise]shoots its almost inhuman load[end if][run paragraph on]";
+			say "Your [mystical ShortDesc of penis] [if A < 3]quivers excitedly[otherwise]flexes powerfully[end if] as [if A < 3]a small amount of [semen] slowly dribbles from the tip[otherwise if A < 6]splurts warm [semen][otherwise if A < 8]drools its thick, creamy load[otherwise if A < 11]shoots several thick, creamy ropes[otherwise]shoots its almost inhuman load[end if][run paragraph on]";
 		otherwise if P is potentially penis covering:
-			say "[one of]Your [ShortDesc of penis] [if A < 3]quivers excitedly[otherwise]flexes powerfully[end if] as it [if A < 3]dribbles its small amount of [semen] into[otherwise if A < 6]splurts warm [semen] into[otherwise if A < 9]drools its thick, creamy load into[otherwise]floods your [printed name of a random bottom level pee protection clothing worn by the player] with its massive, creamy load.[end if][if A < 8] your [printed name of P].[end if][or]Your [ShortDesc of penis] [if A < 3]quivers from within your[otherwise]strains against your[end if] [printed name of a random bottom level pee protection clothing worn by the player], wiping your mind with pleasure [if P is fluid immune]as it coats the tough inner [clothing-material of P][otherwise]as it darkens the [clothing-material of P][end if] with a [if A < 3]pitifully tiny load[otherwise if A < 5]warm, gooey load[otherwise if A < 8]thick, creamy load[otherwise]massive load[end if], which [if P is fluid immune]slowly rolls down your shaft[otherwise]darkening the inner fabric[end if].[or]Your [ShortDesc of penis] spurts a [if A < 3]feeble load[otherwise if A < 5]warm load[otherwise if A < 9]thick load[otherwise]massive, creamy load[end if] into your [printed name of P], [if P is fluid immune] which hits the inner [clothing-material of P] and splashes back against your skin. You tremble as the slimy [semen] rolls down your shaft.[otherwise]which creates a noticeable dark spot in the [clothing-material of P].[end if][in random order]";
+			say "[one of]Your [mystical ShortDesc of penis] [if A < 3]quivers excitedly[otherwise]flexes powerfully[end if] as it [if A < 3]dribbles its small amount of [semen] into[otherwise if A < 6]splurts warm [semen] into[otherwise if A < 9]drools its thick, creamy load into[otherwise]floods your [printed name of a random bottom level pee protection clothing worn by the player] with its massive, creamy load.[end if][if A < 8] your [printed name of P].[end if][or]Your [mystical ShortDesc of penis] [if A < 3]quivers from within your[otherwise]strains against your[end if] [printed name of a random bottom level pee protection clothing worn by the player], wiping your mind with pleasure [if P is fluid immune]as it coats the tough inner [clothing-material of P][otherwise]as it darkens the [clothing-material of P][end if] with a [if A < 3]pitifully tiny load[otherwise if A < 5]warm, gooey load[otherwise if A < 8]thick, creamy load[otherwise]massive load[end if], which [if P is fluid immune]slowly rolls down your shaft[otherwise]darkening the inner fabric[end if].[or]Your [mystical ShortDesc of penis] spurts a [if A < 3]feeble load[otherwise if A < 5]warm load[otherwise if A < 9]thick load[otherwise]massive, creamy load[end if] into your [printed name of P], [if P is fluid immune] which hits the inner [clothing-material of P] and splashes back against your skin. You tremble as the slimy [semen] rolls down your shaft.[otherwise]which creates a noticeable dark spot in the [clothing-material of P].[end if][in random order]";
 		otherwise:
-			say "Your [ShortDesc of penis] [if A < 3]quivers excitedly[otherwise]flexes powerfully[end if] as [if A < 3]a small amount of [semen] slowly dribbles[otherwise if A < 6]it drools warm [semen][otherwise if A < 9]it splurts out thick, creamy [semen], which oozes down your belly and [otherwise]shoots out several thick, creamy ropes, which ooze slowly down your belly and[end if] down your shaft, collecting in the waist band of your [printed name of a random bottom level pee protection clothing worn by the player], [if P is fluid immune]which doesn't absorb anything at all, allowing you to feel your slimy load dribble slowly over your skin[otherwise]which creates a noticeable dark spot in the fabric[end if].";
+			say "Your [mystical ShortDesc of penis] [if A < 3]quivers excitedly[otherwise]flexes powerfully[end if] as [if A < 3]a small amount of [semen] slowly dribbles[otherwise if A < 6]it drools warm [semen][otherwise if A < 9]it splurts out thick, creamy [semen], which oozes down your belly and [otherwise]shoots out several thick, creamy ropes, which ooze slowly down your belly and[end if] down your shaft, collecting in the waist band of your [printed name of a random bottom level pee protection clothing worn by the player], [if P is fluid immune]which doesn't absorb anything at all, allowing you to feel your slimy load dribble slowly over your skin[otherwise]which creates a noticeable dark spot in the fabric[end if].";
 		compute ejaculation;
 		rule succeeds.
 The ejaculation into clothing rule is listed last in the ejaculation rules.
@@ -310,7 +312,7 @@ This is the ejaculation capture rule:
 			compute multiple choice question;
 			if player-numerical-response > 0, now collecting is entry player-numerical-response in LV;
 	if collecting is bottle:
-		say "[one of]Your [ShortDesc of penis] [if A < 3]dribbles its small amount of [semen][otherwise if A < 5]ejaculates[otherwise]shoots string after string of potent [semen][end if] into the [ShortDesc of collecting][or]Your [ShortDesc of penis] [if A < 3]quivers as it dribbles a tiny amount of [semen][otherwise if A < 6]throbs gently as it shoots a couple small strings of [semen][otherwise if A < 9]throbs powerfully as it shoots several stings of potent [semen][otherwise if A < 11]pulses with primal power as it fires several long ropes of [semen][otherwise]pulses with primal power as it jets huge, almost inhuman levels of [semen][end if] into the [ShortDesc of collecting][at random]. The strong smell hits your nostrils as you hold it in your hand, and you feel a [if the semen taste addiction of the player < 7]a weird temptation to taste just a tiny bit, which you quickly push to the back of your mind[otherwise if the semen taste addiction of the player > 13]a strong urge to drink it, which you push to the back of your mind for now[otherwise]bit more comfortable around [semen][end if].";
+		say "[one of]Your [mystical ShortDesc of penis] [if A < 3]dribbles its small amount of [semen][otherwise if A < 5]ejaculates[otherwise]shoots string after string of potent [semen][end if] into the [mystical ShortDesc of collecting][or]Your [mystical ShortDesc of penis] [if A < 3]quivers as it dribbles a tiny amount of [semen][otherwise if A < 6]throbs gently as it shoots a couple small strings of [semen][otherwise if A < 9]throbs powerfully as it shoots several stings of potent [semen][otherwise if A < 11]pulses with primal power as it fires several long ropes of [semen][otherwise]pulses with primal power as it jets huge, almost inhuman levels of [semen][end if] into the [mystical ShortDesc of collecting][at random]. The strong smell hits your nostrils as you hold it in your hand, and you feel a [if the semen taste addiction of the player < 7]a weird temptation to taste just a tiny bit, which you quickly push to the back of your mind[otherwise if the semen taste addiction of the player > 13]a strong urge to drink it, which you push to the back of your mind for now[otherwise]bit more comfortable around [semen][end if].";
 		SilentlySemenTasteAddictUp 1;
 		now the fill-colour of collecting is creamy;
 		DoseUp collecting by A / 3;
@@ -332,14 +334,17 @@ The ejaculation capture rule is listed last in the ejaculation rules.
 
 This is the default ejaculation rule:
 	let A be the semen load of the player;
-	say "[one of]Your [ShortDesc of penis] [if A < 3]dribbles its small amount of [semen][otherwise if A < 5]ejaculates[otherwise]shoots string after string of potent [semen][end if] onto the ground.[or]Your [ShortDesc of penis] [if A < 3]quivers as it dribbles a tiny amount of [semen][otherwise if A < 6]throbs gently as it shoots a couple small strings of [semen][otherwise if A < 9]throbs powerfully as it shoots several stings of potent [semen][otherwise if A < 11]pulses with primal power as it fires several long ropes of [semen][otherwise]pulses with primal power as it jets out an almost inhuman amount of [semen][end if] into a[if A > 8]n impressive[end if] puddle on the ground.[at random]";
+	say "[one of]Your [mystical ShortDesc of penis] [if A < 3]dribbles its small amount of [semen][otherwise if A < 5]ejaculates[otherwise]shoots string after string of potent [semen][end if] onto the ground.[or]Your [mystical ShortDesc of penis] [if A < 3]quivers as it dribbles a tiny amount of [semen][otherwise if A < 6]throbs gently as it shoots a couple small strings of [semen][otherwise if A < 9]throbs powerfully as it shoots several stings of potent [semen][otherwise if A < 11]pulses with primal power as it fires several long ropes of [semen][otherwise]pulses with primal power as it jets out an almost inhuman amount of [semen][end if] into a[if A > 8]n impressive[end if] puddle on the ground.[at random]";
 	compute ejaculation;
 	rule succeeds.
 The default ejaculation rule is listed last in the ejaculation rules.
 
+[#LXorDD: Allow the detached dick to ejaculate.]
 To decide which number is the semen load of (Y - yourself):
-	if the trophy-mode of ejaculate-trophy is 1, decide on (the size of penis * 2) + 7;
-	decide on the size of penis.
+	let N be the mystical size of penis; [#LXorDD: Allow the detached dick to work, too.]
+	if the latex-transformation of the player >= 5, now N is 0; [But you're not supposed to ejaculate if latex TF level 5 or more.]
+	if the trophy-mode of ejaculate-trophy is 1, decide on (N * 2) + 7;
+	decide on N.
 
 To compute ejaculation:
 	let P be a random bottom level pee protection clothing worn by the player;
@@ -364,10 +369,10 @@ This is the penis softens after ejaculation rule:
 			if there is a worn portal-cock-ring and (a random number between 1 and 3 > 1):
 				say cock ring effect of portal-cock-ring;
 			otherwise if P is clothing and penis is exposed:
-				say "Your [ShortDesc of penis] softens enough to slip back into your [ShortDesc of P].";
+				say "Your [mystical ShortDesc of penis] softens enough to slip back into your [ShortDesc of P].";
 				now penis is not penis-erect;
 			otherwise:
-				say "Your [ShortDesc of penis] slowly softens.";
+				say "Your [mystical ShortDesc of penis] slowly softens.";
 				now penis is not penis-erect.
 The penis softens after ejaculation rule is listed last in the orgasm resolution rules.
 

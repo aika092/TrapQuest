@@ -12,25 +12,6 @@ To decide which figure-name is the examine-image of (M - memic):
 
 memic has a thing called mimic-disguise. The mimic-disguise of memic is usually memic.
 
-[To decide which text is the nextMimicName of (M - memic):
-	let D be the mimic-disguise of M;
-	if D is ornate trunk:
-		decide on "[one of]ornate[or]ornate[or]ornamental[as decreasingly likely outcomes] trunk";
-	otherwise if D is antique trunk:
-		decide on "[one of]antique[or]antique[or]old-looking[as decreasingly likely outcomes] trunk";
-	otherwise if D is large sack:
-		if the class of the player is santa's little helper:
-			decide on "[one of]stocking[or]stocking[or]giant sock[as decreasingly likely outcomes]";
-		otherwise:
-			decide on "large [one of]sack[or]sack[or]bag[as decreasingly likely outcomes]";
-	otherwise if D is wooden crate:
-		if the class of the player is santa's little helper:
-			decide on "[one of]giant[or]giant[or]great big[as decreasingly likely outcomes] present";
-		otherwise:
-			decide on "[one of]wooden[or]wooden[or]woodish[as decreasingly likely outcomes] crate";
-	otherwise:
-		decide on "mimic".]
-
 To say ExamineDesc of (M - a memic):
 	let D be the mimic-disguise of M;
 	if D is ornate trunk:
@@ -41,13 +22,20 @@ To say ExamineDesc of (M - a memic):
 		if the class of the player is santa's little helper, say "[one of]A giant stocking, which probably contains a lovely present[or]A giant silk stocking, which probably contains a lovely present[or]A giant bedazzled stocking, which probably contains a trashy present[cycling].";
 		otherwise say "[one of]A large brown cotton sack lying against one wall[or]A large brown silk sack lying against one wall[or]A large bedazzled sack lying against one wall[cycling].";
 	otherwise if D is wooden crate:
-		if the class of the player is santa's little helper, say "[one of]A large box that has been fashioned in the style of a Christmas present[or]A large box fashioned in the style of a Christmas present, complete with a giant magenta bow on top[or]A large box fashioned in the style of a Christmas present, complete with a giant magenta bow on top. It has a sign on it that reads [if the player is gendered male and the bimbo of the player < 6]STUDS, PLEASE OPEN ME[otherwise if the player is gendered female and the bimbo of the player < 6]INTELLIGENT FEMINISTS, PLEASE OPEN ME[otherwise]HOT SLUTS, PLEASE OPEN ME[end if][cycling].";
+		if the class of the player is santa's little helper, say "[one of]A large box that has been fashioned in the style of a Christmas present[or]A large box fashioned in the style of a Christmas present, complete with a giant magenta bow on top[or]A large box fashioned in the style of a Christmas present, complete with a giant magenta bow on top. It has a sign on it that reads '[if the player is gendered male and the bimbo of the player < 6]STUDS, PLEASE OPEN ME[otherwise if the player is gendered female and the bimbo of the player < 6]INTELLIGENT FEMINISTS, PLEASE OPEN ME[otherwise]HOT SLUTS, PLEASE OPEN ME[end if]'[cycling].";
 		otherwise say "[one of]A large wooden crate that looks like it has been there for a long time[or]A large wooden crate that looks like it was moved recently.[or]A large wooden crate that looks like it might contain beauty supplies[cycling].";
+	otherwise if D is metal crate:
+		if the class of the player is santa's little helper, say "[one of]A large box that has been fashioned in the style of a toy box[or]A large box styled in the fashion of a toy box.[or]A large box with the word 'FUN TOYS' printed on it in big glittery letters[cycling].";
+		otherwise say "[one of]A large metal crate that has handles on the lid for easy opening[or]A large metal crate with handles for easy opening[or]A large easy-looking metal crate[cycling].";
+	otherwise if D is tree stump crate:
+		say "[one of]This wooden crate was made by hollowing out a tree stump then replacing the top as a lid[or]This wooden crate was made by hollowing out a tree hump and then replacing the top with a lid[or]This wooden crate was made by giving a tree's hump a good pump and putting a lid on the bump[cycling].";
+	otherwise if D is filing cabinet:
+		say "[one of]An ordinary looking filing cabinet, only the top drawer appears to be openable[or]An ordinary looking top cabinet, only the filing drawer appears to be openable[or]A extraordinary looking filing cabinet, only the top drawer opens[cycling].";
 	otherwise:
 		say "A treasure chest covered in pink and purple glitter, with a pair of red lips in place of a latch.";
 
 A time based rule (this is the mimic wandering rule):
-	if playerRegion is Mansion:
+	if playerRegion is Mansion or (halloween content is 1 and playerRegion is not School and the player is not in a predicament room):
 		if the mimic-boredom of memic <= 0 and memic is not in the location of the player:
 			mimicReplace memic;
 		otherwise:
@@ -55,7 +43,15 @@ A time based rule (this is the mimic wandering rule):
 
 To mimicReplace (M - a memic):
 	if the mimic-boredom of M <= 0:[sometimes there's a "move" to nothing here, but I don't understand why it happens unless G is holding the "location of M" pointer, not the "location of M" reference]
-		let R be a random placed creaky haunted room;
+		let R be Holding Pen;
+		if playerRegion is Mansion:
+			now R is a random placed creaky haunted room;
+		otherwise if playerRegion is Dungeon:
+			now R is a random placed sandy labyrinth room;
+		otherwise if playerRegion is Woods:
+			now R is a random placed dodgy jungle room;
+		otherwise if playerRegion is Hotel:
+			now R is a random placed corporate modern room;
 		let G be the location of M;
 		let C be a random closed container in R;
 		if R is placed and C is container:
@@ -66,7 +62,6 @@ To mimicReplace (M - a memic):
 			otherwise now the mimic-boredom of M is 6;
 			unless G is nothing, now C is in G;[rather than sharing the room, it swaps]
 			now the text-shortcut of M is the next-text-shortcut of M;
-			[now the mimicName of M is the nextMimicName of M.]
 
 To compute mimic:[The mimic is special in that it has no treasure in it, and will always do something inconvenient for the player. However, all the things the mimic does should have some silver lining]
 	if diaper quest is 1:
@@ -81,11 +76,11 @@ To compute mimic:[The mimic is special in that it has no treasure in it, and wil
 		let D be the mimic-disguise of M;
 		if D is ornate trunk:
 			compute mimic teasing 2;
-		otherwise if D is antique trunk:
+		otherwise if D is antique trunk or D is tree stump crate:
 			compute mimic teasing 4;
 		otherwise if D is large sack:
 			compute mimic teasing 1;
-		otherwise if D is wooden crate:
+		otherwise if D is wooden crate or D is metal crate:
 			compute mimic teasing 3;
 		otherwise:
 			compute mimic teasing 2;
@@ -152,13 +147,13 @@ To compute mimic teasing (N - 3):[stylish mimic. Transforms the player's clothes
 		now permanent makeup is 1.
 
 To compute mimic teasing (N - 4):[friendly mimic; messes with player penis size, equalises asshole and vagina gape, or gives the player a free lube]
-	say "A shadowy mass rises out of the trunk, slowly forming itself into a [if futanari fetish is 0]flatchested green [man of a memic] with piercing yellow eyes and a giant green dildo attached to a harness around [his of a memic] waist, [otherwise]frail green [man of a memic] with piercing yellow eyes and a giant green dick which is [end if]so huge it hangs halfway out of the trunk.[line break][second custom style]'[one of]Finally somebody opens me... I should probably give you a reward, right?[or]Phew, it's been so long since anyone opened me. Guess I should thank you.'[or]Thanks so much, it's been weeks since anybody opened me! I've gotta thank you somehow...'[or]So, I guess you opened me because you were looking for something useful. Let's see if I can help!'[at random][roman type][line break]The [item style]friendly mimic[roman type] makes a wicked grin as [he of a memic] yanks your body forward[run paragraph on]";
+	say "A shadowy mass rises out of the container, slowly forming itself into a [if futanari fetish is 0]flatchested green [man of a memic] with piercing yellow eyes and a giant green dildo attached to a harness around [his of a memic] waist, [otherwise]frail green [man of a memic] with piercing yellow eyes and a giant green dick which is [end if]so huge it hangs halfway out of the container.[line break][second custom style]'[one of]Finally somebody opens me... I should probably give you a reward, right?[or]Phew, it's been so long since anyone opened me. Guess I should thank you.'[or]Thanks so much, it's been weeks since anybody opened me! I've gotta thank you somehow...'[or]So, I guess you opened me because you were looking for something useful. Let's see if I can help!'[at random][roman type][line break]The [item style]friendly mimic[roman type] makes a wicked grin as [he of a memic] yanks your body forward[run paragraph on]";
 	if the player is possessing a penis:[Penis scrambling]
 		let P be a random number between 0 and 10;
 		let Ab be a random worn plug;
 		unless Ab is plug, now Ab is a random off-stage plug;
 		[if there is a worn plug, ]
-		say " and more shadows emerge from the trunk and envelop your crotch, rapidly stroking your [mystical-player-penis] as they creep on past your [ShortDesc of hips]";
+		say " and more shadows emerge from the container and envelop your crotch, rapidly stroking your [mystical-player-penis] as they creep on past your [ShortDesc of hips]";
 		if P > the mystical size of penis and there is a worn plug:
 			SpecialPenisUp P - the mystical size of penis; [#LXorDD]
 			say "You can feel your [printed name of Ab] shuddering inside you, rapidly losing mass as your penis begins to grow, lengthening rapidly into a [mystical ShortDesc of penis]!";
@@ -173,7 +168,7 @@ To compute mimic teasing (N - 4):[friendly mimic; messes with player penis size,
 				SilentlySpecialPenisDown P; [#LXorDD]
 				say "Your penis rapidly shrinks down into a [mystical ShortDesc of penis] as the mimic pries open your [asshole], looking you dead in the eye as it fills you with [if P is 1]a nice big shot of warm fluid[otherwise if P is 2]a few shots of warm fluid[otherwise]several shots of warm fluid[end if].";
 				AssFill P;
-	otherwise:
+	otherwise if the player is possessing a vagina:
 		let V be the openness of vagina;
 		let A be the openness of asshole;
 		if A is V:
@@ -186,10 +181,10 @@ To compute mimic teasing (N - 4):[friendly mimic; messes with player penis size,
 			otherwise:
 				PussyClose V - A;
 				gape asshole times (V - A);
-			say " and more shadows emerge from the trunk and envelop your crotch. You feel a wrenching sensation deep in your gut as your [vagina] and [asshole] are forced wide open, and then painfully tightened.";
+			say " and more shadows emerge from the container and envelop your crotch. You feel a wrenching sensation deep in your gut as your [vagina] and [asshole] are forced wide open, and then painfully tightened.";
 			ruin asshole;
 			ruin vagina;
-	say "[line break][second custom style]'You're welcome!'[roman type][line break]The mimic releases you, maintaining [his of a memic] nasty smile as [his of a memic] body disappears and the trunk rapidly swings shut.".
+	say "[line break][second custom style]'You're welcome!'[roman type][line break]The mimic releases you, maintaining [his of a memic] nasty smile as [his of a memic] body disappears and the container rapidly swings shut.".
 
 To compute mimic teasing (N - 2):[snickering mimic;reverses bust and hip size, then increases delicateness]
 	say "More hands jump out at you, pulling harder and harder until you finally lose your balance and topple in head first as hysterical laughter fills your ears.[line break][second custom style]'[one of]Now I REALLY get to mess with you! Hee he he[or]Just so you know, I'm about to have a LOT of fun[or]Now I can do WHATEVER I want! Ha ha ha[or]Yes, finally! It's been so long since I had anyone to PLAY with[at random]!'[roman type][line break]The [item style]snickering mimic[roman type]'s voice only grows louder as a shadowy mass envelops your whole body, [if the number of worn clothing > 0]slithers under your clothes and clamping over your mouth[otherwise]tickling your bare skin and clamping over your mouth[end if], as the mimic begins reshaping your body as it sees fit. You can feel it twisting your nipples and viciously spanking your ass as it rearranges your features, but you have no way of responding to the pain other than to simply endure it until it abruptly chucks you out on your ass and closes sharply behind you.";
@@ -232,7 +227,7 @@ Report waiting when the player is in MimicCrib:
 		appropriate-cutscene-display figure of mimic cutscene 4;
 		say "And still they continue to fall, threatening to bury you under their combined bulk and weight. You begin to struggle but it's no use - you feel like you're sinking in a quicksand made out of used nappies. Soon they are covering your entire body and you can't even breathe properly; you begin to cough and splutter as you try to suck a little oxygen through the thick rancid padding. [bold type]You feel yourself growing more accustomed to the smell of [urine]. [roman type]Just as you begin to feel light-headed [one of]and resign yourself to the reality of meeting your end,[or]once again[stopping] you are suddenly spat out of the crib back into the mansion, but now thoroughly exhausted and with tears in your eyes.";
 		PainUp 1;
-		if watersports fetish is 1, UrineTasteAddictUp 1;
+		if watersports fetish is 1, SilentlyUrineTasteAddictUp 1;
 		otherwise DiaperAddictUp 1;
 		now the fatigue of the player is the buckle threshold of the player;
 	now the stance of the player is 1;

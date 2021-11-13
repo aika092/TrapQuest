@@ -91,4 +91,5 @@ To decide which number is the strength-influence of (W - commodore cuddles):
 	if W is blessed, decide on 2;
 	decide on 1.
 
+
 Stuffies ends here.

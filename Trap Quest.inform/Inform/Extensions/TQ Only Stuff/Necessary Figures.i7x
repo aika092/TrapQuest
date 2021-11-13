@@ -83,7 +83,7 @@ To decide which figure-name is the monster-image of (M - dominatrix):
 		decide on figure of dominatrix 3.
 
 To decide which figure-name is the anal-sex-monster-image of (M - dominatrix):
-	if the player is male:
+	if the player is possessing a penis:
 		if the reaction of the player is 0, decide on figure of dominatrix cutscene 5;
 		otherwise decide on figure of dominatrix cutscene 4;
 	decide on figure of Missing NPC.

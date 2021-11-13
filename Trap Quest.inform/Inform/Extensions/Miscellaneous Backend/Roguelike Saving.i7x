@@ -78,7 +78,10 @@ To fix window overhang:
 		now setting-instruction is "".
 
 To fix status bar:
-	if new status line is 3, close the status window;
-	otherwise update status line.
+	if new status line is 4:
+		close the status window;
+	otherwise:
+		open the status window;
+		update status line.
 
 Roguelike Saving ends here.

@@ -138,10 +138,19 @@ To say TotalDesc of face:
 	if the total volume of face > 0, say "You currently have a [MouthfulDesc].";
 	if the number of things penetrating face > 0 or the latex-transformation of the player > 6:
 		let B be a random thing penetrating face;
+		if B is a monster:
+			say "Your mouth is currently being occupied by [FuckerDesc of B].";
 		if the latex-transformation of the player > 6:
 			say "Your rubber mouth[if B is gag], currently occupied by a [ShortDesc of B],[end if] has no tongue or inner moisture, permanently open and fixed in a submissive O-shape.";
 		otherwise:
-			say "Your mouth is currently occupied by a [ShortDesc of B].".
+			say "Your mouth is currently occupied by a [ShortDesc of B].";
+	if the player is a blowjob slut:
+		let P be a random thing penetrating face;
+		if P is a monster and P is male:
+			say "You have a feeling that no matter what you do, you're going to get a mouthful.";
+		otherwise:
+			if P is monster, say "Monsters are definitely paying extra attention to your lip.";
+			otherwise say "You have a feeling that monsters are paying extra attention to your lips.".
 
 To say MouthfulDesc:
 	let TV be the total volume of face;
@@ -243,21 +252,23 @@ To FaceFill (L - a liquid-object) by (N - a number):
 	if debugmode > 1, say "Filling face by [N] units of [L].";
 	let T be the total volume of face;
 	let outputSuppressed be false;
-	while N > 0 and the total volume of face < face-limit:
-		decrease N by 1;
-		if L is semen:
-			increase the semen volume of face by 1;
-			compute father material of face;
-			if there is a live thing penetrating face, now face is monster-origin;
-		if L is urine, increase the urine volume of face by 1;
-		if L is milk, increase the milk volume of face by 1;
-		if L is murkwater:
-			if watersports fetish is 1 and a random number between 1 and 3 is 1:
-				increase the urine volume of face by 1;
-			otherwise if diaper quest is 0 and (lactation fetish is 0 or a random number between 1 and 2 is 1):
+	if N > 0:
+		while N > 0 and the total volume of face < face-limit:
+			decrease N by 1;
+			if L is semen:
 				increase the semen volume of face by 1;
-			otherwise:
-				increase the milk volume of face by 1;
+				compute father material of face;
+				if there is a live thing penetrating face, now face is monster-origin;
+			if L is urine, increase the urine volume of face by 1;
+			if L is milk, increase the milk volume of face by 1;
+			if L is murkwater:
+				if watersports fetish is 1 and a random number between 1 and 3 is 1:
+					increase the urine volume of face by 1;
+				otherwise if diaper quest is 0 and (lactation fetish is 0 or a random number between 1 and 2 is 1):
+					increase the semen volume of face by 1;
+				otherwise:
+					increase the milk volume of face by 1;
+		check tasting of L;
 	if N > 0:
 		say "Your mouth is completely full, and the [L] is still coming!";
 		if the player is refusing to swallow:
@@ -349,9 +360,8 @@ To suggest swallowing: [Sometimes the player shouldn't have to spend a turn swal
 				if the urine volume of face > 0, add urine to L;
 				if the milk volume of face > 0, add milk to L;
 				compute silent spitting;
-				if milk is listed in L, MilkTasteAddictUp 1;
-				if urine is listed in L, UrineTasteAddictUp 1;
-				if semen is listed in L, SemenTasteAddictUp 1;
+				repeat with LQ running through L:
+					compute addictive tasting of LQ;
 		otherwise:
 			if the player is automatically swallowing:
 				compute swallowing;
@@ -365,11 +375,11 @@ To suggest swallowing with (L - a liquid-object) consequences: [If the player do
 	suggest swallowing;
 	if refusal is 0:
 		if L is milk and the milk volume of face > 0 and the player is not getting lucky:
-			SlowMilkTasteAddictUp 1;
+			compute slightly addictive tasting of L;
 		otherwise if L is urine and the urine volume of face > 0 and the player is not getting lucky:
-			SlowUrineTasteAddictUp 1;
+			compute slightly addictive tasting of L;
 		otherwise if L is semen and the semen volume of face > 0 and the player is not getting lucky:
-			SlowSemenTasteAddictUp 1.
+			compute slightly addictive tasting of L.
 
 To check accidental spitting:
 	check accidental spitting with reason "".
@@ -597,15 +607,15 @@ An all time based rule (this is the player gets used to the taste rule):
 	if the urine volume of face > 0:
 		let A be tasteAddictionFlatInterval + (the urine taste addiction of the player * tasteAddictionInterval);
 		if the remainder after dividing time-earnings by A < time-seconds:
-			SlowUrineTasteAddictUp 1;
+			compute slightly addictive tasting of urine;
 	if the semen volume of face > 0:
 		let A be tasteAddictionFlatInterval + (the semen taste addiction of the player * tasteAddictionInterval);
 		if the remainder after dividing time-earnings by A < time-seconds:
-			SlowSemenTasteAddictUp 1;
+			compute slightly addictive tasting of semen;
 	if the milk volume of face > 0:
 		let A be tasteAddictionFlatInterval + (the milk taste addiction of the player * tasteAddictionInterval);
 		if the remainder after dividing time-earnings by A < time-seconds:
-			SlowMilkTasteAddictUp 1.
+			compute slightly addictive tasting of milk.
 
 Section - Image for graphics window
 

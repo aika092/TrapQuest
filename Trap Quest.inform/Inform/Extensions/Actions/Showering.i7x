@@ -20,7 +20,7 @@ Check showering:
 	if there is a worn perceived unmessed diaper and auto is 0:
 		say "You feel that it isn't too sensible to get into a body of water when wearing a super-absorbent diaper! Are you sure you want to? ";
 		unless the player is in agreement, say "Action cancelled." instead;
-	if watersports fetish is 1 and the humiliation of the player > 28000 and the semen addiction of the player > 11 and the number of glazed body parts > 0 and auto is 0:[We only prevent players from washing themselves if there is another way for them to get clean. i.e. showers of the golden variety rather than normal ones]
+	if watersports fetish is 1 and the humiliation of the player > HUMILIATION-DISGRACED and the semen addiction of the player > 11 and the number of glazed body parts > 0 and auto is 0:[We only prevent players from washing themselves if there is another way for them to get clean. i.e. showers of the golden variety rather than normal ones]
 		unless there is a lake monster in the location of the player or (slimegirl is worn and the hunger of slimegirl > 7), say "[second custom style]No way! If I want to get clean, I'll just have someone douse me in [urine]![roman type]" instead.
 
 Report going when the player is in Dungeon35 and newbie tips is 1:

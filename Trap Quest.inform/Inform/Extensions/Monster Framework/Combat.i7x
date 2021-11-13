@@ -316,7 +316,8 @@ This function handles the oral "climax" of a monster. By default, this can end i
 
 +!]
 To compute facial climax of (M - a monster):
-	compute default facial climax for M.
+	compute default facial climax for M;
+	SlowOralSexAddictUp 1.
 
 To compute default facial climax for (M - a monster):
 	TimesSubmittedUp M by 1;
@@ -1293,6 +1294,9 @@ To get facial penetration image for (M - a monster):
 	do nothing.
 
 To compute (M - a monster) entering mouth:
+	compute M default entering mouth.
+
+To compute (M - a monster) default entering mouth:
 	if face is not occupied: [The whole 'face is not occupied' stuff is so that we can try and call this from other areas of the code.]
 		set up sex length of M in face;
 		if M is friendly-fucking, say FriendlyMouthPenetrationFlav of M;

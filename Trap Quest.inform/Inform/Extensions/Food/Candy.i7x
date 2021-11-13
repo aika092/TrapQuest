@@ -485,7 +485,7 @@ Carry out TQeating lollipop:
 		if diaper quest is 0 and the lips of face < 2 + artificial enhancements fetish:
 			say "You feel some cursed magic rub off onto your lips. Did they get a bit bigger?";
 			LipsUp 1;
-		otherwise if diaper messing < 3 or lactation fetish is 1:
+		otherwise if diaper quest is 1 or lactation fetish is 1:
 			say "This one tastes like sickly sweet milk!";
 			MilkTasteAddictUp 1;
 		otherwise:

@@ -119,7 +119,7 @@ To compute specific hypno effect of (Y - a cocksucker hypno trap):
 	UrineTasteAddictUp 1.
 
 To compute specific hypno effect of (Y - a fucktoy hypno trap):
-	if the player is male:
+	if the player is gendered male:
 		commence animation of ShemaleHypnoAnimation;
 	otherwise:
 		commence animation of DPHypnoAnimation;

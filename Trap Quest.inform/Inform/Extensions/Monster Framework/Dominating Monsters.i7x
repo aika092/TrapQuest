@@ -410,7 +410,8 @@ Check dominating:
 	let vm be a random video-monitor in the location of the player;[too annoying to deal with, so it's not allowed.]
 	if vm is a video-monitor and the video-caller of vm is not the throne, say "You decide against it. You don't want to give your audience the wrong idea." instead;
 	if the noun is woman-player and the woman-status of woman-player is 80, compute PlayerWomanStoolFuck instead;
-	[#LXorDD Selkie: actually, doing this while a latex doll can cause dick-detachment; and if the player is female, then there's a sex doll usage, too.]
+	[#LXorDD Selkie: actually, doing this while a latex doll can cause dick-detachment; and if the player is female, then there's a sex doll usage, too.
+	##MG: Actually, this can't really cause detachment. Domination happens by defeating monsters, and while this function used to lead into domination, these days its only useful for bullying monsters that are already beaten.]
 	[if the latex-transformation of the player >= 6, say "You wouldn't feel anything from it, so you don't see the point." instead;]
 	if the player is prone, say "That would be a little hard to do from your knees." instead;
 	if the noun is sex-enslaved and the player is the donator, compute enslaved domination of the noun instead;

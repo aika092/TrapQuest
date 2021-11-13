@@ -1024,13 +1024,13 @@ To blowjob dominate (M - dominatrix):
 		let L be sexual-penis-length;
 		say "You chuckle, tossing [his of M] kinky underwear over your shoulder as you [if C is not strapon-panties and C is clothing]take your [SexDesc of penis] out of your [printed name of random worn bottom level protection clothing]. [otherwise if penis is penis-erect]stroke your [SexDesc of penis]. [otherwise]stroke your [sexual-player-penis] to hardness[end if] A moment passes, and neither of you make a move.[line break][speech style of M]'Ugh. This is exactly why [if the times-submitted of M > 0]I don't service my[otherwise if the times-dominated of M < 3]I only bother wi[otherwise]Could you at least hurr[end if]- ULK!'[roman type][line break]You abruptly shove your [SexDesc of penis] in [his of M] open mouth, grinning down at [him of M] as [his of M] sentence comes out in a much, much sexier tone of voice. [big he of M] looks up at you with a mixture of rage and arousal, gagging loudly as you fuck [his of M] throat.[if the player is able to speak and the times-submitted of M > 1][line break][variable custom style]'Tell me if this tastes any better than your fucking boot, bitch!'[roman type][line break]You hold [him of M] down[otherwise if the player is able to speak][line break][variable custom style]Here's dinner, bitch!'[roman type][line break]You hold [him of M] down[otherwise]You emit a muffled groan as you suddenly jam [him of M] down, holding on[end if] with both hands as you explode, [if L > 7]filling [his of M] belly[otherwise if L > 5]coating the inside of [his of M] throat[otherwise]coating the inside of [his of M] mouth[end if] with fresh, creamy [semen]. Satisfied, you shove [him of M] away and wipe your softening [sexual-player-penis] on [his of M] face. [if the times-dominated of M is 0][big he of M] clearly has very little experience being put in [his of M] proper place, but as [he of M] shivers at your feet, trying to catch [his of M] breath, you know [he of M] won't soon forget how it felt to be treated this way[otherwise if the slave-status of M < -3][big he of M] definitely has a lot more to learn about [his of M] proper place, but as [he of M] rests against the wall with your [load] clinging to [his of M] cheeks, you know [he of M][']ll definitely be taking a lesson from the experience[otherwise][big he of M] doesn't hold onto any pretence of dominance, fingering [himself of M] desperately as [he of M] tries to catch [his of M] breath[end if].";
 		strongDignify;
-		orgasm;
 		decrease the slave-status of M by 1;
 	otherwise:
 		say "You chuckle, tossing [his of M] kinky underwear over your shoulder as you [if C is not strapon-panties and C is clothing]take your [SexDesc of penis] out of your [printed name of random worn bottom level protection clothing]. [otherwise]play with your [SexDesc of penis]. [end if]A moment passes, and neither of you make a move.[line break][speech style of M]'[if the times-dominated of M < 3]Ugh, FINE.'[otherwise]...Right away, master.'[end if][roman type][line break][BigNameDesc of M] wraps two fingers around your base, jerking you off as [he of M] purses [his of M] lips around your tip. The sensation isn't that intense, but your tiny [sexual-player-penis] is really sensitive, so you blow your load in no time flat. [big he of M] wipes [his of M] mouth as [he of M] pulls away.";
 		now player-fucking is DOMINANT-NEUTRAL;
 		moderateDignify;
 		if the slave-status of M < 0, increase the slave-status of M by 1;
+	orgasm;
 	BlowGet;
 	if the slave-status of M < -3:
 		say AfterDominationComment 1 of M;
@@ -1074,6 +1074,7 @@ To penetration dominate (M - dominatrix):
 		if the player is possessing a penis, passively stimulate penis;
 		if the player is possessing a vagina, passively stimulate vagina;
 		now player-fucking is DOMINANT-SHAMEFUL;
+		now penis is penis-erect;
 		slightHumiliate;
 		say AfterDominationComment 4 of M.
 

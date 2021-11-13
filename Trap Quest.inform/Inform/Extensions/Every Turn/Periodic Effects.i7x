@@ -452,8 +452,18 @@ LATEX TRANSFORMATION GUIDELINES:
 8: Transformation complete, lose fingers, only able to carry one item.
 ]
 
-[##LXorDD players-detached-dick is the object used and carried around when the player has had the detachable penis fate. It can be taken by monsters and carried around.
-Pre-processed lx-detach-dick.tq file goes here.]
+[
+latex-transformed-duration -- how many minutes the player has spent as a fully TFed doll.
+latex-transformed-start -- the starting minute of the full sex doll TF.
+latex-transformed-count -- how many times the full TF happened.
+latex-transformed-girlcount -- how many times the player was a girl doll.
+]
+latex-transformed-duration is a number that varies. latex-transformed-duration is 0.
+latex-transformed-start is a number that varies. latex-transformed-start is 0.
+latex-transformed-count is a number that varies. latex-transformed-count is 0.
+latex-transformed-girlcount is a number that varies. latex-transformed-girlcount is 0.
+
+[#LXorDD players-detached-dick is the object used and carried around when the player has had the detachable penis fate. It can be taken by monsters and carried around.]
 
 To compute latex transformation:
 	if the latex-transformation of the player > 0 and the latex-transformation of the player < 8:
@@ -476,7 +486,7 @@ To compute latex transformation:
 			now the tolerated of asshole is 0;
 			now the tolerated of vagina is 0;
 		if the latex-transformation of the player is 5:
-			say "Your skin is starting to feel rubbery... is there even any flesh under there any more?! [one of]You also have the weird feeling that your features aren't responding properly to how you're feeling - like you've had a heavy Botox session? [or]You notice your mouth is open in shock, but it takes a real effort to close your lips... [or][stopping]As you're thinking about this, you feel your throat and mouth dry up. But it hardly feels weird, and also you somehow immediately know, you no longer need to keep hydrated. Deep within your body, the tubes connecting to your orifices somehow... close up. It's almost as if they have valves now...";
+			say "Your skin is starting to feel rubbery... is there even any flesh under there any more?! [one of]You also sense a weird facial stiffness, like your features aren't responding properly to how you're feeling - as if you've had a heavy Botox session? [or]You notice your mouth is open in shock, but it takes a real effort to close your lips... [or][stopping]As you're thinking about this, you feel your throat and mouth dry up. But it hardly feels weird, and also you somehow immediately know, you no longer need to keep hydrated. Deep within your body, the tubes connecting to your orifices somehow... close up. It's almost as if they have valves now...";
 			appropriate-cutscene-display figure of latex curse 8;
 			now the bladder of the player is 0; [##LXorDD consider instead leaving a trail, leaking one unit per round, for humiliation]
 			now the delayed bladder of the player is 0;
@@ -504,6 +514,8 @@ To compute latex transformation:
 				if C is bracelet or C is wrist bond:
 					say "Your [ShortDesc of C] fall off your wrists and onto the ground.";
 					now C is in the location of the player;
+			now the latex-transformed-start is (starting-earnings - earnings ) / 60; [We track how long the player plays as a fully transformed sex doll]
+			increase the latex-transformed-count by 1;
 		say "[roman type][line break]".
 
 This is the sex dolls have no voice rule:
@@ -516,9 +528,18 @@ To decide which number is latex transformation rate:
 	if dolly tattoo is worn, decrease N by 69;
 	decide on N.
 
+To carry out LatexCurseRemoval:
+	if the latex-transformation of the player is 8:
+		[Collect the remaining stats.]
+		let this-minute be (starting-earnings - earnings ) / 60;
+		increase latex-transformed-duration by this-minute - latex-transformed-start;
+		if the player has a vagina: [Determine this at the last moment]
+			increase latex-transformed-girlcount by 1;
+	now the latex-transformation of the player is 0.
+
 To say LatexCurseRemoval:
 	say "[if the latex-transformation of the player > 2]The feeling of your skin and bones returning is extremely weird but it's over quickly and you feel as good as new. But feeling behind you, you realise your orifices have been left gaping open. But at least you[otherwise]You[end if] are back to being fully human.[line break][variable custom style]What a relief![roman type][line break]";
-	now the latex-transformation of the player is 0;
+	carry out LatexCurseRemoval;
 	if the pregnancy of the player is 2, now the pregnancy of the player is 1.
 
 Periodic Effects ends here.

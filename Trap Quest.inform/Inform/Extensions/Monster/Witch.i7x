@@ -454,7 +454,9 @@ To penetration dominate (M - witch):
 		if bless-count > 0 and the player is consenting:
 			now player-fucking is DOMINANT-NEUTRAL;
 			compute domination blessing of M at bless-count;
-			say "[line break][speech style of M]'Thank the goddess...'[roman type][line break][big he of M] shivers as you stop and slowly pull out.[line break][speech style of M]'I'm thankful to you as well, but... if you think it's ok to put that *thing* inside other people, you're clearly an evil person. If I see you again, I'll do everything I can to stop you.'[roman type][line break]With that [he of M] stands up, makes a few intricate hand gestures, and vanishes.";
+			say "[line break][speech style of M]'Thank the goddess...'[roman type][line break][big he of M] shivers as you stop and slowly pull out.[line break][speech style of M]'I'm thankful to you as well, but... if you think it's ok to put that *thing* inside other people, you're clearly an evil person. If I see you again, I'll do everything I can to stop you.'[roman type][line break]With that, [he of M] stands up, makes a few intricate hand gestures, and vanishes.";
+			passively stimulate penis from M;
+			if the player is possessing a penis, now penis is penis-erect;
 			FavourDown M by 1;
 		otherwise:
 			say "[line break][speech style of M]'NOOOOO!'[roman type][line break][big he of M] screams, tears welling up in [his of M] eyes as you mercilessly destroy [his of M] ass. Luckily for [him of M], you are near finishing anyway because [he of M] is TIGHT! You savour [him of M] as much as you can before finally losing control, spanking [him of M] roughly as your [sexual-player-penis] fills [him of M] with your [load]. [big he of M] can't take the stimulation, and [his of M] eyes roll back in [his of M] head as [if lady fetish is 2][his of M] [sissy-penis] covers the ground with several strings of [semen]. [otherwise][his of M] pussy squirts out girlcum. [end if][line break][speech style of M]'Why do they always go for my ass...'[roman type][line break][big he of M] makes a few intricate hand gestures as you pull out, and immediately vanishes.";
@@ -465,7 +467,9 @@ To penetration dominate (M - witch):
 		if bless-count > 0 and the player is consenting:
 			now player-fucking is DOMINANT-NEUTRAL;
 			compute domination blessing of M at bless-count;
-			say "[line break][speech style of M]'Thank you so much.'[roman type][line break][big he of M] winces as you stop and slowly pull out.[line break][speech style of M]'I'm still upset at what you did earlier, but it isn't something I can't overlook. Don't do it again, though.'[roman type][line break]With that [he of M] stands up, makes a few intricate hand gestures, and vanishes.";
+			say "[line break][speech style of M]'Thank you so much.'[roman type][line break][big he of M] winces as you stop and slowly pull out.[line break][speech style of M]'I'm still upset at what you did earlier, but it isn't something I can't overlook. Don't do it again, though.'[roman type][line break]With that, [he of M] stands up, makes a few intricate hand gestures, and vanishes.";
+			passively stimulate penis from M;
+			if the player is possessing a penis, now penis is penis-erect;
 			calm M;
 		otherwise:
 			say "[line break][speech style of M]'UGH! EVERY TIME!'[roman type][line break][big he of M] howls, tears welling up in [his of M] eyes as you mercilessly destroy [his of M] ass. Luckily for [him of M], you are near finishing anyway because [he of M] is TIGHT! You lose control a couple seconds later, emitting a heavy groan as your [sexual-player-penis] fills [him of M] with your [load].[line break][speech style of M]'Just you wait. It'll be YOUR ass next!'[roman type][line break][big he of M] makes a few intricate hand gestures as you pull out, and immediately vanishes.";
@@ -477,7 +481,9 @@ To penetration dominate (M - witch):
 		if bless-count > 0 and the player is consenting:
 			now player-fucking is DOMINANT-NEUTRAL;
 			compute domination blessing of M at bless-count;
-			say "[line break][speech style of M]'Thank you...'[roman type][line break][big he of M] sighs in relief as you stop and slowly pull out.[line break][speech style of M]'I'll forgive you for what you did earlier. And... I'll even let you have a free use of my altar. Just one though.'[roman type][line break]With that [he of M] stands up, makes a few intricate hand gestures, and vanishes.";
+			say "[line break][speech style of M]'Thank you...'[roman type][line break][big he of M] sighs in relief as you stop and slowly pull out.[line break][speech style of M]'I'll forgive you for what you did earlier. And... I'll even let you have a free use of my altar. Just one though.'[roman type][line break]With that, [he of M] stands up, makes a few intricate hand gestures, and vanishes.";
+			passively stimulate penis from M;
+			if the player is possessing a penis, now penis is penis-erect;
 			calm M;
 			increase the altar-uses of M by 1;
 		otherwise:
@@ -486,14 +492,16 @@ To penetration dominate (M - witch):
 			FavourDown M by 1;
 			AnalGet;
 	otherwise:
-		say "pushing your [SexDesc of penis] in with no lubrication. [if T is worn]The tattoo emits a faint glow as [NameDesc of M][otherwise][BigNameDesc of M][end if] winces in pain, and you enjoy intense feelings around your shaft for a couple seconds before [he of M] turns around and tells you to pull out.[line break][speech style of M]'Look, I know how hard it can be when your [sexual-player-penis] is that small, but this is as far as you go. Still, I'm willing to help you if you apologise for earlier.'[roman type][line break]Do you apologise?";
+		say "pushing your [SexDesc of penis] in with no lubrication. [if T is worn]The tattoo emits a faint glow as [NameDesc of M][otherwise][BigNameDesc of M][end if] winces in pain, and you enjoy intense feelings around your shaft for a couple seconds before [he of M] turns around and makes you pull out.[line break][speech style of M]'Look, I know how hard it can be when your [sexual-player-penis] is that small, but this is as far as you go. Still, I'm willing to help you if you apologise for earlier.'[roman type][line break]Do you apologise?";
 		if the player is bimbo consenting:
 			now player-fucking is DOMINANT-SHAMEFUL;
-			say "[line break][speech style of M]'Good [boy of the player].'[roman type][line break][big he of M] spits in [his of M] hand and begins to gently tease your [sexual-player-penis]. It isn't skilful by any means, but it's more than enough for a super sensitive clitty like yours. You come almost immediately, emitting a wavering moan as you fill [his of M] hand with your [load].[line break][speech style of M]'Don't do anything like that again, got it?'[roman type][line break]With that [he of M] stands up, makes a few intricate hand gestures, and vanishes.";
+			say "[line break][speech style of M]'Good [boy of the player].'[roman type][line break][big he of M] spits in [his of M] hand and begins to gently tease your [sexual-player-penis]. It isn't skilful by any means, but it's more than enough for a super sensitive clitty like yours. You come almost immediately, emitting a wavering moan as you fill [his of M] hand with your [load].[line break][speech style of M]'Don't do anything like that again, got it?'[roman type][line break]With that, [he of M] stands up, makes a few intricate hand gestures, and vanishes.";
 			calm M;
 		otherwise:
 			now player-fucking is DOMINANT-NEUTRAL;
-			say "[line break][speech style of M]'Ok, then be prepared for me to crush you the next time I see you.'[roman type][line break]With that [he of M] stands up, makes a few intricate hand gestures, and vanishes.";
+			say "[line break][speech style of M]'Ok, then be prepared for me to crush you the next time I see you.'[roman type][line break]With that, [he of M] stands up, makes a few intricate hand gestures, and vanishes.";
+			passively stimulate penis from M;
+			if the player is possessing a penis, now penis is penis-erect;
 	strongDignify.
 
 To say DominanceFailure of (M - witch):

@@ -8,6 +8,7 @@ A lake monster is a kind of person. A lake monster is usually unintelligent. The
 
 Definition: a lake monster is icon-enabled: decide no. [Do they need an icon on the map?]
 Definition: a lake monster is father material: decide yes.
+Definition: a lake monster is egg-fathering: decide yes.
 Definition: A lake monster is live: decide yes.
 
 To decide which number is the girth of (M - a lake monster):
@@ -281,7 +282,7 @@ To compute lakeClimax of (L - a lake monster):
 		say "The tentacle pointing at your [asshole] deposits its load all over your [MediumDesc of hips] and thighs. The stream of [semen] seems just unending, and doesn't stop until your entire bottom half is soaked in the stuff.";
 		AnnouncedSquirt semen on thighs by a random number from 7 to 10;
 	if the a-state of L is 2 or the a-state of L is 3:
-		if Egg Laying Fetish is 1:
+		if egg laying fetish is 1:
 			say "The tentacle ruining your [asshole] bulges, becoming nearly twice as wide. You moan with a mixture of intense pleasure and pain as your [asshole] is stretched to new levels. From the bottom end of the tentacle where it emerges from the lake, you see a huge bulge start to slowly travel along its length. Your eyes widen, and if it were possible your eyes would have widened even further when you see three more bulges of the same size appear behind it. You wriggle and wrestle with your bonds but the monster easily holds you in place as the bulges reach your rear.[line break]As the first solid bulge reaches your [asshole], you feel the immense pressure placed against it and shriek [if L is penetrating face]through the tentacle in your mouth [end if]in fear. Your sphincter does not yet yield, the object is just too big! The tip of the object has lodged itself at the entrance but isn't making any more progress. But as the other bulges catch up, they push the ones in front, doubling, tripling and then quadrupling the force trying to get the first one inside. All of a sudden your [asshole] gapes that slight bit more, and all four objects go rushing at incredible velocity into your belly, mercilessly rubbing against the inside walls of your ass as they do. Your belly instantly bulges out to an impossible size, showing you and the rest of this world just how full you now are.";
 			AssFill 4 Large Eggs;
 			ruin asshole times 4;
@@ -291,16 +292,13 @@ To compute lakeClimax of (L - a lake monster):
 			ruin asshole times 3;
 		AnalCount;
 	if the a-state of L is 4:
-		if Egg Laying Fetish is 1:
+		if egg laying fetish is 1:
 			say "The two tentacles ruining your [asshole] keep up their thrusting as they ejaculate. Instead of the [semen] you were expecting, the tentacles seem to be pumping you full of small solid spherical objects! The uncomfortable feeling immediately turns into a worryingly full feeling, and then soon a feeling of desperately needing to squirt it all back out. Your belly balloons under the pressure from your full rectum and full innards.";
 			AssFill a random number from 10 to 15 small eggs;
-			[###Selkie: twice was excessive? AssFill a random number from 10 to 15 small eggs;]
 			ruin asshole times 4;
 		otherwise:
 			say "The two tentacles ruining your [asshole] keep up their thrusting as they ejaculate, and the warm sloshy feeling immediately turns into a worryingly full feeling, and then soon a feeling of desperately needing to squirt it all out. Your belly balloons under the pressure from your full rectum and full innards as the [semen] flows the wrong way up through your body.";
 			AssFill a random number from 8 to 15;
-			[AssFill a random number from 8 to 15;]
-			[###Selkie: twice was excessive?]
 			ruin asshole times 5;
 		AnalCount.
 

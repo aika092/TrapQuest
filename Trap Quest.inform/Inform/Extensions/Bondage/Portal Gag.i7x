@@ -34,7 +34,7 @@ To compute periodic effect of (C - portal gag):
 			if the player is possessing a penis:
 				stimulate penis from face;
 				if penis is pushed over the edge, penis orgasm shamefully;
-			otherwise:
+			otherwise if the player is possessing a vagina:
 				stimulate vagina from face;
 				if vagina is pushed over the edge, vaginally orgasm shamefully;
 	otherwise:

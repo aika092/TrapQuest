@@ -3249,7 +3249,7 @@ To say PredicamentDescription of (P - gloryhole-predicament):
 id-poster is a thing. The printed name of id-poster is "[TQlink of item described]identity poster[TQxlink of item described]". The text-shortcut of id-poster is "idp". Understand "identity", "poster" as id-poster.
 
 To say ExamineDesc of (P - id-poster):
-	say "A poster [if the location of P is Toilet01 and P is not held]pinned to the wall above the gloryhole [end if] which has a photo of your face, your full name, and a huge amount of personal information about you, including your date of birth, home town and phone number. In large letters at the top of the poster, it says 'YOUR GLORYHOLE SLUT FOR TODAY'.[if the location of P is Toilet01 and P is not held and the player is not shameless][line break][variable custom style]Oh my god, I can't believe it! I need to take this down right now![roman type][line break][end if]".
+	say "A poster [if the location of P is Toilet01 and P is not held]pinned to the wall above the gloryhole [end if] which has a photo of you in that super slutty pink bikini, your full name, and a huge amount of personal information about you, including your date of birth, home town, occupation, where you went to school, measurements, blood type, and even your phone number. In large letters at the top of the poster, it says 'YOUR GLORYHOLE SLUT FOR TODAY'.[if the location of P is Toilet01 and P is not held and the player is not shameless][line break][variable custom style]Oh my god, I can't believe it! I need to take this down right now![roman type][line break][end if]".
 
 To decide which figure-name is the examine-image of (C - id-poster):
 	decide on figure of poster.
@@ -3679,6 +3679,7 @@ To execute (TEP - team-snowball-predicament):
 			decrease S by player-numerical-response;
 			now the semen volume of face is player-numerical-response;
 			say "You reach down and slurp from the bowl. You now have a [MouthfulDesc]. ";
+			check tasting of semen;
 			if a random number between 0 and 32 < the semen volume of face * the semen volume of face:
 				say bold type;
 				SlowSemenTasteAddictUp 1;
@@ -3818,10 +3819,10 @@ To execute (L - team-girlfriends-predicament):
 	now girlfriend-partner is in Predicament02;
 	if team-predicament-partner is female, now girlfriend-partner is female;
 	summon remote-controlled-vibrator vaginally;
-	if the player is male:
+	if the player is possessing a penis:
 		dislodge remote-controlled-vibrator;
 		now remote-controlled-vibrator is penetrating penis;
-	otherwise:
+	otherwise if the player is possessing a vagina:
 		now the size of remote-controlled-vibrator is the openness of vagina;
 	now the toy-charge of remote-controlled-vibrator is 0;
 	if diaper focus > 0:
@@ -4039,7 +4040,7 @@ To execute (TSLP - team-scissor-lift-predicament):
 			now PNR is player-numerical-response;
 			if the chosen numerical response matches the text "eat some":
 				say "You eat your fill of [if diaper lover > 0]diuretic baby food puree[otherwise][semen]-glazed snacks[end if], and now feel comfortably full.";
-				if diaper lover is 0, SemenTasteAddictUp 1;
+				if diaper lover is 0, StomachSemenUp 1;
 				otherwise increase the bladder of the player by (8 - the stomach-food of the player) / 2;
 				now the stomach-food of the player is 8;
 				now hunger-override is false;
@@ -4658,6 +4659,314 @@ Report going up when the player is in Toilet02:
 		say "[bold type]You are able to use the bike lock key to unlock the swimsuit.[roman type][line break]Hooray!";
 		now navy-monokini is not stuck.
 
+
+
+team-blowjob-race-predicament is a team-predicament. team-blowjob-race-predicament can be reeled-out. team-blowjob-race-predicament has a number called blowjob-clock. team-blowjob-race-predicament has a number called orgasm-ticks.
+team-blowjob-race-predicament has a number called student-sex-method. [0 - blowjob; 1 - student vaginal; 2 - student anal; 3 - player vaginal; 4 - player anal]
+team-blowjob-race-predicament has a list of numbers called previous-sex-methods.
+
+The printed name of team-blowjob-race-predicament is "[TQlink of item described][MediumDesc of item described][TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "dildo", "pole" as team-blowjob-race-predicament when team-blowjob-race-predicament is not reeled-out. Understand "bound", "man", "woman" as team-blowjob-race-predicament when team-blowjob-race-predicament is reeled-out. The text-shortcut of team-blowjob-race-predicament is "tbrp".
+Definition: team-blowjob-race-predicament is appropriate:
+	if the rank of the player >= 3 and diaper quest is 0 and the player is an october 2021 top donator, decide yes;
+	decide no.
+To decide which number is the girth of (P - team-blowjob-race-predicament):
+	if P is reeled-out, decide on 2;
+	decide on the openness of asshole.
+Definition: team-blowjob-race-predicament is live:
+	if team-blowjob-race-predicament is reeled-out, decide yes;
+	decide no.
+Figure of team blowjob race predicament is the file "Special/Cutscene/cutscene-predicament-blowjob-race1.jpg".
+Figure of team blowjob race predicament zoom is the file "Special/Cutscene/cutscene-predicament-blowjob-race2.jpg".
+To decide which figure-name is the examine-image of (P - team-blowjob-race-predicament):
+	if P is reeled-out, decide on Figure of team blowjob race predicament zoom;
+	decide on Figure of team blowjob race predicament.
+
+To say MediumDesc of (C - team-blowjob-race-predicament):
+	say "[if C is reeled-out]bound [man of shopkeeper][otherwise]dildo pole[end if]".
+
+To decide which text is he of (M - team-blowjob-race-predicament):
+	if M is reeled-out, decide on he of shopkeeper;
+	decide on "it".
+To decide which text is his of (M - team-blowjob-race-predicament):
+	if M is reeled-out, decide on his of shopkeeper;
+	decide on "its".
+To decide which text is him of (M - team-blowjob-race-predicament):
+	if M is reeled-out, decide on him of shopkeeper;
+	decide on "it".
+
+To say PredicamentDescription of (P - team-blowjob-race-predicament):
+	say "I'm currently in an Extra Credit lesson where I need to get back to my home while avoiding as many bystanders as possible from noticing me[if the orgasm-ticks of P >= 0]. But first I need to race to be the one to make the bound [man of shopkeeper] in the middle of this room orgasm, reducing the time my opponent has to beat me by riding on a dildo pole when it's not my turn, because the loser remains locked in their wrist collar bar[end if].".
+
+To execute (TBRP - team-blowjob-race-predicament):
+	if seconds is 0, allocate 1 seconds;
+	let M be team-predicament-partner;
+	now M is in Predicament01;
+	now M is unconcerned;
+	now TBRP is in Predicament01;
+	now the player is in Predicament01;
+	now the stance of the player is 0;
+	summon wrist collar bar locked;
+	now wrist collar bar is stuck;
+	now wrist collar bar is predicament-fixed;
+	blandify and reveal no-bra-no-panties T-Shirt;
+	now no-bra-no-panties T-Shirt is in Predicament01;
+	now no-bra-no-panties T-Shirt is predicament-fixed;
+	now no-bra-no-panties T-Shirt is confidence;
+	blandify and reveal V-crotch-jeans;
+	now V-crotch-jeans is in Predicament01;
+	now V-crotch-jeans is predicament-fixed;
+	now V-crotch-jeans is speed;
+	now the blowjob-clock of TBRP is 54;
+	say "You look around... you're standing at one end of a rather large room, with [NameDesc of M] standing at the other end. You're both completely naked except for a metal wrist collar bar that is attached to a strong metal chain. The two chains (one for each of you) are mostly rolled up in a large metal reel, that looks like it can be wound out (to allow you freedom to walk towards the middle of the room), and then wound back in (to pull you back towards the reel on your respective walls). Next to each of you, embedded in the ground, is a dildo mounded on a vertical pole. Right in the middle of the room is a naked [man of shopkeeper], blindfolded, gagged, and bound to a chair with [his of shopkeeper] legs spread open. Above [him of shopkeeper] is a seven segment timer which reads '01:00'.[line break][first custom style]'WELCOME TO THE PENIS RACE [']EXTRA CREDIT['] CLASS. YOU WILL EACH IN TURN, BE GRANTED ACCESS TO THE PENIS IN THE MIDDLE OF THE ROOM. THE PERSON WITH ACCESS WHEN THE PENIS EJACULATES, WILL HAVE THEIR WRIST COLLAR BAR UNLOCKED. YOU WILL THEN BOTH NEED TO WALK HOME. THE WRIST COLLAR BAR OF THE LOSER WILL NOT UNLOCK... NOT EVEN WHEN THEY GET HOME.[paragraph break]'YOU CAN REDUCE YOUR OPPONENT'S ACCESS TIMER BY ONE SECOND BY FULLY INSERTING THE DILDO BESIDE YOU INTO YOUR BODY, AND THEN FULLY REMOVING IT.[paragraph break]'GOOD LUCK. YOUR RACE STARTS NOW.'[roman type][paragraph break]As soon as the explanation has finished, [NameDesc of M][']s chain is reeled out, and [he of M] is able to crawl to the middle of the room, and the seven-segment timer in the middle of the room begins to count down, in seconds. [big he of M] seems to quickly realise what is required of her, and kneels down in front of the gagged [man of shopkeeper], and envelops [his of M] [manly-penis] with [his of M] mouth. The [man of shopkeeper] groans with surprised pleasure through [his of shopkeeper] gag.[paragraph break]You eye the dildo pole to your side. It's [if the girth of TBRP > 8]monstrously huge[otherwise if the girth of TBRP > 6]very, very thick[otherwise if the girth of TBRP > 4]rather thick[otherwise if girth of TBRP > 2]got some decent thickness to it[otherwise]forgivingly not too thick[end if], but nonetheless you could try to ride on it with your [asshole][if the player is possessing a vagina] or [vagina][end if] to reduce [student-name of M][']s timer if you liked. (You can't use your mouth - the chain isn't giving you enough give.)".
+
+An all time based rule (this is the team blowjob race predicament rule):
+	if current-predicament is team-blowjob-race-predicament and the player is in Predicament01 and the orgasm-ticks of team-blowjob-race-predicament >= 0:
+		let M be team-predicament-partner;
+		if team-blowjob-race-predicament is reeled-out:
+			let D be the dedication of M;
+			if D > 0:
+				increase D by a random number between 1 and 2;
+				say "[BigNameDesc of M] [one of]rides on[or]fucks[or]sits on and off[in random order] [his of M] dildo pole [D] times, decreasing the timer by [D] extra seconds.";
+				decrease the blowjob-clock of team-blowjob-race-predicament by D;
+		otherwise:
+			if blowjob-clock of team-blowjob-race-predicament is 60:
+				let D be the dedication of M;
+				let RD be a random number between 0 and D;
+				if RD > 2, now RD is 2;
+				if RD < 0, now RD is 0;
+				if M is nasty student or M is innocent student:
+					now RD is 0;
+				otherwise if 2 is listed in the previous-sex-methods of team-blowjob-race-predicament or 4 is listed in the previous-sex-methods of team-blowjob-race-predicament:
+					if RD is 1, now RD is 2; [no ass to vag]
+					if RD is 0, say "[speech style of M]'Ugh, I'm too sore to do anal [if 2 is listed in the previous-sex-methods of team-blowjob-race-predicament]again[otherwise]right now[end if]...'[roman type][line break]";
+				now the student-sex-method of team-blowjob-race-predicament is RD;
+				say "[BigNameDesc of M] crawls up to the bound [man of shopkeeper], and ";
+				if RD is 0:
+					say "kneels in front of [him of shopkeeper]. [if the number of entries in the previous-sex-methods of team-blowjob-race-predicament > 0]Wrinkling [his of M] nose, [he of M][otherwise][big he of M][end if] opens [his of M] mouth wide and takes the erect [manly-penis] into [his of M] mouth.";
+				otherwise:
+					say "turns around and squats down over [his of shopkeeper] lap. [big he of M] carefully [one of]but competently [or][stopping] works the [manly-penis] into [his of M] [if RD is 1]pussy[otherwise]asshole[end if].";
+			if the student-sex-method of team-blowjob-race-predicament is 0:
+				say "[BigNameDesc of M] [one of]noisily slurps on the [manly-penis][or]works hard to orally pleasure the [manly-penis][or]bobs [his of M] head up and down as fast as [he of M] can go[or]sucks the [manly-penis] in [his of M] mouth with commendable vigour[or]diligently gives the best hands-free blowjob [he of M] can[in random order].";
+				if a2m fetish > 0 and (2 is listed in the previous-sex-methods of team-blowjob-race-predicament or 4 is listed in the previous-sex-methods of team-blowjob-race-predicament):
+					say "[speech style of M]'[one of]Ugh, yuck, it tastes of ass[or]Eurgh[or]Yuck yuck yuck[cycling]!'[roman type][line break][BigNameDesc of M] complains.";
+				otherwise if 1 is listed in the previous-sex-methods of team-blowjob-race-predicament or 3 is listed in the previous-sex-methods of team-blowjob-race-predicament:
+					say "[speech style of M]'[one of]Bleurgh. It still tastes of pussy[or]Eurgh[or]Blegh[or]Eww[cycling].'[roman type][line break][BigNameDesc of M] whines.";
+				increase the orgasm-ticks of team-blowjob-race-predicament by 1;
+			otherwise:
+				increase the orgasm-ticks of team-blowjob-race-predicament by 2;
+			check team blowjob race predicament orgasm;
+		if the orgasm-ticks of team-blowjob-race-predicament > 0:
+			decrease the blowjob-clock of team-blowjob-race-predicament by 6;
+			if the blowjob-clock of team-blowjob-race-predicament <= 0:
+				say "[bold type]The timer decreases to '00:00'. [roman type]";
+				if team-blowjob-race-predicament is reeled-out:
+					say "Instantly, you are reeled back in towards your wall, and can no longer reach the bound [man of shopkeeper]. At the same time, [NameDesc of M][']s chain is loosened.";
+					now the stance of the player is 0;
+					now team-blowjob-race-predicament is not reeled-out;
+					if team-blowjob-race-predicament is penetrating vagina, add 1 to the previous-sex-methods of team-blowjob-race-predicament;
+					if team-blowjob-race-predicament is penetrating asshole, add 2 to the previous-sex-methods of team-blowjob-race-predicament;
+					dislodge team-blowjob-race-predicament;
+				otherwise:
+					say "Instantly, [student-name of M] is reeled back in towards [his of M] wall, the [man of shopkeeper][']s [manly-penis] popping out of [his of M] [if the student-sex-method of team-blowjob-race-predicament is 2]asshole[otherwise if the student-sex-method of team-blowjob-race-predicament is 1]pussy[otherwise]mouth[end if] with an audible sound. Your chain is loosened, allowing you to advance on the waiting [manly-penis].";
+					if (a2m fetish > 0 or the player is possessing a vagina) and (M is nasty student or M is innocent student), say "[one of][speech style of M]'If you're thinking of doing what I think you're thinking of doing, just don't. There's no way I'm fucking this dude, and I don't want to have to taste you on [his of shopkeeper] [manly-penis].'[roman type][line break][or][stopping]";
+					now team-blowjob-race-predicament is reeled-out;
+					if the student-sex-method of team-blowjob-race-predicament is 0, truncate the previous-sex-methods of team-blowjob-race-predicament to 0 entries;
+					otherwise add the student-sex-method of team-blowjob-race-predicament to the previous-sex-methods of team-blowjob-race-predicament;
+				now the blowjob-clock of team-blowjob-race-predicament is 60;
+			otherwise:
+				say "The timer decreases to '00:[if the blowjob-clock of team-blowjob-race-predicament < 10]0[end if][blowjob-clock of team-blowjob-race-predicament]'.";
+		if the orgasm-ticks of team-blowjob-race-predicament >= 0, maybe-map-display team-blowjob-race-predicament.
+
+Check inserting team-blowjob-race-predicament into something:
+	try plugging the second noun with team-blowjob-race-predicament instead.
+Check plugging something with team-blowjob-race-predicament:
+	if the noun is not an orifice, say "This verb is for inserting the [MediumDesc of team-blowjob-race-predicament] into an orifice." instead;
+	if team-blowjob-race-predicament is penetrating a body part, say "[BigNameDesc of team-blowjob-race-predicament] is already inside your [random body part penetrated by team-blowjob-race-predicament]. Use [bold type][']submit['][roman type] to continue the sex, or [bold type][']resist['][roman type] to pull away." instead;
+	if the noun is face and team-blowjob-race-predicament is not reeled-out, say "The chain is too tight, you can't bend over to reach!" instead;
+	if the noun is vagina:
+		if the player is not possessing a vagina, say "You don't have a vagina." instead;
+		if a2m fetish > 0 and team-blowjob-race-predicament is reeled-out and (2 is listed in the previous-sex-methods of team-blowjob-race-predicament or 4 is listed in the previous-sex-methods of team-blowjob-race-predicament), say "Despite everything that's going on, you know that it's not healthy or safe to put something that's recently been inside a butthole into your [vagina]." instead;
+	if the girth of team-blowjob-race-predicament > the insertableGirthAcceptance of the noun, say "There's just no way [if the girth of team-blowjob-race-predicament > the openness of the noun + 5]it would fit, it's way too big[otherwise]you could bring yourself to try and push something so big inside of your poor [variable noun][end if]!" instead;
+	allocate 6 seconds;
+	if team-blowjob-race-predicament is reeled-out:
+		now the stance of the player is 1;
+		now team-blowjob-race-predicament is penetrating the noun;
+		if the noun is a fuckhole:
+			say "You squat over [NameDesc of team-blowjob-race-predicament] and do your best to lower your [variable noun] onto [his of shopkeeper] [manly-penis].";
+			ruin the noun;
+			if the noun is asshole:
+				if a2m fetish > 0 and 2 is not listed in the previous-sex-methods of team-blowjob-race-predicament:
+					say "[speech style of team-predicament-partner]'With your ass?! Really, do you have to make it taste like butthole?!'[roman type][line break][BigNameDesc of team-predicament-partner] complains.";
+					FavourDown team-predicament-partner;
+				add 2 to the previous-sex-methods of team-blowjob-race-predicament;
+			otherwise:
+				add 1 to the previous-sex-methods of team-blowjob-race-predicament;
+		otherwise:
+			say "You kneel down and take the [manly-penis] into your mouth.";
+			if a2m fetish > 0 and (2 is listed in the previous-sex-methods of team-blowjob-race-predicament or 4 is listed in the previous-sex-methods of team-blowjob-race-predicament):
+				let N be 0;
+				repeat with PSM running through the previous-sex-methods of team-blowjob-race-predicament:
+					if PSM is 2 or PSM is 4, increase N by 1;
+				say "You're forced to slurp up the [if N > 1][N] loads of [end if]ass juices that have been left behind on the bound [man of shopkeeper][']s [manly-penis], ";
+				if (1 is listed in the previous-sex-methods of team-blowjob-race-predicament or 3 is listed in the previous-sex-methods of team-blowjob-race-predicament):
+					let NN be 0;
+					repeat with PSM running through the previous-sex-methods of team-blowjob-race-predicament:
+						if PSM is 1 or PSM is 3, increase NN by 1;
+					say "as well as the [if NN > 1][NN] loads of [end if]pussy juices, ";
+				say "which is rather disgusting and deeply humiliating.";
+				humiliate 1000 * N;
+			otherwise if (1 is listed in the previous-sex-methods of team-blowjob-race-predicament or 3 is listed in the previous-sex-methods of team-blowjob-race-predicament):
+				let N be 0;
+				repeat with PSM running through the previous-sex-methods of team-blowjob-race-predicament:
+					if PSM is 1 or PSM is 3, increase N by 1;
+				say "You're forced to slurp up the [if N > 1][N] loads of [end if]pussy juices that have been left behind on the bound [man of shopkeeper][']s [manly-penis], which is rather humiliating.";
+				humiliate 300 * N;
+			truncate the previous-sex-methods of team-blowjob-race-predicament to 0 entries;
+		increase the orgasm-ticks of team-blowjob-race-predicament by 1;
+		check team blowjob race predicament orgasm;
+	otherwise:
+		let SR be the soreness of the noun + a random number between -2 and 2;
+		if SR < 0, now SR is 0;
+		let RL be 5 - the square root of SR;
+		say "[if the soreness of the noun > 7]You're feeling very sore down there. [otherwise if the soreness of the noun > 4]You're feeling quite sore down there. [end if]You manage to ride the dildo [RL] times, reducing the timer by [RL] extra seconds.";
+		decrease the blowjob-clock of team-blowjob-race-predicament by RL;
+		compute toyInsertion of team-blowjob-race-predicament into the noun;
+		dislodge team-blowjob-race-predicament;
+	do nothing instead.
+
+Check submitting when team-blowjob-race-predicament is penetrating an orifice:
+	allocate 6 seconds;
+	let F be a random orifice penetrated by team-blowjob-race-predicament;
+	if F is face:
+		say "You continue to fellate [NameDesc of team-blowjob-race-predicament].";
+		increase the orgasm-ticks of team-blowjob-race-predicament by 1;
+	otherwise:
+		say "You bounce up and down on [NameDesc of team-blowjob-race-predicament][']s [manly-penis] with your [variable F].";
+		ruin F;
+		increase the orgasm-ticks of team-blowjob-race-predicament by 2;
+	check team blowjob race predicament orgasm;
+	do nothing instead.
+
+Check resisting when team-blowjob-race-predicament is penetrating an orifice:
+	allocate 6 seconds;
+	let F be a random orifice penetrated by team-blowjob-race-predicament;
+	if F is face:
+		say "You pull back, removing [NameDesc of team-blowjob-race-predicament][']s [manly-penis] from your mouth.";
+	otherwise:
+		say "You stand up with your legs, removing [NameDesc of team-blowjob-race-predicament][']s [manly-penis] from your [variable F].";
+	dislodge team-blowjob-race-predicament;
+	do nothing instead.
+
+Check taking clothing when the player is in Predicament01:
+	if wrist collar bar is worn and wrist collar bar is stuck, say "You can't reach!" instead.
+
+Carry out waiting:
+	if current-predicament is team-blowjob-race-predicament and the player is in Predicament01 and the orgasm-ticks of team-blowjob-race-predicament >= 0:
+		if (the soreness of asshole > 0 or the soreness of vagina > 0) and the player is getting lucky:
+			repeat with F running through fuckholes:
+				heal F times 1;
+			say GotLuckyFlav.
+
+To check team blowjob race predicament orgasm:
+	let A be the orgasm-ticks of team-blowjob-race-predicament;
+	let R1 be a random number between 1 and 50;
+	let R2 be a random number between 1 and 50;
+	let R be R1 + R2;
+	if debuginfo > 0, say "[input-style]Orgasm check: Bound [man of shopkeeper][']s arousal [A].5 | [R] = [R1] + [R2] (2d50) Orgasm Difficulty Roll[roman type][line break]";
+	if A >= R:
+		say "[bold type]The bound [man of shopkeeper] kicks [his of shopkeeper] legs as much as [he of shopkeeper] can when they're bound to chair legs, and yells into [his of shopkeeper] gag as [he of shopkeeper] orgasms. [roman type]";
+		if team-blowjob-race-predicament is reeled-out: [player wins]
+			if team-blowjob-race-predicament is penetrating asshole:
+				say "Your [asshole] is filled with [his of shopkeeper] load.";
+				AssFill 3;
+			otherwise if team-blowjob-race-predicament is penetrating vagina:
+				say "Your [vagina] is filled with [his of shopkeeper] load.";
+				PussyFill 3;
+			otherwise:
+				say "Your mouth is filled with [his of shopkeeper] load.";
+				FaceFill semen by 3;
+			say "Both of your wrist collar bars are unlinked from the reels of chain, freeing you and allowing you to leave the [Predicament01]. But... it's only your wrist collar bar that completely unlocks, freeing your hands and allowing your to remove it, retrieve the clothes and walk home at least slightly decent. [BigNameDesc of team-predicament-partner], on the other hand, is now stuck naked and locked into a wrist collar bar... and who knows how long it will be until [he of team-predicament-partner] can find a key and get out of this thing!!![paragraph break][speech style of team-predicament-partner]'This isn't fair! This is... this is!!!'[roman type][line break][BigNameDesc of team-predicament-partner] can't think of what else to say, it would seem.";
+			HappinessDown team-predicament-partner;
+			say "[BigNameDesc of team-predicament-partner] runs from the room, out onto the street, sobbing to [himself of team-predicament-partner] as [he of team-predicament-partner] goes.";
+			now team-predicament-partner is in School05;
+			now wrist collar bar is unlocked;
+			force clothing-focus redraw;
+		otherwise: [student wins]
+			say "Both of your wrist collar bars are unlinked from the reels of chain, freeing you and allowing you to leave the [Predicament01]. But... it's only [student-name of team-predicament-partner][']s wrist collar bar that completely unlocks, freeing [his of team-predicament-partner] hands and allowing [him of team-predicament-partner] to retrieve the clothes and walk home at least slightly decent. You, on the other hand, are now stuck naked and locked into a wrist collar bar... and who knows how long it will be until you can find a key and get out of this thing!!![paragraph break][BigNameDesc of team-predicament-partner] wastes no time in putting on the clothes and getting out of there.";
+			repeat with C running through clothing in Predicament01:
+				only destroy C;
+			now team-predicament-partner is in School01;
+		now wrist collar bar is not stuck;
+		now team-predicament-partner is unleashed;
+		now the orgasm-ticks of team-blowjob-race-predicament is -1;
+	otherwise if A >= R / 2:
+		say "The bound [man of shopkeeper] [one of]coos[or]moans[or]groans[then at random] into [his of shopkeeper] gag. Is [he of shopkeeper] getting close?".
+
+To construct unique buttons for (T - team-blowjob-race-predicament):
+	if T is penetrating a body part:
+		if ButtonTableFull is 0:
+			choose a blank row in the Table of Buttons;
+			now the ButtonImage entry is Figure of SubmitButton;
+			now the ButtonCommand entry is "submit";
+			now the ButtonColour entry is lightModeFullGreen;
+		if ButtonTableFull is 0:
+			choose a blank row in the Table of Buttons;
+			now the ButtonColour entry is lightModeFullGreen;
+			now the ButtonImage entry is Figure of ResistButton;
+			now the ButtonCommand entry is "resist";
+	otherwise:
+		if ButtonTableFull is 0 and T is reeled-out:
+			choose a blank row in the Table of Buttons;
+			now the ButtonImage entry is Figure of MouthButton;
+			now the ButtonCommand entry is "insert [text-shortcut of T] in mouth";
+			now the ButtonColour entry is lightModeFullGreen;
+		if the player is possessing a vagina and ButtonTableFull is 0:
+			choose a blank row in the Table of Buttons;
+			now the ButtonImage entry is Figure of VaginaButton;
+			now the ButtonCommand entry is "insert [text-shortcut of T] in vagina";
+			now the ButtonColour entry is lightModeFullGreen;
+			if a2m fetish > 0 and T is reeled-out and (2 is listed in the previous-sex-methods of T or 4 is listed in the previous-sex-methods of T), now the ButtonColour entry is lightModeFullYellow; [no ass to vag]
+		if ButtonTableFull is 0:
+			choose a blank row in the Table of Buttons;
+			now the ButtonImage entry is Figure of AssholeButton;
+			now the ButtonCommand entry is "insert [text-shortcut of T] in asshole";
+			now the ButtonColour entry is lightModeFullGreen;
+
+Check talking a student:
+	if current-predicament is team-blowjob-race-predicament and the player is in Predicament01 and face is not actually occupied:
+		reset multiple choice questions;
+		set next numerical response to "'You look like such a filthy whore right now!'";
+		if team-blowjob-race-predicament is reeled-out:
+			set next numerical response to "'You're a bit too eager to get back to this [manly-penis], aren't you?!'";
+			if team-blowjob-race-predicament is penetrating asshole and a2m fetish > 0, set next numerical response to "'I bet you can't wait to taste my asshole, can you, slut?'";
+			if team-blowjob-race-predicament is penetrating vagina, set next numerical response to "'Ready to suck my pussy juices off [his of shopkeeper] [manly-penis]?'";
+		otherwise:
+			set next numerical response to "'Oh my god, you whore! You don't even know that [man of shopkeeper]'s name!'";
+		set next numerical response to "'Just give up! There's no way you're going to win this.'";
+		set numerical response 0 to "cancel";
+		compute multiple choice question;
+		let TXT be the chosen numerical response;
+		unless TXT is "cancel":
+			say "[variable custom style][TXT][roman type][line break]";
+			say "[speech style of the noun]'[if the noun is amicable student][one of]That's not very nice[or]Oh[or]Let's not be so cruel to each other[in random order]...'[otherwise][one of]Fuck you[or]Shut up[or]Grrr[or]Zip it, skank[in random order]!'[end if][roman type][line break]";
+			try waiting instead;
+		do nothing instead.
+
+
+teddy-walk-predicament is a predicament.
+Definition: teddy-walk-predicament is appropriate:
+	if diaper lover > 0 and the rank of the player >= 2 and the player is possessing a penis, decide yes;
+	decide no.
+To execute (NWP - teddy-walk-predicament):
+	summon giant-teddy uncursed;
+	summon yellow-open-front-dress uncursed;
+	now giant-teddy is penetrating face;
+	now the bladder of the player is bladder-risky-level + 4;
+	now the player is in Predicament02;
+	say "You find yourself in an alleyway somewhere outside. You are wearing a babydoll dress that's open at the front... and then blocking the view of your front is the most bizarre and very heavy teddy bear you've ever seen. Your [player-penis] is inserted into a fleshlight where its butthole should be[if diaper quest is 0], which is masturbating you[end if]. Your mouth is full of the large bulbous teat of a pacifier that's fixed to the back of the head of the teddy. You can tell that it's so heavy, that if you don't hold it against you with all your strength, and keep your mouth and [player-penis] fixed to their parts too, you'll drop the teddy and then be unable to pick it back up.[paragraph break]You're also desperate to pee.[paragraph break][first custom style]'WELCOME TO EXTRA CREDIT CLASS. [PredicamentRewardExplanation]TO EARN THIS TROPHY, YOU MUST SIMPLY RETURN HOME. YOUR TEDDY BEAR WILL [if watersports fetish is 1 and diaper quest is 0]SLOWLY PUMP ANYTHING IT COLLECTS DOWN BELOW BACK INTO YOUR MOUTH[otherwise if watersports fetish is 1]SLOWLY PUMP ANY URINE IT COLLECTS DOWN BELOW BACK INTO YOUR MOUTH[otherwise]COLLECT ANYTHING EXCRETED DOWN BELOW INTO THE TEDDY BEAR'S DIAPER. BUT BE WARNED, IT'S ALREADY VERY FULL[end if].'[PredicamentRewardExplanationReaction][roman type][line break]".
+
+To say PredicamentDescription of (P - teddy-walk-predicament):
+	say "I'm currently in an Extra Credit lesson where I need to get back to my home while avoiding as many bystanders as possible from noticing me. My giant teddy bear is [if diaper quest is 0 or watersports fetish is 0]masturbating me and [end if][if watersports fetish is 1]feeding me anything it collects down below[otherwise]slowly feeding me [milk][end if], and if I drop it I won't be able to pick it back up, exposing my genitals to the world.".
 
 
 Predicament World ends here.

@@ -4,22 +4,22 @@ A robomaid is a kind of robot. A robomaid is usually intelligent. Understand "ma
 
 dainty robomaid is a robomaid. The text-shortcut of dainty robomaid is "drm".
 prissy robomaid is a robomaid. The text-shortcut of prissy robomaid is "psrm".
-milkmaid is a robomaid. The text-shortcut of milkmaid is "cmm". Understand "mal", "malfunc", "malfunctioning", "milk", "malfunction" as milkmaid.
+robomilkmaid is a robomaid. The text-shortcut of robomilkmaid is "cmm". Understand "mal", "malfunc", "malfunctioning", "malfunction" as robomilkmaid.
 
 Figure of robomaid is the file "NPCs/Hotel/Robot/robomaid1.png".
 To decide which figure-name is the monster-image of (M - a robomaid):
 	decide on figure of robomaid.
-Figure of milkmaid is the file "NPCs/Hotel/Robot/robomaid2.png".
-To decide which figure-name is the monster-image of (M - milkmaid):
-	decide on figure of milkmaid.
+Figure of robomilkmaid is the file "NPCs/Hotel/Robot/robomaid2.png".
+To decide which figure-name is the monster-image of (M - robomilkmaid):
+	decide on figure of robomilkmaid.
 
-[Definition: a milkmaid (called M) is willing to do oral:
+[Definition: a robomilkmaid (called M) is willing to do oral:
 	decide yes.]
 
 To say MonsterDesc of (M - a robomaid):
 	say "A tall robot with a voluptuous figure that makes [him of M] look more sex doll than machine. [big he of M] is wearing a frilly black dress with a plunging neckline and scandalously short skirt, which show off [his of M] surprisingly soft-looking assets as [big he of M] glides around silently on wheeled feet. [big his of M] eyes cast a slight glow over [his of M] hyper feminine features.".
 
-To say MonsterDesc of (M - milkmaid):
+To say MonsterDesc of (M - robomilkmaid):
 	say "A tall robot with a voluptuous figure that makes [him of M] look more sex doll than machine. [big he of M] is topless, leaving [his of M] expansive metal chest and surprisingly soft-looking nipples on full display. A white apron covers [his of M] crotch, but given the obvious tent in the fabric, it's not really clear why. [big his of M] eyes glow brightly as [big he of M] glides around silently on wheeled feet.".
 
 To say speech style of (M - a robomaid):
@@ -65,7 +65,7 @@ To say DragArrival of (M - a robomaid) to (R - a room):
 	otherwise:
 		say "[speech style of M]'TRANSPORT PROTOCOL COMPLETE.'[roman type][line break]".
 
-To say DragArrival of (M - a milkmaid) to (R - a room):
+To say DragArrival of (M - a robomilkmaid) to (R - a room):
 	let P be the number of patrons in R;
 	if P > 0:
 		say "[speech style of M]'TRANSPORT PROTOCOL COMPLETE. HEY THERE, [if P > 0]PLURAL [end if]BIG [caps boy of a random patron]. EXECUTING PERFORMANCE SEQUENCE.'[roman type][line break]You make [if the player is disgraced]excruciating[otherwise]smouldering[end if] eye contact with [if P is 1][NameDesc of a random patron in R][otherwise]a few of the patrons[end if] as [NameDesc of M] lays you down on the ground and climbs on top of you.";
@@ -74,15 +74,15 @@ To say DragArrival of (M - a milkmaid) to (R - a room):
 
 To say ShortDesc of (M - a robomaid):
 	say "robomaid".
-To say ShortDesc of (M - a milkmaid):
-	say "milkmaid".
+To say ShortDesc of (M - a robomilkmaid):
+	say "robomilkmaid".
 
 To say MediumDesc of (M - dainty robomaid):
 	say "dainty RoboMaid".
 To say MediumDesc of (M - prissy robomaid):
 	say "prissy RoboMaid".
-To say MediumDesc of (M - a milkmaid):
-	say "sultry MilkMaid".
+To say MediumDesc of (M - a robomilkmaid):
+	say "sultry robomilkmaid".
 
 Part 1 - Misc Flavour
 
@@ -90,7 +90,7 @@ Part 1 - Misc Flavour
 	if a random number between 1 and 30 is 1:
 		[TODO: cleanup.]]
 
-To compute unique periodic effect of (M - a milkmaid):
+To compute unique periodic effect of (M - a robomilkmaid):
 	if a random number between 1 and 30 is 1:
 		if lactation fetish is 1 and a random number between 1 and 2 is 1:
 			if M is in the location of the player, say "[BigNameDesc of M] reaches up and squeezes [his of M] rubber nipples, forcing several droplets of milk out onto the floor.";
@@ -139,7 +139,7 @@ To compute perception of (M - a robomaid):
 	otherwise:
 		say "[big his of M] eyes turn red and [he of M] spins towards you.[line break][speech style of M]'[if the player is hotel employed]COWORKER[otherwise]FREELANCER[end if] DETECTED. PUBLICITY STUNT PROGRAM INITIATED.'[roman type][line break]".
 
-To compute perception of (M - a milkmaid):
+To compute perception of (M - a robomilkmaid):
 	say "[BigNameDesc of M] notices you!";
 	if the player is hotel employed:
 		if breasts is lewdly exposed or there is a worn trainee bra:
@@ -194,8 +194,8 @@ To compute molesting attack of (M - a robomaid):
 	otherwise:
 		say "You notice that the smoke disperses really quickly, so you hold your breath just long enough to avoid breathing any of it in.".
 
-[The milkmaid sprays out an aphrodisiac, avoided with dexterity]
-To compute molesting attack of (M - milkmaid):
+[The robomilkmaid sprays out an aphrodisiac, avoided with dexterity]
+To compute molesting attack of (M - robomilkmaid):
 	if diaper quest is 0 or (lactation fetish is 1 and a random number between 1 and 2 is 1), say "[BigNameDesc of M] pushes [his of M] breasts together, forcing out twin streamers of pink liquid. [run paragraph on]";
 	otherwise say "[BigNameDesc of M] lifts [his of M] apron, aiming [his of M] [LongDickDesc of M] at you as it shoots out a spurt of pink liquid. [run paragraph on]";
 	let B be the painful-part of M;
@@ -313,9 +313,9 @@ To compute publicity stunt of (M - a robomaid):
 	repeat with N running through patrons in the location of the player:
 		destroy N.
 
-The unique punishment rule of milkmaid is the milkmaid punishment rule.
+The unique punishment rule of robomilkmaid is the robomilkmaid punishment rule.
 
-This is the milkmaid punishment rule:
+This is the robomilkmaid punishment rule:
 	if presented-orifice is not nothing, say "[speech style of current-monster]'REQUEST NOT UNDERSTOOD. IGNORING.'[roman type][line break]";
 	let M be current-monster;
 	if the player is immobile:
@@ -360,7 +360,7 @@ This is the milkmaid punishment rule:
 		bore M;
 		rule succeeds.
 
-To compute publicity stunt of (M - a milkmaid):
+To compute publicity stunt of (M - a robomilkmaid):
 	let R be a random number between 1 and 3;
 	let P be a random patron in the location of the player;
 	say "[if the number of patrons in the location of the player > 1]The patrons watch[otherwise][BigNameDesc of P] watches[end if] [run paragraph on]";

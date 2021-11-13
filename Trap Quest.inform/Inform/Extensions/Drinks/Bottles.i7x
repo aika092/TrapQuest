@@ -196,9 +196,9 @@ Definition: a bottle is basic loot: decide no.
 To Set Up Drinks:
 	repeat with B running through all vessels:
 		unless B is can:
-			let R be a random number between 1 and 8;
-			if R is 1, curse B;
-			if R is 8, bless B;
+			let R be a random number between 1 and 7;
+			if R is 1, now B is cursed;
+			if R is 7, now B is blessed;
 	let N be 1;
 	let T be 1;
 	repeat with C running through all cans:

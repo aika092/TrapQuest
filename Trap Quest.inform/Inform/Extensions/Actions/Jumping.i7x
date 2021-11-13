@@ -34,10 +34,12 @@ Check jumping:
 		if B < 16, now the charge of P is 4;
 		otherwise now the charge of P is 2;
 		repeat with M running through intelligent monsters in the location of the player:
+			let showoff be 0;
+			if B >= 16, now showoff is 1;
 			if A is 0:
-				if the player is possessing a vagina and vagina is lewdly exposed, now B is 16;
-				if the player is possessing a penis and penis is lewdly exposed, now B is 16;
-			if B >= 16 and M is interested:
+				if the player is possessing a vagina and vagina is lewdly exposed, now showoff is 1;
+				if the player is possessing a penis and penis is lewdly exposed, now showoff is 1;
+			if showoff is 1 and M is interested:
 				say "[BigNameDesc of M] [one of]seems actively turned on by your cheer[or]seems to [i]really like[/i] your cheer[at random].";
 				if the refractory-period of M > 4:
 					decrease the refractory-period of M by 4;
@@ -45,6 +47,7 @@ Check jumping:
 					if a random number between 1 and 3 is 1, FavourDown M by 1;
 	otherwise:
 		say "You jump, making your wobbly bits wobble. [if B < 16]You're not quite sure why you had the urge to do that...[otherwise]Your [BreastDesc] smack you in the face! Ouch![end if]";
+	if B >= 16, PainUp 1;
 	compute upright fatigue gain.
 Understand "leap", "bounce", "ju", "cheer" as jumping.
 

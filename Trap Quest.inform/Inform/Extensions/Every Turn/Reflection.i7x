@@ -7,21 +7,29 @@ We reduce the player's humiliation by the number of seconds, and then we check i
 
 +!]
 An all later time based rule (this is the reflection rule):
-	let N be 239; [The number of seconds between each reflection]
-	if the remainder after dividing time-earnings by N < time-seconds and the player is not a nympho:
-		if lagdebug is true:
-			say "Humiliating reflection.";
-			wait 200 ms before continuing;
-		say HumiliationFlav;
-		if lagdebug is true:
-			say "Finished humiliating reflection.";
-			wait 200 ms before continuing;
-	otherwise if the number of interested monsters in the location of the player is 0 and the player is not immobile:
+	if the number of interested monsters in the location of the player is 0 and the player is not immobile:
 		say StatsChangedFlav;
 	if the strut of the player is 1 and the player is upright and the player is not immobile and there is a worn heels and the player-class is not succubus:
 		humiliate time-seconds;
 	otherwise if playerRegion is not school:
 		dignify time-seconds.
+
+humiliation-situation-timer is a number that varies.
+
+To check regular humiliating situation:
+	increase humiliation-situation-timer by 1;
+	if humiliation-situation-timer > 15 and the number of live things penetrating a body part is 0 and the number of live things grabbing the player is 0 and the number of regional dangerous monsters is 0:
+		compute regular humiliating situation;
+		now humiliation-situation-timer is 0.
+
+To decide which number is humiliating situation frequency:
+	decide on 15 * (diaper quest + 1).
+
+Report going:
+	check regular humiliating situation.
+Report waiting:
+	check regular humiliating situation.
+
 
 [!<HumiliatingSituation>@
 
@@ -34,10 +42,19 @@ A humiliating situation is a kind of object.
 
 [!<HumiliatingSituationIsApplicable>+
 
-Is this humiliation situation currently valid to show to the player?
+Is this humiliating situation currently relevant?
 
 +!]
 Definition: a humiliating situation is applicable: decide no.
+
+[!<HumiliatingSituationIsEligible>+
+
+Is this humiliating situation currently valid? For example, shameless and/or nympho players aren't going to find certain things humiliating.
+
++!]
+Definition: a humiliating situation is appropriate:
+	if the player is a nympho, decide no;
+	decide yes.
 
 [!<ReflectOnObject>+
 
@@ -247,6 +264,9 @@ Definition: visible-erection is applicable:
 To reflect on (A - visible-erection):
 	say "[variable custom style][one of]Everyone can see my boner...This is so embarrassing.[or]I can't believe I have a boner. Someone's going to think I'm actually enjoying this...[in random order][roman type][line break]".
 
+To say FriendReaction of (M - a real-life patron) to (A - visible-erection):[BIG TODO]
+	say "... [one of]So you ARE enjoying this. [or]Oh, so this IS exciting for you. [in random order]".
+
 bsoundingHS is a humiliating situation.
 Definition: bsoundingHS is applicable:
 	if the player is not disgraced and there is a worn bsounding clothing, decide yes;
@@ -255,15 +275,161 @@ To reflect on (A - bsoundingHS):
 	let C be a random worn bsounding clothing;
 	say "[first custom style][one of]Who had the bright idea to make clothing that announced every wobble of these damned orbs?![or]I've got to get rid of this [ShortDesc of C]. It's impossible to get any long lasting privacy with these stupid boings and twangs![or]Does this [ShortDesc of C] ever run out of magical energy? These sounds are so humiliating![stopping][roman type][line break]".
 
-To say FriendReaction of (M - a real-life patron) to (A - visible-erection):[BIG TODO]
-	say "... [one of]So you ARE enjoying this. [or]Oh, so this IS exciting for you. [in random order]".
+low-addiction is a humiliating situation.
+Definition: low-addiction is applicable: decide yes.
+Definition: low-addiction is appropriate: decide yes.
+To reflect on (HS - low-addiction):
+	let AL be a list of texts;
+	if watersports fetish is 1, add "urine taste addiction" to AL;
+	if lactation fetish is 1 or diaper quest is 1, add "milk taste addiction" to AL;
+	if diaper quest is 0:
+		add {"anal sex addiction", "oral sex addiction", "semen addiction", "semen taste addiction"} to AL;
+		if the player is possessing a vagina, add "vaginal sex addiction" to AL;
+		if max breast size > 4, add "titfuck addiction" to AL;
+		if interracial fetish is 1, add "bbc addiction" to AL;
+	let R be a random number from 1 to the number of entries in AL;
+	let A be entry R in AL;
+	if A exactly matches the text "semen addiction":
+		let SA be the semen addiction of the player;
+		let GBP be a random glazed body part;
+		if face is glazed, now GBP is face;
+		if GBP is a thing: [player distracted by their glazed body part]
+			if the player is able to use manual dexterity, say "You [one of][if SA < 6]can't ignore[otherwise if GBP is face]enjoy the feeling of[otherwise if GBP is hair]enjoy the additional weight of[otherwise]shiver with pleasure as you look down at[end if][or][if SA < 6]can't help but[otherwise]excitedly[end if] touch[or][if SA < 6]gingerly prod at[otherwise]use a finger to play with[end if][in random order] ";
+			otherwise say "You wish you could touch [if SA < 3]and wipe away [end if] ";
+			say "the [if the semen coating of GBP > 6]masses of sticky [semen] coating[otherwise if the semen coating of GBP > 3]huge globs of [semen] stuck to[otherwise][semen] gently trickly down[end if] your [GBP]. ";
+		otherwise: [player distracted by sticky feeling inside]
+			if the semen volume of vagina > 0 or (the womb volume of vagina > 0 and the pregnancy of the player is 0 and pregnancy fetish is 1), now GBP is vagina;
+			if the semen volume of belly > 0, now GBP is asshole;
+			if GBP is asshole:
+				if the player is able to use their hands, say "You put a hand to your belly, [if the total fluid fill of belly > 20 and the total fluid fill of belly > the semen volume of belly]feeling the [semen] in there sloshing around amongst the other liquid[otherwise if the semen volume of belly > 20]feeling the inhuman amounts of [semen] sloshing around in there[otherwise if the total fluid fill of belly > 10 and the total fluid fill of belly > the semen volume of belly]feelng your innards gurgle under the pressure from the [semen] and other liquid[otherwise if the semen volume of belly > 10]feeling your innards gurgle under the pressure from the large amount of [semen] inside them[otherwise if the total fluid fill of belly > the semen volume of belly]pressing in to see if you can feel the [semen] and enema inside it[otherwise]pressing in to see if you can feel the anal creampie inside it[end if]. ";
+				otherwise say "You flex your abdominal muscles, [if the total fluid fill of belly > 20 and the total fluid fill of belly > the semen volume of belly]feeling the [semen] in your belly sloshing around amongst the other liquid[otherwise if the semen volume of belly > 20]feeling the inhuman amounts of [semen] sloshing around in your belly[otherwise if the total fluid fill of belly > 10 and the total fluid fill of belly > the semen volume of belly]feelng your innards gurgle under the pressure from the [semen] and other liquid[otherwise if the semen volume of belly > 10]feeling your innards gurgle under the pressure from the large amount of [semen] inside them[otherwise if the total fluid fill of belly > the semen volume of belly]to see if you can feel the [semen] and enema you're holding deep inside your gut[otherwise]to see if you can feel the anal creampie you're holding inside your gut[end if]. ";
+			otherwise if GBP is vagina:
+				if the semen volume of vagina > 0:
+					say "The warm, sticky [semen] in your [vagina] squelches and gently stimulates you as it oozes towards the exit. ";
+				otherwise:
+					say "You could swear you can literally feel the [semen] that's made it through your cervix swimming down your fallopian tubes and towards your fetile eggs... ";
+			if GBP is a thing:
+				let SA be the semen addiction of the player * 2;
+				let SAN be 0;
+				if GBP is asshole:
+					now SAN is the semen volume of belly / 2;
+				otherwise if GBP is vagina:
+					if the semen volume of vagina is 0, now SAN is the womb volume of vagina;
+					otherwise now SAN is the semen volume of vagina;
+				otherwise:
+					now SAN is the semen coating of GBP;
+				decrease SA by SAN;
+				let ARS be (SA * 500) - 2000; [depending on addiction and semen amount, we can gain or lose arousal]
+				if ARS > 3000, now ARS is 3000; [max 3000 arousal gain at 10+ addiction]
+				if ARS < 0:
+					now ARS is ARS * -1;
+					if the semen addiction of the player > 5: [we should explain why the player doesn't like it]
+						if SAN > 6:
+							say "[line break][variable custom style]That's just much too much for me...[roman type][line break]";
+						otherwise:
+							say "[line break][variable custom style]There's so much of it...[roman type][line break]";
+					say "You wince with [if ARS <= 1000]dismay[otherwise]nausea[end if][run paragraph on]";
+					if the arousal of the player > 0 and the player is able to cool down:
+						say ", and feel [if ARS > the arousal of the player]completely unaroused[otherwise]less aroused[end if]";
+					say ".";
+					cool down ARS;
+				otherwise if ARS > 0:
+					say "[if ARS <= 1000 and SAN > 6]Despite how much there is, you find that it's making you feel... good...[otherwise if ARS <= 1000]Despite yourself, you find that it's making you feel... good...[otherwise if ARS <= 2000]It [one of]actually [or][stopping]feels really, really nice...[otherwise]Fuck, that feels [one of]so good[or]incredible[or]amazing[in random order]![end if]";
+					arouse ARS;
+				otherwise:
+					say line break;
+	otherwise if A exactly matches the text "anal sex addiction":
+		if asshole is not actually occupied:
+			let SA be the anal sex addiction of the player - the soreness of asshole;
+			let ARS be SA * 500; [depending on addiction and soreness, we can gain or lose arousal]
+			if ARS > 3000, now ARS is 3000; [max 3000 arousal gain]
+			if ARS < 0 and the arousal of the player > 0:
+				now ARS is ARS * -1;
+				say "The thought of further anal action [if the soreness of asshole > 4]while you are so sore [end if]makes your [asshole] clench";
+				if the arousal of the player > 0 and the player is able to cool down:
+					say ", and makes you feel [if ARS > the arousal of the player]completely unaroused[otherwise]less aroused[end if]";
+				say ".";
+				cool down ARS;
+			otherwise if ARS > 0:
+				say "Your [asshole] [one of]twitches[or]has a little spasm[or]winks of its own accord[in random order], [if ARS <= 1000 and the analvirgin of the player is 1]prompting you to daydream about what [one of]it might be like to lose your anal virginity[or]anal sex would feel like[cycling][otherwise if ARS <= 1000]prompting you to daydream about anal sex[otherwise if ARS <= 2000 and the analvirgin of the player is 1]as if desperate to [one of]lose its virginity[or]learn what it feels like to be filled with [manly-penis][cycling][otherwise if ARS <= 2000]as if eager to experience [one of]more anal sex[or]some more anal action[or]stretching and stimulation once again[in random order][otherwise]desperately begging to be [one of]filled[or]stuffed full of hard [manly-penis][or]pounded and stretched some more[in random order][end if], turning you on[if the soreness of asshole > 6] even though you're so sore down there already[otherwise if the soreness of asshole > 3] despite your asshole feeling a bit tender right now[end if].";
+				arouse ARS;
+	otherwise if A exactly matches the text "vaginal sex addiction":
+		if vagina is not actually occupied:
+			let SA be the vaginal sex addiction of the player - the soreness of vagina;
+			let ARS be SA * 500; [depending on addiction and soreness, we can gain or lose arousal]
+			if ARS > 3000, now ARS is 3000; [max 3000 arousal gain]
+			if ARS < 0 and the arousal of the player > 0:
+				now ARS is ARS * -1;
+				say "The thought of further vaginal action [if the soreness of vagina > 4]while you are so sore [end if] makes your [vagina][one of]clench shut[or]tense up[in random order]";
+				if the arousal of the player > 0 and the player is able to cool down:
+					say ", and makes you feel [if ARS > the arousal of the player]completely unaroused[otherwise]less aroused[end if]";
+				say ".";
+				cool down ARS;
+			otherwise if ARS > 0:
+				say "Your [vagina] [one of]pulses gently[or]relaxes and tightens of its own accord[in random order], [if ARS <= 1000 and the vaginalvirgin of the player is 1]prompting you to daydream about what [one of]it might be like to lose your vaginal virginity[or]vaginal sex would feel like[cycling][otherwise if ARS <= 1000]prompting you to daydream about vaginal sex[otherwise if ARS <= 2000 and the vaginalvirgin of the player is 1]as if desperate to [one of]lose its virginity[or]learn what it feels like to be filled with [manly-penis][cycling][otherwise if ARS <= 2000]as if eager to experience [one of]more vaginal sex[or]some more vaginal action[or]stretching and stimulation once again[in random order][otherwise]desperately begging to be [one of]filled[or]stuffed full of hard [manly-penis][or]pounded and stretched some more[in random order][end if], turning you on[if the soreness of vagina > 6] even though you're so sore down there already[otherwise if the soreness of vagina > 3] despite your hole feeling a bit tender right now[end if].";
+				arouse ARS;
+	otherwise if A exactly matches the text "oral sex addiction":
+		if face is not actually occupied and the total volume of face is 0:
+			let SA be the oral sex addiction of the player;
+			let ARS be (SA * 500) - 1000; [depending on addiction, we can gain or lose arousal]
+			if ARS > 1500, now ARS is 1500; [max 1500 arousal gain]
+			if ARS < 0 and the arousal of the player > 0:
+				now ARS is ARS * -1;
+				say "The thought of [if the oralvirgin of the player is 1][one of]having to suck a real [manly-penis][or]being on your knees and giving a blowjob[or]tasting a real [manly-penis][cycling][otherwise][one of]how many more [manly-penis]s you might have to suck[or]how unpleasant it is to perform oral sex[or]what it's like to have a real [manly-penis] in your mouth[in random order][end if] [one of]crosses your mind[or]pops into your thoughts[in random order]";
+				if the arousal of the player > 0 and the player is able to cool down:
+					say ", and makes you feel [if ARS > the arousal of the player]completely unaroused[otherwise]less aroused[end if]";
+				say ".";
+				cool down ARS;
+			otherwise if ARS > 0:
+				say "[one of]Your mouth forms an [']O['] shape[or]Your mouth relaxes into a pout[or]You find yourself licking your lips[or]You bite your bottom lip[in random order] [if ARS <= 1000 and the oralvirgin of the player is 1]as you imagine what it must be like to [one of]pleasure a [manly-penis] with your mouth[or]give a [man of shopkeeper] a blowjob[cycling][otherwise if ARS <= 1000]prompting you to daydream about [one of]pleasuring someone with your mouth[or]how fun oral sex can be[or]how nice a [manly-penis] can feel against your lips[in random order][otherwise if the oralvirgin of the player is 1]as you realise you have a [one of]new [or][stopping]burning curiosity to [one of]find out what it's like to suck a [manly-penis][or]learn what it feels like to give a blowjob[cycling][otherwise][one of]as you look forward to giving your next blowjob[or]as you daydream about getting to suck on another [manly-penis][or]as you daydream about your throat getting pounded by a huge [manly-penis][or]as you imagine what your next facefucking will be like[in random order][end if]. [if ARS <= 500]You find that the thought turns you on[otherwise]The thought [one of]arouses you[or]turns you on[in random order][end if].";
+				arouse ARS;
+	otherwise if A exactly matches the text "titfuck addiction":
+		if breasts is not actually occupied:
+			let SA be the titfuck addiction of the player;
+			let ARS be (SA * 500) - 2000; [depending on addiction, we can gain or lose arousal]
+			if ARS > 1500, now ARS is 1500; [max 1500 arousal gain]
+			if ARS > 0:
+				say "[if ARS <= 1000]The thought of [one of]the feeling of a [man of shopkeeper] thrusting [his of shopkeeper] [manly-penis] in and out of your cleavage[or]someone grabbing your breasts and using them for sex[or]pleasuring a [manly-penis] with your breasts[in random order] [one of]enters your head[or]crosses your thoughts[or]pops into your mind[at random], [one of]turning you on[or]making you flush with arousal[in random order][otherwise][one of]You can't help but think about how delightful getting titfucked is[or]You find yourself thinking forward to the next time you get titfucked[or]You daydream about the next time you get to pump a [manly-penis] in between your breasts[in random order], and [one of]get more and more exicited[or]get all worked up[in random order][end if].";
+				arouse ARS;
+	otherwise if A exactly matches the text "bbc addiction":
+		let SA be the bbc addiction of the player;
+		let ARS be (SA * 500) - 1000; [depending on addiction, we can gain or lose arousal]
+		if ARS > 1500, now ARS is 1500; [max 1500 arousal gain]
+		if ARS < 0 and the arousal of the player > 0:
+			now ARS is ARS * -1;
+			say "The thought of all the [one of]black[or]dark skinned[purely at random] [one of][men of shopkeeper][or]thugs[or]horny bastards[cycling] in this game and [one of]their dirty hands getting on your body[or]what you'll possibly end up doing with them[or]what they want to do to you[or]the scandal it would be if your family learned that you'd been intimate with them[then at random] [one of]causes you to shudder with disgust[or]makes you cringe[or]makes you shiver with concern[or]makes you feel nervous[then at random]";
+			if the arousal of the player > 0 and the player is able to cool down:
+				say ", and leaves you feeling [if ARS > the arousal of the player]completely unaroused[otherwise]less aroused[end if]";
+			say ".";
+			cool down ARS;
+		otherwise if ARS > 0:
+			say "[one of]You daydream about[or]Your thoughts drift to thoughts of[or]You lick your lips as you think about[in random order] [one of]how sexy black people look[or]the dominant presence a strong, tall black [man of shopkeeper] can have in a room[or]how black [men of shopkeeper] are on average stronger and more muscular than white [men of shopkeeper][or]how black [men of shopkeeper] have such bigger, thicker, juicier [manly-penis]s[or]how you love submitting to black [men of shopkeeper][then at random]. [if ARS <= 1000]It leaves you feeling [one of]excited[or]a bit more aroused[or]a little worked up[in random order][otherwise]It makes you [one of]horny[or]more aroused[or]all worked up[in random order], and [one of]weirdly excited for your next opportunity to see a [BlackCock][or]eager for your next experience with [BlackCock][or]desperate to encounter another [BlackCock][or]craving [BlackCock][or]craving even more [BlackCock][stopping][end if].";
+			arouse ARS;
+	otherwise:
+		repeat with LQ running through liquid-objects:
+			let LT be the substituted form of "[LQ]";
+			if the first-taste of LQ is not 0 and A matches the text LT: [we have chosen to fantasize about LQ, and the player has tasted it before]
+				let PTA be the player taste addiction of LQ;
+				say "You [one of]find yourself thinking about[or]find your mind wandering back to[or][if PTA < 13]can't stop yourself from thinking[otherwise]daydream[end if] about[in random order] [one of]the taste of[or]your recent experience tasting[or]the act of drinking[in random order] [variable LQ]. ";
+				let ARS be (PTA * 500) - 2000; [depending on addiction, we can gain or lose arousal]
+				if ARS > 3000, now ARS is 3000; [max 3000 arousal gain at 10+ addiction]
+				if ARS < 0:
+					now ARS is ARS * -1;
+					say "You shiver with [if ARS <= 1000]distaste[otherwise]disgust[end if][run paragraph on]";
+					if the arousal of the player > 0 and the player is able to cool down:
+						say ", and feel [if ARS > the arousal of the player]completely unaroused[otherwise]less aroused[end if]";
+					say ".";
+					cool down ARS;
+				otherwise if ARS > 0:
+					say "You [if ARS <= 1000]can't help but feel a little turned on at the thought[otherwise if ARS <= 2000][one of]hate to admit it, but[or]have to admit to yourself that[stopping] the idea now turns you on[otherwise]shiver with excitement and arousal[end if].";
+					arouse ARS;
+				otherwise:
+					say line break;
 
-[!<SayHumiliationFlav>+
 
-Take one of the currently valid humiliation reflection flavours and say it. Won't happen after the player hits nympho levels.
 
-+!]
-To say HumiliationFlav:
+[Take one of the currently valid humiliation reflection flavours and say it. Most of the humiliating situations above won't happen after the player hits nympho levels.]
+To compute regular humiliating situation:
 	let H be a random applicable humiliating situation;
 	reflect on H.
 

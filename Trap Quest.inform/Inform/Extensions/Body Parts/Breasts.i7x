@@ -308,7 +308,7 @@ To decide which number is max breast size:
 	if trap fetish is 1 and the player is sexed male and the player is virtual, decide on 1;
 	if there is a restricting salve covering breasts, decide on recent-breasts-largeness;
 	let Z be 11;
-	let X be max breast size points + choice in row 33 of the Table of Player Options;
+	let X be max breast size points + bonus max breast size points;
 	decrease Z by X;
 	if extreme proportions fetish is 1, now Z is 20 - (X * 2);
 	if Z < min breast size, decide on min breast size;
@@ -454,7 +454,18 @@ To say TotalDesc of breasts:
 		say "[BreastsTheyAre] dripping with [semen]. ";
 	otherwise if the semen coating of breasts > 0:
 		say "[BreastsTheyAre] slightly splattered with [semen]. ";
-	if the player is horny, say "Your nipples are erect with arousal. ".
+	if the player is horny, say "Your nipples are erect with arousal. ";
+	if breasts is actually occupied:
+		let P be a random thing penetrating breasts;
+		if P is a monster and P is male:
+			say "[BreastsTheyAre] currently home to [FuckerDesc of P]'s [DickDesc of P].";
+		otherwise:
+			if P is monster, say "[BreastsTheyAre] currently being used by [FuckerDesc of P].";
+			otherwise say "[BreastsTheyAre] currently home to [FuckerDesc of P].";
+	if the player is a tit slut:
+		let P be a random thing penetrating breasts;
+		if P is monster, say "[BreastsTheyAre] definitely attracting extra attention from monsters.";
+		otherwise say "[BreastsTheyAre] attracting extra attention from monsters.".
 
 To say BreastsTheyAre:
 	if the largeness of breasts is 1, say "It is";

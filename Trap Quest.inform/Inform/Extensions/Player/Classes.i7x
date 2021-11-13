@@ -54,21 +54,23 @@ a later time based rule (this is the explaining princess rule):
 
 This is the maid class rule:
 	if there is a worn maid headdress:
+		let MT be "maid";
+		if milkmaid headdress is worn, now MT is "milkmaid";
 		if magical-maid-outfit is worn:
-			now player-class is "magical maid";
+			now player-class is the substituted form of "magical [MT]";
 		otherwise if cafe-maid-outfit is worn:
-			now the player-class is "cafe maid";
+			now the player-class is the substituted form of "cafe [MT]";
 		otherwise if black fetish hobble dress is worn:
-			now the player-class is "latex fetish maid";
+			now the player-class is the substituted form of "latex fetish [MT]";
 		otherwise if the training-progress of senior robobellboy is -1:
-			now player-class is "fully trained maid";
+			now player-class is the substituted form of "fully trained [MT]";
 		otherwise:
-			now player-class is "maid";
+			now player-class is the substituted form of "[MT]";
 		rule succeeds.
 The maid class rule is listed in the player class rules.
 
 Check dropping waitress vessel:
-	if the class of the player is "cafe maid", say "[BigNameDesc of a random worn maid headdress] won't allow you to drop [NameDesc of the noun]!" instead.
+	if the class of the player is "cafe maid" or the class of the player matches the text "milkmaid", say "[BigNameDesc of a random worn maid headdress] won't allow you to drop [NameDesc of the noun]!" instead.
 
 Definition: a text (called T) is maid:
 	if T matches the text "maid", decide yes;
@@ -98,7 +100,7 @@ This is the cowgirl class rule:
 The cowgirl class rule is listed in the player class rules.
 
 Definition: a text (called T) is cowgirl:
-	if T matches the text "cow", decide yes;
+	if T matches the text "cow" or T matches the text "milkmaid", decide yes;
 	decide no.
 
 [!<TheCowSlutRule>+
@@ -114,7 +116,7 @@ cowgirlExplained is initially false.
 a later time based rule (this is the explaining cowgirl rule):
 	if cowgirlExplained is false and the class of the player is cowgirl:
 		now cowgirlExplained is true;
-		say "[bold type]Now that you have become the 'cowgirl' class, you can sense that the more milk contained in your breasts, the more bonus strength you'll have, but the more milk contained and the more sensitive your breasts are, the less intelligence you'll have. Also, [men of shopkeeper] will be more likely to choose to fuck your tits (which can increase their sensitivity)[if diaper quest is 0]. Also, when horny, you will release pheromones that might attract certain mates[end if][if the class of the player is catgirl]. Also, since you are also a catgirl, you also get bonus dexterity the more milk is in your stomach[end if].[roman type][line break]";
+		say "[bold type]Now that you have become the 'cowgirl' class, you can sense that the more milk contained in your breasts, the more bonus strength you'll have, but the more milk contained and the more sensitive your breasts are, the less intelligence you'll have. Also, [men of shopkeeper] will be more likely to choose to fuck your tits (which can increase their sensitivity)[if diaper quest is 0]. Also, when horny, you will release pheromones that might attract certain mates[end if][if the class of the player is catgirl]. Also, since you are also a catgirl, you also get bonus dexterity the more milk is in your stomach[end if][if the class of the player is maid]. Also, since you are also a maid, cleaning up puddles causes your breasts to create more milk, and also you can serve vessels full of [milk] to anyone who's interested[end if].[roman type][line break]";
 	otherwise if cowgirlExplained is true and the class of the player is not cowgirl:
 		now cowgirlExplained is false;
 		say "[bold type]Now that you are no longer the 'cowgirl' class, you can sense that the bonus strength you were receiving from having milk in your breasts and the penalty intelligence for having sensitive breasts has gone.[roman type][line break]".

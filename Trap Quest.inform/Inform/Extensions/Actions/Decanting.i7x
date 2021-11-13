@@ -97,14 +97,26 @@ Report decanting something with:
 	if the fill-colour of the second noun is creamy:
 		compute father material of the second noun into the noun;
 	if diaper quest is 0 and tutorial is 0:
-		if the noun is waitress vessel and (the number of worn headgear is 0 or black maid headdress is worn or rubber top hat is worn):
+		if the noun is waitress vessel and (the number of worn headgear is 0 or black maid headdress is worn or rubber top hat is worn or (cafe maid headdress is worn and the second noun is milk-tank)):
 			increase waitress-dips by 1;
-			unless the noun is cocktail-glass:
+			unless the noun is cocktail-glass or cafe maid headdress is worn:
 				if waitress-dips is 1, say "You reflect on how you must look, holding a weird [ShortDesc of the noun] like a girly socialite[if the bimbo of the player < 5]. You're not sure that the look is really how you'd like to be seen[end if].";
 				if waitress-dips is 2, say "You have a fleeting thought that if you carry this drink around with you for too long, people might think you're some kind of waitress.";
 				if waitress-dips is 3, say "Your ears perk up when you hear a voice behind you say[line break][first custom style]'That's a mighty fine tail.'[roman type][line break]You quickly turn around, but there's no one there. Curious...";
-		if the noun is cocktail-glass or (the noun is waitress vessel and waitress-dips > 3):
-			if black maid headdress is worn and the class of the player is "maid": [no cross-class yet]
+		if the noun is cocktail-glass or (the noun is waitress vessel and (waitress-dips > 3 or (the second noun is milk-tank and there is a worn maid headdress))):
+			if there is a worn maid headdress and the second noun is milk-tank and milkmaid headdress is not worn:
+				let H be a random worn maid headdress;
+				now H is milk production;
+				transform H into milkmaid headdress;
+				now the quest of milkmaid headdress is milk-serve-quest;
+				say QuestFlav of milkmaid headdress;
+				compute class outfit of milkmaid headdress; [milkmaid-outfit will be blocked if a class-relevant outfit is already worn]
+				let C be a random neck covering chestless clothing;
+				if C is removable clothing, WardrobeVanish C;
+				if the number of worn breast covering clothing is 1 and the number of worn neck covering clothing is the number of worn neck covering breast covering clothing:
+					let M be a random worn breast covering clothing;
+					transform M into milkmaid-outfit;
+			otherwise if black maid headdress is worn and the class of the player is "maid": [no cross-class yet]
 				transform black maid headdress into cafe maid headdress;
 				class summon cafe-maid-outfit; [will be blocked if a class-relevant outfit is already worn]
 				let M be a random worn overdress;

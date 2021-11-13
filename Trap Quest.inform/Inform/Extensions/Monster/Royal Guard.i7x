@@ -3,9 +3,7 @@ Royal Guard by Monster begins here.
 A royal guard is a kind of monster. A royal guard is usually intelligent. A royal guard is male. A royal guard has a number called patrol. The leftover-type of a royal guard is usually 101. A royal guard has a number called shieldblock. A royal guard can be shieldblocked or not shieldblocked. A royal guard is usually not shieldblocked.
 
 Definition: a royal guard is willing to urinate: decide yes.
-
 Definition: a royal guard is father material: decide yes.
-
 Definition: a royal guard is raunchy: decide yes.
 
 Figure of Royal Guard is the file "NPCs/Dungeon/Guard/royalguard1.png".
@@ -75,6 +73,7 @@ To say MediumDesc of (M - solemn royal guard):
 	say "solemn royal guard".
 
 prison guard is a royal guard. The text-shortcut of prison guard is "prg". prison guard has a number called sentence.
+Definition: prison guard is willing to have time out: decide no.
 To say MediumDesc of (M - prison guard):
 	say "prison guard".
 
@@ -864,12 +863,12 @@ To compute post climax effect of (M - a royal guard) in (F - a fuckhole):
 
 To decide if (M - a royal guard) is willing to creampie (F - a fuckhole):
 	if tutorial is 1, decide yes;
-	if F is vagina and M is mating, decide yes;
 	if class of the player is princess:
 		if the reaction of the player is 2 or M is not bride-consort, decide no;
-	if the class of the player is royal slave, decide yes;
 	if the reaction of the player is 2, decide no;
-	if the favour of M >= (a random number between 20 and 25) - the saved appearance of the player, decide yes;[He thinks of you as a whore, but he'd rather not drop one in your pussy. Expect a creampie if you're really attractive]
+	if F is vagina and the player is a pussy slut, decide yes;
+	if F is asshole and the player is a butt slut, decide yes;
+	if the favour of M >= 20 - the saved appearance of the player, decide yes;[He thinks of you as a whore, but he'd rather not drop one in your pussy. Expect a creampie if you're really attractive]
 	decide no.
 
 To say MessyPullOutFlav of (M - a royal guard) in (F - a fuckhole):
@@ -1067,6 +1066,7 @@ To compute happy reward of (M - a royal guard):
 					now skeleton key is in the location of the player;
 					say "[big he of M] subtly drops a [skeleton key] on the ground.";
 					compute autotaking skeleton key;
+				check black lace transformation;
 		otherwise if M is penetrating breasts:
 			say "[big he of M] pulls out a handkerchief as [his of M] cock softens, [his of M] breathing still heavy as [he of M] wipes the creamy remnants of [his of M] load from your cleavage.[line break][speech style of M]'[if the class of the player is princess]It was an honour to be your consort, my liege. I will serve you any time[otherwise]I appreciate your service. Now go in peace[end if].'[roman type][line break]";
 			now the semen coating of breasts is 0;
@@ -1810,7 +1810,7 @@ To vaginal ride dominate (M - a royal guard):[with times-submitted we'll assume 
 	otherwise:
 		say "You hold [his of M] [DickDesc of M] loosely, emitting an 'Oooh' as you slide it fully into your [vagina]. ";
 		gape vagina times 1;
-		say "[if the times-submitted of M > 0]It doesn't feel quite as big as it did when [he of M] had the control, but this time, it's up to you whether or not [he of M] gets to cum[otherwise if the times-dominated of M > 0]It feels smaller than you remember, but knowing this isn't [his of M] first time under you makes you certain you'll find a way for it to satisfy you[otherwise]It's not quite as big as you're accustomed to, but it's enough to satisfy you, which is lucky for [him of M][end if].[line break][variable custom style]'[if the class of the player is princess]Shall I stop, subject?'[roman type][line break]You say suddenly,[otherwise]Sorry, I wasn't listening. Do you still want me to stop?'[roman type][line break]You chuckle[end if], leaning back so [he of M] has an uninterrupted view of the point where your nether lips meet the base of [his of M] shaft. [big his of M] [DickDesc of M] noticeably stiffens, and [he of M] stares silently for a few moments before your words actually reach [him of M], and a deep blush spreads over [his of M] face as [he of M] quickly shakes [his of M] head. You couldn't be happier to immediately drop all restraint, grabbing [his of M] shoulders as you wildly bounce on [his of M] [DickDesc of M]. [big he of M] tries to hide it, but [he of M][if the times-dominated of M >= 3]'s already demonstrated to you time and again how much [he of M] loves being treated like your own personal fucktoy[otherwise]'s clearly more than a little turned on by being treated like a human fucktoy[end if], and you make sure [he of M] knows it. You hold eye contact as your [AssDesc] slaps [his of M] [if M is a balls-haver]balls[otherwise]thighs[end if], meeting every buck and twist of [his of M] hips with a sharp movement of your own, driving [him of M] in as hard and deep as possible. [big he of M] can't handle it for very long, and you feel [his of M] [DickDesc of M] begin to twitch and throb ominously as [he of M] nears the edge.";
+		say "[if the times-submitted of M > 0]It doesn't feel quite as big as it did when [he of M] had the control, but this time, it's up to you whether or not [he of M] gets to cum[otherwise if the times-dominated of M > 0]It feels smaller than you remember, but knowing this isn't [his of M] first time under you makes you certain you'll find a way for it to satisfy you[otherwise]It's not quite as big as you're accustomed to, but it's enough to satisfy you, which is lucky for [him of M][end if].[line break][variable custom style]'[if the class of the player is princess]Shall I stop, subject?'[roman type][line break]You say suddenly,[otherwise]Sorry, I wasn't listening. Do you still want me to stop?'[roman type][line break]You chuckle[end if], leaning back so [he of M] has an uninterrupted view of the point where your nether lips meet the base of [his of M] shaft. [big his of M] [DickDesc of M] noticeably stiffens, and [he of M] stares silently for a few moments before your words actually reach [him of M], and a deep blush spreads over [his of M] face as [he of M] quickly shakes [his of M] head. You couldn't be happier to immediately drop all restraint, grabbing [his of M] shoulders as you wildly bounce on [his of M] [DickDesc of M]. [big he of M] tries to hide it, but [he of M][if the times-dominated of M >= 3]'s already demonstrated to you time and again how much [he of M] loves being treated like your own personal fucktoy[otherwise]'s clearly more than a little turned on by being treated like a human fucktoy[end if], and you make sure [he of M] knows it. You hold eye contact as your [AssDesc] slaps against [his of M] [if M is a balls-haver]balls[otherwise]thighs[end if], meeting every buck and twist of [his of M] hips with a sharp movement of your own, driving [him of M] in as hard and deep as possible. [big he of M] can't handle it for very long, and you feel [his of M] [DickDesc of M] begin to twitch and throb ominously as [he of M] nears the edge.";
 	now refractoryperiod is 0;
 	if M is wrapped:
 		say "[if the soreness of vagina > 3]Luckily for [him of M], your recent ordeals have left you so close to the edge that the right gust of wind might be enough to make you cum[otherwise if the player is horny]Luckily for [him of M], you're way too turned on to stop before you can cum[otherwise]Since [he of M]'s wearing a condom, you don't see the harm in letting [him of M] cum[end if], and you ride [him of M] even harder as the latex reservoir fills with warmth. The combination of power, control, and the knowledge that it's all completely risk free sends you into a frenzy, and you feel a[one of][or] familiar[stopping] wave of pleasure crashing through your body. [big his of M] condom continues to fill with [semen] as you [if the openness of vagina < 6]dribble girlcum down your thigh[otherwise]squirt out girlcum[end if] reminding you just how real the [DickDesc of M] inside you actually is as you ride out the rest of your orgasm. [BigNameDesc of M] pants quietly as you slowly climb off and climb to your feet.";

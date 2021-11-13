@@ -59,11 +59,6 @@ To check mindflayerquest:
 		otherwise:
 			summon mind flayer in the dungeon.
 
-This is the mindflayer quest of mind flayer list rule:
-	if alreadyspawned of mind flayer is 1 and mind flayer is not permanently banished:
-		say "Mind Flayer: You have been asked to kill a bugged-out monster.".
-The mindflayer quest of mind flayer list rule is listed in the quest listing rules.
-
 hastur is an action applying to nothing.
 Carry out hastur:
 	if the player is a top donator:

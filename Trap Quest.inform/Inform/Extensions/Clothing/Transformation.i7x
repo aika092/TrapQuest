@@ -180,6 +180,8 @@ To compute (C - a clothing) inheriting from (D - a clothing):
 	now the raw-magic-modifier of C is the raw-magic-modifier of D;
 	now the clothing-influence of C is the clothing-influence of D;
 	now the magic-type of C is the magic-type of D;
+	now the augmentation-charging-time of C is the augmentation-charging-time of D;
+	now the augmentation-grow-charge of C is the augmentation-grow-charge of D;
 	if D is sure, now C is sure;
 	otherwise now C is unsure;
 	if D is identified, now C is identified;

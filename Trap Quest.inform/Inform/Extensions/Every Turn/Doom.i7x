@@ -30,7 +30,9 @@ To update new acolytes:
 		otherwise:
 			if M is listed in new-acolytes, remove M from new-acolytes.
 
-Definition: a thing is bell themed: decide no. [The player needs a bell themed, a book themed and a candle themed thing to complete the doom ritual.]
+Definition: a thing is bell themed: [The player needs a bell themed, a book themed and a candle themed thing to complete the doom ritual.]
+	if it is belled, decide yes;
+	decide no.
 Definition: a thing is book themed: decide no. [The player needs a bell themed, a book themed and a candle themed thing to complete the doom ritual.]
 Definition: a thing is candle themed: decide no. [The player needs a bell themed, a book themed and a candle themed thing to complete the doom ritual.]
 
@@ -316,7 +318,7 @@ To compute creepiness: [first implementation of "creeping" of ghosts in non-garl
 	if the location of the player is garlic or playerRegion is not mansion:
 		if creepiness > 0, decrease creepiness by 20; [The player will have to hide for a couple turns to completely shake off the ghosts, but it shouldn't take too long]
 		if creepiness < 0, now creepiness is 0;
-	otherwise if (creepiness > a random number between (G * 30) and (G * 60)) and there is an off-stage ghost: [player has to be in the mansion for a while before multiple ghosts start messing with them]
+	otherwise if (creepiness > a random number between (G * 30) and (G * 60)) and there is an off-stage ghost and the player is not in a nonstandard room: [player has to be in the mansion for a while before multiple ghosts start messing with them]
 		let LM be the list of off-stage ghosts;
 		if ghostly tentacle is listed in LM, remove ghostly tentacle from LM;
 		if the number of entries in LM > 0:

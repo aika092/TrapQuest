@@ -127,7 +127,7 @@ To say QuestPersistFlav of (Q - soul-consume-quest) on (C - a clothing):
 	if C is unremovable, say "[unless C is blessed]Your [MediumDesc of C] wiggle and grow further out of your skin, [otherwise]Your [MediumDesc of C] wiggle, growing harder and[end if][if C is cursed]curling toward the back of your head and[otherwise if C is bland]coiling around the sides of your head and[end if] ";
 	otherwise say "[if C is cursed]The magic sealing your [MediumDesc of C] is lifted! It rewards your efforts by[otherwise if C is bland and Q is headgear-clothing-quest]You sense a blessing being laid upon your [MediumDesc of C]! It rewards your continued efforts by[otherwise]Your [MediumDesc of C] rewards your continued efforts by[end if] "
 
-[The reward is always the healing, never jewelery.]
+[The reward is always the healing, never jewellery.]
 To compute generic first time class reward of (Q - soul-consume-quest) on (C - a clothing):
 	compute generic class reward of Q on C.
 

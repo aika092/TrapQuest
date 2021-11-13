@@ -390,6 +390,16 @@ The player has a number called raw semen taste addiction. The raw semen taste ad
 
 The player has a number called raw oral sex addiction. The raw oral sex addiction of the player is usually 1. [Min 1 Max 10]
 
+slow oral sex addiction is a number that varies.
+
+To SlowOralSexAddictUp (X - a number):
+	while X > 0:
+		decrease X by 1;
+		increase slow oral sex addiction by 1;
+		if slow oral sex addiction > the square root of the raw oral sex addiction of the player:
+			now slow oral sex addiction is 0;
+			OralSexAddictUp 1.
+
 To OralSexAddictUp (X - a number):
 	if there is a worn pure totem:
 		let S be a random worn pure totem;

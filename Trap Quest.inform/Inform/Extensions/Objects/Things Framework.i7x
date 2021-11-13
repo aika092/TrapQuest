@@ -154,6 +154,18 @@ To maybe-map-display (C - a thing):
 		otherwise:
 			display F.
 
+To maybe-map-display (F - a figure-name):
+	if images visible is 1:
+		if the focus-window is g-present: [We're not going to display in the main window. So instead let's display a zoomed in version in the map window.]
+			if the map-window is g-present:
+				MapShow F;
+				if seconds is 0, display entire map; [This isn't going to happen automatically because time hasn't moved forward. So we prompt it ourselves.]
+				otherwise now map-turn-stall is 1; [If we didn't do this, the temporary-map-figure would be reset before it has a chance to be shown properly, when the time progression is calculated (towards the bottom of "to run the engine once" in Compute Turn.i7x.]
+			otherwise:
+				cutshow F;
+		otherwise:
+			display F.
+
 The examine undescribed things rule is not listed in the carry out examining rulebook.
 
 To say ExamineDesc of (C - a thing):

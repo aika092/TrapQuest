@@ -93,27 +93,29 @@ Definition: a monster is facefucker:
 	decide no.
 
 To StomachSemenUp (X - a number):
-	let SU be a random number between 0 and 1;
 	let M be a random wrapped monster penetrating face;
 	if M is monster:
 		compute condom filling of M;
 	otherwise:
-		if lipstick collar is worn, increase X by 1;
-		if the latex-transformation of the player > 4:
-			AssFill X;
-			now X is 0;
-		if the semen taste addiction of the player > 14, passively stimulate face from semen;
-		if X > 0:
-			say SemenEncounterFlav;
-			now cold turkey of semen is 0;
-			if the stomach-food of the player < 2, now the stomach-food of the player is 2; [Improves hunger]
-		while X > 0:
-			increase the stomach-semen of the player by 1;
-			decrease X by 1;
-			if X is SU and the trophy-mode of ejaculate-trophy is 0, SlowSemenTasteAddictUp 1; [so half the time, 2 units of semen are required for semen taste addiction to increase]
+		compute slightly addictive swallowing of semen by X;
 	if there is a facefucker thing penetrating face:
 		OralSexAddictUp 1;
 		progress quest of cum-swallowing-quest.
+
+To ActualStomachSemenUp (X - a number):
+	let SU be a random number between 0 and 1;
+	if lipstick collar is worn, increase X by 1;
+	if the latex-transformation of the player > 4:
+		AssFill X;
+		now X is 0;
+	if X > 0:
+		say SemenEncounterFlav;
+		now cold turkey of semen is 0;
+		if the stomach-food of the player < 2, now the stomach-food of the player is 2; [Improves hunger]
+	while X > 0:
+		increase the stomach-semen of the player by 1;
+		decrease X by 1;
+		if X is SU and the trophy-mode of ejaculate-trophy is 0, SlowSemenTasteAddictUp 1; [so half the time, 2 units of semen are required for semen taste addiction to increase]
 
 To StomachSemenDown (X - a number):
 	if the stomach-semen of the player > 0:
@@ -124,6 +126,9 @@ To StomachSemenDown (X - a number):
 			decrease X by 1.
 
 To StomachUrineUp (X - a number):
+	compute slightly addictive swallowing of urine by X.
+
+To ActualStomachUrineUp (X - a number):
 	while X > 0:
 		decrease X by 1;
 		increase the stomach-urine of the player by 1;
@@ -140,6 +145,9 @@ To StomachUrineDown (X - a number):
 			decrease the stomach-urine of the player by 1.
 
 To StomachMilkUp (X - a number):
+	compute slightly addictive swallowing of milk by X.
+
+To ActualStomachMilkUp (X - a number):
 	while X > 0:
 		decrease X by 1;
 		increase the stomach-milk of the player by 1;

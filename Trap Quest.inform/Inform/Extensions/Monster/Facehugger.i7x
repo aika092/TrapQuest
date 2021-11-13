@@ -6,6 +6,8 @@ There are 10 facehuggers.
 facehuggers-fucked is a number that varies.
 
 Definition: a facehugger is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
+Definition: a facehugger is egg-fathering: decide yes.
+Definition: a facehugger is virginity taking: decide yes.
 
 To decide which number is the girth of (M - a facehugger):
 	decide on 1.
@@ -284,6 +286,7 @@ To decide which number is the girth of (A - hugger-gag):
 
 A hugger-panties is a kind of knickers. Understand "hugging" as hugger-panties. The plug size of a hugger-panties is 1. A hugger-panties is biological. A hugger-panties has a number called charge.
 
+Definition: a hugger-panties is egg-fathering: decide yes.
 Definition: a hugger-panties is transformation-proteted: decide yes.
 Report taking off a hugger-panties:
 	say "You discard the inert facehugger, and it drops to the ground, lifeless.";

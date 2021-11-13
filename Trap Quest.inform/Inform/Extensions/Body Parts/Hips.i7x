@@ -87,7 +87,7 @@ Hips has a number called previous thickness. Hips has a number called previous t
 
 Hips has a number called fat-burning.
 
-To decide which number is max ass size modifier:
+To decide which number is max ass size modified:
 	let M be max ass size points;
 	if max ass size points > 0, increase M by 1;
 	if max ass size points > 1, increase M by 1;
@@ -96,8 +96,8 @@ To decide which number is max ass size modifier:
 
 To decide which number is max ass size:
 	if there is a restricting salve covering hips, decide on the total volume of hips;
-	if extreme proportions fetish is 1 and the player is not a flatchested trap, decide on 20 - (max ass size modifier * 2);
-	otherwise decide on 10 - max ass size modifier.
+	if extreme proportions fetish is 1 and the player is not a flatchested trap, decide on 20 - (max ass size modified * 2);
+	otherwise decide on 10 - max ass size modified.
 To decide which number is max hip size:
 	decide on max ass size.
 

@@ -68,6 +68,13 @@ To destroy (M - a monster):
 	now M is dying.
 
 To finally destroy (M - a monster):
+	if M is carrying players-detached-dick:
+		compute taking away detached dick from M;
+		describe detached dick dropping;
+	if M is carrying portal-cock-ring:
+		if the player is in the location of M:
+			say cock ring drops to the ground with "You watch as the";
+		now portal-cock-ring is in the location of M;
 	uniquely destroy M;
 	if the player is in the location of M, decrease the charge of the dungeon altar by the difficulty of M * 10;
 	if the player is in the location of M, decrease the charge of the elder altar by the difficulty of M * 10;
@@ -79,8 +86,10 @@ To finally destroy (M - a monster):
 	now the sex-length of M is 0;
 	now the collar-pulled of M is 0;
 	now M is not soul-stolen;
+	now the time-alive of M is 0;
 	if M is bride-consort, progress quest of betrothal-quest;
 	remove M from play;
+	now the monstersetup of M is 0;
 	reset M.
 
 To reset (M - a monster): [We do this when the player faints to all monsters, even if they are remaining in play.]

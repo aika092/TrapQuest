@@ -51,7 +51,7 @@ choice
 4 [Inventory Visible]
 0 [Cheatercheck part 1]
 3 [Pubic Hair Images Visible]
-2 [New status line]
+3 [New status line]
 1 [Newbie tips]
 0 [GUI Layout]
 1 [Character Stats Text]
@@ -591,7 +591,7 @@ Part - Optional Text Settings
 Table of Optional Text Settings
 title	subtable	description	toggle
 "Previous Menu (Shortcut: Q)"	--	--	quit rule
-"Status bar: [if new status line is 1]COMPACT (for low resolution monitors)[otherwise if new status line is 2]MINIMAL (recommended assuming you're using the graphics windows)[otherwise if new status line is 3]NONE[otherwise]NORMAL[end if]"	--	--	new status toggle rule
+"Status bar: [if new status line is 4]NONE[otherwise if new status line is 3]MINIMAL (recommended assuming you're using the graphics windows)[otherwise if new status line is 2]COMPACT (for low resolution monitors)[otherwise if new status line is 1]NORMAL[otherwise]EXPANDED[end if]"	--	--	new status toggle rule
 "Enable tips for newbies: [if newbie tips is 1]ON[otherwise]OFF[end if]"	--	--	newbie tips toggle rule
 "Display Text Shortcuts (when hyperlinks are disabled, the abbreviated forms of all objects will be shown next to their names): [if shortcuts is 1]ON[otherwise]OFF[end if]"	--	--	shortcuts toggle rule
 "Display Hyperlink Options: [if actual inline hyperlinks is 3]SMART (but slow)[otherwise if actual inline hyperlinks is 2]IN-LINE[otherwise if actual inline hyperlinks is 1]BASIC[otherwise]OFF[end if]"	--	--	inline hyperlinks toggle rule
@@ -605,7 +605,7 @@ title	subtable	description	toggle
 [ALL EXTRA OPTIONS SHOULD GO ABOVE SIMULATED INTERNET ROW, OR NON-DONATORS WON'T SEE THEM.]
 
 This is the new status toggle rule:
-	if choice in row 19 of Table of Settings < 3, increase choice in row 19 of Table of Settings by 1;
+	if choice in row 19 of Table of Settings < 4, increase choice in row 19 of Table of Settings by 1;
 	otherwise now choice in row 19 of Table of Settings is 0.
 
 This is the newbie tips toggle rule:

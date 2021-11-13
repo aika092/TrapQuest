@@ -189,7 +189,7 @@ To compute drinking effect (N - 6):
 	say "You feel [if the soreness of asshole > 0 or the soreness of vagina > 0]less sore[end if][if (the soreness of asshole > 0 or the soreness of vagina > 0) and the arousal of the player >= 3000] and [end if][if the arousal of the player >= 3000]a bit less aroused[end if][if the soreness of asshole <= 0 and the soreness of vagina <= 0 and the arousal of the player < 3000]vaguely more clear-headed[end if].";
 	heal asshole times 3;
 	heal vagina times 3;
-	if the arousal of the player > 2000, decrease the arousal of the player by 2000.
+	force cool down 2000.
 
 To compute drinking effect (N - 7):
 	say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]This drink fizzes and bubbles in your mouth! [otherwise]Another magic bubbly drink![end if]";

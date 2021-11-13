@@ -52,7 +52,7 @@ Carry out squatting:
 	if the latex-transformation of the player > 4:
 		say "Nothing happens.";
 	otherwise:
-		humiliate 200;
+		severeHumiliate;
 		AssSquirt.
 Understand "squat", "squat down", "poo", "poop", "expel", "expel enema", "expel creampie" as squatting.
 

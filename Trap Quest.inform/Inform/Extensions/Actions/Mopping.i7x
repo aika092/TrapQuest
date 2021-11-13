@@ -11,6 +11,7 @@ Check mopping:
 	if the player is flying, say "You can't reach anything you could clean." instead;
 	if the player is not prone, say "You have to get on your knees first." instead;
 	if the milk-puddle of the location of the player + the semen-puddle of the location of the player + the urine-puddle of the location of the player < 1, say "But there's no mess to clean?" instead;
+	if the noun is face and face is actually occupied, say "Your mouth is busy already, isn't it?" instead;
 	if the noun is pink-spraybottle:
 		if there is a dangerous monster in the location of the player, say "You need to deal with the [random dangerous monster in the location of the player] first!" instead;
 		if the noun is not worn by the player, say "But you're not holding the cloth..." instead;
@@ -133,7 +134,8 @@ Carry out mopping pink-spraybottle:[TODO: breasts largeness 10+ will touch the g
 			now the semen-puddle of the location of the player is 0;
 	increase the work ethic of the noun by D * 30;
 	if the noun is cursed, now D is D * 3;
-	FatigueUp D * 10.
+	FatigueUp D * 10;
+	check regular humiliating situation.
 
 was-mopping is initially false.
 [Allows us to offer the option to the player to continue mopping]

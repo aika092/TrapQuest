@@ -614,8 +614,10 @@ To compute (M - a wrestler) entering mouth:
 	if the sex-length of M > 7, now the sex-length of M is 7;
 	say FriendlyMouthPenetrationFlav of M;
 	now M is penetrating face;
-	if the player is possessing a vagina, now M is penetrating vagina;
-	otherwise now M is penetrating penis;
+	if the player is possessing a vagina:
+		now M is penetrating vagina;
+	otherwise if the player is possessing a penis:
+		now M is penetrating penis;
 
 To say FriendlyMouthPenetrationFlav of (M - a wrestler):
 	let C be a random worn top level protection clothing;
@@ -1015,7 +1017,7 @@ To watersports dominate (M - a wrestler):
 	otherwise if the player is possessing a penis:
 		say "[line break][speech style of M]'[one of]Oh wow! I didn't even know dicks could get that small! [big please], I have to know what your piss tastes like!'[or]I never get tired of your tiny cock! Let me have another taste of that yummy piss!'[stopping][roman type][line break] [big he of M] opens [his of M] mouth wide, gesturing to [his of M] outstretched tongue with a latex-clad finger. This is too good to be true! You immediately release your hold on your bladder, allowing a shudder of relief to pass through your body as you douse [NameDesc of M] in a stream of golden [urine]. [big he of M] pushes [his of M] breasts together enticingly as [he of M] captures it in [his of M] mouth, making a show of swallowing it in one huge gulp. After [he of M]'s done, [he of M] suddenly gets up and kisses you square on the lips. Wow!";
 		slightDignify;
-		SlowUrineTasteAddictUp 1;
+		compute slightly addictive tasting of urine;
 	now the bladder of the player is 0;
 	cutshow figure of wrestler cutscene 2 for M;
 	say AfterDominationComment 1 of M;

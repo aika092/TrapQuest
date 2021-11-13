@@ -200,17 +200,21 @@ A later time based rule (this is the robo vacuum cleaner rule):
 			otherwise:
 				if the patrol of robo vacuum cleaner > the number of entries in LR, now the patrol of robo vacuum cleaner is 1;
 				let R1 be entry (patrol of robo vacuum cleaner) in LR;
-				let D be the best route from the location of the player to R1;
-				let R2 be the room D from the location of the player;
-				say "[BigNameDesc of robo vacuum cleaner] [one of]rumbles[or]wheels itself[or]travels[or]glides[in random order] [D] to the [R2][if robo vacuum cleaner is penetrating a fuckhole], taking you with it[end if]!";
-				if R1 is R2 and the total puddle of R1 is 0:
-					now the semen-puddle of R1 is a random number between 2 and 4;
-					increase the patrol of robo vacuum cleaner by 1;
-				if robo vacuum cleaner is penetrating a fuckhole:
-					drag to R2 by robo vacuum cleaner;
+				if R1 is the location of the player:
+					say "BUG - robo vacuum cleaner planned to move to [R1] but was somehow already there.";
+					increase patrol of robo vacuum cleaner by 1;
 				otherwise:
-					dislodge robo vacuum cleaner;
-					now robo vacuum cleaner is in R2;
+					let D be the best route from the location of the player to R1;
+					let R2 be the room D from the location of the player;
+					say "[BigNameDesc of robo vacuum cleaner] [one of]rumbles[or]wheels itself[or]travels[or]glides[in random order] [D] to the [R2][if robo vacuum cleaner is penetrating a fuckhole], taking you with it[end if]!";
+					if R1 is R2 and the total puddle of R1 is 0:
+						now the semen-puddle of R1 is a random number between 2 and 4;
+						increase the patrol of robo vacuum cleaner by 1;
+					if robo vacuum cleaner is penetrating a fuckhole:
+						drag to R2 by robo vacuum cleaner;
+					otherwise:
+						dislodge robo vacuum cleaner;
+						now robo vacuum cleaner is in R2;
 	if robo vacuum cleaner is not in the location of the player and robo vacuum cleaner is penetrating a body part, dislodge robo vacuum cleaner. [Sometimes it was getting into weird states where it was still penetrating face even though it had moved on]
 
 To say DragFlav of (M - robo vacuum cleaner) to (R - a room):

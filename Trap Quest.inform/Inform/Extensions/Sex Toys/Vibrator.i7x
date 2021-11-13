@@ -60,7 +60,7 @@ To decide which number is the stimulation of (T - remote-controlled-vibrator) on
 Figure of remote controlled vibrator 1 is the file "Items/Accessories/Toys/vibrator2.png".
 Figure of remote controlled vibrator 2 is the file "Items/Accessories/Toys/vibrator3.png".
 To decide which figure-name is clothing-image of (C - remote-controlled-vibrator):
-	if the player is male, decide on figure of remote controlled vibrator 2;
+	if the player is possessing a penis, decide on figure of remote controlled vibrator 2;
 	decide on figure of remote controlled vibrator 1.
 Definition: remote-controlled-vibrator is discovered varied: decide no.
 Definition: remote-controlled-vibrator is fetish appropriate: decide no. [Stops it spawning randomly]

@@ -308,4 +308,30 @@ Definition: christmas strap monokini is transformation-protected:
 	if the class of the player is santa's little helper, decide yes;
 	decide no.
 
+
+Part 14 - Blue Mostly Sheer Monokini
+
+A blue mostly-sheer monokini is a kind of slut monokini. There is 1 blue mostly-sheer monokini. The text-shortcut of blue mostly-sheer monokini is "msbm". A blue mostly-sheer monokini is neck exposing. Understand "mostly", "sheer" as blue mostly-sheer monokini.
+
+The printed name of blue mostly-sheer monokini is usually "[clothing-title-before]mostly sheer blue swimsuit[clothing-title-after]".
+
+Figure of blue mostly-sheer monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/stringmonokini14.png".
+
+To decide which figure-name is clothing-image of (C - a blue mostly-sheer monokini):
+	decide on figure of blue mostly-sheer monokini.
+
+To say ClothingDesc of (C - a blue mostly-sheer monokini):
+	say "This blue swimsuit should just be high-waisted and sexy, not slutty, but 90% of the nylon, including the crotch section, is almost entirely see-through.".
+
+To say ShortDesc of (C - a blue mostly-sheer monokini):
+	say "blue swimsuit".
+To say MediumDesc of (C - a blue mostly-sheer monokini):
+	say "mostly sheer blue swimsuit".
+
+Definition: a blue mostly-sheer monokini is blue themed: decide yes.
+Definition: a blue mostly-sheer monokini is potentially cameltoe blocking: decide no. [This causes it to not be potentially vagina covering, leaving vagina always partially visible through it]
+Definition: a blue mostly-sheer monokini is potentially penis concealing: decide no.
+
+
+
 Slutty Monokinis ends here.

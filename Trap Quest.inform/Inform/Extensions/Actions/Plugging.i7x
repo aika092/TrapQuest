@@ -40,10 +40,20 @@ Check plugging something with:
 				say "[one of]You can hardly believe you're about to use your own [DetachedPenis] on yourself - yet at the same time, just from the pleasurable feelings from your fingers rubbing it that shiver up through you, you can hardly wait to do so![or]Once again you're about to use your own [DetachedPenis] to doubly pleasure yourself. Doubly, because you get to feel both the penetration, and being penetrated at the same time. You squirm in anticipation.[or]You can hardly wait for the doubled feelings of pleasure, fucker and fuckee at the same time![or][variable custom style]'Ooh, yeah, do me [NameBimbo], while I do you!'[roman type][line break][or][variable custom style]Yum, double pleasure coming up![roman type][stopping][line break]";
 				if the size of the second noun is 0:
 					say "[one of]You delicately stick the penis decal just above your [ShortDesc of the noun], and as hoped for, feel it warm up and tingle, as if you'd really inserted an actual dick. Albeit a tiny one.[or]You stick the dick decal above your [ShortDesc of the noun] and feel the pleasure begin again.[stopping]";
-				otherwise if the size of the second noun < 3:
-					say "You bite your lip, partly in humiliation at just how small your [ShortDesc of the second noun] is, but mainly from the delightfully doubled sensation.";
-				otherwise if the size of the second noun > 8:
-					say "You relax your [variable noun] as much as you can to try and push your own [ShortDesc of the second noun] inside yourself, eyes fluttering from the doubled pleasure.";
+				otherwise:
+					[Clumsiness proportional to latex TF. At TF 1, 8/9 chance success; at TF8, 1/9 chance of success.]
+					if a random number between (9 - the latex-transformation of the player) and 9 is 9:
+						if the size of the second noun < 3:
+							say "You bite your lip, partly in humiliation at just how small your [ShortDesc of the second noun] is, but mainly from the delightfully doubled sensation.";
+						otherwise if the size of the second noun > 8:
+							say "You relax your [variable noun] as much as you can to try and push your own [ShortDesc of the second noun] inside yourself, eyes fluttering from the doubled pleasure.";
+						passively stimulate the noun from players-detached-dick;
+					otherwise:
+						say "Your [LatexFlav]hands [one of]clumsily slipped[or]fumbled[in random order] [one of]it[or]in the attempt[or]and failed[in random order] that time.";
+						if a random number between (9 - the latex-transformation of the player) and 12 >= 9:
+							say "Oops - you dropped your dick on the ground!";
+							now the players-detached-dick is in the location of the player;
+						allocate 2 seconds instead;
 			otherwise:
 				say "You relax your [variable noun] as much as you can to try and push the [ShortDesc of the second noun] inside of you.".
 
@@ -73,11 +83,11 @@ To compute insertionRuin of (S - a thing) into (F - a fuckhole):
 			say "Of course you can't insert the penis decal, so you reverse it and instead use the normal-sized dildo it's stuck to the base of.";
 		otherwise:
 			say "You can't actually insert the penis decal, but you press the thin disc down just below your [variable F], where it sticks nicely, sending little tingles through you in a kind of ghostly echo of penetration." instead;
-	if the girth of S > the openness of F - 4:
-		say "The [MediumDesc of S] [if the girth of S > the openness of F + 1]is so large compared to the openness of your [variable F] that it makes you a bit sore just putting[otherwise]stimulates you as you put[end if] it in.";
+	if the girth of S > the openness of F + 2:
+		say "The [MediumDesc of S] [if the girth of S > the openness of F + 4]is so large compared to the openness of your [variable F] that it hurts a bit just to put[otherwise]stretches you as you put[end if] it in.";
 		ruin F;
-		if the girth of S > the openness of F + 1, ruin F;
-	otherwise if the girth of S > the openness of F - 2:
+		if the girth of S > the openness of F + 4, ruin F;
+	otherwise if the girth of S > the openness of F:
 		say "Oof! You definitely felt that as you pushed it inside.";
 		passively stimulate F from S;
 	otherwise:
@@ -99,16 +109,19 @@ Check unplugging something:
 	[#LXorDD NB this also makes it harder for a mostly-latex-transformed player from extracting a plug, especially their own detached dick, from pussy or arse? It's addressed by some changes to check unplugging.]
 	if the latex-transformation of the player > 5: [#LXorDD]
 		if the latex-transformation of the player is 8:
-			say "[one of]You can't even feel whether you're touching it, and you don't manage this time.[or]You think you've got a grip on it, but without thumbs, you're not sure you can apply enough pressure. Ugh: your doll hands slip off it.[or]You just don't have the manual dexterity to do that![stopping]";
-			allocate 4 seconds instead;
-		otherwise if a random number between 3 and 8 > the latex-transformation of the player:
-			say "[one of]Your rubbery, numbed fingers lose their grip[or]You didn't manage to get a proper grip with your plastic-y fingers[or]Oops, you think it slipped from your grip[at random] this time.";
-			allocate 4 seconds instead;
+			say "[one of]You can't even feel whether you're touching it.[or]You think you've got a grip on it, but without thumbs, you're not sure you can apply enough pressure.[or]If only your fingers weren't so numb![in random order]";
+		otherwise:
+			say "[one of]Your rubbery, numbed fingers struggle to maintain their grip[or]You struggle to get a proper grip with your plastic-y fingers[or]It's trying to slip from your grip[in random order].";
+		[Clumsiness proportional to latex TF. At TF 1, 8/9 chance success; at TF 8, 1/9 chance of success.]
+		unless a random number between (9 - the latex-transformation of the player) and 9 is 9:
+			say "Your [LatexFlav]hands [one of]clumsily slipped[or]fumbled[or]failed to get a grip[in random order] that time.";
+			allocate 2 seconds instead;
 	if the noun is penetrating asshole and the player is ass protected, say "You need to get your [random bottom level ass protection clothing] out of the way first." instead;
 	if (the noun is penetrating vagina or the noun is penetrating penis) and the player is pussy protected, say "You need to get your [random bottom level protection clothing] out of the way first." instead;
 	if the noun is glued, try tearing off the noun instead;
 	if diaper quest is 0 and the noun is plug and the noun is penetrating a fuckhole and the girth of the noun > the insertableGirthAcceptance of a random fuckhole penetrated by the noun + 4:
 		say "You push with your [random fuckhole penetrated by the noun][']s muscles and [if the noun is anal beads]pull on the cord of [NameDesc of noun], but they're just so big that they[otherwise]pull on the base of [NameDesc of noun], but the plug's bulb is so big that it[end if] just won't come out!" instead.
+
 Carry out unplugging something:
 	allocate arm use;
 	allocate 6 seconds;
@@ -124,11 +137,24 @@ Carry out unplugging something:
 				say "Blood rushes to your head as you feel incredibly humiliated, submissively pulling [NameDesc of noun] out of your fuckhole to make it available for [NameDesc of M]. Your cheeks turn a beetroot shade of red.";
 				humiliate 125;
 				compute player submission;
-			if the girth of the noun > the openness of F + 2:
+			if F is face: [#LXorDD: the aeromancer can shove your detached dick into your mouth]
+				say "[BigNameDesc of the noun] makes a loud 'SHLURP' as you pull it out of your [variable F], cleaning it as it emerges from your [LipDesc].";
+			otherwise if the girth of the noun > the openness of F + 2:
 				say "[BigNameDesc of the noun] makes a loud 'PLOP' as you pull it clean out of your [variable F].";
 				ruin F;
+			if the noun is players-detached-dick:
+				if the size of the noun < 3:
+					say "You bite your lip, partly in humiliation at just how small your [ShortDesc of the noun] is and how easy it was to pull it free, but mainly from the delightfully doubled sensation.";
+				otherwise if the size of the noun > 8:
+					say "Even after relaxing your [variable F] as much as you could, tugging free your own [ShortDesc of the noun] made your eyes flutter from the doubled pleasure.";
 		dislodge the noun;
+	[Clumsiness proportional to latex TF. At TF 0, 0 chance of failure; at TF 1, 1/5 chance failure; at TF 8, 9/12 chance of failure.]
+	if a random number between (9 - the latex-transformation of the player) and 12 < 9:
+		say "Oops - the [ShortDesc of the noun] slipped through your [LatexFlav]fingers! It falls to the ground.";
+		now the noun is in the location of the player;
+	otherwise:
 		now the noun is carried by the player.
+
 Report unplugging something:
 	if the noun is dildo sword and the raw-magic-modifier of the noun < 5:
 		say "As you pull it out, it glows strongly. It feels more powerful, as least for now!";

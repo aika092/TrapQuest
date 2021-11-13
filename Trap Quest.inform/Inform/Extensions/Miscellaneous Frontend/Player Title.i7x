@@ -142,7 +142,7 @@ To say TitleBimbo:
 			say " [if the player is presenting as male and the bimbo of the player < 9]ballet dancer[otherwise]ballerina[end if]";
 		otherwise if whip-of-domination is worn and the player is feeling dominant:
 			say " dominatrix";
-		otherwise if newborn-wasp is an alive giant wasp:
+		otherwise if the number of alive giant wasps > 1:
 			say " wasp [if the number of alive giant wasps < 4]queen[otherwise]broodmother[end if]";
 		otherwise if the virgin bonus of the player <= -2:
 			say " [one of]fallen[or]disgraced[sticky random] ex-warrior";

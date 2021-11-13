@@ -7,7 +7,7 @@ Check begging:
 	if the player is not monster fucked and the number of monsters grabbing the player is 0:
 		if there is a live thing penetrating a body part, try submitting instead;
 		say "You are not being fucked, so there is nobody to beg to!" instead;
-	if the player is friendly fucked, say "You don't need to beg for mercy, this is consensual sex!" instead;
+	if the player is friendly fucked, say "If you want to stop, try [bold type]resisting[roman type] instead." instead;
 	unless the player is able to speak:
 		if the player is gagged:
 			allocate 6 seconds;

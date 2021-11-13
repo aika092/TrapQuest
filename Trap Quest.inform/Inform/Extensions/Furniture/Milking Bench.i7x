@@ -5,19 +5,22 @@ milking bench is a kind of furniture. A milking bench has a number called units 
 mansion-milking-bench is a milking bench.
 dungeon-milking-bench is a milking bench.
 Definition: mansion-milking-bench is immune to change: decide yes.
-A game universe initialisation rule:
-	if lactation fetish is 1:
-		now mansion-milking-bench is in Mansion06.
 
-To decide which figure-name is the examine-image of (C - a milking bench):
-	decide on figure of milking bench.
+To decide which figure-name is the examine-image of (C - dungeon-milking-bench):
+	decide on figure of milking bench dungeon.
+To decide which figure-name is the examine-image of (C - mansion-milking-bench):
+	decide on figure of milking bench mansion.
 
 To say ExamineDesc of (C - a milking bench):
 	say "A bench you could kneel and rest on. There are cups that are clearly for milking swollen mammaries.".
 
-Figure of milking bench is the file "Env/Dungeon/milkingbench1.png".
+Figure of milking bench mansion is the file "Env/Mansion/milkingbench1.png".
+Figure of milking bench dungeon is the file "Env/Dungeon/milkingbench1.jpg".
 Figure of milking bench cutscene 1 is the file "Special/Cutscene/cutscene-milking-bench1.jpg".
 Figure of milking bench cutscene 2 is the file "Special/Cutscene/cutscene-milking-bench2.png".
+Figure of milking bench cutscene 3 is the file "Special/Cutscene/cutscene-milking-bench3.jpg".
+Figure of milking bench cutscene 4 is the file "Special/Cutscene/cutscene-milking-bench4.jpg".
+Figure of milking bench cutscene 5 is the file "Special/Cutscene/cutscene-milking-bench5.jpg".
 
 To compute furniture resting on (M - a milking bench):
 	let milking-allowed be 1;
@@ -57,8 +60,16 @@ To compute furniture resting on (M - a milking bench):
 	if the milk volume of breasts > 0 and milking-allowed >= 1:
 		let MT be a random milk-tank in the location of M;
 		say "The suckers leap up and latch onto your [milk] filled [BreastDesc]!";
-		if the largeness of breasts <= 11, cutshow figure of milking bench cutscene 1 for M;
-		otherwise cutshow figure of milking bench cutscene 2 for M;
+		if M is mansion-milking-bench:
+			if the largeness of breasts <= 11, cutshow figure of milking bench cutscene 1 for M;
+			otherwise cutshow figure of milking bench cutscene 2 for M;
+		otherwise:
+			if the largeness of breasts <= 11:
+				cutshow figure of milking bench cutscene 3 for M;
+			otherwise if the largeness of breasts <= 15:
+				cutshow figure of milking bench cutscene 4 for M;
+			otherwise:
+				cutshow figure of milking bench cutscene 5 for M;
 		now milking is 1;
 		let MPT be 1; [units of milk collected. increases by 1 every turn]
 		while milking is 1 and delayed fainting is 0 and the player is in the location of M and (the fatigue of the player > 0 or the milk volume of breasts > 0): [The player can stop being milked by the game setting milking to 0]

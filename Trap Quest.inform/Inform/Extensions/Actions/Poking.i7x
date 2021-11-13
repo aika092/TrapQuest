@@ -3,7 +3,7 @@ Poking by Actions begins here.
 poking is an action applying to one thing.
 
 Check poking:
-	if the noun is caged monster, say "You can't reach [him of the noun] through the cage!" instead;
+	if the noun is caged monster, try dominating the noun;
 	allocate 2 seconds;
 	if the noun is not monster or timeBombTime > 0, say "You poke [if the noun is monster][him of the noun][otherwise]it[end if]. Nothing happens." instead.
 

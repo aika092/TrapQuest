@@ -357,7 +357,7 @@ To decide which number is the slap damage improvement of (W - gladiator-sword):
 
 Check taking gladiator-sword:
 	if gladiatorcurse >= 0:[finishing the gladiator quest makes you worthy]
-		if the player is male and the largeness of breasts < max breast size and the largeness of breasts < 10, say "The sword resists your touch. Maybe it doesn't consider your [ShortDesc of breasts] womanly enough." instead;
+		if the player is sexed male and the largeness of breasts < max breast size and the largeness of breasts < 10, say "The sword resists your touch. Maybe it doesn't consider your [ShortDesc of breasts] womanly enough." instead;
 		let C be the concealer of breasts;
 		if C is clothing, say "The sword resists your touch. Maybe you're not worthy with your breasts hidden behind your [ShortDesc of C]?" instead.
 
@@ -675,7 +675,7 @@ This is the sissy-swords butt slut rule:
 The sissy-swords butt slut rule is listed in the butt slut eligibility rules.
 
 This is the sissy-swords resolution rule:
-	if sissy-sword is worn and the player is male and (there is a worn chastity bond or asshole is actually occupied):
+	if sissy-sword is worn and the player is gendered male and (there is a worn chastity bond or asshole is actually occupied):
 		say "Your [ShortDesc of sissy-sword] emits a burst of warmth as the gemstone in the hilt turns a shade of bright blue.";
 		increase the charge of sissy-sword by a random number between 60 and 70.
 The sissy-swords resolution rule is listed in the orgasm resolution rules.

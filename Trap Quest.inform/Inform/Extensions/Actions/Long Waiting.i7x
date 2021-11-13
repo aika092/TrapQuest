@@ -237,6 +237,7 @@ This is the longwait setting rule:
 			while longWaitTurns > 0:
 				allocate 6 seconds;
 				decrease longWaitTurns by 1;
+				check regular humiliating situation;
 				compute extra turn;
 				follow the long wait rules;
 				if the rule failed, now longWaitTurns is -1;

@@ -31,6 +31,7 @@ To compute attack of (W - carrot daggers) at (M - a monster):
 To compute attack effect of (W - carrot daggers):
 	if attack-type is 1 and W is blessed:
 		say "You feel another egg appear inside your belly!";
-		AssFill 1 medium eggs.
+		AssFill 1 medium eggs;
+		if the number of egg-fathering things penetrating asshole is 0, add carrot daggers to the medium-egg-origins of belly.
 
 Carrot Daggers ends here.

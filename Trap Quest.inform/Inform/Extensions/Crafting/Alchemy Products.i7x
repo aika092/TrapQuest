@@ -590,7 +590,7 @@ To decide which number is the alchemy key of (A - invigoration-elixir):
 
 Carry out quaffing invigoration-elixir:
 	say "You pull out the small stopper and drink the creamy liquid. It tastes like [semen]. You feel your [fuckholes] pulse gently.";
-	SlowSemenTasteAddictUp 1;
+	compute slightly addictive tasting of semen;
 	let R be a random number between 30 and 45;
 	if the noun is blessed, increase R by 30;
 	if the noun is cursed, decrease R by 29;

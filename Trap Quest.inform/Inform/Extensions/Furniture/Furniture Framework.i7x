@@ -153,6 +153,7 @@ This function runs computeMonsterDetectionFurniture, invokes computeExtraTurn, t
 
 +!]
 To compute normal effect of (F - a furniture):
+	check regular humiliating situation;
 	compute extra turn;
 	compute monster detection;
 	compute unique normal effect of F.

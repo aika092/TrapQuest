@@ -272,7 +272,7 @@ Report examining clothing:
 Report examining wet clothing:
 	unless it is diaper and the player is not diaper aware, say "It is currently [cumdesc of the noun][if the noun is sheer-when-wet]which is making it more see-through than it would otherwise be[otherwise if the noun is actually dense]but it's not the type of item to turn see-through when wet[otherwise]but it's just as see-through as normal[end if].".
 
-Report examining wearthing:
+Report examining clothing:
 	if the noun is worn:
 		if the noun is currently visible:
 			say CurrentlyVisibleFlav of the noun;

@@ -640,7 +640,7 @@ To say sexDumbFlav of (M - a monster) in (F - a fuckhole):
 	say "[BigFuckerDesc of M] continues to [one of]plow[or]fuck[or]use[or]invade[at random] your [variable F]!".
 
 To say sexDumbNearingClimax of (M - a monster) in (F - a fuckhole):
-	say "[BigFuckerDesc of M] [one of]thrusts[or]pounds[or]fucks[or]plows[at random] you [one of]harder and harder[or]even harder[or]faster and faster[at random]! [one of][big he of M] must be close[or][big he of M] must be close to cumming![at random]!".
+	say "[BigFuckerDesc of M] [one of]thrusts[or]pounds[or]fucks[or]plows[at random] you [one of]harder and harder[or]even harder[or]faster and faster[at random]! [one of][big he of M] must be close[or][big he of M] must be close to cumming[at random]!".
 
 [!<ComputeSexBeggingOfMonsterInFuckhole>+
 
@@ -777,9 +777,9 @@ To say sexSubmitSplitFlav of (M - a monster) in (O - an orifice):
 		otherwise if the bimbo of the player < 10 and the player is gendered male:
 			say "[BigFuckerDesc of M]'s [DickDesc of M] relentlessly pounds your sensitive prostate, reminding you how much of a [one of]dirty faggot[or]nasty little fag[in random order] you are for enjoying this.";
 		otherwise if the bimbo of the player < 12:
-			say "[BigFuckerDesc of M]'s balls repeatedly slap your taint as [he of M] pistons in and out of your [asshole], as if to remind you how much you secretly like [if M is presenting as male]men like [him of M][otherwise]getting bent over by people like [him of M][end if].";
+			say "[BigFuckerDesc of M]'s [if M is a balls-haver]balls repeatedly slap your taint[otherwise]hips repeatedly clap your [AssDesc][end if] as [he of M] pistons in and out of your [asshole], as if to remind you how much you secretly like [if M is presenting as male][men of M] like [him of M][otherwise]getting bent over by people like [him of M][end if].";
 		otherwise if the bimbo of the player < 14:
-			say "[BigFuckerDesc of M]'s [if M is a balls-haver]balls repeatedly slap your taint[otherwise]hips repeatedly clap your [AssDesc][end if] as [he of M] pistons in and out of your [asshole], as if to remind you how much you LOVE [if M is presenting as male]men like [him of M].[otherwise]getting fucked hard by people like [him of M].[end if]";
+			say "[BigFuckerDesc of M]'s [if M is a balls-haver]balls repeatedly slap your taint[otherwise]hips repeatedly clap your [AssDesc][end if] as [he of M] pistons in and out of your [asshole], as if to remind you how much you LOVE [if M is presenting as male][men of M] like [him of M].[otherwise]getting fucked hard by people like [him of M].[end if]";
 		otherwise:
 			say "Shocks of pleasure ripple through your [ShortDesc of penis] as [he of M] pounds your [asshole]. Phew, [he of M] sure knows how to show a girl a good time!";
 	otherwise:

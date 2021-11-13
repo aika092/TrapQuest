@@ -33,7 +33,7 @@ To compute unique periodic effect of (C - bunny waitress ears):
 
 To decide which number is the waitress bartering value of (T - a bottle) for (M - a monster):
 	if M is intelligent and M is human and M is friendly and T is non-empty:
-		if the class of the player is royal slave and the fill-colour of T is white:
+		if the fill-colour of T is white and (the class of the player is royal slave or the class of the player matches the text "milkmaid"):
 			decide on 5;
 		if there is a worn waitress-enabling wearthing:
 			if the fill-colour of T is golden or the fill-colour of T is murky or the fill-colour of T is creamy:
@@ -110,11 +110,27 @@ To compute waitress resolution of (M - a monster) taking (T - a bottle):
 		destroy T.
 
 To compute service spill punishment:
+	let held-waitress-milk be false;
+	repeat with V running through held non-empty waitress vessels:
+		if the fill-colour of V is white, now held-waitress-milk is true;
 	if flight attendant hat is worn and there is a held waitress vessel:
 		say "[bold type]As punishment for spilling the drink, you feel your body suddenly inflate full of air![roman type][line break]";
 		BustInflate 30;
 		AssInflate 30;
 		Assfill 30 air;
+	otherwise if held-waitress-milk is true and (the class of the player is maid or the class of the player is "cowgirl"):
+		let H be a random worn headgear;
+		if H is not milkmaid headdress:
+			now H is milk production;
+			transform H into milkmaid headdress;
+			now the quest of milkmaid headdress is milk-serve-quest;
+			say QuestFlav of milkmaid headdress;
+		compute class outfit of milkmaid headdress; [milkmaid-outfit will be blocked if a class-relevant outfit is already worn]
+		let C be a random neck covering chestless clothing;
+		if C is removable clothing, WardrobeVanish C;
+		if the number of worn breast covering clothing is 1 and the number of worn neck covering clothing is the number of worn neck covering breast covering clothing:
+			let M be a random worn breast covering clothing;
+			if M is not milkmaid-outfit, transform M into milkmaid-outfit;
 	otherwise if bondage protection is 0 and the player is not immobile and the number of things wrangling a body part is 0 and there is a held waitress vessel:
 		let STV be 0;
 		if there is worn serving-bondage, now STV is 1;
@@ -373,7 +389,8 @@ To compute unique periodic effect of (C - rubber bunny ears):
 	if the charge of C > 23:
 		now the charge of C is 0;
 		say "[one of][bold type]Suddenly your belly feels strange![roman type][line break]You realise your body has somehow created an egg![line break][variable custom style]Huh?! Am I now an egg-laying bunnygirl?![roman type][line break][or]You feel your body create another egg.[stopping]";
-		assfill 1 medium eggs.
+		assfill 1 medium eggs;
+		if the number of egg-fathering things penetrating asshole is 0, add C to the medium-egg-origins of belly.
 
 Chapter - Quest
 

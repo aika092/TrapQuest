@@ -47,12 +47,12 @@ To compute SelfExamineDesc of (K - cow print bikini bottoms):
 To say selfexamineuniquetitle of (K - cow print bikini bottoms):
 	say "pair of cow print bikini bottoms".
 
+Figure of bikini bottoms 1 is the file "Items/Clothes/Lower/Underwear/Skimpy/Bikini/bikinibottoms1.png".
 To decide which figure-name is clothing-image of (C - cow print bikini bottoms):
 	decide on figure of bikini bottoms 1.
 
 To say ClothingDesc of (K - cow print bikini bottoms):
 	say "A bottom half of a bikini outfit with a cow print pattern.".
-Figure of bikini bottoms 1 is the file "Items/Clothes/Lower/Underwear/Skimpy/Bikini/bikinibottoms1.png".
 
 To decide which number is the unique outrage of (C - cow print bikini bottoms):
 	decide on 1.
@@ -75,15 +75,55 @@ To compute SelfExamineDesc of (K - cow print crotchless bikini bottoms):
 To say selfexamineuniquetitle of (K - cow print crotchless bikini bottoms):
 	say "pair of cow print crotchless bikini bottoms".
 
+Figure of bikini bottoms 7 is the file "Items/Clothes/Lower/Underwear/Skimpy/Bikini/bikinibottoms7.png".
 To decide which figure-name is clothing-image of (C - cow print crotchless bikini bottoms):
 	decide on figure of bikini bottoms 7.
 
 To say ClothingDesc of (K - cow print crotchless bikini bottoms):
 	say "A bottom half of a bikini outfit with a cow print pattern.".
-Figure of bikini bottoms 7 is the file "Items/Clothes/Lower/Underwear/Skimpy/Bikini/bikinibottoms7.png".
 
 To decide which number is the unique outrage of (C - cow print crotchless bikini bottoms):
 	decide on 3.
+
+[milkmaid bikini bottoms]
+
+milkmaid bikini bottoms is a bikini bottoms. milkmaid bikini bottoms is unique.
+The printed name of milkmaid bikini bottoms is "[clothing-title-before]pair of milkmaid bikini bottoms[clothing-title-after]". The text-shortcut of milkmaid bikini bottoms is "mmbb".
+
+Definition: milkmaid bikini bottoms is class-relevant:
+	if the class of the player is cowgirl or the class of the player is maid, decide yes;
+	decide no.
+
+Definition: milkmaid bikini bottoms is cow themed: decide yes.
+Definition: milkmaid bikini bottoms is black themed: decide yes.
+Definition: milkmaid bikini bottoms is white themed: decide yes.
+Definition: milkmaid bikini bottoms is rippable: decide yes.
+Definition: milkmaid bikini bottoms is uncovered themed:
+	if milkmaid-apron-skirt is worn, decide no;
+	decide yes.
+
+To compute SelfExamineDesc of (K - milkmaid bikini bottoms):
+	say "A pair of cow print bikini bottoms modestly covers your [ShortDesc of hips]. ";
+
+To say selfexamineuniquetitle of (K - milkmaid bikini bottoms):
+	say "pair of cow print bikini bottoms".
+
+Figure of bikini bottoms 8 is the file "Items/Clothes/Lower/Underwear/Skimpy/Bikini/bikinibottoms8.png".
+To decide which figure-name is clothing-image of (C - milkmaid bikini bottoms):
+	decide on figure of bikini bottoms 8.
+
+To say ClothingDesc of (K - milkmaid bikini bottoms):
+	say "A bottom half of a bikini outfit with a cow print pattern. It has a maid-skirt-like frill at the waist. You can sense that it wants to remain uncovered... but will permit itself to be covered up by a matching cow print apron.".
+
+To decide which number is the unique outrage of (C - milkmaid bikini bottoms):
+	decide on 2.
+
+To decide which number is the penis-capacity of (C - milkmaid bikini bottoms):
+	decide on 2.
+To decide which number is the crotch-tightness of (C - milkmaid bikini bottoms):
+	decide on 4.
+To decide which number is the hipModesty of (C - milkmaid bikini bottoms):
+	decide on 1.
 
 [pink bikini bottoms]
 

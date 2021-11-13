@@ -552,7 +552,7 @@ To decide which number is the delicateness-influence of (T - broken-clitty tatto
 To decide which number is the penis-obedience-influence of (T - broken-clitty tattoo):
 	decide on 10.
 This is the broken clitty orgasm rule:
-	if there is a monster penetrating a fuckhole and the player is male:
+	if there is a monster penetrating a fuckhole and the player is possessing a penis:
 		if there is a worn tattoo and broken-clitty tattoo is drawable:
 			if anal-orgasms >= 5 and the player is a sissy:
 				summon broken-clitty tattoo;
@@ -636,6 +636,8 @@ To say tattoo-desc of (T - cheating whore tattoo):
 	say "The word 'CHEATING' is tattooed on your left butt cheek and 'WHORE' tattooed on your right, clearly identifying you as the dirtiest kind of slut.".
 To decide which number is the bimbo-influence of (T - cheating whore tattoo):
 	decide on 1.
+To decide which number is the charisma-influence of (T - cheating whore tattoo):
+	decide on -1.
 To decide which number is the initial outrage of (T - cheating whore tattoo):
 	decide on 7.
 
@@ -1803,7 +1805,7 @@ Definition: nest egg tattoo is eligible:
 To say tattoo-desc of (T - nest egg tattoo):
 	say "A drawing of three large eggs in a bird nest is tattooed on your upper back.".
 
-nintendolls-brand tattoo is a body tattoo. The tattoo-title of nintendolls-brand tattoo is "nintendolls brand".
+nintendolls-brand tattoo is a body tattoo. The tattoo-title of nintendolls-brand tattoo is "Nintendolls brand".
 Definition: nintendolls-brand tattoo is drawable:
 	if it is not worn and lactation fetish is 1 and nintendolls-brand tattoo is eligible, decide yes;
 	decide no.
@@ -1983,7 +1985,7 @@ Definition: playdude bunny tattoo is eligible:
 To say tattoo-desc of (T - playdude bunny tattoo):
 	say "The playdude bunny logo is inked on one butt cheek.".
 Definition: playdude bunny tattoo is party themed: decide yes.
-To decide which number is the charisma-modifier of (C - playdude bunny tattoo):
+To decide which number is the charisma-influence of (C - playdude bunny tattoo):
 	decide on 1.
 
 portal tattoo is a body tattoo. The tattoo-title of portal tattoo is "portal".
@@ -2877,7 +2879,7 @@ To decide which figure-name is the examine-image of (T - titties out tattoo):
 	decide on figure of titties out tattoo.
 Definition: titties out tattoo is drawable:
 	if there is a worn belly-tattoo, decide no;
-	if diaper quest is 1 and the player is male, decide no;
+	if diaper quest is 1 and the player is gendered male, decide no;
 	if the player is a flatchested trap, decide no;
 	decide yes.
 Definition: titties out tattoo is eligible:
@@ -2957,6 +2959,9 @@ Definition: ABDL finger tattoo is eligible:
 	if diaper lover <= 0, decide no;
 	if the noun is mittens or the noun is soiled-diaper or the noun is pocketwipes, decide yes;
 	decide no.
+Figure of ABDL finger tattoo is the file "Items/Tats/tattoo61.jpg".
+To decide which figure-name is the examine-image of (T - ABDL finger tattoo):
+	decide on figure of ABDL finger tattoo.
 To say tattoo-desc of (T - ABDL finger tattoo):
 	say "The black outline of a disposable diaper is tattooed on the back of one hand, along with the letters 'ABDL' and safety pins on the back of your fingers.".
 To decide which object is the concealer of (T - ABDL finger tattoo):
@@ -3017,8 +3022,10 @@ To decide which number is the semen-addiction-influence of (T - unicorn-horn-fin
 	decide on 3.
 To decide which number is the humiliation-influence of (T - unicorn-horn-finger tattoo):
 	decide on 2.
+To decide which number is the initial outrage of (T - unicorn-horn-finger tattoo):
+	decide on 1.
 To decide which number is the initial cringe of (T - unicorn-horn-finger tattoo):
-	decide on 4.
+	decide on 3.
 Definition: unicorn-horn-finger tattoo is magic themed: decide yes.
 Definition: unicorn-horn-finger tattoo is bow themed: decide yes.
 Definition: unicorn-horn-finger tattoo is horse themed: decide yes.
@@ -3279,7 +3286,7 @@ worthless cunt tattoo is a crotch tattoo. The tattoo-title of worthless cunt tat
 Definition: worthless cunt tattoo is drawable:
 	if there is a worn crotch tattoo, decide no;
 	if diaper quest is 1, decide no;
-	if TG fetish is 0 and the player is male, decide no;
+	if TG fetish is 0 and the player is not possessing a vagina, decide no;
 	decide yes.
 Definition: worthless cunt tattoo is eligible:
 	if the noun is cum dump's undergarment, decide yes;

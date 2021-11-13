@@ -123,10 +123,9 @@ The trousers underdress exclusive clash rule is listed in the trousers wearabili
 
 This is the skirt underdress clash rule:
 	if wearing-target is skirted:
-		repeat with C running through worn underdress:
-			if C is skirted or C is crotch covering:
-				if summoning is 0 and autowear is false, say "[if C is skirted]You can't wear that over[otherwise]You would feel a bit stupid wearing that at the same time as[end if] your [printed name of C]!";
-				rule fails.
+		repeat with C running through worn skirted underdress:
+			if summoning is 0 and autowear is false, say "[if C is skirted]You can't wear that over[otherwise]You would feel a bit stupid wearing that at the same time as[end if] your [printed name of C]!";
+			rule fails.
 The skirt underdress clash rule is listed in the skirt wearability rules.
 
 This is the underdress removed over head rule:
@@ -207,10 +206,9 @@ The overdress removed over head rule is listed in the overdress removability rul
 
 This is the skirt overdress clash rule:
 	if wearing-target is skirted:
-		repeat with C running through worn overdress:
-			if C is skirted or C is crotch covering:
-				if summoning is 0 and autowear is false, say "[if C is skirted]You can't wear that over[otherwise]You would feel a bit stupid wearing that at the same time as[end if] your [ShortDesc of C]!";
-				rule fails.
+		repeat with C running through worn skirted overdress:
+			if summoning is 0 and autowear is false, say "[if C is skirted]You can't wear that over[otherwise]You would feel a bit stupid wearing that at the same time as[end if] your [ShortDesc of C]!";
+			rule fails.
 The skirt overdress clash rule is listed in the skirt wearability rules.
 
 Dresses Framework ends here.

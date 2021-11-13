@@ -40,32 +40,49 @@ Check kneeling:
 
 Carry out kneeling:
 	now the stance of the player is 1;
-	if seconds > 0 and auto is 0 and the location of the player is unbossed: [It'd be unfair to have the player get serving bondage during a boss fight in my opinion, especially the vine boss]
-		let servePunished be 0;
-		repeat with X running through carried open topped non-empty vessels:
-			let balanceBonus be 1;
-			if background-waitress > 0 or there is a worn bunny outfit, now balanceBonus is 2;
-			let D be the dexterity of the player * balanceBonus;
-			let R be a random number between 1 and D;
-			if debuginfo > 0, say "[input-style][ShortVesselDesc of X] balance check: dexterity [if background-waitress > 0](doubled from waitress background) [otherwise if balanceBonus is 2](doubled from magical clothing effect) [end if]d[D] ([R]) | ([1 + (clumsy * 4)].5) spill evasion difficulty[roman type][line break]";
-			if R < (2 + (clumsy * 4)) or there is worn serving-bondage:
-				say "You spill the [printed name of X] on the floor[if the fill-type of X < 20]. What a waste[end if]!";
-				Dump X;
-				if servePunished is 0 and (X is probably-serve-ready waitress vessel or (service-ready is true and there is worn waitress-enabling wearthing)):
-					now servePunished is 1; [So that this only happens once per trip, even with multiple vessels]
-					compute service spill punishment;
-					say aprilFoolsClumsyFlav;
-		if the class of the player is maid and pink-spraybottle is worn and pink-spraybottle is spray and a random number between clumsy and 1 > 0:
-			compute pink-spraybottle breaking;
-		if skirt-tray-vibrator is worn and the cakes-taken of skirt-tray-vibrator < the max-cakes of skirt-tray-vibrator:
-			let D be ((a random number from 15 to 35) - the dexterity of the player) / 3;
-			if D + the cakes-taken of skirt-tray-vibrator > the max-cakes of skirt-tray-vibrator, now D is the max-cakes of skirt-tray-vibrator - the cakes-taken of skirt-tray-vibrator;
-			if D <= 0:
-				say "You manage to keep the tray stable enough to avoid any more cupcakes falling off of their pressure pads.";
-			otherwise:
-				increase the cakes-taken of skirt-tray-vibrator by D;
-				say "[if D is 1]Another cupcake falls off its pressure plate[otherwise][D] more cupcakes fall off their pressure plates[end if] and onto the ground. [skirtTrayBuzzFlav]";
-				now the charge of skirt-tray-vibrator is 3;
+	let TP be the total puddle;
+	let TPR be a random number between 1 and 30;
+	if debuginfo > 0, say "[input-style]Land in puddle check: puddle size ([TP].5) | ([TPR]) d30[roman type][line break]";
+	if TP >= TPR:
+		say "Your butt lands in the puddle of [if milk-puddle of the location of the player > 0][milk][end if][if milk-puddle of the location of the player > 0 and urine-puddle of the location of the player > 0 and semen-puddle of the location of the player > 0], [otherwise if milk-puddle of the location of the player > 0 and urine-puddle of the location of the player > 0] and [end if][if urine-puddle of the location of the player > 0][urine][end if][if the semen-puddle of the location of the player > 0 and the milk-puddle of the location of the player + the urine-puddle of the location of the player > 0] and [end if][if semen-puddle of the location of the player > 0][semen][end if].";
+		if there is worn fluid vulnerable crotch covering clothing:
+			let M be (the milk-puddle of the location of the player + 3) / 4;
+			decrease the milk-puddle of the location of the player by M;
+			AnnouncedSquirt milk on hips by M;
+			let M be (the urine-puddle of the location of the player + 3) / 4;
+			decrease the urine-puddle of the location of the player by M;
+			AnnouncedSquirt urine on hips by M;
+		if bukkake fetish is 1 or there is worn fluid vulnerable crotch covering clothing:
+			let M be (the semen-puddle of the location of the player + 3) / 4;
+			decrease the semen-puddle of the location of the player by M;
+			AnnouncedSquirt semen on hips by M;
+	if seconds > 0 and auto is 0: [tripping!]
+		if the location of the player is unbossed: [It'd be unfair to have the player get serving bondage during a boss fight in my opinion, especially the vine boss]
+			let servePunished be 0;
+			repeat with X running through carried open topped non-empty vessels:
+				let balanceBonus be 1;
+				if background-waitress > 0 or there is a worn bunny outfit, now balanceBonus is 2;
+				let D be the dexterity of the player * balanceBonus;
+				let R be a random number between 1 and D;
+				if debuginfo > 0, say "[input-style][ShortVesselDesc of X] balance check: dexterity [if background-waitress > 0](doubled from waitress background) [otherwise if balanceBonus is 2](doubled from magical clothing effect) [end if]d[D] ([R]) | ([1 + (clumsy * 4)].5) spill evasion difficulty[roman type][line break]";
+				if R < (2 + (clumsy * 4)) or there is worn serving-bondage:
+					say "You spill the [printed name of X] on the floor[if the fill-type of X < 20]. What a waste[end if]!";
+					Dump X;
+					if servePunished is 0 and (X is probably-serve-ready waitress vessel or (service-ready is true and there is worn waitress-enabling wearthing)):
+						now servePunished is 1; [So that this only happens once per trip, even with multiple vessels]
+						compute service spill punishment;
+						say aprilFoolsClumsyFlav;
+			if the class of the player is maid and pink-spraybottle is worn and pink-spraybottle is spray and a random number between clumsy and 1 > 0:
+				compute pink-spraybottle breaking;
+			if skirt-tray-vibrator is worn and the cakes-taken of skirt-tray-vibrator < the max-cakes of skirt-tray-vibrator:
+				let D be ((a random number from 15 to 35) - the dexterity of the player) / 3;
+				if D + the cakes-taken of skirt-tray-vibrator > the max-cakes of skirt-tray-vibrator, now D is the max-cakes of skirt-tray-vibrator - the cakes-taken of skirt-tray-vibrator;
+				if D <= 0:
+					say "You manage to keep the tray stable enough to avoid any more cupcakes falling off of their pressure pads.";
+				otherwise:
+					increase the cakes-taken of skirt-tray-vibrator by D;
+					say "[if D is 1]Another cupcake falls off its pressure plate[otherwise][D] more cupcakes fall off their pressure plates[end if] and onto the ground. [skirtTrayBuzzFlav]";
+					now the charge of skirt-tray-vibrator is 3;
 	let R be a random number between (the bimbo of the player / 2) and the bimbo of the player;
 	if there is a dangerous intelligent monster in the location of the player and seconds > 0 and the fatigue of the player > the buckle threshold of the player:
 		say "[bold type]You drop to your knees, [if the bimbo of the player < 12]trying not to make eye contact[otherwise]quivering in anticipation[end if].[roman type][line break]";
@@ -95,12 +112,18 @@ Carry out kneeling:
 	otherwise allocate 1 seconds. [seconds = 1 means monsters don't get delayed in "report kneeling when the player is in danger"]
 
 Check kneeling when the location of the player is smoky:
-	if the player is upright and seconds is 0 and auto is 0:
-		say "There is [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room, are you sure you want to? ";
-		unless the player is in agreement, do nothing instead.
+	if areYouSure is 1 and the player is upright and seconds is 0 and auto is 0 and the player is needing to breathe and the player is able to breathe:
+		say "There is [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room...";
+		reset multiple choice questions;
+		set numerical response 1 to "Continue kneeling and breathing";
+		set numerical response 2 to "Continue kneeling, and start to hold your breath";
+		set numerical response 3 to "Cancel the action";
+		compute multiple choice question;
+		if player-numerical-response is 3, say "You change your mind." instead;
+		if player-numerical-response is 2, try ManuallyBreathing.
 
 Check kneeling when the location of the player is glue-puddled:
-	if the player is upright and seconds is 0 and auto is 0:
+	if areYouSure is 1 and the player is upright and seconds is 0 and auto is 0:
 		say "There is a very sticky-looking puddle of glue covering most of the floor here, are you sure you want to? ";
 		if the player is bimbo consenting:
 			check glue tripping;

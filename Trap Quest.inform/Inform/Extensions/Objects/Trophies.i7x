@@ -227,11 +227,13 @@ A magic consequences rule (this is the trophy magic consequence rule):
 		if egg laying fetish is 1 and the player is possessing a vagina and (the pregnancy of the player <= 0 or the pregnancy of the player is 3):
 			say "Less of your magic power is depleted than normal. But at the same time, you feel an egg manifest itself inside your womb!";
 			WombFill 1 medium eggs;
+			if the number of egg-fathering things penetrating vagina is 0, add the throne to the medium-egg-origins of vagina;
 		otherwise:
 			say "Less of your magic power is depleted than normal. But at the same time, you feel ";
 			if egg laying fetish is 1:
 				say "an egg manifest itself inside your belly!";
 				AssFill 1 medium eggs;
+				if the number of egg-fathering things penetrating asshole is 0, add the throne to the medium-egg-origins of belly;
 			otherwise if a random number between 0 and watersports fetish is 1:
 				say "some [urine] appear inside your belly!";
 				AssFill 2 urine;
@@ -245,7 +247,7 @@ A magic consequences rule (this is the trophy magic consequence rule):
 Carry out TrophySwitching magic-trophy:
 	say "You rub the trophy[if the player is wrist bound behind] with your nose[end if]. ";
 	if the trophy-mode of magic-trophy is 0:
-		say "The trophy's glow changes from red to green. You can tell that from now on, [bold type]casting magic spells depletes less of your magic power, but also every time you cast a spell, your belly will be filled with [if egg laying fetish is 1]eggs[otherwise if watersports fetish is 1][urine][otherwise if diaper quest is 1]water[otherwise][semen][end if].[roman type][line break]";
+		say "The trophy's glow changes from red to green. You can tell that from now on, [bold type]casting magic spells depletes less of your magic power, but also every time you cast a spell, your [if egg laying fetish is 1]womb[otherwise]belly[end if] will be filled with [if egg laying fetish is 1]eggs[otherwise if watersports fetish is 1][urine][otherwise if diaper quest is 1]water[otherwise][semen][end if].[roman type][line break]";
 		now the trophy-mode of magic-trophy is 1;
 	otherwise:
 		say "The trophy's glow changes from green to red. You can tell that [bold type]you once again will need to spend more magic power to cast spells, but the trophy will not summon things into your belly each time you do.[roman type][line break]";

@@ -319,14 +319,14 @@ To say PrepTaunt of (M - unicorn) in (F - a fuckhole):
 		otherwise say "[line break][speech style of M]'[one of]Lemme cum inside![or]I-I'll put it all inside...'[or]It's OK if it's not my ass.'[or]Can I cum inside? Y-you probably don't mind...'[or]D-do I have to pull out? It- it's probably better that I don't...'[at random][roman type][line break]".
 
 To decide if (M - unicorn) is willing to creampie (F - asshole):
-	if the class of the player is princess or there is a worn anal star tattoo, decide yes;
+	if the class of the player is princess or there is a worn anal star tattoo or the player is a butt slut, decide yes;
 	if the reaction of the player is 0, decide no;
 	decide yes.
 
 To decide if (M - unicorn) is willing to creampie (F - vagina):
 	if M is unbridaled, decide yes;
 	if there is a worn xavier's cunt tattoo, decide no;[she respects her master]
-	if the player is pheromonal, decide yes;
+	if the player is pheromonal or the player is a pussy slut, decide yes;
 	if the class of the player is princess or the player is mating demon lord, decide yes;
 	if the reaction of the player is 0, decide no;[After checking all the above conditions, struggling can now have an effect]
 	decide yes.

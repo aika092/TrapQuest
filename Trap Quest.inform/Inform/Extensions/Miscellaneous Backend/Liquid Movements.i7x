@@ -15,6 +15,57 @@ water is a liquid-object.
 murkwater is a liquid-object.
 
 A liquid-object has a number called cold turkey. [How long has the player starved themselves of it?]
+A liquid-object has a number called first-taste. [What number did the clock have on it when they first tasted it?]
+A liquid-object has a number called first-swallow. [What number did the clock have on it when they first swallowed it?]
+
+To decide which number is the player taste addiction of (L - a liquid-object):
+	decide on 0.
+To decide which number is the player taste addiction of (L - semen):
+	decide on the semen taste addiction of the player.
+To decide which number is the player taste addiction of (L - urine):
+	decide on the urine taste addiction of the player.
+To decide which number is the player taste addiction of (L - milk):
+	decide on the milk taste addiction of the player.
+
+
+To check tasting of (L - a liquid-object):
+	if the first-taste of L is 0:
+		now the first-taste of L is earnings;
+		if L is not water and L is not murkwater, say "[bold type]The strong and unmistakable taste of [if L is milk]breast milk[otherwise][variable L][end if] hits your tongue for the first time in your life[if L is milk] since you were a baby[end if].[roman type][line break]";
+	if the player taste addiction of L >= 14, passively stimulate face from L.
+
+To check swallowing of (L - a liquid-object):
+	if the first-swallow of L is 0:
+		now the first-swallow of L is earnings;
+		if L is not water and L is not murkwater, say "[bold type]For the first time in your [if L is milk]adult [end if]life, you have [if L is milk]breast milk[otherwise][variable L][end if] in your stomach.[roman type][line break]".
+
+To compute slightly addictive tasting of (L - a liquid-object):
+	compute slightly addictive tasting of L by 1.
+
+To compute slightly addictive tasting of (L - a liquid-object) by (N - a number):
+	check tasting of L;
+	if L is semen, SlowSemenTasteAddictUp N;
+	if L is urine, SlowUrineTasteAddictUp N;
+	if L is milk, SlowMilkTasteAddictUp N.
+
+To compute addictive tasting of (L - a liquid-object):
+	compute addictive tasting of L by 1.
+
+To compute addictive tasting of (L - a liquid-object) by (N - a number):
+	check tasting of L;
+	if L is semen, SemenTasteAddictUp N;
+	if L is urine, UrineTasteAddictUp N;
+	if L is milk, MilkTasteAddictUp N.
+
+To compute slightly addictive swallowing of (L - a liquid-object):
+	compute slightly addictive swallowing of L by 1.
+
+To compute slightly addictive swallowing of (L - a liquid-object) by (N - a number):
+	check tasting of L;
+	check swallowing of L;
+	if L is semen, ActualStomachSemenUp N;
+	if L is urine, ActualStomachUrineUp N;
+	if L is milk, ActualStomachMilkUp N.
 
 [Once we've already told the player there's some liquid moving, we start referring to it as 'The semen' or whatever]
 liquid-announced is initially false.

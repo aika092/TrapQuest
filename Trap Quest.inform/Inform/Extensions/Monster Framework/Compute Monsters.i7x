@@ -19,6 +19,7 @@ To compute monsters:
 	sort L in random order;
 	repeat with M running through L:
 		if debugmode > 1, say "Computing [M]...";
+		increase the time-alive of M by seconds;
 		unless M is seeked or (M is stalled and (M is nearby or M is in the location of the player)): [Monsters that already got a chance to chase the player get no further action. If the player is moving slowly so monsters get a double move, monsters in the location of the player or nearby who aren't already chasing the player lose their first action.]
 			if M is moved, compute turn 3 of M; [Monsters that already moved don't move again, but get a perception check.]
 			otherwise compute turn 1 of M; [This is a full monster turn.]
@@ -59,7 +60,7 @@ To compute turn (N - a number) of (M - a monster):
 				if debugmode > 1, say "Checking disapproval...";
 				check disapproval of M;] [Aika: no idea when I put this here. Doesn't make sense to be here and also in compute action below. Also an NPC should never check disapproval if it's not interested]
 			if M is interested and monster-engaged is 0, now N is 3; [The monster doesn't get an action if it detected the player in the perception round this turn.]
-		if M is student and M is in a predicament room:
+		if current-predicament is team-football-predicament and M is student and M is in a predicament room:
 			unless N is 2, compute football movement of M; [football moves don't happen at the same time as the player moving, they happen later]
 		otherwise if N < 3:
 			compute action N of M.
@@ -130,7 +131,7 @@ To compute action (N - a number) of (M - a monster):
 	compute unique final action of M.
 
 Definition: a monster is location-attracted:
-	if cowbell is clanking or the player is glued seductively or magnetism-timer > 0 or there is worn bsounding clothing or there is a triggered cage trap in the location of the player, decide yes;
+	if there is worn cowbelled clanking clothing or the player is glued seductively or magnetism-timer > 0 or there is worn bsounding clothing or there is a triggered cage trap in the location of the player, decide yes;
 	decide no.
 
 Definition: a monster is motionless-when-defeated:

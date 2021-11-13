@@ -15,9 +15,9 @@ title	subtable	description	toggle
 This is the max breast size rule:
 	if max breast size <= min breast size:
 		follow the max breast size reset rule;
-	otherwise if choice in row 33 of the Table of Player Options < max breast size points and choice in row 33 of the Table of Player Options < 4:
+	otherwise if bonus max breast size points < max breast size points and bonus max breast size points < 4:
 		increase choice in row 33 of the Table of Player Options by 1;
-	otherwise if points count > 0 and max breast size points < 6:
+	otherwise if points count > 0:
 		increase choice in row 27 of the Table of Player Options by 1;
 	otherwise:
 		follow the max breast size reset rule.
@@ -30,15 +30,13 @@ The max breast size reset rule is listed in the reset rules.
 To say bonus breast cost:
 	if max breast size <= min breast size:
 		say "No more points can be spent here due to starting proportions";
-	otherwise if choice in row 33 of the Table of Player Options < max breast size points and choice in row 33 of the Table of Player Options < 4:
+	otherwise if bonus max breast size points < max breast size points and bonus max breast size points < 4:
 		say "Next increase is free";
-	otherwise if max breast size points < 6:
-		say "Next increase costs 1 point";
 	otherwise:
-		say "No more points can be spent here".
+		say "Next increase costs 1 point".
 
 This is the max ass size rule:
-	if points count > 0 and max ass size points < 6 and max ass size - 2 >= min ass size, increase choice in row 28 of the Table of Player Options by 1;
+	if points count > 0 and max ass size - extreme proportions fetish > min ass size, increase choice in row 28 of the Table of Player Options by 1;
 	otherwise follow the max ass size reset rule.
 
 This is the max ass size reset rule:

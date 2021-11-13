@@ -586,7 +586,7 @@ To compute pee protected urination:
 				say "You sit on the Punishment Potty, smushing your [K] into [NameDesc of woman-player][']s face.[line break][speech style of woman-player]'Wait please, no, [one of]let's talk about this[or]not again[stopping]- FFFFFFFFBBBBBFFFFFTTTT!'[roman type][line break][BigNameDesc of woman-player][']s pleas are blocked out by your padded butt.[line break][speech style of woman-player]'You [bitch]!'[roman type][line break][BigNameDesc of woman-player] chastises you when you pull up and allow [him of woman-player] to breathe again.";
 				DelicateDown 1;
 				FavourDown woman-player by 1;
-		if K is portal-pants or K is portal-hotpants or K is quiz-partner:
+		if K is portal-pants or K is portal-hotpants or K is quiz-partner or K is giant-teddy:
 			say "Your [urine] flows out of your [genitals]. ";
 			AnnouncedExpel urine on K by N;
 		otherwise:

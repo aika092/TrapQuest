@@ -49,7 +49,7 @@ To Set Up The Hotel:
 	repeat with N running from 1 to 4:
 		let R be a random off-stage appropriate recipe;
 		if R is recipe, now R is in Hotel25;
-	if diaper quest is 1 and the player is an october 2020 diaper donator:
+	if diaper quest is 1:
 		destroy laundry robots;
 		now hotel changing station is in Hotel20;
 	if diaper quest is 0:

@@ -175,6 +175,9 @@ To compute class outfit of (H - tiara-of-spades):
 	class summon queen-of-spades-stockings;
 	class summon queen-of-spades-sandals.
 
+To uniquely set up (C - tiara-of-spades):
+	now the quest of C is royal-quest.
+
 To check tiara-of-spades transformation:
 	let H be a random worn tiara;
 	if H is tiara and H is not tiara-of-spades:

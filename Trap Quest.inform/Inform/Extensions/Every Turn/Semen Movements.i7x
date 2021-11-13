@@ -319,20 +319,20 @@ To execute (E - enema-incontinence):
 	say "[if the player is not incontinent]You'll now find it even more difficult to hold things in and tell when you need the toilet[otherwise]You can somehow tell that you are now completely incontinent[end if].".
 
 To compute absorption:
-	repeat with C running through worn absorption clothing:
-		compute absorption of C.
-
-To compute absorption of (B - a clothing):
-	if the total-soak of B > 0:
-		let X be 50;
-		if B is blessed, now X is 40;
-		if B is cursed, now X is 100;
+	let NC be the number of worn absorption clothing;
+	if NC > 0:
+		let X be 50 / NC;
 		if a random number between 1 and X is 1:
-			if B is perceived soiled:
-				say "Your [printed name of B] [if B is identified]cleans itself by absorbing all the bodily fluids soaked into it.[otherwise]seems to somehow clean itself of bodily fluids.";
-				if B is unidentified:
-					say "It's a [ShortDesc of B] of absorption!";
-					now B is identified;
-			clean B.
+			let AC be a random worn absorption clothing;
+			let C be a random worn wet absorption clothing;
+			if C is nothing, now C is a random worn dirty clothing;
+			if C is nothing, now C is a random wet clothing;
+			if C is perceived wet or C is perceived soiled:
+				if C is absorption, now AC is C;
+				say "Your [C] [if C is absorption and C is identified]cleans itself by absorbing all the fluids soaked into it.[otherwise if C is absorption]seems to somehow clean and dry itself[otherwise if AC is identified]suddenly magically becomes clean and dry, thanks to your [AC][otherwise]suddenly magically becomes clean and dry. You sense that the magic of your [AC] must be responsible[end if].";
+				if AC is unidentified:
+					say "It's a [ShortDesc of AC] of absorption!";
+					now AC is identified;
+			fully clean C.
 
 Semen Movements ends here.

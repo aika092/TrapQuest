@@ -212,7 +212,15 @@ An all time based rule (this is the toilet monster rule):
 		check sudden expulsion with reason T;
 		DelicateUp 1;
 		increase the times-terrorized of toilet-monster by 1;
-		if the times-terrorized of toilet-monster is 2 and diaper lover > 0, say "[bold type]This horrific encounter is leaving a lasting impression on your psyche. From now on, you won't be able to bring yourself to use a toilet unless there's someone friendly there with you.[roman type][line break]".
+		if the times-terrorized of toilet-monster is 2 and diaper lover > 0, say "[bold type]This horrific encounter is leaving a lasting impression on your psyche. From now on, you won't be able to bring yourself to use a toilet unless there's someone friendly there with you.[roman type][line break]";
+		if the times-terrorized of toilet-monster > 2:
+			let TPR be a random toilet-painting-room-exit toilet-painting-room;
+			if the player is not in TPR:
+				say "[bold type]You are teleported to the room where you can see the real exit to the south.[roman type][line break]";
+				teleport to TPR;
+			if diaper quest is 0 and meat-toilet-panties is not worn and meat-toilet-panties is class summonable:
+				class summon meat-toilet-panties.
+
 
 To compute painting entrance of (P - toilet-painting):
 	now playerRegion is school; [any time based events that don't happen in the school should also not happen here]
@@ -278,9 +286,11 @@ Definition: cock-painting is fetish appropriate:
 	decide no.
 
 Figure of cock painting is the file "Env/Mansion/painting4a.jpg".
+Figure of cock painting rippling is the file "Env/Mansion/painting4b.jpg".
 Figure of cock painting monster is the file "Env/Mansion/painting4c.jpg".
 
 To decide which figure-name is the examine-image of (P - cock-painting):
+	if P is rippling, decide on figure of cock painting rippling;
 	decide on figure of cock painting.
 
 To say MediumDesc of (P - cock-painting):
@@ -365,7 +375,7 @@ An all time based rule (this is the cock monster rule):
 							say "It forces its way inside your [variable F], where it ";
 							if F is face:
 								now CM is penetrating face;
-								if a random number between 1 and watersports fetish is 1:
+								if a random number between 0 and watersports fetish is 1:
 									say "urinates!";
 									FaceFill urine by 7;
 									say "It pulls out[if the total volume of face > 0], leaving you with a [MouthfulDesc][end if].";

@@ -262,7 +262,7 @@ To compute appearance assessment of (M - an aeromancer):
 
 To compute perception of (M - an aeromancer):
 	if the class of the player is living sex doll:
-		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'Hey there little inflatable sex doll, do you need a top-up?'[roman type][line break]";
+		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'Hey there little inflatable sex doll, you look like [one of]you could do with some tweaking[or]you could handle some adjustments[or]you need some special attention[or]an adjustment or two wouldn't go astray[in random order].'[roman type][line break]";
 		anger M;
 		alwayscutshow figure of aeromancer interact 14 for M;
 	otherwise if M is objectifying the player:

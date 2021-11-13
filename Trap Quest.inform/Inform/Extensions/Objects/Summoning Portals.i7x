@@ -26,8 +26,15 @@ Definition: a monster is regionalRelevant:
 	if it is summoningRelevant and it is regional, decide yes;
 	decide no. [Does it count towards the number of monsters in the region, and is it currently alive and undefeated in that region?]
 
+dungeon-leavers-list is a list of people that varies.
+
 [This is how we find a monster that has no similar copies alive and kicking in the dungeon]
 Definition: a monster (called M) is dungeon prioritised:
+	if M is listed in dungeon-leavers-list:
+		if M is permanently banished:
+			remove M from dungeon-leavers-list;
+			decide no;
+		decide yes;
 	if M is alive or M is not summon appropriate or M is not dungeon dwelling, decide no;
 	let T1 be the substituted form of "[ShortDesc of M]";
 	repeat with N running through alive dungeon dwelling summoningRelevant monsters:
@@ -35,8 +42,15 @@ Definition: a monster (called M) is dungeon prioritised:
 		if T1 matches the text T2, decide no;
 	decide yes.
 
+woods-leavers-list is a list of people that varies.
+
 [This is how we find a monster that has no similar copies alive and kicking in the woods]
 Definition: a monster (called M) is woods prioritised:
+	if M is listed in woods-leavers-list:
+		if M is permanently banished:
+			remove M from woods-leavers-list;
+			decide no;
+		decide yes;
 	if M is alive or M is not summon appropriate or M is not woods dwelling, decide no;
 	let T1 be the substituted form of "[ShortDesc of M]";
 	repeat with N running through alive woods dwelling summoningRelevant monsters:
@@ -44,8 +58,15 @@ Definition: a monster (called M) is woods prioritised:
 		if T1 matches the text T2, decide no;
 	decide yes.
 
+hotel-leavers-list is a list of people that varies.
+
 [This is how we find a monster that has no similar copies alive and kicking in the hotel]
 Definition: a monster (called M) is hotel prioritised:
+	if M is listed in hotel-leavers-list:
+		if M is permanently banished:
+			remove M from hotel-leavers-list;
+			decide no;
+		decide yes;
 	if M is alive or M is not summon appropriate or M is not hotel dwelling, decide no;
 	let T1 be the substituted form of "[ShortDesc of M]";
 	repeat with N running through alive hotel dwelling summoningRelevant monsters:
@@ -53,8 +74,15 @@ Definition: a monster (called M) is hotel prioritised:
 		if T1 matches the text T2, decide no;
 	decide yes.
 
+mansion-leavers-list is a list of people that varies.
+
 [This is how we find a monster that has no similar copies alive and kicking in the mansion]
 Definition: a monster (called M) is mansion prioritised:
+	if M is listed in mansion-leavers-list:
+		if M is permanently banished:
+			remove M from mansion-leavers-list;
+			decide no;
+		decide yes;
 	if M is alive or M is not summon appropriate or M is not mansion dwelling, decide no;
 	let T1 be the substituted form of "[ShortDesc of M]";
 	repeat with N running through alive mansion dwelling summoningRelevant monsters:
@@ -186,7 +214,7 @@ To compute summoning check of (S - a summoning portal):
 
 A time based rule (this is the monster summoning rule):
 	if earnings < starting-earnings - 100:
-		repeat with S running through loaded summoning portals:
+		repeat with S running through summoning portals:
 			compute summoning check of S.
 
 [!<ComputeSummoningCheckOfPortal>+
@@ -214,6 +242,10 @@ Should be defined uniquely for each portal. Chooses what level the monster is su
 +!]
 To compute (S - summoning portal) regionally summoning (M - a monster):
 	summon M in (the currentRegion of S);
+	if M is listed in dungeon-leavers-list, remove M from dungeon-leavers-list;
+	if M is listed in woods-leavers-list, remove M from woods-leavers-list;
+	if M is listed in hotel-leavers-list, remove M from hotel-leavers-list;
+	if M is listed in mansion-leavers-list, remove M from mansion-leavers-list;
 	now the next-summon of S is the summonChoice of S;
 	now the charge of S is 500.
 
@@ -238,6 +270,9 @@ To compute wankingSiphon of (S - a summoning portal):
 Chapter 1 - Summoning Circle
 
 The summoning-circle is a summoning portal. The summoning-circle is in Dungeon33. The printed name of summoning-circle is "[TQlink of item described]summoning circle[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "summon", "summoning", "circle", "summoning circle" as summoning-circle. Figure of summoning circle is the file "Env/Dungeon/circle1.png".
+
+To decide which region is the currentRegion of (C - summoning-circle):
+	decide on Dungeon. [turn an expensive and frequent check into a less expensive one.]
 
 To decide which figure-name is the examine-image of (C - summoning-circle):
 	decide on figure of summoning circle.
@@ -354,6 +389,9 @@ Carry out appeasing something with summoning-circle:
 Chapter 2 - Giant Statue
 
 giant-statue is a summoning portal. giant-statue is in Woods30. The printed name of giant-statue is "[TQlink of item described]giant statue[TQxlink of item described][shortcut-desc][verb-desc of item described]". Figure of giant pregnant statue is the file "Env/Forest/statue5.png". Figure of giant-statue is the file "Env/Forest/statue6.png". Understand "giant", "statue" as giant-statue.
+
+To decide which region is the currentRegion of (C - giant-statue):
+	decide on Woods. [turn an expensive and frequent check into a less expensive one.]
 
 To decide which figure-name is the examine-image of (C - giant-statue):
 	if pregnancy fetish is 1, decide on figure of giant pregnant statue;
@@ -490,6 +528,9 @@ Chapter 3 - Teleportation Pad
 
 The teleportation-pad is a summoning portal. The teleportation-pad is in Hotel41. The printed name of teleportation-pad is "[TQlink of item described]teleportation pad[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "teleportation", "pad" as teleportation-pad. The text-shortcut of teleportation-pad is "ted".
 
+To decide which region is the currentRegion of (C - teleportation-pad):
+	decide on Hotel. [turn an expensive and frequent check into a less expensive one.]
+
 Figure of teleportation pad is the file "Env/Hotel/teleportationpad1.jpg".
 
 To decide which figure-name is the examine-image of (C - teleportation-pad):
@@ -607,6 +648,9 @@ Carry out appeasing something with teleportation-pad:
 Chapter 4 - Mysterious Mummy
 
 The mysterious-mummy is a summoning portal. The mysterious-mummy is in Mansion14. The printed name of mysterious-mummy is "[TQlink of item described][MummyType of the item described] mummy[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "mysterious", "mystery", "mummy" as mysterious-mummy. The text-shortcut of mysterious-mummy is "mym". mysterious-mummy has a number called cult-cooldown. The cult-cooldown of mysterious-mummy is usually 0.
+
+To decide which region is the currentRegion of (C - mysterious-mummy):
+	decide on Mansion. [turn an expensive and frequent check into a less expensive one.]
 
 To decide which figure-name is the examine-image of (C - mysterious-mummy):
 	decide on Figure of mansion mummy room.
@@ -751,7 +795,7 @@ Check entering mysterious-mummy:
 	let R be a random number between 1 and 3;
 	if the player is very horny, now R is 4;
 	if R is 1:
-		say "Your vision is flooded with a green pallor, and for a moment, every one of your holes it forced wide open.";
+		say "Your vision is flooded with a green pallor, and for a moment, every one of your holes is forced wide open.";
 		if the player is possessing a vagina, gape vagina times 1;
 		gape asshole times 1;
 		SexAddictUp 2;

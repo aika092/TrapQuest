@@ -77,11 +77,16 @@ To say ShortDesc of (C - anchor collar):
 Definition: anchor collar is yellow themed: decide yes.
 Definition: anchor collar is swimming themed: decide yes.
 
-An animalbell is a kind of neckwear. An animalbell is unique. An animalbell is leather. An animalbell can be clanking.
+An animalbell is a kind of neckwear. An animalbell is unique. An animalbell is leather. A clothing can be clanking.
 
 Understand "bell" as an animalbell.
 
-Definition: an animalbell is bell themed: decide yes.
+Definition: a clothing is belled:
+	if it is cowbelled, decide yes;
+	decide no.
+Definition: an animalbell is belled: decide yes.
+
+Definition: a clothing is cowbelled: decide no.
 
 To decide which number is the stealth-influence of (C - an animalbell):
 	if C is clanking, decide on -12;
@@ -91,34 +96,34 @@ To set up influence of (C - an animalbell):
 	set up taste-based influence of C.
 
 To compute clank:
-	repeat with C running through worn cow themed animalbells:
+	repeat with C running through worn cowbelled clothing:
 		say "[one of][or]Your [C] clanks loudly.[or]You are unable to prevent your [C] from making a huge racket![or][bold type]The loud clanking of your [ShortDesc of C] is likely to attract others to your location![roman type][line break][or]You softly curse at the noise your cowbell is making.[or]You wish you could stop your [C]'s ringing.[as decreasingly likely outcomes]";
 		now C is clanking.
 
-cowbelled is a humiliating situation.
-Definition: cowbelled (called A) is applicable:
-	if the player is not disgraced and there is a clanking animalbell, decide yes;
+clanking-cowbell is a humiliating situation.
+Definition: clanking-cowbell (called A) is applicable:
+	if the player is not disgraced and there is a clanking cowbelled clothing, decide yes;
 	decide no.
-To reflect on (A - cowbelled):
+To reflect on (A - clanking-cowbell):
 	say "[first custom style][one of]I can't believe I have a bell around my neck like an actual cow, heralding my arrival and guiding people to my location...[or]I've got to get rid of this bell, it's making it impossible to get around places without everyone following me![or]My cowbell is still clanking away... how embarrassing![stopping][roman type][line break]".
 
-Carry out going when a cow themed animalbell is worn:
+Carry out going when there is a worn cowbelled clothing:
 	if the player is upright or a random number between 1 and 5 is 1, compute clank.
 
-Report resisting when a cow themed animalbell is worn:
+Report resisting when there is a worn cowbelled clothing:
 	compute clank.
 
-Report submitting when a cow themed animalbell is worn:
+Report submitting when there is a worn cowbelled clothing:
 	if a random number between 1 and 3 is 1, compute clank.
 
-Report begging when a cow themed animalbell is worn:
+Report begging when there is a worn cowbelled clothing:
 	if a random number between 1 and 3 is 1, compute clank.
 
-Report jumping when a cow themed animalbell is worn:
+Report jumping when there is a worn cowbelled clothing:
 	compute clank.
 
 An all later time based rule (this is the cowbell stops clanking rule):
-	repeat with A running through clanking animalbells:
+	repeat with A running through worn clanking clothing:
 		now A is not clanking.
 
 catbell is an animalbell.
@@ -180,6 +185,7 @@ To say ShortDesc of (C - cowbell):
 	say "cowbell".
 
 Definition: cowbell is cow themed: decide yes.
+Definition: cowbell is cowbelled: decide yes.
 Definition: cowbell is white themed: decide yes.
 Definition: cowbell is brown themed: decide yes.
 
@@ -212,6 +218,7 @@ Definition: meowcowbell is cat themed: decide yes.
 Definition: meowcowbell is brown themed: decide yes.
 Definition: meowcowbell is yellow themed: decide yes.
 Definition: meowcowbell is gem themed: decide yes.
+Definition: meowcowbell is cowbelled: decide yes.
 
 
 mystical amulet is neckwear. mystical amulet is manly. mystical amulet is unique. mystical amulet is metal. mystical amulet is in Dungeon36. Printed name of mystical amulet is "[clothing-title-before]mystical amulet[clothing-title-after]". The text-shortcut of mystical amulet is "mys".

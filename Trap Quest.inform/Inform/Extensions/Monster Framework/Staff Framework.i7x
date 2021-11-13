@@ -153,7 +153,7 @@ To make (M - a staff member) expectant: [Staff members do not wait a turn before
 	do nothing.
 
 This is the staff member unique punishment rule:
-	if the player is at least partially immobile:
+	if the player is at least partially immobile and current-monster is not wrangling a body part: [Otherwise the staff member just holds a defeated wrangled player forever]
 		do nothing;
 	otherwise if there is a worn armband: [No staff members have yet been attacked and no students killed]
 		compute detention of current-monster;
@@ -672,12 +672,15 @@ To execute (A - egg-assembly):
 		if SD is small egg:
 			say "[big he of ST] pushes it in with a quiet 'pop'.";
 			assfill 1 small eggs;
+			if the egg-origin of SD is a thing, add the egg-origin of SD to the small-egg-origins of belly;
 		otherwise if SD is medium egg:
 			say "[big he of ST] eases it in with a noisy squelch.";
 			assfill 1 medium eggs;
+			if the egg-origin of SD is a thing, add the egg-origin of SD to the medium-egg-origins of belly;
 		otherwise:
 			say "[big he of ST] slowly forces the massive egg in with a satisfied grunt. It's so big!";
 			assfill 1 large eggs;
+			if the egg-origin of SD is a thing, add the egg-origin of SD to the large-egg-origins of belly;
 		now SD is penetrating asshole;
 		ruin asshole;
 		destroy SD;
