@@ -1,6 +1,9 @@
 Summoning Portals by Objects begins here.
 
 A summoning portal is a kind of thing. A summoning portal is not portable. The text-shortcut of summoning portal is "spo". A summoning portal can be active. A summoning portal has a number called charge. The charge of a summoning portal is usually 450. [represents the time until it spawns the next monster]
+
+Definition: a summoning portal is immune to change: decide yes.
+
 A summoning portal has an object called next-summon.
 Understand "mirror", "portal" as summoning portal.
 
@@ -226,9 +229,14 @@ Calls the regionally summoning function for summoning portal "S", which calls a 
 
 +!]
 To compute (S - a summoning portal) summoning (M - a monster):
+	if debugmode > 0, say "[BigNameDesc of S] is summoning [NameDesc of M].";
 	compute S regionally summoning M;
+	if debugmode > 0, say "[BigNameDesc of M] is in [location of M]. [BigNameDesc of M] has [if the monstersetup of M is 0]not [end if]been set up correctly.";
 	if M is nonexistent and M is alive, set up M;
+	if debugmode > 0, say "[BigNameDesc of M] is in [location of M]. [BigNameDesc of M] has [if the monstersetup of M is 0]not [end if]been set up correctly.";
 	now M is in the location of S;
+	if debugmode > 0, say "[BigNameDesc of M] is in [location of M].";
+	now M is moved; [stop the NPC walking away this turn]
 	if S is regional, say SummoningFlav of M;[should describe portal closing up if the player is in the room]
 	if M is not interested, now the boredom of M is 1.[should fix issues where the player is in the room and the monster's perception function runs twice in a row]
 
@@ -241,7 +249,8 @@ Should be defined uniquely for each portal. Chooses what level the monster is su
 
 +!]
 To compute (S - summoning portal) regionally summoning (M - a monster):
-	summon M in (the currentRegion of S);
+	let R be the currentRegion of S;
+	summon M in R;
 	if M is listed in dungeon-leavers-list, remove M from dungeon-leavers-list;
 	if M is listed in woods-leavers-list, remove M from woods-leavers-list;
 	if M is listed in hotel-leavers-list, remove M from hotel-leavers-list;

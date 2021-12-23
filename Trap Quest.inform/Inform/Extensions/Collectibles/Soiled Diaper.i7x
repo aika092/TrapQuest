@@ -1,6 +1,6 @@
 Soiled Diaper by Collectibles begins here.
 
-A soiled-diaper is a kind of collectible. There are 30 soiled-diapers. The printed name of soiled-diaper is "[TQlink of item described]soiled [diaper-origin of item described][shortcut-desc][TQxlink of item described][verb-desc of item described]". Figure of soiled-diaper is the file "Items/Collectibles/diaper1.jpg". Understand "soiled", "diaper" as soiled diaper.
+A soiled-diaper is a kind of collectible. There are 30 soiled-diapers. The printed name of soiled-diaper is "[TQlink of item described][if diaper messing >= 6]soiled[otherwise]used[end if] [diaper-origin of item described][shortcut-desc][TQxlink of item described][verb-desc of item described]". Figure of soiled-diaper is the file "Items/Collectibles/diaper1.jpg". Understand "soiled", "diaper" as soiled-diaper. Understand "used" as soiled-diaper when diaper messing < 6.
 
 To decide which number is the outrage of (S - a soiled-diaper):
 	if diaper quest is 1, decide on 0;
@@ -12,7 +12,7 @@ The text-shortcut of soiled-diaper is "sdp".
 
 A soiled-diaper has a text called diaper-origin. The diaper-origin of a soiled-diaper is usually "disposable diaper". Understand the diaper-origin property as describing a soiled-diaper.
 To say ExamineDesc of (C - a soiled-diaper):
-	say "A nasty used [diaper-origin of C]. You know what's in it. There's nothing to do but find somewhere to properly dispose of it[if there is a worn bag of holding]. It isn't allowed to be put in your [ShortDesc of a random worn bag of holding], so you have to carry it around, completely visible[end if].".
+	say "A [if diaper messing >= 6]nasty used [diaper-origin of C]. You know what's in it[otherwise]diaper that's already been filled with [urine][end if]. There's nothing to do but find somewhere to properly dispose of it[if there is a worn bag of holding]. It isn't allowed to be put in your [ShortDesc of a random worn bag of holding], so you have to carry it around, completely visible[end if].".
 To say ShortDesc of (C - a soiled-diaper):
 	say "used diaper".
 To say MediumDesc of (C - a soiled-diaper):
@@ -38,10 +38,10 @@ turnsWithSoiledDiaper is a number that varies.
 messySmellSource is an object that varies.
 This is the soiled diapers smell gross rule:
 	now messySmellSource is a random carried messed knickers;
-	if messySmellSource is nothing, now messySmellSource is a random carried soiled-diaper;
+	if messySmellSource is nothing and diaper messing >= 6, now messySmellSource is a random carried soiled-diaper;
 	if messySmellSource is nothing, now messySmellSource is a random messy monster in the location of the player;
 	if messySmellSource is nothing, now messySmellSource is a random messed knickers in the location of the player;
-	if messySmellSource is nothing, now messySmellSource is a random soiled-diaper in the location of the player;
+	if messySmellSource is nothing and diaper messing >= 6, now messySmellSource is a random soiled-diaper in the location of the player;
 	if messySmellSource is nothing and woman-player is in the location of the player and the woman-status of woman-player is 81, now messySmellSource is woman-player;
 	if messySmellSource is a thing:
 		if turnsWithSoiledDiaper < 100, increase turnsWithSoiledDiaper by 1;
@@ -144,7 +144,7 @@ Check BabChanging it with:
 	if the second noun is not a clean diaper and the second noun is not a diaper bag of holding and the second noun is not a baby diaper bag of holding, say "You would need a clean diaper or diaper bag to do that, not the [NameDesc of the second noun]." instead;
 	if the second noun is worn diaper, say "You would need to take that off first." instead;
 	if the noun is not messy and (the noun is not woman-player or diaper quest is 0), say "[big he of the noun] isn't [if the noun is defeated]in need of[otherwise]likely to let you do[end if] that." instead;
-	if the noun is undefeated and the noun is not woman-player, say "[big he of the noun] isn't likely to let you do that." instead;
+	if the noun is undefeated and the noun is not woman-player and the noun is not adult baby slave, say "[big he of the noun] isn't likely to let you do that." instead;
 	if playerRegion is School, say "That would be a waste of time. [big he of the noun] would just mess [himself of the noun] again almost instantly." instead;
 	if the player is immobile or the player is in danger, say "You're a bit busy." instead;
 	if the player is not able to use manual dexterity, say "Your limited manual dexterity makes this impractical." instead.

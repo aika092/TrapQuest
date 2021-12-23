@@ -18,7 +18,7 @@ To decide which number is the girth of (F - hotel chairs):
 	decide on 5.
 
 To compute furniture resting on (F - hotel chairs):
-	now resting is 1;
+	now player-currently-resting is 1;
 	now busy is 1;
 	now the stance of the player is 1;
 	compute fat burning reset;
@@ -36,7 +36,7 @@ To compute furniture resting on (F - hotel chairs):
 		now busy is 0;
 	now F is not penetrating asshole;
 	increase the times-sat of F by 1;
-	now resting is 0.
+	now player-currently-resting is 0.
 
 To compute normal hotel chair sitting on (F - hotel chairs):
 	say "You [if the openness of asshole <= the girth of F]force[otherwise]slide[end if] your [asshole] down onto the large golden dong. [if the openness of asshole <= the girth of F]Your sphincter is stretched way past the limit of what is comfortable.[end if]";
@@ -47,11 +47,11 @@ To compute normal hotel chair sitting on (F - hotel chairs):
 	if R is 1:
 		unless the player is unable to orgasm so soon:
 			say "As you bottom out on the dildo, you feel a weird sensation just behind your sphincter. Before you can react in time and pull yourself off, you realise the bottom section of the dildo is rapidly expanding! You test to confirm your suspicions - you can't get off! The dildo has effectively knotted you in place. [one of]The dildo starts vibrating powerfully, and you quickly realise what it intends to happen before it lets you off.[or]Once again, it begins vibrating powerfully.[stopping]";
-			while the player is not unable to orgasm so soon and resting is 1:
+			while the player is not unable to orgasm so soon and player-currently-resting is 1:
 				say "The golden dildo continues to vibrate powerfully in your [asshole], keeping you trapped on the seat!";
 				ruin asshole;
 				compute extra turn;
-			if resting is 1, say "You are left panting as the knot of the dildo deflates and you are able to stand up. However you realise you do feel a lot less tired!";
+			if player-currently-resting is 1, say "You are left panting as the knot of the dildo deflates and you are able to stand up. However you realise you do feel a lot less tired!";
 		otherwise:
 			say "[RestingDesc of F]";
 	otherwise if R is 2:

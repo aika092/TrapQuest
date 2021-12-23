@@ -76,6 +76,9 @@ To say ShortDesc of (C - a chastity cage):
 
 Definition: a chastity cage is sissifying: decide yes.
 Definition: a chastity cage is transformation-protected: decide no.
+Definition: chastity cage is removable:
+	if sissy cumslut tattoo is worn, decide no;
+	decide yes.
 
 To decide which object is the unique-upgrade-target of (C - a chastity cage):
 	unless C is nub-cage, decide on nub-cage;

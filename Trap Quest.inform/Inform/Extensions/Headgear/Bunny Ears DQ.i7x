@@ -7,7 +7,7 @@ Definition: a bunny ears is bunny themed: decide yes.
 
 Part 1 - Bunny Waitress Ears
 
-bunny waitress ears is a kind of bunny ears. playdude bunny waitress ears is a bunny waitress ears. rubber-bunny-waitress-ears is a bunny waitress ears.
+bunny waitress ears is a kind of bunny ears. playdude bunny waitress ears is a bunny waitress ears. rubber-bunny-waitress-ears is a bunny waitress ears. frilly bunny ears is a bunny waitress ears.
 flight attendant hat is a headgear.
 
 To decide which number is the waitress bartering value of (T - a bottle) for (M - a monster):

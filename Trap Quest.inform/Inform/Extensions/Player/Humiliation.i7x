@@ -324,7 +324,7 @@ To finally humiliate (X - a number):
 	if the latex-transformation of the player > 6:
 		now X is 0;
 	let humiliation-restriction be 0;
-	if X > 0, blush X;
+	if X > 0, graphical-blush X;
 	if the humiliation of the player + X >= HUMILIATION-BROKEN:
 		if the class of the player is avatar and mindbreak protection is 0: [If the player can't be mindbroken, they can't be fully taken over]
 			say "[one of]Pleasure pierces your temples as your empty core finally stretches to its breaking point, and your master's presence finally pushes all the way in! You hear the voice of your master, not in your head, but from your own mouth.[line break][first custom style]'Do you FEEL that, [NameBimbo]?! It's been so long since I HILTED a mortal body so thoroughly! Now I just have to give it a pounding!'[roman type][line break]You answer your master's declaration with an insensate moan, thoughts completely short-circuiting as you struggle to process the pleasure as your master presence shifts out of you and rams straight back in![or]Your thoughts short-circuit as your master 'fucks' the gaping void where your soul used to be, sending another explosion of pleasure through your body![stopping]";
@@ -371,7 +371,7 @@ To 2Humiliate (X - a number):
 
 blush factor is a number that varies.
 
-To blush (X - a number):
+To graphical-blush (X - a number):
 	if the humiliation of the player >= 40000:
 		now X is X / 3;
 	otherwise if the humiliation of the player >= 28500:

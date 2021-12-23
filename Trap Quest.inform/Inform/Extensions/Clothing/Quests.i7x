@@ -872,7 +872,7 @@ Part - Upskirt Quest
 upskirt-quest is a clothing-quest. upskirt-quest is persistent.
 
 Definition: upskirt-quest is appropriate:
-	if there is worn short or longer clothing, decide yes;
+	if there is worn short or longer displacable clothing, decide yes;
 	decide no.
 Definition: upskirt-quest is school-disabled: decide yes.
 

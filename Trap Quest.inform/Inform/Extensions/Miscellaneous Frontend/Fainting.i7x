@@ -412,7 +412,7 @@ To Recover the Player:
 	now delayed stand is 0;
 	now delayed fainting is 0;
 	now delayed urination is 0;
-	now resting is 0;
+	now player-currently-resting is 0;
 	now the flesh volume of breasts is the real flesh volume of breasts;
 	now the thickness of hips is the real thickness of hips;
 	now the flesh volume of hips is the real thickness of hips;

@@ -242,23 +242,25 @@ To compute offer reward of (M - kitsune) for (T - a thing):
 		compute autotaking fox ears;
 	otherwise if the favour of M > 13 and the special-gifted of M is 1:
 		say "[speech style of M]'Hmm, something else interesting. How about these sandals, only slightly used?'[roman type][line break]";
+		blandify and reveal wooden-sandals;
 		now wooden-sandals is in the location of M;
 		say "A pair of wooden sandals appears on the ground!";
 		now the special-gifted of M is 2;
 		compute autotaking wooden-sandals;
 	otherwise if the favour of M > 18 and the special-gifted of M is 2:
 		say "[speech style of M]'You could use some class. Have this!'[roman type][line break]";
+		blandify and reveal illusory kimono;
 		now illusory kimono is in the location of M;
 		say "A strange, shimmering kimono appears on the ground!";
 		now the special-gifted of M is 3;
 		compute autotaking illusory kimono;
 	otherwise if the favour of M > 23 and the special-gifted of M is 3:
 		say "[speech style of M]'Okay, now this is my best little present. Enjoy!'[roman type][line break]";
-		let D be a random midnight tanto;
-		now D is in the location of M;
+		blandify and reveal midnight tanto;
+		now midnight tanto is in the location of M;
 		say "A midnight black knife appears on the ground!";
 		now the special-gifted of M is 4;
-		compute autotaking D;
+		compute autotaking midnight tanto;
 	otherwise: [If the player has no smoke bombs, they get a smoke bomb. Otherwise they get the skeleton key. Otherwise they get more smoke bombs. Otherwise they get a random item.]
 		say "[speech style of M]'How about... this?'[roman type][line break]";
 		let I be a random off-stage smoke bomb;
@@ -283,6 +285,7 @@ To compute offer reward of (M - kitsune) for (T - a thing):
 				if extreme proportions fetish is 0 and the size of I < 10, increase the size of I by 1;
 				if a random number between 1 and 5 > 2, break;
 			if the size of I > max breast size and max breast size >= min size of I, now the size of I is max breast size;
+		if I is smoke bomb, now I is sure;
 		now I is in the location of M;
 		say "A [printed name of I] appears on the ground!";
 		compute autotaking I;

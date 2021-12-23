@@ -169,10 +169,15 @@ To decide which number is the penis-capacity of (H - cameltoe-priestess-outfit):
 	decide on 2.
 To decide which object is the unique-upgrade-target of (C - cameltoe-priestess-outfit):
 	decide on exposing-priestess-outfit.
+To decide which number is the vaginal sensitivity influence of (C - cameltoe-priestess-outfit):
+	decide on -2.
 
 exposing-priestess-outfit is a priestess outfit. exposing-priestess-outfit is erect-nipple-exposing. The printed name of exposing-priestess-outfit is "[clothing-title-before]exposing priestess outfit[clothing-title-after]". The text-shortcut of exposing-priestess-outfit is "epo". Understand "exposing", "priestess", "outfit" as exposing-priestess-outfit. exposing-priestess-outfit is not purity.
 
 exposing-priestess-outfit is bottom-exclusive. exposing-priestess-outfit is unskirted. exposing-priestess-outfit is crotch-exposing. exposing-priestess-outfit is silk. exposing-priestess-outfit is low cut. exposing-priestess-outfit is top-displacable. exposing-priestess-outfit is only arm covering.
+
+To decide which number is the vaginal sensitivity influence of (C - exposing-priestess-outfit):
+	decide on -2.
 
 Figure of exposing-priestess-outfit is the file "Items/Clothes/Upper/Special/Priestess/priestess7b.png".
 
@@ -244,6 +249,9 @@ Definition: heart-pussy-skirt is potentially at least partially vagina covering:
 To decide which number is the initial outrage of (C - heart-pussy-skirt):
 	decide on 8.
 
+To decide which number is the vaginal sensitivity influence of (C - heart-pussy-skirt):
+	decide on -2.
+
 To decide which object is the unique-upgrade-target of (C - heart-pussy-skirt):
 	decide on heart-pussy-hobble-skirt.
 
@@ -268,6 +276,9 @@ Definition: heart-pussy-hobble-skirt is potentially at least partially vagina co
 
 To decide which number is the initial outrage of (C - heart-pussy-hobble-skirt):
 	decide on 8.
+
+To decide which number is the vaginal sensitivity influence of (C - heart-pussy-hobble-skirt):
+	decide on -2.
 
 This is the heart-pussy-hobble-skirt butt slut rule:
 	if heart-pussy-hobble-skirt is worn, decrease the desirability of asshole by 999.

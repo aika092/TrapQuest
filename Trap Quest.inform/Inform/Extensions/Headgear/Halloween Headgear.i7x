@@ -2,8 +2,6 @@ Halloween Headgear by Headgear begins here.
 
 halloween headgear is a kind of headgear. halloween headgear is womanly.
 
-Definition: a halloween headgear is roleplay: decide no.
-
 To set up influence of (C - a halloween headgear):
 	set up sex-based influence of C.
 

@@ -17,7 +17,7 @@ public-squatting-limit is a number that varies. public-squatting-limit is 30000.
 Squatting is an action applying to nothing.
 
 Check squatting:
-	if the trophy-mode of expel-trophy is 1, say "Thanks to the magic power of [NameDesc of expel-trophy], this only happens automatically." instead;
+	if the trophy-mode of expel-trophy is 1 and the player is not in a predicament room, say "Thanks to the magic power of [NameDesc of expel-trophy], this only happens automatically." instead;
 	if the semen addiction of the player >= 20 and the semen volume of belly > 0, say "[variable custom style]There's no way I'm letting out my precious [semen] until I literally can't hold it in any longer![roman type][line break]" instead;
 	if the semen addiction of the player > 16 and the semen volume of belly > 0 and the incidents of enema-cramping <= 0, say "[variable custom style]I think I'd like to keep holding onto the warm cum, at least until I start cramping.[roman type][line break]" instead;
 	if the total squirtable fill of belly <= 0, say "You don't have any liquid[if egg laying fetish is 1] or eggs[end if] in your belly." instead;

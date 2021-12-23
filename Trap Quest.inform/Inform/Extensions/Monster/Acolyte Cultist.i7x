@@ -509,13 +509,15 @@ To compute standard damage of (M - a mindless acolyte):
 	otherwise:
 		compute defeat of M;
 	if deep one is in the location of the player:
-		if deep one is not interested or deep one is not unleashed:
+		if deep one is not interested or deep one is not unleashed or deep one is friendly:
 			say "The grotesque fish-man seems to take offence at your actions!";
 			now deep one is interested;
 			now deep one is unleashed;
+			anger deep one;
 	otherwise if the times-encountered of deep one is 0:
 		now deep one is unleashed;
 		now deep one is interested;
+		anger deep one;
 		now deep one is in the location of the player;
 		say "An ominous shape appears from behind [if the player is in Mansion23]the altar[otherwise]the cultist[end if]! It seems a horrible creature has come to defend [him of M]!";
 	otherwise:
@@ -523,6 +525,7 @@ To compute standard damage of (M - a mindless acolyte):
 		if deep one is alive:
 			now deep one is unleashed;
 			now deep one is interested;
+			anger deep one;
 		otherwise:
 			set up deep one;
 			now deep one is unleashed;

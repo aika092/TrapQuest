@@ -996,7 +996,7 @@ The portal-cock-ring dicks only please rule is listed in the portal-cock-ring we
 
 This is the portal-cock-ring dick accessibility rule:
 	if the player is possessing a penis:
-		repeat with C running through undisplacable pussy covering clothing:
+		repeat with C running through actually unavoidable pussy covering clothing:
 			if summoning is 0 and autowear is false, say "You can't slip it on past your [printed name of C].";
 			rule fails;
 		if summoning is 0 and autowear is false:
@@ -1014,7 +1014,7 @@ Check wearing portal-cock-ring:
 		if the player is female, say "Only [if the bimbo of the player > 10]a hunk of a man[otherwise]someone [one of]with an actual dick still attached[or]who still had their dick[or]who hadn't had their dick stolen[or]with a dick[stopping][end if] man could wear this." instead;
 		if the player is not possessing a penis, say "Only [if transGender is 1]someone with a penis[otherwise]a real man[end if] could wear this." instead;
 		if the size of penis < 5, say "Your [ShortDesc of penis] looks [if the size of penis < 2]ridiculously [otherwise if the size of penis < 4] far [end if]too small to stay on, yet you sense some magic that makes you hope it will. ";
-		repeat with C running through undisplacable pussy covering clothing:
+		repeat with C running through actually unavoidable pussy covering clothing:
 			say "You can't slip it on past your [printed name of C]." instead;
 		say "Something unusual is making that impossible." instead.
 ]
@@ -1049,12 +1049,12 @@ To decide if penis-is-detachable by (M - a thing) using (method - a number):
 	if players-dick-is-detached is not 0:
 		if debugmode > 0, say "Detachable check: no, already detached [players-dick-is-detached].";
 		decide no; [Currently detached; possibly even destroyed (...-is-detached -1).]
-	if there is pussy covering undisplacable clothing: [pussy covering means crotch covering]
+	if there is pussy covering actually unavoidable clothing: [pussy covering means crotch covering]
 		if chastity-belt is worn:
 			if debugmode > 0, say "Detachable check: no, chastity belt worn.";
 			decide no; [That protects the dick, if they're a futa]
 		if there is a worn chastity cage: [If it's the ONLY protection, then the dick and it can be detached as a whole. Otherwise, not.]
-			repeat with C running through pussy covering undisplacable clothing:
+			repeat with C running through pussy covering actually unavoidable clothing:
 				if C is not chastity cage:
 					if debugmode > 0, say "Detachable check: no, chastity belt AND [printed name of C].";
 					decide no;

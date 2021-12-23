@@ -234,14 +234,14 @@ Section - Poker Table
 
 poker table is a thing. poker table is not portable. poker table is in Dungeon07. The printed name of poker table is "[TQlink of item described]poker table[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of poker table is "pkt".
 
-Figure of tq poker table is the file "Env/Dungeon/pokertable1.png".
+Figure of tq poker table is the file "Env/Dungeon/pokertable1.jpg".
 
 To decide which figure-name is the examine-image of (C - poker table):
 	if diaper quest is 0, decide on figure of tq poker table;
 	decide on figure of no-image-yet.
 
 To say ExamineDesc of (C - poker table):
-	say "[if diaper quest is 0]A round wooden table split into four quarters by a pattern of womanly legs wearing fishnets. At the centre of the table their spread, exposed pussies are explicitly drawn[otherwise]A round wooden table with green felt[end if]. [if pack of cards is not held and pack of cards is in Dungeon07][ExamineDesc of pack of playing cards][end if]".
+	say "A square wooden table with green felt. [if diaper quest is 0]The felt is covered with markings for card games, some mysterious runes, and right in the middle, an illustration of the female reproductive system, but with snakes for Fallopian tubes. [end if][if pack of cards is not held and pack of cards is in Dungeon07][ExamineDesc of pack of playing cards][end if]".
 
 Part - Royal Sigil
 

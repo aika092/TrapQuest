@@ -380,6 +380,8 @@ To Drench (C - a clothing):
 		if C is glued:
 			ungluify C;
 			say "[BigNameDesc of C] is no longer covered in glue!";
+			if C is worn, force immediate clothing-focus redraw;
+			if C is carried, force immediate inventory-focus redraw;
 		if C is worn, update appearance level.
 
 [!<OnlyDestroyClothing>+

@@ -45,11 +45,11 @@ Definition: a thing is currently-not-in-bag:
 	if it is carried and it is not currently-in-bag, decide yes;
 	decide no.
 
-To decide which number is not-in-bag:
+To decide which number is not-in-bag-things:
 	decide on the number of currently-not-in-bag necessary-in-bag things.
 
 Check taking something:
-	if not-in-bag >= 15:
+	if not-in-bag-things >= 15:
 		if there is a worn bag of holding:
 			if the noun is never-in-bag, say "You are at your limit for carrying [if diaper messing >= 6]messy diapers, [end if]food and drink. You'll have to drop some if you want to pick up more." instead;
 		otherwise:
@@ -126,7 +126,7 @@ To decide which number is bagHungerAllowance: [The number of items before the ba
 	decide on 12.
 
 To compute periodic effect of (C - a bag of holding):
-	unless inventory handicap is 0 or resting is 1 or busy is 1:
+	unless inventory handicap is 0 or player-currently-resting is 1 or busy is 1:
 		increase the hunger of C by 1;
 		let NM be the number of in-bag things - the number of in-bag mass collectibles;
 		let N be NM - bagHungerAllowance;

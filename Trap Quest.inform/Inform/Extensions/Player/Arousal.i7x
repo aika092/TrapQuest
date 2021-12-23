@@ -11,6 +11,11 @@ To decide which number is the arousal-influence of (C - a suppression clothing):
 	increase B by the magic-modifier of C;
 	decide on B.
 
+To decide which number is minimum arousal:
+	let A be the raw sex addiction of the player * 100;
+	if the class of the player is cowgirl and the number of monsters penetrating breasts < 1, increase A by the milk volume of breasts * 50;
+	decide on A.
+
 To decide which number is maximum arousal:
 	decide on 15000;
 	let A be 5000 + (the sex addiction of the player * 500) + (alcohol-level * 1000);
@@ -85,11 +90,6 @@ Always cools the player down no matter what
 To force cool down (X - a number):
 	if the arousal of the player < X, now the arousal of the player is 0;
 	otherwise decrease the arousal of the player by X.
-
-To decide which number is minimum arousal:
-	let A be the raw sex addiction of the player * 100;
-	if the class of the player is cowgirl and the number of monsters penetrating breasts < 1, increase A by the milk volume of breasts * 10;[too conservative? At max strength bonus this is +400; 15 might be better]
-	decide on A.
 
 Part 2 - Decay Every Turn
 
@@ -276,9 +276,12 @@ Definition: yourself is unlimited in horniness:
 	if the player is pheromonal, decide yes;
 	decide no.
 
+To decide which number is aroused-limit:
+	decide on 2000.
+
 Definition: yourself is a bit horny:
 	if the player is not able to get horny, decide no;
-	if the arousal of the player >= 2000 or (the arousal of the player >= 1850 and aroused-turns > 0), decide yes;
+	if the arousal of the player >= aroused-limit or (the arousal of the player >= (aroused-limit - 150) and aroused-turns > 0), decide yes;
 	decide no.
 
 To decide which number is horny-limit:

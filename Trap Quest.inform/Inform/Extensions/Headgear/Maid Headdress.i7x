@@ -1,6 +1,6 @@
 Maid Headdress by Headgear begins here.
 
-A maid headdress is a kind of headgear. A maid headdress is usually brightness-negative. A maid headdress is usually hair growing. A maid headdress is womanly. The text-shortcut of maid headdress is "mhd". A maid headdress is usually strength-influencing. A maid headdress is usually roleplay.
+A maid headdress is a kind of headgear. A maid headdress is usually brightness-negative. A maid headdress is usually hair growing. A maid headdress is womanly. The text-shortcut of maid headdress is "mhd". A maid headdress is usually strength-influencing.
 
 Definition: a maid headdress is white themed: decide yes.
 Definition: a maid headdress is waitress-enabling:
@@ -162,9 +162,11 @@ To decide which object is the unique-upgrade-target of (M - black maid headdress
 	if diaper quest is 1 and cafe maid headdress is off-stage, decide on cafe maid headdress;
 	decide on nothing.
 
+Definition: black maid headdress is roleplay: decide yes.
+
 Part 2 - Cafe Maid Headdress
 
-cafe maid headdress is a maid headdress. Figure of cafe maid headdress is the file "Items/Accessories/Head/maidheaddress2.png". The text-shortcut of cafe maid headdress is "mch". cafe maid headdress is strength-influencing. cafe maid headdress is not roleplay.
+cafe maid headdress is a maid headdress. Figure of cafe maid headdress is the file "Items/Accessories/Head/maidheaddress2.png". The text-shortcut of cafe maid headdress is "mch". cafe maid headdress is strength-influencing.
 
 The printed name of cafe maid headdress is "[clothing-title-before]cafe maid headdress[clothing-title-after]".
 
@@ -190,7 +192,7 @@ Definition: cafe maid headdress is bear themed: decide yes.
 
 Part 3 - Milkmaid Headdress
 
-milkmaid headdress is a maid headdress. Figure of milkmaid headdress is the file "Items/Accessories/Head/maidheaddress3.png". The text-shortcut of milkmaid headdress is "mmh". milkmaid headdress is strength-influencing. milkmaid headdress is not roleplay.
+milkmaid headdress is a maid headdress. Figure of milkmaid headdress is the file "Items/Accessories/Head/maidheaddress3.png". The text-shortcut of milkmaid headdress is "mmh". milkmaid headdress is strength-influencing.
 
 The printed name of milkmaid headdress is "[clothing-title-before]milkmaid headdress[clothing-title-after]".
 

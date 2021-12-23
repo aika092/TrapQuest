@@ -116,12 +116,19 @@ Report decanting something with:
 				if the number of worn breast covering clothing is 1 and the number of worn neck covering clothing is the number of worn neck covering breast covering clothing:
 					let M be a random worn breast covering clothing;
 					transform M into milkmaid-outfit;
-			otherwise if black maid headdress is worn and the class of the player is "maid": [no cross-class yet]
-				transform black maid headdress into cafe maid headdress;
-				class summon cafe-maid-outfit; [will be blocked if a class-relevant outfit is already worn]
-				let M be a random worn overdress;
-				if cafe-maid-outfit is not held and M is a removable overdress, transform M into cafe-maid-outfit;
-				class summon cafe maid stockings;
+				now waitress-dips is 0;
+			otherwise if black maid headdress is worn:
+				if the silicone volume of breasts > 0:
+					transform black maid headdress into frilly bunny ears;
+					class summon bunny-maid-outfit; [will be blocked if a class-relevant outfit is already worn]
+					let M be a random worn overdress;
+					if bunny-maid-outfit is not held and M is a removable overdress, transform M into bunny-maid-outfit;
+				otherwise if the class of the player is "maid": [no cross-class yet]
+					transform black maid headdress into cafe maid headdress;
+					class summon cafe-maid-outfit; [will be blocked if a class-relevant outfit is already worn]
+					let M be a random worn overdress;
+					if cafe-maid-outfit is not held and M is a removable overdress, transform M into cafe-maid-outfit;
+					class summon cafe maid stockings;
 				now waitress-dips is 0;
 			otherwise if rubber top hat is worn and the class of the player is "silicone queen": [no cross-class yet]
 				transform rubber top hat into rubber-bunny-waitress-ears;

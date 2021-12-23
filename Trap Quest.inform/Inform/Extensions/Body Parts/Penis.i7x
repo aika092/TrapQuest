@@ -519,7 +519,7 @@ previous penis length is a number that varies.
 #LXorDD:
 For the detached dick case, since it can be grown or shrunk while detached, and since these functions are quite involved, rather than copying and modifying them, I'm trying to reuse them: I temporarily set the penis and scrotum sizes back to those of the detached dick before calling these, and back to zero immediately after, and adding some code in here to handle the special case of the detached dick.]
 To PenisUp (X - a number):
-	if the player is not possessing a vagina or (the player is possessing a vagina and futanari fetish is 1):
+	if the player is not possessing a vagina or (the player is possessing a vagina and futanari fetish > 0):
 		OnlyPenisUp X;
 		let N be the remainder after dividing X by 2;
 		if N is 1:
@@ -530,7 +530,7 @@ To PenisUp (X - a number):
 		otherwise:
 			SilentlyScrotumUp X.
 
-[#LXorDD 
+[#LXorDD
   NOTE:
     This function can increase detached dicks via the SpecialPenisUp or DetachedPenisUp functions, which first swap the dick back in as far as the code is concerned, then calls PenisUp, then swaps it back out.
     In other words, don't use the 'mystical size of the penis' here, just use 'the size of the penis'.

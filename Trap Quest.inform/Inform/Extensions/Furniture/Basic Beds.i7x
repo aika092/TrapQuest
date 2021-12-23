@@ -11,7 +11,7 @@ To decide which figure-name is the examine-image of (F - a prison guard's bed):
 	decide on figure of hotel bed. [TODO: unique image]
 
 To compute furniture resting on (F - prison guard's bed):
-	now resting is 1;
+	now player-currently-resting is 1;
 	now F is in use;
 	repeat with M running through royal guards:
 		if M is friendly and M is interested, deinterest M; [This is so that they notice you are using the bed]

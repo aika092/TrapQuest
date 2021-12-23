@@ -12,7 +12,9 @@ To set up gym lesson of (M - a monster):
 
 Part - Kissing Lesson
 
-kissing-lesson is a lesson. The lesson-teacher of kissing-lesson is teacher-angela.
+kissing-lesson is a lesson. The lesson-teacher of kissing-lesson is teacher-angela. kissing-lesson has a number called lesson-variant.
+[A game universe initialisation rule:
+	now the lesson-variant of kissing-lesson is a random number between 0 and 1.]
 
 Definition: kissing-lesson is lesson-appropriate:
 	if face is not actually occupied, decide yes;
@@ -22,7 +24,301 @@ To compute teaching of (L - kissing-lesson):
 	allocate 40 seconds;
 	now bigGameLoop is 3; [tells the game not to refresh any windows]
 	let M be the lesson-teacher of L;
-	say "[speech style of M]'Oral skillz 101.'[roman type][line break][BigNameDesc of M] holds [his of M] hands behind [his of M] back as [he of M] addresses you all.[line break][speech style of M]'[one of]Your teeth, your lips, your tongue... all are incredibly important toolz at your dizpozal[or]It zeemz zat you all ztill require more vork in zis department[stopping].'[roman type][line break][big he of M] licks [his of M] lips.[line break][speech style of M]'Yez... a complete examination iz required. Each of you vill take turnz to kizz me. Eizer you vill be leaving viz a promotion... or you vill be leaving viz a little upgrade...'[roman type][line break]";
+	say "[speech style of M]'Oral skillz 10[lesson-variant of L + 1].'[roman type][line break][BigNameDesc of M] holds [his of M] hands behind [his of M] back as [he of M] addresses you all.[line break][speech style of M]'[one of]Your teeth, your lips, your tongue... all are incredibly important toolz at your dizpozal[or]It zeemz zat you all ztill require more vork in zis department[stopping].'[roman type][line break]";
+	now the arousal of the player is minimum arousal;
+	now the delayed arousal of the player is 0;
+	check for arousal change;
+	if the number of students in the location of M > 2 and the lesson-variant of L is 1:
+		[now the lesson-variant of L is 0;]
+		compute group kissing lesson of M;
+	otherwise:
+		compute french kissing lesson of M;
+		if the player is a december 2021 top donator, now the lesson-variant of L is 1;
+	now bigGameLoop is 0;
+	conclude consenting;
+	set up rank one students. [lots of students can get promoted in this lesson and it would be good to introduce some new sapphire ones afterwards to make sure we aren't running out]
+
+To compute group kissing lesson of (M - a staff member):
+	say "[big he of M] licks [his of M] lips.[line break][speech style of M]'Ve vill play a little game wiz zis candy.'[roman type][line break][BigNameDesc of M] holds up a relatively large purple spherical candy. It looks like it's the type that melts very slowly in your mouth.[line break][speech style of M]'You vill each take turnz choozing someone to kizz. If ze perzon you kizz has ze candy, zey are allowed to pazz it into your mouth. Ze candy iz lazed with a ztrong aphrodeziac - not long after you tazte it, it vill make you feel very fuzzy inzide. Ze longer you zucked on it, ze more powerful ze effect. When ze candy is all melted, whoever haz managed to control zeir urges and not do anyzing inappropriate to zemselvez, vill get promoted.'[roman type][line break]Gosh, that was all a little bit confusing to listen to, but you believe you've understood the gist of it:[paragraph break]* You will be taking turns choosing someone to kiss.[line break]* If that person has the candy in their mouth, they can pass it to you.[line break]* Having the candy in your mouth makes you horny, but with a slight delay.[line break]* The game ends when the candy melts. Anyone who doesn't orgasm, gets promoted.[paragraph break][speech style of M]'And now... Let uz begin!'[roman type][line break][BigNameDesc of M] closes [his of M] hand around the candy and then opens it again. The candy has disappeared.[line break][speech style of M]'The candy iz now in one of your mouthz. I vill not say who.'[roman type][line break]";
+	now refractoryperiod is 0;
+	let currentCandy be a random person in the location of the player;
+	if currentCandy is M, now currentCandy is the player;
+	if currentCandy is the player, say "You feel the hard, slightly slimy sphere appear in your own mouth. [bold type]The candy has started with you![roman type][line break]";
+	let arousalList be a list of people; [delayed arousal]
+	add currentCandy to arousalList;
+	add M to arousalList;
+	add M to arousalList;
+	let candySucks be 5 * the number of people in the location of the player;
+	repeat with ST running through students in the location of the player:
+		now the lessonInt1 of ST is 0; [arousal]
+	let LSK be the list of students in the location of the player;
+	let LST be the list of students in the location of the player;
+	add yourself to LST;
+	let LSP be the list of students in the location of the player; [people to be promoted]
+	add yourself to LSP;
+	sort LST in random order;
+	while entry 1 in LST is currentCandy:
+		sort LST in random order;
+	say "[speech style of M]'You vill take turnz in ze following order: ";
+	let STE be the number of entries in LST;
+	let STE2 be STE;
+	repeat with ST running through LST:
+		decrease STE2 by 1;
+		if ST is student, say "[student-name of ST][run paragraph on]";
+		otherwise say "[NameBimbo][run paragraph on]";
+		say "[if STE2 > 1], [otherwise if STE2 is 1] and finally [otherwise], and then back to ze ztart. Now go!'[roman type][line break][end if]";
+	let STX be 1;
+	while candySucks > 0:
+		let CC be currentCandy;
+		let ST be entry STX in LST;
+		let KT be ST; [kiss target placeholder]
+		if ST is yourself:
+			say "It's your turn to choose someone to kiss.";
+			reset multiple choice questions;
+			repeat with SK running through LSK:
+				set next numerical response to "[SK]";
+			compute multiple choice question;
+			now KT is entry player-numerical-response in LSK;
+			say "You [one of]approach[or]walk over to[in random order] [student-name of KT] and pull [him of KT] into a deep kiss. ";
+		otherwise:
+			while KT is ST:
+				let R be a random number between 1 and STE;
+				now KT is entry R in LST;
+			say "[BigNameDesc of ST] [one of]chooses[or]advances on[or]steps over to[or]approaches[or]kisses[or]snogs[in random order] [YouDesc of KT]. ";
+		let STArousal be 0;
+		if ST is a student, now STArousal is the lessonInt1 of ST;
+		otherwise now STArousal is the arousal of the player;
+		let KTArousal be 0;
+		if KT is a student, now KTArousal is the lessonInt1 of KT;
+		otherwise now KTArousal is the arousal of the player;
+		let mostAroused be ST;
+		let mostArousal be STArousal;
+		let leastAroused be ST;
+		let leastArousal be STArousal;
+		if STArousal >= KTArousal:
+			now leastAroused is KT;
+			now leastArousal is KTArousal;
+		otherwise:
+			now mostAroused is KT;
+			now mostArousal is KTArousal;
+		if mostAroused is a student, increase mostArousal by the dedication of mostAroused * 400;
+		otherwise increase mostArousal by the sex addiction of the player * 400;
+		if leastAroused is a student, increase leastArousal by the dedication of leastAroused * 400;
+		otherwise increase leastArousal by the sex addiction of the player * 400;
+		if mostArousal < 1000:
+			if mostAroused is a student:
+				say "[student-name of mostAroused] [one of]stands back and leans foward[or]keeps [his of mostAroused] body away[or]looks a bit stiff[or]looks a little awkward[or]seems a little uncertain[or]keeps [his of mostAroused] hands by [his of mostAroused] side[in random order] as [he of mostAroused] ";
+				if mostAroused is ST, say "kisses [if leastAroused is a student][him of leastAroused][otherwise]you[end if], ";
+				otherwise say "receives the kiss, ";
+				say "and [student-name of leastAroused] [one of]looks just as uncomfortable[or]looks just as unsure[or]doesn't look particularly enthusiastic either[or]is similarly visibly hesitant[in random order].";
+			otherwise:
+				say "[student-name of leastAroused] [one of]stays as stiff as a rock[or]is clearly not too comfortable[or]doesn't open [his of leastAroused] lips any more than [he of leastAroused] has to[in random order].";
+		otherwise if mostArousal < 3000:
+			if mostAroused is a student:
+				say "[student-name of mostAroused] [one of]tries to maintain eye contact[or]touches [if leastAroused is a student][student-name of leastAroused]'s[otherwise]your[end if] arms[or]bites [his of mostAroused] lip[or]flutters [his of mostAroused] eyelashes[in random order] as [he of mostAroused] ";
+				if mostAroused is ST, say "kisses [if leastAroused is a student][him of leastAroused][otherwise]you[end if], ";
+				otherwise say "receives the kiss, ";
+				if leastArousal < 1000:
+					if leastAroused is a student, say "while [student-name of leastAroused] [one of]just looks uncomfortable[or]squirms with discomfort[or]stands there awkwardly[in random order].";
+					otherwise say "but you feel too self-conscious to reciprocate.";
+				otherwise:
+					if leastAroused is a student, say "and [student-name of leastAroused] [one of]seems intrigued[or]doesn't seem to mind[or]appears to be comfortable with it[in random order].";
+					otherwise say "and you [one of]discover that you're finding the kiss somewhat pleasant yourself[or]find yourself enjoying it[stopping].";
+			otherwise:
+				say "You kiss [him of leastAroused] somewhat eagerly and aggressively, ";
+				if leastArousal < 1000, say "but [he of leastAroused] doesn't [one of]reciprocate[or]respond with the same energy[in random order].";
+				otherwise say "and [he of leastAroused] responds in turn, kissing back you just as enthusiastically.";
+		otherwise if mostArousal < 5000:
+			if mostAroused is a student:
+				say "[student-name of mostAroused] [one of]energetically explores [if leastAroused is a student][student-name of leastAroused]'s[otherwise]your[end if] mouth with [his of mostAroused] tongue[or]embraces [if leastAroused is a student][student-name of leastAroused][otherwise]you[end if][or]holds [if leastAroused is a student][student-name of leastAroused]'s[otherwise]your[end if] cheeks with [his of mostAroused] hands[or]lets out a little moan[in random order] as [he of mostAroused] ";
+				if mostAroused is ST, say "kisses [if leastAroused is a student][him of leastAroused][otherwise]you[end if], ";
+				otherwise say "receives the kiss, ";
+				if leastArousal < 1000:
+					if leastAroused is a student, say "and [student-name of leastAroused] [one of]is visibly uncomfortable[or]clenches [his of leastAroused] fists with shame[in random order].";
+					otherwise say "which feels way too intimate for you.";
+				otherwise if leastArousal < 3000:
+					if leastAroused is a student, say "but [student-name of leastAroused] [one of]seems a bit more hesitant[or]can't bring [himself of leastAroused] to fully reciprocate[in random order].";
+					otherwise say "which leaves you feel nervous but also gets your blood pumping.";
+				otherwise:
+					if leastAroused is a student, say "and [student-name of leastAroused] [one of]happily rubs [his of leastAroused] hands on top of [hers of mostAroused][or]responds by placing [his of leastAroused] hands on [student-name of mostAroused]'s hips[in random order].";
+					otherwise say "and you happily massage [his of mostAroused] tongue with yours.";
+			otherwise:
+				say "You place your hands on [his of leastAroused] hips as you explore [his of leastAroused] lips, ";
+				if leastArousal < 1000:
+					say "but you can feel [him of leastAroused] [one of]tensing up[or]gently pulling away[in random order].";
+				otherwise if leastArousal < 3000:
+					say "but [he of leastAroused] doesn't [one of]reciprocate[or]respond with the same energy[in random order].";
+				otherwise:
+					say "and [he of leastAroused] responds in turn, kissing back you just as enthusiastically.";
+		otherwise if mostArousal < 8000:
+			if mostAroused is a student:
+				say "[student-name of mostAroused] [one of]explores [if leastAroused is a student][student-name of leastAroused]'s[otherwise]your[end if] body with [his of mostAroused] hands[or]runs [his of mostAroused] hands up and down [if leastAroused is a student][student-name of leastAroused]'s[otherwise]your[end if] sides[or]pulls [if leastAroused is a student][student-name of leastAroused] in close with one hand on [his of leastAroused] back and one behind [his of leastAroused] head[otherwise]you in close with one hand on your back and one behind your head[end if][in random order] as [he of mostAroused] ";
+				if mostAroused is ST, say "kisses [if leastAroused is a student][him of leastAroused][otherwise]you[end if], ";
+				otherwise say "receives the kiss, ";
+			otherwise:
+				say "You enthusiastically search for [his of leastAroused] tongue with your own, while rubbing your hands up and down [his of leastAroused] sides, ";
+			if leastArousal < 1000:
+				if leastAroused is a student, say "while [student-name of leastAroused] [one of]tries weakly to pull away[or]squeaks with indignation[in random order].";
+				otherwise say "which makes you squeak with discomfort.";
+			otherwise if leastArousal < 3000:
+				if leastAroused is a student, say "but [student-name of leastAroused] [one of]looks a bit uncomfortable[or]just sort of stands there awkwardly[in random order].";
+				otherwise say "which makes you squirm with uncertainty.";
+			otherwise if leastArousal < 5000:
+				if leastAroused is a student, say "and [student-name of leastAroused] [one of]lets it happen[or]makes no move to resist[in random order].";
+				otherwise say "which makes you feel funny.";
+			otherwise:
+				if leastAroused is a student, say "and [student-name of leastAroused] [one of]happily responds in kind[or]does the same back[in random order].";
+				otherwise say "and you eagerly do the same back.";
+				if mostAroused is the player, passively stimulate belly from leastAroused;
+				otherwise increase the lessonInt1 of mostAroused by 150;
+			if leastAroused is the player, passively stimulate belly from mostAroused;
+			otherwise increase the lessonInt1 of leastAroused by 150;
+		otherwise if mostArousal < 10000:
+			if mostAroused is a student:
+				say "[student-name of mostAroused] [one of]grabs [if leastAroused is a student][student-name of leastAroused]'s[otherwise]your[end if] butt with both hands[or]puts one hand on [if leastAroused is a student][student-name of leastAroused]'s[otherwise]your[end if] chest and the other on [if leastAroused is a student][his of leastAroused][otherwise]your[end if] butt[or]molests [if leastAroused is a student][student-name of leastAroused]'s[otherwise]your[end if] chest with both hands[in random order] as [he of mostAroused] ";
+				if mostAroused is ST, say "kisses [if leastAroused is a student][him of leastAroused][otherwise]you[end if], ";
+				otherwise say "receives the kiss, ";
+			otherwise:
+				say "You knead [his of leastAroused] [one of]breasts[or]buttocks[in random order] with your hands, ";
+			if leastArousal < 1000:
+				if leastAroused is a student, say "causing [student-name of leastAroused] to [one of]grunt in dismay[or]squeal with indignation[in random order].";
+				otherwise say "turning you on against your will.";
+				if mostAroused is the player, HappinessDown leastAroused;
+			otherwise if leastArousal < 3000:
+				if leastAroused is a student, say "while [student-name of leastAroused] [one of]just looks a bit annoyed at [if mostAroused is a student][student-name of mostAroused]'s[otherwise]your[end if] forwardness[or]mewls with irritation[in random order].";
+				otherwise say "which makes you feel awkward and perturbed.";
+			otherwise if leastArousal < 5000:
+				if leastAroused is a student, say "while [student-name of leastAroused] [one of]places [his of leastAroused] hands on [student-name of mostAroused]'s hips[or]opts for the somewhat milder approach of holding [student-name of mostAroused] at the waist[or]gently hugs [him of mostAroused] back[in random order].";
+				otherwise say "while you gingerly embrace [him of mostAroused] back.";
+			otherwise if leastArousal < 8000:
+				if leastAroused is a student, say "while [student-name of leastAroused] [one of]runs [his of leastAroused] hands up and down [student-name of mostAroused]'s sides[or]holds [student-name of mostAroused] close and moans happily into [his of mostAroused] mouth[in random order].";
+				otherwise say "and you find yourself melting under [his of mostAroused] touch.";
+			otherwise:
+				if leastAroused is a student, say "and [student-name of leastAroused] [one of]grasps [if mostAroused is a student][him of mostAroused][otherwise]you[end if] in the same places[or]does the same back[in random order], creating a rather erotic view.";
+				otherwise say "and you enthusiastically grab the same parts of [his of mostAroused] body.";
+				if mostAroused is the player, passively stimulate hips from leastAroused;
+				otherwise increase the lessonInt1 of mostAroused by 400;
+			if leastAroused is the player, passively stimulate hips from mostAroused;
+			otherwise increase the lessonInt1 of leastAroused by 400;
+		otherwise:
+			if mostAroused is a student:
+				say "[student-name of mostAroused] [one of]grabs [if leastAroused is a student][student-name of leastAroused]'s butt with both hands, tucks one leg around [student-name of leastAroused][']s, and grinds [his of mostAroused] body up against [hers of leastAroused][otherwise]your butt with both hands, tucks one leg around yours, and grinds [his of mostAroused] body up against yours[end if][or]pulls [if leastAroused is a student][student-name of leastAroused] as close as [he of mostAroused] can and grinds [his of mostAroused] genitals up against [hers of leastAroused][otherwise]you as close as [he of mostAroused] can and grinds [his of mostAroused] genitals up against yours[end if][in random order] as [he of mostAroused] ";
+				if mostAroused is ST, say "kisses [if leastAroused is a student][him of leastAroused][otherwise]you[end if], ";
+				otherwise say "receives the kiss, ";
+			otherwise:
+				say "You explore [his of leastAroused] [one of]breasts[or]buttocks[or]tits and ass[in random order] with your hands and grind your crotch on [hers of leastAroused], ";
+				increase the lessonInt1 of leastAroused by 1000;
+			if leastArousal < 1000:
+				if leastAroused is a student, say "causing [student-name of leastAroused] to [one of]frantically push away from [if mostAroused is a student][him of leastAroused][otherwise]you[end if][or]to snarl angrily[in random order].";
+				otherwise say "causing you to push away on instinct, but not before [he of mostAroused]'s already made you feel a bit funny inside.";
+				if mostAroused is the player, HappinessDown leastAroused;
+			otherwise if leastArousal < 3000:
+				if leastAroused is a student, say "but [student-name of leastAroused] [one of]makes a frustrated noise[or]squeals with panic[in random order].";
+				otherwise say "making you shiver with discomfort, but also arousal.";
+				if mostAroused is the player, HappinessDown leastAroused;
+			otherwise if leastArousal < 5000:
+				if leastAroused is a student, say "leaving [student-name of leastAroused] [one of]stunned and unsure how to respond[or]unsure what to do with [his of leastAroused] hands[or]moaning involuntarily[in random order].";
+				otherwise say "making you feel all tingly inside.";
+			otherwise if leastArousal < 8000:
+				if leastAroused is a student, say "while [student-name of leastAroused] [one of]stands there, shuddering with pleasure[or]moans lewdly into [his of mostAroused] mouth[in random order].";
+				otherwise say "and you find yourself shaking with pleasure.";
+			otherwise if leastArousal < 10000:
+				if leastAroused is a student, say "while [student-name of leastAroused] [one of]holds onto [if mostAroused is student][student-name of mostAroused]'s[otherwise]your[end if] buttocks and moans with pleasure[or]feels up [if mostAroused is student][student-name of mostAroused]'s[otherwise]your[end if] chest and mewls with delight[in random order].";
+				otherwise say "and you find yourself moaning with delight as you feel up [his of mostAroused] [one of]breasts[or]buttocks[or]tits and ass[in random order].";
+				if mostAroused is the player, passively stimulate hips from leastAroused;
+			otherwise:
+				if leastAroused is a student, say "and [student-name of leastAroused] [one of]pushes back just as hard, equally eager to bump and grind [if mostAroused is student]their[otherwise]your[end if] sex organs together[or]responds with extremely sexual noises, pushing [his of leastAroused] own genitals forward as much as [he of leastAroused] can[in random order].";
+				otherwise say "and you rub back just as hard. It feels incredible!";
+				if mostAroused is the player, stimulate vagina from leastAroused;
+				otherwise increase the lessonInt1 of mostAroused by 1000;
+			if leastAroused is the player, stimulate vagina from mostAroused;
+			if mostAroused is the player, stimulate vagina from leastAroused;
+			if leastAroused is a student, increase the lessonInt1 of leastAroused by 1000;
+			if mostAroused is a student, increase the lessonInt1 of mostAroused by 1000;
+		repeat with STM running through LST:
+			if STM is not ST and STM is not KT:
+				if STM is student and the lessonInt1 of STM > a random number between 10000 and 20000:
+					say "[BigNameDesc of STM] can't help but [one of]touch [himself of STM][or]masturbate[or]finger [himself of STM][or]play with [himself of STM][in random order]";
+					increase the lessonInt1 of STM by a random number between 750 and 1500;
+					if the lessonInt1 of STM > a random number between 12000 and 15000:
+						say "! [big he of STM] [one of]orgasms[or]cums[or]climaxes[in random order] hard, [one of]turning red after [he of STM] realises what [he of STM]'s done in front of everyone else[or]squeaking with shame after [he of STM] has come down from [his of STM] electric high[in random order].";
+						if STM is listed in LSP, remove STM from LSP;
+						now the lessonInt1 of STM is 0;
+					otherwise:
+						say "!";
+				otherwise if STM is the player and the arousal of the player >= maximum arousal:
+					say "You can't help but reach down and [one of]masturbate[or]play with[or]rub[in random order] yourself through your clothes!";
+					if the player is able to orgasm and a random number between 1 and 2 is 1, vaginally orgasm shamefully;
+		if refractoryperiod > 0:
+			if the player is listed in LSP, remove the player from LSP;
+			now refractoryperiod is 0;
+		let candyReceiver be M;
+		if KT is currentCandy:
+			now candyReceiver is ST;
+		otherwise if ST is currentCandy:
+			now candyReceiver is KT;
+		if currentCandy is the player and candyReceiver is not M:
+			reset multiple choice questions;
+			set numerical response 1 to "Push the candy into [student-name of candyReceiver][']s mouth.";
+			set numerical response 2 to "Keep the candy in your mouth.";
+			compute multiple choice question;
+			if player-numerical-response is 1:
+				say "As you lock lips with [student-name of candyReceiver], you push the candy in. [one of][big he of candyReceiver] lets out a tiny squeak of surprise[or][big his of candyReceiver] grip on you strengthens slightly, but [he of candyReceiver] doesn't say anything[or]subtly shudders as [he of candyReceiver] is forced to accept it into [his of candyReceiver] mouth[in random order]. [bold type][student-name of candyReceiver] now has the candy.[roman type][line break]";
+				if the lessonInt1 of candyReceiver < 1500, HappinessDown candyReceiver;
+			otherwise:
+				now candyReceiver is M;
+		otherwise if candyReceiver is the player:
+			say "After you lock lips, you feel [student-name of currentCandy] pushing the candy into your mouth. Uh-oh. [bold type]You now have the candy in your mouth. [roman type]It feels [if candySucks > 4 * the number of students in the location of the player]about as big as it was at the start[otherwise if candySucks > 3 * the number of students in the location of the player]about two thirds as big as it was at the start[otherwise if candySucks > 2 * the number of students in the location of the player]about half as big as it was at the start[otherwise if candySucks > the number of students in the location of the player]about a third as big as it was at the start[otherwise]like it's almost all gone[end if].";
+		otherwise if candyReceiver is not M:
+			let STXX be STX;
+			if STXX is STE, now STXX is 1;
+			otherwise increase STXX by 1;
+			let STXR be a random number between 1 and 4;
+			if STXR is 4 or (currentCandy is entry STXX in LST and STXR is 3), now candyReceiver is M; [student decided not to pass on the candy]
+		if candyReceiver is not M, now currentCandy is candyReceiver;
+		let ALE be the number of entries in arousalList;
+		let AST be entry ALE in arousalList;
+		let candyArousal be a random number between 750 and 1500;
+		if AST is student:
+			increase the lessonInt1 of AST by candyArousal;
+		otherwise if AST is the player:
+			say "[bold type]Some [one of][or]more [stopping]of the candy's aphrodesiac enters your blood stream from your stomach!";
+			arouse candyArousal;
+			if the arousal of the player + the delayed arousal of the player < aroused-limit, now the delayed arousal of the player is aroused-limit - the arousal of the player; [after tasting the candy, the player always becomes aroused]
+			check for arousal change;
+		add currentCandy at entry 1 in arousalList;
+		truncate arousalList to ALE entries;
+		if STX is STE, now STX is 1;
+		otherwise increase STX by 1;
+		decrease candySucks by 1;
+		if candySucks <= 0, say "[if currentCandy is a student][BigNameDesc of currentCandy] speaks up.[line break][speech style of currentCandy]'Um, the candy just finished dissolving in my mouth.'[otherwise]The candy finishes dissolving in your mouth.[line break][variable custom style]'Um, guys, the candy's gone.'[end if][roman type][line break]The game is over!";
+	say "[BigNameDesc of M] claps [his of M] hands.[line break][speech style of M]'Zat is it! Let'z zee now...'[roman type][line break][big he of M] looks around at your crotches.";
+	let LSPE be the number of entries in LSP;
+	if LSPE is 0:
+		say "[speech style of M]'All of you dizgraced yourzelvez! Nobody pazzez!'[roman type][line break]";
+	otherwise if LSPE is the number of entries in LST:
+		say "[speech style of M]'All of you pazzed! Congratulationz!'[roman type][line break]";
+	otherwise:
+		say "[speech style of M]'";
+		repeat with ST running through LSP:
+			say "[if ST is student][student-name of ST][otherwise][NameBimbo][end if][if LSPE > 1], [otherwise if LSPE is 1] and [otherwise] [end if]";
+		say "- you pazz. Ze otherz should be embarrazzed of zemselvez.'[roman type][line break]";
+	repeat with ST running through LSP:
+		if ST is student, promote ST;
+	if the player is listed in LSP:
+		now armband is emerald;
+		say "You watch as the ID card inside your armband transforms!";
+		now the armband-title of armband is "Sweetie";
+		now the armband-print of armband is "super snogger";
+		say ClothingDesc of armband;
+		update students; [an important line which makes boring old students disappear and new cool ones appear]
+	say "[big he of M] waves [his of M] arms.[line break][speech style of M]'Zat iz it for today! Clazz dizmizzed!'[roman type][line break]".
+
+
+
+
+To compute french kissing lesson of (M - a staff member):
+	say "[big he of M] licks [his of M] lips.[line break][speech style of M]'Yez... a complete examination iz required. Each of you vill take turnz to kizz me. Eizer you vill be leaving viz a promotion... or you vill be leaving viz a little upgrade...'[roman type][line break]";
 	repeat with ST running through students in the location of the player:
 		say "[speech style of M]'[student-name of ST], [one of]come here[or]you next[or]your turn[then at random].'[roman type][line break]";
 		let STEffort be the dedication of ST;
@@ -177,9 +473,7 @@ To compute teaching of (L - kissing-lesson):
 				update students; [an important line which makes boring old students disappear and new cool ones appear]
 		otherwise: [player orgasmed]
 			say "[speech style of M]'You pushed yourzelf too far, it vould zeem, and embarrazzed yourzelf in front of ze whole claz. Next time, try to take more control. I zink ze humiliation you've juzt zuffered iz punishment enough though, don't you?'[roman type][line break]";
-		say "[big he of M] ushers you back to your seat and then addresses the whole class.[line break][speech style of M]'Zat iz it for today! Clazz dizmizzed!'[roman type][line break]";
-	now bigGameLoop is 0;
-	conclude consenting.
+		say "[big he of M] ushers you back to your seat and then addresses the whole class.[line break][speech style of M]'Zat iz it for today! Clazz dizmizzed!'[roman type][line break]".
 
 To say kissPunishmentDesc of (ST - a student):
 	say "Okay, until the next time I zee you for clazz... [one of]you cannot hear people zpeak until you have firzt tazted their tongue[or]you can only experienze zexual pleazure vile kizzing anozer [man of ST][or]everyzing you eat vill tazte like my deliciouz zaliva[or]your mouth vill be in a permanent pouting [']O['][in random order]".
@@ -482,6 +776,11 @@ To compute teaching of (L - practical-lesson):
 	now DL is in the location of the player;
 	say "[if TL is not DL][speech style of TL]'For this lesson, I am going to need some help from Teacher [teacher-name of DL].'[roman type][line break]You watch as [NameDesc of DL] enters the room, joining [NameDesc of TL] at the front.[line break][end if][speech style of TL]'Today we will be learning about how by being especially filthy, you can better service cocks and win the hearts of your Masters.'[roman type][line break]";
 	say "[BigNameDesc of DL] gently strokes [his of DL] [DickDesc of DL], and you all watch as it slowly hardens, growing even larger in size.[line break][speech style of TL]'The rules are simple: each of you need to get in line and one by one you will do your best to pleasure the [manly-penis]. Up to [bold type]three people[speech style of TL] can get promoted: the person that makes it cum, the slut who I think acted the filthiest, and the person who used the most different parts of their body. EXCEPT hand-jobs, which are for prudes. [if a2m fetish is 0]The special rule for today is that no anal sex is allowed[otherwise]And remember, no ass-to-vag, okay? That's unhealthy[end if]. Finally, [bold type]each time you perform a sexual act but fail to convince me that you're enjoying it, you'll get a punishment. [speech style of TL]Your Masters aren't going to be [please]d if they can tell you heart isn't really in it.'[roman type][line break]And with that, [he of TL] sorts you into a random order, which ends up having you at the front. You're going to have to go first, it would seem...";
+	say "You reflect on how you feel about your different options.";
+	if face is not actually occupied, follow the oral sex addiction description rule;
+	if the player is possessing a vagina and vagina is not actually occupied and the number of worn chastity bond is 0, follow the vaginal sex addiction description rule;
+	if asshole is not actually occupied and a2m fetish > 0, follow the anal sex addiction description rule;
+	if the largeness of breasts > 5, follow the titfuck addiction description rule;
 	repeat with W running through worn wrist locking clothing:
 		say "With a click of [his of DL] fingers, your [ShortDesc of W] falls to the ground.";
 		now W is in the location of the player;
@@ -512,7 +811,7 @@ To compute teaching of (L - practical-lesson):
 			if face is not actually occupied:
 				if pussy-count is 0 and ass-count is 0 and slobber-owner is the player, set numerical response 1 to "use your mouth";
 				otherwise set numerical response 1 to "use your mouth (you'll have to slurp up[if pussy-count > 1] [pussy-count] lots of vaginal juices[otherwise if pussy-count > 0] the taste of someone's pussy juice[end if][if pussy-count > 0 and ass-count > 0] and[end if][if ass-count > 1] [ass-count] lots of ass juices[otherwise if ass-count > 0] the taste of someone's butt[end if][if ass-count is 0 and pussy-count is 0] [NameDesc of slobber-owner][']s slobber[end if])";
-			if the player is possessing a vagina and vagina is not actually occupied and the number of worn chastity cage is 0:
+			if the player is possessing a vagina and vagina is not actually occupied and the number of worn chastity bond is 0:
 				if ass-count is 0, set numerical response 2 to "use your pussy";
 				otherwise say "You aren't allowed to use your [vagina] while there's someone else's ass juices on [NameDesc of DL][']s [DickDesc of DL], as that would be unhealthy.";
 			if asshole is not actually occupied and a2m fetish > 0, set numerical response 3 to "use your asshole";
@@ -1992,7 +2291,7 @@ To compute action (N - a number) of (M - an ultimate-lesson-actor):
 				say "[one of]You pull forward, allowing [NameDesc of M][']s [manly-penis] to fall out of your [asshole] with a soft 'pop'[or]You gently ease [NameDesc of M][']s thick shaft out of your [asshole][in random order], [one of]and then turn around to approach it with your face[or]before turning around[in random order]. [if the player is a nympho][one of]Secretly excited about the depravity of it all, [or]You fight back a strong desire to touch yourself as [or]You lick your lips greedily before[or]Salivating with anticipation, [in random order][otherwise if the player is a pervert][one of]You lick your lips nervously before [or]You force yourself not to hesitate before [or]Holding your breath, [or]Doing your best not to think too hard about what you're doing, [in random order][otherwise][one of]Doing your best to suppress your revulsion, [or]You fight back the urge to retch as [or]Holding your breath and pinching your nose, [or]Desperately trying not to think about what you're doing, [in random order][end if]you [one of]envelop the recently-sodomising stick with your [LipDesc][or]get to work sucking your own ass juices off this anonymous [man of M][']s [manly-penis][or]get to work licking up your own ass sweat[or]start to slurp the bitter wetness off [his of M] bulbous tip[or]use your mouth and tongue to clean off [his of M] [manly-penis][in random order]. [strongHumiliateReflect]";
 			decrease the sex-length of M by 1;
 		otherwise if M is penetrating face:
-			if a random number between 1 and 3 > 1:
+			if (current-predicament is not gloryhole-key-predicament or gloryhole-key-predicament is not ass-to-mouth-agreed) and a random number between 1 and 3 > 1:
 				say "[one of]You bob your head up and down, [if the humiliation of the player < 10000]eyes screwed shut in shame[otherwise if the sex addiction of the player < 10 or current-predicament is gloryhole-key-predicament]eyes closed[otherwise]looking up at the art of the fireman's hunky body[end if] as you submissively polish [his of M] shaft[or]You make [if the oral sex addiction of the player < 4]quiet[otherwise if the oral sex addiction of the player < 6]distinct[otherwise]exaggerated[end if] slurping noises as you suck [FuckerDesc of M][']s [manly-penis], [if the oral sex addiction of the player < 3]determined to get this over and done with as soon as possible[otherwise if the oral sex addiction of the player < 5]determined to get [him of M] off as soon as possible[otherwise]determined to get [him of M] shooting off in your mouth as soon as possible[end if][or][BigFuckerDesc of M] thrusts back and forth through the gloryhole to complement the [if the oral sex addiction of the player > 5]enthusiastic [otherwise if the oral sex addiction of the player < 4]slow [end if]bobbing of your head[or][BigFuckerDesc of M] holds [himself of M] completely still, [if the sex addiction of the player < 7]forcing[otherwise if the oral sex addiction of the player < 6]encouraging[otherwise]allowing[end if] you to do all the work[or][BigFuckerDesc of M] grunts in pleasure as your tongue runs over the head of [his of M] [manly-penis][or][BigFuckerDesc of M] chuckles to [himself of M] as you submissively pleasure [his of M] [manly-penis] with your mouth[in random order][if current-predicament is gloryhole-predicament]. [one of]You can't stop thinking about how everything is being recorded, and your cheeks burn.[or][stopping][otherwise].[end if]";
 			otherwise:
 				BlowCount;
@@ -2732,13 +3031,15 @@ student-winnie is a innocent student.
 
 The text-shortcut of student-winnie is "stwi".
 
-Figure of winnie is the file "NPCs/School/Student/student8.png".
+Figure of winnie rank 1 is the file "NPCs/School/Student/student8a.png".
+Figure of winnie rank 2 is the file "NPCs/School/Student/student8b.png".
 
 To decide which figure-name is the monster-image of (M - student-winnie):
-	decide on figure of winnie.
+	if the current-rank of M is 1, decide on figure of winnie rank 1;
+	decide on figure of winnie rank 2.
 
 To say MonsterDesc of (M - student-winnie):
-	say "This middle aged [man of M] is wearing denim daisy dukes and a short T-shirt that reads 'Whore In Training' in black letters. [big he of M] looks [if the current-rank of M is 1]a little out of [his of M] comfort zone but still calm and collected[otherwise]a little bit anxious[end if].".
+	say "This dark-skinned, orange-haired [man of M] is wearing a set of black star-patterned stockings and dress[if the current-rank of M > 1] which is so sheer that [his of M] black bra and panties are clearly visible[end if]. [big he of M] looks [if the current-rank of M is 1]a little out of [his of M] comfort zone but still calm and collected[otherwise]a little bit anxious[end if].".
 
 The max-rank of student-winnie is 2.
 
@@ -2760,35 +3061,6 @@ To decide which number is the heel-skill of (M - student-winnie):
 
 To decide which number is the dedication of (M - student-winnie): [We can use this for various calculations to check which students do what]
 	decide on 3.
-
-Book - Austin
-
-student-austin is a innocent student.
-
-The text-shortcut of student-austin is "stau".
-
-Figure of austin is the file "NPCs/School/Student/student10.png".
-
-To decide which figure-name is the monster-image of (M - student-austin):
-	decide on figure of austin.
-
-To say MonsterDesc of (M - student-austin):
-	say "This long ginger-haired beauty has gorgeous [if the current-rank of M is 1]big eyes[otherwise]long lashes[end if] and alluring red lips. A pink latex dress clings tightly to [his of M] form. [big he of M] looks [if the current-rank of M is 1]rather innocent and shy[otherwise]uptight and apprehensive[end if].".
-
-The max-rank of student-austin is 2.
-
-To update name of (M - student-austin):
-	now the student-print of M is "latex lover";
-	if the current-rank of M is 1:
-		now the student-name of M is "Austin";[Selkie: is a boy's name]
-	otherwise:
-		now the student-name of M is "Australia".[Selkie: blinks]
-
-To say StoryAnswer of (M - student-austin):
-	say "[speech style of M]'I'm a latex fashion model but my agent says I'm too shy in front of a camera to properly make it big. He suggested I come here to learn how to [']loosen up[']...'[roman type][line break]".
-
-To say WhereAnswer of (M - student-austin):
-	say "[speech style of M]'[if the rank of the player <= 1]This is a place to learn how to be less of a prude. That's why I've been sent here anyway.'[otherwise]Some of the other [sissy-girls] were saying you can't get to the top without sucking some [manly-penis]s. I'm hoping it doesn't come to that...'[end if][roman type][line break]".
 
 Book - Nell
 

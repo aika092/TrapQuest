@@ -127,6 +127,70 @@ To compute periodic effect of (P - breast-module):
 			StrengthDown 1;
 			increase the str-transfer of P by 1.
 
+
+
+sissy-staple is a module. The printed name of sissy-staple is "[clothing-title-before]sissy staple[clothing-title-after]". The text-shortcut of sissy-staple is "sstp". Understand "sissy staple" as sissy-staple.
+
+To decide which figure-name is the clothing-image of (C - sissy-staple):
+	decide on figure of module 4.
+
+To decide which number is the anal sensitivity influence of (C - sissy-staple):
+	decide on 3.
+
+To say ModuleFlav of (M - sissy-staple):
+	say "An arm snakes out with a lewd probe on the end. Its head bulges and drools cool lubricant profusely from a winking sphincter at the end. The probe draws circles around your exposed [asshole], the cool sensation of the lube sending shivers through your body. The probe then surges forward, penetrating you to the hilt. To your suprise, it doesn't begin to fuck you, instead you feel a stroking sensation tease your prostate! Just as you start to get excited, you hear a mechanical whine from the probe followed by a sharp stinging pain inside of your [asshole]. The probe retracts itself from your hungry [asshole] with a lewd *plop*. [line break][second custom style]'Thank you for participating in the Sissy Staple module trial! [big please] listen carefully to the following instructions. You will find that your libido and desire for anal stimulation has improved and will continue to grow in-line with your newly enhanced prostate. The AI in your new implant will be monitoring your behaviour as a sissy, and will be providing corrective adjustments should you spend extended lengths of time uncaged or unplugged. Installation confirmed complete. Have a nice day and a pleasant remainder of your test experience, TESTER [NameBimbo]!'[roman type][line break]".
+
+
+To say ClothingDesc of (C - sissy-staple):
+	say "There's no visibile evidence, but every now and then you can feel your prostate swelling as the tiny module releases yet another strong dose of aphrodisiacs and transformatives... You recall that unless you're plugged and caged like a perfect sissy, the module will continue to dump large cocktails of drugs into your quivering prostate.".
+
+To say ShortDesc of (C - sissy-staple):
+	say "sissy staple".
+
+To compute periodic effect of (P - sissy-staple):
+	unless there is worn ass plugging clothing:
+		increase the module-charge of P by 3;
+	otherwise:
+		decrease the module-charge of P by 1;
+	unless there is a worn chastity bond:
+		increase the module-charge of P by 3;
+	otherwise:
+		decrease the module-charge of P by 1;
+	if the module-charge of P > 100:
+		now the module-charge of P is 0;
+		say "You feel a sharp pain inside, followed by radiating warmth as your [asshole] tingles. The [ShortDesc of P] has dumped yet another load of [if the bimbo of the player < 10]drugs[otherwise][second custom style]yummy sissy juice[roman type][end if] right into your prostate. You feel your [sissy-penis] start to actively dribble precum as your prostate kicks into overdrive. Something about this process is too much for your poor [sissy-penis], [if the size of penis > min penis size]and you can see it visibily shrink[otherwise]and you can see it just twitch and leak. The [ShortDesc of P] coats your [asshole] with lubricant, encouraging you to go find a [manly-penis] to fuck. You coo softly[end if] as you sink deep into submissive fantisies.[roman type][line break]";
+		say "[second custom style][one of]GOOD SISSIES HAVE TINY CLITTIES[line break]GOOD SISSIES STAY LOCKED AWAY[or]HEAD DOWN ASS UP[line break]THAT'S HOW SISSIES LIKE TO FUCK[or]KEEP ME LOCKED AWAY[line break]CUM IN MY MOUTH[or]I'M A PATHETIC SUBMISSIVE SLUT[line break]I NEED AN ALPHA'S FAT DICK IN MY ASSHOLE TO CUM[or]MY TINY WILLY IS USELESS[line break]I WAS BORN TO SERVE SUPERIOR COCKS[or]THE ONLY THING BETTER THAN A COCK[line break]IS TWO COCKS INSIDE OF ME[or]CHASTITY CAGES KEEP ME FROM HAVING NAUGHTY ERECTIONS[line break]MY USELESS SISSY CUMMIES SHOULD STAY INSIDE MY TINY BALLS[in random order][roman type][line break]";
+		if the size of penis > min penis size:
+			PenisDown 1;
+			SilentlyDelicateUp 1;
+		otherwise:
+			let L be a random lubricant;
+			now L is covering the asshole;
+			now the timer of L is a random number between 300 and 600;
+		if the player is getting unlucky:
+			say "You feel your [ShortDesc of P] release another drug that makes your hips swell and your [asshole] pucker for deep breeding from [manly-penis].";
+			HipUp 1;
+			AnalSexAddictUp 1;
+			say GotUnluckyFlav;
+		passively stimulate asshole from P times 5;
+	if the module-charge of P < -50:
+		now the module-charge of P is 0;
+		say "You feel a sharp pain inside, followed by radiating warmth as your [asshole] tingles. The [ShortDesc of P] has dumped yet another load of [if the bimbo of the player < 10]drugs[otherwise][second custom style]yummy sissy juice[roman type][end if] right into your prostate. You feel your [sissy-penis] start to actively dribble precum as your prostate kicks into overdrive. Something about this process is too much for your poor [sissy-penis], and you can see it twitch and leak. The [ShortDesc of P] coats your [asshole] with lubricant, encouraging you to go find a [manly-penis] to fuck. [if the number of worn rigid actually nipple covering clothing is 0 and the player is able to use manual dexterity]You pinch your nipples as you sink deep into submissive fantisies.[end if][roman type][line break]";
+		say "[second custom style][one of]GOOD SISSIES HAVE TINY CLITTIES[line break]GOOD SISSIES STAY LOCKED AWAY[or]HEAD DOWN ASS UP[line break]THAT'S HOW SISSIES LIKE TO FUCK[or]KEEP ME LOCKED AWAY[line break]CUM IN MY MOUTH[or]I'M A PATHETIC SUBMISSIVE SLUT[line break]I NEED AN ALPHA'S FAT DICK IN MY ASSHOLE TO CUM[or]MY TINY WILLY IS USELESS[line break]I WAS BORN TO SERVE SUPERIOR COCKS[or]THE ONLY THING BETTER THAN A COCK[line break]IS TWO COCKS INSIDE OF ME[or]CHASTITY CAGES KEEP ME FROM HAVING NAUGHTY ERECTIONS[line break]MY USELESS SISSY CUMMIES SHOULD STAY INSIDE MY TINY BALLS[in random order][roman type][line break]";
+		if a random number between 1 and 3 is 1:
+			say "You feel the [ShortDesc of P] is slowly training your mind and body to be a better fuckdoll. You feel more flexible, but also more submissive![roman type][line break]";
+			SilentlyDelicateUp 1;
+			DexUp 1;
+		otherwise:
+			say "You feel the [ShortDesc of P] tighten your [asshole] so you can better squeeze [second custom style][semen][roman type] from fat [manly-penis]![roman type][line break]";
+			AssClose 1;
+		let L be a random lubricant;
+		now L is covering asshole;
+		now the timer of L is a random number between 300 and 600;
+		passively stimulate asshole from P times 1.
+
+
+
 clitoris lead is a piercing. The printed name of clitoris lead is "[TQlink of item described][item style][if the bimbo of the player > 10]clit[otherwise]clitoris[end if] lead[clothing-title-after]". The text-shortcut of clitoris lead is "cl". Understand "clit" as clitoris lead. Figure of clitoris lead is the file "Items/Accessories/Piercings/clitlead1.png".
 
 To decide which figure-name is the clothing-image of (C - a clitoris lead):

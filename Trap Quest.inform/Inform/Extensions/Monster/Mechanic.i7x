@@ -378,7 +378,7 @@ To compute xavier reward of (M - mechanic):
 		IntUp 4;
 
 This is the mechanic strips princess rule:
-	if diaper quest is 0 and (the class of the player is "princess" or the class of the player is "deepthroat princess" or the class of the player is "trained fuck princess" or the class of the player is "virgin warrior princess") and bride-consort is throne and the player is a december 2020 top donator:
+	if diaper quest is 0 and (the class of the player is "princess" or the class of the player is "deepthroat princess" or the class of the player is "trained fuck princess" or the class of the player is "virgin warrior princess") and bride-consort is throne and the player is the donator:
 		let H be a random worn headgear;
 		say "[speech style of current-monster]'At long last, release shall be mine. To dispel your magic, I need simply make you my bride...'[roman type][line break][big he of current-monster] touches your [ShortDesc of H].";
 		transform H into tiara-veil;
@@ -814,11 +814,9 @@ To say AdviceAnswer of (M - mechanic):
 		say "[speech style of M]'Do I look like I have all day? I've already got some agents in the forest, ask them.[roman type][line break]".
 
 To compute teaching of (M - mechanic):
-	if diaper quest is 0:
-		say "[speech style of M]'When girls like you get fucked too many times by guys like me, it starts to affect the way you hold yourself. Basically, if you're a [if the player is presenting as female]slut[otherwise]sissy[end if] your body language will broadcast it to everybody around you, and nobody's going to want to deal with the humiliation of knowing they got fucked by someone like you. But if you hold yourself like you have a massive dick, it'll do the opposite, [if the player is not possessing a penis]no matter how slutty you actually are[otherwise]no matter how pitiful the genuine article actually is[end if].'[roman type][line break]";
-		teach fuckskill;
-	otherwise:
-		say "[speech style of M]'Hmm, maybe in a version of this game soon I'll have something to teach you.'[roman type][line break]".
+	if diaper quest is 0, say "[speech style of M]'When [boy of the player]s like you get fucked too many times by guys like me, it starts to affect the way you hold yourself. Basically, if you're a [if the player is presenting as female]slut[otherwise]sissy[end if] your body language will broadcast it to everybody around you, and nobody's going to want to deal with the humiliation of knowing they got fucked by someone like you. But if you hold yourself like you have a massive dick, it'll do the opposite, [if the player is not possessing a penis]no matter how slutty you actually are[otherwise]no matter how pitiful the genuine article actually is[end if].'[roman type][line break]";
+	say "[speech style of M]'When [boy of the player]s like you get disciplined too many times by guys like me, it starts to affect the way you hold yourself. Basically, if you're a big baby, your body language will broadcast it to everybody around you, and nobody's going to want to deal with the humiliation of knowing they got dominated by someone like you. But if you hold yourself like you don't need diapers, it'll do the opposite, no matter how pitiful the truth actually is.'[roman type][line break]";
+	teach fuckskill.
 
 Section 3 - Drink Requesting
 
@@ -970,7 +968,7 @@ To vaginal ride dominate (M - mechanic):
 	let N be 0;
 	if R < 0, now N is a random number between 1 and 3;[The mechanic turned the tables. When does it happen?]
 	if N is 1, now player-fucking is DOMINANT-SHAMEFUL;[happens right away.]
-	check anal dominate entrance of M for J;
+	check vaginal dominate entrance of M for J;
 	unless player-fucking is DOMINANT-SHAMEFUL:
 		if N is 2, now player-fucking is DOMINANT-SHAMEFUL;[happens when the player isn't paying attention]
 		check vaginal dominate vigilance of M for J;

@@ -53,7 +53,7 @@ To trigger (Y - a haunted mirror trap):
 	now the reset-timer of Y is 250.
 
 To compute turn trap effect of (T - a haunted mirror trap):
-	if resting is 0 and mirror-triggered is 0 and wanking is 0 and player-urinating is 0 and mirror-delayed is 0 and the player is not immobile and the number of things wrangling a body part is 0:
+	if player-currently-resting is 0 and mirror-triggered is 0 and wanking is 0 and player-urinating is 0 and mirror-delayed is 0 and the player is not immobile and the number of things wrangling a body part is 0:
 		say "[bold type]The mirror in this room tries to grab your focus[one of] with some kind of demonic power[or][stopping]![roman type][line break]";
 		compute mirror.
 

@@ -34,7 +34,7 @@ To trigger (Y - a slingshot):
 	if C is not actually wearable:
 		if diaper lover > 0 and face is not actually occupied, now C is a random off-stage fetish appropriate ballgag;
 		if C is not ballgag and heart-collar is off-stage, now C is heart-collar;
-	if C is actually wearable:
+	if (C is diaper and C is actually wearable) or (C is not diaper and C is actually summonable): [we use actually wearable for diapers because the slingshot trap will only succeed if there's nothing in the way, and diapers are never blocked by being too humiliating, so it's safe to use the wearable function for diapers, but not other clothing]
 		if C is ballgag:
 			say "[bold type]You gargle in surprise as something flies into your mouth. [roman type]You pull at your new [ShortDesc of C], trying to remove it, [if C is curse-sticky]but are unsurprised to find that it won't come off[otherwise]and find that while it will come out, whenever you remove it, you can feel some of your strength magically leave you. The strength only returns when you place [NameDesc of C] back in your mouth[end if].";
 		otherwise if C is submissive collar:

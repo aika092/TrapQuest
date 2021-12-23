@@ -71,7 +71,7 @@ To pause/stop the/-- Glulx timer:
 	request repeating Glk timer event at 0 milliseconds.
 
 To request repeating Glk timer event at (T - a number) milliseconds:
-	if debugmode > 0, say "[input-style]Timer set to [T]ms intervals.[roman type][line break]";
+	if debugmode > 1, say "[input-style]Timer set to [T]ms intervals.[roman type][line break]";
 	actually request repeating Glk timer event at T milliseconds.
 
 To actually request repeating Glk timer event at (T - a number) milliseconds:

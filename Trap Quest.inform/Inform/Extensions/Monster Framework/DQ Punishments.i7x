@@ -50,11 +50,12 @@ Definition: a monster (called M) is aware that the player needs a change:
 	repeat with N running through things grabbing the player:
 		if N is not M, decide no;
 	let D be a random worn knickers;
-	if the class of the player is priestess and D is not diaper, decide yes;
-	if D is diaper-stack and D is not messed, now D is entry (number of entries in the list of stacked diapers) in the list of stacked diapers;
-	if D is currently visible knickers or D is messed knickers:
-		if the urine-soak of D + the water-soak of D > the soak tolerance of M or D is messed, decide yes;
-		if D is crotch-ripped diaper, decide yes;
+	if D is knickers:
+		if the class of the player is priestess and D is not diaper, decide yes;
+		if D is diaper-stack and D is not messed, now D is entry (number of entries in the list of stacked diapers) in the list of stacked diapers;
+		if D is currently visible or D is messed:
+			if the urine-soak of D + the water-soak of D > the soak tolerance of M or D is messed, decide yes;
+			if D is crotch-ripped diaper, decide yes;
 	decide no.
 
 Definition: a monster (called M) is scene messing triggering: [CURRENTLY UNUSED. instant messes can already occur from diaper checks but maybe we want to have it happen some other ways too]

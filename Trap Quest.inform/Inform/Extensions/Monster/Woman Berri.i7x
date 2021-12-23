@@ -1,5 +1,14 @@
 Woman Berri by Monster begins here.
 
+To construct unique buttons for (M - woman-player):
+	if the changing-station-tank-scene of M > 0 and ButtonTableFull is 0:
+		choose a blank row in the Table of Buttons;
+		now the ButtonImage entry is Figure of TakeAllButton;
+		now the ButtonCommand entry is "pull rope";
+		now the ButtonColour entry is lightModeFullGreen;
+		if the player is prone or the player is in danger, now the ButtonColour entry is lightModeFullYellow;
+		if the player is immobile, now the ButtonColour entry is lightModeFullRed.
+
 The current-name of woman-player is "Berri". The old-name of woman-player is "Berri".
 
 To say MediumDesc of (M - woman-player):
@@ -33,6 +42,8 @@ Figure of Berri Cutscene 6b is the file "NPCs/MultiFloor/berri/woman-cutscene6b.
 Figure of Berri Cutscene 7 is the file "NPCs/MultiFloor/berri/woman-cutscene7.jpg".
 Figure of Berri Cutscene 8 is the file "NPCs/MultiFloor/berri/woman-cutscene8.jpg".
 Figure of Berri Cutscene 9 is the file "NPCs/MultiFloor/berri/woman-cutscene9.jpg".
+Figure of Berri Cutscene 10a is the file "NPCs/MultiFloor/berri/woman-cutscene10a.jpg".
+Figure of Berri Cutscene 10b is the file "NPCs/MultiFloor/berri/woman-cutscene10b.jpg".
 
 To decide which figure-name is the monster-image of (M - woman-player):
 	if M is caged and M is in the location of dominatrix-cage, decide on the examine-image of dominatrix-cage;
@@ -43,6 +54,9 @@ To decide which figure-name is the monster-image of (M - woman-player):
 		otherwise:
 			if watersports fetish is 1, decide on Figure of Berri Cutscene 1c;
 			otherwise decide on Figure of Berri Cutscene 1d;
+	if the changing-station-tank-scene of woman-player > 0:
+		if diaper messing >= 6, decide on figure of berri cutscene 10b;
+		otherwise decide on figure of berri cutscene 10a;
 	if the woman-bimbo of M < 3:
 		if the ass-hook-scene of M > 0:
 			if the ass-hook-scene of M > 3, decide on Figure of Berri Cutscene 6b;
@@ -649,7 +663,7 @@ Chapter - Messy Diaper Scene
 
 woman-player has a number called messy-diaper-scene.
 
-Report going when there is a diaper pail in the location and the messy-diaper-scene of woman-player is 0 and the player is a december 2020 diaper donator and the woman-bimbo of woman-player is 5 and diaper messing >= 6:
+Report going when there is a diaper pail in the location and the messy-diaper-scene of woman-player is 0 and the woman-bimbo of woman-player is 5 and diaper messing >= 6:
 	if debugmode is 1, say "Checking if berri can appear.";
 	if woman-player is relaxed redeploy appropriate:
 		deploy woman-player with woman-status 81;
@@ -717,7 +731,7 @@ Chapter - Ass Hook Scene
 
 woman-player has a number called ass-hook-scene.
 
-Report going when the ass-hook-scene of woman-player is 0 and the player is a december 2020 diaper donator and playerRegion is Dungeon and there is an unrevealed ass hook in the location and the woman-bimbo of woman-player is 2 and the number of untriggered ass hook in the location is 0:
+Report going when the ass-hook-scene of woman-player is 0 and playerRegion is Dungeon and there is an unrevealed ass hook in the location and the woman-bimbo of woman-player is 2 and the number of untriggered ass hook in the location is 0:
 	if debugmode is 1, say "Checking if berri can appear.";
 	if woman-player is relaxed redeploy appropriate:
 		deploy woman-player with woman-status 99;
@@ -757,6 +771,7 @@ A time based rule (this is the berri ass hook rule):
 				say "Success! You manage to pull down the hook far enough that [NameDesc of woman-player] can detach [his of woman-player] panties and keep them intact.[line break][speech style of woman-player]'Thank you so much, [NameBimbo]! I don't know what I would have done without you...'[roman type][line break]";
 				FavourUp woman-player by 3;
 				now the woman-status of woman-player is 1;
+				now the ass-hook-scene of woman-player is -1;
 			otherwise:
 				say "You only manage to pull it down a couple of inches before you slip, and the hook yanks [his of woman-player] back up, renewing the wedgie.[line break][speech style of woman-player]'Ow ow ow ow! Careful!!!'[roman type][line break]";
 				FavourDown woman-player by 1;
@@ -767,6 +782,7 @@ A time based rule (this is the berri ass hook rule):
 			otherwise:
 				say "[BigNameDesc of woman-player] turns bright red at you being able to see [his of woman-player] rude bits.[line break][speech style of woman-player]'Um, thanks, [NameBimbo]! I think...'[roman type][line break]";
 				now the woman-status of woman-player is 1;
+				now the ass-hook-scene of woman-player is -1;
 		otherwise if player-numerical-response is 3:
 			say "You reach out and grab [NameDesc of woman-player][']s pistol.[line break][speech style of woman-player]'HEY!!!'[roman type][line break]";
 			let S be a random number between 1 and the strength of the player;
@@ -788,7 +804,7 @@ A time based rule (this is the berri ass hook rule):
 				FavourDown woman-player by 4;
 		otherwise:
 			now another-turn is A;
-		if the woman-status of woman-player is 99:
+		if the woman-status of woman-player is 99 or guard-arrives is true:
 			if woman-player is in the location of the player:
 				if the ass-hook-scene of woman-player is 4:
 					say "[BigNameDesc of woman-player] screams with frustration and pain as [he of woman-player] wets [himself of woman-player] through [his of woman-player] wedgie! [big his of woman-player] panties are soaked, and a big yellow puddle forms between [his of woman-player] feet.";
@@ -932,6 +948,90 @@ Report going when the woman-old-bimbo of woman-player is 5 and the woman-bimbo o
 			satisfy matron;
 		say "With a click of [NameDesc of matron][']s fingers, [NameDesc of woman-player][']s bondage unlocks. The pacifier remains, but no longer gagged. [big his of woman-player] diaper transforms, growing somehow even bigger, and gaining a childish balloon pattern. A soft pink leash trails from [his of woman-player] collar. [big he of woman-player] looks truly broken and domesticated[if woman-player is angered], but also bent on revenge. Not revenge on [NameDesc of matron], but revenge on you[end if].";
 		now the woman-old-bimbo of woman-player is 6.
+
+Chapter - Changing Station Tank
+
+Understand "rope" as woman-player when the changing-station-tank-scene of woman-player > 0.
+
+Report going when the woman-bimbo of woman-player is 5 and the changing-station-tank-scene of woman-player is 0 and the player is a december 2021 diaper donator and the player is in Hotel20 and hotel changing station is in Hotel20:
+	if debugmode is 1, say "Checking if berri can appear.";
+	if woman-player is relaxed redeploy appropriate:
+		deploy woman-player with woman-status 102;
+		now woman-player is in the location of the player;
+		now woman-player is interested;
+		say "As you arrive here you see [NameDesc of woman-player] holding the rope for the automated changing station's container lid. The transparent container is full of used diapers, and if [he of woman-player] gives the rope any slack at all, the lid will open and the diapers will tumble out of the container and onto [his of woman-player] head.[line break][speech style of woman-player]'Oh gosh [NameBimbo], please help me! I need to tie this back to the hook over there, but the lid is so heavy... if I stop pulling down on it with all my strength, it'll open up! And my arms are getting so tired! Please, quickly, help me [bold type]pull[speech style of woman-player] this thing over to the hook and tie the knot!'[roman type][line break]";
+		now the changing-station-tank-scene of woman-player is 1.
+
+A time based rule (this is the berri-changing-station-tank rule):
+	if the changing-station-tank-scene of woman-player > 0:
+		if woman-player is in the location of hotel changing station:
+			if the changing-station-tank-scene is 1:
+				if woman-player is in the location of the player, say "[BigNameDesc of woman-player] is straining.[line break][speech style of woman-player]'I seriously can't hold on for much longer...'[roman type][line break]";
+			otherwise if the changing-station-tank-scene is 2:
+				if woman-player is in the location of the player, say "[BigNameDesc of woman-player] is panicking.[line break][speech style of woman-player]'No, no no! It's gonna slip!'[roman type][line break]";
+			otherwise:
+				if woman-player is in the location of the player, say "[BigNameDesc of woman-player] loses [his of woman-player] grip on the rope, and the lid opens. Countless dirty diapers rain down over [his of woman-player] head, half-burying [him of woman-player]. [big he of woman-player] makes gagging noises as [he of woman-player] crawls out of the pile.";
+				release changing station diapers;
+				WomanSluttify;
+				now the changing-station-tank-scene of woman-player is -1;
+			increase the changing-station-tank-scene of woman-player by 1;
+		otherwise:
+			if the player is not in the location of hotel changing station, release changing station diapers; [we're trying to catch weird edge cases here, but we still can't have the tank spontaneously open if the player's there]
+			now the changing-station-tank-scene of woman-player is -60;
+	otherwise if the changing-station-tank-scene of woman-player < 0 and the changing-station-tank-scene of woman-player > -10:
+		if the player is in the location of hotel changing station and woman-player is in the location of the player, say "[BigNameDesc of woman-player] [one of]coughs in digust[or]retches[or]coughs and splutters[or]gags with nausea[cycling].[line break][speech style of woman-player]'[one of]Gross[or]Yuck[or]Eurgh[in random order]!'[roman type][line break]";
+		decrease the changing-station-tank-scene of woman-player by 1.
+
+Check pulling woman-player when the changing-station-tank-scene of woman-player > 0:
+	if the player is immobile or the player is in danger, say "You're a bit busy!" instead;
+	if the player is prone, say "You can't do that while on your knees." instead;
+	if the player is not able to manually use manual dexterity, do nothing instead;
+	if the traitor-hypno of hypno-lesson > 0:
+		say "Something inside urges you to [variable custom style]help your friend[roman type] by betraying [him of woman-player]. You just stand still and watch.";
+		decrease the traitor-hypno of hypno-lesson by 1;
+		try waiting instead;
+	reset multiple choice questions;
+	set numerical response 1 to "Try to take the weight of the rope while [NameDesc of woman-player] ties the knot";
+	set numerical response 2 to "Try to tie the knot while [NameDesc of woman-player] takes the weight";
+	set numerical response 0 to "Cancel.";
+	compute multiple choice question;
+	if player-numerical-response is 1:
+		allocate 6 seconds;
+		let R be a random number between 6 and 12;
+		if debuginfo > 0, say "[input-style]Berri betrayal check: d7+5 ([R]) | [favour of woman-player].5 Berri favour[roman type][line break]";
+		say "You grab the rope above [NameDesc of woman-player], and pull down hard. [BigNameDesc of woman-player] releases, breathing a sigh of relief. ";
+		if R > the favour of woman-player:
+			say "At first you assume [he of woman-player][']s going to go round to the other side to get in a better position to tie the knot, but instead you see that [he of woman-player] is just rapidly heading for the way out![line break][speech style of woman-player]'[if the favour of woman-player >= 10]I'm so sorry, I can't... I can't risk it. I'm so sorry[otherwise if diaper messing >= 7]Revenge is a dish best served stinky, bitch[otherwise]Revenge is a dish best served soggy, bitch[end if]!'[roman type][line break]";
+			compute mandatory room leaving of woman-player;
+			vanish woman-player;
+			now the changing-station-tank-scene of woman-player is -20;
+			say "You try to tie the rope to the hook yourself, but it's no use. As soon as you try, the rope slips and the lid flies open. ";
+			release changing station diapers on the player;
+		otherwise if the player is getting unlucky:
+			say "[big he of woman-player] takes a few attempts, but [he of woman-player] eventually manages to secure the knot back onto the hook.[line break][speech style of woman-player]'Thank you so much for helping me, [NameBimbo], I couldn't have done it without you!'[roman type][line break]";
+			FavourUp woman-player;
+			say "You finally let go of the rope. And then the knot slips loose! [BigNameDesc of woman-player] clearly hadn't done as good of a job as [he of woman-player] thought. The rope flies up and the lid flips open. ";
+			now the changing-station-tank-scene of woman-player is -1;
+			release changing station diapers on the player;
+			WomanSluttify;
+		otherwise:
+			say "[big he of woman-player] takes a few attempts, but [he of woman-player] eventually manages to secure the knot back onto the hook.[line break][speech style of woman-player]'Thank you so much for helping me, [NameBimbo], I couldn't have done it without you!'[roman type][line break]";
+			FavourUp woman-player;
+			now the changing-station-tank-scene of woman-player is -1000;
+	otherwise if player-numerical-response is 2:
+		allocate 6 seconds;
+		let D be a random number between 1 and the dexterity of the player;
+		if debuginfo > 0, say "[input-style]Knot tie check: dexterity roll d[dexterity of the player] ([D]) | 7.5 difficulty rating[roman type][line break]";
+		say "You secure the knot back onto the hook.[line break][speech style of woman-player]'Thank you so much for helping me, [NameBimbo], I couldn't have done it without you!'[roman type][line break]";
+		if D > 7:
+			FavourUp woman-player;
+			now the changing-station-tank-scene of woman-player is -1000;
+		otherwise:
+			say "[BigNameDesc of woman-player] lets go of the rope. And then the knot slips loose! You clearly hadn't done as good of a job tying that knot as you thought. The rope flies up and the lid flips open. ";
+			now the changing-station-tank-scene of woman-player is -1;
+			release changing station diapers on the player;
+			WomanSluttify;
+
 
 
 Part 5 - Protection

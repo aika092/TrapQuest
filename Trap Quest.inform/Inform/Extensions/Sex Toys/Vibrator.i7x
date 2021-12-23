@@ -53,7 +53,7 @@ Definition: purple-vibrator is purple themed: decide yes.
 To say ClothingDesc of (C - purple-vibrator):
 	say "A purple dildo [if C is cursed and the curse-ID of C is sure]made of cheap plastic. It has large ridges for maximum stimulation[otherwise]made of cheap plastic[end if][if C is worn]. Its vibrations are slowly driving you insane![otherwise].[end if]".
 
-remote-controlled-vibrator is a vibrator. remote-controlled-vibrator is unique.
+remote-controlled-vibrator is a vibrator. remote-controlled-vibrator is unique. The text-shortcut of remote-controlled-vibrator is "fvi".
 To decide which number is the stimulation of (T - remote-controlled-vibrator) on (F - a body part):
 	if current-predicament is team-girlfriends-predicament, decide on 8;
 	decide on 3.
@@ -67,6 +67,8 @@ Definition: remote-controlled-vibrator is fetish appropriate: decide no. [Stops 
 To say ClothingDesc of (C - remote-controlled-vibrator):
 	if current-predicament is team-girlfriends-predicament:
 		say "This hi-tech [if the player is possessing a penis]onahole [end if]vibrator stimulates you unless [student-name of team-predicament-partner][']s ring is touching it.";
+	otherwise if current-predicament is not team-football-predicament:
+		say "This is a modern looking [if the player is possessing a penis]onahole [end if]vibrator.";
 	otherwise if the game-state of team-football-predicament is 0:
 		if current-predicament is team-football-predicament, say "This hi-tech remote controlled [if the player is possessing a penis]onahole vibrator wrapped around your [player-penis][otherwise]vibrator[end if] vibrates more strongly the closer it is to the football. Apparently it also has a hollow section, and the loser of the game will find their [if the player is not possessing a vagina]pants[otherwise][vagina][end if] filled to the brim with cum.";
 		otherwise say "This hi-tech [if the player is possessing a penis]onahole [end if]vibrator was used in an extra credit lesson.";
@@ -88,6 +90,11 @@ To compute periodic effect of (P - remote-controlled-vibrator):
 				say "Your [ShortDesc of P] whirs away [if F is vagina]inside you[otherwise]around your [player-penis][end if]!";
 				stimulate F from P;
 		if the player is not in a predicament room, increase the toy-charge of P by 1;
+	otherwise if current-predicament is not team-football-predicament:
+		let F be vagina;
+		if the player is possessing a penis, now F is penis;
+		say "Your [ShortDesc of P] whirs away [if F is vagina]inside you[otherwise]around your [player-penis][end if]!";
+		stimulate F from P;
 	otherwise if the game-state of team-football-predicament is not 1:
 		if the toy-charge of P >= 10:
 			if the toy-charge of P is 10, say "[bold type][BigNameDesc of P] [bold type]seems to run out of battery, and stops vibrating.[roman type][line break]";

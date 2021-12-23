@@ -41,7 +41,10 @@ To say BanishDropFlav of (C - a thing) from (M - a monster):
 To compute defeat reward of (M - a monster):
 	if the player is not broken:
 		let H be the humiliation of the player;
-		dignify 1000 + (the difficulty of M * 100);
+		let D be 1000 + (the difficulty of M * 100);
+		if D > H / 10, now D is H / 10; [you can't heal more than 10% of humiliation at once.]
+		if D < 800, now D is 800; [unless humiliation is less than 8000]
+		dignify D;
 		if the humiliation of the player is 0, say "You feel very satisfied and proud of yourself[if H > 0]. In fact you feel like you respect yourself just as much as you did when you first entered the game[end if].";
 		otherwise say "[if the humiliation of the player < H]You feel proud of yourself! Some of your self-respect returns to you.[end if]".
 
@@ -136,7 +139,7 @@ Definition: yourself is penis-fuckable: [Can the player use their penis to domin
 	if there is a worn restricting research airhancer, decide no;
 	if sexual-penis-length > 0:
 		if there is a worn strapon-panties, decide yes;[most strapons ARE undisplacable pussy covering clothing.]
-		if there is a undisplacable pussy covering clothing, decide no;
+		if there is a actually unavoidable pussy covering clothing, decide no;
 		decide yes;
 	decide no.
 To say PenisFucker:
@@ -152,7 +155,7 @@ Definition: a monster is vagina-rideable:
 Definition: yourself is vagina-rideable: [Can the player use their pussy to dominate them?]
 	if diaper quest is 1, decide no;
 	if the player is not possessing a vagina, decide no;
-	if there is undisplacable pussy covering clothing, decide no;
+	if there is actually unavoidable pussy covering clothing, decide no;
 	if chastity-belt is worn, decide no;
 	if vagina is actually occupied, decide no;
 	decide yes.
@@ -165,7 +168,7 @@ Definition: a monster is ass-rideable:
 Definition: yourself is ass-rideable: [Can the player use their asshole to dominate them?]
 	if diaper quest is 1, decide no;
 	if the player is possessing a vagina, decide no;[right now, all the anal domination scenes assume the player definitely doesn't have a vagina, so this needs to be disabled for now]
-	if there is a worn undisplacable ass covering clothing, decide no;
+	if there is a worn actually unavoidable ass covering clothing, decide no;
 	if asshole is actually occupied, decide no;
 	decide yes.
 To say AssRideDesc of (M - a monster):
@@ -176,7 +179,7 @@ Definition: a monster is piss-fuckable:
 	decide no. [Can this NPC be pissed on when defeated?]
 Definition: yourself is piss-fuckable: [Can the player currently piss on someone?]
 	if watersports fetish is 0, decide no;
-	if there is worn undisplacable pee covering clothing, decide no;
+	if there is worn actually unavoidable pee covering clothing, decide no;
 	if the player is not bursting, decide no;
 	decide yes.
 To say PissFuckDesc of (M - a monster):
@@ -454,7 +457,7 @@ Check dominating:
 					say "stiffens painfully inside its bondage: so much so that you think you can have your way with [he of the noun]! Although [NameDesc of the noun] doesn't look as threatened as you'd expect.";
 					now detach-likelihood is 10;
 		otherwise:
-			if there is a undisplacable pussy covering clothing, say "You'll have to find a way to remove your [printed name of a random undisplacable pussy covering clothing] first." instead;
+			if there is a actually unavoidable pussy covering clothing, say "You'll have to find a way to remove your [printed name of a random actually unavoidable pussy covering clothing] first." instead;
 			if the noun is a-non-detacher: [#LXorDD]
 				if there is a worn chastity bond, say "You'll have to find a way to get out of your chastity cage first!" instead;
 				if there is a worn restricting research airhancer, say "Your [ShortDesc of penis] can't get hard enough to dominate [i]anyone[/i]. You'll need to deactivate your [printed name of a random research airhancer] first." instead;
@@ -463,11 +466,11 @@ Check dominating:
 				if there is a worn chastity bond, say "Ha! You're go to use your chastity cage itself to fuck [him of the noun]!";
 				if there is a worn restricting research airhancer, say "Despite your [ShortDesc of penis] nestling softly inside this blasted [printed name of a random research airhancer], you reckon you can use [i]it[/i] to show [him of the noun] who's boss!";
 	otherwise if player-fucker is vagina:
-		if there is undisplacable pussy covering clothing, say "You'll have to remove your [printed name of a random undisplacable pussy covering clothing] first." instead;
+		if there is actually unavoidable pussy covering clothing, say "You'll have to remove your [printed name of a random actually unavoidable pussy covering clothing] first." instead;
 		if chastity-belt is worn, say "You'll have to find a way to get out of your chastity first!" instead;
 		if vagina is actually occupied, say "You need to remove your [printed name of a random thing penetrating vagina] first!" instead;
 	otherwise if player-fucker is asshole:
-		if there is a worn undisplacable ass covering clothing, say "You'll have to find a way to get your [printed name of a random worn undisplacable ass covering clothing] out of the way first." instead;
+		if there is a worn actually unavoidable ass covering clothing, say "You'll have to find a way to get your [printed name of a random worn actually unavoidable ass covering clothing] out of the way first." instead;
 		if asshole is actually occupied, say "You need to remove your [printed name of a random thing penetrating asshole] first!" instead;
 	if the player is feeling submissive and the player is not a nympho, say "Wouldn't it be easier to ask [him of the noun] to dominate me? It would probably be more fun that way, too!" instead;[players with very high delicateness will be too afraid to dominate unless they have high sex obsession too]
 	repeat with M running through monsters in the location of the player:

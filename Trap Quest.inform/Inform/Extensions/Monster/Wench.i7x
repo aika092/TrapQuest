@@ -187,9 +187,6 @@ To say SummoningFlav of (M - a wench):
 		if M is horny-wench, say "You hear loud moaning coming from another part of the dungeon.";
 		otherwise say "You hear the sound of [one of]moaning[or]squelching[or]wet footsteps[purely at random] coming from another part of the dungeon.".
 
-To say PresentFriendlyAcceptanceFlav of (M - a wench):
-	say "[speech style of M]'[one of]I'm not going to refuse a request like that... thank you so much!'[or]Wow, you really are a cum addict aren't you? Well, I'm not going to stop you!'[stopping][roman type][line break]";
-
 To say DiaperReaction of (M - a wench):
 	if there is a currently visible diaper or the player is shameless:
 		if M is unfriendly:
@@ -573,21 +570,18 @@ To (M - a wench) steals (K - a knickers):
 		now the scared of M is 75.
 
 [wench corruption to QoS wench]
-to BBC brainwash (M - a wench) with (A - a submissive collar):
-	let A be a random held submissive collar;
-	let M be a random undefeated wench in the location of the player;
-	if the location of the player is not dungeon41:
-		if interracial fetish is 1 and A is a thing:
-			say "[BigFuckerDesc of M] suddenly snatches the [A] from you.[line break][speech style of M]'Haha bitch, this is mine now!'[roman type][line break]Seemingly quite pleased with [himself of M], [he of M] puts the collar on.";
-			now BBCTrainingQuest of shopkeeper is 2;
-			if bbc-training of M >= 4:
-				unseal QoS wench from M;
-			otherwise:
-				say "[BigFuckerDesc of M] looks quite smug with [his of M] new [ShortDesc of A] before a green portal suddenly opens behind [his of M], and [NameDesc of shopkeeper] walks through![line break][speech style of shopkeeper]'Wow, you really are just a greedy slut aren't you? Lucky for you, I'm in need of a 'personal attendant' who can serve my [']needs['].'[roman type][line break][BigFuckerDesc of shopkeeper] grins and gestures to [his of shopkeeper] [LongDickDesc of shopkeeper].[line break][speech style of M]'No way pig, I'll never touch your fucking di...'[roman type][line break]Before [he of M] can finish [his of M] sentence, [NameDesc of shopkeeper] effortlessly takes [NameDesc of M] into [his of shopkeeper] arms, presses [his of M] legs behind [his of M] head, and impales [NameDesc of M] on [his of shopkeeper] waiting [LongDickDesc of shopkeeper]. [BigFuckerDesc of M] looks to be in complete shock as [NameDesc of shopkeeper] pistons in and out of [his of M] [if lady fetish is 2]gripping anal ring[otherwise]dripping wet cunt[end if]. It's clearly not all bad as [he of M] starts to howl and moan like a pornstar. [BigFuckerDesc of M] suddenly seems to tense up before [his of M]'s wracked by an intense orgasm.[line break][speech style of M]'Oh fuck, oh fuck...so good... Yes yes yes fuck the shit out off me!'[roman type][line break]Strangely, you see a black spade tattoo appear under [his of M] left cheek as [he of M] orgasms yet again. This process repeats itself, as a tattoo reading [']BLACK COCK ONLY['] appears on [his of M] pubic mound. Seemingly satisfied with [NameDesc of M][']s rapidly deteriorating mental and physical state, [FuckerDesc of shopkeeper] puts the thoroughly stretched out and babbling [ShortDesc of M] down on the floor.[line break][speech style of shopkeeper]'If you want more of this dick, you know where to find me slut.'[roman type][line break][BigFuckerDesc of shopkeeper] leaves through the portal [he of M] came through and it closes behind [him of shopkeeper].[line break][speech style of M]'Wait, [daddytitle of shopkeeper]...need [BlackCock]..need your cum inside me.'[roman type][line break]Exhausted, [FuckerDesc of M] passes out on the floor.";
-				bbc-trainingUp M by 2;
-				bore M;
-				compute M sleeping 400 after sex;
-			now QoS wench is carrying A.
+To BBC brainwash (M - a wench) with (A - a submissive collar):
+	if interracial fetish is 1:
+		say "[BigFuckerDesc of M] suddenly snatches the [A] from you.[line break][speech style of M]'Haha bitch, this is mine now!'[roman type][line break]Seemingly quite pleased with [himself of M], [he of M] puts the collar on.";
+		if BBCTrainingQuest of shopkeeper is 1, now BBCTrainingQuest of shopkeeper is 2;
+		now M is carrying A;
+		if bbc-training of M >= 4:
+			unseal QoS wench from M;
+		otherwise:
+			say "[BigFuckerDesc of M] looks quite smug with [his of M] new [ShortDesc of A] before [if shopkeeper is in the location of the player][NameDesc of shopkeeper] steps up and places a hand on [his of M] shoulder.[otherwise]a green portal suddenly opens behind [his of M], and [NameDesc of shopkeeper] walks through![end if][speech style of shopkeeper]'Wow, you really are just a greedy slut aren't you? Lucky for you, I'm in need of a 'personal attendant' who can serve my [']needs['].'[roman type][line break][BigFuckerDesc of shopkeeper] grins and gestures to [his of shopkeeper] [LongDickDesc of shopkeeper].[line break][speech style of M]'No way pig, I'll never touch your fucking di...'[roman type][line break]Before [he of M] can finish [his of M] sentence, [NameDesc of shopkeeper] effortlessly takes [NameDesc of M] into [his of shopkeeper] arms, presses [his of M] legs behind [his of M] head, and impales [NameDesc of M] on [his of shopkeeper] waiting [LongDickDesc of shopkeeper]. [BigFuckerDesc of M] looks to be in complete shock as [NameDesc of shopkeeper] pistons in and out of [his of M] [if lady fetish is 2]gripping anal ring[otherwise]dripping wet cunt[end if]. It's clearly not all bad as [he of M] starts to howl and moan like a pornstar. [BigFuckerDesc of M] suddenly seems to tense up before [his of M]'s wracked by an intense orgasm.[line break][speech style of M]'Oh fuck, oh fuck...so good... Yes yes yes fuck the shit out off me!'[roman type][line break]Strangely, you see a black spade tattoo appear under [his of M] left cheek as [he of M] orgasms yet again. This process repeats itself, as a tattoo reading [']BLACK COCK ONLY['] appears on [his of M] pubic mound. Seemingly satisfied with [NameDesc of M][']s rapidly deteriorating mental and physical state, [FuckerDesc of shopkeeper] puts the thoroughly stretched out and babbling [ShortDesc of M] down on the floor.[line break][speech style of shopkeeper]'If you want more of this dick, you know where to find me slut.'[roman type][line break][if shopkeeper is not in the location of the player][BigFuckerDesc of shopkeeper] leaves through the portal [he of M] came through and it closes behind [him of shopkeeper].[end if][speech style of M]'Wait, [daddytitle of shopkeeper]...need [BlackCock]..need your cum inside me.'[roman type][line break]Exhausted, [FuckerDesc of M] passes out on the floor.";
+			bbc-trainingUp M by 2;
+			bore M;
+			compute M sleeping 400 after sex.
 
 To compute brainWashedGreeting of (M - a wench):
 	unless bbc-training of M is 0:
@@ -618,11 +612,11 @@ To decide which number is the bartering value of (T - a submissive collar) for (
 
 To compute monstermotion of (M - a wench):
 	if QoS wench is not alive and shopkeeper is alive:
-		if the bbc-training of M < 2 and M is in Dungeon41:
+		if the bbc-training of M < 2 or M is not in Dungeon41:
 			compute room leaving of M;
-		otherwise if bbc-training of M > 2 and M is in the location of the player:
+		otherwise if M is in the location of the player:
 			if M is in Dungeon41:
-				say "[speech style of M]'I'm staying right here so I can worship [daddytitle of shopkeeper]'s perfect [BlackCock]. I don't care if that makes me a slut, I need [daddytitle of shopkeeper]'s [semen] inside me right now.[roman type][line break]";
+				say "[one of][speech style of M]'I'm staying right here so I can worship [daddytitle of shopkeeper]'s perfect [BlackCock]. I don't care if that makes me a slut, I need [daddytitle of shopkeeper]'s [semen] inside me right now.[roman type][line break][or][stopping]";
 			otherwise:
 				say "[speech style of M]'Ugh I can't live without [daddytitle of shopkeeper]'s perfect [BlackCock] any more. I don't care if that makes me a slut, I need [daddytitle of shopkeeper]'s [semen] inside me right now.'[roman type][line break][BigNameDesc of M] walks off to the [the best route from location to Dungeon41], presumably to go serve beneath [his of M] [daddytitle of shopkeeper].";
 				now M is in Dungeon41;
@@ -636,8 +630,20 @@ To check seeking (N - a number) of (M - a wench):
 		check default seeking N of M.
 
 To compute (M - a wench) considering (T - a submissive collar):
-	say "[BigNameDesc of M][']s eyes are fixed to the [ShortDesc of T] in your hands.[line break][speech style of M]'Oh my god that is so cute! I saw this in the dungeon shop earlier and couldn't forget about it. The shopkeeper told me it wasn't for sale, and had to be earned or something like that...'[roman type][line break]";
-	BBC brainwash M with T.
+	if M is not interested:
+		say "[BigNameDesc of M] isn't even looking at you.";
+	otherwise if interracial fetish is 1:
+		say "[BigNameDesc of M][']s eyes are fixed to the [ShortDesc of T] in your hands.[line break][speech style of M]'Oh my god that is so cute! I saw this in the dungeon shop earlier and couldn't forget about it. The shopkeeper told me it wasn't for sale, and had to be earned or something like that...'[roman type][line break]";
+		BBC brainwash M with T;
+		compute resolution of M taking T;
+	otherwise if convincing power > 0 and (M is friendly or (convincing power + the convincability of M) >= the square root of (a random number between 1 and 15)):
+		say MonsterOfferAcceptFlav of M to T;
+		compute resolution of M taking T;
+		compute final resolution of M taking T;
+	otherwise:
+		if M is not rejecting T, make M expectant; [The player can keep offering things they haven't offered yet without the NPC immediately moving to punishment.]
+		now M is rejecting T;
+		say MonsterOfferRejectFlav of M to T.
 
 To say DragArrival of (M - a wench) to (R - Dungeon41):
 	say "[speech style of M]'Here we are!'[line break][variable custom style][one of][if the bimbo of the player < 8]Oh the shop, are we going to go shopping together?[otherwise]Why are we here I wonder?[end if][or][if the bbc addiction of the player < 4]Oh no, not sure my [asshole] is up for this![otherwise]Looks like I'm going to be sucking on [BlackCock] again![end if][stopping][roman type][line break]".
@@ -1138,7 +1144,7 @@ To say angry punishment insult of (M - a wench):
 To compute angry punishment of (M - a wench):
 	say angry punishment insult of M;
 	if M is not friendly-fucking and (M is not seduced or M is unfriendly):
-		if bondage protection is 0 and heart-collar is off-stage and heart-collar is actually summonable:
+		if bondage protection < 2 and heart-collar is off-stage and heart-collar is actually summonable:
 			summon heart-collar uncursed;
 			say "[BigNameDesc of M] makes you wear a [heart-collar]!";
 			let K be a random off-stage specific-key;
@@ -1375,7 +1381,7 @@ Section 4 - Friendly Sex
 
 To say PresentFriendlyAcceptanceFlav of (M - a wench):
 	if presented-orifice is penis, say "[BigNameDesc of M] sees your request and stares at you in surprise. [line break][speech style of M]'[one of]You're actually willing to let me be on top? [if the size of penis < 4]Wait, no, I get it... alright, shrimp dick, today is your lucky day.'[otherwise]Lucky~!'[end if][or]Sure, since you asked.'[or]Really, you'll let me? Can't say no to that, I guess...'[in random order][roman type][line break]";
-	otherwise say "[speech style of M]'[one of]Wow, you'd do that?'[or]Oh yeah! Help a girl out!'[or]Finally, nobody else ever wants to help!'[or]Now that you've asked, I feel bad about getting cum on your face, but since you made an offer...'[at random][roman type][line break]";
+	otherwise say "[speech style of M]'[one of]Wow, you'd do that?'[or]Oh yeah! Help a girl out!'[or]Finally, nobody else ever wants to help!'[or]Now that you've asked, I feel bad about getting cum on your face, but since you made an offer...'[or]I'm not going to refuse a request like that... thank you so much!'[in random order][roman type][line break]";
 	alwayscutshow figure of wench interact 2 for M.
 
 To say PresentFriendlyRejectionFlav of (M - a wench):
@@ -1828,7 +1834,7 @@ To compute unique climax of (M - QoS wench) in (F - asshole):
 To compute (M - a QoS wench) demanding erection:
 	say "[BigFuckerDesc of M] holds you down firmly as [he of M] pulls out a small tape measure.[line break][speech style of M]'All right hun let's see how you measure up. Sure would be a shame if your [sissy-penis] is too small to be of any use to anyone.'[roman type][line break]";
 	let C be a random off-stage fetish appropriate chastity cage;
-	if the size of penis < 4 and bondage protection is 0 and C is a thing and there is an off-stage specific-key:
+	if the size of penis < 4 and bondage protection < 2 and C is a thing and there is an off-stage specific-key:
 		let K be a random off-stage specific-key;
 		say "[speech style of M]'Pft well I don't need a tape measure to see what needs to be done here. I'm doing you a favour hun, having a [BlackCock] dominate you is simply the best, you just need to taste it. And you're not getting out of this cage for a long time because I'll be keeping the key nice and safe for you!'[roman type][line break]";
 		say "[BigFuckerDesc of M] grabs your [sissy-penis] and crams it into the [ShortDesc of C]!";
@@ -1844,7 +1850,7 @@ To compute (M - a QoS wench) demanding erection:
 			say "[speech style of M]'Wow you clearly enjoyed that! Soon I'll take you to [daddytitle of shopkeeper] to give you a fresh load of [semen] all over your face. See you later babe.'[roman type][line break]";
 			Bore M;
 	otherwise if the size of penis < 8 and the size of penis > min penis size:
-		say "[BigFuckerDesc of M] raises an eyebrow as your [sissy-penis] falls painfully short of the 8 inch mark.[line break][speech style of M] 'Hun, you're small but not that small... yet. Tell you what sweetie, since we all know you're destined to be a submissive slut anyway, let me help you along!'[roman type][line break][BigFuckerDesc of M] pulls out what looks to be a small tube of moisturiser from [his of M] handbag. [BigFuckerDesc of M] then rubs it all over your [sissy-penis]. It tingles plesently, but to your [horror the delicateness of the player] your [sissy-penis] starts to shrink![line break][speech style of M]'Better be careful hun, get too much smaller and I [if bondage protection is 0]will lock away that little worm forever[otherwise]will stretch out that little asshole with my big black strapon[end if]. See ya later hun.'[line break][roman type]";
+		say "[BigFuckerDesc of M] raises an eyebrow as your [sissy-penis] falls painfully short of the 8 inch mark.[line break][speech style of M] 'Hun, you're small but not that small... yet. Tell you what sweetie, since we all know you're destined to be a submissive slut anyway, let me help you along!'[roman type][line break][BigFuckerDesc of M] pulls out what looks to be a small tube of moisturiser from [his of M] handbag. [BigFuckerDesc of M] then rubs it all over your [sissy-penis]. It tingles plesently, but to your [horror the delicateness of the player] your [sissy-penis] starts to shrink![line break][speech style of M]'Better be careful hun, get too much smaller and I [if bondage protection < 2]will lock away that little worm forever[otherwise]will stretch out that little asshole with my big black strapon[end if]. See ya later hun.'[line break][roman type]";
 		penisdown 1;
 		SilentlyDelicateUp 1;
 		Bore M;
@@ -1887,7 +1893,7 @@ This is the QoS wench shares you with BBC rule:
 			otherwise say "[variable custom style][if the bimbo of the player < 8]If I could speak I could tell [him of N] it's all a big mistake!![otherwise]Who is [he of N]?[end if]";
 			say "[roman type][line break]";
 			say "[BigNameDesc of M] sneaks up behind you and pushes you to your knees in front of [NameDesc of N], and then starts to nibble on your ear[line break].";
-			if bondage protection is 0 and BBC Collar is off-stage and BBC Collar is actually summonable:
+			if bondage protection < 2 and BBC Collar is off-stage and BBC Collar is actually summonable:
 				Say "Suddenly you feel [NameDesc of M] slip something around your neck and secure it in place with the click of a lock.[line break]";
 				summon BBC Collar locked;
 			check tiara-of-spades transformation;

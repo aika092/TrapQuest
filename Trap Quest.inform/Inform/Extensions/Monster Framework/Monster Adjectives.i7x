@@ -67,6 +67,7 @@ Definition: a monster is summon appropriate:
 	decide no. [Can it be randomly selected to be summoned?]
 A monster has a number called time-alive. [How long has it been hanging around recently]
 Definition: a monster is willing to have time out: [Will it sometimes go off-stage for a while, to allow a different NPC to spawn]
+	if the class of the player is bride and bride-consort is it, decide no;
 	if it is intelligent and it is summoningRelevant, decide yes;
 	decide no.
 

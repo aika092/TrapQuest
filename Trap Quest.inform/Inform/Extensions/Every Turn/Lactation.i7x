@@ -9,7 +9,7 @@ A time based rule (this is the lactation rule):
 				if C is cursed, increase R by 1;
 			if C is maternity dress, increase R by 1;
 			if C is milking basque, increase R by 1;
-			if C is nintendolls-brand tattoo, increase R by 2;
+			if C is nintendolls-logo tattoo, increase R by 2;
 			if C is abyssal tattoo and the class of the player is cowgirl, increase R by 2;
 		if the latex-transformation of the player > 5 or there is a worn pasties, now R is 0;
 		if R > 0:

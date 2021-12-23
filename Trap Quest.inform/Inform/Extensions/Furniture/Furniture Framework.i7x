@@ -101,13 +101,13 @@ To compute furniture resting on (F - a furniture):
 
 [!<computeNormalRest>+
 
-This function represents the effects of resting. The player loses any build-up of exercise points, has their stance set to kneeling, and the resting and alert flags are both set to 1. The game will first loop the computeFatigueRefresh function until the player is completed refreshed, then loop the computeSorenessRefresh until the player is healed. If alert is set to 1 at any time, resting is interrupted and computeFurnitureAlerting is run. Otherwise, we run FurnitureRestCompletion when the player is no longer tired. In either case, we finish up by running FurnitureRestEnding, which should contain any code that MUST be run when the player "gets out of bed"
+This function represents the effects of resting. The player loses any build-up of exercise points, has their stance set to kneeling, and the resting and alert flags are both set to 1. The game will first loop the computeFatigueRefresh function until the player is completed refreshed, then loop the computeSorenessRefresh until the player is healed. If alert is set to 1 at any time, player-currently-resting is interrupted and computeFurnitureAlerting is run. Otherwise, we run FurnitureRestCompletion when the player is no longer tired. In either case, we finish up by running FurnitureRestEnding, which should contain any code that MUST be run when the player "gets out of bed"
 
 @param <Furniture>:<F> The furniture the player is going to be resting on
 
 +!]
 To compute normal rest of (F - a furniture):
-	now resting is 1;
+	now player-currently-resting is 1;
 	compute fat burning reset;
 	now the stance of the player is 1;
 	now the alert of the player is 0;
@@ -119,7 +119,7 @@ To compute normal rest of (F - a furniture):
 		compute alerting of F;
 	otherwise:
 		compute rest completion of F;
-	now resting is 0;
+	now player-currently-resting is 0;
 	compute rest ending of F.
 
 [!<computeCrappyRest>+
@@ -130,7 +130,7 @@ This function represents the effects of resting on a really uncomfortable piece 
 
 +!]
 To compute crappy rest of (F - a furniture):
-	now resting is 1;
+	now player-currently-resting is 1;
 	compute fat burning reset;
 	now the stance of the player is 1;
 	now the alert of the player is 0;
@@ -142,7 +142,7 @@ To compute crappy rest of (F - a furniture):
 		compute alerting of F;
 	otherwise:
 		compute rest completion of F;
-	now resting is 0;
+	now player-currently-resting is 0;
 	compute rest ending of F.
 
 [!<computeFurnitureNormalEffect>+
@@ -236,7 +236,7 @@ This function is called whenever a nearby monster interrupts the player's restin
 +!]
 To compute alerting of (F - a furniture):
 	say "Your rest has been interrupted!";
-	now resting is 0;
+	now player-currently-resting is 0;
 	now the alert of the player is 0.
 
 [!<computeFurnitureRestCompletion>+
@@ -248,7 +248,7 @@ This function is called when the player finishes resting without being interrupt
 +!]
 To compute rest completion of (F - a furniture):
 	say RestCompleteFlav of F;
-	now resting is 0;
+	now player-currently-resting is 0;
 	now auto is 1;
 	try standing;
 	now auto is 0.
@@ -272,12 +272,24 @@ public changing station is an automated changing station.
 [private changing station is an automated changing station.]
 hotel changing station is an automated changing station.
 Figure of automated changing station is the file "Env/MultiFloor/changingstation1.jpg".
+Figure of automated changing station tank empty is the file "Env/MultiFloor/changingstation2.jpg".
+Figure of automated changing station tank full is the file "Env/MultiFloor/changingstation3.jpg".
+Figure of automated changing station tank messy is the file "Env/MultiFloor/changingstation4.jpg".
 To decide which figure-name is the examine-image of (G - an automated changing station):
 	decide on figure of automated changing station.
+To decide which figure-name is the examine-image of (G - hotel changing station):
+	if the changing-station-tank-scene of woman-player > 0, decide on figure of automated changing station;
+	if the changing-station-tank-scene of woman-player < 0, decide on figure of automated changing station tank empty;
+	if diaper messing >= 6, decide on figure of automated changing station tank messy;
+	decide on figure of automated changing station tank full.
+
 To say ExamineDesc of (G - an automated changing station):
-	say "An adult-sized capsule about the size and shape of a shower cubicle stands on one wall here. A box of disposable diapers sits secured at the base, and a pair of wristcuffs dangles from the top - it seems that it is an automated diaper changing station, seemingly ready to change the diaper of anyone who locks themselves in it.[if the player is in a predicament room][one of][line break][variable custom style]This was placed here by whatever forces put me in this predicament, wasn't it.[roman type][line break][or][stopping][end if]".
+	say "An adult-sized capsule about the size and shape of a shower cubicle stands on one wall here. A box of disposable diapers sits secured at the base, and a pair of wristcuffs dangles from the top - it seems that it is an automated diaper changing station, seemingly ready to change the diaper of anyone who locks themselves in it.[if the player is in a predicament room][one of][line break][variable custom style]This was placed here by whatever forces put me in this predicament, wasn't it.[roman type][line break][or][stopping][end if]";
+	if G is hotel changing station, say "The [']exhaust['] of the machine is connected to a large transparent tank by a wide translucent tube. It would appear that the machine dumps excess used diapers into this container. The base of the container acts as its lid, with a hinge on one side, and a rope connected to a pulley on the ceiling and then tied to a hook on the nearby wall, [if the changing-station-tank-scene of woman-player > 0]or at least it normally is. Right now, [NameDesc of woman-player] is holding it shut with [his of woman-player] sheer strength. If [he of woman-player] releases [his of woman-player] grip even a little bit, [otherwise]holding it closed for now. One could open the lid by loosening the knot on the rope at the wall, but then [end if]all the diapers would immediately fall down, thanks to gravity.[if the changing-station-tank-scene of woman-player < 0][line break]Or at least they would, if the container wasn't currently empty.[end if]".
+
 To compute furniture resting on (G - an automated changing station):
 	allocate 6 seconds;
+	if G is hotel changing station, cutshow figure of automated changing station for G;
 	if auto is 0, say "You enter the automated changing station and close the door. You push your wrists into the cuffs above your head. ";
 	let diaperChangeAllowed be 1;
 	let K be a random worn knickers;
@@ -327,7 +339,38 @@ To compute furniture resting on (G - an automated changing station):
 					increase temporary-incontinence by 2;
 				say "[GotUnluckyFlav][line break]At least the arms seem to be finished with their fun for now. The claws reach down for a clean diaper ";
 			say "and before you know it you are wearing a dry [MediumDesc of D]! The wristcuffs release you and the door opens.";
+			force clothing-focus redraw;
 			if K is diaper, DiaperAddictUp 1.
 
+Check pulling hotel changing station:
+	if the changing-station-tank-scene of woman-player > 0, try pulling woman-player instead;
+	if the changing-station-tank-scene of woman-player < 0, say "It's already empty." instead;
+	if the player is immobile or the player is in danger, say "You're a bit busy!" instead;
+	if the player is prone, say "You can't do that while on your knees." instead;
+	say "Are you sure you want to loosen the rope and open the container?";
+	if the player is consenting:
+		allocate 6 seconds;
+		release changing station diapers on the player;
+		now the changing-station-tank-scene of woman-player is -10000;
+		do nothing instead.
+
+To release changing station diapers:
+	let soiled-diapers-saved be 0;
+	repeat with SD running through off-stage soiled-diapers:
+		if soiled-diapers-saved < 2:
+			increase soiled-diapers-saved by 1;
+		otherwise:
+			now SD is in the location of hotel changing station;
+			now the diaper-origin of SD is "disposable diaper".
+
+To release changing station diapers on the player:
+	release changing station diapers;
+	if diaper messing is 6:
+		say "A cascade of foul, stinky, messy diapers falls to the ground right beside you.[if the diaper addiction of the player < 12][variable custom style]Gross![roman type][line break][end if]";
+		DiaperAddictUp 1;
+	otherwise:
+		say "You are half-buried in a cascade of [if diaper messing > 6]foul, stinky, messy[otherwise]soggy used[end if] diapers.[if the diaper addiction of the player < 14][variable custom style]EEK! GROSS!!![roman type][line break][end if]";
+		DelicateUp 1;
+		DiaperAddictUp 1.
 
 Furniture Framework ends here.

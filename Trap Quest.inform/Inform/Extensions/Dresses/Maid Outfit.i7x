@@ -28,6 +28,7 @@ Figure of Maid Outfit 10 is the file "Items/Clothes/Upper/Special/Maid/maid10.pn
 Figure of Maid Outfit 11 is the file "Items/Clothes/Upper/Special/Maid/maid11.png".
 Figure of Maid Outfit 12 is the file "Items/Clothes/Upper/Special/Maid/maid12.png".
 Figure of Maid Outfit 13 is the file "Items/Clothes/Upper/Special/Maid/maid13.png".
+Figure of Maid Outfit 14 is the file "Items/Clothes/Upper/Special/Maid/maid14.png".
 
 To decide which number is the strength-influence of (C - a maid outfit):
 	let S be 1;
@@ -365,5 +366,28 @@ Definition: milkmaid-outfit is cowbelled: decide yes.
 Definition: milkmaid-outfit is class-relevant:
 	if the class of the player is maid or the class of the player is cowgirl, decide yes;
 	decide no.
+
+
+Part 14 - Bunny Maid Outfit
+
+bunny-maid-outfit is a maid outfit. bunny-maid-outfit is very low cut. bunny-maid-outfit is totally-exclusive. bunny-maid-outfit is pvc. bunny-maid-outfit is unskirted. bunny-maid-outfit is crotch-intact. The printed name of bunny-maid-outfit is "[clothing-title-before]bunny maid outfit[clothing-title-after]". Understand "bunny" as bunny-maid-outfit. The text-shortcut of bunny-maid-outfit is "bnmo".
+
+To decide which figure-name is clothing-image of (C - bunny-maid-outfit):
+	decide on figure of maid outfit 14.
+
+To say ClothingDesc of (M - bunny-maid-outfit):
+	say "This pink plastic outfit is really just a micro swimsuit with a small frilly, shiny apron at the belly.".
+
+To decide which number is the initial outrage of (C - bunny-maid-outfit):
+	decide on 6.
+Definition: bunny-maid-outfit is pink themed: decide yes.
+Definition: bunny-maid-outfit is heart themed: decide yes.
+Definition: bunny-maid-outfit is class-relevant:
+	if the class of the player is maid or the class of the player is bunny or the class of the player is silicone queen, decide yes;
+	decide no.
+To decide which number is the crotch-tightness of (C - bunny-maid-outfit):
+	decide on 3.
+To decide which number is the penis-capacity of (C - bunny-maid-outfit):
+	decide on 1.
 
 Maid Outfit ends here.

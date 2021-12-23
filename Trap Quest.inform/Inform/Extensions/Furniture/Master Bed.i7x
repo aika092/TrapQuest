@@ -80,7 +80,7 @@ To compute chain rest of (F - a master bed):
 	now F is not grabbing the player.
 
 To compute normal rest of (F - a master bed):
-	now resting is 1;
+	now player-currently-resting is 1;
 	compute fat burning reset;
 	now the stance of the player is 1;
 	now the alert of the player is 0;
@@ -92,7 +92,7 @@ To compute normal rest of (F - a master bed):
 		compute alerting of F;
 	otherwise:
 		compute rest completion of F;
-	now resting is 0;
+	now player-currently-resting is 0;
 	compute rest ending of F.
 
 To say RestingDesc of (F - a master bed):
@@ -137,7 +137,7 @@ To compute rest completion of (F - a master bed):
 	otherwise:
 		if the bimbo of the player < 11, say "[first custom style]I feel so much better![roman type][line break]";
 		otherwise say "[second custom style]I'm full of energy again. Yum![roman type][line break]";
-	now resting is 0;
+	now player-currently-resting is 0;
 	now auto is 1;
 	try standing;
 	now auto is 0.

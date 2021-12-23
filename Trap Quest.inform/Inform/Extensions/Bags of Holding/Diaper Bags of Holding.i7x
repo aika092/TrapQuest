@@ -6,7 +6,7 @@ Definition: a diaper bag of holding is pink themed: decide yes.
 Definition: a diaper bag of holding is baby themed: decide yes.
 
 To decide which number is the initial cringe of (C - a diaper bag of holding):
-	decide on 8.
+	decide on 5.
 
 To decide which object is the potential-upgrade-target of (C - a diaper bag of holding):
 	if the transform-attempts of C < a random number between 0 and unlucky, decide on nothing;

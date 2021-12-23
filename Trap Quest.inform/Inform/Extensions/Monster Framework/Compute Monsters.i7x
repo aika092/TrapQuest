@@ -121,7 +121,9 @@ To compute action (N - a number) of (M - a monster):
 						check aggression change of M; [Is this NPC aggressive this turn, when they weren't at the start of the turn?]
 				otherwise:
 					if playerRegion is not school and M is threatening and M is regional, progress quest of nice-quest;
-	otherwise if M is not distracted and M is not caged and M is not guarding and (M is undefeated or M is not motionless-when-defeated):
+	otherwise if M is guarding:
+		compute guarding action of M;
+	otherwise if M is not distracted and M is not caged and (M is undefeated or M is not motionless-when-defeated):
 		if (the boredom of M is 0 and M is unleashed and M is location-attracted) or M is messy, check seeking N of M;
 		otherwise check motion of M;
 	if M is submission-assisting:[TODO: handle problem where assisters randomly lose interest]
@@ -143,7 +145,7 @@ To check chase boredom of (M - a monster):
 
 To check default chase boredom of (M - a monster):
 	let D be 15; [Every turn the monster (after seeking) is not in the location of the player, there's a 1 in 15 chance of them getting bored.]
-	if catbell is worn, increase D by 30;
+	if there is worn belled clothing, increase D by 30;
 	if M is musky and the player is pheromonal, increase D by 15;[beast monsters follow you longer]
 	if M is not in the location of the player and (M is guarding or M is caged or a random number from 1 to D is 1), compute chase boredom of M.
 

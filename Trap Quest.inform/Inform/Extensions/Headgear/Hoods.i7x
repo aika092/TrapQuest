@@ -47,10 +47,13 @@ Definition: a hood is condom pinnable: decide yes.
 
 Part - Black Hood
 
-black hood is a hood. black hood is dexterity-influencing. black hood is roleplay.
+black hood is a hood. black hood is dexterity-influencing.
 
 The printed name of black hood is "[clothing-title-before]black latex hood[clothing-title-after]". The text-shortcut of black hood is "blh".
 
+Definition: black hood is roleplay:
+	if diaper quest is 0, decide yes;
+	decide no.
 Definition: black hood is product: decide yes.
 Definition: black hood is black themed: decide yes.
 
@@ -282,7 +285,7 @@ To uniquely destroy (C - WC hood):
 
 Part - Clown Mask
 
-clown mask is a hood. clown mask is not roleplay. The printed name of clown mask is "[clothing-title-before]white latex clown mask[clothing-title-after]". The text-shortcut of clown mask is "lcm". Understand "white" as clown mask.
+clown mask is a hood. The printed name of clown mask is "[clothing-title-before]white latex clown mask[clothing-title-after]". The text-shortcut of clown mask is "lcm". Understand "white" as clown mask.
 
 A diaper quest fix rule:
 	now clown mask is in the location of podium.
@@ -365,7 +368,7 @@ To compute persistent reward of (Q - clown-quest) on (C - a clothing):
 
 Part - Trainee Hood
 
-trainee hood is a hood. trainee hood has a number called training-progress. The training-progress of trainee hood is 0. trainee hood can be magnetised. trainee hood is magnetised. trainee hood is not roleplay. trainee hood has a number called charge.
+trainee hood is a hood. trainee hood has a number called training-progress. The training-progress of trainee hood is 0. trainee hood can be magnetised. trainee hood is magnetised. trainee hood has a number called charge.
 
 The printed name of trainee hood is "[TQlink of item described][item style]trainee hood[clothing-title-after]". The text-shortcut of trainee hood is "th".
 

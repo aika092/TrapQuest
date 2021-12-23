@@ -3,7 +3,7 @@ Baby Diaper Bags of Holding by Bags of Holding begins here.
 A baby diaper bag of holding is a kind of bag of holding.
 
 To decide which number is the initial cringe of (C - a baby diaper bag of holding):
-	decide on 10.
+	decide on 6.
 
 Definition: a baby diaper bag of holding is transformation-protected: decide yes.
 Definition: a baby diaper bag of holding is pink themed: decide yes.

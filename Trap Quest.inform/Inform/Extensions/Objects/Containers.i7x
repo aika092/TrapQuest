@@ -280,8 +280,10 @@ REQUIRES COMMENTING
 @!]
 A treasure chest is a kind of container. A treasure chest is openable. A treasure chest is closed. A treasure chest is not portable. The printed name of a treasure chest is "[TQlink of item described]treasure chest[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of treasure chest is "ch".
 Figure of treasure chest is the file "Env/MultiFloor/treasurechest1.jpg".
+Figure of princess treasure chest is the file "Env/MultiFloor/treasurechest2.jpg".
 
 To decide which figure-name is the examine-image of (C - a treasure chest):
+	if C is in Dungeon12, decide on figure of princess treasure chest;
 	decide on figure of treasure chest.
 
 To say ExamineDesc of (C - a treasure chest):

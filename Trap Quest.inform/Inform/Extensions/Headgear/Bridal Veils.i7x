@@ -4,7 +4,7 @@ A bridal veil is a kind of headgear. A bridal veil is usually silk. A bridal vei
 
 Definition: a bridal veil is white themed: decide yes.
 Definition: a bridal veil is roleplay:
-	if the player is a december 2020 top donator, decide yes;
+	if the player is the donator, decide yes;
 	decide no.
 
 To say ShortDesc of (H - a bridal veil):

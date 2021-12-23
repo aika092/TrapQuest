@@ -8,7 +8,7 @@ To decide which figure-name is the examine-image of (C - a royal bed):
 To say ExamineDesc of (C - a royal bed):
 	say "A large pink four poster bed with pink drapes, fluffy pink pillows, and a luxurious pink duvet. [if diaper lover >= 1]On closer inspection, you realise that all the sheets are made of thin waterproof latex.[one of][line break][variable custom style]Is the person that sleeps here a bed-wetter?[roman type][line break][or][stopping][otherwise if the body soreness of the player is 0]It looks like an injured person could have a nice rest here.[otherwise]You get the feeling having a rest here would be great for your health![end if]".
 
-Figure of royal bed is the file "Env/Dungeon/bed1.png".
+Figure of royal bed is the file "Env/Dungeon/bed1.jpg".
 
 Check sleeping:
 	if there is furniture in the location of the player:

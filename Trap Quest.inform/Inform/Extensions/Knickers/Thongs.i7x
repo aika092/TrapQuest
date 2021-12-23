@@ -70,6 +70,9 @@ To decide which figure-name is clothing-image of (C - black-lace-thong):
 To decide which figure-name is clothing-image of (C - heart-strap-thong):
 	decide on figure of thong 16.
 
+To decide which figure-name is clothing-image of (C - spades-strap-thong):
+	decide on figure of thong 17.
+
 white-thong is a thong. white-thong is sheer-when-wet. The text-shortcut of white-thong is "wth".
 To say selfexamineuniquetitle of (G - white-thong):
 	say "white 'OOPS' thong".

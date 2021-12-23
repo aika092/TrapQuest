@@ -318,7 +318,7 @@ This is the ejaculation capture rule:
 		DoseUp collecting by A / 3;
 		now collecting is player-origin;
 		if a random number between 1 and 5 is 1:
-			if bondage protection is 0 and the player is not immobile and collecting is waitress vessel:
+			if bondage protection < 2 and the player is not immobile and collecting is waitress vessel:
 				compute service spill punishment;
 			otherwise if there is a worn tattoo and drinkme tattoo is not worn:
 				summon drinkme tattoo;
@@ -361,19 +361,22 @@ To compute ejaculation:
 
 This is the penis softens after ejaculation rule:
 	if penis is penis-erect:
-		let P be a random bottom level pee protection clothing worn by the player;
-		if there is a live thing penetrating penis:[we let the flavour handle that, since there's a chance we might not want the player going soft yet. ]
-			do nothing;
-		otherwise:
-			[#LXorDD Cock rings give a 2/3 chance of staying erect]
-			if there is a worn portal-cock-ring and (a random number between 1 and 3 > 1):
-				say cock ring effect of portal-cock-ring;
-			otherwise if P is clothing and penis is exposed:
-				say "Your [mystical ShortDesc of penis] softens enough to slip back into your [ShortDesc of P].";
-				now penis is not penis-erect;
+		if the player is possessing a penis:
+			let P be a random bottom level pee protection clothing worn by the player;
+			if there is a live thing penetrating penis:[we let the flavour handle that, since there's a chance we might not want the player going soft yet. ]
+				do nothing;
 			otherwise:
-				say "Your [mystical ShortDesc of penis] slowly softens.";
-				now penis is not penis-erect.
+				[#LXorDD Cock rings give a 2/3 chance of staying erect]
+				if there is a worn portal-cock-ring and (a random number between 1 and 3 > 1):
+					say cock ring effect of portal-cock-ring;
+				otherwise if P is clothing and penis is exposed:
+					say "Your [mystical ShortDesc of penis] softens enough to slip back into your [ShortDesc of P].";
+					now penis is not penis-erect;
+				otherwise:
+					say "Your [mystical ShortDesc of penis] slowly softens.";
+					now penis is not penis-erect;
+		otherwise:
+			now penis is not penis-erect.
 The penis softens after ejaculation rule is listed last in the orgasm resolution rules.
 
 This is the orgasm stops masturbation resolution rule:

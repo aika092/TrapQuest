@@ -118,7 +118,7 @@ To say FullExamineDesc of (C - a thing):
 	say ImageDesc of C;
 	say ExamineDesc of C;
 	say ThemeDesc of C;
-	if C is carried and C is not-in-bag and (the outrage of C > 0 or (diaper quest is 1 and the cringe of C > 0)), say HeldOutrageDesc of C;
+	if C is currently-not-in-bag and (the outrage of C > 0 or (diaper quest is 1 and the cringe of C > 0)), say HeldOutrageDesc of C;
 	if C is worn wearthing, say InfluenceDesc of C;
 	say ExtraDesc of C.
 

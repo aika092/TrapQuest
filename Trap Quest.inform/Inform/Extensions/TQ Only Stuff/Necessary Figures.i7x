@@ -383,7 +383,11 @@ Figure of enema tag 3 is the file "Special/Cutscene/cutscene-enema-tag-3a.jpg".
 Figure of enema tag 3 finish line is the file "Special/Cutscene/cutscene-enema-tag-3c.jpg".
 
 Figure of enslaved angela is the file "NPCs/School/Teacher/teacher2b.png".
-Figure of enslaved headmistress is the file "NPCs/School/headmistress2.png".
+Figure of enslaved headmistress unjizzed is the file "NPCs/School/headmistress2a.png".
+Figure of enslaved headmistress jizzed is the file "NPCs/School/headmistress2b.png".
+To decide which figure-name is Figure of Enslaved Headmistress:
+	if the teaseTimer of headmistress > 0, decide on figure of enslaved headmistress jizzed;
+	decide on figure of enslaved headmistress unjizzed.
 Figure of enslaved nurse is the file "NPCs/School/nurse2.png".
 Figure of enslaved receptionist is the file "NPCs/School/receptionist2.png".
 Figure of enslaved serenity is the file "NPCs/School/Teacher/teacher1b.png".
@@ -503,6 +507,35 @@ Figure of Throne Cutscene 3 is the file "Special/Cutscene/cutscene-throne3.png".
 Figure of Throne Cutscene 4 is the file "Special/Cutscene/cutscene-throne4.png".
 Figure of Throne Cutscene 5 is the file "Special/Cutscene/cutscene-throne5.png".
 Figure of Throne Cutscene 6 is the file "Special/Cutscene/cutscene-throne6.png".
+
+Figure of Train Predicament Cutscene is the file "Special/Train/profile1.jpg".
+Figure of Train Predicament Player is the file "Special/Train/train__0002_Figure-1.png".
+
+Figure of Train Predicament Ping Pong 0 is the file "Special/Train/train__0016_Ping-Pong.png".
+Figure of Train Predicament Ping Pong 1 is the file "Special/Train/train__0027_Ping-Pong-1.png".
+Figure of Train Predicament Ping Pong 2 is the file "Special/Train/train__0028_Ping-Pong-2.png".
+Figure of Train Predicament Ping Pong 3 is the file "Special/Train/train__0029_Ping-Pong-3.png".
+Figure of Train Predicament Ping Pong 4 is the file "Special/Train/train__0030_Ping-Pong-4.png".
+Figure of Train Predicament Ping Pong 5 is the file "Special/Train/train__0031_Ping-Pong-5.png".
+Figure of Train Predicament Ping Pong 6 is the file "Special/Train/train__0032_Ping-Pong-6.png".
+Figure of Train Predicament Ping Pong 7 is the file "Special/Train/train__0033_Ping-Pong-7.png".
+To decide which figure-name is Figure of Train Predicament Ping Pong:
+	if train-ping-pong-balls of train-predicament >= 7:
+		decide on Figure of Train Predicament Ping Pong 0;
+	otherwise if train-ping-pong-balls of train-predicament is 6:
+		decide on Figure of Train Predicament Ping Pong 1;
+	otherwise if train-ping-pong-balls of train-predicament is 5:
+		decide on Figure of Train Predicament Ping Pong 2;
+	otherwise if train-ping-pong-balls of train-predicament is 4:
+		decide on Figure of Train Predicament Ping Pong 3;
+	otherwise if train-ping-pong-balls of train-predicament is 3:
+		decide on Figure of Train Predicament Ping Pong 4;
+	otherwise if train-ping-pong-balls of train-predicament is 2:
+		decide on Figure of Train Predicament Ping Pong 5;
+	otherwise if train-ping-pong-balls of train-predicament is 1:
+		decide on Figure of Train Predicament Ping Pong 6;
+	otherwise:
+		decide on Figure of Train Predicament Ping Pong 7.
 
 Figure of urinal is the file "Env/MultiFloor/urinal1.png".
 To decide which figure-name is the examine-image of (T - urinal):
@@ -792,10 +825,6 @@ To decide which figure-name is the examine-image of (T - measurement tattoo):
 Figure of my-vagina tattoo is the file "Items/Tats/tattoo88.jpg".
 To decide which figure-name is the examine-image of (T - my-vagina tattoo):
 	decide on figure of my-vagina tattoo.
-
-Figure of nintendolls-brand tattoo is the file "Items/Tats/tattoo135.jpg".
-To decide which figure-name is the examine-image of (T - nintendolls-brand tattoo):
-	decide on figure of nintendolls-brand tattoo.
 
 Figure of no-panties tattoo is the file "Items/Tats/tattoo10.jpg".
 To decide which figure-name is the examine-image of (T - no-panties tattoo):

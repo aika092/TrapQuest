@@ -215,4 +215,8 @@ To say ClothingDesc of (C - candy cane boots):
 To say UniqueShortDesc of (C - candy cane boots):
 	say "candy cane boots".
 
+To compute class set up of (C - candy cane boots):
+	now the raw-magic-modifier of C is 1;
+	now C is charisma-influencing.
+
 Baby Booties ends here.

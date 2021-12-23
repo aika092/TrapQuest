@@ -305,7 +305,7 @@ To compute diaper change of (M - a monster):
 				dislodge current-diaper;
 				if current-diaper is diaper, DiaperAddictUp 1;
 				if current-diaper is not diaper-stack, rule succeeds; [we remove diaper stack and put on new diaper in same turn to avoid loads of glitches]
-		otherwise if old-diaper is diaper and M is diaper change during cummies rewarding and the player is able to orgasm so soon: [player was wearing a diaper, what a good girl! she gets cummies]
+		otherwise if old-diaper is diaper and M is diaper change during cummies rewarding and the player is able to orgasm so soon and the number of worn chastity bond is 0: [player was wearing a diaper, what a good girl! she gets cummies]
 			compute diaper change during cummies reward of M;
 			rule succeeds;
 		if new-diaper is nothing: [If we just did a double diaper then we skip all this]
@@ -365,7 +365,7 @@ To compute diaper change of (M - a monster):
 				if new-diaper is cursed and (strongCurses is 1 or the quest of new-diaper is no-clothing-quest), compute new quest of new-diaper;
 			fully clean new-diaper;
 			if M is diaper disciplining, now the diaper-duration of M is the diaper punishment length of M;
-		if old-diaper is diaper and M is diaper change complete cummies rewarding and the player is able to orgasm so soon:
+		if old-diaper is diaper and M is diaper change complete cummies rewarding and the player is able to orgasm so soon and the number of worn chastity bond is 0:
 			compute diaper change complete cummies reward of M;
 		repeat with C running through temporarily-removed diaper covers carried by M: [diaper covers need to go on first]
 			if C is actually summonable:

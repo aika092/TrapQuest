@@ -135,6 +135,13 @@ Figure of Teacher Hannah is the file "NPCs/School/Teacher/teacher5a.png".
 Figure of throne is the file "Env/Dungeon/throne1b.jpg".
 Figure of transformed throne is the file "Env/Dungeon/throne2b.jpg".
 
+Figure of Train Predicament Cutscene is the file "Special/Train/profile2.jpg".
+Figure of Train Predicament Player White is the file "Special/Train/train__0003_Figure-Dip.png".
+Figure of Train Predicament Player Green is the file "Special/Train/train__0026_Figure-Dip-2.png".
+To decide which figure-name is Figure of Train Predicament Player:
+	if plain-largish-diaper is messed or plain-largish-diaper is dry, decide on Figure of Train Predicament Player Green;
+	otherwise decide on Figure of Train Predicament Player White.
+
 Figure of urinal is the file "Env/MultiFloor/urinal2.png".
 Figure of Berri Wrestler Urinal is the file "Env/MultiFloor/urinal3a.jpg".
 Figure of Berri Urinal is the file "Env/MultiFloor/urinal3b.jpg".

@@ -67,7 +67,7 @@ Definition: a red evening dress is red themed: decide yes.
 
 Part 2 - Pink Evening Dress
 
-A pink evening dress is a kind of evening dress. There is 1 pink evening dress. A pink evening dress is usually low cut. The text-shortcut of pink evening dress is "pev".
+A pink evening dress is a kind of evening dress. There is 1 pink evening dress. A pink evening dress is usually low cut. A pink evening dress is optional-top-displacable. The text-shortcut of pink evening dress is "pev".
 
 The printed name of pink evening dress is usually "[clothing-title-before]pink evening dress[clothing-title-after]".
 
@@ -76,14 +76,6 @@ To decide which figure-name is clothing-image of (C - a pink evening dress):
 
 To say ClothingDesc of (C - a pink evening dress):
 	say "This tight pink and black evening dress hugs your curves and it restricts your movement with its tight hobble skirt section around your legs. It manages to remain extremely provocative by leaving the sides of your hips [if the largeness of breasts > 5]and a large amount of your cleavage [end if]uncovered.".
-
-Definition: a pink evening dress is optional-top-displacable:
-	if the largeness of breasts > 7, decide yes;
-	decide no.
-
-Definition: a pink evening dress is top-displacable:
-	if it is not optional-top-displacable, decide yes;
-	decide no.
 
 To say spawning flavour of (C - a pink evening dress):
 	say "[bold type]A pink evening dress appears on you! You immediately feel its long hobble skirt restrict your walking![roman type][line break]".

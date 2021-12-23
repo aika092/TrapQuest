@@ -223,12 +223,10 @@ Definition: a clothing is actually breast covering:
 Definition: a clothing is breast hiding: decide no. [Does it somehow completely hide the fact that the player has breasts? Probably with a portal or something like that]
 Clothing can be top-placed or top-displaced. Clothing is usually top-placed.[Displaced but for the chest.]
 Clothing can be top-displacable, optional-top-displacable, or not-top-displacable (this is the top-displacability property). Clothing is usually not-top-displacable.[optional-top-displacable means it can be displaced, but it's not necessary.]
-Definition: a clothing is not-top-displacable:
-	if it is fully exposing or it is chestless or it is rigid or it is top-ripped or it is corset, decide yes;
-	decide no.
 Definition: a clothing (called C) is actually top-displacable rather than actually not-top-displacable:
 	if C is not worn or C is glued, decide no;
 	if C is top-displaced or C is not-top-displacable, decide no;
+	if C is fully exposing or C is chestless or C is rigid or C is top-ripped or C is corset, decide no;
 	repeat with D running through worn top level breasts protection clothing:
 		if the top-layer of D > the top-layer of C, decide no;
 	decide yes.
@@ -271,15 +269,19 @@ To decide which number is the crotch-tightness of (C - a knickers):
 	if C is rigid or C is denim, decide on 1;
 	decide on 3.
 Definition: a clothing is at least slightly cameltoe creating:
+	if it is vagina plugging, decide no;
 	if the crotch-tightness of it + the labia plumpness of vagina >= 4, decide yes;
 	decide no.
 Definition: a clothing is cameltoe creating:
+	if it is vagina plugging, decide no;
 	if the crotch-tightness of it + the labia plumpness of vagina >= 5, decide yes;
 	decide no.
 Definition: a clothing is always cameltoe creating:
+	if it is vagina plugging, decide no;
 	if the crotch-tightness of it >= 5, decide yes;
 	decide no.
 Definition: a clothing is potentially cameltoe blocking:
+	if it is vagina plugging, decide yes;
 	if it is actually dense potentially pussy covering clothing and it is not at least slightly cameltoe creating, decide yes;
 	if it is actually dense skirt-covering-crotch clothing, decide yes;
 	decide no.
@@ -398,6 +400,7 @@ To decide which number is the stealth-influence of (C - a clothing):
 	if C is nudism-disabling and C is actually dense, decrease N by 1;
 	if C is gem themed, decrease N by 1;
 	if C is bsounding, decrease N by 6;
+	if C is messed knickers, decrease N by 5;
 	decide on N.
 Definition: a clothing is stealthy:
 	if the stealth-influence of it > 0, decide yes;
@@ -471,6 +474,8 @@ To say DQNipSlipSeenFlav of (M - a monster):
 An all time based rule (this is the malfunction checking rule):
 	if saved-flat-intelligence > a random number between 1 and 350: [Do this check first as it is less computationally expensive]
 		if another-turn is 0 and the player is not immobile and the player is not in danger:
-			if the player is top-wardrobe-malfunctioning, say NipSlipFlav.
+			if the player is top-wardrobe-malfunctioning:
+				say NipSlipFlav;
+				now latest-top-malfunction is time-earnings.
 
 Clothing Adjectives ends here.

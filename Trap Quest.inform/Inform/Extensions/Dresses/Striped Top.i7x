@@ -18,11 +18,13 @@ To say ClothingDesc of (C - a striped top):
 To say ShortDesc of (C - a striped top):
 	say "striped top".
 
-Definition: a striped top (called C) is spikey:
+To compute periodic effect of (C - a striped top):
 	if total-wasps > 100:
-		decide yes;
+		now C is spikey;
 	otherwise:
-		decide no.
+		now C is not spikey.
+To compute school periodic effect of (C - a striped top):
+	compute periodic effect of C.
 
 Definition: a striped top is class-transformation-protected:
 	if the class of the player is broodmother, decide yes;

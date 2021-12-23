@@ -150,7 +150,7 @@ Part 1 - Misc Flavour
 
 To say SummoningFlav of (M - an aeromancer):
 	if M is in the dungeon:
-		say "[if M is in the location of the player]A space opens up in the centre of the circle, and a surprisingly clothed [man of M] flies through riding on a gust of wind.[line break][speech style of M]Looks like I gust about escaped![roman type][line break][big he of M] chuckles at [his of M] own terrible pun as the portal closes behind [him of M].[otherwise]You hear a [man of M] chuckling at [his of M] own terrible puns.[end if]";
+		say "[if M is in the location of the player]A space opens up in the centre of the circle, and a surprisingly clothed [man of M] flies through riding on a gust of wind.[line break][speech style of M]'Looks like I gust about escaped!'[roman type][line break][big he of M] chuckles at [his of M] own terrible pun as the portal closes behind [him of M].[otherwise]You hear a [man of M] chuckling at [his of M] own terrible puns.[end if]";
 	otherwise:
 		say "[if M is in the location of the player]The wind kicks up suddenly, howling fiercely as a surprisingly clothed [man of M] flies through the stone opening between the statue's legs.[line break][speech style of M]'With the right wind in my sails, there's nothing I can't blow!'[roman type][line break][big he of M] lands on [his of M] feet, chuckling at [his of M] own terrible pun.[otherwise]You hear a [man of M] chuckling at [his of M] own terrible puns.[end if]".
 

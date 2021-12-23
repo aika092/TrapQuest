@@ -128,7 +128,6 @@ To say ClothingDesc of (C - bat-pattern-corset):
 
 slutty-bat-corset is a bat corset. slutty-bat-corset is ridiculously low cut. slutty-bat-corset is top-exclusive. The text-shortcut of slutty-bat-corset is "ncbc". slutty-bat-corset is normally-partially-nipple-covering. slutty-bat-corset is optional-top-displacable.
 Definition: slutty-bat-corset is grey themed: decide yes.
-Definition: slutty-bat-corset is not-top-displacable: decide no.
 
 To decide which number is the initial outrage of (C - slutty-bat-corset):
 	decide on 6.
@@ -356,7 +355,7 @@ To say ShortDesc of (C - vinyl corset):
 To say MediumDesc of (C - vinyl corset):
 	say "vinyl corset".
 To say ClothingDesc of (C - vinyl corset):
-	say "[if the outrage of C is too humiliating]An outrageous[otherwise]A[line break][second custom style]gorgeous[roman type][line break][end if] black vinyl fetish underbust corset that clings tightly to the flesh to show off the wearer's curves.".
+	say "[if the outrage of C is too humiliating]An outrageous[otherwise]A [second custom style]gorgeous[roman type][end if] black vinyl fetish underbust corset that clings tightly to the flesh to show off the wearer's curves.".
 
 Definition: vinyl corset is black themed: decide yes.
 

@@ -237,9 +237,9 @@ To AnalSexAddictUp (X - a number):
 		say "Your [printed name of S] glows brightly and slowly disintegrates.[line break]";
 		only destroy S;
 		decrease X by 3;
-	let S be the calculated anal sex addiction of the player;
+	let S be the raw anal sex addiction of the player;
 	SilentlyAnalSexAddictUp X;
-	now S is the calculated anal sex addiction of the player - S;
+	now S is the raw anal sex addiction of the player - S;
 	if S > 0, say "You feel [if S > 2]much [otherwise if S is 2]significantly [end if]more [if the anal sex addiction of the player > 6]desperate for[otherwise]interested in[end if] anal sex.".
 
 To SilentlyAnalSexAddictUp (X - a number):
@@ -248,9 +248,9 @@ To SilentlyAnalSexAddictUp (X - a number):
 		if the raw anal sex addiction of the player < 10, increase the raw anal sex addiction of the player by 1.
 
 To AnalSexAddictDown (X - a number):
-	let S be the calculated anal sex addiction of the player;
+	let S be the raw anal sex addiction of the player;
 	SilentlyAnalSexAddictDown X;
-	decrease S by the calculated anal sex addiction of the player;
+	decrease S by the raw anal sex addiction of the player;
 	if S > 0, say "You feel [if S > 2]much [otherwise if S is 2]significantly [end if]less [if the anal sex addiction of the player > 6]desperate for[otherwise]interested in[end if] anal sex.".
 
 To SilentlyAnalSexAddictDown (X - a number):
@@ -302,9 +302,9 @@ To VaginalSexAddictUp (X - a number):
 		say "Your [printed name of S] glows brightly and slowly disintegrates.[line break]";
 		only destroy S;
 		decrease X by 3;
-	let S be the calculated vaginal sex addiction of the player;
+	let S be the raw vaginal sex addiction of the player;
 	SilentlyVaginalSexAddictUp X;
-	now S is the calculated vaginal sex addiction of the player - S;
+	now S is the raw vaginal sex addiction of the player - S;
 	if S > 0 and (the player is possessing a vagina or TG fetish > 0):
 		say "You feel [if S > 2]much [otherwise if S is 2]significantly [end if]more [if the vaginal sex addiction of the player > 6]desperate for[otherwise]interested in[end if] [if the player is possessing a vagina]vaginal sex[otherwise]being transformed into a woman[end if].";
 		if the calculated vaginal sex addiction of the player >= 7 or the raw vaginal sex addiction of the player >= 10, progress quest of vaginal-addict-quest.
@@ -315,9 +315,9 @@ To SilentlyVaginalSexAddictUp (X - a number):
 		if the raw vaginal sex addiction of the player < 10, increase the raw vaginal sex addiction of the player by 1.
 
 To VaginalSexAddictDown (X - a number):
-	let S be the calculated vaginal sex addiction of the player;
+	let S be the raw vaginal sex addiction of the player;
 	SilentlyVaginalSexAddictDown X;
-	decrease S by the calculated vaginal sex addiction of the player;
+	decrease S by the raw vaginal sex addiction of the player;
 	if S > 0 and (the player is possessing a vagina or TG fetish > 0), say "You feel [if S > 2]much [otherwise if S is 2]significantly [end if]less [if the vaginal sex addiction of the player > 6]desperate for[otherwise]interested in[end if] [if the player is possessing a vagina]vaginal sex[otherwise]being transformed into a woman[end if].".
 
 To SilentlyVaginalSexAddictDown (X - a number):
@@ -406,9 +406,9 @@ To OralSexAddictUp (X - a number):
 		say "Your [printed name of S] glows brightly and slowly disintegrates.[line break]";
 		only destroy S;
 		decrease X by 3;
-	let S be the calculated oral sex addiction of the player;
+	let S be the raw oral sex addiction of the player;
 	SilentlyOralSexAddictUp X;
-	now S is the calculated oral sex addiction of the player - S;
+	now S is the raw oral sex addiction of the player - S;
 	if S > 0, say "You feel [if S > 2]much [otherwise if S is 2]significantly [end if]more [if the oral sex addiction of the player > 6]orally fixated[otherwise]interested in performing oral sex[end if].".
 
 To SilentlyOralSexAddictUp (X - a number):
@@ -455,9 +455,9 @@ To SemenTasteAddictUp (X - a number):
 		say "Your [printed name of S] glows brightly and slowly disintegrates.";
 		only destroy S;
 		decrease X by 3;
-	let S be the calculated semen taste addiction of the player;
+	let S be the raw semen taste addiction of the player;
 	SilentlySemenTasteAddictUp X;
-	let S be the calculated semen taste addiction of the player - S;
+	let S be the raw semen taste addiction of the player - S;
 	if S > 0:
 		say "You feel [if S > 1]significantly [end if]more [if the calculated semen taste addiction of the player > 13]addicted to[otherwise if the calculated semen taste addiction of the player > 6]accustomed to[otherwise]tolerant of[end if] the taste of [semen].";
 		if the semen volume of face > 0, progress quest of mouthful-quest;
@@ -470,9 +470,9 @@ To SilentlySemenTasteAddictUp (X - a number):
 			increase the raw semen taste addiction of the player by 1.
 
 To SemenTasteAddictDown (X - a number):
-	let S be the calculated semen taste addiction of the player;
+	let S be the raw semen taste addiction of the player;
 	SilentlySemenTasteAddictDown X;
-	decrease S by the calculated semen taste addiction of the player;
+	decrease S by the raw semen taste addiction of the player;
 	if S > 0, say "You feel [if S > 2]much [otherwise if S is 2]significantly [end if]less [if the calculated semen taste addiction of the player > 14]addicted to the taste of [semen][otherwise if the calculated semen taste addiction of the player > 6]interested in drinking [semen][otherwise]tolerant of the taste of [semen][end if].".
 
 To SilentlySemenTasteAddictDown (X - a number):
@@ -540,9 +540,9 @@ To TitfuckAddictUp (X - a number):
 		say "Your [printed name of S] glows brightly and slowly disintegrates.[line break]";
 		only destroy S;
 		decrease X by 3;
-	let S be the calculated titfuck addiction of the player;
+	let S be the raw titfuck addiction of the player;
 	SilentlyTitfuckAddictUp X;
-	now S is the calculated titfuck addiction of the player - S;
+	now S is the raw titfuck addiction of the player - S;
 	if S > 0, say "Your breasts feel [if S > 2]much [otherwise if S is 2]significantly [end if]more eager to [if the titfuck addiction of the player > 6]pleasure [manly-penis][otherwise]be touched[end if].".
 
 To SilentlyTitfuckAddictUp (X - a number):
@@ -551,9 +551,9 @@ To SilentlyTitfuckAddictUp (X - a number):
 		if the raw titfuck addiction of the player < 10, increase the raw titfuck addiction of the player by 1.
 
 To TitfuckAddictDown (X - a number):
-	let S be the calculated titfuck addiction of the player;
+	let S be the raw titfuck addiction of the player;
 	SilentlyTitfuckAddictDown X;
-	decrease S by the calculated titfuck addiction of the player;
+	decrease S by the raw titfuck addiction of the player;
 	if S > 0, say "Your breasts feel [if S > 2]much [otherwise if S is 2]significantly [end if]less [if the titfuck addiction of the player > 6]eager to pleasure [men of shopkeeper][otherwise]interested in being touched[end if].".
 
 To SilentlyTitfuckAddictDown (X - a number):
@@ -604,7 +604,7 @@ Does the player love them some black cock?
 
 +!]
 Definition: yourself is queen of spades:
-	if interracial fetish is 1 and the number of worn interracial themed wearthings > 1, decide yes;
+	if interracial fetish is 1 and the number of worn interracial themed currently visible wearthings > 1, decide yes;
 	decide no.
 
 Part 2 - Modify BBC Addiction
@@ -613,9 +613,9 @@ The player has a number called raw BBC Addiction. The raw BBC Addiction of the p
 
 To BBCAddictUp (X - a number):
 	if interracial fetish is 1:
-		let S be the calculated BBC addiction of the player;
+		let S be the raw BBC addiction of the player;
 		SilentlyBBCAddictUp X;
-		now S is the calculated BBC addiction of the player - S;
+		now S is the raw BBC addiction of the player - S;
 		if S > 0:
 			if the calculated BBC addiction of the player > 3, say "You feel [if S > 2]much [otherwise if S is 2]significantly [end if]more [if the calculated BBC addiction of the player > 6]addicted to[otherwise]interested in[end if] [BlackCock].";
 			otherwise say "You feel your racial preference for white people becoming less strong.".
@@ -626,9 +626,9 @@ To SilentlyBBCAddictUp (X - a number):
 		if the raw BBC Addiction of the player < 10, increase the raw BBC Addiction of the player by 1.
 
 To BBCAddictDown (X - a number):
-	let S be the calculated BBC addiction of the player;
+	let S be the raw BBC addiction of the player;
 	SilentlyBBCAddictDown X;
-	decrease S by the calculated BBC addiction of the player;
+	decrease S by the raw BBC addiction of the player;
 	if S > 0:
 		if the calculated BBC addiction of the player > 3, say "You feel [if S > 2]much [otherwise if S is 2]significantly [end if]less [if the calculated BBC addiction of the player > 6]addicted to[otherwise]interested in[end if] [BlackCock].";
 		otherwise say "You feel your racial preference for white people returning.".

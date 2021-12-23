@@ -156,6 +156,7 @@ STATES:
 99: DQ: Ass hook
 100: DQ: Matron fight scene
 101: DQ: Appeared by being in the hotel urinal scene with the wrestler.
+102: DQ: Appeared holding up the lid for the changing station tank.
 ]
 
 Definition: woman-player is summon appropriate: decide no. [Can she be randomly selected to be summoned?]
@@ -213,7 +214,7 @@ A time based rule (this is the woman spawning rule):
 			unless woman-player is in the location of the player or woman-player is nearby or woman-player is stranger or (the woman-status of woman-player >= 80 and the woman-status of woman-player is not 98), vanish woman-player.
 
 This is the woman spawning to help the player with bondage rule:
-	if there is worn locked clothing and portal gag is not worn and wrist collar bar is not worn and a random number between 1 and 60 is 1 and the player is not in danger:
+	if bondage protection > 0 and there is worn locked clothing and portal gag is not worn and wrist collar bar is not worn and a random number between 1 and 60 is 1 and the player is not in danger:
 		deploy woman-player with woman-status 2;
 		rule succeeds.
 The woman spawning to help the player with bondage rule is listed last in the womanspawning rules.
@@ -250,6 +251,7 @@ woman-player has a number called shopkeeper-scene.
 woman-player has a number called stool-scene.
 woman-player has a number called throne-scene.
 woman-player has a number called crafting-scene.
+woman-player has a number called changing-station-tank-scene.
 
 woman-player has a number called patron-scene-done.
 [

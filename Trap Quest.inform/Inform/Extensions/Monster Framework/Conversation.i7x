@@ -1083,7 +1083,7 @@ talk-teach is a talk-object.
 the player has a number called skillCooldown.
 
 To consider (T - talk-teach) for (M - a monster):
-	if M is not defeated and M is intelligent and the skillCooldown of the player <= 0:
+	if M is not defeated and M is intelligent and the skillCooldown of the player <= 0 and M is friendly:
 		now the printed name of talk-teach is the substituted form of "[TeachQuestion of M]";
 		set next numerical response to the substituted form of "[printed name of T]".
 

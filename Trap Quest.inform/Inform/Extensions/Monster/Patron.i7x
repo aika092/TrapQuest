@@ -252,7 +252,7 @@ A time based rule (this is the patron encountering rule):
 			otherwise if diaper quest is 0 and dominatrix-cage is grabbing the player:
 				let P be a random off-stage generic-appropriate patron;
 				compute patronMeeting of dominatrix-cage with P;
-			otherwise if diaper quest is 0 and resting is 0 and the number of on-stage patrons is 0:
+			otherwise if diaper quest is 0 and player-currently-resting is 0 and the number of on-stage patrons is 0:
 				let P be a random off-stage generic-appropriate patron;
 				let M be a random monster in the location of the player;
 				if the player is in Hotel38 and watersports fetish is 1 and a2m fetish >= 2 and the human-toilet-scene of woman-player is not 1, now M is toilet;

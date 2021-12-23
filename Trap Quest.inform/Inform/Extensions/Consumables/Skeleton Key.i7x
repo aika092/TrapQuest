@@ -66,6 +66,7 @@ Check unlocking:
 	repeat with K running through held unlock-keys:
 		if K is covering the noun, now chosen-key is K;
 	if chosen-key is not held, say "You don't have a key that fits that lock[if chosen-key is in the location of the player] (you need to pick it up first)[end if]." instead;
+	if bondage protection is 0 and chosen-key is skeleton key and there is an unlock-key covering the noun, say "Despite this key being able to fit into many locks, it's too big to fit into the lock on your [ShortDesc of the noun]. [BigNameDesc of the noun] must require a very specific key, probably in the possession of whoever locked it on you in the first place...[line break][variable custom style]I knew I should have spent at least 2 points on that [']bondage protection['] option...[roman type][line break]" instead;
 	if the player is in danger, say "You can't do that in the middle of combat!" instead.
 Carry out unlocking:
 	allocate 6 seconds;
@@ -102,8 +103,8 @@ academy-toilet-key is an unlock-key.
 The printed name of academy-toilet-key is "[TQlink of item described]academy toilet key[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of academy-toilet-key is "akey". Understand "academy toilet", "toilet key" as academy-toilet-key.
 To say ExamineDesc of (B - academy-toilet-key):
 	say "This key unlocks the padlocks in the academy's toilets.".
-To decide which number is the bartering value of (K - academy-toilet-key) to (M - headmistress):
-	decide on 99.
+To decide which number is the bartering value of (K - academy-toilet-key) for (M - headmistress):
+	decide on 10.
 To compute resolution of (M - headmistress) taking (T - academy-toilet-key):
 	if M is unfriendly:
 		say MonsterTakeFlav of M to T;

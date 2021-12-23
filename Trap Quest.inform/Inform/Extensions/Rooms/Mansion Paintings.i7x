@@ -122,6 +122,7 @@ An all time based rule (this is the dress painting rule):
 			now dress-painting is spookified; [this is how we flag that the dress is chasing the player]
 			say "[bold type][BigNameDesc of pink-and-blue translucent fetish dress] [bold type]soars towards you[one of], taking on a life on its own.[or]![stopping][roman type][line break]";
 			let D be a random number between 1 and the dexterity of the player;
+			if the player is prone, now D is a random number between 1 and the square root of the dexterity of the player;
 			let R be a random number between 1 and 20;
 			if debuginfo > 0, say "[input-style]Dress evasion check: Dexterity roll (d[dexterity of the player]) = [D] | [R].5 = (d20 + 0.5) Dress agility[roman type][line break]";
 			if D > R:
@@ -209,7 +210,7 @@ An all time based rule (this is the toilet monster rule):
 		say "[first custom style]'[one of]BOO[or]I'M GONNA GOBBLE YOU UP IF YOU GET TOO CLOSE[or]COME CLOSER, LITTLE MORSEL[or]ME AGAIN[stopping]! HAHAHAHAHA.'[roman type][line break][one of][BigNameDesc of toilet-monster][']s scary, booming voice sends shivers down your spine.[or][stopping]";
 		say "[one of]How scary[or]Terrifying[or]Too spooky for you[then at random]! ";
 		let T be "Your fright makes it more difficult to hold on, and";
-		check sudden expulsion with reason T;
+		check sudden spit and expulsion with reason T;
 		DelicateUp 1;
 		increase the times-terrorized of toilet-monster by 1;
 		if the times-terrorized of toilet-monster is 2 and diaper lover > 0, say "[bold type]This horrific encounter is leaving a lasting impression on your psyche. From now on, you won't be able to bring yourself to use a toilet unless there's someone friendly there with you.[roman type][line break]";

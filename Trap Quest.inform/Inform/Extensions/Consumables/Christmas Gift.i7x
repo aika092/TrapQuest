@@ -29,7 +29,13 @@ To compute christmas event of (C - christmas-gift-event):
 
 christmas-gift-BE is a christmas-gift-event.
 To compute christmas event of (C - christmas-gift-BE):
-	if a random number between 0 and artificial enhancements fetish is 1:
+	if a random number between 1 and 2 is 1:
+		say "Heavy purple smoke billows out of the box! When it reaches your loins, you can feel it affecting your body, and making your butt expand!";
+		AssSwell 1;
+		if the player is possessing a vagina and the labia plumpness of vagina < max labia plumpness and the player is getting unlucky:
+			LabiaUp 1 with comment;
+			say GotUnluckyFlav;
+	otherwise if artificial enhancements fetish is 1:
 		say "A pair of needles shoot out of the box, hitting you straight in the chest! ";
 		if the silicone volume of breasts is 0, say "You gasp with shock as the needles inject silicone implants into your breast flesh, enhancing their size!";
 		otherwise say "Your breast implants have extra silicone injected into them, enhancing their size!";
@@ -134,7 +140,7 @@ To initialise christmas gifts:
 	repeat with N running from 1 to 5: [5 gold rings]
 		let J be a random off-stage ring;
 		add J to christmas-gift-list;
-	let T be leopard-hotpants; [4 new undies]
+	[4 new undies]
 	if diaper quest is 0:
 		add leopard-hotpants to christmas-gift-list;
 		add red-anal-briefs to christmas-gift-list;
@@ -148,7 +154,11 @@ To initialise christmas gifts:
 	add acceleration-tincture to christmas-gift-list;
 	if diaper quest is 0:
 		repeat with N running from 1 to 3: [3 times as likely to appear]
-			add Icarus to christmas-gift-list. [And a brand new festive NPC]
+			add Icarus to christmas-gift-list; [And a brand new festive NPC]
+	[and some actual gifts]
+	repeat with T running through trinkets:
+		add T to christmas-gift-list.
+
 
 To compute christmas gifting of (M - a monster):
 	if christmas content is 1 and M is reactive:
@@ -209,7 +219,7 @@ Carry out unwrapping:
 		if X is plentiful accessory:
 			now X is solid gold;
 			set shortcut of X;
-		say "Inside you find a [X]! Ooh, very interesting!";
+		say "Inside you find a [X]! [if X is trinket]You don't think you'll be able to find any use for it yourself, but you can hopefully find someone who would like it[otherwise if X is plentiful accessory]JACKPOT[otherwise]Ooh, very interesting[end if]!";
 		if X is plentiful accessory:
 			now X is in the location of the player;
 			compute autotaking X;

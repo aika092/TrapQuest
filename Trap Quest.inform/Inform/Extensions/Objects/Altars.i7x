@@ -253,7 +253,7 @@ Determines how the dungeon altar will handle an item, "T", that has been placed 
 To AltarPray (T - a thing):
 	AltarUniqueReward of T;
 	if the charge of dungeon altar <= 0:[The reward already happened in the previous function if this is false]
-		if (T is not blessed and T is blessable) or T is ritual-beads or (T is runic headband and T is not purity):
+		if (T is blessable and T is not blessed) or T is ritual-beads or (T is runic headband and T is not purity):
 			AltarReward T;
 		otherwise:
 			say "Nothing seems to happen.".
@@ -890,7 +890,7 @@ To DevilPray (P - a person):
 	otherwise if R is 0 and gold-tiara is off-stage and gold-tiara is actually summonable:[having sex with a demon at least once will give the player the worshipper headgear]
 		say "The statue's face seems to grin as a golden tiara materialises on your head.";
 		summon gold-tiara cursed;
-	otherwise if mechanic is alive and (the class of the player is "princess" or the class of the player is "deepthroat princess" or the class of the player is "trained fuck princess" or the class of the player is "virgin warrior princess") and bride-consort is throne and the player is a december 2020 top donator:
+	otherwise if mechanic is alive and (the class of the player is "princess" or the class of the player is "deepthroat princess" or the class of the player is "trained fuck princess" or the class of the player is "virgin warrior princess") and bride-consort is throne and the player is the donator:
 		let H be a random worn headgear;
 		transform H into tiara-veil;
 		now the quest of H is betrothal-quest;

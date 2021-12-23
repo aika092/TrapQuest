@@ -39,9 +39,9 @@ To compute rest ending of (F - HotelBedCreamy):
 			compute messing;
 		otherwise if R > 6 - the incontinence of the player and the bladder of the player > 4:
 			now delayed urination is 1;
-			now resting is 1;
+			now player-currently-resting is 1;
 			try urinating;
-			now resting is 0;
+			now player-currently-resting is 0;
 		otherwise:
 			say "[if the player is bursting]You manage to hold onto your pee[otherwise]Luckily, it seems like you are too empty to be forced into wetting the bed[end if]. ";
 		say "Eventually, the magic bedding seems to tire itself out, and releases its hold on you. You are able to leave the bed.";

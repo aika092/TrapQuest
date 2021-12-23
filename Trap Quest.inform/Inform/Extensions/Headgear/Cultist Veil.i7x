@@ -1,9 +1,10 @@
 Cultist Veil by Headgear begins here.
 
-cultist veil is a headgear. cultist veil is silk. cultist veil is in Mansion23. cultist veil is roleplay.
+cultist veil is a headgear. cultist veil is silk. cultist veil is in Mansion23.
 
 The printed name of cultist veil is "[clothing-title-before]cultist veil[clothing-title-after]". The text-shortcut of cultist veil is "cv".
 
+Definition: cultist veil is roleplay: decide yes.
 Definition: cultist veil is cult garb: decide yes.
 
 Definition: cultist veil is immune to change: decide yes.

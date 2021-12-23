@@ -1,10 +1,6 @@
 Fishnet Top by Dresses begins here.
 
-A fishnet top is a kind of overdress. A fishnet top is usually unskirted. A fishnet top is usually belly exposing. A fishnet top is usually mesh. A fishnet top is usually see-through. A fishnet top is usually top-displacable. Understand "fish", "net" as fishnet top. A fishnet top is usually transformation-rare.
-
-Definition: a fishnet top is optional-top-displacable:
-	if the largeness of breasts > 7, decide yes;
-	decide no. [Very much like a tube top]
+A fishnet top is a kind of overdress. A fishnet top is usually unskirted. A fishnet top is usually belly exposing. A fishnet top is usually mesh. A fishnet top is usually see-through. A fishnet top is optional-top-displacable. Understand "fish", "net" as fishnet top. A fishnet top is usually transformation-rare.
 
 To compute SelfExamineDesc of (C - a fishnet top):
 	say "A [ShortDesc of C] sits tightly over your chest. ".

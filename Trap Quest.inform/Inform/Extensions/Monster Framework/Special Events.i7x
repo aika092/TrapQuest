@@ -1416,7 +1416,6 @@ To check sudden spit and expulsion with reason (T - a text):
 
 [Does the player let out everything or maybe just a little squirt?]
 To check sudden expulsion with reason (T - a text):
-	check accidental spitting with reason T;
 	check enema holding with reason T; [handles both full enema loss and little squirts]
 	if player-just-enema-leaked is false:
 		if T matches the text "orgasm", now hasMessedNow is false;

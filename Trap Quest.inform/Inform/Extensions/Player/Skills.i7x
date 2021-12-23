@@ -239,7 +239,7 @@ Part 11 - Fuck Skill
 
 To teach fuckskill:
 	if the fuckskill of the player is 0:
-		say "[bold type]**You have learned how to hide your submissiveness from the people around you!**[line break]From now on, you'll find it a lot easier to find a way of having dominant sex![roman type][line break]";
+		say "[bold type]**You have learned how to hide your submissiveness from the people around you!**[line break]From now on, you'll find it a lot easier to [if diaper quest is 1]dominate people after you defeat them in combat[otherwise]find a way of having dominant sex[end if]![roman type][line break]";
 		now the fuckskill of the player is 1;
 		reset skill cooldown;
 	otherwise:

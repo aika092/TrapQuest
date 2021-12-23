@@ -290,7 +290,7 @@ To reflect on (HS - low-addiction):
 	let R be a random number from 1 to the number of entries in AL;
 	let A be entry R in AL;
 	if A exactly matches the text "semen addiction":
-		let SA be the semen addiction of the player;
+		let SA be the semen addiction of the player - 1;
 		let GBP be a random glazed body part;
 		if face is glazed, now GBP is face;
 		if GBP is a thing: [player distracted by their glazed body part]
@@ -309,7 +309,6 @@ To reflect on (HS - low-addiction):
 				otherwise:
 					say "You could swear you can literally feel the [semen] that's made it through your cervix swimming down your fallopian tubes and towards your fetile eggs... ";
 			if GBP is a thing:
-				let SA be the semen addiction of the player * 2;
 				let SAN be 0;
 				if GBP is asshole:
 					now SAN is the semen volume of belly / 2;
@@ -340,7 +339,7 @@ To reflect on (HS - low-addiction):
 					say line break;
 	otherwise if A exactly matches the text "anal sex addiction":
 		if asshole is not actually occupied:
-			let SA be the anal sex addiction of the player - the soreness of asshole;
+			let SA be the anal sex addiction of the player - (the soreness of asshole + 1);
 			let ARS be SA * 500; [depending on addiction and soreness, we can gain or lose arousal]
 			if ARS > 3000, now ARS is 3000; [max 3000 arousal gain]
 			if ARS < 0 and the arousal of the player > 0:
@@ -355,7 +354,7 @@ To reflect on (HS - low-addiction):
 				arouse ARS;
 	otherwise if A exactly matches the text "vaginal sex addiction":
 		if vagina is not actually occupied:
-			let SA be the vaginal sex addiction of the player - the soreness of vagina;
+			let SA be the vaginal sex addiction of the player - (the soreness of vagina + 1);
 			let ARS be SA * 500; [depending on addiction and soreness, we can gain or lose arousal]
 			if ARS > 3000, now ARS is 3000; [max 3000 arousal gain]
 			if ARS < 0 and the arousal of the player > 0:
@@ -370,7 +369,7 @@ To reflect on (HS - low-addiction):
 				arouse ARS;
 	otherwise if A exactly matches the text "oral sex addiction":
 		if face is not actually occupied and the total volume of face is 0:
-			let SA be the oral sex addiction of the player;
+			let SA be the oral sex addiction of the player - 1;
 			let ARS be (SA * 500) - 1000; [depending on addiction, we can gain or lose arousal]
 			if ARS > 1500, now ARS is 1500; [max 1500 arousal gain]
 			if ARS < 0 and the arousal of the player > 0:
@@ -385,14 +384,14 @@ To reflect on (HS - low-addiction):
 				arouse ARS;
 	otherwise if A exactly matches the text "titfuck addiction":
 		if breasts is not actually occupied:
-			let SA be the titfuck addiction of the player;
+			let SA be the titfuck addiction of the player - 1;
 			let ARS be (SA * 500) - 2000; [depending on addiction, we can gain or lose arousal]
 			if ARS > 1500, now ARS is 1500; [max 1500 arousal gain]
 			if ARS > 0:
 				say "[if ARS <= 1000]The thought of [one of]the feeling of a [man of shopkeeper] thrusting [his of shopkeeper] [manly-penis] in and out of your cleavage[or]someone grabbing your breasts and using them for sex[or]pleasuring a [manly-penis] with your breasts[in random order] [one of]enters your head[or]crosses your thoughts[or]pops into your mind[at random], [one of]turning you on[or]making you flush with arousal[in random order][otherwise][one of]You can't help but think about how delightful getting titfucked is[or]You find yourself thinking forward to the next time you get titfucked[or]You daydream about the next time you get to pump a [manly-penis] in between your breasts[in random order], and [one of]get more and more exicited[or]get all worked up[in random order][end if].";
 				arouse ARS;
 	otherwise if A exactly matches the text "bbc addiction":
-		let SA be the bbc addiction of the player;
+		let SA be the bbc addiction of the player - 1;
 		let ARS be (SA * 500) - 1000; [depending on addiction, we can gain or lose arousal]
 		if ARS > 1500, now ARS is 1500; [max 1500 arousal gain]
 		if ARS < 0 and the arousal of the player > 0:

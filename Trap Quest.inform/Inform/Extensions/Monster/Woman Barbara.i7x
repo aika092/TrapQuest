@@ -2,6 +2,32 @@ Woman Barbara by Monster begins here.
 
 Include Fishbowl by Headgear.
 
+To construct unique buttons for (M - woman-player):
+	if the woman-status of M is 93 and the dominatrix-contraption-scene of M <= 6 and M is awake and ButtonTableFull is 0:
+		unless dominatrix is interested and dominatrix is unfriendly and dominatrix is in the location of the player:
+			choose a blank row in the Table of Buttons;
+			now the ButtonImage entry is Figure of AddictionsButton;
+			now the ButtonCommand entry is "search [text-shortcut of M]";
+			now the ButtonColour entry is lightModeFullGreen;
+			if ButtonTableFull is 0 and the dominatrix-contraption-scene of M <= 2 and diaper quest is 0:
+				choose a blank row in the Table of Buttons;
+				now the ButtonImage entry is Figure of TakeAllButton;
+				now the ButtonCommand entry is "pull [text-shortcut of M]";
+				now the ButtonColour entry is lightModeFullGreen;
+	otherwise if the woman-status of M is 80 and the stool-scene of M < 2 and ButtonTableFull is 0:
+		choose a blank row in the Table of Buttons;
+		now the ButtonImage entry is Figure of TakeAllButton;
+		now the ButtonCommand entry is "pull [text-shortcut of M]";
+		let CL be lightModeFullGreen;
+		if the player is in danger, now CL is lightModeFullYellow;
+		if the player is immobile, now CL is lightModeFullRed;
+		now the ButtonColour entry is CL;
+		if ButtonTableFull is 0 and the player is possessing a penis or there is a worn strapon-panties:
+			choose a blank row in the Table of Buttons;
+			now the ButtonImage entry is Figure of TakeAllButton;
+			now the ButtonCommand entry is "fuck [text-shortcut of M]";
+			now the ButtonColour entry is CL.
+
 woman-player can be tentacle-pregnant.
 
 The current-name of woman-player is "Barbara". The old-name of woman-player is "Barbara".
@@ -851,8 +877,8 @@ To compute PlayerWomanStoolFuck:
 			otherwise:
 				now PF is S;
 		otherwise:
-			if there is a undisplacable pussy covering clothing:
-				say "You'll have to find a way to remove your [printed name of a random undisplacable pussy covering clothing] first.";
+			if there is an actually unavoidable pussy covering clothing:
+				say "You'll have to find a way to remove your [printed name of a random actually unavoidable pussy covering clothing] first.";
 				now PF is vagina;
 			if there is a worn chastity cage:
 				say "You'll have to find a way to get out of your chastity cage first!";

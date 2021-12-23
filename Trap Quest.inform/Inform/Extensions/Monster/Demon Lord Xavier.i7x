@@ -915,7 +915,7 @@ To execute (F - final-battle-plug):
 	otherwise:
 		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 		set numerical response 1 to "step in front of the electric bolt";
-		if current-final-battle-object is F and asshole is not actually occupied and the number of ass covering undisplacable unzippable usually unautoremovable clothing is 0, set numerical response 2 to "wear the plug so [NameDesc of ex-princess] doesn't have to";
+		if current-final-battle-object is F and asshole is not actually occupied and the number of ass covering actually unavoidable clothing is 0, set numerical response 2 to "wear the plug so [NameDesc of ex-princess] doesn't have to";
 		set numerical response 0 to "do something else";
 		compute multiple choice question;
 	if player-numerical-response is 1:
@@ -934,6 +934,7 @@ To execute (F - final-battle-plug):
 		now P is strength-influencing;
 		now the raw-magic-modifier of P is -4;
 		now the size of P is 7;
+		force immediate inventory-focus redraw;
 		compute insertionRuin of P into asshole;
 		say "[speech style of ex-princess]'[NameBimbo]! You... You didn't have to do that...'[roman type][line break]Despite what [he of ex-princess] is saying, you can tell that [he of ex-princess] is extremely grateful.";
 		now current-final-battle-object is final-battle-magic-clash; [this object has concluded]
@@ -952,7 +953,7 @@ To commence (F - final-battle-inflation):
 	otherwise:
 		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 		set numerical response 1 to "step in front of the magic beam";
-		if current-final-battle-object is F and asshole is not actually occupied and the number of ass covering undisplacable unzippable usually unautoremovable clothing is 0, set numerical response 2 to "try and grab [NameDesc of ex-princess] and help ground [him of ex-princess]";
+		if current-final-battle-object is F and asshole is not actually occupied and the number of ass covering actually unavoidable clothing is 0, set numerical response 2 to "try and grab [NameDesc of ex-princess] and help ground [him of ex-princess]";
 		set numerical response 0 to "do something else";
 		compute multiple choice question;
 	if player-numerical-response is 1:
@@ -1115,7 +1116,7 @@ To compute final battle:
 			execute current-final-battle-object;
 		if the health of demon lord <= 0 and the health of demon lord < the health of ex-princess:
 			if the health of ex-princess <= 0, now the health of ex-princess is 1;
-			say "[BigNameDesc of demon lord][']s strength falters, and [he of demon lord] falls down onto one knee.[line break][speech style of ex-princess]'It's curtains for you, Xavier. Lacy, gentle wafting curtains...'[line break][speech style of demon lord]'NO! NOT AGAIN! I CAN'T HAVE BEEN DEFEATED AGAIN!'[roman type][line break][BigNameDesc of ex-princess] summons [his of ex-princess] royal scepter back to [his of ex-princess] hand.[line break][speech style of ex-princess]'From when you came, you shall remain, until you are complete again!'[line break][speech style of demon lord]'NOOOOOOO!'[roman type][line break][BigNameDesc of demon lord][']s screams gradually fade away to nothingness as [he of demon lord] disappears from this plane.";
+			say "[BigNameDesc of demon lord][']s strength falters, and [he of demon lord] falls down onto one knee.[line break][speech style of ex-princess]'It's curtains for you, Xavier. Lacy, gently wafting curtains...'[line break][speech style of demon lord]'NO! NOT AGAIN! I CAN'T HAVE BEEN DEFEATED AGAIN!'[roman type][line break][BigNameDesc of ex-princess] summons [his of ex-princess] royal scepter back to [his of ex-princess] hand.[line break][speech style of ex-princess]'From when you came, you shall remain, until you are complete again!'[line break][speech style of demon lord]'NOOOOOOO!'[roman type][line break][BigNameDesc of demon lord][']s screams gradually fade away to nothingness as [he of demon lord] disappears from this plane.";
 			cutshow Figure of princess final battle victory;
 			compute banishment of demon lord;
 			[if there is a barrier in the location of the player, say "The walls of flame surrounding you all suddenly die out.";

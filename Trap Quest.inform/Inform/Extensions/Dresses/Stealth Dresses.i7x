@@ -7,6 +7,7 @@ The printed name of illusory kimono is "[clothing-title-before]kimono of illusio
 
 Definition: illusory kimono is fluid immune: decide yes.
 Definition: illusory kimono is red themed: decide yes.
+Definition: illusory kimono is slitted: decide yes.
 
 To decide which number is the stealth-influence of (C - illusory kimono):
 	if the class of the player is vixen, decide on 3 + the magic-modifier of C;

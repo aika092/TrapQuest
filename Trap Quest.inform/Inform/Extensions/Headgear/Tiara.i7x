@@ -1,6 +1,6 @@
 Tiara by Headgear begins here.
 
-A tiara is a kind of headgear. A tiara is usually metal. A tiara is blondeness-positive. A tiara is brightness-positive. A tiara is redness-positive. A tiara is usually hair growing. A tiara is usually intelligence-influencing. A tiara is usually roleplay. A tiara is womanly. Understand "tiara" as a tiara.
+A tiara is a kind of headgear. A tiara is usually metal. A tiara is blondeness-positive. A tiara is brightness-positive. A tiara is redness-positive. A tiara is usually hair growing. A tiara is usually intelligence-influencing. A tiara is womanly. Understand "tiara" as a tiara.
 
 Definition: a tiara is condom pinnable: decide yes.
 
@@ -28,6 +28,7 @@ To say ClothingDesc of (H - silver-tiara):
 To say MediumDesc of (H - silver-tiara):
 	say "silver royal tiara".
 
+Definition: silver-tiara is roleplay: decide yes.
 Definition: silver-tiara is gem themed: decide yes.
 Definition: silver-tiara is grey themed: decide yes.
 
@@ -117,8 +118,6 @@ The printed name of tiara-veil is "[clothing-title-before]tiara veil[clothing-ti
 
 Figure of tiara veil is the file "Items/Accessories/Head/royaltiara3.png".
 
-Definition: tiara-veil is roleplay: decide no.
-
 To decide which figure-name is the clothing-image of (C - tiara-veil):
 	decide on figure of tiara veil.
 
@@ -151,8 +150,6 @@ tiara-of-spades is a tiara.
 The printed name of tiara-of-spades is "[clothing-title-before]tiara of spades[clothing-title-after]". The text-shortcut of tiara-of-spades is "tos". Understand "spades", "of spades" as tiara-of-spades.
 
 Figure of tiara-of-spades is the file "Items/Accessories/Head/royaltiara4.png".
-
-Definition: tiara-of-spades is roleplay: decide no.
 
 To decide which figure-name is the clothing-image of (C - tiara-of-spades):
 	decide on figure of tiara-of-spades.

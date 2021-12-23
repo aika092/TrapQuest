@@ -59,7 +59,7 @@ To compute unique periodic effect of (C - cow-ears):
 	let pierce be 0;
 	if P is cow piercing and the number of worn nipple piercing is 0, now pierce is 1;
 	let T be nothing;
-	unless nintendolls-brand tattoo is on-stage, now T is nintendolls-brand tattoo;
+	unless nintendolls-logo tattoo is on-stage, now T is nintendolls-logo tattoo;
 	if (the largeness of breasts > 15 or (the largeness of breasts > 8 and the largeness of breasts >= max breast size)) and (T is actually summonable or pierce is 1) and the class of the player is "cowgirl": [Not for multiclasses, since we probably can't destroy the dress]
 		say "[bold type]Your cow ears barely noticeably quiver, and then suddenly you feel searing pain from your breasts! [if pierce is 1 and there is worn breast covering clothing]The clothing covering your breasts vanishes as a[otherwise]A[end if] [if pierce is 1]pair of high-gauge rings have appeared in your nipples[end if][if pierce is 1 and T is actually summonable], and even worse the [otherwise if T is actually summonable]The [otherwise]![end if][if T is actually summonable]Nintendolls logo is now branded just below your breasts![end if][roman type][line break]";[possible break this up in some way.]
 		if pierce is 1:

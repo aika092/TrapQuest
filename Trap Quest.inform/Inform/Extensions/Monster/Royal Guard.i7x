@@ -308,7 +308,7 @@ Definition: a royal guard (called M) is distracted:
 			now the refractory-period of M is the refractory-time of M;
 			satisfy M;
 			DifficultyUp M by 1;
-			compute banishment of M;
+			compute banishment of N;
 			decide yes;
 		otherwise if N is gladiator and (N is uninterested or N is friendly):
 			compute M npcBattling N;
@@ -530,7 +530,17 @@ To display interaction of (M - prison guard):
 	do nothing.
 
 To compute jailor perception of (M - a royal guard):
-	if the sentence of M > 0:
+	let unlockable-clothing be nothing;
+	if bondage protection > 0:
+		now unlockable-clothing is silver-tiara; [with any points in bondage protection, the prison guard can unlock all items]
+	otherwise:
+		repeat with C running through worn locked clothing:
+			let K be a random unlock-key covering the noun;
+			if K is nothing or K is held by M:
+				now unlockable-clothing is C;
+	if unlockable-clothing is nothing:
+		say "[speech style of M]'Your locked clothing... It would appear that I don't have authority to remove those locks. Run along now, and continue serving your sentence. Perhaps if you please them enough, whoever locked you up will see it in their heart to eventually release you...'[roman type][line break]";
+	otherwise if the sentence of M > 0:
 		say "[speech style of M]'Your sentence is not yet over, [boy of the player][if the sentence of M <= 1]. But you should look for me again very soon[otherwise if the sentence of M <= 2]. But you should find me again soon[end if].'[roman type][line break]";
 		if M is unfriendly, say "[BigNameDesc of M] strokes [his of M] chin.[line break][speech style of M]'And in the meantime, I think you need further [']discipline[']...'[roman type][line break]";
 	otherwise:
@@ -1123,7 +1133,7 @@ To compute angry punishment of (M - a royal guard):[Royal guards will always pun
 	if the class of the player is not princess:
 		say angry punishment insult of M;
 		if M is not friendly-fucking and (M is not seduced or M is unfriendly):
-			if bondage protection is 0 and bondage-corset is off-stage and bondage-corset is actually summonable:
+			if bondage protection < 2 and bondage-corset is off-stage and bondage-corset is actually summonable:
 				summon bondage-corset uncursed;
 				say "[BigNameDesc of M] makes you wear a [bondage-corset]!";
 				let K be a random off-stage specific-key;

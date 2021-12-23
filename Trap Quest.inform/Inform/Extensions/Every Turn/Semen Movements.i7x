@@ -283,7 +283,7 @@ To execute (E - enema-cramping):
 	if the player is upright and the incidents of enema-cramping > 0:
 		say "[one of]causing your knees to buckle[or]and you fall to your knees[or]making you lose your balance[in random order] as [one of]your intestines cramp up[or]a huge bolt of pain hits your stomach[or]your tummy groans as it cramps[at random].";
 		try kneeling;
-	otherwise if resting is 1:
+	otherwise if player-currently-resting is 1:
 		say "making you feel uncomfortable as you rest.";
 	otherwise:
 		say "[one of]causing your fatigue to rise[or]making your knees weak[or]and your arms buckle[in random order] as [one of]your intestines cramp up[or]a huge bolt of pain hits your stomach[or]your tummy groans as it cramps[at random].";
@@ -327,12 +327,13 @@ To compute absorption:
 			let C be a random worn wet absorption clothing;
 			if C is nothing, now C is a random worn dirty clothing;
 			if C is nothing, now C is a random wet clothing;
-			if C is perceived wet or C is perceived soiled:
-				if C is absorption, now AC is C;
-				say "Your [C] [if C is absorption and C is identified]cleans itself by absorbing all the fluids soaked into it.[otherwise if C is absorption]seems to somehow clean and dry itself[otherwise if AC is identified]suddenly magically becomes clean and dry, thanks to your [AC][otherwise]suddenly magically becomes clean and dry. You sense that the magic of your [AC] must be responsible[end if].";
-				if AC is unidentified:
-					say "It's a [ShortDesc of AC] of absorption!";
-					now AC is identified;
-			fully clean C.
+			if C is clothing:
+				if C is perceived wet or C is perceived soiled:
+					if C is absorption, now AC is C;
+					say "Your [C] [if C is absorption and C is identified]cleans itself by absorbing all the fluids soaked into it.[otherwise if C is absorption]seems to somehow clean and dry itself[otherwise if AC is identified]suddenly magically becomes clean and dry, thanks to your [AC][otherwise]suddenly magically becomes clean and dry. You sense that the magic of your [AC] must be responsible[end if].";
+					if AC is unidentified:
+						say "It's a [ShortDesc of AC] of absorption!";
+						now AC is identified;
+				fully clean C.
 
 Semen Movements ends here.

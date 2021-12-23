@@ -320,10 +320,8 @@ Definition: gladiator-sword is destiny-prioritised:
 	if gladiatorcurse < 0, decide yes;
 	decide no.
 
-Figure of gladiator-sword is the file "Items/Accessories/Equippables/sword4.png".
-
 To decide which figure-name is clothing-image of (C - gladiator-sword):
-	decide on figure of gladiator-sword.
+	decide on figure of purity sword.
 
 Definition: gladiator-sword is grey themed: decide yes.
 
@@ -332,7 +330,7 @@ To decide which number is the heaviness of (S - gladiator-sword):
 	otherwise decide on the burden of S * 3.
 
 To say ClothingDesc of (S - gladiator-sword):
-	say "A giant, dull-edged sword made of pure iron. Just swinging its weight around [if the burden of S < the strength of the player / 2]should take an enormous amount of strength, but somehow you have no trouble lifting it[otherwise if the burden of S > the strength of the player * 2]feels impossible[otherwise]takes a massive amount of strength[end if]. [if S is worn and S is unremovable]A magical chain is attached to the hilt, securely tethering it to your arm. There is a glowing message engraved on the hilt[otherwise]The hilt is engraved with a short message[end if]: 'Wield with honour.'[line break][variable custom style]A sword that punishes the wielder for running from a fight. [if the player is feeling dominant]Fine by me![otherwise if the player is feeling submissive]Uh-oh... Well at least getting on my knees and submitting doesn't count as running away, I think.[otherwise]That rather reduces my number of options...[end if][roman type][line break]".
+	say "A giant, dull-edged sword made of pure iron. Just swinging its weight around [if the burden of S < the strength of the player / 2]should take an enormous amount of strength, but somehow you have no trouble lifting it[otherwise if the burden of S > the strength of the player * 2]feels impossible[otherwise]takes a massive amount of strength[end if]. [if S is worn and S is unremovable]A magical chain is attached to the hilt, securely tethering it to your arm. There is a glowing message engraved on the hilt[otherwise]The hilt is engraved with a short message[end if]: 'Wield with honour.'[line break][variable custom style]A sword that punishes the wielder for running from a fight. [if S is worn and S is unremovable]And I think to make the magical chain go away, I need to attack enemies with it.[otherwise if the player is feeling dominant]Fine by me![otherwise if the player is feeling submissive]Uh-oh... Well at least getting on my knees and submitting doesn't count as running away, I think.[otherwise]That rather reduces my number of options...[end if][roman type][line break]".
 
 To say ShortDesc of (S - gladiator-sword):
 	say "blade".
@@ -340,7 +338,7 @@ To say MediumDesc of (S - gladiator-sword):
 	say "giant dull-edged sword".
 
 Definition: gladiator-sword (called C) is removable:
-	if the burden of C + 10 <= the strength of the player, decide yes;
+	if the burden of C <= 0 or the burden of C + 10 <= the strength of the player, decide yes;
 	decide no.
 
 To compute attack effect of (C - gladiator-sword):[The gladiator-sword becomes lighter the more you use it in combat. Don't be cowardly!]
@@ -370,11 +368,14 @@ Report taking gladiator-sword:
 
 To BurdenUp (C - gladiator-sword) by (N - a number):
 	increase the burden of C by N;
+	if the burden of C > 0 and the burden of C + 10 > the strength of the player and the burden of C + 10 - N <= the strength of the player, say "[bold type]A magic chain appears, binding [NameDesc of C] to your wrist![line break][variable custom style]I'm being punished... I won't be able to remove the sword until I've used it in battle some more.[roman type][line break]";
 	follow the reset overburdened rule.
 To BurdenDown (C - gladiator-sword) by (N - a number):
-	decrease the burden of C by N;
-	if the burden of C < 0, now the burden of C is 0;
-	follow the reset overburdened rule.
+	if the burden of C > 0:
+		decrease the burden of C by N;
+		if the burden of C < 0, now the burden of C is 0;
+		if the burden of C is 0 or (the burden of C + 10 <= the strength of the player and the burden of C + 10 + N > the strength of the player), say "[bold type]The magic chain binding [NameDesc of C] to your wrist disappears![roman type] You can now remove it whenever you like.";
+		follow the reset overburdened rule.
 
 To compute survival reward of (C - gladiator-sword):
 	say "The [MediumDesc of C] suddenly gains several pounds of extra weight, significantly weighing you down.";
@@ -400,18 +401,19 @@ Definition: demon broadsword is destiny-appropriate:
 	if the player is feeling dominant, decide yes;
 	decide no.
 Definition: demon broadsword is destiny-prioritised:
-	if demon lord is alive or demon lord is bossdefeated, decide yes;
+	if demon lord is alive or demon lord is bossdefeated or the class of the player is worshipper, decide yes;
 	decide no.
 Definition: demon broadsword is live: decide yes.
 Definition: demon broadsword is fetish appropriate:
 	if diaper quest is 0, decide yes;
 	decide no.
 
-Figure of demon broadsword is the file "Items/Accessories/Equippables/sword5.png".
+Figure of demon broadsword is the file "Items/Accessories/Equippables/sword4.png".
+Figure of demon penis sword is the file "Items/Accessories/Equippables/sword5.png".
 
 To decide which figure-name is clothing-image of (C - demon broadsword):
-	if C is dildoed, decide on figure of demon broadsword;
-	otherwise decide on figure of gladiator-sword.
+	if C is dildoed, decide on figure of demon penis sword;
+	otherwise decide on figure of demon broadsword.
 
 To decide which number is the girth of (S - demon broadsword):
 	decide on the dildo girth of S.
@@ -609,7 +611,8 @@ To compute sword destiny of (C - rattle):
 	now C is cursed;
 	say "As soon as it's removed, it transforms into a [C]!";
 	try examining C;
-	say "Your grip tightens involuntarily as your fingers close around the handle.[line break][variable custom style]I guess the decision's been made for me then, it's my weapon of choice for now...[roman type][line break]".
+	say "Your grip tightens involuntarily as your fingers close around the handle.[line break][variable custom style]I guess the decision's been made for me then, it's my weapon of choice for now...[roman type][line break]";
+	compute summoned quest of C.
 
 Report taking rattle:
 	try wearing the noun;

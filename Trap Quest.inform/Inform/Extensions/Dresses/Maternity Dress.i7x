@@ -78,4 +78,25 @@ To decide which number is the slap damage improvement of (E - a maternity dress)
 	if the pregnancy of the player > 0 and shopkeeper is the father, increase S by 1;
 	decide on S.
 
+
+Part - Tight Grey Dress
+
+tight-grey-dress is an overdress. tight-grey-dress is bottom-exclusive. tight-grey-dress is only arm covering. tight-grey-dress is not-top-displacable. tight-grey-dress is high cut. tight-grey-dress is normally-partially-nipple-covering. The text-shortcut of tight-grey-dress is "tgyd". The printed name of tight-grey-dress is "[clothing-title-before]tight grey dress[clothing-title-after]". Understand "tight", "grey", "dress" as tight-grey-dress.
+
+Definition: tight-grey-dress is grey themed: decide yes.
+
+Figure of tight grey dress is the file "Items/Clothes/Upper/Dresses/tight1.png".
+
+To decide which figure-name is clothing-image of (C - tight-grey-dress):
+	decide on figure of tight grey dress.
+
+To say ClothingDesc of (C - tight-grey-dress):
+	say "This short-sleeved grey dress is so figure-hugging that it can't even hide the contours of [if C is worn]your[otherwise]the wearer's[end if] nipples.".
+
+To say ShortDesc of (C - tight-grey-dress):
+	say "tight grey dress".
+
+To decide which number is the initial outrage of (C - tight-grey-dress):
+	decide on 3.
+
 Maternity Dress ends here.

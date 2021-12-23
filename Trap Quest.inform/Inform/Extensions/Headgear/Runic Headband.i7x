@@ -1,7 +1,8 @@
 Runic Headband by Headgear begins here.
 
-runic headband is a headgear. runic headband is silk. runic headband is purity. Figure of runic headband is the file "Items/Accessories/Head/runicheadband1.png". runic headband is hair growing. runic headband is roleplay.
+runic headband is a headgear. runic headband is silk. runic headband is purity. Figure of runic headband is the file "Items/Accessories/Head/runicheadband1.png". runic headband is hair growing.
 
+Definition: runic headband is roleplay: decide yes.
 Definition: runic headband is fluid immune: decide yes.
 The printed name of runic headband is "[clothing-title-before]runic headband[clothing-title-after]". The text-shortcut of runic headband is "rhb".
 

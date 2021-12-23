@@ -109,7 +109,7 @@ Definition: vampiress is human: decide yes.
 
 To check chase boredom of (M - vampiress):
 	let D be 15;
-	if catbell is worn, increase D by 30;
+	if there is worn belled clothing, increase D by 30;
 	if M is not in the location of the player and a random number from 1 to D is 1 and M is not chain-tethering and the player is not bed-stuck and gargoyle is not grabbing the player:
 		deinterest M;
 		if M is threatening and M is regional:

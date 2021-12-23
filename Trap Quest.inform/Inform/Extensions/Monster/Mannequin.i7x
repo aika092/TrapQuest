@@ -345,6 +345,7 @@ To compute (M - a goth mannequin) entering mouth:
 
 To compute (M - a mannequin) entering mouth:
 	let S be a random off-stage pink scrunchie;
+	let CC be a random off-stage fetish appropriate plastic-cage;
 	if (the class of the player is silicone queen or the number of worn headgear is 0) and condom pigtails is off-stage and total pinned condoms > 0:
 		let H be a random worn headgear;
 		repeat with C running through worn headgear:
@@ -379,6 +380,13 @@ To compute (M - a mannequin) entering mouth:
 	otherwise if artificial enhancements fetish is 1 and fake-nails is actually summonable:
 		say "[BigNameDesc of M] pulls out a set of long and slutty pink fake nails. Before you can react to what is happening, all ten have been glued on top of your real nails. Wow that was fast! You are immediately filled with a horrible sense of dread; almost all you can think about is [if the player is horny]how horny you are and [end if]how awful, and painful, it would be if any of your nails were to break. The invasive thought is so powerful that you also feel significantly weaker and slower as your mind makes you think twice about every action you take.";
 		summon fake-nails cursed;
+		satisfy M;
+	otherwise if the player is possessing a penis and CC is an actually summonable clothing and the number of pussy covering actually unavoidable clothing is 0:
+		let K be a random off-stage specific-key;
+		say "[BigNameDesc of M] parts your quivering thighs and squishes your [sissy-penis] into a bright pink chastity cage. [if the player is horny]You feel the cage keeping your [sissy-penis] soft, no matter how horny you are![end if][roman type][line break]";
+		summon CC uncursed;
+		compute M locking CC with K;
+		say FullExamineDesc of CC;
 		satisfy M;
 	otherwise if asshole is an actual target:
 		follow the monster asshole insertion rules; [That's right, we decide that the mannequin goes after the asshole instead.]

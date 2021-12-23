@@ -131,7 +131,7 @@ To compute service spill punishment:
 		if the number of worn breast covering clothing is 1 and the number of worn neck covering clothing is the number of worn neck covering breast covering clothing:
 			let M be a random worn breast covering clothing;
 			if M is not milkmaid-outfit, transform M into milkmaid-outfit;
-	otherwise if bondage protection is 0 and the player is not immobile and the number of things wrangling a body part is 0 and there is a held waitress vessel:
+	otherwise if bondage protection < 2 and the player is not immobile and the number of things wrangling a body part is 0 and there is a held waitress vessel:
 		let STV be 0;
 		if there is worn serving-bondage, now STV is 1;
 		if STV is 0 and serving tray is off-stage:
@@ -162,7 +162,7 @@ To compute service spill punishment:
 		transform black maid headdress into cafe maid headdress;
 		let O be a random worn overdress;
 		if O is clothing and O is not cafe-maid-outfit, transform O into cafe-maid-outfit;
-	otherwise if bondage protection is 1 or there is a worn waitress-enabling wearthing:
+	otherwise if bondage protection is 2 or there is a worn waitress-enabling wearthing:
 		if the total weighty volume of hips < the largeness of breasts and the player is not bottom heavy:
 			say "You feel your butt expanding [if the silicone volume of hips > 0]with more silicone [otherwise if artificial enhancements fetish is 1]with silicone implants [end if]as punishment[if the class of the player is bunny][one of] for being a clumsy waitress[or][stopping][end if]!";
 			if artificial enhancements fetish is 1, AssImplantsUp 2;
@@ -357,10 +357,6 @@ Part 3 - Rubber Bunny Ears
 
 rubber bunny ears is a bunny ears. rubber bunny ears is latex. rubber bunny ears has a number called charge.
 
-rubber-bunny-summoned is a number that varies.
-To compute unique recycling of (C - rubber bunny ears):
-	now rubber-bunny-summoned is 0.
-
 Definition: rubber bunny ears is fluid immune: decide yes.
 Definition: rubber bunny ears is white themed: decide yes.
 
@@ -407,6 +403,38 @@ To say QuestFlav of (Q - egg-holding-quest):
 
 To say QuestTitle of (Q - egg-holding-quest):
 	say " (egg holding quest)".
+
+
+Part 4 - Frilly Bunny Ears
+
+frilly bunny ears is a bunny waitress ears. frilly bunny ears is pvc.
+
+Definition: frilly bunny ears is fluid immune: decide yes.
+Definition: frilly bunny ears is pink themed: decide yes.
+
+Figure of frilly bunny ears is the file "Items/Accessories/Head/bunnyears5.png".
+
+The printed name of frilly bunny ears is "[clothing-title-before]frilly bunny ears[clothing-title-after]". The text-shortcut of frilly bunny ears is "fbe".
+
+To decide which figure-name is the clothing-image of (C - frilly bunny ears):
+	decide on figure of frilly bunny ears.
+
+To say ClothingDesc of (H - frilly bunny ears):
+	say "A pink frilly pvc maid headress with attached bunny ears.".
+
+To say ShortDesc of (H - frilly bunny ears):
+	say "bunny ears".
+
+To compute SelfExamineDesc of (H - frilly bunny ears):
+	let X be the largeness of hair;
+	say "You are wearing a latex bunny ears hood on top of your [ShortDesc of hair]. ".
+
+To compute class outfit of (H - frilly bunny ears):
+	class summon bunny-maid-outfit.
+
+To say MediumDesc of (H - frilly bunny ears):
+	say "pvc frilly bunny ears".
+
 
 Part 4 - Bunny Hat
 

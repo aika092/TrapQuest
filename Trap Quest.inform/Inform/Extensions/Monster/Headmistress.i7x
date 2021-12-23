@@ -79,6 +79,11 @@ Part - Motion
 To compute monstermotion of (M - headmistress):
 	unless M is in School08 and M is friendly, compute room leaving of M.
 
+To compute guarding action of (M - headmistress): [Sometimes the headmistress gets moved around and it would be good to send her slowly back to her office]
+	if M is in an academic room and M is not in School08 and M is not interested and M is friendly:
+		if M is in School04, try M going south;
+		otherwise compute room leaving of M.
+
 An all later time based rule (this is the school recruiters rule):
 	if armband is worn and class-time < (lessonFrequency * -5):
 		if headmistress is alive and headmistress is undefeated and (the rank of the player < 6 or playerRegion is school):
@@ -213,7 +218,7 @@ To execute (T - talk-headmistress-toilet) for (M - a monster):
 		let no-toilet-rank be 5;
 		if diaper quest is 1 or watersports fetish is 0, now no-toilet-rank is 4;
 		let able-to-pee be 1;
-		repeat with C running through pee covering undisplacable unzippable clothing:
+		repeat with C running through pee covering actually unavoidable clothing:
 			if able-to-pee is 1 and C is not usually autoremovable, now able-to-pee is 0;
 		if the rank of the player >= no-toilet-rank:
 			say "[BigNameDesc of M] looks at your armband and then shakes [his of M] head.[line break][speech style of M]'[one of]As of today, I have decided that [or][stopping][if no-toilet-rank is 4]Pink [end if]Diamond and higher ranked students are not allowed to use the toilets. [if no-toilet-rank is 4]If you want to pee, use a diaper like a good little baby slave[otherwise]At your high rank, you and your peers should be learning to be human toilets yourselves. You can pee in each others['] mouths, or wait until you get home[end if].'[roman type][line break]";

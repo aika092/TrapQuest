@@ -85,6 +85,7 @@ To compute recipe specific cursing of (T - a thing):
 			say GotLuckyFlav;
 		otherwise:
 			now T is cursed;
+			if T is clothing, compute quest of T;
 	otherwise:
 		let I be the intelligence of the player;
 		increase I by (the number of worn blue scrunchies + alchemyskill of the player) * 8;

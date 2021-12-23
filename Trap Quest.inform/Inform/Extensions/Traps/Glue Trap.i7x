@@ -745,7 +745,7 @@ Check GlueRubbing:
 	[If they rub it on a body part, then as they burrow past each layer of clothing covering that, each gets stuck.]
 	otherwise if the noun is a body part:
 		[say "You gingerly rub the [printed name of S] [if the noun is fuckhole]around[otherwise]onto[end if] your [ShortDesc of the noun] and wait to see what will happen.[line break]";]
-		if the noun is penis and there is no worn crotch covering clothing:
+		if the noun is penis and the number of worn crotch covering clothing is 0:
 			say "You touch just the tip of your finger to your [ShortDesc of penis] and find it bonds almost instantly! You shriek and start trying to pull it free immediately, before it gets any more stuck!";
 			say "It hurts! And the tugging is making your [ShortDesc of penis] stiffen, despite the pain. But you can't walk around here with one hand glued to your dick! You keep pulling, despite the pain, and eventually tug your hand free, your [ShortDesc of penis] now throbbing and burning in pain while tears stream from your eyes.";
 			PainUp 1;
@@ -775,7 +775,7 @@ Check GlueRubbing:
 			if the player is wrist bound behind:
 				say "You can't reach your belly to apply the glue with your wrists bound behind you.";
 				rule fails;
-			if there is no worn belly covering clothing:
+			if the number of worn belly covering clothing is 0:
 				if the latex-transformation of the player > 3, say "You sense that if you touched even just a part of your shiny new skin to another part while this glue is sticky, it will be joined together forever, stuck there!" instead;
 			repeat with C running through belly covering clothing:
 				try GlueRubbing C on the second noun instead;

@@ -186,7 +186,7 @@ To compute pregnancy:
 			now auto is 1; [for displacing automatically]
 			if portal-hotpants is worn and vagina is not actually occupied and the player is not in Hotel44:
 				say "[PregFlav]Your baby is painfully born through the portal encasing your [vagina], no doubt emerging in the room with [NameDesc of pimp].[line break][variable custom style]I wish I could see [his of pimp] face. This must be quite the surprise.[roman type][line break]You end up on your knees, panting, but relieved[if the father is a human monster], confident in the knowledge that [NameDesc of pimp] will be ensuring that the baby is taken away and cared for[otherwise] that it's all over[end if].";
-			otherwise if vagina is actually occupied or there is worn undisplacable cursed pee covering clothing or there is worn undisplacable unremovable pee covering clothing or there is worn glued pee covering clothing: [the vagina is blocked, so we delay the pregnancy and punish the player with contractions]
+			otherwise if vagina is actually occupied or there is worn actually unavoidable cursed pee covering clothing: [the vagina is blocked, so we delay the pregnancy and punish the player with contractions]
 				Delay Labour;
 			otherwise if the father is a monster:
 				let M be the father;

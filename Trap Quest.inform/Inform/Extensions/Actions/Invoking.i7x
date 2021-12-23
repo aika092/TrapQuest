@@ -16,7 +16,7 @@ Carry out invoking:
 				say "Your [T] [if T is cursed]loses its curse[otherwise]becomes blessed[end if]!";
 				bless T;
 		while the charge of the elder altar <= 200 and there is a held blessable wearthing:
-			repeat with T running through worn blessable things:
+			repeat with T running through held blessable things:
 				increase the charge of the elder altar by 100;
 				say "Your [T] [if T is cursed]loses its curse[otherwise]becomes blessed[end if]!";
 				bless T;
@@ -27,7 +27,7 @@ Carry out invoking:
 				say "Your [T] [if T is blessed]loses its hateful blessing[otherwise]becomes cursed[end if]!";
 				curse T;
 		while the charge of the elder altar <= 200 and there is a held actually cursable wearthing:
-			repeat with T running through worn actually cursable things:
+			repeat with T running through held actually cursable things:
 				increase the charge of the elder altar by 100;
 				say "Your [T] [if T is cursed]loses its hateful blessing[otherwise]becomes cursed[end if]!";
 				curse T.

@@ -93,14 +93,15 @@ Definition: a monster is facefucker:
 	decide no.
 
 To StomachSemenUp (X - a number):
-	let M be a random wrapped monster penetrating face;
-	if M is monster:
-		compute condom filling of M;
-	otherwise:
-		compute slightly addictive swallowing of semen by X;
-	if there is a facefucker thing penetrating face:
-		OralSexAddictUp 1;
-		progress quest of cum-swallowing-quest.
+	if X > 0:
+		let M be a random wrapped monster penetrating face;
+		if M is monster:
+			compute condom filling of M;
+		otherwise:
+			compute slightly addictive swallowing of semen by X;
+		if there is a facefucker thing penetrating face:
+			OralSexAddictUp 1;
+			progress quest of cum-swallowing-quest.
 
 To ActualStomachSemenUp (X - a number):
 	let SU be a random number between 0 and 1;
@@ -126,7 +127,7 @@ To StomachSemenDown (X - a number):
 			decrease X by 1.
 
 To StomachUrineUp (X - a number):
-	compute slightly addictive swallowing of urine by X.
+	if X > 0, compute slightly addictive swallowing of urine by X.
 
 To ActualStomachUrineUp (X - a number):
 	while X > 0:
@@ -145,7 +146,7 @@ To StomachUrineDown (X - a number):
 			decrease the stomach-urine of the player by 1.
 
 To StomachMilkUp (X - a number):
-	compute slightly addictive swallowing of milk by X.
+	if X > 0, compute slightly addictive swallowing of milk by X.
 
 To ActualStomachMilkUp (X - a number):
 	while X > 0:

@@ -69,15 +69,16 @@ To decide which number is the initial outrage of (C - lolita royal dress):
 To decide which number is the initial cringe of (C - lolita royal dress):
 	decide on 3.
 
+
 Part 3 - Baby Royal Dress
 
-baby royal dress is a royal dress. baby royal dress is not-top-displacable. baby royal dress is super-short. baby royal dress is bed wetting. The text-shortcut of baby royal dress is "rd3". baby royal dress is diaper-addiction-influencing.
+baby royal dress is a royal dress. baby royal dress is not-top-displacable. baby royal dress is short. baby royal dress is bed wetting. The text-shortcut of baby royal dress is "rd3". baby royal dress is diaper-addiction-influencing.
 
 To decide which figure-name is clothing-image of (C - baby royal dress):
 	decide on figure of royal dress 3.
 
 To say ClothingDesc of (O - baby royal dress):
-	say "A pink baby dress with a peter pan collar that is incredibly short, completely exposing what the wearer has underneath[if there is a worn diaper and O is worn]. Which in your case, is a diaper[end if]. It has a pattern of cartoon princesses and pink flowers. It looks like it would only ever be worn by toddler girls, but it's in your size.".
+	say "A pink baby dress with a peter pan collar that is poofy and short, threatening to expose what the wearer has underneath[if there is a worn diaper and O is worn]. Which in your case, is a diaper[end if]. It has a pattern of cartoon princesses and pink flowers. It looks like it would only ever be worn by toddler girls, but it's in your size.".
 
 To decide which number is the initial outrage of (C - baby royal dress):
 	if diaper quest is 0, decide on the initial cringe of C;
@@ -103,10 +104,10 @@ To transform (D - a clothing) into (C - baby royal dress):
 	silently transform D into C;
 	say "a [C][bold type] in front of your eyes![roman type] ";
 	cutshow figure of princess diaper cutscene 1 for C;
-	say "[TransformReaction of C]".
+	say TransformReaction of C.
 
 
-Part 3 - Queen of Spades Dress
+Part 4 - Queen of Spades Dress
 
 queen-of-spades-dress is a royal dress. queen-of-spades-dress is bottom-exclusive. queen-of-spades-dress is crotch-exposing. queen-of-spades-dress is unskirted. queen-of-spades-dress is low cut. queen-of-spades-dress is normally-nipple-exposing. The text-shortcut of queen-of-spades-dress is "qsd".
 

@@ -53,7 +53,7 @@ To compute furniture resting on (M - a milking bench):
 						say "You decide against exposing your nipples before resting on the bench.";
 			decrease N by 1;
 	if the number of worn actually nipple covering clothing is 0, now milking-allowed is 1;
-	now resting is 1;
+	now player-currently-resting is 1;
 	compute fat burning reset;
 	now the stance of the player is 1;
 	now the alert of the player is 0;
@@ -109,7 +109,7 @@ To compute furniture resting on (M - a milking bench):
 			say "The machine finally stops milking you[if milking-increased-doses is false]. There wasn't enough milk to significantly increase the level of the fluid in the milk tank, but your small contribution will surely be taken into account the next time you get milked[end if].";
 			if the alert of the player is 0, say "[if the bimbo of the player < 11][line break][first custom style]I feel so much better![otherwise][line break][second custom style]I'm full of energy again. Yum![end if][roman type][line break]";
 		progress quest of milking-quest;
-		now resting is 0;
+		now player-currently-resting is 0;
 		if the alert of the player is 0, try standing;
 		otherwise try looking;
 	otherwise:
@@ -121,6 +121,9 @@ To compute furniture resting on (M - a milking bench):
 			compute alerting of M;
 		otherwise:
 			compute rest completion of M;
+		if the lactation rate of breasts < 4:
+			say "[bold type]Your [BreastDesc] suddenly feel significantly more... active.[roman type][line break]";
+			increase the lactation rate of breasts by 2;
 	if there is worn temporarily-displaced clothing and the player is not in danger:
 		say "You replace your [ShortDesc of list of worn temporarily-displaced clothing].";
 		repeat with C running through worn temporarily-displaced clothing:
@@ -128,7 +131,7 @@ To compute furniture resting on (M - a milking bench):
 	repeat with C running through temporarily-displaced clothing: [This should happen even if the player is in danger]
 		now C is not temporarily-displaced;
 	[now the units collected of M is 0;] [it can save units for next time]
-	now resting is 0.
+	now player-currently-resting is 0.
 
 To say RestingDesc of (F - a milking bench):
 	say "You [one of][or]continue to [stopping]kneel on the bench.";

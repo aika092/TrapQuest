@@ -51,6 +51,13 @@ Used to make pain increase delicateness slower.
 *!]
 pain-balance is a number that varies.
 
+no-flinching is initially false. [can be used to flag times that the player can't flinch and expel from pain]
+
+To UnflinchingPainUp (X - a number):
+	now no-flinching is true;
+	PainUp X;
+	now no-flinching is false.
+
 To PainUp (X - a number): [This function is anticipated to output some kind of flavour text when called]
 	let timesTicked be 0;
 	let K be 0;
@@ -104,8 +111,9 @@ To PainUp (X - a number): [This function is anticipated to output some kind of f
 			if spank-heart tattoo is worn and the player is able to orgasm and (the player is extremely horny or (the player is very horny and the player is getting unlucky)):
 				say "[bold type]Your [spank-heart tattoo][bold type] sends sparks of pleasure down to your crotch![roman type][line break][if the player is not extremely horny][GotUnluckyFlav][end if]";
 				vaginally orgasm shamefully;
-			let T be the substituted form of "As you [one of]recoil[or]flinch[or]tense up[in random order] with pain,";
-			check sudden spit and expulsion with reason T;
+			if no-flinching is false:
+				let T be the substituted form of "As you [one of]recoil[or]flinch[or]tense up[in random order] with pain,";
+				check sudden spit and expulsion with reason T;
 	if highest delicateness < the delicateness of the player, now highest delicateness is the delicateness of the player.
 
 To DelicateUp (X - a number):

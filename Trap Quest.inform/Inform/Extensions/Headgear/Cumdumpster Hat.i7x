@@ -17,7 +17,10 @@ To decide which number is the initial outrage of (C - a cumdumpster hat):
 To compute unique recycling of (C - a cumdumpster hat):
 	now the condom-count of condom-eating-quest is 0.
 
-thirsty work condom hat is a cumdumpster hat. thirsty work condom hat is plastic. thirsty work condom hat is roleplay.
+thirsty work condom hat is a cumdumpster hat. thirsty work condom hat is plastic.
+Definition: thirsty work condom hat is roleplay:
+	if condom fetish is 1, decide yes;
+	decide no.
 The printed name of thirsty work condom hat is "[clothing-title-before]thirsty work cumdumpster hat[clothing-title-after]". The text-shortcut of thirsty work condom hat is "twch".
 
 Figure of thirsty work condom hat is the file "Items/Accessories/Head/cumdumpsterhat2.png".

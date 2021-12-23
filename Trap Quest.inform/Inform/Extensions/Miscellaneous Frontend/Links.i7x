@@ -357,12 +357,44 @@ To compute multiple choice question:
 	now player-numerical-response is inputNumber;
 	conclude consenting. [refreshes the map window]
 
+To compute single choice question (T - a text):
+	reset multiple choice questions;
+	set numerical response 1 to T;
+	compute multiple choice question;
+	now player-numerical-response is -1.
+
+
 To reset multiple choice questions:
 	[now numerical-responses is {"","","","","","","","","",""};] [this doesn't work because Inform is shit]
 	truncate numerical-responses to 0 entries;
 	repeat with N running from 1 to 10:
 		add "" to numerical-responses;
 	if debugmode > 1, say "Numerical responses: [numerical-responses].".
+
+leftNumber is initially -2.
+rightNumber is initially -3.
+upNumber is initially -4.
+downNumber is initially -5.
+directionNumbersConfigured is initially false.
+To configure direction numbers:
+	while directionNumbersConfigured is false:
+		say "[one of]First, the game needs to[or]The game will now[stopping] configure your arrow keys.";
+		say "Please press the key you would like to be treated as your [bold type]up arrow[roman type]: ";
+		now upNumber is the chosen letter;
+		say line break;
+		say "Please press the key you would like to be treated as your [bold type]down arrow[roman type]: ";
+		now downNumber is the chosen letter;
+		say line break;
+		say "Please press the key you would like to be treated as your [bold type]left arrow[roman type]: ";
+		now leftNumber is the chosen letter;
+		say line break;
+		say "Please press the key you would like to be treated as your [bold type]right arrow[roman type]: ";
+		now rightNumber is the chosen letter;
+		say line break;
+		say "Are you sure you're happy with those choices? Choose [bold type]no[roman type] to configure your arrow keys again.";
+		if the player is consenting:
+			now directionNumbersConfigured is true;
+			say "Arrow keys successfully configured.".
 
 Part 4 - VerbDescs
 

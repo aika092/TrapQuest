@@ -1,6 +1,6 @@
 Rugged Headband by Headgear begins here.
 
-rugged-headband is a headgear. rugged-headband is redness-positive. rugged-headband is roleplay. rugged-headband is manly. Understand "rugged", "headband" as rugged-headband.
+rugged-headband is a headgear. rugged-headband is redness-positive. rugged-headband is manly. Understand "rugged", "headband" as rugged-headband.
 
 Definition: rugged-headband is roleplay: decide yes. [Extension not included in DQ]
 

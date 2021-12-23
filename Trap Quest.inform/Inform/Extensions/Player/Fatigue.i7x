@@ -28,7 +28,7 @@ Definition: yourself is prone:
 	if the stance of it is 1, decide yes;
 	decide no.
 
-Resting is a number that varies. Resting is 0. [Used to prevent fainting during the while loop of resting.]
+player-currently-resting is a number that varies. [Used to prevent fainting during the while loop of resting.]
 
 Busy is a number that varies. Busy is 0.
 

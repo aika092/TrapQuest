@@ -24,7 +24,14 @@ Definition: yourself is resisting taste addiction:
 	if the player is taste obsessed:
 		if drinking-target is bottle:
 			if debugmode > 0, say "[input-style]Fill colour of [MediumDesc of drinking-target] is [fill-colour of drinking-target].[roman type][line break]";
-			if ((the fill-colour of drinking-target is creamy and semen is highest addicted liquid) or (the fill-colour of drinking-target is golden and urine is highest addicted liquid) or (the fill-colour of drinking-target is white and milk is highest addicted liquid)), decide no;
+			let L be water;
+			if the fill-colour of drinking-target is creamy, now L is semen;
+			if the fill-colour of drinking-target is golden, now L is urine;
+			if the fill-colour of drinking-target is white, now L is milk;
+			if drinking-target is cursed or (the fill-type of drinking-target >= lowest-cursed and the fill-type of drinking-target <= highest-cursed):
+				if drinking-target is squirt dildo or (drinking-target is teapot and diaper quest is 0), now L is semen;
+				if drinking-target is baby's bottle or drinking-target is novelty mug, now L is milk;
+			if L is highest addicted liquid, decide no;
 		if drinking-target is DungeonScenery01 and semen is highest addicted liquid, decide no;
 		if drinking-target is breasts and milk is highest addicted liquid, decide no;
 		decide yes;

@@ -27,8 +27,12 @@ To say ClothingDesc of (M - nun-dress):
 
 This is the nun bondage prevents hand use rule:
 	if nun-dress is worn and nun-dress is wrist-bound-behind:
-		if manual hands attempt is 1, say "[variable custom style]I can't do that whilst my hands are bound strictly behind my back under my nun dress![roman type][line break]";
-		rule fails.
+		if nun-dress is locked:
+			if manual hands attempt is 1, say "[variable custom style]I can't do that whilst my hands are bound strictly behind my back under my nun dress![roman type][line break]";
+			rule fails;
+		otherwise:
+			say "You slip your hands out of [NameDesc of nun-dress].";
+			now nun-dress is wristless.
 The nun bondage prevents hand use rule is listed in the hands restriction rules.
 
 To decide which number is the initial outrage of (C - nun-dress):

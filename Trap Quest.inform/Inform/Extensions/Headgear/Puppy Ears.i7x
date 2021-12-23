@@ -1,7 +1,8 @@
 Puppy Ears by Headgear begins here.
 
-puppy ears is a headgear. Figure of puppy ears is the file "Items/Accessories/Head/puppyears1.png". Understand "pair", "of" as puppy ears. puppy ears is blondeness-negative. puppy ears is brightness-positive. puppy ears is redness-negative. puppy ears is hair growing. puppy ears is dexterity-influencing. puppy ears is roleplay.
+puppy ears is a headgear. Figure of puppy ears is the file "Items/Accessories/Head/puppyears1.png". Understand "pair", "of" as puppy ears. puppy ears is blondeness-negative. puppy ears is brightness-positive. puppy ears is redness-negative. puppy ears is hair growing. puppy ears is dexterity-influencing.
 
+Definition: puppy ears is roleplay: decide yes.
 Definition: puppy ears is fluid immune: decide yes.
 Definition: puppy ears is dog themed: decide yes.
 Definition: puppy ears is purple themed: decide yes.

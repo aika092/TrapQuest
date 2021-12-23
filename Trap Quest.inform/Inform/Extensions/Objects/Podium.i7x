@@ -19,7 +19,7 @@ Check entering podium:
 	[if the player is not able to use manual dexterity, say "You don't have the manual dexterity needed to climb up there." instead;]
 	if the player is prone, say "You would need to be standing up." instead;[now we can assume the player can get onto the podium]
 	allocate 6 seconds;
-	if the player is a december 2020 top donator and the class of the player is bride and bride-consort is an alive undefeated monster:
+	if the class of the player is bride and bride-consort is an alive undefeated monster:
 		if there is a worn bridal dress or sheer-open-front-skirt is worn:
 			say "[BigNameDesc of bride-consort] appears from the doorway, dressed the same as ever but with added pride and jubilation in [his of bride-consort] step. As [he of bride-consort] joins you on-stage, traditional wedding music fills the room. Suddenly, [NameDesc of Icarus] descends from above to stand before you both, ready to officiate the wedding.[line break][speech style of Icarus]'Beloved guests, we are gathered here today to witness this marriage. [NameBimbo] is dedicating [his of the player] life to serving [his of the player] new lord and master. If anyone knows of any reason this marriage cannot proceed, please state so now or forever hold your peace.'[roman type][line break]Unsurprisingly, [if the number of monsters in the location of the player is 0]with absolutely nobody in the audience, [end if]there is no reply.[line break][speech style of Icarus]'Then I pronounce you [man of bride-consort] and wife!'[roman type][line break]";
 			class summon floral bouquet;
@@ -38,12 +38,12 @@ Check entering podium:
 					say "Your [sheer-open-front-skirt] becomes cursed!";
 					now sheer-open-front-skirt is cursed;
 					compute summoned quest of sheer-open-front-skirt;
-			say "[speech style of bride-consort]'I must go spread the news of our joy with the others! Soon it will be our wedding night. You know what that means, right? I will be making a woman of you.'[roman type][line break][big he of bride-consort] points to your [vagina].[line break][speech style of bride-consort]'Meet me in the Karma Sutra Penthouse Suite.'[roman type][line break]Before you can reply, [he of bride-consort] has left.";
+			say "[speech style of bride-consort]'I must go spread the news of our joy with the others! Soon it will be our wedding night. You know what that means, right? I will be making a woman of you.'[roman type][line break][big he of bride-consort] points to your [vagina].[line break][speech style of bride-consort]'Meet me in the Kama Sutra Penthouse Suite.'[roman type][line break]Before you can reply, [he of bride-consort] has left.";
 			focus-consider bride-consort;
 			progress quest of podium-quest;
 		otherwise:
 			say "You want to have a wedding ceremony but you realise you can't do that without a wedding dress[if the number of carried bridal dress is 0]! Perhaps there is a [bold type]magic wardrobe[roman type] somewhere that would enable you to reclaim your wedding outfit[end if].";
-	otherwise if diaper quest is 0 and the player is a december 2020 top donator and floral bridal veil is off-stage and the player is possessing a vagina and the vaginalvirgin of the player is 1 and floral bridal veil is actually summonable:
+	otherwise if diaper quest is 0 and the player is the donator and floral bridal veil is off-stage and the player is possessing a vagina and the vaginalvirgin of the player is 1 and floral bridal veil is actually summonable:
 		say "You find yourself dreaming of a wedding ceremony. You are the bride, holding a bouquet of flowers, as some noble [man of shopkeeper] dedicates [his of shopkeeper] life to you in front of the world.[line break][variable custom style]That wouldn't be so bad.[roman type][line break]As if reacting to your thoughts, a [MediumDesc of floral bridal veil] appears on your head!";
 		summon floral bridal veil cursed;
 		progress quest of podium-quest;
@@ -95,7 +95,7 @@ Check entering podium:
 					otherwise cutshow figure of podium cutscene 2 for M;
 				now the previous-babification of M is 1; [prevents flavour where the guard 'changes how he's looking at you']
 				decrease the health of M by 1; [This stops him changing the player, and will instead punish further.]
-			otherwise if bondage protection is 1:
+			otherwise if bondage protection is 2:
 				now the fatigue of the player is the very tired threshold of the player + 5;
 				say "Opening your eyes you move forward to step off the stage only to find your whole body suddenly drained of all its energy. You collapse to the ground, and are now on your knees![line break][first custom style]'SOLD!'[roman type][line break]yells the Auctioneer as [he of shopkeeper] slams [his of shopkeeper] gavel down on the podium. Swallowing, you shiver as [he of shopkeeper] yanks at your [ShortDesc of hair], hauling you forward to meet the winning bidder and your new Master... [NameDesc of M][line break][first custom style]'Look up at your new master, slave.'[roman type][line break][big he of shopkeeper] grabs you by your hair as the Auctioneer lets go, the transfer of ownership complete. The magical scene behind you disappears, leaving you with an empty stage, [NameDesc of M], and [if the player is not a nympho]a decision to be made - fuck or flight?[otherwise][his of M] waiting [manly-penis].[end if]";
 			otherwise:
@@ -109,7 +109,7 @@ Check entering podium:
 					summon slave collar locked;
 				say "Opening your eyes you move forward to step off the stage only to be brought up short by chains binding you. Blinking your eyes you gasp in surprise and stare in shock at actual chains binding you, very real chains. [if A is worn and pair of wristcuffs is worn]You are now wearing a [A] and a [pair of wristcuffs]! [otherwise if A is worn]You are now wearing a [A]! [otherwise if pair of wristcuffs is worn]You are now wearing a [pair of wristcuffs]! [end if][if slave collar is worn]You have a [printed name of slave collar] around your neck! [end if][line break][first custom style]'SOLD!'[roman type][line break]yells the Auctioneer as [he of shopkeeper] slams [his of shopkeeper] gavel down on the podium. Swallowing, you shiver as [he of shopkeeper] yanks at your chains, hauling you forward to meet the winning bidder, your new Master... [NameDesc of M]![line break][first custom style]'Get on your knees, slave.'[roman type][line break][big he of M] pulls you by [if the largeness of hair > 2]your hair[otherwise]the neck[end if] and you trip over your bondage, landing on your knees. The magical scene behind you disappears, leaving you with an empty stage, [NameDesc of M], and [if the sex addiction of the player < 13]a decision to be made - fight, flight or fuck?[otherwise][his of M] waiting [manly-penis].[end if]";
 			now the stance of the player is 1;
-		otherwise if the class of the player is adventurer and bondage protection is 0 and the number of unremovable neckwear is 0 and the number of unremovable dresses is 0 and the number of unremovable skirts is 0 and the number of unremovable bras is 0:
+		otherwise if the class of the player is adventurer and bondage protection < 2 and the number of unremovable neckwear is 0 and the number of unremovable dresses is 0 and the number of unremovable skirts is 0 and the number of unremovable bras is 0:
 			if debuginfo > 0 and (B is not bracelet or there is an on-stage solid gold bracelet), say "[input-style]Stage roll: bracelet scene not possible ([if B is bracelet]solid gold bracelet is already in game universe[otherwise]no bracelets left off-stage[end if]); slave stuff selected automatically.[roman type][line break]";
 			unless slave-dress is worn or bondage-ribbons is worn:
 				if christmas content is 1 and diaper quest is 0:

@@ -1,13 +1,14 @@
 Influence by Clothing begins here.
 
-Clothing can be strength-influencing, dexterity-influencing, intelligence-influencing, sex-addiction-influencing, anal-sex-addiction-influencing, vaginal-sex-addiction-influencing, oral-sex-addiction-influencing, titfuck-addiction-influencing, semen-addiction-influencing, semen-taste-addiction-influencing, milk-taste-addiction-influencing, urine-taste-addiction-influencing, diaper-addiction-influencing, delicateness-influencing, heel-skill-influencing, luck-influencing, not-influencing (this is the clothing-influence property). Clothing is usually not-influencing.
+Clothing can be strength-influencing, dexterity-influencing, intelligence-influencing, sex-addiction-influencing, anal-sex-addiction-influencing, vaginal-sex-addiction-influencing, oral-sex-addiction-influencing, titfuck-addiction-influencing, semen-addiction-influencing, semen-taste-addiction-influencing, milk-taste-addiction-influencing, urine-taste-addiction-influencing, diaper-addiction-influencing, delicateness-influencing, heel-skill-influencing, luck-influencing, charisma-influencing, not-influencing (this is the clothing-influence property). Clothing is usually not-influencing.
 
 To set up stat-based influence of (C - a clothing):
-	let R be a random number between 1 and 4;
+	let R be a random number between 1 and 5;
 	if R is 1, now C is strength-influencing;
 	if R is 2, now C is dexterity-influencing;
 	if R is 3, now C is intelligence-influencing;
-	if R is 4, now C is luck-influencing.
+	if R is 4, now C is luck-influencing;
+	if R is 5, now C is charisma-influencing.
 
 To set up taste-based influence of (C - a clothing):
 	now C is semen-taste-addiction-influencing;

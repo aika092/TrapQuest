@@ -96,6 +96,7 @@ To check monster time out:
 		let LM be the list of alive willing to have time out regional monsters;
 		let E be the number of entries in LM;
 		if E > 0: [choose the monster that's been alive the longest]
+			if debugmode > 0, say "Choosing an NPC from the following list to give time out: [LM].";
 			sort LM in random order;
 			let TA be 0;
 			let M be entry 1 in LM;
@@ -152,7 +153,8 @@ Definition: yourself is wobbling:
 Definition: yourself is hobbling:
 	if there is worn crotch-displaced trousers, decide yes;
 	if the player is ankle bound, decide yes;
-	if there is a worn crotch-in-place hobble-skirted clothing, decide yes;
+	repeat with C running through worn crotch-in-place hobble-skirted clothing:
+		if C is not slitted, decide yes;
 	decide no.
 
 Definition: yourself is swaying:
@@ -288,6 +290,7 @@ To decide which number is the trip hazard of the player:
 	let H be a random worn hindrance-enabling shoes;
 	if H is shoes, increase X by the hindrance of H;
 	increase X by the slipperiness of the location of the player;
+	increase X by the number of currently-wrangled body parts * 4;
 	let Q be the largeness of hair - 14;
 	if the player is ponytailed, decrease Q by 3;
 	if the player is pigtailed, decrease Q by 6;

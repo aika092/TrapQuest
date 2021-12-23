@@ -12,7 +12,7 @@ Figure of hammock is the file "Env/Forest/hammock1.png".
 
 To compute furniture resting on (H - a hammock):
 	if the player is upright:[if the player is upright, the hammock works differently than normal furniture]
-		now resting is 1;
+		now player-currently-resting is 1;
 		compute fat burning reset;
 		say "You climb onto the hammock and lie down comfortably. You sink securely into the hammock, ensuring that your rest won't be interrupted by anything that can't fly.";
 		now the stance of the player is 1;
@@ -28,7 +28,7 @@ To compute furniture resting on (H - a hammock):
 		now busy is 0;
 		if the bimbo of the player < 11, say "[first custom style]I feel so much better![roman type][line break]";
 		otherwise say "[second custom style]I'm full of energy again. Yum![roman type][line break]";
-		now resting is 0;
+		now player-currently-resting is 0;
 		try standing;
 	otherwise:
 		say "You crawl over and rest on your hands and knees, with your torso supported by the hammock.";

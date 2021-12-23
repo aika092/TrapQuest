@@ -44,18 +44,30 @@ To say AdviceAnswer of (M - teacher-brooke):
 Part - Amicable Student Jennifer
 
 student-jennifer is an amicable student.
+The max-rank of student-jennifer is 4.
+
+Definition: student-jennifer is dark skinned: decide yes.
 
 The text-shortcut of student-jennifer is "stje".
 
-Figure of jennifer is the file "NPCs/School/Student/student6.png".
+Figure of jennifer rank 1 is the file "NPCs/School/Student/student6a.png".
+Figure of jennifer rank 2 is the file "NPCs/School/Student/student6b.png".
+Figure of jennifer rank 3 is the file "NPCs/School/Student/student6c.png".
+Figure of jennifer rank 3 diaper wet is the file "NPCs/School/Student/student6d.png".
+Figure of jennifer rank 3 diaper messed is the file "NPCs/School/Student/student6e.png".
 
 To decide which figure-name is the monster-image of (M - student-jennifer):
-	decide on figure of jennifer.
+	if the current-rank of M is 1:
+		decide on figure of jennifer rank 1;
+	otherwise if the current-rank of M is 2:
+		decide on figure of jennifer rank 2;
+	otherwise:
+		if M is messy, decide on figure of jennifer rank 3 diaper messed;
+		if the student-diaper-state of M > 0 or the current-rank of M is 4, decide on figure of jennifer rank 3 diaper wet;
+		decide on figure of jennifer rank 3.
 
 To say MonsterDesc of (M - student-jennifer):
-	say "This athletic brunette is wearing a tartan dress over a long-sleeved white undershirt. [if the current-rank of M is 1]A tell-tale bulge at the skirt lets you know that [he of M]'s wearing a diaper[otherwise if the current-rank of M is 2][big his of M] skirt has been pulled up a little, exposing the bottom of [his of M] diaper[otherwise][big his of M] skirt has been pulled up to [his of M] hips, leaving [his of M] diaper on full display[end if]. [big he of M] has a big friendly smile on [his of M] face.".[Selkie thinks: it would be fun to add a trap student, where the bulge at the skirt is a cock, not a diaper, and the dick shrinks and breasts expand as their rank increases. Foreshadowing, yeah?]
-
-The max-rank of student-jennifer is 3.
+	say "This dark skinned brunette is wearing [if the current-rank of M is 1]a yellow dress which is too tight to hide the shape of the diaper [he of M][']s wearing underneath. A tell-tale bulge at the skirt lets you know that [he of M][']s wearing a diaper[otherwise if the current-rank of M is 2]a blue dress with dungaree fastentings at the top, with a yellow vest underneath. The dress is too short to conceal the entirety of [his of M] thick diaper[otherwise]a frilly blue top. A yellow pacifier is attached with a pacifier strap. [big he of M][']s very thick diaper is completely uncovered[end if]. [big he of M] has a big friendly smile on [his of M] face.".[Selkie thinks: it would be fun to add a trap student, where the bulge at the skirt is a cock, not a diaper, and the dick shrinks and breasts expand as their rank increases. Foreshadowing, yeah?]
 
 To update name of (M - student-jennifer):
 	if the current-rank of M is 1:
@@ -66,7 +78,7 @@ To update name of (M - student-jennifer):
 		now the student-print of M is "bubbly babygirl";
 	otherwise:
 		now the student-name of M is "Gem";
-		now the student-print of M is "pampered pearl".
+		now the student-print of M is "properly pampered pearl".
 
 To say StoryAnswer of (M - student-jennifer):
 	say "[speech style of M]'I've always been a good [boy of M] but my Daddy wants me to be more proud of my [if the current-rank of M is 1]erm, well, never mind[otherwise]diapers[end if]. So I've been sent here to learn!'[roman type][line break]".

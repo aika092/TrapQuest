@@ -1,6 +1,7 @@
 Offering Trading by Actions begins here.
 
 To decide what number is the charisma-influence of (C - a thing):
+	if C is charisma-influencing clothing, decide on the magic-modifier of C;
 	decide on 0.
 
 To decide which number is the charisma of the player:
@@ -78,11 +79,11 @@ To decide which number is the convincability of (M - a monster):
 To compute (M - a monster) considering (T - a thing):
 	if M is not interested:
 		say "[BigNameDesc of M] isn't even looking at you.";
-	if (M is shopkeeper or M is royal guard) and there is held stolen thing:
+	otherwise if (M is shopkeeper or M is royal guard) and there is held stolen thing:
 		say MonsterCriminalOfferRejectFlav of M to T;
 	otherwise if convincing power > 0 and (M is friendly or (convincing power + the convincability of M) >= the square root of (a random number between 1 and 15)):
 		say MonsterOfferAcceptFlav of M to T;
-		compute resolution of M taking T;
+		if M is awake and M is in the location of the player, compute resolution of M taking T;
 		compute final resolution of M taking T;
 	otherwise:
 		if M is not rejecting T, make M expectant; [The player can keep offering things they haven't offered yet without the NPC immediately moving to punishment.]

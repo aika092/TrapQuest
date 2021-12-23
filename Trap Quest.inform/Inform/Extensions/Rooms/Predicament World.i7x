@@ -1108,13 +1108,12 @@ Definition: a predicament is appropriate: decide no.
 Definition: yourself is predicament-ready:
 	if the latex-transformation of the player > 0, decide no;
 	let H be a random worn headgear;
-	if H is headgear and the quest of H is just-wait-quest, decide no;
+	if H is headgear and (the quest of H is just-wait-quest or the quest of H is nice-quest or the quest of H is naughty-quest), decide no;
 	if (class-time is 1000 or class-time < 0) and armband is worn and armband is not solid gold and there is an alive undefeated correctly-ranked teacher, decide no; [ready for class]
 	repeat with C running through worn clothing:
 		if C is locked, decide no;
 		if C is unremovable and C is not piercing and C is not fake-nails and tough-shit is 1, decide no;
 		if C is glued, decide no;
-		if C is christmas dress and the class of the player is santa's little helper, decide no;
 	decide yes.
 Definition: a predicament is eligible:
 	if the times-completed of it is 0, decide yes;
@@ -1287,9 +1286,9 @@ An all time based rule:
 						now the deletedtime entry is 0;
 				otherwise:
 					say "You hear a series of low electronic tones, declaring that the camera failed to detect the pattern it was looking for.";
-				if blue-exercise-shorts is not in the location of the player: [player hasn't succeeded yet]
+				if blue-exercise-shorts is not in the location of the player or the predicament-progression of vibe-photo-predicament is 0:
 					if the predicament-progression of vibe-photo-predicament is 0:
-						say "Next, a giant blind is pulled up on the wall to your left, revealing that the entire left wall is made of glass! Anyone who walks past will be able to see inside!";
+						say "[if blue-exercise-shorts is in the location of the player]And then to make things even worse[otherwise]Next[end if], a giant blind is pulled up on the wall to your left, revealing that the entire left wall is made of glass! Anyone who walks past will be able to see inside!";
 						set up predicament universe;
 						compute predicament map reveal;
 					otherwise if the predicament-progression of vibe-photo-predicament is 1:
@@ -3566,16 +3565,22 @@ An all later time based rule:
 				say "[one of]You silently wait and listen for any noise through the hole.[or][or]You silently reflect on how you must look to anyone watching you play Trap Quest, patiently waiting at a gloryhole for [manly-penis].[or][or]Time feels like it stands still as you quietly wait[if the player is prone] on your knees[end if].[or][or][then at random]".
 
 Report going when the player is in Predicament20:
-	if nun-dress is worn and nun-dress is locked and the semen volume of face > 0:
-		say "[bold type]There is a bowl with some kind of electronic sensor at the bottom waiting for you on a pedestal in the middle of the room. [roman type]This must be the bowl you're supposed to fill with [semen] in order to escape from [NameDesc of nun-dress]! You let the [semen] run out of your mouth and into the bowl.";
-		MouthEmpty;
-		if purple-vibrator is held or purple-vibrator is in the location of the player:
-			say "[BigNameDesc of purple-vibrator] makes a beeping sound and then [NameDesc of nun-dress] clicks open, falling to the ground around you! Phew!";
-			now nun-dress is not locked;
-			now nun-dress is wristless;
-			now nun-dress is in the location of the player;
-		otherwise:
-			say "Unfortunately nothing seems to happen. You recall the instructions saying you needed to still have [NameDesc of purple-vibrator] with you as well.[line break][variable custom style]Oh crap... so I'm stuck wearing this?![roman type][line break]".
+	if nun-dress is worn and nun-dress is locked:
+		if the semen volume of face > 0:
+			say "[bold type]There is a bowl with some kind of electronic sensor at the bottom waiting for you on a pedestal in the middle of the room. [roman type]This must be the bowl you're supposed to fill with [semen] in order to escape from [NameDesc of nun-dress]! You let the [semen] run out of your mouth and into the bowl.";
+			MouthEmpty;
+			if purple-vibrator is held or purple-vibrator is in the location of the player:
+				say "[BigNameDesc of purple-vibrator] makes a beeping sound and then [NameDesc of nun-dress] clicks open, falling to the ground around you! Phew!";
+				now nun-dress is not locked;
+				now nun-dress is wristless;
+				now nun-dress is in the location of the player;
+			otherwise:
+				say "Unfortunately nothing seems to happen. You recall the instructions saying you needed to still have [NameDesc of purple-vibrator] with you as well.[line break][variable custom style]Oh crap... so I'm stuck wearing this?![roman type][line break]";
+		if nun-dress is locked:
+			say "You hear the voice of [NameDesc of receptionist] from the other side of the portal.[line break][speech style of receptionist]'Hi [NameBimbo], looks like you might be locked into that dress for a while, since you failed at the challenge. Perhaps it's best if we move all your items into your wardrobe for safekeeping.'[roman type][line break]You blink with surprise as all your possessions are surrounded by pink glows, and moments later have vanished, sent back to the pink wardrobe!";
+			repeat with T running through portable things in Predicament20:
+				unless T is person or T is trophy, now T is in pink wardrobe.
+
 
 To compute nun perception of (M - a bystander):
 	say "[big he of M] looks at you.[line break][speech style of M]'[one of]Seven blessings [or]Good morning [or]Blessings be upon you, [or]Pleasant greetings [or]A lovely day isn't it, [in random order]sister[run paragraph on]";
@@ -4543,7 +4548,9 @@ An all later time based rule:
 				set numerical response 1 to "agree";
 				set numerical response 2 to "demand more keys";
 				set numerical response 3 to "[if MNastiness is 1]outright refuse[otherwise]tell him that's too nasty[end if]";
+				now temporaryYesNoBackground is figure of female gloryhole key scene;
 				compute multiple choice question;
+				now temporaryYesNoBackground is figure of small image;
 				if player-numerical-response is 1:
 					now MPatience is -100; [this is how we flag that the player agreed]
 				otherwise if player-numerical-response is 2:
@@ -4967,6 +4974,522 @@ To execute (NWP - teddy-walk-predicament):
 
 To say PredicamentDescription of (P - teddy-walk-predicament):
 	say "I'm currently in an Extra Credit lesson where I need to get back to my home while avoiding as many bystanders as possible from noticing me. My giant teddy bear is [if diaper quest is 0 or watersports fetish is 0]masturbating me and [end if][if watersports fetish is 1]feeding me anything it collects down below[otherwise]slowly feeding me [milk][end if], and if I drop it I won't be able to pick it back up, exposing my genitals to the world.".
+
+
+ddr-diaper-predicament is a predicament.
+Definition: ddr-diaper-predicament is appropriate:
+	if diaper lover > 0 and the rank of the player > 1 and the player is an october 2021 diaper donator, decide yes;
+	decide no.
+
+Figure of ddr diaper predicament is the file "Special/Cutscene/cutscene-predicament-ddr-diaper1.png".
+
+To execute (DDP - ddr-diaper-predicament):
+	configure direction numbers;
+	now the player is in Predicament01;
+	now the stance of the player is 0;
+	now the fatigue of the player is 0;
+	let fatigue-rating be 1;
+	let BT be the buckle threshold of the player;
+	now the printed name of Predicament01 is "Arcade Center";
+	let DP be a random eligible huge diaper;
+	if DP is nothing, now DP is a random huge diaper;
+	only destroy DP;
+	summon DP uncursed;
+	now DP is predicament-fixed;
+	let S be a random waddle outfit;
+	only destroy S;
+	summon S uncursed;
+	now S is locked;
+	now S is stuck; [prevents the player from dropping to their knees due to rectum cramps]
+	now baby's bottle is carried by the player;
+	now the fill-colour of baby's bottle is white;
+	DoseFill baby's bottle;
+	say "You find yourself standing on a [']Rhythm Action Game['] dance mat, in the middle of a busy arcade. A couple of passersby are starting to notice you and come over to see what's going on, even as you are still taking further stock as your situation.[paragraph break]You're wearing a thick pink waddle outfit, which is locked on, of course, over a very thick diaper. In your left hand, a giant baby's bottle full of [milk] is taped tightly into your fist, preventing you from letting go of it. Your right hand is cuffed to the horizontal support bar behind the arcade machine, with a device that reads 'POINTS REMAINING UNTIL RELEASE: 999999'.[paragraph break]It would appear that the only way for you to escape the situation is to play the dance game until you've earned enough points. And meanwhile... the crowd just gets bigger and bigger.";
+	say "[first custom style]'Why is [he of the player] dressed like a baby?'[line break][second custom style]'Gross! Is [he of the player] literally wearing a diaper?'[roman type][line break][slightHumiliateReflect]";
+	if the map-window is g-present:
+		now temporaryYesNoBackground is figure of ddr diaper predicament;
+	otherwise if images visible is 1:
+		display figure of ddr diaper predicament;
+	let pointsNeeded be 999999;
+	let crowdSize be 2;
+	if diaper messing >= 4, now rectum is 10;
+	let LR be a list of numbers;
+	add leftNumber to LR;
+	add rightNumber to LR;
+	add upNumber to LR;
+	add downNumber to LR;
+	let F be Figure of map up arrow;
+	while pointsNeeded > 0:
+		let maxSequence be 10 - (fatigue-rating * 2);
+		if maxSequence < 1, now maxSequence is 1;
+		let correctEntries be 0;
+		say "[line break][one of]The[or]Another round of the[stopping] game is about to start! Memorise as much of the pattern that appears as possible, then when it's your turn, repeat the pattern as best as you can! [one of]As a hint, [bold type][or]Remember, [stopping]the same direction will never appear twice in a row.[roman type][line break]Press any key to start.";
+		let LD be a list of numbers;
+		repeat with ZZ running from 1 to maxSequence:
+			let R be a random number between 1 and 4;
+			while ZZ > 1 and entry 1 in LD is entry R in LR: [when ZZ is 1, there's no entries in LD]
+				now R is a random number between 1 and 4; [prevent there being two of the same direction in a row]
+			add entry R in LR at entry 1 in LD;
+		[if debugmode > 0, say "[LD][line break]";]
+		if the map-window is g-present:
+			clear the map-window;
+			render YesNoBackground;
+		let CL be the chosen letter;
+		increase CL by 1;
+		say "Get ready...";
+		wait 2000 ms before continuing;
+		repeat with ZZ running from 0 to (maxSequence - 1):
+			let D be entry (maxSequence - ZZ) in LD;
+			if D is leftNumber:
+				now F is Figure of map left arrow;
+			otherwise if D is rightNumber:
+				now F is Figure of map right arrow;
+			otherwise if D is upNumber:
+				now F is Figure of map up arrow;
+			otherwise:
+				now F is Figure of map down arrow;
+			if the map-window is g-present:
+				now epilogue-image is F;
+				clear the map-window;
+				epilogue-display;
+			otherwise:
+				clear the screen;
+				display F;
+			wait 700 ms before continuing;
+			if the map-window is g-present:
+				clear the map-window;
+			otherwise:
+				clear the screen;
+			wait 50 ms before continuing;
+		say "[bold type]Now it's your turn! [roman type]Repeat the pattern as best as you can. (If you get one wrong, don't try to correct yourself, but instead keep going to the next one in the sequence.)";
+		[if debugmode > 0, say "[LD][line break]";]
+		let previous-direction be 99999999;
+		repeat with ZZ running from 0 to (maxSequence - 1):
+			let MSZZ be maxSequence - ZZ;
+			let CL be the chosen letter;
+			while CL is previous-direction or (CL is not upNumber and CL is not downNumber and CL is not leftNumber and CL is not rightNumber):
+				say "[bold type]INPUT REJECTED: [if CL is previous-direction]Remember, it will never be the same direction as last time![otherwise]Please only press your arrow keys![end if][roman type][line break]Try again.";
+				now CL is the chosen letter;
+			let D be entry MSZZ in LD;
+			if CL is leftNumber:
+				if CL is D, now F is Figure of map left arrow;
+				otherwise now F is Figure of map left red arrow;
+			otherwise if CL is rightNumber:
+				if CL is D, now F is Figure of map right arrow;
+				otherwise now F is Figure of map right red arrow;
+			otherwise if CL is upNumber:
+				if CL is D, now F is Figure of map up arrow;
+				otherwise now F is Figure of map up red arrow;
+			otherwise:
+				if CL is D, now F is Figure of map down arrow;
+				otherwise now F is Figure of map down red arrow;
+			if the map-window is g-present:
+				now epilogue-image is F;
+				clear the map-window;
+				epilogue-display;
+			otherwise:
+				display F;
+			if CL is D:
+				increase correctEntries by 1;
+				say "Correct! ";
+			otherwise:
+				say "Wrong! ";
+			say "The arrow was [bold type][if D is upNumber]up[otherwise if D is leftNumber]left[otherwise if D is rightNumber]right[otherwise]down[end if][roman type].";
+			now previous-direction is D;
+			truncate LD to MSZZ - 1 entries;
+			if MSZZ is 1, wait 1000 ms before continuing;
+			[if debugmode > 0, say "[LD][line break]";]
+		if the map-window is g-present:
+			clear the map-window;
+			render YesNoBackground;
+		say "You got [correctEntries] out of [maxSequence] correct!";
+		decrease pointsNeeded by (25000 * correctEntries) + a random number between 20000 and 30000;
+		increase fatigue-rating by 1;
+		now the fatigue of the player is BT - (BT / fatigue-rating);
+		if pointsNeeded > 0:
+			say "The device keeping your wrist locked to the support bar now reads 'POINTS REMAINING UNTIL RELEASE: [pointsNeeded]'.";
+			if the player is not thirsty, StomachMilkDown 2;
+			say "You are feeling [if fatigue-rating > 3][bold type]extremely tired and parched[roman type][otherwise if fatigue-rating is 3][bold type]very tired and thirsty[roman type][otherwise]tired and thirsty[end if]. Do you drink some of the [milk] from the baby's bottle to recover some energy? [one of](If you don't, you'll have a smaller sequence to copy next round, and therefore a smaller maximum possible score.)[or][stopping]";
+			if the player is consenting:
+				say "You bring the teat to your lips, and drink a few gulps of [milk].";
+				StomachMilkUp 2;
+				now fatigue-rating is fatigue-rating / 2;
+				say "The crowd of people watching you makes disgusted sounds, and you hear some laughter too. You [blush crowdSize * 50].";
+			increase crowdSize by a random number between 1 and 3;
+			say "The crowd builds, and there are now [crowdSize] people watching you. [slightHumiliateReflect]";
+			if rectum > 5:
+				now another-turn is 0;
+				check real messing;
+				if another-turn is 1:
+					UnflinchingPainUp 1;
+					increase crowdSize by a random number between 1 and 3;
+					say "The crowd builds, and there are now [crowdSize] people watching you. [slightHumiliateReflect]";
+					now another-turn is 0;
+			if DP is messed:
+				say "[first custom style]'[one of]Disgusting! [big he of the player] pooped [his of the player] pants[or][big he of the player] smells so bad[or]I can't believe [he of the player] is doing that in a messy diaper[or]What a stinker[stopping]!'[roman type][line break]The crowd yells insults at you, and you [blush crowdSize * 150].";
+	say "Your wristcuff unclicks - you are finally released! You are able to pull the tape off of your other hand, allowing you to drop the baby's bottle if you want, and begin to run away from the crowd, towards the exit!";
+	now temporaryYesNoBackground is figure of small image;
+	now S is not stuck.
+
+
+
+
+train-predicament is a predicament.
+train-predicament has a list of numbers called train-cake.
+train-predicament has a list of numbers called train-cum.
+train-predicament has a list of numbers called train-piss.
+train-predicament has a list of numbers called train-tomato.
+train-predicament has a number called train-ping-pong-balls.
+
+Definition: train-predicament is appropriate:
+	if the rank of the player >= 3 and (the player is a december 2021 top donator or (diaper quest is 1 and the player is a december 2021 diaper donator)), decide yes;
+	decide no.
+To execute (TRNP - train-predicament):
+	summon lycra-bodysuit uncursed;
+	repeat with N running from 1 to 4:
+		add 2 to the train-cake of train-predicament;
+		add 1 to the train-cum of train-predicament;
+		add 0 to the train-piss of train-predicament;
+		add 0 to the train-tomato of train-predicament;
+	if diaper quest is 1:
+		summon plain-largish-diaper uncursed;
+		if diaper messing >= 4, now rectum is rectum-risky-level + 1;
+	otherwise:
+		if a2m fetish is 0, summon remote-controlled-vibrator uncursed;
+		if a2m fetish is 1, assfill 7 small eggs;
+		blandify and reveal heart-strap-thong;
+		now heart-strap-thong is in Predicament02;
+		gluify heart-strap-thong;
+		now heart-strap-thong is predicament-fixed;
+		if the largeness of breasts >= the min size of heart-strap-bra and the largeness of breasts <= the max size of heart-strap-bra:
+			blandify and reveal heart-strap-bra;
+			now heart-strap-bra is in Predicament02;
+			now the size of heart-strap-bra is the largeness of breasts;
+			gluify heart-strap-bra;
+			now heart-strap-bra is predicament-fixed;
+	if diaper quest is 1, now the bladder of the player is bladder-risky-level + 4;
+	now the player is in Predicament01;
+	say "You find yourself strapped face-down on some kind of trolley / cart / bondage bench on rails. You're wearing a green lycra bodysuit that covers everything except your face and crotch[if diaper quest is 1], and a large white diaper with a green vertical strip down the middle[end if]. Strict metal bondage keeps your arms and legs restrained and away from the ground. Your head hangs off the front end of your [']vehicle[']. and your butt hangs off the other end.[paragraph break][if watersports mechanics is 1]You're also desperate to pee. [end if][if diaper quest is 1 and diaper messing >= 4]And you feel the need to poop. [end if][if diaper quest is 0 and a2m fetish > 1]Also, you can feel that something slimy has been inserted in your asshole, and now urgently needs to be squeezed out. [end if][if diaper quest is 0 and a2m fetish is 1]Also, you can feel that there's several small objects inside your asshole, urgently needing to be squeezed out. [end if][paragraph break][first custom style]'WELCOME TO EXTRA CREDIT CLASS. [PredicamentRewardExplanation]ALLOW US TO EXPLAIN THE NATURE OF TODAY'S PREDICAMENT.'[roman type][line break]";
+	now temporaryYesNoBackground is Figure of Train Predicament Cutscene;
+	compute single choice question "Look around as the voice speaks.";
+	now temporaryYesNoBackground is Figure of no-image-yet; [forces normal map to be drawn during multiple choice, which in turn forces train state render to be drawn instead]
+	now temporary-map-figure is Figure of Train Predicament Track;
+	say "[first custom style]'TO EARN THIS TROPHY, YOU MUST RETURN HOME. BUT FIRST YOU'LL NEED TO EARN YOUR FREEDOM. YOU ARE BOUND ON A TROLLEY MOUNTED UPON A CIRCULAR TRACK. THERE IS A GREEN CIRCLE WITHIN THIS TRACK. THERE IS A CAMERA OBSERVING THE TRACK FROM ABOVE. WHEN IT CAN SEE AN UNINTERRUPTED GREEN CIRCLE, YOU WILL BE RELEASED. UNFORTUNATELY THERE ARE CURRENTLY SEVERAL PIECES OF CHOCOLATE FUDGE CAKE, AND SEVERAL SPLASHES OF [if diaper quest is 0]SEMEN[otherwise]HUMAN BREAST MILK[end if], BLOCKING THE PATTERN.[paragraph break]";
+	if diaper quest is 0:
+		if a2m fetish > 0:
+			say "'YOUR BELLY HAS BEEN FILLED WITH [if a2m fetish > 1 and watersports fetish > 0]URINE[otherwise if a2m fetish > 1]TOMATO KETCHUP[otherwise]PING PONG BALLS[end if], AND IF YOU CAN'T HOLD IT IN, THE RESULT MIGHT MAKE YOUR LIFE EVEN MORE TRICKY...'";
+		otherwise:
+			say "'OH, AND BY THE WAY, YOU HAVE A VIBRATOR ON YOUR GENITALIA[run paragraph on]";
+			if the player is possessing a penis, say ".[paragraph break]";
+			otherwise say ". EVERY TIME IT DETECTS YOU HAVING AN ORGASM, A SQUIRT OF [if watersports fetish > 0]URINE[otherwise]EXTRA-STRONG MUSTARD[end if] IS ADDED TO THE TRACK.[paragraph break]";
+	otherwise:
+		say "'YOUR DIAPER HAS A SPECIAL HIGH-TECH STRIP DOWN THE MIDDLE. IT IS CURRENTLY GREEN, BUT IF YOU WET YOURSELF, IT WILL TURN WHITE. [if diaper messing >= 4]HOWEVER IF IT DETECTS POOP, IT WILL BE GREEN, EVEN IF THERE IS URINE PRESENT TOO[otherwise]SO IF YOU CAN'T HOLD YOUR BLADDER, YOU WILL HAVE TO REMAIN ON THE TROLLEY UNTIL SOMEONE RESCUES YOU[end if].[paragraph break]";
+	say "AN UNSUSPECTING PERVERT HAS BEEN TOLD TO COME TO THIS LOCATION WITH HIS HIGH QUALITY CAMERA. HE WILL BE HERE SOON. HE WILL LIKELY RELEASE YOU IF YOU ASK NICELY, BUT WE IMAGINE HE MIGHT TAKE A FEW PHOTOS FIRST.'";
+	say "[PredicamentRewardExplanationReaction][roman type][line break]";
+	let trolleyTime be 1;
+	let buildingPressure be 0;
+	let previousPressure be 0;
+	let LT be a list of numbers; [1: cake, 2: cum, 3: piss, 4: tomato, 5: ping pong]
+	while trolleyTime > 0:
+		say "[line break][one of]The trolley starts to move[or]The trolley has completed another circuit of the track[stopping].";
+		let currentPressure be (the square root of buildingPressure) + a random number between 1 and 5;
+		if diaper quest is 0 and a2m fetish is 2, increase currentPressure by 2;
+		if currentPressure > 9, now currentPressure is 9;
+		now currentPressure is currentPressure * 10;
+		[refresh list of things on track]
+		truncate LT to 0 entries;
+		repeat with TC running through the train-cake of train-predicament:
+			if TC > 0:
+				add 1 to LT, if absent;
+		repeat with TC running through the train-cum of train-predicament:
+			if TC > 0:
+				add 2 to LT, if absent;
+		repeat with TP running through the train-piss of train-predicament:
+			if TP > 0:
+				add 3 to LT, if absent;
+		repeat with TT running through the train-tomato of train-predicament:
+			if TT > 0:
+				add 4 to LT, if absent;
+		if train-ping-pong-balls of train-predicament > 0:
+			add 5 to LT, if absent;
+		render train state;
+		if (diaper quest is 0 and (a2m fetish is not 1 or the small egg count of belly > 0)) or (diaper quest is 1 and the bladder of the player > 0):
+			say "Your [if diaper quest is 0 and a2m fetish > 0]belly's cramping[otherwise if diaper quest is 1]bladder's cramping[otherwise]need to orgasm[end if] [if previousPressure is 0]are suddenly at the forefront of your mind[otherwise if currentPressure > previousPressure and currentPressure <= previousPressure + 3]gets a bit stronger[otherwise if currentPressure > previousPressure]is much stronger than before[otherwise if currentPressure is previousPressure]is the same as before[otherwise if currentPressure <= previousPressure - 3]significantly dies away for now[otherwise]has slightly reduced[end if] ([bold type][currentPressure]% chance of losing control this turn[roman type]).";
+			reset multiple choice questions;
+			set numerical response 1 to "Focus on clearing the green path as quickly as possible (increases average amount of stuff cleared).";
+			set numerical response 2 to "Split your focus between clearing the green path and holding [if diaper quest is 0 and a2m fetish > 0]your sphincter shut[otherwise if diaper quest is 1]onto your bladder[otherwise]back your orgasm[end if] (half chance of losing control).";
+			set numerical response 3 to "Focus entirely on holding [if diaper quest is 0 and a2m fetish > 0]your sphincter shut[otherwise if diaper quest is 1]onto your bladder[otherwise]back your orgasm[end if] (one fifth chance of losing control).";
+			compute multiple choice question;
+		otherwise:
+			compute single choice question "Focus on clearing the green path as quickly as possible."; [sets player-numerical-response to -1]
+		if player-numerical-response is 3:
+			say "You ignore the stuff on the track, and hold on with all your might.";
+			now player-numerical-response is 5;
+		otherwise: [use your mouth to remove some stuff]
+			let ELT be the number of entries in LT;
+			while ELT > 0:
+				let X be entry ELT in LT;
+				[do the thing]
+				say line break;
+				while X is 1:
+					let ETC be a random number between 1 and the number of entries in the train-cake of train-predicament;
+					let TC be entry ETC in the train-cake of train-predicament;
+					if TC > 0:
+						now entry ETC in the train-cake of train-predicament is TC - 1;
+						say "You [if TC is 2]bury your face into one of the large slices of cake, eating as much as possible before the trolley moves you on[otherwise]clean up one of the smudges left by your previous messy cake eating[end if].";
+						StomachFoodUp 1;
+						now X is 0;
+				while X is 2:
+					let ETC be a random number between 1 and the number of entries in the train-cum of train-predicament;
+					let TC be entry ETC in the train-cum of train-predicament;
+					if TC > 0:
+						now entry ETC in the train-cum of train-predicament is TC - 1;
+						say "You hoover a small puddle of [if diaper quest is 1][milk][otherwise][semen][end if] up from the floor.";
+						if diaper quest is 1, StomachMilkUp 1;
+						otherwise StomachSemenUp 1;
+						now X is 0;
+				while X is 3:
+					let ETP be a random number between 1 and the number of entries in the train-piss of train-predicament;
+					let TP be entry ETP in the train-piss of train-predicament;
+					if TP > 0:
+						now entry ETP in the train-piss of train-predicament is TP - 1;
+						if diaper quest is 1:
+							say "You lick up a foul tasting blob of mustard from the floor. It's so bitter it feels like it's burning your tongue!";
+							UnflinchingPainUp 1;
+						otherwise:
+							say "You hoover a small puddle of [urine] up from the floor, acutely aware that a few moments ago, this foul liquid was inside your own butthole. [strongHumiliateReflect]";
+							StomachUrineUp 1;
+						now X is 0;
+				while X is 4:
+					let ETT be a random number between 1 and the number of entries in the train-tomato of train-predicament;
+					let TT be entry ETT in the train-tomato of train-predicament;
+					if TT > 0:
+						now entry ETT in the train-tomato of train-predicament is TT - 1;
+						say "You lick some tomato ketchup from the floor. It tastes unmistakably like the taste of your butthole. [strongHumiliateReflect][line break]You swallow it down, and can feel your mind warping as it struggles to come to terms with performing such a disgusting act.";
+						SexAddictUp 1;
+				if X is 5:
+					let X be a random number between 1 and 3;
+					if X > the train-ping-pong-balls of train-predicament, now X is the train-ping-pong-balls of train-predicament;
+					decrease the train-ping-pong-balls of train-predicament by X;
+					say "You use your tongue to push as many of the ping pong balls that were recently in your ass as possible off of the track. You [if the train-ping-pong-balls of train-predicament is 0]manage to get the final [X], and now this section of the train is all green.[otherwise if X is 1]only manage to move one[otherwise]manage to move [X][end if] before the trolly pulls you onwards.";
+				[remove it from the list and potentially go again]
+				let RELT be a random number between 1 and 5;
+				if RELT < 3 or (player-numerical-response > 1 and RELT < 5), now ELT is 0;
+				otherwise decrease ELT by 1;
+				truncate LT to ELT entries;
+		if player-numerical-response > 0: [if it's -1, there's nothing left to hold]
+			now previousPressure is currentPressure;
+			if player-numerical-response > 0, now currentPressure is currentPressure / player-numerical-response;
+			let RNG be a random number between 1 and 100;
+			if debuginfo > 0, say "[input-style]Hold on check: d100 ([RNG]) | [currentPressure].5 difficulty rating[roman type][line break]";
+			if RNG < currentPressure: [we don't hold on successfully]
+				say "[bold type]You can't hold on![roman type] ";
+				if diaper quest is 1:
+					say "You wet yourself, huge amounts of [urine] flowing straight into the thick padding of your [plain-largish-diaper]. The green stripe disappears.";
+					UrineSoakUp plain-largish-diaper by the bladder of the player;
+					now the bladder of the player is 0;
+				otherwise if a2m fetish is 0:
+					if the player is possessing a penis:
+						say "You cum hard, adding a new puddle of cum to the track.";
+						let LPDL be a list of numbers;
+						repeat with ETC running from 1 to 4:
+							if entry ETC in train-cum of train-predicament is 0, add ETC to LPDL;
+						if the number of entries in LPDL > 0:
+							let LPDLR be a random number between 1 and the number of entries in LPDL;
+							let LPDLN be entry LPDLR in LPDL;
+							now entry LPDLN in train-cum of train-predicament is 1;
+					otherwise:
+						say "You cum hard. The automated predicament seems to somehow detect this, and you watch in dismay as a small puddle of [if watersports fetish is 1][urine][otherwise]mustard[end if] is squirted onto the track from a nozzle in the ceiling.";
+						let LPDL be a list of numbers;
+						repeat with ETP running from 1 to 4:
+							if entry ETP in train-piss of train-predicament is 0, add ETP to LPDL;
+						if the number of entries in LPDL > 0:
+							let LPDLR be a random number between 1 and the number of entries in LPDL;
+							let LPDLN be entry LPDLR in LPDL;
+							now entry LPDLN in train-piss of train-predicament is 1;
+					SexAddictUp 1;
+				otherwise if a2m fetish is 1:
+					say "A large number of ping pong balls come shooting out of your butthole. Seven of them end up on top of the green line, obscuring the perfect circle. You're going to have to reach them with your tongue and knock them out of the way before you can escape...";
+					now small egg count of belly is 0;
+					now the train-ping-pong-balls of train-predicament is 7;
+				otherwise:
+					say "A large, loud squirt of [if watersports fetish is 1][urine][otherwise]tomato ketchup[end if] comes squelching out of your butthole, coating the track behind you. Now you're going to have to lick that up, too...";
+					if watersports fetish is 1:
+						let LPDL be a list of numbers;
+						repeat with ETP running from 1 to 4:
+							if entry ETP in train-piss of train-predicament is 0, add ETP to LPDL;
+						if the number of entries in LPDL > 0:
+							let LPDLR be a random number between 1 and the number of entries in LPDL;
+							let LPDLN be entry LPDLR in LPDL;
+							now entry LPDLN in train-piss of train-predicament is 1;
+					otherwise:
+						let LPDL be a list of numbers;
+						repeat with ETT running from 1 to 4:
+							if entry ETT in train-tomato of train-predicament is 0, add ETT to LPDL;
+						if the number of entries in LPDL > 0:
+							let LPDLR be a random number between 1 and the number of entries in LPDL;
+							let LPDLN be entry LPDLR in LPDL;
+							now entry LPDLN in train-tomato of train-predicament is 1;
+				now buildingPressure is 0;
+			increase buildingPressure by 1;
+		otherwise:
+			now previousPressure is 0;
+			now buildingPressure is 0;
+		[refresh list of things on track]
+		truncate LT to 0 entries;
+		repeat with TC running through the train-cake of train-predicament:
+			if TC > 0:
+				add 1 to LT, if absent;
+		repeat with TC running through the train-cum of train-predicament:
+			if TC > 0:
+				add 2 to LT, if absent;
+		repeat with TP running through the train-piss of train-predicament:
+			if TP > 0:
+				add 3 to LT, if absent;
+		repeat with TT running through the train-tomato of train-predicament:
+			if TT > 0:
+				add 4 to LT, if absent;
+		if train-ping-pong-balls of train-predicament > 0:
+			add 5 to LT, if absent;
+		render train state;
+		if diaper quest is 1 and plain-largish-diaper is wet:
+			if diaper messing >= 3:
+				if the number of entries in LT is 0:
+					say "You've now reached the point where the only thing that's preventing there being a complete green circle is your wet diaper. And from the instructions given to you at the start, you know there's only one way to turn it back green.";
+					reset multiple choice questions;
+					set numerical response 1 to "Mess yourself.";
+					set numerical response 2 to "You don't want to walk home messy! Wait for someone to discover and release you instead.";
+					compute multiple choice question;
+					if player-numerical-response is 1:
+						now voluntarySquatting is 1;
+						compute messing;
+						say "A beeping sound indicates that the camera has seen a perfect green circle! The trolley stops, and your bondage is automatically unlocked. You're free!";
+						now trolleyTime is 0;
+			otherwise:
+				say "Well, that's that. Thanks to your diaper, you can no longer complete the objective of creating a complete green circle. There's only one thing you can do now - wait for someone to come and discover you.";
+				now player-numerical-response is 2;
+		otherwise if the number of entries in LT > 0:
+			reset multiple choice questions;
+			set numerical response 1 to "Keep going.";
+			set numerical response 2 to "Give up and wait for someone to discover you.";
+			compute multiple choice question;
+		if player-numerical-response is 2 or a random number between 10 and 50 < trolleyTime:
+			update appearance level;
+			let PA be the appearance of the player;
+			let PC be 0;
+			if diaper quest is 1, now PC is the cringe appearance of the player;
+			now shutterbug-bystander is in Predicament01;
+			now shutterbug-bystander is moved;
+			now shutterbug-bystander is interested;
+			if the PA < PC, now the worst-appearance of shutterbug-bystander is PC;
+			otherwise now the worst-appearance of shutterbug-bystander is PA;
+			say "FLASH! A noisy camera shutter sound goes off behind you. You turn your head to see [NameDesc of shutterbug-bystander] taking several pictures of you![line break][variable custom style]'HEY WHAT THE HELL! Help me out here, don't just take photos of me, you creep!'[roman type][line break][big he of shutterbug-bystander] sniffs.[line break][speech style of shutterbug-bystander]'Fine.'[roman type][line break][big he of shutterbug-bystander] approaches a red button on one wall that you hadn't even noticed, and presses it. The trolley immediately stops moving, and your bondage is automatically released.[line break][speech style of shutterbug-bystander]'But because you spoke to me so nastily, I'm going to put these photos on the Internet.'[roman type][line break]And then, before you can retort, [he of shutterbug-bystander] has dashed back out through the only door.";
+			try shutterbug-bystander going north;
+			let TPT be the substituted form of "locked on a weird bondage trolley in a green lycra bodysuit [if diaper quest is 0]with your exposed butt[otherwise if plain-largish-diaper is messed]with a visibly messy diaper[otherwise if plain-largish-diaper is wet]with a visibly soaked diaper[otherwise]with a big thick (but thankfully dry) diaper[end if] sticking out the back";
+			compute digital reputation damage TPT strength (the worst-appearance of shutterbug-bystander) quality 2;
+			compute digital reputation damage TPT strength (the worst-appearance of shutterbug-bystander) quality 2;
+			now trolleyTime is 0;
+		otherwise:
+			if the number of entries in LT is 0:
+				say "A beeping sound indicates that the camera has seen a perfect green circle! The trolley stops, and your bondage is automatically unlocked. You're free!";
+				now trolleyTime is 0;
+			otherwise:
+				sort LT in random order;
+				increase trolleyTime by 1;
+	if remote-controlled-vibrator is worn, arouse 1000 * buildingPressure;
+	now temporaryYesNoBackground is figure of small image.
+
+
+Figure of Train Predicament Track is the file "Special/Train/train__0001_Track-2.jpg".
+
+Figure of Train Predicament Smear 1 is the file "Special/Train/train__0004_Smear-1.png".
+Figure of Train Predicament Smear 2 is the file "Special/Train/train__0006_Smear-2.png".
+Figure of Train Predicament Smear 3 is the file "Special/Train/train__0008_Smear-3.png".
+Figure of Train Predicament Smear 4 is the file "Special/Train/train__0010_Smear-4.png".
+
+Figure of Train Predicament Cake 1 is the file "Special/Train/train__0005_Cake-1.png".
+Figure of Train Predicament Cake 2 is the file "Special/Train/train__0007_Cake-2.png".
+Figure of Train Predicament Cake 3 is the file "Special/Train/train__0009_Cake-3.png".
+Figure of Train Predicament Cake 4 is the file "Special/Train/train__0011_Cake-4.png".
+
+Figure of Train Predicament Tomato 1 is the file "Special/Train/train__0012_Tomato-1.png".
+Figure of Train Predicament Tomato 2 is the file "Special/Train/train__0013_Tomato-2.png".
+Figure of Train Predicament Tomato 3 is the file "Special/Train/train__0014_Tomato-3.png".
+Figure of Train Predicament Tomato 4 is the file "Special/Train/train__0015_Tomato-4.png".
+
+Figure of Train Predicament Pee 1 is the file "Special/Train/train__0017_Pee-1.png".
+Figure of Train Predicament Pee 2 is the file "Special/Train/train__0018_Pee-2.png".
+Figure of Train Predicament Pee 3 is the file "Special/Train/train__0019_Pee-3.png".
+Figure of Train Predicament Pee 4 is the file "Special/Train/train__0020_Pee-4.png".
+
+Figure of Train Predicament Cum 1 is the file "Special/Train/train__0021_Cum-1.png".
+Figure of Train Predicament Cum 2 is the file "Special/Train/train__0022_Cum-2.png".
+Figure of Train Predicament Cum 3 is the file "Special/Train/train__0023_Cum-3.png".
+Figure of Train Predicament Cum 4 is the file "Special/Train/train__0024_Cum-4.png".
+
+
+To render train state:
+	truncate temporary-map-figures to 0 entries;
+	add temporary-map-figure to temporary-map-figures;
+	add Figure of Train Predicament Player to temporary-map-figures;
+	let E be 1;
+	repeat with TC running through the train-cake of train-predicament:
+		if TC is 1:
+			if E is 1:
+				add Figure of Train Predicament Smear 1 to temporary-map-figures;
+			otherwise if E is 2:
+				add Figure of Train Predicament Smear 2 to temporary-map-figures;
+			otherwise if E is 3:
+				add Figure of Train Predicament Smear 3 to temporary-map-figures;
+			otherwise:
+				add Figure of Train Predicament Smear 4 to temporary-map-figures;
+		otherwise if TC is 2:
+			if E is 1:
+				add Figure of Train Predicament Cake 1 to temporary-map-figures;
+			otherwise if E is 2:
+				add Figure of Train Predicament Cake 2 to temporary-map-figures;
+			otherwise if E is 3:
+				add Figure of Train Predicament Cake 3 to temporary-map-figures;
+			otherwise:
+				add Figure of Train Predicament Cake 4 to temporary-map-figures;
+		increase E by 1;
+	now E is 1;
+	repeat with TT running through the train-tomato of train-predicament:
+		if TT is 1:
+			if E is 1:
+				add Figure of Train Predicament Tomato 1 to temporary-map-figures;
+			otherwise if E is 2:
+				add Figure of Train Predicament Tomato 2 to temporary-map-figures;
+			otherwise if E is 3:
+				add Figure of Train Predicament Tomato 3 to temporary-map-figures;
+			otherwise:
+				add Figure of Train Predicament Tomato 4 to temporary-map-figures;
+		increase E by 1;
+	now E is 1;
+	repeat with TP running through the train-piss of train-predicament:
+		if TP is 1:
+			if E is 1:
+				add Figure of Train Predicament Pee 1 to temporary-map-figures;
+			otherwise if E is 2:
+				add Figure of Train Predicament Pee 2 to temporary-map-figures;
+			otherwise if E is 3:
+				add Figure of Train Predicament Pee 3 to temporary-map-figures;
+			otherwise:
+				add Figure of Train Predicament Pee 4 to temporary-map-figures;
+		increase E by 1;
+	now E is 1;
+	repeat with TC running through the train-cum of train-predicament:
+		if TC is 1:
+			if E is 1:
+				add Figure of Train Predicament Cum 1 to temporary-map-figures;
+			otherwise if E is 2:
+				add Figure of Train Predicament Cum 2 to temporary-map-figures;
+			otherwise if E is 3:
+				add Figure of Train Predicament Cum 3 to temporary-map-figures;
+			otherwise:
+				add Figure of Train Predicament Cum 4 to temporary-map-figures;
+		increase E by 1;
+	if diaper quest is 0 and a2m fetish is 1 and the small egg count of belly > 0, add Figure of Train Predicament Ping Pong to temporary-map-figures.
 
 
 Predicament World ends here.

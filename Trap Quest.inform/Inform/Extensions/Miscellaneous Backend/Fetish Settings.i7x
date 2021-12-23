@@ -216,7 +216,7 @@ To decide which number is bondage protection:
 	decide on the choice in row 64 of the Table of Player Options.
 
 To decide which number is christmas content:
-	if the player is not a top donator, decide on 0;
+	[if the player is not a top donator, decide on 0;]
 	decide on choice in row 65 of the Table of Player Options.
 
 To decide which number is easter content:
@@ -354,7 +354,7 @@ To decide which number is points count:
 	if TG fetish is 0, decrease X by min penis size points;
 	if trap fetish is 1, decrease X by trap points;
 	decrease X by mindbreak protection * 4;
-	decrease X by bondage protection * 4;
+	decrease X by bondage protection * 2;
 	decrease X by incontinence protection * 2;
 	if background-selected is 1, decrease X by 5;
 	decrease X by 7 * tattoo-fetish;

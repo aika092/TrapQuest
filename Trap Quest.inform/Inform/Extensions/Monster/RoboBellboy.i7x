@@ -295,6 +295,16 @@ Definition: a clothing (called C) is super-slutty-knickers:
 	decide no.
 
 To compute knickers forcing of (M - a robobellboy):
+	if the number of worn chastity bonds is 0:
+		if the bimbo of the player > 5 and the player is possessing a penis or the player is a sissy:
+			let H be a random off-stage fetish appropriate chastity cage;
+			if H is a chastity cage:
+				say "[BigNameDesc of M] digital interface flashes red as it notices your exposed [sissy-penis].[line break][first custom style]'EXPOSED CLITTY DETECTED. ENTERING CAGING SUBROUTINE.'[roman type][line break][big he of M] deploys a long black tube that vaccums down your exposed [penis] to the hilt. The sucking feels amazing, and you feel yourself getting close to orgasm, before you feel something cold and hard force your erection down. [BigNameDesc of M] stops the suction and removes the tube to reveal your [sissy-penis] is now locked away in a [ShortDesc of H]![roman type][line break]";
+				summon H locked;
+				say "[first custom style]'PLEASE REMEMBER THAT CLIENT SATISFACTION SHOULD BE YOUR ONLY CONCERN. PLEASE STAND BY FOR APPROPRIATE CLOTHING.'[roman type][line break]";
+				say FullExamineDesc of H;
+				bore M;
+				FavourUp M;
 	let C be a random off-stage super-slutty-knickers clothing;
 	let N be 0;
 	while C is not actually summonable and N < 25:

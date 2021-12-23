@@ -71,7 +71,8 @@ Chapter 1 - Pink Scrunchie
 
 [Obtained from the mannequin]
 
-A pink scrunchie is a kind of scrunchie. A pink scrunchie is usually cursed. pink-scrunchie-1 is a pink scrunchie. pink-scrunchie-2 is a pink scrunchie. The text-shortcut of pink-scrunchie-1 is "psc1". The text-shortcut of pink-scrunchie-2 is "psc2". pink-scrunchie-1 is roleplay.
+A pink scrunchie is a kind of scrunchie. A pink scrunchie is usually cursed. pink-scrunchie-1 is a pink scrunchie. pink-scrunchie-2 is a pink scrunchie. The text-shortcut of pink-scrunchie-1 is "psc1". The text-shortcut of pink-scrunchie-2 is "psc2".
+Definition: pink-scrunchie-1 is roleplay: decide yes.
 Understand "pink" as a pink scrunchie.
 Figure of left pink scrunchie is the file "Items/Accessories/Head/scrunchie1a.png".
 Figure of right pink scrunchie is the file "Items/Accessories/Head/scrunchie1b.png".
@@ -142,7 +143,8 @@ Chapter 2 - Blue Scrunchie
 
 [The first is obtained from dungeon apothecary, second is obtained from hotel library.]
 
-A blue scrunchie is a kind of scrunchie. A blue scrunchie is usually cursed. blue-scrunchie-1 is a blue scrunchie. blue-scrunchie-2 is a blue scrunchie. blue-scrunchie-1 is in Dungeon27. blue-scrunchie-2 is in Hotel24. The text-shortcut of blue-scrunchie-1 is "bsc1". The text-shortcut of blue-scrunchie-2 is "bsc2". blue-scrunchie-2 is roleplay. [This is the one that is unobtainable for longer]
+A blue scrunchie is a kind of scrunchie. A blue scrunchie is usually cursed. blue-scrunchie-1 is a blue scrunchie. blue-scrunchie-2 is a blue scrunchie. blue-scrunchie-1 is in Dungeon27. blue-scrunchie-2 is in Hotel24. The text-shortcut of blue-scrunchie-1 is "bsc1". The text-shortcut of blue-scrunchie-2 is "bsc2".
+Definition: blue-scrunchie-2 is roleplay: decide yes. [This is the one that is unobtainable for longer]
 Understand "blue" as a pink scrunchie.
 
 Figure of left blue scrunchie is the file "Items/Accessories/Head/scrunchie2a.png".
@@ -255,9 +257,9 @@ To transform (D - a blue scrunchie) into (C - a monkey scrunchie):
 	say "[printed plural name of C] in front of your eyes!"; [no image necessary since it'll be on character window]
 	say "[TransformReaction of C]".
 
-To decide if a monkey scrunchie is roleplay:
-	if diaper quest is 0, decide no;
-	decide yes;
+Definition: a monkey scrunchie is roleplay:
+	if diaper quest is 1, decide yes;
+	decide no.
 
 To compute class outfit of (H - a monkey scrunchie):
 	if the silicone volume of breasts > 0, class summon daddy issues dress;
@@ -307,8 +309,6 @@ To say ClothingDesc of (H - a pair of helium balloons):
 
 Definition: a pair of helium balloons is transformation-protected: decide yes.
 
-Definition: a pair of helium balloons is roleplay: decide no.
-
 Definition: a pair of helium balloons is oral sex themed: decide yes.
 Definition: a pair of helium balloons is inflation themed: decide yes.
 
@@ -347,8 +347,6 @@ To say ClothingDesc of (H - a condom pigtails):
 	say "Two used condoms [if H is worn]have been[otherwise]could be[end if] used to tie your hair into naughty-looking pigtails.".
 
 Definition: a condom pigtails is transformation-protected: decide yes.
-
-Definition: a condom pigtails is roleplay: decide no.
 
 Definition: a condom pigtails is semen themed: decide yes.
 

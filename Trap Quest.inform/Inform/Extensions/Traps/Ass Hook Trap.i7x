@@ -7,12 +7,20 @@ REQUIRES COMMENTING
 @inherits <Trap>
 
 @!]
-An ass hook is a kind of trap. The printed name of ass hook is "[TQlink of item described][if item described is penetrating asshole]ass [end if]hook[TQxlink of item described][verb-desc of item described]". There are 5 wire ass hooks. Understand "rope" as ass hook. The text-shortcut of an ass hook is "aho". Figure of ass hook is the file "Env/Dungeon/asshook1.png". An ass hook has an object called the wedgie-target.
+An ass hook is a kind of trap. The printed name of ass hook is "[TQlink of item described][if item described is penetrating asshole]ass [end if]hook[TQxlink of item described][verb-desc of item described]". There are 5 wire ass hooks. Understand "rope" as ass hook. The text-shortcut of an ass hook is "aho". An ass hook has an object called the wedgie-target.
+
+Figure of ass hook is the file "Env/Dungeon/asshook1.png".
+Figure of ass hook wedgie is the file "Env/School/asshook1.jpg".
+Figure of ass hook wedgie pissed is the file "Env/School/asshook2.jpg".
 
 To say ExamineDesc of (C - an ass hook):
 	say "[if playerRegion is school]A strong hook that is usually used to hang gym clothes.[otherwise]An ass hook is connected to a rope that goes through a small hole in the ceiling. Maybe you could manage to [bold type]pull[roman type] it out of your [asshole]?[end if]".
 
 To decide which figure-name is the examine-image of (C - an ass hook):
+	if playerRegion is school:
+		let K be a random worn knickers;
+		if K is knickers and the urine-soak of K > 0, decide on figure of ass hook wedgie pissed;
+		decide on figure of ass hook wedgie;
 	if C is penetrating asshole:
 		if the player is not possessing a vagina, decide on figure of hook cutscene 1;
 		otherwise decide on figure of hook cutscene 2;

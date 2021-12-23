@@ -1655,7 +1655,7 @@ lock-it tattoo is a crotch tattoo. The tattoo-title of lock-it tattoo is "lock i
 Definition: lock-it tattoo is drawable:
 	if there is a worn crotch tattoo, decide no;
 	if diaper quest is 1, decide no;
-	if bondage protection is 1, decide no;
+	if bondage protection is 2, decide no;
 	decide yes.
 Definition: lock-it tattoo is eligible:
 	if the noun is skeleton key or the noun is bondage or the noun is wrist locking clothing or the noun is ankle locking clothing or the noun is strapon-panties, decide yes;
@@ -1805,22 +1805,34 @@ Definition: nest egg tattoo is eligible:
 To say tattoo-desc of (T - nest egg tattoo):
 	say "A drawing of three large eggs in a bird nest is tattooed on your upper back.".
 
-nintendolls-brand tattoo is a body tattoo. The tattoo-title of nintendolls-brand tattoo is "Nintendolls brand".
-Definition: nintendolls-brand tattoo is drawable:
-	if it is not worn and lactation fetish is 1 and nintendolls-brand tattoo is eligible, decide yes;
+nintendolls-logo tattoo is a body tattoo. The tattoo-title of nintendolls-logo tattoo is "Nintendolls logo".
+Definition: nintendolls-logo tattoo is drawable:
+	if nintendolls-logo tattoo is not worn and nintendolls-logo tattoo is eligible, decide yes;
 	decide no.
-Definition: nintendolls-brand tattoo is eligible:
-	if the noun is cow themed or the noun is shoes, decide yes;
+Definition: nintendolls-logo tattoo is eligible:
+	if (lactation fetish is 1 and the noun is cow themed) or the noun is shoes or the noun is ballet related, decide yes;
 	decide no.
-To say tattoo-desc of (T - nintendolls-brand tattoo):
-	say "The Nintendolls logo has been branded just below your cleavage, just like a cow. You can feel it making your breasts much more active!".
-To decide which object is the concealer of (T - nintendolls-brand tattoo):
+To say tattoo-desc of (T - nintendolls-logo tattoo):
+	say "The Nintendolls logo has been branded just below your chest[if lactation fetish is 1], just like a cow. You can feel it making your breasts much more active! [otherwise]. [end if]You can sense that it is helping you keep your balance in high heels, but also makes you feel more submissive while wearing high heels.".
+Figure of nintendolls-logo tattoo is the file "Items/Tats/tattoo135.jpg".
+To decide which figure-name is the examine-image of (T - nintendolls-logo tattoo):
+	decide on figure of nintendolls-logo tattoo.
+To decide which object is the concealer of (T - nintendolls-logo tattoo):
 	decide on a random worn actually dense breast covering clothing.
-To decide which object is the at least partial concealer of (T - nintendolls-brand tattoo):
+To decide which object is the at least partial concealer of (T - nintendolls-logo tattoo):
 	if T is listed in the armUses of arms, decide on arms;
 	decide on a random worn not-see-through breast covering clothing.
-Definition: nintendolls-brand tattoo is cow themed: decide yes.
-Understand "nintendolls", "brand" as nintendolls-brand tattoo.
+Definition: nintendolls-logo tattoo is cow themed: decide yes.
+Understand "nintendolls", "logo" as nintendolls-logo tattoo.
+To decide which number is the initial outrage of (T - nintendolls-logo tattoo):
+	decide on 4.
+To decide which number is the initial cringe of (T - nintendolls-logo tattoo):
+	decide on 3.
+To decide which number is the delicateness-influence of nintendolls-logo tattoo:
+	if there is worn heels, decide on 2;
+	decide on 0.
+To decide which number is the heel-skill-influence of nintendolls-logo tattoo:
+	decide on 2.
 
 no-panties tattoo is a crotch tattoo. The tattoo-title of no-panties tattoo is "no panties".
 Definition: no-panties tattoo is drawable:
@@ -2501,8 +2513,8 @@ To say tattoo-desc of (T - sissy cumslut tattoo):
 	say "The words 'Sissy Cumslut' are tattooed in large letters above your crotch[if there is a worn chastity cage]. You can sense it's preventing you from removing your chastity cage[end if].".
 To decide which number is the initial outrage of (T - sissy cumslut tattoo):
 	decide on 8.
-Definition: sissy cumslut tattoo is removal-blocking:
-	if wearing-target is chastity cage, decide yes;
+Definition: sissy cumslut tattoo (called C) is removal-blocking:
+	if wearing-target is a worn chastity bond, decide yes;
 	decide no.
 
 slimecock tattoo is a body tattoo. The tattoo-title of slimecock tattoo is "slimy cock". Understand "slimy" as slimecock tattoo.
@@ -2812,7 +2824,7 @@ Definition: tear it up daddy tattoo is eligible:
 		if the noun is top-ripped, decide yes;
 		if the noun is torn cutoffs, decide yes;
 		if the noun is torn shirt, decide yes;
-		if the noun is midnight tanto, decide yes;
+		if the noun is sword, decide yes;
 	decide no.
 To say tattoo-desc of (T - tear it up daddy tattoo):
 	say "You have a tramp stamp tattoo on your lower back that says the words 'Tear It Up Daddy'.".

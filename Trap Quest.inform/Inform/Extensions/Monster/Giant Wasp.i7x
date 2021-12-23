@@ -1,6 +1,6 @@
 Giant Wasp by Monster begins here.
 
-A giant wasp is a kind of monster. A giant wasp is usually airborne. A giant wasp can be flying. A giant wasp is usually not flying. A giant wasp is usually neuter. The poison-status of a giant wasp is -1. A giant wasp has a number called fertilisation-cooldown. A giant wasp is detached-dick-ignoring.
+A giant wasp is a kind of monster. A giant wasp is usually airborne. A giant wasp is usually neuter. The poison-status of a giant wasp is -1. A giant wasp has a number called fertilisation-cooldown. A giant wasp is detached-dick-ignoring.
 
 Definition: a giant wasp is virginity taking: decide yes. [an ovipositor is a kind of sex organ]
 Definition: a giant wasp is egg-fathering: decide yes.

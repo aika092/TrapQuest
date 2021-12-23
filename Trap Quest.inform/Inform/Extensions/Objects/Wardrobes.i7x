@@ -8,7 +8,7 @@ To decide which figure-name is the examine-image of (C - pink wardrobe):
 To say ExamineDesc of (C - pink wardrobe):
 	say "An ornate pink wardrobe, which [if C is closed]no doubt [end if]is used to store clothes.".
 
-Figure of pinkwardrobe is the file "Env/Dungeon/wardrobe1.png".
+Figure of pinkwardrobe is the file "Env/Dungeon/wardrobe1.jpg".
 
 Definition: pink wardrobe is immune to change: decide yes.
 

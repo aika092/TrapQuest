@@ -50,7 +50,7 @@ To say StandSubduedFlav of (C - a clothing):
 Standing is an action applying to nothing.
 
 Check standing:
-	if resting is 1, do nothing instead;
+	if player-currently-resting is 1, do nothing instead;
 	if the player is in Start, say "How did you even get this message to show up? Well played. Email aika for a prize. (NB: the prize is penis)" instead;
 	if the player is in Capsule, say "There's not enough space to stand while you're lying down in the capsule." instead;
 	if the player is flying, say "You're not even touching the ground!" instead;

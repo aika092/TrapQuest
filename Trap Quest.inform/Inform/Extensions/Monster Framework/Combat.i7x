@@ -1124,12 +1124,12 @@ To decide which number is the virility of (M - a monster):
 	decide on a random number between 3 and 6.
 
 Definition: a monster is prematurable:
-	if it is male and it is intelligent, decide yes;
+	if it is male and it is human and it is intelligent, decide yes;
 	decide no.
 
 This is the whiteboy premature orgasm insertion rule:
-	if current-monster is not dark skinned and current-monster is prematurable and the player is queen of spades:
-		let QS be the number of worn interracial themed wearthings;
+	if current-monster is not dark skinned and current-monster is prematurable and (the trophy-mode of bbc-trophy is 1 or the player is queen of spades):
+		let QS be the number of worn interracial themed currently visible wearthings + the trophy-mode of bbc-trophy;
 		let QST be QS * (the trophy-mode of bbc-trophy + 1);
 		let DR be a random number between 1 and the difficulty of current-monster;
 		if debuginfo > 0, say "[input-style]Premature ejaculation avoidance check: [MediumDesc of current-monster] difficulty roll d[difficulty of current-monster] ([DR]) | ([QST].5) number of worn interracial items[if the trophy-mode of bbc-trophy is 1] (doubled from [QS] by BBC trophy effect)[end if][if the difficulty of current-monster is DR] - AUTOMATIC SUCCESS: highest possible roll[end if][roman type][line break]";

@@ -418,7 +418,8 @@ To compute DQ perception of (M - a demoness):
 			if M is friendly and permanent makeup is 1:
 				say "You know, there's a powerful well somewhere in these woods that I bet could help you with the magic charm on your face, if you donate generously enough.'[roman type][line break]";
 			otherwise if M is acquaintance:
-				say "For now, I give you permission to remain and bask in my [if the cringe appearance of the player > 3][maturity] and [end if]glory.'[roman type][line break]";
+				let CA be the cringe appearance of the player; [causes line break when checked]
+				say "For now, I give you permission to remain and bask in my [if CA > 3][maturity] and [end if]glory.'[roman type][line break]";
 			otherwise if M is friendly:
 				say "You're not worth my trouble.'[roman type][line break][big he of M] turns to leave you alone.";
 				distract M;

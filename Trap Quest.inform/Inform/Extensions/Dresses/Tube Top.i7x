@@ -1,13 +1,6 @@
 Tube Top by Dresses begins here.
 
-A tube top is a kind of overdress. A tube top is usually unskirted. A tube top is usually belly exposing. A tube top is usually bottom-exclusive. A tube top is usually not-top-displacable. A tube top is usually erect-nipple-exposing. A tube top is usually high cut. [Tube tops are always displacable, but vary in degree based on breast size. This is here as a safe measure.]
-
-Definition: a tube top is optional-top-displacable:
-	if the largeness of breasts > 6, decide yes;
-	decide no.
-Definition: a tube top is top-displacable:
-	if it is not optional-top-displacable, decide yes;
-	decide no.
+A tube top is a kind of overdress. A tube top is usually unskirted. A tube top is usually belly exposing. A tube top is usually bottom-exclusive. A tube top is usually not-top-displacable. A tube top is usually erect-nipple-exposing. A tube top is optional-top-displacable. A tube top is usually high cut. [Tube tops are always displacable, but vary in degree based on breast size. This is here as a safe measure.]
 
 To compute SelfExamineDesc of (C - a tube top):
 	say "A [ShortDesc of C] tightly fits over your chest. ".

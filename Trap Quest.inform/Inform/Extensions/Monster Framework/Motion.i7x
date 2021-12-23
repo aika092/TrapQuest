@@ -1,12 +1,15 @@
 Motion by Monster Framework begins here.
 
+To compute guarding action of (M - a monster):
+	do nothing.
+
 To check motion of (M - a monster):
 	check default motion of M.
 
 To check default motion of (M - a monster):
 	if M is penetrating a body part:
 		dislodge M;
-	if M is undefeated and M is willing to punish untidiness and the player is not in the location of M: [While the NPC idly wanders, it can pick up leftover soiled diapers]
+	if diaper messing >= 6 and M is undefeated and M is willing to punish untidiness and the player is not in the location of M: [While the NPC idly wanders, it can pick up leftover soiled diapers]
 		repeat with D running through on-stage soiled-diaper:
 			if D is in the location of M:
 				if M is in the location of the player, say "[BigNameDesc of M] picks up [NameDesc of D] with a disgusted look on [his of M] face.";

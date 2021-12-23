@@ -103,14 +103,15 @@ Checks if a player is messy and really unhappy about it.
 Definition: yourself is upset about mess:
 	if there is a messy monster penetrating face and the diaper addiction of the player < 20, decide yes;
 	let D be a random worn perceived messed diaper;
-	if (the location of the player is nonstandard and (there is a carried soiled-diaper or there is a soiled-diaper in the location of the player or there is a messed knickers in the location of the player or there is a carried messed knickers)) or turnsWithSoiledDiaper > 2 * (the square root of the diaper addiction of the player):
-		decide yes;
-	otherwise if D is diaper:
+	if the location of the player is nonstandard:
+		if diaper messing >= 6 and (there is a carried soiled-diaper or there is a soiled-diaper in the location of the player), decide yes;
+		if there is a messed knickers in the location of the player or there is a carried messed knickers, decide yes;
+	if turnsWithSoiledDiaper > 2 * (the square root of the diaper addiction of the player), decide yes;
+	if D is diaper:
 		if the player is an adult baby and the bimbo of the player > the known-mess of D, decide no;
-		if the diaper addiction of the player > 10, decide no;
+		if the diaper addiction of the player >= 7, decide no;
 		decide yes;
-	otherwise if there is a worn perceived messed knickers:
-		decide yes;
+	if there is a worn perceived messed knickers, decide yes;
 	decide no.
 
 Definition: yourself is upset about sitting in mess:
@@ -180,7 +181,8 @@ To check real messing with reason (T - a text):
 		now hasMessedNow is false;
 		if the player is feeling full:
 			now messAware is 1;
-			if there is a worn baby bonnet or intelligence of the player > a random number between 0 and 7, now messAware is 2;
+			if there is a worn baby bonnet or the intelligence of the player > a random number between -7 and 7, now messAware is 2;
+			if the player is in a predicament room, now messAware is 2; [won't accidentally mess in predicament zone]
 		if rectum > 1 and there is a worn total protection soilable knickers and asshole is not actually occupied and the number of live things penetrating vagina is 0 and (the number of things grabbing the player is 0 or diaper quest is 1), now canMessNow is 1;
 		if the player is incontinent and the player is full:
 			now shouldMessNow is 1;
@@ -247,7 +249,7 @@ To check real messing with reason (T - a text):
 					otherwise:
 						StealthMessUp D by rectum;
 						now rectum is 1;
-				otherwise if messAware is 1 and shouldMessNow is 1:
+				otherwise if messAware > 0 and shouldMessNow is 1:
 					let D be a random eligible diaper;
 					if T is "" and the number of worn soilable knickers is 0 and diaper focus is 1 and D is diaper and asshole is not actually occupied and the location of the player is not toilets and the location of the player is not urinals and the player is not in a predicament room:
 						say "As if reacting to your tummy, ";

@@ -142,7 +142,7 @@ Carry out going west when the location of the player is School33:
 previous-dungeon-favour is a number that varies.
 dungeon-favour is a number that varies.
 dungeon-time is a number that varies.
-dungeon-tests is a number that varies. dungeon-tests is usually 0.
+dungeon-events is a number that varies.
 
 An all time based rule (this is the dungeon sentence progress rule):
 	if dungeon chains is worn:
@@ -155,6 +155,7 @@ An all time based rule (this is the dungeon sentence progress rule):
 
 To compute (M - a monster) dungeon locking:
 	reveal the school dungeon;
+	now lessonJustDone is false;
 	now dungeon-favour is 0;
 	say DungeonLockPrepFlav of M;
 	drag to School34 by M;
@@ -255,20 +256,22 @@ To compute dungeon diaper setup of (M - a monster):
 		say "With a few swift motions, [NameDesc of M] has [if D is a thing]removed your [D] and [end if]put you in a new fresh diaper.";
 		if D is a thing, destroy D;
 		let D be a random eligible diaper;
-		summon D cursed;
+		summon D cursed with quest;
 	otherwise if D is not cursed:
 		say "With an arcane gesture, [NameDesc of M] lays a curse on your [D]!";
-		fully curse D.
+		fully curse D;
+		compute summoned quest of D.
 
 To compute dungeon checkup of (M - a monster):
 	now M is in the location of the player;
 	now previous-dungeon-favour is dungeon-favour;
 	say DungeonCheckupArrivalFlav of M;
 	compute dungeon test of M;
-	increase dungeon-tests by 1;
+	increase dungeon-events by 1;
 	check dungeon release of M;
 	say DungeonCheckupDepartureFlav of M;
-	try M going north.
+	try M going north;
+	regionally place M.
 
 To say DungeonCheckupArrivalFlav of (M - a monster):
 	say "[M] [bold type]appears at your cell entrance![roman type][line break]".
@@ -277,7 +280,7 @@ To say DungeonCheckupDepartureFlav of (M - a monster):
 	say "[M] turns to leave.[roman type][line break]".
 
 To check dungeon release of (M - a monster):
-	if dungeon-favour >= 3 or dungeon-tests >= 5:
+	if dungeon-favour >= 3 or dungeon-events >= 5:
 		say "[speech style of M]'I guess you have served your time.'[roman type][line break][BigNameDesc of M] releases you from the ankle chains!";
 		now dungeon chains is in the location of the player;
 		repeat with C running through worn locked clothing:
@@ -292,10 +295,10 @@ To check dungeon release of (M - a monster):
 		now School34 is not smoky;
 		display entire map;
 		if class-time < 0, now class-time is 0; [so we don't go straight into detention for being late]
-	otherwise if dungeon-favour > previous-dungeon-favour and dungeon-tests is not 3:
+	otherwise if dungeon-favour > previous-dungeon-favour and dungeon-events is not 3:
 		say "[speech style of M]'Good. [if dungeon-favour >= 2]You're getting close to earning your release. Keep going[otherwise]Keep it up and we'll think about letting you go[end if].'[roman type][line break]";
 	otherwise:
-		say "[speech style of M]'[if dungeon-tests is 3]You would be out by now if you had complied, by the way[otherwise if dungeon-tests > 3]You continue to test our tolerance. Hmm[otherwise]At this rate, you're going to be in here longer than necessary[end if].'[roman type][line break]";
+		say "[speech style of M]'[if dungeon-events is 3]You would be out by now if you had complied, by the way[otherwise if dungeon-events > 3]You continue to test our tolerance. Hmm[otherwise]At this rate, you're going to be in here longer than necessary[end if].'[roman type][line break]";
 
 A dungeon-test is a kind of object.
 dungeon-test-monster is an object that varies.
@@ -334,10 +337,10 @@ To execute (T - dungeon-degradation-test):
 	let M be dungeon-test-monster;
 	say "[speech style of M]'What are you?'[roman type][line break]It looks like [he of M] wants you to admit your inferiority. What can you bring yourself to say[one of]? The more extreme your statement, the more chance you have of satisfying [him of M], but the more damaging it will be to your self-esteem.[or]?[stopping]";
 	reset multiple choice questions;
-	set numerical response 1 to "A [one of]pervert[or][if diaper quest is 1]diaper slave[otherwise]whore[end if][or]bitch[at random]";
-	set numerical response 2 to "[if diaper quest is 1]A [one of]helpless[or]dumb[or]big[at random] baby[otherwise]A [one of]shameless nympho[or]brainless bimbo[or]cock-hungry slut[at random]";
-	set numerical response 3 to "Your [one of]loyal[or]obedient[or]dedicated[cycling] [if diaper quest is 1][one of]padded[or]diaper dependent[in random order] [otherwise][end if][if watersports fetish is 1 and diaper quest is 1][one of]toilet[or]urinal[or]baby slave[in random order][otherwise if watersports fetish is 1][one of]toilet[or]urinal[or]slave[in random order][otherwise if diaper quest is 0][one of]cumdumpster[or]slave[or]servant[in random order][otherwise if diaper quest is 1]baby slave[otherwise]slave[end if]";
-	set numerical response 4 to "A [one of]disgusting[or]disgraceful[or]pathetic[at random], [one of]worthless[or]useless[or]good-for-nothing[ at random][if diaper quest is 1 and diaper messing >= 3][one of]pottypants[or]panty pooper[or]stinker[at random][otherwise if diaper quest is 1][one of]pottypants[or]bedwetter[or]peepot[at random][otherwise if the player is possessing a vagina][one of]set of fuckholes[or]cocksleeve[or]cuntwarmer[at random][otherwise][one of]fuckdoll[or]worm[or]cunt[at random][end if]";
+	set numerical response 1 to the substituted form of "A [one of]pervert[or][if diaper quest is 1]diaper slave[otherwise]whore[end if][or]bitch[at random]";
+	set numerical response 2 to the substituted form of "[if diaper quest is 1]A [one of]helpless[or]dumb[or]big[at random] baby[otherwise]A [one of]shameless nympho[or]brainless bimbo[or]cock-hungry slut[at random]";
+	set numerical response 3 to the substituted form of "Your [one of]loyal[or]obedient[or]dedicated[cycling] [if diaper quest is 1][one of]padded[or]diaper dependent[in random order] [otherwise][end if][if watersports fetish is 1 and diaper quest is 1][one of]toilet[or]urinal[or]baby slave[in random order][otherwise if watersports fetish is 1][one of]toilet[or]urinal[or]slave[in random order][otherwise if diaper quest is 0][one of]cumdumpster[or]slave[or]servant[in random order][otherwise if diaper quest is 1]baby slave[otherwise]slave[end if]";
+	set numerical response 4 to the substituted form of "A [one of]disgusting[or]disgraceful[or]pathetic[at random], [one of]worthless[or]useless[or]good-for-nothing[at random] [if diaper quest is 1 and diaper messing >= 3][one of]pottypants[or]panty pooper[or]stinker[at random][otherwise if diaper quest is 1][one of]pottypants[or]bedwetter[or]peepot[at random][otherwise if the player is possessing a vagina][one of]set of fuckholes[or]cocksleeve[or]cuntwarmer[at random][otherwise][one of]fuckdoll[or]worm[or]cunt[at random][end if]";
 	set numerical response 0 to "refuse to answer";
 	compute multiple choice question;
 	let R be a random number between 1 and 6;
@@ -387,7 +390,7 @@ To execute (T - dungeon-bottle-test):
 Definition: dungeon-breakout-test (called T) is eligible:
 	let M be a random tentacle monster in the location of the player;
 	if M is monster and M is massive:
-		if dungeon-tests > 4, decide yes;
+		if dungeon-events > 4, decide yes;
 	decide no.
 To execute (T - dungeon-breakout-test):
 	let M be dungeon-test-monster;

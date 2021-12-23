@@ -14,16 +14,24 @@ To Set Up The School:
 	set up junk room;
 	repeat with M running through fetish appropriate staff members:
 		set up M;
-	let M be a random fetish appropriate rank1 innocent student;
-	if M is monster, set up M;
-	let M be a random fetish appropriate rank1 tryhard student;
-	if M is monster, set up M;
-	let M be a random fetish appropriate rank1 nasty student;
-	if M is monster, set up M;
-	let M be a random fetish appropriate rank1 ditzy student;
-	if M is monster, set up M;
-	let M be a random fetish appropriate rank1 amicable student;
-	if M is monster, set up M.
+	set up rank one students.
+
+To set up rank one students:
+	unless there is an alive rank1 innocent student:
+		let M be a random off-stage unexpelled fetish appropriate rank1 innocent student;
+		if M is monster, set up M;
+	unless there is an alive rank1 tryhard student:
+		let M be a random off-stage unexpelled fetish appropriate rank1 tryhard student;
+		if M is monster, set up M;
+	unless there is an alive rank1 nasty student:
+		let M be a random off-stage unexpelled fetish appropriate rank1 nasty student;
+		if M is monster, set up M;
+	unless there is an alive rank1 ditzy student:
+		let M be a random off-stage unexpelled fetish appropriate rank1 ditzy student;
+		if M is monster, set up M;
+	unless there is an alive rank1 amicable student:
+		let M be a random off-stage unexpelled fetish appropriate rank1 amicable student;
+		if M is monster, set up M.
 
 To set up rank two students:
 	unless there is an alive rank2 innocent student:

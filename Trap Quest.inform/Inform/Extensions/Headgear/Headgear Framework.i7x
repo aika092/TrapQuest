@@ -1,7 +1,8 @@
 Headgear Framework by Headgear begins here.
 
 A headgear is a kind of clothing. headgear is unique. headgear can be hair growing. A headgear is usually manly.
-A headgear can be roleplay. A headgear is usually not roleplay. [Can this headgear appear in the wardrobe when picking the random headgear starting option.]
+
+Definition: a headgear is roleplay: decide no. [Can this headgear appear in the wardrobe when picking the random headgear starting option.]
 
 To decide which number is the default-soak-limit of (C - a headgear): decide on 7.
 

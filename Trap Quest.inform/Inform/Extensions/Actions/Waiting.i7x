@@ -137,6 +137,7 @@ To DildoWait:
 
 To HookWait:
 	let X be a random ass hook penetrating asshole;
+	if X is nothing, now X is a random ass hook grabbing the player;
 	if woman-player is regional and the woman-status of woman-player < 80:
 		allocate 6 seconds;
 		now woman-player is interested;
@@ -144,7 +145,7 @@ To HookWait:
 		now woman-player is in the location of the player;
 		if the woman-bimbo of woman-player < 3:
 			say "[second custom style]'Oh no, how have you managed to get stuck like that? That looks like it hurts. Don't worry, I'll save you, honey.'[roman type][line break]With impressive dexterity and strength, [he of woman-player] pulls the hook clean from your [asshole]! The contraption shoots up into the hole in the ceiling that the rope was connected to.";
-			now X is not penetrating asshole;
+			dislodge X;
 			now X is unrevealed;
 		otherwise if the woman-bimbo of woman-player < 5:
 			say "[big he of woman-player] grins at you.[line break][second custom style]'Uh-oh, you look like you're having a lot of fun there! Do you need some help?'[roman type][line break][big he of woman-player] pulls at the hook, but slips when [he of woman-player] gets it halfway out. It shoots back into your [asshole], causing you to yelp in pain!";
@@ -152,7 +153,7 @@ To HookWait:
 			say "[second custom style]'Oopsie! Let me try that again.'[roman type][line break]This time [he of woman-player] gets it all the way out, but just before you can react and step to the side, [he of woman-player] loses [his of woman-player] grip again! It shoots back in with twice the force of last time!";
 			ruin asshole;
 			say "[second custom style]'Silly [boy of the player], try to move out the way this time.'[roman type][line break]This time as soon as it's all the way out, you leap away, finally free! The contraption shoots up into the hole in the ceiling that the rope was connected to.";
-			now X is not penetrating asshole;
+			dislodge X;
 			now X is unrevealed;
 		otherwise:
 			say "[second custom style]'*giggle*. Look who it is! You look like you're having fun there. I'm jealous! Want me to help you out?'[roman type][line break][big he of woman-player] pulls the hook out a small amount then lets go. The tension of the rope forces it back inside! You scream in surprise.";

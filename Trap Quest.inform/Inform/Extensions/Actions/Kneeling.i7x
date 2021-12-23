@@ -40,22 +40,23 @@ Check kneeling:
 
 Carry out kneeling:
 	now the stance of the player is 1;
-	let TP be the total puddle;
-	let TPR be a random number between 1 and 30;
-	if debuginfo > 0, say "[input-style]Land in puddle check: puddle size ([TP].5) | ([TPR]) d30[roman type][line break]";
-	if TP >= TPR:
-		say "Your butt lands in the puddle of [if milk-puddle of the location of the player > 0][milk][end if][if milk-puddle of the location of the player > 0 and urine-puddle of the location of the player > 0 and semen-puddle of the location of the player > 0], [otherwise if milk-puddle of the location of the player > 0 and urine-puddle of the location of the player > 0] and [end if][if urine-puddle of the location of the player > 0][urine][end if][if the semen-puddle of the location of the player > 0 and the milk-puddle of the location of the player + the urine-puddle of the location of the player > 0] and [end if][if semen-puddle of the location of the player > 0][semen][end if].";
-		if there is worn fluid vulnerable crotch covering clothing:
-			let M be (the milk-puddle of the location of the player + 3) / 4;
-			decrease the milk-puddle of the location of the player by M;
-			AnnouncedSquirt milk on hips by M;
-			let M be (the urine-puddle of the location of the player + 3) / 4;
-			decrease the urine-puddle of the location of the player by M;
-			AnnouncedSquirt urine on hips by M;
-		if bukkake fetish is 1 or there is worn fluid vulnerable crotch covering clothing:
-			let M be (the semen-puddle of the location of the player + 3) / 4;
-			decrease the semen-puddle of the location of the player by M;
-			AnnouncedSquirt semen on hips by M;
+	if seconds > 0 and auto is 0:
+		let TP be the total puddle;
+		let TPR be a random number between 1 and 30;
+		if debuginfo > 0, say "[input-style]Land in puddle check: puddle size ([TP].5) | ([TPR]) d30[roman type][line break]";
+		if TP >= TPR:
+			say "Your butt lands in the puddle of [if milk-puddle of the location of the player > 0][milk][end if][if milk-puddle of the location of the player > 0 and urine-puddle of the location of the player > 0 and semen-puddle of the location of the player > 0], [otherwise if milk-puddle of the location of the player > 0 and urine-puddle of the location of the player > 0] and [end if][if urine-puddle of the location of the player > 0][urine][end if][if the semen-puddle of the location of the player > 0 and the milk-puddle of the location of the player + the urine-puddle of the location of the player > 0] and [end if][if semen-puddle of the location of the player > 0][semen][end if].";
+			if there is worn fluid vulnerable crotch covering clothing:
+				let M be (the milk-puddle of the location of the player + 3) / 4;
+				decrease the milk-puddle of the location of the player by M;
+				AnnouncedSquirt milk on hips by M;
+				let M be (the urine-puddle of the location of the player + 3) / 4;
+				decrease the urine-puddle of the location of the player by M;
+				AnnouncedSquirt urine on hips by M;
+			if bukkake fetish is 1 or there is worn fluid vulnerable crotch covering clothing:
+				let M be (the semen-puddle of the location of the player + 3) / 4;
+				decrease the semen-puddle of the location of the player by M;
+				AnnouncedSquirt semen on hips by M;
 	if seconds > 0 and auto is 0: [tripping!]
 		if the location of the player is unbossed: [It'd be unfair to have the player get serving bondage during a boss fight in my opinion, especially the vine boss]
 			let servePunished be 0;

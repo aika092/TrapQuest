@@ -1,6 +1,6 @@
 Christmas Dress by Dresses begins here.
 
-A christmas dress is a kind of overdress. A christmas dress is usually unique. A christmas dress is usually high cut. A christmas dress is usually no-crotch. A christmas dress is usually super-short. A christmas dress is usually top-exclusive.
+A christmas dress is a kind of overdress. A christmas dress is usually unique. A christmas dress is usually high cut. A christmas dress is usually super-short. A christmas dress is usually top-exclusive.
 
 Definition: a christmas dress is christmas themed: decide yes.
 
@@ -9,7 +9,7 @@ To decide which number is the initial outrage of (C - a christmas dress):
 	decide on 5.
 
 To decide which number is the initial cringe of (C - a christmas dress):
-	decide on 8.
+	decide on 5.
 
 Definition: a christmas dress is fetish appropriate:
 	if diaper lover > 0, decide yes;
@@ -26,6 +26,11 @@ To set up influence of (C - a christmas dress):
 	set up stat-based influence of C.
 
 A standard christmas dress is a kind of christmas dress.
+
+Definition: a standard christmas dress is end of transformation chain: decide no.
+Definition: a standard christmas dress is class-relevant:
+	if the class of the player is santa's little helper, decide yes;
+	decide no.
 
 Part 1 - Snowman Dress
 
@@ -63,24 +68,82 @@ To say ShortDesc of (C - a deer dress):
 
 Definition: a deer dress is red themed: decide yes.
 
-Part 3 - Gingerbread Dress
+Part 3 - Gingerbread Dresses
 
-A gingerbread dress is a kind of standard christmas dress. A gingerbread dress is only arm covering. There is 1 gingerbread dress. The printed name of gingerbread dress is "[clothing-title-before]gingerbread dress[clothing-title-after]". The text-shortcut of gingerbread dress is "gbd".
+[Gingerbread dress]
 
-Figure of gingerbread dress is the file "Items/Clothes/Upper/Dresses/Christmas/christmasdress3.png".
+A gingerbread dress is a kind of standard christmas dress. A gingerbread dress is short. A gingerbread dress is average cut. There is 1 gingerbread dress. The printed name of gingerbread dress is "[clothing-title-before]gingerbread dress[clothing-title-after]". The text-shortcut of gingerbread dress is "gbd".
+
+Figure of gingerbread dress is the file "Items/Clothes/Upper/Dresses/Christmas/christmasdress11.png".
 
 To decide which figure-name is clothing-image of (C - a gingerbread dress):
 	decide on figure of gingerbread dress.
 
 To say ClothingDesc of (C - a gingerbread dress):
-	say "An extremely short red dress sewn on top of a red and white striped longsleeved shirt. At the bottom a drawing of a cute gingerbread house is surrounded by two Christmas trees.".
+	say "A short brown dress with low shoulders and a gingerbread man on the miniature apron at the front.".
 
 To say ShortDesc of (C - a gingerbread dress):
-	say "gingerbread baby dress".
+	say "gingerbread dress".
 
 Definition: a gingerbread dress is food themed: decide yes.
-Definition: a gingerbread dress is bow themed: decide yes.
-Definition: a gingerbread dress is red themed: decide yes.
+Definition: a gingerbread dress is brown themed: decide yes.
+
+Definition: a gingerbread dress is fetish appropriate: decide yes.
+
+To decide which object is the unique-upgrade-target of (C - a gingerbread dress):
+	decide on a random fetish appropriate off-stage gingerbread house dress.
+
+[Gingerbread house dress]
+
+A gingerbread house dress is a kind of christmas dress. There is 1 gingerbread house dress. A gingerbread house dress is short. The printed name of gingerbread house dress is "[clothing-title-before]gingerbread house dress[clothing-title-after]". The text-shortcut of gingerbread house dress is "gbhd".
+
+Figure of gingerbread house dress is the file "Items/Clothes/Upper/Dresses/Christmas/christmasdress6.png".
+
+To decide which figure-name is clothing-image of (C - a gingerbread house dress):
+	decide on figure of gingerbread house dress.
+
+To say ClothingDesc of (C - a gingerbread house dress):
+	say "An short pink dress with a white peter pan collar and a motif of a gingerbread house on the front.".
+
+To say ShortDesc of (C - a gingerbread house dress):
+	say "gingerbread dress".
+To say MediumDesc of (C - a gingerbread house dress):
+	say "gingerbread house dress".
+
+To decide which number is the initial outrage of (C - a gingerbread house dress):
+	if diaper quest is 1, decide on 0;
+	decide on 8.
+
+To decide which number is the initial cringe of (C - a gingerbread house dress):
+	decide on 9.
+
+Definition: a gingerbread house dress is pink themed: decide yes.
+Definition: a gingerbread house dress is food themed: decide yes.
+Definition: a gingerbread house dress is end of transformation chain: decide no.
+
+To decide which object is the unique-upgrade-target of (C - a gingerbread house dress):
+	decide on a random fetish appropriate off-stage gingerbread house baby dress.
+
+[Gingerbread house baby dress]
+
+A gingerbread house baby dress is a kind of christmas dress. A gingerbread house baby dress is only arm covering. There is 1 gingerbread house baby dress. The printed name of gingerbread house baby dress is "[clothing-title-before]gingerbread house baby dress[clothing-title-after]". The text-shortcut of gingerbread house baby dress is "ghbd".
+
+Figure of gingerbread house baby dress is the file "Items/Clothes/Upper/Dresses/Christmas/christmasdress3.png".
+
+To decide which figure-name is clothing-image of (C - a gingerbread house baby dress):
+	decide on figure of gingerbread house baby dress.
+
+To say ClothingDesc of (C - a gingerbread house baby dress):
+	say "An extremely short red dress sewn on top of a red and white striped longsleeved shirt. At the bottom a drawing of a cute gingerbread house is surrounded by two Christmas trees.".
+
+To say ShortDesc of (C - a gingerbread house baby dress):
+	say "gingerbread dress".
+To say MediumDesc of (C - a gingerbread house baby dress):
+	say "gingerbread house baby dress".
+
+Definition: a gingerbread house baby dress is food themed: decide yes.
+Definition: a gingerbread house baby dress is bow themed: decide yes.
+Definition: a gingerbread house baby dress is red themed: decide yes.
 
 Part 4 - Christmas Tree Dress
 
@@ -99,10 +162,10 @@ To say ShortDesc of (C - a christmas tree dress):
 
 To decide which number is the initial outrage of (C - a christmas tree dress):
 	if diaper quest is 1, decide on 0;
-	decide on 9.
+	decide on 7.
 
 To decide which number is the initial cringe of (C - a christmas tree dress):
-	decide on 11.
+	decide on 8.
 
 Definition: a christmas tree dress is food themed: decide yes.
 Definition: a christmas tree dress is bow themed: decide yes.
@@ -125,37 +188,13 @@ To say ShortDesc of (C - a santa dress):
 
 To decide which number is the initial outrage of (C - a santa dress):
 	if diaper quest is 1, decide on 0;
-	decide on 7.
+	decide on 5.
 
 To decide which number is the initial cringe of (C - a santa dress):
-	decide on 7.
+	decide on 5.
 
 Definition: a santa dress is green themed: decide yes.
 
-Part 6 - Gingerbread House Dress
-
-A gingerbread house dress is a kind of standard christmas dress. There is 1 gingerbread house dress. The printed name of gingerbread house dress is "[clothing-title-before]gingerbread house dress[clothing-title-after]". The text-shortcut of gingerbread house dress is "gbhd".
-
-Figure of gingerbread house dress is the file "Items/Clothes/Upper/Dresses/Christmas/christmasdress6.png".
-
-To decide which figure-name is clothing-image of (C - a gingerbread house dress):
-	decide on figure of gingerbread house dress.
-
-To say ClothingDesc of (C - a gingerbread house dress):
-	say "An extremely short pink dress with a white peter pan collar and a motif of a gingerbread house on the front.".
-
-To say ShortDesc of (C - a gingerbread house dress):
-	say "gingerbread house [if diaper lover > 0]baby [end if]dress".
-
-To decide which number is the initial outrage of (C - a gingerbread house dress):
-	if diaper quest is 1, decide on 0;
-	decide on 8.
-
-To decide which number is the initial cringe of (C - a gingerbread house dress):
-	decide on 9.
-
-Definition: a gingerbread house dress is pink themed: decide yes.
-Definition: a gingerbread house dress is food themed: decide yes.
 
 Part 7 - Naughty or Nice Outfit
 
@@ -181,11 +220,12 @@ To say ShortDesc of (C - naughty-or-nice outfit):
 	say "[if C is naughtified]naughty[otherwise]nice[end if] Christmas outfit".
 
 To decide which number is the initial outrage of (C - naughty-or-nice outfit):
-	decide on 5.
+	if diaper quest is 1, decide on 2;
+	decide on 4.
 
 To decide which number is the initial cringe of (C - naughty-or-nice outfit):
 	if C is naughtified, decide on 8;
-	decide on 6.
+	decide on 5.
 
 Definition: naughty-or-nice outfit is green themed: decide yes.
 Definition: naughty-or-nice outfit is baby themed: decide yes.
@@ -246,7 +286,11 @@ To say MediumDesc of (C - candy cane outfit):
 	say "slutty candy cane outfit".
 
 To decide which number is the initial outrage of (C - candy cane outfit):
-	decide on 7.
+	decide on 6.
+To decide which number is the penis-capacity of (C - candy cane outfit):
+	decide on 2.
+To decide which number is the crotch-tightness of (C - candy cane outfit):
+	decide on 4.
 
 To compute class set up of (C - candy cane outfit):
 	now C is oral-sex-addiction-influencing;
@@ -266,5 +310,113 @@ To compute periodic effect of (C - candy cane outfit):
 		update appearance level.
 To construct unique icons for (T - candy cane outfit):
 	if T is skirted, add Figure of TornIcon to the list of icons.
+
+Part 10 - Santa Baby Top
+
+santa-baby-top is a standard christmas dress. santa-baby-top is unskirted. The printed name of santa-baby-top is "[clothing-title-before]santa baby top[clothing-title-after]". The text-shortcut of santa-baby-top is "stbt". Understand "santa", "baby", "top" as santa-baby-top.
+
+Figure of santa-baby-top is the file "Items/Clothes/Upper/Dresses/Christmas/christmasdress10.png".
+
+To decide which figure-name is clothing-image of (C - santa-baby-top):
+	decide on figure of santa-baby-top.
+
+To say ClothingDesc of (C - santa-baby-top):
+	say "An red and white santa top with a thick black belt. The white puffy edges cover most of your chest but leave your crotch uncovered.".
+
+To say ShortDesc of (C - santa-baby-top):
+	say "Santa top".
+
+To say MediumDesc of (C - santa-baby-top):
+	say "Santa baby top".
+
+To decide which number is the initial outrage of (C - santa-baby-top):
+	decide on 2.
+To decide which number is the initial cringe of (C - santa-baby-top):
+	decide on 1.
+
+Definition: santa-baby-top is red themed: decide yes.
+Definition: santa-baby-top is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
+
+A game universe initialisation rule:
+	if diaper quest is 0 and christmas content is 1, now santa-baby-top is plentiful.
+
+Part 11 - Reindeer Dress
+
+reindeer dress is a standard christmas dress. reindeer dress is short. reindeer dress is low cut. The printed name of reindeer dress is "[clothing-title-before]reindeer dress[clothing-title-after]". The text-shortcut of reindeer dress is "rndd".
+
+Figure of reindeer dress is the file "Items/Clothes/Upper/Dresses/Christmas/christmasdress12.png".
+
+To decide which figure-name is clothing-image of (C - reindeer dress):
+	decide on figure of reindeer dress.
+
+To say ClothingDesc of (C - reindeer dress):
+	say "A short brown dress with a puffy white skirt. Bells dangle from red ribbon around the skirt, giving a sort-of jester theme. The bells ring as you move, and you imagine this might make it easier for people to stalk you.".
+
+To say ShortDesc of (C - reindeer dress):
+	say "reindeer dress".
+
+Definition: reindeer dress is brown themed: decide yes.
+Definition: reindeer dress is belled: decide yes.
+
+To decide which number is the initial outrage of (C - reindeer dress):
+	decide on 2.
+To decide which number is the initial cringe of (C - reindeer dress):
+	decide on 2.
+
+Definition: reindeer dress is fetish appropriate: decide yes.
+
+Part 12 - Candy Cane Dress
+
+candy cane dress is a standard christmas dress. candy cane dress is short. candy cane dress is low cut. The printed name of candy cane dress is "[clothing-title-before]candy cane dress[clothing-title-after]". The text-shortcut of candy cane dress is "ccd".
+
+Figure of candy cane dress is the file "Items/Clothes/Upper/Dresses/Christmas/christmasdress13.png".
+
+To decide which figure-name is clothing-image of (C - candy cane dress):
+	decide on figure of candy cane dress.
+
+To say ClothingDesc of (C - candy cane dress):
+	say "A short green dress with a candy cane motif on the skirt.".
+
+To say ShortDesc of (C - candy cane dress):
+	say "candy cane dress".
+
+Definition: candy cane dress is green themed: decide yes.
+Definition: candy cane dress is food themed: decide yes.
+
+To decide which number is the initial outrage of (C - candy cane dress):
+	decide on 2.
+To decide which number is the initial cringe of (C - candy cane dress):
+	decide on 2.
+
+Definition: candy cane dress is fetish appropriate:
+	if diaper quest is 0, decide yes;
+	decide no.
+
+Part 13 - Reindeer Outfit
+
+reindeer outfit is a standard christmas dress. reindeer outfit is crotch-intact. reindeer outfit is unskirted. reindeer outfit is low cut. The printed name of reindeer outfit is "[clothing-title-before]reindeer outfit[clothing-title-after]". The text-shortcut of reindeer outfit is "ccd".
+
+Figure of reindeer outfit is the file "Items/Clothes/Upper/Dresses/Christmas/christmasdress14.png".
+
+To decide which figure-name is clothing-image of (C - reindeer outfit):
+	decide on figure of reindeer outfit.
+
+To say ClothingDesc of (C - reindeer outfit):
+	say "A red and white striped shirt under a set of brown dungarees with a cute baby reindeer theme.".
+
+To say ShortDesc of (C - reindeer outfit):
+	say "reindeer outfit".
+
+Definition: reindeer outfit is brown themed: decide yes.
+Definition: reindeer outfit is baby themed: decide yes.
+
+To decide which number is the initial outrage of (C - reindeer outfit):
+	if diaper quest is 0, decide on 4;
+	decide on 1.
+To decide which number is the initial cringe of (C - reindeer outfit):
+	decide on 5.
+
 
 Christmas Dress ends here.

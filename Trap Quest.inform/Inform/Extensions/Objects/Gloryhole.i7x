@@ -55,7 +55,7 @@ Check entering gloryhole:
 		otherwise: [This is what it used to always do in this case:]
 			say "You would, but you no longer have a penis." instead;
 	if the player is upright:
-		let C be a random pussy covering undisplacable unzippable clothing;
+		let C be a random pussy covering actually unavoidable clothing;
 		if C is clothing, say "You can't just displace [NameDesc of C] to get your [genitals] free." instead;
 		if the player is pussy protected:
 			if the player is not able to displace, do nothing instead; [We didn't set auto to 1 so it'll output the reason]
@@ -63,7 +63,7 @@ Check entering gloryhole:
 		if face is actually occupied, say "Your mouth is currently occupied." instead;
 	allocate 6 seconds;
 	now the turns trapped of gloryhole is 0;
-	if the player is upright and (a random number between 12 and 20 <= the semen taste addiction of the player or a random number between 6 and 10 <= the oral sex addiction of the player or the player is not a bit horny):
+	if the player is upright and (semen is desperately craved or a random number between 8 and 10 < the oral sex addiction of the player):
 		say "[bold type]In a moment of weakness, you drop to your knees,[roman type] deciding you'd rather taste [manly-penis] [if the semen taste addiction of the player > 12]and get some [semen] to swallow [end if]right now rather than get your own rocks off.";
 		now the stance of the player is 1;
 	if the charge of gloryhole > 0, say "Nobody seems to be there. Maybe you should try again later?" instead;
@@ -408,7 +408,7 @@ To construct normal buttons for (D - gloryhole):
 				if face is actually occupied, now the ButtonColour entry is lightModeFullYellow; [turn yellow - player's mouth unavailable]
 			otherwise:
 				now the ButtonImage entry is figure of WankButton;
-				if there is pussy covering undisplacable unzippable clothing:
+				if there is pussy covering actually unavoidable clothing:
 					now the ButtonColour entry is lightModeFullYellow; [turn yellow - player's crotch unavailable]
 				otherwise if the player is pussy protected:
 					now auto is 1;
@@ -497,7 +497,7 @@ To construct normal buttons for (T - school-fuckhole):
 		choose a blank row in the Table of Buttons;
 		now the ButtonColour entry is lightModeFullGreen;
 		now the ButtonImage entry is figure of WankButton;
-		if there is pussy covering undisplacable unzippable clothing:
+		if there is pussy covering actually unavoidable clothing:
 			now the ButtonColour entry is lightModeFullYellow; [turn yellow - player's crotch unavailable]
 		otherwise if the player is pussy protected:
 			now auto is 1;
@@ -522,7 +522,7 @@ Check entering school-fuckhole:
 	if the player is in danger, say "You would, but you are currently in a fight." instead;
 	if the player is prone, say "You'd need to stand up first." instead;
 	if the player is not a bit horny, say "You're not aroused enough." instead;
-	let C be a random pussy covering undisplacable unzippable clothing;
+	let C be a random pussy covering actually unavoidable clothing;
 	if C is clothing, say "You can't just displace [NameDesc of C] to get your [genitals] free." instead;
 	if the player is pussy protected:
 		if the player is not able to displace, do nothing instead; [We didn't set auto to 1 so it'll output the reason]

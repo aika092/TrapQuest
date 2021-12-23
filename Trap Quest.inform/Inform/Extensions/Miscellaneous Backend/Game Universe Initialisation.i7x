@@ -46,22 +46,26 @@ To Start The Machine:
 		say "You notice that you seem to have some medical supplies. Handy![line break]";
 	if christmas content is 1:
 		if diaper lover > 0:
-			now christmas bonnet is worn by the player; [if we summon it, it'll summon the default outfit too]
+			now christmas bonnet is worn by the player; [if we summon it, it'll summon the default outfit too and we don't want that]
 			now christmas bonnet is cursed;
 			now christmas bonnet is sure;
 			now christmas bonnet is identified;
 			uniquely set up christmas bonnet;
 			summon naughty-or-nice outfit;
 			summon plain-small-diaper uncursed;
+			let FGS be a random frilly green socks;
+			summon FGS uncursed;
+			now the raw-magic-modifier of FGS is 2;
+			now FGS is charisma-influencing;
 			say "You seem to have been given some kind of... festive baby outfit and diaper to wear?! This must be some weird Christmas-themed event...";
 		otherwise:
-			now conic santa hat is worn by the player; [if we summon it, it'll summon the default outfit too]
+			now conic santa hat is worn by the player; [if we summon it, it'll summon the default outfit too and we don't want that]
 			now conic santa hat is cursed;
 			now conic santa hat is sure;
 			now conic santa hat is identified;
 			uniquely set up conic santa hat;
 			summon present outfit;
-			increase the transform-resistance of present outfit by 2;
+			increase the transform-resistance of present outfit by 1;
 			say "You seem to have been given some kind of... sexy festive outfit to wear?! This must be some weird Christmas-themed event...";
 	if halloween content is 1:
 		set up vampiress;
@@ -94,7 +98,7 @@ To Start The Machine:
 		say "You notice you are holding a small pink pill in your hand.";
 	if latex prisoner is 1, initialise latex prisoner;
 	if bondage prisoner is 1, initialise bondage prisoner;
-	if bondage protection is 1, initialise bondage protection;
+	if bondage protection is 2, initialise bondage protection;
 	if debugmode > 1, say "Now initialising wardrobe.";
 	initialise wardrobe;
 	set up debug stuff;

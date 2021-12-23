@@ -91,10 +91,10 @@ To decide which figure-name is the examine-image of (V - squirt dildo):
 Report plugging something with squirt dildo:
 	now the second noun is sure.
 Definition: squirt dildo is basic loot: decide no.
-[To compute cursed drinking (X - squirt dildo):
+To compute cursed drinking (X - squirt dildo):
 	say "An extremely bitter taste and slimy consistency immediately lets you know it's not what you put in. The squirt dildo changed everything inside it into [semen]![line break][variable custom style][if the curse-ID of X is sure and X is cursed]This vessel is cursed... it's going to turn anything that's inside it into [semen][otherwise if the curse-ID of X is sure]This potion colour must be cursed... and that's causing it to turn into [semen] when I try to drink it from here[otherwise]One of these is cursed, but I don't know which[end if]...[roman type][line break]";
 	FaceFill semen by 1;
-	suggest swallowing with semen consequences.] [You can't avoid the taste addiction increase by not swallowing]
+	suggest swallowing with semen consequences. [You can't avoid the taste addiction increase by not swallowing]
 To say VesselDesc of (V - squirt dildo):
 	say "This dildo has a hollow inside, hollow balls at the base and a hole at the top. By squeezing the base you can squirt the contents out of the dildo, and by releasing you can capture a bit of whatever liquid the dildo is in.".
 To say ShortVesselDesc of (V - squirt dildo):

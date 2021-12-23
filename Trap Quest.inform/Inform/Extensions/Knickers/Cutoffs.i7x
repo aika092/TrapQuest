@@ -49,7 +49,7 @@ Definition: torn cutoffs is displacable: decide yes.
 
 Part 3 - Heart Window Cutoffs
 
-heart window cutoffs is a cutoffs. heart window cutoffs is transformation-rare. heart window cutoffs is butt-windowed.
+heart window cutoffs is a cutoffs. heart window cutoffs is transformation-rare. heart window cutoffs is butt-windowed. heart window cutoffs is crotch-assless.
 
 The printed name of heart window cutoffs is "[TQlink of item described][item style][cumdesc]pair of [unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]heart window denim cutoffs[clothing-title-after]". The text-shortcut of heart window cutoffs is "hwdc".
 

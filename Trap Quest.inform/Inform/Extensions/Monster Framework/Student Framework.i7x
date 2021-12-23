@@ -217,6 +217,8 @@ To optimise students: [happens just before class starts]
 
 To update students: [happens after the player is promoted]
 	force clothing-focus redraw; [armband has changed colour]
+	if the rank of the player is 1:
+		set up rank one students;
 	if the rank of the player is 2:
 		set up rank two students;
 	if the rank of the player is 3:
@@ -961,7 +963,7 @@ To execute (A - bully-schoolgirl):
 
 bully-lock-heels is a bully-action.
 Definition: bully-lock-heels is eligible:
-	if bondage protection is 1 or there is worn shoes or ballet heels is on-stage, decide no;
+	if bondage protection is 2 or there is worn shoes or ballet heels is on-stage, decide no;
 	if there is an off-stage specific-key, decide yes;
 	decide no.
 To execute (A - bully-lock-heels):
@@ -972,7 +974,7 @@ To execute (A - bully-lock-heels):
 
 bully-lock-gag is a bully-action.
 Definition: bully-lock-gag is eligible:
-	if bondage protection is 1 or face is actually occupied, decide no;
+	if bondage protection is 2 or face is actually occupied, decide no;
 	if there is an off-stage specific-key, decide yes;
 	decide no.
 To execute (A - bully-lock-gag):

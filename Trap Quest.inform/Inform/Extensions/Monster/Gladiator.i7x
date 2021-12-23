@@ -1130,7 +1130,7 @@ To say angry punishment insult of (M - a gladiator):
 To compute angry punishment of (M - a gladiator):
 	say angry punishment insult of M;
 	if M is not friendly-fucking and (M is not seduced or M is unfriendly):
-		if bondage protection is 0 and nipple-ring bikini top is off-stage and nipple-ring bikini top is actually summonable and there is an off-stage specific-key:
+		if bondage protection < 2 and nipple-ring bikini top is off-stage and nipple-ring bikini top is actually summonable and there is an off-stage specific-key:
 			summon nipple-ring bikini top uncursed;
 			say "[BigNameDesc of M] makes you wear a [nipple-ring bikini top]!";
 			let K be a random off-stage specific-key;
@@ -1871,7 +1871,7 @@ To say RewardFlav of (M - a gladiator) for (T - nail-bomb):
 To say OfferFriendshipFlav of (M - a gladiator):
 	say "[speech style of M][if M is guardian]'I'm so proud of how much you've grown[otherwise if M is ally]'I wish you well in your next glorious battle[otherwise if M is buddy]'Continue to carry yourself with pride and dignity and the world shall be your oyster[otherwise if M is acquaintance]'You have gained my respect, for now[otherwise]'Hmm, perhaps you don't deserve to be judged quite so harshly[end if].'[roman type][line break]".
 
-To decide which number is the bartering value of (C - a cupless bra) to (M - a gladiator):
+To decide which number is the bartering value of (C - a cupless bra) for (M - a gladiator):
 	decide on 3.
 
 To say MonsterOfferAcceptFlav of (M - a gladiator) to (C - a cupless bra):

@@ -53,7 +53,7 @@ Check taking pink-spraybottle when pink-spraybottle is not held:
 	if the class of the player is not maid:
 		if playerRegion is not school:
 			let H be a random worn headgear;
-			if H is maid headdress or black maid headdress is actually summonable:
+			if H is maid headdress or H is rubber-bunny-waitress-ears or black maid headdress is actually summonable:
 				allocate 2 seconds;
 				compute maidification of the noun;
 				do nothing instead;
@@ -64,13 +64,22 @@ To compute maidification of (C - a clothing):
 	if tutorial is 0 and C is actually summonable:
 		say "A [C] appears [if C is hand ready]in your hand[otherwise]on you[end if]! It looks like some kind of magic force is demanding that you clean up after you own messes!";
 		let H be a random worn headgear;
-		unless H is maid headdress:
-			now H is black maid headdress;
-			say "[bold type]You yelp in surprise as a [ShortDesc of H] [bold type]appears on you!";
-			summon H cursed;
+		if H is rubber-bunny-waitress-ears:
+			transform H into frilly bunny ears;
+			let M be a random worn overdress;
+			if bunny-maid-outfit is not held and M is a removable overdress, transform M into bunny-maid-outfit;
+		otherwise if H is not maid headdress:
+			if H is a clothing:
+				transform H into black maid headdress;
+			otherwise:
+				say "[bold type]You yelp in surprise as a [ShortDesc of black maid headdress] [bold type]appears on you!";
+				summon black maid headdress cursed;
 		say "[variable custom style]I guess I'm the maid now[if the bimbo of the player < 8]?[otherwise].[end if][roman type][line break]";
+		let H be a random worn headgear;
 		follow the player class rules;
+		compute class outfit of H;
 		summon C.
+
 
 Report taking pink-spraybottle:
 	if the noun is not worn and the player is not in a predicament room:

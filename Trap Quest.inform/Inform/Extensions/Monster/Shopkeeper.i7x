@@ -3,7 +3,8 @@ Shopkeeper by Monster begins here.
 [Note that payments to the shopkeeper are handled by Actions/Paying.i7x]
 
 shopkeeper is a monster. shopkeeper is male. shopkeeper is intelligent. The leftover-type of shopkeeper is 108. shopkeeper has a number called stolen-aware.
-shopkeeper has a number called BBCTrainingQuest . The BBCTrainingQuest of shopkeeper is usually 0.
+
+shopkeeper has a number called BBCTrainingQuest. [0: Quest not started. 1: Quest in progress. 2: Quest completed. 3: Reward given.]
 
 Definition: shopkeeper is willing to urinate: decide yes.
 

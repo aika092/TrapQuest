@@ -131,23 +131,25 @@ To decide which number is the initial outrage of (C - a white slut clubbing dres
 
 Part 5 - Black Slut Clubbing Dress
 
-A black slut clubbing dress is a kind of clubbing dress. There is 1 black slut clubbing dress. A black slut clubbing dress is usually leather. Figure of black slut clubbing dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress5.png". A black slut clubbing dress is transformation-rare. A black slut clubbing dress is usually ridiculously low cut. The text-shortcut of black slut clubbing dress is "bscd".
+A black slut clubbing dress is a kind of clubbing dress. There is 1 black slut clubbing dress. A black slut clubbing dress is leather. A black slut clubbing dress is normally-partially-nipple-covering. A black slut clubbing dress is transformation-rare. A black slut clubbing dress is ridiculously low cut. A black slut clubbing dress is super-short. The text-shortcut of black slut clubbing dress is "bscd".
 
 Definition: a black slut clubbing dress is fluid immune: decide yes.
 Definition: a black slut clubbing dress is black themed: decide yes.
 
 The printed name of black slut clubbing dress is usually "[clothing-title-before]black slut clubbing dress[clothing-title-after]".
 
+Figure of black slut clubbing dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress5.png".
+
 To decide which figure-name is clothing-image of (C - a black slut clubbing dress):
 	decide on figure of black slut clubbing dress.
 
 To say ClothingDesc of (C - a black slut clubbing dress):
-	say "This leather black dress has a tight skirt and nothing but two thin straps that go over the chest. No self respecting woman would ever be seen in this, even in the trashiest of clubs.".
+	say "This leather black dress has a tight microskirt and nothing but two thin straps that go over the chest. No self respecting woman would ever be seen in this, even in the trashiest of clubs.".
 
 To say ShortDesc of (C - a black slut clubbing dress):
 	say "slutty clubbing dress".
 To say MediumDesc of (C - a black slut clubbing dress):
-	say "slutty black clubbing dress".
+	say "exposing black clubbing dress".
 
 To decide which number is the initial outrage of (C - a black slut clubbing dress):
 	decide on 6.

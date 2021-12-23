@@ -131,7 +131,7 @@ To run the engine once:
 	if lagdebug is true:
 		say "Before virtual.";
 		wait 200 ms before continuing;
-	if delayed fainting is 1 and resting is 0:
+	if delayed fainting is 1 and player-currently-resting is 0:
 		execute fainting;
 	otherwise if the player is virtual:
 		compute cleanup;
@@ -152,7 +152,7 @@ To run the engine once:
 			unless another-turn is 1, compute automatic actions; [Automatic actions essentially cause the game to choose what the player enters and then compute turn to happen again. So this must go right at the end, and only happen if another-turn is currently 0!]
 			unless another-turn is 1, compute optional actions; [Optional actions are where the player is given a choice about whether it happens or not. So this must go right at the end, and only happen if another-turn is currently 0!]
 			[unless another-turn is 1, allocate 0 seconds;] [TEST: I don't believe this is needed because it is done in "every turn"]
-	if delayed fainting is 1 and resting is 0, execute fainting;
+	if delayed fainting is 1 and player-currently-resting is 0, execute fainting;
 	if another-turn is 0: [We only look at this stuff on the last turn before the player has control returned to them]
 		if lagdebug is true:
 			say "Handling images.";
@@ -370,7 +370,7 @@ To decide which number is the fatigue-influence of (C - a wearthing):
 	decide on 0.
 
 To compute player standing:
-	now resting is 0;
+	now player-currently-resting is 0;
 	if the largeness of belly > 3 or the largeness of breasts > 16 or dungeon chains is worn or black hood is worn or (the ready-for-milking of milking-quest is 1 and the milk volume of breasts > 10 and the number of worn cowbelled clothing is 0)[ or there is worn heels], compute upright fatigue gain; [We only gain fatigue while standing for very big bodies or when wearing heels. Other fatigue gain comes from walking around and kicking.]
 	if diaper quest is 0 and the location of the player is Dungeon19:
 		if the soreness of asshole is 10:
@@ -730,10 +730,10 @@ This is the too horny masturbation rule:
 
 To Compute Broken Actions:
 	if another-turn is 0 and another-turn-action is the no-stored-action rule:
-		if diaper quest is 0 and the player is broken and the player is prone and the player is not immobile and resting is 0 and busy is 0 and there is a willing to shag right now reactive monster:
+		if diaper quest is 0 and the player is broken and the player is prone and the player is not immobile and player-currently-resting is 0 and busy is 0 and there is a willing to shag right now reactive monster:
 			now another-turn is 1;
 			now another-turn-action is the broken automatic submission rule;
-		otherwise if diaper quest is 0 and the thirst of the player is 5 and the player is thirsty and busy is 0 and resting is 0 and the player is not flying and face is not actually occupied and the player is not immobile and the player is not in danger:
+		otherwise if diaper quest is 0 and the thirst of the player is 5 and the player is thirsty and busy is 0 and player-currently-resting is 0 and the player is not flying and face is not actually occupied and the player is not immobile and the player is not in danger:
 			if the player is in Dungeon10 and the semen taste addiction of the player > 7:
 				now another-turn is 1;
 				now another-turn-action is the broken statue suck rule;

@@ -40,6 +40,7 @@ To compute furniture resting on (C - a lecture chair):
 				compute messing;
 		otherwise:
 			now delayed urination is 2;
+			if the bladder of the player is 0, now the bladder of the player is 2;
 			try urinating;
 		say "The other [']students['] around you giggle and point, as you become the laughing stock of the nursery. ";
 		if the humiliation of the player < 40000, say "[if the delicateness of the player < 5]You growl in frustration, and hold back tears.[otherwise if the delicateness of the player < 16]You can't help but burst into tears at such a bizarre and humiliating situation![otherwise]You can't help but giggle along with them - what a disgusting baby you are![end if]";

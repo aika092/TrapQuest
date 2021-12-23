@@ -165,7 +165,7 @@ To compute perception of (M - matron):
 	otherwise if there is an interested unfriendly wrestler in the location of M:
 		say "[speech style of M]'Ooh, this one is really cute isn't [unless the player is gendered male and the bimbo of the player < 7]s[end if]he! I know exactly what to do with you, darling. From now on you should call me ['][daddytitle of M]['], okay sweetie pie[if M is not eager to change diapers]? Now let's get you into something more appropriate...'[otherwise]?'[end if][roman type][line break]";
 		now M is diaper-committed;
-	otherwise if the class of the player is schoolgirl and there is no worn diaper:
+	otherwise if the class of the player is schoolgirl and the number of worn diaper is 0:
 		say "[speech style of M]'Oh my, you look so adorable in that uniform. But there's something we need to take care of before you can go off to school, now isn't there! Don't fight me sweety, I need to make sure you don't have any accidents in class.'[roman type][line break]";
 		now M is diaper-committed;
 	otherwise if diaper focus is 1 or M is diaper-committed:
@@ -360,7 +360,7 @@ To compute diaper change during cummies reward of (M - matron):
 	penis orgasm shamefully;
 	say "[speech style of M]'Oh deary me. Little [boy of the player]s aren't supposed to be able to have squirties like this. How indecent!'[roman type][line break][big he of M] chides you, as if [he of M] wasn't responsible for it happening in the first place.";
 	let C be nothing;
-	if bondage protection is 0, now C is a random off-stage fetish appropriate chastity cage;
+	if bondage protection < 2, now C is a random off-stage fetish appropriate chastity cage;
 	let K be a random off-stage specific-key;
 	if C is clothing and K is specific-key:
 		summon C uncursed;
@@ -645,7 +645,7 @@ To say RewardFlav of (M - matron) for (T - a thing):
 To say OfferFriendshipFlav of (M - matron):
 	say "".
 
-To decide which number is the bartering value of (C - a maternity bra) to (M - matron):
+To decide which number is the bartering value of (C - a maternity bra) for (M - matron):
 	decide on 3.
 
 To say MonsterOfferAcceptFlav of (M - matron) to (C - a maternity bra):
