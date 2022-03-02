@@ -127,7 +127,7 @@ Report resisting:
 	if M is nothing, now M is a random live thing penetrating a body part;[next, prioritize anyone inside the player]
 	if M is nothing, now M is a random thing wrangling a body part;[Lastly, we take a look at any holders on.]
 	if the implant of pledge-lesson-resist is 1 and the raw intelligence of the player > 1:
-		say "[second custom style]Only a dumb useless slut resists the will of [his of the player] masters.[roman type][line break][bold type]The curse from your diamond ranked lesson pledge activates![roman type] [one of]You blink, feeling a wave confusion wash through your thoughts[or]Once again your thoughts swim, getting all muddled.[or]You feel more stupid [second custom style]like a dumb useless slut.[roman type][line break][stopping]";
+		say "[second custom style]Only a dumb useless slut resists the will of [his of the player] masters.[roman type][line break][bold type]The magic pledge you've just broken activates![roman type] [one of]You blink, feeling a wave of confusion wash through your thoughts.[or]Once again your thoughts swim, getting all muddled.[or]You feel more stupid [second custom style]like a dumb useless slut.[roman type][line break][stopping]";
 		IntDown 1;
 	unless M is nothing:
 		if the player is friendly fucked:

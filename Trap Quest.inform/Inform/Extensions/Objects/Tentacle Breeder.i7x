@@ -113,8 +113,8 @@ Carry out purifying tentacle-breeder:
 		if heart hairpin is actually summonable:
 			say "[bold type]Suddenly, you feel a small weight in your hair. A hair clip in the shape of a heart has appeared! You feel a sudden rush, which almost takes you to your knees.[roman type][line break]";
 			summon heart hairpin cursed;
-			if the player is male and (fast tg is 3 or (the size of penis <= min penis size and tg fetish > 0)):
-				say "Your whole body suddenly goes numb, then is filled with an almost electric tingle. You feel terrible wrenching from your insides that you're sure should hurt, but you just don't seem to be able to feel much of anything right now. The tingling comes to a focus in your crotch, filling you with an awful sense of foreboding. [if the player is possessing a penis]As feeling comes back to you, you reach down and can immediately tell you're missing something kind of notable: your [player-penis]![otherwise]As feeling returns to you, you reach down with a sense of foreboding.[end if] It seems whatever magic made that hair clip appear has decided you'd be better off as a girl...!";
+			if the player is ready for event TG:
+				say "Your whole body suddenly goes numb, then is filled with an almost electric tingle. You feel terrible wrenching from your insides that you're sure should hurt, but you just don't seem to be able to feel much of anything right now. The tingling comes to a focus in your crotch, filling you with an awful sense of foreboding. [if the player is possessing a penis]As feeling comes back to you, you reach down and can immediately tell you're missing something kind of notable: your [player-penis]![otherwise]As feeling returns to you, you reach down with a sense of foreboding.[end if] It seems whatever magic made that hair clip appear has decided you'd be better off [if transGender is 1]with a vagina[otherwise]as a girl[end if]...!";
 				SexChange the player;
 		if the class of the player is "silicone queen": [has to be exactly this class and not any cross-class]
 			let C be a random worn overdress;
@@ -123,7 +123,8 @@ Carry out purifying tentacle-breeder:
 
 To compute summoning check of (T - a tentacle-breeder):
 	if the total magic power of the player > 0 and T is regional:
-		decrease the charge of T by time-seconds;
+		let TS be time-seconds - the number of alive regional on-stage tentacle monsters;
+		if TS > 0, decrease the charge of T by time-seconds;
 		if the charge of T < 1:
 			let M be the summonChoice of T;
 			if M is monster:
@@ -150,7 +151,7 @@ To compute portal reset of (T - a tentacle-breeder):
 
 To compute (T - dungeon-breeder) regionally summoning (M - a monster):
 	summon M in the dungeon;
-	now the charge of T is 500. [Just because I expect people to spend a bit more time in the dungeon]
+	now the charge of T is 450.
 
 To compute (T - woods-breeder) regionally summoning (M - a monster):
 	summon M in the woods;

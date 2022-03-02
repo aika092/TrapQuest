@@ -587,6 +587,28 @@ Definition: a suspender stockings is sissifying: decide yes.
 
 Definition: a lacy stockings is sissifying: decide yes.
 
+sheer-stockings is a stockings. sheer-stockings is silk. sheer-stockings is unique. The text-shortcut of sheer-stockings is "shst". The printed name of sheer-stockings is "[clothing-title-before]pair of sheer silk stockings[clothing-title-after]".
+
+Figure of sheer stockings is the file "Items/Clothes/Lower/Legs/sheerstockings1.png".
+To decide which figure-name is clothing-image of (C - sheer-stockings):
+	decide on figure of sheer stockings.
+
+Definition: sheer-stockings is brown themed: decide yes.
+
+To say ClothingDesc of (C - sheer-stockings):
+	say "These beige thigh high stockings are moderately sheer, and made of a very fine silk. You sense that they have the magical power to delay labour for a decent while, once you hit full term pregnancy... And also to significantly enhance the damage of your knee attacks when at full term pregnancy.".
+
+To decide which number is the knee-modifier of (S - sheer-stockings):
+	let A be the magic-modifier of S;
+	if the womb volume of vagina is 30 or the womb volume of vagina >= 50, increase A by the womb volume of vagina / 10;
+	decide on A.
+
+To compute virginity-loss of (S - sheer-stockings):
+	now the raw-magic-modifier of S is -5;
+	now S is cursed;
+	now the quest of S is birth-quest;
+	say "Your [ShortDesc of S] is surrounded by a dark glow! It's now a [S]! [QuestFlav of S]".
+
 A black-and-yellow striped stockings is a kind of stockings. There is 1 black-and-yellow striped stockings. A black-and-yellow striped stockings is unique. A black-and-yellow striped stockings is usually biological. A black-and-yellow striped stockings is usually dense. The printed name of black-and-yellow striped stockings is "[clothing-title-before]black and yellow striped stockings[clothing-title-after]". The text-shortcut of black-and-yellow striped stockings is "bys". Understand "black", "black and yellow", "yellow" as black-and-yellow striped stockings.
 
 Definition: a black-and-yellow striped stockings is yellow themed: decide yes.

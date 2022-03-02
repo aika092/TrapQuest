@@ -14,7 +14,7 @@ Definition: a chastity bond is urination blocking: decide no.
 Figure of male chastity cage plastic is the file "Items/Accessories/Chastity/chastitycage1.png".
 Figure of male chastity cage metal is the file "Items/Accessories/Chastity/chastitycage3.png".
 Figure of male chastity cage latex is the file "Items/Accessories/Chastity/chastitycage4.png".
-Figure of male chastity cage nub is the file "Items/Accessories/Chastity/chastitycage5.jpg".
+Figure of male chastity cage nub is the file "Items/Accessories/Chastity/chastitycage5.png".
 Figure of female chastity cage is the file "Items/Accessories/Chastity/chastitycage2.png".
 
 outrageous-chastity is a humiliating situation.
@@ -36,7 +36,7 @@ The chastity bond pussy slut rule is listed in the pussy slut eligibility rules.
 
 [Chastity belt]
 
-Chastity-Belt is a chastity bond. Chastity-belt is unique. Chastity-belt is metal. The printed name of chastity-belt is "[clothing-title-before]chastity belt[clothing-title-after]". The text-shortcut of chastity-belt is "chab". Understand "belt" as chastity-belt.
+chastity-belt is a chastity bond. chastity-belt is unique. chastity-belt is metal. The printed name of chastity-belt is "[clothing-title-before]chastity belt[clothing-title-after]". The text-shortcut of chastity-belt is "chab". Understand "belt" as chastity-belt.
 
 To say ClothingDesc of (C - chastity-belt):
 	say "A metal chastity belt that completely prevents access to your [genitals], aside from a small opening for you to pee through. The back straps go over each ass cheek, allowing full access to your [asshole].";
@@ -209,8 +209,8 @@ To say ClothingDesc of (C - latex-cage):
 [nub cage]
 nub-cage is a chastity cage. Understand "nub" as nub-cage. a nub-cage has a number called nub-charge. The text-shortcut of nub-cage is "nuc".
 
-Definition: a nub-cage is fetish appropriate: decide no.
-Definition: a nub-cage is transformation-protected: decide yes.
+Definition: nub-cage is fetish appropriate: decide no.
+Definition: nub-cage is transformation-protected: decide yes.
 
 To compute post transformation effect of (C - nub-cage):
 	now the size of C is the size of penis.
@@ -225,7 +225,7 @@ To say ClothingDesc of (C - nub-cage):
 To say HumiliatingDesc of (C - nub-cage):
 	if the bimbo of the player > 11, say "[variable custom style][one of]Fuck it's so hot that my [sissy-penis] is so tiny and broken, every time I think of [manly-penis] I start leaking.[or]The only fucking I'll be doing from now on is with my sissy mouth or [asshole].[or]My [sissy-penis] [if the player is possessing a scrotum]and tiny balls are[otherwise]is[end if] only for my superior's enjoyment now, if I want to cum I need to find some big [manly-penis] to help me.[or]I could never satisfy a woman with my [sissy-penis] anyway, maybe I could find a [if lady fetish is 2]giant [manly-penis] to rail[otherwise if the player is possessing a scrotum]hot mistress to squeeze my sissy balls and peg[otherwise]hot mistress to peg[end if] my [asshole].[or]Ahhh, no matter how long I wear this thing it still squeezes and makes my [sissy-penis] leak.[or]The longer I wear this cage, the more broken my [sissy-penis] gets, and the more I realise my place in life is on my knees worshipping giant [manly-penis][if bukkake fetish is 1] or slurping some stud's delicious [semen] from a superior woman's [vagina][end if].[in random order][roman type][line break]".
 
-To decide which figure-name is clothing-image of (C - a nub-cage):
+To decide which figure-name is clothing-image of (C - nub-cage):
 	decide on figure of male chastity cage nub.
 
 To compute periodic effect of (C - nub-cage):

@@ -103,8 +103,7 @@ To compute teaching of (L - hypno-lesson):
 
 enema-tag-lesson is a lesson. The lesson-teacher of enema-tag-lesson is teacher-hyacinthe.
 Definition: enema-tag-lesson is lesson-appropriate:
-	if diaper quest is 1 and the player is not a february 2021 diaper donator, decide no;
-	if diaper quest is 0 and the player is not a february 2021 top donator, decide no;
+	if the player is not the donator, decide no;
 	repeat with C running through worn clothing:
 		if C is penetrating asshole and (C is glued or C is cursed or C is locked), decide no;
 	[if diaper quest is 0 and (a2m fetish < 2 or watersports fetish is 0), decide no;]
@@ -326,7 +325,7 @@ To compute teaching of (L - enema-tag-lesson):
 								if D < 1, now D is 1;
 								now D1 is the square root of D;
 								increase playerDistance by D1;
-								FatigueUp CL * 10;
+								FatigueUp CL * 20;
 							otherwise:
 								now D1 is 0;
 							now D2 is playerDistance;
@@ -400,6 +399,7 @@ To compute teaching of (L - enema-tag-lesson):
 						say "[one of]quitting the race early[or]conceding the race[or]returning to safety but losing the opportunity for promotion[in random order].";
 						remove ST from LST;
 						if ST is listed in LSZ, remove ST from LSZ;
+						if punishmentTarget is M, now punishmentTarget is ST;
 				if ST is listed in LST: [need to check they haven't left the race immediately above]
 					if ST is listed in LSE: [enema expelled]
 						if ST is yourself:
@@ -453,7 +453,7 @@ To compute teaching of (L - enema-tag-lesson):
 		otherwise:
 			promote ST;
 	if the number of entries in LSP > 0:
-		if (diaper quest is 0 and a2m fetish >= 2 and watersports fetish is 1 and punishmentTarget is not M) or (diaper quest is 1 and diaper messing >= 6):
+		if (diaper quest is 0 and a2m fetish >= 2 and watersports fetish is 1 and punishmentTarget is not M) or (diaper quest is 1 and diaper messing >= 6): [TODO: non a2m punishment]
 			say "[BigNameDesc of M] turns to [YouDesc of punishmentTarget].[line break][speech style of M]'And now, the punishment for the biggest loser.'[roman type][line break][BigNameDesc of M] makes [if punishmentTarget is you]you[otherwise][student-name of punishmentTarget][end if] lie down on the ground, and then gets ";
 			let E be the number of entries in LSP;
 			repeat with ST running through LSP:
@@ -554,10 +554,10 @@ To execute (E - pledge-lesson-magic):
 A magic consequences rule (this is the pledge-lesson magic consequence rule):
 	if the implant of pledge-lesson-magic is 1:
 		if diaper quest is 0:
-			say "The magic ripples through your arms, activating the curse you got from [NameDesc of lesson-teacher of pledge-lesson]. ";
+			say "The magic ripples through your arms, activating the magic pledge you've just broken. ";
 			VaginalSexAddictUp 1;
 		otherwise:
-			say "The magic ripples through your arms, activating the curse you got from [NameDesc of lesson-teacher of pledge-lesson]. Your bladder [if diaper lover > 3]and bowels explode[otherwise]explodes[end if] [if the bladder of the player >= 12]to inhuman levels of fullness[otherwise]with contents until completely full[end if]!";
+			say "The magic ripples through your arms, activating the magic pledge you've just broken. Your bladder [if diaper lover > 3]and bowels explode[otherwise]explodes[end if] [if the bladder of the player >= 12]to inhuman levels of fullness[otherwise]with contents until completely full[end if]!";
 			increase the bladder of the player by 12;
 			if diaper lover >= 3:
 				increase rectum by 15;

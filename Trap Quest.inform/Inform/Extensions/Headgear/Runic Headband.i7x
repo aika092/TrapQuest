@@ -61,6 +61,13 @@ To compute class outfit of (H - runic headband):
 	if H is purity, class summon flowing priestess outfit;
 	otherwise class summon cameltoe-priestess-outfit.
 
+[Gotta allow the player to get those ritual beads, even if the headband appeared via roleplay mechanic]
+Report wearing runic headband:
+	if ritual-beads is off-stage:
+		now ritual-beads is in the location of the player;
+		say "A set of [ritual-beads] appears on the ground in front of you!";
+		compute autotaking ritual-beads.
+
 Chapter - Quest
 
 priestess-service-quest is a headgear-clothing-quest.
@@ -118,7 +125,7 @@ To compute persistent reward of (Q - priestess-service-quest) on (C - a clothing
 		if F is mass collectible:
 			say "A [ShortDesc of F] appears at your feet.";
 			now F is in the location of the player;
-			compute autotaking F;
+			compute autotaking F.
 
 priestess-vaginal-service-quest is a headgear-clothing-quest.
 

@@ -1122,6 +1122,10 @@ To say QuestFlav of (Q - attack-quest):
 To say QuestTitle of (Q - attack-quest):
 	say " (alliance breaking quest)".
 
+To compute persistent reward of (Q - attack-quest) on (C - a clothing):
+	say "fully healing your body!";
+	BodyHeal 10.
+
 Part - Make Up Quest
 
 make-up-quest is a clothing-quest.
@@ -1165,7 +1169,7 @@ To say QuestTitle of (Q - bust-up-quest):
 	say " (breast expansion quest)".
 
 To progress quest of (Q - bust-up-quest):
-	if the largeness of breasts > the target-bust of Q:
+	if the largeness of breasts >= the target-bust of Q:
 		if debugmode > 0, say "Checking for[QuestTitle of Q].";
 		repeat with C running through worn clothing:
 			if C is diaper-stack:
@@ -1252,5 +1256,24 @@ To say QuestFlav of (Q - cursed-orgasm-quest):
 
 To say QuestTitle of (Q - cursed-orgasm-quest):
 	say " (cursed orgasm quest)".
+
+Part - Cursed Orgasm Quest
+
+birth-quest is a clothing-quest.
+
+Definition: birth-quest is appropriate:
+	if pregnancy fetish is 1, decide yes;
+	decide no.
+
+To decide what number is the quest-weighting of (Q - birth-quest) for (C - a clothing):
+	if Q is not appropriate, decide on 0;
+	if C is crotch-intact and C is not displacable, decide on 0;
+	decide on 1.
+
+To say QuestFlav of (Q - birth-quest):
+	say "You sense that it wants you to give birth.".
+
+To say QuestTitle of (Q - birth-quest):
+	say " (birth quest)".
 
 Quests ends here.

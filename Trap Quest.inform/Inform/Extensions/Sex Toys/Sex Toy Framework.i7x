@@ -9,28 +9,15 @@ Definition: A thing is insertable:
 		if it is ass plugging or it is vagina plugging, decide yes;
 	decide no.
 
-Definition: a sex toy (called S) is actually summonable:
-	if S is on-stage, decide no;
-	if S is players-detached-dick and players-dick-is-detached is not 0, decide yes;
-	if S is part of something, decide no;
-	if the size of S is 0, decide no;
-	if asshole is actually occupied, decide no;
-	decide yes.
-
-Definition: a sex toy (called S) is vaginally summonable:
-	if S is on-stage, decide no;
-	if S is part of something, decide no;
-	if the size of S is 0, decide no;
-	if vagina is actually occupied, decide no;
-	decide yes.
-
 A sex toy is a kind of clothing. Understand "sex toys" as sex toy. The text-shortcut of a sex toy is "sty".
 A sex toy is usually plastic. A sex toy is usually manly.
 A sex toy has a number called size. The size of a sex toy is usually 0.
 The printed name of a sex toy is usually "[clothing-title-before][MediumDesc of item described][clothing-title-after]".
 Definition: a sex toy is disembodied rather than embodied: decide yes. [When penetrating an orifice, can it fit underneath other clothing like a sex toy? Or will clothing get in the way, e.g. a dildo pole?]
 A sex toy has a number called toy-charge.
-Definition: a sex toy is magic-enhanceable: decide no.
+Definition: a sex toy is magic-enhanceable:
+	if it is not-influencing, decide no;
+	decide yes.
 Definition: a sex toy is too boring: decide no.
 Definition: a sex toy is transformation-protected: decide yes.
 Definition: a sex toy is disintegration-protected: decide yes.
@@ -49,6 +36,21 @@ To decide which number is the outrage of (S - a sex toy):
 		if S is not currently at least partially visible, decide on 0;
 		if S is not currently visible, decide on (the initial outrage of S * 2) / 3; [this means it is partially visible]
 	decide on the unworn outrage of S.
+
+Definition: a sex toy (called S) is actually summonable:
+	if S is on-stage, decide no;
+	if S is players-detached-dick and players-dick-is-detached is not 0, decide yes;
+	if S is part of something, decide no;
+	if the size of S is 0, decide no;
+	if asshole is actually occupied, decide no;
+	decide yes.
+
+Definition: a sex toy (called S) is vaginally summonable:
+	if S is on-stage, decide no;
+	if S is part of something, decide no;
+	if the size of S is 0, decide no;
+	if vagina is actually occupied, decide no;
+	decide yes.
 
 To say DongSize of (C - a sex toy):
 	let N be the size of C;

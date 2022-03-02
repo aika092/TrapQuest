@@ -19,7 +19,7 @@ To decide which number is player-enhancement:
 	decide on E.
 
 To compute furniture resting on (F - modification machine):
-	let M be a random off-stage module;
+	let M be a random off-stage fetish appropriate module;
 	say "You lie down in the chair, and [one of]as you expected, [or]once again [stopping]solid metal restraints flip over from underneath the arms and legs of the chair to secure your [unless the player is wrist bound]wrists and [end if]ankles.";
 	now F is grabbing the player;
 	now the stance of the player is 1;
@@ -46,9 +46,9 @@ To compute furniture resting on (F - modification machine):
 		otherwise:
 			say "You feel [smarter]!";
 			IntUp 1;
-	otherwise if artificial enhancements fetish is 1 and M is module and a random number between artificial-fetish and 2 is 2:
+	otherwise if M is module and a random number between artificial-fetish and 2 is 2:
 		say "A recording begins to play a tinny female voice as you settle into the chair.[line break][second custom style]'Hello TESTER [NameBimbo]! You have been selected to take part in a fantastic new trial to examine the engineering feasibility of an exciting new product line by R&D! Please remain perfectly still...'[roman type][line break]";
-		say "[ModuleFlav of M]";
+		say ModuleFlav of M;
 		summon M;
 	otherwise if artificial enhancements fetish is 1 and (the player is not top heavy or the player is not bottom heavy) and a random number between 1 and 3 > 1:
 		if the player is top heavy or (the total volume of hips < the largeness of breasts and the player is not bottom heavy):

@@ -307,7 +307,7 @@ Report going when the player is in Predicament20:
 				now C is penetrating asshole;
 			otherwise if C is vagina plugging clothing:
 				if the player is possessing a vagina, now C is penetrating vagina;
-			otherwise if C is insertable:
+			otherwise if C is insertable and C is not dildo sword:
 				let F be asshole;
 				if (C is not plug or asshole is actually occupied) and the player is possessing a vagina, now F is vagina;
 				now C is penetrating F;
@@ -432,7 +432,14 @@ To compute movement of (M - a bystander):
 			if A is a direction:
 				let P be the room A from (the location of M);
 				if A is a direction and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
-					try M going A.
+					try M going A;
+					if M is camera-bystander and current-predicament is bottle-jog-predicament and A is down and M is in Toilet01 and id-poster is in Toilet01:
+						let PS be the target-camera-poster of id-poster;
+						let T be the substituted form of "a poster on the men's toilets wall with all of your personal information, and... [ShortDesc of PS]";
+						let PSA be the lewdness of PS / 30;
+						compute digital reputation damage T strength (PSA) quality 2;
+						say "In your mind's eye, you can picture [NameDesc of M] entering the men's toilets and taking a photo of the poster, and publishing it online.[line break][variable custom style]What an invasive image. It feels so real... Is it really just my imagination?[roman type][line break]";
+
 
 Definition: a bystander (called M) is target-room-happy:
 	if bystander-room-target is bossed, decide no;
@@ -454,7 +461,7 @@ To check perception of (M - a bystander):
 			let C be the concealment of the location of the player;
 			let P be the stealth of the player;
 			if debuginfo > 0, say "[input-style]Bystander perception check: awareness roll (d[awareness of M]) = [R] | [C + P].5 = ([C].5) [location of the player] concealment rating + ([P]) player [if the player is upright]standing[otherwise]kneeling[end if] stealth rating[roman type][line break]";
-			if C + P >= R and smoothie gag is not worn:
+			if C + P >= R and smoothie gag is not worn and (current-predicament is not team-scissor-lift-predicament or the number of students in the location of M is 0):
 				say "[BigNameDesc of M] fails to notice you.";
 			otherwise:
 				now M is interested;
@@ -561,9 +568,9 @@ To compute squirting perception of (M - a camera-bystander):
 To say FlashFlav of (M - a camera-bystander):
 	say "[BigNameDesc of M] [if M is not interested]notices you! [big he of M] [end if]gasps, snapping several photos of you with [his of M] phone![line break][italic type]CLICK! CLICK! CLICK! CLICK![roman type][line break]And then... a 'whoosh' sound as [he of M] sends the photo to who knows how many people![one of][line break][variable custom style]Now the whole world will know my shame...[roman type][line break][or][stopping]";
 	let T be PredicamentActivity of current-predicament;
-	if target-poster is expulsion poster, now T is "expelling stuff from your [asshole]";
-	if target-poster is masturbation poster, now T is "masturbating";
-	if target-poster is wetting poster, now T is "[if the player is pee protected]wetting yourself[otherwise]urinating[end if]";
+	if target-poster is expulsion poster, now T is "you expelling stuff from your [asshole]";
+	if target-poster is masturbation poster, now T is "you masturbating";
+	if target-poster is wetting poster, now T is "you [if the player is pee protected]wetting yourself[otherwise]urinating[end if]";
 	let A be the appearance of the player;
 	if diaper quest is 1 and the appearance of the player < the cringe appearance of the player, now A is the cringe appearance of the player;
 	compute digital reputation damage T strength (A) quality (a random number between 1 and 4);
@@ -722,6 +729,7 @@ Definition: postman-bystander is strolling: decide yes.
 To decide which number is the outrage tolerance of (M - postman-bystander):
 	decide on 9.
 Definition: postman-bystander is target-room-happy:
+	if bystander-room-target is Park02, decide yes; [everyone needs the toilet sometimes!]
 	if bystander-room-target is bossed or bystander-room-target is park room, decide no;
 	decide yes.
 
@@ -732,6 +740,7 @@ To say ExamineDesc of (M - postwoman-bystander):
 	say "This [man of M] is wearing a postie's uniform and has a satchel full of mail slung over one shoulder. [big he of M]'s busy heading from postbox to postbox.".
 Definition: postwoman-bystander is strolling: decide yes.
 Definition: postwoman-bystander is target-room-happy:
+	if bystander-room-target is Park02, decide yes; [everyone needs the toilet sometimes!]
 	if bystander-room-target is bossed or bystander-room-target is park room, decide no;
 	decide yes.
 
@@ -1336,7 +1345,7 @@ To execute (P - triple-dildo-predicament):
 	now the stance of the player is 1;
 	now the arousal of the player is 1000;
 	update arousal;
-	let E be grey-exercise-shorts;
+	let E be black-exercise-shorts;
 	now E is in Predicament01;
 	now E is blessed;
 	now E is sure;
@@ -1370,8 +1379,8 @@ To execute (P - triple-dildo-predicament):
 			set numerical response 1 to "squeeze on the dildo in your mouth";
 			set numerical response 2 to "ride the dildo in your [asshole]";
 			set numerical response 3 to "both squeeze and ride";
-			set numerical response 4 to "do nothing[if grey-exercise-shorts is in Predicament01] (this will make the exercise shorts permanently locked away)[end if]";
-			if grey-exercise-shorts is not in Predicament01, set numerical response 0 to "do nothing for the rest of the predicament";
+			set numerical response 4 to "do nothing[if black-exercise-shorts is in Predicament01] (this will make the exercise shorts permanently locked away)[end if]";
+			if black-exercise-shorts is not in Predicament01, set numerical response 0 to "do nothing for the rest of the predicament";
 			compute multiple choice question;
 			now playerContinue is player-numerical-response;
 		if playerContinue is 1 or playerContinue is 3:
@@ -1402,9 +1411,9 @@ To execute (P - triple-dildo-predicament):
 			force cool down 1500;
 		if playerContinue is 0 or playerContinue is 4:
 			say "You stay still and refuse to do anything.";
-			if grey-exercise-shorts is in Predicament01:
+			if black-exercise-shorts is in Predicament01:
 				say "A [bold type]*clunk*[roman type] lets you know that the cabinet holding the shorts is now permanently locked tight.";
-				destroy grey-exercise-shorts;
+				destroy black-exercise-shorts;
 		check for arousal change;
 	if delayed fainting is 0:
 		if S > 0:
@@ -1415,10 +1424,10 @@ To execute (P - triple-dildo-predicament):
 	now bigGameLoop is 0;
 	conclude consenting;
 	if delayed fainting is 0:
-		say "Suddenly, in the same moment, all the bondage holding you falls apart at the seams and clatters to the floor. You are able to pull all three dildos out of your body[if grey-exercise-shorts is in Predicament01]. The lock on [NameDesc of E] turns green and the case falls open - you can take and wear the shorts[end if]!";
+		say "Suddenly, in the same moment, all the bondage holding you falls apart at the seams and clatters to the floor. You are able to pull all three dildos out of your body[if black-exercise-shorts is in Predicament01]. The lock on [NameDesc of E] turns green and the case falls open - you can take and wear the shorts[end if]!";
 		if S > 0:
 			if the semen volume of belly > 0, say "You want to expel the [semen] from your [asshole], but you'd lose precious time, and [bold type]you only have 60 seconds to race for the [if pregnancy fetish is 1]morning after pill[otherwise]computer to stop the upload[end if]![roman type][line break]";
-			if newbie tips is 1, say "[newbie style]Newbie tip: If you [if the semen volume of belly > 0]manually expel your anal creampie or [end if]walk west, or do many other things that waste time, you'll fail to reach your house in time. You will not be penalised for putting on clothes but that's about it.[roman type][line break]".
+			if newbie tips is 1, say "[newbie style]Newbie tip: If you [if the semen volume of belly > 0]manually expel your anal creampie or [end if]walk west, or do many other things that waste time, you'll fail to reach your house in time. You will not be penalised for putting on clothes or standing up, but that's about it.[roman type][line break]".
 
 Carry out going:
 	if the pill-timer of triple-dildo-predicament > 0:
@@ -1800,8 +1809,9 @@ To execute (MSP - maths-sex-predicament):
 	say "You find yourself on your hands and knees, stuck in a hole-in-a-wall! The only item of clothing on your entire body is a [if diaper quest is 1]big thick white diaper[otherwise]string belt on your waist[end if]. In front of you sits a control panel with five buttons, labelled from 1 to 5.[line break][first custom style]'WELCOME TO THIS MATHEMATICS-THEMED [']EXTRA CREDIT['] CLASS. SIX INSTRUCTIONS WILL BE PRESENTED IN FRONT OF YOU. THE OPTION YOU CHOOSE WILL BE DISPLAYED ON THE MONITOR ABOVE YOUR LOWER HALF, AND [if diaper quest is 1]EXECUTED BY THE AUTOMATED ROBOTIC ARMS[otherwise]READ BY THE OBEDIENT INSTRUCTION UNDERTAKER WAITING[end if] IN THE ROOM BEHIND YOU, FILMED, AND UPLOADED TO THE INTERNET. THIS WILL OCCUR FIVE TIMES. APOLOGIES, THE INSTRUCTION NUMBER GENERATOR APPEARS TO BE SLIGHTLY MALFUNCTIONING; NUMBERS ARE DISPLAYED IN THE FORM OF MATHEMATICAL SUMS. THERE IS A STRICT TIME LIMIT FOR EACH INSTRUCTION. [if diaper quest is 0][paragraph break]'THERE IS ALSO A FURTHER BONUS AVAILABLE: ARRIVE HOME WITH FIVE CONDOMS PINNED TO YOUR BELT TO EARN A SECOND TROPHY![end if][paragraph break]'GO.'[paragraph break][variable custom style]Holy crap...[roman type][line break]";
 	now the stance of the player is 1;
 	if diaper quest is 0:
-		if string-belt is not worn, summon string-belt locked;
+		if string-belt is not worn, summon string-belt uncursed;
 		now string-belt is predicament-fixed;
+		now the glue timer of string-belt is 650;
 	otherwise:
 		summon plain-largish-diaper uncursed;
 	let D be game difficulty - 1;
@@ -1939,7 +1949,7 @@ To execute (TEP - team-enema-predicament):
 				if the player is consenting:
 					now delayed urination is 2;
 				otherwise:
-					compute bladder growth;
+					compute guaranteed bladder growth;
 				if delayed urination > 0:
 					say "[if delayed urination is 1]You can't hold it any more! You involuntarily[otherwise]You[end if] release your hold on your bladder, and have to make a super quick decision - you can choose to position your [genitals] over [NameDesc of M][']s mouth, if you wish, to force [him of M] to drink it rather than it going down onto your outfits. Do you squat over [NameDesc of M][']s mouth? ";
 					if the player is consenting:
@@ -3245,10 +3255,13 @@ Definition: gloryhole-predicament is appropriate:
 To say PredicamentDescription of (P - gloryhole-predicament):
 	say "I'm currently in an Extra Credit lesson where I need to suck at least 5 cocks in the women's toilets, trying to make sure nobody leaves from the other side of the gloryhole without having their dick sucked, and then go into the men's toilets and retrieve my house key and mystery outfit, and then get back to my home while avoiding as many bystanders as possible from noticing me.".
 
-id-poster is a thing. The printed name of id-poster is "[TQlink of item described]identity poster[TQxlink of item described]". The text-shortcut of id-poster is "idp". Understand "identity", "poster" as id-poster.
+id-poster is a thing. The printed name of id-poster is "[TQlink of item described][if current-predicament is gloryhole-predicament]identity[otherwise]explicit[end if] poster[TQxlink of item described]". The text-shortcut of id-poster is "idp". Understand "identity", "explicit", "poster" as id-poster.
+
+id-poster has an object called target-camera-poster.
 
 To say ExamineDesc of (P - id-poster):
-	say "A poster [if the location of P is Toilet01 and P is not held]pinned to the wall above the gloryhole [end if] which has a photo of you in that super slutty pink bikini, your full name, and a huge amount of personal information about you, including your date of birth, home town, occupation, where you went to school, measurements, blood type, and even your phone number. In large letters at the top of the poster, it says 'YOUR GLORYHOLE SLUT FOR TODAY'.[if the location of P is Toilet01 and P is not held and the player is not shameless][line break][variable custom style]Oh my god, I can't believe it! I need to take this down right now![roman type][line break][end if]".
+	if current-predicament is gloryhole-predicament, say "A poster [if the location of P is Toilet01 and P is not held]pinned to the wall above the gloryhole [end if]which has a photo of you in that super slutty pink bikini, your full name, and a huge amount of personal information about you, including your date of birth, home town, occupation, where you went to school, measurements, blood type, and even your phone number. In large letters at the top of the poster, it says 'YOUR GLORYHOLE SLUT FOR TODAY'.[if the location of P is Toilet01 and P is not held and the player is not shameless][line break][variable custom style]Oh my god, I can't believe it! I need to take this down right now![roman type][line break][end if]";
+	otherwise say "[ExamineDesc of target-camera-poster of P]It also has your full name, and a huge amount of personal information about you, including your date of birth, home town, occupation, where you went to school, measurements, blood type, and even your phone number.[if the location of P is Toilet01 and P is not held and the player is not shameless][line break][variable custom style]Oh my god, I need to take this down right now![roman type][line break][end if]".
 
 To decide which figure-name is the examine-image of (C - id-poster):
 	decide on figure of poster.
@@ -4416,8 +4429,9 @@ To execute (TSLP - team-scissor-lift-predicament):
 							if diaper messing >= 3, increase rectum by 1;
 						if the stomach-food of the player is 0, now hunger-override is true; [otherwise player can't get hungry in a predicament room]
 						StomachDown 3;
-						increase the bladder of the player by the delayed bladder of the player;
-						now the delayed bladder of the player is 0;
+						while the delayed bladder of the player > 0:
+							bladderup 1 + xavier-belt-link;
+							decrease the delayed bladder of the player by 1;
 						if debugmode > 0, say "[input-style]After hourly changes. Food: [stomach-food of the player]. Drink: [stomach-liquid of the player]. Bladder: [bladder of the player][roman type][line break]";
 				if LLR > 0:
 					decrease W by LLR;
@@ -5385,7 +5399,7 @@ To execute (TRNP - train-predicament):
 			otherwise now the worst-appearance of shutterbug-bystander is PA;
 			say "FLASH! A noisy camera shutter sound goes off behind you. You turn your head to see [NameDesc of shutterbug-bystander] taking several pictures of you![line break][variable custom style]'HEY WHAT THE HELL! Help me out here, don't just take photos of me, you creep!'[roman type][line break][big he of shutterbug-bystander] sniffs.[line break][speech style of shutterbug-bystander]'Fine.'[roman type][line break][big he of shutterbug-bystander] approaches a red button on one wall that you hadn't even noticed, and presses it. The trolley immediately stops moving, and your bondage is automatically released.[line break][speech style of shutterbug-bystander]'But because you spoke to me so nastily, I'm going to put these photos on the Internet.'[roman type][line break]And then, before you can retort, [he of shutterbug-bystander] has dashed back out through the only door.";
 			try shutterbug-bystander going north;
-			let TPT be the substituted form of "locked on a weird bondage trolley in a green lycra bodysuit [if diaper quest is 0]with your exposed butt[otherwise if plain-largish-diaper is messed]with a visibly messy diaper[otherwise if plain-largish-diaper is wet]with a visibly soaked diaper[otherwise]with a big thick (but thankfully dry) diaper[end if] sticking out the back";
+			let TPT be the substituted form of "you locked on a weird bondage trolley in a green lycra bodysuit [if diaper quest is 0]with your exposed butt[otherwise if plain-largish-diaper is messed]with a visibly messy diaper[otherwise if plain-largish-diaper is wet]with a visibly soaked diaper[otherwise]with a big thick (but thankfully dry) diaper[end if] sticking out the back";
 			compute digital reputation damage TPT strength (the worst-appearance of shutterbug-bystander) quality 2;
 			compute digital reputation damage TPT strength (the worst-appearance of shutterbug-bystander) quality 2;
 			now trolleyTime is 0;
@@ -5490,6 +5504,498 @@ To render train state:
 				add Figure of Train Predicament Cum 4 to temporary-map-figures;
 		increase E by 1;
 	if diaper quest is 0 and a2m fetish is 1 and the small egg count of belly > 0, add Figure of Train Predicament Ping Pong to temporary-map-figures.
+
+
+
+bottle-jog-predicament is a predicament.
+Definition: bottle-jog-predicament is appropriate:
+	if diaper quest is 0 and the rank of the player > 1 and the player is a february 2022 top donator and the player is possessing a vagina and there is an on-stage identifiable poster, decide yes;
+	decide no.
+
+Figure of bottle jog predicament is the file "Special/Cutscene/cutscene-predicament-bottle-jog1.jpg".
+
+To execute (BJP - bottle-jog-predicament):
+	let P be a random on-stage identifiable poster;
+	now the target-camera-poster of id-poster is P;
+	now id-poster is in Toilet01;
+	now the player is in Park24;
+	set up predicament universe;
+	now bystander-room-target is Park16;
+	repeat with M running through alive bystanders: [Move lots of bystanders to the middle]
+		if M is in a road room and M is target-room-happy, now M is in Park16; [This NPC is happy to walk in the park]
+	now the stance of the player is 0;
+	summon red crop top uncursed;
+	summon black-exercise-shorts uncursed;
+	summon grey-sneakers uncursed;
+	now sports-bottle is worn by the player;
+	now the fill-colour of sports-bottle is creamy;
+	DoseFill sports-bottle;
+	summon remote-controlled-vibrator uncursed vaginally;
+	say "You find yourself standing behind a large statue in a park. You are wearing rather revealing exercise gear... and your [vagina] feels full.[line break][variable custom style]Huh?![roman type][line break]In your hand, you are holding a large, heavy sports bottle. A tube attached to the base of the bottle leads down and under the waistband of your shorts. You're just starting to try and understand what's going on, when a voice speaks out loud through a hidden speaker.[paragraph break][first custom style]'TO EARN THIS TROPHY, ALL YOU NEED TO DO IS RETURN HOME. BUT BE AWARE: AN EXPLICIT PHOTO, TAKEN OF YOU IN THE HOTEL REGION, TITLED ['][the title of P]['], HAS BEEN PRINTED OUT AND POSTED ON THE WALL IN THE MEN'S PUBLIC TOILETS, ALONG WITH YOUR NAME AND SEVERAL OTHER PIECES OF IDENTIFYING INFORMATION. YOU MAY WISH TO GO AND REMOVE THIS ITEM BEFORE ANYONE CAN TAKE PHOTOS OF IT, OR CLAIM IT AS THEIR OWN. HOWEVER, AN ADDITIONAL CHALLENGE EXISTS, IF YOU DO WISH TO REMOVE THE POSTER.[paragraph break]'THE BOTTLE YOU SEE IN YOUR HAND IS FILLED TO THE BRIM WITH FRESH SEMEN, COLLECTED FROM VARIOUS STRANGERS AROUND TOWN. IT HAS AN [']ACTIVE TOP['] STRAW, WHICH MEANS THAT THE ONLY WAY TO GET THE LIQUID OUT, IS TO BITE AND SUCK. THAT IS, APART FROM THE TUBE CONNECTED TO THE BASE. WHEN YOU ENTER THE MEN'S TOILETS, ADJUST YOUR SHORTS, OR TRY TO TAMPER WITH THE BOTTLE, THE VIBRATOR IN YOUR PUSSY WILL IMMEDIATELY PUMP THE REMAINING CONTENTS OF THE BOTTLE INSIDE YOU.[paragraph break]'THE DECISIONS OF WHETHER TO GO TO THE MEN'S TOILETS BEFORE RETURNING HOME, AND WHETHER TO SUCK THE BOTTLE EMPTY BEFORE YOU DO, ARE UP TO YOU.'[roman type][line break]";
+	compute predicament map reveal;
+
+To compute sports bottle creampie:
+	if sports-bottle is worn and remote-controlled-vibrator is worn:
+		if sports-bottle is empty:
+			say "You hear the electronic pump inside [NameDesc of remote-controlled-vibrator] click on, but thankfully, the sports bottle is empty, so no [if the semen volume of vagina > 0]more [end if][semen] gets pumped inside you.";
+		otherwise:
+			say "[bold type]Uh-oh[roman type] - The electronic pump inside [NameDesc of remote-controlled-vibrator] has been triggered![roman type][line break][variable custom style]Fuck![roman type][line break]";
+			PussyFill the doses of sports-bottle * 4; [really it should only be times 2, but this is more fun]
+			DoseEmpty sports-bottle.
+
+Report displacing black-exercise-shorts:
+	if current-predicament is bottle-jog-predicament and the player is in a predicament room, compute sports bottle creampie.
+Report taking off black-exercise-shorts:
+	if current-predicament is bottle-jog-predicament and the player is in a predicament room, compute sports bottle creampie.
+Report going when the player is in Toilet01:
+	if current-predicament is bottle-jog-predicament and the player is in a predicament room, compute sports bottle creampie.
+Check taking off sports-bottle:
+	if current-predicament is bottle-jog-predicament and the player is in a predicament room and sports-bottle is non-empty and remote-controlled-vibrator is worn, say "You have to keep holding the sports bottle, or its weight on the tube will probably trigger the tamper detection, and pump its contents into your [vagina]!" instead.
+
+Report going east when the player is in Predicament20:
+	if current-predicament is bottle-jog-predicament and id-poster is in Toilet01:
+		say "You cringe at the thought of how many people are going to see this explicit photo of you, posted on the wall in the men's toilets.[if the player is not shameless][line break][variable custom style]Oh god, people might even take photos and post them online...[roman type][line break][end if]";
+		let P be the target-camera-poster of id-poster;
+		let T be the substituted form of "a poster on the men's toilets wall with all of your personal information, and... [ShortDesc of P]";
+		let A be the lewdness of P / 30;
+		repeat with N running from 1 to 5:
+			compute digital reputation damage T strength (A) quality 1.
+
+An all time based rule (this is the bottle jog image rule):
+	if the player is a park room and current-predicament is bottle-jog-predicament and remote-controlled-vibrator is worn and sports-bottle is worn and black-exercise-shorts is worn:
+		cutshow figure of bottle jog predicament.
+
+
+
+pong-predicament is a team-predicament.
+pong-predicament has a list of truth states called player-cups.
+pong-predicament has a list of truth states called opponent-cups.
+
+pong-predicament has a number called crosshairX.
+pong-predicament has a number called crosshairY.
+pong-predicament has a number called crosshairVariant. [1 - crosshair; 2 - crosshair; 3 - red ball; 4 - green ball]
+
+Definition: pong-predicament is appropriate:
+	if the rank of the player <= 2, decide no;
+	if diaper quest is 0 and the player is not a february 2022 top donator, decide no;
+	if diaper quest is 1 and the player is a february 2022 diaper donator, decide yes;
+	if pregnancy fetish is 1 and the player is possessing a vagina, decide yes;
+	if watersports fetish is 1, decide yes;
+	decide no.
+
+Figure of pong predicament piss is the file "Special/Pong/piss1.jpg".
+Figure of pong predicament piss player drink is the file "Special/Pong/piss2.jpg".
+
+Figure of pong predicament diaper is the file "Special/Pong/diaper1.jpg".
+Figure of pong predicament diaper player drink is the file "Special/Pong/diaper2.jpg".
+[Figure of pong predicament diaper opponent drink is the file "Special/Pong/diaper3.jpg".
+Figure of pong predicament diaper double drink is the file "Special/Pong/diaper4.jpg".]
+Figure of pong predicament diaper opponent soil is the file "Special/Pong/diaper5.jpg".
+Figure of pong predicament diaper opponent mess is the file "Special/Pong/diaper6.jpg".
+Figure of pong predicament diaper player soil is the file "Special/Pong/diaper7.jpg".
+Figure of pong predicament diaper player mess is the file "Special/Pong/diaper8.jpg".
+Figure of pong predicament diaper double soil is the file "Special/Pong/diaper9.jpg".
+Figure of pong predicament diaper double mess is the file "Special/Pong/diaper10.jpg".
+
+Figure of pong predicament semen is the file "Special/Pong/semen1.jpg".
+Figure of pong predicament semen loss is the file "Special/Pong/semen2.jpg".
+Figure of pong predicament semen win is the file "Special/Pong/semen3.jpg".
+
+To execute (PP - pong-predicament):
+	configure direction numbers;
+	now crosshairVariant of pong-predicament is 1;
+	let PPVariant be diaper quest; [0: Piss; 1: Diapers; 2: Creampie]
+	if pregnancy fetish > 0 and the player is possessing a vagina, now PPVariant is 2;
+	let LQ be "[urine]";
+	if PPVariant is 1, now LQ is "[if diaper messing >= 4]laxative[otherwise]dieuretic[end if] drink";
+	if PPVariant is 2, now LQ is "[semen]";
+	let M be team-predicament-partner;
+	now M is in Predicament01;
+	repeat with N running from 1 to 10:
+		add false to the player-cups of pong-predicament;
+		add false to the opponent-cups of pong-predicament;
+	summon chastity-belt locked;
+	now chastity-belt is stuck;
+	let P be a random pink tube top;
+	summon P uncursed;
+	summon ring gag locked;
+	if diaper quest is 1:
+		summon plain-largish-diaper uncursed;
+	otherwise:
+		summon remote-controlled-vibrator vaginally; [automatically redirects to asshole if the player doesn't have a vagina]
+	blandify and reveal tartan miniskirt;
+	now tartan miniskirt is in Predicament01;
+	force immediate clothing-focus redraw;
+	refresh the graphics-window;
+	let diaper-dry be true;
+	let opponent-diaper-pressure be 0;
+	let opponent-diaper-dry be true;
+	now the player is in Predicament01;
+	now the stance of the player is 0;
+	say "You find yourself in front of a long, rectangular table, with two sets of cups arranged in a triangle shape at either end... it's a beer pong table! But that doesn't look like beer in those cups. A heavy metal chastity belt is locked around your loins, holding a [if diaper quest is 1]thick white diaper in place[otherwise]vibrator inside you[end if]. It is firmly attached, by a metal bar, to the table in front of you, keeping you a step away from table, and unable to move from the spot. To your right, a long clear cylinder houses a large number of ping pong balls. [BigNameDesc of M] is in the same situation, on the opposite end of the table.[paragraph break]Yep, looks like you're going to be playing beer pong.[paragraph break]Underneath the table, positioned underneath each cup, a clear tube emerges. The ten tubes for your ten cups converge into a single tube, which then leads directly into your ringagged mouth. Finally, pinned to the wall to the side, there is a single tartan miniskirt. Only one miniskirt.";
+	say "A cold robotic voice begins to talk.[line break][first custom style]'TO EARN THIS TROPHY, YOU MUST RETURN HOME... AFTER PLAYING A GAME OF BEER PONG. IN FRONT OF YOU ARE TEN CUPS, EACH FILLED WITH A LARGE DOSE OF [if PPVariant is 0]URINE, DISCREETLY COLLECTED FROM THE NEARBY PUBLIC URINALS[otherwise if PPVariant is 1 and diaper messing >= 4]A LAXATIVE DRINK[otherwise if PPVariant is 1]A DIEURETIC DRINK[otherwise]FRESH HUMAN SEMEN[end if]. EACH CUP HAS A SENSOR, AND WHEN IT DETECTS A PING PONG BALL INSIDE IT, IT WILL PUMP ITS CONTENTS INTO YOUR MOUTH. THE WINNER WILL BE RELEASED FIRST, AND THEREFORE ABLE TO CLAIM THE SKIRT FOR THE WALK HOME[if PPVariant is 2]. FURTHERMORE, ALL OF THE WINNER'S REMAINING CUPS WILL BE PUMPED INTO THE LOSER'S PUSSY[end if].[paragraph break]'ONE PING PONG BALL WILL BE DISPENSED EVERY TWENTY SECONDS. YOUR GAME STARTS NOW.'[roman type][line break]";
+	if PPVariant is 0:
+		now temporary-map-figure is figure of pong predicament piss;
+	otherwise if PPVariant is 1:
+		now temporary-map-figure is figure of pong predicament diaper;
+	otherwise:
+		now temporary-map-figure is figure of pong predicament semen;
+	render pong state;
+	display focus stuff;
+	while false is listed in player-cups of pong-predicament and false is listed in opponent-cups of pong-predicament:
+		let nudge-variance be 30 - the flat dexterity of the player;
+		let nudge-min be 40 - nudge-variance;
+		let nudge-max be 50 + nudge-variance;
+		if diaper quest is 1 and diaper messing >= 4 and rectum < 4, now rectum is 4; [keep those chambers magically full, because it's more fun that way]
+		[opponent turn]
+		[3 attempts to find a cup]
+		let R be a random number between 1 and 16;
+		if R > 10 or entry R in player-cups of pong-predicament is true:
+			if a random number between 1 and 4 is 1: [automatic success]
+				now R is a random number between 1 and 10;
+				while entry R in player-cups of pong-predicament is true:
+					now R is a random number between 1 and 10;
+		say "[line break][BigNameDesc of M] [one of]quickly [or][stopping]picks up a ball, and throws it towards your cups! ";
+		if R > 10:
+			say "It misses completely!";
+		otherwise if entry R in player-cups of pong-predicament is true:
+			say "It lands in cup [R], and bounces straight back out, because there's already a ball in there.";
+		otherwise if the player is getting lucky:
+			say "It hits the rim of cup [R], and bounces away. [GotLuckyFlav]";
+		otherwise:
+			say "It lands in cup [R]!";
+			say "There's a clicking sound, and then the [LQ] inside the cup is pumped down through the tube, and up into your mouth! You have no choice but to swallow it.";
+			if PPVariant is 0:
+				unless true is listed in player-cups of pong-predicament: [first cup]
+					if the urine taste addiction of the player < 6, say "[variable custom style]This can't be happening! THIS CAN'T BE HAPPENING! GROSS!!![roman type][line break]";
+					now temporary-map-figure is figure of pong predicament piss player drink;
+				compute slightly addictive swallowing of urine by 1;
+			otherwise if PPVariant is 1:
+				unless true is listed in player-cups of pong-predicament: [first cup]
+					say "As soon as the liquid hits your belly, [if diaper messing >= 4]you can feel it start to rumble[otherwise]you can feel your bladder start to twinge[end if].[line break][variable custom style]Uh-oh...[roman type][line break]";
+					now temporary-map-figure is figure of pong predicament diaper player drink;
+				if diaper messing >= 4, increase suppository by 1;
+				StomachUp 2;
+				if diaper quest is 1:
+					StomachDown 2; [sends it to the delayed bladder]
+			otherwise:
+				compute slightly addictive swallowing of semen by 1;
+			now entry R in player-cups of pong-predicament is true;
+		[player turn]
+		if false is listed in the player-cups of pong-predicament:
+			now crosshairX of pong-predicament is a random number between 31 and 304;
+			now crosshairY of pong-predicament is a random number between 26 and 271;
+			say "[one of][line break][bold type]BEER PONG MECHANICS EXPLANATION:[roman type][line break]Your crosshair represents the area your ball might land in. You can [bold type]nudge[roman type] the crosshair by pressing an [bold type]arrow key[roman type], or finish aiming and [bold type]confirm your target[roman type] by pressing the [bold type]enter key[roman type].[line break]The lower your dexterity, there will be more variance in the distance your crosshair moves with your nudges, making nudging to the perfect location more difficult.[line break]Each time you nudge, there is a chance that it your crosshair will get immediately locked in. [bold type]The chance increases, [if diaper quest is 1]the more urgent your need to use the toilet is. [roman type]However, the more time you spend in a used diaper, and the more well-used it is, and the lower your current diaper addiction, the more chance you have of growing more accustomed to wearing and using diapers[otherwise]the higher your arousal is[end if].[roman type][line break]While aiming, you can press the [bold type]space bar[roman type] instead of the enter key to [if diaper quest is 1][bold type]purposefully soil yourself[otherwise]focus on the pleasure of the vibrator instead of your throw, significantly [bold type]increasing your chances of orgasming[roman type] and resetting your arousal (but therefore slightly increasing sex addiction)[end if][roman type]. This also [bold type]confirms your target[roman type] at the same time.[or][stopping]";
+			let nudging be 1;
+			while nudging > 0:
+				let NDG be the arousal of the player / 1000;
+				if diaper quest is 1, now NDG is the bladder of the player;
+				if a random number between 1 and 30 < NDG, now nudging is 0;
+				render pong state;
+				let CL be the chosen letter;
+				while CL is not upNumber and CL is not downNumber and CL is not leftNumber and CL is not rightNumber and CL is not enterNumber and CL is not spaceNumber:
+					say "[bold type]INPUT REJECTED: Please only press your arrow keys, enter, or space bar![roman type][line break]";
+					now CL is the chosen letter;
+				if CL is leftNumber:
+					decrease crosshairX of pong-predicament by a random number between nudge-min and nudge-max;
+					if crosshairX of pong-predicament < 1, now crosshairX of pong-predicament is 1;
+				otherwise if CL is rightNumber:
+					increase crosshairX of pong-predicament by a random number between nudge-min and nudge-max;
+					if crosshairX of pong-predicament > 304, now crosshairX of pong-predicament is 304;
+				otherwise if CL is upNumber:
+					decrease crosshairY of pong-predicament by a random number between nudge-min and nudge-max;
+					if crosshairY of pong-predicament < 1, now crosshairY of pong-predicament is 1;
+				otherwise if CL is downNumber:
+					increase crosshairY of pong-predicament by a random number between nudge-min and nudge-max;
+					if crosshairY of pong-predicament > 271, now crosshairY of pong-predicament is 271;
+				otherwise:
+					now nudging is -10;
+					if CL is spaceNumber:
+						say "At the same time as you throw your ball, ";
+						if diaper quest is 1:
+							if diaper messing >= 4:
+								say "you squat and push.";
+								now voluntarySquatting is 1;
+								compute messing;
+							otherwise:
+								say "you try to let the floodgates open.";
+								try urinating;
+						otherwise:
+							say "you try to relax and let the pleasure rush over you.";
+							vaginally orgasm shamefully;
+			if nudging >= 0, say "[bold type][if diaper quest is 0]Your growing arousal[otherwise]The growing pressure behind your loins[end if] makes you lose your focus, and you throw the ball![roman type][line break]";
+			say "The ball flies through the air... ";
+			now crosshairVariant of pong-predicament is 2;
+			render pong state;
+			wait 100 ms before continuing;
+			wait 400 ms before continuing;
+			wait 400 ms before continuing;
+			increase crosshairX of pong-predicament by a random number between -60 and 60;
+			increase crosshairY of pong-predicament by a random number between -60 and 60;
+			now crosshairVariant of pong-predicament is 3;
+			let cupHit be 0;
+			if crosshairY of pong-predicament > 26 and crosshairY of pong-predicament < 88:
+				if crosshairX of pong-predicament > 31 and crosshairX of pong-predicament < 93:
+					now cupHit is 1;
+				otherwise if crosshairX of pong-predicament > 102 and crosshairX of pong-predicament < 163:
+					now cupHit is 2;
+				otherwise if crosshairX of pong-predicament > 172 and crosshairX of pong-predicament < 234:
+					now cupHit is 3;
+				otherwise if crosshairX of pong-predicament > 243 and crosshairX of pong-predicament < 304:
+					now cupHit is 4;
+			otherwise if crosshairY of pong-predicament > 88 and crosshairY of pong-predicament < 148:
+				if crosshairX of pong-predicament > 67 and crosshairX of pong-predicament < 128:
+					now cupHit is 5;
+				otherwise if crosshairX of pong-predicament > 137 and crosshairX of pong-predicament < 199:
+					now cupHit is 6;
+				otherwise if crosshairX of pong-predicament > 207 and crosshairX of pong-predicament < 269:
+					now cupHit is 7;
+			otherwise if crosshairY of pong-predicament > 148 and crosshairY of pong-predicament < 210:
+				if crosshairX of pong-predicament > 102 and crosshairX of pong-predicament < 164:
+					now cupHit is 8;
+				otherwise if crosshairX of pong-predicament > 172 and crosshairX of pong-predicament < 233:
+					now cupHit is 9;
+			otherwise if crosshairY of pong-predicament > 210 and crosshairY of pong-predicament < 271 and crosshairX of pong-predicament > 137 and crosshairX of pong-predicament < 199:
+				now cupHit is 10;
+			if cupHit > 0:
+				if entry cupHit in opponent-cups of pong-predicament is false:
+					say "and lands in the cup! Great shot!";
+					now entry cupHit in opponent-cups of pong-predicament is true;
+					say "[BigNameDesc of M] [one of]moans[or]groans[purely at random] with [one of]frustration[or]vexation[or]resentment[or]despair[then at random] as [he of M] is forcefed the [LQ] from the cup.";
+					now crosshairVariant of pong-predicament is 4;
+					increase opponent-diaper-pressure by 1;
+				otherwise:
+					say "and lands in a cup that's already empty. Damn!";
+			otherwise:
+				say "and bounces off the cups. Drat.";
+			if remote-controlled-vibrator is worn, compute periodic effect of remote-controlled-vibrator;
+			check for arousal change;
+			let DPR be a random number between 1 and 10; [opponent diaper pressure RNG]
+			if diaper quest is 1:
+				if plain-largish-diaper is dirty:
+					let DSF be the mess of plain-largish-diaper * 2; [diaper soak factor]
+					if diaper messing < 4, now DSF is the urine-soak of plain-largish-diaper;
+					let DAR be a random number between 1 and (50 + (the diaper addiction of the player * 10));
+					if DAR < DSF, DiaperAddictUp 1;
+				if suppository > 0:
+					if the delayed bladder of the player > 0:
+						bladderup 1 + xavier-belt-link;
+						decrease the delayed bladder of the player by 1;
+					now automaticallyHolding is true;
+					check real messing;
+					follow the mess gross out resolution rule;
+				otherwise:
+					compute guaranteed bladder growth;
+				while the urination continues rule is listed in another-turn-rules:
+					remove the urination continues rule from another-turn-rules;
+					follow the urination continues rule;
+				if debugmode > 0, say "Bladder: [bladder of the player].";
+				if diaper-dry is true and plain-largish-diaper is dirty:
+					if DPR <= opponent-diaper-pressure:
+						say "At the same time, [NameDesc of M] loses control of [his of M] own [if diaper messing >= 4]bowels[otherwise]bladder[end if]. You both stand there, at opposite ends of the table, audibly filling your diapers with your hot, steaming [if diaper messing >= 4]filth[otherwise][urine][end if]. Both your diapers can be seen to visibly sag and expand between your legs. It really is an outrageous sight to behold.";
+						now opponent-diaper-pressure is 0;
+						now opponent-diaper-dry is false;
+					if diaper-dry is true: [only the first mess needs to be cutscened]
+						if opponent-diaper-dry is true:
+							if plain-largish-diaper is messed, now temporary-map-figure is figure of pong predicament diaper player mess;
+							otherwise now temporary-map-figure is figure of pong predicament diaper player soil;
+						otherwise:
+							if plain-largish-diaper is messed, now temporary-map-figure is figure of pong predicament diaper double mess;
+							otherwise now temporary-map-figure is figure of pong predicament diaper double soil;
+					now diaper-dry is false;
+					force immediate clothing-focus redraw;
+					refresh the graphics-window;
+				if DPR <= opponent-diaper-pressure:
+					say "[speech style of M]'Oh... Oh... [one of]Ah dun wun to...'[roman type][line break]Suddenly, [or]Noh ahain...'[roman type][line break]Once again, you watch as [stopping][NameDesc of M] clutches [his of M] stomach, groans, and unleashes a torrent of [if diaper messing >= 4]sludge[otherwise][urine][end if] into [his of M] thick padding, causing it to visibly sag and expand.[line break][speech style of M]'Ho gwosh...'[roman type][line break][big he of M] mumbles to [himself of M].";
+					if opponent-diaper-dry is true: [only the first mess needs to be cutscened]
+						if diaper-dry is true:
+							if diaper messing >= 4, now temporary-map-figure is figure of pong predicament diaper opponent mess;
+							otherwise now temporary-map-figure is figure of pong predicament diaper opponent soil;
+						otherwise:
+							if plain-largish-diaper is messed, now temporary-map-figure is figure of pong predicament diaper double mess;
+							otherwise now temporary-map-figure is figure of pong predicament diaper double soil;
+						now opponent-diaper-dry is false;
+					now opponent-diaper-pressure is 0;
+		render pong state;
+		say "[bold type]Press any key to continue.[roman type][line break]";
+		wait for a key before continuing;
+		now crosshairVariant of pong-predicament is 1;
+	[END OF BIG WHILE LOOP - GAME IS OVER]
+	if false is listed in player-cups of pong-predicament: [victory]
+		say "You have won! ";
+		if PPVariant is 2, say "You watch as the rest of your cups are drained, and all the [semen] is pumped directly into [NameDesc of M][']s snatch. [big he of M] shrieks and tries to pull the tube out, but it won't budge. Millions, if not billions of fertile swimmers, surge up inside [him of M] and straight towards [his of M] waiting Fallopian tubes, with immense speed and pressure. Meanwhile, you are released. ";
+		say "The metal bar attached to your chastity belt unclicks, allowing you to leave.";
+		cutshow figure of pong predicament semen win for M;
+		HappinessDown M by 2;
+	otherwise:
+		say "You have lost! ";
+		if PPVariant is 2:
+			let cumLoad be 0;
+			repeat with PC running through the opponent-cups of pong-predicament:
+				if PC is true, increase cumLoad by 3;
+			say "You watch as the rest of [NameDesc of M][']s cups are drained, and all the [semen] is pumped directly into your [vagina].[line break][variable custom style]'EEEEEEEE!'[roman type][line break]You squeal loudly as millions, if not billions of fertile swimmers, surge up inside you and straight towards your waiting Fallopian tubes, with immense speed and pressure. Meanwhile, [student-name of M] is released. ";
+			PussyFill cumLoad;
+			cutshow figure of pong predicament semen loss;
+		say "The metal bar attached to [student-name of M][']s chastity belt unclicks, allowing [him of M] to leave first. Before leaving, [he of M] makes sure to unpin [NameDesc of tartan miniskirt] from the wall, and wear it, protecting [his of M] modesty.";
+		try M going north;
+		now M is in School01;
+		deinterest M;
+		only destroy tartan miniskirt;
+		say "By the time you are released, [he of M] is long gone.";
+	now chastity-belt is not stuck;
+	now crosshairVariant of pong-predicament is 0;
+	now another-turn is 0. [messing and similar things can cause additional turns]
+
+Figure of pong predicament table is the file "Special/Pong/table.jpg".
+Figure of pong predicament ball is the file "Special/Pong/ball1.png".
+Figure of pong predicament ball red is the file "Special/Pong/ball2.png".
+Figure of pong predicament ball green is the file "Special/Pong/ball3.png".
+Figure of pong predicament crosshair is the file "Special/Pong/crosshair1.png".
+Figure of pong predicament crosshair locked is the file "Special/Pong/crosshair2.png".
+
+To render pong state:
+	clear the map-window;
+	let mapH be the height of the map-window;
+	let mapW be the width of the map-window;
+	if temporary-map-figure is not figure of no-image-yet:
+		[Calculate background image size]
+		let XRatio be (mapW * 1.0) / the pixel-width of temporary-map-figure;
+		let YRatio be (mapH * 1.0) / the pixel-height of temporary-map-figure;
+		let FXi be mapW;
+		let FYi be mapH;
+		let Xi be 0;
+		let Yi be 0;
+		if XRatio < YRatio:
+			let FY be the pixel-height of temporary-map-figure * XRatio;
+			now FYi is FY to the nearest whole number;
+			now Yi is (mapH / 2) - (FYi / 2); [centre background vertically]
+		otherwise:
+			let FX be the pixel-width of temporary-map-figure * YRatio;
+			now FXi is FX to the nearest whole number;
+			now Xi is (mapW / 2) - (FXi / 2); [centre background horizontally]
+		display the image temporary-map-figure in the map-window at Xi by Yi with dimensions FXi by FYi;
+		say "[bold type]Press any key to continue.[roman type][line break]";
+		wait for a key before continuing;
+		now temporary-map-figure is figure of no-image-yet;
+		clear the map-window;
+	let ballWidth be the pixel-width of Figure of pong predicament ball;
+	let crosshairWidth be the pixel-width of Figure of pong predicament crosshair;
+	let Fwidth be the pixel-width of Figure of pong predicament table;
+	let Fheight be the pixel-height of Figure of pong predicament table;
+	let final-width be 1.0 * Fwidth; [FLOAT width of table image file]
+	let final-height be 1.0 * FHeight; [FLOAT height of table image file]
+	let height-ratio be final-height / mapH; [FLOAT ratio of heights of image file and map window]
+	[calculate actual height]
+	now final-height is Fheight / height-ratio;
+	now final-width is Fwidth / height-ratio;
+	let final-ball-width be ballWidth / height-ratio;
+	let final-crosshair-width be crosshairWidth / height-ratio;
+	let int-final-height be final-height to the nearest whole number;
+	let int-final-width be final-width to the nearest whole number;
+	let int-final-ball-width be final-ball-width to the nearest whole number;
+	let int-final-crosshair-width be final-crosshair-width to the nearest whole number;
+	let renderX be (mapW - int-final-width) / 2; [X coordinate of top left corner of location where the image will be drawn]
+	let renderY be 0; [Y coordinate of top left corner of location where the image will be drawn]
+	display the image Figure of pong predicament table in the map-window at renderX by renderY with dimensions int-final-width by int-final-height;
+	let ballRendersX be a list of numbers;
+	let ballRendersY be a list of numbers;
+	if entry 1 in opponent-cups of pong-predicament is true:
+		add 31 to ballRendersX;
+		add 26 to ballRendersY;
+	if entry 2 in opponent-cups of pong-predicament is true:
+		add 102 to ballRendersX;
+		add 26 to ballRendersY;
+	if entry 3 in opponent-cups of pong-predicament is true:
+		add 172 to ballRendersX;
+		add 26 to ballRendersY;
+	if entry 4 in opponent-cups of pong-predicament is true:
+		add 244 to ballRendersX;
+		add 26 to ballRendersY;
+	if entry 5 in opponent-cups of pong-predicament is true:
+		add 67 to ballRendersX;
+		add 88 to ballRendersY;
+	if entry 6 in opponent-cups of pong-predicament is true:
+		add 137 to ballRendersX;
+		add 88 to ballRendersY;
+	if entry 7 in opponent-cups of pong-predicament is true:
+		add 207 to ballRendersX;
+		add 88 to ballRendersY;
+	if entry 8 in opponent-cups of pong-predicament is true:
+		add 102 to ballRendersX;
+		add 148 to ballRendersY;
+	if entry 9 in opponent-cups of pong-predicament is true:
+		add 172 to ballRendersX;
+		add 148 to ballRendersY;
+	if entry 10 in opponent-cups of pong-predicament is true:
+		add 138 to ballRendersX;
+		add 210 to ballRendersY;
+	if entry 1 in player-cups of pong-predicament is true:
+		add 138 to ballRendersX;
+		add 336 to ballRendersY;
+	if entry 2 in player-cups of pong-predicament is true:
+		add 102 to ballRendersX;
+		add 397 to ballRendersY;
+	if entry 3 in player-cups of pong-predicament is true:
+		add 172 to ballRendersX;
+		add 397 to ballRendersY;
+	if entry 4 in player-cups of pong-predicament is true:
+		add 67 to ballRendersX;
+		add 457 to ballRendersY;
+	if entry 5 in player-cups of pong-predicament is true:
+		add 137 to ballRendersX;
+		add 457 to ballRendersY;
+	if entry 6 in player-cups of pong-predicament is true:
+		add 207 to ballRendersX;
+		add 457 to ballRendersY;
+	if entry 7 in player-cups of pong-predicament is true:
+		add 31 to ballRendersX;
+		add 518 to ballRendersY;
+	if entry 8 in player-cups of pong-predicament is true:
+		add 102 to ballRendersX;
+		add 518 to ballRendersY;
+	if entry 9 in player-cups of pong-predicament is true:
+		add 172 to ballRendersX;
+		add 518 to ballRendersY;
+	if entry 10 in player-cups of pong-predicament is true:
+		add 243 to ballRendersX;
+		add 518 to ballRendersY;
+	repeat with N running from 1 to the number of entries in ballRendersX:
+		[convert raw coordinates to scaled coordinates]
+		let FNX be entry N in ballRendersX / height-ratio;
+		let FNY be entry N in ballRendersY / height-ratio;
+		let NX be FNX to the nearest whole number;
+		let NY be FNY to the nearest whole number;
+		display the image figure of pong predicament ball in the map-window at (NX + renderX) by NY with dimensions int-final-ball-width by int-final-ball-width;
+	if crosshairX of pong-predicament > 0 and crosshairY of pong-predicament > 0:
+		[convert raw coordinates to scaled coordinates]
+		let FNX be crosshairX of pong-predicament / height-ratio;
+		let FNY be crosshairY of pong-predicament / height-ratio;
+		let NX be FNX to the nearest whole number;
+		let NY be FNY to the nearest whole number;
+		[okay now we have the centre coordinate, but we actually need the top left]
+		if crosshairVariant of pong-predicament < 3:
+			let crosshairRenderX be NX - (int-final-crosshair-width / 2);
+			let crosshairRenderY be NY - (int-final-crosshair-width / 2);
+			let F be figure of pong predicament crosshair;
+			if crosshairVariant of pong-predicament is 2, now F is figure of pong predicament crosshair locked;
+			display the image F in the map-window at (crosshairRenderX + renderX) by crosshairRenderY with dimensions int-final-crosshair-width by int-final-crosshair-width;
+		otherwise:
+			let ballRenderX be NX - (int-final-ball-width / 2);
+			let ballRenderY be NY - (int-final-ball-width / 2);
+			let F be figure of pong predicament ball red;
+			if crosshairVariant of pong-predicament is 4, now F is figure of pong predicament ball green;
+			display the image F in the map-window at (ballRenderX + renderX) by ballRenderY with dimensions int-final-ball-width by int-final-ball-width;
+
+Check dominating a student:
+	if current-predicament is pong-predicament and the player is in Predicament01:
+		allocate 5 seconds;
+		say EnslavedDominationFlav of the noun;
+		if the raw delicateness of the player > the EnslavedDominationThreshold of the noun:
+			say "You feel vaguely better about yourself, but mostly just a bit ambivalent.";
+		otherwise:
+			DelicateDown 1;
+		now the teaseTimer of the noun is 150;
+		HappinessDown the noun instead.
 
 
 Predicament World ends here.

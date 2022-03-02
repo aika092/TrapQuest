@@ -33,11 +33,13 @@ random slow birth is a number that varies.
 
 To decide which number is slow pregnancy:
 	if pregnancy fetish is 0, decide on 0;
+	if sheer-suspenders is worn, decide on 0;
 	if choice in row 49 of the Table of Player Options is -1, decide on random slow pregnancy;
 	decide on choice in row 49 of the Table of Player Options.
 
 To decide which number is slow birth:
 	if pregnancy fetish is 0, decide on 0;
+	if sheer-stockings is worn, decide on 3;
 	if choice in row 75 of the Table of Player Options is 1, decide on random slow birth;
 	decide on choice in row 75 of the Table of Player Options.
 

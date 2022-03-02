@@ -12,9 +12,15 @@ Definition: mechanic is wenchy: decide yes.
 
 Definition: mechanic is permanently banishable: decide no.
 
+Definition: mechanic is willing to have time out: decide no.
+
+Definition: mechanic is blocker:
+	if the woman-status of woman-player is 91 and the mechanic-scene of woman-player <= 3 and woman-player is in the location of the player, decide no; [Barbara BJ scene]
+	decide yes.
+
 mechanic has a number called xavier-power. The xavier-power of mechanic is usually 0.[running counter of how much "demon juice" the mechanic has stored up. At five or more xavier-power he transforms]
 
-mechanic has a number called power-stolen. The power-stolen of mechanic is usually 0.[essentially a flag that determines whether the mystical amulet was destroyed on the elder altar]
+mechanic has a number called power-stolen. The power-stolen of mechanic is usually 0.[essentially a flag that determines whether the mechanic can transform into xavier. if 1, he can't transform no matter how much he powers up.]
 
 mechanic has a number called wrench-timer. The wrench-timer of mechanic is usually 0.
 
@@ -67,7 +73,7 @@ To say MonsterComment of (M - mechanic):
 
 To XavierUp (M - a mechanic) by (N - a number):
 	increase the xavier-power of M by N;
-	if the xavier-power of M > 4, unseal xavier from M.
+	if the xavier-power of M > 4 and the power-stolen of M is 0, unseal xavier from M.
 
 To decide which number is the girth of (M - mechanic):
 	decide on 4.
@@ -86,6 +92,8 @@ To decide which number is the base semen load of (M - mechanic):
 To set up (M - mechanic):
 	reset M;
 	now the monstersetup of M is 1;
+	add id-card to the banishItems of M, if absent;
+	add id-card to the taxableItems of M, if absent;
 	now the raw difficulty of M is the starting difficulty of M;
 	now M is soul-stolen;[he doesn't have a soul to steal]
 	now the health of M is the maxhealth of M.
@@ -330,7 +338,6 @@ The mechanic diaper quest rules is a rulebook. The diaper quest rules of mechani
 This is the mechanic claims amulet rule:
 	let A be mystical amulet;
 	if mechanic is in the location of the player and A is held:
-		increase the xavier-power of mechanic by 4;
 		say "The [mechanic] rips the [A] from you.[line break][speech style of mechanic]'At last, it's mine! It's all mine!'[roman type][line break]";
 		now mechanic is carrying A;
 		let S be a random worn steel collar;
@@ -338,7 +345,11 @@ This is the mechanic claims amulet rule:
 			say "With a snap of [his of mechanic] fingers, the steel collar unlatches itself and drops from your neck. ";
 			now S is in the location of the player;
 		increase the xavier-power of mechanic by 4;
-		if diaper quest is 0 and ((a random number between 1 and 2 is 1 and the class of the player is not succubus) or the class of the player is priestess or there is a worn pure totem):[the mechanic will always transform if you are a demon, or if you've ever successfully stolen anything from him]
+		if the power-stolen of mechanic is 1:
+			say "[big he of mechanic] puts the amulet on, and you feel pulses of energy flowing throughout the room. However, its clear that [he of mechanic] was expecting more.[line break][speech style of mechanic]'The seal isn't breaking? But how? HOW?!'[roman type][line break][big he of mechanic] looks distracted, but for some reason, you get the feeling [he of mechanic][']ll be very angry next time [he of mechanic] sees you.";
+			anger mechanic;
+			bore mechanic for 500 seconds;
+		otherwise if diaper quest is 0 and ((a random number between 1 and 2 is 1 and the class of the player is not succubus) or the class of the player is priestess or there is a worn pure totem):[the mechanic will always transform if you are a demon, or if you've ever successfully stolen anything from him]
 			say "[big he of mechanic] puts the amulet on, and you can feel pulses of powerful energy flowing throughout the room.[line break][speech style of mechanic]'I can feel the power running through my veins! Yes, yes! Haha! I am back, baby! Here, have a small reward for your troubles...'[roman type][line break]";
 			compute xavier reward of mechanic;
 			say "[BigNameDesc of mechanic] starts to wander off, completely ignoring you.";
@@ -378,15 +389,14 @@ To compute xavier reward of (M - mechanic):
 		IntUp 4;
 
 This is the mechanic strips princess rule:
-	if diaper quest is 0 and (the class of the player is "princess" or the class of the player is "deepthroat princess" or the class of the player is "trained fuck princess" or the class of the player is "virgin warrior princess") and bride-consort is throne and the player is the donator:
+	if diaper quest is 0 and (the class of the player is "princess" or the class of the player is "deepthroat princess" or the class of the player is "trained fuck princess" or the class of the player is "virgin warrior princess") and bride-consort is throne and princess bride dress is unclash summonable:
 		let H be a random worn headgear;
 		say "[speech style of current-monster]'At long last, release shall be mine. To dispel your magic, I need simply make you my bride...'[roman type][line break][big he of current-monster] touches your [ShortDesc of H].";
 		transform H into tiara-veil;
 		now the quest of H is betrothal-quest;
 		now bride-consort is mechanic;
-		let C be a random worn removable overdress;
-		if C is a thing, WardrobeVanish C; [this would prevent the class summon below]
-		class summon princess bride dress;
+		PinkWardrobeUnclash princess bride dress;
+		compute class outfit of tiara-veil;
 		satisfy current-monster;
 		rule succeeds;
 	otherwise if the class of the player is princess and the class of the player is not bride:
@@ -645,7 +655,7 @@ To compute damage reaction of (M - mechanic):
 					say "It doesn't look like [he of woman-player][']s going to be much help...";
 					now the mechanic-scene of woman-player is 6;
 				otherwise if the health of M < the maxhealth of M / 3:
-					if the health of M <= 0 and (the xavier-power of M >= 4 or M is carrying mystical amulet):[gives the player a chance to steal the amulet]
+					if the health of M <= 0 and the power-stolen of M is 0 and (the xavier-power of M >= 4 or M is carrying mystical amulet):[gives the player a chance to steal the amulet]
 						say "[BigNameDesc of M] [if M is carrying mystical amulet]grips the amulet[otherwise]clenches [his of M] fists[end if].[line break][speech style of M]'Fine, have it your way!'[roman type][line break]";
 						unseal xavier from M;
 					if demon lord is in the location of the player:

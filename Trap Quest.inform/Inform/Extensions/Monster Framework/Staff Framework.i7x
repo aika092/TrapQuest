@@ -763,7 +763,7 @@ To execute (A - student-furious-assembly):
 
 new-fuckhole-assembly is an assembly.
 Definition: new-fuckhole-assembly is eligible:
-	if headmistress is alive and headmistress is undefeated and most-recent-furious is a student and gloryhole is on-stage and the player is possessing a penis and the player is the donator, decide yes;
+	if headmistress is alive and headmistress is undefeated and most-recent-furious is a student and gloryhole is on-stage and the player is possessing a penis, decide yes;
 	decide no.
 
 To say AssemblyStartFlav of (A - new-fuckhole-assembly):

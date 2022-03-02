@@ -29,7 +29,7 @@ To decide which figure-name is clothing-image of (C - white-girly briefs):
 To decide which figure-name is clothing-image of (C - white-diagram briefs):
 	decide on figure of briefs special 1.
 
-To decide which figure-name is clothing-image of (C - pink briefs):
+To decide which figure-name is clothing-image of (C - pink-hole-briefs):
 	decide on figure of briefs 2.
 
 To decide which figure-name is clothing-image of (C - purple briefs):
@@ -80,6 +80,12 @@ To decide which figure-name is clothing-image of (C - red-anal-briefs):
 To decide which figure-name is clothing-image of (C - turquoise briefs):
 	decide on figure of briefs 18.
 
+To decide which figure-name is clothing-image of (C - sheer-briefs):
+	decide on figure of briefs 19.
+
+To decide which figure-name is clothing-image of (C - pink briefs):
+	decide on figure of briefs 20.
+
 To decide which figure-name is clothing-image of (C - pink-bbc briefs):
 	decide on figure of briefs special 2.
 
@@ -118,23 +124,34 @@ To uniquely set up (T - a white-diagram briefs):
 Report wearing a white-diagram briefs:
 	compute early pregnancy eagerness.
 
-pink briefs is a briefs. The text-shortcut of pink briefs is "pib". pink briefs has a number called charge.
-To say selfexamineuniquetitle of (G - pink briefs):
+pink-hole-briefs is a briefs. The text-shortcut of pink-hole-briefs is "phlb". pink-hole-briefs has a number called charge. Understand "pink", "pink hole" as pink-hole-briefs.
+To say selfexamineuniquetitle of (G - pink-hole-briefs):
 	say "pair of pink 'Hole' briefs".
-To say UniqueClothingDesc of (G - pink briefs):
-	say "This stretchy pair of pink briefs says 'Hole' on the front, reminding any onlookers about what [if G is worn]your[otherwise]the wearer's[end if] [fuckholes] should be used as.".
-Understand "hole" as pink briefs.
-Definition: pink briefs is vagina themed: decide yes.
-Definition: pink briefs is pink themed: decide yes.
-To compute periodic effect of (G - pink briefs):
-	increase the charge of G by 1;
-	if the charge of G > 93:
-		now the charge of G is 0;
-		if the openness of asshole < 8 and ungape is 0:
-			say "[bold type]You feel your [ShortDesc of G] magically make your [asshole] stretch [if the openness of asshole > 4]even [end if]wider![roman type][line break]";
-			gape asshole times 1.
-To decide which number is the unique outrage of (C - pink briefs):
+To say UniqueClothingDesc of (G - pink-hole-briefs):
+	say "This stretchy pair of pink-hole-briefs says 'Hole' on the front, reminding any onlookers about what [if G is worn]your[otherwise]the wearer's[end if] [fuckholes] should be used as.".
+Definition: pink-hole-briefs is vagina themed: decide yes.
+Definition: pink-hole-briefs is pink themed: decide yes.
+To compute periodic effect of (G - pink-hole-briefs):
+	if the player is not possessing a vagina:
+		increase the charge of G by 1;
+		if the charge of G > 93:
+			now the charge of G is 0;
+			if the openness of asshole < 8 and ungape is 0:
+				say "[bold type]You feel your [ShortDesc of G] magically make your [asshole] stretch [if the openness of asshole > 4]even [end if]wider![roman type][line break]";
+				gape asshole times 1.
+To decide which number is the unique outrage of (C - pink-hole-briefs):
 	decide on 4.
+To compute post transformation effect of (C - pink-hole-briefs):
+	if the player is ready for common event TG:
+		say DefaultSexChangeFlav;
+		SexChange the player.
+
+pink briefs is a briefs. The text-shortcut of pink briefs is "pib".
+To say selfexamineuniquetitle of (G - pink briefs):
+	say "pair of pink briefs".
+To say UniqueClothingDesc of (G - pink briefs):
+	say "A stretchy pair of pink briefs.".
+Definition: pink briefs is pink themed: decide yes.
 
 purple briefs is a briefs. The text-shortcut of purple briefs is "pub".
 To say selfexamineuniquetitle of (G - purple briefs):
@@ -269,6 +286,18 @@ To decide which number is the anal-sex-addiction-influence of (G - red-anal-brie
 	if G is blessed, decide on 1;
 	decide on 2.
 
+sheer-briefs is a briefs. sheer-briefs is silk. sheer-briefs is sheer. sheer-briefs is unique. Understand "sheer" as sheer-briefs. The text-shortcut of sheer-briefs is "shrb".
+To say selfexamineuniquetitle of (G - sheer-briefs):
+	say "pair of sheer silky briefs".
+To say UniqueClothingDesc of (G - sheer-briefs):
+	say "This pair of sheer brown briefs might look a bit [']uncivilized['], but is actually made from the finest silk. You sense that it helps you maintain agility and flexibility, even when pregnant, but only while it is uncovered.".
+Definition: sheer-briefs is brown themed: decide yes.
+To decide which number is the unique outrage of (C - sheer-briefs):
+	decide on 1.
+To decide which number is the dexterity-influence of (G - sheer-briefs):
+	if G is currently uncovered, decide on 3;
+	decide on 0.
+
 Figure of briefs 1 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs1.png".
 Figure of briefs special 1 is the file "Items/Clothes/Lower/Underwear/Briefs/briefsspecial1.png".
 Figure of briefs special 1b is the file "Items/Clothes/Lower/Underwear/Briefs/briefsspecial1b.png".
@@ -289,6 +318,8 @@ Figure of briefs 15 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs15.p
 Figure of briefs 16 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs16.png".
 Figure of briefs 17 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs17.png".
 Figure of briefs 18 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs18.png".
+Figure of briefs 19 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs19.png".
+Figure of briefs 20 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs20.png".
 Figure of briefs special 2 is the file "Items/Clothes/Lower/Underwear/Briefs/briefsspecial2.png".
 
 [Below are from Lucas]
@@ -368,7 +399,7 @@ Understand "pink", "built", "built for", "bbc" as pink-bbc briefs.
 To say selfexamineuniquetitle of (G - pink-bbc briefs):
 	say "pair of pink 'BUILT for BBC' briefs".
 To say UniqueClothingDesc of (G - pink-bbc briefs):
-	say "A cute pair of bright pink briefs, with the writing 'BUILT for BBC' and a queen of spades logo in a deeper pink on the front.".
+	say "A cute pair of bright pink-hole-briefs, with the writing 'BUILT for BBC' and a queen of spades logo in a deeper pink on the front.".
 Definition: pink-bbc briefs is pink themed: decide yes.
 Definition: pink-bbc briefs is playing card themed: decide yes.
 Definition: pink-bbc briefs is interracial themed: decide yes.

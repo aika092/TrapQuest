@@ -107,6 +107,7 @@ To compute furniture resting on (M - a milking bench):
 		now milking is 0;
 		if M is in the location of the player:
 			say "The machine finally stops milking you[if milking-increased-doses is false]. There wasn't enough milk to significantly increase the level of the fluid in the milk tank, but your small contribution will surely be taken into account the next time you get milked[end if].";
+			if milking-increased-doses is true and a random number between 1 and max breast size > the largeness of breasts, BustUp 1;
 			if the alert of the player is 0, say "[if the bimbo of the player < 11][line break][first custom style]I feel so much better![otherwise][line break][second custom style]I'm full of energy again. Yum![end if][roman type][line break]";
 		progress quest of milking-quest;
 		now player-currently-resting is 0;

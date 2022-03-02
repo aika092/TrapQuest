@@ -16,7 +16,6 @@ To decide which number is the charisma of the player:
 	if the class of the player is succubus:
 		if demon horns is cursed, increase X by 1;
 		otherwise increase X by 2;
-	if there is a worn book of regrets, increase X by 1;
 	if bitch tattoo is worn, decrease X by 1;
 	decide on X.
 

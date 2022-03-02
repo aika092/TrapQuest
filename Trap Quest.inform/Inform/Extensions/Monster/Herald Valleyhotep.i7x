@@ -89,6 +89,9 @@ This is the herald's blessing attack rule:
 	HairRedUp 1;
 	HairBrightUp 1;
 	HairBlondeUp 1;
+	if the player is ready for event TG:
+		say DefaultSexChangeFlav;
+		SexChange the player;
 	satisfy M;
 	rule succeeds.
 The unique punishment rule of herald is usually the herald's blessing attack rule.

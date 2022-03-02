@@ -250,7 +250,7 @@ Definition: yourself is bimbo consenting:
 		decide yes;
 	otherwise:
 		if the player is not in a predicament room and (the implant of pledge-lesson-yes is 1 or the bimbo of the player >= a random number between 16 and 20):
-			say "[if the implant of pledge-lesson-yes is 1]The curse activates.[line break][second custom style][otherwise][second custom style]Huh? [end if]Good [boy of the player]s always say yes! I pick yes![roman type][line break]";
+			say "[if the implant of pledge-lesson-yes is 1]The magic pledge activates.[line break][second custom style][otherwise][second custom style]Huh? [end if]Good [boy of the player]s always say yes! I pick yes![roman type][line break]";
 			decide yes;
 		decide no.
 
@@ -266,7 +266,9 @@ Definition: yourself is reverse bimbo consenting:
 
 To render YesNoBackground:
 	let F be YesNoBackground;
-	if F is not Figure of no-image-yet:
+	if F is Figure of PokerCardDraw:
+		display poker interface;
+	otherwise if F is not Figure of no-image-yet:
 		let H be the height of the map-window;
 		let W be the width of the map-window;
 		repeat with G running through g-animated animation tracks:
@@ -292,22 +294,25 @@ To render YesNoButtons:
 	if F is Figure of no-image-yet, display entire map; [We have flagged that we still want to show the player the map in the background]
 	zero map-link-table;
 	zero map-button-table;
-	let H be the height of the map-window;
-	let W be the width of the map-window;
-	render YesNoBackground;
-	[Calculate button image sizes and locations]
-	let buttonSize be H / 3;
-	if W < H, now buttonSize is W / 3;
-	let X be (W - (buttonSize * 2)) / 3;
-	let Y be (H / 2) - (buttonSize / 2);
-	if actual inline hyperlinks >= 1 and YesNoPreference > 0:
-		display the image Figure of YesButton in the map-window at X by Y with dimensions buttonSize by buttonSize;
-		set a graphlink in the map-window identified as hypermapyes from X by Y to (X + buttonSize) by (Y + buttonSize) as "yes";
-		draw a box lightModeFullGreen in the map-window from X by Y to (X + buttonSize) by (Y + buttonSize) with 1 pixel line-weight, inset;
-		increase X by buttonSize + X;
-		display the image Figure of NoButton in the map-window at X by Y with dimensions buttonSize by buttonSize;
-		set a graphlink in the map-window identified as hypermapno from X by Y to (X + buttonSize) by (Y + buttonSize) as "no";
-		draw a box lightModeFullRed in the map-window from X by Y to (X + buttonSize) by (Y + buttonSize) with 1 pixel line-weight, inset.
+	if F is Figure of PokerCardDraw:
+		display poker interface;
+	otherwise:
+		let H be the height of the map-window;
+		let W be the width of the map-window;
+		render YesNoBackground;
+		[Calculate button image sizes and locations]
+		let buttonSize be H / 3;
+		if W < H, now buttonSize is W / 3;
+		let X be (W - (buttonSize * 2)) / 3;
+		let Y be (H / 2) - (buttonSize / 2);
+		if actual inline hyperlinks >= 1 and YesNoPreference > 0:
+			display the image Figure of YesButton in the map-window at X by Y with dimensions buttonSize by buttonSize;
+			set a graphlink in the map-window identified as hypermapyes from X by Y to (X + buttonSize) by (Y + buttonSize) as "yes";
+			draw a box lightModeFullGreen in the map-window from X by Y to (X + buttonSize) by (Y + buttonSize) with 1 pixel line-weight, inset;
+			increase X by buttonSize + X;
+			display the image Figure of NoButton in the map-window at X by Y with dimensions buttonSize by buttonSize;
+			set a graphlink in the map-window identified as hypermapno from X by Y to (X + buttonSize) by (Y + buttonSize) as "no";
+			draw a box lightModeFullRed in the map-window from X by Y to (X + buttonSize) by (Y + buttonSize) with 1 pixel line-weight, inset.
 
 Part 3 - Multiple Choice
 
@@ -333,15 +338,22 @@ To set numerical response (N - a number) to (T - a text):
 	if N is 0, now N is 10;
 	now entry N in numerical-responses is T.
 
+[To decide which number is filled-numerical-responses:
+	let N be 0;
+	repeat with T running through numerical-responses:
+		unless T is "", increase N by 1;
+	decide on N.]
+
 To compute multiple choice question:
 	let inputNumber be 0;
 	let validAnswer be 0;
 	while validAnswer is 0:
 		now currentlyConsenting is true;
-		repeat with E running from 1 to 10:
-			let N be E;
-			if N is 10, now N is 0;
-			if entry E in numerical-responses is not "", say "[link][N]) [entry E in numerical-responses][as][N][end link][line break]";
+		unless YesNoBackground is Figure of PokerCardDraw and map-window is g-present: [no need for the text options if we also have the graphical option]
+			repeat with E running from 1 to 10:
+				let N be E;
+				if N is 10, now N is 0;
+				if entry E in numerical-responses is not "", say "[link][N]) [entry E in numerical-responses][as][N][end link][line break]";
 		if gameover-flag is 0:
 			display focus stuff;
 			if the player is virtual, display stuff;
@@ -375,6 +387,8 @@ leftNumber is initially -2.
 rightNumber is initially -3.
 upNumber is initially -4.
 downNumber is initially -5.
+enterNumber is initially -6.
+spaceNumber is initially 32.
 directionNumbersConfigured is initially false.
 To configure direction numbers:
 	while directionNumbersConfigured is false:

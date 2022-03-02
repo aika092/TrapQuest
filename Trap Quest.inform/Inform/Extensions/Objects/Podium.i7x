@@ -13,11 +13,18 @@ Definition: podium is immune to change: decide yes.
 Check climbing podium:
 	try entering the podium instead.
 
+To compute unique teleportation to (R - Dungeon31):
+	say "[bold type]What rotten luck - you have appeared up on the stage![roman type][line break]";
+	now auto is 1;
+	try entering podium;
+	now auto is 0.
+
 Check entering podium:
-	if the player is immobile, say "Aren't you a bit tied up at the moment?" instead;
-	if the player is in danger, say "You would, but you are currently in a fight." instead;
-	[if the player is not able to use manual dexterity, say "You don't have the manual dexterity needed to climb up there." instead;]
-	if the player is prone, say "You would need to be standing up." instead;[now we can assume the player can get onto the podium]
+	if auto is 0:
+		if the player is immobile, say "Aren't you a bit tied up at the moment?" instead;
+		if the player is in danger, say "You would, but you are currently in a fight." instead;
+		[if the player is not able to use manual dexterity, say "You don't have the manual dexterity needed to climb up there." instead;]
+		if the player is prone, say "You would need to be standing up." instead;[now we can assume the player can get onto the podium]
 	allocate 6 seconds;
 	if the class of the player is bride and bride-consort is an alive undefeated monster:
 		if there is a worn bridal dress or sheer-open-front-skirt is worn:
@@ -31,7 +38,8 @@ Check entering podium:
 				say "A large section of your [C][']s skirt detaches and falls to the ground, leaving you in what suddenly feels a lot more like a party dress!";
 				now C is short;
 			otherwise if C is sexy bridal dress:
-				transform C into slutty bridal dress;
+				if slutty bridal dress is unclash summonable, unclash class summon slutty bridal dress; [it's supposed to be bottom exclusive so this is more ideal]
+				otherwise transform sexy bridal dress into slutty bridal dress;
 			otherwise if C is nothing:
 				class summon burning love crop top;
 				if sheer-open-front-skirt is not cursed:
@@ -43,12 +51,16 @@ Check entering podium:
 			progress quest of podium-quest;
 		otherwise:
 			say "You want to have a wedding ceremony but you realise you can't do that without a wedding dress[if the number of carried bridal dress is 0]! Perhaps there is a [bold type]magic wardrobe[roman type] somewhere that would enable you to reclaim your wedding outfit[end if].";
-	otherwise if diaper quest is 0 and the player is the donator and floral bridal veil is off-stage and the player is possessing a vagina and the vaginalvirgin of the player is 1 and floral bridal veil is actually summonable:
+	otherwise if diaper quest is 0 and floral bridal veil is off-stage and floral bridal veil is actually summonable and (the player is possessing a vagina and the vaginalvirgin of the player is 1) or the player is ready for event tg:
 		say "You find yourself dreaming of a wedding ceremony. You are the bride, holding a bouquet of flowers, as some noble [man of shopkeeper] dedicates [his of shopkeeper] life to you in front of the world.[line break][variable custom style]That wouldn't be so bad.[roman type][line break]As if reacting to your thoughts, a [MediumDesc of floral bridal veil] appears on your head!";
 		summon floral bridal veil cursed;
+		if the player is not possessing a vagina:
+			say DefaultSexChangeFlav;
+			SexChange the player;
 		progress quest of podium-quest;
 	otherwise:
-		say "[if seconds > 0]Giving in to temptation, you[otherwise]You[end if] quickly climb up on the stage and [if diaper quest is 1]suddenly feel compelled to turn and look out. Looking around you can imagine what it would be like to be part of such a humiliating performance - you can feel the warm clammy feeling of a full diaper, the laughs of the crowd as you struggle to move around normally, pawing at your nappy with fists locked within tight pink mittens, and sucking nervously on your pacifier[otherwise]turn to look out. Looking around, you can imagine the cold bite of the iron cuffs around your wrists and ankles, chaining you, while bidders shout out their offers for you, their eyes raking you over, making you feel defenceless. You shiver once more as the Auctioneer steps up and manhandles you, [his of shopkeeper] hands exposing your assets to the onlookers all while calling out for higher bids, urging them on[end if].[line break][line break][line break][line break][line break]Closing your eyes, you can feel another shiver run though you. Taking a deep breath you hold it for a moment before finally letting it out slowly. ";
+		if auto is 0, say "[if seconds > 0]Giving in to temptation, you[otherwise]You[end if] quickly climb up on the stage and [if diaper quest is 1]suddenly feel compelled to [end if]turn and look out. ";
+		say "[if diaper quest is 1]Looking around you can imagine what it would be like to be part of such a humiliating performance - you can feel the warm clammy feeling of a full diaper, the laughs of the crowd as you struggle to move around normally, pawing at your nappy with fists locked within tight pink mittens, and sucking nervously on your pacifier[otherwise]Looking around, you can imagine the cold bite of the iron cuffs around your wrists and ankles, chaining you, while bidders shout out their offers for you, their eyes raking you over, making you feel defenceless. You shiver once more as the Auctioneer steps up and manhandles you, [his of shopkeeper] hands exposing your assets to the onlookers all while calling out for higher bids, urging them on[end if].[line break][line break][line break][line break][line break]Closing your eyes, you can feel another shiver run though you. Taking a deep breath you hold it for a moment before finally letting it out slowly. ";
 		progress quest of podium-quest;
 		passively stimulate thighs from podium;
 		passively stimulate arms from podium;
@@ -109,19 +121,18 @@ Check entering podium:
 					summon slave collar locked;
 				say "Opening your eyes you move forward to step off the stage only to be brought up short by chains binding you. Blinking your eyes you gasp in surprise and stare in shock at actual chains binding you, very real chains. [if A is worn and pair of wristcuffs is worn]You are now wearing a [A] and a [pair of wristcuffs]! [otherwise if A is worn]You are now wearing a [A]! [otherwise if pair of wristcuffs is worn]You are now wearing a [pair of wristcuffs]! [end if][if slave collar is worn]You have a [printed name of slave collar] around your neck! [end if][line break][first custom style]'SOLD!'[roman type][line break]yells the Auctioneer as [he of shopkeeper] slams [his of shopkeeper] gavel down on the podium. Swallowing, you shiver as [he of shopkeeper] yanks at your chains, hauling you forward to meet the winning bidder, your new Master... [NameDesc of M]![line break][first custom style]'Get on your knees, slave.'[roman type][line break][big he of M] pulls you by [if the largeness of hair > 2]your hair[otherwise]the neck[end if] and you trip over your bondage, landing on your knees. The magical scene behind you disappears, leaving you with an empty stage, [NameDesc of M], and [if the sex addiction of the player < 13]a decision to be made - fight, flight or fuck?[otherwise][his of M] waiting [manly-penis].[end if]";
 			now the stance of the player is 1;
-		otherwise if the class of the player is adventurer and bondage protection < 2 and the number of unremovable neckwear is 0 and the number of unremovable dresses is 0 and the number of unremovable skirts is 0 and the number of unremovable bras is 0:
+		otherwise if the class of the player is adventurer and bondage protection < 2 and slave-dress is unclash summonable:
 			if debuginfo > 0 and (B is not bracelet or there is an on-stage solid gold bracelet), say "[input-style]Stage roll: bracelet scene not possible ([if B is bracelet]solid gold bracelet is already in game universe[otherwise]no bracelets left off-stage[end if]); slave stuff selected automatically.[roman type][line break]";
-			unless slave-dress is worn or bondage-ribbons is worn:
-				if christmas content is 1 and diaper quest is 0:
-					PinkWardrobeUnclash bondage-ribbons;
-					summon bondage-ribbons locked;
-					now bondage-ribbons is wrist-bound-behind;
-					say "You've barely blinked when you find yourself wearing a [bondage-ribbons]! Your wrists are now pinned by your side. Uh-oh.";
-				otherwise:
-					PinkWardrobeUnclash slave-dress;
-					summon slave-dress locked;
-					now slave-dress is wrist-bound-in-front;
-					say "You've barely blinked when you find yourself wearing a [slave-dress]! Your wrists are now stuck in cuffs connected to your collar via metal chains. Uh-oh.";
+			if christmas content is 1 and diaper quest is 0 and bondage-ribbons is unclash summonable:
+				PinkWardrobeUnclash bondage-ribbons;
+				summon bondage-ribbons locked;
+				now bondage-ribbons is wrist-bound-behind;
+				say "You've barely blinked when you find yourself wearing a [bondage-ribbons]! Your wrists are now pinned by your side. Uh-oh.";
+			otherwise:
+				PinkWardrobeUnclash slave-dress;
+				summon slave-dress locked;
+				now slave-dress is wrist-bound-in-front;
+				say "You've barely blinked when you find yourself wearing a [slave-dress]! Your wrists are now stuck in cuffs connected to your collar via metal chains. Uh-oh.";
 		otherwise if P is actually summonable and diaper quest is 0:
 			if debuginfo > 0 and (B is not bracelet or there is an on-stage solid gold bracelet), say "[input-style]Stage roll: bracelet scene not possible ([if B is bracelet]solid gold bracelet is already in game universe[otherwise]no bracelets left off-stage[end if]); slave stuff selected automatically.[roman type][line break]";
 			summon P cursed with quest;

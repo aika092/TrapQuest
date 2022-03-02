@@ -206,6 +206,7 @@ To compute pregnancy:
 				if the player is upright, try kneeling;
 				now the pregnancy of the player is 0;
 				WombEmpty the womb volume of vagina;
+				progress quest of birth-quest;
 			otherwise:
 				now successful-pregnancy is 1; [labour was delayed, we still reset this flag so it's in the correct state for when we try again next time]
 			now auto is 0;

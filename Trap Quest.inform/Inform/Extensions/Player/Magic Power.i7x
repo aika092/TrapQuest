@@ -5,7 +5,7 @@ The player has a number called magic-fatigue. [Recent magic drain]
 
 [Magic power as treated by spells and so on.]
 To decide which number is the total magic power of the player:
-	decide on the magic-power of the player + the trophy-mode of magic-trophy.
+	decide on the magic-power of the player + the trophy-mode of magic-trophy + (humiliation-fetish * the humiliation of the player / 4000).
 
 To decide which number is the magic power of the player:
 	let M be the total magic power of the player - the magic-fatigue of the player;

@@ -64,8 +64,8 @@ choice
 -1 [tough-shit]
 0 [backgrounds]
 0 [condom fetish]
-0 [UNUSED]
-0 [UNUSED]
+0 [natural hair length]
+0 [natural body shape]
 0 [secret: tattoos]
 0 [secret: piercings]
 0 [secret: humiliation]
@@ -83,7 +83,7 @@ choice
 0 [lady fetish (what biological sex are NPCs)]
 0 [incontinence protection]
 2 [inventory handicap]
-1 [fast TG]
+1 [fast TG - reworked into shrink TG and event TG]
 -1 [clumsy]
 0 [slow birth]
 0 [combatvisor]
@@ -149,11 +149,9 @@ To decide which number is max ass size points:
 	decide on choice in row 28 of the Table of Player Options.
 
 To decide which number is min penis size points:
-	if diaper quest is 1, decide on 0;
 	decide on choice in row 29 of the Table of Player Options.
 
 To decide which number is micro-choice:
-	if diaper quest is 1, decide on 0;
 	decide on choice in row 30 of the Table of Player Options.
 
 To decide which number is cheater-check:
@@ -203,7 +201,7 @@ To decide which number is humiliation-fetish:
 	decide on the choice in row 58 of the Table of Player Options.
 
 To decide which number is artificial-fetish:
-	if diaper quest is 1, decide on 0;
+	if diaper quest is 1 or artificial enhancements fetish is 0, decide on 0;
 	decide on the choice in row 59 of the Table of Player Options.
 
 To decide which number is max bonus liquid:
@@ -216,7 +214,7 @@ To decide which number is bondage protection:
 	decide on the choice in row 64 of the Table of Player Options.
 
 To decide which number is christmas content:
-	[if the player is not a top donator, decide on 0;]
+	if the player is not a top donator, decide on 0;
 	decide on choice in row 65 of the Table of Player Options.
 
 To decide which number is easter content:
@@ -278,7 +276,7 @@ To decide which number is a2m fetish points:
 	decide on choice in row 83 of the Table of Player Options.
 
 To decide which number is silicone milk clash:
-	if the player is not a february 2021 top donator, decide on 1;
+	if the player is not the donator, decide on 1;
 	decide on choice in row 84 of the Table of Player Options.
 
 Part - Options Menus
@@ -327,9 +325,11 @@ To decide which number is positive points count:
 	if clumsy is 1, increase X by 5;
 	if strongCurses is 1, increase X by 5;
 	if save game limit > 0, increase X by 2 + (save game limit * 2);
+	increase X by natural hair length;
 	increase X by natural redness;
 	increase X by natural blondeness;
 	increase X by natural brightness;
+	increase X by natural body shape * 2;
 	increase X by starting body shape * 2;
 	increase X by a2m fetish * 2;
 	increase X by condom fetish;
@@ -357,10 +357,7 @@ To decide which number is points count:
 	decrease X by bondage protection * 2;
 	decrease X by incontinence protection * 2;
 	if background-selected is 1, decrease X by 5;
-	decrease X by 7 * tattoo-fetish;
-	decrease X by 7 * piercing-fetish;
-	decrease X by 7 * humiliation-fetish;
-	decrease X by 7 * artificial-fetish;
+	decrease X by total-secret-cost;
 	decrease X by roleplay fetish;
 	decrease X by (bonus liquid * (1 + bonus liquid)) / 2;
 	decrease X by combatvisor;

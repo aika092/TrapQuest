@@ -58,12 +58,13 @@ To say ClothingDesc of (W - royal scepter):
 			otherwise say line break;
 		repeat with M running through tentacle-breeders in the Dungeon:
 			let L be the location of M;
-			say "There is a dangerous life form in the [L] that is allowing tentacle monsters to enter your castle. You should obtain the magic power necessary to remove it. ";
-			let D be up;
-			if playerRegion is Dungeon:
-				now D is the best route from the location of the player to L through labyrinth rooms;
-			if D is a direction and D is not up, say "The shortest path to [him of M] from here is [bold type][D][roman type].";
-			otherwise say line break;
+			if L is a placed labyrinth room: [there might be some weird edge cases with dungeon reshuffling]
+				say "There is a dangerous life form in the [L] that is allowing tentacle monsters to enter your castle. You should obtain the magic power necessary to remove it. ";
+				let D be up;
+				if playerRegion is Dungeon:
+					now D is the best route from the location of the player to L through labyrinth rooms;
+				if D is a direction and D is not up, say "The shortest path to [him of M] from here is [bold type][D][roman type].";
+				otherwise say line break;
 	otherwise:
 		say "The ball seems to shine brightly when you're in a used diaper - it has the power to help you change yourself!";
 	say "You can sense that the strength of its magic attacks is tied to your self-esteem.[line break][BigNameDesc of W] currently has [if the charge of W >= 16]an incredible amount of[otherwise if the charge of W >= 4]a lot of[otherwise if the charge of W > 0]a small amount of[otherwise]no[end if] stored magical energy, and so your magical attacks with it will be [if the charge of W >= 16]extremely powerful[otherwise if the charge of W >= 4]very[otherwise if the charge of W > 0]slightly more[otherwise]no more[end if] powerful than normal.".

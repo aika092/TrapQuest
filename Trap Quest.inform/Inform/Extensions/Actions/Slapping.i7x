@@ -173,6 +173,8 @@ Carry out zapping it with:
 	if A > 0:
 		damage A on the second noun;
 		compute spell consequences of currentZapper;
+	otherwise:
+		say "But rather than work correctly, the spell just fizzles in mid-air[if the magic power of the player <= 0 and the magic-cost of currentZapper > 0]! Perhaps because you have no magic power left[end if]!";
 	if the second noun is caged:
 		say "The chain holding the cage off of the ground creaks as the cage swings from side to side[one of]. That seems precarious[or][stopping]...";
 		if the player is getting unlucky:

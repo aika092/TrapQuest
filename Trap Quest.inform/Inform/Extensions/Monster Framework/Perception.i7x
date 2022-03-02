@@ -112,9 +112,9 @@ To compute defeated perception of (M - a monster):
 
 To compute correct perception of (M - a monster):
 	now the latest-appearance of M is the appearance of the player;
-	if the player is the donator and M is proposer:
+	if M is proposer:
 		compute proposal of M;
-	otherwise if the player is the donator and the class of the player is bride and M is bride-consort and there is a worn bouquet and M is not uniquely unfriendly:
+	otherwise if the class of the player is bride and M is bride-consort and there is a worn bouquet and M is not uniquely unfriendly:
 		compute bride perception of M;
 	otherwise if diaper quest is 1:
 		now the latest-cringe of M is the cringe appearance of the player; [We only want to do that if we're playing DQ otherwise we're wasting CPU cycles]

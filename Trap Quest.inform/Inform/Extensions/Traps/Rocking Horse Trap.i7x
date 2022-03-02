@@ -69,6 +69,7 @@ Check rocking:
 		say "You rock back and forth a bit. You're not sure why you did that..." instead.
 Carry out rocking:
 	let Y be a random rocking horse grabbing the player;
+	let D be a random eligible diaper;
 	say "You rock back and forth. ";
 	allocate 6 seconds;
 	decrease the TrapNo of Y by 1;
@@ -93,6 +94,11 @@ Carry out rocking:
 				say "As you rock, you feel your butt pushed slightly upwards by soft padding as a [ShortDesc of D] appears on you!";
 				summon D cursed with quest;
 				cutshow figure of Rocking Horse Cutscene for Y;
+	otherwise if the TrapNo of Y is 3 and tough-shit is 1 and the DQBulk of D >= the DQBulk of the player:
+		now D is cursed;
+		compute quest of D;
+		say "As you rock, you feel your butt pushed even further upwards by extra padding as a [ShortDesc of D] appears on top of your [random worn diaper]!";
+		diaperAdd D;
 	otherwise:
 		let R be a random number from 1 to 5;
 		if R is 1:

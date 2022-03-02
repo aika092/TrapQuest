@@ -31,17 +31,22 @@ To say ClothingDesc of (A - an accessory):
 		if A is solid gold:
 			say "A solid gold choker necklace.";
 		otherwise:
-			say "A silver coloured choker necklace with a decent sized [accessory-colour of A] embedded in the front.";
+			say "A [if A is emerald]gold[otherwise]silver[end if] coloured choker necklace with a decent sized [accessory-colour of A] embedded in the front.";
 	if A is bracelet:
 		if A is solid gold:
 			say "A solid gold bracelet.";
 		otherwise:
-			say "A silver coloured bracelet with several tiny [if A is ruby]rubies[otherwise][accessory-colour of A]s[end if] embedded on the outside.";
+			if A is sapphire:
+				say "A gold coloured bracelet with a single sapphire embedded in the middle.";
+			otherwise if A is pink diamond:
+				say "A gold coloured bracelet with two pink diamonds embedded in it, one at each end.";
+			otherwise:
+				say "A silver coloured bracelet with several tiny [if A is ruby]rubies[otherwise][accessory-colour of A]s[end if] embedded on the outside.";
 	if A is ring:
 		if A is solid gold:
 			say "A solid gold ring.";
 		otherwise:
-			say "A silver coloured ring with a small [accessory-colour of A] embedded in the top.";
+			say "A [if A is emerald or A is ruby]gold[otherwise]silver[end if] coloured ring with [if A is pure diamond]three impressive diamonds[otherwise]a small [accessory-colour of A][end if] embedded in the top.";
 	if saved-flat-intelligence < 6:
 		say "You have no idea how much it's worth.";
 	otherwise if saved-flat-intelligence < 11:

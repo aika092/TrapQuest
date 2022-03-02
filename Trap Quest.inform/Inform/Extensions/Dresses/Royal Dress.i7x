@@ -29,8 +29,8 @@ To decide which number is the intelligence-influence of (O - a royal dress):
 	decide on I.
 
 To decide which object is the unique-upgrade-target of (C - a royal dress):
-	if there is a worn diaper and diaper quest is 0, decide on baby royal dress; [DQ Tiara Quest is impossible to complete with a super short baby dress]
-	if the throatskill of the player is 1 , decide on deepthroat princess crop top;
+	if there is a worn diaper and (diaper quest is 0 or the number of worn cursed headgear is 0), decide on baby royal dress; [DQ Tiara Quest is impossible to complete with a super short baby dress]
+	if the throatskill of the player is 1, decide on deepthroat princess crop top;
 	if diaper quest is 1 and C is not lolita royal dress, decide on lolita royal dress;
 	if diaper quest is 0 and C is not ballgown royal dress, decide on ballgown royal dress;
 	decide on nothing.

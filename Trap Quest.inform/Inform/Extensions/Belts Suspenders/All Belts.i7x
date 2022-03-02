@@ -305,6 +305,18 @@ To compute periodic effect of (I - living belt of sturdiness):
 			now the living belt of sturdiness is not penetrating asshole;
 			now the living belt of sturdiness is not penetrating vagina;
 
+sheer-suspenders is a suspenders. sheer-suspenders is unique. sheer-suspenders is silk. sheer-suspenders is sheer. The printed name of sheer-suspenders is "[clothing-title-before]pair of brown sheer suspenders[clothing-title-after]". The text-shortcut of sheer-suspenders is "ssu". Figure of sheer suspenders is the file "Items/Clothes/Lower/Waist/Suspenders/suspenders7.png". Understand "brown", "sheer" as sheer-suspenders.
+Definition: sheer-suspenders is brown themed: decide yes.
+
+To decide which figure-name is clothing-image of (C - sheer-suspenders):
+	decide on figure of sheer suspenders.
+
+To say ClothingDesc of (S - sheer-suspenders):
+	say "A pair of sheer brown suspenders with long frills. You can sense that it has the magical power to make pregnancies progress very slowly.".
+
+To decide which number is the initial outrage of (C - sheer-suspenders):
+	decide on 2.
+
 Section 1 Wearability
 
 This is the overdress living belt clash rule:
@@ -404,7 +416,7 @@ To say ShortDesc of (C - string-belt):
 Definition: string-belt is condom pinnable: decide yes.
 Definition: string-belt is nudism-enabling: decide yes.
 
-bridal garter is a clothing. [No clashes.] The printed name of bridal garter is "[clothing-title-before]bridal garter[clothing-title-after]". The text-shortcut of bridal garter is "stb". bridal garter is unique. bridal garter is silk.
+bridal garter is a clothing. [No clashes.] The printed name of bridal garter is "[clothing-title-before]bridal garter[clothing-title-after]". The text-shortcut of bridal garter is "bgtr". bridal garter is unique. bridal garter is silk.
 
 Definition: bridal garter is class-relevant:
 	if the class of the player is bride, decide yes;

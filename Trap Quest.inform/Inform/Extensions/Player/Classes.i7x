@@ -23,19 +23,21 @@ trick-or-treater is a text that varies. trick-or-treater is "trick or treater".
 
 This is the princess class rule:
 	let H be a random worn tiara;
+	let T be "princess";
+	if rubber-royal-dress is worn, now T is "plastic princess";
 	if H is a tiara:
-		now player-class is "princess";
+		now player-class is "[T]";
 		if H is tiara-veil:
-			now player-class is "princess bride";
-			if bridal garter is worn, now player-class is "cumdumpster princess bride";
+			now player-class is "[T] bride";
+			if bridal garter is worn, now player-class is "cumdumpster [T] bride";
 		otherwise if H is tiara-of-spades:
-			now player-class is "princess of spades";
+			now player-class is "[T] of spades";
 		otherwise if the quest of H is virginity-retention-quest:
-			now player-class is "virgin warrior princess";
+			now player-class is "virgin warrior [T]";
 		otherwise if deepthroat princess crop top is worn:
-			now player-class is "deepthroat princess";
+			now player-class is "deepthroat [T]";
 		otherwise if the training-progress of senior robobellboy is -1:
-			now player-class is "trained fuck princess";
+			now player-class is "trained fuck [T]";
 		rule succeeds.
 The princess class rule is listed in the player class rules.
 
@@ -147,10 +149,11 @@ This is the virgin warrior class rule:
 		now player-class is "virgin warrior";
 		if golden warrior priestess outfit is worn, now player-class is "virgin warrior priestess";
 		if virgin magical girl outfit is worn, now player-class is "virgin magical girl";
+		if sheer-chest-garb is worn, now player-class is "fairy god-warrior";
 		rule succeeds.
 The virgin warrior class rule is listed in the player class rules.
 Definition: a text (called T) is virgin warrior:
-	if T matches the text "virgin", decide yes;
+	if T matches the text "virgin" or T matches the text "warrior", decide yes;
 	decide no.
 
 warriorExplained is initially false.
@@ -257,7 +260,7 @@ There are multiple different texts that need to be able to return true for the c
 
 +!]
 Definition: a text (called T) is fertility goddess:
-	if T is "fertility goddess" or T is "fertile bunny" or T is "fairy godmother" or T is "breeding cow", decide yes;
+	if T matches the text "fertil" or T matches the text "god" or T matches the text "breeding", decide yes;
 	decide no.
 
 [!<TheFertilityGoddessPussySlutRule>+
@@ -281,7 +284,9 @@ a later time based rule (this is the explaining fertility rule):
 This is the royal slave class rule:
 	if royal circlet is worn:
 		now player-class is "royal slave";
-		if cow print basque is worn, now the player-class is "cow slave";
+		if cow print basque is worn:
+			now the player-class is "cow slave";
+			if meowcowbell is worn or meow cow claws is worn, now the player-class is "meow cow slave";
 		rule succeeds.
 The royal slave class rule is listed in the player class rules.
 
@@ -319,6 +324,7 @@ This is the silicone queen class rule:
 		now player-class is "silicone queen";
 		if condoms dress is worn or giant condom is worn, now player-class is "walking condom";
 		if daddy issues dress is worn, now player-class is "plastic schoolgirl";
+		if rubber-royal-dress is worn, now player-class is "plastic princess";
 		if anime superheroine top is worn, now player-class is "magic plastigirl";
 		rule succeeds.
 The silicone queen class rule is listed in the player class rules.
@@ -707,7 +713,7 @@ This is the faerie class rule:
 		rule succeeds.
 The faerie class rule is listed in the player class rules.
 Definition: a text is faerie:
-	if it is "faerie" or it is "fairy godmother", decide yes;
+	if it matches the text "faerie" or it matches the text "fairy", decide yes;
 	decide no.
 
 faerieExplained is initially false.

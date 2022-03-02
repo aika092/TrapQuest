@@ -230,4 +230,28 @@ To compute class set up of (C - rubber-bunny-waitress-outfit):
 Definition: rubber-bunny-waitress-outfit is pink themed: decide yes.
 Definition: rubber-bunny-waitress-outfit is party themed: decide yes.
 
+rubber-royal-dress is a growing silicone dress. rubber-royal-dress is low cut. rubber-royal-dress is only arm covering. Understand "pink", "latex", "royal", "dress" as rubber-royal-dress.
+
+Definition: rubber-royal-dress is class-relevant:
+	if the class of the player is silicone queen or the class of the player is princess, decide yes;
+	decide no.
+
+The printed name of rubber-royal-dress is "[clothing-title-before]pink latex royal dress[clothing-title-after]". The text-shortcut of rubber-royal-dress is "plrd".
+
+Figure of rubber-royal-dress is the file "Items/Clothes/Upper/Latex/rubberdress8.png".
+
+To decide which figure-name is clothing-image of (C - rubber-royal-dress):
+	decide on figure of rubber-royal-dress.
+
+To say ClothingDesc of (C - rubber-royal-dress):
+	say "This tight fitting pink latex dress is decorated with black bows and frills, and [if C is worn and the largeness of breasts > 6]stretches lewdly over your [BreastDesc], proudly displaying[otherwise]displays[end if] a lot of [if C is worn]your[otherwise]the wearer's[end if] cleavage, and exposes a lot of thigh. It somehow comes across as fetishy, yet rather fancy, and perhaps even regal, partywear.".
+
+To say MediumDesc of (C - rubber-royal-dress):
+	say "regal latex minidress".
+
+Definition: rubber-royal-dress is pink themed: decide yes.
+Definition: rubber-royal-dress is bow themed: decide yes.
+Definition: rubber-royal-dress is party themed: decide yes.
+
+
 Plastic Themed Dresses ends here.

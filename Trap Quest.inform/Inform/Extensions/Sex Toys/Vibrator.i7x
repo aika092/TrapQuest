@@ -40,7 +40,7 @@ To decide which number is the original price of (C - a vibrator):
 To decide which number is the raw-masturbation-bonus of (C - a vibrator):
 	decide on 3.
 To decide which number is the stimulation of (T - a vibrator) on (F - a body part):
-	decide on 4.
+	decide on 3.
 
 To set up magic attribute of (C - a vibrator):
 	let R be a random number between 1 and 10;
@@ -57,6 +57,8 @@ remote-controlled-vibrator is a vibrator. remote-controlled-vibrator is unique. 
 To decide which number is the stimulation of (T - remote-controlled-vibrator) on (F - a body part):
 	if current-predicament is team-girlfriends-predicament, decide on 8;
 	decide on 3.
+To decide which number is the initial outrage of (S - remote-controlled-vibrator):
+	decide on 8.
 Figure of remote controlled vibrator 1 is the file "Items/Accessories/Toys/vibrator2.png".
 Figure of remote controlled vibrator 2 is the file "Items/Accessories/Toys/vibrator3.png".
 To decide which figure-name is clothing-image of (C - remote-controlled-vibrator):

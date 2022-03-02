@@ -136,9 +136,6 @@ To compute (Y - a needle trap) injecting into (X - hips):
 			if a random number between 0 and the armour of C > 5, now needle-blocker is C;
 	if needle-blocker is clothing and tutorial is 0:
 		say "The dart is blocked by your [ShortDesc of needle-blocker]! Phew!";
-	otherwise if tutorial is 0 and fast TG is 3 and the size of penis <= min penis size and the player is possessing a penis:
-		say "Owww, that really hurt! Your [AssDesc] and [ShortDesc of penis] glow pink for a moment. ";
-		PenisDown 1;
 	otherwise if diaper quest is 1:
 		if a random number between 1 and 2 is 1 and tutorial is 0:
 			say "Owww, that really hurt! You watch the large balloon at the back end of the dart empty a lot of liquid into your body[one of]. That can't be good...[or].[stopping]";
@@ -230,12 +227,17 @@ To compute (Y - a needle trap) injecting into (X - body part):
 		say "Owww, that stings, burning like menthol on your sensitive [vagina] lips! You stare down at your crotch, at a cluster of smaller needles that have injected you all over down there!";
 		LabiaUp 1 with comment;
 		NeedleDelicateUp;
-	otherwise if X is penis:
-		if [tutorial is 0 and fast TG is 3 and the size of penis <= min penis size and] the player is possessing a penis:
-			say "Owww! It hit you right in the [penis]! Your [ShortDesc of penis] glows pink for a moment. ";
-		otherwise if the player is somehow possessing a penis: [This can happen if their dick was stolen]
-			say "Ouch! It hit you right in your empty crotch, which glows pink for a moment. ";
-		SpecialPenisDown 1; [#LXorDD]
+	otherwise if X is penis and the player is possessing a penis:
+		if the player is ready for common event TG:
+			say "Owww! It hit you right in the [penis]! ";
+			say DefaultSexChangeFlav;
+			SexChange the player;
+		otherwise:
+			if the player is possessing a penis:
+				say "Owww! It hit you right in the [penis]! Your [ShortDesc of penis] glows pink for a moment. ";
+			otherwise if the player is somehow possessing a penis: [This can happen if their dick was stolen]
+				say "Ouch! It hit you right in your empty crotch, which glows pink for a moment. ";
+			SpecialPenisDown 1; [#LXorDD]
 	otherwise:
 		say "Owww, that really hurt!! You take it out and notice an empty capsule at the end you're holding. Looks like it injected something into your [printed name of X]. How weird.";
 		NeedleDelicateUp.

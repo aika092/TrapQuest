@@ -39,7 +39,7 @@ Definition: a thing is candle themed: decide no. [The player needs a bell themed
 To commence doom:
 	if the number of mindless acolytes in Mansion23 < 4:
 		update new acolytes;
-		if (tough-shit is 1 or Mansion01 is placed) and the number of entries in new-acolytes > 0:
+		if (tough-shit is 1 or Mansion01 is placed) and the number of entries in new-acolytes > 0 and the player is not in Mansion23:
 			let M be entry 1 in new-acolytes;
 			compute cultist conversion cutscene of M;
 			force commence doom.
@@ -103,7 +103,12 @@ Report going when the player is in School01:
 			now X is in Mansion23;
 		focus-consider N;
 		focus-consider M;
-		force commence doom.
+		force commence doom;
+	otherwise if most-recent-furious is a monster:
+		say "[bold type]As you enter the reception, you notice [most-recent-furious] [bold type]just leaving via the portal.[roman type][line break]Looks like [he of most-recent-furious] is gone for good, and doesn't intend to come back.";
+		focus-consider most-recent-furious;
+		now most-recent-furious is nothing.
+
 
 A later time based rule (this is the compute doom rule):
 	if doom counter is 0:
@@ -135,6 +140,7 @@ A later time based rule (this is the compute doom rule):
 					now doomed is -1;
 					if the pink sphere is in the location of the player, say "You hear the sound of a thousand voices groaning angrily, and then the giant pink sphere fizzles from existence.";
 					destroy the pink sphere;
+					if deep one is alive, compute automatic banishment of deep one;
 					progress quest of ritual-quest;
 					let X be a random off-stage plentiful necklace;
 					unless X is nothing:
@@ -234,7 +240,6 @@ A later time based rule (this is the compute doom rule):
 				otherwise:
 					say "[bold type]The world begins to shake and pink lightning crackles over every surface! You desperately try to avoid them, but you feel the energy wash over you before the effect settles down. Even still, there is a strange pink energy hanging in the air. One thing is certain: You have failed.[roman type][line break]";
 			resolve doom;
-			progress quest of doom-quest;
 		otherwise if a random number between 1 and (40 + (10 * MA)) is 1:
 			if debuginfo > 1:
 				update new acolytes;
@@ -286,7 +291,8 @@ To resolve doom:
 	if goth mannequin is woods dwelling and goth mannequin is off-stage, summon goth mannequin in the woods;
 	if diaper quest is 0, compute chosen birth;
 	now herald is in Mansion23;
-	progress quest of ritual-quest.
+	progress quest of ritual-quest;
+	progress quest of doom-quest.
 
 [TODO: update for lady fetish]
 To compute chosen birth:[now that the mindless acolytes are no longer needed to pool their strength, it's time to have some babies!]

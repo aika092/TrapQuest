@@ -727,7 +727,7 @@ To compute (M - ex-princess) enslaving (N - headmistress):
 		if glittery-wand is carried by M, now W is glittery-wand;
 		if royal scepter is carried by M, now W is royal scepter;
 		if M is in the location of the player:
-			if the health of N > 0:
+			if the health of N > 0 and N is unleashed:
 				say "[one of][BigNameDesc of N] notices you and [NameDesc of M] and a look of horror and disbelief crosses [his of N] face.[line break][speech style of N]'No, it can't be! I won't let you!'[roman type][line break][or][stopping]";
 				if W is not glittery-wand or (a random number between 1 and 2 is 1 and W is not cursed):
 					say "[BigNameDesc of N] tries to throw [one of]a[or]another[stopping] magic cloud of shadow towards [NameDesc of M], but [he of M] [one of]sees it coming in time and defects[or]manages to continue to find the strength to[stopping] it with [his of M] [ShortDesc of W], sending it hurtling ";
@@ -747,6 +747,7 @@ To compute (M - ex-princess) enslaving (N - headmistress):
 					say "[BigNameDesc of N] throws a magic cloud of shadow towards [NameDesc of M], but [he of M] sees it coming in time and deflects it with [his of M] [ShortDesc of W].[line break][speech style of M]'Too easy!'[roman type][line break][BigNameDesc of M] smiles proudly as [he of M] strikes the shadow with the wand. Time seems to slow as [NameDesc of N] grins and says with a glint in [his of N] eye:[line break][speech style of N]'Oh, where did you get that wand from, I wonder?'[line break][speech style of M]'What? NOOOO!'[roman type][line break]That's all [NameDesc of M] has time to say before the shadow wraps itself around the [ShortDesc of W] turning its gems to a jet black. [BigNameDesc of M] shakes [his of M] hand, trying to drop the black wand, but is unable to. You watch with [horror the sex addiction of the player] as clearly against [his of M] will, [his of M] hand pushes the head of the vibrator towards [his of M] clitoris. There's nothing either of you can do to stop it as [he of M] begins to use the wand to masturbate rather than fight. It looks like you'll have to finish this fight all on your own...";
 			otherwise:
 				say "[BigNameDesc of M] laughs in gleeful triumph as [he of M] blasts [NameDesc of N] with a powerful wave of magical energy. [BigNameDesc of N] screeches in shock as [he of N] has [his of N] outfit transformed";
+				now enslave-success is 1;
 	if enslave-success is 1:
 		if diaper focus > 0, now N is diaper-enslaved;
 		otherwise now N is sex-enslaved.

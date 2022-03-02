@@ -40,6 +40,7 @@ title	subtable	description	toggle
 "NPC gender preference (changes the description of some NPCs - but most alternate images don't exist yet!): ([if lady fetish is 0]No preference[otherwise if lady fetish is 1]Feminine NPCs only[otherwise]Masculine NPCs only[end if] [if the remainder after dividing choice in row 70 of the Table of Player Options by 2 is 0]never randomise[otherwise]for now, but can be randomised[end if] - [if the player is a top donator]free[otherwise]bab testers only for now[end if])"	--	--	lady fetish toggle rule
 "Can the player become a futanari? [if the player is not a top donator]bab testers only for now[otherwise if choice in row 68 of the Table of Player Options is 2][bold type]enabled[roman type] (with balls)[otherwise if choice in row 68 of the Table of Player Options > 0][bold type]enabled[roman type] (without balls)[otherwise]disabled[end if]"	--	--	futanari fetish rule
 "Male-to-female sex change - 2 points ([if choice in row 1 of the Table of Player Options is 1]Disabled since the player is female[otherwise if choice in row 10 of the Table of Player Options is -1]never[otherwise if choice in row 10 of the Table of Player Options is 0]not now[otherwise if choice in row 10 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	TG fetish toggle rule
+"Increase Minimum Penis Size ([if the player is female]Disabled since player is female[otherwise if min penis size is 0]No penis - 0 points used. [bonus penis cost][otherwise if min penis size is 1]Less than 1 inch - 1 point used. [bonus penis cost][otherwise if min penis size is 2]1 inch - 1 point used. [bonus penis cost][otherwise][min penis size] inch - [min penis size points] points used. [bonus penis cost][end if][if the player is male and tg fetish >= 1]When this size is reached, TG can occur.[end if])"	--	--	min penis size rule
 "ENABLE SEASONAL CONTENT"	Table of Festive Options	--	--
 [DO NOT PUT ANY OPTIONS BELOW THE SEASONAL CONTENT ROW - they will not appear for non-alpha testers. Put them above the seasonal row instead.]
 
@@ -138,8 +139,11 @@ To decide which number is TG fetish:
 	if choice in row 10 of the Table of Player Options <= 0, decide on 0;
 	otherwise decide on 1.
 This is the TG fetish toggle rule:
-	if choice in row 10 of the Table of Player Options < 2, increase choice in row 10 of the Table of Player Options by 1;
-	otherwise now choice in row 10 of the Table of Player Options is -1.
+	if choice in row 10 of the Table of Player Options < 2:
+		increase choice in row 10 of the Table of Player Options by 1;
+	otherwise:
+		now choice in row 10 of the Table of Player Options is -1;
+		if points count < 0, now choice in row 29 of the Table of Player Options is 0. [By setting TG fetish to 0, the min penis size points might have appeared, and taken the player's points down below 0. We can't have that, so we set min penis size points to 0.]
 This is the TG nightmare rule:
 	if choice in row 10 of the Table of Player Options is 0, now choice in row 10 of the Table of Player Options is 1.
 The TG nightmare rule is listed in the nightmare mode rules.

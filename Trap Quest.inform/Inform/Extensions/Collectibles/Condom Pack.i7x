@@ -190,7 +190,7 @@ To compute default condom filling of (M - a monster):
 	if C is nothing or C is not condom pinnable or a random number between 1 and 2 is 1, now C is a random worn condom pinnable clothing; [50% chance of condoms going on the same item as there are already condoms]
 	if runic headband is worn and runic headband is not purity and M is penetrating vagina, now C is runic headband;
 	let S be nothing;
-	if the class of the player is bride:
+	if the class of the player is bride and the player is not in a predicament room:
 		now C is bridal garter;
 		now S is bridal garter;
 		if bridal garter is not worn, summon bridal garter cursed with silent quest;

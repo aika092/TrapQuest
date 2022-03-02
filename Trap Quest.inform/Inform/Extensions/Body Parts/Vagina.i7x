@@ -342,7 +342,7 @@ To PussyClose (X - a number):
 		if the openness of vagina > 0:
 			if the number of things filling vagina > 0:[We force out any existing item when the player tightens up.]
 				let I be a random insertable thing penetrating vagina;
-				if I is an insertable thing and the openness of vagina + 1 < the girth of I:
+				if I is an insertable thing and the insertableGirthAcceptance of vagina + 1 < the girth of I and I is not glued clothing and I is not maybe-cursed:
 					say "Your [printed name of I] shoots out of your [vagina] with some force[run paragraph on]";
 					if there is pussy covering clothing:
 						if there is possession pussy covering clothing:

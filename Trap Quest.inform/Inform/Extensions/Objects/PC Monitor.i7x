@@ -311,23 +311,39 @@ To beginCall of (C - crystal-monitor):
 	let M be the video-caller of C;
 	say "[bold type]Suddenly, you hear the sound of a video call coming from the magical computer. [roman type]You look over at the monitor, and see the flickering image on the screen has changed to a green calling symbol over a blue background. Moments later, the video call is answered, and [if M is slutty sister]the face of one of the Nintendolls who put you in this game, along with several unfamiliar people in suits appear. [otherwise][FriendStatus of M][end if][NewAppearanceReaction of M][NewCircumstanceReaction of M][FriendRespond to M]".
 
-Section - Security screens
+Section - Security Interface
 
-security screens is a thing. security screens is in Hotel30. security screens is not portable. The printed name of security screens is "[TQlink of item described]security screens[TQxlink of item described][shortcut-desc][verb-desc of item described]". The text-shortcut of security screens is "scs". security screens has a number called currentSlide.
+security interface is a thing. security interface is in Hotel30. security interface is not portable. The printed name of security interface is "[TQlink of item described]security interface[TQxlink of item described][shortcut-desc][verb-desc of item described]". The text-shortcut of security interface is "scs". security interface has a number called currentSlide. security interface can be unauthenticated, authenticating, or authenticated.
 
-To say ShortDesc of (C - security screens):
-	say "security screens".
-To say MediumDesc of (C - security screens):
-	say "security screens".
+To say ShortDesc of (C - security interface):
+	say "security interface".
+To say MediumDesc of (C - security interface):
+	say "security interface".
 
-Definition: security screens is immune to change: decide yes.
+Definition: security interface is immune to change: decide yes.
 
-Figure of security screens is the file "Env/Hotel/monitor2.jpg".
-To decide which figure-name is the examine-image of (C - security screens):
-	decide on figure of security screens.
+Figure of security interface is the file "Env/Hotel/securityroom1.jpg".
+Figure of security interface authenticating is the file "Env/Hotel/securityroom2.jpg".
+Figure of security interface authentication pole is the file "Env/Hotel/securityroom3.jpg".
+To decide which figure-name is the examine-image of (C - security interface):
+	if C is authenticating, decide on figure of security interface authenticating;
+	decide on figure of security interface.
 
-To say ExamineDesc of (C - security screens):
-	say "Your security screens sits on its desk at the end of your room. Your eyes are currently being drawn to [if the currentSlide of C <= 0]footage of a woman streaking across a football field.[otherwise][SlideDesc (currentSlide of C)][end if]".
+To say ExamineDesc of (C - security interface):
+	say "Four TV monitors are fixed to the wall of the security room. Your eyes are currently being drawn to [if the currentSlide of C <= 0]security footage of [one of]a woman stripping off her clothes in the middle of a street[or]an outdoor pool, where a woman is shamelessly sunbathing nude[or]some kind of confectionary store, where a woman is performing some rather erotic tongue manouveurs on her favourite lollipop[or]two women performing stretches either side of a glass wall in a gym. For unclear reasons, one of the women is completely naked[then at random].[otherwise][SlideDesc (currentSlide of C)][end if][paragraph break]To the side of the monitors is a high-tech metal security door, and in between the door and the monitors are some panels for ID authentication, including a key card slot, and some kind of biometric authentication, activated by a big round power button.".
+
+Check pushing security interface:
+	repeat with M running through combative monsters:
+		say "[BigNameDesc of M] blocks you from reaching the button! You're going to have to deal with [him of M] first!" instead;
+	allocate 6 seconds;
+	if security interface is authenticated:
+		say "A feminine robotic voice speaks:[line break][second custom style]'ERROR: IDENTITY HAS ALREADY BEEN CONFIRMED.'[roman type][line break]";
+	otherwise if security interface is unauthenticated:
+		say "Two things happen when you push the button - a small metal chute opens up, as if expecting you to deposit an item in it. Secondly, a long thin metal pole with a bulbous sphere at the top emerges from the ground in front of you. Next, a feminine robotic voice speaks:[line break][second custom style]'PLEASE PROCEED WITH [if diaper quest is 0]ORIFICE-BASED OR [end if]ITEM-BASED DNA VERIFICATION.'[roman type][line break]It seems like you [if diaper quest is 0]either need to [']mount['] the pole in front of you, or[otherwise]need to[end if] drop an item down the chute.";
+		now security interface is authenticating;
+	otherwise:
+		say "You push the button, but nothing more happens.".
+
 
 [Happens after monsters, so if a monster drags you here it happens in the same turn.]
 A later time based rule:
@@ -337,16 +353,131 @@ A later time based rule:
 			let notThisOne be 100;
 			while notThisOne > 0:
 				decrease notThisOne by 1;
-				decrease the currentSlide of security screens by 1;
-				if the currentSlide of security screens <= 0:
-					now the currentSlide of security screens is the number of filled rows in the Table of Published Disgraces;
-				choose row (the currentSlide of security screens) in Table of Published Disgraces;
+				decrease the currentSlide of security interface by 1;
+				if the currentSlide of security interface <= 0:
+					now the currentSlide of security interface is the number of filled rows in the Table of Published Disgraces;
+				choose row (the currentSlide of security interface) in Table of Published Disgraces;
 				if the deletedtime entry <= 0: [Only media that hasn't been deleted is shown]
 					now notThisOne is 0;
-					say "[bold type]Your eyes are drawn to a TV screen![roman type] It shows that [HumiliatingSlideDesc (the currentSlide of security screens)]";
+					say "[bold type]Your eyes are drawn to a TV screen![roman type] It shows that [HumiliatingSlideDesc (the currentSlide of security interface)]";
 					if the deletedtime entry is -1:
 						say "The console is not logged in as the user who uploaded the video, so there is no delete button.";
 					otherwise if the deletedtime entry is 0:
-						say "There is a big red delete button available to press underneath the video, but a banner underneath the screens says 'PLEASE AUTHENTICATE TO ENABLE TOUCHSCREEN FUNCTIONALITY.'";
+						if security interface is authenticated:
+							say "There is a big red delete button available to press, underneath the video. ";
+							if the player is immobile or the player is in danger:
+								say "Unfortunately, you're too busy right now, to be able to press it!";
+							otherwise:
+								say "Press the button to delete the video?";
+								if the player is consenting:
+									say "You press the button, and the video is deleted from the website. No one else will be able to see it now!";
+									now the deletedtime entry is time-earnings;
+						otherwise:
+							say "There is a big red delete button available to press underneath the video, but a banner underneath the screens says 'PLEASE AUTHENTICATE TO ENABLE TOUCHSCREEN FUNCTIONALITY.'";
+	otherwise if security interface is authenticating:
+		now security interface is unauthenticated.
+
+To decide which number is the girth of (C - security interface):
+	decide on 4.
+
+Check entering security interface:
+	if the noun is authenticated, say "Sorry, this subregion hasn't been created yet!" instead;
+	if the noun is unauthenticated or diaper quest is 1, say "How would you do that?" instead;
+	let F be asshole;
+	reset multiple choice questions;
+	set numerical response 1 to "Mount the authentication pole with your [asshole].";
+	if the player is possessing a vagina, set numerical response 2 to "Mount the authentication pole with your [vagina].";
+	set numerical response 0 to "Change your mind.";
+	compute multiple choice question;
+	if player-numerical-response is 0, do nothing instead;
+	if player-numerical-response is 2, now F is vagina;
+	if the insertableGirthAcceptance of F < the girth of the noun:
+		if debugmode is 1, say "If debugmode was disabled, the player would be unable to fit it inside.";
+		otherwise say "[variable custom style]There's no way I'm going to be able to fit that thing inside of me![roman type][line break]" instead;
+	if F is vagina and the player is pussy protected, say "You'd need to get your [ShortDesc of random top level protection clothing] out of the way first." instead;
+	if F is asshole and the player is ass protected, say "You'd need to get your [ShortDesc of random top level ass protection clothing] out of the way first." instead;
+	if F is actually occupied, say "You'd need to get the [ShortDesc of random thing filling F] out of your [variable F] first." instead;
+	allocate 6 seconds;
+	say "You lower your [variable F] onto the large sphere. ";
+	compute toyInsertion of security interface into F;
+	say "A feminine robotic voice speaks:[line break][second custom style]'SCANNING...'[roman type][line break]The pole begins vibrating!";
+	stimulate F from security interface;
+	let authenticating-person be the player;
+	if pimp is inseminating F or pimp is the father or pimp is mating, now authenticating-person is pimp;
+	if mechanic is inseminating F or mechanic is the father or mechanic is mating, now authenticating-person is mechanic;
+	if demon lord is inseminating F or demon lord is the father or demon lord is mating, now authenticating-person is demon lord;
+	if authenticating-person is monster:
+		say "[second custom style]'AUTHORISED DNA CONFIRMED IN DETECTED SPERMATOZOA CELLS. WELCOME BACK, SIR.'[roman type][line break]The screen turns green, and the metal door slides open!";
+		now security interface is authenticated;
+	otherwise:
+		say "[second custom style]'NO AUTHORISED DNA WAS FOUND IN ALL DETECTED SPERMATOZOA CELLS. ACCESS DENIED.'[roman type][line break]";
+		now security interface is unauthenticated;
+	say "The pole suddenly retracts, pulling the sphere out of your [variable F] with brutal speed and strength.";
+	stimulate F from security interface;
+	dislodge security interface;
+	do nothing instead.
+
+
+Check inserting it into security interface:
+	if the player is flying, say "You're not even on the ground!" instead;
+	if the noun is the player, say "You wouldn't fit!" instead;
+	if the noun is not held, say "You need to be holding it." instead;
+	if the noun is empty bottle, say "You don't want to put the whole thing in, but just pour it, surely? And that will require it to not be empty..." instead;
+	if the noun is worn and the noun is not autoremovable, say "You'd need to remove it first." instead;
+	if the player is immobile or the player is in danger, say "You're a bit busy right now!" instead;
+	if the noun is id-card:
+		allocate 3 seconds;
+		now security interface is authenticated;
+		say "You push the ID card into the slot, and with a happy beep, the interface turns green, and the metal door slides open!" instead;
+	if security interface is not authenticating, say "How would you do that? Try pressing the button first." instead;
+	allocate 6 seconds;
+	let authentication-success be false;
+	if the noun is vessel:
+		if pimp is inseminating the noun or mechanic is inseminating the noun or demon lord is inseminating the noun, now authentication-success is true;
+		say "You pour the contents of the [ShortDesc of the noun] into the chute, which closes. A feminine robotic voice speaks:[line break][second custom style]'SCANNING...'[roman type][line break]";
+		DoseEmpty the noun;
+	otherwise:
+		say "You put the [ShortDesc of the noun] in the chute, which closes. A feminine robotic voice speaks:[line break][second custom style]'SCANNING...'[roman type][line break]";
+		if the noun is soiled-diaper:
+			if the diaper-origin of the noun matches the text "mechanic" or the diaper-origin of the noun matches the text "pimp" or the diaper-origin of the noun matches the text "Xavier", now authentication-success is true;
+		only destroy the noun;
+	if authentication-success is true:
+		say "[second custom style]'AUTHORISED DNA DETECTED. WELCOME BACK, SIR.'[roman type][line break]The screen turns green, and the metal door slides open!";
+		now security interface is authenticated;
+	otherwise:
+		say "[second custom style]'NO AUTHORISED DNA DETECTED. ACCESS DENIED.'[roman type][line break]";
+		now security interface is unauthenticated;
+	say "The pole retracts back down into the ground." instead.
+
+To construct unique buttons for (T - security interface):
+	if T is unauthenticated and ButtonTableFull is 0:
+		choose a blank row in the Table of Buttons;
+		now the ButtonImage entry is Figure of PokeButton;
+		now the ButtonCommand entry is "push [text-shortcut of T]";
+		now the ButtonColour entry is lightModeFullGreen;
+	otherwise if T is authenticating:
+		if ButtonTableFull is 0:
+			choose a blank row in the Table of Buttons;
+			now the ButtonImage entry is Figure of security interface authentication pole;
+			now the ButtonCommand entry is "enter [text-shortcut of T]";
+			now the ButtonColour entry is lightModeFullGreen;
+		repeat with V running through held non-empty vessels:
+			if ButtonTableFull is 0:
+				choose a blank row in the Table of Buttons;
+				now the ButtonImage entry is examine-image of V;
+				now the ButtonCommand entry is "insert [text-shortcut of V] in [text-shortcut of T]";
+				now the ButtonColour entry is lightModeFullGreen;
+				if V is worn, now the ButtonColour entry is lightModeFullYellow;
+		repeat with S running through held soiled-diapers:
+			if ButtonTableFull is 0:
+				choose a blank row in the Table of Buttons;
+				now the ButtonImage entry is examine-image of S;
+				now the ButtonCommand entry is "insert [text-shortcut of S] in [text-shortcut of T]";
+				now the ButtonColour entry is lightModeFullGreen;
+	otherwise if ButtonTableFull is 0:
+		choose a blank row in the Table of Buttons;
+		now the ButtonImage entry is Figure of map stairs down;
+		now the ButtonCommand entry is "enter [text-shortcut of T]";
+		now the ButtonColour entry is lightModeFullRed;
 
 PC Monitor ends here.

@@ -1249,9 +1249,12 @@ To compute fatherhood to (M - a monster): [no reason to check for successful pre
 		if debugmode is 1, say "The father was [M], but [he of M] was dead.";
 	otherwise:
 		now M is mating;
-		calm M;
-		regionally place M;
-		distract M.
+		if M is intelligent or M is uninterested or M is friendly:
+			calm M;
+			regionally place M;
+			distract M;
+		otherwise:
+			now M is in the location of the player.
 
 [!<ComputeRacialSubmissionToMonster>+
 
@@ -1429,7 +1432,7 @@ To check sudden expulsion with reason (T - a text):
 To compute sudden squirt into (K - an object) disapproval:
 	if K is clothing:
 		update appearance level;
-		repeat with P running through people in the location of the player:
+		repeat with P running through reactive people:
 			unless P is uninterested bystander or P is combative monster, check disapproval of P;
 	otherwise:
 		repeat with P running through reactive people:

@@ -1680,7 +1680,7 @@ To compute chess time:
 			say "The pump sends [if watersports fetish is 1][urine][otherwise][semen][end if] down the tube and into [NameDesc of ST][']s fishbowl. It is [if the remainder after dividing student-bowl-fill of chess-lesson by 3 is 2]still[otherwise]now[end if] [if the student-bowl-fill of chess-lesson >= 12]completely full[otherwise if the student-bowl-fill of chess-lesson >= 9]up to [his of ST] eyes[otherwise if the student-bowl-fill of chess-lesson >= 6]up to [his of ST] nose[otherwise if the student-bowl-fill of chess-lesson >= 3]up to [his of ST] mouth[otherwise]nearly up to [his of ST] mouth[end if].";
 			if the student-bowl-fill of chess-lesson > 12, now the student-bowl-fill of chess-lesson is 12;
 			if the player-bowl-fill of chess-lesson > 0, decrease the player-bowl-fill of chess-lesson by 1;
-		say "[if watersports fetish is 1]Piss[otherwise]Cum[end if] continues to slowly trickle out of both of your helmets at the bottom[one of], trickling down your neck then down your [BreastDesc][or]and down body[or]and down your back and front[or], running down you, even between your thighs and over your [genitals][or], front and back, puddling now between your [AssDesc][or], all over you, even down your legs[or]painting your whole body[or][stopping].";
+		say "[if watersports fetish is 1]Piss[otherwise]Cum[end if] continues to slowly trickle out of both of your helmets at the bottom[one of], trickling down your neck then down your [BreastDesc][or] and down your body[or] and down your back and front[or], running down you, even between your thighs and over your [genitals][or], front and back, puddling now between your [AssDesc][or], all over you, even down your legs[or], painting your whole body[or][stopping].";
 		let F be a random fuckhole penetrated by chess table;
 		if the player-bowl-fill of chess-lesson >= 12:
 			say "[bold type]The dildo machine in your [variable F] [if the player-machine of chess-lesson is 1]keeps pumping away[otherwise]begins to piston in and out with increasing speed. [roman type]Within moments you're being fucked at a brutal rate of five thrusts a second[end if]!";
@@ -1705,14 +1705,15 @@ To compute chess time:
 		increase the student-orgasm of chess-lesson by 1;
 	if the chess-victor of chess-lesson is 0:
 		compute chess players thinking;
-		compute hunger and thirst;
+		compute hunger and thirst; [actual hunger and thirst numbers will be temporarily overridden (see the definition for 'yourself is thirsty'), but we do need the player to digest normally]
 		if watersports fetish is 1:
-			compute bladder growth;
-			if the bladder of the player > 6:
-				increase player-bladder-penalty of chess-lesson by 1;
-				say "[bold type][if the player-bladder-penalty of chess-lesson is 1]You are beginning to feel the need to pee, which is making it more difficult for you to concentrate[otherwise]Holding in your pee is making it increasingly difficult to concentrate[end if].[roman type][line break]";
-			otherwise:
-				now player-bladder-penalty of chess-lesson is 0;
+			if a random number between 1 and 3 is 1:
+				compute bladder growth;
+				if the bladder of the player > 6:
+					increase player-bladder-penalty of chess-lesson by 1;
+					say "[bold type][if the player-bladder-penalty of chess-lesson is 1]You are beginning to feel the need to pee, which is making it more difficult for you to concentrate[otherwise]Holding in your pee is making it increasingly difficult to concentrate[end if].[roman type][line break]";
+				otherwise:
+					now player-bladder-penalty of chess-lesson is 0;
 		if delayed urination > 0, compute chess urination;
 		finally humiliate the delayed humiliation of the player;
 		decrease blush factor by 100;

@@ -167,9 +167,9 @@ To compute djinn wishing of (M - a monster):
 	set next numerical response to "wish for sanity";
 	set next numerical response to "wish for safety";
 	if diaper quest is 0, set next numerical response to "wish to be bigger";
-	if diaper quest is 0 and the class of the player is adventurer:
+	if diaper quest is 0:
 		let C be a random worn currently uncovered dress;
-		if C is clothing and the outrage of C > 5 and purple rubber bodysuit is fetish appropriate, set next numerical response to "wish for less lewd clothing";
+		if C is clothing and the outrage of C > 5 and purple rubber bodysuit is fetish appropriate and purple rubber bodysuit is unclash summonable, set next numerical response to "wish for a less humiliating outfit";
 	if M is in the location of the player:
 		if diaper quest is 0, set next numerical response to "wish for a suck of [his of M] cock";
 		otherwise set next numerical response to "wish for a spanking";
@@ -257,7 +257,7 @@ To compute djinn wishing of (M - a monster):
 			BustUp 1;
 			now ok is 1;
 			say "You now have [BreastDesc]!";
-	otherwise if CNR is "wish for less lewd clothing":
+	otherwise if CNR is "wish for a less humiliating outfit":
 		say "[BigNameDesc of M] unfolds [his of M] folded arms and waves them at your body.[line break][speech style of M]'How lewd your appearance becomes will depend on how much care you take.'[roman type][line break]";
 		PinkWardrobeUnclash purple rubber bodysuit;
 		summon purple rubber bodysuit cursed with quest;
@@ -950,7 +950,7 @@ To decide which number is the dominationtype of (M - djinn) using (F - a fuckhol
 
 To ride dominate (M - djinn):
 	let F be player-fucker;
-	say "You wait until the last moment before closing the lamp, and demand a wish as a reward for saving [him of M]. [big he of M] agrees, cocking [his of M] eyebrow as you consider how to phrase it.[line break][variable custom style]'I wish for a ride of your [DickDesc of M], no wait, give me THREE wishes.'[roman type][line break][line break][speech style of M]'Hmm... granted, but you've already used your first wish, and you cannot wish for more wishes.'[roman type][line break][BigNameDesc of M] waves [his of M] hands, and a cloud of smoke envelops you! A moment later, you find yourself in bed with a tall, dark-skinned [man of M] with the perfectly sculpted body of an Olympian [if M is presenting as male]god. [otherwise]goddess. [end if]You throw [him of M] a playful wink as [he of M] pulls you into [his of M] lap, reaching for [his of M] [DickDesc of M]... only to realise you're wearing a straitjacket![line break][variable custom style]'What the hell?! I never wished for this!'[roman type][line break][BigNameDesc of M] blinks.[line break][speech style of M]'Well, if you didn't want it, you should have mentioned it. How was I supposed to know?'[roman type][line break][line break][variable custom style]'UGH, then I wish I was naked.'[line break][line break][speech style of M]'Granted!'[roman type][line break]The straitjacket disappears in a puff of smoke, leaving you completely naked. You glare at [him of M] as you reach for [his of M] cock once again and begin to stroke. A moment passes.[line break][variable custom style]'Will you please get hard already?'[line break][line break][speech style of M]'If that is your wish.'[roman type][line break]Do you want to use your wish? It could save you a lot of trouble...";
+	say "You wait until the last moment before closing the lamp, and demand a wish as a reward for saving [him of M]. [big he of M] agrees, cocking [his of M] eyebrow as you consider how to phrase it.[line break][variable custom style]'I wish for a ride of your [DickDesc of M], no wait, give me THREE wishes.'[roman type][line break][line break][speech style of M]'Hmm... granted, but you've already used your first wish, and you cannot wish for more wishes.'[roman type][line break][BigNameDesc of M] waves [his of M] hands, and a cloud of smoke envelops you! A moment later, you find yourself in bed with a tall, dark-skinned [man of M] with the perfectly sculpted body of an Olympian [if M is presenting as male]god. [otherwise]goddess. [end if]You throw [him of M] a playful wink as [he of M] pulls you into [his of M] lap, reaching for [his of M] [DickDesc of M]... only to realise you're wearing a straitjacket![line break][variable custom style]'What the hell?! I never wished for this!'[roman type][line break][BigNameDesc of M] blinks.[line break][speech style of M]'Well, if you didn't want it, you should have mentioned it. How was I supposed to know?'[roman type][line break][line break][variable custom style]'UGH, then I wish I was naked.'[line break][line break][speech style of M]'Granted!'[roman type][line break]The straitjacket disappears in a puff of smoke, leaving you completely naked. You glare at [him of M] as you reach for [his of M] cock once again and begin to stroke. A moment passes.[line break][variable custom style]'Will you please get hard already?'[line break][line break][speech style of M]'If that is your wish.'[roman type][line break]Do you want to use your wish? You'll probably have to embarass yourself if you don't...";
 	if the player is consenting:
 		say "[line break][variable custom style]'I wish your cock was hard.'[line break][line break][speech style of M]'Granted!'[roman type][line break]A puff of smoke later, [his of M] [DickDesc of M] surges to full hardness, twitching gently as you guide it into your needy [variable F]. ";
 		now M is penetrating F;

@@ -112,17 +112,26 @@ To set up (M - a mindless acolyte):
 	if doomed is 5:
 		now M is unleashed;
 	otherwise:
-		now M is guarding;
+		now M is unconcerned;
 	now M is in Mansion23;
 	now the health of M is the maxhealth of M.
 
 To compute monstermotion of (M - a mindless acolyte):
-	if M is unleashed, compute room leaving of M.
+	if M is unleashed:
+		compute room leaving of M;
+	otherwise if M is not in Mansion23:
+		let D be the best route from the location of M to Mansion23 through placed rooms;
+		if D is a direction:
+			try M going D;
+		otherwise if M is not in the location of the player:
+			now M is in Mansion23.
 
 To compute (M - an acolyte) seeking (D - a direction):
 	if M is unleashed:
 		blockable move M to D;
-		compute monstermotion reactions of M.
+		compute monstermotion reactions of M;
+	otherwise if M is unconcerned:
+		compute monstermotion of M.
 
 To compute combatProvoked of (M - a mindless acolyte):
 	do nothing. [The deep one comes to defend her instead of her needing to break from her ritual.]
@@ -185,6 +194,10 @@ To say MonsterOfferAcceptFlav of (M - an acolyte) to (T - a thing):
 		say "[BigNameDesc of M] nods.[line break][speech style of M]'This pleases [Azathot].'[roman type][line break]";
 	otherwise:
 		say "[BigNameDesc of M] turns [his of M] full attention to [NameDesc of T], completely ignoring you for now!".
+
+To compute disgusting spit reaction of (M - an acolyte):
+	say "[BigNameDesc of M] shakes [his of M] head with disappointment.[line break][speech style of M]'When you receive the gift of bodily fluids, you should swallow it gladly, and give thanks.'[roman type][line break][if the urine volume of face > 0][strongHumiliateReflect][otherwise][moderateHumiliateReflect][end if]";
+	FavourDown M with consequences.
 
 Part 2 - Perception
 

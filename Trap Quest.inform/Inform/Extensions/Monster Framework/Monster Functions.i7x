@@ -58,9 +58,9 @@ To satisfy (M - a monster) for (N - a number) seconds:
 
 To say SatisfiedFlav of (M - a monster):
 	if M is in the location of the player and M is not dying:
-		let U be 0;
-		if M is intelligent and M is unfriendly, now U is 1; [This check can cause a line break]
-		say "[BigNameDesc of M] seems [if U is 1]satisfied, and loses[otherwise]to lose[end if] interest.".
+		let U be false;
+		if M is intelligent and M is unfriendly, now U is true; [This check can cause a line break]
+		say "[BigNameDesc of M] seems [if U is true]satisfied, and loses[otherwise]to lose[end if] interest.".
 
 Part - Destroying
 

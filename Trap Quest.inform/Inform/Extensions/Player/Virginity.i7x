@@ -146,7 +146,7 @@ The virginbonus pussy slut rule is listed in the pussy slut eligibility rules.
 Part - Virgin Punish (Sissification)
 
 Definition: yourself is a sissy:
-	if the player is gendered male and (the class of the player is sissyclass or the number of worn sissifying clothing > 1), decide yes;
+	if the player is gendered male and (the class of the player is sissyclass or the number of worn sissifying wearthings > 1), decide yes;
 	decide no.
 
 To virginpunish:
@@ -156,7 +156,7 @@ To virginpunish:
 			say VirginFlav;
 			say "[bold type]As if reacting to your feelings, you suddenly feel a [ShortDesc of S] appear on you![line break][variable custom style][one of]Uh-oh...[or]This is making me feel like a pathetic [sissy slut]...[or]Even more [sissy] clothing?![stopping][roman type][line break]";
 			summon S cursed with quest;
-			now the raw-magic-modifier of S is the number of worn sissifying clothing - 2;
+			now the raw-magic-modifier of S is the number of worn sissifying wearthings - 2;
 			announce sissification;
 		otherwise if the mystical size of penis > min penis size:
 			say VirginFlav;

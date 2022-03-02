@@ -17,7 +17,6 @@ To decide which number is the initial armour of (C - a negligee):
 
 Definition: a negligee is end of transformation chain: decide yes.
 Definition: a negligee is sissifying: decide yes.
-Definition: a negligee is black themed: decide yes.
 
 To set up influence of (C - a negligee):
 	set up sex-based influence of C.
@@ -33,7 +32,7 @@ backless negligee is a negligee. The text-shortcut of backless negligee is "bng"
 
 The printed name of backless negligee is "[clothing-title-before]backless negligee[clothing-title-after]".
 
-Figure of backless negligee is the file "Items/Clothes/Upper/Exposing/Negligees/backlessnegligee1.png".
+Figure of backless negligee is the file "Items/Clothes/Upper/Exposing/Negligees/negligee2.png".
 
 To decide which figure-name is clothing-image of (C - backless negligee):
 	decide on figure of backless negligee.
@@ -42,9 +41,10 @@ To say MediumDesc of (C - backless negligee):
 	say "sheer backless negligee".
 
 To say ClothingDesc of (C - backless negligee):
-	say "This sheer naughty lingerie dress covers the front of the wearer but just has minimalist straps at the back.".
+	say "This sheer purple lingerie dress covers the front of the wearer but just has minimalist straps at the back.".
 
 Definition: backless negligee is layer-concealing: decide no.
+Definition: backless negligee is purple themed: decide yes.
 
 Part 2 - Lacy Negligee
 
@@ -58,7 +58,9 @@ To decide which figure-name is clothing-image of (C - lacy negligee):
 	decide on figure of lacy negligee.
 
 To say ClothingDesc of (C - lacy negligee):
-	say "This sheer naughty lingerie dress is made up of sheer lacy straps that don't even go down far enough to properly cover your crotch, and even if they did, they have huge gaps between them. Your nipples are covered by straps but only just.".
+	say "This sheer black lingerie dress is made up of sheer lacy straps that don't even go down far enough to properly cover your crotch, and even if they did, they have huge gaps between them. Your nipples are covered by straps but only just.".
+
+Definition: lacy negligee is black themed: decide yes.
 
 Part 3 - Floral Negligee
 

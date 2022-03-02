@@ -571,31 +571,37 @@ To BreastsSensitivityUp (X - a number):
 	if the raw sensitivity of breasts < 30, say "Your breasts feel [if X > 2]much [otherwise if X is 2]significantly [end if]more [if the sensitivity of breasts > 10]over[end if]sensitive.";
 	increase the raw sensitivity of breasts by X.
 
-Book - BBC Addiction
+Book - bbc Addiction
 
-Part 1 - Calculate BBC Addiction
+Part 1 - Calculate bbc Addiction
 
-To decide which number is the BBC Addiction of the player:
+To decide which number is the bbc addiction of the player:
 	decide on previous-bbc-addiction.
 
-To decide which number is the calculated BBC Addiction of the player:
-	let S be the raw BBC Addiction of the player;
+To decide which number is the calculated bbc addiction of the player:
+	let S be the raw bbc addiction of the player;
 	repeat with C running through worn wearthings:
-		increase S by the BBC-sex-addiction-influence of C;
+		increase S by the bbc-addiction-influence of C;
 	if S > 10, decide on 10;
 	if S < 1, decide on 1;
 	decide on S.
 
-To decide which number is the BBC-sex-addiction-influence of (C - a wearthing):
+To decide which number is the bbc-addiction-influence of (C - a wearthing):
 	if C is interracial themed, decide on 1;
 	decide on 0.
+
+To decide which number is the bbc-addiction-influence of (C - a clothing):
+	let S be 0;
+	if C is interracial themed, now S is 1;
+	if C is bbc-addiction-influencing, decrease S by the magic-modifier of C; [Positive magic = subtracted sex addiction]
+	decide on S.
 
 Definition: yourself is gagging for black cock:
 	if (the player is very horny and the bbc addiction of the player > 4) or (the player is horny and the bbc addiction of the player > 6) or (the player is a bit horny and the bbc addiction of the player > 8): [It's much faster for the CPU to check this first, rather than do all the stuff to check whether an NPC is unfriendly]
 		if there is a dark skinned male dangerous monster in the location of the player, decide yes;
 	decide no.
 
-A gagging for cock rule (this is the BBC addicted players need black cock rule):
+A gagging for cock rule (this is the bbc addicted players need black cock rule):
 	if the player is gagging for black cock, rule succeeds.
 
 [!<YourselfIsQueenOfSpades>+
@@ -607,42 +613,42 @@ Definition: yourself is queen of spades:
 	if interracial fetish is 1 and the number of worn interracial themed currently visible wearthings > 1, decide yes;
 	decide no.
 
-Part 2 - Modify BBC Addiction
+Part 2 - Modify bbc Addiction
 
-The player has a number called raw BBC Addiction. The raw BBC Addiction of the player is usually 1. [Min 1 Max 10]
+The player has a number called raw bbc Addiction. The raw bbc Addiction of the player is usually 1. [Min 1 Max 10]
 
-To BBCAddictUp (X - a number):
+To bbcAddictUp (X - a number):
 	if interracial fetish is 1:
-		let S be the raw BBC addiction of the player;
-		SilentlyBBCAddictUp X;
-		now S is the raw BBC addiction of the player - S;
+		let S be the raw bbc addiction of the player;
+		SilentlybbcAddictUp X;
+		now S is the raw bbc addiction of the player - S;
 		if S > 0:
-			if the calculated BBC addiction of the player > 3, say "You feel [if S > 2]much [otherwise if S is 2]significantly [end if]more [if the calculated BBC addiction of the player > 6]addicted to[otherwise]interested in[end if] [BlackCock].";
+			if the calculated bbc addiction of the player > 3, say "You feel [if S > 2]much [otherwise if S is 2]significantly [end if]more [if the calculated bbc addiction of the player > 6]addicted to[otherwise]interested in[end if] [BlackCock].";
 			otherwise say "You feel your racial preference for white people becoming less strong.".
 
-To SilentlyBBCAddictUp (X - a number):
+To SilentlybbcAddictUp (X - a number):
 	while X > 0:
 		decrease X by 1;
-		if the raw BBC Addiction of the player < 10, increase the raw BBC Addiction of the player by 1.
+		if the raw bbc Addiction of the player < 10, increase the raw bbc Addiction of the player by 1.
 
-To BBCAddictDown (X - a number):
-	let S be the raw BBC addiction of the player;
-	SilentlyBBCAddictDown X;
-	decrease S by the raw BBC addiction of the player;
+To bbcAddictDown (X - a number):
+	let S be the raw bbc addiction of the player;
+	SilentlybbcAddictDown X;
+	decrease S by the raw bbc addiction of the player;
 	if S > 0:
-		if the calculated BBC addiction of the player > 3, say "You feel [if S > 2]much [otherwise if S is 2]significantly [end if]less [if the calculated BBC addiction of the player > 6]addicted to[otherwise]interested in[end if] [BlackCock].";
+		if the calculated bbc addiction of the player > 3, say "You feel [if S > 2]much [otherwise if S is 2]significantly [end if]less [if the calculated bbc addiction of the player > 6]addicted to[otherwise]interested in[end if] [BlackCock].";
 		otherwise say "You feel your racial preference for white people returning.".
 
-To SilentlyBBCAddictDown (X - a number):
+To SilentlybbcAddictDown (X - a number):
 	if diaper quest is 1:
 		SilentlySexAddictDown X;
 	otherwise:
 		while X > 0:
 			decrease X by 1;
-			SilentlyBBCAddictDown.
+			SilentlybbcAddictDown.
 
-To SilentlyBBCAddictDown:
-	if the raw BBC addiction of the player > 1, decrease the raw BBC addiction of the player by 1.
+To SilentlybbcAddictDown:
+	if the raw bbc addiction of the player > 1, decrease the raw bbc addiction of the player by 1.
 
 Book - Urine Taste Addiction
 

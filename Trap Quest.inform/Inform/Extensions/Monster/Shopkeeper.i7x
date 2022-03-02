@@ -1549,6 +1549,19 @@ To set up shop state of (C - a clothing):
 	set up unique shop state of C.
 To set up unique shop state of (C - a clothing):
 	do nothing.
+To set up unique shop state of (C - a sex toy):
+	if a random number between 1 and 2 is 1:
+		let N be a random number between 1 and 3;
+		if N is 1, now C is endurance;
+		if N is 2, now C is speed;
+		if N is 3:
+			if diaper quest is 0, now C is refreshment;
+			otherwise now C is maturity;
+	if C is blandness or a random number between 1 and 2 is 1:
+		set up stat-based influence of C;
+		now the raw-magic-modifier of C is a random number between 1 and 2;
+		increase the raw-magic-modifier of C by a random number between 0 and 1;
+		increase the raw-magic-modifier of C by a random number between 0 and 1.
 
 A time based rule (this is the shop cycling rule):[TODO: if the player is in the room, describe the shopkeeper restocking everything]
 	if the remainder after dividing time-earnings by 995 < time-seconds:

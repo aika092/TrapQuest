@@ -1,6 +1,6 @@
 Cat Tail Plug by Sex Toys begins here.
 
-cat tail plug is a balancing tail plug. cat tail plug is unique. The printed name of cat tail plug is "[clothing-title-before][PlugSize size of item described] cat tail butt plug[clothing-title-after]". Figure of cat tail plug is the file "Items/Accessories/Toys/catplug1.jpg". The text-shortcut of cat tail plug is "ctp".
+cat tail plug is a balancing tail plug. cat tail plug is unique. The printed name of cat tail plug is "[clothing-title-before][PlugSize size of item described] cat tail butt plug[clothing-title-after]". Figure of cat tail plug is the file "Items/Accessories/Toys/catplug1.png". The text-shortcut of cat tail plug is "ctp".
 
 Definition: cat tail plug is class-relevant:
 	if the class of the player is catgirl, decide yes;

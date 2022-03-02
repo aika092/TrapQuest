@@ -148,6 +148,13 @@ To compute bladder growth:
 		bladderup 1 + xavier-belt-link;
 		decrease the delayed bladder of the player by 1.
 
+[Don't check time period]
+To compute guaranteed bladder growth:
+	check full wetting;
+	if the delayed bladder of the player > 0:
+		bladderup 1 + xavier-belt-link;
+		decrease the delayed bladder of the player by 1.
+
 player-hunger is a number that varies.
 
 hunger-flav-said is a number that varies.

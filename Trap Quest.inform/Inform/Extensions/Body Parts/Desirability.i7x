@@ -537,6 +537,9 @@ This is the core seduction rule:
 			if the boredom of M < 470, compute seduction witness reaction of M. [NPCs that just climaxed aren't going to be unimpressed with the player. This 30s window gives them a chance to wander away]
 
 To compute seduction choice of (M - a monster):
+	compute default seduction choice of M.
+
+To compute default seduction choice of (M - a monster):
 	let succsucc be 0;
 	if the class of the player is succubus and M is not soul-stolen and M is not infernal, now succsucc is 1;
 	say "What do you want to do to [NameDesc of M]?";
@@ -565,8 +568,8 @@ To compute seduction choice of (M - a monster):
 				set next numerical response to "put a condom on [his of M] [DickDesc of M]";
 			otherwise if M is intelligent:
 				set next numerical response to "ask [him of M] to wear a condom";
+	if the seductions-performed of hips is 0 and M is seduce-satisfiable, set next numerical response to "grind against [his of M] crotch";
 	if the player is prone:
-		if the seductions-performed of hips is 0 and M is seduce-satisfiable, set next numerical response to "grind against [his of M] crotch";
 		if M is male and the largeness of breasts >= 5 and the seductions-performed of breasts is 0 and the number of things penetrating breasts is 0 and M is seduce-satisfiable:
 			let T be a random top level titfuck protection clothing;
 			unless T is clothing, set next numerical response to "massage [his of M] [DickDesc of M] with your [ShortDesc of breasts]";
@@ -837,7 +840,14 @@ To compute FirstTurnSeduceMasturbateAnnounce of (M - a monster):
 
 To compute SeductionMasturbate of (M - a monster):
 	increase the seductions-performed of arms by 1;
-	if a random number between 7 and 20 <= the sex addiction of the player and the seductions-performed of arms is 1:
+	let G be the girth of M;
+	let R be a random number between 0 and 2;
+	if the seductions-performed of arms > 1, now G is (the girth of M + 1) / 2;
+	if G > 4:
+		say "It's difficult to properly pump [his of M] [DickDesc of M][if the seductions-performed of arms is 1], even with both hands[otherwise]with one hand[end if], because it's so thick[one of] compared to the size of your palm[or][stopping]!";
+		increase the blue-balls of M by a random number between 1 and 2;
+		now R is a random number between 0 and 4;
+	otherwise if a random number between 7 and 20 <= the sex addiction of the player and the seductions-performed of arms is 1:
 		say "You run both hands up and down [his of M] [if M is male][LongDickDesc of M][otherwise]thighs, pussy and clit[end if] while staring at [him of M] with a naughty expression. [moderateHumiliateReflect]";
 		increase the blue-balls of M by 1;
 		increase the seductions-performed of arms by 1;
@@ -847,11 +857,10 @@ To compute SeductionMasturbate of (M - a monster):
 	otherwise:
 		say "You hesitantly tickle [his of M] [if M is male]balls and shaft[otherwise]thigh and labia[end if] with one hand. [slightHumiliateReflect]";
 		increase the blue-balls of M by 2;
-	let R be a random number between 0 and 2;
 	if the player is upright:
 		say "Your upright position makes this act a bit more awkward and fumbling.";
-		now R is a random number between 0 and 4;
-	if a random number between 1 and the sex-length of M > a random number between 0 and 2, compute StrongSexProgress of M;
+		if R is 0 and a random number between 1 and 2 is 1, now R is a random number between 3 and 4;
+	if a random number between 1 and the sex-length of M > R, compute StrongSexProgress of M;
 	otherwise compute StrongSexFalter of M.
 
 To compute SeductionMasturbateClimax of (M - a monster):
@@ -860,8 +869,7 @@ To compute SeductionMasturbateClimax of (M - a monster):
 		say "[big his of M] load is spilled onto the floor.";
 		SemenPuddleUp the semen load of M;
 		if M is human and M is not dark skinned and the bbc addiction of the player > 6, say "[variable custom style]Hmph! White [men of shopkeeper].[roman type][line break]";
-	orgasm M;
-	satisfy M.
+	orgasm satisfy M.
 
 To compute FirstTurnSeduceGrindAnnounce of (M - a monster):
 	if the player is able to speak:

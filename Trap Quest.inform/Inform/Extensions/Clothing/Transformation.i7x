@@ -106,7 +106,9 @@ Definition: a clothing is disintegration-protected:
 	decide no. [Some stuff doesn't get transformed while it has nothing to turn into]
 
 Definition: a clothing is class-transformation-protected: [Some stuff doesn't get transformed while it has no other class-relevant items to transform into.]
-	if it is class-relevant, decide yes;
+	if it is class-relevant:
+		[if the unique-upgrade-target of it is class-relevant clothing, decide no;] [shouldn't be necessary - 'update upgrade target' should handle this logic]
+		decide yes;
 	decide no.
 
 Definition: a clothing is transformation-theme-blockable:

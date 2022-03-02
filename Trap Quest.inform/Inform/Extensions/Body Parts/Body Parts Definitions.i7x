@@ -114,6 +114,8 @@ To decide which number is the lewdly exposed outrage of (F - a fuckhole):
 	if F is asshole and the semen volume of belly > 0, increase O by 2;
 	if F is vagina and the semen volume of vagina > 0, increase O by 2;
 	increase O by the openness of F / 5;
+	if F is vagina, increase O by the labia plumpness of F;
+	if O > 20, decide on 20;
 	decide on O.
 
 Definition: a fuckhole (called F) is at least partially lewdly exposed:

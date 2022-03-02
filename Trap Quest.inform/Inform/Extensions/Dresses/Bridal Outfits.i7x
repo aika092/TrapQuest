@@ -51,6 +51,9 @@ To compute virginity-loss of (C - long bridal dress):
 		if C is knee-length, transform C into sexy bridal dress;
 		otherwise transform C into slutty bridal dress.
 
+To compute periodic effect of (C - long bridal dress):
+	if the vaginalvirgin of the player is 0, compute virginity-loss of C. [no escaping it by losing virginity then re-wearing the clothing]
+
 This is the bridal dress pussy slut rule:
 	if long bridal dress is worn, decrease the desirability of vagina by 4.
 The bridal dress pussy slut rule is listed in the pussy slut eligibility rules.
@@ -80,7 +83,7 @@ To say ClothingDesc of (C - sexy bridal dress):
 To decide which number is the initial outrage of (C - sexy bridal dress):
 	decide on 6.
 
-slutty bridal dress is a bridal dress. slutty bridal dress is unskirted. slutty bridal dress is crotch-intact. The text-shortcut of slutty bridal dress is "stbd".
+slutty bridal dress is a bridal dress. slutty bridal dress is unskirted. slutty bridal dress is crotch-intact. slutty bridal dress is bottom-exclusive. The text-shortcut of slutty bridal dress is "stbd".
 
 Figure of slutty bridal dress is the file "Items/Clothes/Upper/Special/Bridal/bridaldress3.png".
 

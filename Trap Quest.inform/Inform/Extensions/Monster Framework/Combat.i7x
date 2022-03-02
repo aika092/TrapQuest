@@ -187,7 +187,7 @@ To orgasm (M - a monster):
 		now vm is recording-disgrace;[since sex is probably over by now, we need to set up the recorded event right away.]
 		let T be the substituted form of "making [NameDesc of M] cum";
 		now the video-event of vm is T;[note that the video-event always needs to be a present participle]
-	if there is a worn notebook or (the class of the player is schoolgirl and there is a notebook in the location of the player), compute studying 0 of M; [magical schoolgirls can have the notebook temporarily disarmed by tentacle monsters. the intention is that they should still get to study it]
+	if notebook is worn or (the class of the player is schoolgirl and notebook is in the location of the player), compute studying 0 of M; [magical schoolgirls can have the notebook temporarily disarmed by tentacle monsters. the intention is that they should still get to study it]
 	if there is a summoning portal in the location of the player:
 		let S be a random summoning portal in the location of the player;
 		say "You feel a tingle near the back of your neck as [NameDesc of S][']s pressure intensifies.";
@@ -198,7 +198,7 @@ To compute refractoryReset of (M - a monster):
 	if M is intelligent:
 		now the refractory-period of M is the refractory-time of M;
 		if there is a worn bouquet and the charge of floral bouquet > 2, increase the refractory-period of M by (the refractory-time of M + 4);
-		if there is a worn enhancing book of anal and M is penetrating asshole:
+		if book of anal is worn and book of anal is enhancing and M is penetrating asshole:
 			FavourUp M;
 			increase the refractory-period of M by the intelligence of the player.
 
@@ -1023,12 +1023,12 @@ To compute (M - a monster) attacking (C - a clothing): [This should change for a
 		if debuginfo > 0, say ClothingAttackDebug of M on C with R;
 		if the chosen-orifice of M is breasts and C is actually top-displacable:
 			compute M topdisplacing C;
+		otherwise if R > the defence of C - 3 and C is displacable and a random number between -1 and unlucky <= 0: [NPCs rarely displace clothing when unlucky is enabled]
+			compute M displacing C;
+		otherwise if R > the defence of C - 2 and C is rippable and a random number between -2 and unlucky <= 0: [NPCs less commonly rip clothing when unlucky is enabled]
+			compute M ripping C;
 		otherwise if R > the defence of C and (C is tearable or the damage of C >= 5):
 			compute M destroying C;
-		otherwise if R > the defence of C - 2 and C is rippable:
-			compute M ripping C;
-		otherwise if R > the defence of C - 4 and C is displacable and a random number between -1 and unlucky <= 0: [NPCs rarely displace clothing when unlucky is enabled]
-			compute M displacing C;
 		otherwise:
 			say WeakenFlav of M on C;
 			damage C.
@@ -1787,6 +1787,7 @@ To compute (M - a monster) striking (B - arms):
 
 To compute (M - a monster) striking (B - thighs):
 	let P be a random worn leg covering clothing;
+	if armadillo heels is worn, now P is armadillo heels;
 	if P is clothing, compute P protecting B from M;
 	otherwise compute M hurting B.
 

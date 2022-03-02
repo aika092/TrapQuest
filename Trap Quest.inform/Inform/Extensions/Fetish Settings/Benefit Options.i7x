@@ -5,7 +5,7 @@ title	subtable	description	toggle
 "[roman type]Confirm Choices (shortcut: press Q)"	--	--	quit rule
 "Reset Choices"	--	--	reset rule
 "CHOOSE A BACKGROUND (5 points) [if background-selected is 0]not [otherwise][bold type][end if]chosen[roman type]"	Table of Background Options	--	--
-"CHOOSE A SECRET (7 points) [if tattoo-fetish + piercing-fetish + humiliation-fetish + artificial-fetish <= 0]not [otherwise][bold type][end if]chosen[roman type]"	Table of Secret Options	--	--
+"CHOOSE SECRETS (6/5/4[if artificial enhancements fetish is 1]/3[end if] points) - [if total-chosen-secrets > 0][bold type][end if][total-chosen-secrets] chosen[roman type]"	Table of Secret Options	--	--
 "CHOOSE BODY SHAPE LIMITATIONS"	Table of Body Limit Options	--	--
 "Extra Strength: [bonus strength] ([bonus strength points] points used. [bonus strength cost].)"	--	--	bonus strength rule
 "Extra Dexterity: [bonus dexterity] ([bonus dexterity points] points used. [bonus dexterity cost].)"	--	--	bonus dexterity rule

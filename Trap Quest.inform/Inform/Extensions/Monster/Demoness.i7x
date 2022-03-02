@@ -1535,7 +1535,7 @@ Definition: a demoness is taxable:
 
 [If the player has magic power, they can make the demoness stick around]
 To say DefeatBrink of (M - a demoness):
-	say "You sense [NameDesc of M]'s essence dispersing, no doubt returning to [his of M] home dimension. If you use up some of your own magic, you might be able to stabilise it...";
+	say "Thanks to what you learned from [NameDesc of witch], you can sense [NameDesc of M]'s essence beginning to disperse. If you use up some of your magic, you might be able to prevent [him of M] from being banished...";
 
 To say BanishDesc of (M - a demoness):
 	say "Just let [him of M] go.".

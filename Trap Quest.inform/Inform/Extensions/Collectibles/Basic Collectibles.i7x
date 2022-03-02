@@ -46,6 +46,20 @@ To oil (C - a clothing) with (S - an ectoplasm):
 	destroy S;
 	now the magic-type of C is possession.
 
+Part - ID Card
+
+id-card is a collectible. The printed name of id-card is "[TQlink of item described]ID card[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of id-card is "idc". Understand "id", "card" as id-card.
+
+Figure of id-card is the file "Items/Collectibles/idcard1.png".
+Figure of female id-card is the file "Items/Collectibles/idcard2.png".
+To decide which figure-name is the examine-image of (E - id-card):
+	if lady fetish is 1, decide on figure of female id-card;
+	decide on figure of id-card.
+
+To say ExamineDesc of (B - id-card):
+	say "The mechanic's id-card.".
+
+
 Part - Infernal Gem
 
 infernal gem is a collectible. The printed name of infernal gem is "[TQlink of item described]infernal gem[shortcut-desc][TQxlink of item described][verb-desc of item described]". Figure of infernal gem is the file "Items/Collectibles/gem1.jpg". The tradability of infernal gem is 6.
@@ -214,6 +228,9 @@ To decide which number is the outrage of (C - pack of playing cards):
 To decide which number is the crafting key of (C - pack of playing cards):
 	decide on 31.
 
+To decide which number is the bartering value of (T - pack of playing cards) for (M - orc):
+	decide on 10.
+
 Definition: pack of playing cards is immune to change: decide yes.
 Definition: pack of playing cards is party themed: decide yes.
 Definition: pack of playing cards is playing card themed: decide yes.
@@ -330,8 +347,9 @@ To decide which number is the bartering value of (T - soul gem) for (M - witch):
 	decide on 3.
 
 To compute resolution of (M - witch) taking (T - soul gem):
-	if M is unfriendly, FavourUp M by the bartering value of T for M;
-	otherwise FavourUp M by (the bartering value of T for M) / 2;
+	let N be the bartering value of T for M;
+	if M is unfriendly, FavourUp M by N;
+	otherwise FavourUp M by N / 2;
 	say OfferThanksFlav of M for T;
 	compute offer reward of M for T;
 	bore M.

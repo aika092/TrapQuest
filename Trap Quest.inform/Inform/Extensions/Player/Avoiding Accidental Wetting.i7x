@@ -28,7 +28,7 @@ To compute wetting failure:
 	now diaper bonus is 0;
 	if the raw diaper addiction of the player > 6, now the raw diaper addiction of the player is 6;
 	now wetting-valued is -1;
-	if diaper quest is 1 and failed potty training tattoo is off-stage and background-pure is 1:
+	if diaper quest is 1 and failed potty training tattoo is off-stage and background-pure is 1 and there is a worn tattoo:
 		summon failed potty training tattoo;
 		say "Ouch! You yelp as you feel a sharp, strong pain in your belly.";
 		try examining failed potty training tattoo;

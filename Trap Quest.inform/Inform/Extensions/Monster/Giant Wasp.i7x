@@ -9,7 +9,6 @@ Definition: a giant wasp is willing to do vaginal:
 	if the pregnancy of the player <= 0 or the pregnancy of the player is 3, decide yes;
 	decide no.
 
-
 To say ShortDesc of (M - a giant wasp):
 	say "wasp".
 
@@ -43,7 +42,7 @@ To decide which figure-name is the vaginal-sex-monster-image of (M - a giant was
 
 A mundane-wasp is a kind of giant wasp.
 
-[The OG wasp]
+[All wasps are "descended" from this wasp, so the player can only see the special variants when this wasp has babies.]
 buzzing giant wasp is a mundane-wasp. The text-shortcut of buzzing giant wasp is "bwsp".
 To say MediumDesc of (M - buzzing giant wasp):
 	say "buzzing wasp".

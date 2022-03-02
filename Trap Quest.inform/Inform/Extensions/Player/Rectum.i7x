@@ -169,6 +169,7 @@ To check real messing:
 	check real messing with reason "".
 
 hasMessedNow is initially false.
+automaticallyHolding is initially false.
 
 [If we have any text T that means that something has caused the player to flinch / be surprised / etc. and they lose the opportunity to try and hold it in]
 To check real messing with reason (T - a text):
@@ -202,7 +203,8 @@ To check real messing with reason (T - a text):
 		if shouldMessNow is 1:
 			if canMessNow is 1 and messAware > 0:
 				if messAware > 1 and T is "", say "[bold type]Your body is trying to go number two![roman type] Do you want to try and hold it in? ";
-				if messAware > 1 and (T is not "" or the player is reverse bimbo consenting):
+				if messAware > 1 and (automaticallyHolding is true or T is not "" or the player is reverse bimbo consenting):
+					now automaticallyHolding is false;
 					if willMessNow is 1:
 						if T is "":
 							if the incontinence of the player + suppository + desperationCount < 5, say "You try to hold it in but you start to cramp, and the pain is too much! ";
@@ -230,8 +232,8 @@ To check real messing with reason (T - a text):
 							compute messing;
 					otherwise if T is "":
 						say "You manage to hold it in for now.";
-						if the implant of pledge-lesson-mess is 1:
-							say "Magic ripples through your belly as the curse you got from [NameDesc of lesson-teacher of pledge-lesson] activates. Your belly bulges as the bulk inside grows to massive proportions!";
+						if the implant of pledge-lesson-mess is 1 and the player is not in a predicament room:
+							say "Magic ripples through your belly as the magic pledge you've just broken activates. Your belly bulges as the bulk inside grows to massive proportions!";
 							increase rectum by 20;
 							let K be a random worn uncursed knickers;
 							if K is knickers, fully curse K;

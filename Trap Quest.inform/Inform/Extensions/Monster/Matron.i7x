@@ -411,34 +411,7 @@ To say DQChangeResistReactionFlav of (M - matron):
 	say "[BigNameDesc of M] tuts.[line break][speech style of M]'[one of]You can kick and fuss if you must but it won't do you a bit of good. You are getting a diaper change, like it or not!'[or]Now young [if the player is presenting as female]lady[otherwise]man[end if] I don't take kindly to little ones who throw fits! Hold still for [daddytitle of M] or I'll make you wish I stopped at one diaper!'[or]OH, we've got some energy now do we? Well I can correct that AFTER, okay sweetie?'[in random order][roman type][line break]".
 
 To compute unique diaper change effect of (M - matron):
-	[increase the times-changed of M by 1;
-		if the times-changed of M > 2 and (M is guardian or M is ally) and the player is incontinent and the potty-training of M is 0:
-			if the potty-training-asked of M is 0:
-				say "[speech style of M]'You've been such a good little [if the player is presenting as female]baby girl[otherwise]sissy baby[end if] for me, how would you like to try being potty trained?' [roman type]";
-				if the player is consenting and the diaper addiction of the player < 17:
-					say "[speech style of M]'Wonderful!'[roman type][line break]The matron pulls out a potty training chart, writing '[if the player is presenting as male]Sissy[end if] Princess Pottypants ([NameBimbo])' in the name section before pinning it to the wall.[line break][speech style of M]'You know, you're the only pathetic diaper [if diaper messing >= 3]messing [otherwise]wetting [end if][if the player is presenting as male]sissy [otherwise]girl [end if]who has been good enough to earn this!'[roman type][line break][big he of M] adds with a smile, before pulling out a giant, pink, plastic training potty, placing it below the chart.[line break][speech style of M]'Now, here are the rules. If you manage to use the potty 5 times in a row without having any accidents, you'll earn your way to training pants. If you manage to use the potty 10 times in a row without accidents after earning training pants, you'll get to wear big girl panties! However, if you have 10 accidents in a row after earning training pants, or 20 total, you'll be demoted back to diapers. Similarly, if you have 5 accidents in a row after earning big girl panties, or 10 total, you'll be demoted back to training pants. [if diaper messing >= 3]Messy accidents count as 2 for demotions. [end if]Good luck baby!'[roman type][line break]";
-					now the potty-training of M is 1;
-					now the potty-training-asked of M is 1;
-				otherwise if the player is consenting:
-					say "Even though your brain says yes, your diaper loving heart screams 'NO'! You instinctively yell[line break][second custom style]'No potty no potty!'[roman type][line break]over and over, jumping up and down, just like a child throwing a tantrum. The matron smiles, patting your fresh diaper.[line break][speech style of M]'Don't worry, don't worry, I understand baby. You can wet [if diaper messing >= 3]and mess [end if]your diapers as much as you like.[roman type][line break]";
-					now the potty-training-asked of M is 1;
-				otherwise:
-					say "[speech style of M]'Really? Well that's okay, if you want to keep wetting [if diaper messing >= 3]and messing [end if]your diapers, I'll always be here to change them for you.'[roman type][line break]";
-					now the potty-training-asked of M is 1;
-				otherwise if the potty-training-asked of M is 1:
-					say "[speech style of M]'My offer to start potty training you still stands, baby.'[roman type][line break]Do you accept [his of M] offer? ";
-					if the player is bimbo consenting:
-						if the diaper addiction of the player < 17:
-							say "[speech style of M]'Wonderful!'[roman type][line break]The matron pulls out a potty training chart, writing '[if the player is presenting as male]Sissy[end if] Princess Pottypants ([NameBimbo])' in the name section before pinning it to the wall.[line break][speech style of M]'You know, you're the only pathetic diaper [if diaper messing >= 3]messing[otherwise]wetting[end if] [if the player is presenting as male]sissy[otherwise]girl[end if] who has been good enough to earn this!'[roman type][line break][big he of M] adds with a smile, before pulling out a giant, pink, plastic training potty, placing it below the chart.[line break][speech style of M]'Now, here are the rules. If you manage to use the potty 5 times in a row without having any accidents, you'll earn your way to training pants. If you manage to use the potty 10 times in a row without accidents after earning training pants, you'll get to wear big girl panties! However, if you have 10 accidents in a row after earning training pants, or 20 total, you'll be demoted back to diapers. Similarly, if you have 5 accidents in a row after earning big girl panties, or 10 total, you'll be demoted back to training pants. [if diaper messing >= 3]Messy accidents count as 2 for demotions. [end if]Good luck baby!'[roman type][line break]";
-							now the potty-training of M is 1;
-							now the potty-training-asked of M is 1;
-						otherwise:
-							say "Even though your brain says yes, your diaper loving heart screams 'NO'! You instinctively yell[line break][second custom style]'No potty no potty!'[roman type][line break]over and over, jumping up and down, just like a child throwing a tantrum. The matron smiles, patting your fresh diaper.[line break][speech style of M]'Don't worry, don't worry, I understand baby. You can wet [if diaper messing >= 3]and mess [end if]your diapers as much as you like.[roman type][line break]";
-							now the potty-training-asked of M is 1;
-					otherwise:
-						say "[speech style of M]'Really? Well that's okay, if you want to keep wetting [if diaper messing >= 3]and messing [end if]your diapers, I'll always be here to change them for you.'[roman type][line break]";
-						now the potty-training-asked of M is 1;]
-	[say "[speech style of M]I have changed you [times-changed of M] times[roman type][line break]";][For testing purposes]
+	consider class time for M;
 	now M is not diaper-committed.
 
 This is the matron confiscates grown up items rule:
@@ -569,6 +542,24 @@ To say MasturbationStartFlav of (M - matron):
 Check going when matron is in the location of the player:
 	if matron is interested and matron is friendly:
 		deinterest matron. [This way the matron should always be ready to check your diaper.]
+
+To consider class time for (M - matron):
+	if armband is worn and class-time <= 0 and armband is not solid gold and M is in the location of the player:
+		say "[speech style of M]'Now, you're late for class! Hurry along now, poppet!'[roman type][line break]";
+		drag to Hotel40 by M;
+		say "[speech style of M]'Run along now, you little minx! [one of]And say hi to the [ShortDesc of headmistress] for me[or]Play nice with the other babies, now[in random order]!'[roman type][line break][BigNameDesc of M] pushes you through the portal!";
+		now forced-portal is school portal;
+		teleport via hotel portal.
+
+To say SatisfiedFlav of (M - matron):
+	if M is in the location of the player and M is not dying:
+		if debugmode is 1, say "Player is [unless armband is worn]not [end if]wearing armband; [unless class-time <= 0]not [end if]ready for class; [if armband is solid gold]not [end if]correctly ranked; [if the player is immobile]not [end if]mobile; [if the player is in danger]not [end if]out of combat (list of combative monsters: [list of combative monsters].";
+		if armband is worn and class-time <= 0 and armband is not solid gold and the player is not immobile and the player is not in danger:
+			consider class time for M;
+		otherwise:
+			let U be false;
+			if M is unfriendly, now U is true; [This check can cause a line break]
+			say "[BigNameDesc of M] seems [if U is true]satisfied, and loses[otherwise]to lose[end if] interest.".
 
 Section 1 - Damage
 

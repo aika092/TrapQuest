@@ -550,7 +550,6 @@ To OnlyPenisUp (X - a number):
 		SemenTasteAddictUp X;
 		now X is 0;
 	if bitch tattoo is worn, now X is X / 2;
-	if fast tg is 3, now X is 0;
 	if metal-cage is worn:
 		now X is 0;
 		say "Your [ShortDesc of metal-cage] is preventing your [player-penis] from getting any larger!";
@@ -592,6 +591,8 @@ To OnlyPenisUp (X - a number):
 				say "You feel your detached penis grow into "; [#LXorDD This is mainly to cover the possibility of it being detached and a flat disc, i.e. zero sized. I'm just being defensive]
 			otherwise if the player is possessing a penis:
 				say "You feel your penis grow into ";
+			otherwise if the player is not possessing a vagina:
+				say "You feel something growing out of your featureless barbie mound. It's ";
 			otherwise:
 				say "Suddenly, you feel something growing just above your [vagina]. It's ";
 			while X > 0:
@@ -638,7 +639,7 @@ To OnlyPenisDown (X - a number):
 			otherwise if the player is not possessing a penis and previous penis length > 0:
 				cutshow figure of body reaction 4 for penis;
 		if penis-flav is true:
-			if the player is male and previous penis length <= min penis size and fast tg is 3:
+			if the player is male and previous penis length <= min penis size and shrink tg is 4:
 				say DefaultSexChangeFlav;
 				SexChange the player;
 			otherwise if the size of penis < previous penis length:

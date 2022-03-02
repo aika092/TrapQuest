@@ -173,7 +173,7 @@ To penis orgasm shamefully:
 	if the player is upright, try kneeling.
 
 To punish shameful male orgasm:
-	if fast tg > 1 and the size of penis <= min penis size:
+	if shrink tg > 1 and the size of penis <= min penis size:
 		say DefaultSexChangeFlav;
 		say "The fact that this is happening as you shudder through yet another shameful orgasm [if the player is not a pervert]merely rubs salt in the wound[otherwise]makes the process feel immensely submissive and pleasurable[end if], as if confirming that you deserve this.";
 		sexchange the player;

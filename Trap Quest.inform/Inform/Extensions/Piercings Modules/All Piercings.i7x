@@ -36,6 +36,9 @@ Check taking off piercing:
 A module is a kind of piercing. A module has a number called module-charge. Understand "module" as a module.
 
 Definition: a module is eligible: decide no.
+Definition: a module is fetish appropriate:
+	if artificial enhancements fetish is 1, decide yes;
+	decide no.
 Definition: a module is discovered varied: decide no.
 To uniquely set up (M - a module):
 	now M is blessed.
@@ -45,17 +48,18 @@ To say ModuleFlav of (M - a module):
 To say ShortDesc of (M - a module):
 	say "module".
 
-Figure of module 1 is the file "Items/Accessories/Piercings/module1.jpg".
-Figure of module 2 is the file "Items/Accessories/Piercings/module2.jpg".
-Figure of module 3 is the file "Items/Accessories/Piercings/module3.jpg".
-Figure of module 4 is the file "Items/Accessories/Piercings/module4.jpg".
+Figure of module 1 is the file "Items/Accessories/Piercings/module1.png".
+Figure of module 2 is the file "Items/Accessories/Piercings/module2.png".
+Figure of module 3 is the file "Items/Accessories/Piercings/module3.png".
+Figure of module 4 is the file "Items/Accessories/Piercings/module4.png".
+Figure of module 5 is the file "Items/Accessories/Piercings/module5.png".
 
 ass-module is a module. The printed name of ass-module is "[clothing-title-before]ass module[clothing-title-after]". The text-shortcut of ass-module is "asm". Understand "ass module" as ass-module.
 
 ass-module has a number called dex-transfer. The dex-transfer of ass-module is 0.
 
 To decide which figure-name is the clothing-image of (C - ass-module):
-	decide on figure of module 4.
+	decide on figure of module 3.
 
 To decide which number is the dexterity-influence of (C - ass-module):
 	let D be the dex-transfer of C + 3;
@@ -131,8 +135,12 @@ To compute periodic effect of (P - breast-module):
 
 sissy-staple is a module. The printed name of sissy-staple is "[clothing-title-before]sissy staple[clothing-title-after]". The text-shortcut of sissy-staple is "sstp". Understand "sissy staple" as sissy-staple.
 
+Definition: sissy-staple is fetish appropriate:
+	if the player is possessing a penis, decide yes;
+	decide no.
+
 To decide which figure-name is the clothing-image of (C - sissy-staple):
-	decide on figure of module 4.
+	decide on figure of module 5.
 
 To decide which number is the anal sensitivity influence of (C - sissy-staple):
 	decide on 3.
@@ -142,7 +150,7 @@ To say ModuleFlav of (M - sissy-staple):
 
 
 To say ClothingDesc of (C - sissy-staple):
-	say "There's no visibile evidence, but every now and then you can feel your prostate swelling as the tiny module releases yet another strong dose of aphrodisiacs and transformatives... You recall that unless you're plugged and caged like a perfect sissy, the module will continue to dump large cocktails of drugs into your quivering prostate.".
+	say "Every now and then you can feel your prostate swelling as the tiny module releases yet another strong dose of aphrodisiacs and transformatives... You recall that unless you're plugged and caged like a perfect sissy, the module will continue to dump large cocktails of drugs into your quivering prostate. The only visual evidence is a futuristic looking implant above your [genitals].".
 
 To say ShortDesc of (C - sissy-staple):
 	say "sissy staple".
@@ -642,7 +650,7 @@ The pair of earrings already worn rule is listed in the pair of earrings wearabi
 heel-module is a module. The printed name of heel-module is "[clothing-title-before]heel module[clothing-title-after]". The text-shortcut of heel-module is "hem". Understand "heel module" as heel-module.
 
 To decide which figure-name is the clothing-image of (C - heel-module):
-	decide on figure of module 3.
+	decide on figure of module 4.
 
 heel-module has a number called heel-transfer. The heel-transfer of heel-module is 0.
 

@@ -98,6 +98,10 @@ To wait before continuing:
 	wait for glk input;
 	if the current glk event is glk-initiated, now event-outcome is glk event handled in null-event context.
 
+To wait for a key before continuing:
+	let CNL be the chosen letter;
+	increase CNL by 1.
+
 Part - Animation Stuff
 
 Section - Animation Tracks

@@ -69,7 +69,7 @@ To assign quest to (C - a stuffie):
 
 commodore cuddles is a stuffie. The printed name of commodore cuddles is "[clothing-title-before]Commodore Cuddles[clothing-title-after]". The text-shortcut of commodore cuddles is "cmdc".
 
-Figure of commodore cuddles is the file "Items/Accessories/Equippables/stuffie1.jpg".
+Figure of commodore cuddles is the file "Items/Accessories/Equippables/stuffie1.png".
 
 To decide which figure-name is clothing-image of (C - commodore cuddles):
 	decide on figure of commodore cuddles.

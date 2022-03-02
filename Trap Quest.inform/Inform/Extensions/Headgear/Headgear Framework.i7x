@@ -359,6 +359,7 @@ Definition: a clothing is class-relevant: [should we avoid non-unique transforma
 	if it is latex and the class of the player is latex fetish model, decide yes;
 	decide no.
 
+Definition: an object is class summonable: decide no.
 Definition: a clothing (called C) is class summonable:
 	if C is worn, decide no;
 	if C is not uniquely class summonable, decide no;
@@ -367,144 +368,162 @@ Definition: a clothing (called C) is class summonable:
 	if C is gag:
 		repeat with O running through things penetrating face:
 			if O is gag:
-				if O is unremovable or O is class-relevant, decide no;
+				if O is unremovable or O is currently-class-relevant, decide no;
 			otherwise:
 				decide no;
 	if C is neck covering:
 		repeat with O running through worn neck covering clothing:
-			if O is unremovable or O is class-relevant, decide no;
+			if O is unremovable or O is currently-class-relevant, decide no;
 	if C is arm covering:
 		repeat with O running through worn arm covering clothing:
-			if O is unremovable or O is class-relevant, decide no;
+			if O is unremovable or O is currently-class-relevant, decide no;
 	[if C is hand ready:
 		repeat with O running through worn hand ready clothing:
-			if O is unremovable or O is class-relevant, decide no;]
+			if O is unremovable or O is currently-class-relevant, decide no;]
 	if C is bra:
 		repeat with O running through worn bra:
-			if O is unremovable or O is class-relevant, decide no;
+			if O is unremovable or O is currently-class-relevant, decide no;
 		repeat with O running through worn breast covering clothing:
 			if O is totally-exclusive or O is top-exclusive:
 				check that O usually goes under C;
 				if the rule succeeded:
-					if O is unremovable or O is class-relevant, decide no;
+					if O is unremovable or O is currently-class-relevant, decide no;
 	if C is corset:
 		repeat with O running through worn corsets:
-			if O is unremovable or O is class-relevant, decide no;
+			if O is unremovable or O is currently-class-relevant, decide no;
 		repeat with O running through worn bottom-exclusive belly covering clothing:
-			if O is unremovable or O is class-relevant, decide no;
+			if O is unremovable or O is currently-class-relevant, decide no;
 		repeat with O running through worn totally-exclusive belly covering clothing:
-			if O is unremovable or O is class-relevant, decide no;
+			if O is unremovable or O is currently-class-relevant, decide no;
 		if C is breast covering:
 			repeat with O running through worn breast covering clothing:
 				if O is totally-exclusive or O is top-exclusive:
 					check that O usually goes under C;
 					if the rule succeeded:
-						if O is unremovable or O is class-relevant, decide no;
+						if O is unremovable or O is currently-class-relevant, decide no;
 	if C is dress:
 		if C is overdress:
 			repeat with O running through worn overdress:
-				if O is unremovable or O is class-relevant, decide no;
+				if O is unremovable or O is currently-class-relevant, decide no;
 		if C is underdress:
 			repeat with O running through worn underdress:
-				if O is unremovable or O is class-relevant, decide no;
+				if O is unremovable or O is currently-class-relevant, decide no;
 		repeat with O running through worn clothing:
 			if O is top-exclusive or O is totally-exclusive:
 				if (O is breast covering and C is breast covering) or (O is belly covering and C is belly covering) or (O is crotch covering and C is crotch covering):
-					if O is unremovable or O is class-relevant, decide no;
+					if O is unremovable or O is currently-class-relevant, decide no;
 	if C is skirted:
 		repeat with O running through worn skirted clothing:
-			if O is unremovable or O is class-relevant, decide no;
+			if O is unremovable or O is currently-class-relevant, decide no;
 		repeat with O running through worn unskirted themed clothing:
-			if O is unremovable or O is class-relevant, decide no;
+			if O is unremovable or O is currently-class-relevant, decide no;
 	if C is suspenders:
 		repeat with O running through worn suspenders:
-			if O is unremovable or O is class-relevant, decide no;
+			if O is unremovable or O is currently-class-relevant, decide no;
 	if C is knickers or C is ass plugging or C is vagina plugging or C is bottom-exclusive crotch covering clothing or C is totally-exclusive crotch covering clothing:
 		repeat with O running through worn knickers:
-			if O is unremovable or O is class-relevant, decide no;
+			if O is unremovable or O is currently-class-relevant, decide no;
 		repeat with O running through worn bottom-exclusive crotch covering clothing:
-			if O is unremovable or O is class-relevant, decide no;
+			if O is unremovable or O is currently-class-relevant, decide no;
 		repeat with O running through worn totally-exclusive crotch covering clothing:
-			if O is unremovable or O is class-relevant, decide no;
+			if O is unremovable or O is currently-class-relevant, decide no;
 		repeat with O running through worn ass plugging clothing:
-			if O is unremovable or O is class-relevant, decide no;
+			if O is unremovable or O is currently-class-relevant, decide no;
 		repeat with O running through worn vagina plugging clothing:
-			if O is unremovable or O is class-relevant, decide no;
+			if O is unremovable or O is currently-class-relevant, decide no;
 		if C is vagina plugging and the player is possessing a vagina and vagina is actually occupied, decide no;
 		if C is ass plugging and asshole is actually occupied, decide no;
 	if C is trousers:
 		repeat with O running through worn trousers:
-			if O is unremovable or O is class-relevant, decide no;
+			if O is unremovable or O is currently-class-relevant, decide no;
 		repeat with O running through worn top-exclusive crotch covering unskirted clothing:
-			if O is unremovable or O is class-relevant, decide no;
+			if O is unremovable or O is currently-class-relevant, decide no;
 		repeat with O running through worn totally-exclusive crotch covering clothing:
-			if O is unremovable or O is class-relevant, decide no;
+			if O is unremovable or O is currently-class-relevant, decide no;
 	if C is leg covering:
 		repeat with O running through worn leg covering clothing:
-			if O is unremovable or O is class-relevant, decide no;
+			if O is unremovable or O is currently-class-relevant, decide no;
 	if C is stockings:
 		repeat with O running through worn stockings:
-			if O is unremovable or O is class-relevant, decide no;
+			if O is unremovable or O is currently-class-relevant, decide no;
 	if C is shoes:
 		repeat with O running through worn shoes:
-			if O is unremovable or O is class-relevant, decide no;
+			if O is unremovable or O is currently-class-relevant, decide no;
 	if C is sex toy:
 		if C is plug or the player is not possessing a vagina:
 			repeat with O running through clothing penetrating asshole:
-				if O is unremovable or O is class-relevant, decide no;
+				if O is unremovable or O is currently-class-relevant, decide no;
 		otherwise:
 			repeat with O running through clothing penetrating vagina:
-				if O is unremovable or O is class-relevant, decide no;
+				if O is unremovable or O is currently-class-relevant, decide no;
 		if C is tail plug:
 			repeat with O running through ass covering clothing:
-				if O is unremovable or O is class-relevant, decide no;
+				if O is unremovable or O is currently-class-relevant, decide no;
 	if C is uncovered themed or C is top-exclusive or C is totally-exclusive:
 		if C is breast covering:
 			repeat with O running through worn breast covering clothing:
 				check that C usually goes under O;
 				if the rule succeeded or C is totally-exclusive:
-					if O is unremovable or O is class-relevant, decide no;
+					if O is unremovable or O is currently-class-relevant, decide no;
 		if C is belly covering:
 			repeat with O running through worn belly covering clothing:
 				check that C usually goes under O;
 				if the rule succeeded or C is totally-exclusive:
-					if O is unremovable or O is class-relevant, decide no;
+					if O is unremovable or O is currently-class-relevant, decide no;
 		if C is crotch covering:
 			repeat with O running through worn crotch covering clothing:
 				check that C usually goes under O;
 				if the rule succeeded or C is totally-exclusive:
-					if O is unremovable or O is class-relevant, decide no;
+					if O is unremovable or O is currently-class-relevant, decide no;
 	if C is bottom-exclusive:
 		if C is breast covering:
 			repeat with O running through worn breast covering clothing:
 				check that O usually goes under C;
 				if the rule succeeded:
-					if O is unremovable or O is class-relevant, decide no;
+					if O is unremovable or O is currently-class-relevant, decide no;
 		if C is belly covering:
 			repeat with O running through worn belly covering clothing:
 				check that O usually goes under C;
 				if the rule succeeded:
-					if O is unremovable or O is class-relevant, decide no;
+					if O is unremovable or O is currently-class-relevant, decide no;
 		if C is crotch covering:
 			repeat with O running through worn crotch covering clothing:
 				check that O usually goes under C;
 				if the rule succeeded:
-					if O is unremovable or O is class-relevant, decide no;
+					if O is unremovable or O is currently-class-relevant, decide no;
 	if C is unskirted themed:
 		repeat with O running through worn skirted clothing:
-			if O is unremovable or O is class-relevant, decide no;
+			if O is unremovable or O is currently-class-relevant, decide no;
 	if C is breast covering:
 		repeat with O running through worn uncovered themed bras:
-			if O is unremovable or O is class-relevant, decide no;
+			if O is unremovable or O is currently-class-relevant, decide no;
 	if C is belly covering:
 		repeat with O running through worn uncovered themed corsets:
-			if O is unremovable or O is class-relevant, decide no;
+			if O is unremovable or O is currently-class-relevant, decide no;
 	if C is crotch covering or (C is skirted and C is not super-short):
 		repeat with O running through worn uncovered themed crotch covering clothing:
 			check that O usually goes under C;
 			if the rule succeeded:
-				if O is unremovable or O is class-relevant, decide no;
+				if O is unremovable or O is currently-class-relevant, decide no;
 	decide yes.
+
+class-relevance-importance is initially true.
+Definition: a clothing is currently-class-relevant: [we sometimes disable class relevance in order to use the below check just to check for unremovable stuff]
+	if class-relevance-importance is false, decide no;
+	if it is class-relevant, decide yes;
+	decide no.
+Definition: a clothing (called C) is unclash summonable:
+	if C is worn, decide no;
+	now class-relevance-importance is false;
+	if C is class summonable:
+		now class-relevance-importance is true;
+		decide yes;
+	otherwise:
+		now class-relevance-importance is true;
+		decide no.
+To unclash class summon (C - a clothing):
+	PinkWardrobeUnclash C;
+	class summon C.
 
 Definition: a headgear is too boring: decide no.
 

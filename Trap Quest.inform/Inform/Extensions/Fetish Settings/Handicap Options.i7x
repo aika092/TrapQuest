@@ -8,9 +8,11 @@ title	subtable	description	toggle
 "Found clothing limitation rule: [if choice in row 72 of the Table of Player Options is -1]More empty containers & more tokens (never randomise this) (0 points)[otherwise if choice in row 72 of the Table of Player Options is 0]More empty containers & more tokens (can be randomised) (0 points)[otherwise if choice in row 72 of the Table of Player Options is 1]Bag gets hungry (can be randomised) (3 points)[otherwise]Bag gets hungry (never randomise this) (3 points)[end if]"	--	--	inventory handicap toggle rule
 "Starting body shape ([if starting body shape is 0 and the player is sexed male]normal[otherwise if starting body shape is 0]androgynous[otherwise if starting body shape is 1 and the player is sexed male]androgynous[otherwise if starting body shape is 1]normal[otherwise if the player is sexed male]THICC[otherwise]curvy[end if] [if the remainder after dividing choice in row 62 of the Table of Player Options by 2 is 0]always[otherwise]but can be randomised[end if] - [starting body shape * 2] points)"	--	--	starting body shape toggle rule
 "[if extreme proportions fetish is 0]150[otherwise]133[end if]% Breast Expansion Rate - 4 points ([if choice in row 14 of the Table of Player Options is -1]never[otherwise if choice in row 14 of the Table of Player Options is 0]not now[otherwise if choice in row 14 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	fast breast expansion toggle rule
+"Naturally long hair - 1 point ([if choice in row 54 of the Table of Player Options is -1]never[otherwise if choice in row 54 of the Table of Player Options is 0]not now[otherwise if choice in row 54 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	natural hair length toggle rule
 "Natural hair redness - 1 point ([if choice in row 40 of the Table of Player Options is -1]never[otherwise if choice in row 40 of the Table of Player Options is 0]not now[otherwise if choice in row 40 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	natural redness toggle rule
 "Natural hair blondeness - 1 point ([if choice in row 41 of the Table of Player Options is -1]never[otherwise if choice in row 41 of the Table of Player Options is 0]not now[otherwise if choice in row 41 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	natural blondeness toggle rule
 "Natural hair brightness - 1 point ([if choice in row 42 of the Table of Player Options is -1]never[otherwise if choice in row 42 of the Table of Player Options is 0]not now[otherwise if choice in row 42 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	natural brightness toggle rule
+"Naturally [if the player is sexed male]small penis[otherwise]large breasts (stacks with starting body shape)[end if] - 2 points ([if choice in row 55 of the Table of Player Options is -1]never[otherwise if choice in row 55 of the Table of Player Options is 0]not now[otherwise if choice in row 55 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	natural body shape toggle rule
 "Natural horny submissive (Skips the first 35% of mental changes) - 7 points ([if choice in row 32 of the Table of Player Options is -1]never[otherwise if choice in row 32 of the Table of Player Options is 0]not now[otherwise if choice in row 32 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	cum addiction toggle rule
 "Encased in latex (not for beginners!) - 7 points ([if choice in row 15 of the Table of Player Options is -1]never[otherwise if choice in row 15 of the Table of Player Options is 0]not now[otherwise if choice in row 15 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	latex prisoner toggle rule
 "Trapped in bondage (not for beginners!) - 7 points ([if choice in row 16 of the Table of Player Options is -1]never[otherwise if choice in row 16 of the Table of Player Options is 0]not now[otherwise if choice in row 16 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	bondage prisoner toggle rule
@@ -136,6 +138,20 @@ This is the map reset random rule:
 	if choice in row 38 of the Table of Player Options is 0 or choice in row 38 of the Table of Player Options is 1, now choice in row 38 of the Table of Player Options is a random number between 0 and 1.
 The map reset random rule is listed in the random mode rules.
 
+To decide which number is natural hair length:
+	if diaper quest is 1, decide on 0;
+	if choice in row 54 of the Table of Player Options <= 0, decide on 0;
+	otherwise decide on 1.
+This is the natural hair length toggle rule:
+	if choice in row 54 of the Table of Player Options < 2, increase choice in row 54 of the Table of Player Options by 1;
+	otherwise now choice in row 54 of the Table of Player Options is -1.
+This is the natural hair length nightmare rule:
+	if choice in row 54 of the Table of Player Options is 0, now choice in row 54 of the Table of Player Options is 1.
+The natural hair length nightmare rule is listed in the nightmare mode rules.
+This is the natural hair length random rule:
+	if choice in row 54 of the Table of Player Options is 0 or choice in row 54 of the Table of Player Options is 1, now choice in row 54 of the Table of Player Options is a random number between 0 and 1.
+The natural hair length random rule is listed in the random mode rules.
+
 To decide which number is natural redness:
 	if diaper quest is 1, decide on 0;
 	if choice in row 40 of the Table of Player Options <= 0, decide on 0;
@@ -149,8 +165,6 @@ The natural redness nightmare rule is listed in the nightmare mode rules.
 This is the natural redness random rule:
 	if choice in row 40 of the Table of Player Options is 0 or choice in row 40 of the Table of Player Options is 1, now choice in row 40 of the Table of Player Options is a random number between 0 and 1.
 The natural redness random rule is listed in the random mode rules.
-To decide which number is natural redness points:
-	decide on choice in row 40 of the Table of Player Options.
 
 To decide which number is natural blondeness:
 	if diaper quest is 1, decide on 0;
@@ -165,8 +179,6 @@ The natural blondeness nightmare rule is listed in the nightmare mode rules.
 This is the natural blondeness random rule:
 	if choice in row 41 of the Table of Player Options is 0 or choice in row 41 of the Table of Player Options is 1, now choice in row 41 of the Table of Player Options is a random number between 0 and 1.
 The natural blondeness random rule is listed in the random mode rules.
-To decide which number is natural blondeness points:
-	decide on choice in row 41 of the Table of Player Options.
 
 To decide which number is natural brightness:
 	if diaper quest is 1, decide on 0;
@@ -181,8 +193,20 @@ The natural brightness nightmare rule is listed in the nightmare mode rules.
 This is the natural brightness random rule:
 	if choice in row 42 of the Table of Player Options is 0 or choice in row 42 of the Table of Player Options is 1, now choice in row 42 of the Table of Player Options is a random number between 0 and 1.
 The natural brightness random rule is listed in the random mode rules.
-To decide which number is natural brightness points:
-	decide on choice in row 42 of the Table of Player Options.
+
+To decide which number is natural body shape:
+	if diaper quest is 1, decide on 0;
+	if choice in row 55 of the Table of Player Options <= 0, decide on 0;
+	otherwise decide on 1.
+This is the natural body shape toggle rule:
+	if choice in row 55 of the Table of Player Options < 2, increase choice in row 55 of the Table of Player Options by 1;
+	otherwise now choice in row 55 of the Table of Player Options is -1.
+This is the natural body shape nightmare rule:
+	if choice in row 55 of the Table of Player Options is 0, now choice in row 55 of the Table of Player Options is 1.
+The natural body shape nightmare rule is listed in the nightmare mode rules.
+This is the natural body shape random rule:
+	if choice in row 55 of the Table of Player Options is 0 or choice in row 55 of the Table of Player Options is 1, now choice in row 54 of the Table of Player Options is a random number between 0 and 1.
+The natural body shape random rule is listed in the random mode rules.
 
 To decide which number is sex fainting:
 	if diaper quest is 1, decide on 0;

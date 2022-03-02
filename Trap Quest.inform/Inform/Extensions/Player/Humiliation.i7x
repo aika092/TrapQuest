@@ -421,7 +421,13 @@ To decide which number is the public disgrace of the player:
 To say DisgracePost (N - a number):
 	choose row N in Table of Published Disgraces;
 	let DPV be DisgracePostViews N;
-	say "[content entry] [published entry][if DPV > 1]. It has been viewed [DPV] times[end if]";
+	let secondslive be 0;
+	if deletedtime entry > 0, now secondslive is timestamp entry - deletedtime entry;
+	say "[content entry] [published entry][run paragraph on]";
+	if DPV > 1:
+		say ". It [if secondslive is 0]has been viewed [DPV] times[otherwise]was viewed [DPV] times before it was deleted[end if]";
+	otherwise if secondslive > 0:
+		say "[if secondslive >= 60]. It was up for [secondslive / 60] minutes before you were able to delete it[otherwise]. It was only up for [secondslive] seconds before you were able to delete it[end if]".
 
 To say DisgracePostReaction (N - a number):
 	let S be DisgracePostImpact N;

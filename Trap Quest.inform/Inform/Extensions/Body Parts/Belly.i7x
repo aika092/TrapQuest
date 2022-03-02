@@ -631,7 +631,7 @@ To AssSquirt:
 				increase liquid-total by 1;
 				increase total-count by 1;
 	[If it's a large amount or includes any eggs, the player falls to their knees.]
-	if the latex-transformation of the player < 3 and voluntarySquatting is 0 and belly egg count > 0 or total-count > 8:
+	if the latex-transformation of the player < 3 and voluntarySquatting is 0 and (belly egg count > 0 or total-count > 8):
 		say "[bold type]Your strength crumbles [if the player is upright]and you fall to your knees [end if]as your [asshole]'s sphincter starts to loosen involuntarily.[roman type][line break]";
 		let seconds-saved be seconds;
 		allocate 0 seconds; [This stops the monsters taking a turn here]

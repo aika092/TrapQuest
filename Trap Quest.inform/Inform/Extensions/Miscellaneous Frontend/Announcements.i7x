@@ -16,12 +16,12 @@ To compute announcements:
 				now choice in row 80 of the Table of Player Options is 3;
 				now quick start is 0;
 		otherwise if announcements seen < 2:]
-		[if announcements seen < 2:]
-		if christmas content is 0:
+		[if christmas content is 0:
 			clear the screen;
 			say "Merry Christmas! This is the Christmas release, but Christmas mode (where you start with a Christmas outfit which spawns gifts, but punishes you for offensive actions) is currently disabled. Would you like to enable it now? ";
 			if the player is consenting, now choice in row 65 of the Table of Player Options is 1;
-		otherwise if announcements seen < 2:
+		otherwise if announcements seen < 2:]
+		if announcements seen < 2:
 			clear the screen;
 			say "For your information: When you go for a 'Normal Start', lots of fetish settings can now be swapped between 'never', 'not now', 'yes this time' and 'always' as opposed to just 'enabled' and 'disabled'. The reason for this is that you are being encouraged to customise potential future 'Random Start' runs. What this means is that when an option is set to 'not now' or 'yes this time', it will be randomly set to enabled or disabled each time you choose Random Start. All other settings will remain as you have previously configured them. So if for example you always want TG Fetish enabled but never want watersports fetish enabled and you want everything else to be randomised and surprise you, that is now possible.[line break][bold type]Press any key to continue.[roman type][line break]";
 			let C be the chosen letter;

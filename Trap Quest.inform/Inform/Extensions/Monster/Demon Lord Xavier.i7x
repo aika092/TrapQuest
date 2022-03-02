@@ -38,6 +38,7 @@ To say MonsterDesc of (M - demon lord):
 	say "A giant red humanoid, with a monster's face and large red wings. [big he of M] must be literally twice as tall and wide as you. [run paragraph on]";
 	if diaper quest is 0:
 		say "[big he of M] is completely naked, and as you might expect, [his of M] red monster of a [DickDesc of M] is about twice as large and thick as the average well hung human male. [if M is wrapped]A latex condom is covering the entirety of [his of M] shaft, and seems to be massively inhibiting [his of M] evil aura.[otherwise]You can feel a raw aura of lust and evil emanating from [him of M].[end if]";
+		say DamageableDesc of M;
 	otherwise:
 		say "[big he of M] looks incredibly scary.";
 
@@ -98,6 +99,17 @@ To set up (M - demon lord):
 
 To decide which number is the starting difficulty of (M - demon lord):
 	decide on 18.
+
+To reseal xavier from (M - a monster):
+	now mechanic is in the location of M;
+	now mechanic is summon-available;
+	set up mechanic;
+	now the raw difficulty of mechanic is the difficulty of M;
+	if M is carrying mystical amulet:
+		now mystical amulet is in the location of M;
+		now the power-stolen of mechanic is 1;
+	finally destroy M;
+	now M is permanently banished.
 
 To unseal xavier from (M - a monster):
 	now demon lord is in the location of M;
@@ -1175,6 +1187,26 @@ Definition: demon lord (called M) is damageable:
 	if the class of the player is priestess or the class of the player is virgin warrior or the class of the player is fertility goddess or the class of the player is cultist or there is a worn demonic wearthing, decide yes;
 	decide no.
 
+To say DamageableDesc of (M - demon lord):
+	say "[line break][if M is carrying mystical amulet]There is a mystical amulet around [his of M] neck. [otherwise]There is an evil-looking gemstone embedded in [his of M] chest. [end if][run paragraph on]";
+	if M is wrapped:
+		say "It seems to be resonating with the condom!";
+	otherwise if current-final-battle-object is final-battle-final-chance and ex-princess is in the location of M:
+		say "It seems to be resonating with [NameDesc of ex-princess]!";
+	otherwise if the class of the player is priestess or the class of the player is cultist or the class of the player is fertility goddess or the class of the player is virgin warrior:
+		let H be a random worn headgear;
+		if H is clothing, say "It seems to be resonating with your [ShortDesc of H]!";
+	otherwise if there is a worn zap ready equippable:
+		let Z be a random worn zap ready equippable;
+		if Z is clothing, say "It seems to be resonating with your [ShortDesc of Z]!";
+	otherwise:
+		let D be a random worn demonic wearthing;
+		if D is nothing, now D is a random worn slap ready purity equippable;
+		if D is nothing, now D is a random worn slap ready magic themed equippable;
+		if D is nothing and D is worn, now D is dildo-heels;
+		if D is nothing and the number of held combat-bomb bombs > 0, now D is a random held combat-bomb bomb;
+		unless D is nothing, say "It seems to be resonating with your [ShortDesc of D]!";
+
 To decide which number is the damage modifier of (M - demon lord):
 	decide on the number of worn demonic wearthings.
 
@@ -1211,7 +1243,21 @@ To say DamageReactTired of (M - demon lord):
 To say DamageReactWeak of (M - demon lord):
 	say "[BigNameDesc of M] cringes in pain[one of]![line break][speech style of M]'I CAN'T BE DEFEATED! NOOOOO!'[roman type][line break][or]![stopping]".
 
-Definition: demon lord is automatically banishable: decide yes.
+Definition: demon lord is wenchy:
+	if the player is a February 2022 top donator, decide yes;
+	decide no.
+
+Definition: demon lord is automatically banishable:
+	if demon lord is wenchy and demon lord is wrapped and the divinationskill of the player is 1 and the magic power of the player > 2, decide no;
+	decide yes.
+
+To say DefeatBrink of (M - demon lord):
+	say "Thanks to what you learned from [NameDesc of witch], you can sense [NameDesc of M]'s power converging [if M is carrying mystical amulet]on [his of M] amulet. [otherwise]the stone in [his of M] chest. [end if]If you use up some of your magic, you might be able to interfere long enough to trap [him of M] in a human form.";
+
+To say BanishDesc of (M - demon lord):
+	say "Don't interfere.".
+To compute forced banishment of (M - a demon lord):
+	compute automatic banishment of M.
 
 To say BanishFleeFlav of (M - demon lord):
 	if M is carrying mystical amulet, say "[first custom style]'NOOOO! HOW CAN THIS BEEEEeeeee....'[roman type][line break][BigNameDesc of M] screams as [his of M] entire body is slowly but surely stucked into the amulet around [his of M] neck! The amulet hangs in the air for a split second before it explodes, nothing remaining of the demon lord except the giant red stone that clatters to your feet. You have won!";
@@ -1232,6 +1278,147 @@ To compute unique banishment of (M - demon lord):
 		increase the loot dropped of M by 1;
 		compute autotaking X;
 	now M is bossdefeated.
+
+To say PenisFuckDesc of (M - demon lord):
+	say "Seal [him of M] with your [PenisFucker].".
+
+To say VaginaRideDesc of (M - demon lord):
+	say "Seal [him of M] with your [vagina].".
+
+To say AssRideDesc of (M - demon lord):
+	say "Seal [him of M] with your [asshole].".
+
+Definition: demon lord is piss-fuckable:[Too rare for me to want to deal with.]
+	decide no.
+
+To decide which number is the dominationtype of (M - a monster) using (F - a body part):
+	if F is a fuckhole, decide on FUCK-RIDE;
+	decide on FUCK-BLOWJOB.
+
+[If the demon lord gets the upper hand, he gets away. If the demon lord doesn't get the upper hand, he is sealed into his mechanic form.]
+To blowjob dominate (M - demon lord):
+	let S be sexual-penis-length;
+	say "You put one hand on [NameDesc of M]'s [if M is carrying mystical amulet]amulet[otherwise]chest[end if], using your own magic to temporarily stabilize [his of M] energy as your other hand [if S < 4]eagerly tugs[otherwise if S < 9]pumps[otherwise]strokes[end if] your [if penis is not penis-erect]hardening [end if][SexDesc of penis]. [big he of M] doesn't seem to notice anything has changed, and falls to the ground while screaming at the top of [his of M] lungs.";
+	if S > 8:
+		say "[line break][speech style of M]'NO! IMPOSSIBLE! I-IMPO-!'[roman type][line break]You snap [him of M] out of it with a well-timed cock slap, which also stuns [him of M] for a few seconds, but it isn't anything another imprint on the other side of [his of M] face can't solve. [big he of M] seems to realise you are [his of M] only chance to hold onto [his of M] strength, and [he of M] dives onto you, [his of M] unnaturally long tongue slithering around and around your [SexShaft] as [he of M] begins to slurp your power out through your [sexual-player-penis]!";
+		let R be the semi-dominance roll for M;
+		if R < 0:[xavier gets a power refill]
+			if debugmode > 0, say "[bold type]FAILED![roman type][line break]";
+			say "You instantly realise the way [he of M]'s draining you won't seal [him of M] so much as 'make her stronger', and you force [him of M] down in hopes of taking back control. [big he of M] giant body enables [him of M] to throat you with far less trouble than a mortal [man of M], and although you briefly gain the upper hand, you're unable to start sealing [him of M] before [he of M] adapts. [big he of M] leers at you as [his of M] crimson lips meet your [if the player is possessing a scrotum]balls[otherwise]base[end if], sucking out your magic faster and faster no matter how hard you fuck [his of M] face. You know you can't win, but you won't let yourself lose, holding onto your resistance until the moment your [load], along with the last of your magic, disappears down [his of M] gullet.";
+			now player-fucking is DOMINANT-NEUTRAL;
+			increase the magic-fatigue of the player by the magic power of the player;
+			say AfterDominationComment 0 of M;
+		otherwise:
+			if debugmode > 0, say "[bold type]PASSED![roman type][line break]";
+			say "You instantly realise the way [he of M]'s draining you won't seal [him of M] so much as 'make [him of M] stronger', and you force [him of M] down in hopes of taking back control. [big his of M] giant body enables [him of M] to throat you with far less trouble than a mortal [man of M], but you gain the upper hand just long enough to start sealing [him of M] before [he of M] can adapt. You feel [his of M] throat tightening as [his of M] body begins to shrink, and [he of M] glares at you furiously as [his of M] inhuman strength fades from [his of M] limbs. The struggle for control turns into a battle between [him of M] and [his of M] gag reflex, which you gladly assist [him of M] with. You complete the 'sealing ritual' by snatching [if M is carrying mystical amulet]the amulet around [his of M] neck[otherwise]a newly formed gemstone in [his of M] chest[end if], punctuating [his of M] wail of despair with a [load] down [his of M] throat.";
+			increase the magic-fatigue of the player by 2;
+			ultraDignify;
+			now player-fucking is DOMINANT-SUPER;
+			say AfterDominationComment 1 of M;
+		BlowGet;
+		orgasm;
+	otherwise if sexual-penis-length > 3:
+		say "[line break][speech style of M]'NO! IMPOSSIBLE! I-IMPOSSIBLE! NO! NOO-'[roman type][line break]You snap [him of M] out of it with a slap, which seems to stun [him of M] for a few seconds, but poking [his of M] cheek with your junk eventually catches [his of M] attention. [big he of M] seems to realise you are [his of M] only chance to hold onto [his of M] strength, and [he of M] dives onto you, [his of M] unnaturally long tongue slithering around and around your [SexShaft] as [he of M] begins to slurp your power out through your [sexual-player-penis]!";
+		let R be the semi-dominance roll for M;
+		if R < 0:
+			if debugmode > 0, say "[bold type]FAILED![roman type][line break]";
+			say "A few moments pass before you realise the way [he of M]'s draining you won't seal [him of M] so much as 'make [him of M] stronger', and you try to push [him of M] away. You're partially successful at first, but [his of M] tongue's 'grip' ensures that no matter how hard you try to resist, your [sexual-player-penis] is always dragged right back into [his of M] mouth. [big he of M] swallows a little bit more of your length each time, and when [his of M] lips finally meet your [if the player is possessing a scrotum]balls[otherwise]base[end if], you can't get [him of M] to move at all. [big he of M] leers at you when you finally give up, and you feel your magic being sucked out faster and faster as [he of M] bobs [his of M] head up and down your [SexShaft]. You are forced to moan underneath [him of M] as both [semen] and magic power are wrung out of you over and over and over again until ALL of your reserves are completely spent.";
+			increase the magic-fatigue of the player by the magic power of the player;
+			now player-fucking is DOMINANT-SHAMEFUL;
+			say AfterDominationComment 0 of M;
+		otherwise:
+			if debugmode > 0, say "[bold type]PASSED![roman type][line break]";[TODO: better]
+			say "A few moments pass before you realise the way [he of M]'s draining you won't seal [him of M] so much as 'make [him of M] stronger', and you try to stop [him of M]. You're only partially successful at first, thanks to [his of M] bizarre tongue 'grip,' but after several attempts you're able to grab [him of M] securely enough to start sealing [him of M] properly. It's almost impossible to maintain the upper hand at first, but it gets easier as [his of M] giant body slowly begins to shrink. [big his of M] struggling continues even as [his of M] wings fold into [his of M] back, and you lose control as [his of M] horns are receding into [his of M] forehead. [big he of M] pulls off just as you go over the edge, receiving your [load] all over her face and chest as [his of M] skin tone fades from red to just 'pink'. You snatch [if M is carrying mystical amulet]the amulet around [his of M] neck[otherwise]a newly formed gemstone in [his of M] chest[end if] before he has a chance to put up a fight.";
+			increase the magic-fatigue of the player by 2;
+			now player-fucking is DOMINANT-SUPER;
+			say AfterDominationComment 1 of M;
+			obsceneDignify;
+		BlowGet;
+		orgasm;
+	otherwise:[xavier steals the player's energy and uses it to summon a succubus partner for himself.]
+		say "[line break][speech style of M]'NO! IMPOSSIBLE! I-IMPOSSIBLE! NO! NOOOOO! N...? WHAT ARE YOU DOING?'[roman type][line break][big he of M] turns to you as you hit [him of M] with the last of a series of weak slaps. You were intending to snap [him of M] out of it without hurting [him of M], but your efforts apparently registered so little that [he of M] didn't notice until you were exhausted! [big he of M] picks you up in one of [his of M] giant claws, smirking at the teensy excuse for an erection standing between your legs. You can't do anything to resist as an unnaturally long and red tongue shoots out of [his of M] mouth, winding around your [sexual-player-penis] and wringing orgasm, dignity, and the every last drop of magic out of you within seconds. [big his of M] energy stabilises as [he of M] swallows your [load] and unceremoniously tosses your slack body to the ground.";
+		increase the magic-fatigue of the player by the magic power of the player;
+		now player-fucking is DOMINANT-SHAMEFUL;
+		moderateHumiliate;
+		say AfterDominationComment 2 of M;
+		BlowGet;
+		orgasm.
+
+To ride dominate (M - demon lord):
+	increase the magic-fatigue of the player by 2;
+	let F be player-fucker;
+	let diff be the openness of F - the girth of M;[+2 to -8]
+	let A be anal sex addiction of the player;
+	if F is vagina, now A is vaginal sex addiction of the player;
+	say "You put both hands on [NameDesc of M]'s [if lady fetish is 1]buxom[otherwise]broad[end if] chest, using your magical energy to slow down the collapse of [his of M] own. [big he of M] ceases [his of M] unstable teetering and looks down at you with a triumphant smirk.[line break][speech style of M]'HAHAHA. THOUGH YOU HAVE ACCEPTED THE INEVITABLE, YOU WILL STILL BE PUNISHED FOR YOUR INSOLENCE. YOUR [if F is asshole]ANUS[otherwise]CLUNGE[end if] WILL BEAR THE BURDEN OF YOUR TRANSGRESSIONS!'[roman type][line break]Ignoring [him of M], you push [him of M] to the ground and carefully sit down on the end of [his of M] [DickDesc of M]. [if A <= 3]Apprehension nags[otherwise if A <= 6]A faint feeling of anticipation fills[otherwise]A strong feeling of anticipation grips[end if] you as [his of M] [cockhead of M] pushes [if F is asshole]in your sphincter[otherwise]up between your folds[end if], [if diff <= -6]and lingering there[otherwise if diff <= -3]only [italic type]barely[roman type] entering you[otherwise if diff <= 0]entering you no deeper than a centimetre[otherwise]entering you no deeper than an inch[end if] without going any further. Bearing down on it with your full weight eventually [if diff <= -6]forces your [variable F] to accept an [italic type]entire centimetre[roman type][otherwise if diff <= -3]forces your [variable F] to accept an entire [italic type]inch[otherwise if diff <= 0]allows your [variable F] to accept a generous inch [italic type]and a half[otherwise]allows your [variable F] to accept the entire [italic type]head[end if][roman type].[line break][speech style of M]'FOOL. I AM INVINCIBLE. SOON, YOU WILL BEG ME FOR MERCY.'[roman type][line break]";
+	let R be the semi-dominance roll for M;
+	if R >= 0:[passed]
+		say "The sheer confidence in [his of M] voice is grating, but you know [he of M] won't be able to sing that tune forever. Soon enough, the flow of [his of M] energy changes, and [his of M] once giant body begins to shrink bit by bit. It happens slowly at first, and you mostly notice it as [his of M] [DickDesc of M] becoming less snug inside your [variable F], but the more of [him of M] you take, the faster [his of M] power drains, and the louder [he of M] screams.[line break][speech style of M]'W-WAIT! I DIDN'T MEAN IT. YOUR HOLE WILL BE FINE! SPAAAAARE MEEEEEE!'[roman type][line break]The last of [his of M] power is sucked into [if M is carrying mystical amulet]the amulet around [his of M] neck. [otherwise]the gem in [his of M] chest. [end if] Big, fat tears leak from [his of M] eyes as [his of M] newly mortal [DickDesc of M] twitches inside you. Do you take pity on him and let him cum?";
+		if the player is bimbo consenting:[]
+			say "You aren't so heartless as to [if the bimbo of the player < 9]leave [him of M] be. [otherwise]let a hard cock go to waste. [end if]Compared to [his of M] 'unsealed' state, [his of M] [DickDesc of M] is a [if diff <= -3]walk in the park to deal with, although its still[otherwise]bit of a disappointment, but at least its[end if] above average. The sense of accomplishment from defeating the mighty demon lord serves as an aphrodesiac, and you cum just in time for [him of M] to fill the condom with [his of M] load. You snatch the [if M is carrying mystical amulet]amulet[otherwise]gemstone[end if] off [his of M] chest as you climb off.";
+			obsceneDignify;
+			say AfterDominationComment 3 of M;
+			reseal xavier from M;
+			orgasm mechanic;
+			calm mechanic;
+		otherwise: [no creampie no orgasm.]
+			say "You pause just long enough to make sure [he of M] won't cum before finishing yourself off, sighing in exaggerated satisfaction as [if the player is possessing a penis]you shoot your load across [his of M] tummy. [otherwise if the player is possessing a vagina]you squirt clear fluid across [his of M] stomach. [otherwise]pleasure ripples through your body. [end if][big he of M] weakly reaches for the [if M is carrying mystical amulet]amulet[otherwise]gemstone[end if], but you snatch that just like [his of M] chance to cum.";
+			ultraDignify;
+			say AfterDominationComment 5 of M;
+			reseal xavier from M;
+			SilentlyDifficultyUp mechanic by 5;
+		orgasm;
+		now player-fucking is DOMINANT-SUPER;
+	otherwise:[failed]
+		say "The sheer confidence in [his of M] voice shakes you more than you care to admit, and you[if the player is able to speak] shout.[line break][variable custom style]'S-Shut up!'[roman type][line break][otherwise]throw [him of M] a sharp look. [end if][big he of M] responds with a hearty laugh, which crumbles your composure even further. You will yourself to keep going, but... [he of M]'s right. You can't win. You will never win. Not against the mighty Demon [if lady fetish is 1]Queen[otherwise]King[end if].[line break][speech style of M]'DESTROY THE CONDOM.'[roman type][line break]No longer deluded enough to disobey, you climb off [him of M] and tear away the one thing keeping him in check. [big his of M] unbound energy washes over you as he grabs you by the waist and impales you on [his of M] [DickDesc of M]. In a fraction of the time [if diff <= -6]it took you to barely take a centimetre by yourself, [he of M] buries half a dozen thick, throbbing inches of[otherwise if diff <= -3]it took you to take a few centimetres by yourself, [he of M] buries nearly a dozen thick, throbbing inches of[otherwise if diff <= 0]it took you to take two inches by yourself, [he of M] buries more than a foot of thick, throbbing[otherwise]it took you take a few inches by yourself, [he of M] buries [his of M] entire thick, throbbing[end if] [DickDesc of M] up your [variable F]. With [his of M] assistance... erm, leadership... erm, complete and utter dominion without any room to resist, you are allowed to enjoy the unique feeling of being used like [his of M] own personal cocksleeve, right up until the moment your [if F is asshole]belly[otherwise]womb[end if] is flooded with [his of M] [semen].";
+		strongHumiliate;
+		if F is vagina, vaginally orgasm shamefully;
+		otherwise anally orgasm shamefully;
+		if F is vagina, PussyFill the semen load of M;
+		otherwise AssFill the semen load of M;
+		now player-fucking is DOMINANT-SHAMEFUL;
+		say AfterDominationComment 4 of M;
+	if F is vagina, FuckGet;
+	otherwise AnalGet.
+
+To compute successful dominance of (M - demon lord):
+	if player-fucking is DOMINANT-SUPER and M is alive:
+		reseal xavier from M;
+	if M is alive:[the only way he's still 'alive' is if he turned the tables.]
+		if player-fucking is DOMINANT-SHAMEFUL:
+			TimesSubmittedUp M by 1;
+			say "[line break]You never should have challenged [him of M]..[line break]";
+		otherwise:
+			say "[line break]It was going ok for awhile...[line break]";
+	otherwise:
+		let A be mystical amulet;
+		unless M is carrying mystical amulet, now A is infernal gem;
+		now A is held by the player;
+		DominateUp M;
+		DominateUp mechanic;
+		now M is bossdefeated.
+
+To replace (M - demon lord) after domination:
+	if M is alive:
+		regionally place M;
+		bore M;
+	otherwise:
+		regionally place mechanic;
+		bore mechanic.
+
+To say AfterDominationComment (N - a number) of (M - demon lord):
+	if N is 0:
+		say "[speech style of M]'THANK YOU FOR THE PICK-ME-UP. I WILL BE BACK SOON TO DESTROY YOU.'[roman type][line break]";
+	otherwise if N is 1:
+		say "[speech style of M]'Don't think I'll forget this! One day, I'll get my revenge![roman type][line break]";
+	otherwise if N is 2:
+		say "[speech style of M]'DO NOT BE EMBARASSED. THIS HAPPENS TO [if the player is gendered male]SISSIES[otherwise]SLUTS[end if] ALL THE TIME. SHORTLY, I SHOW YOU SOMETHING ELSE THAT HAPPENS TO THEM ALL THE TIME.'[roman type][line break]";
+	otherwise if N is 3:
+		say "[speech style of M]'My power... my power...'[roman type][line break]";
+	otherwise if N is 4:
+		say "[speech style of M]'I AM GLAD YOU CAME TO YOUR SENSES. AS REWARD, I WILL COME BACK TO DESTROY YOU LATER.[roman type][line break]";
+	otherwise:
+		say "[speech style of M]'At least let me finish-!'[roman type][line break]".
 
 Part 4 - Conversation
 

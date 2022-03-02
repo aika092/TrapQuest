@@ -443,6 +443,30 @@ To compute punishment of (N - boogeymonster-nightmare-comicon):
 	ultraHumiliate;
 	compute messing.
 
+Section - Hot Buns Nightmare
+
+boogeymonster-nightmare-hotbuns is boogeymonster-nightmare.
+
+Definition: boogeymonster-nightmare-hotbuns (called P) is appropriate:
+	if current-monster is not boogeymonster, decide no;
+	decide yes.
+
+The priority of boogeymonster-nightmare-hotbuns is 4.
+
+Figure of boogeymonster hotbuns cutscene is the file "Special/Cutscene/cutscene-boogeymonster9.jpg".
+
+To compute punishment of (N - boogeymonster-nightmare-hotbuns):
+	now the priority of N is 1;
+	let M be current-monster;
+	say "[NightmareStartFlav][line break]";
+	say "The gimmicks that restaurants are using to market their food are getting more and more ridiculous.[paragraph break]You look at the ridiculous cycle-like contraption that Jerry, the owner of Hot Buns, wants you to use to deliver his burgers from here on out. Part of you wants to tell him to shove his dumb job up his ass, but the truth is, in this economy, you need the job. Even more importantly, you need to earn good tips.[paragraph break]So here you find yourself, crouching forward on this confusion perversion of vehicular transport, with your head strapped down low above the front wheel, and your ass held high by the metal contraption holding your pink panties in a constant brutal wedgie. And then, as you begin to pedal...[line break][italic type]THWAP THWAP THWAP[roman type][line break]...The attached rotating spanking device beats your butt cheeks with its long, wide paddles. A devilish contraption, and one that lives up to the new name of Jerry's company - Hot RED Buns. And to make matters worse, the hook continuously yanks your panties up and down, flossing your butt crack with some brutal wedgie action. By the time you arrive at the customer's house, your poor butt is truly aflame.";
+	appropriate-cutscene-display figure of boogeymonster hotbuns cutscene;
+	say "[italic type]Art by Rosie-BRS[line break][second custom style]'Food's here!'[roman type][line break]Your deliver customer jogs out of her house and down to where you've parked by the side of the road, and retrieves the food from the rear. She looks at you and giggles.[line break][second custom style]'Nice buns!'[roman type][line break]You pout, but say the line you're supposed to, as instructed.[line break][variable custom style]'If you tip me $10, it'll treat me five times as hard on the ride back.'[line break][second custom style]'Hahahaha! DEAL!'[roman type][line break]The woman presses her phone to the contactless payment portal on the side of the bike, and there's an audible beep. Immediately, the spanking machine gains a life of its own, and starts spanking you several times faster than before.[line break][variable custom style]'OW OW OW! THANK YOU! OW OW OW!'[roman type][line break]You pedal away as fast as you can, which just makes the wedgie contraption floss your crack raw with even greater speed and intensity. You surge down the streets, people pointing and laughing as you sail past them, your ass torture in plain view for everyone to see. The perfect mobile advertisement for Jerry's Hot Red Buns.[paragraph break]And then... the scene is disappearing, your vision fading to black... but the pain, the searing pain in your [AssDesc] remains.";
+	PainUp 4;
+	say "And when you open your eyes, back in the Dungeon, [NameDesc of M] is nowhere to be seen.";
+	regionally place M;
+	distract M.
+
 Section - Mahjong Nightmare
 
 boogeymonster-nightmare-mahjong is boogeymonster-nightmare.
@@ -478,8 +502,9 @@ To compute punishment of (N - boogeymonster-nightmare-mahjong):[todo: replace Sa
 	summon D uncursed;
 	if the class of the player is adventurer:
 		if the number of worn onesie is 0:
-			summon frilly onesie uncursed;
-			now frilly onesie is locked;
+			let O be a random off-stage onesie;
+			if O is nothing, now O is cupcake onesie;
+			summon O locked;
 	MessSet D to 10;
 	now rectum is 6;
 	now suppository is 1;

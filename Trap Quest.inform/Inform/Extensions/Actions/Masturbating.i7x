@@ -247,7 +247,10 @@ The clothing blocks masturbation rule is listed last in the vaginal masturbation
 
 [the player can't asswank through clothing.]
 This is the clothing blocks anal masturbation rule:
-	if the number of bottom level ass protection clothing > 0:
+	if auto is 1:
+		repeat with C running through ass covering clothing:
+			if C is not displacable and C is not zippable, rule fails;
+	otherwise	if the number of bottom level ass protection clothing > 0:
 		now failed-masturbation-reason is the substituted form of "You would need to displace your [printed name of a random bottom level ass protection clothing] first.";
 		rule fails.
 The clothing blocks anal masturbation rule is listed last in the anal masturbation restriction rules.
@@ -407,6 +410,8 @@ Definition: yourself is masturbation-climaxing:
 	if A >= R, decide yes;
 	decide no.
 
+automaticAsswank is initially false. [turns an automatic wank into an anal wank]
+
 Masturbating is an action applying to nothing.
 
 Check masturbating:
@@ -418,6 +423,8 @@ Check masturbating:
 	if the player is able to vaginally masturbate:
 		if wanktype is COCK-WANK, now wanktype is HERM-WANK;
 		otherwise now wanktype is VAG-WANK;
+	if auto is 1 and automaticAsswank is true and the player is able to anally masturbate:
+		now wanktype is ASS-WANK;
 	if wanktype is NO-WANK:[that is to say, neither set of genitals worked.]
 		if the player is not able to anally masturbate:
 			if auto is 0, say "[failed-masturbation-reason]" instead;

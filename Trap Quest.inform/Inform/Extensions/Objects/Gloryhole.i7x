@@ -199,12 +199,16 @@ To compute gloryhole genital modification:
 	otherwise if clitoris piercing is eligible:
 		summon normal clit piercing cursed with quest;
 		say "You feel a sharp hot pain in your clit! You scream and try to pull away from the wall as hard as you can. The suction stops and you are able to step away and see your new [normal clit piercing]!";
-	otherwise if C is chastity bond:
+	otherwise if C is chastity bond and a random number between 1 and 2 is 1:
 		summon C locked;
 		say "[if C is chastity cage]Before you can react, someone on the other end of the hole has forced something rigid around your [ShortDesc of penis]! The suction stops and you pull back to find that you are now wearing a [C]![otherwise][GloryHoleSuction]While you are stuck, you can feel somebody reach through the hole and start pushing sections of metal against your hips. Within moments, a full female chastity belt has been locked on to your body. The suction stops and you are able to step backwards and properly inspect your new attire[end if]![line break][variable custom style][if the anal sex addiction of the player < 3]What the fuck?![otherwise if the anal sex addiction of the player < 5]Nooooo![otherwise if the anal sex addiction of the player < 7]I don't deserve this, do I?![otherwise if diaper lover is 1]Uh-oh, it looks like I'm going to have to get my cummies with my [asshole] now![otherwise]Looks like I'm going to have to get my orgasms with my [asshole] now! Sounds like fun![end if][roman type][line break]";
 	otherwise:
 		if the player is possessing a penis:
-			if gloryhole is a-dick-detacher and penis-is-detachable by gloryhole using 1: [#LXorDD]
+			if the player is ready for common event TG:
+				say "You're enjoying both the sensations and the feeling of dominance, when suddenly, things start to feel... strange.[line break][variable custom style]What the hell is going on?![roman type][line break]";
+				say DefaultSexChangeFlav;
+				SexChange the player;
+			otherwise if gloryhole is a-dick-detacher and penis-is-detachable by gloryhole using 1: [#LXorDD]
 				say "You're enjoying both the sensations and the feeling of dominance";
 				compute detach-players-dick by gloryhole using 1;
 				say GotUnluckyFlav;
@@ -212,7 +216,7 @@ To compute gloryhole genital modification:
 				say "Somebody slaps your [ShortDesc of penis] painfully!";
 				PainUp 1;
 				PenisDown 1;
-				say "You reflexively pull back.";
+			say "You reflexively pull back.";
 		otherwise if the player is possessing a vagina:
 			say "Somebody flicks your clitoris painfully! You pull it back out, but the [if the sex addiction of the player < 10]shocking [end if]experience has made you more submissive.";
 			PainUp 2;

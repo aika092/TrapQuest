@@ -299,11 +299,12 @@ To decide which number is the weight of (D - a knickers):
 	if diaper lover > 0:
 		if D is diaper:
 			increase X by (the total-soak of D + 9) / 10;
-			decrease X by the number of worn diaper covers * 3;
 		otherwise:
 			increase X by (the total-soak of D + 5) / 6;
 		increase X by (the mess of D + 7) / 8;
 		decrease X by the magic-modifier of D;
+		let DC be a random worn diaper cover;
+		if D is worn and DC is diaper cover and DC is not waddle-walking, now X is X / 2;
 	if X > 0, decide on X / 2;
 	decide on 0.
 

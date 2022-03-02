@@ -1118,7 +1118,7 @@ Chapter 3 Drink Requesting
 talk-drink-request is a talk-object.
 
 To consider (T - talk-drink-request) for (M - a monster):
-	if M is intelligent and the player is thirsty:
+	if M is intelligent and the player is thirsty and the player is not in a predicament room:
 		if M is defeated:
 			now the printed name of T is the substituted form of "[DefeatedDrinkRequest of M]";
 		otherwise:
@@ -1204,7 +1204,7 @@ Chapter 4 Food Requesting
 talk-food-request is a talk-object.
 
 To consider (T - talk-food-request) for (M - a monster):
-	if M is intelligent and the player is hungry:
+	if M is intelligent and the player is hungry and the player is not in a predicament room:
 		if M is defeated:
 			now the printed name of T is the substituted form of "[DefeatedFoodRequest of M]";
 		otherwise:
@@ -1320,7 +1320,7 @@ speakingOutLoud is a number that varies. [For tracking whether the player chose 
 talk-dismiss is a talk-object.
 
 To consider (T - talk-dismiss) for (M - a monster):
-	if M is intelligent and M is interested and M is not caged:
+	if M is intelligent and M is interested and M is not caged and the player is not in a predicament room:
 		if M is defeated:
 			now the printed name of T is the substituted form of "[DefeatedDismissal of M]";
 		otherwise:

@@ -80,11 +80,10 @@ A later time based rule (this is the robo vacuum cleaner rule):
 				if C is removable clothing, WardrobeVanish C;
 			repeat with C running through worn removable shoes:
 				if C is not heels, WardrobeVanish C;
-			if there is pussy covering clothing or F is actually occupied or (there is worn unremovable shoes and the number of worn heels is 0):
+			if there is pussy covering clothing or F is actually occupied or (there is worn unremovable shoes and the number of worn heels is 0) or skirted-maid-corset is not unclash summonable:
 				say "But then it suddenly stops, seeming to realise it is unable to do what it was intending to. That's... probably a good thing.";
 			otherwise:
-				PinkWardrobeUnclash skirted-maid-corset;
-				class summon skirted-maid-corset;
+				unclash class summon skirted-maid-corset;
 				if the number of worn heels is 0, class summon pink girly bow court heels;
 				now robo vacuum cleaner is penetrating F;
 				say "Before you know it, the robot has zipped under your feet and extended its vertical pole, impaling your [variable F]! Your [MediumDesc of random worn heels] prevent you from being able to jump, and the long dildo-on-a-pole prevents you from bending your knees, completely trapping you with a single metal rod!!! Wherever the robot goes, it's going to be taking you with it from now on!";

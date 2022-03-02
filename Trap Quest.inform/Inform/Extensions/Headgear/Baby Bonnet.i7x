@@ -17,7 +17,7 @@ Definition: a baby bonnet is condom pinnable: decide yes.
 Part - Class Outfit
 
 To compute class outfit of (H - a baby bonnet):
-	class summon little dinosaur onesie;
+	class summon cupcake onesie;
 	class summon rubber mittens;
 	gluify rubber mittens;
 	unless H is rubber-baby-bonnet, class summon yellow-pacifier;

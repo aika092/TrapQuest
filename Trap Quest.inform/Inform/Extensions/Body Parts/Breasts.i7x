@@ -317,7 +317,9 @@ To decide which number is max breast size:
 
 To decide which number is min breast size:
 	if the player is sexed male, decide on 1;
-	decide on 1 + (starting body shape * 2).
+	let X be 1 + (starting body shape * 2);
+	if the player is originally female, increase X by natural body shape * 4;
+	decide on X.
 
 the breasts presentable rules is a rulebook.
 the presentable rules of breasts is usually the breasts presentable rules.
@@ -952,6 +954,12 @@ To BustImplantsUp (X - a number):
 				class summon rubber-bunny-waitress-outfit; [will be blocked if a class-relevant outfit is already worn]
 				let M be a random worn overdress;
 				if rubber-bunny-waitress-outfit is not held and M is a removable overdress, transform M into rubber-bunny-waitress-outfit;
+			otherwise if silver-tiara is worn and rubber-royal-dress is off-stage and rubber-royal-dress is unclash summonable:
+				let O be a random worn overdress;
+				if O is overdress:
+					transform O into rubber-royal-dress;
+				otherwise:
+					unclash class summon rubber-royal-dress;
 	compute bra strain;
 	update appearance level;
 	progress quest of bust-up-quest;

@@ -64,7 +64,7 @@ To SemenAddictDown (X - a number):
 		decrease X by 1;
 		if the raw semen addiction of the player > 1:
 			decrease the raw semen addiction of the player by 1;
-			if X is 0, say "You feel less [if the semen addiction of the player > 12]addicted to[otherwise if the semen addiction of the player > 6]interested in[otherwise]tolerant of[end if] [one of][if bukkake fetish is 1][one of]being ejaculated on[or]receiving facials[or]getting coated in [semen][stopping][otherwise]the feeling of [semen][end if][or]being creampied[or]having your [fuckholes] pumped full of [semen][in random order]".
+			if X is 0, say "You feel less [if the semen addiction of the player > 12]addicted to[otherwise if the semen addiction of the player > 6]interested in[otherwise]tolerant of[end if] [one of][if bukkake fetish is 1][one of]being ejaculated on[or]receiving facials[or]getting coated in [semen][stopping][otherwise]the feeling of [semen][end if][or]being creampied[or]having your [fuckholes] pumped full of [semen][in random order].".
 
 semen-encountered is a number that varies.
 

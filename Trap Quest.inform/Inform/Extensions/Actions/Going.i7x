@@ -134,9 +134,10 @@ To compute clothing cleanup:
 Part 1 - Movement Hindrance Definitions
 
 Definition: yourself is waddling:
-	if there is a worn diaper:
-		let D be a random worn diaper;
-		if the weight of D > 2, decide yes;
+	if there is worn waddle-walking clothing, decide yes;
+	if there is a worn diaper cover, decide no;
+	let D be a random worn diaper;
+	if D is diaper and the weight of D > 2, decide yes;
 	decide no.
 
 Definition: yourself is crawling:
@@ -214,12 +215,16 @@ To decide which number is the movement reduction of the player:
 			if movement-reduction-flav-said is false:
 				now movement-reduction-flav-said is true;
 				now T is the substituted form of "Having your body carefully pressed against [NameDesc of team-predicament-partner] makes you move significantly less quickly!";
-		if there is a worn diaper:
-			let D be the weight of a random worn diaper;
+		if there is a worn diaper or there is worn waddle-walking clothing:
+			let WW be a random worn waddle-walking clothing;
+			let D be 6;
+			if WW is nothing, now WW is a random worn diaper;
+			if WW is diaper and the weight of WW > D, now D is the weight of WW;
 			increase X by D;
 			if movement-reduction-flav-said is false and D > 0:
 				now movement-reduction-flav-said is true;
-				now T is the substituted form of "[if D > 6]Your comically exaggerated waddling caused by your extremely bloated diaper makes it almost impossible[otherwise if D > 4]Your extremely awkward waddling caused by your bloated diaper makes it extremely difficult[otherwise if D > 2]Your very awkward waddling caused by your bulky diaper makes it extremely difficult[otherwise]Your awkward walking caused by your large diaper makes it difficult[end if] to move quickly!";
+				if WW is diaper, now T is the substituted form of "[if D > 6]Your comically exaggerated waddling caused by your extremely bloated [ShortDesc of WW] makes it almost impossible[otherwise if D > 4]Your extremely awkward waddling caused by your bloated [ShortDesc of WW] makes it extremely difficult[otherwise if D > 2]Your very awkward waddling caused by your bulky [ShortDesc of WW] makes it extremely difficult[otherwise]Your awkward walking caused by your [ShortDesc of WW] makes it difficult[end if] to move quickly!";
+				otherwise now T is the substituted form of "Your extremely awkward waddling caused by the magic effect of your [WW] makes it extremely difficult to move quickly!";
 		if the player is squirming:
 			repeat with F running through insertable objects penetrating a fuckhole:
 				increase X by the girth of F / 3;
@@ -403,10 +408,10 @@ Check going:
 	[The player has a chance of involuntarily standing up when super light and moving.]
 	if seconds is 3 or seconds is 6:
 		if the player is prone and the player is zeroG:
-			say "You try to crawl forward but by pushing on the ground with your extremely light body, you inadvertently stand up.";
+			say "You try to crawl forward but by pushing on the ground with your extremely light body, [bold type]you inadvertently stand up.[roman type][line break]";
 			silently try standing;
 		if the player is prone and a random number between -3 and 3 > the weight of the player:
-			say "You try to crawl forward but by pushing on the ground with your extremely light body, you inadvertently stand up.";
+			say "You try to crawl forward but by pushing on the ground with your extremely light body, [bold type]you inadvertently stand up.[roman type][line break]";
 			silently try standing;
 		if vampiress is chain-tethering:
 			check tethering;

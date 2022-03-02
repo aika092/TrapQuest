@@ -1,6 +1,6 @@
 Teleporting and Dragging by Miscellaneous Backend begins here.
 
-player-dragger is an object that varies.
+player-dragger is an object that varies. player-dragger is usually yourself.
 
 To teleport to (R - a room):
 	if doll-stuck-num > 0:
@@ -25,6 +25,13 @@ To teleport to (R - a room):
 		unless T is ghostly tentacle or T is player-dragger, dislodge T;
 	repeat with T running through things wrangling a body part:
 		unless T is ghostly tentacle or T is player-dragger, dislodge T;
+	repeat with M running through alive monsters: [This is mainly to address the edge case where ghostly tentacles are wrangling a player who eats a mushroom, but might catch some other edge cases too]
+		if M is grabbing the player or M is penetrating a body part or M is wrangling a body part:
+			if M is not in R and R is unbossed and R is in playerRegion:
+				say "[line break][BigNameDesc of M] slips [if player-dragger is not monster]through the portal [end if]with you!";
+				now M is in R;
+			otherwise:
+				dislodge M;
 	repeat with C running through stuck body parts:
 		now C is not stuck;
 	repeat with C running through held store things:

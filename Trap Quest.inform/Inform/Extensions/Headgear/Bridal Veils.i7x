@@ -3,9 +3,7 @@ Bridal Veils by Headgear begins here.
 A bridal veil is a kind of headgear. A bridal veil is usually silk. A bridal veil is blondeness-positive. A bridal veil is usually hair growing. A bridal veil is usually anal-sex-addiction-influencing. A bridal veil is womanly.
 
 Definition: a bridal veil is white themed: decide yes.
-Definition: a bridal veil is roleplay:
-	if the player is the donator, decide yes;
-	decide no.
+Definition: a bridal veil is roleplay: decide yes.
 
 To say ShortDesc of (H - a bridal veil):
 	say "bridal veil".
@@ -62,10 +60,10 @@ To decide which number is the vaginal-sex-addiction-influence of (C - a bridal v
 	if C is blessed, decide on 0;
 	decide on 5.
 
-To compute second first time class reward of (Q - betrothal-quest) on (C - a clothing):
+To compute generic second time class reward of (Q - betrothal-quest) on (C - a clothing):
 	let D be a random off-stage necklace;
-	if D is necklace:
-		now D is pure diamond;
+	if D is necklace and the time-alive of bride-consort > 0: [NPC was bedded, not banished]
+		now D is pink diamond;
 		set shortcut of D;
 		if D is actually summonable:
 			summon D;

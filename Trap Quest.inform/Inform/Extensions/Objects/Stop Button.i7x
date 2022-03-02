@@ -9,7 +9,7 @@ To say ExamineDesc of (C - a stop button):
 	say "The capsule has a giant red button on the top with STOP in big letters on it. Above it, a large mechanical counter reads '$[25000 * the wealth of the player]'. Maybe it ends the game[if the wealth of the player > 0], and that's your prize money[end if]! Are you ready for the game to end?".
 
 Check pushing a stop button:
-	repeat with M running through dangerous monsters in the location of the player:
+	repeat with M running through combative monsters:
 		say "[BigNameDesc of M] blocks you from reaching the button! You're going to have to deal with [him of M] first!" instead;
 	if robomatron is in the location of the player:
 		unless robomatron is friendly, say "The [robomatron] blocks you from reaching the button! You're going to have to deal with [him of robomatron] first!" instead;

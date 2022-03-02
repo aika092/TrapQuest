@@ -800,18 +800,15 @@ To AltarReward (T - a condom hat):
 		now C is not purity;
 		increase the empty condoms of C by the used condoms of C;
 		now the used condoms of C is 0;
-		repeat with O running through worn trousers:
-			WardrobeVanish O;
-		repeat with O running through worn knickers:
-			WardrobeVanish O;
-		repeat with O running through worn bras:
-			WardrobeVanish O;
 		let PO be a random worn dress;
-		if PO is clothing and the number of worn dress is 1:
+		if PO is clothing and the number of worn dress is 1: [progressively worse but rarer ways of getting the right outfit on]
+			transform PO into cameltoe-priestess-outfit;
+		otherwise if cameltoe-priestess-outfit is unclash summonable:
+			unclash class summon cameltoe-priestess-outfit;
+		otherwise if PO is clothing:
 			transform PO into cameltoe-priestess-outfit;
 		otherwise:
-			PinkWardrobeUnclash cameltoe-priestess-outfit;
-			summon cameltoe-priestess-outfit;
+			summon cameltoe-priestess-outfit uncursed;
 			say "A [cameltoe-priestess-outfit] appears on you!";
 		reset dungeon altar.
 
@@ -967,13 +964,15 @@ To DevilPray (P - a person):
 	if R > 0:
 		compute DevilPayment N.
 
-[TODO: move this to one of the clothing extensions]
 To compute hostileDamage:
-	let H be a random hostility clothing;
-	if H is clothing:
-		say "Your [printed name of H] heats up, stinging you with pain in response to your attack.";
-		if a random number between 1 and 2 is 1, BodyRuin 1;
-		otherwise PainUp 1.
+	let H be a random worn hostility clothing;
+	if H is clothing and a random number between 1 and (combatSpeed * 2) is 1:
+		if a random number between 1 and 2 is 1:
+			say "Your [printed name of H] heats up, singing your skin, in response to your attack.";
+			BodyRuin 1;
+		otherwise:
+			say "Your [printed name of H] shocks you with electricity, stinging you with pain, in response to your attack.";
+			PainUp 1.
 
 To DevilPray (T - a thing):
 	let R be -1;

@@ -539,9 +539,10 @@ To say NastyTrapReactFlav of (M - a student):
 		FavourDown M with consequences.
 
 To check attack of (M - a student):
-	let ST be a random friendly staff member in the location of the player;
-	if ST is monster and the number of interested unfriendly staff members in the location of the player is 0, say "[BigNameDesc of M] wants to attack you, but [he of M] is waiting until [NameDesc of ST] [if ST is interested]loses interest and [end if]leaves the room...";
-	otherwise check default attack of M.
+	if the player is not in a predicament room:
+		let ST be a random friendly staff member in the location of the player;
+		if ST is monster and the number of interested unfriendly staff members in the location of the player is 0, say "[BigNameDesc of M] wants to attack you, but [he of M] is waiting until [NameDesc of ST] [if ST is interested]loses interest and [end if]leaves the room...";
+		otherwise check default attack of M.
 
 Part - Protection
 
@@ -1138,6 +1139,10 @@ To compute banishment of (M - a student):
 
 Part - Conversation
 
+Definition: a student is fluff-question-appropriate:
+	if the player is in a predicament room, decide no;
+	decide yes.
+
 To say FirstResponse of (M - a student):
 	say "[speech style of M]'Hello.'[roman type][line break]".
 
@@ -1242,6 +1247,11 @@ To say ShortDesc of (C - quiz-partner):
 	let ST be the bound-target of C;
 	if ST is a student, say "[student-name of ST]";
 	otherwise say "BUGGED STUDENT".
+
+To say NameDesc of (C - quiz-partner):
+	say ShortDesc of C.
+To say BigNameDesc of (C - quiz-partner):
+	say ShortDesc of C.
 
 To say MediumDesc of (C - quiz-partner):
 	let ST be the bound-target of C;

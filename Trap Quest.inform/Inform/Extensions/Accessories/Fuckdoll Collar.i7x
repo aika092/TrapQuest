@@ -126,7 +126,7 @@ BBC Collar is a submissive collar. The Printed name of BBC collar is "[clothing-
 To decide which number is the initial outrage of (C - BBC collar):
 	decide on 8.
 
-To decide which number is the bbc-sex-addiction-influence of (C - BBC collar):
+To decide which number is the bbc-addiction-influence of (C - BBC collar):
 	let S be 1;
 	decrease S by the magic-modifier of C; [Positive magic = subtracted sex addiction]
 	decide on S.

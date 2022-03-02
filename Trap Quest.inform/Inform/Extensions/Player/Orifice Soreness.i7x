@@ -127,7 +127,7 @@ To passively stimulate (F - a body part) from (T - an object):
 			otherwise increase A by the sex addiction of the player / 2;
 		if (F is fuckhole or F is penis) and there is a worn total protection diaper, increase A by the square root of the diaper addiction of the player;
 		let ST be the stimulation of T on F * 2;
-		now ST is a random number between ST and (ST * 3);
+		if refractoryperiod <= 0, now ST is a random number between ST and (ST * 3); [in the first three turns after orgasm, arousal from stimulation is slightly lowered]
 		let AR be (ST + A) * 20;
 		if F is fuckhole or F is penis:
 			increase AR by 350;

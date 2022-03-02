@@ -1,6 +1,6 @@
 Influence by Clothing begins here.
 
-Clothing can be strength-influencing, dexterity-influencing, intelligence-influencing, sex-addiction-influencing, anal-sex-addiction-influencing, vaginal-sex-addiction-influencing, oral-sex-addiction-influencing, titfuck-addiction-influencing, semen-addiction-influencing, semen-taste-addiction-influencing, milk-taste-addiction-influencing, urine-taste-addiction-influencing, diaper-addiction-influencing, delicateness-influencing, heel-skill-influencing, luck-influencing, charisma-influencing, not-influencing (this is the clothing-influence property). Clothing is usually not-influencing.
+Clothing can be strength-influencing, dexterity-influencing, intelligence-influencing, sex-addiction-influencing, anal-sex-addiction-influencing, vaginal-sex-addiction-influencing, oral-sex-addiction-influencing, titfuck-addiction-influencing, bbc-addiction-influencing, semen-addiction-influencing, semen-taste-addiction-influencing, milk-taste-addiction-influencing, urine-taste-addiction-influencing, diaper-addiction-influencing, delicateness-influencing, heel-skill-influencing, luck-influencing, charisma-influencing, not-influencing (this is the clothing-influence property). Clothing is usually not-influencing.
 
 To set up stat-based influence of (C - a clothing):
 	let R be a random number between 1 and 5;
@@ -19,9 +19,10 @@ To set up taste-based influence of (C - a clothing):
 
 To set up submissiveness-based influence of (C - a clothing):
 	now C is delicateness-influencing;
-	let R be a random number between 1 and 2;
+	let R be a random number between 1 and (2 + interracial fetish);
 	if R is 1, now C is sex-addiction-influencing;
-	if R is 2 and diaper lover >= 1, now C is diaper-addiction-influencing.
+	if R is 2 and diaper lover >= 1, now C is diaper-addiction-influencing;
+	if R is 3, now C is bbc-addiction-influencing.
 
 To set up sex-based influence of (C - a clothing):
 	now C is sex-addiction-influencing;
@@ -30,7 +31,7 @@ To set up sex-based influence of (C - a clothing):
 		if R is 1, now C is anal-sex-addiction-influencing;
 		if R is 2 and the player is possessing a vagina, now C is vaginal-sex-addiction-influencing;
 		if R is 3, now C is oral-sex-addiction-influencing;
-		if R is 4 and max breast size > 7, now C is titfuck-addiction-influencing;
+		if R is 4 and max breast size >= 5, now C is titfuck-addiction-influencing;
 		if R is 5, now C is semen-addiction-influencing.
 
 To set up random-based influence of (C - a clothing):

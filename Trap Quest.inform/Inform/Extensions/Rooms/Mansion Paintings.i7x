@@ -475,6 +475,7 @@ Report wearing:
 
 
 
+
 bowsette-painting is a painting. The text-shortcut of bowsette-painting is "bptg".
 
 Figure of bowsette painting is the file "Env/Mansion/painting2a.jpg".
@@ -494,6 +495,7 @@ BowsettePainting01 is a painting-room. The grid position of BowsettePainting01 i
 To compute painting entrance of (P - bowsette-painting):
 	now playerRegion is school; [any time based events that don't happen in the school should also not happen here]
 	change the south exit of BowsettePainting01 to the location of P;
+	add south to the Nviables of BowsettePainting01;
 	repeat with N running from 1 to 2:
 		let J be a random off-stage plentiful accessory;
 		if J is a thing:

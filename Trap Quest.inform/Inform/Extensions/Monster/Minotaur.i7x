@@ -202,8 +202,8 @@ Part 4 - Combat
 
 Section 1 - Attack
 
-Definition: minotaur (called M) is automatically tempted:
-	if M is wrangling a body part, decide yes;
+Definition: minotaur is automatically tempted:
+	if minotaur is wrangling a body part, decide yes;
 	if the bimbo of the player >= 20, decide yes;
 	if the appearance of the player > 7, decide yes;
 	if the player is pheromonal, decide yes;
@@ -212,7 +212,7 @@ Definition: minotaur (called M) is automatically tempted:
 	if the player is monster fucked, decide yes;
 	decide no.
 
-Definition: minotaur (called M) is eager to slap:
+Definition: minotaur is eager to slap:
 	if a random number between 1 and 4 is 1, decide yes;
 	decide no.
 
@@ -294,14 +294,23 @@ To compute CagedMinotaurGrabbing of (M - minotaur):
 
 To compute CagedMinotaurMolesting of (M - minotaur):
 	if the blue-balls of M > a random number between 4 and 9:[NUT]
-		if the largeness of breasts < 6 and the thickness of hips < 5 and asshole is undefended:[If you fit into the cage, you faint, since the cum bloating would mean you couldn't get out.]
-			say "[if the reaction of the player is 0][BigNameDesc of M] shrugs off your attempts to struggle[otherwise][BigNameDesc of M] breathes heavily[end if] as [he of M] pulls your arm even further through the gap between the bars, which is just wide enough to let [him of M] drag in your shoulder, followed by your head, neck, chest, hips, knees, and finally your feet. You [if the sex addiction of the player < 5]curse[otherwise]thank Nintendolls for[end if] your petite frame as [FuckerDesc of M] pulls you all the way into the cage and effortlessly pins you down with [his of M] huge limbs. [big his of M] 'smallest' limb is rock-hard, throbbing, and drooling precum as [he of M] lifts your legs and aligns [his of M] [cockhead of M] with your exposed asshole. Knowing there's nothing more you can do at this point, you [if the reaction of the player is 0]stop struggling and [end if]grit your teeth as [he of M] slams right in. You faint.";
-			now delayed fainting is 1;
-			now the fainting reason of the player is 24;
+		if the thickness of hips < 5 and asshole is undefended:[If you fit into the cage, you faint, since the cum bloating would mean you couldn't get out.]
+			say "[if the reaction of the player is 0][BigFuckerDesc of M] shrugs off your attempts to struggle[otherwise][BigFuckerDesc of M] breathes heavily[end if] as [he of M] exchanges [his of M] grip on your arms for a grip on your thighs. [big he of M] yanks your feet through the gap between the bars, which is just wide enough to let [him of M] drag in your legs, followed by your hips You curse Nintendolls for your petite frame as you hook your armpits around the two bars to prevent [him of M] from using [his of M] powerful limbs to pull you in any further. [big his of M] 'smallest' limb is rock-hard, throbbing, and drooling precum as [he of M] aligns [his of M] [cockhead of M] with your exposed asshole. Knowing there's nothing more you can do at this point, you [if the reaction of the player is 0]stop struggling and [end if]grit your teeth as [he of M] slams right in.";
+			now M is penetrating asshole; [This allows orgasm function to work properly]
+			ruin asshole times 2;
+			say "[Big he of M] has clearly been pent-up and gotten excited, because [he of M] starts ejaculating almost immediately. It starts coming... and it keeps coming.";
+			AssFill (16 - the stomach-liquid of the player) + (belly limit - total squirtable fill of belly); [should be just enough to cause all the way through semen puking]
+			orgasm M;
+			now the blue-balls of M is -5;
+			now the swing-intensity of M is 0;
+			dislodge M;
+			say "Even [he of M] isn't prepared for the pressure that has build up inside you, because you're suddenly flung forward back out of the cage the cage as a fountain of cum shoots back out of your [asshole].";
+			if the player is upright, try kneeling;
+			AssSquirt;
 		otherwise:
 			say "[if the reaction of the player is 0][BigNameDesc of M] shrugs off your attempts to struggle[otherwise][BigNameDesc of M] breathes heavily[end if] as [he of M] pulls your head through another gap between the bars and pushes you down so your face is level with [his of M] huge, precum-drooling [LongDickDesc of M]. [big his of M] [cockhead of M] immediately connects with your lips, and [if the player is pheromonal]your head swims from being exposed to such a huge dosage of virile musk. Your instincts take over, and immediately open wide so [his of M] shaft can slide[otherwise]your head swims from the insane saltiness of the stuff. You open your mouth to wretch, and immediately feel your jaw being pried open as [his of M] shaft slides[end if] right in. You feel a single, tell-tale throb, and half a second later you feel hot [semen] exploding into your mouth. Even [he of M] isn't prepared for the force, and you're flung back from the edge of the cage as a huge amount of cum shoots down your throat.";
-			StomachSemenUp 5;
 			now M is penetrating face; [This allows orgasm function to work properly]
+			StomachSemenUp the semen load of M;
 			orgasm M;
 			now the blue-balls of M is -5;
 			now the swing-intensity of M is 0;

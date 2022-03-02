@@ -305,7 +305,7 @@ To compute teaching of (L - toy-lesson):
 						say "You try your best but it's just too big! You hang your head in shame as you put the [MediumDesc of CP] back onto the table. [BigNameDesc of M] shakes [his of M] head in disappointment.[line break][speech style of M]'I had higher expectations of you.'[roman type][line break]";
 						add 0 to LN;
 						if there is a worn tattoo and the number of worn crotch tattoo is 0:
-							if the player is possessing a vagina or fast tg is 3:
+							if the player is possessing a vagina or the player is ready for event tg:
 								say "[BigNameDesc of M] touches the space above your [genitals] with a finger. [big his of M] finger is burning hot!";
 								PainUp 1;
 								summon measurement tattoo;

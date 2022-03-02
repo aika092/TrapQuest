@@ -41,6 +41,7 @@ To compute mandatory room leaving of (M - a monster):
 		decrease N by 1;
 	while N > -15 and M is in L:
 		decrease N by 1;
+		if debugmode is 1, say "Forced to regionally place [MediumDesc of M] as there was no other way for [him of M] to leave.";
 		regionally place M.
 
 To blockable move (M - a monster) to (D - a direction):

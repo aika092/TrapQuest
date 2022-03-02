@@ -14,6 +14,7 @@ To decide which number is the intelligence-influence of (C - a fertility outfit)
 
 Figure of goddess tunic is the file "Items/Clothes/Upper/Special/FertGod/fertilitygoddess1.png".
 Figure of ivy leaves is the file "Items/Clothes/Upper/Special/FertGod/fertilitygoddess2.png".
+Figure of sheer chest garb is the file "Items/Clothes/Upper/Special/FertGod/fertilitygoddess4.png".
 
 Part 1 - Goddess Tunic
 
@@ -117,5 +118,36 @@ Carry out drinking living tentacles:
 	say "You tenderly grasp one of the tentacles wrapping around your body and take it into your mouth. It begins to throb excitedly, and the rest of the tentacles tighten and rub against you as well. You begin to forcefully suck on it almost by instinct, and quickly feel it increasing its pace. Your whole body shudders as you feel its orgasm yourself, flooding through you, as thick cords of [semen] pump down your throat. Wrung out by the sensation still echoing through your body, you shiver in delight as it withdraws, spent for the moment.";
 	StomachSemenUp 2;
 	now the charge of the noun is 100.
+
+Part 4 - Sheer Chest Garb
+
+sheer-chest-garb is a fertility outfit. sheer-chest-garb is sheer. sheer-chest-garb is unskirted. sheer-chest-garb is belly exposing. sheer-chest-garb is low cut. sheer-chest-garb is silk.
+
+The printed name of sheer-chest-garb is "[clothing-title-before]sheer chest garb[clothing-title-after]". The text-shortcut of sheer-chest-garb is "scg". Understand "sheer", "chest garb", "garb" as sheer-chest-garb.
+
+Definition: sheer-chest-garb is brown themed: decide yes.
+
+To decide which figure-name is clothing-image of (C - sheer-chest-garb):
+	decide on figure of sheer chest garb.
+
+To say ClothingDesc of (C - sheer-chest-garb):
+	say "This sheer brown top with long dangling frills might look basic, and rather... uncultured, but it's actually made out of the finest silk.".
+
+To say ClassSummonFlav of (C - sheer-chest-garb):
+	say "A sheer brown top appears on your chest.[roman type][line break]You feel as if your destiny is calling you!".
+
+To compute class set up of (C - sheer-chest-garb):
+	now the raw-magic-modifier of C is childValue times 4.
+
+To compute SelfExamineDesc of (O - sheer-chest-garb):
+	say "You are wearing a [ShortDesc of O]. ".
+
+To say ShortDesc of (C - sheer-chest-garb):
+	say "chest garb".
+To say MediumDesc of (C - sheer-chest-garb):
+	say "native goddess's chest garb".
+
+To decide which number is the initial outrage of (C - sheer-chest-garb):
+	decide on 2.
 
 Fertility Goddess Outfit ends here.

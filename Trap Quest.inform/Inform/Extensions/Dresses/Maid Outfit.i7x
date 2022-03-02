@@ -43,9 +43,6 @@ This is the remove inappropriate maid outfits rule:
 		unless B is sexy-maid-outfit or B is cafe-maid-outfit or B is blue-sissy-maid-outfit or B is maid-waitress-outfit, now B is in Holding Pen.
 The remove inappropriate maid outfits rule is listed in the diaper quest fix rules.
 
-[Definition: a maid outfit is class-transformation-protected:
-	if the class of the player is maid, decide yes;
-	decide no.] [commented out because this blocks potential-upgrade-target from being checked]
 Definition: a maid outfit is disintegration-protected:
 	if the class of the player is maid, decide yes;
 	decide no.

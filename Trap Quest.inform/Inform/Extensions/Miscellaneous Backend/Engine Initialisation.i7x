@@ -357,7 +357,7 @@ To retrieve toilet allowance options:
 		clear the screen.
 
 To retrieve silicone milk options:
-	if lactation fetish > 0 and artificial enhancements fetish > 0 and the player is a february 2021 top donator:
+	if lactation fetish > 0 and artificial enhancements fetish > 0 and the player is the donator:
 		now the current menu is the Table of Silicone Milk Options;
 		carry out the displaying activity;
 		clear the screen.
@@ -378,9 +378,12 @@ To retrieve benefit options:
 	clear the screen.
 
 To retrieve TG options:
-	if tg fetish >= 1 and the player is male: [This doesn't award points and refers to the player's penis size so it comes after the benefit options.]
+	if tg fetish >= 1 and the player is sexed male: [This doesn't award points and refers to the player's penis size so it comes after the benefit options.]
 		clear the screen;
-		now the current menu is the Table of TG Options;
+		now the current menu is the Table of TG Timing Options;
+		carry out the displaying activity;
+		clear the screen;
+		now the current menu is the Table of TG Occurence Options;
 		carry out the displaying activity;
 		clear the screen.
 
@@ -405,7 +408,10 @@ To fix starting stats:
 		while the largeness of breasts < min breast size: [Starting body shape fixed here]
 			increase the flesh volume of breasts by 1;
 			now the real flesh volume of breasts is the flesh volume of breasts;
-	now the raw largeness of hair is min ass size;
-	now the real largeness of hair is the raw largeness of hair.
+	now the raw largeness of hair is min ass size + (4 * natural hair length);
+	now the real largeness of hair is the raw largeness of hair;
+	if the player is possessing a penis:
+		decrease the size of penis by natural body shape * 2;
+		now the real size of penis is the size of penis.
 
 Engine Initialisation ends here.

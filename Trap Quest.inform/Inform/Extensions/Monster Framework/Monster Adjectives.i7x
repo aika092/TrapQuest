@@ -36,7 +36,7 @@ A monster has a number called boredom. [The number of seconds until they will be
 A monster has a number called friendly boredom. [The number of turns that the monster has been following the player around. The higher it gets, the more chance that the monster will get bored and leave the player alone.]
 A monster has a room called target-room. [Any monster that can change locations at unusual times might want to use this to hold a room in memory.]
 [A monster can be captive or released. A monster is usually released.] [Captive monsters are completely docile unless attacked, and they usually have a trigger to become 'released'.] [Replaced with the monster-restriction property]
-A monster can be dying. A monster is usually not dying. [A flag used by the game to remind itself that the monster should be removed from play.]
+A monster can be dying. [A flag used by the game to remind itself that the monster should be removed from play.]
 Definition: A monster is wenchy: decide no.
 A monster has a number called times-dominated. [Like times-submitted, but for dominant sex.]
 A monster has a number called scared. [How many seconds left until the monster is no longer scared. Scared monsters will attempt to flee from the player upon sight.]
@@ -52,14 +52,14 @@ A monster can be intelligent. A monster is usually unintelligent. [Essentially, 
 A monster is usually female. [Male = Do they have a sex organ that can ejaculate semen?]
 A monster has a number called times-met.
 A monster has a number called times-submitted.
-A monster can be moved. A monster is usually not moved. [Has the monster moved this turn?]
-A monster can be seeked. A monster is usually not seeked. [Has the monster moved aggressively this turn?]
-A monster can be stalled. A monster is usually not stalled. [If the player is moving slowly so monsters get a double move, monsters in the location of the player who aren't already chasing the player lose their second action.]
-A monster can be trip-warned. A monster is usually not trip-warned. [Did the player get a warning about their incoming trip attack last turn?]
-A monster can be notebook-studied. A monster is usually not notebook-studied.
-A monster can be bossdefeated. A monster is usually not bossdefeated.
-A monster can be diaper-committed. A monster is usually not diaper-committed.
-A monster can be double-diaper-committed. A monster is usually not double-diaper-committed.
+A monster can be moved. [Has the monster moved this turn?]
+A monster can be seeked. [Has the monster moved aggressively this turn?]
+A monster can be stalled. [If the player is moving slowly so monsters get a double move, monsters in the location of the player who aren't already chasing the player lose their second action.]
+A monster can be trip-warned.[Did the player get a warning about their incoming trip attack last turn?]
+A monster can be notebook-studied.
+A monster can be bossdefeated.
+A monster can be diaper-committed.
+A monster can be double-diaper-committed.
 A monster has a number called dismissRefused. [Have they refused to be dismissed?]
 A monster can be summon-available or permanently banished. A monster is usually summon-available. [Can it come back?]
 Definition: a monster is summon appropriate:

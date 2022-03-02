@@ -47,7 +47,7 @@ To uniquely set up (C - a wedge heels):
 	increase the heel-height of C by 2.
 
 To decide which object is the potential-upgrade-target of (C - a wedge heels):
-	if the heel-height of C >= 6 and C is plentiful, decide on a random off-stage armadillo heels;
+	if the heel-height of C >= 5 and C is plentiful and armadillo heels is off-stage, decide on armadillo heels;
 	decide on nothing.
 
 Wedge Heels ends here.

@@ -404,7 +404,7 @@ To decide which number is the initial outrage of (V - teapot):
 To decide which number is the initial cringe of (V - teapot):
 	decide on 6.
 
-witch's goblet is a vessel. witch's goblet is open topped. The max-doses of a witch's goblet is 2. witch's goblet is in Woods20. The printed name of witch's goblet is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]witch's goblet[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of witch's goblet is "wg". Figure of witch's goblet is the file "Items/Accessories/Vessels/goblet1.jpg".
+witch's goblet is a vessel. witch's goblet is open topped. The max-doses of a witch's goblet is 2. witch's goblet is in Woods20. The printed name of witch's goblet is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]witch's goblet[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of witch's goblet is "wg". Figure of witch's goblet is the file "Items/Accessories/Vessels/goblet1.png".
 To decide which figure-name is the examine-image of (V - witch's goblet):
 	decide on the figure of witch's goblet.
 To say VesselDesc of (V - witch's goblet):
@@ -445,6 +445,21 @@ To decide which number is the bartering value of (T - horn) for (M - a wench):
 	decide on 5.
 To decide which number is the bartering value of (T - horn) for (M - a shopkeeper):
 	decide on 8.
+
+
+[Sports Bottle is used in an Extra Credit Zone predicament]
+sports-bottle is a vessel. The max-doses of sports-bottle is 5. The printed name of sports-bottle is "[TQlink of item described]sports bottle[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of sports-bottle is "spb". Figure of sports bottle is the file "Items/Accessories/Vessels/sportsbottle1.jpg". Understand "sports", "bottle" as sports-bottle.
+To decide which figure-name is the examine-image of (V - sports-bottle):
+	decide on the figure of sports bottle.
+To say VesselDesc of (V - sports-bottle):
+	say "A sports bottle with an [']active top['] straw. The lid is sealed shut, so the only way to get the liquid out is to bite and suck.".
+To say ShortVesselDesc of (V - sports-bottle):
+	say "sports bottle".
+Definition: sports-bottle is basic loot: decide no.
+
+To decide which number is the wornArmsRequired of (V - a vessel):
+	decide on 1.
+
 
 To say ExamineDesc of (V - a vessel):
 	say "[VesselDesc of V][if the doses of V > 0]It currently contains [PotionType of V].[otherwise]It is currently empty.[end if]".

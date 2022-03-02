@@ -54,7 +54,7 @@ The max belly size reset rule is listed in the reset rules.
 This is the min penis size rule:
 	if min penis size points is 1 and micro-choice < 2:
 		increase choice in row 30 of the Table of Player Options by 1;
-	otherwise if min penis size points < 5 and the player is male and (points count > 0 or tg fetish >= 1):
+	otherwise if min penis size points < (5 - (natural body shape * 2)) and the player is male and (points count > 0 or tg fetish >= 1):
 		increase choice in row 29 of the Table of Player Options by 1;
 	otherwise:
 		follow the min penis size reset rule.

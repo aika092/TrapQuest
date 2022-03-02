@@ -576,7 +576,8 @@ To damage (A - a number) on (M - a monster):
 	[Just in case it doesn't happen in the monster's damage function - everything should be unfriendly after you attack it.]
 	reset orifice selection of M;
 	now the boredom of M is 0;
-	if M is interested and M is friendly, progress quest of attack-quest;
+	let attack-quest-eligible be false;
+	if M is interested and M is friendly, now attack-quest-eligible is true;
 	[Call the damage function of the monster]
 	if attack-damage > 0:
 		compute standard damage of M;
@@ -591,6 +592,7 @@ To damage (A - a number) on (M - a monster):
 	repeat with E running through worn equippables:
 		compute attack effect of E;
 	[Check for bonuses and remove dead NPCs]
+	if attack-quest-eligible is true and M is threatening, progress quest of attack-quest; [NPCs that stay unconcerned like mindless cultists don't count]
 	if the health of M <= 0:
 		repeat with T running through worn clothing:
 			compute slaying bonus of T;

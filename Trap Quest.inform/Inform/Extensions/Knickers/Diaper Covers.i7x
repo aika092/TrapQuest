@@ -3,7 +3,6 @@ Diaper Covers by Knickers begins here.
 diaper cover is a kind of clothing. A diaper cover is usually manly. A diaper cover is usually crotch-intact. A diaper cover is usually polyester. A diaper cover is usually rare. A diaper cover is usually diaper-addiction-influencing.
 
 Definition: a diaper cover is baby themed: decide yes.
-Definition: a diaper cover is pink themed: decide yes.
 Definition: a diaper cover is fetish appropriate:
 	if diaper quest is 1, decide yes;
 	decide no.
@@ -16,6 +15,12 @@ To decide which number is the alchemy key of (C - a diaper cover):
 	if C is product, decide on 18;
 	decide on 0.
 To decide which number is the initial armour of (C - a diaper cover):
+	decide on 10.
+To decide which number is the initial outrage of (C - a diaper cover):
+	if diaper quest is 0, decide on the initial cringe of C / 2;
+	decide on 0.
+To decide which number is the initial cringe of (C - a diaper cover):
+	if C is waddle-walking and C is worn, decide on 14;
 	decide on 10.
 To decide which number is the crotch-tightness of (C - a diaper cover):
 	decide on 0.
@@ -39,16 +44,16 @@ To compute recipe specific cursing of (T - a diaper cover):
 To decide what number is the price of (C - a diaper cover):
 	decide on 2.
 
-The printed name of diaper cover is usually "[clothing-title-before]diaper cover[clothing-title-after]". The text-shortcut of diaper cover is "dc".
+The printed name of diaper cover is usually "[clothing-title-before][selfexamineuniquetitle of item described][clothing-title-after]". The text-shortcut of diaper cover is "dc".
 
 To say ShortDesc of (C - a diaper cover):
 	say selfexamineuniquetitle of C.
 
 To say ClothingDesc of (C - a diaper cover):
-	say "A large diaper cover, that [if C is worn]completely covers[otherwise]could completely cover[end if] your [if there is a worn diaper][random worn diaper][otherwise][ShortDesc of hips][end if]. [if C is worn and there is a worn diaper]You can feel it making it much easier to walk in your nappy.[end if]".
+	say "A large [selfexamineuniquetitle of C], that [if C is worn]completely covers[otherwise]could completely cover[end if] your [if there is a worn diaper][random worn diaper][otherwise][ShortDesc of hips][end if]. [if C is worn and there is a worn diaper and C is not waddle-walking]You can feel it making it much easier to walk in your nappy[otherwise]Diaper covers halve the effective weight of diapers, and therefore reduce the amount they make you walk with a waddle[end if][if C is waddle-walking and C is identified and there is a worn diaper]... except this one, which has the [bold type]waddle-walking[roman type] magic attribute, and therefore does nothing to help with your waddling![otherwise if C is waddle-walking and C is identified]... except this one, which has the [bold type]waddle-walking[roman type] magic attribute, and therefore makes you walk with a waddle, even if you're not wearing a diaper![otherwise].[end if]".
 
 To compute SelfExamineDesc of (K - a diaper cover):
-	say "A large [selfexamineuniquetitle of K] completely covers your [if there is a worn not-exclusive diaper][random worn diaper][otherwise][ShortDesc of hips][end if]. ".
+	say "A large [selfexamineuniquetitle of K] completely covers your [if there is a worn not-exclusive diaper][random worn diaper][otherwise][ShortDesc of hips][end if][if K is waddle-walking], and forces you to walk with a waddle[end if]. ".
 
 To say selfexamineuniquetitle of (K - a diaper cover):
 	say "diaper cover".
@@ -70,45 +75,62 @@ This is the setup starting diaper cover rule:
 		restock C.
 The setup starting diaper cover rule is listed in the setup starting items rules.]
 
-A frilly white diaper cover is a kind of diaper cover. There is 1 frilly white diaper cover.
-
-The printed name of frilly white diaper cover is usually "[clothing-title-before]frilly white diaper cover[clothing-title-after]".
+[frilly-white-diaper-cover is a diaper cover.
 
 Figure of frilly white diaper cover is the file "Items/Clothes/Lower/Underwear/Diapers/Covers/diapercover1.png".
 
-To decide which figure-name is clothing-image of (C - a frilly white diaper cover):
+To decide which figure-name is clothing-image of (C - frilly-white-diaper-cover):
 	decide on figure of frilly white diaper cover.
-To decide which figure-name is the recipe-image of (C - a diaper cover):
+To decide which figure-name is the recipe-image of (C - frilly-white-diaper-cover):
 	decide on figure of frilly white diaper cover.
 
-To say ClothingDesc of (C - a frilly white diaper cover):
+To say ClothingDesc of (C - frilly-white-diaper-cover):
 	say "A large frilly white diaper cover, that [if C is worn]completely covers[otherwise]could completely cover[end if] your [if there is a worn diaper][random worn diaper][otherwise][ShortDesc of hips][end if].".
 
-To compute SelfExamineDesc of (K - a frilly white diaper cover):
+To compute SelfExamineDesc of (K - frilly-white-diaper-cover):
 	say "A large [selfexamineuniquetitle of K] completely covers your [if there is a worn diaper][random worn diaper][otherwise][ShortDesc of hips][end if]. ".
 
-To say selfexamineuniquetitle of (K - a frilly white diaper cover):
+To say selfexamineuniquetitle of (K - frilly-white-diaper-cover):
 	say "frilly white diaper cover".
 
-A teddy bear diaper cover is a kind of diaper cover. A teddy bear diaper cover is usually cotton. There is 1 teddy bear diaper cover.
+Definition: frilly-white-diaper-cover is white themed: decide yes.
 
-The printed name of teddy bear diaper cover is usually "[clothing-title-before]teddy bear diaper cover[clothing-title-after]".
+teddy-bear-diaper-cover is a diaper cover. teddy-bear-diaper-cover is cotton.
 
 Figure of teddy bear diaper cover is the file "Items/Clothes/Lower/Underwear/Diapers/Covers/diapercover2.png".
 
-To decide which figure-name is clothing-image of (C - a teddy bear diaper cover):
+To decide which figure-name is clothing-image of (C - teddy-bear-diaper-cover):
 	decide on figure of teddy bear diaper cover.
 
-To say ClothingDesc of (C - a teddy bear diaper cover):
+To say ClothingDesc of (C - teddy-bear-diaper-cover):
 	say "A cosy pink cotton diaper cover with a teddy bear on the backside. It [if C is worn]completely covers[otherwise]could completely cover[end if] your [if there is a worn diaper][random worn diaper][otherwise][ShortDesc of hips][end if].".
 
-To compute SelfExamineDesc of (K - a teddy bear diaper cover):
+To compute SelfExamineDesc of (K - teddy-bear-diaper-cover):
 	say "A large [selfexamineuniquetitle of K] completely covers your [if there is a worn diaper][random worn diaper][otherwise][ShortDesc of hips][end if]. ".
 
-To say selfexamineuniquetitle of (K - a teddy bear diaper cover):
-	say "pink teddy bear diaper cover".
+To say selfexamineuniquetitle of (K - teddy-bear-diaper-cover):
+	say "teddy bear diaper cover".
 
-Definition: a teddy bear diaper cover is bear themed: decide yes.
+Definition: teddy-bear-diaper-cover is bear themed: decide yes.
+Definition: teddy-bear-diaper-cover is pink themed: decide yes.]
+
+orange rubber diaper cover is a diaper cover. orange rubber diaper cover is latex.
+
+Figure of orange rubber diaper cover is the file "Items/Clothes/Lower/Underwear/Diapers/Covers/diapercover3.png".
+
+To decide which figure-name is clothing-image of (C - orange rubber diaper cover):
+	decide on figure of orange rubber diaper cover.
+
+To say ClothingDesc of (C - orange rubber diaper cover):
+	say "An orange latex diaper cover with a polka dot patten and black ruffles on the backside. It [if C is worn]completely covers[otherwise]could completely cover[end if] your [if there is a worn diaper][random worn diaper][otherwise][ShortDesc of hips][end if].".
+
+To compute SelfExamineDesc of (K - orange rubber diaper cover):
+	say "A large [selfexamineuniquetitle of K] completely covers your [if there is a worn diaper][random worn diaper][otherwise][ShortDesc of hips][end if]. ".
+
+To say selfexamineuniquetitle of (K - orange rubber diaper cover):
+	say "orange rubber diaper cover".
+
+Definition: orange rubber diaper cover is orange themed: decide yes.
 
 Chapter 1 Wearability
 

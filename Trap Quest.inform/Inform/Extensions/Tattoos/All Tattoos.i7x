@@ -202,6 +202,7 @@ babygirl tattoo is a leg tattoo. The tattoo-title of babygirl tattoo is "babygir
 Figure of babygirl tattoo is the file "Items/Tats/tattoo66.jpg".
 To decide which figure-name is the examine-image of (T - babygirl tattoo):
 	decide on figure of babygirl tattoo.
+Definition: babygirl tattoo is sissifying: decide yes.
 Definition: babygirl tattoo is drawable:
 	if there is a worn leg tattoo, decide no;
 	if diaper lover <= 0, decide no;
@@ -248,11 +249,12 @@ Definition: bbc-fairy tattoo is eligible:
 	if the noun is interracial themed or the noun is heart themed or the noun is semen themed or the noun is penis themed or the noun is pink-hair or the noun is fae mushroom or the noun is butterfly wings or the noun is fairy-wand, decide yes;
 	if the noun is non-empty bottle and the fill-colour of the noun is creamy, decide yes;
 	decide no.
+Definition: bbc-fairy is interracial themed: decide yes.
 To say tattoo-desc of (T - bbc-fairy tattoo):
 	say "A drawing of a bimbo fairy staring lovingly at a huge black cock dripping huge amounts of [semen], with love-hearts rising from her head, is tattooed onto your upper back.".
 To decide which number is the semen-taste-addiction-influence of (T - bbc-fairy tattoo):
 	decide on 2.
-To decide which number is the BBC-sex-addiction-influence of (T - bbc-fairy tattoo):
+To decide which number is the bbc-addiction-influence of (T - bbc-fairy tattoo):
 	decide on 2.
 To decide which number is the sex-addiction-influence of (T - bbc-fairy tattoo):
 	decide on 1.
@@ -271,6 +273,7 @@ To say tattoo-desc of (T - bbc-only tattoo):
 	say "'STOP -> BBC ONLY' is tattooed on your left upper arm.".
 To decide which number is the initial outrage of (T - bbc-only tattoo):
 	decide on 4.
+Definition: bbc-only is interracial themed: decide yes.
 
 beauty tattoo is a chest tattoo. The tattoo-title of beauty tattoo is "beauty".
 Figure of beauty tattoo is the file "Items/Tats/tattoo181.jpg".
@@ -387,6 +390,9 @@ To say ShortDesc of (T - bitch tattoo):
 Understand "boy", "bitchboy" as bitch tattoo.
 Definition: bitch tattoo is drawable:
 	if there is a worn lower back tattoo, decide no;
+	decide no.
+Definition: bitch tattoo is sissifying:
+	if the player is a flatchested trap, decide yes;
 	decide no.
 Definition: bitch tattoo is eligible:
 	if the noun is sissifying clothing or the noun is heart themed or the noun is dog themed, decide yes;
@@ -536,6 +542,7 @@ To decide which number is the initial cringe of (T - bright-hair tattoo):
 
 broken-clitty tattoo is a crotch tattoo. The tattoo-title of the broken-clitty tattoo is "broken clitty".
 	Understand "broken", "clitty" as broken-clitty tattoo.
+Definition: broken-clitty tattoo is sissifying: decide yes.
 Definition: broken-clitty tattoo is eligible:
 	if the noun is chastity cage or the noun is anal sex themed or the noun is plug or the noun is book of anal or the noun is sissifying clothing, decide yes;
 	decide no.
@@ -801,6 +808,7 @@ To say tattoo-desc of (T - cumlust tattoo):
 This is the pentagon blowjob slut rule:
 	if cumlust tattoo is worn, increase the desirability of face by 10.
 The pentagon blowjob slut rule is listed in the blowjob slut eligibility rules.
+Definition: cumlust tattoo is sissifying: decide yes.
 Definition: cumlust tattoo is oral sex themed: decide yes.
 Definition: cumlust tattoo is semen themed: decide yes.
 
@@ -1514,7 +1522,7 @@ To say tattoo-desc of (T - in-this-together tattoo):
 	say "A drawing of three [manly-penis]s of different skin tones penetrating a butt at the same time, surrounding by sparkling white stars, with the words 'we[']re in this together' written across the shafts is inked on your left thigh.".
 To decide which number is the anal-sex-addiction-influence of (T - in-this-together tattoo):
 	decide on 1.
-To decide which number is the bbc-sex-addiction-influence of (T - in-this-together tattoo):
+To decide which number is the bbc-addiction-influence of (T - in-this-together tattoo):
 	decide on -2.
 To decide which number is the initial outrage of (T - in-this-together tattoo):
 	decide on 9.
@@ -1527,6 +1535,7 @@ Definition: jack-of-spades tattoo is drawable:
 	if there is a worn crotch tattoo, decide no;
 	if interracial fetish is 0 or TG fetish > 0 or the player is possessing a vagina, decide no;
 	decide yes.
+Definition: jack-of-spades tattoo is sissifying: decide yes.
 Definition: jack-of-spades tattoo is eligible:
 	if the noun is interracial themed or the noun is chastity bond or the noun is sissifying clothing, decide yes;
 	decide no.
@@ -2492,6 +2501,7 @@ sissy black cock whore tattoo is a both-breasts tattoo. The tattoo-title of siss
 Definition: sissy black cock whore tattoo is interracial themed: decide yes.
 Definition: sissy black cock whore tattoo is penis themed: decide yes.
 Definition: sissy black cock whore tattoo is whore themed: decide yes.
+Definition: sissy black cock whore tattoo is sissifying: decide yes.
 Definition: sissy black cock whore tattoo is drawable:
 	if there is a worn breast tattoo or interracial fetish is 0, decide no;
 	if the player is gendered male and tg fetish is 0, decide yes;
@@ -2508,6 +2518,7 @@ To decide which number is the initial outrage of (T - sissy black cock whore tat
 sissy cumslut tattoo is a crotch tattoo. The tattoo-title of sissy cumslut tattoo is "sissy cumslut".
 Definition: sissy cumslut tattoo is penis themed: decide yes.
 Definition: sissy cumslut tattoo is semen themed: decide yes.
+Definition: sissy cumslut tattoo is sissifying: decide yes.
 Definition: sissy cumslut tattoo is drawable: decide no. [appears from game effect]
 To say tattoo-desc of (T - sissy cumslut tattoo):
 	say "The words 'Sissy Cumslut' are tattooed in large letters above your crotch[if there is a worn chastity cage]. You can sense it's preventing you from removing your chastity cage[end if].".
@@ -2587,6 +2598,8 @@ To say tattoo-desc of (T - spade leaves tattoo):
 	say "Several small black spades branch off of a line circling your upper thigh, like leaves on a branch.".
 To decide which number is the initial outrage of (T - spade leaves tattoo):
 	decide on 2.
+To decide which number is the luck-influence of (T - spade leaves tattoo):
+	decide on -2.
 
 spade owned tattoo is a left-asscheek tattoo. The tattoo-title of spade owned tattoo is "spade owned ass".
 Definition: spade owned tattoo is interracial themed: decide yes.
@@ -2621,7 +2634,7 @@ To decide which number is the delicateness-influence of (T - spank tattoo):
 	if asshole is lewdly exposed or diaper quest is 1, decide on 3;
 	decide on 0.
 Definition: spank tattoo is eligible:
-	if the noun is buttockless pants or the noun is super-short clothing or the noun is short clothing or the noun is impact play themed or the noun is butt-windowed clothing, decide yes;
+	if the noun is super-short clothing or the noun is short clothing or the noun is impact play themed or the noun is butt-windowed clothing, decide yes;
 	decide no.
 To decide which number is the initial cringe of (T - spank tattoo):
 	decide on 8.
@@ -3193,6 +3206,8 @@ Definition: white-trash tattoo is drawable:
 Definition: white-trash tattoo is eligible:
 	if the noun is clothing and (the unworn outrage of the noun > 13 or the noun is white themed), decide yes;
 	decide no.
+To decide which number is the initial outrage of (T - white-trash tattoo):
+	decide on 11.
 To say tattoo-desc of (T - white-trash tattoo):
 	say "The word 'White' is inked on the back your left leg and the word 'Trash' on the back of your right leg. [if the player is modest]You find it unbearably humiliating to consider yourself trashy![otherwise]It seems quite appropriate considering the things you have worn and done in this game.[end if]".
 

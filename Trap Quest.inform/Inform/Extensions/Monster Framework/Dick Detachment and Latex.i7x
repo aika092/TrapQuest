@@ -775,16 +775,18 @@ To say ExamineDesc of (C - players-detached-dick):
 To say MediumDesc of players-detached-dick:
 	say ClothingDesc of players-detached-dick.
 
-Figure of pdd is the file "Items/Accessories/Toys/Transthetics.com-EZP.jpg".
+Figure of pdd is the file "Items/Accessories/Toys/detached1.png".
 To decide which figure-name is the examine-image of (C - players-detached-dick):
 	decide on figure of pdd.
 
 portal-cock-ring is a clothing. portal-cock-ring can be magic-hidden or magic-revealed. portal-cock-ring is magic-hidden. The printed name of portal-cock-ring is "[if the item described is magic-hidden]large, shiny nickel [one of][or]cock [cycling]ring[one of], too large to fit on a finger[or][cycling][otherwise if the intelligence of the player < 3]large shiny cock ring, that's got magic[otherwise]large, shiny dick-detaching cock ring[end if]". The text-shortcut of portal-cock-ring is "ckr". Understand "cock ring" as portal-cock-ring. portal-cock-ring is unique.
 Definition: a portal-cock-ring is nudism-enabling: decide yes.
 
-Figure of ckr is the file "Items/Accessories/Toys/silver-torus-istockphoto-140408586-612x612.jpg".
+Figure of cock ring is the file "Items/Accessories/Toys/cockring1.png".
+Figure of portal cock ring is the file "Items/Accessories/Toys/cockring2.png".
 To decide which figure-name is the examine-image of (C - portal-cock-ring):
-	decide on figure of ckr.
+	if C is magic-revealed, decide on figure of portal cock ring;
+	decide on figure of cock ring.
 
 To say ShortDesc of (C - portal-cock-ring):
 	say "[one of]large shiny ring[or]large nickel ring[or]heavy gauge ring[in random order]".

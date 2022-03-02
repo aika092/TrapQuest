@@ -14,7 +14,7 @@ To compute banishment of (M - a monster):
 		repeat with K running through things carried by M:
 			now K is in the location of M;
 			if M is in the location of the player, compute autotaking K;
-	if M is in the location of the player and there is a worn notebook, compute studying 1 of M;
+	if M is in the location of the player and notebook is worn, compute studying 1 of M;
 	if the health of M <= 0, compute defeat reward of M; [so this doesn't include when an NPC banishes themselves, e.g. sex dolls detonating]
 	destroy M;
 	if M is permanently banishable, now M is permanently banished.
@@ -217,7 +217,7 @@ To compute defeat of (M - a monster):
 			let LT be a list of texts;
 			let BT be the substituted form of "[if newbie tips is 1](self-respect increase) [end if][BanishDesc of M]";
 			let TT be the substituted form of "[TaxDesc of M]";
-			let PT be the substituted form of "[if newbie tips is 1](relationship increase) [end if][PityDesc of M]";
+			let PT be the substituted form of "[if newbie tips is 1 and M is not patron](relationship increase) [end if][PityDesc of M]";
 			let PeT be the substituted form of "[if newbie tips is 1](attempt at dominance increase) [end if][PenisFuckDesc of M]";
 			let AT be the substituted form of "[if newbie tips is 1](attempt at dominance increase) [end if][AssRideDesc of M]";
 			let VT be the substituted form of "[if newbie tips is 1](attempt at dominance increase) [end if][VaginaRideDesc of M]";
@@ -1132,7 +1132,8 @@ To compute default caged domination of (M - a monster):
 	if the raw delicateness of the player > the EnslavedDominationThreshold of M:
 		say "You feel vaguely better about yourself, but mostly just a bit ambivalent.";
 	otherwise:
-		DelicateDown 1.
+		DelicateDown 1;
+	FavourDown M.
 
 To say EnslavedDominationFlav of (M - a monster):
 	say "You spank [NameDesc of M] on the buttcheeks, [one of]eliciting a pained[or]being rewarded by a cry of pain[or]pleased by [his of M] poorly suppressed gasp of pain[at random] yelp. ".

@@ -87,16 +87,14 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 					if the flesh volume of breasts + the silicone volume of breasts > the real flesh volume of breasts, increase the real flesh volume of breasts by 1;
 				set real breast size;
 			if the thickness of hips > the real thickness of hips, increase the real thickness of hips by 1;
-		if fast TG is 3 and the size of penis <= min penis size and the player is sexed male:
-			if tg-tracking > 0:
+		if shrink TG >= 3 and the size of penis <= min penis size and the player is sexed male:
+			if tg-tracking > 0 or shrink TG is 4:
 				say DefaultSexChangeFlav;
 				sexchange the player;
 			otherwise:
 				increase tg-tracking by 1;
-		otherwise if the player is sexed male and the size of penis < the real size of penis:
-			if the real size of penis > min penis size:
-				decrease the real size of penis by 1;
-				if fast TG is 3 and the size of penis < the real size of penis, decrease the real size of penis by 1; [if your penis has shrunk a lot, this is going to happen even faster!]
+		otherwise if the player is sexed male and the size of penis < the real size of penis and the real size of penis > min penis size:
+			decrease the real size of penis by 1;
 		if the raw largeness of hair > the real largeness of hair, increase the real largeness of hair by 1;
 		if the openness of asshole > the real openness of asshole and ungape is 0, increase the real openness of asshole by 1;
 		if the openness of vagina > the real openness of vagina and ungape is 0, increase the real openness of vagina by 1;
@@ -333,7 +331,7 @@ A time based rule (this is the dressup rule):
 		otherwise if debugmode > 0:
 			say "No dressup eligible clothing found.";
 	otherwise if there is a worn possession clothing and a random number between 1 and 40 < N + the number of worn possession clothing:
-		let H be a random worn possession clothing;[TODO: breast covering]
+		let H be a random worn possession clothing;
 		let LB be a list of body parts;
 		if H is crotch-in-place and (H is short or longer or H is crotch covering):
 			if asshole is not actually occupied, add asshole to LB;

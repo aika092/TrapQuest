@@ -34,12 +34,15 @@ To summon (P - a sex toy) vaginally:
 	only summon P vaginally.
 
 To only summon (P - a sex toy) vaginally:
-	now P is not penetrating asshole;
-	now P is worn by the player;
-	now P is penetrating vagina;
-	now P is identified;
-	now P is sure;
-	compute unique summoning of P.
+	if the player is possessing a vagina:
+		now P is not penetrating asshole;
+		now P is worn by the player;
+		now P is penetrating vagina;
+		now P is identified;
+		now P is sure;
+		compute unique summoning of P;
+	otherwise: [redirect to asshole]
+		only summon P.
 
 To summon (P - a sex toy) cursed vaginally:
 	summon P vaginally;
@@ -83,8 +86,7 @@ To summon (C - a thing) cursed with silent persistent quest:
 	if C is clothing, compute persistent quest of C.
 
 To summon (C - a clothing) locked:
-	summon C;
-	if C is cursed, now C is bland;
+	summon C uncursed;
 	now C is locked;
 	if newbie tips is 1, say "[one of][newbie style]Newbie Tip: Oh dear, this item is locked! You'll need a key rather than a blessing to make it removable. Unfortunately the prison guard [unless there is an alive prison guard]who is about to spawn [end if]in the Dungeon isn't going to give you the key immediately. Instead, [he of prison guard] is going to wait until your 'sentence' is over, which will take a decent amount of time. Of course, if you could defeat [him of prison guard] in combat I'm sure you'd be able to salvage a key from [his of prison guard] corpse.[roman type][line break][or][stopping]".
 

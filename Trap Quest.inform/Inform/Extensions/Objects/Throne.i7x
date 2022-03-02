@@ -93,21 +93,45 @@ Check entering the throne:
 			now R is 1;
 			now R-old is R;
 			if debuginfo > 0, say "; PRINCESS RESCUE QUEST OVERRIDE ([R]) ";
-		otherwise if the class of the player is "virgin warrior" and silver-tiara is off-stage and sword-of-purity is worn:
+		otherwise if the class of the player is "virgin warrior" and silver-tiara is off-stage and sword-of-purity is worn and virgin princess outfit is unclash summonable:
 			now R is 1;
 			now R-old is R;
 			if debuginfo > 0, say "; VIRGIN WARRIOR OVERRIDE ([R]) ";
+		otherwise if diaper quest is 0 and the class of the player is "bride" and bride-consort is throne and (mechanic is alive or Hotel01 is not placed) and princess bride dress is unclash summonable:
+			now R is 1;
+			now R-old is R;
+			if debuginfo > 0, say "; PRINECSS BRIDE OVERRIDE ([R]) ";
+		otherwise if diaper quest is 0 and the class of the player is "silicone queen" and rubber-royal-dress is unclash summonable:
+			now R is 1;
+			now R-old is R;
+			if debuginfo > 0, say "; rubber-royal-dress OVERRIDE ([R]) ";
 		if debuginfo > 0:
 			if diaper quest is 0, say "[if R is not R-old] = [R] [end if]| 1) Tiara; 2) Tentacle Trap; 3) [if the class of the player is princess]Guard dream[otherwise]Body expansion[end if]; 4) Intelligence + 1; 5) Strength + 1; 6) Dexterity + 1; 7) Hair reduction; 8) Humiliation reduction[roman type][line break]";
 			otherwise say "[if R is not R-old] = [R] [end if]| 1) Tiara; 2-3) Potty; 4) Intelligence + 1; 5) Strength + 1; 6) Dexterity + 1; 7) Humiliation reduction[roman type][line break]";
 		if R is 1:
-			if the class of the player is "virgin warrior" and sword-of-purity is worn:
+			if the class of the player is "virgin warrior":
 				let C be a random worn headgear;
 				transform C into silver-tiara;
 				say "[variable custom style]So I'm a princess now too?[roman type][line break]";
-				PinkWardrobeUnclash virgin princess outfit;
-				class summon virgin princess outfit;
+				unclash class summon virgin princess outfit;
 				say "[variable custom style]COME ON![roman type][line break]" instead;
+			otherwise if the class of the player is "silicone queen":
+				unclash class summon rubber-royal-dress;
+				class summon royal scepter;
+				if royal scepter is worn and rubber top hat is worn:
+					compute unique recycling of silver-tiara;
+					now the quest of rubber top hat is royal-quest;
+					say "[bold type]You sense that the quest of your top hat has changed![roman type] [QuestFlav of royal-quest]";
+				say "[variable custom style]I'm a princess now?![roman type][line break]" instead;
+			otherwise if the class of the player is bride:
+				let C be a random worn headgear;
+				now the quest of C is betrothal-quest;
+				transform C into tiara-veil;
+				now bride-consort is mechanic;
+				say "[variable custom style]So I'm a princess now too? And... what's this I can feel... I'm betrothed to someone? My destiny is to consummate my wedding night... with someone in [if Hotel01 is placed]the hotel[otherwise]a hotel somewhere[end if]?[roman type][line break]";
+				PinkWardrobeUnclash princess bride dress;
+				compute class outfit of tiara-veil;
+				say "[variable custom style]Any why is my dress so lewd? Who exactly have I supposedly married?![roman type][line break]" instead;
 			otherwise:
 				summon silver-tiara cursed;
 				say "A silver tiara appears on your head. You feel important.[line break][second custom style][line break]Is this game turning me into a princess?[roman type][line break]" instead;

@@ -149,25 +149,30 @@ To compute mimic teasing (N - 3):[stylish mimic. Transforms the player's clothes
 To compute mimic teasing (N - 4):[friendly mimic; messes with player penis size, equalises asshole and vagina gape, or gives the player a free lube]
 	say "A shadowy mass rises out of the container, slowly forming itself into a [if futanari fetish is 0]flatchested green [man of a memic] with piercing yellow eyes and a giant green dildo attached to a harness around [his of a memic] waist, [otherwise]frail green [man of a memic] with piercing yellow eyes and a giant green dick which is [end if]so huge it hangs halfway out of the container.[line break][second custom style]'[one of]Finally somebody opens me... I should probably give you a reward, right?[or]Phew, it's been so long since anyone opened me. Guess I should thank you.'[or]Thanks so much, it's been weeks since anybody opened me! I've gotta thank you somehow...'[or]So, I guess you opened me because you were looking for something useful. Let's see if I can help!'[at random][roman type][line break]The [item style]friendly mimic[roman type] makes a wicked grin as [he of a memic] yanks your body forward[run paragraph on]";
 	if the player is possessing a penis:[Penis scrambling]
-		let P be a random number between 0 and 10;
-		let Ab be a random worn plug;
-		unless Ab is plug, now Ab is a random off-stage plug;
-		[if there is a worn plug, ]
-		say " and more shadows emerge from the container and envelop your crotch, rapidly stroking your [mystical-player-penis] as they creep on past your [ShortDesc of hips]";
-		if P > the mystical size of penis and there is a worn plug:
-			SpecialPenisUp P - the mystical size of penis; [#LXorDD]
-			say "You can feel your [printed name of Ab] shuddering inside you, rapidly losing mass as your penis begins to grow, lengthening rapidly into a [mystical ShortDesc of penis]!";
-			now the size of Ab is 1;
+		if the player is ready for event TG:
+			say "You feel the mimic's shape-shifting magic being focused on your [ShortDesc of penis]! ";
+			say DefaultSexChangeFlav;
+			SexChange the player;
 		otherwise:
-			if Ab is plug and Ab is actually summonable:
-				SilentlySpecialPenisDown P; [#LXorDD]
-				say "You feel something enter your [asshole] as your body begins reacting to the intense stimulation, growing [if P is 1]a full inch[otherwise if P is 2]two full inches[otherwise if P is 3]one, two, three full inches[otherwise]one, two, three full inches, and then rapidly bulging to a full [P][end if] as your penis rapidly shrinks down into a [mystical ShortDesc of penis].";
-				now the size of Ab is P;
-				summon Ab;
+			let P be a random number between 0 and 10;
+			let Ab be a random worn plug;
+			unless Ab is plug, now Ab is a random off-stage plug;
+			[if there is a worn plug, ]
+			say " and more shadows emerge from the container and envelop your crotch, rapidly stroking your [mystical-player-penis] as they creep on past your [ShortDesc of hips]";
+			if P > the mystical size of penis and there is a worn plug:
+				SpecialPenisUp P - the mystical size of penis; [#LXorDD]
+				say "You can feel your [printed name of Ab] shuddering inside you, rapidly losing mass as your penis begins to grow, lengthening rapidly into a [mystical ShortDesc of penis]!";
+				now the size of Ab is 1;
 			otherwise:
-				SilentlySpecialPenisDown P; [#LXorDD]
-				say "Your penis rapidly shrinks down into a [mystical ShortDesc of penis] as the mimic pries open your [asshole], looking you dead in the eye as it fills you with [if P is 1]a nice big shot of warm fluid[otherwise if P is 2]a few shots of warm fluid[otherwise]several shots of warm fluid[end if].";
-				AssFill P;
+				if Ab is plug and Ab is actually summonable:
+					SilentlySpecialPenisDown P; [#LXorDD]
+					say "You feel something enter your [asshole] as your body begins reacting to the intense stimulation, growing [if P is 1]a full inch[otherwise if P is 2]two full inches[otherwise if P is 3]one, two, three full inches[otherwise]one, two, three full inches, and then rapidly bulging to a full [P][end if] as your penis rapidly shrinks down into a [mystical ShortDesc of penis].";
+					now the size of Ab is P;
+					summon Ab;
+				otherwise:
+					SilentlySpecialPenisDown P; [#LXorDD]
+					say "Your penis rapidly shrinks down into a [mystical ShortDesc of penis] as the mimic pries open your [asshole], looking you dead in the eye as it fills you with [if P is 1]a nice big shot of warm fluid[otherwise if P is 2]a few shots of warm fluid[otherwise]several shots of warm fluid[end if].";
+					AssFill P;
 	otherwise if the player is possessing a vagina:
 		let V be the openness of vagina;
 		let A be the openness of asshole;

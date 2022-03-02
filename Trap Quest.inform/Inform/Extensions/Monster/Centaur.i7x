@@ -184,7 +184,7 @@ This is the centaur raises shield rule:
 	if the player is upright:
 		let M be centaur;
 		if M is not shieldblocked and a random number between 1 and 5 is 1 and M is unfriendly:
-			say "[BigNameDesc of M] returns [his of M] sword to its sheath, raising up [his of M] shield.";
+			say "[BigNameDesc of M] returns [his of M] sword to its sheath, [bold type]raising up [his of M] shield[roman type].";
 			now M is shieldblocked;
 			rule succeeds;
 		otherwise if M is shieldblocked:

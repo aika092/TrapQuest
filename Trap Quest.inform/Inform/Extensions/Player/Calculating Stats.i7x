@@ -43,7 +43,7 @@ To decide which number is the flat strength of the player:
 	let S be the raw strength of the player;
 	increase S by the virgin bonus of the player;
 	increase S by diaper bonus;
-	increase S by fetish-bonus of the player;
+	if piercing-fetish is 1, increase S by the number of worn piercings;
 	repeat with C running through worn wearthings:
 		increase S by the strength-influence of C;
 	if the class of the player is priestess, decrease S by 2;
@@ -138,7 +138,7 @@ To decide which number is the flat dexterity of the player:
 	let D be the raw dexterity of the player;
 	increase D by the virgin bonus of the player;
 	increase D by diaper bonus;
-	increase D by fetish-bonus of the player;
+	if artificial-fetish is 1, increase D by player-enhancement / 8;
 	decrease D by the semen coating of thighs / 3;
 	increase D by the theme bonus of the dexterity theme rules;
 	repeat with C running through worn wearthings:
@@ -254,6 +254,7 @@ To decide which number is the flat intelligence of the player:
 	increase I by ((strawberry-lace-timer + default-candy-duration - 1) / default-candy-duration) * 6;
 	increase I by ((magic-smarts-timer + default-candy-duration - 1) / default-candy-duration) * 6;
 	decrease I by the suffocation of the player;
+	if tattoo-fetish is 1, increase I by (1 + the number of worn tattoos) / 3;
 	if temp_int_dam > 0, decrease I by temp_int_dam;
 	if the the boost-cooldown of nurse > 0 and the boost-int-drain of nurse > 0, now I is I / 2;
 	if toffee-poison-timer > 0, now I is I / 2;
@@ -331,7 +332,10 @@ To decide which number is the luck of the player:
 	if herald is alive and the class of the player is not cultist, decrease L by 25;
 	increase L by the number of in-play trophies;
 	increase L by playing card theme bonus;
+	increase L by permanent-luck-modifier;
 	decide on L.
+
+permanent-luck-modifier is a number that varies.
 
 Definition: yourself is getting lucky:
 	let GL be 75 - the luck of the player;
@@ -422,17 +426,5 @@ To update saved stats:
 	now saved-printed-kick-damage is saved-kick-damage - combat bonus remainder;
 	if saved-printed-kick-damage < 0, now saved-printed-kick-damage is 0;
 	now backgroundCombatCalculation is false.
-
-To decide which number is fetish-bonus of the player:
-	if tattoo-fetish is 1:
-		decide on (1 + the number of worn tattoos) / 3;
-	otherwise if piercing-fetish is 1:
-		decide on the number of worn piercings;
-	otherwise if humiliation-fetish is 1:
-		decide on the humiliation of the player / 8000;
-	otherwise if artificial-fetish is 1:
-		decide on player-enhancement / 8;
-	otherwise:
-		decide on 0.
 
 Calculating Stats ends here.

@@ -27,7 +27,7 @@ An all later time based rule (this is the fighting against no-panties fetish rul
 		decrease no panties reminder by 1.
 
 Report wearing no-panties-disallowed knickers:
-	if the player is fighting against no-panties, say "[bold type]You immediately feel extremely uncomfortable in these,[roman type] thanks to your [if the class of the player is faerie]faerie instinct[otherwise if the implant of pledge-lesson-panties is 1]curse from the pledge lesson[otherwise if diaper lover >= 1]diaper fetish[otherwise]fetish for not wearing panties[end if].".
+	if the player is fighting against no-panties, say "[bold type]You immediately feel extremely uncomfortable in these,[roman type] thanks to your [if the class of the player is faerie]faerie instinct[otherwise if the implant of pledge-lesson-panties is 1]magic pledge you've just broken[otherwise if diaper lover >= 1]diaper fetish[otherwise]fetish for not wearing panties[end if].".
 
 This is the knickers can't be summoned with no panties fetish rule:
 	if summoning is 1 and (no-panties permanent fetish is 1 or the class of the player is faerie):

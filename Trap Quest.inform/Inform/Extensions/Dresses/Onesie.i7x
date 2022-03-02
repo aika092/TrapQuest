@@ -21,7 +21,7 @@ To decide which number is the initial outrage of (C - a onesie):
 	if diaper quest is 0, decide on the initial cringe of C;
 	decide on 0.
 To decide which number is the initial cringe of (C - a onesie):
-	decide on 7.
+	decide on 5.
 To decide which number is the crotch-tightness of (C - a onesie):
 	decide on 0.
 
@@ -34,6 +34,7 @@ To set up magic attribute of (C - a onesie):
 	now C is absorption.
 
 Definition: a onesie is sissifying: decide yes.
+Definition: a onesie is displacable: decide no.
 
 To set up influence of (C - a onesie):
 	now C is diaper-addiction-influencing.
@@ -58,10 +59,9 @@ To compute periodic effect of (L - a onesie):
 		if the charge of L > 10:
 			now the charge of L is 0;
 			let D be a random eligible diaper;
-			if D is diaper:
-				if D is actually summonable:
-					summon D;
-					say "[bold type]You feel a [D] [bold type]appear out of nowhere under your [L][bold type]![roman type][line break]".
+			if D is an actually summonable diaper:
+				summon D;
+				say "[bold type]You feel a [D] [bold type]appear out of nowhere under your [L][bold type]![roman type][line break]".
 
 To decide which object is the unique-upgrade-target of (C - a onesie):
 	decide on nothing.
@@ -78,54 +78,57 @@ To decide which figure-name is clothing-image of (C - velcro onesie):
 	decide on figure of velcro onesie.
 
 To say ClothingDesc of (C - velcro onesie):
-	say "A pink onesie which fully covers your arms and legs. A large open flap at the back [if C is worn]exposes[otherwise]would expose[end if] your [if there is worn top level protection clothing][random worn top level protection clothing][otherwise][fuckholes][end if] to the world. It has a Velcro strip which looks like it should be able to close, but in fact the Velcro doesn't stick at all. This means it [if C is worn]looks[otherwise]would look[end if] like you've purposefully left it open so everyone can see inside. [if C is worn and the player is a blowjob slut]You can feel the onesie somehow magically encouraging the monsters in this game to use your face for sex.[otherwise][line break][end if]".
+	say "A pink onesie which fully covers your arms and legs. A large open flap at the back [if C is worn]exposes[otherwise]would expose[end if] your [if there is worn top level protection clothing][random worn top level protection clothing][otherwise][fuckholes][end if] to the world. It has a Velcro strip which looks like it should be able to close, but in fact the Velcro doesn't stick at all. This means it [if C is worn]looks[otherwise]would look[end if] like you've purposefully left it open so everyone can see inside[if C is worn and the player is a blowjob slut]. You can feel the onesie somehow magically encouraging the monsters in this game to use your face for sex[end if].".
 
 To decide which number is the initial cringe of (C - velcro onesie):
-	decide on 12.
+	decide on 6.
 
 To decide which object is the unique-upgrade-target of (C - velcro onesie):
 	decide on a random off-stage waddle outfit.
 
 Definition: velcro onesie is pink themed: decide yes.
 
-frilly onesie is a onesie. frilly onesie is zippable. The printed name of frilly onesie is "[clothing-title-before]frilly onesie[clothing-title-after]". The text-shortcut of frilly onesie is "fon".
+elephant onesie is a onesie. The printed name of elephant onesie is "[clothing-title-before]elephant onesie[clothing-title-after]". The text-shortcut of elephant onesie is "eon".
 
-Figure of frilly onesie is the file "Items/Clothes/Upper/Special/Onesies/onesie3.png".
+Figure of elephant onesie is the file "Items/Clothes/Upper/Special/Onesies/onesie3.png".
 
-To decide which figure-name is clothing-image of (C - frilly onesie):
-	decide on figure of frilly onesie.
+To decide which figure-name is clothing-image of (C - elephant onesie):
+	decide on figure of elephant onesie.
 
-To say ClothingDesc of (C - frilly onesie):
-	say "A pink onesie which goes halfway up your arms and legs. The onesie has white frills at the neck, arms and leg holes. A childish pattern repeats itself across the fabric. A full crotch length zip allows for easy access for [if the player is a pervert and diaper quest is 0]sex[otherwise]diaper changes[end if]. [if C is worn and the player is a blowjob slut]You can feel the onesie somehow magically encouraging the monsters in this game to use your face for sex.[otherwise][line break][end if]".
+To say ClothingDesc of (C - elephant onesie):
+	say "A purple onesie which goes halfway up your arms. The onesie has a white peter pan collar, and a motif of an elephant with love hearts on the chest. This onesie is annoying in that it is too tight to displace, and has no lower fastenings, so the whole thing must be removed in order to access your crotch[if C is worn and the player is a blowjob slut]. You can feel the onesie somehow magically encouraging the monsters in this game to use your face for sex[end if].".
 
-To decide which object is the unique-upgrade-target of (C - frilly onesie):
+To decide which object is the unique-upgrade-target of (C - elephant onesie):
 	decide on velcro onesie.
 
-To decide which number is the initial cringe of (C - frilly onesie):
-	decide on 9.
+To decide which number is the initial cringe of (C - elephant onesie):
+	decide on 6.
 
-Definition: frilly onesie is pink themed: decide yes.
+Definition: elephant onesie is purple themed: decide yes.
+Definition: elephant onesie is elephant themed: decide yes.
+Definition: elephant onesie is heart themed: decide yes.
 
-little dinosaur onesie is a onesie. little dinosaur onesie is leg exposing. little dinosaur onesie is arm exposing. little dinosaur onesie is manly. The text-shortcut of little dinosaur onesie is "don".
+cupcake onesie is a onesie. cupcake onesie is leg exposing. cupcake onesie is arm exposing. cupcake onesie is manly. The text-shortcut of cupcake onesie is "con".
 
-The printed name of little dinosaur onesie is "[clothing-title-before]little dinosaur onesie[clothing-title-after]".
+The printed name of cupcake onesie is "[clothing-title-before]cupcake onesie[clothing-title-after]".
 
-Figure of dinosaur onesie is the file "Items/Clothes/Upper/Special/Onesies/onesie1.png".
+Figure of cupcake onesie is the file "Items/Clothes/Upper/Special/Onesies/onesie1.png".
 
-To decide which figure-name is clothing-image of (C - little dinosaur onesie):
-	decide on figure of dinosaur onesie.
+To decide which figure-name is clothing-image of (C - cupcake onesie):
+	decide on figure of cupcake onesie.
 
-To say MediumDesc of (C - little dinosaur onesie):
+To say MediumDesc of (C - cupcake onesie):
 	say "soft white onesie".
 
-To say ClothingDesc of (C - little dinosaur onesie):
-	say "A white onesie with a repeating dinosaur pattern, which includes the words 'little dinosaur' plastered all over it.[if C is crotch-ripped]A huge rip at the bottom of the onesie means that it unfortunately doesn't protect the crotch region.[otherwise if C is worn]A wide crotch makes it feel like you're wearing a superthick diaper.[end if][if C is worn and the player is a blowjob slut]You can feel the onesie somehow magically encouraging the monsters in this game to use your face for sex.[end if]".
+To say ClothingDesc of (C - cupcake onesie):
+	say "A white onesie with a cupcake on the front, and sprinkles falling all around, and poppers at the crotch for easy access[if C is worn and the diaperCoveringLength of C < the DQBulk of the player]. It has popped open, unable to contain the thick bulk of your diaper[end if][if C is worn and the player is a blowjob slut]. You can feel the onesie somehow magically encouraging the monsters in this game to use your face for sex[end if].".
 
-To decide which object is the unique-upgrade-target of (C - little dinosaur onesie):
-	decide on frilly onesie.
+To decide which object is the unique-upgrade-target of (C - cupcake onesie):
+	decide on elephant onesie.
 
-Definition: little dinosaur onesie is dinosaur themed: decide yes.
-Definition: little dinosaur onesie is white themed: decide yes.
+Definition: cupcake onesie is food themed: decide yes.
+Definition: cupcake onesie is white themed: decide yes.
+Definition: cupcake onesie is displacable: decide yes.
 
 
 Onesie ends here.

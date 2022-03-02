@@ -64,7 +64,6 @@ To set up (M - pimp):
 	if the monstersetup of M is 0, now the raw difficulty of M is the starting difficulty of M;
 	now the monstersetup of M is 1;
 	now M is in Hotel44;
-	now M is guarding;
 	now the health of M is the maxhealth of M;
 	if diaper quest is 0:
 		repeat with P running through pimp-pedestals:
@@ -90,6 +89,13 @@ To compute labour to (M - pimp):
 			IntUp 1;
 	otherwise if M is alive:
 		Delay Labour.
+
+To compute (M - a monster) stomping (N - pimp):
+	if M is in the location of the player, say "[BigNameDesc of M] kills the [N].";
+	destroy N;
+	let L be a random off-stage leftover;
+	now L is in the location of M;
+	now the leftover-type of L is the leftover-type of N.
 
 Part 1 - Perception
 
@@ -124,7 +130,7 @@ To send (M - pimp) home:
 			let D be the best route from the location of M to Hotel44 through modern rooms;
 			if D is a direction, say "[BigNameDesc of M] leaves to the [D].";
 		now M is in Hotel44;
-	if M is interested, deinterest M.
+	if M is interested and M is not in the location of the player, deinterest M.
 
 To compute monstermotion of (M - pimp): [This is default wandering when nothing interesting is happening]
 	if M is unfriendly and portal-hotpants is not worn and portal-bra is not worn:

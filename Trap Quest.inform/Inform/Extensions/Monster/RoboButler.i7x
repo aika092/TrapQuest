@@ -230,7 +230,7 @@ This is the robobutler punishment rule:
 		satisfy M for 500 seconds;
 		rule succeeds;[He doesn't drag you if he increases the size of your lips.]
 	if presented-orifice is not nothing, say "[speech style of M]'REQUEST NOT UNDERSTOOD. IGNORING.'[roman type][line break]";
-	if the currentSlide of security screens > 0 and a random number between 1 and 5 > 2, compute forced screen viewing of M;
+	if the currentSlide of security interface > 0 and a random number between 1 and 5 > 2, compute forced screen viewing of M;
 	if M is interested, compute forcefeed of M;
 	rule succeeds.
 
@@ -252,7 +252,7 @@ To say DragArrival of (M - a robobutler) to (R - Hotel18):
 	otherwise say DragArrival of M to Stairwell01.
 
 To say DragArrival of (M - a robobutler) to (R - Hotel30):
-	say "[speech style of M]'VIEWING SESSION ENGAGED. [caps please] ENJOY YOURSELF.'[roman type][line break][BigNameDesc of M] slowly but forcefully holds your head back and makes you look at the security screens.".
+	say "[speech style of M]'VIEWING SESSION ENGAGED. [caps please] ENJOY YOURSELF.'[roman type][line break][BigNameDesc of M] slowly but forcefully holds your head back and makes you look at the security interface.".
 
 To say DragArrival of (M - a robobutler) to (R - a room):
 	if the planned-punishment of M is 5:

@@ -52,6 +52,12 @@ To say MonsterFaceDesc of (M - a tentacle monster):
 To say MonsterFaceDesc of (M - a fairy):
 	say "entire body".
 
+To say MonsterEyesDesc of (M - a monster):
+	say "eyes".
+
+To say MonsterEyeDesc of (M - a tentacle monster):
+	say "eye".
+
 To say MessyMonsterFlav of (M - a monster):
 	say "The back of [his of M] diaper is bulging out and [his of M] face is red with embarrassment. It seems that someone has done a stinky.".
 

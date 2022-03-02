@@ -184,22 +184,24 @@ Part 1 - Perception
 
 Definition: a ghost (called M) is objectifying the player:
 	if M is not in the location of the player, decide no;
-	if (the bimbo of the player >= 20 or the appearance of the player >= 20), decide yes;
-	if the player is immobile, decide yes;
-	if the player is prone, decide yes;
+	[if the player is immobile, decide yes;]
+	if the player is prone and the number of monsters in the location of the player is the number of ghosts in the location of the player, decide yes;
 	if [playerRegion is Mansion and ]the slime-puddle of the location of the player > 0, decide yes;
 	[if the class of the player is faerie, decide no;]
 	if the appearance of the player > the bimbo tolerance of M, decide yes;
 	decide no.[The ghost won't go for you unless you're vulnerable or slutty]
 
+To decide which number is the bimbo tolerance of (M - a ghost):
+	decide on 9.
+
 To say GhostTip:
 	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Ghosts are often invincible outside of certain rooms. Look for a description of a crest on the floor, and the ghost 'flickering into the corporeal realm' before you fight them. Also, some have really nasty OHKO attacks, but you can see them coming and move rooms before they go off. Just keep an eye on the text.[roman type][line break][or][stopping]".
 
 To compute perception of (M - a ghost):
-	let A be 0;
+	[let A be 0;
 	repeat with N running through monsters in the location of the player:
-		if the favour of N >= the aggro limit of N, now A is 1;
-	if M is unfriendly or the bimbo of the player >= 15 or A is 1:
+		if the favour of N >= the aggro limit of N, now A is 1;]
+	if M is unfriendly [or the bimbo of the player >= 15 or A is 1]:
 		say "[if M is jismbodied ghost][BigNameDesc of M] seems to reform itself, elongating slowly until a foot-long, slimy [manly-penis] thick enough to qualify as lumber is hovering in the air in front of you. [otherwise]Light seems to converge in front of [NameDesc of M], forming a massive and very erect [manly-penis] right before your eyes. [end if]From the way it's pointing at you it's not hard to guess at its intentions...";
 		anger M;
 		say GhostTip;
@@ -755,10 +757,10 @@ To decide which number is the girth of (M - ghostly tentacle):
 
 To compute perception of (M - ghostly tentacle):
 	now M is interested;
-	let A be 0;
+	[let A be 0;
 	repeat with N running through monsters in the location of the player:
-		if the favour of N <= the aggro limit of N, now A is 1;
-	if M is unfriendly or the bimbo of the player >= 15 or A is 1:
+		if the favour of N <= the aggro limit of N, now A is 1;]
+	if M is unfriendly [or the bimbo of the player >= 15 or A is 1]:
 		say "[BigNameDesc of M] slowly unfurls to its full, six foot length, revealing an underside full of giant, octopus-like suckers.";
 		anger M;
 		say GhostTip;

@@ -168,7 +168,7 @@ To say PortalHint of (S - a summoning portal):
 
 To say DivinationHint of (S - a summoning portal):
 	let M be the next-summon of S;
-	say "You can sense that it will summon a [ShortDesc of M] next.".
+	say "Thanks to what [NameDesc of witch] taught you, you can sense that it will summon a [ShortDesc of M] next.".
 
 [!<SayActiveWarningOfPortal>+
 
@@ -358,6 +358,7 @@ Check entering summoning-circle:
 	do nothing instead.
 
 Definition: a thing is summoning-circle-related:
+	if it is tattoo or it is unremovable clothing, decide no;
 	if it is plentiful accessory or it is pure totem, decide yes; [common]
 	if it is demonic or it is sure blessed clothing or it is magic themed or it is purity clothing, decide yes; [specific]
 	decide no.
@@ -499,6 +500,7 @@ Check entering giant-statue:
 	do nothing instead.
 
 Definition: a thing is giant-statue-related:
+	if it is tattoo or it is unremovable clothing, decide no;
 	if it is plentiful accessory or it is pure totem, decide yes; [common]
 	if it is pregnancy themed or it is biological clothing or it is sex toy, decide yes; [specific]
 	decide no.
@@ -624,6 +626,7 @@ Check entering teleportation-pad:
 	do nothing instead.
 
 Definition: a thing is teleportation-pad-related:
+	if it is tattoo or it is unremovable clothing, decide no;
 	if it is plentiful accessory or it is pure totem, decide yes; [common]
 	if it is metal clothing or it is mechanical joint or it is electric fan or it is unlock-key or it is metal-disc or it is biological clothing or it is food, decide yes; [unique]
 	decide no.
@@ -765,6 +768,7 @@ To say ActiveWarning of (S - mysterious-mummy):
 	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Uh-oh, looks like the mansion summoning altar (the mummy) just activated! It will slowly count down until it releases a brand new monster into the mansion. Try increasing its timer by entering it or offering items to it, or perform some sexual acts nearby to decrease it![roman type][line break][or][stopping]".
 
 Definition: a thing is mysterious-mummy-related:
+	if it is tattoo or it is unremovable clothing, decide no;
 	if it is plentiful accessory or it is pure totem, decide yes; [common]
 	if it is sure blessed clothing or it is ectoplasm or it is possession clothing or it is infernal gem, decide yes; [unique]
 	decide no.

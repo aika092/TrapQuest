@@ -62,7 +62,7 @@ To set up (M - deep one):
 To compute labour to (M - deep one):
 	if M is regional and M is alive:
 		compute pregnancy clothing displacement;
-		say "[PregFlav][if the father is in the location of the player][BigNameDesc of father][otherwise][BigNameDesc of father] appears almost as if on cue! [big he of M][end if] kneels down on one knee and delivers a grotesque hybrid child, which [he of M] presents to you with a broad, fishy smile. [big he of M] then leaves you to recover from your ordeal.";
+		say "[PregFlav][if the father is in the location of the player][BigNameDesc of father][otherwise][BigNameDesc of father] appears almost as if on cue! [big he of M][end if] kneels down on one knee and delivers a grotesque hybrid child, which [he of M] presents to you with a broad, fishy smile[if M is uninterested or M is friendly]. [big he of M] then leaves you to recover from your ordeal[end if].";
 		if the father is in the location of the player:
 			say "For some reason, you are filled with a sense of deep fulfilment and loss at the same time.";
 			StrengthUp 1;
@@ -71,6 +71,7 @@ To compute labour to (M - deep one):
 			humiliate 300;
 	otherwise if M is alive:
 		Delay Labour.
+
 
 Definition: deep one is willing to do oral: decide no.
 

@@ -6,10 +6,6 @@ Definition: a schoolgirl outfit is class-relevant:
 	if the class of the player is schoolgirl and (diaper quest is 1 or the player is pigtailed), decide yes;
 	decide no.
 
-Definition: a schoolgirl outfit is class-transformation-protected:
-	if the class of the player is schoolgirl, decide yes;
-	decide no.
-
 To compute class set up of (C - a schoolgirl outfit):
 	now C is intelligence-influencing;
 	if tentacle-quest is appropriate, now the quest of C is tentacle-quest;

@@ -228,8 +228,8 @@ Check throwing energy-bomb at a monster:
 	otherwise:
 		say "You launch the [energy-bomb] at [NameDesc of the second noun], which hits [him of the second noun] right in [his of the second noun] [MonsterFaceDesc of the second noun]! Sparks of red electricity shoot all over [his of the second noun] body!";
 		now attack-type is 4;
-		let D be a random number between 18 and 28;
-		if the noun is blessed, increase D by 12;
+		let D be a random number between 32 and 40;
+		if the noun is blessed, increase D by 16;
 		increase D by fire theme bonus * 10;
 		damage (D * combatSpeed) on the second noun;
 		now latestCombatFocus is the second noun;
@@ -361,6 +361,7 @@ Check drinking time-bomb:
 			check sudden pregnancy;
 		compute puking;
 		AssSquirt;
+		if doom counter > 0 and doomed < 5, resolve doom;
 		reset the Glulx timer;
 	otherwise:
 		let here-monsters be the list of monsters in the location of the player;
@@ -442,8 +443,8 @@ Check drinking nail-bomb:
 		now attack-type is 4;
 		repeat with M running through monsters in the location of the player:
 			if nail-bomb is bland or M is dangerous:
-				let D be a random number between 18 and 25;
-				if nail-bomb is blessed, increase D by 8;
+				let D be a random number between 25 and 32;
+				if nail-bomb is blessed, increase D by 14;
 				increase D by fire theme bonus * 10;
 				damage (D * combatSpeed) on M;
 				now latestCombatFocus is M;

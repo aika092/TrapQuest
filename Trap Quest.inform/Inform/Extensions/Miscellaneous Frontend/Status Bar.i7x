@@ -661,7 +661,7 @@ Rule for constructing the status line while displaying:
 		fill status bar with table of slow pregnancy status;
 	otherwise if the current menu is the table of random settings:
 		fill status bar with table of random settings status;
-	otherwise if the current menu is the table of tg options:
+	otherwise if the current menu is the Table of TG Timing Options or the current menu is the Table of TG Occurence Options:
 		fill status bar with table of tg status;
 	otherwise:
 		if the endnode flag is 0,

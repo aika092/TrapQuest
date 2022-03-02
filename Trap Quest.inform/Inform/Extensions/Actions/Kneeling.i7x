@@ -8,6 +8,9 @@ Check kneeling while gloryhole is grabbing the player:
 Check kneeling while the player is dildo stuck:
 	say "[if seconds is 0]You can't move![end if]" instead.
 
+Check kneeling while the player is in a predicament room:
+	if there is a worn stuck clothing, say "[if seconds is 0][BigNameDesc of a random worn stuck clothing] prevents you![end if]" instead.
+
 Check kneeling while the player is immobile:
 	check immobility;
 	if the player is immobile:

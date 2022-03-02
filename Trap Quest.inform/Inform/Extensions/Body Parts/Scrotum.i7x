@@ -155,7 +155,6 @@ To SilentlyScrotumUp (X - a number):
 
 To ScrotumUp (X - a number):
 	now previous scrotum size is the size of scrotum;
-	if fast tg is 3, now X is -1; [no text flavour]
 	if bitch tattoo is worn, now X is X / 2;
 	while X > 0:
 		decrease X by 1;

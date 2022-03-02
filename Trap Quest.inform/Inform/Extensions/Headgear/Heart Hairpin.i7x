@@ -51,7 +51,7 @@ Report Spellcasting wand-summoning:
 	otherwise:
 		let W be nintendolls-wand;
 		if the class of the player is magical girl, now W is a random heart wand;
-		if the class of the player is "magical schoolgirl", now W is a random notebook;
+		if the class of the player is "magical schoolgirl", now W is notebook;
 		PinkWardrobeUnclash W;
 		summon W uncursed;
 		say "With a flash of pink, [NameDesc of W] appears in your hand! Wow!".

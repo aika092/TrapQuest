@@ -252,7 +252,7 @@ To AssClose (X - a number):
 		if the openness of asshole > 0:
 			if the number of things filling asshole > 0:[We force out any existing item when the player tightens up.]
 				let I be a random insertable thing penetrating asshole;
-				if I is an insertable thing and the openness of asshole + 1 < the girth of I:
+				if I is an insertable thing and the insertableGirthAcceptance of asshole + 1 < the girth of I and I is not glued clothing and I is not maybe-cursed:
 					say "Your [printed name of I] shoots out of your [asshole] with some force[run paragraph on]";
 					if there is worn total protection clothing:
 						if there is a worn possession total protection clothing:

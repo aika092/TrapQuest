@@ -92,7 +92,11 @@ To say ClothingDesc of (S - sword-of-purity):
 	if S is worn:
 		say "Your current body part exposure status is:[line break]";
 		repeat with BP running through body parts:
-			if BP is at least partially exposed:
+			if (BP is scrotum or BP is penis) and the player is not possessing a penis:
+				say "";
+			otherwise if BP is vagina and the player is not possessing a vagina:
+				say "";
+			otherwise if BP is at least partially exposed:
 				say "[BP]: [bold type]exposed[roman type][line break]";
 			otherwise:
 				say "[BP]: [if BP is breasts and there is a worn warrior chestpiece][bold type]sexified by chestpiece[otherwise]not exposed[end if][roman type][line break]".
@@ -114,10 +118,15 @@ Definition: sword-of-purity is fetish appropriate:
 	decide no.
 
 Definition: sword-of-purity is destiny-appropriate:
-	if the class of the player is not succubus and ((the player is possessing a vagina and the vaginalvirgin of the player is 1) or (the player is not possessing a vagina and fast tg >= 3)), decide yes;
+	if the class of the player is succubus, decide no;
+	if the player is possessing a vagina and the vaginalvirgin of the player is 1, decide yes;
+	if the player is ready for event TG, decide yes;
 	decide no.
 Definition: sword-of-purity is destiny-prioritised:
-	if the player is possessing a vagina and (background-pure is 1 or flower hairclip is worn or the class of the player is virgin warrior or the class of the player is "princess") and the vaginalvirgin of the player is 1 and the class of the player is not succubus, decide yes;
+	if the class of the player is succubus, decide no;
+	if the player is ready for common event TG, decide yes;
+	if the player is not possessing a vagina or the vaginalvirgin of the player is 0, decide no;
+	if background-pure is 1 or flower hairclip is worn or the class of the player is virgin warrior or the class of the player is "princess", decide yes;
 	decide no.
 
 [!<TheSwordOfPurityPussySlutRule>+
@@ -166,8 +175,20 @@ To compute sword destiny of (S - sword-of-purity):
 		let H be a random worn headgear;
 		now the quest of H is virginity-retention-quest;
 		say "You can sense that your [MediumDesc of H] now wants you to remain a vaginal virgin!";
+	if the class of the player is "fairy godmother" and the number of worn unremovable dress is 0:
+		say "[bold type]You feel a deep longing to remain a pregnant virgin for as long as possible.[roman type][line break]";
+		let H be a random worn headgear;
+		now the quest of H is virginity-retention-quest;
+		transform H into flower hairclip;
+		say QuestFlav of H;
+		let O be a random worn overdress;
+		if O is overdress:
+			if O is not sheer-chest-garb, transform O into sheer-chest-garb;
+		otherwise:
+			unclash class summon sheer-chest-garb;
+		compute class outfit of flower hairclip;
 	follow the player class rules; [update class]
-	if the class of the player is virgin warrior and the class of the player is not princess:
+	if the class of the player is virgin warrior and the class of the player is not princess and the class of the player is not faerie:
 		let K be a random worn knickers;
 		if K is not unremovable knickers:
 			if K is a thing, WardrobeVanish K;
@@ -635,7 +656,7 @@ Definition: sissy-sword is destiny-prioritised:
 	if the player is a sissy, decide yes;
 	decide no.
 Definition: sissy-sword is destiny-appropriate:
-	if the player is gendered male and fast tg < 3, decide yes;
+	if the player is gendered male and event tg < 3, decide yes;
 	decide no.
 
 To compute sword destiny of (S - sissy-sword):

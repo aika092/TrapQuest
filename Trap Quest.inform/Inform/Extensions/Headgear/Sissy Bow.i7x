@@ -8,7 +8,7 @@ To compute SelfExamineDesc of (H - a sissy bow):
 	let X be the largeness of hair;
 	say "You are wearing a pink sissy bow in your [ShortDesc of hair]. ".
 
-Definition: a clothing is sissifying: decide no.
+Definition: a wearthing is sissifying: decide no.
 
 Definition: a sissy bow is sissifying: decide yes.
 
@@ -36,6 +36,16 @@ To say QuestTitle of (Q - asshole-presenting-quest):
 
 To compute persistent reward of (Q - asshole-presenting-quest) on (C - a clothing):
 	compute generic class reward of Q on C.
+
+To compute generic class reward of (Q - asshole-presenting-quest) on (C - a clothing):
+	if C is hair growing or the raw largeness of hair <= 1 or frozen hair is 1:
+		say "filling you with renewed energy!";
+		repeat with F running through fuckholes:
+			heal F times 5;
+		now the fatigue of the player is 0;
+	otherwise:
+		say "shrinking the length of your hair!";
+		HairDown 1.
 
 Part - Pink Sissy Bow
 

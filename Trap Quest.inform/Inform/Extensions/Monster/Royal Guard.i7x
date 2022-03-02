@@ -781,7 +781,7 @@ To say SexResistFlav of (M - a royal guard):
 	if M is penetrating a fuckhole:
 		say "[if the relevant sex addiction of M < a random number between 8 and 13][one of]You struggle against [his of M] strong grip, but remain in place.[or]You attempt to crawl away, but [his of M] grip is just too strong![or]You squirm, attempting to loosen [his of M] grip, but with no success.[or]You try to kick back at [him of M] with your legs, only managing to get your foot caught in [his of M] cloak.[in random order][otherwise][one of]You resist, but your heart isn't really in it.[or]You kick back at [him of M] but it's more playful than violent.[in random order][end if]";
 	otherwise if M is penetrating a body part:
-		say "[one of]You struggle against [his of M] strong grip, but [his of M] [DickDesc of M] remains where it is.[or]You attempt to jerk away, but [his of M] grip is just too strong![or]You try to [if there is worn wrist-bound-behind clothing]pull[otherwise]push [FuckerDesc of M][end if] away, but [his of M] hold on your head is too strong.[or]You [if there is worn wrist-bound-behind]squirm[otherwise]beat on [FuckerDesc of M]'s thighs[end if] in a futile attempt to break [his of M] grip.[in random order]";
+		say "[one of]You struggle against [his of M] strong grip, but [his of M] [DickDesc of M] remains where it is.[or]You attempt to jerk away, but [his of M] grip is just too strong![or]You try to [if there is worn wrist-bound-behind clothing]pull[otherwise]push [FuckerDesc of M][end if] away, but [his of M] hold on your head is too strong.[or]You [if there is worn wrist-bound-behind clothing]squirm[otherwise]beat on [FuckerDesc of M]'s thighs[end if] in a futile attempt to break [his of M] grip.[in random order]";
 	otherwise:
 		say DefaultResistFlav of M;
 	if the player is able to speak:
@@ -1033,10 +1033,10 @@ The royal guard incarcerating a criminal rule is listed last in the royal guard 
 
 This is the prison guard getting past chastity rule:
 	if current-monster is prison guard:
-		if Chastity-Belt is currently uncovered and Chastity-Belt is locked:
+		if chastity-belt is currently uncovered and chastity-belt is locked:
 			say "[speech style of current-monster]'This can't stop me.'[roman type][line break][BigNameDesc of current-monster] pulls out a special key, and with a sly grin, unlocks your chastity belt, and removes it![if the vaginalvirgin of the player is 1][line break][variable custom style]Wait WHAT?! [big he of current-monster] had the key to my belt?! But that means... there's nothing stopping [him of current-monster] from...[roman type][line break]";
-			now current-monster is carrying Chastity-Belt;
-			now Chastity-Belt is temporarily-removed;
+			now current-monster is carrying chastity-belt;
+			now chastity-belt is temporarily-removed;
 			now the chosen-orifice of current-monster is vagina;
 			rule succeeds.
 The prison guard getting past chastity rule is listed last in the royal guard unique punishment rules.

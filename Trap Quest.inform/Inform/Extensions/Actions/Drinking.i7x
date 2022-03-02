@@ -349,7 +349,7 @@ Carry Out Spitting:
 	otherwise:
 		compute spitting;
 	if the implant of pledge-lesson-spit is 1:
-		say "[second custom style]Only prudes spit![bold type][line break]The curse from your pledge in the diamond ranked lesson activates. [roman type]You become extremely tired and thirsty!";
+		say "[second custom style]Only prudes spit![bold type][line break]The magic pledge you've just broken activates. [roman type]You become extremely tired and thirsty!";
 		StomachDown 40;
 		now the fatigue of the player is the buckle threshold of the player;
 	if the player is in a predicament room and current-predicament is gloryhole-predicament:

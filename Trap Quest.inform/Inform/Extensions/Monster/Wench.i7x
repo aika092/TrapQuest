@@ -229,6 +229,10 @@ To say RuneTrapReactFlav of (M - a wench):
 	otherwise:
 		say "[BigNameDesc of M] reaches a hand out.[line break][speech style of M]'WAIT! Don't step on tha... too late.'[roman type][line break]".
 
+To compute disgusting spit reaction of (M - a wench):
+	say "[BigNameDesc of M] shudders as [he of M] watches you. You're not sure if it's with disgust or arousal. [if the urine volume of face > 0][strongHumiliateReflect][otherwise][moderateHumiliateReflect][end if]";
+	FavourDown M with consequences.
+
 Part 2 - Perception
 
 To decide which number is the bimbo tolerance of (M - a wench):
@@ -635,7 +639,7 @@ To compute (M - a wench) considering (T - a submissive collar):
 	otherwise if interracial fetish is 1:
 		say "[BigNameDesc of M][']s eyes are fixed to the [ShortDesc of T] in your hands.[line break][speech style of M]'Oh my god that is so cute! I saw this in the dungeon shop earlier and couldn't forget about it. The shopkeeper told me it wasn't for sale, and had to be earned or something like that...'[roman type][line break]";
 		BBC brainwash M with T;
-		compute resolution of M taking T;
+		compute final resolution of M taking T;
 	otherwise if convincing power > 0 and (M is friendly or (convincing power + the convincability of M) >= the square root of (a random number between 1 and 15)):
 		say MonsterOfferAcceptFlav of M to T;
 		compute resolution of M taking T;

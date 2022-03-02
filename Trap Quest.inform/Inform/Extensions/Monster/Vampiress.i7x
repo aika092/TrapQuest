@@ -170,8 +170,9 @@ To compute perception of (M - vampiress):
 		say "[speech style of M]'You are not even fit for feeding. How amusing. Now get out of my sight.'[roman type][line break]";
 		distract M;
 		if M is chain-tethering:
-			say "Your [ShortDesc of lipstick collar] disintegrates freeing you.";
-			destroy lipstick collar;[you get a freebie, but only one freebie]
+			let C be a random worn collar;
+			say "Your [ShortDesc of C] disintegrates, freeing you.";
+			destroy C;[you get a freebie, but only one freebie]
 			end tethering;
 	otherwise if M is chain-tethering:
 		say "[speech style of M]It's those sticky fingers of yours that make me so determined to give you a sticky face.[roman type][line break]";

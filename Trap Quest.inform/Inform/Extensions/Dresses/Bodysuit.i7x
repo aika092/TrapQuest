@@ -165,7 +165,7 @@ To decide which number is the sex-addiction-influence of (C - purple rubber body
 
 Definition: purple rubber bodysuit is upgradable:
 	if the bottom-transform of purple rubber bodysuit is 0:
-		if the player is possessing a vagina or (tg fetish > 0 and fast tg is 3), decide yes;
+		if the player is possessing a vagina or the player is ready for common event tg, decide yes;
 	otherwise if the bottom-transform of purple rubber bodysuit < 3 and pregnancy fetish is 1 and the pregnancy of the player is 0:
 		decide yes;
 	otherwise if the top-transform of purple rubber bodysuit is 0:
@@ -215,7 +215,8 @@ Definition: purple rubber bodysuit is boob themed:
 Definition: purple rubber bodysuit is displacable: decide no.
 Definition: purple rubber bodysuit is purple themed: decide yes.
 Definition: purple rubber bodysuit is fetish appropriate:
-	if diaper quest is 0 and (the player is not possessing a vagina or (tg fetish > 0 and fast tg is 3)), decide yes;
+	if diaper quest is 1, decide no;
+	if the player is possessing a vagina or the player is ready for common event TG, decide yes;
 	decide no.
 
 Part - Sequins Bodysuit

@@ -401,8 +401,8 @@ To compute player standing:
 									now the saved-item of magical-maid-outfit is O;
 						transform MO into magical-maid-outfit;
 						now the charge of magical-maid-outfit is a random number between 10 and 40;
-						if the player is sexed male and (fast tg is 3 or (the size of penis <= min penis size and tg fetish > 0)):
-							say "Your whole body suddenly goes numb, then is filled with an almost electric tingle. You feel terrible wrenching from your insides that you're sure should hurt, but you just don't seem to be able to feel much of anything right now. The tingling comes to a focus in your crotch, filling you with a sense of terrible foreboding. [if the player is possessing a penis]As feeling comes back to you, you reach down and can immediately tell you're missing something kind of notable: your [player-penis]![otherwise]As feeling comes back to you, you reach down with a sense of foreboding.[end if] It seems whatever magic made that outfit appear has decided you'd be better off as a girl...";
+						if the player is ready for event TG:
+							say "Your whole body suddenly goes numb, then is filled with an almost electric tingle. You feel terrible wrenching from your insides that you're sure should hurt, but you just don't seem to be able to feel much of anything right now. The tingling comes to a focus in your crotch, filling you with a sense of terrible foreboding. [if the player is possessing a penis]As feeling comes back to you, you reach down and can immediately tell you're missing something kind of notable: your [player-penis]![otherwise]As feeling comes back to you, you reach down with a sense of foreboding.[end if] It seems whatever magic made that outfit appear has decided you'd be better off [if transGender is 1]with a vagina[otherwise]as a girl[end if]...";
 							SexChange the player;
 						update appearance level;
 						if asshole is lewdly exposed:
@@ -587,7 +587,7 @@ To compute extra suffocation of (M - a monster):
 		if debuginfo > 0, say "[input-style]Additional suffocation (from [MediumDesc of M]) avoidance check: RNG between -2 and player reaction ([reaction of the player]) = [R] | -0.5[roman type][line break]";
 		if R < 0:
 			increase the suffocation of the player by 1;
-			say "[bold type][if the reaction of the player is 0]All your struggling and the[otherwise]The[end if] intensity of [NameDesc of M][']s acts cause your body to use up even more oxygen![roman type][line break]".
+			say "[bold type][if the reaction of the player is 0]All your struggling and the[otherwise]The[end if] intensity of [NameDesc of M][bold type][']s acts cause your body to use up even more oxygen![roman type][line break]".
 
 [A breathing blocking decision rule (this is the consider breathing pink smoke rule):
 	if the player is prone and the location of the player is smoky and the player is not flying and the number of aeromancer penetrating a body part is 0:
