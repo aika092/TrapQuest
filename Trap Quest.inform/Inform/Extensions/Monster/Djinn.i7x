@@ -229,33 +229,48 @@ To compute djinn wishing of (M - a monster):
 		let ok be 0;
 		let W be a random number between 1 and 4;
 		if player is somehow possessing a penis and W is 1:
-			say "[mystical-player-penis]";
+			say "[mystical ShortDesc of penis].";
 			now ok is 1;
 			SpecialPenisUp 1;
-			say "You now have a [mystical-player-penis]!";
-			if a random number between 1 and 3 is 1 and penis-is-detachable by M using 3:
+			say "You now have a [mystical ShortDesc of penis]!";
+			if previous penis length is the size of penis:
+				now ok is -1; [there was no increase]
+			otherwise if a random number between 1 and 3 is 1 and penis-is-detachable by M using 3:
 				say "You're smiling at the change, ";
 				compute detach-players-dick by M using 3;
 		otherwise if W is 2:
 			say "[LipDesc].";
+			now ok is -1;
 			if ArtificialUp 4 options with override 3 > 0: [3: lips]
 				now ok is 1;
 		otherwise if W is 3:
 			say "rear.";
 			now ok is 1;
-			FatassUp 1;
-			say "You now have [AssDesc]!";
-		if ok is 0 and W is 2 and player is possessing a vagina:
-			say "Frowning, he waves a second time, this time at your [vagina].";
+			if there is a restricting salve covering hips, now ok is -1;
+			if weight gain fetish is 1:
+				if the total weighty volume of hips >= max ass size:
+					now ok is -1;
+					FatassUp 1; [triggers text output that nothing grew]
+				otherwise:
+					FatassUp 2;
+					say "You now have [AssDesc]!";
+			otherwise:
+				if the thickness of hips >= max hip size and the total weighty volume of hips >= max ass size:
+					now ok is -1;
+					HipUp 1; [triggers text output that nothing grew]
+				otherwise:
+					HipUp 1;
+					say "You now have [MediumDesc of hips]!";
+		if ok <= 0 and player is possessing a vagina:
+			say "[if ok is -1]Frowning, he waves a second time, this time at your [end if][vagina].";
 			if ArtificialUp 4 options with override 4 > 0: [4: labia]
 				now ok is 1;
-		if W is 4 or ok is 0: [So this can catch failed 'up's, too]
+		if W is 4 or ok <= 0: [So this can catch failed 'up's, too]
 			if W is 4:
 				say "[BreastDesc].";
 			otherwise:
 				say "Looking annoyed, he gestures peremptorily at your [BreastDesc].";
 			BustUp 1;
-			now ok is 1;
 			say "You now have [BreastDesc]!";
 	otherwise if CNR is "wish for a less humiliating outfit":
 		say "[BigNameDesc of M] unfolds [his of M] folded arms and waves them at your body.[line break][speech style of M]'How lewd your appearance becomes will depend on how much care you take.'[roman type][line break]";

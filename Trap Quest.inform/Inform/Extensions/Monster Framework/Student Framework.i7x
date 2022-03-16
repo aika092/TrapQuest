@@ -992,11 +992,11 @@ To execute (A - bully-lock-gag):
 
 bully-sharpie is a bully-action.
 Definition: bully-sharpie is eligible:
-	if the number of worn tattoos is 0 or marker chest tattoo is worn or there is worn not-top-displacable actually breast covering clothing, decide no;
+	if the number of worn tattoos is 0 or marker chest tattoo is worn or there is worn actually not-top-displacable actually breast covering fully covering clothing, decide no;
 	decide yes.
 To execute (A - bully-sharpie):
-	let C be a random worn actually breast covering clothing;
-	say "[BigNameDesc of current-monster] takes out a permanent marker, [if C is clothing]pulls up your [ShortDesc of C], [end if]and writes something on your chest!";
+	let C be a random worn actually breast covering fully covering clothing;
+	say "[BigNameDesc of current-monster] takes out a permanent marker, [if C is clothing]pulls up your [ShortDesc of C], [end if]and writes something on your [if there is worn actually breast covering clothing]cleavage[otherwise]chest[end if]!";
 	summon marker chest tattoo;
 	if weight gain fetish is 1 and current-monster is nasty student:
 		now the tattoo-title of marker chest tattoo is "DISGUSTING FAT UGLY PIG";

@@ -26,13 +26,12 @@ Check entering podium:
 		[if the player is not able to use manual dexterity, say "You don't have the manual dexterity needed to climb up there." instead;]
 		if the player is prone, say "You would need to be standing up." instead;[now we can assume the player can get onto the podium]
 	allocate 6 seconds;
-	if the class of the player is bride and bride-consort is an alive undefeated monster:
+	if the ceremony of betrothal-quest is false and the class of the player is bride and bride-consort is a summon-available undefeated monster: [the player can become the princess bride before the hotel is set up, but this shouldn't stop her from doing the ceremony]
 		if there is a worn bridal dress or sheer-open-front-skirt is worn:
 			say "[BigNameDesc of bride-consort] appears from the doorway, dressed the same as ever but with added pride and jubilation in [his of bride-consort] step. As [he of bride-consort] joins you on-stage, traditional wedding music fills the room. Suddenly, [NameDesc of Icarus] descends from above to stand before you both, ready to officiate the wedding.[line break][speech style of Icarus]'Beloved guests, we are gathered here today to witness this marriage. [NameBimbo] is dedicating [his of the player] life to serving [his of the player] new lord and master. If anyone knows of any reason this marriage cannot proceed, please state so now or forever hold your peace.'[roman type][line break]Unsurprisingly, [if the number of monsters in the location of the player is 0]with absolutely nobody in the audience, [end if]there is no reply.[line break][speech style of Icarus]'Then I pronounce you [man of bride-consort] and wife!'[roman type][line break]";
 			class summon floral bouquet;
-			now the ceremony of betrothal-quest is true;
 			focus-consider Icarus;
-			say "[variable custom style]Wait, don't we have to say [']I do['] or something?![roman type][line break]But apparently it has all already been done. [BigNameDesc of Icarus] is already ascending back into the air and waving [his of Icarus] goodbyes.[line break][speech style of bride-consort]'This calls for a celebration!'[roman type][line break][BigNameDesc of bride-consort] clicks [his of bride-consort] fingers.";
+			say "[variable custom style]Wait, don't we have to say [']I do['] or something?![roman type][line break]But apparently it has all already been done. [BigNameDesc of Icarus] is already ascending back into the air and waving [his of Icarus] goodbyes.[line break][speech style of bride-consort]'This calls for a celebration!'[roman type][line break][BigNameDesc of bride-consort] clicks [his of bride-consort] fingers.[paragraph break]Your veil is magically lifted, revealing your face!";
 			let C be a random worn bridal dress;
 			if C is long bridal dress:
 				say "A large section of your [C][']s skirt detaches and falls to the ground, leaving you in what suddenly feels a lot more like a party dress!";
@@ -40,23 +39,24 @@ Check entering podium:
 			otherwise if C is sexy bridal dress:
 				if slutty bridal dress is unclash summonable, unclash class summon slutty bridal dress; [it's supposed to be bottom exclusive so this is more ideal]
 				otherwise transform sexy bridal dress into slutty bridal dress;
+			otherwise if C is princess bride dress:
+				if demon tail plug is unclash summonable, unclash class summon demon tail plug;
 			otherwise if C is nothing:
 				class summon burning love crop top;
-				if sheer-open-front-skirt is not cursed:
+				if sheer-open-front-skirt is worn and sheer-open-front-skirt is not cursed:
 					say "Your [sheer-open-front-skirt] becomes cursed!";
 					now sheer-open-front-skirt is cursed;
 					compute summoned quest of sheer-open-front-skirt;
 			say "[speech style of bride-consort]'I must go spread the news of our joy with the others! Soon it will be our wedding night. You know what that means, right? I will be making a woman of you.'[roman type][line break][big he of bride-consort] points to your [vagina].[line break][speech style of bride-consort]'Meet me in the Kama Sutra Penthouse Suite.'[roman type][line break]Before you can reply, [he of bride-consort] has left.";
 			focus-consider bride-consort;
 			progress quest of podium-quest;
+			progress quest of betrothal-quest; [First one causes arousal and increased vaginal sex desire. Second one (consummation or banishing) triggers the necklace reward.]
+			now the ceremony of betrothal-quest is true;
 		otherwise:
 			say "You want to have a wedding ceremony but you realise you can't do that without a wedding dress[if the number of carried bridal dress is 0]! Perhaps there is a [bold type]magic wardrobe[roman type] somewhere that would enable you to reclaim your wedding outfit[end if].";
 	otherwise if diaper quest is 0 and floral bridal veil is off-stage and floral bridal veil is actually summonable and (the player is possessing a vagina and the vaginalvirgin of the player is 1) or the player is ready for event tg:
 		say "You find yourself dreaming of a wedding ceremony. You are the bride, holding a bouquet of flowers, as some noble [man of shopkeeper] dedicates [his of shopkeeper] life to you in front of the world.[line break][variable custom style]That wouldn't be so bad.[roman type][line break]As if reacting to your thoughts, a [MediumDesc of floral bridal veil] appears on your head!";
 		summon floral bridal veil cursed;
-		if the player is not possessing a vagina:
-			say DefaultSexChangeFlav;
-			SexChange the player;
 		progress quest of podium-quest;
 	otherwise:
 		if auto is 0, say "[if seconds > 0]Giving in to temptation, you[otherwise]You[end if] quickly climb up on the stage and [if diaper quest is 1]suddenly feel compelled to [end if]turn and look out. ";
@@ -135,8 +135,8 @@ Check entering podium:
 				say "You've barely blinked when you find yourself wearing a [slave-dress]! Your wrists are now stuck in cuffs connected to your collar via metal chains. Uh-oh.";
 		otherwise if P is actually summonable and diaper quest is 0:
 			if debuginfo > 0 and (B is not bracelet or there is an on-stage solid gold bracelet), say "[input-style]Stage roll: bracelet scene not possible ([if B is bracelet]solid gold bracelet is already in game universe[otherwise]no bracelets left off-stage[end if]); slave stuff selected automatically.[roman type][line break]";
+			say "You open your eyes and are shocked to find you now have a [MediumDesc of P]. It's like you've been marked as somebody's property!";
 			summon P cursed with quest;
-			say "You open your eyes and are shocked to find you now have a [P]. It's like you've been marked as somebody's property!";
 		otherwise:
 			if debuginfo > 0 and (B is not bracelet or there is an on-stage solid gold bracelet), say "[input-style]Stage roll: bracelet scene not possible ([if B is bracelet]solid gold bracelet is already in game universe[otherwise]no bracelets left off-stage[end if]); slave stuff selected automatically.[roman type][line break]";
 			say "[paragraph break]THWACK, THWACK! You imagine being struck on the back by a harsh whip. Ow, that really hurts! What the hell? It's like you can feel the pain for real! You open your eyes, tears welling up in them, leaving you feeling a lot more submissive.";

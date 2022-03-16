@@ -67,6 +67,7 @@ To decide which object is the at least partial concealer of (F - face):
 	if face is listed in the armUses of arms, decide on arms;
 	if there is a worn not-see-through hood, decide on a random worn not-see-through hood;
 	if cultist veil is worn, decide on cultist veil;
+	if floral bridal veil is worn and the ceremony of betrothal-quest is false, decide on floral bridal veil;
 	decide on nothing.
 
 To decide which number is the lewdly exposed outrage of (F - face):
@@ -592,6 +593,7 @@ This is the player pukes rule:
 				PuddleUp semen by S;
 				PuddleUp urine by U;
 				PuddleUp milk by M;
+				MouthEmpty;
 			now the stomach-semen of the player is 0;
 			now the stomach-urine of the player is 0;
 			now the stomach-milk of the player is 0;

@@ -176,22 +176,18 @@ To compute perception of (M - matron):
 
 To say DiaperReaction of (M - matron):
 	say "[BigNameDesc of M][']s eyes perk up!";
-	now M is interested;
-	compute diaper check of M.
+	check guaranteed perception of M.
 
 To compute diaper mess reaction of (M - matron):
 	humiliate 400;
 	if voluntarySquatting is 1, humiliate 500;
 	if M is interested:
-		if M is doing nothing special:
+		if M is doing nothing special and diaperChecking is 0:
 			compute diaper check of M;
 		otherwise:
 			say "[BigNameDesc of M] looks at you with [one of]a smug expression[or]a judging expression[or]a caring expression[in random order].[line break][speech style of M]'[one of][if voluntarySquatting is 1]Pooping yourself on purpose in front of me? You really are a naughty little baby aren't you?'[otherwise]Having problems controlling your poopies, little baby? Aww, how adorable!'[end if][or]Uh-oh. Did you mean to do that, little one?'[or]Ooh how wonderful, your potty untraining seems to be going smoothly!'[or]What a good little baby you are, making a big mess in front of your Nanny!'[in random order][roman type][line break]";
 	otherwise:
-		say "[BigNameDesc of M][']s eyes suddenly perk up!";
-		now M is interested;
-		now the health of M is the maxhealth of M; [otherwise she won't diaper check you]
-		compute diaper check of M.
+		say DiaperReaction of M.
 
 To say BecomesBoredFlav of (M - matron):
 	say "[BigNameDesc of M] seems to lose interest in you for now.".
@@ -502,8 +498,7 @@ To compute forcefeed round (N - 1) of (M - matron):
 	otherwise if the number of worn bibs is 0:
 		say "[BigNameDesc of M] removes your bib, and then wipes away the mess around your mouth with it.";
 	StomachUp 2;
-	increase incontinence by 1;
-	if rectum is 0 and diaper lover > 2, now rectum is 1; [The matron has started an unmentionable process]
+	increase incontinence by 1.
 
 To say ForcefeedAftermath of (M - matron):
 	say "[big he of M] lets you down from your chair, done with you. For now.".

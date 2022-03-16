@@ -226,6 +226,18 @@ To compute facial climax of (M - nurse):
 
 Chapter - DQ
 
+To compute diaper mess reaction of (M - nurse):
+	humiliate 400;
+	if voluntarySquatting is 1, humiliate 500;
+	if M is interested:
+		if M is doing nothing special and diaperChecking is 0:
+			compute diaper check of M;
+		otherwise:
+			say "[BigNameDesc of M] looks at you with [one of]a smug expression[or]a judging expression[or]a caring expression[in random order].[line break][speech style of M]'[one of][if voluntarySquatting is 1]Pooping yourself on purpose in front of me? You really are a naughty little baby aren't you?'[otherwise]Having problems controlling your poopies, little baby? Aww, how adorable!'[end if][or]Uh-oh. Did you mean to do that, little one?'[or]Ooh how wonderful, your potty untraining seems to be going smoothly!'[in random order][roman type][line break]";
+	otherwise:
+		say "[BigNameDesc of M][']s eyes suddenly perk up!";
+		check guaranteed perception of M.
+
 To say ForcefeedDeclarationFlav of (M - nurse):
 	say "".
 

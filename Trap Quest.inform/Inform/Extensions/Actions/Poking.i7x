@@ -22,6 +22,9 @@ To compute poking of (M - a monster):
 			if the noun is student and the noun is friendly:
 				HappinessDown the noun;
 				if the noun is unfriendly, distract the noun;
+			otherwise if the noun is orc:
+				say "[speech style of the noun]'Ah, you wish to play a hand of cards?'[roman type][line break][BigNameDesc of the noun] replies.";
+				execute talk-orc-poker for the noun;
 		otherwise if the noun is defeated:
 			if the noun is awake:
 				say "[BigNameDesc of the noun] is now [if the noun is fucked-silly]somewhat aware of your presence[otherwise]paying attention to you[end if].";

@@ -68,7 +68,7 @@ Report going north when the player is in School01:
 		now T is in School31;
 	if the player is wrist bound behind:
 		repeat with T running through things in Predicament20:
-			say "[BigNameDesc of T] is teleported to the [School01] along with you!";
+			WardrobeVanish T;
 	repeat with R running through predicament rooms:
 		repeat with T running through things in R:
 			unless T is backdrop or T is male-gloryhole or T is female-gloryhole or T is automated changing station, destroy T;
@@ -303,10 +303,9 @@ Report going when the player is in Predicament20:
 				layer C correctly;
 				now C is sure;
 				now C is identified;
-			if C is ass plugging clothing:
-				now C is penetrating asshole;
-			otherwise if C is vagina plugging clothing:
-				if the player is possessing a vagina, now C is penetrating vagina;
+			if C is ass plugging clothing or C is vagina plugging clothing:
+				if C is ass plugging, now C is penetrating asshole;
+				if C is vagina plugging and the player is possessing a vagina, now C is penetrating vagina;
 			otherwise if C is insertable and C is not dildo sword:
 				let F be asshole;
 				if (C is not plug or asshole is actually occupied) and the player is possessing a vagina, now F is vagina;
@@ -549,7 +548,7 @@ To compute non-lewd worsened perception reaction of (M - a bystander):
 	say "[BigNameDesc of M] frowns at you.".
 
 To compute toy expulsion reaction of (M - a bystander):
-	say "[BigNameDesc of M] [one of]almost chokes[or]leaps in surprise[or]barks in surprise[in random order].[line break][speech style of M]'[one of]That was INSIDE you?!'[or]What the hell? Did you just push that out of your fuckhole in front of me?!'[or]Oh my gosh, you filthy pervert!'[in random order][roman type][line break][moderateHumiliateReflect]";
+	say "[BigNameDesc of M] [one of]almost chokes[or]leaps in surprise[or]barks in surprise[in random order].[line break][speech style of M]'[one of]That was INSIDE you?!'[or]What the hell? Did you just push that out of your hole in front of me?!'[or]Oh my gosh, you filthy pervert!'[in random order][roman type][line break][moderateHumiliateReflect]";
 	now M is interested;
 	if the worst-appearance of M < the appearance of the player, now the worst-appearance of M is the appearance of the player;
 	if diaper quest is 1 and the worst-appearance of M < the cringe appearance of the player, now the worst-appearance of M is the cringe appearance of the player.
@@ -1246,7 +1245,7 @@ To say PredicamentDescription of (P - vibe-photo-predicament):
 	say "I'm currently in an Extra Credit lesson where I need to decide whether to pose for a photo to earn decent clothing and then get back to my home while avoiding as many bystanders from noticing me as possible.".
 
 To decide which number is the stimulation of (D - vibe-photo-predicament) on (B - a body part):
-	decide on a random number between 15 and 20.
+	decide on a random number between 7 and 14.
 
 An all time based rule:
 	if current-predicament is vibe-photo-predicament:
@@ -1909,7 +1908,7 @@ To execute (TEP - team-enema-predicament):
 	now the player is in Predicament01;
 	now temporaryYesNoBackground is Figure of team enema predicament;
 	let M be team-predicament-partner;
-	say "Your stomach gurgles horribly. You look around... you're in a very small room, with... what the hell?! [BigNameDesc of M] is bound on [his of M] back on top of a bench, completely unable to move thanks to wrist and thigh bindings. You're both naked. Underneath the grated floor below your feet is what appears to be two sets of clothes. A ring gag in [NameDesc of M][']s mouth keeps it wide and open, pointing towards the ceiling. A robotic voice speaks over some kind of tannoy.[line break][first custom style]'WELCOME TO THE PINK DIAMOND [']EXTRA CREDIT['] CLASS. [if diaper quest is 0]BOTH YOUR BELLIES HAVE BEEN FILLED WITH A VOLUMINOUS SEMEN ENEMA. [end if]IN FIVE MINUTES THE DOOR AND YOUR BONDAGE WILL UNLOCK, AND THE CLOTHES BENEATH THE GROUND WILL BE RELEASED. YOUR [if diaper quest is 0]BELLIES [end if][if watersports fetish is 1 and diaper quest is 1]AND [end if][if watersports fetish is 1]BLADDERS [end if]WILL NEED TO BE HELD, OR... OTHERWISE INGESTED... TO PREVENT YOUR CLOTHES FROM BECOMING SOILED.[paragraph break]'GOOD LUCK. YOUR TIME STARTS NOW.'[paragraph break][variable custom style]Uh-oh...[roman type][line break]";
+	say "Your stomach gurgles horribly. You look around... you're in a very small room, with... what the hell?! [BigNameDesc of M] is bound on [his of M] back on top of a bench, completely unable to move thanks to wrist and thigh bindings. You're both naked. Underneath the grated floor below your feet is what appears to be two sets of clothes. A ring gag in [NameDesc of M][']s mouth keeps it wide and open, pointing towards the ceiling. A robotic voice speaks over some kind of tannoy.[line break][first custom style]'WELCOME TO THE PINK DIAMOND [']EXTRA CREDIT['] CLASS. [if diaper quest is 0]BOTH YOUR BELLIES HAVE BEEN FILLED WITH A VOLUMINOUS SEMEN ENEMA. [end if]IN FIVE MINUTES THE DOOR AND YOUR BONDAGE WILL UNLOCK, AND THE CLOTHES BENEATH THE GROUND WILL BE RELEASED. YOUR [if diaper quest is 0]BELLIES [end if][if watersports fetish is 1 and diaper quest is 0]AND [end if][if watersports fetish is 1]BLADDERS [end if]WILL NEED TO BE HELD, OR... OTHERWISE INGESTED... TO PREVENT YOUR CLOTHES FROM BECOMING SOILED.[paragraph break]'GOOD LUCK. YOUR TIME STARTS NOW.'[paragraph break][variable custom style]Uh-oh...[roman type][line break]";
 	let T be 300;
 	if diaper quest is 0, now the semen volume of belly is 30;
 	if watersports fetish is 1 and the bladder of the player < bladder-risky-level, now the bladder of the player is bladder-risky-level;
@@ -4628,6 +4627,7 @@ An all later time based rule:
 					now M is penetrating vagina;
 					now M is friendly-fucking;
 					set up sex length of M in vagina;
+					ruin vagina;
 				otherwise if entry MNastiness in sexActList matches the text "asshole":
 					say "You [if the player is upright]get on your knees and [end if]turn around to ease the [manly-penis] into your [asshole].[line break][speech style of M]'[T][roman type][line break]";
 					now the stance of the player is 1;
@@ -4636,6 +4636,7 @@ An all later time based rule:
 					now M is penetrating asshole;
 					now M is friendly-fucking;
 					set up sex length of M in asshole;
+					ruin asshole;
 				otherwise if entry MNastiness in sexActList matches the text "piss":
 					say "You [if the player is upright]get on your knees and [end if]wrap your mouth around the tip of [his of M] [manly-penis].[line break][speech style of M]'[T][roman type][line break]";
 					now the stance of the player is 1;
@@ -4654,6 +4655,7 @@ An all later time based rule:
 					now M is friendly-fucking;
 					now gloryhole-key-predicament is ass-to-mouth-agreed;
 					set up sex length of M in asshole;
+					ruin asshole;
 		otherwise:
 			say "You hear a voice from outside.[line break][second custom style]'[one of]Excuse me, I'm waiting!'[or]Is anyone even in there?!'[or]Finish up before I piss myself!'[or]You're taking forever!'[or]What's the hold up?!'[or]Are you okay in there?!'[in random order][roman type][line break]".
 

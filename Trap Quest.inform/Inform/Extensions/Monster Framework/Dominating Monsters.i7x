@@ -340,8 +340,7 @@ Definition: vagina (called F) is available:
 	decide yes.
 
 Definition: breasts (called B) is available:
-	repeat with C running through worn breast covering clothing:
-		if C is not fully exposing and C is not optional-top-displacable, decide no;
+	if there is titfuck blocking clothing, decide no;
 	decide yes.
 
 [!<DomMonster>+

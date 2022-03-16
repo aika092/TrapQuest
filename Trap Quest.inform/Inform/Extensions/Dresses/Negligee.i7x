@@ -1,6 +1,6 @@
 Negligee by Dresses begins here.
 
-A negligee is a kind of overdress. A negligee is sheer. A negligee is short. A negligee is transformation-rare. A negligee is silk. A negligee is not-top-displacable.
+A negligee is a kind of overdress. A negligee is sheer. A negligee is short. A negligee is transformation-rare. A negligee is silk. A negligee is optional-top-displacable.
 
 To say ShortDesc of (C - a negligee):
 	say "negligee".
@@ -64,7 +64,7 @@ Definition: lacy negligee is black themed: decide yes.
 
 Part 3 - Floral Negligee
 
-floral negligee is an underdress. floral negligee is crotch-intact. floral negligee is bottom-exclusive. floral negligee is unskirted. floral negligee is silk. floral negligee is optional-top-displacable. floral negligee is low cut. The text-shortcut of floral negligee is "fng".
+floral negligee is an underdress. floral negligee is crotch-intact. floral negligee is bottom-exclusive. floral negligee is unskirted. floral negligee is silk. floral negligee is low cut. The text-shortcut of floral negligee is "fng".
 
 To decide which number is the initial outrage of (C - floral negligee):
 	decide on 3.

@@ -180,6 +180,14 @@ To compute consequence of (Q - questMagic):
 	say "You feel the curse drain magic from your veins as it leaves!";
 	increase the magic-fatigue of the player by 3.
 
+questGape is a questConsequence.
+Definition: questGape is eligible:
+	if diaper quest is 0 and the player is possessing a vagina and the openness of vagina < 7 and quest-target is pussy covering, decide yes;
+	decide no.
+To compute consequence of (Q - questGape):
+	say "You feel the curse causing your [vagina] to become very loose and wet[if the class of the player is princess and the class of the player is bride], as if in preparation to receive a monster-sized cock[end if]!";
+	if the player is possessing a vagina and the openness of vagina < 7, now the openness of vagina is 7.
+
 To compute quest completion of (Q - a clothing-quest) on (C - a clothing):
 	say "[bold type]";
 	let disappearTime be 0;
@@ -257,7 +265,7 @@ Definition: chest-exposing-quest is school-disabled: decide yes.
 
 To decide what number is the quest-weighting of (Q - chest-exposing-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
-	if C is not-top-displacable breast covering clothing, decide on 0;
+	if C is actually not-top-displacable breast covering clothing, decide on 0;
 	if C is gag, decide on 0;
 	if C is temptation, decide on 10;
 	decide on 2.

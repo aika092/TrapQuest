@@ -1,6 +1,6 @@
 Rope Harness by Dresses begins here.
 
-A rope harness is a kind of overdress. A rope harness is usually hemp. A rope harness is usually see-through. A rope harness is usually fully exposing. A rope harness is optional-top-displacable. A rope harness is usually neck covering. A rope harness is usually unskirted. There is rope harness. Figure of rope harness is the file "Items/Clothes/Upper/Exposing/ropeharness1.png". Figure of rope harness full is the file "Items/Clothes/Upper/Exposing/ropeharness2.png". A rope harness has a number called charge.
+A rope harness is a kind of overdress. A rope harness is usually hemp. A rope harness is usually see-through. A rope harness is usually fully exposing. A rope harness is usually neck covering. A rope harness is usually unskirted. There is rope harness. Figure of rope harness is the file "Items/Clothes/Upper/Exposing/ropeharness1.png". Figure of rope harness full is the file "Items/Clothes/Upper/Exposing/ropeharness2.png". A rope harness has a number called charge.
 
 To decide which number is the initial outrage of (C - a rope harness):
 	decide on 12.

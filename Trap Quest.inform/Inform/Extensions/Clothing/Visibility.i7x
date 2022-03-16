@@ -55,6 +55,7 @@ Definition: a thing is currently perceivable:
 	decide no.
 
 Definition: a thing is currently visible: decide no.
+Definition: a thing is currently at least partially visible: decide no.
 
 Definition: a wearthing (called C) is currently visible: [Is the item worn and currently completely visible to onlookers?]
 	if C is not worn, decide no;

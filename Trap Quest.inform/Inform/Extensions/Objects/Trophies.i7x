@@ -19,6 +19,8 @@ To update background colour of (T - a trophy):
 
 A trophy has a number called trophy-mode.
 
+Definition: a trophy is necessary-in-bag: decide no. [Things that are not necessary-in-bag don't take up an item slot when the player has no bag.]
+
 Check taking trophy:
 	if the player is in School31, say "Unfortunately it seems to have been fixed in place!" instead.
 

@@ -3,6 +3,7 @@ Slutty Sisters by Monster begins here.
 A slutty sister is a kind of monster. A slutty sister is usually intelligent. Understand "Nintendoll" as a slutty sister.
 
 Definition: a slutty sister is raunchy: decide yes.
+Definition: a slutty sister is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 Definition: a slutty sister is presenting as male:
 	if lady fetish is 2, decide yes;
 	decide no.

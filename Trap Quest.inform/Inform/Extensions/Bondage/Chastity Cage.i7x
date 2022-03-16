@@ -59,7 +59,7 @@ To SexChange (J - chastity-belt):
 
 [Chastity cage]
 
-A chastity cage is a kind of chastity bond. A chastity cage is usually sheer. Understand "cage" as chastity cage. A chastity cage has a number called size. The printed name of a chastity cage is "[clothing-title-before][clothing-material of item described] chastity cage[clothing-title-after]". A chastity cage is usually crotch-exposing.
+A chastity cage is a kind of chastity bond. A chastity cage is usually sheer. Understand "cage" as chastity cage. A chastity cage has a number called size. The printed name of a chastity cage is "[clothing-title-before][clothing-material of item described] chastity cage[clothing-title-after]".
 
 [Chastity cage descriptions will be in this general format]
 To say ClothingDesc of (C - a chastity cage):
@@ -70,6 +70,8 @@ To say ChastityComment of (C - a chastity cage):
 	if C is cursed, say "You can feel it slowly making you more and more aroused.";
 	say "[variable custom style][if the bimbo of the player < 3][one of]Man, this is so bogus.[or]This is so uncomfortable.[or]Whoever made this game is pretty dumb. If I'm in a chastity cage I won't be able to have any sex![or]This sucks! This place is probably packed with hot girls I can fuck.[in random order][otherwise if the bimbo of the player < 6][one of]This is totally emasculating.[or]There's probably some porno around here if I get horny, but as long as I'm locked up like this it doesn't matter![or]I feel so girly wearing this.[or]Maybe it's a good thing I'm wearing this. I'd be so embarrassed if someone were fucking me and I got hard.[in random order][otherwise if the player is horny and the bimbo of the player < 10][one of]If I can't jack off, how am I supposed to sate myself?[or]At least there's a hole at the end so cum doesn't get trapped in there if I have an orgasm.[in random order][otherwise if the bimbo of the player < 9][one of]I'm honestly kind of glad I have this on. It would be so embarrassing if I got a boner in a place like this.[or]I'm not sure I want to take this off. What if I get a boner and someone sees it?[in random order][otherwise if the bimbo of the player < 12][one of]Only real men should be able to get erections, so I should keep this on.[or]Cocks are only useful for pounding sluts, so it's a good thing I'm locked up.[or]I love [manly-penis]s, but only when they're used to fuck me.[in random order][otherwise][one of]I'm a dirty slut, I don't deserve to get erections.[or]This would keep men from being bothered by my boy clitty when they fuck me![or]As long as I'm wearing this cage, it's like my [sissy-penis] doesn't even exist![in random order][end if][roman type][line break]".
 
+Report examining a chastity cage:
+	if debugmode > 0, say "Currently flagged as [unless the noun is pussy covering]NOT [end if]pussy covering.".
 
 To say ShortDesc of (C - a chastity cage):
 	say "chastity cage".
@@ -290,7 +292,7 @@ This is the can't cage erection rule:
 The can't cage erection rule is listed in the chastity cage wearability rules.
 
 This is the cage too big rule:
-	if the player is possessing a penis and the size of penis < the size of wearing-target + 1 and summoning is 0:
+	if the player is possessing a penis and the size of wearing-target > the size of penis + 1 and summoning is 0:
 		if autowear is false, say "The cage is too big for your [ShortDesc of penis] - it'd just slide right off!";
 		rule fails.
 The cage too big rule is listed in the chastity cage wearability rules.

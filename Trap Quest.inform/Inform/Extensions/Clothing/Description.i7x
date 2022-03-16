@@ -219,6 +219,9 @@ Report examining breast covering clothing:
 To say selfexamineuniquetitle of (C - a clothing):
 	say "[ShortDesc of C]".
 
+Report examining worn endurance clothing:
+	say "Its magical enhancement enables you to stay standing for longer!".
+
 Report examining worn hostility clothing:
 	say "Its magical enhancement empowers your attacks!".
 

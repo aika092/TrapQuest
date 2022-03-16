@@ -131,10 +131,14 @@ Definition: tiara-veil is gem themed: decide yes.
 Definition: tiara-veil is yellow themed: decide yes.
 
 To compute class outfit of (H - tiara-veil):
+	if the player is not possessing a vagina:
+		say DefaultSexChangeFlav;
+		SexChange the player;
 	class summon princess bride dress;
 	class summon princess-bride-stockings;
 	class summon princess-bride-suspenders;
-	class summon white-and-red girly bow court heels.
+	class summon white-and-red girly bow court heels;
+	if the ceremony of betrothal-quest is true, class summon floral bouquet.
 
 To compute unique periodic effect of (H - tiara-veil):
 	if mechanic is alive, now bride-consort is mechanic;

@@ -178,7 +178,7 @@ Carry out direct-presenting something to:
 			while displacingFinished is 0:
 				let C be a random top level titfuck protection clothing;
 				if C is clothing:
-					if C is not-top-displacable:
+					if C is actually not-top-displacable:
 						say "You remove your [ShortDesc of C].";
 						now C is carried by the player;
 					otherwise:
@@ -198,7 +198,7 @@ Carry out direct-presenting something to:
 				now the player-reaction of the player is submitting;
 				now presented-orifice is breasts;
 				humiliate (SEVERE-HUMILIATION - SLIGHT-HUMILIATION);
-		otherwise if the noun is vagina:
+		otherwise if the noun is vagina or the noun is penis:
 			while displacingFinished is 0:
 				let C be a random top level protection clothing;
 				if C is clothing:
@@ -215,19 +215,31 @@ Carry out direct-presenting something to:
 				otherwise:
 					now displacingFinished is 1;
 			if the player is not broken or the second noun is friendly:
-				if the player is able to speak and auto is not 1:
-					if the second noun is a dangerous intelligent monster:
-						say UnfriendlyVaginalRequest of the second noun;
-					otherwise if the second noun is friendly intelligent monster:
-						say FriendlyVaginalRequest of the second noun;
-				say VaginalRequestFlav of the second noun;
-				if the humiliation of the player < 12500, say "[one of][line break][first custom style]Oh my god, how humiliating is this! What am I becoming...[roman type][line break][or][stopping]";
-				now the player-reaction of the player is submitting;
-				now presented-orifice is vagina;
-				humiliate (SEVERE-HUMILIATION - MODERATE-HUMILIATION);
-				if there is a worn tattoo and the player is modest and the vaginal sex addiction of the player < 4 and no-regrets tattoo is off-stage and a random number between 1 and 2 is 1:
-					summon no-regrets tattoo;
-					say "Your skin stings as a tattoo is suddenly seared into your torso! It says 'No Regrets'.";
+				if the noun is vagina:
+					if the player is able to speak and auto is not 1:
+						if the second noun is a dangerous intelligent monster:
+							say UnfriendlyVaginalRequest of the second noun;
+						otherwise if the second noun is friendly intelligent monster:
+							say FriendlyVaginalRequest of the second noun;
+					say VaginalRequestFlav of the second noun;
+					if the humiliation of the player < 12500, say "[one of][line break][first custom style]Oh my god, how humiliating is this! What am I becoming...[roman type][line break][or][stopping]";
+					now the player-reaction of the player is submitting;
+					now presented-orifice is vagina;
+					humiliate (SEVERE-HUMILIATION - MODERATE-HUMILIATION);
+					if there is a worn tattoo and the player is modest and the vaginal sex addiction of the player < 4 and no-regrets tattoo is off-stage and a random number between 1 and 2 is 1:
+						summon no-regrets tattoo;
+						say "Your skin stings as a tattoo is suddenly seared into your torso! It says 'No Regrets'.";
+				otherwise:
+					if the player is able to speak and auto is not 1:
+						if the second noun is a dangerous intelligent monster:
+							say UnfriendlyPenetrationRequest of the second noun;
+						otherwise if the second noun is friendly intelligent monster:
+							say FriendlyPenetrationRequest of the second noun;
+					say PenetrationRequestFlav of the second noun;
+					if the humiliation of the player < 12500, say "[one of][line break][first custom style]Oh my god, how humiliating is this! What am I becoming...[roman type][line break][or][stopping]";
+					now the player-reaction of the player is submitting;
+					now presented-orifice is penis;
+					humiliate (SEVERE-HUMILIATION - STRONG-HUMILIATION);
 		otherwise if the noun is asshole:
 			while displacingFinished is 0:
 				let C be a random top level ass protection clothing;
@@ -258,33 +270,6 @@ Carry out direct-presenting something to:
 					summon just the tip tattoo;
 					say "Your skin stings as a tattoo is suddenly seared into your butt cheek! It says 'Just the Tip'.";
 				unless just the tip tattoo is worn, humiliate (SEVERE-HUMILIATION + MODERATE-HUMILIATION);
-		otherwise if the noun is penis:
-			while displacingFinished is 0:
-				let C be a random worn potentially penis covering clothing;
-				if C is clothing:
-					if C is zippable:
-						say "You remove your [ShortDesc of C].";
-						ZipDown C;
-					otherwise if C is displacable:
-						say "You pull away your [ShortDesc of C].";
-						Displace C;
-					otherwise:
-						say "You remove your [ShortDesc of C].";
-						now C is carried by the player;
-					add C to Lorder;
-				otherwise:
-					now displacingFinished is 1;
-			if the player is not broken or the second noun is friendly:
-				if the player is able to speak and auto is not 1:
-					if the second noun is a dangerous intelligent monster:
-						say UnfriendlyPenetrationRequest of the second noun;
-					otherwise if the second noun is friendly intelligent monster:
-						say FriendlyPenetrationRequest of the second noun;
-				say PenetrationRequestFlav of the second noun;
-				if the humiliation of the player < 12500, say "[one of][line break][first custom style]Oh my god, how humiliating is this! What am I becoming...[roman type][line break][or][stopping]";
-				now the player-reaction of the player is submitting;
-				now presented-orifice is penis;
-				humiliate (SEVERE-HUMILIATION - STRONG-HUMILIATION);
 		if there is a worn demon codpiece, follow the demon junk punishment rule;
 		if the second noun is friendly:
 			check consensual submissive sex of the second noun;

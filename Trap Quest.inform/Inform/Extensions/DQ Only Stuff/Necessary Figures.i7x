@@ -79,6 +79,10 @@ Figure of Mirror Cutscene 1 is the file "Special/Cutscene/cutscene-mirror1.jpg".
 Figure of Mirror Cutscene 2 is the file "Special/Cutscene/cutscene-mirror2.jpg".
 Figure of Mirror Cutscene 3 is the file "Special/Cutscene/cutscene-mirror3.jpg".
 
+Figure of nintendolls gameshow 4 is the file "Special/Epilogue/epilogue-nintendolls-gameshow4b.jpg".
+
+Figure of female orc is the file "NPCs/Dungeon/Orc/orc2b.png".
+
 Figure of pink smoke 0 is the file "Env/MultiFloor/smoke0.jpg".
 Figure of pink smoke 1 is the file "Env/MultiFloor/smoke1.jpg".
 Figure of pink smoke 2 is the file "Env/MultiFloor/smoke2.jpg".

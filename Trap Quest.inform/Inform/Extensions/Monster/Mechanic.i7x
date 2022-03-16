@@ -389,24 +389,31 @@ To compute xavier reward of (M - mechanic):
 		IntUp 4;
 
 This is the mechanic strips princess rule:
-	if diaper quest is 0 and (the class of the player is "princess" or the class of the player is "deepthroat princess" or the class of the player is "trained fuck princess" or the class of the player is "virgin warrior princess") and bride-consort is throne and princess bride dress is unclash summonable:
+	if diaper quest is 0 and (the class of the player is "princess" or the class of the player is "deepthroat princess" or the class of the player is "trained fuck princess" or the class of the player is "virgin warrior princess") and bride-consort is throne and princess bride dress is unclash summonable and (the player is possessing a vagina or the player is ready for event TG):
 		let H be a random worn headgear;
 		say "[speech style of current-monster]'At long last, release shall be mine. To dispel your magic, I need simply make you my bride...'[roman type][line break][big he of current-monster] touches your [ShortDesc of H].";
-		transform H into tiara-veil;
 		now the quest of H is betrothal-quest;
+		transform H into tiara-veil;
 		now bride-consort is mechanic;
 		PinkWardrobeUnclash princess bride dress;
 		compute class outfit of tiara-veil;
+		say "[speech style of current-monster]'Now all that remains is for you to join me on the wedding stage in the Dungeons of Bimbacia. Until you do, you will find this new dress of yours to be rather.. restricting.'[roman type][line break]";
 		satisfy current-monster;
 		rule succeeds;
-	otherwise if the class of the player is princess and the class of the player is not bride:
-		if there is a monster penetrating a body part:
-			rule succeeds; [Mechanic will wait until he has you alone]
-		let D be a random worn headgear;
-		if D is clothing:
-			say "[BigNameDesc of current-monster] snatches your [ShortDesc of D] off your head. [speech style of current-monster]'If you want to play princess in my hotel, you're going to earn it, bitch.'[roman type][line break][big he of current-monster] unzips [his of current-monster] jeans.";
-			destroy D;
-		rule succeeds.
+	otherwise if the class of the player is princess:
+		if the class of the player is bride:
+			if bride-consort is mechanic: [time to unseal!]
+				if there is a monster penetrating a body part, rule succeeds; [Mechanic will wait until he has you alone]
+				now the chosen-orifice of mechanic is vagina;
+				follow the monster vagina insertion rules;
+				rule succeeds;
+		otherwise:
+			if there is a monster penetrating a body part, rule succeeds; [Mechanic will wait until he has you alone]
+			let D be a random worn headgear;
+			if D is clothing:
+				say "[BigNameDesc of current-monster] snatches your [ShortDesc of D] off your head. [speech style of current-monster]'If you want to play princess in my hotel, you're going to earn it, bitch.'[roman type][line break][big he of current-monster] unzips [his of current-monster] jeans.";
+				destroy D;
+			rule succeeds.
 The mechanic strips princess rule is listed in the mechanic unique punishment rules.
 
 This is the mechanic applies collar rule:

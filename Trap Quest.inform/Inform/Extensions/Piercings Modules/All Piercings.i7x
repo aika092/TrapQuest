@@ -312,7 +312,13 @@ To say PiercingFlav of (P - a clitoris piercing):
 
 To decide which object is the concealer of (C - a clitoris piercing):
 	if C is listed in the armUses of arms, decide on arms;
-	decide on the concealer of vagina.
+	let V be the concealer of vagina;
+	if V is a thing, decide on V;
+	[Stuff that fails to conceal the vagina because of a cameltoe can still conceal the piercing]
+	repeat with D running through worn actually dense skirt-covering-crotch clothing:
+		decide on D;
+	repeat with D running through worn actually dense potentially pussy covering clothing:
+		decide on D.
 
 To decide which object is the at least partial concealer of (C - a clitoris piercing):
 	if C is listed in the armUses of arms, decide on arms;

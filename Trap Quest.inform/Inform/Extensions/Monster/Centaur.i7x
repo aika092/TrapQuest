@@ -38,6 +38,7 @@ To say MonsterComment of (M - centaur):
 		say "[roman type][line break]".
 
 Definition: a centaur is raunchy: decide yes.
+Definition: a centaur is able to be waited upon: decide yes. [Despite not being human, she will drink your drinks]
 
 Definition: centaur is presenting as male:
 	if lady fetish is 2, decide yes;
@@ -503,7 +504,7 @@ To say sexSubmitBiteFlav of (M - centaur) in (O - an orifice):
 
 [The centaur is way too long huge for her balls to slap your taint]
 To say sexSubmitSplitFlav of (M - centaur) in (O - an orifice):
-	say "[BigFuckerDesc of M]'s [if M is a balls-haver]balls swing as [he of M] pistons[otherwise]shaft throbs as [he of M] pistons it[end if] in and out of your [variable O], [one of]firmly reminding you[or]as if to remind you[or]a firm reminder[in random order] of the creampie [if the player is originally male and the player is not possessing a penis]you can no longer give[otherwise if the player is originally male]that you'd never be able to give, and [otherwise]you [end if][if the semen addiction of the player < 6]have no choice but to[otherwise if the semen addiction of the player < 12]secretly[otherwise]you[end if] look forward to.".
+	say "[BigFuckerDesc of M]'s [if M is a balls-haver]balls swing as [he of M] pistons[otherwise]shaft throbs as [he of M] pistons it[end if] in and out of your [variable O], [one of]firmly reminding you[or]as if to remind you[or]a firm reminder[in random order] of the creampie [if the player is originally male and the player is not possessing a penis]you can no longer give, and[otherwise if the player is originally male]that you'd never be able to give, and[otherwise]you[end if] [if the semen addiction of the player < 6]have no choice but to[otherwise if the semen addiction of the player < 12]secretly[end if] look forward to.".
 
 To say sexSubmitSqueezeFlav of (M - centaur) in (O - an orifice):
 	let C be a random worn skirted clothing;

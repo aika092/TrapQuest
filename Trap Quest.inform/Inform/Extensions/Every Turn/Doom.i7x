@@ -37,7 +37,7 @@ Definition: a thing is book themed: decide no. [The player needs a bell themed, 
 Definition: a thing is candle themed: decide no. [The player needs a bell themed, a book themed and a candle themed thing to complete the doom ritual.]
 
 To commence doom:
-	if the number of mindless acolytes in Mansion23 < 4:
+	if doomed >= 0 and doomed < 5 and the number of mindless acolytes in Mansion23 < 4:
 		update new acolytes;
 		if (tough-shit is 1 or Mansion01 is placed) and the number of entries in new-acolytes > 0 and the player is not in Mansion23:
 			let M be entry 1 in new-acolytes;

@@ -85,17 +85,14 @@ To check goddess eligibility:
 				say "[bold type]A laurel wreath appears on your head![roman type][line break]";
 				summon laurel wreath cursed;
 			otherwise if the class of the player is bunny and bunny tail plug is off-stage and asshole is not actually occupied:
-				repeat with O running through worn total protection dresses:
-					say "Your [O] vanishes!";
-					destroy O;
-				repeat with O running through worn total protection knickers:
-					say "Your [O] vanishes!";
-					destroy O;
-				repeat with O running through worn total protection trousers:
-					say "Your [O] vanishes!";
-					destroy O;
-				say "[bold type]A bunny tail plug materialises inside your [asshole]![roman type][line break]";
-				summon bunny tail plug cursed.
+				repeat with O running through ass covering clothing:
+					if O is displacable:
+						displace O;
+					otherwise if O is zippable:
+						ZipDown O;
+					otherwise if O is removable:
+						WardrobeVanish O;
+				class summon bunny tail plug.
 
 To say ConceptionFlav:
 	say "[one of]You look down, and realise that your belly isn't slowly getting smaller as you'd expect. [if the bimbo of the player < 8][line break][first custom style]Am I pregnant?![otherwise][line break][second custom style]I think I'm pregnant![end if][roman type][line break][or]You feel the tiniest kick coming from inside your belly... [if the bimbo of the player < 8][line break][first custom style]Uh-oh.[otherwise][line break][second custom style]Oopsie, I think I got myself knocked up back there![end if][roman type][line break][purely at random]".

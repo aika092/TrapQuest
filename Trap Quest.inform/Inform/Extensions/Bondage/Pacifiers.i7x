@@ -100,7 +100,8 @@ To say MonsterOfferRejectFlav of (M - a matron) to (T - a pacifier):
 	say "[speech style of M]'That's for you, not me, baby!'[roman type][line break]".
 
 Check drinking cock pacifier:
-	if the noun is not worn, say "You would need to put it in first." instead.
+	if the noun is not worn, say "You would need to put it in first." instead;
+	now drinking-target is the noun.
 
 Carry out drinking cock pacifier:
 	say "You suck as hard as you can on your pacifier, triggering it to ejaculate [semen] down your throat.[line break][second custom style][if the semen taste addiction of the player > 8]Mm, that's actually pretty tasty...[otherwise][line break][first custom style]Eww. So slimy...[end if][roman type][line break]";
@@ -162,6 +163,7 @@ To compute periodic effect of (P - a pacifier):
 		say "[bold type]Your [ShortDesc of P] [bold type]morphs in your mouth, turning into a [ShortDesc of cock pacifier]! As the cock forms in your mouth, it squirts a shot of [semen] down your throat.";
 		only destroy P;
 		summon cock pacifier cursed with quest;
+		now drinking-target is cock pacifier;
 		StomachSemenUp 1.
 
 A diaper quest fix rule:

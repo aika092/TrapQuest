@@ -416,6 +416,32 @@ Masturbating is an action applying to nothing.
 
 Check masturbating:
 	if the player is not potentially able to masturbate, do nothing instead;
+	if portal-hotpants is worn:
+		if the player is in Hotel44:
+			allocate 6 seconds;
+			if pimp is threatening and pimp is awake and pimp is in Hotel44:
+				if pimp is not interested, check perception of pimp;
+				if pimp is interested, say "You move towards your [player-crotch], mounted on the pedestal, but [NameDesc of pimp] moves to block you.[line break][speech style of pimp]'That's my property now, and so I control who gets to touch it, [bitch]!" instead;
+			say "It feels extremely weird doing it from this angle, but you are able to touch yourself freely. In fact, this angle allows you to pleasure yourself faster, and in more efficient ways than normal!";
+			if player is able to orgasm:
+				say "In fact, it's not long before you're enjoying a powerful orgasm!";
+				[progress quests and counters related to masturbation]
+				if wanktype is ASS-WANK:
+					if masturbation-object is nothing, heal asshole times 1;
+					increase anal-orgasms by 1;
+					progress quest of anal-orgasm-quest;
+				otherwise:
+					if the player is not possessing a vagina, heal asshole times 1;
+					if the player is possessing a vagina:
+						if masturbation-object is not an insertable object, heal vagina times 1;
+						increase vaginal-orgasms by 1;
+				if a random number between 1 and the sex addiction of the player < 6, SexAddictUp 1;
+				orgasm; [handle anything that needs to happen for an orgasm]
+			otherwise:
+				say "Unfortunately, something seems to be preventing you from being able to orgasm right now, so you are left feeling very unsatisfied...";
+			say "You let go of your [player-crotch]." instead;
+		otherwise:
+			say "You can't touch your [player-crotch] while the pair of portal hotpants is linked to the statue in the [Hotel44]!" instead;
 	now failed-masturbation-reason is "";
 	now wanktype is NO-WANK;
 	if the player is able to penis masturbate:
@@ -648,13 +674,13 @@ This is the masturbation ended rule:
 		remove the continue masturbation rule from another-turn-rules;
 		if the number of entries in another-turn-rules is 0, now another-turn is 0.
 
-[Selkie: If these simple insertions of mystical into [mystical ShortDesc of penis] doesn't work if it's possible for your detached penis to be elsewhere, then maybe code up a function like this, so we can say stuff like:
+[Selkie: If these simple insertions of mystical into ShortDesc of penis doesn't work if it's possible for your detached penis to be elsewhere, then maybe code up a function like this, so we can say stuff like:
 	let DickAct1 a text be say "play with your" or "imagine playing with your" action on penis;
-so we can use [DickAct1] inside the complex say expressions.
+so we can use DickAct1 inside the complex say expressions.
 Alternatively, just define a variable:
  let ImagineYou be "";
  if players-dick-is-detached > 0 and players-detached-dick is somewhere-here, now ImagineYou is "imagine you ";
-so we can just insert a [ImagineYou] in front of phrases like:
+so we can just insert a ImagineYou in front of phrases like:
  "...and [ImagineYou]play with your [mystical ShortDesc of penis]...".
 
 To say (present - a text) or (absent - a text) action on penis:

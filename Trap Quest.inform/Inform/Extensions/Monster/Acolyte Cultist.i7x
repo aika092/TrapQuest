@@ -325,13 +325,13 @@ She doesn't do anything yet, and sees if she can ride the player instead.
 
 To compute ritual dragging of (M - an acolyte):
 	now the target-room of M is Mansion23;
-	if the location of M is the target-room of M:
+	if the location of M is Mansion23:
 		if the wind-up of M is 1, now the wind-up of M is a random number between -1 and 0;[if you broke her grip, she might reconsider 'fainting' you]
 		say "[BigNameDesc of M] grabs you and drags you closer to the altar.";
 		now current-monster is M;
 		compute punishment of cultist-altar-force;
 	otherwise:
-		drag to the target-room of M by M;
+		drag to Mansion23 by M;
 		now M is grabbing the player.
 
 [TODO: Take a more in-depth look at the acolyte/cultist]
@@ -386,12 +386,12 @@ This is the cult conversion rule:
 				if the charge of elder altar <= 0 and the player is possessing a penis and M is willing to charm snakes and (penis is penis-erect or doomed < a random number between 1 and 4 or presented-orifice is penis or chosen-orifice of M is penis):
 					do nothing;[She'll see if she's able to fuck you]
 				otherwise if the player is able to get pregnant or the player is not possessing a vagina or pregnancy fetish is 0:
-					say "[line break][speech style of M]'[one of]Rejoice, non-believer! You, too shall serve as a vessel for the power of the [great ones]!'[or]Your duty as vessel is not yet over, non-believer!'[stopping][roman type][line break]";
+					say "[line break][speech style of M]'[one of]Rejoice, non-believer! You, too shall serve as a vessel for the power of the [great ones]!'[or]Your duty as a vessel is not yet over, non-believer!'[stopping][roman type][line break]";
 					now the wind-up of M is -1;
 					compute ritual dragging of M;
 					rule succeeds;
 				otherwise if the pregnancy of the player > 0:
-					say "[speech style of M]'It is unseemly for the blessed to be so unruly, maintain decorum in the future.'[roman type][line break]";
+					say "[speech style of M]'It is unseemly for the blessed to be so unruly. Maintain your decorum in the future.'[roman type][line break]";
 					satisfy M;
 					rule succeeds;
 				otherwise:
@@ -484,7 +484,7 @@ To compute punishment of (P - cultist-altar-force):
 	let M be current-monster;
 	if M is unintelligent and M is unconcerned:
 		say "[one of][BigNameDesc of M] completely ignores you.[or][or][BigNameDesc of M] continues to ignore you.[or][stopping]"; [mindless cultists don't fight or punish]
-	otherwise if the player is at least partially immobile:
+	otherwise if the player is immobile:
 		say "[one of][BigNameDesc of M] chants feverishly to [himself of M][or][BigNameDesc of M] fervently whispers to [himself of M][or][BigNameDesc of M] continues [his of M] hushed chanting[then at random].";
 	otherwise:
 		say "[one of][line break][speech style of M]'[if M is intelligent]You too shall serve as a vessel for the power of the [great ones]!'[otherwise]Vessel...'[end if][roman type][line break][or][stopping]";

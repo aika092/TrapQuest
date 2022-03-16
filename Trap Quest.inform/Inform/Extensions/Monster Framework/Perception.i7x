@@ -350,8 +350,10 @@ Definition: a monster (called M) is outrage disapproving:
 		let A be the appearance of the player;
 		let L be the latest-appearance of M;
 		now the latest-appearance of M is A;
+		if debuginfo > 1, say "[input-style]Checking [MediumDesc of M] appearance disapproval... (Current appearance: [A]. Most recent appearance witnessed by [ShortDesc of M]: [L]. Threshold for [ShortDesc of M] disapproving of appearance: [outrage tolerance of M].)[roman type][line break]";
+			decide yes;
 		if A > L and A > the outrage tolerance of M and M is not friendly-fucking:
-			if debuginfo > 1, say "[input-style][MediumDesc of M] disapproves of player's slutty appearance! (Current appearance: [A]. Most recent appearance witnessed by [ShortDesc of M]: [L]. Threshold for [ShortDesc of M] disapproving of appearance: [outrage tolerance of M].)[roman type][line break]";
+			if debuginfo > 1, say "[input-style][MediumDesc of M] disapproves of player's slutty appearance![roman type][line break]";
 			decide yes;
 	decide no.
 

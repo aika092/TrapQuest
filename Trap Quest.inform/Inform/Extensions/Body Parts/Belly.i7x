@@ -957,7 +957,7 @@ To lay (X - a number) small eggs:
 		now M is entry EO in the small-egg-origins of belly;
 		truncate the small-egg-origins of belly to EO - 1 entries;
 	let D be a random worn total protection diaper;
-	if D is diaper:
+	if D is diaper and the player is not in a predicament room:
 		say "The [ShortDesc of a random small egg][if X > 1]s crack[otherwise] cracks[end if] inside your diaper, leaving a nasty slimy, soggy feeling! The pieces of shell seem to somehow dissolve away.";
 		while X > 0:
 			decrease the small egg count of belly by 1;

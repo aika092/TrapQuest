@@ -110,6 +110,7 @@ To check monster time out:
 To compute time out of (M - a monster):
 	if debugmode > 0, say "[input-style][BigNameDesc of M][input-style] was chosen to take a break from the region, and has been moved off-stage.[roman type][line break]";
 	now the time-alive of M is 1;
+	deinterest M;
 	remove M from play;
 	if playerRegion is Dungeon, add M to dungeon-leavers-list;
 	if playerRegion is Woods, add M to woods-leavers-list;

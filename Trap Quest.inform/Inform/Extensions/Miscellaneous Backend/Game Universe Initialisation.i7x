@@ -13,6 +13,7 @@ To Start The Machine:
 		set up magic state of H; [otherwise certain things appear unidentified that shouldn't]
 	Set Up The Dungeon;
 	Set Up Monsters;
+	if diaper messing >= 3, now rectum is 1;
 	if debugmode > 1, say "Finished setting up monsters.";
 	if halloween content is 1:
 		now playerRegion is Mansion;

@@ -327,7 +327,9 @@ To compute sudden erection chance (X - a number):
 			let S2 be a random worn potentially penis concealing skirted clothing;
 			now penis is penis-erect;
 			say "[line break]";
-			if penis is exposed:
+			if players-dick-is-detached > 0:
+				say "You feel your [mystical ShortDesc of penis] [harden].";
+			otherwise if penis is exposed:
 				if the size of penis > 3:
 					say "[line break]Your [mystical ShortDesc of penis] [harden]s into a very obvious erection.";
 				otherwise:
@@ -370,10 +372,9 @@ the penis presentable rules is a rulebook.
 the presentable rules of penis is usually the penis presentable rules.
 
 This is the penis protected rule:
-	repeat with O running through pussy covering clothing:
-		unless (O is displacable and O is not glued) or O is zippable or O is usually autoremovable:
-			if auto is 0, say "Your [O] is preventing you from getting your [player-penis] on display.";
-			rule fails.
+	repeat with O running through pussy covering actually unavoidable clothing:
+		if auto is 0, say "Your [O] is preventing you from getting your [player-penis] on display.";
+		rule fails.
 The penis protected rule is listed in the penis presentable rules.
 
 This is the penis occupied rule:

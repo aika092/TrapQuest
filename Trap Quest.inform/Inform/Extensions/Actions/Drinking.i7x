@@ -22,18 +22,21 @@ Definition: a bottle (called B) is actually drinkable:
 
 Definition: yourself is resisting taste addiction:
 	if the player is taste obsessed:
-		if drinking-target is bottle:
-			if debugmode > 0, say "[input-style]Fill colour of [MediumDesc of drinking-target] is [fill-colour of drinking-target].[roman type][line break]";
+		let DT be drinking-target;
+		if DT is nothing, now DT is the noun;
+		if DT is bottle:
+			if debugmode > 0, say "[input-style]Fill colour of [MediumDesc of DT] is [fill-colour of DT].[roman type][line break]";
 			let L be water;
-			if the fill-colour of drinking-target is creamy, now L is semen;
-			if the fill-colour of drinking-target is golden, now L is urine;
-			if the fill-colour of drinking-target is white, now L is milk;
-			if drinking-target is cursed or (the fill-type of drinking-target >= lowest-cursed and the fill-type of drinking-target <= highest-cursed):
-				if drinking-target is squirt dildo or (drinking-target is teapot and diaper quest is 0), now L is semen;
-				if drinking-target is baby's bottle or drinking-target is novelty mug, now L is milk;
+			if the fill-colour of DT is creamy, now L is semen;
+			if the fill-colour of DT is golden, now L is urine;
+			if the fill-colour of DT is white, now L is milk;
+			if DT is cursed or (the fill-type of DT >= lowest-cursed and the fill-type of DT <= highest-cursed):
+				if DT is squirt dildo or (DT is teapot and diaper quest is 0), now L is semen;
+				if DT is baby's bottle or DT is novelty mug, now L is milk;
 			if L is highest addicted liquid, decide no;
-		if drinking-target is DungeonScenery01 and semen is highest addicted liquid, decide no;
-		if drinking-target is breasts and milk is highest addicted liquid, decide no;
+		if DT is DungeonScenery01 and semen is highest addicted liquid, decide no;
+		if DT is cock pacifier and semen is highest addicted liquid, decide no;
+		if DT is breasts and milk is highest addicted liquid, decide no;
 		decide yes;
 	decide no.
 
@@ -202,7 +205,7 @@ Report drinking:
 
 To compute taste addiction resist punishment:
 	increase tasteAddictionPenaltyTime by TasteAddictionCooldown;
-	say "[bold type]Drinking something other than [AddictedFluids] is making you feel very low! [roman type]Your intelligence will be reduced for [if tasteAddictionPenaltyTime > TasteAddictionCooldown]a few minutes more, and by even more than before[otherwise]a few minutes[end if]".
+	say "[bold type]Drinking something other than [AddictedFluids] is making you feel very low! [roman type]Your intelligence will be reduced for [if tasteAddictionPenaltyTime > TasteAddictionCooldown]a few minutes more, and by even more than before[otherwise]a few minutes[end if].".
 
 
 An all time based rule (this is the taste addiction penalty cooldown rule):

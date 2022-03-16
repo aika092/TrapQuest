@@ -16,12 +16,12 @@ Definition: a bag of holding is same-type:
 Definition: a thing is necessary-in-bag: decide yes. [Things that are not necessary-in-bag don't take up an item slot when the player has no bag.]
 
 Definition: a thing is never-in-bag: decide no.
+Definition: a bag of holding is never-in-bag: decide yes.
 Definition: a bottle is never-in-bag: decide yes.
 Definition: squeezy-bottle is never-in-bag: decide yes.
 Definition: a food is never-in-bag: decide yes.
 Definition: an egg is never-in-bag: decide yes.
 Definition: pink pill is never-in-bag: decide yes.
-Definition: a bag of holding is never-in-bag: decide yes.
 Definition: a potion is never-in-bag: decide yes.
 Definition: an elixir is never-in-bag: decide yes.
 Definition: a tincture is never-in-bag: decide yes.
@@ -51,7 +51,7 @@ To decide which number is not-in-bag-things:
 Check taking something:
 	if not-in-bag-things >= 15:
 		if there is a worn bag of holding:
-			if the noun is never-in-bag, say "You are at your limit for carrying [if diaper messing >= 6]messy diapers, [end if]food and drink. You'll have to drop some if you want to pick up more." instead;
+			if the noun is never-in-bag, say "You are at your limit for carrying [if diaper messing >= 6]messy diapers, [end if]food and drink, and other items that can't go in your bag of holding. You'll have to drop some if you want to pick up more." instead;
 		otherwise:
 			unless the noun is bag of holding, say "You are at your limit for carrying objects[if the noun is not never-in-bag]. If only you still had that bag of holding[end if]." instead.
 

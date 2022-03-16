@@ -192,7 +192,7 @@ To decide which number is the initial outrage of (C - exposing-priestess-outfit)
 
 cleavage-window-priestess-outfit is a priestess outfit. cleavage-window-priestess-outfit is erect-nipple-exposing. cleavage-window-priestess-outfit is only arm covering. The printed name of cleavage-window-priestess-outfit is "[clothing-title-before]cleavage window priestess outfit[clothing-title-after]". The text-shortcut of cleavage-window-priestess-outfit is "cwpo". Understand "cleavage", "window", "priestess", "outfit" as cleavage-window-priestess-outfit.
 
-cleavage-window-priestess-outfit is bottom-exclusive. cleavage-window-priestess-outfit is unskirted. cleavage-window-priestess-outfit is belly exposing. cleavage-window-priestess-outfit is very low cut. cleavage-window-priestess-outfit is optional-top-displacable. cleavage-window-priestess-outfit is only arm covering.
+cleavage-window-priestess-outfit is bottom-exclusive. cleavage-window-priestess-outfit is unskirted. cleavage-window-priestess-outfit is belly exposing. cleavage-window-priestess-outfit is very low cut. cleavage-window-priestess-outfit is not-displacable-always-fuckable. cleavage-window-priestess-outfit is only arm covering.
 
 Figure of cleavage-window-priestess-outfit is the file "Items/Clothes/Upper/Special/Priestess/priestess8.png".
 
@@ -210,7 +210,7 @@ To decide which object is the unique-upgrade-target of (C - cleavage-window-prie
 
 nipple-exposing-priestess-outfit is a priestess outfit. nipple-exposing-priestess-outfit is only arm covering. The printed name of nipple-exposing-priestess-outfit is "[clothing-title-before]nipple exposing priestess outfit[clothing-title-after]". The text-shortcut of nipple-exposing-priestess-outfit is "nepo". Understand "nipple", "exposing", "priestess", "outfit" as nipple-exposing-priestess-outfit.
 
-nipple-exposing-priestess-outfit is bottom-exclusive. nipple-exposing-priestess-outfit is unskirted. nipple-exposing-priestess-outfit is belly exposing. nipple-exposing-priestess-outfit is neck covering. nipple-exposing-priestess-outfit is normally-nipple-exposing. nipple-exposing-priestess-outfit is optional-top-displacable. nipple-exposing-priestess-outfit is only arm covering.
+nipple-exposing-priestess-outfit is bottom-exclusive. nipple-exposing-priestess-outfit is unskirted. nipple-exposing-priestess-outfit is belly exposing. nipple-exposing-priestess-outfit is neck covering. nipple-exposing-priestess-outfit is normally-nipple-exposing. nipple-exposing-priestess-outfit is not-displacable-always-fuckable. nipple-exposing-priestess-outfit is only arm covering.
 
 Figure of nipple-exposing-priestess-outfit is the file "Items/Clothes/Upper/Special/Priestess/priestess9.png".
 

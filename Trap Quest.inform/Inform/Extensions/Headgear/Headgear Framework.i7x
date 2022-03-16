@@ -205,8 +205,8 @@ To class summon (C - a clothing):
 			if the quest of C is no-clothing-quest, compute persistent quest of C;
 			unless the quest of C is no-clothing-quest, say QuestFlav of C.
 
-To WardrobeVanish (C - a clothing):
-	say "Your [C] [one of]vanishes. You can sense that it has been sent to the pink wardrobe[or]is sent from your [body area of C] to the pink wardrobe[stopping]!";
+To WardrobeVanish (C - a thing):
+	if C is held or C is in the location of the player, say "[if C is clothing]Your [C] [one of]vanishes. You can sense that it has been sent to the pink wardrobe[or]is sent from your [body area of C] to the pink wardrobe[stopping][otherwise]The [C] vanishes. You can sense that it has been sent to the pink wardrobe[end if]!";
 	dislodge C;
 	now C is in pink wardrobe.
 

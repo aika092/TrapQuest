@@ -46,6 +46,8 @@ Figure of aeromancer cutscene 7 is the file "Special/Cutscene/cutscene-aeromance
 
 Figure of bianca defeated is the file "NPCs/School/Teacher/teacher3b.png".
 
+Figure of cage ass expansion trap is the file "Env/Forest/cage4.jpg".
+
 Figure of demoness cutscene 1 is the file "Special/Cutscene/cutscene-demoness-soul1.png".
 Figure of demoness cutscene 2 is the file "Special/Cutscene/cutscene-demoness-heel1.png".
 Figure of demoness cutscene 3 is the file "Special/Cutscene/cutscene-demoness-heel2.png".
@@ -458,6 +460,8 @@ To decide which figure-name is figure of maths predicament:
 
 Figure of Modmachine Cutscene 1 is the file "Special/Cutscene/cutscene-modmachine1.jpg".
 
+Figure of nintendolls gameshow 4 is the file "Special/Epilogue/epilogue-nintendolls-gameshow4a.png".
+
 Figure of Oral Creampie Cutscene 1 is the file "Special/Cutscene/cutscene-oral-creampie1.jpg".
 Figure of Oral Creampie Cutscene 2 is the file "Special/Cutscene/cutscene-oral-creampie2.jpg".
 Figure of Oral Creampie Cutscene 3 is the file "Special/Cutscene/cutscene-oral-creampie3.jpg".
@@ -476,6 +480,8 @@ To get oral creampie image for (M - a thing):
 		otherwise:
 			if M is monster and M is presenting as female and M is human and M is not dark skinned and (playerRegion is Dungeon or playerRegion is hotel), cutshow figure of Oral Creampie Cutscene 5; [These regions have the most NPCs without weird skin colours]
 			otherwise cutshow figure of Oral Creampie Cutscene 1.]
+
+Figure of female orc is the file "NPCs/Dungeon/Orc/orc2a.png".
 
 Figure of pink lollipop is the file "Items/Collectibles/lollipop2.png".
 

@@ -266,6 +266,15 @@ woman-player has a number called patron-scene-fighting.
 2: Player chose to fight
 ]
 
+Understand "vine", "vines" as woman-player when the woman-status of woman-player is 90.
+Check pulling woman-player:
+	if the woman-status of woman-player is 90 and the vine-scene of woman-player <= 5:
+		if the player is not able to manually use their hands, do nothing instead;
+		if the player is wrist bound behind, say "Unfortunately you can't really do that with your wrists bound behind you!" instead;
+		if the player is immobile, say "You're a bit tied up at the moment!" instead;
+		if the player is in danger, say "You're currently in combat! [big he of woman-player][']ll have to wait!" instead;
+		WomanVinePull instead.
+
 Chapter - Mechanic Scene
 
 To compute traitor surrender to (M - a monster):

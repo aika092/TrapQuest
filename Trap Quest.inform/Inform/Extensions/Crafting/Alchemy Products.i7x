@@ -228,8 +228,8 @@ Check throwing energy-bomb at a monster:
 	otherwise:
 		say "You launch the [energy-bomb] at [NameDesc of the second noun], which hits [him of the second noun] right in [his of the second noun] [MonsterFaceDesc of the second noun]! Sparks of red electricity shoot all over [his of the second noun] body!";
 		now attack-type is 4;
-		let D be a random number between 32 and 40;
-		if the noun is blessed, increase D by 16;
+		let D be a random number between 25 and 35;
+		if the noun is blessed, increase D by 10;
 		increase D by fire theme bonus * 10;
 		damage (D * combatSpeed) on the second noun;
 		now latestCombatFocus is the second noun;

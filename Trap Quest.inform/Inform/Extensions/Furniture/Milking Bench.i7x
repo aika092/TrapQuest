@@ -25,7 +25,7 @@ Figure of milking bench cutscene 5 is the file "Special/Cutscene/cutscene-milkin
 To compute furniture resting on (M - a milking bench):
 	let milking-allowed be 1;
 	let milking-increased-doses be false;
-	if there is worn not-top-displacable milking unflappable actually nipple covering clothing or the class of the player is living sex doll:
+	if there is worn actually not-top-displacable milking unflappable actually nipple covering clothing or the class of the player is living sex doll:
 		now milking-allowed is 0;
 	otherwise if the milk volume of breasts >= 0 and there is worn actually nipple covering clothing and the player is able to use their hands and the player is not wrist bound behind:
 		let N be max-top-layer;

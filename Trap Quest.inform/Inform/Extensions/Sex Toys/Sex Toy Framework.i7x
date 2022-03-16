@@ -125,30 +125,30 @@ To compute periodic expansion effect of (C - a sex toy):
 		now the toy-charge of C is 0;
 		increase the size of C by 1;
 		let F be a random fuckhole penetrated by C;
-		if the size of C > the openness of F, Ruin F;
 		say "Your [ShortDesc of C] drastically increases in size![if the size of C > the openness of F] You feel your [variable F] stretching painfully to accommodate the enlarged intruder[otherwise] You feel the [clothing-material of C] pressing much tighter against the inside of your [variable F][end if].";
-		if the player is somehow possessing a penis and the mystical size of penis < the size of C, SpecialPenisUp 1.[expansion clothing will slowly increase penis size for male players] [#LXorDD]
+		if the size of C > the openness of F, Ruin F;
+		if C is not cursed and the player is somehow possessing a penis and the mystical size of penis < the size of C, SpecialPenisUp 1.[uncursed expansion clothing will slowly increase penis size for male players] [#LXorDD]
 
-To compute periodic effect of (C - a rejuvenation clothing):
+To compute periodic rejuvenation effect of (C - a sex toy):
 	increase the toy-charge of C by 1;
-	if the toy-charge of C > 40:
+	if the toy-charge of C > a random number between 40 and 100:
 		now the toy-charge of C is 0;
 		let F be a random fuckhole penetrated by C;
-		let L be a random number between 1 and 3;
+		let L be a random number between 1 and (3 + watersports fetish);
 		let N be 2;
 		if C is cursed, now N is 3;
 		if the player is male, increase N by 1;
 		say bold type;
-		if L > 1 and watersports fetish is 1 and F is asshole:
+		if L > 3 and F is asshole:
 			say "Your [ShortDesc of C] pulses as warm, frothy liquid streams into your [variable F].";
 			AssFill N urine;
 			if C is blessed, heal asshole times 2;
 			otherwise heal asshole times 1;
-		otherwise if L > 3 or diaper quest is 1:
+		otherwise if L > 1:
 			say "Your [ShortDesc of C] pulses as cool liquid streams into your [variable F].";
-			AssFill N water;
-			if C is blessed, heal asshole times 2;
-			otherwise heal asshole times 1;
+			if F is asshole, AssFill N water;
+			if C is blessed, heal F times 2;
+			otherwise heal F times 1;
 		otherwise:
 			say "Your [ShortDesc of C] pulses as several spurts of warm [semen] shoot into your [variable F], which tingles as the soreness seems to melt away.";
 			if F is asshole, AssFill N;

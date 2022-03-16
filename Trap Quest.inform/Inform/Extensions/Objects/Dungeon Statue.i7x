@@ -40,7 +40,8 @@ Check drinking DungeonScenery01b:
 Check drinking DungeonScenery01:
 	if diaper quest is 1, say "How would you drink a statue of a woman's butt?" instead;
 	if the player is gagged, say "You're not going to be able to manage that whilst gagged!" instead;
-	if the player is upright, say "You would need to be on your knees to manage that." instead.
+	if the player is upright, say "You would need to be on your knees to manage that." instead;
+	now drinking-target is the noun.
 
 Carry out drinking DungeonScenery01:
 	allocate 6 seconds;

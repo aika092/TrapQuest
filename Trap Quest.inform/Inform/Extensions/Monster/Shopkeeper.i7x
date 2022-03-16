@@ -128,9 +128,9 @@ To say PerceptionFail of (M - shopkeeper):
 
 To say MonsterOfferAcceptFlav of (M - shopkeeper) to (T - a thing):
 	if M is unfriendly:
-		say "[BigNameDesc of M] smirks.[line break][speech style of M]'[if there is stolen clothing]Fair enough. Next time, just pay first, [bitch]. [otherwise]I'm not going to turn that down, I'm not an idiot. But I'm still going to fuck you the next time I see you. [end if]Now get out of here.'[roman type][line break]";
+		say "[BigNameDesc of M] smirks.[line break][speech style of M]'[if there is stolen thing]Fair enough. Next time, just pay first, [bitch]. [otherwise]I'm not going to turn that down, I'm not an idiot. But I'm still going to fuck you the next time I see you. [end if]Now get out of here.'[roman type][line break]";
 		let N be the bartering value of T for M;
-		repeat with C running through stolen clothing:
+		repeat with C running through stolen things:
 			if N >= the price of C:
 				decrease N by the price of C;
 				now C is unowned;
@@ -146,7 +146,7 @@ To say OfferFriendshipFlav of (M - shopkeeper):
 
 To decide which number is total stolen value:
 	let N be 0;
-	repeat with C running through stolen clothing:
+	repeat with C running through stolen things:
 		increase N by the price of C;
 	decide on N.
 
@@ -286,7 +286,7 @@ Report going:
 	if shopkeeper is guarding and shopkeeper is on-stage and shopkeeper is not in Dungeon41 and shopkeeper is not in the location of the player, bore shopkeeper.
 
 Definition: shopkeeper (called M) is uniquely unfriendly:
-	if there is held stolen clothing and the stolen-aware of M > 0, decide yes;
+	if there is a held stolen thing and the stolen-aware of M > 0, decide yes;
 	decide no.
 
 shopkeeper has a truth state called princessTax. The princessTax of shopkeeper is false.
@@ -307,8 +307,8 @@ To compute perception of (M - shopkeeper):
 	otherwise if PSRB is bottle and the waitress-boredom of M <= 0 and M is not uniquely unfriendly and the waitress bartering value of PSRB for M > 0:
 		say "[if the outrage tolerance of M <= the saved appearance of the player][big he of M] seems aroused by your presence but doesn't act aggressively. [end if][big he of M] briefly glances at your [PSRB].";
 		calm M;
-	otherwise if there is held stolen clothing:
-		say "[speech style of M]'How dare you taunt me with that stolen clothing? Give it back at once, or pay the price!'[roman type][line break]";
+	otherwise if there is a held stolen currently perceivable thing:
+		say "[speech style of M]'How dare you taunt me with the stuff you stole from me?! Give it back at once, or pay the price!'[roman type][line break]";
 		anger M;
 		increase the stolen-aware of M by 1;
 	otherwise if player is stealthy:
@@ -713,12 +713,15 @@ This is the shopkeeper cockslaps the player rule:
 		say "[BigNameDesc of M] [one of]slaps[or]toys[or]smacks[or]taps[at random] with your face with [his of M] [DickDesc of M], waiting for [his of M] turn.";
 	rule succeeds.
 
-The unique punishment rule of shopkeeper is usually the shopkeeper reclaiming clothing rule.
-This is the shopkeeper reclaiming clothing rule:
-	let X be the number of held stolen clothing;
+The unique punishment rule of shopkeeper is usually the shopkeeper reclaiming stolen stuff rule.
+This is the shopkeeper reclaiming stolen stuff rule:
+	let X be the number of held stolen things;
 	if X > 0:
-		say "[speech style of current-monster]'[if the number of dangerous royal guards in the location of the player > 1]Thank you for your help, officers[otherwise if the number of dangerous royal guards in the location of the player > 0]Thank you for your help, officer[otherwise]Oh you are in trouble now bitch[end if]. This bitch is going to get what's coming to [him of the player]. [if X > 1]I'll be taking these back!'[otherwise if X is 1]I'll be taking this back!'[end if][roman type][line break][if X > 1][BigNameDesc of current-monster] takes the stolen items from you.[otherwise if X is 1][BigNameDesc of current-monster] takes the [printed name of random stolen clothing] from you.[end if]";
-		repeat with C running through held stolen clothing:
+		say "[speech style of current-monster]'[if the number of dangerous royal guards in the location of the player > 1]Thank you for your help, officers[otherwise if the number of dangerous royal guards in the location of the player > 0]Thank you for your help, officer[otherwise]Oh you are in trouble now bitch[end if]. This bitch is going to get what's coming to [him of the player]. [if X > 1]I'll be taking these back!'[otherwise if X is 1]I'll be taking this back!'[end if][roman type][line break][if X > 1][BigNameDesc of current-monster] takes the stolen items from you.[otherwise if X is 1][BigNameDesc of current-monster] takes the [printed name of random stolen thing] from you.[end if]";
+		repeat with C running through held stolen things:
+			if C is bag of holding:
+				repeat with T running through in-bag things:
+					now T is in the location of the player;
 			now C is store;
 			now C is in Dungeon41;
 			dislodge C;
@@ -848,9 +851,9 @@ To compute diaper donating of (M - shopkeeper):
 		say "a little bit of wee comes out, soiling your diaper.";
 		UrineSoakUp D by 1;
 	say "[speech style of M]'How disgusting! I can't sell this now. Fuck! Fine, you keep this one but I'd better not see you trying this again.'[roman type][line break]";
-	repeat with Z running through stolen diapers held by the player:
+	repeat with Z running through held stolen diapers:
 		now Z is unowned;
-	if the number of held stolen clothing is 0:
+	if the number of held stolen things is 0:
 		say "[BigNameDesc of M], still angry but rapidly calming down, leaves you alone.";
 		send M home.
 
@@ -871,12 +874,12 @@ Section 2 - DQ
 shopkeeper-retrieves-stolen is a diaper punishment. The priority of shopkeeper-retrieves-stolen is 5.
 Definition: shopkeeper-retrieves-stolen (called P) is appropriate:
 	if current-monster is not shopkeeper, decide no;
-	if there is held stolen clothing, decide yes;
+	if there is a held stolen thing, decide yes;
 	decide no.
 
 To compute punishment of (P - shopkeeper-retrieves-stolen):
 	if there is a held stolen diaper, compute diaper donating of current-monster;
-	otherwise follow the the shopkeeper reclaiming clothing rule.
+	otherwise follow the the shopkeeper reclaiming stolen stuff rule.
 
 Definition: shopkeeper is willing to spank: decide yes.
 
@@ -973,7 +976,7 @@ To standard loot (M - shopkeeper):
 
 To compute pitying of (M - shopkeeper):
 	say PityOfferFlav of M;
-	if there is held stolen clothing:
+	if there is a held stolen thing:
 		say "[speech style of M]'Either you hand back the stolen goods, or the guards and I will keep hunting you, no matter where you go!'[roman type][line break]";
 	otherwise:
 		if M is not uniquely unfriendly:
@@ -1014,7 +1017,7 @@ To say FirstResponse of (M - shopkeeper):
 
 To say RepeatResponse of (M - shopkeeper):
 	if M is unfriendly:
-		if the number of held stolen clothing + the number of worn stolen clothing > 0:
+		if there is a held stolen thing:
 			say "[speech style of M]'[one of]Give me what you stole!'[or]Don't think you can get away with stealing my property!'[or]That's my property you took! I'm not stopping until I get it back!'[at random][roman type][line break]";
 		otherwise:
 			say "[speech style of M]'[one of]You're going to pay for this!'[or]Assault is a capital offence!'[or]Your attack was hello enough!'[in random order][roman type][line break]";
@@ -1359,12 +1362,9 @@ To say DominanceFailure of (M - shopkeeper):
 	say "[NameDesc of M] strikes you in the chest as you try to force [him of M] to the ground, and something about the look in [his of M] eye says you've already lost. You suddenly collapse into [him of M], [his of M] [DickDesc of M] hardening against your thigh as [he of M] guides you onto your hands and knees.".
 
 To compute failed dominance punishment of (M - shopkeeper):
-	if the number of worn removable stolen clothing + the number of held stolen clothing > 0:
+	if there is a held stolen thing:
 		say "[speech style of M]'First things first.'[roman type][line break]";
-		repeat with T running through worn stolen clothing:
-			say "The shopkeeper yanks off the [T]!";
-			now M is carrying T;
-		repeat with S running through held stolen clothing:
+		repeat with S running through held stolen things:
 			say "The shopkeeper takes the [S]!";
 			now M is carrying S;
 	if Dungeon05 is placed and (the class of the player is cheerleader or the player is getting unlucky):

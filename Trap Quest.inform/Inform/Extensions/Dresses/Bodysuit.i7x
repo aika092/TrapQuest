@@ -64,7 +64,7 @@ Part - Tongue Suit
 
 tongue-suit is an bodysuit. tongue-suit is unique. tongue-suit is biological. The printed name of tongue-suit is "[clothing-title-before]tongue suit[clothing-title-after]". The text-shortcut of tongue-suit is "tgst". Understand "tongue", "suit" as tongue-suit.
 
-tongue-suit is very low cut. tongue-suit is optional-top-displacable.
+tongue-suit is very low cut. tongue-suit is not-displacable-always-fuckable.
 
 Figure of white tongue suit is the file "Items/Clothes/Upper/Dresses/Demonic/tonguesuit1a.png".
 Figure of tonguing white tongue suit is the file "Items/Clothes/Upper/Dresses/Demonic/tonguesuit1b.png".
@@ -594,7 +594,7 @@ Definition: wrestler-jumpsuit is exercise themed: decide yes.
 
 Part - Superheroine Outfit
 
-superheroine outfit is a jumpsuit. superheroine outfit is manly. superheroine outfit is rare. superheroine outfit is nylon. superheroine outfit is low cut. superheroine outfit is not-top-displacable. superheroine outfit is erect-nipple-exposing. The text-shortcut of superheroine outfit is "bso".
+superheroine outfit is a jumpsuit. superheroine outfit is manly. superheroine outfit is rare. superheroine outfit is nylon. superheroine outfit is low cut. superheroine outfit is not-displacable-always-fuckable. superheroine outfit is erect-nipple-exposing. The text-shortcut of superheroine outfit is "bso".
 
 The printed name of superheroine outfit is "[clothing-title-before]superheroine outfit[clothing-title-after]".
 

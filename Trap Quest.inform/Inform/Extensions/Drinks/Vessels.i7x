@@ -263,10 +263,10 @@ To compute drunken adventure:
 				repeat with C running through worn fluid vulnerable clothing:
 					SemenSoakUp C by the soak-limit of C - the total-soak of C;
 				repeat with C running through worn clothing:
-					if C is displacable, displace C;
-					if C is top-displacable or C is optional-top-displacable, TopDisplace C;
+					if C is displacable and C is not glued, displace C;
+					if C is actually top-displacable, TopDisplace C;
 					if C is crotch-zipped, ZipDown C;
-					if C is crotch-intact and C is pussy covering and C is not metal and C is not biological, now C is crotch-ripped;
+					if C is crotch-intact and C is pussy covering and C is destructible and C is not biological, now C is crotch-ripped;
 				now the semen coating of belly is 10;
 				now the semen coating of breasts is 10;
 				now the semen coating of face is 10;

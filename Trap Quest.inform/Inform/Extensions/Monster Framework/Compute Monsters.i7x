@@ -106,7 +106,11 @@ To compute action (N - a number) of (M - a monster):
 				otherwise if M is not distracted:
 					if M is undefeated and M is friendly:
 						compute friendly boredom of M; [Potentially make them bored]
-						if M is not interested and playerRegion is not school and M is threatening and M is regional, progress quest of nice-quest;
+						if M is not interested and playerRegion is not school and M is threatening and M is regional:
+							progress quest of nice-quest;
+						otherwise if M is interested and M is undefeated:
+							check disapproval of M;
+							check aggression change of M; [Is this NPC aggressive this turn, when they weren't at the start of the turn?]
 					if M is interested, compute interaction of M; [If still interested, check if there's anything for them to do]
 		otherwise:
 			if M is unfriendly:

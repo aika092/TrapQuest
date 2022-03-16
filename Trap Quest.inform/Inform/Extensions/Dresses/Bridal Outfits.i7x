@@ -44,15 +44,13 @@ Definition: long bridal dress is party themed:
 	decide yes.
 
 To compute virginity-loss of (C - long bridal dress):
+	if debugmode > 0, say "Things penetrating vagina: [list of things penetrating vagina].";
 	if bride-consort is not penetrating vagina:
 		say "For failing to [if bride-consort is monster]lose your virginity to [FuckerDesc of bride-consort][otherwise]save your virginity until marriage[end if], you feel a curse falling on your [MediumDesc of C]!";
 		now C is cursed;
 		now the quest of C is vaginal-addict-quest;
 		if C is knee-length, transform C into sexy bridal dress;
 		otherwise transform C into slutty bridal dress.
-
-To compute periodic effect of (C - long bridal dress):
-	if the vaginalvirgin of the player is 0, compute virginity-loss of C. [no escaping it by losing virginity then re-wearing the clothing]
 
 This is the bridal dress pussy slut rule:
 	if long bridal dress is worn, decrease the desirability of vagina by 4.
@@ -133,6 +131,32 @@ To compute class set up of (C - princess bride dress):
 	now C is strength-influencing;
 	now C is posture training;
 	now C is cursed.
+
+To compute quest completion of (Q - podium-quest) on (C - princess bride dress):
+	if the raw-magic-modifier of C < 1:
+		say "Your [C] becomes a ";
+		now the raw-magic-modifier of C is 1;
+		now C is elasticity;
+		say "[C]!";
+	say "[bold type]";
+	let disappearTime be 0;
+	let QC be questNothingHappens;
+	if C is removable and C is cursed:
+		say "You can feel that the magic holding your [ShortDesc of C] together is about to give out.[roman type] Do you want to concentrate really hard to try and get it to stay around? (This may have minor side effects.) ";
+		if the player is consenting, now QC is questGape;
+		otherwise now disappearTime is 1;
+	if disappearTime is 1:
+		say QuestCompleteFlav of Q on C;
+		increase the quest-completions of Q by 1;
+		only destroy C;
+	otherwise:
+		say QuestPersistFlav of Q on C;
+		compute persistent reward of Q on C;
+		increase the quest-completions of Q by 1;
+		if C is bland, now C is blessed;
+		if C is cursed, silently bless C;
+	say "[roman type][line break]";
+	compute consequence of QC.
 
 Definition: princess bride dress is slitted: decide yes.
 Definition: princess bride dress is bow themed: decide yes.

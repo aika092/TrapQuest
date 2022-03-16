@@ -427,7 +427,10 @@ To say DisgracePost (N - a number):
 	if DPV > 1:
 		say ". It [if secondslive is 0]has been viewed [DPV] times[otherwise]was viewed [DPV] times before it was deleted[end if]";
 	otherwise if secondslive > 0:
-		say "[if secondslive >= 60]. It was up for [secondslive / 60] minutes before you were able to delete it[otherwise]. It was only up for [secondslive] seconds before you were able to delete it[end if]".
+		say "[if secondslive >= 60]. It was up for [secondslive / 60] minutes before you were able to delete it[otherwise]. It was only up for [secondslive] seconds before you were able to delete it[end if]";
+	otherwise if deletedtime entry > 0:
+		say ". It has since been deleted, but the damage is already done - a large number of your family and friends will have seen the post".
+
 
 To say DisgracePostReaction (N - a number):
 	let S be DisgracePostImpact N;

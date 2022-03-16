@@ -85,10 +85,10 @@ To compute guarding action of (M - headmistress): [Sometimes the headmistress ge
 		otherwise compute room leaving of M.
 
 An all later time based rule (this is the school recruiters rule):
-	if armband is worn and class-time < (lessonFrequency * -5):
-		if headmistress is alive and headmistress is undefeated and (the rank of the player < 6 or playerRegion is school):
+	if armband is worn and class-time < (lessonFrequency * -5) and (the rank of the player < 6 or playerRegion is school):
+		if headmistress is alive and headmistress is undefeated:
 			if headmistress is not regional, regionally place headmistress;
-		if receptionist is alive and receptionist is undefeated and receptionist is not regional and (the rank of the player < 6 or playerRegion is school):
+		if receptionist is alive and receptionist is undefeated and receptionist is not regional:
 			now receptionist is guarding;
 			deinterest receptionist;
 			if playerRegion is Dungeon:
@@ -206,6 +206,11 @@ To compute teaching of (M - a headmistress):
 talk-headmistress-toilet is a talk-object.
 headmistress-toilet-ban is initially false.
 
+
+Definition: headmistress is fluff-question-appropriate:
+	if locked-toilets is true and academy-toilet-key is not held, decide no;
+	decide yes.
+
 To consider (T - talk-headmistress-toilet) for (M - a monster):
 	if M is headmistress and locked-toilets is true and academy-toilet-key is not held and M is friendly:
 		now the printed name of T is the substituted form of "[variable custom style]'[if the delicateness of the player < 5]I need to use the toilet.'[otherwise if the delicateness of the player < 10]Please could I have the key to the toilets?'[otherwise if the delicateness of the player < 15]Please may I have permission to use the toilets?'[otherwise if diaper lover > 0]Miss, please can I have permission to use the big potty? Pretty please?'[otherwise]This lowly student begs permission to use the toilets...'[end if][roman type][line break]";
@@ -258,7 +263,7 @@ To execute (T - talk-headmistress-toilet) for (M - a monster):
 								if FF > 0, say "[BigNameDesc of M] wrinkles [his of M] nose.[line break][speech style of M]'I suppose that will do. You may go!'[roman type][line break]";
 								otherwise say "[BigNameDesc of M] smirks.[line break][speech style of M]'Very good [boy of the player].'[roman type][line break]";
 						otherwise:
-							say "[BigNameDesc of M] puts the fishbowl inside a large drawer in [his of M] desk. Then [he of M] looks at you, and raises [his of M] eyebrows with impatience.[line break][speech style of M]'You can go now!'[roman type][line break]";
+							say "[BigNameDesc of M] [if M is in School08]puts the fishbowl inside a large drawer in [his of M] desk[otherwise]clicks [his of M] fingers, and the bowl disappears[end if]. Then [he of M] looks at you, and raises [his of M] eyebrows with impatience.[line break][speech style of M]'You can go now!'[roman type][line break]";
 					otherwise:
 						say "You try your best but you can't make yourself pee in front of [him of M].[line break][variable custom style]'I, um, I can't go...'[roman type][line break]You say weakly. [BigNameDesc of M] narrows [his of M] eyes.[line break][speech style of M]'Oh that's convenient, because I've just decided to revoke your toilet privileges... indefinitely.'[roman type][line break]";
 						now headmistress-toilet-ban is true;

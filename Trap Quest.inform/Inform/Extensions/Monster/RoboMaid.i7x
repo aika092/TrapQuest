@@ -323,9 +323,9 @@ This is the robomilkmaid punishment rule:
 		[compute maidFluff of M;]
 		rule succeeds;
 	if the player is hotel employed:
-		let C be a random worn top-placed breast covering clothing;
+		let C be a random worn top-placed breast covering stealable clothing;
 		if C is clothing and C is not trainee bra:
-			if C is not-top-displacable:
+			if C is actually not-top-displacable:
 				say "[BigNameDesc of current-monster] tears off your [printed name of C], exposing your [ShortDesc of breasts]!";
 				destroy C;
 			otherwise:

@@ -267,7 +267,6 @@ To retrieve gender:
 	if choice in row 1 of the Table of Player Options is 1:
 		now the player is female;
 		now choice in row 34 of the Table of Player Options is 0; [Make sure trap fetish is disabled if the player is female]
-		now choice in row 55 of the Table of Player Options is 0; [Make sure pure background is disabled if the player is male]
 	otherwise:
 		now the player is male.
 

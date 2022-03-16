@@ -440,6 +440,7 @@ Check pulling vines:
 			if the player is not able to manually use their hands, do nothing instead;
 			if the player is wrist bound behind, say "Unfortunately you can't really do that with your wrists bound behind you!" instead;
 			if the player is immobile, say "You're a bit tied up at the moment!" instead;
+			if the player is in danger, say "You're currently in combat! She'll have to wait!" instead;
 			WomanVinePull instead;
 		say "You can't see any such thing." instead;
 	if the TrapNo of the noun > 0 and diaper quest is 1, say "It's too late for that, there are way too many of them holding you in this position for you to escape now!" instead;

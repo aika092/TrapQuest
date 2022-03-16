@@ -103,7 +103,7 @@ Clothing goes from top in place to displaced
 
 +!]
 To TopDisplace (C - clothing):
-	if C is not not-top-displacable:
+	if C is actually top-displacable:
 		now C is top-displaced;
 		force clothing-focus redraw. [Forces redraw of clothing inventory window]
 

@@ -69,6 +69,8 @@ Definition: heart window cutoffs is potentially vagina covering: decide no. [doe
 
 predicament-painted-cutoffs is a knickers. predicament-painted-cutoffs is unique. predicament-painted-cutoffs is crotch-exposing. The printed name of predicament-painted-cutoffs is "[clothing-title-before]painted cutoffs[clothing-title-after]". The text-shortcut of predicament-painted-cutoffs is "pcf". Understand "painted", "cutoffs" as predicament-painted-cutoffs.
 
+Definition: predicament-painted-cutoffs is fluid immune: decide yes.
+
 Definition: predicament-painted-cutoffs is hand-blocked:
 	if current-predicament is vibe-photo-predicament or (realisticArms is 1 and entry 1 in the armUses of arms is painted-vibrator-hands and entry 2 in the armUses of arms is painted-vibrator-hands), decide yes;
 	decide no.

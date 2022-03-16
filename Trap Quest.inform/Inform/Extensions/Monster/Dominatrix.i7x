@@ -1126,9 +1126,9 @@ To compute failed dominance punishment of (M - dominatrix):
 	increase the slave-status of M by 1;[she sees you as more of a slave]
 	let H be nothing;
 	if the player is possessing a penis, now H is a random off-stage fetish appropriate chastity cage;
-	otherwise now H is chastity-belt;
+	if H is nothing, now H is chastity-belt;
 	if M is not in Hotel37, now H is nothing;[She can only do this when in her dungeon]
-	if the player is getting very unlucky and (player-fucker is penis or (the player is possessing a vagina and vagina is not actually occupied)) and H is off-stage clothing:
+	if (player-fucker is penis or (the player is possessing a vagina and vagina is not actually occupied)) and H is off-stage clothing and the player is getting unlucky:
 		let C be a random worn bottom level protection clothing;
 		if the size of penis > 3:
 			say "[big he of M] [if C is clothing]fishes your [player-penis] out of your [printed name of C], frowning as it rapidly stiffens in [his of M] grip.[otherwise if penis is penis-erect]frowns as [he of M] wraps [his of M] hand around your rock-hard [player-penis].[otherwise]wraps [his of M] hand around your [player-penis], frowning as it rapidly stiffens in [his of M] grip.[end if][line break][speech style of M]'Well, I suppose it wouldn't hurt to remind you of what you'll be missing.'[roman type][line break][BigNameDesc of M] kneels between your legs, slowly stroking your [ShortDesc of penis] as [he of M] removes a small object from a nearby table. [big he of M] holds eye contact with you as [he of M] wraps [his of M] lips around your shaft, [his of M] hand continuing to pump your shaft from the base as [he of M] places the object, a chastity cage, down on your stomach. Your eyes widen as you realise what [he of M] has in store for you, but it's too late. You arch your back and buck your hips, emitting a dejected groan as your [literalMistress of M] forces you to fill [his of M] mouth with your [semen]. [big he of M] pulls off with a smirk, swallowing your [load] as [he of M] applies the cage to your already softening [player-penis].[line break][speech style of M]'There we-*click*-go! You're free to go, slave!'[roman type][line break][GotUnluckyFlav]";
@@ -1145,7 +1145,7 @@ To compute failed dominance punishment of (M - dominatrix):
 	otherwise if the player is getting lucky:
 		compute sissy punishment of M;
 		say GotLuckyFlav;
-		Bore M;
+		bore M;
 	otherwise:
 		say "[line break][speech style of M]'Alright slave, I get it. I'll play with you.'[roman type][line break]";
 		unless M is interested, now M is interested;

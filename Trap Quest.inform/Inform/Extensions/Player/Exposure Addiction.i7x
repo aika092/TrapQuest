@@ -62,7 +62,7 @@ An all later time based rule (this is the fighting against topless fetish rule):
 	if the player is fighting against topless:
 		if braless reminder <= 0:
 			let C be a random worn topless-fetish-disallowed clothing;
-			if C is clothing, say "[bold type]You [one of][or]still [stopping]feel terrible wearing your [ShortDesc of C]! [one of][if topless tattoo is worn]Your heart aches and you[otherwise]You[end if] want to free your nipples. It lowers your awareness and consumes your thought.[or][if C is not not-top-displacable]You would feel much better if you pulled it out of the way and exposed your breasts.[end if][stopping][roman type][line break]";
+			if C is clothing, say "[bold type]You [one of][or]still [stopping]feel terrible wearing your [ShortDesc of C]! [one of][if topless tattoo is worn]Your heart aches and you[otherwise]You[end if] want to free your nipples. It lowers your awareness and consumes your thought.[or][if C is actually top-displacable]You would feel much better if you pulled it out of the way and exposed your breasts.[end if][stopping][roman type][line break]";
 			now braless reminder is 30;
 		decrease braless reminder by 1.
 
@@ -71,7 +71,7 @@ Report wearing topless-fetish-disallowed clothing:
 
 This is the bra can't be summoned with braless fetish rule:
 	if summoning is 1 and (topless-fetish is 1 or the class of the player is faerie):
-		if wearing-target is topless-fetish-disallowed not-top-displacable clothing, rule fails. [Bras that can be displaced are allowed, since then it's up to the player]
+		if wearing-target is topless-fetish-disallowed actually not-top-displacable clothing, rule fails. [Bras that can be displaced are allowed, since then it's up to the player]
 The bra can't be summoned with braless fetish rule is listed in the bra wearability rules.
 
 Exposure Addiction ends here.

@@ -124,7 +124,7 @@ To uniquely set up (C - a pink scrunchie):
 	now the quest of C is greet-quest.
 
 To say QuestFlav of (Q - greet-quest):
-	say "You sense it wants you to talk to (intelligent) friendly people who *might* want to [if diaper quest is 1]punish[otherwise]fuck[end if] you[if the class of the player is not cheerleader]. (You'll first have to wait until you fully become a cheerleader.)[otherwise].[end if]".
+	say "You sense it wants you to talk to (intelligent) friendly people who *might* want to [if diaper quest is 1]punish[otherwise]fuck[end if] you.".
 
 To say QuestTitle of (Q - greet-quest):
 	say " (attention seeking quest)".
@@ -132,7 +132,7 @@ To say QuestTitle of (Q - greet-quest):
 To progress quest of (Q - greet-quest):
 	increase the cheer-greets of Q by 1;
 	let S be a random worn headgear;
-	if the cheer-greets of Q < (a random number between 3 and 4) and S is headgear and the quest of S is Q:
+	if the cheer-greets of Q < (a random number between 3 and 4) - diaper quest and S is headgear and the quest of S is Q:
 		say "Your [ShortDesc of S] pulses happily. Keep it up!";
 	otherwise:
 		now the cheer-greets of Q is 0;

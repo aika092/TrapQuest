@@ -821,7 +821,7 @@ Report going when the player is in School10:
 				now ST is moved.
 
 To check school toilet supervision:
-	if School10:
+	if the player is in School10:
 		let M be a random undefeated staff member in the location of the player;
 		if M is monster:
 			say "[speech style of M]'Now remember to lock it up again, and then give the key back to the [ShortDesc of headmistress].'[roman type][line break]";
@@ -904,7 +904,7 @@ To check school toilet supervision:
 			now headmistress is in the location of the player;
 			now headmistress is interested;
 			anger headmistress;
-			say "As you move to get up, you spot [NameDesc of headmistress] in the corner of your eye. [big he of headmistress] is advancing on you quickly, looking furious.[line break][speech style of headmistress]'You thought you could just get away with breaking the rules?! I SAID NO TOILETS!!!'[roman type][line break]";
+			say "As you move to get up, you spot [NameDesc of headmistress] in the corner of your eye. [big he of headmistress] is advancing on you quickly, looking furious.[line break][speech style of headmistress]'You thought you could just get away with breaking the rules?! I SAID NO TOILETS AT ALL!!! Including ones outside the Academy!'[roman type][line break]";
 
 missing-key-assembly is an assembly.
 Definition: missing-key-assembly is eligible:
@@ -929,7 +929,7 @@ To say AssemblyStartFlav of (A - tattoo-assembly):
 	say "[BigNameDesc of headmistress] casts [his of headmistress] eyes over the crowd of students.".
 
 To execute (A - tattoo-assembly):
-	say "[speech style of headmistress]'I have decided that all students of emerald rank and above should get matching tattoos of our academy's logo! They will go below your chest, and be imbued with a magic effect that increases your balance... and docility... when wearing high heels. Anyone who refuses will be remoted one rank.'[roman type][line break]";
+	say "[speech style of headmistress]'I have decided that all students of emerald rank and above should get matching tattoos of our academy's logo! They will go below your chest, and be imbued with a magic effect that increases your balance... and docility... when wearing high heels. Anyone who refuses will be demoted one rank.'[roman type][line break]";
 	let LST be the list of students in the location of the player;
 	let N be 0;
 	let T be 0;

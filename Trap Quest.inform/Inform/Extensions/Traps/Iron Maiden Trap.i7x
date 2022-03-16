@@ -105,6 +105,7 @@ To decide which figure-name is the examine-image of (C - a cage trap):
 	if D is diaper:
 		if D is messed, decide on figure of messy diaper cage trap;
 		decide on figure of diaper cage trap;
+	if hips is stuck and (the total volume of hips >= 10), decide on figure of cage ass expansion trap;
 	decide on figure of cage trap.
 
 To say ExamineDesc of (C - a cage trap):
@@ -155,22 +156,28 @@ Check going when there is a triggered cage trap in the location of the player:
 		let LB be the largeness of breasts;
 		let BL be the largeness of belly;
 		let TH be the thickness of hips;
-		let R be a random number between 1 and 10;
+		let R be a random number between 5 and 10;
 		if debuginfo > 0, say "[input-style]Breasts squeeze check: cage squeeze attempt d10 ([R]) | ([TH].5) breast size[roman type][line break]";
 		if R <= LB:
 			now the stance of the player is 1;
 			now breasts is stuck;
-			say "You try to squeeze through the cage, but your [BreastDesc] get stuck between the bars! You're completely stuck! [bold type]You'll have to wait for the cage to somehow release you.[roman type][line break]" instead;
+			say "You try to squeeze through the cage, but your [BreastDesc] get stuck between the bars! You're completely stuck! [bold type]You'll have to wait for the cage to somehow release you.[roman type][line break]";
 		if debuginfo > 0, say "[input-style]Belly squeeze check: cage squeeze attempt d10 ([R]) | ([TH].5) belly size[roman type][line break]";
 		if R <= BL:
 			now the stance of the player is 1;
 			now belly is stuck;
-			say "You try to squeeze through the cage, but your [BellyDesc] gets stuck between the bars! You're completely stuck! [bold type]You'll have to wait for the cage to somehow release you.[roman type][line break]" instead;
+			say "You try to squeeze through the cage, but your [BellyDesc] gets stuck between the bars! You're completely stuck! [bold type]You'll have to wait for the cage to somehow release you.[roman type][line break]";
 		if debuginfo > 0, say "[input-style]Hips squeeze check: cage squeeze attempt d10 ([R]) | ([TH].5) hips width[roman type][line break]";
 		if R <= TH:
 			now the stance of the player is 1;
 			now hips is stuck;
-			say "You try to squeeze through the cage, but your [HipDesc] get stuck between the bars! You're completely stuck! [bold type]You'll have to wait for the cage to somehow release you.[roman type][line break]" instead;
+			say "You try to squeeze through the cage, but your [HipDesc] get stuck between the bars! You're completely stuck! [bold type]You'll have to wait for the cage to somehow release you.[roman type][line break]";
+		if inflation fetish is 1 and max ass size >= 10 and the player is getting unlucky:
+			now the stance of the player is 1;
+			now hips is stuck;
+			say "You begin to squeeze through the cage, but after the rest of your body except your [AssDesc] is out, you feel a magical curse get triggered! Your ass cheeks inflate with air until they're a comical size - much too big to fit between the bars! You're completely stuck! [GotUnluckyFlav][bold type]You'll have to wait for the cage to somehow release you.[roman type][line break]";
+			AssInflate 10;
+		if there is a stuck body part, say "[bold type]You are now stuck, halfway out of the cage, on your knees.[roman type][line break]" instead;
 	let D be a random worn diaper;
 	if D is diaper:
 		let BK be the DQBulk of the player;

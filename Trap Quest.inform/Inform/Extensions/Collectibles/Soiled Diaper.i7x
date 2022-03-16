@@ -53,7 +53,7 @@ This is the soiled diapers smell gross rule:
 The soiled diapers smell gross rule is listed first in the all later time based rules. [Listed early to make sure that the notification that the player is upset about mess comes after it.]
 
 To say unique-verb-desc of (T - a soiled-diaper):
-	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say "[if there is a friendly witch in the location of the player] [link][bracket]witch[close bracket][as]give [text-shortcut of T] to witch[end link][end if]".
+	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say "[if there is a friendly witch in the location of the player] [link][bracket]witch[close bracket][as]give [text-shortcut of T] to [text-shortcut of witch][end link][end if]".
 
 Carry out examining:
 	if the noun is a monster:

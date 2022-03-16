@@ -76,6 +76,7 @@ Check inserting something into:
 Understand "place [something] in [something]", "place [something] into [something]", "plc [something] [something]" as inserting it into.
 
 Check inserting worn clothing into:
+	if the noun is plentiful accessory, say "You can't put jewellery inside things - as soon as you take it off, it becomes too heavy to move." instead;
 	try taking off the noun;
 	if the noun is worn, do nothing instead. [This makes sure we follow rules for removing cursed clothing etc.]
 
@@ -243,13 +244,18 @@ Report plugging something with temptation clothing:
 	say "As you finish putting it in, you find yourself happily [if the largeness of breasts < 3]sticking your ass out provocatively behind you, as if trying to tempt others to make a move on you[otherwise]puffing your chest out as far as possible and pushing your shoulders back, as if trying to show off your cleavage as much as possible[end if]. [if the bimbo of the player < 13]You can't bring yourself to feel bad about it though, it feels so natural to you all of a sudden. [end if][if the noun is unidentified]This must be a magic [ShortDesc of the second noun]![end if]".
 
 Report plugging something with refreshment clothing:
-	if the number of lubricants covering the noun is 0:
+	if the noun is a fuckhole, compute instant lubing of the noun.
+
+To compute instant lubing of (F - a fuckhole):
+	if the number of lubricants covering F is 0:
 		let L be a random off-stage lubricant;
 		if L is lubricant:
 			if L is blessed or (L is uncursed and the player is not possessing a vagina), now the timer of L is a random number between 100 and 150;
 			otherwise now the timer of L is a random number between 30 and 50;
-			now L is covering the noun;
-			say "As you move your hand away, a cool, slippery feeling in your [ShortDesc of noun] makes you realise it was just covered in lubricant! This must be a [if the second noun is plug]plug[otherwise if the second noun is dong]dildo[end if] of refreshment!".
+			now L is covering F;
+			say "As you move your hand away, a cool, slippery feeling in your [ShortDesc of F] makes you realise it was just covered in lubricant! ";
+			let C be a random sex toy penetrating F;
+			if C is a sex toy, say "This must be a [ShortDesc of C] of refreshment!".
 
 Report plugging something with rejuvenation clothing:
 	say "As you move your hand away, the [ShortDesc of second noun] seems to wiggle inside you, as if it were more than just some inanimate object. It must be magic!".

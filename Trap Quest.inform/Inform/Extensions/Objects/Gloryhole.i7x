@@ -102,7 +102,7 @@ Check entering gloryhole:
 				if bottom level lactation cover is nothing and random worn actually nipple covering clothing is nothing:
 					say "Two suction cups leap out of the wall and latch onto your nipples!";
 				otherwise:
-					repeat with B running through worn not not-top-displacable actually nipple covering clothing:
+					repeat with B running through actually top-displacable actually nipple covering clothing:
 						TopDisplace B;
 					say "Two suction cups leap out of wall and latch onto your nipples!";
 				say GotUnluckyFlav;

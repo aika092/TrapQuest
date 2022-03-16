@@ -86,6 +86,8 @@ Definition: portal-hotpants is soakable pee covering:
 	if it is worn, decide yes;
 	decide no.
 Definition: portal-hotpants is potentially erection concealing: decide yes.
+Definition: portal-hotpants is no-panties-disallowed: decide no.
+Definition: portal-hotpants is disembodied rather than embodied: decide yes. [When penetrating an orifice, can it fit underneath other clothing like a sex toy? Or will clothing get in the way, e.g. a dildo pole?]
 
 To decide which number is the hipModesty of (C - portal-hotpants): decide on 2.
 

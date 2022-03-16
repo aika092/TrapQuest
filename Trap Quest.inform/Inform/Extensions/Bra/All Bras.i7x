@@ -436,7 +436,7 @@ To decide which object is the unique-upgrade-target of (C - a flimsy bra):
 	if (a random number between 1 and 2 is 1 and window-bra is off-stage) or the number of off-stage ribbon bra is 0, decide on window-bra;
 	decide on a random off-stage ribbon bra.
 
-A pasties is a kind of bra. The support of a pasties is usually 0. A pasties is usually latex. A pasties is usually fully exposing. The min size of a pasties is 20. The max size of a pasties is 20. A pasties is usually transformation-rare. Understand "stickers", "caps", "nipple" as pasties. The text-shortcut of a pasties is "psts". A pasties is not-top-displacable.
+A pasties is a kind of bra. The support of a pasties is usually 0. A pasties is usually latex. A pasties is usually fully exposing. The min size of a pasties is 20. The max size of a pasties is 20. A pasties is usually transformation-rare. Understand "stickers", "caps", "nipple" as pasties. The text-shortcut of a pasties is "psts". A pasties is not-displacable-always-fuckable.
 
 Definition: a pasties (called C) is actually nipple exposing rather than actually nipple covering: [Pasties always cover your nipples.]
 	decide no.

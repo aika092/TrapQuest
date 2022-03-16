@@ -167,46 +167,45 @@ To compute bride perception of (M - a monster):
 	calm M.
 
 To compute betrothal of (M - a monster):[This only triggers when the player is fucked by a monster, for now.]
-	if debugmode > 0, say "bride-consort is [bride-consort][line break]";
-	let C be a random worn bouquet;
-	if C is clothing and bride-consort is not the throne:
-		let F be 0;
-		if bride-consort is in the location of the player, now F is 1;
-		otherwise now F is -1;
-		if bride-consort is M, now F is 2;
-		if F is -1:[the consort isn't around. Adultery!]
-			if bride-consort is alive and bride-consort is mating and the refractory-period of bride-consort > 0:
-				say "Your [C] pulses, and an image of [NameDesc of bride-consort] appears in your head. You know that no matter who you have sex with, nothing could ever shake your everlasting connection.";
-			otherwise if bride-consort is alive:
-				say "Your [C] pulses, and an image of [NameDesc of bride-consort] appears in your head as an overwhelming feeling of guilt washes over you.";
-				punish infidelity;
-			otherwise if bride-consort is monster:[How do we handle it if the consort is dead?]
-				unless bride-consort is mating:
-					say "Your [C] disappears, and you feel your connection to [NameDesc of bride-consort] slowly fade away.";
-					now the charge of floral bouquet is 0;
-					only destroy C;
-					now bride-consort is the throne;
-				otherwise:[Getting pregnant from your consort grants freedom, but becomes constricting if they die]
-					say "Your [C] pulses, and an image of [NameDesc of bride-consort] appears in your head as an overwhelming feeling of guilt at your lack of loyalty washes over you.";
-					punish infidelity;
-		if F is 2:[M is the consort]
-			if M is mechanic and the class of the player is "princess bride" and M is alive:
-				say "[speech style of M]'Your royal energy... I feel it flowing through me... releasing ME!'[roman type][line break]";
-				unseal xavier from M;
-			say "Your [C] pulses, and a pleasant feeling wells up inside of you.";
-			dignify the charge of floral bouquet * 5;
-			if bride-consort is mating:
-				FatigueDown the charge of floral bouquet * 5;
-				if the charge of floral bouquet < 25, increase the charge of floral bouquet by 10;
-			otherwise:
-				if the charge of floral bouquet < 25, increase the charge of floral bouquet by 5;
-				unless bride-consort is father material, FavourUp bride-consort;
-			progress quest of betrothal-quest.
+	if the class of the player is bride:
+		if debugmode > 0, say "Bride made [NameDesc of M] orgasm. The bride's partner is [NameDesc of bride-consort].";
+		let C be a random worn bouquet;
+		if bride-consort is not the throne:
+			let F be 0;
+			if bride-consort is in the location of the player, now F is 1;
+			otherwise now F is -1;
+			if bride-consort is M, now F is 2;
+			if F is -1:[the consort isn't around. Adultery!]
+				if bride-consort is permanently banished monster: [How do we handle it if the consort is dead?]
+					if the vaginalvirgin of the player is 1: [Virgins can remarry]
+						say "You feel your connection to [NameDesc of bride-consort] slowly fade away.[line break][variable custom style]I guess this means... I can marry someone else instead?[roman type][line break]";
+						compute unique recycling of floral bridal veil; [this resets flags and destroys bouquets]
+					otherwise:
+						say "[if C is a thing]Your [C] pulses, and an[otherwise]An[end if] image of [NameDesc of bride-consort] appears in your head as an overwhelming feeling of guilt at your lack of loyalty washes over you.";
+				otherwise if bride-consort is monster:
+					if bride-consort is mating or C is a thing or the refractory-period of bride-consort > 0:
+						say "[if C is a thing]Your [C] pulses, and an[otherwise]An[end if] image of [NameDesc of bride-consort] appears in your head. You know that no matter who you have sex with, nothing could ever shake your everlasting connection.";
+					otherwise:
+						say "An image of [NameDesc of bride-consort] appears in your head as an overwhelming feeling of guilt washes over you.";
+						punish infidelity;
+			if F is 2:[M is the consort]
+				if M is mechanic and the class of the player is "princess bride" and M is alive:
+					say "[speech style of M]'Your royal energy... I feel it flowing through me... releasing ME!'[roman type][line break]";
+					unseal xavier from M;
+				say "Your [C] pulses, and a pleasant feeling wells up inside of you.";
+				dignify the charge of floral bouquet * 5;
+				if bride-consort is mating:
+					FatigueDown the charge of floral bouquet * 5;
+					if the charge of floral bouquet < 25, increase the charge of floral bouquet by 10;
+				otherwise:
+					if the charge of floral bouquet < 25, increase the charge of floral bouquet by 5;
+					unless bride-consort is father material, FavourUp bride-consort;
+				if the consummation of betrothal-quest is true, progress quest of betrothal-quest. [if player hasn't consummated yet, we don't want to ruin the order of rewards]
 
 To punish infidelity:
 	humiliate the charge of floral bouquet * 40;
 	decrease the charge of floral bouquet by 1;
-	if floral bouquet is worn:
+	if floral bouquet is worn and condom fetish is 1:
 		if floral bouquet is blessed, now floral bouquet is bland;
 		transform floral bouquet into condoms bouquet;
 	let C be a random worn bridal dress;
@@ -216,14 +215,14 @@ To punish infidelity:
 		transform C into sheer-open-front-skirt;
 		say "A 'gang bang girl' vest top appears on your body!";
 		summon gang-bang-girl vest top cursed with quest;
+	let J be random worn plentiful accessory;
 	if the number of worn chest tattoo is 0 and there is a worn tattoo:
 		summon unfaithful tattoo;
 		say "You feel a searing pain as the word 'UNFAITHFUL' burns itself into your chest in big red letters.";
 	otherwise if the number of worn asscheek tattoo is 0 and there is a worn tattoo:
 		summon cheating whore tattoo;
 		say "You experience a heavy feeling of shame as the words 'CHEATING WHORE' etch themselves into your cheeks.";
-	otherwise if a random number between 1 and 2 is 1 and there is a worn plentiful accessory:
-		let J be random worn plentiful accessory;
+	otherwise if a random number between 1 and 2 is 1 and J is accessory:
 		say "Your [printed name of J] hisses as it slowly disintegrates.";
 		only destroy J;
 	otherwise:
@@ -259,8 +258,11 @@ To decide which figure-name is the clothing-image of (R - condoms bouquet):
 
 A time based rule:
 	now auto is 1;
-	if the class of the player is bride and bride-consort is an alive undefeated monster and there is a worn bouquet and the ceremony of betrothal-quest is true and the consummation of betrothal-quest is false and the player is in Hotel06 and the number of monsters in Hotel06 is 0 and the player is possessing a vagina and vagina is not actually occupied and the number of pussy covering actually unavoidable clothing is 0:
-		compute wedding night;
+	if the class of the player is bride and bride-consort is an alive undefeated monster and there is a worn bouquet and the ceremony of betrothal-quest is true and the consummation of betrothal-quest is false and the player is in Hotel06 and the player is possessing a vagina and vagina is not actually occupied and the number of pussy covering actually unavoidable clothing is 0:
+		let Z be 0;
+		if bride-consort is in the location of the player, now Z is 1;
+		if the number of intelligent monsters in Hotel06 is Z and the player is not in danger, compute wedding night;
+		otherwise now auto is 0;
 	otherwise:
 		now auto is 0.
 
@@ -284,11 +286,10 @@ To compute wedding night:
 	if bride-consort is mechanic and the class of the player is "princess bride":
 		say "[speech style of bride-consort]'Your royal energy... I feel it flowing through me... releasing ME!'[roman type][line break]";
 		unseal xavier from bride-consort; [don't worry this automatically changes who bride-consort is and who is penetrating]
-	ruin vagina times 1;
 	now the consummation of betrothal-quest is true;
-	progress quest of betrothal-quest;
+	ruin vagina times 1;
 	unless bride-consort is demon lord: [xavier gives the player a good seeing to]
-		say "[speech style of bride-consort]'C-cumming!'[roman type][line break][BigNameDesc of bride-consort] begins unleashing [himself of bride-consort] inside of you.[line break][speech style of bride-consort]Already?![roman type][line break]";
+		say "[speech style of bride-consort]'C-cumming!'[roman type][line break][BigNameDesc of bride-consort] begins unleashing [himself of bride-consort] inside of you.[line break][variable custom style]Already?![roman type][line break]";
 		PussyFill the semen load of bride-consort;
 		focus-consider bride-consort;
 		orgasm bore bride-consort;

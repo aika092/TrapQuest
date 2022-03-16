@@ -111,11 +111,12 @@ Report decanting something with:
 				now the quest of milkmaid headdress is milk-serve-quest;
 				say QuestFlav of milkmaid headdress;
 				compute class outfit of milkmaid headdress; [milkmaid-outfit will be blocked if a class-relevant outfit is already worn]
-				let C be a random neck covering chestless clothing;
-				if C is removable clothing, WardrobeVanish C;
-				if the number of worn breast covering clothing is 1 and the number of worn neck covering clothing is the number of worn neck covering breast covering clothing:
-					let M be a random worn breast covering clothing;
-					transform M into milkmaid-outfit;
+				if milkmaid-outfit is not worn:
+					let C be a random worn neck covering chestless clothing;
+					if C is removable clothing, WardrobeVanish C;
+					if the number of worn breast covering clothing is 1 and the number of worn neck covering clothing is the number of worn neck covering breast covering clothing:
+						let M be a random worn breast covering clothing;
+						transform M into milkmaid-outfit;
 				now waitress-dips is 0;
 			otherwise if black maid headdress is worn:
 				if the silicone volume of breasts > 0:

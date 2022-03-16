@@ -19,12 +19,17 @@ An all time based rule (this is the compute clothing rule):
 				if X is removable clothing:
 					say "[bold type]You feel your [C][bold type] fire cursed energy into your [X][bold type], destroying it![roman type][line break]";
 					destroy X;
-			if C is expansion and the player is not in a predicament room, compute periodic expansion effect of C;
-			if C is augmentation and the player is not in a predicament room, compute periodic augmentation effect of C;
+			if diaper quest is 0:
+				if C is expansion and the player is not in a predicament room, compute periodic expansion effect of C;
+				if C is rejuvenation and the player is not in a predicament room, compute periodic rejuvenation effect of C;
+				if C is augmentation and the player is not in a predicament room, compute periodic augmentation effect of C;
 		if playerRegion is school, compute school periodic effect of C;
 		otherwise compute periodic effect of C.
 
 To compute periodic expansion effect of (C - a clothing):
+	do nothing.
+
+To compute periodic rejuvenation effect of (C - a clothing):
 	do nothing.
 
 To compute periodic augmentation effect of (C - a clothing):
@@ -354,6 +359,16 @@ A time based rule (this is the dressup rule):
 			otherwise if F is breasts:
 				say "[bold type]You yelp in surprise as you feel two hands groping at your [BreastDesc]. Looking down, you see that your chest is being squeezed by your own [ShortDesc of H]! [roman type]Two subtle handprints can be seen within the [clothing-material of H] material itself, first kneading your flesh, and then focusing in to pinch at your nipples. There's nothing you can do but endure it as your possessed garment turns your body into its personal plaything.";
 				stimulate breasts from H;
+		otherwise if H is equippable:
+			let R be a random number between 1 and 2;
+			let P be vagina;
+			if R is 1, let P be breasts;
+			if P is vagina and the player is not possessing a vagina, now P is penis;
+			say "[bold type]Your [ShortDesc of H] lights up as it moves of its own accord, pushing your hand holding it down towards your [ShortDesc of P]. [roman type]Soon, it is shoving your wrist, and the base of your palm, into your [ShortDesc of P], grinding it around and around as sensually as it can.[line break][variable custom style]H-hey![roman type][line break]Not only are you being molested by your own [if H is slap ready or H is zap ready]weapon[otherwise]item[end if], but it's preventing you from using your hands normally!";
+			stimulate P from arms;
+			if another-turn is 0:
+				now another-turn is 1;
+				now another-turn-flavour is "You wrestle back control of [NameDesc of H].";
 		otherwise:
 			let R be a random number between 1 and 3;
 			let P be face;

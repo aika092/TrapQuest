@@ -8,7 +8,7 @@ anal-orgasms is a number that varies. anal-orgasms is 0.
 vaginal-orgasms is a number that varies. vaginal-orgasms is 0.
 
 Definition: a person is able to orgasm:
-	if player-fucking is not DOMINANT-NONE and refractoryperiod < 1, decide yes;
+	[if player-fucking is not DOMINANT-NONE and refractoryperiod < 1, decide yes;]
 	if player-fucking is not DOMINANT-NONE, decide yes;
 	if the class of the player is royal slave:
 		if there is a monster grabbing the player or there is a monster penetrating a body part:[a reason why the player might want to masturbate during a blowjob]
@@ -312,7 +312,7 @@ This is the ejaculation capture rule:
 			compute multiple choice question;
 			if player-numerical-response > 0, now collecting is entry player-numerical-response in LV;
 	if collecting is bottle:
-		say "[one of]Your [mystical ShortDesc of penis] [if A < 3]dribbles its small amount of [semen][otherwise if A < 5]ejaculates[otherwise]shoots string after string of potent [semen][end if] into the [mystical ShortDesc of collecting][or]Your [mystical ShortDesc of penis] [if A < 3]quivers as it dribbles a tiny amount of [semen][otherwise if A < 6]throbs gently as it shoots a couple small strings of [semen][otherwise if A < 9]throbs powerfully as it shoots several stings of potent [semen][otherwise if A < 11]pulses with primal power as it fires several long ropes of [semen][otherwise]pulses with primal power as it jets huge, almost inhuman levels of [semen][end if] into the [mystical ShortDesc of collecting][at random]. The strong smell hits your nostrils as you hold it in your hand, and you feel a [if the semen taste addiction of the player < 7]a weird temptation to taste just a tiny bit, which you quickly push to the back of your mind[otherwise if the semen taste addiction of the player > 13]a strong urge to drink it, which you push to the back of your mind for now[otherwise]bit more comfortable around [semen][end if].";
+		say "[one of]Your [mystical ShortDesc of penis] [if A < 3]dribbles its small amount of [semen][otherwise if A < 5]ejaculates[otherwise]shoots string after string of potent [semen][end if] into the [ShortDesc of collecting][or]Your [mystical ShortDesc of penis] [if A < 3]quivers as it dribbles a tiny amount of [semen][otherwise if A < 6]throbs gently as it shoots a couple small strings of [semen][otherwise if A < 9]throbs powerfully as it shoots several stings of potent [semen][otherwise if A < 11]pulses with primal power as it fires several long ropes of [semen][otherwise]pulses with primal power as it jets huge, almost inhuman levels of [semen][end if] into the [ShortDesc of collecting][at random]. The strong smell hits your nostrils as you hold it in your hand, and you feel a [if the semen taste addiction of the player < 7]a weird temptation to taste just a tiny bit, which you quickly push to the back of your mind[otherwise if the semen taste addiction of the player > 13]a strong urge to drink it, which you push to the back of your mind for now[otherwise]bit more comfortable around [semen][end if].";
 		SilentlySemenTasteAddictUp 1;
 		now the fill-colour of collecting is creamy;
 		DoseUp collecting by A / 3;

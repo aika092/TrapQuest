@@ -42,7 +42,7 @@ To say ClothingDesc of (O - lolita magical dress):
 Definition: lolita magical dress is white themed: decide yes.
 Definition: lolita magical dress is potentially erection concealing: decide yes. [non-tight skirts conceal erections]
 
-exposing-magical-dress is a magical dress. exposing-magical-dress is arm exposing. exposing-magical-dress is optional-top-displacable. exposing-magical-dress is chestless. exposing-magical-dress is belly exposing. exposing-magical-dress is unskirted. Understand "exposing", "magical", "dress" as exposing-magical-dress.
+exposing-magical-dress is a magical dress. exposing-magical-dress is arm exposing. exposing-magical-dress is chestless. exposing-magical-dress is belly exposing. exposing-magical-dress is unskirted. Understand "exposing", "magical", "dress" as exposing-magical-dress.
 
 Definition: exposing-magical-dress is class-relevant:
 	if the class of the player is magical girl or the class of the player is catgirl, decide yes;
@@ -115,7 +115,7 @@ To compute periodic effect of (O - magical-maid-outfit):
 				now the saved-item of O is in pink wardrobe;
 			now the saved-item of O is nothing.
 
-anime superheroine top is a magical dress. anime superheroine top is pvc. anime superheroine top is neck covering. anime superheroine top is belly exposing. anime superheroine top is unskirted. anime superheroine top is top-exclusive. anime superheroine top is low cut. anime superheroine top is not-top-displacable. anime superheroine top is erect-nipple-exposing. The text-shortcut of anime superheroine top is "aso".
+anime superheroine top is a magical dress. anime superheroine top is pvc. anime superheroine top is neck covering. anime superheroine top is belly exposing. anime superheroine top is unskirted. anime superheroine top is top-exclusive. anime superheroine top is low cut. anime superheroine top is not-displacable-always-fuckable. anime superheroine top is erect-nipple-exposing. The text-shortcut of anime superheroine top is "aso".
 
 The printed name of anime superheroine top is "[clothing-title-before]anime superheroine top[clothing-title-after]".
 

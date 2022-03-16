@@ -27,16 +27,6 @@ To reset rectum:
 	if rectum > 0, now rectum is 1;
 	now suppository is 0.
 
-[!<TheDiaperQuestersGoFromTheStartRule>+
-
-In TQ, rectum mechanics have to be activated by an in-game effect such as the matron.
-In DQ, rectum is immediately set to 1 and so mechanics are active from the start of the game.
-
-+!]
-This is the diaper questers go from the start rule:
-	if diaper messing >= 3, now rectum is 1.
-The diaper questers go from the start rule is listed in the diaper quest fix rules.
-
 [!<YourselfIsFull>+
 
 Does the player need to go number 2?

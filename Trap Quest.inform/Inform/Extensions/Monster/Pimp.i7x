@@ -113,7 +113,7 @@ To compute perception of (M - pimp):
 			say "[speech style of M]'Your debt is paid. I guess it's time to release you.'[roman type][line break]";
 			release pimp portals;
 		otherwise:
-			say "[speech style of M]'Your debt isn't paid off yet. Come see me after a few more [brotha of shopkeeper]s have had their fun with you.'[roman type][line break]";
+			say "[speech style of M]'Your debt isn't paid off yet. Come see me after a few more [brotha of shopkeeper]s have had their fun with you.'[roman type][line break][BigNameDesc of M] purposefully stops paying attention to you.";
 		distract M;
 	otherwise if M is unfriendly:
 		say "[speech style of M]'You owe me money, bitch. You'd best give me what you owe me right now or I'll find another way of taking it.'[roman type][line break]";

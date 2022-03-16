@@ -1138,7 +1138,7 @@ To decide if successful experimental bra dressup by (P - a person):
 				now the augmentation-charging-time of B is 5;
 		otherwise:
 			if the Magic-type of B is not blandness:
-				say ", warping its magic from [magic-type] into augmentation as it shimmers snugly over your [BreastDesc], like two hands gently cupping them.";
+				say ", warping its magic from [magic-type of B] into augmentation as it shimmers snugly over your [BreastDesc], like two hands gently cupping them.";
 				now the Magic-type of B is augmentation;
 			otherwise:
 				now the Magic-type of B is augmentation;
@@ -1154,8 +1154,7 @@ To decide if successful experimental bra dressup by (P - a person):
 				now B is a random off-stage plentiful latex bra; [Try for a latex one, if possible]
 			if B is nothing:
 				now B is a random off-stage plentiful bra;
-				if B is nothing:
-					decide no; [I don't understand why this would happen.]
+				if B is nothing, decide no; [Would only happen in a late-game edge case where all the bras were already on-stage.]
 			if B is a training bra:
 				increase N by 1;
 				if debugmode > 0:

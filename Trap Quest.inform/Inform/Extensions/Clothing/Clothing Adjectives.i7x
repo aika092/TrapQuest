@@ -222,11 +222,14 @@ Definition: a clothing is actually breast covering:
 	decide no. [Yes it's a chest slot item but does it actually cover any skin?]
 Definition: a clothing is breast hiding: decide no. [Does it somehow completely hide the fact that the player has breasts? Probably with a portal or something like that]
 Clothing can be top-placed or top-displaced. Clothing is usually top-placed.[Displaced but for the chest.]
-Clothing can be top-displacable, optional-top-displacable, or not-top-displacable (this is the top-displacability property). Clothing is usually not-top-displacable.[optional-top-displacable means it can be displaced, but it's not necessary.]
+Clothing can be top-displacable, optional-top-displacable, not-displacable-always-fuckable or not-top-displacable (this is the top-displacability property). Clothing is usually not-top-displacable.[optional-top-displacable means it can be displaced, but it's not necessary.]
+Definition: a clothing (called C) is usually top-displacable rather than usually not-top-displacable:
+	if C is not-top-displacable or C is not-displacable-always-fuckable, decide no;
+	if C is fully exposing or C is chestless or C is rigid or C is corset, decide no;
+	decide yes.
 Definition: a clothing (called C) is actually top-displacable rather than actually not-top-displacable:
 	if C is not worn or C is glued, decide no;
-	if C is top-displaced or C is not-top-displacable, decide no;
-	if C is fully exposing or C is chestless or C is rigid or C is top-ripped or C is corset, decide no;
+	if C is top-displaced or C is top-ripped or C is usually not-top-displacable, decide no;
 	repeat with D running through worn top level breasts protection clothing:
 		if the top-layer of D > the top-layer of C, decide no;
 	decide yes.
@@ -426,7 +429,7 @@ Definition: yourself is top-wardrobe-malfunctioning:
 		now latest-top-malfunction is 0;
 		decide no;
 	let C be a random worn actually nipple covering clothing;
-	if C is not-top-displacable or C is glued or C is fully covering or C is fully exposing or C is slutty-bat-corset:
+	if C is actually not-top-displacable or C is slutty-bat-corset:
 		now latest-top-malfunction is 0;
 		decide no;
 	if latest-top-malfunction is not 0:

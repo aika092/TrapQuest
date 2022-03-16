@@ -3,7 +3,9 @@ Bridal Veils by Headgear begins here.
 A bridal veil is a kind of headgear. A bridal veil is usually silk. A bridal veil is blondeness-positive. A bridal veil is usually hair growing. A bridal veil is usually anal-sex-addiction-influencing. A bridal veil is womanly.
 
 Definition: a bridal veil is white themed: decide yes.
-Definition: a bridal veil is roleplay: decide yes.
+Definition: a bridal veil is roleplay:
+	if the player is possessing a vagina or tg fetish > 0, decide yes;
+	decide no.
 
 To say ShortDesc of (H - a bridal veil):
 	say "bridal veil".
@@ -21,22 +23,35 @@ To decide which figure-name is the clothing-image of (C - floral bridal veil):
 	decide on figure of floral bridal veil.
 
 To say ClothingDesc of (H - floral bridal veil):
-	say "This floral headband connects to a sheer silky veil. You keep it pulled back and out of eyes for practical reasons.".
+	say "This floral headband connects to a sheer silky veil[if H is worn and the ceremony of betrothal-quest is false]. It is partially concealing your face[otherwise if H is worn]. It has been pulled back, revealing your face[end if].".
 
 
 Chapter - Class Outfit
 
-To compute virginity-loss of (C - a bridal veil):
-	do nothing.
+To compute virginity-loss of (C - a bridal veil): [no escaping it by losing virginity then re-wearing the clothing]
+	if bride-consort is not penetrating vagina:
+		let D be a random worn overdress;
+		if D is not bridal dress: [Bridal dresses have their own virginity loss functions if worn, so can be left alone.]
+			say "For failing to [if bride-consort is monster]lose your virginity to [FuckerDesc of bride-consort][otherwise]save your virginity until marriage[end if], you feel cursed energy [if D is dress]falling on your [MediumDesc of D][otherwise]emanating from your [MediumDesc of C][end if]!";
+			if D is not gang-bang-girl vest top and D is not burning love crop top:
+				if the ceremony of betrothal-quest is false, now D is sexy bridal dress;
+				otherwise now D is slutty bridal dress;
+				class summon D;
+			if D is worn:
+				now D is cursed;
+				now the quest of D is vaginal-addict-quest;
+				say QuestFlav of D.
 
 To compute class outfit of (H - a bridal veil):
+	if the player is not possessing a vagina:
+		say DefaultSexChangeFlav;
+		SexChange the player;
 	if the vaginalvirgin of the player is 1:
 		class summon long bridal dress;
 	otherwise:
 		if the ceremony of betrothal-quest is false, class summon sexy bridal dress;
 		otherwise class summon slutty bridal dress;
 	if the ceremony of betrothal-quest is true, class summon floral bouquet.
-
 
 Chapter - Quest
 
@@ -45,32 +60,49 @@ betrothal-quest is a headgear-clothing-quest. betrothal-quest has a truth state 
 To uniquely set up (C - a bridal veil):
 	now the quest of C is betrothal-quest.
 
+To compute unique recycling of (C - a bridal veil):
+	if the vaginalvirgin of the player is 1 and the consummation of betrothal-quest is false:
+		now the ceremony of betrothal-quest is false;
+		now bride-consort is the throne;
+		now C is cursed;
+		repeat with F running through bouquets:
+			if F is held or F is in the location of the player, say "[BigNameDesc of F] wilts and then fizzles into dust.";
+			only destroy F.
+
 To say QuestFlav of (Q - betrothal-quest):
-	say "You sense it wants you to [if bride-consort is the throne]find a husband to please (but the more you say no, the more appealing the offers may become!)[otherwise]keep your husband ([FuckerDesc of bride-consort]) pleased (or banish [him of bride-consort])[end if].".
+	say "You sense it wants you to [if bride-consort is the throne]find a husband to please (but the more you say no, the more appealing the offers may become!).[otherwise]keep your husband ([FuckerDesc of bride-consort]) pleased (or banish [him of bride-consort]).[end if]".
 
 To say QuestTitle of (Q - betrothal-quest):
 	say " (marriage quest)".
 
-To compute generic first time class reward of (Q - betrothal-quest) on (C - a clothing):
-	say "making you feel flushed with arousal, and making your [vagina] pulse with a desire to be bred!";
-	arouse 3000.
+To compute quest completion of (Q - betrothal-quest) on (C - a clothing):
+	if the ceremony of Q is false:
+		say "Your [MediumDesc of C] brims with blessed energy... making you feel flushed with arousal, and making your [vagina] thorb with a desperate desire to be bred![line break][variable custom style]Huh?![roman type][line break]It seems like your quest isn't over yet. Next you need to [bold type]find the Kama Sutra Penthouse Suite[roman type], and [bold type]go there alone[roman type] while [bold type]holding [if there is a worn bouquet]your bouquet[otherwise]a bouquet[roman type] (since you didn't get the bouquet this time round because your hand was already full, you'll need to find the [bold type]mystical wardrobe in the mansion[roman type] to obtain your missing class gear)[end if].[line break][variable custom style]My [vagina]... It's pulsing with need! Oh, I need [manly-penis] in my [vagina]! Right now! [if the player is not a pervert]Oh my god... what am I thinking? What's happening to me?! But I can't deny this deep need I can feel down there...[end if][roman type][line break]";
+		arouse 3000;
+	otherwise:
+		say QuestPersistFlav of Q on C;
+		if C is cursed:
+			let D be a random off-stage necklace;
+			if D is necklace and the time-alive of bride-consort > 0: [NPC was bedded, not banished]
+				now D is pink diamond;
+				set shortcut of D;
+				if D is actually summonable:
+					summon D;
+				otherwise:
+					now D is in the location of the player;
+				say "summoning a [MediumDesc of D] [if D is worn]straight onto your neck[otherwise]right in front of you[end if]!";
+			otherwise:
+				compute generic class reward of Q on C;
+		otherwise:
+			compute persistent reward of Q on C;
+		increase the quest-completions of Q by 1;
+		if C is bland, now C is blessed;
+		if C is cursed, silently bless C;
+		say "[roman type][line break]".
 
 To decide which number is the vaginal-sex-addiction-influence of (C - a bridal veil):
-	if C is cursed, decide on -1;
-	if C is blessed, decide on 0;
+	if the consummation of betrothal-quest is true, decide on 0;
+	if the ceremony of betrothal-quest is false, decide on -1;
 	decide on 5.
-
-To compute generic second time class reward of (Q - betrothal-quest) on (C - a clothing):
-	let D be a random off-stage necklace;
-	if D is necklace and the time-alive of bride-consort > 0: [NPC was bedded, not banished]
-		now D is pink diamond;
-		set shortcut of D;
-		if D is actually summonable:
-			summon D;
-		otherwise:
-			now D is in the location of the player;
-		say "summoning a [MediumDesc of D] [if D is worn]straight onto your neck[otherwise]right in front of you[end if]!";
-	otherwise:
-		compute generic class reward of Q on C.
 
 Bridal Veils ends here.

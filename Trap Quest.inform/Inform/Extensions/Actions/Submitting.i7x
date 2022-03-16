@@ -34,7 +34,7 @@ Report submitting:
 	let M be a random thing grabbing the player;[prioritize anyone holding the player down]
 	if M is nothing, now M is a random live thing penetrating a body part;[next, prioritize anyone inside the player]
 	if M is nothing, now M is a random thing wrangling a body part;[Lastly, we take a look at any holders on.]
-	unless M is nothing or (diaper quest is 1 and M is live):
+	unless M is nothing or (diaper quest is 1 and M is live) or (M is monster and M is not doing nothing special):
 		if forced submit > 0:
 			if forced submit > 1, do nothing instead;[handled by the resisting function, since we don't know the reason why the player can't resist unless we do it there]
 			now forced submit is 0;

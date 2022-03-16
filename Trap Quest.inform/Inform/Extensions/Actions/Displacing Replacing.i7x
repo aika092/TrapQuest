@@ -58,7 +58,7 @@ Definition: yourself is able to displace:
 Check displacing:
 	if the noun is not clothing, say "This verb is used for moving clothing that can be moved aside." instead;
 	if the noun is not worn, say "But you're not even wearing [the noun]..." instead;
-	if the noun is not displacable and the noun is not not-top-displacable, try topDisplacing the noun instead;[if it can't cover the crotch, or it's pulled aside, this allows the top displacing verb to be used instead. Note that there is a bug where sheer knee-length and hobble-skirted skirts cannot be displaced]
+	if the noun is not displacable and the noun is usually not-top-displacable, try topDisplacing the noun instead;[if it can't cover the crotch, or it's pulled aside, this allows the top displacing verb to be used instead. Note that there is a bug where sheer knee-length and hobble-skirted skirts cannot be displaced]
 	if the noun is crotch-displaced, try replacing the noun instead;
 	if the player is not able to displace, do nothing instead.
 

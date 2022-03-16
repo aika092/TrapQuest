@@ -6,7 +6,7 @@ minotaur is in Dungeon36. minotaur is caged.
 Figure of minotaur is the file "NPCs/Bosses/Minotaur/minotaur1.png".
 Figure of minotaur caged is the file "NPCs/Bosses/Minotaur/minotaur2.png".
 Figure of female minotaur is the file "NPCs/Bosses/Minotaur/minotaur3.png".
-Figure of hulk is the file "NPCs/Bosses/Minotaur/hulk1.jpg".
+Figure of hulk is the file "NPCs/Bosses/Minotaur/hulk1.png".
 Figure of female hulk is the file "NPCs/Bosses/Minotaur/hulk2.png".
 
 Figure of Minotaur Cutscene 1 is the file "NPCs/Bosses/Minotaur/cutscene-minotaur-stomp1.png".
@@ -16,6 +16,8 @@ Figure of Minotaur Cutscene 4 is the file "NPCs/Bosses/Minotaur/cutscene-minotau
 Figure of Minotaur Cutscene 5 is the file "NPCs/Bosses/Minotaur/cutscene-minotaur-climax1.png".
 Figure of Minotaur Cutscene 6 is the file "NPCs/Bosses/Minotaur/cutscene-minotaur-splash1.png".
 Figure of Minotaur Cutscene 7 is the file "NPCs/Bosses/Minotaur/cutscene-minotaur-ready1.png".
+Figure of Minotaur Cutscene 8a is the file "NPCs/Bosses/Minotaur/cutscene-minotaur-fuck3a.jpg".
+Figure of Minotaur Cutscene 8b is the file "NPCs/Bosses/Minotaur/cutscene-minotaur-fuck3b.jpg".
 
 To decide which figure-name is the monster-image of (M - minotaur):
 	if mythical creature fetish is 1:
@@ -277,7 +279,7 @@ To say CagedMinotaurThrustFlav of (M - minotaur):
 
 To say CagedMinotaurSwingFlav of (M - minotaur):
 	let N be the swing-intensity of M;
-	say "[BigNameDesc of M] [one of]bang [his of M] fists against the side of the cage[or]throws [his of M] weight against the side of the cage[or]slams against the bars of the cage[or]throws [himself of M] at the side of the cage[in random order], [if N <= 0]causing it to swing slightly back and forth[otherwise if N is 1]causing it to slowly swing a few centimetres back and forth[otherwise if N is 2]causing it to steadily swing a few inches back and forth[otherwise if N is 3]causing it to swing a few feet in either direction[otherwise if N is 4]causing it to steadily swing several feet back and forth[otherwise]swinging the cage in a huge arc covering most of the room[end if]".
+	say "[BigNameDesc of M] [one of]bang [his of M] fists against the side of the cage[or]throws [his of M] weight against the side of the cage[or]slams against the bars of the cage[or]throws [himself of M] at the side of the cage[in random order], [if N <= 0]causing it to swing slightly back and forth[otherwise if N is 1]causing it to slowly swing a few centimetres back and forth[otherwise if N is 2]causing it to steadily swing a few inches back and forth[otherwise if N is 3]causing it to swing a few feet in either direction[otherwise if N is 4]causing it to steadily swing several feet back and forth[otherwise]swinging the cage in a huge arc covering most of the room[end if].".
 
 To compute CagedMinotaurGrabbing of (M - minotaur):
 	say "[BigNameDesc of M] [one of]thrusts [his of M] arm through a gap in[or]reaches through the bars in[or]tries to grab you through the bars of[or]pushes [his of M] arms through the gaps in[in random order] [his of M] cage!";
@@ -294,8 +296,8 @@ To compute CagedMinotaurGrabbing of (M - minotaur):
 
 To compute CagedMinotaurMolesting of (M - minotaur):
 	if the blue-balls of M > a random number between 4 and 9:[NUT]
-		if the thickness of hips < 5 and asshole is undefended:[If you fit into the cage, you faint, since the cum bloating would mean you couldn't get out.]
-			say "[if the reaction of the player is 0][BigFuckerDesc of M] shrugs off your attempts to struggle[otherwise][BigFuckerDesc of M] breathes heavily[end if] as [he of M] exchanges [his of M] grip on your arms for a grip on your thighs. [big he of M] yanks your feet through the gap between the bars, which is just wide enough to let [him of M] drag in your legs, followed by your hips You curse Nintendolls for your petite frame as you hook your armpits around the two bars to prevent [him of M] from using [his of M] powerful limbs to pull you in any further. [big his of M] 'smallest' limb is rock-hard, throbbing, and drooling precum as [he of M] aligns [his of M] [cockhead of M] with your exposed asshole. Knowing there's nothing more you can do at this point, you [if the reaction of the player is 0]stop struggling and [end if]grit your teeth as [he of M] slams right in.";
+		if asshole is undefended:[If you fit into the cage, you faint, since the cum bloating would mean you couldn't get out.]
+			say "[if the reaction of the player is 0][BigFuckerDesc of M] shrugs off your attempts to struggle[otherwise][BigFuckerDesc of M] breathes heavily[end if] as [he of M] exchanges [his of M] grip on your arms for a grip on your thighs. [big he of M] yanks your legs up against the cage, forcing the back of your body up agains a gap between two vertical bars. [big his of M] 'smallest' limb is rock-hard, throbbing, and drooling precum as [he of M] aligns [his of M] [cockhead of M] through the bars, and towards your exposed asshole. Knowing there's nothing more you can do at this point, you [if the reaction of the player is 0]stop struggling, [end if]grab the bars to keep yourself steady and grit your teeth as [he of M] slams right in.";
 			now M is penetrating asshole; [This allows orgasm function to work properly]
 			ruin asshole times 2;
 			say "[Big he of M] has clearly been pent-up and gotten excited, because [he of M] starts ejaculating almost immediately. It starts coming... and it keeps coming.";
@@ -303,6 +305,9 @@ To compute CagedMinotaurMolesting of (M - minotaur):
 			orgasm M;
 			now the blue-balls of M is -5;
 			now the swing-intensity of M is 0;
+			if mythical creature fetish is 1:
+				if the player is possessing a penis, cutshow Figure of Minotaur Cutscene 8b for M;
+				otherwise cutshow Figure of Minotaur Cutscene 8a for M;
 			dislodge M;
 			say "Even [he of M] isn't prepared for the pressure that has build up inside you, because you're suddenly flung forward back out of the cage the cage as a fountain of cum shoots back out of your [asshole].";
 			if the player is upright, try kneeling;

@@ -41,7 +41,7 @@ To reflect on (A - outrageous-evening-dress):
 
 Part 1 - Red Evening Dress
 
-A red evening dress is a kind of evening dress. A red evening dress is usually crotch-exposing. A red evening dress is usually fully exposing. A red evening dress is usually belly exposing. There is 1 red evening dress. The text-shortcut of red evening dress is "rev". A red evening dress is not-top-displacable.
+A red evening dress is a kind of evening dress. A red evening dress is usually crotch-exposing. A red evening dress is usually fully exposing. A red evening dress is usually belly exposing. There is 1 red evening dress. The text-shortcut of red evening dress is "rev". A red evening dress is not-displacable-always-fuckable.
 
 The printed name of red evening dress is usually "[clothing-title-before]red evening dress[clothing-title-after]".
 
@@ -142,7 +142,7 @@ Definition: a lace evening dress is white themed: decide yes.
 
 Part 5 - Purple Evening Dress
 
-purple-evening-dress is an evening dress. purple-evening-dress is very low cut. purple-evening-dress is rare. The text-shortcut of lace evening dress is "ppev". Understand "purple", "evening", "dress" as purple-evening-dress.
+purple-evening-dress is an evening dress. purple-evening-dress is very low cut. purple-evening-dress is optional-top-displacable. purple-evening-dress is rare. The text-shortcut of lace evening dress is "ppev". Understand "purple", "evening", "dress" as purple-evening-dress.
 
 The printed name of purple-evening-dress is "[clothing-title-before]purple evening dress[clothing-title-after]".
 

@@ -869,7 +869,8 @@ To compute SeductionMasturbateClimax of (M - a monster):
 		say "[big his of M] load is spilled onto the floor.";
 		SemenPuddleUp the semen load of M;
 		if M is human and M is not dark skinned and the bbc addiction of the player > 6, say "[variable custom style]Hmph! White [men of shopkeeper].[roman type][line break]";
-	orgasm satisfy M.
+	orgasm satisfy M;
+	progress quest of greet-quest.
 
 To compute FirstTurnSeduceGrindAnnounce of (M - a monster):
 	if the player is able to speak:
@@ -921,8 +922,9 @@ To compute SeductionPaizuri of (M - a monster):
 
 To compute SeductionPaizuriClimax of (M - a monster):
 	now M is penetrating breasts;
-	follow the default cleavage climax rule.
+	follow the default cleavage climax rule;
 	[orgasm M. This is handled in the cleavage climax function]
+	progress quest of greet-quest.
 
 To compute FirstTurnSeduceOralAnnounce of (M - a monster):
 	if the player is able to speak:
@@ -966,8 +968,9 @@ To compute SeductionSoulOral of (M - a monster):
 
 To compute SeductionOralClimax of (M - a monster):
 	now M is penetrating face;
-	follow the default facial climax rule.
+	follow the default facial climax rule;
 	[orgasm M. handled in the climax function]
+	progress quest of greet-quest.
 
 To compute StrongSexProgress of (M - a monster):
 	decrease the sex-length of M by 1;

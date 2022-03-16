@@ -257,7 +257,7 @@ A time based rule (this is the patron encountering rule):
 				let M be a random monster in the location of the player;
 				if the player is in Hotel38 and watersports fetish is 1 and a2m fetish >= 2 and the human-toilet-scene of woman-player is not 1, now M is toilet;
 				let PSRB be a random carried probably-serve-ready bottle;
-				if PSRB is a bottle:
+				if PSRB is a bottle and the waitress bartering value of PSRB for M > 0:
 					now P is in the location of the player;
 					set up P;
 					compute waitressDemand of P on PSRB;
@@ -387,7 +387,7 @@ To compute patronMeeting of (M - a monster) with (P - a patron):
 
 To compute patronMeeting of (M - a demon lord) with (P - a patron):
 	if debuginfo > 1, say "[input-style]Patron is meeting [NameDesc of M].[roman type][line break]";
-	if M is in the location of the player, say "A [MediumDesc of P] walks into the room and accidentally bumps into [NameDesc of M]";
+	if M is in the location of the player, say "A [MediumDesc of P] walks into the room and accidentally bumps into [NameDesc of M].";
 	compute M stomping P.
 
 To compute patronMeeting of (M - a mechanic) with (P - a patron):[performance]

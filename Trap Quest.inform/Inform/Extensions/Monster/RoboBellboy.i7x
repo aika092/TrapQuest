@@ -3,6 +3,7 @@ RoboBellboy by Monster begins here.
 A robobellboy is a kind of robot. Understand "bellboy", "bell", "boy" as robobellboy. A robobellboy is usually intelligent. The favour of a robobellboy is usually 11. The leftover-type of a robobellboy is usually 117. A robobellboy has a number called whore-intent.
 
 Figure of robobellboy is the file "NPCs/Hotel/Robot/robobellboy1.jpg".
+Figure of senior robobellboy is the file "NPCs/Hotel/Robot/robobellboy2.jpg".
 Figure of RoboBellboy Perception 1 is the file "NPCs/Hotel/Robot/robobellboy-perception1.jpg".
 
 speedy robobellboy is a robobellboy. The text-shortcut of speedy robobellboy is "sbe".
@@ -117,6 +118,7 @@ Definition: a senior robobellboy is objectifying the player:
 	decide no.
 
 To compute perception of (M - senior robobellboy):
+	say "[BigNameDesc of M] notices you!";
 	if there is a worn messed knickers:
 		say "[first custom style]'NEARBY MESSY [if there is a worn diaper]DIAPER[otherwise]UNDERWEAR[end if] DETECTED. [caps please] ASSUME THE NAPPY INSPECTION SUBMISSION POSITION.'[roman type][line break]";
 		if there is worn perceived unmessed knickers, compute state check of a random worn messed knickers;
@@ -386,10 +388,16 @@ senior robobellboy is a robobellboy. senior robobellboy has a number called trai
 To decide which number is the starting difficulty of (M - senior robobellboy):
 	decide on 8.
 
+To decide which figure-name is the monster-image of (M - senior robobellboy):
+	decide on figure of senior robobellboy.
+
 To say ShortDesc of (M - senior robobellboy):
 	say "senior RoboBellboy".
 To say MediumDesc of (M - senior robobellboy):
 	say "senior RoboBellboy".
+
+To say MonsterDesc of (M - senior robobellboy):
+	say "A small, human-shaped robot with an orange uniform stylishly painted onto [his of M] clunky body. The words 'SuperBellTron 2003' are printed directly onto [his of M] metal chassis, which has a seam running straight down the centre, allowing it to open up like a door. [big he of M] has two bulging [']eyes['], which glow faintly as [he of M] hobbles around noisily on clumsy mechanical legs. You can occasionally hear small bits of radio feedback from the dimpled antennae on top, which seem to correspond with tiny micro-movements of [his of M] oversized, accordion-like torso.".
 
 To ProgressUp (M - senior robobellboy):
 	if the training-progress of M >= 0, increase the training-progress of M by 1;

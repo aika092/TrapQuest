@@ -5,6 +5,9 @@ Part - Monsters
 To decide which figure-name is Figure of aeromancer cutscene 7:
 	decide on figure of small image.
 
+To decide which figure-name is Figure of cage ass expansion trap:
+	decide on figure of small image.
+
 To decide which figure-name is Figure of demoness cutscene 1:
 	decide on figure of small image.
 To decide which figure-name is Figure of demoness cutscene 2:

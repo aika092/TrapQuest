@@ -273,7 +273,7 @@ To compute virginity-loss of (H - virgin magical girl outfit):
 
 Part 8 - Virgin Princess Outfit
 
-virgin princess outfit is an immodest warrior chestpiece. virgin princess outfit is silk. virgin princess outfit is belly exposing. virgin princess outfit is neck covering. virgin princess outfit is unskirted. virgin princess outfit is crotch-intact. virgin princess outfit is optional-top-displacable. virgin princess outfit is ridiculously low cut. virgin princess outfit is totally-exclusive. virgin princess outfit is normally-partially-nipple-covering.
+virgin princess outfit is an immodest warrior chestpiece. virgin princess outfit is silk. virgin princess outfit is belly exposing. virgin princess outfit is neck covering. virgin princess outfit is unskirted. virgin princess outfit is crotch-intact. virgin princess outfit is not-displacable-always-fuckable. virgin princess outfit is ridiculously low cut. virgin princess outfit is totally-exclusive. virgin princess outfit is normally-partially-nipple-covering.
 
 Figure of virgin princess outfit is the file "Items/Clothes/Upper/Special/Warrior/princess1.png".
 

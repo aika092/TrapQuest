@@ -805,8 +805,12 @@ This is the gladiator sex conversion rule:
 		let player-moved be 0;
 		now the target-room of M is Dungeon33;
 		if the location of the player is Dungeon33:
-			say "[speech style of M]'At last, we can complete your transformation. Your downstairs transformation, at least...'[roman type][line break][BigNameDesc of M] pushes you into the middle of the circle and whispers a few words in a language you don't understand. At first it seems like whatever [he of M] just tried to do didn't work, but then you feel your insides, behind your crotch, twisting and turning and rearranging themselves[if the player is possessing a penis], and then you shriek in surprise and horror as you realise you can't feel your [player-penis][end if]! You reach down to feel yourself and discover that a brand new [variable custom style][vagina][roman type] has taken its place. ";
-			SexChange the player;
+			if the player is possessing a vagina:
+				say "[speech style of M]'Now we can curse that horrible abnormality you have down there.'[roman type][line break][BigNameDesc of M] pushes you into the middle of the circle and whispers a few words in a language you don't understand. At first it seems like whatever [he of M] just tried to do didn't work, but then you shriek in surprise and horror as you realise you can't feel your [player-penis] any more! It's completely gone!";
+				now the size of penis is 0;
+			otherwise:
+				say "[speech style of M]'At last, we can complete your transformation. Your downstairs transformation, at least...'[roman type][line break][BigNameDesc of M] pushes you into the middle of the circle and whispers a few words in a language you don't understand. At first it seems like whatever [he of M] just tried to do didn't work, but then you feel your insides, behind your crotch, twisting and turning and rearranging themselves[if the player is possessing a penis], and then you shriek in surprise and horror as you realise you can't feel your [player-penis][end if]! You reach down to feel yourself and discover that a brand new [variable custom style][vagina][roman type] has taken its place. ";
+				SexChange the player;
 			satisfy M;
 		otherwise:
 			drag to Dungeon33 by M;
@@ -1472,10 +1476,13 @@ To say DamageReactSubmissive of (M - a gladiator):
 
 To say BanishForceFlav of (M - a gladiator):
 	let E be a random worn slap ready equippable;
-	say "You [if the player is able to use their hands]roughly grab [NameDesc of M] by the breasts[otherwise]stand over the defeated [MediumDesc of M], staring down menacingly[end if].[line break][if the player is able to speak][variable custom style]'I have proven my strength. Now leave this place, and never return, while you still have the chance.'[roman type][line break][end if][BigNameDesc of M] snarls, but looks more angry at [himself of M] than at you.[line break][speech style of M]'[roman type][line break]".
+	say "You [if the player is able to use their hands]roughly grab [NameDesc of M] by the breasts[otherwise]stand over the defeated [MediumDesc of M], staring down menacingly[end if].[line break][if the player is able to speak][variable custom style]'I have proven my strength. Now leave this place, and never return, while you still have the chance.'[roman type][line break][end if][BigNameDesc of M] snarls, but looks more angry at [himself of M] than at you.[line break][speech style of M]'I have humiliated myself, and my people. I can never return to these lands.'[roman type][line break]".
 
 To compute loot dropping of (D - metal-disc) by (M - a gladiator):
 	say "[BigNameDesc of M] plucks a [D] from [his of M] belt and tosses it towards you. It rolls towards you and comes to a halt at your feet.[line break][speech style of M]'There. A trophy for your victory. I wonder what I will take for my trophy the next time we fight...'[roman type][line break]".
+
+To say BanishDropFlav of (C - gladiator-sword) from (M - a gladiator):
+	say "[BigNameDesc of M] drops [his of M] sword onto the ground at your feet.[line break][speech style of M]'I have proven myself unworthy of this sword's power. Take it if you will... but once you do, you must follow The Way. Do not run from fights, lest the blade's burden become too much for you to bear.'[roman type][line break]".
 
 Section 4 - Dominant Sex
 

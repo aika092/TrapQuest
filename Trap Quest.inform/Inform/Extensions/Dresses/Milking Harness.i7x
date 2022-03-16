@@ -1,6 +1,6 @@
 Milking Harness by Dresses begins here.
 
-milking harness is an overdress. milking harness is unique. milking harness is ass plugging. milking harness is totally-exclusive. milking harness is unskirted. milking harness is plastic. milking harness is not-top-displacable. milking harness is no-crotch. milking harness is enema-helping. milking harness is manly.
+milking harness is an overdress. milking harness is unique. milking harness is ass plugging. milking harness is totally-exclusive. milking harness is unskirted. milking harness is plastic. milking harness is not-displacable-always-fuckable. milking harness is no-crotch. milking harness is enema-helping. milking harness is manly.
 
 The printed name of milking harness is "[clothing-title-before]milking harness[clothing-title-after]". The text-shortcut of milking harness is "mh".
 

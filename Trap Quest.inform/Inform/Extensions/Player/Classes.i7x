@@ -727,15 +727,15 @@ a later time based rule (this is the explaining faerie rule):
 
 This is the bunny class rule:
 	if there is a worn bunny ears:
-		now player-class is "bunny";
+		let T be "bunny";
+		if pregnancy fetish is 1 and bunny tail plug is worn, now T is "fertile bunny";
+		now player-class is "[T]";
 		if playdude bunny waitress ears is worn:
-			now player-class is "bunny waitress";
+			now player-class is "[T] waitress";
 		otherwise if rubber-bunny-waitress-ears is worn:
-			now the player-class is "plastic bunny waitress";
+			now the player-class is "plastic [T] waitress";
 		otherwise if frilly bunny ears is worn:
-			now the player-class is "plastic bunny maid";
-		otherwise if bunny tail plug is worn:
-			now the player-class is "fertile bunny";
+			now the player-class is "plastic [T] maid";
 		rule succeeds.
 The bunny class rule is listed in the player class rules.
 
@@ -745,7 +745,7 @@ If the player is the fertile bunny, the even more desirable it gets for NPCs to 
 
 +!]
 This is the fertile bunny pussy slut rule:
-	if the player-class is "fertile bunny", increase the desirability of vagina by 5.
+	if the player-class matches the text "fertile", increase the desirability of vagina by 5.
 The fertile bunny pussy slut rule is listed in the pussy slut eligibility rules.
 
 [!<TheFertileBunnyButtSlutRule>+
@@ -754,12 +754,12 @@ If the player is the fertile bunny, the less desirable it gets for NPCs to penet
 
 +!]
 This is the fertile bunny butt slut rule:
-	if the player-class is "fertile bunny", decrease the desirability of asshole by 5.
+	if the player-class matches the text "fertile", decrease the desirability of asshole by 5.
 The fertile bunny butt slut rule is listed in the butt slut eligibility rules.
 
 [!<TextIsBunny>+
 
-Thanks to the fertile bunny multi-class, we have multiple different texts that need to be able to return true for the class of the player being bunny.
+We have multiple different texts that need to be able to return true for the class of the player being bunny.
 
 +!]
 Definition: a text (called T) is bunny:

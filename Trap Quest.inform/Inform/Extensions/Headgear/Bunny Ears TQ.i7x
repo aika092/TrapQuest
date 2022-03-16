@@ -31,8 +31,12 @@ To compute unique periodic effect of (C - bunny waitress ears):
 			say "[bold type]You can feel your bunny ears making you much [smarter][one of]![line break][variable custom style]Wow, I feel amazing while carrying around [if G is bottle and CG is bottle]these drinks[otherwise]this drink[end if], just like a good bunny waitress![roman type][line break][or] again![stopping][roman type][line break]";
 			now service-ready is true.
 
+Definition: a monster (called M) is able to be waited upon:
+	if M is intelligent and M is human, decide yes;
+	decide no.
+
 To decide which number is the waitress bartering value of (T - a bottle) for (M - a monster):
-	if M is intelligent and M is human and M is friendly and T is non-empty:
+	if M is able to be waited upon and T is non-empty and M is friendly:
 		if the fill-colour of T is white and (the class of the player is royal slave or the class of the player matches the text "milkmaid"):
 			decide on 5;
 		if there is a worn waitress-enabling wearthing:

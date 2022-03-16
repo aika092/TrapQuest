@@ -290,13 +290,14 @@ sheer-briefs is a briefs. sheer-briefs is silk. sheer-briefs is sheer. sheer-bri
 To say selfexamineuniquetitle of (G - sheer-briefs):
 	say "pair of sheer silky briefs".
 To say UniqueClothingDesc of (G - sheer-briefs):
-	say "This pair of sheer brown briefs might look a bit [']uncivilized['], but is actually made from the finest silk. You sense that it helps you maintain agility and flexibility, even when pregnant, but only while it is uncovered.".
+	say "This pair of sheer brown briefs might look a bit [']uncivilized['], but is actually made from the finest silk. You sense that it helps you maintain agility and flexibility, even when pregnant, but only while it is uncovered. [bold type]You sense that even when you have a desperate desire to not wear panties, you would feel comfortable wearing these.[roman type][line break]".
 Definition: sheer-briefs is brown themed: decide yes.
 To decide which number is the unique outrage of (C - sheer-briefs):
 	decide on 1.
 To decide which number is the dexterity-influence of (G - sheer-briefs):
 	if G is currently uncovered, decide on 3;
 	decide on 0.
+Definition: sheer-briefs is no-panties-disallowed: decide no.
 
 Figure of briefs 1 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs1.png".
 Figure of briefs special 1 is the file "Items/Clothes/Lower/Underwear/Briefs/briefsspecial1.png".

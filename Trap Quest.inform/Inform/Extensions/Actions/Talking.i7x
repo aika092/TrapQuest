@@ -74,6 +74,7 @@ Check talking:
 	if the noun is a monster:
 		if the player is flying and playerRegion is Woods, say "You are too high up, they can't hear you." instead;
 		if the noun is asleep, say SleepTalkFail of the noun instead;
+		if the noun is interested and the player is in danger, say "Perhaps leave the idle chatter until after you're out of this situation?" instead;
 	otherwise:
 		unless the noun is slimegirl, say "How would you talk to that?" instead.
 

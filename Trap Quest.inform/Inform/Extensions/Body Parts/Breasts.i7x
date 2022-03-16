@@ -330,16 +330,19 @@ This is the breasts too tiny for titfuck rule:
 		rule fails.
 The breasts too tiny for titfuck rule is listed in the breasts presentable rules.
 
+Definition: a clothing (called C) is titfuck blocking rather than titfuck allowing:
+	if C is not worn or C is not breast covering or C is not top-placed, decide no;
+	if C is fully exposing or C is optional-top-displacable or C is not-displacable-always-fuckable, decide no;
+	decide yes.
+
 This is the breasts covered by clothing rule:
 	let allDisplacable be 1;
-	repeat with B running through worn breast covering top-placed clothing:
-		if B is not fully exposing and B is not optional-top-displacable:
-			unless (B is top-displacable and B is not glued) or B is usually autoremovable, now allDisplacable is 0;
+	repeat with B running through titfuck blocking clothing:
+		unless B is actually top-displacable or B is usually autoremovable, now allDisplacable is 0;
 	if allDisplacable is 0:
-		repeat with B running through worn breast covering top-placed clothing:
-			if B is not fully exposing and B is not optional-top-displacable:
-				if auto is 0, say "You would need to take your [printed name of B] off first.";
-				rule fails.
+		repeat with B running through titfuck blocking clothing:
+			if auto is 0, say "You would need to somehow remove your [printed name of B] off first.";
+			rule fails.
 The breasts covered by clothing rule is listed in the breasts presentable rules.
 
 This is the monster doesn't do titfucks rule:

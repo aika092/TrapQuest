@@ -190,8 +190,9 @@ To orgasm (M - a monster):
 	if notebook is worn or (the class of the player is schoolgirl and notebook is in the location of the player), compute studying 0 of M; [magical schoolgirls can have the notebook temporarily disarmed by tentacle monsters. the intention is that they should still get to study it]
 	if there is a summoning portal in the location of the player:
 		let S be a random summoning portal in the location of the player;
-		say "You feel a tingle near the back of your neck as [NameDesc of S][']s pressure intensifies.";
-		ChargeDown S by 60.
+		unless S is tentacle-breeder:
+			say "You feel a tingle near the back of your neck as [NameDesc of S][']s pressure intensifies.";
+			ChargeDown S by 60.
 
 To compute refractoryReset of (M - a monster):
 	if the blue-balls of M > 0, now the blue-balls of M is 0;
@@ -834,7 +835,8 @@ This is the bride consort waits for his wedding night rule:
 				if the player is not in Hotel06, drag to Hotel06 by current-monster;
 				compute wedding night;
 		otherwise:
-			compute angry punishment of current-monster;
+			if current-monster is friendly-fucking, say "[speech style of current-monster]'No, on second thoughts, I can't do this. It's not right. We should wait until after the ceremony!'[roman type][line break]";
+			otherwise compute angry punishment of current-monster;
 			satisfy current-monster;
 		rule succeeds.
 The bride consort waits for his wedding night rule is listed first in the selecting an orifice rules.
@@ -997,6 +999,17 @@ To say SelectionFrustrated of (M - a monster):
 To compute SelectionFrustrated of (M - a monster):
 	say SelectionFrustrated of M;
 	bore M.
+
+To compute chastity frustration of (M - a monster):
+	if M is intelligent:
+		now the chosen-orifice of current-monster is nothing;
+		compute the orifice choosing of M;
+		if the chosen-orifice of M is penis or the chosen-orifice of M is vagina:
+			compute SelectionFrustrated of M;
+		otherwise:
+			say "[speech style of M]'Oh, you're stuck in chastity. Well in that case...'[roman type][line break]";
+	otherwise:
+		compute SelectionFrustrated of M.
 
 This is the selection frustrated rule:
 	if the player is at least partially immobile, compute SelectionWaiting of current-monster;
@@ -1238,6 +1251,25 @@ This is the monster attacking pussy covering clothing rule:
 		rule succeeds.
 The monster attacking pussy covering clothing rule is listed last in the monster vagina insertion rules.
 
+This is the monster unlocks annoying cages rule:
+	let C be a random worn chastity bond;
+	if C is clothing:
+		if diaper quest is 1:
+			compute current-monster removing C;
+		otherwise if (C is cursed or C is glued) and current-monster is not able to remove cursed plugs:
+			compute chastity frustration of current-monster;
+		otherwise if C is locked:
+			let K be a random specific-key covering C;
+			if K is a thing and current-monster is carrying K:
+				say "[BigNameDesc of current-monster] takes out [his of current-monster] key and unlocks your [ShortDesc of C].";
+				compute current-monster removing C;
+			otherwise:
+				compute chastity frustration of current-monster;
+		otherwise:
+			compute current-monster removing C;
+		rule succeeds.
+The monster unlocks annoying cages rule is listed last in the monster vagina insertion rules.
+
 This is the monster removing cunt plug rule:
 	let C be a random worn insertable thing penetrating vagina;
 	if C is a thing:
@@ -1339,18 +1371,7 @@ The monster penis insertion rule is listed in the default monster insertion rule
 
 The monster penis insertion rules is a rulebook.
 
-This is the monster attacking penis covering clothing rule:
-	let C be a random worn potentially penis covering clothing;
-	if C is clothing:
-		compute current-monster attacking C;
-		rule succeeds.
-The monster attacking penis covering clothing rule is listed last in the monster penis insertion rules.
-
-This is the monster unlocks annoying cages rule:
-	let C be a random worn chastity bond;
-	if C is clothing:
-		compute current-monster removing C;
-		rule succeeds.
+The monster attacking pussy covering clothing rule is listed last in the monster penis insertion rules.
 The monster unlocks annoying cages rule is listed last in the monster penis insertion rules.
 
 This is the monster penetrating penis rule:
